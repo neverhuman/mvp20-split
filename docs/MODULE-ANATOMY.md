@@ -62,6 +62,23 @@ count, and it is not the same set as the 41 directories.
   `.gitkeep` holds it). The payloads are inventoried in `DATASETS.local.json` and live only
   on the canonical xbabe2 tree.
 
+## Zero-byte files and `work/scratch/` are usually real
+
+322 tracked files are zero bytes. 230 are `.gitkeep` directory placeholders; the other 92 —
+mostly `.txt` and `.err` — plus 11 files under a `work/scratch/` path, look like debris.
+Mostly they are not:
+
+- An empty `*.err` / `*.err.txt` is a **result**: it records that the command produced no
+  stderr. Deleting it destroys that observation.
+- `work/scratch/` inside a repair directory holds the raw stdout/stderr captures a
+  diagnostic was computed from. At least one of them,
+  `amphora-candidate-contract/evidence/phase0/repairs/T-01B/work/scratch/clean_candidate.json`,
+  is referenced by a live audit diagnostic.
+
+Check for a reference before assuming anything under `evidence/` is disposable, and run
+`scripts/verify-hash-bindings.sh` before and after any bulk change. See
+[`../CONTRIBUTING.md`](../CONTRIBUTING.md).
+
 ## Reading order for a module you have never seen
 
 1. `docs/mission.md` — what it claims and what has already refuted it.

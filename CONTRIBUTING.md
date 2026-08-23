@@ -61,6 +61,21 @@ Leave it.
 **3. Zero-byte files in `evidence/` are usually real.** An empty `*.err` means *the command
 produced no stderr*, which is a result. Check for a reference before assuming debris.
 
+## First, set your identity
+
+xbabe1's global git identity was a placeholder (`Your Name <your_email@example.com>`) and has
+been unset, so git will refuse to commit until you set your own:
+
+```bash
+git config --global user.name  "Your Real Name"
+git config --global user.email "you@example.com"
+gh auth login                                    # for push; the repo deploy key is read-only
+```
+
+The checkout's `origin` uses the `github-amphora-mvp20` ssh alias with a **read-only** deploy
+key. Pushing goes through your own GitHub account, so you need to be added as a collaborator
+on `neverhuman/mvp20-split` and authenticated as yourself.
+
 ## Branches and review
 
 - Branch from `main`; short descriptive names (`fix/t01b-caller-hash`, `feat/cf-bom`).
