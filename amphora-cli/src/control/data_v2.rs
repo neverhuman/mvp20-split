@@ -4392,13 +4392,17 @@ mod tests {
 
     #[test]
     fn acquire_normalize_consume_and_audit_are_reproducible_end_to_end() {
-        if !super::super::super::workspace_root().join("feedback").is_dir() {
-            eprintln!(
-                "SKIP acquire_normalize_consume_and_audit_are_reproducible_end_to_end: requires the omitted `feedback/` dataset tree. \
-                 Restore it from the canonical xbabe2 tree \
-                 (/home/ubuntu/amphora/build/mvp20-split) — see DATASETS.local.json."
-            );
-            return;
+        {
+            let root = super::super::super::workspace_root();
+            let needed = "feedback/v2/catalog.json";
+            if !root.join(needed).exists() {
+                eprintln!(
+                    "SKIP acquire_normalize_consume_and_audit_are_reproducible_end_to_end: \
+                     missing {needed}. Restore with \
+                     `ops/restore-datasets.sh --apply --only feedback/` (see BUILD.md)."
+                );
+                return;
+            }
         }
         let root = temporary_directory("integration");
         let snapshot = root.join("feedback/v2");

@@ -4821,13 +4821,27 @@ mod tests {
     /// skip rather than fail, so `cargo test --workspace --locked` is green on a fresh
     /// clone and a real regression is never buried under expected absences.
     fn omitted_datasets_absent(what: &str) -> bool {
-        if super::super::workspace_root().join("feedback").is_dir() {
+        // Check the concrete files this suite reads, not merely that `feedback/` exists.
+        // A PARTIAL restore is a legitimate state -- ops/restore-datasets.sh --only
+        // feedback/v1/derived/ pulls the ~385 MB the CLI needs and nothing else -- and a
+        // directory-level probe turns that into six hard failures instead of six skips.
+        const REQUIRED: [&str; 3] = [
+            "feedback/v1/dataset_sources.json",
+            "feedback/v1/derived/build_manifest.json",
+            "feedback/v2/catalog.json",
+        ];
+        let root = super::super::workspace_root();
+        if REQUIRED.iter().all(|rel| root.join(rel).exists()) {
             return false;
         }
+        let missing: Vec<&str> = REQUIRED
+            .iter()
+            .copied()
+            .filter(|rel| !root.join(rel).exists())
+            .collect();
         eprintln!(
-            "SKIP {what}: requires the omitted `feedback/` dataset tree. \
-             Restore it from the canonical xbabe2 tree \
-             (/home/ubuntu/amphora/build/mvp20-split) — see DATASETS.local.json."
+            "SKIP {what}: missing {missing:?}. Restore with \
+             `ops/restore-datasets.sh --apply --only feedback/` (see BUILD.md)."
         );
         true
     }
