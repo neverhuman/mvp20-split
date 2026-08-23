@@ -350,7 +350,7 @@
         "current_benchmark": {"$ref": "#/$defs/evidenceBenchmark"},
         "known_contradictions": {"$ref": "#/$defs/nonEmptyStrings"},
         "external_dependencies": {"$ref": "#/$defs/nonEmptyStrings"},
-        "focused_acceptance_command": {"type": "string", "pattern": "^rtk cargo test --workspace --locked$"},
+        "focused_acceptance_command": {"type": "string", "pattern": "^cargo test --workspace --locked$"},
         "red_team_fixture": {"$ref": "#/$defs/evidenceRedTeam"}
       }
     }

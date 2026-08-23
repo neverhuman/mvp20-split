@@ -9,20 +9,20 @@ module-specific benchmark locks under `config/program/` and
 Run the evidence workflow with:
 
 ```bash
-rtk cargo run --release --locked -- data acquire --module amphora-public-corrosion-benchmark
-rtk cargo run --release --locked -- data build --module amphora-public-corrosion-benchmark
-rtk cargo run --release --locked -- data verify --module amphora-public-corrosion-benchmark
-rtk cargo run --release --locked -- benchmark lock --module amphora-public-corrosion-benchmark
-rtk cargo run --release --locked -- benchmark run --locked --module amphora-public-corrosion-benchmark
+cargo run --release --locked -- data acquire --module amphora-public-corrosion-benchmark
+cargo run --release --locked -- data build --module amphora-public-corrosion-benchmark
+cargo run --release --locked -- data verify --module amphora-public-corrosion-benchmark
+cargo run --release --locked -- benchmark lock --module amphora-public-corrosion-benchmark
+cargo run --release --locked -- benchmark run --locked --module amphora-public-corrosion-benchmark
 
-rtk cargo run --release --locked -- data acquire --module amphora-cure-potlife-gate
-rtk cargo run --release --locked -- data build --module amphora-cure-potlife-gate
-rtk cargo run --release --locked -- data verify --module amphora-cure-potlife-gate
-rtk cargo run --release --locked -- benchmark lock --module amphora-cure-potlife-gate
-rtk cargo run --release --locked -- benchmark run --locked --module amphora-cure-potlife-gate
+cargo run --release --locked -- data acquire --module amphora-cure-potlife-gate
+cargo run --release --locked -- data build --module amphora-cure-potlife-gate
+cargo run --release --locked -- data verify --module amphora-cure-potlife-gate
+cargo run --release --locked -- benchmark lock --module amphora-cure-potlife-gate
+cargo run --release --locked -- benchmark run --locked --module amphora-cure-potlife-gate
 
-rtk cargo run --release --locked -- portfolio founder-update --modules corrosion,cure --verify-receipts --format markdown
-rtk cargo run --release --locked -- portfolio ip-dossier --modules corrosion,cure
+cargo run --release --locked -- portfolio founder-update --modules corrosion,cure --verify-receipts --format markdown
+cargo run --release --locked -- portfolio ip-dossier --modules corrosion,cure
 ```
 
 The founder command persists a hash-bound Markdown report, a sealed blinded

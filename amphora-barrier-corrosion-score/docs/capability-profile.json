@@ -129,10 +129,10 @@
     "external_dependencies": [
       "At least 30 independent systems across three studies, ten untouched ST-19168 external systems, five panels per system/exposure, measured endpoints, rights clearance, and independent review"
     ],
-    "focused_acceptance_command": "rtk cargo test --workspace --locked",
+    "focused_acceptance_command": "cargo test --workspace --locked",
     "implementation": {
       "path": "amphora-barrier-corrosion-score/src/lib.rs",
-      "sha256": "3459bd904c04f6d2ad16142e44f30cd88f753c146e77d8c5cbdd793064c49e27",
+      "sha256": "4773b6cb7012c3b85a5cf2d319d5e99ae4b8b2a41d2c0540f6a751bb0a6955fc",
       "version": "0.1.0-rust",
       "version_source_path": "amphora-barrier-corrosion-score/Cargo.toml",
       "version_source_sha256": "cbf327e094f5e4973ef4551878a90be280fc10e3e161aaedfdaccecd9b68bcc0"
@@ -160,12 +160,12 @@
       },
       "adapter_registered": true,
       "registry_path": "amphora-engine/src/lib.rs",
-      "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
     },
     "tests": [
       {
         "path": "amphora-barrier-corrosion-score/src/lib.rs",
-        "sha256": "3459bd904c04f6d2ad16142e44f30cd88f753c146e77d8c5cbdd793064c49e27"
+        "sha256": "4773b6cb7012c3b85a5cf2d319d5e99ae4b8b2a41d2c0540f6a751bb0a6955fc"
       }
     ]
   },

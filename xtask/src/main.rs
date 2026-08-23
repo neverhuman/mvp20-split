@@ -757,7 +757,7 @@ fn reconcile_native_evidence(root: &Path) -> Result<(), Box<dyn std::error::Erro
                     .and_then(Value::as_str)
                     .unwrap_or("Exercise the module's fail-closed native checks.");
                 lines.push(format!(
-                    "Module-focused checked fixture: `{implementation_path}` via `rtk cargo test --workspace --locked`. Scenario: {scenario}"
+                    "Module-focused checked fixture: `{implementation_path}` via `cargo test --workspace --locked`. Scenario: {scenario}"
                 ));
             } else {
                 lines.push(line.to_owned());
@@ -772,10 +772,29 @@ fn reconcile_native_evidence(root: &Path) -> Result<(), Box<dyn std::error::Erro
             .find(evidence_heading)
             .ok_or_else(|| format!("mission test evidence heading is absent for {module_id}"))?
             + evidence_heading.len();
-        let evidence_end = updated_mission[evidence_start..]
-            .find("\n\nOperational state")
-            .map(|offset| evidence_start + offset)
-            .ok_or_else(|| format!("mission test evidence boundary is absent for {module_id}"))?;
+        // The evidence block is a bullet list terminated by the next non-bullet
+        // paragraph. Locating that structurally, rather than matching one specific
+        // following sentence, is what lets this run across all 29 modules: several
+        // missions (amphora-solvency-score among them) open the next paragraph with
+        // a founder-ruling sentence instead of "Operational state", and keying on
+        // that literal made this command unrunnable on the whole tree.
+        let evidence_end = {
+            let tail = &updated_mission[evidence_start..];
+            let mut offset = 0usize;
+            for block in tail.split_inclusive("\n\n") {
+                if block.trim_start().starts_with('-') {
+                    offset += block.len();
+                } else {
+                    break;
+                }
+            }
+            if offset == 0 {
+                return Err(
+                    format!("mission test evidence boundary is absent for {module_id}").into(),
+                );
+            }
+            evidence_start + tail[..offset].trim_end().len()
+        };
         let test_evidence = native_test_paths(module_id, implementation_path)
             .into_iter()
             .map(|path| {
@@ -927,18 +946,29 @@ fn rewrite_native_commands(root: &Path) -> Result<(), Box<dyn std::error::Error>
                     let trimmed = line.trim();
                     if trimmed.starts_with("Focused acceptance command:") {
                         touched = true;
-                        "Focused acceptance command: `rtk cargo test --workspace --locked`. The native demo and replay commands in `AMPHORA_RUST.md` are the portfolio acceptance path.".to_owned()
+                        "Focused acceptance command: `cargo test --workspace --locked`. The native demo and replay commands in `AMPHORA_RUST.md` are the portfolio acceptance path.".to_owned()
                     } else if trimmed.starts_with(&module_command)
                         || trimmed.starts_with(&module3_command)
                     {
                         touched = true;
-                        "rtk cargo run --release -- inspect --candidate candidate.json --headless".to_owned()
+                        "cargo run --release -- inspect \\\n  --candidate amphora-candidate-contract/fixtures/formulation_candidate.json --headless"
+                            .to_owned()
                     } else if line.contains(&quoted_module_command)
                         || line.contains(&quoted_module3_command)
                         || line.contains(&quoted_test_command)
                     {
-                        touched = true;
-                        "Use `rtk cargo test --workspace --locked` for the native replacement.".to_owned()
+                        // Replace the whole line only when the line is a self-contained
+                        // sentence. A retired-command reference that runs on into the next
+                        // line would otherwise be decapitated, leaving an orphan fragment
+                        // behind -- which is exactly how science/README.md ended up with a
+                        // dangling "`science` script):" under a rewritten sentence.
+                        if trimmed.ends_with('.') || trimmed.ends_with(':') {
+                            touched = true;
+                            "Use `cargo test --workspace --locked` for the native replacement."
+                                .to_owned()
+                        } else {
+                            line.to_owned()
+                        }
                     } else {
                         line.to_owned()
                     }
@@ -960,7 +990,7 @@ fn rewrite_native_commands(root: &Path) -> Result<(), Box<dyn std::error::Error>
         let text = fs::read_to_string(&path)?;
         let legacy_pattern =
             format!("^{interpreter3} -B -m {test_runner} -q -p no:cacheprovider amphora-");
-        let updated = text.replace(&legacy_pattern, "^rtk cargo test --workspace --locked$");
+        let updated = text.replace(&legacy_pattern, "^cargo test --workspace --locked$");
         if updated != text {
             atomic_write(&path, updated.as_bytes())?;
             changed += 1;
@@ -976,8 +1006,8 @@ fn rewrite_command_fields(value: &mut Value) -> bool {
         Value::Object(object) => {
             for (key, value) in object {
                 if key == "focused_acceptance_command" && value.is_string() {
-                    if value.as_str() != Some("rtk cargo test --workspace --locked") {
-                        *value = Value::String("rtk cargo test --workspace --locked".into());
+                    if value.as_str() != Some("cargo test --workspace --locked") {
+                        *value = Value::String("cargo test --workspace --locked".into());
                         changed = true;
                     }
                 } else {
@@ -1714,6 +1744,32 @@ fn audit_phase0_closure_program(root: &Path) -> Result<(), Box<dyn std::error::E
     Ok(())
 }
 
+/// Paths deliberately omitted from the GitHub handoff, keyed by path.
+///
+/// The canonical tree on xbabe2 retains every one of these; `DATASETS.local.json`
+/// is the 1,372-row inventory with size and SHA-256 for each. Loaded once so the
+/// audit can tell "this artifact was intentionally excluded" apart from "this
+/// artifact reference is stale", which are very different failures.
+fn omitted_dataset_paths(root: &Path) -> &'static std::collections::HashSet<String> {
+    static OMITTED: std::sync::OnceLock<std::collections::HashSet<String>> =
+        std::sync::OnceLock::new();
+    OMITTED.get_or_init(|| {
+        let mut set = std::collections::HashSet::new();
+        if let Ok(bytes) = fs::read(root.join("DATASETS.local.json")) {
+            if let Ok(doc) = serde_json::from_slice::<Value>(&bytes) {
+                if let Some(rows) = doc.get("omitted").and_then(Value::as_array) {
+                    for row in rows {
+                        if let Some(path) = row.get("path").and_then(Value::as_str) {
+                            set.insert(path.to_owned());
+                        }
+                    }
+                }
+            }
+        }
+        set
+    })
+}
+
 fn audit_declared_file(
     root: &Path,
     path: Option<&Value>,
@@ -1726,8 +1782,24 @@ fn audit_declared_file(
     let declared_hash = declared_hash
         .and_then(Value::as_str)
         .ok_or_else(|| format!("cure/pot-life {kind} SHA-256 is absent"))?;
-    let bytes = fs::read(root.join(path))
-        .map_err(|error| format!("cure/pot-life {kind} path is stale: {path}: {error}"))?;
+    let bytes = match fs::read(root.join(path)) {
+        Ok(bytes) => bytes,
+        Err(error) => {
+            // An artifact that is absent *and* inventoried as omitted is expected on a
+            // GitHub clone: the bytes live only on the canonical xbabe2 tree. Report it
+            // and continue, so the audit still verifies everything that IS present.
+            // An artifact that is absent and NOT inventoried is a genuinely stale
+            // reference and still fails the gate.
+            if omitted_dataset_paths(root).contains(path) {
+                eprintln!(
+                    "audit: skipping omitted {kind} {path} (inventoried in DATASETS.local.json; \
+                     restore from xbabe2:/home/ubuntu/amphora/build/mvp20-split to verify it)"
+                );
+                return Ok(());
+            }
+            return Err(format!("cure/pot-life {kind} path is stale: {path}: {error}").into());
+        }
+    };
     let observed_hash = sha256(&bytes);
     if observed_hash != declared_hash {
         return Err(format!(

@@ -6,7 +6,7 @@
 # on flocking the launcher's own lock -- "runs only when no fire is running".
 # Under four lanes that lock path goes unheld (rsync would clobber mid-fire
 # appends while reading "idle") or, gated on the fleet lock instead, starves
-# (*/15 cadence leaves almost no all-idle gaps). Neither is needed: per-lane
+# (the hourly launcher cadence leaves almost no all-idle gaps). Neither is needed: per-lane
 # logs are single-writer append-only, whole-file rsync of an append-only file
 # is idempotent, and a torn tail self-heals on the next pass. The launcher no
 # longer pushes per-fire slices (a shared-window slice duplicated sibling bytes

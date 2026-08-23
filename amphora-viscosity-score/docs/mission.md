@@ -12,11 +12,11 @@ It does not establish product qualification, batch release, procurement approval
 
 ## Honest current state
 
-The live checked implementation is native Rust at `amphora-viscosity-score/src/lib.rs` with SHA-256 `55644edc9981a6a23acb3386e0a2bfcc44a1b2c649d37358c347cb0339471f48`. Runtime registration is owned by `amphora-engine/src/lib.rs` and is checked against `module-manifest.json`. Retired Python implementation records have diagnostic provenance only and are not live authority.
+The live checked implementation is native Rust at `amphora-viscosity-score/src/lib.rs` with SHA-256 `bacc4e2470cf2b49f356033abe4f4638fe29db36e49d8dd7c265d79db3a77824`. Runtime registration is owned by `amphora-engine/src/lib.rs` and is checked against `module-manifest.json`. Retired Python implementation records have diagnostic provenance only and are not live authority.
 
 Focused checked test evidence:
 
-- `amphora-viscosity-score/src/lib.rs` — SHA-256 `55644edc9981a6a23acb3386e0a2bfcc44a1b2c649d37358c347cb0339471f48`
+- `amphora-viscosity-score/src/lib.rs` — SHA-256 `bacc4e2470cf2b49f356033abe4f4638fe29db36e49d8dd7c265d79db3a77824`
 
 Operational state is `SHADOW`; scientific state is `UNVALIDATED`, so the current phase is **Pre-Phase 0**. Execution and passing unit tests do not establish human parity. No readiness percentage is asserted.
 
@@ -374,7 +374,7 @@ Primary KPI: **external KU MAE** at `metrics.class_anchor_ku_proxy`. Direction a
 - Phase 1 — Human parity: the locked independent evaluation beats or matches the best reproducible named baseline at the stated target with uncertainty.
 - Phase 2 — Defensible IP: prospective superiority repeats independently, owned provenance and ablations freeze, and patent-versus-trade-secret review is documented. Counsel separately determines FTO.
 
-Focused acceptance command: `rtk cargo test --workspace --locked`. The native demo and replay commands in `AMPHORA_RUST.md` are the portfolio acceptance path.
+Focused acceptance command: `cargo test --workspace --locked`. The native demo and replay commands in `AMPHORA_RUST.md` are the portfolio acceptance path.
 
 External dependency or delay:
 
@@ -386,4 +386,4 @@ Estimated effort is represented by the checked-in 0–5 priority factors, not a 
 
 Regression coverage must exercise malformed chemistry; mixtures, fragments, and polymers; unsupported formats; unit ambiguity; zero-mass ingredients; NaN and Infinity; out-of-domain inputs; group/source/time leakage; mutated sources; computed-as-measured records; spoofed identity; authority escalation; stripped or unknown claim locks; fixed-seed replay drift; and legal, regulatory, supplier, procurement, qualification, or release overclaim. Every such case must fail closed or remain an explicit evidence gap.
 
-Module-focused checked fixture: `amphora-viscosity-score/src/lib.rs` via `rtk cargo test --workspace --locked`. Scenario: Verify liquid mixing, temperature response, crowding, yield flow, sag threshold, and malformed-input abstention.
+Module-focused checked fixture: `amphora-viscosity-score/src/lib.rs` via `cargo test --workspace --locked`. Scenario: Verify liquid mixing, temperature response, crowding, yield flow, sag threshold, and malformed-input abstention.

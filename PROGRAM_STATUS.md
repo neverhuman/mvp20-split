@@ -1,5 +1,12 @@
 # Amphora program status — 2026-07-17
 
+> **Snapshot, not current state.** This is the position as of 2026-07-17. Only the RDKit
+> limitation below has been corrected since; nothing else was revisited for evidence filed
+> after that date. Twenty-two `evidence/phase0/kpis/RETRACTION-INDEX.md`
+> files and 58 `CLAIM_REFUTED` verdicts across the module trees are the authoritative record
+> of what has since been withdrawn — check a module's retraction index before relying on any
+> claim below. See [START_HERE.md](START_HERE.md#what-we-got-wrong).
+
 Amphora is a functioning pre-Phase-0 research and diagnostics system. It is not
 currently authorized to claim scientific superiority, product readiness,
 qualification, procurement approval, FTO, or Phase 1/2 readiness.
@@ -31,9 +38,13 @@ qualification, procurement approval, FTO, or Phase 1/2 readiness.
   candidate-bound.
 - Molecular role and novelty work lack the locked independent labels and fully
   rights-cleared production corpus required for ranking.
-- RDKit C++ 2026.03.2 is not present in this build environment. Chemistry
-  normalization and positive structural applicability therefore fail closed;
-  no substitute canonicalizer is used.
+- Chemistry normalization and positive structural applicability fail closed unless the
+  pinned RDKit C++ 2026.03.2 boundary is built and the non-default `rdkit` cargo feature is
+  enabled; no substitute canonicalizer is ever used. (As of 2026-08-23 that boundary **is**
+  built on xbabe2 at `/home/ubuntu/.local/share/amphora/rdkit-2026.03.2/`, and
+  `amphora-rdkit-ffi/evidence/phase0/repairs/W-FFI2/` records builds against it with
+  `exact_version_match=true`. The 2026-07-17 statement that it was absent is superseded.
+  Build instructions: [BUILD.md](BUILD.md).)
 - External CRO, supplier, laboratory, counsel, and independent red-team work
   cannot be completed by a software build and remains an explicit evidence or
   procurement checkpoint.

@@ -8,7 +8,7 @@
   ],
   "benchmark_id": "amphora-portfolio-digital-phase1-lock-2026-07-17",
   "dataset_hashes": {
-    "config/module-evidence-inventory.json": "10dfa58d1967acfbbedd732869bb8da948870ad975f47befbb0def9c997af9f3",
+    "config/module-evidence-inventory.json": "2eec3d48cd3b57a652cd3c89c1e3bf57580b55551b6aa482f86d3087597c8c08",
     "module-manifest.json": "571813eedebd18c71d8f56b1fe454c339cecf10286403b9c5dd1e1599822ff3f"
   },
   "endpoints": [

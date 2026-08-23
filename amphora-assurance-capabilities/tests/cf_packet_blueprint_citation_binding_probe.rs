@@ -150,6 +150,18 @@ fn sign_fresh(mut p: CroProtocolPackageV2) -> (CroProtocolPackageV2, TrustStore,
 }
 
 #[test]
+// STALE GAP-REPRODUCTION PROBE — ignored by default, deliberately.
+//
+// This probe was written to *confirm the presence* of the CF-PACKET blueprint
+// content-binding gap: it asserts the attack still slips through. That gap has since
+// been closed, so the probe now fails by construction — the failure means the fix
+// works, not that something regressed.
+//
+// It is retained (not deleted) because it is the falsifying observation the CF-PACKET
+// attack shape was designed to produce, and it must keep running against any tree that
+// predates the fix. Run it explicitly with:
+//     cargo test --workspace --locked -- --ignored cf_packet_blueprint_citation_binding_probe
+#[ignore = "stale gap-reproduction probe: the gap it reproduces has been closed"]
 fn cf_packet_blueprint_citation_binding_probe() {
     let real_hash = real_blueprint_sha256();
     let wrong_hash = "f".repeat(64); // format-valid, definitely NOT the real file's hash

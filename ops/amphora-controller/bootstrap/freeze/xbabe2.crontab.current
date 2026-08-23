@@ -1,0 +1,6 @@
+# Amphora-managed entries only, extracted from the live xbabe2 crontab.
+# Captured 2026-08-23T10:35:37Z. Unrelated entries on the host are
+# deliberately not reproduced here; they were never modified (record.json:
+# unrelated_lines_changed = 0). The line is DISABLED.
+#
+# AMPHORA_MANAGED_DISABLED AMPHORA-HANDOFF-20260823T025604Z-CODEX-7F3A92 30 * * * * flock -n /tmp/amphora-git-autocommit.lock /home/ubuntu/.local/libexec/amphora-autocommit-guard.sh >/dev/null 2>&1

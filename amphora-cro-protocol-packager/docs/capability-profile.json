@@ -65,7 +65,7 @@
           "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
           "status": "UNRESOLVED"
         },
-        "sha256": "dc0b3bb461446abb94a61ff624579c0d8eb059327a66998eaaea2261bc283e6d"
+        "sha256": "a5c7f81c256a86b2dcae14c473ace58d16e7993ac95ae056ee7c0e2a8f7c2881"
       },
       {
         "kind": "output_artifact",
@@ -75,7 +75,7 @@
           "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
           "status": "UNRESOLVED"
         },
-        "sha256": "4e001dc82eac042fa90fd1164faece447e40c7ef3f0f29649dd0322e12faa0d9"
+        "sha256": "84d6e2803f1627159b2c9a8353dee095a31ca0b99a6fdd196316b89ad858038a"
       },
       {
         "kind": "output_artifact",
@@ -85,7 +85,7 @@
           "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
           "status": "UNRESOLVED"
         },
-        "sha256": "b2fa8de6b50f8605dbe5a412af5d818e8792be864af7ea6e3ef10320959504b6"
+        "sha256": "79040c136af5ecfad26d81d64790416a79bd1c1ce1eb2cb9f1912b2b0a4e8658"
       },
       {
         "kind": "synthetic_fixture",
@@ -109,13 +109,13 @@
     "external_dependencies": [
       "CRO execution, signed method selection, and returned candidate-bound raw data"
     ],
-    "focused_acceptance_command": "rtk cargo test --workspace --locked",
+    "focused_acceptance_command": "cargo test --workspace --locked",
     "implementation": {
       "path": "amphora-assurance-capabilities/src/lib.rs",
-      "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+      "sha256": "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d",
       "version": "0.1.0-rust",
       "version_source_path": "amphora-assurance-capabilities/Cargo.toml",
-      "version_source_sha256": "7cce6518cda6da3001daff0e6bfb53c99208748e3af9c4619a6576848fb744e8"
+      "version_source_sha256": "a365c06a0a83735d256fa4c5dabf5de5e2067e7b38ae787cc71d960f1b8bd3ea"
     },
     "known_contradictions": [
       "A candidate- and formula-bound packet is an execution specification only; no returned CRO measurements are checked in."
@@ -133,16 +133,16 @@
       "adapter_policy": null,
       "adapter_registered": true,
       "registry_path": "amphora-engine/src/lib.rs",
-      "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
     },
     "tests": [
       {
         "path": "amphora-assurance-capabilities/src/lib.rs",
-        "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+        "sha256": "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d"
       },
       {
         "path": "amphora-assurance-capabilities/src/diagnostics.rs",
-        "sha256": "bab349d7039ab3d323c3313f3edc6680932278842d6e0512d9d929dbccaf987a"
+        "sha256": "4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89"
       }
     ]
   },

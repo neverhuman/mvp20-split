@@ -99,10 +99,10 @@
     "external_dependencies": [
       "At least 30 unique formulations across three families at 18.3, 22.8, and 35 C with full flow curves, KU, D4400 sag, duplicates, lots, and locked process history"
     ],
-    "focused_acceptance_command": "rtk cargo test --workspace --locked",
+    "focused_acceptance_command": "cargo test --workspace --locked",
     "implementation": {
       "path": "amphora-viscosity-score/src/lib.rs",
-      "sha256": "55644edc9981a6a23acb3386e0a2bfcc44a1b2c649d37358c347cb0339471f48",
+      "sha256": "bacc4e2470cf2b49f356033abe4f4638fe29db36e49d8dd7c265d79db3a77824",
       "version": "0.1.0-rust",
       "version_source_path": "amphora-viscosity-score/Cargo.toml",
       "version_source_sha256": "1ba6a8c99f8f8010ec0f86db243310a011b6fd042e45f1e6b159c4d3abdd0126"
@@ -130,12 +130,12 @@
       },
       "adapter_registered": true,
       "registry_path": "amphora-engine/src/lib.rs",
-      "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
     },
     "tests": [
       {
         "path": "amphora-viscosity-score/src/lib.rs",
-        "sha256": "55644edc9981a6a23acb3386e0a2bfcc44a1b2c649d37358c347cb0339471f48"
+        "sha256": "bacc4e2470cf2b49f356033abe4f4638fe29db36e49d8dd7c265d79db3a77824"
       }
     ]
   },

@@ -6,7 +6,8 @@ authorize authentication, cron enablement, hard-stop removal, or a fire.
 
 ## Provenance and final state
 
-- GitHub repository: `neverhuman/mvp20-split`, private, `main` only.
+- GitHub repository: `neverhuman/mvp20-split`, private. `main` plus the unmerged
+  `demo/founder-showcase` (see "Published branches" below).
 - Preserved GitHub root commit: `d2209cead0a94c02f4e1f1570aa8dc8be0338bb6`.
 - Operations publication: the single child of that root commit on `main` (a
   commit cannot contain its own content-derived SHA; `git rev-parse main`
@@ -33,8 +34,21 @@ authorize authentication, cron enablement, hard-stop removal, or a fire.
 The xbabe1 hourly launcher and 10-minute mirror and the xbabe2 forensic
 autocommit entry are disabled. There are zero active lanes, zero held Amphora
 fleet locks, and zero Claude processes. Unrelated crontab lines did not change.
-The exact before/after crontabs and hashes are under
-`ops/amphora-controller/bootstrap/freeze/`.
+
+The crontab records under `ops/amphora-controller/bootstrap/freeze/` are:
+
+- `xbabe{1,2}.crontab.current` — **the current live state**, Amphora entries only. Compare
+  against these.
+- `xbabe{1,2}.crontab.before` / `.after` — the full before/after pair captured at the
+  2026-08-23T02:56Z freeze. **The `.after` pair is superseded**: `bin/amphora install --apply`
+  ran at 04:07 and migrated both the disable marker (`AMPHORA_HANDOFF_DISABLED` →
+  `AMPHORA_MANAGED_DISABLED`) and the script paths (`/home/ubuntu/amphora-cron/…` →
+  `/home/ubuntu/mvp20-split/ops/amphora-controller/…`, and the xbabe2 guard to
+  `/home/ubuntu/.local/libexec/`). They are retained unmodified because their SHA-256s are
+  attested in `record.json`; **do not restore a crontab from them.**
+
+[ops/amphora-controller/CRON.md](ops/amphora-controller/CRON.md) is the single human-readable
+record of all three entries, verbatim, and of how they are enabled and disabled.
 
 ## Repository contents and exclusions
 
@@ -57,7 +71,37 @@ The GitHub repository excludes:
 - caches, local environments, build output, compiled binaries, model/archive
   formats, generated report binaries, and disallowed oversized data;
 - raw or derived dataset payloads listed in `DATASETS.local.json`;
-- GitHub Actions workflows, LFS objects, tags, and extra branches.
+- GitHub Actions workflows, LFS objects, and tags.
+
+### Published branches
+
+`main` is the handoff. **`demo/founder-showcase`** (tip
+`209f6b5650d3fd1ce341c702265ca069b0e45cb6`, 11 hand-written commits) was published on
+2026-08-23 and is **not** merged. It contains the founder demo TUI —
+`amphora-cli/src/showcase.rs`, `screen.rs`, `build.rs`,
+`amphora-core/tests/t13_verify_run_hardening.rs`, ~1,485 lines of Rust — plus three
+security-hardening commits (`bd74196` R1/T-01B caller-echoed candidate hashes, `b5ca2d0`
+R2/T-13 event-hash chain recomputation, `5c679a5` R3/T-05 molecule fact attestation).
+
+It is unmerged because R2 and R3 have declared breaking effects: legacy run archives written
+under the superseded event-hash format fail loudly against them. Merging is a reviewed
+decision, not a cleanup. Note that R1 fixes a defect `main` still ships —
+`amphora-candidate-contract/evidence/phase0/repairs/T-01B/work/STATE.json` records
+`"verdict":"REFUTED"` for it and `amphora-engine/src/lib.rs` still lacks the guard.
+Its worktree is `xbabe2:/home/ubuntu/amphora/demo-2026-08-11`.
+
+### Backup and single point of failure
+
+The full 462-commit canonical history is mirrored to the private
+`neverhuman/mvp20-split-history`. **That mirror has a different exclusion boundary from this
+repository** — being byte-faithful to canonical, it includes `.amphora/` and a local signing
+key. It is disaster recovery only; do not grant access to it. See "Signing-key exposure"
+below.
+
+Still unreplicated on xbabe2 alone: the 6.20 GB of
+inventoried datasets, the 146 MB `.amphora/` control plane, the 40 GB NOMAD corpus, and the
+32-byte evaluator signing seed. See [EXTERNAL_INPUTS.md](EXTERNAL_INPUTS.md) and
+[START_HERE.md](START_HERE.md).
 
 Nothing excluded was deleted from the canonical sources. The entire original
 xbabe1 tree—including its Git history, logs, credentials/state, backups,
@@ -98,9 +142,11 @@ the corresponding operations provenance and exclusion record.
 - A reviewed snapshot flow that defaults to dry-run and separates pause,
   export, manifest regeneration, policy/secret checks, review, commit, and push.
 
-Exactly 831 historical evidence, benchmark, and report reproduction source
-files retaining the canonical xbabe2 path remain byte-faithful. They are
-provenance records, not maintained portable entry points.
+918 evidence, benchmark, reference, and report files retain the canonical xbabe2 path
+and remain byte-faithful. They are provenance records, not portable entry points, and the
+path is part of what they attest. The full list is checked in at
+[`docs/frozen-provenance-files.txt`](docs/frozen-provenance-files.txt) with the command to
+regenerate it, so the figure is verifiable rather than asserted.
 
 ## Validation
 
@@ -112,7 +158,7 @@ Python AST and import checks
 151 inherited controller regression checks
 18 new configuration/hard-stop/installer/migration/DSSE/policy/guard/sandbox checks
 cargo test --workspace --locked --no-run
-cargo test --workspace --locked -- --skip cf_packet_blueprint_citation_binding_probe
+cargo test --workspace --locked
 pytest tests/crystal360
 pytest amphora-redteam-audit/tests/test_ledger_ts.py
 pytest benchkit/tests
@@ -123,16 +169,60 @@ directive coverage (zero unmapped obligations, zero orphan references)
 Publication also requires the staged tree, full history, and a fresh clone to
 pass redacted Gitleaks and TruffleHog scans; manifest hashes and sizes; forbidden
 path, credential, binary, and oversize checks; `git fsck`; privacy; branch/tag
-counts; workflow absence; and verification that the 831 canonical-path files
-match xbabe2 byte-for-byte.
+counts; workflow absence; and verification that the canonical-path files listed in
+`docs/frozen-provenance-files.txt` match xbabe2 byte-for-byte.
 
-The final Rust compile gate passed in the publication tree. The execution gate
-passed against the clean canonical xbabe2 tree, which retains the intentionally
-omitted 7 MB T-04 forgery fixture: 395 tests passed and only the stale
-`cf_packet_blueprint_citation_binding_probe` gap-reproduction probe was
-filtered. Crystal360 passed 107 tests, the portable red-team ledger passed 6,
-and benchkit passed 21 with four manifest-backed skips for its intentionally
-omitted local dataset.
+### Verification as of 2026-08-23
+
+Re-run against **this published tree** (not the canonical tree), on a clone with no datasets
+restored:
+
+| Command | Result |
+|---|---|
+| `cargo check --workspace --all-targets --locked` | passes |
+| `cargo test --workspace --locked` | **395 passed, 0 failed, 1 ignored** |
+| `gitleaks git . --config .gitleaks.toml --exit-code 1` | exit 0, no leaks |
+| `python3 ops/amphora-controller/tools/controller_tree_manifest.py verify` | passes, 57 files |
+| `ops/amphora-controller/tests/run.sh`, `tools/tests/run-all.sh` | pass |
+| `cargo run -p xtask -- audit` | **fails — one known item, see Known debt** |
+
+The 1 ignored test is `cf_packet_blueprint_citation_binding_probe`, a stale
+gap-reproduction probe whose gap has been closed. Seven further tests self-skip when the
+omitted `feedback/` tree is absent, naming what to restore. See [BUILD.md](BUILD.md).
+
+Crystal360 passes 107 tests, the portable red-team ledger 6, and benchkit 21 with four
+manifest-backed skips for its intentionally omitted local dataset.
+
+## Signing-key exposure, 2026-08-23
+
+`.amphora/control/local-ed25519.key` — a 32-byte Ed25519 private key — was briefly
+reachable on GitHub and should be treated as burned.
+
+**What happened.** `.amphora/` has always been tracked in the canonical xbabe2 repository.
+`main` correctly excludes it. But when `demo/founder-showcase` was first published on
+2026-08-23 it was pushed with its full canonical ancestry (189 commits), which carried
+3,130 `.amphora/` files including that key. The `neverhuman/mvp20-split-history` mirror
+carries it too, by construction — it is a byte-faithful mirror of canonical.
+
+**What was done.** `demo/founder-showcase` was rebuilt as the 11 demo commits rebased
+directly onto `main`, with no canonical ancestry and zero `.amphora/` files, and
+force-published. The history mirror is retained as disaster recovery and **must not be
+shared** — it has a deliberately different exclusion boundary from this repository.
+
+**What was not done, and why.** The key was **not** rotated. It declares its own authority
+as `LOCAL_DEVELOPMENT_AUDIT_ONLY` (`key_id: local-9028773f49591193`, schema
+`amphora.local-trust-key.v1`) and carries no promotion authority by construction. It signed
+175 tracked artifacts — 56 DSSE receipts and 119 manifests/acquisition receipts — each
+through a bespoke `sign_*.py` in its own evidence directory. Re-signing all of them would
+change 175 file hashes and cascade into every digest that records them, which is a larger
+integrity risk than the exposure it would remedy.
+
+**What a successor should assume.** Treat any signature bearing `local-9028773f49591193` as
+establishing *provenance intent*, not authenticity — anyone with the repository history could
+have produced it. This does not affect the evaluator identity
+(`phase0-evaluator-3ef6b35cdbbfea74`), whose seed has never left xbabe2 and which signs
+everything that carries actual Phase-0 authority. If you later need authenticated local
+signatures, issue a new key rather than reusing this one.
 
 ## Known debt
 
@@ -145,6 +235,24 @@ omitted local dataset.
   future work should be filed as reviewed campaign items where possible.
 - Claude authentication is deliberately absent/stale and remains an activation
   prerequisite, not a handoff defect.
+- `cargo run -p xtask -- audit` fails on one module. The 2026-08-11 CF-TEST and CF-RISK
+  repairs rewrote three `amphora-cro-protocol-packager` output artifacts; the live registry
+  pins were re-issued on 2026-08-23, but `evidence/phase0/sources/source-lock.v1.json` still
+  records the pre-repair digests while asserting `hash_current: true`. That file is digested
+  into a signed `evaluation.v1.dsse.json`, so correcting it requires a supersession record
+  and re-signing with the evaluator seed — deliberately left to the owner. Full trace in
+  [BUILD.md](BUILD.md#known-debt). Bounded to three entries in one module; every other
+  source lock and every `bundle.v1.json` digest verifies clean.
+- The fleet was frozen mid-`INFRA` stall at gate-hold level 7, after six consecutive fires
+  produced no result. The stop itself is clean — zero lanes, zero locks, zero processes —
+  but the loop was already not making progress when it was frozen. Whoever activates should
+  diagnose the stall before expecting useful fires.
+- `reference/mvp20/data/facts.json` is duplicated verbatim across 14 modules with nothing
+  enforcing parity. Correcting a value in one silently forks the canonical fact table.
+- Branch protection is not configured on either GitHub repository and is unavailable on the
+  owner's current plan. Repository ownership is a single personal account with one admin and
+  one non-expiring read-only deploy key; there is no documented succession for the account
+  itself.
 
 ## Activation boundary
 

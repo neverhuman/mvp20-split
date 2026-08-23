@@ -129,7 +129,7 @@ Primary KPI: **unresolved category coverage** at `metrics.unresolved_technical_c
 - Phase 1 — Human parity: the locked independent evaluation beats or matches the best reproducible named baseline at the stated target with uncertainty.
 - Phase 2 — Defensible IP: prospective superiority repeats independently, owned provenance and ablations freeze, and patent-versus-trade-secret review is documented. Counsel separately determines FTO.
 
-Focused acceptance command: `rtk cargo test --workspace --locked`. The native demo and replay commands in `AMPHORA_RUST.md` are the portfolio acceptance path.
+Focused acceptance command: `cargo test --workspace --locked`. The native demo and replay commands in `AMPHORA_RUST.md` are the portfolio acceptance path.
 
 External dependency or delay:
 
@@ -141,7 +141,7 @@ Estimated effort is represented by the checked-in 0–5 priority factors, not a 
 
 Regression coverage must exercise malformed chemistry; mixtures, fragments, and polymers; unsupported formats; unit ambiguity; zero-mass ingredients; NaN and Infinity; out-of-domain inputs; group/source/time leakage; mutated sources; computed-as-measured records; spoofed identity; authority escalation; stripped or unknown claim locks; fixed-seed replay drift; and legal, regulatory, supplier, procurement, qualification, or release overclaim. Every such case must fail closed or remain an explicit evidence gap.
 
-Module-focused checked fixture: `amphora-assurance-capabilities/src/lib.rs` via `rtk cargo test --workspace --locked`. Scenario: Keep FTO NOT PERFORMED even when signed_by_counsel is true.
+Module-focused checked fixture: `amphora-assurance-capabilities/src/lib.rs` via `cargo test --workspace --locked`. Scenario: Keep FTO NOT PERFORMED even when signed_by_counsel is true.
 
 ### Pin-integrity correction (2026-08-16)
 

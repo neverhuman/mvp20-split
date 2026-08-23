@@ -194,13 +194,13 @@
     "external_dependencies": [
       "Measured lot/process variation and prospective formulation repeats"
     ],
-    "focused_acceptance_command": "rtk cargo test --workspace --locked",
+    "focused_acceptance_command": "cargo test --workspace --locked",
     "implementation": {
       "path": "amphora-formulation-capabilities/src/lib.rs",
-      "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0",
+      "sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047",
       "version": "0.1.0-rust",
       "version_source_path": "amphora-formulation-capabilities/Cargo.toml",
-      "version_source_sha256": "2a648084d6595365d6687c0c950171c8db27ac1020d2bc80f666afcd3d575d86"
+      "version_source_sha256": "033bc1dee934c8836078ec5e267835ec64a3b684c0966c281eaf9155db1cb9cf"
     },
     "known_contradictions": [
       "The reported robustness result is simulation-only and is not calibrated against measured manufacturing variation."
@@ -225,12 +225,12 @@
       },
       "adapter_registered": true,
       "registry_path": "amphora-engine/src/lib.rs",
-      "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
     },
     "tests": [
       {
         "path": "amphora-formulation-capabilities/src/lib.rs",
-        "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0"
+        "sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047"
       }
     ]
   },

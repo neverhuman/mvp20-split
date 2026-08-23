@@ -78,6 +78,10 @@ amphora-run-provenance/reference/mvp20/out/run_manifest.json
 amphora-molecule-role-ranker/evidence/phase0/repairs/W-D-ROLE/done/W-D-ROLE-source-sweep-receipt.v1.dsse.json
 amphora-report-packager/evidence/phase0/repairs/T-12/work/diagnostic.canonical.json
 amphora-report-packager/evidence/phase0/repairs/T-12/work/diagnostic.runB.json
+reports/**/*.aux
+reports/**/*.out
+reports/**/*.log
+reports/**/*.toc
 reports/**/*.pdf
 reports/**/*.png
 reports/**/*.jpg
@@ -111,6 +115,13 @@ id_rsa
 # Byte-faithful historical probe source (not a dataset payload)
 !**/evidence/phase0/raw/
 !**/evidence/phase0/raw/SHA256SUMS
+# Directory placeholders. The object stores are intentionally empty in the handoff
+# (the payloads are inventoried in DATASETS.local.json), but `cargo run -p xtask -- audit`
+# requires the directories to EXIST. Without these two negations the `**/objects/` rule
+# strips the placeholders, the directories vanish from a clone, and the audit hard-fails
+# for all 29 modules with "object or movement directory is absent".
+!**/evidence/phase0/raw/objects/
+!**/evidence/phase0/raw/objects/.gitkeep
 !**/evidence/phase0/split/
 !**/evidence/phase0/split/split-manifest.v1.json
 !**/evidence/superseded/

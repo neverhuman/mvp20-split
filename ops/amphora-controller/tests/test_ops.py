@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import argparse
 import base64
 import fcntl
 import hashlib
@@ -23,6 +24,38 @@ recon = importlib.machinery.SourceFileLoader(
 
 
 class OpsTests(unittest.TestCase):
+
+    def test_cron_md_documents_every_generated_cron_line_verbatim(self):
+        """CRON.md must quote each cron_entries() line exactly.
+
+        The cron schedule lives in bin/amphora as code. CRON.md is the only place a human
+        reads it. Without this binding the two drift silently -- which is exactly what
+        happened to bootstrap/freeze/*.after, whose disable marker and script paths went
+        stale against the live crontabs and were kept as historical evidence instead.
+        """
+        cron_md = (ROOT / "CRON.md").read_text()
+        entries = cli.cron_entries(dict(cli.DEFAULTS))
+        self.assertEqual(set(entries), {"launcher", "mirror", "guard"})
+        for role, line in entries.items():
+            self.assertIn(
+                line, cron_md,
+                f"CRON.md does not quote the {role} cron line verbatim: {line}")
+
+    def test_cron_md_documents_the_live_disable_marker(self):
+        """The token a successor actually sees in `crontab -l` must be documented."""
+        cron_md = (ROOT / "CRON.md").read_text()
+        self.assertIn("AMPHORA_MANAGED_DISABLED", cron_md)
+
+    def test_host_mutating_commands_refuse_a_foreign_host(self):
+        """install/pause/resume reach xbabe2 over ssh and must not run from elsewhere."""
+        cfg = dict(cli.DEFAULTS)
+        cfg["AMPHORA_CONTROLLER_HOST"] = "definitely-not-this-host"
+        with self.assertRaises(cli.OperatorError):
+            cli.require_controller_host(cfg)
+        import socket as _socket
+        cfg["AMPHORA_CONTROLLER_HOST"] = _socket.gethostname().split(".")[0]
+        cli.require_controller_host(cfg)  # must not raise on the controller host
+
     def test_environment_overrides_config(self):
         with tempfile.TemporaryDirectory() as td:
             envfile = Path(td) / "cron.env"
@@ -163,10 +196,32 @@ class OpsTests(unittest.TestCase):
         self.assertIn('exec timeout 25s $SSH "$XBABE2_HOST"', launcher)
         self.assertNotIn("exec timeout 25s ssh -o", launcher)
 
+    def test_protect_unprotect_round_trip(self):
+        """A 0555 tree makes git updates fail half-way; this pair is the documented escape."""
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td) / "controller"
+            (root / "sub").mkdir(parents=True)
+            probe = root / "sub" / "file.txt"
+            probe.write_text("x")
+            cfg = dict(cli.DEFAULTS)
+            cfg["AMPHORA_CONTROLLER_ROOT"] = str(root)
+            args = argparse.Namespace(apply=True)
+
+            cli.cmd_protect(args, cfg)
+            self.assertFalse(os.access(probe, os.W_OK))
+            self.assertFalse(os.access(root / "sub", os.W_OK))
+
+            cli.cmd_unprotect(args, cfg)
+            self.assertTrue(os.access(probe, os.W_OK))
+            self.assertTrue(os.access(root / "sub", os.W_OK))
+            probe.write_text("y")   # must not raise
+            self.assertEqual(probe.read_text(), "y")
+
     def test_operator_surface_is_complete(self):
         help_text = subprocess.run([str(ROOT / "bin" / "amphora"), "--help"],
                                    stdout=subprocess.PIPE, text=True).stdout
-        for command in ("doctor", "status", "test", "pause", "drain", "resume", "install"):
+        for command in ("doctor", "status", "test", "pause", "drain", "resume", "install",
+                        "protect", "unprotect"):
             self.assertIn(command, help_text)
 
 

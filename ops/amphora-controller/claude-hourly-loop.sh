@@ -2,11 +2,12 @@
 # Autonomous Claude loop for the Amphora coating IP portfolio — v5 (lanes).
 #
 # v5 (2026-08-10) — FOUR CONCURRENT LANES, capped structurally.
-# One cron entry (*/15) starts one launcher; each launcher must win one of
-# exactly LANE_COUNT slot locks or exit, so no crontab mistake can ever run a
-# fifth. Lanes coordinate through a module-lease ledger: a lane owns its target
-# module for the duration of its fire (TTL-bounded, so a killed lane self-heals),
-# which is the invariant that keeps the pre/post content-hash attribution sound.
+# One cron entry (installed as `0 * * * *`, hourly — see CRON.md) starts one
+# launcher; each launcher must win one of exactly LANE_COUNT slot locks or exit,
+# so no crontab mistake can ever run a fifth. Lanes coordinate through a
+# module-lease ledger: a lane owns its target module for the duration of its fire
+# (TTL-bounded, so a killed lane self-heals), which is the invariant that keeps
+# the pre/post content-hash attribution sound.
 # Everything shared — campaign.json, the lease ledger, every state counter and
 # gate — mutates only inside one of two flocks, in a fixed total order:
 #     slot(1) -> fleet(2) -> campaign.lock(3) -> state.lock(4)

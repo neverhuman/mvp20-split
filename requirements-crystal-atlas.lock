@@ -1,11 +1,10 @@
 # Feature generation uses requirements-crystal360.lock.  This is the separately
 # pinned CUDA model environment used by both single-GPU hosts.
 catboost==1.2.10
-xgboost==2.1.4
 lightgbm==4.6.0
 numpy==1.26.4
 pandas==2.3.2
-scikit-learn==1.7.2
 pyarrow==20.0.0
 rich==13.7.1
-tqdm==4.67.1
+scikit-learn==1.7.2
+xgboost==2.1.4

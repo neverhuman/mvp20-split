@@ -2,21 +2,16 @@
 
 Input-tolerance Monte Carlo robustness.
 
-CLI:
+CLI (from the repository root; requires the omitted datasets — see
+[`../BUILD.md`](../BUILD.md)):
 
 ```bash
-rtk cargo run --release -- inspect --candidate candidate.json --headless
+cargo run --release -- inspect \
+  --candidate amphora-candidate-contract/fixtures/formulation_candidate.json --headless
 ```
-
-Library API:
-
-```python
-from amphora_tolerance_robustness.score import score
-```
-
 The score envelope includes `metrics.simulation_benchmark`, which aggregates
 the registered five-seed, 200-draw tolerance suite. It is explicitly an
 `UNSEEN_PERTURBATION_SIMULATION`, not unseen experimental-data validation.
 Exact pass counts, normalized gate margins, and the nominal baseline are in
 `metrics.simulation_benchmark`; the bounded universe harness is
-Use `rtk cargo test --workspace --locked` for the native replacement.
+Use `cargo test --workspace --locked` for the native replacement.

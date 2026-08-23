@@ -45,35 +45,39 @@ Factor columns are D (decision value), G (evidence gap), A (authority-risk reduc
 
 ## Assessment basis
 
-- `amphora-public-corrosion-benchmark` — whether public corrosion data can support a reproducible external benchmark; current locked independent promotion evidence is absent or incomplete.
-- `amphora-cure-potlife-gate` — whether a formulation should proceed to multi-temperature CRO cure testing; current locked independent promotion evidence is absent or incomplete.
-- `amphora-viscosity-score` — whether rheology and sag should be measured for a formulation; current locked independent promotion evidence is absent or incomplete.
-- `amphora-barrier-corrosion-score` — which barrier hypotheses merit blinded panel testing; current locked independent promotion evidence is absent or incomplete.
-- `amphora-molecule-generator` — which valid, diverse molecular proposals enter expert review; current locked independent promotion evidence is absent or incomplete.
-- `amphora-molecule-role-ranker` — whether a defined molecule fits an explicitly declared resin or hardener role; current locked independent promotion evidence is absent or incomplete.
-- `amphora-molecule-novelty` — whether a molecule expands the frozen corpus design space; current locked independent promotion evidence is absent or incomplete.
-- `amphora-solvency-score` — which solvent blends merit compatibility measurement; current locked independent promotion evidence is absent or incomplete.
-- `amphora-process-qc-twin` — which batches require review without granting release authority; current locked independent promotion evidence is absent or incomplete.
-- `amphora-tolerance-robustness` — whether declared input tolerances preserve all hard formulation gates; current locked independent promotion evidence is absent or incomplete.
-- `amphora-design-rule-score` — which within-study directional hypotheses deserve experiments; current locked independent promotion evidence is absent or incomplete.
-- `amphora-molecule-property` — whether exact molecular properties are computable within a defined single-component domain; current locked independent promotion evidence is absent or incomplete.
-- `amphora-formulation-universe` — whether a declared formulation search space has been completely accounted; current locked independent promotion evidence is absent or incomplete.
-- `amphora-ingredient-library` — whether all positive-mass ingredients have cited constants for the requested calculation; current locked independent promotion evidence is absent or incomplete.
-- `amphora-envelope-gates` — whether deterministic formulation margins satisfy the declared screening envelope; current locked independent promotion evidence is absent or incomplete.
-- `amphora-formulation-arithmetic` — whether a declared two-part recipe has finite internally consistent formulation arithmetic; current locked independent promotion evidence is absent or incomplete.
-- `amphora-molecule-design-gate` — whether a defined molecule passes structural applicability rules; current locked independent promotion evidence is absent or incomplete.
-- `amphora-candidate-contract` — whether candidate and score messages are canonical and safe to dispatch; current locked independent promotion evidence is absent or incomplete.
-- `amphora-model-card-authority` — whether a model receipt may be used at a requested R&D authority level; current locked independent promotion evidence is absent or incomplete.
-- `amphora-optimizer-orchestrator` — which centrally authorized objectives and constraints may reach Pareto selection; current locked independent promotion evidence is absent or incomplete.
-- `amphora-evidence-intake-validator` — whether observed evidence bytes may enter the accepted evidence store; current locked independent promotion evidence is absent or incomplete.
-- `amphora-run-provenance` — whether a complete validated run can be replayed from hash-bound inputs; current locked independent promotion evidence is absent or incomplete.
-- `amphora-redteam-audit` — whether artifacts preserve contracts, claim locks, and prohibited-claim boundaries; current locked independent promotion evidence is absent or incomplete.
-- `amphora-source-ledger` — whether a scientific constant has a current traceable source and permitted use; current locked independent promotion evidence is absent or incomplete.
-- `amphora-known-answer-benchmarks` — whether deterministic services still match locked positive and negative controls; current locked independent promotion evidence is absent or incomplete.
-- `amphora-sourceability-ehs` — whether candidate-bound public evidence justifies further supplier diligence; current locked independent promotion evidence is absent or incomplete.
-- `amphora-cro-protocol-packager` — whether a candidate-bound numeric recipe is complete enough to issue a CRO protocol; current locked independent promotion evidence is absent or incomplete.
-- `amphora-ip-fto-guard` — which technical patent categories require qualified counsel review; current locked independent promotion evidence is absent or incomplete.
-- `amphora-report-packager` — whether validated envelopes can be packaged without stripping locks or escalating claims; current locked independent promotion evidence is absent or incomplete.
+Every module below is assessed on the same basis: **current locked independent
+promotion evidence is absent or incomplete.** What differs is the decision each
+module exists to inform.
+
+- `amphora-public-corrosion-benchmark` — whether public corrosion data can support a reproducible external benchmark
+- `amphora-cure-potlife-gate` — whether a formulation should proceed to multi-temperature CRO cure testing
+- `amphora-viscosity-score` — whether rheology and sag should be measured for a formulation
+- `amphora-barrier-corrosion-score` — which barrier hypotheses merit blinded panel testing
+- `amphora-molecule-generator` — which valid, diverse molecular proposals enter expert review
+- `amphora-molecule-role-ranker` — whether a defined molecule fits an explicitly declared resin or hardener role
+- `amphora-molecule-novelty` — whether a molecule expands the frozen corpus design space
+- `amphora-solvency-score` — which solvent blends merit compatibility measurement
+- `amphora-process-qc-twin` — which batches require review without granting release authority
+- `amphora-tolerance-robustness` — whether declared input tolerances preserve all hard formulation gates
+- `amphora-design-rule-score` — which within-study directional hypotheses deserve experiments
+- `amphora-molecule-property` — whether exact molecular properties are computable within a defined single-component domain
+- `amphora-formulation-universe` — whether a declared formulation search space has been completely accounted
+- `amphora-ingredient-library` — whether all positive-mass ingredients have cited constants for the requested calculation
+- `amphora-envelope-gates` — whether deterministic formulation margins satisfy the declared screening envelope
+- `amphora-formulation-arithmetic` — whether a declared two-part recipe has finite internally consistent formulation arithmetic
+- `amphora-molecule-design-gate` — whether a defined molecule passes structural applicability rules
+- `amphora-candidate-contract` — whether candidate and score messages are canonical and safe to dispatch
+- `amphora-model-card-authority` — whether a model receipt may be used at a requested R&D authority level
+- `amphora-optimizer-orchestrator` — which centrally authorized objectives and constraints may reach Pareto selection
+- `amphora-evidence-intake-validator` — whether observed evidence bytes may enter the accepted evidence store
+- `amphora-run-provenance` — whether a complete validated run can be replayed from hash-bound inputs
+- `amphora-redteam-audit` — whether artifacts preserve contracts, claim locks, and prohibited-claim boundaries
+- `amphora-source-ledger` — whether a scientific constant has a current traceable source and permitted use
+- `amphora-known-answer-benchmarks` — whether deterministic services still match locked positive and negative controls
+- `amphora-sourceability-ehs` — whether candidate-bound public evidence justifies further supplier diligence
+- `amphora-cro-protocol-packager` — whether a candidate-bound numeric recipe is complete enough to issue a CRO protocol
+- `amphora-ip-fto-guard` — which technical patent categories require qualified counsel review
+- `amphora-report-packager` — whether validated envelopes can be packaged without stripping locks or escalating claims
 
 ## Delivery waves
 
@@ -99,6 +103,7 @@ Prerequisite waves: none. Phase claim: `NO_AUTOMATIC_PROMOTION`.
 - `amphora-cro-protocol-packager` — Finite nonnegative unit-normalized recipe packets bound to candidate and formula hashes. Prerequisites: `amphora-candidate-contract`, `amphora-formulation-arithmetic`.
 - `amphora-ip-fto-guard` — Technical landscape output that always states FTO was not performed. Prerequisites: `amphora-evidence-intake-validator`.
 - `amphora-report-packager` — Validated-envelope packaging that preserves authority and every claim lock. Prerequisites: `amphora-run-provenance`, `amphora-redteam-audit`.
+
 ### Wave 1 — Data foundation
 
 Prerequisite waves: Wave 0. Phase claim: `NO_AUTOMATIC_PROMOTION`.
@@ -114,48 +119,69 @@ Prerequisite waves: Wave 0. Phase claim: `NO_AUTOMATIC_PROMOTION`.
 - `amphora-solvency-score` — Measured blend schema with group-held-out identities and calibration fields. Prerequisites: `amphora-evidence-intake-validator`, `amphora-source-ledger`.
 - `amphora-process-qc-twin` — Candidate/batch-bound prospective pilot schema and seeded-control plan without release authority. Prerequisites: `amphora-evidence-intake-validator`, `amphora-run-provenance`.
 - `amphora-design-rule-score` — Eligible literature-series manifest with study-held-out split and named baseline. Prerequisites: `amphora-evidence-intake-validator`, `amphora-source-ledger`.
+
 ### Wave 2 — Human parity
 
 Prerequisite waves: Wave 0, Wave 1. Phase claim: `PHASE_1_ONLY_IF_LOCKED_GATES_PASS`.
 
-- `amphora-public-corrosion-benchmark` — Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion. Prerequisites: `amphora-public-corrosion-benchmark`, `amphora-known-answer-benchmarks`.
-- `amphora-cure-potlife-gate` — Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion. Prerequisites: `amphora-cure-potlife-gate`, `amphora-known-answer-benchmarks`.
-- `amphora-viscosity-score` — Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion. Prerequisites: `amphora-viscosity-score`, `amphora-known-answer-benchmarks`.
-- `amphora-barrier-corrosion-score` — Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion. Prerequisites: `amphora-barrier-corrosion-score`, `amphora-known-answer-benchmarks`.
-- `amphora-molecule-generator` — Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion. Prerequisites: `amphora-molecule-generator`, `amphora-known-answer-benchmarks`.
-- `amphora-molecule-role-ranker` — Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion. Prerequisites: `amphora-molecule-role-ranker`, `amphora-known-answer-benchmarks`.
-- `amphora-molecule-novelty` — Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion. Prerequisites: `amphora-molecule-novelty`, `amphora-known-answer-benchmarks`.
-- `amphora-solvency-score` — Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion. Prerequisites: `amphora-solvency-score`, `amphora-known-answer-benchmarks`.
-- `amphora-process-qc-twin` — Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion. Prerequisites: `amphora-process-qc-twin`, `amphora-known-answer-benchmarks`.
-- `amphora-tolerance-robustness` — Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion. Prerequisites: `amphora-tolerance-robustness`, `amphora-known-answer-benchmarks`.
-- `amphora-design-rule-score` — Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion. Prerequisites: `amphora-design-rule-score`, `amphora-known-answer-benchmarks`.
-- `amphora-molecule-property` — Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion. Prerequisites: `amphora-molecule-property`, `amphora-known-answer-benchmarks`.
-- `amphora-formulation-universe` — Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion. Prerequisites: `amphora-formulation-universe`, `amphora-known-answer-benchmarks`.
-- `amphora-ingredient-library` — Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion. Prerequisites: `amphora-ingredient-library`, `amphora-known-answer-benchmarks`.
-- `amphora-envelope-gates` — Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion. Prerequisites: `amphora-envelope-gates`, `amphora-known-answer-benchmarks`.
-- `amphora-formulation-arithmetic` — Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion. Prerequisites: `amphora-formulation-arithmetic`, `amphora-known-answer-benchmarks`.
-- `amphora-molecule-design-gate` — Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion. Prerequisites: `amphora-molecule-design-gate`, `amphora-known-answer-benchmarks`.
+Wave-wide obligation, identical for every module listed: Run the named group/time/source-safe locked benchmark, attach uncertainty, and issue an independent receipt without presumed promotion.
+
+Additional prerequisite beyond the module itself: `amphora-known-answer-benchmarks`.
+
+Modules:
+
+- `amphora-public-corrosion-benchmark`
+- `amphora-cure-potlife-gate`
+- `amphora-viscosity-score`
+- `amphora-barrier-corrosion-score`
+- `amphora-molecule-generator`
+- `amphora-molecule-role-ranker`
+- `amphora-molecule-novelty`
+- `amphora-solvency-score`
+- `amphora-process-qc-twin`
+- `amphora-tolerance-robustness`
+- `amphora-design-rule-score`
+- `amphora-molecule-property`
+- `amphora-formulation-universe`
+- `amphora-ingredient-library`
+- `amphora-envelope-gates`
+- `amphora-formulation-arithmetic`
+- `amphora-molecule-design-gate`
+
 ### Wave 3 — Closed-loop validation
 
 Prerequisite waves: Wave 0, Wave 1, Wave 2. Phase claim: `NO_AUTOMATIC_PROMOTION`.
 
-- `amphora-molecule-generator` — Compare solver- and expert-selected candidates under equal budgets; measure hit rate, regret, diversity, failures, time, and cost. Prerequisites: `amphora-molecule-generator`, `amphora-optimizer-orchestrator`, `amphora-cro-protocol-packager`, `amphora-run-provenance`.
-- `amphora-molecule-role-ranker` — Compare solver- and expert-selected candidates under equal budgets; measure hit rate, regret, diversity, failures, time, and cost. Prerequisites: `amphora-molecule-role-ranker`, `amphora-optimizer-orchestrator`, `amphora-cro-protocol-packager`, `amphora-run-provenance`.
-- `amphora-molecule-novelty` — Compare solver- and expert-selected candidates under equal budgets; measure hit rate, regret, diversity, failures, time, and cost. Prerequisites: `amphora-molecule-novelty`, `amphora-optimizer-orchestrator`, `amphora-cro-protocol-packager`, `amphora-run-provenance`.
-- `amphora-solvency-score` — Compare solver- and expert-selected candidates under equal budgets; measure hit rate, regret, diversity, failures, time, and cost. Prerequisites: `amphora-solvency-score`, `amphora-optimizer-orchestrator`, `amphora-cro-protocol-packager`, `amphora-run-provenance`.
-- `amphora-cure-potlife-gate` — Compare solver- and expert-selected candidates under equal budgets; measure hit rate, regret, diversity, failures, time, and cost. Prerequisites: `amphora-cure-potlife-gate`, `amphora-optimizer-orchestrator`, `amphora-cro-protocol-packager`, `amphora-run-provenance`.
-- `amphora-viscosity-score` — Compare solver- and expert-selected candidates under equal budgets; measure hit rate, regret, diversity, failures, time, and cost. Prerequisites: `amphora-viscosity-score`, `amphora-optimizer-orchestrator`, `amphora-cro-protocol-packager`, `amphora-run-provenance`.
-- `amphora-barrier-corrosion-score` — Compare solver- and expert-selected candidates under equal budgets; measure hit rate, regret, diversity, failures, time, and cost. Prerequisites: `amphora-barrier-corrosion-score`, `amphora-optimizer-orchestrator`, `amphora-cro-protocol-packager`, `amphora-run-provenance`.
-- `amphora-tolerance-robustness` — Compare solver- and expert-selected candidates under equal budgets; measure hit rate, regret, diversity, failures, time, and cost. Prerequisites: `amphora-tolerance-robustness`, `amphora-optimizer-orchestrator`, `amphora-cro-protocol-packager`, `amphora-run-provenance`.
-- `amphora-process-qc-twin` — Compare solver- and expert-selected candidates under equal budgets; measure hit rate, regret, diversity, failures, time, and cost. Prerequisites: `amphora-process-qc-twin`, `amphora-optimizer-orchestrator`, `amphora-cro-protocol-packager`, `amphora-run-provenance`.
+Wave-wide obligation, identical for every module listed: Compare solver- and expert-selected candidates under equal budgets; measure hit rate, regret, diversity, failures, time, and cost.
+
+Additional prerequisite beyond the module itself: `amphora-optimizer-orchestrator`, `amphora-cro-protocol-packager`, `amphora-run-provenance`.
+
+Modules:
+
+- `amphora-molecule-generator`
+- `amphora-molecule-role-ranker`
+- `amphora-molecule-novelty`
+- `amphora-solvency-score`
+- `amphora-cure-potlife-gate`
+- `amphora-viscosity-score`
+- `amphora-barrier-corrosion-score`
+- `amphora-tolerance-robustness`
+- `amphora-process-qc-twin`
+
 ### Wave 4 — Defensible IP
 
 Prerequisite waves: Wave 0, Wave 1, Wave 2, Wave 3. Phase claim: `PHASE_2_ONLY_IF_ALL_REPLICATION_AND_IP_GATES_PASS`.
 
-- `amphora-public-corrosion-benchmark` — Independently repeat prospective superiority, freeze owned provenance and ablations, and document patent-versus-trade-secret review; product, procurement, release, and legal authority remain excluded. Prerequisites: `amphora-public-corrosion-benchmark`, `amphora-evidence-intake-validator`, `amphora-run-provenance`, `amphora-ip-fto-guard`.
-- `amphora-cure-potlife-gate` — Independently repeat prospective superiority, freeze owned provenance and ablations, and document patent-versus-trade-secret review; product, procurement, release, and legal authority remain excluded. Prerequisites: `amphora-cure-potlife-gate`, `amphora-evidence-intake-validator`, `amphora-run-provenance`, `amphora-ip-fto-guard`.
-- `amphora-viscosity-score` — Independently repeat prospective superiority, freeze owned provenance and ablations, and document patent-versus-trade-secret review; product, procurement, release, and legal authority remain excluded. Prerequisites: `amphora-viscosity-score`, `amphora-evidence-intake-validator`, `amphora-run-provenance`, `amphora-ip-fto-guard`.
-- `amphora-barrier-corrosion-score` — Independently repeat prospective superiority, freeze owned provenance and ablations, and document patent-versus-trade-secret review; product, procurement, release, and legal authority remain excluded. Prerequisites: `amphora-barrier-corrosion-score`, `amphora-evidence-intake-validator`, `amphora-run-provenance`, `amphora-ip-fto-guard`.
-- `amphora-molecule-generator` — Independently repeat prospective superiority, freeze owned provenance and ablations, and document patent-versus-trade-secret review; product, procurement, release, and legal authority remain excluded. Prerequisites: `amphora-molecule-generator`, `amphora-evidence-intake-validator`, `amphora-run-provenance`, `amphora-ip-fto-guard`.
-- `amphora-solvency-score` — Independently repeat prospective superiority, freeze owned provenance and ablations, and document patent-versus-trade-secret review; product, procurement, release, and legal authority remain excluded. Prerequisites: `amphora-solvency-score`, `amphora-evidence-intake-validator`, `amphora-run-provenance`, `amphora-ip-fto-guard`.
-- `amphora-process-qc-twin` — Independently repeat prospective superiority, freeze owned provenance and ablations, and document patent-versus-trade-secret review; product, procurement, release, and legal authority remain excluded. Prerequisites: `amphora-process-qc-twin`, `amphora-evidence-intake-validator`, `amphora-run-provenance`, `amphora-ip-fto-guard`.
+Wave-wide obligation, identical for every module listed: Independently repeat prospective superiority, freeze owned provenance and ablations, and document patent-versus-trade-secret review; product, procurement, release, and legal authority remain excluded.
+
+Additional prerequisite beyond the module itself: `amphora-evidence-intake-validator`, `amphora-run-provenance`, `amphora-ip-fto-guard`.
+
+Modules:
+
+- `amphora-public-corrosion-benchmark`
+- `amphora-cure-potlife-gate`
+- `amphora-viscosity-score`
+- `amphora-barrier-corrosion-score`
+- `amphora-molecule-generator`
+- `amphora-solvency-score`
+- `amphora-process-qc-twin`

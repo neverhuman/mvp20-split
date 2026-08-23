@@ -2,14 +2,10 @@
 
 Build ingredient/property libraries from cited facts only.
 
-CLI:
+CLI (from the repository root; requires the omitted datasets — see
+[`../BUILD.md`](../BUILD.md)):
 
 ```bash
-rtk cargo run --release -- inspect --candidate candidate.json --headless
-```
-
-Library API:
-
-```python
-from amphora_ingredient_library.score import score
+cargo run --release -- inspect \
+  --candidate amphora-candidate-contract/fixtures/formulation_candidate.json --headless
 ```

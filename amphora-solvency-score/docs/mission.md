@@ -12,11 +12,11 @@ It does not establish product qualification, batch release, procurement approval
 
 ## Honest current state
 
-The live checked implementation is native Rust at `amphora-solvency-score/src/lib.rs` with SHA-256 `4bc56243fb839b71024fd9e3c4a5605c144c41881a93ffcc1d9691597a4ff675`. Runtime registration is owned by `amphora-engine/src/lib.rs` and is checked against `module-manifest.json`. Retired Python implementation records have diagnostic provenance only and are not live authority.
+The live checked implementation is native Rust at `amphora-solvency-score/src/lib.rs` with SHA-256 `fbcc9a97112967d11aa29d24e0f995b07f6ba13bba136dd9bf1cb67d12f19d21`. Runtime registration is owned by `amphora-engine/src/lib.rs` and is checked against `module-manifest.json`. Retired Python implementation records have diagnostic provenance only and are not live authority.
 
 Focused checked test evidence:
 
-- `amphora-solvency-score/src/lib.rs` — SHA-256 `4bc56243fb839b71024fd9e3c4a5605c144c41881a93ffcc1d9691597a4ff675`
+- `amphora-solvency-score/src/lib.rs` — SHA-256 `fbcc9a97112967d11aa29d24e0f995b07f6ba13bba136dd9bf1cb67d12f19d21`
 
 Per the authoritative front-matter (FOUNDER RULING 2026-08-03: front-matter is authoritative), the current phase is **Phase 0** (`phase: PHASE_0`), scientific readiness is `LOCKED_INTERNAL`, and operational readiness is `READY`. Execution and passing unit tests do not establish human parity. No readiness percentage is asserted.
 
@@ -621,7 +621,7 @@ Primary KPI: **group-held-out AUROC** at `metrics.solvency_red`. Direction and u
 - Phase 1 — Human parity: the locked independent evaluation beats or matches the best reproducible named baseline at the stated target with uncertainty.
 - Phase 2 — Defensible IP: prospective superiority repeats independently, owned provenance and ablations freeze, and patent-versus-trade-secret review is documented. Counsel separately determines FTO.
 
-Focused acceptance command: `rtk cargo test --workspace --locked`. The native demo and replay commands in `AMPHORA_RUST.md` are the portfolio acceptance path.
+Focused acceptance command: `cargo test --workspace --locked`. The native demo and replay commands in `AMPHORA_RUST.md` are the portfolio acceptance path.
 
 External dependency or delay:
 
@@ -633,4 +633,4 @@ Estimated effort is represented by the checked-in 0–5 priority factors, not a 
 
 Regression coverage must exercise malformed chemistry; mixtures, fragments, and polymers; unsupported formats; unit ambiguity; zero-mass ingredients; NaN and Infinity; out-of-domain inputs; group/source/time leakage; mutated sources; computed-as-measured records; spoofed identity; authority escalation; stripped or unknown claim locks; fixed-seed replay drift; and legal, regulatory, supplier, procurement, qualification, or release overclaim. Every such case must fail closed or remain an explicit evidence gap.
 
-Module-focused checked fixture: `amphora-solvency-score/src/lib.rs` via `rtk cargo test --workspace --locked`. Scenario: Verify critical Flory-Huggins behavior, permutation invariance, conservation, and strict unknown-field rejection.
+Module-focused checked fixture: `amphora-solvency-score/src/lib.rs` via `cargo test --workspace --locked`. Scenario: Verify critical Flory-Huggins behavior, permutation invariance, conservation, and strict unknown-field rejection.

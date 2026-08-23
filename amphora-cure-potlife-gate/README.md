@@ -8,10 +8,10 @@ This module now owns two deliberately separate tracks:
 CLI:
 
 ```bash
-rtk cargo run --release --locked -- data acquire --module amphora-cure-potlife-gate
-rtk cargo run --release --locked -- data build --module amphora-cure-potlife-gate
-rtk cargo run --release --locked -- benchmark lock --module amphora-cure-potlife-gate
-rtk cargo run --release --locked -- benchmark run --locked --module amphora-cure-potlife-gate
+cargo run --release --locked -- data acquire --module amphora-cure-potlife-gate
+cargo run --release --locked -- data build --module amphora-cure-potlife-gate
+cargo run --release --locked -- benchmark lock --module amphora-cure-potlife-gate
+cargo run --release --locked -- benchmark run --locked --module amphora-cure-potlife-gate
 ```
 
 Gel time, pot life, dry-hard time, through-cure, and DSC conversion are distinct
@@ -37,23 +37,23 @@ certified mapping; otherwise only a locked KU threshold is reported.
 The workflow is intentionally fail-closed:
 
 ```bash
-rtk cargo run --locked -- pot-life preflight \
+cargo run --locked -- pot-life preflight \
   --kind scale-qualification \
   --input scale-qualification.json
 
-rtk cargo run --locked -- pot-life protocol \
+cargo run --locked -- pot-life protocol \
   --qualification scale-qualification.json \
   --source-ledger amphora-cure-potlife-gate/reference/pot-life/source-landscape.v1.json \
   --generated-on YYYY-MM-DD \
   --mixing-method LOCKED_METHOD
 
-rtk cargo run --locked -- pot-life ingest --run owned-run.json
+cargo run --locked -- pot-life ingest --run owned-run.json
 
-rtk cargo run --locked -- pot-life lock \
+cargo run --locked -- pot-life lock \
   --protocol protocol.json \
   --runs-dir .amphora/pot-life/runs
 
-rtk cargo run --locked -- pot-life evaluate \
+cargo run --locked -- pot-life evaluate \
   --lock benchmark-lock.json \
   --runs-dir .amphora/pot-life/runs \
   --source-ledger amphora-cure-potlife-gate/reference/pot-life/source-landscape.v1.json \

@@ -68,11 +68,11 @@ mutable bootstrap files, deploys the guard and policy to xbabe2, installs all
 three cron entries disabled, and mechanically protects the controller tree.
 It never overwrites existing mutable campaign or queue state.
 
-For a reviewed fast-forward update, first pause and drain, temporarily restore
-owner write permission to the controller tree, fetch with the read-only key,
-verify the intended commit, use `git merge --ff-only`, rerun tests and manifest
-verification, then run `install --apply` to reprotect it. Never reset the
-checkout or force-update it.
+For a reviewed fast-forward update: pause and drain, restore owner write permission
+with `bin/amphora unprotect --apply`, fetch with the read-only key, verify the
+intended commit, use `git merge --ff-only`, rerun tests and manifest verification,
+then `bin/amphora protect --apply` (or `install --apply`) to reprotect it. Never
+reset the checkout or force-update it.
 
 ## State restoration
 

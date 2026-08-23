@@ -1,0 +1,7 @@
+# Amphora-managed entries only, extracted from the live xbabe1 crontab.
+# Captured 2026-08-23T10:35:37Z. Unrelated entries on the host are
+# deliberately not reproduced here; they were never modified (record.json:
+# unrelated_lines_changed = 0). Both lines are DISABLED.
+#
+# AMPHORA_MANAGED_DISABLED AMPHORA-HANDOFF-20260823T025604Z-CODEX-7F3A92 0 * * * * /home/ubuntu/mvp20-split/ops/amphora-controller/claude-hourly-loop.sh
+# AMPHORA_MANAGED_DISABLED AMPHORA-HANDOFF-20260823T025604Z-CODEX-7F3A92 */10 * * * * /home/ubuntu/mvp20-split/ops/amphora-controller/mirror-log.sh >/dev/null 2>&1

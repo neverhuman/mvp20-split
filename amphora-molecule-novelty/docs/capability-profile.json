@@ -68,13 +68,13 @@
     "external_dependencies": [
       "Frozen owned comparison corpus plus patent and synthesis review"
     ],
-    "focused_acceptance_command": "rtk cargo test --workspace --locked",
+    "focused_acceptance_command": "cargo test --workspace --locked",
     "implementation": {
       "path": "amphora-molecule-capabilities/src/lib.rs",
-      "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861",
+      "sha256": "258043a42c015587600da417a50170928b57f4f2eb2a0bfcee9b0ac14ada750c",
       "version": "0.1.0-rust",
       "version_source_path": "amphora-molecule-capabilities/Cargo.toml",
-      "version_source_sha256": "d07286abf1e2853d73f996f57c784310c801e46872e68e9f8c79ca95cba2e9c6"
+      "version_source_sha256": "7458e4ed581f9296efdf7b27a39f707e1974c642fb3768c8ab18cfadc04a5416"
     },
     "known_contradictions": [
       "Corpus distance is not patent novelty, freedom to operate, synthesis feasibility, or performance evidence."
@@ -99,12 +99,12 @@
       },
       "adapter_registered": true,
       "registry_path": "amphora-engine/src/lib.rs",
-      "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
     },
     "tests": [
       {
         "path": "amphora-molecule-capabilities/src/lib.rs",
-        "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861"
+        "sha256": "258043a42c015587600da417a50170928b57f4f2eb2a0bfcee9b0ac14ada750c"
       }
     ]
   },

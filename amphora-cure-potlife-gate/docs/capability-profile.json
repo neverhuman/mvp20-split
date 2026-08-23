@@ -213,13 +213,13 @@
       "Genuinely external complete gel-time rows and multi-temperature CRO batches",
       "Thirty-six independently mixed, owned coating pot-life runs plus packet-bound independent review"
     ],
-    "focused_acceptance_command": "rtk cargo test --workspace --locked",
+    "focused_acceptance_command": "cargo test --workspace --locked",
     "implementation": {
       "path": "amphora-cure-potlife-gate/src/lib.rs",
       "sha256": "1a1737339b903705a0af19e28277137c3476ef4ff5d145125996f2a3d0e13939",
       "version": "0.1.0-rust",
       "version_source_path": "amphora-cure-potlife-gate/Cargo.toml",
-      "version_source_sha256": "c3ff103a1edc87ad8b17058607bcb4a5c28ac375d2e0c716ff94d3e56277a150"
+      "version_source_sha256": "978eae1914d6921c73338ac15c363a42248bbcc7982d8470779bd43ca6168c3b"
     },
     "known_contradictions": [
       "The checked gel-time lift audit is exploratory and reports no statistically established lift or genuinely external locked validation set.",
@@ -245,7 +245,7 @@
       },
       "adapter_registered": true,
       "registry_path": "amphora-engine/src/lib.rs",
-      "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
     },
     "tests": [
       {
@@ -274,7 +274,7 @@
       },
       {
         "path": "amphora-cure-potlife-gate/src/tests.rs",
-        "sha256": "764ae2faac065e8b2f99435522749b9de812915edf93aa14954d1e1169bab69a"
+        "sha256": "0876273332697c7d09ae7e10c9ccd3775d06ef9a50296c8f5d81f665eaa7ce1d"
       }
     ]
   },

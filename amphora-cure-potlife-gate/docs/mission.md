@@ -22,7 +22,7 @@ Focused checked test evidence:
 - `amphora-cure-potlife-gate/src/physics.rs` — SHA-256 `01d9f3365aa702d0b40eb3ab4819abe0fe923346543f8fe054c4e5d84832068e`
 - `amphora-cure-potlife-gate/src/preflight.rs` — SHA-256 `bfb7d7214a73107276ee3ab63ea2cfe1e367f291d3bb03c99da4d60acbd0fad7`
 - `amphora-cure-potlife-gate/src/protocol.rs` — SHA-256 `7dea16b049e1b514296b561225100a7d124883ae4eab2eda9b66ae8cbdfabe92`
-- `amphora-cure-potlife-gate/src/tests.rs` — SHA-256 `764ae2faac065e8b2f99435522749b9de812915edf93aa14954d1e1169bab69a`
+- `amphora-cure-potlife-gate/src/tests.rs` — SHA-256 `0876273332697c7d09ae7e10c9ccd3775d06ef9a50296c8f5d81f665eaa7ce1d`
 
 Operational state is `BLOCKED`; scientific state is `UNVALIDATED`, so the current phase is **Pre-Phase 0**. Execution and passing unit tests do not establish human parity. No readiness percentage is asserted.
 
@@ -215,7 +215,7 @@ Primary KPI: **within-1.5x rate** at `metrics.unseen_benchmark`. Direction and u
 - Phase 1 — Human parity: the locked independent evaluation beats or matches the best reproducible named baseline at the stated target with uncertainty.
 - Phase 2 — Defensible IP: prospective superiority repeats independently, owned provenance and ablations freeze, and patent-versus-trade-secret review is documented. Counsel separately determines FTO.
 
-Focused acceptance command: `rtk cargo test --workspace --locked`. The native demo and replay commands in `AMPHORA_RUST.md` are the portfolio acceptance path.
+Focused acceptance command: `cargo test --workspace --locked`. The native demo and replay commands in `AMPHORA_RUST.md` are the portfolio acceptance path.
 
 External dependency or delay:
 
@@ -228,4 +228,4 @@ Estimated effort is represented by the checked-in 0–5 priority factors, not a 
 
 Regression coverage must exercise malformed chemistry; mixtures, fragments, and polymers; unsupported formats; unit ambiguity; zero-mass ingredients; NaN and Infinity; out-of-domain inputs; group/source/time leakage; mutated sources; computed-as-measured records; spoofed identity; authority escalation; stripped or unknown claim locks; fixed-seed replay drift; and legal, regulatory, supplier, procurement, qualification, or release overclaim. Every such case must fail closed or remain an explicit evidence gap.
 
-Module-focused checked fixture: `amphora-cure-potlife-gate/src/lib.rs` via `rtk cargo test --workspace --locked`. Scenario: Strictly reject unknown fields and malformed hashes across the coating pot-life contract preflight.
+Module-focused checked fixture: `amphora-cure-potlife-gate/src/lib.rs` via `cargo test --workspace --locked`. Scenario: Strictly reject unknown fields and malformed hashes across the coating pot-life contract preflight.

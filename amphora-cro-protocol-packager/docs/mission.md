@@ -12,19 +12,19 @@ It does not establish product qualification, batch release, procurement approval
 
 ## Honest current state
 
-The live checked implementation is native Rust at `amphora-assurance-capabilities/src/lib.rs` with SHA-256 `ae46b34766f092ddd332fa617a4348c3fda5e0c2b014f54a1662004c73ae7b5d`. Runtime registration is owned by `amphora-engine/src/lib.rs` and is checked against `module-manifest.json`. Retired Python implementation records have diagnostic provenance only and are not live authority.
+The live checked implementation is native Rust at `amphora-assurance-capabilities/src/lib.rs` with SHA-256 `0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d`. Runtime registration is owned by `amphora-engine/src/lib.rs` and is checked against `module-manifest.json`. Retired Python implementation records have diagnostic provenance only and are not live authority.
 
 Focused checked test evidence:
 
-- `amphora-assurance-capabilities/src/lib.rs` — SHA-256 `ae46b34766f092ddd332fa617a4348c3fda5e0c2b014f54a1662004c73ae7b5d`
-- `amphora-assurance-capabilities/src/diagnostics.rs` — SHA-256 `bab349d7039ab3d323c3313f3edc6680932278842d6e0512d9d929dbccaf987a`
+- `amphora-assurance-capabilities/src/lib.rs` — SHA-256 `0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d`
+- `amphora-assurance-capabilities/src/diagnostics.rs` — SHA-256 `4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89`
 
 Operational state is `READY`; scientific state is `UNVALIDATED`, so the current phase is **Pre-Phase 0**. Execution and passing unit tests do not establish human parity. No readiness percentage is asserted.
 
 ### Checked datasets and artifacts
 
 - `output_artifact` `amphora-cro-protocol-packager/reference/mvp20/out/capture_template.json` — SHA-256 `a5c7f81c256a86b2dcae14c473ace58d16e7993ac95ae056ee7c0e2a8f7c2881` (updated 2026-08-11, CF-TEST fire 2/2 repair: gate method fixes + gates_lock + power-analysis wiring, superseding the stale `dc0b3bb4...` pin already flagged by CF-TEST fire 1); rights `UNRESOLVED` (No checked-in license or ownership receipt is bound to this local file by the inventory.)
-- `output_artifact` `amphora-cro-protocol-packager/reference/mvp20/out/cro_protocol.md` — SHA-256 `4e001dc82eac042fa90fd1164faece447e40c7ef3f0f29649dd0322e12faa0d9`; rights `UNRESOLVED` (No checked-in license or ownership receipt is bound to this local file by the inventory.)
+- `output_artifact` `amphora-cro-protocol-packager/reference/mvp20/out/cro_protocol.md` — SHA-256 `84d6e2803f1627159b2c9a8353dee095a31ca0b99a6fdd196316b89ad858038a` (updated 2026-08-11, CF-RISK fire 2/2 repair: added the "Known failure modes and application limits" section, superseding the stale `4e001dc8...` pin); rights `UNRESOLVED` (No checked-in license or ownership receipt is bound to this local file by the inventory.)
 - `output_artifact` `amphora-cro-protocol-packager/reference/mvp20/out/falsification_protocol.json` — SHA-256 `79040c136af5ecfad26d81d64790416a79bd1c1ce1eb2cb9f1912b2b0a4e8658` (updated 2026-08-11, CF-TEST fire 2/2 repair: `uncertainty_status` restated honestly, `locked_rank_hash` unchanged); rights `UNRESOLVED` (No checked-in license or ownership receipt is bound to this local file by the inventory.)
 - `output_artifact` `amphora-cro-protocol-packager/reference/mvp20/out/power_analysis.json` — SHA-256 `36dfd0f7ec383c7cc31c77a3fad54d10bcba1d99f156575065d27814d7eaf9eb` (new 2026-08-11, CF-TEST fire 2/2 repair: a priori power/CI analysis, sigma assumptions cited from Floyd et al. 2009 Prog. Org. Coat. 66(1):8-34, doi:10.1016/j.porgcoat.2009.04.009, formula from Cohen 1988); rights `UNRESOLVED` (internally authored from a cited published finding plus a published statistical formula; no dataset rights question applies to the authored file itself, but no rights receipt is bound to it either.)
 
@@ -132,7 +132,7 @@ Primary KPI: **packet completeness** at `gates.protocol_packet_complete`. Direct
 - Phase 1 — Human parity: the locked independent evaluation beats or matches the best reproducible named baseline at the stated target with uncertainty.
 - Phase 2 — Defensible IP: prospective superiority repeats independently, owned provenance and ablations freeze, and patent-versus-trade-secret review is documented. Counsel separately determines FTO.
 
-Focused acceptance command: `rtk cargo test --workspace --locked`. The native demo and replay commands in `AMPHORA_RUST.md` are the portfolio acceptance path.
+Focused acceptance command: `cargo test --workspace --locked`. The native demo and replay commands in `AMPHORA_RUST.md` are the portfolio acceptance path.
 
 External dependency or delay:
 
@@ -144,4 +144,4 @@ Estimated effort is represented by the checked-in 0–5 priority factors, not a 
 
 Regression coverage must exercise malformed chemistry; mixtures, fragments, and polymers; unsupported formats; unit ambiguity; zero-mass ingredients; NaN and Infinity; out-of-domain inputs; group/source/time leakage; mutated sources; computed-as-measured records; spoofed identity; authority escalation; stripped or unknown claim locks; fixed-seed replay drift; and legal, regulatory, supplier, procurement, qualification, or release overclaim. Every such case must fail closed or remain an explicit evidence gap.
 
-Module-focused checked fixture: `amphora-assurance-capabilities/src/lib.rs` via `rtk cargo test --workspace --locked`. Scenario: Reject negative/non-finite recipe masses and candidate or formula hash mismatch.
+Module-focused checked fixture: `amphora-assurance-capabilities/src/lib.rs` via `cargo test --workspace --locked`. Scenario: Reject negative/non-finite recipe masses and candidate or formula hash mismatch.

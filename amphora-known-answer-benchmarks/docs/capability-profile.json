@@ -184,13 +184,13 @@
     "external_dependencies": [
       "Independent reference calculations and controlled standard-method cases"
     ],
-    "focused_acceptance_command": "rtk cargo test --workspace --locked",
+    "focused_acceptance_command": "cargo test --workspace --locked",
     "implementation": {
       "path": "amphora-assurance-capabilities/src/lib.rs",
-      "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+      "sha256": "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d",
       "version": "0.1.0-rust",
       "version_source_path": "amphora-assurance-capabilities/Cargo.toml",
-      "version_source_sha256": "7cce6518cda6da3001daff0e6bfb53c99208748e3af9c4619a6576848fb744e8"
+      "version_source_sha256": "a365c06a0a83735d256fa4c5dabf5de5e2067e7b38ae787cc71d960f1b8bd3ea"
     },
     "known_contradictions": [
       "Known-answer recovery is limited sanity evidence and is not an independent performance benchmark or candidate validation."
@@ -208,12 +208,12 @@
       "adapter_policy": null,
       "adapter_registered": true,
       "registry_path": "amphora-engine/src/lib.rs",
-      "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
     },
     "tests": [
       {
         "path": "amphora-assurance-capabilities/src/lib.rs",
-        "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+        "sha256": "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d"
       }
     ]
   },

@@ -19,14 +19,10 @@ Specification limits remain separate from control limits. Optional explicit
 control limits are accepted only when their batch IDs, baseline hash, method,
 and recomputed values bind to the exact supplied baseline.
 
-CLI:
+CLI (from the repository root; requires the omitted datasets — see
+[`../BUILD.md`](../BUILD.md)):
 
 ```bash
-rtk cargo run --release -- inspect --candidate candidate.json --headless
-```
-
-Library API:
-
-```python
-from amphora_process_qc_twin.score import score
+cargo run --release -- inspect \
+  --candidate amphora-candidate-contract/fixtures/formulation_candidate.json --headless
 ```

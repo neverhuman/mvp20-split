@@ -8,10 +8,16 @@ Pareto-eligible objectives until their locked external gates pass.
 
 ```bash
 cargo run --release -- demo
-cargo run --release -- run --candidate candidate.json --headless --jsonl
+cargo run --release -- run \
+  --candidate amphora-candidate-contract/fixtures/formulation_candidate.json --headless --jsonl
 cargo run --release -- replay --verify
 cargo run -p xtask -- audit
 ```
+
+**The first three require the omitted datasets.** On a bare clone they fail immediately with
+`hashing …/feedback/v1/derived/build_manifest.json: No such file or directory` — restore
+`feedback/` first (`ops/restore-datasets.sh`, see [BUILD.md](BUILD.md)). `cargo test
+--workspace --locked` is the gate that runs green without them.
 
 Use `--population`, `--generations`, `--workers`, `--seed`, and
 `--objective-profile` to configure a run. Generation remains available for
@@ -19,14 +25,17 @@ workflow diagnostics, but without the pinned RDKit C++ boundary it preserves
 the structure and changes lineage only. The absence of chemistry normalization
 or locked evidence fails closed; it never creates a fallback scientific score.
 
-Build the exact native chemistry boundary from the release commit:
+Build the exact native chemistry boundary from the release commit. **`ops/rdkit/Dockerfile`
+is the canonical recipe** — it emits `RDKIT-LIBRARY-SHA256SUMS` and `build-flags.txt`, so a
+build is attestable. The shell script below is the no-Docker fallback and emits no hash
+manifest; see [BUILD.md](BUILD.md) for the full comparison:
 
 ```bash
-rtk bash tools/build-rdkit-2026.03.2.sh /absolute/install/prefix
+bash tools/build-rdkit-2026.03.2.sh /absolute/install/prefix
 export RDKIT_INCLUDE_DIR=/absolute/install/prefix/include/rdkit
 export RDKIT_LIB_DIR=/absolute/install/prefix/lib
 export BOOST_INCLUDE_DIR=/absolute/install/prefix/include
-rtk cargo test --workspace --locked --features rdkit
+cargo test --workspace --locked --features rdkit
 ```
 
 The builder checks out commit

@@ -2,18 +2,13 @@
 
 Evolution/AI multi-objective engine that consumes ScoreEnvelopes.
 
-CLI:
+CLI (from the repository root; requires the omitted datasets — see
+[`../BUILD.md`](../BUILD.md)):
 
 ```bash
-rtk cargo run --release -- inspect --candidate candidate.json --headless
+cargo run --release -- inspect \
+  --candidate amphora-candidate-contract/fixtures/formulation_candidate.json --headless
 ```
-
-Library API:
-
-```python
-from amphora_optimizer_orchestrator.score import score
-```
-
 Predictive `ScoreEnvelope` inputs remain constraint-only unless their compact
 model summary declares `solver_use: R&D_OBJECTIVE`, is `IN_DOMAIN`, and carries
 a valid central `R&D_RANKING_READY` authority receipt. Safety constraints may

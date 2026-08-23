@@ -6,6 +6,7 @@ import fcntl
 import hashlib
 import json
 import os
+import socket
 from pathlib import Path
 import re
 import shutil
@@ -22,6 +23,7 @@ DEFAULTS = {
     "AMPHORA_QUEUE_PATH": "/home/ubuntu/amphora-cron/data-acquisition-queue.jsonl",
     "AMPHORA_PROMPT_PATH": "/home/ubuntu/mvp20-split/ops/amphora-controller/claude-hourly-loop.prompt.txt",
     "AMPHORA_DIRECTIVE_REGISTRY": "/home/ubuntu/mvp20-split/ops/amphora-controller/directives/REGISTRY.json",
+    "AMPHORA_CONTROLLER_HOST": "xbabe1",
     "AMPHORA_TARGET_HOST": "xbabe2",
     "AMPHORA_TARGET_ROOT": "/home/ubuntu/amphora/build/mvp20-split",
     "AMPHORA_MODEL": "claude-sonnet-5",
@@ -155,11 +157,34 @@ def require_matching_stop(cfg, tag):
     return path
 
 
+def require_controller_host(cfg):
+    """Refuse an APPLIED host mutation anywhere but the controller host.
+
+    Dry runs are unaffected and can be previewed from any host.
+
+    install/pause/resume reach the target host over `ssh $AMPHORA_TARGET_HOST` to
+    write its crontab and deploy the guard. That alias is only guaranteed to mean
+    the real target when resolved from the controller host: an ~/.ssh/config entry
+    on another machine can silently point the same name somewhere else, in which
+    case these commands would rewrite an unrelated host's crontab. Fail closed.
+    """
+    expected = cfg["AMPHORA_CONTROLLER_HOST"]
+    actual = socket.gethostname().split(".")[0]
+    if actual != expected:
+        raise OperatorError(
+            "refusing to run on %r: this command mutates %s and %s over ssh and must run "
+            "on the controller host %r (from %s). Override only if you are certain the "
+            "ssh aliases resolve correctly here: AMPHORA_CONTROLLER_HOST=%s"
+            % (actual, expected, cfg["AMPHORA_TARGET_HOST"], expected,
+               cfg["AMPHORA_REPO_ROOT"], actual))
+
+
 def cmd_pause(args, cfg):
     path = stop_path(cfg)
     if not args.apply:
         print("DRY-RUN: would create %s with tag %s, then disable exactly three jobs" % (path, args.tag))
         return 0
+    require_controller_host(cfg)
     path.parent.mkdir(parents=True, exist_ok=True)
     try:
         with path.open("x") as fh:
@@ -213,6 +238,7 @@ def cmd_resume(args, cfg):
     if not args.apply:
         print("DRY-RUN: would enable exactly three jobs and remove only %s" % path)
         return 0
+    require_controller_host(cfg)
     set_crons(cfg, True, args.tag, True)
     require_matching_stop(cfg, args.tag).unlink()
     print("resumed tag=%s; all three reviewed jobs enabled" % args.tag)
@@ -333,10 +359,51 @@ def protect_controller(controller):
     controller.chmod(0o555)
 
 
+def _controller_tree(cfg):
+    return Path(cfg["AMPHORA_CONTROLLER_ROOT"])
+
+
+def cmd_unprotect(args, cfg):
+    """Restore owner write permission so git can update the controller tree.
+
+    The deployed tree is mode 0555. Git updates a file by unlinking and recreating it
+    inside its directory, so a read-only directory makes `git pull`, `git stash pop`,
+    `git restore`, and `git clean` fail PART WAY THROUGH, leaving a half-applied
+    checkout rather than a clean refusal. Unprotect first, pull, then protect again.
+    """
+    root = _controller_tree(cfg)
+    if not root.is_dir():
+        raise OperatorError("controller root is absent: %s" % root)
+    if not args.apply:
+        print("DRY-RUN: would restore owner write permission under %s" % root)
+        return 0
+    for path in [root, *root.rglob("*")]:
+        mode = path.stat().st_mode & 0o7777
+        path.chmod(mode | 0o200)
+    print("unprotected %s -- re-protect with `amphora protect --apply` when done" % root)
+    return 0
+
+
+def cmd_protect(args, cfg):
+    """Re-apply the read-only deployment protection and verify the hash manifest."""
+    root = _controller_tree(cfg)
+    if not root.is_dir():
+        raise OperatorError("controller root is absent: %s" % root)
+    if not args.apply:
+        print("DRY-RUN: would remove write permission under %s" % root)
+        return 0
+    for path in sorted(root.rglob("*"), reverse=True):
+        path.chmod(path.stat().st_mode & ~0o222)
+    root.chmod(root.stat().st_mode & ~0o222)
+    print("protected %s" % root)
+    return 0
+
+
 def cmd_install(args, cfg):
     if not args.apply:
         print("DRY-RUN: install requires --apply; jobs would remain disabled")
         return 0
+    require_controller_host(cfg)
     if args.enable:
         if not args.tag:
             raise OperatorError("--enable requires --tag")
@@ -377,6 +444,12 @@ def parser():
     resume.add_argument("--tag", required=True, type=tag_arg)
     resume.add_argument("--apply", action="store_true")
     resume.set_defaults(func=cmd_resume)
+    unprotect = sub.add_parser("unprotect")
+    unprotect.add_argument("--apply", action="store_true")
+    unprotect.set_defaults(func=cmd_unprotect)
+    protect = sub.add_parser("protect")
+    protect.add_argument("--apply", action="store_true")
+    protect.set_defaults(func=cmd_protect)
     install = sub.add_parser("install")
     install.add_argument("--apply", action="store_true")
     install.add_argument("--enable", action="store_true")

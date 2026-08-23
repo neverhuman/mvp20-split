@@ -69,10 +69,10 @@
       "external_dependencies": [
         "At least 30 independent systems across three studies, ten untouched ST-19168 external systems, five panels per system/exposure, measured endpoints, rights clearance, and independent review"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-barrier-corrosion-score/src/lib.rs",
-        "sha256": "3459bd904c04f6d2ad16142e44f30cd88f753c146e77d8c5cbdd793064c49e27",
+        "sha256": "4773b6cb7012c3b85a5cf2d319d5e99ae4b8b2a41d2c0540f6a751bb0a6955fc",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-barrier-corrosion-score/Cargo.toml",
         "version_source_sha256": "cbf327e094f5e4973ef4551878a90be280fc10e3e161aaedfdaccecd9b68bcc0"
@@ -104,12 +104,12 @@
         },
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-barrier-corrosion-score/src/lib.rs",
-          "sha256": "3459bd904c04f6d2ad16142e44f30cd88f753c146e77d8c5cbdd793064c49e27"
+          "sha256": "4773b6cb7012c3b85a5cf2d319d5e99ae4b8b2a41d2c0540f6a751bb0a6955fc"
         }
       ]
     },
@@ -228,10 +228,10 @@
       "external_dependencies": [
         "Validated chemistry file parsers and locked cross-toolkit normalization vectors"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-engine/src/lib.rs",
-        "sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4",
+        "sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-engine/Cargo.toml",
         "version_source_sha256": "1c311119e37b53f1155cf75757bf7f5d6925eb3dd2a86d9a8ca3dd053e9a9c5c"
@@ -282,12 +282,12 @@
         "adapter_policy": null,
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-engine/src/lib.rs",
-          "sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+          "sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
         }
       ]
     },
@@ -302,7 +302,7 @@
             "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
             "status": "UNRESOLVED"
           },
-          "sha256": "dc0b3bb461446abb94a61ff624579c0d8eb059327a66998eaaea2261bc283e6d"
+          "sha256": "a5c7f81c256a86b2dcae14c473ace58d16e7993ac95ae056ee7c0e2a8f7c2881"
         },
         {
           "kind": "output_artifact",
@@ -312,7 +312,7 @@
             "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
             "status": "UNRESOLVED"
           },
-          "sha256": "4e001dc82eac042fa90fd1164faece447e40c7ef3f0f29649dd0322e12faa0d9"
+          "sha256": "84d6e2803f1627159b2c9a8353dee095a31ca0b99a6fdd196316b89ad858038a"
         },
         {
           "kind": "output_artifact",
@@ -322,7 +322,7 @@
             "gap": "No checked-in license or ownership receipt is bound to this local file by the inventory.",
             "status": "UNRESOLVED"
           },
-          "sha256": "b2fa8de6b50f8605dbe5a412af5d818e8792be864af7ea6e3ef10320959504b6"
+          "sha256": "79040c136af5ecfad26d81d64790416a79bd1c1ce1eb2cb9f1912b2b0a4e8658"
         },
         {
           "kind": "synthetic_fixture",
@@ -346,13 +346,13 @@
       "external_dependencies": [
         "CRO execution, signed method selection, and returned candidate-bound raw data"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-assurance-capabilities/src/lib.rs",
-        "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+        "sha256": "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-assurance-capabilities/Cargo.toml",
-        "version_source_sha256": "7cce6518cda6da3001daff0e6bfb53c99208748e3af9c4619a6576848fb744e8"
+        "version_source_sha256": "a365c06a0a83735d256fa4c5dabf5de5e2067e7b38ae787cc71d960f1b8bd3ea"
       },
       "known_contradictions": [
         "A candidate- and formula-bound packet is an execution specification only; no returned CRO measurements are checked in."
@@ -374,16 +374,16 @@
         "adapter_policy": null,
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-assurance-capabilities/src/lib.rs",
-          "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+          "sha256": "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d"
         },
         {
           "path": "amphora-assurance-capabilities/src/diagnostics.rs",
-          "sha256": "bab349d7039ab3d323c3313f3edc6680932278842d6e0512d9d929dbccaf987a"
+          "sha256": "4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89"
         }
       ]
     },
@@ -488,13 +488,13 @@
         "Genuinely external complete gel-time rows and multi-temperature CRO batches",
         "Thirty-six independently mixed, owned coating pot-life runs plus packet-bound independent review"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-cure-potlife-gate/src/lib.rs",
         "sha256": "1a1737339b903705a0af19e28277137c3476ef4ff5d145125996f2a3d0e13939",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-cure-potlife-gate/Cargo.toml",
-        "version_source_sha256": "c3ff103a1edc87ad8b17058607bcb4a5c28ac375d2e0c716ff94d3e56277a150"
+        "version_source_sha256": "978eae1914d6921c73338ac15c363a42248bbcc7982d8470779bd43ca6168c3b"
       },
       "known_contradictions": [
         "The checked gel-time lift audit is exploratory and reports no statistically established lift or genuinely external locked validation set.",
@@ -524,7 +524,7 @@
         },
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
@@ -553,7 +553,7 @@
         },
         {
           "path": "amphora-cure-potlife-gate/src/tests.rs",
-          "sha256": "764ae2faac065e8b2f99435522749b9de812915edf93aa14954d1e1169bab69a"
+          "sha256": "0876273332697c7d09ae7e10c9ccd3775d06ef9a50296c8f5d81f665eaa7ce1d"
         }
       ]
     },
@@ -612,13 +612,13 @@
       "external_dependencies": [
         "Eligible primary-study series with locked extraction and subgroup identifiers"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-formulation-capabilities/src/lib.rs",
-        "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0",
+        "sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-formulation-capabilities/Cargo.toml",
-        "version_source_sha256": "2a648084d6595365d6687c0c950171c8db27ac1020d2bc80f666afcd3d575d86"
+        "version_source_sha256": "033bc1dee934c8836078ec5e267835ec64a3b684c0966c281eaf9155db1cb9cf"
       },
       "known_contradictions": [
         "Within-study directional literature rules do not establish cross-family formulation performance or candidate qualification."
@@ -647,12 +647,12 @@
         },
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-formulation-capabilities/src/lib.rs",
-          "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0"
+          "sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047"
         }
       ]
     },
@@ -701,13 +701,13 @@
       "external_dependencies": [
         "Authoritative unit/envelope specifications and measured boundary-case controls"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-formulation-capabilities/src/lib.rs",
-        "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0",
+        "sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-formulation-capabilities/Cargo.toml",
-        "version_source_sha256": "2a648084d6595365d6687c0c950171c8db27ac1020d2bc80f666afcd3d575d86"
+        "version_source_sha256": "033bc1dee934c8836078ec5e267835ec64a3b684c0966c281eaf9155db1cb9cf"
       },
       "known_contradictions": [
         "Deterministic envelope consistency can reject arithmetic defects but cannot establish wet-lab fitness or performance."
@@ -729,16 +729,16 @@
         "adapter_policy": null,
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-formulation-capabilities/src/lib.rs",
-          "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0"
+          "sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047"
         },
         {
           "path": "amphora-assurance-capabilities/src/diagnostics.rs",
-          "sha256": "bab349d7039ab3d323c3313f3edc6680932278842d6e0512d9d929dbccaf987a"
+          "sha256": "4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89"
         }
       ]
     },
@@ -800,13 +800,13 @@
       "external_dependencies": [
         "Issuer-bound cryptographic or independently verifiable evidence receipts"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-assurance-capabilities/src/lib.rs",
-        "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+        "sha256": "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-assurance-capabilities/Cargo.toml",
-        "version_source_sha256": "7cce6518cda6da3001daff0e6bfb53c99208748e3af9c4619a6576848fb744e8"
+        "version_source_sha256": "a365c06a0a83735d256fa4c5dabf5de5e2067e7b38ae787cc71d960f1b8bd3ea"
       },
       "known_contradictions": [
         "Synthetic rejection fixtures test intake behavior; accepted intake cannot by itself create scientific, legal, supplier, or procurement authority."
@@ -835,16 +835,16 @@
         },
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-assurance-capabilities/src/lib.rs",
-          "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+          "sha256": "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d"
         },
         {
           "path": "amphora-assurance-capabilities/src/diagnostics.rs",
-          "sha256": "bab349d7039ab3d323c3313f3edc6680932278842d6e0512d9d929dbccaf987a"
+          "sha256": "4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89"
         }
       ]
     },
@@ -893,13 +893,13 @@
       "external_dependencies": [
         "Independent hand/spreadsheet known answers and official method definitions"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-formulation-capabilities/src/lib.rs",
-        "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0",
+        "sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-formulation-capabilities/Cargo.toml",
-        "version_source_sha256": "2a648084d6595365d6687c0c950171c8db27ac1020d2bc80f666afcd3d575d86"
+        "version_source_sha256": "033bc1dee934c8836078ec5e267835ec64a3b684c0966c281eaf9155db1cb9cf"
       },
       "known_contradictions": [
         "Computational success and in-envelope arithmetic are not formulation fitness or corrosion-performance evidence."
@@ -928,16 +928,16 @@
         },
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-formulation-capabilities/src/lib.rs",
-          "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0"
+          "sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047"
         },
         {
           "path": "amphora-assurance-capabilities/src/diagnostics.rs",
-          "sha256": "bab349d7039ab3d323c3313f3edc6680932278842d6e0512d9d929dbccaf987a"
+          "sha256": "4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89"
         }
       ]
     },
@@ -986,13 +986,13 @@
       "external_dependencies": [
         "Locked design-space specification and empirical evaluation of selected formulations"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-formulation-capabilities/src/lib.rs",
-        "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0",
+        "sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-formulation-capabilities/Cargo.toml",
-        "version_source_sha256": "2a648084d6595365d6687c0c950171c8db27ac1020d2bc80f666afcd3d575d86"
+        "version_source_sha256": "033bc1dee934c8836078ec5e267835ec64a3b684c0966c281eaf9155db1cb9cf"
       },
       "known_contradictions": [
         "Cartesian accounting establishes enumerated and infeasible counts, not empirical superiority of any solved formulation."
@@ -1014,16 +1014,16 @@
         "adapter_policy": null,
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-formulation-capabilities/src/lib.rs",
-          "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0"
+          "sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047"
         },
         {
           "path": "amphora-assurance-capabilities/src/diagnostics.rs",
-          "sha256": "bab349d7039ab3d323c3313f3edc6680932278842d6e0512d9d929dbccaf987a"
+          "sha256": "4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89"
         }
       ]
     },
@@ -1072,13 +1072,13 @@
       "external_dependencies": [
         "Current supplier TDS/SDS/CoA records with grade, rights, and issuer binding"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-formulation-capabilities/src/lib.rs",
-        "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0",
+        "sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-formulation-capabilities/Cargo.toml",
-        "version_source_sha256": "2a648084d6595365d6687c0c950171c8db27ac1020d2bc80f666afcd3d575d86"
+        "version_source_sha256": "033bc1dee934c8836078ec5e267835ec64a3b684c0966c281eaf9155db1cb9cf"
       },
       "known_contradictions": [
         "The local ingredient catalog contains sourced and approximate values with unresolved rights/currentness and cannot qualify a commercial grade."
@@ -1100,12 +1100,12 @@
         "adapter_policy": null,
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-formulation-capabilities/src/lib.rs",
-          "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0"
+          "sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047"
         }
       ]
     },
@@ -1134,13 +1134,13 @@
       "external_dependencies": [
         "Qualified patent counsel, current jurisdictional search, and claim charts"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-assurance-capabilities/src/lib.rs",
-        "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+        "sha256": "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-assurance-capabilities/Cargo.toml",
-        "version_source_sha256": "7cce6518cda6da3001daff0e6bfb53c99208748e3af9c4619a6576848fb744e8"
+        "version_source_sha256": "a365c06a0a83735d256fa4c5dabf5de5e2067e7b38ae787cc71d960f1b8bd3ea"
       },
       "known_contradictions": [
         "FTO is explicitly not performed; neither a Boolean counsel flag nor a local patent landscape creates legal closure."
@@ -1162,12 +1162,12 @@
         "adapter_policy": null,
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-assurance-capabilities/src/lib.rs",
-          "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+          "sha256": "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d"
         }
       ]
     },
@@ -1279,13 +1279,13 @@
       "external_dependencies": [
         "Independent reference calculations and controlled standard-method cases"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-assurance-capabilities/src/lib.rs",
-        "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+        "sha256": "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-assurance-capabilities/Cargo.toml",
-        "version_source_sha256": "7cce6518cda6da3001daff0e6bfb53c99208748e3af9c4619a6576848fb744e8"
+        "version_source_sha256": "a365c06a0a83735d256fa4c5dabf5de5e2067e7b38ae787cc71d960f1b8bd3ea"
       },
       "known_contradictions": [
         "Known-answer recovery is limited sanity evidence and is not an independent performance benchmark or candidate validation."
@@ -1307,12 +1307,12 @@
         "adapter_policy": null,
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-assurance-capabilities/src/lib.rs",
-          "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+          "sha256": "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d"
         }
       ]
     },
@@ -1341,10 +1341,10 @@
       "external_dependencies": [
         "Independent validation receipts bound to frozen model and dataset hashes"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-engine/src/lib.rs",
-        "sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4",
+        "sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-engine/Cargo.toml",
         "version_source_sha256": "1c311119e37b53f1155cf75757bf7f5d6925eb3dd2a86d9a8ca3dd053e9a9c5c"
@@ -1372,12 +1372,12 @@
         "adapter_policy": null,
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-engine/src/lib.rs",
-          "sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+          "sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
         }
       ]
     },
@@ -1436,13 +1436,13 @@
       "external_dependencies": [
         "Scaffold-held-out benchmark, expert review, and synthesis-feasibility controls"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-molecule-capabilities/src/lib.rs",
-        "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861",
+        "sha256": "258043a42c015587600da417a50170928b57f4f2eb2a0bfcee9b0ac14ada750c",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-molecule-capabilities/Cargo.toml",
-        "version_source_sha256": "d07286abf1e2853d73f996f57c784310c801e46872e68e9f8c79ca95cba2e9c6"
+        "version_source_sha256": "7458e4ed581f9296efdf7b27a39f707e1974c642fb3768c8ab18cfadc04a5416"
       },
       "known_contradictions": [
         "The current generator is deterministic rule/template code, not a trained generative model with prospective closed-loop superiority evidence."
@@ -1464,12 +1464,12 @@
         "adapter_policy": null,
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-molecule-capabilities/src/lib.rs",
-          "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861"
+          "sha256": "258043a42c015587600da417a50170928b57f4f2eb2a0bfcee9b0ac14ada750c"
         }
       ]
     },
@@ -1561,13 +1561,13 @@
       "external_dependencies": [
         "Independent defined-molecule controls and measured commercial-grade EEW/AHEW"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-molecule-capabilities/src/lib.rs",
-        "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861",
+        "sha256": "258043a42c015587600da417a50170928b57f4f2eb2a0bfcee9b0ac14ada750c",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-molecule-capabilities/Cargo.toml",
-        "version_source_sha256": "d07286abf1e2853d73f996f57c784310c801e46872e68e9f8c79ca95cba2e9c6"
+        "version_source_sha256": "7458e4ed581f9296efdf7b27a39f707e1974c642fb3768c8ab18cfadc04a5416"
       },
       "known_contradictions": [
         "Exact calculations apply only to defined single-component structures; commercial-grade EEW/AHEW remains measured-only."
@@ -1596,12 +1596,12 @@
         },
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-molecule-capabilities/src/lib.rs",
-          "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861"
+          "sha256": "258043a42c015587600da417a50170928b57f4f2eb2a0bfcee9b0ac14ada750c"
         }
       ]
     },
@@ -1680,13 +1680,13 @@
       "external_dependencies": [
         "Independent expert role labels and candidate-bound grade evidence"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-molecule-capabilities/src/lib.rs",
-        "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861",
+        "sha256": "258043a42c015587600da417a50170928b57f4f2eb2a0bfcee9b0ac14ada750c",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-molecule-capabilities/Cargo.toml",
-        "version_source_sha256": "d07286abf1e2853d73f996f57c784310c801e46872e68e9f8c79ca95cba2e9c6"
+        "version_source_sha256": "7458e4ed581f9296efdf7b27a39f707e1974c642fb3768c8ab18cfadc04a5416"
       },
       "known_contradictions": [
         "Role-fit rules and declared evidence do not establish polyamide identity, marine qualification, synthesis feasibility, or performance."
@@ -1715,12 +1715,12 @@
         },
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-molecule-capabilities/src/lib.rs",
-          "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861"
+          "sha256": "258043a42c015587600da417a50170928b57f4f2eb2a0bfcee9b0ac14ada750c"
         }
       ]
     },
@@ -1738,13 +1738,13 @@
       "external_dependencies": [
         "Frozen owned comparison corpus plus patent and synthesis review"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-molecule-capabilities/src/lib.rs",
-        "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861",
+        "sha256": "258043a42c015587600da417a50170928b57f4f2eb2a0bfcee9b0ac14ada750c",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-molecule-capabilities/Cargo.toml",
-        "version_source_sha256": "d07286abf1e2853d73f996f57c784310c801e46872e68e9f8c79ca95cba2e9c6"
+        "version_source_sha256": "7458e4ed581f9296efdf7b27a39f707e1974c642fb3768c8ab18cfadc04a5416"
       },
       "known_contradictions": [
         "Corpus distance is not patent novelty, freedom to operate, synthesis feasibility, or performance evidence."
@@ -1773,12 +1773,12 @@
         },
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-molecule-capabilities/src/lib.rs",
-          "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861"
+          "sha256": "258043a42c015587600da417a50170928b57f4f2eb2a0bfcee9b0ac14ada750c"
         }
       ]
     },
@@ -1796,13 +1796,13 @@
       "external_dependencies": [
         "Independent structural controls, EHS review, and synthesis assessment"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-molecule-capabilities/src/lib.rs",
-        "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861",
+        "sha256": "258043a42c015587600da417a50170928b57f4f2eb2a0bfcee9b0ac14ada750c",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-molecule-capabilities/Cargo.toml",
-        "version_source_sha256": "d07286abf1e2853d73f996f57c784310c801e46872e68e9f8c79ca95cba2e9c6"
+        "version_source_sha256": "7458e4ed581f9296efdf7b27a39f707e1974c642fb3768c8ab18cfadc04a5416"
       },
       "known_contradictions": [
         "Structural applicability gates do not establish EHS acceptability, synthesis feasibility, qualification, procurement, or performance."
@@ -1831,12 +1831,12 @@
         },
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-molecule-capabilities/src/lib.rs",
-          "sha256": "5968f518f199cf697d153018afdfee887e9b3ec0bee8a9c00dcc3c5a854ec861"
+          "sha256": "258043a42c015587600da417a50170928b57f4f2eb2a0bfcee9b0ac14ada750c"
         }
       ]
     },
@@ -1854,10 +1854,10 @@
       "external_dependencies": [
         "Centrally authorized validated objectives and Rust/Python decision parity fixtures"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-engine/src/lib.rs",
-        "sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4",
+        "sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-engine/Cargo.toml",
         "version_source_sha256": "1c311119e37b53f1155cf75757bf7f5d6925eb3dd2a86d9a8ca3dd053e9a9c5c"
@@ -1882,20 +1882,20 @@
         "adapter_policy": null,
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-engine/src/lib.rs",
-          "sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+          "sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
         },
         {
           "path": "amphora-core/src/lib.rs",
-          "sha256": "20fa48ab7e758ec7ff5c562cceb426466193a73597f66a708f5455bbc440ad86"
+          "sha256": "24560480d5751d1696f6684848dbc22fbf77779e43f9dec5faa6696224726323"
         },
         {
           "path": "amphora-assurance-capabilities/src/diagnostics.rs",
-          "sha256": "bab349d7039ab3d323c3313f3edc6680932278842d6e0512d9d929dbccaf987a"
+          "sha256": "4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89"
         }
       ]
     },
@@ -1955,13 +1955,13 @@
       "external_dependencies": [
         "Prospective time-ordered 30-batch pilot with seeded controls"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-formulation-capabilities/src/lib.rs",
-        "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0",
+        "sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-formulation-capabilities/Cargo.toml",
-        "version_source_sha256": "2a648084d6595365d6687c0c950171c8db27ac1020d2bc80f666afcd3d575d86"
+        "version_source_sha256": "033bc1dee934c8836078ec5e267835ec64a3b684c0966c281eaf9155db1cb9cf"
       },
       "known_contradictions": [
         "No prospective 30-batch pilot is checked in, and the module has no manufacturing or batch-release authority."
@@ -1990,12 +1990,12 @@
         },
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-formulation-capabilities/src/lib.rs",
-          "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0"
+          "sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047"
         }
       ]
     },
@@ -2419,13 +2419,13 @@
       "external_dependencies": [
         "At least 30 independent systems including 10 locked external systems"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-formulation-capabilities/src/lib.rs",
-        "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0",
+        "sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-formulation-capabilities/Cargo.toml",
-        "version_source_sha256": "2a648084d6595365d6687c0c950171c8db27ac1020d2bc80f666afcd3d575d86"
+        "version_source_sha256": "033bc1dee934c8836078ec5e267835ec64a3b684c0966c281eaf9155db1cb9cf"
       },
       "known_contradictions": [
         "The checked public-system audit reports no lift on current data and contains no owned candidate wet-lab validation."
@@ -2454,12 +2454,12 @@
         },
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-formulation-capabilities/src/lib.rs",
-          "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0"
+          "sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047"
         }
       ]
     },
@@ -2498,13 +2498,13 @@
       "external_dependencies": [
         "Independent adversarial review and mutation corpus"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-assurance-capabilities/src/lib.rs",
-        "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+        "sha256": "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-assurance-capabilities/Cargo.toml",
-        "version_source_sha256": "7cce6518cda6da3001daff0e6bfb53c99208748e3af9c4619a6576848fb744e8"
+        "version_source_sha256": "a365c06a0a83735d256fa4c5dabf5de5e2067e7b38ae787cc71d960f1b8bd3ea"
       },
       "known_contradictions": [
         "A successful self-audit only confirms encoded checks; it is not independent red-team coverage or evidence that all attacks were anticipated."
@@ -2528,16 +2528,16 @@
         "adapter_policy": null,
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-assurance-capabilities/src/lib.rs",
-          "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+          "sha256": "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d"
         },
         {
           "path": "amphora-assurance-capabilities/src/diagnostics.rs",
-          "sha256": "bab349d7039ab3d323c3313f3edc6680932278842d6e0512d9d929dbccaf987a"
+          "sha256": "4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89"
         }
       ]
     },
@@ -2606,13 +2606,13 @@
       "external_dependencies": [
         "Approved audience-specific claim policy and independently accepted input envelopes"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-assurance-capabilities/src/lib.rs",
-        "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+        "sha256": "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-assurance-capabilities/Cargo.toml",
-        "version_source_sha256": "7cce6518cda6da3001daff0e6bfb53c99208748e3af9c4619a6576848fb744e8"
+        "version_source_sha256": "a365c06a0a83735d256fa4c5dabf5de5e2067e7b38ae787cc71d960f1b8bd3ea"
       },
       "known_contradictions": [
         "Packaging valid envelopes cannot upgrade their claim locks, evidence tier, legal status, or product authority."
@@ -2634,16 +2634,16 @@
         "adapter_policy": null,
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-assurance-capabilities/src/lib.rs",
-          "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+          "sha256": "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d"
         },
         {
           "path": "amphora-assurance-capabilities/src/diagnostics.rs",
-          "sha256": "bab349d7039ab3d323c3313f3edc6680932278842d6e0512d9d929dbccaf987a"
+          "sha256": "4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89"
         }
       ]
     },
@@ -2672,10 +2672,10 @@
       "external_dependencies": [
         "Signed execution environment, immutable artifact store, and independent replay"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-engine/src/lib.rs",
-        "sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4",
+        "sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-engine/Cargo.toml",
         "version_source_sha256": "1c311119e37b53f1155cf75757bf7f5d6925eb3dd2a86d9a8ca3dd053e9a9c5c"
@@ -2701,12 +2701,12 @@
         "adapter_policy": null,
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-engine/src/lib.rs",
-          "sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+          "sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
         }
       ]
     },
@@ -2798,13 +2798,13 @@
       "external_dependencies": [
         "At least 96 unique blends, four held-out solvent-family groups, three resin/lot groups, 10/25/40 C duplicates with microscopy and turbidity, parameter rights, and independent review"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-solvency-score/src/lib.rs",
-        "sha256": "4bc56243fb839b71024fd9e3c4a5605c144c41881a93ffcc1d9691597a4ff675",
+        "sha256": "fbcc9a97112967d11aa29d24e0f995b07f6ba13bba136dd9bf1cb67d12f19d21",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-solvency-score/Cargo.toml",
-        "version_source_sha256": "13c1f55c8447cd4341d87e9a7b995ff91274cdee77cde957bae1405d6ba36a26"
+        "version_source_sha256": "c2fca18d4867ac824af92d4762289d497713206366d3102d0f57ef53b7b35c00"
       },
       "known_contradictions": [
         "The fixed-catalog carrier calculation cannot claim pigmented stability, drying, cure, shelf life, qualification, or a compatibility probability."
@@ -2833,12 +2833,12 @@
         },
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-solvency-score/src/lib.rs",
-          "sha256": "4bc56243fb839b71024fd9e3c4a5605c144c41881a93ffcc1d9691597a4ff675"
+          "sha256": "fbcc9a97112967d11aa29d24e0f995b07f6ba13bba136dd9bf1cb67d12f19d21"
         }
       ]
     },
@@ -2897,13 +2897,13 @@
       "external_dependencies": [
         "Primary-source snapshots, licenses, revision checks, and independent extraction review"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-assurance-capabilities/src/lib.rs",
-        "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+        "sha256": "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-assurance-capabilities/Cargo.toml",
-        "version_source_sha256": "7cce6518cda6da3001daff0e6bfb53c99208748e3af9c4619a6576848fb744e8"
+        "version_source_sha256": "a365c06a0a83735d256fa4c5dabf5de5e2067e7b38ae787cc71d960f1b8bd3ea"
       },
       "known_contradictions": [
         "The ledger contains conflicts, snapshots, paywalled sources, and manual-confirmation gaps; a resolved URL is not verified candidate evidence."
@@ -2947,16 +2947,16 @@
         "adapter_policy": null,
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-assurance-capabilities/src/lib.rs",
-          "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+          "sha256": "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d"
         },
         {
           "path": "amphora-assurance-capabilities/src/diagnostics.rs",
-          "sha256": "bab349d7039ab3d323c3313f3edc6680932278842d6e0512d9d929dbccaf987a"
+          "sha256": "4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89"
         }
       ]
     },
@@ -3225,13 +3225,13 @@
       "external_dependencies": [
         "Current candidate- and issuer-bound supplier declarations and lot evidence"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-assurance-capabilities/src/lib.rs",
-        "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d",
+        "sha256": "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-assurance-capabilities/Cargo.toml",
-        "version_source_sha256": "7cce6518cda6da3001daff0e6bfb53c99208748e3af9c4619a6576848fb744e8"
+        "version_source_sha256": "a365c06a0a83735d256fa4c5dabf5de5e2067e7b38ae787cc71d960f1b8bd3ea"
       },
       "known_contradictions": [
         "Public prescreen records are not candidate-bound supplier declarations, procurement approval, or regulatory closure."
@@ -3260,12 +3260,12 @@
         },
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-assurance-capabilities/src/lib.rs",
-          "sha256": "c0b2540fa84a9b8c98d2be5d82cbb1d21e9fd8b9806edad23815a0d912f4ab4d"
+          "sha256": "0fe122cc7434bdad38fc90a812c2c2fc10d431b0ba30fbac179a8bcef0c84f7d"
         }
       ]
     },
@@ -3359,13 +3359,13 @@
       "external_dependencies": [
         "Measured lot/process variation and prospective formulation repeats"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-formulation-capabilities/src/lib.rs",
-        "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0",
+        "sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-formulation-capabilities/Cargo.toml",
-        "version_source_sha256": "2a648084d6595365d6687c0c950171c8db27ac1020d2bc80f666afcd3d575d86"
+        "version_source_sha256": "033bc1dee934c8836078ec5e267835ec64a3b684c0966c281eaf9155db1cb9cf"
       },
       "known_contradictions": [
         "The reported robustness result is simulation-only and is not calibrated against measured manufacturing variation."
@@ -3394,12 +3394,12 @@
         },
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-formulation-capabilities/src/lib.rs",
-          "sha256": "8b7612325bff9830da1eebd1dc6ba4af411205581ce388c45fdc6be5356edde0"
+          "sha256": "c0b7449903224b5e50736a3a9d3f271b845bc2ba18c0348476a6e6225847a047"
         }
       ]
     },
@@ -3448,10 +3448,10 @@
       "external_dependencies": [
         "At least 30 unique formulations across three families at 18.3, 22.8, and 35 C with full flow curves, KU, D4400 sag, duplicates, lots, and locked process history"
       ],
-      "focused_acceptance_command": "rtk cargo test --workspace --locked",
+      "focused_acceptance_command": "cargo test --workspace --locked",
       "implementation": {
         "path": "amphora-viscosity-score/src/lib.rs",
-        "sha256": "55644edc9981a6a23acb3386e0a2bfcc44a1b2c649d37358c347cb0339471f48",
+        "sha256": "bacc4e2470cf2b49f356033abe4f4638fe29db36e49d8dd7c265d79db3a77824",
         "version": "0.1.0-rust",
         "version_source_path": "amphora-viscosity-score/Cargo.toml",
         "version_source_sha256": "1ba6a8c99f8f8010ec0f86db243310a011b6fd042e45f1e6b159c4d3abdd0126"
@@ -3483,12 +3483,12 @@
         },
         "adapter_registered": true,
         "registry_path": "amphora-engine/src/lib.rs",
-        "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+        "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
       },
       "tests": [
         {
           "path": "amphora-viscosity-score/src/lib.rs",
-          "sha256": "55644edc9981a6a23acb3386e0a2bfcc44a1b2c649d37358c347cb0339471f48"
+          "sha256": "bacc4e2470cf2b49f356033abe4f4638fe29db36e49d8dd7c265d79db3a77824"
         }
       ]
     }

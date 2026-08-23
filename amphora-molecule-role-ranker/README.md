@@ -15,16 +15,10 @@ expert-parity holdout.
 CLI:
 
 ```bash
-rtk cargo run --release -- inspect --candidate candidate.json --headless
-rtk cargo run --release -- data verify --module amphora-molecule-role-ranker
-rtk cargo run --release -- data build --module amphora-molecule-role-ranker
-rtk cargo run --release -- benchmark lock --module amphora-molecule-role-ranker
-rtk cargo run --release -- benchmark run --locked --module amphora-molecule-role-ranker
-rtk cargo run --release -- benchmark replay --module amphora-molecule-role-ranker
-```
-
-Library API:
-
-```python
-from amphora_molecule_role_ranker.score import score
+cargo run --release -- inspect --candidate amphora-candidate-contract/fixtures/molecule_candidate.json --headless
+cargo run --release -- data verify --module amphora-molecule-role-ranker
+cargo run --release -- data build --module amphora-molecule-role-ranker
+cargo run --release -- benchmark lock --module amphora-molecule-role-ranker
+cargo run --release -- benchmark run --locked --module amphora-molecule-role-ranker
+cargo run --release -- benchmark replay --module amphora-molecule-role-ranker
 ```

@@ -61,12 +61,23 @@ git -C "$REPO" add -- DATASETS.local.json OPERATIONS.local.json ops/amphora-cont
   ops/amphora-controller/controller-tree.sha256
 python3 "$CONTROLLER_ROOT/policy/staged_file_policy.py" --repo "$REPO" --profile publication --source staged
 
-if command -v gitleaks >/dev/null; then
-    gitleaks git "$REPO" --redact --no-banner --exit-code 1
+# Both scanners are required for an applied publication. Guarding them with a bare
+# `command -v` meant this gate could exit 0 having scanned nothing at all -- the most
+# expensive kind of false confidence, since a green publication run is exactly what a
+# reviewer trusts. Neither is installed on xbabe1, so run applied publications from a
+# host that has them.
+MISSING_SCANNERS=""
+command -v gitleaks   >/dev/null || MISSING_SCANNERS="$MISSING_SCANNERS gitleaks"
+command -v trufflehog >/dev/null || MISSING_SCANNERS="$MISSING_SCANNERS trufflehog"
+if [ -n "$MISSING_SCANNERS" ]; then
+    echo "ERROR: secret scanners missing:$MISSING_SCANNERS" >&2
+    echo "       An applied snapshot must not publish unscanned bytes. Install them, or" >&2
+    echo "       run the dry form (no --apply) which does not publish." >&2
+    [ "$APPLY" = "1" ] && exit 1
+    echo "       (dry run: continuing without a secret scan)" >&2
 fi
-if command -v trufflehog >/dev/null; then
-    trufflehog git "file://$REPO" --no-update --fail --only-verified
-fi
+command -v gitleaks   >/dev/null && gitleaks git "$REPO" --redact --no-banner --exit-code 1
+command -v trufflehog >/dev/null && trufflehog git "file://$REPO" --no-update --fail --only-verified
 
 git -C "$REPO" diff --cached --stat
 DIFF_SHA=$(git -C "$REPO" diff --cached --binary | sha256sum | cut -d' ' -f1)

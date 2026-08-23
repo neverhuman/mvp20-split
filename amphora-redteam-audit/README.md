@@ -2,14 +2,10 @@
 
 System-level claim discipline and v5 score caps.
 
-CLI:
+CLI (from the repository root; requires the omitted datasets — see
+[`../BUILD.md`](../BUILD.md)):
 
 ```bash
-rtk cargo run --release -- inspect --candidate candidate.json --headless
-```
-
-Library API:
-
-```python
-from amphora_redteam_audit.score import score
+cargo run --release -- inspect \
+  --candidate amphora-candidate-contract/fixtures/formulation_candidate.json --headless
 ```

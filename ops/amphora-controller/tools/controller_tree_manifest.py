@@ -10,9 +10,17 @@ import sys
 MANIFEST = "controller-tree.sha256"
 
 
+# Regenerable bytecode caches. Any successor who runs a Python file in this tree
+# creates one; without this filter the next `verify` fails with a mismatch that
+# looks like tampering. They are also already ignored by .gitignore, so including
+# them would make the deployed manifest disagree with a fresh clone.
+IGNORED_DIRS = {"__pycache__", ".pytest_cache", ".ruff_cache", ".mypy_cache"}
+
+
 def files(root):
     return sorted(path for path in root.rglob("*")
-                  if path.is_file() and not path.is_symlink() and path.name != MANIFEST)
+                  if path.is_file() and not path.is_symlink() and path.name != MANIFEST
+                  and IGNORED_DIRS.isdisjoint(path.relative_to(root).parts))
 
 
 def rows(root):

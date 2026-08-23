@@ -15,4 +15,21 @@ regexes = [
   '''idconv_api_response_sha256''',
   '''epo-local-key\.(?:err|json)''',
   '''sneemarquardt1974''',
+  # Public key identifiers, not credentials. These are SHA-256 fingerprints of PUBLIC
+  # signing keys, embedded in every signed receipt so a verifier can select the right key,
+  # and required in-tree for receipt verification to work at all. Without these rules the
+  # default generic-api-key rule raises 1411 findings and reviewed-snapshot.sh aborts under
+  # `set -Eeuo pipefail`, breaking the only documented publication path.
+  # NOTE: regexTarget = "match" here, so these match the matched fragment, not the full line.
+  '''"?(?:evaluator_)?key_?id"?\s*[:=]\s*"?(?:phase0-evaluator|cro-fixture)-[0-9a-f]+"?''',
+  '''REQUIRED_KEYID_PREFIX\s*=\s*"phase0-evaluator-[0-9a-f]+"''',
+  '''(?:phase0-evaluator|cro-fixture)-[0-9a-f]{7,64}''',
+  # T-12 adversary keys. `forged_package_classes/class{1,2,3}_*/signing_key_hex` in the
+  # amphora-report-packager T-12 diagnostics are the keys an ATTACKER signs a forged
+  # receipt with -- class3 is literally named "non_anchored_key". They authorize nothing:
+  # none appears in any trust store or tracked file, and the real evaluator key id is
+  # phase0-evaluator-3ef6b35cdbbfea74. They are pinned deterministically so T-12's
+  # two-replay byte-identical gate is meaningful. Reachable only through the canonical
+  # history that demo/founder-showcase descends from; the files themselves are gitignored.
+  '''"?signing_key_hex"?\s*:\s*"?[0-9a-f]{64}"?''',
 ]

@@ -100,23 +100,56 @@
       }
     ],
     "current_benchmark": {
-      "artifact_path": null,
-      "artifact_sha256": null,
-      "gap": "Locked execution auto-demotes because measured blends, rights-cleared parameters, subgroup evidence, and independent review are absent.",
-      "observations": [],
-      "reported_result_status": null,
-      "status": "NO_CHECKED_BENCHMARK_RESULT"
+      "artifact_path": "amphora-solvency-score/benchmarks/bigsoldb-v1/evaluation_receipt.v20.canonical.json",
+      "artifact_sha256": "74d3a0f71e6512283de2bf32a16fc76a1543439dbbb0a92c73e986d4f187a9ae",
+      "gap": "Leave-solute-out grouped-CV retrospective on public BigSolDB v2.0 (CC-BY-4.0, Krasnov et al. Sci Data 2025); AUDIT_ONLY diagnostic. Not an owned prospective 96-blend carrier-compatibility calibration; no pigmented/drying/cure/shelf-life claim; no product qualification; only leave_solute_out is two-replay SHA-256 gated.",
+      "observations": [
+        {
+          "json_path": "splits[0].split",
+          "value": "leave_solute_out"
+        },
+        {
+          "json_path": "splits[0].model.rmse",
+          "value": 0.8770255643028615
+        },
+        {
+          "json_path": "splits[0].model.rmse_ci95_cluster_bootstrap[0]",
+          "value": 0.8416341720920943
+        },
+        {
+          "json_path": "splits[0].model.rmse_ci95_cluster_bootstrap[1]",
+          "value": 0.9154344725058612
+        },
+        {
+          "json_path": "splits[0].model.r2",
+          "value": 0.48194739618244054
+        },
+        {
+          "json_path": "splits[0].baselines.b1_solvent_mean.rmse",
+          "value": 1.1686915142248226
+        },
+        {
+          "json_path": "n_rows_modeled",
+          "value": 94532
+        },
+        {
+          "json_path": "raw_sha256",
+          "value": "879f55f39db977e295c705e304d011d89d6e10da1daaa3f069181108c1de38b0"
+        }
+      ],
+      "reported_result_status": "MODEL_BEATS_BEST_BASELINE_ON_UNSEEN_SOLUTES_AUDIT_ONLY",
+      "status": "CHECKED_ARTIFACT_REPORTED_METRICS"
     },
     "external_dependencies": [
       "At least 96 unique blends, four held-out solvent-family groups, three resin/lot groups, 10/25/40 C duplicates with microscopy and turbidity, parameter rights, and independent review"
     ],
-    "focused_acceptance_command": "rtk cargo test --workspace --locked",
+    "focused_acceptance_command": "cargo test --workspace --locked",
     "implementation": {
       "path": "amphora-solvency-score/src/lib.rs",
-      "sha256": "4bc56243fb839b71024fd9e3c4a5605c144c41881a93ffcc1d9691597a4ff675",
+      "sha256": "fbcc9a97112967d11aa29d24e0f995b07f6ba13bba136dd9bf1cb67d12f19d21",
       "version": "0.1.0-rust",
       "version_source_path": "amphora-solvency-score/Cargo.toml",
-      "version_source_sha256": "13c1f55c8447cd4341d87e9a7b995ff91274cdee77cde957bae1405d6ba36a26"
+      "version_source_sha256": "c2fca18d4867ac824af92d4762289d497713206366d3102d0f57ef53b7b35c00"
     },
     "known_contradictions": [
       "The fixed-catalog carrier calculation cannot claim pigmented stability, drying, cure, shelf life, qualification, or a compatibility probability."
@@ -141,12 +174,12 @@
       },
       "adapter_registered": true,
       "registry_path": "amphora-engine/src/lib.rs",
-      "registry_sha256": "6b007d7d9d0acd453aac5e7c300ab16fb9a7253337c722cc4cffe0be23db62b4"
+      "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
     },
     "tests": [
       {
         "path": "amphora-solvency-score/src/lib.rs",
-        "sha256": "4bc56243fb839b71024fd9e3c4a5605c144c41881a93ffcc1d9691597a4ff675"
+        "sha256": "fbcc9a97112967d11aa29d24e0f995b07f6ba13bba136dd9bf1cb67d12f19d21"
       }
     ]
   },
