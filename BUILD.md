@@ -70,9 +70,11 @@ Run these from the repository root — `default-members = ["amphora-cli"]`, so b
 > ops/restore-datasets.sh --apply --only feedback/v1/derived/   # ~385 MB, 4 files
 > ```
 >
-> Verified: after that, `demo`, `inspect`, and `replay --verify` all run — the last of them
-> reporting `replay verified: 158 events root=9ff12a01…`. `cargo test --workspace --locked`
-> is green without any restore at all.
+> Verified on xbabe1 after that restore: `demo` and `inspect` run, and `replay --verify`
+> then reports `replay verified: 158 events root=…`. Note the order — `replay` replays the
+> most recent run archive, so it needs a `demo` or `run` to have happened first; on a tree
+> with no runs it exits `No such file or directory`. `cargo test --workspace --locked` is
+> green without any restore at all.
 
 ## Restoring the omitted datasets
 
