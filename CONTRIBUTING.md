@@ -93,7 +93,9 @@ dataset tree. Restore the minimum with:
 ops/restore-datasets.sh --apply --only feedback/v1/derived/    # ~385 MB
 ```
 
-See [BUILD.md](BUILD.md) for the full picture.
+On xbabe1 that ~385 MB is **already restored**, and the script cannot reach the canonical
+host from there — see [BUILD.md](BUILD.md) and
+[START_HERE.md](START_HERE.md#what-xbabe1-can-and-cannot-reach).
 
 ## Where to start
 

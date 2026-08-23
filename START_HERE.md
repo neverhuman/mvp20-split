@@ -114,26 +114,35 @@ removed; the key was deliberately **not** rotated. Treat any signature bearing
 evaluator identity, whose seed has never left xbabe2. Full account in
 [HANDOFF.md](HANDOFF.md#signing-key-exposure-2026-08-23).
 
-## Two host-level traps
+## What xbabe1 can and cannot reach
 
-**1. `ssh xbabe2` from xbabe2 does not reach xbabe2.** `/home/ubuntu/.ssh/config` on xbabe2
-maps `Host xbabe2` to `192.168.68.89` (user `agent`) — an unrelated Mac Studio — which
-shadows `/etc/hosts`. From xbabe1 the alias is correct. Because `install --apply`, `pause
---apply`, and `resume --apply` write the *target host's* crontab and deploy the guard over
-that alias, **run every `bin/amphora` command from xbabe1**. Applied runs now refuse to
-execute anywhere but the controller host; dry runs are unrestricted. This ssh config was
-left as found — it may be deliberate for unrelated work on that host.
+xbabe1 was decommissioned for handoff on 2026-08-23. From that host you can reach
+**GitHub, read-only, and nothing else**:
 
-**2. A superseded autocommit script was neutralised on xbabe2.**
-`/home/ubuntu/amphora-autocommit-guard.sh` was a 15-line predecessor doing a bare
-`git add -A` on the 26 GB canonical tree with no lane drain, no staged-file policy, and no
-quarantine. It sat at exactly the path the historical `xbabe2.crontab.after` freeze record
-names, so restoring cron from that record would have re-armed it. Renamed on 2026-08-23 to
-`amphora-autocommit-guard.sh.legacy-superseded-20260823` and stripped of its execute bit.
-The live guard is `/home/ubuntu/.local/libexec/amphora-autocommit-guard.sh`, byte-identical
-to `ops/amphora-controller/autocommit-guard.sh`.
+- `~/.ssh/` holds only `amphora_mvp20_ro_ed25519` (the read-only deploy key) and a
+  `known_hosts` containing github.com alone, pinned against GitHub's published
+  fingerprints. `~/.ssh/config` has one stanza.
+- The lateral keys that reached xbabe2, xbabe3 and the Mac hosts were removed, and
+  revoked on the far side. `ssh xbabe2` from xbabe1 no longer authenticates.
+- The previous owner's Anthropic, Codex, HuggingFace and Docker credentials, and the
+  shell and prompt history, were removed from the host.
 
-## Safe commands now
+Two consequences worth knowing:
+
+**`ops/restore-datasets.sh` cannot run from xbabe1 any more.** It pulls from
+`xbabe2:/home/ubuntu/amphora/build/mvp20-split` over ssh, which is now blocked. The
+minimum needed for the CLI — `feedback/v1/derived/`, ~385 MB — is **already restored** in
+this checkout, so `demo`, `inspect` and `replay --verify` work as shipped. If you need
+more of the 6.20 GB inventory, ask the owner to run the restore or to grant a scoped
+path to xbabe2.
+
+**Pushing goes through your own GitHub account.** The deploy key on this host is
+read-only by design. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+The `xbabe2` rows in the system map above describe where things live, not somewhere you
+can currently reach.
+
+## Safe commands now## Safe commands now
 
 ```bash
 cd /home/ubuntu/mvp20-split

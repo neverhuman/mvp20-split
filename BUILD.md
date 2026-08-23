@@ -89,8 +89,12 @@ ops/restore-datasets.sh --apply --only feedback/   # one prefix
 ```
 
 It refuses to run unless the canonical host's `git rev-parse HEAD` matches the sha the
-manifest was captured from, so it cannot silently pull from the wrong tree — which matters,
-because on xbabe2 the `xbabe2` ssh alias resolves elsewhere. **Run it from xbabe1.**
+manifest was captured from, so it cannot silently pull from the wrong tree.
+
+**On xbabe1 this script can no longer reach the canonical host** — that access was removed
+when the machine was decommissioned for handoff (see
+[START_HERE.md](START_HERE.md#what-xbabe1-can-and-cannot-reach)). The ~385 MB the CLI needs
+is already restored in that checkout. For more, ask the owner.
 
 ## Optional: the pinned RDKit chemistry boundary
 
