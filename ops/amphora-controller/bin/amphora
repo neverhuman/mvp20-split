@@ -1,0 +1,398 @@
+#!/usr/bin/env python3
+"""Operator CLI for the intentionally paused Amphora automation fleet."""
+
+import argparse
+import fcntl
+import hashlib
+import json
+import os
+from pathlib import Path
+import re
+import shutil
+import subprocess
+import sys
+import time
+
+
+DEFAULTS = {
+    "AMPHORA_REPO_ROOT": "/home/ubuntu/mvp20-split",
+    "AMPHORA_CONTROLLER_ROOT": "/home/ubuntu/mvp20-split/ops/amphora-controller",
+    "AMPHORA_STATE_ROOT": "/home/ubuntu/amphora-cron",
+    "AMPHORA_CAMPAIGN_PATH": "/home/ubuntu/amphora-cron/campaign.json",
+    "AMPHORA_QUEUE_PATH": "/home/ubuntu/amphora-cron/data-acquisition-queue.jsonl",
+    "AMPHORA_PROMPT_PATH": "/home/ubuntu/mvp20-split/ops/amphora-controller/claude-hourly-loop.prompt.txt",
+    "AMPHORA_DIRECTIVE_REGISTRY": "/home/ubuntu/mvp20-split/ops/amphora-controller/directives/REGISTRY.json",
+    "AMPHORA_TARGET_HOST": "xbabe2",
+    "AMPHORA_TARGET_ROOT": "/home/ubuntu/amphora/build/mvp20-split",
+    "AMPHORA_MODEL": "claude-sonnet-5",
+    "AMPHORA_CLAUDE_BIN": "/home/ubuntu/.local/bin/claude",
+    "AMPHORA_SIGNING_KEY_PATH": "/home/ubuntu/.local/share/amphora/phase0/keys/evaluator.ed25519.seed",
+}
+TAG_RX = re.compile(r"^[A-Z0-9][A-Z0-9._-]{7,127}$")
+
+
+class OperatorError(RuntimeError):
+    pass
+
+
+def run(argv, *, input_text=None, check=True, capture=True):
+    proc = subprocess.run(argv, input=input_text, text=True,
+                          stdout=subprocess.PIPE if capture else None,
+                          stderr=subprocess.PIPE if capture else None)
+    if check and proc.returncode:
+        raise OperatorError("command failed (%d): %s\n%s" %
+                            (proc.returncode, " ".join(map(str, argv)),
+                             (proc.stderr or "").strip()))
+    return proc
+
+
+def parse_env(path):
+    values = {}
+    try:
+        lines = path.read_text().splitlines()
+    except FileNotFoundError:
+        return values
+    for line in lines:
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        key, value = key.strip(), value.strip()
+        if key in DEFAULTS:
+            values[key] = value.strip("'\"")
+    return values
+
+
+def config():
+    cfg_path = Path(os.environ.get(
+        "AMPHORA_CONFIG_FILE", "/home/ubuntu/.config/amphora/mvp20-cron.env"))
+    values = dict(DEFAULTS)
+    values.update(parse_env(cfg_path))
+    values.update({key: os.environ[key] for key in DEFAULTS if key in os.environ})
+    values["AMPHORA_CONFIG_FILE"] = str(cfg_path)
+    return values
+
+
+def tag_arg(value):
+    if not TAG_RX.fullmatch(value or ""):
+        raise argparse.ArgumentTypeError("tag must be 8-128 uppercase letters, digits, '.', '_' or '-'")
+    return value
+
+
+def cron_entries(cfg):
+    controller = cfg["AMPHORA_CONTROLLER_ROOT"]
+    return {
+        "launcher": "0 * * * * %s/claude-hourly-loop.sh" % controller,
+        "mirror": "*/10 * * * * %s/mirror-log.sh >/dev/null 2>&1" % controller,
+        "guard": "30 * * * * flock -n /tmp/amphora-git-autocommit.lock /home/ubuntu/.local/libexec/amphora-autocommit-guard.sh >/dev/null 2>&1",
+    }
+
+
+def is_target_cron(line, role):
+    needles = {
+        "launcher": ("amphora-cron/claude-hourly-loop.sh", "amphora-controller/claude-hourly-loop.sh"),
+        "mirror": ("amphora-cron/mirror-log.sh", "amphora-controller/mirror-log.sh"),
+        "guard": ("amphora-autocommit-guard.sh",),
+    }
+    contains_job = any(needle in line for needle in needles[role])
+    is_managed_disabled = any(
+        marker in line for marker in ("AMPHORA_HANDOFF_DISABLED", "AMPHORA_MANAGED_DISABLED"))
+    return contains_job and (not line.lstrip().startswith("# ") or is_managed_disabled)
+
+
+def update_cron(text, roles, entries, enabled, tag):
+    lines = text.splitlines()
+    kept = [line for line in lines if not any(is_target_cron(line, role) for role in roles)]
+    for role in roles:
+        entry = entries[role]
+        kept.append(entry if enabled else "# AMPHORA_MANAGED_DISABLED %s %s" % (tag, entry))
+    return "\n".join(kept) + "\n"
+
+
+def read_cron(host=None):
+    argv = ["crontab", "-l"] if host is None else ["ssh", "-o", "BatchMode=yes", host, "crontab", "-l"]
+    proc = run(argv, check=False)
+    if proc.returncode not in (0, 1):
+        raise OperatorError(proc.stderr.strip())
+    return proc.stdout
+
+
+def write_cron(text, host=None):
+    argv = ["crontab", "-"] if host is None else ["ssh", "-o", "BatchMode=yes", host, "crontab", "-"]
+    run(argv, input_text=text)
+
+
+def set_crons(cfg, enabled, tag, apply):
+    entries = cron_entries(cfg)
+    local_before = read_cron()
+    remote_before = read_cron(cfg["AMPHORA_TARGET_HOST"])
+    local_after = update_cron(local_before, ("launcher", "mirror"), entries, enabled, tag)
+    remote_after = update_cron(remote_before, ("guard",), entries, enabled, tag)
+    if not apply:
+        print("would set Amphora cron jobs %s; unrelated lines remain byte-identical" %
+              ("enabled" if enabled else "disabled"))
+        return
+    write_cron(local_after)
+    try:
+        write_cron(remote_after, cfg["AMPHORA_TARGET_HOST"])
+    except Exception:
+        write_cron(local_before)
+        raise
+
+
+def stop_path(cfg):
+    return Path(cfg["AMPHORA_STATE_ROOT"]) / "state" / "HARD_STOP"
+
+
+def require_matching_stop(cfg, tag):
+    path = stop_path(cfg)
+    try:
+        content = path.read_text().splitlines()[0]
+    except (FileNotFoundError, IndexError):
+        raise OperatorError("owned hard stop is absent: %s" % path)
+    if content != tag:
+        raise OperatorError("refusing foreign hard stop %r (expected %r)" % (content, tag))
+    return path
+
+
+def cmd_pause(args, cfg):
+    path = stop_path(cfg)
+    if not args.apply:
+        print("DRY-RUN: would create %s with tag %s, then disable exactly three jobs" % (path, args.tag))
+        return 0
+    path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        with path.open("x") as fh:
+            fh.write(args.tag + "\n")
+        path.chmod(0o600)
+    except FileExistsError:
+        require_matching_stop(cfg, args.tag)
+    set_crons(cfg, False, args.tag, True)
+    print("paused tag=%s" % args.tag)
+    return 0
+
+
+def remote_process_count(host):
+    script = """ps -u "$(id -un)" -o args= | grep -E '[c]laude-hourly-loop|(^|/)claude( |$)' | wc -l"""
+    argv = ["bash", "-c", script] if host is None else ["ssh", "-o", "BatchMode=yes", host, script]
+    proc = run(argv, check=False)
+    return int((proc.stdout or "0").strip() or 0) if proc.returncode == 0 else 999
+
+
+def controller_locks_available(cfg):
+    """Hold every controller lock together long enough to prove a full drain."""
+    lock_root = Path(cfg["AMPHORA_STATE_ROOT"]) / "state" / "locks"
+    lock_root.mkdir(parents=True, exist_ok=True)
+    handles = []
+    try:
+        for name in ("lane-1.lock", "lane-2.lock", "lane-3.lock", "lane-4.lock",
+                     "fleet.lock", "campaign.lock", "state.lock"):
+            handle = (lock_root / name).open("a")
+            handles.append(handle)
+            fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        return True
+    except BlockingIOError:
+        return False
+    finally:
+        for handle in handles:
+            handle.close()
+
+
+def cmd_drain(args, cfg):
+    deadline = time.monotonic() + args.timeout
+    while time.monotonic() < deadline:
+        if remote_process_count(None) == 0 and controller_locks_available(cfg):
+            print("drained: no controller or Claude processes; all fleet locks available")
+            return 0
+        time.sleep(1)
+    raise OperatorError("fleet did not drain within %ss" % args.timeout)
+
+
+def cmd_resume(args, cfg):
+    path = require_matching_stop(cfg, args.tag)
+    if not args.apply:
+        print("DRY-RUN: would enable exactly three jobs and remove only %s" % path)
+        return 0
+    set_crons(cfg, True, args.tag, True)
+    require_matching_stop(cfg, args.tag).unlink()
+    print("resumed tag=%s; all three reviewed jobs enabled" % args.tag)
+    return 0
+
+
+def verify_manifest(controller):
+    manifest = controller / "controller-tree.sha256"
+    if not manifest.is_file():
+        return False, "controller-tree.sha256 missing"
+    symlinks = [path.relative_to(controller).as_posix() for path in controller.rglob("*")
+                if path.is_symlink()]
+    if symlinks:
+        return False, "controller contains symlink: %s" % symlinks[0]
+    actual = []
+    for path in sorted(controller.rglob("*")):
+        if path.is_file() and path != manifest:
+            actual.append((hashlib.sha256(path.read_bytes()).hexdigest(),
+                           path.relative_to(controller).as_posix()))
+    try:
+        expected = [tuple(line.split("  ", 1))
+                    for line in manifest.read_text().splitlines() if line]
+    except ValueError:
+        return False, "controller manifest is malformed"
+    if expected != actual:
+        expected_paths = {row[1] for row in expected if len(row) == 2}
+        actual_paths = {row[1] for row in actual}
+        extras = sorted(actual_paths - expected_paths)
+        missing = sorted(expected_paths - actual_paths)
+        if extras:
+            return False, "unlisted controller file: %s" % extras[0]
+        if missing:
+            return False, "controller manifest path missing: %s" % missing[0]
+        return False, "controller hash mismatch"
+    return True, "controller hashes verified"
+
+
+def cmd_doctor(args, cfg):
+    failures = []
+    for program in ("bash", "flock", "git", "jq", "python3", "rsync", "sha256sum", "ssh"):
+        if shutil.which(program) is None:
+            failures.append("missing program: %s" % program)
+    controller = Path(cfg["AMPHORA_CONTROLLER_ROOT"])
+    ok, detail = verify_manifest(controller)
+    if not ok:
+        failures.append(detail)
+    if controller.exists():
+        writable = [str(p.relative_to(controller)) for p in controller.rglob("*")
+                    if p.lstat().st_mode & 0o222]
+        if writable:
+            failures.append("controller paths retain write bits: %s" % ", ".join(writable[:5]))
+    cfg_path = Path(cfg["AMPHORA_CONFIG_FILE"])
+    if cfg_path.exists() and cfg_path.stat().st_mode & 0o077:
+        failures.append("config must be mode 0600: %s" % cfg_path)
+    target = cfg["AMPHORA_TARGET_HOST"]
+    if run(["ssh", "-o", "BatchMode=yes", "-o", "ConnectTimeout=8", target, "true"], check=False).returncode:
+        failures.append("SSH failed: %s" % target)
+    else:
+        key_check = "test -f %s && test $(wc -c < %s) -eq 32" % (
+            cfg["AMPHORA_SIGNING_KEY_PATH"], cfg["AMPHORA_SIGNING_KEY_PATH"])
+        if run(["ssh", "-o", "BatchMode=yes", target, key_check], check=False).returncode:
+            failures.append("remote signing seed absent or wrong size")
+    if not os.access(cfg["AMPHORA_CLAUDE_BIN"], os.X_OK):
+        failures.append("Claude binary not executable (authentication is a separate activation prerequisite)")
+    if failures:
+        for failure in failures:
+            print("FAIL " + failure)
+        return 1
+    print("OK doctor: %s" % detail)
+    return 0
+
+
+def cmd_status(args, cfg):
+    path = stop_path(cfg)
+    print("state=PAUSED" if path.exists() else "state=UNSTOPPED")
+    print("hard_stop=%s" % (path.read_text().splitlines()[0] if path.exists() else "absent"))
+    for name, text in (("xbabe1", read_cron()), (cfg["AMPHORA_TARGET_HOST"], read_cron(cfg["AMPHORA_TARGET_HOST"]))):
+        managed = [line for line in text.splitlines() if "amphora" in line.lower() and
+                   any(word in line for word in ("hourly-loop", "mirror-log", "autocommit"))]
+        print("%s_jobs=%s" % (name, json.dumps(managed)))
+    print("controller_processes=%d" % remote_process_count(None))
+    return 0
+
+
+def seed_state(cfg):
+    controller = Path(cfg["AMPHORA_CONTROLLER_ROOT"])
+    state = Path(cfg["AMPHORA_STATE_ROOT"])
+    state.mkdir(parents=True, exist_ok=True)
+    (state / "state" / "locks").mkdir(parents=True, exist_ok=True)
+    (state / "logs").mkdir(parents=True, exist_ok=True)
+    for name in ("campaign.json", "data-acquisition-queue.jsonl"):
+        destination = state / name
+        if not destination.exists():
+            shutil.copy2(controller / "bootstrap" / name, destination)
+
+
+def deploy_guard(cfg):
+    controller = Path(cfg["AMPHORA_CONTROLLER_ROOT"])
+    host = cfg["AMPHORA_TARGET_HOST"]
+    run(["ssh", "-o", "BatchMode=yes", host, "mkdir -p /home/ubuntu/.local/libexec /home/ubuntu/.config/amphora"])
+    run(["scp", "-q", str(controller / "autocommit-guard.sh"),
+         "%s:/home/ubuntu/.local/libexec/amphora-autocommit-guard.sh" % host])
+    run(["scp", "-q", str(controller / "policy" / "staged_file_policy.py"),
+         "%s:/home/ubuntu/.local/libexec/amphora-staged-file-policy.py" % host])
+    run(["scp", "-q", str(controller / "config" / "mvp20-autocommit.env.example"),
+         "%s:/home/ubuntu/.config/amphora/mvp20-autocommit.env.example" % host])
+    run(["ssh", "-o", "BatchMode=yes", host,
+         "chmod 700 /home/ubuntu/.local/libexec/amphora-autocommit-guard.sh /home/ubuntu/.local/libexec/amphora-staged-file-policy.py; "
+         "test -e /home/ubuntu/.config/amphora/mvp20-autocommit.env || "
+         "cp /home/ubuntu/.config/amphora/mvp20-autocommit.env.example /home/ubuntu/.config/amphora/mvp20-autocommit.env; "
+         "chmod 600 /home/ubuntu/.config/amphora/mvp20-autocommit.env"])
+
+
+def protect_controller(controller):
+    for path in sorted(controller.rglob("*"), reverse=True):
+        mode = 0o555 if path.is_dir() or os.access(path, os.X_OK) else 0o444
+        path.chmod(mode)
+    controller.chmod(0o555)
+
+
+def cmd_install(args, cfg):
+    if not args.apply:
+        print("DRY-RUN: install requires --apply; jobs would remain disabled")
+        return 0
+    if args.enable:
+        if not args.tag:
+            raise OperatorError("--enable requires --tag")
+        require_matching_stop(cfg, args.tag)
+    cfg_path = Path(cfg["AMPHORA_CONFIG_FILE"])
+    cfg_path.parent.mkdir(parents=True, exist_ok=True)
+    if not cfg_path.exists():
+        example = Path(cfg["AMPHORA_CONTROLLER_ROOT"]) / "config" / "mvp20-cron.env.example"
+        shutil.copy2(example, cfg_path)
+    cfg_path.chmod(0o600)
+    seed_state(cfg)
+    deploy_guard(cfg)
+    set_crons(cfg, args.enable, args.tag or "INSTALL-PAUSED", True)
+    protect_controller(Path(cfg["AMPHORA_CONTROLLER_ROOT"]))
+    print("installed; jobs=%s" % ("enabled" if args.enable else "disabled"))
+    return 0
+
+
+def cmd_test(args, cfg):
+    controller = Path(cfg["AMPHORA_CONTROLLER_ROOT"])
+    return run(["bash", str(controller / "tests" / "run.sh")], check=False, capture=False).returncode
+
+
+def parser():
+    p = argparse.ArgumentParser(prog="amphora")
+    sub = p.add_subparsers(dest="command", required=True)
+    sub.add_parser("doctor").set_defaults(func=cmd_doctor)
+    sub.add_parser("status").set_defaults(func=cmd_status)
+    sub.add_parser("test").set_defaults(func=cmd_test)
+    pause = sub.add_parser("pause")
+    pause.add_argument("--tag", required=True, type=tag_arg)
+    pause.add_argument("--apply", action="store_true")
+    pause.set_defaults(func=cmd_pause)
+    drain = sub.add_parser("drain")
+    drain.add_argument("--timeout", type=int, default=120)
+    drain.set_defaults(func=cmd_drain)
+    resume = sub.add_parser("resume")
+    resume.add_argument("--tag", required=True, type=tag_arg)
+    resume.add_argument("--apply", action="store_true")
+    resume.set_defaults(func=cmd_resume)
+    install = sub.add_parser("install")
+    install.add_argument("--apply", action="store_true")
+    install.add_argument("--enable", action="store_true")
+    install.add_argument("--tag", type=tag_arg)
+    install.set_defaults(func=cmd_install)
+    return p
+
+
+def main():
+    args = parser().parse_args()
+    try:
+        return args.func(args, config())
+    except OperatorError as exc:
+        print("ERROR: %s" % exc, file=sys.stderr)
+        return 2
+
+
+if __name__ == "__main__":
+    sys.exit(main())

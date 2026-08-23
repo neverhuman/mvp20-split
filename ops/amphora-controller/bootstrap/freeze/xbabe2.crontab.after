@@ -1,0 +1,50 @@
+# Edit this file to introduce tasks to be run by cron.
+# 
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+# 
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').
+# 
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+# 
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+# 
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# 
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+# m h  dom mon dow   command
+0 */4 * * * rsync -a --delete xbabe3:~/dougx/ /home/ubuntu/DOUG/ > /home/ubuntu/rsync_doug.log 2>&1
+# DRAIN-PAUSED */10 * * * * /usr/bin/flock -n /tmp/remote_super_rsync.lock /usr/bin/rsync -av --exclude='target/' --exclude='*.csv' --exclude='.venv*' --exclude='.cache*' --exclude='.cargo*' --exclude='.claude*' --exclude='.codex*' --exclude='.jailgun*' --exclude='.jekko*' --exclude='.local*' --exclude='.npm*' --exclude='.nv*' --exclude='.*' --exclude='*.pt' --exclude='*.ckpt' ubuntu@155.248.203.27:~/ /home/ubuntu/remote_super/ >> /home/ubuntu/remote_super_rsync.log 2>&1
+*/10 * * * * /home/ubuntu/sync_jbaby_remote.sh >> /home/ubuntu/jbaby_remote/.cron.log 2>&1
+# DRAIN-PAUSED */30 * * * * /home/ubuntu/jain_small/ops/zyal/lib/sync_datasets.sh >/dev/null 2>&1
+#* * * * * /usr/bin/flock -n /home/ubuntu/quant/synthetic/supervisor.lock /home/ubuntu/quant/synthetic/run_synthetic_binary_forever.sh >> /home/ubuntu/quant/synthetic/logs/cron.log 2>&1
+# JAIN_SEED_REFRESH_START
+# DRAIN-PAUSED */5 * * * * cd /home/ubuntu/jain_small && /home/ubuntu/jain_small/target/release/jain seed-refresh --root /home/ubuntu/remote_super/quant/regression --worker-root /home/ubuntu/quant/regression --nodes ubuntu@155.248.203.27,xbabe1,xbabe2,xbabe3 --model-name jain_regressor_fast30 --top-n 64 >> /home/ubuntu/remote_super/quant/regression/reports/jain_regressor_fast30_seed_refresh.cron.log 2>&1
+# JAIN_SEED_REFRESH_END
+# v35-PAUSED (locked decision 4, 2026-07-10): */10 * * * * bash /home/ubuntu/jope/runs/keep_alive.sh >> /home/ubuntu/jope/runs/keep_alive.log 2>&1
+# Amphora coating IP: hourly autonomous Claude Phase-0 red-team push loop (lock-protected)
+* * * * * /usr/bin/flock -n /home/ubuntu/jope-flywheel/waves/r2-round2/scq-lane/driver.lock /usr/bin/python3 /home/ubuntu/jope-flywheel/scripts/scq_eval_driver.py --wave r2-round2 --tag r2b --once >> /home/ubuntu/jope-flywheel/waves/r2-round2/scq-lane/driver.log 2>&1
+# GEN1-CLOSED 2026-07-27 * * * * * /usr/bin/flock -n /home/ubuntu/remote_super/quant/campaigns/genome-boost-20260725-v1/tabpfn-lane/controller.lock /usr/bin/python3 /home/ubuntu/remote_super/quant/campaigns/genome-boost-20260725-v1/code/genome_boost_cluster_campaign.py submit-next --plan /home/ubuntu/remote_super/quant/campaigns/genome-boost-20260725-v1/scq-specs-tabpfn/plan.v1.json --state /home/ubuntu/remote_super/quant/campaigns/genome-boost-20260725-v1/tabpfn-lane/state.v1.json >> /home/ubuntu/remote_super/quant/campaigns/genome-boost-20260725-v1/tabpfn-lane/controller.log 2>&1
+#* * * * * /usr/bin/flock -n /home/ubuntu/jope-flywheel/ledger/collector.lock /usr/bin/python3 /home/ubuntu/jope-flywheel/scripts/flywheel_collector.py --once >> /home/ubuntu/jope-flywheel/ledger/collector.log 2>&1
+# GEN1-CLOSED 2026-07-27 * * * * * /usr/bin/flock -n /home/ubuntu/jope-flywheel/ledger/ingest.lock /bin/bash /home/ubuntu/jope-flywheel/scripts/ingest_loop.sh --once
+# GEN1-CLOSED 2026-07-27 * * * * * /usr/bin/flock -n /home/ubuntu/jope-flywheel/waves/r2-round2/scq-lane/acceptance.lock /usr/bin/python3 /home/ubuntu/jope-flywheel/scripts/saturation_acceptance.py >> /home/ubuntu/jope-flywheel/waves/r2-round2/scq-lane/acceptance.log 2>&1
+# forensic autocommit of the evidence tree (Phase B) - runs between loop fires
+# AMPHORA_HANDOFF_DISABLED AMPHORA-HANDOFF-20260823T025604Z-CODEX-7F3A92 30 * * * * flock -n /tmp/amphora-git-autocommit.lock /home/ubuntu/amphora-autocommit-guard.sh >/dev/null 2>&1
+#*/15 * * * * $HOME/bin/jeryu-mirror.sh $HOME/jope-slime >> $HOME/.jeryu-mirror.log 2>&1
+#*/20 * * * * $HOME/bin/slime-store-rescue.sh >> $HOME/.slime-store-rescue.log 2>&1
+#*/30 * * * * $HOME/bin/slime-checkpoint-prune.sh --apply >> $HOME/.slime-prune.log 2>&1
+
+# Perpetual flywheel (jope-slime): reconcile so gameplay never stops.
+# Idempotent + self-healing; `touch ~/slime-waves/flywheel-loop/PAUSE` halts it.
+#*/5 * * * * /usr/bin/flock -n /home/ubuntu/slime-waves/flywheel-loop/tick.lock /usr/bin/python3 /home/ubuntu/jope-slime/scripts/slime-flywheel-loop.py --state /home/ubuntu/slime-waves/flywheel-loop >> /home/ubuntu/slime-waves/flywheel-loop/cron.log 2>&1
+
+# Real M1 qualification/replay bootstrap (jope-slime)
+#*/2 * * * * /usr/bin/python3 /home/ubuntu/jope-slime/scripts/slime-m1-bootstrap.py --root /home/ubuntu/slime-waves/m1-live-v1 --max-inflight 30 >> /home/ubuntu/slime-waves/m1-live-v1/cron.log 2>&1

@@ -1,0 +1,554 @@
+{
+  "schema": "amphora.directive-index.v1",
+  "directive": {
+    "directive_id": "AMPHORA-DIRECTIVE-2026-08-09",
+    "title": "Dataset Reconnaissance, Multilingual Literature & Candidate Formulation Directive",
+    "prepared": "2026-08-09",
+    "version": "v2 (template-first; adds the Candidate Formulation mandate)",
+    "framing": "AUDIT-ONLY / EVIDENCE-ONLY: discovery, recommendation, and draft formulation only — no acquisition, no execution authorization. Rights review and lab execution remain human steps.",
+    "host": "xbabe2",
+    "root": "/home/ubuntu/amphora/build/mvp20-split",
+    "md_path": "docs/directives/2026-08-09-dataset-reconnaissance-multilingual.md",
+    "md_sha256": "97fad5d1636f5ccb106562c2d940535651c216d357dd5276088f2db12bdba207",
+    "source_on_xbabe1": "/home/ubuntu/Dataset_Reconnaissance_and_Multilingual_Literature_Directive.md",
+    "template_parameters": {
+      "envelope_source": "amphora-envelope-gates/reference/mvp20/charter/v5_requirements.json",
+      "gap_inventory_sources": [
+        "/home/ubuntu/amphora-cron/data-acquisition-queue.jsonl",
+        "module promotion blockers (Pre-Tier-0)",
+        "AMPHORA-DIRECTIVE-2026-08-05 Section C lab specifications",
+        "CF-TIER MODELED/ASSUMED recipe elements (second pass)"
+      ]
+    }
+  },
+  "owner_classes": {
+    "LOOP": "Autonomous — the lane fleet executes these.",
+    "HUMAN": "Governance/rights — the loop is FORBIDDEN from executing these; it files and tracks them only.",
+    "LAB": "Wet-lab execution — requires contracted counterparties and signed candidate-bound returns."
+  },
+  "obligations": [
+    {
+      "id": "PROBE-WEB",
+      "section": "meta",
+      "source_heading": "## 4. Multilingual Scope (binding)",
+      "owner": "LOOP",
+      "module": "amphora-dataset-recon",
+      "title": "Probe: what web reconnaissance can a headless fire actually do?",
+      "done_criteria": "Signed receipt reporting the fire's usable tool inventory (WebSearch/WebFetch/raw HTTP), one native-script query round-trip (Chinese or Japanese) with the native query string and a result sample quoted, and an explicit no-acquisition attestation. This receipt is the factual basis on which the DR-LANG items run full or degraded.",
+      "origin": "operator-derived",
+      "campaign_items": [
+        "PROBE-WEB"
+      ],
+      "status": "in-progress",
+      "attack": "Attempt each candidate access path in turn and record exactly what worked, what was refused, and what was unavailable, with the evidence inline.",
+      "refutation_criterion": "The receipt claims a tool or access path that the transcript does not show being exercised, or omits one that was.",
+      "max_fires": 2,
+      "note": "Operator-derived: the directive mandates multilingual search; nothing in the loop had ever verified the tooling exists headless. Not founder text."
+    },
+    {
+      "id": "DR-RUBRIC",
+      "section": "S6+S2",
+      "source_heading": "## 6. Dataset Evaluation Dimensions (floor, not ceiling)",
+      "owner": "LOOP",
+      "module": "amphora-dataset-recon",
+      "title": "Publish the evaluation rubric; prove it deterministic",
+      "done_criteria": "Signed rubric artifact covering at least the six mandated dimensions (gap fit, provenance & measurement quality, rights clarity, uniqueness, integrity risk, acquisition cost & friction), each with a scoring rule a second party could apply; byte-stable two-replay of the ranking over a frozen candidate snapshot. RECON-MODE rules apply (see prompt): read-to-evaluate ONLY -- no downloads, no dataset caching, no scraping loops; native-script citations preserved beside any romanization; translation-confidence rated, never silently accepted; units as published with conversions shown; every credited artifact is a DSSE receipt content-binding the ledger lines it appended.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "DR-RUBRIC"
+      ],
+      "status": "in-progress",
+      "attack": "Re-run the published rubric over the same frozen snapshot and attack determinism; then mutate one scored attribute in a snapshot copy (e.g. flip a license) and attack whether the rank moves as the rubric says it must.",
+      "refutation_criterion": "Re-running the published rubric over the same frozen candidate snapshot yields a different ranking or verdict for any candidate, or any of the six mandated dimensions has no scoring rule a second party could apply.",
+      "max_fires": 2
+    },
+    {
+      "id": "DR-GAP",
+      "section": "S3",
+      "source_heading": "## 3. Gap-Derived Targeting",
+      "owner": "LOOP",
+      "module": "amphora-dataset-recon",
+      "title": "Consolidate the gap register the search is anchored to",
+      "done_criteria": "Signed gap register in which every row states the four mandated facts: what measurement or label class is missing, at what minimum n, under what measurement standard, and what a qualifying dataset would have to contain. Sources: every open data-acquisition-queue ask, every Pre-Tier-0 promotion blocker naming a dataset, every lab-in-the-loop spec referencing an external corpus, and every MODELED/ASSUMED recipe element already published at the register's snapshot date. The recipe-gap coupling is circular by design: folding CF-TIER's later deltas into the register is DR-FRESH's run-2 obligation, not this item's -- module serialization means this register closes before CF-TIER exists. RECON-MODE rules apply (see prompt): read-to-evaluate ONLY -- no downloads, no dataset caching, no scraping loops; native-script citations preserved beside any romanization; translation-confidence rated, never silently accepted; units as published with conversions shown; every credited artifact is a DSSE receipt content-binding the ledger lines it appended.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "DR-GAP"
+      ],
+      "status": "in-progress",
+      "attack": "Audit the register against its own declared sources: delete a known queue-derived gap from a copy and attack whether the completeness check fires; hunt for a queue ask, promotion blocker, or lab-spec corpus reference absent from the register.",
+      "refutation_criterion": "Any gap row lacks one of the four mandated statements, or a data ask live in the queue at the register's snapshot date, a promotion blocker naming a dataset, or a MODELED or ASSUMED recipe element published before that snapshot is absent from the register.",
+      "max_fires": 3
+    },
+    {
+      "id": "DR-LANG-ZH",
+      "section": "S4",
+      "source_heading": "## 4. Multilingual Scope (binding)",
+      "owner": "LOOP",
+      "module": "amphora-dataset-recon",
+      "title": "Native-language reconnaissance: Chinese literature",
+      "done_criteria": "Dataset-ledger entries and search-record lines for the Chinese literature communities (CNKI/Wanfang-class indexes, GB/T standards annexes, CAS institute archives and wherever the research leads), queried in native practitioner terminology -- not translated English keywords. Every entry carries the native-script citation, license as published, standard mapping, translation confidence, and the gap or recipe element it serves. An empty result for a gap is a valid, reportable answer. Previously-supplied candidates in these languages must be independently rediscovered or their absence explained. RECON-MODE rules apply (see prompt): read-to-evaluate ONLY -- no downloads, no dataset caching, no scraping loops; native-script citations preserved beside any romanization; translation-confidence rated, never silently accepted; units as published with conversions shown; every credited artifact is a DSSE receipt content-binding the ledger lines it appended.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "DR-LANG-ZH"
+      ],
+      "status": "in-progress",
+      "attack": "Spot-check the ledger and search record against the live sources: re-resolve citations, re-fetch license pages, compare recorded queries against what a practitioner would write, and check rediscovery recall against the known candidate list; corrupt one citation in a ledger copy and attack whether the audit fires.",
+      "refutation_criterion": "A spot-check finds a claimed-searched repository with no recorded query and result sample, a native-language query that is a literal English translation, a cited source whose recorded license text differs from its live license page, a native-script citation that fails to resolve, or a previously-supplied candidate in this language that the fresh search neither rediscovered nor explained.",
+      "max_fires": 2
+    },
+    {
+      "id": "DR-LANG-JA",
+      "section": "S4",
+      "source_heading": "## 4. Multilingual Scope (binding)",
+      "owner": "LOOP",
+      "module": "amphora-dataset-recon",
+      "title": "Native-language reconnaissance: Japanese literature",
+      "done_criteria": "Dataset-ledger entries and search-record lines for the Japanese literature communities (J-STAGE, NIMS/PoLyInfo-class national materials databases, JIS test-data annexes and wherever the research leads), queried in native practitioner terminology -- not translated English keywords. Every entry carries the native-script citation, license as published, standard mapping, translation confidence, and the gap or recipe element it serves. An empty result for a gap is a valid, reportable answer. Previously-supplied candidates in these languages must be independently rediscovered or their absence explained. RECON-MODE rules apply (see prompt): read-to-evaluate ONLY -- no downloads, no dataset caching, no scraping loops; native-script citations preserved beside any romanization; translation-confidence rated, never silently accepted; units as published with conversions shown; every credited artifact is a DSSE receipt content-binding the ledger lines it appended.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "DR-LANG-JA"
+      ],
+      "status": "in-progress",
+      "attack": "Spot-check the ledger and search record against the live sources: re-resolve citations, re-fetch license pages, compare recorded queries against what a practitioner would write, and check rediscovery recall against the known candidate list; corrupt one citation in a ledger copy and attack whether the audit fires.",
+      "refutation_criterion": "A spot-check finds a claimed-searched repository with no recorded query and result sample, a native-language query that is a literal English translation, a cited source whose recorded license text differs from its live license page, a native-script citation that fails to resolve, or a previously-supplied candidate in this language that the fresh search neither rediscovered nor explained.",
+      "max_fires": 2
+    },
+    {
+      "id": "DR-LANG-DE",
+      "section": "S4",
+      "source_heading": "## 4. Multilingual Scope (binding)",
+      "owner": "LOOP",
+      "module": "amphora-dataset-recon",
+      "title": "Native-language reconnaissance: German literature",
+      "done_criteria": "Dataset-ledger entries and search-record lines for the German literature communities (DIN annexes, Fraunhofer/DECHEMA archives, German-language coatings journals and wherever the research leads), queried in native practitioner terminology -- not translated English keywords. Every entry carries the native-script citation, license as published, standard mapping, translation confidence, and the gap or recipe element it serves. An empty result for a gap is a valid, reportable answer. Previously-supplied candidates in these languages must be independently rediscovered or their absence explained. RECON-MODE rules apply (see prompt): read-to-evaluate ONLY -- no downloads, no dataset caching, no scraping loops; native-script citations preserved beside any romanization; translation-confidence rated, never silently accepted; units as published with conversions shown; every credited artifact is a DSSE receipt content-binding the ledger lines it appended.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "DR-LANG-DE"
+      ],
+      "status": "in-progress",
+      "attack": "Spot-check the ledger and search record against the live sources: re-resolve citations, re-fetch license pages, compare recorded queries against what a practitioner would write, and check rediscovery recall against the known candidate list; corrupt one citation in a ledger copy and attack whether the audit fires.",
+      "refutation_criterion": "A spot-check finds a claimed-searched repository with no recorded query and result sample, a native-language query that is a literal English translation, a cited source whose recorded license text differs from its live license page, a native-script citation that fails to resolve, or a previously-supplied candidate in this language that the fresh search neither rediscovered nor explained.",
+      "max_fires": 2
+    },
+    {
+      "id": "DR-LANG-RU",
+      "section": "S4",
+      "source_heading": "## 4. Multilingual Scope (binding)",
+      "owner": "LOOP",
+      "module": "amphora-dataset-recon",
+      "title": "Native-language reconnaissance: Russian literature",
+      "done_criteria": "Dataset-ledger entries and search-record lines for the Russian literature communities (eLIBRARY/RSCI, GOST test-data annexes, institute report archives and wherever the research leads), queried in native practitioner terminology -- not translated English keywords. Every entry carries the native-script citation, license as published, standard mapping, translation confidence, and the gap or recipe element it serves. An empty result for a gap is a valid, reportable answer. Previously-supplied candidates in these languages must be independently rediscovered or their absence explained. RECON-MODE rules apply (see prompt): read-to-evaluate ONLY -- no downloads, no dataset caching, no scraping loops; native-script citations preserved beside any romanization; translation-confidence rated, never silently accepted; units as published with conversions shown; every credited artifact is a DSSE receipt content-binding the ledger lines it appended.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "DR-LANG-RU"
+      ],
+      "status": "in-progress",
+      "attack": "Spot-check the ledger and search record against the live sources: re-resolve citations, re-fetch license pages, compare recorded queries against what a practitioner would write, and check rediscovery recall against the known candidate list; corrupt one citation in a ledger copy and attack whether the audit fires.",
+      "refutation_criterion": "A spot-check finds a claimed-searched repository with no recorded query and result sample, a native-language query that is a literal English translation, a cited source whose recorded license text differs from its live license page, a native-script citation that fails to resolve, or a previously-supplied candidate in this language that the fresh search neither rediscovered nor explained.",
+      "max_fires": 2
+    },
+    {
+      "id": "DR-LANG-KO",
+      "section": "S4",
+      "source_heading": "## 4. Multilingual Scope (binding)",
+      "owner": "LOOP",
+      "module": "amphora-dataset-recon",
+      "title": "Native-language reconnaissance: Korean literature",
+      "done_criteria": "Dataset-ledger entries and search-record lines for the Korean literature communities (KCI, KS standards annexes, KRICT-class institute archives and wherever the research leads), queried in native practitioner terminology -- not translated English keywords. Every entry carries the native-script citation, license as published, standard mapping, translation confidence, and the gap or recipe element it serves. An empty result for a gap is a valid, reportable answer. Previously-supplied candidates in these languages must be independently rediscovered or their absence explained. RECON-MODE rules apply (see prompt): read-to-evaluate ONLY -- no downloads, no dataset caching, no scraping loops; native-script citations preserved beside any romanization; translation-confidence rated, never silently accepted; units as published with conversions shown; every credited artifact is a DSSE receipt content-binding the ledger lines it appended.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "DR-LANG-KO"
+      ],
+      "status": "in-progress",
+      "attack": "Spot-check the ledger and search record against the live sources: re-resolve citations, re-fetch license pages, compare recorded queries against what a practitioner would write, and check rediscovery recall against the known candidate list; corrupt one citation in a ledger copy and attack whether the audit fires.",
+      "refutation_criterion": "A spot-check finds a claimed-searched repository with no recorded query and result sample, a native-language query that is a literal English translation, a cited source whose recorded license text differs from its live license page, a native-script citation that fails to resolve, or a previously-supplied candidate in this language that the fresh search neither rediscovered nor explained.",
+      "max_fires": 2
+    },
+    {
+      "id": "DR-LANG-FR",
+      "section": "S4",
+      "source_heading": "## 4. Multilingual Scope (binding)",
+      "owner": "LOOP",
+      "module": "amphora-dataset-recon",
+      "title": "Native-language reconnaissance: French literature",
+      "done_criteria": "Dataset-ledger entries and search-record lines for the French literature communities (NF standards annexes, HAL/theses.fr, French-language corrosion literature and wherever the research leads), queried in native practitioner terminology -- not translated English keywords. Every entry carries the native-script citation, license as published, standard mapping, translation confidence, and the gap or recipe element it serves. An empty result for a gap is a valid, reportable answer. Previously-supplied candidates in these languages must be independently rediscovered or their absence explained. RECON-MODE rules apply (see prompt): read-to-evaluate ONLY -- no downloads, no dataset caching, no scraping loops; native-script citations preserved beside any romanization; translation-confidence rated, never silently accepted; units as published with conversions shown; every credited artifact is a DSSE receipt content-binding the ledger lines it appended.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "DR-LANG-FR"
+      ],
+      "status": "in-progress",
+      "attack": "Spot-check the ledger and search record against the live sources: re-resolve citations, re-fetch license pages, compare recorded queries against what a practitioner would write, and check rediscovery recall against the known candidate list; corrupt one citation in a ledger copy and attack whether the audit fires.",
+      "refutation_criterion": "A spot-check finds a claimed-searched repository with no recorded query and result sample, a native-language query that is a literal English translation, a cited source whose recorded license text differs from its live license page, a native-script citation that fails to resolve, or a previously-supplied candidate in this language that the fresh search neither rediscovered nor explained.",
+      "max_fires": 2
+    },
+    {
+      "id": "DR-LANG-IBERIAN",
+      "section": "S4",
+      "source_heading": "## 4. Multilingual Scope (binding)",
+      "owner": "LOOP",
+      "module": "amphora-dataset-recon",
+      "title": "Native-language reconnaissance: Spanish and Portuguese literature",
+      "done_criteria": "Dataset-ledger entries and search-record lines for the Spanish and Portuguese literature communities (SciELO-class regional indexes, national theses repositories and wherever the research leads), queried in native practitioner terminology -- not translated English keywords. Every entry carries the native-script citation, license as published, standard mapping, translation confidence, and the gap or recipe element it serves. An empty result for a gap is a valid, reportable answer. Previously-supplied candidates in these languages must be independently rediscovered or their absence explained. RECON-MODE rules apply (see prompt): read-to-evaluate ONLY -- no downloads, no dataset caching, no scraping loops; native-script citations preserved beside any romanization; translation-confidence rated, never silently accepted; units as published with conversions shown; every credited artifact is a DSSE receipt content-binding the ledger lines it appended.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "DR-LANG-IBERIAN"
+      ],
+      "status": "in-progress",
+      "attack": "Spot-check the ledger and search record against the live sources: re-resolve citations, re-fetch license pages, compare recorded queries against what a practitioner would write, and check rediscovery recall against the known candidate list; corrupt one citation in a ledger copy and attack whether the audit fires.",
+      "refutation_criterion": "A spot-check finds a claimed-searched repository with no recorded query and result sample, a native-language query that is a literal English translation, a cited source whose recorded license text differs from its live license page, a native-script citation that fails to resolve, or a previously-supplied candidate in this language that the fresh search neither rediscovered nor explained.",
+      "max_fires": 2
+    },
+    {
+      "id": "DR-LANG-CEE",
+      "section": "S4",
+      "source_heading": "## 4. Multilingual Scope (binding)",
+      "owner": "LOOP",
+      "module": "amphora-dataset-recon",
+      "title": "Native-language reconnaissance: Polish and Czech literature",
+      "done_criteria": "Dataset-ledger entries and search-record lines for the Polish and Czech literature communities (national journal indexes and polytechnic theses repositories and wherever the research leads), queried in native practitioner terminology -- not translated English keywords. Every entry carries the native-script citation, license as published, standard mapping, translation confidence, and the gap or recipe element it serves. An empty result for a gap is a valid, reportable answer. Previously-supplied candidates in these languages must be independently rediscovered or their absence explained. RECON-MODE rules apply (see prompt): read-to-evaluate ONLY -- no downloads, no dataset caching, no scraping loops; native-script citations preserved beside any romanization; translation-confidence rated, never silently accepted; units as published with conversions shown; every credited artifact is a DSSE receipt content-binding the ledger lines it appended.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "DR-LANG-CEE"
+      ],
+      "status": "in-progress",
+      "attack": "Spot-check the ledger and search record against the live sources: re-resolve citations, re-fetch license pages, compare recorded queries against what a practitioner would write, and check rediscovery recall against the known candidate list; corrupt one citation in a ledger copy and attack whether the audit fires.",
+      "refutation_criterion": "A spot-check finds a claimed-searched repository with no recorded query and result sample, a native-language query that is a literal English translation, a cited source whose recorded license text differs from its live license page, a native-script citation that fails to resolve, or a previously-supplied candidate in this language that the fresh search neither rediscovered nor explained.",
+      "max_fires": 2
+    },
+    {
+      "id": "DR-LANG-EU",
+      "section": "S4",
+      "source_heading": "## 4. Multilingual Scope (binding)",
+      "owner": "LOOP",
+      "module": "amphora-dataset-recon",
+      "title": "Native-language reconnaissance: Dutch and Italian literature",
+      "done_criteria": "Dataset-ledger entries and search-record lines for the Dutch and Italian literature communities (national repositories and coatings-institute archives and wherever the research leads), queried in native practitioner terminology -- not translated English keywords. Every entry carries the native-script citation, license as published, standard mapping, translation confidence, and the gap or recipe element it serves. An empty result for a gap is a valid, reportable answer. Previously-supplied candidates in these languages must be independently rediscovered or their absence explained. RECON-MODE rules apply (see prompt): read-to-evaluate ONLY -- no downloads, no dataset caching, no scraping loops; native-script citations preserved beside any romanization; translation-confidence rated, never silently accepted; units as published with conversions shown; every credited artifact is a DSSE receipt content-binding the ledger lines it appended.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "DR-LANG-EU"
+      ],
+      "status": "in-progress",
+      "attack": "Spot-check the ledger and search record against the live sources: re-resolve citations, re-fetch license pages, compare recorded queries against what a practitioner would write, and check rediscovery recall against the known candidate list; corrupt one citation in a ledger copy and attack whether the audit fires.",
+      "refutation_criterion": "A spot-check finds a claimed-searched repository with no recorded query and result sample, a native-language query that is a literal English translation, a cited source whose recorded license text differs from its live license page, a native-script citation that fails to resolve, or a previously-supplied candidate in this language that the fresh search neither rediscovered nor explained.",
+      "max_fires": 2
+    },
+    {
+      "id": "DR-STD-MAP",
+      "section": "S4",
+      "source_heading": "## 4. Multilingual Scope (binding)",
+      "owner": "LOOP",
+      "module": "amphora-dataset-recon",
+      "title": "Map foreign measurement standards to ASTM/ISO with comparability ratings",
+      "done_criteria": "Signed mapping table covering every non-ASTM/ISO standard cited by any ledger entry (GB/T, JIS, DIN, GOST, KS, NF classes at minimum): closest equivalent named, known methodological deltas stated, comparability rated. An unmapped standard in the ledger is an integrity gap and must be declared as one. RECON-MODE rules apply (see prompt): read-to-evaluate ONLY -- no downloads, no dataset caching, no scraping loops; native-script citations preserved beside any romanization; translation-confidence rated, never silently accepted; units as published with conversions shown; every credited artifact is a DSSE receipt content-binding the ledger lines it appended.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "DR-STD-MAP"
+      ],
+      "status": "in-progress",
+      "attack": "Cross-check mappings against the standards' own scopes; swap one mapping in a copy (assert a salt-spray protocol equals a viscosity method) and attack whether the audit rejects it.",
+      "refutation_criterion": "Any ledger entry measured under a non-ASTM/ISO standard lacks a named closest equivalent, stated methodological deltas, and a comparability rating, or a mapped pair misstates a delta that the two standards' own texts contradict.",
+      "max_fires": 2
+    },
+    {
+      "id": "DR-DISP",
+      "section": "S8B+S2",
+      "source_heading": "## 8. Required Deliverables (complete set)",
+      "owner": "LOOP",
+      "module": "amphora-dataset-recon",
+      "title": "Disposition Ledger: every candidate gets exactly one verdict",
+      "done_criteria": "First deliverable: a sha256-pinned candidate-intake manifest enumerating every previously-furnished source (each source named inside the 14 data-acquisition-queue lines, the six B-ASK asks R-D01..R-D06, and U-MLIP's Orb reference) -- 'every candidate' is only checkable against a closed input set. Then: every manifest candidate and every engine-discovered candidate receives exactly one of RECOMMENDED, CONDITIONAL (blocker named and routed to a human action), or REJECTED (specific disqualifying finding). 'Not selected' without a reason is not a permitted state. A RECOMMENDED entry with an empty serves field is a defect. Byte-stable replay over the same snapshot. RECON-MODE rules apply (see prompt): read-to-evaluate ONLY -- no downloads, no dataset caching, no scraping loops; native-script citations preserved beside any romanization; translation-confidence rated, never silently accepted; units as published with conversions shown; every credited artifact is a DSSE receipt content-binding the ledger lines it appended.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "DR-DISP"
+      ],
+      "status": "in-progress",
+      "attack": "Remove one queue-derived candidate's verdict from a copy and attack whether the every-candidate check fires; hunt for a manifest candidate with zero or two verdicts, and for a RECOMMENDED entry serving nothing.",
+      "refutation_criterion": "Any candidate in the pinned intake manifest or any engine-discovered candidate lacks exactly one verdict of RECOMMENDED, CONDITIONAL or REJECTED with a stated reason, or a RECOMMENDED entry has an empty serves field, or the disposition replay over the same snapshot is not byte-stable.",
+      "max_fires": 3
+    },
+    {
+      "id": "DR-COVERAGE",
+      "section": "S8C",
+      "source_heading": "## 8. Required Deliverables (complete set)",
+      "owner": "LOOP",
+      "module": "amphora-dataset-recon",
+      "title": "Coverage Map: no gap left blank",
+      "done_criteria": "Signed gap-by-gap (and, once CF-TIER exists, recipe-element-by-element) map in which every row carries exactly one of: the best RECOMMENDED source, the best CONDITIONAL source, or an explicit conversion into a commissioned-measurement candidate for the lab-in-the-loop program. An empty search result converts; it never pads and never disappears. RECON-MODE rules apply (see prompt): read-to-evaluate ONLY -- no downloads, no dataset caching, no scraping loops; native-script citations preserved beside any romanization; translation-confidence rated, never silently accepted; units as published with conversions shown; every credited artifact is a DSSE receipt content-binding the ledger lines it appended.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "DR-COVERAGE"
+      ],
+      "status": "in-progress",
+      "attack": "Blank one gap's row in a copy and attack whether the map-completeness check fires; cross-check that every named source exists in the Dataset Ledger.",
+      "refutation_criterion": "Any register gap or MODELED or ASSUMED recipe element has neither a best recommended source, a best conditional source, nor an explicit commissioned-measurement conversion, or names a source absent from the Dataset Ledger.",
+      "max_fires": 2
+    },
+    {
+      "id": "DR-SEARCH-RECORD",
+      "section": "S8D+S4",
+      "source_heading": "## 8. Required Deliverables (complete set)",
+      "owner": "LOOP",
+      "module": "amphora-dataset-recon",
+      "title": "Search Record: auditable, extendable, language-list honest",
+      "done_criteria": "Signed assembly of the search record: rubric used, language communities and repository classes searched with the native-language query forms, AND the considered-and-excluded decision for language communities beyond the twelve named -- the directive says the list extends wherever research indicates activity, so the named twelve must never silently become a ceiling. Sufficient for a human to audit what was and was not looked at, and for the next run to extend rather than repeat. RECON-MODE rules apply (see prompt): read-to-evaluate ONLY -- no downloads, no dataset caching, no scraping loops; native-script citations preserved beside any romanization; translation-confidence rated, never silently accepted; units as published with conversions shown; every credited artifact is a DSSE receipt content-binding the ledger lines it appended.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "DR-SEARCH-RECORD"
+      ],
+      "status": "in-progress",
+      "attack": "Strip one repository's query log from a copy and attack whether the audit detects a ledger entry with no matching search provenance; check the extension decisions exist and are reasoned.",
+      "refutation_criterion": "The record omits a language community or repository class that any ledger entry's own provenance shows was used, omits the native-language query forms, or omits the considered-and-excluded decision for language communities beyond the twelve named.",
+      "max_fires": 2
+    },
+    {
+      "id": "DR-ANNEX",
+      "section": "S9",
+      "source_heading": "## 9. Discovery Annex (separate, quarantined)",
+      "owner": "LOOP",
+      "module": "amphora-dataset-recon",
+      "title": "Discovery Annex: quarantine holds",
+      "done_criteria": "Signed check that the annex exists (superior chemistries, alternative feedstocks, adjacent systems and adjacent-problem sources are REPORTED, not suppressed) and that the quarantine is airtight: no annex entry appears in the primary Dataset Ledger or primary recipe, and no primary-recipe element cites annex evidence. RECON-MODE rules apply (see prompt): read-to-evaluate ONLY -- no downloads, no dataset caching, no scraping loops; native-script citations preserved beside any romanization; translation-confidence rated, never silently accepted; units as published with conversions shown; every credited artifact is a DSSE receipt content-binding the ledger lines it appended.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "DR-ANNEX"
+      ],
+      "status": "in-progress",
+      "attack": "Copy one annex chemistry into a primary-BOM copy and attack whether the disjointness check fires; grep the primary artifacts for annex identifiers.",
+      "refutation_criterion": "Any annex entry also appears in the primary Dataset Ledger or the primary recipe, or any primary-recipe element cites an annex entry as its evidence, or a non-envelope-conforming chemistry appears outside the annex.",
+      "max_fires": 2
+    },
+    {
+      "id": "DR-FRESH",
+      "section": "S10",
+      "source_heading": "## 10. Cadence & Freshness",
+      "owner": "LOOP",
+      "module": "amphora-dataset-recon",
+      "title": "Freshness: every run diffs against the last",
+      "done_criteria": "Every ledger carries snapshot_date, run_id and an explicit diff block against the prior run (new sources, changed licenses, superseded datasets, tier movements) -- run 1 must state 'first run — no prior ledger' explicitly, which is itself checkable. No recommendation or recipe element is ever silently carried forward: re-verified or re-flagged. RECON-MODE rules apply (see prompt): read-to-evaluate ONLY -- no downloads, no dataset caching, no scraping loops; native-script citations preserved beside any romanization; translation-confidence rated, never silently accepted; units as published with conversions shown; every credited artifact is a DSSE receipt content-binding the ledger lines it appended.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "DR-FRESH"
+      ],
+      "status": "blocked",
+      "attack": "Carry one stale entry forward unmarked in a copy and attack whether the diff check fires; verify run 1's explicit first-run declaration exists.",
+      "refutation_criterion": "Any run's ledger lacks a snapshot date and an explicit diff block against the prior run or an explicit first-run declaration, or any prior recommendation appears unchanged without a re-verified or re-flagged mark, or run 2's register fails to fold in CF-TIER's MODELED and ASSUMED elements (DR-GAP's declared second pass).",
+      "max_fires": 2,
+      "unblock_condition": "Second sweep scheduled (run 2); run 1 satisfies only the first-run declaration, which DR-LANG receipts carry.",
+      "note": "Filed blocked until a second sweep exists to diff against; the obligation is declared now so coverage accounting sees it."
+    },
+    {
+      "id": "CF-ARITH",
+      "section": "S7",
+      "source_heading": "## 7. Candidate Formulation Package (Mandate B deliverable — floor, not ceiling)",
+      "owner": "LOOP",
+      "module": "amphora-formulation-arithmetic",
+      "title": "Envelope arithmetic: the recipe lands its numbers, shown not asserted",
+      "done_criteria": "Signed artifact showing the mass balance and EEW/AHEW stoichiometry by which the candidate formulation lands the 1:1 volume mix ratio, 65±2% volume solids, ≤340 g/L VOC, pot-life and DFT targets -- every envelope number cited by path+sha256 to amphora-envelope-gates/reference/mvp20/charter/v5_requirements.json, never restated freehand (thresholds are never relaxed, so the charter file is the only permitted source of them). Independent re-computation must reproduce the shown arithmetic.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "CF-ARITH"
+      ],
+      "status": "in-progress",
+      "attack": "Re-derive the arithmetic independently; perturb one ingredient density in a BOM copy and attack whether the re-computation breaches a target and the check fires; diff every envelope constant against the charter file.",
+      "refutation_criterion": "The shown mass-balance and stoichiometry, independently re-computed, fails to land the 1:1 volume mix, 65±2% volume solids, or ≤340 g/L VOC targets as cited from the charter, or any envelope number in the blueprint differs from that file.",
+      "max_fires": 2
+    },
+    {
+      "id": "CF-BOM",
+      "section": "S7",
+      "source_heading": "## 7. Candidate Formulation Package (Mandate B deliverable — floor, not ceiling)",
+      "owner": "LOOP",
+      "module": "amphora-cro-protocol-packager",
+      "title": "Formulation & BOM: every raw material, function, loading, source, tier",
+      "done_criteria": "Signed blueprint section: every raw material in both components (resin, curative, solvents, pigments, extenders, additives) with function, target % by weight, key grade/spec attributes, at least one candidate commercial source with the domestic-sourcing preference flagged, and an evidence tier on every numeric claim. Chemistry stays inside the two-component epoxy-polyamide solvent-borne envelope; superior non-conforming ideas go to the Discovery Annex.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "CF-BOM"
+      ],
+      "status": "in-progress",
+      "attack": "Delete one BOM line's EEW citation in a copy and attack whether the completeness check fires; hunt for an uncited or untiered numeric claim; check envelope conformance of every ingredient class.",
+      "refutation_criterion": "Any BOM line lacks function, target weight percent, grade or spec attributes, or a candidate commercial source, or any numeric claim about an ingredient is uncited and untiered.",
+      "max_fires": 3
+    },
+    {
+      "id": "CF-PROC",
+      "section": "S7",
+      "source_heading": "## 7. Candidate Formulation Package (Mandate B deliverable — floor, not ceiling)",
+      "owner": "LOOP",
+      "module": "amphora-cro-protocol-packager",
+      "title": "Mixing, induction, application and bench-scale process",
+      "done_criteria": "Signed blueprint section: component A/B preparation, induction behavior, thinning limits, application parameters against the envelope's WFT/coverage/cure schedule, and the bench-scale mix/dispersion sequence with scale-sensitive steps flagged for the later pilot path.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "CF-PROC"
+      ],
+      "status": "in-progress",
+      "attack": "Remove the induction-time parameter from a copy and attack whether the envelope crosswalk fires; walk the envelope's application table and hunt for an uncovered parameter.",
+      "refutation_criterion": "The mixing, induction and application section or the bench-scale sequence omits a parameter the envelope's WFT, coverage or cure schedule requires, or a scale-sensitive step is unflagged.",
+      "max_fires": 2
+    },
+    {
+      "id": "CF-TIER",
+      "section": "S7+S1",
+      "source_heading": "## 7. Candidate Formulation Package (Mandate B deliverable — floor, not ceiling)",
+      "owner": "LOOP",
+      "module": "amphora-cro-protocol-packager",
+      "title": "Per-element evidence tiers: the crosswalk that couples recipe and ledger",
+      "done_criteria": "Every ingredient choice, loading level and process parameter tagged MEASURED (cited primary data) / MODELED (method named) / ASSUMED (rationale stated), each with a confidence rating; every MODELED/ASSUMED element cross-references the Dataset Ledger entry or commissioned measurement that would harden it. This crosswalk is mandatory -- it is how the recipe and the ledger justify each other, and its gap deltas feed DR-GAP's second pass. Hidden uncertainty is a violation; declared uncertainty is the deliverable working as intended.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "CF-TIER"
+      ],
+      "status": "in-progress",
+      "attack": "Strip one element's cross-reference in a copy and attack whether the crosswalk check fires; hunt for an untagged element or a tag with no confidence rating.",
+      "refutation_criterion": "Any ingredient choice, loading or process parameter lacks a MEASURED, MODELED or ASSUMED tag with a confidence rating, or any MODELED or ASSUMED element fails to cross-reference a resolving Dataset Ledger entry or commissioned measurement.",
+      "max_fires": 2
+    },
+    {
+      "id": "CF-ALT",
+      "section": "S7",
+      "source_heading": "## 7. Candidate Formulation Package (Mandate B deliverable — floor, not ceiling)",
+      "owner": "LOOP",
+      "module": "amphora-cro-protocol-packager",
+      "title": "Alternates: the lab tests a decision, not a guess",
+      "done_criteria": "Wherever evidence cannot distinguish candidate ingredients (two curatives, two thinner systems), the blueprint ships the primary plus ranked alternates with the discriminating experiment named.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "CF-ALT"
+      ],
+      "status": "in-progress",
+      "attack": "Merge two curative alternates into one unexplained pick in a copy and attack whether the check fires; hunt for an evidence-indistinguishable pair shipped without a discriminating experiment.",
+      "refutation_criterion": "Any pair of evidence-indistinguishable candidates ships without ranked alternates and a named discriminating experiment.",
+      "max_fires": 2
+    },
+    {
+      "id": "CF-TEST",
+      "section": "S7",
+      "source_heading": "## 7. Candidate Formulation Package (Mandate B deliverable — floor, not ceiling)",
+      "owner": "LOOP",
+      "module": "amphora-cro-protocol-packager",
+      "title": "Pre-registered test plan and the data-capture template",
+      "done_criteria": "Signed protocol qualifying the system against the envelope and the relevant MIL-DTL-24441-class requirements, conforming to the portfolio's common transfer path: methods and standards named, acceptance thresholds and kill criteria locked before any measurement, splits declared, uncertainty quantified (not point-only) -- PLUS the candidate-bound data-capture template (measurements, conditions, deviations, outcomes, units specified) so bench results flow back to fine-tune the engine.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "CF-TEST"
+      ],
+      "status": "in-progress",
+      "attack": "Delete one kill criterion from a copy and attack whether the pre-registration completeness check fires; verify the capture template binds to the candidate and specifies units on every field.",
+      "refutation_criterion": "The test plan lacks named methods and standards, pre-locked acceptance thresholds and kill criteria, declared splits, quantified uncertainty, or the candidate-bound unit-specified data-capture template.",
+      "max_fires": 2
+    },
+    {
+      "id": "CF-RISK",
+      "section": "S7",
+      "source_heading": "## 7. Candidate Formulation Package (Mandate B deliverable — floor, not ceiling)",
+      "owner": "LOOP",
+      "module": "amphora-cro-protocol-packager",
+      "title": "Known failure modes, application limits, mitigations",
+      "done_criteria": "Signed blueprint section: pinholing/wetting/film-build and pot-life risks specific to this recipe, the application-limit parameters most likely to be exceeded, and their mitigations. An element the engine cannot defend is reported as such with its resolving experiment -- an honest hole is compliant; a confident-looking guess is not.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "CF-RISK"
+      ],
+      "status": "in-progress",
+      "attack": "Drop the pot-life mitigation from a copy and attack whether the check fires; hunt for a named risk with no exceeded-parameter or no mitigation.",
+      "refutation_criterion": "No failure-mode entry exists for pinholing, wetting, film-build or pot-life, or a named risk lacks the application-limit parameter most likely exceeded and its mitigation.",
+      "max_fires": 2
+    },
+    {
+      "id": "CF-PACKET",
+      "section": "S7+S5",
+      "source_heading": "## 5. Fixed Constraints (binding)",
+      "owner": "LOOP",
+      "module": "amphora-cro-protocol-packager",
+      "title": "Final assembly through CroProtocolPackageV2, locks intact",
+      "done_criteria": "The complete package assembled through the portfolio's CRO-packet path (CroProtocolPackageV2): execution_authorized false, all eight claim locks true, status frozen at DRAFT_FOR_CRO_FEASIBILITY_REVIEW, protocol_lock_sha256 recomputing from the packet's own canonical locked_numeric_thresholds (computed_protocol_lock_sha256), the packet citing every blueprint artifact by path+sha256 so the thresholds are content-bound to the blueprint they came from, full-detail chemistry marked LOCKED-INTERNAL, AUDIT-ONLY framing on every rendering. The packet is a draft for CRO feasibility review; only the human transfer path may execute it.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "CF-PACKET"
+      ],
+      "status": "in-progress",
+      "attack": "Mutate one byte of the packet, set execution_authorized true, strip a claim lock, and attack whether the Rust validator rejects each (the same machinery T-02 used); verify the lock hash re-derives from the packet's canonical locked thresholds and that the cited blueprint sha256s match the blueprint files.",
+      "refutation_criterion": "The assembled package validates with execution_authorized true, a claim lock stripped, a status other than DRAFT_FOR_CRO_FEASIBILITY_REVIEW, a protocol_lock_sha256 that does not recompute from the packet's own canonical locked numeric thresholds, or a cited blueprint sha256 that does not match the blueprint file.",
+      "max_fires": 2
+    },
+    {
+      "id": "DR-D2-COVERAGE",
+      "section": "meta",
+      "source_heading": "## 8. Required Deliverables (complete set)",
+      "owner": "LOOP",
+      "module": "amphora-dataset-recon",
+      "title": "Sign the obligation-coverage table for THIS directive",
+      "done_criteria": "Signed receipt carrying the full obligation-coverage table for AMPHORA-DIRECTIVE-2026-08-09 (UNMAPPED and ORPHAN lists reported even when empty, directive cited by path+sha256, and a spot-check of >=3 closed obligations read from their actual receipts) -- so progress against this directive is signed evidence, not an assertion in a chat log.",
+      "origin": "operator-derived",
+      "campaign_items": [
+        "DR-D2-COVERAGE"
+      ],
+      "status": "in-progress",
+      "attack": "Cross-check the table against the live index and campaign; plant a fabricated closed flag in a copy and attack whether the spot-check catches it.",
+      "refutation_criterion": "The coverage table omits an obligation present in the index, reports a closed status its underlying receipts do not support, or fails to report the UNMAPPED and ORPHAN lists.",
+      "max_fires": 2,
+      "note": "Mirror of D-COVERAGE for the second directive. Not founder text."
+    },
+    {
+      "id": "DR-RIGHTS",
+      "section": "S5+S8B",
+      "source_heading": "## 5. Fixed Constraints (binding)",
+      "owner": "HUMAN",
+      "module": null,
+      "title": "Counsel review of every CONDITIONAL disposition",
+      "done_criteria": "Every CONDITIONAL entry in the Disposition Ledger receives a counsel verdict on its named blocker (license ambiguity resolved by reading, not optimism); rights-before-enthusiasm is a human step by the directive's own authority ceiling.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "DR-RIGHTS"
+      ],
+      "status": "blocked",
+      "unblock_condition": "First CONDITIONAL dispositions exist (DR-DISP under way)."
+    },
+    {
+      "id": "DR-ACQ",
+      "section": "S5",
+      "source_heading": "## 5. Fixed Constraints (binding)",
+      "owner": "HUMAN",
+      "module": null,
+      "title": "Execute the next human action on RECOMMENDED entries",
+      "done_criteria": "The engine never acquires: each RECOMMENDED ledger entry names the exact next human action (request, license, transcription) and a human performs it. This obligation tracks that queue so the ledger's output is connected to motion.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "DR-ACQ"
+      ],
+      "status": "blocked",
+      "unblock_condition": "First RECOMMENDED entries exist in the Dataset Ledger."
+    },
+    {
+      "id": "CF-EXEC-REVIEW",
+      "section": "S5+S7",
+      "source_heading": "## 5. Fixed Constraints (binding)",
+      "owner": "HUMAN",
+      "module": null,
+      "title": "CRO feasibility review of the candidate package",
+      "done_criteria": "The draft packet (execution_authorized: false) goes through rights and safety review and CRO feasibility review on the human transfer path. No loop artifact authorizes execution.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "CF-EXEC-REVIEW"
+      ],
+      "status": "blocked",
+      "unblock_condition": "CF-PACKET assembled and validated."
+    },
+    {
+      "id": "CF-LAB-EXEC",
+      "section": "S1+S10",
+      "source_heading": "## 1. Mandate (twin, coupled)",
+      "owner": "LAB",
+      "module": "amphora-cro-protocol-packager",
+      "title": "Bench execution and candidate-bound data return",
+      "done_criteria": "The wet lab mixes, applies and tests the recipe per CF-TEST's pre-registered protocol and returns results in the capture template under the portfolio's transfer path (two distinct signatures, candidate-bound); returned data moves recipe elements from MODELED/ASSUMED to MEASURED per Section 10, feeding the engine's next revision.",
+      "origin": "founder-directive",
+      "campaign_items": [
+        "CF-LAB-EXEC"
+      ],
+      "status": "blocked",
+      "unblock_condition": "CF-EXEC-REVIEW cleared and a counterparty contracted (B-COUNTERPARTIES)."
+    }
+  ]
+}

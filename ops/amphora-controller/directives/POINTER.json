@@ -1,0 +1,32 @@
+{
+  "schema": "amphora.directive-pointer.v1",
+  "note": "The CANONICAL, citable copy of this directive lives on xbabe2 inside the evidence tree, because that is the only tree whose signed receipts can cite a document by content hash and whose hourly :30 autocommit makes it durable. This xbabe1 copy is the loop-side index that campaign.json items point at. If the two ever diverge, xbabe2 is authoritative. The index carries an 'origin' field on every obligation: founder-directive for the document's own text, operator-derived for obligations added around it. That distinction must survive, so nobody later reads our additions back as the founder's asks.",
+  "directive_id": "AMPHORA-DIRECTIVE-2026-08-05",
+  "title": "Closing the Open Portfolio",
+  "prepared": "2026-08-05",
+  "canonical": {
+    "host": "xbabe2",
+    "root": "/home/ubuntu/amphora/build/mvp20-split",
+    "docx": {
+      "path": "docs/directives/2026-08-05-closing-the-open-portfolio.docx",
+      "sha256": "650e48c503de0acdebb33e1adc956b6d695b7fd22500d8c44f62a507c9be9322"
+    },
+    "md": {
+      "path": "docs/directives/2026-08-05-closing-the-open-portfolio.md",
+      "sha256": "dcedb048e1142529de84aa6d741a065fdc29ebf744ef1b2feb81951c74573a6d"
+    },
+    "index": {
+      "path": "docs/directives/2026-08-05-closing-the-open-portfolio.index.json",
+      "sha256": "57c425d8efbc5d275773ea7867ab5406c49ceb97b686814db310394a809e8660"
+    }
+  },
+  "loop_side": {
+    "host": "xbabe1",
+    "index": "/home/ubuntu/amphora-cron/directives/2026-08-05-closing-the-open-portfolio.index.json"
+  },
+  "provenance": {
+    "source_received_at": "/home/ubuntu/Amphora_Closing_The_Open_Portfolio.docx",
+    "rendered_by": "directives/render_directive.py (deterministic; byte-identical across replays)",
+    "indexed_by": "directives/build_index.py (Section A parsed verbatim from the rendering; B/C authored)"
+  }
+}

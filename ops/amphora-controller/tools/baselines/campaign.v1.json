@@ -1,0 +1,22 @@
+{
+  "schema": "amphora.campaign-invariant-baseline.v1",
+  "captured_at": "2026-08-23T02:56:00+00:00",
+  "campaign_sha256": "9cd1a9e1b63b15d41cdaa63fd7cd60d6f00fa5f3e35ab3a2e30c1f9fdea05672",
+  "allowed": [
+    {
+      "severity": "HIGH",
+      "invariant": "budget",
+      "detail": "CF-TEST has 4 fires but max_fires=2"
+    },
+    {
+      "severity": "LOW",
+      "invariant": "done_check",
+      "detail": "C2 (status=blocked) has no structured done_check — if reopened it cannot be mechanically closed"
+    },
+    {
+      "severity": "LOW",
+      "invariant": "done_check",
+      "detail": "C9 (status=blocked) has no structured done_check — if reopened it cannot be mechanically closed"
+    }
+  ]
+}

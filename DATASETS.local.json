@@ -1,8 +1,8 @@
 {
   "schema": "amphora.datasets.local.v1",
   "source": {
-    "git_sha": "f5b2238720999cc765a751928942ad67d8e419d8",
-    "captured_at": "2026-08-22T09:22:29+00:00",
+    "git_sha": "7d85419158795c63ff2ee4a41d95a8f5789f9003",
+    "captured_at": "2026-08-23T04:02:42+00:00",
     "host": "xbabe2",
     "path": "/home/ubuntu/amphora/build/mvp20-split"
   },

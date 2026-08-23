@@ -1,0 +1,46 @@
+{
+  "schema": "amphora.campaign-chain-checkpoint.v1",
+  "captured_at": "2026-08-23T03:17:11+00:00",
+  "source": {
+    "host": "xbabe1",
+    "path": "/home/ubuntu/amphora-cron",
+    "git_sha": "5e153948b9983d74c93ac88c56ec76fc0056c1c5",
+    "working_tree_state": "campaign and acquisition queue advanced after source Git HEAD"
+  },
+  "campaign": {
+    "path": "campaign.json",
+    "size_bytes": 739462,
+    "sha256": "9cd1a9e1b63b15d41cdaa63fd7cd60d6f00fa5f3e35ab3a2e30c1f9fdea05672"
+  },
+  "acquisition_queue": {
+    "path": "data-acquisition-queue.jsonl",
+    "size_bytes": 155899,
+    "sha256": "34cac9d59c28d2b7b1ea6828d07dbbd87d544a2eee9a9e77bc87f9fbbc6ad545"
+  },
+  "lane_history": {
+    "source_path": "state/lane-ledger.history.jsonl",
+    "size_bytes": 178842,
+    "sha256": "288ed16d2494088e8540e22ade175f5cb93d266b62b0c2d3d9754ecaf9ea46d5",
+    "included_in_handoff": false,
+    "exclusion_reason": "runtime history; final chain checkpoint retained below"
+  },
+  "last_claim": {
+    "ts": "2026-08-23T02:00:03+00:00",
+    "event": "claim",
+    "lane": "1",
+    "fire_id": "20260823T020003-2337237-67c7e054e375",
+    "module": "amphora-viscosity-score",
+    "item_id": null,
+    "campaign_pre_sha256": "022f32efdc7878c11f66e8f7bcb2b261d2b7bf7139e757b5044348ff5c90f510",
+    "campaign_post_sha256": "9cd1a9e1b63b15d41cdaa63fd7cd60d6f00fa5f3e35ab3a2e30c1f9fdea05672"
+  },
+  "last_release": {
+    "ts": "2026-08-23T02:00:03+00:00",
+    "event": "release",
+    "lane": "1",
+    "fire_id": "20260823T020003-2337237-67c7e054e375",
+    "module": "amphora-viscosity-score",
+    "item_id": null,
+    "outcome": "UNKNOWN"
+  }
+}

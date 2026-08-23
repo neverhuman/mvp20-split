@@ -1,0 +1,38 @@
+{
+  "schema": "amphora.handoff-freeze.v1",
+  "tag": "AMPHORA-HANDOFF-20260823T025604Z-CODEX-7F3A92",
+  "hard_stop": {
+    "host": "xbabe1",
+    "path": "/home/ubuntu/amphora-cron/state/HARD_STOP",
+    "created_at": "2026-08-23T02:56:28+00:00",
+    "foreign_stop_overwritten": false,
+    "retain_after_publication": true
+  },
+  "crontabs": [
+    {
+      "host": "xbabe1",
+      "before": "xbabe1.crontab.before",
+      "before_sha256": "e0472746f2da8d656ece92c2ab7ebe7d3c93e2e74cc47da717073f1197f2df02",
+      "after": "xbabe1.crontab.after",
+      "after_sha256": "456d4861103b6b92d29a3494fdd993c848444730523eb26a4ff4bffbfe3a0fa1",
+      "disabled_roles": ["hourly launcher", "10-minute log mirror"],
+      "unrelated_lines_changed": 0
+    },
+    {
+      "host": "xbabe2",
+      "before": "xbabe2.crontab.before",
+      "before_sha256": "dbb92d45ba2da846901826fc10c4905061e9bf7a4b87e93c29bba92c6147f6ad",
+      "after": "xbabe2.crontab.after",
+      "after_sha256": "58bf0053d9f181947df0bc9ac9848479f631ee7855fb98430c59b2ddc9d3e16d",
+      "disabled_roles": ["forensic autocommit guard"],
+      "unrelated_lines_changed": 0
+    }
+  ],
+  "drain": {
+    "active_lanes": 0,
+    "claude_processes": 0,
+    "held_fleet_locks": 0,
+    "stale_xbabe1_claude_pid_terminated": 3035409
+  },
+  "xbabe2_final_autocommit": "7d85419158795c63ff2ee4a41d95a8f5789f9003"
+}

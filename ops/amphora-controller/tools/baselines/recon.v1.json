@@ -1,0 +1,28 @@
+{
+  "schema": "amphora.recon-invariant-baseline.v1",
+  "captured_at": "2026-08-23T03:05:00+00:00",
+  "source_git_sha": "7d85419158795c63ff2ee4a41d95a8f5789f9003",
+  "allowed": [
+    {"rule": "R4", "detail": "coverage-map.v1.json lacks framing:\"AUDIT-ONLY\""},
+    {"rule": "R3", "detail": "annex line 1: DR-LANG-KO-02 ALSO appears in the primary dataset ledger"},
+    {"rule": "R3", "detail": "annex line 1: https://www.data.go.kr/data/15111008/fileData.do?recommendDataYn=Y ALSO appears in the primary dataset ledger"},
+    {"rule": "R3", "detail": "annex line 2: DR-LANG-KO-04 ALSO appears in the primary dataset ledger"},
+    {"rule": "R3", "detail": "annex line 2: https://scienceon.kisti.re.kr/srch/selectPORSrchArticle.do?cn=JAKO200917761742942&dbt=NART ALSO appears in the primary dataset ledger"},
+    {"rule": "R3", "detail": "annex line 3: DR-LANG-EU-11 ALSO appears in the primary dataset ledger"},
+    {"rule": "R3", "detail": "annex line 3: https://webthesis.biblio.polito.it/24890/ ALSO appears in the primary dataset ledger"},
+    {"rule": "R4", "detail": "search-record line 1 lacks framing:\"AUDIT-ONLY\""},
+    {"rule": "R4", "detail": "search-record line 2 lacks framing:\"AUDIT-ONLY\""},
+    {"rule": "R4", "detail": "search-record line 3 lacks framing:\"AUDIT-ONLY\""},
+    {"rule": "R4", "detail": "search-record line 4 lacks framing:\"AUDIT-ONLY\""},
+    {"rule": "R4", "detail": "search-record line 5 lacks framing:\"AUDIT-ONLY\""},
+    {"rule": "R4", "detail": "search-record line 6 lacks framing:\"AUDIT-ONLY\""},
+    {"rule": "R4", "detail": "search-record line 7 lacks framing:\"AUDIT-ONLY\""},
+    {"rule": "R4", "detail": "search-record line 8 lacks framing:\"AUDIT-ONLY\""},
+    {"rule": "R4", "detail": "search-record line 9 lacks framing:\"AUDIT-ONLY\""},
+    {"rule": "R4", "detail": "search-record line 10 lacks framing:\"AUDIT-ONLY\""},
+    {"rule": "R4", "detail": "search-record line 11 lacks framing:\"AUDIT-ONLY\""},
+    {"rule": "R4", "detail": "search-record line 12 lacks framing:\"AUDIT-ONLY\""},
+    {"rule": "R4", "detail": "search-record line 13 lacks framing:\"AUDIT-ONLY\""},
+    {"rule": "R4", "detail": "search-record line 14 lacks framing:\"AUDIT-ONLY\""}
+  ]
+}

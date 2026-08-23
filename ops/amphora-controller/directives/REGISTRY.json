@@ -1,0 +1,12 @@
+{
+  "schema": "amphora.directive-registry.v1",
+  "_comment": "The launcher's single entry point for directive routing: a campaign item's directive_ref.doc is looked up here to find its index; the index alone carries md_path and md_sha256 (ONE source of truth per hash — this file deliberately does not repeat them). An item citing a doc absent from this registry FAILS CLOSED: its verdicts are never accepted. Adding a directive means: place the .md on xbabe2 under docs/directives/, build its index into this directory, add the row here, and add the new index (this registry is already there) to the launcher's IMMUTABLE baseline plus the prompt's PROTECTED FILES list. POINTER.json remains the 2026-08-05 provenance record; nothing machine-reads it.",
+  "directives": {
+    "AMPHORA-DIRECTIVE-2026-08-05": {
+      "index_path": "directives/2026-08-05-closing-the-open-portfolio.index.json"
+    },
+    "AMPHORA-DIRECTIVE-2026-08-09": {
+      "index_path": "directives/2026-08-09-dataset-recon.index.json"
+    }
+  }
+}

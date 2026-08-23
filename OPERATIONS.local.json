@@ -1,0 +1,58 @@
+{
+  "schema": "amphora.operations.local.v1",
+  "captured_at": "2026-08-23T04:02:42+00:00",
+  "xbabe2_source": {
+    "host": "xbabe2",
+    "path": "/home/ubuntu/amphora/build/mvp20-split",
+    "final_git_sha": "7d85419158795c63ff2ee4a41d95a8f5789f9003",
+    "history_commits": 462,
+    "github_history_included": false
+  },
+  "xbabe1_legacy_controller": {
+    "source_path": "/home/ubuntu/amphora-cron",
+    "source_git_sha": "5e153948b9983d74c93ac88c56ec76fc0056c1c5",
+    "source_history_commits": 35,
+    "legacy_archive": "/home/ubuntu/amphora-archive/cron-legacy-20260823T031711Z",
+    "archive_manifest": "ops/amphora-controller/bootstrap/freeze/cron-legacy.MANIFEST.json",
+    "archive_manifest_sha256": "9aa79a55e2220ef92739c603e9af5e176166fd3163c57143fc7940aa0b96b70e"
+  },
+  "frozen_bootstrap": [
+    {
+      "path": "ops/amphora-controller/bootstrap/campaign.json",
+      "size_bytes": 739462,
+      "sha256": "9cd1a9e1b63b15d41cdaa63fd7cd60d6f00fa5f3e35ab3a2e30c1f9fdea05672"
+    },
+    {
+      "path": "ops/amphora-controller/bootstrap/data-acquisition-queue.jsonl",
+      "size_bytes": 155899,
+      "sha256": "34cac9d59c28d2b7b1ea6828d07dbbd87d544a2eee9a9e77bc87f9fbbc6ad545"
+    },
+    {
+      "path": "ops/amphora-controller/bootstrap/campaign-chain-checkpoint.json",
+      "size_bytes": 1627,
+      "sha256": "d49f9df6d645506bb69924e7b634db47c65cd33e89e3293cd77a5b3829bb8a2e"
+    }
+  ],
+  "freeze_record": {
+    "path": "ops/amphora-controller/bootstrap/freeze/record.json",
+    "sha256": "5e6a44331f60a1a3c5b20c8cb2b777ce717c709e0cfc0c0be38e1b4f8dd93b4a",
+    "hard_stop_tag": "AMPHORA-HANDOFF-20260823T025604Z-CODEX-7F3A92"
+  },
+  "excluded_from_github": [
+    "xbabe1 legacy .git directory and its 35-commit history",
+    "runtime logs and counters",
+    "credentials and signing seeds",
+    "stale backups",
+    "unused module-queue.json",
+    "two malformed newline-bearing filenames",
+    "full lane history"
+  ],
+  "deployment": {
+    "xbabe1_checkout": "/home/ubuntu/mvp20-split",
+    "xbabe1_mutable_state": "/home/ubuntu/amphora-cron",
+    "config": "/home/ubuntu/.config/amphora/mvp20-cron.env",
+    "github_deploy_key": "dedicated read-only repository deploy key"
+  },
+  "state": "INTENTIONALLY_PAUSED",
+  "activation_requires_explicit_user_approval": true
+}
