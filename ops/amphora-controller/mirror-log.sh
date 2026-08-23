@@ -18,7 +18,7 @@ if [ -r "$CONFIG_FILE" ]; then
     while IFS='=' read -r config_key config_value; do
         config_key=${config_key%%[[:space:]]*}
         case "$config_key" in
-            AMPHORA_STATE_ROOT|AMPHORA_TARGET_HOST|AMPHORA_TARGET_ROOT)
+            AMPHORA_STATE_ROOT|AMPHORA_TARGET_HOST|AMPHORA_TARGET_ROOT|AMPHORA_SSH_COMMAND)
                 if [ -n "$config_key" ] && [ -z "${!config_key+x}" ]; then
                     config_value=${config_value%$'\r'}
                     config_value=${config_value#\"}; config_value=${config_value%\"}
@@ -33,6 +33,7 @@ fi
 STATE_ROOT=${AMPHORA_STATE_ROOT:-/home/ubuntu/amphora-cron}
 TARGET_HOST=${AMPHORA_TARGET_HOST:-xbabe2}
 TARGET_ROOT=${AMPHORA_TARGET_ROOT:-/home/ubuntu/amphora/build/mvp20-split}
+SSH=${AMPHORA_SSH_COMMAND:-"ssh -o ConnectTimeout=15 -o BatchMode=yes -o ServerAliveInterval=5 -o ServerAliveCountMax=6"}
 SRC="$STATE_ROOT/logs"
 DST="$TARGET_ROOT/logs"
 FILES=("$SRC"/./lane-*/claude-hourly-loop.log
@@ -43,5 +44,5 @@ FILES=("$SRC"/./lane-*/claude-hourly-loop.log
 # copy over it would erase each alert on the next pass (review finding). The
 # frozen local file stays on xbabe1 as history; the remote copy is now the
 # alert channel.
-rsync -qR --timeout=60 "${FILES[@]}" "$TARGET_HOST:$DST/" 2>/dev/null
+rsync -qR --timeout=60 -e "$SSH" "${FILES[@]}" "$TARGET_HOST:$DST/" 2>/dev/null
 exit 0

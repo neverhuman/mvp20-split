@@ -9,9 +9,10 @@ authorize authentication, cron enablement, hard-stop removal, or a fire.
 - GitHub repository: `neverhuman/mvp20-split`, private. `main` plus the unmerged
   `demo/founder-showcase` (see "Published branches" below).
 - Preserved GitHub root commit: `d2209cead0a94c02f4e1f1570aa8dc8be0338bb6`.
-- Operations publication: the single child of that root commit on `main` (a
-  commit cannot contain its own content-derived SHA; `git rev-parse main`
-  resolves the exact published value).
+- Handoff publication: the reviewed commit series at the tip of `main`. Its exact final SHA
+  is obtained with `git rev-parse origin/main` (a commit cannot contain its own SHA). The
+  existing `handoff-20260823` tag predates this final hardening pass and is intentionally
+  left at its original commit; no tag is moved or added.
 - Canonical xbabe2 path: `/home/ubuntu/amphora/build/mvp20-split`.
 - Final clean xbabe2 autocommit:
   `7d85419158795c63ff2ee4a41d95a8f5789f9003` (462 local commits). Its final
@@ -22,7 +23,7 @@ authorize authentication, cron enablement, hard-stop removal, or a fire.
   through the final xbabe2 SHA are excluded runtime logs/audit rotation.
 - xbabe1 legacy controller Git SHA:
   `5e153948b9983d74c93ac88c56ec76fc0056c1c5` (35 commits, not imported).
-- Final operations validation capture: `2026-08-23T04:02:42+00:00`; the frozen
+- Final data/operations manifest revalidation: `2026-08-23T16:45:34+00:00`; the frozen
   campaign-chain checkpoint itself was captured at `2026-08-23T03:17:11+00:00`.
 - Owned hard stop:
   `AMPHORA-HANDOFF-20260823T025604Z-CODEX-7F3A92`.
@@ -52,8 +53,8 @@ record of all three entries, verbatim, and of how they are enabled and disabled.
 
 ## Repository contents and exclusions
 
-The root commit contains the filtered MVP20 source tree. The one operations
-commit adds `START_HERE.md`, this handoff, `OPERATIONS.local.json`, and
+The root commit contains the filtered MVP20 source tree. The reviewed handoff commits add
+`START_HERE.md`, this handoff, `OPERATIONS.local.json`, developer documentation, and
 `ops/amphora-controller/`: active four-lane launcher and prompt, mirror,
 libraries, directive registry/build/reconciliation tools, inherited and new
 tests, operator CLI, configuration examples, staged-file policy, exclusive-
@@ -71,32 +72,32 @@ The GitHub repository excludes:
 - caches, local environments, build output, compiled binaries, model/archive
   formats, generated report binaries, and disallowed oversized data;
 - raw or derived dataset payloads listed in `DATASETS.local.json`;
-- GitHub Actions workflows, LFS objects, and tags.
+- GitHub Actions workflows and LFS objects. The existing annotated handoff tag contains
+  metadata only and introduces no payload tree.
 
 ### Published branches
 
 `main` is the handoff. **`demo/founder-showcase`** (tip
-`209f6b5650d3fd1ce341c702265ca069b0e45cb6`, 11 hand-written commits) was published on
+`e8e3acd31550137874ea086919f63180c16682c1`, 11 hand-written commits) was published on
 2026-08-23 and is **not** merged. It contains the founder demo TUI —
 `amphora-cli/src/showcase.rs`, `screen.rs`, `build.rs`,
 `amphora-core/tests/t13_verify_run_hardening.rs`, ~1,485 lines of Rust — plus three
-security-hardening commits (`bd74196` R1/T-01B caller-echoed candidate hashes, `b5ca2d0`
-R2/T-13 event-hash chain recomputation, `5c679a5` R3/T-05 molecule fact attestation).
+security-hardening commits (`78d9ab48` R1/T-01B caller-echoed candidate hashes, `30c2ae93`
+R2/T-13 event-hash chain recomputation, `403e0ccc` R3/T-05 molecule fact attestation).
 
 It is unmerged because R2 and R3 have declared breaking effects: legacy run archives written
 under the superseded event-hash format fail loudly against them. Merging is a reviewed
-decision, not a cleanup. Note that R1 fixes a defect `main` still ships —
-`amphora-candidate-contract/evidence/phase0/repairs/T-01B/work/STATE.json` records
-`"verdict":"REFUTED"` for it and `amphora-engine/src/lib.rs` still lacks the guard.
+decision, not a cleanup. R1 was independently landed on `main` as `acf268f6`; only R2/R3
+and the showcase remain branch-only.
 Its worktree is `xbabe2:/home/ubuntu/amphora/demo-2026-08-11`.
 
 ### Backup and single point of failure
 
-The full 462-commit canonical history is mirrored to the private
-`neverhuman/mvp20-split-history`. **That mirror has a different exclusion boundary from this
-repository** — being byte-faithful to canonical, it includes `.amphora/` and a local signing
-key. It is disaster recovery only; do not grant access to it. See "Signing-key exposure"
-below.
+The former `neverhuman/mvp20-split-history` mirror was found to contain dataset payloads,
+`.amphora/`, logs, and a local signing key. Every published ref was replaced with filtered
+handoff `main`, the unsafe demo ref was deleted, and the private repository was archived.
+GitHub may retain unreachable objects until an owner with `delete_repo` scope deletes it;
+do not unarchive or share it. See `docs/DATA-BOUNDARY.md`.
 
 Still unreplicated on xbabe2 alone: the 6.20 GB of
 inventoried datasets, the 146 MB `.amphora/` control plane, the 40 GB NOMAD corpus, and the
@@ -111,7 +112,7 @@ was renamed to `.git.legacy-frozen-20260823T031711Z` after archiving, so
 `/home/ubuntu/amphora-cron` is mutable state and no longer a Git repository.
 No source or dataset was deleted, moved, or rewritten on xbabe2.
 
-`DATASETS.local.json` is the deterministic 1,372-entry inventory for omitted
+`DATASETS.local.json` is the deterministic 1,344-entry inventory for omitted
 non-cache datasets and artifacts. Every row carries path, size, hash, and
 category and was revalidated against final xbabe2. `OPERATIONS.local.json` is
 the corresponding operations provenance and exclusion record.
@@ -121,10 +122,10 @@ the corresponding operations provenance and exclusion record.
 - Code/state separation and `/home/ubuntu/.config/amphora/mvp20-cron.env` with
   environment overrides.
 - Parameters for controller, mutable state, campaign, queue, prompt, directive
-  registry, target host/root, model, Claude binary, SSH command, and signing
+  registry, target host/root, model, Claude binary, SSH/SCP commands, and signing
   seed path.
-- Operator commands: `doctor`, `status`, `test`, `pause`, `drain`, `resume`,
-  and explicit `install --apply`.
+- Operator commands: `doctor`, `status`, `test`, `pause`, `drain`, `resume`, `protect`,
+  `unprotect`, and explicit `install --apply`.
 - Exact-tag, non-overwriting hard stops; resume removes only the exact owned
   stop after enabling the three reviewed cron entries.
 - Hash inventory and read-only deployment protection over the whole controller
@@ -140,7 +141,8 @@ the corresponding operations provenance and exclusion record.
   quarantines rejected schema-flip bytes, refuses deletions/renames and unsafe
   files, stages only approved paths, commits locally, and never pushes.
 - A reviewed snapshot flow that defaults to dry-run and separates pause,
-  export, manifest regeneration, policy/secret checks, review, commit, and push.
+  export, manifest regeneration, staged/full-tree/full-history policy and secret checks,
+  review, commit, and push.
 
 918 evidence, benchmark, reference, and report files retain the canonical xbabe2 path
 and remain byte-faithful. They are provenance records, not portable entry points, and the
@@ -156,10 +158,10 @@ The publication gate covers:
 bash -n and ShellCheck on active operational scripts
 Python AST and import checks
 151 inherited controller regression checks
-18 new configuration/hard-stop/installer/migration/DSSE/policy/guard/sandbox checks
+34 operator, configuration, hard-stop, installer, migration, DSSE, policy, guard, and sandbox checks
 cargo test --workspace --locked --no-run
 cargo test --workspace --locked
-pytest tests/crystal360
+.venv-crystal360/bin/python -m pytest tests/crystal360
 pytest amphora-redteam-audit/tests/test_ledger_ts.py
 pytest benchkit/tests
 campaign and reconnaissance invariant baselines (zero new deviations)
@@ -184,6 +186,7 @@ restored:
 | `gitleaks git . --config .gitleaks.toml --exit-code 1` | exit 0, no leaks |
 | `python3 ops/amphora-controller/tools/controller_tree_manifest.py verify` | passes, 57 files |
 | `ops/amphora-controller/tests/run.sh`, `tools/tests/run-all.sh` | pass |
+| `scripts/verify-hash-bindings.sh --quiet` | passes the 458 historical-break ratchet; zero new breaks |
 | `cargo run -p xtask -- audit` | **fails — one known item, see Known debt** |
 
 The 1 ignored test is `cf_packet_blueprint_citation_binding_probe`, a stale
@@ -201,13 +204,13 @@ reachable on GitHub and should be treated as burned.
 **What happened.** `.amphora/` has always been tracked in the canonical xbabe2 repository.
 `main` correctly excludes it. But when `demo/founder-showcase` was first published on
 2026-08-23 it was pushed with its full canonical ancestry (189 commits), which carried
-3,130 `.amphora/` files including that key. The `neverhuman/mvp20-split-history` mirror
-carries it too, by construction — it is a byte-faithful mirror of canonical.
+3,130 `.amphora/` files including that key. The former canonical-history mirror also carried
+it by construction.
 
 **What was done.** `demo/founder-showcase` was rebuilt as the 11 demo commits rebased
-directly onto `main`, with no canonical ancestry and zero `.amphora/` files, and
-force-published. The history mirror is retained as disaster recovery and **must not be
-shared** — it has a deliberately different exclusion boundary from this repository.
+directly onto the filtered handoff, with no canonical ancestry and zero `.amphora/` files.
+The unsafe mirror's live refs were purged and it was archived. Complete GitHub-side erasure
+still requires repository deletion by an owner token with `delete_repo` scope.
 
 **What was not done, and why.** The key was **not** rotated. It declares its own authority
 as `LOCAL_DEVELOPMENT_AUDIT_ONLY` (`key_id: local-9028773f49591193`, schema
@@ -249,7 +252,7 @@ signatures, issue a new key rather than reusing this one.
   diagnose the stall before expecting useful fires.
 - `reference/mvp20/data/facts.json` is duplicated verbatim across 14 modules with nothing
   enforcing parity. Correcting a value in one silently forks the canonical fact table.
-- Branch protection is not configured on either GitHub repository and is unavailable on the
+- Branch protection is not configured on the handoff GitHub repository and is unavailable on the
   owner's current plan. Repository ownership is a single personal account with one admin and
   one non-expiring read-only deploy key; there is no documented succession for the account
   itself.

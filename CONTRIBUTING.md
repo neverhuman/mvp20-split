@@ -61,20 +61,26 @@ Leave it.
 **3. Zero-byte files in `evidence/` are usually real.** An empty `*.err` means *the command
 produced no stderr*, which is a result. Check for a reference before assuming debris.
 
-## First, set your identity
+## First, create a development clone
 
-xbabe1's global git identity was a placeholder (`Your Name <your_email@example.com>`) and has
-been unset, so git will refuse to commit until you set your own:
+Do not develop or authenticate a push account in the protected runtime at
+`xbabe1:/home/ubuntu/mvp20-split`. Create a separate clone at a path you own. For an HTTPS
+workflow backed by your GitHub identity:
 
 ```bash
+gh auth login
+gh auth setup-git
+git clone https://github.com/neverhuman/mvp20-split.git /path/to/your/mvp20-split
+cd /path/to/your/mvp20-split
 git config --global user.name  "Your Real Name"
 git config --global user.email "you@example.com"
-gh auth login                                    # for push; the repo deploy key is read-only
 ```
 
-The checkout's `origin` uses the `github-amphora-mvp20` ssh alias with a **read-only** deploy
-key. Pushing goes through your own GitHub account, so you need to be added as a collaborator
-on `neverhuman/mvp20-split` and authenticated as yourself.
+The runtime checkout's `origin` uses the `github-amphora-mvp20` SSH alias for both fetch and
+push, permanently selecting a **read-only** deploy key. `gh auth login` does not change that
+SSH identity, so `git push origin` from the runtime correctly fails. Use your separate HTTPS
+clone (or a separately configured personal SSH remote) after the owner adds your account as a
+collaborator.
 
 ## Branches and review
 

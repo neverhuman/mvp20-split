@@ -1,6 +1,6 @@
 # External inputs not in this repository
 
-`DATASETS.local.json` inventories the 1,372 files (6.20 GB) that were omitted from
+`DATASETS.local.json` inventories the 1,344 files (6.20 GB) that were omitted from
 **within** the `mvp20-split` tree. This file records dependencies that live entirely
 **outside** that tree — things a successor will otherwise discover only when a command
 fails.

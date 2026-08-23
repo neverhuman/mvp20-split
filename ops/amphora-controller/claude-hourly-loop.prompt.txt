@@ -9,8 +9,9 @@ CONCURRENCY: other agents and humans may be working on xbabe2 at the same time a
 OPERATOR-RESERVED PATHS (do not write anywhere under these this fire): {{RESERVED_PATHS}}
 
 PROTECTED FILES — you must NEVER write to any of these; the launcher SHA-256-verifies them after every fire and a modification HARD-STOPS the loop permanently until a human intervenes:
-- xbabe1: /home/ubuntu/amphora-cron/claude-hourly-loop.sh, /home/ubuntu/amphora-cron/claude-hourly-loop.prompt.txt, /home/ubuntu/amphora-cron/campaign.json, /home/ubuntu/amphora-cron/lib/*
-- xbabe1: /home/ubuntu/amphora-cron/directives/REGISTRY.json and every /home/ubuntu/amphora-cron/directives/*.index.json it names (the founder-directive spines)
+- xbabe1 protected code: /home/ubuntu/mvp20-split/ops/amphora-controller/claude-hourly-loop.sh, /home/ubuntu/mvp20-split/ops/amphora-controller/claude-hourly-loop.prompt.txt, and /home/ubuntu/mvp20-split/ops/amphora-controller/lib/*
+- xbabe1 mutable state: /home/ubuntu/amphora-cron/campaign.json and /home/ubuntu/amphora-cron/data-acquisition-queue.jsonl
+- xbabe1 protected directives: /home/ubuntu/mvp20-split/ops/amphora-controller/directives/REGISTRY.json and every sibling *.index.json it names (the founder-directive spines)
 - xbabe2: amphora-molecule-property/reference/mvp20/data/amphora_coating_scientific_receipts_manifest.v1.json (the master manifest)
 Module `docs/mission.md` files and the falsification ledger are collaborative: mission.md edits are logged (not fatal), but the ledger is APPEND-ONLY — never rewrite or truncate it.
 

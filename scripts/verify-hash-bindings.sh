@@ -8,8 +8,8 @@
 # such a binding, which is exactly what happened on 2026-08-23 to
 # analyze_st19168_preregistered.py. This is the gate that would have caught it.
 #
-#   scripts/verify-hash-bindings.sh            # report and exit non-zero on any break
-#   scripts/verify-hash-bindings.sh --quiet    # summary only
+#   scripts/verify-hash-bindings.sh            # report; fail only above the frozen baseline
+#   scripts/verify-hash-bindings.sh --quiet    # summary; same ratchet semantics
 set -Eeuo pipefail
 cd "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 QUIET=0

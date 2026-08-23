@@ -14,7 +14,11 @@ Code and state are intentionally separated:
 
 Environment variables override literal values in the configuration file. The
 controller, state, campaign, queue, prompt, directive registry, target host and
-root, model, Claude binary, signing seed, and SSH command are parameterized.
+root, model, Claude binary, signing seed, and SSH/SCP commands are parameterized.
+
+The handoff deliberately removes xbabe1's lateral credentials. Local status and tests work;
+target checks, applied install/pause/resume, and fires remain unavailable until the separate
+activation procedure provisions dedicated xbabe2 access.
 
 `bootstrap/` contains the frozen campaign, acquisition queue, chain checkpoint,
 freeze evidence, and archive inventory. It excludes the cron repository's Git

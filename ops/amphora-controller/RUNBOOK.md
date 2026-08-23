@@ -24,9 +24,15 @@ ops/amphora-controller/bin/amphora doctor
 ops/amphora-controller/bin/amphora test
 ```
 
-`doctor` checks required programs, controller hashes and permissions, config
-mode, xbabe2 SSH, the existence and length (not contents) of the remote signing
-seed, and the Claude binary. Authentication is deliberately a separate gate.
+In the current decommissioned state, `status` still prints the hard stop, local jobs, and
+process count, then reports `xbabe2_jobs=UNREACHABLE` and exits 1. `doctor` also fails on
+xbabe2 SSH. Both are intentional until activation access is provisioned, not a reason to
+weaken SSH policy.
+
+With activation access present, `doctor` checks required programs, controller hashes and
+permissions, config mode, xbabe2 SSH, the existence and length (not contents) of the remote
+signing seed, exact deployed guard/policy hashes, canonical tracked-tree cleanliness, and the
+Claude binary. Claude authentication is deliberately a separate gate.
 
 ## Pause and drain
 
@@ -74,6 +80,9 @@ intended commit, use `git merge --ff-only`, rerun tests and manifest verificatio
 then `bin/amphora protect --apply` (or `install --apply`) to reprotect it. Never
 reset the checkout or force-update it.
 
+Applied install/pause/resume require explicitly restored xbabe1→xbabe2 host trust and a
+dedicated activation credential. That credential is absent in the handoff state.
+
 ## State restoration
 
 Restoration is a paused operation. Archive the current mutable state first.
@@ -92,17 +101,19 @@ violation fails the gate.
 
 ## Reviewed snapshot and publication
 
-Use a separate writable administrative clone, not the protected xbabe1 runtime
-checkout. The workflow is dry-run by default:
+Use the writable administrative clone on xbabe2, not the protected xbabe1 runtime checkout.
+Invoke the administrative clone's own script; `AMPHORA_SNAPSHOT_REPO` is only for an
+equivalent writable clone on the same publishing host. The workflow is dry-run by default:
 
 ```bash
-AMPHORA_SNAPSHOT_REPO=/path/to/admin-clone \
-  ops/amphora-controller/reviewed-snapshot.sh
+cd /home/ubuntu/amphora/build/mvp20-split-github
+ops/amphora-controller/reviewed-snapshot.sh
 ```
 
 An applied snapshot requires `--apply --review --tag TAG`. It pauses and drains,
-exports the bootstrap state, regenerates both local manifests, runs policy and
-available secret scanners, stages the exact diff, and prints
+exports the bootstrap state from xbabe1, regenerates both local manifests against the local
+canonical source, runs required staged/full-tree/full-history policy and secret scanners,
+stages the exact diff, and prints
 `review_diff_sha256`. Commit requires `--commit --reviewed-diff-sha256 HASH`;
 push additionally requires `--push`. Push only `main`, then verify privacy,
 branches, tags, workflows, and a fresh clone.
@@ -136,14 +147,16 @@ no-write preflight. Leave all jobs disabled until a separate activation review.
 ## Eventual activation (separate approval)
 
 1. Obtain explicit user approval for activation.
-2. Reauthenticate Claude interactively as `ubuntu` on xbabe1.
-3. Run `doctor`, all sandbox/repository tests, SSH checks, and a no-write
+2. Provision and verify the reviewed xbabe1→xbabe2 host key and dedicated activation
+   credential; do not restore unrelated lateral credentials.
+3. Reauthenticate Claude interactively as `ubuntu` on xbabe1.
+4. Run `doctor`, all sandbox/repository tests, SSH checks, and a no-write
    preflight.
-4. Confirm the stop content exactly matches the approved tag.
-5. Preview `resume --tag TAG`; then run `resume --tag TAG --apply`. This enables
+5. Confirm the stop content exactly matches the approved tag.
+6. Preview `resume --tag TAG`; then run `resume --tag TAG --apply`. This enables
    the reviewed hourly launcher, 10-minute mirror, and idle guarded autocommit,
    then removes only the matching stop.
-6. Observe the first fire through claim, lease release, DSSE verification, and
+7. Observe the first fire through claim, lease release, DSSE verification, and
    mirror. If xbabe2 changes, pause and perform a reviewed snapshot.
 
 Until step 1 is satisfied, do none of these activation actions.

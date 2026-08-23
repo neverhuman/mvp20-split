@@ -1,6 +1,6 @@
 {
   "schema": "amphora.operations.local.v1",
-  "captured_at": "2026-08-23T04:02:42+00:00",
+  "captured_at": "2026-08-23T16:45:34+00:00",
   "xbabe2_source": {
     "host": "xbabe2",
     "path": "/home/ubuntu/amphora/build/mvp20-split",
@@ -40,12 +40,13 @@
   },
   "excluded_from_github": [
     "xbabe1 legacy .git directory and its 35-commit history",
-    "runtime logs and counters",
-    "credentials and signing seeds",
-    "stale backups",
-    "unused module-queue.json",
-    "two malformed newline-bearing filenames",
-    "full lane history"
+    "canonical datasets and artifacts inventoried in DATASETS.local.json",
+    "canonical .amphora control plane, runtime logs, locks, and counters",
+    "credentials, host keys, account state, and signing seeds",
+    "stale backups and unused module-queue.json",
+    "two malformed newline-bearing filenames and full lane history",
+    "build output, compiled binaries, model weights, archives, and LFS objects",
+    "GitHub Actions workflows"
   ],
   "deployment": {
     "xbabe1_checkout": "/home/ubuntu/mvp20-split",

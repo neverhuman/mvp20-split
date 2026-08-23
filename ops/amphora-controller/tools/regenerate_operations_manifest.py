@@ -58,9 +58,13 @@ def main():
         },
         "excluded_from_github": [
             "xbabe1 legacy .git directory and its 35-commit history",
-            "runtime logs and counters", "credentials and signing seeds",
-            "stale backups", "unused module-queue.json",
-            "two malformed newline-bearing filenames", "full lane history"
+            "canonical datasets and artifacts inventoried in DATASETS.local.json",
+            "canonical .amphora control plane, runtime logs, locks, and counters",
+            "credentials, host keys, account state, and signing seeds",
+            "stale backups and unused module-queue.json",
+            "two malformed newline-bearing filenames and full lane history",
+            "build output, compiled binaries, model weights, archives, and LFS objects",
+            "GitHub Actions workflows",
         ],
         "deployment": {
             "xbabe1_checkout": "/home/ubuntu/mvp20-split",

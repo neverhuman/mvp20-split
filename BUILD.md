@@ -26,7 +26,7 @@ that is a bug — please report it rather than working around it.
 cargo check --workspace --all-targets --locked     # compiles everything
 cargo test  --workspace --locked                   # 395 pass, 1 ignored, 0 fail
 cargo run -p xtask -- audit                        # evidence/registry integrity gate
-scripts/verify-hash-bindings.sh                    # no recorded digest was broken
+scripts/verify-hash-bindings.sh --quiet            # no regression above the 458 historical baseline
 ```
 
 Last verified 2026-08-23 against a fresh `git clone` on xbabe1: `cargo check` passes,
@@ -78,7 +78,7 @@ Run these from the repository root — `default-members = ["amphora-cli"]`, so b
 
 ## Restoring the omitted datasets
 
-`DATASETS.local.json` inventories the 1,372 omitted files (6.20 GB) with path, size,
+`DATASETS.local.json` inventories the 1,344 omitted files (6.20 GB) with path, size,
 sha256, and category. `ops/restore-datasets.sh` reads it, pulls from the canonical tree, and
 verifies every digest after transfer:
 
@@ -145,6 +145,7 @@ half-applied checkout rather than a clean refusal.
 
 ```bash
 ops/amphora-controller/bin/amphora unprotect --apply
+git fetch origin
 git merge --ff-only origin/main
 ops/amphora-controller/bin/amphora protect --apply
 python3 ops/amphora-controller/tools/controller_tree_manifest.py verify
@@ -156,9 +157,12 @@ Clone to your own path and leave the runtime checkout pinned.
 
 ## Publication gate
 
-`ops/amphora-controller/reviewed-snapshot.sh` is dry-run by default. It runs `gitleaks` and
-`trufflehog` when present; both are expected to exit clean. Neither is installed on xbabe1,
-so run the applied form from a host that has them.
+`ops/amphora-controller/reviewed-snapshot.sh` is dry-run by default. Run an applied snapshot
+from the writable publish clone on xbabe2, using that clone's own script. It remotely invokes
+the protected xbabe1 CLI for pause/drain and copies frozen state from xbabe1, while dataset
+inventory regeneration, staged/full-tree/full-history scans, commit, and push happen on
+xbabe2 where the canonical source and scanners exist. This requires the lateral SSH access
+that is intentionally absent until activation approval; the current dry form remains safe.
 
 ## Known debt
 

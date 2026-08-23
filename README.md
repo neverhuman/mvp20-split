@@ -51,6 +51,8 @@ verbatim and how they are toggled.
 | Build, test, run | [BUILD.md](BUILD.md) |
 | Make a change and land it | [CONTRIBUTING.md](CONTRIBUTING.md) |
 | What to work on | [docs/BACKLOG.md](docs/BACKLOG.md) |
+| All 29 modules and adapter/model stats | [docs/MODULE-STATUS.md](docs/MODULE-STATUS.md) |
+| What may and may not enter Git | [docs/DATA-BOUNDARY.md](docs/DATA-BOUNDARY.md) |
 
 Deeper: [HANDOFF.md](HANDOFF.md) (what was handed over and what was left behind),
 [docs/MODULE-ANATOMY.md](docs/MODULE-ANATOMY.md) (what a module directory contains),
@@ -64,8 +66,8 @@ cargo test --workspace --locked     # 395 pass, 1 ignored — green on a bare cl
 
 ## Layout
 
-**Amphora (coatings)** — 41 `amphora-*` directories, of which 15 are Rust crates in the
-workspace and the rest are documentation-and-evidence trees; plus `ops/amphora-controller/`,
+**Amphora (coatings)** — 41 `amphora-*` directories: 15 Rust workspace crates, two other
+code-bearing modules, and 24 documentation-and-evidence trees; plus `ops/amphora-controller/`,
 `config/`, `registry/`, `schemas/`, `reports/`. The [module manifest](module-manifest.json)
 is the runtime policy registry and binds every mission and capability profile.
 Runtime chemistry support is JSON plus molecule SMILES; the broader adapters are targets and
@@ -78,7 +80,7 @@ hosts and nothing else. It owns the root `pyproject.toml`, the `atlas_*.py` / `b
 Its 40 GB input corpus is not in this repository — see
 [EXTERNAL_INPUTS.md](EXTERNAL_INPUTS.md).
 
-`benchkit/` is a third, small, self-contained numerical package.
+**benchkit** — a third, small, self-contained numerical package under `benchkit/`.
 
 Two module directories sit outside `module-manifest.json` by design and are not
 engine-loadable: `amphora-dataset-recon/` and `amphora-solver-lab/`.

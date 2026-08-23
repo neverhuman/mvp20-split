@@ -2,9 +2,11 @@
 
 import argparse
 import base64
+import contextlib
 import fcntl
 import hashlib
 import importlib.machinery
+import io
 import json
 import os
 from pathlib import Path
@@ -64,6 +66,18 @@ class OpsTests(unittest.TestCase):
                                               "AMPHORA_MODEL": "env-model"}, clear=False):
                 self.assertEqual(cli.config()["AMPHORA_MODEL"], "env-model")
 
+    def test_operator_transport_commands_are_configurable(self):
+        with tempfile.TemporaryDirectory() as td:
+            envfile = Path(td) / "cron.env"
+            envfile.write_text("AMPHORA_SSH_COMMAND=fake-ssh --strict\n"
+                               "AMPHORA_SCP_COMMAND=fake-scp --strict\n")
+            with mock.patch.dict(os.environ, {"AMPHORA_CONFIG_FILE": str(envfile)}, clear=False):
+                cfg = cli.config()
+            self.assertEqual(cli.ssh_argv(cfg, "target", "true"),
+                             ["fake-ssh", "--strict", "target", "true"])
+            self.assertEqual(cli.scp_argv(cfg, "a", "target:b"),
+                             ["fake-scp", "--strict", "a", "target:b"])
+
     def test_cron_update_preserves_unrelated_lines(self):
         old = "# header\n7 * * * * unrelated\n0 * * * * /home/ubuntu/amphora-cron/claude-hourly-loop.sh\n"
         entries = cli.cron_entries(dict(cli.DEFAULTS))
@@ -93,6 +107,20 @@ class OpsTests(unittest.TestCase):
                               stdout=subprocess.PIPE, text=True)
         self.assertEqual(proc.returncode, 0)
         self.assertIn("DRY-RUN reviewed snapshot", proc.stdout)
+
+    def test_snapshot_scans_index_tree_and_history(self):
+        text = (ROOT / "reviewed-snapshot.sh").read_text()
+        self.assertIn('gitleaks git "$REPO" --staged', text)
+        self.assertIn('--config "$REPO/.gitleaks.toml"', text)
+        self.assertIn('checkout-index --all --prefix="$SCAN_TREE/"', text)
+        self.assertIn('git -C "$SCAN_TREE" add -f -A', text)
+        self.assertIn('trufflehog git "file://$SCAN_TREE"', text)
+        self.assertIn('--source tracked', text)
+        self.assertIn('trufflehog git "file://$REPO"', text)
+        self.assertNotIn('--only-verified', text)
+        self.assertNotIn('--results=verified', text)
+        self.assertIn('--fail-on-scan-errors', text)
+        self.assertIn('git -C "$REPO" diff --quiet', text)
 
     def test_drain_requires_every_controller_lock(self):
         with tempfile.TemporaryDirectory() as td:
@@ -131,6 +159,108 @@ class OpsTests(unittest.TestCase):
                                                     ("A", "binary.dat"),
                                                     ("A", "large.txt")], "publication")
             self.assertEqual(len(violations), 4)
+
+    def test_policy_reads_the_staged_blob_not_the_worktree(self):
+        with tempfile.TemporaryDirectory() as td:
+            repo = Path(td)
+            subprocess.run(["git", "init", "-q", str(repo)], check=True)
+            probe = repo / "probe.txt"
+            probe.write_text("gh" + "p_" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456\n")
+            subprocess.run(["git", "-C", str(repo), "add", "probe.txt"], check=True)
+            probe.write_text("safe worktree bytes\n")
+            _, violations = policy.evaluate(
+                repo, policy.staged_paths(repo), "publication", "staged")
+            self.assertEqual(violations[0]["path"], "probe.txt")
+            self.assertIn("credential-pattern", violations[0]["reasons"])
+
+    def test_policy_reads_the_staged_dataset_manifest(self):
+        with tempfile.TemporaryDirectory() as td:
+            repo = Path(td)
+            subprocess.run(["git", "init", "-q", str(repo)], check=True)
+            payload = repo / "sensitive.txt"
+            manifest = repo / "DATASETS.local.json"
+            payload.write_text("not for publication\n")
+            manifest.write_text(json.dumps({
+                "omitted": [{"path": "sensitive.txt", "size_bytes": payload.stat().st_size}]
+            }))
+            subprocess.run(["git", "-C", str(repo), "add", "sensitive.txt",
+                            "DATASETS.local.json"], check=True)
+            manifest.write_text(json.dumps({"omitted": []}))
+            _, violations = policy.evaluate(
+                repo, policy.staged_paths(repo), "publication", "staged")
+            row = next(row for row in violations if row["path"] == "sensitive.txt")
+            self.assertIn("inventoried-dataset-payload", row["reasons"])
+
+    def test_policy_manifest_removal_cannot_authorize_same_payload(self):
+        with tempfile.TemporaryDirectory() as td:
+            repo = Path(td)
+            subprocess.run(["git", "init", "-q", str(repo)], check=True)
+            manifest = repo / "DATASETS.local.json"
+            manifest.write_text(json.dumps({
+                "omitted": [{"path": "sensitive.txt", "size_bytes": 4}]
+            }))
+            subprocess.run(["git", "-C", str(repo), "add", "DATASETS.local.json"], check=True)
+            subprocess.run(["git", "-C", str(repo), "-c", "user.name=Test",
+                            "-c", "user.email=test@example.invalid", "commit", "-qm", "base"],
+                           check=True)
+            (repo / "sensitive.txt").write_text("data")
+            manifest.write_text(json.dumps({"omitted": []}))
+            subprocess.run(["git", "-C", str(repo), "add", "sensitive.txt",
+                            "DATASETS.local.json"], check=True)
+            _, violations = policy.evaluate(
+                repo, policy.staged_paths(repo), "publication", "staged")
+            row = next(row for row in violations if row["path"] == "sensitive.txt")
+            self.assertIn("inventoried-dataset-payload", row["reasons"])
+
+    def test_autocommit_policy_normalizes_and_blocks_worktree_deletion(self):
+        with tempfile.TemporaryDirectory() as td:
+            repo = Path(td)
+            subprocess.run(["git", "init", "-q", str(repo)], check=True)
+            tracked = repo / "tracked.txt"
+            tracked.write_text("keep\n")
+            subprocess.run(["git", "-C", str(repo), "add", "tracked.txt"], check=True)
+            subprocess.run(["git", "-C", str(repo), "-c", "user.name=Test",
+                            "-c", "user.email=test@example.invalid", "commit", "-qm", "base"],
+                           check=True)
+            tracked.unlink()
+            entries = policy.status_paths(repo)
+            self.assertEqual(entries, [("D", "tracked.txt")])
+            _, violations = policy.evaluate(repo, entries, "autocommit", "worktree")
+            self.assertIn("autocommit-refuses-delete-or-rename", violations[0]["reasons"])
+
+    def test_policy_blocks_inventoried_and_nested_dataset_payloads(self):
+        with tempfile.TemporaryDirectory() as td:
+            repo = Path(td)
+            payload = "module/reference/mvp20/data/feedback_v9/derived/tiny.json"
+            (repo / Path(payload).parent).mkdir(parents=True)
+            (repo / payload).write_text("{}\n")
+            (repo / "DATASETS.local.json").write_text(json.dumps({
+                "omitted": [{"path": payload, "size_bytes": 3}]
+            }))
+            _, violations = policy.evaluate(repo, [("A", payload)], "publication")
+            self.assertIn("inventoried-dataset-payload", violations[0]["reasons"])
+            self.assertIn("publication-forbidden-path", violations[0]["reasons"])
+
+    def test_policy_blocks_a_new_uninventoried_tiny_dataset(self):
+        with tempfile.TemporaryDirectory() as td:
+            repo = Path(td)
+            payload = "foo/raw/customer.csv"
+            (repo / Path(payload).parent).mkdir(parents=True)
+            (repo / payload).write_text("name,value\nprivate,1\n")
+            _, violations = policy.evaluate(repo, [("A", payload)], "publication")
+            self.assertIn("new-data-class-path-requires-reviewed-policy-pin",
+                          violations[0]["reasons"])
+            _, renamed = policy.evaluate(repo, [("R", payload)], "publication")
+            self.assertIn("new-data-class-path-requires-reviewed-policy-pin",
+                          renamed[0]["reasons"])
+            _, modified = policy.evaluate(repo, [("M", payload)], "publication")
+            self.assertIn("new-data-class-path-requires-reviewed-policy-pin",
+                          modified[0]["reasons"])
+
+    def test_publication_policy_accepts_the_complete_tracked_tree(self):
+        _, violations = policy.evaluate(
+            REPO, policy.tracked_paths(REPO), "publication", "tracked")
+        self.assertEqual(violations, [])
 
     def test_policy_allows_controller_source(self):
         approved, violations = policy.evaluate(REPO, [("A", "ops/amphora-controller/bin/amphora")],
@@ -196,6 +326,12 @@ class OpsTests(unittest.TestCase):
         self.assertIn('exec timeout 25s $SSH "$XBABE2_HOST"', launcher)
         self.assertNotIn("exec timeout 25s ssh -o", launcher)
 
+    def test_runtime_helpers_never_execute_from_mutable_state(self):
+        launcher = (ROOT / "claude-hourly-loop.sh").read_text()
+        self.assertNotIn('python3 "$ROOT/lib/', launcher)
+        self.assertIn('python3 "$CONTROLLER_ROOT/lib/parse_quota_reset.py"', launcher)
+        self.assertIn('python3 "$CONTROLLER_ROOT/lib/write_summary.py"', launcher)
+
     def test_protect_unprotect_round_trip(self):
         """A 0555 tree makes git updates fail half-way; this pair is the documented escape."""
         with tempfile.TemporaryDirectory() as td:
@@ -203,6 +339,8 @@ class OpsTests(unittest.TestCase):
             (root / "sub").mkdir(parents=True)
             probe = root / "sub" / "file.txt"
             probe.write_text("x")
+            digest = hashlib.sha256(probe.read_bytes()).hexdigest()
+            (root / "controller-tree.sha256").write_text(f"{digest}  sub/file.txt\n")
             cfg = dict(cli.DEFAULTS)
             cfg["AMPHORA_CONTROLLER_ROOT"] = str(root)
             args = argparse.Namespace(apply=True)
@@ -216,6 +354,39 @@ class OpsTests(unittest.TestCase):
             self.assertTrue(os.access(root / "sub", os.W_OK))
             probe.write_text("y")   # must not raise
             self.assertEqual(probe.read_text(), "y")
+
+    def test_protect_refuses_a_manifest_mismatch(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td) / "controller"
+            root.mkdir()
+            (root / "file.txt").write_text("changed\n")
+            (root / "controller-tree.sha256").write_text("0" * 64 + "  file.txt\n")
+            cfg = dict(cli.DEFAULTS)
+            cfg["AMPHORA_CONTROLLER_ROOT"] = str(root)
+            with self.assertRaises(cli.OperatorError):
+                cli.cmd_protect(argparse.Namespace(apply=True), cfg)
+
+    def test_status_reports_local_state_when_target_is_unreachable(self):
+        with tempfile.TemporaryDirectory() as td:
+            cfg = dict(cli.DEFAULTS)
+            cfg["AMPHORA_STATE_ROOT"] = td
+            stop = Path(td) / "state/HARD_STOP"
+            stop.parent.mkdir()
+            stop.write_text("HANDOFF-TEST\n")
+
+            def fake_cron(_cfg, host=None):
+                if host is not None:
+                    raise cli.OperatorError("unreachable")
+                return "# AMPHORA_MANAGED_DISABLED HANDOFF-TEST 0 * * * * /x/claude-hourly-loop.sh\n"
+
+            output = io.StringIO()
+            with mock.patch.object(cli, "read_cron", side_effect=fake_cron), \
+                    mock.patch.object(cli, "remote_process_count", return_value=0), \
+                    contextlib.redirect_stdout(output):
+                result = cli.cmd_status(argparse.Namespace(), cfg)
+            self.assertEqual(result, 1)
+            self.assertIn("xbabe1_jobs=", output.getvalue())
+            self.assertIn("xbabe2_jobs=UNREACHABLE", output.getvalue())
 
     def test_operator_surface_is_complete(self):
         help_text = subprocess.run([str(ROOT / "bin" / "amphora"), "--help"],

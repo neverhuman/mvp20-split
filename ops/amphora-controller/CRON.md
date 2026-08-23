@@ -33,7 +33,7 @@ Nothing else should ever edit an Amphora crontab line by hand.
 |---|---|
 | Schedule | `*/10 * * * *` |
 | Implemented by | `ops/amphora-controller/mirror-log.sh` |
-| Purpose | Mirrors controller logs to the target host and records `last-mirrored.sha256`. |
+| Purpose | Mirrors the append-only per-lane logs, fire summaries, and heartbeats to the target host. |
 | Log | discarded (`>/dev/null 2>&1`) |
 
 ```
@@ -62,9 +62,10 @@ Nothing else should ever edit an Amphora crontab line by hand.
 ```
 
 > The guard script is deployed **outside** the repo, to `/home/ubuntu/.local/libexec/`, by
-> `bin/amphora install --apply`. The deployed copy is byte-identical to the in-repo copy
-> (`b2972f79…`); `bin/amphora doctor` checks this. Do not edit the deployed copy — edit the
-> repo copy and re-run `install --apply`.
+> `bin/amphora install --apply`. `bin/amphora doctor` checks the deployed guard and policy
+> hashes against the current repository when xbabe2 access is provisioned.
+> Do not edit a deployed copy — edit the repository and re-run `install --apply` during an
+> approved activation/maintenance window.
 >
 > A 15-line predecessor of this guard used to live at `/home/ubuntu/amphora-autocommit-guard.sh`
 > — the path named by the historical `xbabe2.crontab.after` freeze record. It did a bare
@@ -106,18 +107,19 @@ foreign stop can never be silently removed.
 
 ## Where to run these commands
 
-**Run every `bin/amphora` command from xbabe1, from `/home/ubuntu/mvp20-split`.**
+**Run host-mutating `bin/amphora` commands from xbabe1, from
+`/home/ubuntu/mvp20-split`.**
 
 This matters more than it looks. `install`, `pause`, and `resume` reach the target host over
-`ssh $AMPHORA_TARGET_HOST` (`xbabe2`) to write the remote crontab and deploy the guard. On
-xbabe1 that alias resolves to the real xbabe2. On other machines it may not — see the host
-guard in `bin/amphora`, which refuses to run when the local hostname is not the controller
-host.
+`$AMPHORA_SSH_COMMAND $AMPHORA_TARGET_HOST` (`xbabe2`) to write the remote crontab and deploy
+the guard. The handoff state intentionally has no xbabe1→xbabe2 host trust or credential;
+restoring a dedicated path is an activation prerequisite. On other machines the alias may
+mean something else, so the host guard refuses applied mutations anywhere but xbabe1.
 
 ```bash
 cd /home/ubuntu/mvp20-split
-ops/amphora-controller/bin/amphora status    # prints the three live lines
-ops/amphora-controller/bin/amphora doctor
+ops/amphora-controller/bin/amphora status    # prints local state, then target UNREACHABLE now
+ops/amphora-controller/bin/amphora doctor    # expected to fail SSH until activation access exists
 ```
 
 ## Checked-in crontab records
@@ -136,14 +138,15 @@ diff <(crontab -l | grep -E 'AMPHORA_(MANAGED|HANDOFF)_DISABLED') \
      <(grep -E 'AMPHORA_(MANAGED|HANDOFF)_DISABLED' \
          ops/amphora-controller/bootstrap/freeze/xbabe1.crontab.current)
 
-# on xbabe2
+# after activation access is provisioned, from xbabe1
 ssh xbabe2 'crontab -l | grep -E "AMPHORA_(MANAGED|HANDOFF)_DISABLED"' | diff - \
      <(grep -E 'AMPHORA_(MANAGED|HANDOFF)_DISABLED' \
          ops/amphora-controller/bootstrap/freeze/xbabe2.crontab.current)
 ```
 
-Both must print nothing. `ops/amphora-controller/bin/amphora status` prints the same three
-lines straight from the live crontabs and is the quicker check.
+Both must print nothing. Before activation access, compare the xbabe1 lines locally and use
+the frozen xbabe2 record plus an independent xbabe2 login; `status` fails closed rather than
+claiming an unverified remote line.
 
 ## Activation
 

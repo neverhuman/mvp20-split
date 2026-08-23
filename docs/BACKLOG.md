@@ -36,16 +36,15 @@ outcome is documented.
 packager's bill-of-materials, evidence-tier crosswalk, and final assembly through
 `CroProtocolPackageV2` with locks intact.
 
-## Two candidate first projects outside the campaign
+## One candidate first project outside the campaign
 
-- **Land the T-01B fix.** `main` ships a defect the project's own evidence records as
-  `REFUTED` — a caller-supplied `canonical_structure_hash` reaching the typed field and the
-  provenance root. The 9-line fix is `bd74196` on `demo/founder-showcase`. See
-  `amphora-candidate-contract/evidence/phase0/repairs/T-01B/`.
 - **Bring the showcase to `main`.** `demo/founder-showcase` carries a four-example live TUI
   (see [DEMO.md](DEMO.md)). `R2`/`R3` on that branch have declared breaking effects on
   legacy run archives, so this needs a reviewed decision first — which makes it a good
   exercise in how this project handles a breaking change.
+
+The former T-01B first project is complete: its caller-hash guard landed on `main` as
+`acf268f6`.
 
 ## Highest scientific value — the roadmap ladder
 

@@ -16,11 +16,33 @@ while [ "$#" -gt 0 ]; do
     shift
 done
 
-CONTROLLER_ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
-REPO=${AMPHORA_SNAPSHOT_REPO:-$(git -C "$CONTROLLER_ROOT" rev-parse --show-toplevel)}
-CLI="$CONTROLLER_ROOT/bin/amphora"
+SCRIPT_ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+REPO=${AMPHORA_SNAPSHOT_REPO:-$(git -C "$SCRIPT_ROOT" rev-parse --show-toplevel)}
+CONTROLLER_ROOT="$REPO/ops/amphora-controller"
+CONTROLLER_HOST=${AMPHORA_CONTROLLER_HOST:-xbabe1}
+CONTROLLER_CLI=${AMPHORA_CONTROLLER_CLI:-/home/ubuntu/mvp20-split/ops/amphora-controller/bin/amphora}
+read -r -a CONTROL_SSH <<< "${AMPHORA_CONTROL_SSH_COMMAND:-ssh -o ConnectTimeout=15 -o BatchMode=yes}"
+read -r -a CONTROL_SCP <<< "${AMPHORA_CONTROL_SCP_COMMAND:-scp -o ConnectTimeout=15 -o BatchMode=yes}"
 STATE_ROOT=${AMPHORA_STATE_ROOT:-/home/ubuntu/amphora-cron}
 SOURCE_ROOT=${AMPHORA_TARGET_ROOT:-/home/ubuntu/amphora/build/mvp20-split}
+
+run_controller() {
+    if [ "$(hostname -s)" = "$CONTROLLER_HOST" ]; then
+        "$CONTROLLER_CLI" "$@"
+    else
+        "${CONTROL_SSH[@]}" "$CONTROLLER_HOST" "$CONTROLLER_CLI" "$@"
+    fi
+}
+
+copy_controller_file() {
+    local source=$1 destination=$2
+    if [ "$(hostname -s)" = "$CONTROLLER_HOST" ]; then
+        install -m 600 "$source" "$destination"
+    else
+        "${CONTROL_SCP[@]}" -q "$CONTROLLER_HOST:$source" "$destination"
+        chmod 600 "$destination"
+    fi
+}
 
 if [ "$APPLY" -eq 0 ]; then
     printf '%s\n' 'DRY-RUN reviewed snapshot:' \
@@ -36,15 +58,15 @@ fi
 [ "$REVIEW" -eq 1 ] || { echo '--apply requires --review' >&2; exit 64; }
 [ "$COMMIT" -eq 1 ] || [ "$PUSH" -eq 0 ] || { echo '--push requires --commit' >&2; exit 64; }
 
-"$CLI" pause --tag "$TAG" --apply
-"$CLI" drain --timeout 180
+run_controller pause --tag "$TAG" --apply
+run_controller drain --timeout 180
 if ! git -C "$REPO" diff --quiet || ! git -C "$REPO" diff --cached --quiet; then
     echo 'snapshot repository was dirty before export' >&2
     exit 70
 fi
 
-install -m 600 "$STATE_ROOT/campaign.json" "$REPO/ops/amphora-controller/bootstrap/campaign.json"
-install -m 600 "$STATE_ROOT/data-acquisition-queue.jsonl" "$REPO/ops/amphora-controller/bootstrap/data-acquisition-queue.jsonl"
+copy_controller_file "$STATE_ROOT/campaign.json" "$REPO/ops/amphora-controller/bootstrap/campaign.json"
+copy_controller_file "$STATE_ROOT/data-acquisition-queue.jsonl" "$REPO/ops/amphora-controller/bootstrap/data-acquisition-queue.jsonl"
 SOURCE_SHA=$(git -C "$SOURCE_ROOT" rev-parse HEAD)
 SOURCE_HISTORY_COMMITS=$(git -C "$SOURCE_ROOT" rev-list --count HEAD)
 CAPTURED_AT=$(date -Iseconds)
@@ -59,7 +81,12 @@ python3 "$CONTROLLER_ROOT/tools/controller_tree_manifest.py" generate --root "$C
 
 git -C "$REPO" add -- DATASETS.local.json OPERATIONS.local.json ops/amphora-controller/bootstrap \
   ops/amphora-controller/controller-tree.sha256
+git -C "$REPO" diff --quiet || {
+    echo 'snapshot left unstaged worktree changes after export' >&2
+    exit 73
+}
 python3 "$CONTROLLER_ROOT/policy/staged_file_policy.py" --repo "$REPO" --profile publication --source staged
+python3 "$CONTROLLER_ROOT/policy/staged_file_policy.py" --repo "$REPO" --profile publication --source tracked
 
 # Both scanners are required for an applied publication. Guarding them with a bare
 # `command -v` meant this gate could exit 0 having scanned nothing at all -- the most
@@ -76,8 +103,26 @@ if [ -n "$MISSING_SCANNERS" ]; then
     [ "$APPLY" = "1" ] && exit 1
     echo "       (dry run: continuing without a secret scan)" >&2
 fi
-command -v gitleaks   >/dev/null && gitleaks git "$REPO" --redact --no-banner --exit-code 1
-command -v trufflehog >/dev/null && trufflehog git "file://$REPO" --no-update --fail --only-verified
+command -v gitleaks >/dev/null && \
+  gitleaks git "$REPO" --staged --config "$REPO/.gitleaks.toml" --redact --no-banner --exit-code 1
+command -v gitleaks >/dev/null && \
+  gitleaks git "$REPO" --config "$REPO/.gitleaks.toml" --redact --no-banner --exit-code 1
+if command -v trufflehog >/dev/null; then
+    SCAN_TREE=$(mktemp -d)
+    trap 'rm -rf -- "$SCAN_TREE"' EXIT
+    git -C "$REPO" checkout-index --all --prefix="$SCAN_TREE/"
+    # Scan the exact staged index as a one-commit repository. The filesystem source's
+    # content decoder misclassifies four long UTF-8 citation extracts as Brotli and emits
+    # read errors while still exiting zero; the Git source scans those same raw blobs fully.
+    git -C "$SCAN_TREE" init -q
+    git -C "$SCAN_TREE" add -f -A
+    git -C "$SCAN_TREE" -c user.name='Amphora Scan' -c user.email='scan@amphora.invalid' \
+      commit -qm staged-index
+    trufflehog git "file://$SCAN_TREE" --no-update --fail --fail-on-scan-errors
+    trufflehog git "file://$REPO" --no-update --fail --fail-on-scan-errors
+    rm -rf -- "$SCAN_TREE"
+    trap - EXIT
+fi
 
 git -C "$REPO" diff --cached --stat
 DIFF_SHA=$(git -C "$REPO" diff --cached --binary | sha256sum | cut -d' ' -f1)
@@ -89,4 +134,10 @@ fi
 [ "$REVIEWED_SHA" = "$DIFF_SHA" ] || { echo 'reviewed diff hash mismatch or absent' >&2; exit 71; }
 git -C "$REPO" -c user.name='Amphora Ops' -c user.email='techie@amphora.bio' \
   commit -m "Reviewed Amphora state snapshot $CAPTURED_AT"
-[ "$PUSH" -eq 1 ] && git -C "$REPO" push origin main
+if [ "$PUSH" -eq 1 ]; then
+    [ "$(git -C "$REPO" branch --show-current)" = main ] || {
+        echo '--push requires the reviewed commit to be on local main' >&2
+        exit 72
+    }
+    git -C "$REPO" push origin HEAD:main
+fi

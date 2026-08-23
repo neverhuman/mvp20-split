@@ -1,6 +1,6 @@
 # The showcase demo
 
-`demo/founder-showcase` (tip `209f6b5`, unmerged) carries a terminal UI that runs four
+`demo/founder-showcase` (tip `e8e3acd`, unmerged) carries a terminal UI that runs four
 worked examples against the real engine and pinned data. It is the fastest way to see what
 this system actually does, and it is deliberately honest about what it is not: throughput
 panels are engineering metrics, never novelty, ranking, or validated science.
@@ -37,19 +37,19 @@ The branch also carries three security-hardening commits:
 
 | Commit | Item | What it fixes |
 |---|---|---|
-| `bd74196` | R1 / T-01B | A caller-supplied `canonical_structure_hash` could reach the typed field, the result echo, the export report, and the provenance root. `main` still has this. |
-| `b5ca2d0` | R2 / T-13 | Recomputes the event-hash chain and binds run identity in `verify_run`. |
-| `5c679a5` | R3 / T-05 | Attests molecule facts by recomputation before the equivalent balance. |
+| `78d9ab48` | R1 / T-01B | A caller-supplied `canonical_structure_hash` could reach the typed field, the result echo, export report, and provenance root. An equivalent fix is now on `main` as `acf268f6`. |
+| `30c2ae93` | R2 / T-13 | Recomputes the event-hash chain and binds run identity in `verify_run`. |
+| `403e0ccc` | R3 / T-05 | Attests molecule facts by recomputation before the equivalent balance. |
 
 `R2` and `R3` have **declared breaking effects**: legacy run archives written under the
 superseded event-hash format fail loudly against them. Merging is therefore a reviewed
 decision about how to treat historical archives, not a cleanup — which is why the branch was
 published rather than merged.
 
-`R1` is separable, applies cleanly to `main`, and by design leaves clean-candidate output
-byte-identical. See [BACKLOG.md](BACKLOG.md).
+`R1` was separable and is already on `main`; R2/R3 still require the historical-archive
+decision above. See [BACKLOG.md](BACKLOG.md).
 
 ## Also on the branch
 
-`61f25d2d` caches the novelty corpus fingerprints — bit-identical results with roughly 5×
+`e38892fa` caches the novelty corpus fingerprints — bit-identical results with roughly 5×
 fewer RDKit calls.

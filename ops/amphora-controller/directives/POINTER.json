@@ -22,7 +22,7 @@
   },
   "loop_side": {
     "host": "xbabe1",
-    "index": "/home/ubuntu/amphora-cron/directives/2026-08-05-closing-the-open-portfolio.index.json"
+    "index": "/home/ubuntu/mvp20-split/ops/amphora-controller/directives/2026-08-05-closing-the-open-portfolio.index.json"
   },
   "provenance": {
     "source_received_at": "/home/ubuntu/Amphora_Closing_The_Open_Portfolio.docx",

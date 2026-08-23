@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Restore the datasets omitted from this repository, from the canonical xbabe2 tree.
 #
-# DATASETS.local.json is the inventory: 1,372 paths with size, sha256, and category,
+# DATASETS.local.json is the inventory: 1,344 paths with size, sha256, and category,
 # captured from xbabe2 at git sha 7d85419. Nothing in the repo restored them until now,
 # so every runnable CLI command failed on a fresh clone.
 #
@@ -52,8 +52,34 @@ for row in json.load(open(manifest))["omitted"]:
 PY
 )
 
+# Never equate "present" with "verified". This check runs even when there is nothing
+# to fetch, and streams large payloads instead of reading multi-gigabyte files at once.
+python3 - "$MANIFEST" "$REPO_ROOT" "$ONLY" <<'PY'
+import hashlib, json, os, sys
+manifest, root, only = sys.argv[1], sys.argv[2], sys.argv[3]
+ok = bad = 0
+for row in json.load(open(manifest))["omitted"]:
+    p = row["path"]
+    if only and not p.startswith(only):
+        continue
+    full = os.path.join(root, p)
+    if not os.path.isfile(full):
+        continue
+    digest = hashlib.sha256()
+    with open(full, "rb") as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), b""):
+            digest.update(chunk)
+    if digest.hexdigest() == row["sha256"]:
+        ok += 1
+    else:
+        bad += 1
+        print(f"  MISMATCH {p}\n    expected {row['sha256']}\n    observed {digest.hexdigest()}")
+print(f"verified {ok} already-present files, {bad} mismatched")
+sys.exit(1 if bad else 0)
+PY
+
 if [ "${#MISSING[@]}" -eq 0 ]; then
-    echo "nothing to restore: every inventoried path is already present"
+    echo "nothing to restore: every selected path is present and hash-verified"
     exit 0
 fi
 echo "missing: ${#MISSING[@]} files"
@@ -79,7 +105,8 @@ if [ "$REMOTE_SHA" != "$SRC_SHA" ]; then
     echo "       expected HEAD $SRC_SHA" >&2
     echo "       observed      $REMOTE_SHA" >&2
     echo "       If 'observed' is empty or 'unreachable', the '$SRC_HOST' ssh alias is not" >&2
-    echo "       resolving to the canonical host -- run this from xbabe1, where it does." >&2
+    echo "       resolving to the canonical host -- run from a host with explicitly" >&2
+    echo "       provisioned xbabe2 access. Decommissioned xbabe1 intentionally lacks it." >&2
     echo "       If it is a different sha, the canonical tree has moved on; the digests in" >&2
     echo "       DATASETS.local.json may no longer match. Regenerate the manifest first." >&2
     exit 1
@@ -104,8 +131,11 @@ for row in json.load(open(manifest))["omitted"]:
         absent += 1
         print(f"  ABSENT   {p}")
         continue
+    digest_state = hashlib.sha256()
     with open(full, "rb") as fh:
-        digest = hashlib.sha256(fh.read()).hexdigest()
+        for chunk in iter(lambda: fh.read(1 << 20), b""):
+            digest_state.update(chunk)
+    digest = digest_state.hexdigest()
     if digest == row["sha256"]:
         ok += 1
     else:

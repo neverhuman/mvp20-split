@@ -9,6 +9,7 @@ import os
 import socket
 from pathlib import Path
 import re
+import shlex
 import shutil
 import subprocess
 import sys
@@ -29,6 +30,8 @@ DEFAULTS = {
     "AMPHORA_MODEL": "claude-sonnet-5",
     "AMPHORA_CLAUDE_BIN": "/home/ubuntu/.local/bin/claude",
     "AMPHORA_SIGNING_KEY_PATH": "/home/ubuntu/.local/share/amphora/phase0/keys/evaluator.ed25519.seed",
+    "AMPHORA_SSH_COMMAND": "ssh -o ConnectTimeout=15 -o BatchMode=yes -o ServerAliveInterval=5 -o ServerAliveCountMax=6",
+    "AMPHORA_SCP_COMMAND": "scp -o ConnectTimeout=15 -o BatchMode=yes -o ServerAliveInterval=5 -o ServerAliveCountMax=6",
 }
 TAG_RX = re.compile(r"^[A-Z0-9][A-Z0-9._-]{7,127}$")
 
@@ -75,6 +78,21 @@ def config():
     return values
 
 
+def command_argv(cfg, key):
+    argv = shlex.split(cfg[key])
+    if not argv:
+        raise OperatorError("%s is empty" % key)
+    return argv
+
+
+def ssh_argv(cfg, host, *remote_command):
+    return [*command_argv(cfg, "AMPHORA_SSH_COMMAND"), host, *remote_command]
+
+
+def scp_argv(cfg, *paths):
+    return [*command_argv(cfg, "AMPHORA_SCP_COMMAND"), *paths]
+
+
 def tag_arg(value):
     if not TAG_RX.fullmatch(value or ""):
         raise argparse.ArgumentTypeError("tag must be 8-128 uppercase letters, digits, '.', '_' or '-'")
@@ -111,34 +129,34 @@ def update_cron(text, roles, entries, enabled, tag):
     return "\n".join(kept) + "\n"
 
 
-def read_cron(host=None):
-    argv = ["crontab", "-l"] if host is None else ["ssh", "-o", "BatchMode=yes", host, "crontab", "-l"]
+def read_cron(cfg, host=None):
+    argv = ["crontab", "-l"] if host is None else ssh_argv(cfg, host, "crontab", "-l")
     proc = run(argv, check=False)
     if proc.returncode not in (0, 1):
         raise OperatorError(proc.stderr.strip())
     return proc.stdout
 
 
-def write_cron(text, host=None):
-    argv = ["crontab", "-"] if host is None else ["ssh", "-o", "BatchMode=yes", host, "crontab", "-"]
+def write_cron(cfg, text, host=None):
+    argv = ["crontab", "-"] if host is None else ssh_argv(cfg, host, "crontab", "-")
     run(argv, input_text=text)
 
 
 def set_crons(cfg, enabled, tag, apply):
     entries = cron_entries(cfg)
-    local_before = read_cron()
-    remote_before = read_cron(cfg["AMPHORA_TARGET_HOST"])
+    local_before = read_cron(cfg)
+    remote_before = read_cron(cfg, cfg["AMPHORA_TARGET_HOST"])
     local_after = update_cron(local_before, ("launcher", "mirror"), entries, enabled, tag)
     remote_after = update_cron(remote_before, ("guard",), entries, enabled, tag)
     if not apply:
         print("would set Amphora cron jobs %s; unrelated lines remain byte-identical" %
               ("enabled" if enabled else "disabled"))
         return
-    write_cron(local_after)
+    write_cron(cfg, local_after)
     try:
-        write_cron(remote_after, cfg["AMPHORA_TARGET_HOST"])
+        write_cron(cfg, remote_after, cfg["AMPHORA_TARGET_HOST"])
     except Exception:
-        write_cron(local_before)
+        write_cron(cfg, local_before)
         raise
 
 
@@ -197,9 +215,9 @@ def cmd_pause(args, cfg):
     return 0
 
 
-def remote_process_count(host):
+def remote_process_count(cfg, host):
     script = """ps -u "$(id -un)" -o args= | grep -E '[c]laude-hourly-loop|(^|/)claude( |$)' | wc -l"""
-    argv = ["bash", "-c", script] if host is None else ["ssh", "-o", "BatchMode=yes", host, script]
+    argv = ["bash", "-c", script] if host is None else ssh_argv(cfg, host, script)
     proc = run(argv, check=False)
     return int((proc.stdout or "0").strip() or 0) if proc.returncode == 0 else 999
 
@@ -226,7 +244,7 @@ def controller_locks_available(cfg):
 def cmd_drain(args, cfg):
     deadline = time.monotonic() + args.timeout
     while time.monotonic() < deadline:
-        if remote_process_count(None) == 0 and controller_locks_available(cfg):
+        if remote_process_count(cfg, None) == 0 and controller_locks_available(cfg):
             print("drained: no controller or Claude processes; all fleet locks available")
             return 0
         time.sleep(1)
@@ -294,13 +312,26 @@ def cmd_doctor(args, cfg):
     if cfg_path.exists() and cfg_path.stat().st_mode & 0o077:
         failures.append("config must be mode 0600: %s" % cfg_path)
     target = cfg["AMPHORA_TARGET_HOST"]
-    if run(["ssh", "-o", "BatchMode=yes", "-o", "ConnectTimeout=8", target, "true"], check=False).returncode:
+    if run(ssh_argv(cfg, target, "true"), check=False).returncode:
         failures.append("SSH failed: %s" % target)
     else:
-        key_check = "test -f %s && test $(wc -c < %s) -eq 32" % (
-            cfg["AMPHORA_SIGNING_KEY_PATH"], cfg["AMPHORA_SIGNING_KEY_PATH"])
-        if run(["ssh", "-o", "BatchMode=yes", target, key_check], check=False).returncode:
+        seed_path = shlex.quote(cfg["AMPHORA_SIGNING_KEY_PATH"])
+        key_check = "test -f %s && test $(wc -c < %s) -eq 32" % (seed_path, seed_path)
+        if run(ssh_argv(cfg, target, key_check), check=False).returncode:
             failures.append("remote signing seed absent or wrong size")
+        for local_name, remote_name in (
+                ("autocommit-guard.sh", "/home/ubuntu/.local/libexec/amphora-autocommit-guard.sh"),
+                ("policy/staged_file_policy.py", "/home/ubuntu/.local/libexec/amphora-staged-file-policy.py")):
+            expected = hashlib.sha256((controller / local_name).read_bytes()).hexdigest()
+            proc = run(ssh_argv(cfg, target, "sha256sum", "--", remote_name), check=False)
+            actual = (proc.stdout or "").split(maxsplit=1)[0] if proc.returncode == 0 else ""
+            if actual != expected:
+                failures.append("remote deployed hash mismatch: %s" % remote_name)
+        source_check = "git -C %s status --porcelain --untracked-files=no" % shlex.quote(
+            cfg["AMPHORA_TARGET_ROOT"])
+        proc = run(ssh_argv(cfg, target, source_check), check=False)
+        if proc.returncode or (proc.stdout or "").strip():
+            failures.append("remote canonical tracked tree is absent or dirty")
     if not os.access(cfg["AMPHORA_CLAUDE_BIN"], os.X_OK):
         failures.append("Claude binary not executable (authentication is a separate activation prerequisite)")
     if failures:
@@ -315,12 +346,24 @@ def cmd_status(args, cfg):
     path = stop_path(cfg)
     print("state=PAUSED" if path.exists() else "state=UNSTOPPED")
     print("hard_stop=%s" % (path.read_text().splitlines()[0] if path.exists() else "absent"))
-    for name, text in (("xbabe1", read_cron()), (cfg["AMPHORA_TARGET_HOST"], read_cron(cfg["AMPHORA_TARGET_HOST"]))):
+    local_text = read_cron(cfg)
+    for name, text in (("xbabe1", local_text),):
         managed = [line for line in text.splitlines() if "amphora" in line.lower() and
                    any(word in line for word in ("hourly-loop", "mirror-log", "autocommit"))]
         print("%s_jobs=%s" % (name, json.dumps(managed)))
-    print("controller_processes=%d" % remote_process_count(None))
-    return 0
+    target = cfg["AMPHORA_TARGET_HOST"]
+    target_ok = True
+    try:
+        target_text = read_cron(cfg, target)
+    except OperatorError:
+        target_ok = False
+        print("%s_jobs=UNREACHABLE" % target)
+    else:
+        managed = [line for line in target_text.splitlines() if "amphora" in line.lower() and
+                   any(word in line for word in ("hourly-loop", "mirror-log", "autocommit"))]
+        print("%s_jobs=%s" % (target, json.dumps(managed)))
+    print("controller_processes=%d" % remote_process_count(cfg, None))
+    return 0 if target_ok else 1
 
 
 def seed_state(cfg):
@@ -338,18 +381,18 @@ def seed_state(cfg):
 def deploy_guard(cfg):
     controller = Path(cfg["AMPHORA_CONTROLLER_ROOT"])
     host = cfg["AMPHORA_TARGET_HOST"]
-    run(["ssh", "-o", "BatchMode=yes", host, "mkdir -p /home/ubuntu/.local/libexec /home/ubuntu/.config/amphora"])
-    run(["scp", "-q", str(controller / "autocommit-guard.sh"),
-         "%s:/home/ubuntu/.local/libexec/amphora-autocommit-guard.sh" % host])
-    run(["scp", "-q", str(controller / "policy" / "staged_file_policy.py"),
-         "%s:/home/ubuntu/.local/libexec/amphora-staged-file-policy.py" % host])
-    run(["scp", "-q", str(controller / "config" / "mvp20-autocommit.env.example"),
-         "%s:/home/ubuntu/.config/amphora/mvp20-autocommit.env.example" % host])
-    run(["ssh", "-o", "BatchMode=yes", host,
+    run(ssh_argv(cfg, host, "mkdir -p /home/ubuntu/.local/libexec /home/ubuntu/.config/amphora"))
+    run(scp_argv(cfg, "-q", str(controller / "autocommit-guard.sh"),
+                 "%s:/home/ubuntu/.local/libexec/amphora-autocommit-guard.sh" % host))
+    run(scp_argv(cfg, "-q", str(controller / "policy" / "staged_file_policy.py"),
+                 "%s:/home/ubuntu/.local/libexec/amphora-staged-file-policy.py" % host))
+    run(scp_argv(cfg, "-q", str(controller / "config" / "mvp20-autocommit.env.example"),
+                 "%s:/home/ubuntu/.config/amphora/mvp20-autocommit.env.example" % host))
+    run(ssh_argv(cfg, host,
          "chmod 700 /home/ubuntu/.local/libexec/amphora-autocommit-guard.sh /home/ubuntu/.local/libexec/amphora-staged-file-policy.py; "
          "test -e /home/ubuntu/.config/amphora/mvp20-autocommit.env || "
          "cp /home/ubuntu/.config/amphora/mvp20-autocommit.env.example /home/ubuntu/.config/amphora/mvp20-autocommit.env; "
-         "chmod 600 /home/ubuntu/.config/amphora/mvp20-autocommit.env"])
+         "chmod 600 /home/ubuntu/.config/amphora/mvp20-autocommit.env"))
 
 
 def protect_controller(controller):
@@ -390,12 +433,18 @@ def cmd_protect(args, cfg):
     if not root.is_dir():
         raise OperatorError("controller root is absent: %s" % root)
     if not args.apply:
-        print("DRY-RUN: would remove write permission under %s" % root)
+        print("DRY-RUN: would verify the manifest and remove write permission under %s" % root)
         return 0
+    ok, detail = verify_manifest(root)
+    if not ok:
+        raise OperatorError("refusing to protect an unverified controller: %s" % detail)
     for path in sorted(root.rglob("*"), reverse=True):
         path.chmod(path.stat().st_mode & ~0o222)
     root.chmod(root.stat().st_mode & ~0o222)
-    print("protected %s" % root)
+    ok, detail = verify_manifest(root)
+    if not ok:
+        raise OperatorError("controller changed while protection was applied: %s" % detail)
+    print("protected %s; %s" % (root, detail))
     return 0
 
 

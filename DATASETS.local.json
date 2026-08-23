@@ -2,17 +2,11 @@
   "schema": "amphora.datasets.local.v1",
   "source": {
     "git_sha": "7d85419158795c63ff2ee4a41d95a8f5789f9003",
-    "captured_at": "2026-08-23T04:02:42+00:00",
+    "captured_at": "2026-08-23T16:45:34+00:00",
     "host": "xbabe2",
     "path": "/home/ubuntu/amphora/build/mvp20-split"
   },
   "omitted": [
-    {
-      "path": "amphora-barrier-corrosion-score/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "category": "dataset"
-    },
     {
       "path": "amphora-barrier-corrosion-score/reference/eis/st-19168/raw/19168_inhibitive_coating_system_data.xlsx",
       "size_bytes": 14627,
@@ -41,24 +35,6 @@
       "path": "amphora-barrier-corrosion-score/reference/mvp20/data/feedback_v2/splits/corr_data_database-013d9c5d7d4b9433.json",
       "size_bytes": 768,
       "sha256": "0c272b39addd60cade0259d36ddb37ab260efb2285bdb7a383bca3aa9ff544a7",
-      "category": "dataset"
-    },
-    {
-      "path": "amphora-candidate-contract/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "category": "dataset"
-    },
-    {
-      "path": "amphora-cro-protocol-packager/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "category": "dataset"
-    },
-    {
-      "path": "amphora-cure-potlife-gate/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "category": "dataset"
     },
     {
@@ -95,12 +71,6 @@
       "path": "amphora-cure-potlife-gate/reference/mvp20/quarantine/feedback_v2/objects/94efde3f75f1a4afec816b89f66da215150428bc62bf5ae0bd95b0746ed388b6.jsonl.gz",
       "size_bytes": 7457,
       "sha256": "94efde3f75f1a4afec816b89f66da215150428bc62bf5ae0bd95b0746ed388b6",
-      "category": "dataset"
-    },
-    {
-      "path": "amphora-design-rule-score/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "category": "dataset"
     },
     {
@@ -248,40 +218,10 @@
       "category": "dataset"
     },
     {
-      "path": "amphora-envelope-gates/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "category": "dataset"
-    },
-    {
-      "path": "amphora-evidence-intake-validator/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "category": "dataset"
-    },
-    {
       "path": "amphora-evidence-intake-validator/evidence/phase0/repairs/T-04/work/t04_cases.json",
       "size_bytes": 7017620,
       "sha256": "a5ca475223d9c305c81a1fa4ac26e5f2fff8dcda19616cc95213e1a247d3e435",
       "category": "evidence_payload"
-    },
-    {
-      "path": "amphora-formulation-arithmetic/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "category": "dataset"
-    },
-    {
-      "path": "amphora-formulation-universe/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "category": "dataset"
-    },
-    {
-      "path": "amphora-ingredient-library/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "category": "dataset"
     },
     {
       "path": "amphora-ingredient-library/reference/mvp20/data/feedback_v2/derived/bigsoldb_density-02226420d9fb3294.jsonl.gz",
@@ -419,12 +359,6 @@
       "path": "amphora-ip-fto-guard/evidence/audit/kpi-recompute-consistency-v1/raw/probe.output2.json",
       "size_bytes": 2866,
       "sha256": "de608df1209c220fc07804a8e65434732a858c49d01ae4a21a6d6eded0a26b9b",
-      "category": "dataset"
-    },
-    {
-      "path": "amphora-ip-fto-guard/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "category": "dataset"
     },
     {
@@ -650,12 +584,6 @@
       "category": "dataset"
     },
     {
-      "path": "amphora-known-answer-benchmarks/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "category": "dataset"
-    },
-    {
       "path": "amphora-known-answer-benchmarks/evidence/phase0/repairs/R-A05/work/a702b75_us_tds.pdf",
       "size_bytes": 1355189,
       "sha256": "7b95cd630cf392c87fbd852afea0e6d77591dcdb0d62f6390e5c46ba7d061abe",
@@ -734,24 +662,6 @@
       "category": "dataset"
     },
     {
-      "path": "amphora-model-card-authority/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "category": "dataset"
-    },
-    {
-      "path": "amphora-molecule-design-gate/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "category": "dataset"
-    },
-    {
-      "path": "amphora-molecule-generator/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "category": "dataset"
-    },
-    {
       "path": "amphora-molecule-generator/reference/mvp20/quarantine/feedback_v2/derived/pi1m_structures-8b8d3ce5720d43a3.jsonl.gz",
       "size_bytes": 80515667,
       "sha256": "486882759361039be105623b09871970963a041fb4b13dc689d021d1cb44ef46",
@@ -785,12 +695,6 @@
       "path": "amphora-molecule-generator/reference/mvp20/quarantine/feedback_v2/objects/fe23c6d1e4b50bd37a231be6b5db50cbc30e71f5252fd4b5c0d91430cf8cee17.jsonl.gz",
       "size_bytes": 102662578,
       "sha256": "fe23c6d1e4b50bd37a231be6b5db50cbc30e71f5252fd4b5c0d91430cf8cee17",
-      "category": "dataset"
-    },
-    {
-      "path": "amphora-molecule-novelty/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "category": "dataset"
     },
     {
@@ -899,12 +803,6 @@
       "path": "amphora-molecule-novelty/reference/mvp20/quarantine/feedback_v2/objects/fe23c6d1e4b50bd37a231be6b5db50cbc30e71f5252fd4b5c0d91430cf8cee17.jsonl.gz",
       "size_bytes": 102662578,
       "sha256": "fe23c6d1e4b50bd37a231be6b5db50cbc30e71f5252fd4b5c0d91430cf8cee17",
-      "category": "dataset"
-    },
-    {
-      "path": "amphora-molecule-property/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "category": "dataset"
     },
     {
@@ -1106,12 +1004,6 @@
       "category": "dataset"
     },
     {
-      "path": "amphora-molecule-role-ranker/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "category": "dataset"
-    },
-    {
       "path": "amphora-molecule-role-ranker/evidence/phase0/repairs/W-D-ROLE/done/W-D-ROLE-source-sweep-receipt.v1.dsse.json",
       "size_bytes": 47441,
       "sha256": "c960d1ff0f0fcadd2f38e04f9eac09d2119d5db30c5f4a0a2eb5026bc5ab19c6",
@@ -1128,18 +1020,6 @@
       "size_bytes": 1746700,
       "sha256": "8bdd151bf7c4e65663f6f07fd1c39ee1b434ab71fc47c0e3c38f8b779d157459",
       "category": "evidence_payload"
-    },
-    {
-      "path": "amphora-optimizer-orchestrator/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "category": "dataset"
-    },
-    {
-      "path": "amphora-process-qc-twin/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "category": "dataset"
     },
     {
       "path": "amphora-process-qc-twin/reference/mvp20/data/feedback_v3/derived/pronto_process_archive_v3-6879563fb7df5a71.jsonl.gz",
@@ -1187,12 +1067,6 @@
       "path": "amphora-process-qc-twin/reference/mvp20/data/feedback_v3/splits/uci_secom_archive_v3-eea568baf3c22290.json",
       "size_bytes": 760,
       "sha256": "700c118188979fdb1c65adc1d538293579005c5b6a8d1eb186c5631d520095fd",
-      "category": "dataset"
-    },
-    {
-      "path": "amphora-public-corrosion-benchmark/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "category": "dataset"
     },
     {
@@ -1400,34 +1274,10 @@
       "category": "dataset"
     },
     {
-      "path": "amphora-redteam-audit/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "category": "dataset"
-    },
-    {
-      "path": "amphora-report-packager/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "category": "dataset"
-    },
-    {
-      "path": "amphora-run-provenance/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "category": "dataset"
-    },
-    {
       "path": "amphora-run-provenance/reference/mvp20/out/run_manifest.json",
       "size_bytes": 44140,
       "sha256": "eb68f96019b42e0617a08243d391c1aaf1104de62e1f797ca266b9533cd3e8c6",
       "category": "artifact"
-    },
-    {
-      "path": "amphora-solvency-score/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "category": "dataset"
     },
     {
       "path": "amphora-solvency-score/reference/mvp20/data/feedback_v2/derived/bigsoldb_solubility-879f55f39db977e2.jsonl.gz",
@@ -1598,12 +1448,6 @@
       "category": "dataset"
     },
     {
-      "path": "amphora-source-ledger/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "category": "dataset"
-    },
-    {
       "path": "amphora-source-ledger/reference/mvp20/data/feedback_v2/derived/corr_data_checksum-db2f4234f3bdc5cf.jsonl.gz",
       "size_bytes": 386,
       "sha256": "8033f6d1742fa41c3e6cb23e1c3bfe14c55e8538a78d00b990b82ac141554a06",
@@ -1739,12 +1583,6 @@
       "path": "amphora-sourceability-ehs/evidence/phase0/audits/EHS-HCOMP/work/raw/ghs_pugview_TETA_5565_20260815.json",
       "size_bytes": 75580,
       "sha256": "4bb16df205e9d64272b1b7f904df91d22305ff7609ef56285e1015c4eefc8936",
-      "category": "dataset"
-    },
-    {
-      "path": "amphora-sourceability-ehs/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "category": "dataset"
     },
     {
@@ -2114,12 +1952,6 @@
       "category": "dataset"
     },
     {
-      "path": "amphora-tolerance-robustness/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "category": "dataset"
-    },
-    {
       "path": "amphora-tolerance-robustness/reference/mvp20/data/feedback_v2/derived/bigsoldb_density-02226420d9fb3294.jsonl.gz",
       "size_bytes": 133390,
       "sha256": "26a1580f2f0563b7ad32f0c07bce20721fa7500acea3dd5a53e836532fc9a80a",
@@ -2165,12 +1997,6 @@
       "path": "amphora-tolerance-robustness/reference/mvp20/data/feedback_v2/splits/radonpy_pi1070-4ee41d526db3d03e.json",
       "size_bytes": 757,
       "sha256": "62bf037090f8c73c623f6a921ca8b3c9bcecf3be5692de12eb6fce0646dd75ab",
-      "category": "dataset"
-    },
-    {
-      "path": "amphora-viscosity-score/evidence/phase0/raw/objects/.gitkeep",
-      "size_bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "category": "dataset"
     },
     {
@@ -6359,6 +6185,12 @@
       "path": "feedback/v1/external_data/openpoly_benchmark/raw/final_polymer_property_counts_fromliterature.csv",
       "size_bytes": 849,
       "sha256": "9d6c34c0c1fc0b6a757a5917f6c8617c374f16d0f2a1d5c3dd95c2941f640108",
+      "category": "dataset"
+    },
+    {
+      "path": "feedback/v1/external_data/openpoly_benchmark/raw/final_polymer_properties_fromliterature.csv",
+      "size_bytes": 178587,
+      "sha256": "8de5baf76f79610fe9173e63c65b824714aeb8445f9d670e1767956ea9db5eb3",
       "category": "dataset"
     },
     {

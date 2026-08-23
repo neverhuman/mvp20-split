@@ -24,12 +24,4 @@ regexes = [
   '''"?(?:evaluator_)?key_?id"?\s*[:=]\s*"?(?:phase0-evaluator|cro-fixture)-[0-9a-f]+"?''',
   '''REQUIRED_KEYID_PREFIX\s*=\s*"phase0-evaluator-[0-9a-f]+"''',
   '''(?:phase0-evaluator|cro-fixture)-[0-9a-f]{7,64}''',
-  # T-12 adversary keys. `forged_package_classes/class{1,2,3}_*/signing_key_hex` in the
-  # amphora-report-packager T-12 diagnostics are the keys an ATTACKER signs a forged
-  # receipt with -- class3 is literally named "non_anchored_key". They authorize nothing:
-  # none appears in any trust store or tracked file, and the real evaluator key id is
-  # phase0-evaluator-3ef6b35cdbbfea74. They are pinned deterministically so T-12's
-  # two-replay byte-identical gate is meaningful. Reachable only through the canonical
-  # history that demo/founder-showcase descends from; the files themselves are gitignored.
-  '''"?signing_key_hex"?\s*:\s*"?[0-9a-f]{64}"?''',
 ]

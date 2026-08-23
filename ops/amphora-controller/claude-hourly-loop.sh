@@ -892,7 +892,7 @@ fi
 
 if [ "$FIRE_CLASS" = QUOTA ]; then
     QPARSE=$(QUOTA_FALLBACK_SECS="$QUOTA_FALLBACK_SECS" QUOTA_HOLD_MAX="$QUOTA_HOLD_MAX" \
-             python3 "$ROOT/lib/parse_quota_reset.py" "$QUOTA_RESET_RAW" 2>/dev/null || true)
+             python3 "$CONTROLLER_ROOT/lib/parse_quota_reset.py" "$QUOTA_RESET_RAW" 2>/dev/null || true)
     QUOTA_UNTIL_NEW=${QPARSE%% *}; QUOTA_HOW=${QPARSE#* }
     [[ "$QUOTA_UNTIL_NEW" =~ ^[0-9]+$ ]] || {
         QUOTA_UNTIL_NEW=$(( $(date +%s) + QUOTA_FALLBACK_SECS )); QUOTA_HOW=parser-unavailable; }
@@ -1263,7 +1263,7 @@ if [ "${RUNTIME:-0}" -gt 0 ] && [ "${RUNTIME:-0}" -lt 268 ]; then
 fi
 
 # --- A10 summary record: agent JSON on STDIN (argv hit E2BIG in v2) ---------
-printf '%s' "$SUMMARY_LINE" | python3 "$ROOT/lib/write_summary.py" \
+printf '%s' "$SUMMARY_LINE" | python3 "$CONTROLLER_ROOT/lib/write_summary.py" \
         "$FIRE_SUMMARY" "$RUN_START_ISO" "$TARGET" "$MODE" "$MODEL" "$CAMPAIGN_ITEM_ID" \
         "$ITEM_STATUS_APPLIED" "$OUTCOME" "$OUTCOME_RAW" "$FIRE_ID" "$SIGNING_CHECK" \
         "$PROTECTED_CHECK" "$RUNTIME" "$VERIFIED_NEW_SIGNED" "$SIGNING_VIOLATIONS" \
