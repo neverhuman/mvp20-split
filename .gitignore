@@ -129,3 +129,20 @@ id_rsa
 !amphora-ip-fto-guard/evidence/audit/kpi-recompute-consistency-v1/raw/
 !amphora-ip-fto-guard/evidence/audit/kpi-recompute-consistency-v1/raw/*.Cargo.toml
 !amphora-ip-fto-guard/evidence/audit/kpi-recompute-consistency-v1/raw/*.rs
+
+# Inventoried payloads that no pattern above covers.
+#
+# Every path in DATASETS.local.json is deliberately outside Git. Most are caught by the
+# bulk rules (**/raw/, **/derived/, **/objects/, **/splits/, **/quarantine/), but these
+# five are not: two sit under an ip-fto-guard `raw/` directory that is explicitly negated
+# above so its .rs/.Cargo.toml probe sources stay tracked, and three sit at paths the bulk
+# rules never matched.
+#
+# Without these lines a completed `ops/restore-datasets.sh` leaves `git status` dirty and
+# `git add -A` would stage rights-unresolved data. The publication policy would still
+# refuse it, but the boundary should hold at the earliest gate, not the last one.
+/amphora-ip-fto-guard/evidence/audit/kpi-recompute-consistency-v1/raw/probe.output1.json
+/amphora-ip-fto-guard/evidence/audit/kpi-recompute-consistency-v1/raw/probe.output2.json
+/amphora-known-answer-benchmarks/evidence/phase0/repairs/R-A05/work/a702b75_us_tds.pdf
+/amphora-optimizer-orchestrator/evidence/audit/optimizer-authorization-numeric-comparison-conformance-v1/runtime_ground_truth.v1.jsonl
+/amphora-optimizer-orchestrator/evidence/audit/optimizer-constraint-path-addressing-grammar-v1/runtime_ground_truth.v1.jsonl
