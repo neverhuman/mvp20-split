@@ -33,11 +33,15 @@ The project is `~/mvp20-split` in the `ubuntu` account's home, and that account 
 in there and everything — the tree, the toolchain, the signing seeds, the Claude binary — is
 already in place.
 
-There is also an `amphora` account on this box, created 2026-08-24 during the handover as a
-narrower alternative: no sudo, its own toolchain and seeds, no access to the `ubuntu`
-account's credentials or the other projects. It was set aside because the project lives in
-`ubuntu`'s home, so logging in as `amphora` drops you into an empty directory. It is left in
-place, working, in case you later want that separation; nothing depends on it.
+There is also an `amphora` account on this box, created 2026-08-24 during the handover. It has
+its own toolchain and its own copies of the signing seeds, and it also has passwordless sudo —
+the owner administers this host. It is not the login to use, because the project lives in
+`ubuntu`'s home, so `amphora` drops you into an empty directory. It is left in place and
+working; nothing depends on it.
+
+Its home directory permissions still separate the two accounts, but understand what that is
+and is not: with sudo, the separation is a convenience against accidents, not a boundary
+against intent. Either login can reach anything on this machine.
 
 **Two things follow from using the `ubuntu` account, and you should know both.**
 
