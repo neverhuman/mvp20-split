@@ -5,12 +5,20 @@ worked examples against the real engine and pinned data. It is the fastest way t
 this system actually does, and it is deliberately honest about what it is not: throughput
 panels are engineering metrics, never novelty, ranking, or validated science.
 
+Run this **in your own clone**, not in the xbabe1 runtime checkout: `ops/amphora-controller`
+is deployed at mode 0555 there, and `git switch` across it fails part way through rather than
+refusing cleanly, leaving a half-applied checkout. If you must do it in the runtime, run
+`ops/amphora-controller/bin/amphora unprotect --apply` first and `protect --apply` after.
+
 ```bash
 git fetch origin demo/founder-showcase
 git switch demo/founder-showcase
-ops/restore-datasets.sh --apply --only feedback/v1/derived/
 cargo run --release -- showcase
 ```
+
+The showcase needs `feedback/v1/derived/` present. On xbabe1 it already is. Elsewhere, see
+BUILD.md, "Getting the datasets into another clone" -- `restore-datasets.sh` cannot fetch it,
+because the host it fetched from no longer exists.
 
 ## The four examples
 

@@ -23,28 +23,40 @@ There are no active lanes or Claude processes.
 
 ## First day
 
+You are on xbabe1, logged in over SSH. Everything below runs there, in one directory.
+
 **Verify the freeze** (two checks, both must be exact):
 
 ```bash
-ssh xbabe1 cat /home/ubuntu/mvp20-split/state/state/HARD_STOP
+cd /home/ubuntu/mvp20-split
+cat state/state/HARD_STOP
 #   must print exactly: AMPHORA-HANDOFF-20260823T025604Z-CODEX-7F3A92
 sha256sum ops/amphora-controller/bootstrap/freeze/cron-legacy.MANIFEST.json
 #   must print: 9aa79a55e2220ef92739c603e9af5e176166fd3163c57143fc7940aa0b96b70e
 ```
 
-Then, in the protected xbabe1 runtime checkout:
+Then, in the same directory:
 
 ```bash
-cd /home/ubuntu/mvp20-split
 ops/amphora-controller/bin/amphora status    # PAUSED, the two disabled jobs, "standalone: no target host"
 ops/amphora-controller/bin/amphora doctor    # standalone; reports the seed present
 cargo test --workspace --locked              # 395 pass, 1 ignored
 ```
 
-Both exit 0. They used to report `xbabe2=UNREACHABLE` and exit 1, which was correct when a
-second host was expected; since 2026-08-24 there is no second host, and `AMPHORA_TARGET_HOST`
-is empty, so a standalone result is the right answer rather than a fault to be fixed. If you
-ever see an `UNREACHABLE` line again, something has *re-introduced* a target host.
+Both `status` and `doctor` exit 0. They used to report `xbabe2=UNREACHABLE` and exit 1, which
+was correct when a second host was expected; since 2026-08-24 there is no second host, and
+`AMPHORA_TARGET_HOST` is empty in `~/.config/amphora/mvp20-cron.env`, so standalone is the
+right answer rather than a fault to fix.
+
+If you ever see an `UNREACHABLE` line again, a target host has been re-introduced — and the
+most likely cause is that config file being lost or bypassed, because `bin/amphora`'s built-in
+`DEFAULTS` still fall back to `AMPHORA_TARGET_HOST = "xbabe2"` and a state root of
+`/home/ubuntu/amphora-cron`. Both are pre-consolidation values that no longer exist. The env
+file is what keeps them from taking effect.
+
+**If you drive this over `ssh xbabe1 '…'` rather than an interactive shell**, `cargo` will not
+be found: non-interactive SSH does not source `~/.profile`, which is what puts `~/.cargo/bin`
+on `PATH`. Use `ssh xbabe1 'bash -lc "cargo test …"'`.
 
 **Then get oriented, in this order:**
 
@@ -84,6 +96,19 @@ consistently misses:
 
 To build or test anything, start at [BUILD.md](BUILD.md).
 
+### Before you publish anything, anywhere
+
+Read the root [LICENSE](LICENSE). This material is proprietary and confidential, and access to
+the repository is **not** permission to redistribute what is in it. The constraint is not
+uniform and it is not theoretical: [docs/DATA-BOUNDARY.md](docs/DATA-BOUNDARY.md) records 103
+retained paths whose rights status is `UNRESOLVED`, 16 of 31 sources that are not
+`DERIVATIVE_ALLOWED`, and 33 CC-BY-4.0 sources whose attribution notices **have not been
+assembled yet**. Every rights decision currently carries a `null` decision receipt.
+
+In practice: do not put evidence artifacts, benchmark inputs, or reference tables into a
+paper, an issue, a public repository, or a model prompt without checking that file's rights
+status first.
+
 ## What we got wrong
 
 The most valuable material in this repository is the record of what it measured, published,
@@ -100,71 +125,42 @@ refutations filed after that date.
 
 ## Backup and single point of failure
 
-**xbabe1 is now the only place this project exists.** Amphora was removed from xbabe2 on
-2026-08-24 after everything was copied here and verified. There is no second host.
+**xbabe1 is the only place this project exists.** Amphora was removed from xbabe2 on
+2026-08-24, after everything was copied here and verified. There is no second host.
 
 The GitHub repository holds the filtered handoff — source, evidence, and the reviewed
 operations tree. It does **not** hold, and cannot hold:
 
-- the **473-commit** canonical development history (`legacy/canonical-history.git`) — this is
-  on no remote at all; the repository it came from had a remote named `history-mirror` that
-  in fact contained a completely disjoint lineage, which made it look backed up when it was
-  not
+- the canonical development history at `legacy/canonical-history.git` — **473 commits across
+  both tips** (`main` @ `7d85419` is 462 of them; `demo/founder-showcase` @ `209f6b5` adds 11).
+  This is on no remote at all. The repository it came from had a remote named `history-mirror`
+  that in fact held a completely disjoint lineage, which made it look backed up when it was not.
 - 6.20 GB of datasets and artifacts inventoried in `DATASETS.local.json`
-- the 40 GB NOMAD corpus and ~38 GB of generated results with no other copy
+- the 146 MB `.amphora/` control plane — 2,588 receipt files and 226 files across 33 run
+  directories. **It is not the `.amphora/` in this tree.** The live one is 2.6 MB of current
+  control state; the full plane is archived at
+  `legacy/xbabe2-amphora/build/mvp20-split/.amphora/`. Seeing 2.6 MB and concluding it was
+  lost is the expected mistake — it was not.
+- the 40 GB NOMAD corpus, the ~38 GB of results generated from it, and the ~20 driver scripts
+  that produced them, which are in no repository
 - the `scq` source tree and its 20 MB `.git`, which has no remote
-- **the 32-byte evaluator signing seed** and the three other signing seeds beside it — see
+- **the 32-byte evaluator signing seed** and the three other seeds beside it — see
   [EXTERNAL_INPUTS.md](EXTERNAL_INPUTS.md)
 
-**Establishing an off-host backup is now the single most valuable thing to do on takeover.**
-Until that exists, one lost disk ends the project. `git clean -xdf` in this checkout would
-also destroy the datasets, `state/`, and `legacy/` — see the warning in `.gitignore`.
+Until 2026-08-24 that list read "xbabe2". Moving to a single host did not reduce the exposure,
+it relocated it: there is still exactly one copy, and now there is no second machine to fall
+back to. **If xbabe1 is lost, the programme is lost.**
 
-## What this repository actually contains
+So back it up before you change anything:
 
-Read [README.md](README.md) before the operational material. Two points a newcomer
-consistently misses:
+```bash
+ops/backup-to-disk.sh --list                 # what would be copied, and to where
+ops/backup-to-disk.sh /mnt/amphora-backup --apply
+```
 
-- The repository holds **two independent programs**. Amphora (coatings, Rust) is the
-  subject of this handoff; NOMAD Crystal360 / CrystalAtlas (materials ML, Python) shares
-  these hosts and nothing else. Its 40 GB input corpus is not here — see
-  [EXTERNAL_INPUTS.md](EXTERNAL_INPUTS.md).
-- Of the 41 `amphora-*` directories, 15 are workspace crates and two more carry code;
-  the other 24 are evidence/documentation trees. See [docs/MODULE-ANATOMY.md](docs/MODULE-ANATOMY.md).
-
-To build or test anything, start at [BUILD.md](BUILD.md).
-
-## What we got wrong
-
-The most valuable material in this repository is the record of what it measured, published,
-and then **withdrew**. It is not summarised anywhere else:
-
-- **22 `evidence/phase0/kpis/RETRACTION-INDEX.md` files**, one per module that has retracted
-  something.
-- **58 `CLAIM_REFUTED` adversarial verdicts** recorded in the modules' `docs/mission.md`
-  and `evidence/audit/` trees.
-
-Before relying on any module-level result, read that module's retraction index.
-[PROGRAM_STATUS.md](PROGRAM_STATUS.md) is a 2026-07-17 snapshot and does **not** include
-refutations filed after that date.
-
-## Backup and single point of failure
-
-The unsafe canonical-history GitHub mirror was purged from every ref and archived after it
-was found to contain dataset payloads and a local signing key. The following therefore exist
-**on xbabe1 and nowhere else**:
-
-- the 473-commit canonical operational history (`legacy/canonical-history.git`)
-- 6.20 GB of datasets and artifacts inventoried in `DATASETS.local.json`
-- the 146 MB `.amphora/` control plane (2,588 receipts, 226 run archives)
-- the 40 GB NOMAD corpus and the ~20 driver scripts that generated its results
-- **the 32-byte evaluator signing seed** — see [EXTERNAL_INPUTS.md](EXTERNAL_INPUTS.md)
-
-Until 2026-08-24 that list read "xbabe2". The move to a single host did not reduce the
-exposure, it relocated it: there is still exactly one copy, and now there is no second machine
-to fall back to. **If xbabe1 is lost, the programme is lost.** Establishing an off-host backup
-— and custody of the signing seed in particular — is the first thing worth doing on takeover,
-ahead of any code change.
+That writes to a second disk **in this same machine**, which protects against disk failure and
+against an accidental deletion. It does not protect against losing the machine. Getting a copy
+onto separate hardware is still the most valuable thing you can do on takeover.
 
 Note also that `git clean -xdf` in this tree would destroy the history mirror, the datasets,
 the controller state and the xbabe2 archive, none of which can be re-fetched from anywhere.
@@ -188,10 +184,11 @@ host needs nothing from any other machine except GitHub.
 ```
 /home/ubuntu/mvp20-split          HEAD == origin/main, git status clean   ← the synced part
 ├── feedback/  artifacts/         3.9 G + 603 M restored dataset inventory (gitignored)
-├── .amphora/                     this host's own run archives (gitignored)
-├── state/                        controller state: HARD_STOP, campaign, queue (gitignored)
-├── legacy/                       provenance archives (gitignored)
-└── target/                       build output (gitignored)
+├── .amphora/               2.6 M this host's own run archives (gitignored)
+├── state/                        controller state: state/HARD_STOP, campaign, queue (gitignored)
+├── legacy/                  57 G provenance archives — the canonical history mirror, the
+│                                 archived xbabe2 tree, NOMAD, scq (gitignored)
+└── target/                 6.3 G build output (gitignored)
 ```
 
 **The complete 1,344-file `DATASETS.local.json` inventory is restored and hash-verified.**
@@ -241,11 +238,11 @@ host can sign as the evaluator. Treat the seed accordingly, and never commit it.
 6.2 GB dataset inventory, the controller state including `HARD_STOP`, and `legacy/`. The
 data cannot be re-fetched locally — recovery needs the owner to re-push it.
 
-## Safe commands now## Safe commands now
+## Safe commands now
 
 ```bash
 cd /home/ubuntu/mvp20-split
-ops/amphora-controller/bin/amphora status || true  # target UNREACHABLE is expected while decommissioned
+ops/amphora-controller/bin/amphora status   # exits 0
 ops/amphora-controller/bin/amphora test
 ops/amphora-controller/reviewed-snapshot.sh
 python3 ops/amphora-controller/tools/controller_tree_manifest.py verify
@@ -253,8 +250,25 @@ python3 ops/amphora-controller/tools/controller_tree_manifest.py verify
 
 The snapshot command above is a dry run. `install` is also a dry run unless
 given `--apply`. `pause` and `resume` require both an exact tag and `--apply`;
-resume enables all three reviewed cron entries and removes only the matching
-stop, so it is an activation action.
+resume enables **two** reviewed cron entries — the hourly launcher and the 10-minute mirror —
+and removes only the matching stop, so it is an activation action. (There used to be a third,
+a forensic autocommit guard deployed to xbabe2. With no target host, `set_crons()` writes two.)
+
+### The controller tree is read-only, deliberately
+
+`ops/amphora-controller` is mode 0555 and its files 0444, so the first edit you attempt
+anywhere inside it fails with `Permission denied`, and `git pull` touching it can fail
+**part way through** rather than refusing cleanly. That is a deployment protection, not damage.
+Lift it and put it back:
+
+```bash
+ops/amphora-controller/bin/amphora unprotect --apply   # before editing or pulling
+# ... make the change ...
+ops/amphora-controller/bin/amphora protect --apply     # after
+```
+
+`controller_tree_manifest.py verify` works read-only; `generate` needs the tree unprotected
+first.
 
 The runtime has ignored `target/`, `.amphora/`, `state/`, `legacy/`, and the complete
 hash-verified 6.2 GB dataset inventory.
@@ -262,15 +276,15 @@ They are not in Git; `git status` alone does not show them.
 
 ## Access requirements
 
-- SSH as `ubuntu` to xbabe1. Separately provisioned xbabe1→xbabe2 SSH is an activation
-  prerequisite and is intentionally absent now.
+- SSH to xbabe1. That is the whole access surface; there is no second host to provision
+  trust with, and the activation sequence no longer asks for any.
 - Read access to the private GitHub repository. xbabe1 uses its dedicated,
   read-only deploy key; it has no push authority.
 - A GitHub identity with reviewed push authority only for publication.
 - The 32-byte evaluator seed. As of 2026-08-24 it is on **xbabe1 only**
   (`~/.local/share/amphora/phase0/keys/`, mode 0600), so this host can issue signed evidence
   and is the sole custodian of that ability. It must still never be committed to Git.
-  See "Signing on this host" below.
+  See "Signing on this host" above.
 - Interactive Claude authentication as `ubuntu` on xbabe1, but only during an
   explicitly approved activation window.
 

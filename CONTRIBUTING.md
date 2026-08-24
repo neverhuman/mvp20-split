@@ -98,7 +98,9 @@ they need. Everything else — `demo`, `run`, `inspect`, `replay --verify` — r
 dataset tree. Restore the minimum with:
 
 ```bash
-ops/restore-datasets.sh --apply --only feedback/v1/derived/    # ~385 MB
+# From xbabe1, pushing to your machine -- there is no host left to pull from:
+#   ops/push-datasets-to.sh <your-host> --apply --only feedback/v1/derived/   # ~385 MB
+# See BUILD.md, "Getting the datasets into another clone".
 ```
 
 On xbabe1 the **complete** inventory is already restored and hash-verified, so nothing

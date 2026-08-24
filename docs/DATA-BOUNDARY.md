@@ -97,7 +97,7 @@ recoverable at all: Amphora was removed from xbabe2, so xbabe1 holds the only co
 473-commit canonical history (`legacy/canonical-history.git`), the dataset inventory, and the
 signing seeds.
 
-## Operator checks## Operator checks
+## Operator checks
 
 ```bash
 python3 ops/amphora-controller/policy/staged_file_policy.py \

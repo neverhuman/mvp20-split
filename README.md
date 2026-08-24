@@ -37,7 +37,7 @@ For a running demonstration, see [`docs/DEMO.md`](docs/DEMO.md).
 
 ## Operational state
 
-**The fleet is intentionally paused.** All three cron entries are disabled behind a named
+**The fleet is intentionally paused.** Both cron entries are disabled behind a named
 hard stop and no Claude process is running. Do not authenticate Claude, remove the hard stop,
 or enable a cron entry without the owner's explicit approval.
 [`ops/amphora-controller/CRON.md`](ops/amphora-controller/CRON.md) has the three entries

@@ -1,6 +1,6 @@
-# Pinned so "stable" cannot mean different compilers on different hosts.
-# xbabe1 stable resolved to 1.92.0 while xbabe2 stable resolved to 1.96.0 on
-# 2026-08-04; both hosts have 1.96.0 installed explicitly, so this pin requires
-# no download. All portfolio builds happen on xbabe2.
+# Pinned so "stable" cannot mean different compilers on different hosts. This mattered when
+# there were two: on 2026-08-04 xbabe1's stable resolved to 1.92.0 and xbabe2's to 1.96.0.
+# Amphora now builds only on xbabe1, which has 1.96.0 installed explicitly, so the pin costs
+# no download. Keep it -- it is what stops a future host from silently building elsewhere.
 [toolchain]
 channel = "1.96.0"

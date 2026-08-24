@@ -17,7 +17,7 @@ that is a bug — please report it rather than working around it.
 > **Running these over SSH:** `ssh xbabe1 'cargo test …'` fails with `cargo: command not
 > found`. A non-interactive SSH command does not source `~/.profile`, which is what puts
 > `~/.cargo/bin` on `PATH`. Use a login shell — `ssh xbabe1 'bash -lc "cargo test …"'` — or
-> call `~/.cargo/bin/cargo` directly. Both hosts have rustup with 1.96.0 installed, so the
+> call `~/.cargo/bin/cargo` directly. xbabe1 has rustup with 1.96.0 installed, so the
 > `rust-toolchain.toml` pin resolves without a download.
 
 ## Build and verify
@@ -26,7 +26,7 @@ that is a bug — please report it rather than working around it.
 cargo check --workspace --all-targets --locked     # compiles everything
 cargo test  --workspace --locked                   # 395 pass, 1 ignored, 0 fail
 cargo run -p xtask -- audit                        # evidence/registry integrity gate
-scripts/verify-hash-bindings.sh --quiet            # no regression above the 458 historical baseline
+scripts/verify-hash-bindings.sh --quiet            # no regression above the 459 historical baseline
 ```
 
 Last verified 2026-08-23 against a fresh `git clone` on xbabe1: `cargo check` passes,
@@ -64,12 +64,9 @@ Run these from the repository root — `default-members = ["amphora-cli"]`, so b
 > `feedback/v1/derived/build_manifest.json`, which is omitted from this repository, and on a
 > bare clone they exit immediately with `No such file or directory`.
 >
-> On xbabe1 all 6.20 GB is already restored. Elsewhere, one prefix is enough to get the
-> CLI running:
->
-> ```bash
-> ops/restore-datasets.sh --apply --only feedback/v1/derived/   # ~385 MB, 4 files
-> ```
+> On xbabe1 all 6.20 GB is already restored, so these just work. **In a clone on any other
+> machine they will not**, and `restore-datasets.sh` cannot fix that — there is no host left
+> to fetch from. See "Getting the datasets into another clone" below.
 >
 > Verified on xbabe1 after that restore: `demo` and `inspect` run, and `replay --verify`
 > then reports `replay verified: 158 events root=…`. Note the order — `replay` replays the
@@ -79,24 +76,38 @@ Run these from the repository root — `default-members = ["amphora-cli"]`, so b
 
 ## Restoring the omitted datasets
 
-`DATASETS.local.json` inventories the 1,344 omitted files (6.20 GB) with path, size,
-sha256, and category. `ops/restore-datasets.sh` reads it, pulls from the canonical tree, and
-verifies every digest after transfer:
+`DATASETS.local.json` inventories the 1,344 omitted files (6.20 GB) with path, size, sha256,
+and category. On xbabe1 all of it is present and hash-verified:
 
 ```bash
-ops/restore-datasets.sh                      # dry run: what is missing
-ops/restore-datasets.sh --apply              # everything (6.20 GB)
-ops/restore-datasets.sh --apply --only feedback/   # one prefix
+ops/restore-datasets.sh          # verifies what is here; exits 0
 ```
 
-It refuses to run unless the canonical host's `git rev-parse HEAD` matches the sha the
-manifest was captured from, so it cannot silently pull from the wrong tree.
+**The fetch half of that script is dead.** It was written to pull from a canonical host over
+SSH, and it refuses to run unless that host's `git rev-parse HEAD` matches the sha the
+manifest was captured from. That host was xbabe2, and Amphora was removed from it on
+2026-08-24. `--apply` therefore has nothing to talk to. What the script still does — and does
+well — is verify: it hashes every one of the 1,344 payloads against the manifest.
 
-**On xbabe1 the complete inventory is already restored and hash-verified.** Run the script
-with no arguments to re-verify; it cannot fetch anything, because as of 2026-08-24 there is
-no canonical host left to fetch from — Amphora was removed from xbabe2 and its tree is
-archived at `legacy/xbabe2-amphora/`. `ops/push-datasets-to.sh` remains for pushing to a
-*new* host from this one.
+### Getting the datasets into another clone
+
+`CONTRIBUTING.md` asks you to develop in your own clone rather than in the protected runtime.
+That clone will not have the data, and there is no service to pull it from. Push it **from
+xbabe1**, which is the only place it exists:
+
+```bash
+# run ON xbabe1, targeting your machine
+ops/push-datasets-to.sh <your-host> --apply                     # all 6.20 GB
+ops/push-datasets-to.sh <your-host> --apply --only feedback/v1/derived/   # ~385 MB, enough for the CLI
+```
+
+It reads the same manifest, rsyncs by explicit file list, and verifies every sha256 **on the
+receiving side**. Your host must be reachable from xbabe1 by SSH — which, as shipped, it is
+not: xbabe1 holds no key to anywhere. Provisioning that path is a deliberate act, so treat it
+as one.
+
+If you only need `cargo test`, you need none of this: the workspace is green on a bare clone,
+where 8 tests self-skip and say what they are missing.
 
 ## Optional: the pinned RDKit chemistry boundary
 
@@ -117,6 +128,10 @@ bash tools/build-rdkit-2026.03.2.sh /absolute/install/prefix
 export RDKIT_INCLUDE_DIR=/absolute/install/prefix/include/rdkit
 export RDKIT_LIB_DIR=/absolute/install/prefix/lib
 export BOOST_INCLUDE_DIR=/absolute/install/prefix/include
+# On xbabe1 this build already exists -- do not rebuild it. Use:
+#   export RDKIT_INCLUDE_DIR=/home/ubuntu/.local/share/amphora/rdkit-2026.03.2/include/rdkit
+#   export RDKIT_LIB_DIR=/home/ubuntu/.local/share/amphora/rdkit-2026.03.2/lib
+#   export BOOST_INCLUDE_DIR=/home/ubuntu/.local/share/amphora/rdkit-2026.03.2/include
 cargo test --workspace --locked --features rdkit
 ```
 

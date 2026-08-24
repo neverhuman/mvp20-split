@@ -35,6 +35,10 @@ from .full_space_distill import (
 from .full_space_sweep import DEFAULT_INBOX, prohibit_test_labels, verify_full_space_bundle
 
 
+# Fan-out targets for the NOMAD feature hunt. This is the Crystal360 programme, not Amphora,
+# and it predates the 2026-08-24 consolidation: xbabe2 and xbabe3 are no longer reachable from
+# xbabe1, which holds no key to anywhere. Running this as-is will fail on those two nodes.
+# Set it to the hosts you actually have before use.
 NODES = ("xbabe1", "xbabe2", "xbabe3")
 SCQ = Path("/home/ubuntu/remote_super/smart_cluster/target/release/scq")
 WORKERS_PER_NODE = 16

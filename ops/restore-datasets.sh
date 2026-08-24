@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Restore the datasets omitted from this repository, from the canonical xbabe2 tree.
+# Verify -- and, historically, restore -- the datasets omitted from this repository.
 #
 # DATASETS.local.json is the inventory: 1,344 paths with size, sha256, and category,
 # captured from xbabe2 at git sha 7d85419. Nothing in the repo restored them until now,
@@ -9,8 +9,11 @@
 #   ops/restore-datasets.sh --apply         # fetch, then verify every sha256
 #   ops/restore-datasets.sh --apply --only feedback/    # restore one prefix
 #
-# Requires ssh access to the canonical host and rsync. Verifies every restored file
-# against its recorded digest and exits non-zero on any mismatch.
+# NOTE: the fetch half is dead. It pulled from a canonical host (xbabe2) that was cleared
+# on 2026-08-24, so --apply has nothing to talk to. What still works, and matters, is
+# verification: every one of the 1,344 inventoried payloads is hashed against the manifest.
+# To seed another machine, run ops/push-datasets-to.sh FROM the host that has the data.
+# Every file it checks is compared against its recorded digest; any mismatch exits non-zero.
 set -Eeuo pipefail
 
 REPO_ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)

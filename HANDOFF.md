@@ -132,7 +132,7 @@ the corresponding operations provenance and exclusion record.
 - Operator commands: `doctor`, `status`, `test`, `pause`, `drain`, `resume`, `protect`,
   `unprotect`, and explicit `install --apply`.
 - Exact-tag, non-overwriting hard stops; resume removes only the exact owned
-  stop after enabling the three reviewed cron entries.
+  stop after enabling the two reviewed cron entries.
 - Hash inventory and read-only deployment protection over the whole controller
   tree.
 - Dynamic Bash descriptor awareness in the unbound-variable checker.
@@ -191,11 +191,11 @@ restored:
 | `gitleaks git . --config .gitleaks.toml --exit-code 1` | exit 0, no leaks |
 | `python3 ops/amphora-controller/tools/controller_tree_manifest.py verify` | passes, 57 files |
 | `ops/amphora-controller/tests/run.sh`, `tools/tests/run-all.sh` | pass |
-| `scripts/verify-hash-bindings.sh --quiet` | passes the 458 historical-break ratchet; zero new breaks |
+| `scripts/verify-hash-bindings.sh --quiet` | passes the 459 historical-break ratchet; zero new breaks |
 | `cargo run -p xtask -- audit` | **fails — one known item, see Known debt** |
 
 The 1 ignored test is `cf_packet_blueprint_citation_binding_probe`, a stale
-gap-reproduction probe whose gap has been closed. Seven further tests self-skip when the
+gap-reproduction probe whose gap has been closed. Eight further tests self-skip when the
 omitted `feedback/` tree is absent, naming what to restore. See [BUILD.md](BUILD.md).
 
 Crystal360 passes 107 tests, the portable red-team ledger 6, and benchkit 21 with four

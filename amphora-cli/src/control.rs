@@ -4817,7 +4817,9 @@ mod tests {
 
     /// Datasets under `feedback/` are deliberately omitted from the GitHub handoff
     /// (see `DATASETS.local.json`, category `dataset`, and the `/feedback/` rule in
-    /// `.gitignore`). The canonical tree on xbabe2 retains them. Tests that need them
+    /// `.gitignore`). They are present and hash-verified on xbabe1, which is now the only
+    /// host that has them; the xbabe2 tree they were captured from no longer exists.
+    /// Tests that need them
     /// skip rather than fail, so `cargo test --workspace --locked` is green on a fresh
     /// clone and a real regression is never buried under expected absences.
     fn omitted_datasets_absent(what: &str) -> bool {

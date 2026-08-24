@@ -25,6 +25,11 @@ DEFAULTS = {
     "AMPHORA_PROMPT_PATH": "/home/ubuntu/mvp20-split/ops/amphora-controller/claude-hourly-loop.prompt.txt",
     "AMPHORA_DIRECTIVE_REGISTRY": "/home/ubuntu/mvp20-split/ops/amphora-controller/directives/REGISTRY.json",
     "AMPHORA_CONTROLLER_HOST": "xbabe1",
+    # Pre-consolidation fallbacks, kept only so a config-less run fails recognisably rather
+    # than silently. Neither target is real any more: Amphora was removed from xbabe2 on
+    # 2026-08-24 and ~/amphora-cron was folded into the repo's state/. What keeps them
+    # inert is ~/.config/amphora/mvp20-cron.env, which sets AMPHORA_TARGET_HOST empty.
+    # If you ever see "UNREACHABLE" from status, that file was lost or bypassed.
     "AMPHORA_TARGET_HOST": "xbabe2",
     "AMPHORA_TARGET_ROOT": "/home/ubuntu/amphora/build/mvp20-split",
     "AMPHORA_MODEL": "claude-sonnet-5",
