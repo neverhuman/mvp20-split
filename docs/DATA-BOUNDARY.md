@@ -77,8 +77,10 @@ Two things follow that this document previously stated otherwise:
   `source-lock.v1.json` repair are actionable. Whoever holds xbabe1 can sign as
   `phase0-evaluator-3ef6b35cdbbfea74`.
 
-`git clean -xdf` on that host would delete all of the above and none of it is recoverable
-locally, since xbabe1 cannot reach the canonical tree.
+`git clean -xdf` on that host would delete all of the above. Since 2026-08-24 none of it is
+recoverable at all: Amphora was removed from xbabe2, so xbabe1 holds the only copy of the
+473-commit canonical history (`legacy/canonical-history.git`), the dataset inventory, and the
+signing seeds.
 
 ## Operator checks## Operator checks
 

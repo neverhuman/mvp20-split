@@ -1,5 +1,10 @@
 # External inputs not in this repository
 
+> **Everything below moved to xbabe1 on 2026-08-24**, when Amphora was removed from xbabe2.
+> The paths in this file are xbabe1 paths. See
+> `legacy/xbabe2-amphora/ARCHIVE-NOTES.md` for what was archived and what was deliberately
+> left behind.
+
 `DATASETS.local.json` inventories the 1,344 files (6.20 GB) that were omitted from
 **within** the `mvp20-split` tree. This file records dependencies that live entirely
 **outside** that tree — things a successor will otherwise discover only when a command
@@ -9,12 +14,12 @@ fails.
 
 | | |
 |---|---|
-| Path | `xbabe2:/home/ubuntu/nomad` |
+| Path | `xbabe1:/home/ubuntu/mvp20-split/legacy/xbabe2-amphora/out-of-tree/nomad` |
 | Size | 40 GB |
 | Used by | `build_nomad_crystal360.py`, `build_nomad_crystal_atlas.py`, `run_nomad_crystal_atlas.py`, `nomad_crystal360/*` |
 | Referenced from | [CRYSTAL360.md](CRYSTAL360.md) (`--dataset` default), [CRYSTALATLAS.md](CRYSTALATLAS.md) |
 | Provenance | The unchanged NOMAD 449-column baseline. `crystal360_schema.json` (in-repo, 412 KB) is the frozen schema over it, carrying every formula, unit, and column definition. |
-| Status | **Not backed up.** Not inventoried in `DATASETS.local.json` (which is scoped to the mvp20-split tree only). |
+| Status | **Not backed up.** Not inventoried in `DATASETS.local.json` (which is scoped to the mvp20-split tree only). ~31 MB of it is the re-downloadable Kaggle core; the remaining ~38 GB under `artifacts/` is generated compute with no other copy, and the ~20 top-level driver scripts that produced it exist in no repository. |
 
 Without it, the Crystal360 and CrystalAtlas build commands cannot run. The Amphora
 coatings program does not depend on it at all.
@@ -23,10 +28,10 @@ coatings program does not depend on it at all.
 
 | | |
 |---|---|
-| Path | `xbabe2:/home/ubuntu/remote_super/smart_cluster/target/release/scq` |
+| Path | `xbabe1:/home/ubuntu/mvp20-split/legacy/xbabe2-amphora/out-of-tree/remote_super/smart_cluster/target/release/scq` |
 | Hard-coded at | `nomad_feature_hunt/v2/catboost_feature_ga.py:39` |
 | Purpose | Job submission across the three-node fleet |
-| Status | Built from a source tree that is **not** in this repository and not inventoried anywhere. |
+| Status | Built from a source tree that is not in this repository. That tree **is** archived alongside the binary, and its 20 MB `.git` has **no remote** — the archived copy is the only one. Rebuild with `cargo build --release` inside it. |
 
 ## Fleet topology
 
@@ -42,12 +47,15 @@ controller targets xbabe1 (controller) and xbabe2 (canonical tree) only, as reco
 
 | | |
 |---|---|
-| Path | `xbabe2:/home/ubuntu/.local/share/amphora/phase0/keys/evaluator.ed25519.seed` |
+| Path | `xbabe1:/home/ubuntu/.local/share/amphora/phase0/keys/evaluator.ed25519.seed` (mode 0600, in a 0700 directory) |
 | Size | 32 bytes |
 | Purpose | Signs every Phase-0 DSSE evaluation receipt. Required to issue or re-issue any evidence receipt. |
-| Status | **Single copy. Not backed up. Must never be copied into this repository or onto xbabe1.** |
+| Status | **Single copy, on xbabe1, not backed up.** It was deliberately placed there on 2026-08-24 so this host can issue evidence; it must still **never** be committed to this repository. Verified there: it derives `phase0-evaluator-3ef6b35cdbbfea74`, the identity every shipped receipt was signed under. |
 
 Losing it means no future evidence receipt can be issued under the existing evaluator
-identity, and the outstanding `source-lock.v1.json` re-issue described in
-[BUILD.md](BUILD.md#known-debt) becomes impossible to complete. Custody of this file is the
-single highest-value thing to resolve on takeover.
+identity. Because it is now the only copy anywhere, **backing it up is the single
+highest-value thing to do on takeover** — and note that a `git clean -xdf` in this checkout
+would not touch it, but a lost or reimaged host would.
+
+The same directory also holds `internal-reviewer.ed25519.seed` and the `toolkit-review` /
+`rights-review` reviewer seeds. All four are 32 bytes, mode 0600, and equally unbacked.

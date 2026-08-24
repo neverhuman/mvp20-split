@@ -9,11 +9,11 @@ entry until the user explicitly approves activation.
 | Host | Path | Purpose | Git state |
 |---|---|---|---|
 | GitHub | `neverhuman/mvp20-split` | Private, source-only handoff plus reviewed operations | `main` + `demo/founder-showcase` |
-| xbabe2 | `/home/ubuntu/amphora/build/mvp20-split-github` | **The only clone with push authority.** Publish from here. | `main`, tracks origin |
+| xbabe1 | `/home/ubuntu/mvp20-split/legacy/canonical-history.git` | Bare mirror of the canonical repository — the **473-commit** development history, on no remote. Archived here 2026-08-24. | `main` @ `7d85419`, `demo/founder-showcase` @ `209f6b5` |
 | xbabe1 | `/home/ubuntu/mvp20-split` | Protected runtime and complete read-only clone of every published ref | Exact GitHub `main`; non-shallow/non-partial |
 | xbabe1 | `/home/ubuntu/mvp20-split/state` | Mutable campaign, queue, locks, counters, logs. Was `~/amphora-cron`; consolidated 2026-08-24. | Gitignored, deliberately not tracked |
 | xbabe1 | `/home/ubuntu/mvp20-split/legacy/cron-legacy-archive` | Lossless legacy controller archive. Holds commit `8d76070`, which `CORRECTIONS.md` cites and which is unreachable from a GitHub clone. | Original 35-commit `.git` retained |
-| xbabe2 | `/home/ubuntu/amphora/build/mvp20-split` | Canonical operational source/evidence and 831 historical reproducers | Local-only history, final `7d85419158795c63ff2ee4a41d95a8f5789f9003` |
+| xbabe1 | `/home/ubuntu/mvp20-split/legacy/xbabe2-amphora` | Everything else that was on xbabe2: earlier MVP generations, the meta-loop programme, the NOMAD corpus, `scq` and its source. See its `ARCHIVE-NOTES.md`. | mixed; mostly no version control |
 
 The owned stop is
 `AMPHORA-HANDOFF-20260823T025604Z-CODEX-7F3A92` at
@@ -97,6 +97,56 @@ refutations filed after that date.
 
 ## Backup and single point of failure
 
+**xbabe1 is now the only place this project exists.** Amphora was removed from xbabe2 on
+2026-08-24 after everything was copied here and verified. There is no second host.
+
+The GitHub repository holds the filtered handoff — source, evidence, and the reviewed
+operations tree. It does **not** hold, and cannot hold:
+
+- the **473-commit** canonical development history (`legacy/canonical-history.git`) — this is
+  on no remote at all; the repository it came from had a remote named `history-mirror` that
+  in fact contained a completely disjoint lineage, which made it look backed up when it was
+  not
+- 6.20 GB of datasets and artifacts inventoried in `DATASETS.local.json`
+- the 40 GB NOMAD corpus and ~38 GB of generated results with no other copy
+- the `scq` source tree and its 20 MB `.git`, which has no remote
+- **the 32-byte evaluator signing seed** and the three other signing seeds beside it — see
+  [EXTERNAL_INPUTS.md](EXTERNAL_INPUTS.md)
+
+**Establishing an off-host backup is now the single most valuable thing to do on takeover.**
+Until that exists, one lost disk ends the project. `git clean -xdf` in this checkout would
+also destroy the datasets, `state/`, and `legacy/` — see the warning in `.gitignore`.
+
+## What this repository actually contains
+
+Read [README.md](README.md) before the operational material. Two points a newcomer
+consistently misses:
+
+- The repository holds **two independent programs**. Amphora (coatings, Rust) is the
+  subject of this handoff; NOMAD Crystal360 / CrystalAtlas (materials ML, Python) shares
+  these hosts and nothing else. Its 40 GB input corpus is not here — see
+  [EXTERNAL_INPUTS.md](EXTERNAL_INPUTS.md).
+- Of the 41 `amphora-*` directories, 15 are workspace crates and two more carry code;
+  the other 24 are evidence/documentation trees. See [docs/MODULE-ANATOMY.md](docs/MODULE-ANATOMY.md).
+
+To build or test anything, start at [BUILD.md](BUILD.md).
+
+## What we got wrong
+
+The most valuable material in this repository is the record of what it measured, published,
+and then **withdrew**. It is not summarised anywhere else:
+
+- **22 `evidence/phase0/kpis/RETRACTION-INDEX.md` files**, one per module that has retracted
+  something.
+- **58 `CLAIM_REFUTED` adversarial verdicts** recorded in the modules' `docs/mission.md`
+  and `evidence/audit/` trees.
+
+Before relying on any module-level result, read that module's retraction index.
+[PROGRAM_STATUS.md](PROGRAM_STATUS.md) is a 2026-07-17 snapshot and does **not** include
+refutations filed after that date.
+
+## Backup and single point of failure
+
 The unsafe canonical-history GitHub mirror was purged from every ref and archived after it
 was found to contain dataset payloads and a local signing key. The following therefore remain
 **unreplicated on xbabe2 alone**:
@@ -145,6 +195,12 @@ ops/restore-datasets.sh     # "every selected path is present and hash-verified"
 Three things necessarily live outside that directory, because they are host configuration
 rather than project content: `~/.config/amphora/mvp20-cron.env`,
 `~/.local/share/amphora/` (the pinned RDKit build and the signing seeds), and `~/.ssh/`.
+
+**xbabe2 no longer holds anything.** As of 2026-08-24 Amphora was removed from it entirely.
+Everything that was there is under `legacy/` — the 473-commit canonical history as a bare
+mirror at `legacy/canonical-history.git`, and the rest at `legacy/xbabe2-amphora/` with an
+`ARCHIVE-NOTES.md` explaining what was and was not copied. **This host is now the only place
+the project exists.**
 
 ### What it can reach
 

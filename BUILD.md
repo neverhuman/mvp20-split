@@ -92,10 +92,11 @@ ops/restore-datasets.sh --apply --only feedback/   # one prefix
 It refuses to run unless the canonical host's `git rev-parse HEAD` matches the sha the
 manifest was captured from, so it cannot silently pull from the wrong tree.
 
-**On xbabe1 the complete inventory is already restored and hash-verified**, and the script
-cannot fetch from there — that access was removed when the host was decommissioned. Run it
-with no arguments to re-verify. To refresh the data, the owner runs
-`ops/push-datasets-to.sh xbabe1 --apply` from the canonical host.
+**On xbabe1 the complete inventory is already restored and hash-verified.** Run the script
+with no arguments to re-verify; it cannot fetch anything, because as of 2026-08-24 there is
+no canonical host left to fetch from — Amphora was removed from xbabe2 and its tree is
+archived at `legacy/xbabe2-amphora/`. `ops/push-datasets-to.sh` remains for pushing to a
+*new* host from this one.
 
 ## Optional: the pinned RDKit chemistry boundary
 

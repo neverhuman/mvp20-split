@@ -4,7 +4,14 @@
     "git_sha": "7d85419158795c63ff2ee4a41d95a8f5789f9003",
     "captured_at": "2026-08-23T16:45:34+00:00",
     "host": "xbabe2",
-    "path": "/home/ubuntu/amphora/build/mvp20-split"
+    "path": "/home/ubuntu/amphora/build/mvp20-split",
+    "superseded": {
+      "note": "The recorded host/path is the historical capture location and is left unchanged so this stays a true record of where and when the inventory was taken. That host no longer holds the data.",
+      "amphora_removed_from": "xbabe2",
+      "removed_on": "2026-08-24",
+      "data_now_at": "xbabe1:/home/ubuntu/mvp20-split (restored in place, hash-verified)",
+      "canonical_tree_archived_at": "xbabe1:/home/ubuntu/mvp20-split/legacy/canonical-history.git (bare mirror, 473 commits)"
+    }
   },
   "omitted": [
     {

@@ -103,8 +103,10 @@ On xbabe1 the **complete** inventory is already restored and hash-verified, so n
 skips. That host can also sign: the evaluator seed is present, which makes the `R-C0x-V`
 verification items actionable. See [BUILD.md](BUILD.md) and [START_HERE.md](START_HERE.md).
 
-**Never run `git clean -xdf` on xbabe1** — it removes ignored files, which there means the
-6.2 GB inventory, the controller state, and `legacy/`. It cannot be re-fetched locally.
+**Never run `git clean -xdf`** — it removes ignored files, which here means the 6.2 GB
+dataset inventory, the controller `state/` including `HARD_STOP`, and all of `legacy/`
+(the 473-commit canonical history mirror and the xbabe2 archive). Since 2026-08-24 this host
+is the only place any of that exists, so there is nowhere to re-fetch it from.
 
 ## Where to start
 

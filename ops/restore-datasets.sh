@@ -35,6 +35,14 @@ SRC_PATH=$(python3 -c "import json,sys; print(json.load(open(sys.argv[1]))['sour
 SRC_SHA=$(python3 -c "import json,sys; print(json.load(open(sys.argv[1]))['source']['git_sha'])" "$MANIFEST")
 
 echo "source:  $SRC_HOST:$SRC_PATH  (captured at $SRC_SHA)"
+
+# The capture host may no longer exist. Say so plainly rather than letting a fetch fail
+# with a bare ssh error, and point at the archive that replaced it.
+if grep -q '"superseded"' "$MANIFEST"; then
+    echo "note:    that capture host no longer holds the data -- see source.superseded in"
+    echo "         DATASETS.local.json. This run can VERIFY what is present locally but"
+    echo "         cannot fetch anything."
+fi
 echo "target:  $REPO_ROOT"
 [ -n "$ONLY" ] && echo "filter:  $ONLY"
 
