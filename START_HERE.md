@@ -17,9 +17,26 @@ entry until the user explicitly approves activation.
 
 The owned stop is
 `AMPHORA-HANDOFF-20260823T025604Z-CODEX-7F3A92` at
-`xbabe1:/home/ubuntu/mvp20-split/state/state/HARD_STOP`. The xbabe1 hourly launcher,
-xbabe1 10-minute mirror, and xbabe2 forensic autocommit guard are disabled.
+`xbabe1:/home/ubuntu/mvp20-split/state/state/HARD_STOP`. Both managed cron entries — the
+hourly launcher and the 10-minute mirror — are disabled. (A third, a forensic autocommit
+guard, ran on xbabe2; that host holds nothing now, so `resume` writes two lines, not three.)
 There are no active lanes or Claude processes.
+
+## Log in as `amphora`, not `ubuntu`
+
+The project is owned by a dedicated **`amphora`** account, created 2026-08-24. Log in as that
+user. It owns `/home/ubuntu/mvp20-split` outright, has its own Rust toolchain at the pinned
+1.96.0, its own `~/.config/amphora/mvp20-cron.env`, and its own copies of the four signing
+seeds at mode 0600.
+
+It deliberately has **no sudo**, and cannot read the `ubuntu` account's SSH keys, Claude or
+Codex state, or the several unrelated projects that share this machine. That boundary is the
+point: xbabe1 is not a dedicated Amphora box. It also runs a Docker Swarm manager, five
+long-lived containers, PostgreSQL, `scqd`, and a second login user `deploy`. **None of that
+is yours and none of it is Amphora.** Leave it alone.
+
+The path still reads `/home/ubuntu/...` because moving the tree would invalidate hundreds of
+recorded paths for no benefit. Ownership, not location, is what changed.
 
 ## First day
 
@@ -302,15 +319,24 @@ They are not in Git; `git status` alone does not show them.
 
 - SSH to xbabe1. That is the whole access surface; there is no second host to provision
   trust with, and the activation sequence no longer asks for any.
-- Read access to the private GitHub repository. xbabe1 uses its dedicated,
-  read-only deploy key; it has no push authority.
-- A GitHub identity with reviewed push authority only for publication.
+- Read access to the private GitHub repository — **with your own account**. xbabe1 holds no
+  GitHub credential at all: the read-only deploy key was removed at handover, deliberately, so
+  this host cannot reach GitHub and no shared key is being passed to you. `git fetch` and
+  `git pull` here will fail, and that is the intended state. Clone separately with your own
+  identity, work there, push from there. Ask the owner to add you as a collaborator; until
+  that happens nothing can be published from anywhere.
+- `git config user.name` / `user.email` are unset on this host. Set them in your own clone
+  before your first commit.
 - The 32-byte evaluator seed. As of 2026-08-24 it is on **xbabe1 only**
   (`~/.local/share/amphora/phase0/keys/`, mode 0600), so this host can issue signed evidence
   and is the sole custodian of that ability. It must still never be committed to Git.
   See "Signing on this host" above.
-- Interactive Claude authentication as `ubuntu` on xbabe1, but only during an
-  explicitly approved activation window.
+- Interactive Claude authentication, but only during an explicitly approved activation
+  window. Note that `doctor` currently reports one FAIL — `Claude binary not executable` —
+  because the `amphora` account has no Claude installed. That is correct and expected: the
+  logged-in Claude belongs to the `ubuntu` account and is not shared across the boundary.
+  Installing and authenticating Claude for whichever account runs the fleet is an activation
+  step, not a handoff defect.
 
 The later activation sequence is in the runbook. Nothing in this repository
 constitutes approval to execute it.

@@ -352,7 +352,17 @@ fn cf_packet_repair_content_binding_probe() {
     });
 
     let out_path = std::env::var("CF_PACKET_REPAIR_PROBE_OUT")
-        .unwrap_or_else(|_| "/tmp/cf_packet_repair_probe_output.json".to_string());
+        .unwrap_or_else(|_| {
+            // Per-process, and under TMPDIR rather than a hardcoded /tmp. A fixed shared
+            // path collides the moment a second account runs the suite: the file is owned
+            // by whoever ran first and the write fails with EACCES, so the probe reports a
+            // failure that has nothing to do with what it tests. Set CF_PACKET_REPAIR_PROBE_OUT
+            // to pin the location when you want to read the output back.
+            std::env::temp_dir()
+                .join(format!("cf_packet_repair_probe_output.{}.json", std::process::id()))
+                .to_string_lossy()
+                .into_owned()
+        });
     fs::write(&out_path, serde_json::to_vec_pretty(&result).unwrap())
         .expect("write probe output");
 
