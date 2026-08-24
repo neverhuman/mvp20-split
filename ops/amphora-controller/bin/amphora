@@ -62,6 +62,15 @@ def parse_env(path):
         lines = path.read_text().splitlines()
     except FileNotFoundError:
         return values
+    except PermissionError:
+        # Never fall through to DEFAULTS here. Those still name xbabe2 as the target host and
+        # ~/amphora-cron as the state root, neither of which exists; silently reverting to them
+        # because a config file was unreadable is precisely the failure this guards against.
+        raise OperatorError(
+            "config exists but is not readable: %s\n"
+            "         Running as the wrong user is the usual cause. Each account reads its own\n"
+            "         ~/.config/amphora/mvp20-cron.env; set AMPHORA_CONFIG_FILE to override."
+            % path)
     for line in lines:
         line = line.strip()
         if not line or line.startswith("#") or "=" not in line:
@@ -74,8 +83,20 @@ def parse_env(path):
 
 
 def config():
-    cfg_path = Path(os.environ.get(
-        "AMPHORA_CONFIG_FILE", "/home/ubuntu/.config/amphora/mvp20-cron.env"))
+    # Per-user config. This used to be hardcoded to /home/ubuntu/.config, which meant any
+    # other account -- notably the dedicated `amphora` account the project is handed over on --
+    # could not read it and would have fallen back to the pre-consolidation DEFAULTS.
+    # The legacy path is still honoured when the caller has no config of their own, so an
+    # existing ubuntu deployment keeps working unchanged.
+    override = os.environ.get("AMPHORA_CONFIG_FILE")
+    if override:
+        cfg_path = Path(override)
+    else:
+        cfg_path = Path.home() / ".config" / "amphora" / "mvp20-cron.env"
+        if not cfg_path.exists():
+            legacy = Path("/home/ubuntu/.config/amphora/mvp20-cron.env")
+            if legacy.exists():
+                cfg_path = legacy
     values = dict(DEFAULTS)
     values.update(parse_env(cfg_path))
     values.update({key: os.environ[key] for key in DEFAULTS if key in os.environ})
