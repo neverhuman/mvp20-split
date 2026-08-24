@@ -146,3 +146,21 @@ id_rsa
 /amphora-known-answer-benchmarks/evidence/phase0/repairs/R-A05/work/a702b75_us_tds.pdf
 /amphora-optimizer-orchestrator/evidence/audit/optimizer-authorization-numeric-comparison-conformance-v1/runtime_ground_truth.v1.jsonl
 /amphora-optimizer-orchestrator/evidence/audit/optimizer-constraint-path-addressing-grammar-v1/runtime_ground_truth.v1.jsonl
+
+# Host-local trees, on a consolidated handoff host.
+#
+# The handoff host keeps one directory. These two live inside it and are deliberately
+# outside Git:
+#
+#   state/   the controller's mutable state -- HARD_STOP, campaign.json, the acquisition
+#            queue, locks, counters, logs. The controller separates code from state on
+#            purpose; this is the state half, and it is host-specific.
+#   legacy/  archives kept for provenance: the lossless pre-split controller archive
+#            (which holds commit 8d76070, cited by directives/CORRECTIONS.md) and the
+#            dated loop-operations reports from when the fleet was running.
+#
+# WARNING: `git clean -xdf` removes ignored files, so it would delete both of these AND
+# the ~6.2 GB restored dataset inventory. On a host that cannot reach the canonical tree,
+# that data is not recoverable locally. Do not run it here.
+/state/
+/legacy/
