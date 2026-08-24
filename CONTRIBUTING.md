@@ -99,9 +99,12 @@ dataset tree. Restore the minimum with:
 ops/restore-datasets.sh --apply --only feedback/v1/derived/    # ~385 MB
 ```
 
-On xbabe1 that ~385 MB is **already restored**, and the script cannot reach the canonical
-host from there — see [BUILD.md](BUILD.md) and
-[START_HERE.md](START_HERE.md#what-xbabe1-can-and-cannot-reach).
+On xbabe1 the **complete** inventory is already restored and hash-verified, so nothing
+skips. That host can also sign: the evaluator seed is present, which makes the `R-C0x-V`
+verification items actionable. See [BUILD.md](BUILD.md) and [START_HERE.md](START_HERE.md).
+
+**Never run `git clean -xdf` on xbabe1** — it removes ignored files, which there means the
+6.2 GB inventory, the controller state, and `legacy/`. It cannot be re-fetched locally.
 
 ## Where to start
 

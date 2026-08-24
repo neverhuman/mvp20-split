@@ -17,7 +17,7 @@ Nothing else should ever edit an Amphora crontab line by hand.
 | Schedule | `0 * * * *` (top of every hour) |
 | Implemented by | `ops/amphora-controller/claude-hourly-loop.sh` |
 | Purpose | Runs one four-lane autonomous Claude fire against the campaign queue. Self-limits to `LANE_COUNT` slot locks and exits, so a duplicate cron entry cannot double-fire. |
-| Log | `/home/ubuntu/amphora-cron/logs/` |
+| Log | `$AMPHORA_STATE_ROOT/logs/` — on xbabe1, `/home/ubuntu/mvp20-split/state/logs/` |
 
 ```
 # enabled form
@@ -100,7 +100,8 @@ The fleet was deliberately frozen for handoff. The owned hard stop is:
 AMPHORA-HANDOFF-20260823T025604Z-CODEX-7F3A92
 ```
 
-at `xbabe1:/home/ubuntu/amphora-cron/state/HARD_STOP` (mode 0600). While that file exists
+at `$AMPHORA_STATE_ROOT/state/HARD_STOP` (mode 0600) — on xbabe1,
+`/home/ubuntu/mvp20-split/state/state/HARD_STOP`. While that file exists
 with that exact content, the launcher refuses to fire even if a cron entry were enabled.
 `resume` refuses to act on a hard stop whose content does not match the tag you pass, so a
 foreign stop can never be silently removed.

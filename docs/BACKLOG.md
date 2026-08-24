@@ -28,7 +28,8 @@ developer can pick up today.
 | `R-C05-V` | `amphora-barrier-corrosion-score` | Independent verify of R-C05 |
 
 `R-C01-V`…`R-C05-V` are independent verifications of already-filed repairs: re-run the
-module's own checker against the repaired corpus and sign the result. They are the gentlest
+module's own checker against the repaired corpus and sign the result. Signing works on
+xbabe1 — the evaluator seed is present there. They are the gentlest
 introduction to the evidence workflow, because the checker already exists and the expected
 outcome is documented.
 
@@ -129,5 +130,7 @@ cases, a change to the approach rather than another attempt at the same one.
 `cargo run -p xtask -- audit` fails on one module — three stale digests in
 `amphora-cro-protocol-packager`'s `evidence/phase0/sources/source-lock.v1.json`, left by the
 2026-08-11 CF-TEST/CF-RISK repairs. It is digested into a signed evaluation receipt, so
-correcting it needs a supersession record and a re-sign with the evaluator seed. See
-[`../BUILD.md`](../BUILD.md#known-debt). **Do not "fix" it by editing the hashes.**
+correcting it needs a supersession record and a re-sign with the evaluator seed. That seed
+is now present on xbabe1, so this is **actionable there** rather than blocked — it is a good
+first substantial task. See [`../BUILD.md`](../BUILD.md#known-debt).
+**Do not "fix" it by editing the hashes.**

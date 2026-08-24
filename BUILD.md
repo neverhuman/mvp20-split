@@ -64,7 +64,8 @@ Run these from the repository root — `default-members = ["amphora-cli"]`, so b
 > `feedback/v1/derived/build_manifest.json`, which is omitted from this repository, and on a
 > bare clone they exit immediately with `No such file or directory`.
 >
-> You do **not** need all 6.20 GB. Restoring one prefix is enough:
+> On xbabe1 all 6.20 GB is already restored. Elsewhere, one prefix is enough to get the
+> CLI running:
 >
 > ```bash
 > ops/restore-datasets.sh --apply --only feedback/v1/derived/   # ~385 MB, 4 files
@@ -91,10 +92,10 @@ ops/restore-datasets.sh --apply --only feedback/   # one prefix
 It refuses to run unless the canonical host's `git rev-parse HEAD` matches the sha the
 manifest was captured from, so it cannot silently pull from the wrong tree.
 
-**On xbabe1 this script can no longer reach the canonical host** — that access was removed
-when the machine was decommissioned for handoff (see
-[START_HERE.md](START_HERE.md#what-xbabe1-can-and-cannot-reach)). The ~385 MB the CLI needs
-is already restored in that checkout. For more, ask the owner.
+**On xbabe1 the complete inventory is already restored and hash-verified**, and the script
+cannot fetch from there — that access was removed when the host was decommissioned. Run it
+with no arguments to re-verify. To refresh the data, the owner runs
+`ops/push-datasets-to.sh xbabe1 --apply` from the canonical host.
 
 ## Optional: the pinned RDKit chemistry boundary
 

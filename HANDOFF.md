@@ -28,7 +28,8 @@ authorize authentication, cron enablement, hard-stop removal, or a fire.
 - Owned hard stop:
   `AMPHORA-HANDOFF-20260823T025604Z-CODEX-7F3A92`.
 - xbabe1 archive:
-  `/home/ubuntu/amphora-archive/cron-legacy-20260823T031711Z`.
+  `xbabe1:/home/ubuntu/mvp20-split/legacy/cron-legacy-archive` (was
+  `~/amphora-archive/cron-legacy-20260823T031711Z`; consolidated 2026-08-24).
 - Archive inventory SHA-256:
   `9aa79a55e2220ef92739c603e9af5e176166fd3163c57143fc7940aa0b96b70e`.
 
@@ -109,7 +110,8 @@ xbabe1 tree—including its Git history, logs, credentials/state, backups,
 malformed filenames, and counters—is preserved byte-for-byte in the archive
 with a base64-path deterministic inventory. The live xbabe1 `.git` directory
 was renamed to `.git.legacy-frozen-20260823T031711Z` after archiving, so
-`/home/ubuntu/amphora-cron` is mutable state and no longer a Git repository.
+that state is mutable and not a Git repository. It now lives at
+`xbabe1:/home/ubuntu/mvp20-split/state` (consolidated 2026-08-24, gitignored).
 No source or dataset was deleted, moved, or rewritten on xbabe2.
 
 `DATASETS.local.json` is the deterministic 1,344-entry inventory for omitted

@@ -8,7 +8,9 @@ staged-file policy, reviewed snapshot flow, and a frozen resumable bootstrap.
 Code and state are intentionally separated:
 
 - Controller: `/home/ubuntu/mvp20-split/ops/amphora-controller` (read-only).
-- Mutable state: `/home/ubuntu/amphora-cron` (not Git).
+- Mutable state: `$AMPHORA_STATE_ROOT` (not Git). On xbabe1 that is
+  `/home/ubuntu/mvp20-split/state`; the path is set in `~/.config/amphora/mvp20-cron.env`,
+  which overrides the hardcoded default in `bin/amphora`.
 - Configuration: `/home/ubuntu/.config/amphora/mvp20-cron.env` (mode `0600`).
 - Target: `xbabe2:/home/ubuntu/amphora/build/mvp20-split`.
 

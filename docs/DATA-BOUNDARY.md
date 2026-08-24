@@ -55,15 +55,32 @@ repository on xbabe2 remains unchanged and is the recovery source. The writable 
 publication clone was separately reflog-expired and garbage-collected, so it retains no
 unreachable object from the unsafe demo ancestry.
 
-## xbabe1 meaning of “full Git”
+## xbabe1 meaning of "full Git"
 
 `xbabe1:/home/ubuntu/mvp20-split` is a complete, non-shallow, non-partial clone of the
 **filtered published repository**, including all published branch and tag refs. It
-deliberately is not a copy of the unsafe 462-commit canonical history. The runtime checkout
-also has ignored local build output, `.amphora` run state, and a hash-verified 385 MB feedback
-subset for the CLI; none is tracked or pushable through the reviewed policy.
+deliberately is not a copy of the unsafe 462-commit canonical history.
 
-## Operator checks
+As of 2026-08-24 that host was consolidated to a single directory and made self-sufficient.
+Alongside the tracked tree it now carries, all gitignored: the **complete** 1,344-file
+`DATASETS.local.json` inventory (hash-verified on arrival), its own `.amphora/` run state,
+the controller's mutable `state/` (formerly `~/amphora-cron`), `legacy/` provenance archives
+(formerly `~/amphora-archive`), and build output.
+
+Two things follow that this document previously stated otherwise:
+
+- The host holds the **complete** inventory, not a 385 MB subset.
+- The **evaluator signing seed is present on xbabe1**, at
+  `~/.local/share/amphora/phase0/keys/`, mode 0600. Signing seeds remain excluded from the
+  *repository* — that invariant is unchanged — but they are no longer xbabe2-only. This was
+  a deliberate handoff decision so the verification backlog and the outstanding
+  `source-lock.v1.json` repair are actionable. Whoever holds xbabe1 can sign as
+  `phase0-evaluator-3ef6b35cdbbfea74`.
+
+`git clean -xdf` on that host would delete all of the above and none of it is recoverable
+locally, since xbabe1 cannot reach the canonical tree.
+
+## Operator checks## Operator checks
 
 ```bash
 python3 ops/amphora-controller/policy/staged_file_policy.py \

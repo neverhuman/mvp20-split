@@ -11,14 +11,13 @@ entry until the user explicitly approves activation.
 | GitHub | `neverhuman/mvp20-split` | Private, source-only handoff plus reviewed operations | `main` + `demo/founder-showcase` |
 | xbabe2 | `/home/ubuntu/amphora/build/mvp20-split-github` | **The only clone with push authority.** Publish from here. | `main`, tracks origin |
 | xbabe1 | `/home/ubuntu/mvp20-split` | Protected runtime and complete read-only clone of every published ref | Exact GitHub `main`; non-shallow/non-partial |
-| xbabe1 | `/home/ubuntu/amphora-cron` | Mutable campaign, queue, locks, counters, logs. Also holds **superseded** copies of the controller executables — see its `README.SUPERSEDED`. | Deliberately not a Git repository |
-| xbabe1 | `/home/ubuntu/amphora-archive/cron-legacy-20260823T031711Z` | Lossless legacy controller archive. Holds commit `8d76070`, which `CORRECTIONS.md` cites and which is unreachable from a GitHub clone. | Original 35-commit `.git` retained |
-| xbabe1 | `/home/ubuntu/amphora-archive/mvp20-split-pre-final-{4e8b963,b74d7879}` | **SUPERSEDED** abandoned rebuilds. Both mimic the real handoff commit's subject and author date and report "in sync" against a dead origin. Deletable. See that directory's `README.md`. | not authoritative |
+| xbabe1 | `/home/ubuntu/mvp20-split/state` | Mutable campaign, queue, locks, counters, logs. Was `~/amphora-cron`; consolidated 2026-08-24. | Gitignored, deliberately not tracked |
+| xbabe1 | `/home/ubuntu/mvp20-split/legacy/cron-legacy-archive` | Lossless legacy controller archive. Holds commit `8d76070`, which `CORRECTIONS.md` cites and which is unreachable from a GitHub clone. | Original 35-commit `.git` retained |
 | xbabe2 | `/home/ubuntu/amphora/build/mvp20-split` | Canonical operational source/evidence and 831 historical reproducers | Local-only history, final `7d85419158795c63ff2ee4a41d95a8f5789f9003` |
 
 The owned stop is
 `AMPHORA-HANDOFF-20260823T025604Z-CODEX-7F3A92` at
-`xbabe1:/home/ubuntu/amphora-cron/state/HARD_STOP`. The xbabe1 hourly launcher,
+`xbabe1:/home/ubuntu/mvp20-split/state/state/HARD_STOP`. The xbabe1 hourly launcher,
 xbabe1 10-minute mirror, and xbabe2 forensic autocommit guard are disabled.
 There are no active lanes or Claude processes.
 
@@ -27,7 +26,7 @@ There are no active lanes or Claude processes.
 **Verify the freeze** (two checks, both must be exact):
 
 ```bash
-ssh xbabe1 cat /home/ubuntu/amphora-cron/state/HARD_STOP
+ssh xbabe1 cat /home/ubuntu/mvp20-split/state/state/HARD_STOP
 #   must print exactly: AMPHORA-HANDOFF-20260823T025604Z-CODEX-7F3A92
 sha256sum ops/amphora-controller/bootstrap/freeze/cron-legacy.MANIFEST.json
 #   must print: 9aa79a55e2220ef92739c603e9af5e176166fd3163c57143fc7940aa0b96b70e
@@ -119,38 +118,64 @@ refs now point only to the filtered handoff; the history repository is private a
 but GitHub may retain unreachable objects until an owner deletes it. The key was deliberately
 **not** rotated. Treat any signature bearing
 `local-9028773f49591193` as provenance intent, not authenticity. This does not affect the
-evaluator identity, whose seed has never left xbabe2. Full account in
+evaluator identity. Full account in
 [HANDOFF.md](HANDOFF.md#signing-key-exposure-2026-08-23).
 
-## What xbabe1 can and cannot reach
+## xbabe1 is self-contained
 
-xbabe1 was decommissioned for handoff on 2026-08-23. From that host you can reach
-**GitHub, read-only, and nothing else**:
+As of 2026-08-24, everything lives in **one directory**, `/home/ubuntu/mvp20-split`, and the
+host needs nothing from any other machine except GitHub.
 
-- `~/.ssh/` holds only `amphora_mvp20_ro_ed25519` (the read-only deploy key) and a
-  `known_hosts` containing github.com alone, pinned against GitHub's published
-  fingerprints. `~/.ssh/config` has one stanza.
-- The lateral keys that reached xbabe2, xbabe3 and the Mac hosts were removed, and
-  revoked on the far side. `ssh xbabe2` from xbabe1 no longer authenticates.
-- The previous owner's Anthropic, Codex, HuggingFace and Docker credentials, and the
-  shell and prompt history, were removed from the host.
+```
+/home/ubuntu/mvp20-split          HEAD == origin/main, git status clean   ← the synced part
+├── feedback/  artifacts/         3.9 G + 603 M restored dataset inventory (gitignored)
+├── .amphora/                     this host's own run archives (gitignored)
+├── state/                        controller state: HARD_STOP, campaign, queue (gitignored)
+├── legacy/                       provenance archives (gitignored)
+└── target/                       build output (gitignored)
+```
 
-Two consequences worth knowing:
+**The complete 1,344-file `DATASETS.local.json` inventory is restored and hash-verified.**
+Confirm it any time — the check is local and contacts nothing:
 
-**`ops/restore-datasets.sh` cannot run from xbabe1 any more.** It pulls from
-`xbabe2:/home/ubuntu/amphora/build/mvp20-split` over ssh, which is now blocked. The
-minimum needed for the CLI — `feedback/v1/derived/`, ~385 MB — is **already restored** in
-this checkout, so `demo`, `inspect` and `replay --verify` work as shipped. If you need
-more of the 6.20 GB inventory, ask the owner to run the restore or to grant a scoped
-path to xbabe2.
+```bash
+ops/restore-datasets.sh     # "every selected path is present and hash-verified"
+```
 
-**Pushing goes through your own GitHub account.** The deploy key on this host is
-read-only by design. See [CONTRIBUTING.md](CONTRIBUTING.md).
+Three things necessarily live outside that directory, because they are host configuration
+rather than project content: `~/.config/amphora/mvp20-cron.env`,
+`~/.local/share/amphora/` (the pinned RDKit build and the signing seeds), and `~/.ssh/`.
 
-The `xbabe2` rows in the system map above describe where things live, not somewhere you
-can currently reach.
+### What it can reach
 
-## Safe commands now
+**GitHub, read-only, and nothing else.** `~/.ssh/` holds one key — the read-only deploy key —
+and a `known_hosts` containing github.com alone, pinned against GitHub's published
+fingerprints. The keys that reached xbabe2, xbabe3 and the Mac hosts were removed and
+revoked on the far side, and the previous owner's Anthropic, Codex, HuggingFace and Docker
+credentials were removed from the host.
+
+Consequence: `ops/restore-datasets.sh` cannot *fetch* from here, only verify. If the data
+ever needs refreshing, the owner runs `ops/push-datasets-to.sh xbabe1 --apply` from the
+canonical host.
+
+### Signing on this host
+
+`~/.local/share/amphora/phase0/keys/evaluator.ed25519.seed` is present (mode 0600 in a 0700
+directory) and derives `phase0-evaluator-3ef6b35cdbbfea74` — the identity every shipped
+receipt was signed under. Verified by signing and verifying a payload here.
+
+This is deliberate: it makes the `R-C01-V`…`R-C05-V` verification items in
+[docs/BACKLOG.md](docs/BACKLOG.md) actionable, and makes the outstanding
+`source-lock.v1.json` repair possible rather than permanently blocked. Whoever holds this
+host can sign as the evaluator. Treat the seed accordingly, and never commit it.
+
+### One hazard worth knowing
+
+**Do not run `git clean -xdf` here.** It removes ignored files, which on this host means the
+6.2 GB dataset inventory, the controller state including `HARD_STOP`, and `legacy/`. The
+data cannot be re-fetched locally — recovery needs the owner to re-push it.
+
+## Safe commands now## Safe commands now
 
 ```bash
 cd /home/ubuntu/mvp20-split
@@ -165,7 +190,8 @@ given `--apply`. `pause` and `resume` require both an exact tag and `--apply`;
 resume enables all three reviewed cron entries and removes only the matching
 stop, so it is an activation action.
 
-The runtime has ignored `target/`, `.amphora/`, and a hash-verified 385 MB feedback subset.
+The runtime has ignored `target/`, `.amphora/`, `state/`, `legacy/`, and the complete
+hash-verified 6.2 GB dataset inventory.
 They are not in Git; `git status` alone does not show them.
 
 ## Access requirements
@@ -175,8 +201,9 @@ They are not in Git; `git status` alone does not show them.
 - Read access to the private GitHub repository. xbabe1 uses its dedicated,
   read-only deploy key; it has no push authority.
 - A GitHub identity with reviewed push authority only for publication.
-- The existing 32-byte evaluator seed on xbabe2. Never copy it into GitHub or
-  xbabe1 controller state.
+- The 32-byte evaluator seed. As of 2026-08-24 it is present on **both** xbabe2 and
+  xbabe1 (`~/.local/share/amphora/phase0/keys/`, mode 0600), so this host can issue signed
+  evidence. It must still never be committed to Git. See "Signing on this host" below.
 - Interactive Claude authentication as `ubuntu` on xbabe1, but only during an
   explicitly approved activation window.
 
