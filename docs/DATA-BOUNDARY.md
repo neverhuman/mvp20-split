@@ -23,6 +23,19 @@ quarantine payload locations, blocks common secret/model/archive formats, and ha
 five intentional binary evidence files. The reviewed snapshot then scans the staged index,
 the complete tree, and full reachable history.
 
+### The inventory does not cover logs
+
+`DATASETS.local.json` holds 1,344 entries and **none of them is a `.log` file** -- the
+generator selects data payloads (`.json`, `.gz`, `.csv`, `.parquet`, ...), so run logs sitting
+beside inventoried data are invisible to it. That is a real gap, not a theoretical one: the
+2026-08-24 move to xbabe1 found `feedback/v1/external_data/point2_metadata/raw/Tg_run.log`
+present on the old host and absent here, even though the two CSVs it describes were both
+inventoried and restored. It was copied by hand.
+
+`ops/restore-datasets.sh` reporting "every selected path is present and hash-verified" means
+every *selected* path. If you move this tree to another machine, copy the directories wholesale
+rather than trusting the manifest to enumerate them.
+
 This boundary is path-addressed, not a claim that every omitted byte sequence is unique.
 Small retained fixtures and frozen audit metadata intentionally duplicate some bytes found at
 omitted canonical paths (including the 178,587-byte OpenPoly fixture). That does not restore
