@@ -74,6 +74,19 @@ Run these from the repository root — `default-members = ["amphora-cli"]`, so b
 > with no runs it exits `No such file or directory`. `cargo test --workspace --locked` is
 > green without any restore at all.
 
+## Tooling on xbabe1
+
+Installed system-wide at `/usr/local/bin` so both accounts can run them: `gitleaks` 8.28.0
+and `trufflehog` 3.90.10, which `ops/amphora-controller/reviewed-snapshot.sh` invokes and
+whose absence that script reports as a missing scanner. From `apt`: `cmake`, `nodejs`, `jq`,
+`shellcheck`, `rsync`.
+
+Rust is **per-account**: the `amphora` user has its own rustup with the pinned 1.96.0, so it
+does not depend on anything in the `ubuntu` account. If you add a tool the repo's scripts
+invoke, put it in `/usr/local/bin` rather than a home directory — anything under
+`~ubuntu/.local` is unreachable from the `amphora` account by design, and that is how the
+handoff acceptance run first failed.
+
 ## Restoring the omitted datasets
 
 `DATASETS.local.json` inventories the 1,344 omitted files (6.20 GB) with path, size, sha256,
