@@ -62,9 +62,14 @@ FAKE
 }
 
 # fire <rc> <transcript> -- one synchronous launcher run (lands on lane 1)
+# The loop runs under cron with no stdin. Give it none here either. Without this the
+# suite HANGS at T9: that test stubs ssh, and the stub mimics ssh by consuming stdin
+# (`cat >/dev/null`) on its mkdir branch -- so it inherits the test runner's stdin and
+# waits for an EOF that never comes. From a terminal that is an unexplained hang until
+# the user presses Ctrl-D; under `timeout` it is a kill with no failing assertion.
 fire() {
     echo "$1" > "$SB/agent-rc"; printf '%s\n' "$2" > "$SB/agent-out"
-    PATH="$SB/bin:$PATH" bash "$SB/claude-hourly-loop.sh" >/dev/null 2>&1 || true
+    PATH="$SB/bin:$PATH" bash "$SB/claude-hourly-loop.sh" >/dev/null 2>&1 </dev/null || true
 }
 
 # fire_bg <rc> <transcript> <sleep_secs> -- background launcher; caller waits.
@@ -72,7 +77,7 @@ fire() {
 # backgrounded starts, not between them.
 fire_bg() {
     echo "$1" > "$SB/agent-rc"; printf '%s\n' "$2" > "$SB/agent-out"; echo "${3:-2}" > "$SB/agent-sleep"
-    PATH="$SB/bin:$PATH" bash "$SB/claude-hourly-loop.sh" >/dev/null 2>&1 &
+    PATH="$SB/bin:$PATH" bash "$SB/claude-hourly-loop.sh" >/dev/null 2>&1 </dev/null &
 }
 
 st()  { cat "$SB/state/$1" 2>/dev/null || echo "-"; }
