@@ -81,11 +81,15 @@ and `trufflehog` 3.90.10, which `ops/amphora-controller/reviewed-snapshot.sh` in
 whose absence that script reports as a missing scanner. From `apt`: `cmake`, `nodejs`, `jq`,
 `shellcheck`, `rsync`.
 
-Rust is **per-account**: the `amphora` user has its own rustup with the pinned 1.96.0, so it
-does not depend on anything in the `ubuntu` account. If you add a tool the repo's scripts
-invoke, put it in `/usr/local/bin` rather than a home directory — anything under
-`~ubuntu/.local` is unreachable from the `amphora` account by design, and that is how the
-handoff acceptance run first failed.
+Rust is **per-account**. The `ubuntu` account — the one you log in as — has rustup, and
+inside the repository `rust-toolchain.toml` pins it to 1.96.0 (outside the tree you will see
+the system default, 1.92.0; that is expected). The `amphora` account has its own independent
+rustup at the same pin.
+
+If you add a tool the repo's scripts invoke, put it in `/usr/local/bin` rather than a home
+directory. Anything under one account's `~/.local` is unreachable from another, and that is
+how the first handoff acceptance run failed: `gitleaks` and `trufflehog` were installed into
+`~ubuntu/.local/bin` and simply vanished when the suite ran as a different user.
 
 ## Restoring the omitted datasets
 

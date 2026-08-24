@@ -22,21 +22,57 @@ hourly launcher and the 10-minute mirror — are disabled. (A third, a forensic 
 guard, ran on xbabe2; that host holds nothing now, so `resume` writes two lines, not three.)
 There are no active lanes or Claude processes.
 
-## Log in as `amphora`, not `ubuntu`
+## Log in as `ubuntu`
 
-The project is owned by a dedicated **`amphora`** account, created 2026-08-24. Log in as that
-user. It owns `/home/ubuntu/mvp20-split` outright, has its own Rust toolchain at the pinned
-1.96.0, its own `~/.config/amphora/mvp20-cron.env`, and its own copies of the four signing
-seeds at mode 0600.
+```
+ssh -i <your key> ubuntu@<xbabe1>
+cd ~/mvp20-split
+```
 
-It deliberately has **no sudo**, and cannot read the `ubuntu` account's SSH keys, Claude or
-Codex state, or the several unrelated projects that share this machine. That boundary is the
-point: xbabe1 is not a dedicated Amphora box. It also runs a Docker Swarm manager, five
-long-lived containers, PostgreSQL, `scqd`, and a second login user `deploy`. **None of that
-is yours and none of it is Amphora.** Leave it alone.
+The project is `~/mvp20-split` in the `ubuntu` account's home, and that account owns it. Log
+in there and everything — the tree, the toolchain, the signing seeds, the Claude binary — is
+already in place.
 
-The path still reads `/home/ubuntu/...` because moving the tree would invalidate hundreds of
-recorded paths for no benefit. Ownership, not location, is what changed.
+There is also an `amphora` account on this box, created 2026-08-24 during the handover as a
+narrower alternative: no sudo, its own toolchain and seeds, no access to the `ubuntu`
+account's credentials or the other projects. It was set aside because the project lives in
+`ubuntu`'s home, so logging in as `amphora` drops you into an empty directory. It is left in
+place, working, in case you later want that separation; nothing depends on it.
+
+**Two things follow from using the `ubuntu` account, and you should know both.**
+
+It has passwordless `sudo`, so this login is effectively root on the machine. And xbabe1 is
+not a dedicated Amphora box: it also runs a Docker Swarm manager, five long-lived containers,
+PostgreSQL, `scqd`, a second login user `deploy`, and several unrelated projects' data under
+`~/.` dotfiles. **None of that is Amphora and none of it is yours.** Confine your work to
+`~/mvp20-split` and the archives it points at.
+
+## Updating this checkout
+
+xbabe1 holds no GitHub credential, so `git fetch` fails here by design. That does not mean the
+checkout is frozen — it means updates arrive as a file rather than over the network. From any
+machine that *can* reach GitHub:
+
+```bash
+git clone github.com:neverhuman/mvp20-split.git /tmp/mvp && cd /tmp/mvp
+git bundle create /tmp/mvp20.bundle main
+scp /tmp/mvp20.bundle ubuntu@<xbabe1>:/tmp/
+```
+
+Then on xbabe1:
+
+```bash
+cd ~/mvp20-split
+ops/amphora-controller/bin/amphora unprotect --apply   # 0555 tree breaks a merge part-way
+git fetch /tmp/mvp20.bundle main
+git merge --ff-only FETCH_HEAD
+ops/amphora-controller/bin/amphora protect --apply
+git status --porcelain | wc -l                          # must be 0
+```
+
+`git bundle` carries real commits with their history, so the result is a genuine
+fast-forward and the tree stays verifiable — not a pile of copied files that would leave
+`git status` dirty and the provenance unclear.
 
 ## First day
 
@@ -332,11 +368,10 @@ They are not in Git; `git status` alone does not show them.
   and is the sole custodian of that ability. It must still never be committed to Git.
   See "Signing on this host" above.
 - Interactive Claude authentication, but only during an explicitly approved activation
-  window. Note that `doctor` currently reports one FAIL — `Claude binary not executable` —
-  because the `amphora` account has no Claude installed. That is correct and expected: the
-  logged-in Claude belongs to the `ubuntu` account and is not shared across the boundary.
-  Installing and authenticating Claude for whichever account runs the fleet is an activation
-  step, not a handoff defect.
+  window. The Claude binary is installed and logged in under the `ubuntu` account, so
+  `doctor` reports no failures there. If you switch the fleet to a different account, Claude
+  must be installed and authenticated for that account too — `doctor` will tell you plainly
+  with `FAIL Claude binary not executable`.
 
 The later activation sequence is in the runbook. Nothing in this repository
 constitutes approval to execute it.
