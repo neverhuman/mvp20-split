@@ -41,7 +41,8 @@ qualification, procurement approval, FTO, or Phase 1/2 readiness.
 - Chemistry normalization and positive structural applicability fail closed unless the
   pinned RDKit C++ 2026.03.2 boundary is built and the non-default `rdkit` cargo feature is
   enabled; no substitute canonicalizer is ever used. (As of 2026-08-23 that boundary **is**
-  built on xbabe2 at `/home/ubuntu/.local/share/amphora/rdkit-2026.03.2/`, and
+  built at `/home/ubuntu/.local/share/amphora/rdkit-2026.03.2/` -- on xbabe2 originally, and
+    on xbabe1 since the 2026-08-24 move, verified byte-identical -- and
   `amphora-rdkit-ffi/evidence/phase0/repairs/W-FFI2/` records builds against it with
   `exact_version_match=true`. The 2026-07-17 statement that it was absent is superseded.
   Build instructions: [BUILD.md](BUILD.md).)

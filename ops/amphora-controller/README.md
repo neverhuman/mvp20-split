@@ -12,15 +12,17 @@ Code and state are intentionally separated:
   `/home/ubuntu/mvp20-split/state`; the path is set in `~/.config/amphora/mvp20-cron.env`,
   which overrides the hardcoded default in `bin/amphora`.
 - Configuration: `/home/ubuntu/.config/amphora/mvp20-cron.env` (mode `0600`).
-- Target: `xbabe2:/home/ubuntu/amphora/build/mvp20-split`.
+- Target: none. `AMPHORA_TARGET_HOST` is empty, which is the supported standalone
+  configuration -- xbabe1 is both controller and canonical tree since 2026-08-24.
 
 Environment variables override literal values in the configuration file. The
 controller, state, campaign, queue, prompt, directive registry, target host and
 root, model, Claude binary, signing seed, and SSH/SCP commands are parameterized.
 
-The handoff deliberately removes xbabe1's lateral credentials. Local status and tests work;
-target checks, applied install/pause/resume, and fires remain unavailable until the separate
-activation procedure provisions dedicated xbabe2 access.
+The handoff deliberately removes xbabe1's lateral credentials, and there is no longer a
+second host to reach. Local status and tests work; fires remain unavailable until the separate
+activation procedure runs. Target checks are not failures here -- with `AMPHORA_TARGET_HOST`
+empty, `doctor` and `status` treat a standalone host as correct rather than unreachable.
 
 `bootstrap/` contains the frozen campaign, acquisition queue, chain checkpoint,
 freeze evidence, and archive inventory. It excludes the cron repository's Git

@@ -63,8 +63,10 @@ GitHub may retain unreachable objects after a force rewrite in **both** reposito
 Complete server-side erasure therefore requires GitHub Support to purge the original demo
 objects and an owner token with `delete_repo` scope (or Support) to delete
 `neverhuman/mvp20-split-history`; the available publication token has only `repo`, `read:org`,
-and `gist`. Until deletion, keep the latter archived and private. The local canonical
-repository on xbabe2 remains unchanged and is the recovery source. The writable filtered
+and `gist`. Until deletion, keep the latter archived and private. The recovery source used to be the
+canonical repository on xbabe2. That host was cleared on 2026-08-24; the equivalent recovery
+source is now the bare mirror at `xbabe1:/home/ubuntu/mvp20-split/legacy/canonical-history.git`
+(473 commits, both tips, fsck clean). The writable filtered
 publication clone was separately reflog-expired and garbage-collected, so it retains no
 unreachable object from the unsafe demo ancestry.
 

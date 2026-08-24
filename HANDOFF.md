@@ -90,7 +90,9 @@ It is unmerged because R2 and R3 have declared breaking effects: legacy run arch
 under the superseded event-hash format fail loudly against them. Merging is a reviewed
 decision, not a cleanup. R1 was independently landed on `main` as `acf268f6`; only R2/R3
 and the showcase remain branch-only.
-Its worktree is `xbabe2:/home/ubuntu/amphora/demo-2026-08-11`.
+Its worktree was `xbabe2:/home/ubuntu/amphora/demo-2026-08-11`; that host was cleared on
+2026-08-24 and the worktree was not copied, being reconstructible from
+`legacy/canonical-history.git`.
 
 ### Backup and single point of failure
 
@@ -100,9 +102,10 @@ handoff `main`, the unsafe demo ref was deleted, and the private repository was 
 GitHub may retain unreachable objects until an owner with `delete_repo` scope deletes it;
 do not unarchive or share it. See `docs/DATA-BOUNDARY.md`.
 
-Still unreplicated on xbabe2 alone: the 6.20 GB of
+Held on xbabe1 and nowhere else: the 473-commit canonical history, the 6.20 GB of
 inventoried datasets, the 146 MB `.amphora/` control plane, the 40 GB NOMAD corpus, and the
-32-byte evaluator signing seed. See [EXTERNAL_INPUTS.md](EXTERNAL_INPUTS.md) and
+32-byte evaluator signing seed. Until 2026-08-24 this said "xbabe2"; the single copy moved,
+it did not become two. See [EXTERNAL_INPUTS.md](EXTERNAL_INPUTS.md) and
 [START_HERE.md](START_HERE.md).
 
 Nothing excluded was deleted from the canonical sources. The entire original
@@ -225,7 +228,7 @@ integrity risk than the exposure it would remedy.
 **What a successor should assume.** Treat any signature bearing `local-9028773f49591193` as
 establishing *provenance intent*, not authenticity — anyone with the repository history could
 have produced it. This does not affect the evaluator identity
-(`phase0-evaluator-3ef6b35cdbbfea74`), whose seed has never left xbabe2 and which signs
+(`phase0-evaluator-3ef6b35cdbbfea74`), whose seed now lives only on xbabe1 and which signs
 everything that carries actual Phase-0 authority. If you later need authenticated local
 signatures, issue a new key rather than reusing this one.
 

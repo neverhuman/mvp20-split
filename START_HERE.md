@@ -36,12 +36,15 @@ Then, in the protected xbabe1 runtime checkout:
 
 ```bash
 cd /home/ubuntu/mvp20-split
-ops/amphora-controller/bin/amphora status    # local lines, then xbabe2=UNREACHABLE; exit 1 is expected now
+ops/amphora-controller/bin/amphora status    # PAUSED, the two disabled jobs, "standalone: no target host"
+ops/amphora-controller/bin/amphora doctor    # standalone; reports the seed present
 cargo test --workspace --locked              # 395 pass, 1 ignored
 ```
 
-`doctor` is an activation preflight and intentionally fails while xbabe1 is decommissioned
-from xbabe2. Do not restore that access merely to make first-day checks green.
+Both exit 0. They used to report `xbabe2=UNREACHABLE` and exit 1, which was correct when a
+second host was expected; since 2026-08-24 there is no second host, and `AMPHORA_TARGET_HOST`
+is empty, so a standalone result is the right answer rather than a fault to be fixed. If you
+ever see an `UNREACHABLE` line again, something has *re-introduced* a target host.
 
 **Then get oriented, in this order:**
 
@@ -148,17 +151,23 @@ refutations filed after that date.
 ## Backup and single point of failure
 
 The unsafe canonical-history GitHub mirror was purged from every ref and archived after it
-was found to contain dataset payloads and a local signing key. The following therefore remain
-**unreplicated on xbabe2 alone**:
+was found to contain dataset payloads and a local signing key. The following therefore exist
+**on xbabe1 and nowhere else**:
 
-- the 462-commit canonical operational history
+- the 473-commit canonical operational history (`legacy/canonical-history.git`)
 - 6.20 GB of datasets and artifacts inventoried in `DATASETS.local.json`
 - the 146 MB `.amphora/` control plane (2,588 receipts, 226 run archives)
-- the 40 GB NOMAD corpus at `/home/ubuntu/nomad`
+- the 40 GB NOMAD corpus and the ~20 driver scripts that generated its results
 - **the 32-byte evaluator signing seed** — see [EXTERNAL_INPUTS.md](EXTERNAL_INPUTS.md)
 
-If xbabe2 is lost, all of the above is lost. Establishing a backup for these — and custody
-of the signing seed in particular — is the first thing worth doing on takeover.
+Until 2026-08-24 that list read "xbabe2". The move to a single host did not reduce the
+exposure, it relocated it: there is still exactly one copy, and now there is no second machine
+to fall back to. **If xbabe1 is lost, the programme is lost.** Establishing an off-host backup
+— and custody of the signing seed in particular — is the first thing worth doing on takeover,
+ahead of any code change.
+
+Note also that `git clean -xdf` in this tree would destroy the history mirror, the datasets,
+the controller state and the xbabe2 archive, none of which can be re-fetched from anywhere.
 
 ## One known exposure
 
@@ -210,9 +219,10 @@ fingerprints. The keys that reached xbabe2, xbabe3 and the Mac hosts were remove
 revoked on the far side, and the previous owner's Anthropic, Codex, HuggingFace and Docker
 credentials were removed from the host.
 
-Consequence: `ops/restore-datasets.sh` cannot *fetch* from here, only verify. If the data
-ever needs refreshing, the owner runs `ops/push-datasets-to.sh xbabe1 --apply` from the
-canonical host.
+Consequence: `ops/restore-datasets.sh` can only *verify* what is already here; there is
+nowhere left to fetch from. `ops/push-datasets-to.sh` was written to push this data from the
+canonical host, and that host is gone — the script is kept because it is the right tool for
+seeding a *future* second machine, which is exactly what the backup above requires.
 
 ### Signing on this host
 
@@ -257,9 +267,10 @@ They are not in Git; `git status` alone does not show them.
 - Read access to the private GitHub repository. xbabe1 uses its dedicated,
   read-only deploy key; it has no push authority.
 - A GitHub identity with reviewed push authority only for publication.
-- The 32-byte evaluator seed. As of 2026-08-24 it is present on **both** xbabe2 and
-  xbabe1 (`~/.local/share/amphora/phase0/keys/`, mode 0600), so this host can issue signed
-  evidence. It must still never be committed to Git. See "Signing on this host" below.
+- The 32-byte evaluator seed. As of 2026-08-24 it is on **xbabe1 only**
+  (`~/.local/share/amphora/phase0/keys/`, mode 0600), so this host can issue signed evidence
+  and is the sole custodian of that ability. It must still never be committed to Git.
+  See "Signing on this host" below.
 - Interactive Claude authentication as `ubuntu` on xbabe1, but only during an
   explicitly approved activation window.
 

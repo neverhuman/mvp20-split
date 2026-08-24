@@ -159,12 +159,18 @@ Clone to your own path and leave the runtime checkout pinned.
 
 ## Publication gate
 
-`ops/amphora-controller/reviewed-snapshot.sh` is dry-run by default. Run an applied snapshot
-from the writable publish clone on xbabe2, using that clone's own script. It remotely invokes
-the protected xbabe1 CLI for pause/drain and copies frozen state from xbabe1, while dataset
-inventory regeneration, staged/full-tree/full-history scans, commit, and push happen on
-xbabe2 where the canonical source and scanners exist. This requires the lateral SSH access
-that is intentionally absent until activation approval; the current dry form remains safe.
+`ops/amphora-controller/reviewed-snapshot.sh` is dry-run by default. It was written for a
+two-host world -- pause/drain on protected xbabe1, then regenerate the dataset inventory, scan
+the staged tree, full tree and full history, commit and push from a writable publish clone on
+xbabe2. **That second host no longer exists.** Amphora was removed from xbabe2 on 2026-08-24
+and the publish clone with it.
+
+So an applied snapshot needs a writable clone that is not yet provisioned. xbabe1's `origin`
+resolves through the `github-amphora-mvp20` SSH alias to a read-only deploy key, so `git push`
+from the runtime checkout fails by design and no amount of `gh auth login` changes it. Before
+anyone can publish again, the owner must either grant that deploy key write access or add the
+new engineer as a collaborator so they can push from their own clone (`CONTRIBUTING.md`).
+Until then the dry form is the only form, and it remains safe.
 
 ## Known debt
 
@@ -191,7 +197,8 @@ That file is digested into `evidence/phase0/bundle.v1.json`, which is covered by
 `evidence/phase0/receipts/evaluation.v1.dsse.json`. Correcting it therefore means re-issuing
 a supersession record and **re-signing the evaluation receipt with the evaluator Ed25519
 seed** — an evidentiary act, deliberately left to the owner rather than done as cleanup.
-The seed lives only at `xbabe2:/home/ubuntu/.local/share/amphora/phase0/keys/evaluator.ed25519.seed`.
+The seed lives only at `xbabe1:/home/ubuntu/.local/share/amphora/phase0/keys/evaluator.ed25519.seed`
+(mode 0600) -- the sole copy, so whoever holds xbabe1 can perform this repair.
 
 This is the only known failing gate. It is bounded to three entries in one module; every
 other module's source lock and every `bundle.v1.json` digest in the repository verifies clean.

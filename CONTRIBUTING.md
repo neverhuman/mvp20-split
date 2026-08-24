@@ -52,7 +52,9 @@ recorded somewhere else in the tree:
 
 Correction happens by **supersession**, never in place: archive the prior state under
 `evidence/superseded/supersession-<sha>/`, file a new record, re-sign. That needs the
-evaluator seed, which lives only on xbabe2.
+evaluator seed, which lives only on xbabe1 at
+`~/.local/share/amphora/phase0/keys/evaluator.ed25519.seed` (mode 0600). That is the only
+copy in existence.
 
 Corollary: a stale-looking command inside a frozen record — including the `rtk` wrapper that
 appears in a few of them — is **history, not a defect**. It records what was actually run.

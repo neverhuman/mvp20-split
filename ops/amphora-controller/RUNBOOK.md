@@ -101,7 +101,9 @@ violation fails the gate.
 
 ## Reviewed snapshot and publication
 
-Use the writable administrative clone on xbabe2, not the protected xbabe1 runtime checkout.
+This needs a writable administrative clone, not the protected xbabe1 runtime checkout. The
+one on xbabe2 is gone as of 2026-08-24, and xbabe1's deploy key is read-only, so a push-capable
+clone has to be provisioned before an applied snapshot is possible. See `BUILD.md`.
 Invoke the administrative clone's own script; `AMPHORA_SNAPSHOT_REPO` is only for an
 equivalent writable clone on the same publishing host. The workflow is dry-run by default:
 

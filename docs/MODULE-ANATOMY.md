@@ -60,7 +60,7 @@ count, and it is not the same set as the 41 directories.
   identical today by convention, not by construction. If you correct a value, correct all 14.
 - **Missing dataset directories.** `evidence/phase0/raw/objects/` is tracked but empty (a
   `.gitkeep` holds it). The payloads are inventoried in `DATASETS.local.json` and live only
-  on the canonical xbabe2 tree.
+  in the restored dataset tree on xbabe1, verified by `ops/restore-datasets.sh`.
 
 ## Zero-byte files and `work/scratch/` are usually real
 

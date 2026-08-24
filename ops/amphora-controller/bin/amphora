@@ -377,17 +377,24 @@ def cmd_status(args, cfg):
         managed = [line for line in text.splitlines() if "amphora" in line.lower() and
                    any(word in line for word in ("hourly-loop", "mirror-log", "autocommit"))]
         print("%s_jobs=%s" % (name, json.dumps(managed)))
+    # Standalone: one host is the whole system. Without this branch an empty target fell
+    # through to the unreachable path and printed a nameless "_jobs=UNREACHABLE", then
+    # exited 1 -- reporting the absence of a second host as a fault on a configuration
+    # where there is deliberately no second host. `doctor` already words it this way.
     target = cfg["AMPHORA_TARGET_HOST"]
     target_ok = True
-    try:
-        target_text = read_cron(cfg, target)
-    except OperatorError:
-        target_ok = False
-        print("%s_jobs=UNREACHABLE" % target)
+    if not target:
+        print("standalone: no target host configured; remote cron check skipped")
     else:
-        managed = [line for line in target_text.splitlines() if "amphora" in line.lower() and
-                   any(word in line for word in ("hourly-loop", "mirror-log", "autocommit"))]
-        print("%s_jobs=%s" % (target, json.dumps(managed)))
+        try:
+            target_text = read_cron(cfg, target)
+        except OperatorError:
+            target_ok = False
+            print("%s_jobs=UNREACHABLE" % target)
+        else:
+            managed = [line for line in target_text.splitlines() if "amphora" in line.lower() and
+                       any(word in line for word in ("hourly-loop", "mirror-log", "autocommit"))]
+            print("%s_jobs=%s" % (target, json.dumps(managed)))
     print("controller_processes=%d" % remote_process_count(cfg, None))
     return 0 if target_ok else 1
 
