@@ -115,11 +115,12 @@ cd /home/ubuntu/mvp20-split
 ops/amphora-controller/reviewed-snapshot.sh      # prints the 6-step plan, exits 0
 ```
 
-An **applied** snapshot is different: it needs a clone that can push, and none exists any more.
-The writable one lived on xbabe2 and was deleted with everything else on 2026-08-24; xbabe1
-holds no GitHub credential at all. Until someone is added as a collaborator and clones with
-their own identity, the dry form is the only form. `AMPHORA_SNAPSHOT_REPO` is only for an
-equivalent writable clone on the same publishing host. See `BUILD.md`.
+An **applied** snapshot is different: it needs a clone that can push. The writable one lived on
+xbabe2 and was deleted with everything else on 2026-08-24, and xbabe1 holds no GitHub
+credential at all — so it is not run from here. `tkn1234` was invited as a collaborator with
+write access on 2026-08-24; the applied form runs from that clone, with their own identity.
+On xbabe1 the dry form is the only form. `AMPHORA_SNAPSHOT_REPO` is only for an equivalent
+writable clone on the same publishing host. See `BUILD.md`.
 
 An applied snapshot requires `--apply --review --tag TAG`. It pauses and drains,
 exports the bootstrap state from xbabe1, regenerates both local manifests against the local

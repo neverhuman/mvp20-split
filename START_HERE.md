@@ -363,8 +363,8 @@ They are not in Git; `git status` alone does not show them.
   GitHub credential at all: the read-only deploy key was removed at handover, deliberately, so
   this host cannot reach GitHub and no shared key is being passed to you. `git fetch` and
   `git pull` here will fail, and that is the intended state. Clone separately with your own
-  identity, work there, push from there. Ask the owner to add you as a collaborator; until
-  that happens nothing can be published from anywhere.
+  identity, work there, push from there. `tkn1234` was invited as a collaborator with write
+  access on 2026-08-24 — accept the invitation, then clone. See `CONTRIBUTING.md`.
 - `git config user.name` / `user.email` are unset on this host. Set them in your own clone
   before your first commit.
 - The 32-byte evaluator seed. As of 2026-08-24 it is on **xbabe1 only**

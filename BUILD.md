@@ -197,12 +197,13 @@ the staged tree, full tree and full history, commit and push from a writable pub
 xbabe2. **That second host no longer exists.** Amphora was removed from xbabe2 on 2026-08-24
 and the publish clone with it.
 
-So an applied snapshot needs a writable clone that is not yet provisioned. xbabe1's `origin`
-resolves through the `github-amphora-mvp20` SSH alias to a read-only deploy key, so `git push`
-from the runtime checkout fails by design and no amount of `gh auth login` changes it. Before
-anyone can publish again, the owner must either grant that deploy key write access or add the
-new engineer as a collaborator so they can push from their own clone (`CONTRIBUTING.md`).
-Until then the dry form is the only form, and it remains safe.
+So an applied snapshot needs a writable clone, and xbabe1 is not it: the host holds no GitHub
+credential at all — the deploy key was removed and deleted from the repository — so `git push`
+there fails by design and no amount of `gh auth login` changes it.
+
+Publishing is done from a collaborator's own clone. `tkn1234` was invited with write access on
+2026-08-24. Run the applied snapshot from that clone, never from the xbabe1 runtime; the dry
+form is what runs here, and it remains safe.
 
 ## Known debt
 

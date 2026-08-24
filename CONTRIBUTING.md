@@ -78,11 +78,22 @@ git config --global user.name  "Your Real Name"
 git config --global user.email "you@example.com"
 ```
 
-The runtime checkout's `origin` uses the `github-amphora-mvp20` SSH alias for both fetch and
-push, permanently selecting a **read-only** deploy key. `gh auth login` does not change that
-SSH identity, so `git push origin` from the runtime correctly fails. Use your separate HTTPS
-clone (or a separately configured personal SSH remote) after the owner adds your account as a
-collaborator.
+xbabe1 holds no GitHub credential at all — the deploy key was removed at handover and deleted
+from the repository, so `git fetch` and `git push` both fail there by design. Work in your own
+clone:
+
+```bash
+gh auth login
+gh auth setup-git
+git clone https://github.com/neverhuman/mvp20-split.git ~/mvp20-split
+cd ~/mvp20-split
+git config user.name  "Your Real Name"
+git config user.email "you@example.com"
+```
+
+`tkn1234` was invited as a collaborator with **write** access on 2026-08-24; accept the
+invitation before cloning. To update the xbabe1 checkout from your clone, see "Updating this
+checkout" in `START_HERE.md` — it takes a `git bundle` over `scp`, not a fetch.
 
 ## Branches and review
 
