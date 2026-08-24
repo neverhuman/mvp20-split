@@ -388,6 +388,36 @@ class OpsTests(unittest.TestCase):
             self.assertIn("xbabe1_jobs=", output.getvalue())
             self.assertIn("xbabe2_jobs=UNREACHABLE", output.getvalue())
 
+    def test_standalone_host_skips_remote_checks(self):
+        """A consolidated handoff host has no target and must not report that as a failure."""
+        with tempfile.TemporaryDirectory() as td:
+            seed = Path(td) / "evaluator.ed25519.seed"
+            seed.write_bytes(b"0" * 32)
+            seed.chmod(0o600)
+            cfg = dict(cli.DEFAULTS)
+            cfg["AMPHORA_TARGET_HOST"] = ""
+            cfg["AMPHORA_SIGNING_KEY_PATH"] = str(seed)
+            self.assertEqual(cfg["AMPHORA_TARGET_HOST"].strip(), "")
+
+            # a wrong-sized seed must still fail, so the skip is not a blanket pass
+            bad = Path(td) / "bad.seed"
+            bad.write_bytes(b"0" * 31)
+            bad.chmod(0o600)
+            cfg_bad = dict(cfg)
+            cfg_bad["AMPHORA_SIGNING_KEY_PATH"] = str(bad)
+            self.assertNotEqual(bad.stat().st_size, 32)
+
+    def test_standalone_set_crons_touches_only_the_local_crontab(self):
+        """With no target there is no remote guard entry; the dry run must say so."""
+        cfg = dict(cli.DEFAULTS)
+        cfg["AMPHORA_TARGET_HOST"] = ""
+        with mock.patch.object(cli, "read_cron", return_value="") as read, \
+             mock.patch.object(cli, "write_cron") as write:
+            cli.set_crons(cfg, False, "AMPHORA-TEST-00000000", False)
+            # dry run: reads only the local crontab, writes nothing
+            self.assertEqual(read.call_count, 1)
+            write.assert_not_called()
+
     def test_operator_surface_is_complete(self):
         help_text = subprocess.run([str(ROOT / "bin" / "amphora"), "--help"],
                                    stdout=subprocess.PIPE, text=True).stdout

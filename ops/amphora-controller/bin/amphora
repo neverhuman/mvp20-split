@@ -145,7 +145,17 @@ def write_cron(cfg, text, host=None):
 def set_crons(cfg, enabled, tag, apply):
     entries = cron_entries(cfg)
     local_before = read_cron(cfg)
-    remote_before = read_cron(cfg, cfg["AMPHORA_TARGET_HOST"])
+    target = cfg["AMPHORA_TARGET_HOST"].strip()
+    if not target:
+        # Standalone host: there is no remote guard entry to toggle.
+        local_after = update_cron(local_before, ("launcher", "mirror"), entries, enabled, tag)
+        if not apply:
+            print("would set the two local Amphora cron jobs %s (standalone: no remote guard)"
+                  % ("enabled" if enabled else "disabled"))
+            return
+        write_cron(cfg, local_after)
+        return
+    remote_before = read_cron(cfg, target)
     local_after = update_cron(local_before, ("launcher", "mirror"), entries, enabled, tag)
     remote_after = update_cron(remote_before, ("guard",), entries, enabled, tag)
     if not apply:
@@ -311,9 +321,25 @@ def cmd_doctor(args, cfg):
     cfg_path = Path(cfg["AMPHORA_CONFIG_FILE"])
     if cfg_path.exists() and cfg_path.stat().st_mode & 0o077:
         failures.append("config must be mode 0600: %s" % cfg_path)
-    target = cfg["AMPHORA_TARGET_HOST"]
-    if run(ssh_argv(cfg, target, "true"), check=False).returncode:
-        failures.append("SSH failed: %s" % target)
+    # A consolidated handoff host has no target: it holds the data and the signing seed
+    # locally and cannot reach the canonical tree by design. Setting AMPHORA_TARGET_HOST
+    # empty declares that, so the remote checks below are skipped as inapplicable rather
+    # than reported as a bare "SSH failed" on a host that is in fact healthy.
+    target = cfg["AMPHORA_TARGET_HOST"].strip()
+    if not target:
+        print("standalone: no target host configured; remote checks skipped")
+        seed = Path(cfg["AMPHORA_SIGNING_KEY_PATH"])
+        if not seed.is_file():
+            failures.append("local signing seed absent: %s" % seed)
+        elif seed.stat().st_size != 32:
+            failures.append("local signing seed is %d bytes, expected 32" % seed.stat().st_size)
+        elif seed.stat().st_mode & 0o077:
+            failures.append("local signing seed must be mode 0600: %s" % seed)
+        else:
+            print("standalone: local signing seed present (32 bytes, 0600)")
+    elif run(ssh_argv(cfg, target, "true"), check=False).returncode:
+        failures.append(
+            "SSH failed: %s (set AMPHORA_TARGET_HOST empty if this host is standalone)" % target)
     else:
         seed_path = shlex.quote(cfg["AMPHORA_SIGNING_KEY_PATH"])
         key_check = "test -f %s && test $(wc -c < %s) -eq 32" % (seed_path, seed_path)
