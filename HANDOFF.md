@@ -179,6 +179,11 @@ path, credential, binary, and oversize checks; `git fsck`; privacy; branch/tag
 counts; workflow absence; and verification that the canonical-path files listed in
 `docs/frozen-provenance-files.txt` match xbabe2 byte-for-byte.
 
+That last clause can no longer be satisfied: xbabe2 was cleared on 2026-08-24. The 918 files
+are still pinned and still verifiable, but against the archived tree at
+`legacy/xbabe2-amphora/build/mvp20-split/`, not a live remote host. Treat the gate as
+"matches the archived canonical tree" and say so if you re-run it.
+
 ### Verification as of 2026-08-23
 
 Re-run against **this published tree** (not the canonical tree), on a clone with no datasets

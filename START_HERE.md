@@ -165,6 +165,30 @@ onto separate hardware is still the most valuable thing you can do on takeover.
 Note also that `git clean -xdf` in this tree would destroy the history mirror, the datasets,
 the controller state and the xbabe2 archive, none of which can be re-fetched from anywhere.
 
+## The pause was not a clean stop
+
+`HARD_STOP` is a deliberate freeze, and it is the thing that keeps the fleet off. But it was
+applied on top of a fleet that had **already stalled**, and nothing in `status` or `doctor`
+tells you so. In `state/state/` you will find:
+
+```
+STALLED                     {"kind":"INFRA","reason":"6 consecutive fires that never
+                             produced a result (quota, network, or timeout)",
+                             "held_since":"2026-08-20T02:00:01Z",
+                             "release":"2026-08-22T12:00:02+00:00"}
+gate-hold-level             7
+consecutive-infra-fail.txt  6
+```
+
+Read that plainly: on 2026-08-20 six fires in a row produced nothing — quota, network, or
+timeout — the controller put itself into an INFRA hold, and the backoff had climbed to level
+7. The hold's own release time has since passed, so the stall is not what is stopping the
+fleet now; `HARD_STOP` is. But **do not read the freeze as evidence the last run was healthy.**
+It was not.
+
+Before activating, decide deliberately whether to clear that state or let it expire, and find
+out what the six dead fires were. `logs/fire-summary.jsonl` is where they are recorded.
+
 ## One known exposure
 
 `.amphora/control/local-ed25519.key` was briefly reachable on GitHub through the
