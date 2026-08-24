@@ -11,7 +11,7 @@ interesting part is how hard it works to keep it that way.
 ## What is unusual about this system
 
 **It attacks its own claims and files the receipts.** 242 adversarial audit probes, 58
-`CLAIM_REFUTED` verdicts recorded in the modules' own mission documents, 22 retraction
+`CLAIM_REFUTED` verdicts recorded in the modules' own mission documents, 22 per-module retraction
 indexes, 38 supersession records. A red-team report in `reports/` opens with *"Verdict: we do
 NOT have full Phase 0."* The record of what this program measured and then **withdrew** is
 kept as carefully as the record of what worked — start at
@@ -23,7 +23,7 @@ promote scientific authority."* A module becomes ranking-eligible only when its 
 policy is changed through review **and** its named external gate passes. That rule is
 enforced in code, not just asserted.
 
-**Decisions are replayable byte-for-byte.** 568 signed DSSE receipts and 142 pre-registered
+**Decisions are replayable byte-for-byte.** 569 signed DSSE receipts and 142 pre-registered
 benchmarks. `cargo run --release -- replay --verify` re-derives a run's event-hash chain and
 prints its root. Canonical JSON hashing is exact enough that `serde_json`'s `float_roundtrip`
 feature is a correctness requirement, not an optimisation — see the comment in `Cargo.toml`.

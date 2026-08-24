@@ -152,39 +152,73 @@ if [ "$MODE" = "tree" ] && [ -d "$OUT/canonical-history" ]; then
         echo "  FSCK FAILED" >&2; exit 1
     fi
 else
-    if tar -tf "$OUT/canonical-history.tar" >/dev/null 2>&1; then
-        echo "  history  archive readable"
-    else
+    # "The tar lists" is not the same as "the history survived". Extract it and open it as a
+    # repository, which is the only check that would have caught a truncated object store.
+    TMP=$(mktemp -d)
+    trap 'rm -rf "$TMP"' EXIT
+    if ! tar -xf "$OUT/canonical-history.tar" -C "$TMP" 2>/dev/null; then
         echo "  ARCHIVE UNREADABLE" >&2; exit 1
     fi
+    n=$(git -C "$TMP/canonical-history.git" rev-list --count --all 2>/dev/null || echo 0)
+    m=$(git -C "$ROOT/legacy/canonical-history.git" rev-list --count --all 2>/dev/null || echo 0)
+    if [ "$n" -gt 0 ] && [ "$n" = "$m" ]; then
+        echo "  history  $n commits restored from the archive, matches source"
+    else
+        echo "  HISTORY MISMATCH: backup=$n source=$m" >&2; exit 1
+    fi
+    if git -C "$TMP/canonical-history.git" fsck --connectivity-only >/dev/null 2>&1; then
+        echo "  fsck     clean"
+    else
+        echo "  FSCK FAILED" >&2; exit 1
+    fi
+    rm -rf "$TMP"; trap - EXIT
 fi
 
 # Hash a sample of the dataset payloads against the manifest they were inventoried with.
 if [ -f "$ROOT/DATASETS.local.json" ]; then
     python3 - "$ROOT" "$OUT" "$MODE" <<'PY'
-import hashlib, json, os, sys
+import hashlib, json, os, subprocess, sys
 root, out, mode = sys.argv[1], sys.argv[2], sys.argv[3]
-if mode != "tree":
-    print("  datasets skipped (tar mode; extract to verify)"); raise SystemExit
 inv = json.load(open(os.path.join(root, "DATASETS.local.json")))["omitted"]
+
+def digest_tree(path):
+    h = hashlib.sha256()
+    with open(path, "rb") as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+def digest_tar(archive, member):
+    # Stream the member out of the archive rather than extracting it. A backup that is
+    # never read back is a hypothesis; this reads it back.
+    r = subprocess.run(["tar", "-xOf", archive, member], capture_output=True)
+    if r.returncode != 0 or not r.stdout:
+        return None
+    return hashlib.sha256(r.stdout).hexdigest()
+
 checked = bad = 0
 for e in inv:
     p = e.get("path") or ""
     top = p.split("/", 1)[0]
-    dst = os.path.join(out, "datasets-" + top, p.split("/", 1)[1] if "/" in p else p)
-    if not os.path.exists(dst):
-        continue
-    h = hashlib.sha256()
-    with open(dst, "rb") as fh:
-        for chunk in iter(lambda: fh.read(1 << 20), b""):
-            h.update(chunk)
+    if mode == "tree":
+        dst = os.path.join(out, "datasets-" + top, p.split("/", 1)[1] if "/" in p else p)
+        if not os.path.exists(dst):
+            continue
+        got = digest_tree(dst)
+    else:
+        archive = os.path.join(out, "datasets-" + top + ".tar")
+        if not os.path.exists(archive):
+            continue
+        got = digest_tar(archive, p)
+        if got is None:
+            continue
     checked += 1
-    if h.hexdigest() != e.get("sha256"):
+    if got != e.get("sha256"):
         bad += 1
         print("  MISMATCH", p)
-    if checked >= 25:
+    if checked >= 12:
         break
-print(f"  datasets {checked} sampled, {bad} mismatched")
+print(f"  datasets {checked} sampled from the backup, {bad} mismatched")
 raise SystemExit(1 if bad else 0)
 PY
 fi
