@@ -98,6 +98,7 @@ reports/**/*.webp
 .env
 .env.*
 !.env.example
+/keys/ampohra_handoff_ed25519
 *.key
 *.pem
 *.p12
@@ -164,3 +165,9 @@ id_rsa
 # that data is not recoverable locally. Do not run it here.
 /state/
 /legacy/
+
+# Local authoring credentials, IDE state, and presentation review output
+/docs/Keys/
+/.idea/
+/.tmp-deck-review-*/
+/Slide*.PNG

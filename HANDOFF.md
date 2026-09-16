@@ -1,5 +1,11 @@
 # Amphora MVP20 full handoff
 
+## Architecture Direction Update — 2026-09-11
+
+The active direction is a flexible graph-native research engine, not a fixed epoxy-specific optimization pipeline. Two authored graph types are first-class: executable campaign graphs that compose and evolve module pathways, and neuro-symbolic domain graphs that define scientific knowledge and reasoning boundaries. Execution/provenance lineage is derived from campaign runs. Deep human graph visualization and interaction are part of the engine itself.
+
+Canonical reference: [`docs/Architecture/Graph_Native_Research_Engine.md`](docs/Architecture/Graph_Native_Research_Engine.md).
+
 This private repository is a source-only handoff plus the reviewed automation
 needed to operate it. The fleet is intentionally frozen. Publication does not
 authorize authentication, cron enablement, hard-stop removal, or a fire.
