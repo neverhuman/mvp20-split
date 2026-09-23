@@ -1,0 +1,17 @@
+# Preserve binary documents and byte-faithful frozen evidence.
+*.pdf binary
+*.pptx binary
+*.docx binary
+
+# These historical text fixtures intentionally retain original line endings.
+/v1/amphora-design-rule-score/reference/purformance/zenodo-13742098/Evaluation.LICENSE.txt.headers -text
+/v1/amphora-design-rule-score/reference/purformance/zenodo-13742098/Evaluation.zip.headers -text
+/v1/amphora-design-rule-score/reference/purformance/zenodo-13742098/Experiment.LICENSE.txt.headers -text
+/v1/amphora-design-rule-score/reference/purformance/zenodo-13742098/Experiment.zip.headers -text
+/v1/amphora-design-rule-score/reference/purformance/zenodo-13742098/Readme.LICENSE.txt.headers -text
+/v1/amphora-design-rule-score/reference/purformance/zenodo-13742098/Readme.txt.headers -text
+/v1/amphora-molecule-property/reference/chebi/rel252/LICENSE.txt.headers -text
+/v1/amphora-molecule-property/reference/chebi/rel252/chebi_3_stars.sdf.gz.headers -text
+/v1/amphora-source-ledger/evidence/phase0/repairs/T-14/work/citation_extracts/text_pigment_barytes_density.txt -text
+/v1/amphora-source-ledger/evidence/phase0/repairs/T-14/work/citation_extracts/text_pigment_talc_density.txt -text
+/v1/benchkit/tests/fixtures/openpoly/final_polymer_properties_fromliterature.csv -text

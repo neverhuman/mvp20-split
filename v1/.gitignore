@@ -1,0 +1,173 @@
+# Amphora private/runtime state
+.amphora/
+.cron.lock
+/logs/
+/feedback/
+/artifacts/
+/archive/
+
+# Build products, caches, and local environments
+target/
+**/target/
+build/
+dist/
+node_modules/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.tox/
+.nox/
+__pycache__/
+*.egg-info/
+*.py[cod]
+*.rlib
+*.rmeta
+*.so
+*.dylib
+*.dll
+*.a
+*.o
+*.obj
+*.exe
+
+# Local datasets, archives, and models
+**/raw/
+**/derived/
+**/objects/
+**/splits/
+**/quarantine/
+*.7z
+*.arrow
+*.avro
+*.bz2
+*.ckpt
+*.db
+*.feather
+*.gz
+*.h5
+*.hdf5
+*.joblib
+*.lz4
+*.npy
+*.npz
+*.onnx
+*.parquet
+*.pickle
+*.pkl
+*.pt
+*.pth
+*.rar
+*.safetensors
+*.sqlite
+*.tar
+*.tbz
+*.tgz
+*.whl
+*.xz
+*.zip
+*.zst
+
+# Reproducible oversized evidence fixture (regenerate locally for its Rust probe)
+amphora-evidence-intake-validator/evidence/phase0/repairs/T-04/work/t04_cases.json
+
+# Generated reports and backups
+reports/build/
+amphora-run-provenance/reference/mvp20/out/run_manifest.json
+amphora-molecule-role-ranker/evidence/phase0/repairs/W-D-ROLE/done/W-D-ROLE-source-sweep-receipt.v1.dsse.json
+amphora-report-packager/evidence/phase0/repairs/T-12/work/diagnostic.canonical.json
+amphora-report-packager/evidence/phase0/repairs/T-12/work/diagnostic.runB.json
+reports/**/*.aux
+reports/**/*.out
+reports/**/*.log
+reports/**/*.toc
+reports/**/*.pdf
+reports/**/*.png
+reports/**/*.jpg
+reports/**/*.jpeg
+reports/**/*.gif
+reports/**/*.webp
+*.bak
+*.bak.*
+*.backup
+*.backup.*
+.phase0-promotion-backup-*/
+
+# Credentials and editor/OS state
+.env
+.env.*
+!.env.example
+/keys/ampohra_handoff_ed25519
+*.key
+*.pem
+*.p12
+*.pfx
+credentials.json
+id_dsa
+id_ecdsa
+id_ed25519
+id_rsa
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Byte-faithful historical probe source (not a dataset payload)
+!**/evidence/phase0/raw/
+!**/evidence/phase0/raw/SHA256SUMS
+# Directory placeholders. The object stores are intentionally empty in the handoff
+# (the payloads are inventoried in DATASETS.local.json), but `cargo run -p xtask -- audit`
+# requires the directories to EXIST. Without these two negations the `**/objects/` rule
+# strips the placeholders, the directories vanish from a clone, and the audit hard-fails
+# for all 29 modules with "object or movement directory is absent".
+!**/evidence/phase0/raw/objects/
+!**/evidence/phase0/raw/objects/.gitkeep
+!**/evidence/phase0/split/
+!**/evidence/phase0/split/split-manifest.v1.json
+!**/evidence/superseded/
+!**/evidence/superseded/**
+!amphora-ip-fto-guard/evidence/audit/kpi-recompute-consistency-v1/raw/
+!amphora-ip-fto-guard/evidence/audit/kpi-recompute-consistency-v1/raw/*.Cargo.toml
+!amphora-ip-fto-guard/evidence/audit/kpi-recompute-consistency-v1/raw/*.rs
+
+# Inventoried payloads that no pattern above covers.
+#
+# Every path in DATASETS.local.json is deliberately outside Git. Most are caught by the
+# bulk rules (**/raw/, **/derived/, **/objects/, **/splits/, **/quarantine/), but these
+# five are not: two sit under an ip-fto-guard `raw/` directory that is explicitly negated
+# above so its .rs/.Cargo.toml probe sources stay tracked, and three sit at paths the bulk
+# rules never matched.
+#
+# Without these lines a completed `ops/restore-datasets.sh` leaves `git status` dirty and
+# `git add -A` would stage rights-unresolved data. The publication policy would still
+# refuse it, but the boundary should hold at the earliest gate, not the last one.
+/amphora-ip-fto-guard/evidence/audit/kpi-recompute-consistency-v1/raw/probe.output1.json
+/amphora-ip-fto-guard/evidence/audit/kpi-recompute-consistency-v1/raw/probe.output2.json
+/amphora-known-answer-benchmarks/evidence/phase0/repairs/R-A05/work/a702b75_us_tds.pdf
+/amphora-optimizer-orchestrator/evidence/audit/optimizer-authorization-numeric-comparison-conformance-v1/runtime_ground_truth.v1.jsonl
+/amphora-optimizer-orchestrator/evidence/audit/optimizer-constraint-path-addressing-grammar-v1/runtime_ground_truth.v1.jsonl
+
+# Host-local trees, on a consolidated handoff host.
+#
+# The handoff host keeps one directory. These two live inside it and are deliberately
+# outside Git:
+#
+#   state/   the controller's mutable state -- HARD_STOP, campaign.json, the acquisition
+#            queue, locks, counters, logs. The controller separates code from state on
+#            purpose; this is the state half, and it is host-specific.
+#   legacy/  archives kept for provenance: the lossless pre-split controller archive
+#            (which holds commit 8d76070, cited by directives/CORRECTIONS.md) and the
+#            dated loop-operations reports from when the fleet was running.
+#
+# WARNING: `git clean -xdf` removes ignored files, so it would delete both of these AND
+# the ~6.2 GB restored dataset inventory. On a host that cannot reach the canonical tree,
+# that data is not recoverable locally. Do not run it here.
+/state/
+/legacy/
+
+# Local authoring credentials, IDE state, and presentation review output
+/docs/Keys/
+/.idea/
+/.tmp-deck-review-*/
+/Slide*.PNG

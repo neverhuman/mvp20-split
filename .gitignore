@@ -171,3 +171,17 @@ id_rsa
 /.idea/
 /.tmp-deck-review-*/
 /Slide*.PNG
+
+# Versioned workspace credential and runtime boundaries
+/v1/docs/Keys/
+/v2/docs/Keys/
+/v1/keys/
+/v2/keys/
+/v2/logs/
+/v2/feedback/
+/v2/artifacts/
+/v2/archive/
+/v2/state/
+/v2/.idea/
+/v2/.tmp-deck-review-*/
+/v2/Slide*.PNG
