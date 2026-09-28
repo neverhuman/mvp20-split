@@ -2,16 +2,16 @@
 
 ## Current Checkpoint
 
-- Last refreshed: `2026-09-28 12:23:58` (America/Chicago).
+- Last refreshed: `2026-09-28 12:35:03` (America/Chicago).
 - Workspace: v2 active; v1 frozen. External references require task-specific authorization.
-- Canonical position: BP-02 -> [BP-02.05](docs/Build%20Plans/BP-02/BP-02.05%20Completion%20and%20Delivery.md) / V1 / D3 abort/retention handshake; next D4 outbox delivery.
-- Progress: parent 71.88% (23/32 deliveries). Children .01-.04 complete/audited/archived; .05 at 33.33% (V1 40%, V2 0%); .06 and BP-03..09 at 0%.
-- Latest work: atomic accepted reports/results/checkpoints, rollback, independent branches and bounded retries verified; lifecycle standalone runtime and HTTP-only worker death/reclaim accepted; [closeout](docs/Audits/BP-02.04_Invocation_Lifecycle_Closeout.md). Cancellation/revocation, budget conservation and live database-clock fencing are implemented.
-- Evidence: 270 aggregate tests with PostgreSQL; 106 runtime tests; lint/import/schema gates, eight independent wheels and both installed service probes passed. 58 published schemas. Workers have no database credentials.
+- Canonical position: BP-02 -> [BP-02.05](docs/Build%20Plans/BP-02/BP-02.05%20Completion%20and%20Delivery.md) / V1 / D4 bounded outbox delivery; next D5 historical receipt/read projections.
+- Progress: parent 75% (24/32 deliveries). Children .01-.04 complete/audited/archived; .05 at 50% (V1 60%, V2 0%); .06 and BP-03..09 at 0%.
+- Latest work: exact retention outcomes, atomic terminal delivery intents and bounded abandoned/cancelled command recovery verified; lifecycle standalone runtime and HTTP-only worker death/reclaim accepted; [closeout](docs/Audits/BP-02.04_Invocation_Lifecycle_Closeout.md). Cancellation/revocation, budget conservation and live database-clock fencing are implemented.
+- Evidence: 278 aggregate tests with PostgreSQL; final recovery refinement passed 36 focused completion tests; lint/import/schema gates, eight independent wheels and both installed service probes passed. 58 published schemas. Workers have no database credentials.
 - Authority: autonomous continuation and significant commit/push checkpoints authorized. No current user blocker. Scientific/provider/host decisions remain later gates.
 - Environment: Python 3.12, uv and labeled PostgreSQL 17.11 fixture. Dynamic endpoint/credentials only in ignored v2/.test-results/postgres-fixture.json. Set AMPHORA_TEST_POSTGRES=1; never publish credentials. Do not run fixture restart/reset concurrently with tests.
-- Git: D1 preparation 40d069f pushed; D2 acceptance checkpoint verified for commit/push. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
-- D3 handoff: D1/D2 preparation and acceptance implemented; configured complete endpoint available. runtime_0005 separates attempt reports from terminal activation results. Add authenticated exact retention outcomes, terminal confirm/reconcile outbox intents, and bounded stale-preparation abort recovery. Queue late-acquired receipts after concurrent abort. Existing authority AbortDecision and prepared-expiry guards remain binding. D4 covers run and policy journals; D5 historical receipt/audit queries.
+- Git: D2 acceptance b738825 pushed; D3 retention/recovery checkpoint verified for commit/push. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
+- D4 handoff: implement bounded delivery leases/tokens/fences, stable event identities, conditional ack, backoff and explicit exhausted state. Both runtime.outbox and policy_outbox are required. Terminal artifact targets artifact_confirm/artifact_reconcile already carry exact command/binding payloads; notification targets are not execution authority. Keep network outside SQL and validate exact peer acknowledgements. D5 owns history/receipt queries; real runtime/artifact integration remains D6/.06.
 - Limits: .05/.06 still own actual accepted completion/artifact retention and crash integration. Linux/target-storage power-loss/backup remains BP-09. Scientific validity is not established by synthetic profiles. Existing test-client warning is nonblocking.
 
 ## Decomposition and Resume Discipline

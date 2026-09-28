@@ -2,14 +2,18 @@
 
 import asyncio
 
+from amphora_contracts_artifacts import ReservationBinding, RuntimeOutcome
 from amphora_contracts_commands import CommandEncodingError
 from amphora_contracts_runtime import ClaimResponse, CommandReceipt, RunSnapshot, parse_command
 from fastapi import Request
+from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
+from pydantic import ValidationError
 from sqlalchemy import text
 from sqlalchemy.exc import DBAPIError
 
 from ..completion.artifacts import ReservationUnavailable
+from ..completion.retention import IntentOutcomes
 from ..persistence.commands import CommandConflict
 from .authority import AuthorityCommands
 from .claims import RuntimeLeases
@@ -54,6 +58,17 @@ def install_admission(app, admission, credentials, completion=None):
         return JSONResponse({"reason_code": "reservation_unavailable"}, status_code=503)
 
     if completion is not None:
+        outcomes = IntentOutcomes(admission.commands.engine, completion.artifacts.owner)
+
+        @app.post("/v1/completion-intents/outcome", response_model=RuntimeOutcome)
+        async def intent_outcome(request: Request):
+            principal = credentials.authenticate(request.headers.get("authorization"))
+            try:
+                binding = ReservationBinding.model_validate_json(await request.body())
+            except ValidationError as error:
+                raise RequestValidationError(error.errors()) from None
+            return await asyncio.to_thread(outcomes.lookup, principal, binding)
+
         @app.post("/v1/invocations/complete", response_model=CommandReceipt)
         async def complete(request: Request):
             principal = credentials.authenticate(request.headers.get("authorization"))

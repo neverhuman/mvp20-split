@@ -11,6 +11,7 @@ from ..lifecycle.model import RunBudget, RunState, TransitionError
 from ..lifecycle.receipts import RuntimeReply
 from ..persistence.commands import _bindings
 from .model import CompletionProposal, PreparedIntent
+from .retention import queue_terminal
 
 
 class IntentPreparation:
@@ -72,6 +73,7 @@ class IntentPreparation:
                     self.leases._changed(conn, params, run, RunBudget(run["budget_limit"], run["reserved"], run["spent"]),
                         uuid.uuid5(uuid.UUID(record.operation_id), "abort").hex,
                         {"kind": "intent_aborted", "intent_id": prepared.intent_id, "reason_code": str(error)})
+                    queue_terminal(conn, params, (prepared.intent_id,))
                 return self.leases._finish(conn, command, reply.reject(str(error)))
             conn.execute(text("INSERT INTO runtime.completion_intents "
                 "(tenant_id,project_id,intent_id,run_id,activation_id,attempt_id,fence,operation_id,semantic_sha256,output_bindings,status) "

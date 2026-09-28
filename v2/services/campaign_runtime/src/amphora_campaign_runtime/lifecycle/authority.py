@@ -6,6 +6,7 @@ import uuid
 from amphora_contracts_runtime import CancelRun, RevokeWorker
 from sqlalchemy import text
 
+from ..completion.retention import queue_terminal
 from ..persistence.commands import _bindings
 from .claims import RUN, SCOPE, RuntimeLeases, lease_from
 from .intents import AbortDecision
@@ -55,6 +56,7 @@ class AuthorityCommands:
                  "status": decision.status})
             conn.execute(text("UPDATE runtime.runs SET status=:status WHERE " + RUN),
                          {**params, "status": decision.status})
+            queue_terminal(conn, params, aborted)
             return self.leases._finish(conn, command, reply.accepted("run", request.run_id, revision))
         return self.commands.transact(transaction)
 
@@ -109,6 +111,7 @@ class AuthorityCommands:
                     target = "blocked" if "uncertain" in statuses else "failed" if statuses and all(
                         s in {"failed", "cancelled", "succeeded", "abstained"} for s in statuses) and "failed" in statuses else run["status"]
                     conn.execute(text("UPDATE runtime.runs SET status=:status WHERE " + RUN), {**binding, "status": target})
+                    queue_terminal(conn, binding, aborted)
             values = {**params, "worker": request.worker_id, "revision": policy.revision,
                 "operation": registered.operation_id, "event": uuid.uuid4().hex,
                 "payload": json.dumps({"kind": "worker_revoked", "worker_id": request.worker_id,

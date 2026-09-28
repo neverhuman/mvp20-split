@@ -15,6 +15,7 @@ from ..persistence.commands import _bindings
 from .artifacts import ReservationUnavailable, validate_receipt
 from .decision import CompletionDecision
 from .model import CompletionProposal, PreparedIntent
+from .retention import queue_terminal
 
 
 class CompletionCommitter:
@@ -98,6 +99,7 @@ class CompletionCommitter:
                     self.leases._changed(conn, params, run, RunBudget(run["budget_limit"], run["reserved"], run["spent"]),
                         uuid.uuid5(uuid.UUID(record.operation_id), "abort").hex,
                         {"kind": "intent_aborted", "intent_id": prepared.intent_id, "reason_code": str(error)})
+                    queue_terminal(conn, params, (prepared.intent_id,))
                 return self.leases._finish(conn, command, reply.reject(str(error)))
 
             values = {**params, "activation": row["activation_id"], "fence": row["fence"],
@@ -136,5 +138,6 @@ class CompletionCommitter:
             revision = self.leases._changed(conn, params, run, decision.budget, record.operation_id,
                 {"kind": "completion_accepted", "completion_id": prepared.intent_id,
                  "attempt_id": row["attempt_id"], "outcome": outcome.status, "run_status": status})
+            queue_terminal(conn, params, (prepared.intent_id,))
             return self.leases._finish(conn, command, reply.accepted("completion", prepared.intent_id, revision))
         return self.commands.transact(transaction)

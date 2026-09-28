@@ -28,6 +28,17 @@
         "renew",
         "complete"
       ]
+    },
+    {
+      "token_env": "AMPHORA_RUNTIME_OUTCOME_TOKEN",
+      "actor_id": "artifact-service",
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "demo"
+      },
+      "actions": [
+        "outcome"
+      ]
     }
   ],
   "fixtures": [
