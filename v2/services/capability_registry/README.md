@@ -1,6 +1,6 @@
 # Capability Registry
 
-- Status: BP-03.02 B2 boundary/policy implemented; B3 process verification active: private durable registration, revisioned inventory and authenticated ASGI API; independent executable hosting and deeper routing/race acceptance pending.
+- Status: BP-03.02 B2 boundary/policy implemented; V1 installed-host verification active: private durable registration, revisioned inventory and authenticated ASGI API; independent executable hosting and deeper routing/race acceptance pending.
 - Package: `amphora-capability-registry` 0.1.0.
 - Architecture: [Catalog](../../docs/Architecture/Capabilities/Catalog.md), [Tool Services](../../docs/Architecture/Capabilities/Tool_Services.md).
 
@@ -16,4 +16,4 @@ B3 verification: 72 owner identity/policy cases measured 100% line/branch covera
 
 Installed acceptance `2026-09-28 14:25:40`: both canonical fixtures/locks/decisions survive fresh registry installation; actual runtime/artifact peers consume the public descriptor projection and pass paired/REC-01..09. Full component gate 393 tests and nine independent builds pass. See [scoped closeout](../../docs/Audits/BP-03.01_Descriptor_Closeout.md). BP-03.02 now owns the durable registry boundary.
 
-Current B2 evidence: 114 registry tests (real PostgreSQL and authenticated TestClient where applicable), 96% expanded owner line/branch coverage of 711 statements/202 branches. Thirty tools contract cases and the B1 411-test/nine-build matrix remain the unchanged public-boundary baseline. Actual races/installed retained-state proof remain B3/V1. Historical .01 coverage below concerns only its smaller pure-policy denominator.
+Current B3 evidence: 120 registry tests (real PostgreSQL and authenticated TestClient where applicable), 96% expanded owner line/branch coverage of 711 statements/202 branches. Thirty tools contract cases and the B1 411-test/nine-build matrix remain the unchanged public-boundary baseline. Six actual owner-process races/interruption cases pass; installed HTTP retained-state proof remains V1. Historical .01 coverage below concerns only its smaller pure-policy denominator.
