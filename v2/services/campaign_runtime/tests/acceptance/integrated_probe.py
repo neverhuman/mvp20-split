@@ -12,6 +12,7 @@ import tempfile
 import uuid
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+from types import SimpleNamespace
 
 spec = importlib.util.spec_from_file_location("paired_support", Path(__file__).with_name("paired_support.py"))
 support = importlib.util.module_from_spec(spec)
@@ -105,8 +106,10 @@ def main():
                 return reply["body"]
 
             def start():
+                nonlocal active_run
                 admitted = rt("/v1/fixture-runs", command("runtime.admit_fixture", definition))
                 run = admitted["outcome"]["committed"]["object_id"]
+                active_run = run
                 claimed = worker("/v1/invocations/claim", command("runtime.claim", {
                     "run_id": run, "worker_id": "worker", "tool": invocation["tool"], "lease_seconds": 60}, "worker"))
                 work = claimed["outcome"]["invocation"]
@@ -123,6 +126,16 @@ def main():
                     capture_output=True, text=True, timeout=30)
                 assert result.returncode == 0, "Installed delivery process failed"
                 return json.loads(result.stdout)
+
+            if len(sys.argv) > 2:
+                case_spec = importlib.util.spec_from_file_location("recovery_cases", Path(__file__).with_name("recovery_cases.py"))
+                cases = importlib.util.module_from_spec(case_spec)
+                case_spec.loader.exec_module(cases)
+                cases.exercise(SimpleNamespace(scope=scope, tokens=tokens, schema=schema, command=command,
+                    artifact=artifact, runtime=runtime, proxy=proxy, art=art, rt=rt, start=start, deliver=deliver,
+                    worker=worker, output_ref=output_ref, support=support, fault_script=Path(sys.argv[2]),
+                    evidence_dir=Path(sys.argv[3]), packages=json.loads(os.environ["AMPHORA_TESTED_PACKAGES"])))
+                return
 
             active_run, complete = start()
             receipt = worker("/v1/invocations/complete", complete)

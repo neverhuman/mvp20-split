@@ -42,10 +42,27 @@ def decoded(*args, **kwargs):
 
 class Process:
     def __init__(self, python, module, config, env, cwd, port):
-        self.child = subprocess.Popen([str(python), "-I", "-m", module, "serve", "--config", str(config),
-                                       "--port", str(port)], cwd=cwd, env=env,
-                                      stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
+        self.python, self.module, self.config = str(python), module, str(config)
+        self.env, self.cwd, self.port = env, cwd, port
         self.endpoint = f"http://127.0.0.1:{port}"
+        self.start()
+
+    def start(self, fault_script=None, fault=None):
+        if hasattr(self, "child") and self.child.poll() is None:
+            raise ValueError("Stop owned process before replacement")
+        command = [self.python, "-I", "-m", self.module, "serve", "--config", self.config, "--port", str(self.port)]
+        if fault_script is not None:
+            command = [self.python, "-I", str(fault_script)]
+        self.child = subprocess.Popen(command, cwd=self.cwd, env=self.env, text=True,
+            stdin=subprocess.PIPE if fault_script is not None else None,
+            stdout=subprocess.PIPE if fault_script is not None else subprocess.DEVNULL, stderr=subprocess.PIPE)
+        if fault_script is not None:
+            self.child.stdin.write(json.dumps({"config": self.config, "port": self.port, "fault": fault}) + "\n")
+            self.child.stdin.flush()
+
+    def kill(self):
+        self.child.kill()
+        self.child.communicate(timeout=10)
 
     def ready(self, token):
         deadline = time.monotonic() + 30

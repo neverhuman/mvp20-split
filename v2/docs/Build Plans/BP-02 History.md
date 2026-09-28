@@ -188,3 +188,5 @@ The preliminary 34-child-delivery denominator included pure design gates S1 and 
 | 2026-09-23 11:04:44 | Expanded MBT into initial program dashboard with nine queued planning areas, dependency gates, four milestones and exact next planning task; implementation unactivated | This tracker; [plan template](../Templates/Build%20Plan%20Template.md) |
 
 | 2026-09-23 19:55:48 | BP-01 complete: 39 tests, four independent wheel installs, strict schema/API boundary and replacement docs; archived after scoped audit | [Plan](Completed/BP-01%20Contract%20and%20Service%20Foundations.md), [audit](../Audits/BP-01_Foundation_Closeout.md) |
+
+| 2026-09-24 09:01:20 | BP-01A complete at 100%, all four phases 100%; module test ownership, granular coverage, extracted v1 graph and scaffold; 44 tests pass | [Plan](Completed/BP-01A%20Module%20Tests%20and%20V1%20Graph%20Baseline.md), [audit](../Audits/BP-01A_Test_and_Graph_Baseline_Closeout.md) |

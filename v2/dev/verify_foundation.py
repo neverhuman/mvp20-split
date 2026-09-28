@@ -1,6 +1,7 @@
 """One local foundation gate; optional isolated wheel builds/install smokes."""
 
 import argparse
+import hashlib
 import json
 import os
 import shutil
@@ -101,6 +102,17 @@ def independent_builds(uv):
             if acceptance.returncode:
                 raise SystemExit("Installed paired acceptance failed: " + acceptance.stderr[-3500:])
             print(acceptance.stdout.strip())
+            artifact_project = installed["amphora_data_artifacts"][1]
+            evidence_dir = ROOT / ".test-results/recovery"
+            evidence_dir.mkdir(parents=True, exist_ok=True)
+            paired_environment["AMPHORA_TESTED_PACKAGES"] = json.dumps({w.name: hashlib.sha256(w.read_bytes()).hexdigest()
+                                                                      for w in wheels.glob("*.whl")})
+            recovery = subprocess.run([str(runtime_python), "-I", str(runtime_project / "tests/acceptance/integrated_probe.py"),
+                str(artifact_python), str(artifact_project / "tests/acceptance/fault_host.py"), str(evidence_dir)],
+                cwd=root, env=paired_environment, capture_output=True, text=True, timeout=180)
+            if recovery.returncode:
+                raise SystemExit("Installed recovery acceptance failed: " + recovery.stderr[-4000:])
+            print(recovery.stdout.strip())
 
 
 def main():
