@@ -1,0 +1,13 @@
+{
+  "status": "pending_authoritative_handler_tests",
+  "owner": "BP-02.04/BP-02.05",
+  "cases": [
+    "expired_attempt",
+    "stale_fence",
+    "revoked_worker",
+    "cross_scope_input",
+    "duplicate_activation",
+    "wrong_tool_release",
+    "concurrent_budget_spend"
+  ]
+}

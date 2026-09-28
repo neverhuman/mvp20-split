@@ -1,0 +1,45 @@
+[project]
+name = "amphora-foundation-verification"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "amphora-contracts-core==0.1.0",
+    "amphora-contracts-tools==0.1.0",
+    "amphora-contracts-campaigns==0.1.0",
+    "amphora-campaign-runtime==0.1.0",
+    "pytest>=8,<9",
+    "jsonschema>=4.23,<5",
+    "httpx>=0.28,<1",
+    "ruff>=0.11,<1",
+    "pytest-cov>=6,<8",
+    "amphora-contracts-commands",
+    "amphora-contracts-runtime",
+    "amphora-contracts-artifacts",
+    "amphora-data-artifacts",
+]
+
+[tool.uv]
+package = false
+link-mode = "copy"
+
+[tool.uv.sources]
+amphora-contracts-core = { path = "../contracts/core", editable = true }
+amphora-contracts-tools = { path = "../contracts/tools", editable = true }
+amphora-contracts-campaigns = { path = "../contracts/campaigns", editable = true }
+amphora-campaign-runtime = { path = "../services/campaign_runtime", editable = true }
+amphora-contracts-commands = { path = "../contracts/commands", editable = true }
+amphora-contracts-runtime = { path = "../contracts/runtime", editable = true }
+amphora-contracts-artifacts = { path = "../contracts/artifacts", editable = true }
+amphora-data-artifacts = { path = "../services/data_artifacts", editable = true }
+
+[tool.pytest.ini_options]
+markers = ["postgres: requires explicit local PostgreSQL fixture opt-in"]
+testpaths = ["../services/data_artifacts/tests", "../contracts/runtime/tests", "../contracts/artifacts/tests", "../contracts/commands/tests", "../contracts/core/tests", "../contracts/tools/tests", "../contracts/campaigns/tests", "../services/campaign_runtime/tests", "tests"]
+addopts = "--import-mode=importlib"
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 110
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "B"]

@@ -1,0 +1,133 @@
+[
+  {
+    "family": "artifacts.begin_upload",
+    "model": "BeginUpload",
+    "command": {
+      "identity": {
+        "actor_id": "worker-1",
+        "command_id": "cmd-1",
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "demo"
+        },
+        "command_family": "artifacts.begin_upload"
+      },
+      "payload": {
+        "content": {
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "size_bytes": 42,
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "synthetic.value",
+            "version": "1",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        }
+      }
+    }
+  },
+  {
+    "family": "artifacts.finalize",
+    "model": "FinalizeArtifact",
+    "command": {
+      "identity": {
+        "actor_id": "worker-1",
+        "command_id": "cmd-1",
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "demo"
+        },
+        "command_family": "artifacts.finalize"
+      },
+      "payload": {
+        "upload_id": "upload-1",
+        "content": {
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "size_bytes": 42,
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "synthetic.value",
+            "version": "1",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        }
+      }
+    }
+  },
+  {
+    "family": "artifacts.reserve",
+    "model": "ReserveArtifact",
+    "command": {
+      "identity": {
+        "actor_id": "worker-1",
+        "command_id": "cmd-1",
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "demo"
+        },
+        "command_family": "artifacts.reserve"
+      },
+      "payload": {
+        "artifact": {
+          "artifact_id": "input-1",
+          "scope": {
+            "tenant_id": "internal",
+            "project_id": "demo"
+          },
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "synthetic.value",
+            "version": "1",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "size_bytes": 42
+        },
+        "intent": {
+          "runtime_owner": "campaign-runtime",
+          "intent_id": "intent-1",
+          "semantic_completion_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "output_binding": "output-1"
+        }
+      }
+    }
+  },
+  {
+    "family": "artifacts.confirm",
+    "model": "ConfirmRetention",
+    "command": {
+      "identity": {
+        "actor_id": "worker-1",
+        "command_id": "cmd-1",
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "demo"
+        },
+        "command_family": "artifacts.confirm"
+      },
+      "payload": {
+        "reservation_id": "reserve-1",
+        "intent_id": "intent-1",
+        "runtime_receipt_id": "receipt-1"
+      }
+    }
+  },
+  {
+    "family": "artifacts.reconcile",
+    "model": "ReconcileReservation",
+    "command": {
+      "identity": {
+        "actor_id": "worker-1",
+        "command_id": "cmd-1",
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "demo"
+        },
+        "command_family": "artifacts.reconcile"
+      },
+      "payload": {
+        "reservation_id": "reserve-1"
+      }
+    }
+  }
+]

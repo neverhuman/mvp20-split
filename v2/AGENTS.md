@@ -26,6 +26,8 @@ Short continuity notes for future relaunches so work can resume from the extract
 
 ## Canonical Execution Rules
 
+- Enforce strict behavioral and functional isolation: primary services and scientific tools have focused packages, public versioned contracts, private state/dependencies, independent builds/tests and replacement READMEs. Do not introduce a catch-all backend, shared business/ORM layer, private cross-service imports or direct access to another service's tables. Use System Service Isolation and Capability Tool Services designs; runtime alone owns execution acceptance.
+
 - Initial product scope is internal/demo, one user and one active autonomous campaign, with domain-general tools and likely later bio-available-polymer use. Human changes take effect between campaigns; do not introduce routine in-campaign human approval gates. Synthetic fixtures are acceptable while scientific sources remain TBA, with no scientific-validity claim.
 - Module rewrites are expected. Maintain the source-adjacent README as a sufficient rebuild boundary specification: public contracts, invariants, non-responsibilities, dependencies, state, failure semantics, applicability and replacement acceptance/cutover. Preserve or explicitly version boundaries when replacing implementation. This product direction does not authorize deleting v1 or unrequested files/data.
 
@@ -84,3 +86,8 @@ Treat `Restore.md` as the active implementation checkpoint and next-step handoff
 
 Read in this order:
 1. [`Architecture.md`]
+
+## Test Ownership and Tracker Mirrors
+
+- Keep tests under their owning module's `tests/`, with behavioral subfolders and focused commands. Register source/test ownership in `dev/test_scopes.json`; maintain behavior/coverage gaps in module READMEs. Shared test tooling is owned by dev. E2E is a separate acceptance tier.
+- Canonical plan trackers always expose numeric overall and per-phase completion. Mirror those values in MBT for every in-flight plan whenever progress/scope changes and before handoff/commit; archive completed rows.

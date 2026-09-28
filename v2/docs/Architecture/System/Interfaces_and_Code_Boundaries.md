@@ -8,7 +8,7 @@
 
 [Contract Architecture](Contract_Architecture.md) owns Pydantic v2 boundary definitions, published JSON Schema, family ownership and cross-language compatibility. This document owns the operations and dependency boundaries that consume those contracts.
 
-Initial external commands pass through the control API into application handlers. Transport routes and implementation language remain to be finalized, but the following semantic operations are concrete boundaries:
+Initial external commands pass through the control gateway to the owning service API/application handlers. Runtime commands terminate in the campaign-runtime service; scientific domain commands terminate in their respective owners. Transport routes and implementation language remain to be finalized, but the following semantic operations are concrete boundaries:
 
 | Operation | Required binding | Result / failure |
 |---|---|---|
@@ -27,6 +27,8 @@ Queries specify object/revision or live mode, access scope, projection generatio
 
 ## Internal Dependency Direction
 
+Graph Runner's public engagement seam sends `EngagementRequest` to Agent Planning and receives `EngagementProposal`; Campaign Runtime records `SupervisionDecision` through its own conditional command boundary. The contracts bind decision identity/scope, frontier/input versions and authority. These semantic names remain proposed schemas, not implemented routes. See [Graph Runner](Graph_Runner.md).
+
 ```text
 transport / process entry points
     -> application command handlers and transaction boundaries
@@ -43,31 +45,30 @@ Domain logic cannot import the web framework or provider SDK as its primary beha
 
 ```text
 v2/
-  apps/
-    control_api/          # transport, authentication and read/command endpoints
-    runtime_coordinator/  # durable readiness, attempt dispatch and recovery loop
-    worker_runner/        # isolated capability execution and completion reporting
-    projection_worker/    # index/UI/lineage builds and recoverable delivery
-    studio/               # browser graph and role workspaces
-  engine/
-    graph/                # typed definitions, compiler, control instructions
-    runtime/              # interpreter, activation paths, state/attempt policies
-    application/          # command handlers and transaction orchestration
-    domains/              # research, knowledge, catalog, agent and data behaviors
-    ports/                # repository, artifact, identity and invocation contracts
-  adapters/
-    persistence/          # transactional implementation and migrations
-    artifacts/            # verified local/object-store payload access
-    models/               # provider/local inference adapters
-    external/             # sources, instruments and laboratory protocols
-  capabilities/           # individually versioned scientific tools and fixtures
-  contracts/              # versioned transport schemas and compatibility fixtures
+  services/
+    control_gateway/
+    campaign_runtime/    # owns compiler, run state, dispatch, commits and budget
+    research/
+    knowledge/
+    data_artifacts/
+    capability_registry/
+    agent_planning/
+    projection_serving/
+    identity_policy/
+  tools/
+    solvency/            # own README, manifest, scientific code, contracts/tests, image
+    <scientific-tool>/   # same delivery boundary, tool-specific science
+  studio/                # browser application and focused view modules
+  contracts/             # decomposed, independently versioned contract families
+  sdk/
+    tool_protocol/       # transport/claim/artifact mechanisms, no scientific policy
+    clients/             # generated/public clients, no service internals
+  deploy/                # composition manifests referencing pinned service/tool images
   tests/
-    contract/
-    concurrency_recovery/
-    campaign_fixtures/
-    user_workflows/
+    integration/         # public-boundary, recovery and compatibility scenarios
 ```
+
+Each service owns its internal domain/application/adapters, migrations, dependency manifest, tests and README. Public clients/contracts are the only cross-service dependencies. No broad `backend/`, `engine/domains/` or shared repository/ORM package is permitted. Independent builds, forbidden-import checks and state-access tests enforce the boundaries described in [Service Isolation](Service_Isolation.md). Runtime API and coordinator entry points may share campaign-runtime internals because they belong to that single owner.
 
 This is a proposed source structure, not directories already populated with code. Each meaningful implementation module gets a README describing actual behavior and linking to its intended architecture. The domain documents do not imply one package per paragraph or one process per domain. Language/package conventions may adjust folder names while preserving dependencies and ownership.
 
@@ -81,4 +82,4 @@ Control API, coordinator and workers negotiate supported invocation/contract ver
 
 ## Implementation Decisions to Close Next
 
-Pydantic v2 and versioned JSON Schema are the contract direction. Remaining choices include control/runtime language outside that Python boundary layer, web transport/framework, serialization profile and supported version window, PostgreSQL access/migration tooling and first artifact backend. Choose the first capability adapter and the exact synthetic graph fixture. Establish the first profile's limits through tests rather than fabricate latency/scale targets. Do not scaffold all proposed folders until their owning phase has a bounded deliverable.
+[Foundation Decisions](Foundation_Decisions.md) selects Python 3.12, Pydantic v2, FastAPI/Uvicorn, PostgreSQL with psycopg 3/SQLAlchemy 2/Alembic and independent package manifests. [State and Consistency](State_and_Consistency.md) links the BP-02 command and artifact protocol decisions. Its first artifact backend is an owned durable local volume; protocol and database evidence remain pending BP-02 gates. General capability routing and graph compilation remain BP-03/04; establish measured profile limits through tests rather than fabricate latency/scale targets. Do not scaffold all proposed folders until their owning phase has a bounded deliverable.

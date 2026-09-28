@@ -2,6 +2,10 @@
 
 This map classifies `Artifacts/` inputs by the architecture signal they provide.
 
+## Additional Code Reference
+
+[Amphora Lab insights and source pins](../Build%20Plans/References/Amphora_Lab_Insights.md) records the user-authorized read-only review of `Z:\Amphora_ALB\amphora_lab-main`. Useful additions are processing-sensitive material identity, question-to-evidence links, interpretation traces, polymer vocabulary and named scientific views. The owning queued plans now include specific contracts and acceptance cases. This reference is not a validated optimizer, lab dispatcher or knowledge-replay implementation; no scientific authority or production-readiness claim is inherited.
+
 ## Primary Starting Inputs
 
 | Artifact | Contribution |

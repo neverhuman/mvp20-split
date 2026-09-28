@@ -4,7 +4,7 @@
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
 - Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
 - Parent: [Domain overview](Data_Architecture.md)
-- Requirement source: [Product Requirements](../Product_Requirements.md#data-sources-and-campaign-acquisition)
+- Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#data-sources-and-campaign-acquisition)
 
 ## Owned Contract
 
@@ -44,4 +44,4 @@ A paginated API changes between pages. If no stable snapshot/token exists, recor
 
 ## Design Basis and Open Decisions
 
-[Data Sources and Acquisition](../Data_Sources_and_Acquisition.md) defines source/binding/artifact contracts. Remaining decisions: selected connectors, snapshot guarantees, artifact storage implementation and cleanup schedules. Each adapter's validation and rights constraints must be independent of its transport success.
+[Data Sources and Acquisition](../Requirements/Data_Sources_and_Acquisition.md) defines source/binding/artifact contracts. Remaining decisions: selected connectors, snapshot guarantees, artifact storage implementation and cleanup schedules. Each adapter's validation and rights constraints must be independent of its transport success.

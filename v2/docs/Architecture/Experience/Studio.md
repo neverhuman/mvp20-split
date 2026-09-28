@@ -4,7 +4,7 @@
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
 - Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
 - Parent: [Domain overview](Experience_Architecture.md)
-- Requirement source: [Product Requirements](../Product_Requirements.md#human-graph-studio)
+- Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#human-graph-studio)
 
 ## Owned Contract
 
@@ -47,3 +47,7 @@ A scientist drafts a node change while a campaign runs. The editor preserves the
 ## Design Basis and Open Decisions
 
 Human Graph Studio requirements define editing, traversal and intervention. Remaining decisions: graph rendering/layout technology, server projection/query contract, large-context interaction budgets and representative usability tasks. A fast canvas is not proof that users can understand or safely change the campaign.
+
+## Interaction Reference Patterns
+
+[Research Studio Interaction References](Interaction_References.md) maps the user-supplied ComfyUI, LangGraph/LangSmith Studio, Node-RED, Dagster, Bloom, W&B and MLflow references into Design, Monitor, Explore and Compare modes. The map names prototype tasks and delivery owners while preserving immutable active campaigns, source-first knowledge authoring and evidence-aware comparison.

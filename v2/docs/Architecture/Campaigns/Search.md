@@ -4,7 +4,7 @@
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
 - Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
 - Parent: [Domain overview](Campaign_Architecture.md)
-- Requirement source: [Product Requirements](../Product_Requirements.md#campaign-evolution-and-cross-project-discovery)
+- Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#campaign-evolution-and-cross-project-discovery)
 
 ## Owned Contract
 

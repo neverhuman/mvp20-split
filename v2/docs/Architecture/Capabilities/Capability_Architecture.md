@@ -2,7 +2,7 @@
 
 - Document role: intended domain architecture; not an implemented code-module contract
 - Design status: proposed architecture; implementation not claimed
-- Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
+- Last reviewed: `2026-09-23 09:41:20` (America/Chicago)
 - Parent: [Master Architecture](../../../Architecture.md)
 
 ## Scope and Ownership
@@ -25,6 +25,7 @@ Tool implementation, tool deployment and campaign node instance are different id
 
 - [Catalog and Capability Lifecycle](Catalog.md)
 - [Tool Invocation and State Boundaries](Execution.md)
+- [Independently Deployable Tool Services](Tool_Services.md)
 
 ## Delegation Rule
 

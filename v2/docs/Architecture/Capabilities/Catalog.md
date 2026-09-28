@@ -4,7 +4,7 @@
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
 - Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
 - Parent: [Domain overview](Capability_Architecture.md)
-- Requirement source: [Product Requirements](../Product_Requirements.md#extensible-capability-node-platform)
+- Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#extensible-capability-node-platform)
 
 ## Owned Contract
 
@@ -34,6 +34,8 @@ A capability version binds implementation digest, public contracts, model/rule/d
 
 ## Matching and Registration Flow
 
+The node/tool index is this registry, not a duplicate source of truth. [Tool Services](Tool_Services.md) defines capability/release/deployment/replica/activation identities and deployment descriptors. Replication changes available capacity, not scientific capability count or authority. Keep immutable reviewed descriptors separate from live endpoint/health inventory.
+
 A capability need specifies the scientific question, typed inputs, required outputs and decision authority. Deterministic filtering produces eligible versions and reason-coded rejections. Semantic ranking helps choose among eligible alternatives. Composition can satisfy a need only if all constituent evidence and compatibility requirements survive the boundary.
 
 A new tool enters as draft, then evaluated, shadow/limited-active and active according to policy. Signed packaging, integration tests and scientific validation contribute different evidence. Registration does not automatically deploy, activate or grant ranking authority.
@@ -44,4 +46,4 @@ A descriptor claims biological applicability but its validation packet covers on
 
 ## Design Basis and Open Decisions
 
-[Tool Specification](../Scientific_Tools_and_Graph_Execution.md) defines the semantic invocation contract. Remaining choices: package format, compatibility version rules, trust roots and descriptor-index implementation. The 300-descriptor acceptance fixture tests discovery and boundaries, not scientific readiness of a large tool fleet.
+[Tool Specification](../Requirements/Scientific_Tools_and_Graph_Execution.md) defines the semantic invocation contract. Remaining choices: package format, compatibility version rules, trust roots and descriptor-index implementation. The 300-descriptor acceptance fixture tests discovery and boundaries, not scientific readiness of a large tool fleet.

@@ -1,0 +1,189 @@
+{
+  "schema_version": "1",
+  "campaign_id": "fixture-v1-solver",
+  "revision": 1,
+  "scope": {
+    "tenant_id": "internal",
+    "project_id": "baseline"
+  },
+  "body": {
+    "nodes": [
+      {
+        "kind": "invoke",
+        "node_id": "initialize",
+        "tool": {
+          "capability_id": "fixture.v1.initialize",
+          "release": "0.1.0",
+          "image_sha256": "4b3f2b69a35fd4c09287de5a1d1f11b4e651e8651fbde1d01fdd5050a8bc4a14",
+          "contract_version": "1"
+        }
+      },
+      {
+        "kind": "invoke",
+        "node_id": "seed_population",
+        "tool": {
+          "capability_id": "fixture.v1.seed_population",
+          "release": "0.1.0",
+          "image_sha256": "ad5a5dded0746c82588059d2c94e823eb4b097f5fca1ab2c3221a5740a9e2dca",
+          "contract_version": "1"
+        }
+      },
+      {
+        "kind": "invoke",
+        "node_id": "score_initial",
+        "tool": {
+          "capability_id": "fixture.v1.score_initial",
+          "release": "0.1.0",
+          "image_sha256": "5607d6d13497c85b6e9b4d2dd1fc8c02724e683ace508af0fc3383097d56e280",
+          "contract_version": "1"
+        }
+      },
+      {
+        "kind": "invoke",
+        "node_id": "rank_initial",
+        "tool": {
+          "capability_id": "fixture.v1.rank_initial",
+          "release": "0.1.0",
+          "image_sha256": "06026128b717b980180c9fe19a773819723f3cc08368d6740b239f2c0fc8eba0",
+          "contract_version": "1"
+        }
+      },
+      {
+        "kind": "iterate",
+        "node_id": "generations",
+        "max_iterations": 2,
+        "body": {
+          "nodes": [
+            {
+              "kind": "invoke",
+              "node_id": "select_parents",
+              "tool": {
+                "capability_id": "fixture.v1.select_parents",
+                "release": "0.1.0",
+                "image_sha256": "53b00eb4fd415be36ecde15826308d63d1cbfb49976c98cbc54f899de4ec79e8",
+                "contract_version": "1"
+              }
+            },
+            {
+              "kind": "invoke",
+              "node_id": "mutate",
+              "tool": {
+                "capability_id": "fixture.v1.mutate",
+                "release": "0.1.0",
+                "image_sha256": "298a084562c71faef6ed70f53df5423ae1c8c9ffbdce17e191db5a8b582d0e4c",
+                "contract_version": "1"
+              }
+            },
+            {
+              "kind": "invoke",
+              "node_id": "score_generation",
+              "tool": {
+                "capability_id": "fixture.v1.score_generation",
+                "release": "0.1.0",
+                "image_sha256": "fa270721297f4d0db89e3ef95fc8d239113842866841881496d5778665d968d7",
+                "contract_version": "1"
+              }
+            },
+            {
+              "kind": "invoke",
+              "node_id": "retain_and_rank",
+              "tool": {
+                "capability_id": "fixture.v1.retain_and_rank",
+                "release": "0.1.0",
+                "image_sha256": "47887622f6a43fbabb69197bf24b59862dd617a851f494ada47c7ee375b0ce69",
+                "contract_version": "1"
+              }
+            },
+            {
+              "kind": "invoke",
+              "node_id": "checkpoint",
+              "tool": {
+                "capability_id": "fixture.v1.checkpoint",
+                "release": "0.1.0",
+                "image_sha256": "d12f1a581aaec1fcdaa87fc002f25968cea57aa3ef9f11247d359e542c10c335",
+                "contract_version": "1"
+              }
+            },
+            {
+              "kind": "finish",
+              "node_id": "done"
+            }
+          ],
+          "edges": [
+            {
+              "source": "select_parents",
+              "target": "mutate",
+              "route": "next"
+            },
+            {
+              "source": "mutate",
+              "target": "score_generation",
+              "route": "next"
+            },
+            {
+              "source": "score_generation",
+              "target": "retain_and_rank",
+              "route": "next"
+            },
+            {
+              "source": "retain_and_rank",
+              "target": "checkpoint",
+              "route": "next"
+            },
+            {
+              "source": "checkpoint",
+              "target": "done",
+              "route": "next"
+            }
+          ]
+        }
+      },
+      {
+        "kind": "invoke",
+        "node_id": "finalize",
+        "tool": {
+          "capability_id": "fixture.v1.finalize",
+          "release": "0.1.0",
+          "image_sha256": "c7ef7edb677d565c6f308fe4a231f800dd3937748919506e1adedf5b46adcd0d",
+          "contract_version": "1"
+        }
+      },
+      {
+        "kind": "finish",
+        "node_id": "done"
+      }
+    ],
+    "edges": [
+      {
+        "source": "initialize",
+        "target": "seed_population",
+        "route": "next"
+      },
+      {
+        "source": "seed_population",
+        "target": "score_initial",
+        "route": "next"
+      },
+      {
+        "source": "score_initial",
+        "target": "rank_initial",
+        "route": "next"
+      },
+      {
+        "source": "rank_initial",
+        "target": "generations",
+        "route": "next"
+      },
+      {
+        "source": "generations",
+        "target": "finalize",
+        "route": "next"
+      },
+      {
+        "source": "finalize",
+        "target": "done",
+        "route": "next"
+      }
+    ]
+  }
+}

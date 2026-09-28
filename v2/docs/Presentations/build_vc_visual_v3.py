@@ -58,7 +58,7 @@ def base(kicker,title,sub='',state='INVESTMENT THESIS'):
 def band(s,t,c=TEAL,y=6.36):
  box(s,.52,y,12.29,.43,PANEL2);text(s,.72,y+.085,11.9,.31,t,14,c,True)
 def notes(s,t,ids=()):
- body=t+'\n\nAmphora architecture is a proposed product direction. Existing numerical search/evidence code has been source-reviewed; full graph execution, biological evaluators and pathway evolution are not established as delivered. No commercial performance or exclusive novelty is claimed.\nLocal basis: docs/Architecture/Graph_Native_Research_Engine.md; Product_Requirements.md; Evolutionary_Code_Reuse_Baseline.md.\nCompetitive diligence: docs/Presentations/VC_Positioning_Research.md.\n'
+ body=t+'\n\nAmphora architecture is a proposed product direction. Existing numerical search/evidence code has been source-reviewed; full graph execution, biological evaluators and pathway evolution are not established as delivered. No commercial performance or exclusive novelty is claimed.\nLocal basis: docs/Architecture/Requirements/Graph_Native_Research_Engine.md; Product_Requirements.md; Evolutionary_Code_Reuse_Baseline.md.\nCompetitive diligence: docs/Presentations/VC_Positioning_Research.md.\n'
  for key in ids:body+=f'\n[{key}] {SOURCES[key][0]}: {SOURCES[key][1]} (accessed 2026-09-16; vendor description)'
  s.notes_slide.notes_text_frame.text=body
 def refs(s,ids,y=6.88):

@@ -1,0 +1,58 @@
+{
+  "core": {
+    "tests": "contracts/core/tests",
+    "coverage_sources": [
+      "contracts/core/src/amphora_contracts_core"
+    ]
+  },
+  "tools": {
+    "tests": "contracts/tools/tests",
+    "coverage_sources": [
+      "contracts/tools/src/amphora_contracts_tools"
+    ]
+  },
+  "campaigns": {
+    "tests": "contracts/campaigns/tests",
+    "coverage_sources": [
+      "contracts/campaigns/src/amphora_contracts_campaigns"
+    ]
+  },
+  "runtime": {
+    "tests": "services/campaign_runtime/tests",
+    "coverage_sources": [
+      "services/campaign_runtime/src/amphora_campaign_runtime"
+    ]
+  },
+  "dev": {
+    "tests": "dev/tests",
+    "coverage_sources": [
+      "check_boundaries",
+      "export_schemas",
+      "run_tests"
+    ]
+  },
+  "commands": {
+    "tests": "contracts/commands/tests",
+    "coverage_sources": [
+      "contracts/commands/src/amphora_contracts_commands"
+    ]
+  },
+  "contracts-runtime": {
+    "tests": "contracts/runtime/tests",
+    "coverage_sources": [
+      "contracts/runtime/src/amphora_contracts_runtime"
+    ]
+  },
+  "contracts-artifacts": {
+    "tests": "contracts/artifacts/tests",
+    "coverage_sources": [
+      "contracts/artifacts/src/amphora_contracts_artifacts"
+    ]
+  },
+  "data-artifacts": {
+    "tests": "services/data_artifacts/tests",
+    "coverage_sources": [
+      "services/data_artifacts/src/amphora_data_artifacts"
+    ]
+  }
+}

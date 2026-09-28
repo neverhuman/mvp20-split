@@ -185,3 +185,5 @@ id_rsa
 /v2/.idea/
 /v2/.tmp-deck-review-*/
 /v2/Slide*.PNG
+
+/v2/.test-results/

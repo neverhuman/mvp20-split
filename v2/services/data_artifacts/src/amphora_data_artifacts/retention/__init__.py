@@ -1,0 +1,1 @@
+"""Private protective reservation lifecycle."""

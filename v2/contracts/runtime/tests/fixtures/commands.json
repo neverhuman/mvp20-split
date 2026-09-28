@@ -1,0 +1,192 @@
+[
+  {
+    "family": "runtime.admit_fixture",
+    "model": "AdmitFixtureRun",
+    "command": {
+      "identity": {
+        "actor_id": "worker-1",
+        "command_id": "cmd-1",
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "demo"
+        },
+        "command_family": "runtime.admit_fixture"
+      },
+      "payload": {
+        "fixture_id": "synthetic-1",
+        "plan_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "budget": {
+          "limit": 5
+        },
+        "invocations": [
+          {
+            "node_id": "n1",
+            "activation_id": "iteration-1.n1",
+            "invocation_id": "i1",
+            "tool": {
+              "capability_id": "synthetic.evaluate",
+              "release": "0.1.0",
+              "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+              "contract_version": "1"
+            },
+            "inputs": [
+              {
+                "port": "value",
+                "artifact": {
+                  "artifact_id": "input-1",
+                  "scope": {
+                    "tenant_id": "internal",
+                    "project_id": "demo"
+                  },
+                  "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "schema_id": "synthetic.value",
+                    "version": "1",
+                    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                  },
+                  "size_bytes": 42
+                }
+              }
+            ],
+            "timeout_seconds": 30
+          }
+        ]
+      }
+    }
+  },
+  {
+    "family": "runtime.claim",
+    "model": "ClaimInvocation",
+    "command": {
+      "identity": {
+        "actor_id": "worker-1",
+        "command_id": "cmd-1",
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "demo"
+        },
+        "command_family": "runtime.claim"
+      },
+      "payload": {
+        "run_id": "r1",
+        "worker_id": "worker-1",
+        "tool": {
+          "capability_id": "synthetic.evaluate",
+          "release": "0.1.0",
+          "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "contract_version": "1"
+        }
+      }
+    }
+  },
+  {
+    "family": "runtime.renew",
+    "model": "RenewAttempt",
+    "command": {
+      "identity": {
+        "actor_id": "worker-1",
+        "command_id": "cmd-1",
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "demo"
+        },
+        "command_family": "runtime.renew"
+      },
+      "payload": {
+        "attempt": {
+          "run_id": "r1",
+          "invocation_id": "i1",
+          "attempt_id": "a1",
+          "fence": 1
+        }
+      }
+    }
+  },
+  {
+    "family": "runtime.complete",
+    "model": "CompleteInvocation",
+    "command": {
+      "identity": {
+        "actor_id": "worker-1",
+        "command_id": "cmd-1",
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "demo"
+        },
+        "command_family": "runtime.complete"
+      },
+      "payload": {
+        "run_id": "r1",
+        "completion": {
+          "schema_version": "1",
+          "invocation_id": "i1",
+          "attempt_id": "a1",
+          "fence": 1,
+          "outcome": {
+            "status": "succeeded",
+            "outputs": [
+              {
+                "port": "value",
+                "artifact": {
+                  "artifact_id": "input-1",
+                  "scope": {
+                    "tenant_id": "internal",
+                    "project_id": "demo"
+                  },
+                  "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "schema_id": "synthetic.value",
+                    "version": "1",
+                    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                  },
+                  "size_bytes": 42
+                }
+              }
+            ],
+            "checkpoint": null
+          }
+        }
+      }
+    }
+  },
+  {
+    "family": "runtime.cancel",
+    "model": "CancelRun",
+    "command": {
+      "identity": {
+        "actor_id": "worker-1",
+        "command_id": "cmd-1",
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "demo"
+        },
+        "command_family": "runtime.cancel"
+      },
+      "payload": {
+        "run_id": "r1",
+        "reason_code": "operator_cancelled"
+      }
+    }
+  },
+  {
+    "family": "runtime.revoke_worker",
+    "model": "RevokeWorker",
+    "command": {
+      "identity": {
+        "actor_id": "worker-1",
+        "command_id": "cmd-1",
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "demo"
+        },
+        "command_family": "runtime.revoke_worker"
+      },
+      "payload": {
+        "worker_id": "worker-1",
+        "reason_code": "revoked"
+      }
+    }
+  }
+]

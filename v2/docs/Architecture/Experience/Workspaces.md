@@ -4,7 +4,7 @@
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
 - Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
 - Parent: [Domain overview](Experience_Architecture.md)
-- Requirement source: [Product Requirements](../Product_Requirements.md#user-experience-and-role-workspaces)
+- Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#user-experience-and-role-workspaces)
 
 ## Owned Contract
 

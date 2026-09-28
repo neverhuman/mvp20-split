@@ -1,0 +1,29 @@
+[project]
+name = "amphora-data-artifacts"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "sqlalchemy>=2,<3",
+    "psycopg[binary]>=3,<4",
+    "alembic>=1.16,<2",
+    "amphora-contracts-commands",
+    "amphora-contracts-core",
+    "amphora-contracts-artifacts",
+    "fastapi>=0.115,<1",
+    "uvicorn>=0.34,<1",
+]
+
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/amphora_data_artifacts"]
+
+[tool.amphora]
+public-imports = ["amphora-contracts-commands", "amphora-contracts-core", "amphora-contracts-artifacts"]
+
+[tool.uv.sources]
+amphora-contracts-commands = { path = "../../contracts/commands", editable = true }
+amphora-contracts-core = { path = "../../contracts/core", editable = true }
+amphora-contracts-artifacts = { path = "../../contracts/artifacts", editable = true }

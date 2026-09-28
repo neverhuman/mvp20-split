@@ -1,8 +1,11 @@
 # Amphora v2
 
-The active workspace for the graph-native research engine. Implementation has not started.
+The active workspace for the graph-native research engine. BP-01 implements independent contract packages and a validation-only runtime API; durable campaign execution has not yet been built.
 
-- [Product requirements](docs/Architecture/Product_Requirements.md)
+- [Foundation setup and verification](dev/README.md)
+- [Contract packages](contracts/README.md) and [runtime foundation](services/campaign_runtime/README.md)
+
+- [Product requirements](docs/Architecture/Requirements/Product_Requirements.md)
 - [Architecture entry point](Architecture.md) and [document index](docs/Architecture/README.md)
 - [Relaunch handoff](Restore.md) and [agent instructions](AGENTS.md)
 - [Existing-code reuse assessment](docs/Architecture/Evolutionary_Code_Reuse_Baseline.md)

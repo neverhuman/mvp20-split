@@ -4,7 +4,7 @@
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
 - Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
 - Parent: [Domain overview](Capability_Architecture.md)
-- Requirement source: [Product Requirements](../Product_Requirements.md#scientific-tools-in-the-execution-graph)
+- Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#scientific-tools-in-the-execution-graph)
 
 ## Owned Contract
 
@@ -13,6 +13,8 @@ Tools declare typed ports, cardinality, units, context, parameters, evidence, op
 Invocations bind run/node/iteration/attempt, input hashes, dependencies, parameters, projection, feedback, seed and grants. Tools return outputs and proposed state changes. They cannot silently mutate shared state or trusted knowledge. A stateful tool owns checkpoint contents; Campaigns owns durable versions, order and commit.
 
 ## Boundary and Flow
+
+[Tool Services](Tool_Services.md) proposes independently packaged services/workloads per scientific tool, a common execution envelope and version-specific replicas. Tool internals remain scientifically specific. Runtime retains claim/fence/acceptance authority; tools have no private cross-service imports or general database access.
 
 Runtime adapters execute implementations within Platform grants. Domain operators own representation validity. Agent-facing schemas project the same contracts without bypasses. Reviewed knowledge and LLM suggestions enter declared feedback ports at authorized boundaries.
 
@@ -44,4 +46,4 @@ Adapters classify input failure, unavailable dependency, scientific abstention, 
 
 ## Design Basis and Open Decisions
 
-[Scientific Tools and Graph Execution](../Scientific_Tools_and_Graph_Execution.md) is the detailed source. Remaining decisions: adapter ABI/protocol, sandbox profiles and state-schema migration. Existing v1 `Capability.evaluate` is a reuse candidate, not the complete v2 invocation contract.
+[Scientific Tools and Graph Execution](../Requirements/Scientific_Tools_and_Graph_Execution.md) is the detailed source. Remaining decisions: adapter ABI/protocol, sandbox profiles and state-schema migration. Existing v1 `Capability.evaluate` is a reuse candidate, not the complete v2 invocation contract.

@@ -1,0 +1,11 @@
+# Protective Reservation Boundary
+
+Implemented under BP-02.03/A4. `Reservations` owns reserve/confirm/reconcile transactions; `Reservation` owns immutable identity and monotonic terminal transitions. Public operations use artifact commands and ReservationReceipt; no runtime table or private runtime code is accessed.
+
+A configured principal needs the retention grant and its actor must equal runtime_owner. Reserve validates the full scoped catalog descriptor and binds runtime owner, intent, output and semantic completion digest. Conflicting bindings reject. Same-command replay returns its original receipt; a new command reads the current reservation state. Shared artifacts have separate bindings.
+
+Capacity scope lock precedes reservation and command locks. Receipt/audit and state change commit atomically; lookups leave SQL transactions before network I/O. `RuntimeOutcomes` calls an explicitly configured authenticated HTTPS endpoint (HTTP allowed only for literal loopback), with bounded timeout/response, no redirects or environment proxy routing. Responses must match the exact reservation binding and closed RuntimeOutcome schema. Endpoints and credentials are administrator configuration, never request data.
+
+Prepared, unknown, unreachable or malformed outcomes retain protection and leave the command pending for retry. Committed proof confirms; only irrevocable aborted proof releases. Contradictory terminal proof rejects without changing state. Confirm additionally checks the requested intent and runtime receipt. There is no TTL release or finalized-content deletion. Scientific validity is not implied.
+
+`tests/retention/` covers identity contention, authority/descriptor negatives, replay, shared references, exact confirmation, terminal conflicts, rollback and a separate authenticated scripted HTTP runtime process. Run `dev/run_tests.py --module data-artifacts --area retention` with AMPHORA_TEST_POSTGRES=1. This fixture proves artifact client behavior only; actual runtime acceptance/abort races are BP-02.06. A5 owns bounded reconciliation scheduling, provisional cleanup and additional crash windows. A replacement preserves bindings, pending uncertainty, terminal proofs, receipts and these test oracles.

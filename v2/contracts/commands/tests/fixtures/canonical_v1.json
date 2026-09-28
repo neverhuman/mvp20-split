@@ -1,0 +1,20 @@
+[
+  {
+    "name": "defaults",
+    "input": "{\"payload\": {}, \"identity\": {\"actor_id\": \"worker-1\", \"command_family\": \"test.operation\", \"command_id\": \"cmd-1\", \"scope\": {\"tenant_id\": \"local\", \"project_id\": \"demo\"}}}",
+    "canonical": "{\"identity\":{\"actor_id\":\"worker-1\",\"command_family\":\"test.operation\",\"command_id\":\"cmd-1\",\"schema_version\":\"1\",\"scope\":{\"project_id\":\"demo\",\"tenant_id\":\"local\"}},\"payload\":{\"count\":1,\"enabled\":true,\"labels\":[],\"note\":null,\"text\":\"\"}}",
+    "sha256": "b4cc8f2b1b03b2715a97fc3e90dfe45b72909d53ec524d07835f7d1f1c37c351"
+  },
+  {
+    "name": "escaped-unicode",
+    "input": "{\"payload\": {\"text\": \"\\u00e9\\n\"}, \"identity\": {\"actor_id\": \"worker-1\", \"command_family\": \"test.operation\", \"command_id\": \"cmd-1\", \"scope\": {\"tenant_id\": \"local\", \"project_id\": \"demo\"}}}",
+    "canonical": "{\"identity\":{\"actor_id\":\"worker-1\",\"command_family\":\"test.operation\",\"command_id\":\"cmd-1\",\"schema_version\":\"1\",\"scope\":{\"project_id\":\"demo\",\"tenant_id\":\"local\"}},\"payload\":{\"count\":1,\"enabled\":true,\"labels\":[],\"note\":null,\"text\":\"\\u00e9\\n\"}}",
+    "sha256": "4d41394a7030236cf57023b54a1b14ea951f1c947e5cc8ce7ff13ac631835640"
+  },
+  {
+    "name": "negative-and-array",
+    "input": "{\"payload\": {\"count\": -5, \"enabled\": false, \"labels\": [\"b\", \"a\"]}, \"identity\": {\"actor_id\": \"worker-1\", \"command_family\": \"test.operation\", \"command_id\": \"cmd-1\", \"scope\": {\"tenant_id\": \"local\", \"project_id\": \"demo\"}}}",
+    "canonical": "{\"identity\":{\"actor_id\":\"worker-1\",\"command_family\":\"test.operation\",\"command_id\":\"cmd-1\",\"schema_version\":\"1\",\"scope\":{\"project_id\":\"demo\",\"tenant_id\":\"local\"}},\"payload\":{\"count\":-5,\"enabled\":false,\"labels\":[\"b\",\"a\"],\"note\":null,\"text\":\"\"}}",
+    "sha256": "804886156bee9d189e0e1f8feaa7ec288a2cbe9695bea4f10d7f092a69f31b1f"
+  }
+]

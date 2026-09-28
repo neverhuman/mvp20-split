@@ -33,9 +33,9 @@ All diagrams and text are editable PowerPoint shapes. Every slide is marked inte
 
 ## Source of Truth
 
-- [Graph-native architecture](../Architecture/Graph_Native_Research_Engine.md)
-- [Product requirements](../Architecture/Product_Requirements.md)
-- [Data sources and acquisition](../Architecture/Data_Sources_and_Acquisition.md)
+- [Graph-native architecture](../Architecture/Requirements/Graph_Native_Research_Engine.md)
+- [Product requirements](../Architecture/Requirements/Product_Requirements.md)
+- [Data sources and acquisition](../Architecture/Requirements/Data_Sources_and_Acquisition.md)
 - [Evolutionary code reuse baseline](../Architecture/Evolutionary_Code_Reuse_Baseline.md)
 - Product examples: `docs/Artifacts/AMPHORA_Top5_Product_Brief_1.docx`
 

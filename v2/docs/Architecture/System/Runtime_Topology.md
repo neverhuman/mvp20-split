@@ -10,24 +10,29 @@ The user-selected baseline is one server running a browser-facing control API, a
 
 ```mermaid
 flowchart TB
-    UI[Browser Graph Studio] -->|commands and revisioned reads| API[Control API]
-    API --> APP[Application commands and domain policies]
-    APP --> DB[(Transactional metadata store)]
+    UI[Browser Graph Studio] -->|commands and revisioned reads| API[Control gateway]
+    API --> APP[Campaign runtime API and commands]
+    APP --> DB[(Runtime-owned metadata)]
+    API --> OWN[Research, knowledge, data, registry and policy APIs]
+    OWN --> OD[(Separately owned schemas)]
     CO[Runtime coordinator] --> APP
     CO -->|claim and dispatch| WP[Scientific and model workers]
     WP -->|completion and external receipts| API
     WP -->|scoped payload access| ART[(Immutable artifact store)]
     WP --> EXT[Remote models, compute and labs]
-    BG[Projection and reconciliation process] --> DB
+    BG[Projection and reconciliation processes] -->|public events and reads| APP
+    BG -->|public events and reads| OWN
     BG --> ART
     BG --> IDX[(Graph, retrieval and UI projections)]
     API --> IDX
     API -->|revision notifications| UI
 ```
 
-The diagram separates executable processes from internal modules and stores. `Application commands and domain policies` is shared code called by the API and coordinator, not another network service. The coordinator and API may write metadata only through those commands. Workers have no general database write access.
+The gateway routes to isolated owners. The campaign-runtime API and coordinator share only their owning runtime package and transaction rules. Domain services expose public contracts and own their schemas/roles, even when PostgreSQL is one installation. Projection consumers use public events/reads; they do not bypass private state ownership. Tool service replicas have no general database write access. See [Service Isolation](Service_Isolation.md) for the ownership map; the diagram groups services for readability, not as a catch-all backend.
 
 ## Process Responsibilities
+
+[Graph Runner](Graph_Runner.md) names the execution coordinator, outcome aggregator and campaign supervisor inside Campaign Runtime. Agent Planning remains an isolated service that returns typed LLM proposals through durable engagements. Slow model calls do not hold runtime transactions or block unrelated branches; one conditional runtime commit accepts each supervision decision.
 
 The first operating profile admits one active campaign for one internal user. Parallel nodes do not imply concurrent campaigns. Deployment targets are a DGX Spark or a partner Threadripper host; verify target architecture, OS, dependencies and accelerator requirements during packaging rather than assuming identical binaries. Model hosting and data-egress policy remain open; source availability does not block synthetic runtime fixtures. No enterprise capacity or availability promise is part of this profile.
 
@@ -67,7 +72,7 @@ Bound concurrency by tenant/project budget, worker capability, provider quota an
 - Projection failure: stop claiming freshness; rebuild from source state/events without changing accepted scientific results.
 - Server/store loss: restore a consistent metadata/artifact recovery point. No initial failover guarantee is assumed.
 
-Scale workers first for independent expensive work. Separate retrieval/index builders when they compete with interactive capacity. Split control-domain services only when measured contention, isolation or deployment needs justify the distributed transaction cost. Large graph display is a projection/query problem as well as a rendering problem; do not load complete histories into every browser request.
+Scale workers first for independent expensive work. Separate retrieval/index builders when they compete with interactive capacity. Keep primary services behaviorally and functionally isolated from the first implementation. Change physical placement or further decompose owners when measured contention or deployment needs justify it; never relax public-contract/state boundaries to co-locate them. Large graph display is a projection/query problem as well as a rendering problem; do not load complete histories into every browser request.
 
 ## Deployment Decisions Still Required
 

@@ -4,7 +4,7 @@
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
 - Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
 - Parent: [Domain overview](Knowledge_Architecture.md)
-- Requirement source: [Product Requirements](../Product_Requirements.md#neuro-symbolic-reasoning-and-evolutionary-search)
+- Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#neuro-symbolic-reasoning-and-evolutionary-search)
 
 ## Owned Contract
 
@@ -44,4 +44,4 @@ Two studies disagree under different assay conditions. Preserve both observation
 
 ## Design Basis and Open Decisions
 
-Product Requirements defines the refinery and reasoning/evolution boundary; [Domain Model](../Domain_Model.md) supplies assertion/applicability concepts. Remaining decisions: supported logic/rule formalism, contradiction policies, calibration and evidence-strength model. The knowledge graph is not itself proof of causal validity.
+Product Requirements defines the refinery and reasoning/evolution boundary; [Domain Model](../Requirements/Domain_Model.md) supplies assertion/applicability concepts. Remaining decisions: supported logic/rule formalism, contradiction policies, calibration and evidence-strength model. The knowledge graph is not itself proof of causal validity.

@@ -11,6 +11,8 @@ Behavior owned, invariants and failure modes. State explicit non-responsibilitie
 
 ## Public Contracts
 
+Name the independent package/build/deployment boundary and allowed public imports/clients. List forbidden cross-owner dependencies and the enforcement check. Document service-owned schema/role and public event/read surfaces; shared database hosting does not grant access to adjacent private tables. For tools, bind descriptor, release/image digest, deployment profile and supported invocation protocols; replicas are runtime capacity, not new capability definitions.
+
 Entry points, typed inputs/outputs, errors/abstention, compatibility and versioning; reference owned schemas rather than duplicating them.
 
 ## Data and Dependencies
@@ -39,3 +41,7 @@ This README must let a new implementer rebuild the module without copying its cu
 - Cutover: drain/finish active work, handle old checkpoints and persistent records, migrate or explicitly reject incompatible versions, and provide rollback/forward-repair behavior. A code rewrite is not authority to delete evidence or owned state.
 
 Record contract changes explicitly with affected consumers and migration requirements. Rebuild behind an unchanged contract when possible; version intentional boundary changes. For initial single-campaign operation, activate module replacements between campaigns. Keep detailed implementation history elsewhere; this section is the current rebuild specification, not a changelog.
+
+## Owned Test and Coverage Map
+
+List the module-local test folders, behavior/invariants and negative/failure scenarios they cover, source paths measured, focused test/coverage commands, and untested boundaries. Register ownership in `dev/test_scopes.json`. Keep integration/E2E scope explicit. Link coverage evidence without equating line coverage or passing test count with behavioral completeness. Preserve these acceptance boundaries during replacement.

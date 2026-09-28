@@ -7,5 +7,5 @@
 
 | ID | Symptom | Owner document | Needed work | Priority / trigger |
 |---|---|---|---|---|
-| DOC-001 | Product Requirements remains long; domain contracts and section ownership map now provide focused navigation | Architecture/Product_Requirements.md | Preserve product authority; introduce stable requirement IDs when detailed implementation traceability needs them | During implementation-plan breakdown; nonblocking for completed architecture decomposition |
+| DOC-001 | Product Requirements remains long; domain contracts and section ownership map now provide focused navigation | Architecture/Requirements/Product_Requirements.md | Preserve product authority; introduce stable requirement IDs when detailed implementation traceability needs them | During implementation-plan breakdown; nonblocking for completed architecture decomposition |
 | DOC-002 | Historical coatings/MVP implementation and remediation documents coexist with current graph-native direction | Architecture/README.md | Mark relevant reference scope and audit/rebaseline inherited proposals before activation | When an inherited proposal is selected for planning |

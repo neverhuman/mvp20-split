@@ -41,6 +41,8 @@ Loop state is explicit: for example a population checkpoint, RNG state and eligi
 
 Readiness depends on committed predecessor dispositions and declared control rules. A selected branch can mark an alternative path skipped; a join must distinguish skipped from missing. Batch selection must declare whether all evaluations, a deadline, or a permitted subset closes the batch. Arrival order cannot accidentally determine scientific policy.
 
+The first compiler profile freezes scatter membership and order from committed inputs. Zero-member all-join returns an empty typed collection. Default joins wait for required members to become terminal; partial joins require an explicit minimum and missing-slot reasons. By default partial evaluation still closes only after all members are terminal; a declared deadline may close a snapshot of eligible committed members. Record that exact cut and missing reasons. Do not implement a first-arrival threshold implicitly. Predicate execution uses a finite typed DSL, not arbitrary eval or model prose. [BP-04 compiler plan](../../Build%20Plans/BP-04/BP-04.01%20Compiler%20and%20executable%20contract.md) owns implementation and compatibility fixtures.
+
 ## Graph and Knowledge Changes During Execution
 
 Initial-profile override: human edits are staged for a later campaign and never adopted by an active one, including at an iteration boundary. The review instruction uses eligible automated policy/evaluator decisions; it is not a routine human wait. Missing evidence/authority that cannot be resolved automatically produces an explicit terminal blocked/abstained outcome and next-campaign proposal. External-result waits still suspend/resume normally. Emergency termination/revocation remains available without becoming a live-edit mechanism.
@@ -53,6 +55,8 @@ New knowledge is proposed, reviewed and published separately. A running iteratio
 
 ## Interpreter Loop
 
+[Graph Runner](Graph_Runner.md) owns the coordination/supervision loop around this interpreter: versioned aggregate receipts, scoped failure handling, asynchronous model engagement and stale-proposal checks. Its supervisor uses these instructions and the same committer; it cannot create an alternate execution path outside the pinned graph contract.
+
 1. Read a consistent run frontier and the relevant committed node/state records.
 2. Calculate eligible activations using the pinned plan and current authority.
 3. In a short transaction, verify run revision and budget, insert unique activations/dispatch intents and record transitions.
@@ -61,3 +65,7 @@ New knowledge is proposed, reviewed and published separately. A running iteratio
 6. On restart, recover the frontier from committed records rather than from a model transcript or RAM snapshot.
 
 Scientific `ABSTAIN`, control `SKIPPED`, operational `FAILED` and terminal `CANCELLED` are not interchangeable. The plan declares what each permits. Schema/port validation, finite loop bounds, stale output rejection and retained attempts are first implementation gates before automatic topology evolution.
+
+## Initial Behavioral Reference
+
+The [v1 solver fixture](../../../services/campaign_runtime/tests/fixtures/v1_solver/README.md) supplies the initial source-derived execution topology and future parity scenarios. BP-04 first reproduces its orchestration with deterministic synthetic tools, preserving explicit population/history distinctions and error aggregation. Known v1 bugs are documented deviations, not required compatibility. BP-08 owns scientific transformation and selection. The present campaign scaffold proves structural admission only; durable execution and scientific equivalence require later evidence.

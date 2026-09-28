@@ -1,7 +1,18 @@
 # Build Plans
 
-Start at [Master Build Tracker](Master%20Build%20Tracker.md). It selects the primary plan; that plan's canonical tracker selects the phase and task.
+[Master Build Tracker](Master%20Build%20Tracker.md) selects the primary plan and mirrors its canonical overall/per-phase completion. Owning plans define task position, tests and phase gates.
 
-Parent plans own decomposition and dependency relationships. Child plans own bounded execution detail. Each phase has prerequisites, deliverables, verification and exit gates. Use the [plan template](../Templates/Build%20Plan%20Template.md), [audit template](../Templates/Plan%20Audit%20Template.md) and [Development Process](../Development_Process.md).
+BP-02 is active; BP-03 through BP-09 have design-specified canonical children; their implementation remains queued at 0%. BP-01 and BP-01A remain [completed](Completed/README.md). Drafting does not earn implementation credit.
 
-No v2 implementation plan is active. Older proposals in the architecture folder are reference inputs and must be reconciled with current requirements and audited before activation. [Completed](Completed/README.md) is the archive for future closed v2 plans.
+- [BP-02 Durable Runtime and Artifact Foundation](BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md).
+- [BP-03 Tool Index and Standalone Execution](BP-03%20Tool%20Index%20and%20Standalone%20Execution.md).
+- [BP-04 Deterministic Graph Runner](BP-04%20Deterministic%20Graph%20Runner.md).
+- [BP-05 Graph Studio First Vertical Slice](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md).
+- [BP-06 Knowledge Evidence and Source Loop](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md).
+- [BP-07 Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md).
+- [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md).
+- [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md).
+
+Read the selected plan's tracker first. Complete each phase gate before advancing. Use module-owned tests and replacement READMEs; keep integration/E2E separate. [Development Process](../Development_Process.md) governs activation audits, percentages, closeout audits and archival. Older Architecture/Requirements proposals are reference inputs, not competing execution trackers.
+
+[Planning Readiness and Cross-Plan Handoffs](Planning_Readiness.md) summarizes child maturity, producer/consumer contracts, evidence tiers and the exact later gates needing owner decisions. Open the parent first, then its immediate child; history preserves prior scope and is not an execution tracker.

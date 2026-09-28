@@ -2,9 +2,9 @@
 
 - Design status: detailed proposed contract; implementation and scientific acceptance pending
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
-- Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
+- Last reviewed: `2026-09-25 13:40:55` (America/Chicago)
 - Parent: [Domain overview](Platform_Architecture.md)
-- Requirement source: [Product Requirements](../Product_Requirements.md#enterprise-platform-requirements)
+- Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#enterprise-platform-requirements)
 
 ## Owned Contract
 
@@ -47,3 +47,7 @@ A provider times out after accepting a paid job. Preserve the submission identit
 ## Design Basis and Open Decisions
 
 System owns the initial single-server, separate-worker topology, PostgreSQL metadata baseline and database-backed dispatch direction. Initial use is internal/demo, one user and one active campaign, on a DGX Spark or partner Threadripper host. Broader enterprise profiles, capacity and contractual SLO/RPO/RTO targets are later-stage work. Remaining initial choices include host packaging, basic restore procedures, worker resource bounds and observability. Historical MVP stack suggestions are not inherited decisions.
+
+## Initial Recovery Planning Boundary
+
+The first internal/demo restore drill uses a quiesced admission/drain boundary and a manifest binding authoritative metadata, schema versions and immutable artifact hashes. Restore to isolated resources, verify accepted references, then resume reconciliation before traffic. This is a planning baseline, not implemented backup or online/power-loss durability evidence. BP-09.04 owns the drill; owner-selected recovery objectives must precede acceptance. Missing artifacts or incompatible schema block readiness rather than silently resetting state.

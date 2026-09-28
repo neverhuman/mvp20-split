@@ -4,7 +4,7 @@
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
 - Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
 - Parent: [Domain overview](Knowledge_Architecture.md)
-- Requirement source: [Product Requirements](../Product_Requirements.md#human-decomposition-to-neuro-symbolic-graph)
+- Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#human-decomposition-to-neuro-symbolic-graph)
 
 ## Owned Contract
 
@@ -61,4 +61,4 @@ A reviewer corrects 'A causes B' to 'A correlates with B', then a later extracti
 
 ## Design Basis and Open Decisions
 
-[Authoring and Replay](../Domain_Graph_Authoring_and_Replay.md) contains the actual initial extraction prompt and detailed history contract. Remaining decisions: executable graph/change schemas, entity-resolution thresholds, semantic-conflict rules and migration mappings. Prompt quality requires reviewed examples; structured output alone is insufficient.
+[Authoring and Replay](../Requirements/Domain_Graph_Authoring_and_Replay.md) contains the actual initial extraction prompt and detailed history contract. Remaining decisions: executable graph/change schemas, entity-resolution thresholds, semantic-conflict rules and migration mappings. Prompt quality requires reviewed examples; structured output alone is insufficient.

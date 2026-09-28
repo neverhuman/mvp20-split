@@ -1,7 +1,7 @@
 # Contract Architecture
 
-- Design status: accepted architectural direction; schemas and implementation pending
-- Last reviewed: `2026-09-22 20:53:09` (America/Chicago)
+- Design status: accepted direction; BP-01 Python/interchange foundation implemented, broader service/Rust/UI contracts pending
+- Last reviewed: `2026-09-23 19:55:48` (America/Chicago)
 - Parent: [System Architecture](System_Architecture.md)
 - Scope: typed interchange across API, runtime, capabilities, scientific kernels, knowledge, UI and LLM boundaries
 
@@ -34,6 +34,8 @@ OpenAPI describes HTTP operations using these contracts. Frontend transport type
 Domain objects own behavior and invariants. Explicit mappers turn validated boundary records into domain values and produce response/projection records from domain results. Contract models must not import web handlers, persistence sessions, provider SDKs or runtime orchestration. ORM records are a separate persistence concern; neither database schema nor DTO shape substitutes for the domain model.
 
 ## Validation and Acceptance Pipeline
+
+[Graph Runner](Graph_Runner.md) adds runtime-owned engagement request/proposal/decision and aggregation receipt contracts. These bind decision scope, relevant frontier and input revisions, grants, budget/deadline, output schema and consumed result/domain receipts. Agent Planning publishes its model-attempt/provenance response; runtime owns conditional proposal acceptance. Schema validity alone does not resolve stale context or conflicting decisions.
 
 ```text
 Untrusted request / worker result / external observation / LLM proposal
@@ -78,4 +80,4 @@ Migrations create new versioned records with source references and conversion pr
 
 The implementation plan must demonstrate reproducible schema publication; Python/Rust conformance; generated UI contract alignment; LLM proposal rejection; meaningful semantic failures; unsupported-version rejection; and reading or explicitly migrating a prior-version checkpoint. Contract tests complement the concurrency/recovery tests owned by runtime architecture.
 
-Still to select: package/build tooling, JSON Schema dialect and supported subset, frontend generation/validation tooling, Rust transport, canonical serialization, supported version window and first concrete schema families. No contract package, schema bundle or runtime implementation is created by this design document.
+[Foundation Decisions](Foundation_Decisions.md) selects independent Python packages, uv/Hatchling, Draft 2020-12 and the initial wire/publication profile. [Contract packages](../../../contracts/README.md) implement the BP-01 core/tool/campaign subset and schema artifacts; the runtime service currently validates structure only. Remaining decisions include frontend generation/validation, Rust transport, durable canonical command hashing, mature compatibility windows and full scientific/data-port/runtime schemas. See the BP-01 closeout for actual evidence; this design does not imply complete engine implementation.

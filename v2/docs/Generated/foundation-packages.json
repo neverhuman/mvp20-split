@@ -1,0 +1,82 @@
+[
+  {
+    "package": "amphora-contracts-artifacts",
+    "version": "0.1.0",
+    "path": "contracts/artifacts",
+    "module": "amphora_contracts_artifacts",
+    "public_dependencies": [
+      "amphora-contracts-core",
+      "amphora-contracts-commands"
+    ]
+  },
+  {
+    "package": "amphora-contracts-campaigns",
+    "version": "0.1.0",
+    "path": "contracts/campaigns",
+    "module": "amphora_contracts_campaigns",
+    "public_dependencies": [
+      "amphora-contracts-core",
+      "amphora-contracts-tools"
+    ]
+  },
+  {
+    "package": "amphora-contracts-commands",
+    "version": "0.1.0",
+    "path": "contracts/commands",
+    "module": "amphora_contracts_commands",
+    "public_dependencies": [
+      "amphora-contracts-core"
+    ]
+  },
+  {
+    "package": "amphora-contracts-core",
+    "version": "0.1.0",
+    "path": "contracts/core",
+    "module": "amphora_contracts_core",
+    "public_dependencies": []
+  },
+  {
+    "package": "amphora-contracts-runtime",
+    "version": "0.1.0",
+    "path": "contracts/runtime",
+    "module": "amphora_contracts_runtime",
+    "public_dependencies": [
+      "amphora-contracts-core",
+      "amphora-contracts-commands",
+      "amphora-contracts-tools"
+    ]
+  },
+  {
+    "package": "amphora-contracts-tools",
+    "version": "0.1.0",
+    "path": "contracts/tools",
+    "module": "amphora_contracts_tools",
+    "public_dependencies": [
+      "amphora-contracts-core"
+    ]
+  },
+  {
+    "package": "amphora-campaign-runtime",
+    "version": "0.1.0",
+    "path": "services/campaign_runtime",
+    "module": "amphora_campaign_runtime",
+    "public_dependencies": [
+      "amphora-contracts-runtime",
+      "amphora-contracts-commands",
+      "amphora-contracts-core",
+      "amphora-contracts-tools",
+      "amphora-contracts-campaigns"
+    ]
+  },
+  {
+    "package": "amphora-data-artifacts",
+    "version": "0.1.0",
+    "path": "services/data_artifacts",
+    "module": "amphora_data_artifacts",
+    "public_dependencies": [
+      "amphora-contracts-commands",
+      "amphora-contracts-core",
+      "amphora-contracts-artifacts"
+    ]
+  }
+]

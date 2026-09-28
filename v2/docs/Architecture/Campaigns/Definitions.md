@@ -4,7 +4,7 @@
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
 - Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
 - Parent: [Domain overview](Campaign_Architecture.md)
-- Requirement source: [Product Requirements](../Product_Requirements.md#executable-campaign-semantics)
+- Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#executable-campaign-semantics)
 
 ## Owned Contract
 
@@ -45,4 +45,4 @@ A tool replacement has the same JSON shape but different units or authority ceil
 
 ## Design Basis and Open Decisions
 
-[Graph Design Reference](../Graph_Native_Research_Engine.md) provides authored graph semantics. Remaining decisions: concrete graph schema/version migration, expression language for conditions and bounded topology operators. Conditions must be typed and inspectable rather than unrestricted executable strings.
+[Graph Design Reference](../Requirements/Graph_Native_Research_Engine.md) provides authored graph semantics. Remaining decisions: concrete graph schema/version migration, expression language for conditions and bounded topology operators. Conditions must be typed and inspectable rather than unrestricted executable strings.

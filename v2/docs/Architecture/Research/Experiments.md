@@ -4,7 +4,7 @@
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
 - Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
 - Parent: [Domain overview](Research_Architecture.md)
-- Requirement source: [Product Requirements](../Product_Requirements.md#lab-in-the-loop-optimization)
+- Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#lab-in-the-loop-optimization)
 
 ## Owned Contract
 
@@ -55,4 +55,4 @@ A corrected concentration arrives after population selection. Retain the old sel
 
 ## Design Basis and Open Decisions
 
-[Acquisition Design](../Data_Sources_and_Acquisition.md) governs transport/artifacts; [Tool Execution](../Scientific_Tools_and_Graph_Execution.md) governs waits and handles. Remaining decisions: LIMS/CRO protocol adapters, method-specific minimum metadata and completeness/control policies. No default statistical exclusion or interpretation rule is implied.
+[Acquisition Design](../Requirements/Data_Sources_and_Acquisition.md) governs transport/artifacts; [Tool Execution](../Requirements/Scientific_Tools_and_Graph_Execution.md) governs waits and handles. Remaining decisions: LIMS/CRO protocol adapters, method-specific minimum metadata and completeness/control policies. No default statistical exclusion or interpretation rule is implied.

@@ -49,6 +49,8 @@ This is one authored graph, not engine hard-coded orchestration. A biology-only 
 | 9. Apply feedback | Iteration transition | New loop-state revision binds eligible result; next generation uses exact recorded feedback |
 | 10. Publish knowledge | Separate reviewed knowledge command | New `K8` revision; it does not retroactively replace `K7` in the running iteration |
 
+Service-isolation refinement: step 3 first commits the runtime result/artifact/checkpoint envelope. Research then registers candidate attempts and scientific acceptance in its own idempotent transaction, returning a versioned receipt before dependent evaluation/selection proceeds. The table summarizes a durable workflow, not one transaction spanning services. The same receipt rule applies to lab evidence and knowledge publication.
+
 The browser observes event-triggered projection refreshes throughout. It can display committed runtime status before slower explanatory projections catch up, but must label their differing revisions/freshness. Inspection of an older selection keeps its original model, knowledge and result references.
 
 ## What Happens When Things Change

@@ -12,6 +12,8 @@ This is not universal event sourcing. Transactional current state answers operat
 
 ## Proposed Record Families and Ownership
 
+[Service Isolation](Service_Isolation.md) refines physical ownership: one PostgreSQL installation may host distinct service-owned schemas/roles, not unrestricted shared table access. Atomic runtime completion commits the runtime result/checkpoint/attempt/budget and outbox. Research/Knowledge acceptance is a separate idempotent transaction with a receipt; dependent nodes wait for it. Artifact finalization needs a reservation/retention protocol across publication and runtime commit. No cross-service database transaction or remote call inside the runtime commit is implied by the logical record families below.
+
 | Record family | Authoritative writer | Key relationship / invariant |
 |---|---|---|
 | Project, objective/envelope and approval revisions | Research/application policy commands | Signed objective references exact immutable inputs and authority |
@@ -44,6 +46,8 @@ Database isolation alone is not the entire protocol. The default PostgreSQL isol
 
 ## Command Idempotency and Ordering
 
+Graph Runner engagements persist request/outbox before remote model calls. A supervision decision and resulting runtime transitions commit atomically against decision identity, scope, relevant input versions, grants and budget. Duplicate, late, conflicting or stale proposals cannot each advance the run. Aggregation receipts pin accepted member/results and required scientific-domain receipts; projections are reconstructible, not new sources of truth. See [Graph Runner](Graph_Runner.md) for engagement lifecycle and race handling.
+
 Persist `(scope, command_id, request_digest, disposition)` so duplicate submission returns the same receipt, while reuse of the identity with a different payload is rejected. Enforce at most one accepted result for an activation/output identity. A stale worker may retain a diagnostic result but cannot become the accepted writer.
 
 Ordering uses a per-run or per-aggregate committed revision/sequence. Wall-clock time and a globally allocated database ID are not a proof of causal order or gap-free commitment. Cross-aggregate operations explicitly reference prior decisions and snapshots. A UI consistent-cut query identifies the revisions it combines; it must not fabricate global atomicity from timestamps.
@@ -65,3 +69,9 @@ Access revocation, retention and legal hold remain live policies, including for 
 ## Deferred Choices and Evidence Gates
 
 This design selects a transactional relational baseline, not a final physical schema or capacity promise. Before implementation acceptance, test concurrent completions, cancellation races, two budget spenders, crash points around artifact/metadata publication, duplicate commands and external acknowledgement loss. Select backup objectives, supported database version and performance targets through the first deployment plan.
+
+## Initial Protocol Decisions
+
+[Initial Persistence Record Design](Persistence_Record_Design.md) owns service roles, relational constraints and transaction write sets for BP-02.02. Migration and concurrency evidence remain separate gates.
+
+BP-02 decomposes this design into the [Runtime Command Protocol](Runtime_Command_Protocol.md) and [Artifact Publication Protocol](Artifact_Publication_Protocol.md). These own the first slice's command digest, transition, budget, fencing and reservation decisions. Their design status is distinct from contract/database verification, which remains in the BP-02 task gates.

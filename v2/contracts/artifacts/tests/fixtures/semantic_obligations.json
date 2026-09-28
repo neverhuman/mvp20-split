@@ -1,0 +1,11 @@
+{
+  "status": "pending_authoritative_handler_tests",
+  "owner": "BP-02.03",
+  "cases": [
+    "cross_scope_reference",
+    "wrong_issuer",
+    "receipt_bound_to_other_intent",
+    "released_reservation",
+    "unknown_runtime_outcome"
+  ]
+}

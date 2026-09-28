@@ -1,0 +1,277 @@
+{
+  "format": "amphora.source-behavior-graph.v1",
+  "id": "v1-cli-solver-baseline",
+  "status": "source_extracted_not_execution_verified",
+  "entry": "initialize",
+  "sources": {
+    "cli": {
+      "path": "v1/amphora-cli/src/main.rs",
+      "sha256": "7c52304a5a7336de01d4e02ce5c644727373793e2add1fc42e90ee4011304619",
+      "hash_encoding": "UTF-8 with LF newlines"
+    },
+    "engine": {
+      "path": "v1/amphora-engine/src/lib.rs",
+      "sha256": "c02afb09ae4e33f0d65e433b336da88d8f0058906cd0371d1f32c182b1454ab3",
+      "hash_encoding": "UTF-8 with LF newlines"
+    },
+    "ranking": {
+      "path": "v1/amphora-core/src/lib.rs",
+      "sha256": "24560480d5751d1696f6684848dbc22fbf77779e43f9dec5faa6696224726323",
+      "hash_encoding": "UTF-8 with LF newlines"
+    }
+  },
+  "nodes": [
+    {
+      "id": "initialize",
+      "kind": "setup",
+      "source": {
+        "file": "cli",
+        "start_line": 460,
+        "end_line": 630
+      },
+      "behavior": "Require molecule lane; load candidate/profile; create worker pool, registry and archive."
+    },
+    {
+      "id": "seed_population",
+      "kind": "map",
+      "source": {
+        "file": "cli",
+        "start_line": 631,
+        "end_line": 669
+      },
+      "behavior": "Original candidate plus population.max(1)-1 lineage-only mutations; rejected mutations emit candidate_rejected."
+    },
+    {
+      "id": "score_initial",
+      "kind": "scatter_gather",
+      "source": {
+        "file": "cli",
+        "start_line": 670,
+        "end_line": 749
+      },
+      "behavior": "Score accepted proposals concurrently, collect in request order; retain successful results in current and cumulative scored."
+    },
+    {
+      "id": "rank_initial",
+      "kind": "aggregate",
+      "source": {
+        "file": "cli",
+        "start_line": 759,
+        "end_line": 790
+      },
+      "behavior": "Rank/display cumulative scores, update records/history, snapshot and publish generation zero."
+    },
+    {
+      "id": "generation_gate",
+      "kind": "bounded_loop",
+      "source": {
+        "file": "cli",
+        "start_line": 792,
+        "end_line": 802
+      },
+      "behavior": "For each generation 1..=args.generations, subject to cooperative cancellation."
+    },
+    {
+      "id": "select_parents",
+      "kind": "select",
+      "source": {
+        "file": "cli",
+        "start_line": 810,
+        "end_line": 841
+      },
+      "behavior": "Rank cumulative scored; take population before matching current; fallback to all current if no matched parents."
+    },
+    {
+      "id": "mutate",
+      "kind": "map",
+      "source": {
+        "file": "cli",
+        "start_line": 842,
+        "end_line": 885
+      },
+      "behavior": "Cycle parents modulo length; seed + generation*10000 + index; record proposal or rejection."
+    },
+    {
+      "id": "score_generation",
+      "kind": "scatter_gather",
+      "source": {
+        "file": "cli",
+        "start_line": 886,
+        "end_line": 961
+      },
+      "behavior": "Score proposals concurrently; per-request failures emit worker_failed and are omitted from offspring."
+    },
+    {
+      "id": "retain_and_rank",
+      "kind": "aggregate",
+      "source": {
+        "file": "cli",
+        "start_line": 962,
+        "end_line": 1003
+      },
+      "behavior": "Replace current with successful offspring; cumulative scored retains prior successes; rank/display cumulative results."
+    },
+    {
+      "id": "checkpoint",
+      "kind": "checkpoint",
+      "source": {
+        "file": "cli",
+        "start_line": 1004,
+        "end_line": 1030
+      },
+      "behavior": "Emit generation_completed, snapshot and publish; bounded refresh delay checks cancellation."
+    },
+    {
+      "id": "finalize",
+      "kind": "finish",
+      "source": {
+        "file": "cli",
+        "start_line": 1031,
+        "end_line": 1075
+      },
+      "behavior": "Sync records, mark COMPLETE, emit run_finished, snapshot/final_state and publish."
+    }
+  ],
+  "edges": [
+    {
+      "source": "initialize",
+      "target": "seed_population",
+      "when": "initialized"
+    },
+    {
+      "source": "seed_population",
+      "target": "score_initial",
+      "when": "proposals_ready"
+    },
+    {
+      "source": "score_initial",
+      "target": "rank_initial",
+      "when": "all_requests_settled"
+    },
+    {
+      "source": "rank_initial",
+      "target": "generation_gate",
+      "when": "not_cancelled"
+    },
+    {
+      "source": "generation_gate",
+      "target": "select_parents",
+      "when": "generation_remaining"
+    },
+    {
+      "source": "select_parents",
+      "target": "mutate",
+      "when": "parents_nonempty"
+    },
+    {
+      "source": "mutate",
+      "target": "score_generation",
+      "when": "proposals_ready"
+    },
+    {
+      "source": "score_generation",
+      "target": "retain_and_rank",
+      "when": "all_requests_settled"
+    },
+    {
+      "source": "retain_and_rank",
+      "target": "checkpoint",
+      "when": "aggregated"
+    },
+    {
+      "source": "checkpoint",
+      "target": "generation_gate",
+      "when": "next_iteration"
+    },
+    {
+      "source": "generation_gate",
+      "target": "finalize",
+      "when": "budget_exhausted"
+    }
+  ],
+  "retained_state": {
+    "current": "successful population from latest scoring batch",
+    "scored": "append-only successful results across all generations",
+    "archive": "event sequence, generation snapshots and final state",
+    "seed": "deterministic per-proposal and scoring seeds; scoring indexes compact after rejected proposals"
+  },
+  "candidate_scoring": {
+    "source": {
+      "file": "engine",
+      "start_line": 723,
+      "end_line": 826
+    },
+    "steps": [
+      "validate_candidate",
+      "normalize_and_extract_features",
+      "select_lane_modules",
+      "evaluate_modules_in_order",
+      "envelope_errors_and_claim_locks",
+      "classify_and_provenance"
+    ],
+    "module_chains": {
+      "molecule": [
+        "amphora-molecule-property",
+        "amphora-molecule-role-ranker",
+        "amphora-molecule-novelty",
+        "amphora-molecule-design-gate"
+      ],
+      "formulation": [
+        "amphora-formulation-arithmetic",
+        "amphora-solvency-score",
+        "amphora-viscosity-score",
+        "amphora-cure-potlife-gate",
+        "amphora-public-corrosion-benchmark",
+        "amphora-tolerance-robustness",
+        "amphora-process-qc-twin",
+        "amphora-sourceability-ehs",
+        "amphora-design-rule-score"
+      ],
+      "evidence": [
+        "amphora-evidence-intake-validator",
+        "amphora-source-ledger",
+        "amphora-optimizer-orchestrator",
+        "amphora-redteam-audit",
+        "amphora-report-packager",
+        "amphora-run-provenance"
+      ]
+    },
+    "parallelism": "Between candidates only; capability evaluation within each candidate is sequential.",
+    "cli_supported_lane": "molecule",
+    "other_lanes": "Engine paths only; CLI run_solver rejects non-molecule lanes."
+  },
+  "failure_semantics": {
+    "mutation_failure": "candidate_rejected; continue batch",
+    "scoring_failure": "worker_failed; omit failed candidate; no retry in CLI loop",
+    "capability_failure": "ERROR envelope with NO_AUTHORITY, continue capability chain",
+    "archive_or_setup_failure": "propagate error through ?",
+    "cancellation": "cooperative return Ok without normal finalize at explicit checkpoints",
+    "empty_current": "Known v1 defect: subsequent parent indexing can panic; v2 must terminate truthfully instead of preserving panic."
+  },
+  "limitations": [
+    "mutate changes candidate identity and lineage, not structure",
+    "rank_candidates sets ranked=false and eligible_objectives=0",
+    "No CLI call to separate generate_compounds or numerical NSGA-II implementation",
+    "Source topology and annotations are a manually reviewed extraction, not a Rust execution trace",
+    "No durable restart/fencing semantics inferred from v1"
+  ],
+  "v2_acceptance": {
+    "required_plans": [
+      "BP-03",
+      "BP-04",
+      "BP-08"
+    ],
+    "first_goal": "Synthetic deterministic adapters preserve orchestration, ordering, retained state and honest authority limits.",
+    "later_goal": "Scientific implementations replace adapters behind versioned contracts; actual evolution requires separate evidence.",
+    "required_scenarios": [
+      "zero_generations",
+      "two_generations",
+      "partial_scoring_failure",
+      "all_scoring_failed",
+      "mutation_rejection",
+      "capability_error",
+      "cancel_between_generations",
+      "restart_after_commit"
+    ]
+  }
+}

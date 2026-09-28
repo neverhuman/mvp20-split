@@ -1,5 +1,7 @@
 # Architecture Drift History
 
+- `2026-09-23 19:55:48`: BP-01 contract/validation foundation aligned with its bounded architecture; [closeout audit](BP-01_Foundation_Closeout.md) records 39 tests, four independent wheel installations and explicit successor obligations. All scoped phase gates complete; no live runtime/scientific claim.
+
 ## System Construction Proposal ? 2026-09-22 20:30:31
 
 - Scope: executing system and persistence/communication design beyond functional service descriptions
@@ -29,3 +31,13 @@
 - Verification: targeted read-only comparison with JARVIS sources listed in Development Process; local navigation checks performed at setup handoff
 - Disposition: aligned for this documentation scope; no implementation or plan-completion audit claimed
 - Follow-up: none for guidance alignment; authoring/auditing an implementation plan remains the next planning gate
+
+`2026-09-25 08:20:58`: [BP-02.01 contract closeout](BP-02.01_Contracts_Closeout.md) aligned with no blocking drift. 99 tests, seven independent package installs and unchanged prior schemas; durable authority is not claimed.
+
+## BP-02.02 isolated persistence - 2026-09-25 08:49:41
+
+Aligned within bounded scope; [closeout evidence](BP-02.02_Persistence_Closeout.md). Independent schemas/roles, migration resources, command contention and rollback/retry proven. Domain publication/execution transitions remain planned children. Follow-Up: none within closed persistence scope.
+
+## Roadmap planning maturation - 2026-09-25 13:42:37
+
+Aligned within documentation scope; [planning review](Planning_Maturity_Review.md) and [readiness/handoffs](../Build%20Plans/Planning_Readiness.md). Thirty-four canonical children replace later broad registers, four open BP-02 children gain operational contracts, architecture lock/join/restore ambiguities resolved. Implementation percentages unchanged. Explicit provider/host/scientific gates remain in owning plans, not unowned drift. Follow-Up: none for this planning review.

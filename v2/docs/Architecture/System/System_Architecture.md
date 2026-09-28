@@ -1,7 +1,7 @@
 # System Architecture
 
-- Design status: concrete proposed construction; implementation not started
-- Last reviewed: `2026-09-22 21:03:27` (America/Chicago)
+- Design status: construction design with BP-01 contract/validation foundation implemented; durable runtime pending
+- Last reviewed: `2026-09-23 19:55:48` (America/Chicago)
 - Parent: [Master Architecture](../../../Architecture.md)
 - Scope: how the functional domains form one executing, persistent system
 - Deployment baseline: user-selected single-server installation with separate worker processes and optional remote scientific tools/model providers. Other system construction choices remain explicit proposals, not implemented guarantees.
@@ -10,9 +10,9 @@
 
 Initial profile: one user and one active campaign for internal use/demos; one server on the owner's DGX Spark or a partner Threadripper host. Multiple worker invocations within the campaign remain supported. Campaign decisions are autonomous under configured authority; human changes take effect in subsequent campaigns. Scientific inputs remain TBA and no polymer-specific execution pathway is privileged. Enterprise capacity and service-level commitments are deferred.
 
-Build a modular control application around a durable graph interpreter. Separate the interpreter's scheduling/commit authority from the processes doing scientific computation. Use a transactional metadata store for authoritative revisions, execution state and decisions; immutable artifact storage for large payloads; and replaceable projections for exploration, retrieval and visualization.
+Build isolated primary services around a durable graph interpreter with one runtime transaction owner. Separate the interpreter's scheduling/commit authority from the processes doing scientific computation. Use a transactional metadata store for authoritative revisions, execution state and decisions; immutable artifact storage for large payloads; and replaceable projections for exploration, retrieval and visualization.
 
-The eight functional domains are internal responsibility boundaries. They are not eight HTTP services, eight databases or eight independent workflow engines. Distribution is initially necessary across unreliable/expensive work and external providers, not across every business noun.
+The eight functional domains are responsibility views. Primary implementations are strictly isolated service packages with explicit runtime/deployment boundaries, private state ownership and public contracts. They do not map mechanically to eight databases or independent workflow engines. Service Isolation defines the actual owners; one campaign runtime retains execution authority.
 
 ## Architectural Decisions
 
@@ -31,16 +31,20 @@ The eight functional domains are internal responsibility boundaries. They are no
 
 ## System Decomposition
 
+- [Foundation Implementation Decisions](Foundation_Decisions.md): selected initial language, service stack, independent packaging and wire-profile limits.
+
 - [Runtime Topology](Runtime_Topology.md): processes, communication paths, placement and scaling seams.
 - [Graph Execution Model](Graph_Execution_Model.md): compiler/interpreter, control instructions, tokens, iterations and amendments.
+- [Graph Runner and Campaign Supervision](Graph_Runner.md): concurrent coordination, aggregation, failure handling and durable LLM engagement under one runtime authority.
 - [State and Consistency](State_and_Consistency.md): concrete record ownership, transaction boundaries, artifacts and recovery.
 - [Research Loop](Research_Loop.md): one campaign traced across generation, evaluation, knowledge feedback, lab work and graph amendment.
 - [Interfaces and Code Boundaries](Interfaces_and_Code_Boundaries.md): command/result protocols, dependency direction and proposed source structure.
 - [Contract Architecture](Contract_Architecture.md): Pydantic contract families, schema publication, Rust/UI/LLM adapters, validation and compatibility.
+- [Service Isolation and Replacement](Service_Isolation.md): primary service owners, source/state/dependency enforcement and independent replacement.
 
 ## Consequences and Tradeoffs
 
-A shared control application and transactional store make multi-object invariants reviewable and keep initial deployment manageable. They also create a shared capacity/failure boundary: this first profile is not high availability. Worker isolation prevents long-running calculations from taking ownership of control state, but adds durable dispatch, fencing and reconciliation that must be implemented before parallelism is trusted.
+A runtime-owned transactional boundary makes run/attempt/budget invariants reviewable. Separate services publish domain acceptance through explicit receipts and reconciliation; no distributed atomic transaction is assumed. The initial server/database installation remains a shared capacity/failure boundary, not high availability. Tool isolation adds dispatch, fencing, version routing and operational overhead that must be proved before replication is trusted.
 
 Keeping graphs as typed versioned objects avoids choosing a graph database before traversal requirements are measured. It does not mean arbitrary JSON is the domain model: schema validation, scientific objects and explicit relationships still own behavior. Dedicated graph/vector infrastructure can be introduced as a projection or a separately reviewed migration when measured workloads justify it.
 

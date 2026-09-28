@@ -1,0 +1,118 @@
+# BP-05 Planning History
+
+Archived first draft at `2026-09-25 13:35:12`. Historical task pairs/percentages are not the active execution tracker. The parent and linked children now own progress. Original scope is preserved below for traceability.
+
+# BP-05 Graph Studio First Vertical Slice
+
+## Canonical Execution Tracker
+
+- Status: **proposed / first draft for user review**; implementation not activated.
+- Last refreshed: `2026-09-24 12:10:07` (America/Chicago).
+- Owner/scope: Studio modules and thin gateway/projection adapters.
+- Parent: [Master Build Tracker](Master%20Build%20Tracker.md); baseline: local architecture and BP-01/BP-01A completed foundation, BP-02 active protocol work.
+- Overall implementation: **0%**; 8 equally weighted verified tasks, two per phase. Overall = completed tasks / 8; phase = completed tasks / 2. Drafting earns no implementation credit.
+- Current phase/task: none; proposed plan.
+- Next task: incorporate review, then verify predecessor gates and run the bounded pre-activation coherence audit before P1/T1.
+- Prerequisites: Completed BP-04 runnable fixture and versioned read/command contracts.
+- Completed implementation/evidence: none. All phase gates remain pending.
+- Blockers: predecessor gates are not complete; decisions below block only their dependent tasks.
+- Human acceptance: draft is available for review; no approval inferred for dependent deployment/provider actions. Campaigns remain autonomous with human changes between campaigns.
+- Active exception: none.
+- Draft coherence check: `2026-09-24 12:01:26`; ownership, ordering, scoped tests and handoffs checked against [owning architecture](../Architecture/Experience/Studio.md). This is not the implementation activation audit.
+
+| Phase / status | Completion | Dependency | Required exit |
+|---|---:|---|---|
+| P1 Interaction and transport boundaries / proposed | 0% | Completed predecessor gates and activation audit | T1-T2: Review concrete journey/layout prototypes and API contracts; no floating revision mix, implementation jargon in user decisions or all-context initial payload. |
+| P2 Graph inspection and navigation / proposed | 0% | P1 exit | T3-T4: Module view-model tests and browser checks distinguish replay/live/stale data; large synthetic graph stays navigable with a measured baseline, not a guessed performance claim. |
+| P3 Drafts and safe commands / proposed | 0% | P2 exit | T5-T6: Stale edit cannot overwrite a newer draft; no draft can mutate active instructions; cancellation UI reflects committed state instead of optimistic success. |
+| P4 Visual and integration acceptance / proposed | 0% | P3 exit | T7-T8: Browser interaction and visual review pass with real data; no mock screenshot substituted for live behavior; tests remain component-focused plus a bounded E2E journey. |
+
+## Outcome and Boundaries
+
+Let a user navigate a real campaign, inspect its evidence and failures, and author the next campaign without interrupting autonomous execution.
+
+Included: Progressive graph exploration, live/replay view models, version-consistent details, bounded draft editing, revision/lineage comparison and emergency termination.
+
+Excluded: A universal dashboard, fabricated knowledge views, active-run human editing, model supervision controls that bypass authority, or a new browser-owned run database.
+
+Primary services retain private state, dependencies, migrations and module READMEs. Public contracts/clients are the only cross-owner dependencies. Any new schema identifies its consumer/migration impact. No broad backend or shared business/ORM package. Later phases refine earlier boundaries under the current task without reopening closed plans.
+
+## Child Work-Package Register
+
+This parent owns outcomes and sequencing. The named packages below are **scoped, not implementation-ready**. The existing task pairs are requirements for child decomposition, not sufficiently detailed coding instructions. Before activating a package, author its canonical child plan with owned objects/API/storage, transition/algorithm decisions, failure/recovery matrix, named fixtures and replacement gates. Parent progress then rolls up verified child deliverables; do not count these task pairs again. No implementation credit is earned here.
+
+| Child / bounded ownership | Implementation | Prerequisite | Scope to decompose |
+|---|---:|---|---|
+| BP-05.01 / Interaction and transport boundaries | 0% | Parent predecessor gates | Apply local UI Coding Guidelines; define primary user journeys, graph/detail ownership, keyboard navigation, accessible states and loading/error/empty behavior. Select the frontend/canvas implementation against progressive graph rendering needs; specify pagination, revision cuts, reconnect cursors and client command preconditions. |
+| BP-05.02 / Graph inspection and navigation | 0% | BP-05.01 exit | Build campaign canvas and progressive neighborhoods with branch/iteration/attempt status sourced from real BP-04 state; one owner for each page data model. Add evidence/artifact and lineage details, reason-coded failures, budget/frontier views and revision comparison; show stale/partial/omitted context honestly. |
+| BP-05.03 / Drafts and safe commands | 0% | BP-05.02 exit | Implement next-campaign graph editing from registered bounded tools, validation feedback, diff and optimistic concurrency; edits remain drafts until eligible activation. Add emergency termination and truthful in-flight/uncertain-effect results; reconnect after lost acknowledgement queries the command receipt. |
+| BP-05.04 / Visual and integration acceptance | 0% | BP-05.03 exit | Exercise keyboard/readability/focus, dense graphs, long labels, failures, reconnect and preserved selection in a real browser with captured evidence. Run the actual BP-04 workflow through public APIs, document module boundaries and visual gaps, and complete scoped drift audit/archival. |
+
+Readiness gaps are the unresolved decisions below plus concrete storage/API contracts, algorithm choices, test oracles and migration/recovery obligations for each package. Decompose the nearest eligible package first; do not invent distant provider, ontology or deployment decisions merely to fill templates. Child scope remains here until a linked execution plan replaces the register entry. The parent's existing percentages remain 0% because no implementation has occurred.
+
+## Ordered Tasks
+
+### P1 ? Interaction and transport boundaries
+
+**T1.** Apply local UI Coding Guidelines; define primary user journeys, graph/detail ownership, keyboard navigation, accessible states and loading/error/empty behavior.
+
+**T2.** Select the frontend/canvas implementation against progressive graph rendering needs; specify pagination, revision cuts, reconnect cursors and client command preconditions.
+
+**Exit:** Review concrete journey/layout prototypes and API contracts; no floating revision mix, implementation jargon in user decisions or all-context initial payload.
+
+### P2 ? Graph inspection and navigation
+
+**T3.** Build campaign canvas and progressive neighborhoods with branch/iteration/attempt status sourced from real BP-04 state; one owner for each page data model.
+
+**T4.** Add evidence/artifact and lineage details, reason-coded failures, budget/frontier views and revision comparison; show stale/partial/omitted context honestly.
+
+**Exit:** Module view-model tests and browser checks distinguish replay/live/stale data; large synthetic graph stays navigable with a measured baseline, not a guessed performance claim.
+
+### P3 ? Drafts and safe commands
+
+**T5.** Implement next-campaign graph editing from registered bounded tools, validation feedback, diff and optimistic concurrency; edits remain drafts until eligible activation.
+
+**T6.** Add emergency termination and truthful in-flight/uncertain-effect results; reconnect after lost acknowledgement queries the command receipt.
+
+**Exit:** Stale edit cannot overwrite a newer draft; no draft can mutate active instructions; cancellation UI reflects committed state instead of optimistic success.
+
+### P4 ? Visual and integration acceptance
+
+**T7.** Exercise keyboard/readability/focus, dense graphs, long labels, failures, reconnect and preserved selection in a real browser with captured evidence.
+
+**T8.** Run the actual BP-04 workflow through public APIs, document module boundaries and visual gaps, and complete scoped drift audit/archival.
+
+**Exit:** Browser interaction and visual review pass with real data; no mock screenshot substituted for live behavior; tests remain component-focused plus a bounded E2E journey.
+
+## Test Ownership and Evidence
+
+Proposed suite locations (create with their modules):
+
+- `studio/<module>/tests/`.
+- `services/control_gateway/tests/`.
+- `services/projection_serving/tests/`.
+- `tests/integration/studio/`.
+
+Each owning README maps public behavior, invariants, failure scenarios and measured source paths to module-local test suites. Register source/suite ownership in `dev/test_scopes.json`; extend granular selectors as modules arrive. Run changed-module tests first, affected consumers next, and separate public-boundary integration/E2E only for cross-owner outcomes. Record line and branch coverage with gaps; coverage percentages are not evidence of scientific correctness.
+
+Keep scenario evidence with absolute timestamps, implementation revision, fixture/schema identity, relevant run/artifact IDs and observed outcomes. Unit mocks do not replace required database, process, browser or provider evidence. Record independent build/install and replacement tests for new service/tool boundaries.
+
+## UI Reference Refinement
+
+`2026-09-24 12:10:07`: Use the [interaction reference map](../Architecture/Experience/Interaction_References.md) in P1/T1-T2 prototypes and P4 usability checks. Design/Monitor separation and persistent selection refine existing scope; Explore and fitness Compare depend on BP-06/BP-08. Implementation and all phase percentages remain 0%; this refines existing tasks.
+
+## Decisions and Handoff
+
+Frontend/canvas choice is made against the first prototype, not inherited from default LLM UI scaffolds. Knowledge graph traversal appears only after BP-06 publishes real views; do not ship fake links as implemented capability.
+
+## Progress, Scope Changes and Closeout
+
+The canonical tracker owns overall and P1-P4 percentages; mirror them in MBT at every completed task or changed scope and before commit/handoff. Do not activate downstream phases before their predecessor gate. Record review changes and denominator adjustments here; substantial newly discovered scope gets a named successor.
+
+Final phase includes a component-scoped architecture drift audit. Fix blocking drift, explicitly assign nonblocking follow-ups, update module READMEs/inventories and archive only after all defined gates pass. Synchronize MBT, plan index and Restore and repair moved links. Preserve separate acceptance/operational/scientific readiness status; 100% measures this bounded implementation, not the whole product.
+
+Closeout evidence: pending. No implementation, deployment or scientific validation is claimed by this draft.
+
+## Reference refinement 2026-09-25 13:54:17
+
+BP-05.02 now specifies named, scoped, revision-bound scientific views and matching failure fixtures. Knowledge/lab views use labeled fixtures until BP-06.06 proves the actual owner integration; no graph backend is selected by the reference. Existing implementation deliveries extended with required acceptance cases; all 0%, denominator unchanged. [Reference assessment](References/Amphora_Lab_Insights.md) owns provenance and limitations.

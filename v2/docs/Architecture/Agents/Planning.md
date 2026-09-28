@@ -4,7 +4,7 @@
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
 - Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
 - Parent: [Domain overview](Agent_Architecture.md)
-- Requirement source: [Product Requirements](../Product_Requirements.md#llm-prompt-integration)
+- Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#llm-prompt-integration)
 
 ## Owned Contract
 
@@ -33,6 +33,8 @@ LLMs cannot mutate signed constraints, create measurements or self-promote knowl
 A context packet identifies objective, source revisions, constraints, relevant tool descriptors, knowledge projection, budget and required gates. It retains retrieval provenance and exclusion/truncation reasons. Token budgets are limits, not permission to discard the governing objective or hard constraints silently.
 
 ## Proposal Flow
+
+The [Graph Runner](../System/Graph_Runner.md) can request campaign-supervision reasoning through a durable, scoped engagement. Agent Planning owns context assembly/model attempts and returns the requested typed proposal with prompt/model/input provenance. It does not own the engagement's execution decision, call scientific tools outside granted work or advance the campaign. Relevant frontier changes can make its response stale; runtime validation/conditional acceptance governs use. Model unavailability must not block unrelated graph branches.
 
 Resolve authorized task context, retrieve a bounded functional universe, invoke the model with a structured output schema, validate the proposal and submit it to its owning domain. A graph proposal goes to Campaigns; a claim proposal to Knowledge; an envelope to Research. The model call itself does not commit these objects.
 

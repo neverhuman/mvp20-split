@@ -1,0 +1,658 @@
+[
+  {
+    "name": "valid-artifact",
+    "model": "core.artifact-ref",
+    "valid": true,
+    "payload": {
+      "artifact_id": "input-1",
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "demo"
+      },
+      "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "synthetic.value",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "size_bytes": 42
+    }
+  },
+  {
+    "name": "valid-descriptor",
+    "model": "tools.descriptor",
+    "valid": true,
+    "payload": {
+      "schema_version": "1",
+      "binding": {
+        "capability_id": "synthetic.evaluate",
+        "release": "0.1.0",
+        "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "contract_version": "1"
+      },
+      "purpose": "Synthetic protocol fixture; no scientific authority",
+      "applicability": [
+        "synthetic-only"
+      ],
+      "inputs": [
+        {
+          "name": "value",
+          "schema_ref": {
+            "schema_id": "synthetic.value",
+            "version": "1",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "representation": "synthetic.scalar",
+          "unit": "dimensionless",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "value",
+          "schema_ref": {
+            "schema_id": "synthetic.value",
+            "version": "1",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "representation": "synthetic.scalar",
+          "unit": "dimensionless",
+          "required": true
+        }
+      ],
+      "side_effects": "pure",
+      "checkpoint_schema": null
+    }
+  },
+  {
+    "name": "valid-invocation",
+    "model": "tools.invocation",
+    "valid": true,
+    "payload": {
+      "schema_version": "1",
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "demo"
+      },
+      "run_id": "r1",
+      "node_id": "n1",
+      "activation_id": "iteration-1.n1",
+      "invocation_id": "i1",
+      "attempt_id": "a1",
+      "fence": 1,
+      "tool": {
+        "capability_id": "synthetic.evaluate",
+        "release": "0.1.0",
+        "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "contract_version": "1"
+      },
+      "inputs": [
+        {
+          "port": "value",
+          "artifact": {
+            "artifact_id": "input-1",
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "demo"
+            },
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "synthetic.value",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "size_bytes": 42
+          }
+        }
+      ],
+      "checkpoint": null,
+      "timeout_seconds": 30,
+      "grant_id": "g1"
+    }
+  },
+  {
+    "name": "valid-completion",
+    "model": "tools.completion",
+    "valid": true,
+    "payload": {
+      "schema_version": "1",
+      "invocation_id": "i1",
+      "attempt_id": "a1",
+      "fence": 1,
+      "outcome": {
+        "status": "succeeded",
+        "outputs": [
+          {
+            "port": "value",
+            "artifact": {
+              "artifact_id": "input-1",
+              "scope": {
+                "tenant_id": "internal",
+                "project_id": "demo"
+              },
+              "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "media_type": "application/json",
+              "schema_ref": {
+                "schema_id": "synthetic.value",
+                "version": "1",
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+              },
+              "size_bytes": 42
+            }
+          }
+        ],
+        "checkpoint": null
+      }
+    }
+  },
+  {
+    "name": "valid-campaign",
+    "model": "campaigns.definition",
+    "valid": true,
+    "payload": {
+      "schema_version": "1",
+      "campaign_id": "demo",
+      "revision": 1,
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "demo"
+      },
+      "body": {
+        "nodes": [
+          {
+            "kind": "invoke",
+            "node_id": "calculate",
+            "tool": {
+              "capability_id": "synthetic.evaluate",
+              "release": "0.1.0",
+              "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+              "contract_version": "1"
+            }
+          },
+          {
+            "kind": "finish",
+            "node_id": "done"
+          }
+        ],
+        "edges": [
+          {
+            "source": "calculate",
+            "target": "done",
+            "route": "next"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "valid-abstained",
+    "model": "tools.completion",
+    "valid": true,
+    "payload": {
+      "schema_version": "1",
+      "invocation_id": "i1",
+      "attempt_id": "a1",
+      "fence": 1,
+      "outcome": {
+        "status": "abstained",
+        "reason_code": "not_applicable"
+      }
+    }
+  },
+  {
+    "name": "valid-failed",
+    "model": "tools.completion",
+    "valid": true,
+    "payload": {
+      "schema_version": "1",
+      "invocation_id": "i1",
+      "attempt_id": "a1",
+      "fence": 1,
+      "outcome": {
+        "status": "failed",
+        "reason_code": "provider_down",
+        "retryable": true
+      }
+    }
+  },
+  {
+    "name": "valid-uncertain_external_effect",
+    "model": "tools.completion",
+    "valid": true,
+    "payload": {
+      "schema_version": "1",
+      "invocation_id": "i1",
+      "attempt_id": "a1",
+      "fence": 1,
+      "outcome": {
+        "status": "uncertain_external_effect",
+        "reason_code": "ack_lost",
+        "operation_id": "external-1"
+      }
+    }
+  },
+  {
+    "name": "zero-fence",
+    "model": "tools.invocation",
+    "valid": false,
+    "payload": {
+      "schema_version": "1",
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "demo"
+      },
+      "run_id": "r1",
+      "node_id": "n1",
+      "activation_id": "iteration-1.n1",
+      "invocation_id": "i1",
+      "attempt_id": "a1",
+      "fence": 0,
+      "tool": {
+        "capability_id": "synthetic.evaluate",
+        "release": "0.1.0",
+        "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "contract_version": "1"
+      },
+      "inputs": [
+        {
+          "port": "value",
+          "artifact": {
+            "artifact_id": "input-1",
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "demo"
+            },
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "synthetic.value",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "size_bytes": 42
+          }
+        }
+      ],
+      "checkpoint": null,
+      "timeout_seconds": 30,
+      "grant_id": "g1"
+    }
+  },
+  {
+    "name": "coerced-fence",
+    "model": "tools.invocation",
+    "valid": false,
+    "payload": {
+      "schema_version": "1",
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "demo"
+      },
+      "run_id": "r1",
+      "node_id": "n1",
+      "activation_id": "iteration-1.n1",
+      "invocation_id": "i1",
+      "attempt_id": "a1",
+      "fence": "1",
+      "tool": {
+        "capability_id": "synthetic.evaluate",
+        "release": "0.1.0",
+        "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "contract_version": "1"
+      },
+      "inputs": [
+        {
+          "port": "value",
+          "artifact": {
+            "artifact_id": "input-1",
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "demo"
+            },
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "synthetic.value",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "size_bytes": 42
+          }
+        }
+      ],
+      "checkpoint": null,
+      "timeout_seconds": 30,
+      "grant_id": "g1"
+    }
+  },
+  {
+    "name": "unsafe-integer",
+    "model": "tools.invocation",
+    "valid": false,
+    "payload": {
+      "schema_version": "1",
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "demo"
+      },
+      "run_id": "r1",
+      "node_id": "n1",
+      "activation_id": "iteration-1.n1",
+      "invocation_id": "i1",
+      "attempt_id": "a1",
+      "fence": 9007199254740992,
+      "tool": {
+        "capability_id": "synthetic.evaluate",
+        "release": "0.1.0",
+        "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "contract_version": "1"
+      },
+      "inputs": [
+        {
+          "port": "value",
+          "artifact": {
+            "artifact_id": "input-1",
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "demo"
+            },
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "synthetic.value",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "size_bytes": 42
+          }
+        }
+      ],
+      "checkpoint": null,
+      "timeout_seconds": 30,
+      "grant_id": "g1"
+    }
+  },
+  {
+    "name": "unsupported-version",
+    "model": "tools.invocation",
+    "valid": false,
+    "payload": {
+      "schema_version": "2",
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "demo"
+      },
+      "run_id": "r1",
+      "node_id": "n1",
+      "activation_id": "iteration-1.n1",
+      "invocation_id": "i1",
+      "attempt_id": "a1",
+      "fence": 1,
+      "tool": {
+        "capability_id": "synthetic.evaluate",
+        "release": "0.1.0",
+        "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "contract_version": "1"
+      },
+      "inputs": [
+        {
+          "port": "value",
+          "artifact": {
+            "artifact_id": "input-1",
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "demo"
+            },
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "synthetic.value",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "size_bytes": 42
+          }
+        }
+      ],
+      "checkpoint": null,
+      "timeout_seconds": 30,
+      "grant_id": "g1"
+    }
+  },
+  {
+    "name": "zero-timeout",
+    "model": "tools.invocation",
+    "valid": false,
+    "payload": {
+      "schema_version": "1",
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "demo"
+      },
+      "run_id": "r1",
+      "node_id": "n1",
+      "activation_id": "iteration-1.n1",
+      "invocation_id": "i1",
+      "attempt_id": "a1",
+      "fence": 1,
+      "tool": {
+        "capability_id": "synthetic.evaluate",
+        "release": "0.1.0",
+        "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "contract_version": "1"
+      },
+      "inputs": [
+        {
+          "port": "value",
+          "artifact": {
+            "artifact_id": "input-1",
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "demo"
+            },
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "synthetic.value",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "size_bytes": 42
+          }
+        }
+      ],
+      "checkpoint": null,
+      "timeout_seconds": 0,
+      "grant_id": "g1"
+    }
+  },
+  {
+    "name": "unknown-field",
+    "model": "tools.invocation",
+    "valid": false,
+    "payload": {
+      "schema_version": "1",
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "demo"
+      },
+      "run_id": "r1",
+      "node_id": "n1",
+      "activation_id": "iteration-1.n1",
+      "invocation_id": "i1",
+      "attempt_id": "a1",
+      "fence": 1,
+      "tool": {
+        "capability_id": "synthetic.evaluate",
+        "release": "0.1.0",
+        "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "contract_version": "1"
+      },
+      "inputs": [
+        {
+          "port": "value",
+          "artifact": {
+            "artifact_id": "input-1",
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "demo"
+            },
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "synthetic.value",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "size_bytes": 42
+          }
+        }
+      ],
+      "checkpoint": null,
+      "timeout_seconds": 30,
+      "grant_id": "g1",
+      "authority_override": true
+    }
+  },
+  {
+    "name": "abstention-with-favorable-output",
+    "model": "tools.completion",
+    "valid": false,
+    "payload": {
+      "schema_version": "1",
+      "invocation_id": "i1",
+      "attempt_id": "a1",
+      "fence": 1,
+      "outcome": {
+        "status": "abstained",
+        "reason_code": "missing",
+        "outputs": [
+          {
+            "port": "value",
+            "artifact": {
+              "artifact_id": "input-1",
+              "scope": {
+                "tenant_id": "internal",
+                "project_id": "demo"
+              },
+              "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "media_type": "application/json",
+              "schema_ref": {
+                "schema_id": "synthetic.value",
+                "version": "1",
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+              },
+              "size_bytes": 42
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "floating-image",
+    "model": "tools.binding",
+    "valid": false,
+    "payload": {
+      "capability_id": "synthetic.evaluate",
+      "release": "0.1.0",
+      "image_sha256": "latest",
+      "contract_version": "1"
+    }
+  },
+  {
+    "name": "arbitrary-code-node",
+    "model": "campaigns.definition",
+    "valid": false,
+    "payload": {
+      "schema_version": "1",
+      "campaign_id": "demo",
+      "revision": 1,
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "demo"
+      },
+      "body": {
+        "nodes": [
+          {
+            "kind": "eval",
+            "node_id": "bad",
+            "code": "unsafe()"
+          },
+          {
+            "kind": "finish",
+            "node_id": "done"
+          }
+        ],
+        "edges": [
+          {
+            "source": "calculate",
+            "target": "done",
+            "route": "next"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "unbounded-loop",
+    "model": "campaigns.definition",
+    "valid": false,
+    "payload": {
+      "schema_version": "1",
+      "campaign_id": "demo",
+      "revision": 1,
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "demo"
+      },
+      "body": {
+        "nodes": [
+          {
+            "kind": "iterate",
+            "node_id": "loop",
+            "max_iterations": 0,
+            "body": {
+              "nodes": [
+                {
+                  "kind": "invoke",
+                  "node_id": "calculate",
+                  "tool": {
+                    "capability_id": "synthetic.evaluate",
+                    "release": "0.1.0",
+                    "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+                    "contract_version": "1"
+                  }
+                },
+                {
+                  "kind": "finish",
+                  "node_id": "done"
+                }
+              ],
+              "edges": [
+                {
+                  "source": "calculate",
+                  "target": "done",
+                  "route": "next"
+                }
+              ]
+            }
+          },
+          {
+            "kind": "finish",
+            "node_id": "done"
+          }
+        ],
+        "edges": [
+          {
+            "source": "calculate",
+            "target": "done",
+            "route": "next"
+          }
+        ]
+      }
+    }
+  }
+]

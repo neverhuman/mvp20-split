@@ -1,9 +1,9 @@
 # Amphora Master Architecture
 
-- Design status: proposed v2 architecture; implementation not claimed
-- Last reviewed: `2026-09-22 21:03:27` (America/Chicago)
+- Design status: v2 architecture with contract/validation and isolated persistence foundations implemented; durable graph execution pending
+- Last reviewed: `2026-09-25 13:42:37` (America/Chicago)
 - Scope: system principles, construction boundary and functional responsibility domains
-- Requirement authority: Product_Requirements.md in docs/Architecture
+- Requirement authority: Product_Requirements.md in docs/Architecture/Requirements
 
 ## Purpose
 
@@ -12,6 +12,8 @@ Initial delivery is internal/demo use, one user and one active autonomous campai
 Amphora turns research objectives into executable, inspectable campaigns across materials, chemistry and biology. People and agents compose reviewed capabilities, compare evidence and revise research pathways without encoding each scientific workflow permanently into the engine. Existing v1 code is a frozen source of selectively reusable components, not the shape of v2.
 
 ## Major Principles
+
+Strict behavioral and functional isolation applies to every primary service and scientific tool. Each has a focused package, public contract, private implementation/state ownership, independent verification and a README that supports replacement. No catch-all backend or cross-service private imports. System owns service boundaries; Capabilities owns independently deployable tool workloads and the node/tool index.
 
 1. **Graphs express research.** Campaign graphs define execution; domain graphs represent scientific knowledge. Execution/provenance lineage is derived from actual work. These responsibilities remain distinct.
 2. **Capabilities supply behavior.** Typed, scientifically scoped tools are reusable building blocks. Graphs compose them; tools keep the stateless, stateful or asynchronous behavior their function requires.
@@ -27,7 +29,7 @@ Amphora turns research objectives into executable, inspectable campaigns across 
 
 ### System Construction
 
-[System Architecture](docs/Architecture/System/System_Architecture.md) defines how the engine is built: a modular control application and durable graph interpreter, separate worker processes, transactional authoritative state, immutable scientific artifacts and rebuildable projections. The user-selected initial deployment is a single server with remote scientific tools where needed. This child owns process topology, execution semantics, consistency protocols and the end-to-end research loop.
+[System Architecture](docs/Architecture/System/System_Architecture.md) defines how the engine is built: isolated primary services and a durable graph interpreter, independently packaged tool workers, explicitly owned transactional state, immutable scientific artifacts and rebuildable projections. The user-selected initial deployment is a single server with remote scientific tools where needed. This child owns process topology, execution semantics, consistency protocols and the end-to-end research loop.
 
 ### Functional Responsibility Domains
 
@@ -54,4 +56,4 @@ These domains are responsibility boundaries, not a mandate for eight deployed se
 
 This master links only to its nine immediate architectural children: system construction and eight functional domains. Each child explains its boundary and links to immediate focused contracts. Read deeper only for the responsibility being changed. Detailed schemas, algorithms, vendor choices, phase trackers and acceptance evidence belong below this level or in their owning delivery records, not in this master.
 
-Current implementation posture is planned. Detailed product acceptance remains binding even where a summary omits it; decomposition narrows context, not product scope.
+Implementation is partial: the contract/validation foundation exists; durable graph execution, scientific services, knowledge reasoning and Studio remain pending. Detailed product acceptance remains binding even where a summary omits it; decomposition narrows context, not product scope.

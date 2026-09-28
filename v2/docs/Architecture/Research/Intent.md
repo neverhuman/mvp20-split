@@ -4,7 +4,7 @@
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
 - Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
 - Parent: [Domain overview](Research_Architecture.md)
-- Requirement source: [Product Requirements](../Product_Requirements.md#envelope-intake)
+- Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#envelope-intake)
 
 ## Owned Contract
 
@@ -43,4 +43,4 @@ If a user corrects a concentration unit after sign-off, create a new field/envel
 
 ## Design Basis and Open Decisions
 
-[Domain Model](../Domain_Model.md) supplies envelope/design-space and reconstruction concepts. Remaining decisions: domain-specific minimum required fields, versioned unit ontology and which ambiguities block each operation. These must be chosen with acceptance fixtures; generic mandatory coatings fields are not the default for biology.
+[Domain Model](../Requirements/Domain_Model.md) supplies envelope/design-space and reconstruction concepts. Remaining decisions: domain-specific minimum required fields, versioned unit ontology and which ambiguities block each operation. These must be chosen with acceptance fixtures; generic mandatory coatings fields are not the default for biology.

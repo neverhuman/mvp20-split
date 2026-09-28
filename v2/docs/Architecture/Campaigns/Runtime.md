@@ -4,7 +4,7 @@
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
 - Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
 - Parent: [Domain overview](Campaign_Architecture.md)
-- Requirement source: [Product Requirements](../Product_Requirements.md#tool-node-and-runtime-boundaries)
+- Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#tool-node-and-runtime-boundaries)
 
 ## Owned Contract
 
@@ -21,6 +21,8 @@ Tools return typed results and declared state changes. Platform supplies durable
 Readers see committed state. Retries preserve logical identity and distinct attempts. Model/knowledge updates enter at declared boundaries. Checkpoint migration is explicit. Verify restart, stale/duplicate completion, concurrent isolation, cancellation, exhausted loops and audit-write failure. Deterministic fixtures replay exactly; external/nondeterministic work exposes limits.
 
 ## Component and Object Design
+
+[Graph Runner](../System/Graph_Runner.md) is the construction contract for this runtime's concurrent coordination, outcome aggregation and campaign supervision. Aggregates distinguish runtime completion from required scientific acceptance receipts. Durable LLM engagements bind a decision scope and observed frontier; proposals pass current preconditions before one accepted decision can advance work.
 
 | Proposed component | Authoritative responsibility |
 |---|---|
@@ -67,4 +69,4 @@ If two workers finish the same node, only the current fenced completion may comm
 
 ## Design Basis and Open Decisions
 
-[Invocation and Recovery Specification](../Scientific_Tools_and_Graph_Execution.md) supplies state/replay requirements. System selects the PostgreSQL transactional baseline. Initial scope is one active autonomous campaign with parallel node attempts; human changes apply to later campaigns. Remaining choices include lease timing, within-campaign resource allocation and checkpoint cadence; multi-campaign fairness is deferred. These need concurrency/crash fixtures before operational guarantees are claimed.
+[Invocation and Recovery Specification](../Requirements/Scientific_Tools_and_Graph_Execution.md) supplies state/replay requirements. System selects the PostgreSQL transactional baseline. Initial scope is one active autonomous campaign with parallel node attempts; human changes apply to later campaigns. Remaining choices include lease timing, within-campaign resource allocation and checkpoint cadence; multi-campaign fairness is deferred. These need concurrency/crash fixtures before operational guarantees are claimed.

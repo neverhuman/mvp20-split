@@ -65,3 +65,7 @@ For each meaningful UI delivery, render and inspect the actual screen at its int
 Use focused component checks for presentation states and actual backend integration for authority, permissions and mutations. Recorded realistic fixtures can supplement large-data and failure scenarios, but label fixture evidence clearly. Relevant workflow checks include reconnect/stale revisions, a slow worker, duplicate notifications, rejected graph edits and completed-but-unaccepted results. Report what was actually inspected; browser or backend unavailability remains an explicit verification gap.
 
 Update the owning module contract and plan evidence when behavior changes. This guidance does not add a separate approval ceremony or select a frontend framework.
+
+## Interaction References
+
+Before Studio prototyping, read [Research Studio Interaction References](Architecture/Experience/Interaction_References.md). Use its task-specific patterns and connected mode boundaries as prototype inputs; libraries, databases and product integrations remain separate choices.

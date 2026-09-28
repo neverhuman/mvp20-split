@@ -1,0 +1,9 @@
+# Local Byte Storage Boundary
+
+`LocalBytes` accepts an existing absolute administrator-configured root. Request paths never enter storage resolution. Every operation checks root ancestors and entries for symlinks/Windows reparse points. Keys are generated 32-character lowercase hex strings. Exclusive file creation prevents overwriting old attempts; root mutation by a hostile administrator is outside the service-owned-directory trust boundary.
+
+`ByteWriter` writes at most the declared size in 64 KiB pieces, tracks count/SHA-256, verifies full content and flushes/fsyncs before successful selection. Close precedes transaction settlement. Incomplete or stale files cannot become catalog references; storage itself issues no artifact identity or scientific acceptance. There is no deletion path yet. `LocalBytes.verify` opens the selected file and rechecks size/digest through that handle before publication; bounded returned bytes are validated by the configured content policy outside SQL locks.
+
+Local writes are synchronous and bounded; the API uses worker threads for DB transactions. Cancelling an async request cannot leave a concurrent background file writer racing cleanup/settlement. Slow/distant storage can block the event loop and is not an accepted performance profile. Tests use Windows temporary local directories and real junctions where symlink privilege is absent; the NAS checkout is only the source location. Target filesystem power-loss/directory durability and remote storage adapters remain later acceptance.
+
+`tests/storage/` checks traversal, linked paths, exclusive creation and bounded writes; `tests/publication/` checks authority/fencing/interruptions. Replacement must preserve immutable attempt keys and no-catalog-before-verification semantics; a plain move/rename never substitutes for the owning publication transaction.
