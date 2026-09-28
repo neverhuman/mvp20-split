@@ -222,3 +222,6 @@ The preliminary 34-child-delivery denominator included pure design gates S1 and 
 | 2026-09-28 11:37:28 | BP-02.04 I4 passed; child 66.67%, V1 80%, parent 59.38%; next I5 | Budget/rollback/prepared-intent guards; 229 full tests, 41 scoped |
 
 | 2026-09-28 11:51:08 | BP-02.04 I5 passed; child 83.33%, V1 100%, parent 62.50%; next I6 | 239 tests; atomic cancel/revoke and policy journal; f8a8f94 pushed |
+
+| 2026-09-28 12:13:10 | BP-02.05 D1 passed; child 16.67%, V1 20%, parent 68.75%; next D2 | 259 tests/eight builds; immutable intent and partial reservation recovery |
+| 2026-09-28 12:01:48 | BP-02.04 closed/audited 100%; parent 65.63% (21/32); .05/D1 activated at 0% | 243 tests/eight builds, installed HTTP-only worker proof; [audit](../../Audits/BP-02.04_Invocation_Lifecycle_Closeout.md) |

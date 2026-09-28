@@ -2,6 +2,7 @@
 
 | Plan | Completion | Closeout |
 |---|---|---|
+| [BP-03 Tool Index and Standalone Execution](BP-03%20Tool%20Index%20and%20Standalone%20Execution.md) | 100%; 16/16 deliveries, four children audited | [Parent audit](../../Audits/BP-03_Tool_Execution_Closeout.md) |
 | [BP-02 Durable Runtime and Artifact Foundation](BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md) | 100%; 32/32 deliveries, six children audited | [Parent audit](../../Audits/BP-02_Foundation_Closeout.md) |
 | [BP-01A Module Tests and V1 Graph Baseline](BP-01A%20Module%20Tests%20and%20V1%20Graph%20Baseline.md) | 100%; P1-P4 each 100% | [Scoped audit](../../Audits/BP-01A_Test_and_Graph_Baseline_Closeout.md) |
 | [BP-01 Contract and Service Foundations](BP-01%20Contract%20and%20Service%20Foundations.md) | 100%; four bounded phases complete | [Foundation audit](../../Audits/BP-01_Foundation_Closeout.md) |

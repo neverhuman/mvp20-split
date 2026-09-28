@@ -1,6 +1,7 @@
 """Owned ephemeral setup through public APIs; no private owner imports or SQL."""
 
 import base64
+import copy
 import hashlib
 import importlib.util
 import json
@@ -123,6 +124,11 @@ class Environment:
                     "invocations": [{"node_id": "node-" + str(i), "activation_id": "activation-" + str(i), "invocation_id": "invocation-" + str(i),
                         "tool": tool.lock["tool"], "inputs": [{"port": "parameters", "artifact": reference}], "timeout_seconds": 60}
                         for i in range(count)], "budget": {"limit": count * 2, "max_attempts_per_activation": 2}}
+            limited = copy.deepcopy(self.fixtures[tool.key + "-1"])
+            limited["fixture_id"] = tool.key + "-budget-one"
+            limited["plan_sha256"] = hashlib.sha256(limited["fixture_id"].encode()).hexdigest()
+            limited["budget"]["limit"] = 1
+            self.fixtures[limited["fixture_id"]] = limited
         self.runtime = self.host("runtime", "amphora_campaign_runtime", {"database_url_env": "DATABASE_URL",
             "fixtures": list(self.fixtures.values()), "tools": [tool.descriptor for tool in self.tools],
             "principals": [self.principal("admin", ["admit", "cancel", "read", "inspect_receipts", "deliver"]),

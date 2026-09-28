@@ -1,6 +1,6 @@
 # Tool Replica Integration Acceptance
 
-- Status: BP-03.04/B1 passed; B1/B2 passed; B3 acceptance negatives active.
+- Status: BP-03.04 complete; eight actual public-owner cases and scoped audit passed.
 - Owner: cross-owner synthetic tool integration tests, not a production service or scheduler.
 - Architecture: [Tool Services](../../../docs/Architecture/Capabilities/Tool_Services.md).
 
@@ -17,3 +17,5 @@ Evidence contains scoped immutable identities, receipts, state snapshots, hash-o
 B1 actual scope f303014dbbc44baa870a8bf5c01095a7 passed on 2026-09-28 17:04:34: registry selection/admission, two distinct simultaneous claims, publication before acceptance and completion acknowledgement loss. Both results match independent goldens; budget reserves/spends each attempt once. [Preserved evidence](../../../docs/Audits/Evidence/BP-03-Replicas/README.md).
 
 Add `--previous-images <prior-manifest>` for death/reclaim and new-release cutover. The driver verifies and installs the prior manifest's adjacent built-wheels bytes into a separate environment; it never rebuilds a prior identity from changed source. Five actual cases passed at 2026-09-28 17:12:18, scope cf1cde5566ec445b97829458da776604. Original receipts, output bytes and run snapshot remain unchanged after replacement; an old-release worker cannot claim the new run.
+
+Final gate: add both `--previous-images <old-manifest>` and `--replacement`. Eight actual cases passed, scope 7f160a8548e2488d821103017b8fbc8d. Checkpoint schema version 1 is rejected by the undeclared checkpoint contract; unsupported version 2 is rejected at wire validation before receipt registration. Exhausted fixture budget prevents extra attempts; explicit controller cleanup does not claim a graph-supervisor terminal transition. [Closeout audit](../../../docs/Audits/BP-03.04_Replica_Closeout.md).

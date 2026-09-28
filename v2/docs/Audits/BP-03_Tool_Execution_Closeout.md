@@ -1,0 +1,13 @@
+# BP-03 Tool Index and Execution Closeout
+
+- Status: complete, 16/16 deliveries; all four children audited and archived.
+- Reviewed: `2026-09-28 17:21:26` (America/Chicago).
+- Outcome: an exact eligible tool release can be discovered, pinned into an explicitly prepared Runtime campaign and executed by independent worker processes through public owner APIs.
+
+[Descriptor audit](BP-03.01_Descriptor_Closeout.md) establishes immutable semantic/byte identities, typed interfaces and independent eligibility decisions. [Registry audit](BP-03.02_Registry_Closeout.md) establishes private durable catalog/inventory, authenticated lifecycle, real owner races and retained-state service replacement. [Worker audit](BP-03.03_Worker_Closeout.md) establishes the narrow SDK, separately packaged kernels, artifact consumer additions, real response-loss/expiry recovery and image/reinstall evidence. [Replica audit](BP-03.04_Replica_Closeout.md) integrates those boundaries with simultaneous invocations, stale-fence rejection, immutable new-release cutover and preserved history. TOOL-META-01 from the worker audit is resolved by the independently built sequence 0.3.0 release.
+
+The final eight-case [manifest](Evidence/BP-03-Replicas/b3.json) is the parent public-boundary handoff; prior manifests retain image, package, registry and recovery provenance. There is no catch-all backend, shared scientific kernel, cross-owner table access or second execution authority. The registry reports eligible capacity but does not dispatch or guarantee scientific validity. The initial SDK serves bounded pure synthetic kernels; remote/effectful and long-running profiles remain explicit later work.
+
+BP-04 receives exact LockEntry/schema/release identities; eligible discovery/resolve responses; independent numeric and sequence tools with actual published payload schemas; Runtime claim/renew/complete/receipt inspection and immutable accepted outputs; verified artifact publication/retention; and component-owned tests/rebuild READMEs. BP-04 must introduce an explicit versioned executable graph contract and compiler, then a durable interpreter. Existing wire-v1 control graphs remain validation-only and must never silently become executable.
+
+No general campaign graph, scientific efficacy, autonomous LLM supervision, UI, real data/provider integration or target-host/Kubernetes acceptance is claimed by closing BP-03. Human changes and immutable release adoption remain between campaigns. No user decision blocks the next compiler contract work; actual host/provider/scientific choices remain at their named dependent gates.

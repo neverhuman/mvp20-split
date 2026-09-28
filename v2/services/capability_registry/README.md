@@ -1,6 +1,6 @@
 # Capability Registry
 
-- Status: BP-03.01/.02 descriptor and durable registry boundaries verified; worker SDK/tools and integrated replica dispatch remain .03/.04.
+- Status: BP-03 bounded tool/index/protocol scope complete; actual independent replica recovery and immutable release cutover verified. General graph interpretation remains BP-04.
 - Package: `amphora-capability-registry` 0.1.0; PostgreSQL schema `registry` with separate migration/service roles.
 - Architecture: [Catalog](../../docs/Architecture/Capabilities/Catalog.md), [Tool Services](../../docs/Architecture/Capabilities/Tool_Services.md).
 
@@ -17,3 +17,5 @@ Owner tests live in `tests/descriptors/`, `tests/persistence/`, `tests/routing/`
 Latest full foundation gate: 448 tests, nine independent packages, fresh registry original/replacement hosts, actual runtime/artifact peer compatibility and REC-01..09 passed. The registry wheel includes migration resources and runs without peer service/scientific packages. Target-host backup/power-loss, Kubernetes, real scientific tools and full tool-universe planning remain separately scoped work.
 
 Current owner coverage: 126 cases, 93% of 829 statements/224 branches. CLI/migration subprocess paths, some defensive configuration/corruption/exhaustion/retry branches are outside measured parent-process coverage. See [registry closeout](../../docs/Audits/BP-03.02_Registry_Closeout.md) for evidence and limits.
+
+[Integrated replica acceptance](../../docs/Audits/BP-03.04_Replica_Closeout.md) records exact registry selection, actual peer/worker processes, stale fences, release cutover and preserved history. The fixture controller remains test-only; no production graph scheduler or deployment supervisor is implied.

@@ -9,7 +9,7 @@ Archived first draft at `2026-09-25 13:35:12`. Historical task pairs/percentages
 - Status: **proposed / first draft for user review**; implementation not activated.
 - Last refreshed: `2026-09-24 12:01:26` (America/Chicago).
 - Owner/scope: Capability Registry and independently packaged tools.
-- Parent: [Master Build Tracker](Master%20Build%20Tracker.md); baseline: local architecture and BP-01/BP-01A completed foundation, BP-02 active protocol work.
+- Parent: [Master Build Tracker](../Master%20Build%20Tracker.md); baseline: local architecture and BP-01/BP-01A completed foundation, BP-02 active protocol work.
 - Overall implementation: **0%**; 8 equally weighted verified tasks, two per phase. Overall = completed tasks / 8; phase = completed tasks / 2. Drafting earns no implementation credit.
 - Current phase/task: none; proposed plan.
 - Next task: incorporate review, then verify predecessor gates and run the bounded pre-activation coherence audit before P1/T1.
@@ -18,7 +18,7 @@ Archived first draft at `2026-09-25 13:35:12`. Historical task pairs/percentages
 - Blockers: predecessor gates are not complete; decisions below block only their dependent tasks.
 - Human acceptance: draft is available for review; no approval inferred for dependent deployment/provider actions. Campaigns remain autonomous with human changes between campaigns.
 - Active exception: none.
-- Draft coherence check: `2026-09-24 12:01:26`; ownership, ordering, scoped tests and handoffs checked against [owning architecture](../Architecture/Capabilities/Tool_Services.md). This is not the implementation activation audit.
+- Draft coherence check: `2026-09-24 12:01:26`; ownership, ordering, scoped tests and handoffs checked against [owning architecture](../../Architecture/Capabilities/Tool_Services.md). This is not the implementation activation audit.
 
 | Phase / status | Completion | Dependency | Required exit |
 |---|---:|---|---|

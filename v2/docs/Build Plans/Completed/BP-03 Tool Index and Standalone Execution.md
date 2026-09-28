@@ -2,15 +2,15 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-03.04 / Build / B3.
-- Last refreshed: `2026-09-28 17:12:18` (America/Chicago).
+- Status: closed; four children and parent outcome audited.
+- Last refreshed: `2026-09-28 17:23:58` (America/Chicago).
 - Owner/scope: Capability Registry and independently packaged tools.
-- Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
+- Authority: [Master Build Tracker](../Master%20Build%20Tracker.md); [planning readiness and handoffs](../Planning_Readiness.md).
 - Prerequisites: BP-01 contracts and completed BP-02 claim/artifact/authority gates.
-- Implementation: **87.50%**, 14/16 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
+- Implementation: **100%**, 16/16 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-03.04/B3 one-result/budget/replacement/checkpoint negatives. Next: V1 parent closeout.
-- Demonstrated behavior: registry accepted; .03 B1/B2 packages, exact-attempt clients and failure policy accepted. B2 adds 117 focused cases/twelve independent builds; B1 owner/REC evidence retained. B3 actual tool-owner failure/recovery and Linux image proof passed. Fresh same-release replacement and .03 scoped audit passed; integrated registry/two-worker dispatch passed .04/B1; death/reclaim/stale reports and immutable 0.2.0/0.3.0 release cutover passed B2; B3 negatives remain.
+- Current implementation task: none; closed. Next: BP-04.01 compiler and executable contract.
+- Demonstrated behavior: registry accepted; .03 B1/B2 packages, exact-attempt clients and failure policy accepted. B2 adds 117 focused cases/twelve independent builds; B1 owner/REC evidence retained. B3 actual tool-owner failure/recovery and Linux image proof passed. Fresh same-release replacement and .03 scoped audit passed; integrated registry/two-worker dispatch passed .04/B1; death/reclaim/stale reports and immutable 0.2.0/0.3.0 release cutover passed B2; B3 negatives and V1 integrated audit passed.
 - Blockers: BP-01/BP-02 predecessor gates passed; no current user blocker. External choices remain only at their named dependent gates.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
@@ -29,10 +29,10 @@ Primary services retain private state, dependencies, migrations and module READM
 
 | Parent phase / child | Overall | Build | Acceptance | Prerequisite |
 |---|---:|---:|---:|---|
-| P1 / [BP-03.01 Identity and descriptor contracts](BP-03/Completed/BP-03.01%20Identity%20and%20descriptor%20contracts.md) | 100% | 100% | 100% | Closed/audited |
-| P2 / [BP-03.02 Registry and version routing](BP-03/Completed/BP-03.02%20Registry%20and%20version%20routing.md) | 100% | 100% | 100% | Closed/audited |
-| P3 / [BP-03.03 Worker protocol and independent tools](BP-03/Completed/BP-03.03%20Worker%20protocol%20and%20independent%20tools.md) | 100% | 100% | 100% | Closed/audited |
-| P4 / [BP-03.04 Replicas and replacement proof](BP-03/BP-03.04%20Replicas%20and%20replacement%20proof.md) | 50% | 66.67% | 0% | B1/B2 accepted; B3 active |
+| P1 / [BP-03.01 Identity and descriptor contracts](../BP-03/Completed/BP-03.01%20Identity%20and%20descriptor%20contracts.md) | 100% | 100% | 100% | Closed/audited |
+| P2 / [BP-03.02 Registry and version routing](../BP-03/Completed/BP-03.02%20Registry%20and%20version%20routing.md) | 100% | 100% | 100% | Closed/audited |
+| P3 / [BP-03.03 Worker protocol and independent tools](../BP-03/Completed/BP-03.03%20Worker%20protocol%20and%20independent%20tools.md) | 100% | 100% | 100% | Closed/audited |
+| P4 / [BP-03.04 Replicas and replacement proof](../BP-03/Completed/BP-03.04%20Replicas%20and%20replacement%20proof.md) | 100% | 100% | 100% | Closed/audited |
 
 Each linked child is the execution tracker for its scope. Build tasks name concrete implementation; acceptance requires independent evidence and a scoped drift audit. Do not repeat the historical task pairs as a second work list. No dependent child starts before its predecessor acceptance gate; independent design review does not activate implementation.
 
@@ -52,7 +52,7 @@ Keep scenario evidence with absolute timestamps, implementation revision, fixtur
 
 ## Decisions and Handoff
 
-Child decisions and the [cross-plan handoff register](Planning_Readiness.md) identify the exact producer, consumer and required proof. Engineering defaults are planning baselines; validate them against real predecessor contracts before coding. External choices are not inferred from examples. Do not weaken a live model, browser, database or target-host gate to a fixture when that environment is unavailable.
+Child decisions and the [cross-plan handoff register](../Planning_Readiness.md) identify the exact producer, consumer and required proof. Engineering defaults are planning baselines; validate them against real predecessor contracts before coding. External choices are not inferred from examples. Do not weaken a live model, browser, database or target-host gate to a fixture when that environment is unavailable.
 
 ## Accounting and Closeout
 
@@ -63,3 +63,7 @@ Child closeout archives that child with its audit and repairs links; the parent 
 ## Activation Checkpoint
 
 `2026-09-28 13:45:17`: BP-02 closed at 32/32 with actual installed recovery and replacement evidence. .01 activated at 0% after bounded contract/architecture coherence review; other children remain queued. No implementation credit from activation. Preserve existing tool/runtime command compatibility; extension of registry metadata must not turn discovery into runtime authority.
+
+## Parent Closeout
+
+`2026-09-28 17:23:58`: all 16 child deliveries verified. [Parent audit](../../Audits/BP-03_Tool_Execution_Closeout.md) records actual index-to-worker outcome, evidence tiers and BP-04 handoff. Parent/children stay closed; later scope belongs to successors. No general interpreter, real scientific or target-host acceptance is implied.

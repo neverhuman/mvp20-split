@@ -2,16 +2,16 @@
 
 ## Canonical Parent Tracker
 
-- Status: design_specified / implementation queued; not activated.
-- Last refreshed: `2026-09-25 13:35:12` (America/Chicago).
+- Status: primary_active; BP-04.01 / Build / B1.
+- Last refreshed: `2026-09-28 17:23:58` (America/Chicago).
 - Owner/scope: Campaign Runtime coordinator, aggregator and recovery modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-02 durable commits and BP-03 indexed callable tools.
 - Implementation: **0%**, 0/20 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: none. Next: BP-04.01/B1 after predecessor gates and bounded activation audit.
+- Current implementation task: BP-04.01/B1 explicit versioned executable contracts. Next: .01/B2 semantic compiler.
 - Demonstrated behavior: none within this parent. Required database/process/browser/model/host evidence remains pending.
-- Blockers: predecessor gates; external choices only where named in child trackers and the readiness register.
+- Blockers: none for the synthetic compiler scope; predecessor BP-02/BP-03 gates passed. Later external choices remain at named gates.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
 
@@ -29,7 +29,7 @@ Primary services retain private state, dependencies, migrations and module READM
 
 | Parent phase / child | Overall | Build | Acceptance | Prerequisite |
 |---|---:|---:|---:|---|
-| P1 / [BP-04.01 Compiler and executable contract](BP-04/BP-04.01%20Compiler%20and%20executable%20contract.md) | 0% | 0% | 0% | Parent predecessor gates |
+| P1 / [BP-04.01 Compiler and executable contract](BP-04/BP-04.01%20Compiler%20and%20executable%20contract.md) | 0% | 0% | 0% | Predecessors accepted; B1 active |
 | P2 / [BP-04.02 Frontier and scheduling](BP-04/BP-04.02%20Frontier%20and%20scheduling.md) | 0% | 0% | 0% | BP-04.01 acceptance |
 | P3 / [BP-04.03 Aggregation and failure policy](BP-04/BP-04.03%20Aggregation%20and%20failure%20policy.md) | 0% | 0% | 0% | BP-04.02 acceptance |
 | P4 / [BP-04.04 V1 baseline and successor graphs](BP-04/BP-04.04%20V1%20baseline%20and%20successor%20graphs.md) | 0% | 0% | 0% | BP-04.03 acceptance |
@@ -60,3 +60,7 @@ Child decisions and the [cross-plan handoff register](Planning_Readiness.md) ide
 On `2026-09-25 13:35:12`, the original two-task-per-phase estimate was decomposed into 20 verified deliveries across 5 children. Implementation stays 0%; no previous implementation credit is lost or added. [Planning history](BP-04%20Planning%20History.md) preserves the original scope and denominator. Pure design review earns no implementation credit.
 
 Child closeout archives that child with its audit and repairs links; the parent remains active until all child gates and the integrated parent outcome pass. The last child's acceptance checks the parent handoff without repeating unchanged earlier audits. Keep implementation, human acceptance, operational readiness and scientific validation separate. Update child -> parent -> MBT -> Restore at each delivery/scope change.
+
+## Activation Coherence Audit
+
+`2026-09-28 17:23:58`: corrected_ready after BP-02 and BP-03 closeout. Keep compiler, coordinator and aggregator as focused Runtime-owned modules; public campaign contracts contain only wire DTOs. The initial wire-v1 control graph stays validation-only. .01 introduces explicitly versioned executable definitions/locks with finite predicates, explicit data ports, scoped control constructs and deterministic paths; no arbitrary code or LLM interpretation. .02 adds durable execution of the compiled plan, .03 aggregation/failure/external waits, .04 extracted v1 and successor scenarios, .05 actual recovery/parent closeout. Only .01/B1 is active; all child percentages remain 0%. Scientific/provider/UI/host choices do not block these synthetic contracts.

@@ -9,9 +9,9 @@ spec.loader.exec_module(processes)
 
 
 class Campaign:
-    def __init__(self, e, http, tool):
+    def __init__(self, e, http, tool, variant="1"):
         self.e, self.http, self.tool = e, http, tool
-        fixture = e.fixtures[tool.key + "-1"]
+        fixture = e.fixtures[tool.key + "-" + variant]
         admitted = http.decoded(e.runtime.endpoint, "/v1/fixture-runs", e.tokens["admin"], e.command("runtime.admit_fixture", fixture))
         assert admitted["outcome"]["status"] == "accepted"
         self.run_id = e.active_run = admitted["outcome"]["committed"]["object_id"]

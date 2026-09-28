@@ -1,6 +1,6 @@
 # Tool Protocol SDK
 
-- Status: BP-03.03 complete; actual independent worker/owner recovery, Linux image goldens and fresh same-release replacement passed. Registry/replica cutover remains BP-03.04.
+- Status: BP-03 bounded tool/index/protocol scope complete; actual independent replica recovery and immutable release cutover verified. General graph interpretation remains BP-04.
 - Package: `amphora-tool-protocol` 0.1.0; explicit public client boundary.
 - Architecture: [tool services](../../docs/Architecture/Capabilities/Tool_Services.md).
 
@@ -19,3 +19,5 @@ Tests under `tests/transport/` distinguish scripted receipt-loss oracles from ac
 B2 coverage checkpoint: 82 focused SDK cases, 100% of 389 statements/102 branches in the in-process denominator. This is client/policy/loopback evidence; actual independently installed tool-owner execution and interruption remain B3/V1. Twelve isolated package installs passed; no SQL/owner implementation dependencies are installed with the SDK.
 
 ExecutionFailure preserves terminal publication reasons and permits capacity/transport retries only while the same attempt remains authorized. Schema/configuration and protocol mismatches are not scientific retries. Direct pending responses are inspected before resubmission. CompleteInvocation scope is validated by the public runtime command parser before sending. Credentials require bounded printable ASCII; malformed endpoints, timeouts and lease/clock profiles fail locally. Tool CLIs distinguish invalid input/configuration (exit 2) from incomplete worker execution (exit 3), with safe diagnostics.
+
+[Integrated replica acceptance](../../docs/Audits/BP-03.04_Replica_Closeout.md) records exact registry selection, actual peer/worker processes, stale fences, release cutover and preserved history. The fixture controller remains test-only; no production graph scheduler or deployment supervisor is implied.

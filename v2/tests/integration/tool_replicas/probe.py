@@ -22,6 +22,8 @@ def main():
             if config.get("previous_images"):
                 environment.load("replica_recovery", Path(__file__).with_name("recovery.py")).run(e, environment.HTTP)
                 environment.load("replica_cutover", Path(__file__).with_name("cutover.py")).run(e, environment.HTTP)
+                if config.get("replacements"):
+                    environment.load("replica_negatives", Path(__file__).with_name("negatives.py")).run(e, environment.HTTP)
             e.save("passed")
             print("Actual registry/replica matrix passed; scope " + e.scope["project_id"], flush=True)
         except BaseException:
