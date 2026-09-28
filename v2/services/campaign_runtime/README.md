@@ -74,3 +74,5 @@ Delivery CLI: `deliver --config <local-config> --actor <actor> --tenant <tenant>
 Optional `inspection` configuration requires a stable `cursor_key_env` and accepts `ttl_seconds` (60-3600, default 900). Historical reads require read; cross-actor receipt inspection additionally requires inspect_receipts. [Inspection boundary](src/amphora_campaign_runtime/inspection/README.md) documents public paths and resnapshot/reconnect behavior.
 
 [Installed acceptance harness](tests/acceptance/README.md) owns actual paired-service public-API proof, independent current reservation reads and cancellation/release barriers.
+
+[Foundation recovery and replacement](RECOVERY.md) records retained state/configuration, explicit owner bootstrap, bounded maintenance order and public verification. Actual process recovery is separate from host backup/power-loss guarantees.

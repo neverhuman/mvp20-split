@@ -9,13 +9,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-02 primary active; BP-03 through BP-09 decomposed/design-specified; BP-01/BP-01A closed
-- Last refreshed: `2026-09-28 13:31:43` (America/Chicago)
+- Last refreshed: `2026-09-28 13:36:55` (America/Chicago)
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md), and current System/Capability contracts
 - Current priority: P0 / BP-02 - recovery and integration
-- Primary active implementation plan / phase / task: BP-02 -> BP-02.06 / V1 / R4.
-- Current task: fresh independent replacement installs against retained state.
-- Next task: BP-02.06 R5 final audit and parent handoff.
-- Implementation completion: BP-01/BP-01A closed at 100%; BP-02 93.75% (30/32 implementation deliveries), children .01-.05 closed at 100%, .06 60%; BP-03..09 scoped parents at 0%. No effort estimate inferred.
+- Primary active implementation plan / phase / task: BP-02 -> BP-02.06 / V2 / R5.
+- Current task: component-scoped final drift audit, parent closeout and tool-plan handoff.
+- Next task: BP-03.01 B1 after BP-02 closeout.
+- Implementation completion: BP-01/BP-01A closed at 100%; BP-02 96.88% (31/32 implementation deliveries), children .01-.05 closed at 100%, .06 80%; BP-03..09 scoped parents at 0%. No effort estimate inferred.
 - Active focus: durable state, artifact publication/reservations and claim/completion foundation after the completed contract slice
 - Blockers: Git identity configured; no implementation blocker for BP-02.06; predecessor/host/provider gates of later plans remain explicit
 - Acceptance posture: BP-01 boundary/API subset accepted; no durable graph execution or scientific acceptance claimed
@@ -35,13 +35,13 @@ BP-02 is the sole primary active plan. Later plans are design-specified with can
 
 | Parent | Implementation | .01 Contracts | .02 Persistence | .03 Artifacts | .04 Invocations | .05 Completion | .06 Recovery |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-02](BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md) | 93.75% | 100% | 100% | 100% | 100% | 100% | 60% |
+| [BP-02](BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md) | 96.88% | 100% | 100% | 100% | 100% | 100% | 80% |
 
 | Active canonical child | Overall | V1 Build | V2 Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-02.06](BP-02/BP-02.06%20Recovery%20and%20Integration.md) | 60% | 75% | 0% | R4 replacement/install proof |
+| [BP-02.06](BP-02/BP-02.06%20Recovery%20and%20Integration.md) | 80% | 100% | 0% | R5 final audit/handoff |
 
-Authorized rebaseline: original 8.33% counted protocol design. Design credit remains complete; implementation counts 32 deliveries, thirty verified. Pure design gates S1/A1 remain mandatory without implementation credit; the preliminary 34-task count was explicitly corrected. [Parent history](BP-02%20History.md) preserves prior scope. Progress counts deliverables, not engineer-hours; child trackers are canonical.
+Authorized rebaseline: original 8.33% counted protocol design. Design credit remains complete; implementation counts 32 deliveries, thirty-one verified. Pure design gates S1/A1 remain mandatory without implementation credit; the preliminary 34-task count was explicitly corrected. [Parent history](BP-02%20History.md) preserves prior scope. Progress counts deliverables, not engineer-hours; child trackers are canonical.
 
 ## Queued Plans and Phase Mirrors
 
@@ -127,6 +127,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-28 13:36:55 | BP-02.06 R4 passed; child 80%, V1 100%, parent 96.88%; next R5 | 306 tests/eight builds, fresh independent replacement environments; REC-01..09 passed |
 | 2026-09-28 13:31:43 | BP-02.06 R3 passed; child 60%, V1 75%, parent 93.75%; next R4 | 306 tests/eight wheels; REC-01..08 passed, actual worker/delivery/frontier restart |
 | 2026-09-28 13:23:07 | BP-02.06 R2 passed; child 40%, V1 50%, parent 90.63%; next R3 | 305 tests/eight builds; actual REC-01..05 installed-process recovery |
 | 2026-09-28 13:16:35 | BP-02.06 R1 passed; child 20%, V1 25%, parent 87.50%; next R2 | Six runtime/five artifact acceptance harness cases; explicit test-only barriers and hashed evidence |
@@ -151,6 +152,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-25 13:40:55 | Roadmap maturation: 34 canonical children added, four open BP-02 children deepened; implementation percentages unchanged | [Planning review](../Audits/Planning_Maturity_Review.md), [readiness/handoffs](Planning_Readiness.md) |
 | 2026-09-25 08:49:41 | BP-02 decomposed; contracts and isolated persistence children closed; parent 31.25% (10/32), next .03/A1 | [Persistence audit](../Audits/BP-02.02_Persistence_Closeout.md); 119 tests, eight independent builds |
 | 2026-09-24 12:10:07 | User UI references mapped to Studio modes and BP-05/06/08 prototype tasks; percentages unchanged, BP-02 remains P1/T2 | [Reference map](../Architecture/Experience/Interaction_References.md) |
-| 2026-09-24 12:06:07 | BP-03 through BP-09 first drafts published at 0%; BP-02 authorized and T1 complete, P1 50% / overall 8.33%; next T2 | Canonical plan links above; [protocol decisions](../Architecture/System/Runtime_Command_Protocol.md) |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

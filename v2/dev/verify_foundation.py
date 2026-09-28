@@ -30,6 +30,7 @@ def independent_builds(uv):
         root = Path(directory)
         wheels = root / "wheels"
         installed = {}
+        install_recipes = {}
         paired_environment = dict(os.environ)
         for project, _, _ in specs:
             run([uv, "build", "--project", project, "--wheel", "--out-dir", wheels])
@@ -64,6 +65,7 @@ def independent_builds(uv):
                 cfg = next(c for _, c, _ in specs if c["project"]["name"] == dependency)
                 pending.extend(cfg.get("tool", {}).get("amphora", {}).get("public-imports", []))
             selected = [next(wheels.glob(n.replace("-", "_") + "-*.whl")) for n in sorted(needed)]
+            install_recipes[module] = (constraints, selected)
             run([uv, "pip", "install", "--python", python, "--constraint", constraints, *selected])
             probe = f"import {module}; import importlib.util; "
             if module.startswith("amphora_contracts_"):
@@ -87,6 +89,8 @@ def independent_builds(uv):
                 environment = dict(os.environ, AMPHORA_PROBE_DATABASE_URL=url.render_as_string(hide_password=False))
                 key = "AMPHORA_ARTIFACT_DATABASE_URL" if module == "amphora_data_artifacts" else "AMPHORA_RUNTIME_DATABASE_URL"
                 paired_environment[key] = url.render_as_string(hide_password=False)
+                migration_key = "AMPHORA_ARTIFACT_MIGRATION_URL" if module == "amphora_data_artifacts" else "AMPHORA_RUNTIME_MIGRATION_URL"
+                paired_environment[migration_key] = url.set(username=role.replace("_service", "_migrator")).render_as_string(hide_password=False)
                 acceptance = subprocess.run([str(python), "-I", str(project / "tests/acceptance/installed_probe.py")],
                     cwd=root, env=environment, capture_output=True, text=True, timeout=60)
                 if acceptance.returncode:
@@ -107,6 +111,13 @@ def independent_builds(uv):
             evidence_dir.mkdir(parents=True, exist_ok=True)
             paired_environment["AMPHORA_TESTED_PACKAGES"] = json.dumps({w.name: hashlib.sha256(w.read_bytes()).hexdigest()
                                                                       for w in wheels.glob("*.whl")})
+            for module, label in (("amphora_campaign_runtime", "RUNTIME"), ("amphora_data_artifacts", "ARTIFACT")):
+                replacement = root / (module + "-replacement")
+                run([uv, "venv", "--python", sys.executable, replacement])
+                replacement_python = replacement / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
+                constraints, selected = install_recipes[module]
+                run([uv, "pip", "install", "--python", replacement_python, "--constraint", constraints, *selected])
+                paired_environment["AMPHORA_REPLACEMENT_" + label + "_PYTHON"] = str(replacement_python)
             recovery = subprocess.run([str(runtime_python), "-I", str(runtime_project / "tests/acceptance/integrated_probe.py"),
                 str(artifact_python), str(artifact_project / "tests/acceptance/fault_host.py"), str(evidence_dir)],
                 cwd=root, env=paired_environment, capture_output=True, text=True, timeout=180)

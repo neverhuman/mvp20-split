@@ -259,3 +259,7 @@ def exercise(lab):
     workers = importlib.util.module_from_spec(worker_spec)
     worker_spec.loader.exec_module(workers)
     workers.exercise(lab, recording, dropped)
+    install_spec = importlib.util.spec_from_file_location("recovery_install", Path(__file__).with_name("recovery_install.py"))
+    install = importlib.util.module_from_spec(install_spec)
+    install_spec.loader.exec_module(install)
+    install.exercise(lab, recording)

@@ -1,6 +1,6 @@
 # Data and Artifacts Service
 
-- Status: provisional uploads and verified finalization implemented; protective reservation handshake implemented; bounded reconciliation/cleanup sweeps implemented; standalone hosting/scoped reads implemented; BP-02.03 independently accepted and audited; actual runtime integration remains .06.
+- Status: provisional uploads and verified finalization implemented; protective reservation handshake implemented; bounded reconciliation/cleanup sweeps implemented; standalone hosting/scoped reads implemented; BP-02.03 independently accepted and audited; actual runtime integration, REC-01..09 process recovery and independent replacement acceptance passed.
 - Package: `amphora-data-artifacts` 0.1.0.
 - Architecture: [Artifact publication](../../docs/Architecture/System/Artifact_Publication_Protocol.md), [physical records](../../docs/Architecture/System/Persistence_Record_Design.md).
 
@@ -10,7 +10,7 @@ Dependencies are public core/command/artifact contracts, SQLAlchemy, psycopg, Al
 
 `tests/persistence/` owns actual PostgreSQL migrations, scoped binding, immutability, rollback, duplicate-command contention and bounded transaction-retry tests. Run `uv run --project v2/dev --locked python v2/dev/run_tests.py --module data-artifacts` with the explicit fixture enabled as described in [dev tooling](../../dev/README.md). Without opt-in these tests skip; that is not persistence evidence.
 
-A replacement preserves catalog identity, reservation protection, stable command replay and service-owned migration history. Pending uploads are not usable artifacts. Process-kill tests cover finalization before and after catalog commit. Target-filesystem power-loss durability and actual runtime integration remain later gates. No production storage path, provider or deployment is configured.
+A replacement preserves catalog identity, reservation protection, stable command replay and service-owned migration history. Pending uploads are not usable artifacts. Process-kill tests cover finalization before and after catalog commit. Actual public runtime integration passed; target-filesystem power-loss durability remains BP-09. No production storage path, provider or deployment is configured.
 
 ## Provisional Upload Modules
 
@@ -30,4 +30,6 @@ Install this wheel and its declared public contract dependencies independently. 
 
 `amphora-artifacts cleanup --config <path> --actor worker --tenant local --project demo --limit 20` runs one bounded cleanup pass; `reconcile` runs one retention pass for a configured runtime principal. Both return next_cursor; pass `--after` to continue, then wrap for a future pass. An external scheduler can invoke these commands; no hidden background loop runs in the API process. Stop older writer versions before enabling cleanup. Signal termination closes the host engine; persistent SQL/marker state owns recovery.
 
-The installed-process acceptance probe starts the wheel outside the repository, publishes and replays an artifact, reads metadata/content, rejects wrong credentials/scope and detects modified fixture bytes. It uses real PostgreSQL but synthetic data. `--area acceptance` runs the owner-local probe; the foundation --builds gate repeats it using an independent wheel environment when PostgreSQL opt-in is enabled. Test-only fault barriers are confined to tests. Runtime cancellation/acceptance races remain .06, scientific validity later plans.
+The installed-process acceptance probe starts the wheel outside the repository, publishes and replays an artifact, reads metadata/content, rejects wrong credentials/scope and detects modified fixture bytes. It uses real PostgreSQL but synthetic data. `--area acceptance` runs the owner-local probe; the foundation --builds gate repeats it using an independent wheel environment when PostgreSQL opt-in is enabled. Test-only fault barriers are confined to tests. Actual runtime cancellation/acceptance races passed .05/.06; scientific validity remains later plans.
+
+Current protection is observable through owner-scoped `GET /v1/reservations/{id}` without mutation. [Foundation recovery runbook](../campaign_runtime/RECOVERY.md) covers the public handshake, explicit maintenance, retained state and independent replacement; this service alone retains authority over its bytes/catalog/reservations.

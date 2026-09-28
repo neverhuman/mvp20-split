@@ -26,7 +26,7 @@ For an intentional schema change, run `uv run --project v2/dev python v2/dev/exp
 
 ## Limits and Replacement
 
-Fixtures include no credentials or real scientific data. Local API tests do not establish distributed transactions, authentication, live runtime fences, PostgreSQL behavior, Rust execution, UI usability or scientific validity. Starlette currently emits a deprecation notice for its httpx test client; tests pass and a test-transport update can follow independently. Do not suppress the warning as proof of compatibility.
+Fixtures include no credentials or real scientific data. Pure/local API tests alone do not establish database/process behavior. Explicit PostgreSQL owner suites and independently installed recovery probes supply the implemented scope of persistence, authentication and live fencing evidence. They do not establish cross-service atomic transactions, Rust execution, UI usability or scientific validity. Starlette currently emits a deprecation notice for its httpx test client; tests pass and a test-transport update can follow independently. Do not suppress the warning as proof of compatibility.
 
 Replacing this tooling must retain meaningful failing probes, independent installs and deterministic publication checks. Generated inventory contains paths/versions/public dependencies, not manually asserted implementation success. Baseline integrity tests read three frozen v1 source files to verify hashes and scoring-chain order; no v1 files are modified or executed.
 
@@ -50,6 +50,8 @@ Fixture credentials/state live only in ignored `v2/.test-results/postgres-fixtur
 
 Artifact module selection supports `--module data-artifacts --area publication`, `--area storage` and `--area persistence`; the source coverage denominator remains the full artifact service.
 
-Artifact retention handshake tests have their own selector: `--module data-artifacts --area retention`. These include a scripted authenticated runtime process; actual runtime integration remains a separate gate.
+Artifact retention handshake tests have their own selector: `--module data-artifacts --area retention`. These include a scripted authenticated runtime process; the independent paired/recovery acceptance tier separately exercises the actual runtime.
 
 With PostgreSQL enabled, `verify_foundation.py --builds` starts independently installed runtime and artifact wheels outside the source checkout. Runtime public-worker probes use a minimal OS environment with no database credentials; service credentials remain confined to the host. Run these sequentially against the single-campaign fixture. Probe scripts are owned by each service under `tests/acceptance/`; subprocess acceptance is separate from pytest coverage.
+
+The build gate also creates two fresh replacement service environments and runs REC-01..09 through runtime-owned acceptance scripts. Explicit migration subprocesses receive only their owner bootstrap credential; service and HTTP worker environments remain isolated. Recovery evidence includes exact wheel hashes and public IDs under `.test-results/recovery/`. [Operating runbook](../services/campaign_runtime/RECOVERY.md) distinguishes retained-state process replacement from target-host backup/power-loss proof.

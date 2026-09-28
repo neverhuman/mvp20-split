@@ -104,7 +104,7 @@ def main():
                 return support.decoded(endpoint, path, tokens[actor], payload)
 
             def worker(path, cmd):
-                result = subprocess.run([sys.executable, "-I", str(tests / "acceptance/http_worker.py")],
+                result = subprocess.run([runtime.python, "-I", str(tests / "acceptance/http_worker.py")],
                     input=json.dumps({"endpoint": endpoint, "token": tokens[cmd["identity"]["actor_id"]], "path": path, "command": cmd}) + "\n",
                     env=support.isolated_env(), cwd=root, text=True, capture_output=True, timeout=15)
                 assert result.returncode == 0, "HTTP-only worker failed"
@@ -127,7 +127,7 @@ def main():
                                                         "expected_checkpoint_revision": 0}, "worker")
 
             def delivery_process():
-                return subprocess.Popen([sys.executable, "-I", "-m", "amphora_campaign_runtime", "deliver",
+                return subprocess.Popen([runtime.python, "-I", "-m", "amphora_campaign_runtime", "deliver",
                     "--config", str(config), "--actor", "admin", "--tenant", scope["tenant_id"], "--project", scope["project_id"],
                     "--limit", "100", "--time-budget", "20"], env=runtime_env, cwd=root,
                     stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
