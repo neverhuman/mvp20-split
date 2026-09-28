@@ -14,8 +14,9 @@ class RuntimePrincipal:
     scope: Scope
     actions: frozenset[str]
 
-    def require(self, action, identity):
-        if action not in self.actions or identity.actor_id != self.actor_id or identity.scope != self.scope:
+    def require(self, action, identity=None):
+        if action not in self.actions or (identity is not None and
+            (identity.actor_id != self.actor_id or identity.scope != self.scope)):
             raise TransitionError("access_denied")
 
 

@@ -2,7 +2,7 @@
 
 import json
 import uuid
-from datetime import UTC, timedelta
+from datetime import timedelta
 
 from amphora_contracts_runtime import (
     ClaimInvocation,
@@ -11,11 +11,11 @@ from amphora_contracts_runtime import (
     PreparedInvocation,
     RenewAttempt,
 )
-from amphora_contracts_tools import Invocation
 from sqlalchemy import text
 
 from ..persistence.commands import WHERE, CommandStore, TerminalDisposition, _bindings
 from .model import ActivationState, AttemptLease, RunBudget, RunState, TransitionError, WorkerAuthority
+from .projections import ClaimedWork
 from .receipts import RuntimeReply
 
 SCOPE = "tenant_id=:tenant AND project_id=:project"
@@ -114,6 +114,10 @@ class RuntimeLeases:
                     lease = lease_from(previous)
                     if now < lease.expires_at:
                         continue
+                    if conn.execute(text("SELECT EXISTS(SELECT 1 FROM runtime.completion_intents WHERE " + RUN +
+                        " AND attempt_id=:attempt AND status='prepared')"),
+                        {**params, "attempt": lease.attempt_id}).scalar_one():
+                        raise TransitionError("prepared_intent_requires_reconciliation")
                     activation, lease, budget = activation.terminal(lease, budget, "expired", now=now, run=state)
                     conn.execute(text("UPDATE runtime.attempts SET status='expired',settled=true WHERE " + RUN +
                         " AND attempt_id=:attempt"), {**params, "attempt": lease.attempt_id})
@@ -149,13 +153,7 @@ class RuntimeLeases:
             revision = self._changed(conn, params, run, budget, record.operation_id,
                 {"kind": "attempt_claimed", "attempt_id": lease.attempt_id, "fence": lease.fence, "expired": expired})
             prepared = PreparedInvocation.model_validate_json(json.dumps(row["specification"]))
-            invocation = Invocation(schema_version="1", scope=principal.scope, run_id=request.run_id,
-                node_id=prepared.node_id, activation_id=prepared.activation_id, invocation_id=prepared.invocation_id,
-                attempt_id=lease.attempt_id, fence=lease.fence, tool=prepared.tool, inputs=prepared.inputs,
-                checkpoint=prepared.checkpoint, timeout_seconds=prepared.timeout_seconds, grant_id=lease.attempt_id)
-            receipt = ClaimResponse.model_validate({"outcome": {"status": "claimed", "receipt":
-                reply.accepted("attempt", lease.attempt_id, revision).outcome.model_dump(),
-                "invocation": invocation.model_dump(), "lease_expires_at": lease.expires_at.astimezone(UTC).isoformat().replace("+00:00", "Z")}})
+            receipt = ClaimedWork(prepared, lease, principal.scope, request.run_id).to_response(reply, revision)
             return self._finish(conn, command, receipt)
         return self.commands.transact(transaction)
 

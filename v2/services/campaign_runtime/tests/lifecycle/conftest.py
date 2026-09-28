@@ -43,4 +43,3 @@ def fixture_env():
             conn.execute(text("UPDATE runtime.runs SET status='cancelled' WHERE tenant_id=:tenant AND project_id=:project "
                               "AND status='running'"), {"tenant": scope.tenant_id, "project": scope.project_id})
         engine.dispose()
-
