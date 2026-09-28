@@ -1,5 +1,6 @@
-"""Graph validation with optional explicit synthetic admission; no worker dispatch."""
+"""Graph validation and explicitly configured synthetic lifecycle; no interpreter."""
 
+import asyncio
 import json
 from typing import Annotated
 
@@ -30,27 +31,32 @@ class ValidationReport(WireModel):
 class RequestBounds:
     """Bound bytes and nesting before DTO parsing; no raw payload in error responses."""
 
-    def __init__(self, app, max_bytes: int = 262144):
+    def __init__(self, app, max_bytes: int = 262144, body_timeout: float = 10):
         self.app, self.max_bytes = app, max_bytes
+        self.body_timeout = body_timeout
 
     async def __call__(self, scope, receive, send):
         if scope["type"] != "http":
             return await self.app(scope, receive, send)
         chunks = []
         size = 0
-        while True:
-            message = await receive()
-            if message["type"] == "http.disconnect":
-                return
-            chunk = message.get("body", b"")
-            size += len(chunk)
-            if size > self.max_bytes:
-                return await JSONResponse({"code": "request_too_large"}, status_code=413)(
-                    scope, receive, send
-                )
-            chunks.append(chunk)
-            if not message.get("more_body", False):
-                break
+        try:
+            async with asyncio.timeout(self.body_timeout):
+                while True:
+                    message = await receive()
+                    if message["type"] == "http.disconnect":
+                        return
+                    chunk = message.get("body", b"")
+                    size += len(chunk)
+                    if size > self.max_bytes:
+                        return await JSONResponse({"code": "request_too_large"}, status_code=413)(
+                            scope, receive, send
+                        )
+                    chunks.append(chunk)
+                    if not message.get("more_body", False):
+                        break
+        except TimeoutError:
+            return await JSONResponse({"code": "request_timeout"}, status_code=408)(scope, receive, send)
         body = b"".join(chunks)
         try:
             if body:
@@ -100,7 +106,7 @@ def create_app(admission=None, credentials=None) -> FastAPI:
 
     @app.get("/health")
     def health():
-        return {"status": "ok", "mode": "fixture_admission" if admission is not None else "validation_only", "execution_available": False}
+        return {"status": "ok", "mode": "fixture_lifecycle" if admission is not None else "validation_only", "execution_available": False}
 
     async def parse_campaign(request: Request) -> CampaignDefinition:
         try:

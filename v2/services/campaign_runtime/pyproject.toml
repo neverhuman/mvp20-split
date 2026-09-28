@@ -16,6 +16,9 @@ dependencies = [
     "amphora-contracts-commands",
 ]
 
+[project.scripts]
+amphora-runtime = "amphora_campaign_runtime.__main__:main"
+
 [build-system]
 requires = ["hatchling>=1.27,<2"]
 build-backend = "hatchling.build"

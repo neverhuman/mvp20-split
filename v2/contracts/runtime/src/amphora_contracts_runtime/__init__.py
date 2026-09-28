@@ -17,6 +17,7 @@ from .models import (
     RenewAttempt,
     RevokeWorker,
 )
+from .views import RunSnapshot
 
 OPERATIONS = {
     "runtime.admit_fixture": AdmitFixtureRun,
@@ -43,7 +44,7 @@ def parse_command(family: str, raw: str | bytes) -> CanonicalCommand:
 
 
 
-__all__ = ['AdmitFixtureRun', 'AttemptBudget', 'AttemptRef', 'CancelRun', 'ClaimInvocation', 'ClaimResponse', 'CommandReceipt', 'CompleteInvocation', 'PreparedInvocation', 'RenewAttempt', 'RevokeWorker', 'parse_command']
+__all__ = ['AdmitFixtureRun', 'AttemptBudget', 'AttemptRef', 'CancelRun', 'ClaimInvocation', 'ClaimResponse', 'CommandReceipt', 'CompleteInvocation', 'PreparedInvocation', 'RenewAttempt', 'RevokeWorker', 'RunSnapshot', 'parse_command']
 
 
 def _references(family, payload):

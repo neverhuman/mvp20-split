@@ -3,23 +3,38 @@
 import asyncio
 
 from amphora_contracts_commands import CommandEncodingError
-from amphora_contracts_runtime import ClaimResponse, CommandReceipt, parse_command
+from amphora_contracts_runtime import ClaimResponse, CommandReceipt, RunSnapshot, parse_command
 from fastapi import Request
 from fastapi.responses import JSONResponse
+from sqlalchemy import text
 from sqlalchemy.exc import DBAPIError
 
 from ..persistence.commands import CommandConflict
 from .authority import AuthorityCommands
 from .claims import RuntimeLeases
 from .model import TransitionError
+from .reads import RuntimeReads
 
 
 def install_admission(app, admission, credentials):
     leases = RuntimeLeases(admission.commands.engine)
     authority = AuthorityCommands(admission.commands.engine)
+    reads = RuntimeReads(admission.commands.engine)
     @app.exception_handler(TransitionError)
     async def denied(_request, error):
-        return JSONResponse({"reason_code": str(error)}, status_code=401 if str(error) == "unauthenticated" else 403)
+        status = {"unauthenticated": 401, "run_unavailable": 404}.get(str(error), 403)
+        return JSONResponse({"reason_code": str(error)}, status_code=status)
+
+    @app.get("/ready")
+    def ready():
+        with admission.commands.engine.connect() as conn:
+            conn.execute(text("SELECT operation_id FROM runtime.policy_outbox LIMIT 0"))
+        return {"status": "ready", "mode": "fixture_lifecycle"}
+
+    @app.get("/v1/runs/{run_id}", response_model=RunSnapshot)
+    async def read_run(run_id: str, request: Request):
+        principal = credentials.authenticate(request.headers.get("authorization"))
+        return await asyncio.to_thread(reads.run, principal, run_id)
 
     @app.exception_handler(CommandEncodingError)
     async def malformed(_request, _error):

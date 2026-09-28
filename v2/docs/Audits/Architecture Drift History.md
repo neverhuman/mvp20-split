@@ -16,14 +16,14 @@
 - Evidence: [closeout audit](Architecture_Detail_Closeout.md); twenty expanded leaves, eight coordination summaries and preserved requirements/hierarchy
 - Follow-up: no blocking documentation finding; explicit implementation decisions remain in contract owners
 
-## Architecture Decomposition — 2026-09-22 16:43:54
+## Architecture Decomposition â€” 2026-09-22 16:43:54
 
 - Scope: documentation-only hierarchy and cross-domain ownership from Product Requirements
 - Disposition: aligned; no runtime acceptance claimed
 - Evidence: [closeout audit](Architecture_Decomposition_Closeout.md), including 8 direct children, 20 leaves, 102 requirement-section mappings and link/anchor checks
 - Follow-up: none blocking this documentation scope; implementation planning and existing documentation debt remain separately tracked
 
-## SDLC Guidance Alignment — 2026-09-22 13:47:22
+## SDLC Guidance Alignment â€” 2026-09-22 13:47:22
 
 - Scope: v2 agent instructions, local process, architecture navigation, planning/audit templates and tracker ownership; documentation-only working-tree changes
 - Finding: inherited instructions linked external JARVIS trackers and lacked its newer phase/task authority, interruption, completion/acceptance distinction and closeout audit requirements
@@ -43,3 +43,5 @@ Aligned within bounded scope; [closeout evidence](BP-02.02_Persistence_Closeout.
 Aligned within documentation scope; [planning review](Planning_Maturity_Review.md) and [readiness/handoffs](../Build%20Plans/Planning_Readiness.md). Thirty-four canonical children replace later broad registers, four open BP-02 children gain operational contracts, architecture lock/join/restore ambiguities resolved. Implementation percentages unchanged. Explicit provider/host/scientific gates remain in owning plans, not unowned drift. Follow-Up: none for this planning review.
 
 - `2026-09-28 11:05:08`: BP-02.03 artifact service aligned; [closeout](BP-02.03_Artifact_Service_Closeout.md) records publication/retention/cleanup/installed-process evidence, 188 tests and scoped limitations. No blocking drift or unowned follow-up in this child; actual runtime/target-host verification belongs to .06/BP-09.
+
+- `2026-09-28 12:01:48`: BP-02.04 lifecycle aligned at 100%; [scoped audit](BP-02.04_Invocation_Lifecycle_Closeout.md). Actual PostgreSQL and installed HTTP-worker evidence pass; completion/artifact integration remains .05/.06. No unowned or blocking drift.

@@ -1,53 +1,58 @@
-# Campaign Runtime — Foundation Slice
+# Campaign Runtime
 
-- Status: partial; validation and persistence foundation implemented; execution handlers/interpreter absent
-- Package: `amphora-campaign-runtime` 0.1.0
-- Architecture: [Graph Runner](../../docs/Architecture/System/Graph_Runner.md), [Isolation](../../docs/Architecture/System/Service_Isolation.md)
+- Status: synthetic invocation lifecycle implemented; completion and general graph execution remain in successor gates.
+- Package: `amphora-campaign-runtime` 0.1.0.
+- Architecture: [Graph Runner](../../docs/Architecture/System/Graph_Runner.md), [runtime protocol](../../docs/Architecture/System/Runtime_Command_Protocol.md), [isolation](../../docs/Architecture/System/Service_Isolation.md).
 
-## Owned Behavior and Module Boundaries
+## Ownership and Module Boundaries
 
-- `graph.py`: immutable graph/vertex/route domain values; explicit DTO mapper; bounded nested-scope traversal, node/edge uniqueness, DAG, branch predecessor/routes, join and termination checks.
-- `admission.py`: pure invocation/completion binding policy; exact versions, declared ports, artifact/checkpoint scope/schema and supplied attempt/fence identity. It does not prove that a supplied grant or fence is current.
-- `api.py`: default validation-only FastAPI application, bounded request decoding, sanitized structural errors and OpenAPI publication. An explicitly configured admission instance enables the synthetic fixture-run endpoint; configured fixture apps expose claim/renewal; completion remains pending.
+| Module | Responsibility |
+|---|---|
+| `graph.py` | Immutable graph values, bounded topology/loop/branch/join validation; no interpreter |
+| `admission.py` | Pure input/tool/completion binding policy against supplied identity; not live authority |
+| [lifecycle](src/amphora_campaign_runtime/lifecycle/README.md) | Exact fixture admission, claims, renewal, cancellation/revocation, budget settlement and scoped observations |
+| [persistence](src/amphora_campaign_runtime/persistence/README.md) | Private runtime schema/migrations, canonical commands, transaction retries, receipts and audit/outbox |
+| `api.py`, `lifecycle/http.py` | Bounded decoding, authenticated configured handlers, sanitized errors and OpenAPI |
+| `hosting.py`, `__main__.py` | Explicit local configuration, service-role readiness and loopback executable; no startup migrations |
 
-- `persistence/`: [private migration and command-store boundary](src/amphora_campaign_runtime/persistence/README.md); fixture admission now has an owned transaction; claim/renew handlers now exist; completion remains pending.
+Only this service owns execution authority and runtime tables. Dependencies are public core/tool/campaign/command/runtime contracts, Pydantic, FastAPI/Uvicorn, SQLAlchemy/psycopg and Alembic. No private adjacent-service imports, shared ORM, scientific libraries or provider calls. Artifact payloads remain owned by the artifact service. Configured fixture references are trusted pins; this slice does not fetch or scientifically validate inputs.
 
-Graph Runner coordination, aggregation and supervision remain successor behavior.
+## Public Boundary
 
-## Public API and Data Boundaries
+Default `create_app()` and module `api:app` expose only health and structural campaign validation. `POST /v1/campaign-definitions/validate` returns findings, `executable=false` and pending checks. No arbitrary campaign dispatch exists. Requests are bounded to 256 KiB, JSON nesting 64 and a ten-second whole-body deadline; errors omit raw payload values.
 
-`GET /health` reports validation-only mode and execution unavailable. `POST /v1/campaign-definitions/validate` returns structural findings, `executable=false` and remaining scientific/tool/authority/budget/execution checks. Schema-invalid inputs return 422; request body over 256 KiB returns 413; deeply nested JSON is bounded before DTO parsing. Errors omit raw input values. JSON decoding uses the same Pydantic JSON path as interchange fixtures; generated OpenAPI references the owned input/output schemas.
+`Host.load` requires explicit environment-backed database credentials/tokens, scoped actor/action entries and immutable exact fixture definitions. It requires `runtime_service` and migrated lifecycle tables; migration-role startup is rejected. No configuration or secret is inferred from a worker request. The configured application exposes:
 
-The validation endpoint performs no database or filesystem payload writes, provider calls, scientific computations, authentication or live grant validation. This is a local developer endpoint: start Uvicorn on loopback only. No deployed identity gateway, enterprise readiness, live lease fencing or scientific activation claim.
+| Endpoint | Access and result |
+|---|---|
+| `GET /health`, `/ready` | Process capability report and database readiness; configured mode `fixture_lifecycle`, full execution unavailable |
+| `POST /v1/fixture-runs` | `admit`; exact allowlisted pins, one running campaign; original command receipt |
+| `POST /v1/invocations/claim` | `claim`; matching actor/worker and exact tool; invocation/lease or stable no-work receipt |
+| `POST /v1/attempts/renew` | `renew`; current worker, attempt, fence and database-clock lease; original receipt |
+| `POST /v1/runs/cancel` | `cancel`; optional revision guard, atomic prepared abort and budget settlement |
+| `POST /v1/workers/revoke` | `revoke`; durable scoped worker policy and protected work settlement |
+| `GET /v1/runs/{run_id}` | `read`; bounded RunSnapshot with budget and current activation/attempt observations; missing/wrong scope returns 404 |
 
-Dependencies are public core/tool/campaign/command/runtime contracts, Pydantic, FastAPI, Uvicorn, SQLAlchemy, psycopg and Alembic. No adjacent service imports, shared ORM or scientific libraries. Graph validation values remain ephemeral; persistence owns separate durable records and migration history.
+Every mutation authenticates the configured token, action, actor and scope. Renew/claim additionally consult live authority; replayed receipts never restore expired/revoked authority. Reads use a read-only repeatable-read transaction and never grant authority. Commands serialize under owner locks, compare database time after locks, and commit state/budget/receipt/audit/outbox atomically. External effects remain forbidden in synthetic dispatch; uncertainty is retained explicitly rather than retried or refunded.
 
-## Replacement and Verification
+## Hosting and Recovery
 
-A rebuild preserves safe rejection, structured findings and truthful non-execution semantics. Consumers rely on public HTTP/contracts, not these private classes. Import enforcement rejects cross-owner private imports/undeclared libraries. A replacement also preserves the linked persistence invariants and migration history. Execution handlers must use explicit owner-domain transactions.
+Use [config.example.json](config.example.json) as a synthetic configuration shape; replace fixture pins and set the named environment variables locally. Migrate with the separate owner migration command first. From repository root: `uv run --project v2/services/campaign_runtime --locked amphora-runtime check --config <local-config>` then `amphora-runtime serve --config <local-config> --port 8080` through the same uv project. The module form is `python -m amphora_campaign_runtime`. Serving binds only 127.0.0.1; TLS/gateway/deployment remains BP-09.
 
-Run [foundation verification](../../dev/README.md) for graph semantic negatives, cross-scope/version/attempt rejection, OpenAPI reference integrity, body/error bounds and isolation tests. Package wheel installation is tested separately from the shared dev environment. The schema is a pre-release subset: duplicate/late commits, authorization, recovery, concurrency and scientific tool applicability require real BP-02/03/04 tests.
+`settle --config <local-config> --actor <actor> --tenant <tenant> --project <project> --run <run>` selects one explicitly configured `maintain` principal. It performs one bounded run sweep; there is no implicit background scheduler. Expired pure work spends its issued unit once and may be reissued within deadline/attempt/budget bounds. Cancellation spends issued work and costs nothing for unclaimed work. A prepared completion intent blocks blind expiry until its owner reconciles/aborts it. Unknown external effects retain reservations and block automatic retry.
 
-Local command from repository root after uv bootstrap: `v2/.venv/Scripts/uv.exe run --project v2/services/campaign_runtime uvicorn amphora_campaign_runtime.api:app --host 127.0.0.1 --port 8000`. This starts only the validation service; stop it after use. Linux uses the equivalent uv executable path.
+Database outages leave registered commands pending/retryable; stable business rejection and original terminal receipts persist. Local credentials are a development profile, not enterprise identity. Runtime notifications currently accumulate in durable outboxes; delivery is BP-02.05. Existing snapshots are observations, not subscriptions or paginated history.
 
-## Owned Tests and Baseline
+## Owned Tests and Replacement Acceptance
 
-| Folder under `tests/` | Behavioral scope | Measured source |
-|---|---|---|
-| `graph/` | Topology, explicit loops, invalid edges, branches/joins and predicate dependencies | `graph.py` |
-| `admission/` | Exact tool identity, artifact scope and completion identity against a supplied attempt | `admission.py` |
-| `api/` | Validation-only API, body/depth bounds, redacted errors and OpenAPI | `api.py` |
-| `persistence/` | PostgreSQL constraints, command contention/rollback/retry | Private persistence module |
-| `baseline/` | Frozen v1 source pins, scoring-chain order and typed campaign scaffold | Graph structural boundary; no execution parity |
+| Folder under `tests/` | Behavior |
+|---|---|
+| `graph/`, `admission/`, `api/` | Structural/pin rejection, OpenAPI, redaction, bytes/depth/time limits |
+| `persistence/` | Real PostgreSQL roles, constraints, command contention and rollback |
+| `lifecycle/` | Pure transitions plus actual admission/claim/renew/budget/authority transactions, races, scope and startup |
+| `acceptance/` | Independently installed runtime plus HTTP-only workers: worker kill/lease reclaim, higher fences, stale rejection, read isolation and conserved budget |
+| `baseline/`, [v1 fixture](tests/fixtures/v1_solver/README.md) | Frozen source pins and behavior graph; structural reference, not execution parity |
 
-From repository root: `uv run --project v2/dev --locked python v2/dev/run_tests.py --module runtime --coverage`. For PostgreSQL, enable the explicit dev fixture and use `--area persistence`. Add `--area graph`, `--area admission`, `--area api` or `--area baseline` for a narrower run. Coverage still uses the full runtime source denominator so a small suite does not masquerade as complete module coverage. Reports are separated by selection under `v2/.test-results/`.
+`uv run --project v2/dev --locked python v2/dev/run_tests.py --module runtime --area lifecycle` is the focused lifecycle suite. Other areas run independently; `--coverage` measures the whole owner source denominator, including unexecuted files. Explicit `AMPHORA_TEST_POSTGRES=1` enables the labeled disposable fixture. `verify_foundation.py --builds` additionally installs wheels outside the checkout and runs both standalone service probes. Its runtime workers receive only HTTP request/token data and a minimal OS environment, never database credentials or owner imports. Database-domain contention probes are distinct from this public-boundary evidence.
 
-[Initial v1 solver graph](tests/fixtures/v1_solver/README.md) owns the source-derived behavior reference and future parity scenarios. Current tests cannot demonstrate execution/restart/concurrency equivalence because the interpreter is not built. Remaining local branches and schema combinations are visible in coverage reports; real authority, durable fencing and scientific acceptance remain later gates. Keep these suites beside this service across rebuilds.
-
-[Lifecycle domain](src/amphora_campaign_runtime/lifecycle/README.md) implements pure run/worker/budget/activation/lease transitions under BP-02.04/I1. It supplies deterministic policy only; durable handlers and execution endpoints remain pending. Use `--area lifecycle` for its exact-expiry, fencing, uncertainty and settlement oracles.
-
-BP-02.04/I2: `create_app(admission, credentials)` adds authenticated POST /v1/fixture-runs with an exact configured synthetic allowlist and installation-wide single-running-run guard. Run/activation/receipt/audit/outbox commit atomically. General graphs remain non-executable and no worker dispatch occurs. The default module-level app retains validation-only behavior.
-
-BP-02.04/I3 adds configured fixture claim/renew HTTP routes, persisted activation deadlines and increasing attempt fences. Two independently running worker probes contend under the real run lock; expired/replayed requests preserve authority and accounting. Full completion, cancellation/revocation and lifecycle acceptance remain open; the default validation app still exposes no durable handlers.
-
-BP-02.04/I5 configured fixture apps also expose scoped cancellation and durable worker revocation. These commands serialize with claims/renewals, atomically abort prepared intents and preserve uncertain reserved budget. Policy audit/outbox supports revocation before any run. Authenticated public intent-outcome queries and completion transport remain .05; full lifecycle acceptance remains I6.
+A replacement preserves public wire/canonical-command compatibility, immutable snapshots and history, run/worker/attempt fencing, database-clock checks, budget conservation, prepared protection and atomic receipt/audit/outbox behavior. Preserve the migration chain and service-role limits. Pass owner suites plus independent installed HTTP acceptance before cutover. Completion and exact artifact retention integration are BP-02.05/.06; graph interpretation BP-04; target-host durability BP-09. Process-kill evidence does not establish power-loss safety or scientific validity.

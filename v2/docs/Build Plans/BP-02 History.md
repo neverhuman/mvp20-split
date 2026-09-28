@@ -166,3 +166,11 @@ Pending implementation. Record exact revision, timestamps, test and artifact IDs
 ## Accounting clarification 2026-09-25 08:47:38
 
 The preliminary 34-child-delivery denominator included pure design gates S1 and A1. Corrected to 32 implementation deliveries, with both mandatory design gates preserved separately. Contract child contributes five completed tasks; persistence currently contributes four with S6 acceptance pending. Parent 9/32 = 28.13%; no elapsed-effort claim.
+
+## Older MBT checkpoint archive
+
+| 2026-09-22 20:53:09 | Pydantic/JSON Schema contract architecture added as sixth System child; no implementation or reopening of closed plans | [Contract architecture](../Architecture/System/Contract_Architecture.md) |
+| 2026-09-22 20:30:31 | Proposed runtime topology, graph machine, persistent-state protocol, interfaces and complete research loop delivered; single-server baseline confirmed | [Completed system plan](Completed/System%20Architecture%20Plan.md), [audit](../Audits/System_Architecture_Closeout.md) |
+| 2026-09-22 19:04:40 | Twenty deeper contracts, eight coordination summaries, three flow diagrams and architecture-depth template complete | [Completed detail plan](Completed/Architecture%20Detail%20Plan.md), [audit](../Audits/Architecture_Detail_Closeout.md) |
+| 2026-09-22 16:45:29 | Architecture documentation plan complete: 8 domains, 20 focused contracts, 102 requirement-section owners; no runtime code | [Completed plan](Completed/Architecture%20Decomposition%20Plan.md), [closeout audit](../Audits/Architecture_Decomposition_Closeout.md) |
+| 2026-09-22 13:47:22 | Local SDLC rules, tracker hierarchy, templates and drift surfaces established; no runtime implementation claimed | [Process](../Development_Process.md), [process alignment record](../Audits/Architecture%20Drift%20History.md) |

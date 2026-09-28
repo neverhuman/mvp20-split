@@ -9,15 +9,15 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-02 primary active; BP-03 through BP-09 decomposed/design-specified; BP-01/BP-01A closed
-- Last refreshed: `2026-09-28 11:51:08` (America/Chicago)
+- Last refreshed: `2026-09-28 12:01:48` (America/Chicago)
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md), and current System/Capability contracts
-- Current priority: P0 / BP-02 - invocation lifecycle
-- Primary active implementation plan / phase / task: BP-02 -> BP-02.04 / V2 / I6.
-- Current task: independent public-worker lifecycle acceptance and scoped audit.
-- Next task: BP-02.05 completion after I6 closeout.
-- Implementation completion: BP-01/BP-01A closed at 100%; BP-02 62.50% (20/32 implementation deliveries), children .01-.03 closed at 100%, .04 83.33%, .05-.06 0%; BP-03..09 scoped parents at 0%. No effort estimate inferred.
+- Current priority: P0 / BP-02 - completion and delivery
+- Primary active implementation plan / phase / task: BP-02 -> BP-02.05 / V1 / D1.
+- Current task: immutable completion intent preparation and external reservation acquisition.
+- Next task: BP-02.05 D2 atomic acceptance after D1.
+- Implementation completion: BP-01/BP-01A closed at 100%; BP-02 65.63% (21/32 implementation deliveries), children .01-.04 closed at 100%, .05-.06 0%; BP-03..09 scoped parents at 0%. No effort estimate inferred.
 - Active focus: durable state, artifact publication/reservations and claim/completion foundation after the completed contract slice
-- Blockers: Git identity configured; no implementation blocker for BP-02.04; predecessor/host/provider gates of later plans remain explicit
+- Blockers: Git identity configured; no implementation blocker for BP-02.05; predecessor/host/provider gates of later plans remain explicit
 - Acceptance posture: BP-01 boundary/API subset accepted; no durable graph execution or scientific acceptance claimed
 - Active exception: none; user-authorized implementation resumed after reference refinement.
 
@@ -35,13 +35,13 @@ BP-02 is the sole primary active plan. Later plans are design-specified with can
 
 | Parent | Implementation | .01 Contracts | .02 Persistence | .03 Artifacts | .04 Invocations | .05 Completion | .06 Recovery |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-02](BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md) | 62.50% | 100% | 100% | 100% | 83.33% | 0% | 0% |
+| [BP-02](BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md) | 65.63% | 100% | 100% | 100% | 100% | 0% | 0% |
 
 | Active canonical child | Overall | V1 Build | V2 Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-02.04](BP-02/BP-02.04%20Invocation%20Lifecycle.md) | 83.33% | 100% | 0% | I6 lifecycle acceptance |
+| [BP-02.05](BP-02/BP-02.05%20Completion%20and%20Delivery.md) | 0% | 0% | 0% | D1 completion intent preparation |
 
-Authorized rebaseline: original 8.33% counted protocol design. Design credit remains complete; implementation counts 32 deliveries, twenty verified. Pure design gates S1/A1 remain mandatory without implementation credit; the preliminary 34-task count was explicitly corrected. [Parent history](BP-02%20History.md) preserves prior scope. Progress counts deliverables, not engineer-hours; child trackers are canonical.
+Authorized rebaseline: original 8.33% counted protocol design. Design credit remains complete; implementation counts 32 deliveries, twenty-one verified. Pure design gates S1/A1 remain mandatory without implementation credit; the preliminary 34-task count was explicitly corrected. [Parent history](BP-02%20History.md) preserves prior scope. Progress counts deliverables, not engineer-hours; child trackers are canonical.
 
 ## Queued Plans and Phase Mirrors
 
@@ -68,7 +68,7 @@ BP-02 is `primary_active`; BP-03 through BP-09 are `design_specified / queued`, 
 
 | Order / ID | Completion | Proposed plan | Required predecessor gates | Bounded outcome / exit | Architecture owner |
 |---|---|---|---|---|---|
-| P0 / BP-02 | 62.50% | [Durable Runtime and Artifact Foundation](BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md) - active child .04/I6 | BP-01 contracts/build boundary | Runtime-owned run/attempt/command state, audit/outbox, artifact finalization/reservation interface, minimal claim/completion protocol and restart/idempotency proof; no complete graph interpreter claimed | [State/consistency](../Architecture/System/State_and_Consistency.md) |
+| P0 / BP-02 | 65.63% | [Durable Runtime and Artifact Foundation](BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md) - active child .05/D1 | BP-01 contracts/build boundary | Runtime-owned run/attempt/command state, audit/outbox, artifact finalization/reservation interface, minimal claim/completion protocol and restart/idempotency proof; no complete graph interpreter claimed | [State/consistency](../Architecture/System/State_and_Consistency.md) |
 | P2 / BP-03 | 0% | [Tool Index and Standalone Execution](BP-03%20Tool%20Index%20and%20Standalone%20Execution.md) | BP-01; BP-02 claim/artifact protocols | Versioned descriptors and deployment inventory, standalone synthetic tools, shared execution SDK, exact-version routing, two-worker claim/fence proof; narrow solvency reuse only after applicability review | [Tool services](../Architecture/Capabilities/Tool_Services.md), [catalog](../Architecture/Capabilities/Catalog.md) |
 | P3 / BP-04 | 0% | [Deterministic Graph Runner](BP-04%20Deterministic%20Graph%20Runner.md) | BP-02 durable state; BP-03 callable tools | Compile and execute typed branch/join/scatter/loop graphs; aggregate committed results; handle scoped failures, external waits, restart and successor campaigns with no LLM required for deterministic control; pass the source-derived v1 solver orchestration scenarios using synthetic adapters | [Graph Runner](../Architecture/System/Graph_Runner.md), [execution model](../Architecture/System/Graph_Execution_Model.md) |
 | P4 / BP-05 | 0% | [Graph Studio First Vertical Slice](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md) | BP-04 runnable fixture and read/command contracts | Inspect actual live/historical execution, evidence, parallel branches and failures; edit next-campaign drafts, compare revisions and observe emergency termination; preserve autonomous progress | [Studio](../Architecture/Experience/Studio.md), [UI rules](../UI_Coding_Guidelines.md) |
@@ -127,7 +127,9 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
-| 2026-09-28 11:51:08 | BP-02.04 I4 passed; child 83.33%, V1 100%, parent 62.50%; next I5 | Budget/rollback/prepared-intent guards; 229 full tests, 41 scoped |
+| 2026-09-28 12:01:48 | BP-02.04 closed/audited 100%; parent 65.63% (21/32); .05/D1 activated at 0% | 243 tests/eight builds, installed HTTP-only worker proof; [audit](../Audits/BP-02.04_Invocation_Lifecycle_Closeout.md) |
+| 2026-09-28 11:51:08 | BP-02.04 I5 passed; child 83.33%, V1 100%, parent 62.50%; next I6 | 239 tests; atomic cancel/revoke and policy journal; f8a8f94 pushed |
+| 2026-09-28 11:37:28 | BP-02.04 I4 passed; child 66.67%, V1 80%, parent 59.38%; next I5 | Budget/rollback/prepared-intent guards; 229 full tests, 41 scoped |
 | 2026-09-28 11:28:20 | BP-02.04 I3 passed; child 50%, V1 60%, parent 56.25%; next I4 | Two-process claims/live-clock renewal; 224 tests/eight builds |
 | 2026-09-28 11:18:55 | BP-02.04 I2 passed; child 33.33%, V1 40%, parent 53.13%; next I3 | Admission contention/replay/rollback; 218 tests/eight builds |
 | 2026-09-28 11:11:49 | BP-02.04 I1 passed; child 16.67%, V1 20%, parent 50%; next I2 | 21 pure policy tests; full gate 209/eight builds |
@@ -150,10 +152,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-23 09:41:20 | Strict service isolation and proposed independently replicated tool workloads; source layout/state boundaries refined, no deployment | [Isolation](../Architecture/System/Service_Isolation.md), [tool services](../Architecture/Capabilities/Tool_Services.md) |
 | 2026-09-22 21:03:27 | Initial internal/demo autonomous profile and replaceable-module boundaries recorded; owner questions answered, no runtime activated | [Delivery profile](../Architecture/Requirements/Product_Requirements.md#initial-delivery-profile), [module template](../Templates/Module%20README%20Template.md) |
 | 2026-09-22 20:57:10 | Careful readiness review: bounded implementation can start after scope/assumption closure; nine findings and six owner questions recorded | [Readiness review](../Audits/Architecture_Readiness_Review.md) |
-| 2026-09-22 20:53:09 | Pydantic/JSON Schema contract architecture added as sixth System child; no implementation or reopening of closed plans | [Contract architecture](../Architecture/System/Contract_Architecture.md) |
-| 2026-09-22 20:30:31 | Proposed runtime topology, graph machine, persistent-state protocol, interfaces and complete research loop delivered; single-server baseline confirmed | [Completed system plan](Completed/System%20Architecture%20Plan.md), [audit](../Audits/System_Architecture_Closeout.md) |
-| 2026-09-22 19:04:40 | Twenty deeper contracts, eight coordination summaries, three flow diagrams and architecture-depth template complete | [Completed detail plan](Completed/Architecture%20Detail%20Plan.md), [audit](../Audits/Architecture_Detail_Closeout.md) |
-| 2026-09-22 16:45:29 | Architecture documentation plan complete: 8 domains, 20 focused contracts, 102 requirement-section owners; no runtime code | [Completed plan](Completed/Architecture%20Decomposition%20Plan.md), [closeout audit](../Audits/Architecture_Decomposition_Closeout.md) |
-| 2026-09-22 13:47:22 | Local SDLC rules, tracker hierarchy, templates and drift surfaces established; no runtime implementation claimed | [Process](../Development_Process.md), [process alignment record](../Audits/Architecture%20Drift%20History.md) |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

@@ -35,6 +35,7 @@ for name, model in {
     "revoke-worker": runtime_contracts.RevokeWorker,
     "receipt": runtime_contracts.CommandReceipt,
     "claim-response": runtime_contracts.ClaimResponse,
+    "run-snapshot": runtime_contracts.RunSnapshot,
 }.items():
     MODELS["runtime." + name] = model
 for name, model in {

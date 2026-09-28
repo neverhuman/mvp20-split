@@ -51,3 +51,5 @@ Fixture credentials/state live only in ignored `v2/.test-results/postgres-fixtur
 Artifact module selection supports `--module data-artifacts --area publication`, `--area storage` and `--area persistence`; the source coverage denominator remains the full artifact service.
 
 Artifact retention handshake tests have their own selector: `--module data-artifacts --area retention`. These include a scripted authenticated runtime process; actual runtime integration remains a separate gate.
+
+With PostgreSQL enabled, `verify_foundation.py --builds` starts independently installed runtime and artifact wheels outside the source checkout. Runtime public-worker probes use a minimal OS environment with no database credentials; service credentials remain confined to the host. Run these sequentially against the single-campaign fixture. Probe scripts are owned by each service under `tests/acceptance/`; subprocess acceptance is separate from pytest coverage.
