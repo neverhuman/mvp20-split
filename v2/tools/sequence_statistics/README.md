@@ -1,6 +1,6 @@
 # Sequence Statistics Tool
 
-- Status: BP-03.03/B1 standalone package, kernel, schemas, descriptor and worker adapter implemented; expanded failure/installed peer acceptance remains B2/B3/V1.
+- Status: BP-03.03/B1/B2 package, kernels, adapters and lifecycle/failure policy verified; actual independent peer/image/replacement acceptance remains B3/V1.
 - Package/release: `amphora-sequence-statistics` 0.2.0; wire payload version 1.
 - Architecture: [tool services](../../docs/Architecture/Capabilities/Tool_Services.md).
 
@@ -26,4 +26,6 @@ Run `uv run --project v2/dev --locked python v2/dev/run_tests.py --module sequen
 
 A replacement preserves exact schemas, pure behavior, error vocabulary, input/output port binding, deterministic ordering and replay/fence semantics. Changed behavior/schema/image creates a new immutable release; never overwrite an already registered release. Scratch may be discarded; accepted artifacts, receipts and provenance remain owned by runtime/artifact services.
 
-B1 coverage checkpoint: 14 module tests; 50% combined line/branch over 95 statements/16 branches; kernel and payload DTOs 100%. CLI subprocess golden/invalid cases pass but are not included in in-process coverage. Adapter and remaining client/failure branches are explicit B2/B3 work. [Configuration example](config.example.json) deliberately has an invalid image placeholder; supply the verified deployment identity. Runtime grants are claim/renew/complete/read; artifact grants are upload/finalize/read. These worker credentials must not grant admission or administrative work creation.
+B2 coverage checkpoint: 19 module tests; 84% combined line/branch over 98 statements/16 branches; kernel 100%, adapter 87%. CLI subprocess golden/invalid cases are separate evidence. Remaining branches are CLI modes and defensive metadata/numeric/fallback guards; B3/V1 supplies actual configured tool-owner execution and replacement. [Configuration example](config.example.json) deliberately has an invalid image placeholder; supply the verified deployment identity. Runtime grants are claim/renew/complete/read; artifact grants are upload/finalize/read. Worker credentials must not grant admission or administrative work creation.
+
+Terminal schema/configuration failures do not retry; bounded transport/capacity failures may retry only under runtime authority. An incomplete worker execution exits 3 with a safe message; invalid input/configuration exits 2. The worker adapter preserves the tool-specific failure vocabulary above.

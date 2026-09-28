@@ -1,5 +1,6 @@
 """Conservative local lease observations; runtime alone grants and fences authority."""
 
+import math
 import time
 import uuid
 from dataclasses import dataclass
@@ -30,6 +31,10 @@ class ToolAttemptContext:
     """Stage-bound renewal for bounded pure kernels; no new attempt/work authority."""
 
     def __init__(self, runtime, claimed, lease_seconds=30, clock=None, skew_seconds=1.0):
+        if (type(lease_seconds) is not int or not 10 <= lease_seconds <= 300
+            or isinstance(skew_seconds, bool) or not isinstance(skew_seconds, (int, float))
+            or not math.isfinite(skew_seconds) or not 0 <= skew_seconds <= 5):
+            raise ProtocolError("invalid_lease_profile")
         self.runtime = runtime
         self.invocation = claimed.invocation
         self.attempt = AttemptRef(run_id=self.invocation.run_id, invocation_id=self.invocation.invocation_id,

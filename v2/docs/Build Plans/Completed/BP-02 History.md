@@ -212,3 +212,5 @@ The preliminary 34-child-delivery denominator included pure design gates S1 and 
 | 2026-09-28 10:56:19 | BP-02.03 A5 complete; child 80%, V1 100%, parent 43.75%; next A6 | 182 tests/eight builds; crash-safe cleanup and bounded reconciliation |
 
 | 2026-09-28 11:05:08 | BP-02.03 closed/audited at 100%; parent 46.88%; .04 I1 activated | 188 tests/eight independent builds; installed HTTP artifact acceptance |
+
+| 2026-09-28 11:11:49 | BP-02.04 I1 passed; child 16.67%, V1 20%, parent 50%; next I2 | 21 pure policy tests; full gate 209/eight builds |

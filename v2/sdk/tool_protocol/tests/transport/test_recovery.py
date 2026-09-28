@@ -127,3 +127,50 @@ def test_runtime_renewal_recovers_exact_accepted_binding():
     transport = Scripted([TransportLost("transport_lost"), receipt])
     assert RuntimeClient(transport, IDENTITY).renew(attempt, "renew-1").outcome.status == "accepted"
     assert [method for method, _, _ in transport.calls] == ["POST", "GET"]
+
+
+def test_finalization_ack_loss_returns_original_artifact_without_second_post():
+    final = {"upload_id": UPLOAD.upload_id, "artifact": {"artifact_id": "artifact",
+        "scope": IDENTITY.scope.model_dump(), **CONTENT.model_dump()}}
+    def recovered(calls):
+        return observation(calls, {"status": "finalized", "receipt": final})
+    transport = Scripted([TransportLost("transport_lost"), recovered])
+    assert ArtifactClient(transport, IDENTITY).finalize(UPLOAD, "final").artifact.artifact_id == "artifact"
+    assert [method for method, _, _ in transport.calls] == ["POST", "GET"]
+
+
+def test_wrong_publication_outcome_cannot_cross_operation_boundary():
+    transport = Scripted([TransportLost("transport_lost"), observation])
+    with pytest.raises(ProtocolError, match="finalization_receipt_mismatch"):
+        ArtifactClient(transport, IDENTITY).finalize(UPLOAD, "final")
+    final = {"upload_id": UPLOAD.upload_id, "artifact": {"artifact_id": "artifact",
+        "scope": IDENTITY.scope.model_dump(), **CONTENT.model_dump()}}
+    transport = Scripted([TransportLost("transport_lost"),
+        lambda calls: observation(calls, {"status": "finalized", "receipt": final})])
+    with pytest.raises(ProtocolError, match="upload_receipt_mismatch"):
+        ArtifactClient(transport, IDENTITY).begin(CONTENT, "begin")
+
+
+def test_receipt_lookup_denial_and_request_denial_never_resubmit():
+    transport = Scripted([TransportLost("transport_lost"), Reply(403, b"private")])
+    with pytest.raises(ProtocolError, match="receipt_lookup_denied"):
+        ArtifactClient(transport, IDENTITY).begin(CONTENT, "begin")
+    assert [method for method, _, _ in transport.calls] == ["POST", "GET"]
+    transport = Scripted([Reply(403, b"private")])
+    with pytest.raises(ProtocolError, match="command_request_denied"):
+        ArtifactClient(transport, IDENTITY).begin(CONTENT, "begin")
+    assert len(transport.calls) == 1
+
+
+def test_direct_pending_runtime_response_is_observed_before_retry():
+    attempt = AttemptRef(run_id="run", invocation_id="invocation", attempt_id="attempt", fence=2)
+    def result(calls, status):
+        body = calls[0][2]
+        outcome = {"status": status, "binding": {"identity": json.loads(body)["identity"],
+            "request_sha256": hashlib.sha256(body).hexdigest(), "operation_id": "renew-operation"}}
+        if status == "accepted":
+            outcome["committed"] = {"kind": "attempt", "object_id": "attempt", "revision": 3}
+        return reply({"outcome": outcome})
+    transport = Scripted([lambda calls: result(calls, "pending"), lambda calls: result(calls, "accepted")])
+    assert RuntimeClient(transport, IDENTITY).renew(attempt, "renew-1").outcome.status == "accepted"
+    assert [method for method, _, _ in transport.calls] == ["POST", "GET"]

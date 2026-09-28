@@ -4,7 +4,7 @@ import argparse
 import json
 import sys
 
-from amphora_tool_protocol import run_worker
+from amphora_tool_protocol import ProtocolError, run_worker
 
 from .adapter import execute
 from .kernel import compute
@@ -30,6 +30,9 @@ def main():
             if len(payload) > 262144:
                 raise ValueError("payload_too_large")
             sys.stdout.buffer.write(compute(payload) + b"\n")
+    except ProtocolError:
+        print("worker_execution_incomplete", file=sys.stderr)
+        raise SystemExit(3) from None
     except (ValueError, OSError, KeyError):
         print("invalid_tool_input_or_configuration", file=sys.stderr)
         raise SystemExit(2) from None

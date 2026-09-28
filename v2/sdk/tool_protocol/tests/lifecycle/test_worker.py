@@ -11,9 +11,11 @@ from amphora_contracts_artifacts import FinalizedReceipt, UploadReceipt
 from amphora_contracts_core import ArtifactRef, Scope
 from amphora_contracts_tools import Invocation, ReleaseDescriptor
 from amphora_tool_protocol import (
+    CommandRejected,
     ProtocolError,
     PureToolWorker,
     ToolAttemptContext,
+    ToolInputRejected,
     TransportLost,
     WorkerIdentity,
 )
@@ -175,3 +177,70 @@ def test_lease_is_monotonic_and_capped_by_observed_expiry():
     runtime.clock.elapsed = 0
     with pytest.raises(ProtocolError, match="attempt_authority_lost"):
         context.refresh()
+
+
+@pytest.mark.parametrize("lease,skew", [(0, 1), (301, 1), (True, 1), (30, -1), (30, 6), (30, float("nan")), (30, True)])
+def test_invalid_direct_lease_profiles_never_renew(lease, skew):
+    runtime = Runtime()
+    with pytest.raises(ProtocolError, match="invalid_lease_profile"):
+        ToolAttemptContext(runtime, runtime.claim().outcome, lease, skew_seconds=skew)
+    assert runtime.renewals == 0
+
+
+@pytest.mark.parametrize("reason,retryable", [("content_schema_mismatch", False), ("unsupported_content", False),
+                                             ("capacity_exhausted", True)])
+def test_publication_rejections_preserve_terminal_or_capacity_policy(reason, retryable):
+    runtime, artifacts = Runtime(), Artifacts()
+    def rejected(*_args, **_kwargs):
+        raise CommandRejected(reason)
+    artifacts.begin = rejected
+    result = PureToolWorker(runtime, artifacts, DESCRIPTOR, lambda _body: b"{}").run_once("run")
+    assert result["outcome"] == "failed"
+    outcome = runtime.completions[0][0].completion.outcome
+    assert outcome.reason_code == reason and outcome.retryable is retryable
+    assert artifacts.stages == ["read"]
+
+
+def test_safe_tool_error_and_protocol_violation_are_not_retried():
+    runtime, artifacts = Runtime(), Artifacts()
+    def rejected(_body):
+        raise ToolInputRejected("invalid_sequence_symbol")
+    PureToolWorker(runtime, artifacts, DESCRIPTOR, rejected).run_once("run")
+    outcome = runtime.completions[0][0].completion.outcome
+    assert outcome.reason_code == "invalid_sequence_symbol" and outcome.retryable is False
+    runtime, artifacts = Runtime(), Artifacts()
+    PureToolWorker(runtime, artifacts, DESCRIPTOR, lambda _body: "not-bytes").run_once("run")
+    outcome = runtime.completions[0][0].completion.outcome
+    assert outcome.reason_code == "tool_protocol_violation" and outcome.retryable is False
+    assert artifacts.stages == ["read"]
+
+
+def test_expired_computation_never_publishes(monkeypatch):
+    runtime, artifacts = Runtime(), Artifacts()
+    clock = TestClock()
+    runtime.clock = clock
+    import amphora_tool_protocol.worker as worker_module
+    constructor = worker_module.ToolAttemptContext
+    monkeypatch.setattr(worker_module, "ToolAttemptContext", lambda *args, **kwargs: constructor(*args, clock=clock, **kwargs))
+    def slow(_body):
+        clock.elapsed += 30
+        return b"{}"
+    with pytest.raises(ProtocolError, match="attempt_authority_lost"):
+        PureToolWorker(runtime, artifacts, DESCRIPTOR, slow).run_once("run")
+    assert artifacts.stages == ["read"] and runtime.completions == []
+
+
+def test_misbound_input_never_runs_kernel_and_ineligible_profiles_never_claim():
+    runtime, artifacts = Runtime(), Artifacts()
+    runtime.invocation = runtime.invocation.model_copy(update={"inputs": ()})
+    def forbidden(_payload):
+        raise AssertionError("Mismatched input cannot invoke computation")
+    PureToolWorker(runtime, artifacts, DESCRIPTOR, forbidden).run_once("run")
+    assert artifacts.stages == []
+    assert runtime.completions[0][0].completion.outcome.reason_code == "tool_input_binding_mismatch"
+    external = DESCRIPTOR.model_copy(update={"tool": DESCRIPTOR.tool.model_copy(update={"side_effects": "external"})})
+    with pytest.raises(ProtocolError, match="unsupported_worker_profile"):
+        PureToolWorker(runtime, artifacts, external, forbidden)
+    artifacts.identity = WorkerIdentity("other", IDENTITY.scope)
+    with pytest.raises(ProtocolError, match="worker_identity_mismatch"):
+        PureToolWorker(runtime, artifacts, DESCRIPTOR, forbidden)

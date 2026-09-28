@@ -17,6 +17,7 @@ from amphora_contracts_runtime import (
     CompleteInvocation,
     RenewAttempt,
     RunSnapshot,
+    parse_command,
 )
 
 from .commands import (
@@ -62,6 +63,7 @@ class RuntimeClient:
         if not isinstance(completion, CompleteInvocation):
             raise ProtocolError("invalid_completion_request")
         command = self.identity.command("runtime.complete", command_id, completion)
+        command = parse_command("runtime.complete", command.canonical_bytes)
         result = self.exchange.execute(command, "/v1/invocations/complete", runtime_result, runtime_result, guard=guard)
         if (isinstance(result, ClaimResponse) or result.outcome.status != "accepted"
             or result.outcome.committed.kind != "completion"):

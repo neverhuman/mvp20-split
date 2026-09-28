@@ -1,6 +1,6 @@
 # Tool Protocol SDK
 
-- Status: BP-03.03/B1 typed clients and bounded pure-tool stage adapter implemented; expanded lifecycle/failure and installed peer acceptance pending.
+- Status: BP-03.03/B1 B1/B2 clients and bounded pure-tool lifecycle/failure policy verified; actual independent peer/image/replacement acceptance remains B3/V1.
 - Package: `amphora-tool-protocol` 0.1.0; explicit public client boundary.
 - Architecture: [tool services](../../docs/Architecture/Capabilities/Tool_Services.md).
 
@@ -16,4 +16,6 @@ Tests under `tests/transport/` distinguish scripted receipt-loss oracles from ac
 
 `PureToolWorker` executes one pinned pure synthetic tool with one required input/output and no checkpoint. It reads verified input bytes, delegates only payload computation to the tool, publishes output through typed artifact APIs and submits same-attempt completion. ToolInputRejected preserves tool-owned safe reason codes. Stream ambiguity becomes retryable pure-attempt failure only if authority is reconfirmed; completion ambiguity never triggers a contradictory report. WorkerConfig contains endpoint/token environment references and no inline credentials. Tests under `tests/lifecycle/` are scripted policy probes, not live owner evidence.
 
-B1 coverage checkpoint: 22 focused SDK cases, 72% combined line/branch over 363 statements/94 branches. Attempt-context policy is fully exercised in this denominator; typed-client negative projections, adapter errors and configured launch paths remain explicit B2/B3 work. Scripted/loopback evidence does not replace actual owner integration.
+B2 coverage checkpoint: 82 focused SDK cases, 100% of 389 statements/102 branches in the in-process denominator. This is client/policy/loopback evidence; actual independently installed tool-owner execution and interruption remain B3/V1. Twelve isolated package installs passed; no SQL/owner implementation dependencies are installed with the SDK.
+
+ExecutionFailure preserves terminal publication reasons and permits capacity/transport retries only while the same attempt remains authorized. Schema/configuration and protocol mismatches are not scientific retries. Direct pending responses are inspected before resubmission. CompleteInvocation scope is validated by the public runtime command parser before sending. Credentials require bounded printable ASCII; malformed endpoints, timeouts and lease/clock profiles fail locally. Tool CLIs distinguish invalid input/configuration (exit 2) from incomplete worker execution (exit 3), with safe diagnostics.

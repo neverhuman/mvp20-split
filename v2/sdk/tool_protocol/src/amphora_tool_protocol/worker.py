@@ -11,18 +11,18 @@ from amphora_contracts_artifacts import ContentDescriptor
 from amphora_contracts_core import Digest, Identifier, Scope, WireModel
 from amphora_contracts_runtime import CompleteInvocation
 from amphora_contracts_tools import Completion
-from pydantic import Field
+from pydantic import Field, TypeAdapter
 
 from .attempts import ToolAttemptContext
 from .clients import ArtifactClient, RuntimeClient
 from .commands import WorkerIdentity
+from .failures import ExecutionFailure
 from .transport import HttpTransport, ProtocolError
 
 
 class ToolInputRejected(ValueError):
     def __init__(self, reason_code):
         # Tool adapters provide a safe, bounded vocabulary instead of payload diagnostics.
-        from pydantic import TypeAdapter
         self.reason_code = TypeAdapter(Identifier).validate_python(reason_code)
         super().__init__(reason_code)
 
@@ -99,10 +99,10 @@ class PureToolWorker:
                                      skew_seconds=self.skew_seconds)
         try:
             outcome = self._execute(context)
-        except ProtocolError:
+        except ProtocolError as error:
             # A pure attempt may fail retryably; a lost/uncertain lease cannot report it.
             context.refresh()
-            outcome = {"status": "failed", "reason_code": "tool_transport_failure", "retryable": True}
+            outcome = ExecutionFailure.from_protocol(error).to_wire()
         context.refresh()
         invocation = context.invocation
         completion = Completion.model_validate_json(json.dumps({"schema_version": "1",
