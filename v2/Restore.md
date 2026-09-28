@@ -2,16 +2,18 @@
 
 ## Current Checkpoint
 
-- Last refreshed: `2026-09-28 16:52:45` (America/Chicago).
+- Last refreshed: `2026-09-28 17:04:34` (America/Chicago).
 - Workspace: v2 active; v1 frozen; no external JARVIS access without task-specific request.
-- Canonical position: BP-03 -> [BP-03.04](docs/Build%20Plans/BP-03/BP-03.04%20Replicas%20and%20replacement%20proof.md) / Build / B1. Next B2 death/reclaim and new immutable release cutover.
-- Progress: BP-02 closed 100% (32/32); BP-03 75% (12/16), .01-.03 closed/audited 100%, .04 0% (Build 0%, Acceptance 0%). BP-04..09 queued 0%.
+- Canonical position: BP-03 -> [BP-03.04](docs/Build%20Plans/BP-03/BP-03.04%20Replicas%20and%20replacement%20proof.md) / Build / B2 actual death/reclaim and immutable release cutover. Next B3 result/budget/replacement negatives.
+- Progress: BP-02 closed 100% (32/32); BP-03 81.25% (13/16), .01-.03 closed/audited 100%, .04 25% (Build 33.33%, Acceptance 0%). BP-04..09 queued 0%.
 - Latest checkpoint: .03 eleven actual independent worker/owner cases passed, including fresh numeric/sequence installations preserving prior receipts, completions and result bytes (scope 34f1a759a9bc4af18b0f3e99b21d4a37). Both Linux/amd64 images passed non-root/network-disabled goldens and isolation; internal wheel bytes match Windows process probes. Evidence: docs/Audits/Evidence/BP-03-Workers; audit BP-03.03_Worker_Closeout.md.
 - Verification: initial aggregate passed 597 tests/twelve builds/REC-01..09 before a harness stderr deadlock; file-backed server logs repaired it, scoped nine/eleven-case reruns passed. No production change. SDK 82 cases/100% scoped coverage; numeric 16/82%, sequence 19/84%. Process/CLI/image proof separate. Lint/import/schema guards passed.
-- Current deliverable: .04 integration harness under tests/integration/tool_replicas; actual registry registration/discovery/resolve and two real workers through public Runtime/Artifact APIs. Registry never grants execution authority. Record barriers and exact IDs. General interpreter remains BP-04.
+- Previous deliverable: .04 integration harness under tests/integration/tool_replicas; actual registry registration/discovery/resolve and two real workers through public Runtime/Artifact APIs. Registry never grants execution authority. Record barriers and exact IDs. General interpreter remains BP-04.
+- B1 accepted: scope f303014dbbc44baa870a8bf5c01095a7; actual registry selection/admission, two simultaneous distinct invocations, publication before completion, lost-response original-receipt recovery and exact budget settlement. Evidence docs/Audits/Evidence/BP-03-Replicas. Setup now uses per-owner readiness, precreated artifact storage and owned Windows process-tree cleanup.
+- Current deliverable: B2 kill worker after claim; real lease expiry, second-worker reclaim, stale completion rejection. Build a new immutable sequence release, drain/cutover between campaigns, retain old replay identity. Extend the existing integration-owned harness, not a production scheduler.
 - Assigned refinement TOOL-META-01: .04/B2 new sequence release corrects output representation (statistics rather than sequence) while preserving 0.2.0 image/descriptor/history. No checkpoint support is advertised by current pure tools; reject checkpoint/version mismatches rather than inventing recovery.
 - Environment: Python 3.12, uv, labeled PostgreSQL 17.11 fixture; secrets only in ignored .test-results/postgres-fixture.json. Owner-specific roles/migrations; never reset concurrently with tests. AMPHORA_TEST_POSTGRES=1 explicit. Focused `dev/verify_tool_workers.py --images .test-results/tool-images/bp0303-20260928-1619/manifest.json --replacement` rebuilds fresh public closures without unrelated owner-suite reruns.
-- Git: c12d99a pushed; .03 closeout/.04 activation verified for next commit. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
+- Git: c4b4a75 pushed; .04 B1 verified for next commit. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
 - Authority: continue autonomously, commit/push significant updates. No user blocker. Actual host/provider/scientific/egress choices remain later named gates.
 - Limits: no general interpreter, scientific efficacy, model/knowledge/Studio or target-host/K3s/power-loss claim. Existing test-client warning and pre-existing v1/LICENSE manifest discrepancy remain nonblocking assigned maintenance.
 

@@ -50,11 +50,11 @@ class Service:
         self.child = subprocess.Popen([self.python, "-I", "-m", module, "serve", "--config", self.config,
             "--port", str(port)], cwd=directory, env=env, stdout=subprocess.DEVNULL, stderr=self.log)
 
-    def ready(self, token):
+    def ready(self, token, path="/ready"):
         deadline = time.monotonic() + 30
         while self.child.poll() is None and time.monotonic() < deadline:
             try:
-                if request(self.endpoint, "/ready", token)[0] == 200:
+                if request(self.endpoint, path, token)[0] == 200:
                     return
             except URLError:
                 pass
@@ -63,7 +63,14 @@ class Service:
 
     def close(self):
         if self.child.poll() is None:
-            self.child.terminate()
+            if os.name == "nt":
+                # A Windows virtualenv launcher can own a second Python process.
+                # Stop only this explicitly created host tree before removing its files.
+                subprocess.run(["taskkill", "/PID", str(self.child.pid), "/T", "/F"],
+                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=10,
+                    creationflags=subprocess.CREATE_NO_WINDOW)
+            else:
+                self.child.terminate()
         try:
             self.child.communicate(timeout=10)
         except subprocess.TimeoutExpired:

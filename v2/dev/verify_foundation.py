@@ -225,6 +225,7 @@ def main():
                 ROOT / "sdk",
                 ROOT / "tools",
                 ROOT / "dev",
+                ROOT / "tests/integration",
             ]
         ).strip()
     )

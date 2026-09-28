@@ -67,6 +67,10 @@
     "tests": "tools/sequence_statistics/tests",
     "coverage_sources": ["tools/sequence_statistics/src/amphora_sequence_statistics"]
   },
+  "tool-replicas": {
+    "tests": "tests/integration/tool_replicas",
+    "coverage_sources": ["tests/integration/tool_replicas"]
+  },
   "registry": {
     "tests": "services/capability_registry/tests",
     "coverage_sources": [

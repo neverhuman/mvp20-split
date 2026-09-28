@@ -16,7 +16,7 @@ from sqlalchemy import URL
 from verify_foundation import run
 
 
-def verify(images, replacement=False):
+def verify(images, replacement=False, replicas=False):
     if os.environ.get("AMPHORA_TEST_POSTGRES") != "1":
         raise ValueError("Explicit PostgreSQL fixture opt-in required")
     state = owned_state()
@@ -26,6 +26,8 @@ def verify(images, replacement=False):
     specs = {config["project"]["name"]: (path, config, module) for path, config, module in project_specs()}
     owners = ("amphora-campaign-runtime", "amphora-data-artifacts", "amphora-tool-protocol",
               "amphora-numeric-affine", "amphora-sequence-statistics")
+    if replicas:
+        owners = ("amphora-capability-registry", *owners)
     uv = ROOT / (".venv/Scripts/uv.exe" if os.name == "nt" else ".venv/bin/uv")
     with tempfile.TemporaryDirectory(prefix="amphora-worker-installs-") as directory:
         root = Path(directory)
@@ -49,13 +51,18 @@ def verify(images, replacement=False):
         config = root / "acceptance.json"
         config.write_text(json.dumps({"runtime": installed["amphora_campaign_runtime"], "artifact": installed["amphora_data_artifacts"],
             "tools": {module: installed[module] for module in ("amphora_numeric_affine", "amphora_sequence_statistics")},
-            "replacements": replacements,
-            "images": str(Path(images).absolute()), "evidence": str(ROOT / ".test-results/worker-acceptance"),
+            "replacements": replacements, "registry": installed.get("amphora_capability_registry"),
+            "images": str(Path(images).absolute()),
+            "evidence": str(ROOT / (".test-results/tool-replicas" if replicas else ".test-results/worker-acceptance")),
             "packages": {wheel.name: hashlib.sha256(wheel.read_bytes()).hexdigest() for wheel in wheels.glob("*.whl")}}), encoding="utf-8")
         env = {key: value for key, value in os.environ.items() if key.upper() in {"SYSTEMROOT", "WINDIR", "TEMP", "TMP", "PATH", "COMSPEC"}}
         env.update(AMPHORA_RUNTIME_DATABASE_URL=url.render_as_string(hide_password=False),
                    AMPHORA_ARTIFACT_DATABASE_URL=url.set(username="artifact_service").render_as_string(hide_password=False))
-        result = subprocess.run([installed["amphora_tool_protocol"], "-I", str(ROOT / "sdk/tool_protocol/tests/acceptance/probe.py"),
+        probe = "sdk/tool_protocol/tests/acceptance/probe.py"
+        if replicas:
+            env["AMPHORA_REGISTRY_DATABASE_URL"] = url.set(username="registry_service").render_as_string(hide_password=False)
+            probe = "tests/integration/tool_replicas/probe.py"
+        result = subprocess.run([installed["amphora_tool_protocol"], "-I", str(ROOT / probe),
             str(config)], cwd=root, env=env, capture_output=True, text=True, timeout=180)
         print(result.stdout, end="")
         if result.returncode:
@@ -66,5 +73,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--images", required=True, type=Path)
     parser.add_argument("--replacement", action="store_true", help="Prove fresh tool/SDK installs preserve prior owner history")
+    parser.add_argument("--replicas", action="store_true", help="Actual registry and concurrent worker integration")
     arguments = parser.parse_args()
-    verify(arguments.images, arguments.replacement)
+    verify(arguments.images, arguments.replacement, arguments.replicas)

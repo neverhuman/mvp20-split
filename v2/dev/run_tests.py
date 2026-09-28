@@ -14,7 +14,7 @@ SCOPES = json.loads((ROOT / "dev/test_scopes.json").read_text())
 def ownership_issues(root=ROOT, scopes=SCOPES):
     issues = []
     owners = [root / item["tests"] for item in scopes.values()]
-    for folder in ("contracts", "services", "tools", "sdk", "dev/tests"):
+    for folder in ("contracts", "services", "tools", "sdk", "dev/tests", "tests/integration"):
         for path in (root / folder).rglob("test_*.py"):
             if any(part.startswith(".") for part in path.relative_to(root).parts):
                 continue

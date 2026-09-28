@@ -7,6 +7,7 @@
 /v2/contracts/schemas/**/*.json text eol=lf
 /v2/tools/**/schemas/*.json text eol=lf
 /v2/docs/Audits/Evidence/BP-03-Workers/*.json -text
+/v2/docs/Audits/Evidence/BP-03-Replicas/*.json -text
 
 # These historical text fixtures intentionally retain original line endings.
 /v1/amphora-design-rule-score/reference/purformance/zenodo-13742098/Evaluation.LICENSE.txt.headers -text
