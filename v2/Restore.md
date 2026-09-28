@@ -2,15 +2,15 @@
 
 ## Current Checkpoint
 
-- Last refreshed: `2026-09-28 11:05:08` (America/Chicago).
+- Last refreshed: `2026-09-28 11:11:49` (America/Chicago).
 - Workspace: v2 active; v1 frozen. External references require task-specific authorization.
-- Canonical position: BP-02 -> [BP-02.04](docs/Build%20Plans/BP-02/BP-02.04%20Invocation%20Lifecycle.md) / V1 / I1 domain transition model; next I2 synthetic fixture admission.
-- Progress: parent 46.88% (15/32 deliveries). Children .01-.03 complete/audited; .04-.06 and BP-03..09 at 0%. .04 phases V1/V2 both 0%.
-- Latest work: artifact standalone executable, scoped verified reads and bounded maintenance accepted; [artifact closeout](docs/Audits/BP-02.03_Artifact_Service_Closeout.md) names boundaries and remaining integration/host evidence.
-- Evidence: 188 aggregate tests with PostgreSQL, lint/import/schema gates, eight independent wheels and installed artifact HTTP probe passed. 56 published schemas. Artifact suite 77 cases; process-kill evidence includes upload/finalization/cleanup/reservation transitions.
+- Canonical position: BP-02 -> [BP-02.04](docs/Build%20Plans/BP-02/BP-02.04%20Invocation%20Lifecycle.md) / V1 / I2 synthetic fixture admission; next I3 claim/renewal.
+- Progress: parent 50% (16/32 deliveries). Children .01-.03 complete/audited; .04 at 16.67% (V1 20%, V2 0%); .05-.06 and BP-03..09 at 0%.
+- Latest work: I1 pure domain transition model passed 21 cases. Artifact standalone executable, scoped verified reads and bounded maintenance accepted; [artifact closeout](docs/Audits/BP-02.03_Artifact_Service_Closeout.md) names boundaries and remaining integration/host evidence.
+- Evidence: 209 aggregate tests with PostgreSQL, lint/import/schema gates, eight independent wheels and installed artifact HTTP probe passed. 56 published schemas. Artifact suite 77 cases; process-kill evidence includes upload/finalization/cleanup/reservation transitions.
 - Authority: autonomous continuation and significant commit/push checkpoints authorized. No current user blocker. Scientific sources/provider/target-host choices remain later decisions.
 - Environment: Python 3.12, uv and labeled PostgreSQL 17.11 fixture. Dynamic endpoint/credentials only in ignored .test-results/postgres-fixture.json. Use helper verify and AMPHORA_TEST_POSTGRES=1; never publish credentials.
-- Git: cleanup checkpoint acbadb4 pushed; artifact closeout ready for next commit/push. Repository-local identity tkn1234 <alb_gen@live.com>, origin https://github.com/neverhumanbot/mvp20-split.git.
+- Git: artifact closeout 86919c9 pushed; I1 domain checkpoint verified for commit/push. Repository-local identity tkn1234 <alb_gen@live.com>, origin https://github.com/neverhumanbot/mvp20-split.git.
 - Limits: actual runtime terminal-outcome integration remains .05/.06; Linux/target-storage durability and backup remain BP-09. Synthetic artifact profiles do not establish scientific validity. Existing test-client warning is nonblocking.
 
 ## Decomposition and Resume Discipline
