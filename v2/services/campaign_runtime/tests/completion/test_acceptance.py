@@ -123,6 +123,25 @@ def test_non_success_reports_preserve_their_meaning(completion_env, outcome, sta
     assert count(c, "attempt_reports") == 1
 
 
+def test_terminal_blocked_run_preserves_uncertainty_without_holding_active_slot(completion_env):
+    c = completion_env
+    c.payload["completion"]["outcome"] = {"status": "uncertain_external_effect", "operation_id": "unknown",
+                                           "reason_code": "uncertain"}
+    service = CompletionCoordinator(c.env.engine, Peer())
+    command = c.command("runtime.complete", c.payload)
+    receipt = service.complete(c.env.principal, command)
+    assert receipt.outcome.status == "accepted"
+    before = row(c)
+    assert before["status"] == "blocked" and before["reserved"] == 1 and before["spent"] == 0
+    rejected = RuntimeLeases(c.env.engine).claim(c.env.principal, c.command("runtime.claim", {
+        "run_id": c.run, "worker_id": c.env.principal.actor_id, "tool": c.invocation.tool.model_dump(), "lease_seconds": 30}))
+    assert rejected.outcome.status == "rejected" and rejected.outcome.reason_code == "run_not_running"
+    successor = c.env.service.admit(c.env.principal, c.command("runtime.admit_fixture", c.env.raw["payload"]))
+    assert successor.outcome.status == "accepted" and successor.outcome.committed.object_id != c.run
+    assert service.complete(c.env.principal, command) == receipt
+    assert row(c) == before  # New campaign admission cannot settle or revive the blocked predecessor.
+
+
 def test_mismatched_saved_receipt_aborts_without_result(completion_env):
     c = completion_env
     command = c.command("runtime.complete", c.payload)

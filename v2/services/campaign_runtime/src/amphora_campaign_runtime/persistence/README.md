@@ -11,11 +11,11 @@ Runtime owns commands, admission guard, runs, activations, fenced attempts, comp
 
 `transact` retries the whole database callback at most three times for SQLSTATE 40001/40P01. Callbacks reload all state and contain no network, filesystem or scientific actions. Other failures roll back and propagate. Actual PostgreSQL tests use independent connections for duplicate registration, serialization retry and rollback; relational probes establish storage constraints, not legal execution transitions.
 
-Default API construction remains validation-only; configured lifecycle handlers own atomic domain audit/outbox transitions. Completion acceptance/delivery and cross-service crash recovery remain later gates. Replacement preserves accepted history, migration ownership, scope/fence uniqueness and public contracts, and reruns module tests. Dev owns disposable reset; target-host backup/power-loss proof is BP-09.
+Default API construction remains validation-only; configured lifecycle handlers own atomic domain audit/outbox transitions. Completion/delivery handlers and REC-01..09 prove the implemented acceptance and cross-service process recovery boundaries. Replacement preserves accepted history, migration ownership, scope/fence uniqueness and public contracts, and reruns module tests. Dev owns disposable reset; target-host backup/power-loss proof is BP-09.
 
 BP-02.04/I3 forward migration runtime_0002 persists activation/attempt deadlines, bounds lease expiry and grants the owner deadline-column update. Existing attempts backfill from original expiry; no extended authority. Claim/renew handlers own atomic run-budget/attempt/receipt/audit/outbox transitions under run locks.
 
-runtime_0003 adds a separate scoped policy audit/outbox for worker revocation without a run. Run audit foreign keys remain strict; no dummy run is created. Both journals are private runtime state and require later owner outbox delivery.
+runtime_0003 adds a separate scoped policy audit/outbox for worker revocation without a run. Run audit foreign keys remain strict; no dummy run is created. Both journals are private runtime state and are served by the owner delivery module.
 
 runtime_0004 adds immutable tool_snapshot to each run (legacy default empty; no inferred contract) and intent_reservations keyed by scoped intent/output binding. The runtime service may insert/read receipts but cannot update/delete them or replace admitted tool snapshots. Completion preparation and resumable external reservation acquisition own these records; no artifact private schema is referenced.
 

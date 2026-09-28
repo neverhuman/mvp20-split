@@ -1,6 +1,6 @@
 # Development Process
 
-- Design status: active v2 operating rules; implementation plans not yet activated
+- Design status: active v2 operating rules; canonical implementation position is maintained by the Master Build Tracker
 - Last reviewed: `2026-09-23 09:41:20` (America/Chicago)
 - Scope: architecture decomposition, hierarchical planning, execution state, verification and drift closeout
 

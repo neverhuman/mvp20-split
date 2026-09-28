@@ -1,6 +1,6 @@
 # Runtime Delivery Boundary
 
-- Status: BP-02.05/D4 bounded delivery implemented; integrated peer/crash acceptance remains D6/.06.
+- Status: BP-02.05/D4 bounded delivery implemented; integrated peer/crash acceptance passed D6/.06.
 - Owner: Campaign Runtime. Delivery changes transport metadata only; it cannot accept execution or rewrite committed history.
 
 DeliveryStore serves outbox and policy_outbox through a fixed owner-local journal map. Scope derives from each immutable audit event; a configured deliver action is mandatory. Short transactions select due pending or expired leased entries with FOR UPDATE SKIP LOCKED, lock at most twice the requested batch across both journals, order candidates by creation/operation identity and issue at most the requested bound. Database time is read after locks. No network call occurs inside these transactions.
@@ -19,4 +19,4 @@ runtime_0006 adds token/generation, available/created timestamps, reason and exh
 
 Host delivery configuration accepts max_attempts, lease_seconds and a closed notifications map with endpoint/token_env per target. CLI deliver selects config/actor/tenant/project, --limit and --time-budget; run is unnecessary because policy events may precede runs. No notification endpoint is enabled by default. Service-role migration and secret configuration belong to the service README.
 
-Tests live in tests/delivery, selectable with dev/run_tests.py --module runtime --area delivery. They cover both journals, scoped denial, real transaction contention, stale token/expiry rejection, backoff/exhaustion, send-before-ack replay with one synthetic consumer effect, and exact notification/artifact receipt checks. Lease-expiry injection is distinct from process-kill evidence; cross-process interruption acceptance remains .06. Replacements preserve these boundaries and never equate delivery with state authority.
+Tests live in tests/delivery, selectable with dev/run_tests.py --module runtime --area delivery. They cover both journals, scoped denial, real transaction contention, stale token/expiry rejection, backoff/exhaustion, send-before-ack replay with one synthetic consumer effect, and exact notification/artifact receipt checks. Lease-expiry injection is distinct from process-kill evidence; REC-07 now separately proves actual delivery-worker/runtime death after the real artifact peer effect, stable operation replay and successor acknowledgement. Replacements preserve these boundaries and never equate delivery with state authority.

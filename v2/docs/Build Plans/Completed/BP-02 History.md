@@ -10,12 +10,12 @@ Original task accounting is superseded by the child tracker below; retained prot
 - Last refreshed: `2026-09-24 12:06:07` (America/Chicago).
 - Scope/baseline: draft 1; completed BP-01 contracts/validation and BP-01A module tests/source-graph baseline; uncommitted working tree after `99d219c`.
 - Owner: Campaign Runtime integration; Data/Artifacts owns artifact state and publication independently.
-- Parent: program roadmap; [Master Build Tracker](Master%20Build%20Tracker.md).
+- Parent: program roadmap; [Master Build Tracker](../Master%20Build%20Tracker.md).
 - Overall implementation: **8.33%** (1/12 verified tasks, rounded to two decimals). Twelve equally weighted tasks, two per phase; a task earns credit when its stated verification passes. Overall = completed tasks / 12; each phase = completed tasks / 2. Report rounding explicitly if needed. Drafting/review does not earn implementation credit.
 - Current phase/task: P1 / T2 - publish narrow contracts and conformance fixtures.
 - Next task: finish T2 contract/golden fixtures and P1 exit; only then start P2 / T3 local PostgreSQL stores.
 - Remaining exit gate: P1-P6 gates, public-boundary crash/concurrency proof, independent builds and scoped closeout audit.
-- Completed deliverables/evidence: T1 protocol decisions and bounded coherence review; [Runtime Command Protocol](../Architecture/System/Runtime_Command_Protocol.md), [Artifact Publication Protocol](../Architecture/System/Artifact_Publication_Protocol.md). Contract/database execution evidence remains pending.
+- Completed deliverables/evidence: T1 protocol decisions and bounded coherence review; [Runtime Command Protocol](../../Architecture/System/Runtime_Command_Protocol.md), [Artifact Publication Protocol](../../Architecture/System/Artifact_Publication_Protocol.md). Contract/database execution evidence remains pending.
 - Blockers: none identified for planning; actual PostgreSQL availability and protocol decisions are P1/P2 gates, not assumed passed.
 - Human acceptance: current user instruction authorizes BP-02 progression; no additional review gate for routine work. Later plans remain proposed for review; target host/provider decisions still gate dependent work.
 - Active exception: user-directed BP-03 through BP-09 draft preparation completed alongside independent BP-02 T1; return point P1/T2.
@@ -40,12 +40,12 @@ This is the durable substrate for the Graph Runner. It does not yet compile/exec
 
 ### Architecture inputs
 
-- [State and Consistency](../Architecture/System/State_and_Consistency.md): runtime transactions, artifacts, idempotency and recovery.
-- [Service Isolation](../Architecture/System/Service_Isolation.md): private schemas/roles and independent services.
-- [Foundation Decisions](../Architecture/System/Foundation_Decisions.md): Python/Pydantic, PostgreSQL access/migrations and package boundaries.
-- [Interfaces and Code Boundaries](../Architecture/System/Interfaces_and_Code_Boundaries.md): command/query direction and public contracts.
-- [Graph Runner](../Architecture/System/Graph_Runner.md): future coordination/aggregation/supervision consumer.
-- [Runtime README](../../services/campaign_runtime/README.md) and [v1 solver baseline](../../services/campaign_runtime/tests/fixtures/v1_solver/README.md): actual starting implementation and future behavior reference.
+- [State and Consistency](../../Architecture/System/State_and_Consistency.md): runtime transactions, artifacts, idempotency and recovery.
+- [Service Isolation](../../Architecture/System/Service_Isolation.md): private schemas/roles and independent services.
+- [Foundation Decisions](../../Architecture/System/Foundation_Decisions.md): Python/Pydantic, PostgreSQL access/migrations and package boundaries.
+- [Interfaces and Code Boundaries](../../Architecture/System/Interfaces_and_Code_Boundaries.md): command/query direction and public contracts.
+- [Graph Runner](../../Architecture/System/Graph_Runner.md): future coordination/aggregation/supervision consumer.
+- [Runtime README](../../../services/campaign_runtime/README.md) and [v1 solver baseline](../../../services/campaign_runtime/tests/fixtures/v1_solver/README.md): actual starting implementation and future behavior reference.
 
 The older unresolved-stack wording in Interfaces is superseded by Foundation Decisions; P1 reconciles touched statements instead of reopening stack selection. Scientific/domain acceptance receipts remain Research/Knowledge-owned BP-06 work; runtime acceptance must not claim those receipts already exist.
 
@@ -169,28 +169,30 @@ The preliminary 34-child-delivery denominator included pure design gates S1 and 
 
 ## Older MBT checkpoint archive
 
-| 2026-09-22 20:53:09 | Pydantic/JSON Schema contract architecture added as sixth System child; no implementation or reopening of closed plans | [Contract architecture](../Architecture/System/Contract_Architecture.md) |
-| 2026-09-22 20:30:31 | Proposed runtime topology, graph machine, persistent-state protocol, interfaces and complete research loop delivered; single-server baseline confirmed | [Completed system plan](Completed/System%20Architecture%20Plan.md), [audit](../Audits/System_Architecture_Closeout.md) |
-| 2026-09-22 19:04:40 | Twenty deeper contracts, eight coordination summaries, three flow diagrams and architecture-depth template complete | [Completed detail plan](Completed/Architecture%20Detail%20Plan.md), [audit](../Audits/Architecture_Detail_Closeout.md) |
-| 2026-09-22 16:45:29 | Architecture documentation plan complete: 8 domains, 20 focused contracts, 102 requirement-section owners; no runtime code | [Completed plan](Completed/Architecture%20Decomposition%20Plan.md), [closeout audit](../Audits/Architecture_Decomposition_Closeout.md) |
-| 2026-09-22 13:47:22 | Local SDLC rules, tracker hierarchy, templates and drift surfaces established; no runtime implementation claimed | [Process](../Development_Process.md), [process alignment record](../Audits/Architecture%20Drift%20History.md) |
+| 2026-09-22 20:53:09 | Pydantic/JSON Schema contract architecture added as sixth System child; no implementation or reopening of closed plans | [Contract architecture](../../Architecture/System/Contract_Architecture.md) |
+| 2026-09-22 20:30:31 | Proposed runtime topology, graph machine, persistent-state protocol, interfaces and complete research loop delivered; single-server baseline confirmed | [Completed system plan](System%20Architecture%20Plan.md), [audit](../../Audits/System_Architecture_Closeout.md) |
+| 2026-09-22 19:04:40 | Twenty deeper contracts, eight coordination summaries, three flow diagrams and architecture-depth template complete | [Completed detail plan](Architecture%20Detail%20Plan.md), [audit](../../Audits/Architecture_Detail_Closeout.md) |
+| 2026-09-22 16:45:29 | Architecture documentation plan complete: 8 domains, 20 focused contracts, 102 requirement-section owners; no runtime code | [Completed plan](Architecture%20Decomposition%20Plan.md), [closeout audit](../../Audits/Architecture_Decomposition_Closeout.md) |
+| 2026-09-22 13:47:22 | Local SDLC rules, tracker hierarchy, templates and drift surfaces established; no runtime implementation claimed | [Process](../../Development_Process.md), [process alignment record](../../Audits/Architecture%20Drift%20History.md) |
 
-| 2026-09-22 20:57:10 | Careful readiness review: bounded implementation can start after scope/assumption closure; nine findings and six owner questions recorded | [Readiness review](../Audits/Architecture_Readiness_Review.md) |
+| 2026-09-22 20:57:10 | Careful readiness review: bounded implementation can start after scope/assumption closure; nine findings and six owner questions recorded | [Readiness review](../../Audits/Architecture_Readiness_Review.md) |
 
-| 2026-09-22 21:03:27 | Initial internal/demo autonomous profile and replaceable-module boundaries recorded; owner questions answered, no runtime activated | [Delivery profile](../Architecture/Requirements/Product_Requirements.md#initial-delivery-profile), [module template](../Templates/Module%20README%20Template.md) |
+| 2026-09-22 21:03:27 | Initial internal/demo autonomous profile and replaceable-module boundaries recorded; owner questions answered, no runtime activated | [Delivery profile](../../Architecture/Requirements/Product_Requirements.md#initial-delivery-profile), [module template](../../Templates/Module%20README%20Template.md) |
 
-| 2026-09-23 09:41:20 | Strict service isolation and proposed independently replicated tool workloads; source layout/state boundaries refined, no deployment | [Isolation](../Architecture/System/Service_Isolation.md), [tool services](../Architecture/Capabilities/Tool_Services.md) |
+| 2026-09-23 09:41:20 | Strict service isolation and proposed independently replicated tool workloads; source layout/state boundaries refined, no deployment | [Isolation](../../Architecture/System/Service_Isolation.md), [tool services](../../Architecture/Capabilities/Tool_Services.md) |
 
-| 2026-09-23 09:48:47 | Graph Runner coordination/aggregation/supervision and durable LLM decision protocol documented; architecture only | [Graph Runner](../Architecture/System/Graph_Runner.md) |
+| 2026-09-23 09:48:47 | Graph Runner coordination/aggregation/supervision and durable LLM decision protocol documented; architecture only | [Graph Runner](../../Architecture/System/Graph_Runner.md) |
 
-| 2026-09-23 09:51:08 | High-level specs/supporting references relocated into Architecture/Requirements; links and PDF preservation checked | [Requirements guide](../Architecture/Requirements/README.md) |
+| 2026-09-23 09:51:08 | High-level specs/supporting references relocated into Architecture/Requirements; links and PDF preservation checked | [Requirements guide](../../Architecture/Requirements/README.md) |
 
-| 2026-09-23 11:04:44 | Expanded MBT into initial program dashboard with nine queued planning areas, dependency gates, four milestones and exact next planning task; implementation unactivated | This tracker; [plan template](../Templates/Build%20Plan%20Template.md) |
+| 2026-09-23 11:04:44 | Expanded MBT into initial program dashboard with nine queued planning areas, dependency gates, four milestones and exact next planning task; implementation unactivated | This tracker; [plan template](../../Templates/Build%20Plan%20Template.md) |
 
-| 2026-09-23 19:55:48 | BP-01 complete: 39 tests, four independent wheel installs, strict schema/API boundary and replacement docs; archived after scoped audit | [Plan](Completed/BP-01%20Contract%20and%20Service%20Foundations.md), [audit](../Audits/BP-01_Foundation_Closeout.md) |
+| 2026-09-23 19:55:48 | BP-01 complete: 39 tests, four independent wheel installs, strict schema/API boundary and replacement docs; archived after scoped audit | [Plan](BP-01%20Contract%20and%20Service%20Foundations.md), [audit](../../Audits/BP-01_Foundation_Closeout.md) |
 
-| 2026-09-24 09:01:20 | BP-01A complete at 100%, all four phases 100%; module test ownership, granular coverage, extracted v1 graph and scaffold; 44 tests pass | [Plan](Completed/BP-01A%20Module%20Tests%20and%20V1%20Graph%20Baseline.md), [audit](../Audits/BP-01A_Test_and_Graph_Baseline_Closeout.md) |
+| 2026-09-24 09:01:20 | BP-01A complete at 100%, all four phases 100%; module test ownership, granular coverage, extracted v1 graph and scaffold; 44 tests pass | [Plan](BP-01A%20Module%20Tests%20and%20V1%20Graph%20Baseline.md), [audit](../../Audits/BP-01A_Test_and_Graph_Baseline_Closeout.md) |
 
 | 2026-09-24 09:10:34 | BP-02 draft authored for user review: six phases, twelve tasks, all implementation percentages 0%; no activation | [Canonical draft](BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md) |
 
-| 2026-09-24 12:06:07 | BP-03 through BP-09 first drafts published at 0%; BP-02 authorized and T1 complete, P1 50% / overall 8.33%; next T2 | Canonical plan links above; [protocol decisions](../Architecture/System/Runtime_Command_Protocol.md) |
+| 2026-09-24 12:06:07 | BP-03 through BP-09 first drafts published at 0%; BP-02 authorized and T1 complete, P1 50% / overall 8.33%; next T2 | Canonical plan links above; [protocol decisions](../../Architecture/System/Runtime_Command_Protocol.md) |
+
+| 2026-09-24 12:10:07 | User UI references mapped to Studio modes and BP-05/06/08 prototype tasks; percentages unchanged, BP-02 remains P1/T2 | [Reference map](../../Architecture/Experience/Interaction_References.md) |

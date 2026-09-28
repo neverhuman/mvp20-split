@@ -1,0 +1,63 @@
+{
+  "sha256": "714ebf13bac4e0b6f7cc49c0cb6e2f5ff9a7d976924f429bc63025621b6f6c7a",
+  "manifest": {
+    "case": "REC-01",
+    "scope": {
+      "tenant_id": "integrated-acceptance",
+      "project_id": "2117ae051f9449f68a2fefc8c9324f98"
+    },
+    "packages": {
+      "amphora_campaign_runtime-0.1.0-py3-none-any.whl": "507b854cb62a912675ad08c0f593ccda1ab30be044838b7f9f631f8816ec13fb",
+      "amphora_contracts_artifacts-0.1.0-py3-none-any.whl": "10c717c362f60e7f3f3fd40868d76d50ec58f32150db14580366219d8d6c8adc",
+      "amphora_contracts_campaigns-0.1.0-py3-none-any.whl": "635724223ae1607c4e89e4a17c567f0749aa98a76f528b5b4e86e71a0e01d4da",
+      "amphora_contracts_commands-0.1.0-py3-none-any.whl": "476beedaecc51c050c1e13efe2dbcd7c84a1b6b35201bb212d2935342bcb7a1b",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "5ee43eef187331776210ea39979841bf7840482645a8e67a5d232a99baf27f35",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "2e73570402faa3ba26a0373beb9dfb7796d63c5bf41ff48ab12852eab92090e1",
+      "amphora_data_artifacts-0.1.0-py3-none-any.whl": "2d0d39341507955976e1f92b1d4d3a222eb2142a71008f2c1c4064df7278b426"
+    },
+    "timeout_seconds": 45,
+    "identities": {
+      "command": [
+        "85a9510bd2fb474f8ed472888cf8be86",
+        "327267832e2645cfba2887578e99e507"
+      ],
+      "upload": [
+        "2019209ad0574888a26aae50ee3a6c97"
+      ],
+      "attempt": [
+        "627ceed7b6c24b93b4794a0c56d53aec"
+      ],
+      "artifact": [
+        "54b0a4e8f5a040a9a4d90d6425e83791"
+      ]
+    },
+    "events": [
+      {
+        "at": "2026-09-28 13:34:58",
+        "kind": "barrier",
+        "detail": "actual bytes synced; selected-attempt commit not entered"
+      },
+      {
+        "at": "2026-09-28 13:34:58",
+        "kind": "kill",
+        "detail": {
+          "owner": "artifact",
+          "pid": 9068
+        }
+      },
+      {
+        "at": "2026-09-28 13:34:59",
+        "kind": "restart",
+        "detail": "same artifact database and storage root; no reset"
+      },
+      {
+        "at": "2026-09-28 13:34:59",
+        "kind": "observation",
+        "detail": "unselected synced bytes cannot finalize; retry and duplicate finalize yield one readable artifact"
+      }
+    ],
+    "status": "passed",
+    "elapsed_seconds": 2.422
+  }
+}

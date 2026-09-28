@@ -1,10 +1,10 @@
 # Architecture Drift
 
-- Status: BP-02 children .01-.05 audited; process recovery and later execution/science gates pending
-- Last refreshed: `2026-09-28 13:10:54` (America/Chicago)
+- Status: BP-02 closed/audited; BP-03 descriptor/registry implementation active
+- Last refreshed: `2026-09-28 13:45:17` (America/Chicago)
 - Scope: v2 design/implementation alignment
 - Active focus: require traceable contracts and closeout audits as implementation begins
-- Next gate: BP-02.06 public-boundary process recovery and parent closeout
+- Next gate: BP-03.01 descriptor identity/eligibility boundary and scoped acceptance
 
 ## Active Findings
 

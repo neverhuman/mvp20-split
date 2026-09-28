@@ -2,23 +2,23 @@
 
 ## Current Checkpoint
 
-- Last refreshed: `2026-09-28 13:36:55` (America/Chicago).
+- Last refreshed: `2026-09-28 13:45:17` (America/Chicago).
 - Workspace: v2 active; v1 frozen. External references require task-specific authorization.
-- Canonical position: BP-02 -> [BP-02.06](docs/Build%20Plans/BP-02/BP-02.06%20Recovery%20and%20Integration.md) / V2 / R5 audit and parent handoff; next BP-03.01 B1 after closeout.
-- Progress: parent 96.88% (31/32 deliveries). Children .01-.05 complete/audited/archived; .06 at 80% (V1 100%, V2 0%); BP-03..09 at 0%.
-- Latest work: actual independently installed runtime/artifact peers proved completion/confirmation, cancellation/release before stale completion resumes, original receipt replay and conserved budgets. [Completion audit](docs/Audits/BP-02.05_Completion_Delivery_Closeout.md) passed.
-- Evidence: 306 aggregate tests with PostgreSQL; lint/import/schema gates, eight independent wheels, both standalone probes, paired integration and REC-01..09 installed recovery and fresh replacement environments passed. 68 published schemas. HTTP workers have no database credentials; service environments contain only their own database URL.
-- Authority: autonomous continuation and significant commit/push checkpoints authorized. No current user blocker. Scientific/provider/host choices remain later gates.
-- Environment: Python 3.12, uv and labeled PostgreSQL 17.11 fixture. Dynamic endpoint/credentials only in ignored v2/.test-results/postgres-fixture.json. Set AMPHORA_TEST_POSTGRES=1; never publish credentials. Serialize fixture resets against tests.
-- Git: R3 8664f23 pushed; R4 replacement verified for commit/push. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
-- R5 handoff: all nine recovery cases passed; manifests .test-results/recovery/2117ae051f9449f68a2fefc8c9324f98. Audit all six children against actual READMEs/contracts/evidence, correct stale implementation claims, archive .06 and parent with repaired links, synchronize MBT and activate BP-03.01 only after bounded coherence audit. Recovery runbook is services/campaign_runtime/RECOVERY.md. No user blocker.
-- Limits: .06 full crash matrix remains required. Linux/target-storage power-loss/backup stays BP-09. No interpreter/scientific validity/provider/Studio claim. Existing test-client warning is nonblocking.
+- Canonical position: BP-03 -> [BP-03.01](docs/Build%20Plans/BP-03/BP-03.01%20Identity%20and%20descriptor%20contracts.md) / Build / B1 descriptor identity boundary; next B2 validation/policy.
+- Progress: BP-02 complete/audited/archived at 100% (32/32), all six children 100%. BP-03 0% (0/16), .01 0% (Build 0%, Acceptance 0%); BP-04..09 0%.
+- Latest work: all nine installed recovery/replacement scenarios passed; terminal-blocked semantics aligned to requirements and proven; [parent closeout](docs/Audits/BP-02_Foundation_Closeout.md) and [recovery audit](docs/Audits/BP-02.06_Recovery_Integration_Closeout.md) passed.
+- Evidence: final 307 component tests/lint/import/schema checks; preceding eight-wheel build gate plus standalone/paired/REC-01..09 and two fresh replacement environments. 68 schemas. Exact credential-free manifests preserved under docs/Audits/Evidence/BP-02-Recovery. Final audit added a test/docs, no production change after installed matrix.
+- Authority: autonomous continuation and significant commit/push checkpoints authorized. No current user blocker; later scientific/provider/host gates remain explicit.
+- Environment: Python 3.12, uv, labeled PostgreSQL 17.11 fixture. Dynamic credentials only in ignored .test-results/postgres-fixture.json. Set AMPHORA_TEST_POSTGRES=1; never publish credentials or reset concurrently with tests.
+- Git: R4 881d446 pushed; R5 parent closeout verified for commit/push. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
+- B1 handoff: activation audit reconciles existing ToolBinding/ToolDescriptor/Invocation/Completion v1 and durable runtime consumers. Add release metadata/resource/egress, immutable LockEntry and separate eligibility observations without silently changing old command fixtures. .02 owns durable registry/version routing; .03 worker SDK and numeric affine/sequence statistics tools; .04 replicas/replacement. Registry eligibility never grants runtime authority. Synthetic scope needs no provider/host/scientific choice.
+- Limits: general interpreter, actual scientific tools/evidence, model/knowledge/Studio and host backup/power-loss remain later plans. Existing test-client warning and pre-existing v1/LICENSE manifest discrepancy remain nonblocking assigned maintenance. Recovery operating boundary: services/campaign_runtime/RECOVERY.md.
 
 ## Decomposition and Resume Discipline
 
 BP-02 now has six focused child plans and separate history. BP-03..09 now have 34 canonical child plans with owned objects/contracts, transition/algorithm decisions, named failure oracles, independent test tiers and replacement acceptance. BP-02 children have detailed API/transaction/crash matrices. Parent planning histories preserve prior task pairs; new queued-parent denominators are 16/20/16/24/20/20/20, all at 0%. The nearest child gets physical design, failure tests, module replacement boundaries and scoped audit. Parent rollups count child implementation once. The preliminary 34-task count was explicitly corrected to 32 by separating pure design gates S1/A1; prior design work remains complete.
 
-Contract and persistence READMEs describe actual implemented boundaries. A4/A5 may use a scripted runtime outcome process to test the artifact client; .06 must repeat acceptance/release races against the actual .05 runtime. Do not treat fixture proof as integrated correctness. Use [MBT](docs/Build%20Plans/Master%20Build%20Tracker.md) and child tracker, not old task IDs in history.
+Contract and persistence READMEs describe actual implemented boundaries. Earlier scripted artifact-client probes remain distinct from the actual installed REC-01..09 evidence now completed by .06. Do not confuse either tier with scientific or target-host correctness. Use [MBT](docs/Build%20Plans/Master%20Build%20Tracker.md) and child tracker, not old task IDs in history.
 
 ## Product and Architecture Direction
 

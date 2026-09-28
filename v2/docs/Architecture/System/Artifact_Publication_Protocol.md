@@ -1,6 +1,6 @@
 # Artifact Publication and Reservation Protocol
 
-- Design status: BP-02 P1/T1 protocol baseline; execution evidence pending.
+- Design status: BP-02 publication/retention protocol implemented and exercised against actual installed peers; target-host durability remains separate.
 - Reviewed: `2026-09-24 12:04:21` (America/Chicago).
 - Parent: [State and Consistency](State_and_Consistency.md).
 - Owner: Data/Artifacts publication and retention module; runtime remains sole completion authority.
@@ -61,3 +61,5 @@ A late reserve request arriving after abort may be rejected using the public int
 P3 tests belong in `services/data_artifacts/tests/publication/` and `tests/retention/`; cross-service proof belongs in the separate BP-02 integration harness. Tests use distinct credentials/processes and real PostgreSQL roles. Every crash point has exact command/intent/artifact IDs and observed state. Runtime tests must demonstrate no network call inside the acceptance transaction and that atomic abort/commit prevents release races.
 
 Artifact finalization means verified storage, not scientific evidence acceptance. Research/Knowledge keep independent receipts. Rights deletion/legal holds and production backup objectives need later explicit policies; do not claim immutable storage overrides access restrictions. Local provisional cleanup may be implemented with safe grace bounds; final artifact retention remains conservative and capacity is bounded by configured uploads/quotas in the developer profile. BP-09 owns target-host restore and durability evidence.
+
+Implementation evidence: [artifact module](../../../services/data_artifacts/README.md), [recovery runbook](../../../services/campaign_runtime/RECOVERY.md) and [BP-02 closeout](../../Audits/BP-02_Foundation_Closeout.md). REC-01..09 separates actual process recovery/replacement from host backup/power-loss acceptance. This design document itself grants no scientific or operational authority.

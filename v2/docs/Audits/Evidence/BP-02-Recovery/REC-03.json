@@ -1,0 +1,74 @@
+{
+  "sha256": "c7f5708d05960166957d9a557fac495185826d6008a70fc1bb6da58bdf6401c7",
+  "manifest": {
+    "case": "REC-03",
+    "scope": {
+      "tenant_id": "integrated-acceptance",
+      "project_id": "2117ae051f9449f68a2fefc8c9324f98"
+    },
+    "packages": {
+      "amphora_campaign_runtime-0.1.0-py3-none-any.whl": "507b854cb62a912675ad08c0f593ccda1ab30be044838b7f9f631f8816ec13fb",
+      "amphora_contracts_artifacts-0.1.0-py3-none-any.whl": "10c717c362f60e7f3f3fd40868d76d50ec58f32150db14580366219d8d6c8adc",
+      "amphora_contracts_campaigns-0.1.0-py3-none-any.whl": "635724223ae1607c4e89e4a17c567f0749aa98a76f528b5b4e86e71a0e01d4da",
+      "amphora_contracts_commands-0.1.0-py3-none-any.whl": "476beedaecc51c050c1e13efe2dbcd7c84a1b6b35201bb212d2935342bcb7a1b",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "5ee43eef187331776210ea39979841bf7840482645a8e67a5d232a99baf27f35",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "2e73570402faa3ba26a0373beb9dfb7796d63c5bf41ff48ab12852eab92090e1",
+      "amphora_data_artifacts-0.1.0-py3-none-any.whl": "2d0d39341507955976e1f92b1d4d3a222eb2142a71008f2c1c4064df7278b426"
+    },
+    "timeout_seconds": 45,
+    "identities": {
+      "run": [
+        "0e4dff49d2f44b66bf6958532e274363"
+      ],
+      "command": [
+        "ebde1e9c12c44b65ac2bf9b5d63e3d8e"
+      ],
+      "attempt": [
+        "7ffb3cb5cf314acfafcb7a3204e48dcb"
+      ],
+      "artifact": [
+        "8cef06d04bdb49ee9d5eb3a3b54bed53"
+      ],
+      "intent": [
+        "d2999f924187445b8de85ed3757bc954"
+      ],
+      "reservation": [
+        "af2cbfd2fe084d6d951ed40f7a3cb39d",
+        "c2a6de9a78be4e74b135ee2d971802d1"
+      ]
+    },
+    "events": [
+      {
+        "at": "2026-09-28 13:35:01",
+        "kind": "barrier",
+        "detail": "artifact reserved; actual runtime PREPARED; reserve response withheld"
+      },
+      {
+        "at": "2026-09-28 13:35:01",
+        "kind": "kill",
+        "detail": {
+          "owner": "runtime",
+          "pid": 16604
+        }
+      },
+      {
+        "at": "2026-09-28 13:35:04",
+        "kind": "observation",
+        "detail": "unreachable runtime leaves protection intact"
+      },
+      {
+        "at": "2026-09-28 13:35:05",
+        "kind": "restart",
+        "detail": "same runtime database, pins and credentials; no reset"
+      },
+      {
+        "at": "2026-09-28 13:35:06",
+        "kind": "observation",
+        "detail": "one canonical acceptance and spent unit; original receipt; both bindings confirmed; accepted bytes readable"
+      }
+    ],
+    "status": "passed",
+    "elapsed_seconds": 4.891
+  }
+}

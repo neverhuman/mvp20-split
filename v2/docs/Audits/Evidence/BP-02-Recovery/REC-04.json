@@ -1,0 +1,69 @@
+{
+  "sha256": "bb8462220041a970ee502ff388d24ef07a27f2c89044db7c61b4973005cfbbc5",
+  "manifest": {
+    "case": "REC-04",
+    "scope": {
+      "tenant_id": "integrated-acceptance",
+      "project_id": "2117ae051f9449f68a2fefc8c9324f98"
+    },
+    "packages": {
+      "amphora_campaign_runtime-0.1.0-py3-none-any.whl": "507b854cb62a912675ad08c0f593ccda1ab30be044838b7f9f631f8816ec13fb",
+      "amphora_contracts_artifacts-0.1.0-py3-none-any.whl": "10c717c362f60e7f3f3fd40868d76d50ec58f32150db14580366219d8d6c8adc",
+      "amphora_contracts_campaigns-0.1.0-py3-none-any.whl": "635724223ae1607c4e89e4a17c567f0749aa98a76f528b5b4e86e71a0e01d4da",
+      "amphora_contracts_commands-0.1.0-py3-none-any.whl": "476beedaecc51c050c1e13efe2dbcd7c84a1b6b35201bb212d2935342bcb7a1b",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "5ee43eef187331776210ea39979841bf7840482645a8e67a5d232a99baf27f35",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "2e73570402faa3ba26a0373beb9dfb7796d63c5bf41ff48ab12852eab92090e1",
+      "amphora_data_artifacts-0.1.0-py3-none-any.whl": "2d0d39341507955976e1f92b1d4d3a222eb2142a71008f2c1c4064df7278b426"
+    },
+    "timeout_seconds": 45,
+    "identities": {
+      "run": [
+        "de7e1c1c2a2b42358ddad02274956fca"
+      ],
+      "command": [
+        "ea2118d98ffc4436ae0104f18fbe52ed"
+      ],
+      "attempt": [
+        "b55d377011514a0dbe79e85b1999eadc"
+      ],
+      "artifact": [
+        "8cef06d04bdb49ee9d5eb3a3b54bed53"
+      ],
+      "intent": [
+        "6d33111a86b74173a398d9e0362fe575"
+      ],
+      "reservation": [
+        "5a67eb11c903438882826c31225cdab9",
+        "ec1b7e5c97dd43cf8fa77d5df9ace158"
+      ]
+    },
+    "events": [
+      {
+        "at": "2026-09-28 13:35:06",
+        "kind": "barrier",
+        "detail": "atomic acceptance committed; client response and outbox delivery not observed"
+      },
+      {
+        "at": "2026-09-28 13:35:06",
+        "kind": "kill",
+        "detail": {
+          "owner": "runtime",
+          "pid": 28040
+        }
+      },
+      {
+        "at": "2026-09-28 13:35:07",
+        "kind": "restart",
+        "detail": "same runtime state; delivery worker starts only after replay"
+      },
+      {
+        "at": "2026-09-28 13:35:09",
+        "kind": "observation",
+        "detail": "one canonical acceptance and spent unit; original receipt; both bindings confirmed; accepted bytes readable"
+      }
+    ],
+    "status": "passed",
+    "elapsed_seconds": 2.75
+  }
+}

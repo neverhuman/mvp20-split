@@ -47,3 +47,5 @@ Aligned within documentation scope; [planning review](Planning_Maturity_Review.m
 - `2026-09-28 12:01:48`: BP-02.04 lifecycle aligned at 100%; [scoped audit](BP-02.04_Invocation_Lifecycle_Closeout.md). Actual PostgreSQL and installed HTTP-worker evidence pass; completion/artifact integration remains .05/.06. No unowned or blocking drift.
 
 - `2026-09-28 13:10:54`: BP-02.05 aligned at 100%; [scoped audit](BP-02.05_Completion_Delivery_Closeout.md). 298 tests and actual independently installed peer acceptance/cancellation passed. No blocking or unowned drift; .06 owns full restart matrix.
+
+- `2026-09-28 13:45:17`: BP-02.06 and parent aligned/closed; [recovery audit](BP-02.06_Recovery_Integration_Closeout.md), [parent audit](BP-02_Foundation_Closeout.md). 307 final component tests, REC-01..09 and fresh replacement proof; exact manifests preserved. Terminal-blocked wording aligned to requirements with explicit oracle; stale progress/status mirrors corrected. No blocking or unowned drift.

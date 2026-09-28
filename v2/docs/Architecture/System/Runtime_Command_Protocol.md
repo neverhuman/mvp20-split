@@ -1,13 +1,13 @@
 # Durable Runtime Command Protocol
 
-- Design status: BP-02 P1/T1 protocol baseline; contracts/code and executable race tests pending T2 and later gates.
+- Design status: BP-02 protocol baseline implemented for prepared synthetic invocations; implementation evidence is owned by module READMEs and closeout audits.
 - Reviewed: `2026-09-25 13:40:55` (America/Chicago).
 - Parent: [State and Consistency](State_and_Consistency.md).
 - Owner: Campaign Runtime. [Artifact protocol](Artifact_Publication_Protocol.md) defines the separate publication owner.
 
 ## Boundary and Command Identity
 
-The first durable slice admits prepared synthetic invocations only. Arbitrary CampaignDefinition validation still returns `executable=false`; fixture-run readiness is a separate explicitly labeled capability. Synthetic inputs pin scope, fixture plan digest, tool release/schema identities, finite attempt budget and initial checkpoint. Admission enforces one nonterminal campaign for the initial installation. General compiler/registry activation belongs to BP-03/04.
+The first durable slice admits prepared synthetic invocations only. Arbitrary CampaignDefinition validation still returns `executable=false`; fixture-run readiness is a separate explicitly labeled capability. Synthetic inputs pin scope, fixture plan digest, tool release/schema identities, finite attempt budget and initial checkpoint. Admission enforces one RUNNING campaign for the initial installation. BLOCKED is a terminal execution disposition under the initial requirements: it cannot dispatch or resume, but retains unresolved evidence/reservations. It does not hold the active slot for a later campaign, whose admission cannot settle or revive that predecessor. General compiler/registry activation belongs to BP-03/04.
 
 Proposed public operations: AdmitFixtureRun, ClaimInvocation, RenewAttempt, CompleteInvocation, CancelRun, RevokeWorker and scoped GetRun/GetInvocation/GetCommandReceipt. Commands carry contract family/version, scope, authenticated actor identity, command ID, payload and any client preconditions. Handler policy validates the actor; caller labels do not grant authority. Workers have no database access.
 
@@ -17,7 +17,7 @@ Command uniqueness is `(scope, actor_id, command_family, command_id)`. Store req
 
 Use the validated, schema-versioned command model with defaults materialized. Include family/version, command ID, scope, stable actor ID, payload and supplied semantic preconditions. Exclude the digest field itself, transport credentials, trace IDs and server-derived reservation metadata. Reject duplicate JSON keys before parsing, non-finite numbers, unpaired Unicode surrogates and unsupported fields. Command values are null/bool/bounded integer/string/list/closed object; floating measurements belong in typed artifacts or declared decimal strings. Preserve Unicode code points and array order; do not case-fold, trim or apply Unicode normalization to identities/content.
 
-Encode sorted object keys as compact UTF-8 JSON, ASCII escaping enabled, no whitespace or final newline, integers in decimal without alternate numeric spellings; SHA-256 those bytes. The initial implementation is the Python profile, not an assertion of universal language canonicalization. T2 publishes golden canonical bytes/digests for optional/default fields, escaping, order, nulls, integers and rejected duplicates; any future Rust/JS producer must pass them. Artifact/schema digests retain their separately named profiles.
+Encode sorted object keys as compact UTF-8 JSON, ASCII escaping enabled, no whitespace or final newline, integers in decimal without alternate numeric spellings; SHA-256 those bytes. The initial implementation is the Python profile, not an assertion of universal language canonicalization. The command-contract package publishes golden canonical bytes/digests for optional/default fields, escaping, order, nulls, integers and rejected duplicates; any future Rust/JS producer must pass them. Artifact/schema digests retain their separately named profiles.
 
 ## Owned Records and Domain Objects
 
@@ -83,4 +83,6 @@ At commit insert accepted output/checkpoint references, settle attempt/budget, a
 
 ## Verification Status
 
-This document completes the protocol-decision deliverable only. No schema, database locking, authority or durability guarantee is implemented by this text. T2 must encode the decisions in independently validated contract fixtures before P2 starts; P2-P6 prove the listed races on actual PostgreSQL/separate processes. Consumers must not treat a valid schema as evidence of runtime or scientific acceptance.
+The protocol remains a design contract, not self-evidencing implementation. BP-02 now publishes versioned contracts and module-owned PostgreSQL/concurrency tests, plus independently installed REC-01..09 process recovery/replacement. See [runtime module](../../../services/campaign_runtime/README.md), [recovery runbook](../../../services/campaign_runtime/RECOVERY.md) and [parent closeout](../../Audits/BP-02_Foundation_Closeout.md). A valid schema is not evidence of runtime or scientific acceptance. Cross-language canonicalization, general graph interpretation, scientific validity and target-host power-loss remain their named gates.
+
+The R5 review corrected earlier ?one nonterminal campaign? wording to the requirements' one-active-campaign/terminal-blocked semantics. The implementation prevents dispatch in BLOCKED, preserves unresolved budget/evidence, and permits a distinct successor campaign. No automatic uncertainty settlement or provider reconciliation is implied.

@@ -2,16 +2,16 @@
 
 ## Canonical Parent Tracker
 
-- Status: design_specified / implementation queued; not activated.
-- Last refreshed: `2026-09-25 13:35:12` (America/Chicago).
+- Status: primary_active; BP-03.01 / Build / B1.
+- Last refreshed: `2026-09-28 13:45:17` (America/Chicago).
 - Owner/scope: Capability Registry and independently packaged tools.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: BP-01 contracts and completed BP-02 claim/artifact/authority gates.
 - Implementation: **0%**, 0/16 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: none. Next: BP-03.01/B1 after predecessor gates and bounded activation audit.
+- Current implementation task: BP-03.01/B1 descriptor identity boundary. Next: B2 descriptor/policy objects.
 - Demonstrated behavior: none within this parent. Required database/process/browser/model/host evidence remains pending.
-- Blockers: predecessor gates; external choices only where named in child trackers and the readiness register.
+- Blockers: BP-01/BP-02 predecessor gates passed; no current user blocker. External choices remain only at their named dependent gates.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
 
@@ -59,3 +59,7 @@ Child decisions and the [cross-plan handoff register](Planning_Readiness.md) ide
 On `2026-09-25 13:35:12`, the original two-task-per-phase estimate was decomposed into 16 verified deliveries across 4 children. Implementation stays 0%; no previous implementation credit is lost or added. [Planning history](BP-03%20Planning%20History.md) preserves the original scope and denominator. Pure design review earns no implementation credit.
 
 Child closeout archives that child with its audit and repairs links; the parent remains active until all child gates and the integrated parent outcome pass. The last child's acceptance checks the parent handoff without repeating unchanged earlier audits. Keep implementation, human acceptance, operational readiness and scientific validation separate. Update child -> parent -> MBT -> Restore at each delivery/scope change.
+
+## Activation Checkpoint
+
+`2026-09-28 13:45:17`: BP-02 closed at 32/32 with actual installed recovery and replacement evidence. .01 activated at 0% after bounded contract/architecture coherence review; other children remain queued. No implementation credit from activation. Preserve existing tool/runtime command compatibility; extension of registry metadata must not turn discovery into runtime authority.

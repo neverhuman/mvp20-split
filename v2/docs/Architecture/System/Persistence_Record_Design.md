@@ -1,6 +1,6 @@
 # Initial Persistence Record and Transaction Design
 
-- Design status: BP-02.02 S1 physical-design baseline; migrations and repository verification pending.
+- Design status: BP-02 physical-design baseline; owner migrations, role/transaction tests and installed recovery now implemented.
 - Parent: [State and Consistency](State_and_Consistency.md).
 - Protocols: [Runtime commands](Runtime_Command_Protocol.md), [artifact publication](Artifact_Publication_Protocol.md).
 - Reviewed: `2026-09-25 13:40:55` (America/Chicago).
@@ -62,6 +62,6 @@ Recheck live lease/fence/authority and checkpoint preconditions under the runtim
 
 ## Verification Matrix
 
-S3/S4 migration tests cover fresh/repeated upgrade, independent histories, wrong-role SELECT/DML/DDL, scoped FK mismatch, duplicate invocation/fence/accepted output, invalid counters/status and identity overwrite. Restart must preserve inserted fixtures. S5 uses distinct actual PostgreSQL connections and explicit barriers for same-command contention, changed-payload conflict, rollback after event insertion and transaction serialization retry. Full run-authority/transition race proof remains BP-02.04/.05; persistence tests alone do not establish it. SQLite/mocks/static SQL inspection cannot satisfy these gates.
+S3/S4 migration tests cover fresh/repeated upgrade, independent histories, wrong-role SELECT/DML/DDL, scoped FK mismatch, duplicate invocation/fence/accepted output, invalid counters/status and identity overwrite. Restart must preserve inserted fixtures. S5 uses distinct actual PostgreSQL connections and explicit barriers for same-command contention, changed-payload conflict, rollback after event insertion and transaction serialization retry. BP-02.04/.05 now provide run-authority/transition race proof and .06 adds installed process recovery; persistence tests alone do not establish those guarantees. SQLite/mocks/static SQL inspection cannot satisfy these gates.
 
 Later lifecycle/completion children implement full command transactions. Persistence S5 exposes only owner-specific receipt/transaction primitives. Test resets are limited to named disposable harness resources; startup never resets state. Production evidence migration and rollback need explicit policies, not a destructive automatic downgrade. Each service owns migrations, adapters, module README and tests.
