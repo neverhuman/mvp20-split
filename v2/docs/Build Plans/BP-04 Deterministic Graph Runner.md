@@ -2,15 +2,15 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-04.01 / Build / B2.
-- Last refreshed: `2026-09-28 17:40:35` (America/Chicago).
+- Status: primary_active; BP-04.01 / Build / B3.
+- Last refreshed: `2026-09-28 18:02:52` (America/Chicago).
 - Owner/scope: Campaign Runtime coordinator, aggregator and recovery modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-02 durable commits and BP-03 indexed callable tools.
-- Implementation: **5%**, 1/20 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
+- Implementation: **10%**, 2/20 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-04.01/B2 deterministic semantic compiler. Next: .01/B3 independent golden/rejection proof.
-- Demonstrated behavior: .01/B1 explicit wire-v2 graph/plan/lock/path contracts and actual consumer/package compatibility passed. Compiler/interpreter behavior remains pending.
+- Current implementation task: BP-04.01/B3 independent compiler golden/rejection proof. Next: .01/V1 installed peer/replacement acceptance.
+- Demonstrated behavior: .01/B1-B2 wire-v2 and pure semantic compiler passed, including manual numerical plan identity, scoped availability and bounded constructs. Interpreter remains pending .02/.03.
 - Blockers: none for the synthetic compiler scope; predecessor BP-02/BP-03 gates passed. Later external choices remain at named gates.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
@@ -29,7 +29,7 @@ Primary services retain private state, dependencies, migrations and module READM
 
 | Parent phase / child | Overall | Build | Acceptance | Prerequisite |
 |---|---:|---:|---:|---|
-| P1 / [BP-04.01 Compiler and executable contract](BP-04/BP-04.01%20Compiler%20and%20executable%20contract.md) | 25% | 33.33% | 0% | B1 accepted; B2 active |
+| P1 / [BP-04.01 Compiler and executable contract](BP-04/BP-04.01%20Compiler%20and%20executable%20contract.md) | 50% | 66.67% | 0% | B1-B2 accepted; B3 active |
 | P2 / [BP-04.02 Frontier and scheduling](BP-04/BP-04.02%20Frontier%20and%20scheduling.md) | 0% | 0% | 0% | BP-04.01 acceptance |
 | P3 / [BP-04.03 Aggregation and failure policy](BP-04/BP-04.03%20Aggregation%20and%20failure%20policy.md) | 0% | 0% | 0% | BP-04.02 acceptance |
 | P4 / [BP-04.04 V1 baseline and successor graphs](BP-04/BP-04.04%20V1%20baseline%20and%20successor%20graphs.md) | 0% | 0% | 0% | BP-04.03 acceptance |

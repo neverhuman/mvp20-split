@@ -1,0 +1,46 @@
+# Executable campaign compiler
+
+- Status: BP-04.01/B2 implementation; semantic acceptance and independent replacement gates tracked in the [owning plan](../../../../../docs/Build%20Plans/BP-04/BP-04.01%20Compiler%20and%20executable%20contract.md).
+- Owner: Campaign Runtime. Architecture: [Graph Execution Model](../../../../../docs/Architecture/System/Graph_Execution_Model.md).
+- Public wire boundary: campaigns 0.2.0, executable wire v2. Existing validation-only wire v1 is unchanged.
+
+## Responsibilities and interfaces
+
+`compile_campaign(ExecutableCampaign, ToolCatalog, SchemaCatalog)` returns an immutable `ExecutionPlan` or raises `CompilationError` with one bounded, reason-coded finding. It has no network, filesystem, database, environment, capacity or execution side effects. Each call owns its temporary analysis; no mutable global compilation cache exists. A failure never publishes a partial plan.
+
+The caller supplies public `ReleaseDescriptor`/`LockEntry` pairs and exact schema bytes. `ResolvedTool` verifies the documented Registry descriptor hash and port/checkpoint lock identities. `PinnedSchema` verifies exact bytes, a bounded Draft 2020-12 document and local JSON-pointer references; it never fetches a URI. Catalogs resolve exact identities and reject duplicate entries. These checks establish immutable compatibility, not live availability, scientific eligibility or permission to run. The initial profile accepts pure synthetic tools; no external-effect or scientific-authority execution claim follows.
+
+| Module | Owned behavior |
+|---|---|
+| `compiler.py` | Scope compilation, node policies, used-pin closure and complexity limits |
+| `topology.py` | Deterministic DAG order and control-dependent value availability |
+| `resolution.py`, `shapes.py` | Local bindings, types/units/bounds and finite predicate checks |
+| `catalog.py`, `schemas.py` | Exact public descriptor/schema identity and conservative projection typing |
+| `normalization.py` | Immutable domain projections, canonical definition/plan hashes |
+| `addresses.py` | Plan-bound loop/scatter activation identities |
+
+## Control and data rules
+
+Each scope is a DAG with exactly one Finish. Nodes without incoming control edges are roots. Every non-Finish node has an outgoing edge; Branch has exactly one true and one false route. Ordinary multi-predecessor nodes require all predecessors. Alternative branch routes must converge through an explicit Join. Source references are local to the enclosing scope; nested bodies receive explicit state/item/capture inputs and return declared ports.
+
+An ordinary binding may consume only an output guaranteed by its incoming control paths. Join members may name control ancestors that can be skipped or missing. A node after a join cannot bypass the collection to consume an alternative branch's output. Required unconditional all-join members retain their guaranteed availability. Members are ordered, uniquely identified and type-compatible. Optional members and partial joins require typed missing slots. Partial policy declares minimum and either all-terminal closure or an explicit deadline; reaching the minimum alone does not close a join.
+
+Scatter requires a bounded collection without unresolved missing slots, an item input, explicit captures, compatible child result and sufficient output bound. Zero-member all collection is valid. The later interpreter must freeze actual membership/order from committed input before issuing work, then preserve that order across completion races. Compile-time bounds are not a capacity reservation. Iteration requires explicit initial state, matching body input, compatible feedback ports and a finite maximum; termination sees named body results. No implicit cycles, parameter packing, coercion, unit conversion, arbitrary expression or hidden scope capture is supported.
+
+Predicates use constant/compare/all/any/not only, at most 256 operations and depth 16. Scalars match declared type and units; integer may flow into number. Ordered comparisons are numeric. Artifact projections require application/json and an unambiguous scalar schema path; unions/conditionals/reference siblings that could change the projected type are conservatively rejected. Optional properties/indexes can still be absent in actual payloads: the interpreter must return an explicit missing-value disposition, never silently coerce or choose false. Schema type checking does not read or validate an artifact's content.
+
+Definitions have at most 4096 total nodes, 1024 scopes, depth 16, 256 used tools and 512 schemas, in addition to wire limits. Findings truncate locations to 256 characters. The compiler validates all branches/bodies, including statically false paths, so latent incompatible work cannot hide behind a predicate.
+
+## Identity and replacement
+
+Canonical JSON uses sorted keys, compact separators, ASCII escaping and finite numbers. Named ports/bindings, nodes, edges, state slots, context pins and lock entries are sorted; ordered join members and predicate operands retain authored order. The definition hash covers `{profile: amphora-executable-definition-v2, definition: normalized-definition}`. The plan hash covers the complete canonical `PlanDocument`, excluding its envelope hash. Semantic edits produce a new identity; presentation data is outside this contract.
+
+`ActivationAddress.for_plan(plan, path)` checks every nested occurrence kind/index and target node. Its key hashes the plan digest and complete wire path under `amphora-activation-address-v1`; scatter paths include a committed membership digest. An address does not establish that membership exists or grant an attempt, fence or budget. A caller must supply a trusted compiled plan, not an unverified hand-built hash envelope.
+
+No persistence or migration is introduced here. Replacing this module must preserve accepted normalized bytes, hashes, scoped bindings and failure dispositions, or explicitly version the compiler profile. Retained old plans must never be silently recompiled with new semantics. Dependencies are Python, public contracts and jsonschema; no Registry/tool private code or scientific library is imported.
+
+## Verification and remaining gates
+
+Owned tests: `services/campaign_runtime/tests/compiler`; selector `dev/run_tests.py --module runtime --area compiler`. Runtime source/test ownership remains registered in `dev/test_scopes.json`. Manual wire examples predate this compiler; the numerical plan is compared byte-for-byte as an independent oracle. Public numeric descriptor/schema fixture bytes are retained under `tests/fixtures/compiler`, not generated by the compiler.
+
+B2: 35 focused cases pass; compiler-only coverage extracted from the Runtime owner report is 557/571 statements (97.55%) and 136/144 branches (94.44%). Uncovered paths include artifact constants/checkpoint compatibility, captures and some conservative schema/complexity failures; B3 expands the semantic failure matrix. The whole Runtime denominator includes unrelated unexecuted lifecycle modules and is not a compiler coverage score. Tests cover scoped positive plans, canonical order, branch availability, partial policy, loop address bounds and offline schema projection/rejection. B3 expands semantic failure/golden coverage; V1 proves independent installation and actual Registry/tool compatibility. Interpreter persistence, predicate evaluation, aggregate terminalization, actual scatter freezing, scheduling/recovery and executable HTTP admission remain subsequent child gates. No general execution API is enabled by this module.

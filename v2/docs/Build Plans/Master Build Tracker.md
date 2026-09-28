@@ -9,13 +9,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-04 primary active; BP-05 through BP-09 queued; BP-01/BP-01A/BP-02/BP-03 closed.
-- Last refreshed: `2026-09-28 17:40:35` (America/Chicago).
+- Last refreshed: `2026-09-28 18:02:52` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P3 / BP-04 - deterministic graph runner.
-- Primary active implementation plan / phase / task: BP-04 -> BP-04.01 / Build / B2.
-- Current task: BP-04.01/B2 immutable semantic compiler, exact bindings and canonical plans.
-- Next task: BP-04.01/B3 independent compiler golden and failure fixtures.
-- Implementation completion: BP-02 closed 100% (32/32), BP-03 closed 100% (16/16); BP-04 active 5% (1/20), .01 25% (Build 33.33%/Acceptance 0%); BP-05..09 queued 0%. No effort estimate inferred.
+- Primary active implementation plan / phase / task: BP-04 -> BP-04.01 / Build / B3.
+- Current task: BP-04.01/B3 independent semantic compiler golden/rejection proof.
+- Next task: BP-04.01/V1 installed compiler/public peer compatibility and scoped audit.
+- Implementation completion: BP-02 closed 100% (32/32), BP-03 closed 100% (16/16); BP-04 active 10% (2/20), .01 50% (Build 66.67%/Acceptance 0%); BP-05..09 queued 0%. No effort estimate inferred.
 - Active focus: compile explicit bounded executable graphs over the verified tool/runtime foundation.
 - Blockers: no current user decision or implementation blocker; later host/provider/scientific gates remain explicit.
 - Acceptance posture: durable synthetic invocations, actual peer retention, process recovery and fresh service replacement verified; no interpreter/scientific acceptance claimed.
@@ -35,11 +35,11 @@ BP-04 is the sole primary active plan. Child trackers own delivery evidence; com
 
 | Parent | Implementation | P1 Compiler | P2 Scheduling | P3 Aggregation | P4 Baselines | P5 Recovery |
 |---|---:|---:|---:|---:|---:|---:|
-| [BP-04](BP-04%20Deterministic%20Graph%20Runner.md) | 5% (1/20) | 25% | 0% | 0% | 0% | 0% |
+| [BP-04](BP-04%20Deterministic%20Graph%20Runner.md) | 10% (2/20) | 50% | 0% | 0% | 0% | 0% |
 
 | Active canonical child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-04.01](BP-04/BP-04.01%20Compiler%20and%20executable%20contract.md) | 25% | 33.33% | 0% | B2 semantic compiler |
+| [BP-04.01](BP-04/BP-04.01%20Compiler%20and%20executable%20contract.md) | 50% | 66.67% | 0% | B3 semantic proof |
 
 BP-02 is closed at 32/32; BP-03 at 16/16 with all children audited. See [completed plans](Completed/README.md). New parent progress counts only its own deliveries.
 
@@ -123,6 +123,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-28 18:02:52 | BP-04.01 B2 passed; child 50%, parent 10% (2/20); B3 active | 35 compiler cases; manual plan exact; 653 regression tests/twelve builds/REC-01..09, scope 7602f26a6cfb4a3aa7824ede61371e7f |
 | 2026-09-28 17:40:35 | BP-04.01 B1 passed; child 25%, parent 5% (1/20); B2 active | 619 tests/twelve builds/REC-01..09; explicit wire-v2, unchanged v1 bytes; 23 owned wire cases |
 | 2026-09-28 17:23:58 | BP-03 closed/audited 100% (16/16); BP-04.01/B1 active at 0% | Eight actual replica/replacement cases; [parent audit](../Audits/BP-03_Tool_Execution_Closeout.md) |
 | 2026-09-28 17:19:54 | BP-03.04 B3 passed; child 75%, parent 93.75% (15/16) | Duplicate/checkpoint/failed replacement/budget/fresh-install cases; scope 7f160a8548e2488d821103017b8fbc8d |
@@ -147,6 +148,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-28 13:10:54 | BP-02.05 closed/audited 100%; parent 84.38% (27/32); .06 R1 activated | 298 tests/eight builds; actual paired acceptance and cancellation/release; [audit](../Audits/BP-02.05_Completion_Delivery_Closeout.md) |
 | 2026-09-28 13:00:03 | BP-02.05 D5 passed; child 83.33%, V1 100%, parent 81.25%; next D6 | 297 tests/eight builds; scoped history and signed pinned pages |
 | 2026-09-28 12:45:25 | BP-02.05 D4 passed; child 66.67%, V1 80%, parent 78.13%; next D5 | 288 tests/eight builds; both journals, stale-ack fences, replay and exhaustion |
-| 2026-09-28 12:35:03 | BP-02.05 D3 passed; child 50%, V1 60%, parent 75%; next D4 | 278 full tests/eight builds, final 36 scoped; retention proof and bounded recovery |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

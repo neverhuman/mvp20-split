@@ -1,0 +1,73 @@
+{
+  "schema_version": "1",
+  "tool": {
+    "schema_version": "1",
+    "binding": {
+      "capability_id": "synthetic.numeric-affine",
+      "contract_version": "1",
+      "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+      "release": "0.2.0"
+    },
+    "purpose": "Apply a*x+b independently to bounded synthetic numeric values.",
+    "applicability": [
+      "synthetic-tests"
+    ],
+    "inputs": [
+      {
+        "name": "parameters",
+        "representation": "numeric-vector",
+        "unit": "1",
+        "required": true,
+        "schema_ref": {
+          "schema_id": "synthetic.numeric-affine.input",
+          "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+          "version": "1"
+        }
+      }
+    ],
+    "outputs": [
+      {
+        "name": "result",
+        "representation": "numeric-vector",
+        "unit": "1",
+        "required": true,
+        "schema_ref": {
+          "schema_id": "synthetic.numeric-affine.output",
+          "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+          "version": "1"
+        }
+      }
+    ],
+    "side_effects": "pure",
+    "checkpoint_schema": null
+  },
+  "resources": {
+    "architectures": [
+      "x86_64"
+    ],
+    "operating_systems": [
+      "linux"
+    ],
+    "cpu_millicores": 1000,
+    "memory_mib": 128,
+    "gpu_count": 0,
+    "timeout_seconds": 60,
+    "max_parallel_invocations": 1,
+    "max_batch_size": 1
+  },
+  "egress": {
+    "mode": "deny"
+  },
+  "checkpoint": {
+    "mode": "none",
+    "readable_schema_sha256": []
+  },
+  "reproducibility": "deterministic",
+  "authority_ceiling": "synthetic_only",
+  "examples": [
+    "values=[-1,0,1], a=-2, b=3 gives [5,3,1]."
+  ],
+  "anti_examples": [
+    "Does not establish biological, chemical or materials validity."
+  ]
+}

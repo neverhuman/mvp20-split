@@ -10,6 +10,8 @@ Treat the campaign as a typed program, not a picture or a list of service calls.
 
 Compilation is semantic validation and resolution, not generation of arbitrary executable source. Tool code remains reviewed/versioned code. Expressions for branch conditions, parameter binding and stop rules use a constrained typed representation; no unrestricted `eval` field is part of a campaign contract.
 
+The initial wire-v2 compiler profile uses local DAG scopes with one Finish, explicit branch convergence through Join, all-predecessor readiness for ordinary nodes, and explicit state/item/capture bindings across scope boundaries. Named maps normalize independently of authored order; join member order remains semantic. The [compiler module contract](../../../services/campaign_runtime/src/amphora_campaign_runtime/compiler/README.md) records implemented limits and exact hash profiles. Compilation alone neither reserves capacity nor admits execution; durable interpretation and collection/termination policies remain separate implementation gates.
+
 | Layer | Identity and content | Owner |
 |---|---|---|
 | Campaign revision | Stable nodes/edges, parameters, allowed changes, source/review lineage | Graph authoring aggregate |

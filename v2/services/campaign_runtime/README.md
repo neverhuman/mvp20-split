@@ -9,6 +9,7 @@
 | Module | Responsibility |
 |---|---|
 | `graph.py` | Immutable graph values, bounded topology/loop/branch/join validation; no interpreter |
+| [compiler](src/amphora_campaign_runtime/compiler/README.md) | Pure wire-v2 semantic compilation, exact tool/schema pins, scoped types/control flow, canonical plans and activation addresses |
 | `admission.py` | Pure input/tool/completion binding policy against supplied identity; not live authority |
 | [lifecycle](src/amphora_campaign_runtime/lifecycle/README.md) | Exact fixture admission, claims, renewal, cancellation/revocation, budget settlement and scoped observations |
 | [completion](src/amphora_campaign_runtime/completion/README.md) | Immutable prepared intents, resumable artifact reservations and atomic result/checkpoint acceptance |
@@ -77,4 +78,4 @@ Optional `inspection` configuration requires a stable `cursor_key_env` and accep
 
 [Foundation recovery and replacement](RECOVERY.md) records retained state/configuration, explicit owner bootstrap, bounded maintenance order and public verification. Actual process recovery is separate from host backup/power-loss guarantees.
 
-BP-04.01/B1 updates the campaign-contract dependency to 0.2.0 while preserving wire-v1 validation and existing durable fixture APIs. Explicit executable wire-v2 DTOs do not activate a compiler/interpreter or silently convert old graphs. Compiler domain implementation remains B2. No database migration accompanies this contract-package upgrade.
+BP-04.01/B1 updates the campaign-contract dependency to 0.2.0 while preserving wire-v1 validation and existing durable fixture APIs. B2 adds the pure [compiler](src/amphora_campaign_runtime/compiler/README.md), with jsonschema as an explicit isolated package dependency. It emits exact immutable plans without database writes or execution authority. Interpreter/admission remains a later gate; no old graph is silently converted and no database migration accompanies these changes.
