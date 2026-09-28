@@ -3,16 +3,18 @@
 import asyncio
 
 from amphora_contracts_commands import CommandEncodingError
-from amphora_contracts_runtime import CommandReceipt, parse_command
+from amphora_contracts_runtime import ClaimResponse, CommandReceipt, parse_command
 from fastapi import Request
 from fastapi.responses import JSONResponse
 from sqlalchemy.exc import DBAPIError
 
 from ..persistence.commands import CommandConflict
+from .claims import RuntimeLeases
 from .model import TransitionError
 
 
 def install_admission(app, admission, credentials):
+    leases = RuntimeLeases(admission.commands.engine)
     @app.exception_handler(TransitionError)
     async def denied(_request, error):
         return JSONResponse({"reason_code": str(error)}, status_code=401 if str(error) == "unauthenticated" else 403)
@@ -34,3 +36,16 @@ def install_admission(app, admission, credentials):
         principal = credentials.authenticate(request.headers.get("authorization"))
         command = parse_command("runtime.admit_fixture", await request.body())
         return await asyncio.to_thread(admission.admit, principal, command)
+
+
+    @app.post("/v1/invocations/claim", response_model=ClaimResponse | CommandReceipt)
+    async def claim(request: Request):
+        principal = credentials.authenticate(request.headers.get("authorization"))
+        command = parse_command("runtime.claim", await request.body())
+        return await asyncio.to_thread(leases.claim, principal, command)
+
+    @app.post("/v1/attempts/renew", response_model=CommandReceipt)
+    async def renew(request: Request):
+        principal = credentials.authenticate(request.headers.get("authorization"))
+        command = parse_command("runtime.renew", await request.body())
+        return await asyncio.to_thread(leases.renew, principal, command)

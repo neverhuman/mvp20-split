@@ -2,12 +2,12 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; child BP-02.04 / V1 / I3.
-- Last refreshed: `2026-09-28 11:18:55` (America/Chicago).
-- Implementation: **53.13%**, 17/32 verified implementation deliveries across six children. Parent = sum of verified child task counts / 32. These are scoped delivery fractions, not time/effort estimates. Children own task evidence; parent never adds duplicate credit.
+- Status: primary_active; child BP-02.04 / V1 / I4.
+- Last refreshed: `2026-09-28 11:28:20` (America/Chicago).
+- Implementation: **56.25%**, 18/32 verified implementation deliveries across six children. Parent = sum of verified child task counts / 32. These are scoped delivery fractions, not time/effort estimates. Children own task evidence; parent never adds duplicate credit.
 - Design: original T1 protocol decisions complete and retained in [Runtime protocol](../Architecture/System/Runtime_Command_Protocol.md) and [Artifact protocol](../Architecture/System/Artifact_Publication_Protocol.md).
 - Demonstrated durable behavior: PostgreSQL isolation, scoped constraints, command contention/rollback/retry verified; artifact publication and its process-kill windows verified; protective reservation handshake verified with a scripted peer; cleanup and real runtime execution/process proof remain required.
-- Current task: BP-02.04 I3 claim/renewal; next I4 budget settlement.
+- Current task: BP-02.04 I4 budget settlement; next I5 authority/cancellation.
 - Blockers: no implementation blocker; user-provided Git identity configured for commit/push. Child predecessor gates mandatory; no user decision required at this point.
 - Authority: user approved hierarchical decomposition and autonomous continuation; [MBT](Master%20Build%20Tracker.md) mirrors this tracker.
 
@@ -24,7 +24,7 @@ On `2026-09-25 08:47:38`, the preliminary 34-task register was corrected to **32
 | [BP-02.01 Contracts and Command Identity](BP-02/Completed/BP-02.01%20Contracts%20and%20Command%20Identity.md) | 100% | 5 | Closed; audit passed |
 | [BP-02.02 Isolated Persistence](BP-02/Completed/BP-02.02%20Isolated%20Persistence.md) | 100% | 5 | Closed; audit passed |
 | [BP-02.03 Artifact Publication and Retention](BP-02/Completed/BP-02.03%20Artifact%20Publication%20and%20Retention.md) | 100% | 5 | Closed; audit passed |
-| [BP-02.04 Invocation Lifecycle](BP-02/BP-02.04%20Invocation%20Lifecycle.md) | 33.33% | 6 | Active I3; I1/I2 passed |
+| [BP-02.04 Invocation Lifecycle](BP-02/BP-02.04%20Invocation%20Lifecycle.md) | 50% | 6 | Active I4; I1-I3 passed |
 | [BP-02.05 Completion and Delivery](BP-02/BP-02.05%20Completion%20and%20Delivery.md) | 0% | 6 | Predecessor gate |
 | [BP-02.06 Recovery and Integration](BP-02/BP-02.06%20Recovery%20and%20Integration.md) | 0% | 5 | Predecessor gate |
 

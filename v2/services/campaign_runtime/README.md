@@ -8,9 +8,9 @@
 
 - `graph.py`: immutable graph/vertex/route domain values; explicit DTO mapper; bounded nested-scope traversal, node/edge uniqueness, DAG, branch predecessor/routes, join and termination checks.
 - `admission.py`: pure invocation/completion binding policy; exact versions, declared ports, artifact/checkpoint scope/schema and supplied attempt/fence identity. It does not prove that a supplied grant or fence is current.
-- `api.py`: default validation-only FastAPI application, bounded request decoding, sanitized structural errors and OpenAPI publication. An explicitly configured admission instance enables the synthetic fixture-run endpoint; no worker execution endpoint exists yet.
+- `api.py`: default validation-only FastAPI application, bounded request decoding, sanitized structural errors and OpenAPI publication. An explicitly configured admission instance enables the synthetic fixture-run endpoint; configured fixture apps expose claim/renewal; completion remains pending.
 
-- `persistence/`: [private migration and command-store boundary](src/amphora_campaign_runtime/persistence/README.md); fixture admission now has an owned transaction; claim/completion handlers remain pending.
+- `persistence/`: [private migration and command-store boundary](src/amphora_campaign_runtime/persistence/README.md); fixture admission now has an owned transaction; claim/renew handlers now exist; completion remains pending.
 
 Graph Runner coordination, aggregation and supervision remain successor behavior.
 
@@ -47,3 +47,5 @@ From repository root: `uv run --project v2/dev --locked python v2/dev/run_tests.
 [Lifecycle domain](src/amphora_campaign_runtime/lifecycle/README.md) implements pure run/worker/budget/activation/lease transitions under BP-02.04/I1. It supplies deterministic policy only; durable handlers and execution endpoints remain pending. Use `--area lifecycle` for its exact-expiry, fencing, uncertainty and settlement oracles.
 
 BP-02.04/I2: `create_app(admission, credentials)` adds authenticated POST /v1/fixture-runs with an exact configured synthetic allowlist and installation-wide single-running-run guard. Run/activation/receipt/audit/outbox commit atomically. General graphs remain non-executable and no worker dispatch occurs. The default module-level app retains validation-only behavior.
+
+BP-02.04/I3 adds configured fixture claim/renew HTTP routes, persisted activation deadlines and increasing attempt fences. Two independently running worker probes contend under the real run lock; expired/replayed requests preserve authority and accounting. Full completion, cancellation/revocation and lifecycle acceptance remain open; the default validation app still exposes no durable handlers.

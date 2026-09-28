@@ -9,13 +9,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-02 primary active; BP-03 through BP-09 decomposed/design-specified; BP-01/BP-01A closed
-- Last refreshed: `2026-09-28 11:18:55` (America/Chicago)
+- Last refreshed: `2026-09-28 11:28:20` (America/Chicago)
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md), and current System/Capability contracts
 - Current priority: P0 / BP-02 - artifact publication
-- Primary active implementation plan / phase / task: BP-02 -> BP-02.04 / V1 / I3.
-- Current task: atomic claims, database-clock renewal and increasing attempt fences.
-- Next task: BP-02.04 I4 budget settlement after I3.
-- Implementation completion: BP-01/BP-01A closed at 100%; BP-02 53.13% (17/32 implementation deliveries), children .01-.03 closed at 100%, .04 33.33%, .05-.06 0%; BP-03..09 scoped parents at 0%. No effort estimate inferred.
+- Primary active implementation plan / phase / task: BP-02 -> BP-02.04 / V1 / I4.
+- Current task: budget settlement, exhaustion and cancellation conservation.
+- Next task: BP-02.04 I5 authority/cancellation after I4.
+- Implementation completion: BP-01/BP-01A closed at 100%; BP-02 56.25% (18/32 implementation deliveries), children .01-.03 closed at 100%, .04 50%, .05-.06 0%; BP-03..09 scoped parents at 0%. No effort estimate inferred.
 - Active focus: durable state, artifact publication/reservations and claim/completion foundation after the completed contract slice
 - Blockers: Git identity configured; no implementation blocker for BP-02.04; predecessor/host/provider gates of later plans remain explicit
 - Acceptance posture: BP-01 boundary/API subset accepted; no durable graph execution or scientific acceptance claimed
@@ -35,13 +35,13 @@ BP-02 is the sole primary active plan. Later plans are design-specified with can
 
 | Parent | Implementation | .01 Contracts | .02 Persistence | .03 Artifacts | .04 Invocations | .05 Completion | .06 Recovery |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-02](BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md) | 53.13% | 100% | 100% | 100% | 33.33% | 0% | 0% |
+| [BP-02](BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md) | 56.25% | 100% | 100% | 100% | 50% | 0% | 0% |
 
 | Active canonical child | Overall | V1 Build | V2 Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-02.04](BP-02/BP-02.04%20Invocation%20Lifecycle.md) | 33.33% | 40% | 0% | I3 claim renewal and fencing |
+| [BP-02.04](BP-02/BP-02.04%20Invocation%20Lifecycle.md) | 50% | 60% | 0% | I4 budget settlement |
 
-Authorized rebaseline: original 8.33% counted protocol design. Design credit remains complete; implementation counts 32 deliveries, seventeen verified. Pure design gates S1/A1 remain mandatory without implementation credit; the preliminary 34-task count was explicitly corrected. [Parent history](BP-02%20History.md) preserves prior scope. Progress counts deliverables, not engineer-hours; child trackers are canonical.
+Authorized rebaseline: original 8.33% counted protocol design. Design credit remains complete; implementation counts 32 deliveries, eighteen verified. Pure design gates S1/A1 remain mandatory without implementation credit; the preliminary 34-task count was explicitly corrected. [Parent history](BP-02%20History.md) preserves prior scope. Progress counts deliverables, not engineer-hours; child trackers are canonical.
 
 ## Queued Plans and Phase Mirrors
 
@@ -68,7 +68,7 @@ BP-02 is `primary_active`; BP-03 through BP-09 are `design_specified / queued`, 
 
 | Order / ID | Completion | Proposed plan | Required predecessor gates | Bounded outcome / exit | Architecture owner |
 |---|---|---|---|---|---|
-| P0 / BP-02 | 53.13% | [Durable Runtime and Artifact Foundation](BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md) - active child .04/I3 | BP-01 contracts/build boundary | Runtime-owned run/attempt/command state, audit/outbox, artifact finalization/reservation interface, minimal claim/completion protocol and restart/idempotency proof; no complete graph interpreter claimed | [State/consistency](../Architecture/System/State_and_Consistency.md) |
+| P0 / BP-02 | 56.25% | [Durable Runtime and Artifact Foundation](BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md) - active child .04/I4 | BP-01 contracts/build boundary | Runtime-owned run/attempt/command state, audit/outbox, artifact finalization/reservation interface, minimal claim/completion protocol and restart/idempotency proof; no complete graph interpreter claimed | [State/consistency](../Architecture/System/State_and_Consistency.md) |
 | P2 / BP-03 | 0% | [Tool Index and Standalone Execution](BP-03%20Tool%20Index%20and%20Standalone%20Execution.md) | BP-01; BP-02 claim/artifact protocols | Versioned descriptors and deployment inventory, standalone synthetic tools, shared execution SDK, exact-version routing, two-worker claim/fence proof; narrow solvency reuse only after applicability review | [Tool services](../Architecture/Capabilities/Tool_Services.md), [catalog](../Architecture/Capabilities/Catalog.md) |
 | P3 / BP-04 | 0% | [Deterministic Graph Runner](BP-04%20Deterministic%20Graph%20Runner.md) | BP-02 durable state; BP-03 callable tools | Compile and execute typed branch/join/scatter/loop graphs; aggregate committed results; handle scoped failures, external waits, restart and successor campaigns with no LLM required for deterministic control; pass the source-derived v1 solver orchestration scenarios using synthetic adapters | [Graph Runner](../Architecture/System/Graph_Runner.md), [execution model](../Architecture/System/Graph_Execution_Model.md) |
 | P4 / BP-05 | 0% | [Graph Studio First Vertical Slice](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md) | BP-04 runnable fixture and read/command contracts | Inspect actual live/historical execution, evidence, parallel branches and failures; edit next-campaign drafts, compare revisions and observe emergency termination; preserve autonomous progress | [Studio](../Architecture/Experience/Studio.md), [UI rules](../UI_Coding_Guidelines.md) |
@@ -127,6 +127,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-28 11:28:20 | BP-02.04 I3 passed; child 50%, V1 60%, parent 56.25%; next I4 | Two-process claims/live-clock renewal; 224 tests/eight builds |
 | 2026-09-28 11:18:55 | BP-02.04 I2 passed; child 33.33%, V1 40%, parent 53.13%; next I3 | Admission contention/replay/rollback; 218 tests/eight builds |
 | 2026-09-28 11:11:49 | BP-02.04 I1 passed; child 16.67%, V1 20%, parent 50%; next I2 | 21 pure policy tests; full gate 209/eight builds |
 | 2026-09-28 11:05:08 | BP-02.03 closed/audited at 100%; parent 46.88%; .04 I1 activated | 188 tests/eight independent builds; installed HTTP artifact acceptance |

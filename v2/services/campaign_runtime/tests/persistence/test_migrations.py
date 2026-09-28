@@ -63,8 +63,8 @@ def test_attempt_uniqueness_and_scope(connection):
     seed_run(connection)
     seed_activation(connection)
     statement = ("INSERT INTO runtime.attempts (tenant_id,project_id,run_id,activation_id,attempt_id,"
-                 "fence,worker_id,lease_expires_at,status) VALUES "
-                 "('local',%s,'run-1','activation-1',%s,1,'worker',now() + interval '30 seconds','leased')")
+                 "fence,worker_id,lease_expires_at,deadline,status) VALUES "
+                 "('local',%s,'run-1','activation-1',%s,1,'worker',now() + interval '30 seconds',now()+interval '1 minute','leased')")
     connection.execute(statement, ("test", "attempt-1"))
     with pytest.raises(psycopg.errors.UniqueViolation), connection.transaction():
         connection.execute(statement, ("test", "attempt-2"))
@@ -108,8 +108,8 @@ def test_accepted_result_is_unique_and_bound_to_exact_attempt(connection):
     seed_run(connection)
     seed_activation(connection)
     connection.execute("INSERT INTO runtime.attempts (tenant_id,project_id,run_id,activation_id,attempt_id,"
-                       "fence,worker_id,lease_expires_at,status) VALUES "
-                       "('local','test','run-1','activation-1','attempt-1',1,'worker',now(),'leased')")
+                       "fence,worker_id,lease_expires_at,deadline,status) VALUES "
+                       "('local','test','run-1','activation-1','attempt-1',1,'worker',now(),now()+interval '1 minute','leased')")
     connection.execute("INSERT INTO runtime.commands (tenant_id,project_id,actor_id,family,command_id,"
                        "operation_id,profile,request_sha256,canonical_bytes) VALUES "
                        "('local','test','actor','complete','cmd','op','v1',%s,%s)", ("a" * 64, b"{}"))

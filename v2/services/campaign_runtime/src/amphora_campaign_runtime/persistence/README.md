@@ -12,3 +12,5 @@ Runtime owns commands, admission guard, runs, activations, fenced attempts, comp
 `transact` retries the whole database callback at most three times for SQLSTATE 40001/40P01. Callbacks reload all state and contain no network, filesystem or scientific actions. Other failures roll back and propagate. Actual PostgreSQL tests use independent connections for duplicate registration, serialization retry and rollback; relational probes establish storage constraints, not legal execution transitions.
 
 API behavior remains validation-only. Lifecycle, domain audit/outbox commits and process-crash recovery are later children. Replacement preserves accepted history, migration ownership, scope/fence uniqueness and public contracts, and reruns module tests. Dev owns disposable reset; target-host backup/power-loss proof is BP-09.
+
+BP-02.04/I3 forward migration runtime_0002 persists activation/attempt deadlines, bounds lease expiry and grants the owner deadline-column update. Existing attempts backfill from original expiry; no extended authority. Claim/renew handlers own atomic run-budget/attempt/receipt/audit/outbox transitions under run locks.
