@@ -13,6 +13,10 @@ from sqlalchemy import create_engine, text
 from .api import create_app
 from .completion.artifacts import ArtifactReservations
 from .completion.coordinator import CompletionCoordinator
+from .delivery.model import DeliveryPolicy
+from .delivery.store import DeliveryStore
+from .delivery.transport import DeliveryTargets, NotificationSink
+from .delivery.worker import DeliveryWorker
 from .lifecycle.access import RuntimeCredentials, RuntimePrincipal
 from .lifecycle.admission import FixtureAdmission, FixtureCatalog
 
@@ -23,6 +27,7 @@ class Host:
     credentials: RuntimeCredentials
     principals: tuple
     completion: CompletionCoordinator | None = None
+    delivery: DeliveryWorker | None = None
 
     def app(self):
         return create_app(self.admission, self.credentials, self.completion)
@@ -34,14 +39,14 @@ class Host:
     def load(cls, path):
         raw = json.loads(Path(path).read_text(encoding="utf-8"))
         if not {"database_url_env", "principals", "fixtures"} <= set(raw) or set(raw) - {
-            "database_url_env", "principals", "fixtures", "tools", "artifacts"}:
+            "database_url_env", "principals", "fixtures", "tools", "artifacts", "delivery"}:
             raise ValueError("Explicit database, principals and fixture allowlist required")
         entries, principals = [], []
         for item in raw["principals"]:
             if set(item) != {"token_env", "actor_id", "scope", "actions"}:
                 raise ValueError("Invalid principal configuration")
             actions = frozenset(item["actions"])
-            if not actions or actions - {"admit", "claim", "renew", "cancel", "revoke", "maintain", "read", "complete", "outcome"}:
+            if not actions or actions - {"admit", "claim", "renew", "cancel", "revoke", "maintain", "read", "complete", "outcome", "deliver"}:
                 raise ValueError("Invalid configured action")
             if not isinstance(item["actor_id"], str) or not item["actor_id"]:
                 raise ValueError("Explicit actor required")
@@ -60,6 +65,13 @@ class Host:
             if set(peer) != {"runtime_owner", "reserve_endpoint", "token_env"}:
                 raise ValueError("Invalid artifact peer configuration")
             artifacts = ArtifactReservations(peer["runtime_owner"], peer["reserve_endpoint"], os.environ[peer["token_env"]])
+        delivery_config = raw.get("delivery", {})
+        if set(delivery_config) - {"max_attempts", "lease_seconds", "notifications"}:
+            raise ValueError("Unknown delivery configuration")
+        policy = DeliveryPolicy(delivery_config.get("max_attempts", 8), delivery_config.get("lease_seconds", 30))
+        notifications = {name: NotificationSink(item["endpoint"], os.environ[item["token_env"]])
+                         for name, item in delivery_config.get("notifications", {}).items()}
+        targets = DeliveryTargets(artifacts, notifications)
         engine = create_engine(os.environ[raw["database_url_env"]], pool_pre_ping=True,
                                connect_args={"options": "-c statement_timeout=5000"})
         try:
@@ -70,8 +82,10 @@ class Host:
                 conn.execute(text("SELECT operation_id FROM runtime.policy_outbox LIMIT 0"))
                 conn.execute(text("SELECT tool_snapshot FROM runtime.runs LIMIT 0"))
                 conn.execute(text("SELECT report_id FROM runtime.attempt_reports LIMIT 0"))
+                conn.execute(text("SELECT delivery_token FROM runtime.outbox LIMIT 0"))
             completion = None if artifacts is None else CompletionCoordinator(engine, artifacts)
-            return cls(FixtureAdmission(engine, catalog), credentials, tuple(principals), completion)
+            return cls(FixtureAdmission(engine, catalog), credentials, tuple(principals), completion,
+                       DeliveryWorker(DeliveryStore(engine, policy), targets))
         except BaseException:
             engine.dispose()
             raise

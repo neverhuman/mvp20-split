@@ -14,7 +14,7 @@ from .lifecycle.settlement import BudgetSettlement
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=["serve", "check", "settle", "reconcile-intents"])
+    parser.add_argument("action", choices=["serve", "check", "settle", "reconcile-intents", "deliver"])
     parser.add_argument("--config", required=True)
     parser.add_argument("--port", type=int, default=8080)
     parser.add_argument("--actor")
@@ -23,6 +23,7 @@ def main():
     parser.add_argument("--run")
     parser.add_argument("--after", default="")
     parser.add_argument("--limit", type=int, default=100)
+    parser.add_argument("--time-budget", type=float, default=20)
     args = parser.parse_args()
     if not 1 <= args.port <= 65535 or not 1 <= args.limit <= 100:
         parser.error("Invalid loopback port")
@@ -39,9 +40,11 @@ def main():
         else:
             matches = [p for p in host.principals if (p.actor_id, p.scope.tenant_id, p.scope.project_id)
                        == (args.actor, args.tenant, args.project)]
-            if len(matches) != 1 or not args.run:
+            if len(matches) != 1 or (args.action != "deliver" and not args.run):
                 raise ValueError("Select a run and exactly one configured principal")
-            if args.action == "reconcile-intents":
+            if args.action == "deliver":
+                print(json.dumps(host.delivery.sweep(matches[0], limit=args.limit, max_seconds=args.time_budget)))
+            elif args.action == "reconcile-intents":
                 result = StaleIntents(host.admission.commands.engine).sweep(matches[0], args.run, after=args.after, limit=args.limit)
                 print(json.dumps(result))
             else:

@@ -9,13 +9,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-02 primary active; BP-03 through BP-09 decomposed/design-specified; BP-01/BP-01A closed
-- Last refreshed: `2026-09-28 12:35:03` (America/Chicago)
+- Last refreshed: `2026-09-28 12:45:25` (America/Chicago)
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md), and current System/Capability contracts
 - Current priority: P0 / BP-02 - completion and delivery
-- Primary active implementation plan / phase / task: BP-02 -> BP-02.05 / V1 / D4.
-- Current task: bounded outbox claim/delivery/ack with fenced leases and stable operation identities.
-- Next task: BP-02.05 D5 historical receipt/read projections.
-- Implementation completion: BP-01/BP-01A closed at 100%; BP-02 75% (24/32 implementation deliveries), children .01-.04 closed at 100%, .05 50%, .06 0%; BP-03..09 scoped parents at 0%. No effort estimate inferred.
+- Primary active implementation plan / phase / task: BP-02 -> BP-02.05 / V1 / D5.
+- Current task: scoped historical receipts, pinned audit pagination and operational read projections.
+- Next task: BP-02.05 D6 integrated acceptance and scoped audit.
+- Implementation completion: BP-01/BP-01A closed at 100%; BP-02 78.13% (25/32 implementation deliveries), children .01-.04 closed at 100%, .05 66.67%, .06 0%; BP-03..09 scoped parents at 0%. No effort estimate inferred.
 - Active focus: durable state, artifact publication/reservations and claim/completion foundation after the completed contract slice
 - Blockers: Git identity configured; no implementation blocker for BP-02.05; predecessor/host/provider gates of later plans remain explicit
 - Acceptance posture: BP-01 boundary/API subset accepted; no durable graph execution or scientific acceptance claimed
@@ -35,13 +35,13 @@ BP-02 is the sole primary active plan. Later plans are design-specified with can
 
 | Parent | Implementation | .01 Contracts | .02 Persistence | .03 Artifacts | .04 Invocations | .05 Completion | .06 Recovery |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-02](BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md) | 75% | 100% | 100% | 100% | 100% | 50% | 0% |
+| [BP-02](BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md) | 78.13% | 100% | 100% | 100% | 100% | 66.67% | 0% |
 
 | Active canonical child | Overall | V1 Build | V2 Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-02.05](BP-02/BP-02.05%20Completion%20and%20Delivery.md) | 50% | 60% | 0% | D4 bounded outbox delivery |
+| [BP-02.05](BP-02/BP-02.05%20Completion%20and%20Delivery.md) | 66.67% | 80% | 0% | D5 historical receipt/read projections |
 
-Authorized rebaseline: original 8.33% counted protocol design. Design credit remains complete; implementation counts 32 deliveries, twenty-four verified. Pure design gates S1/A1 remain mandatory without implementation credit; the preliminary 34-task count was explicitly corrected. [Parent history](BP-02%20History.md) preserves prior scope. Progress counts deliverables, not engineer-hours; child trackers are canonical.
+Authorized rebaseline: original 8.33% counted protocol design. Design credit remains complete; implementation counts 32 deliveries, twenty-five verified. Pure design gates S1/A1 remain mandatory without implementation credit; the preliminary 34-task count was explicitly corrected. [Parent history](BP-02%20History.md) preserves prior scope. Progress counts deliverables, not engineer-hours; child trackers are canonical.
 
 ## Queued Plans and Phase Mirrors
 
@@ -68,7 +68,7 @@ BP-02 is `primary_active`; BP-03 through BP-09 are `design_specified / queued`, 
 
 | Order / ID | Completion | Proposed plan | Required predecessor gates | Bounded outcome / exit | Architecture owner |
 |---|---|---|---|---|---|
-| P0 / BP-02 | 75% | [Durable Runtime and Artifact Foundation](BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md) - active child .05/D4 | BP-01 contracts/build boundary | Runtime-owned run/attempt/command state, audit/outbox, artifact finalization/reservation interface, minimal claim/completion protocol and restart/idempotency proof; no complete graph interpreter claimed | [State/consistency](../Architecture/System/State_and_Consistency.md) |
+| P0 / BP-02 | 78.13% | [Durable Runtime and Artifact Foundation](BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md) - active child .05/D5 | BP-01 contracts/build boundary | Runtime-owned run/attempt/command state, audit/outbox, artifact finalization/reservation interface, minimal claim/completion protocol and restart/idempotency proof; no complete graph interpreter claimed | [State/consistency](../Architecture/System/State_and_Consistency.md) |
 | P2 / BP-03 | 0% | [Tool Index and Standalone Execution](BP-03%20Tool%20Index%20and%20Standalone%20Execution.md) | BP-01; BP-02 claim/artifact protocols | Versioned descriptors and deployment inventory, standalone synthetic tools, shared execution SDK, exact-version routing, two-worker claim/fence proof; narrow solvency reuse only after applicability review | [Tool services](../Architecture/Capabilities/Tool_Services.md), [catalog](../Architecture/Capabilities/Catalog.md) |
 | P3 / BP-04 | 0% | [Deterministic Graph Runner](BP-04%20Deterministic%20Graph%20Runner.md) | BP-02 durable state; BP-03 callable tools | Compile and execute typed branch/join/scatter/loop graphs; aggregate committed results; handle scoped failures, external waits, restart and successor campaigns with no LLM required for deterministic control; pass the source-derived v1 solver orchestration scenarios using synthetic adapters | [Graph Runner](../Architecture/System/Graph_Runner.md), [execution model](../Architecture/System/Graph_Execution_Model.md) |
 | P4 / BP-05 | 0% | [Graph Studio First Vertical Slice](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md) | BP-04 runnable fixture and read/command contracts | Inspect actual live/historical execution, evidence, parallel branches and failures; edit next-campaign drafts, compare revisions and observe emergency termination; preserve autonomous progress | [Studio](../Architecture/Experience/Studio.md), [UI rules](../UI_Coding_Guidelines.md) |
@@ -127,6 +127,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-28 12:45:25 | BP-02.05 D4 passed; child 66.67%, V1 80%, parent 78.13%; next D5 | 288 tests/eight builds; both journals, stale-ack fences, replay and exhaustion |
 | 2026-09-28 12:35:03 | BP-02.05 D3 passed; child 50%, V1 60%, parent 75%; next D4 | 278 full tests/eight builds, final 36 scoped; retention proof and bounded recovery |
 | 2026-09-28 12:23:58 | BP-02.05 D2 passed; child 33.33%, V1 40%, parent 71.88%; next D3 | 270 tests/eight builds; atomic acceptance/rollback, retry and independent branches |
 | 2026-09-28 12:13:10 | BP-02.05 D1 passed; child 16.67%, V1 20%, parent 68.75%; next D2 | 259 tests/eight builds; immutable intent and partial reservation recovery |
@@ -151,6 +152,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-23 19:55:48 | BP-01 complete: 39 tests, four independent wheel installs, strict schema/API boundary and replacement docs; archived after scoped audit | [Plan](Completed/BP-01%20Contract%20and%20Service%20Foundations.md), [audit](../Audits/BP-01_Foundation_Closeout.md) |
 | 2026-09-23 11:04:44 | Expanded MBT into initial program dashboard with nine queued planning areas, dependency gates, four milestones and exact next planning task; implementation unactivated | This tracker; [plan template](../Templates/Build%20Plan%20Template.md) |
 | 2026-09-23 09:51:08 | High-level specs/supporting references relocated into Architecture/Requirements; links and PDF preservation checked | [Requirements guide](../Architecture/Requirements/README.md) |
-| 2026-09-23 09:48:47 | Graph Runner coordination/aggregation/supervision and durable LLM decision protocol documented; architecture only | [Graph Runner](../Architecture/System/Graph_Runner.md) |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

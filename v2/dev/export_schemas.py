@@ -36,6 +36,8 @@ for name, model in {
     "receipt": runtime_contracts.CommandReceipt,
     "claim-response": runtime_contracts.ClaimResponse,
     "run-snapshot": runtime_contracts.RunSnapshot,
+    "notification": runtime_contracts.RuntimeNotification,
+    "delivery-acknowledgement": runtime_contracts.DeliveryAcknowledgement,
 }.items():
     MODELS["runtime." + name] = model
 for name, model in {

@@ -180,3 +180,5 @@ The preliminary 34-child-delivery denominator included pure design gates S1 and 
 | 2026-09-22 21:03:27 | Initial internal/demo autonomous profile and replaceable-module boundaries recorded; owner questions answered, no runtime activated | [Delivery profile](../Architecture/Requirements/Product_Requirements.md#initial-delivery-profile), [module template](../Templates/Module%20README%20Template.md) |
 
 | 2026-09-23 09:41:20 | Strict service isolation and proposed independently replicated tool workloads; source layout/state boundaries refined, no deployment | [Isolation](../Architecture/System/Service_Isolation.md), [tool services](../Architecture/Capabilities/Tool_Services.md) |
+
+| 2026-09-23 09:48:47 | Graph Runner coordination/aggregation/supervision and durable LLM decision protocol documented; architecture only | [Graph Runner](../Architecture/System/Graph_Runner.md) |
