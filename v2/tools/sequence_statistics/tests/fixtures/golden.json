@@ -1,0 +1,28 @@
+{
+  "input": {
+    "sequence": "ABACA",
+    "alphabet": "ABCD"
+  },
+  "output": {
+    "schema_version": "1",
+    "length": 5,
+    "counts": [
+      {
+        "symbol": "A",
+        "count": 3
+      },
+      {
+        "symbol": "B",
+        "count": 1
+      },
+      {
+        "symbol": "C",
+        "count": 1
+      },
+      {
+        "symbol": "D",
+        "count": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "alphabet": {
+      "maxLength": 62,
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9]+$",
+      "title": "Alphabet",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "1",
+      "default": "1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "sequence": {
+      "maxLength": 65536,
+      "pattern": "^[A-Za-z0-9]*$",
+      "title": "Sequence",
+      "type": "string"
+    }
+  },
+  "required": [
+    "sequence",
+    "alphabet"
+  ],
+  "title": "SequenceInput",
+  "type": "object"
+}

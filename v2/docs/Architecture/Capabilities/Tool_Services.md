@@ -1,8 +1,8 @@
 # Independently Deployable Tool Services
 
-- Design status: recommended service-per-tool model; standalone tool SDK/workloads and selected-cluster acceptance pending
+- Design status: service-per-tool boundaries and initial SDK/tool packages implemented; expanded execution/replacement and selected-cluster acceptance pending
 - Last reviewed: `2026-09-23 09:41:20` (America/Chicago)
-- Implementation boundary: BP-03.01/.02 descriptor policy, durable registry discovery/inventory and replacement accepted; actual standalone tool SDK/replicas remain BP-03.03/.04. This document retains the broader intended design.
+- Implementation boundary: BP-03.01/.02 descriptor policy, durable registry discovery/inventory and replacement accepted; BP-03.03/B1 supplies the explicit public sdk/tool_protocol and separate numeric/sequence 0.2.0 packages. Actual tool-owner execution/replacement and replicas remain .03/.04 acceptance. This document retains the broader intended design.
 - Parent: [Scientific Capability Platform](Capability_Architecture.md)
 - Scope: standalone packaging, common invocation protocol, indexing and replica lifecycle
 

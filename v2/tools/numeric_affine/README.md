@@ -1,0 +1,29 @@
+# Numeric Affine Tool
+
+- Status: BP-03.03/B1 standalone package, kernel, schemas, descriptor and worker adapter implemented; expanded failure/installed peer acceptance remains B2/B3/V1.
+- Package/release: `amphora-numeric-affine` 0.2.0; wire payload version 1.
+- Architecture: [tool services](../../docs/Architecture/Capabilities/Tool_Services.md).
+
+Computes `a*x+b` for each of up to 1024 numeric values, preserving input order. Coefficients and inputs are finite and bounded to magnitude 1e100; outputs must be finite. Empty vectors are valid. Negative and zero coefficients have explicit golden tests. Malformed, nonfinite, boolean, string-coerced or out-of-bound parameters report `invalid_numeric_parameters` through the worker adapter.
+
+The `payloads` module owns boundary DTOs. The `kernel` owns domain behavior and has no runtime/client imports. `adapter` maps tool-local failures to safe execution reason codes. `metadata` owns exact published input/output schema bytes and a release descriptor template. The template is deliberately incomplete without an externally supplied image SHA-256: `describe --image-sha256 <actual-image-digest>` produces the versioned descriptor after an image build. Wheel/source hashes are not image hashes. Earlier 0.1.0 contract fixtures are synthetic metadata only; this 0.2.0 release does not rewrite their payload or release identities.
+
+The package imports only its own code, Pydantic, public contracts and the explicitly public worker SDK. It owns no database or durable execution state. It cannot create graph work, decide scientific acceptance, modify knowledge, choose retry attempts or access another service's private implementation. Applicability is synthetic-tests only. These results establish numerical/string behavior, not biological, chemical or materials validity. The pure-tool egress declaration concerns tool-specific external effects; authenticated runtime/artifact protocol endpoints are configured infrastructure dependencies.
+
+## Executable Boundary
+
+`python -m amphora_numeric_affine compute` consumes a bounded JSON payload on stdin and writes the versioned result to stdout. `describe --image-sha256 <digest>` prints a descriptor with actual packaged schema digests. `worker --config <path>` attempts one eligible invocation in an explicitly named run through public owner APIs. No eligible work returns that observation; it does not admit or invent work. A supervisor owns repeated polling/replicas. Invalid CLI input produces a bounded safe error without echoing the payload.
+
+Worker configuration contains actor_id, scope, run_id, image_sha256, runtime/artifacts endpoint plus token_env, optional lease_seconds (10..300, default 30) and max_clock_skew_seconds (0..5, default 1). Credential values come only from named environment variables. The SDK currently accepts HTTPS or same-host loopback HTTP. The configured image identity is a deployment assertion, not self-attestation. Local wheel tests prove package/protocol compatibility; deployment must separately verify the actual image/platform. The supplied descriptor template targets Linux x86_64; ARM/target-host validation remains BP-09.
+
+The SDK renews at stage boundaries, verifies the current attempt/fence and limits local authority conservatively using monotonic time and a configured clock-skew allowance. These kernels have bounded small inputs; long-running scientific kernels need a reviewed renewal/cancellation execution profile before reuse. A cancelled/expired attempt may leave provisional bytes, but cannot obtain accepted completion. Interrupted streams are not blindly replayed or assumed finalized; durable owner receipts govern command recovery. An ambiguous completion is never followed by a contradictory failure report.
+
+## Packaging and Replacement
+
+Each package has its own manifest, lockfile, versioned schema files, descriptor template, tests and Dockerfile. Build the wheel independently. The image recipe consumes an offline `wheels/` directory containing this package and only its locked declared dependency closure, and requires a digest-pinned Python 3.12 base via PYTHON_BASE. It runs as UID/GID 65532. Record the resulting image identity and then finalize the descriptor externally; embedding an image's own digest in its source would create a circular build identity. No image build or target-hardware result is claimed by the recipe alone.
+
+Run `uv run --project v2/dev --locked python v2/dev/run_tests.py --module numeric-affine --coverage`. `tests/kernel/` owns numerical/domain and schema/CLI checks; `tests/fixtures/golden.json` is the independent language-neutral oracle. Foundation isolated installs check that service implementations, scientific libraries and the sibling tool are absent. Schema bytes use UTF-8/LF, and tests reject drift from the owned DTOs. CLI subprocess coverage is separate from in-process coverage. B3/V1 add actual independent worker/peer recovery and replacement evidence before closeout.
+
+A replacement preserves exact schemas, pure behavior, error vocabulary, input/output port binding, deterministic ordering and replay/fence semantics. Changed behavior/schema/image creates a new immutable release; never overwrite an already registered release. Scratch may be discarded; accepted artifacts, receipts and provenance remain owned by runtime/artifact services.
+
+B1 coverage checkpoint: 14 module tests; 48% combined line/branch over 83 statements/12 branches; kernel 89%, payload DTOs 100%. CLI subprocess golden/invalid cases pass but are not included in in-process coverage. Adapter and remaining client/failure branches are explicit B2/B3 work. [Configuration example](config.example.json) deliberately has an invalid image placeholder; supply the verified deployment identity. Runtime grants are claim/renew/complete/read; artifact grants are upload/finalize/read. These worker credentials must not grant admission or administrative work creation.

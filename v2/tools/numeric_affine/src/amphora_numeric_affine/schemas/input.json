@@ -1,0 +1,40 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "a": {
+      "maximum": 1e+100,
+      "minimum": -1e+100,
+      "title": "A",
+      "type": "number"
+    },
+    "b": {
+      "maximum": 1e+100,
+      "minimum": -1e+100,
+      "title": "B",
+      "type": "number"
+    },
+    "schema_version": {
+      "const": "1",
+      "default": "1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "values": {
+      "items": {
+        "maximum": 1e+100,
+        "minimum": -1e+100,
+        "type": "number"
+      },
+      "maxItems": 1024,
+      "title": "Values",
+      "type": "array"
+    }
+  },
+  "required": [
+    "values",
+    "a",
+    "b"
+  ],
+  "title": "AffineInput",
+  "type": "object"
+}

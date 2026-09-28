@@ -10,7 +10,7 @@ THIRD_PARTY = {"pydantic": "pydantic", "fastapi": "fastapi", "uvicorn": "uvicorn
 
 
 def project_specs(root: Path = ROOT):
-    for parent in (root / "contracts", root / "services", root / "tools"):
+    for parent in (root / "contracts", root / "services", root / "tools", root / "sdk"):
         if parent.exists():
             for manifest in sorted(parent.glob("*/pyproject.toml")):
                 config = tomllib.loads(manifest.read_text(encoding="utf-8"))
@@ -69,7 +69,8 @@ def source_violations(
 
 def check(root: Path = ROOT) -> list[str]:
     specs = list(project_specs(root))
-    contracts = {module for path, _, module in specs if path.parent.name == "contracts"}
+    contracts = {module for path, cfg, module in specs if path.parent.name == "contracts"
+                 or (path.parent.name == "sdk" and cfg.get("tool", {}).get("amphora", {}).get("public-client") is True)}
     edges = {}
     errors = []
     for path, config, owner in specs:

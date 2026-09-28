@@ -55,6 +55,18 @@
       "services/data_artifacts/src/amphora_data_artifacts"
     ]
   },
+  "worker-sdk": {
+    "tests": "sdk/tool_protocol/tests",
+    "coverage_sources": ["sdk/tool_protocol/src/amphora_tool_protocol"]
+  },
+  "numeric-affine": {
+    "tests": "tools/numeric_affine/tests",
+    "coverage_sources": ["tools/numeric_affine/src/amphora_numeric_affine"]
+  },
+  "sequence-statistics": {
+    "tests": "tools/sequence_statistics/tests",
+    "coverage_sources": ["tools/sequence_statistics/src/amphora_sequence_statistics"]
+  },
   "registry": {
     "tests": "services/capability_registry/tests",
     "coverage_sources": [

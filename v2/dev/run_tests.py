@@ -14,7 +14,7 @@ SCOPES = json.loads((ROOT / "dev/test_scopes.json").read_text())
 def ownership_issues(root=ROOT, scopes=SCOPES):
     issues = []
     owners = [root / item["tests"] for item in scopes.values()]
-    for folder in ("contracts", "services", "tools", "dev/tests"):
+    for folder in ("contracts", "services", "tools", "sdk", "dev/tests"):
         for path in (root / folder).rglob("test_*.py"):
             if any(part.startswith(".") for part in path.relative_to(root).parts):
                 continue
@@ -30,12 +30,13 @@ def ownership_issues(root=ROOT, scopes=SCOPES):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--module", choices=sorted(SCOPES))
-    parser.add_argument("--area", choices=["graph", "admission", "api", "baseline", "persistence", "lifecycle", "completion", "delivery", "inspection", "publication", "storage", "retention", "maintenance", "acceptance", "descriptors", "routing"])
+    parser.add_argument("--area", choices=["graph", "admission", "api", "baseline", "persistence", "lifecycle", "completion", "delivery", "inspection", "publication", "storage", "retention", "maintenance", "acceptance", "descriptors", "routing", "transport"])
     parser.add_argument("--coverage", action="store_true")
     args, pytest_args = parser.parse_known_args()
     areas = {"runtime": {"graph", "admission", "api", "baseline", "persistence", "lifecycle", "completion", "delivery", "inspection", "acceptance"},
              "data-artifacts": {"persistence", "publication", "storage", "retention", "maintenance", "acceptance"},
-             "registry": {"descriptors", "persistence", "api", "routing"}}
+             "registry": {"descriptors", "persistence", "api", "routing"},
+             "worker-sdk": {"transport", "lifecycle"}}
     if args.area and args.area not in areas.get(args.module, set()):
         parser.error("--area must belong to the selected module")
     findings = ownership_issues()

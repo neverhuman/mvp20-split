@@ -5,6 +5,7 @@
 
 # Published schema manifests hash the exact UTF-8/LF bytes across platforms.
 /v2/contracts/schemas/**/*.json text eol=lf
+/v2/tools/**/schemas/*.json text eol=lf
 
 # These historical text fixtures intentionally retain original line endings.
 /v1/amphora-design-rule-score/reference/purformance/zenodo-13742098/Evaluation.LICENSE.txt.headers -text

@@ -9,13 +9,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-03 primary active; BP-04 through BP-09 queued; BP-01/BP-01A/BP-02 closed.
-- Last refreshed: `2026-09-28 15:36:38` (America/Chicago).
+- Last refreshed: `2026-09-28 15:58:51` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P2 / BP-03 - tool index and standalone execution.
-- Primary active implementation plan / phase / task: BP-03 -> BP-03.03 / Build / B1.
-- Current task: BP-03.03/B1 SDK/tool packages; artifact receipt/schema consumer prerequisites passed, full B1 exit pending.
-- Next task: BP-03.03 B2 exact-attempt lifecycle and kernel behavior.
-- Implementation completion: BP-02 closed at 100% (32/32); BP-03 50% (8/16), .01/.02 closed 100%, .03 0%; BP-04..09 remain 0%. No effort estimate inferred.
+- Primary active implementation plan / phase / task: BP-03 -> BP-03.03 / Build / B2.
+- Current task: BP-03.03/B2 exact-attempt lifecycle, error policy and client failure cases.
+- Next task: BP-03.03/B3 actual independent tool execution and failure/recovery proof.
+- Implementation completion: BP-02 closed at 100% (32/32); BP-03 56.25% (9/16), .01/.02 closed 100%, .03 25% (Build 33.33%, Acceptance 0%); BP-04..09 remain 0%. No effort estimate inferred.
 - Active focus: extend the proven execution contracts into an indexed, independently replaceable tool universe.
 - Blockers: no current user decision or implementation blocker; later host/provider/scientific gates remain explicit.
 - Acceptance posture: durable synthetic invocations, actual peer retention, process recovery and fresh service replacement verified; no interpreter/scientific acceptance claimed.
@@ -35,11 +35,11 @@ BP-03 is the sole primary active plan. Child trackers own delivery evidence; com
 
 | Parent | Implementation | P1 Identity | P2 Registry | P3 Worker/tools | P4 Replicas |
 |---|---:|---:|---:|---:|---:|
-| [BP-03](BP-03%20Tool%20Index%20and%20Standalone%20Execution.md) | 50% (8/16) | 100% | 100% | 0% | 0% |
+| [BP-03](BP-03%20Tool%20Index%20and%20Standalone%20Execution.md) | 56.25% (9/16) | 100% | 100% | 25% | 0% |
 
 | Active canonical child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-03.03](BP-03/BP-03.03%20Worker%20protocol%20and%20independent%20tools.md) | 0% | 0% | 0% | B1 client/tool boundaries |
+| [BP-03.03](BP-03/BP-03.03%20Worker%20protocol%20and%20independent%20tools.md) | 25% | 33.33% | 0% | B2 attempt/lifecycle behavior |
 
 BP-02 is [closed at 32/32](Completed/BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md); its [history](Completed/BP-02%20History.md) preserves the explicit design/implementation rebaseline. New parent progress counts its own child deliveries once.
 
@@ -125,6 +125,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-28 15:58:51 | BP-03.03 B1 passed; child 25%, parent 56.25% (9/16); next B2 | 529 tests/twelve builds/REC-01..09; isolated SDK and two actual standalone kernels with distinct payload schemas |
 | 2026-09-28 15:36:38 | BP-03.03 B1 artifact prerequisites verified; child 0%, parent 50% unchanged | 478 tests/nine builds/REC-01..09; receipt-first publication recovery and trusted typed schemas |
 | 2026-09-28 15:17:41 | BP-03.02 closed/audited 100%; parent 50% (8/16); .03 B1 active at 0% | 448 tests/nine builds; actual registry HTTP replacement and preserved race evidence; [audit](../Audits/BP-03.02_Registry_Closeout.md) |
 | 2026-09-28 14:49:59 | BP-03.02 B2 passed; child 50%, parent 37.50%; next B3 | 114 registry tests/96% expanded coverage; real expiry, replay, lifecycle and exact-version capacity policy |
@@ -149,6 +150,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-28 11:28:20 | BP-02.04 I3 passed; child 50%, V1 60%, parent 56.25%; next I4 | Two-process claims/live-clock renewal; 224 tests/eight builds |
 | 2026-09-28 11:18:55 | BP-02.04 I2 passed; child 33.33%, V1 40%, parent 53.13%; next I3 | Admission contention/replay/rollback; 218 tests/eight builds |
 | 2026-09-28 11:11:49 | BP-02.04 I1 passed; child 16.67%, V1 20%, parent 50%; next I2 | 21 pure policy tests; full gate 209/eight builds |
-| 2026-09-28 11:05:08 | BP-02.03 closed/audited at 100%; parent 46.88%; .04 I1 activated | 188 tests/eight independent builds; installed HTTP artifact acceptance |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

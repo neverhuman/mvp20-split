@@ -219,6 +219,9 @@ dependencies = [
     { name = "amphora-contracts-runtime" },
     { name = "amphora-contracts-tools" },
     { name = "amphora-data-artifacts" },
+    { name = "amphora-numeric-affine" },
+    { name = "amphora-sequence-statistics" },
+    { name = "amphora-tool-protocol" },
     { name = "httpx" },
     { name = "jsonschema", extra = ["format-nongpl"] },
     { name = "pytest" },
@@ -237,11 +240,75 @@ requires-dist = [
     { name = "amphora-contracts-runtime", editable = "../contracts/runtime" },
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },
     { name = "amphora-data-artifacts", editable = "../services/data_artifacts" },
+    { name = "amphora-numeric-affine", editable = "../tools/numeric_affine" },
+    { name = "amphora-sequence-statistics", editable = "../tools/sequence_statistics" },
+    { name = "amphora-tool-protocol", editable = "../sdk/tool_protocol" },
     { name = "httpx", specifier = ">=0.28,<1" },
     { name = "jsonschema", extras = ["format-nongpl"], specifier = ">=4.23,<5" },
     { name = "pytest", specifier = ">=8,<9" },
     { name = "pytest-cov", specifier = ">=6,<8" },
     { name = "ruff", specifier = ">=0.11,<1" },
+]
+
+[[package]]
+name = "amphora-numeric-affine"
+version = "0.2.0"
+source = { editable = "../tools/numeric_affine" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-tools" },
+    { name = "amphora-tool-protocol" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-tools", editable = "../contracts/tools" },
+    { name = "amphora-tool-protocol", editable = "../sdk/tool_protocol" },
+    { name = "pydantic", specifier = ">=2.11,<3" },
+]
+
+[[package]]
+name = "amphora-sequence-statistics"
+version = "0.2.0"
+source = { editable = "../tools/sequence_statistics" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-tools" },
+    { name = "amphora-tool-protocol" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-tools", editable = "../contracts/tools" },
+    { name = "amphora-tool-protocol", editable = "../sdk/tool_protocol" },
+    { name = "pydantic", specifier = ">=2.11,<3" },
+]
+
+[[package]]
+name = "amphora-tool-protocol"
+version = "0.1.0"
+source = { editable = "../sdk/tool_protocol" }
+dependencies = [
+    { name = "amphora-contracts-artifacts" },
+    { name = "amphora-contracts-commands" },
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-runtime" },
+    { name = "amphora-contracts-tools" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-artifacts", editable = "../contracts/artifacts" },
+    { name = "amphora-contracts-commands", editable = "../contracts/commands" },
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-runtime", editable = "../contracts/runtime" },
+    { name = "amphora-contracts-tools", editable = "../contracts/tools" },
+    { name = "pydantic", specifier = ">=2.11,<3" },
 ]
 
 [[package]]

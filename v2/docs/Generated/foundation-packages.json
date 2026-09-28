@@ -91,5 +91,40 @@
       "amphora-contracts-core",
       "amphora-contracts-artifacts"
     ]
+  },
+  {
+    "package": "amphora-numeric-affine",
+    "version": "0.2.0",
+    "path": "tools/numeric_affine",
+    "module": "amphora_numeric_affine",
+    "public_dependencies": [
+      "amphora-contracts-core",
+      "amphora-contracts-tools",
+      "amphora-tool-protocol"
+    ]
+  },
+  {
+    "package": "amphora-sequence-statistics",
+    "version": "0.2.0",
+    "path": "tools/sequence_statistics",
+    "module": "amphora_sequence_statistics",
+    "public_dependencies": [
+      "amphora-contracts-core",
+      "amphora-contracts-tools",
+      "amphora-tool-protocol"
+    ]
+  },
+  {
+    "package": "amphora-tool-protocol",
+    "version": "0.1.0",
+    "path": "sdk/tool_protocol",
+    "module": "amphora_tool_protocol",
+    "public_dependencies": [
+      "amphora-contracts-core",
+      "amphora-contracts-commands",
+      "amphora-contracts-runtime",
+      "amphora-contracts-artifacts",
+      "amphora-contracts-tools"
+    ]
   }
 ]

@@ -2,16 +2,16 @@
 
 ## Current Checkpoint
 
-- Last refreshed: `2026-09-28 15:36:38` (America/Chicago).
+- Last refreshed: `2026-09-28 15:58:51` (America/Chicago).
 - Workspace: v2 active; v1 frozen. External references require task-specific authorization.
-- Canonical position: BP-03 -> [BP-03.03](docs/Build%20Plans/BP-03/BP-03.03%20Worker%20protocol%20and%20independent%20tools.md) / Build / B1 SDK/tool boundaries; next B2 attempt/lifecycle behavior.
-- Progress: BP-02 closed 100% (32/32). BP-03 50% (8/16), .01/.02 closed/audited 100%, .03 0% (Build 0%, Acceptance 0%); BP-04..09 0%.
-- Latest work: .03 B1 artifact prerequisites passed: authenticated original publication receipts and trusted hash-bound JSON Schema profiles. SDK and actual tool packages remain pending; B1 is not complete. .02 remains closed/audited.
-- Evidence: 478 tests/lint/import/schema gates, 58 focused publication cases, 102 schema artifacts, nine independent packages, fresh registry/runtime/artifact replacement and REC-01..09 passed. Latest recovery scope f9718e8e2cf345d684dd34c269774b67 (ignored); earlier closeout evidence remains preserved. Registry closeout coverage remains 93% of 829 statements/224 branches, independent subprocess evidence separate.
+- Canonical position: BP-03 -> [BP-03.03](docs/Build%20Plans/BP-03/BP-03.03%20Worker%20protocol%20and%20independent%20tools.md) / Build / B2 exact-attempt lifecycle/failure policy; next B3 actual independent process/image recovery.
+- Progress: BP-02 closed 100% (32/32). BP-03 56.25% (9/16), .01/.02 closed/audited 100%, .03 25% (Build 33.33%, Acceptance 0%); BP-04..09 0%.
+- Latest work: .03 B1 accepted: explicit public worker SDK, independently packaged numeric-affine/sequence-statistics 0.2.0 kernels, schemas/descriptors/adapters/locks/recipes and isolated installed CLI proof. Typed artifact prerequisites were pushed as 254d419.
+- Evidence: 529 tests/lint/import/schema gates, twelve independent packages, fresh registry/runtime/artifact replacement and REC-01..09 passed (scope 6b88a870ac7844e3b71e5d9c3b0b4e37, ignored). SDK coverage 72% of 363 statements/94 branches; numeric 48% of 83/12 and sequence 50% of 95/16 with separate CLI subprocess evidence. New worker-to-owner execution/image/replacement proof is still pending B3/V1.
 - Authority: autonomous continuation and significant commit/push checkpoints authorized. No current user blocker; later scientific/provider/host gates remain explicit.
 - Environment: Python 3.12, uv, labeled PostgreSQL 17.11 fixture. Dynamic credentials only in ignored .test-results/postgres-fixture.json. Registry has separate migration/service roles; registry_owner only extends labeled fixture. Set AMPHORA_TEST_POSTGRES=1; never publish credentials or reset concurrently with tests.
-- Git: 9d05222 pushed; .03 B1 artifact prerequisite checkpoint verified for commit/push. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
-- B1 handoff: create sdk/tool_protocol plus independently packaged numeric_affine/sequence_statistics tools. SDK owns public transport/lifecycle only; tools own schemas/kernels. Artifact prerequisites now implemented without peer/scientific imports. Extend package/test inventories for explicit SDK imports. Read current attempt snapshot after renewal because expiry may be capped by activation deadline. Actual image identity must remain distinct from wheel/source hashes. No scientific/provider/target-host claim.
+- Git: 254d419 pushed; .03 B1 delivery verified for commit/push. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
+- B2 handoff: extend SDK typed-client negative/projection checks, terminal versus retryable publication failures, safe tool-specific reason codes, direct clock/lease argument bounds and configured CLI error behavior. Keep exact attempt/fence and receipt-first recovery. ToolAttemptContext renews at bounded pure-kernel stages and reads the current snapshot after each renewal; local clock-skew allowance is explicit. B3/V1 must prove actual separate workers/owners and replacement. Image recipe/template is not image evidence; actual digest remains distinct from wheel/source hashes.
 - Limits: general interpreter, actual scientific tools/evidence, model/knowledge/Studio and host backup/power-loss remain later plans. Existing test-client warning and pre-existing v1/LICENSE manifest discrepancy remain nonblocking assigned maintenance. Recovery operating boundary: services/campaign_runtime/RECOVERY.md.
 
 ## Decomposition and Resume Discipline

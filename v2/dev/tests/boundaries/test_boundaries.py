@@ -36,3 +36,11 @@ def test_declared_public_contract_and_owner_internal_imports_allowed():
 
 def test_current_production_dependencies():
     assert check() == []
+
+
+def test_public_client_root_is_explicit_and_private_modules_remain_forbidden():
+    public = {"amphora_tool_protocol"}
+    deps = {"amphora-tool-protocol"}
+    assert not source_violations("from amphora_tool_protocol import RuntimeClient", "amphora_numeric_affine", public, deps, deps)
+    assert source_violations("from amphora_tool_protocol.clients import RuntimeClient", "amphora_numeric_affine", public, deps, deps) == ["private_contract_import"]
+    assert source_violations("from amphora_tool_protocol import RuntimeClient", "amphora_numeric_affine", public, deps, set()) == ["undeclared_contract_dependency"]

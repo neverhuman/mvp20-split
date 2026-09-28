@@ -1,0 +1,58 @@
+{
+  "$defs": {
+    "SymbolCount": {
+      "additionalProperties": false,
+      "properties": {
+        "count": {
+          "maximum": 65536,
+          "minimum": 0,
+          "title": "Count",
+          "type": "integer"
+        },
+        "symbol": {
+          "maxLength": 1,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9]$",
+          "title": "Symbol",
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol",
+        "count"
+      ],
+      "title": "SymbolCount",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "counts": {
+      "items": {
+        "$ref": "#/$defs/SymbolCount"
+      },
+      "maxItems": 62,
+      "minItems": 1,
+      "title": "Counts",
+      "type": "array"
+    },
+    "length": {
+      "maximum": 65536,
+      "minimum": 0,
+      "title": "Length",
+      "type": "integer"
+    },
+    "schema_version": {
+      "const": "1",
+      "default": "1",
+      "title": "Schema Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "length",
+    "counts"
+  ],
+  "title": "SequenceOutput",
+  "type": "object"
+}

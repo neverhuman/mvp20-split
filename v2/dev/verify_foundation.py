@@ -74,12 +74,29 @@ def independent_builds(uv):
                 probe += "from amphora_campaign_runtime.api import create_app; assert '/v1/campaign-definitions/validate' in create_app().openapi()['paths']; "
             elif module == "amphora_capability_registry":
                 probe += "from amphora_capability_registry.descriptors.identity import ReleaseDocument; assert importlib.util.find_spec('amphora_campaign_runtime') is None; assert importlib.util.find_spec('amphora_data_artifacts') is None; "
+            if project.parent.name in {"sdk", "tools"}:
+                for absent in ("sqlalchemy", "fastapi", "amphora_campaign_runtime", "amphora_data_artifacts", "amphora_capability_registry"):
+                    probe += f"assert importlib.util.find_spec('{absent}') is None; "
+            if project.parent.name == "tools":
+                for sibling in ("amphora_numeric_affine", "amphora_sequence_statistics"):
+                    if sibling != module:
+                        probe += f"assert importlib.util.find_spec('{sibling}') is None; "
             if module in {"amphora_campaign_runtime", "amphora_data_artifacts"}:
                 peer_module = "amphora_data_artifacts" if module == "amphora_campaign_runtime" else "amphora_campaign_runtime"
                 probe += f"assert importlib.util.find_spec('{peer_module}') is None; "
                 probe += f"from importlib.resources import files; migration = files('{module}').joinpath('persistence/migrations/versions'); assert any(p.name.endswith('.sql') for p in migration.iterdir()); "
             probe += "assert importlib.util.find_spec('torch') is None; assert importlib.util.find_spec('rdkit') is None"
             run([python, "-I", "-c", probe], cwd=root)
+            if project.parent.name == "tools":
+                golden = json.loads((project / "tests/fixtures/golden.json").read_bytes())
+                checked = subprocess.run([str(python), "-I", "-m", module, "compute"], cwd=root,
+                    input=json.dumps(golden["input"]), text=True, capture_output=True, timeout=20)
+                if checked.returncode or json.loads(checked.stdout) != golden["output"]:
+                    raise SystemExit("Installed tool golden behavior failed: " + module)
+                release = json.loads(run([python, "-I", "-m", module, "describe", "--image-sha256", "c" * 64], cwd=root))
+                if release["tool"]["binding"]["release"] != "0.2.0" or release["authority_ceiling"] != "synthetic_only":
+                    raise SystemExit("Installed tool descriptor mismatch: " + module)
+                print(f"Installed standalone tool kernel/schema/descriptor passed: {module}; test-only image pin")
             if module in {"amphora_data_artifacts", "amphora_campaign_runtime"} and os.environ.get("AMPHORA_TEST_POSTGRES") == "1":
                 from postgres_fixture import owned_state
                 from sqlalchemy import URL
@@ -186,6 +203,8 @@ def main():
                 ROOT / "dev/pyproject.toml",
                 ROOT / "contracts",
                 ROOT / "services",
+                ROOT / "sdk",
+                ROOT / "tools",
                 ROOT / "dev",
             ]
         ).strip()

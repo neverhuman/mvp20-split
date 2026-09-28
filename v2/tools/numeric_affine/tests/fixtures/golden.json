@@ -1,0 +1,19 @@
+{
+  "input": {
+    "values": [
+      -1,
+      0,
+      1
+    ],
+    "a": -2,
+    "b": 3
+  },
+  "output": {
+    "schema_version": "1",
+    "values": [
+      5,
+      3,
+      1
+    ]
+  }
+}

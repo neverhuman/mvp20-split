@@ -1,0 +1,19 @@
+{
+  "actor_id": "worker",
+  "scope": {
+    "tenant_id": "example",
+    "project_id": "demo"
+  },
+  "run_id": "REPLACE_WITH_ADMITTED_RUN",
+  "image_sha256": "REPLACE_WITH_BUILT_IMAGE_SHA256",
+  "runtime": {
+    "endpoint": "http://127.0.0.1:8080",
+    "token_env": "AMPHORA_WORKER_RUNTIME_TOKEN"
+  },
+  "artifacts": {
+    "endpoint": "http://127.0.0.1:8081",
+    "token_env": "AMPHORA_WORKER_ARTIFACT_TOKEN"
+  },
+  "lease_seconds": 30,
+  "max_clock_skew_seconds": 1.0
+}
