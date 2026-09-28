@@ -10,4 +10,6 @@ Independent Python packages expose public imports, versioned wire schemas and la
 
 Each package owns a manifest and lockfile. Consumers import the package's public root, not `models` internals. Release packaging uses normal declared wheel dependencies; local uv path sources are only development resolution. Scientific applicability, permission, durable acceptance and execution are outside these DTOs. See [Contract Architecture](../docs/Architecture/System/Contract_Architecture.md).
 
-BP-02.01 adds independently packaged [command encoding](commands/README.md), [runtime wire contracts](runtime/README.md) and [artifact wire contracts](artifacts/README.md). Publication now contains 52 input/output schemas. Existing 18 schema hashes are unchanged. No live persistence authority is implied.
+BP-02 adds independently packaged [command encoding](commands/README.md), [runtime wire contracts](runtime/README.md) and [artifact wire contracts](artifacts/README.md). The generated manifest owns current schema counts and hashes. No live persistence authority is implied by schema validity.
+
+BP-03.01 adds separate tool release descriptor, immutable lock, registration payload/receipt and independent eligibility-observation roots. Existing invocation/completion/descriptor roots stay unchanged. Canonical metadata and transport examples are split into `fixtures/v1/tool_releases.json` and `tool_release_messages.json`; registry-owned policy and persistence remain outside this package.

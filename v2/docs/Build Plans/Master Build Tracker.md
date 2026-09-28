@@ -9,13 +9,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-03 primary active; BP-04 through BP-09 queued; BP-01/BP-01A/BP-02 closed.
-- Last refreshed: `2026-09-28 13:45:17` (America/Chicago).
+- Last refreshed: `2026-09-28 13:58:28` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P2 / BP-03 - tool index and standalone execution.
-- Primary active implementation plan / phase / task: BP-03 -> BP-03.01 / Build / B1.
-- Current task: versioned descriptor, eligibility and immutable lock boundary.
-- Next task: BP-03.01 B2 descriptor validation and policy.
-- Implementation completion: BP-02 closed at 100% (32/32); BP-03 0% (0/16), .01 0%; BP-04..09 remain 0%. No effort estimate inferred.
+- Primary active implementation plan / phase / task: BP-03 -> BP-03.01 / Build / B2.
+- Current task: descriptor semantic validation and independent policy observations.
+- Next task: BP-03.01 B3 independent failure oracles.
+- Implementation completion: BP-02 closed at 100% (32/32); BP-03 6.25% (1/16), .01 25%; BP-04..09 remain 0%. No effort estimate inferred.
 - Active focus: extend the proven execution contracts into an indexed, independently replaceable tool universe.
 - Blockers: no current user decision or implementation blocker; later host/provider/scientific gates remain explicit.
 - Acceptance posture: durable synthetic invocations, actual peer retention, process recovery and fresh service replacement verified; no interpreter/scientific acceptance claimed.
@@ -35,11 +35,11 @@ BP-03 is the sole primary active plan. Child trackers own delivery evidence; com
 
 | Parent | Implementation | P1 Identity | P2 Registry | P3 Worker/tools | P4 Replicas |
 |---|---:|---:|---:|---:|---:|
-| [BP-03](BP-03%20Tool%20Index%20and%20Standalone%20Execution.md) | 0% (0/16) | 0% | 0% | 0% | 0% |
+| [BP-03](BP-03%20Tool%20Index%20and%20Standalone%20Execution.md) | 6.25% (1/16) | 25% | 0% | 0% | 0% |
 
 | Active canonical child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-03.01](BP-03/BP-03.01%20Identity%20and%20descriptor%20contracts.md) | 0% | 0% | 0% | B1 descriptor identity boundary |
+| [BP-03.01](BP-03/BP-03.01%20Identity%20and%20descriptor%20contracts.md) | 25% | 33.33% | 0% | B2 validation/policy |
 
 BP-02 is [closed at 32/32](Completed/BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md); its [history](Completed/BP-02%20History.md) preserves the explicit design/implementation rebaseline. New parent progress counts its own child deliveries once.
 
@@ -67,7 +67,7 @@ BP-03 is `primary_active`; BP-04 through BP-09 are `design_specified / queued`. 
 
 | Order / ID | Completion | Proposed plan | Required predecessor gates | Bounded outcome / exit | Architecture owner |
 |---|---|---|---|---|---|
-| P2 / BP-03 | 0% | [Tool Index and Standalone Execution](BP-03%20Tool%20Index%20and%20Standalone%20Execution.md) | BP-01; BP-02 claim/artifact protocols | Versioned descriptors and deployment inventory, standalone synthetic tools, shared execution SDK, exact-version routing, two-worker claim/fence proof; narrow solvency reuse only after applicability review | [Tool services](../Architecture/Capabilities/Tool_Services.md), [catalog](../Architecture/Capabilities/Catalog.md) |
+| P2 / BP-03 | 6.25% | [Tool Index and Standalone Execution](BP-03%20Tool%20Index%20and%20Standalone%20Execution.md) | BP-01; BP-02 claim/artifact protocols | Versioned descriptors and deployment inventory, standalone synthetic tools, shared execution SDK, exact-version routing, two-worker claim/fence proof; narrow solvency reuse only after applicability review | [Tool services](../Architecture/Capabilities/Tool_Services.md), [catalog](../Architecture/Capabilities/Catalog.md) |
 | P3 / BP-04 | 0% | [Deterministic Graph Runner](BP-04%20Deterministic%20Graph%20Runner.md) | BP-02 durable state; BP-03 callable tools | Compile and execute typed branch/join/scatter/loop graphs; aggregate committed results; handle scoped failures, external waits, restart and successor campaigns with no LLM required for deterministic control; pass the source-derived v1 solver orchestration scenarios using synthetic adapters | [Graph Runner](../Architecture/System/Graph_Runner.md), [execution model](../Architecture/System/Graph_Execution_Model.md) |
 | P4 / BP-05 | 0% | [Graph Studio First Vertical Slice](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md) | BP-04 runnable fixture and read/command contracts | Inspect actual live/historical execution, evidence, parallel branches and failures; edit next-campaign drafts, compare revisions and observe emergency termination; preserve autonomous progress | [Studio](../Architecture/Experience/Studio.md), [UI rules](../UI_Coding_Guidelines.md) |
 | P5 / BP-06 | 0% | [Knowledge Evidence and Source Loop](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) | BP-01 contracts; BP-04 execution; BP-05 inspection | Minimal source/document/result ingestion, typed accepted-change replay, pinned knowledge revisions, bounded executable rules and explicit scientific acceptance receipts; demonstrate corrections affect later campaigns | [Knowledge](../Architecture/Knowledge/Knowledge_Architecture.md), [Data](../Architecture/Data/Data_Architecture.md), [experiments](../Architecture/Research/Experiments.md) |
@@ -125,6 +125,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-28 13:58:28 | BP-03.01 B1 passed; child 25%, Build 33.33%, parent 6.25%; next B2 | 331 tests/nine builds/REC-01..09; additive release/lock contracts and immutable byte identity |
 | 2026-09-28 13:45:17 | BP-02.06 and parent closed/audited 100% (32/32); BP-03.01 B1 activated at 0% | 307 final tests; eight builds and REC-01..09 installed recovery/replacement; [audit](../Audits/BP-02_Foundation_Closeout.md) |
 | 2026-09-28 13:36:55 | BP-02.06 R4 passed; child 80%, V1 100%, parent 96.88%; next R5 | 306 tests/eight builds, fresh independent replacement environments; REC-01..09 passed |
 | 2026-09-28 13:31:43 | BP-02.06 R3 passed; child 60%, V1 75%, parent 93.75%; next R4 | 306 tests/eight wheels; REC-01..08 passed, actual worker/delivery/frontier restart |
@@ -149,6 +150,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-25 16:59:22 | BP-02.03 A2 complete; child 20%, V1 25%, parent 34.38%; next A3 | 141 tests, eight independent builds; artifact suite 30, two-process fencing |
 | 2026-09-25 13:54:17 | Amphora Lab insights incorporated into ten BP-05/06/07/08 children; authority, trace, material identity and view tests specified; percentages unchanged | [Reference/ownership map](References/Amphora_Lab_Insights.md) |
 | 2026-09-25 13:40:55 | Roadmap maturation: 34 canonical children added, four open BP-02 children deepened; implementation percentages unchanged | [Planning review](../Audits/Planning_Maturity_Review.md), [readiness/handoffs](Planning_Readiness.md) |
-| 2026-09-25 08:49:41 | BP-02 decomposed; contracts and isolated persistence children closed; parent 31.25% (10/32), next .03/A1 | [Persistence audit](../Audits/BP-02.02_Persistence_Closeout.md); 119 tests, eight independent builds |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

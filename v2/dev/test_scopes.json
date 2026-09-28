@@ -54,5 +54,11 @@
     "coverage_sources": [
       "services/data_artifacts/src/amphora_data_artifacts"
     ]
+  },
+  "registry": {
+    "tests": "services/capability_registry/tests",
+    "coverage_sources": [
+      "services/capability_registry/src/amphora_capability_registry"
+    ]
   }
 }

@@ -1,0 +1,9 @@
+# Release Descriptor Identity
+
+`ReleaseIdentity` separates semantic capability/release/contract key from the exact image digest. `SchemaIdentity` and `PortSchemas` retain typed input/output/checkpoint pins. `ReleaseDocument` owns normalized immutable metadata bytes, their digest, lock projection/verification and immutable-registration comparison. DTOs only validate/serialize public boundaries.
+
+Canonical profile `amphora-tool-release-v1` hashes sorted compact ASCII-escaped UTF-8 JSON containing `{profile, descriptor}` after strict ReleaseDescriptor normalization, with all defaults explicit, no trailing newline and no nonfinite numbers. Array order is retained. This profile differs from source bytes, schema publication and command encoding; its digest pins all declared metadata, not merely the image or port hashes. Cross-language producers must pass the published canonical fixture before claiming compatibility.
+
+`verify_lock` compares the entire projected LockEntry, including capability/release/image/contract, descriptor hash and every port/checkpoint schema. `require_identical_registration` first checks semantic identity, then both digest and actual canonical bytes; a digest-only comparison cannot replace stored content. The future registry transaction owns persistence/concurrency and scope authorization; this pure boundary neither registers a release nor grants runtime/scientific authority.
+
+Wire fixtures live in `contracts/fixtures/v1/tool_releases.json`; owner tests live in `tests/descriptors/`. Structural semantic validation, applicability policy and healthy capacity remain B2/B3; registration/deployment storage and routing remain .02. No URLs, credentials, replica addresses or health observations belong in immutable campaign LockEntry. Replacements preserve the profile and full comparison semantics, or explicitly version their public consumers.

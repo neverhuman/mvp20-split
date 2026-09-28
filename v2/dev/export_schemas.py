@@ -7,6 +7,7 @@ from pathlib import Path
 
 import amphora_contracts_artifacts as artifact_contracts
 import amphora_contracts_runtime as runtime_contracts
+import amphora_contracts_tools as tool_contracts
 from amphora_contracts_campaigns import CampaignDefinition
 from amphora_contracts_commands import CommandIdentity
 from amphora_contracts_core import ArtifactRef, Finding, SchemaRef, Scope
@@ -26,6 +27,14 @@ MODELS = {
 }
 
 MODELS["commands.identity"] = CommandIdentity
+for name, model in {
+    "release-descriptor": tool_contracts.ReleaseDescriptor,
+    "lock-entry": tool_contracts.LockEntry,
+    "eligibility": tool_contracts.EligibilityResult,
+    "register-release": tool_contracts.RegisterRelease,
+    "registration-receipt": tool_contracts.ReleaseRegistrationReceipt,
+}.items():
+    MODELS["tools." + name] = model
 for name, model in {
     "admit-fixture": runtime_contracts.AdmitFixtureRun,
     "claim": runtime_contracts.ClaimInvocation,

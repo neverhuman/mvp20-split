@@ -12,6 +12,21 @@ from .models import (
     ToolDescriptor,
     Uncertain,
 )
+from .releases import (
+    AllowedEgress,
+    CapacityAssessment,
+    CheckpointCompatibility,
+    DeniedEgress,
+    EligibilityResult,
+    LockEntry,
+    PortSchemaLock,
+    RegisterRelease,
+    ReleaseDescriptor,
+    ReleaseRegistrationReceipt,
+    ResourceBounds,
+    ScientificEligibility,
+    StructuralAssessment,
+)
 
 __all__ = [
     "ToolBinding",
@@ -24,4 +39,17 @@ __all__ = [
     "Failed",
     "Uncertain",
     "Completion",
+    "AllowedEgress",
+    "CapacityAssessment",
+    "CheckpointCompatibility",
+    "DeniedEgress",
+    "EligibilityResult",
+    "LockEntry",
+    "PortSchemaLock",
+    "RegisterRelease",
+    "ReleaseDescriptor",
+    "ReleaseRegistrationReceipt",
+    "ResourceBounds",
+    "ScientificEligibility",
+    "StructuralAssessment",
 ]

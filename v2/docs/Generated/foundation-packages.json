@@ -70,6 +70,16 @@
     ]
   },
   {
+    "package": "amphora-capability-registry",
+    "version": "0.1.0",
+    "path": "services/capability_registry",
+    "module": "amphora_capability_registry",
+    "public_dependencies": [
+      "amphora-contracts-core",
+      "amphora-contracts-tools"
+    ]
+  },
+  {
     "package": "amphora-data-artifacts",
     "version": "0.1.0",
     "path": "services/data_artifacts",

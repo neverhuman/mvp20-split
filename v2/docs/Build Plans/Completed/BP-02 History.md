@@ -196,3 +196,5 @@ The preliminary 34-child-delivery denominator included pure design gates S1 and 
 | 2026-09-24 12:06:07 | BP-03 through BP-09 first drafts published at 0%; BP-02 authorized and T1 complete, P1 50% / overall 8.33%; next T2 | Canonical plan links above; [protocol decisions](../../Architecture/System/Runtime_Command_Protocol.md) |
 
 | 2026-09-24 12:10:07 | User UI references mapped to Studio modes and BP-05/06/08 prototype tasks; percentages unchanged, BP-02 remains P1/T2 | [Reference map](../../Architecture/Experience/Interaction_References.md) |
+
+| 2026-09-25 08:49:41 | BP-02 decomposed; contracts and isolated persistence children closed; parent 31.25% (10/32), next .03/A1 | [Persistence audit](../../Audits/BP-02.02_Persistence_Closeout.md); 119 tests, eight independent builds |

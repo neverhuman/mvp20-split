@@ -72,6 +72,8 @@ def independent_builds(uv):
                 probe += "assert importlib.util.find_spec('fastapi') is None; "
             elif module == "amphora_campaign_runtime":
                 probe += "from amphora_campaign_runtime.api import create_app; assert '/v1/campaign-definitions/validate' in create_app().openapi()['paths']; "
+            elif module == "amphora_capability_registry":
+                probe += "from amphora_capability_registry.descriptors.identity import ReleaseDocument; assert importlib.util.find_spec('amphora_campaign_runtime') is None; assert importlib.util.find_spec('amphora_data_artifacts') is None; "
             if module in {"amphora_campaign_runtime", "amphora_data_artifacts"}:
                 peer_module = "amphora_data_artifacts" if module == "amphora_campaign_runtime" else "amphora_campaign_runtime"
                 probe += f"assert importlib.util.find_spec('{peer_module}') is None; "

@@ -16,6 +16,7 @@ dependencies = [
     "amphora-contracts-runtime",
     "amphora-contracts-artifacts",
     "amphora-data-artifacts",
+    "amphora-capability-registry",
 ]
 
 [tool.uv]
@@ -31,6 +32,7 @@ amphora-contracts-commands = { path = "../contracts/commands", editable = true }
 amphora-contracts-runtime = { path = "../contracts/runtime", editable = true }
 amphora-contracts-artifacts = { path = "../contracts/artifacts", editable = true }
 amphora-data-artifacts = { path = "../services/data_artifacts", editable = true }
+amphora-capability-registry = { path = "../services/capability_registry", editable = true }
 
 [tool.pytest.ini_options]
 markers = ["postgres: requires explicit local PostgreSQL fixture opt-in"]

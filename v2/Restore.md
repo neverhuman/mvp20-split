@@ -2,16 +2,16 @@
 
 ## Current Checkpoint
 
-- Last refreshed: `2026-09-28 13:45:17` (America/Chicago).
+- Last refreshed: `2026-09-28 13:58:28` (America/Chicago).
 - Workspace: v2 active; v1 frozen. External references require task-specific authorization.
-- Canonical position: BP-03 -> [BP-03.01](docs/Build%20Plans/BP-03/BP-03.01%20Identity%20and%20descriptor%20contracts.md) / Build / B1 descriptor identity boundary; next B2 validation/policy.
-- Progress: BP-02 complete/audited/archived at 100% (32/32), all six children 100%. BP-03 0% (0/16), .01 0% (Build 0%, Acceptance 0%); BP-04..09 0%.
+- Canonical position: BP-03 -> [BP-03.01](docs/Build%20Plans/BP-03/BP-03.01%20Identity%20and%20descriptor%20contracts.md) / Build / B2 descriptor validation/policy; next B3 independent failure oracles.
+- Progress: BP-02 complete/audited/archived at 100% (32/32), all six children 100%. BP-03 6.25% (1/16), .01 25% (Build 33.33%, Acceptance 0%); BP-04..09 0%.
 - Latest work: all nine installed recovery/replacement scenarios passed; terminal-blocked semantics aligned to requirements and proven; [parent closeout](docs/Audits/BP-02_Foundation_Closeout.md) and [recovery audit](docs/Audits/BP-02.06_Recovery_Integration_Closeout.md) passed.
-- Evidence: final 307 component tests/lint/import/schema checks; preceding eight-wheel build gate plus standalone/paired/REC-01..09 and two fresh replacement environments. 68 schemas. Exact credential-free manifests preserved under docs/Audits/Evidence/BP-02-Recovery. Final audit added a test/docs, no production change after installed matrix.
+- Evidence: 331 component tests/lint/import/schema checks; nine independent wheel builds plus standalone/paired/REC-01..09 and two fresh replacement environments. 78 schemas; prior 68 hashes unchanged. Exact credential-free manifests preserved under docs/Audits/Evidence/BP-02-Recovery. Latest recovery scope 382a909615b148c68c440adea490a1c6 remains in ignored test results.
 - Authority: autonomous continuation and significant commit/push checkpoints authorized. No current user blocker; later scientific/provider/host gates remain explicit.
 - Environment: Python 3.12, uv, labeled PostgreSQL 17.11 fixture. Dynamic credentials only in ignored .test-results/postgres-fixture.json. Set AMPHORA_TEST_POSTGRES=1; never publish credentials or reset concurrently with tests.
-- Git: R4 881d446 pushed; R5 parent closeout verified for commit/push. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
-- B1 handoff: activation audit reconciles existing ToolBinding/ToolDescriptor/Invocation/Completion v1 and durable runtime consumers. Add release metadata/resource/egress, immutable LockEntry and separate eligibility observations without silently changing old command fixtures. .02 owns durable registry/version routing; .03 worker SDK and numeric affine/sequence statistics tools; .04 replicas/replacement. Registry eligibility never grants runtime authority. Synthetic scope needs no provider/host/scientific choice.
+- Git: BP-02 closeout 6fcd062 pushed; BP-03.01 B1 verified for commit/push. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
+- B2 handoff: registry package now owns descriptors/identity.py (ReleaseIdentity, SchemaIdentity, PortSchemas, ReleaseDocument). New tools/releases.py roots wrap unchanged ToolDescriptor v1; canonical fixtures tool_releases.json and tool_release_messages.json. Add focused semantic validator and policy objects; keep structural validity, scientific eligibility, permissions and healthy capacity distinct. No registry persistence/HTTP/authoritative registration exists yet; .02 owns that. Initial numeric/sequence descriptors and image/schema pins are non-scientific metadata fixtures. No provider/host decision required.
 - Limits: general interpreter, actual scientific tools/evidence, model/knowledge/Studio and host backup/power-loss remain later plans. Existing test-client warning and pre-existing v1/LICENSE manifest discrepancy remain nonblocking assigned maintenance. Recovery operating boundary: services/campaign_runtime/RECOVERY.md.
 
 ## Decomposition and Resume Discipline
