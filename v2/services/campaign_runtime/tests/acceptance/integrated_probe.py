@@ -21,7 +21,7 @@ spec.loader.exec_module(support)
 
 def main():
     scope = {"tenant_id": "integrated-acceptance", "project_id": uuid.uuid4().hex}
-    tokens = {actor: uuid.uuid4().hex for actor in ("admin", "worker", "runtime", "artifact", "other")}
+    tokens = {actor: uuid.uuid4().hex for actor in ("admin", "worker", "worker2", "runtime", "artifact", "other")}
     schema = {"schema_id": "fixture.object", "version": "1",
               "sha256": hashlib.sha256(b'{"type":"object"}').hexdigest()}
     tests = Path(__file__).absolute().parents[1]
@@ -83,13 +83,20 @@ def main():
             descriptor = {"schema_version": "1", "binding": invocation["tool"], "purpose": "Synthetic paired acceptance",
                           "applicability": ["test"], "inputs": [port], "outputs": [port], "side_effects": "pure",
                           "checkpoint_schema": schema}
+            branches = json.loads(json.dumps(definition))
+            branches["fixture_id"] = "synthetic-branches"
+            second = json.loads(json.dumps(invocation))
+            second.update(node_id="n2", activation_id="iteration-1.n2", invocation_id="i2")
+            branches["invocations"].append(second)
             proxy = support.ReservationProxy(artifact.endpoint)
             config = root / "runtime.json"
-            config.write_text(json.dumps({"database_url_env": "DATABASE_URL", "fixtures": [definition],
+            config.write_text(json.dumps({"database_url_env": "DATABASE_URL", "fixtures": [definition, branches],
                 "principals": [principal("admin", ["admit", "cancel", "read", "inspect_receipts", "maintain", "deliver"]),
-                               principal("worker", ["claim", "renew", "complete", "read"]), principal("artifact", ["outcome"])],
+                               principal("worker", ["claim", "renew", "complete", "read"]),
+                               principal("worker2", ["claim", "renew", "complete", "read"]), principal("artifact", ["outcome"])],
                 "tools": [descriptor], "artifacts": {"runtime_owner": "runtime", "reserve_endpoint": proxy.endpoint + "/v1/reservations",
-                "token_env": "TOKEN_RUNTIME"}, "inspection": {"cursor_key_env": "CURSOR_KEY"}}), encoding="utf-8")
+                "token_env": "TOKEN_RUNTIME"}, "delivery": {"lease_seconds": 2},
+                "inspection": {"cursor_key_env": "CURSOR_KEY"}}), encoding="utf-8")
             runtime = support.Process(sys.executable, "amphora_campaign_runtime", config, runtime_env, root, runtime_port)
             runtime.ready(tokens["admin"])
 
@@ -98,16 +105,16 @@ def main():
 
             def worker(path, cmd):
                 result = subprocess.run([sys.executable, "-I", str(tests / "acceptance/http_worker.py")],
-                    input=json.dumps({"endpoint": endpoint, "token": tokens["worker"], "path": path, "command": cmd}) + "\n",
+                    input=json.dumps({"endpoint": endpoint, "token": tokens[cmd["identity"]["actor_id"]], "path": path, "command": cmd}) + "\n",
                     env=support.isolated_env(), cwd=root, text=True, capture_output=True, timeout=15)
                 assert result.returncode == 0, "HTTP-only worker failed"
                 reply = json.loads(result.stdout)
                 assert reply["status"] == 200, reply
                 return reply["body"]
 
-            def start():
+            def start(fixture=None):
                 nonlocal active_run
-                admitted = rt("/v1/fixture-runs", command("runtime.admit_fixture", definition))
+                admitted = rt("/v1/fixture-runs", command("runtime.admit_fixture", fixture or definition))
                 run = admitted["outcome"]["committed"]["object_id"]
                 active_run = run
                 claimed = worker("/v1/invocations/claim", command("runtime.claim", {
@@ -119,13 +126,22 @@ def main():
                 return run, command("runtime.complete", {"run_id": run, "completion": completion,
                                                         "expected_checkpoint_revision": 0}, "worker")
 
-            def deliver():
-                result = subprocess.run([sys.executable, "-I", "-m", "amphora_campaign_runtime", "deliver",
+            def delivery_process():
+                return subprocess.Popen([sys.executable, "-I", "-m", "amphora_campaign_runtime", "deliver",
                     "--config", str(config), "--actor", "admin", "--tenant", scope["tenant_id"], "--project", scope["project_id"],
                     "--limit", "100", "--time-budget", "20"], env=runtime_env, cwd=root,
-                    capture_output=True, text=True, timeout=30)
-                assert result.returncode == 0, "Installed delivery process failed"
-                return json.loads(result.stdout)
+                    stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+
+            def deliver():
+                child = delivery_process()
+                try:
+                    stdout, _ = child.communicate(timeout=30)
+                    assert child.returncode == 0, "Installed delivery process failed"
+                    return json.loads(stdout)
+                finally:
+                    if child.poll() is None:
+                        child.kill()
+                        child.communicate(timeout=10)
 
             if len(sys.argv) > 2:
                 case_spec = importlib.util.spec_from_file_location("recovery_cases", Path(__file__).with_name("recovery_cases.py"))
@@ -134,6 +150,8 @@ def main():
                 cases.exercise(SimpleNamespace(scope=scope, tokens=tokens, schema=schema, command=command,
                     artifact=artifact, runtime=runtime, proxy=proxy, art=art, rt=rt, start=start, deliver=deliver,
                     worker=worker, output_ref=output_ref, support=support, fault_script=Path(sys.argv[2]),
+                    definition=definition, branches=branches, delivery_process=delivery_process,
+                    http_worker=tests / "acceptance/http_worker.py",
                     evidence_dir=Path(sys.argv[3]), packages=json.loads(os.environ["AMPHORA_TESTED_PACKAGES"])))
                 return
 

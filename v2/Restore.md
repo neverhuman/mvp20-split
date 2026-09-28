@@ -2,16 +2,16 @@
 
 ## Current Checkpoint
 
-- Last refreshed: `2026-09-28 13:23:07` (America/Chicago).
+- Last refreshed: `2026-09-28 13:31:43` (America/Chicago).
 - Workspace: v2 active; v1 frozen. External references require task-specific authorization.
-- Canonical position: BP-02 -> [BP-02.06](docs/Build%20Plans/BP-02/BP-02.06%20Recovery%20and%20Integration.md) / V1 / R3 worker/delivery recovery; next R4 replacement/install proof.
-- Progress: parent 90.63% (29/32 deliveries). Children .01-.05 complete/audited/archived; .06 at 40% (V1 50%, V2 0%); BP-03..09 at 0%.
+- Canonical position: BP-02 -> [BP-02.06](docs/Build%20Plans/BP-02/BP-02.06%20Recovery%20and%20Integration.md) / V1 / R4 replacement/install proof; next R5 audit and parent handoff.
+- Progress: parent 93.75% (30/32 deliveries). Children .01-.05 complete/audited/archived; .06 at 60% (V1 75%, V2 0%); BP-03..09 at 0%.
 - Latest work: actual independently installed runtime/artifact peers proved completion/confirmation, cancellation/release before stale completion resumes, original receipt replay and conserved budgets. [Completion audit](docs/Audits/BP-02.05_Completion_Delivery_Closeout.md) passed.
-- Evidence: 305 aggregate tests with PostgreSQL; lint/import/schema gates, eight independent wheels, both standalone probes, paired integration and REC-01..05 installed recovery passed. 68 published schemas. HTTP workers have no database credentials; service environments contain only their own database URL.
+- Evidence: 306 aggregate tests with PostgreSQL; lint/import/schema gates, eight independent wheels, both standalone probes, paired integration and REC-01..08 installed recovery passed. 68 published schemas. HTTP workers have no database credentials; service environments contain only their own database URL.
 - Authority: autonomous continuation and significant commit/push checkpoints authorized. No current user blocker. Scientific/provider/host choices remain later gates.
 - Environment: Python 3.12, uv and labeled PostgreSQL 17.11 fixture. Dynamic endpoint/credentials only in ignored v2/.test-results/postgres-fixture.json. Set AMPHORA_TEST_POSTGRES=1; never publish credentials. Serialize fixture resets against tests.
-- Git: R1 e842e8c pushed; R2 recovery verified for commit/push. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
-- R3 handoff: recovery_cases.py exercised REC-01..05; manifests under .test-results/recovery/3b0b01c3a84f4c9a8590c3addd0761b6 with exact wheel hashes and public identities. Next REC-06 killed-worker lease/reclaim and stale completion, REC-07 peer effect before lost delivery ack, REC-08 independent branch progress across runtime restart. R4 owns REC-09 replacement/install, R5 audits/parent closeout. Continue actual process kills and public API oracles; no cross-owner SQL.
+- Git: R2 5ed1c25 pushed; R3 recovery verified for commit/push. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
+- R4 handoff: REC-01..08 passed; manifests .test-results/recovery/f325eb8644f54de7b40bb79182ac0b74. Next REC-09 installs both services into new independent environments, restarts against retained owned state, reapplies migrations only through explicit owner bootstrap, and verifies original accepted receipts/bytes/protection without reset. R5 audits all children and parent, updates replacement/recovery runbooks and BP-03/04 handoff. No cross-owner private reads.
 - Limits: .06 full crash matrix remains required. Linux/target-storage power-loss/backup stays BP-09. No interpreter/scientific validity/provider/Studio claim. Existing test-client warning is nonblocking.
 
 ## Decomposition and Resume Discipline

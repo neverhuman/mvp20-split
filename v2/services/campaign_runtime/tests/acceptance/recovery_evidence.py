@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+import time
 from datetime import datetime
 
 
@@ -13,6 +14,7 @@ class ScenarioEvidence:
             raise ValueError("Exact scope and package revisions required")
         self.record = {"case": case, "scope": scope, "packages": packages, "timeout_seconds": timeout_seconds,
                        "identities": {}, "events": [], "status": "incomplete"}
+        self.started = time.monotonic()
 
     def identify(self, **identities):
         if identities.keys() - {"run", "activation", "attempt", "intent", "artifact", "upload", "command", "reservation", "operation"}:
@@ -31,6 +33,10 @@ class ScenarioEvidence:
                                       "kind": kind, "detail": detail})
 
     def finish(self):
+        elapsed = time.monotonic() - self.started
+        self.record["elapsed_seconds"] = round(elapsed, 3)
+        if elapsed > self.record["timeout_seconds"]:
+            self.event("failure", "scenario_deadline_exceeded")
         kinds = {event["kind"] for event in self.record["events"]}
         required = {"barrier", "observation"}
         if self.record["case"] != "REC-05":

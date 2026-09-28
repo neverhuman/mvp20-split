@@ -255,3 +255,7 @@ def exercise(lab):
     reservation(lab)
     committed(lab)
     aborted(lab)
+    worker_spec = importlib.util.spec_from_file_location("recovery_workers", Path(__file__).with_name("recovery_workers.py"))
+    workers = importlib.util.module_from_spec(worker_spec)
+    worker_spec.loader.exec_module(workers)
+    workers.exercise(lab, recording, dropped)

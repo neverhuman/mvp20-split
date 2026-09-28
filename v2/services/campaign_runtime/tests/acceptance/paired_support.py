@@ -93,6 +93,7 @@ class ReservationProxy:
     """
     def __init__(self, endpoint, hold_path="/v1/reservations"):
         self.hold_next = False
+        self.hold_path = hold_path
         self.arrived = threading.Event()
         self.release = threading.Event()
         self.receipts = []
@@ -107,7 +108,7 @@ class ReservationProxy:
                 body = self.rfile.read(int(self.headers["Content-Length"]))
                 status, response = request(endpoint, self.path,
                     self.headers["Authorization"].removeprefix("Bearer "), body, "POST")
-                if self.path == hold_path and status == 200:
+                if self.path == owner.hold_path and status == 200:
                     owner.receipts.append(json.loads(response))
                     owner.requests.append(json.loads(body))
                     if owner.hold_next:

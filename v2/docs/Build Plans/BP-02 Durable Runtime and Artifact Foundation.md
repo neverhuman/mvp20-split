@@ -2,12 +2,12 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; child BP-02.06 / V1 / R3.
-- Last refreshed: `2026-09-28 13:23:07` (America/Chicago).
-- Implementation: **90.63%**, 29/32 verified implementation deliveries across six children. Parent = sum of verified child task counts / 32. These are scoped delivery fractions, not time/effort estimates. Children own task evidence; parent never adds duplicate credit.
+- Status: primary_active; child BP-02.06 / V1 / R4.
+- Last refreshed: `2026-09-28 13:31:43` (America/Chicago).
+- Implementation: **93.75%**, 30/32 verified implementation deliveries across six children. Parent = sum of verified child task counts / 32. These are scoped delivery fractions, not time/effort estimates. Children own task evidence; parent never adds duplicate credit.
 - Design: original T1 protocol decisions complete and retained in [Runtime protocol](../Architecture/System/Runtime_Command_Protocol.md) and [Artifact protocol](../Architecture/System/Artifact_Publication_Protocol.md).
 - Demonstrated durable behavior: PostgreSQL isolation, scoped constraints, command contention/rollback/retry verified; artifact publication and its process-kill windows verified; protective reservation handshake verified with a scripted peer; cleanup/standalone artifact proof complete; runtime authority/cancellation verified; independent runtime lifecycle proof passed; actual installed completion/retention and cancellation/release integration passed; full restart matrix remains required.
-- Current task: BP-02.06 R3 worker/delivery recovery; next R4 replacement/install proof.
+- Current task: BP-02.06 R4 replacement/install proof; next R5 audit and handoff.
 - Blockers: no implementation blocker; user-provided Git identity configured for commit/push. Child predecessor gates mandatory; no user decision required at this point.
 - Authority: user approved hierarchical decomposition and autonomous continuation; [MBT](Master%20Build%20Tracker.md) mirrors this tracker.
 
@@ -26,7 +26,7 @@ On `2026-09-25 08:47:38`, the preliminary 34-task register was corrected to **32
 | [BP-02.03 Artifact Publication and Retention](BP-02/Completed/BP-02.03%20Artifact%20Publication%20and%20Retention.md) | 100% | 5 | Closed; audit passed |
 | [BP-02.04 Invocation Lifecycle](BP-02/Completed/BP-02.04%20Invocation%20Lifecycle.md) | 100% | 6 | Closed; audit passed |
 | [BP-02.05 Completion and Delivery](BP-02/Completed/BP-02.05%20Completion%20and%20Delivery.md) | 100% | 6 | Closed; audit passed |
-| [BP-02.06 Recovery and Integration](BP-02/BP-02.06%20Recovery%20and%20Integration.md) | 40% | 5 | Active R3; R1-R2 passed |
+| [BP-02.06 Recovery and Integration](BP-02/BP-02.06%20Recovery%20and%20Integration.md) | 60% | 5 | Active R4; R1-R3 passed |
 
 Each child has separate V1 build and V2 acceptance phases; implementation and phase percentages are canonical there. BP-02.01-.05 are closed; BP-02.06 owns the active work. Other children expose concrete bounded deliveries but require their own design/activation gate before implementation. No requirement to invent all future SQL/HTTP details now.
 

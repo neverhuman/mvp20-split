@@ -190,3 +190,5 @@ The preliminary 34-child-delivery denominator included pure design gates S1 and 
 | 2026-09-23 19:55:48 | BP-01 complete: 39 tests, four independent wheel installs, strict schema/API boundary and replacement docs; archived after scoped audit | [Plan](Completed/BP-01%20Contract%20and%20Service%20Foundations.md), [audit](../Audits/BP-01_Foundation_Closeout.md) |
 
 | 2026-09-24 09:01:20 | BP-01A complete at 100%, all four phases 100%; module test ownership, granular coverage, extracted v1 graph and scaffold; 44 tests pass | [Plan](Completed/BP-01A%20Module%20Tests%20and%20V1%20Graph%20Baseline.md), [audit](../Audits/BP-01A_Test_and_Graph_Baseline_Closeout.md) |
+
+| 2026-09-24 09:10:34 | BP-02 draft authored for user review: six phases, twelve tasks, all implementation percentages 0%; no activation | [Canonical draft](BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md) |

@@ -56,6 +56,17 @@ def test_manifest_hash_covers_identities_barriers_and_observations(tmp_path):
     assert envelope["manifest"]["status"] == "passed"
 
 
+def test_scenario_deadline_blocks_late_success():
+    record = scenario()
+    record.identify(command="late-command")
+    for kind in ("barrier", "kill", "restart", "observation"):
+        record.event(kind, "fixture")
+    record.started -= 31
+    with pytest.raises(ValueError, match="failed"):
+        record.finish()
+    assert record.record["status"] == "incomplete"
+
+
 def test_ordinary_runtime_configuration_rejects_fault_switch(tmp_path):
     path = tmp_path / "runtime.json"
     path.write_text(json.dumps({"database_url_env": "UNUSED", "principals": [], "fixtures": [], "fault": "commit"}))
