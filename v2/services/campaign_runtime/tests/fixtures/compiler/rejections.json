@@ -1,0 +1,958 @@
+[
+  {
+    "name": "duplicate-node",
+    "base": 0,
+    "code": "duplicate_node",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          1,
+          "node_id"
+        ],
+        "value": "affine"
+      }
+    ]
+  },
+  {
+    "name": "duplicate-edge",
+    "base": 0,
+    "code": "duplicate_edge",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "edges",
+          1
+        ],
+        "value": {
+          "source": "affine",
+          "target": "finish",
+          "route": "next"
+        }
+      }
+    ]
+  },
+  {
+    "name": "unknown-target",
+    "base": 0,
+    "code": "unknown_endpoint",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "edges",
+          0,
+          "target"
+        ],
+        "value": "absent"
+      }
+    ]
+  },
+  {
+    "name": "missing-finish",
+    "base": 0,
+    "code": "single_scope_finish_required",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          1
+        ],
+        "remove": true
+      },
+      {
+        "path": [
+          "body",
+          "edges"
+        ],
+        "value": []
+      }
+    ]
+  },
+  {
+    "name": "unterminated-invoke",
+    "base": 0,
+    "code": "unterminated_path",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "edges"
+        ],
+        "value": []
+      }
+    ]
+  },
+  {
+    "name": "finish-has-successor",
+    "base": 0,
+    "code": "terminal_successor",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "edges",
+          1
+        ],
+        "value": {
+          "source": "finish",
+          "target": "affine",
+          "route": "next"
+        }
+      }
+    ]
+  },
+  {
+    "name": "wrong-route-kind",
+    "base": 0,
+    "code": "unexpected_route",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "edges",
+          0,
+          "route"
+        ],
+        "value": "true"
+      }
+    ]
+  },
+  {
+    "name": "branch-missing-false",
+    "base": 1,
+    "code": "branch_routes",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "edges",
+          1
+        ],
+        "remove": true
+      }
+    ]
+  },
+  {
+    "name": "implicit-cycle",
+    "base": 1,
+    "code": "unstructured_cycle",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "edges",
+          5
+        ],
+        "value": {
+          "source": "left",
+          "target": "left",
+          "route": "next"
+        }
+      }
+    ]
+  },
+  {
+    "name": "implicit-alternative-convergence",
+    "base": 1,
+    "code": "implicit_branch_join",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "edges",
+          1,
+          "target"
+        ],
+        "value": "left"
+      }
+    ]
+  },
+  {
+    "name": "future-value",
+    "base": 0,
+    "code": "unavailable_output",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "inputs",
+          0,
+          "source"
+        ],
+        "value": {
+          "kind": "output",
+          "node_id": "finish",
+          "port": "result"
+        }
+      }
+    ]
+  },
+  {
+    "name": "unknown-output-port",
+    "base": 0,
+    "code": "unknown_output_port",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          1,
+          "outputs",
+          0,
+          "source",
+          "port"
+        ],
+        "value": "absent"
+      }
+    ]
+  },
+  {
+    "name": "unknown-scope-input",
+    "base": 0,
+    "code": "unknown_scope_input",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "inputs",
+          0,
+          "source",
+          "name"
+        ],
+        "value": "absent"
+      }
+    ]
+  },
+  {
+    "name": "missing-binding",
+    "base": 0,
+    "code": "missing_binding",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "inputs"
+        ],
+        "value": []
+      }
+    ]
+  },
+  {
+    "name": "unknown-binding",
+    "base": 0,
+    "code": "unknown_binding",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "inputs",
+          0,
+          "port"
+        ],
+        "value": "absent"
+      }
+    ]
+  },
+  {
+    "name": "duplicate-binding",
+    "base": 0,
+    "code": "duplicate_binding",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "inputs",
+          1
+        ],
+        "value": {
+          "port": "parameters",
+          "source": {
+            "kind": "input",
+            "name": "parameters"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "scalar-is-not-artifact",
+    "base": 0,
+    "code": "binding_type_mismatch",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "inputs",
+          0,
+          "source"
+        ],
+        "value": {
+          "kind": "integer",
+          "value": 3,
+          "unit": "1"
+        }
+      }
+    ]
+  },
+  {
+    "name": "unit-mismatch",
+    "base": 0,
+    "code": "binding_type_mismatch",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "inputs",
+          0,
+          "value_type",
+          "unit"
+        ],
+        "value": "g/mol"
+      }
+    ]
+  },
+  {
+    "name": "representation-mismatch",
+    "base": 0,
+    "code": "binding_type_mismatch",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "inputs",
+          0,
+          "value_type",
+          "representation"
+        ],
+        "value": "wrong"
+      }
+    ]
+  },
+  {
+    "name": "unknown-schema-pin",
+    "base": 0,
+    "code": "unknown_schema_pin",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "inputs",
+          0,
+          "value_type",
+          "schema_ref",
+          "sha256"
+        ],
+        "value": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    ]
+  },
+  {
+    "name": "unknown-tool-pin",
+    "base": 0,
+    "code": "unknown_tool_pin",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "tool",
+          "image_sha256"
+        ],
+        "value": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    ]
+  },
+  {
+    "name": "tool-timeout-bound",
+    "base": 0,
+    "code": "tool_timeout_bound",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "timeout_seconds"
+        ],
+        "value": 61
+      }
+    ]
+  },
+  {
+    "name": "unsupported-checkpoint",
+    "base": 0,
+    "code": "checkpoint_not_supported",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "checkpoint"
+        ],
+        "value": {
+          "kind": "input",
+          "name": "parameters"
+        }
+      }
+    ]
+  },
+  {
+    "name": "result-outside-loop",
+    "base": 0,
+    "code": "unavailable_scope_result",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "inputs",
+          0,
+          "source"
+        ],
+        "value": {
+          "kind": "result",
+          "name": "parameters"
+        }
+      }
+    ]
+  },
+  {
+    "name": "no-implicit-capture",
+    "base": 2,
+    "code": "unknown_scope_input",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "body",
+          "nodes",
+          0,
+          "inputs",
+          0,
+          "source",
+          "name"
+        ],
+        "value": "items"
+      }
+    ]
+  },
+  {
+    "name": "join-duplicate-member",
+    "base": 1,
+    "code": "duplicate_join_member",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          3,
+          "members",
+          1,
+          "member_id"
+        ],
+        "value": "left"
+      }
+    ]
+  },
+  {
+    "name": "join-optional-needs-slots",
+    "base": 1,
+    "code": "optional_missing_slots_required",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          3,
+          "members",
+          0,
+          "required"
+        ],
+        "value": false
+      }
+    ]
+  },
+  {
+    "name": "join-type-mismatch",
+    "base": 1,
+    "code": "join_member_type_mismatch",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          3,
+          "members",
+          0,
+          "source"
+        ],
+        "value": {
+          "kind": "integer",
+          "value": 0
+        }
+      }
+    ]
+  },
+  {
+    "name": "join-collection-too-small",
+    "base": 1,
+    "code": "collection_output_bound",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          3,
+          "output",
+          "value_type",
+          "max_items"
+        ],
+        "value": 1
+      }
+    ]
+  },
+  {
+    "name": "join-minimum-too-large",
+    "base": 1,
+    "code": "partial_minimum_bound",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          3,
+          "policy"
+        ],
+        "value": {
+          "kind": "partial",
+          "minimum": 3,
+          "close": "all_terminal"
+        }
+      }
+    ]
+  },
+  {
+    "name": "scatter-source-must-be-collection",
+    "base": 2,
+    "code": "scatter_collection_required",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "collection"
+        ],
+        "value": {
+          "kind": "integer",
+          "value": 0
+        }
+      }
+    ]
+  },
+  {
+    "name": "scatter-source-has-holes",
+    "base": 2,
+    "code": "scatter_missing_slots_unsupported",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "inputs",
+          0,
+          "value_type",
+          "missing_slots"
+        ],
+        "value": true
+      }
+    ]
+  },
+  {
+    "name": "scatter-member-bound",
+    "base": 2,
+    "code": "scatter_membership_bound",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "max_members"
+        ],
+        "value": 2
+      }
+    ]
+  },
+  {
+    "name": "scatter-item-input-mismatch",
+    "base": 2,
+    "code": "scatter_item_type_mismatch",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "item_input"
+        ],
+        "value": "absent"
+      }
+    ]
+  },
+  {
+    "name": "scatter-result-missing",
+    "base": 2,
+    "code": "unknown_scatter_result",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "result_port"
+        ],
+        "value": "absent"
+      }
+    ]
+  },
+  {
+    "name": "scatter-result-unit",
+    "base": 2,
+    "code": "scatter_result_type_mismatch",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "output",
+          "value_type",
+          "item",
+          "unit"
+        ],
+        "value": "g/mol"
+      }
+    ]
+  },
+  {
+    "name": "capture-collides-with-item",
+    "base": 2,
+    "code": "duplicate_capture",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "captures"
+        ],
+        "value": [
+          {
+            "port": "item",
+            "source": {
+              "kind": "integer",
+              "value": 0
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "capture-unknown-input",
+    "base": 2,
+    "code": "scope_input_bindings",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "captures"
+        ],
+        "value": [
+          {
+            "port": "absent",
+            "source": {
+              "kind": "integer",
+              "value": 0
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "loop-state-input-mismatch",
+    "base": 3,
+    "code": "loop_state_input_mismatch",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "state",
+          0,
+          "name"
+        ],
+        "value": "absent"
+      }
+    ]
+  },
+  {
+    "name": "loop-initial-unit",
+    "base": 3,
+    "code": "loop_initial_type_mismatch",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "state",
+          0,
+          "initial",
+          "unit"
+        ],
+        "value": "g/mol"
+      }
+    ]
+  },
+  {
+    "name": "loop-feedback-port",
+    "base": 3,
+    "code": "loop_feedback_type_mismatch",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "state",
+          0,
+          "feedback_port"
+        ],
+        "value": "absent"
+      }
+    ]
+  },
+  {
+    "name": "loop-until-result",
+    "base": 3,
+    "code": "unavailable_scope_result",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "until",
+          "left",
+          "source",
+          "name"
+        ],
+        "value": "absent"
+      }
+    ]
+  },
+  {
+    "name": "loop-until-unit",
+    "base": 3,
+    "code": "predicate_type_mismatch",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "until",
+          "right",
+          "unit"
+        ],
+        "value": "g/mol"
+      }
+    ]
+  },
+  {
+    "name": "predicate-declared-type",
+    "base": 1,
+    "code": "projection_type_mismatch",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "predicate",
+          "left",
+          "value_type",
+          "scalar"
+        ],
+        "value": "integer"
+      }
+    ]
+  },
+  {
+    "name": "predicate-incompatible-types",
+    "base": 1,
+    "code": "predicate_type_mismatch",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "predicate",
+          "right"
+        ],
+        "value": {
+          "kind": "string",
+          "value": "true"
+        }
+      }
+    ]
+  },
+  {
+    "name": "predicate-ordering-boolean",
+    "base": 1,
+    "code": "ordered_comparison_not_numeric",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "predicate",
+          "operator"
+        ],
+        "value": "lt"
+      }
+    ]
+  },
+  {
+    "name": "predicate-index-scalar",
+    "base": 1,
+    "code": "invalid_scalar_projection",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "predicate",
+          "left",
+          "path"
+        ],
+        "value": [
+          0
+        ]
+      }
+    ]
+  },
+  {
+    "name": "boolean-cannot-have-unit",
+    "base": 1,
+    "code": "nonnumeric_unit",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "inputs",
+          1,
+          "value_type",
+          "unit"
+        ],
+        "value": "g/mol"
+      }
+    ]
+  },
+  {
+    "name": "unbounded-scatter",
+    "base": 2,
+    "code": "wire_validation",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "max_members"
+        ],
+        "remove": true
+      }
+    ]
+  },
+  {
+    "name": "unbounded-loop",
+    "base": 3,
+    "code": "wire_validation",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "max_iterations"
+        ],
+        "remove": true
+      }
+    ]
+  },
+  {
+    "name": "zero-loop-bound",
+    "base": 3,
+    "code": "wire_validation",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "max_iterations"
+        ],
+        "value": 0
+      }
+    ]
+  },
+  {
+    "name": "arbitrary-eval",
+    "base": 1,
+    "code": "wire_validation",
+    "edits": [
+      {
+        "path": [
+          "body",
+          "nodes",
+          0,
+          "predicate"
+        ],
+        "value": {
+          "kind": "expression",
+          "code": "eval()"
+        }
+      }
+    ]
+  }
+]

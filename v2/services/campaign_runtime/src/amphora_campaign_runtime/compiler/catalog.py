@@ -5,6 +5,8 @@ import json
 from dataclasses import dataclass
 from types import MappingProxyType
 
+from amphora_contracts_tools import LockEntry, ReleaseDescriptor
+
 from .errors import require
 from .shapes import ArtifactShape, SchemaIdentity, TypedPort
 
@@ -19,8 +21,8 @@ def binding_key(binding):
 
 @dataclass(frozen=True)
 class ResolvedTool:
-    descriptor: object
-    lock: object
+    descriptor: ReleaseDescriptor
+    lock: LockEntry
 
     def __post_init__(self):
         descriptor, lock = self.descriptor, self.lock
@@ -37,6 +39,7 @@ class ResolvedTool:
         require(descriptor.tool.checkpoint_schema == lock.checkpoint_schema, "checkpoint_lock_mismatch", location)
         require(descriptor.tool.side_effects == "pure" and descriptor.authority_ceiling == "synthetic_only",
                 "unsupported_compiler_tool_profile", location)
+        require(all(port.required for port in descriptor.tool.outputs), "unsupported_optional_tool_output", location)
 
     def ports(self, name):
         return tuple(TypedPort(port.name, ArtifactShape.from_port(port))

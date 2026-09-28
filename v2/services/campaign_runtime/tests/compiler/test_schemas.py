@@ -72,3 +72,9 @@ def test_hash_and_catalog_identity_are_exact():
         schema.identity = None
     with pytest.raises(TypeError):
         schema._document["type"] = "integer"
+
+
+def test_deep_annotation_does_not_escape_bounded_schema_errors():
+    body = b'{"examples":' + b'[' * 600 + b'0' + b']' * 600 + b'}'
+    with pytest.raises(CompilationError, match="schema_complexity_limit|invalid_schema_document"):
+        pinned(body)
