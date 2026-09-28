@@ -9,12 +9,14 @@ from fastapi.responses import JSONResponse
 from sqlalchemy.exc import DBAPIError
 
 from ..persistence.commands import CommandConflict
+from .authority import AuthorityCommands
 from .claims import RuntimeLeases
 from .model import TransitionError
 
 
 def install_admission(app, admission, credentials):
     leases = RuntimeLeases(admission.commands.engine)
+    authority = AuthorityCommands(admission.commands.engine)
     @app.exception_handler(TransitionError)
     async def denied(_request, error):
         return JSONResponse({"reason_code": str(error)}, status_code=401 if str(error) == "unauthenticated" else 403)
@@ -49,3 +51,16 @@ def install_admission(app, admission, credentials):
         principal = credentials.authenticate(request.headers.get("authorization"))
         command = parse_command("runtime.renew", await request.body())
         return await asyncio.to_thread(leases.renew, principal, command)
+
+
+    @app.post("/v1/runs/cancel", response_model=CommandReceipt)
+    async def cancel(request: Request):
+        principal = credentials.authenticate(request.headers.get("authorization"))
+        command = parse_command("runtime.cancel", await request.body())
+        return await asyncio.to_thread(authority.cancel, principal, command)
+
+    @app.post("/v1/workers/revoke", response_model=CommandReceipt)
+    async def revoke(request: Request):
+        principal = credentials.authenticate(request.headers.get("authorization"))
+        command = parse_command("runtime.revoke_worker", await request.body())
+        return await asyncio.to_thread(authority.revoke, principal, command)

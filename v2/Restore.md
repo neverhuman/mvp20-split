@@ -2,15 +2,15 @@
 
 ## Current Checkpoint
 
-- Last refreshed: `2026-09-28 11:37:28` (America/Chicago).
+- Last refreshed: `2026-09-28 11:51:08` (America/Chicago).
 - Workspace: v2 active; v1 frozen. External references require task-specific authorization.
-- Canonical position: BP-02 -> [BP-02.04](docs/Build%20Plans/BP-02/BP-02.04%20Invocation%20Lifecycle.md) / V1 / I5 authority/cancellation; next I6 lifecycle acceptance.
-- Progress: parent 59.38% (19/32 deliveries). Children .01-.03 complete/audited; .04 at 66.67% (V1 80%, V2 0%); .05-.06 and BP-03..09 at 0%.
-- Latest work: I4 budget settlement passed contention, exhaustion, zero-cost unclaimed cancellation, rollback and prepared-intent guards; 41 scoped lifecycle tests pass. Artifact standalone executable, scoped verified reads and bounded maintenance accepted; [artifact closeout](docs/Audits/BP-02.03_Artifact_Service_Closeout.md) names boundaries and remaining integration/host evidence.
-- Evidence: 229 aggregate tests with PostgreSQL, lint/import/schema gates, eight independent wheels and installed artifact HTTP probe passed. 56 published schemas. Artifact suite 77 cases; process-kill evidence includes upload/finalization/cleanup/reservation transitions.
+- Canonical position: BP-02 -> [BP-02.04](docs/Build%20Plans/BP-02/BP-02.04%20Invocation%20Lifecycle.md) / V2 / I6 authority/cancellation; next I6 lifecycle acceptance.
+- Progress: parent 62.50% (20/32 deliveries). Children .01-.03 complete/audited; .04 at 83.33% (V1 100%, V2 0%); .05-.06 and BP-03..09 at 0%.
+- Latest work: I5 cancellation/revocation passed atomic abort/settlement, rollback, scope denial, claim/renew races and uncertainty preservation; 51 lifecycle tests pass. Artifact standalone executable, scoped verified reads and bounded maintenance accepted; [artifact closeout](docs/Audits/BP-02.03_Artifact_Service_Closeout.md) names boundaries and remaining integration/host evidence.
+- Evidence: 239 aggregate tests with PostgreSQL, lint/import/schema gates, eight independent wheels and installed artifact HTTP probe passed. 56 published schemas. Artifact suite 77 cases; process-kill evidence includes upload/finalization/cleanup/reservation transitions.
 - Authority: autonomous continuation and significant commit/push checkpoints authorized. No current user blocker. Scientific sources/provider/target-host choices remain later decisions.
 - Environment: Python 3.12, uv and labeled PostgreSQL 17.11 fixture. Dynamic endpoint/credentials only in ignored .test-results/postgres-fixture.json. Use helper verify and AMPHORA_TEST_POSTGRES=1; never publish credentials.
-- Git: I3 checkpoint f036eac pushed; I4 budget settlement verified for commit/push. Repository-local identity tkn1234 <alb_gen@live.com>, origin https://github.com/neverhumanbot/mvp20-split.git.
+- Git: I4 checkpoint 6a4792f pushed; I5 authority checkpoint verified for commit/push. Repository-local identity tkn1234 <alb_gen@live.com>, origin https://github.com/neverhumanbot/mvp20-split.git.
 - Limits: actual runtime terminal-outcome integration remains .05/.06; Linux/target-storage durability and backup remain BP-09. Synthetic artifact profiles do not establish scientific validity. Existing test-client warning is nonblocking.
 
 ## Decomposition and Resume Discipline

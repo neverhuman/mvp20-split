@@ -210,6 +210,15 @@ class ActivationState:
             status = "uncertain"
         return replace(self, status=status), lease, budget
 
+    def revoke(self, lease, budget, *, now, run):
+        disposition = "cancelled" if self.effect == "pure" else "uncertain"
+        activation, lease, budget = self.terminal(lease, budget, disposition, now=now, run=run)
+        if self.effect == "pure":
+            eligible = (run.status == "running" and self.issued < self.max_attempts
+                        and budget.available > 0 and now < lease.deadline)
+            activation = replace(activation, status="queued" if eligible else "failed")
+        return activation, lease, budget
+
     def cancel_unclaimed(self):
         if self.status != "queued":
             raise TransitionError("activation_not_queued")
