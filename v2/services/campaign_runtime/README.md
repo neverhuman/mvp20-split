@@ -11,6 +11,7 @@
 | `graph.py` | Immutable graph values, bounded topology/loop/branch/join validation; no interpreter |
 | `admission.py` | Pure input/tool/completion binding policy against supplied identity; not live authority |
 | [lifecycle](src/amphora_campaign_runtime/lifecycle/README.md) | Exact fixture admission, claims, renewal, cancellation/revocation, budget settlement and scoped observations |
+| [completion](src/amphora_campaign_runtime/completion/README.md) | Immutable prepared semantic intents and resumable external artifact reservations; result acceptance pending |
 | [persistence](src/amphora_campaign_runtime/persistence/README.md) | Private runtime schema/migrations, canonical commands, transaction retries, receipts and audit/outbox |
 | `api.py`, `lifecycle/http.py` | Bounded decoding, authenticated configured handlers, sanitized errors and OpenAPI |
 | `hosting.py`, `__main__.py` | Explicit local configuration, service-role readiness and loopback executable; no startup migrations |
@@ -50,9 +51,12 @@ Database outages leave registered commands pending/retryable; stable business re
 | `graph/`, `admission/`, `api/` | Structural/pin rejection, OpenAPI, redaction, bytes/depth/time limits |
 | `persistence/` | Real PostgreSQL roles, constraints, command contention and rollback |
 | `lifecycle/` | Pure transitions plus actual admission/claim/renew/budget/authority transactions, races, scope and startup |
+| `completion/` | Immutable descriptor/intent bindings, reservation resume, cancellation during remote I/O and transport negatives |
 | `acceptance/` | Independently installed runtime plus HTTP-only workers: worker kill/lease reclaim, higher fences, stale rejection, read isolation and conserved budget |
 | `baseline/`, [v1 fixture](tests/fixtures/v1_solver/README.md) | Frozen source pins and behavior graph; structural reference, not execution parity |
 
 `uv run --project v2/dev --locked python v2/dev/run_tests.py --module runtime --area lifecycle` is the focused lifecycle suite. Other areas run independently; `--coverage` measures the whole owner source denominator, including unexecuted files. Explicit `AMPHORA_TEST_POSTGRES=1` enables the labeled disposable fixture. `verify_foundation.py --builds` additionally installs wheels outside the checkout and runs both standalone service probes. Its runtime workers receive only HTTP request/token data and a minimal OS environment, never database credentials or owner imports. Database-domain contention probes are distinct from this public-boundary evidence.
 
 A replacement preserves public wire/canonical-command compatibility, immutable snapshots and history, run/worker/attempt fencing, database-clock checks, budget conservation, prepared protection and atomic receipt/audit/outbox behavior. Preserve the migration chain and service-role limits. Pass owner suites plus independent installed HTTP acceptance before cutover. Completion and exact artifact retention integration are BP-02.05/.06; graph interpretation BP-04; target-host durability BP-09. Process-kill evidence does not establish power-loss safety or scientific validity.
+
+BP-02.05/D1 adds optional trusted `tools` descriptors to host configuration and pins matching descriptors in each admitted run. Existing configs still admit/claim fixtures, but missing completion descriptors fail closed. Runtime_0004 is required before hosting this version. Public result acceptance remains unavailable while D2-D6 are incomplete. The runtime now also depends on the public artifact-contract package; it does not import the artifact service.

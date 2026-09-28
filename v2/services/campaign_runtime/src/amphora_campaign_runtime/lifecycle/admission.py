@@ -10,6 +10,7 @@ from sqlalchemy import text
 
 from ..persistence.commands import WHERE, CommandStore, TerminalDisposition, _bindings
 from .model import RunBudget, TransitionError
+from .pins import PinnedTools
 from .receipts import RuntimeReply
 
 
@@ -33,12 +34,13 @@ class PreparedFixture:
 
 
 class FixtureCatalog:
-    def __init__(self, definitions):
+    def __init__(self, definitions, descriptors=()):
         definitions = tuple(definitions)
         entries = {d.fixture_id: PreparedFixture(d) for d in definitions}
         if not entries or len(entries) != len(definitions):
             raise ValueError("Nonempty unique explicit fixture allowlist required")
         self.entries = MappingProxyType(entries)
+        self.tools = PinnedTools(tuple(descriptors))
 
     def require(self, requested):
         fixture = self.entries.get(requested.fixture_id)
@@ -78,10 +80,11 @@ class FixtureAdmission:
             definition = fixture.definition
             run_id = uuid.uuid4().hex
             binding = {**params, "run": run_id, "fixture": definition.fixture_id, "digest": definition.plan_sha256,
-                       "snapshot": definition.model_dump_json(), "limit": definition.budget.limit}
+                       "snapshot": definition.model_dump_json(), "limit": definition.budget.limit,
+                       "tools": json.dumps(self.catalog.tools.snapshot(definition))}
             conn.execute(text("INSERT INTO runtime.runs (tenant_id,project_id,run_id,fixture_id,plan_sha256,"
-                "input_snapshot,status,budget_limit) VALUES (:tenant,:project,:run,:fixture,:digest,"
-                "CAST(:snapshot AS jsonb),'running',:limit)"), binding)
+                "input_snapshot,status,budget_limit,tool_snapshot) VALUES (:tenant,:project,:run,:fixture,:digest,"
+                "CAST(:snapshot AS jsonb),'running',:limit,CAST(:tools AS jsonb))"), binding)
             for invocation in definition.invocations:
                 conn.execute(text("INSERT INTO runtime.activations (tenant_id,project_id,run_id,activation_id,invocation_id,"
                     "specification,status) VALUES (:tenant,:project,:run,:activation,:invocation,CAST(:spec AS jsonb),'queued')"),

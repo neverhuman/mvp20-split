@@ -61,6 +61,7 @@
     "path": "services/campaign_runtime",
     "module": "amphora_campaign_runtime",
     "public_dependencies": [
+      "amphora-contracts-artifacts",
       "amphora-contracts-runtime",
       "amphora-contracts-commands",
       "amphora-contracts-core",

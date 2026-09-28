@@ -18,6 +18,9 @@ class RuntimeReply:
     def reject(self, reason):
         return self._receipt({"status": "rejected", "reason_code": reason})
 
+    def pending(self):
+        return self._receipt({"status": "pending"})
+
     def accepted(self, kind, object_id, revision):
         return self._receipt({"status": "accepted", "committed": {
             "kind": kind, "object_id": object_id, "revision": revision}})

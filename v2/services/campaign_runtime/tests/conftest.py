@@ -1,4 +1,4 @@
-"""Real PostgreSQL synthetic admission; no worker dispatch or graph execution."""
+"""Runtime-owned reusable PostgreSQL fixture; synthetic lifecycle only."""
 
 import json
 import os
@@ -27,7 +27,7 @@ def fixture_env():
     upgrade(url.render_as_string(hide_password=False))
     engine = create_engine(url.set(username="runtime_service"), connect_args={"options": "-c statement_timeout=5000"})
     scope = Scope(tenant_id="admission-tests", project_id=uuid.uuid4().hex)
-    raw = json.loads((Path(__file__).parents[1] / "fixtures/prepared-run.json").read_text())
+    raw = json.loads((Path(__file__).parent / "fixtures/prepared-run.json").read_text())
     raw["identity"]["scope"] = scope.model_dump()
     for invocation in raw["payload"]["invocations"]:
         for binding in invocation["inputs"]:

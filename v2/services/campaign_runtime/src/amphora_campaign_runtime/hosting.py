@@ -7,6 +7,7 @@ from pathlib import Path
 
 from amphora_contracts_core import Scope
 from amphora_contracts_runtime import AdmitFixtureRun
+from amphora_contracts_tools import ToolDescriptor
 from sqlalchemy import create_engine, text
 
 from .api import create_app
@@ -29,14 +30,15 @@ class Host:
     @classmethod
     def load(cls, path):
         raw = json.loads(Path(path).read_text(encoding="utf-8"))
-        if set(raw) != {"database_url_env", "principals", "fixtures"}:
+        if not {"database_url_env", "principals", "fixtures"} <= set(raw) or set(raw) - {
+            "database_url_env", "principals", "fixtures", "tools"}:
             raise ValueError("Explicit database, principals and fixture allowlist required")
         entries, principals = [], []
         for item in raw["principals"]:
             if set(item) != {"token_env", "actor_id", "scope", "actions"}:
                 raise ValueError("Invalid principal configuration")
             actions = frozenset(item["actions"])
-            if not actions or actions - {"admit", "claim", "renew", "cancel", "revoke", "maintain", "read"}:
+            if not actions or actions - {"admit", "claim", "renew", "cancel", "revoke", "maintain", "read", "complete"}:
                 raise ValueError("Invalid configured action")
             if not isinstance(item["actor_id"], str) or not item["actor_id"]:
                 raise ValueError("Explicit actor required")
@@ -47,7 +49,8 @@ class Host:
         if len(identities) != len(principals):
             raise ValueError("Duplicate configured identity")
         credentials = RuntimeCredentials(entries)
-        catalog = FixtureCatalog(AdmitFixtureRun.model_validate_json(json.dumps(d)) for d in raw["fixtures"])
+        catalog = FixtureCatalog((AdmitFixtureRun.model_validate_json(json.dumps(d)) for d in raw["fixtures"]),
+                                 (ToolDescriptor.model_validate_json(json.dumps(d)) for d in raw.get("tools", [])))
         engine = create_engine(os.environ[raw["database_url_env"]], pool_pre_ping=True,
                                connect_args={"options": "-c statement_timeout=5000"})
         try:
@@ -56,6 +59,7 @@ class Host:
                     raise ValueError("Runtime service role required")
                 conn.execute(text("SELECT deadline FROM runtime.attempts LIMIT 0"))
                 conn.execute(text("SELECT operation_id FROM runtime.policy_outbox LIMIT 0"))
+                conn.execute(text("SELECT tool_snapshot FROM runtime.runs LIMIT 0"))
             return cls(FixtureAdmission(engine, catalog), credentials, tuple(principals))
         except BaseException:
             engine.dispose()

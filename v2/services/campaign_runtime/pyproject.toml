@@ -14,6 +14,7 @@ dependencies = [
     "alembic>=1.16,<2",
     "amphora-contracts-runtime",
     "amphora-contracts-commands",
+    "amphora-contracts-artifacts",
 ]
 
 [project.scripts]
@@ -32,6 +33,7 @@ amphora-contracts-tools = { path = "../../contracts/tools", editable = true }
 amphora-contracts-campaigns = { path = "../../contracts/campaigns", editable = true }
 amphora-contracts-runtime = { path = "../../contracts/runtime", editable = true }
 amphora-contracts-commands = { path = "../../contracts/commands", editable = true }
+amphora-contracts-artifacts = { path = "../../contracts/artifacts", editable = true }
 
 [tool.amphora]
-public-imports = ["amphora-contracts-runtime", "amphora-contracts-commands", "amphora-contracts-core", "amphora-contracts-tools", "amphora-contracts-campaigns"]
+public-imports = ["amphora-contracts-artifacts", "amphora-contracts-runtime", "amphora-contracts-commands", "amphora-contracts-core", "amphora-contracts-tools", "amphora-contracts-campaigns"]

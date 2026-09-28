@@ -2,16 +2,16 @@
 
 ## Current Checkpoint
 
-- Last refreshed: `2026-09-28 12:01:48` (America/Chicago).
+- Last refreshed: `2026-09-28 12:13:10` (America/Chicago).
 - Workspace: v2 active; v1 frozen. External references require task-specific authorization.
-- Canonical position: BP-02 -> [BP-02.05](docs/Build%20Plans/BP-02/BP-02.05%20Completion%20and%20Delivery.md) / V1 / D1 completion intent preparation; next D2 atomic acceptance.
-- Progress: parent 65.63% (21/32 deliveries). Children .01-.04 complete/audited/archived; .05 at 0% (V1/V2 0%); .06 and BP-03..09 at 0%.
-- Latest work: lifecycle standalone runtime, scoped consistent snapshots and HTTP-only worker death/reclaim accepted; [closeout](docs/Audits/BP-02.04_Invocation_Lifecycle_Closeout.md). Cancellation/revocation, budget conservation and live database-clock fencing are implemented.
-- Evidence: 243 aggregate tests with PostgreSQL; 79 runtime tests; lint/import/schema gates, eight independent wheels and both installed service probes passed. 58 published schemas. Workers have no database credentials.
+- Canonical position: BP-02 -> [BP-02.05](docs/Build%20Plans/BP-02/BP-02.05%20Completion%20and%20Delivery.md) / V1 / D2 atomic acceptance; next D3 abort/retention handshake.
+- Progress: parent 68.75% (22/32 deliveries). Children .01-.04 complete/audited/archived; .05 at 16.67% (V1 20%, V2 0%); .06 and BP-03..09 at 0%.
+- Latest work: completion intent preparation, pinned output contracts and resumable external reservation acquisition verified; lifecycle standalone runtime and HTTP-only worker death/reclaim accepted; [closeout](docs/Audits/BP-02.04_Invocation_Lifecycle_Closeout.md). Cancellation/revocation, budget conservation and live database-clock fencing are implemented.
+- Evidence: 259 aggregate tests with PostgreSQL; 95 runtime tests; lint/import/schema gates, eight independent wheels and both installed service probes passed. 58 published schemas. Workers have no database credentials.
 - Authority: autonomous continuation and significant commit/push checkpoints authorized. No current user blocker. Scientific/provider/host decisions remain later gates.
 - Environment: Python 3.12, uv and labeled PostgreSQL 17.11 fixture. Dynamic endpoint/credentials only in ignored v2/.test-results/postgres-fixture.json. Set AMPHORA_TEST_POSTGRES=1; never publish credentials. Do not run fixture restart/reset concurrently with tests.
-- Git: authority checkpoint f8a8f94 pushed; lifecycle closeout ready for commit/push. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
-- D1 handoff: canonical pending command -> immutable prepared semantic intent under live owner locks -> external artifact reservation. Reuse AbortDecision and protected-expiry guard; no network inside SQL. D4 must deliver both run and policy outboxes. D5 extends current snapshots with history/receipt/exact outcome queries.
+- Git: lifecycle closeout 4ae5a48 pushed; D1 preparation checkpoint verified for commit/push. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
+- D2 handoff: D1 preparation/partial reservation recovery is implemented, with immutable tool descriptors pinned at admission (runtime_0004). Add acceptance under live locks using exact saved receipts; preparation alone remains pending. Reuse AbortDecision and protected-expiry guard; no network inside SQL. D4 must deliver both run and policy outboxes. D5 extends current snapshots with history/receipt/exact outcome queries.
 - Limits: .05/.06 still own actual accepted completion/artifact retention and crash integration. Linux/target-storage power-loss/backup remains BP-09. Scientific validity is not established by synthetic profiles. Existing test-client warning is nonblocking.
 
 ## Decomposition and Resume Discipline
