@@ -25,7 +25,8 @@
       },
       "actions": [
         "claim",
-        "renew"
+        "renew",
+        "complete"
       ]
     }
   ],
@@ -71,5 +72,57 @@
         }
       ]
     }
-  ]
+  ],
+  "tools": [
+    {
+      "schema_version": "1",
+      "binding": {
+        "capability_id": "synthetic.evaluate",
+        "release": "0.1.0",
+        "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "contract_version": "1"
+      },
+      "purpose": "Synthetic integration fixture; no scientific validity",
+      "applicability": [
+        "fixture-only"
+      ],
+      "inputs": [
+        {
+          "name": "value",
+          "schema_ref": {
+            "schema_id": "synthetic.value",
+            "version": "1",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "representation": "synthetic",
+          "unit": "1",
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "name": "value",
+          "schema_ref": {
+            "schema_id": "synthetic.value",
+            "version": "1",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "representation": "synthetic",
+          "unit": "1",
+          "required": true
+        }
+      ],
+      "side_effects": "pure",
+      "checkpoint_schema": {
+        "schema_id": "synthetic.value",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    }
+  ],
+  "artifacts": {
+    "runtime_owner": "runtime",
+    "reserve_endpoint": "http://127.0.0.1:8081/v1/reservations",
+    "token_env": "AMPHORA_RUNTIME_ARTIFACT_TOKEN"
+  }
 }

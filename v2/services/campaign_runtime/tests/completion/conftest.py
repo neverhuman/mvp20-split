@@ -1,5 +1,6 @@
 """Runtime-owned synthetic completion fixtures; no scientific artifact validity."""
 
+import copy
 import json
 import uuid
 from dataclasses import replace
@@ -13,11 +14,15 @@ from amphora_contracts_tools import ToolDescriptor
 
 
 @pytest.fixture
-def completion_env(fixture_env):
+def completion_env(fixture_env, request):
     e = fixture_env
     e.principal = replace(e.principal, actions=e.principal.actions | {"complete", "cancel", "revoke", "read"})
     e.raw["payload"]["invocations"][0]["timeout_seconds"] = 120
     spec = e.raw["payload"]["invocations"][0]
+    if getattr(request, "param", 1) == 2:
+        second = copy.deepcopy(spec)
+        second.update(activation_id="iteration-1.n2", invocation_id="i2", node_id="n2")
+        e.raw["payload"]["invocations"].append(second)
     schema = spec["inputs"][0]["artifact"]["schema_ref"]
     port = {"name": "value", "schema_ref": schema, "representation": "synthetic", "unit": "1"}
     descriptor = ToolDescriptor.model_validate_json(json.dumps({"schema_version": "1", "binding": spec["tool"],

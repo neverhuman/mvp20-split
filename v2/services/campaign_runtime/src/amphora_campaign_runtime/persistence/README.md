@@ -1,6 +1,6 @@
 # Runtime Persistence Boundary
 
-- Implemented: forward migrations through `runtime_0004` and owner-private command transactions.
+- Implemented: forward migrations through `runtime_0005` and owner-private command transactions.
 - Design: [Physical records](../../../../../docs/Architecture/System/Persistence_Record_Design.md), [runtime protocol](../../../../../docs/Architecture/System/Runtime_Command_Protocol.md).
 
 `migrate.upgrade(url)` runs packaged SQL/Alembic migrations as `runtime_migrator`. The explicit CLI is `python -m amphora_campaign_runtime.persistence.migrate`, using privately supplied `AMPHORA_RUNTIME_MIGRATION_URL`. No API startup migration occurs. `runtime.alembic_version` is private to this owner. Downgrade refuses destructive rollback; changes require forward migration.
@@ -18,3 +18,5 @@ BP-02.04/I3 forward migration runtime_0002 persists activation/attempt deadlines
 runtime_0003 adds a separate scoped policy audit/outbox for worker revocation without a run. Run audit foreign keys remain strict; no dummy run is created. Both journals are private runtime state and require later owner outbox delivery.
 
 runtime_0004 adds immutable tool_snapshot to each run (legacy default empty; no inferred contract) and intent_reservations keyed by scoped intent/output binding. The runtime service may insert/read receipts but cannot update/delete them or replace admitted tool snapshots. Completion preparation and resumable external reservation acquisition own these records; no artifact private schema is referenced.
+
+runtime_0005 adds immutable attempt_reports with scoped exact intent/attempt foreign keys and one report per attempt. Retryable accepted failure reports preserve history without consuming the canonical accepted_completions slot for that activation. The completion owner atomically writes reports, canonical terminal results/checkpoints when applicable, intent/receipt/audit/outbox and conserved budget. Report ID is the public completion reference, even when the report is retryable or uncertain rather than a terminal activation result.

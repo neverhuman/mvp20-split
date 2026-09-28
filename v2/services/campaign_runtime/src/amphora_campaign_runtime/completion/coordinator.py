@@ -10,6 +10,7 @@ from ..lifecycle.claims import SCOPE
 from ..lifecycle.receipts import RuntimeReply
 from ..persistence.commands import _bindings
 from .artifacts import ReservationUnavailable, validate_receipt
+from .commit import CompletionCommitter
 from .prepare import IntentPreparation
 
 
@@ -18,6 +19,12 @@ class CompletionCoordinator:
         self.preparation = IntentPreparation(engine, artifacts.owner)
         self.artifacts = artifacts
         self.engine = engine
+
+    def complete(self, principal, command):
+        receipt = self.prepare(principal, command)
+        if receipt.outcome.status != "pending":
+            return receipt
+        return CompletionCommitter(self.engine, self.artifacts.owner).commit(principal, command)
 
     def prepare(self, principal, command):
         prepared = self.preparation.prepare(principal, command)

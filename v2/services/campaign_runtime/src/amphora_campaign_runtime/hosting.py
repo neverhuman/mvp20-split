@@ -11,6 +11,8 @@ from amphora_contracts_tools import ToolDescriptor
 from sqlalchemy import create_engine, text
 
 from .api import create_app
+from .completion.artifacts import ArtifactReservations
+from .completion.coordinator import CompletionCoordinator
 from .lifecycle.access import RuntimeCredentials, RuntimePrincipal
 from .lifecycle.admission import FixtureAdmission, FixtureCatalog
 
@@ -20,9 +22,10 @@ class Host:
     admission: FixtureAdmission
     credentials: RuntimeCredentials
     principals: tuple
+    completion: CompletionCoordinator | None = None
 
     def app(self):
-        return create_app(self.admission, self.credentials)
+        return create_app(self.admission, self.credentials, self.completion)
 
     def close(self):
         self.admission.commands.engine.dispose()
@@ -31,7 +34,7 @@ class Host:
     def load(cls, path):
         raw = json.loads(Path(path).read_text(encoding="utf-8"))
         if not {"database_url_env", "principals", "fixtures"} <= set(raw) or set(raw) - {
-            "database_url_env", "principals", "fixtures", "tools"}:
+            "database_url_env", "principals", "fixtures", "tools", "artifacts"}:
             raise ValueError("Explicit database, principals and fixture allowlist required")
         entries, principals = [], []
         for item in raw["principals"]:
@@ -51,6 +54,12 @@ class Host:
         credentials = RuntimeCredentials(entries)
         catalog = FixtureCatalog((AdmitFixtureRun.model_validate_json(json.dumps(d)) for d in raw["fixtures"]),
                                  (ToolDescriptor.model_validate_json(json.dumps(d)) for d in raw.get("tools", [])))
+        artifacts = None
+        if "artifacts" in raw:
+            peer = raw["artifacts"]
+            if set(peer) != {"runtime_owner", "reserve_endpoint", "token_env"}:
+                raise ValueError("Invalid artifact peer configuration")
+            artifacts = ArtifactReservations(peer["runtime_owner"], peer["reserve_endpoint"], os.environ[peer["token_env"]])
         engine = create_engine(os.environ[raw["database_url_env"]], pool_pre_ping=True,
                                connect_args={"options": "-c statement_timeout=5000"})
         try:
@@ -60,7 +69,9 @@ class Host:
                 conn.execute(text("SELECT deadline FROM runtime.attempts LIMIT 0"))
                 conn.execute(text("SELECT operation_id FROM runtime.policy_outbox LIMIT 0"))
                 conn.execute(text("SELECT tool_snapshot FROM runtime.runs LIMIT 0"))
-            return cls(FixtureAdmission(engine, catalog), credentials, tuple(principals))
+                conn.execute(text("SELECT report_id FROM runtime.attempt_reports LIMIT 0"))
+            completion = None if artifacts is None else CompletionCoordinator(engine, artifacts)
+            return cls(FixtureAdmission(engine, catalog), credentials, tuple(principals), completion)
         except BaseException:
             engine.dispose()
             raise

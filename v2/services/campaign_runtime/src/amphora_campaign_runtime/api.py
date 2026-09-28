@@ -85,14 +85,16 @@ class RequestBounds:
         return await self.app(scope, replay, send)
 
 
-def create_app(admission=None, credentials=None) -> FastAPI:
+def create_app(admission=None, credentials=None, completion=None) -> FastAPI:
     app = FastAPI(title="Amphora runtime foundation", version="0.1.0")
     app.add_middleware(RequestBounds)
     if (admission is None) != (credentials is None):
         raise ValueError("Admission and credentials must be configured together")
+    if completion is not None and admission is None:
+        raise ValueError("Completion requires configured lifecycle")
     if admission is not None:
         from .lifecycle.http import install_admission
-        install_admission(app, admission, credentials)
+        install_admission(app, admission, credentials, completion)
 
     @app.exception_handler(RequestValidationError)
     async def invalid_request(_request, error):
@@ -106,7 +108,8 @@ def create_app(admission=None, credentials=None) -> FastAPI:
 
     @app.get("/health")
     def health():
-        return {"status": "ok", "mode": "fixture_lifecycle" if admission is not None else "validation_only", "execution_available": False}
+        return {"status": "ok", "mode": "fixture_lifecycle" if admission is not None else "validation_only",
+                "execution_available": False, "fixture_completion_available": completion is not None}
 
     async def parse_campaign(request: Request) -> CampaignDefinition:
         try:

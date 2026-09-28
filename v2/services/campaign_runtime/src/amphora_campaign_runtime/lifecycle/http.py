@@ -9,6 +9,7 @@ from fastapi.responses import JSONResponse
 from sqlalchemy import text
 from sqlalchemy.exc import DBAPIError
 
+from ..completion.artifacts import ReservationUnavailable
 from ..persistence.commands import CommandConflict
 from .authority import AuthorityCommands
 from .claims import RuntimeLeases
@@ -16,7 +17,7 @@ from .model import TransitionError
 from .reads import RuntimeReads
 
 
-def install_admission(app, admission, credentials):
+def install_admission(app, admission, credentials, completion=None):
     leases = RuntimeLeases(admission.commands.engine)
     authority = AuthorityCommands(admission.commands.engine)
     reads = RuntimeReads(admission.commands.engine)
@@ -47,6 +48,17 @@ def install_admission(app, admission, credentials):
     @app.exception_handler(DBAPIError)
     async def unavailable(_request, _error):
         return JSONResponse({"reason_code": "persistence_unavailable"}, status_code=503)
+
+    @app.exception_handler(ReservationUnavailable)
+    async def reservation_unavailable(_request, _error):
+        return JSONResponse({"reason_code": "reservation_unavailable"}, status_code=503)
+
+    if completion is not None:
+        @app.post("/v1/invocations/complete", response_model=CommandReceipt)
+        async def complete(request: Request):
+            principal = credentials.authenticate(request.headers.get("authorization"))
+            command = parse_command("runtime.complete", await request.body())
+            return await asyncio.to_thread(completion.complete, principal, command)
 
     @app.post("/v1/fixture-runs", response_model=CommandReceipt)
     async def admit(request: Request):

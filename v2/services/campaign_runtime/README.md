@@ -1,6 +1,6 @@
 # Campaign Runtime
 
-- Status: synthetic invocation lifecycle implemented; completion and general graph execution remain in successor gates.
+- Status: synthetic invocation lifecycle and atomic completion implemented; retention/delivery integration and general graph execution remain in successor gates.
 - Package: `amphora-campaign-runtime` 0.1.0.
 - Architecture: [Graph Runner](../../docs/Architecture/System/Graph_Runner.md), [runtime protocol](../../docs/Architecture/System/Runtime_Command_Protocol.md), [isolation](../../docs/Architecture/System/Service_Isolation.md).
 
@@ -11,7 +11,7 @@
 | `graph.py` | Immutable graph values, bounded topology/loop/branch/join validation; no interpreter |
 | `admission.py` | Pure input/tool/completion binding policy against supplied identity; not live authority |
 | [lifecycle](src/amphora_campaign_runtime/lifecycle/README.md) | Exact fixture admission, claims, renewal, cancellation/revocation, budget settlement and scoped observations |
-| [completion](src/amphora_campaign_runtime/completion/README.md) | Immutable prepared semantic intents and resumable external artifact reservations; result acceptance pending |
+| [completion](src/amphora_campaign_runtime/completion/README.md) | Immutable prepared intents, resumable artifact reservations and atomic result/checkpoint acceptance |
 | [persistence](src/amphora_campaign_runtime/persistence/README.md) | Private runtime schema/migrations, canonical commands, transaction retries, receipts and audit/outbox |
 | `api.py`, `lifecycle/http.py` | Bounded decoding, authenticated configured handlers, sanitized errors and OpenAPI |
 | `hosting.py`, `__main__.py` | Explicit local configuration, service-role readiness and loopback executable; no startup migrations |
@@ -30,6 +30,7 @@ Default `create_app()` and module `api:app` expose only health and structural ca
 | `POST /v1/fixture-runs` | `admit`; exact allowlisted pins, one running campaign; original command receipt |
 | `POST /v1/invocations/claim` | `claim`; matching actor/worker and exact tool; invocation/lease or stable no-work receipt |
 | `POST /v1/attempts/renew` | `renew`; current worker, attempt, fence and database-clock lease; original receipt |
+| `POST /v1/invocations/complete` | `complete`; enabled only with configured artifact peer; prepare/protect/recheck/accept or pending/rejected receipt |
 | `POST /v1/runs/cancel` | `cancel`; optional revision guard, atomic prepared abort and budget settlement |
 | `POST /v1/workers/revoke` | `revoke`; durable scoped worker policy and protected work settlement |
 | `GET /v1/runs/{run_id}` | `read`; bounded RunSnapshot with budget and current activation/attempt observations; missing/wrong scope returns 404 |
@@ -59,4 +60,4 @@ Database outages leave registered commands pending/retryable; stable business re
 
 A replacement preserves public wire/canonical-command compatibility, immutable snapshots and history, run/worker/attempt fencing, database-clock checks, budget conservation, prepared protection and atomic receipt/audit/outbox behavior. Preserve the migration chain and service-role limits. Pass owner suites plus independent installed HTTP acceptance before cutover. Completion and exact artifact retention integration are BP-02.05/.06; graph interpretation BP-04; target-host durability BP-09. Process-kill evidence does not establish power-loss safety or scientific validity.
 
-BP-02.05/D1 adds optional trusted `tools` descriptors to host configuration and pins matching descriptors in each admitted run. Existing configs still admit/claim fixtures, but missing completion descriptors fail closed. Runtime_0004 is required before hosting this version. Public result acceptance remains unavailable while D2-D6 are incomplete. The runtime now also depends on the public artifact-contract package; it does not import the artifact service.
+BP-02.05 adds optional trusted `tools` descriptors to host configuration and pins matching descriptors in each admitted run. Existing configs still admit/claim fixtures, but missing completion descriptors fail closed. Runtime_0005 is required before hosting this version. Optional `artifacts` peer configuration enables fixture completion. Retention confirmation/reconciliation, delivery and real cross-service acceptance remain D3-D6/.06. The runtime also depends on the public artifact-contract package; it does not import the artifact service.
