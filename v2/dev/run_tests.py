@@ -33,7 +33,7 @@ def main():
     parser.add_argument("--area", choices=["graph", "admission", "api", "baseline", "persistence", "lifecycle", "completion", "delivery", "inspection", "publication", "storage", "retention", "maintenance", "acceptance"])
     parser.add_argument("--coverage", action="store_true")
     args, pytest_args = parser.parse_known_args()
-    areas = {"runtime": {"graph", "admission", "api", "baseline", "persistence", "lifecycle", "completion", "delivery", "inspection"},
+    areas = {"runtime": {"graph", "admission", "api", "baseline", "persistence", "lifecycle", "completion", "delivery", "inspection", "acceptance"},
              "data-artifacts": {"persistence", "publication", "storage", "retention", "maintenance", "acceptance"}}
     if args.area and args.area not in areas.get(args.module, set()):
         parser.error("--area must belong to the selected module")

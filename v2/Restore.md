@@ -2,16 +2,16 @@
 
 ## Current Checkpoint
 
-- Last refreshed: `2026-09-28 13:10:54` (America/Chicago).
+- Last refreshed: `2026-09-28 13:16:35` (America/Chicago).
 - Workspace: v2 active; v1 frozen. External references require task-specific authorization.
-- Canonical position: BP-02 -> [BP-02.06](docs/Build%20Plans/BP-02/BP-02.06%20Recovery%20and%20Integration.md) / V1 / R1 fault orchestration; next R2 publication/acceptance recovery.
-- Progress: parent 84.38% (27/32 deliveries). Children .01-.05 complete/audited/archived; .06 at 0% (V1 0%, V2 0%); BP-03..09 at 0%.
+- Canonical position: BP-02 -> [BP-02.06](docs/Build%20Plans/BP-02/BP-02.06%20Recovery%20and%20Integration.md) / V1 / R2 publication/acceptance recovery; next R3 worker/delivery recovery.
+- Progress: parent 87.50% (28/32 deliveries). Children .01-.05 complete/audited/archived; .06 at 20% (V1 25%, V2 0%); BP-03..09 at 0%.
 - Latest work: actual independently installed runtime/artifact peers proved completion/confirmation, cancellation/release before stale completion resumes, original receipt replay and conserved budgets. [Completion audit](docs/Audits/BP-02.05_Completion_Delivery_Closeout.md) passed.
 - Evidence: 298 aggregate tests with PostgreSQL; lint/import/schema gates, eight independent wheels, both standalone probes and paired integration passed. 68 published schemas. HTTP workers have no database credentials; service environments contain only their own database URL.
 - Authority: autonomous continuation and significant commit/push checkpoints authorized. No current user blocker. Scientific/provider/host choices remain later gates.
 - Environment: Python 3.12, uv and labeled PostgreSQL 17.11 fixture. Dynamic endpoint/credentials only in ignored v2/.test-results/postgres-fixture.json. Set AMPHORA_TEST_POSTGRES=1; never publish credentials. Serialize fixture resets against tests.
-- Git: D5 0a31eb5 pushed; D6 closeout verified for commit/push. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
-- R1 handoff: reuse runtime-owned tests/acceptance harness. Add explicit test-only fault entrypoints and exact scenario manifests for REC-01..09; ordinary startup has no injection switches. R2/R3 kill actual owned processes and restart retained state; R4 independent install/restore; R5 audit/parent closeout. No private cross-owner imports or SQL assertions. Public GET artifact reservation observes protection without mutation.
+- Git: D6 e225af6 pushed; R1 orchestration verified for commit/push. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
+- R2 handoff: reuse runtime-owned tests/acceptance harness, recovery_evidence.py and artifact-owned fault_host.py. R1 passed six runtime/five artifact cases; no actual R2 recovery credit yet. Ordinary startup rejects fault switches. R2/R3 kill actual owned processes and restart retained state; R4 independent install/restore; R5 audit/parent closeout. No private cross-owner imports or SQL assertions. Public GET artifact reservation observes protection without mutation.
 - Limits: .06 full crash matrix remains required. Linux/target-storage power-loss/backup stays BP-09. No interpreter/scientific validity/provider/Studio claim. Existing test-client warning is nonblocking.
 
 ## Decomposition and Resume Discipline

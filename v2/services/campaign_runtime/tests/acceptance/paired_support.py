@@ -69,12 +69,17 @@ class Process:
 
 
 class ReservationProxy:
-    """Forward actual owner replies; pause one reserve response after its durable effect."""
-    def __init__(self, endpoint):
+    """Forward actual replies; pause a selected response after its durable effect.
+
+    Default is reservation acquisition. Tests can explicitly select claim, completion
+    or delivery response windows without changing production entrypoints.
+    """
+    def __init__(self, endpoint, hold_path="/v1/reservations"):
         self.hold_next = False
         self.arrived = threading.Event()
         self.release = threading.Event()
         self.receipts = []
+        self.requests = []
         owner = self
 
         class Handler(BaseHTTPRequestHandler):
@@ -85,8 +90,9 @@ class ReservationProxy:
                 body = self.rfile.read(int(self.headers["Content-Length"]))
                 status, response = request(endpoint, self.path,
                     self.headers["Authorization"].removeprefix("Bearer "), body, "POST")
-                if self.path == "/v1/reservations" and status == 200:
+                if self.path == hold_path and status == 200:
                     owner.receipts.append(json.loads(response))
+                    owner.requests.append(json.loads(body))
                     if owner.hold_next:
                         owner.hold_next = False
                         owner.arrived.set()
