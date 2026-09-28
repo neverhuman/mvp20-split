@@ -271,7 +271,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-sequence-statistics"
-version = "0.2.0"
+version = "0.3.0"
 source = { editable = "../tools/sequence_statistics" }
 dependencies = [
     { name = "amphora-contracts-core" },

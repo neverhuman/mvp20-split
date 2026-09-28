@@ -1,6 +1,6 @@
 # Tool Replica Integration Acceptance
 
-- Status: BP-03.04/B1 passed; B2 death/reclaim and immutable release cutover active.
+- Status: BP-03.04/B1 passed; B1/B2 passed; B3 acceptance negatives active.
 - Owner: cross-owner synthetic tool integration tests, not a production service or scheduler.
 - Architecture: [Tool Services](../../../docs/Architecture/Capabilities/Tool_Services.md).
 
@@ -15,3 +15,5 @@ Evidence contains scoped immutable identities, receipts, state snapshots, hash-o
 `run_tests.py --module tool-replicas` selects the small wire-fixture conformance tier only. Optional Python coverage uses the entire harness directory, so unexecuted process drivers remain visible. Actual independent process cases have named acceptance evidence rather than inferred source coverage. Run those sequentially because the initial Runtime profile admits one active campaign globally.
 
 B1 actual scope f303014dbbc44baa870a8bf5c01095a7 passed on 2026-09-28 17:04:34: registry selection/admission, two distinct simultaneous claims, publication before acceptance and completion acknowledgement loss. Both results match independent goldens; budget reserves/spends each attempt once. [Preserved evidence](../../../docs/Audits/Evidence/BP-03-Replicas/README.md).
+
+Add `--previous-images <prior-manifest>` for death/reclaim and new-release cutover. The driver verifies and installs the prior manifest's adjacent built-wheels bytes into a separate environment; it never rebuilds a prior identity from changed source. Five actual cases passed at 2026-09-28 17:12:18, scope cf1cde5566ec445b97829458da776604. Original receipts, output bytes and run snapshot remain unchanged after replacement; an old-release worker cannot claim the new run.

@@ -17,7 +17,7 @@ def run(e, http):
     assert selection["decision"]["status"] == "candidate", selection["reason_code"]
     selected = selection["decision"]["observations"]["release"]
     assert selected == tool.lock
-    fixture = e.fixtures[tool.module + "-2"]
+    fixture = e.fixtures[tool.key + "-2"]
     assert all(item["tool"] == selected["tool"] for item in fixture["invocations"])
     admitted = http.decoded(e.runtime.endpoint, "/v1/fixture-runs", e.tokens["admin"],
         e.command("runtime.admit_fixture", fixture))

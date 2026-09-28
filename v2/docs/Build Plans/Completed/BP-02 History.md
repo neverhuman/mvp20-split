@@ -220,3 +220,5 @@ The preliminary 34-child-delivery denominator included pure design gates S1 and 
 | 2026-09-28 11:28:20 | BP-02.04 I3 passed; child 50%, V1 60%, parent 56.25%; next I4 | Two-process claims/live-clock renewal; 224 tests/eight builds |
 
 | 2026-09-28 11:37:28 | BP-02.04 I4 passed; child 66.67%, V1 80%, parent 59.38%; next I5 | Budget/rollback/prepared-intent guards; 229 full tests, 41 scoped |
+
+| 2026-09-28 11:51:08 | BP-02.04 I5 passed; child 83.33%, V1 100%, parent 62.50%; next I6 | 239 tests; atomic cancel/revoke and policy journal; f8a8f94 pushed |

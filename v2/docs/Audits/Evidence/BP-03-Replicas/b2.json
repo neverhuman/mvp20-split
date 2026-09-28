@@ -1,0 +1,3498 @@
+{
+  "active_run": null,
+  "artifact_requests": [
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/artifacts/e9f9424b6d284a09846f72ea689ac801",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/artifacts/e9f9424b6d284a09846f72ea689ac801/content",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/artifacts/e9f9424b6d284a09846f72ea689ac801",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/artifacts/e9f9424b6d284a09846f72ea689ac801/content",
+      "status": 200
+    },
+    {
+      "body_sha256": "e311fed71e9e4157805d5b2a0a31119828f29c8d87e3d8d1ee5927f2edf3313a",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "artifacts.begin_upload",
+        "command_id": "upload-5e5f37a774b54a45acaf6cfcbc896559",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/uploads",
+      "status": 200
+    },
+    {
+      "body_sha256": "ef0ac7bbfe4ec99768ab3d882ea527b4d97a6dc97b5fd88cd6964a88061f20e3",
+      "identity": {
+        "actor_id": "worker1",
+        "command_family": "artifacts.begin_upload",
+        "command_id": "upload-6df2fafb1668419582bffaff705dde04",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/uploads",
+      "status": 200
+    },
+    {
+      "body_sha256": "5094ec564a1014328ae8f2fe351c57b3a99f52d520ea84b08bd1210a0d7e5073",
+      "method": "PUT",
+      "path": "/v1/uploads/7c79d23e3bae439284707c4d289f2557/content",
+      "status": 200
+    },
+    {
+      "body_sha256": "5094ec564a1014328ae8f2fe351c57b3a99f52d520ea84b08bd1210a0d7e5073",
+      "method": "PUT",
+      "path": "/v1/uploads/d73dd61766b84b1291ddf22713a80c79/content",
+      "status": 200
+    },
+    {
+      "body_sha256": "4d9579959776f639c980ddff862ad629a9bedc02626965c3032b44728378fe89",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "artifacts.finalize",
+        "command_id": "finalize-5e5f37a774b54a45acaf6cfcbc896559",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/artifacts/finalize",
+      "status": 200
+    },
+    {
+      "body_sha256": "37ccabb8a69d8e53d6835100444e2af8a6690ea8245289407e9fec4756bfa831",
+      "identity": {
+        "actor_id": "worker1",
+        "command_family": "artifacts.finalize",
+        "command_id": "finalize-6df2fafb1668419582bffaff705dde04",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/artifacts/finalize",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/artifacts/e9f9424b6d284a09846f72ea689ac801",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/artifacts/e9f9424b6d284a09846f72ea689ac801/content",
+      "status": 200
+    },
+    {
+      "body_sha256": "57dbd7c95aa8865e858e0026de26a13bee92ba99b5df35d0c73e10f3eef2e3a2",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "artifacts.begin_upload",
+        "command_id": "upload-c658d348e21b4e379123830ca241ba88",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/uploads",
+      "status": 200
+    },
+    {
+      "body_sha256": "5094ec564a1014328ae8f2fe351c57b3a99f52d520ea84b08bd1210a0d7e5073",
+      "method": "PUT",
+      "path": "/v1/uploads/96ff208359214d3f8c6e4acf82050a7a/content",
+      "status": 200
+    },
+    {
+      "body_sha256": "43e09f6c642e35291dcd5972643f0857c0ab52769ef5533b6eaeecd21507a1a8",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "artifacts.finalize",
+        "command_id": "finalize-c658d348e21b4e379123830ca241ba88",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/artifacts/finalize",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/artifacts/9b9654b235484fc8967edc2ff5f89b47",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/artifacts/9b9654b235484fc8967edc2ff5f89b47/content",
+      "status": 200
+    },
+    {
+      "body_sha256": "de3527e5ef004b4a194ac8af553f1a97f86812fc4b111890f5b1f116ae350b9f",
+      "identity": {
+        "actor_id": "worker1",
+        "command_family": "artifacts.begin_upload",
+        "command_id": "upload-e8ae1465cd964a469f0b7c1a0a47f74c",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/uploads",
+      "status": 200
+    },
+    {
+      "body_sha256": "b572f5b572518d87a0e96f9c40ffdee557d7da43cb4aa659776f542ab06d3208",
+      "method": "PUT",
+      "path": "/v1/uploads/b86db44b4f0445f9ae998022baea10a5/content",
+      "status": 200
+    },
+    {
+      "body_sha256": "33f35d500988b1661543d9460838d9691b668a149d398a43d3f3f4f6a85150dd",
+      "identity": {
+        "actor_id": "worker1",
+        "command_family": "artifacts.finalize",
+        "command_id": "finalize-e8ae1465cd964a469f0b7c1a0a47f74c",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/artifacts/finalize",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/artifacts/ed6c07bef2e14bf58d6aa8e81d81fcab",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/artifacts/ed6c07bef2e14bf58d6aa8e81d81fcab/content",
+      "status": 200
+    },
+    {
+      "body_sha256": "83ce9eb025cebc3114910eed713d8c4b5a511ce28310a4fc702b6a497832e2d9",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "artifacts.begin_upload",
+        "command_id": "upload-4d6c003816a64e589fd7167ed7f6f70a",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/uploads",
+      "status": 200
+    },
+    {
+      "body_sha256": "b572f5b572518d87a0e96f9c40ffdee557d7da43cb4aa659776f542ab06d3208",
+      "method": "PUT",
+      "path": "/v1/uploads/ac864d5cfddb4f808f44ee309fdf6c76/content",
+      "status": 200
+    },
+    {
+      "body_sha256": "78e2287fbac305ebdf1865da6ae8bb0587fd763263908fd0ed81397ae503b860",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "artifacts.finalize",
+        "command_id": "finalize-4d6c003816a64e589fd7167ed7f6f70a",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/artifacts/finalize",
+      "status": 200
+    }
+  ],
+  "cases": [
+    {
+      "admission": {
+        "outcome": {
+          "binding": {
+            "identity": {
+              "actor_id": "admin",
+              "command_family": "runtime.admit_fixture",
+              "command_id": "0d9337d429ad4eb09a3189579f29f4ea",
+              "schema_version": "1",
+              "scope": {
+                "project_id": "cf1cde5566ec445b97829458da776604",
+                "tenant_id": "tool-replicas"
+              }
+            },
+            "operation_id": "a90b1afae5984211bceef6ef32d69c46",
+            "request_sha256": "8704a9c36102fef8870028168e9340553781a9ed2a44cad5bfb065d9f474185c"
+          },
+          "committed": {
+            "kind": "run",
+            "object_id": "ac6cd9371d2a4bc7bf909c8cd87fe479",
+            "revision": 0
+          },
+          "status": "accepted"
+        },
+        "schema_version": "1"
+      },
+      "case": "REPLICA-REGISTRY-TO-RUNTIME",
+      "catalog": {
+        "items": [
+          {
+            "descriptor": {
+              "anti_examples": [
+                "Does not establish biological, chemical or materials validity."
+              ],
+              "authority_ceiling": "synthetic_only",
+              "checkpoint": {
+                "mode": "none",
+                "readable_schema_sha256": []
+              },
+              "egress": {
+                "mode": "deny"
+              },
+              "examples": [
+                "values=[-1,0,1], a=-2, b=3 gives [5,3,1]."
+              ],
+              "reproducibility": "deterministic",
+              "resources": {
+                "architectures": [
+                  "x86_64"
+                ],
+                "cpu_millicores": 1000,
+                "gpu_count": 0,
+                "max_batch_size": 1,
+                "max_parallel_invocations": 1,
+                "memory_mib": 128,
+                "operating_systems": [
+                  "linux"
+                ],
+                "timeout_seconds": 60
+              },
+              "schema_version": "1",
+              "tool": {
+                "applicability": [
+                  "synthetic-tests"
+                ],
+                "binding": {
+                  "capability_id": "synthetic.numeric-affine",
+                  "contract_version": "1",
+                  "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+                  "release": "0.2.0"
+                },
+                "checkpoint_schema": null,
+                "inputs": [
+                  {
+                    "name": "parameters",
+                    "representation": "numeric-vector",
+                    "required": true,
+                    "schema_ref": {
+                      "schema_id": "synthetic.numeric-affine.input",
+                      "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                      "version": "1"
+                    },
+                    "unit": "1"
+                  }
+                ],
+                "outputs": [
+                  {
+                    "name": "result",
+                    "representation": "numeric-vector",
+                    "required": true,
+                    "schema_ref": {
+                      "schema_id": "synthetic.numeric-affine.output",
+                      "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                      "version": "1"
+                    },
+                    "unit": "1"
+                  }
+                ],
+                "purpose": "Apply a*x+b independently to bounded synthetic numeric values.",
+                "schema_version": "1",
+                "side_effects": "pure"
+              }
+            },
+            "lock": {
+              "checkpoint_schema": null,
+              "descriptor_sha256": "881012eaaada89d3992a081df932c5be2013ed2e390db7699d76eaf1e33fec5f",
+              "input_schemas": [
+                {
+                  "port": "parameters",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.input",
+                    "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                    "version": "1"
+                  }
+                }
+              ],
+              "output_schemas": [
+                {
+                  "port": "result",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.output",
+                    "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                    "version": "1"
+                  }
+                }
+              ],
+              "schema_version": "1",
+              "tool": {
+                "capability_id": "synthetic.numeric-affine",
+                "contract_version": "1",
+                "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+                "release": "0.2.0"
+              }
+            },
+            "revision": 2,
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            },
+            "status": "active"
+          }
+        ],
+        "next_after": null,
+        "schema_version": "1"
+      },
+      "heartbeats": [
+        {
+          "decision": null,
+          "deployment": null,
+          "heartbeat": {
+            "deployment_id": "deployment-0",
+            "expires_at": "2026-09-28T22:11:11.601860Z",
+            "free_slots": 1,
+            "observed_at": "2026-09-28T22:10:11.601860Z",
+            "replica_id": "worker1-deployment-0",
+            "revision": 1,
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            },
+            "worker_id": "worker1"
+          },
+          "operation_id": "bdb4bb063ef14dd3853373fd8bc671f4",
+          "reason_code": "observed",
+          "release": null,
+          "schema_version": "1",
+          "status": "accepted"
+        },
+        {
+          "decision": null,
+          "deployment": null,
+          "heartbeat": {
+            "deployment_id": "deployment-0",
+            "expires_at": "2026-09-28T22:11:11.624540Z",
+            "free_slots": 1,
+            "observed_at": "2026-09-28T22:10:11.624540Z",
+            "replica_id": "worker2-deployment-0",
+            "revision": 1,
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            },
+            "worker_id": "worker2"
+          },
+          "operation_id": "d257eb4f17f741a9934ee34a3c8ac451",
+          "reason_code": "observed",
+          "release": null,
+          "schema_version": "1",
+          "status": "accepted"
+        }
+      ],
+      "observed_at": "2026-09-28 17:10:17",
+      "run_id": "ac6cd9371d2a4bc7bf909c8cd87fe479",
+      "selection": {
+        "decision": {
+          "admission": {
+            "reason_codes": [
+              "policy_compatible"
+            ],
+            "status": "allowed"
+          },
+          "assessed_at": "2026-09-28T22:10:17.051085Z",
+          "capacity_valid_until": "2026-09-28T22:11:11.601860Z",
+          "observations": {
+            "capacity": {
+              "reason_codes": [
+                "healthy_capacity"
+              ],
+              "status": "available"
+            },
+            "policy_sha256": "b15b379f9efd0617c3bbbd038973a08ee5170697567e4039cb050519d8d4a2c4",
+            "release": {
+              "checkpoint_schema": null,
+              "descriptor_sha256": "881012eaaada89d3992a081df932c5be2013ed2e390db7699d76eaf1e33fec5f",
+              "input_schemas": [
+                {
+                  "port": "parameters",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.input",
+                    "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                    "version": "1"
+                  }
+                }
+              ],
+              "output_schemas": [
+                {
+                  "port": "result",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.output",
+                    "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                    "version": "1"
+                  }
+                }
+              ],
+              "schema_version": "1",
+              "tool": {
+                "capability_id": "synthetic.numeric-affine",
+                "contract_version": "1",
+                "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+                "release": "0.2.0"
+              }
+            },
+            "schema_version": "1",
+            "scientific": {
+              "reason_codes": [
+                "synthetic_fixture_only"
+              ],
+              "status": "eligible"
+            },
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            },
+            "structural": {
+              "findings": [],
+              "status": "valid"
+            }
+          },
+          "schema_version": "1",
+          "status": "candidate"
+        },
+        "deployment": null,
+        "heartbeat": null,
+        "operation_id": "d92e186ebb3a4b9181b4cc35b90777a7",
+        "reason_code": "candidate",
+        "release": {
+          "descriptor": {
+            "anti_examples": [
+              "Does not establish biological, chemical or materials validity."
+            ],
+            "authority_ceiling": "synthetic_only",
+            "checkpoint": {
+              "mode": "none",
+              "readable_schema_sha256": []
+            },
+            "egress": {
+              "mode": "deny"
+            },
+            "examples": [
+              "values=[-1,0,1], a=-2, b=3 gives [5,3,1]."
+            ],
+            "reproducibility": "deterministic",
+            "resources": {
+              "architectures": [
+                "x86_64"
+              ],
+              "cpu_millicores": 1000,
+              "gpu_count": 0,
+              "max_batch_size": 1,
+              "max_parallel_invocations": 1,
+              "memory_mib": 128,
+              "operating_systems": [
+                "linux"
+              ],
+              "timeout_seconds": 60
+            },
+            "schema_version": "1",
+            "tool": {
+              "applicability": [
+                "synthetic-tests"
+              ],
+              "binding": {
+                "capability_id": "synthetic.numeric-affine",
+                "contract_version": "1",
+                "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+                "release": "0.2.0"
+              },
+              "checkpoint_schema": null,
+              "inputs": [
+                {
+                  "name": "parameters",
+                  "representation": "numeric-vector",
+                  "required": true,
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.input",
+                    "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                    "version": "1"
+                  },
+                  "unit": "1"
+                }
+              ],
+              "outputs": [
+                {
+                  "name": "result",
+                  "representation": "numeric-vector",
+                  "required": true,
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.output",
+                    "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                    "version": "1"
+                  },
+                  "unit": "1"
+                }
+              ],
+              "purpose": "Apply a*x+b independently to bounded synthetic numeric values.",
+              "schema_version": "1",
+              "side_effects": "pure"
+            }
+          },
+          "lock": {
+            "checkpoint_schema": null,
+            "descriptor_sha256": "881012eaaada89d3992a081df932c5be2013ed2e390db7699d76eaf1e33fec5f",
+            "input_schemas": [
+              {
+                "port": "parameters",
+                "schema_ref": {
+                  "schema_id": "synthetic.numeric-affine.input",
+                  "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                  "version": "1"
+                }
+              }
+            ],
+            "output_schemas": [
+              {
+                "port": "result",
+                "schema_ref": {
+                  "schema_id": "synthetic.numeric-affine.output",
+                  "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                  "version": "1"
+                }
+              }
+            ],
+            "schema_version": "1",
+            "tool": {
+              "capability_id": "synthetic.numeric-affine",
+              "contract_version": "1",
+              "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+              "release": "0.2.0"
+            }
+          },
+          "revision": 2,
+          "scope": {
+            "project_id": "cf1cde5566ec445b97829458da776604",
+            "tenant_id": "tool-replicas"
+          },
+          "status": "active"
+        },
+        "schema_version": "1",
+        "status": "accepted"
+      }
+    },
+    {
+      "case": "REPLICA-DISTINCT-CONCURRENT-CLAIMS",
+      "claims": [
+        {
+          "outcome": {
+            "invocation": {
+              "activation_id": "activation-0",
+              "attempt_id": "6df2fafb1668419582bffaff705dde04",
+              "checkpoint": null,
+              "fence": 1,
+              "grant_id": "6df2fafb1668419582bffaff705dde04",
+              "inputs": [
+                {
+                  "artifact": {
+                    "artifact_id": "e9f9424b6d284a09846f72ea689ac801",
+                    "media_type": "application/json",
+                    "schema_ref": {
+                      "schema_id": "synthetic.numeric-affine.input",
+                      "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                      "version": "1"
+                    },
+                    "scope": {
+                      "project_id": "cf1cde5566ec445b97829458da776604",
+                      "tenant_id": "tool-replicas"
+                    },
+                    "sha256": "bf8c863248a5f3c3894be26800b1efbfb4af237da1b7f605016e63da68fbd3e4",
+                    "size_bytes": 39
+                  },
+                  "port": "parameters"
+                }
+              ],
+              "invocation_id": "invocation-0",
+              "node_id": "node-0",
+              "run_id": "ac6cd9371d2a4bc7bf909c8cd87fe479",
+              "schema_version": "1",
+              "scope": {
+                "project_id": "cf1cde5566ec445b97829458da776604",
+                "tenant_id": "tool-replicas"
+              },
+              "timeout_seconds": 60,
+              "tool": {
+                "capability_id": "synthetic.numeric-affine",
+                "contract_version": "1",
+                "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+                "release": "0.2.0"
+              }
+            },
+            "lease_expires_at": "2026-09-28T22:10:47.570654Z",
+            "receipt": {
+              "binding": {
+                "identity": {
+                  "actor_id": "worker1",
+                  "command_family": "runtime.claim",
+                  "command_id": "claim-dac5f495842a4da185b097b2b0fabb0d",
+                  "schema_version": "1",
+                  "scope": {
+                    "project_id": "cf1cde5566ec445b97829458da776604",
+                    "tenant_id": "tool-replicas"
+                  }
+                },
+                "operation_id": "0e3d93798dd54cffafeb18f339ab15a9",
+                "request_sha256": "51bacce67fb3b0a16239e92954ee7ea253fbd66b97cada155f4be27f3af30d4d"
+              },
+              "committed": {
+                "kind": "attempt",
+                "object_id": "6df2fafb1668419582bffaff705dde04",
+                "revision": 1
+              },
+              "status": "accepted"
+            },
+            "status": "claimed"
+          },
+          "schema_version": "1"
+        },
+        {
+          "outcome": {
+            "invocation": {
+              "activation_id": "activation-1",
+              "attempt_id": "5e5f37a774b54a45acaf6cfcbc896559",
+              "checkpoint": null,
+              "fence": 1,
+              "grant_id": "5e5f37a774b54a45acaf6cfcbc896559",
+              "inputs": [
+                {
+                  "artifact": {
+                    "artifact_id": "e9f9424b6d284a09846f72ea689ac801",
+                    "media_type": "application/json",
+                    "schema_ref": {
+                      "schema_id": "synthetic.numeric-affine.input",
+                      "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                      "version": "1"
+                    },
+                    "scope": {
+                      "project_id": "cf1cde5566ec445b97829458da776604",
+                      "tenant_id": "tool-replicas"
+                    },
+                    "sha256": "bf8c863248a5f3c3894be26800b1efbfb4af237da1b7f605016e63da68fbd3e4",
+                    "size_bytes": 39
+                  },
+                  "port": "parameters"
+                }
+              ],
+              "invocation_id": "invocation-1",
+              "node_id": "node-1",
+              "run_id": "ac6cd9371d2a4bc7bf909c8cd87fe479",
+              "schema_version": "1",
+              "scope": {
+                "project_id": "cf1cde5566ec445b97829458da776604",
+                "tenant_id": "tool-replicas"
+              },
+              "timeout_seconds": 60,
+              "tool": {
+                "capability_id": "synthetic.numeric-affine",
+                "contract_version": "1",
+                "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+                "release": "0.2.0"
+              }
+            },
+            "lease_expires_at": "2026-09-28T22:10:47.688163Z",
+            "receipt": {
+              "binding": {
+                "identity": {
+                  "actor_id": "worker2",
+                  "command_family": "runtime.claim",
+                  "command_id": "claim-ba5688ce069541039456543eaae7011d",
+                  "schema_version": "1",
+                  "scope": {
+                    "project_id": "cf1cde5566ec445b97829458da776604",
+                    "tenant_id": "tool-replicas"
+                  }
+                },
+                "operation_id": "a31c9d8b241e41a3a043f2e1ab39e64d",
+                "request_sha256": "0c317b2dc217ee1d961038f3840f6fe8c2dc1cc739802f0d24d24cfd851065e1"
+              },
+              "committed": {
+                "kind": "attempt",
+                "object_id": "5e5f37a774b54a45acaf6cfcbc896559",
+                "revision": 2
+              },
+              "status": "accepted"
+            },
+            "status": "claimed"
+          },
+          "schema_version": "1"
+        }
+      ],
+      "observed_at": "2026-09-28 17:10:17",
+      "snapshot": {
+        "activations": [
+          {
+            "activation_id": "activation-0",
+            "attempt_count": 1,
+            "fence": 1,
+            "invocation_id": "invocation-0",
+            "latest_attempt": {
+              "attempt_id": "6df2fafb1668419582bffaff705dde04",
+              "deadline": "2026-09-28T22:11:17.570091Z",
+              "fence": 1,
+              "lease_expires_at": "2026-09-28T22:10:47.570654Z",
+              "status": "leased",
+              "worker_id": "worker1"
+            },
+            "status": "leased"
+          },
+          {
+            "activation_id": "activation-1",
+            "attempt_count": 1,
+            "fence": 1,
+            "invocation_id": "invocation-1",
+            "latest_attempt": {
+              "attempt_id": "5e5f37a774b54a45acaf6cfcbc896559",
+              "deadline": "2026-09-28T22:11:17.687705Z",
+              "fence": 1,
+              "lease_expires_at": "2026-09-28T22:10:47.688163Z",
+              "status": "leased",
+              "worker_id": "worker2"
+            },
+            "status": "leased"
+          }
+        ],
+        "budget": {
+          "available": 2,
+          "limit": 4,
+          "reserved": 2,
+          "spent": 0
+        },
+        "fixture_id": "amphora_numeric_affine-0.2.0-2",
+        "plan_sha256": "6ae93fb6aeeec736b0b5554b858fc5c419d51de1f20653543b7de8c1a3670677",
+        "revision": 2,
+        "run_id": "ac6cd9371d2a4bc7bf909c8cd87fe479",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        },
+        "status": "running"
+      }
+    },
+    {
+      "artifact_requests": [
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/e9f9424b6d284a09846f72ea689ac801",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/e9f9424b6d284a09846f72ea689ac801/content",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/e9f9424b6d284a09846f72ea689ac801",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/e9f9424b6d284a09846f72ea689ac801/content",
+          "status": 200
+        },
+        {
+          "body_sha256": "e311fed71e9e4157805d5b2a0a31119828f29c8d87e3d8d1ee5927f2edf3313a",
+          "identity": {
+            "actor_id": "worker2",
+            "command_family": "artifacts.begin_upload",
+            "command_id": "upload-5e5f37a774b54a45acaf6cfcbc896559",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/uploads",
+          "status": 200
+        },
+        {
+          "body_sha256": "ef0ac7bbfe4ec99768ab3d882ea527b4d97a6dc97b5fd88cd6964a88061f20e3",
+          "identity": {
+            "actor_id": "worker1",
+            "command_family": "artifacts.begin_upload",
+            "command_id": "upload-6df2fafb1668419582bffaff705dde04",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/uploads",
+          "status": 200
+        },
+        {
+          "body_sha256": "5094ec564a1014328ae8f2fe351c57b3a99f52d520ea84b08bd1210a0d7e5073",
+          "method": "PUT",
+          "path": "/v1/uploads/7c79d23e3bae439284707c4d289f2557/content",
+          "status": 200
+        },
+        {
+          "body_sha256": "5094ec564a1014328ae8f2fe351c57b3a99f52d520ea84b08bd1210a0d7e5073",
+          "method": "PUT",
+          "path": "/v1/uploads/d73dd61766b84b1291ddf22713a80c79/content",
+          "status": 200
+        },
+        {
+          "body_sha256": "4d9579959776f639c980ddff862ad629a9bedc02626965c3032b44728378fe89",
+          "identity": {
+            "actor_id": "worker2",
+            "command_family": "artifacts.finalize",
+            "command_id": "finalize-5e5f37a774b54a45acaf6cfcbc896559",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/artifacts/finalize",
+          "status": 200
+        },
+        {
+          "body_sha256": "37ccabb8a69d8e53d6835100444e2af8a6690ea8245289407e9fec4756bfa831",
+          "identity": {
+            "actor_id": "worker1",
+            "command_family": "artifacts.finalize",
+            "command_id": "finalize-6df2fafb1668419582bffaff705dde04",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/artifacts/finalize",
+          "status": 200
+        }
+      ],
+      "before_completion": {
+        "activations": [
+          {
+            "activation_id": "activation-0",
+            "attempt_count": 1,
+            "fence": 1,
+            "invocation_id": "invocation-0",
+            "latest_attempt": {
+              "attempt_id": "6df2fafb1668419582bffaff705dde04",
+              "deadline": "2026-09-28T22:11:17.570091Z",
+              "fence": 1,
+              "lease_expires_at": "2026-09-28T22:10:48.219452Z",
+              "status": "leased",
+              "worker_id": "worker1"
+            },
+            "status": "leased"
+          },
+          {
+            "activation_id": "activation-1",
+            "attempt_count": 1,
+            "fence": 1,
+            "invocation_id": "invocation-1",
+            "latest_attempt": {
+              "attempt_id": "5e5f37a774b54a45acaf6cfcbc896559",
+              "deadline": "2026-09-28T22:11:17.687705Z",
+              "fence": 1,
+              "lease_expires_at": "2026-09-28T22:10:48.187788Z",
+              "status": "leased",
+              "worker_id": "worker2"
+            },
+            "status": "leased"
+          }
+        ],
+        "budget": {
+          "available": 2,
+          "limit": 4,
+          "reserved": 2,
+          "spent": 0
+        },
+        "fixture_id": "amphora_numeric_affine-0.2.0-2",
+        "plan_sha256": "6ae93fb6aeeec736b0b5554b858fc5c419d51de1f20653543b7de8c1a3670677",
+        "revision": 10,
+        "run_id": "ac6cd9371d2a4bc7bf909c8cd87fe479",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        },
+        "status": "running"
+      },
+      "case": "REPLICA-PUBLICATION-AND-LOST-COMPLETION",
+      "observed_at": "2026-09-28 17:10:18",
+      "records": [
+        {
+          "completion": {
+            "accepted_run_revision": 15,
+            "activation_id": "activation-0",
+            "canonical_result": true,
+            "completion_id": "3a8a818ab7514284b642dd90e30bb998",
+            "result": {
+              "attempt_id": "6df2fafb1668419582bffaff705dde04",
+              "fence": 1,
+              "invocation_id": "invocation-0",
+              "outcome": {
+                "checkpoint": null,
+                "outputs": [
+                  {
+                    "artifact": {
+                      "artifact_id": "2c3791dd033d47b2b7a145fe13e5f447",
+                      "media_type": "application/json",
+                      "schema_ref": {
+                        "schema_id": "synthetic.numeric-affine.output",
+                        "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                        "version": "1"
+                      },
+                      "scope": {
+                        "project_id": "cf1cde5566ec445b97829458da776604",
+                        "tenant_id": "tool-replicas"
+                      },
+                      "sha256": "5094ec564a1014328ae8f2fe351c57b3a99f52d520ea84b08bd1210a0d7e5073",
+                      "size_bytes": 45
+                    },
+                    "port": "result"
+                  }
+                ],
+                "status": "succeeded"
+              },
+              "schema_version": "1"
+            },
+            "retention_reservation_ids": [
+              "531c5eab7ca94da0b3ca001128250023"
+            ],
+            "run_id": "ac6cd9371d2a4bc7bf909c8cd87fe479",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            }
+          },
+          "receipt": {
+            "outcome": {
+              "binding": {
+                "identity": {
+                  "actor_id": "worker1",
+                  "command_family": "runtime.complete",
+                  "command_id": "complete-6df2fafb1668419582bffaff705dde04",
+                  "schema_version": "1",
+                  "scope": {
+                    "project_id": "cf1cde5566ec445b97829458da776604",
+                    "tenant_id": "tool-replicas"
+                  }
+                },
+                "operation_id": "3a8a818ab7514284b642dd90e30bb998",
+                "request_sha256": "59618aa2d3e0b8aa5a5f45093f7b1df1880b8ded7ffbfc360c7b3e252985b024"
+              },
+              "committed": {
+                "kind": "completion",
+                "object_id": "3a8a818ab7514284b642dd90e30bb998",
+                "revision": 15
+              },
+              "status": "accepted"
+            },
+            "schema_version": "1"
+          },
+          "result": {
+            "schema_version": "1",
+            "values": [
+              5.0,
+              3.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "completion": {
+            "accepted_run_revision": 16,
+            "activation_id": "activation-1",
+            "canonical_result": true,
+            "completion_id": "ec2ccf741aa24e9faa1d875feb61926a",
+            "result": {
+              "attempt_id": "5e5f37a774b54a45acaf6cfcbc896559",
+              "fence": 1,
+              "invocation_id": "invocation-1",
+              "outcome": {
+                "checkpoint": null,
+                "outputs": [
+                  {
+                    "artifact": {
+                      "artifact_id": "593b030250684aa7afb96ce1f1369c02",
+                      "media_type": "application/json",
+                      "schema_ref": {
+                        "schema_id": "synthetic.numeric-affine.output",
+                        "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                        "version": "1"
+                      },
+                      "scope": {
+                        "project_id": "cf1cde5566ec445b97829458da776604",
+                        "tenant_id": "tool-replicas"
+                      },
+                      "sha256": "5094ec564a1014328ae8f2fe351c57b3a99f52d520ea84b08bd1210a0d7e5073",
+                      "size_bytes": 45
+                    },
+                    "port": "result"
+                  }
+                ],
+                "status": "succeeded"
+              },
+              "schema_version": "1"
+            },
+            "retention_reservation_ids": [
+              "c62d181d7dde4ead92bdf8964dc48deb"
+            ],
+            "run_id": "ac6cd9371d2a4bc7bf909c8cd87fe479",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            }
+          },
+          "receipt": {
+            "outcome": {
+              "binding": {
+                "identity": {
+                  "actor_id": "worker2",
+                  "command_family": "runtime.complete",
+                  "command_id": "complete-5e5f37a774b54a45acaf6cfcbc896559",
+                  "schema_version": "1",
+                  "scope": {
+                    "project_id": "cf1cde5566ec445b97829458da776604",
+                    "tenant_id": "tool-replicas"
+                  }
+                },
+                "operation_id": "ec2ccf741aa24e9faa1d875feb61926a",
+                "request_sha256": "54638c97522dffa7671a1b1461d06d206c6883cb6e3fd48d6a55171d434edd3f"
+              },
+              "committed": {
+                "kind": "completion",
+                "object_id": "ec2ccf741aa24e9faa1d875feb61926a",
+                "revision": 16
+              },
+              "status": "accepted"
+            },
+            "schema_version": "1"
+          },
+          "result": {
+            "schema_version": "1",
+            "values": [
+              5.0,
+              3.0,
+              1.0
+            ]
+          }
+        }
+      ],
+      "runtime_requests": [
+        {
+          "body_sha256": "51bacce67fb3b0a16239e92954ee7ea253fbd66b97cada155f4be27f3af30d4d",
+          "identity": {
+            "actor_id": "worker1",
+            "command_family": "runtime.claim",
+            "command_id": "claim-dac5f495842a4da185b097b2b0fabb0d",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/claim",
+          "status": 200
+        },
+        {
+          "body_sha256": "0c317b2dc217ee1d961038f3840f6fe8c2dc1cc739802f0d24d24cfd851065e1",
+          "identity": {
+            "actor_id": "worker2",
+            "command_family": "runtime.claim",
+            "command_id": "claim-ba5688ce069541039456543eaae7011d",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/claim",
+          "status": 200
+        },
+        {
+          "body_sha256": "91b82e969741f582313064514ea15a020ff9603d0d3b047260885c4656c3fdf1",
+          "identity": {
+            "actor_id": "worker2",
+            "command_family": "runtime.renew",
+            "command_id": "renew-b0478088019849f087e149795ed85e88",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "898a070c32d44ba79d2fe53ca28ac4182a4bad3915b372bd9876989e9f19c6c3",
+          "identity": {
+            "actor_id": "worker1",
+            "command_family": "runtime.renew",
+            "command_id": "renew-790c8430d0cb486ab80745ca0909897d",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/ac6cd9371d2a4bc7bf909c8cd87fe479",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/ac6cd9371d2a4bc7bf909c8cd87fe479",
+          "status": 200
+        },
+        {
+          "body_sha256": "fce57e26aadc60e527beb8846ce8e75c0f448aeaccc7ae1724e05982796c8c88",
+          "identity": {
+            "actor_id": "worker2",
+            "command_family": "runtime.renew",
+            "command_id": "renew-15540edb046546e4b99ca4a6f473138d",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/ac6cd9371d2a4bc7bf909c8cd87fe479",
+          "status": 200
+        },
+        {
+          "body_sha256": "183f8664d43a6a7d13544ffe53600d48b5d3f7ae01e525540df3b3a6f0e41562",
+          "identity": {
+            "actor_id": "worker1",
+            "command_family": "runtime.renew",
+            "command_id": "renew-7a414c4bd8ec4684b88e6c26ffbbdc0e",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/ac6cd9371d2a4bc7bf909c8cd87fe479",
+          "status": 200
+        },
+        {
+          "body_sha256": "a175f50f1442a7f436a5ddf6f15c7b837d91fe890823224d9fbd9273342946b3",
+          "identity": {
+            "actor_id": "worker2",
+            "command_family": "runtime.renew",
+            "command_id": "renew-c5c70647bdb046b6bcb34f0eb20389ab",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "de1a2506f27c1a1064c07146774f1f6d8eb6475bd2c607551a80aab47313ff10",
+          "identity": {
+            "actor_id": "worker1",
+            "command_family": "runtime.renew",
+            "command_id": "renew-d4d84a8116d841a7bb8e19d191b94af7",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/ac6cd9371d2a4bc7bf909c8cd87fe479",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/ac6cd9371d2a4bc7bf909c8cd87fe479",
+          "status": 200
+        },
+        {
+          "body_sha256": "866fb6b3f688cef59e7b40df5e0e78b1d747d8a1492a8c211ecb133fe7d1b1ba",
+          "identity": {
+            "actor_id": "worker2",
+            "command_family": "runtime.renew",
+            "command_id": "renew-0fca761345924fdcb9ac1207c6c3b98d",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "6be1661415d60a5dbc2e9634103d4b1578f45b2993c9b14076c212d7a371a1ee",
+          "identity": {
+            "actor_id": "worker1",
+            "command_family": "runtime.renew",
+            "command_id": "renew-a77d82bb5ec94efea7aea41db857090d",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/ac6cd9371d2a4bc7bf909c8cd87fe479",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/ac6cd9371d2a4bc7bf909c8cd87fe479",
+          "status": 200
+        },
+        {
+          "body_sha256": "f65c20c474de19adac449c8eeec8caabeefd2b72a4aa30572de89b8026316934",
+          "identity": {
+            "actor_id": "worker1",
+            "command_family": "runtime.renew",
+            "command_id": "renew-d2fbbfa4e2234c5bb447e07df93e198d",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "f957cd3f874f2c709859915b4f12dba032a8ba00464486244ccc7eebe60aa6d6",
+          "identity": {
+            "actor_id": "worker2",
+            "command_family": "runtime.renew",
+            "command_id": "renew-9a740e9176014a44ab4508cce17654ed",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/ac6cd9371d2a4bc7bf909c8cd87fe479",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/ac6cd9371d2a4bc7bf909c8cd87fe479",
+          "status": 200
+        },
+        {
+          "body_sha256": "59618aa2d3e0b8aa5a5f45093f7b1df1880b8ded7ffbfc360c7b3e252985b024",
+          "fault": "response_dropped_after_owner_success",
+          "identity": {
+            "actor_id": "worker1",
+            "command_family": "runtime.complete",
+            "command_id": "complete-6df2fafb1668419582bffaff705dde04",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/complete",
+          "status": 200
+        },
+        {
+          "body_sha256": "54638c97522dffa7671a1b1461d06d206c6883cb6e3fd48d6a55171d434edd3f",
+          "identity": {
+            "actor_id": "worker2",
+            "command_family": "runtime.complete",
+            "command_id": "complete-5e5f37a774b54a45acaf6cfcbc896559",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/complete",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/commands/runtime.complete/complete-6df2fafb1668419582bffaff705dde04",
+          "status": 200
+        }
+      ],
+      "snapshot": {
+        "activations": [
+          {
+            "activation_id": "activation-0",
+            "attempt_count": 1,
+            "fence": 1,
+            "invocation_id": "invocation-0",
+            "latest_attempt": {
+              "attempt_id": "6df2fafb1668419582bffaff705dde04",
+              "deadline": "2026-09-28T22:11:17.570091Z",
+              "fence": 1,
+              "lease_expires_at": "2026-09-28T22:10:48.527327Z",
+              "status": "succeeded",
+              "worker_id": "worker1"
+            },
+            "status": "succeeded"
+          },
+          {
+            "activation_id": "activation-1",
+            "attempt_count": 1,
+            "fence": 1,
+            "invocation_id": "invocation-1",
+            "latest_attempt": {
+              "attempt_id": "5e5f37a774b54a45acaf6cfcbc896559",
+              "deadline": "2026-09-28T22:11:17.687705Z",
+              "fence": 1,
+              "lease_expires_at": "2026-09-28T22:10:48.536225Z",
+              "status": "succeeded",
+              "worker_id": "worker2"
+            },
+            "status": "succeeded"
+          }
+        ],
+        "budget": {
+          "available": 2,
+          "limit": 4,
+          "reserved": 0,
+          "spent": 2
+        },
+        "fixture_id": "amphora_numeric_affine-0.2.0-2",
+        "plan_sha256": "6ae93fb6aeeec736b0b5554b858fc5c419d51de1f20653543b7de8c1a3670677",
+        "revision": 16,
+        "run_id": "ac6cd9371d2a4bc7bf909c8cd87fe479",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        },
+        "status": "completed"
+      }
+    },
+    {
+      "case": "REPLICA-DEATH-RECLAIM-STALE-REPORT",
+      "completion": {
+        "accepted_run_revision": 9,
+        "activation_id": "activation-0",
+        "canonical_result": true,
+        "completion_id": "42cb7527cce64a17a978f2c58ae8a6c6",
+        "result": {
+          "attempt_id": "c658d348e21b4e379123830ca241ba88",
+          "fence": 2,
+          "invocation_id": "invocation-0",
+          "outcome": {
+            "checkpoint": null,
+            "outputs": [
+              {
+                "artifact": {
+                  "artifact_id": "2da5fb62d9f04a2a9eb562d9d01fdf85",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.output",
+                    "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                    "version": "1"
+                  },
+                  "scope": {
+                    "project_id": "cf1cde5566ec445b97829458da776604",
+                    "tenant_id": "tool-replicas"
+                  },
+                  "sha256": "5094ec564a1014328ae8f2fe351c57b3a99f52d520ea84b08bd1210a0d7e5073",
+                  "size_bytes": 45
+                },
+                "port": "result"
+              }
+            ],
+            "status": "succeeded"
+          },
+          "schema_version": "1"
+        },
+        "retention_reservation_ids": [
+          "a66df241e3d94d4d83f13b5739a3b3f3"
+        ],
+        "run_id": "75311b23ba6241d2a104a36afc152908",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "during_reclaim": {
+        "activations": [
+          {
+            "activation_id": "activation-0",
+            "attempt_count": 2,
+            "fence": 2,
+            "invocation_id": "invocation-0",
+            "latest_attempt": {
+              "attempt_id": "c658d348e21b4e379123830ca241ba88",
+              "deadline": "2026-09-28T22:11:19.500913Z",
+              "fence": 2,
+              "lease_expires_at": "2026-09-28T22:11:01.287047Z",
+              "status": "leased",
+              "worker_id": "worker2"
+            },
+            "status": "leased"
+          }
+        ],
+        "budget": {
+          "available": 0,
+          "limit": 2,
+          "reserved": 1,
+          "spent": 1
+        },
+        "fixture_id": "amphora_numeric_affine-0.2.0-1",
+        "plan_sha256": "58864e855d82d32a39755e2c456630cfa3f9dafb6b918d6dfde9ecb61b00acf9",
+        "revision": 2,
+        "run_id": "75311b23ba6241d2a104a36afc152908",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        },
+        "status": "running"
+      },
+      "observed_at": "2026-09-28 17:10:32",
+      "original_invocation": {
+        "activation_id": "activation-0",
+        "attempt_id": "4ca56785d3a24a7292f8c761f17158df",
+        "checkpoint": null,
+        "fence": 1,
+        "grant_id": "4ca56785d3a24a7292f8c761f17158df",
+        "inputs": [
+          {
+            "artifact": {
+              "artifact_id": "e9f9424b6d284a09846f72ea689ac801",
+              "media_type": "application/json",
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-affine.input",
+                "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                "version": "1"
+              },
+              "scope": {
+                "project_id": "cf1cde5566ec445b97829458da776604",
+                "tenant_id": "tool-replicas"
+              },
+              "sha256": "bf8c863248a5f3c3894be26800b1efbfb4af237da1b7f605016e63da68fbd3e4",
+              "size_bytes": 39
+            },
+            "port": "parameters"
+          }
+        ],
+        "invocation_id": "invocation-0",
+        "node_id": "node-0",
+        "run_id": "75311b23ba6241d2a104a36afc152908",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        },
+        "timeout_seconds": 60,
+        "tool": {
+          "capability_id": "synthetic.numeric-affine",
+          "contract_version": "1",
+          "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+          "release": "0.2.0"
+        }
+      },
+      "receipt": {
+        "outcome": {
+          "binding": {
+            "identity": {
+              "actor_id": "worker2",
+              "command_family": "runtime.complete",
+              "command_id": "complete-c658d348e21b4e379123830ca241ba88",
+              "schema_version": "1",
+              "scope": {
+                "project_id": "cf1cde5566ec445b97829458da776604",
+                "tenant_id": "tool-replicas"
+              }
+            },
+            "operation_id": "42cb7527cce64a17a978f2c58ae8a6c6",
+            "request_sha256": "6879be3e8472128b669b2fafb298be67a7ccc45ce79f2344c269bb02615280ee"
+          },
+          "committed": {
+            "kind": "completion",
+            "object_id": "42cb7527cce64a17a978f2c58ae8a6c6",
+            "revision": 9
+          },
+          "status": "accepted"
+        },
+        "schema_version": "1"
+      },
+      "reclaimed_invocation": {
+        "activation_id": "activation-0",
+        "attempt_id": "c658d348e21b4e379123830ca241ba88",
+        "checkpoint": null,
+        "fence": 2,
+        "grant_id": "c658d348e21b4e379123830ca241ba88",
+        "inputs": [
+          {
+            "artifact": {
+              "artifact_id": "e9f9424b6d284a09846f72ea689ac801",
+              "media_type": "application/json",
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-affine.input",
+                "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                "version": "1"
+              },
+              "scope": {
+                "project_id": "cf1cde5566ec445b97829458da776604",
+                "tenant_id": "tool-replicas"
+              },
+              "sha256": "bf8c863248a5f3c3894be26800b1efbfb4af237da1b7f605016e63da68fbd3e4",
+              "size_bytes": 39
+            },
+            "port": "parameters"
+          }
+        ],
+        "invocation_id": "invocation-0",
+        "node_id": "node-0",
+        "run_id": "75311b23ba6241d2a104a36afc152908",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        },
+        "timeout_seconds": 60,
+        "tool": {
+          "capability_id": "synthetic.numeric-affine",
+          "contract_version": "1",
+          "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+          "release": "0.2.0"
+        }
+      },
+      "result": {
+        "schema_version": "1",
+        "values": [
+          5.0,
+          3.0,
+          1.0
+        ]
+      },
+      "run_id": "75311b23ba6241d2a104a36afc152908",
+      "selection": {
+        "decision": {
+          "admission": {
+            "reason_codes": [
+              "policy_compatible"
+            ],
+            "status": "allowed"
+          },
+          "assessed_at": "2026-09-28T22:10:19.059445Z",
+          "capacity_valid_until": "2026-09-28T22:11:18.998364Z",
+          "observations": {
+            "capacity": {
+              "reason_codes": [
+                "healthy_capacity"
+              ],
+              "status": "available"
+            },
+            "policy_sha256": "b15b379f9efd0617c3bbbd038973a08ee5170697567e4039cb050519d8d4a2c4",
+            "release": {
+              "checkpoint_schema": null,
+              "descriptor_sha256": "881012eaaada89d3992a081df932c5be2013ed2e390db7699d76eaf1e33fec5f",
+              "input_schemas": [
+                {
+                  "port": "parameters",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.input",
+                    "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                    "version": "1"
+                  }
+                }
+              ],
+              "output_schemas": [
+                {
+                  "port": "result",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.output",
+                    "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                    "version": "1"
+                  }
+                }
+              ],
+              "schema_version": "1",
+              "tool": {
+                "capability_id": "synthetic.numeric-affine",
+                "contract_version": "1",
+                "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+                "release": "0.2.0"
+              }
+            },
+            "schema_version": "1",
+            "scientific": {
+              "reason_codes": [
+                "synthetic_fixture_only"
+              ],
+              "status": "eligible"
+            },
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            },
+            "structural": {
+              "findings": [],
+              "status": "valid"
+            }
+          },
+          "schema_version": "1",
+          "status": "candidate"
+        },
+        "deployment": null,
+        "heartbeat": null,
+        "operation_id": "01352f93259b45f6af4f325a1b427191",
+        "reason_code": "candidate",
+        "release": {
+          "descriptor": {
+            "anti_examples": [
+              "Does not establish biological, chemical or materials validity."
+            ],
+            "authority_ceiling": "synthetic_only",
+            "checkpoint": {
+              "mode": "none",
+              "readable_schema_sha256": []
+            },
+            "egress": {
+              "mode": "deny"
+            },
+            "examples": [
+              "values=[-1,0,1], a=-2, b=3 gives [5,3,1]."
+            ],
+            "reproducibility": "deterministic",
+            "resources": {
+              "architectures": [
+                "x86_64"
+              ],
+              "cpu_millicores": 1000,
+              "gpu_count": 0,
+              "max_batch_size": 1,
+              "max_parallel_invocations": 1,
+              "memory_mib": 128,
+              "operating_systems": [
+                "linux"
+              ],
+              "timeout_seconds": 60
+            },
+            "schema_version": "1",
+            "tool": {
+              "applicability": [
+                "synthetic-tests"
+              ],
+              "binding": {
+                "capability_id": "synthetic.numeric-affine",
+                "contract_version": "1",
+                "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+                "release": "0.2.0"
+              },
+              "checkpoint_schema": null,
+              "inputs": [
+                {
+                  "name": "parameters",
+                  "representation": "numeric-vector",
+                  "required": true,
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.input",
+                    "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                    "version": "1"
+                  },
+                  "unit": "1"
+                }
+              ],
+              "outputs": [
+                {
+                  "name": "result",
+                  "representation": "numeric-vector",
+                  "required": true,
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.output",
+                    "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                    "version": "1"
+                  },
+                  "unit": "1"
+                }
+              ],
+              "purpose": "Apply a*x+b independently to bounded synthetic numeric values.",
+              "schema_version": "1",
+              "side_effects": "pure"
+            }
+          },
+          "lock": {
+            "checkpoint_schema": null,
+            "descriptor_sha256": "881012eaaada89d3992a081df932c5be2013ed2e390db7699d76eaf1e33fec5f",
+            "input_schemas": [
+              {
+                "port": "parameters",
+                "schema_ref": {
+                  "schema_id": "synthetic.numeric-affine.input",
+                  "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                  "version": "1"
+                }
+              }
+            ],
+            "output_schemas": [
+              {
+                "port": "result",
+                "schema_ref": {
+                  "schema_id": "synthetic.numeric-affine.output",
+                  "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                  "version": "1"
+                }
+              }
+            ],
+            "schema_version": "1",
+            "tool": {
+              "capability_id": "synthetic.numeric-affine",
+              "contract_version": "1",
+              "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+              "release": "0.2.0"
+            }
+          },
+          "revision": 2,
+          "scope": {
+            "project_id": "cf1cde5566ec445b97829458da776604",
+            "tenant_id": "tool-replicas"
+          },
+          "status": "active"
+        },
+        "schema_version": "1",
+        "status": "accepted"
+      },
+      "snapshot": {
+        "activations": [
+          {
+            "activation_id": "activation-0",
+            "attempt_count": 2,
+            "fence": 2,
+            "invocation_id": "invocation-0",
+            "latest_attempt": {
+              "attempt_id": "c658d348e21b4e379123830ca241ba88",
+              "deadline": "2026-09-28T22:11:19.500913Z",
+              "fence": 2,
+              "lease_expires_at": "2026-09-28T22:11:02.076837Z",
+              "status": "succeeded",
+              "worker_id": "worker2"
+            },
+            "status": "succeeded"
+          }
+        ],
+        "budget": {
+          "available": 0,
+          "limit": 2,
+          "reserved": 0,
+          "spent": 2
+        },
+        "fixture_id": "amphora_numeric_affine-0.2.0-1",
+        "plan_sha256": "58864e855d82d32a39755e2c456630cfa3f9dafb6b918d6dfde9ecb61b00acf9",
+        "revision": 9,
+        "run_id": "75311b23ba6241d2a104a36afc152908",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        },
+        "status": "completed"
+      },
+      "stale_receipt": {
+        "outcome": {
+          "binding": {
+            "identity": {
+              "actor_id": "worker1",
+              "command_family": "runtime.complete",
+              "command_id": "delayed-4ca56785d3a24a7292f8c761f17158df",
+              "schema_version": "1",
+              "scope": {
+                "project_id": "cf1cde5566ec445b97829458da776604",
+                "tenant_id": "tool-replicas"
+              }
+            },
+            "operation_id": "96f599304d204062870f6fd4701a52ad",
+            "request_sha256": "b2bafe6f0c6f149654c2e8de06315af72d57e243e76f374bb438777745544f5a"
+          },
+          "reason_code": "stale_attempt",
+          "status": "rejected"
+        },
+        "schema_version": "1"
+      }
+    },
+    {
+      "case": "REPLICA-IMMUTABLE-RELEASE-CUTOVER",
+      "new_record": {
+        "completion": {
+          "accepted_run_revision": 8,
+          "activation_id": "activation-0",
+          "canonical_result": true,
+          "completion_id": "71980d548843455db9cf9ebb6ac9306d",
+          "result": {
+            "attempt_id": "4d6c003816a64e589fd7167ed7f6f70a",
+            "fence": 1,
+            "invocation_id": "invocation-0",
+            "outcome": {
+              "checkpoint": null,
+              "outputs": [
+                {
+                  "artifact": {
+                    "artifact_id": "c85bfa88aa7b4017aeccdbb48ae635e2",
+                    "media_type": "application/json",
+                    "schema_ref": {
+                      "schema_id": "synthetic.sequence-statistics.output",
+                      "sha256": "3c9502d3276bf662a855665bf5e02b2b93647ef62fea54bfb308d45a9838d842",
+                      "version": "1"
+                    },
+                    "scope": {
+                      "project_id": "cf1cde5566ec445b97829458da776604",
+                      "tenant_id": "tool-replicas"
+                    },
+                    "sha256": "b572f5b572518d87a0e96f9c40ffdee557d7da43cb4aa659776f542ab06d3208",
+                    "size_bytes": 144
+                  },
+                  "port": "result"
+                }
+              ],
+              "status": "succeeded"
+            },
+            "schema_version": "1"
+          },
+          "retention_reservation_ids": [
+            "d27dbd643dc741bdba06a22ae3c5f74c"
+          ],
+          "run_id": "170cf4d1461a47d1a80cdf598869765f",
+          "schema_version": "1",
+          "scope": {
+            "project_id": "cf1cde5566ec445b97829458da776604",
+            "tenant_id": "tool-replicas"
+          }
+        },
+        "receipt": {
+          "outcome": {
+            "binding": {
+              "identity": {
+                "actor_id": "worker2",
+                "command_family": "runtime.complete",
+                "command_id": "complete-4d6c003816a64e589fd7167ed7f6f70a",
+                "schema_version": "1",
+                "scope": {
+                  "project_id": "cf1cde5566ec445b97829458da776604",
+                  "tenant_id": "tool-replicas"
+                }
+              },
+              "operation_id": "71980d548843455db9cf9ebb6ac9306d",
+              "request_sha256": "26584eb0726d55e0b82083419b8c96fd99d49853cb795dc25fb4b6d619a2582f"
+            },
+            "committed": {
+              "kind": "completion",
+              "object_id": "71980d548843455db9cf9ebb6ac9306d",
+              "revision": 8
+            },
+            "status": "accepted"
+          },
+          "schema_version": "1"
+        },
+        "result": {
+          "counts": [
+            {
+              "count": 3,
+              "symbol": "A"
+            },
+            {
+              "count": 1,
+              "symbol": "B"
+            },
+            {
+              "count": 1,
+              "symbol": "C"
+            },
+            {
+              "count": 0,
+              "symbol": "D"
+            }
+          ],
+          "length": 5,
+          "schema_version": "1"
+        },
+        "run_id": "170cf4d1461a47d1a80cdf598869765f"
+      },
+      "new_selection": {
+        "decision": {
+          "admission": {
+            "reason_codes": [
+              "policy_compatible"
+            ],
+            "status": "allowed"
+          },
+          "assessed_at": "2026-09-28T22:10:34.153389Z",
+          "capacity_valid_until": "2026-09-28T22:11:34.095658Z",
+          "observations": {
+            "capacity": {
+              "reason_codes": [
+                "healthy_capacity"
+              ],
+              "status": "available"
+            },
+            "policy_sha256": "b15b379f9efd0617c3bbbd038973a08ee5170697567e4039cb050519d8d4a2c4",
+            "release": {
+              "checkpoint_schema": null,
+              "descriptor_sha256": "44829fa5fd9556971f7c2bd2ab762b415ef20328f6200d780cb1cf613deabae3",
+              "input_schemas": [
+                {
+                  "port": "parameters",
+                  "schema_ref": {
+                    "schema_id": "synthetic.sequence-statistics.input",
+                    "sha256": "9ed39b51350f0cc9461cefade3f9b675d6f827c93f012ee71a4668fff4ad1674",
+                    "version": "1"
+                  }
+                }
+              ],
+              "output_schemas": [
+                {
+                  "port": "result",
+                  "schema_ref": {
+                    "schema_id": "synthetic.sequence-statistics.output",
+                    "sha256": "3c9502d3276bf662a855665bf5e02b2b93647ef62fea54bfb308d45a9838d842",
+                    "version": "1"
+                  }
+                }
+              ],
+              "schema_version": "1",
+              "tool": {
+                "capability_id": "synthetic.sequence-statistics",
+                "contract_version": "1",
+                "image_sha256": "4364cc50b6c6ad07ebec70a8969f65c35fdd7054752e861510fe02b5ec3ae305",
+                "release": "0.3.0"
+              }
+            },
+            "schema_version": "1",
+            "scientific": {
+              "reason_codes": [
+                "synthetic_fixture_only"
+              ],
+              "status": "eligible"
+            },
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            },
+            "structural": {
+              "findings": [],
+              "status": "valid"
+            }
+          },
+          "schema_version": "1",
+          "status": "candidate"
+        },
+        "deployment": null,
+        "heartbeat": null,
+        "operation_id": "01ca387f5bde463fb1971d323e4b8e43",
+        "reason_code": "candidate",
+        "release": {
+          "descriptor": {
+            "anti_examples": [
+              "Does not establish biological, chemical or materials validity."
+            ],
+            "authority_ceiling": "synthetic_only",
+            "checkpoint": {
+              "mode": "none",
+              "readable_schema_sha256": []
+            },
+            "egress": {
+              "mode": "deny"
+            },
+            "examples": [
+              "ABACA over ABCD gives length 5 and counts A=3, B=1, C=1, D=0."
+            ],
+            "reproducibility": "deterministic",
+            "resources": {
+              "architectures": [
+                "x86_64"
+              ],
+              "cpu_millicores": 1000,
+              "gpu_count": 0,
+              "max_batch_size": 1,
+              "max_parallel_invocations": 1,
+              "memory_mib": 128,
+              "operating_systems": [
+                "linux"
+              ],
+              "timeout_seconds": 60
+            },
+            "schema_version": "1",
+            "tool": {
+              "applicability": [
+                "synthetic-tests"
+              ],
+              "binding": {
+                "capability_id": "synthetic.sequence-statistics",
+                "contract_version": "1",
+                "image_sha256": "4364cc50b6c6ad07ebec70a8969f65c35fdd7054752e861510fe02b5ec3ae305",
+                "release": "0.3.0"
+              },
+              "checkpoint_schema": null,
+              "inputs": [
+                {
+                  "name": "parameters",
+                  "representation": "symbol-sequence",
+                  "required": true,
+                  "schema_ref": {
+                    "schema_id": "synthetic.sequence-statistics.input",
+                    "sha256": "9ed39b51350f0cc9461cefade3f9b675d6f827c93f012ee71a4668fff4ad1674",
+                    "version": "1"
+                  },
+                  "unit": "1"
+                }
+              ],
+              "outputs": [
+                {
+                  "name": "result",
+                  "representation": "symbol-statistics",
+                  "required": true,
+                  "schema_ref": {
+                    "schema_id": "synthetic.sequence-statistics.output",
+                    "sha256": "3c9502d3276bf662a855665bf5e02b2b93647ef62fea54bfb308d45a9838d842",
+                    "version": "1"
+                  },
+                  "unit": "1"
+                }
+              ],
+              "purpose": "Count explicitly configured case-sensitive symbols in a bounded synthetic sequence.",
+              "schema_version": "1",
+              "side_effects": "pure"
+            }
+          },
+          "lock": {
+            "checkpoint_schema": null,
+            "descriptor_sha256": "44829fa5fd9556971f7c2bd2ab762b415ef20328f6200d780cb1cf613deabae3",
+            "input_schemas": [
+              {
+                "port": "parameters",
+                "schema_ref": {
+                  "schema_id": "synthetic.sequence-statistics.input",
+                  "sha256": "9ed39b51350f0cc9461cefade3f9b675d6f827c93f012ee71a4668fff4ad1674",
+                  "version": "1"
+                }
+              }
+            ],
+            "output_schemas": [
+              {
+                "port": "result",
+                "schema_ref": {
+                  "schema_id": "synthetic.sequence-statistics.output",
+                  "sha256": "3c9502d3276bf662a855665bf5e02b2b93647ef62fea54bfb308d45a9838d842",
+                  "version": "1"
+                }
+              }
+            ],
+            "schema_version": "1",
+            "tool": {
+              "capability_id": "synthetic.sequence-statistics",
+              "contract_version": "1",
+              "image_sha256": "4364cc50b6c6ad07ebec70a8969f65c35fdd7054752e861510fe02b5ec3ae305",
+              "release": "0.3.0"
+            }
+          },
+          "revision": 2,
+          "scope": {
+            "project_id": "cf1cde5566ec445b97829458da776604",
+            "tenant_id": "tool-replicas"
+          },
+          "status": "active"
+        },
+        "schema_version": "1",
+        "status": "accepted"
+      },
+      "new_snapshot": {
+        "activations": [
+          {
+            "activation_id": "activation-0",
+            "attempt_count": 1,
+            "fence": 1,
+            "invocation_id": "invocation-0",
+            "latest_attempt": {
+              "attempt_id": "4d6c003816a64e589fd7167ed7f6f70a",
+              "deadline": "2026-09-28T22:11:35.302781Z",
+              "fence": 1,
+              "lease_expires_at": "2026-09-28T22:11:05.871739Z",
+              "status": "succeeded",
+              "worker_id": "worker2"
+            },
+            "status": "succeeded"
+          }
+        ],
+        "budget": {
+          "available": 1,
+          "limit": 2,
+          "reserved": 0,
+          "spent": 1
+        },
+        "fixture_id": "amphora_sequence_statistics-0.3.0-1",
+        "plan_sha256": "9435c05c952a833a7bbc9e67aab021b58ef6575f9f30d78e06293e803df836ba",
+        "revision": 8,
+        "run_id": "170cf4d1461a47d1a80cdf598869765f",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        },
+        "status": "completed"
+      },
+      "observed_at": "2026-09-28 17:10:36",
+      "old_pin_after_drain": {
+        "descriptor": {
+          "anti_examples": [
+            "Does not establish biological, chemical or materials validity."
+          ],
+          "authority_ceiling": "synthetic_only",
+          "checkpoint": {
+            "mode": "none",
+            "readable_schema_sha256": []
+          },
+          "egress": {
+            "mode": "deny"
+          },
+          "examples": [
+            "ABACA over ABCD gives length 5 and counts A=3, B=1, C=1, D=0."
+          ],
+          "reproducibility": "deterministic",
+          "resources": {
+            "architectures": [
+              "x86_64"
+            ],
+            "cpu_millicores": 1000,
+            "gpu_count": 0,
+            "max_batch_size": 1,
+            "max_parallel_invocations": 1,
+            "memory_mib": 128,
+            "operating_systems": [
+              "linux"
+            ],
+            "timeout_seconds": 60
+          },
+          "schema_version": "1",
+          "tool": {
+            "applicability": [
+              "synthetic-tests"
+            ],
+            "binding": {
+              "capability_id": "synthetic.sequence-statistics",
+              "contract_version": "1",
+              "image_sha256": "64a882eadbcf540190ef6660b9fbefa009d0232cac39ce5bfd8800117d3d222c",
+              "release": "0.2.0"
+            },
+            "checkpoint_schema": null,
+            "inputs": [
+              {
+                "name": "parameters",
+                "representation": "symbol-sequence",
+                "required": true,
+                "schema_ref": {
+                  "schema_id": "synthetic.sequence-statistics.input",
+                  "sha256": "9ed39b51350f0cc9461cefade3f9b675d6f827c93f012ee71a4668fff4ad1674",
+                  "version": "1"
+                },
+                "unit": "1"
+              }
+            ],
+            "outputs": [
+              {
+                "name": "result",
+                "representation": "symbol-sequence",
+                "required": true,
+                "schema_ref": {
+                  "schema_id": "synthetic.sequence-statistics.output",
+                  "sha256": "3c9502d3276bf662a855665bf5e02b2b93647ef62fea54bfb308d45a9838d842",
+                  "version": "1"
+                },
+                "unit": "1"
+              }
+            ],
+            "purpose": "Count explicitly configured case-sensitive symbols in a bounded synthetic sequence.",
+            "schema_version": "1",
+            "side_effects": "pure"
+          }
+        },
+        "lock": {
+          "checkpoint_schema": null,
+          "descriptor_sha256": "8317a796bc7608e49cdadc8de71273393109d7d2dbeae42a70d68303625b34a9",
+          "input_schemas": [
+            {
+              "port": "parameters",
+              "schema_ref": {
+                "schema_id": "synthetic.sequence-statistics.input",
+                "sha256": "9ed39b51350f0cc9461cefade3f9b675d6f827c93f012ee71a4668fff4ad1674",
+                "version": "1"
+              }
+            }
+          ],
+          "output_schemas": [
+            {
+              "port": "result",
+              "schema_ref": {
+                "schema_id": "synthetic.sequence-statistics.output",
+                "sha256": "3c9502d3276bf662a855665bf5e02b2b93647ef62fea54bfb308d45a9838d842",
+                "version": "1"
+              }
+            }
+          ],
+          "schema_version": "1",
+          "tool": {
+            "capability_id": "synthetic.sequence-statistics",
+            "contract_version": "1",
+            "image_sha256": "64a882eadbcf540190ef6660b9fbefa009d0232cac39ce5bfd8800117d3d222c",
+            "release": "0.2.0"
+          }
+        },
+        "revision": 3,
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        },
+        "status": "draining"
+      },
+      "old_record": {
+        "completion": {
+          "accepted_run_revision": 8,
+          "activation_id": "activation-0",
+          "canonical_result": true,
+          "completion_id": "78f4d3e11d6b43fc8cb288bba31454e9",
+          "result": {
+            "attempt_id": "e8ae1465cd964a469f0b7c1a0a47f74c",
+            "fence": 1,
+            "invocation_id": "invocation-0",
+            "outcome": {
+              "checkpoint": null,
+              "outputs": [
+                {
+                  "artifact": {
+                    "artifact_id": "a9ab0825b8094613af682d416f3500b1",
+                    "media_type": "application/json",
+                    "schema_ref": {
+                      "schema_id": "synthetic.sequence-statistics.output",
+                      "sha256": "3c9502d3276bf662a855665bf5e02b2b93647ef62fea54bfb308d45a9838d842",
+                      "version": "1"
+                    },
+                    "scope": {
+                      "project_id": "cf1cde5566ec445b97829458da776604",
+                      "tenant_id": "tool-replicas"
+                    },
+                    "sha256": "b572f5b572518d87a0e96f9c40ffdee557d7da43cb4aa659776f542ab06d3208",
+                    "size_bytes": 144
+                  },
+                  "port": "result"
+                }
+              ],
+              "status": "succeeded"
+            },
+            "schema_version": "1"
+          },
+          "retention_reservation_ids": [
+            "8dee876434a64db18fe8f4ae2d45e4b6"
+          ],
+          "run_id": "742673f5e6424dad87b9ae002626ceae",
+          "schema_version": "1",
+          "scope": {
+            "project_id": "cf1cde5566ec445b97829458da776604",
+            "tenant_id": "tool-replicas"
+          }
+        },
+        "receipt": {
+          "outcome": {
+            "binding": {
+              "identity": {
+                "actor_id": "worker1",
+                "command_family": "runtime.complete",
+                "command_id": "complete-e8ae1465cd964a469f0b7c1a0a47f74c",
+                "schema_version": "1",
+                "scope": {
+                  "project_id": "cf1cde5566ec445b97829458da776604",
+                  "tenant_id": "tool-replicas"
+                }
+              },
+              "operation_id": "78f4d3e11d6b43fc8cb288bba31454e9",
+              "request_sha256": "1fc828ff8d9d4bb705bfc65abdc395f7680b3f14cfd19e621891a7013fe9e520"
+            },
+            "committed": {
+              "kind": "completion",
+              "object_id": "78f4d3e11d6b43fc8cb288bba31454e9",
+              "revision": 8
+            },
+            "status": "accepted"
+          },
+          "schema_version": "1"
+        },
+        "result": {
+          "counts": [
+            {
+              "count": 3,
+              "symbol": "A"
+            },
+            {
+              "count": 1,
+              "symbol": "B"
+            },
+            {
+              "count": 1,
+              "symbol": "C"
+            },
+            {
+              "count": 0,
+              "symbol": "D"
+            }
+          ],
+          "length": 5,
+          "schema_version": "1"
+        },
+        "run_id": "742673f5e6424dad87b9ae002626ceae"
+      },
+      "old_selection": {
+        "decision": {
+          "admission": {
+            "reason_codes": [
+              "policy_compatible"
+            ],
+            "status": "allowed"
+          },
+          "assessed_at": "2026-09-28T22:10:32.584406Z",
+          "capacity_valid_until": "2026-09-28T22:11:32.539202Z",
+          "observations": {
+            "capacity": {
+              "reason_codes": [
+                "healthy_capacity"
+              ],
+              "status": "available"
+            },
+            "policy_sha256": "b15b379f9efd0617c3bbbd038973a08ee5170697567e4039cb050519d8d4a2c4",
+            "release": {
+              "checkpoint_schema": null,
+              "descriptor_sha256": "8317a796bc7608e49cdadc8de71273393109d7d2dbeae42a70d68303625b34a9",
+              "input_schemas": [
+                {
+                  "port": "parameters",
+                  "schema_ref": {
+                    "schema_id": "synthetic.sequence-statistics.input",
+                    "sha256": "9ed39b51350f0cc9461cefade3f9b675d6f827c93f012ee71a4668fff4ad1674",
+                    "version": "1"
+                  }
+                }
+              ],
+              "output_schemas": [
+                {
+                  "port": "result",
+                  "schema_ref": {
+                    "schema_id": "synthetic.sequence-statistics.output",
+                    "sha256": "3c9502d3276bf662a855665bf5e02b2b93647ef62fea54bfb308d45a9838d842",
+                    "version": "1"
+                  }
+                }
+              ],
+              "schema_version": "1",
+              "tool": {
+                "capability_id": "synthetic.sequence-statistics",
+                "contract_version": "1",
+                "image_sha256": "64a882eadbcf540190ef6660b9fbefa009d0232cac39ce5bfd8800117d3d222c",
+                "release": "0.2.0"
+              }
+            },
+            "schema_version": "1",
+            "scientific": {
+              "reason_codes": [
+                "synthetic_fixture_only"
+              ],
+              "status": "eligible"
+            },
+            "scope": {
+              "project_id": "cf1cde5566ec445b97829458da776604",
+              "tenant_id": "tool-replicas"
+            },
+            "structural": {
+              "findings": [],
+              "status": "valid"
+            }
+          },
+          "schema_version": "1",
+          "status": "candidate"
+        },
+        "deployment": null,
+        "heartbeat": null,
+        "operation_id": "59d47141763c4b358d0e8450936fd834",
+        "reason_code": "candidate",
+        "release": {
+          "descriptor": {
+            "anti_examples": [
+              "Does not establish biological, chemical or materials validity."
+            ],
+            "authority_ceiling": "synthetic_only",
+            "checkpoint": {
+              "mode": "none",
+              "readable_schema_sha256": []
+            },
+            "egress": {
+              "mode": "deny"
+            },
+            "examples": [
+              "ABACA over ABCD gives length 5 and counts A=3, B=1, C=1, D=0."
+            ],
+            "reproducibility": "deterministic",
+            "resources": {
+              "architectures": [
+                "x86_64"
+              ],
+              "cpu_millicores": 1000,
+              "gpu_count": 0,
+              "max_batch_size": 1,
+              "max_parallel_invocations": 1,
+              "memory_mib": 128,
+              "operating_systems": [
+                "linux"
+              ],
+              "timeout_seconds": 60
+            },
+            "schema_version": "1",
+            "tool": {
+              "applicability": [
+                "synthetic-tests"
+              ],
+              "binding": {
+                "capability_id": "synthetic.sequence-statistics",
+                "contract_version": "1",
+                "image_sha256": "64a882eadbcf540190ef6660b9fbefa009d0232cac39ce5bfd8800117d3d222c",
+                "release": "0.2.0"
+              },
+              "checkpoint_schema": null,
+              "inputs": [
+                {
+                  "name": "parameters",
+                  "representation": "symbol-sequence",
+                  "required": true,
+                  "schema_ref": {
+                    "schema_id": "synthetic.sequence-statistics.input",
+                    "sha256": "9ed39b51350f0cc9461cefade3f9b675d6f827c93f012ee71a4668fff4ad1674",
+                    "version": "1"
+                  },
+                  "unit": "1"
+                }
+              ],
+              "outputs": [
+                {
+                  "name": "result",
+                  "representation": "symbol-sequence",
+                  "required": true,
+                  "schema_ref": {
+                    "schema_id": "synthetic.sequence-statistics.output",
+                    "sha256": "3c9502d3276bf662a855665bf5e02b2b93647ef62fea54bfb308d45a9838d842",
+                    "version": "1"
+                  },
+                  "unit": "1"
+                }
+              ],
+              "purpose": "Count explicitly configured case-sensitive symbols in a bounded synthetic sequence.",
+              "schema_version": "1",
+              "side_effects": "pure"
+            }
+          },
+          "lock": {
+            "checkpoint_schema": null,
+            "descriptor_sha256": "8317a796bc7608e49cdadc8de71273393109d7d2dbeae42a70d68303625b34a9",
+            "input_schemas": [
+              {
+                "port": "parameters",
+                "schema_ref": {
+                  "schema_id": "synthetic.sequence-statistics.input",
+                  "sha256": "9ed39b51350f0cc9461cefade3f9b675d6f827c93f012ee71a4668fff4ad1674",
+                  "version": "1"
+                }
+              }
+            ],
+            "output_schemas": [
+              {
+                "port": "result",
+                "schema_ref": {
+                  "schema_id": "synthetic.sequence-statistics.output",
+                  "sha256": "3c9502d3276bf662a855665bf5e02b2b93647ef62fea54bfb308d45a9838d842",
+                  "version": "1"
+                }
+              }
+            ],
+            "schema_version": "1",
+            "tool": {
+              "capability_id": "synthetic.sequence-statistics",
+              "contract_version": "1",
+              "image_sha256": "64a882eadbcf540190ef6660b9fbefa009d0232cac39ce5bfd8800117d3d222c",
+              "release": "0.2.0"
+            }
+          },
+          "revision": 2,
+          "scope": {
+            "project_id": "cf1cde5566ec445b97829458da776604",
+            "tenant_id": "tool-replicas"
+          },
+          "status": "active"
+        },
+        "schema_version": "1",
+        "status": "accepted"
+      },
+      "old_snapshot_preserved": {
+        "activations": [
+          {
+            "activation_id": "activation-0",
+            "attempt_count": 1,
+            "fence": 1,
+            "invocation_id": "invocation-0",
+            "latest_attempt": {
+              "attempt_id": "e8ae1465cd964a469f0b7c1a0a47f74c",
+              "deadline": "2026-09-28T22:11:33.065699Z",
+              "fence": 1,
+              "lease_expires_at": "2026-09-28T22:11:03.643315Z",
+              "status": "succeeded",
+              "worker_id": "worker1"
+            },
+            "status": "succeeded"
+          }
+        ],
+        "budget": {
+          "available": 1,
+          "limit": 2,
+          "reserved": 0,
+          "spent": 1
+        },
+        "fixture_id": "amphora_sequence_statistics-0.2.0-1",
+        "plan_sha256": "97cae8261b9fe535cc896cb50faadf62b33f6883edc1b3a121e5c708aa868a6a",
+        "revision": 8,
+        "run_id": "742673f5e6424dad87b9ae002626ceae",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        },
+        "status": "completed"
+      },
+      "wrong_release_claim": {
+        "outcome": {
+          "receipt": {
+            "binding": {
+              "identity": {
+                "actor_id": "worker1",
+                "command_family": "runtime.claim",
+                "command_id": "claim-34d2969eaab74aacb486294e1ae82338",
+                "schema_version": "1",
+                "scope": {
+                  "project_id": "cf1cde5566ec445b97829458da776604",
+                  "tenant_id": "tool-replicas"
+                }
+              },
+              "operation_id": "c0c613025ced48b58283136ccafbd8b5",
+              "request_sha256": "3779b5416e60925725d9374c39c5b415d3853541283524959a29fd2ede577b27"
+            },
+            "committed": {
+              "kind": "run",
+              "object_id": "170cf4d1461a47d1a80cdf598869765f",
+              "revision": 0
+            },
+            "status": "accepted"
+          },
+          "status": "no_eligible_work"
+        },
+        "schema_version": "1"
+      }
+    }
+  ],
+  "execution_profile": "Windows independent wheel processes; advertised Linux image profile separately verified",
+  "image_digests": {
+    "amphora_numeric_affine-0.2.0": "sha256:4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+    "amphora_sequence_statistics-0.2.0": "sha256:64a882eadbcf540190ef6660b9fbefa009d0232cac39ce5bfd8800117d3d222c",
+    "amphora_sequence_statistics-0.3.0": "sha256:4364cc50b6c6ad07ebec70a8969f65c35fdd7054752e861510fe02b5ec3ae305"
+  },
+  "packages": {
+    "amphora_campaign_runtime-0.1.0-py3-none-any.whl": "2c2b8e89c41fbcc07fa02ed4c3713d2e9a9c7f3eb02978b0550f8326419b561a",
+    "amphora_capability_registry-0.1.0-py3-none-any.whl": "6ddc6bc2246975de3ec437e2302ced53cca29936e90b40f60e80f12a04ffa048",
+    "amphora_contracts_artifacts-0.1.0-py3-none-any.whl": "bda69bb93b8fd3b76eaf4b22eeacf750c68db972b5de8d555a27ef1507494989",
+    "amphora_contracts_campaigns-0.1.0-py3-none-any.whl": "635724223ae1607c4e89e4a17c567f0749aa98a76f528b5b4e86e71a0e01d4da",
+    "amphora_contracts_commands-0.1.0-py3-none-any.whl": "476beedaecc51c050c1e13efe2dbcd7c84a1b6b35201bb212d2935342bcb7a1b",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "5ee43eef187331776210ea39979841bf7840482645a8e67a5d232a99baf27f35",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "92918bab870693aef47c708044769bf7866b3c218903259e7ba51776259a63cc",
+    "amphora_data_artifacts-0.1.0-py3-none-any.whl": "e473b2f530653b74cfe41860ed931ebdc187ea5a652b72329d2f8fd559921fae",
+    "amphora_numeric_affine-0.2.0-py3-none-any.whl": "ffa8118003334033064e556fdbb24ef58c38950bbbce64be2933a0481692791f",
+    "amphora_sequence_statistics-0.2.0-py3-none-any.whl": "cb183cb8875d1bddd5776fd3dafddd403c110f07a92175beffbbbdc7c5cc576c",
+    "amphora_sequence_statistics-0.3.0-py3-none-any.whl": "78ae41c49ae72ca3f75aefc3520d2b6e568f76a1fa0b312228db5e0d47490f31",
+    "amphora_tool_protocol-0.1.0-py3-none-any.whl": "40c06b756eab9fcca80e84150e006c889c8b51ae56303db9f0e1f02733d21df0"
+  },
+  "runtime_requests": [
+    {
+      "body_sha256": "51bacce67fb3b0a16239e92954ee7ea253fbd66b97cada155f4be27f3af30d4d",
+      "identity": {
+        "actor_id": "worker1",
+        "command_family": "runtime.claim",
+        "command_id": "claim-dac5f495842a4da185b097b2b0fabb0d",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/invocations/claim",
+      "status": 200
+    },
+    {
+      "body_sha256": "0c317b2dc217ee1d961038f3840f6fe8c2dc1cc739802f0d24d24cfd851065e1",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "runtime.claim",
+        "command_id": "claim-ba5688ce069541039456543eaae7011d",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/invocations/claim",
+      "status": 200
+    },
+    {
+      "body_sha256": "91b82e969741f582313064514ea15a020ff9603d0d3b047260885c4656c3fdf1",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "runtime.renew",
+        "command_id": "renew-b0478088019849f087e149795ed85e88",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "898a070c32d44ba79d2fe53ca28ac4182a4bad3915b372bd9876989e9f19c6c3",
+      "identity": {
+        "actor_id": "worker1",
+        "command_family": "runtime.renew",
+        "command_id": "renew-790c8430d0cb486ab80745ca0909897d",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/ac6cd9371d2a4bc7bf909c8cd87fe479",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/ac6cd9371d2a4bc7bf909c8cd87fe479",
+      "status": 200
+    },
+    {
+      "body_sha256": "fce57e26aadc60e527beb8846ce8e75c0f448aeaccc7ae1724e05982796c8c88",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "runtime.renew",
+        "command_id": "renew-15540edb046546e4b99ca4a6f473138d",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/ac6cd9371d2a4bc7bf909c8cd87fe479",
+      "status": 200
+    },
+    {
+      "body_sha256": "183f8664d43a6a7d13544ffe53600d48b5d3f7ae01e525540df3b3a6f0e41562",
+      "identity": {
+        "actor_id": "worker1",
+        "command_family": "runtime.renew",
+        "command_id": "renew-7a414c4bd8ec4684b88e6c26ffbbdc0e",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/ac6cd9371d2a4bc7bf909c8cd87fe479",
+      "status": 200
+    },
+    {
+      "body_sha256": "a175f50f1442a7f436a5ddf6f15c7b837d91fe890823224d9fbd9273342946b3",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "runtime.renew",
+        "command_id": "renew-c5c70647bdb046b6bcb34f0eb20389ab",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "de1a2506f27c1a1064c07146774f1f6d8eb6475bd2c607551a80aab47313ff10",
+      "identity": {
+        "actor_id": "worker1",
+        "command_family": "runtime.renew",
+        "command_id": "renew-d4d84a8116d841a7bb8e19d191b94af7",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/ac6cd9371d2a4bc7bf909c8cd87fe479",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/ac6cd9371d2a4bc7bf909c8cd87fe479",
+      "status": 200
+    },
+    {
+      "body_sha256": "866fb6b3f688cef59e7b40df5e0e78b1d747d8a1492a8c211ecb133fe7d1b1ba",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "runtime.renew",
+        "command_id": "renew-0fca761345924fdcb9ac1207c6c3b98d",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "6be1661415d60a5dbc2e9634103d4b1578f45b2993c9b14076c212d7a371a1ee",
+      "identity": {
+        "actor_id": "worker1",
+        "command_family": "runtime.renew",
+        "command_id": "renew-a77d82bb5ec94efea7aea41db857090d",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/ac6cd9371d2a4bc7bf909c8cd87fe479",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/ac6cd9371d2a4bc7bf909c8cd87fe479",
+      "status": 200
+    },
+    {
+      "body_sha256": "f65c20c474de19adac449c8eeec8caabeefd2b72a4aa30572de89b8026316934",
+      "identity": {
+        "actor_id": "worker1",
+        "command_family": "runtime.renew",
+        "command_id": "renew-d2fbbfa4e2234c5bb447e07df93e198d",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "f957cd3f874f2c709859915b4f12dba032a8ba00464486244ccc7eebe60aa6d6",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "runtime.renew",
+        "command_id": "renew-9a740e9176014a44ab4508cce17654ed",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/ac6cd9371d2a4bc7bf909c8cd87fe479",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/ac6cd9371d2a4bc7bf909c8cd87fe479",
+      "status": 200
+    },
+    {
+      "body_sha256": "59618aa2d3e0b8aa5a5f45093f7b1df1880b8ded7ffbfc360c7b3e252985b024",
+      "fault": "response_dropped_after_owner_success",
+      "identity": {
+        "actor_id": "worker1",
+        "command_family": "runtime.complete",
+        "command_id": "complete-6df2fafb1668419582bffaff705dde04",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/invocations/complete",
+      "status": 200
+    },
+    {
+      "body_sha256": "54638c97522dffa7671a1b1461d06d206c6883cb6e3fd48d6a55171d434edd3f",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "runtime.complete",
+        "command_id": "complete-5e5f37a774b54a45acaf6cfcbc896559",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/invocations/complete",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/commands/runtime.complete/complete-6df2fafb1668419582bffaff705dde04",
+      "status": 200
+    },
+    {
+      "body_sha256": "acb1deadd62611d3687b1e3e8daeb50837ec1f7b5c316741a95d3c2d4f34ea2c",
+      "identity": {
+        "actor_id": "worker1",
+        "command_family": "runtime.claim",
+        "command_id": "claim-69bfa915daf248b8915e9de1e6c32feb",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/invocations/claim",
+      "status": 200
+    },
+    {
+      "body_sha256": "9ba4599484c14627b41dd18228fa3023de7f3d27967f7d7f84400ce99311c1b3",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "runtime.claim",
+        "command_id": "claim-d3b9c6e2450f4fbfae73e98471929b48",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/invocations/claim",
+      "status": 200
+    },
+    {
+      "body_sha256": "dbed4d0fe84036b685b23ce0c9d9d267bd17f069a2a7760d7193c9be4f449aac",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "runtime.renew",
+        "command_id": "renew-2052b61bee714c66b704ac4c818016b6",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/75311b23ba6241d2a104a36afc152908",
+      "status": 200
+    },
+    {
+      "body_sha256": "638bfd60d1903959dbf3384f28e4ccf37c749f3313c6dddce967fc9d5d7eb021",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "runtime.renew",
+        "command_id": "renew-1a856f810dc5407ead9df24d2a8ab7cd",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/75311b23ba6241d2a104a36afc152908",
+      "status": 200
+    },
+    {
+      "body_sha256": "dafe077cce3a821b4a541ac171725ec29ccf62bccd591c80c69f62de295b507a",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "runtime.renew",
+        "command_id": "renew-9f0201b8c73c4a669dac73909fa73037",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/75311b23ba6241d2a104a36afc152908",
+      "status": 200
+    },
+    {
+      "body_sha256": "81b9bfa892e3e536a2a80b9adb5d1aa63d7e5af3b592fa5b56b91a97c61b5f31",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "runtime.renew",
+        "command_id": "renew-2913c5f1c3574d1ab76788bd653bee45",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/75311b23ba6241d2a104a36afc152908",
+      "status": 200
+    },
+    {
+      "body_sha256": "6fc97560676ed052c19305fae328f0174ad57edf3b23169e07ffa65c131b195e",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "runtime.renew",
+        "command_id": "renew-62a7dfb6276646f1848887a8e9f84ed8",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/75311b23ba6241d2a104a36afc152908",
+      "status": 200
+    },
+    {
+      "body_sha256": "6879be3e8472128b669b2fafb298be67a7ccc45ce79f2344c269bb02615280ee",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "runtime.complete",
+        "command_id": "complete-c658d348e21b4e379123830ca241ba88",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/invocations/complete",
+      "status": 200
+    },
+    {
+      "body_sha256": "96c19de4bf47e2543e08a25fc05f5e4e287ada3c3f4463c0c31042c140b2d976",
+      "identity": {
+        "actor_id": "worker1",
+        "command_family": "runtime.claim",
+        "command_id": "claim-acc5043e2d90403cb0c4a6a5f1f2e0a5",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/invocations/claim",
+      "status": 200
+    },
+    {
+      "body_sha256": "13d7789646a551fbf0d4df94a2d53bb1170439fa3e95312cfc81130c156a96f5",
+      "identity": {
+        "actor_id": "worker1",
+        "command_family": "runtime.renew",
+        "command_id": "renew-775ed8c9f77b46359a0d1724becafceb",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/742673f5e6424dad87b9ae002626ceae",
+      "status": 200
+    },
+    {
+      "body_sha256": "e7933a7be4b0bcbc550c7aeaab029f194a2f095823dcadd2179c53bf90aad11f",
+      "identity": {
+        "actor_id": "worker1",
+        "command_family": "runtime.renew",
+        "command_id": "renew-c0b705d5214643bab47af6787255b474",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/742673f5e6424dad87b9ae002626ceae",
+      "status": 200
+    },
+    {
+      "body_sha256": "82a4e2fb655c9cfe8d4bb308c6f053cbb5911d730a7d110ff72971d1cec59d71",
+      "identity": {
+        "actor_id": "worker1",
+        "command_family": "runtime.renew",
+        "command_id": "renew-3ce428f7b2f445f1b56d907702a20e37",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/742673f5e6424dad87b9ae002626ceae",
+      "status": 200
+    },
+    {
+      "body_sha256": "e8bf6785c2f9555a217fef14ceff412589a6e6642b7e7deb59bb973f8a3ee140",
+      "identity": {
+        "actor_id": "worker1",
+        "command_family": "runtime.renew",
+        "command_id": "renew-a156ebdee3c74e1d9f7b5a7efb054792",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/742673f5e6424dad87b9ae002626ceae",
+      "status": 200
+    },
+    {
+      "body_sha256": "f9b744eaa2cfd3d5bad840c59e837d4a97bd2b52f2c7a6209dc4b3b845afe16a",
+      "identity": {
+        "actor_id": "worker1",
+        "command_family": "runtime.renew",
+        "command_id": "renew-18c931d829ef4e6fa62ed46bb33b8d99",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/742673f5e6424dad87b9ae002626ceae",
+      "status": 200
+    },
+    {
+      "body_sha256": "1fc828ff8d9d4bb705bfc65abdc395f7680b3f14cfd19e621891a7013fe9e520",
+      "identity": {
+        "actor_id": "worker1",
+        "command_family": "runtime.complete",
+        "command_id": "complete-e8ae1465cd964a469f0b7c1a0a47f74c",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/invocations/complete",
+      "status": 200
+    },
+    {
+      "body_sha256": "3779b5416e60925725d9374c39c5b415d3853541283524959a29fd2ede577b27",
+      "identity": {
+        "actor_id": "worker1",
+        "command_family": "runtime.claim",
+        "command_id": "claim-34d2969eaab74aacb486294e1ae82338",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/invocations/claim",
+      "status": 200
+    },
+    {
+      "body_sha256": "a1f16e95415d230f70a2ae68543b2ec0dc6a0a88d8a1711618b0b192f393b8e2",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "runtime.claim",
+        "command_id": "claim-641bb25bca1c43b2a4ccac3ffbb4816a",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/invocations/claim",
+      "status": 200
+    },
+    {
+      "body_sha256": "6848fcd6577e2e08ec2222a88570577ad20734e0db68c68c586cb65c05e5fcf5",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "runtime.renew",
+        "command_id": "renew-9766e8432644466da78b5163774cd357",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/170cf4d1461a47d1a80cdf598869765f",
+      "status": 200
+    },
+    {
+      "body_sha256": "63355e7cdd1a901b0ce3259f86dcfbcfaa71b5c5595d197766a9c813835aeefd",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "runtime.renew",
+        "command_id": "renew-ea4967ef32114370933c03cf3f53f1e4",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/170cf4d1461a47d1a80cdf598869765f",
+      "status": 200
+    },
+    {
+      "body_sha256": "2ece6c26651810812fa57b320e1792b2dbd248477c3d0e713b00d23e36431ac5",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "runtime.renew",
+        "command_id": "renew-1c61c4e0f7c34389b086bbcaa9359b9f",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/170cf4d1461a47d1a80cdf598869765f",
+      "status": 200
+    },
+    {
+      "body_sha256": "4d3b1cec52a9cf7494d7c10a3522c542664f81eb46bde5b5b77dabdc40574512",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "runtime.renew",
+        "command_id": "renew-0c8fc451fbb8493da8efcd58ccee4b19",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/170cf4d1461a47d1a80cdf598869765f",
+      "status": 200
+    },
+    {
+      "body_sha256": "c441302f69c782fadf797be116fd204eba19191e1b08280831f7eae98135f503",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "runtime.renew",
+        "command_id": "renew-6dd90c8eea484ad3963c8ae56b77753b",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/attempts/renew",
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "method": "GET",
+      "path": "/v1/runs/170cf4d1461a47d1a80cdf598869765f",
+      "status": 200
+    },
+    {
+      "body_sha256": "26584eb0726d55e0b82083419b8c96fd99d49853cb795dc25fb4b6d619a2582f",
+      "identity": {
+        "actor_id": "worker2",
+        "command_family": "runtime.complete",
+        "command_id": "complete-4d6c003816a64e589fd7167ed7f6f70a",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "cf1cde5566ec445b97829458da776604",
+          "tenant_id": "tool-replicas"
+        }
+      },
+      "method": "POST",
+      "path": "/v1/invocations/complete",
+      "status": 200
+    }
+  ],
+  "schema_version": "1",
+  "scope": {
+    "project_id": "cf1cde5566ec445b97829458da776604",
+    "tenant_id": "tool-replicas"
+  },
+  "status": "passed"
+}

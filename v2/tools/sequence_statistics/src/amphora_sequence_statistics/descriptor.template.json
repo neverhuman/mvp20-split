@@ -4,7 +4,7 @@
     "schema_version": "1",
     "binding": {
       "capability_id": "synthetic.sequence-statistics",
-      "release": "0.2.0",
+      "release": "0.3.0",
       "contract_version": "1"
     },
     "purpose": "Count explicitly configured case-sensitive symbols in a bounded synthetic sequence.",
@@ -22,7 +22,7 @@
     "outputs": [
       {
         "name": "result",
-        "representation": "symbol-sequence",
+        "representation": "symbol-statistics",
         "unit": "1",
         "required": true
       }

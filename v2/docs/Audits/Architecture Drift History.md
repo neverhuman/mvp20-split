@@ -55,3 +55,5 @@ Aligned within documentation scope; [planning review](Planning_Maturity_Review.m
 - `2026-09-28 15:17:41`: [BP-03.02 registry closeout](BP-03.02_Registry_Closeout.md) aligned; private durable commands/inventory, exact-pin policy, bounded discovery, actual owner races and installed HTTP replacement passed. Discovery gap repaired before closeout. Wider catalog/context-scale acceptance is explicitly owned by BP-07.03; no follow-up within closed storage scope.
 
 - `2026-09-28 16:52:45`: [Worker closeout](BP-03.03_Worker_Closeout.md) accepts actual protocol, typed tools, images, failure/recovery and fresh-install retained-history proof. SDK/owner isolation and immutable identities aligned. TOOL-META-01 remains assigned to .04/B2 on the active dashboard; no blocking drift.
+
+- `2026-09-28 17:12:18`: TOOL-META-01 resolved by BP-03.04/B2 immutable sequence 0.3.0 descriptor/image; statistics label corrected, payload schemas unchanged, built 0.2.0 history retained. [Actual cutover](Evidence/BP-03-Replicas/README.md) passed. Follow-up: none for this metadata refinement.

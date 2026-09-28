@@ -96,7 +96,7 @@ def independent_builds(uv, tool_images=None):
                 if checked.returncode or json.loads(checked.stdout) != golden["output"]:
                     raise SystemExit("Installed tool golden behavior failed: " + module)
                 release = json.loads(run([python, "-I", "-m", module, "describe", "--image-sha256", "c" * 64], cwd=root))
-                if release["tool"]["binding"]["release"] != "0.2.0" or release["authority_ceiling"] != "synthetic_only":
+                if release["tool"]["binding"]["release"] != config["project"]["version"] or release["authority_ceiling"] != "synthetic_only":
                     raise SystemExit("Installed tool descriptor mismatch: " + module)
                 print(f"Installed standalone tool kernel/schema/descriptor passed: {module}; test-only image pin")
             if module in {"amphora_data_artifacts", "amphora_campaign_runtime"} and os.environ.get("AMPHORA_TEST_POSTGRES") == "1":

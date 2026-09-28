@@ -19,6 +19,9 @@ def main():
             e.setup()
             cases = environment.load("replica_scenarios", Path(__file__).with_name("scenarios.py"))
             cases.run(e, environment.HTTP)
+            if config.get("previous_images"):
+                environment.load("replica_recovery", Path(__file__).with_name("recovery.py")).run(e, environment.HTTP)
+                environment.load("replica_cutover", Path(__file__).with_name("cutover.py")).run(e, environment.HTTP)
             e.save("passed")
             print("Actual registry/replica matrix passed; scope " + e.scope["project_id"], flush=True)
         except BaseException:

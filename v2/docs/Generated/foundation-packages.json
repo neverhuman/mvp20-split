@@ -105,7 +105,7 @@
   },
   {
     "package": "amphora-sequence-statistics",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "path": "tools/sequence_statistics",
     "module": "amphora_sequence_statistics",
     "public_dependencies": [

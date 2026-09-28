@@ -1,6 +1,7 @@
 """Owned worker subprocesses with explicit observable stage barriers."""
 
 import json
+import os
 import subprocess
 import time
 from pathlib import Path
@@ -47,5 +48,10 @@ class Worker:
 
     def close(self):
         if self.child.poll() is None:
-            self.child.kill()
+            if os.name == "nt":
+                subprocess.run(["taskkill", "/PID", str(self.child.pid), "/T", "/F"],
+                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=10,
+                    creationflags=subprocess.CREATE_NO_WINDOW)
+            else:
+                self.child.kill()
         self.child.communicate(timeout=10)

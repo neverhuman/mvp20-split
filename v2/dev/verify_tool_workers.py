@@ -16,7 +16,7 @@ from sqlalchemy import URL
 from verify_foundation import run
 
 
-def verify(images, replacement=False, replicas=False):
+def verify(images, replacement=False, replicas=False, previous_images=None):
     if os.environ.get("AMPHORA_TEST_POSTGRES") != "1":
         raise ValueError("Explicit PostgreSQL fixture opt-in required")
     state = owned_state()
@@ -48,13 +48,33 @@ def verify(images, replacement=False, replicas=False):
             needed = [next(wheels.glob(name.replace("-", "_") + "-*.whl")) for name in sorted(closure(owner, specs))]
             run([uv, "pip", "install", "--python", python, "--constraint", constraints, *needed])
             (replacements if replacing else installed)[module] = str(python)
+        packages = {wheel.name: hashlib.sha256(wheel.read_bytes()).hexdigest() for wheel in wheels.glob("*.whl")}
+        previous_tools = {}
+        if previous_images:
+            previous = json.loads(previous_images.read_bytes())
+            for image in previous["tools"]:
+                if image["module"] != "amphora_sequence_statistics":
+                    continue
+                paths = []
+                for name, digest in image["local_wheels"].items():
+                    path = previous_images.parent / "built-wheels" / name
+                    assert hashlib.sha256(path.read_bytes()).hexdigest() == digest, "Prior image wheel bytes changed"
+                    assert name not in packages or packages[name] == digest, "Shared immutable package bytes changed"
+                    packages[name] = digest
+                    paths.append(path)
+                environment = root / "previous-sequence"
+                run([uv, "venv", "--python", sys.executable, environment])
+                python = environment / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
+                run([uv, "pip", "install", "--python", python, "--constraint", root / "amphora-sequence-statistics.txt", *paths])
+                previous_tools[image["module"]] = str(python)
         config = root / "acceptance.json"
         config.write_text(json.dumps({"runtime": installed["amphora_campaign_runtime"], "artifact": installed["amphora_data_artifacts"],
             "tools": {module: installed[module] for module in ("amphora_numeric_affine", "amphora_sequence_statistics")},
             "replacements": replacements, "registry": installed.get("amphora_capability_registry"),
+            "previous_images": str(previous_images.absolute()) if previous_images else None, "previous_tools": previous_tools,
             "images": str(Path(images).absolute()),
             "evidence": str(ROOT / (".test-results/tool-replicas" if replicas else ".test-results/worker-acceptance")),
-            "packages": {wheel.name: hashlib.sha256(wheel.read_bytes()).hexdigest() for wheel in wheels.glob("*.whl")}}), encoding="utf-8")
+            "packages": packages}), encoding="utf-8")
         env = {key: value for key, value in os.environ.items() if key.upper() in {"SYSTEMROOT", "WINDIR", "TEMP", "TMP", "PATH", "COMSPEC"}}
         env.update(AMPHORA_RUNTIME_DATABASE_URL=url.render_as_string(hide_password=False),
                    AMPHORA_ARTIFACT_DATABASE_URL=url.set(username="artifact_service").render_as_string(hide_password=False))
@@ -74,5 +94,8 @@ if __name__ == "__main__":
     parser.add_argument("--images", required=True, type=Path)
     parser.add_argument("--replacement", action="store_true", help="Prove fresh tool/SDK installs preserve prior owner history")
     parser.add_argument("--replicas", action="store_true", help="Actual registry and concurrent worker integration")
+    parser.add_argument("--previous-images", type=Path, help="Preserved prior image manifest with its hash-verified built-wheels directory")
     arguments = parser.parse_args()
-    verify(arguments.images, arguments.replacement, arguments.replicas)
+    if arguments.previous_images and not arguments.replicas:
+        parser.error("--previous-images requires --replicas")
+    verify(arguments.images, arguments.replacement, arguments.replicas, arguments.previous_images)

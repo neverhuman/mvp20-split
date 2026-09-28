@@ -63,12 +63,16 @@ class Environment:
 
     def setup(self):
         images = json.loads(Path(self.config["images"]).read_bytes())
+        selected_images = [(image, False) for image in images["tools"]]
+        if self.config.get("previous_images"):
+            old = json.loads(Path(self.config["previous_images"]).read_bytes())
+            selected_images.extend((image, True) for image in old["tools"] if image["module"] in self.config["previous_tools"])
         profiles = []
-        for image in images["tools"]:
+        for image, previous in selected_images:
             module = image["module"]
             for name, digest in image["local_wheels"].items():
                 assert self.config["packages"][name] == digest, "Internal wheel differs from image evidence"
-            python = self.config["tools"][module]
+            python = self.config["previous_tools" if previous else "tools"][module]
             script = ("import base64,json; from importlib.resources import files; "
                 f"print(json.dumps({{k:base64.b64encode(files('{module}').joinpath('schemas',k+'.json').read_bytes()).decode() "
                 "for k in ('input','output')}))")
@@ -76,14 +80,18 @@ class Environment:
                 text=True, capture_output=True, timeout=20)
             assert result.returncode == 0
             tool = SimpleNamespace(image=image, module=module, python=python, descriptor=image["descriptor"]["tool"],
-                lock=WIRE.release_lock(image["descriptor"]))
+                lock=WIRE.release_lock(image["descriptor"]), previous=previous,
+                pending_replacement=bool(self.config.get("previous_images")) and not previous and module == "amphora_sequence_statistics")
+            tool.key = module + "-" + tool.lock["tool"]["release"]
             schemas = json.loads(result.stdout)
             for kind, port in (("input", tool.descriptor["inputs"][0]), ("output", tool.descriptor["outputs"][0])):
                 body = base64.b64decode(schemas[kind])
                 assert hashlib.sha256(body).hexdigest() == port["schema_ref"]["sha256"]
                 path = self.root / (module + "-" + kind + ".json")
                 path.write_bytes(body)
-                profiles.append({**port["schema_ref"], "media_type": "application/json", "schema_path": path.name})
+                profile = {**port["schema_ref"], "media_type": "application/json", "schema_path": path.name}
+                if profile not in profiles:
+                    profiles.append(profile)
             self.tools.append(tool)
         self.registry = self.host("registry", "amphora_capability_registry", {
             "database_url_env": "DATABASE_URL", "principals": [self.principal("admin", ["register", "activate", "deploy", "read", "resolve", "drain", "revoke"]),
@@ -94,19 +102,11 @@ class Environment:
         for index, tool in enumerate(self.tools):
             registered = self.registry_call("register", {"scope": self.scope, "descriptor": tool.image["descriptor"], "expected_lock": tool.lock})
             assert registered["reason_code"] == "registered" and registered["release"]["lock"] == tool.lock
-            activated = self.registry_call("activate", {"release": tool.lock, "expected_revision": 1})
-            assert activated["release"]["status"] == "active"
             tool.deployment = "deployment-" + str(index)
-            deployed = self.registry_call("deploy", {"deployment_id": tool.deployment, "release": tool.lock,
-                "architecture": "x86_64", "operating_system": "linux", "workers": ["worker1", "worker2"]})
-            assert deployed["status"] == "accepted"
             tool.heartbeats = []
-            for worker in ("worker1", "worker2"):
-                heartbeat = self.registry_call("heartbeat", {"deployment_id": tool.deployment, "replica_id": worker + "-" + str(index),
-                    "expected_revision": 0, "free_slots": 1, "ttl_seconds": 60}, worker)
-                assert heartbeat["status"] == "accepted"
-                tool.heartbeats.append(heartbeat)
             tool.registration = registered
+            if not tool.pending_replacement:
+                self.activate(tool)
         port = HTTP.free_port()
         (self.root / "storage").mkdir()
         self.artifact = self.host("artifact", "amphora_data_artifacts", {"database_url_env": "DATABASE_URL",
@@ -118,7 +118,7 @@ class Environment:
         for tool in self.tools:
             reference = self.publish(tool, tool.image["golden_input"])
             for count in (1, 2):
-                key = tool.module + "-" + str(count)
+                key = tool.key + "-" + str(count)
                 self.fixtures[key] = {"fixture_id": key, "plan_sha256": hashlib.sha256(key.encode()).hexdigest(),
                     "invocations": [{"node_id": "node-" + str(i), "activation_id": "activation-" + str(i), "invocation_id": "invocation-" + str(i),
                         "tool": tool.lock["tool"], "inputs": [{"port": "parameters", "artifact": reference}], "timeout_seconds": 60}
@@ -131,6 +131,26 @@ class Environment:
             "inspection": {"cursor_key_env": "CURSOR_KEY"}}, "AMPHORA_RUNTIME_DATABASE_URL", port)
         self.runtime_relay, self.artifact_relay = HTTP.FaultRelay(self.runtime.endpoint), HTTP.FaultRelay(self.artifact.endpoint)
         self.resources.extend((self.runtime_relay, self.artifact_relay))
+
+    def activate(self, tool):
+        activated = self.registry_call("activate", {"release": tool.lock, "expected_revision": 1})
+        assert activated["release"]["status"] == "active"
+        deployed = self.registry_call("deploy", {"deployment_id": tool.deployment, "release": tool.lock,
+            "architecture": "x86_64", "operating_system": "linux", "workers": ["worker1", "worker2"]})
+        assert deployed["status"] == "accepted"
+        for actor in ("worker1", "worker2"):
+            tool.heartbeats.append(self.registry_call("heartbeat", {"deployment_id": tool.deployment,
+                "replica_id": actor + "-" + tool.deployment, "expected_revision": 0, "free_slots": 1, "ttl_seconds": 60}, actor))
+            assert tool.heartbeats[-1]["status"] == "accepted"
+
+    def refresh_capacity(self, tool):
+        refreshed = []
+        for receipt in tool.heartbeats:
+            old = receipt["heartbeat"]
+            refreshed.append(self.registry_call("heartbeat", {"deployment_id": tool.deployment,
+                "replica_id": old["replica_id"], "expected_revision": old["revision"], "free_slots": 1, "ttl_seconds": 60}, old["worker_id"]))
+            assert refreshed[-1]["status"] == "accepted"
+        tool.heartbeats = refreshed
 
     def publish(self, tool, payload):
         body = json.dumps(payload).encode()
@@ -150,7 +170,7 @@ class Environment:
 
     def save(self, status):
         value = {"schema_version": "1", "status": status, "scope": self.scope, "cases": self.cases,
-            "packages": self.config["packages"], "image_digests": {tool.module: tool.image["image_manifest_digest"] for tool in self.tools},
+            "packages": self.config["packages"], "image_digests": {tool.key: tool.image["image_manifest_digest"] for tool in self.tools},
             "execution_profile": "Windows independent wheel processes; advertised Linux image profile separately verified",
             "active_run": self.active_run}
         if hasattr(self, "runtime_relay"):

@@ -1,0 +1,259 @@
+{
+  "base": "python@sha256:f77ac9e44ae96ef2c90b8053ea08c31f8be030f824196b0ae4db6d462c84e51f",
+  "created_at": "2026-09-28 17:06:25",
+  "platform": "linux/amd64",
+  "schema_version": "1",
+  "tools": [
+    {
+      "descriptor": {
+        "anti_examples": [
+          "Does not establish biological, chemical or materials validity."
+        ],
+        "authority_ceiling": "synthetic_only",
+        "checkpoint": {
+          "mode": "none",
+          "readable_schema_sha256": []
+        },
+        "egress": {
+          "mode": "deny"
+        },
+        "examples": [
+          "values=[-1,0,1], a=-2, b=3 gives [5,3,1]."
+        ],
+        "reproducibility": "deterministic",
+        "resources": {
+          "architectures": [
+            "x86_64"
+          ],
+          "cpu_millicores": 1000,
+          "gpu_count": 0,
+          "max_batch_size": 1,
+          "max_parallel_invocations": 1,
+          "memory_mib": 128,
+          "operating_systems": [
+            "linux"
+          ],
+          "timeout_seconds": 60
+        },
+        "schema_version": "1",
+        "tool": {
+          "applicability": [
+            "synthetic-tests"
+          ],
+          "binding": {
+            "capability_id": "synthetic.numeric-affine",
+            "contract_version": "1",
+            "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+            "release": "0.2.0"
+          },
+          "checkpoint_schema": null,
+          "inputs": [
+            {
+              "name": "parameters",
+              "representation": "numeric-vector",
+              "required": true,
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-affine.input",
+                "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                "version": "1"
+              },
+              "unit": "1"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "result",
+              "representation": "numeric-vector",
+              "required": true,
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-affine.output",
+                "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                "version": "1"
+              },
+              "unit": "1"
+            }
+          ],
+          "purpose": "Apply a*x+b independently to bounded synthetic numeric values.",
+          "schema_version": "1",
+          "side_effects": "pure"
+        }
+      },
+      "golden_input": {
+        "a": -2,
+        "b": 3,
+        "values": [
+          -1,
+          0,
+          1
+        ]
+      },
+      "golden_output": {
+        "schema_version": "1",
+        "values": [
+          5.0,
+          3.0,
+          1.0
+        ]
+      },
+      "image_config_digest": "sha256:72ae2ce262fb7f8bf929720c07daa1b018400f8e661388bddb5bf13c20e299f2",
+      "image_manifest_digest": "sha256:4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+      "isolated_nonroot_probe": "passed",
+      "local_wheels": {
+        "amphora_contracts_artifacts-0.1.0-py3-none-any.whl": "bda69bb93b8fd3b76eaf4b22eeacf750c68db972b5de8d555a27ef1507494989",
+        "amphora_contracts_commands-0.1.0-py3-none-any.whl": "476beedaecc51c050c1e13efe2dbcd7c84a1b6b35201bb212d2935342bcb7a1b",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "5ee43eef187331776210ea39979841bf7840482645a8e67a5d232a99baf27f35",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "92918bab870693aef47c708044769bf7866b3c218903259e7ba51776259a63cc",
+        "amphora_numeric_affine-0.2.0-py3-none-any.whl": "ffa8118003334033064e556fdbb24ef58c38950bbbce64be2933a0481692791f",
+        "amphora_tool_protocol-0.1.0-py3-none-any.whl": "40c06b756eab9fcca80e84150e006c889c8b51ae56303db9f0e1f02733d21df0"
+      },
+      "module": "amphora_numeric_affine",
+      "offline_wheels": {
+        "amphora_contracts_artifacts-0.1.0-py3-none-any.whl": "bda69bb93b8fd3b76eaf4b22eeacf750c68db972b5de8d555a27ef1507494989",
+        "amphora_contracts_commands-0.1.0-py3-none-any.whl": "476beedaecc51c050c1e13efe2dbcd7c84a1b6b35201bb212d2935342bcb7a1b",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "5ee43eef187331776210ea39979841bf7840482645a8e67a5d232a99baf27f35",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "92918bab870693aef47c708044769bf7866b3c218903259e7ba51776259a63cc",
+        "amphora_numeric_affine-0.2.0-py3-none-any.whl": "ffa8118003334033064e556fdbb24ef58c38950bbbce64be2933a0481692791f",
+        "amphora_tool_protocol-0.1.0-py3-none-any.whl": "40c06b756eab9fcca80e84150e006c889c8b51ae56303db9f0e1f02733d21df0",
+        "annotated_types-0.8.0-py3-none-any.whl": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0",
+        "pydantic-2.13.5-py3-none-any.whl": "346a034f080da3755d8e9cb5e00e8b07de1d39e4f6e2c87d8ab7cafa0b269a73",
+        "pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl": "0fc5be0abd4a407e200d844b404e33639a554e7bd0d448e7b9ae181be4789ac2",
+        "typing_extensions-4.16.0-py3-none-any.whl": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+        "typing_inspection-0.4.4-py3-none-any.whl": "65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147"
+      },
+      "package": "amphora-numeric-affine",
+      "tag": "amphora/numeric-affine:bp03-707506241423"
+    },
+    {
+      "descriptor": {
+        "anti_examples": [
+          "Does not establish biological, chemical or materials validity."
+        ],
+        "authority_ceiling": "synthetic_only",
+        "checkpoint": {
+          "mode": "none",
+          "readable_schema_sha256": []
+        },
+        "egress": {
+          "mode": "deny"
+        },
+        "examples": [
+          "ABACA over ABCD gives length 5 and counts A=3, B=1, C=1, D=0."
+        ],
+        "reproducibility": "deterministic",
+        "resources": {
+          "architectures": [
+            "x86_64"
+          ],
+          "cpu_millicores": 1000,
+          "gpu_count": 0,
+          "max_batch_size": 1,
+          "max_parallel_invocations": 1,
+          "memory_mib": 128,
+          "operating_systems": [
+            "linux"
+          ],
+          "timeout_seconds": 60
+        },
+        "schema_version": "1",
+        "tool": {
+          "applicability": [
+            "synthetic-tests"
+          ],
+          "binding": {
+            "capability_id": "synthetic.sequence-statistics",
+            "contract_version": "1",
+            "image_sha256": "4364cc50b6c6ad07ebec70a8969f65c35fdd7054752e861510fe02b5ec3ae305",
+            "release": "0.3.0"
+          },
+          "checkpoint_schema": null,
+          "inputs": [
+            {
+              "name": "parameters",
+              "representation": "symbol-sequence",
+              "required": true,
+              "schema_ref": {
+                "schema_id": "synthetic.sequence-statistics.input",
+                "sha256": "9ed39b51350f0cc9461cefade3f9b675d6f827c93f012ee71a4668fff4ad1674",
+                "version": "1"
+              },
+              "unit": "1"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "result",
+              "representation": "symbol-statistics",
+              "required": true,
+              "schema_ref": {
+                "schema_id": "synthetic.sequence-statistics.output",
+                "sha256": "3c9502d3276bf662a855665bf5e02b2b93647ef62fea54bfb308d45a9838d842",
+                "version": "1"
+              },
+              "unit": "1"
+            }
+          ],
+          "purpose": "Count explicitly configured case-sensitive symbols in a bounded synthetic sequence.",
+          "schema_version": "1",
+          "side_effects": "pure"
+        }
+      },
+      "golden_input": {
+        "alphabet": "ABCD",
+        "sequence": "ABACA"
+      },
+      "golden_output": {
+        "counts": [
+          {
+            "count": 3,
+            "symbol": "A"
+          },
+          {
+            "count": 1,
+            "symbol": "B"
+          },
+          {
+            "count": 1,
+            "symbol": "C"
+          },
+          {
+            "count": 0,
+            "symbol": "D"
+          }
+        ],
+        "length": 5,
+        "schema_version": "1"
+      },
+      "image_config_digest": "sha256:a1322ff448a932753acf546dc7517322da2c1bb7037a909e54a50019463c17af",
+      "image_manifest_digest": "sha256:4364cc50b6c6ad07ebec70a8969f65c35fdd7054752e861510fe02b5ec3ae305",
+      "isolated_nonroot_probe": "passed",
+      "local_wheels": {
+        "amphora_contracts_artifacts-0.1.0-py3-none-any.whl": "bda69bb93b8fd3b76eaf4b22eeacf750c68db972b5de8d555a27ef1507494989",
+        "amphora_contracts_commands-0.1.0-py3-none-any.whl": "476beedaecc51c050c1e13efe2dbcd7c84a1b6b35201bb212d2935342bcb7a1b",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "5ee43eef187331776210ea39979841bf7840482645a8e67a5d232a99baf27f35",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "92918bab870693aef47c708044769bf7866b3c218903259e7ba51776259a63cc",
+        "amphora_sequence_statistics-0.3.0-py3-none-any.whl": "78ae41c49ae72ca3f75aefc3520d2b6e568f76a1fa0b312228db5e0d47490f31",
+        "amphora_tool_protocol-0.1.0-py3-none-any.whl": "40c06b756eab9fcca80e84150e006c889c8b51ae56303db9f0e1f02733d21df0"
+      },
+      "module": "amphora_sequence_statistics",
+      "offline_wheels": {
+        "amphora_contracts_artifacts-0.1.0-py3-none-any.whl": "bda69bb93b8fd3b76eaf4b22eeacf750c68db972b5de8d555a27ef1507494989",
+        "amphora_contracts_commands-0.1.0-py3-none-any.whl": "476beedaecc51c050c1e13efe2dbcd7c84a1b6b35201bb212d2935342bcb7a1b",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "5ee43eef187331776210ea39979841bf7840482645a8e67a5d232a99baf27f35",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "92918bab870693aef47c708044769bf7866b3c218903259e7ba51776259a63cc",
+        "amphora_sequence_statistics-0.3.0-py3-none-any.whl": "78ae41c49ae72ca3f75aefc3520d2b6e568f76a1fa0b312228db5e0d47490f31",
+        "amphora_tool_protocol-0.1.0-py3-none-any.whl": "40c06b756eab9fcca80e84150e006c889c8b51ae56303db9f0e1f02733d21df0",
+        "annotated_types-0.8.0-py3-none-any.whl": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0",
+        "pydantic-2.13.5-py3-none-any.whl": "346a034f080da3755d8e9cb5e00e8b07de1d39e4f6e2c87d8ab7cafa0b269a73",
+        "pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl": "0fc5be0abd4a407e200d844b404e33639a554e7bd0d448e7b9ae181be4789ac2",
+        "typing_extensions-4.16.0-py3-none-any.whl": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+        "typing_inspection-0.4.4-py3-none-any.whl": "65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147"
+      },
+      "package": "amphora-sequence-statistics",
+      "tag": "amphora/sequence-statistics:bp03-c3cdc853b7b8"
+    }
+  ]
+}
