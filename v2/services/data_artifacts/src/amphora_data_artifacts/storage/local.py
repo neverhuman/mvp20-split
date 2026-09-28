@@ -7,6 +7,7 @@ import stat
 from pathlib import Path
 
 from ..publication.model import UploadError
+from .lease import exclusive
 
 
 def reject_links(path):
@@ -32,11 +33,37 @@ class LocalBytes:
             reject_links(path)
         return path
 
+    def sidecar(self, key, suffix):
+        path = self.path(key).with_name(key + suffix)
+        if path.exists() or path.is_symlink():
+            reject_links(path)
+        return path
+
+    def guard(self, key):
+        return exclusive(self.sidecar(key, ".lock"))
+
+    def retire(self, key):
+        """Caller holds guard; durable marker precedes unlink and forbids delayed writers."""
+        marker = self.sidecar(key, ".retired")
+        descriptor = os.open(marker, os.O_WRONLY | os.O_CREAT | getattr(os, "O_NOFOLLOW", 0), 0o600)
+        with os.fdopen(descriptor, "wb") as handle:
+            handle.flush()
+            os.fsync(handle.fileno())
+        self.path(key).unlink(missing_ok=True)
+
     def writer(self, attempt):
-        path = self.path(attempt.storage_key)
-        flags = os.O_WRONLY | os.O_CREAT | os.O_EXCL | getattr(os, "O_BINARY", 0) | getattr(os, "O_NOFOLLOW", 0)
-        descriptor = os.open(path, flags, 0o600)
-        return ByteWriter(os.fdopen(descriptor, "wb"), attempt.content)
+        guard = self.guard(attempt.storage_key)
+        guard.__enter__()
+        try:
+            if self.sidecar(attempt.storage_key, ".retired").exists():
+                raise UploadError("storage_key_retired")
+            path = self.path(attempt.storage_key)
+            flags = os.O_WRONLY | os.O_CREAT | os.O_EXCL | getattr(os, "O_BINARY", 0) | getattr(os, "O_NOFOLLOW", 0)
+            descriptor = os.open(path, flags, 0o600)
+            return ByteWriter(os.fdopen(descriptor, "wb"), attempt.content, guard)
+        except BaseException:
+            guard.__exit__(None, None, None)
+            raise
 
     def verify(self, key, content):
         """Read one immutable file; bytes/hash/size refer to the same open handle."""
@@ -53,7 +80,8 @@ class LocalBytes:
 
 
 class ByteWriter:
-    def __init__(self, handle, expected):
+    def __init__(self, handle, expected, guard=None):
+        self.guard = guard
         self.handle = handle
         self.expected = expected
         self.count = 0
@@ -77,4 +105,9 @@ class ByteWriter:
         os.fsync(self.handle.fileno())
 
     def close(self):
-        self.handle.close()
+        try:
+            self.handle.close()
+        finally:
+            if self.guard is not None:
+                self.guard.__exit__(None, None, None)
+                self.guard = None

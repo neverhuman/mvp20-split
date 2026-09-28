@@ -2,17 +2,17 @@
 
 ## Current Checkpoint
 
-- Last refreshed: `2026-09-28 10:43:15` (America/Chicago).
+- Last refreshed: `2026-09-28 10:56:19` (America/Chicago).
 - Workspace: v2 active; v1 frozen. JARVIS is read-only reference only when specifically requested.
-- Canonical position: [BP-02](docs/Build%20Plans/BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md) -> [BP-02.03](docs/Build%20Plans/BP-02/BP-02.03%20Artifact%20Publication%20and%20Retention.md) / V1 / A5 reconciliation and cleanup.
-- Progress: parent 40.63% (13/32 implementation deliveries). Children .01 contracts and .02 persistence complete/audited; .03 artifacts 60% (V1 75%, V2 0%), A2/A3/A4 complete. Children .04-.06 and BP-03..09 remain 0%.
+- Canonical position: [BP-02](docs/Build%20Plans/BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md) -> [BP-02.03](docs/Build%20Plans/BP-02/BP-02.03%20Artifact%20Publication%20and%20Retention.md) / V2 / A6 independent service acceptance.
+- Progress: parent 43.75% (14/32 implementation deliveries). Children .01 contracts and .02 persistence complete/audited; .03 artifacts 80% (V1 100%, V2 0%), A2-A5 complete. Children .04-.06 and BP-03..09 remain 0%.
 - Latest work: A4 protective reservation handshake passed with real PostgreSQL and a separate authenticated scripted HTTP peer; terminal proof, shared-reference protection, replay and rollback verified. Reference refinements remain in queued plans.
 - Authority: user approved deeper decomposition and autonomous continuation. No new permission needed for routine in-scope work; one child/task active. BP-01/BP-01A and closed children stay closed.
-- Next bounded work: A5 implements bounded reconciliation and safe provisional cleanup with additional process-crash tests. Never release on timeout/unknown proof. Actual runtime integration remains .06.
-- Evidence: 172 aggregate tests pass with PostgreSQL enabled; lint/import/schema checks and eight independent wheel installs pass, including migration SQL resources. 56 published input/output schemas. Runtime persistence 11 tests, artifact service 61. [Persistence audit](docs/Audits/BP-02.02_Persistence_Closeout.md) records exact scope and coverage limits.
+- Next bounded work: A6 adds executable hosting, scoped content reads, independent service acceptance and closeout audit. A5 cleanup/reconciliation and separate-process crash tests passed. Actual runtime integration remains .06.
+- Evidence: 182 aggregate tests pass with PostgreSQL enabled; lint/import/schema checks and eight independent wheel installs pass, including migration SQL resources. 56 published input/output schemas. Runtime persistence 11 tests, artifact service 71. [Persistence audit](docs/Audits/BP-02.02_Persistence_Closeout.md) records exact scope and coverage limits.
 - Environment: Python 3.12, uv bootstrap and Docker Desktop available. Labeled PostgreSQL 17.11 fixture is running; helper reset/restart verified. Dynamic endpoint and credentials are only in ignored `.test-results/postgres-fixture.json`; do not copy them to docs/logs. `dev/postgres_fixture.py verify` refreshes endpoint after restart. Use `AMPHORA_TEST_POSTGRES=1` for actual database tests. Cargo absent; Rust remains later scope.
 - Blockers: Git identity configured locally as tkn1234 <alb_gen@live.com>; no A5 implementation blocker. Scientific sources/provider/target-host policy remain later decisions; synthetic fixtures are authorized. Existing Starlette/httpx test-client deprecation is nonblocking dev maintenance.
-- Git: implementation checkpoint `82ef9cf` pushed to origin/main. Repository-local author is tkn1234 <alb_gen@live.com>. GitHub reported the repository moved; origin now uses https://github.com/neverhumanbot/mvp20-split.git. Resume A5; no Git identity blocker remains.
+- Git: implementation checkpoint `82ef9cf` pushed to origin/main. Repository-local author is tkn1234 <alb_gen@live.com>. GitHub reported the repository moved; origin now uses https://github.com/neverhumanbot/mvp20-split.git. Resume A6; no Git identity blocker remains.
 
 ## Decomposition and Resume Discipline
 

@@ -12,3 +12,5 @@ The service role owns no schema and receives only required SELECT/INSERT and sta
 Tests use service-role TCP connections and independent migration credentials. They cover scoped constraints, denied mutation, rollback, simultaneous connections, actual serialization conflict and retry exhaustion. They do not prove publication or byte crash recovery. Dev owns disposable reset; production backup/restore remains BP-09. Replacement preserves schema identity and public contracts and proves migration/replay behavior before traffic.
 
 Upload migration preserves legacy rows without assigning an actor; legacy records cannot pass new owner authorization. New rows bind principal, generation and exact selected attempt. Capacity and attempt settlement follow publication-owned transactions; only required state columns receive UPDATE grants.
+
+Migration artifact_0003 adds upload creation time and cleaning/cleaned attempt states. Existing uploads receive a fresh cleanup grace interval; identity and retained evidence stay immutable. Maintenance refunds capacity only after filesystem retirement, using the existing restricted column grants.

@@ -13,6 +13,7 @@ import pytest
 from amphora_contracts_artifacts import RuntimeOutcome, parse_command
 from amphora_data_artifacts.access import Credentials
 from amphora_data_artifacts.api import create_app
+from amphora_data_artifacts.maintenance.reconcile import Reconciler
 from amphora_data_artifacts.publication.finalize import Finalizer
 from amphora_data_artifacts.publication.model import UploadError
 from amphora_data_artifacts.retention.outcomes import OutcomeUnavailable, RuntimeOutcomes
@@ -222,3 +223,31 @@ def test_terminal_transition_and_receipt_rollback_together(retained):
         event.remove(env.engine, "after_cursor_execute", fault)
     assert reserve(retained).outcome.status == "reserved"
     assert service.reconcile(env.principal, cmd).outcome.status == "released"
+
+
+def test_bounded_sweep_late_reservation_and_retry(retained):
+    env, service, peer, _ = retained
+    peer.status = "aborted"  # Immutable tombstone predates late reserve.
+    binding = reserve(retained).outcome.binding
+    runner = Reconciler(service)
+    assert runner.sweep(env.principal, limit=1)["released"] == 1
+    assert reserve(retained).outcome.status == "released"
+    peer.status = "committed"  # Scripted contradiction must not revive terminal binding.
+    assert runner.sweep(env.principal)["confirmed"] == 0
+    with pytest.raises(UploadError, match="runtime_outcome_conflict"):
+        service.reconcile(env.principal, command(env, "artifacts.reconcile", {"reservation_id": binding.reservation_id}))
+
+
+def test_bounded_sweep_unknown_reuses_pending_command(retained):
+    env, service, peer, _ = retained
+    reserve(retained)
+    runner = Reconciler(service)
+    peer.status = "outage"
+    assert runner.sweep(env.principal)["deferred"] == 1
+    assert runner.sweep(env.principal)["deferred"] == 1
+    peer.status = "committed"
+    assert runner.sweep(env.principal)["confirmed"] == 1
+    with env.engine.connect() as conn:
+        count = conn.execute(text("SELECT count(*) FROM artifacts.commands WHERE tenant_id=:tenant "
+            "AND project_id=:project AND family='artifacts.reconcile'"), env.principal.bindings).scalar_one()
+    assert count == 1

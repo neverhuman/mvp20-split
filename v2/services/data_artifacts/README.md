@@ -1,6 +1,6 @@
 # Data and Artifacts Service
 
-- Status: provisional uploads and verified finalization implemented; protective reservation handshake implemented; reconciliation scheduling, cleanup and independent service acceptance pending.
+- Status: provisional uploads and verified finalization implemented; protective reservation handshake implemented; bounded reconciliation/cleanup sweeps implemented; lifecycle hosting and independent service acceptance pending.
 - Package: `amphora-data-artifacts` 0.1.0.
 - Architecture: [Artifact publication](../../docs/Architecture/System/Artifact_Publication_Protocol.md), [physical records](../../docs/Architecture/System/Persistence_Record_Design.md).
 
@@ -19,3 +19,5 @@ A replacement preserves catalog identity, reservation protection, stable command
 Run `uv run --project v2/dev --locked python v2/dev/run_tests.py --module data-artifacts --area publication` with `AMPHORA_TEST_POSTGRES=1`; `--area storage` runs filesystem checks, `--area persistence` runs DB primitives, and `--coverage` keeps the full owner source denominator. Cases cover stale processes, body disconnect/cancellation/timeout, quotas, credential/scope errors and path/link rejection. No automatic cleanup or backup guarantee is implied.
 
 [Retention](src/amphora_data_artifacts/retention/README.md) owns protective reservation identity and authenticated terminal proof. Use `--area retention` for its isolated suite; separate-process scripted peer tests do not substitute for actual runtime integration.
+
+[Maintenance](src/amphora_data_artifacts/maintenance/README.md) owns conservative provisional cleanup and bounded reservation sweeps. Use `--area maintenance` for its process-crash and capacity tests. No automatic finalized-content deletion; markers/evidence and lifetime upload bounds persist.
