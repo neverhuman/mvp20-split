@@ -8,7 +8,13 @@ from pathlib import Path
 import amphora_contracts_artifacts as artifact_contracts
 import amphora_contracts_runtime as runtime_contracts
 import amphora_contracts_tools as tool_contracts
-from amphora_contracts_campaigns import CampaignDefinition
+from amphora_contracts_campaigns import (
+    ActivationPath,
+    CampaignDefinition,
+    ExecutableCampaign,
+    ExecutionPlan,
+    PlanLock,
+)
 from amphora_contracts_commands import CommandIdentity
 from amphora_contracts_core import ArtifactRef, Finding, SchemaRef, Scope
 from amphora_contracts_tools import Completion, Invocation, ToolBinding, ToolDescriptor
@@ -24,6 +30,12 @@ MODELS = {
     "tools.invocation": Invocation,
     "tools.completion": Completion,
     "campaigns.definition": CampaignDefinition,
+}
+MODELS_V2 = {
+    "campaigns.definition": ExecutableCampaign,
+    "campaigns.execution-plan": ExecutionPlan,
+    "campaigns.plan-lock": PlanLock,
+    "campaigns.activation-path": ActivationPath,
 }
 
 MODELS["commands.identity"] = CommandIdentity
@@ -86,25 +98,26 @@ def encoded(value: object) -> bytes:
     ).encode("utf-8")
 
 
-def artifacts() -> dict[str, bytes]:
+def artifacts(version="1") -> dict[str, bytes]:
+    models = {"1": MODELS, "2": MODELS_V2}[version]
     result = {}
-    for name, model in sorted(MODELS.items()):
+    for name, model in sorted(models.items()):
         for mode in ("validation", "serialization"):
             schema = model.model_json_schema(mode=mode)
             schema["$schema"] = "https://json-schema.org/draft/2020-12/schema"
-            schema["$id"] = f"urn:amphora:{name}:1:{mode}"
+            schema["$id"] = f"urn:amphora:{name}:{version}:{mode}"
             result[f"{name}.{mode}.json"] = encoded(schema)
     manifest = {
         "profile": "amphora-schema-publication-v1",
-        "wire_version": "1",
+        "wire_version": version,
         "schemas": {name: hashlib.sha256(data).hexdigest() for name, data in sorted(result.items())},
     }
     result["manifest.json"] = encoded(manifest)
     return result
 
 
-def publish(directory: Path, check: bool = False) -> list[str]:
-    expected = artifacts()
+def publish(directory: Path, check: bool = False, version="1") -> list[str]:
+    expected = artifacts(version)
     if check:
         actual = {p.name: p.read_bytes() for p in directory.glob("*.json")}
         return sorted(k for k in actual.keys() | expected.keys() if actual.get(k) != expected.get(k))
@@ -118,7 +131,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
-    differences = publish(ROOT / "contracts" / "schemas" / "v1", args.check)
+    differences = [f"v{version}/{name}" for version in ("1", "2")
+        for name in publish(ROOT / "contracts" / "schemas" / ("v" + version), args.check, version)]
     if differences:
         raise SystemExit("Schema publication differs: " + ", ".join(differences))
-    print("Schema publication verified" if args.check else f"Published {len(MODELS) * 2} schemas and digest manifest")
+    print("Schema publication verified" if args.check else f"Published {2 * (len(MODELS) + len(MODELS_V2))} schemas and versioned manifests")

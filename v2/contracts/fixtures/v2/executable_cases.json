@@ -1,0 +1,2167 @@
+[
+  {
+    "name": "explicit-artifact-bindings",
+    "model": "campaigns.definition",
+    "valid": true,
+    "payload": {
+      "schema_version": "2",
+      "profile": "deterministic-v1",
+      "campaign_id": "affine",
+      "revision": 1,
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "compiler"
+      },
+      "context": [],
+      "body": {
+        "inputs": [
+          {
+            "name": "parameters",
+            "value_type": {
+              "kind": "artifact",
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-affine.input",
+                "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                "version": "1"
+              },
+              "representation": "numeric-vector",
+              "unit": "1",
+              "media_type": "application/json"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "name": "result",
+            "value_type": {
+              "kind": "artifact",
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-affine.output",
+                "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                "version": "1"
+              },
+              "representation": "numeric-vector",
+              "unit": "1",
+              "media_type": "application/json"
+            }
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "invoke",
+            "node_id": "affine",
+            "tool": {
+              "capability_id": "synthetic.numeric-affine",
+              "contract_version": "1",
+              "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+              "release": "0.2.0"
+            },
+            "inputs": [
+              {
+                "port": "parameters",
+                "source": {
+                  "kind": "input",
+                  "name": "parameters"
+                }
+              }
+            ],
+            "timeout_seconds": 30,
+            "checkpoint": null
+          },
+          {
+            "kind": "finish",
+            "node_id": "finish",
+            "outputs": [
+              {
+                "port": "result",
+                "source": {
+                  "kind": "output",
+                  "node_id": "affine",
+                  "port": "result"
+                }
+              }
+            ]
+          }
+        ],
+        "edges": [
+          {
+            "source": "affine",
+            "target": "finish",
+            "route": "next"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "branch-explicit-all-join",
+    "model": "campaigns.definition",
+    "valid": true,
+    "payload": {
+      "schema_version": "2",
+      "profile": "deterministic-v1",
+      "campaign_id": "branch-join",
+      "revision": 1,
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "compiler"
+      },
+      "context": [],
+      "body": {
+        "inputs": [
+          {
+            "name": "parameters",
+            "value_type": {
+              "kind": "artifact",
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-affine.input",
+                "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                "version": "1"
+              },
+              "representation": "numeric-vector",
+              "unit": "1",
+              "media_type": "application/json"
+            }
+          },
+          {
+            "name": "flag",
+            "value_type": {
+              "kind": "scalar",
+              "scalar": "boolean",
+              "unit": "1"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "name": "results",
+            "value_type": {
+              "kind": "collection",
+              "item": {
+                "kind": "artifact",
+                "schema_ref": {
+                  "schema_id": "synthetic.numeric-affine.output",
+                  "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                  "version": "1"
+                },
+                "representation": "numeric-vector",
+                "unit": "1",
+                "media_type": "application/json"
+              },
+              "max_items": 2,
+              "missing_slots": false
+            }
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "branch",
+            "node_id": "choose",
+            "predicate": {
+              "kind": "compare",
+              "left": {
+                "source": {
+                  "kind": "input",
+                  "name": "flag"
+                },
+                "path": [],
+                "value_type": {
+                  "kind": "scalar",
+                  "scalar": "boolean",
+                  "unit": "1"
+                }
+              },
+              "operator": "eq",
+              "right": {
+                "kind": "boolean",
+                "value": true
+              }
+            }
+          },
+          {
+            "kind": "invoke",
+            "node_id": "left",
+            "tool": {
+              "capability_id": "synthetic.numeric-affine",
+              "contract_version": "1",
+              "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+              "release": "0.2.0"
+            },
+            "inputs": [
+              {
+                "port": "parameters",
+                "source": {
+                  "kind": "input",
+                  "name": "parameters"
+                }
+              }
+            ],
+            "timeout_seconds": 30,
+            "checkpoint": null
+          },
+          {
+            "kind": "invoke",
+            "node_id": "right",
+            "tool": {
+              "capability_id": "synthetic.numeric-affine",
+              "contract_version": "1",
+              "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+              "release": "0.2.0"
+            },
+            "inputs": [
+              {
+                "port": "parameters",
+                "source": {
+                  "kind": "input",
+                  "name": "parameters"
+                }
+              }
+            ],
+            "timeout_seconds": 30,
+            "checkpoint": null
+          },
+          {
+            "kind": "join",
+            "node_id": "collect",
+            "members": [
+              {
+                "member_id": "left",
+                "source": {
+                  "kind": "output",
+                  "node_id": "left",
+                  "port": "result"
+                },
+                "required": true
+              },
+              {
+                "member_id": "right",
+                "source": {
+                  "kind": "output",
+                  "node_id": "right",
+                  "port": "result"
+                },
+                "required": true
+              }
+            ],
+            "policy": {
+              "kind": "all",
+              "skipped": "exclude"
+            },
+            "output": {
+              "name": "results",
+              "value_type": {
+                "kind": "collection",
+                "item": {
+                  "kind": "artifact",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.output",
+                    "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                    "version": "1"
+                  },
+                  "representation": "numeric-vector",
+                  "unit": "1",
+                  "media_type": "application/json"
+                },
+                "max_items": 2,
+                "missing_slots": false
+              }
+            }
+          },
+          {
+            "kind": "finish",
+            "node_id": "finish",
+            "outputs": [
+              {
+                "port": "results",
+                "source": {
+                  "kind": "output",
+                  "node_id": "collect",
+                  "port": "results"
+                }
+              }
+            ]
+          }
+        ],
+        "edges": [
+          {
+            "source": "choose",
+            "target": "left",
+            "route": "true"
+          },
+          {
+            "source": "choose",
+            "target": "right",
+            "route": "false"
+          },
+          {
+            "source": "left",
+            "target": "collect",
+            "route": "next"
+          },
+          {
+            "source": "right",
+            "target": "collect",
+            "route": "next"
+          },
+          {
+            "source": "collect",
+            "target": "finish",
+            "route": "next"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "bounded-scatter-frozen-order",
+    "model": "campaigns.definition",
+    "valid": true,
+    "payload": {
+      "schema_version": "2",
+      "profile": "deterministic-v1",
+      "campaign_id": "bounded-scatter",
+      "revision": 1,
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "compiler"
+      },
+      "context": [],
+      "body": {
+        "inputs": [
+          {
+            "name": "items",
+            "value_type": {
+              "kind": "collection",
+              "item": {
+                "kind": "artifact",
+                "schema_ref": {
+                  "schema_id": "synthetic.numeric-affine.input",
+                  "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                  "version": "1"
+                },
+                "representation": "numeric-vector",
+                "unit": "1",
+                "media_type": "application/json"
+              },
+              "max_items": 3,
+              "missing_slots": false
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "name": "results",
+            "value_type": {
+              "kind": "collection",
+              "item": {
+                "kind": "artifact",
+                "schema_ref": {
+                  "schema_id": "synthetic.numeric-affine.output",
+                  "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                  "version": "1"
+                },
+                "representation": "numeric-vector",
+                "unit": "1",
+                "media_type": "application/json"
+              },
+              "max_items": 3,
+              "missing_slots": false
+            }
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "scatter",
+            "node_id": "batch",
+            "collection": {
+              "kind": "input",
+              "name": "items"
+            },
+            "item_input": "item",
+            "captures": [],
+            "max_members": 3,
+            "max_parallel": 2,
+            "body": {
+              "inputs": [
+                {
+                  "name": "item",
+                  "value_type": {
+                    "kind": "artifact",
+                    "schema_ref": {
+                      "schema_id": "synthetic.numeric-affine.input",
+                      "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                      "version": "1"
+                    },
+                    "representation": "numeric-vector",
+                    "unit": "1",
+                    "media_type": "application/json"
+                  }
+                }
+              ],
+              "outputs": [
+                {
+                  "name": "result",
+                  "value_type": {
+                    "kind": "artifact",
+                    "schema_ref": {
+                      "schema_id": "synthetic.numeric-affine.output",
+                      "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                      "version": "1"
+                    },
+                    "representation": "numeric-vector",
+                    "unit": "1",
+                    "media_type": "application/json"
+                  }
+                }
+              ],
+              "nodes": [
+                {
+                  "kind": "invoke",
+                  "node_id": "map",
+                  "tool": {
+                    "capability_id": "synthetic.numeric-affine",
+                    "contract_version": "1",
+                    "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+                    "release": "0.2.0"
+                  },
+                  "inputs": [
+                    {
+                      "port": "parameters",
+                      "source": {
+                        "kind": "input",
+                        "name": "item"
+                      }
+                    }
+                  ],
+                  "timeout_seconds": 30,
+                  "checkpoint": null
+                },
+                {
+                  "kind": "finish",
+                  "node_id": "finish",
+                  "outputs": [
+                    {
+                      "port": "result",
+                      "source": {
+                        "kind": "output",
+                        "node_id": "map",
+                        "port": "result"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "edges": [
+                {
+                  "source": "map",
+                  "target": "finish",
+                  "route": "next"
+                }
+              ]
+            },
+            "result_port": "result",
+            "output": {
+              "name": "results",
+              "value_type": {
+                "kind": "collection",
+                "item": {
+                  "kind": "artifact",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.output",
+                    "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                    "version": "1"
+                  },
+                  "representation": "numeric-vector",
+                  "unit": "1",
+                  "media_type": "application/json"
+                },
+                "max_items": 3,
+                "missing_slots": false
+              }
+            },
+            "policy": {
+              "kind": "all",
+              "skipped": "exclude"
+            }
+          },
+          {
+            "kind": "finish",
+            "node_id": "finish",
+            "outputs": [
+              {
+                "port": "results",
+                "source": {
+                  "kind": "output",
+                  "node_id": "batch",
+                  "port": "results"
+                }
+              }
+            ]
+          }
+        ],
+        "edges": [
+          {
+            "source": "batch",
+            "target": "finish",
+            "route": "next"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "explicit-loop-state-feedback",
+    "model": "campaigns.definition",
+    "valid": true,
+    "payload": {
+      "schema_version": "2",
+      "profile": "deterministic-v1",
+      "campaign_id": "bounded-loop",
+      "revision": 1,
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "compiler"
+      },
+      "context": [],
+      "body": {
+        "inputs": [],
+        "outputs": [
+          {
+            "name": "counter",
+            "value_type": {
+              "kind": "scalar",
+              "scalar": "integer",
+              "unit": "1"
+            }
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "iterate",
+            "node_id": "loop",
+            "state": [
+              {
+                "name": "counter",
+                "value_type": {
+                  "kind": "scalar",
+                  "scalar": "integer",
+                  "unit": "1"
+                },
+                "initial": {
+                  "kind": "integer",
+                  "value": 0,
+                  "unit": "1"
+                },
+                "feedback_port": "counter"
+              }
+            ],
+            "captures": [],
+            "body": {
+              "inputs": [
+                {
+                  "name": "counter",
+                  "value_type": {
+                    "kind": "scalar",
+                    "scalar": "integer",
+                    "unit": "1"
+                  }
+                }
+              ],
+              "outputs": [
+                {
+                  "name": "counter",
+                  "value_type": {
+                    "kind": "scalar",
+                    "scalar": "integer",
+                    "unit": "1"
+                  }
+                }
+              ],
+              "nodes": [
+                {
+                  "kind": "finish",
+                  "node_id": "finish",
+                  "outputs": [
+                    {
+                      "port": "counter",
+                      "source": {
+                        "kind": "input",
+                        "name": "counter"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "edges": []
+            },
+            "until": {
+              "kind": "compare",
+              "left": {
+                "source": {
+                  "kind": "result",
+                  "name": "counter"
+                },
+                "path": [],
+                "value_type": {
+                  "kind": "scalar",
+                  "scalar": "integer",
+                  "unit": "1"
+                }
+              },
+              "operator": "ge",
+              "right": {
+                "kind": "integer",
+                "value": 2,
+                "unit": "1"
+              }
+            },
+            "max_iterations": 2,
+            "on_limit": "finish"
+          },
+          {
+            "kind": "finish",
+            "node_id": "finish",
+            "outputs": [
+              {
+                "port": "counter",
+                "source": {
+                  "kind": "output",
+                  "node_id": "loop",
+                  "port": "counter"
+                }
+              }
+            ]
+          }
+        ],
+        "edges": [
+          {
+            "source": "loop",
+            "target": "finish",
+            "route": "next"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "loop-activation-address",
+    "model": "campaigns.activation-path",
+    "valid": true,
+    "payload": {
+      "schema_version": "2",
+      "node_id": "evaluate",
+      "occurrences": [
+        {
+          "kind": "loop",
+          "node_id": "loop",
+          "index": 1
+        }
+      ]
+    }
+  },
+  {
+    "name": "scatter-activation-address",
+    "model": "campaigns.activation-path",
+    "valid": true,
+    "payload": {
+      "schema_version": "2",
+      "node_id": "evaluate",
+      "occurrences": [
+        {
+          "kind": "scatter",
+          "node_id": "scatter",
+          "index": 2,
+          "membership_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      ]
+    }
+  },
+  {
+    "name": "reject-legacy-version",
+    "model": "campaigns.definition",
+    "valid": false,
+    "payload": {
+      "schema_version": "1",
+      "profile": "deterministic-v1",
+      "campaign_id": "affine",
+      "revision": 1,
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "compiler"
+      },
+      "context": [],
+      "body": {
+        "inputs": [
+          {
+            "name": "parameters",
+            "value_type": {
+              "kind": "artifact",
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-affine.input",
+                "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                "version": "1"
+              },
+              "representation": "numeric-vector",
+              "unit": "1",
+              "media_type": "application/json"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "name": "result",
+            "value_type": {
+              "kind": "artifact",
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-affine.output",
+                "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                "version": "1"
+              },
+              "representation": "numeric-vector",
+              "unit": "1",
+              "media_type": "application/json"
+            }
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "invoke",
+            "node_id": "affine",
+            "tool": {
+              "capability_id": "synthetic.numeric-affine",
+              "contract_version": "1",
+              "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+              "release": "0.2.0"
+            },
+            "inputs": [
+              {
+                "port": "parameters",
+                "source": {
+                  "kind": "input",
+                  "name": "parameters"
+                }
+              }
+            ],
+            "timeout_seconds": 30,
+            "checkpoint": null
+          },
+          {
+            "kind": "finish",
+            "node_id": "finish",
+            "outputs": [
+              {
+                "port": "result",
+                "source": {
+                  "kind": "output",
+                  "node_id": "affine",
+                  "port": "result"
+                }
+              }
+            ]
+          }
+        ],
+        "edges": [
+          {
+            "source": "affine",
+            "target": "finish",
+            "route": "next"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "reject-expression-source",
+    "model": "campaigns.definition",
+    "valid": false,
+    "payload": {
+      "schema_version": "2",
+      "profile": "deterministic-v1",
+      "campaign_id": "branch-join",
+      "revision": 1,
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "compiler"
+      },
+      "context": [],
+      "body": {
+        "inputs": [
+          {
+            "name": "parameters",
+            "value_type": {
+              "kind": "artifact",
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-affine.input",
+                "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                "version": "1"
+              },
+              "representation": "numeric-vector",
+              "unit": "1",
+              "media_type": "application/json"
+            }
+          },
+          {
+            "name": "flag",
+            "value_type": {
+              "kind": "scalar",
+              "scalar": "boolean",
+              "unit": "1"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "name": "results",
+            "value_type": {
+              "kind": "collection",
+              "item": {
+                "kind": "artifact",
+                "schema_ref": {
+                  "schema_id": "synthetic.numeric-affine.output",
+                  "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                  "version": "1"
+                },
+                "representation": "numeric-vector",
+                "unit": "1",
+                "media_type": "application/json"
+              },
+              "max_items": 2,
+              "missing_slots": false
+            }
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "branch",
+            "node_id": "choose",
+            "predicate": "eval(context)"
+          },
+          {
+            "kind": "invoke",
+            "node_id": "left",
+            "tool": {
+              "capability_id": "synthetic.numeric-affine",
+              "contract_version": "1",
+              "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+              "release": "0.2.0"
+            },
+            "inputs": [
+              {
+                "port": "parameters",
+                "source": {
+                  "kind": "input",
+                  "name": "parameters"
+                }
+              }
+            ],
+            "timeout_seconds": 30,
+            "checkpoint": null
+          },
+          {
+            "kind": "invoke",
+            "node_id": "right",
+            "tool": {
+              "capability_id": "synthetic.numeric-affine",
+              "contract_version": "1",
+              "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+              "release": "0.2.0"
+            },
+            "inputs": [
+              {
+                "port": "parameters",
+                "source": {
+                  "kind": "input",
+                  "name": "parameters"
+                }
+              }
+            ],
+            "timeout_seconds": 30,
+            "checkpoint": null
+          },
+          {
+            "kind": "join",
+            "node_id": "collect",
+            "members": [
+              {
+                "member_id": "left",
+                "source": {
+                  "kind": "output",
+                  "node_id": "left",
+                  "port": "result"
+                },
+                "required": true
+              },
+              {
+                "member_id": "right",
+                "source": {
+                  "kind": "output",
+                  "node_id": "right",
+                  "port": "result"
+                },
+                "required": true
+              }
+            ],
+            "policy": {
+              "kind": "all",
+              "skipped": "exclude"
+            },
+            "output": {
+              "name": "results",
+              "value_type": {
+                "kind": "collection",
+                "item": {
+                  "kind": "artifact",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.output",
+                    "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                    "version": "1"
+                  },
+                  "representation": "numeric-vector",
+                  "unit": "1",
+                  "media_type": "application/json"
+                },
+                "max_items": 2,
+                "missing_slots": false
+              }
+            }
+          },
+          {
+            "kind": "finish",
+            "node_id": "finish",
+            "outputs": [
+              {
+                "port": "results",
+                "source": {
+                  "kind": "output",
+                  "node_id": "collect",
+                  "port": "results"
+                }
+              }
+            ]
+          }
+        ],
+        "edges": [
+          {
+            "source": "choose",
+            "target": "left",
+            "route": "true"
+          },
+          {
+            "source": "choose",
+            "target": "right",
+            "route": "false"
+          },
+          {
+            "source": "left",
+            "target": "collect",
+            "route": "next"
+          },
+          {
+            "source": "right",
+            "target": "collect",
+            "route": "next"
+          },
+          {
+            "source": "collect",
+            "target": "finish",
+            "route": "next"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "reject-unbounded-loop",
+    "model": "campaigns.definition",
+    "valid": false,
+    "payload": {
+      "schema_version": "2",
+      "profile": "deterministic-v1",
+      "campaign_id": "bounded-loop",
+      "revision": 1,
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "compiler"
+      },
+      "context": [],
+      "body": {
+        "inputs": [],
+        "outputs": [
+          {
+            "name": "counter",
+            "value_type": {
+              "kind": "scalar",
+              "scalar": "integer",
+              "unit": "1"
+            }
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "iterate",
+            "node_id": "loop",
+            "state": [
+              {
+                "name": "counter",
+                "value_type": {
+                  "kind": "scalar",
+                  "scalar": "integer",
+                  "unit": "1"
+                },
+                "initial": {
+                  "kind": "integer",
+                  "value": 0,
+                  "unit": "1"
+                },
+                "feedback_port": "counter"
+              }
+            ],
+            "captures": [],
+            "body": {
+              "inputs": [
+                {
+                  "name": "counter",
+                  "value_type": {
+                    "kind": "scalar",
+                    "scalar": "integer",
+                    "unit": "1"
+                  }
+                }
+              ],
+              "outputs": [
+                {
+                  "name": "counter",
+                  "value_type": {
+                    "kind": "scalar",
+                    "scalar": "integer",
+                    "unit": "1"
+                  }
+                }
+              ],
+              "nodes": [
+                {
+                  "kind": "finish",
+                  "node_id": "finish",
+                  "outputs": [
+                    {
+                      "port": "counter",
+                      "source": {
+                        "kind": "input",
+                        "name": "counter"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "edges": []
+            },
+            "until": {
+              "kind": "compare",
+              "left": {
+                "source": {
+                  "kind": "result",
+                  "name": "counter"
+                },
+                "path": [],
+                "value_type": {
+                  "kind": "scalar",
+                  "scalar": "integer",
+                  "unit": "1"
+                }
+              },
+              "operator": "ge",
+              "right": {
+                "kind": "integer",
+                "value": 2,
+                "unit": "1"
+              }
+            },
+            "on_limit": "finish"
+          },
+          {
+            "kind": "finish",
+            "node_id": "finish",
+            "outputs": [
+              {
+                "port": "counter",
+                "source": {
+                  "kind": "output",
+                  "node_id": "loop",
+                  "port": "counter"
+                }
+              }
+            ]
+          }
+        ],
+        "edges": [
+          {
+            "source": "loop",
+            "target": "finish",
+            "route": "next"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "reject-zero-loop-bound",
+    "model": "campaigns.definition",
+    "valid": false,
+    "payload": {
+      "schema_version": "2",
+      "profile": "deterministic-v1",
+      "campaign_id": "bounded-loop",
+      "revision": 1,
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "compiler"
+      },
+      "context": [],
+      "body": {
+        "inputs": [],
+        "outputs": [
+          {
+            "name": "counter",
+            "value_type": {
+              "kind": "scalar",
+              "scalar": "integer",
+              "unit": "1"
+            }
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "iterate",
+            "node_id": "loop",
+            "state": [
+              {
+                "name": "counter",
+                "value_type": {
+                  "kind": "scalar",
+                  "scalar": "integer",
+                  "unit": "1"
+                },
+                "initial": {
+                  "kind": "integer",
+                  "value": 0,
+                  "unit": "1"
+                },
+                "feedback_port": "counter"
+              }
+            ],
+            "captures": [],
+            "body": {
+              "inputs": [
+                {
+                  "name": "counter",
+                  "value_type": {
+                    "kind": "scalar",
+                    "scalar": "integer",
+                    "unit": "1"
+                  }
+                }
+              ],
+              "outputs": [
+                {
+                  "name": "counter",
+                  "value_type": {
+                    "kind": "scalar",
+                    "scalar": "integer",
+                    "unit": "1"
+                  }
+                }
+              ],
+              "nodes": [
+                {
+                  "kind": "finish",
+                  "node_id": "finish",
+                  "outputs": [
+                    {
+                      "port": "counter",
+                      "source": {
+                        "kind": "input",
+                        "name": "counter"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "edges": []
+            },
+            "until": {
+              "kind": "compare",
+              "left": {
+                "source": {
+                  "kind": "result",
+                  "name": "counter"
+                },
+                "path": [],
+                "value_type": {
+                  "kind": "scalar",
+                  "scalar": "integer",
+                  "unit": "1"
+                }
+              },
+              "operator": "ge",
+              "right": {
+                "kind": "integer",
+                "value": 2,
+                "unit": "1"
+              }
+            },
+            "max_iterations": 0,
+            "on_limit": "finish"
+          },
+          {
+            "kind": "finish",
+            "node_id": "finish",
+            "outputs": [
+              {
+                "port": "counter",
+                "source": {
+                  "kind": "output",
+                  "node_id": "loop",
+                  "port": "counter"
+                }
+              }
+            ]
+          }
+        ],
+        "edges": [
+          {
+            "source": "loop",
+            "target": "finish",
+            "route": "next"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "reject-unbounded-scatter",
+    "model": "campaigns.definition",
+    "valid": false,
+    "payload": {
+      "schema_version": "2",
+      "profile": "deterministic-v1",
+      "campaign_id": "bounded-scatter",
+      "revision": 1,
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "compiler"
+      },
+      "context": [],
+      "body": {
+        "inputs": [
+          {
+            "name": "items",
+            "value_type": {
+              "kind": "collection",
+              "item": {
+                "kind": "artifact",
+                "schema_ref": {
+                  "schema_id": "synthetic.numeric-affine.input",
+                  "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                  "version": "1"
+                },
+                "representation": "numeric-vector",
+                "unit": "1",
+                "media_type": "application/json"
+              },
+              "max_items": 3,
+              "missing_slots": false
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "name": "results",
+            "value_type": {
+              "kind": "collection",
+              "item": {
+                "kind": "artifact",
+                "schema_ref": {
+                  "schema_id": "synthetic.numeric-affine.output",
+                  "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                  "version": "1"
+                },
+                "representation": "numeric-vector",
+                "unit": "1",
+                "media_type": "application/json"
+              },
+              "max_items": 3,
+              "missing_slots": false
+            }
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "scatter",
+            "node_id": "batch",
+            "collection": {
+              "kind": "input",
+              "name": "items"
+            },
+            "item_input": "item",
+            "captures": [],
+            "max_parallel": 2,
+            "body": {
+              "inputs": [
+                {
+                  "name": "item",
+                  "value_type": {
+                    "kind": "artifact",
+                    "schema_ref": {
+                      "schema_id": "synthetic.numeric-affine.input",
+                      "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                      "version": "1"
+                    },
+                    "representation": "numeric-vector",
+                    "unit": "1",
+                    "media_type": "application/json"
+                  }
+                }
+              ],
+              "outputs": [
+                {
+                  "name": "result",
+                  "value_type": {
+                    "kind": "artifact",
+                    "schema_ref": {
+                      "schema_id": "synthetic.numeric-affine.output",
+                      "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                      "version": "1"
+                    },
+                    "representation": "numeric-vector",
+                    "unit": "1",
+                    "media_type": "application/json"
+                  }
+                }
+              ],
+              "nodes": [
+                {
+                  "kind": "invoke",
+                  "node_id": "map",
+                  "tool": {
+                    "capability_id": "synthetic.numeric-affine",
+                    "contract_version": "1",
+                    "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+                    "release": "0.2.0"
+                  },
+                  "inputs": [
+                    {
+                      "port": "parameters",
+                      "source": {
+                        "kind": "input",
+                        "name": "item"
+                      }
+                    }
+                  ],
+                  "timeout_seconds": 30,
+                  "checkpoint": null
+                },
+                {
+                  "kind": "finish",
+                  "node_id": "finish",
+                  "outputs": [
+                    {
+                      "port": "result",
+                      "source": {
+                        "kind": "output",
+                        "node_id": "map",
+                        "port": "result"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "edges": [
+                {
+                  "source": "map",
+                  "target": "finish",
+                  "route": "next"
+                }
+              ]
+            },
+            "result_port": "result",
+            "output": {
+              "name": "results",
+              "value_type": {
+                "kind": "collection",
+                "item": {
+                  "kind": "artifact",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.output",
+                    "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                    "version": "1"
+                  },
+                  "representation": "numeric-vector",
+                  "unit": "1",
+                  "media_type": "application/json"
+                },
+                "max_items": 3,
+                "missing_slots": false
+              }
+            },
+            "policy": {
+              "kind": "all",
+              "skipped": "exclude"
+            }
+          },
+          {
+            "kind": "finish",
+            "node_id": "finish",
+            "outputs": [
+              {
+                "port": "results",
+                "source": {
+                  "kind": "output",
+                  "node_id": "batch",
+                  "port": "results"
+                }
+              }
+            ]
+          }
+        ],
+        "edges": [
+          {
+            "source": "batch",
+            "target": "finish",
+            "route": "next"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "reject-oversized-scatter",
+    "model": "campaigns.definition",
+    "valid": false,
+    "payload": {
+      "schema_version": "2",
+      "profile": "deterministic-v1",
+      "campaign_id": "bounded-scatter",
+      "revision": 1,
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "compiler"
+      },
+      "context": [],
+      "body": {
+        "inputs": [
+          {
+            "name": "items",
+            "value_type": {
+              "kind": "collection",
+              "item": {
+                "kind": "artifact",
+                "schema_ref": {
+                  "schema_id": "synthetic.numeric-affine.input",
+                  "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                  "version": "1"
+                },
+                "representation": "numeric-vector",
+                "unit": "1",
+                "media_type": "application/json"
+              },
+              "max_items": 3,
+              "missing_slots": false
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "name": "results",
+            "value_type": {
+              "kind": "collection",
+              "item": {
+                "kind": "artifact",
+                "schema_ref": {
+                  "schema_id": "synthetic.numeric-affine.output",
+                  "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                  "version": "1"
+                },
+                "representation": "numeric-vector",
+                "unit": "1",
+                "media_type": "application/json"
+              },
+              "max_items": 3,
+              "missing_slots": false
+            }
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "scatter",
+            "node_id": "batch",
+            "collection": {
+              "kind": "input",
+              "name": "items"
+            },
+            "item_input": "item",
+            "captures": [],
+            "max_members": 10001,
+            "max_parallel": 2,
+            "body": {
+              "inputs": [
+                {
+                  "name": "item",
+                  "value_type": {
+                    "kind": "artifact",
+                    "schema_ref": {
+                      "schema_id": "synthetic.numeric-affine.input",
+                      "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                      "version": "1"
+                    },
+                    "representation": "numeric-vector",
+                    "unit": "1",
+                    "media_type": "application/json"
+                  }
+                }
+              ],
+              "outputs": [
+                {
+                  "name": "result",
+                  "value_type": {
+                    "kind": "artifact",
+                    "schema_ref": {
+                      "schema_id": "synthetic.numeric-affine.output",
+                      "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                      "version": "1"
+                    },
+                    "representation": "numeric-vector",
+                    "unit": "1",
+                    "media_type": "application/json"
+                  }
+                }
+              ],
+              "nodes": [
+                {
+                  "kind": "invoke",
+                  "node_id": "map",
+                  "tool": {
+                    "capability_id": "synthetic.numeric-affine",
+                    "contract_version": "1",
+                    "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+                    "release": "0.2.0"
+                  },
+                  "inputs": [
+                    {
+                      "port": "parameters",
+                      "source": {
+                        "kind": "input",
+                        "name": "item"
+                      }
+                    }
+                  ],
+                  "timeout_seconds": 30,
+                  "checkpoint": null
+                },
+                {
+                  "kind": "finish",
+                  "node_id": "finish",
+                  "outputs": [
+                    {
+                      "port": "result",
+                      "source": {
+                        "kind": "output",
+                        "node_id": "map",
+                        "port": "result"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "edges": [
+                {
+                  "source": "map",
+                  "target": "finish",
+                  "route": "next"
+                }
+              ]
+            },
+            "result_port": "result",
+            "output": {
+              "name": "results",
+              "value_type": {
+                "kind": "collection",
+                "item": {
+                  "kind": "artifact",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.output",
+                    "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                    "version": "1"
+                  },
+                  "representation": "numeric-vector",
+                  "unit": "1",
+                  "media_type": "application/json"
+                },
+                "max_items": 3,
+                "missing_slots": false
+              }
+            },
+            "policy": {
+              "kind": "all",
+              "skipped": "exclude"
+            }
+          },
+          {
+            "kind": "finish",
+            "node_id": "finish",
+            "outputs": [
+              {
+                "port": "results",
+                "source": {
+                  "kind": "output",
+                  "node_id": "batch",
+                  "port": "results"
+                }
+              }
+            ]
+          }
+        ],
+        "edges": [
+          {
+            "source": "batch",
+            "target": "finish",
+            "route": "next"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "reject-implicit-script-node",
+    "model": "campaigns.definition",
+    "valid": false,
+    "payload": {
+      "schema_version": "2",
+      "profile": "deterministic-v1",
+      "campaign_id": "affine",
+      "revision": 1,
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "compiler"
+      },
+      "context": [],
+      "body": {
+        "inputs": [
+          {
+            "name": "parameters",
+            "value_type": {
+              "kind": "artifact",
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-affine.input",
+                "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                "version": "1"
+              },
+              "representation": "numeric-vector",
+              "unit": "1",
+              "media_type": "application/json"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "name": "result",
+            "value_type": {
+              "kind": "artifact",
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-affine.output",
+                "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                "version": "1"
+              },
+              "representation": "numeric-vector",
+              "unit": "1",
+              "media_type": "application/json"
+            }
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "python",
+            "node_id": "affine",
+            "tool": {
+              "capability_id": "synthetic.numeric-affine",
+              "contract_version": "1",
+              "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+              "release": "0.2.0"
+            },
+            "inputs": [
+              {
+                "port": "parameters",
+                "source": {
+                  "kind": "input",
+                  "name": "parameters"
+                }
+              }
+            ],
+            "timeout_seconds": 30,
+            "checkpoint": null,
+            "code": "pass"
+          },
+          {
+            "kind": "finish",
+            "node_id": "finish",
+            "outputs": [
+              {
+                "port": "result",
+                "source": {
+                  "kind": "output",
+                  "node_id": "affine",
+                  "port": "result"
+                }
+              }
+            ]
+          }
+        ],
+        "edges": [
+          {
+            "source": "affine",
+            "target": "finish",
+            "route": "next"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "reject-payload-schema-version",
+    "model": "campaigns.definition",
+    "valid": false,
+    "payload": {
+      "schema_version": "2",
+      "profile": "deterministic-v1",
+      "campaign_id": "affine",
+      "revision": 1,
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "compiler"
+      },
+      "context": [],
+      "body": {
+        "inputs": [
+          {
+            "name": "parameters",
+            "value_type": {
+              "kind": "artifact",
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-affine.input",
+                "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                "version": "2"
+              },
+              "representation": "numeric-vector",
+              "unit": "1",
+              "media_type": "application/json"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "name": "result",
+            "value_type": {
+              "kind": "artifact",
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-affine.output",
+                "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                "version": "1"
+              },
+              "representation": "numeric-vector",
+              "unit": "1",
+              "media_type": "application/json"
+            }
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "invoke",
+            "node_id": "affine",
+            "tool": {
+              "capability_id": "synthetic.numeric-affine",
+              "contract_version": "1",
+              "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+              "release": "0.2.0"
+            },
+            "inputs": [
+              {
+                "port": "parameters",
+                "source": {
+                  "kind": "input",
+                  "name": "parameters"
+                }
+              }
+            ],
+            "timeout_seconds": 30,
+            "checkpoint": null
+          },
+          {
+            "kind": "finish",
+            "node_id": "finish",
+            "outputs": [
+              {
+                "port": "result",
+                "source": {
+                  "kind": "output",
+                  "node_id": "affine",
+                  "port": "result"
+                }
+              }
+            ]
+          }
+        ],
+        "edges": [
+          {
+            "source": "affine",
+            "target": "finish",
+            "route": "next"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "explicit-immutable-plan-lock",
+    "model": "campaigns.plan-lock",
+    "valid": true,
+    "payload": {
+      "schema_version": "2",
+      "compiler_profile": "amphora-deterministic-compiler-v1",
+      "definition_sha256": "ea8966becfaf270a201793b658cc2af5df611a2cd96f1fc09d313bf40fe192cb",
+      "tools": [
+        {
+          "checkpoint_schema": null,
+          "descriptor_sha256": "881012eaaada89d3992a081df932c5be2013ed2e390db7699d76eaf1e33fec5f",
+          "input_schemas": [
+            {
+              "port": "parameters",
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-affine.input",
+                "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                "version": "1"
+              }
+            }
+          ],
+          "output_schemas": [
+            {
+              "port": "result",
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-affine.output",
+                "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                "version": "1"
+              }
+            }
+          ],
+          "schema_version": "1",
+          "tool": {
+            "capability_id": "synthetic.numeric-affine",
+            "contract_version": "1",
+            "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+            "release": "0.2.0"
+          }
+        }
+      ],
+      "schemas": [
+        {
+          "schema_id": "synthetic.numeric-affine.input",
+          "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+          "version": "1"
+        },
+        {
+          "schema_id": "synthetic.numeric-affine.output",
+          "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+          "version": "1"
+        }
+      ],
+      "context": []
+    }
+  },
+  {
+    "name": "manually-specified-plan-wire-not-compiler-proof",
+    "model": "campaigns.execution-plan",
+    "valid": true,
+    "payload": {
+      "schema_version": "2",
+      "sha256": "b6651ac7558710b5ee8f92e4d83f2fd91e8a5cdb21966947667c4f8a1d200608",
+      "document": {
+        "profile": "amphora-execution-plan-v1",
+        "definition": {
+          "schema_version": "2",
+          "profile": "deterministic-v1",
+          "campaign_id": "affine",
+          "revision": 1,
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "compiler"
+          },
+          "context": [],
+          "body": {
+            "inputs": [
+              {
+                "name": "parameters",
+                "value_type": {
+                  "kind": "artifact",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.input",
+                    "version": "1",
+                    "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618"
+                  },
+                  "representation": "numeric-vector",
+                  "unit": "1",
+                  "media_type": "application/json"
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "name": "result",
+                "value_type": {
+                  "kind": "artifact",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.output",
+                    "version": "1",
+                    "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd"
+                  },
+                  "representation": "numeric-vector",
+                  "unit": "1",
+                  "media_type": "application/json"
+                }
+              }
+            ],
+            "nodes": [
+              {
+                "kind": "invoke",
+                "node_id": "affine",
+                "tool": {
+                  "capability_id": "synthetic.numeric-affine",
+                  "release": "0.2.0",
+                  "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+                  "contract_version": "1"
+                },
+                "inputs": [
+                  {
+                    "port": "parameters",
+                    "source": {
+                      "kind": "input",
+                      "name": "parameters"
+                    }
+                  }
+                ],
+                "checkpoint": null,
+                "timeout_seconds": 30
+              },
+              {
+                "kind": "finish",
+                "node_id": "finish",
+                "outputs": [
+                  {
+                    "port": "result",
+                    "source": {
+                      "kind": "output",
+                      "node_id": "affine",
+                      "port": "result"
+                    }
+                  }
+                ]
+              }
+            ],
+            "edges": [
+              {
+                "source": "affine",
+                "target": "finish",
+                "route": "next"
+              }
+            ]
+          }
+        },
+        "lock": {
+          "schema_version": "2",
+          "compiler_profile": "amphora-deterministic-compiler-v1",
+          "definition_sha256": "ea8966becfaf270a201793b658cc2af5df611a2cd96f1fc09d313bf40fe192cb",
+          "tools": [
+            {
+              "schema_version": "1",
+              "tool": {
+                "capability_id": "synthetic.numeric-affine",
+                "release": "0.2.0",
+                "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+                "contract_version": "1"
+              },
+              "descriptor_sha256": "881012eaaada89d3992a081df932c5be2013ed2e390db7699d76eaf1e33fec5f",
+              "input_schemas": [
+                {
+                  "port": "parameters",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.input",
+                    "version": "1",
+                    "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618"
+                  }
+                }
+              ],
+              "output_schemas": [
+                {
+                  "port": "result",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.output",
+                    "version": "1",
+                    "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd"
+                  }
+                }
+              ],
+              "checkpoint_schema": null
+            }
+          ],
+          "schemas": [
+            {
+              "schema_id": "synthetic.numeric-affine.input",
+              "version": "1",
+              "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618"
+            },
+            {
+              "schema_id": "synthetic.numeric-affine.output",
+              "version": "1",
+              "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd"
+            }
+          ],
+          "context": []
+        },
+        "scopes": [
+          {
+            "path": [],
+            "order": [
+              "affine",
+              "finish"
+            ],
+            "nodes": [
+              {
+                "node_id": "affine",
+                "inputs": [
+                  {
+                    "name": "parameters",
+                    "value_type": {
+                      "kind": "artifact",
+                      "schema_ref": {
+                        "schema_id": "synthetic.numeric-affine.input",
+                        "version": "1",
+                        "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618"
+                      },
+                      "representation": "numeric-vector",
+                      "unit": "1",
+                      "media_type": "application/json"
+                    }
+                  }
+                ],
+                "outputs": [
+                  {
+                    "name": "result",
+                    "value_type": {
+                      "kind": "artifact",
+                      "schema_ref": {
+                        "schema_id": "synthetic.numeric-affine.output",
+                        "version": "1",
+                        "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd"
+                      },
+                      "representation": "numeric-vector",
+                      "unit": "1",
+                      "media_type": "application/json"
+                    }
+                  }
+                ]
+              },
+              {
+                "node_id": "finish",
+                "inputs": [
+                  {
+                    "name": "result",
+                    "value_type": {
+                      "kind": "artifact",
+                      "schema_ref": {
+                        "schema_id": "synthetic.numeric-affine.output",
+                        "version": "1",
+                        "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd"
+                      },
+                      "representation": "numeric-vector",
+                      "unit": "1",
+                      "media_type": "application/json"
+                    }
+                  }
+                ],
+                "outputs": [
+                  {
+                    "name": "result",
+                    "value_type": {
+                      "kind": "artifact",
+                      "schema_ref": {
+                        "schema_id": "synthetic.numeric-affine.output",
+                        "version": "1",
+                        "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd"
+                      },
+                      "representation": "numeric-vector",
+                      "unit": "1",
+                      "media_type": "application/json"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "reject-unknown-compiler-profile",
+    "model": "campaigns.plan-lock",
+    "valid": false,
+    "payload": {
+      "schema_version": "2",
+      "compiler_profile": "unbounded-eval",
+      "definition_sha256": "ea8966becfaf270a201793b658cc2af5df611a2cd96f1fc09d313bf40fe192cb",
+      "tools": [
+        {
+          "checkpoint_schema": null,
+          "descriptor_sha256": "881012eaaada89d3992a081df932c5be2013ed2e390db7699d76eaf1e33fec5f",
+          "input_schemas": [
+            {
+              "port": "parameters",
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-affine.input",
+                "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                "version": "1"
+              }
+            }
+          ],
+          "output_schemas": [
+            {
+              "port": "result",
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-affine.output",
+                "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                "version": "1"
+              }
+            }
+          ],
+          "schema_version": "1",
+          "tool": {
+            "capability_id": "synthetic.numeric-affine",
+            "contract_version": "1",
+            "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+            "release": "0.2.0"
+          }
+        }
+      ],
+      "schemas": [
+        {
+          "schema_id": "synthetic.numeric-affine.input",
+          "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+          "version": "1"
+        },
+        {
+          "schema_id": "synthetic.numeric-affine.output",
+          "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+          "version": "1"
+        }
+      ],
+      "context": []
+    }
+  }
+]

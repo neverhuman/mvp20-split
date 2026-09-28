@@ -69,3 +69,7 @@ Scientific `ABSTAIN`, control `SKIPPED`, operational `FAILED` and terminal `CANC
 ## Initial Behavioral Reference
 
 The [v1 solver fixture](../../../services/campaign_runtime/tests/fixtures/v1_solver/README.md) supplies the initial source-derived execution topology and future parity scenarios. BP-04 first reproduces its orchestration with deterministic synthetic tools, preserving explicit population/history distinctions and error aggregation. Known v1 bugs are documented deviations, not required compatibility. BP-08 owns scientific transformation and selection. The present campaign scaffold proves structural admission only; durable execution and scientific equivalence require later evidence.
+
+## Contract Compatibility Boundary
+
+BP-04.01 separates legacy validation-only CampaignDefinition wire v1 from explicit executable wire v2. The [campaign contract boundary](../../../contracts/campaigns/README.md) documents typed sources, finite predicates, scoped controls and immutable plan/path records. Wire-v2 schema validity does not imply compiler or interpreter acceptance; those retain separate plan gates. Legacy stored definitions require an explicit migration decision and remain non-executable by default. Layout is not part of semantic plan identity.

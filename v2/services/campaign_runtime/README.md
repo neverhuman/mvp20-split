@@ -1,7 +1,7 @@
 # Campaign Runtime
 
 - Status: synthetic invocation lifecycle and atomic completion implemented; paired retention/delivery acceptance verified; REC-01..09 recovery/replacement verified; general graph execution remains BP-04.
-- Package: `amphora-campaign-runtime` 0.1.0.
+- Package: `amphora-campaign-runtime` 0.2.0.
 - Architecture: [Graph Runner](../../docs/Architecture/System/Graph_Runner.md), [runtime protocol](../../docs/Architecture/System/Runtime_Command_Protocol.md), [isolation](../../docs/Architecture/System/Service_Isolation.md).
 
 ## Ownership and Module Boundaries
@@ -76,3 +76,5 @@ Optional `inspection` configuration requires a stable `cursor_key_env` and accep
 [Installed acceptance harness](tests/acceptance/README.md) owns actual paired-service public-API proof, independent current reservation reads and cancellation/release barriers.
 
 [Foundation recovery and replacement](RECOVERY.md) records retained state/configuration, explicit owner bootstrap, bounded maintenance order and public verification. Actual process recovery is separate from host backup/power-loss guarantees.
+
+BP-04.01/B1 updates the campaign-contract dependency to 0.2.0 while preserving wire-v1 validation and existing durable fixture APIs. Explicit executable wire-v2 DTOs do not activate a compiler/interpreter or silently convert old graphs. Compiler domain implementation remains B2. No database migration accompanies this contract-package upgrade.
