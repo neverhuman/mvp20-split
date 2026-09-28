@@ -6,7 +6,7 @@ import tomllib
 from pathlib import Path
 
 ROOT = Path(__file__).absolute().parents[1]
-THIRD_PARTY = {"pydantic": "pydantic", "fastapi": "fastapi", "uvicorn": "uvicorn", "sqlalchemy": "sqlalchemy", "psycopg": "psycopg", "alembic": "alembic"}
+THIRD_PARTY = {"pydantic": "pydantic", "fastapi": "fastapi", "uvicorn": "uvicorn", "sqlalchemy": "sqlalchemy", "psycopg": "psycopg", "alembic": "alembic", "jsonschema": "jsonschema"}
 
 
 def project_specs(root: Path = ROOT):

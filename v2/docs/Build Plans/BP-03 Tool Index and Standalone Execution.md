@@ -3,14 +3,14 @@
 ## Canonical Parent Tracker
 
 - Status: primary_active; BP-03.03 / Build / B1.
-- Last refreshed: `2026-09-28 15:17:41` (America/Chicago).
+- Last refreshed: `2026-09-28 15:36:38` (America/Chicago).
 - Owner/scope: Capability Registry and independently packaged tools.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: BP-01 contracts and completed BP-02 claim/artifact/authority gates.
 - Implementation: **50%**, 8/16 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
 - Current implementation task: BP-03.03/B1 client/tool boundaries. Next: B2 attempt/lifecycle behavior.
-- Demonstrated behavior: immutable identity, semantic validation and separate selection observations verified; durable registry discovery/policy and installed replacement verified; SDK/tools and integrated replica dispatch remain pending.
+- Demonstrated behavior: immutable descriptor identity and durable registry/replacement verified; .03 B1 artifact receipt/schema prerequisites verified with 478 tests/nine builds/REC-01..09. SDK/tools and integrated replica dispatch remain pending; no additional delivery credit.
 - Blockers: BP-01/BP-02 predecessor gates passed; no current user blocker. External choices remain only at their named dependent gates.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.

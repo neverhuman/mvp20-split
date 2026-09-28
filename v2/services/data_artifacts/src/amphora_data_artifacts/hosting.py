@@ -11,6 +11,7 @@ from sqlalchemy import create_engine, text
 from .access import Credentials
 from .api import create_app
 from .publication.model import ContentPolicy, Principal, UploadLimits
+from .publication.schemas import configured_profiles
 from .publication.uploads import Uploads
 from .retention.outcomes import RuntimeOutcomes
 from .storage.local import LocalBytes
@@ -49,8 +50,7 @@ class Host:
         if not entries:
             raise ValueError("Explicit principals required")
         credentials = Credentials(entries)
-        policy = ContentPolicy(frozenset((p["media_type"], p["schema_id"], p["version"], p["sha256"])
-                                        for p in raw["profiles"]))
+        policy = ContentPolicy(*configured_profiles(raw["profiles"], Path(path).parent))
         if not policy.allowed:
             raise ValueError("Explicit profiles required")
         limits = UploadLimits(**raw.get("limits", {}))

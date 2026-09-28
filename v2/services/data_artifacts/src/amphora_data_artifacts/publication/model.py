@@ -1,12 +1,12 @@
 """Upload identity, capacity and content policy values."""
 
 import hashlib
-import json
-import math
 from dataclasses import dataclass
 
 from amphora_contracts_artifacts import ContentDescriptor
 from amphora_contracts_core import Scope
+
+from .schemas import JsonSchemaRule, json_value
 
 
 class UploadError(ValueError):
@@ -52,6 +52,7 @@ class UploadLimits:
 class ContentPolicy:
     # Exact media/schema pairs supplied by trusted deployment policy, never by request.
     allowed: frozenset[tuple[str, str, str, str]]
+    rules: tuple[JsonSchemaRule, ...] = ()
 
     # Narrow registered fixture schemas; arbitrary schema IDs/hashes do not install validators.
     SCHEMAS = {
@@ -61,10 +62,15 @@ class ContentPolicy:
     }
 
     def __post_init__(self):
+        identities = [rule.identity for rule in self.rules]
+        if len(set(identities)) != len(identities) or set(identities) - self.allowed:
+            raise ValueError("Duplicate or unregistered schema validator")
         for media, _identifier, version, digest in self.allowed:
+            if (media, _identifier, version, digest) in identities:
+                continue
             if (media not in self.SCHEMAS or version != "1"
                 or hashlib.sha256(self.SCHEMAS[media]).hexdigest() != digest):
-                raise ValueError("Only registered fixture schema validators are supported")
+                raise ValueError("Explicit schema validator required")
 
     def admit(self, descriptor: ContentDescriptor, limits: UploadLimits):
         schema = descriptor.schema_ref
@@ -75,39 +81,21 @@ class ContentPolicy:
 
     def validate(self, descriptor, payload):
         """Exact admitted schema identity plus its actual bounded content validator."""
+        schema = descriptor.schema_ref
+        identity = (descriptor.media_type, schema.schema_id, schema.version, schema.sha256)
+        if identity not in self.allowed:
+            raise UploadError("unsupported_content")
         if descriptor.media_type == "application/octet-stream":
             return
         try:
             value = payload.decode("utf-8")
             if descriptor.media_type == "application/json":
-                def unique(pairs):
-                    result = {}
-                    for key, item in pairs:
-                        key.encode("utf-8")
-                        if key in result:
-                            raise ValueError("Duplicate JSON key")
-                        result[key] = item
-                    return result
-
-                def invalid_constant(_value):
-                    raise ValueError("Non-finite JSON constant")
-
-                value = json.loads(value, object_pairs_hook=unique, parse_constant=invalid_constant)
-                if not isinstance(value, dict):
+                value = json_value(payload)
+                rule = next((rule for rule in self.rules if rule.identity == identity), None)
+                if rule is not None:
+                    rule.validate(value)
+                elif not isinstance(value, dict):
                     raise ValueError("Object required")
-                pending = [(value, 1)]
-                while pending:
-                    item, depth = pending.pop()
-                    if depth > 64:
-                        raise ValueError("Content nesting exceeded")
-                    if isinstance(item, dict):
-                        pending.extend((v, depth + 1) for v in item.values())
-                    elif isinstance(item, list):
-                        pending.extend((v, depth + 1) for v in item)
-                    elif isinstance(item, float) and not math.isfinite(item):
-                        raise ValueError("Non-finite JSON number")
-                    elif isinstance(item, str):
-                        item.encode("utf-8")
         except (ValueError, UnicodeError, RecursionError) as error:
             raise UploadError("content_schema_mismatch") from error
 

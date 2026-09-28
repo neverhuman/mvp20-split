@@ -74,6 +74,7 @@ for name, model in {
     "upload-receipt": artifact_contracts.UploadReceipt,
     "upload-content-receipt": artifact_contracts.UploadContentReceipt,
     "finalized-receipt": artifact_contracts.FinalizedReceipt,
+    "publication-observation": artifact_contracts.PublicationObservation,
 }.items():
     MODELS["artifacts." + name] = model
 

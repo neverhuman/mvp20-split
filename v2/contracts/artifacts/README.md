@@ -8,6 +8,8 @@
 
 Content descriptors, provisional/finalized references and reserve/confirm/reconcile payloads. Reservation receipts distinguish RESERVED, CONFIRMED with committed proof, and RELEASED with aborted proof. There is no expiry-based release field. Public parse_command binds the operation family and checks reserve artifact scope against command identity. No caller path is accepted.
 
+BP-03.03/B1 adds the version-1 `PublicationObservation` read projection: original command identity, operation ID, canonical request digest and discriminated pending/rejected/uploaded/finalized outcome. Successful outcomes embed the unchanged predecessor receipts. It adds no command family or execution authority; authorization and actor/scope filtering remain owner behavior.
+
 ## Public API and Dependencies
 
 Only import the public `amphora_contracts_artifacts` root. See `src/amphora_contracts_artifacts/__init__.py` for the explicit surface. The independent pyproject and lockfile define dependencies; no FastAPI, database, filesystem payload access or scientific libraries. Package version 0.1.0, wire version 1. New families extend publication without changing previous core/tool/campaign schemas. Family registry choices belong to the server, not untrusted payloads.

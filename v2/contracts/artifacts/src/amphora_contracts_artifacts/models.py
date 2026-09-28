@@ -2,6 +2,7 @@
 
 from typing import Annotated, Literal
 
+from amphora_contracts_commands import CommandIdentity
 from amphora_contracts_core import (
     ArtifactRef,
     Digest,
@@ -123,3 +124,31 @@ class RuntimeOutcome(WireModel):
     schema_version: Literal["1"] = "1"
     binding: ReservationBinding
     proof: Annotated[CommittedIntentProof | AbortedIntentProof | PendingIntentProof, Field(discriminator="status")]
+
+
+class PublicationPending(WireModel):
+    status: Literal["pending"] = "pending"
+
+
+class PublicationRejected(WireModel):
+    status: Literal["rejected"] = "rejected"
+    reason_code: Identifier
+
+
+class UploadAccepted(WireModel):
+    status: Literal["uploaded"] = "uploaded"
+    receipt: UploadReceipt
+
+
+class FinalizationAccepted(WireModel):
+    status: Literal["finalized"] = "finalized"
+    receipt: FinalizedReceipt
+
+
+class PublicationObservation(WireModel):
+    schema_version: Literal["1"] = "1"
+    identity: CommandIdentity
+    operation_id: Identifier
+    request_sha256: Digest
+    outcome: Annotated[PublicationPending | PublicationRejected | UploadAccepted | FinalizationAccepted,
+                       Field(discriminator="status")]

@@ -4,13 +4,14 @@ import asyncio
 
 from amphora_contracts_artifacts import (
     FinalizedReceipt,
+    PublicationObservation,
     ReservationReceipt,
     UploadContentReceipt,
     UploadReceipt,
     parse_command,
 )
 from amphora_contracts_commands import CommandEncodingError
-from amphora_contracts_core import ArtifactRef
+from amphora_contracts_core import ArtifactRef, Identifier
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse, Response
 from sqlalchemy import text
@@ -18,6 +19,7 @@ from sqlalchemy.exc import DBAPIError
 
 from .persistence.commands import CommandConflict
 from .publication.finalize import Finalizer
+from .publication.inspection import PublicationHistory
 from .publication.model import UploadError
 from .reads import ArtifactReads
 from .retention.outcomes import OutcomeUnavailable
@@ -29,12 +31,13 @@ def create_app(uploads, storage, credentials, outcomes=None):
     finalizer = Finalizer(uploads, storage)
     reads = ArtifactReads(uploads.commands.engine, storage, uploads.limits.max_bytes)
     reservations = Reservations(uploads, outcomes)
+    publication_history = PublicationHistory(uploads.commands.engine)
 
     @app.exception_handler(UploadError)
     async def upload_error(_request, error):
         reason = str(error)
         status = 401 if reason == "unauthenticated" else 403 if reason == "access_denied" else 409
-        if reason in {"upload_unavailable", "artifact_unavailable", "reservation_unavailable"}:
+        if reason in {"upload_unavailable", "artifact_unavailable", "reservation_unavailable", "command_unavailable"}:
             status = 404
         if reason in {"upload_too_large", "body_too_large", "artifact_read_limit"}:
             status = 413
@@ -95,6 +98,11 @@ def create_app(uploads, storage, credentials, outcomes=None):
     @app.get("/health")
     def health():
         return {"mode": "verified_publication", "publication_available": True, "retention_available": outcomes is not None}
+
+    @app.get("/v1/commands/{family}/{command_id}", response_model=PublicationObservation)
+    async def publication_receipt(family: Identifier, command_id: Identifier, request: Request):
+        principal = credentials.authenticate(request.headers.get("authorization"))
+        return await asyncio.to_thread(publication_history.read, principal, family, command_id)
 
     @app.get("/v1/artifacts/{artifact_id}", response_model=ArtifactRef)
     async def metadata(artifact_id: str, request: Request):

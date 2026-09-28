@@ -9,11 +9,11 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-03 primary active; BP-04 through BP-09 queued; BP-01/BP-01A/BP-02 closed.
-- Last refreshed: `2026-09-28 15:17:41` (America/Chicago).
+- Last refreshed: `2026-09-28 15:36:38` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P2 / BP-03 - tool index and standalone execution.
 - Primary active implementation plan / phase / task: BP-03 -> BP-03.03 / Build / B1.
-- Current task: public worker SDK and independent numeric/sequence tool boundaries.
+- Current task: BP-03.03/B1 SDK/tool packages; artifact receipt/schema consumer prerequisites passed, full B1 exit pending.
 - Next task: BP-03.03 B2 exact-attempt lifecycle and kernel behavior.
 - Implementation completion: BP-02 closed at 100% (32/32); BP-03 50% (8/16), .01/.02 closed 100%, .03 0%; BP-04..09 remain 0%. No effort estimate inferred.
 - Active focus: extend the proven execution contracts into an indexed, independently replaceable tool universe.
@@ -125,6 +125,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-28 15:36:38 | BP-03.03 B1 artifact prerequisites verified; child 0%, parent 50% unchanged | 478 tests/nine builds/REC-01..09; receipt-first publication recovery and trusted typed schemas |
 | 2026-09-28 15:17:41 | BP-03.02 closed/audited 100%; parent 50% (8/16); .03 B1 active at 0% | 448 tests/nine builds; actual registry HTTP replacement and preserved race evidence; [audit](../Audits/BP-03.02_Registry_Closeout.md) |
 | 2026-09-28 14:49:59 | BP-03.02 B2 passed; child 50%, parent 37.50%; next B3 | 114 registry tests/96% expanded coverage; real expiry, replay, lifecycle and exact-version capacity policy |
 | 2026-09-28 14:45:09 | BP-03.02 B1 passed; child 25%, parent 31.25% (5/16); next B2 | 411 tests/nine builds/REC-01..09; registry-private transactions, authenticated API and immutable receipts |
@@ -149,6 +150,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-28 11:18:55 | BP-02.04 I2 passed; child 33.33%, V1 40%, parent 53.13%; next I3 | Admission contention/replay/rollback; 218 tests/eight builds |
 | 2026-09-28 11:11:49 | BP-02.04 I1 passed; child 16.67%, V1 20%, parent 50%; next I2 | 21 pure policy tests; full gate 209/eight builds |
 | 2026-09-28 11:05:08 | BP-02.03 closed/audited at 100%; parent 46.88%; .04 I1 activated | 188 tests/eight independent builds; installed HTTP artifact acceptance |
-| 2026-09-28 10:56:19 | BP-02.03 A5 complete; child 80%, V1 100%, parent 43.75%; next A6 | 182 tests/eight builds; crash-safe cleanup and bounded reconciliation |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

@@ -2,16 +2,16 @@
 
 ## Current Checkpoint
 
-- Last refreshed: `2026-09-28 15:17:41` (America/Chicago).
+- Last refreshed: `2026-09-28 15:36:38` (America/Chicago).
 - Workspace: v2 active; v1 frozen. External references require task-specific authorization.
 - Canonical position: BP-03 -> [BP-03.03](docs/Build%20Plans/BP-03/BP-03.03%20Worker%20protocol%20and%20independent%20tools.md) / Build / B1 SDK/tool boundaries; next B2 attempt/lifecycle behavior.
 - Progress: BP-02 closed 100% (32/32). BP-03 50% (8/16), .01/.02 closed/audited 100%, .03 0% (Build 0%, Acceptance 0%); BP-04..09 0%.
-- Latest work: durable registry discovery, registration, lifecycle/inventory/eligibility, actual process races and independently installed HTTP replacement accepted; [registry audit](docs/Audits/BP-03.02_Registry_Closeout.md).
-- Evidence: 448 tests/lint/import/schema gates; 126 registry tests measure 93% of 829 statements/224 branches, with CLI/migration subprocess evidence separate. Nine independent packages, fresh registry/runtime/artifact replacement and REC-01..09 passed. 100 schema artifacts preserve predecessors. [Registry evidence](docs/Audits/Evidence/BP-03-Registry/README.md) preserves six process cases and replacement scope d22b650563a148089d1871a193b68ae5. Latest runtime/artifact recovery scope 299939c37a1c4be5b7924d21c9fc89a2 is ignored; earlier closeout manifests remain preserved.
+- Latest work: .03 B1 artifact prerequisites passed: authenticated original publication receipts and trusted hash-bound JSON Schema profiles. SDK and actual tool packages remain pending; B1 is not complete. .02 remains closed/audited.
+- Evidence: 478 tests/lint/import/schema gates, 58 focused publication cases, 102 schema artifacts, nine independent packages, fresh registry/runtime/artifact replacement and REC-01..09 passed. Latest recovery scope f9718e8e2cf345d684dd34c269774b67 (ignored); earlier closeout evidence remains preserved. Registry closeout coverage remains 93% of 829 statements/224 branches, independent subprocess evidence separate.
 - Authority: autonomous continuation and significant commit/push checkpoints authorized. No current user blocker; later scientific/provider/host gates remain explicit.
 - Environment: Python 3.12, uv, labeled PostgreSQL 17.11 fixture. Dynamic credentials only in ignored .test-results/postgres-fixture.json. Registry has separate migration/service roles; registry_owner only extends labeled fixture. Set AMPHORA_TEST_POSTGRES=1; never publish credentials or reset concurrently with tests.
-- Git: dc33ea1 pushed; .02 closeout verified for commit/push. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
-- B1 handoff: .03 coherence audit recorded. Create sdk/tool_protocol plus independently packaged numeric_affine/sequence_statistics tools. Shared SDK owns public transport/lifecycle only; tool packages own payload schemas/kernels. Reconcile Artifact ContentPolicy's built-in-only validators and missing public publication-receipt lookup through additive owner interfaces before relying on typed payload or receipt-first recovery. Extend package/test inventories for explicit SDK imports. Keep actual image identity distinct from wheel/source hashes. No arbitrary provider, real science or target-host claim.
+- Git: 9d05222 pushed; .03 B1 artifact prerequisite checkpoint verified for commit/push. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
+- B1 handoff: create sdk/tool_protocol plus independently packaged numeric_affine/sequence_statistics tools. SDK owns public transport/lifecycle only; tools own schemas/kernels. Artifact prerequisites now implemented without peer/scientific imports. Extend package/test inventories for explicit SDK imports. Read current attempt snapshot after renewal because expiry may be capped by activation deadline. Actual image identity must remain distinct from wheel/source hashes. No scientific/provider/target-host claim.
 - Limits: general interpreter, actual scientific tools/evidence, model/knowledge/Studio and host backup/power-loss remain later plans. Existing test-client warning and pre-existing v1/LICENSE manifest discrepancy remain nonblocking assigned maintenance. Recovery operating boundary: services/campaign_runtime/RECOVERY.md.
 
 ## Decomposition and Resume Discipline

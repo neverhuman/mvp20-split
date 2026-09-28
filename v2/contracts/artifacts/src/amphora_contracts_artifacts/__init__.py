@@ -9,13 +9,18 @@ from .models import (
     CompletionIntentBinding,
     ConfirmRetention,
     ContentDescriptor,
+    FinalizationAccepted,
     FinalizeArtifact,
     FinalizedReceipt,
+    PublicationObservation,
+    PublicationPending,
+    PublicationRejected,
     ReconcileReservation,
     ReservationBinding,
     ReservationReceipt,
     ReserveArtifact,
     RuntimeOutcome,
+    UploadAccepted,
     UploadContentReceipt,
     UploadReceipt,
 )
@@ -45,6 +50,7 @@ def parse_command(family: str, raw: str | bytes) -> CanonicalCommand:
 
 
 __all__ = ['BeginUpload', 'CompletionIntentBinding', 'ConfirmRetention', 'ContentDescriptor', 'FinalizeArtifact', 'FinalizedReceipt', 'ReconcileReservation', 'ReservationBinding', 'ReservationReceipt', 'ReserveArtifact', 'RuntimeOutcome', 'UploadContentReceipt', 'UploadReceipt', 'parse_command']
+__all__ += ['PublicationObservation', 'PublicationPending', 'PublicationRejected', 'UploadAccepted', 'FinalizationAccepted']
 
 
 def _references(family, payload):
