@@ -1,0 +1,52 @@
+{
+  "identity": {
+    "actor_id": "worker-1",
+    "command_id": "cmd-1",
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "demo"
+    },
+    "command_family": "runtime.admit_fixture"
+  },
+  "payload": {
+    "fixture_id": "synthetic-1",
+    "plan_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "budget": {
+      "limit": 5
+    },
+    "invocations": [
+      {
+        "node_id": "n1",
+        "activation_id": "iteration-1.n1",
+        "invocation_id": "i1",
+        "tool": {
+          "capability_id": "synthetic.evaluate",
+          "release": "0.1.0",
+          "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "contract_version": "1"
+        },
+        "inputs": [
+          {
+            "port": "value",
+            "artifact": {
+              "artifact_id": "input-1",
+              "scope": {
+                "tenant_id": "internal",
+                "project_id": "demo"
+              },
+              "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "media_type": "application/json",
+              "schema_ref": {
+                "schema_id": "synthetic.value",
+                "version": "1",
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+              },
+              "size_bytes": 42
+            }
+          }
+        ],
+        "timeout_seconds": 30
+      }
+    ]
+  }
+}

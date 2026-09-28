@@ -100,8 +100,8 @@ def test_rollback_removes_transition_and_audit(connection):
     connection.execute("INSERT INTO runtime.audit_events (event_id,tenant_id,project_id,run_id,revision,"
                        "ordinal,payload) VALUES ('event-1','local','test','run-1',0,0,'{}')")
     connection.rollback()
-    assert connection.execute("SELECT count(*) FROM runtime.runs").fetchone()[0] == 0
-    assert connection.execute("SELECT count(*) FROM runtime.audit_events").fetchone()[0] == 0
+    assert connection.execute("SELECT count(*) FROM runtime.runs WHERE tenant_id='local' AND project_id='test' AND run_id='run-1'").fetchone()[0] == 0
+    assert connection.execute("SELECT count(*) FROM runtime.audit_events WHERE event_id='event-1'").fetchone()[0] == 0
 
 
 def test_accepted_result_is_unique_and_bound_to_exact_attempt(connection):

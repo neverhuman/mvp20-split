@@ -8,9 +8,9 @@
 
 - `graph.py`: immutable graph/vertex/route domain values; explicit DTO mapper; bounded nested-scope traversal, node/edge uniqueness, DAG, branch predecessor/routes, join and termination checks.
 - `admission.py`: pure invocation/completion binding policy; exact versions, declared ports, artifact/checkpoint scope/schema and supplied attempt/fence identity. It does not prove that a supplied grant or fence is current.
-- `api.py`: thin validation-only FastAPI application, bounded request decoding, sanitized structural errors and OpenAPI publication. No run creation or execution endpoint exists.
+- `api.py`: default validation-only FastAPI application, bounded request decoding, sanitized structural errors and OpenAPI publication. An explicitly configured admission instance enables the synthetic fixture-run endpoint; no worker execution endpoint exists yet.
 
-- `persistence/`: [private migration and command-store boundary](src/amphora_campaign_runtime/persistence/README.md); execution transition handlers remain pending.
+- `persistence/`: [private migration and command-store boundary](src/amphora_campaign_runtime/persistence/README.md); fixture admission now has an owned transaction; claim/completion handlers remain pending.
 
 Graph Runner coordination, aggregation and supervision remain successor behavior.
 
@@ -45,3 +45,5 @@ From repository root: `uv run --project v2/dev --locked python v2/dev/run_tests.
 [Initial v1 solver graph](tests/fixtures/v1_solver/README.md) owns the source-derived behavior reference and future parity scenarios. Current tests cannot demonstrate execution/restart/concurrency equivalence because the interpreter is not built. Remaining local branches and schema combinations are visible in coverage reports; real authority, durable fencing and scientific acceptance remain later gates. Keep these suites beside this service across rebuilds.
 
 [Lifecycle domain](src/amphora_campaign_runtime/lifecycle/README.md) implements pure run/worker/budget/activation/lease transitions under BP-02.04/I1. It supplies deterministic policy only; durable handlers and execution endpoints remain pending. Use `--area lifecycle` for its exact-expiry, fencing, uncertainty and settlement oracles.
+
+BP-02.04/I2: `create_app(admission, credentials)` adds authenticated POST /v1/fixture-runs with an exact configured synthetic allowlist and installation-wide single-running-run guard. Run/activation/receipt/audit/outbox commit atomically. General graphs remain non-executable and no worker dispatch occurs. The default module-level app retains validation-only behavior.

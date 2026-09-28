@@ -2,15 +2,15 @@
 
 ## Current Checkpoint
 
-- Last refreshed: `2026-09-28 11:11:49` (America/Chicago).
+- Last refreshed: `2026-09-28 11:18:55` (America/Chicago).
 - Workspace: v2 active; v1 frozen. External references require task-specific authorization.
-- Canonical position: BP-02 -> [BP-02.04](docs/Build%20Plans/BP-02/BP-02.04%20Invocation%20Lifecycle.md) / V1 / I2 synthetic fixture admission; next I3 claim/renewal.
-- Progress: parent 50% (16/32 deliveries). Children .01-.03 complete/audited; .04 at 16.67% (V1 20%, V2 0%); .05-.06 and BP-03..09 at 0%.
-- Latest work: I1 pure domain transition model passed 21 cases. Artifact standalone executable, scoped verified reads and bounded maintenance accepted; [artifact closeout](docs/Audits/BP-02.03_Artifact_Service_Closeout.md) names boundaries and remaining integration/host evidence.
-- Evidence: 209 aggregate tests with PostgreSQL, lint/import/schema gates, eight independent wheels and installed artifact HTTP probe passed. 56 published schemas. Artifact suite 77 cases; process-kill evidence includes upload/finalization/cleanup/reservation transitions.
+- Canonical position: BP-02 -> [BP-02.04](docs/Build%20Plans/BP-02/BP-02.04%20Invocation%20Lifecycle.md) / V1 / I3 claim/renewal and fencing; next I4 budget settlement.
+- Progress: parent 53.13% (17/32 deliveries). Children .01-.03 complete/audited; .04 at 33.33% (V1 40%, V2 0%); .05-.06 and BP-03..09 at 0%.
+- Latest work: I2 exact synthetic admission and single-running-run transaction passed nine PostgreSQL/HTTP cases; I1 pure policies remain verified. Artifact standalone executable, scoped verified reads and bounded maintenance accepted; [artifact closeout](docs/Audits/BP-02.03_Artifact_Service_Closeout.md) names boundaries and remaining integration/host evidence.
+- Evidence: 218 aggregate tests with PostgreSQL, lint/import/schema gates, eight independent wheels and installed artifact HTTP probe passed. 56 published schemas. Artifact suite 77 cases; process-kill evidence includes upload/finalization/cleanup/reservation transitions.
 - Authority: autonomous continuation and significant commit/push checkpoints authorized. No current user blocker. Scientific sources/provider/target-host choices remain later decisions.
 - Environment: Python 3.12, uv and labeled PostgreSQL 17.11 fixture. Dynamic endpoint/credentials only in ignored .test-results/postgres-fixture.json. Use helper verify and AMPHORA_TEST_POSTGRES=1; never publish credentials.
-- Git: artifact closeout 86919c9 pushed; I1 domain checkpoint verified for commit/push. Repository-local identity tkn1234 <alb_gen@live.com>, origin https://github.com/neverhumanbot/mvp20-split.git.
+- Git: I1 checkpoint f2d2198 pushed; I2 fixture admission verified for commit/push. Repository-local identity tkn1234 <alb_gen@live.com>, origin https://github.com/neverhumanbot/mvp20-split.git.
 - Limits: actual runtime terminal-outcome integration remains .05/.06; Linux/target-storage durability and backup remain BP-09. Synthetic artifact profiles do not establish scientific validity. Existing test-client warning is nonblocking.
 
 ## Decomposition and Resume Discipline
@@ -40,6 +40,6 @@ The high-level specifications and earlier flat design/history files live in `doc
 
 ## Implementation Limits
 
-Private PostgreSQL schemas/migrations and canonical command registration/terminal receipt transactions exist. The public runtime API remains validation-only and reports `executable=false`. Artifact upload/finalization APIs now publish verified immutable references; protective reservation/confirm/reconcile handshake is implemented against a configured public runtime outcome client; bounded reconciliation/cleanup and standalone hosting are implemented. Invocation handlers, full completion acceptance, interpreter, scientific tools, knowledge reasoner, provider calls and Studio are not implemented. Artifact process-crash tests do not establish integrated runtime retention, target-host power-loss durability or scientific validity. Those gates remain in their named children/successor plans.
+Private PostgreSQL schemas/migrations and canonical command registration/terminal receipt transactions exist. The public runtime API remains validation-only and reports `executable=false`. Artifact upload/finalization APIs now publish verified immutable references; protective reservation/confirm/reconcile handshake is implemented against a configured public runtime outcome client; bounded reconciliation/cleanup and standalone hosting are implemented. Optional synthetic fixture admission is implemented; claim/renewal handlers, full completion acceptance, interpreter, scientific tools, knowledge reasoner, provider calls and Studio are not implemented. Artifact process-crash tests do not establish integrated runtime retention, target-host power-loss durability or scientific validity. Those gates remain in their named children/successor plans.
 
 Baseline verification: no changed manifest file content; verifier reports pre-existing added `v1/LICENSE` already present in commit `99d219c`. Do not regenerate the frozen manifest or alter v1 to suppress this discrepancy.
