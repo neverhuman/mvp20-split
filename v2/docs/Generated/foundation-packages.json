@@ -11,7 +11,7 @@
   },
   {
     "package": "amphora-contracts-campaigns",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "path": "contracts/campaigns",
     "module": "amphora_contracts_campaigns",
     "public_dependencies": [
@@ -36,6 +36,18 @@
     "public_dependencies": []
   },
   {
+    "package": "amphora-contracts-graph-runtime",
+    "version": "0.1.0",
+    "path": "contracts/graph_runtime",
+    "module": "amphora_contracts_graph_runtime",
+    "public_dependencies": [
+      "amphora-contracts-core",
+      "amphora-contracts-campaigns",
+      "amphora-contracts-runtime",
+      "amphora-contracts-commands"
+    ]
+  },
+  {
     "package": "amphora-contracts-runtime",
     "version": "0.1.0",
     "path": "contracts/runtime",
@@ -58,10 +70,11 @@
   },
   {
     "package": "amphora-campaign-runtime",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "path": "services/campaign_runtime",
     "module": "amphora_campaign_runtime",
     "public_dependencies": [
+      "amphora-contracts-graph-runtime",
       "amphora-contracts-artifacts",
       "amphora-contracts-runtime",
       "amphora-contracts-commands",

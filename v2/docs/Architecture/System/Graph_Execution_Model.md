@@ -75,3 +75,9 @@ The [v1 solver fixture](../../../services/campaign_runtime/tests/fixtures/v1_sol
 ## Contract Compatibility Boundary
 
 BP-04.01 separates legacy validation-only CampaignDefinition wire v1 from explicit executable wire v2. The [campaign contract boundary](../../../contracts/campaigns/README.md) documents typed sources, finite predicates, scoped controls and immutable plan/path records. Wire-v2 schema validity does not imply compiler or interpreter acceptance; those retain separate plan gates. Legacy stored definitions require an explicit migration decision and remain non-executable by default. Layout is not part of semantic plan identity.
+
+## Durable Frontier Boundary
+
+Graph runs have explicit execution mode and immutable admitted plan/input/tool pins. The Runtime coordinator owns graph scopes/nodes and deterministic dispatch priority; the existing invocation lifecycle remains the sole attempt/fence/budget authority. Materializing queued graph work does not reserve an attempt a second time. Individual tool completion must not terminalize a graph merely because all currently issued invocations finished; committed Finish/frontier state determines whole-graph completion.
+
+Graph orchestration commands use a focused public contract package, keeping scientific worker DTO dependencies stable. Command numeric values use bounded plain decimal strings to preserve the existing portable command fingerprint profile; compiler numeric literals are converted explicitly when projected into committed graph values. [Coordinator module contract](../../../services/campaign_runtime/src/amphora_campaign_runtime/coordinator/README.md) distinguishes the implemented admission/frontier storage boundary from advancement, aggregation and public hosting gates.

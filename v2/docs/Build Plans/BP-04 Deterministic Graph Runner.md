@@ -2,14 +2,14 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-04.02 / Build / B1.
-- Last refreshed: `2026-09-28 18:20:22` (America/Chicago).
+- Status: primary_active; BP-04.02 / Build / B2.
+- Last refreshed: `2026-09-28 18:45:36` (America/Chicago).
 - Owner/scope: Campaign Runtime coordinator, aggregator and recovery modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-02 durable commits and BP-03 indexed callable tools.
-- Implementation: **20%**, 4/20 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
+- Implementation: **25%**, 5/20 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-04.02/B1 durable frontier/admission boundary and owner migration. Next: .02/B2 recovery/scheduling.
+- Current implementation task: BP-04.02/B2 durable advancement/recovery and configured graph hosting. Next: .02/B3 race/restart proof.
 - Demonstrated behavior: .01 closed/audited: compiler, 111-case semantic proof and actual public peer/fresh replacement acceptance passed, including manual numerical plan identity, scoped availability and bounded constructs. Interpreter remains pending .02/.03.
 - Blockers: none for the synthetic compiler scope; predecessor BP-02/BP-03 gates passed. Later external choices remain at named gates.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
@@ -30,7 +30,7 @@ Primary services retain private state, dependencies, migrations and module READM
 | Parent phase / child | Overall | Build | Acceptance | Prerequisite |
 |---|---:|---:|---:|---|
 | P1 / [BP-04.01 Compiler and executable contract](BP-04/Completed/BP-04.01%20Compiler%20and%20executable%20contract.md) | 100% | 100% | 100% | Closed/audited |
-| P2 / [BP-04.02 Frontier and scheduling](BP-04/BP-04.02%20Frontier%20and%20scheduling.md) | 0% | 0% | 0% | .01 accepted; B1 active |
+| P2 / [BP-04.02 Frontier and scheduling](BP-04/BP-04.02%20Frontier%20and%20scheduling.md) | 25% | 33.33% | 0% | B1 accepted; B2 active |
 | P3 / [BP-04.03 Aggregation and failure policy](BP-04/BP-04.03%20Aggregation%20and%20failure%20policy.md) | 0% | 0% | 0% | BP-04.02 acceptance |
 | P4 / [BP-04.04 V1 baseline and successor graphs](BP-04/BP-04.04%20V1%20baseline%20and%20successor%20graphs.md) | 0% | 0% | 0% | BP-04.03 acceptance |
 | P5 / [BP-04.05 Recovery and closeout](BP-04/BP-04.05%20Recovery%20and%20closeout.md) | 0% | 0% | 0% | BP-04.04 acceptance |

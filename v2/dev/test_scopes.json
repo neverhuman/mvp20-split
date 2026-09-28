@@ -57,24 +57,38 @@
   },
   "worker-sdk": {
     "tests": "sdk/tool_protocol/tests",
-    "coverage_sources": ["sdk/tool_protocol/src/amphora_tool_protocol"]
+    "coverage_sources": [
+      "sdk/tool_protocol/src/amphora_tool_protocol"
+    ]
   },
   "numeric-affine": {
     "tests": "tools/numeric_affine/tests",
-    "coverage_sources": ["tools/numeric_affine/src/amphora_numeric_affine"]
+    "coverage_sources": [
+      "tools/numeric_affine/src/amphora_numeric_affine"
+    ]
   },
   "sequence-statistics": {
     "tests": "tools/sequence_statistics/tests",
-    "coverage_sources": ["tools/sequence_statistics/src/amphora_sequence_statistics"]
+    "coverage_sources": [
+      "tools/sequence_statistics/src/amphora_sequence_statistics"
+    ]
   },
   "tool-replicas": {
     "tests": "tests/integration/tool_replicas",
-    "coverage_sources": ["tests/integration/tool_replicas"]
+    "coverage_sources": [
+      "tests/integration/tool_replicas"
+    ]
   },
   "registry": {
     "tests": "services/capability_registry/tests",
     "coverage_sources": [
       "services/capability_registry/src/amphora_capability_registry"
+    ]
+  },
+  "graph-runtime": {
+    "tests": "contracts/graph_runtime/tests",
+    "coverage_sources": [
+      "contracts/graph_runtime/src/amphora_contracts_graph_runtime"
     ]
   }
 }

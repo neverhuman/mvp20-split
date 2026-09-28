@@ -89,7 +89,7 @@ class BudgetSettlement:
             status = "blocked"
         elif stop:
             status = "cancelled"
-        elif final and all(s in {"succeeded", "abstained", "failed", "cancelled"} for s in final) and "failed" in final:
+        elif run.get("execution_mode", "fixture") == "fixture" and final and all(s in {"succeeded", "abstained", "failed", "cancelled"} for s in final) and "failed" in final:
             status = "failed"
         # Completion success is owned by the completion service, not inferred by this maintenance pass.
         return SettlementDecision(status, budget, tuple(expired), tuple(cancelled), changed or status != run["status"])

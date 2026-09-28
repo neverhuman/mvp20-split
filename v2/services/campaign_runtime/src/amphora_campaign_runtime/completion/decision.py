@@ -29,9 +29,12 @@ class CompletionDecision:
         return self.activation.status in {"succeeded", "abstained", "failed"}
 
     @staticmethod
-    def run_status(statuses):
+    def run_status(statuses, *, execution_mode="fixture"):
         if "uncertain" in statuses:
             return "blocked"
+        if execution_mode == "graph":
+            # Only the graph coordinator may conclude a graph from its Finish/frontier.
+            return "running"
         if any(s in {"queued", "leased"} for s in statuses):
             return "running"
         return "failed" if any(s in {"failed", "cancelled"} for s in statuses) else "completed"

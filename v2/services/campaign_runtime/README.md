@@ -1,7 +1,7 @@
 # Campaign Runtime
 
 - Status: synthetic invocation lifecycle and atomic completion implemented; paired retention/delivery acceptance verified; REC-01..09 recovery/replacement verified; general graph execution remains BP-04.
-- Package: `amphora-campaign-runtime` 0.2.0.
+- Package: `amphora-campaign-runtime` 0.3.0.
 - Architecture: [Graph Runner](../../docs/Architecture/System/Graph_Runner.md), [runtime protocol](../../docs/Architecture/System/Runtime_Command_Protocol.md), [isolation](../../docs/Architecture/System/Service_Isolation.md).
 
 ## Ownership and Module Boundaries
@@ -10,6 +10,7 @@
 |---|---|
 | `graph.py` | Immutable graph values, bounded topology/loop/branch/join validation; no interpreter |
 | [compiler](src/amphora_campaign_runtime/compiler/README.md) | Pure wire-v2 semantic compilation, exact tool/schema pins, scoped types/control flow, canonical plans and activation addresses |
+| [coordinator](src/amphora_campaign_runtime/coordinator/README.md) | Configured graph admission, immutable plan/input/frontier records, initial ready invocations and bounded observations; advancement/hosting pending BP-04.02/B2 |
 | `admission.py` | Pure input/tool/completion binding policy against supplied identity; not live authority |
 | [lifecycle](src/amphora_campaign_runtime/lifecycle/README.md) | Exact fixture admission, claims, renewal, cancellation/revocation, budget settlement and scoped observations |
 | [completion](src/amphora_campaign_runtime/completion/README.md) | Immutable prepared intents, resumable artifact reservations and atomic result/checkpoint acceptance |
@@ -79,3 +80,5 @@ Optional `inspection` configuration requires a stable `cursor_key_env` and accep
 [Foundation recovery and replacement](RECOVERY.md) records retained state/configuration, explicit owner bootstrap, bounded maintenance order and public verification. Actual process recovery is separate from host backup/power-loss guarantees.
 
 BP-04.01/B1 updates the campaign-contract dependency to 0.2.0 while preserving wire-v1 validation and existing durable fixture APIs. B2 adds the pure [compiler](src/amphora_campaign_runtime/compiler/README.md), with jsonschema as an explicit isolated package dependency. It emits exact immutable plans without database writes or execution authority. Interpreter/admission remains a later gate; no old graph is silently converted and no database migration accompanies these changes.
+
+BP-04.02/B1 advances Runtime to 0.3.0 and campaign contracts to 0.2.1 (public literal-type exports, unchanged campaign schema bytes), adds the isolated graph-runtime DTO package and migration runtime_0007. Graph-mode completion waits for the coordinator instead of inferring completion from issued invocations; fixture behavior and worker wire/package closure remain unchanged. The initial graph library is not yet wired into executable HTTP hosting. See the coordinator rebuild boundary and its owned scheduling tests before enabling graph mode or replacing Runtime.

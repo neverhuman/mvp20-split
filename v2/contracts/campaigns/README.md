@@ -1,6 +1,6 @@
 # Campaign Definition Contracts
 
-- Status: `amphora-contracts-campaigns` 0.2.0 exposes unchanged validation-only wire v1 plus explicit executable wire v2; compiler/interpreter gates pending.
+- Status: `amphora-contracts-campaigns` 0.2.1 exposes unchanged validation-only wire v1 plus executable wire v2; Runtime compiler accepted, durable interpreter gates in progress.
 - Architecture: [Graph Execution Model](../../docs/Architecture/System/Graph_Execution_Model.md)
 
 ## Behavior and Public Boundary
@@ -26,3 +26,5 @@ From repository root: `uv run --project v2/dev --locked python v2/dev/run_tests.
 The B1 executable suite is separately selectable with `--module campaigns --area executable`. It checks strict language-neutral shapes, legacy rejection, versioned publication and frozen values; declarative model coverage is not compiler semantic or execution coverage. The eight new schemas live in `contracts/schemas/v2`; the 102 wire-v1 schemas are unchanged.
 
 B1 checkpoint 2026-09-28 17:40:35: 23 owned tests, 100% of 275 declarative statements (no algorithmic branches); 619 full foundation tests/twelve independent builds and actual REC-01..09 passed. Coverage of DTO declarations is not compiler semantic or runtime execution coverage. Eight wire-v2 schemas published separately; the 102 prior schemas remain byte-identical.
+
+BP-04.02 adds public exports for existing scalar/artifact literal DTOs without changing campaign wire schemas. The graph-runtime package reuses those identities while giving command numbers an explicit decimal-string representation compatible with the unchanged command-v1 fingerprint profile.

@@ -18,7 +18,7 @@ wheels = [
 
 [[package]]
 name = "amphora-campaign-runtime"
-version = "0.2.0"
+version = "0.3.0"
 source = { editable = "../services/campaign_runtime" }
 dependencies = [
     { name = "alembic" },
@@ -26,6 +26,7 @@ dependencies = [
     { name = "amphora-contracts-campaigns" },
     { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-graph-runtime" },
     { name = "amphora-contracts-runtime" },
     { name = "amphora-contracts-tools" },
     { name = "fastapi" },
@@ -43,6 +44,7 @@ requires-dist = [
     { name = "amphora-contracts-campaigns", editable = "../contracts/campaigns" },
     { name = "amphora-contracts-commands", editable = "../contracts/commands" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-graph-runtime", editable = "../contracts/graph_runtime" },
     { name = "amphora-contracts-runtime", editable = "../contracts/runtime" },
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },
     { name = "fastapi", specifier = ">=0.115,<1" },
@@ -101,7 +103,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-contracts-campaigns"
-version = "0.2.0"
+version = "0.2.1"
 source = { editable = "../contracts/campaigns" }
 dependencies = [
     { name = "amphora-contracts-core" },
@@ -141,6 +143,27 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [{ name = "pydantic", specifier = ">=2.12,<3" }]
+
+[[package]]
+name = "amphora-contracts-graph-runtime"
+version = "0.1.0"
+source = { editable = "../contracts/graph_runtime" }
+dependencies = [
+    { name = "amphora-contracts-campaigns" },
+    { name = "amphora-contracts-commands" },
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-runtime" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-campaigns", editable = "../contracts/campaigns" },
+    { name = "amphora-contracts-commands", editable = "../contracts/commands" },
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-runtime", editable = "../contracts/runtime" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
 
 [[package]]
 name = "amphora-contracts-runtime"
@@ -218,6 +241,7 @@ dependencies = [
     { name = "amphora-contracts-campaigns" },
     { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-graph-runtime" },
     { name = "amphora-contracts-runtime" },
     { name = "amphora-contracts-tools" },
     { name = "amphora-data-artifacts" },
@@ -239,6 +263,7 @@ requires-dist = [
     { name = "amphora-contracts-campaigns", editable = "../contracts/campaigns" },
     { name = "amphora-contracts-commands", editable = "../contracts/commands" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-graph-runtime", editable = "../contracts/graph_runtime" },
     { name = "amphora-contracts-runtime", editable = "../contracts/runtime" },
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },
     { name = "amphora-data-artifacts", editable = "../services/data_artifacts" },

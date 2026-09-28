@@ -21,7 +21,19 @@ from .executable.plans import (
     ScopePlan,
 )
 from .executable.predicates import PredicateV2, ScalarProjection
-from .executable.values import ArtifactType, CollectionType, ScalarType, ValueBinding, ValuePort, ValueSource
+from .executable.values import (
+    ArtifactConstant,
+    ArtifactType,
+    BooleanConstant,
+    CollectionType,
+    IntegerConstant,
+    ScalarConstant,
+    ScalarType,
+    StringConstant,
+    ValueBinding,
+    ValuePort,
+    ValueSource,
+)
 from .models import (
     Branch,
     CampaignDefinition,
@@ -47,5 +59,6 @@ __all__ = [
     "ExecutableCampaign", "ExecutableScope", "InvokeV2", "BranchV2", "JoinV2", "ScatterV2", "IterateV2", "FinishV2",
     "ControlEdge", "PredicateV2", "ScalarProjection", "ValueSource", "ValueBinding", "ValuePort",
     "ArtifactType", "ScalarType", "CollectionType", "ContextPin", "PlanLock", "NodeBinding", "ScopePlan",
-    "PlanDocument", "ExecutionPlan", "ActivationPath",
+    "PlanDocument", "ExecutionPlan", "ActivationPath", "ArtifactConstant", "ScalarConstant",
+    "BooleanConstant", "IntegerConstant", "StringConstant",
 ]

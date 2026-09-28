@@ -2,7 +2,7 @@
 
 - Status: BP-04.01 complete and audited; boundary evidence retained in the [owning plan](../../../../../docs/Build%20Plans/BP-04/Completed/BP-04.01%20Compiler%20and%20executable%20contract.md).
 - Owner: Campaign Runtime. Architecture: [Graph Execution Model](../../../../../docs/Architecture/System/Graph_Execution_Model.md).
-- Public wire boundary: campaigns 0.2.0, executable wire v2. Existing validation-only wire v1 is unchanged.
+- Public wire boundary: campaigns 0.2.1, executable wire v2. Existing validation-only wire v1 is unchanged.
 
 ## Responsibilities and interfaces
 

@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 
 import amphora_contracts_artifacts as artifact_contracts
+import amphora_contracts_graph_runtime as graph_runtime_contracts
 import amphora_contracts_runtime as runtime_contracts
 import amphora_contracts_tools as tool_contracts
 from amphora_contracts_campaigns import (
@@ -39,6 +40,12 @@ MODELS_V2 = {
 }
 
 MODELS["commands.identity"] = CommandIdentity
+for name, model in {
+    "admit-run": graph_runtime_contracts.AdmitGraphRun,
+    "advance": graph_runtime_contracts.AdvanceGraph,
+    "run-page": graph_runtime_contracts.GraphRunPage,
+}.items():
+    MODELS["graph-runtime." + name] = model
 for name, model in {
     "release-descriptor": tool_contracts.ReleaseDescriptor,
     "lock-entry": tool_contracts.LockEntry,

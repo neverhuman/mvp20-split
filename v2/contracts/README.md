@@ -15,3 +15,5 @@ BP-02 adds independently packaged [command encoding](commands/README.md), [runti
 BP-03.01 adds separate tool release descriptor, immutable lock, registration payload/receipt and independent eligibility-observation roots. Existing invocation/completion/descriptor roots stay unchanged. Canonical metadata and transport examples are split into `fixtures/v1/tool_releases.json` and `tool_release_messages.json`; registry-owned policy and persistence remain outside this package.
 
 `schemas/v2/manifest.json` owns the new executable definition, plan/lock and activation-path schema digests. `dev/export_schemas.py` publishes/checks both bundles without rewriting wire-v1 identities.
+
+BP-04.02 adds [graph-runtime commands/observations](graph_runtime/README.md) as a separate package. It does not add campaign dependencies to the pinned worker contract/SDK closure. Its distinct graph-runtime namespace publishes additive wire-v1 roots; existing campaign and worker schema bytes remain unchanged.

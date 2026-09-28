@@ -10,6 +10,7 @@ from sqlalchemy import text
 from ..lifecycle.claims import RUN, SCOPE, RuntimeLeases, lease_from
 from ..lifecycle.intents import AbortDecision
 from ..lifecycle.model import RunBudget, RunState, TransitionError
+from ..lifecycle.pins import completion_descriptor
 from ..lifecycle.receipts import RuntimeReply
 from ..persistence.commands import _bindings
 from .artifacts import ReservationUnavailable, validate_receipt
@@ -65,7 +66,7 @@ class CompletionCommitter:
                     current_fence=row["current_fence"], now=now)
                 if request.expected_checkpoint_revision is not None and request.expected_checkpoint_revision != row["checkpoint_revision"]:
                     raise TransitionError("checkpoint_revision_conflict")
-                proposal.validate_outputs(run["tool_snapshot"].get(row["invocation_id"]), row["specification"])
+                proposal.validate_outputs(completion_descriptor(run, row), row["specification"])
                 if intent is None:
                     return reply.pending()
                 if intent["status"] != "prepared":
@@ -130,7 +131,7 @@ class CompletionCommitter:
                 conn.execute(text("UPDATE runtime.activations SET status='failed' WHERE " + RUN +
                                   " AND status='queued'"), params)
             statuses = conn.execute(text("SELECT status FROM runtime.activations WHERE " + RUN), params).scalars().all()
-            status = decision.run_status(statuses)
+            status = decision.run_status(statuses, execution_mode=run["execution_mode"])
             conn.execute(text("UPDATE runtime.runs SET status=:status WHERE " + RUN), {**params, "status": status})
             conn.execute(text("UPDATE runtime.completion_intents SET status='committed',outcome=CAST(:proof AS jsonb) WHERE " +
                 SCOPE + " AND intent_id=:intent"), {**params, "proof": json.dumps({"status": "committed",

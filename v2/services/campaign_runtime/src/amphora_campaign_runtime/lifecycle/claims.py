@@ -98,7 +98,7 @@ class RuntimeLeases:
             max_attempts = run["input_snapshot"]["budget"]["max_attempts_per_activation"]
             rows = conn.execute(text("SELECT * FROM runtime.activations WHERE " + RUN +
                 " AND status IN ('queued','leased') AND specification->'tool'=CAST(:tool AS jsonb) "
-                "ORDER BY activation_id FOR UPDATE"), {**params, "tool": request.tool.model_dump_json()}).mappings().all()
+                "ORDER BY dispatch_order,activation_id FOR UPDATE"), {**params, "tool": request.tool.model_dump_json()}).mappings().all()
             now = conn.execute(text("SELECT clock_timestamp()")).scalar_one()
             expired = []
             chosen = None

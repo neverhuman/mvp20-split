@@ -8,6 +8,7 @@ from sqlalchemy import text
 from ..lifecycle.claims import SCOPE, RuntimeLeases, lease_from
 from ..lifecycle.intents import AbortDecision
 from ..lifecycle.model import RunBudget, RunState, TransitionError
+from ..lifecycle.pins import completion_descriptor
 from ..lifecycle.receipts import RuntimeReply
 from ..persistence.commands import _bindings
 from .model import CompletionProposal, PreparedIntent
@@ -58,7 +59,7 @@ class IntentPreparation:
                     current_fence=row["current_fence"], now=now)
                 if request.expected_checkpoint_revision is not None and request.expected_checkpoint_revision != row["checkpoint_revision"]:
                     raise TransitionError("checkpoint_revision_conflict")
-                proposal.validate_outputs(run["tool_snapshot"].get(row["invocation_id"]), row["specification"])
+                proposal.validate_outputs(completion_descriptor(run, row), row["specification"])
                 if intent is not None:
                     if (intent["semantic_sha256"] != proposal.digest or
                         intent["output_bindings"] != prepared.stored_bindings()):

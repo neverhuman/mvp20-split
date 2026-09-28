@@ -1,12 +1,12 @@
 [project]
 name = "amphora-campaign-runtime"
-version = "0.2.0"
+version = "0.3.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
     "pydantic>=2.12,<3",
     "amphora-contracts-core==0.1.0",
     "amphora-contracts-tools==0.1.0",
-    "amphora-contracts-campaigns==0.2.0",
+    "amphora-contracts-campaigns==0.2.1",
     "fastapi>=0.115,<1",
     "uvicorn>=0.34,<1",
     "sqlalchemy>=2,<3",
@@ -16,6 +16,7 @@ dependencies = [
     "amphora-contracts-runtime",
     "amphora-contracts-commands",
     "amphora-contracts-artifacts",
+    "amphora-contracts-graph-runtime==0.1.0",
 ]
 
 [project.scripts]
@@ -35,6 +36,7 @@ amphora-contracts-campaigns = { path = "../../contracts/campaigns", editable = t
 amphora-contracts-runtime = { path = "../../contracts/runtime", editable = true }
 amphora-contracts-commands = { path = "../../contracts/commands", editable = true }
 amphora-contracts-artifacts = { path = "../../contracts/artifacts", editable = true }
+amphora-contracts-graph-runtime = { path = "../../contracts/graph_runtime", editable = true }
 
 [tool.amphora]
-public-imports = ["amphora-contracts-artifacts", "amphora-contracts-runtime", "amphora-contracts-commands", "amphora-contracts-core", "amphora-contracts-tools", "amphora-contracts-campaigns"]
+public-imports = ["amphora-contracts-graph-runtime", "amphora-contracts-artifacts", "amphora-contracts-runtime", "amphora-contracts-commands", "amphora-contracts-core", "amphora-contracts-tools", "amphora-contracts-campaigns"]

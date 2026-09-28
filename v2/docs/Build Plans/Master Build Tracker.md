@@ -9,13 +9,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-04 primary active; BP-05 through BP-09 queued; BP-01/BP-01A/BP-02/BP-03 closed.
-- Last refreshed: `2026-09-28 18:20:22` (America/Chicago).
+- Last refreshed: `2026-09-28 18:45:36` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P3 / BP-04 - deterministic graph runner.
-- Primary active implementation plan / phase / task: BP-04 -> BP-04.02 / Build / B1.
-- Current task: BP-04.02/B1 durable frontier/admission boundary and owner migration.
-- Next task: BP-04.02/B2 durable recovery and deterministic scheduling.
-- Implementation completion: BP-02 closed 100% (32/32), BP-03 closed 100% (16/16); BP-04 active 20% (4/20), .01 closed 100%, .02 0% (Build 0%/Acceptance 0%); BP-05..09 queued 0%. No effort estimate inferred.
+- Primary active implementation plan / phase / task: BP-04 -> BP-04.02 / Build / B2.
+- Current task: BP-04.02/B2 durable graph advancement/recovery and configured hosting.
+- Next task: BP-04.02/B3 competing-coordinator and restart frontier proof.
+- Implementation completion: BP-02 closed 100% (32/32), BP-03 closed 100% (16/16); BP-04 active 25% (5/20), .01 closed 100%, .02 25% (Build 33.33%/Acceptance 0%); BP-05..09 queued 0%. No effort estimate inferred.
 - Active focus: persist and advance the graph frontier over the accepted compiler and invocation lifecycle.
 - Blockers: no current user decision or implementation blocker; later host/provider/scientific gates remain explicit.
 - Acceptance posture: durable synthetic invocations, actual peer retention, process recovery and fresh service replacement verified; no interpreter/scientific acceptance claimed.
@@ -35,11 +35,11 @@ BP-04 is the sole primary active plan. Child trackers own delivery evidence; com
 
 | Parent | Implementation | P1 Compiler | P2 Scheduling | P3 Aggregation | P4 Baselines | P5 Recovery |
 |---|---:|---:|---:|---:|---:|---:|
-| [BP-04](BP-04%20Deterministic%20Graph%20Runner.md) | 20% (4/20) | 100% | 0% | 0% | 0% | 0% |
+| [BP-04](BP-04%20Deterministic%20Graph%20Runner.md) | 25% (5/20) | 100% | 25% | 0% | 0% | 0% |
 
 | Active canonical child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-04.02](BP-04/BP-04.02%20Frontier%20and%20scheduling.md) | 0% | 0% | 0% | B1 durable frontier |
+| [BP-04.02](BP-04/BP-04.02%20Frontier%20and%20scheduling.md) | 25% | 33.33% | 0% | B2 durable advancement |
 
 BP-02 is closed at 32/32; BP-03 at 16/16 with all children audited. See [completed plans](Completed/README.md). New parent progress counts only its own deliveries.
 
@@ -123,6 +123,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-28 18:45:36 | BP-04.02 B1 passed; child 25%, parent 25% (5/20); B2 active | 765 tests/thirteen installs/REC-01..09; scoped graph admission, migration and completion guard; scope 0aabef6b736c4a7a82a3772c1c892a77 |
 | 2026-09-28 18:20:22 | BP-04.01 closed/audited 100%; parent 20% (4/20); .02 B1 active 0% | Five actual installed plans/two tools, fresh compiler/Registry replacement; scope 498bc3389bca4a96b0d7f7690bd39577 |
 | 2026-09-28 18:11:10 | BP-04.01 B3 passed; child 75%, parent 15% (3/20); V1 active | 111 compiler cases, 52 independent rejections; 100% scoped statements/branches; 23 contract and 6 legacy graph cases |
 | 2026-09-28 18:02:52 | BP-04.01 B2 passed; child 50%, parent 10% (2/20); B3 active | 35 compiler cases; manual plan exact; 653 regression tests/twelve builds/REC-01..09, scope 7602f26a6cfb4a3aa7824ede61371e7f |
@@ -147,6 +148,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-28 13:31:43 | BP-02.06 R3 passed; child 60%, V1 75%, parent 93.75%; next R4 | 306 tests/eight wheels; REC-01..08 passed, actual worker/delivery/frontier restart |
 | 2026-09-28 13:23:07 | BP-02.06 R2 passed; child 40%, V1 50%, parent 90.63%; next R3 | 305 tests/eight builds; actual REC-01..05 installed-process recovery |
 | 2026-09-28 13:16:35 | BP-02.06 R1 passed; child 20%, V1 25%, parent 87.50%; next R2 | Six runtime/five artifact acceptance harness cases; explicit test-only barriers and hashed evidence |
-| 2026-09-28 13:10:54 | BP-02.05 closed/audited 100%; parent 84.38% (27/32); .06 R1 activated | 298 tests/eight builds; actual paired acceptance and cancellation/release; [audit](../Audits/BP-02.05_Completion_Delivery_Closeout.md) |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.
