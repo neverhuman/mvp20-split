@@ -12,6 +12,18 @@ from .models import (
     ToolDescriptor,
     Uncertain,
 )
+from .registry import (
+    ChangeDeployment,
+    ChangeRelease,
+    DeploymentSnapshot,
+    HeartbeatSnapshot,
+    RegisterDeployment,
+    RegistryReceipt,
+    ReleaseSnapshot,
+    ReplicaHeartbeat,
+    ResolveRelease,
+    parse_registry_command,
+)
 from .releases import (
     AllowedEgress,
     CapacityAssessment,
@@ -31,6 +43,8 @@ from .releases import (
 )
 
 __all__ = [
+    "ChangeDeployment", "ChangeRelease", "DeploymentSnapshot", "HeartbeatSnapshot", "RegisterDeployment",
+    "RegistryReceipt", "ReleaseSnapshot", "ReplicaHeartbeat", "ResolveRelease", "parse_registry_command",
     "ToolBinding",
     "Port",
     "ToolDescriptor",

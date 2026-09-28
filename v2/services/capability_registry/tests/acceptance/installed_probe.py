@@ -19,7 +19,7 @@ from amphora_contracts_core import Scope
 from amphora_contracts_tools import LockEntry, ReleaseDescriptor
 
 assert Path(amphora_capability_registry.__file__).is_relative_to(sys.prefix), "Must use installed wheel"
-for absent in ("amphora_campaign_runtime", "amphora_data_artifacts", "torch", "rdkit", "fastapi", "psycopg"):
+for absent in ("amphora_campaign_runtime", "amphora_data_artifacts", "torch", "rdkit"):
     assert importlib.util.find_spec(absent) is None, absent
 
 request = json.loads(sys.stdin.readline())

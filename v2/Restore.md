@@ -2,16 +2,16 @@
 
 ## Current Checkpoint
 
-- Last refreshed: `2026-09-28 14:25:40` (America/Chicago).
+- Last refreshed: `2026-09-28 14:45:09` (America/Chicago).
 - Workspace: v2 active; v1 frozen. External references require task-specific authorization.
-- Canonical position: BP-03 -> [BP-03.02](docs/Build%20Plans/BP-03/BP-03.02%20Registry%20and%20version%20routing.md) / Build / B1 registry boundary; next B2 routing/lifecycle policy.
-- Progress: BP-02 closed 100% (32/32). BP-03 25% (4/16), .01 closed/audited 100%, .02 0% (Build 0%, Acceptance 0%); BP-04..09 0%.
+- Canonical position: BP-03 -> [BP-03.02](docs/Build%20Plans/BP-03/BP-03.02%20Registry%20and%20version%20routing.md) / Build / B2 lifecycle/routing policy; next B3 actual race/failure oracles.
+- Progress: BP-02 closed 100% (32/32). BP-03 31.25% (5/16), .01 closed/audited 100%, .02 25% (Build 33.33%, Acceptance 0%); BP-04..09 0%.
 - Latest work: immutable descriptors, separate suitability/permission/capacity policy, independent failure corpus and fresh registry installation/actual peer compatibility accepted; [child audit](docs/Audits/BP-03.01_Descriptor_Closeout.md).
-- Evidence: 393 component tests; 72 registry cases with 100% current source line/branch coverage (325 statements/102 branches). Nine independent builds, fresh registry/runtime/artifact replacement, paired acceptance and REC-01..09 passed. Eighty schema artifacts preserve earlier contracts. Latest recovery scope bdb0d03685714a2e90f278aaeaf5917b is ignored; BP-02 closeout evidence remains preserved in docs/Audits/Evidence/BP-02-Recovery.
+- Evidence: 411 component tests; 89 registry cases, about 91% expanded owner line/branch coverage; descriptor-only historical denominator remains separate. Nine independent builds, fresh registry/runtime/artifact replacement, paired acceptance and REC-01..09 passed. Ninety-eight schema artifacts preserve earlier contracts. Latest recovery scope b284917f017d4ac7b2b3f8a7ab02af72 is ignored; BP-02 closeout evidence remains preserved in docs/Audits/Evidence/BP-02-Recovery.
 - Authority: autonomous continuation and significant commit/push checkpoints authorized. No current user blocker; later scientific/provider/host gates remain explicit.
 - Environment: Python 3.12, uv, labeled PostgreSQL 17.11 fixture. Dynamic credentials only in ignored .test-results/postgres-fixture.json. Set AMPHORA_TEST_POSTGRES=1; never publish credentials or reset concurrently with tests.
-- Git: 1612ca3 pushed; .01 closeout verified for commit/push. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
-- B1 handoff: .02 activation audit recorded. Implement additive authenticated command envelopes using public canonical identity, registry-private PostgreSQL schema/roles and scoped register/read/resolve/drain/revoke boundaries. Separate immutable releases from revisioned deployments/replicas; preserve exact pins and server-owned policy. No registry persistence/HTTP exists yet. B3 owns actual concurrency/role-denial oracles; V1 retained history and independent replacement. Real tools remain .03; synthetic metadata proves no science.
+- Git: 26c0eb8 pushed; .02 B1 verified for commit/push. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
+- B2 handoff: registry-private schema/roles, additive command payloads and authenticated ASGI operations now exist. Canonical replay preserves original receipts; immutable bytes and lifecycle revisions remain separate. Scope-serialized short transactions make no network calls. Implement/test deeper lifecycle/replica policy (focused value objects), expiry, exact-version routing, effect/science/platform denial and forbidden revival. B3 owns actual concurrent processes and race barriers; V1 explicit executable host plus retained registry replacement. Existing installed registry probe proves descriptor compatibility only. Roles are added to labeled fixture via registry_owner; no peer reset. Real tools remain .03.
 - Limits: general interpreter, actual scientific tools/evidence, model/knowledge/Studio and host backup/power-loss remain later plans. Existing test-client warning and pre-existing v1/LICENSE manifest discrepancy remain nonblocking assigned maintenance. Recovery operating boundary: services/campaign_runtime/RECOVERY.md.
 
 ## Decomposition and Resume Discipline

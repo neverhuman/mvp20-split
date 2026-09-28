@@ -52,7 +52,8 @@
     "path": "contracts/tools",
     "module": "amphora_contracts_tools",
     "public_dependencies": [
-      "amphora-contracts-core"
+      "amphora-contracts-core",
+      "amphora-contracts-commands"
     ]
   },
   {
@@ -76,7 +77,8 @@
     "module": "amphora_capability_registry",
     "public_dependencies": [
       "amphora-contracts-core",
-      "amphora-contracts-tools"
+      "amphora-contracts-tools",
+      "amphora-contracts-commands"
     ]
   },
   {

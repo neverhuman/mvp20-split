@@ -9,7 +9,7 @@ Public root exports tool bindings, input/output port declarations, descriptors, 
 
 ## Dependencies and State
 
-Depends only on the declared core contract package and Pydantic. No runtime imports, provider calls, database access or in-process authoritative state. Scientific values and parameters are schema-bound artifacts in this initial subset. Descriptor limits bound port count and wire shape; scope/port compatibility checks belong to the accepting runtime policy, not a validator that performs I/O.
+Depends only on declared core/commands contract packages and Pydantic. No runtime imports, provider calls, database access or in-process authoritative state. Scientific values and parameters are schema-bound artifacts in this initial subset. Descriptor limits bound port count and wire shape; scope/port compatibility checks belong to the accepting runtime policy, not a validator that performs I/O.
 
 ## Replacement and Verification
 
@@ -32,3 +32,7 @@ From repository root: `uv run --project v2/dev --locked python v2/dev/run_tests.
 The registry owner defines the `amphora-tool-release-v1` canonical profile and exact byte/lock comparison. Public language-neutral metadata/canonical/lock examples are `fixtures/v1/tool_releases.json`, with transport examples in `tool_release_messages.json`. Their synthetic schema/image pins are fixture metadata, not deployed scientific tools. B2/B3 implement semantic validation and policy; .02 implements persistence, lifecycle/routing and deployment identities. No legacy descriptor/invocation/completion schema or canonical command bytes were altered by these additive roots.
 
 B2 adds `EligibilityDecision` as a separate root wrapping the unchanged B1 observations with reason-coded policy admission, candidate/rejected selection and explicit aware observation/capacity-expiry times. Policy/resource/egress compatibility stays distinct from scientific suitability and capacity. A candidate is not an execution grant. `tool_selection_decision.json` illustrates healthy capacity with unreviewed science and a rejected selection. Registry domain objects own those decisions; DTOs do not evaluate policy or perform I/O.
+
+## Registry Owner Operations (BP-03.02)
+
+Additive roots describe revisioned release/deployment changes, bounded replica heartbeats, exact-lock resolution and scoped snapshots/terminal receipts. `parse_registry_command` binds nine closed registry command families to the shared canonical command envelope; registration payload scope must match authenticated identity scope. The registry handler separately authenticates actor/actions and persists authority. No transport parser grants permissions. Existing 80 schema artifacts remain unchanged; nine roots add 18 artifacts. Replay returns an original observation/receipt, including its original expiry; a new command identity is required for fresh resolution.

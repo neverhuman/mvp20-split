@@ -37,6 +37,16 @@ def owned_state():
     return state
 
 
+def registry_owner(state):
+    """Add only the new registry owner to the existing labeled disposable fixture."""
+    for role in ("registry_migrator", "registry_service"):
+        if sql(state, f"SELECT 1 FROM pg_roles WHERE rolname='{role}';").stdout.strip() != "1":
+            sql(state, f"CREATE ROLE {role} LOGIN PASSWORD '{state['password']}';")
+    sql(state, "GRANT CONNECT ON DATABASE amphora_bp02_test TO registry_migrator,registry_service; "
+        "CREATE SCHEMA IF NOT EXISTS registry AUTHORIZATION registry_migrator; "
+        "GRANT USAGE ON SCHEMA registry TO registry_service;")
+
+
 def ready(state):
     deadline = time.monotonic() + 45
     while time.monotonic() < deadline:

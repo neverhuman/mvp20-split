@@ -56,14 +56,26 @@ name = "amphora-capability-registry"
 version = "0.1.0"
 source = { editable = "../services/capability_registry" }
 dependencies = [
+    { name = "alembic" },
+    { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-tools" },
+    { name = "fastapi" },
+    { name = "psycopg", extra = ["binary"] },
+    { name = "sqlalchemy" },
+    { name = "uvicorn" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "alembic", specifier = ">=1.16,<2" },
+    { name = "amphora-contracts-commands", editable = "../contracts/commands" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },
+    { name = "fastapi", specifier = ">=0.115,<1" },
+    { name = "psycopg", extras = ["binary"], specifier = ">=3,<4" },
+    { name = "sqlalchemy", specifier = ">=2,<3" },
+    { name = "uvicorn", specifier = ">=0.34,<1" },
 ]
 
 [[package]]
@@ -150,12 +162,14 @@ name = "amphora-contracts-tools"
 version = "0.1.0"
 source = { editable = "../contracts/tools" }
 dependencies = [
+    { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
     { name = "pydantic" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "amphora-contracts-commands", editable = "../contracts/commands" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
     { name = "pydantic", specifier = ">=2.12,<3" },
 ]

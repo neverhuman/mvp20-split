@@ -20,6 +20,21 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-contracts-commands"
+version = "0.1.0"
+source = { editable = "../commands" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../core" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-core"
 version = "0.1.0"
 source = { editable = "../core" }
@@ -35,12 +50,14 @@ name = "amphora-contracts-tools"
 version = "0.1.0"
 source = { editable = "../tools" }
 dependencies = [
+    { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
     { name = "pydantic" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "amphora-contracts-commands", editable = "../commands" },
     { name = "amphora-contracts-core", editable = "../core" },
     { name = "pydantic", specifier = ">=2.12,<3" },
 ]

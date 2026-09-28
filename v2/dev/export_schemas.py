@@ -34,6 +34,15 @@ for name, model in {
     "eligibility-decision": tool_contracts.EligibilityDecision,
     "register-release": tool_contracts.RegisterRelease,
     "registration-receipt": tool_contracts.ReleaseRegistrationReceipt,
+    "change-release": tool_contracts.ChangeRelease,
+    "register-deployment": tool_contracts.RegisterDeployment,
+    "change-deployment": tool_contracts.ChangeDeployment,
+    "replica-heartbeat": tool_contracts.ReplicaHeartbeat,
+    "resolve-release": tool_contracts.ResolveRelease,
+    "release-snapshot": tool_contracts.ReleaseSnapshot,
+    "deployment-snapshot": tool_contracts.DeploymentSnapshot,
+    "heartbeat-snapshot": tool_contracts.HeartbeatSnapshot,
+    "registry-receipt": tool_contracts.RegistryReceipt,
 }.items():
     MODELS["tools." + name] = model
 for name, model in {

@@ -35,7 +35,7 @@ def main():
     args, pytest_args = parser.parse_known_args()
     areas = {"runtime": {"graph", "admission", "api", "baseline", "persistence", "lifecycle", "completion", "delivery", "inspection", "acceptance"},
              "data-artifacts": {"persistence", "publication", "storage", "retention", "maintenance", "acceptance"},
-             "registry": {"descriptors"}}
+             "registry": {"descriptors", "persistence", "api"}}
     if args.area and args.area not in areas.get(args.module, set()):
         parser.error("--area must belong to the selected module")
     findings = ownership_issues()

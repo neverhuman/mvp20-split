@@ -135,12 +135,14 @@ name = "amphora-contracts-tools"
 version = "0.1.0"
 source = { editable = "../../contracts/tools" }
 dependencies = [
+    { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
     { name = "pydantic" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "amphora-contracts-commands", editable = "../../contracts/commands" },
     { name = "amphora-contracts-core", editable = "../../contracts/core" },
     { name = "pydantic", specifier = ">=2.12,<3" },
 ]

@@ -1,0 +1,11 @@
+# Registry Private Persistence
+
+Schema `registry` belongs to `registry_migrator`; ordinary handlers use `registry_service`. Explicit Alembic `upgrade` runs owner migrations and preserves history in this schema. Startup applies no DDL. Migration files ship in the registry wheel. Destructive downgrade is refused; evidence-bearing changes require reviewed forward migrations.
+
+`releases` holds immutable normalized descriptor bytes/hash/lock and scoped semantic identity. `release_states` owns mutable lifecycle/revision. `deployments` retains immutable installation definitions plus mutable state/revision; `replicas` retains worker ownership and revisioned lease observations. `commands` stores immutable original requests/terminal receipts; `audit_events` links each command operation. Service grants permit only named mutable columns, no deletes or metadata/receipt rewrites. Runtime/artifact tables are inaccessible.
+
+`CommandStore` authenticates before opening an operation. The initial profile takes a PostgreSQL transaction advisory lock per scope, then checks exact canonical command bytes/digest. Hash collisions only serialize unrelated scopes; all reads/writes still bind tenant/project. One short transaction owns state changes, terminal receipt and audit; there are no external effects under locks. Domain rejection uses a savepoint rollback and persists a rejected receipt. Unexpected failures roll back everything. Serialization/deadlock errors may retry up to three times with freshly loaded state.
+
+Scope-level serialization is an explicit initial single-user tradeoff. It is not a high-throughput catalog benchmark; future finer locking must preserve same-key registration, lifecycle/heartbeat/resolve ordering and original receipt semantics. Database time is observed after locking. Historical resolve receipts are time-stamped observations, never reusable dispatch authority.
+
+The fixture adds only separately named registry roles/schema to the labeled local database; it does not reset the existing runtime/artifact fixture. Actual PostgreSQL tests own migration idempotence, immutable registration, rollback, receipt/audit cardinality and role-denial checks. Independent replacement and multi-process races remain later gates in BP-03.02.
