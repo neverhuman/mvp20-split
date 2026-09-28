@@ -45,3 +45,5 @@ Aligned within documentation scope; [planning review](Planning_Maturity_Review.m
 - `2026-09-28 11:05:08`: BP-02.03 artifact service aligned; [closeout](BP-02.03_Artifact_Service_Closeout.md) records publication/retention/cleanup/installed-process evidence, 188 tests and scoped limitations. No blocking drift or unowned follow-up in this child; actual runtime/target-host verification belongs to .06/BP-09.
 
 - `2026-09-28 12:01:48`: BP-02.04 lifecycle aligned at 100%; [scoped audit](BP-02.04_Invocation_Lifecycle_Closeout.md). Actual PostgreSQL and installed HTTP-worker evidence pass; completion/artifact integration remains .05/.06. No unowned or blocking drift.
+
+- `2026-09-28 13:10:54`: BP-02.05 aligned at 100%; [scoped audit](BP-02.05_Completion_Delivery_Closeout.md). 298 tests and actual independently installed peer acceptance/cancellation passed. No blocking or unowned drift; .06 owns full restart matrix.

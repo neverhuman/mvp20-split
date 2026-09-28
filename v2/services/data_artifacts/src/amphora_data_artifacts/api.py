@@ -81,6 +81,11 @@ def create_app(uploads, storage, credentials, outcomes=None):
         command = parse_command("artifacts.reconcile", await command_body(request))
         return await asyncio.to_thread(reservations.reconcile, principal, command)
 
+    @app.get("/v1/reservations/{reservation_id}", response_model=ReservationReceipt)
+    async def reservation(reservation_id: str, request: Request):
+        principal = credentials.authenticate(request.headers.get("authorization"))
+        return await asyncio.to_thread(reservations.get, principal, reservation_id)
+
     @app.get("/ready")
     def ready():
         with uploads.commands.engine.connect() as conn:

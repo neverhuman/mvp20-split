@@ -2,17 +2,17 @@
 
 ## Current Checkpoint
 
-- Last refreshed: `2026-09-28 13:00:03` (America/Chicago).
+- Last refreshed: `2026-09-28 13:10:54` (America/Chicago).
 - Workspace: v2 active; v1 frozen. External references require task-specific authorization.
-- Canonical position: BP-02 -> [BP-02.05](docs/Build%20Plans/BP-02/BP-02.05%20Completion%20and%20Delivery.md) / V2 / D6 integrated acceptance/audit; next .06/R1 after closeout.
-- Progress: parent 81.25% (26/32 deliveries). Children .01-.04 complete/audited/archived; .05 at 83.33% (V1 100%, V2 0%); .06 and BP-03..09 at 0%.
-- Latest work: scoped original receipts, completion reports, signed pinned audit pages and delivery visibility verified; lifecycle standalone runtime and HTTP-only worker death/reclaim accepted; [closeout](docs/Audits/BP-02.04_Invocation_Lifecycle_Closeout.md). Cancellation/revocation, budget conservation and live database-clock fencing are implemented.
-- Evidence: 297 aggregate tests with PostgreSQL; final reservation-ID projection passed nine focused inspection cases; lint/import/schema gates, eight independent wheels and both installed service probes passed. 68 published schemas. Workers have no database credentials.
-- Authority: autonomous continuation and significant commit/push checkpoints authorized. No current user blocker. Scientific/provider/host decisions remain later gates.
-- Environment: Python 3.12, uv and labeled PostgreSQL 17.11 fixture. Dynamic endpoint/credentials only in ignored v2/.test-results/postgres-fixture.json. Set AMPHORA_TEST_POSTGRES=1; never publish credentials. Do not run fixture restart/reset concurrently with tests.
-- Git: D4 delivery e4be031 pushed; D5 inspection checkpoint verified for commit/push. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
-- D6 handoff: exercise actual separately installed runtime/artifact processes with isolated service credentials and public HTTP observations. CompletionRecord exposes retention_reservation_ids; add a scoped read-only artifact reservation lookup if needed for independent proof. Prove acceptance/confirmation, cancellation/release and original replay; scripted timing adapters must not invent proof. .06 retains the broader kill/restart matrix. Inspection needs explicit stable cursor key configuration; defaults remain validation-only.
-- Limits: .05/.06 still own actual accepted completion/artifact retention and crash integration. Linux/target-storage power-loss/backup remains BP-09. Scientific validity is not established by synthetic profiles. Existing test-client warning is nonblocking.
+- Canonical position: BP-02 -> [BP-02.06](docs/Build%20Plans/BP-02/BP-02.06%20Recovery%20and%20Integration.md) / V1 / R1 fault orchestration; next R2 publication/acceptance recovery.
+- Progress: parent 84.38% (27/32 deliveries). Children .01-.05 complete/audited/archived; .06 at 0% (V1 0%, V2 0%); BP-03..09 at 0%.
+- Latest work: actual independently installed runtime/artifact peers proved completion/confirmation, cancellation/release before stale completion resumes, original receipt replay and conserved budgets. [Completion audit](docs/Audits/BP-02.05_Completion_Delivery_Closeout.md) passed.
+- Evidence: 298 aggregate tests with PostgreSQL; lint/import/schema gates, eight independent wheels, both standalone probes and paired integration passed. 68 published schemas. HTTP workers have no database credentials; service environments contain only their own database URL.
+- Authority: autonomous continuation and significant commit/push checkpoints authorized. No current user blocker. Scientific/provider/host choices remain later gates.
+- Environment: Python 3.12, uv and labeled PostgreSQL 17.11 fixture. Dynamic endpoint/credentials only in ignored v2/.test-results/postgres-fixture.json. Set AMPHORA_TEST_POSTGRES=1; never publish credentials. Serialize fixture resets against tests.
+- Git: D5 0a31eb5 pushed; D6 closeout verified for commit/push. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
+- R1 handoff: reuse runtime-owned tests/acceptance harness. Add explicit test-only fault entrypoints and exact scenario manifests for REC-01..09; ordinary startup has no injection switches. R2/R3 kill actual owned processes and restart retained state; R4 independent install/restore; R5 audit/parent closeout. No private cross-owner imports or SQL assertions. Public GET artifact reservation observes protection without mutation.
+- Limits: .06 full crash matrix remains required. Linux/target-storage power-loss/backup stays BP-09. No interpreter/scientific validity/provider/Studio claim. Existing test-client warning is nonblocking.
 
 ## Decomposition and Resume Discipline
 
@@ -41,6 +41,6 @@ The high-level specifications and earlier flat design/history files live in `doc
 
 ## Implementation Limits
 
-Private PostgreSQL schemas/migrations and canonical command registration/terminal receipt transactions exist. Default runtime construction remains validation-only; explicit fixture hosting enables durable lifecycle and read endpoints. General campaign validation reports `executable=false`. Artifact upload/finalization APIs now publish verified immutable references; protective reservation/confirm/reconcile handshake is implemented against a configured public runtime outcome client; bounded reconciliation/cleanup and standalone hosting are implemented. Optional synthetic fixture admission is implemented; configured claim/renewal handlers are implemented; full completion acceptance, interpreter, scientific tools, knowledge reasoner, provider calls and Studio are not implemented. Artifact process-crash tests do not establish integrated runtime retention, target-host power-loss durability or scientific validity. Those gates remain in their named children/successor plans.
+Private PostgreSQL schemas/migrations and canonical command registration/terminal receipt transactions exist. Default runtime construction remains validation-only; explicit fixture hosting enables durable lifecycle and read endpoints. General campaign validation reports `executable=false`. Artifact upload/finalization APIs now publish verified immutable references; protective reservation/confirm/reconcile handshake is implemented against a configured public runtime outcome client; bounded reconciliation/cleanup and standalone hosting are implemented. Optional synthetic fixture admission is implemented; configured claim/renewal handlers are implemented; atomic fixture completion acceptance and retention delivery are implemented; interpreter, scientific tools, knowledge reasoner, provider calls and Studio are not implemented. Paired integration establishes fixture retention; process-crash tests do not establish target-host power-loss durability or scientific validity. Those gates remain in their named children/successor plans.
 
 Baseline verification: no changed manifest file content; verifier reports pre-existing added `v1/LICENSE` already present in commit `99d219c`. Do not regenerate the frozen manifest or alter v1 to suppress this discrepancy.

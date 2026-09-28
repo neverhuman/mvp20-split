@@ -1,10 +1,10 @@
 # Architecture Drift
 
-- Status: BP-02 contracts/persistence/artifact service audited; runtime execution and scientific services pending
-- Last refreshed: `2026-09-25 13:42:37` (America/Chicago)
+- Status: BP-02 children .01-.05 audited; process recovery and later execution/science gates pending
+- Last refreshed: `2026-09-28 13:10:54` (America/Chicago)
 - Scope: v2 design/implementation alignment
 - Active focus: require traceable contracts and closeout audits as implementation begins
-- Next gate: BP-02.04 invocation lifecycle and scoped acceptance
+- Next gate: BP-02.06 public-boundary process recovery and parent closeout
 
 ## Active Findings
 

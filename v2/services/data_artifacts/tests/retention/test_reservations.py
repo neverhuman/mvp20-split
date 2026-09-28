@@ -69,6 +69,19 @@ def reserve(fixture, payload=None, command_id=None):
     return service.reserve(env.principal, command(env, "artifacts.reserve", payload or original, command_id))
 
 
+def test_current_reservation_read_requires_owner_scope(retained):
+    env, service, peer, _ = retained
+    original = reserve(retained)
+    reservation_id = original.outcome.binding.reservation_id
+    assert service.get(env.principal, reservation_id) == original
+    with pytest.raises(UploadError, match="reservation_unavailable"):
+        service.get(replace(env.principal, actor_id="other-owner"), reservation_id)
+    peer.status = "aborted"
+    released = service.reconcile(env.principal, command(env, "artifacts.reconcile", {"reservation_id": reservation_id}))
+    assert service.get(env.principal, reservation_id) == released
+    assert released.outcome.status == "released"
+
+
 def test_reservation_identity_replay_concurrency_and_conflict(retained):
     with ThreadPoolExecutor(max_workers=2) as pool:
         receipts = list(pool.map(lambda _: reserve(retained), range(2)))

@@ -55,15 +55,22 @@ class Reservations:
             raise UploadError(body["reason_code"])
         return ReservationReceipt.model_validate(body)
 
-    def _load(self, conn, principal, reservation_id):
+    def _load(self, conn, principal, reservation_id, *, lock=True):
         row = conn.execute(text("SELECT r.*,c.size_bytes,c.media_type,c.schema_ref FROM artifacts.reservations r "
             "JOIN artifacts.catalog c USING (tenant_id,project_id,artifact_id,content_sha256) "
             "WHERE r.tenant_id=:tenant AND r.project_id=:project AND r.reservation_id=:reservation "
-            "AND r.runtime_owner=:actor FOR UPDATE OF r"),
+            "AND r.runtime_owner=:actor" + (" FOR UPDATE OF r" if lock else "")),
             {**principal.bindings, "reservation": reservation_id}).mappings().one_or_none()
         if row is None:
             raise UploadError("reservation_unavailable")
         return Reservation.from_row(row, principal.scope)
+
+    def get(self, principal, reservation_id):
+        """Observe current protection without creating a command or changing state."""
+        principal.require("retention")
+        with self.commands.engine.connect() as conn:
+            conn.execute(text("SET TRANSACTION READ ONLY"))
+            return self._load(conn, principal, reservation_id, lock=False).receipt()
 
     def reserve(self, principal, command):
         principal.require("retention", command.identity)

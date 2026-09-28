@@ -28,6 +28,8 @@ def independent_builds(uv):
     with tempfile.TemporaryDirectory(prefix="amphora-foundation-") as directory:
         root = Path(directory)
         wheels = root / "wheels"
+        installed = {}
+        paired_environment = dict(os.environ)
         for project, _, _ in specs:
             run([uv, "build", "--project", project, "--wheel", "--out-dir", wheels])
         for project, config, module in specs:
@@ -50,6 +52,7 @@ def independent_builds(uv):
             env = root / name
             run([uv, "venv", "--python", sys.executable, env])
             python = env / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
+            installed[module] = (python, project)
             needed = {name}
             pending = list(config.get("tool", {}).get("amphora", {}).get("public-imports", []))
             while pending:
@@ -67,6 +70,8 @@ def independent_builds(uv):
             elif module == "amphora_campaign_runtime":
                 probe += "from amphora_campaign_runtime.api import create_app; assert '/v1/campaign-definitions/validate' in create_app().openapi()['paths']; "
             if module in {"amphora_campaign_runtime", "amphora_data_artifacts"}:
+                peer_module = "amphora_data_artifacts" if module == "amphora_campaign_runtime" else "amphora_campaign_runtime"
+                probe += f"assert importlib.util.find_spec('{peer_module}') is None; "
                 probe += f"from importlib.resources import files; migration = files('{module}').joinpath('persistence/migrations/versions'); assert any(p.name.endswith('.sql') for p in migration.iterdir()); "
             probe += "assert importlib.util.find_spec('torch') is None; assert importlib.util.find_spec('rdkit') is None"
             run([python, "-I", "-c", probe], cwd=root)
@@ -79,12 +84,23 @@ def independent_builds(uv):
                 url = URL.create("postgresql+psycopg", username=role, password=state["password"],
                                  host=hostname, port=int(port), database=state["database"])
                 environment = dict(os.environ, AMPHORA_PROBE_DATABASE_URL=url.render_as_string(hide_password=False))
+                key = "AMPHORA_ARTIFACT_DATABASE_URL" if module == "amphora_data_artifacts" else "AMPHORA_RUNTIME_DATABASE_URL"
+                paired_environment[key] = url.render_as_string(hide_password=False)
                 acceptance = subprocess.run([str(python), "-I", str(project / "tests/acceptance/installed_probe.py")],
                     cwd=root, env=environment, capture_output=True, text=True, timeout=60)
                 if acceptance.returncode:
                     raise SystemExit(f"Installed {name} process acceptance failed: " + acceptance.stderr[-2000:])
                 print(acceptance.stdout.strip())
             print(f"Independent wheel/install smoke passed: {name}")
+        if os.environ.get("AMPHORA_TEST_POSTGRES") == "1":
+            runtime_python, runtime_project = installed["amphora_campaign_runtime"]
+            artifact_python, _ = installed["amphora_data_artifacts"]
+            acceptance = subprocess.run([str(runtime_python), "-I",
+                str(runtime_project / "tests/acceptance/integrated_probe.py"), str(artifact_python)],
+                cwd=root, env=paired_environment, capture_output=True, text=True, timeout=120)
+            if acceptance.returncode:
+                raise SystemExit("Installed paired acceptance failed: " + acceptance.stderr[-3500:])
+            print(acceptance.stdout.strip())
 
 
 def main():
