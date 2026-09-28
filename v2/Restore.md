@@ -12,7 +12,7 @@
 - Evidence: 172 aggregate tests pass with PostgreSQL enabled; lint/import/schema checks and eight independent wheel installs pass, including migration SQL resources. 56 published input/output schemas. Runtime persistence 11 tests, artifact service 61. [Persistence audit](docs/Audits/BP-02.02_Persistence_Closeout.md) records exact scope and coverage limits.
 - Environment: Python 3.12, uv bootstrap and Docker Desktop available. Labeled PostgreSQL 17.11 fixture is running; helper reset/restart verified. Dynamic endpoint and credentials are only in ignored `.test-results/postgres-fixture.json`; do not copy them to docs/logs. `dev/postgres_fixture.py verify` refreshes endpoint after restart. Use `AMPHORA_TEST_POSTGRES=1` for actual database tests. Cargo absent; Rust remains later scope.
 - Blockers: Git identity configured locally as tkn1234 <alb_gen@live.com>; no A5 implementation blocker. Scientific sources/provider/target-host policy remain later decisions; synthetic fixtures are authorized. Existing Starlette/httpx test-client deprecation is nonblocking dev maintenance.
-- Git: last pushed checkpoint `99d219c`; verified architecture/planning and foundation checkpoint through A4 is ready for commit/push with the user-provided local identity. Resume A5 after publishing; use git log and origin/main to confirm the resulting revision.
+- Git: implementation checkpoint `82ef9cf` pushed to origin/main. Repository-local author is tkn1234 <alb_gen@live.com>. GitHub reported the repository moved; origin now uses https://github.com/neverhumanbot/mvp20-split.git. Resume A5; no Git identity blocker remains.
 
 ## Decomposition and Resume Discipline
 
