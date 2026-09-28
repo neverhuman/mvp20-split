@@ -2,14 +2,14 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-03.01 / Build / B3.
-- Last refreshed: `2026-09-28 14:16:49` (America/Chicago).
+- Status: primary_active; BP-03.02 / Build / B1.
+- Last refreshed: `2026-09-28 14:25:40` (America/Chicago).
 - Owner/scope: Capability Registry and independently packaged tools.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: BP-01 contracts and completed BP-02 claim/artifact/authority gates.
-- Implementation: **12.50%**, 2/16 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
+- Implementation: **25%**, 4/16 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-03.01/B3 independent failure oracles. Next: V1 installed acceptance.
+- Current implementation task: BP-03.02/B1 scoped registry boundary. Next: .02/B2 routing policy.
 - Demonstrated behavior: immutable identity, semantic validation and separate selection observations verified; registry persistence/routing/tools remain pending.
 - Blockers: BP-01/BP-02 predecessor gates passed; no current user blocker. External choices remain only at their named dependent gates.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
@@ -29,8 +29,8 @@ Primary services retain private state, dependencies, migrations and module READM
 
 | Parent phase / child | Overall | Build | Acceptance | Prerequisite |
 |---|---:|---:|---:|---|
-| P1 / [BP-03.01 Identity and descriptor contracts](BP-03/BP-03.01%20Identity%20and%20descriptor%20contracts.md) | 50% | 66.67% | 0% | B2 passed; B3 active |
-| P2 / [BP-03.02 Registry and version routing](BP-03/BP-03.02%20Registry%20and%20version%20routing.md) | 0% | 0% | 0% | BP-03.01 acceptance |
+| P1 / [BP-03.01 Identity and descriptor contracts](BP-03/Completed/BP-03.01%20Identity%20and%20descriptor%20contracts.md) | 100% | 100% | 100% | Closed/audited |
+| P2 / [BP-03.02 Registry and version routing](BP-03/BP-03.02%20Registry%20and%20version%20routing.md) | 0% | 0% | 0% | .01 passed; B1 active |
 | P3 / [BP-03.03 Worker protocol and independent tools](BP-03/BP-03.03%20Worker%20protocol%20and%20independent%20tools.md) | 0% | 0% | 0% | BP-03.02 acceptance |
 | P4 / [BP-03.04 Replicas and replacement proof](BP-03/BP-03.04%20Replicas%20and%20replacement%20proof.md) | 0% | 0% | 0% | BP-03.03 acceptance |
 

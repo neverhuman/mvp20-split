@@ -2,6 +2,7 @@
 
 - Design status: recommended service-per-tool deployment model; no cluster or services implemented
 - Last reviewed: `2026-09-23 09:41:20` (America/Chicago)
+- Implementation boundary: BP-03.01 descriptor identity and pure synthetic selection policy accepted; durable registry/deployments and actual standalone tools remain BP-03.02-.04. This document retains the broader intended design.
 - Parent: [Scientific Capability Platform](Capability_Architecture.md)
 - Scope: standalone packaging, common invocation protocol, indexing and replica lifecycle
 

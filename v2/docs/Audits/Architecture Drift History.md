@@ -49,3 +49,5 @@ Aligned within documentation scope; [planning review](Planning_Maturity_Review.m
 - `2026-09-28 13:10:54`: BP-02.05 aligned at 100%; [scoped audit](BP-02.05_Completion_Delivery_Closeout.md). 298 tests and actual independently installed peer acceptance/cancellation passed. No blocking or unowned drift; .06 owns full restart matrix.
 
 - `2026-09-28 13:45:17`: BP-02.06 and parent aligned/closed; [recovery audit](BP-02.06_Recovery_Integration_Closeout.md), [parent audit](BP-02_Foundation_Closeout.md). 307 final component tests, REC-01..09 and fresh replacement proof; exact manifests preserved. Terminal-blocked wording aligned to requirements with explicit oracle; stale progress/status mirrors corrected. No blocking or unowned drift.
+
+- `2026-09-28 14:25:40`: [BP-03.01 descriptor closeout](BP-03.01_Descriptor_Closeout.md) aligned; additive contracts, focused independent policy, golden failures and fresh install/actual peer proof passed. No follow-up in the closed scope; durable registry remains .02.

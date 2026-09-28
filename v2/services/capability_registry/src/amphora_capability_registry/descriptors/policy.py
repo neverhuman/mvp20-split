@@ -21,9 +21,9 @@ class PermissionPolicy:
 
     def __post_init__(self):
         if (not isinstance(self.allowed_egress_hosts, tuple) or len(self.allowed_egress_hosts) > 64
-            or len(set(self.allowed_egress_hosts)) != len(self.allowed_egress_hosts)
             or any(not isinstance(host, str) or len(host) > 253 or not re.fullmatch(r"[a-z0-9]+(?:[.-][a-z0-9]+)*", host)
-                   for host in self.allowed_egress_hosts)):
+                   for host in self.allowed_egress_hosts)
+            or len(set(self.allowed_egress_hosts)) != len(self.allowed_egress_hosts)):
             raise ValueError("Explicit bounded egress host allowlist required")
 
     def rejections(self, descriptor):

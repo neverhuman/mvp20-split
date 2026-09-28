@@ -99,6 +99,28 @@ def independent_builds(uv):
                     raise SystemExit(f"Installed {name} process acceptance failed: " + acceptance.stderr[-2000:])
                 print(acceptance.stdout.strip())
             print(f"Independent wheel/install smoke passed: {name}")
+        registry_python, registry_project = installed["amphora_capability_registry"]
+        registry_probe = registry_project / "tests/acceptance/installed_probe.py"
+        registry_replacement = root / "registry-replacement"
+        run([uv, "venv", "--python", sys.executable, registry_replacement])
+        replacement_python = registry_replacement / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
+        constraints, selected = install_recipes["amphora_capability_registry"]
+        run([uv, "pip", "install", "--python", replacement_python, "--constraint", constraints, *selected])
+        fixture_cases = json.loads((ROOT / "contracts/fixtures/v1/tool_releases.json").read_text())
+        for fixture in fixture_cases:
+            previous = None
+            for executable in (registry_python, replacement_python):
+                request = fixture if previous is None else json.loads(previous)
+                checked = subprocess.run([str(executable), "-I", str(registry_probe)], cwd=root,
+                    input=json.dumps(request) + "\n", capture_output=True, text=True, timeout=20)
+                if checked.returncode:
+                    raise SystemExit("Installed registry descriptor proof failed: " + checked.stderr[-2000:])
+                if previous is not None:
+                    assert checked.stdout == previous, "Replacement changed descriptor lock or policy decision"
+                previous = checked.stdout
+        print("Installed registry: both golden descriptors, canonical locks and decisions preserved across fresh replacement")
+        paired_environment["AMPHORA_REGISTRY_PROBE_PYTHON"] = str(registry_python)
+        paired_environment["AMPHORA_REGISTRY_PROBE_SCRIPT"] = str(registry_probe)
         if os.environ.get("AMPHORA_TEST_POSTGRES") == "1":
             runtime_python, runtime_project = installed["amphora_campaign_runtime"]
             artifact_python, _ = installed["amphora_data_artifacts"]

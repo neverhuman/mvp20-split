@@ -3,6 +3,7 @@
 - Design status: detailed proposed contract; implementation and scientific acceptance pending
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
 - Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
+- Implementation boundary: BP-03.01 descriptor identity and pure synthetic selection policy accepted; durable registry/deployments and actual standalone tools remain BP-03.02-.04. This document retains the broader intended design.
 - Parent: [Domain overview](Capability_Architecture.md)
 - Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#extensible-capability-node-platform)
 

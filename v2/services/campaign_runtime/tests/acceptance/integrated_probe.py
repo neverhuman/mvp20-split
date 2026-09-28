@@ -81,8 +81,24 @@ def main():
             invocation["inputs"][0]["artifact"] = input_ref
             port = {"name": "value", "schema_ref": schema, "representation": "synthetic", "unit": "1"}
             descriptor = {"schema_version": "1", "binding": invocation["tool"], "purpose": "Synthetic paired acceptance",
-                          "applicability": ["test"], "inputs": [port], "outputs": [port], "side_effects": "pure",
+                          "applicability": ["synthetic-tests"], "inputs": [port], "outputs": [port], "side_effects": "pure",
                           "checkpoint_schema": schema}
+            if "AMPHORA_REGISTRY_PROBE_PYTHON" in os.environ:
+                release = {"schema_version": "1", "tool": descriptor, "resources": {"architectures": ["x86_64", "aarch64"],
+                    "operating_systems": ["linux", "windows"], "cpu_millicores": 1000, "memory_mib": 64,
+                    "gpu_count": 0, "timeout_seconds": 120, "max_parallel_invocations": 2, "max_batch_size": 1},
+                    "egress": {"mode": "deny"}, "checkpoint": {"mode": "opaque_artifact", "readable_schema_sha256": [schema["sha256"]]},
+                    "reproducibility": "deterministic", "authority_ceiling": "synthetic_only",
+                    "examples": ["Synthetic paired fixture"], "anti_examples": ["Scientific efficacy"]}
+                checked = subprocess.run([os.environ["AMPHORA_REGISTRY_PROBE_PYTHON"], "-I",
+                    os.environ["AMPHORA_REGISTRY_PROBE_SCRIPT"]], cwd=root, env=support.isolated_env(),
+                    input=json.dumps({"descriptor": release}) + "\n", capture_output=True, text=True, timeout=20)
+                assert checked.returncode == 0, checked.stderr[-2000:]
+                selected = json.loads(checked.stdout)
+                assert selected["decision"]["status"] == "candidate"
+                assert selected["lock"]["tool"] == invocation["tool"]
+                # The real runtime consumes only its existing public descriptor contract.
+                descriptor = selected["tool"]
             branches = json.loads(json.dumps(definition))
             branches["fixture_id"] = "synthetic-branches"
             second = json.loads(json.dumps(invocation))
