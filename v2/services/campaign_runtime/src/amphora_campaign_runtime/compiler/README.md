@@ -1,6 +1,6 @@
 # Executable campaign compiler
 
-- Status: BP-04.01/B1-B3 implemented and verified; independent replacement/peer acceptance gates tracked in the [owning plan](../../../../../docs/Build%20Plans/BP-04/BP-04.01%20Compiler%20and%20executable%20contract.md).
+- Status: BP-04.01 complete and audited; boundary evidence retained in the [owning plan](../../../../../docs/Build%20Plans/BP-04/Completed/BP-04.01%20Compiler%20and%20executable%20contract.md).
 - Owner: Campaign Runtime. Architecture: [Graph Execution Model](../../../../../docs/Architecture/System/Graph_Execution_Model.md).
 - Public wire boundary: campaigns 0.2.0, executable wire v2. Existing validation-only wire v1 is unchanged.
 
@@ -45,4 +45,4 @@ Owned tests: `services/campaign_runtime/tests/compiler`; selector `dev/run_tests
 
 B3: 111 focused cases pass; compiler-only coverage extracted from the Runtime owner report is 573/573 statements and 144/144 branches (100% each). This is scoped code coverage, not exhaustive state-space or scientific proof. The whole Runtime denominator includes unrelated unexecuted lifecycle modules and is not a compiler coverage score. A 52-case independently authored rejection matrix covers control, binding, pin, policy, scope and wire-limit failures; every semantic rejection is followed by a successful original-plan compilation to detect contamination. Positive cases preserve parallel AND paths, all-join availability, partial missingness, zero scatter, explicit captures, checkpoint mapping, typed artifact projection and plan-bound occurrences. Manual scope-order oracles and the pre-existing numerical plan establish expected output independently of compiler algorithms. Ordered member/context edits affect identity; irrelevant named-map ordering does not.
 
-V1 still must prove independent installation and actual Registry/tool compatibility. Interpreter persistence, predicate evaluation, aggregate terminalization, actual scatter freezing, scheduling/recovery and executable HTTP admission remain subsequent child gates. No general execution API is enabled by this module.
+V1 passed: five plans against actual public Registry and both installed tools, fresh compiler/Registry replacement, retained receipts/plans and stable exact history after drain. See [owned installed acceptance](../../../tests/compiler/acceptance/README.md) and [audit](../../../../../docs/Audits/BP-04.01_Compiler_Closeout.md), scope 498bc3389bca4a96b0d7f7690bd39577. No capacity or dispatch authority was fabricated. Interpreter persistence, predicate evaluation, aggregate terminalization, actual scatter freezing, scheduling/recovery and executable HTTP admission remain subsequent child gates. No general execution API is enabled by this module.

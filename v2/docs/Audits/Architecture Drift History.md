@@ -59,3 +59,5 @@ Aligned within documentation scope; [planning review](Planning_Maturity_Review.m
 - `2026-09-28 17:12:18`: TOOL-META-01 resolved by BP-03.04/B2 immutable sequence 0.3.0 descriptor/image; statistics label corrected, payload schemas unchanged, built 0.2.0 history retained. [Actual cutover](Evidence/BP-03-Replicas/README.md) passed. Follow-up: none for this metadata refinement.
 
 - `2026-09-28 17:23:58`: [Replica closeout](BP-03.04_Replica_Closeout.md) and [BP-03 parent audit](BP-03_Tool_Execution_Closeout.md) aligned at 100%; eight actual owner/worker cases, exact images/releases and retained history. No blocking/unowned follow-up; general executable graphs remain BP-04.
+
+- `2026-09-28 18:20:22`: [Compiler closeout](BP-04.01_Compiler_Closeout.md) aligned; explicit wire-v2, scoped pure compiler, independent semantic oracles and actual installed public Registry/tool/replacement acceptance. Optional output availability is conservative and explicit; no execution authority inferred from compilation. Follow-up: none within the closed compiler scope; frontier/interpreter remains BP-04.02/.03.

@@ -1,10 +1,10 @@
 # Architecture Drift
 
-- Status: BP-02/BP-03 closed/audited; BP-04 compiler active
-- Last refreshed: `2026-09-28 17:23:58` (America/Chicago)
+- Status: BP-02/BP-03 closed/audited; BP-04.01 compiler closed; BP-04.02 frontier active
+- Last refreshed: `2026-09-28 18:20:22` (America/Chicago)
 - Scope: v2 design/implementation alignment
 - Active focus: require traceable contracts and closeout audits as implementation begins
-- Next gate: BP-04.01 executable contract/compiler
+- Next gate: BP-04.02 durable frontier/scheduling
 
 ## Active Findings
 

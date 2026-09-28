@@ -1,0 +1,110 @@
+{
+  "observations": [
+    {
+      "no_live_capacity": true,
+      "observed_at": "2026-09-28 18:15:39",
+      "plans": [
+        "6ae18590c53ad9d47f009c6caa354b6ba75a6558380d6ca85e3fbad8f780b6c6",
+        "38e98ce2805ffb6d1db979b3b5023085aed76d1893bfe743e2a59a2f6279aa44",
+        "964c2b68e1081fa4e9ed96e88b7219bdec7095b2c835e1079ef47e99283ebe71",
+        "049a273d121bed1c7a19a75b65414c35b3a2ad78879391840e687e92f74545a6",
+        "c72628a97485c66317e8da51b228025d05a3c22ea5704c58d063453a98fbe5de"
+      ],
+      "stage": "original"
+    },
+    {
+      "observed_at": "2026-09-28 18:15:44",
+      "original_receipts_and_plans_preserved": true,
+      "stage": "fresh_replacement"
+    },
+    {
+      "observed_at": "2026-09-28 18:15:45",
+      "plan_identity_preserved_without_dispatch_authority": true,
+      "stage": "drained_exact_history"
+    }
+  ],
+  "packages": {
+    "amphora_campaign_runtime-0.2.0-py3-none-any.whl": "cf61c377c213f081ac84410e8b747d1db0319da1d47a38d8c264c86b4c4b0a08",
+    "amphora_capability_registry-0.1.0-py3-none-any.whl": "6ddc6bc2246975de3ec437e2302ced53cca29936e90b40f60e80f12a04ffa048",
+    "amphora_contracts_artifacts-0.1.0-py3-none-any.whl": "bda69bb93b8fd3b76eaf4b22eeacf750c68db972b5de8d555a27ef1507494989",
+    "amphora_contracts_campaigns-0.2.0-py3-none-any.whl": "8b7d7b0cb82c0d7d12f5811a32e2729d4ea6054dd8b77c3c497b628a6e1c46c6",
+    "amphora_contracts_commands-0.1.0-py3-none-any.whl": "476beedaecc51c050c1e13efe2dbcd7c84a1b6b35201bb212d2935342bcb7a1b",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "5ee43eef187331776210ea39979841bf7840482645a8e67a5d232a99baf27f35",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "92918bab870693aef47c708044769bf7866b3c218903259e7ba51776259a63cc",
+    "amphora_numeric_affine-0.2.0-py3-none-any.whl": "ffa8118003334033064e556fdbb24ef58c38950bbbce64be2933a0481692791f",
+    "amphora_sequence_statistics-0.3.0-py3-none-any.whl": "78ae41c49ae72ca3f75aefc3520d2b6e568f76a1fa0b312228db5e0d47490f31",
+    "amphora_tool_protocol-0.1.0-py3-none-any.whl": "40c06b756eab9fcca80e84150e006c889c8b51ae56303db9f0e1f02733d21df0"
+  },
+  "retained_plans_sha256": "f0d9cf5fa9bc9b739d8e3a0d67aa356660bd3205050c0262dff368a19df10efa",
+  "scenario": "installed-compiler-public-peers-v1",
+  "scope": {
+    "project_id": "498bc3389bca4a96b0d7f7690bd39577",
+    "tenant_id": "compiler-installed"
+  },
+  "status": "passed",
+  "tool_locks": [
+    {
+      "checkpoint_schema": null,
+      "descriptor_sha256": "881012eaaada89d3992a081df932c5be2013ed2e390db7699d76eaf1e33fec5f",
+      "input_schemas": [
+        {
+          "port": "parameters",
+          "schema_ref": {
+            "schema_id": "synthetic.numeric-affine.input",
+            "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+            "version": "1"
+          }
+        }
+      ],
+      "output_schemas": [
+        {
+          "port": "result",
+          "schema_ref": {
+            "schema_id": "synthetic.numeric-affine.output",
+            "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+            "version": "1"
+          }
+        }
+      ],
+      "schema_version": "1",
+      "tool": {
+        "capability_id": "synthetic.numeric-affine",
+        "contract_version": "1",
+        "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+        "release": "0.2.0"
+      }
+    },
+    {
+      "checkpoint_schema": null,
+      "descriptor_sha256": "44829fa5fd9556971f7c2bd2ab762b415ef20328f6200d780cb1cf613deabae3",
+      "input_schemas": [
+        {
+          "port": "parameters",
+          "schema_ref": {
+            "schema_id": "synthetic.sequence-statistics.input",
+            "sha256": "9ed39b51350f0cc9461cefade3f9b675d6f827c93f012ee71a4668fff4ad1674",
+            "version": "1"
+          }
+        }
+      ],
+      "output_schemas": [
+        {
+          "port": "result",
+          "schema_ref": {
+            "schema_id": "synthetic.sequence-statistics.output",
+            "sha256": "3c9502d3276bf662a855665bf5e02b2b93647ef62fea54bfb308d45a9838d842",
+            "version": "1"
+          }
+        }
+      ],
+      "schema_version": "1",
+      "tool": {
+        "capability_id": "synthetic.sequence-statistics",
+        "contract_version": "1",
+        "image_sha256": "4364cc50b6c6ad07ebec70a8969f65c35fdd7054752e861510fe02b5ec3ae305",
+        "release": "0.3.0"
+      }
+    }
+  ]
+}
