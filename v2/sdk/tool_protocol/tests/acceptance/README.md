@@ -1,0 +1,14 @@
+# Worker Acceptance Harness
+
+- Status: BP-03.03/B3 harness implemented; actual installed run is the acceptance gate.
+- Owner: SDK integration tests; tool kernels/goldens stay in their own packages.
+
+`probe.py` builds a disposable scoped configuration for independently installed runtime/artifact owners and independently installed tool workers. It uses public HTTP only, no owner imports or SQL. Worker subprocesses receive only explicitly named worker tokens and a small OS environment, never migration/service database credentials. Configured schemas are read from installed tool resources and checked against actual image descriptors. Every internal wheel hash must match the separately built Linux image's closure.
+
+`support.py` owns processes and a transparent test relay. Normal operations reach the real owner; selected response loss occurs after an actual successful response. Partial-stream injection disconnects an actual owner upload before its declared length. The relay records only methods, paths, scoped command identity, body hashes, status and fault markers, never credentials or payload contents. `test_relay.py` verifies this instrumentation against a loopback peer; it is not owner integration evidence.
+
+`scenarios.py` owns cross-boundary oracles: both golden tools; lost upload/finalization/completion replies; explicit invalid-symbol rejection; interrupted stream without finalization; wrong image pin without fallback; worker admission denial; and actual expiry/reclaim with increasing fence. `worker_probe.py` is a test-only computation barrier around installed tool and SDK code. It never changes production endpoints. Holding it beyond the ten-second DB lease must prevent publication/completion; a new real CLI worker must reclaim and finish.
+
+Select the live gate with `AMPHORA_TEST_POSTGRES=1` and `verify_foundation.py --builds --tool-images <image-manifest.json>`. The foundation harness supplies independent installations while they exist; no source-tree fallback is allowed. Credentials stay in the ignored fixture and child environments. Evidence under `.test-results/worker-acceptance/<scope>/` binds wheel/image identities, runs, commands, attempts/fences, completions and artifacts, with a manifest digest. Preserve reviewed credential-free manifests at closeout.
+
+Windows wheel-to-owner process evidence and Linux image kernel/isolation evidence are distinct. Matching internal wheels does not claim that Linux containers ran the Windows owner topology, or that DGX/Threadripper deployment was tested. Linux images have actual manifest/config digests, locked dependency wheels and network-disabled non-root golden probes. Target-host, remote transport and selected-cluster acceptance remain later gates. Synthetic numerical/symbol results are not scientific validity.

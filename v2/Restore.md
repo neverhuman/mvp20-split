@@ -2,16 +2,18 @@
 
 ## Current Checkpoint
 
-- Last refreshed: `2026-09-28 16:11:58` (America/Chicago).
+- Last refreshed: `2026-09-28 16:47:03` (America/Chicago).
 - Workspace: v2 active; v1 frozen. External references require task-specific authorization.
-- Canonical position: BP-03 -> [BP-03.03](docs/Build%20Plans/BP-03/BP-03.03%20Worker%20protocol%20and%20independent%20tools.md) / Build / B3 actual independent process/image recovery; next V1 replacement/audit.
-- Progress: BP-02 closed 100% (32/32). BP-03 62.50% (10/16), .01/.02 closed/audited 100%, .03 50% (Build 66.67%, Acceptance 0%); BP-04..09 0%.
-- Latest work: .03 B2 accepted: exact-pinned clients, receipt-first/pending recovery, monotonic lease/skew policy, terminal versus retryable failures and safe tool/CLI errors. B1 SDK/tool delivery pushed as ade9df2; artifacts prerequisites 254d419.
+- Canonical position: BP-03 -> [BP-03.03](docs/Build%20Plans/BP-03/BP-03.03%20Worker%20protocol%20and%20independent%20tools.md) / Acceptance / V1 fresh replacement and scoped audit; next BP-03.04 activation.
+- Progress: BP-02 closed 100% (32/32). BP-03 68.75% (11/16), .01/.02 closed/audited 100%, .03 75% (Build 100%, Acceptance 0%); BP-04..09 0%.
+- Previous work: .03 B2 accepted: exact-pinned clients, receipt-first/pending recovery, monotonic lease/skew policy, terminal versus retryable failures and safe tool/CLI errors. B1 SDK/tool delivery pushed as ade9df2; artifacts prerequisites 254d419.
 - Evidence: B2 117 focused cases: SDK 82/100% of 389 statements/102 branches; numeric 16/82% of 86/12; sequence 19/84% of 98/16, separate CLI evidence. Twelve fresh independent package builds/installs plus tool goldens and registry pure replacement passed; lint/import/schema guards passed. No owner persistence changed; B1 529-test/actual REC-01..09 proof (scope 6b88a870ac7844e3b71e5d9c3b0b4e37) retained. Actual SDK/tool-to-owner execution and image/replacement proof remain B3/V1.
 - Authority: autonomous continuation and significant commit/push checkpoints authorized. No current user blocker; later scientific/provider/host gates remain explicit.
 - Environment: Python 3.12, uv, labeled PostgreSQL 17.11 fixture. Dynamic credentials only in ignored .test-results/postgres-fixture.json. Registry has separate migration/service roles; registry_owner only extends labeled fixture. Set AMPHORA_TEST_POSTGRES=1; never publish credentials or reset concurrently with tests.
-- Git: ade9df2 pushed; .03 B2 delivery verified for commit/push. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
-- B3 handoff: build independent tool images from locked offline wheel closures and digest-pinned Python base; record actual image identity separately from wheel/source hashes. Tool templates target Linux x86_64; local wheel probes are Windows compatibility evidence and use explicitly fake image pins. Build an owner-local SDK acceptance harness using actual independently installed runtime/artifact/tool processes, least-privilege worker tokens, typed schema files and public APIs only. Inject response loss, interrupted stream and expired/lost authority; prove exact pins, safe failures and no work-admission/private SQL. ToolAttemptContext uses bounded stage renewal and configured clock-skew allowance; long scientific kernels/remote topology need a reviewed profile. V1 adds fresh replacement and scoped audit.
+- Git: 26e1756 pushed; .03 B3 delivery verified for commit/push. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
+- Latest work: B3 actual image and worker-owner proof passed. Nine cases, scope 951eb6472e914af3acabf0c4f40e6306; both Linux images non-root/network-disabled goldens, same internal wheel bytes as independently installed Windows worker probes. Preserved docs/Audits/Evidence/BP-03-Workers. Initial full command passed 597 tests/twelve builds/REC then hit a harness stderr-pipe deadlock; fixed harness and focused live rerun passed all nine. No production behavior change.
+- V1 handoff: prove fresh worker environments preserve prior receipts/artifacts and execute new campaigns; scoped architecture drift audit, archive child, activate .04. Do not conflate Windows process proof, Linux image goldens or target-host deployment.
+
 - Limits: general interpreter, actual scientific tools/evidence, model/knowledge/Studio and host backup/power-loss remain later plans. Existing test-client warning and pre-existing v1/LICENSE manifest discrepancy remain nonblocking assigned maintenance. Recovery operating boundary: services/campaign_runtime/RECOVERY.md.
 
 ## Decomposition and Resume Discipline

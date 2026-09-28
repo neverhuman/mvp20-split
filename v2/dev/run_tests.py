@@ -36,7 +36,7 @@ def main():
     areas = {"runtime": {"graph", "admission", "api", "baseline", "persistence", "lifecycle", "completion", "delivery", "inspection", "acceptance"},
              "data-artifacts": {"persistence", "publication", "storage", "retention", "maintenance", "acceptance"},
              "registry": {"descriptors", "persistence", "api", "routing"},
-             "worker-sdk": {"transport", "lifecycle"}}
+             "worker-sdk": {"transport", "lifecycle", "acceptance"}}
     if args.area and args.area not in areas.get(args.module, set()):
         parser.error("--area must belong to the selected module")
     findings = ownership_issues()

@@ -1,0 +1,2511 @@
+{
+  "cases": [
+    {
+      "artifact_requests": [
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/e6da94cacf024a65a189d082baa44c84",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/e6da94cacf024a65a189d082baa44c84/content",
+          "status": 200
+        },
+        {
+          "body_sha256": "8edde3809647f689dfc6562eb6b737fff141c9751978f44189fbd1b020e25a1b",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "artifacts.begin_upload",
+            "command_id": "upload-56a336888cd3422d8678f8c03908c4aa",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/uploads",
+          "status": 200
+        },
+        {
+          "body_sha256": "5094ec564a1014328ae8f2fe351c57b3a99f52d520ea84b08bd1210a0d7e5073",
+          "method": "PUT",
+          "path": "/v1/uploads/afb4c2d07a0c420da769cc71c2ae7edd/content",
+          "status": 200
+        },
+        {
+          "body_sha256": "19c2f237d3969c53f407649227d4c2c20fad16b5d632db3e2134b3285a51b8c1",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "artifacts.finalize",
+            "command_id": "finalize-56a336888cd3422d8678f8c03908c4aa",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/artifacts/finalize",
+          "status": 200
+        }
+      ],
+      "case": "WORKER-GOLDEN-amphora_numeric_affine",
+      "completion": {
+        "accepted_run_revision": 8,
+        "activation_id": "activation",
+        "canonical_result": true,
+        "completion_id": "06e5dd90e00f4e71bf3e673915422bd4",
+        "result": {
+          "attempt_id": "56a336888cd3422d8678f8c03908c4aa",
+          "fence": 1,
+          "invocation_id": "invocation",
+          "outcome": {
+            "checkpoint": null,
+            "outputs": [
+              {
+                "artifact": {
+                  "artifact_id": "10d0843fe98545c3ad1aa1935fd5b0bc",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.output",
+                    "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                    "version": "1"
+                  },
+                  "scope": {
+                    "project_id": "951eb6472e914af3acabf0c4f40e6306",
+                    "tenant_id": "sdk-acceptance"
+                  },
+                  "sha256": "5094ec564a1014328ae8f2fe351c57b3a99f52d520ea84b08bd1210a0d7e5073",
+                  "size_bytes": 45
+                },
+                "port": "result"
+              }
+            ],
+            "status": "succeeded"
+          },
+          "schema_version": "1"
+        },
+        "retention_reservation_ids": [
+          "5c4256cf13d7458281b189a325f23dba"
+        ],
+        "run_id": "64331951831b42d2afbaa0565d72f30a",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "951eb6472e914af3acabf0c4f40e6306",
+          "tenant_id": "sdk-acceptance"
+        }
+      },
+      "observed_at": "2026-09-28 16:40:05",
+      "receipt": {
+        "outcome": {
+          "binding": {
+            "identity": {
+              "actor_id": "worker",
+              "command_family": "runtime.complete",
+              "command_id": "complete-56a336888cd3422d8678f8c03908c4aa",
+              "schema_version": "1",
+              "scope": {
+                "project_id": "951eb6472e914af3acabf0c4f40e6306",
+                "tenant_id": "sdk-acceptance"
+              }
+            },
+            "operation_id": "06e5dd90e00f4e71bf3e673915422bd4",
+            "request_sha256": "79c5a0eb94d12f54bb2aa9495d6d49bb8f15256cfd6ab5dabc0b8be71ebd1bc4"
+          },
+          "committed": {
+            "kind": "completion",
+            "object_id": "06e5dd90e00f4e71bf3e673915422bd4",
+            "revision": 8
+          },
+          "status": "accepted"
+        },
+        "schema_version": "1"
+      },
+      "result": {
+        "schema_version": "1",
+        "values": [
+          5.0,
+          3.0,
+          1.0
+        ]
+      },
+      "run_id": "64331951831b42d2afbaa0565d72f30a",
+      "runtime_requests": [
+        {
+          "body_sha256": "007b5792a077235bc39b218fe59264c7c8f7ccbf3f4d2e5750440cb902438223",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.claim",
+            "command_id": "claim-1c468bdfa1504a8a9e5c1e9792e11293",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/claim",
+          "status": 200
+        },
+        {
+          "body_sha256": "116b429f724496ebb29724d27d45d4487fc4fe016ec0eedd5a31f30abf06ce25",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-f9b9cf62c0dc48549402798aba8b6cf4",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/64331951831b42d2afbaa0565d72f30a",
+          "status": 200
+        },
+        {
+          "body_sha256": "db3354408450f59fee7e6d82976274f617f3189e3e4ece5c3272388c06d2c187",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-94702241f53c44319c30bb01b477c549",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/64331951831b42d2afbaa0565d72f30a",
+          "status": 200
+        },
+        {
+          "body_sha256": "6879359cb31c34cd1848a6f68fd4e5edaada8227b854cf6c69ffed5d64ff48df",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-051015772b7a491a993494e39a55159f",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/64331951831b42d2afbaa0565d72f30a",
+          "status": 200
+        },
+        {
+          "body_sha256": "e181e0d8fa824689c73e4761cd62421f28ac8a47b2d0c3d7ecd15f997bbc96d4",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-191a2f72f2cb41e9ab72e269baf92b83",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/64331951831b42d2afbaa0565d72f30a",
+          "status": 200
+        },
+        {
+          "body_sha256": "701cf37a238ca7c382eeb6e88d9502641266dabe72360e0510acbee36152a7a4",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-9fe01d30c2f1488a808ea5751671897d",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/64331951831b42d2afbaa0565d72f30a",
+          "status": 200
+        },
+        {
+          "body_sha256": "79c5a0eb94d12f54bb2aa9495d6d49bb8f15256cfd6ab5dabc0b8be71ebd1bc4",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.complete",
+            "command_id": "complete-56a336888cd3422d8678f8c03908c4aa",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/complete",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "artifact_requests": [
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/c90d9b5a27c846fdb96babf8aa0e534b",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/c90d9b5a27c846fdb96babf8aa0e534b/content",
+          "status": 200
+        },
+        {
+          "body_sha256": "e4dd00596a51903b9b8425fcda8bc4656c2e070c46b523e791aa97a6ce6ddf5d",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "artifacts.begin_upload",
+            "command_id": "upload-b842e0b931114248bb22a8f9ae05af82",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/uploads",
+          "status": 200
+        },
+        {
+          "body_sha256": "b572f5b572518d87a0e96f9c40ffdee557d7da43cb4aa659776f542ab06d3208",
+          "method": "PUT",
+          "path": "/v1/uploads/ffd2dac323bf449e839a04f4ffea8f48/content",
+          "status": 200
+        },
+        {
+          "body_sha256": "fe3a7b38e1c3df34ec394746b5e25e62418315d8771b44fc593e9d84b4257122",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "artifacts.finalize",
+            "command_id": "finalize-b842e0b931114248bb22a8f9ae05af82",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/artifacts/finalize",
+          "status": 200
+        }
+      ],
+      "case": "WORKER-GOLDEN-amphora_sequence_statistics",
+      "completion": {
+        "accepted_run_revision": 8,
+        "activation_id": "activation",
+        "canonical_result": true,
+        "completion_id": "33d2ae80ea92424aaca881e853068539",
+        "result": {
+          "attempt_id": "b842e0b931114248bb22a8f9ae05af82",
+          "fence": 1,
+          "invocation_id": "invocation",
+          "outcome": {
+            "checkpoint": null,
+            "outputs": [
+              {
+                "artifact": {
+                  "artifact_id": "ce7d924e0bdf4574bcc715834e9b4dc1",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "schema_id": "synthetic.sequence-statistics.output",
+                    "sha256": "3c9502d3276bf662a855665bf5e02b2b93647ef62fea54bfb308d45a9838d842",
+                    "version": "1"
+                  },
+                  "scope": {
+                    "project_id": "951eb6472e914af3acabf0c4f40e6306",
+                    "tenant_id": "sdk-acceptance"
+                  },
+                  "sha256": "b572f5b572518d87a0e96f9c40ffdee557d7da43cb4aa659776f542ab06d3208",
+                  "size_bytes": 144
+                },
+                "port": "result"
+              }
+            ],
+            "status": "succeeded"
+          },
+          "schema_version": "1"
+        },
+        "retention_reservation_ids": [
+          "3f4baabdb28f413488f20884127084da"
+        ],
+        "run_id": "e7e91984eddc408581c49e6371e50b8f",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "951eb6472e914af3acabf0c4f40e6306",
+          "tenant_id": "sdk-acceptance"
+        }
+      },
+      "observed_at": "2026-09-28 16:40:07",
+      "receipt": {
+        "outcome": {
+          "binding": {
+            "identity": {
+              "actor_id": "worker",
+              "command_family": "runtime.complete",
+              "command_id": "complete-b842e0b931114248bb22a8f9ae05af82",
+              "schema_version": "1",
+              "scope": {
+                "project_id": "951eb6472e914af3acabf0c4f40e6306",
+                "tenant_id": "sdk-acceptance"
+              }
+            },
+            "operation_id": "33d2ae80ea92424aaca881e853068539",
+            "request_sha256": "db478fe20f1b361c6cddd0df94520b7f0ab738f9e47bb2990e42f3e77d375823"
+          },
+          "committed": {
+            "kind": "completion",
+            "object_id": "33d2ae80ea92424aaca881e853068539",
+            "revision": 8
+          },
+          "status": "accepted"
+        },
+        "schema_version": "1"
+      },
+      "result": {
+        "counts": [
+          {
+            "count": 3,
+            "symbol": "A"
+          },
+          {
+            "count": 1,
+            "symbol": "B"
+          },
+          {
+            "count": 1,
+            "symbol": "C"
+          },
+          {
+            "count": 0,
+            "symbol": "D"
+          }
+        ],
+        "length": 5,
+        "schema_version": "1"
+      },
+      "run_id": "e7e91984eddc408581c49e6371e50b8f",
+      "runtime_requests": [
+        {
+          "body_sha256": "2a5cc8195e09f3da229814841f471b56c46c53dbbfa3d32c7844a774a47aaf49",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.claim",
+            "command_id": "claim-8aaedc61180f48ab8b49718b61516e18",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/claim",
+          "status": 200
+        },
+        {
+          "body_sha256": "eb86123f8967ba9d49c9e0e3d1f4ca9e8c03cf92e23c7fe5983a97d72dfaf909",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-baa840d45e7449d4b02540c79f2343e6",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/e7e91984eddc408581c49e6371e50b8f",
+          "status": 200
+        },
+        {
+          "body_sha256": "4799c8b01809e853d151eaf36979036a5a844fecd4061ffdfcab6da833ebc7a1",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-0701f3a330274f1b9c6ab6c0c5b27043",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/e7e91984eddc408581c49e6371e50b8f",
+          "status": 200
+        },
+        {
+          "body_sha256": "f874fec639db30f6f577b3a16dbaeacfb67e5677013b1603c63e4fb57dcfbceb",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-a1c0db97ec984d85ba4bc0661dedcd6e",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/e7e91984eddc408581c49e6371e50b8f",
+          "status": 200
+        },
+        {
+          "body_sha256": "0d4e6081349350833a30c13244a10e09cef73a5d77485cbb8082b019fc8bf0fc",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-45867f5923ce4851aa0ef1554d4f6546",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/e7e91984eddc408581c49e6371e50b8f",
+          "status": 200
+        },
+        {
+          "body_sha256": "dd7d8c9efa81f4944d763badd908ebd7a2d24eb72e181b2bc918b684f274e49c",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-545138b3c4f74487b305a805729a88bf",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/e7e91984eddc408581c49e6371e50b8f",
+          "status": 200
+        },
+        {
+          "body_sha256": "db478fe20f1b361c6cddd0df94520b7f0ab738f9e47bb2990e42f3e77d375823",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.complete",
+            "command_id": "complete-b842e0b931114248bb22a8f9ae05af82",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/complete",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "artifact_requests": [
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/e6da94cacf024a65a189d082baa44c84",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/e6da94cacf024a65a189d082baa44c84/content",
+          "status": 200
+        },
+        {
+          "body_sha256": "8354eb7a5b73cf7ab0fc1ac5565db6dcb709b7122748e071b7b1d5381574d117",
+          "fault": "response_dropped_after_owner_success",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "artifacts.begin_upload",
+            "command_id": "upload-4860cd8fdc564e8587eebb63168ee5dd",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/uploads",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/commands/artifacts.begin_upload/upload-4860cd8fdc564e8587eebb63168ee5dd",
+          "status": 200
+        },
+        {
+          "body_sha256": "5094ec564a1014328ae8f2fe351c57b3a99f52d520ea84b08bd1210a0d7e5073",
+          "method": "PUT",
+          "path": "/v1/uploads/34c277ab8c7842bca50ee2d5550eecf4/content",
+          "status": 200
+        },
+        {
+          "body_sha256": "87abca96298e8d382baabe838f0c74f29cde67c5fa4651b4702b6fac184fb50d",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "artifacts.finalize",
+            "command_id": "finalize-4860cd8fdc564e8587eebb63168ee5dd",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/artifacts/finalize",
+          "status": 200
+        }
+      ],
+      "case": "WORKER-LOST-UPLOAD",
+      "completion": {
+        "accepted_run_revision": 8,
+        "activation_id": "activation",
+        "canonical_result": true,
+        "completion_id": "a9cc2ee509a74fb99e10b0bf252eb153",
+        "result": {
+          "attempt_id": "4860cd8fdc564e8587eebb63168ee5dd",
+          "fence": 1,
+          "invocation_id": "invocation",
+          "outcome": {
+            "checkpoint": null,
+            "outputs": [
+              {
+                "artifact": {
+                  "artifact_id": "60fbe28e69fa4d1283870fe41364b83d",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.output",
+                    "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                    "version": "1"
+                  },
+                  "scope": {
+                    "project_id": "951eb6472e914af3acabf0c4f40e6306",
+                    "tenant_id": "sdk-acceptance"
+                  },
+                  "sha256": "5094ec564a1014328ae8f2fe351c57b3a99f52d520ea84b08bd1210a0d7e5073",
+                  "size_bytes": 45
+                },
+                "port": "result"
+              }
+            ],
+            "status": "succeeded"
+          },
+          "schema_version": "1"
+        },
+        "retention_reservation_ids": [
+          "98a6eca4ac0e43ad99d863f8954f931b"
+        ],
+        "run_id": "d0a8a3bb56e3494f8e005510b72d5658",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "951eb6472e914af3acabf0c4f40e6306",
+          "tenant_id": "sdk-acceptance"
+        }
+      },
+      "observed_at": "2026-09-28 16:40:08",
+      "receipt": {
+        "outcome": {
+          "binding": {
+            "identity": {
+              "actor_id": "worker",
+              "command_family": "runtime.complete",
+              "command_id": "complete-4860cd8fdc564e8587eebb63168ee5dd",
+              "schema_version": "1",
+              "scope": {
+                "project_id": "951eb6472e914af3acabf0c4f40e6306",
+                "tenant_id": "sdk-acceptance"
+              }
+            },
+            "operation_id": "a9cc2ee509a74fb99e10b0bf252eb153",
+            "request_sha256": "bd3c96ce440d69cb4331871b0725f4ce4ef611bc524f43c8982b4bc6db9def29"
+          },
+          "committed": {
+            "kind": "completion",
+            "object_id": "a9cc2ee509a74fb99e10b0bf252eb153",
+            "revision": 8
+          },
+          "status": "accepted"
+        },
+        "schema_version": "1"
+      },
+      "result": {
+        "schema_version": "1",
+        "values": [
+          5.0,
+          3.0,
+          1.0
+        ]
+      },
+      "run_id": "d0a8a3bb56e3494f8e005510b72d5658",
+      "runtime_requests": [
+        {
+          "body_sha256": "accc80f788c9061da885a141dfa2f545b9cf62c4de7cda767c795cf547cb5b69",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.claim",
+            "command_id": "claim-81df81836b7243a1aa0a542d15359cde",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/claim",
+          "status": 200
+        },
+        {
+          "body_sha256": "7347f8bf582d60126ef7c289abcf86704c7ba83fdf9969b1fdd2aeb976d95990",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-e77c22373e994f0d8f00f459860a876a",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/d0a8a3bb56e3494f8e005510b72d5658",
+          "status": 200
+        },
+        {
+          "body_sha256": "350271c4470558b443562503202de1f9b29985ea59d50983609055dd3aadc8e3",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-ec8ab64ef13348d09ffec0b2a969edf3",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/d0a8a3bb56e3494f8e005510b72d5658",
+          "status": 200
+        },
+        {
+          "body_sha256": "c57901936ada7a893d514cfb4425b2097b6fab45eee09a396a7cad3378f17f95",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-a74cc6d68f2d4e5db2d0ca4a7e3c7457",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/d0a8a3bb56e3494f8e005510b72d5658",
+          "status": 200
+        },
+        {
+          "body_sha256": "d3c28eadec9d9f69975da6da794f8b8ab8dff9afd7789553021f90bc90d6f590",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-4d55423404d1462f87bbb63aafbc29c8",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/d0a8a3bb56e3494f8e005510b72d5658",
+          "status": 200
+        },
+        {
+          "body_sha256": "b19759ab1ad4bf2149c965dc1406538eb914b091205aad288aa92ffb9dd70627",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-b3ae5903332e4200a42b7bec350d871a",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/d0a8a3bb56e3494f8e005510b72d5658",
+          "status": 200
+        },
+        {
+          "body_sha256": "bd3c96ce440d69cb4331871b0725f4ce4ef611bc524f43c8982b4bc6db9def29",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.complete",
+            "command_id": "complete-4860cd8fdc564e8587eebb63168ee5dd",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/complete",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "artifact_requests": [
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/e6da94cacf024a65a189d082baa44c84",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/e6da94cacf024a65a189d082baa44c84/content",
+          "status": 200
+        },
+        {
+          "body_sha256": "cefa724ff8cd2b5177c8a4e952dfb8f7dbdf30843942399a46b39829a58b5da9",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "artifacts.begin_upload",
+            "command_id": "upload-46c8404952d8411b8979ec9251c5f33d",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/uploads",
+          "status": 200
+        },
+        {
+          "body_sha256": "5094ec564a1014328ae8f2fe351c57b3a99f52d520ea84b08bd1210a0d7e5073",
+          "method": "PUT",
+          "path": "/v1/uploads/2bfe43ca4ab142c6abb8e7f3494c53c2/content",
+          "status": 200
+        },
+        {
+          "body_sha256": "a10639571be1cc95a72b22cce27d357219434bcfbf783544a32eb910fa4f6ee1",
+          "fault": "response_dropped_after_owner_success",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "artifacts.finalize",
+            "command_id": "finalize-46c8404952d8411b8979ec9251c5f33d",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/artifacts/finalize",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/commands/artifacts.finalize/finalize-46c8404952d8411b8979ec9251c5f33d",
+          "status": 200
+        }
+      ],
+      "case": "WORKER-LOST-FINALIZE",
+      "completion": {
+        "accepted_run_revision": 8,
+        "activation_id": "activation",
+        "canonical_result": true,
+        "completion_id": "ec4923697f1e43198936bae71deb8a1d",
+        "result": {
+          "attempt_id": "46c8404952d8411b8979ec9251c5f33d",
+          "fence": 1,
+          "invocation_id": "invocation",
+          "outcome": {
+            "checkpoint": null,
+            "outputs": [
+              {
+                "artifact": {
+                  "artifact_id": "84d91fbef5b445f3a938402ba94e8727",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.output",
+                    "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                    "version": "1"
+                  },
+                  "scope": {
+                    "project_id": "951eb6472e914af3acabf0c4f40e6306",
+                    "tenant_id": "sdk-acceptance"
+                  },
+                  "sha256": "5094ec564a1014328ae8f2fe351c57b3a99f52d520ea84b08bd1210a0d7e5073",
+                  "size_bytes": 45
+                },
+                "port": "result"
+              }
+            ],
+            "status": "succeeded"
+          },
+          "schema_version": "1"
+        },
+        "retention_reservation_ids": [
+          "7d5c45bfe55d4385b1e1b46e1559c9ea"
+        ],
+        "run_id": "fb6ba62c79814bd0a61389138dbb289b",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "951eb6472e914af3acabf0c4f40e6306",
+          "tenant_id": "sdk-acceptance"
+        }
+      },
+      "observed_at": "2026-09-28 16:40:10",
+      "receipt": {
+        "outcome": {
+          "binding": {
+            "identity": {
+              "actor_id": "worker",
+              "command_family": "runtime.complete",
+              "command_id": "complete-46c8404952d8411b8979ec9251c5f33d",
+              "schema_version": "1",
+              "scope": {
+                "project_id": "951eb6472e914af3acabf0c4f40e6306",
+                "tenant_id": "sdk-acceptance"
+              }
+            },
+            "operation_id": "ec4923697f1e43198936bae71deb8a1d",
+            "request_sha256": "ccc1c6442f04242776ecd0a4ebdb00b15f3da88055f3fa315c7b5a946f56a891"
+          },
+          "committed": {
+            "kind": "completion",
+            "object_id": "ec4923697f1e43198936bae71deb8a1d",
+            "revision": 8
+          },
+          "status": "accepted"
+        },
+        "schema_version": "1"
+      },
+      "result": {
+        "schema_version": "1",
+        "values": [
+          5.0,
+          3.0,
+          1.0
+        ]
+      },
+      "run_id": "fb6ba62c79814bd0a61389138dbb289b",
+      "runtime_requests": [
+        {
+          "body_sha256": "58f2c3a737a14d919097918e5d421441121b0528312fc4e1689a55c79a556cf2",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.claim",
+            "command_id": "claim-3b7021b89ca14e1b8ffbc90c55a563ae",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/claim",
+          "status": 200
+        },
+        {
+          "body_sha256": "70478d63a1ef2286ab0bfab5aebcdda8919a3d5aab3083ea4fdd228988575e29",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-36924aac1196441ba79d33227a9a0424",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/fb6ba62c79814bd0a61389138dbb289b",
+          "status": 200
+        },
+        {
+          "body_sha256": "556fbd39bb932566d4f8e501129f11d44a509d9300dcf28c126a900ef86f7dde",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-d5b52d415a6846d7b75e52b618d0331f",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/fb6ba62c79814bd0a61389138dbb289b",
+          "status": 200
+        },
+        {
+          "body_sha256": "354e0c70a30c1386c4b1137244e1af45b3727e2511bf5b4d70f009b0afbe12a8",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-52da08e196984882ab64ccc3805e7b06",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/fb6ba62c79814bd0a61389138dbb289b",
+          "status": 200
+        },
+        {
+          "body_sha256": "ac39281fc71f990f94f5169ede47baf0d38d8129395f32e5a4b13570b76f1a1b",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-bde7ea525bca47a48555245f3116a5c0",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/fb6ba62c79814bd0a61389138dbb289b",
+          "status": 200
+        },
+        {
+          "body_sha256": "65475e1c6260364f130b962dd1619241a709a07905c9e7517c93db2653617404",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-c0071baa0a1e40acaa99fced58eace7a",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/fb6ba62c79814bd0a61389138dbb289b",
+          "status": 200
+        },
+        {
+          "body_sha256": "ccc1c6442f04242776ecd0a4ebdb00b15f3da88055f3fa315c7b5a946f56a891",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.complete",
+            "command_id": "complete-46c8404952d8411b8979ec9251c5f33d",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/complete",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "artifact_requests": [
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/e6da94cacf024a65a189d082baa44c84",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/e6da94cacf024a65a189d082baa44c84/content",
+          "status": 200
+        },
+        {
+          "body_sha256": "dc4f7c8471543790d26bb2917ef2ee745eab1674d7990b884abdeec43ff746e3",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "artifacts.begin_upload",
+            "command_id": "upload-105150b9411a4df699c1e607b8bb0862",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/uploads",
+          "status": 200
+        },
+        {
+          "body_sha256": "5094ec564a1014328ae8f2fe351c57b3a99f52d520ea84b08bd1210a0d7e5073",
+          "method": "PUT",
+          "path": "/v1/uploads/3682ca481bd74ce1a7e03851993d47a3/content",
+          "status": 200
+        },
+        {
+          "body_sha256": "9ffbcc823661d8faf08015da2c9d397c9127e401fa231274b232c6a97c9edf57",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "artifacts.finalize",
+            "command_id": "finalize-105150b9411a4df699c1e607b8bb0862",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/artifacts/finalize",
+          "status": 200
+        }
+      ],
+      "case": "WORKER-LOST-COMPLETE",
+      "completion": {
+        "accepted_run_revision": 8,
+        "activation_id": "activation",
+        "canonical_result": true,
+        "completion_id": "7883104992984b8db4e474edb1383a6a",
+        "result": {
+          "attempt_id": "105150b9411a4df699c1e607b8bb0862",
+          "fence": 1,
+          "invocation_id": "invocation",
+          "outcome": {
+            "checkpoint": null,
+            "outputs": [
+              {
+                "artifact": {
+                  "artifact_id": "f5cb181af09f40c2a9fa01a999bd7bc1",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.output",
+                    "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                    "version": "1"
+                  },
+                  "scope": {
+                    "project_id": "951eb6472e914af3acabf0c4f40e6306",
+                    "tenant_id": "sdk-acceptance"
+                  },
+                  "sha256": "5094ec564a1014328ae8f2fe351c57b3a99f52d520ea84b08bd1210a0d7e5073",
+                  "size_bytes": 45
+                },
+                "port": "result"
+              }
+            ],
+            "status": "succeeded"
+          },
+          "schema_version": "1"
+        },
+        "retention_reservation_ids": [
+          "7b195717439442179787eb3382a253ce"
+        ],
+        "run_id": "3eb49d37773d4fec8eeaef4edcd2f822",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "951eb6472e914af3acabf0c4f40e6306",
+          "tenant_id": "sdk-acceptance"
+        }
+      },
+      "observed_at": "2026-09-28 16:40:11",
+      "receipt": {
+        "outcome": {
+          "binding": {
+            "identity": {
+              "actor_id": "worker",
+              "command_family": "runtime.complete",
+              "command_id": "complete-105150b9411a4df699c1e607b8bb0862",
+              "schema_version": "1",
+              "scope": {
+                "project_id": "951eb6472e914af3acabf0c4f40e6306",
+                "tenant_id": "sdk-acceptance"
+              }
+            },
+            "operation_id": "7883104992984b8db4e474edb1383a6a",
+            "request_sha256": "03e9183f19799d6e8bebae290714c07eb1444ab69a90ae630a529437cded6895"
+          },
+          "committed": {
+            "kind": "completion",
+            "object_id": "7883104992984b8db4e474edb1383a6a",
+            "revision": 8
+          },
+          "status": "accepted"
+        },
+        "schema_version": "1"
+      },
+      "result": {
+        "schema_version": "1",
+        "values": [
+          5.0,
+          3.0,
+          1.0
+        ]
+      },
+      "run_id": "3eb49d37773d4fec8eeaef4edcd2f822",
+      "runtime_requests": [
+        {
+          "body_sha256": "9662eed76620f574a5c3f1d9f32e41d59ef4e0c151c05458fbf31cdd751666d2",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.claim",
+            "command_id": "claim-dce3f6808d6e43f8a4056adf05d36fd5",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/claim",
+          "status": 200
+        },
+        {
+          "body_sha256": "27d6b98eec928458a4e4b1d4209906152614449d6eb815e3b3dfcecbe82f2f7f",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-fd22058de7ef4133a22881e250bfe88e",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/3eb49d37773d4fec8eeaef4edcd2f822",
+          "status": 200
+        },
+        {
+          "body_sha256": "fd87af18d96bf87935186625d6b021c94d5f0390a5e2ecc59249324fb0d40474",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-f2bdf41b8b7a4c8e890d9d01ea418ca1",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/3eb49d37773d4fec8eeaef4edcd2f822",
+          "status": 200
+        },
+        {
+          "body_sha256": "156f7dfcfe2607ae6db24168ac9e586672dc2753c4994539a46bc26860b22183",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-301fd61424a64587afeeb4351a4c9127",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/3eb49d37773d4fec8eeaef4edcd2f822",
+          "status": 200
+        },
+        {
+          "body_sha256": "8ca374ff5879eddc4829f2aafdc921e68b9fc4555d4bb17360b9aad36cd85848",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-e5c571f91373432a8e3bc74f0ef2f572",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/3eb49d37773d4fec8eeaef4edcd2f822",
+          "status": 200
+        },
+        {
+          "body_sha256": "39b1003fab72bdfeca94e60075848a86ce2d51fe452cab918207d9a858c48c94",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-2267c9e5a3c048e080f7050e9cc6650a",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/3eb49d37773d4fec8eeaef4edcd2f822",
+          "status": 200
+        },
+        {
+          "body_sha256": "03e9183f19799d6e8bebae290714c07eb1444ab69a90ae630a529437cded6895",
+          "fault": "response_dropped_after_owner_success",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.complete",
+            "command_id": "complete-105150b9411a4df699c1e607b8bb0862",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/complete",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/commands/runtime.complete/complete-105150b9411a4df699c1e607b8bb0862",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "artifact_requests": [
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/956d2cf555ea4dfeb530d6fe7ffd2712",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/956d2cf555ea4dfeb530d6fe7ffd2712/content",
+          "status": 200
+        }
+      ],
+      "case": "WORKER-INVALID-SYMBOL",
+      "completion": {
+        "accepted_run_revision": 5,
+        "activation_id": "activation",
+        "canonical_result": true,
+        "completion_id": "5759b9cb4acd4e8080b303e8d53c9bc4",
+        "result": {
+          "attempt_id": "685311ee7bb94adcb8fdf147b65f07ba",
+          "fence": 1,
+          "invocation_id": "invocation",
+          "outcome": {
+            "reason_code": "invalid_sequence_symbol",
+            "retryable": false,
+            "status": "failed"
+          },
+          "schema_version": "1"
+        },
+        "retention_reservation_ids": [],
+        "run_id": "3778d5511e3a4b0581adb79cf0c56d48",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "951eb6472e914af3acabf0c4f40e6306",
+          "tenant_id": "sdk-acceptance"
+        }
+      },
+      "observed_at": "2026-09-28 16:40:12",
+      "receipt": {
+        "outcome": {
+          "binding": {
+            "identity": {
+              "actor_id": "worker",
+              "command_family": "runtime.complete",
+              "command_id": "complete-685311ee7bb94adcb8fdf147b65f07ba",
+              "schema_version": "1",
+              "scope": {
+                "project_id": "951eb6472e914af3acabf0c4f40e6306",
+                "tenant_id": "sdk-acceptance"
+              }
+            },
+            "operation_id": "5759b9cb4acd4e8080b303e8d53c9bc4",
+            "request_sha256": "e976be828ef08079a4de84f8fe158d0d9b80ca9ca8e523a50900852bc2138fd8"
+          },
+          "committed": {
+            "kind": "completion",
+            "object_id": "5759b9cb4acd4e8080b303e8d53c9bc4",
+            "revision": 5
+          },
+          "status": "accepted"
+        },
+        "schema_version": "1"
+      },
+      "run_id": "3778d5511e3a4b0581adb79cf0c56d48",
+      "runtime_requests": [
+        {
+          "body_sha256": "d95c3843b29810e46ab487afeaa01a82ddf1dc38d371af70b83109762c26c48e",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.claim",
+            "command_id": "claim-43c2387dbaff4c528d5563fa7a08fe9a",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/claim",
+          "status": 200
+        },
+        {
+          "body_sha256": "3ed72d47b817308c308f191ff8cb8c56ebd81ccfd0b0f3d5c0490a4f727cd0dd",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-5eaa28d180404f05829ef1975eb60160",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/3778d5511e3a4b0581adb79cf0c56d48",
+          "status": 200
+        },
+        {
+          "body_sha256": "cc319cf99629ec8221021e91d30a534c1389bea806ad67dd1db72757d3e8af7a",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-43419ab68f7b43f2ae3d511a64eed74a",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/3778d5511e3a4b0581adb79cf0c56d48",
+          "status": 200
+        },
+        {
+          "body_sha256": "e976be828ef08079a4de84f8fe158d0d9b80ca9ca8e523a50900852bc2138fd8",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.complete",
+            "command_id": "complete-685311ee7bb94adcb8fdf147b65f07ba",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/complete",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "artifact_requests": [
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/e6da94cacf024a65a189d082baa44c84",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/e6da94cacf024a65a189d082baa44c84/content",
+          "status": 200
+        },
+        {
+          "body_sha256": "c9fe8865575d8347f3f21dfe8004e1ed56ac54237114f1c73b7114e4764d240c",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "artifacts.begin_upload",
+            "command_id": "upload-716574a5868247a3887d9bd013abb618",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/uploads",
+          "status": 200
+        },
+        {
+          "body_sha256": "5094ec564a1014328ae8f2fe351c57b3a99f52d520ea84b08bd1210a0d7e5073",
+          "fault": "partial_body_disconnect",
+          "method": "PUT",
+          "path": "/v1/uploads/252820fded584f848eba5e221ae038b6/content",
+          "status": 503
+        }
+      ],
+      "case": "WORKER-INTERRUPTED-STREAM",
+      "completion": {
+        "accepted_run_revision": 8,
+        "activation_id": "activation",
+        "canonical_result": false,
+        "completion_id": "a02fa1b23ce4439ea78e34c31a2512f9",
+        "result": {
+          "attempt_id": "716574a5868247a3887d9bd013abb618",
+          "fence": 1,
+          "invocation_id": "invocation",
+          "outcome": {
+            "reason_code": "tool_transport_failure",
+            "retryable": true,
+            "status": "failed"
+          },
+          "schema_version": "1"
+        },
+        "retention_reservation_ids": [],
+        "run_id": "3d6d25ff0be043ed9b48ea49e7108154",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "951eb6472e914af3acabf0c4f40e6306",
+          "tenant_id": "sdk-acceptance"
+        }
+      },
+      "observed_at": "2026-09-28 16:40:13",
+      "receipt": {
+        "outcome": {
+          "binding": {
+            "identity": {
+              "actor_id": "worker",
+              "command_family": "runtime.complete",
+              "command_id": "complete-716574a5868247a3887d9bd013abb618",
+              "schema_version": "1",
+              "scope": {
+                "project_id": "951eb6472e914af3acabf0c4f40e6306",
+                "tenant_id": "sdk-acceptance"
+              }
+            },
+            "operation_id": "a02fa1b23ce4439ea78e34c31a2512f9",
+            "request_sha256": "845a2a76f750fdaa75643afd8f8e3448186826c1653208ac2f7ad92aae7b9b01"
+          },
+          "committed": {
+            "kind": "completion",
+            "object_id": "a02fa1b23ce4439ea78e34c31a2512f9",
+            "revision": 8
+          },
+          "status": "accepted"
+        },
+        "schema_version": "1"
+      },
+      "run_id": "3d6d25ff0be043ed9b48ea49e7108154",
+      "runtime_requests": [
+        {
+          "body_sha256": "6b8493497b6b601cbba6e4f3381c800d22414fff24ef1331febde09d0884cb60",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.claim",
+            "command_id": "claim-8ee5631b0c2941798abba2b0bf7c216b",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/claim",
+          "status": 200
+        },
+        {
+          "body_sha256": "dc4a3448cb2c5b88082dc7e2109ffb4b7f2529605541841b459e4da1315f8cb4",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-76b8915e9c544799b5ea033abe0d37b9",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/3d6d25ff0be043ed9b48ea49e7108154",
+          "status": 200
+        },
+        {
+          "body_sha256": "51c82243b9f5357d17ac235432c98472688ec24a7ffff5c162ab051d432b262a",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-13437db994864bf193e57af94d572264",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/3d6d25ff0be043ed9b48ea49e7108154",
+          "status": 200
+        },
+        {
+          "body_sha256": "149b8a4699c2c30e6fee78850b037aacfa6b69549d5fb557f98a09dede8a0f65",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-344f83c5a67c49c19c34d09f93bfd43b",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/3d6d25ff0be043ed9b48ea49e7108154",
+          "status": 200
+        },
+        {
+          "body_sha256": "622e9b086596d732349f521bb4a41a4c5b90bab150b484cde7851f99fc5bc007",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-933987e49b6a43f592e26a94567f60df",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/3d6d25ff0be043ed9b48ea49e7108154",
+          "status": 200
+        },
+        {
+          "body_sha256": "e8a2cc7c7f703f972c3203fa079658915cbb7578a0b1d9c4e7ddd91464482e1f",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-84c7ed99a20140069f4f6de6f6884fc1",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/3d6d25ff0be043ed9b48ea49e7108154",
+          "status": 200
+        },
+        {
+          "body_sha256": "845a2a76f750fdaa75643afd8f8e3448186826c1653208ac2f7ad92aae7b9b01",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.complete",
+            "command_id": "complete-716574a5868247a3887d9bd013abb618",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/complete",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "artifact_requests": [
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/e6da94cacf024a65a189d082baa44c84",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/e6da94cacf024a65a189d082baa44c84/content",
+          "status": 200
+        },
+        {
+          "body_sha256": "5c54b49e1bb894f5af3eed1c2e59721063494f27ba8084a8a20960c09d4cd105",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "artifacts.begin_upload",
+            "command_id": "upload-59a43603322e41d689d03fe3712a3cd8",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/uploads",
+          "status": 200
+        },
+        {
+          "body_sha256": "5094ec564a1014328ae8f2fe351c57b3a99f52d520ea84b08bd1210a0d7e5073",
+          "method": "PUT",
+          "path": "/v1/uploads/675c8e1b67b34bfe8aaf5e355f044a1a/content",
+          "status": 200
+        },
+        {
+          "body_sha256": "2720792591285ab059e947c6d4a2d6970b1801267b2d840172602fa5414e4a7d",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "artifacts.finalize",
+            "command_id": "finalize-59a43603322e41d689d03fe3712a3cd8",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/artifacts/finalize",
+          "status": 200
+        }
+      ],
+      "case": "WORKER-EXACT-PIN-AND-NO-ADMISSION",
+      "completion": {
+        "accepted_run_revision": 8,
+        "activation_id": "activation",
+        "canonical_result": true,
+        "completion_id": "240f90b417624d089ac920aab95f2f6c",
+        "result": {
+          "attempt_id": "59a43603322e41d689d03fe3712a3cd8",
+          "fence": 1,
+          "invocation_id": "invocation",
+          "outcome": {
+            "checkpoint": null,
+            "outputs": [
+              {
+                "artifact": {
+                  "artifact_id": "af31afac24ac42bf8deb9fab6d044322",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.output",
+                    "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                    "version": "1"
+                  },
+                  "scope": {
+                    "project_id": "951eb6472e914af3acabf0c4f40e6306",
+                    "tenant_id": "sdk-acceptance"
+                  },
+                  "sha256": "5094ec564a1014328ae8f2fe351c57b3a99f52d520ea84b08bd1210a0d7e5073",
+                  "size_bytes": 45
+                },
+                "port": "result"
+              }
+            ],
+            "status": "succeeded"
+          },
+          "schema_version": "1"
+        },
+        "retention_reservation_ids": [
+          "a33d74ecdf394fc481205f4b70ecf7fb"
+        ],
+        "run_id": "542fcf988d0c4e1bb5bea3b6462f45d7",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "951eb6472e914af3acabf0c4f40e6306",
+          "tenant_id": "sdk-acceptance"
+        }
+      },
+      "observed_at": "2026-09-28 16:40:15",
+      "receipt": {
+        "outcome": {
+          "binding": {
+            "identity": {
+              "actor_id": "worker",
+              "command_family": "runtime.complete",
+              "command_id": "complete-59a43603322e41d689d03fe3712a3cd8",
+              "schema_version": "1",
+              "scope": {
+                "project_id": "951eb6472e914af3acabf0c4f40e6306",
+                "tenant_id": "sdk-acceptance"
+              }
+            },
+            "operation_id": "240f90b417624d089ac920aab95f2f6c",
+            "request_sha256": "8350f4a2274a21eb341a6df4da5dd673fe843d790c4a2d8dcce964ffa04cef7d"
+          },
+          "committed": {
+            "kind": "completion",
+            "object_id": "240f90b417624d089ac920aab95f2f6c",
+            "revision": 8
+          },
+          "status": "accepted"
+        },
+        "schema_version": "1"
+      },
+      "result": {
+        "schema_version": "1",
+        "values": [
+          5.0,
+          3.0,
+          1.0
+        ]
+      },
+      "run_id": "542fcf988d0c4e1bb5bea3b6462f45d7",
+      "runtime_requests": [
+        {
+          "body_sha256": "c6a08d0ae2c439485ffb85cdcdfff2142d21140e5054fc52be9356455a1596ac",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.claim",
+            "command_id": "claim-c10a251a78dd4f4c9873feeb52a387d2",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/claim",
+          "status": 200
+        },
+        {
+          "body_sha256": "49ddc673cf795355fb3a7da55454ff1fbe0dbfd7e5a0d72cbf574dcba90e5cf1",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.claim",
+            "command_id": "claim-11b00377fd9c49f780fa01ab0e61a4f6",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/claim",
+          "status": 200
+        },
+        {
+          "body_sha256": "bb920e191edef30c061c21c382f1eb86e55d82a0ed76aecd7e2c6d01e085fb1f",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-3ebdd66b078f44318cfb6d3ecd0ed030",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/542fcf988d0c4e1bb5bea3b6462f45d7",
+          "status": 200
+        },
+        {
+          "body_sha256": "39d1b8c189f70ed319aa5621e9ae65d99e505fba2f823c9377d68c1420ae2487",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-db901036b4454fffa1ef3f7d30a6bdb8",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/542fcf988d0c4e1bb5bea3b6462f45d7",
+          "status": 200
+        },
+        {
+          "body_sha256": "b75e54a5d44404e7215a6293d115fed9e99df3dbb0b7c12d9a4e6cab30f06a8b",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-43c8c33ec1d344f2a191ac1e2a65d13c",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/542fcf988d0c4e1bb5bea3b6462f45d7",
+          "status": 200
+        },
+        {
+          "body_sha256": "7091e000c3788fdcc2860707c592ea176caff74631d66a6c595434393c6d8c06",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-c9c9cf9f27814c1b88fd7499eb5bfa92",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/542fcf988d0c4e1bb5bea3b6462f45d7",
+          "status": 200
+        },
+        {
+          "body_sha256": "7f9a26e8aa571bcc22c7754012106def79a610f81793fcfd8a656e3a95ffdba3",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-50d5cb9c6a4f4faab35229dd4d3426a1",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/542fcf988d0c4e1bb5bea3b6462f45d7",
+          "status": 200
+        },
+        {
+          "body_sha256": "8350f4a2274a21eb341a6df4da5dd673fe843d790c4a2d8dcce964ffa04cef7d",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.complete",
+            "command_id": "complete-59a43603322e41d689d03fe3712a3cd8",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/complete",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "artifact_requests": [
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/e6da94cacf024a65a189d082baa44c84",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/e6da94cacf024a65a189d082baa44c84/content",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/e6da94cacf024a65a189d082baa44c84",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/artifacts/e6da94cacf024a65a189d082baa44c84/content",
+          "status": 200
+        },
+        {
+          "body_sha256": "8853fe7c60004d22fc3a3f2cf16de1315c924aaf6a3fa6fcc31f57c874d67067",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "artifacts.begin_upload",
+            "command_id": "upload-7e619e8cef374c8680e75c5dc52cb79d",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/uploads",
+          "status": 200
+        },
+        {
+          "body_sha256": "5094ec564a1014328ae8f2fe351c57b3a99f52d520ea84b08bd1210a0d7e5073",
+          "method": "PUT",
+          "path": "/v1/uploads/686a057696324801a40db3931031ce73/content",
+          "status": 200
+        },
+        {
+          "body_sha256": "563823b9b0008e03d6cc635ca1256346d46cb5423b366a5346ffc89eb222cda3",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "artifacts.finalize",
+            "command_id": "finalize-7e619e8cef374c8680e75c5dc52cb79d",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/artifacts/finalize",
+          "status": 200
+        }
+      ],
+      "case": "WORKER-EXPIRED-AND-RECLAIMED",
+      "completion": {
+        "accepted_run_revision": 10,
+        "activation_id": "activation",
+        "canonical_result": true,
+        "completion_id": "fb6147ceec2e40b1819cf1b4f9faa149",
+        "result": {
+          "attempt_id": "7e619e8cef374c8680e75c5dc52cb79d",
+          "fence": 2,
+          "invocation_id": "invocation",
+          "outcome": {
+            "checkpoint": null,
+            "outputs": [
+              {
+                "artifact": {
+                  "artifact_id": "68a7e29b8a9440a1bbc5eb31d112d645",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.output",
+                    "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                    "version": "1"
+                  },
+                  "scope": {
+                    "project_id": "951eb6472e914af3acabf0c4f40e6306",
+                    "tenant_id": "sdk-acceptance"
+                  },
+                  "sha256": "5094ec564a1014328ae8f2fe351c57b3a99f52d520ea84b08bd1210a0d7e5073",
+                  "size_bytes": 45
+                },
+                "port": "result"
+              }
+            ],
+            "status": "succeeded"
+          },
+          "schema_version": "1"
+        },
+        "retention_reservation_ids": [
+          "b79841f3ce274503838c7717b9dbb998"
+        ],
+        "run_id": "842268fb35db47da90f1b80afae41a53",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "951eb6472e914af3acabf0c4f40e6306",
+          "tenant_id": "sdk-acceptance"
+        }
+      },
+      "expired_attempt": {
+        "attempt_id": "48daaee6f35e4003b1cad48f48d80b7e",
+        "deadline": "2026-09-28T21:41:15.575556Z",
+        "fence": 1,
+        "lease_expires_at": "2026-09-28T21:40:25.623824Z",
+        "status": "leased",
+        "worker_id": "worker"
+      },
+      "expired_worker_requests": [
+        {
+          "body_sha256": "bb5dc03deac1d1f10b575cb4cf7c4c4e6bf435f412a79e3590e660d4cea29891",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.claim",
+            "command_id": "claim-895c835cbcad4eaba5081c7306e6baf9",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/claim",
+          "status": 200
+        },
+        {
+          "body_sha256": "46837b97d911bac190bbcca4359c56e4f41811ff06b988217245f96ebd602cfe",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-c90edf00c8024aa287b9317205e6903b",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/842268fb35db47da90f1b80afae41a53",
+          "status": 200
+        }
+      ],
+      "observed_at": "2026-09-28 16:40:28",
+      "receipt": {
+        "outcome": {
+          "binding": {
+            "identity": {
+              "actor_id": "worker",
+              "command_family": "runtime.complete",
+              "command_id": "complete-7e619e8cef374c8680e75c5dc52cb79d",
+              "schema_version": "1",
+              "scope": {
+                "project_id": "951eb6472e914af3acabf0c4f40e6306",
+                "tenant_id": "sdk-acceptance"
+              }
+            },
+            "operation_id": "fb6147ceec2e40b1819cf1b4f9faa149",
+            "request_sha256": "497b0311739d9d9e3dc60d54cd12cb4bd802b2dbe589e4cdba13df2fc8395011"
+          },
+          "committed": {
+            "kind": "completion",
+            "object_id": "fb6147ceec2e40b1819cf1b4f9faa149",
+            "revision": 10
+          },
+          "status": "accepted"
+        },
+        "schema_version": "1"
+      },
+      "result": {
+        "schema_version": "1",
+        "values": [
+          5.0,
+          3.0,
+          1.0
+        ]
+      },
+      "run_id": "842268fb35db47da90f1b80afae41a53",
+      "runtime_requests": [
+        {
+          "body_sha256": "bb5dc03deac1d1f10b575cb4cf7c4c4e6bf435f412a79e3590e660d4cea29891",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.claim",
+            "command_id": "claim-895c835cbcad4eaba5081c7306e6baf9",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/claim",
+          "status": 200
+        },
+        {
+          "body_sha256": "46837b97d911bac190bbcca4359c56e4f41811ff06b988217245f96ebd602cfe",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-c90edf00c8024aa287b9317205e6903b",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/842268fb35db47da90f1b80afae41a53",
+          "status": 200
+        },
+        {
+          "body_sha256": "bc6a19be5a93c7e8ec2a7f0b253907ccd6ea3b817b0848988156104af28d1ea4",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.claim",
+            "command_id": "claim-2693f27605d24d9c8c48544f483176df",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/claim",
+          "status": 200
+        },
+        {
+          "body_sha256": "c4c567d1ae1c1b71d077b05130c3e4dbb29a3177fe4b235c18c54c5d7fa9ccdc",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-4ae4a615aa6e47d49518ca39f198411c",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/842268fb35db47da90f1b80afae41a53",
+          "status": 200
+        },
+        {
+          "body_sha256": "9cfc0a8a1b1cb2307b592bdcf69c25b550d3c9cd2419ed516c979a059f2f0468",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-c7b7280e94aa4b58aa83789f72bb4a00",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/842268fb35db47da90f1b80afae41a53",
+          "status": 200
+        },
+        {
+          "body_sha256": "084025a6b7e6e9d2e2fe377819fe0759c8301c215daaf4c0b146cec985645f2b",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-3ef49566ec024f01bc2ce77b4626bc47",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/842268fb35db47da90f1b80afae41a53",
+          "status": 200
+        },
+        {
+          "body_sha256": "eb5c8bb827bb77f8742e82023d7a9c84e9fbf2c49483ab7b15cf8ac36219124e",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-2f4da37b11954ff38e5ae8759d0c6a3f",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/842268fb35db47da90f1b80afae41a53",
+          "status": 200
+        },
+        {
+          "body_sha256": "a8c90ecf7bece721fbac96d335d5097df5c72dc899d438ce79b27568bc6eba9f",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.renew",
+            "command_id": "renew-48dcfba3be304e09b5a9e7a0f7ac8519",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/attempts/renew",
+          "status": 200
+        },
+        {
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "method": "GET",
+          "path": "/v1/runs/842268fb35db47da90f1b80afae41a53",
+          "status": 200
+        },
+        {
+          "body_sha256": "497b0311739d9d9e3dc60d54cd12cb4bd802b2dbe589e4cdba13df2fc8395011",
+          "identity": {
+            "actor_id": "worker",
+            "command_family": "runtime.complete",
+            "command_id": "complete-7e619e8cef374c8680e75c5dc52cb79d",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "951eb6472e914af3acabf0c4f40e6306",
+              "tenant_id": "sdk-acceptance"
+            }
+          },
+          "method": "POST",
+          "path": "/v1/invocations/complete",
+          "status": 200
+        }
+      ]
+    }
+  ],
+  "image_digests": {
+    "amphora_numeric_affine": "sha256:4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+    "amphora_sequence_statistics": "sha256:64a882eadbcf540190ef6660b9fbefa009d0232cac39ce5bfd8800117d3d222c"
+  },
+  "packages": {
+    "amphora_campaign_runtime-0.1.0-py3-none-any.whl": "2c2b8e89c41fbcc07fa02ed4c3713d2e9a9c7f3eb02978b0550f8326419b561a",
+    "amphora_contracts_artifacts-0.1.0-py3-none-any.whl": "bda69bb93b8fd3b76eaf4b22eeacf750c68db972b5de8d555a27ef1507494989",
+    "amphora_contracts_campaigns-0.1.0-py3-none-any.whl": "635724223ae1607c4e89e4a17c567f0749aa98a76f528b5b4e86e71a0e01d4da",
+    "amphora_contracts_commands-0.1.0-py3-none-any.whl": "476beedaecc51c050c1e13efe2dbcd7c84a1b6b35201bb212d2935342bcb7a1b",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "5ee43eef187331776210ea39979841bf7840482645a8e67a5d232a99baf27f35",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "92918bab870693aef47c708044769bf7866b3c218903259e7ba51776259a63cc",
+    "amphora_data_artifacts-0.1.0-py3-none-any.whl": "e473b2f530653b74cfe41860ed931ebdc187ea5a652b72329d2f8fd559921fae",
+    "amphora_numeric_affine-0.2.0-py3-none-any.whl": "ffa8118003334033064e556fdbb24ef58c38950bbbce64be2933a0481692791f",
+    "amphora_sequence_statistics-0.2.0-py3-none-any.whl": "cb183cb8875d1bddd5776fd3dafddd403c110f07a92175beffbbbdc7c5cc576c",
+    "amphora_tool_protocol-0.1.0-py3-none-any.whl": "40c06b756eab9fcca80e84150e006c889c8b51ae56303db9f0e1f02733d21df0"
+  },
+  "schema_version": "1",
+  "scope": {
+    "project_id": "951eb6472e914af3acabf0c4f40e6306",
+    "tenant_id": "sdk-acceptance"
+  },
+  "status": "passed",
+  "worker_install_profile": "independent Windows wheels; identical internal wheels to separately tested Linux images"
+}

@@ -23,7 +23,9 @@ def run(command, cwd=None):
     return result.stdout
 
 
-def independent_builds(uv):
+def independent_builds(uv, tool_images=None):
+    if tool_images is not None and os.environ.get("AMPHORA_TEST_POSTGRES") != "1":
+        raise ValueError("Tool-owner acceptance requires explicit PostgreSQL fixture opt-in")
     specs = list(project_specs())
     # Temporary directory is outside the repository; no source trees are copied/deleted.
     with tempfile.TemporaryDirectory(prefix="amphora-foundation-") as directory:
@@ -179,13 +181,30 @@ def independent_builds(uv):
             if recovery.returncode:
                 raise SystemExit("Installed recovery acceptance failed: " + recovery.stderr[-4000:])
             print(recovery.stdout.strip())
+            if tool_images is not None:
+                sdk_python, sdk_project = installed["amphora_tool_protocol"]
+                worker_config = root / "worker-acceptance.json"
+                worker_config.write_text(json.dumps({"runtime": str(runtime_python), "artifact": str(artifact_python),
+                    "tools": {module: str(installed[module][0]) for module in ("amphora_numeric_affine", "amphora_sequence_statistics")},
+                    "images": str(Path(tool_images).absolute()), "evidence": str(ROOT / ".test-results/worker-acceptance"),
+                    "packages": json.loads(paired_environment["AMPHORA_TESTED_PACKAGES"])}), encoding="utf-8")
+                worker_environment = {key: value for key, value in paired_environment.items() if key.upper() in {
+                    "SYSTEMROOT", "WINDIR", "TEMP", "TMP", "PATH", "COMSPEC", "AMPHORA_RUNTIME_DATABASE_URL", "AMPHORA_ARTIFACT_DATABASE_URL"}}
+                acceptance = subprocess.run([str(sdk_python), "-I", str(sdk_project / "tests/acceptance/probe.py"), str(worker_config)],
+                    cwd=root, env=worker_environment, capture_output=True, text=True, timeout=180)
+                if acceptance.returncode:
+                    raise SystemExit("Installed worker/owner acceptance failed: " + acceptance.stdout[-1000:] + acceptance.stderr[-3500:])
+                print(acceptance.stdout.strip())
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--builds", action="store_true")
+    parser.add_argument("--tool-images", type=Path)
     parser.add_argument("--uv", default=shutil.which("uv") or str(ROOT / ".venv/Scripts/uv.exe"))
     args = parser.parse_args()
+    if args.tool_images is not None and not args.builds:
+        parser.error("--tool-images requires --builds")
     findings = check()
     if findings:
         raise SystemExit("\n".join(findings))
@@ -211,7 +230,7 @@ def main():
     )
     print(run([sys.executable, ROOT / "dev/run_tests.py"], cwd=ROOT / "dev").strip())
     if args.builds:
-        independent_builds(args.uv)
+        independent_builds(args.uv, args.tool_images)
     inventory = [
         {
             "package": cfg["project"]["name"],
