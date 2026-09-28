@@ -1,9 +1,10 @@
 """Additive registry wire roots; legacy execution descriptor bytes stay unchanged."""
 
+from datetime import datetime
 from typing import Annotated, Literal
 
 from amphora_contracts_core import Digest, Finding, Identifier, SchemaRef, Scope, WireModel
-from pydantic import Field
+from pydantic import AfterValidator, Field
 
 from .models import ToolBinding, ToolDescriptor
 
@@ -83,6 +84,26 @@ class EligibilityResult(WireModel):
     structural: StructuralAssessment
     scientific: ScientificEligibility
     capacity: CapacityAssessment
+
+
+def aware_timestamp(value):
+    if value.tzinfo is None or value.utcoffset() is None:
+        raise ValueError("Timezone-aware observation required")
+    return value
+
+
+class PolicyAdmission(WireModel):
+    status: Literal["allowed", "denied"]
+    reason_codes: Annotated[tuple[Identifier, ...], Field(min_length=1, max_length=128)]
+
+
+class EligibilityDecision(WireModel):
+    schema_version: Literal["1"] = "1"
+    observations: EligibilityResult
+    admission: PolicyAdmission
+    status: Literal["candidate", "rejected"]
+    assessed_at: Annotated[datetime, AfterValidator(aware_timestamp)]
+    capacity_valid_until: Annotated[datetime, AfterValidator(aware_timestamp)] | None
 
 
 class RegisterRelease(WireModel):

@@ -1,0 +1,67 @@
+{
+  "schema_version": "1",
+  "observations": {
+    "schema_version": "1",
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "synthetic"
+    },
+    "release": {
+      "schema_version": "1",
+      "tool": {
+        "capability_id": "synthetic.numeric-affine",
+        "release": "0.1.0",
+        "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "contract_version": "1"
+      },
+      "descriptor_sha256": "9ef763885d494b7a995916a41b0a6c8041d6621ce696e88f0fe4441fd4db04cd",
+      "input_schemas": [
+        {
+          "port": "value",
+          "schema_ref": {
+            "schema_id": "fixture.numeric-affine",
+            "version": "1",
+            "sha256": "8346f3230d345fd72b3360ac8d15e80c298c9c2b3cfa29449f905262b8b590da"
+          }
+        }
+      ],
+      "output_schemas": [
+        {
+          "port": "result",
+          "schema_ref": {
+            "schema_id": "fixture.numeric-affine",
+            "version": "1",
+            "sha256": "8346f3230d345fd72b3360ac8d15e80c298c9c2b3cfa29449f905262b8b590da"
+          }
+        }
+      ],
+      "checkpoint_schema": null
+    },
+    "policy_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "structural": {
+      "status": "valid",
+      "findings": []
+    },
+    "scientific": {
+      "status": "unreviewed",
+      "reason_codes": [
+        "evidence_unreviewed"
+      ]
+    },
+    "capacity": {
+      "status": "available",
+      "reason_codes": [
+        "healthy_capacity"
+      ]
+    }
+  },
+  "admission": {
+    "status": "allowed",
+    "reason_codes": [
+      "policy_compatible"
+    ]
+  },
+  "status": "rejected",
+  "assessed_at": "2026-09-28T12:00:00Z",
+  "capacity_valid_until": "2026-09-28T12:00:30Z"
+}

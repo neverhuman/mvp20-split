@@ -5,6 +5,7 @@ import json
 
 import pytest
 from amphora_contracts_tools import (
+    EligibilityDecision,
     EligibilityResult,
     LockEntry,
     RegisterRelease,
@@ -12,7 +13,7 @@ from amphora_contracts_tools import (
     ReleaseRegistrationReceipt,
 )
 from export_schemas import ROOT
-from jsonschema import Draft202012Validator
+from jsonschema import Draft202012Validator, FormatChecker
 from pydantic import ValidationError
 
 CASES = json.loads((ROOT / "contracts/fixtures/v1/tool_releases.json").read_text())
@@ -39,6 +40,18 @@ def test_registry_transport_examples_validate_without_granting_execution(model, 
         Draft202012Validator(model.model_json_schema(mode=mode)).validate(value)
     if filename == "eligibility":
         assert parsed.capacity.status == "available" and parsed.scientific.status == "unreviewed"
+
+
+def test_selection_decision_is_additive_and_requires_aware_observation_times():
+    value = json.loads((ROOT / "contracts/fixtures/v1/tool_selection_decision.json").read_text())
+    result = EligibilityDecision.model_validate_json(json.dumps(value))
+    assert result.status == "rejected" and result.observations.capacity.status == "available"
+    for mode in ("validation", "serialization"):
+        Draft202012Validator(EligibilityDecision.model_json_schema(mode=mode), format_checker=FormatChecker()).validate(value)
+    value["assessed_at"] = "2026-09-28T12:00:00"
+    with pytest.raises(ValidationError, match="Timezone-aware"):
+        EligibilityDecision.model_validate_json(json.dumps(value))
+    assert list(Draft202012Validator(EligibilityDecision.model_json_schema(), format_checker=FormatChecker()).iter_errors(value))
 
 
 @pytest.mark.parametrize("fault", ["floating", "resource_bool", "unbounded_batch", "egress_wildcard", "authority", "version", "endpoint"])

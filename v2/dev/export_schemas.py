@@ -31,6 +31,7 @@ for name, model in {
     "release-descriptor": tool_contracts.ReleaseDescriptor,
     "lock-entry": tool_contracts.LockEntry,
     "eligibility": tool_contracts.EligibilityResult,
+    "eligibility-decision": tool_contracts.EligibilityDecision,
     "register-release": tool_contracts.RegisterRelease,
     "registration-receipt": tool_contracts.ReleaseRegistrationReceipt,
 }.items():
