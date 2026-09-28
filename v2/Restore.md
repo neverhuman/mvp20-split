@@ -2,17 +2,16 @@
 
 ## Current Checkpoint
 
-- Last refreshed: `2026-09-28 10:56:19` (America/Chicago).
-- Workspace: v2 active; v1 frozen. JARVIS is read-only reference only when specifically requested.
-- Canonical position: [BP-02](docs/Build%20Plans/BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md) -> [BP-02.03](docs/Build%20Plans/BP-02/BP-02.03%20Artifact%20Publication%20and%20Retention.md) / V2 / A6 independent service acceptance.
-- Progress: parent 43.75% (14/32 implementation deliveries). Children .01 contracts and .02 persistence complete/audited; .03 artifacts 80% (V1 100%, V2 0%), A2-A5 complete. Children .04-.06 and BP-03..09 remain 0%.
-- Latest work: A4 protective reservation handshake passed with real PostgreSQL and a separate authenticated scripted HTTP peer; terminal proof, shared-reference protection, replay and rollback verified. Reference refinements remain in queued plans.
-- Authority: user approved deeper decomposition and autonomous continuation. No new permission needed for routine in-scope work; one child/task active. BP-01/BP-01A and closed children stay closed.
-- Next bounded work: A6 adds executable hosting, scoped content reads, independent service acceptance and closeout audit. A5 cleanup/reconciliation and separate-process crash tests passed. Actual runtime integration remains .06.
-- Evidence: 182 aggregate tests pass with PostgreSQL enabled; lint/import/schema checks and eight independent wheel installs pass, including migration SQL resources. 56 published input/output schemas. Runtime persistence 11 tests, artifact service 71. [Persistence audit](docs/Audits/BP-02.02_Persistence_Closeout.md) records exact scope and coverage limits.
-- Environment: Python 3.12, uv bootstrap and Docker Desktop available. Labeled PostgreSQL 17.11 fixture is running; helper reset/restart verified. Dynamic endpoint and credentials are only in ignored `.test-results/postgres-fixture.json`; do not copy them to docs/logs. `dev/postgres_fixture.py verify` refreshes endpoint after restart. Use `AMPHORA_TEST_POSTGRES=1` for actual database tests. Cargo absent; Rust remains later scope.
-- Blockers: Git identity configured locally as tkn1234 <alb_gen@live.com>; no A5 implementation blocker. Scientific sources/provider/target-host policy remain later decisions; synthetic fixtures are authorized. Existing Starlette/httpx test-client deprecation is nonblocking dev maintenance.
-- Git: implementation checkpoint `82ef9cf` pushed to origin/main. Repository-local author is tkn1234 <alb_gen@live.com>. GitHub reported the repository moved; origin now uses https://github.com/neverhumanbot/mvp20-split.git. Resume A6; no Git identity blocker remains.
+- Last refreshed: `2026-09-28 11:05:08` (America/Chicago).
+- Workspace: v2 active; v1 frozen. External references require task-specific authorization.
+- Canonical position: BP-02 -> [BP-02.04](docs/Build%20Plans/BP-02/BP-02.04%20Invocation%20Lifecycle.md) / V1 / I1 domain transition model; next I2 synthetic fixture admission.
+- Progress: parent 46.88% (15/32 deliveries). Children .01-.03 complete/audited; .04-.06 and BP-03..09 at 0%. .04 phases V1/V2 both 0%.
+- Latest work: artifact standalone executable, scoped verified reads and bounded maintenance accepted; [artifact closeout](docs/Audits/BP-02.03_Artifact_Service_Closeout.md) names boundaries and remaining integration/host evidence.
+- Evidence: 188 aggregate tests with PostgreSQL, lint/import/schema gates, eight independent wheels and installed artifact HTTP probe passed. 56 published schemas. Artifact suite 77 cases; process-kill evidence includes upload/finalization/cleanup/reservation transitions.
+- Authority: autonomous continuation and significant commit/push checkpoints authorized. No current user blocker. Scientific sources/provider/target-host choices remain later decisions.
+- Environment: Python 3.12, uv and labeled PostgreSQL 17.11 fixture. Dynamic endpoint/credentials only in ignored .test-results/postgres-fixture.json. Use helper verify and AMPHORA_TEST_POSTGRES=1; never publish credentials.
+- Git: cleanup checkpoint acbadb4 pushed; artifact closeout ready for next commit/push. Repository-local identity tkn1234 <alb_gen@live.com>, origin https://github.com/neverhumanbot/mvp20-split.git.
+- Limits: actual runtime terminal-outcome integration remains .05/.06; Linux/target-storage durability and backup remain BP-09. Synthetic artifact profiles do not establish scientific validity. Existing test-client warning is nonblocking.
 
 ## Decomposition and Resume Discipline
 
@@ -41,6 +40,6 @@ The high-level specifications and earlier flat design/history files live in `doc
 
 ## Implementation Limits
 
-Private PostgreSQL schemas/migrations and canonical command registration/terminal receipt transactions exist. The public runtime API remains validation-only and reports `executable=false`. Artifact upload/finalization APIs now publish verified immutable references; protective reservation/confirm/reconcile handshake is implemented against a configured public runtime outcome client; reconciliation scheduling/cleanup, invocation handlers, full completion acceptance, interpreter, scientific tools, knowledge reasoner, provider calls and Studio are not implemented. Artifact process-crash tests do not establish integrated runtime retention, target-host power-loss durability or scientific validity. Those gates remain in their named children/successor plans.
+Private PostgreSQL schemas/migrations and canonical command registration/terminal receipt transactions exist. The public runtime API remains validation-only and reports `executable=false`. Artifact upload/finalization APIs now publish verified immutable references; protective reservation/confirm/reconcile handshake is implemented against a configured public runtime outcome client; bounded reconciliation/cleanup and standalone hosting are implemented. Invocation handlers, full completion acceptance, interpreter, scientific tools, knowledge reasoner, provider calls and Studio are not implemented. Artifact process-crash tests do not establish integrated runtime retention, target-host power-loss durability or scientific validity. Those gates remain in their named children/successor plans.
 
 Baseline verification: no changed manifest file content; verifier reports pre-existing added `v1/LICENSE` already present in commit `99d219c`. Do not regenerate the frozen manifest or alter v1 to suppress this discrepancy.

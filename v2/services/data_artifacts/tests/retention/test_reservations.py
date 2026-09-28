@@ -251,3 +251,36 @@ def test_bounded_sweep_unknown_reuses_pending_command(retained):
         count = conn.execute(text("SELECT count(*) FROM artifacts.commands WHERE tenant_id=:tenant "
             "AND project_id=:project AND family='artifacts.reconcile'"), env.principal.bindings).scalar_one()
     assert count == 1
+
+
+@pytest.mark.parametrize("barrier", ["transition", "committed"])
+def test_killed_reservation_transition_replays(retained, barrier):
+    env, service, peer, _ = retained
+    binding = reserve(retained).outcome.binding
+    cmd = command(env, "artifacts.reconcile", {"reservation_id": binding.reservation_id})
+    config = {"url": env.engine.url.render_as_string(hide_password=False), "scope": env.principal.scope.model_dump(),
+              "command": cmd.canonical_bytes.decode(), "barrier": barrier,
+              "proof": {"status": "aborted", "runtime_receipt_id": peer.receipt, "reason_code": "cancelled"}}
+    child = subprocess.Popen([sys.executable, "-I", str(Path(__file__).with_name("reservation_probe.py"))],
+                             stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    try:
+        child.stdin.write(json.dumps(config) + "\n")
+        child.stdin.flush()
+        with ThreadPoolExecutor(max_workers=1) as pool:
+            future = pool.submit(child.stdout.readline)
+            try:
+                assert future.result(timeout=15).strip() == barrier
+            except BaseException:
+                child.kill()
+                raise
+        child.kill()
+        child.communicate(timeout=10)
+        assert reserve(retained).outcome.status == ("reserved" if barrier == "transition" else "released")
+        peer.status = "aborted"
+        assert service.reconcile(env.principal, cmd).outcome.status == "released"
+        peer.status = "outage"
+        assert service.reconcile(env.principal, cmd).outcome.status == "released"
+    finally:
+        if child.poll() is None:
+            child.kill()
+        child.communicate(timeout=10)

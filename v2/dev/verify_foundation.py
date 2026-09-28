@@ -70,6 +70,19 @@ def independent_builds(uv):
                 probe += f"from importlib.resources import files; migration = files('{module}').joinpath('persistence/migrations/versions'); assert any(p.name.endswith('.sql') for p in migration.iterdir()); "
             probe += "assert importlib.util.find_spec('torch') is None; assert importlib.util.find_spec('rdkit') is None"
             run([python, "-I", "-c", probe], cwd=root)
+            if module == "amphora_data_artifacts" and os.environ.get("AMPHORA_TEST_POSTGRES") == "1":
+                from postgres_fixture import owned_state
+                from sqlalchemy import URL
+                state = owned_state()
+                hostname, port = state["endpoint"].split(":")
+                url = URL.create("postgresql+psycopg", username="artifact_service", password=state["password"],
+                                 host=hostname, port=int(port), database=state["database"])
+                environment = dict(os.environ, AMPHORA_PROBE_DATABASE_URL=url.render_as_string(hide_password=False))
+                acceptance = subprocess.run([str(python), "-I", str(project / "tests/acceptance/installed_probe.py")],
+                    cwd=root, env=environment, capture_output=True, text=True, timeout=60)
+                if acceptance.returncode:
+                    raise SystemExit("Installed artifact process acceptance failed: " + acceptance.stderr[-2000:])
+                print(acceptance.stdout.strip())
             print(f"Independent wheel/install smoke passed: {name}")
 
 

@@ -1,4 +1,4 @@
-"""Authenticated upload and verified publication HTTP boundary; retention is pending."""
+"""Authenticated publication, protective retention and scoped retrieval HTTP boundary."""
 
 import asyncio
 
@@ -10,13 +10,16 @@ from amphora_contracts_artifacts import (
     parse_command,
 )
 from amphora_contracts_commands import CommandEncodingError
+from amphora_contracts_core import ArtifactRef
 from fastapi import FastAPI, Request
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, Response
+from sqlalchemy import text
 from sqlalchemy.exc import DBAPIError
 
 from .persistence.commands import CommandConflict
 from .publication.finalize import Finalizer
 from .publication.model import UploadError
+from .reads import ArtifactReads
 from .retention.outcomes import OutcomeUnavailable
 from .retention.reservations import Reservations
 
@@ -24,15 +27,16 @@ from .retention.reservations import Reservations
 def create_app(uploads, storage, credentials, outcomes=None):
     app = FastAPI(title="Amphora artifact publication", version="0.1.0")
     finalizer = Finalizer(uploads, storage)
+    reads = ArtifactReads(uploads.commands.engine, storage, uploads.limits.max_bytes)
     reservations = Reservations(uploads, outcomes)
 
     @app.exception_handler(UploadError)
     async def upload_error(_request, error):
         reason = str(error)
         status = 401 if reason == "unauthenticated" else 403 if reason == "access_denied" else 409
-        if reason == "upload_unavailable":
+        if reason in {"upload_unavailable", "artifact_unavailable", "reservation_unavailable"}:
             status = 404
-        if reason in {"upload_too_large", "body_too_large"}:
+        if reason in {"upload_too_large", "body_too_large", "artifact_read_limit"}:
             status = 413
         return JSONResponse({"reason_code": reason}, status_code=status)
 
@@ -77,9 +81,27 @@ def create_app(uploads, storage, credentials, outcomes=None):
         command = parse_command("artifacts.reconcile", await command_body(request))
         return await asyncio.to_thread(reservations.reconcile, principal, command)
 
+    @app.get("/ready")
+    def ready():
+        with uploads.commands.engine.connect() as conn:
+            conn.execute(text("SELECT created_at FROM artifacts.uploads LIMIT 0"))
+        return {"ready": True}
+
     @app.get("/health")
     def health():
         return {"mode": "verified_publication", "publication_available": True, "retention_available": outcomes is not None}
+
+    @app.get("/v1/artifacts/{artifact_id}", response_model=ArtifactRef)
+    async def metadata(artifact_id: str, request: Request):
+        principal = credentials.authenticate(request.headers.get("authorization"))
+        return (await asyncio.to_thread(reads.get, principal, artifact_id)).reference
+
+    @app.get("/v1/artifacts/{artifact_id}/content")
+    async def read_content(artifact_id: str, request: Request):
+        principal = credentials.authenticate(request.headers.get("authorization"))
+        stored, body = await asyncio.to_thread(reads.content, principal, artifact_id)
+        return Response(body, media_type=stored.reference.media_type,
+                        headers={"X-Content-Type-Options": "nosniff", "Cache-Control": "no-store"})
 
     @app.post("/v1/uploads", response_model=UploadReceipt)
     async def begin(request: Request):

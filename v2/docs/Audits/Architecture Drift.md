@@ -1,10 +1,10 @@
 # Architecture Drift
 
-- Status: BP-02 contracts/persistence audited; publication/execution and scientific services pending
+- Status: BP-02 contracts/persistence/artifact service audited; runtime execution and scientific services pending
 - Last refreshed: `2026-09-25 13:42:37` (America/Chicago)
 - Scope: v2 design/implementation alignment
 - Active focus: require traceable contracts and closeout audits as implementation begins
-- Next gate: BP-02.03/A5 reconciliation/cleanup, then A6 artifact service closeout
+- Next gate: BP-02.04 invocation lifecycle and scoped acceptance
 
 ## Active Findings
 

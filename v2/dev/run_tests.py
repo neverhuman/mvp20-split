@@ -30,11 +30,11 @@ def ownership_issues(root=ROOT, scopes=SCOPES):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--module", choices=sorted(SCOPES))
-    parser.add_argument("--area", choices=["graph", "admission", "api", "baseline", "persistence", "publication", "storage", "retention", "maintenance"])
+    parser.add_argument("--area", choices=["graph", "admission", "api", "baseline", "persistence", "publication", "storage", "retention", "maintenance", "acceptance"])
     parser.add_argument("--coverage", action="store_true")
     args, pytest_args = parser.parse_known_args()
     areas = {"runtime": {"graph", "admission", "api", "baseline", "persistence"},
-             "data-artifacts": {"persistence", "publication", "storage", "retention", "maintenance"}}
+             "data-artifacts": {"persistence", "publication", "storage", "retention", "maintenance", "acceptance"}}
     if args.area and args.area not in areas.get(args.module, set()):
         parser.error("--area must belong to the selected module")
     findings = ownership_issues()
