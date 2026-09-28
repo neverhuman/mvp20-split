@@ -1,12 +1,10 @@
 """Declared installations and authenticated expiring replica observations."""
 
 import json
-from datetime import timedelta
 
 from amphora_contracts_tools import (
     ChangeDeployment,
     DeploymentSnapshot,
-    HeartbeatSnapshot,
     RegisterDeployment,
     ReplicaHeartbeat,
 )
@@ -15,6 +13,7 @@ from sqlalchemy import text
 from ..persistence.store import scope_bindings
 from .model import Lifecycle, RegistryDenied
 from .releases import read_release
+from .replicas import ReplicaPolicy
 
 
 def deployment_row(connection, scope, deployment_id):
@@ -72,34 +71,18 @@ class Inventory:
         scope = principal.scope
         row = deployment_row(connection, scope, payload.deployment_id)
         release = read_release(connection, scope, row["descriptor_sha256"])
-        if row["status"] != "active" or release.lifecycle.status != "active":
-            raise RegistryDenied("deployment_not_active")
-        if principal.actor_id not in row["definition"]["workers"]:
-            raise RegistryDenied("replica_worker_denied")
-        if payload.free_slots > release.descriptor.resources.max_parallel_invocations:
-            raise RegistryDenied("replica_capacity_exceeded")
         values = {**scope_bindings(scope), "deployment": payload.deployment_id, "replica": payload.replica_id}
         previous = connection.execute(text("SELECT * FROM registry.replicas WHERE tenant_id=:tenant AND project_id=:project "
             "AND deployment_id=:deployment AND replica_id=:replica"), values).mappings().one_or_none()
-        if previous is not None and previous["worker_id"] != principal.actor_id:
-            raise RegistryDenied("replica_owner_conflict")
-        if payload.expected_revision != (0 if previous is None else previous["revision"]):
-            raise RegistryDenied("revision_conflict")
-        if payload.expected_revision == 9007199254740991:
-            raise RegistryDenied("revision_exhausted")
+        count = 0
         if previous is None:
             count = connection.execute(text("SELECT count(*) FROM registry.replicas WHERE tenant_id=:tenant AND project_id=:project "
                 "AND deployment_id=:deployment"), values).scalar_one()
-            if count >= 64:
-                raise RegistryDenied("replica_limit")
         now = connection.execute(text("SELECT clock_timestamp()")).scalar_one()
-        snapshot = HeartbeatSnapshot(scope=scope, deployment_id=payload.deployment_id, replica_id=payload.replica_id,
-            worker_id=principal.actor_id, revision=payload.expected_revision+1, free_slots=payload.free_slots,
-            observed_at=now, expires_at=now+timedelta(seconds=payload.ttl_seconds))
+        lease = ReplicaPolicy().observe(principal, payload, row, release, previous, count, now)
         connection.execute(text("INSERT INTO registry.replicas (tenant_id,project_id,deployment_id,replica_id,worker_id,revision,"
             "free_slots,observed_at,expires_at) VALUES (:tenant,:project,:deployment,:replica,:worker,:revision,:slots,:observed,:expires) "
             "ON CONFLICT (tenant_id,project_id,deployment_id,replica_id) DO UPDATE SET revision=EXCLUDED.revision,"
             "free_slots=EXCLUDED.free_slots,observed_at=EXCLUDED.observed_at,expires_at=EXCLUDED.expires_at"),
-            {**values, "worker": snapshot.worker_id, "revision": snapshot.revision, "slots": snapshot.free_slots,
-             "observed": snapshot.observed_at, "expires": snapshot.expires_at})
-        return factory.accepted("observed", heartbeat=snapshot)
+            {**values, **lease.bindings()})
+        return factory.accepted("observed", heartbeat=lease.to_wire(scope))
