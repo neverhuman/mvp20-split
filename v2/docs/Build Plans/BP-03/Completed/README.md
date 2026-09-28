@@ -5,3 +5,5 @@
 - [BP-03.02 Registry and version routing](BP-03.02%20Registry%20and%20version%20routing.md): 100%; [scoped audit](../../../Audits/BP-03.02_Registry_Closeout.md).
 
 The parent remains active. Closed children retain their evidence and do not reopen for successor scope.
+
+- [BP-03.03 Worker protocol and independent tools](BP-03.03%20Worker%20protocol%20and%20independent%20tools.md): 100%; [scoped audit](../../../Audits/BP-03.03_Worker_Closeout.md).

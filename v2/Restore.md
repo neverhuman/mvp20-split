@@ -2,19 +2,18 @@
 
 ## Current Checkpoint
 
-- Last refreshed: `2026-09-28 16:47:03` (America/Chicago).
-- Workspace: v2 active; v1 frozen. External references require task-specific authorization.
-- Canonical position: BP-03 -> [BP-03.03](docs/Build%20Plans/BP-03/BP-03.03%20Worker%20protocol%20and%20independent%20tools.md) / Acceptance / V1 fresh replacement and scoped audit; next BP-03.04 activation.
-- Progress: BP-02 closed 100% (32/32). BP-03 68.75% (11/16), .01/.02 closed/audited 100%, .03 75% (Build 100%, Acceptance 0%); BP-04..09 0%.
-- Previous work: .03 B2 accepted: exact-pinned clients, receipt-first/pending recovery, monotonic lease/skew policy, terminal versus retryable failures and safe tool/CLI errors. B1 SDK/tool delivery pushed as ade9df2; artifacts prerequisites 254d419.
-- Evidence: B2 117 focused cases: SDK 82/100% of 389 statements/102 branches; numeric 16/82% of 86/12; sequence 19/84% of 98/16, separate CLI evidence. Twelve fresh independent package builds/installs plus tool goldens and registry pure replacement passed; lint/import/schema guards passed. No owner persistence changed; B1 529-test/actual REC-01..09 proof (scope 6b88a870ac7844e3b71e5d9c3b0b4e37) retained. Actual SDK/tool-to-owner execution and image/replacement proof remain B3/V1.
-- Authority: autonomous continuation and significant commit/push checkpoints authorized. No current user blocker; later scientific/provider/host gates remain explicit.
-- Environment: Python 3.12, uv, labeled PostgreSQL 17.11 fixture. Dynamic credentials only in ignored .test-results/postgres-fixture.json. Registry has separate migration/service roles; registry_owner only extends labeled fixture. Set AMPHORA_TEST_POSTGRES=1; never publish credentials or reset concurrently with tests.
-- Git: 26e1756 pushed; .03 B3 delivery verified for commit/push. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
-- Latest work: B3 actual image and worker-owner proof passed. Nine cases, scope 951eb6472e914af3acabf0c4f40e6306; both Linux images non-root/network-disabled goldens, same internal wheel bytes as independently installed Windows worker probes. Preserved docs/Audits/Evidence/BP-03-Workers. Initial full command passed 597 tests/twelve builds/REC then hit a harness stderr-pipe deadlock; fixed harness and focused live rerun passed all nine. No production behavior change.
-- V1 handoff: prove fresh worker environments preserve prior receipts/artifacts and execute new campaigns; scoped architecture drift audit, archive child, activate .04. Do not conflate Windows process proof, Linux image goldens or target-host deployment.
-
-- Limits: general interpreter, actual scientific tools/evidence, model/knowledge/Studio and host backup/power-loss remain later plans. Existing test-client warning and pre-existing v1/LICENSE manifest discrepancy remain nonblocking assigned maintenance. Recovery operating boundary: services/campaign_runtime/RECOVERY.md.
+- Last refreshed: `2026-09-28 16:52:45` (America/Chicago).
+- Workspace: v2 active; v1 frozen; no external JARVIS access without task-specific request.
+- Canonical position: BP-03 -> [BP-03.04](docs/Build%20Plans/BP-03/BP-03.04%20Replicas%20and%20replacement%20proof.md) / Build / B1. Next B2 death/reclaim and new immutable release cutover.
+- Progress: BP-02 closed 100% (32/32); BP-03 75% (12/16), .01-.03 closed/audited 100%, .04 0% (Build 0%, Acceptance 0%). BP-04..09 queued 0%.
+- Latest checkpoint: .03 eleven actual independent worker/owner cases passed, including fresh numeric/sequence installations preserving prior receipts, completions and result bytes (scope 34f1a759a9bc4af18b0f3e99b21d4a37). Both Linux/amd64 images passed non-root/network-disabled goldens and isolation; internal wheel bytes match Windows process probes. Evidence: docs/Audits/Evidence/BP-03-Workers; audit BP-03.03_Worker_Closeout.md.
+- Verification: initial aggregate passed 597 tests/twelve builds/REC-01..09 before a harness stderr deadlock; file-backed server logs repaired it, scoped nine/eleven-case reruns passed. No production change. SDK 82 cases/100% scoped coverage; numeric 16/82%, sequence 19/84%. Process/CLI/image proof separate. Lint/import/schema guards passed.
+- Current deliverable: .04 integration harness under tests/integration/tool_replicas; actual registry registration/discovery/resolve and two real workers through public Runtime/Artifact APIs. Registry never grants execution authority. Record barriers and exact IDs. General interpreter remains BP-04.
+- Assigned refinement TOOL-META-01: .04/B2 new sequence release corrects output representation (statistics rather than sequence) while preserving 0.2.0 image/descriptor/history. No checkpoint support is advertised by current pure tools; reject checkpoint/version mismatches rather than inventing recovery.
+- Environment: Python 3.12, uv, labeled PostgreSQL 17.11 fixture; secrets only in ignored .test-results/postgres-fixture.json. Owner-specific roles/migrations; never reset concurrently with tests. AMPHORA_TEST_POSTGRES=1 explicit. Focused `dev/verify_tool_workers.py --images .test-results/tool-images/bp0303-20260928-1619/manifest.json --replacement` rebuilds fresh public closures without unrelated owner-suite reruns.
+- Git: c12d99a pushed; .03 closeout/.04 activation verified for next commit. Identity tkn1234 <alb_gen@live.com>; origin https://github.com/neverhumanbot/mvp20-split.git.
+- Authority: continue autonomously, commit/push significant updates. No user blocker. Actual host/provider/scientific/egress choices remain later named gates.
+- Limits: no general interpreter, scientific efficacy, model/knowledge/Studio or target-host/K3s/power-loss claim. Existing test-client warning and pre-existing v1/LICENSE manifest discrepancy remain nonblocking assigned maintenance.
 
 ## Decomposition and Resume Discipline
 

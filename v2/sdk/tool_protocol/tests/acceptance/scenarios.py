@@ -5,6 +5,7 @@ import subprocess
 import time
 from datetime import datetime
 from pathlib import Path
+from types import SimpleNamespace
 
 
 def run(e, http):
@@ -74,6 +75,7 @@ def run(e, http):
     for tool in e.tools:
         start(tool)
         record("WORKER-GOLDEN-" + tool.module, success(tool, worker(tool)))
+    originals = list(e.cases)
     numeric, sequence = e.tools
     for name, relay, path in (("WORKER-LOST-UPLOAD", e.artifact_relay, "/v1/uploads"),
         ("WORKER-LOST-FINALIZE", e.artifact_relay, "/v1/artifacts/finalize"),
@@ -144,4 +146,38 @@ def run(e, http):
         if child.poll() is None:
             child.kill()
             child.communicate(timeout=10)
+    for tool in e.tools:
+        replacement = e.config.get("replacements", {}).get(tool.module)
+        if replacement is None:
+            continue
+        assert Path(replacement).parent != Path(tool.python).parent
+        # A separate installation contains only the documented public closure.
+        script = ("import importlib.util,json,sys; from pathlib import Path; "
+            f"import {tool.module} as tool; import amphora_tool_protocol as sdk; "
+            "assert Path(tool.__file__).is_relative_to(Path(sys.prefix)); "
+            "assert Path(sdk.__file__).is_relative_to(Path(sys.prefix)); "
+            "assert all(importlib.util.find_spec(p) is None for p in "
+            "('sqlalchemy','amphora_campaign_runtime','amphora_data_artifacts')); "
+            "print(json.dumps({'tool_version':__import__('importlib.metadata',fromlist=['version']).version('"
+            + tool.module.replace('_', '-') + "')}))")
+        checked = subprocess.run([replacement, "-I", "-c", script], cwd=e.root, env=worker_env,
+            capture_output=True, text=True, timeout=20)
+        assert checked.returncode == 0, "Replacement closure violated the module boundary"
+        assert json.loads(checked.stdout)["tool_version"] == tool.descriptor["binding"]["release"]
+        old = next(case for case in originals if case["case"] == "WORKER-GOLDEN-" + tool.module)
+        def preserved(old=old):
+            e.active_run = old["run_id"]
+            state, receipt, value = report()
+            assert state["status"] == "completed"
+            assert receipt == old["receipt"] and value == old["completion"]
+            artifact = value["result"]["outcome"]["outputs"][0]["artifact"]
+            assert http.decoded(e.artifact.endpoint, "/v1/artifacts/" + artifact["artifact_id"] + "/content",
+                e.tokens["worker"]) == old["result"]
+        preserved()
+        fresh = SimpleNamespace(**{**vars(tool), "python": replacement})
+        start(fresh)
+        facts = success(fresh, worker(fresh))
+        preserved()
+        record("WORKER-REPLACEMENT-" + tool.module, {**facts, "preserved_run_id": old["run_id"],
+            "preserved_completion_id": old["completion"]["completion_id"], "fresh_install": True})
     e.active_run = None

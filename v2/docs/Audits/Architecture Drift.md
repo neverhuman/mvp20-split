@@ -1,10 +1,10 @@
 # Architecture Drift
 
-- Status: BP-02 closed/audited; BP-03.01/.02 closed; BP-03.03 SDK/tools active
-- Last refreshed: `2026-09-28 15:17:41` (America/Chicago)
+- Status: BP-02 closed/audited; BP-03.01-.03 closed; BP-03.04 replicas active
+- Last refreshed: `2026-09-28 16:52:45` (America/Chicago)
 - Scope: v2 design/implementation alignment
 - Active focus: require traceable contracts and closeout audits as implementation begins
-- Next gate: BP-03.03 typed worker client/tool boundaries
+- Next gate: BP-03.04 integrated replicas and release cutover
 
 ## Active Findings
 
@@ -23,3 +23,5 @@ Use [Development Process](../Development_Process.md) and the [audit template](..
 [Roadmap planning review](Planning_Maturity_Review.md) is aligned for documentation, with explicit current/future evidence boundaries. [Planning readiness](../Build%20Plans/Planning_Readiness.md) now owns cross-plan design handoffs and decision gates. This closes the plan-depth gap, not the still-unimplemented runtime/scientific capabilities.
 
 - `2026-09-26 16:31:31`: frozen-baseline verification reports `ADDED v1/LICENSE`, already introduced in committed baseline `99d219c`; all manifest content hashes match. No v1 edits made. Owner: repository baseline metadata; follow-up requires explicit baseline maintenance authorization, not implementation blocker. Artifact A2-A4 gates pass; service closeout audit remains A6.
+
+- `2026-09-28 16:52:45`: TOOL-META-01, nonblocking metadata refinement from [worker closeout](BP-03.03_Worker_Closeout.md): sequence 0.2.0 output is statistics but port representation says symbol-sequence. Exact schemas protect current synthetic execution. Owner BP-03.04/B2: new immutable release with corrected representation; preserve existing descriptor/image/history.
