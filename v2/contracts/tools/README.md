@@ -36,3 +36,5 @@ B2 adds `EligibilityDecision` as a separate root wrapping the unchanged B1 obser
 ## Registry Owner Operations (BP-03.02)
 
 Additive roots describe revisioned release/deployment changes, bounded replica heartbeats, exact-lock resolution and scoped snapshots/terminal receipts. `parse_registry_command` binds nine closed registry command families to the shared canonical command envelope; registration payload scope must match authenticated identity scope. The registry handler separately authenticates actor/actions and persists authority. No transport parser grants permissions. Existing 80 schema artifacts remain unchanged; nine roots add 18 artifacts. Replay returns an original observation/receipt, including its original expiry; a new command identity is required for fresh resolution.
+
+The V1 registry closeout adds `ReleasePage` for scoped capability/version discovery with a bounded digest cursor. This is a separate additive root (100 schema artifacts overall), not a change to execution or earlier registry records. Discovery is current inventory; lifecycle/capacity must be re-evaluated before selecting a pinned release.

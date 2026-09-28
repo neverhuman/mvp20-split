@@ -43,6 +43,7 @@ for name, model in {
     "deployment-snapshot": tool_contracts.DeploymentSnapshot,
     "heartbeat-snapshot": tool_contracts.HeartbeatSnapshot,
     "registry-receipt": tool_contracts.RegistryReceipt,
+    "release-page": tool_contracts.ReleasePage,
 }.items():
     MODELS["tools." + name] = model
 for name, model in {

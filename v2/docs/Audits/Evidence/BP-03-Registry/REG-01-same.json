@@ -1,0 +1,41 @@
+{
+  "sha256": "2500f9363d0c39a30c1927450c5391259cf05e380c2e210ba6c4e06fd3c80006",
+  "evidence": {
+    "scenario": "REG-01-same",
+    "status": "passed",
+    "scope": {
+      "tenant_id": "registry-tests",
+      "project_id": "df686546584943d496365b92ad545e90"
+    },
+    "source_sha256": "20cb3768a8353c921a75fa6e6b5359e1efae69bfb06d81ec7bb1ee61199bc497",
+    "descriptor_sha256": "9ef763885d494b7a995916a41b0a6c8041d6621ce696e88f0fe4441fd4db04cd",
+    "observations": [
+      {
+        "stage": "ready",
+        "operation_id": null,
+        "pid": 19736,
+        "observed_at": "2026-09-28 15:10:56"
+      },
+      {
+        "stage": "ready",
+        "operation_id": null,
+        "pid": 7640,
+        "observed_at": "2026-09-28 15:10:58"
+      },
+      {
+        "command_ids": [
+          "same-command",
+          "same-command"
+        ],
+        "operation_ids": [
+          "26a9dcbcba22469ca0a5af65957f2061",
+          "26a9dcbcba22469ca0a5af65957f2061"
+        ],
+        "conflict_operation": "c3e24e50601542ca9dec31cc8e95bc30",
+        "release_count": 1,
+        "public_read_preserved": true
+      }
+    ],
+    "completed_at": "2026-09-28 15:10:59"
+  }
+}

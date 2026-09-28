@@ -19,6 +19,7 @@ from amphora_contracts_core import Scope
 from amphora_contracts_tools import LockEntry, ReleaseDescriptor
 
 assert Path(amphora_capability_registry.__file__).is_relative_to(sys.prefix), "Must use installed wheel"
+assert Path(amphora_capability_registry.__file__).parent.joinpath("persistence/migrations/versions/r0001_initial.sql").is_file()
 for absent in ("amphora_campaign_runtime", "amphora_data_artifacts", "torch", "rdkit"):
     assert importlib.util.find_spec(absent) is None, absent
 

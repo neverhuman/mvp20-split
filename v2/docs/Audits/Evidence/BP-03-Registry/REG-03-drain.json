@@ -1,0 +1,53 @@
+{
+  "sha256": "2988e38fac91977abe20d7c6a0136e92f69240b7908f79667039cd1bda3fad74",
+  "evidence": {
+    "scenario": "REG-03-drain",
+    "status": "passed",
+    "scope": {
+      "tenant_id": "registry-tests",
+      "project_id": "0997d2233fc640e5aacfe47e0a6d3e67"
+    },
+    "source_sha256": "20cb3768a8353c921a75fa6e6b5359e1efae69bfb06d81ec7bb1ee61199bc497",
+    "descriptor_sha256": "9ef763885d494b7a995916a41b0a6c8041d6621ce696e88f0fe4441fd4db04cd",
+    "observations": [
+      {
+        "stage": "ready",
+        "operation_id": null,
+        "pid": 33076,
+        "observed_at": "2026-09-28 15:11:06"
+      },
+      {
+        "stage": "prepared",
+        "operation_id": "8a9c6d3cf31343e18e213b96585d81a2",
+        "pid": 33076,
+        "observed_at": "2026-09-28 15:11:06"
+      },
+      {
+        "stage": "ready",
+        "operation_id": null,
+        "pid": 30332,
+        "observed_at": "2026-09-28 15:11:08"
+      },
+      {
+        "stage": "ready",
+        "operation_id": null,
+        "pid": 26288,
+        "observed_at": "2026-09-28 15:11:09"
+      },
+      {
+        "waiting_on_postgres_advisory_lock": [
+          "registry-probe-d266df53569b4a128f8e86c53c7ed2f6",
+          "registry-probe-3bdc44ef727e4e7e8703af81c4322244"
+        ],
+        "command_ids": [
+          "97b2a64afc664dd7bf4d024c083ef0bd",
+          "9d931e1abdb2444d88aec484549508b1",
+          "afd3383d4d004e1db2d6cc2096c056aa"
+        ],
+        "heartbeat": "deployment_not_active",
+        "resolution": "release_not_active"
+      }
+    ],
+    "completed_at": "2026-09-28 15:11:09"
+  }
+}

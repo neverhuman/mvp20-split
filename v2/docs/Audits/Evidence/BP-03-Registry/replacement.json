@@ -1,0 +1,38 @@
+{
+  "sha256": "8ceeaf27abe3c859d33116cec46912d9cc74a1e280e38e1c1a38605d86e5eeb9",
+  "evidence": {
+    "scenario": "registry-retained-replacement-v1",
+    "scope": {
+      "tenant_id": "registry-installed",
+      "project_id": "d22b650563a148089d1871a193b68ae5"
+    },
+    "status": "passed",
+    "observations": [
+      {
+        "stage": "original",
+        "observed_at": "2026-09-28 15:11:49",
+        "operation_id": "2cf89457f18d4ff48f6bb30a36401894",
+        "descriptor_sha256": "9ef763885d494b7a995916a41b0a6c8041d6621ce696e88f0fe4441fd4db04cd"
+      },
+      {
+        "stage": "replacement",
+        "observed_at": "2026-09-28 15:11:53",
+        "operation_id": "aedacba20b1342b8853d1a0bb34e3cdf",
+        "original_receipts_preserved": true,
+        "release_revision": 3,
+        "replica_revision": 2
+      }
+    ],
+    "packages": {
+      "amphora_campaign_runtime-0.1.0-py3-none-any.whl": "2c2b8e89c41fbcc07fa02ed4c3713d2e9a9c7f3eb02978b0550f8326419b561a",
+      "amphora_capability_registry-0.1.0-py3-none-any.whl": "c147307273b18702d5676c5ead991814fbc5844320bb2e4c9940bcc67a0729d0",
+      "amphora_contracts_artifacts-0.1.0-py3-none-any.whl": "10c717c362f60e7f3f3fd40868d76d50ec58f32150db14580366219d8d6c8adc",
+      "amphora_contracts_campaigns-0.1.0-py3-none-any.whl": "635724223ae1607c4e89e4a17c567f0749aa98a76f528b5b4e86e71a0e01d4da",
+      "amphora_contracts_commands-0.1.0-py3-none-any.whl": "476beedaecc51c050c1e13efe2dbcd7c84a1b6b35201bb212d2935342bcb7a1b",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "5ee43eef187331776210ea39979841bf7840482645a8e67a5d232a99baf27f35",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "92918bab870693aef47c708044769bf7866b3c218903259e7ba51776259a63cc",
+      "amphora_data_artifacts-0.1.0-py3-none-any.whl": "2d0d39341507955976e1f92b1d4d3a222eb2142a71008f2c1c4064df7278b426"
+    }
+  }
+}

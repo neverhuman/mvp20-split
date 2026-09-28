@@ -119,6 +119,20 @@ def independent_builds(uv):
                     assert checked.stdout == previous, "Replacement changed descriptor lock or policy decision"
                 previous = checked.stdout
         print("Installed registry: both golden descriptors, canonical locks and decisions preserved across fresh replacement")
+        if os.environ.get("AMPHORA_TEST_POSTGRES") == "1":
+            from postgres_fixture import registry_owner
+            registry_owner(state)
+            registry_url = url.set(username="registry_service")
+            registry_environment = dict(os.environ,
+                AMPHORA_REGISTRY_DATABASE_URL=registry_url.render_as_string(hide_password=False),
+                AMPHORA_REGISTRY_MIGRATION_URL=registry_url.set(username="registry_migrator").render_as_string(hide_password=False),
+                AMPHORA_TESTED_PACKAGES=json.dumps({w.name: hashlib.sha256(w.read_bytes()).hexdigest() for w in wheels.glob("*.whl")}))
+            acceptance = subprocess.run([str(registry_python), "-I", str(registry_project / "tests/acceptance/service_probe.py"),
+                str(replacement_python), str(ROOT / "contracts/fixtures/v1/tool_releases.json"), str(ROOT / ".test-results/registry-replacement")],
+                cwd=root, env=registry_environment, capture_output=True, text=True, timeout=90)
+            if acceptance.returncode:
+                raise SystemExit("Installed registry HTTP replacement failed: " + acceptance.stderr[-2500:])
+            print(acceptance.stdout.strip())
         paired_environment["AMPHORA_REGISTRY_PROBE_PYTHON"] = str(registry_python)
         paired_environment["AMPHORA_REGISTRY_PROBE_SCRIPT"] = str(registry_probe)
         if os.environ.get("AMPHORA_TEST_POSTGRES") == "1":

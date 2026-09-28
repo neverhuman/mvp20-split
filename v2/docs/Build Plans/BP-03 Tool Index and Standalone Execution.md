@@ -2,15 +2,15 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-03.02 / Acceptance / V1.
-- Last refreshed: `2026-09-28 14:55:35` (America/Chicago).
+- Status: primary_active; BP-03.03 / Build / B1.
+- Last refreshed: `2026-09-28 15:17:41` (America/Chicago).
 - Owner/scope: Capability Registry and independently packaged tools.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: BP-01 contracts and completed BP-02 claim/artifact/authority gates.
-- Implementation: **43.75%**, 7/16 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
+- Implementation: **50%**, 8/16 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-03.02/V1 installed host/replacement. Next: scoped audit and .03 activation.
-- Demonstrated behavior: immutable identity, semantic validation and separate selection observations verified; registry transaction/API boundary verified; deeper routing, installed hosting and actual tools remain pending.
+- Current implementation task: BP-03.03/B1 client/tool boundaries. Next: B2 attempt/lifecycle behavior.
+- Demonstrated behavior: immutable identity, semantic validation and separate selection observations verified; durable registry discovery/policy and installed replacement verified; SDK/tools and integrated replica dispatch remain pending.
 - Blockers: BP-01/BP-02 predecessor gates passed; no current user blocker. External choices remain only at their named dependent gates.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
@@ -30,8 +30,8 @@ Primary services retain private state, dependencies, migrations and module READM
 | Parent phase / child | Overall | Build | Acceptance | Prerequisite |
 |---|---:|---:|---:|---|
 | P1 / [BP-03.01 Identity and descriptor contracts](BP-03/Completed/BP-03.01%20Identity%20and%20descriptor%20contracts.md) | 100% | 100% | 100% | Closed/audited |
-| P2 / [BP-03.02 Registry and version routing](BP-03/BP-03.02%20Registry%20and%20version%20routing.md) | 75% | 100% | 0% | B3 passed; V1 active |
-| P3 / [BP-03.03 Worker protocol and independent tools](BP-03/BP-03.03%20Worker%20protocol%20and%20independent%20tools.md) | 0% | 0% | 0% | BP-03.02 acceptance |
+| P2 / [BP-03.02 Registry and version routing](BP-03/Completed/BP-03.02%20Registry%20and%20version%20routing.md) | 100% | 100% | 100% | Closed/audited |
+| P3 / [BP-03.03 Worker protocol and independent tools](BP-03/BP-03.03%20Worker%20protocol%20and%20independent%20tools.md) | 0% | 0% | 0% | .02 passed; B1 active |
 | P4 / [BP-03.04 Replicas and replacement proof](BP-03/BP-03.04%20Replicas%20and%20replacement%20proof.md) | 0% | 0% | 0% | BP-03.03 acceptance |
 
 Each linked child is the execution tracker for its scope. Build tasks name concrete implementation; acceptance requires independent evidence and a scoped drift audit. Do not repeat the historical task pairs as a second work list. No dependent child starts before its predecessor acceptance gate; independent design review does not activate implementation.

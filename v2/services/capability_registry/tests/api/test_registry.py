@@ -1,6 +1,11 @@
 """HTTP authentication and actual owner persistence; no mock registry peers."""
 
+import copy
+import json
+
 import pytest
+from amphora_capability_registry.descriptors.identity import ReleaseDocument
+from amphora_contracts_tools import ReleaseDescriptor
 
 pytestmark = pytest.mark.postgres
 
@@ -59,3 +64,29 @@ def test_deployment_heartbeat_resolution_and_drain_keep_original_pins(registry_e
     assert call("drain", {"release": lock, "expected_revision": 2})["release"]["revision"] == 3
     assert call("resolve", request)["reason_code"] == "release_not_active"
     assert call("revoke", {"release": lock, "expected_revision": 3})["release"]["lock"] == lock
+
+
+def test_scoped_catalog_discovers_exact_releases_with_bounded_pages(registry_env):
+    env = registry_env
+    expected = set()
+    for version in ("0.1.0", "0.2.0", "0.3.0"):
+        raw = copy.deepcopy(env.fixture["descriptor"])
+        raw["tool"]["binding"]["release"] = version
+        lock = ReleaseDocument.from_descriptor(ReleaseDescriptor.model_validate_json(json.dumps(raw))).to_lock()
+        result = env.execute("register", {"scope": env.scope.model_dump(), "descriptor": raw, "expected_lock": lock.model_dump(mode="json")})
+        assert result.status == "accepted"
+        expected.add(lock.descriptor_sha256)
+    seen, after = [], None
+    for _ in range(3):
+        query = "/v1/releases?limit=1" + ("&after="+after if after else "")
+        response = env.client.get(query, headers=env.headers)
+        assert response.status_code == 200
+        page = response.json()
+        seen.extend(item["lock"]["descriptor_sha256"] for item in page["items"])
+        after = page["next_after"]
+    assert after is None and len(seen) == len(set(seen)) == 3 and set(seen) == expected
+    exact = env.client.get("/v1/releases?capability_id=synthetic.numeric-affine&release=0.2.0", headers=env.headers).json()
+    assert len(exact["items"]) == 1 and exact["items"][0]["lock"]["tool"]["release"] == "0.2.0"
+    assert env.client.get("/v1/releases", headers={"Authorization": "Bearer "+"b"*32}).json()["items"] == []
+    assert env.client.get("/v1/releases?limit=101", headers=env.headers).status_code == 422
+    assert env.client.get("/v1/releases?release=latest", headers=env.headers).status_code == 422

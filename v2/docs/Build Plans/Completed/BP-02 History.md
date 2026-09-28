@@ -206,3 +206,5 @@ The preliminary 34-child-delivery denominator included pure design gates S1 and 
 | 2026-09-25 16:59:22 | BP-02.03 A2 complete; child 20%, V1 25%, parent 34.38%; next A3 | 141 tests, eight independent builds; artifact suite 30, two-process fencing |
 
 | 2026-09-25 17:12:21 | BP-02.03 A3 complete; child 40%, V1 50%, parent 37.50%; next A4 | 158 tests, eight independent builds; finalizer crash/replay and atomic publication verified |
+
+| 2026-09-26 16:31:31 | BP-02.03 A4 complete; child 60%, V1 75%, parent 40.63%; next A5 | 172 tests, eight independent builds; scripted authenticated runtime proof; Git identity pending |

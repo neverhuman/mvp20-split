@@ -1,6 +1,7 @@
 """Actual owner processes and PostgreSQL barriers; not installed HTTP evidence."""
 
 import copy
+import hashlib
 import json
 import os
 import queue
@@ -10,11 +11,13 @@ import threading
 import time
 import uuid
 from contextlib import ExitStack
+from datetime import datetime
 from pathlib import Path
 
 import pytest
 from amphora_capability_registry.descriptors.identity import ReleaseDocument
 from amphora_contracts_tools import ReleaseDescriptor
+from export_schemas import ROOT
 from sqlalchemy import text
 
 pytestmark = pytest.mark.postgres
@@ -52,10 +55,17 @@ class OwnerProcess:
         return json.loads(line)
 
     def __enter__(self):
-        assert self.receive()["stage"] == "ready"
-        return self
+        try:
+            self.ready = self.receive()
+            assert self.ready["stage"] == "ready"
+            return self
+        except BaseException:
+            self.__exit__()
+            raise
 
     def __exit__(self, *_):
+        self.closed = {"pid": self.child.pid, "killed": self.child.poll() is None,
+                       "observed_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
         if self.child.poll() is None:
             self.child.kill()
         self.child.wait(timeout=10)
@@ -66,6 +76,21 @@ class OwnerProcess:
 
 def registration(env):
     return {"scope": env.scope.model_dump(), "descriptor": env.fixture["descriptor"], "expected_lock": env.fixture["lock"]}
+
+
+def evidence(env, scenario, observations):
+    sources = ROOT/"services/capability_registry/src"
+    digest = hashlib.sha256()
+    for path in sorted(sources.rglob("*")):
+        if path.suffix in {".py", ".sql"}:
+            digest.update(path.relative_to(sources).as_posix().encode()+b"\0"+path.read_bytes())
+    value = {"scenario": scenario, "status": "passed", "scope": env.scope.model_dump(),
+             "source_sha256": digest.hexdigest(), "descriptor_sha256": env.fixture["sha256"],
+             "observations": observations, "completed_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+    body = json.dumps(value, sort_keys=True, separators=(",", ":")).encode()
+    destination = ROOT/".test-results/registry-processes"/env.scope.project_id
+    destination.mkdir(parents=True, exist_ok=True)
+    (destination/(scenario+".json")).write_text(json.dumps({"sha256": hashlib.sha256(body).hexdigest(), "evidence": value}, indent=2)+"\n", encoding="utf-8")
 
 
 def wait_for_lock(env, child):
@@ -100,12 +125,17 @@ def test_duplicate_and_changed_registration_in_separate_processes(registry_env, 
     changed["expected_lock"] = ReleaseDocument.from_descriptor(ReleaseDescriptor.model_validate_json(json.dumps(changed["descriptor"]))).to_lock().model_dump(mode="json")
     with OwnerProcess(env, "register", changed) as child:
         child.send()
-        assert child.receive()["receipt"]["reason_code"] == "immutable_release_conflict"
+        conflict = child.receive()["receipt"]
+        assert conflict["reason_code"] == "immutable_release_conflict"
     response = env.client.get("/v1/releases/"+payload["expected_lock"]["descriptor_sha256"], headers=env.headers)
     assert response.json() == receipts[0]["release"]
     with env.engine.connect() as connection:
         assert connection.execute(text("SELECT count(*) FROM registry.releases WHERE tenant_id=:tenant AND project_id=:project"),
             {"tenant": env.scope.tenant_id, "project": env.scope.project_id}).scalar_one() == 1
+    evidence(env, "REG-01-same" if same_command else "REG-01-distinct", [
+        *[p.ready for p in processes], {"command_ids": [p.command["identity"]["command_id"] for p in processes],
+        "operation_ids": [receipt["operation_id"] for receipt in receipts], "conflict_operation": conflict["operation_id"],
+        "release_count": 1, "public_read_preserved": True}])
 
 
 @pytest.mark.parametrize("barrier", ["prepared", "committed"])
@@ -121,12 +151,15 @@ def test_killed_owner_rolls_back_or_replays_one_original_receipt(registry_env, b
         restarted.send()
         receipt = restarted.receive()["receipt"]
     assert receipt["reason_code"] == "registered"
+    assert child.closed["killed"]
     assert (receipt["operation_id"] == marker["operation_id"]) is (barrier == "committed")
     assert env.execute("register", payload, command_id="interrupted").model_dump(mode="json") == receipt
     with env.engine.connect() as connection:
         values = {"tenant": env.scope.tenant_id, "project": env.scope.project_id}
         for table in ("commands", "releases", "release_states", "audit_events"):
             assert connection.execute(text(f"SELECT count(*) FROM registry.{table} WHERE tenant_id=:tenant AND project_id=:project"), values).scalar_one() == 1
+    evidence(env, "REG-02-"+barrier, [child.ready, marker, child.closed, restarted.ready,
+        {"command_id": "interrupted", "replayed_operation": receipt["operation_id"], "one_release_receipt_audit": True}])
 
 
 @pytest.mark.parametrize("action", ["drain", "revoke"])
@@ -144,7 +177,8 @@ def test_heartbeat_and_resolution_wait_for_actual_lifecycle_transaction(registry
     with ExitStack() as stack:
         changer = stack.enter_context(OwnerProcess(env, action, {"release": lock, "expected_revision": 2}, barrier="prepared"))
         changer.send()
-        assert changer.receive()["stage"] == "prepared"
+        prepared = changer.receive()
+        assert prepared["stage"] == "prepared"
         heartbeat = stack.enter_context(OwnerProcess(env, "heartbeat", {**report, "expected_revision": 1}, actor="worker"))
         resolver = stack.enter_context(OwnerProcess(env, "resolve", need))
         for child in (heartbeat, resolver):
@@ -154,3 +188,7 @@ def test_heartbeat_and_resolution_wait_for_actual_lifecycle_transaction(registry
         assert changer.receive()["receipt"]["status"] == "accepted"
         assert heartbeat.receive()["receipt"]["reason_code"] == "deployment_not_active"
         assert resolver.receive()["receipt"]["reason_code"] == "release_not_active"
+    evidence(env, "REG-03-"+action, [changer.ready, prepared, heartbeat.ready, resolver.ready,
+        {"waiting_on_postgres_advisory_lock": [heartbeat.application, resolver.application],
+         "command_ids": [p.command["identity"]["command_id"] for p in (changer, heartbeat, resolver)],
+         "heartbeat": "deployment_not_active", "resolution": "release_not_active"}])

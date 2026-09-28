@@ -27,6 +27,7 @@ dependencies = [
     { name = "amphora-contracts-tools" },
     { name = "fastapi" },
     { name = "psycopg", extra = ["binary"] },
+    { name = "pydantic" },
     { name = "sqlalchemy" },
     { name = "uvicorn" },
 ]
@@ -39,6 +40,7 @@ requires-dist = [
     { name = "amphora-contracts-tools", editable = "../../contracts/tools" },
     { name = "fastapi", specifier = ">=0.115,<1" },
     { name = "psycopg", extras = ["binary"], specifier = ">=3,<4" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
     { name = "sqlalchemy", specifier = ">=2,<3" },
     { name = "uvicorn", specifier = ">=0.34,<1" },
 ]

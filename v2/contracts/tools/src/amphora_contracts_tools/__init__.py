@@ -19,6 +19,7 @@ from .registry import (
     HeartbeatSnapshot,
     RegisterDeployment,
     RegistryReceipt,
+    ReleasePage,
     ReleaseSnapshot,
     ReplicaHeartbeat,
     ResolveRelease,
@@ -44,7 +45,7 @@ from .releases import (
 
 __all__ = [
     "ChangeDeployment", "ChangeRelease", "DeploymentSnapshot", "HeartbeatSnapshot", "RegisterDeployment",
-    "RegistryReceipt", "ReleaseSnapshot", "ReplicaHeartbeat", "ResolveRelease", "parse_registry_command",
+    "RegistryReceipt", "ReleasePage", "ReleaseSnapshot", "ReplicaHeartbeat", "ResolveRelease", "parse_registry_command",
     "ToolBinding",
     "Port",
     "ToolDescriptor",

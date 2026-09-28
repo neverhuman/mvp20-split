@@ -6,7 +6,7 @@ from ..descriptors.identity import ReleaseConflict
 from ..persistence.store import CommandStore
 from .inventory import Inventory, deployment_row, deployment_wire
 from .model import RegistryDenied
-from .releases import Releases, read_release
+from .releases import Releases, list_releases, read_release
 from .resolution import Resolver
 
 
@@ -53,3 +53,9 @@ class Registry:
             raise RegistryDenied("action_denied")
         with self.engine.connect() as connection:
             return deployment_wire(principal.scope, deployment_row(connection, principal.scope, deployment_id))
+
+    def list_releases(self, principal, *, limit=50, after=None, capability_id=None, release=None):
+        if "read" not in principal.actions:
+            raise RegistryDenied("action_denied")
+        with self.engine.connect() as connection:
+            return list_releases(connection, principal.scope, limit=limit, after=after, capability_id=capability_id, release=release)

@@ -1,10 +1,10 @@
 # Architecture Drift
 
-- Status: BP-02 closed/audited; BP-03.01 closed; BP-03.02 registry implementation active
-- Last refreshed: `2026-09-28 14:25:40` (America/Chicago)
+- Status: BP-02 closed/audited; BP-03.01/.02 closed; BP-03.03 SDK/tools active
+- Last refreshed: `2026-09-28 15:17:41` (America/Chicago)
 - Scope: v2 design/implementation alignment
 - Active focus: require traceable contracts and closeout audits as implementation begins
-- Next gate: BP-03.02 durable registry and version routing
+- Next gate: BP-03.03 typed worker client/tool boundaries
 
 ## Active Findings
 

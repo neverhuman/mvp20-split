@@ -51,3 +51,5 @@ Aligned within documentation scope; [planning review](Planning_Maturity_Review.m
 - `2026-09-28 13:45:17`: BP-02.06 and parent aligned/closed; [recovery audit](BP-02.06_Recovery_Integration_Closeout.md), [parent audit](BP-02_Foundation_Closeout.md). 307 final component tests, REC-01..09 and fresh replacement proof; exact manifests preserved. Terminal-blocked wording aligned to requirements with explicit oracle; stale progress/status mirrors corrected. No blocking or unowned drift.
 
 - `2026-09-28 14:25:40`: [BP-03.01 descriptor closeout](BP-03.01_Descriptor_Closeout.md) aligned; additive contracts, focused independent policy, golden failures and fresh install/actual peer proof passed. No follow-up in the closed scope; durable registry remains .02.
+
+- `2026-09-28 15:17:41`: [BP-03.02 registry closeout](BP-03.02_Registry_Closeout.md) aligned; private durable commands/inventory, exact-pin policy, bounded discovery, actual owner races and installed HTTP replacement passed. Discovery gap repaired before closeout. Wider catalog/context-scale acceptance is explicitly owned by BP-07.03; no follow-up within closed storage scope.

@@ -3,6 +3,7 @@
 import json
 import os
 import sys
+from datetime import datetime
 
 from amphora_capability_registry.catalog.model import Principal
 from amphora_capability_registry.catalog.service import Registry
@@ -18,7 +19,8 @@ def emit(value):
 
 
 def barrier(stage, operation=None):
-    emit({"stage": stage, "operation_id": operation, "pid": os.getpid()})
+    emit({"stage": stage, "operation_id": operation, "pid": os.getpid(),
+          "observed_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
     if sys.stdin.readline().strip() != "continue":
         raise RuntimeError("Missing explicit test barrier release")
 

@@ -3,6 +3,7 @@ name = "amphora-capability-registry"
 version = "0.1.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
+    "pydantic>=2.12,<3",
     "sqlalchemy>=2,<3",
     "psycopg[binary]>=3,<4",
     "alembic>=1.16,<2",

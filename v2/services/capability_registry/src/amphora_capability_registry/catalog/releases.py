@@ -2,7 +2,7 @@
 
 import json
 
-from amphora_contracts_tools import ChangeRelease, RegisterRelease
+from amphora_contracts_tools import ChangeRelease, RegisterRelease, ReleasePage
 from sqlalchemy import text
 
 from ..descriptors.identity import ReleaseDocument
@@ -20,6 +20,21 @@ def read_release(connection, scope, digest):
     if row is None:
         raise RegistryDenied("release_not_found")
     return ReleaseRecord.from_row(row)
+
+
+def list_releases(connection, scope, *, limit, after, capability_id, release):
+    if type(limit) is not int or not 1 <= limit <= 100:
+        raise RegistryDenied("invalid_page_limit")
+    values = {**scope_bindings(scope), "limit": limit+1}
+    conditions = []
+    for column, name, value in (("descriptor_sha256", "after", after), ("capability_id", "capability", capability_id),
+                                ("release", "release", release)):
+        if value is not None:
+            conditions.append(f"AND r.{column}{'>' if name == 'after' else '='}:{name} ")
+            values[name] = value
+    rows = connection.execute(text(SELECT + "".join(conditions) + "ORDER BY r.descriptor_sha256 LIMIT :limit"), values).mappings().all()
+    records = tuple(ReleaseRecord.from_row(row).to_wire(scope) for row in rows[:limit])
+    return ReleasePage(items=records, next_after=records[-1].lock.descriptor_sha256 if len(rows)>limit else None)
 
 
 class Releases:

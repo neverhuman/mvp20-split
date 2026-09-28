@@ -1,14 +1,17 @@
 """Bounded authenticated registry API; no implicit database migrations."""
 
+from typing import Annotated
+
 from amphora_contracts_commands import CommandEncodingError
 from amphora_contracts_core import Digest, Identifier
 from amphora_contracts_tools import (
     DeploymentSnapshot,
     RegistryReceipt,
+    ReleasePage,
     ReleaseSnapshot,
     parse_registry_command,
 )
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Query, Request
 from fastapi.concurrency import run_in_threadpool
 from fastapi.responses import JSONResponse
 
@@ -47,6 +50,13 @@ def create_app(registry, credentials):
     def release(digest: Digest, request: Request):
         principal = credentials.authenticate(request.headers.get("authorization"))
         return registry.read_release(principal, digest)
+
+    @app.get("/v1/releases", response_model=ReleasePage)
+    def catalog(request: Request, limit: Annotated[int, Query(ge=1, le=100)] = 50,
+                after: Digest | None = None, capability_id: Identifier | None = None,
+                release: Annotated[str | None, Query(max_length=128, pattern=r"^[0-9]+\.[0-9]+\.[0-9]+$")] = None):
+        principal = credentials.authenticate(request.headers.get("authorization"))
+        return registry.list_releases(principal, limit=limit, after=after, capability_id=capability_id, release=release)
 
     @app.get("/v1/deployments/{deployment_id}", response_model=DeploymentSnapshot)
     def deployment(deployment_id: Identifier, request: Request):

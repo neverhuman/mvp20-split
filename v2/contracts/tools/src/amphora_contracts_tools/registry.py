@@ -5,7 +5,7 @@ from datetime import datetime
 from typing import Annotated, Literal
 
 from amphora_contracts_commands import CanonicalCommand, CommandEncodingError
-from amphora_contracts_core import Identifier, SafePositiveInt, Scope, WireModel
+from amphora_contracts_core import Digest, Identifier, SafePositiveInt, Scope, WireModel
 from pydantic import AfterValidator, Field
 
 from .models import Port
@@ -61,6 +61,12 @@ class DeploymentSnapshot(WireModel):
     deployment: RegisterDeployment
     revision: SafePositiveInt
     status: Literal["active", "draining", "revoked"]
+
+
+class ReleasePage(WireModel):
+    schema_version: Literal["1"] = "1"
+    items: Annotated[tuple[ReleaseSnapshot, ...], Field(max_length=100)]
+    next_after: Digest | None
 
 
 class HeartbeatSnapshot(WireModel):

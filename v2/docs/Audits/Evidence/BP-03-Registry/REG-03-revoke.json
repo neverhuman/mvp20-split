@@ -1,0 +1,53 @@
+{
+  "sha256": "da5c95bd6bcef3ad8729a103b40da38fb4688bbf2cb26a83608e4bc9adc91899",
+  "evidence": {
+    "scenario": "REG-03-revoke",
+    "status": "passed",
+    "scope": {
+      "tenant_id": "registry-tests",
+      "project_id": "2aa78d9183e0431aae1ab28e64adf769"
+    },
+    "source_sha256": "20cb3768a8353c921a75fa6e6b5359e1efae69bfb06d81ec7bb1ee61199bc497",
+    "descriptor_sha256": "9ef763885d494b7a995916a41b0a6c8041d6621ce696e88f0fe4441fd4db04cd",
+    "observations": [
+      {
+        "stage": "ready",
+        "operation_id": null,
+        "pid": 28860,
+        "observed_at": "2026-09-28 15:11:11"
+      },
+      {
+        "stage": "prepared",
+        "operation_id": "b8e647193ef54dcbb065d016941ebb8e",
+        "pid": 28860,
+        "observed_at": "2026-09-28 15:11:11"
+      },
+      {
+        "stage": "ready",
+        "operation_id": null,
+        "pid": 13216,
+        "observed_at": "2026-09-28 15:11:12"
+      },
+      {
+        "stage": "ready",
+        "operation_id": null,
+        "pid": 15144,
+        "observed_at": "2026-09-28 15:11:14"
+      },
+      {
+        "waiting_on_postgres_advisory_lock": [
+          "registry-probe-c2e06a47a4344ae7abddb1cf5bf824ff",
+          "registry-probe-27a654b46964442caacb3a75bf76c960"
+        ],
+        "command_ids": [
+          "6ac55cda033941da9a27071bac7e7c0f",
+          "2b17a60454b744fa95c430169d40559c",
+          "9e92b4784537458292a9da380de0a556"
+        ],
+        "heartbeat": "deployment_not_active",
+        "resolution": "release_not_active"
+      }
+    ],
+    "completed_at": "2026-09-28 15:11:14"
+  }
+}
