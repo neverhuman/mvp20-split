@@ -25,3 +25,5 @@ Replacements must preserve canonical bytes, defaults, strict rejection, family/s
 BP-02.04/I6 adds RunSnapshot as an additive wire-v1 observation schema, with conserved budget fields and bounded current activation/attempt views. Its values never confer authority. Existing command canonical bytes/defaults remain unchanged; generated validation/serialization schemas are published alongside prior artifacts.
 
 BP-02.05/D4 adds RuntimeNotification and DeliveryAcknowledgement as closed wire-v1 transport roots. A notification carries stable scoped event/operation identity and an authoritative-state reference; it never grants execution authority. Matching acknowledgement permits delivery bookkeeping only. Consumers deduplicate stable operation identities.
+
+BP-02.05/D5 adds AuditPage, DeliveryPage and CompletionRecord wire-v1 roots. Cursor/page membership semantics and all authorization remain runtime policies. Completion records distinguish accepted attempt reports from canonical terminal activation results; delivery pages report current transport metadata, never lease tokens.

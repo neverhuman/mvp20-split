@@ -13,6 +13,7 @@
 | [lifecycle](src/amphora_campaign_runtime/lifecycle/README.md) | Exact fixture admission, claims, renewal, cancellation/revocation, budget settlement and scoped observations |
 | [completion](src/amphora_campaign_runtime/completion/README.md) | Immutable prepared intents, resumable artifact reservations and atomic result/checkpoint acceptance |
 | [delivery](src/amphora_campaign_runtime/delivery/README.md) | Both runtime journals, fenced delivery leases, bounded retry/exhaustion and exact acknowledgement |
+| [inspection](src/amphora_campaign_runtime/inspection/README.md) | Scoped original receipts, accepted reports, signed pinned audit pages and current delivery state |
 | [persistence](src/amphora_campaign_runtime/persistence/README.md) | Private runtime schema/migrations, canonical commands, transaction retries, receipts and audit/outbox |
 | `api.py`, `lifecycle/http.py` | Bounded decoding, authenticated configured handlers, sanitized errors and OpenAPI |
 | `hosting.py`, `__main__.py` | Explicit local configuration, service-role readiness and loopback executable; no startup migrations |
@@ -45,7 +46,7 @@ Use [config.example.json](config.example.json) as a synthetic configuration shap
 
 `settle --config <local-config> --actor <actor> --tenant <tenant> --project <project> --run <run>` selects one explicitly configured `maintain` principal. It performs one bounded run sweep; there is no implicit background scheduler. Expired pure work spends its issued unit once and may be reissued within deadline/attempt/budget bounds. Cancellation spends issued work and costs nothing for unclaimed work. A prepared completion intent blocks blind expiry until its owner reconciles/aborts it. Unknown external effects retain reservations and block automatic retry.
 
-Database outages leave registered commands pending/retryable; stable business rejection and original terminal receipts persist. Local credentials are a development profile, not enterprise identity. Runtime notifications and retention commands have explicit bounded durable delivery passes. Existing snapshots are observations, not subscriptions or paginated history.
+Database outages leave registered commands pending/retryable; stable business rejection and original terminal receipts persist. Local credentials are a development profile, not enterprise identity. Runtime notifications and retention commands have explicit bounded durable delivery passes. Configured history routes expose original receipts, accepted reports and bounded audit/delivery pages; these remain observations, not subscriptions or authority.
 
 `reconcile-intents` uses the same scoped maintenance selection as `settle`, plus bounded `--limit` (1-100) and `--after` cursor. It aborts expired/ineligible prepared intents and terminalizes previously cancelled pending commands without waiting for caller retries. Run bounded passes before settlement if prepared-intent protection blocks reclaim. Terminal artifact confirm/reconcile operations are queued atomically and delivered through explicit bounded passes. The artifact service must be configured with a scoped outcome credential and this runtime's exact outcome endpoint. Example configurations have independent synthetic profiles/pins and require deliberate matching before an integrated campaign; they are not an already deployed pair.
 
@@ -56,6 +57,7 @@ Database outages leave registered commands pending/retryable; stable business re
 | `graph/`, `admission/`, `api/` | Structural/pin rejection, OpenAPI, redaction, bytes/depth/time limits |
 | `persistence/` | Real PostgreSQL roles, constraints, command contention and rollback |
 | `lifecycle/` | Pure transitions plus actual admission/claim/renew/budget/authority transactions, races, scope and startup |
+| `inspection/` | Scoped historical receipts/reports, pinned pages/cursor failures and delivery visibility |
 | `delivery/` | Both journal claims, stale ack fencing, backoff/exhaustion and exact HTTP acknowledgement |
 | `completion/` | Immutable descriptor/intent bindings, reservation resume, cancellation during remote I/O and transport negatives |
 | `acceptance/` | Independently installed runtime plus HTTP-only workers: worker kill/lease reclaim, higher fences, stale rejection, read isolation and conserved budget |
@@ -68,3 +70,5 @@ A replacement preserves public wire/canonical-command compatibility, immutable s
 BP-02.05 adds optional trusted `tools` descriptors to host configuration and pins matching descriptors in each admitted run. Existing configs still admit/claim fixtures, but missing completion descriptors fail closed. Runtime_0006 is required before hosting this version. Optional `artifacts` peer configuration enables fixture completion. Retention confirmation/reconciliation transport is implemented; actual cross-service acceptance remains D6/.06. The runtime also depends on the public artifact-contract package; it does not import the artifact service.
 
 Delivery CLI: `deliver --config <local-config> --actor <actor> --tenant <tenant> --project <project> --limit 20 --time-budget 20`. The selected principal needs deliver. Configure notification targets explicitly; missing destinations remain retryable and eventually exhausted. Delivery never changes committed execution authority.
+
+Optional `inspection` configuration requires a stable `cursor_key_env` and accepts `ttl_seconds` (60-3600, default 900). Historical reads require read; cross-actor receipt inspection additionally requires inspect_receipts. [Inspection boundary](src/amphora_campaign_runtime/inspection/README.md) documents public paths and resnapshot/reconnect behavior.

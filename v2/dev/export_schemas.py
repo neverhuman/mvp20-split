@@ -38,6 +38,9 @@ for name, model in {
     "run-snapshot": runtime_contracts.RunSnapshot,
     "notification": runtime_contracts.RuntimeNotification,
     "delivery-acknowledgement": runtime_contracts.DeliveryAcknowledgement,
+    "audit-page": runtime_contracts.AuditPage,
+    "delivery-page": runtime_contracts.DeliveryPage,
+    "completion-record": runtime_contracts.CompletionRecord,
 }.items():
     MODELS["runtime." + name] = model
 for name, model in {

@@ -85,16 +85,19 @@ class RequestBounds:
         return await self.app(scope, replay, send)
 
 
-def create_app(admission=None, credentials=None, completion=None) -> FastAPI:
+def create_app(admission=None, credentials=None, completion=None, history=None) -> FastAPI:
     app = FastAPI(title="Amphora runtime foundation", version="0.1.0")
     app.add_middleware(RequestBounds)
     if (admission is None) != (credentials is None):
         raise ValueError("Admission and credentials must be configured together")
-    if completion is not None and admission is None:
-        raise ValueError("Completion requires configured lifecycle")
+    if (completion is not None or history is not None) and admission is None:
+        raise ValueError("Completion/history requires configured lifecycle")
     if admission is not None:
         from .lifecycle.http import install_admission
         install_admission(app, admission, credentials, completion)
+        if history is not None:
+            from .inspection.http import install_history
+            install_history(app, history, credentials)
 
     @app.exception_handler(RequestValidationError)
     async def invalid_request(_request, error):

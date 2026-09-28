@@ -182,3 +182,5 @@ The preliminary 34-child-delivery denominator included pure design gates S1 and 
 | 2026-09-23 09:41:20 | Strict service isolation and proposed independently replicated tool workloads; source layout/state boundaries refined, no deployment | [Isolation](../Architecture/System/Service_Isolation.md), [tool services](../Architecture/Capabilities/Tool_Services.md) |
 
 | 2026-09-23 09:48:47 | Graph Runner coordination/aggregation/supervision and durable LLM decision protocol documented; architecture only | [Graph Runner](../Architecture/System/Graph_Runner.md) |
+
+| 2026-09-23 09:51:08 | High-level specs/supporting references relocated into Architecture/Requirements; links and PDF preservation checked | [Requirements guide](../Architecture/Requirements/README.md) |

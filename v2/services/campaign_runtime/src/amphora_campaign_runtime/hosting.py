@@ -17,6 +17,8 @@ from .delivery.model import DeliveryPolicy
 from .delivery.store import DeliveryStore
 from .delivery.transport import DeliveryTargets, NotificationSink
 from .delivery.worker import DeliveryWorker
+from .inspection.cursors import CursorCodec
+from .inspection.history import RuntimeHistory
 from .lifecycle.access import RuntimeCredentials, RuntimePrincipal
 from .lifecycle.admission import FixtureAdmission, FixtureCatalog
 
@@ -28,9 +30,10 @@ class Host:
     principals: tuple
     completion: CompletionCoordinator | None = None
     delivery: DeliveryWorker | None = None
+    history: RuntimeHistory | None = None
 
     def app(self):
-        return create_app(self.admission, self.credentials, self.completion)
+        return create_app(self.admission, self.credentials, self.completion, self.history)
 
     def close(self):
         self.admission.commands.engine.dispose()
@@ -39,14 +42,14 @@ class Host:
     def load(cls, path):
         raw = json.loads(Path(path).read_text(encoding="utf-8"))
         if not {"database_url_env", "principals", "fixtures"} <= set(raw) or set(raw) - {
-            "database_url_env", "principals", "fixtures", "tools", "artifacts", "delivery"}:
+            "database_url_env", "principals", "fixtures", "tools", "artifacts", "delivery", "inspection"}:
             raise ValueError("Explicit database, principals and fixture allowlist required")
         entries, principals = [], []
         for item in raw["principals"]:
             if set(item) != {"token_env", "actor_id", "scope", "actions"}:
                 raise ValueError("Invalid principal configuration")
             actions = frozenset(item["actions"])
-            if not actions or actions - {"admit", "claim", "renew", "cancel", "revoke", "maintain", "read", "complete", "outcome", "deliver"}:
+            if not actions or actions - {"admit", "claim", "renew", "cancel", "revoke", "maintain", "read", "complete", "outcome", "deliver", "inspect_receipts"}:
                 raise ValueError("Invalid configured action")
             if not isinstance(item["actor_id"], str) or not item["actor_id"]:
                 raise ValueError("Explicit actor required")
@@ -72,6 +75,12 @@ class Host:
         notifications = {name: NotificationSink(item["endpoint"], os.environ[item["token_env"]])
                          for name, item in delivery_config.get("notifications", {}).items()}
         targets = DeliveryTargets(artifacts, notifications)
+        cursors = None
+        if "inspection" in raw:
+            inspection = raw["inspection"]
+            if set(inspection) - {"cursor_key_env", "ttl_seconds"}:
+                raise ValueError("Unknown inspection configuration")
+            cursors = CursorCodec(os.environ[inspection["cursor_key_env"]], ttl_seconds=inspection.get("ttl_seconds", 900))
         engine = create_engine(os.environ[raw["database_url_env"]], pool_pre_ping=True,
                                connect_args={"options": "-c statement_timeout=5000"})
         try:
@@ -85,7 +94,8 @@ class Host:
                 conn.execute(text("SELECT delivery_token FROM runtime.outbox LIMIT 0"))
             completion = None if artifacts is None else CompletionCoordinator(engine, artifacts)
             return cls(FixtureAdmission(engine, catalog), credentials, tuple(principals), completion,
-                       DeliveryWorker(DeliveryStore(engine, policy), targets))
+                       DeliveryWorker(DeliveryStore(engine, policy), targets),
+                       None if cursors is None else RuntimeHistory(engine, cursors))
         except BaseException:
             engine.dispose()
             raise

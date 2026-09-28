@@ -5,6 +5,7 @@ import json
 from amphora_contracts_commands import CanonicalCommand, CommandEncodingError
 
 from .delivery import DeliveryAcknowledgement, RuntimeNotification
+from .inspection import AuditPage, CompletionRecord, DeliveryPage
 from .models import (
     AdmitFixtureRun,
     AttemptBudget,
@@ -45,7 +46,7 @@ def parse_command(family: str, raw: str | bytes) -> CanonicalCommand:
 
 
 
-__all__ = ['AdmitFixtureRun', 'AttemptBudget', 'AttemptRef', 'CancelRun', 'ClaimInvocation', 'ClaimResponse', 'CommandReceipt', 'CompleteInvocation', 'PreparedInvocation', 'RenewAttempt', 'RevokeWorker', 'RunSnapshot', 'RuntimeNotification', 'DeliveryAcknowledgement', 'parse_command']
+__all__ = ['AdmitFixtureRun', 'AttemptBudget', 'AttemptRef', 'CancelRun', 'ClaimInvocation', 'ClaimResponse', 'CommandReceipt', 'CompleteInvocation', 'PreparedInvocation', 'RenewAttempt', 'RevokeWorker', 'RunSnapshot', 'RuntimeNotification', 'DeliveryAcknowledgement', 'AuditPage', 'CompletionRecord', 'DeliveryPage', 'parse_command']
 
 
 def _references(family, payload):

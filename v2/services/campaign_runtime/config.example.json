@@ -14,7 +14,8 @@
         "revoke",
         "read",
         "maintain",
-        "deliver"
+        "deliver",
+        "inspect_receipts"
       ]
     },
     {
@@ -27,7 +28,8 @@
       "actions": [
         "claim",
         "renew",
-        "complete"
+        "complete",
+        "read"
       ]
     },
     {
@@ -141,5 +143,9 @@
     "max_attempts": 8,
     "lease_seconds": 30,
     "notifications": {}
+  },
+  "inspection": {
+    "cursor_key_env": "AMPHORA_RUNTIME_CURSOR_KEY",
+    "ttl_seconds": 900
   }
 }
