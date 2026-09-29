@@ -1,7 +1,7 @@
 # Campaign Runtime
 
 - Status: synthetic invocation lifecycle and atomic completion implemented; paired retention/delivery acceptance verified; REC-01..09 recovery/replacement verified; configured deterministic graph execution/replacement accepted in BP-04.02; richer policies remain BP-04.03.
-- Package: `amphora-campaign-runtime` 0.4.0.
+- Package: `amphora-campaign-runtime` 0.4.1.
 - Architecture: [Graph Runner](../../docs/Architecture/System/Graph_Runner.md), [runtime protocol](../../docs/Architecture/System/Runtime_Command_Protocol.md), [isolation](../../docs/Architecture/System/Service_Isolation.md).
 
 ## Ownership and Module Boundaries
@@ -12,6 +12,7 @@
 | [compiler](src/amphora_campaign_runtime/compiler/README.md) | Pure wire-v2 semantic compilation, exact tool/schema pins, scoped types/control flow, canonical plans and activation addresses |
 | [coordinator](src/amphora_campaign_runtime/coordinator/README.md) | Configured graph admission and durable advancement, branch/all-join/scatter/loop state, bounded observations and recovery polling; actual process/peer/replacement acceptance passed BP-04.02; richer policies remain BP-04.03 |
 | `admission.py` | Pure input/tool/completion binding policy against supplied identity; not live authority |
+| [aggregation](src/amphora_campaign_runtime/aggregation/README.md) | Immutable ordered member snapshots and atomic audit-linked storage; policy/coordinator integration remains BP-04.03 |
 | [lifecycle](src/amphora_campaign_runtime/lifecycle/README.md) | Exact fixture admission, claims, renewal, cancellation/revocation, budget settlement and scoped observations |
 | [completion](src/amphora_campaign_runtime/completion/README.md) | Immutable prepared intents, resumable artifact reservations and atomic result/checkpoint acceptance |
 | [delivery](src/amphora_campaign_runtime/delivery/README.md) | Both runtime journals, fenced delivery leases, bounded retry/exhaustion and exact acknowledgement |
@@ -70,6 +71,7 @@ Configured graphs use a separate `coordinate` process with scoped maintain ident
 | `acceptance/` | Independently installed runtime plus HTTP-only workers: worker kill/lease reclaim, higher fences, stale rejection, read isolation and conserved budget |
 | `baseline/`, [v1 fixture](tests/fixtures/v1_solver/README.md) | Frozen source pins and behavior graph; structural reference, not execution parity |
 | `compiler/`, `scheduling/` | Pure exact-plan compilation; real PostgreSQL graph admission/advancement, frozen membership, checkpoints, public projection transport and configured hosting |
+| `aggregation/` | Ordered immutable observation cuts, explicit missingness, exact replay and real PostgreSQL audit/role constraints; policy execution remains pending |
 
 `uv run --project v2/dev --locked python v2/dev/run_tests.py --module runtime --area lifecycle` is the focused lifecycle suite. Other areas run independently; `--coverage` measures the whole owner source denominator, including unexecuted files. Explicit `AMPHORA_TEST_POSTGRES=1` enables the labeled disposable fixture. `verify_foundation.py --builds` additionally installs wheels outside the checkout and runs both standalone service probes. Its runtime workers receive only HTTP request/token data and a minimal OS environment, never database credentials or owner imports. Database-domain contention probes are distinct from this public-boundary evidence.
 

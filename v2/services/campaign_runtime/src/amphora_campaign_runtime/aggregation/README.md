@@ -1,0 +1,13 @@
+# Aggregation evidence
+
+Owner: Campaign Runtime. Active delivery: [BP-04.03/B1](../../../../../docs/Build%20Plans/BP-04/BP-04.03%20Aggregation%20and%20failure%20policy.md).
+
+`AggregateIdentity` binds tenant/project, run and graph activation. `MemberSnapshot` copies an accepted scalar/artifact value or preserves an explicit unavailable reason. `SnapshotCut` freezes declared member order, the observed run revision, the later closure revision and the closure trigger. Its versioned content digest includes all member evidence. A separate identity digest remains stable when a new observation is considered; neither digest grants authority.
+
+The caller must hold the Runtime run lock and obtain observations from committed owner state. These objects cannot establish acceptance by inspecting a worker report. A terminal cut refuses pending members; a deadline cut can preserve them explicitly. Both reject duplicate members, future observations, nested collections and foreign-scope artifacts. Returned records are fresh copies, so later results or consumer mutations cannot rewrite the frozen cut.
+
+`AggregateCuts.persist(connection, cut)` takes the scoped run lock and stores an immutable cut in `runtime.graph_aggregate_cuts` (migration `runtime_0008`). Exact replay returns the original digest even after the run advances; changed evidence under that identity is rejected. A new cut requires a running run, its exact current revision, the immediately following closure revision and an existing join/scatter activation. The deferred foreign key requires the closure's ordinal-zero audit event in the same transaction. Runtime's service role can insert/read these rows but cannot update/delete them. The caller still owns atomic policy, run revision, receipt and output changes; this storage boundary neither manufactures nor independently commits them.
+
+This module currently owns evidence construction and storage only. It does not schedule, choose eligibility/minimum policy, authorize retries, retain artifacts, or consume external scientific receipts. B1's external-wait/versioned transport and B2 coordinator integration remain pending; existing all-member execution is unchanged. No new public schema has been published. Owner-local tests live in `tests/aggregation`; run `dev/run_tests.py --module runtime --area aggregation`. Enable `AMPHORA_TEST_POSTGRES=1` for the actual persistence cases. Tests distinguish storage-only harness audit events from executed policy evidence.
+
+Replacement must preserve both identity profiles, member order, revision validation, explicit missingness and scope checks. Integration must atomically persist one closure per run/activation with the decision and Runtime receipt before exposing outputs.

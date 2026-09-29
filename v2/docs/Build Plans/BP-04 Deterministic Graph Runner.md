@@ -3,13 +3,13 @@
 ## Canonical Parent Tracker
 
 - Status: primary_active; BP-04.03 / Build / B1.
-- Last refreshed: `2026-09-28 19:47:08` (America/Chicago).
+- Last refreshed: `2026-09-28 20:11:30` (America/Chicago).
 - Owner/scope: Campaign Runtime coordinator, aggregator and recovery modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-02 durable commits and BP-03 indexed callable tools.
 - Implementation: **40%**, 8/20 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-04.03/B1 aggregation/await boundaries and compatibility fixtures. Next: .03/B2 policy transitions.
+- Current implementation task: BP-04.03/B1 aggregation/await boundaries and compatibility fixtures. Aggregate snapshot/storage slice verified (33 cases); external waits remain. Next: .03/B2 policy transitions.
 - Demonstrated behavior: .01 closed/audited: compiler, 111-case semantic proof and actual public peer/fresh replacement acceptance passed, including manual numerical plan identity, scoped availability and bounded constructs. .02 closed/audited: durable advancement/hosting, 60 scheduling tests/eight actual coordinator-process cases and eight installed graph/tool/Artifact/replacement cases passed. Richer policies remain .03.
 - Blockers: none for the synthetic compiler scope; predecessor BP-02/BP-03 gates passed. Later external choices remain at named gates.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
