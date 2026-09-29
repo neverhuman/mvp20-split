@@ -1,5 +1,7 @@
 # Graph inspection
 
+Accepted checkpoint `2026-09-29 18:50:04`: BP-04.05 and BP-04 closed/audited. Independent DTO-only observer and Runtime replacement preserve old cursors and all graph/detail/attempt/value/event records across actual five-tool initial/successor execution;17 invocations,44 confirmed reservations. [Evidence](../../../../../docs/Audits/Evidence/BP-04-Recovery/V1.json). Earlier B1-B3/pending statements below describe historical gate positions; no gate in this child remains open.
+
 Implementation: BP-04.05/B1; focused PostgreSQL/HTTP and public contract tests pass. Foundation verification passed1202 tests/19 installs; process/replacement gates remain open. Focused coverage:217/217 statements,12/12 branches (72 contract/PG/HTTP/policy tests); code coverage does not establish process-cut or scientific correctness. Architecture: [Graph observation protocol](../../../../../docs/Architecture/System/Graph_Observation_Protocol.md).
 
 ## Rebuild boundary

@@ -2,16 +2,16 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-04.05 / Acceptance / V1.
-- Last refreshed: `2026-09-29 18:38:04` (America/Chicago).
+- Status: closed; all six children and integrated parent outcome audited.
+- Last refreshed: `2026-09-29 18:50:04` (America/Chicago).
 - Owner/scope: Campaign Runtime coordinator, aggregator and recovery modules.
-- Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
+- Authority: [Master Build Tracker](../Master%20Build%20Tracker.md); [planning readiness and handoffs](../Planning_Readiness.md).
 - Prerequisites: Completed BP-02 durable commits and BP-03 indexed callable tools.
-- Implementation: **95.83%**, 23/24 verified child deliveries across six children. Each child owns four deliveries; counted once. Phase mapping follows the explicit ordered table, not the child-number suffix.
+- Implementation: **100%**, 24/24 verified child deliveries across six children. Each child owns four deliveries; counted once. Phase mapping follows the explicit ordered table, not the child-number suffix.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-04.05/V1 installed observer/Runtime replacement and parent closeout; B1-B3 verified.
+- Current implementation task: none; closed. Successor: BP-05 Graph Studio consumes accepted runtime contracts.
 - Demonstrated behavior: .01 closed/audited: compiler, 111-case semantic proof and actual public peer/fresh replacement acceptance passed, including manual numerical plan identity, scoped availability and bounded constructs. .02 closed/audited: durable advancement/hosting, 60 scheduling tests/eight actual coordinator-process cases and eight installed graph/tool/Artifact/replacement cases passed. .03 closed/audited: aggregation and external receipt execution with actual process/installed-issuer proof. .04A closed/audited: typed protected conversions, five actual process cases and installed dynamic round-trip/replacement proof passed.
-- Blockers: none for active .05 scope; BIND-01 resolved by accepted .04A.
+- Blockers: none within the closed scope; BIND-01 resolved by accepted .04A.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
 
@@ -29,12 +29,12 @@ Primary services retain private state, dependencies, migrations and module READM
 
 | Parent phase / child | Overall | Build | Acceptance | Prerequisite |
 |---|---:|---:|---:|---|
-| P1 / [BP-04.01 Compiler and executable contract](BP-04/Completed/BP-04.01%20Compiler%20and%20executable%20contract.md) | 100% | 100% | 100% | Closed/audited |
-| P2 / [BP-04.02 Frontier and scheduling](BP-04/Completed/BP-04.02%20Frontier%20and%20scheduling.md) | 100% | 100% | 100% | Closed/audited |
-| P3 / [BP-04.03 Aggregation and failure policy](BP-04/Completed/BP-04.03%20Aggregation%20and%20failure%20policy.md) | 100% | 100% | 100% | Closed/audited |
-| P4 / [BP-04.04A Typed artifact and collection bindings](BP-04/Completed/BP-04.04A%20Typed%20artifact%20and%20collection%20bindings.md) | 100% | 100% | 100% | Closed/audited |
-| P5 / [BP-04.04 V1 baseline and successor graphs](BP-04/Completed/BP-04.04%20V1%20baseline%20and%20successor%20graphs.md) | 100% | 100% | 100% | Closed/audited |
-| P6 / [BP-04.05 Recovery and closeout](BP-04/BP-04.05%20Recovery%20and%20closeout.md) | 75% | 100% | 0% | B1-B3 verified; V1 active |
+| P1 / [BP-04.01 Compiler and executable contract](../BP-04/Completed/BP-04.01%20Compiler%20and%20executable%20contract.md) | 100% | 100% | 100% | Closed/audited |
+| P2 / [BP-04.02 Frontier and scheduling](../BP-04/Completed/BP-04.02%20Frontier%20and%20scheduling.md) | 100% | 100% | 100% | Closed/audited |
+| P3 / [BP-04.03 Aggregation and failure policy](../BP-04/Completed/BP-04.03%20Aggregation%20and%20failure%20policy.md) | 100% | 100% | 100% | Closed/audited |
+| P4 / [BP-04.04A Typed artifact and collection bindings](../BP-04/Completed/BP-04.04A%20Typed%20artifact%20and%20collection%20bindings.md) | 100% | 100% | 100% | Closed/audited |
+| P5 / [BP-04.04 V1 baseline and successor graphs](../BP-04/Completed/BP-04.04%20V1%20baseline%20and%20successor%20graphs.md) | 100% | 100% | 100% | Closed/audited |
+| P6 / [BP-04.05 Recovery and closeout](../BP-04/Completed/BP-04.05%20Recovery%20and%20closeout.md) | 100% | 100% | 100% | Closed/audited |
 
 Each linked child is the execution tracker for its scope. Build tasks name concrete implementation; acceptance requires independent evidence and a scoped drift audit. Do not repeat the historical task pairs as a second work list. No dependent child starts before its predecessor acceptance gate; independent design review does not activate implementation.
 
@@ -54,7 +54,7 @@ Keep scenario evidence with absolute timestamps, implementation revision, fixtur
 
 ## Decisions and Handoff
 
-Child decisions and the [cross-plan handoff register](Planning_Readiness.md) identify the exact producer, consumer and required proof. Engineering defaults are planning baselines; validate them against real predecessor contracts before coding. External choices are not inferred from examples. Do not weaken a live model, browser, database or target-host gate to a fixture when that environment is unavailable.
+Child decisions and the [cross-plan handoff register](../Planning_Readiness.md) identify the exact producer, consumer and required proof. Engineering defaults are planning baselines; validate them against real predecessor contracts before coding. External choices are not inferred from examples. Do not weaken a live model, browser, database or target-host gate to a fixture when that environment is unavailable.
 
 ## Accounting and Closeout
 
@@ -68,4 +68,8 @@ Child closeout archives that child with its audit and repairs links; the parent 
 
 ## Approved Scope Addition
 
-[BP-04.04A Typed artifact and collection bindings](BP-04/Completed/BP-04.04A%20Typed%20artifact%20and%20collection%20bindings.md) is approved and active at 0%, adding four deliveries before .04. This parent is rebaselined from 12/20 (60%) to 12/24 (50%). Closed children retain all earned credit. The .04 activation audit records the concrete missing boundary.
+[BP-04.04A Typed artifact and collection bindings](../BP-04/Completed/BP-04.04A%20Typed%20artifact%20and%20collection%20bindings.md) was approved at0%, adding four deliveries before .04. At that historical checkpoint this parent was rebaselined from12/20 (60%) to12/24 (50%). Closed children retain all earned credit. The .04 activation audit records the concrete missing boundary.
+
+## Parent Closeout
+
+`2026-09-29 18:50:04`: all six children closed/audited,24/24 deliveries. [Integrated audit](../../Audits/BP-04_Graph_Runner_Closeout.md) verifies compiler/frontier/aggregation/waits/bindings/source-derived solver/successor/recovery and public observation handoff. BP-05 owns Studio presentation and next-campaign authoring; no scientific/LLM/knowledge/target-host claim is implied.

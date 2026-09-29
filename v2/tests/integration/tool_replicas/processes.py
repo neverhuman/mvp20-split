@@ -27,8 +27,12 @@ class Worker:
     def wait(self, stage):
         deadline = time.monotonic() + 20
         while time.monotonic() < deadline:
-            if self.marker.exists():
+            try:
                 value = json.loads(self.marker.read_bytes())
+            except (FileNotFoundError, PermissionError):
+                # Atomic writer replacement can briefly deny a Windows reader too.
+                value = None
+            if value is not None:
                 if value["stage"] == stage:
                     return value["response"]
             if self.child.poll() is not None:

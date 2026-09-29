@@ -12,3 +12,5 @@ The parent remains active. Closed children retain their immutable evidence and d
 [BP-04.04A Typed artifact and collection bindings](BP-04.04A%20Typed%20artifact%20and%20collection%20bindings.md): 100%, 4/4; [closeout](../../../Audits/BP-04.04A_Bindings_Closeout.md).
 
 [BP-04.04 V1 baseline and successor graphs](BP-04.04%20V1%20baseline%20and%20successor%20graphs.md): 100%, 4/4; [closeout](../../../Audits/BP-04.04_Baseline_Closeout.md).
+
+[BP-04.05 Recovery and closeout](BP-04.05%20Recovery%20and%20closeout.md):100%,4/4; [audit](../../../Audits/BP-04.05_Recovery_Closeout.md). All six children closed; parent24/24.

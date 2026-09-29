@@ -1,5 +1,7 @@
 # Graph inspection tests
 
+Accepted checkpoint `2026-09-29 18:50:04`: BP-04.05 and BP-04 closed/audited. Independent DTO-only observer and Runtime replacement preserve old cursors and all graph/detail/attempt/value/event records across actual five-tool initial/successor execution;17 invocations,44 confirmed reservations. [Evidence](../../../../docs/Audits/Evidence/BP-04-Recovery/V1.json). Earlier B1-B3/pending statements below describe historical gate positions; no gate in this child remains open.
+
 Owner: [graph inspection](../../src/amphora_campaign_runtime/graph_inspection/README.md). Tests use the labeled local PostgreSQL fixture and their own scope; fixture tools/Artifact clients are scripted unless a scenario explicitly names an independently installed peer.
 
 Run from repository root with `AMPHORA_TEST_POSTGRES=1`:

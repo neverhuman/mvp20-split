@@ -1,5 +1,7 @@
 # Campaign Runtime
 
+Accepted checkpoint `2026-09-29 18:50:04`: BP-04.05 and BP-04 closed/audited. Independent DTO-only observer and Runtime replacement preserve old cursors and all graph/detail/attempt/value/event records across actual five-tool initial/successor execution;17 invocations,44 confirmed reservations. [Evidence](../../docs/Audits/Evidence/BP-04-Recovery/V1.json). Earlier B1-B3/pending statements below describe historical gate positions; no gate in this child remains open.
+
 Runtime 0.11.0 adds [graph inspection](src/amphora_campaign_runtime/graph_inspection/README.md): bounded revision-consistent snapshot/detail/value reads and resumable invalidations from existing durable audit records. Public graph-runtime 0.5.0 contracts are additive; no new migration. BP-04.05/B1 focused tests pass; foundation verification passed1202 tests/19 installs; process and installed observer replacement verification remain in the active child. The accepted 0.10.0 checkpoint below remains predecessor evidence.
 
 Accepted checkpoint `2026-09-29 17:57:39`: BP-04.04 closed/audited. Five real solver images and independent tool/SDK/owner installs passed initial-population -> successor generations 1/2, concurrent scoring and Runtime replacement; 17 invocations, all 44 reservations confirmed. Source/lineage/receipt/artifact history preserved. Scientific validity and target-host execution remain excluded. Earlier B1-B3 statements below describe their historical verification tiers; no gate in this child remains open.

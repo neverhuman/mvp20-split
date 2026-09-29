@@ -72,3 +72,5 @@ Aligned within documentation scope; [planning review](Planning_Maturity_Review.m
 - `2026-09-29 16:25:58`: BIND-01 resolved; [typed binding closeout](BP-04.04A_Bindings_Closeout.md) aligned with actual process/installed peer evidence. Follow-up none within conversion scope; solver/scientific/target-host gates remain named successors.
 
 - `2026-09-29 17:57:39`: [Source baseline/successor closeout](BP-04.04_Baseline_Closeout.md) aligned. Five isolated stages, exact successor cuts, five real process scenarios and actual installed peer/replacement proof accepted; all 44 reservations confirmed. Follow-up none within the closed child; consistent inspection/reconnect and parent recovery remain .05.
+
+- `2026-09-29 18:50:04`: [BP-04.05 observation/recovery](BP-04.05_Recovery_Closeout.md) and [BP-04 integrated parent](BP-04_Graph_Runner_Closeout.md) aligned, follow-up none within closed scope. Six child audits,24/24 deliveries; actual independently installed reader/Runtime and solver replacement preserves cursors/evidence. BP-05 activates at0%.

@@ -4,14 +4,14 @@ Design status: historical scope and planning decisions. Last reviewed: `2026-09-
 
 The first draft was archived at `2026-09-25 13:35:12`. Its ten tasks (five pairs) were replaced by five canonical child plans with four verified deliveries each (twenty parent deliveries). The original task descriptions below preserve scope history; they do not define a second execution tracker. Superseded percentages and active-status instructions have been removed to prevent conflicting progress reports.
 
-Current overall/per-phase percentages, current task and blockers belong to the [canonical BP-04 parent](BP-04%20Deterministic%20Graph%20Runner.md) and its linked child trackers. [MBT](Master%20Build%20Tracker.md) mirrors those values and owns program priority. Update those documents together whenever delivery status changes; do not recreate a parallel live tracker here.
+Current overall/per-phase percentages, current task and blockers belong to the [canonical BP-04 parent](BP-04%20Deterministic%20Graph%20Runner.md) and its linked child trackers. [MBT](../Master%20Build%20Tracker.md) mirrors those values and owns program priority. Update those documents together whenever delivery status changes; do not recreate a parallel live tracker here.
 
 ## Completed Milestones
 
-- P1 / [BP-04.01 Compiler and executable contract](BP-04/Completed/BP-04.01%20Compiler%20and%20executable%20contract.md): closed/audited, **100%**. Its completed tracker and evidence remain in `BP-04/Completed/`.
-- P2 / [BP-04.02 Frontier and scheduling](BP-04/Completed/BP-04.02%20Frontier%20and%20scheduling.md): closed/audited, **100%**. Its completed tracker and evidence remain in `BP-04/Completed/`.
+- P1 / [BP-04.01 Compiler and executable contract](../BP-04/Completed/BP-04.01%20Compiler%20and%20executable%20contract.md): closed/audited, **100%**. Its completed tracker and evidence remain in `BP-04/Completed/`.
+- P2 / [BP-04.02 Frontier and scheduling](../BP-04/Completed/BP-04.02%20Frontier%20and%20scheduling.md): closed/audited, **100%**. Its completed tracker and evidence remain in `BP-04/Completed/`.
 
-These are durable completed milestones, not pending first-draft work. New aggregation and external-wait work belongs to [BP-04.03](BP-04/Completed/BP-04.03%20Aggregation%20and%20failure%20policy.md); it does not reopen P1/P2.
+These are durable completed milestones, not pending first-draft work. New aggregation and external-wait work belongs to [BP-04.03](../BP-04/Completed/BP-04.03%20Aggregation%20and%20failure%20policy.md); it does not reopen P1/P2.
 
 ## Outcome and Boundaries
 
@@ -95,7 +95,7 @@ Final phase includes a component-scoped architecture drift audit. Fix blocking d
 
 P1/P2 closeout evidence is in their completed children linked above. Remaining closeout gates are owned by their respective child plans; historical drafting does not establish scientific or deployment validity.
 
-`2026-09-29 09:04:11`: P3 / [BP-04.03](BP-04/Completed/BP-04.03%20Aggregation%20and%20failure%20policy.md) closed/audited at 100% (4/4). Canonical parent owns subsequent progress; no live tracker is maintained here.
+`2026-09-29 09:04:11`: P3 / [BP-04.03](../BP-04/Completed/BP-04.03%20Aggregation%20and%20failure%20policy.md) closed/audited at 100% (4/4). Canonical parent owns subsequent progress; no live tracker is maintained here.
 
 `2026-09-29 12:52:29`: User approved .04A typed Artifact/collection prerequisite. Parent scope expanded from five children/twenty deliveries to six children/twenty-four deliveries; completed 12 deliveries preserved, progress rebaselined 60% -> 50%. Current order .01/.02/.03/.04A/.04/.05; parent phases P4/P5/P6 now bindings/baseline/recovery. Canonical trackers own subsequent progress.
 
@@ -120,3 +120,5 @@ P1/P2 closeout evidence is in their completed children linked above. Remaining c
 - `2026-09-29 18:33:12` ? BP-04.05/B2 verified three actual process boundaries (activation INSERT rollback, committed join, committed iteration feedback), observation consistency and original command replay.32 focused/regression tests passed. Child50%,Build66.67%,Acceptance0%; parent91.67%=22/24. B3 active; no production/schema change.
 
 - `2026-09-29 18:38:04` ? BP-04.05/B3 verified parallel public-handler completions, original retry/receipt history, one-active-run rule and duplicate/stale/restored/missing/expired cursor handling.76 focused tests pass;217/217 statements12/12 branches. Child75%,Build100%,Acceptance0%; parent95.83%=23/24. V1 active; no production change.
+
+- `2026-09-29 18:50:04` — BP-04.05/V1 and parent closed/audited. Independent public observer/Runtime replacement preserves12/28 node graphs and48/115 events, all detail/attempt/value records and old cursors. Solver acceptance retains17 invocations/44 confirmed reservations.17 wheels12 installs;7 helper/12 dev tests. First Windows marker read race repaired in test-only bounded polling; installed rerun passed. Parent100%=24/24 across six closed children. BP-05 activation follows; closed plans stay closed.

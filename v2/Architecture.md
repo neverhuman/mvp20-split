@@ -56,4 +56,4 @@ These domains are responsibility boundaries, not a mandate for eight deployed se
 
 This master links only to its nine immediate architectural children: system construction and eight functional domains. Each child explains its boundary and links to immediate focused contracts. Read deeper only for the responsibility being changed. Detailed schemas, algorithms, vendor choices, phase trackers and acceptance evidence belong below this level or in their owning delivery records, not in this master.
 
-Implementation is partial: the contract/validation foundation exists; durable graph execution, scientific services, knowledge reasoning and Studio remain pending. Detailed product acceptance remains binding even where a summary omits it; decomposition narrows context, not product scope.
+Implementation is partial: typed contracts, durable invocation/Artifact protocols, isolated tools and deterministic graph execution/observation are implemented and audited. Studio, scientific services and knowledge/LLM reasoning remain pending. Detailed product acceptance remains binding even where a summary omits it; decomposition narrows context, not product scope.

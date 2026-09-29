@@ -1,10 +1,10 @@
 # Architecture Drift
 
-- Status: BP-04.05 active; .01/.02/.03/.04A/.04 closed/audited.
-- Last refreshed: `2026-09-29 18:38:04` (America/Chicago).
+- Status: BP-05 active; BP-04 and all six children closed/audited.
+- Last refreshed: `2026-09-29 18:50:04` (America/Chicago).
 - Scope: v2 design/implementation alignment
-- Active focus: BP-04.05 consistent graph observation and integrated recovery; source/successor orchestration accepted.
-- Next gate: BP-04.05/V1 installed observation/replacement and integrated parent closeout; [B1-B3 scoped audit](BP-04.05_Recovery_Closeout.md) aligned.
+- Active focus: BP-05 schema-derived transport/page-model boundaries and truthful Studio interaction.
+- Next gate: BP-05.01/B1 transport spike. [BP-04 parent audit](BP-04_Graph_Runner_Closeout.md) aligned; completed evidence retained in history.
 
 ## Active Findings
 
