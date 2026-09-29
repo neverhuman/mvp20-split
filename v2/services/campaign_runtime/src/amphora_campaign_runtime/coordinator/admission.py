@@ -4,7 +4,7 @@ import json
 import uuid
 from datetime import timedelta
 
-from amphora_contracts_graph_runtime import AdmitGraphRun
+from amphora_contracts_graph_runtime import AdmitGraphRun, SuccessorProposal
 from amphora_contracts_runtime import CommandReceipt
 from sqlalchemy import text
 
@@ -25,9 +25,16 @@ class GraphAdmission:
         self.bindings_enabled = bindings_enabled
 
     def admit(self, principal, command):
+        return self._admit(principal, command, successor=False)
+
+    def admit_successor(self, principal, command):
+        return self._admit(principal, command, successor=True)
+
+    def _admit(self, principal, command, *, successor):
         principal.require("admit", command.identity)
-        ensure(command.identity.command_family == "graph.admit", "wrong_command_family")
-        request = AdmitGraphRun.model_validate_json(json.dumps(json.loads(command.canonical_bytes)["payload"]))
+        ensure(command.identity.command_family == ("graph.admit_successor" if successor else "graph.admit"), "wrong_command_family")
+        model = SuccessorProposal if successor else AdmitGraphRun
+        request = model.model_validate_json(json.dumps(json.loads(command.canonical_bytes)["payload"]))
         registered = self.commands.register(command)
         reply = RuntimeReply(command, registered.operation_id)
         params = _bindings(command)
@@ -40,7 +47,10 @@ class GraphAdmission:
             try:
                 entry = self.catalog.require(principal.scope, request.plan_sha256)
                 ensure(entry.plan.schema_version != "4" or self.bindings_enabled, "graph_binding_profile_not_enabled")
-                values = BoundValues(request.inputs).validate(entry.plan.document.definition.body.inputs, principal.scope)
+                from ..successors.transfer import CarryTransfer
+                transfer = CarryTransfer.resolve(conn, principal.scope, request) if successor else None
+                values = (transfer.values if transfer else BoundValues(request.inputs)).validate(
+                    entry.plan.document.definition.body.inputs, principal.scope)
                 RunBudget(request.budget.limit)
                 address = ScopeAddress(entry.plan.sha256)
                 intents = FrontierPlanner().scope(entry.plan, address)
@@ -82,6 +92,8 @@ class GraphAdmission:
                 "VALUES (:event,:tenant,:project,:run,0,0,CAST(:payload AS jsonb))"), event)
             conn.execute(text("INSERT INTO runtime.outbox (operation_id,event_id,target,payload) "
                 "VALUES (:operation,:event,'runtime_notifications',CAST(:payload AS jsonb))"), event)
+            if transfer is not None:
+                transfer.persist(conn, params, run_id)
             receipt = reply.accepted("run", run_id, 0)
             self.commands.finish(conn, command, TerminalDisposition("accepted", receipt.model_dump_json().encode()))
             return receipt

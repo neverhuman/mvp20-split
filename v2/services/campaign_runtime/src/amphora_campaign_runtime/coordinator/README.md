@@ -1,8 +1,8 @@
 # Durable graph coordinator
 
-- Status: BP-04.02 closed/audited; current changes belong to [BP-04.04A/B2](../../../../../docs/Build%20Plans/BP-04/Completed/BP-04.04A%20Typed%20artifact%20and%20collection%20bindings.md). Child trackers own gates and percentages.
-- Owner: Campaign Runtime, package 0.9.0. Architecture: [Graph Execution Model](../../../../../docs/Architecture/System/Graph_Execution_Model.md), [Graph Runner](../../../../../docs/Architecture/System/Graph_Runner.md).
-- Public DTOs: [graph-runtime contracts](../../../../../contracts/graph_runtime/README.md) 0.3.0; executable campaign contracts 0.4.0. Configured wire-v2/v3 execution is active; v4 additionally requires explicit binding peers. Worker contracts are unchanged.
+- Status: BP-04.02 closed/audited; current changes belong to [BP-04.04/B2](../../../../../docs/Build%20Plans/BP-04/BP-04.04%20V1%20baseline%20and%20successor%20graphs.md). Child trackers own gates and percentages.
+- Owner: Campaign Runtime, package 0.10.0. Architecture: [Graph Execution Model](../../../../../docs/Architecture/System/Graph_Execution_Model.md), [Graph Runner](../../../../../docs/Architecture/System/Graph_Runner.md).
+- Public DTOs: [graph-runtime contracts](../../../../../contracts/graph_runtime/README.md) 0.4.0; executable campaign contracts 0.4.0. Configured wire-v2/v3 execution is active; v4 additionally requires explicit binding peers. Worker contracts are unchanged.
 
 ## Responsibilities and boundaries
 
@@ -80,3 +80,5 @@ B2 verification covers durable advancement/recovery, configured public hosting a
 Typed binding integration: the locked graph pass opens durable conversions; the next authorized advance performs bounded conversion I/O through [artifact_bindings](../artifact_bindings/README.md) before reconstructing the frontier. Original advance receipt replay returns without new I/O. Graph/root cancellation queues binding cleanup in the same owner transaction; polling also visits terminal conversions. `/v3/graph-runs` is the observation version for v4 plans. These operators use no worker attempts; only Invoke reserves scientific invocation budget.
 
 The package-root GraphAdvancer export resolves its explicit import on demand so lifecycle cleanup can load graph state without eagerly initializing the interpreter. `tests/bindings/test_startup.py` verifies the actual CLI in a fresh interpreter; package replacement must preserve this startup boundary as well as in-process behavior.
+
+Successor admission reuses the ordinary admission transaction and original-receipt check. The focused [successor module](../successors/README.md) resolves the terminal parent cut and carried values under the predecessor lock after the global guard. The new frontier, ancestry, audit/outbox and receipt commit together; ordinary admission behavior and old schemas remain unchanged.

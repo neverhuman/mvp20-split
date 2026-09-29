@@ -6,6 +6,16 @@ from amphora_contracts_commands import CanonicalCommand, CommandEncodingError
 
 from .bindings import GraphNodeViewV3, GraphRunPageV3
 from .models import AdmitGraphRun, AdvanceGraph, GraphLimits, GraphNodeView, GraphRunPage
+from .successors import (
+    CarriedBinding,
+    CarrySources,
+    CarrySourceView,
+    NodeOutputSource,
+    PredecessorCut,
+    RunOutputSource,
+    SuccessorLineage,
+    SuccessorProposal,
+)
 from .values import (
     CollectionValue,
     GraphBinding,
@@ -28,7 +38,7 @@ from .waits import (
 
 def parse_graph_command(family, raw):
     try:
-        model = {"graph.admit": AdmitGraphRun, "graph.advance": AdvanceGraph,
+        model = {"graph.admit": AdmitGraphRun, "graph.admit_successor": SuccessorProposal, "graph.advance": AdvanceGraph,
                  "graph.submit_receipt": SubmitDomainReceipt}[family]
     except KeyError as error:
         raise CommandEncodingError("unknown_family") from error
@@ -55,4 +65,6 @@ def parse_graph_command(family, raw):
 __all__ = ["AdmitGraphRun", "AdvanceGraph", "CollectionValue", "GraphBinding", "GraphLimits", "GraphNodeView",
            "GraphRunPage", "GraphValue", "MissingValue", "NumberValue", "PresentValue", "ScalarValue", "parse_graph_command",
            "DomainReceipt", "GraphNodeViewV2", "GraphRunPageV2", "SubmitDomainReceipt", "WaitExpectation",
-           "WaitClosure", "WaitObservation", "GraphNodeViewV3", "GraphRunPageV3"]
+           "WaitClosure", "WaitObservation", "GraphNodeViewV3", "GraphRunPageV3",
+           "CarriedBinding", "CarrySources", "CarrySourceView", "NodeOutputSource", "PredecessorCut",
+           "RunOutputSource", "SuccessorLineage", "SuccessorProposal"]

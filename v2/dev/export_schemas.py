@@ -66,6 +66,12 @@ MODELS_V4 = {
 
 MODELS["commands.identity"] = CommandIdentity
 for name, model in {
+    "successor-proposal": graph_runtime_contracts.SuccessorProposal,
+    "carry-sources": graph_runtime_contracts.CarrySources,
+    "successor-lineage": graph_runtime_contracts.SuccessorLineage,
+}.items():
+    MODELS["graph-runtime." + name] = model
+for name, model in {
     "config": solver_fixture_contracts.SolverConfig,
     "proposal-batch": solver_fixture_contracts.ProposalBatch,
     "state": solver_fixture_contracts.SolverState,

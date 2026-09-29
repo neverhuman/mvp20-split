@@ -1,9 +1,9 @@
 # Graph Runtime Contracts
 
-Package 0.3.0 adds `GraphNodeViewV3`/`GraphRunPageV3` for explicit `artifact_project` and `artifact_materialize` node tags. Earlier page roots and all predecessor schema bytes remain unchanged. Runtime 0.9.0 hosts `/v3/graph-runs` and explicitly configured wire-v4 binding execution under BP-04.04A/B2. The new DTO uses public campaigns 0.4.0; worker receipt formats are unchanged.
+Package 0.4.0 adds `SuccessorProposal`, `CarrySources` and `SuccessorLineage` without changing earlier graph/worker schema bytes. Runtime 0.10.0 owns admission authority. The new `graph.admit_successor` family names a precise predecessor plan/revision, explicit final-export or succeeded-node sources, expected value digests and distinct target inputs. Fresh Artifact input scope checks remain in the public parser; predecessor/retention/type policy belongs to Runtime domain objects.
 
-- Package: `amphora-contracts-graph-runtime` 0.3.0; wire-v1 shapes unchanged, receipt/wait roots and separately versioned graph observations. The exact campaigns dependency is 0.4.0; predecessor schema bytes are unchanged.
-- Owner: Campaign Runtime coordination boundary; Runtime 0.7.0 hosts v2/v3 graph execution and wait receipts. Actual competing-process/installed-issuer acceptance passed BP-04.03/B3-V1.
+- Package: `amphora-contracts-graph-runtime` 0.4.0; campaigns dependency 0.4.0. Existing versioned graph observations and worker receipts are unchanged.
+- Owner: Campaign Runtime coordination boundary; BP-04.04/B2 additive successor contracts.
 - Architecture: [Graph Execution Model](../../docs/Architecture/System/Graph_Execution_Model.md).
 
 Public root imports expose graph admission/advance commands, bounded values, limits and paginated node observations. They reference executable campaign wire-v2 identity while retaining the existing attempt budget and command envelope. This separate package prevents graph authoring dependencies from entering the pinned scientific worker/SDK closure. Existing worker commands and campaign schemas retain their serialized behavior; campaign exports add names for existing literal-value DTOs only.

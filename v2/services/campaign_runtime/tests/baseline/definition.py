@@ -1,7 +1,7 @@
 """Authored solver orchestration; tools perform one stage, graph owns all repetition."""
 
 
-def campaign(scope, releases, generations):
+def campaign(scope, releases, generations, *, continuation=False):
     if type(generations) is not int or not 0 <= generations <= 8:
         raise ValueError("unsupported_fixture_generation_count")
     tools = {name: descriptor["tool"] for name, descriptor in releases.items()}
@@ -49,16 +49,18 @@ def campaign(scope, releases, generations):
             "output": port("result", shape("retain", "inputs")), "limits": limits}
         return [project, scatter, collect, invoke("retain", "retain", output("collect"))]
 
-    nodes = [invoke("seed", "seed", {"kind": "input", "name": "parameters"}), *score_batch(output("seed"))]
-    final = output("retain")
+    nodes = [] if continuation else [invoke("seed", "seed", {"kind": "input", "name": "parameters"}), *score_batch(output("seed"))]
+    initial = {"kind": "input", "name": "parameters"} if continuation else output("retain")
+    final = initial
     if generations:
         loop_body = body([port("state", state_shape)], [port("state", state_shape)], [
             invoke("select", "select", {"kind": "input", "name": "state"}),
             invoke("mutate", "mutate", output("select")), *score_batch(output("mutate")), finish(output("retain"), "state")])
         nodes.append({"kind": "iterate", "node_id": "generations", "state": [{"name": "state", "value_type": state_shape,
-            "initial": output("retain"), "feedback_port": "state"}], "captures": [], "body": loop_body,
+            "initial": initial, "feedback_port": "state"}], "captures": [], "body": loop_body,
             "until": {"kind": "constant", "value": False}, "max_iterations": generations, "on_limit": "finish"})
         final = output("generations", "state")
     nodes.append(finish(final))
     return {"schema_version": "4", "profile": "deterministic-v3", "scope": scope, "campaign_id": "source-solver-fixture",
-            "revision": 1, "context": [], "body": body([port("parameters", shape("seed", "inputs"))], [port("result", state_shape)], nodes)}
+            "revision": 1, "context": [], "body": body([port("parameters", state_shape if continuation else shape("seed", "inputs"))],
+                [port("result", state_shape)], nodes)}

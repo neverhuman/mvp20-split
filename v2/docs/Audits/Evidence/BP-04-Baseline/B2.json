@@ -1,0 +1,46 @@
+{
+  "delivery": "BP-04.04/B2",
+  "verified_at": "2026-09-29 17:35:32",
+  "baseline_commit": "df17a9f",
+  "foundation_tests": 1169,
+  "independent_installs": 19,
+  "recovery_evidence": "REC-01 passed; manifest Z:\\mvp20-split\\v2\\.test-results\\recovery\\54fdb5ad5a5f4126b54151e1b2242bba\\REC-01.json",
+  "focused_tests": 72,
+  "preserved_schema_artifacts": 162,
+  "published_schema_artifacts": 168,
+  "versions": {
+    "runtime": "0.10.0",
+    "graph_runtime": "0.4.0",
+    "campaigns": "0.4.0"
+  },
+  "migration": "runtime_0014",
+  "successor_coverage": {
+    "covered_statements": 102,
+    "statements": 104,
+    "covered_branches": 6,
+    "branches": 6,
+    "gap": "Malformed persisted-source decoding exception; parent-process coverage only."
+  },
+  "scenarios": [
+    "terminal exact predecessor cut",
+    "original accepted and rejected receipt replay",
+    "changed source value/plan/revision rejection",
+    "foreign/missing source and duplicate/overlap rejection",
+    "new-plan input type compatibility",
+    "cancelled predecessor succeeded-node carry",
+    "unsettled attempt rejection",
+    "atomic rollback after ancestry insertion",
+    "immutable ancestry SQL grants",
+    "authenticated HTTP routes",
+    "source-derived generation 0 then successor generations 1/2; exact current/cumulative/seed/parent trace"
+  ],
+  "tiers": {
+    "postgres": "actual owned labeled fixture",
+    "http": "TestClient",
+    "solver": "real in-process kernels, scripted Artifact peer",
+    "independent_installs": "all nineteen current packages",
+    "remaining": "B3 competing/crashed processes; V1 actual installed new solver tools/peers/replacement; scientific validity excluded"
+  },
+  "recovery_scope": "54fdb5ad5a5f4126b54151e1b2242bba",
+  "first_gate_attempt": "1168 passed; one existing scalar binding case hit Windows TCP address already in use. Five focused binding cases passed without code changes, then full repeated gate passed 1169."
+}

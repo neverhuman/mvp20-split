@@ -28,6 +28,8 @@ def install_admission(app, admission, credentials, completion=None, *, graph_mod
     @app.exception_handler(TransitionError)
     async def denied(_request, error):
         status = {"unauthenticated": 401, "run_unavailable": 404, "wait_unavailable": 404,
+                  "predecessor_unavailable": 404, "successor_lineage_unavailable": 404,
+                  "carry_source_unavailable": 404, "invalid_activation_id": 422, "carry_source_invalid": 409,
                   "graph_observation_v2_required": 409}.get(str(error), 403)
         return JSONResponse({"reason_code": str(error)}, status_code=status)
 

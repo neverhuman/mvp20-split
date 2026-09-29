@@ -55,6 +55,8 @@ Automatic feedback already permitted by the pinned campaign contract can affect 
 
 Parameter/feedback updates within a preauthorized envelope enter only at declared boundaries and retain provenance. The initial topology-amendment rule is deliberately simpler: create a new validated plan and a successor run with parent-run identity and an explicit carried-forward artifact/checkpoint mapping. Do not hot-swap instructions under already-dispatched activations. Incompatible carried state is rejected or recomputed.
 
+[Successor admission](Graph_Successor_Admission.md) specifies the terminal predecessor/source cut, explicit export-to-input mapping, compatibility checks, atomic ancestry and original-receipt boundary.
+
 New knowledge is proposed, reviewed and published separately. A running iteration keeps its pinned projection. At an adoption boundary, record the new projection and affected constraints/evaluations. If changed premises invalidate a selection, require reevaluation or a review disposition before further dependent work.
 
 ## Interpreter Loop

@@ -1,6 +1,6 @@
 # Runtime Persistence Boundary
 
-- Implemented: forward migrations through `runtime_0009` and owner-private command transactions.
+- Implemented: forward migrations through `runtime_0014` and owner-private command transactions.
 - Design: [Physical records](../../../../../docs/Architecture/System/Persistence_Record_Design.md), [runtime protocol](../../../../../docs/Architecture/System/Runtime_Command_Protocol.md).
 
 `migrate.upgrade(url)` runs packaged SQL/Alembic migrations as `runtime_migrator`. The explicit CLI is `python -m amphora_campaign_runtime.persistence.migrate`, using privately supplied `AMPHORA_RUNTIME_MIGRATION_URL`. No API startup migration occurs. `runtime.alembic_version` is private to this owner. Downgrade refuses destructive rollback; changes require forward migration.
@@ -32,3 +32,5 @@ runtime_0009 adds the await node tag, immutable wait expectations/issuer receipt
 runtime_0010 adds insert/read-only aggregate decisions with an exact scoped cut-hash foreign key. Runtime commits the policy decision, cut, graph output/status, run revision and audit/receipt together. Existing B1 storage-only cuts remain evidence; a later transaction cannot retroactively supply their decision. runtime_0011 adds immutable scope `opened_at`: existing rows remain NULL, newly inserted scopes receive database time. Runtime's column-limited UPDATE grants exclude the clock. Missing historical clocks block deadline collection explicitly; no migration-time timestamp is fabricated. Require these migrations before running Runtime 0.6.0 or later; startup never applies them.
 
 BP-04.04A/B2 adds runtime_0012/0013: private binding intents, exact reservations and immutable logical closure receipts linked to owner audit revisions; graph node kind width admits artifact_materialize. Opening inputs, node configuration, deadline and identity cannot be updated by the service role. Only preparation, leases and terminal state are mutable. [Binding execution](../artifact_bindings/README.md) owns these records; no worker attempts or peer-table access are introduced. Runtime 0.9.0 requires these migrations.
+
+runtime_0014 adds immutable `graph_successors`: scoped parent/new graph-run and retained parent-plan references, exact parent revision, explicit carry map and transfer hash, linked to both audit cuts. Service-role SELECT/INSERT only; no UPDATE/DELETE. Successor admission owns this transaction; migration does not infer ancestry for old runs.

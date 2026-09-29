@@ -33,6 +33,26 @@ def test_source_population_graph_executes_against_independent_oracle(graph_env, 
             "representation": shape["representation"], "unit": shape["unit"]}}], "budget": {"limit": 100, "max_attempts_per_activation": 1}}))
     assert admission.outcome.status == "accepted", admission
     run = admission.outcome.committed.object_id
+    page, trace, states = execute(e, plans, peer, releases, run)
+    assert page.status == case["terminal"], page
+    assert page.reserved == 0 and page.spent == len(trace)
+    assert [state["generation"] for state in states] == case["checkpoints"]
+    for state, expected in zip(states, case["generations"], strict=False):
+        assert [item["candidate"]["candidate_id"] for item in state["current"]] == expected["current"]
+        assert [item["candidate"]["candidate_id"] for item in state["cumulative"]] == expected["cumulative"]
+    scores = [item["input"]["candidate"] for item in trace if item["stage"] == "score"]
+    for expected in case["generations"]:
+        observed = [item for item in scores if item["generation"] == expected["generation"]]
+        assert [item["candidate_id"] for item in observed] == list(reversed(expected["candidate_ids"]))
+        assert [item["scoring_seed"] for item in observed] == list(reversed(expected["scoring_seeds"]))
+    if page.status == "completed":
+        with e.env.engine.connect() as conn:
+            output = conn.execute(text("SELECT outputs FROM runtime.graph_runs WHERE run_id=:run"), {"run": run}).scalar_one()
+        final = json.loads(peer.documents[output[0]["value"]["artifact"]["artifact_id"]])
+        assert final == states[-1]
+
+
+def execute(e, plans, peer, releases, run):
     trace, states = [], []
     for _ in range(100):
         binding = BindingCoordinator(e.env.engine, plans, peer, peer)
@@ -68,19 +88,4 @@ def test_source_population_graph_executes_against_independent_oracle(graph_env, 
                         "attempt_id": invocation.attempt_id, "fence": invocation.fence, "outcome": outcome}}))
                 assert completion.outcome.status == "accepted", completion
                 trace.append({"stage": stage, "input": json.loads(source), "status": outcome["status"]})
-    assert page.status == case["terminal"], page
-    assert page.reserved == 0 and page.spent == len(trace)
-    assert [state["generation"] for state in states] == case["checkpoints"]
-    for state, expected in zip(states, case["generations"], strict=False):
-        assert [item["candidate"]["candidate_id"] for item in state["current"]] == expected["current"]
-        assert [item["candidate"]["candidate_id"] for item in state["cumulative"]] == expected["cumulative"]
-    scores = [item["input"]["candidate"] for item in trace if item["stage"] == "score"]
-    for expected in case["generations"]:
-        observed = [item for item in scores if item["generation"] == expected["generation"]]
-        assert [item["candidate_id"] for item in observed] == list(reversed(expected["candidate_ids"]))
-        assert [item["scoring_seed"] for item in observed] == list(reversed(expected["scoring_seeds"]))
-    if page.status == "completed":
-        with e.env.engine.connect() as conn:
-            output = conn.execute(text("SELECT outputs FROM runtime.graph_runs WHERE run_id=:run"), {"run": run}).scalar_one()
-        final = json.loads(peer.documents[output[0]["value"]["artifact"]["artifact_id"]])
-        assert final == states[-1]
+    return page, trace, states

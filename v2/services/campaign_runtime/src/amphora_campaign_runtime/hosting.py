@@ -123,6 +123,7 @@ class Host:
                     conn.execute(text("SELECT cut_sha256,decision_sha256 FROM runtime.graph_aggregate_decisions LIMIT 0"))
                     conn.execute(text("SELECT opened_at FROM runtime.graph_scopes LIMIT 0"))
                     conn.execute(text("SELECT intent_id FROM runtime.binding_intents LIMIT 0"))
+                    conn.execute(text("SELECT transfer_sha256 FROM runtime.graph_successors LIMIT 0"))
             completion = None if artifacts is None else CompletionCoordinator(engine, artifacts)
             bindings = None if publisher is None else BindingCoordinator(engine, graph_catalog, artifacts, publisher)
             return cls(FixtureAdmission(engine, catalog), credentials, tuple(principals), completion,

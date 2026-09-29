@@ -1,15 +1,16 @@
 # Campaign Runtime
 
-Runtime 0.9.0 implements explicit typed Artifact/collection execution under BP-04.04A/B2, with campaigns 0.4.0 and graph-runtime 0.3.0. Wire-v4 requires configured binding publication/protection peers; default admission still rejects it. The new [Artifact binding module](src/amphora_campaign_runtime/artifact_bindings/README.md) owns resumable conversion, protected commit and cancellation cleanup. `/v3/graph-runs` exposes the new operators. Migrations runtime_0012/0013 are required; startup never migrates. B3 process and V1 installed-peer gates remain.
+Runtime 0.10.0 adds explicit successor admission under BP-04.04/B2, using graph-runtime 0.4.0 and campaigns 0.4.0. The [successor module](src/amphora_campaign_runtime/successors/README.md) owns terminal source cuts, exact carried values and immutable ancestry; the existing coordinator commits the new run and receipt. Migration runtime_0014 is required; startup never migrates. Earlier typed binding process and installed-peer gates are accepted under closed BP-04.04A.
 
-- Status: synthetic invocation lifecycle and atomic completion implemented; paired retention/delivery acceptance verified; REC-01..09 recovery/replacement verified; configured deterministic graph execution/replacement accepted in BP-04.02; aggregation and external waits accepted in BP-04.03; typed bindings are being verified in BP-04.04A/B2.
-- Package: `amphora-campaign-runtime` 0.9.0.
+- Status: configured deterministic execution, aggregation/waits and typed bindings accepted; source-derived solver orchestration B1 verified; successor B2 verified. New solver process/installed-peer acceptance remains B3/V1.
+- Package: `amphora-campaign-runtime` 0.10.0.
 - Architecture: [Graph Runner](../../docs/Architecture/System/Graph_Runner.md), [runtime protocol](../../docs/Architecture/System/Runtime_Command_Protocol.md), [isolation](../../docs/Architecture/System/Service_Isolation.md).
 
 ## Ownership and Module Boundaries
 
 | Module | Responsibility |
 |---|---|
+| [successors](src/amphora_campaign_runtime/successors/README.md) | Exact predecessor readiness, compatible carry maps, immutable ancestry and source observations |
 | `artifact_bindings/` | Typed Artifact/collection conversion, durable preparation/protection and atomic graph acceptance |
 | `graph.py` | Immutable graph values, bounded topology/loop/branch/join validation; no interpreter |
 | [compiler](src/amphora_campaign_runtime/compiler/README.md) | Pure wire-v2 semantic compilation, exact tool/schema pins, scoped types/control flow, canonical plans and activation addresses |
