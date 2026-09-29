@@ -3,13 +3,13 @@
 ## Canonical Parent Tracker
 
 - Status: primary_active; BP-04.03 / Build / B2.
-- Last refreshed: `2026-09-28 20:50:52` (America/Chicago).
+- Last refreshed: `2026-09-28 21:32:01` (America/Chicago).
 - Owner/scope: Campaign Runtime coordinator, aggregator and recovery modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-02 durable commits and BP-03 indexed callable tools.
 - Implementation: **45%**, 9/20 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-04.03/B2 aggregate policy and external-wait execution/retention integration. B1 boundaries passed 920 tests/thirteen installs/REC-01..09; v3 admission remains gated. Next: .03/B3 failure/race proof.
+- Current implementation task: BP-04.03/B2 external-wait execution/retention integration; collection slice passed 84 focused cases and 970-test/thirteen-install/REC-01..09 gate. V3 admission remains gated. B2 is not complete; next delivery is .03/B3 failure/race proof.
 - Demonstrated behavior: .01 closed/audited: compiler, 111-case semantic proof and actual public peer/fresh replacement acceptance passed, including manual numerical plan identity, scoped availability and bounded constructs. .02 closed/audited: durable advancement/hosting, 60 scheduling tests/eight actual coordinator-process cases and eight installed graph/tool/Artifact/replacement cases passed. Richer policies remain .03.
 - Blockers: none for the synthetic compiler scope; predecessor BP-02/BP-03 gates passed. Later external choices remain at named gates.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
@@ -57,10 +57,10 @@ Child decisions and the [cross-plan handoff register](Planning_Readiness.md) ide
 
 ## Accounting and Closeout
 
-On `2026-09-25 13:35:12`, the original two-task-per-phase estimate was decomposed into 20 verified deliveries across 5 children. Implementation stays 0%; no previous implementation credit is lost or added. [Planning history](BP-04%20Planning%20History.md) preserves the original scope and denominator. Pure design review earns no implementation credit.
+On `2026-09-25 13:35:12`, the original two-task-per-phase estimate was decomposed into 20 verified deliveries across 5 children. Implementation was 0% at that historical planning checkpoint; no implementation credit was awarded for decomposition. [Planning history](BP-04%20Planning%20History.md) preserves the original scope and denominator. The canonical tracker above owns current progress.
 
 Child closeout archives that child with its audit and repairs links; the parent remains active until all child gates and the integrated parent outcome pass. The last child's acceptance checks the parent handoff without repeating unchanged earlier audits. Keep implementation, human acceptance, operational readiness and scientific validation separate. Update child -> parent -> MBT -> Restore at each delivery/scope change.
 
 ## Activation Coherence Audit
 
-`2026-09-28 17:23:58`: corrected_ready after BP-02 and BP-03 closeout. Keep compiler, coordinator and aggregator as focused Runtime-owned modules; public campaign contracts contain only wire DTOs. The initial wire-v1 control graph stays validation-only. .01 introduces explicitly versioned executable definitions/locks with finite predicates, explicit data ports, scoped control constructs and deterministic paths; no arbitrary code or LLM interpretation. .02 adds durable execution of the compiled plan, .03 aggregation/failure/external waits, .04 extracted v1 and successor scenarios, .05 actual recovery/parent closeout. Only .01/B1 is active; all child percentages remain 0%. Scientific/provider/UI/host choices do not block these synthetic contracts.
+`2026-09-28 17:23:58`: corrected_ready after BP-02 and BP-03 closeout. Keep compiler, coordinator and aggregator as focused Runtime-owned modules; public campaign contracts contain only wire DTOs. The initial wire-v1 control graph stays validation-only. .01 introduces explicitly versioned executable definitions/locks with finite predicates, explicit data ports, scoped control constructs and deterministic paths; no arbitrary code or LLM interpretation. .02 adds durable execution of the compiled plan, .03 aggregation/failure/external waits, .04 extracted v1 and successor scenarios, .05 actual recovery/parent closeout. At this historical activation checkpoint only .01/B1 was active and every child was at 0%; subsequent verified progress is in the canonical tracker above. Scientific/provider/UI/host choices do not block these synthetic contracts.

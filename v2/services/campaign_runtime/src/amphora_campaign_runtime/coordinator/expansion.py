@@ -8,7 +8,7 @@ from sqlalchemy import text
 
 from ..lifecycle.claims import RUN
 from .bindings import ValueEnvironment
-from .collections import AllMembers, FrozenMembership
+from .collections import FrozenMembership
 from .frontier import FrontierPlanner, ScopeAddress
 from .predicates import PredicateValues
 from .state import persist_node
@@ -17,8 +17,9 @@ from .values import BoundValues, ensure
 
 
 class ScopeExpansion:
-    def __init__(self, conn, params, plan, graph, artifacts):
+    def __init__(self, conn, params, plan, graph, artifacts, aggregation):
         self.conn, self.params, self.plan, self.graph, self.artifacts = conn, params, plan, graph, artifacts
+        self.aggregation = aggregation
 
     def children(self, row):
         rows = self.conn.execute(text("SELECT * FROM runtime.graph_scopes WHERE " + RUN +
@@ -39,7 +40,6 @@ class ScopeExpansion:
         GraphStorage.create_scope(self.conn, self.params, address, inputs, intents, row["activation_id"])
 
     def scatter(self, scope, row, node):
-        ensure(node.policy.kind == "all", "graph_collection_policy_unsupported")
         environment = scope.environment
         if row["status"] == "ready":
             value = environment.source(node.collection)
@@ -52,24 +52,25 @@ class ScopeExpansion:
         ensure(FrozenMembership(value).sha256 == state["membership_sha256"], "graph_scatter_membership_conflict")
         children = self.children(row)
         active = sum(child["status"] == "active" for child in children)
-        if state["next_index"] < len(value.items) and active < node.max_parallel:
+        expired = self.aggregation.expired(scope, node)
+        if not expired and state["next_index"] < len(value.items) and active < node.max_parallel:
             index = state["next_index"]
             inputs = BoundValues((*environment.bind(node.captures).bindings,
                                   GraphBinding(port=node.item_input, value=value.items[index])))
             self.create(scope, row, node, index, inputs, state["membership_sha256"])
             persist_node(self.conn, self.params, row, "issued", state={**state, "next_index": index + 1})
             return True
-        if active or state["next_index"] < len(value.items):
+        pending = active or state["next_index"] < len(value.items)
+        if pending and not expired:
             return False
         members = []
         for child in children:
             status = "succeeded" if child["status"] == "completed" else child["status"]
             result = BoundValues.from_records(child["outputs"]).values[node.result_port] if status == "succeeded" else None
-            members.append((str(child["occurrences"][-1]["index"]), status, True, result))
-        output = BoundValues((GraphBinding(port=node.output.name, value=AllMembers(node.policy).collect(members)),))
-        output.validate((node.output,), self.plan.document.definition.scope)
-        persist_node(self.conn, self.params, row, "succeeded", outputs=output)
-        return True
+            members.append(self.aggregation.member(str(child["occurrences"][-1]["index"]), status, True, result))
+        for index in range(state["next_index"], len(value.items)):
+            members.append(self.aggregation.member(str(index), "pending", True, None, "member_not_started"))
+        return self.aggregation.close(row, node, members, "deadline" if pending else "all_terminal")
 
     def iterate(self, scope, row, node):
         environment = scope.environment

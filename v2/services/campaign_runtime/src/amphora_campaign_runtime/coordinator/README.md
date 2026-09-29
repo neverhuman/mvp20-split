@@ -1,8 +1,8 @@
 # Durable graph coordinator
 
-- Status: BP-04.02 closed/audited; B1-B3/V1 verified. Gates and percentages are in the [canonical child](../../../../../docs/Build%20Plans/BP-04/Completed/BP-04.02%20Frontier%20and%20scheduling.md).
-- Owner: Campaign Runtime, package 0.4.0. Architecture: [Graph Execution Model](../../../../../docs/Architecture/System/Graph_Execution_Model.md), [Graph Runner](../../../../../docs/Architecture/System/Graph_Runner.md).
-- Public DTOs: [graph-runtime contracts](../../../../../contracts/graph_runtime/README.md) 0.1.0; executable campaign contracts 0.2.1/wire-v2; unchanged worker contracts.
+- Status: BP-04.02 closed/audited; current changes belong to [BP-04.03/B2](../../../../../docs/Build%20Plans/BP-04/BP-04.03%20Aggregation%20and%20failure%20policy.md). Child trackers own gates and percentages.
+- Owner: Campaign Runtime, package 0.6.0. Architecture: [Graph Execution Model](../../../../../docs/Architecture/System/Graph_Execution_Model.md), [Graph Runner](../../../../../docs/Architecture/System/Graph_Runner.md).
+- Public DTOs: [graph-runtime contracts](../../../../../contracts/graph_runtime/README.md) 0.2.1; executable campaign contracts 0.3.1. Wire-v2 execution remains active; wire-v3 admission stays gated pending external-wait integration. Worker contracts are unchanged.
 
 ## Responsibilities and boundaries
 
@@ -18,7 +18,8 @@ This module turns a configured exact compiled plan into a durable, scoped graph 
 | `admission.py` | One-running-campaign guard, atomic plan/run/frontier/receipt/audit/outbox admission |
 | `reads.py` | Scoped read-only repeatable-read pages of committed graph observations |
 | `advance.py`, `advancement.py`, `state.py` | Run-locked bounded passes, committed value/control propagation, atomic decisions and Finish closure |
-| `collections.py`, `expansion.py` | Ordered all-member joins, frozen scatter membership, parallel-body bounds and durable loop checkpoints |
+| `aggregation.py` | Adapt committed observations to immutable all/partial/deadline decisions and persist outputs in the same owner transaction |
+| `collections.py`, `expansion.py` | Frozen scatter membership, parallel-body bounds, collection closure and durable loop checkpoints |
 | `predicates.py`, `projections.py` | Finite typed evaluation and bounded public Artifact reads outside owner transactions |
 | `configuration.py`, `http.py`, `polling.py` | Exact local graph allowlists, scoped HTTP commands/reads and autonomous recovery polling |
 
@@ -34,11 +35,11 @@ Every body node is represented in the frontier. Roots start ready, successors wa
 
 `GraphAdvancer.advance` requires maintain authority and a stable `graph.advance` command. It takes the existing run lock, reconciles expired worker budget through the existing settlement policy, reloads the retained plan/frontier and applies at most 256 transitions (default 64). Decisions, new scopes/invocations, run/frontier revisions, receipt and audit/outbox commit atomically. An unchanged pass still receipts its command. Notifications are hints. Per-pass scope caches are discarded; a new coordinator reconstructs from PostgreSQL. Transition count is bounded, but scanning cost grows with the admitted frontier; this is not evidence of high-scale throughput.
 
-Branches persist true/false routes; ordinary successors require every incoming dependency. Unselected routes propagate skipped state. All-member joins wait for terminal predecessors, preserve declared member order, exclude skipped members only by explicit policy and fail required missing members. Optional failures use typed missing slots. Partial/deadline collection policies are currently blocked with `graph_collection_policy_unsupported`, assigned BP-04.03.
+Branches persist true/false routes; ordinary successors require every incoming dependency. Unselected routes propagate skipped state. All-member joins wait for terminal predecessors, preserve declared member order, exclude skipped members only by explicit policy and fail required missing members. Optional failures use typed missing slots. Partial policies preserve all slots and count only accepted successes toward the minimum. They close at all-terminal state or a declared deadline; reaching the minimum alone never closes them. The [aggregation module](../aggregation/README.md) owns policy, immutable decisions, clock/cut semantics and focused evidence. Canonical tool abstention/failure reasons remain in graph state and aggregate evidence.
 
 Scatter freezes ordered committed values and an `amphora-scatter-membership-v1` digest before creating children. Each occurrence carries that digest and its original index. At most max_parallel child scopes remain active; completed children release slots, and outputs retain membership order regardless of completion order. Empty scatter produces an empty collection. Nested expansion checks the run's max_activations before insertion. Loops create a new indexed child scope for each iteration; committed body outputs determine feedback and the finite until predicate. Only completed checkpoints permit the next iteration. Predicate or declared iteration-limit behavior records why the loop stopped; previous scopes are retained.
 
-Only root Finish completes a graph. Missing required data/dependencies, unsupported policy or a blocked iteration produce a blocked outcome. Root blockage/deadline cancels remaining pure worker work through existing budget settlement and marks unresolved graph state blocked. Prepared-intent protection is never bypassed: maintenance must reconcile it before settlement. Emergency lifecycle cancellation and uncertainty retain their own authority; historical graph projections may show the last coordinator checkpoint.
+Only root Finish completes a graph. Missing required data/dependencies or a blocked iteration produce a blocked outcome. Root blockage/deadline cancels remaining pure worker work through existing budget settlement and marks unresolved graph state blocked. Successful partial closure also settles remaining work before root completion, marking unused graph state skipped with an explicit reason. Prepared-intent protection is never bypassed: maintenance must reconcile it before settlement. Emergency lifecycle cancellation and uncertainty retain their own authority; historical graph projections may show the last coordinator checkpoint.
 
 Materializing queued work costs no attempt budget. The existing claim transaction reserves one unit under the run lock, and terminal attempt settlement spends it exactly once. A graph can have more queued work than available units; it cannot issue more leases than its budget permits. Graph invokes use the earlier of their activation timeout and the admitted graph deadline. Claim order is dispatch ordinal then activation ID; legacy fixtures retain ordinal zero and their existing order.
 
@@ -58,7 +59,7 @@ Artifact predicates resolve only declared typed paths. Missing values never defa
 
 ## Configured hosting and recovery
 
-Optional host `graphs` is a nonempty list of at most 64 entries: each has a `definition` JSON file path, `releases` entries with public `descriptor` file paths and inline exact `lock` DTOs, and `schemas` entries with inline `schema_ref` and byte-file `path`. Paths resolve relative to the host configuration. Startup compiles and checks those resources; it accepts no uploaded/unverified plan. An empty fixture list is allowed only with this graph allowlist. Tool-bearing graphs require a configured Artifact completion peer. Optional `projections` config contains `endpoint`, `token_env`, and `maximum_bytes`; its token needs scoped Artifact read authority. Startup requires runtime_0007 and performs no DDL.
+Optional host `graphs` is a nonempty list of at most 64 entries: each has a `definition` JSON file path, `releases` entries with public `descriptor` file paths and inline exact `lock` DTOs, and `schemas` entries with inline `schema_ref` and byte-file `path`. Paths resolve relative to the host configuration. Startup compiles and checks those resources; it accepts no uploaded/unverified plan. An empty fixture list is allowed only with this graph allowlist. Tool-bearing graphs require a configured Artifact completion peer. Optional `projections` config contains `endpoint`, `token_env`, and `maximum_bytes`; its token needs scoped Artifact read authority. Runtime 0.6.0 requires migrations through runtime_0011; startup performs no DDL.
 
 `POST /v1/graph-runs` admits; `POST /v1/graph-runs/advance` advances; `GET /v1/graph-runs/{run}` reads pages. Commands use existing scoped identity/canonical-command semantics. Configured health reports `configured_graphs`; default construction still reports validation-only and legacy validation remains nonexecutable.
 

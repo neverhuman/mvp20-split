@@ -10,8 +10,8 @@ from sqlalchemy import text
 from ..compiler import ActivationAddress
 from ..lifecycle.claims import RUN
 from ..lifecycle.model import TransitionError
+from .aggregation import GraphAggregation
 from .bindings import InvocationIntent
-from .collections import AllMembers
 from .expansion import ScopeExpansion
 from .materialization import InvocationMaterializer
 from .predicates import PredicateValues
@@ -23,7 +23,8 @@ class GraphPass:
     def __init__(self, conn, params, plan, graph, artifacts):
         self.conn, self.params, self.plan, self.graph, self.artifacts = conn, params, plan, graph, artifacts
         self.order = graph["next_dispatch_order"]
-        self.expansion = ScopeExpansion(conn, params, plan, graph, artifacts)
+        self.aggregation = GraphAggregation(conn, params, plan, graph)
+        self.expansion = ScopeExpansion(conn, params, plan, graph, artifacts, self.aggregation)
 
     def apply(self, maximum):
         changed = 0
@@ -69,7 +70,8 @@ class GraphPass:
 
     def step(self, scope, row, node):
         if row["status"] == "waiting":
-            status = scope.readiness(node)
+            deadline = node.kind == "join" and self.aggregation.expired(scope, node)
+            status = scope.readiness(node, deadline=deadline)
             if status == "waiting":
                 return False
             persist_node(self.conn, self.params, row, status,
@@ -85,8 +87,7 @@ class GraphPass:
             route = "true" if PredicateValues(scope.environment, self.artifacts).evaluate(node.predicate) else "false"
             persist_node(self.conn, self.params, row, "succeeded", state={"route": route}, outputs=BoundValues(()))
         elif node.kind == "join":
-            outputs = AllMembers(node.policy).join(node, scope).validate((node.output,), self.plan.document.definition.scope)
-            persist_node(self.conn, self.params, row, "succeeded", outputs=outputs)
+            return self.aggregation.join(scope, row, node)
         elif node.kind == "finish":
             outputs = scope.environment.bind(node.outputs).validate(scope.body.outputs, self.plan.document.definition.scope)
             persist_node(self.conn, self.params, row, "succeeded", outputs=outputs)
@@ -113,7 +114,10 @@ class GraphPass:
         if activation in {"queued", "leased"}:
             return False
         if activation != "succeeded":
-            persist_node(self.conn, self.params, row, "failed", reason="tool_" + activation)
+            accepted = self.conn.execute(text("SELECT result FROM runtime.accepted_completions WHERE " + RUN +
+                " AND activation_id=:activation"), binding).scalar_one_or_none()
+            state = row["state"] if accepted is None else {**row["state"], "tool_outcome": accepted["outcome"]}
+            persist_node(self.conn, self.params, row, "failed", reason="tool_" + activation, state=state)
             return True
         result = self.conn.execute(text("SELECT result FROM runtime.accepted_completions WHERE " + RUN +
                                          " AND activation_id=:activation"), binding).scalar_one_or_none()

@@ -1,32 +1,17 @@
 # BP-04 Planning History
 
-Archived first draft at `2026-09-25 13:35:12`. Historical task pairs/percentages are not the active execution tracker. The parent and linked children now own progress. Original scope is preserved below for traceability.
+Design status: historical scope and planning decisions. Last reviewed: `2026-09-28 21:32:01` (America/Chicago).
 
-# BP-04 Deterministic Graph Runner
+The first draft was archived at `2026-09-25 13:35:12`. Its ten tasks (five pairs) were replaced by five canonical child plans with four verified deliveries each (twenty parent deliveries). The original task descriptions below preserve scope history; they do not define a second execution tracker. Superseded percentages and active-status instructions have been removed to prevent conflicting progress reports.
 
-## Canonical Execution Tracker
+Current overall/per-phase percentages, current task and blockers belong to the [canonical BP-04 parent](BP-04%20Deterministic%20Graph%20Runner.md) and its linked child trackers. [MBT](Master%20Build%20Tracker.md) mirrors those values and owns program priority. Update those documents together whenever delivery status changes; do not recreate a parallel live tracker here.
 
-- Status: **proposed / first draft for user review**; implementation not activated.
-- Last refreshed: `2026-09-24 12:01:26` (America/Chicago).
-- Owner/scope: Campaign Runtime coordinator, aggregator and recovery modules.
-- Parent: [Master Build Tracker](Master%20Build%20Tracker.md); baseline: local architecture and BP-01/BP-01A completed foundation, BP-02 active protocol work.
-- Overall implementation: **0%**; 10 equally weighted verified tasks, two per phase. Overall = completed tasks / 10; phase = completed tasks / 2. Drafting earns no implementation credit.
-- Current phase/task: none; proposed plan.
-- Next task: incorporate review, then verify predecessor gates and run the bounded pre-activation coherence audit before P1/T1.
-- Prerequisites: Completed BP-02 durable commits and BP-03 indexed callable tools.
-- Completed implementation/evidence: none. All phase gates remain pending.
-- Blockers: predecessor gates are not complete; decisions below block only their dependent tasks.
-- Human acceptance: draft is available for review; no approval inferred for dependent deployment/provider actions. Campaigns remain autonomous with human changes between campaigns.
-- Active exception: none.
-- Draft coherence check: `2026-09-24 12:01:26`; ownership, ordering, scoped tests and handoffs checked against [owning architecture](../Architecture/System/Graph_Execution_Model.md). This is not the implementation activation audit.
+## Completed Milestones
 
-| Phase / status | Completion | Dependency | Required exit |
-|---|---:|---|---|
-| P1 Compiler and executable contract / proposed | 0% | Completed predecessor gates and activation audit | T1-T2: Reject ambiguous joins, missing bindings, illegal cycles, invalid loop state, unsupported tools and unbounded fanout before dispatch; equivalent input yields stable plan identity. |
-| P2 Frontier and scheduling / proposed | 0% | P1 exit | T3-T4: Parallel independent branches progress; duplicate wakeups do not duplicate activation; restart reproduces frontier; branch predicates bind exact accepted outputs. |
-| P3 Aggregation and failure policy / proposed | 0% | P2 exit | T5-T6: Failure on one branch follows declared policy without blocking unrelated work; late/duplicate returns, partial batches and receipt loss cannot fabricate completion. |
-| P4 V1 baseline and successor graphs / proposed | 0% | P3 exit | T7-T8: Compare stage/event/state expectations, not JSON shape alone; all-failed population terminates safely; no hidden chemistry/ranking claim; active instructions never hot-swap. |
-| P5 Recovery and closeout / proposed | 0% | P4 exit | T9-T10: Required graph scenarios and BP-02 regression subset pass; provenance links include plan/activation/attempt/results; source graph parity limits and deliberate v1 bug fixes remain explicit. |
+- P1 / [BP-04.01 Compiler and executable contract](BP-04/Completed/BP-04.01%20Compiler%20and%20executable%20contract.md): closed/audited, **100%**. Its completed tracker and evidence remain in `BP-04/Completed/`.
+- P2 / [BP-04.02 Frontier and scheduling](BP-04/Completed/BP-04.02%20Frontier%20and%20scheduling.md): closed/audited, **100%**. Its completed tracker and evidence remain in `BP-04/Completed/`.
+
+These are durable completed milestones, not pending first-draft work. New aggregation and external-wait work belongs to [BP-04.03](BP-04/BP-04.03%20Aggregation%20and%20failure%20policy.md); it does not reopen P1/P2.
 
 ## Outcome and Boundaries
 
@@ -38,21 +23,11 @@ Excluded: LLM reasoning, biological accuracy, arbitrary code execution in nodes,
 
 Primary services retain private state, dependencies, migrations and module READMEs. Public contracts/clients are the only cross-owner dependencies. Any new schema identifies its consumer/migration impact. No broad backend or shared business/ORM package. Later phases refine earlier boundaries under the current task without reopening closed plans.
 
-## Child Work-Package Register
+## Historical Decomposition
 
-This parent owns outcomes and sequencing. The named packages below are **scoped, not implementation-ready**. The existing task pairs are requirements for child decomposition, not sufficiently detailed coding instructions. Before activating a package, author its canonical child plan with owned objects/API/storage, transition/algorithm decisions, failure/recovery matrix, named fixtures and replacement gates. Parent progress then rolls up verified child deliverables; do not count these task pairs again. No implementation credit is earned here.
+The original scope was decomposed into compiler, scheduling, aggregation, baseline/successor and recovery children. The [parent's child register](BP-04%20Deterministic%20Graph%20Runner.md#canonical-children-and-phase-mirror) now links each authoritative plan and reports its status. Concrete interfaces, failure oracles, migrations and replacement gates live in those children. The historical task pairs below are not counted again in the twenty-delivery denominator.
 
-| Child / bounded ownership | Implementation | Prerequisite | Scope to decompose |
-|---|---:|---|---|
-| BP-04.01 / Compiler and executable contract | 0% | Parent predecessor gates | Extend the prototype schema with typed bindings, conditional paths, bounded scatter/iteration, join/completion policies and state references; validate exact registered tool/schema applicability. Compile immutable execution plans/lockfiles with resource bounds and deterministic activation paths; define migration/version consequences for the prototype contract. |
-| BP-04.02 / Frontier and scheduling | 0% | BP-04.01 exit | Implement a runtime-owned coordinator deriving eligible activations from committed state; preserve single-active-campaign and finite fanout/budget limits. Implement branch/skip/iteration transitions and dispatch through BP-02 primitives; make checkpoints explicit and reconstructible, not coordinator memory. |
-| BP-04.03 / Aggregation and failure policy | 0% | BP-04.02 exit | Implement joins/aggregation receipts identifying exact accepted members and terminal/partial policy; distinguish FAILED, ABSTAIN, SKIPPED, CANCELLED and pending scientific receipts. Support deterministic retry/stop/fallback, correlated synthetic external waits, cancellation and unknown-effect dispositions without automatic resubmission. |
-| BP-04.04 / V1 baseline and successor graphs | 0% | BP-04.03 exit | Turn BP-01A source graph into runnable synthetic adapters, explicit data/state bindings and semantic assertions for zero/two generations, rejected mutations and ordered result association. Validate successor graph proposals/carried-state mappings after current-run termination and reconcile all attempts; preserve historical graph pins and failure deviations. |
-| BP-04.05 / Recovery and closeout | 0% | BP-04.04 exit | Run separate-process scenarios around activation, aggregation and iteration commits; verify simultaneous valid completions, revision conflicts and restart through public APIs. Publish read/command seams for BP-05, module replacement boundaries and scoped audit; archive only after the full deterministic fixture set passes. |
-
-Readiness gaps are the unresolved decisions below plus concrete storage/API contracts, algorithm choices, test oracles and migration/recovery obligations for each package. Decompose the nearest eligible package first; do not invent distant provider, ontology or deployment decisions merely to fill templates. Child scope remains here until a linked execution plan replaces the register entry. The parent's existing percentages remain 0% because no implementation has occurred.
-
-## Ordered Tasks
+## Original Scope Tasks (Superseded Execution Sequence)
 
 ### P1 ? Compiler and executable contract
 
@@ -108,14 +83,14 @@ Each owning README maps public behavior, invariants, failure scenarios and measu
 
 Keep scenario evidence with absolute timestamps, implementation revision, fixture/schema identity, relevant run/artifact IDs and observed outcomes. Unit mocks do not replace required database, process, browser or provider evidence. Record independent build/install and replacement tests for new service/tool boundaries.
 
-## Decisions and Handoff
+## Original Handoff Intent
 
-P1 must select precise scatter/join/partial-result semantics before compiler code. BP-06 later supplies real domain receipts through the existing wait contract; fixture receipts in this plan are labeled synthetic. BP-05 receives stable inspection and next-campaign command boundaries.
+The first draft required precise scatter/join/partial-result semantics before compiler code. P1's completed child records that contract work; BP-04.03 owns execution-policy integration. BP-06 later supplies real domain receipts; fixture receipts are labeled synthetic. BP-05 receives stable inspection and next-campaign command boundaries.
 
 ## Progress, Scope Changes and Closeout
 
-The canonical tracker owns overall and P1-P5 percentages; mirror them in MBT at every completed task or changed scope and before commit/handoff. Do not activate downstream phases before their predecessor gate. Record review changes and denominator adjustments here; substantial newly discovered scope gets a named successor.
+The canonical parent and child trackers own overall and phase percentages; MBT mirrors them at every completed task or changed scope and before commit/handoff. Record durable planning/denominator changes here; substantial newly discovered scope gets a named successor.
 
 Final phase includes a component-scoped architecture drift audit. Fix blocking drift, explicitly assign nonblocking follow-ups, update module READMEs/inventories and archive only after all defined gates pass. Synchronize MBT, plan index and Restore and repair moved links. Preserve separate acceptance/operational/scientific readiness status; 100% measures this bounded implementation, not the whole product.
 
-Closeout evidence: pending. No implementation, deployment or scientific validation is claimed by this draft.
+P1/P2 closeout evidence is in their completed children linked above. Remaining closeout gates are owned by their respective child plans; historical drafting does not establish scientific or deployment validity.

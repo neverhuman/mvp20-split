@@ -45,12 +45,28 @@ class ScopeState:
     def definition(self, row):
         return next(node for node in self.body.nodes if node.node_id == row["node_id"])
 
-    def readiness(self, node):
+    def readiness(self, node, *, deadline=False):
         """Joins converge mutually exclusive paths; all other controls are AND dependencies."""
         edges = tuple(edge for edge in self.body.edges if edge.target == node.node_id)
         parents = tuple(self.nodes[edge.source] for edge in edges)
-        if any(row["status"] not in TERMINAL for row in parents):
+        if any(row["status"] not in TERMINAL for row in parents) and not (deadline and node.kind == "join"):
             return "waiting"
+        if deadline and node.kind == "join":
+            member_nodes = {member.source.node_id for member in node.members if member.source.kind == "output"}
+            if any(row["status"] not in TERMINAL and edge.source not in member_nodes
+                   for edge, row in zip(edges, parents, strict=True)):
+                return "waiting"
+            # A clock cannot choose a branch. Resolve every control-ancestor branch first.
+            ancestors, pending = set(), [edge.source for edge in edges]
+            while pending:
+                key = pending.pop()
+                if key in ancestors:
+                    continue
+                ancestors.add(key)
+                pending.extend(edge.source for edge in self.body.edges if edge.target == key)
+            if any(self.nodes[key]["kind"] == "branch" and self.nodes[key]["status"] not in TERMINAL
+                   for key in ancestors):
+                return "waiting"
         excluded = tuple(row["status"] == "skipped" or (row["kind"] == "branch" and
             row["status"] == "succeeded" and row["state"]["route"] != edge.route)
             for edge, row in zip(edges, parents, strict=True))

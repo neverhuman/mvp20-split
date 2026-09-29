@@ -4,7 +4,12 @@ import uuid
 from dataclasses import replace
 
 import pytest
-from amphora_campaign_runtime.aggregation import AggregateCuts, AggregateIdentity, SnapshotCut
+from amphora_campaign_runtime.aggregation import (
+    AggregateCuts,
+    AggregateIdentity,
+    JoinAccumulator,
+    SnapshotCut,
+)
 from amphora_campaign_runtime.lifecycle.model import TransitionError
 from sqlalchemy import text
 from sqlalchemy.exc import DBAPIError
@@ -31,6 +36,50 @@ def audit(conn, cut):
     conn.execute(text("UPDATE runtime.runs SET revision=:revision WHERE run_id=:run"), params)
     conn.execute(text("INSERT INTO runtime.audit_events(event_id,tenant_id,project_id,run_id,revision,ordinal,payload) "
                       "VALUES(:event,:tenant,:project,:run,:revision,0,'{}')"), params)
+
+
+def test_policy_decision_exact_replay_and_changed_policy_denied(graph_env):
+    cut = setup(graph_env)
+    decision = JoinAccumulator({"kind": "all"}).close(cut)
+    with graph_env.env.engine.begin() as conn:
+        assert AggregateCuts.decide(conn, decision) == decision.sha256
+        audit(conn, cut)
+    with graph_env.env.engine.begin() as conn:
+        assert AggregateCuts.decide(conn, decision) == decision.sha256
+        with pytest.raises(TransitionError, match="aggregate_decision_conflict"):
+            AggregateCuts.decide(conn, JoinAccumulator({"kind": "all", "skipped": "fail"}).close(cut))
+
+
+def test_cut_cannot_acquire_policy_after_its_commit(graph_env):
+    cut = setup(graph_env)
+    with graph_env.env.engine.begin() as conn:
+        AggregateCuts.persist(conn, cut)
+        audit(conn, cut)
+    with graph_env.env.engine.begin() as conn:
+        with pytest.raises(TransitionError, match="aggregate_stale_decision"):
+            AggregateCuts.decide(conn, JoinAccumulator({"kind": "all"}).close(cut))
+
+
+def test_decision_without_audit_rolls_back_both_rows(graph_env):
+    cut = setup(graph_env)
+    with pytest.raises(DBAPIError):
+        with graph_env.env.engine.begin() as conn:
+            AggregateCuts.decide(conn, JoinAccumulator({"kind": "all"}).close(cut))
+    with graph_env.env.engine.connect() as conn:
+        assert conn.execute(text("SELECT count(*) FROM runtime.graph_aggregate_decisions WHERE run_id=:run"),
+                            {"run": cut.identity.run_id}).scalar_one() == 0
+
+
+@pytest.mark.parametrize("mutation", ["UPDATE runtime.graph_aggregate_decisions SET document='{}' WHERE run_id=:run",
+                                    "DELETE FROM runtime.graph_aggregate_decisions WHERE run_id=:run"])
+def test_service_cannot_mutate_policy_history(graph_env, mutation):
+    cut = setup(graph_env)
+    with graph_env.env.engine.begin() as conn:
+        AggregateCuts.decide(conn, JoinAccumulator({"kind": "all"}).close(cut))
+        audit(conn, cut)
+    with pytest.raises(DBAPIError):
+        with graph_env.env.engine.begin() as conn:
+            conn.execute(text(mutation), {"run": cut.identity.run_id})
 
 
 def test_atomic_cut_exact_replay_and_late_rewrite_denied(graph_env):

@@ -110,6 +110,8 @@ class Host:
                 conn.execute(text("SELECT delivery_token FROM runtime.outbox LIMIT 0"))
                 if graph_catalog is not None:
                     conn.execute(text("SELECT frontier_revision FROM runtime.graph_runs LIMIT 0"))
+                    conn.execute(text("SELECT cut_sha256,decision_sha256 FROM runtime.graph_aggregate_decisions LIMIT 0"))
+                    conn.execute(text("SELECT opened_at FROM runtime.graph_scopes LIMIT 0"))
             completion = None if artifacts is None else CompletionCoordinator(engine, artifacts)
             return cls(FixtureAdmission(engine, catalog), credentials, tuple(principals), completion,
                        DeliveryWorker(DeliveryStore(engine, policy), targets),

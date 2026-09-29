@@ -13,6 +13,7 @@ from .executable.awaitable import (
     parse_execution_plan,
 )
 from .executable.nodes import (
+    AllCollectionPolicy,
     BranchV2,
     ControlEdge,
     ExecutableScope,
@@ -20,6 +21,7 @@ from .executable.nodes import (
     InvokeV2,
     IterateV2,
     JoinV2,
+    PartialCollectionPolicy,
     ScatterV2,
 )
 from .executable.plans import (
@@ -59,6 +61,7 @@ from .models import (
 )
 
 __all__ = [
+    "AllCollectionPolicy", "PartialCollectionPolicy",
     "Invoke",
     "Predicate",
     "Branch",

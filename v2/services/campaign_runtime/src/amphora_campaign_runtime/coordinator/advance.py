@@ -62,14 +62,22 @@ class GraphAdvancer:
                     status = "completed" if root["status"] == "completed" else "blocked"
                     outputs = root["outputs"]
                     reason = None if status == "completed" else "graph_finish_unavailable"
-                    if status == "blocked":
-                        settled_run = {**run, "reserved": decision.budget.reserved, "spent": decision.budget.spent}
-                        decision = self.settlement.apply(conn, params, settled_run, stop=True)
+                    # Partial closure can finish while independent pure work is still in flight.
+                    settled_run = {**run, "reserved": decision.budget.reserved, "spent": decision.budget.spent}
+                    decision = self.settlement.apply(conn, params, settled_run, stop=True)
+                    if decision.status == "blocked":
+                        status, reason, outputs = "blocked", "graph_uncertain_work", None
             if changed or decision.changed or status != run["status"]:
                 if status == "blocked":
                     conn.execute(text("UPDATE runtime.graph_nodes SET status='blocked',reason_code=:reason WHERE " + RUN +
                         " AND status IN ('waiting','ready','issued')"), {**params, "reason": reason or "graph_run_blocked"})
                     conn.execute(text("UPDATE runtime.graph_scopes SET status='blocked' WHERE " + RUN +
+                                      " AND status='active'"), params)
+                elif status == "completed":
+                    conn.execute(text("UPDATE runtime.graph_nodes SET status='skipped',"
+                        "reason_code='graph_not_required_at_finish' WHERE " + RUN +
+                        " AND status IN ('waiting','ready','issued')"), params)
+                    conn.execute(text("UPDATE runtime.graph_scopes SET status='skipped' WHERE " + RUN +
                                       " AND status='active'"), params)
                 revision = self.leases._changed(conn, params, run, decision.budget, registered.operation_id,
                     {"kind": "graph_advanced", "transitions": changed, "status": status, "reason_code": reason})
