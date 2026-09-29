@@ -1,8 +1,10 @@
 # Campaign Runtime
 
+Accepted checkpoint `2026-09-29 17:57:39`: BP-04.04 closed/audited. Five real solver images and independent tool/SDK/owner installs passed initial-population -> successor generations 1/2, concurrent scoring and Runtime replacement; 17 invocations, all 44 reservations confirmed. Source/lineage/receipt/artifact history preserved. Scientific validity and target-host execution remain excluded. Earlier B1-B3 statements below describe their historical verification tiers; no gate in this child remains open.
+
 Runtime 0.10.0 adds explicit successor admission under BP-04.04/B2, using graph-runtime 0.4.0 and campaigns 0.4.0. The [successor module](src/amphora_campaign_runtime/successors/README.md) owns terminal source cuts, exact carried values and immutable ancestry; the existing coordinator commits the new run and receipt. Migration runtime_0014 is required; startup never migrates. Earlier typed binding process and installed-peer gates are accepted under closed BP-04.04A.
 
-- Status: configured deterministic execution, aggregation/waits and typed bindings accepted; source-derived solver orchestration B1 verified; successor B2 verified. New solver process proof passed B3; actual installed-peer acceptance remains V1.
+- Status: configured deterministic execution, aggregation/waits and typed bindings accepted; source-derived solver orchestration B1 verified; successor B2 verified. New solver process proof passed B3; actual installed-peer acceptance passed V1.
 - Package: `amphora-campaign-runtime` 0.10.0.
 - Architecture: [Graph Runner](../../docs/Architecture/System/Graph_Runner.md), [runtime protocol](../../docs/Architecture/System/Runtime_Command_Protocol.md), [isolation](../../docs/Architecture/System/Service_Isolation.md).
 

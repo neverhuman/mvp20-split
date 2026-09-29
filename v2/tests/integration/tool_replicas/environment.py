@@ -91,7 +91,8 @@ class Environment:
                 path = self.root / (module + "-" + kind + ".json")
                 path.write_bytes(body)
                 profile = {**port["schema_ref"], "media_type": "application/json", "schema_path": path.name}
-                if profile not in profiles:
+                identity = {key: value for key, value in profile.items() if key != "schema_path"}
+                if not any({key: value for key, value in old.items() if key != "schema_path"} == identity for old in profiles):
                     profiles.append(profile)
             self.tools.append(tool)
         self.registry = self.host("registry", "amphora_capability_registry", {

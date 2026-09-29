@@ -1,6 +1,8 @@
 # Successor admission boundary
 
-Status: BP-04.04/B2/B3 verified; V1 installed-peer acceptance active. Runtime 0.10.0; graph-runtime contracts 0.4.0. Architecture: [Successor admission](../../../../../docs/Architecture/System/Graph_Successor_Admission.md).
+Accepted checkpoint `2026-09-29 17:57:39`: BP-04.04 closed/audited. Five real solver images and independent tool/SDK/owner installs passed initial-population -> successor generations 1/2, concurrent scoring and Runtime replacement; 17 invocations, all 44 reservations confirmed. Source/lineage/receipt/artifact history preserved. Scientific validity and target-host execution remain excluded. Earlier B1-B3 statements below describe their historical verification tiers; no gate in this child remains open.
+
+Status: BP-04.04/B2/B3 verified; V1 installed-peer acceptance passed; child closed. Runtime 0.10.0; graph-runtime contracts 0.4.0. Architecture: [Successor admission](../../../../../docs/Architecture/System/Graph_Successor_Admission.md).
 
 This module resolves explicit carried values from a terminal predecessor and records immutable ancestry for a new reviewed run. It owns source-cut readiness, value fingerprints, transfer identity and bounded source/lineage observations. The coordinator owns admission/frontier creation; lifecycle owns worker reconciliation; Artifact owns bytes/protection. No network I/O, scientific interpretation, topology editing or cross-service SQL occurs here.
 

@@ -1,5 +1,7 @@
 # Foundation Verification Tooling
 
+BP-04.04 adds a selectable `solver` profile to `build_tool_images.py` and `verify_graphs.py` for the five seed/select/mutate/score/retain tools. The default image profile remains the two legacy numeric/sequence tools. Image builds verify exact offline closures, public descriptor/golden bytes, non-root execution and absence of every sibling tool. Installed graph verification selects only the profile's tools plus independent owner/SDK environments; actual solver execution and replacement evidence is owned by [solver acceptance](../services/campaign_runtime/tests/baseline/acceptance/README.md). Shared public schema identities are deduplicated across tools without treating a local schema file path as identity.
+
 - Status: implemented BP-01 development tooling; no production authority
 - Architecture: [Foundation Decisions](../docs/Architecture/System/Foundation_Decisions.md)
 

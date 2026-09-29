@@ -1,6 +1,8 @@
 # Durable graph coordinator
 
-- Status: BP-04.02 closed/audited; current changes belong to [BP-04.04/B2](../../../../../docs/Build%20Plans/BP-04/BP-04.04%20V1%20baseline%20and%20successor%20graphs.md). Child trackers own gates and percentages.
+Accepted checkpoint `2026-09-29 17:57:39`: BP-04.04 closed/audited. Five real solver images and independent tool/SDK/owner installs passed initial-population -> successor generations 1/2, concurrent scoring and Runtime replacement; 17 invocations, all 44 reservations confirmed. Source/lineage/receipt/artifact history preserved. Scientific validity and target-host execution remain excluded. Earlier B1-B3 statements below describe their historical verification tiers; no gate in this child remains open.
+
+- Status: BP-04.02 closed/audited; current changes belong to [BP-04.04/B2](../../../../../docs/Build%20Plans/BP-04/Completed/BP-04.04%20V1%20baseline%20and%20successor%20graphs.md). Child trackers own gates and percentages.
 - Owner: Campaign Runtime, package 0.10.0. Architecture: [Graph Execution Model](../../../../../docs/Architecture/System/Graph_Execution_Model.md), [Graph Runner](../../../../../docs/Architecture/System/Graph_Runner.md).
 - Public DTOs: [graph-runtime contracts](../../../../../contracts/graph_runtime/README.md) 0.4.0; executable campaign contracts 0.4.0. Configured wire-v2/v3 execution is active; v4 additionally requires explicit binding peers. Worker contracts are unchanged.
 

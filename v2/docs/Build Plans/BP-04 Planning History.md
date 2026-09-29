@@ -112,3 +112,5 @@ P1/P2 closeout evidence is in their completed children linked above. Remaining c
 `2026-09-29 17:35:32`: .04/B2 verified (18/24 parent deliveries). Exact successor admission and carried-state compatibility, immutable parent history and source-derived split campaign; 1169 tests/nineteen installs. B3 process proof is next. Corrected two MBT historical row totals to their owning milestones: .04A/B2 14/24 and .04A/V1 16/24; no current credit changed by those repairs.
 
 `2026-09-29 17:45:46`: .04/B3 verified (19/24 parent deliveries). 116 scoped tests, five actual process cases and independent source trace after interruption. Production unchanged since B2; V1 actual installed new-tool/peer replacement is next.
+
+`2026-09-29 17:57:39`: .04 closed/audited 4/4 (20/24 parent deliveries). Five actual tool images and installed source/successor/replacement workflow passed; all 44 reservations confirmed. .05 activation audit corrected_ready, B1 active at 0/4. Closed child evidence is not reused as new implementation credit.

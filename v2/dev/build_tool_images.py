@@ -32,13 +32,14 @@ def closure(name, specs):
     return needed
 
 
-def build(base, output):
+def build(base, output, profile="standard"):
     if "@sha256:" not in base:
         raise ValueError("A digest-pinned Python 3.12 base is required")
     output.mkdir(parents=True, exist_ok=False)
     uv = ROOT / ".venv/Scripts/uv.exe"
     specs = {config["project"]["name"]: (path, config, module) for path, config, module in project_specs()}
-    tools = ("amphora-numeric-affine", "amphora-sequence-statistics")
+    tools = {"standard": ("amphora-numeric-affine", "amphora-sequence-statistics"),
+             "solver": tuple("amphora-solver-" + stage for stage in ("seed", "select", "mutate", "score", "retain"))}[profile]
     wheels = output / "built-wheels"
     for name in sorted(set.union(*(closure(tool, specs) for tool in tools))):
         run([uv, "build", "--project", specs[name][0], "--wheel", "--out-dir", wheels])
@@ -94,9 +95,9 @@ def build(base, output):
         result = json.loads(run(["docker", "run", "--rm", "--network", "none", "-i", tag, "compute"],
                                 payload=json.dumps(golden["input"])))
         assert result == golden["output"]
-        sibling = "amphora_sequence_statistics" if module == "amphora_numeric_affine" else "amphora_numeric_affine"
+        siblings = tuple(item[2] for item in specs.values() if item[0].parent.name == "tools" and item[2] != module)
         probe = "import os,importlib.util; assert os.geteuid()==65532; "
-        for absent in (sibling, "sqlalchemy", "amphora_campaign_runtime", "amphora_data_artifacts", "rdkit", "torch"):
+        for absent in (*siblings, "sqlalchemy", "amphora_campaign_runtime", "amphora_data_artifacts", "rdkit", "torch"):
             probe += f"assert importlib.util.find_spec('{absent}') is None; "
         run(["docker", "run", "--rm", "--network", "none", "--entrypoint", "python", tag, "-c", probe])
         entry = {"package": name, "module": module, "tag": tag, "image_manifest_digest": image_digest,
@@ -115,5 +116,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--base", required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--profile", choices=("standard", "solver"), default="standard")
     args = parser.parse_args()
-    build(args.base, args.output)
+    build(args.base, args.output, args.profile)

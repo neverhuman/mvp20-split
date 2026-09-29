@@ -1,6 +1,8 @@
 # Source-derived solver verification
 
-- Owner: BP-04.04; B1 stage/graph, B2 successor admission and B3 process recovery verified; V1 actual installed new-tool peers remains.
+Accepted checkpoint `2026-09-29 17:57:39`: BP-04.04 closed/audited. Five real solver images and independent tool/SDK/owner installs passed initial-population -> successor generations 1/2, concurrent scoring and Runtime replacement; 17 invocations, all 44 reservations confirmed. Source/lineage/receipt/artifact history preserved. Scientific validity and target-host execution remain excluded. Earlier B1-B3 statements below describe their historical verification tiers; no gate in this child remains open.
+
+- Owner: BP-04.04; B1 stage/graph, B2 successor admission and B3 process recovery verified; V1 actual installed new-tool peers passed.
 - Reference: [frozen behavior baseline](../fixtures/v1_solver/README.md); [independent traces](../fixtures/v1_solver/expected_traces.json).
 
 `test_v1_baseline.py` checks normalized source hashes, exact native capability-chain order and the historical validation-only scaffold. `test_stage_oracles.py` composes the five pure stage kernels against manually authored zero/two-generation, mutation-rejection and partial/all-failure traces. Neither executes Rust or proves scientific evolution.
