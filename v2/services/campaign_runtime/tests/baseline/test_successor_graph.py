@@ -10,7 +10,7 @@ from amphora_contracts_campaigns import parse_executable_campaign
 from ..bindings.support import MemoryArtifacts
 from .catalog import STAGES, catalog
 from .definition import campaign
-from .test_graph_execution import execute
+from .execution import execute
 from .test_stage_oracles import ORACLES, PINS
 
 

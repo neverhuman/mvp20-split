@@ -5,3 +5,5 @@ B1 separates stage/kernel, Runtime persistence and standalone installation from 
 - [B1](B1.json): SHA-256 `e9b7d2d0f63516705a4c23b07ec61dc01848d65c58551e30e807de90c71fb645`.
 
 - [B2](B2.json): SHA-256 `243f20c5ac63a1162d5e091864d0e16172be21dae9186bf7718315f718058ff3`; exact successor transfer and split source graph, separate from B3/V1 proof.
+
+- [B3](B3.json): SHA-256 `20eaabd51d0866d6e0b017c9c06e8abbaa0f7ceead8cab08e4272b229e84faf6`; five actual process cases, exact source trace and immutable ancestry, 116 scoped tests.

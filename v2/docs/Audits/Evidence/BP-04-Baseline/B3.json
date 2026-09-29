@@ -1,0 +1,570 @@
+{
+  "delivery": "BP-04.04/B3",
+  "verified_at": "2026-09-29 17:45:46",
+  "baseline_commit": "6d2f92e",
+  "focused_tests": 116,
+  "production_changes": false,
+  "process_cases": [
+    {
+      "source_sha256": "7ccdea0131b3f484ea19362fdb4334fc5e45b569d6d9afd50b2862a53737347a",
+      "verified_at": "2026-09-29 17:43:11",
+      "case": "race-identical",
+      "scope": {
+        "tenant_id": "admission-tests",
+        "project_id": "c3f7d842e687475d8396bb5ccf14f9e9"
+      },
+      "parent": "09f767796486440a8a03adb66bba1032",
+      "ancestry": [
+        {
+          "tenant_id": "admission-tests",
+          "project_id": "c3f7d842e687475d8396bb5ccf14f9e9",
+          "run_id": "1dbf11e81b50417497ee61ac97071e76",
+          "parent_run_id": "09f767796486440a8a03adb66bba1032",
+          "parent_plan_sha256": "9bbae8189c5ab646b93dc63d93a334d6340ec290cf928769470b1adbc2d32358",
+          "parent_revision": 1,
+          "audit_ordinal": 0,
+          "admission_revision": 0,
+          "carried": [
+            {
+              "source": {
+                "kind": "run_output",
+                "port": "value"
+              },
+              "target_port": "value",
+              "expected_value_sha256": "a2435f330c84ee4905b8f5fac861c868136e9eb00226930ff382ca6af9389e4a"
+            }
+          ],
+          "transfer_sha256": "430133402a8194d094f40ab70b11fa37653bb1ecc629ade84fd37c5a9e648f91"
+        }
+      ],
+      "receipts": [
+        {
+          "schema_version": "1",
+          "outcome": {
+            "status": "accepted",
+            "binding": {
+              "identity": {
+                "schema_version": "1",
+                "command_family": "graph.admit_successor",
+                "command_id": "2b4af15087104686ae95cc81adee54dd",
+                "scope": {
+                  "tenant_id": "admission-tests",
+                  "project_id": "c3f7d842e687475d8396bb5ccf14f9e9"
+                },
+                "actor_id": "worker-1"
+              },
+              "request_sha256": "5aff2abc11266aafa25ce2575807586de5029ba306e8bc31ca78be2876077724",
+              "operation_id": "e354173323104a4baf3e3c0e1d1cd7c9"
+            },
+            "committed": {
+              "kind": "run",
+              "object_id": "1dbf11e81b50417497ee61ac97071e76",
+              "revision": 0
+            }
+          }
+        },
+        {
+          "schema_version": "1",
+          "outcome": {
+            "status": "accepted",
+            "binding": {
+              "identity": {
+                "schema_version": "1",
+                "command_family": "graph.admit_successor",
+                "command_id": "2b4af15087104686ae95cc81adee54dd",
+                "scope": {
+                  "tenant_id": "admission-tests",
+                  "project_id": "c3f7d842e687475d8396bb5ccf14f9e9"
+                },
+                "actor_id": "worker-1"
+              },
+              "request_sha256": "5aff2abc11266aafa25ce2575807586de5029ba306e8bc31ca78be2876077724",
+              "operation_id": "e354173323104a4baf3e3c0e1d1cd7c9"
+            },
+            "committed": {
+              "kind": "run",
+              "object_id": "1dbf11e81b50417497ee61ac97071e76",
+              "revision": 0
+            }
+          }
+        }
+      ],
+      "boundary": {
+        "lock_waiters": 2,
+        "backends": [
+          29360,
+          29359
+        ],
+        "logical_children": 1
+      },
+      "tier": "actual independent owner processes and PostgreSQL; scalar fixture, no Artifact peer"
+    },
+    {
+      "source_sha256": "ee7b7ada6c2227d78c2e82aa4006b9e25047ffbd9e0cc8e6a017dd6d1c45a7e0",
+      "verified_at": "2026-09-29 17:43:08",
+      "case": "race-distinct",
+      "scope": {
+        "tenant_id": "admission-tests",
+        "project_id": "6edc818702d540b890d839b5e9f011ff"
+      },
+      "parent": "2a2fbc8e19cd4b7ba00278fd3d4628e4",
+      "ancestry": [
+        {
+          "tenant_id": "admission-tests",
+          "project_id": "6edc818702d540b890d839b5e9f011ff",
+          "run_id": "062688f419ba4a50b0e0d3465c256863",
+          "parent_run_id": "2a2fbc8e19cd4b7ba00278fd3d4628e4",
+          "parent_plan_sha256": "a9a3b7cf8d153127aa206d74f286a2a92c65ae4ef107da9ab9410e065dad25d7",
+          "parent_revision": 1,
+          "audit_ordinal": 0,
+          "admission_revision": 0,
+          "carried": [
+            {
+              "source": {
+                "kind": "run_output",
+                "port": "value"
+              },
+              "target_port": "value",
+              "expected_value_sha256": "a2435f330c84ee4905b8f5fac861c868136e9eb00226930ff382ca6af9389e4a"
+            }
+          ],
+          "transfer_sha256": "b2e1dc4b5ea45436f199ebfd257dec302c0c78c78c904fc5c44d381cdbe134fb"
+        }
+      ],
+      "receipts": [
+        {
+          "schema_version": "1",
+          "outcome": {
+            "status": "rejected",
+            "binding": {
+              "identity": {
+                "schema_version": "1",
+                "command_family": "graph.admit_successor",
+                "command_id": "f35e38c032c74d7c82b76eada3c702c3",
+                "scope": {
+                  "tenant_id": "admission-tests",
+                  "project_id": "6edc818702d540b890d839b5e9f011ff"
+                },
+                "actor_id": "worker-1"
+              },
+              "request_sha256": "71837c4919d3f42405e9e9c9635607253adbf79391274b4990a998ac40c8a785",
+              "operation_id": "07a5a495d605406d800b3a424225f3bc"
+            },
+            "reason_code": "active_run_exists"
+          }
+        },
+        {
+          "schema_version": "1",
+          "outcome": {
+            "status": "accepted",
+            "binding": {
+              "identity": {
+                "schema_version": "1",
+                "command_family": "graph.admit_successor",
+                "command_id": "0694f6f830dd4dd493ad37265d463b64",
+                "scope": {
+                  "tenant_id": "admission-tests",
+                  "project_id": "6edc818702d540b890d839b5e9f011ff"
+                },
+                "actor_id": "worker-1"
+              },
+              "request_sha256": "be61c45db5a56c2e2f73473fa86a8796bfedb718af72f9540ca19cf0fc44a55d",
+              "operation_id": "1fa6b63bb08740abaf245d2ccbfc5400"
+            },
+            "committed": {
+              "kind": "run",
+              "object_id": "062688f419ba4a50b0e0d3465c256863",
+              "revision": 0
+            }
+          }
+        }
+      ],
+      "boundary": {
+        "lock_waiters": 2,
+        "backends": [
+          29356,
+          29355
+        ],
+        "logical_children": 1
+      },
+      "tier": "actual independent owner processes and PostgreSQL; scalar fixture, no Artifact peer"
+    },
+    {
+      "source_sha256": "8d8ec5d868e549dd630eedcfbe348fe9a9a106db8f0994ad5fdbc018ff273d39",
+      "verified_at": "2026-09-29 17:43:17",
+      "case": "death-before_commit",
+      "scope": {
+        "tenant_id": "admission-tests",
+        "project_id": "73efb830fe664a02905bf6b7d3346d12"
+      },
+      "parent": "718345c7b06c40d194f85d689c97af82",
+      "ancestry": [
+        {
+          "tenant_id": "admission-tests",
+          "project_id": "73efb830fe664a02905bf6b7d3346d12",
+          "run_id": "42eae89e220d4f348fc62633c0940b16",
+          "parent_run_id": "718345c7b06c40d194f85d689c97af82",
+          "parent_plan_sha256": "003b1f520bb7fe071370b4eee6d488ef0349071e273016371c6f5a630e3f2f64",
+          "parent_revision": 1,
+          "audit_ordinal": 0,
+          "admission_revision": 0,
+          "carried": [
+            {
+              "source": {
+                "kind": "run_output",
+                "port": "value"
+              },
+              "target_port": "value",
+              "expected_value_sha256": "a2435f330c84ee4905b8f5fac861c868136e9eb00226930ff382ca6af9389e4a"
+            }
+          ],
+          "transfer_sha256": "7861f4d66146571619f9e2cc86e0e4d1ffb3d4b328a61e4fc16538d9014d155a"
+        }
+      ],
+      "receipts": [
+        {
+          "schema_version": "1",
+          "outcome": {
+            "status": "accepted",
+            "binding": {
+              "identity": {
+                "schema_version": "1",
+                "command_family": "graph.admit_successor",
+                "command_id": "4e2e6777b02f4b519cee9b44d525fd27",
+                "scope": {
+                  "tenant_id": "admission-tests",
+                  "project_id": "73efb830fe664a02905bf6b7d3346d12"
+                },
+                "actor_id": "worker-1"
+              },
+              "request_sha256": "816620c6660dfe746420c492d1e20c28bf285f8ee63c54825dd4ad34f348ebe6",
+              "operation_id": "fa40181b5ca0466a9f2c9bfed077fb45"
+            },
+            "committed": {
+              "kind": "run",
+              "object_id": "42eae89e220d4f348fc62633c0940b16",
+              "revision": 0
+            }
+          }
+        }
+      ],
+      "boundary": {
+        "real_process_killed": true,
+        "fresh_process_replacement": true,
+        "original_receipt_preserved": false,
+        "rollback_observed": true
+      },
+      "tier": "actual independent owner processes and PostgreSQL; scalar fixture, no Artifact peer"
+    },
+    {
+      "source_sha256": "db365340e5644df23eff601a2d59c6ebc2ff39749f8f2309d49146ba13179ecc",
+      "verified_at": "2026-09-29 17:43:22",
+      "case": "death-after_commit",
+      "scope": {
+        "tenant_id": "admission-tests",
+        "project_id": "a9dcee81ab2c4389a680ec672b3728d4"
+      },
+      "parent": "324dabc59c05434f8347d517c7946ccb",
+      "ancestry": [
+        {
+          "tenant_id": "admission-tests",
+          "project_id": "a9dcee81ab2c4389a680ec672b3728d4",
+          "run_id": "d8dce60735f44e51939b4c022888909c",
+          "parent_run_id": "324dabc59c05434f8347d517c7946ccb",
+          "parent_plan_sha256": "8b9fa3d01edb0b5acf0504e1ea1047042685e89d3f1ef3c89bb1ca364537a349",
+          "parent_revision": 1,
+          "audit_ordinal": 0,
+          "admission_revision": 0,
+          "carried": [
+            {
+              "source": {
+                "kind": "run_output",
+                "port": "value"
+              },
+              "target_port": "value",
+              "expected_value_sha256": "a2435f330c84ee4905b8f5fac861c868136e9eb00226930ff382ca6af9389e4a"
+            }
+          ],
+          "transfer_sha256": "d6ec9157605de6bdf9dc0cc17e7f7e713d1a331d339f69503b1784830ae58395"
+        }
+      ],
+      "receipts": [
+        {
+          "schema_version": "1",
+          "outcome": {
+            "status": "accepted",
+            "binding": {
+              "identity": {
+                "schema_version": "1",
+                "command_family": "graph.admit_successor",
+                "command_id": "8c43b38a6a364f72882b41a323018cdc",
+                "scope": {
+                  "tenant_id": "admission-tests",
+                  "project_id": "a9dcee81ab2c4389a680ec672b3728d4"
+                },
+                "actor_id": "worker-1"
+              },
+              "request_sha256": "ad2574f8cdbd5e3f12ffffc8ff71ae77096c41653922588d9a01e35b97030bab",
+              "operation_id": "fa20fccd263840eebadc18f7d1ecb06c"
+            },
+            "committed": {
+              "kind": "run",
+              "object_id": "d8dce60735f44e51939b4c022888909c",
+              "revision": 0
+            }
+          }
+        }
+      ],
+      "boundary": {
+        "real_process_killed": true,
+        "fresh_process_replacement": true,
+        "original_receipt_preserved": true,
+        "rollback_observed": false
+      },
+      "tier": "actual independent owner processes and PostgreSQL; scalar fixture, no Artifact peer"
+    },
+    {
+      "source_sha256": "e38d3c9006dff58f40478d3ed701e0210fd006dd0b7c53d53c1f5ecd6bb587e3",
+      "case": "generation-resume",
+      "verified_at": "2026-09-29 17:43:52",
+      "scope": {
+        "tenant_id": "admission-tests",
+        "project_id": "ad0d448c05914bda8dc2cf1ee15b4913"
+      },
+      "run": "36cf92115bc4413d9abe0496ded96d14",
+      "plan_sha256": "398e37b253f9cbbd6cac62f8740c8ff3c5ccbeede6be2520bcb92d3727ff5957",
+      "source_pins": {
+        "cli": "7c52304a5a7336de01d4e02ce5c644727373793e2add1fc42e90ee4011304619",
+        "engine": "c02afb09ae4e33f0d65e433b336da88d8f0058906cd0371d1f32c182b1454ab3",
+        "ranking": "24560480d5751d1696f6684848dbc22fbf77779e43f9dec5faa6696224726323"
+      },
+      "boundary": {
+        "actual_process_killed": true,
+        "fresh_process_replacement": true,
+        "accepted_scores_before_kill": 6,
+        "unchanged_prior_acceptances": true,
+        "artifact_peer": "scripted"
+      },
+      "accepted_before": [
+        "1ddb88c363008203411f635dfb07b72456481379be4409e65a21218f1ac32193",
+        "32adbf799a3bd367ee55cd7026573b052d378003c5ff0f1c1c123fcdcf8e2b33",
+        "39dec032021c53eaa3a161ed3391aea5044926207291a052921c30268211636c",
+        "58b605d42c98e9b3ad9bf78862ca7346a2fdc569a4aace402d9296f6bb20c5c7",
+        "6b2448596145649335441557c56e848a1f13e9014ff6cd4a1911b90dd080fe16",
+        "789a2978f5536b0a8e91d819621dc2acd61897b8e4abf1659d2e7cda8dcdc577",
+        "b91994190bd0fff6bf84ea122010db935cef48316f9105247aede42642a6c2c8",
+        "f1b9bce83209bd9efbfcdb614b7b2c21eb0ef03fe2f3f8d734671fe2d34991dd",
+        "f5145dc4dc54fe4a003a3e5675143ab7ac0d1b7eceef9dcadb07601850472a6e",
+        "f5b5fac5ce724e0de0ea8caaf1d06bef7dfa96577b5de0f17bbabbbfba9743e3"
+      ],
+      "accepted_after": [
+        "11b6eee957b88cd4a47fe81f799efedb5990f5c944a0c64fee6199fcb1efb85a",
+        "176ad7f1fbf67f7f3c6988907fed8f6b7d7b1b465a3be371d35eeac2847a7e9c",
+        "1cc0640e1d8282d59a994045a2b450cd7ef7b4ffced0580b6882479886ad8332",
+        "1ddb88c363008203411f635dfb07b72456481379be4409e65a21218f1ac32193",
+        "32adbf799a3bd367ee55cd7026573b052d378003c5ff0f1c1c123fcdcf8e2b33",
+        "39dec032021c53eaa3a161ed3391aea5044926207291a052921c30268211636c",
+        "4605109b7f7cc30944942a948fae39cec3c839f2b75655886dbe06a815d8e1fe",
+        "58b605d42c98e9b3ad9bf78862ca7346a2fdc569a4aace402d9296f6bb20c5c7",
+        "6b2448596145649335441557c56e848a1f13e9014ff6cd4a1911b90dd080fe16",
+        "789a2978f5536b0a8e91d819621dc2acd61897b8e4abf1659d2e7cda8dcdc577",
+        "a8455a2e030fec85db2d2035b32ab89942864ee2dd817c6fe0d8fcdaf2fa4bc2",
+        "b91994190bd0fff6bf84ea122010db935cef48316f9105247aede42642a6c2c8",
+        "c0cfb01541fc7f1824a4c39b89b83c325ea1ae2a21f34c6bcebbddafdd9402d7",
+        "cd1df685b96285a3a66de8851f8220303785a5fc264b87d3a0e70f7da9cc5f86",
+        "f1b9bce83209bd9efbfcdb614b7b2c21eb0ef03fe2f3f8d734671fe2d34991dd",
+        "f5145dc4dc54fe4a003a3e5675143ab7ac0d1b7eceef9dcadb07601850472a6e",
+        "f5b5fac5ce724e0de0ea8caaf1d06bef7dfa96577b5de0f17bbabbbfba9743e3"
+      ],
+      "preserved_attempts": {
+        "1ddb88c363008203411f635dfb07b72456481379be4409e65a21218f1ac32193": "7842e8c5a2b7426e937c3fc0f344a950",
+        "32adbf799a3bd367ee55cd7026573b052d378003c5ff0f1c1c123fcdcf8e2b33": "2197b48a44ff4dcfa1a3d8b3304c5a16",
+        "39dec032021c53eaa3a161ed3391aea5044926207291a052921c30268211636c": "2849c19163534db483a67b29ce16c147",
+        "58b605d42c98e9b3ad9bf78862ca7346a2fdc569a4aace402d9296f6bb20c5c7": "101747c3c5364fc68e12ef4ab7b0d9f3",
+        "6b2448596145649335441557c56e848a1f13e9014ff6cd4a1911b90dd080fe16": "8c039350cb844a7c99629976bc00afaa",
+        "789a2978f5536b0a8e91d819621dc2acd61897b8e4abf1659d2e7cda8dcdc577": "12b5efbdc29549e6814c2ee6b3fb80fc",
+        "b91994190bd0fff6bf84ea122010db935cef48316f9105247aede42642a6c2c8": "4f7db6892f6843b2a8fb2e33e115e7f2",
+        "f1b9bce83209bd9efbfcdb614b7b2c21eb0ef03fe2f3f8d734671fe2d34991dd": "d5207f3cc9014ef485202165792cedb6",
+        "f5145dc4dc54fe4a003a3e5675143ab7ac0d1b7eceef9dcadb07601850472a6e": "fe30090d5226484ab9e3665b22646795",
+        "f5b5fac5ce724e0de0ea8caaf1d06bef7dfa96577b5de0f17bbabbbfba9743e3": "2d40e20f3d12432fbf9b3f4179d3018e"
+      },
+      "checkpoints": [
+        {
+          "generation": 0,
+          "current_ids": [
+            "c0",
+            "c1",
+            "c2"
+          ],
+          "cumulative_ids": [
+            "c0",
+            "c1",
+            "c2"
+          ],
+          "failed_ids": [],
+          "rejection_seeds": []
+        },
+        {
+          "generation": 1,
+          "current_ids": [
+            "g1p0",
+            "g1p1",
+            "g1p2"
+          ],
+          "cumulative_ids": [
+            "c0",
+            "c1",
+            "c2",
+            "g1p0",
+            "g1p1",
+            "g1p2"
+          ],
+          "failed_ids": [],
+          "rejection_seeds": []
+        },
+        {
+          "generation": 2,
+          "current_ids": [
+            "g2p0",
+            "g2p1",
+            "g2p2"
+          ],
+          "cumulative_ids": [
+            "c0",
+            "c1",
+            "c2",
+            "g1p0",
+            "g1p1",
+            "g1p2",
+            "g2p0",
+            "g2p1",
+            "g2p2"
+          ],
+          "failed_ids": [],
+          "rejection_seeds": []
+        }
+      ],
+      "scoring_order": [
+        {
+          "candidate_id": "c2",
+          "generation": 0,
+          "parent_ids": [
+            "c0"
+          ],
+          "proposal_index": 2,
+          "proposal_seed": 19,
+          "scoring_seed": 19,
+          "structure": "unchanged-reference-structure"
+        },
+        {
+          "candidate_id": "c1",
+          "generation": 0,
+          "parent_ids": [
+            "c0"
+          ],
+          "proposal_index": 1,
+          "proposal_seed": 18,
+          "scoring_seed": 18,
+          "structure": "unchanged-reference-structure"
+        },
+        {
+          "candidate_id": "c0",
+          "generation": 0,
+          "parent_ids": [],
+          "proposal_index": 0,
+          "proposal_seed": 17,
+          "scoring_seed": 17,
+          "structure": "unchanged-reference-structure"
+        },
+        {
+          "candidate_id": "g1p2",
+          "generation": 1,
+          "parent_ids": [
+            "c2"
+          ],
+          "proposal_index": 2,
+          "proposal_seed": 10019,
+          "scoring_seed": 10019,
+          "structure": "unchanged-reference-structure"
+        },
+        {
+          "candidate_id": "g1p1",
+          "generation": 1,
+          "parent_ids": [
+            "c1"
+          ],
+          "proposal_index": 1,
+          "proposal_seed": 10018,
+          "scoring_seed": 10018,
+          "structure": "unchanged-reference-structure"
+        },
+        {
+          "candidate_id": "g1p0",
+          "generation": 1,
+          "parent_ids": [
+            "c0"
+          ],
+          "proposal_index": 0,
+          "proposal_seed": 10017,
+          "scoring_seed": 10017,
+          "structure": "unchanged-reference-structure"
+        },
+        {
+          "candidate_id": "g2p2",
+          "generation": 2,
+          "parent_ids": [
+            "g1p2"
+          ],
+          "proposal_index": 2,
+          "proposal_seed": 20019,
+          "scoring_seed": 20019,
+          "structure": "unchanged-reference-structure"
+        },
+        {
+          "candidate_id": "g2p1",
+          "generation": 2,
+          "parent_ids": [
+            "g1p1"
+          ],
+          "proposal_index": 1,
+          "proposal_seed": 20018,
+          "scoring_seed": 20018,
+          "structure": "unchanged-reference-structure"
+        },
+        {
+          "candidate_id": "g2p0",
+          "generation": 2,
+          "parent_ids": [
+            "g1p0"
+          ],
+          "proposal_index": 0,
+          "proposal_seed": 20017,
+          "scoring_seed": 20017,
+          "structure": "unchanged-reference-structure"
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "successors": {
+      "statements": "104/104",
+      "branches": "6/6"
+    },
+    "retain_kernel": {
+      "statements": "49/49",
+      "branches": "26/26"
+    },
+    "limits": "Parent-process coverage. Retain adapter/CLI execution is separate subprocess evidence, not instrumented coverage."
+  },
+  "negative_cases": [
+    "changed source hash in every tool",
+    "malformed persisted source",
+    "invalid generation/checkpoint cuts",
+    "duplicate/colliding candidate IDs",
+    "current not in cumulative",
+    "missing/reversed result association",
+    "module order"
+  ],
+  "foundation_evidence": "B2 full gate 1169 tests, nineteen installs; no production change since that gate.",
+  "remaining": "V1 actual independently installed solver tools, real Artifact/Runtime peers and retained history across replacement; scientific validity excluded."
+}

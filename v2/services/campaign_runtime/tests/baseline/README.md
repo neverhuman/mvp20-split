@@ -1,6 +1,6 @@
 # Source-derived solver verification
 
-- Owner: BP-04.04; B1 stage/graph and independent installation verified, successor admission B2 and process/installed acceptance B3/V1 remain.
+- Owner: BP-04.04; B1 stage/graph, B2 successor admission and B3 process recovery verified; V1 actual installed new-tool peers remains.
 - Reference: [frozen behavior baseline](../fixtures/v1_solver/README.md); [independent traces](../fixtures/v1_solver/expected_traces.json).
 
 `test_v1_baseline.py` checks normalized source hashes, exact native capability-chain order and the historical validation-only scaffold. `test_stage_oracles.py` composes the five pure stage kernels against manually authored zero/two-generation, mutation-rejection and partial/all-failure traces. Neither executes Rust or proves scientific evolution.
@@ -12,3 +12,5 @@
 Tests remain selectable through `dev/run_tests.py --module runtime --area baseline`. Each stage's schema/CLI/domain tests live under its own tool module. Actual installed tools/Artifact and process-death/successor history proof remain their named acceptance gates. Frozen v1 is read-only; molecule mutation, feasible scientific ranking and optimizer authorization remain unimplemented scientific scope.
 
 `test_successor_graph.py` splits the independently specified two-generation case into a completed initial-population run and a separately compiled continuation. The successor carries the exact retained-state Artifact and executes generations 1/2 without reseeding. Current/cumulative membership, scoring seeds and parent identity match the original oracle; original plan/run receipts and parent observation remain unchanged.
+
+B3 verified `2026-09-29 17:45:46`: 116 scoped cases, including four real successor admission contention/kill cases and a killed source controller replaced after six accepted scores. Prior accepted records remain byte-for-byte identical and independent generation/seed/membership traces match. Invalid retained checkpoint/source hash/result association and malformed stored graph values reject. Successor module 104/104 statements and 6/6 branches; retain kernel 49/49 and 26/26, parent-process coverage only. No production fixes. Actual installed new-tool/Artifact/Runtime and replacement acceptance remains V1.

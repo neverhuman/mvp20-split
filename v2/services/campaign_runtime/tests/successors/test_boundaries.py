@@ -2,11 +2,13 @@
 
 import copy
 
+import pytest
 from amphora_campaign_runtime.api import create_app
 from amphora_campaign_runtime.coordinator import GraphAdmission, PlanCatalog, ReviewedPlan
 from amphora_campaign_runtime.coordinator.advance import GraphAdvancer
 from amphora_campaign_runtime.lifecycle.access import RuntimeCredentials
 from amphora_campaign_runtime.lifecycle.authority import AuthorityCommands
+from amphora_campaign_runtime.lifecycle.model import TransitionError
 from amphora_campaign_runtime.successors.reads import SuccessorReads
 from fastapi.testclient import TestClient
 from sqlalchemy import text
@@ -14,6 +16,20 @@ from sqlalchemy import text
 from ..compiler.conftest import definition
 from ..scheduling.test_advancement import advance, claim, complete
 from .test_admission import proposal, setup
+
+
+def test_malformed_persisted_source_fails_closed(graph_env):
+    graph = graph_env
+    service, payload, run, _, _ = setup(graph)
+    data = proposal(graph, payload, run)
+    # Deliberate invalid owner-state injection; this is not an allowed graph transition.
+    with graph.env.engine.begin() as conn:
+        conn.execute(text("UPDATE runtime.graph_runs SET outputs=CAST(:outputs AS jsonb) WHERE run_id=:run"),
+            {"run": run, "outputs": '[{"port":"value","value":{"kind":"integer","value":"untyped"}}]'})
+    with pytest.raises(TransitionError, match="carry_source_invalid"):
+        SuccessorReads(graph.env.engine).sources(graph.env.principal, run)
+    reply = service.admit_successor(graph.env.principal, graph.command("graph.admit_successor", data))
+    assert reply.outcome.reason_code == "carry_source_invalid"
 
 
 def test_destination_type_rejects_valid_source_without_changing_parent(graph_env):
