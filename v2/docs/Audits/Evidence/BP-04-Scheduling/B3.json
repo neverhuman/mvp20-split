@@ -1,0 +1,813 @@
+{
+  "cases": [
+    {
+      "boundary": {
+        "actual_coordinator_processes": 3,
+        "expected_nodes": 8,
+        "membership_sha256": "30a436c38ed6499a3520062ad42a9d4281ccdd500a15aa036afb6223a3de8917",
+        "scripted_reservation_peer": true,
+        "slow_branch_still_leased": false
+      },
+      "case": "budget-exhausted",
+      "frontier": [
+        {
+          "activation_id": "21ce85e13cd396a4b73034b0f2f9ce6c856b3a999609e40b8e4b176e1931cd31",
+          "node_id": "finish",
+          "path": {
+            "node_id": "finish",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": "graph_dependency_unavailable",
+          "status": "blocked"
+        },
+        {
+          "activation_id": "446927258e11aedd09b4626cf0e27ff8e790eb939372cdd2e65b34168f20c632",
+          "node_id": "batch",
+          "path": {
+            "node_id": "batch",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": "graph_required_member_unavailable",
+          "status": "blocked"
+        },
+        {
+          "activation_id": "54a3092c00f7ac1250f241a417cb7d71daf451f588b63e3e78ccc7eaead76980",
+          "node_id": "finish",
+          "path": {
+            "node_id": "finish",
+            "occurrences": [
+              {
+                "index": 1,
+                "kind": "scatter",
+                "membership_sha256": "30a436c38ed6499a3520062ad42a9d4281ccdd500a15aa036afb6223a3de8917",
+                "node_id": "batch"
+              }
+            ],
+            "schema_version": "2"
+          },
+          "reason_code": "graph_dependency_unavailable",
+          "status": "blocked"
+        },
+        {
+          "activation_id": "89638be9a7e81741368cd7002713ec7b803747fbba4266ae8249f5aa31348916",
+          "node_id": "map",
+          "path": {
+            "node_id": "map",
+            "occurrences": [
+              {
+                "index": 0,
+                "kind": "scatter",
+                "membership_sha256": "30a436c38ed6499a3520062ad42a9d4281ccdd500a15aa036afb6223a3de8917",
+                "node_id": "batch"
+              }
+            ],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "succeeded"
+        },
+        {
+          "activation_id": "a1a2d858e8f8e34552dfb3f05230f79d84f78eacb83b278f3a0e34416dd867a2",
+          "node_id": "map",
+          "path": {
+            "node_id": "map",
+            "occurrences": [
+              {
+                "index": 2,
+                "kind": "scatter",
+                "membership_sha256": "30a436c38ed6499a3520062ad42a9d4281ccdd500a15aa036afb6223a3de8917",
+                "node_id": "batch"
+              }
+            ],
+            "schema_version": "2"
+          },
+          "reason_code": "tool_failed",
+          "status": "failed"
+        },
+        {
+          "activation_id": "e29d5981ef14aa45d1aa6a5eb01006813e226dda039b6db2dfb5520504aa649f",
+          "node_id": "map",
+          "path": {
+            "node_id": "map",
+            "occurrences": [
+              {
+                "index": 1,
+                "kind": "scatter",
+                "membership_sha256": "30a436c38ed6499a3520062ad42a9d4281ccdd500a15aa036afb6223a3de8917",
+                "node_id": "batch"
+              }
+            ],
+            "schema_version": "2"
+          },
+          "reason_code": "tool_failed",
+          "status": "failed"
+        },
+        {
+          "activation_id": "fa53382cf0bfb6fb2acd1c6c50fff9a35e0724ba8710b800ea345a16459a2655",
+          "node_id": "finish",
+          "path": {
+            "node_id": "finish",
+            "occurrences": [
+              {
+                "index": 2,
+                "kind": "scatter",
+                "membership_sha256": "30a436c38ed6499a3520062ad42a9d4281ccdd500a15aa036afb6223a3de8917",
+                "node_id": "batch"
+              }
+            ],
+            "schema_version": "2"
+          },
+          "reason_code": "graph_dependency_unavailable",
+          "status": "blocked"
+        },
+        {
+          "activation_id": "fcb10d4855884c3dbdafb41d4fcf9a13d026afac4e8f7934eb8704cf82c70cc6",
+          "node_id": "finish",
+          "path": {
+            "node_id": "finish",
+            "occurrences": [
+              {
+                "index": 0,
+                "kind": "scatter",
+                "membership_sha256": "30a436c38ed6499a3520062ad42a9d4281ccdd500a15aa036afb6223a3de8917",
+                "node_id": "batch"
+              }
+            ],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "succeeded"
+        }
+      ],
+      "run": {
+        "budget_limit": 1,
+        "plan_sha256": "42670d755228dd814f6fb6dc873b8375193dd9f4d748bc7e344007dbccfcba26",
+        "reserved": 0,
+        "spent": 1,
+        "status": "blocked"
+      },
+      "run_id": "e68d149d3ac54c11b6139a3596154c00",
+      "scope": {
+        "project_id": "0474746c94cd486dabf48cf3bacdb8e9",
+        "tenant_id": "admission-tests"
+      },
+      "verified_at": "2026-09-28 19:30:20",
+      "workers": [
+        {
+          "activation_id": "89638be9a7e81741368cd7002713ec7b803747fbba4266ae8249f5aa31348916",
+          "attempt_count": 1,
+          "current_fence": 1,
+          "status": "succeeded"
+        },
+        {
+          "activation_id": "a1a2d858e8f8e34552dfb3f05230f79d84f78eacb83b278f3a0e34416dd867a2",
+          "attempt_count": 0,
+          "current_fence": 0,
+          "status": "failed"
+        },
+        {
+          "activation_id": "e29d5981ef14aa45d1aa6a5eb01006813e226dda039b6db2dfb5520504aa649f",
+          "attempt_count": 0,
+          "current_fence": 0,
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "boundary": {
+        "actual_coordinator_process": true,
+        "expected_invocations": 0,
+        "expected_nodes": 2
+      },
+      "case": "empty-scatter",
+      "frontier": [
+        {
+          "activation_id": "d524fe1c38b546979bc91cd55370674c8035638f35265c15de64e45de38e7a94",
+          "node_id": "finish",
+          "path": {
+            "node_id": "finish",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "succeeded"
+        },
+        {
+          "activation_id": "d6464aae0e64dc21fd1c61fe3953d54f7606e7a812835d5f0432a92178429ade",
+          "node_id": "batch",
+          "path": {
+            "node_id": "batch",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "succeeded"
+        }
+      ],
+      "run": {
+        "budget_limit": 8,
+        "plan_sha256": "f7770ea7406cd1fe38da2c3dc4dd2317148ec600108ebe7b22433baa99ba75fe",
+        "reserved": 0,
+        "spent": 0,
+        "status": "completed"
+      },
+      "run_id": "802e384f2446444eaa878194dfde6cad",
+      "scope": {
+        "project_id": "f9ac2b69a0a648088b7f797c1ecb5958",
+        "tenant_id": "admission-tests"
+      },
+      "verified_at": "2026-09-28 19:30:03",
+      "workers": []
+    },
+    {
+      "boundary": {
+        "actual_coordinator_processes": 2,
+        "expected_nodes": 8,
+        "membership_sha256": "0ab60df0fff0f6349ceb931e556d5c750c4d8751eda9a10255af679ed8d52c83",
+        "scripted_reservation_peer": true,
+        "slow_branch_still_leased": true
+      },
+      "case": "independent-progress",
+      "frontier": [
+        {
+          "activation_id": "1b21b42daa9e976c3d6bc8347241033c2722e9bba9c0c4707f201bc14448952f",
+          "node_id": "finish",
+          "path": {
+            "node_id": "finish",
+            "occurrences": [
+              {
+                "index": 2,
+                "kind": "scatter",
+                "membership_sha256": "0ab60df0fff0f6349ceb931e556d5c750c4d8751eda9a10255af679ed8d52c83",
+                "node_id": "batch"
+              }
+            ],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "waiting"
+        },
+        {
+          "activation_id": "24b8c74067ce68f5d347ec8fab40bb4c0b3a095a64bab3cd9aaa1f03bcc71372",
+          "node_id": "map",
+          "path": {
+            "node_id": "map",
+            "occurrences": [
+              {
+                "index": 1,
+                "kind": "scatter",
+                "membership_sha256": "0ab60df0fff0f6349ceb931e556d5c750c4d8751eda9a10255af679ed8d52c83",
+                "node_id": "batch"
+              }
+            ],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "succeeded"
+        },
+        {
+          "activation_id": "4c88a649f7adfe5150346b6b154c2ad68fe3a904ff36fb1f2690e4283085fc87",
+          "node_id": "finish",
+          "path": {
+            "node_id": "finish",
+            "occurrences": [
+              {
+                "index": 1,
+                "kind": "scatter",
+                "membership_sha256": "0ab60df0fff0f6349ceb931e556d5c750c4d8751eda9a10255af679ed8d52c83",
+                "node_id": "batch"
+              }
+            ],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "succeeded"
+        },
+        {
+          "activation_id": "673fd7fac48af7596b6170d79748ce4dc7e53e35ac833955438355ee27f94b62",
+          "node_id": "map",
+          "path": {
+            "node_id": "map",
+            "occurrences": [
+              {
+                "index": 2,
+                "kind": "scatter",
+                "membership_sha256": "0ab60df0fff0f6349ceb931e556d5c750c4d8751eda9a10255af679ed8d52c83",
+                "node_id": "batch"
+              }
+            ],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "issued"
+        },
+        {
+          "activation_id": "6f9eed1133a39349998224c06f1b19b53ee4c017a481f357d197fa5471825143",
+          "node_id": "batch",
+          "path": {
+            "node_id": "batch",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "issued"
+        },
+        {
+          "activation_id": "781389e3a60d127762a8bad74f77dd8684c93afab14ac91b64c4d3d35eef708f",
+          "node_id": "finish",
+          "path": {
+            "node_id": "finish",
+            "occurrences": [
+              {
+                "index": 0,
+                "kind": "scatter",
+                "membership_sha256": "0ab60df0fff0f6349ceb931e556d5c750c4d8751eda9a10255af679ed8d52c83",
+                "node_id": "batch"
+              }
+            ],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "waiting"
+        },
+        {
+          "activation_id": "8a0c7f99f571e255d9b4bfa00c3d36a2c7294b90bbb7b064e810b68763041bd4",
+          "node_id": "finish",
+          "path": {
+            "node_id": "finish",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "waiting"
+        },
+        {
+          "activation_id": "d45e4a461e715dda0343725d81f3654fe7adc35768e173a4c5c5e43ac14a3672",
+          "node_id": "map",
+          "path": {
+            "node_id": "map",
+            "occurrences": [
+              {
+                "index": 0,
+                "kind": "scatter",
+                "membership_sha256": "0ab60df0fff0f6349ceb931e556d5c750c4d8751eda9a10255af679ed8d52c83",
+                "node_id": "batch"
+              }
+            ],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "issued"
+        }
+      ],
+      "run": {
+        "budget_limit": 8,
+        "plan_sha256": "9dfd33850d1592db57d0e07f5c7c6020b6834fa501c1b8bf70dc5a4928ccdc85",
+        "reserved": 2,
+        "spent": 1,
+        "status": "running"
+      },
+      "run_id": "4c31cac5b10d44c4a4f95c4aebc5cb74",
+      "scope": {
+        "project_id": "5c2a68366f824648ba35f1f2ac3d3678",
+        "tenant_id": "admission-tests"
+      },
+      "verified_at": "2026-09-28 19:30:27",
+      "workers": [
+        {
+          "activation_id": "24b8c74067ce68f5d347ec8fab40bb4c0b3a095a64bab3cd9aaa1f03bcc71372",
+          "attempt_count": 1,
+          "current_fence": 1,
+          "status": "succeeded"
+        },
+        {
+          "activation_id": "673fd7fac48af7596b6170d79748ce4dc7e53e35ac833955438355ee27f94b62",
+          "attempt_count": 1,
+          "current_fence": 1,
+          "status": "leased"
+        },
+        {
+          "activation_id": "d45e4a461e715dda0343725d81f3654fe7adc35768e173a4c5c5e43ac14a3672",
+          "attempt_count": 1,
+          "current_fence": 1,
+          "status": "leased"
+        }
+      ]
+    },
+    {
+      "boundary": {
+        "notification_dispatched": false,
+        "original_receipt_recovered": true,
+        "original_reply_received": false,
+        "replacement_dispatch_completed": true
+      },
+      "case": "kill-after-commit",
+      "frontier": [
+        {
+          "activation_id": "1f3d87fb9b1946f2729949b6a63c1f4dc9d32b5fde336f0ce9d8a56272db998b",
+          "node_id": "collect",
+          "path": {
+            "node_id": "collect",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "succeeded"
+        },
+        {
+          "activation_id": "23aab21e6ae81bf3939aa90efcc0cea9a97af8271ed24a67fca32650c92ed365",
+          "node_id": "finish",
+          "path": {
+            "node_id": "finish",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "succeeded"
+        },
+        {
+          "activation_id": "35cd1eeb3bc8aff60df7bc9555d3e1d1c8a4860c441dfebc57107ffac8e83a6b",
+          "node_id": "left",
+          "path": {
+            "node_id": "left",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "skipped"
+        },
+        {
+          "activation_id": "d7008ed9ac908b12d5850870c5e273698f4205833383d08ad91f411813039546",
+          "node_id": "right",
+          "path": {
+            "node_id": "right",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "succeeded"
+        },
+        {
+          "activation_id": "fc08cac6ceceab130a72a971b6f3f5877314662f9f324e2b6b16397f92153a8f",
+          "node_id": "choose",
+          "path": {
+            "node_id": "choose",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "succeeded"
+        }
+      ],
+      "run": {
+        "budget_limit": 8,
+        "plan_sha256": "2b972ae01b65a693664f18964e7b5f4ed780b7b7cfb9ed249e83213dc4d2129c",
+        "reserved": 0,
+        "spent": 1,
+        "status": "completed"
+      },
+      "run_id": "e90a854acff34446882797ee26b88df1",
+      "scope": {
+        "project_id": "849d115a97ea4156bc139691a55ebcaa",
+        "tenant_id": "admission-tests"
+      },
+      "verified_at": "2026-09-28 19:30:00",
+      "workers": [
+        {
+          "activation_id": "d7008ed9ac908b12d5850870c5e273698f4205833383d08ad91f411813039546",
+          "attempt_count": 1,
+          "current_fence": 1,
+          "status": "succeeded"
+        }
+      ]
+    },
+    {
+      "boundary": {
+        "actual_coordinator_process": true,
+        "committed_body_value": 1,
+        "feedback_verified": true,
+        "initial_value": 0,
+        "iterations": 2
+      },
+      "case": "loop-limit",
+      "frontier": [
+        {
+          "activation_id": "619afdd2f8acac40dc5b27d7ed746ce94b32e471046ec7ea51aa889dcbc482fc",
+          "node_id": "loop",
+          "path": {
+            "node_id": "loop",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "succeeded"
+        },
+        {
+          "activation_id": "6b47373dc323364d4b8a5bf555b04dce74e230fadd9dc5286ab59d92f6481de4",
+          "node_id": "finish",
+          "path": {
+            "node_id": "finish",
+            "occurrences": [
+              {
+                "index": 1,
+                "kind": "loop",
+                "node_id": "loop"
+              }
+            ],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "succeeded"
+        },
+        {
+          "activation_id": "73f25a1bace923d2baafbb7c4b5cfba843876cd4ba601efcc0069d624cee4ec5",
+          "node_id": "finish",
+          "path": {
+            "node_id": "finish",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "succeeded"
+        },
+        {
+          "activation_id": "76d801b28d1aae2a3bd527d3a799300716dc9144b1132b03ea5322657a1b6a8d",
+          "node_id": "finish",
+          "path": {
+            "node_id": "finish",
+            "occurrences": [
+              {
+                "index": 0,
+                "kind": "loop",
+                "node_id": "loop"
+              }
+            ],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "succeeded"
+        }
+      ],
+      "run": {
+        "budget_limit": 8,
+        "plan_sha256": "95b4afed05337caab4a25daa5202e53db084054d68d0dea1862a783a8210f492",
+        "reserved": 0,
+        "spent": 0,
+        "status": "completed"
+      },
+      "run_id": "fdfa58d898a94d8d984ea8b881314b8c",
+      "scope": {
+        "project_id": "1657391206944d11b8aa70edf81819ee",
+        "tenant_id": "admission-tests"
+      },
+      "verified_at": "2026-09-28 19:30:10",
+      "workers": []
+    },
+    {
+      "boundary": {
+        "actual_coordinator_process": true,
+        "committed_body_value": 1,
+        "feedback_verified": false,
+        "initial_value": 0,
+        "iterations": 1
+      },
+      "case": "loop-predicate",
+      "frontier": [
+        {
+          "activation_id": "09626acb32bd7164c468ce425cc1f0315becd6efd636cb1a2266403940eedb72",
+          "node_id": "finish",
+          "path": {
+            "node_id": "finish",
+            "occurrences": [
+              {
+                "index": 0,
+                "kind": "loop",
+                "node_id": "loop"
+              }
+            ],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "succeeded"
+        },
+        {
+          "activation_id": "10d4c5566eaac3f4a34899e7bc37b0f6b6dcf4ff99c63d05a6a8dc1020154ed4",
+          "node_id": "finish",
+          "path": {
+            "node_id": "finish",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "succeeded"
+        },
+        {
+          "activation_id": "69c265ad5c1f1f00537321b9a43bd21f4c52d4154d695288d0c3cd7d9c831b69",
+          "node_id": "loop",
+          "path": {
+            "node_id": "loop",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "succeeded"
+        }
+      ],
+      "run": {
+        "budget_limit": 8,
+        "plan_sha256": "8297fef9e4d018bce4d5a994c8f4131b107bc26f7f6e215ef7a0dee7868f9183",
+        "reserved": 0,
+        "spent": 0,
+        "status": "completed"
+      },
+      "run_id": "88f3c988aad44136a2ef256b71351fa2",
+      "scope": {
+        "project_id": "2a3c8db333ef4548b01f766e3d5608b0",
+        "tenant_id": "admission-tests"
+      },
+      "verified_at": "2026-09-28 19:30:07",
+      "workers": []
+    },
+    {
+      "boundary": {
+        "coordinator_backends": [
+          14293,
+          14294
+        ],
+        "duplicate_invocations": 0,
+        "observed_lock_waiters": 2
+      },
+      "case": "race-distinct-commands",
+      "frontier": [
+        {
+          "activation_id": "08a471495e18b303a4bd4d87c0df9e7b398ddd1a845a89d8a2ed0f8b58b515c7",
+          "node_id": "finish",
+          "path": {
+            "node_id": "finish",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "waiting"
+        },
+        {
+          "activation_id": "51c4a86388da851318fc6a83157c22b80cf8cddc74f8b77a89191c9b6a09405e",
+          "node_id": "right",
+          "path": {
+            "node_id": "right",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "skipped"
+        },
+        {
+          "activation_id": "8481e4e855f9b05f0a8c34fbf8589774ea3c6020f56b72f04aa83cdfa3f626a3",
+          "node_id": "left",
+          "path": {
+            "node_id": "left",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "issued"
+        },
+        {
+          "activation_id": "b30a2f1d638a30693596ba207ec811704851d8960f75ed8886f778a8b29bf217",
+          "node_id": "collect",
+          "path": {
+            "node_id": "collect",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "waiting"
+        },
+        {
+          "activation_id": "bca3671fb1ddf819fb15a762d44f07722fbf4a6b2ad61221a78307febe00ec2a",
+          "node_id": "choose",
+          "path": {
+            "node_id": "choose",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "succeeded"
+        }
+      ],
+      "run": {
+        "budget_limit": 8,
+        "plan_sha256": "9c6c2cfaeb4686cf185e649f1e03285373cc66aa6fbe53a7a852fb923d3056b6",
+        "reserved": 0,
+        "spent": 0,
+        "status": "running"
+      },
+      "run_id": "a8eb77defbd24c668b0f153d066f85f0",
+      "scope": {
+        "project_id": "27bf998263ff4d80955ba072fe1b9c32",
+        "tenant_id": "admission-tests"
+      },
+      "verified_at": "2026-09-28 19:29:49",
+      "workers": [
+        {
+          "activation_id": "8481e4e855f9b05f0a8c34fbf8589774ea3c6020f56b72f04aa83cdfa3f626a3",
+          "attempt_count": 0,
+          "current_fence": 0,
+          "status": "queued"
+        }
+      ]
+    },
+    {
+      "boundary": {
+        "coordinator_backends": [
+          14298,
+          14299
+        ],
+        "duplicate_invocations": 0,
+        "observed_lock_waiters": 2
+      },
+      "case": "race-same-command",
+      "frontier": [
+        {
+          "activation_id": "12daad2579a9f1286ab38be1d72747fe27bbd34a94ba04b47597f91ea061c441",
+          "node_id": "finish",
+          "path": {
+            "node_id": "finish",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "waiting"
+        },
+        {
+          "activation_id": "5f105d8949df0c71ffb74455ddb45745071516fb93945fe062140d3a3dbcf89e",
+          "node_id": "left",
+          "path": {
+            "node_id": "left",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "issued"
+        },
+        {
+          "activation_id": "7625fe3a01008aa2d1e0e16d22b2d3ffa89034adb7ccf1dae58e19c84a8326c3",
+          "node_id": "right",
+          "path": {
+            "node_id": "right",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "skipped"
+        },
+        {
+          "activation_id": "8de70b641e22113756aa40b1d4d41b259e823781ad83efc8b23519333ba42d6f",
+          "node_id": "collect",
+          "path": {
+            "node_id": "collect",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "waiting"
+        },
+        {
+          "activation_id": "e07b5961c4b321d5a5550952a1f38df090a50f056b1584e65839c4a9df1ed87d",
+          "node_id": "choose",
+          "path": {
+            "node_id": "choose",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "succeeded"
+        }
+      ],
+      "run": {
+        "budget_limit": 8,
+        "plan_sha256": "342f6a1244e2d4bb0d367150330b345e422a9d2ddcdc3468cfab4c0f17b35d3c",
+        "reserved": 0,
+        "spent": 0,
+        "status": "running"
+      },
+      "run_id": "d9cdfd803f964624843ad4706cb18513",
+      "scope": {
+        "project_id": "c001398e6fd241efb437ba400e7df656",
+        "tenant_id": "admission-tests"
+      },
+      "verified_at": "2026-09-28 19:29:53",
+      "workers": [
+        {
+          "activation_id": "5f105d8949df0c71ffb74455ddb45745071516fb93945fe062140d3a3dbcf89e",
+          "attempt_count": 0,
+          "current_fence": 0,
+          "status": "queued"
+        }
+      ]
+    }
+  ],
+  "runtime_commit": "dd325fe"
+}

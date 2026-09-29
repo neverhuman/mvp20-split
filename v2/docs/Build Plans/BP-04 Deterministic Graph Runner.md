@@ -2,14 +2,14 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-04.02 / Build / B3.
-- Last refreshed: `2026-09-28 19:21:42` (America/Chicago).
+- Status: primary_active; BP-04.02 / Acceptance / V1.
+- Last refreshed: `2026-09-28 19:30:50` (America/Chicago).
 - Owner/scope: Campaign Runtime coordinator, aggregator and recovery modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-02 durable commits and BP-03 indexed callable tools.
-- Implementation: **30%**, 6/20 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
+- Implementation: **35%**, 7/20 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-04.02/B3 actual competing-coordinator/restart proof. Next: .02/V1 installed graph peer/replacement acceptance.
+- Current implementation task: BP-04.02/V1 installed graph peer/replacement acceptance and scoped closeout. Next: BP-04.03 activation review.
 - Demonstrated behavior: .01 closed/audited: compiler, 111-case semantic proof and actual public peer/fresh replacement acceptance passed, including manual numerical plan identity, scoped availability and bounded constructs. .02/B1-B2 admission/advancement/hosting passed 799 tests and independent package/recovery gate; actual graph process/peer gates and richer policies remain .02/.03.
 - Blockers: none for the synthetic compiler scope; predecessor BP-02/BP-03 gates passed. Later external choices remain at named gates.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
@@ -30,7 +30,7 @@ Primary services retain private state, dependencies, migrations and module READM
 | Parent phase / child | Overall | Build | Acceptance | Prerequisite |
 |---|---:|---:|---:|---|
 | P1 / [BP-04.01 Compiler and executable contract](BP-04/Completed/BP-04.01%20Compiler%20and%20executable%20contract.md) | 100% | 100% | 100% | Closed/audited |
-| P2 / [BP-04.02 Frontier and scheduling](BP-04/BP-04.02%20Frontier%20and%20scheduling.md) | 50% | 66.67% | 0% | B1-B2 accepted; B3 active |
+| P2 / [BP-04.02 Frontier and scheduling](BP-04/BP-04.02%20Frontier%20and%20scheduling.md) | 75% | 100% | 0% | B1-B3 accepted; V1 active |
 | P3 / [BP-04.03 Aggregation and failure policy](BP-04/BP-04.03%20Aggregation%20and%20failure%20policy.md) | 0% | 0% | 0% | BP-04.02 acceptance |
 | P4 / [BP-04.04 V1 baseline and successor graphs](BP-04/BP-04.04%20V1%20baseline%20and%20successor%20graphs.md) | 0% | 0% | 0% | BP-04.03 acceptance |
 | P5 / [BP-04.05 Recovery and closeout](BP-04/BP-04.05%20Recovery%20and%20closeout.md) | 0% | 0% | 0% | BP-04.04 acceptance |
