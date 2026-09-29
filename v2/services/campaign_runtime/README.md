@@ -1,6 +1,6 @@
 # Campaign Runtime
 
-- Status: synthetic invocation lifecycle and atomic completion implemented; paired retention/delivery acceptance verified; REC-01..09 recovery/replacement verified; general graph execution remains BP-04.
+- Status: synthetic invocation lifecycle and atomic completion implemented; paired retention/delivery acceptance verified; REC-01..09 recovery/replacement verified; configured deterministic graph execution/replacement accepted in BP-04.02; richer policies remain BP-04.03.
 - Package: `amphora-campaign-runtime` 0.4.0.
 - Architecture: [Graph Runner](../../docs/Architecture/System/Graph_Runner.md), [runtime protocol](../../docs/Architecture/System/Runtime_Command_Protocol.md), [isolation](../../docs/Architecture/System/Service_Isolation.md).
 
@@ -10,7 +10,7 @@
 |---|---|
 | `graph.py` | Immutable graph values, bounded topology/loop/branch/join validation; no interpreter |
 | [compiler](src/amphora_campaign_runtime/compiler/README.md) | Pure wire-v2 semantic compilation, exact tool/schema pins, scoped types/control flow, canonical plans and activation addresses |
-| [coordinator](src/amphora_campaign_runtime/coordinator/README.md) | Configured graph admission and durable advancement, branch/all-join/scatter/loop state, bounded observations and recovery polling; actual process/replacement acceptance remains BP-04.02/B3/V1 |
+| [coordinator](src/amphora_campaign_runtime/coordinator/README.md) | Configured graph admission and durable advancement, branch/all-join/scatter/loop state, bounded observations and recovery polling; actual process/peer/replacement acceptance passed BP-04.02; richer policies remain BP-04.03 |
 | `admission.py` | Pure input/tool/completion binding policy against supplied identity; not live authority |
 | [lifecycle](src/amphora_campaign_runtime/lifecycle/README.md) | Exact fixture admission, claims, renewal, cancellation/revocation, budget settlement and scoped observations |
 | [completion](src/amphora_campaign_runtime/completion/README.md) | Immutable prepared intents, resumable artifact reservations and atomic result/checkpoint acceptance |

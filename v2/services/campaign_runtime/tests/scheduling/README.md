@@ -1,7 +1,7 @@
 # Graph scheduling verification
 
 - Owner: Campaign Runtime coordinator; [module boundary](../../src/amphora_campaign_runtime/coordinator/README.md).
-- Current gate: BP-04.02/B3 verified; installed public graph peers/replacement remain V1.
+- Current gate: BP-04.02 closed/audited; B3 process and V1 installed graph peer/replacement gates verified.
 
 `run_tests.py --module runtime --area scheduling` selects this owner suite. PostgreSQL cases require the labeled fixture opt-in. Run serially with other campaign suites; the installation admits one running campaign. Tests use their own scopes and cancel only their own unfinished runs.
 
@@ -10,3 +10,5 @@
 `test_process_recovery.py` launches actual coordinator processes with `process_probe.py`, a test-only barrier helper excluded from production packages. Both database backends must be observed waiting on locks before the competing-coordinator barrier releases. Same and distinct commands cannot duplicate a ready invocation. A process is killed after commit and before reply/notification delivery; its replacement recovers the original receipt and workers can claim the retained activation. Independent hash construction and manually enumerated frontier sets cover empty scatter, changed loop feedback, iteration limit, one-unit budget and progress while a sibling remains leased. Only explicitly created process trees are stopped. Credentials are passed only to owner processes through environment variables, never serialized into evidence.
 
 B3 evidence: 60 owner cases passed, including eight actual coordinator-process scenarios. Credential-free records are retained under `.test-results/graph-scheduling-process/` and preserved in the [B3 evidence bundle](../../../../docs/Audits/Evidence/BP-04-Scheduling/README.md). Tool completion in these tests uses the real Runtime committer with a scripted reservation peer; actual installed workers/Artifacts are a separate V1 gate. Source coverage from B2 is 886/942 coordinator statements and 174/208 branches; child-process execution is not claimed as instrumented coverage. No scientific, Linux-container-to-owner or target-host durability claim follows.
+
+[V1 installed acceptance](acceptance/README.md) passes eight actual graph/peer/replacement/polling/retention cases, separately from the 60 pytest cases and scripted-reservation tier above.

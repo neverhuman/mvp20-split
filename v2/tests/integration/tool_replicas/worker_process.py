@@ -5,6 +5,7 @@ import importlib.util
 import json
 import os
 import sys
+import time
 from pathlib import Path
 
 from amphora_tool_protocol import (
@@ -18,6 +19,21 @@ from amphora_tool_protocol import (
 )
 
 
+def publish_marker(marker, packet):
+    temporary = marker.with_suffix(".tmp")
+    temporary.write_text(json.dumps(packet), encoding="utf-8")
+    deadline = time.monotonic() + 2
+    while True:
+        try:
+            temporary.replace(marker)
+            return
+        except PermissionError:
+            # Windows readers can briefly deny replacement while polling the previous stage.
+            if time.monotonic() >= deadline:
+                raise
+            time.sleep(0.01)
+
+
 class BarrierTransport:
     def __init__(self, endpoint, marker, stages):
         self.transport = HttpTransport(endpoint.endpoint, os.environ[endpoint.token_env])
@@ -27,9 +43,7 @@ class BarrierTransport:
         reply = self.transport.request(method, path, body, **kwargs)
         if method == "POST" and path in self.stages and reply.status == 200:
             packet = {"stage": self.stages[path], "response": json.loads(reply.body)}
-            temporary = self.marker.with_suffix(".tmp")
-            temporary.write_text(json.dumps(packet), encoding="utf-8")
-            temporary.replace(self.marker)
+            publish_marker(self.marker, packet)
             assert sys.stdin.readline().strip() == "continue", "Test controller closed the barrier"
         return reply
 
