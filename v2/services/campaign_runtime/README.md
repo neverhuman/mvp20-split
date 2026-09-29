@@ -1,17 +1,20 @@
 # Campaign Runtime
 
+Runtime 0.11.0 adds [graph inspection](src/amphora_campaign_runtime/graph_inspection/README.md): bounded revision-consistent snapshot/detail/value reads and resumable invalidations from existing durable audit records. Public graph-runtime 0.5.0 contracts are additive; no new migration. BP-04.05/B1 focused tests pass; foundation verification passed1202 tests/19 installs; process and installed observer replacement verification remain in the active child. The accepted 0.10.0 checkpoint below remains predecessor evidence.
+
 Accepted checkpoint `2026-09-29 17:57:39`: BP-04.04 closed/audited. Five real solver images and independent tool/SDK/owner installs passed initial-population -> successor generations 1/2, concurrent scoring and Runtime replacement; 17 invocations, all 44 reservations confirmed. Source/lineage/receipt/artifact history preserved. Scientific validity and target-host execution remain excluded. Earlier B1-B3 statements below describe their historical verification tiers; no gate in this child remains open.
 
 Runtime 0.10.0 adds explicit successor admission under BP-04.04/B2, using graph-runtime 0.4.0 and campaigns 0.4.0. The [successor module](src/amphora_campaign_runtime/successors/README.md) owns terminal source cuts, exact carried values and immutable ancestry; the existing coordinator commits the new run and receipt. Migration runtime_0014 is required; startup never migrates. Earlier typed binding process and installed-peer gates are accepted under closed BP-04.04A.
 
 - Status: configured deterministic execution, aggregation/waits and typed bindings accepted; source-derived solver orchestration B1 verified; successor B2 verified. New solver process proof passed B3; actual installed-peer acceptance passed V1.
-- Package: `amphora-campaign-runtime` 0.10.0.
+- Package: `amphora-campaign-runtime` 0.11.0.
 - Architecture: [Graph Runner](../../docs/Architecture/System/Graph_Runner.md), [runtime protocol](../../docs/Architecture/System/Runtime_Command_Protocol.md), [isolation](../../docs/Architecture/System/Service_Isolation.md).
 
 ## Ownership and Module Boundaries
 
 | Module | Responsibility |
 |---|---|
+| [graph_inspection](src/amphora_campaign_runtime/graph_inspection/README.md) | Revision-consistent bounded graph/detail/value reads and durable reconnect invalidations |
 | [successors](src/amphora_campaign_runtime/successors/README.md) | Exact predecessor readiness, compatible carry maps, immutable ancestry and source observations |
 | `artifact_bindings/` | Typed Artifact/collection conversion, durable preparation/protection and atomic graph acceptance |
 | `graph.py` | Immutable graph values, bounded topology/loop/branch/join validation; no interpreter |

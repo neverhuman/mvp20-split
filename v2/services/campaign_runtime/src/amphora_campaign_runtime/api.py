@@ -101,6 +101,9 @@ def create_app(admission=None, credentials=None, completion=None, history=None, 
         if history is not None:
             from .inspection.http import install_history
             install_history(app, history, credentials)
+            if graphs is not None:
+                from .graph_inspection.http import install_graph_inspection
+                install_graph_inspection(app, history, credentials)
 
     @app.exception_handler(RequestValidationError)
     async def invalid_request(_request, error):

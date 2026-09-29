@@ -1,5 +1,7 @@
 # Graph Execution Model
 
+The [graph observation protocol](Graph_Observation_Protocol.md) defines revision-consistent snapshots, bounded detail and durable invalidation cursors for readers. It does not transfer execution authority to the presentation layer.
+
 - Design status: proposed graph machine and execution semantics
 - Parent: [System Architecture](System_Architecture.md)
 - Scope: how an authored campaign becomes actual computation

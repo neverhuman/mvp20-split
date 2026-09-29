@@ -69,6 +69,10 @@ for name, model in {
     "successor-proposal": graph_runtime_contracts.SuccessorProposal,
     "carry-sources": graph_runtime_contracts.CarrySources,
     "successor-lineage": graph_runtime_contracts.SuccessorLineage,
+    "snapshot-page": graph_runtime_contracts.GraphSnapshotPage,
+    "node-detail": graph_runtime_contracts.GraphNodeDetail,
+    "value-page": graph_runtime_contracts.GraphValuePage,
+    "invalidation-page": graph_runtime_contracts.GraphInvalidationPage,
 }.items():
     MODELS["graph-runtime." + name] = model
 for name, model in {

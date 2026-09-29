@@ -1,0 +1,52 @@
+{
+  "verified_at": "2026-09-29 18:27:38",
+  "baseline_commit": "e204692",
+  "delivery": "BP-04.05/B1",
+  "versions": {
+    "runtime": "0.11.0",
+    "graph_runtime": "0.5.0",
+    "campaigns": "0.4.0",
+    "migration": "runtime_0014"
+  },
+  "schemas": {
+    "total": 176,
+    "predecessors_unchanged": 168,
+    "new": 8
+  },
+  "verification": {
+    "focused_tests": 72,
+    "foundation_tests": 1202,
+    "independent_installs": 19,
+    "recovery_cases": "REC-01..09",
+    "recovery_scope": "792994c7f28c484780f33ed404220a41",
+    "coverage": {
+      "covered_lines": 217,
+      "num_statements": 217,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100",
+      "num_branches": 12,
+      "num_partial_branches": 0,
+      "covered_branches": 12,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    }
+  },
+  "limits": [
+    "Scripted Artifact/tool peers in focused PG tests",
+    "New observer process-crash and installed replacement gates remain B2/B3/V1",
+    "No scientific, Studio, target-host or power-loss claim"
+  ],
+  "source_sha256": {
+    "services/campaign_runtime/src/amphora_campaign_runtime/graph_inspection/details.py": "4b3f5dd652e9933d50a1b3263b27928f80ff4becdd56e9e6f371b42c23bb2cf3",
+    "services/campaign_runtime/src/amphora_campaign_runtime/graph_inspection/events.py": "77c8b16bc8200b51996394ea1cb06a092c5854a389a1ab08b06ed9d914614b0b",
+    "services/campaign_runtime/src/amphora_campaign_runtime/graph_inspection/http.py": "bfca63d682ed1f8dd71cf9e2495e9283ffa1ce23dc5ffa08a50395de73bd5cfe",
+    "services/campaign_runtime/src/amphora_campaign_runtime/graph_inspection/policy.py": "cccfa659b364f86eb32a392227de5492135a783f36f6f7a2af735bf6192a41b4",
+    "services/campaign_runtime/src/amphora_campaign_runtime/graph_inspection/snapshots.py": "a9ab908695793dc2fe27504d16f4a70b40593c29413167a00397445874cfc575",
+    "services/campaign_runtime/src/amphora_campaign_runtime/graph_inspection/__init__.py": "5b3114488246abb5fd7088be211b8dbe582564e3aff8da5113502b19afc084a4"
+  }
+}
