@@ -27,7 +27,8 @@ def install_admission(app, admission, credentials, completion=None, *, graph_mod
     reads = RuntimeReads(admission.commands.engine)
     @app.exception_handler(TransitionError)
     async def denied(_request, error):
-        status = {"unauthenticated": 401, "run_unavailable": 404}.get(str(error), 403)
+        status = {"unauthenticated": 401, "run_unavailable": 404, "wait_unavailable": 404,
+                  "graph_observation_v2_required": 409}.get(str(error), 403)
         return JSONResponse({"reason_code": str(error)}, status_code=status)
 
     @app.get("/ready")

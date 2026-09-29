@@ -3,7 +3,7 @@
 import json
 from pathlib import Path
 
-from amphora_contracts_campaigns import ExecutableCampaign
+from amphora_contracts_campaigns import parse_executable_campaign
 from amphora_contracts_core import SchemaRef
 from amphora_contracts_tools import LockEntry, ReleaseDescriptor
 
@@ -37,6 +37,6 @@ def load_catalog(entries, root):
                 raise ValueError("Invalid graph schema entry")
             reference = SchemaRef.model_validate_json(json.dumps(schema["schema_ref"]))
             schemas.append(PinnedSchema(SchemaIdentity.from_wire(reference), _bytes(Path(root), schema["path"], 65536)))
-        definition = ExecutableCampaign.model_validate_json(_bytes(Path(root), entry["definition"], 1048576))
+        definition = parse_executable_campaign(_bytes(Path(root), entry["definition"], 1048576))
         result.append(ReviewedPlan.compile(definition, ToolCatalog(tools), SchemaCatalog(schemas)))
     return PlanCatalog(result)

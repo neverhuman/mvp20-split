@@ -54,6 +54,8 @@ class GraphAggregation:
             value = scope.environment.source(member.source) if status == "succeeded" else None
             reason = source["reason_code"] if source is not None else None
             outcome = source["state"].get("tool_outcome") if source is not None else None
+            if source is not None and source["kind"] == "await":
+                outcome = source["state"].get("wait_outcome")
             if status == "failed" and outcome is not None:
                 status, reason = outcome["status"], outcome["reason_code"]
             members.append(self.member(member.member_id, status, member.required, value,

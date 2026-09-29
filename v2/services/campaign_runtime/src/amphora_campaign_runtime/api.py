@@ -97,7 +97,7 @@ def create_app(admission=None, credentials=None, completion=None, history=None, 
         install_admission(app, admission, credentials, completion, graph_mode=graphs is not None)
         if graphs is not None:
             from .coordinator.http import install_graphs
-            install_graphs(app, graphs[0], graphs[1], credentials)
+            install_graphs(app, graphs[0], graphs[1], credentials, None if completion is None else completion.artifacts)
         if history is not None:
             from .inspection.http import install_history
             install_history(app, history, credentials)

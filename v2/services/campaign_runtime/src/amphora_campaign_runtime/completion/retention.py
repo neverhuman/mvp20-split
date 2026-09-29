@@ -10,6 +10,13 @@ from ..lifecycle.claims import RUN, SCOPE
 from ..lifecycle.model import TransitionError
 
 
+def retention_tables(intent_id):
+    """Both private intent families use the same public Artifact protection protocol."""
+    if intent_id.startswith("wait:"):
+        return "runtime.wait_retention_intents", "runtime.wait_intent_reservations"
+    return "runtime.completion_intents", "runtime.intent_reservations"
+
+
 def matches(intent, binding):
     expected = {"artifact": binding.artifact.model_dump(mode="json"), "intent": binding.intent.model_dump(mode="json")}
     return expected in intent["output_bindings"] and intent["semantic_sha256"] == binding.intent.semantic_completion_sha256
@@ -20,11 +27,12 @@ def queue_terminal(conn, params, intent_ids):
     queued = []
     for intent_id in intent_ids:
         values = {**params, "intent": intent_id}
-        intent = conn.execute(text("SELECT * FROM runtime.completion_intents WHERE " + RUN +
+        intents_table, reservations_table = retention_tables(intent_id)
+        intent = conn.execute(text("SELECT * FROM " + intents_table + " WHERE " + RUN +
             " AND intent_id=:intent"), values).mappings().one()
         if intent["status"] not in {"committed", "aborted"}:
             continue
-        rows = conn.execute(text("SELECT receipt FROM runtime.intent_reservations WHERE " + SCOPE +
+        rows = conn.execute(text("SELECT receipt FROM " + reservations_table + " WHERE " + SCOPE +
             " AND intent_id=:intent ORDER BY output_binding"), values).scalars().all()
         for raw in rows:
             try:
@@ -66,9 +74,10 @@ class IntentOutcomes:
                   "intent": binding.intent.intent_id, "output": binding.intent.output_binding}
         proof = {"status": "unknown"}
         if binding.intent.runtime_owner == self.runtime_owner:
+            intents_table, reservations_table = retention_tables(binding.intent.intent_id)
             with self.engine.connect().execution_options(isolation_level="REPEATABLE READ") as conn, conn.begin():
                 conn.execute(text("SET TRANSACTION READ ONLY"))
-                intent = conn.execute(text("SELECT * FROM runtime.completion_intents WHERE " + SCOPE +
+                intent = conn.execute(text("SELECT * FROM " + intents_table + " WHERE " + SCOPE +
                     " AND intent_id=:intent"), params).mappings().one_or_none()
                 if intent is not None and matches(intent, binding):
                     if intent["status"] == "prepared":
@@ -78,7 +87,7 @@ class IntentOutcomes:
                         # binding is still permanently aborted and authorizes its owner's release.
                         proof = intent["outcome"]
                     else:
-                        raw = conn.execute(text("SELECT receipt FROM runtime.intent_reservations WHERE " + SCOPE +
+                        raw = conn.execute(text("SELECT receipt FROM " + reservations_table + " WHERE " + SCOPE +
                             " AND intent_id=:intent AND output_binding=:output"), params).scalar_one_or_none()
                         if raw is not None and ReservationReceipt.model_validate_json(json.dumps(raw)).outcome.binding == binding:
                             proof = intent["outcome"]

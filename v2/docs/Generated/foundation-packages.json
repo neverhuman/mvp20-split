@@ -70,7 +70,7 @@
   },
   {
     "package": "amphora-campaign-runtime",
-    "version": "0.6.0",
+    "version": "0.7.0",
     "path": "services/campaign_runtime",
     "module": "amphora_campaign_runtime",
     "public_dependencies": [

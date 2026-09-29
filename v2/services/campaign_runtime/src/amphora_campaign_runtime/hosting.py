@@ -54,7 +54,7 @@ class Host:
             if set(item) != {"token_env", "actor_id", "scope", "actions"}:
                 raise ValueError("Invalid principal configuration")
             actions = frozenset(item["actions"])
-            if not actions or actions - {"admit", "claim", "renew", "cancel", "revoke", "maintain", "read", "complete", "outcome", "deliver", "inspect_receipts"}:
+            if not actions or actions - {"admit", "claim", "renew", "cancel", "revoke", "maintain", "read", "complete", "outcome", "deliver", "inspect_receipts", "submit_receipt"}:
                 raise ValueError("Invalid configured action")
             if not isinstance(item["actor_id"], str) or not item["actor_id"]:
                 raise ValueError("Explicit actor required")

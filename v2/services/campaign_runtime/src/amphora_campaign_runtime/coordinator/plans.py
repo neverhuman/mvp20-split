@@ -29,6 +29,16 @@ class ReviewedPlan:
                 return descriptor
         raise TransitionError("graph_tool_pin_unavailable")
 
+    @property
+    def has_waits(self):
+        pending = [self.plan.document.definition.body]
+        while pending:
+            body = pending.pop()
+            if any(node.kind == "await" for node in body.nodes):
+                return True
+            pending.extend(node.body for node in body.nodes if node.kind in {"scatter", "iterate"})
+        return False
+
 
 class PlanCatalog:
     def __init__(self, entries):
@@ -44,4 +54,4 @@ class PlanCatalog:
 
     @property
     def needs_completion(self):
-        return any(entry.descriptors for entry in self._entries.values())
+        return any(entry.descriptors or entry.has_waits for entry in self._entries.values())

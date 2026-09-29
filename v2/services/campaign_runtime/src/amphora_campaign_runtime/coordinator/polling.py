@@ -9,6 +9,7 @@ from sqlalchemy import text
 
 from ..completion.recovery import StaleIntents
 from ..lifecycle.model import TransitionError
+from ..waits.recovery import WaitRecovery
 from .projections import ProjectionUnavailable
 
 
@@ -19,13 +20,14 @@ class GraphPoller:
 
     def tick(self, principal):
         principal.require("maintain")
+        recovered = WaitRecovery(self.engine).tick(principal)
         params = {"tenant": principal.scope.tenant_id, "project": principal.scope.project_id}
         with self.engine.connect() as conn:
             run = conn.execute(text("SELECT run_id FROM runtime.runs WHERE tenant_id=:tenant AND project_id=:project "
                 "AND status='running' AND execution_mode='graph'"), params).scalar_one_or_none()
         if run is None:
             self.pending = None
-            return False
+            return recovered
         StaleIntents(self.engine).sweep(principal, run, limit=100)
         if self.pending is None or self.pending[0] != run:
             command = parse_graph_command("graph.advance", json.dumps({"identity": {
