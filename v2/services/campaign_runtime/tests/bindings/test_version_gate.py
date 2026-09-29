@@ -4,7 +4,11 @@ import copy
 import json
 
 from amphora_campaign_runtime.compiler import ToolCatalog
-from amphora_campaign_runtime.coordinator import GraphAdmission, PlanCatalog, ReviewedPlan
+from amphora_campaign_runtime.coordinator import (
+    GraphAdmission,
+    PlanCatalog,
+    ReviewedPlan,
+)
 from amphora_contracts_campaigns import parse_executable_campaign
 from sqlalchemy import text
 

@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-04.04A active remediation of BIND-01; .01/.02/.03 closed/audited.
-- Last refreshed: `2026-09-29 15:52:36` (America/Chicago).
+- Last refreshed: `2026-09-29 16:08:36` (America/Chicago).
 - Scope: v2 design/implementation alignment
 - Active focus: BIND-01 Artifact/collection conversion prerequisite for generated-population parity.
-- Next gate: BP-04.04A/B3 actual process proof; B1/B2 verified.
+- Next gate: BP-04.04A/V1 installed peer/replacement proof; B1/B2/B3 verified.
 
 ## Active Findings
 
@@ -25,4 +25,4 @@ Use [Development Process](../Development_Process.md) and the [audit template](..
 - `2026-09-26 16:31:31`: frozen-baseline verification reports `ADDED v1/LICENSE`, already introduced in committed baseline `99d219c`; all manifest content hashes match. No v1 edits made. Owner: repository baseline metadata; follow-up requires explicit baseline maintenance authorization, not implementation blocker. Artifact A2-A4 gates pass; service closeout audit remains A6.
 
 
-- BIND-01: owner-approved remediation active in BP-04.04A/B3. Artifact/collection conversion remains technically open until durable execution and installed-peer acceptance; no owner-decision blocker remains. Owner: Runtime binding/compiler and Artifact integration. Solver baseline BP-04.04 remains queued behind this gate.
+- BIND-01: owner-approved remediation active in BP-04.04A/V1. Artifact/collection conversion remains technically open until durable execution and installed-peer acceptance; no owner-decision blocker remains. Owner: Runtime binding/compiler and Artifact integration. Solver baseline BP-04.04 remains queued behind this gate.

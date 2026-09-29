@@ -6,7 +6,11 @@ import json
 import pytest
 from amphora_campaign_runtime.artifact_bindings.coordinator import BindingCoordinator
 from amphora_campaign_runtime.compiler import ToolCatalog
-from amphora_campaign_runtime.coordinator import GraphAdmission, PlanCatalog, ReviewedPlan
+from amphora_campaign_runtime.coordinator import (
+    GraphAdmission,
+    PlanCatalog,
+    ReviewedPlan,
+)
 from amphora_campaign_runtime.coordinator.advance import GraphAdvancer
 from amphora_contracts_campaigns import parse_executable_campaign
 from amphora_contracts_core import ArtifactRef

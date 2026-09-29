@@ -1,0 +1,351 @@
+{
+  "verified_at": "2026-09-29 16:08:36",
+  "delivery": "BP-04.04A/B3",
+  "baseline_commit": "58322fd",
+  "tests_passed": 59,
+  "log": ".test-results/bp0404a-b3-bindings.log",
+  "coverage": {
+    "covered_lines": 423,
+    "num_statements": 452,
+    "covered_branches": 71,
+    "num_branches": 82
+  },
+  "coverage_limit": "Parent interpreter only; subprocess coverage is not claimed.",
+  "process_cases": [
+    {
+      "verified_at": "2026-09-29 16:05:35",
+      "case": "competing-processes",
+      "scope": {
+        "tenant_id": "admission-tests",
+        "project_id": "23fe96c822394bbe8fe4b865c01bbe18"
+      },
+      "run_id": "c264267cab8d44df8739a6a009da7adf",
+      "intent_id": "binding:d3b30cc060185033b95130bcfe53e33e",
+      "status": "committed",
+      "outputs": [
+        {
+          "port": "result",
+          "value": {
+            "kind": "collection",
+            "items": [
+              {
+                "kind": "artifact",
+                "unit": "1",
+                "artifact": {
+                  "scope": {
+                    "tenant_id": "admission-tests",
+                    "project_id": "23fe96c822394bbe8fe4b865c01bbe18"
+                  },
+                  "sha256": "f5d164989210143c8aec6e2cd837becb4fcc18f86466fbb75b2984086d7c36b0",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "sha256": "ac1bb0160dba1499a31f84df03716e56db987d326cc5c9c1bd3e7825172d6fbc",
+                    "version": "1",
+                    "schema_id": "fixture.bindings.member"
+                  },
+                  "size_bytes": 25,
+                  "artifact_id": "f5d164989210143c8aec6e2cd837becb4fcc18f86466fbb75b2984086d7c36b0"
+                },
+                "representation": "synthetic-bindings"
+              },
+              {
+                "kind": "artifact",
+                "unit": "1",
+                "artifact": {
+                  "scope": {
+                    "tenant_id": "admission-tests",
+                    "project_id": "23fe96c822394bbe8fe4b865c01bbe18"
+                  },
+                  "sha256": "50751e62beab72890c76990ac596596430bf234c39482edbe07de033c31def08",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "sha256": "ac1bb0160dba1499a31f84df03716e56db987d326cc5c9c1bd3e7825172d6fbc",
+                    "version": "1",
+                    "schema_id": "fixture.bindings.member"
+                  },
+                  "size_bytes": 24,
+                  "artifact_id": "50751e62beab72890c76990ac596596430bf234c39482edbe07de033c31def08"
+                },
+                "representation": "synthetic-bindings"
+              }
+            ]
+          }
+        }
+      ],
+      "closures": [
+        {
+          "receipt_id": "binding:d3b30cc060185033b95130bcfe53e33e:closed",
+          "revision": 2,
+          "document": {
+            "status": "committed",
+            "runtime_receipt_id": "binding:d3b30cc060185033b95130bcfe53e33e:closed"
+          }
+        }
+      ],
+      "reservations": 3,
+      "boundary": {
+        "lock_waiters": 2,
+        "backends": [
+          26175,
+          26174
+        ],
+        "logical_acceptances": 1
+      },
+      "artifact_peer": "scripted; installed peer proof remains V1"
+    },
+    {
+      "verified_at": "2026-09-29 16:06:12",
+      "case": "death-before_commit",
+      "scope": {
+        "tenant_id": "admission-tests",
+        "project_id": "7f2187d22d3345118322d0b31f96b0a7"
+      },
+      "run_id": "b4efd02d415a405ea6438427e2423f31",
+      "intent_id": "binding:c27c6c386b0b568da39d9d12a8167bd4",
+      "status": "committed",
+      "outputs": [
+        {
+          "port": "result",
+          "value": {
+            "kind": "collection",
+            "items": [
+              {
+                "kind": "artifact",
+                "unit": "1",
+                "artifact": {
+                  "scope": {
+                    "tenant_id": "admission-tests",
+                    "project_id": "7f2187d22d3345118322d0b31f96b0a7"
+                  },
+                  "sha256": "f5d164989210143c8aec6e2cd837becb4fcc18f86466fbb75b2984086d7c36b0",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "sha256": "ac1bb0160dba1499a31f84df03716e56db987d326cc5c9c1bd3e7825172d6fbc",
+                    "version": "1",
+                    "schema_id": "fixture.bindings.member"
+                  },
+                  "size_bytes": 25,
+                  "artifact_id": "f5d164989210143c8aec6e2cd837becb4fcc18f86466fbb75b2984086d7c36b0"
+                },
+                "representation": "synthetic-bindings"
+              },
+              {
+                "kind": "artifact",
+                "unit": "1",
+                "artifact": {
+                  "scope": {
+                    "tenant_id": "admission-tests",
+                    "project_id": "7f2187d22d3345118322d0b31f96b0a7"
+                  },
+                  "sha256": "50751e62beab72890c76990ac596596430bf234c39482edbe07de033c31def08",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "sha256": "ac1bb0160dba1499a31f84df03716e56db987d326cc5c9c1bd3e7825172d6fbc",
+                    "version": "1",
+                    "schema_id": "fixture.bindings.member"
+                  },
+                  "size_bytes": 24,
+                  "artifact_id": "50751e62beab72890c76990ac596596430bf234c39482edbe07de033c31def08"
+                },
+                "representation": "synthetic-bindings"
+              }
+            ]
+          }
+        }
+      ],
+      "closures": [
+        {
+          "receipt_id": "binding:c27c6c386b0b568da39d9d12a8167bd4:closed",
+          "revision": 2,
+          "document": {
+            "status": "committed",
+            "runtime_receipt_id": "binding:c27c6c386b0b568da39d9d12a8167bd4:closed"
+          }
+        }
+      ],
+      "reservations": 3,
+      "boundary": {
+        "real_process_killed": true,
+        "original_identity": "binding:c27c6c386b0b568da39d9d12a8167bd4",
+        "database_lease_expiry_observed": true,
+        "fresh_process_replacement": true
+      },
+      "artifact_peer": "scripted; installed peer proof remains V1"
+    },
+    {
+      "verified_at": "2026-09-29 16:06:17",
+      "case": "death-after_commit",
+      "scope": {
+        "tenant_id": "admission-tests",
+        "project_id": "fb5bae16f4ed48e2984d1b8fdecd3c90"
+      },
+      "run_id": "6447dd37792b48cd998824ab4c8c3f7e",
+      "intent_id": "binding:6bcb8d4ed93f5b8298beb620d2ceb9d3",
+      "status": "committed",
+      "outputs": [
+        {
+          "port": "result",
+          "value": {
+            "kind": "collection",
+            "items": [
+              {
+                "kind": "artifact",
+                "unit": "1",
+                "artifact": {
+                  "scope": {
+                    "tenant_id": "admission-tests",
+                    "project_id": "fb5bae16f4ed48e2984d1b8fdecd3c90"
+                  },
+                  "sha256": "f5d164989210143c8aec6e2cd837becb4fcc18f86466fbb75b2984086d7c36b0",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "sha256": "ac1bb0160dba1499a31f84df03716e56db987d326cc5c9c1bd3e7825172d6fbc",
+                    "version": "1",
+                    "schema_id": "fixture.bindings.member"
+                  },
+                  "size_bytes": 25,
+                  "artifact_id": "f5d164989210143c8aec6e2cd837becb4fcc18f86466fbb75b2984086d7c36b0"
+                },
+                "representation": "synthetic-bindings"
+              },
+              {
+                "kind": "artifact",
+                "unit": "1",
+                "artifact": {
+                  "scope": {
+                    "tenant_id": "admission-tests",
+                    "project_id": "fb5bae16f4ed48e2984d1b8fdecd3c90"
+                  },
+                  "sha256": "50751e62beab72890c76990ac596596430bf234c39482edbe07de033c31def08",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "sha256": "ac1bb0160dba1499a31f84df03716e56db987d326cc5c9c1bd3e7825172d6fbc",
+                    "version": "1",
+                    "schema_id": "fixture.bindings.member"
+                  },
+                  "size_bytes": 24,
+                  "artifact_id": "50751e62beab72890c76990ac596596430bf234c39482edbe07de033c31def08"
+                },
+                "representation": "synthetic-bindings"
+              }
+            ]
+          }
+        }
+      ],
+      "closures": [
+        {
+          "receipt_id": "binding:6bcb8d4ed93f5b8298beb620d2ceb9d3:closed",
+          "revision": 2,
+          "document": {
+            "status": "committed",
+            "runtime_receipt_id": "binding:6bcb8d4ed93f5b8298beb620d2ceb9d3:closed"
+          }
+        }
+      ],
+      "reservations": 3,
+      "boundary": {
+        "real_process_killed": true,
+        "original_identity": "binding:6bcb8d4ed93f5b8298beb620d2ceb9d3",
+        "database_lease_expiry_observed": false,
+        "fresh_process_replacement": true
+      },
+      "artifact_peer": "scripted; installed peer proof remains V1"
+    },
+    {
+      "verified_at": "2026-09-29 16:06:23",
+      "case": "cancel-during-reserve",
+      "scope": {
+        "tenant_id": "admission-tests",
+        "project_id": "432d45873a3e4cce89e2afde5d2d5cb9"
+      },
+      "run_id": "87c8ccbf8876498e8d707bbef50b18c7",
+      "intent_id": "binding:f054bf24a480590798609d45a2d9d9fb",
+      "status": "aborted",
+      "outputs": null,
+      "closures": [
+        {
+          "receipt_id": "binding:f054bf24a480590798609d45a2d9d9fb:closed",
+          "revision": 2,
+          "document": {
+            "status": "aborted",
+            "reason_code": "process_stop",
+            "runtime_receipt_id": "binding:f054bf24a480590798609d45a2d9d9fb:closed"
+          }
+        }
+      ],
+      "reservations": 1,
+      "boundary": {
+        "separate_stop_process": true,
+        "late_response_reconciled": true
+      },
+      "artifact_peer": "scripted; installed peer proof remains V1"
+    },
+    {
+      "verified_at": "2026-09-29 16:06:34",
+      "case": "deadline-during-reserve",
+      "scope": {
+        "tenant_id": "admission-tests",
+        "project_id": "f2f00639a3da472aa30b8b026b1cb08e"
+      },
+      "run_id": "4f453ba0a8eb4408849c2462ba8d2d21",
+      "intent_id": "binding:2cf217c8d704523790e7eefa2d67c514",
+      "status": "aborted",
+      "outputs": null,
+      "closures": [
+        {
+          "receipt_id": "binding:2cf217c8d704523790e7eefa2d67c514:closed",
+          "revision": 2,
+          "document": {
+            "status": "aborted",
+            "reason_code": "binding_deadline_expired",
+            "runtime_receipt_id": "binding:2cf217c8d704523790e7eefa2d67c514:closed"
+          }
+        }
+      ],
+      "reservations": 1,
+      "boundary": {
+        "separate_stop_process": true,
+        "late_response_reconciled": true
+      },
+      "artifact_peer": "scripted; installed peer proof remains V1"
+    }
+  ],
+  "negative_oracles": [
+    "hash",
+    "metadata",
+    "oversized stream",
+    "duplicate keys",
+    "nonfinite JSON",
+    "malformed JSON",
+    "schema type",
+    "unit",
+    "representation",
+    "schema pin",
+    "foreign scope",
+    "nested references",
+    "changed predecessor before claim",
+    "changed predecessor during publication"
+  ],
+  "round_trip": {
+    "completion_order": [
+      [
+        3,
+        2,
+        1
+      ],
+      [
+        7,
+        5,
+        3
+      ]
+    ],
+    "final_values": [
+      7,
+      11,
+      15
+    ],
+    "worker_invocations": 10,
+    "conversions": 20
+  },
+  "remaining": "V1 independently installed Artifact/tool peers and Runtime replacement; scoped closeout audit"
+}

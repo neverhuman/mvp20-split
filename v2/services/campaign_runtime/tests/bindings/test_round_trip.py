@@ -4,7 +4,11 @@ import json
 
 from amphora_campaign_runtime.artifact_bindings.coordinator import BindingCoordinator
 from amphora_campaign_runtime.completion.coordinator import CompletionCoordinator
-from amphora_campaign_runtime.coordinator import GraphAdmission, PlanCatalog, ReviewedPlan
+from amphora_campaign_runtime.coordinator import (
+    GraphAdmission,
+    PlanCatalog,
+    ReviewedPlan,
+)
 from amphora_campaign_runtime.coordinator.advance import GraphAdvancer
 from amphora_campaign_runtime.coordinator.reads import GraphReads
 from amphora_campaign_runtime.lifecycle.claims import RuntimeLeases
@@ -30,6 +34,7 @@ def test_generated_population_scatter_gather_consumer_and_next_generation(graph_
     assert reply.outcome.status == "accepted", reply
     run = reply.outcome.committed.object_id
     completed = []
+    pending_scores, reversed_batches = [], []
     for _ in range(100):
         # Fresh owner objects every pass; persisted state alone determines the next action.
         bindings = BindingCoordinator(e.env.engine, catalog, peer, peer)
@@ -46,7 +51,16 @@ def test_generated_population_scatter_gather_consumer_and_next_generation(graph_
             if claim.outcome.status != "claimed":
                 break
             work.append(claim.outcome.invocation)
-        for invocation in reversed(work):
+        ordinary = [invocation for invocation in work if invocation.node_id != "score"]
+        pending_scores.extend(invocation for invocation in work if invocation.node_id == "score")
+        scoring = []
+        if len(pending_scores) == 3:
+            scoring = sorted(pending_scores, key=lambda invocation: json.loads(
+                peer.documents[invocation.inputs[0].artifact.artifact_id])["values"][0], reverse=True)
+            reversed_batches.append([json.loads(peer.documents[invocation.inputs[0].artifact.artifact_id])["values"][0]
+                                     for invocation in scoring])
+            pending_scores = []
+        for invocation in [*ordinary, *scoring]:
             result = peer.store(compute(peer.documents[invocation.inputs[0].artifact.artifact_id]), entry.descriptors[0].outputs[0].schema_ref)
             receipt = CompletionCoordinator(e.env.engine, peer).complete(e.env.principal, e.command("runtime.complete", {
                 "run_id": run, "completion": {"schema_version": "1", "invocation_id": invocation.invocation_id,
@@ -57,6 +71,7 @@ def test_generated_population_scatter_gather_consumer_and_next_generation(graph_
     assert page.status == "completed", page
     assert page.spent == 10 and page.reserved == 0
     assert completed.count("producer") == completed.count("consumer") == 2 and completed.count("score") == 6
+    assert reversed_batches == [[3, 2, 1], [7, 5, 3]]
     with e.env.engine.connect() as conn:
         outputs = conn.execute(text("SELECT outputs FROM runtime.graph_runs WHERE run_id=:run"), {"run": run}).scalar_one()
         counts = conn.execute(text("SELECT status,count(*) FROM runtime.binding_intents WHERE run_id=:run GROUP BY status"), {"run": run}).all()

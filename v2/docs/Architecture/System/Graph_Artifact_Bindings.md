@@ -1,6 +1,6 @@
 # Typed Graph and Artifact Bindings
 
-Design status: approved implementation boundary under [BP-04.04A](../../Build%20Plans/BP-04/BP-04.04A%20Typed%20artifact%20and%20collection%20bindings.md). Wire/compiler B1 and durable execution B2 are verified; B3 actual process proof is active. Parent: [Graph Execution Model](Graph_Execution_Model.md).
+Design status: approved implementation boundary under [BP-04.04A](../../Build%20Plans/BP-04/BP-04.04A%20Typed%20artifact%20and%20collection%20bindings.md). Wire/compiler B1, durable execution B2 and actual process proof B3 are verified; installed peer/replacement acceptance V1 is active. Parent: [Graph Execution Model](Graph_Execution_Model.md).
 
 ## Ownership and Data Model
 

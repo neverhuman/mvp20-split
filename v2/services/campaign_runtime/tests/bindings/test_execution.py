@@ -7,7 +7,11 @@ from decimal import Decimal
 import pytest
 from amphora_campaign_runtime.artifact_bindings.coordinator import BindingCoordinator
 from amphora_campaign_runtime.compiler import ToolCatalog
-from amphora_campaign_runtime.coordinator import GraphAdmission, PlanCatalog, ReviewedPlan
+from amphora_campaign_runtime.coordinator import (
+    GraphAdmission,
+    PlanCatalog,
+    ReviewedPlan,
+)
 from amphora_campaign_runtime.coordinator.advance import GraphAdvancer
 from amphora_campaign_runtime.coordinator.reads import GraphReads
 from amphora_contracts_campaigns import parse_executable_campaign
@@ -17,10 +21,12 @@ from ..compiler.test_bindings import CASES, catalog
 from .support import MemoryArtifacts
 
 
-def setup(e, case, *, timeout=120):
+def setup(e, case, *, timeout=120, source_bytes=None, transform=None):
     raw = copy.deepcopy(CASES[case]["payload"])
     raw["scope"] = e.env.principal.scope.model_dump(mode="json")
     raw["body"]["nodes"][0]["limits"]["timeout_seconds"] = timeout
+    if transform is not None:
+        transform(raw)
     entry = ReviewedPlan.compile(parse_executable_campaign(json.dumps(raw)), ToolCatalog([]), catalog())
     plans = PlanCatalog([entry])
     peer = MemoryArtifacts(e.env.principal.scope)
@@ -37,7 +43,7 @@ def setup(e, case, *, timeout=120):
             member = entry.plan.document.definition.body.nodes[0].output.value_type.item
             data = [peer.put({"id": "second", "value": 5}, member.schema_ref).model_dump(mode="json"),
                     peer.put({"id": "first", "value": 2}, member.schema_ref).model_dump(mode="json")]
-        ref = peer.put(data, shape.schema_ref)
+        ref = peer.put(data, shape.schema_ref) if source_bytes is None else peer.store(source_bytes, shape.schema_ref)
         value = {"kind": "artifact", "artifact": ref.model_dump(mode="json"), "representation": shape.representation, "unit": shape.unit}
     admission = GraphAdmission(e.env.engine, plans, bindings_enabled=True)
     command = e.command("graph.admit", {"plan_sha256": entry.plan.sha256, "inputs": [{"port": "parameters", "value": value}], "budget": {"limit": 2}})
