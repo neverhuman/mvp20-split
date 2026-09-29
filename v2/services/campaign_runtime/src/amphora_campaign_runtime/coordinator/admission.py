@@ -38,6 +38,8 @@ class GraphAdmission:
                 return CommandReceipt.model_validate(existing["receipt"])
             try:
                 entry = self.catalog.require(principal.scope, request.plan_sha256)
+                # Contract/compiler support precedes the B2 external-wait transition gate.
+                ensure(entry.plan.schema_version == "2", "graph_execution_profile_unavailable")
                 values = BoundValues(request.inputs).validate(entry.plan.document.definition.body.inputs, principal.scope)
                 RunBudget(request.budget.limit)
                 address = ScopeAddress(entry.plan.sha256)

@@ -1,0 +1,202 @@
+{
+  "schema_version": "3",
+  "sha256": "001711018d8f15268456234094cbac1a305ce11db019c1f2253b0254e07dedd8",
+  "document": {
+    "profile": "amphora-execution-plan-v2",
+    "definition": {
+      "schema_version": "3",
+      "profile": "deterministic-v2",
+      "campaign_id": "synthetic-external-evidence",
+      "revision": 1,
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "compiler"
+      },
+      "context": [],
+      "body": {
+        "inputs": [
+          {
+            "name": "parameters",
+            "value_type": {
+              "kind": "artifact",
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-affine.input",
+                "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                "version": "1"
+              },
+              "representation": "numeric-vector",
+              "unit": "1",
+              "media_type": "application/json"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "name": "result",
+            "value_type": {
+              "kind": "artifact",
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-affine.output",
+                "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                "version": "1"
+              },
+              "representation": "numeric-vector",
+              "unit": "1",
+              "media_type": "application/json"
+            }
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "await",
+            "node_id": "affine",
+            "issuer_id": "synthetic-issuer",
+            "purpose": "fixture-evaluation",
+            "expected_revision": "revision-1",
+            "subject": {
+              "kind": "input",
+              "name": "parameters"
+            },
+            "output": {
+              "name": "result",
+              "value_type": {
+                "kind": "artifact",
+                "schema_ref": {
+                  "schema_id": "synthetic.numeric-affine.output",
+                  "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                  "version": "1"
+                },
+                "representation": "numeric-vector",
+                "unit": "1",
+                "media_type": "application/json"
+              }
+            },
+            "timeout_seconds": 60,
+            "on_timeout": "blocked"
+          },
+          {
+            "kind": "finish",
+            "node_id": "finish",
+            "outputs": [
+              {
+                "port": "result",
+                "source": {
+                  "kind": "output",
+                  "node_id": "affine",
+                  "port": "result"
+                }
+              }
+            ]
+          }
+        ],
+        "edges": [
+          {
+            "source": "affine",
+            "target": "finish",
+            "route": "next"
+          }
+        ]
+      }
+    },
+    "lock": {
+      "schema_version": "3",
+      "compiler_profile": "amphora-deterministic-compiler-v2",
+      "definition_sha256": "6fd6f892be1f57fa613dd90d002daa4075d1a1e16679b14a85facffb3b33ff89",
+      "tools": [],
+      "schemas": [
+        {
+          "schema_id": "synthetic.numeric-affine.input",
+          "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+          "version": "1"
+        },
+        {
+          "schema_id": "synthetic.numeric-affine.output",
+          "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+          "version": "1"
+        }
+      ],
+      "context": []
+    },
+    "scopes": [
+      {
+        "path": [],
+        "order": [
+          "affine",
+          "finish"
+        ],
+        "nodes": [
+          {
+            "node_id": "affine",
+            "inputs": [
+              {
+                "name": "subject",
+                "value_type": {
+                  "kind": "artifact",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.input",
+                    "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                    "version": "1"
+                  },
+                  "representation": "numeric-vector",
+                  "unit": "1",
+                  "media_type": "application/json"
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "name": "result",
+                "value_type": {
+                  "kind": "artifact",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.output",
+                    "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                    "version": "1"
+                  },
+                  "representation": "numeric-vector",
+                  "unit": "1",
+                  "media_type": "application/json"
+                }
+              }
+            ]
+          },
+          {
+            "node_id": "finish",
+            "inputs": [
+              {
+                "name": "result",
+                "value_type": {
+                  "kind": "artifact",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.output",
+                    "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                    "version": "1"
+                  },
+                  "representation": "numeric-vector",
+                  "unit": "1",
+                  "media_type": "application/json"
+                }
+              }
+            ],
+            "outputs": [
+              {
+                "name": "result",
+                "value_type": {
+                  "kind": "artifact",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-affine.output",
+                    "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                    "version": "1"
+                  },
+                  "representation": "numeric-vector",
+                  "unit": "1",
+                  "media_type": "application/json"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

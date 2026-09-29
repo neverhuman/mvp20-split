@@ -2,7 +2,7 @@
 
 import json
 
-from amphora_contracts_campaigns import ExecutionPlan
+from amphora_contracts_campaigns import parse_execution_plan
 from sqlalchemy import text
 
 from ..lifecycle.claims import RUN
@@ -20,7 +20,7 @@ class GraphStorage:
         row = conn.execute(text("SELECT document,tool_descriptors FROM runtime.graph_plans WHERE tenant_id=:tenant "
                                 "AND project_id=:project AND plan_sha256=:digest"), binding).mappings().one()
         # JSONB may expand exponent notation; reapply the wire types before comparing numeric values.
-        stored = ExecutionPlan.model_validate_json(json.dumps(row["document"])).model_dump(mode="json")
+        stored = parse_execution_plan(json.dumps(row["document"])).model_dump(mode="json")
         ensure(stored == document and row["tool_descriptors"] == descriptors, "graph_plan_identity_conflict")
 
     @staticmethod

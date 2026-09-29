@@ -1,6 +1,6 @@
 # Runtime Persistence Boundary
 
-- Implemented: forward migrations through `runtime_0008` and owner-private command transactions.
+- Implemented: forward migrations through `runtime_0009` and owner-private command transactions.
 - Design: [Physical records](../../../../../docs/Architecture/System/Persistence_Record_Design.md), [runtime protocol](../../../../../docs/Architecture/System/Runtime_Command_Protocol.md).
 
 `migrate.upgrade(url)` runs packaged SQL/Alembic migrations as `runtime_migrator`. The explicit CLI is `python -m amphora_campaign_runtime.persistence.migrate`, using privately supplied `AMPHORA_RUNTIME_MIGRATION_URL`. No API startup migration occurs. `runtime.alembic_version` is private to this owner. Downgrade refuses destructive rollback; changes require forward migration.
@@ -26,3 +26,5 @@ runtime_0006 adds generation/token/lease fencing, bounded backoff/exhaustion met
 runtime_0007 adds explicit fixture/graph execution mode, immutable plan/tool metadata, graph-run inputs/limits/deadlines, scoped frontier records and dispatch ordinals. Existing fixture rows default to fixture/ordinal zero. Graph plans and input identity are insert/read only; only named frontier/state fields can change. No peer schema/table access is granted. The [coordinator](../coordinator/README.md) owns domain transitions; worker attempts and their budget remain in the existing lifecycle. Quiesce pre-0.3 Runtime code before enabling graph runs because it cannot respect graph Finish/frontier termination ownership.
 
 runtime_0008 adds append-only aggregate cuts keyed by scoped run/activation. A deferred scoped foreign key binds each cut to the closure revision's ordinal-zero audit event; committing a cut without that event fails. Runtime's service role receives only SELECT/INSERT. Existing rows and public schema bytes are unchanged. The [aggregation](../aggregation/README.md) boundary validates exact replay, run/node authority and observation revision; scheduler policy integration remains in BP-04.03.
+
+runtime_0009 adds the await node tag, immutable wait expectations/issuer receipts/closures and separately scoped external-wait retention intents/reservations. Deferred audit foreign keys bind openings and closures; exact wait revision/hash foreign keys prevent attachment to another expectation. Intents reference registered commands and waits, without worker attempt/fence rows. Only intent status/outcome can change; evidence and reservations are insert/read only. The [waits](../waits/README.md) module owns typed compatibility and preparation. New profile admission remains blocked until B2 transition/outcome/reconciliation integration; this migration alone does not enable external acceptance.

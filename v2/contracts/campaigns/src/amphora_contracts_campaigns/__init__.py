@@ -1,5 +1,17 @@
 """Public contract surface; consumers import from this module only."""
 
+from .executable.awaitable import (
+    AwaitV3,
+    ExecutableCampaignV3,
+    ExecutableScopeV3,
+    ExecutionPlanV3,
+    IterateV3,
+    PlanDocumentV3,
+    PlanLockV3,
+    ScatterV3,
+    parse_executable_campaign,
+    parse_execution_plan,
+)
 from .executable.nodes import (
     BranchV2,
     ControlEdge,
@@ -61,4 +73,6 @@ __all__ = [
     "ArtifactType", "ScalarType", "CollectionType", "ContextPin", "PlanLock", "NodeBinding", "ScopePlan",
     "PlanDocument", "ExecutionPlan", "ActivationPath", "ArtifactConstant", "ScalarConstant",
     "BooleanConstant", "IntegerConstant", "StringConstant",
+    "AwaitV3", "ExecutableCampaignV3", "ExecutableScopeV3", "ExecutionPlanV3", "IterateV3",
+    "PlanDocumentV3", "PlanLockV3", "ScatterV3", "parse_executable_campaign", "parse_execution_plan",
 ]

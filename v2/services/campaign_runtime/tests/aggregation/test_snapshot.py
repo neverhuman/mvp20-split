@@ -7,6 +7,7 @@ from dataclasses import FrozenInstanceError, replace
 import pytest
 from amphora_campaign_runtime.aggregation import AggregateIdentity, MemberSnapshot, SnapshotCut
 from amphora_campaign_runtime.lifecycle.model import TransitionError
+from amphora_contracts_campaigns import IntegerConstant
 from amphora_contracts_core import Scope
 from amphora_contracts_graph_runtime import GraphBinding, NumberValue
 from pydantic import ValidationError
@@ -94,6 +95,8 @@ def test_invalid_member_evidence_rejected(changes, reason):
 def test_values_revalidated_and_nested_collections_rejected():
     with pytest.raises(ValidationError):
         replace(member(), value=NumberValue.model_construct(kind="number", value="NaN", unit="1"))
+    with pytest.raises(ValidationError):
+        replace(member(), value=IntegerConstant.model_construct(kind="integer", value=True))
     collection = GraphBinding.model_validate_json('{"port":"x","value":{"kind":"collection","items":[]}}').value
     with pytest.raises(TransitionError, match="aggregate_nested_collection"):
         replace(member(), value=collection)

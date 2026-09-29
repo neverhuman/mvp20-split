@@ -9,6 +9,7 @@ from pydantic import TypeAdapter
 
 from ..compiler.catalog import canonical
 from ..lifecycle.model import TransitionError
+from ..wire import raw_fields
 
 MAX_REVISION = 9007199254740991
 TERMINAL = frozenset({"succeeded", "failed", "abstained", "skipped", "cancelled", "blocked"})
@@ -58,8 +59,7 @@ class MemberSnapshot:
         if self.status == "succeeded":
             require(self.value is not None and self.reason_code is None, "aggregate_success_evidence")
             # Revalidate even model_construct/model_copy values; don't keep mutable input references.
-            value = GraphBinding.model_validate_json(canonical({"port": self.member_id,
-                "value": self.value.model_dump(mode="json")})).value
+            value = GraphBinding.model_validate({"port": self.member_id, "value": raw_fields(self.value)}).value
             require(value.kind != "collection", "aggregate_nested_collection")
             object.__setattr__(self, "value", value)
         else:

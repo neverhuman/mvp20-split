@@ -1,6 +1,6 @@
 # Campaign Definition Contracts
 
-- Status: `amphora-contracts-campaigns` 0.2.1 exposes unchanged validation-only wire v1 plus executable wire v2; Runtime compiler accepted, durable interpreter gates in progress.
+- Status: `amphora-contracts-campaigns` 0.3.0 preserves wire v1/v2 and adds await-capable wire v3. Runtime compiler supports v3; v3 execution remains gated in BP-04.03.
 - Architecture: [Graph Execution Model](../../docs/Architecture/System/Graph_Execution_Model.md)
 
 ## Behavior and Public Boundary
@@ -28,3 +28,5 @@ The B1 executable suite is separately selectable with `--module campaigns --area
 B1 checkpoint 2026-09-28 17:40:35: 23 owned tests, 100% of 275 declarative statements (no algorithmic branches); 619 full foundation tests/twelve independent builds and actual REC-01..09 passed. Coverage of DTO declarations is not compiler semantic or runtime execution coverage. Eight wire-v2 schemas published separately; the 102 prior schemas remain byte-identical.
 
 BP-04.02 adds public exports for existing scalar/artifact literal DTOs without changing campaign wire schemas. The graph-runtime package reuses those identities while giving command numbers an explicit decimal-string representation compatible with the unchanged command-v1 fingerprint profile.
+
+BP-04.03 adds `AwaitV3`, recursive `ExecutableScopeV3`, `ExecutableCampaignV3`, `PlanLockV3`, `PlanDocumentV3` and `ExecutionPlanV3`. `parse_executable_campaign` and `parse_execution_plan` dispatch explicitly by wire version; old roots do not silently accept waits. Unchanged leaf nodes, value/predicate types and wire-v2 ActivationPath are reused. The new schema roots are separately published under `contracts/schemas/v3`; fixtures are `contracts/fixtures/v3/await_cases.json`. An await binds issuer/purpose/revision, an artifact subject and output type, bounded timeout and blocked/abstained timeout disposition. It does not issue a laboratory effect or grant acceptance authority.

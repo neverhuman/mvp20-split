@@ -3,7 +3,15 @@
 import hashlib
 from dataclasses import dataclass
 
-from amphora_contracts_campaigns import ExecutableCampaign, ExecutionPlan, PlanDocument
+from amphora_contracts_campaigns import (
+    ExecutableCampaign,
+    ExecutableCampaignV3,
+    ExecutionPlan,
+    ExecutionPlanV3,
+    PlanDocument,
+    PlanDocumentV3,
+    parse_executable_campaign,
+)
 
 from .catalog import binding_key, canonical
 
@@ -27,7 +35,7 @@ def normalize(definition):
     record = definition.model_dump(mode="json")
     record["context"].sort(key=lambda pin: (pin["kind"], pin["identity"], pin["revision"], pin["sha256"]))
     _scope(record["body"])
-    return ExecutableCampaign.model_validate_json(canonical(record))
+    return parse_executable_campaign(canonical(record))
 
 
 @dataclass(frozen=True)
@@ -55,20 +63,23 @@ class CompiledScope:
 
 @dataclass(frozen=True)
 class CompiledCampaign:
-    definition: ExecutableCampaign
+    definition: ExecutableCampaign | ExecutableCampaignV3
     tools: tuple
     schemas: tuple
     scopes: tuple
 
     def seal(self):
         definition = self.definition.model_dump(mode="json")
-        digest = hashlib.sha256(canonical({"profile": "amphora-executable-definition-v2", "definition": definition})).hexdigest()
-        lock = {"schema_version": "2", "compiler_profile": "amphora-deterministic-compiler-v1",
+        version = self.definition.schema_version
+        profile, document_type, plan_type = (("v1", PlanDocument, ExecutionPlan) if version == "2" else
+                                             ("v2", PlanDocumentV3, ExecutionPlanV3))
+        digest = hashlib.sha256(canonical({"profile": "amphora-executable-definition-v" + version, "definition": definition})).hexdigest()
+        lock = {"schema_version": version, "compiler_profile": "amphora-deterministic-compiler-" + profile,
                 "definition_sha256": digest,
                 "tools": [tool.lock.model_dump(mode="json") for tool in sorted(self.tools, key=lambda item: binding_key(item.lock.tool))],
                 "schemas": [schema.record() for schema in sorted(self.schemas, key=lambda item: (item.name, item.version, item.digest))],
                 "context": definition["context"]}
-        document = PlanDocument.model_validate_json(canonical({"profile": "amphora-execution-plan-v1", "definition": definition,
+        document = document_type.model_validate_json(canonical({"profile": "amphora-execution-plan-" + profile, "definition": definition,
                                                                "lock": lock, "scopes": [scope.record() for scope in sorted(self.scopes, key=lambda item: item.path)]}))
         digest = hashlib.sha256(canonical(document.model_dump(mode="json"))).hexdigest()
-        return ExecutionPlan(schema_version="2", sha256=digest, document=document)
+        return plan_type(schema_version=version, sha256=digest, document=document)

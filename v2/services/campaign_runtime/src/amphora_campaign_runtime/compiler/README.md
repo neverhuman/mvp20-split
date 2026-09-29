@@ -2,11 +2,13 @@
 
 - Status: BP-04.01 complete and audited; boundary evidence retained in the [owning plan](../../../../../docs/Build%20Plans/BP-04/Completed/BP-04.01%20Compiler%20and%20executable%20contract.md).
 - Owner: Campaign Runtime. Architecture: [Graph Execution Model](../../../../../docs/Architecture/System/Graph_Execution_Model.md).
-- Public wire boundary: campaigns 0.2.1, executable wire v2. Existing validation-only wire v1 is unchanged.
+- Public wire boundary: campaigns 0.3.0, executable wire v2/v3. Existing v1/v2 schemas and plan identity are unchanged. BP-04.03 owns the await extension; the completed predecessor stays closed.
 
 ## Responsibilities and interfaces
 
 `compile_campaign(ExecutableCampaign, ToolCatalog, SchemaCatalog)` returns an immutable `ExecutionPlan` or raises `CompilationError` with one bounded, reason-coded finding. It has no network, filesystem, database, environment, capacity or execution side effects. Each call owns its temporary analysis; no mutable global compilation cache exists. A failure never publishes a partial plan.
+
+The same entry accepts `ExecutableCampaignV3` and returns `ExecutionPlanV3` with separate definition/compiler/plan profiles. Await nodes require an artifact subject and output shape, using the same local source resolution and exact schema pinning. Issuer/purpose/revision/timeout pins participate in semantic identity; the compiler never calls an issuer or accepts evidence. Nested scatter/loop bodies retain the same scope rules. The independently specified v3 plan fixture is compared exactly, and 116 predecessor schema hashes remain frozen. Runtime admission rejects v3 until BP-04.03/B2 connects wait transitions.
 
 The caller supplies public `ReleaseDescriptor`/`LockEntry` pairs and exact schema bytes. `ResolvedTool` verifies the documented Registry descriptor hash and port/checkpoint lock identities. `PinnedSchema` verifies exact bytes, a bounded Draft 2020-12 document and local JSON-pointer references; it never fetches a URI. Catalogs resolve exact identities and reject duplicate entries. These checks establish immutable compatibility, not live availability, scientific eligibility or permission to run. The initial profile accepts pure synthetic tools with required outputs; optional tool outputs await an explicit missing-value contract and are rejected; no external-effect or scientific-authority execution claim follows.
 

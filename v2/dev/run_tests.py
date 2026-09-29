@@ -30,10 +30,10 @@ def ownership_issues(root=ROOT, scopes=SCOPES):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--module", choices=sorted(SCOPES))
-    parser.add_argument("--area", choices=["graph", "admission", "api", "baseline", "persistence", "lifecycle", "completion", "delivery", "inspection", "publication", "storage", "retention", "maintenance", "acceptance", "descriptors", "routing", "transport", "executable", "compiler", "scheduling", "aggregation"])
+    parser.add_argument("--area", choices=["graph", "admission", "api", "baseline", "persistence", "lifecycle", "completion", "delivery", "inspection", "publication", "storage", "retention", "maintenance", "acceptance", "descriptors", "routing", "transport", "executable", "compiler", "scheduling", "aggregation", "waits"])
     parser.add_argument("--coverage", action="store_true")
     args, pytest_args = parser.parse_known_args()
-    areas = {"runtime": {"aggregation", "scheduling", "compiler", "graph", "admission", "api", "baseline", "persistence", "lifecycle", "completion", "delivery", "inspection", "acceptance"},
+    areas = {"runtime": {"waits", "aggregation", "scheduling", "compiler", "graph", "admission", "api", "baseline", "persistence", "lifecycle", "completion", "delivery", "inspection", "acceptance"},
              "data-artifacts": {"persistence", "publication", "storage", "retention", "maintenance", "acceptance"},
              "registry": {"descriptors", "persistence", "api", "routing"},
              "worker-sdk": {"transport", "lifecycle", "acceptance"}, "campaigns": {"executable"}}

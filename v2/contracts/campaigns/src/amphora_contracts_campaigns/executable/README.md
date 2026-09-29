@@ -1,6 +1,6 @@
 # Executable Campaign Wire Boundary
 
-- Status: BP-04.01/B1 wire models implemented; compiler and interpreter gates pending.
+- Status: wire-v2 compiler/interpreter accepted in BP-04.01/.02; BP-04.03 adds separately versioned wire-v3 waits and compiler support. V3 execution remains gated.
 - Public entry: `amphora_contracts_campaigns`; this folder is private package organization.
 - Architecture: [Graph Execution Model](../../../../../docs/Architecture/System/Graph_Execution_Model.md).
 

@@ -4,7 +4,7 @@ from .catalog import binding_key
 from .errors import require
 from .normalization import CompiledCampaign, CompiledNode, CompiledScope, normalize
 from .resolution import SchemaUsage, SourceResolver
-from .shapes import ArtifactShape, CollectionShape, from_wire, ports
+from .shapes import ArtifactShape, CollectionShape, TypedPort, from_wire, ports
 from .topology import ScopeTopology
 
 
@@ -59,6 +59,12 @@ class _Compilation:
                             "checkpoint_schema_mismatch", here)
             elif node.kind == "branch":
                 resolver.predicate(node.predicate, key, here)
+            elif node.kind == "await":
+                subject = resolver.resolve(node.subject, key, here)
+                require(isinstance(subject, ArtifactShape), "await_artifact_subject_required", here)
+                node_inputs = (TypedPort("subject", subject),)
+                node_outputs = self.typed_ports((node.output,), here)
+                require(isinstance(node_outputs[0].shape, ArtifactShape), "await_artifact_output_required", here)
             elif node.kind == "join":
                 node_outputs = self.typed_ports((node.output,), here)
                 shape = node_outputs[0].shape
@@ -120,5 +126,5 @@ class _Compilation:
 
 
 def compile_campaign(definition, tools, schemas):
-    """Return an immutable wire-v2 plan or one bounded CompilationError; no writes/I/O."""
+    """Return the matching immutable wire-v2/v3 plan or a bounded error; no writes/I/O."""
     return _Compilation(definition, tools, schemas).compile()

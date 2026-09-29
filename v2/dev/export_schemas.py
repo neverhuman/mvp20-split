@@ -13,8 +13,11 @@ from amphora_contracts_campaigns import (
     ActivationPath,
     CampaignDefinition,
     ExecutableCampaign,
+    ExecutableCampaignV3,
     ExecutionPlan,
+    ExecutionPlanV3,
     PlanLock,
+    PlanLockV3,
 )
 from amphora_contracts_commands import CommandIdentity
 from amphora_contracts_core import ArtifactRef, Finding, SchemaRef, Scope
@@ -37,6 +40,12 @@ MODELS_V2 = {
     "campaigns.execution-plan": ExecutionPlan,
     "campaigns.plan-lock": PlanLock,
     "campaigns.activation-path": ActivationPath,
+    "graph-runtime.run-page": graph_runtime_contracts.GraphRunPageV2,
+}
+MODELS_V3 = {
+    "campaigns.definition": ExecutableCampaignV3,
+    "campaigns.execution-plan": ExecutionPlanV3,
+    "campaigns.plan-lock": PlanLockV3,
 }
 
 MODELS["commands.identity"] = CommandIdentity
@@ -44,6 +53,11 @@ for name, model in {
     "admit-run": graph_runtime_contracts.AdmitGraphRun,
     "advance": graph_runtime_contracts.AdvanceGraph,
     "run-page": graph_runtime_contracts.GraphRunPage,
+    "domain-receipt": graph_runtime_contracts.DomainReceipt,
+    "wait-expectation": graph_runtime_contracts.WaitExpectation,
+    "submit-receipt": graph_runtime_contracts.SubmitDomainReceipt,
+    "wait-closure": graph_runtime_contracts.WaitClosure,
+    "wait-observation": graph_runtime_contracts.WaitObservation,
 }.items():
     MODELS["graph-runtime." + name] = model
 for name, model in {
@@ -106,7 +120,7 @@ def encoded(value: object) -> bytes:
 
 
 def artifacts(version="1") -> dict[str, bytes]:
-    models = {"1": MODELS, "2": MODELS_V2}[version]
+    models = {"1": MODELS, "2": MODELS_V2, "3": MODELS_V3}[version]
     result = {}
     for name, model in sorted(models.items()):
         for mode in ("validation", "serialization"):
@@ -138,8 +152,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
-    differences = [f"v{version}/{name}" for version in ("1", "2")
+    differences = [f"v{version}/{name}" for version in ("1", "2", "3")
         for name in publish(ROOT / "contracts" / "schemas" / ("v" + version), args.check, version)]
     if differences:
         raise SystemExit("Schema publication differs: " + ", ".join(differences))
-    print("Schema publication verified" if args.check else f"Published {2 * (len(MODELS) + len(MODELS_V2))} schemas and versioned manifests")
+    print("Schema publication verified" if args.check else f"Published {2 * (len(MODELS) + len(MODELS_V2) + len(MODELS_V3))} schemas and versioned manifests")
