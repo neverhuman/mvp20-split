@@ -4,6 +4,7 @@ import json
 
 from amphora_contracts_commands import CanonicalCommand, CommandEncodingError
 
+from .bindings import GraphNodeViewV3, GraphRunPageV3
 from .models import AdmitGraphRun, AdvanceGraph, GraphLimits, GraphNodeView, GraphRunPage
 from .values import (
     CollectionValue,
@@ -54,4 +55,4 @@ def parse_graph_command(family, raw):
 __all__ = ["AdmitGraphRun", "AdvanceGraph", "CollectionValue", "GraphBinding", "GraphLimits", "GraphNodeView",
            "GraphRunPage", "GraphValue", "MissingValue", "NumberValue", "PresentValue", "ScalarValue", "parse_graph_command",
            "DomainReceipt", "GraphNodeViewV2", "GraphRunPageV2", "SubmitDomainReceipt", "WaitExpectation",
-           "WaitClosure", "WaitObservation"]
+           "WaitClosure", "WaitObservation", "GraphNodeViewV3", "GraphRunPageV3"]

@@ -2,16 +2,16 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-04.04 activation blocked on BIND-01 scope/sequence decision.
-- Last refreshed: `2026-09-29 09:10:31` (America/Chicago).
+- Status: primary_active; BP-04.04A / Build / B2.
+- Last refreshed: `2026-09-29 13:25:53` (America/Chicago).
 - Owner/scope: Campaign Runtime coordinator, aggregator and recovery modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-02 durable commits and BP-03 indexed callable tools.
-- Implementation: **60%**, 12/20 verified child deliveries. Each child owns four deliveries; parent counts each once. Parent phase Pn mirrors child .0n overall completion.
+- Implementation: **54.17%**, 13/24 verified child deliveries across six children. Each child owns four deliveries; counted once. Phase mapping follows the explicit ordered table, not the child-number suffix.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: owner review of proposed BP-04.04A typed Artifact/collection prerequisite; .04 implementation has not started. .01/.02/.03 remain closed/audited.
+- Current implementation task: BP-04.04A/B2 durable conversion/publication/protection; .04/.05 queued behind it.
 - Demonstrated behavior: .01 closed/audited: compiler, 111-case semantic proof and actual public peer/fresh replacement acceptance passed, including manual numerical plan identity, scoped availability and bounded constructs. .02 closed/audited: durable advancement/hosting, 60 scheduling tests/eight actual coordinator-process cases and eight installed graph/tool/Artifact/replacement cases passed. Richer policies remain .03.
-- Blockers: BIND-01 generated-population/gathered-result conversion is absent. Proposed prerequisite adds four deliveries; current approved accounting remains 12/20, pending owner direction.
+- Blockers: none for approved .04A scope. BIND-01 remediation is active; .04 waits for its acceptance.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
 
@@ -32,8 +32,9 @@ Primary services retain private state, dependencies, migrations and module READM
 | P1 / [BP-04.01 Compiler and executable contract](BP-04/Completed/BP-04.01%20Compiler%20and%20executable%20contract.md) | 100% | 100% | 100% | Closed/audited |
 | P2 / [BP-04.02 Frontier and scheduling](BP-04/Completed/BP-04.02%20Frontier%20and%20scheduling.md) | 100% | 100% | 100% | Closed/audited |
 | P3 / [BP-04.03 Aggregation and failure policy](BP-04/Completed/BP-04.03%20Aggregation%20and%20failure%20policy.md) | 100% | 100% | 100% | Closed/audited |
-| P4 / [BP-04.04 V1 baseline and successor graphs](BP-04/BP-04.04%20V1%20baseline%20and%20successor%20graphs.md) | 0% | 0% | 0% | BP-04.03 acceptance |
-| P5 / [BP-04.05 Recovery and closeout](BP-04/BP-04.05%20Recovery%20and%20closeout.md) | 0% | 0% | 0% | BP-04.04 acceptance |
+| P4 / [BP-04.04A Typed artifact and collection bindings](BP-04/BP-04.04A%20Typed%20artifact%20and%20collection%20bindings.md) | 25% | 33.33% | 0% | B1 verified; B2 active |
+| P5 / [BP-04.04 V1 baseline and successor graphs](BP-04/BP-04.04%20V1%20baseline%20and%20successor%20graphs.md) | 0% | 0% | 0% | BP-04.04A acceptance |
+| P6 / [BP-04.05 Recovery and closeout](BP-04/BP-04.05%20Recovery%20and%20closeout.md) | 0% | 0% | 0% | BP-04.04 acceptance |
 
 Each linked child is the execution tracker for its scope. Build tasks name concrete implementation; acceptance requires independent evidence and a scoped drift audit. Do not repeat the historical task pairs as a second work list. No dependent child starts before its predecessor acceptance gate; independent design review does not activate implementation.
 
@@ -65,6 +66,6 @@ Child closeout archives that child with its audit and repairs links; the parent 
 
 `2026-09-28 17:23:58`: corrected_ready after BP-02 and BP-03 closeout. Keep compiler, coordinator and aggregator as focused Runtime-owned modules; public campaign contracts contain only wire DTOs. The initial wire-v1 control graph stays validation-only. .01 introduces explicitly versioned executable definitions/locks with finite predicates, explicit data ports, scoped control constructs and deterministic paths; no arbitrary code or LLM interpretation. .02 adds durable execution of the compiled plan, .03 aggregation/failure/external waits, .04 extracted v1 and successor scenarios, .05 actual recovery/parent closeout. At this historical activation checkpoint only .01/B1 was active and every child was at 0%; subsequent verified progress is in the canonical tracker above. Scientific/provider/UI/host choices do not block these synthetic contracts.
 
-## Proposed Scope Addition
+## Approved Scope Addition
 
-[BP-04.04A Typed artifact and collection bindings](BP-04/BP-04.04A%20Typed%20artifact%20and%20collection%20bindings.md) is proposed at 0%, not activated or included in the denominator. Approval would add four deliveries before .04 and rebaseline this parent from 12/20 (60%) to 12/24 (50%). Closed children retain all earned credit. The .04 activation audit records the concrete missing boundary.
+[BP-04.04A Typed artifact and collection bindings](BP-04/BP-04.04A%20Typed%20artifact%20and%20collection%20bindings.md) is approved and active at 0%, adding four deliveries before .04. This parent is rebaselined from 12/20 (60%) to 12/24 (50%). Closed children retain all earned credit. The .04 activation audit records the concrete missing boundary.

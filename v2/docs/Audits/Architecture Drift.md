@@ -1,10 +1,10 @@
 # Architecture Drift
 
-- Status: BP-02/BP-03 and BP-04.01/.02/.03 closed/audited; BP-04.04 activation blocked on BIND-01.
-- Last refreshed: `2026-09-29 09:10:31` (America/Chicago).
+- Status: BP-04.04A active remediation of BIND-01; .01/.02/.03 closed/audited.
+- Last refreshed: `2026-09-29 12:52:29` (America/Chicago).
 - Scope: v2 design/implementation alignment
 - Active focus: BIND-01 Artifact/collection conversion prerequisite for generated-population parity.
-- Next gate: owner direction on proposed BP-04.04A scope/sequence.
+- Next gate: BP-04.04A/B1 compatible typed-binding boundary and independent fixtures.
 
 ## Active Findings
 
@@ -24,4 +24,5 @@ Use [Development Process](../Development_Process.md) and the [audit template](..
 
 - `2026-09-26 16:31:31`: frozen-baseline verification reports `ADDED v1/LICENSE`, already introduced in committed baseline `99d219c`; all manifest content hashes match. No v1 edits made. Owner: repository baseline metadata; follow-up requires explicit baseline maintenance authorization, not implementation blocker. Artifact A2-A4 gates pass; service closeout audit remains A6.
 
-- `2026-09-29 09:10:31`: **BIND-01, blocks BP-04.04 activation.** Artifact-only tool inputs/outputs and graph collection values have no general conversion path; scalar predicate projection is insufficient for generated population/scatter/gather/selection feedback. Owner: Runtime binding/compiler and Artifact integration. [Proposed prerequisite](../Build%20Plans/BP-04/BP-04.04A%20Typed%20artifact%20and%20collection%20bindings.md) supplies bounded design, oracles and rebaseline; owner scope/sequence decision pending. Existing closed child evidence remains aligned.
+
+- BIND-01: owner-approved remediation active in BP-04.04A/B1. Artifact/collection conversion remains technically open until durable execution and installed-peer acceptance; no owner-decision blocker remains. Owner: Runtime binding/compiler and Artifact integration. Solver baseline BP-04.04 remains queued behind this gate.

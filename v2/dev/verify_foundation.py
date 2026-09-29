@@ -208,7 +208,7 @@ def main():
     findings = check()
     if findings:
         raise SystemExit("\n".join(findings))
-    differences = [f"v{version}/{name}" for version in ("1", "2", "3")
+    differences = [f"v{version}/{name}" for version in ("1", "2", "3", "4")
         for name in publish(ROOT / ("contracts/schemas/v" + version), check=True, version=version)]
     if differences:
         raise SystemExit("Schema drift: " + ", ".join(differences))

@@ -96,3 +96,7 @@ Final phase includes a component-scoped architecture drift audit. Fix blocking d
 P1/P2 closeout evidence is in their completed children linked above. Remaining closeout gates are owned by their respective child plans; historical drafting does not establish scientific or deployment validity.
 
 `2026-09-29 09:04:11`: P3 / [BP-04.03](BP-04/Completed/BP-04.03%20Aggregation%20and%20failure%20policy.md) closed/audited at 100% (4/4). Canonical parent owns subsequent progress; no live tracker is maintained here.
+
+`2026-09-29 12:52:29`: User approved .04A typed Artifact/collection prerequisite. Parent scope expanded from five children/twenty deliveries to six children/twenty-four deliveries; completed 12 deliveries preserved, progress rebaselined 60% -> 50%. Current order .01/.02/.03/.04A/.04/.05; parent phases P4/P5/P6 now bindings/baseline/recovery. Canonical trackers own subsequent progress.
+
+`2026-09-29 13:25:53`: .04A/B1 verified; one additional delivery under the approved denominator (13/24). Contract/compiler boundary and unchanged predecessor schema evidence are recorded in the canonical child. B2 durable conversion is next; P1/P2/P3 remain closed.

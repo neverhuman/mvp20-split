@@ -1,5 +1,7 @@
 # Graph Runtime Contracts
 
+Package 0.3.0 adds `GraphNodeViewV3`/`GraphRunPageV3` for explicit `artifact_project` and `artifact_materialize` node tags. Earlier page roots and all predecessor schema bytes remain unchanged. Runtime 0.8.0 publishes this boundary but does not yet host the new page route or enable wire-v4 execution; BP-04.04A/B2 owns that integration. The new DTO uses public campaigns 0.4.0; worker receipt formats are unchanged.
+
 - Package: `amphora-contracts-graph-runtime` 0.2.1; wire-v1 shapes unchanged, receipt/wait roots and separately versioned graph observations. The patch updates the exact campaigns 0.3.1 dependency without changing schema bytes.
 - Owner: Campaign Runtime coordination boundary; Runtime 0.7.0 hosts v2/v3 graph execution and wait receipts. Actual competing-process/installed-issuer acceptance passed BP-04.03/B3-V1.
 - Architecture: [Graph Execution Model](../../docs/Architecture/System/Graph_Execution_Model.md).

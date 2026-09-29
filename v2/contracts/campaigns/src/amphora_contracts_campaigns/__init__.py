@@ -9,6 +9,20 @@ from .executable.awaitable import (
     PlanDocumentV3,
     PlanLockV3,
     ScatterV3,
+)
+from .executable.bindings import (
+    ArtifactMaterializeV4,
+    ArtifactProjectV4,
+    BindingLimits,
+    BindingPrimitiveDescriptor,
+    ExecutableCampaignV4,
+    ExecutableScopeV4,
+    ExecutionPlanV4,
+    IterateV4,
+    MaterializeField,
+    PlanDocumentV4,
+    PlanLockV4,
+    ScatterV4,
     parse_executable_campaign,
     parse_execution_plan,
 )
@@ -61,6 +75,9 @@ from .models import (
 )
 
 __all__ = [
+    "ArtifactMaterializeV4", "ArtifactProjectV4", "BindingLimits", "BindingPrimitiveDescriptor",
+    "ExecutableCampaignV4", "ExecutableScopeV4", "ExecutionPlanV4", "IterateV4", "MaterializeField",
+    "PlanDocumentV4", "PlanLockV4", "ScatterV4",
     "AllCollectionPolicy", "PartialCollectionPolicy",
     "Invoke",
     "Predicate",

@@ -1,5 +1,7 @@
 # Campaign Runtime
 
+Runtime 0.8.0 adds the BP-04.04A/B1 typed Artifact/collection compiler boundary, campaigns 0.4.0 and graph-runtime 0.3.0. Wire-v4/profile-v3 projection/materialization plans compile, but admission explicitly returns `graph_binding_profile_not_enabled` until B2 supplies durable conversion/publication/protection. Existing v2/v3 execution retains its accepted behavior. No migration beyond runtime_0011 is introduced by this compiler-only checkpoint.
+
 - Status: synthetic invocation lifecycle and atomic completion implemented; paired retention/delivery acceptance verified; REC-01..09 recovery/replacement verified; configured deterministic graph execution/replacement accepted in BP-04.02; richer policies remain BP-04.03.
 - Package: `amphora-campaign-runtime` 0.5.0.
 - Architecture: [Graph Runner](../../docs/Architecture/System/Graph_Runner.md), [runtime protocol](../../docs/Architecture/System/Runtime_Command_Protocol.md), [isolation](../../docs/Architecture/System/Service_Isolation.md).

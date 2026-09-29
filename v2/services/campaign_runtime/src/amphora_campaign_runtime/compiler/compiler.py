@@ -1,5 +1,6 @@
 """Pure bounded semantic compilation. The caller supplies verified public resolver inputs."""
 
+from .bindings import BindingCompiler
 from .catalog import binding_key
 from .errors import require
 from .normalization import CompiledCampaign, CompiledNode, CompiledScope, normalize
@@ -65,6 +66,11 @@ class _Compilation:
                 node_inputs = (TypedPort("subject", subject),)
                 node_outputs = self.typed_ports((node.output,), here)
                 require(isinstance(node_outputs[0].shape, ArtifactShape), "await_artifact_output_required", here)
+            elif node.kind in {"artifact_project", "artifact_materialize"}:
+                node_outputs = self.typed_ports((node.output,), here)
+                bindings = BindingCompiler(resolver, self.usage)
+                compile_binding = bindings.project if node.kind == "artifact_project" else bindings.materialize
+                node_inputs = compile_binding(node, node_outputs[0].shape, here)
             elif node.kind == "join":
                 node_outputs = self.typed_ports((node.output,), here)
                 shape = node_outputs[0].shape
@@ -126,5 +132,5 @@ class _Compilation:
 
 
 def compile_campaign(definition, tools, schemas):
-    """Return the matching immutable wire-v2/v3 plan or a bounded error; no writes/I/O."""
+    """Return the matching immutable wire-v2/v3/v4 plan or a bounded error; no writes/I/O."""
     return _Compilation(definition, tools, schemas).compile()

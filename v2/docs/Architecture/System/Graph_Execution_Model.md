@@ -82,6 +82,8 @@ BP-04.03 adds await-capable wire v3 with separate definition/compiler/plan profi
 
 ## Durable Frontier Boundary
 
+[Typed Graph and Artifact Bindings](Graph_Artifact_Bindings.md) defines the approved domain-neutral conversion boundary needed between tool-produced Artifacts and graph collections. Wire-v4 adds explicit projection/materialization primitives; BP-04.04A owns versioned contracts, durable publication/protection and process/peer proof before source-derived solver parity. This is an immediate child design; implementation evidence remains in its module contracts and canonical plan.
+
 Graph runs have explicit execution mode and immutable admitted plan/input/tool pins. The Runtime coordinator owns graph scopes/nodes and deterministic dispatch priority; the existing invocation lifecycle remains the sole attempt/fence/budget authority. Materializing queued graph work does not reserve an attempt a second time. Individual tool completion must not terminalize a graph merely because all currently issued invocations finished; committed Finish/frontier state determines whole-graph completion.
 
 Graph orchestration commands use a focused public contract package, keeping scientific worker DTO dependencies stable. Command numeric values use bounded plain decimal strings to preserve the existing portable command fingerprint profile; compiler numeric literals are converted explicitly when projected into committed graph values. [Coordinator module contract](../../../services/campaign_runtime/src/amphora_campaign_runtime/coordinator/README.md) owns implemented advancement and configured hosting, with distinct competing-process, installed-peer and richer aggregation gates.

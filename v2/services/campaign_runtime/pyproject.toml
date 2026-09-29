@@ -1,12 +1,12 @@
 [project]
 name = "amphora-campaign-runtime"
-version = "0.7.0"
+version = "0.8.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
     "pydantic>=2.12,<3",
     "amphora-contracts-core==0.1.0",
     "amphora-contracts-tools==0.1.0",
-    "amphora-contracts-campaigns==0.3.1",
+    "amphora-contracts-campaigns==0.4.0",
     "fastapi>=0.115,<1",
     "uvicorn>=0.34,<1",
     "sqlalchemy>=2,<3",
@@ -16,7 +16,7 @@ dependencies = [
     "amphora-contracts-runtime",
     "amphora-contracts-commands",
     "amphora-contracts-artifacts",
-    "amphora-contracts-graph-runtime==0.2.1",
+    "amphora-contracts-graph-runtime==0.3.0",
 ]
 
 [project.scripts]

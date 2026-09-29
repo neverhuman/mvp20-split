@@ -129,7 +129,8 @@ class PinnedSchema:
                 "unsupported_projection_schema", location)
         return node if unit is None else {**node, "x-amphora-unit": unit}
 
-    def project(self, path, parent_unit, location):
+    def binding_target(self, path, location):
+        """Resolve a finite declared schema path; return an immutable schema fragment."""
         node = self._resolve(self._document, location)
         for step in path:
             if isinstance(step, str):
@@ -141,6 +142,10 @@ class PinnedSchema:
                 prefix = node.get("prefixItems", ())
                 node = prefix[step] if step < len(prefix) else node.get("items", True)
             node = self._resolve(node, location)
+        return node
+
+    def project(self, path, parent_unit, location):
+        node = self.binding_target(path, location)
         kind = node.get("type")
         require(isinstance(kind, str) and kind in {"boolean", "integer", "number", "string"}, "projection_not_scalar", location)
         unit = node.get("x-amphora-unit", parent_unit if kind in {"integer", "number"} else "1")

@@ -6,10 +6,13 @@ from dataclasses import dataclass
 from amphora_contracts_campaigns import (
     ExecutableCampaign,
     ExecutableCampaignV3,
+    ExecutableCampaignV4,
     ExecutionPlan,
     ExecutionPlanV3,
+    ExecutionPlanV4,
     PlanDocument,
     PlanDocumentV3,
+    PlanDocumentV4,
     parse_executable_campaign,
 )
 
@@ -27,6 +30,8 @@ def _scope(body):
                 node[key].sort(key=lambda binding: binding["port"])
         if "state" in node:
             node["state"].sort(key=lambda slot: slot["name"])
+        if "fields" in node:
+            node["fields"].sort(key=lambda field: field["name"])
         if "body" in node:
             _scope(node["body"])
 
@@ -63,7 +68,7 @@ class CompiledScope:
 
 @dataclass(frozen=True)
 class CompiledCampaign:
-    definition: ExecutableCampaign | ExecutableCampaignV3
+    definition: ExecutableCampaign | ExecutableCampaignV3 | ExecutableCampaignV4
     tools: tuple
     schemas: tuple
     scopes: tuple
@@ -71,8 +76,8 @@ class CompiledCampaign:
     def seal(self):
         definition = self.definition.model_dump(mode="json")
         version = self.definition.schema_version
-        profile, document_type, plan_type = (("v1", PlanDocument, ExecutionPlan) if version == "2" else
-                                             ("v2", PlanDocumentV3, ExecutionPlanV3))
+        profile, document_type, plan_type = {"2": ("v1", PlanDocument, ExecutionPlan),
+            "3": ("v2", PlanDocumentV3, ExecutionPlanV3), "4": ("v3", PlanDocumentV4, ExecutionPlanV4)}[version]
         digest = hashlib.sha256(canonical({"profile": "amphora-executable-definition-v" + version, "definition": definition})).hexdigest()
         lock = {"schema_version": version, "compiler_profile": "amphora-deterministic-compiler-" + profile,
                 "definition_sha256": digest,

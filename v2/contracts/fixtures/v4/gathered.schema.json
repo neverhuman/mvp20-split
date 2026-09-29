@@ -1,0 +1,1 @@
+{"additionalProperties":false,"properties":{"values":{"items":{"type":"number","x-amphora-unit":"1"},"maxItems":3,"type":"array"}},"required":["values"],"type":"object"}
