@@ -1,0 +1,30 @@
+{
+  "verified_at": "2026-09-29 15:52:36",
+  "delivery": "BP-04.04A/B2",
+  "runtime": "0.9.0",
+  "migrations": [
+    "runtime_0012",
+    "runtime_0013"
+  ],
+  "foundation_tests": 1079,
+  "independent_installs": 13,
+  "recovery_scope": "4ab86e458ca64f5f88b9a1e2c6927880",
+  "round_trip": {
+    "iterations": 2,
+    "worker_invocations": 10,
+    "binding_conversions": 20,
+    "expected_values": [
+      7,
+      11,
+      15
+    ],
+    "tool": "actual affine kernel in test process; Runtime transactions actual PostgreSQL",
+    "artifact_peer": "scripted"
+  },
+  "public_http_publication": "scripted HTTP peer; original finalized receipt replay avoids another stream",
+  "remaining": [
+    "B3 actual competing/interrupted coordinators",
+    "V1 installed Artifact/tools and Runtime replacement"
+  ],
+  "log": ".test-results/bp0404a-b2-final-foundation.log"
+}

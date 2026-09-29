@@ -27,6 +27,8 @@ class GraphPoller:
                 "AND status='running' AND execution_mode='graph'"), params).scalar_one_or_none()
         if run is None:
             self.pending = None
+            if self.advancer.bindings is not None:
+                recovered = self.advancer.bindings.tick(principal) or recovered
             return recovered
         StaleIntents(self.engine).sweep(principal, run, limit=100)
         if self.pending is None or self.pending[0] != run:

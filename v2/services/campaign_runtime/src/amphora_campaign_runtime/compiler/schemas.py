@@ -5,10 +5,11 @@ import json
 import math
 from collections.abc import Mapping
 from dataclasses import dataclass
+from decimal import Decimal
 from types import MappingProxyType
 from urllib.parse import unquote
 
-from jsonschema import Draft202012Validator
+from jsonschema import Draft202012Validator, validators
 from jsonschema.exceptions import SchemaError
 
 from .errors import CompilationError, require
@@ -51,6 +52,8 @@ def _freeze(value):
 class PinnedSchema:
     identity: SchemaIdentity
     _document: object
+    _body: bytes
+    _formats: frozenset
 
     def __init__(self, identity, body):
         location = identity.name
@@ -63,8 +66,9 @@ class PinnedSchema:
         except (ValueError, UnicodeError, RecursionError, SchemaError) as error:
             raise CompilationError("invalid_schema_document", location) from error
         object.__setattr__(self, "identity", identity)
+        object.__setattr__(self, "_body", body)
         object.__setattr__(self, "_document", document)
-        pending, count, seen, references = [(document, 0)], 0, set(), []
+        pending, count, seen, references, formats = [(document, 0)], 0, set(), [], set()
         while pending:
             node, depth = pending.pop()
             count += 1
@@ -72,6 +76,8 @@ class PinnedSchema:
             if isinstance(node, bool):
                 continue
             seen.add(id(node))
+            if "format" in node:
+                formats.add(node["format"])
             require(not any(key in node for key in ("$id", "$dynamicRef", "$dynamicAnchor", "$anchor")),
                     "unsupported_schema_reference", location)
             require(node.get("$schema", "https://json-schema.org/draft/2020-12/schema") == "https://json-schema.org/draft/2020-12/schema",
@@ -89,6 +95,7 @@ class PinnedSchema:
                 "invalid_schema_reference_target", location)
         try:
             object.__setattr__(self, "_document", _freeze(document))
+            object.__setattr__(self, "_formats", frozenset(formats))
         except RecursionError as error:
             raise CompilationError("schema_complexity_limit", location) from error
 
@@ -143,6 +150,23 @@ class PinnedSchema:
                 node = prefix[step] if step < len(prefix) else node.get("items", True)
             node = self._resolve(node, location)
         return node
+
+    def validate(self, value):
+        """Validate actual JSON against the exact local pin, preserving decimal numbers."""
+        from ..lifecycle.model import TransitionError
+
+        if not self._formats <= set(Draft202012Validator.FORMAT_CHECKER.checkers):
+            raise TransitionError("binding_schema_format_unsupported")
+        checker = Draft202012Validator.TYPE_CHECKER.redefine("integer", lambda _checker, item:
+            type(item) is int or isinstance(item, Decimal) and item.is_finite() and item == item.to_integral_value())
+        validator = validators.extend(Draft202012Validator, type_checker=checker)(
+            json.loads(self._body, parse_float=Decimal), format_checker=Draft202012Validator.FORMAT_CHECKER)
+        try:
+            valid = validator.is_valid(value)
+        except (ValueError, TypeError, RecursionError, ArithmeticError) as error:
+            raise TransitionError("binding_schema_invalid") from error
+        if not valid:
+            raise TransitionError("binding_schema_invalid")
 
     def project(self, path, parent_unit, location):
         node = self.binding_target(path, location)

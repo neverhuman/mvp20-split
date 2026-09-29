@@ -20,8 +20,9 @@ from .values import BoundValues, ensure
 
 
 class GraphAdmission:
-    def __init__(self, engine, catalog):
+    def __init__(self, engine, catalog, *, bindings_enabled=False):
         self.commands, self.catalog = CommandStore(engine), catalog
+        self.bindings_enabled = bindings_enabled
 
     def admit(self, principal, command):
         principal.require("admit", command.identity)
@@ -38,7 +39,7 @@ class GraphAdmission:
                 return CommandReceipt.model_validate(existing["receipt"])
             try:
                 entry = self.catalog.require(principal.scope, request.plan_sha256)
-                ensure(entry.plan.schema_version != "4", "graph_binding_profile_not_enabled")
+                ensure(entry.plan.schema_version != "4" or self.bindings_enabled, "graph_binding_profile_not_enabled")
                 values = BoundValues(request.inputs).validate(entry.plan.document.definition.body.inputs, principal.scope)
                 RunBudget(request.budget.limit)
                 address = ScopeAddress(entry.plan.sha256)

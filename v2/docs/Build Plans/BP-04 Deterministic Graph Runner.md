@@ -2,15 +2,15 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-04.04A / Build / B2.
-- Last refreshed: `2026-09-29 13:25:53` (America/Chicago).
+- Status: primary_active; BP-04.04A / Build / B3.
+- Last refreshed: `2026-09-29 15:52:36` (America/Chicago).
 - Owner/scope: Campaign Runtime coordinator, aggregator and recovery modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-02 durable commits and BP-03 indexed callable tools.
-- Implementation: **54.17%**, 13/24 verified child deliveries across six children. Each child owns four deliveries; counted once. Phase mapping follows the explicit ordered table, not the child-number suffix.
+- Implementation: **58.33%**, 14/24 verified child deliveries across six children. Each child owns four deliveries; counted once. Phase mapping follows the explicit ordered table, not the child-number suffix.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-04.04A/B2 durable conversion/publication/protection; .04/.05 queued behind it.
-- Demonstrated behavior: .01 closed/audited: compiler, 111-case semantic proof and actual public peer/fresh replacement acceptance passed, including manual numerical plan identity, scoped availability and bounded constructs. .02 closed/audited: durable advancement/hosting, 60 scheduling tests/eight actual coordinator-process cases and eight installed graph/tool/Artifact/replacement cases passed. Richer policies remain .03.
+- Current implementation task: BP-04.04A/B3 actual process failure/concurrency proof; .04/.05 queued behind it.
+- Demonstrated behavior: .01 closed/audited: compiler, 111-case semantic proof and actual public peer/fresh replacement acceptance passed, including manual numerical plan identity, scoped availability and bounded constructs. .02 closed/audited: durable advancement/hosting, 60 scheduling tests/eight actual coordinator-process cases and eight installed graph/tool/Artifact/replacement cases passed. .03 closed/audited: aggregation and external receipt execution with actual process/installed-issuer proof. .04A B1/B2 adds typed protected conversions; its B3/V1 process and installed round-trip gates remain.
 - Blockers: none for approved .04A scope. BIND-01 remediation is active; .04 waits for its acceptance.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
@@ -32,7 +32,7 @@ Primary services retain private state, dependencies, migrations and module READM
 | P1 / [BP-04.01 Compiler and executable contract](BP-04/Completed/BP-04.01%20Compiler%20and%20executable%20contract.md) | 100% | 100% | 100% | Closed/audited |
 | P2 / [BP-04.02 Frontier and scheduling](BP-04/Completed/BP-04.02%20Frontier%20and%20scheduling.md) | 100% | 100% | 100% | Closed/audited |
 | P3 / [BP-04.03 Aggregation and failure policy](BP-04/Completed/BP-04.03%20Aggregation%20and%20failure%20policy.md) | 100% | 100% | 100% | Closed/audited |
-| P4 / [BP-04.04A Typed artifact and collection bindings](BP-04/BP-04.04A%20Typed%20artifact%20and%20collection%20bindings.md) | 25% | 33.33% | 0% | B1 verified; B2 active |
+| P4 / [BP-04.04A Typed artifact and collection bindings](BP-04/BP-04.04A%20Typed%20artifact%20and%20collection%20bindings.md) | 50% | 66.67% | 0% | B1/B2 verified; B3 active |
 | P5 / [BP-04.04 V1 baseline and successor graphs](BP-04/BP-04.04%20V1%20baseline%20and%20successor%20graphs.md) | 0% | 0% | 0% | BP-04.04A acceptance |
 | P6 / [BP-04.05 Recovery and closeout](BP-04/BP-04.05%20Recovery%20and%20closeout.md) | 0% | 0% | 0% | BP-04.04 acceptance |
 

@@ -11,6 +11,8 @@ from amphora_contracts_tools import ToolDescriptor
 from sqlalchemy import create_engine, text
 
 from .api import create_app
+from .artifact_bindings.coordinator import BindingCoordinator
+from .artifact_bindings.publication import ArtifactPublisher
 from .completion.artifacts import ArtifactReservations
 from .completion.coordinator import CompletionCoordinator
 from .coordinator.admission import GraphAdmission
@@ -47,7 +49,7 @@ class Host:
     def load(cls, path):
         raw = json.loads(Path(path).read_text(encoding="utf-8"))
         if not {"database_url_env", "principals", "fixtures"} <= set(raw) or set(raw) - {
-            "database_url_env", "principals", "fixtures", "tools", "artifacts", "delivery", "inspection", "graphs", "projections"}:
+            "database_url_env", "principals", "fixtures", "tools", "artifacts", "delivery", "inspection", "graphs", "projections", "bindings"}:
             raise ValueError("Explicit database, principals and fixture allowlist required")
         entries, principals = [], []
         for item in raw["principals"]:
@@ -84,6 +86,14 @@ class Host:
             artifacts = ArtifactReservations(peer["runtime_owner"], peer["reserve_endpoint"], os.environ[peer["token_env"]])
         if graph_catalog is not None and graph_catalog.needs_completion and artifacts is None:
             raise ValueError("Graph tools require a configured artifact completion peer")
+        publisher = None
+        if "bindings" in raw:
+            peer = raw["bindings"]
+            if graph_catalog is None or artifacts is None or set(peer) != {"endpoint", "token_env"}:
+                raise ValueError("Bindings require configured graph and Artifact protection peers")
+            publisher = ArtifactPublisher(peer["endpoint"], os.environ[peer["token_env"]], artifacts.owner)
+        if graph_catalog is not None and graph_catalog.needs_bindings and publisher is None:
+            raise ValueError("Wire-v4 graphs require an explicit Artifact binding peer")
         delivery_config = raw.get("delivery", {})
         if set(delivery_config) - {"max_attempts", "lease_seconds", "notifications"}:
             raise ValueError("Unknown delivery configuration")
@@ -112,11 +122,14 @@ class Host:
                     conn.execute(text("SELECT frontier_revision FROM runtime.graph_runs LIMIT 0"))
                     conn.execute(text("SELECT cut_sha256,decision_sha256 FROM runtime.graph_aggregate_decisions LIMIT 0"))
                     conn.execute(text("SELECT opened_at FROM runtime.graph_scopes LIMIT 0"))
+                    conn.execute(text("SELECT intent_id FROM runtime.binding_intents LIMIT 0"))
             completion = None if artifacts is None else CompletionCoordinator(engine, artifacts)
+            bindings = None if publisher is None else BindingCoordinator(engine, graph_catalog, artifacts, publisher)
             return cls(FixtureAdmission(engine, catalog), credentials, tuple(principals), completion,
                        DeliveryWorker(DeliveryStore(engine, policy), targets),
                        None if cursors is None else RuntimeHistory(engine, cursors),
-                       None if graph_catalog is None else (GraphAdmission(engine, graph_catalog), GraphAdvancer(engine, projections)))
+                       None if graph_catalog is None else (GraphAdmission(engine, graph_catalog, bindings_enabled=bindings is not None),
+                                                           GraphAdvancer(engine, projections, bindings)))
         except BaseException:
             engine.dispose()
             raise

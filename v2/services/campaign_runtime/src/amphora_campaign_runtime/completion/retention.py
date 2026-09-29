@@ -14,6 +14,8 @@ def retention_tables(intent_id):
     """Both private intent families use the same public Artifact protection protocol."""
     if intent_id.startswith("wait:"):
         return "runtime.wait_retention_intents", "runtime.wait_intent_reservations"
+    if intent_id.startswith("binding:"):
+        return "runtime.binding_intents", "runtime.binding_reservations"
     return "runtime.completion_intents", "runtime.intent_reservations"
 
 

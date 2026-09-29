@@ -9,13 +9,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-04 primary active; BP-05 through BP-09 queued; BP-01/BP-01A/BP-02/BP-03 closed.
-- Last refreshed: `2026-09-29 13:25:53` (America/Chicago).
+- Last refreshed: `2026-09-29 15:52:36` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P3 / BP-04 - deterministic graph runner.
-- Primary active implementation plan / phase / task: BP-04 -> BP-04.04A / Build / B2.
-- Current task: BP-04.04A/B2 durable conversion/publication/protection; B1 verified.
-- Next task: BP-04.04A/B3 actual process failure/concurrency proof; .04 follows .04A acceptance, then .05.
-- Implementation completion: BP-02 closed 100% (32/32), BP-03 closed 100% (16/16); BP-04 active 54.17% (13/24), .01/.02/.03 closed 100%; .04A active 25% (Build 33.33%/Acceptance 0%); .04/.05 and BP-05..09 queued 0%.
+- Primary active implementation plan / phase / task: BP-04 -> BP-04.04A / Build / B3.
+- Current task: BP-04.04A/B3 actual process failure/concurrency proof; B1/B2 verified.
+- Next task: BP-04.04A/V1 installed peer/replacement proof; .04 follows .04A acceptance, then .05.
+- Implementation completion: BP-02 closed 100% (32/32), BP-03 closed 100% (16/16); BP-04 active 58.33% (14/24), .01/.02/.03 closed 100%; .04A active 50% (Build 66.67%/Acceptance 0%); .04/.05 and BP-05..09 queued 0%.
 - Active focus: owner-approved BIND-01 remediation; new four-delivery prerequisite activates before solver parity. All completed credit preserved under 24-delivery denominator.
 - Blockers: none for active prerequisite; scientific/target-host choices remain at their named later gates.
 - Acceptance posture: scheduling, aggregation/waits, actual process and installed issuer/Artifact replacement accepted. Solver parity awaits BIND-01 resolution; scientific/target-host claims remain later gates.
@@ -35,11 +35,11 @@ BP-04 is the sole primary active plan. Child trackers own delivery evidence; com
 
 | Parent | Implementation | P1 Compiler | P2 Scheduling | P3 Aggregation | P4 Bindings | P5 Baselines | P6 Recovery |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-04](BP-04%20Deterministic%20Graph%20Runner.md) | 54.17% (13/24) | 100% | 100% | 100% | 25% | 0% | 0% |
+| [BP-04](BP-04%20Deterministic%20Graph%20Runner.md) | 58.33% (14/24) | 100% | 100% | 100% | 50% | 0% | 0% |
 
 | Active canonical child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-04.04A](BP-04/BP-04.04A%20Typed%20artifact%20and%20collection%20bindings.md) | 25% | 33.33% | 0% | B2 durable bindings |
+| [BP-04.04A](BP-04/BP-04.04A%20Typed%20artifact%20and%20collection%20bindings.md) | 50% | 66.67% | 0% | B3 process proof |
 
 BP-02 is closed at 32/32; BP-03 at 16/16 with all children audited. See [completed plans](Completed/README.md). New parent progress counts only its own deliveries.
 
@@ -125,6 +125,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-29 15:52:36 | BP-04.04A B2 passed; child 50%, parent 58.33% (14/24); B3 active | 1079 tests/thirteen installs/REC-01..09; dynamic round trip, exact protected conversions; peer/process proof remains |
 | 2026-09-29 13:25:53 | BP-04.04A B1 passed; child 25%, parent 54.17% (13/24); B2 active | 1041 tests/thirteen installs/REC-01..09; 134 predecessor schemas unchanged; v4 execution gated |
 | 2026-09-29 12:52:29 | Owner approved .04A; active B1 at 0%; parent rebaselined 12/24 (50%) | Four added prerequisite deliveries; phases P4 bindings/P5 baseline/P6 recovery; completed .01-.03 preserved |
 | 2026-09-29 09:04:11 | BP-04.03 closed/audited 100%; parent 60% (12/20); .04 activation audit next | Five installed issuer/Artifact/replacement cases; [audit](../Audits/BP-04.03_Aggregation_Closeout.md); scope 1a07a70db37f43e3a106e9abca2edbc9 |
@@ -149,6 +150,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-28 16:47:03 | BP-03.03 B3 passed; child 75%, parent 68.75% (11/16); V1 active | Nine actual worker/owner cases and two Linux image goldens; [evidence](../Audits/Evidence/BP-03-Workers/README.md) |
 | 2026-09-28 16:11:58 | BP-03.03 B2 passed; child 50%, parent 62.50% (10/16); next B3 | 117 focused tests/twelve isolated builds; exact-attempt authority and failure classification; SDK 100% scoped coverage |
 | 2026-09-28 15:58:51 | BP-03.03 B1 passed; child 25%, parent 56.25% (9/16); next B2 | 529 tests/twelve builds/REC-01..09; isolated SDK and two actual standalone kernels with distinct payload schemas |
-| 2026-09-28 15:36:38 | BP-03.03 B1 artifact prerequisites verified; child 0%, parent 50% unchanged | 478 tests/nine builds/REC-01..09; receipt-first publication recovery and trusted typed schemas |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

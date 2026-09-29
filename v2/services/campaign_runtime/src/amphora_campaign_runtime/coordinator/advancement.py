@@ -20,10 +20,11 @@ from .values import BoundValues, ensure
 
 
 class GraphPass:
-    def __init__(self, conn, params, plan, graph, artifacts, waits):
+    def __init__(self, conn, params, plan, graph, artifacts, waits, bindings=None):
         self.conn, self.params, self.plan, self.graph, self.artifacts = conn, params, plan, graph, artifacts
         self.order = graph["next_dispatch_order"]
         self.waits = waits
+        self.bindings = bindings
         self.aggregation = GraphAggregation(conn, params, plan, graph)
         self.expansion = ScopeExpansion(conn, params, plan, graph, artifacts, self.aggregation)
 
@@ -84,6 +85,9 @@ class GraphPass:
             return self.invoke(scope, row, node)
         if node.kind == "await":
             return self.waits.step(scope, row, node)
+        if node.kind in {"artifact_project", "artifact_materialize"}:
+            ensure(self.bindings is not None, "graph_binding_profile_not_enabled")
+            return self.bindings.step(scope, row, node)
         if node.kind in {"scatter", "iterate"}:
             return getattr(self.expansion, node.kind)(scope, row, node)
         if node.kind == "branch":

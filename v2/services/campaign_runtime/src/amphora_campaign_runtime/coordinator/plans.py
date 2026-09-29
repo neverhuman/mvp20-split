@@ -12,12 +12,13 @@ from .values import ensure
 class ReviewedPlan:
     plan: object
     descriptors: tuple
+    schemas: object = None
 
     @classmethod
     def compile(cls, definition, tools, schemas):
         plan = compile_campaign(definition, tools, schemas)
         descriptors = tuple(tools.require(lock.tool, "admission").descriptor.tool for lock in plan.document.lock.tools)
-        return cls(plan, descriptors)
+        return cls(plan, descriptors, schemas)
 
     @property
     def scope(self):
@@ -55,3 +56,7 @@ class PlanCatalog:
     @property
     def needs_completion(self):
         return any(entry.descriptors or entry.has_waits for entry in self._entries.values())
+
+    @property
+    def needs_bindings(self):
+        return any(entry.plan.schema_version == "4" for entry in self._entries.values())

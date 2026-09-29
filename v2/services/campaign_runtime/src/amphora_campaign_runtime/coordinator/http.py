@@ -2,7 +2,13 @@
 
 import asyncio
 
-from amphora_contracts_graph_runtime import GraphRunPage, GraphRunPageV2, WaitObservation, parse_graph_command
+from amphora_contracts_graph_runtime import (
+    GraphRunPage,
+    GraphRunPageV2,
+    GraphRunPageV3,
+    WaitObservation,
+    parse_graph_command,
+)
 from amphora_contracts_runtime import CommandReceipt
 from fastapi import Query, Request
 from fastapi.responses import JSONResponse
@@ -16,6 +22,11 @@ from .reads import GraphReads
 def install_graphs(app, admission, advancer, credentials, artifacts=None):
     reads = GraphReads(admission.commands.engine)
     waits = WaitReads(admission.commands.engine)
+
+    @app.get("/v3/graph-runs/{run_id}", response_model=GraphRunPageV3)
+    async def observe_v3(run_id: str, request: Request, after: str | None = None, limit: int = Query(default=100, ge=1, le=100)):
+        principal = credentials.authenticate(request.headers.get("authorization"))
+        return await asyncio.to_thread(reads.run, principal, run_id, after=after, limit=limit, version=3)
 
     if artifacts is not None:
         receipts = WaitCoordinator(admission.commands.engine, artifacts)

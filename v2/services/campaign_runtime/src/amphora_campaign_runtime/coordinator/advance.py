@@ -6,6 +6,7 @@ from amphora_contracts_campaigns import parse_execution_plan
 from amphora_contracts_graph_runtime import AdvanceGraph
 from sqlalchemy import text
 
+from ..artifact_bindings.storage import BindingExecution, stop_bindings
 from ..completion.retention import queue_terminal
 from ..lifecycle.claims import RUN, RuntimeLeases
 from ..lifecycle.model import TransitionError
@@ -22,8 +23,9 @@ from .values import ensure
 
 
 class GraphAdvancer:
-    def __init__(self, engine, projections=None):
+    def __init__(self, engine, projections=None, bindings=None):
         self.leases, self.settlement, self.projections = RuntimeLeases(engine), BudgetSettlement(engine), projections
+        self.bindings = bindings
 
     def advance(self, principal, command):
         principal.require("maintain", command.identity)
@@ -33,6 +35,12 @@ class GraphAdvancer:
         reply = RuntimeReply(command, registered.operation_id)
         params = {**_bindings(command), "run": request.run_id}
         artifacts = {}
+        if self.bindings is not None:
+            with self.leases.commands.engine.connect() as conn:
+                previous = self.leases._existing(conn, command)
+            if previous is not None:
+                return previous
+            self.bindings.tick(principal)
 
         def transaction(conn):
             try:
@@ -49,6 +57,7 @@ class GraphAdvancer:
                 "AND project_id=:project AND plan_sha256=:digest"), {**params, "digest": graph["plan_sha256"]}).scalar_one()
             plan = parse_execution_plan(json.dumps(document))
             waits = WaitExecution(conn, params, plan, graph, run, self.leases)
+            bindings = BindingExecution(conn, params, plan, graph, run)
             expired = conn.execute(text("SELECT clock_timestamp() >= :deadline"), {"deadline": graph["deadline"]}).scalar_one()
             decision = self.settlement.apply(conn, params, run, stop=expired)
             changed, order = 0, graph["next_dispatch_order"]
@@ -56,7 +65,7 @@ class GraphAdvancer:
             if expired:
                 status, reason = "blocked", "graph_deadline_exhausted"
             elif status == "running":
-                machine = GraphPass(conn, params, plan, graph, artifacts, waits)
+                machine = GraphPass(conn, params, plan, graph, artifacts, waits, bindings if self.bindings is not None else None)
                 changed = machine.apply(request.max_transitions)
                 order = machine.order
                 root = conn.execute(text("SELECT status,outputs FROM runtime.graph_scopes WHERE " + RUN +
@@ -72,6 +81,7 @@ class GraphAdvancer:
                         status, reason, outputs = "blocked", "graph_uncertain_work", None
             if changed or decision.changed or status != run["status"]:
                 if status in {"blocked", "completed"}:
+                    bindings.terminal_intents.extend(stop_bindings(conn, params, run, reason or "graph_not_required_at_finish"))
                     waits.terminal_intents.extend(stop_waits(conn, params, run, self.leases,
                         reason or "graph_not_required_at_finish"))
                 if status == "blocked":
@@ -88,6 +98,7 @@ class GraphAdvancer:
                 revision = self.leases._changed(conn, params, run, decision.budget, registered.operation_id,
                     {"kind": "graph_advanced", "transitions": changed, "status": status, "reason_code": reason})
                 queue_terminal(conn, params, waits.terminal_intents)
+                queue_terminal(conn, params, bindings.terminal_intents)
                 conn.execute(text("UPDATE runtime.runs SET status=:status WHERE " + RUN), {**params, "status": status})
                 conn.execute(text("UPDATE runtime.graph_runs SET frontier_revision=frontier_revision+1,"
                     "next_dispatch_order=:ordering,outputs=CAST(:outputs AS jsonb),stop_reason=:reason WHERE " + RUN),

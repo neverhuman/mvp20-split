@@ -6,6 +6,7 @@ import uuid
 from amphora_contracts_runtime import CancelRun, RevokeWorker
 from sqlalchemy import text
 
+from ..artifact_bindings.storage import stop_bindings
 from ..completion.retention import queue_terminal
 from ..persistence.commands import _bindings
 from ..waits.execution import stop_waits
@@ -53,6 +54,7 @@ class AuthorityCommands:
             aborted = AbortDecision(registered.operation_id, request.reason_code).apply(conn, params)
             if run["execution_mode"] == "graph":
                 aborted += stop_waits(conn, params, run, self.leases, request.reason_code)
+                aborted += stop_bindings(conn, params, run, request.reason_code)
             decision = self.settlement.apply(conn, params, run, stop=True)
             revision = self.leases._changed(conn, params, run, decision.budget, registered.operation_id,
                 {"kind": "run_cancelled", "reason_code": request.reason_code, "aborted_intents": aborted,

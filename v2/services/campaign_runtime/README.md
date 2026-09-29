@@ -1,15 +1,16 @@
 # Campaign Runtime
 
-Runtime 0.8.0 adds the BP-04.04A/B1 typed Artifact/collection compiler boundary, campaigns 0.4.0 and graph-runtime 0.3.0. Wire-v4/profile-v3 projection/materialization plans compile, but admission explicitly returns `graph_binding_profile_not_enabled` until B2 supplies durable conversion/publication/protection. Existing v2/v3 execution retains its accepted behavior. No migration beyond runtime_0011 is introduced by this compiler-only checkpoint.
+Runtime 0.9.0 implements explicit typed Artifact/collection execution under BP-04.04A/B2, with campaigns 0.4.0 and graph-runtime 0.3.0. Wire-v4 requires configured binding publication/protection peers; default admission still rejects it. The new [Artifact binding module](src/amphora_campaign_runtime/artifact_bindings/README.md) owns resumable conversion, protected commit and cancellation cleanup. `/v3/graph-runs` exposes the new operators. Migrations runtime_0012/0013 are required; startup never migrates. B3 process and V1 installed-peer gates remain.
 
-- Status: synthetic invocation lifecycle and atomic completion implemented; paired retention/delivery acceptance verified; REC-01..09 recovery/replacement verified; configured deterministic graph execution/replacement accepted in BP-04.02; richer policies remain BP-04.03.
-- Package: `amphora-campaign-runtime` 0.5.0.
+- Status: synthetic invocation lifecycle and atomic completion implemented; paired retention/delivery acceptance verified; REC-01..09 recovery/replacement verified; configured deterministic graph execution/replacement accepted in BP-04.02; aggregation and external waits accepted in BP-04.03; typed bindings are being verified in BP-04.04A/B2.
+- Package: `amphora-campaign-runtime` 0.9.0.
 - Architecture: [Graph Runner](../../docs/Architecture/System/Graph_Runner.md), [runtime protocol](../../docs/Architecture/System/Runtime_Command_Protocol.md), [isolation](../../docs/Architecture/System/Service_Isolation.md).
 
 ## Ownership and Module Boundaries
 
 | Module | Responsibility |
 |---|---|
+| `artifact_bindings/` | Typed Artifact/collection conversion, durable preparation/protection and atomic graph acceptance |
 | `graph.py` | Immutable graph values, bounded topology/loop/branch/join validation; no interpreter |
 | [compiler](src/amphora_campaign_runtime/compiler/README.md) | Pure wire-v2 semantic compilation, exact tool/schema pins, scoped types/control flow, canonical plans and activation addresses |
 | [coordinator](src/amphora_campaign_runtime/coordinator/README.md) | Configured graph admission and durable advancement, branch/all-join/scatter/loop state, bounded observations and recovery polling; actual process/peer/replacement acceptance passed BP-04.02; richer policies remain BP-04.03 |
