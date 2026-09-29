@@ -1,6 +1,6 @@
 # Durable graph coordinator
 
-- Status: BP-04.02 closed/audited; current changes belong to [BP-04.04A/B2](../../../../../docs/Build%20Plans/BP-04/BP-04.04A%20Typed%20artifact%20and%20collection%20bindings.md). Child trackers own gates and percentages.
+- Status: BP-04.02 closed/audited; current changes belong to [BP-04.04A/B2](../../../../../docs/Build%20Plans/BP-04/Completed/BP-04.04A%20Typed%20artifact%20and%20collection%20bindings.md). Child trackers own gates and percentages.
 - Owner: Campaign Runtime, package 0.9.0. Architecture: [Graph Execution Model](../../../../../docs/Architecture/System/Graph_Execution_Model.md), [Graph Runner](../../../../../docs/Architecture/System/Graph_Runner.md).
 - Public DTOs: [graph-runtime contracts](../../../../../contracts/graph_runtime/README.md) 0.3.0; executable campaign contracts 0.4.0. Configured wire-v2/v3 execution is active; v4 additionally requires explicit binding peers. Worker contracts are unchanged.
 

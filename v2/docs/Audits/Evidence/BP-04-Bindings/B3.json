@@ -5,12 +5,12 @@
   "tests_passed": 59,
   "log": ".test-results/bp0404a-b3-bindings.log",
   "coverage": {
-    "covered_lines": 423,
-    "num_statements": 452,
+    "covered_lines": 415,
+    "num_statements": 442,
     "covered_branches": 71,
     "num_branches": 82
   },
-  "coverage_limit": "Parent interpreter only; subprocess coverage is not claimed.",
+  "coverage_limit": "Parent interpreter artifact_bindings module only; migration wrapper and subprocess coverage excluded.",
   "process_cases": [
     {
       "verified_at": "2026-09-29 16:05:35",

@@ -39,4 +39,8 @@ Owned suites: `services/campaign_runtime/tests/bindings`; selector `dev/run_test
 
 Replacement must preserve stable input/slot identities, schema pins, budgets, recorded deadlines, exact reservation binding, immutable closure evidence and original outcomes. Required B3/V1 gates add actual process contention/death and independently installed peer/replacement proof. Target-host power-loss durability, high-volume throughput and scientific validity remain outside this module's evidence.
 
+B3 checkpoint (`2026-09-29 16:08:36`): 59 owned tests pass, including five actual process cases, claim-time source-cut rejection, post-publication source-cut rejection and reverse member completion. Parent-interpreter binding coverage is 415/442 statements and 71/82 branches; child-process lines are not included. Actual installed Artifact/tool replacement remains V1. The [installed acceptance harness](../../../tests/bindings/acceptance/README.md) documents that independent tier.
+
 B2 focused checkpoint (`2026-09-29 15:45:24`): 39 owned tests pass; artifact_bindings coverage 408/442 statements and 70/82 branches. Remaining gaps include claim-time expiry/source-cut failure, malformed peer responses and actual process interruption; B3/V1 own their independent proof. A fresh CLI process test catches import-order startup regressions that an already-initialized test interpreter can hide.
+
+V1 checkpoint (`2026-09-29 16:25:58`): actual installed scope `2d3aa4d553874342a550f4de8381cc9b` passed finalization-response interruption, original receipt/no-restream recovery, committed proof replacement and two-generation [7,11,15] execution. All 30 reservations confirmed through bounded passes. B3/V1 required gates are complete; scientific/target-host exclusions above remain.

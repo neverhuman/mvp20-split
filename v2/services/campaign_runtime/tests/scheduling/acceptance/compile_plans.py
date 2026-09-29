@@ -13,7 +13,7 @@ from amphora_campaign_runtime.compiler import (
     ToolCatalog,
 )
 from amphora_campaign_runtime.coordinator import ReviewedPlan
-from amphora_contracts_campaigns import ExecutableCampaign
+from amphora_contracts_campaigns import parse_executable_campaign
 from amphora_contracts_core import SchemaRef
 from amphora_contracts_tools import LockEntry, ReleaseDescriptor
 
@@ -28,7 +28,7 @@ def main():
                               LockEntry.model_validate_json(json.dumps(tool["lock"]))) for tool in entry["releases"]]
         schemas = [PinnedSchema(SchemaIdentity.from_wire(SchemaRef.model_validate_json(json.dumps(schema["schema_ref"]))),
                                 (path.parent / schema["path"]).read_bytes()) for schema in entry["schemas"]]
-        definition = ExecutableCampaign.model_validate_json((path.parent / entry["definition"]).read_bytes())
+        definition = parse_executable_campaign((path.parent / entry["definition"]).read_bytes())
         plan = ReviewedPlan.compile(definition, ToolCatalog(tools), SchemaCatalog(schemas)).plan
         result[definition.campaign_id] = plan.model_dump(mode="json")
     print(json.dumps(result))

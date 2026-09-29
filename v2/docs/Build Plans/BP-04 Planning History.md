@@ -104,3 +104,5 @@ P1/P2 closeout evidence is in their completed children linked above. Remaining c
 `2026-09-29 15:52:36`: .04A/B2 verified (14/24 total deliveries); explicit protected Artifact conversions and dynamic two-iteration worker graph passed. B3 actual process failure proof follows; canonical trackers own current percentages.
 
 `2026-09-29 16:08:36`: .04A/B3 verified (15/24 total deliveries). Five actual process cases, independent negative input/source-cut oracles and reverse-order two-iteration execution passed within 59 scoped tests. V1 installed peers/replacement is next; no closed phase reopened.
+
+`2026-09-29 16:25:58`: .04A closed 4/4 after installed acceptance and scoped drift audit; parent 16/24. BIND-01 resolved. .04 reactivation audit corrected_ready, B1 active 0/4; v1 source hashes still match.

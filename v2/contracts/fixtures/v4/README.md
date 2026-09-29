@@ -1,6 +1,6 @@
 # Typed Artifact binding fixtures
 
-Owner: [campaign contracts](../../campaigns/README.md); implementation: [compiler](../../../services/campaign_runtime/src/amphora_campaign_runtime/compiler/README.md); plan: [BP-04.04A](../../../docs/Build%20Plans/BP-04/BP-04.04A%20Typed%20artifact%20and%20collection%20bindings.md).
+Owner: [campaign contracts](../../campaigns/README.md); implementation: [compiler](../../../services/campaign_runtime/src/amphora_campaign_runtime/compiler/README.md); plan: [BP-04.04A](../../../docs/Build%20Plans/BP-04/Completed/BP-04.04A%20Typed%20artifact%20and%20collection%20bindings.md).
 
 `binding_cases.json` is independently authored wire-v4 input, with scalar/collection projection, reference-list projection, inline member publication and finite object materialization. Invalid cases reject unknown modes, arbitrary code, oversized resource limits and accidental use of an old profile. `schemas.json` pins exact local data schemas. `predecessor_schema_pins.json` freezes all 134 previously published schemas. `binding_primitives.json` is the public builtin primitive catalog; these are Runtime-owned operators, not fake scientific tool releases or registry eligibility decisions.
 
