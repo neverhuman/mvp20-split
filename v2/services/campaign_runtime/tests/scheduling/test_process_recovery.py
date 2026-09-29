@@ -35,7 +35,7 @@ def evidence(graph, run, case, boundary):
 
 
 class CoordinatorProcess:
-    def __init__(self, graph, directory, name, command, start, *, hold=False):
+    def __init__(self, graph, directory, name, command, start, *, hold=False, probe=None):
         self.path = directory / (name + ".json")
         principal = graph.env.principal
         self.path.write_text(json.dumps({"principal": {"actor_id": principal.actor_id,
@@ -46,7 +46,7 @@ class CoordinatorProcess:
         environment.update(GRAPH_PROBE_RUNTIME_URL=graph.env.engine.url.render_as_string(hide_password=False),
                            PYTHONIOENCODING="utf-8", PYTHONUNBUFFERED="1")
         self.log = self.path.with_suffix(".log").open("w", encoding="utf-8")
-        self.process = subprocess.Popen([sys.executable, str(Path(__file__).with_name("process_probe.py")), str(self.path)],
+        self.process = subprocess.Popen([sys.executable, str(probe or Path(__file__).with_name("process_probe.py")), str(self.path)],
             env=environment, stdout=self.log, stderr=self.log,
             creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0)
 

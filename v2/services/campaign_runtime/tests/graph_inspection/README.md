@@ -14,4 +14,6 @@ v2/dev/.venv/Scripts/python.exe -m pytest -c v2/dev/pyproject.toml v2/services/c
 | `test_attempts.py` | Failed retry followed by canonical success; attempt page order and receipt lineage; cross-activation token and missing-output rejection |
 | `test_http.py` | Explicit graph/history opt-in, authentication, HTTP bounds and resnapshot errors; signing-key replacement |
 
-Boundary schema examples/rejection tests live in `contracts/graph_runtime/tests/test_observations.py`. These tests are not process-crash or installed replacement acceptance. Those remain the next BP-04.05 gates. PostgreSQL suites that admit campaigns must run sequentially because the configured profile permits one active campaign across the installation.
+Boundary schema examples/rejection tests live in `contracts/graph_runtime/tests/test_observations.py`. B2 adds `test_process_recovery.py` and test-only `activation_probe.py`: three real coordinator process kills with public observation/receipt checks.32 focused and scheduling-process regression cases pass. Independently installed observer replacement remains V1. PostgreSQL suites that admit campaigns must run sequentially because the configured profile permits one active campaign across the installation.
+
+B2 uses one optional probe-script argument in the existing owned coordinator test harness; its default path remains covered by the scheduling-process regression suite. No production crash hook is installed.

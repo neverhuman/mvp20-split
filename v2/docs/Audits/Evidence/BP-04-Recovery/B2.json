@@ -1,0 +1,220 @@
+{
+  "verified_at": "2026-09-29 18:33:12",
+  "baseline_commit": "87c529a",
+  "delivery": "BP-04.05/B2",
+  "focused_tests": 32,
+  "production_changes": false,
+  "cases": [
+    {
+      "case": "activation-uncommitted",
+      "verified_at": "2026-09-29 18:31:04",
+      "before": {
+        "scope": {
+          "tenant_id": "admission-tests",
+          "project_id": "c7b86457157143fc819b693054a7e1f5"
+        },
+        "run_id": "05e15209bdbc4ab0b202734aec3e0786",
+        "plan_sha256": "f60587e407418619bc66ccb26ea6b590838eb2d82dd49df2d7da7b23de9788a9",
+        "revision": 0,
+        "frontier_revision": 0
+      },
+      "at_barrier": {
+        "scope": {
+          "tenant_id": "admission-tests",
+          "project_id": "c7b86457157143fc819b693054a7e1f5"
+        },
+        "run_id": "05e15209bdbc4ab0b202734aec3e0786",
+        "plan_sha256": "f60587e407418619bc66ccb26ea6b590838eb2d82dd49df2d7da7b23de9788a9",
+        "revision": 0,
+        "frontier_revision": 0
+      },
+      "after_replacement": {
+        "scope": {
+          "tenant_id": "admission-tests",
+          "project_id": "c7b86457157143fc819b693054a7e1f5"
+        },
+        "run_id": "05e15209bdbc4ab0b202734aec3e0786",
+        "plan_sha256": "f60587e407418619bc66ccb26ea6b590838eb2d82dd49df2d7da7b23de9788a9",
+        "revision": 1,
+        "frontier_revision": 1
+      },
+      "original_receipt": {
+        "schema_version": "1",
+        "outcome": {
+          "status": "accepted",
+          "binding": {
+            "identity": {
+              "schema_version": "1",
+              "command_family": "graph.advance",
+              "command_id": "3b91e7f2c7fa4451b15517dac4207542",
+              "scope": {
+                "tenant_id": "admission-tests",
+                "project_id": "c7b86457157143fc819b693054a7e1f5"
+              },
+              "actor_id": "worker-1"
+            },
+            "request_sha256": "2e19b6cc1abab22bdbd2b6fb87dc4ea043b19f483864f83c6d9a4dc6931403dc",
+            "operation_id": "0951e0808b0246bd81682099cd6657b0"
+          },
+          "committed": {
+            "kind": "run",
+            "object_id": "05e15209bdbc4ab0b202734aec3e0786",
+            "revision": 1
+          }
+        }
+      },
+      "events": [
+        {
+          "event_id": "9a2fabfaae0e49be82735f98614fd24c",
+          "revision": 1,
+          "kind": "run_changed"
+        }
+      ],
+      "real_process_killed": true,
+      "stable_page_size": 1,
+      "receipt_replay_verified": true
+    },
+    {
+      "case": "join-committed",
+      "verified_at": "2026-09-29 18:31:10",
+      "before": {
+        "scope": {
+          "tenant_id": "admission-tests",
+          "project_id": "17ba9409f5cf40d18d1787f876ed0752"
+        },
+        "run_id": "8ae9b5948b9a43388d9460faf38d387a",
+        "plan_sha256": "93320ba109a502a8012a038e2bf052fab534dd45eec7b378f59900480f79e0f6",
+        "revision": 6,
+        "frontier_revision": 3
+      },
+      "at_barrier": {
+        "scope": {
+          "tenant_id": "admission-tests",
+          "project_id": "17ba9409f5cf40d18d1787f876ed0752"
+        },
+        "run_id": "8ae9b5948b9a43388d9460faf38d387a",
+        "plan_sha256": "93320ba109a502a8012a038e2bf052fab534dd45eec7b378f59900480f79e0f6",
+        "revision": 7,
+        "frontier_revision": 4
+      },
+      "after_replacement": {
+        "scope": {
+          "tenant_id": "admission-tests",
+          "project_id": "17ba9409f5cf40d18d1787f876ed0752"
+        },
+        "run_id": "8ae9b5948b9a43388d9460faf38d387a",
+        "plan_sha256": "93320ba109a502a8012a038e2bf052fab534dd45eec7b378f59900480f79e0f6",
+        "revision": 7,
+        "frontier_revision": 4
+      },
+      "original_receipt": {
+        "schema_version": "1",
+        "outcome": {
+          "status": "accepted",
+          "binding": {
+            "identity": {
+              "schema_version": "1",
+              "command_family": "graph.advance",
+              "command_id": "380ae17f61154c8d85d098a8bed61033",
+              "scope": {
+                "tenant_id": "admission-tests",
+                "project_id": "17ba9409f5cf40d18d1787f876ed0752"
+              },
+              "actor_id": "worker-1"
+            },
+            "request_sha256": "d72f5281e76ae52be6ed553855440ae2b076023211967e4508d81bf9f0f70287",
+            "operation_id": "1a0cafb77319448cb456be4874cb2bf7"
+          },
+          "committed": {
+            "kind": "run",
+            "object_id": "8ae9b5948b9a43388d9460faf38d387a",
+            "revision": 7
+          }
+        }
+      },
+      "events": [
+        {
+          "event_id": "c7c53247c3ed42b3acec67eca1778673",
+          "revision": 7,
+          "kind": "run_changed"
+        }
+      ],
+      "real_process_killed": true,
+      "stable_page_size": 1,
+      "receipt_replay_verified": true
+    },
+    {
+      "case": "iteration-committed",
+      "verified_at": "2026-09-29 18:31:16",
+      "before": {
+        "scope": {
+          "tenant_id": "admission-tests",
+          "project_id": "5b1fe2ee27d2468186c15bd0d9be14b4"
+        },
+        "run_id": "f36aeec73bab462f9f47751b45c18bff",
+        "plan_sha256": "f182f5916c8889f2c3b80d9be9da70847fccc34aca8b91b88bfbc5744209c3ee",
+        "revision": 2,
+        "frontier_revision": 2
+      },
+      "at_barrier": {
+        "scope": {
+          "tenant_id": "admission-tests",
+          "project_id": "5b1fe2ee27d2468186c15bd0d9be14b4"
+        },
+        "run_id": "f36aeec73bab462f9f47751b45c18bff",
+        "plan_sha256": "f182f5916c8889f2c3b80d9be9da70847fccc34aca8b91b88bfbc5744209c3ee",
+        "revision": 3,
+        "frontier_revision": 3
+      },
+      "after_replacement": {
+        "scope": {
+          "tenant_id": "admission-tests",
+          "project_id": "5b1fe2ee27d2468186c15bd0d9be14b4"
+        },
+        "run_id": "f36aeec73bab462f9f47751b45c18bff",
+        "plan_sha256": "f182f5916c8889f2c3b80d9be9da70847fccc34aca8b91b88bfbc5744209c3ee",
+        "revision": 3,
+        "frontier_revision": 3
+      },
+      "original_receipt": {
+        "schema_version": "1",
+        "outcome": {
+          "status": "accepted",
+          "binding": {
+            "identity": {
+              "schema_version": "1",
+              "command_family": "graph.advance",
+              "command_id": "7e4f0c2419b34a708a7ae9fc861c6d1a",
+              "scope": {
+                "tenant_id": "admission-tests",
+                "project_id": "5b1fe2ee27d2468186c15bd0d9be14b4"
+              },
+              "actor_id": "worker-1"
+            },
+            "request_sha256": "46e514e300b99717653bd65332bb3e6a9e7905121f34e6c8e5b2d7926778d9bf",
+            "operation_id": "8e681be14ff941feb85651abe3911033"
+          },
+          "committed": {
+            "kind": "run",
+            "object_id": "f36aeec73bab462f9f47751b45c18bff",
+            "revision": 3
+          }
+        }
+      },
+      "events": [
+        {
+          "event_id": "719f0941f3be4a87a2db8d0fb21de46d",
+          "revision": 3,
+          "kind": "run_changed"
+        }
+      ],
+      "real_process_killed": true,
+      "stable_page_size": 1,
+      "receipt_replay_verified": true
+    }
+  ],
+  "limits": [
+    "Real PostgreSQL and coordinator processes; synthetic Artifact peer",
+    "No independently installed observer or target-host power-loss claim"
+  ]
+}

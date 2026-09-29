@@ -9,13 +9,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-04 primary active; BP-05 through BP-09 queued; BP-01/BP-01A/BP-02/BP-03 closed.
-- Last refreshed: `2026-09-29 18:27:38` (America/Chicago).
+- Last refreshed: `2026-09-29 18:33:12` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P3 / BP-04 - deterministic graph runner.
-- Primary active implementation plan / phase / task: BP-04 -> BP-04.05 / Build / B2.
-- Current task: BP-04.05/B2 process-cut recovery and consistent-reader proof; B1 observations verified.
-- Next task: BP-04.05/B3 parallel public workflows and failure cases.
-- Implementation completion: BP-02 closed 100% (32/32), BP-03 closed 100% (16/16); BP-04 active 87.50% (21/24), .01/.02/.03/.04A/.04 closed 100%; .05 active 25% (Build33.33% / Acceptance0%); BP-05..09 queued 0%.
+- Primary active implementation plan / phase / task: BP-04 -> BP-04.05 / Build / B3.
+- Current task: BP-04.05/B3 parallel public workflows and failure cases; B1/B2 verified.
+- Next task: BP-04.05/V1 installed observer replacement and parent closeout.
+- Implementation completion: BP-02 closed 100% (32/32), BP-03 closed 100% (16/16); BP-04 active 91.67% (22/24), .01/.02/.03/.04A/.04 closed 100%; .05 active 50% (Build66.67% / Acceptance0%); BP-05..09 queued 0%.
 - Active focus: consistent graph reads, reconnect/recovery and integrated parent closeout; source baseline/successors accepted. Completed credit preserved under 24-delivery denominator.
 - Blockers: none for active prerequisite; scientific/target-host choices remain at their named later gates.
 - Acceptance posture: scheduling, aggregation/waits, actual process and installed issuer/Artifact replacement accepted. Typed bindings and actual installed dynamic round trip accepted; synthetic solver/successor replacement accepted; scientific/target-host claims remain later gates.
@@ -35,11 +35,11 @@ BP-04 is the sole primary active plan. Child trackers own delivery evidence; com
 
 | Parent | Implementation | P1 Compiler | P2 Scheduling | P3 Aggregation | P4 Bindings | P5 Baselines | P6 Recovery |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-04](BP-04%20Deterministic%20Graph%20Runner.md) | 87.50% (21/24) | 100% | 100% | 100% | 100% | 100% | 25% |
+| [BP-04](BP-04%20Deterministic%20Graph%20Runner.md) | 91.67% (22/24) | 100% | 100% | 100% | 100% | 100% | 50% |
 
 | Active canonical child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-04.05](BP-04/BP-04.05%20Recovery%20and%20closeout.md) | 25% | 33.33% | 0% | B2 recovery/read consistency |
+| [BP-04.05](BP-04/BP-04.05%20Recovery%20and%20closeout.md) | 50% | 66.67% | 0% | B3 public workflows/failures |
 
 BP-02 is closed at 32/32; BP-03 at 16/16 with all children audited. See [completed plans](Completed/README.md). New parent progress counts only its own deliveries.
 
@@ -66,7 +66,7 @@ BP-04 is `primary_active`; BP-05 through BP-09 are `design_specified / queued`. 
 
 | Order / ID | Completion | Proposed plan | Required predecessor gates | Bounded outcome / exit | Architecture owner |
 |---|---|---|---|---|---|
-| P3 / BP-04 | 87.50% | [Deterministic Graph Runner](BP-04%20Deterministic%20Graph%20Runner.md) | BP-02 durable state; BP-03 callable tools | Compile and execute typed branch/join/scatter/loop graphs; aggregate committed results; handle scoped failures, external waits, restart and successor campaigns with no LLM required for deterministic control; pass the source-derived v1 solver orchestration scenarios using synthetic adapters | [Graph Runner](../Architecture/System/Graph_Runner.md), [execution model](../Architecture/System/Graph_Execution_Model.md) |
+| P3 / BP-04 | 91.67% | [Deterministic Graph Runner](BP-04%20Deterministic%20Graph%20Runner.md) | BP-02 durable state; BP-03 callable tools | Compile and execute typed branch/join/scatter/loop graphs; aggregate committed results; handle scoped failures, external waits, restart and successor campaigns with no LLM required for deterministic control; pass the source-derived v1 solver orchestration scenarios using synthetic adapters | [Graph Runner](../Architecture/System/Graph_Runner.md), [execution model](../Architecture/System/Graph_Execution_Model.md) |
 | P4 / BP-05 | 0% | [Graph Studio First Vertical Slice](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md) | BP-04 runnable fixture and read/command contracts | Inspect actual live/historical execution, evidence, parallel branches and failures; edit next-campaign drafts, compare revisions and observe emergency termination; preserve autonomous progress | [Studio](../Architecture/Experience/Studio.md), [UI rules](../UI_Coding_Guidelines.md) |
 | P5 / BP-06 | 0% | [Knowledge Evidence and Source Loop](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) | BP-01 contracts; BP-04 execution; BP-05 inspection | Minimal source/document/result ingestion, typed accepted-change replay, pinned knowledge revisions, bounded executable rules and explicit scientific acceptance receipts; demonstrate corrections affect later campaigns | [Knowledge](../Architecture/Knowledge/Knowledge_Architecture.md), [Data](../Architecture/Data/Data_Architecture.md), [experiments](../Architecture/Research/Experiments.md) |
 | P6 / BP-07 | 0% | [Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | BP-03 tool discovery; BP-04 runner; BP-05 UI; BP-06 grounded context/receipts | Model-generated campaign proposals and text-to-graph extraction through validated contracts; durable scoped engagements, stale-proposal/fallback races, bounded repair and truthful terminal blockers; no routine human waits | [Planning](../Architecture/Agents/Planning.md), [Graph Runner](../Architecture/System/Graph_Runner.md) |
@@ -125,6 +125,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-29 18:33:12 | BP-04.05 B2 verified50%; parent91.67% (22/24); B3 active | Three real coordinator kill cuts; consistent readers and original replay;32 focused/process tests |
 | 2026-09-29 18:27:38 | BP-04.05 B1 verified25%; parent87.50% (21/24); B2 active | Snapshot/detail/reconnect contracts;72 focused,1202 foundation,19 installs; stale queue40% mirror corrected |
 | 2026-09-29 17:57:39 | BP-04.04 closed 100%; parent 83.33% (20/24); .05/B1 active 0% | Actual five-tool installed source/successor/replacement; 44 confirmed reservations; scoped audit aligned |
 | 2026-09-29 17:45:46 | BP-04.04 B3 verified; child 75%, parent 79.17% (19/24); V1 active | 116 scoped tests, five actual process cases; source trace/ancestry and accepted work preserved |
@@ -149,6 +150,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-28 18:11:10 | BP-04.01 B3 passed; child 75%, parent 15% (3/20); V1 active | 111 compiler cases, 52 independent rejections; 100% scoped statements/branches; 23 contract and 6 legacy graph cases |
 | 2026-09-28 18:02:52 | BP-04.01 B2 passed; child 50%, parent 10% (2/20); B3 active | 35 compiler cases; manual plan exact; 653 regression tests/twelve builds/REC-01..09, scope 7602f26a6cfb4a3aa7824ede61371e7f |
 | 2026-09-28 17:40:35 | BP-04.01 B1 passed; child 25%, parent 5% (1/20); B2 active | 619 tests/twelve builds/REC-01..09; explicit wire-v2, unchanged v1 bytes; 23 owned wire cases |
-| 2026-09-28 17:23:58 | BP-03 closed/audited 100% (16/16); BP-04.01/B1 active at 0% | Eight actual replica/replacement cases; [parent audit](../Audits/BP-03_Tool_Execution_Closeout.md) |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

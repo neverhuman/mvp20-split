@@ -116,3 +116,5 @@ P1/P2 closeout evidence is in their completed children linked above. Remaining c
 `2026-09-29 17:57:39`: .04 closed/audited 4/4 (20/24 parent deliveries). Five actual tool images and installed source/successor/replacement workflow passed; all 44 reservations confirmed. .05 activation audit corrected_ready, B1 active at 0/4. Closed child evidence is not reused as new implementation credit.
 
 - `2026-09-29 18:27:38` ? BP-04.05/B1 verified: consistent bounded graph observations and contiguous durable invalidations;72 focused tests,217/217 statements12/12 branches; foundation1202 tests19 installs/REC-01..09. Runtime0.11.0, graph-runtime0.5.0,176 schemas; all168 predecessors preserved. Child25%,Build33.33%,Acceptance0%; parent87.50%=21/24. B2 active. MBT queue stale40% mirror corrected to canonical progress.
+
+- `2026-09-29 18:33:12` ? BP-04.05/B2 verified three actual process boundaries (activation INSERT rollback, committed join, committed iteration feedback), observation consistency and original command replay.32 focused/regression tests passed. Child50%,Build66.67%,Acceptance0%; parent91.67%=22/24. B3 active; no production/schema change.
