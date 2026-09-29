@@ -1,0 +1,197 @@
+{
+  "verified_at": "2026-09-29 18:38:04",
+  "baseline_commit": "1ac3052",
+  "delivery": "BP-04.05/B3",
+  "focused_tests": 76,
+  "coverage": {
+    "covered_lines": 217,
+    "num_statements": 217,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100",
+    "num_branches": 12,
+    "num_partial_branches": 0,
+    "covered_branches": 12,
+    "missing_branches": 0,
+    "percent_branches_covered": 100.0,
+    "percent_branches_covered_display": "100"
+  },
+  "workflow": {
+    "verified_at": "2026-09-29 18:36:29",
+    "scope": {
+      "tenant_id": "admission-tests",
+      "project_id": "e1b4e46270ca475985bd12f3c27cda39"
+    },
+    "run_id": "30aa5410d42549c7be83868f07c16fee",
+    "admission": {
+      "schema_version": "1",
+      "outcome": {
+        "status": "accepted",
+        "binding": {
+          "identity": {
+            "schema_version": "1",
+            "command_family": "graph.admit",
+            "command_id": "dc31640324654325a5798cc7c6b5ffd3",
+            "scope": {
+              "tenant_id": "admission-tests",
+              "project_id": "e1b4e46270ca475985bd12f3c27cda39"
+            },
+            "actor_id": "worker-1"
+          },
+          "request_sha256": "b18ed0d787a2be6b18b52fc9c04786348e15fd7015a2276ce8aab976ae4e8b3e",
+          "operation_id": "05209afb7268478d9862ee000c190d5e"
+        },
+        "committed": {
+          "kind": "run",
+          "object_id": "30aa5410d42549c7be83868f07c16fee",
+          "revision": 0
+        }
+      }
+    },
+    "second_campaign": {
+      "schema_version": "1",
+      "outcome": {
+        "status": "rejected",
+        "binding": {
+          "identity": {
+            "schema_version": "1",
+            "command_family": "graph.admit",
+            "command_id": "fd893915eaa2468aa75f258b8b38ee47",
+            "scope": {
+              "tenant_id": "admission-tests",
+              "project_id": "e1b4e46270ca475985bd12f3c27cda39"
+            },
+            "actor_id": "worker-1"
+          },
+          "request_sha256": "6e2849f921b7c11b788aedcdf613ddbe75da542c5eae52c925db830e5b761724",
+          "operation_id": "bb1d420930004b949341a91b44616935"
+        },
+        "reason_code": "active_run_exists"
+      }
+    },
+    "completion_receipts": [
+      {
+        "schema_version": "1",
+        "outcome": {
+          "status": "accepted",
+          "binding": {
+            "identity": {
+              "schema_version": "1",
+              "command_family": "runtime.complete",
+              "command_id": "07842b86f9fc4b799a14cd29a85474e0",
+              "scope": {
+                "tenant_id": "admission-tests",
+                "project_id": "e1b4e46270ca475985bd12f3c27cda39"
+              },
+              "actor_id": "worker-1"
+            },
+            "request_sha256": "6ab4a52bcb61f7831048280be6f530e3aea26599b3d38825ca6119e4e73961de",
+            "operation_id": "bd07771f61dc40e4832f5cfe6fd99c8f"
+          },
+          "committed": {
+            "kind": "completion",
+            "object_id": "bd07771f61dc40e4832f5cfe6fd99c8f",
+            "revision": 7
+          }
+        }
+      },
+      {
+        "schema_version": "1",
+        "outcome": {
+          "status": "accepted",
+          "binding": {
+            "identity": {
+              "schema_version": "1",
+              "command_family": "runtime.complete",
+              "command_id": "8936cc15ef3e4775869b2fa140331891",
+              "scope": {
+                "tenant_id": "admission-tests",
+                "project_id": "e1b4e46270ca475985bd12f3c27cda39"
+              },
+              "actor_id": "worker-1"
+            },
+            "request_sha256": "dace54c5b98e9cc9d6c7b743cb36d0f162b4a10daea5eb2878724176a00167e8",
+            "operation_id": "b6de61753ad84af39f9db3d729aaba68"
+          },
+          "committed": {
+            "kind": "completion",
+            "object_id": "b6de61753ad84af39f9db3d729aaba68",
+            "revision": 6
+          }
+        }
+      }
+    ],
+    "initial_cut": {
+      "scope": {
+        "tenant_id": "admission-tests",
+        "project_id": "e1b4e46270ca475985bd12f3c27cda39"
+      },
+      "run_id": "30aa5410d42549c7be83868f07c16fee",
+      "plan_sha256": "ac4f685aa9245fd5cd227a739d42d705cecc536ffea39efbb1c1d0d0ee18dabd",
+      "revision": 0,
+      "frontier_revision": 0
+    },
+    "final_cut": {
+      "scope": {
+        "tenant_id": "admission-tests",
+        "project_id": "e1b4e46270ca475985bd12f3c27cda39"
+      },
+      "run_id": "30aa5410d42549c7be83868f07c16fee",
+      "plan_sha256": "ac4f685aa9245fd5cd227a739d42d705cecc536ffea39efbb1c1d0d0ee18dabd",
+      "revision": 8,
+      "frontier_revision": 2
+    },
+    "budget": {
+      "limit": 8,
+      "reserved": 0,
+      "spent": 2
+    },
+    "event_revisions": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "event_ids": [
+      "0ca4883ea6234c5ca6efd8219634792b",
+      "10a3dfbb2f414a8aa52e505f89fd3747",
+      "15bb65c34fe84d8bbfae98f1b354766a",
+      "2015045a88b34ed7b84de028f0651106",
+      "243fd1c07fed4eef87de5038b7947d76",
+      "63d9a288b4b24aea8d9773475ba4338e",
+      "8511917239784e04a2e8929875afab56",
+      "bca9726aa0914a7f93c5c8f59a24d698"
+    ],
+    "parallel_prepared_intents": [
+      "b6de61753ad84af39f9db3d729aaba68",
+      "bd07771f61dc40e4832f5cfe6fd99c8f"
+    ],
+    "duplicate_receipts_and_pages_unchanged": true,
+    "stale_page": {
+      "reason_code": "snapshot_unavailable",
+      "resnapshot": true
+    },
+    "restored_behind_cursor": {
+      "reason_code": "snapshot_unavailable",
+      "resnapshot": true
+    },
+    "missing_event": {
+      "reason_code": "snapshot_unavailable",
+      "resnapshot": true
+    },
+    "expired_cursor": {
+      "reason_code": "cursor_expired",
+      "resnapshot": true
+    },
+    "revoked_read_action_status": 403,
+    "tier": "public ASGI handlers and PostgreSQL; scripted Artifact reservations; no installed-peer claim"
+  },
+  "production_changes": false
+}

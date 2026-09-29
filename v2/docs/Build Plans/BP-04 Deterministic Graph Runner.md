@@ -2,14 +2,14 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-04.05 / Build / B3.
-- Last refreshed: `2026-09-29 18:33:12` (America/Chicago).
+- Status: primary_active; BP-04.05 / Acceptance / V1.
+- Last refreshed: `2026-09-29 18:38:04` (America/Chicago).
 - Owner/scope: Campaign Runtime coordinator, aggregator and recovery modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-02 durable commits and BP-03 indexed callable tools.
-- Implementation: **91.67%**, 22/24 verified child deliveries across six children. Each child owns four deliveries; counted once. Phase mapping follows the explicit ordered table, not the child-number suffix.
+- Implementation: **95.83%**, 23/24 verified child deliveries across six children. Each child owns four deliveries; counted once. Phase mapping follows the explicit ordered table, not the child-number suffix.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-04.05/B3 parallel public workflows and failure cases; B1/B2 verified.
+- Current implementation task: BP-04.05/V1 installed observer/Runtime replacement and parent closeout; B1-B3 verified.
 - Demonstrated behavior: .01 closed/audited: compiler, 111-case semantic proof and actual public peer/fresh replacement acceptance passed, including manual numerical plan identity, scoped availability and bounded constructs. .02 closed/audited: durable advancement/hosting, 60 scheduling tests/eight actual coordinator-process cases and eight installed graph/tool/Artifact/replacement cases passed. .03 closed/audited: aggregation and external receipt execution with actual process/installed-issuer proof. .04A closed/audited: typed protected conversions, five actual process cases and installed dynamic round-trip/replacement proof passed.
 - Blockers: none for active .05 scope; BIND-01 resolved by accepted .04A.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
@@ -34,7 +34,7 @@ Primary services retain private state, dependencies, migrations and module READM
 | P3 / [BP-04.03 Aggregation and failure policy](BP-04/Completed/BP-04.03%20Aggregation%20and%20failure%20policy.md) | 100% | 100% | 100% | Closed/audited |
 | P4 / [BP-04.04A Typed artifact and collection bindings](BP-04/Completed/BP-04.04A%20Typed%20artifact%20and%20collection%20bindings.md) | 100% | 100% | 100% | Closed/audited |
 | P5 / [BP-04.04 V1 baseline and successor graphs](BP-04/Completed/BP-04.04%20V1%20baseline%20and%20successor%20graphs.md) | 100% | 100% | 100% | Closed/audited |
-| P6 / [BP-04.05 Recovery and closeout](BP-04/BP-04.05%20Recovery%20and%20closeout.md) | 50% | 66.67% | 0% | B1/B2 verified; B3 active |
+| P6 / [BP-04.05 Recovery and closeout](BP-04/BP-04.05%20Recovery%20and%20closeout.md) | 75% | 100% | 0% | B1-B3 verified; V1 active |
 
 Each linked child is the execution tracker for its scope. Build tasks name concrete implementation; acceptance requires independent evidence and a scoped drift audit. Do not repeat the historical task pairs as a second work list. No dependent child starts before its predecessor acceptance gate; independent design review does not activate implementation.
 
