@@ -1,4 +1,4 @@
-"""Explicitly configured synthetic admission routes; no general graph activation."""
+"""Configured worker lifecycle routes shared by fixture and graph admission."""
 
 import asyncio
 
@@ -21,7 +21,7 @@ from .model import TransitionError
 from .reads import RuntimeReads
 
 
-def install_admission(app, admission, credentials, completion=None):
+def install_admission(app, admission, credentials, completion=None, *, graph_mode=False):
     leases = RuntimeLeases(admission.commands.engine)
     authority = AuthorityCommands(admission.commands.engine)
     reads = RuntimeReads(admission.commands.engine)
@@ -34,7 +34,9 @@ def install_admission(app, admission, credentials, completion=None):
     def ready():
         with admission.commands.engine.connect() as conn:
             conn.execute(text("SELECT operation_id FROM runtime.policy_outbox LIMIT 0"))
-        return {"status": "ready", "mode": "fixture_lifecycle"}
+            if graph_mode:
+                conn.execute(text("SELECT frontier_revision FROM runtime.graph_runs LIMIT 0"))
+        return {"status": "ready", "mode": "configured_graphs" if graph_mode else "fixture_lifecycle"}
 
     @app.get("/v1/runs/{run_id}", response_model=RunSnapshot)
     async def read_run(run_id: str, request: Request):

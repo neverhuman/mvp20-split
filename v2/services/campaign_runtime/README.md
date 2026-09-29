@@ -1,7 +1,7 @@
 # Campaign Runtime
 
 - Status: synthetic invocation lifecycle and atomic completion implemented; paired retention/delivery acceptance verified; REC-01..09 recovery/replacement verified; general graph execution remains BP-04.
-- Package: `amphora-campaign-runtime` 0.3.0.
+- Package: `amphora-campaign-runtime` 0.4.0.
 - Architecture: [Graph Runner](../../docs/Architecture/System/Graph_Runner.md), [runtime protocol](../../docs/Architecture/System/Runtime_Command_Protocol.md), [isolation](../../docs/Architecture/System/Service_Isolation.md).
 
 ## Ownership and Module Boundaries
@@ -10,7 +10,7 @@
 |---|---|
 | `graph.py` | Immutable graph values, bounded topology/loop/branch/join validation; no interpreter |
 | [compiler](src/amphora_campaign_runtime/compiler/README.md) | Pure wire-v2 semantic compilation, exact tool/schema pins, scoped types/control flow, canonical plans and activation addresses |
-| [coordinator](src/amphora_campaign_runtime/coordinator/README.md) | Configured graph admission, immutable plan/input/frontier records, initial ready invocations and bounded observations; advancement/hosting pending BP-04.02/B2 |
+| [coordinator](src/amphora_campaign_runtime/coordinator/README.md) | Configured graph admission and durable advancement, branch/all-join/scatter/loop state, bounded observations and recovery polling; actual process/replacement acceptance remains BP-04.02/B3/V1 |
 | `admission.py` | Pure input/tool/completion binding policy against supplied identity; not live authority |
 | [lifecycle](src/amphora_campaign_runtime/lifecycle/README.md) | Exact fixture admission, claims, renewal, cancellation/revocation, budget settlement and scoped observations |
 | [completion](src/amphora_campaign_runtime/completion/README.md) | Immutable prepared intents, resumable artifact reservations and atomic result/checkpoint acceptance |
@@ -20,17 +20,17 @@
 | `api.py`, `lifecycle/http.py` | Bounded decoding, authenticated configured handlers, sanitized errors and OpenAPI |
 | `hosting.py`, `__main__.py` | Explicit local configuration, service-role readiness and loopback executable; no startup migrations |
 
-Only this service owns execution authority and runtime tables. Dependencies are public core/tool/campaign/command/runtime contracts, Pydantic, FastAPI/Uvicorn, SQLAlchemy/psycopg and Alembic. No private adjacent-service imports, shared ORM, scientific libraries or provider calls. Artifact payloads remain owned by the artifact service. Configured fixture references are trusted pins; this slice does not fetch or scientifically validate inputs.
+Only this service owns execution authority and runtime tables. Dependencies are public core/tool/campaign/command/runtime/graph-runtime/artifact contracts, Pydantic, FastAPI/Uvicorn, SQLAlchemy/psycopg and Alembic. No private adjacent-service imports, shared ORM, scientific libraries or provider calls. Artifact payloads remain owned by the artifact service. Configured references are trusted pins; graph predicates may verify bounded public Artifact metadata/content outside SQL transactions. This is not scientific validation.
 
 ## Public Boundary
 
 Default `create_app()` and module `api:app` expose only health and structural campaign validation. `POST /v1/campaign-definitions/validate` returns findings, `executable=false` and pending checks. No arbitrary campaign dispatch exists. Requests are bounded to 256 KiB, JSON nesting 64 and a ten-second whole-body deadline; errors omit raw payload values.
 
-`Host.load` requires explicit environment-backed database credentials/tokens, scoped actor/action entries and immutable exact fixture definitions. It requires `runtime_service` and migrated lifecycle tables; migration-role startup is rejected. No configuration or secret is inferred from a worker request. The configured application exposes:
+`Host.load` requires explicit environment-backed database credentials/tokens, scoped actor/action entries and an immutable fixture or graph allowlist. It requires `runtime_service` and migrated owner tables; migration-role startup is rejected. Graph configuration compiles exact public descriptors/locks/schema bytes; tool-bearing plans require a completion peer. See the [coordinator configuration contract](src/amphora_campaign_runtime/coordinator/README.md). No configuration or secret is inferred from a worker request. The configured application exposes:
 
 | Endpoint | Access and result |
 |---|---|
-| `GET /health`, `/ready` | Process capability report and database readiness; configured mode `fixture_lifecycle`, full execution unavailable |
+| `GET /health`, `/ready` | Process capability report/readiness; fixture_lifecycle or explicitly configured_graphs mode |
 | `POST /v1/fixture-runs` | `admit`; exact allowlisted pins, one running campaign; original command receipt |
 | `POST /v1/invocations/claim` | `claim`; matching actor/worker and exact tool; invocation/lease or stable no-work receipt |
 | `POST /v1/attempts/renew` | `renew`; current worker, attempt, fence and database-clock lease; original receipt |
@@ -39,6 +39,9 @@ Default `create_app()` and module `api:app` expose only health and structural ca
 | `POST /v1/workers/revoke` | `revoke`; durable scoped worker policy and protected work settlement |
 | `GET /v1/runs/{run_id}` | `read`; bounded RunSnapshot with budget and current activation/attempt observations; missing/wrong scope returns 404 |
 | `POST /v1/completion-intents/outcome` | `outcome`; configured exact authenticated reservation proof, with unknown distinct from aborted |
+| `POST /v1/graph-runs` | `admit`; enabled by graph allowlist, exact scope/plan/input pins |
+| `POST /v1/graph-runs/advance` | `maintain`; bounded durable advancement command, replayable receipt |
+| `GET /v1/graph-runs/{run_id}` | `read`; up to 100 graph nodes per scoped cursor page |
 
 Every mutation authenticates the configured token, action, actor and scope. Renew/claim additionally consult live authority; replayed receipts never restore expired/revoked authority. Reads use a read-only repeatable-read transaction and never grant authority. Commands serialize under owner locks, compare database time after locks, and commit state/budget/receipt/audit/outbox atomically. External effects remain forbidden in synthetic dispatch; uncertainty is retained explicitly rather than retried or refunded.
 
@@ -49,6 +52,8 @@ Use [config.example.json](config.example.json) as a synthetic configuration shap
 `settle --config <local-config> --actor <actor> --tenant <tenant> --project <project> --run <run>` selects one explicitly configured `maintain` principal. It performs one bounded run sweep; there is no implicit background scheduler. Expired pure work spends its issued unit once and may be reissued within deadline/attempt/budget bounds. Cancellation spends issued work and costs nothing for unclaimed work. A prepared completion intent blocks blind expiry until its owner reconciles/aborts it. Unknown external effects retain reservations and block automatic retry.
 
 Database outages leave registered commands pending/retryable; stable business rejection and original terminal receipts persist. Local credentials are a development profile, not enterprise identity. Runtime notifications and retention commands have explicit bounded durable delivery passes. Configured history routes expose original receipts, accepted reports and bounded audit/delivery pages; these remain observations, not subscriptions or authority.
+
+Configured graphs use a separate `coordinate` process with scoped maintain identity, `--time-budget` and `--poll-interval`; serving HTTP alone does not start it. It reconciles stale intents and reconstructs advancement from committed state. Branches, ordered all-member aggregation, bounded scatter and loop checkpoints are implemented; partial aggregation/external-wait policies remain BP-04.03. Default validation-only hosting and wire-v1 validation are unchanged. Graph worker snapshots expose at most 256 active queued/leased invocations; retained historical graph nodes use their separate paginated read boundary. Tool package versions and worker command formats are unchanged.
 
 `reconcile-intents` uses the same scoped maintenance selection as `settle`, plus bounded `--limit` (1-100) and `--after` cursor. It aborts expired/ineligible prepared intents and terminalizes previously cancelled pending commands without waiting for caller retries. Run bounded passes before settlement if prepared-intent protection blocks reclaim. Terminal artifact confirm/reconcile operations are queued atomically and delivered through explicit bounded passes. The artifact service must be configured with a scoped outcome credential and this runtime's exact outcome endpoint. Example configurations have independent synthetic profiles/pins and require deliberate matching before an integrated campaign; they are not an already deployed pair.
 
@@ -64,6 +69,7 @@ Database outages leave registered commands pending/retryable; stable business re
 | `completion/` | Immutable descriptor/intent bindings, reservation resume, cancellation during remote I/O and transport negatives |
 | `acceptance/` | Independently installed runtime plus HTTP-only workers: worker kill/lease reclaim, higher fences, stale rejection, read isolation and conserved budget |
 | `baseline/`, [v1 fixture](tests/fixtures/v1_solver/README.md) | Frozen source pins and behavior graph; structural reference, not execution parity |
+| `compiler/`, `scheduling/` | Pure exact-plan compilation; real PostgreSQL graph admission/advancement, frozen membership, checkpoints, public projection transport and configured hosting |
 
 `uv run --project v2/dev --locked python v2/dev/run_tests.py --module runtime --area lifecycle` is the focused lifecycle suite. Other areas run independently; `--coverage` measures the whole owner source denominator, including unexecuted files. Explicit `AMPHORA_TEST_POSTGRES=1` enables the labeled disposable fixture. `verify_foundation.py --builds` additionally installs wheels outside the checkout and runs both standalone service probes. Its runtime workers receive only HTTP request/token data and a minimal OS environment, never database credentials or owner imports. Database-domain contention probes are distinct from this public-boundary evidence.
 

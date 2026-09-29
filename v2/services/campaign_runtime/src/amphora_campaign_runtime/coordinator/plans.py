@@ -41,3 +41,7 @@ class PlanCatalog:
         entry = self._entries.get((scope.tenant_id, scope.project_id, digest))
         ensure(entry is not None, "graph_plan_unavailable")
         return entry
+
+    @property
+    def needs_completion(self):
+        return any(entry.descriptors for entry in self._entries.values())

@@ -1,4 +1,4 @@
-"""Graph validation and explicitly configured synthetic lifecycle; no interpreter."""
+"""Legacy validation and explicitly configured synthetic fixture/graph execution."""
 
 import asyncio
 import json
@@ -85,16 +85,19 @@ class RequestBounds:
         return await self.app(scope, replay, send)
 
 
-def create_app(admission=None, credentials=None, completion=None, history=None) -> FastAPI:
+def create_app(admission=None, credentials=None, completion=None, history=None, graphs=None) -> FastAPI:
     app = FastAPI(title="Amphora runtime foundation", version="0.1.0")
     app.add_middleware(RequestBounds)
     if (admission is None) != (credentials is None):
         raise ValueError("Admission and credentials must be configured together")
-    if (completion is not None or history is not None) and admission is None:
+    if (completion is not None or history is not None or graphs is not None) and admission is None:
         raise ValueError("Completion/history requires configured lifecycle")
     if admission is not None:
         from .lifecycle.http import install_admission
-        install_admission(app, admission, credentials, completion)
+        install_admission(app, admission, credentials, completion, graph_mode=graphs is not None)
+        if graphs is not None:
+            from .coordinator.http import install_graphs
+            install_graphs(app, graphs[0], graphs[1], credentials)
         if history is not None:
             from .inspection.http import install_history
             install_history(app, history, credentials)
@@ -111,8 +114,9 @@ def create_app(admission=None, credentials=None, completion=None, history=None) 
 
     @app.get("/health")
     def health():
-        return {"status": "ok", "mode": "fixture_lifecycle" if admission is not None else "validation_only",
-                "execution_available": False, "fixture_completion_available": completion is not None}
+        return {"status": "ok", "mode": "configured_graphs" if graphs is not None else
+                "fixture_lifecycle" if admission is not None else "validation_only",
+                "execution_available": graphs is not None, "fixture_completion_available": completion is not None}
 
     async def parse_campaign(request: Request) -> CampaignDefinition:
         try:

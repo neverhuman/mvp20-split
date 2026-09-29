@@ -1,7 +1,7 @@
 # Graph Runtime Contracts
 
 - Package: `amphora-contracts-graph-runtime` 0.1.0; wire version 1 under the distinct graph-runtime schema namespace.
-- Owner: Campaign Runtime coordination boundary; BP-04.02/B1 accepted; advancement behavior remains B2.
+- Owner: Campaign Runtime coordination boundary; Runtime 0.4.0 implements scoped admission/advance/read hosting. Process and installed-peer acceptance remain BP-04.02/B3/V1.
 - Architecture: [Graph Execution Model](../../docs/Architecture/System/Graph_Execution_Model.md).
 
 Public root imports expose graph admission/advance commands, bounded values, limits and paginated node observations. They reference executable campaign wire-v2 identity while retaining the existing attempt budget and command envelope. This separate package prevents graph authoring dependencies from entering the pinned scientific worker/SDK closure. Existing worker commands and campaign schemas retain their serialized behavior; campaign exports add names for existing literal-value DTOs only.

@@ -1,4 +1,4 @@
-"""Explicit local fixture host; startup validates ownership and never migrates."""
+"""Explicit local fixture/graph host; startup validates ownership and never migrates."""
 
 import json
 import os
@@ -13,6 +13,10 @@ from sqlalchemy import create_engine, text
 from .api import create_app
 from .completion.artifacts import ArtifactReservations
 from .completion.coordinator import CompletionCoordinator
+from .coordinator.admission import GraphAdmission
+from .coordinator.advance import GraphAdvancer
+from .coordinator.configuration import load_catalog
+from .coordinator.projections import ArtifactProjections
 from .delivery.model import DeliveryPolicy
 from .delivery.store import DeliveryStore
 from .delivery.transport import DeliveryTargets, NotificationSink
@@ -31,9 +35,10 @@ class Host:
     completion: CompletionCoordinator | None = None
     delivery: DeliveryWorker | None = None
     history: RuntimeHistory | None = None
+    graphs: tuple | None = None
 
     def app(self):
-        return create_app(self.admission, self.credentials, self.completion, self.history)
+        return create_app(self.admission, self.credentials, self.completion, self.history, self.graphs)
 
     def close(self):
         self.admission.commands.engine.dispose()
@@ -42,7 +47,7 @@ class Host:
     def load(cls, path):
         raw = json.loads(Path(path).read_text(encoding="utf-8"))
         if not {"database_url_env", "principals", "fixtures"} <= set(raw) or set(raw) - {
-            "database_url_env", "principals", "fixtures", "tools", "artifacts", "delivery", "inspection"}:
+            "database_url_env", "principals", "fixtures", "tools", "artifacts", "delivery", "inspection", "graphs", "projections"}:
             raise ValueError("Explicit database, principals and fixture allowlist required")
         entries, principals = [], []
         for item in raw["principals"]:
@@ -60,14 +65,25 @@ class Host:
         if len(identities) != len(principals):
             raise ValueError("Duplicate configured identity")
         credentials = RuntimeCredentials(entries)
+        graph_catalog = None if "graphs" not in raw else load_catalog(raw["graphs"], Path(path).parent)
         catalog = FixtureCatalog((AdmitFixtureRun.model_validate_json(json.dumps(d)) for d in raw["fixtures"]),
-                                 (ToolDescriptor.model_validate_json(json.dumps(d)) for d in raw.get("tools", [])))
+                                 (ToolDescriptor.model_validate_json(json.dumps(d)) for d in raw.get("tools", [])),
+                                 allow_empty=graph_catalog is not None)
+        projections = None
+        if "projections" in raw:
+            peer = raw["projections"]
+            if graph_catalog is None or set(peer) - {"endpoint", "token_env", "maximum_bytes"}:
+                raise ValueError("Invalid graph projection configuration")
+            projections = ArtifactProjections(peer["endpoint"], os.environ[peer["token_env"]],
+                                               maximum_bytes=peer.get("maximum_bytes", 262144))
         artifacts = None
         if "artifacts" in raw:
             peer = raw["artifacts"]
             if set(peer) != {"runtime_owner", "reserve_endpoint", "token_env"}:
                 raise ValueError("Invalid artifact peer configuration")
             artifacts = ArtifactReservations(peer["runtime_owner"], peer["reserve_endpoint"], os.environ[peer["token_env"]])
+        if graph_catalog is not None and graph_catalog.needs_completion and artifacts is None:
+            raise ValueError("Graph tools require a configured artifact completion peer")
         delivery_config = raw.get("delivery", {})
         if set(delivery_config) - {"max_attempts", "lease_seconds", "notifications"}:
             raise ValueError("Unknown delivery configuration")
@@ -92,10 +108,13 @@ class Host:
                 conn.execute(text("SELECT tool_snapshot FROM runtime.runs LIMIT 0"))
                 conn.execute(text("SELECT report_id FROM runtime.attempt_reports LIMIT 0"))
                 conn.execute(text("SELECT delivery_token FROM runtime.outbox LIMIT 0"))
+                if graph_catalog is not None:
+                    conn.execute(text("SELECT frontier_revision FROM runtime.graph_runs LIMIT 0"))
             completion = None if artifacts is None else CompletionCoordinator(engine, artifacts)
             return cls(FixtureAdmission(engine, catalog), credentials, tuple(principals), completion,
                        DeliveryWorker(DeliveryStore(engine, policy), targets),
-                       None if cursors is None else RuntimeHistory(engine, cursors))
+                       None if cursors is None else RuntimeHistory(engine, cursors),
+                       None if graph_catalog is None else (GraphAdmission(engine, graph_catalog), GraphAdvancer(engine, projections)))
         except BaseException:
             engine.dispose()
             raise

@@ -9,16 +9,16 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-04 primary active; BP-05 through BP-09 queued; BP-01/BP-01A/BP-02/BP-03 closed.
-- Last refreshed: `2026-09-28 18:45:36` (America/Chicago).
+- Last refreshed: `2026-09-28 19:21:42` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P3 / BP-04 - deterministic graph runner.
-- Primary active implementation plan / phase / task: BP-04 -> BP-04.02 / Build / B2.
-- Current task: BP-04.02/B2 durable graph advancement/recovery and configured hosting.
-- Next task: BP-04.02/B3 competing-coordinator and restart frontier proof.
-- Implementation completion: BP-02 closed 100% (32/32), BP-03 closed 100% (16/16); BP-04 active 25% (5/20), .01 closed 100%, .02 25% (Build 33.33%/Acceptance 0%); BP-05..09 queued 0%. No effort estimate inferred.
+- Primary active implementation plan / phase / task: BP-04 -> BP-04.02 / Build / B3.
+- Current task: BP-04.02/B3 actual competing-coordinator and restart frontier proof.
+- Next task: BP-04.02/V1 actual installed graph/tool/Artifact integration and replacement.
+- Implementation completion: BP-02 closed 100% (32/32), BP-03 closed 100% (16/16); BP-04 active 30% (6/20), .01 closed 100%, .02 50% (Build 66.67%/Acceptance 0%); BP-05..09 queued 0%. No effort estimate inferred.
 - Active focus: persist and advance the graph frontier over the accepted compiler and invocation lifecycle.
 - Blockers: no current user decision or implementation blocker; later host/provider/scientific gates remain explicit.
-- Acceptance posture: durable synthetic invocations, actual peer retention, process recovery and fresh service replacement verified; no interpreter/scientific acceptance claimed.
+- Acceptance posture: durable synthetic invocations, actual peer retention, process recovery and fresh service replacement verified; graph advancement verified; actual graph process/peer acceptance and scientific claims remain gated.
 - Active exception: none.
 
 ## Initial Delivery Boundary
@@ -35,11 +35,11 @@ BP-04 is the sole primary active plan. Child trackers own delivery evidence; com
 
 | Parent | Implementation | P1 Compiler | P2 Scheduling | P3 Aggregation | P4 Baselines | P5 Recovery |
 |---|---:|---:|---:|---:|---:|---:|
-| [BP-04](BP-04%20Deterministic%20Graph%20Runner.md) | 25% (5/20) | 100% | 25% | 0% | 0% | 0% |
+| [BP-04](BP-04%20Deterministic%20Graph%20Runner.md) | 30% (6/20) | 100% | 50% | 0% | 0% | 0% |
 
 | Active canonical child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-04.02](BP-04/BP-04.02%20Frontier%20and%20scheduling.md) | 25% | 33.33% | 0% | B2 durable advancement |
+| [BP-04.02](BP-04/BP-04.02%20Frontier%20and%20scheduling.md) | 50% | 66.67% | 0% | B3 process/restart proof |
 
 BP-02 is closed at 32/32; BP-03 at 16/16 with all children audited. See [completed plans](Completed/README.md). New parent progress counts only its own deliveries.
 
@@ -66,7 +66,7 @@ BP-04 is `primary_active`; BP-05 through BP-09 are `design_specified / queued`. 
 
 | Order / ID | Completion | Proposed plan | Required predecessor gates | Bounded outcome / exit | Architecture owner |
 |---|---|---|---|---|---|
-| P3 / BP-04 | 5% | [Deterministic Graph Runner](BP-04%20Deterministic%20Graph%20Runner.md) | BP-02 durable state; BP-03 callable tools | Compile and execute typed branch/join/scatter/loop graphs; aggregate committed results; handle scoped failures, external waits, restart and successor campaigns with no LLM required for deterministic control; pass the source-derived v1 solver orchestration scenarios using synthetic adapters | [Graph Runner](../Architecture/System/Graph_Runner.md), [execution model](../Architecture/System/Graph_Execution_Model.md) |
+| P3 / BP-04 | 30% | [Deterministic Graph Runner](BP-04%20Deterministic%20Graph%20Runner.md) | BP-02 durable state; BP-03 callable tools | Compile and execute typed branch/join/scatter/loop graphs; aggregate committed results; handle scoped failures, external waits, restart and successor campaigns with no LLM required for deterministic control; pass the source-derived v1 solver orchestration scenarios using synthetic adapters | [Graph Runner](../Architecture/System/Graph_Runner.md), [execution model](../Architecture/System/Graph_Execution_Model.md) |
 | P4 / BP-05 | 0% | [Graph Studio First Vertical Slice](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md) | BP-04 runnable fixture and read/command contracts | Inspect actual live/historical execution, evidence, parallel branches and failures; edit next-campaign drafts, compare revisions and observe emergency termination; preserve autonomous progress | [Studio](../Architecture/Experience/Studio.md), [UI rules](../UI_Coding_Guidelines.md) |
 | P5 / BP-06 | 0% | [Knowledge Evidence and Source Loop](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) | BP-01 contracts; BP-04 execution; BP-05 inspection | Minimal source/document/result ingestion, typed accepted-change replay, pinned knowledge revisions, bounded executable rules and explicit scientific acceptance receipts; demonstrate corrections affect later campaigns | [Knowledge](../Architecture/Knowledge/Knowledge_Architecture.md), [Data](../Architecture/Data/Data_Architecture.md), [experiments](../Architecture/Research/Experiments.md) |
 | P6 / BP-07 | 0% | [Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | BP-03 tool discovery; BP-04 runner; BP-05 UI; BP-06 grounded context/receipts | Model-generated campaign proposals and text-to-graph extraction through validated contracts; durable scoped engagements, stale-proposal/fallback races, bounded repair and truthful terminal blockers; no routine human waits | [Planning](../Architecture/Agents/Planning.md), [Graph Runner](../Architecture/System/Graph_Runner.md) |
@@ -79,7 +79,7 @@ This is the default sequencing, not nine permanent file-ownership buckets. Each 
 
 | Milestone | Plans | Done when | Status |
 |---|---|---|---|
-| M1 ? Replaceable typed foundation | BP-01/02/03 | One standalone tool is discovered and invoked through pinned contracts with durable acceptance and recovery | Partial: BP-01/02 contracts and durable invocation/recovery foundation complete; standalone tools pending |
+| M1 ? Replaceable typed foundation | BP-01/02/03 | One standalone tool is discovered and invoked through pinned contracts with durable acceptance and recovery | Synthetic software foundation complete: BP-01/02/03 contracts, durable invocation/recovery and standalone tools accepted |
 | M2 ? Inspectable executing graph | BP-04/05 | A user can follow parallel work, joins, failures and evidence in a real running fixture, then author a subsequent campaign | Not started |
 | M3 ? Autonomous evidence-aware campaign | BP-06/07 | Pinned knowledge informs execution; durable LLM proposals are validated; stale or invalid responses cannot corrupt the run | Not started |
 | M4 ? Evolution and module replacement | BP-08/09 | Search history/checkpoints are inspectable; target-host demo recovers and a replacement tool preserves its documented boundaries | Not started |
@@ -123,6 +123,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-28 19:21:42 | BP-04.02 B2 passed; child 50%, parent 30% (6/20); B3 active | 799 tests/thirteen installs/REC-01..09; durable controls/checkpoints, HTTP/polling and active-worker window; scope 4beb3aa18a6b41818bdd97a0620bc674 |
 | 2026-09-28 18:45:36 | BP-04.02 B1 passed; child 25%, parent 25% (5/20); B2 active | 765 tests/thirteen installs/REC-01..09; scoped graph admission, migration and completion guard; scope 0aabef6b736c4a7a82a3772c1c892a77 |
 | 2026-09-28 18:20:22 | BP-04.01 closed/audited 100%; parent 20% (4/20); .02 B1 active 0% | Five actual installed plans/two tools, fresh compiler/Registry replacement; scope 498bc3389bca4a96b0d7f7690bd39577 |
 | 2026-09-28 18:11:10 | BP-04.01 B3 passed; child 75%, parent 15% (3/20); V1 active | 111 compiler cases, 52 independent rejections; 100% scoped statements/branches; 23 contract and 6 legacy graph cases |
@@ -147,6 +148,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-28 13:36:55 | BP-02.06 R4 passed; child 80%, V1 100%, parent 96.88%; next R5 | 306 tests/eight builds, fresh independent replacement environments; REC-01..09 passed |
 | 2026-09-28 13:31:43 | BP-02.06 R3 passed; child 60%, V1 75%, parent 93.75%; next R4 | 306 tests/eight wheels; REC-01..08 passed, actual worker/delivery/frontier restart |
 | 2026-09-28 13:23:07 | BP-02.06 R2 passed; child 40%, V1 50%, parent 90.63%; next R3 | 305 tests/eight builds; actual REC-01..05 installed-process recovery |
-| 2026-09-28 13:16:35 | BP-02.06 R1 passed; child 20%, V1 25%, parent 87.50%; next R2 | Six runtime/five artifact acceptance harness cases; explicit test-only barriers and hashed evidence |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

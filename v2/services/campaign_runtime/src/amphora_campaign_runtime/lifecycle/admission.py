@@ -34,10 +34,10 @@ class PreparedFixture:
 
 
 class FixtureCatalog:
-    def __init__(self, definitions, descriptors=()):
+    def __init__(self, definitions, descriptors=(), *, allow_empty=False):
         definitions = tuple(definitions)
         entries = {d.fixture_id: PreparedFixture(d) for d in definitions}
-        if not entries or len(entries) != len(definitions):
+        if (not entries and not allow_empty) or len(entries) != len(definitions):
             raise ValueError("Nonempty unique explicit fixture allowlist required")
         self.entries = MappingProxyType(entries)
         self.tools = PinnedTools(tuple(descriptors))

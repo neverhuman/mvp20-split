@@ -50,11 +50,12 @@ class RuntimeReads:
             run = conn.execute(text("SELECT * FROM runtime.runs WHERE " + RUN), params).mappings().one_or_none()
             if run is None:
                 raise TransitionError("run_unavailable")
+            active = "AND v.status IN ('queued','leased') " if run["execution_mode"] == "graph" else ""
             rows = conn.execute(text("SELECT v.activation_id,v.invocation_id,v.status,v.current_fence,v.attempt_count,"
                 "a.attempt_id,a.worker_id,a.status AS attempt_status,a.lease_expires_at,a.deadline "
                 "FROM runtime.activations v LEFT JOIN runtime.attempts a ON "
                 "(a.tenant_id,a.project_id,a.run_id,a.activation_id,a.fence)="
                 "(v.tenant_id,v.project_id,v.run_id,v.activation_id,v.current_fence) "
                 "WHERE v.tenant_id=:tenant AND v.project_id=:project AND v.run_id=:run "
-                "ORDER BY v.activation_id LIMIT 256"), params).mappings().all()
+                + active + "ORDER BY v.activation_id LIMIT 256"), params).mappings().all()
             return ObservedRun(principal.scope, run, tuple(rows)).to_response()
