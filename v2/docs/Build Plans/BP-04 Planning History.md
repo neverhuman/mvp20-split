@@ -11,7 +11,7 @@ Current overall/per-phase percentages, current task and blockers belong to the [
 - P1 / [BP-04.01 Compiler and executable contract](BP-04/Completed/BP-04.01%20Compiler%20and%20executable%20contract.md): closed/audited, **100%**. Its completed tracker and evidence remain in `BP-04/Completed/`.
 - P2 / [BP-04.02 Frontier and scheduling](BP-04/Completed/BP-04.02%20Frontier%20and%20scheduling.md): closed/audited, **100%**. Its completed tracker and evidence remain in `BP-04/Completed/`.
 
-These are durable completed milestones, not pending first-draft work. New aggregation and external-wait work belongs to [BP-04.03](BP-04/BP-04.03%20Aggregation%20and%20failure%20policy.md); it does not reopen P1/P2.
+These are durable completed milestones, not pending first-draft work. New aggregation and external-wait work belongs to [BP-04.03](BP-04/Completed/BP-04.03%20Aggregation%20and%20failure%20policy.md); it does not reopen P1/P2.
 
 ## Outcome and Boundaries
 
@@ -94,3 +94,5 @@ The canonical parent and child trackers own overall and phase percentages; MBT m
 Final phase includes a component-scoped architecture drift audit. Fix blocking drift, explicitly assign nonblocking follow-ups, update module READMEs/inventories and archive only after all defined gates pass. Synchronize MBT, plan index and Restore and repair moved links. Preserve separate acceptance/operational/scientific readiness status; 100% measures this bounded implementation, not the whole product.
 
 P1/P2 closeout evidence is in their completed children linked above. Remaining closeout gates are owned by their respective child plans; historical drafting does not establish scientific or deployment validity.
+
+`2026-09-29 09:04:11`: P3 / [BP-04.03](BP-04/Completed/BP-04.03%20Aggregation%20and%20failure%20policy.md) closed/audited at 100% (4/4). Canonical parent owns subsequent progress; no live tracker is maintained here.

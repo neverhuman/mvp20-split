@@ -1,7 +1,7 @@
 # Graph Runtime Contracts
 
 - Package: `amphora-contracts-graph-runtime` 0.2.1; wire-v1 shapes unchanged, receipt/wait roots and separately versioned graph observations. The patch updates the exact campaigns 0.3.1 dependency without changing schema bytes.
-- Owner: Campaign Runtime coordination boundary; Runtime 0.7.0 hosts v2/v3 graph execution and wait receipts. Actual competing-process/installed-issuer acceptance remains BP-04.03/B3-V1.
+- Owner: Campaign Runtime coordination boundary; Runtime 0.7.0 hosts v2/v3 graph execution and wait receipts. Actual competing-process/installed-issuer acceptance passed BP-04.03/B3-V1.
 - Architecture: [Graph Execution Model](../../docs/Architecture/System/Graph_Execution_Model.md).
 
 Public root imports expose graph admission/advance commands, bounded values, limits and paginated node observations. They reference executable campaign wire-v2 identity while retaining the existing attempt budget and command envelope. This separate package prevents graph authoring dependencies from entering the pinned scientific worker/SDK closure. Existing worker commands and campaign schemas retain their serialized behavior; campaign exports add names for existing literal-value DTOs only.

@@ -16,7 +16,7 @@ from sqlalchemy import URL
 from verify_foundation import run
 
 
-def verify(images):
+def verify(images, profile="graphs"):
     if os.environ.get("AMPHORA_TEST_POSTGRES") != "1":
         raise ValueError("Explicit PostgreSQL fixture opt-in required")
     state = owned_state()
@@ -50,11 +50,13 @@ def verify(images):
             "registry": installed["amphora_capability_registry"], "artifact": installed["amphora_data_artifacts"],
             "tools": {module: installed[module] for module in ("amphora_numeric_affine", "amphora_sequence_statistics")},
             "replacements": replacements, "images": str(images.absolute()),
-            "evidence": str(ROOT / ".test-results/graph-acceptance"), "packages": packages}), encoding="utf-8")
+            "evidence": str(ROOT / (".test-results/wait-acceptance" if profile == "waits" else ".test-results/graph-acceptance")),
+            "packages": packages}), encoding="utf-8")
         env = {key: value for key, value in os.environ.items() if key.upper() in {"SYSTEMROOT", "WINDIR", "TEMP", "TMP", "PATH", "COMSPEC"}}
         for name, role in (("RUNTIME", "runtime_service"), ("ARTIFACT", "artifact_service"), ("REGISTRY", "registry_service")):
             env["AMPHORA_" + name + "_DATABASE_URL"] = url.set(username=role).render_as_string(hide_password=False)
-        probe = ROOT / "services/campaign_runtime/tests/scheduling/acceptance/probe.py"
+        area = "waits" if profile == "waits" else "scheduling"
+        probe = ROOT / f"services/campaign_runtime/tests/{area}/acceptance/probe.py"
         result = subprocess.run([installed["amphora_tool_protocol"], "-I", str(probe), str(config)],
             cwd=root, env=env, capture_output=True, text=True, encoding="utf-8", timeout=300)
         print(result.stdout, end="")
@@ -65,4 +67,6 @@ def verify(images):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--images", required=True, type=Path)
-    verify(parser.parse_args().images)
+    parser.add_argument("--profile", choices=("graphs", "waits"), default="graphs")
+    args = parser.parse_args()
+    verify(args.images, args.profile)

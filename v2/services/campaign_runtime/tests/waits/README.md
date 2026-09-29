@@ -1,6 +1,6 @@
 # External-wait verification
 
-Owner: [wait module](../../src/amphora_campaign_runtime/waits/README.md). Plan: [BP-04.03](../../../../docs/Build%20Plans/BP-04/BP-04.03%20Aggregation%20and%20failure%20policy.md).
+Owner: [wait module](../../src/amphora_campaign_runtime/waits/README.md). Plan: [BP-04.03](../../../../docs/Build%20Plans/BP-04/Completed/BP-04.03%20Aggregation%20and%20failure%20policy.md).
 
 Run the complete owned suite with `dev/run_tests.py --module runtime --area waits --coverage`; PostgreSQL requires the explicitly enabled, labeled local fixture. Keep this suite serial with other single-campaign owner suites. Storage-only fixtures do not establish execution acceptance.
 

@@ -1,10 +1,10 @@
 # Architecture Drift
 
-- Status: BP-02/BP-03 closed/audited; BP-04.01/.02 closed; BP-04.03 aggregation/waits active
-- Last refreshed: `2026-09-28 19:47:08` (America/Chicago)
+- Status: BP-02/BP-03 and BP-04.01/.02/.03 closed/audited; BP-04.04 activation review next.
+- Last refreshed: `2026-09-29 09:04:11` (America/Chicago).
 - Scope: v2 design/implementation alignment
 - Active focus: require traceable contracts and closeout audits as implementation begins
-- Next gate: BP-04.03 versioned aggregate/await boundary
+- Next gate: BP-04.04 source-derived baseline/successor activation audit.
 
 ## Active Findings
 

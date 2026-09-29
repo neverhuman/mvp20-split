@@ -1,0 +1,11 @@
+# Installed external-wait acceptance
+
+Owner: [wait contract](../../../src/amphora_campaign_runtime/waits/README.md). Plan: [BP-04.03](../../../../../docs/Build%20Plans/BP-04/Completed/BP-04.03%20Aggregation%20and%20failure%20policy.md).
+
+Run `dev/verify_graphs.py --profile waits --images <verified-image-manifest>` with `AMPHORA_TEST_POSTGRES=1`. The default `graphs` profile remains the predecessor scheduling suite. Both profiles build thirteen wheels and create separate Runtime, Registry, Artifact, SDK, tool and fresh Runtime replacement environments. Run serially with other single-campaign suites.
+
+`probe.py` orchestrates actual local HTTP services from the independently installed SDK interpreter. It reuses test-owned process/publication helpers; it imports no owner implementation or SQL client. `compile_plan.py` runs in the installed Runtime environment with no database credentials, compiling exact pinned public definitions/schema bytes. `issuer.py` runs as a separate isolated process with only its own token, endpoints and bounded synthetic input. It uses public wait reads, Artifact upload/finalization and receipt submission; no owner imports or SQL access.
+
+Required oracles: open wait and plan survive replacement; wrong-purpose/superseded evidence cannot unblock; valid issued evidence references an actual published Artifact; accepted closure matches the explicit issuer receipt; graph completion spends no worker budget; Artifact confirmation delivery succeeds; another fresh Runtime preserves original receipt, closure, graph and readable Artifact bytes; scientific abstention closes truthfully without claiming accepted evidence.
+
+Generated manifests preserve package hashes, exact scopes/receipts/waits and process evidence without tokens or database URLs. Reviewed copies belong under `docs/Audits/Evidence/BP-04-Aggregation/`. Synthetic evidence establishes software interoperability, not a Research/Knowledge scientific judgment. This profile does not claim ARM, K3s or power-loss acceptance.
