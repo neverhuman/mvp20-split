@@ -1,0 +1,400 @@
+{
+  "cases": [
+    {
+      "artifact_peer": "scripted; installed real peer acceptance remains V1",
+      "boundary": {
+        "closure_unchanged": true,
+        "late_reservation_aborted": true
+      },
+      "case": "cancel-during-reserve",
+      "closures": [
+        {
+          "activation_id": "05ac307d353e81e5d7d424f806697ae89cd1133fbe3558f29f45cbda3b6738aa",
+          "closure_revision": 2,
+          "expectation_sha256": "62756a5bcb3c587c95af97bc6faebb84924f11cd032ac395faf2e63bc46adb8a",
+          "outcome": {
+            "reason_code": "process_stop",
+            "receipt": null,
+            "status": "cancelled"
+          },
+          "run_id": "021cdcb6b69843a4a882a8332cc7bfa9",
+          "schema_version": "1",
+          "scope": {
+            "project_id": "9a252440beae4df3bb85fe73d38be4b6",
+            "tenant_id": "admission-tests"
+          },
+          "wait_revision": 1
+        }
+      ],
+      "expectation_sha256": "62756a5bcb3c587c95af97bc6faebb84924f11cd032ac395faf2e63bc46adb8a",
+      "intents": [
+        {
+          "intent_id": "wait:5ecdcc828d7d57f8bc72156ce89cfc74",
+          "status": "aborted"
+        }
+      ],
+      "run_id": "021cdcb6b69843a4a882a8332cc7bfa9",
+      "scope": {
+        "project_id": "9a252440beae4df3bb85fe73d38be4b6",
+        "tenant_id": "admission-tests"
+      },
+      "verified_at": "2026-09-29 08:54:02"
+    },
+    {
+      "artifact_peer": "scripted; installed real peer acceptance remains V1",
+      "boundary": {
+        "backends": [
+          21124,
+          21123
+        ],
+        "deadline_elapsed_before_unlock": false,
+        "lock_waiters": 2,
+        "original_receipt_replayed": true
+      },
+      "case": "eligible-race",
+      "closures": [
+        {
+          "activation_id": "6304d0afad29f393198d0ad4fc2e0a47928460c94728e3fe4962624a8435e179",
+          "closure_revision": 2,
+          "expectation_sha256": "64281abe633a7bab88b6375ea5424e1ae00b6025c09730e2efc8d4fb046cb835",
+          "outcome": {
+            "receipt": {
+              "issuer_id": "synthetic-issuer",
+              "outcome": {
+                "output": {
+                  "artifact": {
+                    "artifact_id": "domain-result",
+                    "media_type": "application/json",
+                    "schema_ref": {
+                      "schema_id": "synthetic.numeric-affine.output",
+                      "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                      "version": "1"
+                    },
+                    "scope": {
+                      "project_id": "64f6dd1d5f6c48a4a8d10ea886286b1f",
+                      "tenant_id": "admission-tests"
+                    },
+                    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "size_bytes": 30
+                  },
+                  "kind": "artifact",
+                  "representation": "numeric-vector",
+                  "unit": "1"
+                },
+                "status": "accepted"
+              },
+              "purpose": "fixture-evaluation",
+              "receipt_id": "be81ed470b8c42e583ffe52cf9ae3b72",
+              "revision": "revision-1",
+              "schema_version": "1",
+              "scope": {
+                "project_id": "64f6dd1d5f6c48a4a8d10ea886286b1f",
+                "tenant_id": "admission-tests"
+              },
+              "subject": {
+                "artifact_id": "synthetic-input",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "synthetic.numeric-affine.input",
+                  "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                  "version": "1"
+                },
+                "scope": {
+                  "project_id": "64f6dd1d5f6c48a4a8d10ea886286b1f",
+                  "tenant_id": "admission-tests"
+                },
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "size_bytes": 30
+              }
+            },
+            "status": "accepted"
+          },
+          "run_id": "17c360fe560b4f0cbbf789f7fe0338b6",
+          "schema_version": "1",
+          "scope": {
+            "project_id": "64f6dd1d5f6c48a4a8d10ea886286b1f",
+            "tenant_id": "admission-tests"
+          },
+          "wait_revision": 1
+        }
+      ],
+      "expectation_sha256": "64281abe633a7bab88b6375ea5424e1ae00b6025c09730e2efc8d4fb046cb835",
+      "intents": [
+        {
+          "intent_id": "wait:a63400ec559f56c4af39cf2331d25a54",
+          "status": "committed"
+        }
+      ],
+      "run_id": "17c360fe560b4f0cbbf789f7fe0338b6",
+      "scope": {
+        "project_id": "64f6dd1d5f6c48a4a8d10ea886286b1f",
+        "tenant_id": "admission-tests"
+      },
+      "verified_at": "2026-09-29 08:53:47"
+    },
+    {
+      "artifact_peer": "scripted; installed real peer acceptance remains V1",
+      "boundary": {
+        "backends": [
+          21129,
+          21128
+        ],
+        "deadline_elapsed_before_unlock": true,
+        "lock_waiters": 2,
+        "original_receipt_replayed": true
+      },
+      "case": "expired-race",
+      "closures": [
+        {
+          "activation_id": "6ce9cd1cc997e451fcdeb1689c42c78fbbf0c752502a8d4af1e3c48ad1a918c9",
+          "closure_revision": 2,
+          "expectation_sha256": "413d5634d72c6598031525628d56f77b0cb9c15518007fd7bd9a1da3c6bd0d7c",
+          "outcome": {
+            "reason_code": "wait_deadline_expired",
+            "receipt": null,
+            "status": "blocked"
+          },
+          "run_id": "3018b7cd34c043db87c58ba0bdfa138a",
+          "schema_version": "1",
+          "scope": {
+            "project_id": "581471530f7845bfa448dd98136669bf",
+            "tenant_id": "admission-tests"
+          },
+          "wait_revision": 1
+        }
+      ],
+      "expectation_sha256": "413d5634d72c6598031525628d56f77b0cb9c15518007fd7bd9a1da3c6bd0d7c",
+      "intents": [],
+      "run_id": "3018b7cd34c043db87c58ba0bdfa138a",
+      "scope": {
+        "project_id": "581471530f7845bfa448dd98136669bf",
+        "tenant_id": "admission-tests"
+      },
+      "verified_at": "2026-09-29 08:53:55"
+    },
+    {
+      "artifact_peer": "scripted; installed real peer acceptance remains V1",
+      "boundary": {
+        "original_receipt_replayed": true,
+        "original_reply_received": false,
+        "replacement_reserved_again": false
+      },
+      "case": "kill-after-commit",
+      "closures": [
+        {
+          "activation_id": "026badedd3eac9b0ab308a4fc157baa41a2133dbd74d23a592f786aa2da88942",
+          "closure_revision": 2,
+          "expectation_sha256": "17ed7d2aee3d69c319b0dbe8dd28374cc9a007b35d0a3769672626287a715141",
+          "outcome": {
+            "receipt": {
+              "issuer_id": "synthetic-issuer",
+              "outcome": {
+                "output": {
+                  "artifact": {
+                    "artifact_id": "domain-result",
+                    "media_type": "application/json",
+                    "schema_ref": {
+                      "schema_id": "synthetic.numeric-affine.output",
+                      "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                      "version": "1"
+                    },
+                    "scope": {
+                      "project_id": "9ab009b8823f4cc3a61a075a052cf299",
+                      "tenant_id": "admission-tests"
+                    },
+                    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "size_bytes": 30
+                  },
+                  "kind": "artifact",
+                  "representation": "numeric-vector",
+                  "unit": "1"
+                },
+                "status": "accepted"
+              },
+              "purpose": "fixture-evaluation",
+              "receipt_id": "fec5170b607844bf857f66dcbf36a79f",
+              "revision": "revision-1",
+              "schema_version": "1",
+              "scope": {
+                "project_id": "9ab009b8823f4cc3a61a075a052cf299",
+                "tenant_id": "admission-tests"
+              },
+              "subject": {
+                "artifact_id": "synthetic-input",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "synthetic.numeric-affine.input",
+                  "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                  "version": "1"
+                },
+                "scope": {
+                  "project_id": "9ab009b8823f4cc3a61a075a052cf299",
+                  "tenant_id": "admission-tests"
+                },
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "size_bytes": 30
+              }
+            },
+            "status": "accepted"
+          },
+          "run_id": "03b8f04445b74cb899533b8562233495",
+          "schema_version": "1",
+          "scope": {
+            "project_id": "9ab009b8823f4cc3a61a075a052cf299",
+            "tenant_id": "admission-tests"
+          },
+          "wait_revision": 1
+        }
+      ],
+      "expectation_sha256": "17ed7d2aee3d69c319b0dbe8dd28374cc9a007b35d0a3769672626287a715141",
+      "intents": [
+        {
+          "intent_id": "wait:229e3124929b5c61b33e3c831197cbef",
+          "status": "committed"
+        }
+      ],
+      "run_id": "03b8f04445b74cb899533b8562233495",
+      "scope": {
+        "project_id": "9ab009b8823f4cc3a61a075a052cf299",
+        "tenant_id": "admission-tests"
+      },
+      "verified_at": "2026-09-29 08:54:18"
+    },
+    {
+      "artifact_peer": "scripted; installed real peer acceptance remains V1",
+      "boundary": {
+        "closure_unchanged": true,
+        "late_reservation_aborted": true
+      },
+      "case": "timeout-during-reserve",
+      "closures": [
+        {
+          "activation_id": "639aa402ace6b48decd7ecb09e13be70fea739c59511f8a49efa98df76252df6",
+          "closure_revision": 2,
+          "expectation_sha256": "25dd69c97a1c2dd1b6382e546e1350cc52c0ec1c2e33a9cd54dfcd06cf0b5e39",
+          "outcome": {
+            "reason_code": "wait_deadline_expired",
+            "receipt": null,
+            "status": "blocked"
+          },
+          "run_id": "31b386f0ff9f4ffb9b7981dfe934558e",
+          "schema_version": "1",
+          "scope": {
+            "project_id": "c75987b7a604448fb39cec3829edde9d",
+            "tenant_id": "admission-tests"
+          },
+          "wait_revision": 1
+        }
+      ],
+      "expectation_sha256": "25dd69c97a1c2dd1b6382e546e1350cc52c0ec1c2e33a9cd54dfcd06cf0b5e39",
+      "intents": [
+        {
+          "intent_id": "wait:5ac81ce805855735aeca3095d4f23143",
+          "status": "aborted"
+        }
+      ],
+      "run_id": "31b386f0ff9f4ffb9b7981dfe934558e",
+      "scope": {
+        "project_id": "c75987b7a604448fb39cec3829edde9d",
+        "tenant_id": "admission-tests"
+      },
+      "verified_at": "2026-09-29 08:54:11"
+    },
+    {
+      "artifact_peer": "scripted; installed real peer acceptance remains V1",
+      "boundary": {
+        "accepted": 1,
+        "prepared_processes": 2,
+        "rejected": 1
+      },
+      "case": "two-prepared-receipts",
+      "closures": [
+        {
+          "activation_id": "2166b2d32b38ec4540690e39ff551324facf020a9d85c82bdeeaf606f826169b",
+          "closure_revision": 2,
+          "expectation_sha256": "f8a0bbc2e58b15d8e225b8520689ac3746e415ed0c104a79901657e4c18c287e",
+          "outcome": {
+            "receipt": {
+              "issuer_id": "synthetic-issuer",
+              "outcome": {
+                "output": {
+                  "artifact": {
+                    "artifact_id": "domain-result",
+                    "media_type": "application/json",
+                    "schema_ref": {
+                      "schema_id": "synthetic.numeric-affine.output",
+                      "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                      "version": "1"
+                    },
+                    "scope": {
+                      "project_id": "47cfbbcbc71849da8760ab64193dac84",
+                      "tenant_id": "admission-tests"
+                    },
+                    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "size_bytes": 30
+                  },
+                  "kind": "artifact",
+                  "representation": "numeric-vector",
+                  "unit": "1"
+                },
+                "status": "accepted"
+              },
+              "purpose": "fixture-evaluation",
+              "receipt_id": "b28586586e45471a905acae6f4767329",
+              "revision": "revision-1",
+              "schema_version": "1",
+              "scope": {
+                "project_id": "47cfbbcbc71849da8760ab64193dac84",
+                "tenant_id": "admission-tests"
+              },
+              "subject": {
+                "artifact_id": "synthetic-input",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "synthetic.numeric-affine.input",
+                  "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                  "version": "1"
+                },
+                "scope": {
+                  "project_id": "47cfbbcbc71849da8760ab64193dac84",
+                  "tenant_id": "admission-tests"
+                },
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "size_bytes": 30
+              }
+            },
+            "status": "accepted"
+          },
+          "run_id": "8e66b854cc594e8fb4e32a16f0b746cd",
+          "schema_version": "1",
+          "scope": {
+            "project_id": "47cfbbcbc71849da8760ab64193dac84",
+            "tenant_id": "admission-tests"
+          },
+          "wait_revision": 1
+        }
+      ],
+      "expectation_sha256": "f8a0bbc2e58b15d8e225b8520689ac3746e415ed0c104a79901657e4c18c287e",
+      "intents": [
+        {
+          "intent_id": "wait:927a8df827cd5d1d98af98f0aa5eca8c",
+          "status": "committed"
+        },
+        {
+          "intent_id": "wait:a6a925518b9e5ffcbf146adab5fc1fdc",
+          "status": "aborted"
+        }
+      ],
+      "run_id": "8e66b854cc594e8fb4e32a16f0b746cd",
+      "scope": {
+        "project_id": "47cfbbcbc71849da8760ab64193dac84",
+        "tenant_id": "admission-tests"
+      },
+      "verified_at": "2026-09-29 08:54:23"
+    }
+  ],
+  "limits": "Actual editable-owner processes/PostgreSQL; Artifact responses scripted. Installed issuer/peer acceptance remains V1.",
+  "runtime_commit": "12212e9",
+  "runtime_version": "0.7.0",
+  "verified_at": "2026-09-29 08:56:15"
+}

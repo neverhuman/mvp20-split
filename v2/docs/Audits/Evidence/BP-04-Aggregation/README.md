@@ -1,0 +1,9 @@
+# Aggregation and external-wait evidence
+
+Owner: [BP-04.03](../../../Build%20Plans/BP-04/BP-04.03%20Aggregation%20and%20failure%20policy.md). Reviewed: `2026-09-29 08:56:15` (America/Chicago).
+
+[B3.json](B3.json), pinned by [B3.sha256](B3.sha256), preserves six actual Runtime-process cases: eligible/expired receipt-versus-coordinator contention with two measured PostgreSQL lock waiters, cancellation/timeout during another process's reservation, death after commit before reply, and two prepared receipts competing for one closure. Each case records exact wait, run, closure and protection identities. Runtime 0.7.0 production bytes are unchanged from `12212e9`.
+
+Verification: 73 wait cases passed in the first expanded coverage run; the sixth process case had a test-only canonical-command accessor error after its winner/loser assertions. The corrected complete six-process rerun passed, covering all 74 owned wait cases across those runs. Wait module coverage remains 501/507 statements, 69/74 branches in the parent interpreter; subprocess execution is not included in that measurement. Defensive conflict/replay and already-reconciled paths remain explicit gaps. The 83-case aggregation suite passed independently, including ordered mixed outcomes, skip/failure/minimum, duplicate members and immutable late results. Logs: `.test-results/bp0403-b3-waits.log`, `bp0403-b3-process-final.log`, `bp0403-b3-aggregation.log`.
+
+[Wait verification](../../../../services/campaign_runtime/tests/waits/README.md) defines process barriers and oracles. Artifact clients in these cases are scripted. B3 does not establish installed issuer/Artifact interoperability, scientific authority, ARM deployment, cluster behavior or power-loss durability; V1 owns independent installation and actual peer/replacement acceptance.

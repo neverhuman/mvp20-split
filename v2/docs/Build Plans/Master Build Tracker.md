@@ -9,14 +9,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-04 primary active; BP-05 through BP-09 queued; BP-01/BP-01A/BP-02/BP-03 closed.
-- Last refreshed: `2026-09-28 22:09:45` (America/Chicago).
+- Last refreshed: `2026-09-29 08:56:15` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P3 / BP-04 - deterministic graph runner.
-- Primary active implementation plan / phase / task: BP-04 -> BP-04.03 / Build / B3.
-- Current task: BP-04.03/B3 actual competing timeout/receipt processes and immutable late-result proof.
-- Next task: BP-04.03/V1 installed synthetic issuer/peer and replacement acceptance.
-- Implementation completion: BP-02 closed 100% (32/32), BP-03 closed 100% (16/16); BP-04 active 50% (10/20), .01/.02 closed 100%, .03 active 50% (Build 66.67%/Acceptance 0%); BP-05..09 queued 0%. No effort estimate inferred.
-- Active focus: Runtime 0.7.0: 68 focused wait cases; full B2 gate passed 1,001 tests, thirteen independent installs, paired owners and REC-01..09. Actual competing-process B3 and installed-issuer V1 remain required. Child tracker owns execution; parent and MBT mirror it. Planning history records completed milestones without a duplicate live tracker.
+- Primary active implementation plan / phase / task: BP-04 -> BP-04.03 / Acceptance / V1.
+- Current task: BP-04.03/V1 installed synthetic issuer/Artifact and Runtime replacement acceptance, then scoped audit.
+- Next task: BP-04.04 activation coherence audit after .03 acceptance/closeout.
+- Implementation completion: BP-02 closed 100% (32/32), BP-03 closed 100% (16/16); BP-04 active 55% (11/20), .01/.02 closed 100%, .03 active 75% (Build 100%/Acceptance 0%); BP-05..09 queued 0%.
+- Active focus: Six B3 process cases passed with real PostgreSQL contention and crash/replay evidence; wait/aggregation oracles verified. V1 actual installed issuer/peer proof remains. Child tracker owns execution; parent/MBT mirror it.
 - Blockers: no current user decision or implementation blocker; later host/provider/scientific gates remain explicit.
 - Acceptance posture: durable synthetic invocations, actual peer retention, process recovery and fresh service replacement verified; durable graph/process/actual peer replacement accepted; richer policy and scientific claims remain gated.
 - Active exception: none.
@@ -35,11 +35,11 @@ BP-04 is the sole primary active plan. Child trackers own delivery evidence; com
 
 | Parent | Implementation | P1 Compiler | P2 Scheduling | P3 Aggregation | P4 Baselines | P5 Recovery |
 |---|---:|---:|---:|---:|---:|---:|
-| [BP-04](BP-04%20Deterministic%20Graph%20Runner.md) | 50% (10/20) | 100% | 100% | 50% | 0% | 0% |
+| [BP-04](BP-04%20Deterministic%20Graph%20Runner.md) | 55% (11/20) | 100% | 100% | 75% | 0% | 0% |
 
 | Active canonical child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-04.03](BP-04/BP-04.03%20Aggregation%20and%20failure%20policy.md) | 50% | 66.67% | 0% | B3 failure/process proof |
+| [BP-04.03](BP-04/BP-04.03%20Aggregation%20and%20failure%20policy.md) | 75% | 100% | 0% | V1 installed issuer/peer proof |
 
 BP-02 is closed at 32/32; BP-03 at 16/16 with all children audited. See [completed plans](Completed/README.md). New parent progress counts only its own deliveries.
 
@@ -123,6 +123,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-29 08:56:15 | BP-04.03 B3 passed; child 75%, parent 55% (11/20); V1 active | Six actual process cases; 74 waits/83 aggregation cases across scoped runs; [evidence](../Audits/Evidence/BP-04-Aggregation/README.md) |
 | 2026-09-28 22:09:45 | BP-04.03 B2 passed; child 50%, parent 50% (10/20); B3 active | 68 focused/1,001 total tests, thirteen installs, REC-01..09 b85109f93d704848af90f46f04bf89fe; Runtime 0.7.0 wait execution/protection |
 | 2026-09-28 21:32:01 | BP-04.03 B2 collection slice verified; child stays 25%, parent 45%; external waits next | 84 focused/970 total tests, thirteen installs, REC-01..09 scope 182014083a85488981dbd08e1bbda122; Runtime 0.6.0 immutable all/partial/deadline decisions; canonical history repair |
 | 2026-09-28 20:50:52 | BP-04.03 B1 passed; child 25%, parent 45% (9/20); B2 active | 920 tests/thirteen installs/REC-01..09; await wire-v3, 116 frozen predecessor schemas, isolated wait retention preparation; scope 5083de960e9142f1be186e0d77f4cf3e |
@@ -147,6 +148,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-28 15:17:41 | BP-03.02 closed/audited 100%; parent 50% (8/16); .03 B1 active at 0% | 448 tests/nine builds; actual registry HTTP replacement and preserved race evidence; [audit](../Audits/BP-03.02_Registry_Closeout.md) |
 | 2026-09-28 14:49:59 | BP-03.02 B2 passed; child 50%, parent 37.50%; next B3 | 114 registry tests/96% expanded coverage; real expiry, replay, lifecycle and exact-version capacity policy |
 | 2026-09-28 14:45:09 | BP-03.02 B1 passed; child 25%, parent 31.25% (5/16); next B2 | 411 tests/nine builds/REC-01..09; registry-private transactions, authenticated API and immutable receipts |
-| 2026-09-28 14:25:40 | BP-03.01 closed/audited 100%; parent 25% (4/16); .02 B1 active at 0% | 393 tests/nine builds; fresh registry and actual peer compatibility; [audit](../Audits/BP-03.01_Descriptor_Closeout.md) |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.
