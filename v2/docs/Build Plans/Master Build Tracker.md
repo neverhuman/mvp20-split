@@ -9,16 +9,16 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-04 primary active; BP-05 through BP-09 queued; BP-01/BP-01A/BP-02/BP-03 closed.
-- Last refreshed: `2026-09-29 09:04:11` (America/Chicago).
+- Last refreshed: `2026-09-29 09:10:31` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P3 / BP-04 - deterministic graph runner.
-- Primary active implementation plan / phase / task: BP-04 -> BP-04.04 activation coherence audit.
-- Current task: BP-04.04 bounded activation audit before B1 implementation.
-- Next task: BP-04.04/B1 source-pinned synthetic adapters and independent baseline trace oracles.
+- Primary active implementation plan / phase / task: BP-04 -> BP-04.04 activation audit / BIND-01 decision.
+- Current task: owner review of proposed BP-04.04A typed Artifact/collection prerequisite before solver parity.
+- Next task: proposed prerequisite B1 if approved; .04 follows its acceptance. No new implementation activated.
 - Implementation completion: BP-02 closed 100% (32/32), BP-03 closed 100% (16/16); BP-04 active 60% (12/20), .01/.02/.03 closed 100%; .04 queued 0% (Build 0%/Acceptance 0%); BP-05..09 queued 0%.
-- Active focus: .03 closed after five installed issuer/Artifact/replacement cases and scoped audit; activate .04 against actual versioned graph/worker boundaries. Child trackers own progress; parent/MBT mirror them.
-- Blockers: no current user decision or implementation blocker; later host/provider/scientific gates remain explicit.
-- Acceptance posture: durable synthetic invocations, actual peer retention, process recovery and fresh service replacement verified; durable graph/process/actual peer replacement accepted; richer policy and scientific claims remain gated.
+- Active focus: .03 closed/pushed 6b122a8; .04 audit exposed missing generated-population/gathered-result conversions. Proposal specifies four prerequisite deliveries; excluded from current rollup pending owner direction.
+- Blockers: BIND-01 material scope/sequence decision. Existing tools return Artifact references; scatter/gather graph collections lack the required conversion path. Current 12/20 accounting remains unchanged until approved.
+- Acceptance posture: scheduling, aggregation/waits, actual process and installed issuer/Artifact replacement accepted. Solver parity awaits BIND-01 resolution; scientific/target-host claims remain later gates.
 - Active exception: none.
 
 ## Initial Delivery Boundary
@@ -39,7 +39,7 @@ BP-04 is the sole primary active plan. Child trackers own delivery evidence; com
 
 | Active canonical child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-04.04](BP-04/BP-04.04%20V1%20baseline%20and%20successor%20graphs.md) | 0% | 0% | 0% | Activation audit before B1 |
+| [BP-04.04](BP-04/BP-04.04%20V1%20baseline%20and%20successor%20graphs.md) | 0% | 0% | 0% | BIND-01 owner decision |
 
 BP-02 is closed at 32/32; BP-03 at 16/16 with all children audited. See [completed plans](Completed/README.md). New parent progress counts only its own deliveries.
 
@@ -87,6 +87,8 @@ This is the default sequencing, not nine permanent file-ownership buckets. Each 
 Milestones are acceptance outcomes, not additional work counted on top of their plans. No calendar dates or capacity promises are inferred.
 
 ## Decisions and Dependency Watchlist
+
+BIND-01: [proposed BP-04.04A](BP-04/BP-04.04A%20Typed%20artifact%20and%20collection%20bindings.md) needs owner direction before scope/sequence changes. If approved, parent becomes 12/24 (50%); no completed work is removed. Until then the approved rollup remains 12/20 (60%).
 
 | Item | Needed before | Disposition / owner |
 |---|---|---|
