@@ -5,6 +5,7 @@ Independent Python packages expose public imports, versioned wire schemas and la
 - [Core](core/README.md): immutable identity, scope, schema and artifact references.
 - [Tools](tools/README.md): tool identity, ports, descriptor and invocation/completion protocol.
 - [Campaigns](campaigns/README.md): separate validation-only wire-v1 and executable wire-v2 graph boundaries.
+- [Synthetic solver fixture](solver_fixture/README.md): bounded payloads for source-derived orchestration fixtures; no algorithms or scientific authority.
 - `fixtures/v1/wire_cases.json`: shared positive/negative interchange fixtures.
 - `schemas/v1/manifest.json`: generated schema artifact digests; regenerate with `dev/export_schemas.py`.
 

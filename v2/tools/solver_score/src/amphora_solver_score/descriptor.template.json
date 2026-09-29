@@ -1,0 +1,62 @@
+{
+  "schema_version": "1",
+  "tool": {
+    "schema_version": "1",
+    "binding": {
+      "capability_id": "synthetic.solver-score",
+      "release": "0.1.0",
+      "contract_version": "1"
+    },
+    "purpose": "Evaluate one synthetic candidate through the source-pinned ordered module envelope fixture.",
+    "applicability": [
+      "synthetic-tests"
+    ],
+    "inputs": [
+      {
+        "name": "parameters",
+        "representation": "synthetic-solver-scorerequest",
+        "unit": "1",
+        "required": true
+      }
+    ],
+    "outputs": [
+      {
+        "name": "result",
+        "representation": "synthetic-solver-scoreresult",
+        "unit": "1",
+        "required": true
+      }
+    ],
+    "side_effects": "pure",
+    "checkpoint_schema": null
+  },
+  "resources": {
+    "architectures": [
+      "x86_64"
+    ],
+    "operating_systems": [
+      "linux"
+    ],
+    "cpu_millicores": 1000,
+    "memory_mib": 128,
+    "gpu_count": 0,
+    "timeout_seconds": 60,
+    "max_parallel_invocations": 1,
+    "max_batch_size": 1
+  },
+  "egress": {
+    "mode": "deny"
+  },
+  "checkpoint": {
+    "mode": "none",
+    "readable_schema_sha256": []
+  },
+  "reproducibility": "deterministic",
+  "authority_ceiling": "synthetic_only",
+  "examples": [
+    "Reviewed orchestration fixtures only; see module-local tests."
+  ],
+  "anti_examples": [
+    "Does not establish biological, chemical or materials validity."
+  ]
+}

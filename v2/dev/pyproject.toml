@@ -21,6 +21,12 @@ dependencies = [
     "amphora-numeric-affine",
     "amphora-sequence-statistics",
     "amphora-contracts-graph-runtime==0.3.0",
+    "amphora-contracts-solver-fixture==0.1.0",
+    "amphora-solver-retain==0.1.0",
+    "amphora-solver-score==0.1.0",
+    "amphora-solver-mutate==0.1.0",
+    "amphora-solver-select==0.1.0",
+    "amphora-solver-seed==0.1.0",
 ]
 
 [tool.uv]
@@ -41,6 +47,17 @@ amphora-tool-protocol = { path = "../sdk/tool_protocol", editable = true }
 amphora-numeric-affine = { path = "../tools/numeric_affine", editable = true }
 amphora-sequence-statistics = { path = "../tools/sequence_statistics", editable = true }
 amphora-contracts-graph-runtime = { path = "../contracts/graph_runtime", editable = true }
+amphora-contracts-solver-fixture = { path = "../contracts/solver_fixture", editable = true }
+
+amphora-solver-seed = { path = "../tools/solver_seed", editable = true }
+
+amphora-solver-select = { path = "../tools/solver_select", editable = true }
+
+amphora-solver-mutate = { path = "../tools/solver_mutate", editable = true }
+
+amphora-solver-score = { path = "../tools/solver_score", editable = true }
+
+amphora-solver-retain = { path = "../tools/solver_retain", editable = true }
 
 [tool.pytest.ini_options]
 markers = ["postgres: requires explicit local PostgreSQL fixture opt-in"]

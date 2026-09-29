@@ -8,6 +8,7 @@ from pathlib import Path
 import amphora_contracts_artifacts as artifact_contracts
 import amphora_contracts_graph_runtime as graph_runtime_contracts
 import amphora_contracts_runtime as runtime_contracts
+import amphora_contracts_solver_fixture as solver_fixture_contracts
 import amphora_contracts_tools as tool_contracts
 from amphora_contracts_campaigns import (
     ActivationPath,
@@ -64,6 +65,16 @@ MODELS_V4 = {
 }
 
 MODELS["commands.identity"] = CommandIdentity
+for name, model in {
+    "config": solver_fixture_contracts.SolverConfig,
+    "proposal-batch": solver_fixture_contracts.ProposalBatch,
+    "state": solver_fixture_contracts.SolverState,
+    "selection": solver_fixture_contracts.Selection,
+    "score-request": solver_fixture_contracts.ScoreRequest,
+    "score-result": solver_fixture_contracts.ScoreResult,
+    "retain-input": solver_fixture_contracts.RetainInput,
+}.items():
+    MODELS["solver-fixture." + name] = model
 for name, model in {
     "admit-run": graph_runtime_contracts.AdmitGraphRun,
     "advance": graph_runtime_contracts.AdvanceGraph,

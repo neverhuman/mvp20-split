@@ -1,0 +1,13 @@
+{
+  "source_pins": {
+    "cli": "7c52304a5a7336de01d4e02ce5c644727373793e2add1fc42e90ee4011304619",
+    "engine": "c02afb09ae4e33f0d65e433b336da88d8f0058906cd0371d1f32c182b1454ab3",
+    "ranking": "24560480d5751d1696f6684848dbc22fbf77779e43f9dec5faa6696224726323"
+  },
+  "module_ids": [
+    "amphora-molecule-property",
+    "amphora-molecule-role-ranker",
+    "amphora-molecule-novelty",
+    "amphora-molecule-design-gate"
+  ]
+}

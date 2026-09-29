@@ -1,0 +1,62 @@
+{
+  "delivery": "BP-04.04/B1",
+  "verified_at": "2026-09-29 16:59:32",
+  "baseline_commit": "ead6890",
+  "foundation_tests": 1146,
+  "independent_installs": 19,
+  "recovery_scope": "82bf9a3888d442b59a64eab08637e2a1",
+  "preserved_schema_artifacts": 148,
+  "published_schema_artifacts": 162,
+  "source_pins": {
+    "cli": "7c52304a5a7336de01d4e02ce5c644727373793e2add1fc42e90ee4011304619",
+    "engine": "c02afb09ae4e33f0d65e433b336da88d8f0058906cd0371d1f32c182b1454ab3",
+    "ranking": "24560480d5751d1696f6684848dbc22fbf77779e43f9dec5faa6696224726323"
+  },
+  "oracle_sha256": "9dc5a17f3ca0a342f916a6ee10d1a7f91ed4d28b476fca52d14e17c59ded31be",
+  "focused_tests": {
+    "contract_stage_source_oracles": 45,
+    "postgres_graph": 5,
+    "pure_coverage_suite": 42
+  },
+  "stage_coverage": {
+    "seed": {
+      "covered_lines": 54,
+      "num_statements": 96,
+      "covered_branches": 8,
+      "num_branches": 18
+    },
+    "select": {
+      "covered_lines": 53,
+      "num_statements": 97,
+      "covered_branches": 8,
+      "num_branches": 20
+    },
+    "mutate": {
+      "covered_lines": 59,
+      "num_statements": 102,
+      "covered_branches": 11,
+      "num_branches": 22
+    },
+    "score": {
+      "covered_lines": 48,
+      "num_statements": 90,
+      "covered_branches": 6,
+      "num_branches": 16
+    },
+    "retain": {
+      "covered_lines": 72,
+      "num_statements": 121,
+      "covered_branches": 21,
+      "num_branches": 38
+    }
+  },
+  "coverage_limit": "Parent interpreter only; fresh CLI/installed subprocess behavior is a separate evidence tier.",
+  "graph_tier": "Actual Runtime PostgreSQL/claim/completion/bindings, actual in-process fixture kernels, scripted Artifact peer.",
+  "installed_tier": "Nineteen independent wheels/import isolation, five new tool CLI/schema/descriptor goldens, predecessor registry/paired-owner/REC-01..09 acceptance.",
+  "remaining": [
+    "B2 successor admission and compatible carried state",
+    "B3 source-graph failure/process proof",
+    "V1 new tools with actual installed Artifact/Runtime and replacement"
+  ],
+  "log": ".test-results/bp0404-b1-foundation.log"
+}

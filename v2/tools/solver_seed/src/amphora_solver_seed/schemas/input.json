@@ -1,0 +1,103 @@
+{
+  "$defs": {
+    "SourcePins": {
+      "additionalProperties": false,
+      "properties": {
+        "cli": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Cli",
+          "type": "string"
+        },
+        "engine": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Engine",
+          "type": "string"
+        },
+        "ranking": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Ranking",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cli",
+        "engine",
+        "ranking"
+      ],
+      "title": "SourcePins",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "error_modules": {
+      "default": [],
+      "items": {
+        "maxLength": 96,
+        "minLength": 1,
+        "pattern": "^[a-zA-Z0-9_.:-]+$",
+        "type": "string"
+      },
+      "maxItems": 32,
+      "title": "Error Modules",
+      "type": "array"
+    },
+    "fail_scoring_seeds": {
+      "default": [],
+      "items": {
+        "maximum": 1100000,
+        "minimum": 0,
+        "type": "integer"
+      },
+      "maxItems": 72,
+      "title": "Fail Scoring Seeds",
+      "type": "array"
+    },
+    "generations": {
+      "maximum": 8,
+      "minimum": 0,
+      "title": "Generations",
+      "type": "integer"
+    },
+    "population": {
+      "maximum": 8,
+      "minimum": 1,
+      "title": "Population",
+      "type": "integer"
+    },
+    "reject_mutation_seeds": {
+      "default": [],
+      "items": {
+        "maximum": 1100000,
+        "minimum": 0,
+        "type": "integer"
+      },
+      "maxItems": 72,
+      "title": "Reject Mutation Seeds",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "1",
+      "default": "1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "seed": {
+      "maximum": 1000000,
+      "minimum": 0,
+      "title": "Seed",
+      "type": "integer"
+    },
+    "source_pins": {
+      "$ref": "#/$defs/SourcePins"
+    }
+  },
+  "required": [
+    "source_pins",
+    "seed",
+    "population",
+    "generations"
+  ],
+  "title": "SolverConfig",
+  "type": "object"
+}

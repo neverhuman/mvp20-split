@@ -80,7 +80,7 @@ def independent_builds(uv, tool_images=None):
                 for absent in ("sqlalchemy", "fastapi", "amphora_campaign_runtime", "amphora_data_artifacts", "amphora_capability_registry"):
                     probe += f"assert importlib.util.find_spec('{absent}') is None; "
             if project.parent.name == "tools":
-                for sibling in ("amphora_numeric_affine", "amphora_sequence_statistics"):
+                for sibling in (import_root for owner_path, _config, import_root in specs if owner_path.parent.name == "tools"):
                     if sibling != module:
                         probe += f"assert importlib.util.find_spec('{sibling}') is None; "
             if module in {"amphora_campaign_runtime", "amphora_data_artifacts"}:

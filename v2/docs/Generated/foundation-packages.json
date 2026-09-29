@@ -59,6 +59,13 @@
     ]
   },
   {
+    "package": "amphora-contracts-solver-fixture",
+    "version": "0.1.0",
+    "path": "contracts/solver_fixture",
+    "module": "amphora_contracts_solver_fixture",
+    "public_dependencies": []
+  },
+  {
     "package": "amphora-contracts-tools",
     "version": "0.1.0",
     "path": "contracts/tools",
@@ -122,6 +129,66 @@
     "path": "tools/sequence_statistics",
     "module": "amphora_sequence_statistics",
     "public_dependencies": [
+      "amphora-contracts-core",
+      "amphora-contracts-tools",
+      "amphora-tool-protocol"
+    ]
+  },
+  {
+    "package": "amphora-solver-mutate",
+    "version": "0.1.0",
+    "path": "tools/solver_mutate",
+    "module": "amphora_solver_mutate",
+    "public_dependencies": [
+      "amphora-contracts-solver-fixture",
+      "amphora-contracts-core",
+      "amphora-contracts-tools",
+      "amphora-tool-protocol"
+    ]
+  },
+  {
+    "package": "amphora-solver-retain",
+    "version": "0.1.0",
+    "path": "tools/solver_retain",
+    "module": "amphora_solver_retain",
+    "public_dependencies": [
+      "amphora-contracts-solver-fixture",
+      "amphora-contracts-core",
+      "amphora-contracts-tools",
+      "amphora-tool-protocol"
+    ]
+  },
+  {
+    "package": "amphora-solver-score",
+    "version": "0.1.0",
+    "path": "tools/solver_score",
+    "module": "amphora_solver_score",
+    "public_dependencies": [
+      "amphora-contracts-solver-fixture",
+      "amphora-contracts-core",
+      "amphora-contracts-tools",
+      "amphora-tool-protocol"
+    ]
+  },
+  {
+    "package": "amphora-solver-seed",
+    "version": "0.1.0",
+    "path": "tools/solver_seed",
+    "module": "amphora_solver_seed",
+    "public_dependencies": [
+      "amphora-contracts-solver-fixture",
+      "amphora-contracts-core",
+      "amphora-contracts-tools",
+      "amphora-tool-protocol"
+    ]
+  },
+  {
+    "package": "amphora-solver-select",
+    "version": "0.1.0",
+    "path": "tools/solver_select",
+    "module": "amphora_solver_select",
+    "public_dependencies": [
+      "amphora-contracts-solver-fixture",
       "amphora-contracts-core",
       "amphora-contracts-tools",
       "amphora-tool-protocol"

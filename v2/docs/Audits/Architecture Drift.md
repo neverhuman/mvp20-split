@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-04.04 active; .01/.02/.03/.04A closed/audited.
-- Last refreshed: `2026-09-29 16:25:58` (America/Chicago).
+- Last refreshed: `2026-09-29 16:59:32` (America/Chicago).
 - Scope: v2 design/implementation alignment
 - Active focus: BP-04.04 source-derived orchestration parity; typed bindings accepted.
-- Next gate: BP-04.04/B1 synthetic stage adapters and independent oracles.
+- Next gate: BP-04.04/B2 successor admission and carried-state compatibility; B1 verified.
 
 ## Active Findings
 

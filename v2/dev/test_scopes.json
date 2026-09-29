@@ -85,10 +85,46 @@
       "services/capability_registry/src/amphora_capability_registry"
     ]
   },
+  "solver-fixture-contracts": {
+    "tests": "contracts/solver_fixture/tests",
+    "coverage_sources": [
+      "contracts/solver_fixture/src/amphora_contracts_solver_fixture"
+    ]
+  },
   "graph-runtime": {
     "tests": "contracts/graph_runtime/tests",
     "coverage_sources": [
       "contracts/graph_runtime/src/amphora_contracts_graph_runtime"
+    ]
+  },
+  "solver-seed": {
+    "tests": "tools/solver_seed/tests",
+    "coverage_sources": [
+      "tools/solver_seed/src/amphora_solver_seed"
+    ]
+  },
+  "solver-select": {
+    "tests": "tools/solver_select/tests",
+    "coverage_sources": [
+      "tools/solver_select/src/amphora_solver_select"
+    ]
+  },
+  "solver-mutate": {
+    "tests": "tools/solver_mutate/tests",
+    "coverage_sources": [
+      "tools/solver_mutate/src/amphora_solver_mutate"
+    ]
+  },
+  "solver-score": {
+    "tests": "tools/solver_score/tests",
+    "coverage_sources": [
+      "tools/solver_score/src/amphora_solver_score"
+    ]
+  },
+  "solver-retain": {
+    "tests": "tools/solver_retain/tests",
+    "coverage_sources": [
+      "tools/solver_retain/src/amphora_solver_retain"
     ]
   }
 }

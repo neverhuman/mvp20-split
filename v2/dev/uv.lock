@@ -185,6 +185,17 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-contracts-solver-fixture"
+version = "0.1.0"
+source = { editable = "../contracts/solver_fixture" }
+dependencies = [
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "pydantic", specifier = ">=2.12,<3" }]
+
+[[package]]
 name = "amphora-contracts-tools"
 version = "0.1.0"
 source = { editable = "../contracts/tools" }
@@ -243,10 +254,16 @@ dependencies = [
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-graph-runtime" },
     { name = "amphora-contracts-runtime" },
+    { name = "amphora-contracts-solver-fixture" },
     { name = "amphora-contracts-tools" },
     { name = "amphora-data-artifacts" },
     { name = "amphora-numeric-affine" },
     { name = "amphora-sequence-statistics" },
+    { name = "amphora-solver-mutate" },
+    { name = "amphora-solver-retain" },
+    { name = "amphora-solver-score" },
+    { name = "amphora-solver-seed" },
+    { name = "amphora-solver-select" },
     { name = "amphora-tool-protocol" },
     { name = "httpx" },
     { name = "jsonschema", extra = ["format-nongpl"] },
@@ -265,10 +282,16 @@ requires-dist = [
     { name = "amphora-contracts-core", editable = "../contracts/core" },
     { name = "amphora-contracts-graph-runtime", editable = "../contracts/graph_runtime" },
     { name = "amphora-contracts-runtime", editable = "../contracts/runtime" },
+    { name = "amphora-contracts-solver-fixture", editable = "../contracts/solver_fixture" },
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },
     { name = "amphora-data-artifacts", editable = "../services/data_artifacts" },
     { name = "amphora-numeric-affine", editable = "../tools/numeric_affine" },
     { name = "amphora-sequence-statistics", editable = "../tools/sequence_statistics" },
+    { name = "amphora-solver-mutate", editable = "../tools/solver_mutate" },
+    { name = "amphora-solver-retain", editable = "../tools/solver_retain" },
+    { name = "amphora-solver-score", editable = "../tools/solver_score" },
+    { name = "amphora-solver-seed", editable = "../tools/solver_seed" },
+    { name = "amphora-solver-select", editable = "../tools/solver_select" },
     { name = "amphora-tool-protocol", editable = "../sdk/tool_protocol" },
     { name = "httpx", specifier = ">=0.28,<1" },
     { name = "jsonschema", extras = ["format-nongpl"], specifier = ">=4.23,<5" },
@@ -310,6 +333,111 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-tools", editable = "../contracts/tools" },
+    { name = "amphora-tool-protocol", editable = "../sdk/tool_protocol" },
+    { name = "pydantic", specifier = ">=2.11,<3" },
+]
+
+[[package]]
+name = "amphora-solver-mutate"
+version = "0.1.0"
+source = { editable = "../tools/solver_mutate" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-solver-fixture" },
+    { name = "amphora-contracts-tools" },
+    { name = "amphora-tool-protocol" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-solver-fixture", editable = "../contracts/solver_fixture" },
+    { name = "amphora-contracts-tools", editable = "../contracts/tools" },
+    { name = "amphora-tool-protocol", editable = "../sdk/tool_protocol" },
+    { name = "pydantic", specifier = ">=2.11,<3" },
+]
+
+[[package]]
+name = "amphora-solver-retain"
+version = "0.1.0"
+source = { editable = "../tools/solver_retain" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-solver-fixture" },
+    { name = "amphora-contracts-tools" },
+    { name = "amphora-tool-protocol" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-solver-fixture", editable = "../contracts/solver_fixture" },
+    { name = "amphora-contracts-tools", editable = "../contracts/tools" },
+    { name = "amphora-tool-protocol", editable = "../sdk/tool_protocol" },
+    { name = "pydantic", specifier = ">=2.11,<3" },
+]
+
+[[package]]
+name = "amphora-solver-score"
+version = "0.1.0"
+source = { editable = "../tools/solver_score" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-solver-fixture" },
+    { name = "amphora-contracts-tools" },
+    { name = "amphora-tool-protocol" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-solver-fixture", editable = "../contracts/solver_fixture" },
+    { name = "amphora-contracts-tools", editable = "../contracts/tools" },
+    { name = "amphora-tool-protocol", editable = "../sdk/tool_protocol" },
+    { name = "pydantic", specifier = ">=2.11,<3" },
+]
+
+[[package]]
+name = "amphora-solver-seed"
+version = "0.1.0"
+source = { editable = "../tools/solver_seed" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-solver-fixture" },
+    { name = "amphora-contracts-tools" },
+    { name = "amphora-tool-protocol" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-solver-fixture", editable = "../contracts/solver_fixture" },
+    { name = "amphora-contracts-tools", editable = "../contracts/tools" },
+    { name = "amphora-tool-protocol", editable = "../sdk/tool_protocol" },
+    { name = "pydantic", specifier = ">=2.11,<3" },
+]
+
+[[package]]
+name = "amphora-solver-select"
+version = "0.1.0"
+source = { editable = "../tools/solver_select" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-solver-fixture" },
+    { name = "amphora-contracts-tools" },
+    { name = "amphora-tool-protocol" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-solver-fixture", editable = "../contracts/solver_fixture" },
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },
     { name = "amphora-tool-protocol", editable = "../sdk/tool_protocol" },
     { name = "pydantic", specifier = ">=2.11,<3" },
