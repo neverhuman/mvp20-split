@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-09-29 22:01:49",
+  "delivery": "BP-05.02/B3",
+  "status": "passed",
+  "owner_scope": "5be3aa3cba1445448eafffe060d2a124",
+  "dense": {
+    "status": "passed",
+    "browser": "153.0.8010.12",
+    "scenarios": [
+      "256-node branch in six bounded pages",
+      "long label",
+      "failed activation inspection",
+      "200/56 scene windows omit crossing edges and preserve selection"
+    ],
+    "limits": [
+      "Synthetic public HTTP peer; no target-host performance or scientific validity claim."
+    ]
+  },
+  "monitor_regression": "2026-09-30T03-00-00-382Z",
+  "limits": [
+    "Initial installed owner run predates selected-detail denial repair; final-source repeat is V1.",
+    "Scientific comparison remains fixture-only."
+  ]
+}

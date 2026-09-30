@@ -22,10 +22,10 @@ export function MonitorWorkspace({ model, context, synthetic = false, navigation
   const history = useMemo(() => new InspectionHistory(), []);
   const historySubscribe = useCallback((notify: () => void) => history.subscribe(notify), [history]);
   const historyView = useSyncExternalStore(historySubscribe, () => history.snapshot);
-  const pin = history.compatible(context.scope) && view.phase !== 'denied' ? historyView.pins.find(item => item.id === historyView.selected) : undefined;
+  const pin = history.compatible(context.scope) && view.phase !== 'denied' && view.detailPhase !== 'denied' ? historyView.pins.find(item => item.id === historyView.selected) : undefined;
   useEffect(() => {
-    if (view.phase === 'denied') history.deny(); else history.setScope(context.scope);
-  }, [history, context.scope.tenant_id, context.scope.project_id, view.phase]);
+    if (view.phase === 'denied' || view.detailPhase === 'denied') history.deny(); else history.setScope(context.scope);
+  }, [history, context.scope.tenant_id, context.scope.project_id, view.phase, view.detailPhase]);
   useEffect(() => {
     const check = () => {
       if (navigation?.snapshot.phase === 'denied' || namedViews?.snapshot.phase === 'denied' ||

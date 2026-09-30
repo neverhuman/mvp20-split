@@ -10,19 +10,30 @@ let input=''; for await (const chunk of process.stdin) input+=chunk;
 const job=JSON.parse(input);
 const token=process.env.STUDIO_OBSERVER_TOKEN;
 assert.ok(token); delete process.env.STUDIO_OBSERVER_TOKEN; // Chromium must not inherit backend credentials.
+const artifactToken=process.env.STUDIO_ARTIFACT_TOKEN;
+assert.ok(artifactToken); delete process.env.STUDIO_ARTIFACT_TOKEN;
 assert.equal(new URL(job.endpoint).hostname,'127.0.0.1');
+assert.equal(new URL(job.artifact_endpoint).hostname,'127.0.0.1');
 await mkdir(job.output,{recursive:true});
 await build({entryPoints:['tests/integration/entry.tsx'],bundle:true,outdir:'dist/integration',format:'esm',jsx:'automatic'});
 const prefix='/api/runtime/v1/graph-observations/'+encodeURIComponent(job.run);
 const publicPaths=new Set([prefix+'/nodes',prefix+'/invalidations',...job.expected.nodes.map(node=>prefix+'/nodes/'+node.activation_id)]);
+publicPaths.add(prefix+'/views'); publicPaths.add(prefix+'/scopes');
+for(const group of job.inspection.groups) publicPaths.add(prefix+'/scopes/'+group.graph_scope.scope_key+'/topology');
+publicPaths.add('/api/runtime/v1/graph-runs/'+encodeURIComponent(job.run)+'/lineage');
+publicPaths.add('/api/runtime/v1/runs/'+encodeURIComponent(job.run)+'/completions/'+encodeURIComponent(job.inspection.completion.completion_id));
+for(const detail of job.expected.details) for(const output of detail.outputs)
+  publicPaths.add(prefix+'/nodes/'+detail.node.activation_id+'/outputs/'+encodeURIComponent(output.port));
+const artifactPath='/api/artifacts/v1/artifacts/'+encodeURIComponent(job.inspection.artifact.artifact_id);
 const forwarded=[];
 const server=createServer(async(req,res)=>{
   try {
     const url=new URL(req.url,'http://localhost');
     if(req.method!=='GET'){res.writeHead(405);res.end();return;}
-    if(publicPaths.has(url.pathname)){
-      const response=await fetch(job.endpoint+url.pathname.slice('/api/runtime'.length)+url.search,
-        {headers:{Authorization:'Bearer '+token,Accept:'application/json'},redirect:'error',signal:AbortSignal.timeout(15000)});
+    if(publicPaths.has(url.pathname)||url.pathname===artifactPath){
+      const artifact=url.pathname===artifactPath;
+      const response=await fetch((artifact?job.artifact_endpoint:job.endpoint)+url.pathname.slice(artifact?'/api/artifacts'.length:'/api/runtime'.length)+url.search,
+        {headers:{Authorization:'Bearer '+(artifact?artifactToken:token),Accept:'application/json'},redirect:'error',signal:AbortSignal.timeout(15000)});
       const chunks=[];let bytes=0;
       for await(const chunk of response.body){bytes+=chunk.length;assert.ok(bytes<=2097152);chunks.push(chunk);}
       forwarded.push({path:url.pathname,status:response.status});
@@ -72,11 +83,46 @@ try{
     },job.old);
     assert.deepEqual(replay.detail,job.expected.details[0]);assert.equal(replay.events.observed_revision,job.expected.cut.revision);assert.equal(replay.events.entries.length,0);
   }
+  const completion=job.inspection.completion;
+  await page.locator(`.node-list button[data-node-id="${completion.activation_id}"]`).click();
+  await page.getByRole('button',{name:'Inspect attempt '+completion.result.attempt_id,exact:true}).click();
+  await page.getByRole('region',{name:'Retained completion',exact:true}).waitFor();
+  assert.deepEqual(await page.evaluate(()=>window.integrationHarness.evidence.snapshot.completion.value),completion);
+  const port=completion.result.outcome.outputs[0].port;
+  await page.getByRole('button',{name:'Inspect output '+port,exact:true}).click();
+  await page.getByRole('region',{name:'Output members',exact:true}).waitFor();
+  const values=await page.evaluate(()=>window.integrationHarness.evidence.snapshot.values.value);
+  assert.deepEqual(values.items,job.expected.values.find(item=>item.activation_id===completion.activation_id&&item.port===port).items);
+  await page.getByRole('button',{name:'Inspect artifact '+job.inspection.artifact.artifact_id,exact:true}).click();
+  await page.getByRole('region',{name:'Verified artifact metadata',exact:true}).waitFor();
+  assert.deepEqual(await page.evaluate(()=>window.integrationHarness.evidence.snapshot.artifact.value),job.inspection.artifact);
+  await page.screenshot({path:resolve(job.output,'evidence.png'),fullPage:true});
+  await page.getByRole('button',{name:'Authored graph',exact:true}).click();
+  await page.waitForFunction(()=>window.integrationHarness.namedViews.snapshot.phase==='ready');
+  assert.deepEqual(await page.evaluate(()=>window.integrationHarness.namedViews.snapshot.catalog.page),job.inspection.catalog);
+  const groups=[];
+  for(const expected of job.inspection.groups){
+    await page.evaluate(async parent=>{await window.integrationHarness.navigation.scopes(parent??undefined);},expected.graph_scope.parent_activation_id);
+    const index=await page.evaluate(key=>window.integrationHarness.navigation.snapshot.scopes.scopes.findIndex(item=>item.scope_key===key),expected.graph_scope.scope_key);
+    assert.ok(index>=0);
+    await page.getByRole('list',{name:'Occurrence groups',exact:true}).getByRole('button').nth(index).click();
+    await page.waitForFunction(key=>window.integrationHarness.navigation.snapshot.topology?.page.graph_scope.scope_key===key,expected.graph_scope.scope_key);
+    const actual=await page.evaluate(()=>window.integrationHarness.navigation.snapshot.topology.page);
+    assert.deepEqual(actual,expected); groups.push(actual);
+  }
+  await page.getByText('Named research views',{exact:true}).click();
+  await page.getByRole('button',{name:'Inspect predecessor lineage',exact:true}).click();
+  await page.waitForFunction(()=>['ready','failed'].includes(window.integrationHarness.namedViews.snapshot.lineagePhase));
+  assert.deepEqual(await page.evaluate(()=>window.integrationHarness.namedViews.snapshot.lineage),job.inspection.lineage);
+  const inspection={groups,completion,artifact:job.inspection.artifact,lineage:job.inspection.lineage};
+  if(job.old) assert.deepEqual(inspection,job.old.inspection);
   const scan=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
   assert.deepEqual(scan.violations.map(v=>v.id),[]);assert.deepEqual(errors,[]);
   for(const value of await Promise.all(headers))assert.ok(!value.authorization);
   assert.ok(!(await page.content()).includes(token));
+  assert.ok(!(await page.content()).includes(artifactToken));
+  assert.ok(!forwarded.some(item=>item.path.endsWith('/content')));
   const screenshot=resolve(job.output,'monitor.png');await page.screenshot({path:screenshot,fullPage:true});
-  console.log(JSON.stringify({...observation,details,browser:browser.version(),screenshot,forwarded,
+  console.log(JSON.stringify({...observation,details,inspection,browser:browser.version(),screenshot,forwarded,
     old_cursors_preserved:!!job.old,backend_credentials_absent_from_browser:true}));
 }finally{await browser.close();await new Promise(resolve=>server.close(resolve));}

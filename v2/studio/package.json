@@ -15,7 +15,8 @@
     "preview:interaction": "node spikes/interaction/preview.mjs",
     "test:browser": "npm run build && node tests/browser/monitor.mjs",
     "test:navigation": "npm run build && node tests/browser/navigation.mjs",
-    "test:evidence": "npm run build && node tests/browser/evidence.mjs"
+    "test:evidence": "npm run build && node tests/browser/evidence.mjs",
+    "test:dense-navigation": "npm run build && node tests/browser/dense_navigation.mjs"
   },
   "dependencies": {
     "@xyflow/react": "12.12.0",

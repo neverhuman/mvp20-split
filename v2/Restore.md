@@ -2,14 +2,12 @@
 
 ## Current Checkpoint
 
-- Last refreshed: `2026-09-29 21:53:46` (America/Chicago).
-- Canonical position: BP-05 -> BP-05.02 / Build / B3. Child50%=2/4, Build66.67%/Acceptance0%; parent37.5%=6/16. B1/B2 verified. No user decision pending.
-- B2 verified:65 Node tests,10 navigation browser scenarios plus7 Monitor/7 evidence regressions, desktop/narrow A/AA scans and isolated Studio78419600cae84ca997de10c5ba0544d7. Loaded-code coverage99.28% lines/86.97% branches/94.57% functions (includes test fixtures; no React instrumentation). Historical pins remain bounded ephemeral captures, not historical frontier queries. Scientific comparison is fixture-only. Child50%=2/4, Build66.67%, Acceptance0%; parent37.5%=6/16. B3 actual-owner evidence journey is active.
-- Next: extend studio/tests/integration probe/entry/browser for actual Runtime topology/catalog/lineage/completion and Artifact metadata, with separate server-only read credentials. Existing .01 harness is inventory-only. B3 must prove actual accepted output-to-receipt/source journey; V1 independent replacements and scoped audit.
-- Last pushed7380577; B2 about to commit. No process running. Source versions unchanged: Runtime0.13.0/graph-runtime0.7.0/campaigns0.4.1,182 schemas. B1 foundation1245 Python/53 Node/19 installs/REC-01..09 remains baseline; no Python changes in B2.
-- Use mapped v2/dev/.venv/Scripts/python.exe; standalone pytest needs -c v2/dev/pyproject.toml. PYTHONUTF8=1, explicit UTF-8; PowerShell redirected logs may UTF16. Git always -c safe.directory=//DesktopNAS/Code/mvp20-split. v1 frozen; no JARVIS/subagents authorized. AMPHORA_TEST_POSTGRES=1 for actual-owner driver; never concurrent campaign admission suites; never reset retained PG fixture or print credentials.
-- Integration command: python v2/dev/verify_studio_integration.py --images v2/.test-results/tool-images/bp0404-solver-20260929-1747/manifest.json. Independent Node builds and existing Runtime/Artifact/Registry/five tools. Browser credentials stay server-side, deleted from environment before Chromium. This is a test adapter, not production deployment.
-- B2 evidence: docs/Audits/Evidence/BP-05-Navigation/B2.json. Logs .test-results/bp0502-b2-*.log; navigation2026-09-30T02-52-13-866Z,monitor2026-09-30T02-50-35-114Z,evidence2026-09-30T02-50-58-263Z. Screenshots inspected.
+- Last refreshed: `2026-09-29 22:06:45` (America/Chicago).
+- V1 passed final-source independent Studio/Runtime replacement, scopee222d4cf32604d729ef12146860bc49c: two65-test npm builds; initial12 nodes/4 scopes and successor28 nodes/9 scopes; three replacement comparisons preserve topology, details, lineage, completion, metadata and old cursors. Scoped audit aligned. BP-05.02 closed100%=4/4, Build100%, Acceptance100%; parent50%=8/16. BP-05.03 activation review is next.
+- Next: read BP-05.03 and record activation coherence audit before implementation. Definitions/compilation belong to Campaign Runtime per System/Service_Isolation; durable authoring draft API/store does not yet exist. Reconcile public registry descriptors, compiler request/receipt, configured-plan admission and emergency cancel. Do not build a rival execution owner or edit live runs.
+- Last pushed b0e5474; .02 B3/V1 closeout about to commit. All processes complete; session97439 passed. Final log .test-results/bp0502-v1-integration.log; durable docs/Audits/Evidence/BP-05-Navigation/V1.json and screenshots inspected. No user decision pending.
+- Tooling: mapped v2/dev/.venv/Scripts/python.exe; standalone pytest -c v2/dev/pyproject.toml; PYTHONUTF8=1 and explicit UTF-8. Git always -c safe.directory=//DesktopNAS/Code/mvp20-split. v1 frozen; no JARVIS/subagents authorized. AMPHORA_TEST_POSTGRES=1 for ownedPG; never concurrent campaign-admission suites, reset retained fixture or print credentials.
+- Latest Studio65 Node tests;28 scripted browser scenario cases plus actual installed-owner integration. Runtime0.13.0/graph-runtime0.7.0/campaigns0.4.1,182 schemas unchanged afterB1. Full B1foundation1245 Python/19 installs/REC-01..09. Exact history/coverage limits in module READMEs.
 
 ## Decomposition and Resume Discipline
 

@@ -9,15 +9,15 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-05 primary active; BP-06 through BP-09 queued; BP-01/BP-01A/BP-02/BP-03/BP-04 closed.
-- Last refreshed: `2026-09-29 21:53:46` (America/Chicago).
+- Last refreshed: `2026-09-29 22:06:45` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P4 / BP-05 - Graph Studio first vertical slice.
-- Primary active implementation plan / phase / task: BP-05 -> BP-05.02 / Build / B3.
-- Current task: BP-05.02/B3 failure and actual-owner evidence journey proof.
-- Next task: BP-05.02/V1 independent replacement and scoped audit.
-- Implementation completion: BP-04 closed100% (24/24); BP-05 active37.5% (6/16), .01 closed100%, .02 active50% (Build66.67% / Acceptance0%); BP-06..09 queued0%.
-- Active focus: prove output-to-receipt/artifact navigation against installed owners; preserve immutable history through independent replacement.
-- Blockers: none for .02/B3; actual owner projection gaps are scoped engineering work; scientific/provider/host decisions remain their named later gates.
+- Primary active implementation plan / phase / task: BP-05 -> BP-05.03 / activation review.
+- Current task: BP-05.03 activation coherence review.
+- Next task: BP-05.03/B1 after ownership/contract reconciliation.
+- Implementation completion: BP-04 closed100% (24/24); BP-05 active50% (8/16), .01/.02 closed100%, .03 queued0% (Build0% / Acceptance0%); BP-06..09 queued0%.
+- Active focus: reconcile definition draft persistence, registry-driven editing and Runtime safe-command boundaries.
+- Blockers: none for .03 activation review; actual owner projection gaps are scoped engineering work; scientific/provider/host decisions remain their named later gates.
 - Acceptance posture: deterministic Runtime and independent public observation/replacement accepted. Browser/UI and next-campaign authoring remain BP-05.
 - Active exception: none.
 
@@ -35,13 +35,13 @@ BP-05 is the sole primary active plan. Child trackers own delivery evidence; com
 
 | Parent | Implementation | P1 Interaction | P2 Inspection | P3 Drafts | P4 Acceptance |
 |---|---:|---:|---:|---:|---:|
-| [BP-05](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md) | 37.5% (6/16) | 100% | 50% | 0% | 0% |
+| [BP-05](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md) | 50% (8/16) | 100% | 100% | 0% | 0% |
 
 | Active canonical child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-05.02](BP-05/BP-05.02%20Graph%20inspection%20and%20navigation.md) | 50% | 66.67% | 0% | B3 actual-owner evidence proof |
+| [BP-05.03](BP-05/BP-05.03%20Drafts%20and%20safe%20commands.md) | 0% | 0% | 0% | Activation review |
 
-BP-02 closed32/32, BP-03 closed16/16, BP-04 closed24/24. See [completed plans](Completed/README.md). New parent progress counts only its own deliveries.
+BP-02 closed32/32, BP-03 closed18/16, BP-04 closed24/24. See [completed plans](Completed/README.md). New parent progress counts only its own deliveries.
 
 ## Queued Plans and Phase Mirrors
 
@@ -65,7 +65,7 @@ BP-05 is `primary_active`; BP-06 through BP-09 are `design_specified / queued`. 
 
 | Order / ID | Completion | Proposed plan | Required predecessor gates | Bounded outcome / exit | Architecture owner |
 |---|---|---|---|---|---|
-| P4 / BP-05 | 37.5% | [Graph Studio First Vertical Slice](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md) | BP-04 runnable fixture and read/command contracts | Inspect actual live/historical execution, evidence, parallel branches and failures; edit next-campaign drafts, compare revisions and observe emergency termination; preserve autonomous progress | [Studio](../Architecture/Experience/Studio.md), [UI rules](../UI_Coding_Guidelines.md) |
+| P4 / BP-05 | 50% | [Graph Studio First Vertical Slice](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md) | BP-04 runnable fixture and read/command contracts | Inspect actual live/historical execution, evidence, parallel branches and failures; edit next-campaign drafts, compare revisions and observe emergency termination; preserve autonomous progress | [Studio](../Architecture/Experience/Studio.md), [UI rules](../UI_Coding_Guidelines.md) |
 | P5 / BP-06 | 0% | [Knowledge Evidence and Source Loop](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) | BP-01 contracts; BP-04 execution; BP-05 inspection | Minimal source/document/result ingestion, typed accepted-change replay, pinned knowledge revisions, bounded executable rules and explicit scientific acceptance receipts; demonstrate corrections affect later campaigns | [Knowledge](../Architecture/Knowledge/Knowledge_Architecture.md), [Data](../Architecture/Data/Data_Architecture.md), [experiments](../Architecture/Research/Experiments.md) |
 | P6 / BP-07 | 0% | [Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | BP-03 tool discovery; BP-04 runner; BP-05 UI; BP-06 grounded context/receipts | Model-generated campaign proposals and text-to-graph extraction through validated contracts; durable scoped engagements, stale-proposal/fallback races, bounded repair and truthful terminal blockers; no routine human waits | [Planning](../Architecture/Agents/Planning.md), [Graph Runner](../Architecture/System/Graph_Runner.md) |
 | P7 / BP-08 | 0% | [Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | BP-04 iteration/checkpoints; BP-06 applicability/evidence; BP-07 for LLM-guided topology | Adapt reusable numerical kernels to explicit generation/checkpoint history, separate representation fixtures and evidence-bound selection; parameter search precedes bounded topology proposals under successor-campaign rules | [Search](../Architecture/Campaigns/Search.md), [reuse baseline](../Architecture/Evolutionary_Code_Reuse_Baseline.md) |
@@ -123,6 +123,8 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-29 22:06:45 | BP-05.02 closed100%; parent50% (8/16); .03 activation review | Final-source real-owner replacement scopee222d4cf32604d729ef12146860bc49c;65 tests per independent build; audit aligned |
+| 2026-09-29 22:01:49 | BP-05.02/B3 verified75%; parent43.75% (7/16); V1 active | Actual-owner topology/evidence/replacement scope5be3aa3cba1445448eafffe060d2a124; dense browser and denial repair |
 | 2026-09-29 21:53:46 | BP-05.02/B2 verified50%; parent37.5% (6/16); B3 active | 65 Node tests,24 browser cases, isolated Studio; bounded history/hidden policy/comparison |
 | 2026-09-29 21:23:21 | BP-05.02/B1 verified25%; parent31.25% (5/16); B2 active | 1245 Python,53 Node,19 installs,REC-01..09;21 scripted browser cases, isolated Studio; B1 evidence retained |
 | 2026-09-29 20:55:43 | BP-05.02/B1 catalog/lineage partial; percentages unchanged | 111 Python,45 Node, seven navigation browser cases, isolated consumer; full inspector journey pending |
@@ -146,7 +148,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-29 13:25:53 | BP-04.04A B1 passed; child 25%, parent 54.17% (13/24); B2 active | 1041 tests/thirteen installs/REC-01..09; 134 predecessor schemas unchanged; v4 execution gated |
 | 2026-09-29 12:52:29 | Owner approved .04A; active B1 at 0%; parent rebaselined 12/24 (50%) | Four added prerequisite deliveries; phases P4 bindings/P5 baseline/P6 recovery; completed .01-.03 preserved |
 | 2026-09-29 09:04:11 | BP-04.03 closed/audited 100%; parent 60% (12/20); .04 activation audit next | Five installed issuer/Artifact/replacement cases; [audit](../Audits/BP-04.03_Aggregation_Closeout.md); scope 1a07a70db37f43e3a106e9abca2edbc9 |
-| 2026-09-29 08:56:15 | BP-04.03 B3 passed; child 75%, parent 55% (11/20); V1 active | Six actual process cases; 74 waits/83 aggregation cases across scoped runs; [evidence](../Audits/Evidence/BP-04-Aggregation/README.md) |
-| 2026-09-28 22:09:45 | BP-04.03 B2 passed; child 50%, parent 50% (10/20); B3 active | 68 focused/1,001 total tests, thirteen installs, REC-01..09 b85109f93d704848af90f46f04bf89fe; Runtime 0.7.0 wait execution/protection |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

@@ -2,7 +2,7 @@
 
 Status: BP-05.01 closed; actual Runtime browser integration and independent browser/Runtime replacement accepted. BP-05.02 owns scoped topology/navigation and linked evidence. Architecture: [Studio](../docs/Architecture/Experience/Studio.md), [read-model protocol](../docs/Architecture/Experience/Studio_Read_Model_Protocol.md).
 
-This independently packaged browser consumer owns presentation state and public HTTP transport. It owns no run database, scientific rules, execution authority or backend credentials. Runtime observations are authoritative; notifications request refresh rather than patching graph state. Design/Monitor/Explore/Compare presentation comes in the following gates; current code implements Monitor transport/state and a read-only activation inventory with selection detail; actual Runtime UI observation/replacement is accepted; topology/catalog/linked-evidence navigation remains the next child.
+This independently packaged browser consumer owns presentation state and public HTTP transport. It owns no run database, scientific rules, execution authority or backend credentials. Runtime observations are authoritative; notifications request refresh rather than patching graph state. Design/Monitor/Explore/Compare presentation comes in the following gates; current code implements scoped read-only Monitor transport/state and selection detail; actual Runtime UI observation/replacement is accepted; BP-05.02 now implements authored topology, occurrence navigation, linked evidence and bounded historical pins; its final-source replacement gate is accepted.
 
 | Module | Rebuild responsibility | Owned tests |
 |---|---|---|
@@ -18,3 +18,5 @@ The Python-published serialization schemas remain canonical. Generated files are
 `/api/runtime` is the declared same-origin gateway adapter prefix, not a claim that a deployed gateway exists. Session/backend credential handling must remain server-side. The B1 source has no component-local fetches or mutation commands. Human edits will target next-campaign drafts; this package cannot alter a live scientific pathway.
 
 Replacement must preserve generated wire compatibility, bounded reads, cancellation plus generation fencing, truthful stale/denied/partial states and selection scope. Preserve local drafts/layout independently of Runtime revisions when those modules arrive. No persistent browser run store is introduced. [B2 prototype](spikes/interaction/README.md) records the measured React Flow/Cytoscape comparison and actual browser evidence; its synthetic evidence remains distinct from the subsequently accepted B3 production-client browser failures and V1 actual owner integration.
+
+Latest acceptance: BP-05.02 closed100%; final-source scopee222d4cf32604d729ef12146860bc49c passes both independently installed65-test browser builds and actual-owner replacement. [Navigation audit](../docs/Audits/BP-05.02_Navigation_Closeout.md).

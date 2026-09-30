@@ -60,9 +60,14 @@ try {
       assert.equal(await page.getByText('node-1',{exact:true}).count(),0);
       assert.equal((await page.locator('body').textContent()).includes('private server diagnostics'),false);
     } else if (name === 'detail-denied') {
+      await choose(1); await currentDetail(1);
+      await page.getByRole('button',{name:'Pin loaded inspection',exact:true}).click();
+      await page.getByRole('region',{name:'Pinned inspection',exact:true}).waitFor();
+      await page.getByLabel('Inspect',{exact:true}).selectOption('');
       host.state.hook=async(url,json)=> { if(url.pathname.endsWith('/nodes/'+id(1))){json(403,{detail:'private detail'});return true;}return false; };
       await choose(1); await page.getByText('Access to this detail is denied.',{exact:true}).waitFor();
       assert.equal(await page.locator('.node-list button').count(),2);
+      assert.equal(await page.locator('#inspection-history option').count(),1);
     } else if (name === 'empty') {
       await page.getByText('No activations in this scope.',{exact:true}).waitFor();
       assert.equal(await page.locator('.react-flow__node').count(),0);

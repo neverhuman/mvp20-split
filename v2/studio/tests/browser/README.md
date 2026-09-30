@@ -1,6 +1,6 @@
 # Monitor browser boundary tests
 
-The navigation harness now also proves catalog-driven predecessor lineage through `/v1/graph-runs/{run}/lineage` and visibly unavailable scientific views. It has seven scenarios; the original Monitor seven-case suite remains a separate regression command.
+The navigation harness now also proves catalog-driven predecessor lineage through `/v1/graph-runs/{run}/lineage` and visibly unavailable scientific views. It has ten scenarios, including hidden-pane restoration, bounded history and controlled visibility events; the original Monitor seven-case suite remains a separate regression command.
 
 Owner: [Monitor presentation](../../src/presentation/README.md). Run `npm run test:browser`; install local Chromium with `npx playwright install chromium` first. This is a separate browser acceptance tier, not part of every Node unit-test run.
 
@@ -17,3 +17,6 @@ This suite proves consumer behavior against scripted peers. V1 must independentl
 BP-05.02 adds `npm run test:navigation`: the same real browser client reads scripted scope/topology routes, proves partial target omission, authored link pagination, keyboard node-to-detail selection, stale clearing and denied clearing. It checks both viewport sizes and automated A/AA scans. Evidence lives under `.test-results/studio-navigation/`; the query flag enabling navigation exists only in this test host. This is consumer evidence, not actual Runtime navigation acceptance.
 
 `npm run test:evidence` bundles the actual EvidenceModel/EvidencePane and uses scripted Runtime/Artifact HTTP roots. Seven cases cover completion provenance, output/metadata inspection, missing/conflicting/denied metadata, late uncancellable selection and stale output; both viewport sizes receive automated A/AA/overflow checks. The test host enables this view with `?evidence=1`, owns no service credentials and never requests artifact content. Artifacts are labeled synthetic.
+
+
+`npm run test:dense-navigation` checks a labeled256-node synthetic branch in six50-node pages (last6). It verifies unresolved targets, long labels, failed activation inspection,200/56 scene bounds and preserved outside-window selection. Desktop/narrow A/AA checks and screenshots are required. This is a dense rendering/failure fixture, not evidence that arbitrary fanout is an admissible scientific campaign. Monitor detail-denial now proves captured pins are cleared while the still-authorized graph remains readable.

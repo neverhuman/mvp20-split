@@ -1,8 +1,8 @@
 # Graph Studio and Interventions
 
-- Design status: BP-05.01 observation interaction boundary implemented/accepted; broader navigation, authoring and scientific capabilities remain proposed
+- Design status: BP-05.01 accepted; BP-05.02 topology/navigation/evidence implemented and replacement accepted; authoring and scientific projections remain later scope
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
-- Last reviewed: `2026-09-29 20:07:41` (America/Chicago)
+- Last reviewed: `2026-09-29 22:04:45` (America/Chicago)
 - Parent: [Domain overview](Experience_Architecture.md)
 - Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#human-graph-studio)
 
@@ -53,3 +53,12 @@ Human Graph Studio requirements define editing, traversal and intervention. [Can
 ## Interaction Reference Patterns
 
 [Research Studio Interaction References](Interaction_References.md) maps the user-supplied ComfyUI, LangGraph/LangSmith Studio, Node-RED, Dagster, Bloom, W&B and MLflow references into Design, Monitor, Explore and Compare modes. The map names prototype tasks and delivery owners while preserving immutable active campaigns, source-first knowledge authoring and evidence-aware comparison.
+
+
+## Implemented Inspection Boundary
+
+Runtime owns bounded authored topology, instantiated occurrence groups and scoped capability catalog. Studio binds topology, selected detail and output pages to one observed cut; it never infers connections from activation order. Catalog availability does not establish that a particular campaign has predecessor lineage or scientific evidence. Artifact metadata is read from its owner and checked against the exact retained reference.
+
+History pins are deliberately bounded local captures of loaded records: up to8 captures,200 graph nodes and2MiB per capture, explicit omissions, no persistence and no invented historical mutable-frontier endpoint. Immutable completion/lineage/artifact records retain their owner authority. Live revision and fetch time are distinct; local pins stay fixed while live observations advance. Scope/denial clears captured data. Runtime currently emits run_changed, so invalidation is run-scoped; finer affected-node refresh requires a future producer contract.
+
+The source-adjacent [Studio boundary](../../../studio/README.md) owns replacement behavior and evidence links. Scientific property/material/model/knowledge views remain unavailable until actual producers ship; comparison fixtures establish only exact context partitioning and explanation/causality separation. Next-campaign authoring remains BP-05.03.

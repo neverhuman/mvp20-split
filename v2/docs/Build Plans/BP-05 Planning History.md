@@ -139,3 +139,11 @@ Navigation/catalog/lineage and linked execution-evidence inspectors pass their B
 ## 2026-09-29 21:53:46 - BP-05.02/B2 verified
 
 B2 verified:65 Node tests,10 navigation browser scenarios plus7 Monitor/7 evidence regressions, desktop/narrow A/AA scans and isolated Studio78419600cae84ca997de10c5ba0544d7. Loaded-code coverage99.28% lines/86.97% branches/94.57% functions (includes test fixtures; no React instrumentation). Historical pins remain bounded ephemeral captures, not historical frontier queries. Scientific comparison is fixture-only. Child50%=2/4, Build66.67%, Acceptance0%; parent37.5%=6/16. B3 actual-owner evidence journey is active.
+
+## 2026-09-29 22:01:49 - B3 verified
+
+B3 verified: actual installed-owner navigation/evidence and replacement passed for initial12-node and successor28-node runs, scope5be3aa3cba1445448eafffe060d2a124. Dense256-node browser proof passes six pages,200/56 scene bounds,long labels and failed selection; existing Monitor7 cases pass with a new detail-denial pin-clearing regression. VIEW-01..04 remain covered by owned catalog/window/comparison tests. Child75%=3/4, Build100%, Acceptance0%; parent43.75%=7/16. V1 repeats final-source independent replacement and owns closeout audit.
+
+## 2026-09-29 22:06:45 - BP-05.02 closed
+
+V1 passed final-source independent Studio/Runtime replacement, scopee222d4cf32604d729ef12146860bc49c: two65-test npm builds; initial12 nodes/4 scopes and successor28 nodes/9 scopes; three replacement comparisons preserve topology, details, lineage, completion, metadata and old cursors. Scoped audit aligned. BP-05.02 closed100%=4/4, Build100%, Acceptance100%; parent50%=8/16. BP-05.03 activation review is next.

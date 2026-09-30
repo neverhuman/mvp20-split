@@ -1,8 +1,8 @@
 # Campaign Runtime
 
-Runtime0.13.0 adds a scoped named-view catalog under graph_navigation. It advertises implemented Runtime read capabilities, not scientific availability or a new projection service. Public schema, PostgreSQL and HTTP regressions pass; BP-05.02 remains in progress.
+Runtime0.13.0 adds a scoped named-view catalog under graph_navigation. It advertises implemented Runtime read capabilities, not scientific availability or a new projection service. Public schema, PostgreSQL and HTTP regressions plus actual Studio/Runtime independent replacement passed; BP-05.02 is closed.
 
-Runtime0.12.0 adds [graph navigation](src/amphora_campaign_runtime/graph_navigation/README.md): bounded occurrence scopes and retained authored topology. BP-05.02/B1 is in progress; public read/contract regressions pass, browser navigation and independent replacement remain open.
+Runtime0.12.0 adds [graph navigation](src/amphora_campaign_runtime/graph_navigation/README.md): bounded occurrence scopes and retained authored topology. BP-05.02 is accepted: actual initial/successor occurrence topology and linked evidence survive independent browser/Runtime replacement.
 
 Accepted checkpoint `2026-09-29 18:50:04`: BP-04.05 and BP-04 closed/audited. Independent DTO-only observer and Runtime replacement preserve old cursors and all graph/detail/attempt/value/event records across actual five-tool initial/successor execution;17 invocations,44 confirmed reservations. [Evidence](../../docs/Audits/Evidence/BP-04-Recovery/V1.json). Earlier B1-B3/pending statements below describe historical gate positions; no gate in this child remains open.
 
