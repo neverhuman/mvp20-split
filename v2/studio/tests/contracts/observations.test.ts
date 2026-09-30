@@ -26,7 +26,7 @@ test("validator rejects coercion, excess nodes, unknown fields and non-invalidat
 
 test("generated consumer manifest pins every authoritative schema byte", async () => {
   const manifest = JSON.parse(await readFile("src/contracts/generated/manifest.json", "utf8")) as Record<string, { source: string; sha256: string }>;
-  assert.deepEqual(Object.keys(manifest).sort(), ["detail", "events", "scopes", "snapshot", "topology", "values"]);
+  assert.deepEqual(Object.keys(manifest).sort(), ["catalog", "detail", "events", "lineage", "scopes", "snapshot", "topology", "values"]);
   for (const entry of Object.values(manifest)) {
     const bytes = await readFile("../" + entry.source);
     assert.equal(createHash("sha256").update(bytes).digest("hex"), entry.sha256);

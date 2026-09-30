@@ -1,6 +1,7 @@
 import { decodeObservation } from "../contracts/observations.js";
 import type { GraphSnapshotPage, GraphNodeDetail, GraphValuePage, GraphInvalidationPage, ReadQuery, ObservationWire } from "../contracts/observations.js";
 import type { GraphScopePage, GraphTopologyPage, TopologyQuery } from "../contracts/observations.js";
+import type { GraphViewCatalog, SuccessorLineage } from "../contracts/observations.js";
 import { ReadFailure } from "./failure.js";
 
 export interface ObservationSource {
@@ -13,6 +14,11 @@ export interface ObservationSource {
 export interface NavigationSource {
   scopes(run: string, snapshot: string, parent: string | undefined, cursor: string | undefined, signal: AbortSignal): Promise<GraphScopePage>;
   topology(run: string, scope: string, snapshot: string, query: TopologyQuery, cursor: string | undefined, signal: AbortSignal): Promise<GraphTopologyPage>;
+}
+
+export interface NamedViewSource {
+  catalog(run: string, snapshot: string, signal: AbortSignal): Promise<GraphViewCatalog>;
+  lineage(run: string, signal: AbortSignal): Promise<SuccessorLineage>;
 }
 
 async function boundedJSON(response: Response, maximum: number): Promise<unknown> {
@@ -40,7 +46,7 @@ async function boundedJSON(response: Response, maximum: number): Promise<unknown
   }
 }
 
-export class ObservationClient implements ObservationSource, NavigationSource {
+export class ObservationClient implements ObservationSource, NavigationSource, NamedViewSource {
   constructor(private readonly fetcher: typeof fetch = fetch, private readonly base = "/api/runtime",
     private readonly timeoutMs = 15_000, private readonly maximumBytes = 2_097_152) {
     if (!base.startsWith("/") || base.startsWith("//") || /[?#]/.test(base) || timeoutMs <= 0 || maximumBytes <= 0)
@@ -48,7 +54,7 @@ export class ObservationClient implements ObservationSource, NavigationSource {
   }
 
   private async read<K extends keyof ObservationWire>(kind: K, path: string,
-    params: Record<string, string | undefined>, signal: AbortSignal): Promise<ObservationWire[K]> {
+    params: Record<string, string | undefined>, signal: AbortSignal, namespace = "graph-observations"): Promise<ObservationWire[K]> {
     const controller = new AbortController();
     let timedOut = false;
     const abort = () => controller.abort();
@@ -59,7 +65,7 @@ export class ObservationClient implements ObservationSource, NavigationSource {
     try {
       if (controller.signal.aborted) throw new ReadFailure("aborted");
       // A native browser fetch rejects an arbitrary client object as its receiver.
-      const response = await this.fetcher.call(globalThis, this.base + "/v1/graph-observations/" + path + "?" + query.toString(), {
+      const response = await this.fetcher.call(globalThis, this.base + "/v1/" + namespace + "/" + path + "?" + query.toString(), {
         signal: controller.signal, credentials: "same-origin", redirect: "error", headers: { Accept: "application/json" },
       });
       if (!response.ok) await response.body?.cancel().catch(() => undefined);
@@ -84,6 +90,14 @@ export class ObservationClient implements ObservationSource, NavigationSource {
   snapshot(run: string, query: ReadQuery, cursor: string | undefined, signal: AbortSignal) {
     return this.read("snapshot", encodeURIComponent(run) + "/nodes", { scope_key: query.scope_key ?? undefined,
       frontier_only: String(query.frontier_only ?? false), cursor, limit: "50" }, signal);
+  }
+
+  catalog(run: string, snapshot: string, signal: AbortSignal) {
+    return this.read("catalog", encodeURIComponent(run) + "/views", { snapshot_token: snapshot }, signal);
+  }
+
+  lineage(run: string, signal: AbortSignal) {
+    return this.read("lineage", encodeURIComponent(run) + "/lineage", {}, signal, "graph-runs");
   }
   detail(run: string, activation: string, snapshot: string, cursor: string | undefined, signal: AbortSignal) {
     return this.read("detail", `${encodeURIComponent(run)}/nodes/${encodeURIComponent(activation)}`,

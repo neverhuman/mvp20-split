@@ -1,5 +1,7 @@
 # Graph navigation
 
+`RuntimeViewCatalog` and immutable RuntimeView definitions now advertise GET `/v1/graph-observations/{run}/views?snapshot_token=...`. This read authenticates the exact observation cut and returns only execution_topology and successor_lineage, each with view/schema version, typed allowed filters, result bound and required capability. Existing successor lineage remains at its original immutable public route. Capability availability does not imply a given run has a predecessor. Runtime cannot advertise Research/Knowledge/Data views. Catalog reads make no mutations or new migrations; scientific projections remain unavailable until their owners exist.
+
 BP-05.02/B1 implementation in progress. This Runtime-owned read boundary projects authored control links and occurrence scopes from retained plans. It never advances a campaign or interprets scientific acceptance.
 
 `GraphNavigation` exposes `/v1/graph-observations/{run}/scopes` and `/v1/graph-observations/{run}/scopes/{scope}/topology`. Both require read authority and an existing observation snapshot token. Routes are enabled with the existing graph observation hosting configuration. Scope pages select immediate children of an activation, or root scopes when no parent is supplied. Topology selects one occurrence scope, optionally an undirected discovery neighborhood of radius 0–2; returned links retain their authored direction and branch route.

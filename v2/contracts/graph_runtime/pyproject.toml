@@ -1,6 +1,6 @@
 [project]
 name = "amphora-contracts-graph-runtime"
-version = "0.6.0"
+version = "0.7.0"
 requires-python = ">=3.12,<3.13"
 dependencies = ["pydantic>=2.12,<3", "amphora-contracts-core==0.1.0", "amphora-contracts-campaigns==0.4.1", "amphora-contracts-runtime==0.1.0", "amphora-contracts-commands==0.1.0"]
 

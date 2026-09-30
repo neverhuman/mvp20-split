@@ -72,6 +72,7 @@ for name, model in {
     "snapshot-page": graph_runtime_contracts.GraphSnapshotPage,
     "scope-page": graph_runtime_contracts.GraphScopePage,
     "topology-page": graph_runtime_contracts.GraphTopologyPage,
+    "view-catalog": graph_runtime_contracts.GraphViewCatalog,
     "node-detail": graph_runtime_contracts.GraphNodeDetail,
     "value-page": graph_runtime_contracts.GraphValuePage,
     "invalidation-page": graph_runtime_contracts.GraphInvalidationPage,

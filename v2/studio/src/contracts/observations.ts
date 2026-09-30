@@ -8,8 +8,11 @@ import type { GraphValuePage } from "./generated/values.js";
 import type { GraphInvalidationPage } from "./generated/events.js";
 import type { GraphScopePage } from "./generated/scopes.js";
 import type { GraphTopologyPage } from "./generated/topology.js";
+import type { GraphViewCatalog } from "./generated/catalog.js";
+import type { SuccessorLineage } from "./generated/lineage.js";
 
 export type { GraphSnapshotPage, GraphNodeDetail, GraphValuePage, GraphInvalidationPage, GraphScopePage, GraphTopologyPage };
+export type { GraphViewCatalog, SuccessorLineage };
 export type TopologyQuery = GraphTopologyPage["query"];
 export type ReadCut = GraphSnapshotPage["snapshot"]["cut"];
 export type ReadQuery = GraphSnapshotPage["snapshot"]["query"];
@@ -21,6 +24,8 @@ export interface ObservationWire {
   events: GraphInvalidationPage;
   scopes: GraphScopePage;
   topology: GraphTopologyPage;
+  catalog: GraphViewCatalog;
+  lineage: SuccessorLineage;
 }
 
 const ajv = new Ajv2020({ strict: true, allErrors: false, coerceTypes: false, useDefaults: false, removeAdditional: false });
@@ -34,6 +39,8 @@ const validators = {
   events: ajv.compile<GraphInvalidationPage>(schemas.events),
   scopes: ajv.compile<GraphScopePage>(schemas.scopes),
   topology: ajv.compile<GraphTopologyPage>(schemas.topology),
+  catalog: ajv.compile<GraphViewCatalog>(schemas.catalog),
+  lineage: ajv.compile<SuccessorLineage>(schemas.lineage),
 };
 
 export function decodeObservation<K extends keyof ObservationWire>(kind: K, value: unknown): ObservationWire[K] {

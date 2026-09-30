@@ -179,6 +179,19 @@ aside {
 .navigation-inspector {
   overflow:auto;
 }
+.named-views {
+  border:1px solid var(--line);
+  padding:12px 16px;
+  margin:12px 0;
+  background:white;
+}
+.named-views summary {
+  cursor:pointer;
+  font-weight:600;
+}
+.named-views .identity, .named-views li {
+  overflow-wrap:anywhere;
+}
 .navigation-inspector > * {
   flex-shrink:0;
 }

@@ -3,7 +3,7 @@
 ## Canonical Parent Tracker
 
 - Status: primary_active; BP-05.02 / Build / B1.
-- Last refreshed: `2026-09-29 20:41:57` (America/Chicago).
+- Last refreshed: `2026-09-29 20:55:43` (America/Chicago).
 - Owner/scope: Studio modules and thin gateway/projection adapters.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 runnable fixture and versioned read/command contracts.

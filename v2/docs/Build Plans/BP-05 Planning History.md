@@ -127,3 +127,7 @@ Runtime-owned authored topology and occurrence scope reads, public contracts and
 ## 2026-09-29 20:41:57 ? navigation consumer checkpoint
 
 Navigation loader/presentation partial B1:39 Node tests, five scripted browser scenarios/two viewport accessibility checks, seven Monitor browser regressions and isolated Studio build5606332b5b524cf1b7952308d62ff2db pass. Named catalog, full linked evidence and actual-owner navigation acceptance remain open; child0/4=0%, parent4/16=25%.
+
+## 2026-09-29 20:55:43 ? named-view catalog checkpoint
+
+Scoped Runtime named-view catalog and Studio lineage consumer verified:111 Python regressions,45 Node tests, seven navigation browser scenarios/two viewport A/AA checks and isolated Studio installa18fbcff4dfe495b983c7a3db85b5fb2. Runtime0.13.0/graph-runtime0.7.0;180 predecessor schema bytes preserved. Full linked attempt/output/artifact journey and full B1 compatibility gate remain; child0/4=0%, parent4/16=25% unchanged.

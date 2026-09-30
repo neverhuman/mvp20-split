@@ -5,10 +5,11 @@ import { SceneWindow } from '../page_models/scene.js';
 import { GraphCanvas } from './graph_canvas.js';
 import { MonitorDetail } from './monitor_detail.js';
 import type { NavigationModel } from '../page_models/navigation.js';
+import type { NamedViewsModel } from '../page_models/named_views.js';
 import { NavigationPane } from './navigation_pane.js';
 import './style.css';
 
-export function MonitorWorkspace({ model, context, synthetic = false, navigation }: { model: MonitorModel; context: RunContext; synthetic?: boolean; navigation?: NavigationModel }) {
+export function MonitorWorkspace({ model, context, synthetic = false, navigation, namedViews }: { model: MonitorModel; context: RunContext; synthetic?: boolean; navigation?: NavigationModel; namedViews?: NamedViewsModel }) {
   const subscribe = useCallback((notify: () => void) => model.subscribe(notify), [model]);
   const view = useSyncExternalStore(subscribe, () => model.snapshot);
   const [filter, setFilter] = useState('');
@@ -43,7 +44,7 @@ export function MonitorWorkspace({ model, context, synthetic = false, navigation
         <button aria-pressed={!topology} onClick={() => setTopology(false)}>Activation inventory</button>
         <button aria-pressed={topology} onClick={() => setTopology(true)}>Authored graph</button>
       </div>}
-      {topology && navigation ? <NavigationPane navigation={navigation} monitor={model} observation={view} /> : <div className="work-area" data-phase={view.phase}>
+      {topology && navigation ? <NavigationPane navigation={navigation} monitor={model} observation={view} {...(namedViews ? { namedViews } : {})} /> : <div className="work-area" data-phase={view.phase}>
         <GraphCanvas nodes={shown} selection={view.selection} select={select} />
         <aside aria-label="Node navigator"><MonitorDetail view={view} />
           <div className="list-heading"><h2>Loaded activations</h2><span>{shown.length}</span></div>

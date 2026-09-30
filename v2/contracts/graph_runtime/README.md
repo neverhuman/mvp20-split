@@ -1,13 +1,15 @@
 # Graph Runtime Contracts
 
+Package0.7.0 adds GraphViewCatalog and typed view/filter descriptors under BP-05.02/B1. Runtime0.13.0 advertises only its implemented execution topology and successor lineage projections. All180 predecessor schema bytes remain unchanged;182 schemas are now published. No migration.
+
 Package0.6.0 adds bounded scope/topology read roots under BP-05.02/B1; Runtime0.12.0 owns their authority and authored-edge projection. campaigns0.4.1 publicly exports the existing Occurrence union. All predecessor schemas remain byte-identical; no migration. Navigation acceptance remains open.
 
 Package 0.5.0 adds graph snapshot, node detail, value page and invalidation page roots under BP-04.05/B1. Runtime 0.11.0 owns their read authority and revision/cursor policy. These are additive observations; prior command and graph page contracts remain unchanged. See [observation protocol](../../docs/Architecture/System/Graph_Observation_Protocol.md) and `tests/test_observations.py` for bounded examples and rejection cases. Earlier 0.4.0 notes below describe the accepted predecessor.
 
 Package 0.4.0 adds `SuccessorProposal`, `CarrySources` and `SuccessorLineage` without changing earlier graph/worker schema bytes. Runtime 0.10.0 owns admission authority. The new `graph.admit_successor` family names a precise predecessor plan/revision, explicit final-export or succeeded-node sources, expected value digests and distinct target inputs. Fresh Artifact input scope checks remain in the public parser; predecessor/retention/type policy belongs to Runtime domain objects.
 
-- Package: `amphora-contracts-graph-runtime` 0.5.0; campaigns dependency 0.4.0. Existing versioned graph observations and worker receipts are unchanged.
-- Owner: Campaign Runtime coordination boundary; BP-04.04/B2 additive successor contracts.
+- Package: `amphora-contracts-graph-runtime` 0.7.0; campaigns dependency 0.4.1. Existing versioned graph observations and worker receipts are unchanged.
+- Owner: Campaign Runtime read/coordination boundary; active BP-05.02/B1 additive navigation/catalog contracts.
 - Architecture: [Graph Execution Model](../../docs/Architecture/System/Graph_Execution_Model.md).
 
 Public root imports expose graph admission/advance commands, bounded values, limits and paginated node observations. They reference executable campaign wire-v2 identity while retaining the existing attempt budget and command envelope. This separate package prevents graph authoring dependencies from entering the pinned scientific worker/SDK closure. Existing worker commands and campaign schemas retain their serialized behavior; campaign exports add names for existing literal-value DTOs only.

@@ -9,7 +9,7 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-05 primary active; BP-06 through BP-09 queued; BP-01/BP-01A/BP-02/BP-03/BP-04 closed.
-- Last refreshed: `2026-09-29 20:41:57` (America/Chicago).
+- Last refreshed: `2026-09-29 20:55:43` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P4 / BP-05 - Graph Studio first vertical slice.
 - Primary active implementation plan / phase / task: BP-05 -> BP-05.02 / Build / B1.
@@ -123,6 +123,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-29 20:55:43 | BP-05.02/B1 catalog/lineage partial; percentages unchanged | 111 Python,45 Node, seven navigation browser cases, isolated consumer; full inspector journey pending |
 | 2026-09-29 20:41:57 | BP-05.02/B1 navigation consumer partial; percentages unchanged | 39 Node tests, navigation + Monitor browser cases, isolated Studio build; catalog/evidence journey pending |
 | 2026-09-29 20:32:51 | BP-05.02/B1 partial; child0%, parent25% unchanged | Authored topology/occurrence reads;109 Python +34 Node tests, isolated Studio build; full B1 remains open |
 | 2026-09-29 20:06:20 | BP-05.01 closed100%; parent25% (4/16); .02/B1 active0% | Two isolated Studio builds;actual12/28-node Runtime browser proof,three replacements;scoped audit aligned |
@@ -147,6 +148,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-28 22:09:45 | BP-04.03 B2 passed; child 50%, parent 50% (10/20); B3 active | 68 focused/1,001 total tests, thirteen installs, REC-01..09 b85109f93d704848af90f46f04bf89fe; Runtime 0.7.0 wait execution/protection |
 | 2026-09-28 21:32:01 | BP-04.03 B2 collection slice verified; child stays 25%, parent 45%; external waits next | 84 focused/970 total tests, thirteen installs, REC-01..09 scope 182014083a85488981dbd08e1bbda122; Runtime 0.6.0 immutable all/partial/deadline decisions; canonical history repair |
 | 2026-09-28 20:50:52 | BP-04.03 B1 passed; child 25%, parent 45% (9/20); B2 active | 920 tests/thirteen installs/REC-01..09; await wire-v3, 116 frozen predecessor schemas, isolated wait retention preparation; scope 5083de960e9142f1be186e0d77f4cf3e |
-| 2026-09-28 20:11:30 | BP-04.03 B1 aggregate snapshot/storage slice verified; parent 40%, child 0 complete gates | 33 owned cases; 842 tests/thirteen installs/REC-01..09; Runtime 0.4.1/runtime_0008; external-wait boundary remains |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

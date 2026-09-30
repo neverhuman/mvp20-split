@@ -7,15 +7,24 @@ from amphora_contracts_graph_runtime import (
     GraphScopePage,
     GraphTopologyPage,
     GraphTopologyQuery,
+    GraphViewCatalog,
 )
 from fastapi import Query, Request
 
 from ..graph_inspection.policy import require
+from .catalog import RuntimeViewCatalog
 from .reads import GraphNavigation
 
 
 def install_graph_navigation(app, history, credentials):
     navigation = GraphNavigation(history.engine, history.cursors)
+    catalog = RuntimeViewCatalog(history.engine, history.cursors)
+
+    @app.get("/v1/graph-observations/{run_id}/views", response_model=GraphViewCatalog)
+    async def views(run_id: Identifier, request: Request, snapshot_token: str = Query(min_length=1, max_length=4096)):
+        principal = credentials.authenticate(request.headers.get("authorization"))
+        require(set(request.query_params) == {"snapshot_token"}, "invalid_page_request")
+        return await asyncio.to_thread(catalog.read, principal, run_id, snapshot_token)
 
     @app.get("/v1/graph-observations/{run_id}/scopes", response_model=GraphScopePage)
     async def scopes(run_id: Identifier, request: Request, snapshot_token: str = Query(min_length=1, max_length=4096),

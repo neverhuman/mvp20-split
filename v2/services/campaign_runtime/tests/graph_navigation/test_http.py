@@ -33,3 +33,7 @@ def test_navigation_http_authorization_and_unknown_filter_rejection(graph_env):
         result = client.get(topology, params={"snapshot_token": token}, headers=headers)
         assert result.status_code == 200 and len(result.json()["edges"]) == 1
         assert result.json()["cut"] == scopes.json()["cut"]
+        catalog = f"/v1/graph-observations/{run}/views"
+        assert client.get(catalog, params={"snapshot_token": token}, headers=headers).json()["cut"] == scopes.json()["cut"]
+        assert client.get(catalog, params={"snapshot_token": token, "view": "arbitrary"}, headers=headers).status_code == 422
+        assert client.get(catalog, params={"snapshot_token": token}).status_code == 401

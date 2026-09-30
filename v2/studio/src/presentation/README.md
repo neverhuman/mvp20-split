@@ -1,5 +1,7 @@
 # Monitor presentation
 
+The optional NamedViewsModel supplies the named-view panel under authored graph navigation. Runtime capabilities are versioned/scoped; retained predecessor run/plan/revision and carried bindings come through the public lineage read. Property/material/model/knowledge projections explicitly remain unavailable. Seven navigation browser scenarios, two viewport/A/AA scans and screenshot review pass against scripted peers; actual-owner navigation acceptance is still open.
+
 Status: BP-05.01/B3 verified in seven Chromium scenarios/two viewports and an independent source build; V1 actual available-owner integration/replacement also passed; BP-05.01 is closed. Architecture: [Studio](../../../docs/Architecture/Experience/Studio.md), [canvas decision](../../../docs/Architecture/Experience/Studio_Canvas_Decision.md).
 
 The internal researcher follows accepted execution observations and selects an activation to inspect its status. This module renders public read models; it cannot issue execution commands, edit a campaign, fetch records independently, access owner credentials or assert scientific acceptance.

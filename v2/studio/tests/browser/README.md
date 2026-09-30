@@ -1,5 +1,7 @@
 # Monitor browser boundary tests
 
+The navigation harness now also proves catalog-driven predecessor lineage through `/v1/graph-runs/{run}/lineage` and visibly unavailable scientific views. It has seven scenarios; the original Monitor seven-case suite remains a separate regression command.
+
 Owner: [Monitor presentation](../../src/presentation/README.md). Run `npm run test:browser`; install local Chromium with `npx playwright install chromium` first. This is a separate browser acceptance tier, not part of every Node unit-test run.
 
 `entry.tsx` is a test-only host that constructs the actual `ObservationClient`, `MonitorModel` and `MonitorWorkspace`. Its global model handle exists only for observable test barriers and is not imported by production presentation. `host.mjs` serves the actual bundled browser source and scripted public-schema fixtures through loopback HTTP. It owns no PostgreSQL data, scientific result, gateway deployment or live Runtime authority.

@@ -4,9 +4,11 @@ import type { MonitorModel, MonitorView } from '../page_models/monitor.js';
 import { SceneWindow } from '../page_models/scene.js';
 import { GraphCanvas } from './graph_canvas.js';
 import { MonitorDetail } from './monitor_detail.js';
+import type { NamedViewsModel } from '../page_models/named_views.js';
+import { NamedViews } from './named_views.js';
 
-export function NavigationPane({ navigation, monitor, observation }: {
-  navigation: NavigationModel; monitor: MonitorModel; observation: MonitorView;
+export function NavigationPane({ navigation, monitor, observation, namedViews }: {
+  navigation: NavigationModel; monitor: MonitorModel; observation: MonitorView; namedViews?: NamedViewsModel;
 }) {
   const subscribe = useCallback((notify: () => void) => navigation.subscribe(notify), [navigation]);
   const view = useSyncExternalStore(subscribe, () => navigation.snapshot);
@@ -31,6 +33,7 @@ export function NavigationPane({ navigation, monitor, observation }: {
   const select = useCallback((id: string) => { void monitor.select(id); }, [monitor]);
   const parent = view.scopes?.parent_activation_id ?? undefined;
   return <section aria-label="Authored graph navigation">
+    {namedViews && <NamedViews model={namedViews} anchor={anchor ?? null} />}
     <div className="toolbar">
       <button onClick={() => void navigation.scopes()} disabled={!anchor}>Root groups</button>
       <span>Revision {page?.cut.revision ?? anchor?.cut.revision ?? 'unavailable'} · Read-only authored connections</span>

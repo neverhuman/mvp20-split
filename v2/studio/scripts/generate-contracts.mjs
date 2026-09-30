@@ -15,6 +15,8 @@ const roots = {
   events: ["graph-runtime.invalidation-page", "GraphInvalidationPage"],
   scopes: ["graph-runtime.scope-page", "GraphScopePage"],
   topology: ["graph-runtime.topology-page", "GraphTopologyPage"],
+  catalog: ["graph-runtime.view-catalog", "GraphViewCatalog"],
+  lineage: ["graph-runtime.successor-lineage", "SuccessorLineage"],
 };
 const check = process.argv.includes("--check");
 const manifest = {};

@@ -4,13 +4,15 @@ import assert from 'node:assert/strict';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { startObservationHost } from './host.mjs';
-import { scopes, topology } from '../../dist/tests/fixtures/navigation.js';
+import { scopes, topology, catalog, lineage } from '../../dist/tests/fixtures/navigation.js';
 
 const output = resolve('../.test-results/studio-navigation', new Date().toISOString().replace(/[:.]/g, '-'));
 await mkdir(output, { recursive: true });
 const host = await startObservationHost();
 let failure = null;
 host.state.hook = async (url, json) => {
+  if (url.pathname.endsWith('/views')) { json(200, catalog()); return true; }
+  if (url.pathname.endsWith('/lineage')) { json(200, lineage()); return true; }
   if (!url.pathname.includes('/scopes')) return false;
   if (failure) { json(failure, { detail: 'private diagnostics' }); return true; }
   if (url.pathname.endsWith('/topology')) {
@@ -40,6 +42,11 @@ try {
   await selected.focus(); await page.keyboard.press('Enter');
   await page.getByRole('region', { name: 'Selected node', exact: true }).getByRole('heading', { name: 'node-2', exact: true }).waitFor();
   evidence.scenarios.push('partial target omission', 'authored edge after pagination', 'keyboard node-to-detail selection');
+  await page.getByText('Named research views', { exact: true }).click();
+  await page.getByRole('button', { name: 'Inspect predecessor lineage', exact: true }).click();
+  await page.getByRole('region', { name: 'Retained predecessor lineage', exact: true }).waitFor();
+  await page.getByText('Property history — unavailable; awaiting Research projection.', { exact: true }).waitFor();
+  evidence.scenarios.push('named lineage uses public owner route', 'scientific views explicitly unavailable');
   for (const viewport of [{ width: 1440, height: 1000 }, { width: 390, height: 844 }]) {
     await page.setViewportSize(viewport);
     await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));

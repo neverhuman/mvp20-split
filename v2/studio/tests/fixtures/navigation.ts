@@ -1,6 +1,24 @@
 /** Synthetic public-wire navigation examples, never scientific evidence. */
 import type { GraphScopePage, GraphTopologyPage } from "../../src/contracts/observations.js";
 import { id, node, snapshot } from "./observations.js";
+import type { GraphViewCatalog, SuccessorLineage } from "../../src/contracts/observations.js";
+
+export function catalog(): GraphViewCatalog {
+  return { schema_version: "1", cut: snapshot().snapshot.cut, views: [
+    { view_id: "execution_topology", view_version: "1", owner: "campaign-runtime", result_schema: "graph-runtime.topology-page",
+      result_schema_version: "1", required_capability: "runtime.authored-topology.v1", result_bound: 256,
+      filters: [{ kind: "digest", name: "scope_key", required: true }, { kind: "digest", name: "focus_activation_id", required: false },
+        { kind: "integer", name: "radius", required: false, minimum: 0, maximum: 2, default: 1 }] },
+    { view_id: "successor_lineage", view_version: "1", owner: "campaign-runtime", result_schema: "graph-runtime.successor-lineage",
+      result_schema_version: "1", required_capability: "runtime.successor-lineage.v1", result_bound: 64, filters: [] },
+  ] };
+}
+
+export function lineage(): SuccessorLineage {
+  const cut = snapshot().snapshot.cut;
+  return { schema_version: "1", scope: cut.scope, run_id: cut.run_id, plan_sha256: cut.plan_sha256,
+    predecessor: { run_id: "parent-run", plan_sha256: id(300), revision: 8 }, carried: [], transfer_sha256: id(301) };
+}
 
 export function scopes(): GraphScopePage {
   return { schema_version: "1", cut: snapshot().snapshot.cut, parent_activation_id: null,
