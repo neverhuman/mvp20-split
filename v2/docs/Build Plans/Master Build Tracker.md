@@ -9,7 +9,7 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-05 primary active; BP-06 through BP-09 queued; BP-01/BP-01A/BP-02/BP-03/BP-04 closed.
-- Last refreshed: `2026-09-30 11:45:52` (America/Chicago).
+- Last refreshed: `2026-09-30 11:50:01` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P4 / BP-05 - Graph Studio first vertical slice.
 - Primary active implementation plan / phase / task: BP-05 -> BP-05.03 / Build / B1.
@@ -123,6 +123,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-30 11:50:01 | BP-05.03/B1 command-loader partial; child0%, parent50% unchanged | 87 isolated Node tests;lost acknowledgement/exact-record/late-denial cases |
 | 2026-09-30 11:45:52 | BP-05.03/B1 draft-state partial; child0%, parent50% unchanged | 82 isolated Node tests;7 owned state cases;save/edit race and denial fences |
 | 2026-09-30 11:39:50 | BP-05.03/B1 consumer partial; child0%, parent50% unchanged | 75 isolated Node tests;14 authoring roots;exact schema bytes;original command receipts |
 | 2026-09-30 11:27:45 | BP-05.03/B1 editor metadata partial; child0%, parent50% unchanged | 118 scoped tests;catalog100% statements/branches;8 isolated wheels;200 schemas preserve196 predecessors |
@@ -147,6 +148,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-29 18:27:38 | BP-04.05 B1 verified25%; parent87.50% (21/24); B2 active | Snapshot/detail/reconnect contracts;72 focused,1202 foundation,19 installs; stale queue40% mirror corrected |
 | 2026-09-29 17:57:39 | BP-04.04 closed 100%; parent 83.33% (20/24); .05/B1 active 0% | Actual five-tool installed source/successor/replacement; 44 confirmed reservations; scoped audit aligned |
 | 2026-09-29 17:45:46 | BP-04.04 B3 verified; child 75%, parent 79.17% (19/24); V1 active | 116 scoped tests, five actual process cases; source trace/ancestry and accepted work preserved |
-| 2026-09-29 17:35:32 | BP-04.04 B2 verified; child 50%, parent 75% (18/24); B3 active | 1169 tests, nineteen installs, exact immutable successor transfer and source-derived split graph |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

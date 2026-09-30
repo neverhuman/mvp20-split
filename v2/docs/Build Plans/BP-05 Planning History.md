@@ -187,3 +187,7 @@ Studio authoring consumer prerequisite verified:14 separate generated public roo
 ## Draft session - 2026-09-30 11:45:52
 
 DraftSession prerequisite verified: scoped next-campaign local/base state, immutable pending save/validate identity, exact receipt/record reconciliation, newer-edit preservation, historical validation and denial fencing.82 Node tests pass in an independent locked install (2d9236fb5f174e5085c0cfe06fc27b46);7 owned draft-state cases, focused module100% lines/92.86% branches/100% functions. Forms/comparison/emergency presentation and browser/owner acceptance remain B1; child0%=0/4, Build0%, Acceptance0%; parent50%=8/16 unchanged. [Evidence](../Audits/Evidence/BP-05-Authoring/DraftSession.json).
+
+## Draft command loader - 2026-09-30 11:50:01
+
+Draft command-loader prerequisite verified: explicit original-receipt reconciliation, exact committed record reads, immutable observed terminal outcomes and generation fencing.87 Node tests pass in isolated locked install c32d063d40224063b0e0355a4c9dc4df; five asynchronous synthetic-peer cases added. No automatic retries or polling. Registry/schema forms, comparison and separate emergency presentation remain B1; child0%=0/4, Build0%, Acceptance0%; parent50%=8/16 unchanged. [Evidence](../Audits/Evidence/BP-05-Authoring/DraftCommands.json).

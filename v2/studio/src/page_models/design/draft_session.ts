@@ -4,7 +4,7 @@ import { Submission } from "../../transport/submission.js";
 
 type Scope = CommandIdentity["scope"];
 type LocalDraft = Pick<SaveDraft, "title" | "definition">;
-type Pending = { command: Submission<"save"> | Submission<"validate">; editVersion: number; binding?: string };
+type Pending = { command: Submission<"save"> | Submission<"validate">; editVersion: number; binding?: string; terminal?: string };
 const sameScope = (left: Scope, right: Scope) => left.tenant_id === right.tenant_id && left.project_id === right.project_id;
 
 function comparable(value: unknown): string {
@@ -76,12 +76,8 @@ export class DraftSession {
 
   /** Caller follows accepted receipts to exact public records before releasing the pending command. */
   reconcile(command: Submission, receipt: DraftCommandReceipt, record?: DraftRevision | DraftValidation): boolean {
-    if (this.denied || this.pending?.command !== command) return false;
-    command.verify(receipt);
+    if (!this.observeReceipt(command, receipt) || !this.pending) return false;
     const outcome = receipt.outcome;
-    const binding = JSON.stringify([outcome.binding.operation_id, outcome.binding.request_sha256]);
-    if (this.pending.binding !== undefined && this.pending.binding !== binding) throw new Error("receipt_binding_changed");
-    this.pending.binding = binding;
     if (outcome.status === "pending") return false;
     if (outcome.status === "rejected") { this.reason = outcome.reason_code; this.pending = undefined; return true; }
     const commit = outcome.committed;
@@ -105,6 +101,19 @@ export class DraftSession {
       this.validation = structuredClone(validation);
     }
     this.pending = undefined; this.reason = undefined;
+    return true;
+  }
+
+  observeReceipt(command: Submission, receipt: DraftCommandReceipt): boolean {
+    if (this.denied || this.pending?.command !== command) return false;
+    command.verify(receipt);
+    const outcome = receipt.outcome;
+    const binding = JSON.stringify([outcome.binding.operation_id, outcome.binding.request_sha256]);
+    if (this.pending.binding !== undefined && this.pending.binding !== binding) throw new Error("receipt_binding_changed");
+    const terminal = comparable(outcome);
+    if (this.pending.terminal !== undefined && this.pending.terminal !== terminal) throw new Error("terminal_receipt_changed");
+    this.pending.binding = binding;
+    if (outcome.status !== "pending") this.pending.terminal = terminal;
     return true;
   }
 

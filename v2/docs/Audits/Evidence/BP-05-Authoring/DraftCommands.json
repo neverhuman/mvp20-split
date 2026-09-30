@@ -1,0 +1,13 @@
+{
+  "verified_at": "2026-09-30 11:50:01",
+  "status": "passed",
+  "scope": "BP-05.03/B1 asynchronous draft commands",
+  "node_tests": 87,
+  "owned_async_cases": 5,
+  "isolated_install": "c32d063d40224063b0e0355a4c9dc4df",
+  "limits": [
+    "Synthetic peers, no live authoring/browser acceptance",
+    "No B1 completion credit",
+    "No B2 eligibility or automatic rebase policy"
+  ]
+}
