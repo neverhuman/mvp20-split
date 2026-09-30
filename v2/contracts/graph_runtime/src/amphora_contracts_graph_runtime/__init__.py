@@ -15,6 +15,7 @@ from .authoring import (
     parse_authoring_command,
 )
 from .bindings import GraphNodeViewV3, GraphRunPageV3
+from .draft_admission import AdmitDraft, DraftSelection
 from .models import AdmitGraphRun, AdvanceGraph, GraphLimits, GraphNodeView, GraphRunPage
 from .navigation import (
     GraphControlLink,
@@ -71,7 +72,7 @@ from .waits import (
 
 def parse_graph_command(family, raw):
     try:
-        model = {"graph.admit": AdmitGraphRun, "graph.admit_successor": SuccessorProposal, "graph.advance": AdvanceGraph,
+        model = {"graph.admit": AdmitGraphRun, "graph.admit_draft": AdmitDraft, "graph.admit_successor": SuccessorProposal, "graph.advance": AdvanceGraph,
                  "graph.submit_receipt": SubmitDomainReceipt}[family]
     except KeyError as error:
         raise CommandEncodingError("unknown_family") from error
@@ -95,7 +96,7 @@ def parse_graph_command(family, raw):
     return command
 
 
-__all__ = ["DraftCommandReceipt", "DraftHead", "DraftPage", "DraftRevision", "DraftValidation", "SaveDraft", "ValidateDraft", "parse_authoring_command", "DigestViewFilter", "GraphViewCatalog", "GraphViewDefinition", "RadiusViewFilter", "GraphControlLink", "GraphScopePage", "GraphScopeView", "GraphTopologyNode", "GraphTopologyPage", "GraphTopologyQuery",
+__all__ = ["AdmitDraft", "DraftSelection", "DraftCommandReceipt", "DraftHead", "DraftPage", "DraftRevision", "DraftValidation", "SaveDraft", "ValidateDraft", "parse_authoring_command", "DigestViewFilter", "GraphViewCatalog", "GraphViewDefinition", "RadiusViewFilter", "GraphControlLink", "GraphScopePage", "GraphScopeView", "GraphTopologyNode", "GraphTopologyPage", "GraphTopologyQuery",
            "AdmitGraphRun", "AdvanceGraph", "CollectionValue", "GraphBinding", "GraphLimits", "GraphNodeView",
            "GraphAttemptView", "GraphInvalidation", "GraphInvalidationPage", "GraphNodeDetail", "GraphOutputSummary",
            "GraphReadBudget", "GraphReadCut", "GraphReadQuery", "GraphReadSnapshot", "GraphSnapshotPage", "GraphValueItem", "GraphValuePage",

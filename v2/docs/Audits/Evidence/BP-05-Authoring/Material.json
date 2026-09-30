@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-09-29 23:12:03",
+  "status": "partial_B1_prerequisite_verified",
+  "scoped_tests": 110,
+  "runtime_closure_wheels_built_installed": 8,
+  "coverage": {
+    "scope": "definitions",
+    "statements": "384/400",
+    "branches": "72/88"
+  },
+  "published_schema_files": 196,
+  "predecessor_schema_bytes_preserved": 194,
+  "limitations": [
+    "No draft admission endpoint or publication transaction yet.",
+    "No new full foundation run; deae0fb retains the preceding full gate evidence.",
+    "No independent authoring process replacement or scientific acceptance claim."
+  ]
+}

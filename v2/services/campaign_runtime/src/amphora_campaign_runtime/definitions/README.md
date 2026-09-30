@@ -31,10 +31,16 @@ Hosting requires explicit authoring=true, configured graphs, migrated owner tabl
 - GET /v1/definition-drafts/{draft_id}: current or explicit positive revision.
 - GET /v1/definition-commands/{family}/{command_id}: current actor's authoring receipt.
 
-Unknown filters and invalid bounds reject. Every route authenticates and checks the owning read/write permission. Graph-runtime0.8.0 owns DTOs; Runtime0.15.0 owns transitions. A saved or structurally valid draft is not executable approval or scientific acceptance. There is no admit-draft route yet and no live-run editing.
+Unknown filters and invalid bounds reject. Every route authenticates and checks the owning read/write permission. Graph-runtime0.9.0 owns DTOs; Runtime0.16.0 owns transitions. A saved or structurally valid draft is not executable approval or scientific acceptance. There is no admit-draft route yet and no live-run editing.
 
 ## Verification and replacement
 
 Tests: services/campaign_runtime/tests/definitions; select dev/run_tests.py --module runtime --area definitions.18 owned tests pass using actual PostgreSQL for save/validation races, original replay, denied pre-registration, rollback-before-receipt, immutable-role grants, scoped HTTP reads and explicit hosting. Pure checks prove digest restoration, bounded material, scope isolation and structural failure without scientific approval. Coverage for this module only:338/354 statements and62/78 branches. Remaining paths include corruption/conflicting-material guards, revision exhaustion and direct invalid read arguments; no claim of full Runtime coverage from this focused suite.
 
 Preserve content/command profiles, immutable prior revisions, scope/campaign identity, conflict/receipt meanings and role grants on rebuild. Independent process replacement and crash/validation/activation workflows remain B1-B3/V1 gates. No scientific authority, capability discovery or worker execution is owned here.
+
+## Retained material restoration
+
+ValidationMaterial is an internal scoped repository, not a public authorization surface. It joins immutable validation/revision/universe records, releases the connection and then revalidates hashes and compilation through VerifiedDraftPlan. Restoration rejects failed structural results, mixed revision/content, changed compiler results and foreign-scope missing records. It needs no current process-local catalog. require_selection checks all six public AdmitDraft pins but does not check current head, current eligibility or grant execution. Callers must enforce principal and admission policy. No publication table, draft admission route or resolver bypass is enabled by this prerequisite.
+
+Verification for this addition:four material tests plus contract/dev and existing definitions suites total110 passing tests; isolated eight-wheel Runtime dependency closure builds/imports. Definitions coverage384/400 statements and72/88 branches; remaining defensive paths are described above. Predecessor full foundation evidence is deae0fb,1272 Python/65 Node/19 installs/REC-01..09; no new full-foundation or independent authoring-process replacement claim.
