@@ -1,60 +1,69 @@
-import type { GraphSnapshotPage, SuccessorLineage } from "../contracts/observations.js";
+import type { GraphSnapshotPage } from "../contracts/observations.js";
 import type { NamedViewSource } from "../transport/observations.js";
-import { asReadFailure, type ReadFailure } from "../transport/failure.js";
+import { asReadFailure } from "../transport/failure.js";
+import { NamedViewProjection } from "./named_view_projection.js";
 import { RequestLane } from "./request_lane.js";
 import { ViewCatalog } from "./view_catalog.js";
-import type { RegionPhase } from "./monitor.js";
 
-export interface NamedViewsState {
-  readonly phase: RegionPhase;
-  readonly catalog: ViewCatalog | null;
-  readonly lineage: SuccessorLineage | null;
-  readonly lineagePhase: RegionPhase;
-  readonly error: ReadFailure | null;
-}
+export type { NamedViewsState } from "./named_view_projection.js";
+type Region = "catalog" | "lineage";
 
+/** Rebuildable request coordinator; projection and capability objects own their policies. */
 export class NamedViewsModel {
-  private readonly catalogLane = new RequestLane();
-  private readonly lineageLane = new RequestLane();
+  private projection = NamedViewProjection.empty();
+  private readonly lanes = { catalog: new RequestLane(), lineage: new RequestLane() };
   private readonly listeners = new Set<() => void>();
   private disposed = false;
-  private state: NamedViewsState = Object.freeze({ phase: "idle", catalog: null, lineage: null, lineagePhase: "idle", error: null });
+
   constructor(private readonly source: NamedViewSource) {}
-  get snapshot() { return this.state; }
-  subscribe(listener: () => void) { this.listeners.add(listener); return () => { this.listeners.delete(listener); }; }
-  private patch(fields: Partial<NamedViewsState>) {
-    if (this.disposed) return;
-    this.state = Object.freeze({ ...this.state, ...fields });
-    for (const listener of this.listeners) listener();
+  get snapshot() { return this.projection.snapshot; }
+  subscribe(listener: () => void) {
+    this.listeners.add(listener);
+    return () => { this.listeners.delete(listener); };
   }
+  dispose() {
+    this.disposed = true;
+    this.cancel(); this.listeners.clear();
+  }
+
   async load(anchor: GraphSnapshotPage["snapshot"] | null) {
     if (this.disposed) return;
-    const ticket = this.catalogLane.begin(); this.lineageLane.cancel();
-    this.patch({ phase: anchor ? "loading" : "idle", catalog: null, lineage: null, lineagePhase: "idle", error: null });
-    if (!anchor) return;
-    try {
-      const page = await this.source.catalog(anchor.cut.run_id, anchor.snapshot_token, ticket.signal);
-      if (ticket.current()) this.patch({ phase: "ready", catalog: ViewCatalog.open(anchor.cut, page) });
-    } catch (error) { if (ticket.current()) this.fail(error); }
+    this.cancel();
+    if (!anchor) { this.publish(NamedViewProjection.empty()); return; }
+    await this.read("catalog", NamedViewProjection.empty("loading"), async signal => {
+      const page = await this.source.catalog(anchor.cut.run_id, anchor.snapshot_token, signal);
+      return this.projection.catalogReady(ViewCatalog.open(anchor.cut, page));
+    });
   }
+
   async lineage() {
-    const catalog = this.state.catalog;
-    if (this.disposed || !catalog || this.state.phase !== "ready") return;
-    const ticket = this.lineageLane.begin();
-    this.patch({ lineage: null, lineagePhase: "loading", error: null });
-    try {
+    const { catalog, phase } = this.snapshot;
+    if (this.disposed || !catalog || phase !== "ready") return;
+    await this.read("lineage", this.projection.lineagePending(), async signal => {
       catalog.resolve("successor_lineage", {});
-      const page = await this.source.lineage(catalog.page.cut.run_id, ticket.signal);
-      if (ticket.current()) this.patch({ lineage: catalog.acceptLineage(page), lineagePhase: "ready" });
-    } catch (error) { if (ticket.current()) this.fail(error, true); }
+      const page = await this.source.lineage(catalog.page.cut.run_id, signal);
+      return this.projection.lineageReady(catalog.acceptLineage(page));
+    });
   }
-  private fail(raw: unknown, lineage = false) {
-    const error = asReadFailure(raw);
-    if (error.kind === "aborted") return;
-    if (error.kind === "denied" || error.kind === "resnapshot") {
-      this.catalogLane.cancel(); this.lineageLane.cancel();
-      this.patch({ phase: error.kind === "denied" ? "denied" : "stale", catalog: null, lineage: null, lineagePhase: "idle", error });
-    } else this.patch(lineage ? { lineagePhase: "failed", error } : { phase: "failed", error });
+
+  private async read(region: Region, starting: NamedViewProjection, operation: (signal: AbortSignal) => Promise<NamedViewProjection>) {
+    const request = this.lanes[region].begin();
+    this.publish(starting);
+    if (!request.current()) return;
+    try {
+      const next = await operation(request.signal);
+      if (request.current()) this.publish(next);
+    } catch (raw) {
+      if (!request.current()) return;
+      const error = asReadFailure(raw);
+      if (error.kind === "denied" || error.kind === "resnapshot") this.cancel();
+      this.publish(this.projection.rejected(error, region));
+    }
   }
-  dispose() { this.catalogLane.cancel(); this.lineageLane.cancel(); this.listeners.clear(); this.disposed = true; }
+  private cancel() { this.lanes.catalog.cancel(); this.lanes.lineage.cancel(); }
+  private publish(projection: NamedViewProjection) {
+    if (this.disposed || projection === this.projection) return;
+    this.projection = projection;
+    for (const listener of this.listeners) listener();
+  }
 }
