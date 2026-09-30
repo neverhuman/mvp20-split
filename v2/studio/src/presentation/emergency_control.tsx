@@ -19,6 +19,7 @@ export function EmergencyControl({ model, observation, denied = false }: {
       {view.phase === "unresolved" && !denied && <button onClick={() => void model.reconcile()}>Check original stop receipt</button>}
     </div>
     <p role="status">{view.phase === "accepted" ? `Stop accepted at run revision ${view.committedRevision}. Refresh observations to inspect committed history. In-flight external effects may remain uncertain.`
+      : view.phase === "conflict" ? "Stop command identity conflicted. Its existing receipt cannot confirm this request. Refresh observations; no replacement stop was sent."
       : view.phase === "rejected" ? `Stop rejected (${view.reason}). Refresh observations before deciding on another operational action.`
       : view.phase === "denied" || denied ? "Emergency control access denied. Protected observations cleared."
       : view.phase === "submitting" || view.phase === "reconciling" ? "Checking the original stop command. Cancellation is not yet confirmed."

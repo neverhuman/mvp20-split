@@ -90,3 +90,17 @@ test("foreign observations clear the stop anchor; transport denial permanently d
   assert.equal(model.snapshot.phase, "denied"); model.observe(snapshot().snapshot);
   assert.equal(model.snapshot.revision, null); unsubscribe(); model.dispose();
 });
+
+
+test("command collision cannot adopt a previous stop receipt or silently issue another stop", async () => {
+  let reads = 0;
+  const model = new EmergencyStop("operator", context, {
+    submit: async () => { throw new AuthoringFailure("command_conflict", true); },
+    receipt: async command => { reads++; return accepted(command); },
+  });
+  model.observe(snapshot().snapshot); await model.request("colliding-id");
+  assert.equal(model.snapshot.phase, "conflict");
+  assert.equal(model.snapshot.committedRevision, null);
+  assert.throws(() => model.reconcile()); assert.throws(() => model.request("new-id"));
+  assert.equal(reads, 0);
+});

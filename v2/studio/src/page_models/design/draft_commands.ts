@@ -3,10 +3,11 @@ import type { AuthoringClient } from "../../transport/authoring.js";
 import { AuthoringFailure } from "../../transport/authoring.js";
 import type { Submission } from "../../transport/submission.js";
 import { RequestLane } from "../request_lane.js";
+import { DraftRebase } from "./draft_rebase.js";
 import { DraftSession } from "./draft_session.js";
 
 export type DraftCommandSource = Pick<AuthoringClient, "submit" | "receipt" | "draft" | "validation">;
-export type DraftCommandPhase = "idle" | "submitting" | "reconciling" | "unresolved" | "settled" | "denied";
+export type DraftCommandPhase = "idle" | "submitting" | "reconciling" | "unresolved" | "settled" | "conflict" | "denied";
 
 /** Owns asynchronous command/record reads for one immutable scoped editing session. */
 export class DraftCommands {
@@ -15,7 +16,8 @@ export class DraftCommands {
   private disposed = false;
   private view: { phase: DraftCommandPhase; error: AuthoringFailure | undefined } = { phase: "idle", error: undefined };
 
-  constructor(readonly session: DraftSession, private readonly source: DraftCommandSource) {}
+  readonly rebase: DraftRebase;
+  constructor(readonly session: DraftSession, private readonly source: DraftCommandSource) { this.rebase = new DraftRebase(session, source); }
   get snapshot() { return this.view; }
   subscribe(listener: () => void) { this.listeners.add(listener); return () => { this.listeners.delete(listener); }; }
 
@@ -29,12 +31,12 @@ export class DraftCommands {
   }
 
   deny() {
-    this.lane.cancel(); this.session.deny();
+    this.lane.cancel(); this.session.deny(); this.rebase.deny();
     this.patch("denied", new AuthoringFailure("denied", !!this.session.unresolvedCommand));
   }
-  dispose() { this.disposed = true; this.lane.cancel(); this.listeners.clear(); }
+  dispose() { this.disposed = true; this.lane.cancel(); this.rebase.dispose(); this.listeners.clear(); }
 
-  private requireActive() { if (this.disposed || this.session.snapshot.denied) throw new Error("session_unavailable"); }
+  private requireActive() { if (this.view.phase === "conflict") throw new Error("command_identity_conflict"); if (this.disposed || this.session.snapshot.denied) throw new Error("session_unavailable"); }
   private patch(phase: DraftCommandPhase, error?: AuthoringFailure) {
     if (this.disposed) return;
     this.view = Object.freeze({ phase, error });
@@ -66,6 +68,9 @@ export class DraftCommands {
     } catch (error) {
       if (!request.current()) return;
       if (error instanceof AuthoringFailure && error.kind === "denied") { this.deny(); return; }
+      if (error instanceof AuthoringFailure && error.kind === "command_conflict") {
+        this.session.commandConflict(command); this.patch("conflict", error); return;
+      }
       // Even a failed follow-up read leaves the original submission unresolved.
       this.patch("unresolved", new AuthoringFailure(error instanceof AuthoringFailure ? error.kind : "invalid_response", true));
     }

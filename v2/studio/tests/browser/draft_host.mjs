@@ -32,6 +32,7 @@ export async function startDraftHost() {
           let body = ''; for await (const chunk of req) body += chunk;
           const command = JSON.parse(body), id = command.identity.command_id;
           const binding = { identity: command.identity, operation_id: id, request_sha256: createHash('sha256').update(body).digest('hex') };
+          if (state.mode === 'identity-conflict') { json(409, { reason_code: 'command_identity_conflict' }); return; }
           if (state.mode === 'save-denied') { json(403, { detail: 'private save diagnostics' }); return; }
           if (state.mode === 'conflict') { json(200, { outcome: { status: 'rejected', binding, reason_code: 'draft_revision_conflict' } }); return; }
           let committed;

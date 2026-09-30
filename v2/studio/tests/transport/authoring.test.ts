@@ -110,3 +110,10 @@ test("numeric save explicitly selects v2 and preserves finite binary64 values wi
     assert.throws(() => new Submission("save", { ...identity(), command_family: "definition.save" }, { ...draft, draft_id: "draft", expected_revision: 0 }));
   }
 });
+
+
+test("POST409 is a command collision; read409 remains stale metadata", async () => {
+  const client = new AuthoringClient(async () => new Response(null, { status: 409 }));
+  await assert.rejects(client.submit(command(), signal()), (error: unknown) => error instanceof AuthoringFailure && error.kind === "command_conflict");
+  await assert.rejects(client.universe(signal()), (error: unknown) => error instanceof AuthoringFailure && error.kind === "stale");
+});

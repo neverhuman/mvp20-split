@@ -8,7 +8,7 @@ import type { RunContext } from "../graph_window.js";
 import { RequestLane } from "../request_lane.js";
 
 interface StopView {
-  phase: "idle" | "submitting" | "unresolved" | "reconciling" | "accepted" | "rejected" | "denied";
+  phase: "idle" | "submitting" | "unresolved" | "reconciling" | "accepted" | "rejected" | "conflict" | "denied";
   revision: number | null;
   status: string | null;
   commandId: string | null;
@@ -100,7 +100,8 @@ export class EmergencyStop {
     } catch (error) {
       if (!request.current()) return;
       if (error instanceof AuthoringFailure && error.kind === "denied") { this.deny(); return; }
-      this.patch({ phase: "unresolved", reason: error instanceof AuthoringFailure ? error.kind : "invalid_response" });
+      this.patch({ phase: error instanceof AuthoringFailure && error.kind === "command_conflict" ? "conflict" : "unresolved",
+        reason: error instanceof AuthoringFailure ? error.kind : "invalid_response" });
     }
   }
 }

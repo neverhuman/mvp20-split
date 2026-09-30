@@ -9,11 +9,11 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-05 primary active; BP-06 through BP-09 queued; BP-01/BP-01A/BP-02/BP-03/BP-04 closed.
-- Last refreshed: `2026-09-30 15:32:23` (America/Chicago).
+- Last refreshed: `2026-09-30 15:40:27` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P4 / BP-05 - Graph Studio first vertical slice.
 - Primary active implementation plan / phase / task: BP-05 -> BP-05.03 / Build / B2.
-- Current task: BP-05.03/B2 conflict preservation, explicit revalidation and owner-checked activation; B1 authoring/owner replacement verified.
+- Current task: BP-05.03/B2 current Registry eligibility and owner-checked activation; conflict preservation/explicit rebase verified.
 - Next task: BP-05.03/B2 conflict, revalidation and safe activation.
 - Implementation completion: BP-04 closed100% (24/24); BP-05 active56.25% (9/16), .01/.02 closed100%, .03 active25% (Build33.33% / Acceptance0%); BP-06..09 queued0%.
 - Active focus: reconcile definition draft persistence, registry-driven editing and Runtime safe-command boundaries.
@@ -123,6 +123,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-30 15:40:27 | BP-05.03/B2 conflicts/rebase; child25%, parent56.25% unchanged | 126 isolated Node tests;10 Design/7 emergency browser cases; eligibility/activation remain |
 | 2026-09-30 15:32:23 | BP-05.03/B1 verified25%; parent56.25% (9/16); B2 active | Two119-test isolated builds; real-owner draft/validation/replacement/cancel;8 Design/6 emergency browser cases |
 | 2026-09-30 14:58:42 | BP-05.03/B1 Design editor; child0%, parent50% | 88 scoped/118 isolated Studio tests;8 Design/10 navigation/7 Monitor browser scenarios |
 | 2026-09-30 14:34:07 | BP-05.03/B1 emergency control; child0%, parent50% | 82 scoped/112 isolated Studio tests;5 emergency/7 Monitor browser cases |
@@ -147,6 +148,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-29 20:06:20 | BP-05.01 closed100%; parent25% (4/16); .02/B1 active0% | Two isolated Studio builds;actual12/28-node Runtime browser proof,three replacements;scoped audit aligned |
 | 2026-09-29 19:54:04 | BP-05.01 B3 verified75%; parent18.75% (3/16); V1 active | Seven browser failure cases,14 viewport scans; native fetch receiver repaired;30 Node tests, isolated build |
 | 2026-09-29 19:43:46 | BP-05.01 B2 verified50%; parent12.50% (2/16); B3 active | Two actual browser candidates;200/10000 bounded scene, keyboard/viewport preservation;30 Node tests, isolated build |
-| 2026-09-29 19:29:14 | BP-05.01 B1 verified25%; parent6.25% (1/16); B2 active | 28 Node tests; independent Node build; 1223 Python tests, 19 installs, REC-01..09 |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

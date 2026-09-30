@@ -1,0 +1,369 @@
+{
+  "verified_at": "2026-09-30 15:40:27",
+  "timezone": "America/Chicago",
+  "status": "passed",
+  "isolated_scope": "26e06cf217e6424692376a6d486cb26c",
+  "node_tests": 126,
+  "reproduced_defect": "POST409 followed by receipt recovery adopted a different saved definition and overwrote local edits. Regression failed before correction.",
+  "correction": "POST409 is a blocked command collision; GET409 remains stale metadata. Original identity and local work retained, no receipt adoption or fresh-ID retry.",
+  "rebase": "Explicit latest-head review; keep all local content against a newer compatible base. Clear old validation; save dirty changes and validate anew. No automatic merge, save or activation.",
+  "browser": {
+    "drafts": {
+      "path": "studio-drafts/2026-09-30T20-38-10-301Z",
+      "status": "passed",
+      "scenarios": [
+        {
+          "name": "compose",
+          "status": "passed",
+          "requests": [
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-drafts/draft"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-universe"
+            },
+            {
+              "method": "GET",
+              "path": "/api/registry/v1/releases"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-schemas/350078715d2f1f1869433238c755a20719c5dfbb47b6151716619c2f9abce7af"
+            },
+            {
+              "method": "POST",
+              "path": "/api/runtime/v1/definition-drafts/save"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-drafts/draft"
+            },
+            {
+              "method": "POST",
+              "path": "/api/runtime/v1/definition-drafts/validate"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-validations/validation"
+            }
+          ]
+        },
+        {
+          "name": "compose-narrow",
+          "status": "passed",
+          "requests": [
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-drafts/draft"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-universe"
+            },
+            {
+              "method": "GET",
+              "path": "/api/registry/v1/releases"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-schemas/350078715d2f1f1869433238c755a20719c5dfbb47b6151716619c2f9abce7af"
+            },
+            {
+              "method": "POST",
+              "path": "/api/runtime/v1/definition-drafts/save"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-drafts/draft"
+            },
+            {
+              "method": "POST",
+              "path": "/api/runtime/v1/definition-drafts/validate"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-validations/validation"
+            }
+          ]
+        },
+        {
+          "name": "dense",
+          "status": "passed",
+          "requests": [
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-drafts/draft"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-universe"
+            },
+            {
+              "method": "GET",
+              "path": "/api/registry/v1/releases"
+            },
+            {
+              "method": "POST",
+              "path": "/api/runtime/v1/definition-drafts/save"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-drafts/draft"
+            }
+          ]
+        },
+        {
+          "name": "lost-ack",
+          "status": "passed",
+          "requests": [
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-drafts/draft"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-universe"
+            },
+            {
+              "method": "GET",
+              "path": "/api/registry/v1/releases"
+            },
+            {
+              "method": "POST",
+              "path": "/api/runtime/v1/definition-drafts/save"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-commands/definition.save/5d594664-0fe2-4d65-a955-f3912686be6b"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-drafts/draft"
+            }
+          ]
+        },
+        {
+          "name": "conflict",
+          "status": "passed",
+          "requests": [
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-drafts/draft"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-universe"
+            },
+            {
+              "method": "GET",
+              "path": "/api/registry/v1/releases"
+            },
+            {
+              "method": "POST",
+              "path": "/api/runtime/v1/definition-drafts/save"
+            }
+          ]
+        },
+        {
+          "name": "identity-conflict",
+          "status": "passed",
+          "requests": [
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-drafts/draft"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-universe"
+            },
+            {
+              "method": "GET",
+              "path": "/api/registry/v1/releases"
+            },
+            {
+              "method": "POST",
+              "path": "/api/runtime/v1/definition-drafts/save"
+            }
+          ]
+        },
+        {
+          "name": "rebase",
+          "status": "passed",
+          "requests": [
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-drafts/draft"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-universe"
+            },
+            {
+              "method": "GET",
+              "path": "/api/registry/v1/releases"
+            },
+            {
+              "method": "POST",
+              "path": "/api/runtime/v1/definition-drafts/save"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-drafts/draft"
+            },
+            {
+              "method": "POST",
+              "path": "/api/runtime/v1/definition-drafts/save"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-drafts/draft"
+            },
+            {
+              "method": "POST",
+              "path": "/api/runtime/v1/definition-drafts/validate"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-validations/validation"
+            }
+          ]
+        },
+        {
+          "name": "pending-edit",
+          "status": "passed",
+          "requests": [
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-drafts/draft"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-universe"
+            },
+            {
+              "method": "GET",
+              "path": "/api/registry/v1/releases"
+            },
+            {
+              "method": "POST",
+              "path": "/api/runtime/v1/definition-drafts/save"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-drafts/draft"
+            }
+          ]
+        },
+        {
+          "name": "save-denied",
+          "status": "passed",
+          "requests": [
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-drafts/draft"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-universe"
+            },
+            {
+              "method": "GET",
+              "path": "/api/registry/v1/releases"
+            },
+            {
+              "method": "POST",
+              "path": "/api/runtime/v1/definition-drafts/save"
+            }
+          ]
+        },
+        {
+          "name": "catalog-denied",
+          "status": "passed",
+          "requests": [
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-drafts/draft"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-universe"
+            },
+            {
+              "method": "GET",
+              "path": "/api/registry/v1/releases"
+            },
+            {
+              "method": "GET",
+              "path": "/api/runtime/v1/definition-universe"
+            },
+            {
+              "method": "GET",
+              "path": "/api/registry/v1/releases"
+            }
+          ]
+        }
+      ]
+    },
+    "emergency": {
+      "path": "studio-emergency/2026-09-30T20-38-09-467Z",
+      "status": "passed",
+      "scenarios": [
+        {
+          "name": "accepted",
+          "status": "passed",
+          "posts": 1,
+          "lookups": 0,
+          "distinct_command_bodies": 1
+        },
+        {
+          "name": "revision-zero",
+          "status": "passed",
+          "posts": 1,
+          "lookups": 0,
+          "distinct_command_bodies": 1
+        },
+        {
+          "name": "rejected",
+          "status": "passed",
+          "posts": 1,
+          "lookups": 0,
+          "distinct_command_bodies": 1
+        },
+        {
+          "name": "conflict",
+          "status": "passed",
+          "posts": 1,
+          "lookups": 0,
+          "distinct_command_bodies": 1
+        },
+        {
+          "name": "lost-ack",
+          "status": "passed",
+          "posts": 1,
+          "lookups": 1,
+          "distinct_command_bodies": 1
+        },
+        {
+          "name": "socket-loss",
+          "status": "passed",
+          "posts": 3,
+          "lookups": 1,
+          "distinct_command_bodies": 1
+        },
+        {
+          "name": "denied",
+          "status": "passed",
+          "posts": 1,
+          "lookups": 0,
+          "distinct_command_bodies": 1
+        }
+      ]
+    }
+  },
+  "limits": [
+    "B2 current Registry eligibility and activation remain unfinished; no added delivery credit.",
+    "Browser conflict/rebase peers are scripted; actual-owner B1 proof remains separately recorded in Owner.json."
+  ]
+}

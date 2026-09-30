@@ -1,6 +1,6 @@
 # Runtime definition authoring
 
-Status: BP-05.03/B1 partial. Draft save/read, pinned validation and transactional draft admission/publication are implemented. Tool-bearing draft admission deliberately rejects until current Registry eligibility is implemented in B2; Studio authoring remains B1 work. Owner: Campaign Runtime, [Definitions design](../../../../../docs/Architecture/Campaigns/Definitions.md).29 owned tests pass; definitions plus scheduling regression suite87 pass. Predecessor061541b passes the full1286-Python/65-Node/19-install foundation and REC-01..09 gate; current additive editor metadata passes118 scoped tests and8 isolated closure installs; no complete B1 delivery claim.
+Status: BP-05.03/B1 verified; B2 current eligibility/activation in progress. Draft save/read, pinned validation and transactional draft admission/publication are implemented. Tool-bearing draft admission deliberately rejects until current Registry eligibility is implemented in B2; Studio authoring/owner replacement passed B1. Owner: Campaign Runtime, [Definitions design](../../../../../docs/Architecture/Campaigns/Definitions.md).29 owned tests pass; definitions plus scheduling regression suite87 pass. Predecessor061541b passes the full1286-Python/65-Node/19-install foundation and REC-01..09 gate; current additive editor metadata passes118 scoped tests and8 isolated closure installs; B1 owner evidence is recorded in docs/Audits/Evidence/BP-05-Authoring/Owner.json.
 
 ## Behavior and authority
 

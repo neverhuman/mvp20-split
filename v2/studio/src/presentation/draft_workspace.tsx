@@ -25,8 +25,8 @@ function BoundDraftWorkspace({ commands, catalog, synthetic }: { commands: Draft
   const [rawScope, setRawScope] = useState<string | null>(null);
   const [rawScopeBase, setRawScopeBase] = useState<string | null>(null);
   const edits = useMemo(() => new DraftEdits(commands.session, catalog), [commands, catalog]);
-  useEffect(() => { const a = commands.subscribe(refresh), b = catalog.subscribe(refresh); void catalog.refresh(); return () => { a(); b(); }; }, [commands, catalog, refresh]);
-  const session = commands.session.snapshot, discovery = catalog.snapshot, command = commands.snapshot;
+  useEffect(() => { const a = commands.subscribe(refresh), b = catalog.subscribe(refresh), c = commands.rebase.subscribe(refresh); void catalog.refresh(); return () => { a(); b(); c(); }; }, [commands, catalog, refresh]);
+  const session = commands.session.snapshot, discovery = catalog.snapshot, command = commands.snapshot, rebase = commands.rebase.snapshot;
   const disabled = session.denied || discovery.phase === "denied";
   useEffect(() => { if (discovery.phase === "denied" && !session.denied) commands.deny(); }, [commands, discovery.phase, session.denied]);
   useEffect(() => { if (session.denied && discovery.phase !== "denied") catalog.deny(); }, [catalog, discovery.phase, session.denied]);
@@ -51,11 +51,22 @@ function BoundDraftWorkspace({ commands, catalog, synthetic }: { commands: Draft
       <div className="toolbar"><label>Draft title<input disabled={disabled} value={session.local.title} maxLength={200} onChange={event => perform(() => commands.session.edit({ ...session.local, title: event.target.value }))} /></label>
         <button disabled={disabled || !!session.pending} onClick={() => submit("save")}>Save draft</button>
         <button disabled={disabled || !!session.pending || session.dirty || !session.base} onClick={() => submit("validate")}>Validate saved revision</button>
-        {session.pending && <button disabled={disabled || command.phase !== "unresolved"} onClick={() => submit("reconcile")}>Check original receipt</button>}
+        {session.pending && command.phase !== "conflict" && <button disabled={disabled || command.phase !== "unresolved"} onClick={() => submit("reconcile")}>Check original receipt</button>}
+        <button disabled={disabled || !!session.pending || rebase.phase === "loading"} onClick={() => void commands.rebase.review()}>Review latest saved revision</button>
         <button disabled={!session.base || disabled} onClick={() => setCompare(value => !value)}>Compare with saved revision</button>
       </div>
       <p role="status">{disabled ? "Access denied. Local draft retained; transmission disabled." : session.pending ? `Command ${command.phase}. Local edits are retained.` : session.reason ? `Command rejected: ${session.reason}` : "Draft changes apply to a future campaign. No active run is changed."}</p>
+      {command.phase === "conflict" && <p role="alert">Command identity conflicted. Local edits are retained; the existing receipt belongs to a different request. No replacement command was sent.</p>}
       {error && <p role="alert">{error}</p>}
+      {rebase.phase === "loading" && <p role="status">Loading the latest saved revision for review.</p>}
+      {rebase.phase === "unavailable" && <p role="status">No newer compatible revision could be loaded ({rebase.reason}). Local work is unchanged.</p>}
+      {rebase.phase === "applied" && <p role="status">Base updated. Save remaining local changes and validate again before activation.</p>}
+      {rebase.phase === "ready" && rebase.head && !disabled && <section aria-label="Review newer saved revision">
+        <h2>Review saved revision {rebase.head.head.revision}</h2>
+        <p>The comparison shows how your local content differs from this saved revision. Keeping local content replaces these differences on your next save; nothing is merged automatically.</p>
+        <DraftComparisonView comparison={new DraftComparison({ title: rebase.head.head.title, definition: rebase.head.definition }, session.local)} />
+        <button disabled={!!session.pending} onClick={() => perform(() => commands.rebase.apply())}>Keep local draft on revision {rebase.head.head.revision}</button>
+      </section>}
       {session.validation && <p>Validation of revision {session.validation.revision}: {session.validation.structurally_valid ? "structurally valid" : "findings require repair"} · {session.validationMatchesDraft ? "matches saved draft" : "historical result"}. Scientific applicability is not established.</p>}
       {session.validation?.findings.map((finding, index) => <p key={index}>{finding.code}: {finding.message}</p>)}
       {compare && session.base && !disabled ? <DraftComparisonView comparison={new DraftComparison({ title: session.base.head.title, definition: session.base.definition }, session.local)} /> : <>

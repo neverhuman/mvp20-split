@@ -3,7 +3,7 @@ import type { AuthoringWire, DefinitionSchema } from "../contracts/authoring.js"
 import { boundedJSON } from "./bounded_json.js";
 import { Submission } from "./submission.js";
 
-export type AuthoringFailureKind = "aborted" | "timeout" | "denied" | "unavailable" | "stale" | "invalid_response" | "network";
+export type AuthoringFailureKind = "aborted" | "timeout" | "denied" | "unavailable" | "command_conflict" | "stale" | "invalid_response" | "network";
 export class AuthoringFailure extends Error {
   constructor(readonly kind: AuthoringFailureKind, readonly commandUnresolved: boolean) { super("authoring_" + kind); }
 }
@@ -38,6 +38,7 @@ export class AuthoringClient {
       if (!response.ok) await response.body?.cancel().catch(() => undefined);
       if (response.status === 401 || response.status === 403) throw failure("denied");
       if (response.status === 404) throw failure("unavailable");
+      if (response.status === 409 && submission) throw failure("command_conflict");
       if (response.status === 409 || response.status === 410) throw failure("stale");
       if (!response.ok) throw failure("network");
       let value: AuthoringWire[K];

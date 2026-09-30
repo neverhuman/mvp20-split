@@ -11,7 +11,7 @@ const host = await startObservationHost(), browser = await chromium.launch({ hea
 const evidence = { verified_at: new Intl.DateTimeFormat('sv-SE', { timeZone: 'America/Chicago', dateStyle: 'short', timeStyle: 'medium' }).format(new Date()),
   timezone: 'America/Chicago', status: 'running', scenarios: [], screenshots: [], limits: ['Scripted HTTP peer using actual Studio transport/models/presentation; no owner cancellation-race or target-host acceptance.'] };
 try {
-  for (const scenario of ['accepted', 'revision-zero', 'rejected', 'lost-ack', 'socket-loss', 'denied']) {
+  for (const scenario of ['accepted', 'revision-zero', 'rejected', 'conflict', 'lost-ack', 'socket-loss', 'denied']) {
     let command, posts = 0, lookups = 0; const bodies = [];
     host.state.revision = scenario === 'revision-zero' ? 0 : 1; host.state.mode = scenario === 'revision-zero' ? 'empty' : 'ready';
     host.state.hook = async (url, json, req) => {
@@ -24,6 +24,7 @@ try {
         assert.equal(command.payload.run_id, 'run-1');
         if (scenario === 'lost-ack') { json(503, { detail: 'receipt unavailable after owner commit' }); return true; }
         if (scenario === 'socket-loss') { req.socket.destroy(); return true; }
+        if (scenario === 'conflict') { json(409, { reason_code: 'command_identity_conflict' }); return true; }
         if (scenario === 'denied') { json(403, { detail: 'private emergency diagnostics' }); return true; }
         const binding = { identity: command.identity, operation_id: 'stop', request_sha256: 'a'.repeat(64) };
         json(200, { outcome: scenario === 'rejected' ? { binding, status: 'rejected', reason_code: 'run_revision_conflict' }
@@ -52,6 +53,11 @@ try {
     const expected = recovery ? 'unresolved' : scenario === 'revision-zero' ? 'accepted' : scenario;
     await page.waitForFunction(phase => window.observationHarness.emergency.snapshot.phase === phase, expected);
     assert.equal(await button.isDisabled(), true);
+    if (scenario === 'conflict') {
+      await region.getByText(/Stop command identity conflicted/).waitFor();
+      assert.equal(await region.getByRole('button', { name: 'Check original stop receipt', exact: true }).count(), 0);
+      assert.equal(lookups, 0);
+    }
     if (recovery) {
       await region.getByText(/Stop outcome unresolved/).waitFor();
       await region.getByRole('button', { name: 'Check original stop receipt', exact: true }).click();

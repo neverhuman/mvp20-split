@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { AuthoringFailure } from "../../../src/transport/authoring.js";
+import { AuthoringClient, AuthoringFailure } from "../../../src/transport/authoring.js";
 import { DraftCommands } from "../../../src/page_models/design/draft_commands.js";
 import type { DraftCommandSource } from "../../../src/page_models/design/draft_commands.js";
 import type { DraftCommandReceipt, DraftRevision } from "../../../src/contracts/authoring.js";
@@ -88,4 +88,27 @@ test("pending and rejected owner outcomes remain distinct; denial in a read clea
   assert.equal(model.snapshot.phase, "settled"); assert.equal(state.snapshot.reason, "draft_revision_conflict");
   const denied = new DraftCommands(state, source({ submit: async () => { throw new AuthoringFailure("denied", true); } }));
   await denied.save("save2"); assert.equal(denied.snapshot.phase, "denied"); assert.equal(state.snapshot.base, undefined);
+});
+
+
+test("POST identity collision cannot reconcile an older command as this save or discard local work", async () => {
+  const state = session();
+  const changed = local(); changed.definition.body.nodes[0]!.node_id = "locally-edited";
+  state.edit(changed);
+  let reads = 0;
+  const client = new AuthoringClient(async (_url, init) => {
+    if (init?.method === "POST") return new Response(null, { status: 409 });
+    reads++;
+    const old = accepted(state.unresolvedCommand!, revision(2));
+    return new Response(JSON.stringify(String(_url).includes("definition-commands") ? old : revision(2)),
+      { headers: { "Content-Type": "application/json" } });
+  });
+  const model = new DraftCommands(state, client);
+  await model.save("colliding-id");
+  try { await model.reconcile(); } catch { /* A known collision must block receipt adoption. */ }
+  assert.equal(state.snapshot.local.definition.body.nodes[0]!.node_id, "locally-edited");
+  assert.equal(state.snapshot.base?.head.revision, 1);
+  assert.equal(model.snapshot.phase, "conflict");
+  assert.equal(reads, 0);
+  assert.throws(() => model.save("new-id"), /command_identity_conflict/);
 });

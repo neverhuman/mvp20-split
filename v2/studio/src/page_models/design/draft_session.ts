@@ -4,7 +4,7 @@ import { Submission } from "../../transport/submission.js";
 
 type Scope = CommandIdentity["scope"];
 type LocalDraft = Pick<SaveDraft, "title" | "definition">;
-type Pending = { command: Submission<"save"> | Submission<"validate">; editVersion: number; binding?: string; terminal?: string };
+type Pending = { command: Submission<"save"> | Submission<"validate">; editVersion: number; binding?: string; terminal?: string; conflicted?: boolean };
 const sameScope = (left: Scope, right: Scope) => left.tenant_id === right.tenant_id && left.project_id === right.project_id;
 
 function comparable(value: unknown): string {
@@ -106,6 +106,7 @@ export class DraftSession {
 
   observeReceipt(command: Submission, receipt: DraftCommandReceipt): boolean {
     if (this.denied || this.pending?.command !== command) return false;
+    if (this.pending.conflicted) throw new Error("command_identity_conflict");
     command.verify(receipt);
     const outcome = receipt.outcome;
     const binding = JSON.stringify([outcome.binding.operation_id, outcome.binding.request_sha256]);
@@ -115,6 +116,25 @@ export class DraftSession {
     this.pending.binding = binding;
     if (outcome.status !== "pending") this.pending.terminal = terminal;
     return true;
+  }
+
+  inspectBase(revision: DraftRevision) {
+    this.requireAvailable();
+    decodeAuthoring("draft", revision); this.requireRevision(revision);
+    if (revision.head.revision <= (this.base?.head.revision ?? 0)) throw new Error("newer_base_required");
+  }
+
+  /** Explicit replacement of the expected base, never an automatic merge or save. */
+  rebase(revision: DraftRevision) {
+    this.inspectBase(revision);
+    this.base = structuredClone(revision);
+    this.validation = undefined; this.reason = undefined; this.editVersion++;
+  }
+
+  commandConflict(command: Submission) {
+    if (this.pending?.command !== command || this.denied) return;
+    this.pending.conflicted = true;
+    this.reason = "command_identity_conflict";
   }
 
   deny() {

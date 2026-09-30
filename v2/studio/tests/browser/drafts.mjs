@@ -13,7 +13,7 @@ const evidence = { verified_at: new Intl.DateTimeFormat('sv-SE', { timeZone: 'Am
   timezone: 'America/Chicago', status: 'running', scenarios: [], screenshots: [], limits: ['Scripted public HTTP peer; validation replies are fixtures, not actual Runtime compilation or authority.', 'No deployed gateway, scientific or target-host acceptance.'] };
 let releaseSave;
 try {
-  for (const name of ['compose', 'compose-narrow', 'dense', 'lost-ack', 'conflict', 'pending-edit', 'save-denied', 'catalog-denied']) {
+  for (const name of ['compose', 'compose-narrow', 'dense', 'lost-ack', 'conflict', 'identity-conflict', 'rebase', 'pending-edit', 'save-denied', 'catalog-denied']) {
     Object.assign(host.state, { mode: 'ready', head: revision(), records: new Map([[1, revision()]]), receipts: new Map(), validations: new Map(), requests: [], saveGate: null });
     if (name === 'dense') {
       host.state.head.definition.body.nodes = Array.from({ length: 256 }, (_, index) => ({ kind: 'finish', node_id: `node-${index}-${'long-label-'.repeat(8)}`, outputs: [] }));
@@ -55,7 +55,7 @@ try {
       assert.equal(await page.locator('.react-flow__node').count(), 56);
       assert.equal(await page.getByRole('navigation', { name: 'Draft nodes', exact: true }).getByRole('button').last().evaluate(button => button.scrollHeight <= button.clientHeight), true);
     }
-    host.state.mode = composing || name === 'pending-edit' || name === 'dense' ? 'ready' : name;
+    host.state.mode = composing || name === 'pending-edit' || name === 'dense' ? 'ready' : name === 'rebase' ? 'conflict' : name;
     if (name === 'catalog-denied') {
       await page.getByRole('button', { name: 'Refresh tool library', exact: true }).click();
       await page.waitForFunction(() => window.draftHarness.commands.session.snapshot.denied);
@@ -66,11 +66,31 @@ try {
         await page.waitForFunction(() => window.draftHarness.commands.snapshot.phase === 'submitting');
         await page.getByLabel('Draft title', { exact: true }).fill('Newer local edit'); releaseSave();
       }
-      const phase = name === 'lost-ack' ? 'unresolved' : name === 'save-denied' ? 'denied' : 'settled';
+      const phase = name === 'identity-conflict' ? 'conflict' : name === 'lost-ack' ? 'unresolved' : name === 'save-denied' ? 'denied' : 'settled';
       await page.waitForFunction(phase => window.draftHarness.commands.snapshot.phase === phase, phase);
       if (name === 'lost-ack') {
         await page.getByRole('button', { name: 'Check original receipt', exact: true }).click();
         await page.waitForFunction(() => window.draftHarness.commands.snapshot.phase === 'settled');
+      }
+      if (name === 'identity-conflict') {
+        await page.getByRole('alert').filter({ hasText: 'Command identity conflicted' }).waitFor();
+        assert.equal(await page.getByRole('button', { name: 'Check original receipt', exact: true }).count(), 0);
+        assert.equal(await page.getByRole('button', { name: 'Save draft', exact: true }).isDisabled(), true);
+      }
+      if (name === 'rebase') {
+        host.state.head = revision(2); host.state.head.head.title = 'Remote changes';
+        host.state.records.set(2, structuredClone(host.state.head)); host.state.mode = 'ready';
+        await page.getByRole('button', { name: 'Review latest saved revision', exact: true }).click();
+        const review = page.getByRole('region', { name: 'Review newer saved revision', exact: true });
+        await review.getByRole('heading', { name: 'Review saved revision 2', exact: true }).waitFor();
+        assert.equal(await page.evaluate(() => window.draftHarness.commands.session.snapshot.base.head.revision), 1);
+        await review.getByRole('button', { name: 'Keep local draft on revision 2', exact: true }).click();
+        assert.equal(await page.getByLabel('Draft title', { exact: true }).inputValue(), 'Local work to retain');
+        assert.equal(await page.getByRole('button', { name: 'Validate saved revision', exact: true }).isDisabled(), true);
+        await page.getByRole('button', { name: 'Save draft', exact: true }).click();
+        await page.waitForFunction(() => window.draftHarness.commands.session.snapshot.base.head.revision === 3);
+        await page.getByRole('button', { name: 'Validate saved revision', exact: true }).click();
+        await page.waitForFunction(() => window.draftHarness.commands.session.snapshot.validationMatchesDraft);
       }
       if (composing) {
         await page.getByRole('button', { name: 'Validate saved revision', exact: true }).click();
@@ -83,7 +103,7 @@ try {
       assert.equal(await page.getByRole('button', { name: 'Save draft', exact: true }).isDisabled(), true);
       assert.equal(await page.getByLabel('Reviewed tool', { exact: true }).locator('option').count(), 1);
     }
-    assert.equal(host.state.requests.filter(request => request.method === 'POST' && request.path.endsWith('/save')).length, name === 'catalog-denied' ? 0 : 1);
+    assert.equal(host.state.requests.filter(request => request.method === 'POST' && request.path.endsWith('/save')).length, name === 'catalog-denied' ? 0 : name === 'rebase' ? 2 : 1);
     assert.equal((await page.locator('body').textContent()).includes('private diagnostics'), false);
     for (const viewport of [{ width: 1440, height: 1000 }, { width: 390, height: 844 }]) {
       await page.setViewportSize(viewport);
