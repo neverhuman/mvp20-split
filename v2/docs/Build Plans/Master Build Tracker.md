@@ -9,11 +9,11 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-05 primary active; BP-06 through BP-09 queued; BP-01/BP-01A/BP-02/BP-03/BP-04 closed.
-- Last refreshed: `2026-09-29 23:33:01` (America/Chicago).
+- Last refreshed: `2026-09-30 11:27:45` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P4 / BP-05 - Graph Studio first vertical slice.
 - Primary active implementation plan / phase / task: BP-05 -> BP-05.03 / Build / B1.
-- Current task: BP-05.03/B1 reviewed form metadata and Studio authoring; guarded admission/publication checkpoint verified.
+- Current task: BP-05.03/B1 Studio authoring consumer/forms; owner metadata and guarded admission/publication checkpoints verified.
 - Next task: BP-05.03/B2 conflict, revalidation and safe activation.
 - Implementation completion: BP-04 closed100% (24/24); BP-05 active50% (8/16), .01/.02 closed100%, .03 active0% (Build0% / Acceptance0%); BP-06..09 queued0%.
 - Active focus: reconcile definition draft persistence, registry-driven editing and Runtime safe-command boundaries.
@@ -123,6 +123,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-30 11:27:45 | BP-05.03/B1 editor metadata partial; child0%, parent50% unchanged | 118 scoped tests;catalog100% statements/branches;8 isolated wheels;200 schemas preserve196 predecessors |
 | 2026-09-29 23:33:01 | BP-05.03/B1 admission/publication partial; child0%, parent50% unchanged | 27 owned/87 scoped;1286 Python,65 Node,19 installs,REC-01..09; Studio authoring next |
 | 2026-09-29 23:12:03 | BP-05.03/B1 retained material/contract partial; child0%, parent50% unchanged | 110 scoped tests,8 isolated wheels;196 schemas/194 predecessor bytes preserved; admission wiring next |
 | 2026-09-29 23:03:28 | BP-05.03/B1 pinned validation partial; child0%, parent50% unchanged | 18 owned tests;1272 Python,65 Node,19 installs,REC-01..09; publication/UI remain |
@@ -147,6 +148,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-29 17:35:32 | BP-04.04 B2 verified; child 50%, parent 75% (18/24); B3 active | 1169 tests, nineteen installs, exact immutable successor transfer and source-derived split graph |
 | 2026-09-29 16:59:32 | BP-04.04 B1 verified; child 25%, parent 70.83% (17/24); B2 active | 1146 tests, nineteen independent installs, five source graph cases and preserved 148 schema bytes |
 | 2026-09-29 16:25:58 | BP-04.04A closed 100%; parent 66.67% (16/24); .04/B1 active 0% | Actual installed round trip and pre/post-commit replacement; all reservations confirmed; scoped audit aligned |
-| 2026-09-29 16:08:36 | BP-04.04A B3 passed; child 75%, parent 62.50% (15/24); V1 active | 59 tests, five actual process cases; exact closure/protection and source-cut failure proof |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

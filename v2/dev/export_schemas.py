@@ -73,6 +73,8 @@ for name, model in {
     "draft-page": graph_runtime_contracts.DraftPage,
     "draft-validation": graph_runtime_contracts.DraftValidation,
     "draft-admission": graph_runtime_contracts.AdmitDraft,
+    "definition-universe": graph_runtime_contracts.DefinitionUniverse,
+    "definition-schema": graph_runtime_contracts.DefinitionSchema,
     "successor-proposal": graph_runtime_contracts.SuccessorProposal,
     "carry-sources": graph_runtime_contracts.CarrySources,
     "successor-lineage": graph_runtime_contracts.SuccessorLineage,

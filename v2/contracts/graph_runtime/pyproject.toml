@@ -1,8 +1,8 @@
 [project]
 name = "amphora-contracts-graph-runtime"
-version = "0.9.0"
+version = "0.10.0"
 requires-python = ">=3.12,<3.13"
-dependencies = ["pydantic>=2.12,<3", "amphora-contracts-core==0.1.0", "amphora-contracts-campaigns==0.4.1", "amphora-contracts-runtime==0.1.0", "amphora-contracts-commands==0.1.0"]
+dependencies = ["amphora-contracts-tools==0.1.0", "pydantic>=2.12,<3", "amphora-contracts-core==0.1.0", "amphora-contracts-campaigns==0.4.1", "amphora-contracts-runtime==0.1.0", "amphora-contracts-commands==0.1.0"]
 
 [build-system]
 requires = ["hatchling>=1.27,<2"]
@@ -12,10 +12,11 @@ build-backend = "hatchling.build"
 packages = ["src/amphora_contracts_graph_runtime"]
 
 [tool.uv.sources]
+amphora-contracts-tools = { path = "../tools", editable = true }
 amphora-contracts-core = { path = "../core", editable = true }
 amphora-contracts-campaigns = { path = "../campaigns", editable = true }
 amphora-contracts-runtime = { path = "../runtime", editable = true }
 amphora-contracts-commands = { path = "../commands", editable = true }
 
 [tool.amphora]
-public-imports = ["amphora-contracts-core", "amphora-contracts-campaigns", "amphora-contracts-runtime", "amphora-contracts-commands"]
+public-imports = ["amphora-contracts-tools", "amphora-contracts-core", "amphora-contracts-campaigns", "amphora-contracts-runtime", "amphora-contracts-commands"]

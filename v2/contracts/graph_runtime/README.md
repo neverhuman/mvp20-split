@@ -1,6 +1,6 @@
 # Graph Runtime Contracts
 
-Current BP-05.03/B1 partial:graph-runtime0.9.0 adds AdmitDraft/DraftSelection and the graph.admit_draft parser family. Selection explicitly binds draft ID/revision/content, validation, universe and plan while preserving existing graph input/budget/limit rules.196 schemas preserve all194 predecessor bytes. Runtime0.17.0 restores retained validation material and owns guarded draft admission/publication; tool-bearing drafts remain denied pending current Registry eligibility.110 scoped tests and an isolated Runtime-closure install pass; no whole-B1 completion claim.
+Current BP-05.03/B1 partial:graph-runtime0.10.0 adds DefinitionUniverse and DefinitionSchema for bounded compiler-reviewed metadata and exact schema bytes. Authority is explicitly compiler_configuration, not Registry eligibility. Base64 byte envelopes are canonical and limited to64KiB decoded bytes; consumers still verify digest and schema interpretation.200 schemas preserve196 predecessor bytes. Runtime0.18.0 owns scoped reads;118 scoped tests and an isolated eight-wheel Runtime closure pass. Existing AdmitDraft and authoring DTOs remain unchanged.
 
 Authoring commands use their own DraftCommandReceipt; unchanged Runtime CommandReceipt cannot represent draft commits and is not widened. parse_authoring_command recognizes only definition.save/definition.validate and binds saved definition scope to command identity. Draft validation records pin revision/content/universe and explicitly cannot establish scientific acceptance. Revision conflict decisions belong to Runtime definitions domain objects, not DTO constructors. Owned tests: tests/test_authoring.py. No transport endpoints are implied by schema publication.
 
@@ -14,7 +14,7 @@ Package 0.5.0 adds graph snapshot, node detail, value page and invalidation page
 
 Package 0.4.0 adds `SuccessorProposal`, `CarrySources` and `SuccessorLineage` without changing earlier graph/worker schema bytes. Runtime 0.10.0 owns admission authority. The new `graph.admit_successor` family names a precise predecessor plan/revision, explicit final-export or succeeded-node sources, expected value digests and distinct target inputs. Fresh Artifact input scope checks remain in the public parser; predecessor/retention/type policy belongs to Runtime domain objects.
 
-- Package: `amphora-contracts-graph-runtime` 0.9.0; campaigns dependency 0.4.1. Existing versioned graph observations and worker receipts are unchanged.
+- Package: `amphora-contracts-graph-runtime` 0.10.0; campaigns dependency 0.4.1. Existing versioned graph observations and worker receipts are unchanged.
 - Owner: Campaign Runtime read/coordination boundary; active BP-05.03/B1 additive authoring contracts.
 - Architecture: [Graph Execution Model](../../docs/Architecture/System/Graph_Execution_Model.md).
 

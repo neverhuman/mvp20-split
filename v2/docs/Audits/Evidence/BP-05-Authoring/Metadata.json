@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-09-30 11:27:45",
+  "status": "partial_B1_prerequisite_verified",
+  "runtime_version": "0.18.0",
+  "graph_runtime_contract_version": "0.10.0",
+  "scoped_tests": 118,
+  "final_metadata_cases": 3,
+  "runtime_closure_wheels": 8,
+  "catalog_coverage": {
+    "statements": "30/30",
+    "branches": "10/10"
+  },
+  "published_schemas": 200,
+  "predecessor_schema_bytes_unchanged": 196,
+  "limitations": [
+    "Compiler review is not current Registry eligibility or scientific acceptance.",
+    "Studio consumer remains B1 work.",
+    "Full foundation evidence1286/65/19/REC-01..09 applies to predecessor061541b; current boundary uses scoped tests and isolated installation."
+  ]
+}

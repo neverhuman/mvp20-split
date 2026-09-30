@@ -47,13 +47,14 @@ requires-dist = [{ name = "pydantic", specifier = ">=2.12,<3" }]
 
 [[package]]
 name = "amphora-contracts-graph-runtime"
-version = "0.9.0"
+version = "0.10.0"
 source = { editable = "." }
 dependencies = [
     { name = "amphora-contracts-campaigns" },
     { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-runtime" },
+    { name = "amphora-contracts-tools" },
     { name = "pydantic" },
 ]
 
@@ -63,6 +64,7 @@ requires-dist = [
     { name = "amphora-contracts-commands", editable = "../commands" },
     { name = "amphora-contracts-core", editable = "../core" },
     { name = "amphora-contracts-runtime", editable = "../runtime" },
+    { name = "amphora-contracts-tools", editable = "../tools" },
     { name = "pydantic", specifier = ">=2.12,<3" },
 ]
 

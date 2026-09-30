@@ -1,9 +1,12 @@
 """Explicit authoring routes; legacy execution receipt schemas remain unchanged."""
 
 import asyncio
+from typing import Literal
 
-from amphora_contracts_core import Identifier
+from amphora_contracts_core import Digest, Identifier, SchemaRef
 from amphora_contracts_graph_runtime import (
+    DefinitionSchema,
+    DefinitionUniverse,
     DraftCommandReceipt,
     DraftPage,
     DraftRevision,
@@ -13,6 +16,7 @@ from amphora_contracts_graph_runtime import (
 from fastapi import Query, Request
 from fastapi.responses import JSONResponse
 
+from .catalog import DefinitionCatalog
 from .commands import DefinitionCommands
 from .reads import DefinitionReadError, DefinitionReads
 from .validate import DefinitionValidator
@@ -21,6 +25,7 @@ from .validate import DefinitionValidator
 def install_definitions(app, engine, credentials, universes=None):
     commands, reads = DefinitionCommands(engine), DefinitionReads(engine)
     validator = DefinitionValidator(engine, universes or {})
+    catalog = DefinitionCatalog(universes or {})
 
     def filters(request, allowed=()):
         if set(request.query_params) - set(allowed):
@@ -29,7 +34,21 @@ def install_definitions(app, engine, credentials, universes=None):
     @app.exception_handler(DefinitionReadError)
     async def unavailable(_request, error):
         reason = str(error)
-        return JSONResponse({"reason_code": reason}, status_code=404 if reason.endswith("unavailable") else 422)
+        status = 404 if reason.endswith("unavailable") else 409 if reason == "definition_universe_changed" else 422
+        return JSONResponse({"reason_code": reason}, status_code=status)
+
+    @app.get("/v1/definition-universe", response_model=DefinitionUniverse)
+    async def universe(request: Request):
+        principal = credentials.authenticate(request.headers.get("authorization"))
+        filters(request)
+        return await asyncio.to_thread(catalog.universe, principal)
+
+    @app.get("/v1/definition-schemas/{digest}", response_model=DefinitionSchema)
+    async def schema(digest: Digest, request: Request, schema_id: Identifier, version: Literal["1"], universe_sha256: Digest):
+        principal = credentials.authenticate(request.headers.get("authorization"))
+        filters(request, ("schema_id", "version", "universe_sha256"))
+        reference = SchemaRef(schema_id=schema_id, version=version, sha256=digest)
+        return await asyncio.to_thread(catalog.schema, principal, universe_sha256, reference)
 
     @app.post("/v1/definition-drafts/save", response_model=DraftCommandReceipt)
     async def save(request: Request):

@@ -1,6 +1,6 @@
 # Campaign Runtime
 
-Runtime0.17.0 / BP-05.03/B1 partial: [definitions](src/amphora_campaign_runtime/definitions/README.md) adds immutable draft save/read and revision-pinned validation with opt-in authoring HTTP against graph-runtime0.9.0 DTOs. Exact retained material now feeds transactional draft admission under the existing runner. Tool-bearing draft admission is denied until current Registry eligibility is implemented. Existing configured execution and navigation remain unchanged.
+Runtime0.18.0 / BP-05.03/B1 partial: [definitions](src/amphora_campaign_runtime/definitions/README.md) adds immutable draft save/read and revision-pinned validation with opt-in authoring HTTP against graph-runtime0.10.0 DTOs. Read-only reviewed tool/schema metadata supports the next editor consumer. Exact retained material now feeds transactional draft admission under the existing runner. Tool-bearing draft admission is denied until current Registry eligibility is implemented. Existing configured execution and navigation remain unchanged.
 
 Runtime0.13.0 adds a scoped named-view catalog under graph_navigation. It advertises implemented Runtime read capabilities, not scientific availability or a new projection service. Public schema, PostgreSQL and HTTP regressions plus actual Studio/Runtime independent replacement passed; BP-05.02 is closed.
 
@@ -15,7 +15,7 @@ Accepted checkpoint `2026-09-29 17:57:39`: BP-04.04 closed/audited. Five real so
 Runtime 0.10.0 adds explicit successor admission under BP-04.04/B2, using graph-runtime 0.4.0 and campaigns 0.4.0. The [successor module](src/amphora_campaign_runtime/successors/README.md) owns terminal source cuts, exact carried values and immutable ancestry; the existing coordinator commits the new run and receipt. Migration runtime_0014 is required; startup never migrates. Earlier typed binding process and installed-peer gates are accepted under closed BP-04.04A.
 
 - Status: configured deterministic execution, aggregation/waits and typed bindings accepted; source-derived solver orchestration B1 verified; successor B2 verified. New solver process proof passed B3; actual installed-peer acceptance passed V1.
-- Package: `amphora-campaign-runtime` 0.17.0.
+- Package: `amphora-campaign-runtime` 0.18.0.
 - Architecture: [Graph Runner](../../docs/Architecture/System/Graph_Runner.md), [runtime protocol](../../docs/Architecture/System/Runtime_Command_Protocol.md), [isolation](../../docs/Architecture/System/Service_Isolation.md).
 
 ## Ownership and Module Boundaries
