@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-09-29 23:33:01",
+  "status": "partial_B1_verified",
+  "runtime_version": "0.17.0",
+  "migration": "runtime_0017",
+  "python_tests": 1286,
+  "node_tests": 65,
+  "independent_installs": 19,
+  "focused_definition_tests": 27,
+  "definitions_and_scheduling_tests": 87,
+  "coverage": {
+    "scope": "definitions module only",
+    "statements": "427/444",
+    "branches": "73/90"
+  },
+  "published_schema_files": 196,
+  "recovery_scope": "2801738eee2748d5a38247c121b7973e",
+  "registry_replacement_scope": "5e826912f60d4abc9b41d7d1f2359ffd",
+  "limitations": [
+    "Tool-bearing draft admission deliberately rejected until B2 current Registry eligibility exists.",
+    "Studio authoring remains B1 work.",
+    "Independent authoring/binding process replacement remains B3/V1; no scientific acceptance claim."
+  ]
+}

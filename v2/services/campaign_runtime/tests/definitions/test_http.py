@@ -80,6 +80,13 @@ def test_host_authoring_is_explicit_and_typed(graph_env, tmp_path, monkeypatch):
             assert client.get("/v1/definition-validations/" + validation_id).status_code == 401
             assert client.get("/v1/definition-validations/unknown", headers=headers).status_code == 404
             assert client.get("/v1/definition-validations/" + validation_id, params={"unknown": 1}, headers=headers).status_code == 422
+            validated = result.json()
+            payload["identity"].update(command_family="graph.admit_draft", command_id="admit-http")
+            payload["payload"] = {"plan_sha256": validated["plan_sha256"], "inputs": [], "budget": {"limit": 1},
+                "draft": {key: validated[key] for key in ("draft_id", "revision", "content_sha256", "validation_id", "universe_sha256")}}
+            admitted = client.post("/v1/graph-runs/drafts", json=payload, headers=headers)
+            assert admitted.status_code == 200
+            assert admitted.json()["outcome"]["reason_code"] == "graph_binding_profile_not_enabled"
     finally:
         host.close()
     for bad in ("true", 1, {}):

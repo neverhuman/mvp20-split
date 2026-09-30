@@ -4,7 +4,7 @@ import json
 import uuid
 from datetime import timedelta
 
-from amphora_contracts_graph_runtime import AdmitGraphRun, SuccessorProposal
+from amphora_contracts_graph_runtime import AdmitDraft, AdmitGraphRun, SuccessorProposal
 from amphora_contracts_runtime import CommandReceipt
 from sqlalchemy import text
 
@@ -20,9 +20,10 @@ from .values import BoundValues, ensure
 
 
 class GraphAdmission:
-    def __init__(self, engine, catalog, *, bindings_enabled=False):
+    def __init__(self, engine, catalog, *, bindings_enabled=False, drafts=None):
         self.commands, self.catalog = CommandStore(engine), catalog
         self.bindings_enabled = bindings_enabled
+        self.drafts = drafts
 
     def admit(self, principal, command):
         return self._admit(principal, command, successor=False)
@@ -30,14 +31,30 @@ class GraphAdmission:
     def admit_successor(self, principal, command):
         return self._admit(principal, command, successor=True)
 
-    def _admit(self, principal, command, *, successor):
+    def admit_draft(self, principal, command):
+        return self._admit(principal, command, successor=False, draft=True)
+
+    def _admit(self, principal, command, *, successor, draft=False):
         principal.require("admit", command.identity)
-        ensure(command.identity.command_family == ("graph.admit_successor" if successor else "graph.admit"), "wrong_command_family")
-        model = SuccessorProposal if successor else AdmitGraphRun
+        family = "graph.admit_draft" if draft else "graph.admit_successor" if successor else "graph.admit"
+        ensure(command.identity.command_family == family, "wrong_command_family")
+        model = AdmitDraft if draft else SuccessorProposal if successor else AdmitGraphRun
         request = model.model_validate_json(json.dumps(json.loads(command.canonical_bytes)["payload"]))
         registered = self.commands.register(command)
         reply = RuntimeReply(command, registered.operation_id)
         params = _bindings(command)
+        prepared, preparation_error = None, None
+        if draft:
+            # Original terminal replay must not depend on today's head/configuration.
+            with self.commands.engine.connect() as conn:
+                existing = conn.execute(text("SELECT status,receipt FROM runtime.commands WHERE " + WHERE), params).mappings().one()
+            if existing["status"] != "pending":
+                return CommandReceipt.model_validate(existing["receipt"])
+            try:
+                ensure(self.drafts is not None, "draft_admission_not_enabled")
+                prepared = self.drafts.prepare(principal.scope, request)
+            except TransitionError as error:
+                preparation_error = str(error)
 
         def transaction(conn):
             conn.execute(text("SELECT singleton FROM runtime.admission_guard WHERE singleton=true FOR UPDATE"))
@@ -45,7 +62,12 @@ class GraphAdmission:
             if existing["status"] != "pending":
                 return CommandReceipt.model_validate(existing["receipt"])
             try:
-                entry = self.catalog.require(principal.scope, request.plan_sha256)
+                if draft:
+                    if preparation_error:
+                        raise TransitionError(preparation_error)
+                    entry = self.drafts.check(conn, principal.scope, request, prepared)
+                else:
+                    entry = self.catalog.require(principal.scope, request.plan_sha256)
                 ensure(entry.plan.schema_version != "4" or self.bindings_enabled, "graph_binding_profile_not_enabled")
                 from ..successors.transfer import CarryTransfer
                 transfer = CarryTransfer.resolve(conn, principal.scope, request) if successor else None
@@ -94,6 +116,8 @@ class GraphAdmission:
                 "VALUES (:operation,:event,'runtime_notifications',CAST(:payload AS jsonb))"), event)
             if transfer is not None:
                 transfer.persist(conn, params, run_id)
+            if draft:
+                self.drafts.record(conn, params, run_id, registered.operation_id, prepared)
             receipt = reply.accepted("run", run_id, 0)
             self.commands.finish(conn, command, TerminalDisposition("accepted", receipt.model_dump_json().encode()))
             return receipt

@@ -1,6 +1,6 @@
 # Runtime Persistence Boundary
 
-- Implemented: forward migrations through `runtime_0016` and owner-private command transactions.
+- Implemented: forward migrations through `runtime_0017` and owner-private command transactions.
 - Design: [Physical records](../../../../../docs/Architecture/System/Persistence_Record_Design.md), [runtime protocol](../../../../../docs/Architecture/System/Runtime_Command_Protocol.md).
 
 `migrate.upgrade(url)` runs packaged SQL/Alembic migrations as `runtime_migrator`. The explicit CLI is `python -m amphora_campaign_runtime.persistence.migrate`, using privately supplied `AMPHORA_RUNTIME_MIGRATION_URL`. No API startup migration occurs. `runtime.alembic_version` is private to this owner. Downgrade refuses destructive rollback; changes require forward migration.
@@ -38,3 +38,5 @@ runtime_0014 adds immutable `graph_successors`: scoped parent/new graph-run and 
 BP-05.03/B1 adds runtime_0015 for private draft heads, immutable definition revisions and authoring audit. Only head_revision is mutable; scoped deferred parent/head references and command-operation foreign keys preserve retained identity. Definition save commits owner records and original receipt in one transaction. Drafts are separate from graph_runs/graph_plans and grant no execution authority. See [definitions](../definitions/README.md).
 
 runtime_0016 retains scoped compiler universes once per content digest and immutable definition_validations linked to the exact draft revision/content, universe and original command operation. Both tables grant SELECT/INSERT only. Validation and original receipt commit atomically; compilation occurs outside the short transaction. No graph run, activation grant or scientific approval is created.
+
+runtime_0017 adds immutable definition_admissions linking each explicitly admitted draft validation to its scoped graph run/plan and original command. Publication commits inside the existing GraphAdmission transaction and grants no future admission authority. Scoped foreign keys and SELECT/INSERT-only privileges preserve lineage.

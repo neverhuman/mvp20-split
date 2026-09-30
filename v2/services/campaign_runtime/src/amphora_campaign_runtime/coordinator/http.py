@@ -27,6 +27,13 @@ def install_graphs(app, admission, advancer, credentials, artifacts=None):
     waits = WaitReads(admission.commands.engine)
     successors = SuccessorReads(admission.commands.engine)
 
+    if admission.drafts is not None:
+        @app.post("/v1/graph-runs/drafts", response_model=CommandReceipt)
+        async def admit_draft(request: Request):
+            principal = credentials.authenticate(request.headers.get("authorization"))
+            command = parse_graph_command("graph.admit_draft", await request.body())
+            return await asyncio.to_thread(admission.admit_draft, principal, command)
+
     @app.post("/v1/graph-runs/successors", response_model=CommandReceipt)
     async def admit_successor(request: Request):
         principal = credentials.authenticate(request.headers.get("authorization"))
