@@ -2,6 +2,12 @@
 
 Archived first draft at `2026-09-25 13:35:12`. Historical task pairs/percentages are not the active execution tracker. The parent and linked children now own progress. Original scope is preserved below for traceability.
 
+## BP-05.01 closeout ? 2026-09-29 20:06:20
+
+V1 actual-owner integration passed scopebbdae9f627f047419c5c53283a6c7bd4: two independent npm builds (30 tests each),17 wheels/12 Python installs, real Runtime/Registry/Artifact/five tools. Browser compared all12 initial/28 successor nodes and selected details to independent DTO-only reads. Three browser/Runtime replacement checks preserved old snapshot/event cursors and immutable observations; original17-invocation/44-reservation source workflow assertions passed. [V1 evidence](../Audits/Evidence/BP-05-Interaction/V1.json), [audit](../Audits/BP-05.01_Interaction_Closeout.md).
+
+Child closed100% (4/4), Build100%, Acceptance100%; parent25% (4/16). .02 activationaudit corrected_ready, Build/B1 active0%; exact missing topology/occurrence/lineage projection work remains its original scope. No scientific or target-host acceptance inferred.
+
 ## Verified B3 checkpoint ? 2026-09-29 19:54:04
 
 Production Monitor presentation now uses the actual ObservationClient/MonitorModel and shared styling. Seven actual Chromium scripted-HTTP cases pass: held late detail after new selection, old detail after new revision, graph denial clearing all records, detail-only denial, empty scope, expired page refresh and expired invalidation automatic resnapshot. Each runs1440?1000 and390?844 with zero scoped A/AA violations and no document horizontal overflow. Screenshots inspected. This found and repaired native browser fetch receiver binding, missed by Node tests. Node30 tests and independent source build ef9bc1f455cc4e0993b9e6525fbc59d6 pass. [Evidence](../Audits/Evidence/BP-05-Interaction/B3.json).

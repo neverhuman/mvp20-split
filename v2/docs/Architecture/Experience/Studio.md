@@ -1,8 +1,8 @@
 # Graph Studio and Interventions
 
-- Design status: detailed proposed contract; implementation and scientific acceptance pending
+- Design status: BP-05.01 observation interaction boundary implemented/accepted; broader navigation, authoring and scientific capabilities remain proposed
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
-- Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
+- Last reviewed: `2026-09-29 20:07:41` (America/Chicago)
 - Parent: [Domain overview](Experience_Architecture.md)
 - Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#human-graph-studio)
 

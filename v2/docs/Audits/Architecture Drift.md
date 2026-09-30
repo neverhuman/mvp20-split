@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-05 active; BP-04 and all six children closed/audited.
-- Last refreshed: `2026-09-29 19:54:04` (America/Chicago).
+- Last refreshed: `2026-09-29 20:06:20` (America/Chicago).
 - Scope: v2 design/implementation alignment
-- Active focus: BP-05 schema-derived transport/page-model boundaries and truthful Studio interaction.
-- Next gate: BP-05.01/V1 actual Runtime browser integration and child audit; B1-B3 verified, including production-client browser recovery. [BP-04 parent audit](BP-04_Graph_Runner_Closeout.md) aligned; completed evidence retained in history.
+- Active focus: BP-05 scoped graph/view navigation and explicit projection ownership; closed .01 evidence is in drift history.
+- Next gate: BP-05.02/B1 explicit topology/navigation owner projections; .01 closed with aligned audit and actual Runtime browser replacement. [BP-04 parent audit](BP-04_Graph_Runner_Closeout.md) aligned; completed evidence retained in history.
 
 ## Active Findings
 

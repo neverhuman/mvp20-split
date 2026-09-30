@@ -55,7 +55,7 @@ Default execution is sequential, with one active implementation child. This revi
 | Gate | Responsible plan | Completion evidence |
 |---|---|---|
 | Exact new DTOs/migrations and HTTP schema compatibility | Active producing child | Published versioned schemas, migration/consumer negatives and independent install |
-| Frontend/canvas implementation choice | BP-05.01 | Progressive graph, keyboard and update spike with measured browser behavior |
+| Frontend/canvas implementation choice | BP-05.01 | Selected React19.3/ReactFlow12.12 after measured B2 comparison; .01 actual-owner browser/replacement accepted |
 | Numeric kernel reuse choice | BP-08.01 | Source/license/dependency review and independent numerical oracles |
 | Qdrant adapter and profile configuration | BP-06.05, later selected deployment | Current backend contract review, fixture parity and actual integration; no automatic JARVIS access |
 | Scientific evaluator/encoding quality thresholds | Relevant future real-capability gate | Predeclared corpus/metrics and domain evidence; never infer from synthetic tests |

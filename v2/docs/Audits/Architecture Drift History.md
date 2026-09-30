@@ -1,5 +1,7 @@
 # Architecture Drift History
 
+- `2026-09-29 20:06:20`: BP-05.01 closed/aligned,4/4 deliveries. [Scoped audit](BP-05.01_Interaction_Closeout.md) records schema-derived browser boundaries, measured bounded scene, seven failure cases and actual independent Studio/Runtime replacement. No unresolved finding within closed scope; explicit topology/view navigation remains BP-05.02.
+
 - `2026-09-23 19:55:48`: BP-01 contract/validation foundation aligned with its bounded architecture; [closeout audit](BP-01_Foundation_Closeout.md) records 39 tests, four independent wheel installations and explicit successor obligations. All scoped phase gates complete; no live runtime/scientific claim.
 
 ## System Construction Proposal ? 2026-09-22 20:30:31

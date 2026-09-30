@@ -133,7 +133,8 @@
     ],
     "acceptance_tests": [
       "studio/spikes/interaction/tests",
-      "studio/tests/browser"
+      "studio/tests/browser",
+      "studio/tests/integration"
     ]
   },
   "solver-retain": {

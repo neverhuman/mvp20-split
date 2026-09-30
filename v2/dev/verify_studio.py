@@ -15,6 +15,29 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).absolute().parents[1]
 
 
+def stage_source(workspace):
+    source = ROOT / "studio"
+    copied = {}
+    staged = workspace / "studio"
+    staged.mkdir()
+    files = [source / name for name in ("package.json", "package-lock.json", "tsconfig.json")]
+    files.extend(path for folder in ("src", "tests", "scripts", "spikes") for path in (source / folder).rglob("*")
+                 if path.is_file() and path.suffix not in {".py", ".pyc"} and "__pycache__" not in path.parts)
+    for path in files:
+        target = staged / path.relative_to(source)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(path, target)
+        copied[path.relative_to(ROOT).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
+    manifest = json.loads((source / "src/contracts/generated/manifest.json").read_text(encoding="utf-8"))
+    for entry in manifest.values():
+        path = (ROOT / entry["source"]).resolve()
+        assert path.is_relative_to((ROOT / "contracts/schemas").resolve())
+        target = workspace / entry["source"]
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(path, target)
+    return staged, copied, manifest
+
+
 def main():
     node, npm = shutil.which("node"), shutil.which("npm.cmd" if os.name == "nt" else "npm")
     if not node or not npm:
@@ -23,27 +46,10 @@ def main():
         "SYSTEMROOT", "WINDIR", "TEMP", "TMP", "PATH", "COMSPEC", "USERPROFILE", "APPDATA", "LOCALAPPDATA", "HOME"}}
     output = ROOT / ".test-results/studio-isolated" / uuid.uuid4().hex
     output.mkdir(parents=True)
-    source = ROOT / "studio"
-    copied = {}
     with tempfile.TemporaryDirectory(prefix="amphora-studio-build-") as directory:
         workspace = Path(directory).resolve()
         assert workspace.is_relative_to(Path(tempfile.gettempdir()).resolve())
-        staged = workspace / "studio"
-        staged.mkdir()
-        files = [source / name for name in ("package.json", "package-lock.json", "tsconfig.json")]
-        files.extend(path for folder in ("src", "tests", "scripts", "spikes") for path in (source / folder).rglob("*") if path.is_file())
-        for path in files:
-            target = staged / path.relative_to(source)
-            target.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copyfile(path, target)
-            copied[path.relative_to(ROOT).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
-        manifest = json.loads((source / "src/contracts/generated/manifest.json").read_text(encoding="utf-8"))
-        for entry in manifest.values():
-            path = (ROOT / entry["source"]).resolve()
-            assert path.is_relative_to((ROOT / "contracts/schemas").resolve())
-            target = workspace / entry["source"]
-            target.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copyfile(path, target)
+        staged, copied, manifest = stage_source(workspace)
         for label, command in (("install", [npm, "ci", "--ignore-scripts", "--no-audit", "--no-fund"]),
                                ("verify", [node, "scripts/verify.mjs", "--coverage"])):
             result = subprocess.run(command, cwd=staged, env=env, capture_output=True, text=True,

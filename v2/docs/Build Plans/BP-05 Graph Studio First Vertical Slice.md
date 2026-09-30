@@ -2,16 +2,16 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-05.01 / Acceptance / V1.
-- Last refreshed: `2026-09-29 19:54:04` (America/Chicago).
+- Status: primary_active; BP-05.02 / Build / B1.
+- Last refreshed: `2026-09-29 20:06:20` (America/Chicago).
 - Owner/scope: Studio modules and thin gateway/projection adapters.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 runnable fixture and versioned read/command contracts.
-- Implementation: **18.75%**, 3/16 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
+- Implementation: **25%**, 4/16 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-05.01/V1 actual available-owner integration and child audit. Next: BP-05.02 activation coherence audit.
-- Demonstrated behavior: B1 transport and page-model contracts verified in 28 owned Node tests and an independent source build; full foundation passes. B2 also verifies bounded synthetic browser interaction at desktop/narrow sizes. B3 also proves seven production-client browser failure cases; actual Runtime UI integration remains V1.
-- Blockers: none for V1; React Flow selected by measured B2 comparison, real-owner UI acceptance still required.
+- Current implementation task: BP-05.02/B1 bounded named views and actual Runtime topology/navigation projections. Next: B2 revision-pinned view policy.
+- Demonstrated behavior: B1 transport and page-model contracts verified in 28 owned Node tests and an independent source build; full foundation passes. B2 also verifies bounded synthetic browser interaction at desktop/narrow sizes. B3 also proves seven production-client browser failure cases; V1 actual Runtime/Studio replacement passed; .01 is archived with its aligned audit.
+- Blockers: none for .02/B1; missing owner projections are explicit engineering scope, scientific owners remain later dependencies.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
 
@@ -29,7 +29,7 @@ Primary services retain private state, dependencies, migrations and module READM
 
 | Parent phase / child | Overall | Build | Acceptance | Prerequisite |
 |---|---:|---:|---:|---|
-| P1 / [BP-05.01 Interaction and transport boundaries](BP-05/BP-05.01%20Interaction%20and%20transport%20boundaries.md) | 75% | 100% | 0% | Parent predecessor gates |
+| P1 / [BP-05.01 Interaction and transport boundaries](BP-05/Completed/BP-05.01%20Interaction%20and%20transport%20boundaries.md) | 100% | 100% | 100% | Parent predecessor gates |
 | P2 / [BP-05.02 Graph inspection and navigation](BP-05/BP-05.02%20Graph%20inspection%20and%20navigation.md) | 0% | 0% | 0% | BP-05.01 acceptance |
 | P3 / [BP-05.03 Drafts and safe commands](BP-05/BP-05.03%20Drafts%20and%20safe%20commands.md) | 0% | 0% | 0% | BP-05.02 acceptance |
 | P4 / [BP-05.04 Visual and integration acceptance](BP-05/BP-05.04%20Visual%20and%20integration%20acceptance.md) | 0% | 0% | 0% | BP-05.03 acceptance |

@@ -9,14 +9,15 @@ import sys
 import tempfile
 from pathlib import Path
 
+from sqlalchemy import URL
+
 from build_tool_images import closure
 from check_boundaries import ROOT, project_specs
 from postgres_fixture import owned_state
-from sqlalchemy import URL
 from verify_foundation import run
 
 
-def verify(images, profile="graphs"):
+def verify(images, profile="graphs", *, probe_override=None, extra_config=None):
     if os.environ.get("AMPHORA_TEST_POSTGRES") != "1":
         raise ValueError("Explicit PostgreSQL fixture opt-in required")
     state = owned_state()
@@ -60,12 +61,12 @@ def verify(images, profile="graphs"):
             "evidence": str(ROOT / {"waits": ".test-results/wait-acceptance", "graphs": ".test-results/graph-acceptance",
                                     "bindings": ".test-results/binding-acceptance", "solver": ".test-results/solver-acceptance",
                                     "observations": ".test-results/observation-acceptance"}[profile]),
-            "packages": packages}), encoding="utf-8")
-        env = {key: value for key, value in os.environ.items() if key.upper() in {"SYSTEMROOT", "WINDIR", "TEMP", "TMP", "PATH", "COMSPEC"}}
+            "packages": packages, **(extra_config or {})}), encoding="utf-8")
+        env = {key: value for key, value in os.environ.items() if key.upper() in {"SYSTEMROOT", "WINDIR", "TEMP", "TMP", "PATH", "COMSPEC", "USERPROFILE", "LOCALAPPDATA", "APPDATA"}}
         for name, role in (("RUNTIME", "runtime_service"), ("ARTIFACT", "artifact_service"), ("REGISTRY", "registry_service")):
             env["AMPHORA_" + name + "_DATABASE_URL"] = url.set(username=role).render_as_string(hide_password=False)
         area = {"waits": "waits", "graphs": "scheduling", "bindings": "bindings", "solver": "baseline", "observations": "graph_inspection"}[profile]
-        probe = ROOT / f"services/campaign_runtime/tests/{area}/acceptance/probe.py"
+        probe = probe_override or ROOT / f"services/campaign_runtime/tests/{area}/acceptance/probe.py"
         result = subprocess.run([installed["amphora_tool_protocol"], "-I", str(probe), str(config)],
             cwd=root, env=env, capture_output=True, text=True, encoding="utf-8", timeout=600 if profile in {"bindings", "solver", "observations"} else 300)
         print(result.stdout, end="")
