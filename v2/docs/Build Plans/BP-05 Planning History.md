@@ -183,3 +183,7 @@ Editor metadata prerequisite verified:Runtime0.18.0/graph-runtime0.10.0 expose s
 ## Studio authoring consumer - 2026-09-30 11:39:50
 
 Studio authoring consumer prerequisite verified:14 separate generated public roots, exact reviewed-schema byte/digest verification and immutable command submissions with original receipt reconciliation.75 Node tests pass in an isolated locked dependency install; observation roots remain unchanged. No automatic retries or browser owner credentials. DraftSession/forms/comparison/emergency presentation remain B1; child0%=0/4, Build0%, Acceptance0%; parent50%=8/16 unchanged. No live authoring/browser acceptance claimed. Isolated evidence: e69a0b862ae8462698af1efe0ead7e2a. [Durable evidence](../Audits/Evidence/BP-05-Authoring/Consumer.json).
+
+## Draft session - 2026-09-30 11:45:52
+
+DraftSession prerequisite verified: scoped next-campaign local/base state, immutable pending save/validate identity, exact receipt/record reconciliation, newer-edit preservation, historical validation and denial fencing.82 Node tests pass in an independent locked install (2d9236fb5f174e5085c0cfe06fc27b46);7 owned draft-state cases, focused module100% lines/92.86% branches/100% functions. Forms/comparison/emergency presentation and browser/owner acceptance remain B1; child0%=0/4, Build0%, Acceptance0%; parent50%=8/16 unchanged. [Evidence](../Audits/Evidence/BP-05-Authoring/DraftSession.json).

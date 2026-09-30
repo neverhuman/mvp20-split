@@ -1,0 +1,11 @@
+# Draft editing state
+
+Owner: [Studio page models](../README.md), [BP-05.03](../../../../docs/Build%20Plans/BP-05/BP-05.03%20Drafts%20and%20safe%20commands.md). B1 implementation in progress; no presentation or authoring acceptance claim.
+
+`DraftSession` owns one scoped next-campaign draft: acknowledged base, local title/definition, selected node, dirty state, latest pinned validation and one original save/validate submission awaiting reconciliation. It performs no network calls, activation, live graph editing or emergency cancellation. The caller loads public records through the authoring transport; presentation consumes copied state. There is no browser persistence or backend credential.
+
+Edits remain possible during a pending save. A valid committed revision advances the base while preserving later local edits. Save/validate acknowledgements must match the original command identity and the exact committed public record before pending state is released. Network loss keeps the same submission. Rejected commands preserve local content. Validation applies only to the acknowledged exact revision/content and is historical when local changes exist; it never grants execution/scientific authority. No automatic conflict rebase or fresh-ID retry is implemented.
+
+Denial clears protected server projections and blocks subsequent transmissions in that session while retaining local work for explicit recovery. A session has immutable actor/scope/draft identity; changing authenticated context requires a new session, never rebinding old local work into another scope. Late results cannot restore a denied session. New-draft creation and adopted persisted revisions pass public shape/scope checks; layout coordinates are not definition state.
+
+Owned tests: `tests/page_models/design/`. Replacement must preserve local edits, exact receipt/record binding, one unresolved identity, denial fencing, copy isolation and separation from Runtime authority. Forms, comparison, asynchronous loaders/presentation, browser failure proof and B2 conflict/revalidation/activation policy remain pending.

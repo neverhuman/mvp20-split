@@ -1,0 +1,26 @@
+{
+  "verified_at": "2026-09-30 11:45:52",
+  "status": "passed",
+  "scope": "BP-05.03/B1 DraftSession prerequisite",
+  "node_tests": 82,
+  "owned_state_cases": 7,
+  "isolated_install": "2d9236fb5f174e5085c0cfe06fc27b46",
+  "focused_coverage": {
+    "lines": 100,
+    "branches": 92.86,
+    "functions": 100
+  },
+  "verified": [
+    "save acknowledgement preserves newer local edits",
+    "exact original command and record bindings",
+    "pending operation/request hash consistency",
+    "rejection preserves local/base without implicit rebase",
+    "validation revision/content match distinct from eligibility",
+    "denial clears protected server projections and fences late results"
+  ],
+  "limits": [
+    "No asynchronous Design loader or forms/presentation/browser acceptance",
+    "No B1 completion credit",
+    "No B2 rebase or current eligibility policy"
+  ]
+}

@@ -20,3 +20,5 @@ Owned suites: `tests/page_models/`; `npm test -- --area=page_models --coverage` 
 Browser suites separately exercise hidden activation, pinned/live divergence, dense256-node windows, denial clearing, partial links and linked evidence. Actual installed peers have verified initial12-node and successor28-node navigation plus independent browser/Runtime replacement; V1 final-source repetition and audit passed. Replacement must preserve public source ports, exact cut/identity checks, region states, bounds, cancellation fencing and explicit omissions. No local authoritative run database or owner mutation is permitted.
 
 Latest acceptance: BP-05.02 closed100%; final-source scopee222d4cf32604d729ef12146860bc49c passes both independently installed65-test browser builds and actual-owner replacement. [Navigation audit](../../../docs/Audits/BP-05.02_Navigation_Closeout.md).
+
+BP-05.03 adds the separate [Design draft state](design/README.md) submodule. It owns next-campaign local/base/command reconciliation only; observation models and live execution authority remain unchanged. Tests live under `tests/page_models/design/`.
