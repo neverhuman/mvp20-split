@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 
 import amphora_contracts_artifacts as artifact_contracts
+import amphora_contracts_evidence as evidence_contracts
 import amphora_contracts_graph_runtime as graph_runtime_contracts
 import amphora_contracts_runtime as runtime_contracts
 import amphora_contracts_solver_fixture as solver_fixture_contracts
@@ -63,6 +64,14 @@ MODELS_V4 = {
     "campaigns.artifact-materialize": ArtifactMaterializeV4,
     "campaigns.binding-primitive": BindingPrimitiveDescriptor,
 }
+
+for name, model in {
+    "source-revision": evidence_contracts.SourceRevision,
+    "source-span": evidence_contracts.SourceSpan,
+    "conversion-trace": evidence_contracts.ConversionTrace,
+    "conversion-trace-ref": evidence_contracts.ConversionTraceRef,
+}.items():
+    MODELS["evidence." + name] = model
 
 MODELS["commands.identity"] = CommandIdentity
 for name, model in {

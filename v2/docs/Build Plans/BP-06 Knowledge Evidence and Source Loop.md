@@ -2,16 +2,16 @@
 
 ## Canonical Parent Tracker
 
-- Status: design_specified / implementation queued; not activated.
-- Last refreshed: `2026-09-25 13:54:17` (America/Chicago).
+- Status: primary_active; BP-06.01 / Build / B1.
+- Last refreshed: `2026-09-30 17:44:31` (America/Chicago).
 - Owner/scope: Knowledge, Research and focused Data/Artifacts modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 receipt/wait seams and BP-05 inspection; BP-01/02/03 public contracts and tool execution.
 - Implementation: **0%**, 0/24 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: none. Next: BP-06.01/B1 after predecessor gates and bounded activation audit.
-- Demonstrated behavior: none within this parent. Required database/process/browser/model/host evidence remains pending.
-- Blockers: predecessor gates; external choices only where named in child trackers and the readiness register.
+- Current implementation task: BP-06.01/B1 source and evidence boundary; [activation audit](../Audits/BP-06.01_Activation.md) corrected_ready.
+- Demonstrated behavior: B1 partial: evidence0.1.0 contracts and Data/Artifacts0.2.0 pure provenance checks verified.15 contract and25 acquisition tests pass in isolated wheel installs;28 combined dev/contract tests pass. Provenance64/64 lines and10/10 branches covered.208 published schemas preserve all200 predecessors. No ledger/adapters/Research identity yet; no delivery credit.
+- Blockers: none for bounded synthetic B1; real scientific/provider choices remain scoped successor gates.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
 

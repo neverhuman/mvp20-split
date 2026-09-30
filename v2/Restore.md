@@ -2,10 +2,10 @@
 
 ## Current Checkpoint
 
-- Last refreshed: `2026-09-30 17:34:15` (America/Chicago).
-- Active plan: BP-05 closed100%=16/16; BP-06 activation coherence review at0%. No user decision pending.
-- Latest checkpoint: BP-05.04 B3 pushed a45d868; V1 audits aligned and child/parent archived.25 actual-owner cases, two137-test independent builds and local performance/replacement evidence accepted. No process running.
-- Next: Complete bounded BP-06/.01 activation audit, then implement earliest B1 source/evidence contract delivery. Synthetic documents/lab fixtures are authorized; real provider choice is a later gate.
+- Last refreshed: `2026-09-30 17:44:31` (America/Chicago).
+- Active plan: BP-06 -> BP-06.01 / Build / B1. Child0/4 and parent0/24; all phases0%. No user decision pending.
+- Latest checkpoint: B1 partial: evidence0.1.0 contracts and Data/Artifacts0.2.0 pure provenance checks verified.15 contract and25 acquisition tests pass in isolated wheel installs;28 combined dev/contract tests and131 artifact-owner regression tests (PostgreSQL enabled) pass. Provenance64/64 lines and10/10 branches covered.208 published schemas preserve all200 predecessors. No ledger/adapters/Research identity yet; no delivery credit. Evidence: docs/Audits/Evidence/BP-06-Acquisition/Initial_Boundary.json. No process running.
+- Next: BP-06.01/B1 Research identity/question/evidence-need contracts and owned service; then bounded document/lab adapters and persisted delivery ledger. Pure provenance is not an ingestion API or scientific acceptance.
 - Recovery: only verified pending original receipts enable explicit same-identity resume. Unknown transport outcome first reconciles; collision/denial/terminal ambiguity never gets a fresh ID. Newer local edits survive recovery. Cancellation is operational and retains explicit uncertain-effects wording.
 - Runtime0.20.0, Commands0.2.0, graph-runtime0.11.0, campaigns0.4.1;200 public schemas unchanged. Numeric v2 only save/admit; other families/unmarked bytes v1. Input NumberValue remains decimal string. Registry eligibility synthetic-only observations are not reservations/atomic revocation. No scientific or target-host deployment claim.
 - Tooling: mapped v2/dev/.venv/Scripts/python.exe, PYTHONUTF8=1; pytest/ruff --config equivalents use v2/dev/pyproject.toml. Git always -c safe.directory=//DesktopNAS/Code/mvp20-split. Never reset retained PG or run parallel campaign-admission suites. No v1/JARVIS/subagents. Use Path.absolute for repo tooling; Path.resolve maps Z to UNC and breaks uv source identity.

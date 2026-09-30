@@ -1,7 +1,7 @@
 # Data and Artifacts Service
 
 - Status: provisional uploads and verified finalization implemented; protective reservation handshake implemented; bounded reconciliation/cleanup sweeps implemented; standalone hosting/scoped reads implemented; BP-02.03 independently accepted and audited; actual runtime integration, REC-01..09 process recovery and independent replacement acceptance passed.
-- Package: `amphora-data-artifacts` 0.1.0.
+- Package: `amphora-data-artifacts` 0.2.0.
 - Architecture: [Artifact publication](../../docs/Architecture/System/Artifact_Publication_Protocol.md), [physical records](../../docs/Architecture/System/Persistence_Record_Design.md).
 
 This independently installed service owns provisional upload records, immutable artifact catalog bindings, protective reservations, command receipts and artifact audit/outbox state. Its [private persistence module](src/amphora_data_artifacts/persistence/README.md) implements migrations and command registration/terminal receipt transactions. `api.create_app(uploads, storage, credentials, outcomes=None)` exposes POST /v1/uploads, PUT /v1/uploads/{id}/content and POST /v1/artifacts/finalize using explicit configured principals and policy. Successful streaming returns a provisional receipt; verified finalization returns ArtifactRef. POST /v1/reservations, /confirm and /reconcile implement the protective handshake with an explicitly configured runtime outcome client. GET /v1/artifacts/{id} and /content require a scoped read grant; content is integrity checked before response. `amphora-artifacts` provides explicit loopback hosting and bounded maintenance.
@@ -37,3 +37,7 @@ Each JSON profile may add `schema_path`, relative to the configuration file (or 
 The installed-process acceptance probe starts the wheel outside the repository, publishes and replays an artifact, reads metadata/content, rejects wrong credentials/scope and detects modified fixture bytes. It uses real PostgreSQL but synthetic data. `--area acceptance` runs the owner-local probe; the foundation --builds gate repeats it using an independent wheel environment when PostgreSQL opt-in is enabled. Test-only fault barriers are confined to tests. Actual runtime cancellation/acceptance races passed .05/.06; scientific validity remains later plans.
 
 Current protection is observable through owner-scoped `GET /v1/reservations/{id}` without mutation. [Foundation recovery runbook](../campaign_runtime/RECOVERY.md) covers the public handshake, explicit maintenance, retained state and independent replacement; this service alone retains authority over its bytes/catalog/reservations.
+
+## Source Acquisition In Progress
+
+BP-06.01 adds the focused [acquisition provenance module](src/amphora_data_artifacts/acquisition/README.md) and public evidence-contract dependency. Exact-byte scope/span/schema verification and canonical trace fingerprints are implemented as pure domain behavior. No new route or migration is exposed yet; source delivery persistence, rights enforcement, adapters and Research identity integration remain open. Existing publication/retention commands and schema roots are unchanged. Version0.2.0 identifies this additive package boundary.

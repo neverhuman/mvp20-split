@@ -1,6 +1,6 @@
 [project]
 name = "amphora-data-artifacts"
-version = "0.1.0"
+version = "0.2.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
     "jsonschema[format-nongpl]>=4.25,<5",
@@ -10,6 +10,7 @@ dependencies = [
     "amphora-contracts-commands",
     "amphora-contracts-core",
     "amphora-contracts-artifacts",
+    "amphora-contracts-evidence==0.1.0",
     "fastapi>=0.115,<1",
     "uvicorn>=0.34,<1",
 ]
@@ -25,9 +26,10 @@ build-backend = "hatchling.build"
 packages = ["src/amphora_data_artifacts"]
 
 [tool.amphora]
-public-imports = ["amphora-contracts-commands", "amphora-contracts-core", "amphora-contracts-artifacts"]
+public-imports = ["amphora-contracts-evidence", "amphora-contracts-commands", "amphora-contracts-core", "amphora-contracts-artifacts"]
 
 [tool.uv.sources]
+amphora-contracts-evidence = { path = "../../contracts/evidence", editable = true }
 amphora-contracts-commands = { path = "../../contracts/commands", editable = true }
 amphora-contracts-core = { path = "../../contracts/core", editable = true }
 amphora-contracts-artifacts = { path = "../../contracts/artifacts", editable = true }

@@ -60,14 +60,30 @@ dependencies = [
 requires-dist = [{ name = "pydantic", specifier = ">=2.12,<3" }]
 
 [[package]]
-name = "amphora-data-artifacts"
+name = "amphora-contracts-evidence"
 version = "0.1.0"
+source = { editable = "../../contracts/evidence" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
+name = "amphora-data-artifacts"
+version = "0.2.0"
 source = { editable = "." }
 dependencies = [
     { name = "alembic" },
     { name = "amphora-contracts-artifacts" },
     { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-evidence" },
     { name = "fastapi" },
     { name = "jsonschema", extra = ["format-nongpl"] },
     { name = "psycopg", extra = ["binary"] },
@@ -81,6 +97,7 @@ requires-dist = [
     { name = "amphora-contracts-artifacts", editable = "../../contracts/artifacts" },
     { name = "amphora-contracts-commands", editable = "../../contracts/commands" },
     { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-evidence", editable = "../../contracts/evidence" },
     { name = "fastapi", specifier = ">=0.115,<1" },
     { name = "jsonschema", extras = ["format-nongpl"], specifier = ">=4.25,<5" },
     { name = "psycopg", extras = ["binary"], specifier = ">=3,<4" },

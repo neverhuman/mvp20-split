@@ -145,6 +145,21 @@ dependencies = [
 requires-dist = [{ name = "pydantic", specifier = ">=2.12,<3" }]
 
 [[package]]
+name = "amphora-contracts-evidence"
+version = "0.1.0"
+source = { editable = "../contracts/evidence" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-graph-runtime"
 version = "0.11.0"
 source = { editable = "../contracts/graph_runtime" }
@@ -216,13 +231,14 @@ requires-dist = [
 
 [[package]]
 name = "amphora-data-artifacts"
-version = "0.1.0"
+version = "0.2.0"
 source = { editable = "../services/data_artifacts" }
 dependencies = [
     { name = "alembic" },
     { name = "amphora-contracts-artifacts" },
     { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-evidence" },
     { name = "fastapi" },
     { name = "jsonschema", extra = ["format-nongpl"] },
     { name = "psycopg", extra = ["binary"] },
@@ -236,6 +252,7 @@ requires-dist = [
     { name = "amphora-contracts-artifacts", editable = "../contracts/artifacts" },
     { name = "amphora-contracts-commands", editable = "../contracts/commands" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-evidence", editable = "../contracts/evidence" },
     { name = "fastapi", specifier = ">=0.115,<1" },
     { name = "jsonschema", extras = ["format-nongpl"], specifier = ">=4.25,<5" },
     { name = "psycopg", extras = ["binary"], specifier = ">=3,<4" },
@@ -254,6 +271,7 @@ dependencies = [
     { name = "amphora-contracts-campaigns" },
     { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-evidence" },
     { name = "amphora-contracts-graph-runtime" },
     { name = "amphora-contracts-runtime" },
     { name = "amphora-contracts-solver-fixture" },
@@ -282,6 +300,7 @@ requires-dist = [
     { name = "amphora-contracts-campaigns", editable = "../contracts/campaigns" },
     { name = "amphora-contracts-commands", editable = "../contracts/commands" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-evidence", editable = "../contracts/evidence" },
     { name = "amphora-contracts-graph-runtime", editable = "../contracts/graph_runtime" },
     { name = "amphora-contracts-runtime", editable = "../contracts/runtime" },
     { name = "amphora-contracts-solver-fixture", editable = "../contracts/solver_fixture" },

@@ -1,5 +1,10 @@
 # BP-06 Planning History
 
+## Initial acquisition boundary - 2026-09-30 17:44:31
+
+B1 partial: evidence0.1.0 contracts and Data/Artifacts0.2.0 pure provenance checks verified.15 contract and25 acquisition tests pass in isolated wheel installs;28 combined dev/contract tests and131 artifact-owner regression tests (PostgreSQL enabled) pass. Provenance64/64 lines and10/10 branches covered.208 published schemas preserve all200 predecessors. No ledger/adapters/Research identity yet; no delivery credit. [Activation audit](../Audits/BP-06.01_Activation.md); [wheel evidence](../Audits/Evidence/BP-06-Acquisition/Initial_Boundary.json). Source schemas are additive; old command profiles and artifact routes are unchanged. Package inventory refreshed from manifests, not a full foundation reacceptance. Next: Research identity/question/evidence-need boundary; then ingestion adapters and actual PostgreSQL ledger.
+
+
 Archived first draft at `2026-09-25 13:35:12`. Historical task pairs/percentages are not the active execution tracker. The parent and linked children now own progress. Original scope is preserved below for traceability.
 
 # BP-06 Knowledge Evidence and Source Loop

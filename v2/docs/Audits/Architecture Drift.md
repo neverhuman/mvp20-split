@@ -1,10 +1,10 @@
 # Architecture Drift
 
-- Status: BP-05 closed/audited; BP-06 activation coherence review.
-- Last refreshed: `2026-09-30 16:50:49` (America/Chicago).
+- Status: BP-06 active; BP-05 closed/audited.
+- Last refreshed: `2026-09-30 17:44:31` (America/Chicago).
 - Scope: v2 design/implementation alignment
-- Active focus: source/evidence acquisition predecessor reconciliation.
-- Next gate: BP-06.01 activation audit; no unresolved BP-05 blocking drift.
+- Active focus: BP-06.01/B1 source/evidence and Research identity boundaries.
+- Next gate: Complete B1 contracts, adapters and persisted ledger; no new blocking drift identified.
 
 ## Active Findings
 

@@ -142,5 +142,11 @@
     "coverage_sources": [
       "tools/solver_retain/src/amphora_solver_retain"
     ]
+  },
+  "contracts-evidence": {
+    "tests": "contracts/evidence/tests",
+    "coverage_sources": [
+      "contracts/evidence/src/amphora_contracts_evidence"
+    ]
   }
 }

@@ -36,6 +36,15 @@
     "public_dependencies": []
   },
   {
+    "package": "amphora-contracts-evidence",
+    "version": "0.1.0",
+    "path": "contracts/evidence",
+    "module": "amphora_contracts_evidence",
+    "public_dependencies": [
+      "amphora-contracts-core"
+    ]
+  },
+  {
     "package": "amphora-contracts-graph-runtime",
     "version": "0.11.0",
     "path": "contracts/graph_runtime",
@@ -104,10 +113,11 @@
   },
   {
     "package": "amphora-data-artifacts",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "path": "services/data_artifacts",
     "module": "amphora_data_artifacts",
     "public_dependencies": [
+      "amphora-contracts-evidence",
       "amphora-contracts-commands",
       "amphora-contracts-core",
       "amphora-contracts-artifacts"

@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-09-30 17:43:30",
+  "scope": "BP-06.01/B1 partial contract and pure provenance boundary",
+  "isolated_tests": {
+    "evidence": "15 passed in 1.33s",
+    "data_artifacts": "25 passed in 0.36s"
+  },
+  "wheels": {
+    "amphora_contracts_artifacts-0.1.0-py3-none-any.whl": "1a9f210f385b9edbffbf5ef1d513a27d484a5b5d590fb8255720468acb4aafdd",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_evidence-0.1.0-py3-none-any.whl": "645b39fae23f887fff1f41e59219a2d93fd79ec72837831b0295cd3d116d7f83",
+    "amphora_data_artifacts-0.2.0-py3-none-any.whl": "bcfbf6230c85dbcd3b746d369e9e5cc03cbe0a7ec393ee6fe7368932f87a8df7"
+  },
+  "limits": [
+    "no source ledger or adapter yet",
+    "no database or scientific acceptance proof"
+  ],
+  "artifact_regression": {
+    "tests_passed": 131,
+    "postgres_opt_in": true,
+    "warning": "pre-existing Starlette/httpx deprecation"
+  }
+}

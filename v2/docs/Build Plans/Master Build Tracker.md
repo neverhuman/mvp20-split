@@ -8,15 +8,15 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-05 closed; BP-06 activation review; BP-07 through BP-09 queued.
-- Last refreshed: `2026-09-30 17:34:15` (America/Chicago).
+- Status: BP-06 primary active; BP-07 through BP-09 queued; BP-05 closed.
+- Last refreshed: `2026-09-30 17:44:31` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P5 / BP-06 - Knowledge Evidence and Source Loop.
-- Primary active implementation plan / phase / task: none pending BP-06 bounded activation coherence review.
-- Current task: BP-06 / BP-06.01 prerequisite and physical boundary review.
-- Next task: BP-06.01/B1 after its activation audit.
+- Primary active implementation plan / phase / task: BP-06 -> BP-06.01 / Build / B1.
+- Current task: BP-06.01/B1 Research identities and persisted acquisition adapters.
+- Next task: Complete B1 contracts, Research identities and persisted bounded adapters.
 - Implementation completion: BP-05 closed100% (16/16); BP-06..09 remain0%.
-- Active focus: reconcile source/evidence acquisition contracts against accepted owner boundaries.
+- Active focus: B1 source contracts/provenance subset verified; child0/4, parent0/24 unchanged.
 - Blockers: no user decision pending; synthetic source fixtures are authorized.
 - Acceptance posture: BP-05 integrated Studio accepted within synthetic software scope; scientific and deployment acceptance remains later.
 - Active exception: none.
@@ -31,13 +31,20 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-No implementation child is active during BP-06 activation review. BP-06 remains0/24; all six phases0%. BP-05 closed16/16 with all phases100%. See [completed plans](Completed/README.md).
+BP-06 is the sole active parent. BP-05 closed16/16; see [completed plans](Completed/README.md).
+
+| Parent | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| [BP-06](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) | 0% (0/24) | 0% | 0% | 0% | 0% | 0% | 0% |
+
+| Active canonical child | Overall | Build | Acceptance | Current task |
+|---|---:|---:|---:|---|
+| [BP-06.01](BP-06/BP-06.01%20Source%20and%20evidence%20contracts.md) | 0% | 0% | 0% | B1 source/evidence contracts |
 
 ## Queued Plans and Phase Mirrors
 
 | Canonical plan | Status | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-06 Knowledge Evidence and Source Loop](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | 0% |
 | [BP-07 Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 | [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 | [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
@@ -51,7 +58,7 @@ The owning plan tracker is canonical for overall and per-phase percentages. Refr
 
 ## Prioritized Build Queue
 
-BP-06 is undergoing activation review at0%; BP-07 through BP-09 are `design_specified / queued`. The later roadmap has 34 canonical children. Each child names owned objects/contracts, algorithms, failure oracles and replacement acceptance. Completed plans remain in the archive.
+BP-06 is primary_active at0%; BP-07 through BP-09 are `design_specified / queued`. The later roadmap has 34 canonical children. Each child names owned objects/contracts, algorithms, failure oracles and replacement acceptance. Completed plans remain in the archive.
 
 | Order / ID | Completion | Proposed plan | Required predecessor gates | Bounded outcome / exit | Architecture owner |
 |---|---|---|---|---|---|
@@ -112,6 +119,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-30 17:44:31 | BP-06.01/B1 partial; child/parent0% | 15 contract/25 provenance tests in isolated wheels; [evidence](../Audits/Evidence/BP-06-Acquisition/Initial_Boundary.json) |
 | 2026-09-30 17:34:15 | BP-05 closed100% (16/16); .04 closed4/4; BP-06 review0% | [Integrated audit](../Audits/BP-05_Studio_Closeout.md) |
 | 2026-09-30 17:27:10 | BP-05.04/B3 verified75%; parent93.75% (15/16); V1 active | Named-view replacement;137-test independent builds,25 owner cases, visual review passed |
 | 2026-09-30 17:15:38 | BP-05.04/B2 verified50%; parent87.5% (14/16); B3 active | 10000 logical/200 rendered; separate request/render samples and fixed local regression budget |
