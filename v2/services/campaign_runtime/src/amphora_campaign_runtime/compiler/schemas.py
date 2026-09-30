@@ -99,6 +99,11 @@ class PinnedSchema:
         except RecursionError as error:
             raise CompilationError("schema_complexity_limit", location) from error
 
+    @property
+    def source_bytes(self):
+        """Exact immutable reviewed bytes, for owner-local retained compilation material."""
+        return self._body
+
     def _target(self, reference):
         require(isinstance(reference, str) and (reference == "#" or reference.startswith("#/")),
                 "external_schema_reference", self.identity.name)

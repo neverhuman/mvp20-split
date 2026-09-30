@@ -17,8 +17,10 @@ from .completion.artifacts import ArtifactReservations
 from .completion.coordinator import CompletionCoordinator
 from .coordinator.admission import GraphAdmission
 from .coordinator.advance import GraphAdvancer
-from .coordinator.configuration import load_catalog
+from .coordinator.configuration import load_graphs
+from .coordinator.plans import PlanCatalog
 from .coordinator.projections import ArtifactProjections
+from .definitions.universes import from_graphs
 from .delivery.model import DeliveryPolicy
 from .delivery.store import DeliveryStore
 from .delivery.transport import DeliveryTargets, NotificationSink
@@ -39,9 +41,10 @@ class Host:
     history: RuntimeHistory | None = None
     graphs: tuple | None = None
     authoring: bool = False
+    universes: object = None
 
     def app(self):
-        return create_app(self.admission, self.credentials, self.completion, self.history, self.graphs, self.authoring)
+        return create_app(self.admission, self.credentials, self.completion, self.history, self.graphs, self.authoring, self.universes)
 
     def close(self):
         self.admission.commands.engine.dispose()
@@ -57,7 +60,7 @@ class Host:
             if set(item) != {"token_env", "actor_id", "scope", "actions"}:
                 raise ValueError("Invalid principal configuration")
             actions = frozenset(item["actions"])
-            if not actions or actions - {"admit", "claim", "renew", "cancel", "revoke", "maintain", "read", "complete", "outcome", "deliver", "inspect_receipts", "submit_receipt", "author"}:
+            if not actions or actions - {"admit", "claim", "renew", "cancel", "revoke", "maintain", "read", "complete", "outcome", "deliver", "inspect_receipts", "submit_receipt", "author", "validate"}:
                 raise ValueError("Invalid configured action")
             if not isinstance(item["actor_id"], str) or not item["actor_id"]:
                 raise ValueError("Explicit actor required")
@@ -68,10 +71,12 @@ class Host:
         if len(identities) != len(principals):
             raise ValueError("Duplicate configured identity")
         credentials = RuntimeCredentials(entries)
-        graph_catalog = None if "graphs" not in raw else load_catalog(raw["graphs"], Path(path).parent)
+        reviewed = None if "graphs" not in raw else load_graphs(raw["graphs"], Path(path).parent)
+        graph_catalog = None if reviewed is None else PlanCatalog(item[0] for item in reviewed)
         authoring = raw.get("authoring", False)
         if type(authoring) is not bool or authoring and graph_catalog is None:
             raise ValueError("Authoring requires explicitly configured graphs")
+        universes = from_graphs(reviewed) if authoring else None
         catalog = FixtureCatalog((AdmitFixtureRun.model_validate_json(json.dumps(d)) for d in raw["fixtures"]),
                                  (ToolDescriptor.model_validate_json(json.dumps(d)) for d in raw.get("tools", [])),
                                  allow_empty=graph_catalog is not None)
@@ -125,6 +130,7 @@ class Host:
                 if authoring:
                     conn.execute(text("SELECT head_revision FROM runtime.definition_heads LIMIT 0"))
                     conn.execute(text("SELECT operation_id FROM runtime.definition_audit LIMIT 0"))
+                    conn.execute(text("SELECT validation_id FROM runtime.definition_validations LIMIT 0"))
                 if graph_catalog is not None:
                     conn.execute(text("SELECT frontier_revision FROM runtime.graph_runs LIMIT 0"))
                     conn.execute(text("SELECT cut_sha256,decision_sha256 FROM runtime.graph_aggregate_decisions LIMIT 0"))
@@ -137,7 +143,7 @@ class Host:
                        DeliveryWorker(DeliveryStore(engine, policy), targets),
                        None if cursors is None else RuntimeHistory(engine, cursors),
                        None if graph_catalog is None else (GraphAdmission(engine, graph_catalog, bindings_enabled=bindings is not None),
-                                                           GraphAdvancer(engine, projections, bindings)), authoring)
+                                                           GraphAdvancer(engine, projections, bindings)), authoring, universes)
         except BaseException:
             engine.dispose()
             raise

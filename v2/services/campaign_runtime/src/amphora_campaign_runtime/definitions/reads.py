@@ -3,7 +3,7 @@
 from amphora_contracts_graph_runtime import DraftCommandReceipt, DraftPage
 from sqlalchemy import text
 
-from . import storage
+from . import storage, validation_storage
 
 
 class DefinitionReadError(ValueError):
@@ -43,6 +43,15 @@ class DefinitionReads:
                 {**params, "after": after or "", "limit": limit + 1}).mappings().all()
         items = tuple(storage.header(row) for row in rows[:limit])
         return DraftPage(scope=principal.scope, drafts=items, next_after=items[-1].draft_id if len(rows) > limit else None)
+
+    def validation(self, principal, validation_id):
+        params = {**self.bindings(principal), "validation": validation_id}
+        with self.engine.connect() as conn:
+            result = validation_storage.restore(conn.execute(text("SELECT * FROM runtime.definition_validations "
+                "WHERE tenant_id=:tenant AND project_id=:project AND validation_id=:validation"), params).mappings().one_or_none())
+        if result is None:
+            raise DefinitionReadError("validation_unavailable")
+        return result
 
     def receipt(self, principal, family, command_id):
         params = self.bindings(principal)

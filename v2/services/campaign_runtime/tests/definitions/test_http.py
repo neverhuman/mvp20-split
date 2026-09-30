@@ -56,13 +56,30 @@ def test_authoring_routes_scope_revision_receipt_and_explicit_enablement(graph_e
 def test_host_authoring_is_explicit_and_typed(graph_env, tmp_path, monkeypatch):
     path, raw = graph_host(graph_env, tmp_path, monkeypatch)
     raw["authoring"] = True
-    raw["principals"][0]["actions"].append("author")
+    raw["principals"][0]["actions"].extend(["author", "validate"])
     path.write_text(json.dumps(raw), encoding="utf-8")
     host = Host.load(path)
     try:
         assert host.authoring is True
         with TestClient(host.app()) as client:
-            assert client.get("/v1/definition-drafts", headers={"Authorization": "Bearer " + "x" * 32}).status_code == 200
+            headers = {"Authorization": "Bearer " + "x" * 32}
+            assert client.get("/v1/definition-drafts", headers=headers).status_code == 200
+            assert client.post("/v1/definition-drafts/save", content=command(graph_env.env).canonical_bytes, headers=headers).status_code == 200
+            draft = client.get("/v1/definition-drafts/draft", headers=headers).json()
+            payload = json.loads(command(graph_env.env).canonical_bytes)
+            payload["identity"].update(command_family="definition.validate", command_id="validate-http")
+            payload["payload"] = {"draft_id": "draft", "revision": 1, "content_sha256": draft["head"]["content_sha256"]}
+            response = client.post("/v1/definition-drafts/validate", json=payload, headers=headers)
+            response.raise_for_status()
+            receipt = response.json()
+            assert receipt["outcome"]["status"] == "accepted"
+            validation_id = receipt["outcome"]["committed"]["object_id"]
+            result = client.get("/v1/definition-validations/" + validation_id, headers=headers)
+            assert result.json()["structurally_valid"] and result.json()["scientific_acceptance"] == "not_established"
+            assert client.get("/v1/definition-commands/definition.validate/validate-http", headers=headers).json() == receipt
+            assert client.get("/v1/definition-validations/" + validation_id).status_code == 401
+            assert client.get("/v1/definition-validations/unknown", headers=headers).status_code == 404
+            assert client.get("/v1/definition-validations/" + validation_id, params={"unknown": 1}, headers=headers).status_code == 422
     finally:
         host.close()
     for bad in ("true", 1, {}):

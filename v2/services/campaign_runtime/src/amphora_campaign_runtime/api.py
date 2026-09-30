@@ -85,7 +85,7 @@ class RequestBounds:
         return await self.app(scope, replay, send)
 
 
-def create_app(admission=None, credentials=None, completion=None, history=None, graphs=None, authoring=False) -> FastAPI:
+def create_app(admission=None, credentials=None, completion=None, history=None, graphs=None, authoring=False, universes=None) -> FastAPI:
     app = FastAPI(title="Amphora runtime foundation", version="0.1.0")
     app.add_middleware(RequestBounds)
     if (admission is None) != (credentials is None):
@@ -99,7 +99,7 @@ def create_app(admission=None, credentials=None, completion=None, history=None, 
         install_admission(app, admission, credentials, completion, graph_mode=graphs is not None)
         if authoring:
             from .definitions.http import install_definitions
-            install_definitions(app, admission.commands.engine, credentials)
+            install_definitions(app, admission.commands.engine, credentials, universes)
         if graphs is not None:
             from .coordinator.http import install_graphs
             install_graphs(app, graphs[0], graphs[1], credentials, None if completion is None else completion.artifacts)

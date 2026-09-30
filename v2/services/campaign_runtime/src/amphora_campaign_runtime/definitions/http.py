@@ -7,6 +7,7 @@ from amphora_contracts_graph_runtime import (
     DraftCommandReceipt,
     DraftPage,
     DraftRevision,
+    DraftValidation,
     parse_authoring_command,
 )
 from fastapi import Query, Request
@@ -14,10 +15,12 @@ from fastapi.responses import JSONResponse
 
 from .commands import DefinitionCommands
 from .reads import DefinitionReadError, DefinitionReads
+from .validate import DefinitionValidator
 
 
-def install_definitions(app, engine, credentials):
+def install_definitions(app, engine, credentials, universes=None):
     commands, reads = DefinitionCommands(engine), DefinitionReads(engine)
+    validator = DefinitionValidator(engine, universes or {})
 
     def filters(request, allowed=()):
         if set(request.query_params) - set(allowed):
@@ -34,6 +37,19 @@ def install_definitions(app, engine, credentials):
         filters(request)
         command = parse_authoring_command("definition.save", await request.body())
         return await asyncio.to_thread(commands.save, principal, command)
+
+    @app.post("/v1/definition-drafts/validate", response_model=DraftCommandReceipt)
+    async def validate(request: Request):
+        principal = credentials.authenticate(request.headers.get("authorization"))
+        filters(request)
+        command = parse_authoring_command("definition.validate", await request.body())
+        return await asyncio.to_thread(validator.validate, principal, command)
+
+    @app.get("/v1/definition-validations/{validation_id}", response_model=DraftValidation)
+    async def validation(validation_id: Identifier, request: Request):
+        principal = credentials.authenticate(request.headers.get("authorization"))
+        filters(request)
+        return await asyncio.to_thread(reads.validation, principal, validation_id)
 
     @app.get("/v1/definition-drafts", response_model=DraftPage)
     async def page(request: Request, limit: int = Query(20, ge=1, le=50), after: Identifier | None = None):

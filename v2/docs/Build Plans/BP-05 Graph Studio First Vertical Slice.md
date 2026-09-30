@@ -3,15 +3,15 @@
 ## Canonical Parent Tracker
 
 - Status: primary_active; BP-05.03 / Build / B1.
-- Last refreshed: `2026-09-29 22:38:36` (America/Chicago).
+- Last refreshed: `2026-09-29 23:03:28` (America/Chicago).
 - Owner/scope: Studio modules and thin gateway/projection adapters.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 runnable fixture and versioned read/command contracts.
 - Implementation: **50%**, 8/16 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-05.03/B1 definition-authoring contracts and isolated owner module; activation audit corrected_ready.
+- Current implementation task: BP-05.03/B1 publication/resolver integration; save/read and pinned validation verified, Studio authoring remains.
 - Demonstrated behavior: B1 transport and page-model contracts verified in 28 owned Node tests and an independent source build; full foundation passes. B2 also verifies bounded synthetic browser interaction at desktop/narrow sizes. B3 also proves seven production-client browser failure cases; V1 actual Runtime/Studio replacement passed; .01 is archived with its aligned audit.
-- Blockers: none for .03 activation review; missing owner projections are explicit engineering scope, scientific owners remain later dependencies.
+- Blockers: none for .03/B1; missing owner projections are explicit engineering scope, scientific owners remain later dependencies.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
 

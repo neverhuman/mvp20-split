@@ -163,3 +163,7 @@ Runtime-private migration, atomic draft save and scoped read/receipt HTTP pass9 
 ## 2026-09-29 22:38:36 - draft save/read verified
 
 Draft save/read checkpoint verified:9 focused real-PostgreSQL/API/domain tests; full foundation1263 Python +65 Node tests,19 independent installs, Registry replacement4630d6328e264bf68d893efedda7cdc1 and REC-01..09 scope6668df086dcc4c6ab407f88aba92e4d9 pass. Runtime0.14.0/graph-runtime0.8.0;194 schemas preserve182 predecessor bytes. Validation, publication/admission and Studio authoring remain; child0%=0/4, Build0%, Acceptance0%, parent50%=8/16 unchanged.
+
+## Pinned validation checkpoint - 2026-09-29 23:03:28
+
+Pinned validation verified:18 owned tests; full foundation1272 Python +65 Node tests,19 independent installs and REC-01..09 pass. Runtime0.15.0/runtime_0016 retain exact scoped tool/schema material and immutable validation results with original receipts;194 public schema bytes remain unchanged. Publication/admission integration and Studio authoring remain B1 work. Child0%=0/4, Build0%, Acceptance0%; parent50%=8/16 unchanged. Registry replacement scope5e1310d8ba30494c949de17a21600c16; recovery scope02d683d24eeb4badb27dd62141881168. Definitions coverage338/354 statements and62/78 branches. [Evidence](../Audits/Evidence/BP-05-Authoring/Validation.json). No independent draft-process replacement, publication or scientific acceptance claim.

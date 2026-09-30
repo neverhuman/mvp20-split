@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-09-29 23:03:28",
+  "status": "partial_B1_verified",
+  "runtime_version": "0.15.0",
+  "migration": "runtime_0016",
+  "python_tests": 1272,
+  "node_tests": 65,
+  "independent_installs": 19,
+  "focused_definition_tests": 18,
+  "coverage": {
+    "statements": "338/354",
+    "branches": "62/78",
+    "scope": "definitions module only"
+  },
+  "public_schema_files_unchanged": 194,
+  "recovery_scope": "02d683d24eeb4badb27dd62141881168",
+  "registry_replacement_scope": "5e1310d8ba30494c949de17a21600c16",
+  "limitations": [
+    "No publication/admission integration or Studio authoring yet.",
+    "Independent authoring process replacement remains V1; foundation checks existing installed boundaries.",
+    "Structural validity is not current eligibility, scientific acceptance or permission to execute."
+  ]
+}
