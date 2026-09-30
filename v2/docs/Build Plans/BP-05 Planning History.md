@@ -191,3 +191,7 @@ DraftSession prerequisite verified: scoped next-campaign local/base state, immut
 ## Draft command loader - 2026-09-30 11:50:01
 
 Draft command-loader prerequisite verified: explicit original-receipt reconciliation, exact committed record reads, immutable observed terminal outcomes and generation fencing.87 Node tests pass in isolated locked install c32d063d40224063b0e0355a4c9dc4df; five asynchronous synthetic-peer cases added. No automatic retries or polling. Registry/schema forms, comparison and separate emergency presentation remain B1; child0%=0/4, Build0%, Acceptance0%; parent50%=8/16 unchanged. [Evidence](../Audits/Evidence/BP-05-Authoring/DraftCommands.json).
+
+## Editor discovery and numeric compatibility - 2026-09-30 11:59:37
+
+Editor discovery prerequisite verified:95 Node tests pass in isolated locked install a557fd0e9ffa451085dacdae3e805746; eight owned Registry/reviewed-lock/lazy-schema cases. Exact tool/port/schema identity, bounded page replacement and parallel denial fences are implemented. Forms/comparison/emergency presentation remain B1; child0%=0/4, Build0%, Acceptance0%; parent50%=8/16 unchanged. Numeric literal command mismatch reproduced; a versioned encoding correction is proposed for owner direction, without changing legacy bytes or reopening BP-02. [Evidence](../Audits/Evidence/BP-05-Authoring/EditorCatalog.json).

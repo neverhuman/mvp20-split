@@ -1,12 +1,14 @@
 # Architecture Drift
 
 - Status: BP-05 active; BP-04 and all six children closed/audited.
-- Last refreshed: `2026-09-29 22:06:45` (America/Chicago).
+- Last refreshed: `2026-09-30 11:59:37` (America/Chicago).
 - Scope: v2 design/implementation alignment
 - Active focus: BP-05.03 definition drafts and safe commands; .01/.02 are closed with aligned audits in history.
 - Next gate: BP-05.03/B1 definition-authoring boundary; activation audit corrected_ready. No unresolved .02 blocking drift.
 
 ## Active Findings
+
+- `2026-09-30 11:59:37`: BP-05.03 numeric command compatibility gap: public graph NumberConstant permits floats, but Commands0.1.0 rejects both raw decimal tokens and DTO-normalized integral floats. SaveDraft JSON validation passes while owner parsing rejects. Blocks numeric literal authoring/admission; existing integer constants and artifact-produced values are distinct. Owner: Commands/Runtime, active BP-05.03/B1. [Versioned correction proposed for direction](../Build%20Plans/BP-05/BP-05.03%20Numeric%20command%20encoding%20decision.md); no legacy encoding or closed-plan changes made.
 
 - `2026-09-23 09:41:20`: Service isolation replaces broad engine/domain packaging; standalone tool workloads use the existing registry as node index. Cross-service research-acceptance receipts, artifact reservations and revocation/effect checks require concrete protocol fixtures before implementation; atomic runtime commit must not be mistaken for atomic scientific-domain acceptance. Owner: System/Capabilities, prerequisite to service deployment. K3s/Kubernetes mappings remain proposed, with no operational evidence.
 
