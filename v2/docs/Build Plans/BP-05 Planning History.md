@@ -135,3 +135,7 @@ Scoped Runtime named-view catalog and Studio lineage consumer verified:111 Pytho
 ## 2026-09-29 21:23:21 ? BP-05.02/B1 verified
 
 Navigation/catalog/lineage and linked execution-evidence inspectors pass their B1 gate:1245 Python tests,53 Node tests,19 isolated Python installs, REC-01..09 scope4ad3384b504d40848373fa8fa1be4eae;three7-case browser suites/two viewport A/AA checks and isolated Studio builde34a0dbd5382429bbbc09f018dd1424f. Child25%=1/4, Build33.33%, Acceptance0%; parent31.25%=5/16. B2 active; B3/V1 actual-owner navigation remains required. Evidence: `docs/Audits/Evidence/BP-05-Navigation/B1.json`.
+
+## 2026-09-29 21:53:46 - BP-05.02/B2 verified
+
+B2 verified:65 Node tests,10 navigation browser scenarios plus7 Monitor/7 evidence regressions, desktop/narrow A/AA scans and isolated Studio78419600cae84ca997de10c5ba0544d7. Loaded-code coverage99.28% lines/86.97% branches/94.57% functions (includes test fixtures; no React instrumentation). Historical pins remain bounded ephemeral captures, not historical frontier queries. Scientific comparison is fixture-only. Child50%=2/4, Build66.67%, Acceptance0%; parent37.5%=6/16. B3 actual-owner evidence journey is active.

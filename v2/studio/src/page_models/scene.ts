@@ -3,6 +3,11 @@ export type SceneNode = Readonly<{ id: string; label: string; status: string; x:
 export type SceneEdge = Readonly<{ id: string; source: string; target: string }>;
 export type ScenePage = Readonly<{ nodes: readonly SceneNode[]; edges: readonly SceneEdge[]; total: number; offset: number }>;
 export type Viewport = Readonly<{ x: number; y: number; zoom: number }>;
+export function checkedViewport(value: Viewport): Viewport {
+  if (![value.x, value.y, value.zoom].every(Number.isFinite) || value.zoom < 0.1 || value.zoom > 2)
+    throw new Error("Invalid viewport");
+  return Object.freeze({ ...value });
+}
 
 export class SceneWindow {
   readonly limit = 200;
@@ -38,9 +43,7 @@ export class SceneWindow {
   }
 
   setViewport(value: Viewport): void {
-    if (![value.x, value.y, value.zoom].every(Number.isFinite) || value.zoom < 0.1 || value.zoom > 2)
-      throw new Error("Invalid viewport");
-    this.viewport = Object.freeze({ ...value });
+    this.viewport = checkedViewport(value);
   }
 
   get omitted(): number { return this.total - this.nodes.length; }

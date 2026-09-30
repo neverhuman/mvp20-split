@@ -15,6 +15,8 @@ test("authored links remain unresolved until their target page arrives", () => {
   assert.equal(full.omittedNodes, 0);
   assert.deepEqual(full.visibleEdges, page.edges);
   assert.equal(window.omittedNodes, 1);
+  const reordered = Object.fromEntries(Object.entries(page.graph_scope).reverse()) as typeof page.graph_scope;
+  assert.equal(window.append({ ...page, graph_scope: reordered, nodes: page.nodes.slice(1), edges: [] }).omittedNodes, 0);
 });
 
 test("scope, query, revision and false completeness cannot mix in topology", () => {

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from 'react';
+import { useCallback, useMemo, useSyncExternalStore } from 'react';
 import type { NavigationModel } from '../page_models/navigation.js';
 import type { MonitorModel, MonitorView } from '../page_models/monitor.js';
 import { SceneWindow } from '../page_models/scene.js';
@@ -14,11 +14,9 @@ export function NavigationPane({ navigation, monitor, observation, namedViews, e
 }) {
   const subscribe = useCallback((notify: () => void) => navigation.subscribe(notify), [navigation]);
   const view = useSyncExternalStore(subscribe, () => navigation.snapshot);
-  const [offset, setOffset] = useState(0);
+  const offset = view.offset;
   const anchor = (observation.phase === 'ready' || observation.phase === 'empty') ? observation.window?.snapshot : null;
-  useEffect(() => { navigation.bind(anchor ?? null); if (anchor) void navigation.scopes(); }, [navigation, anchor]);
   const page = view.topology?.page;
-  useEffect(() => { setOffset(0); }, [page?.graph_scope.scope_key, page?.query.focus_activation_id, page?.cut.revision]);
   const scene = useMemo(() => {
     const result = new SceneWindow();
     if (!page) return result;
@@ -40,12 +38,16 @@ export function NavigationPane({ navigation, monitor, observation, namedViews, e
       <button onClick={() => void navigation.scopes()} disabled={!anchor}>Root groups</button>
       <span>Revision {page?.cut.revision ?? anchor?.cut.revision ?? 'unavailable'} · Read-only authored connections</span>
     </div>
+    {page && <p>Occurrence: {page.graph_scope.occurrences.length ? page.graph_scope.occurrences.map(item => `${item.node_id} [${item.index}]`).join(' / ') : 'root graph'}
+      {view.scopes && !view.scopes.scopes.some(scope => scope.scope_key === page.graph_scope.scope_key) ? ' · selected group is outside the loaded group page' : ''}</p>}
+    {observation.selection && !scene.nodes.some(node => node.id === observation.selection) && <p>Selected activation is outside this window.</p>}
     <p role="status" data-testid="navigation-status">{view.error?.message ?? (view.phase === 'loading' ? 'Loading occurrence groups…' :
       view.topologyPhase === 'loading' ? 'Loading authored topology…' : page ?
       `${scene.nodes.length} nodes shown · ${scene.omitted} outside this window · ${view.topology!.unresolvedEdges} links await an unloaded target` :
       'Choose an occurrence group to explore its authored graph.')}</p>
     <div className="work-area">
-      <GraphCanvas nodes={scene.nodes} edges={scene.edges} selection={observation.selection} select={select} />
+      <GraphCanvas nodes={scene.nodes} edges={scene.edges} selection={observation.selection} select={select}
+        initialViewport={view.viewport} rememberViewport={viewport => navigation.setViewport(viewport)} />
       <aside className="navigation-inspector" aria-label="Occurrence navigator">
         <MonitorDetail view={observation} />
         {evidence && <EvidencePane model={evidence} monitor={monitor} observation={observation} />}
@@ -63,12 +65,14 @@ export function NavigationPane({ navigation, monitor, observation, namedViews, e
             <span>{node.label}</span><small>{node.status}</small></button>
             <button onClick={() => void navigation.open(page!.graph_scope.scope_key, { focus_activation_id: node.id, radius: 1 })}>Neighborhood of {node.label}</button>
             {record.child_scope_count > 0 && <button onClick={() => void navigation.scopes(node.id)}>Open {record.child_scope_count} child groups of {node.label}</button>}
+            {(record.activation.kind === 'iterate' || record.activation.kind === 'scatter') && record.child_scope_count === 0 &&
+              <p>No occurrence groups instantiated yet; the nested definition is not expanded in this observation.</p>}
           </li>;
         })}</ul>
         <div className="pages">
           <button disabled={!page?.next_cursor || view.loadingMore || view.topologyPhase !== 'ready'} onClick={() => void navigation.more()}>Load topology page</button>
-          <button disabled={offset === 0} onClick={() => setOffset(0)}>First window</button>
-          <button disabled={!page || offset + scene.limit >= page.nodes.length} onClick={() => setOffset(offset + scene.limit)}>Next window</button>
+          <button disabled={offset === 0} onClick={() => navigation.setOffset(0)}>First window</button>
+          <button disabled={!page || offset + scene.limit >= page.nodes.length} onClick={() => navigation.setOffset(offset + scene.limit)}>Next window</button>
         </div>
         <h2>Authored links in this window</h2>
         <ul>{scene.edges.map(edge => <li key={edge.id}>{scene.nodes.find(node => node.id === edge.source)?.label} → {scene.nodes.find(node => node.id === edge.target)?.label}

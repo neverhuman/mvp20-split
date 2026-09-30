@@ -16,12 +16,13 @@ export interface MonitorView {
   readonly detailPhase: RegionPhase;
   readonly error: ReadFailure | null;
   readonly detailError: ReadFailure | null;
+  readonly fetchedAt: string | null;
 }
 
 /** Owns the Monitor graph, selected-detail and invalidation regions; renderers only subscribe. */
 export class MonitorModel {
   private view: MonitorView = Object.freeze({ phase: "idle", window: null, loadingMore: false,
-    selection: null, detail: null, detailPhase: "idle", error: null, detailError: null });
+    selection: null, detail: null, detailPhase: "idle", error: null, detailError: null, fetchedAt: null });
   private context: RunContext | undefined;
   private query: ReadQuery = {};
   private visible = true;
@@ -32,7 +33,7 @@ export class MonitorModel {
   private readonly eventLane = new RequestLane();
   private readonly listeners = new Set<() => void>();
 
-  constructor(private readonly source: ObservationSource) {}
+  constructor(private readonly source: ObservationSource, private readonly now: () => string = () => new Date().toISOString()) {}
   get snapshot(): MonitorView { return this.view; }
   subscribe(listener: () => void) { this.listeners.add(listener); return () => { this.listeners.delete(listener); }; }
   private patch(fields: Partial<MonitorView>) {
@@ -45,7 +46,7 @@ export class MonitorModel {
     if (this.disposed) return;
     if (!this.context || contextKey(this.context) !== contextKey(context)) {
       this.graphLane.cancel(); this.detailLane.cancel(); this.eventLane.cancel();
-      this.patch({ window: null, selection: null, detail: null, detailPhase: "idle" });
+      this.patch({ window: null, selection: null, detail: null, detailPhase: "idle", fetchedAt: null });
     }
     this.context = { scope: { ...context.scope }, run: context.run };
     this.query = { scope_key: query.scope_key ?? null, frontier_only: query.frontier_only ?? false };
@@ -62,7 +63,7 @@ export class MonitorModel {
       if (!ticket.current()) return;
       const window = GraphWindow.open(context, query, page);
       this.events = new EventPosition(page.snapshot.cut.revision, page.snapshot.event_cursor);
-      this.patch({ window, phase: window.snapshot.node_count === 0 ? "empty" : "ready" });
+      this.patch({ window, phase: window.snapshot.node_count === 0 ? "empty" : "ready", fetchedAt: this.now() });
       if (this.view.selection) await this.select(this.view.selection);
     } catch (error) { if (ticket.current()) this.graphFailure(error); }
   }
@@ -149,7 +150,11 @@ export class MonitorModel {
 
   async setVisible(visible: boolean) {
     this.visible = visible;
-    if (!visible) this.eventLane.cancel();
+    if (!visible) {
+      this.graphLane.cancel(); this.detailLane.cancel(); this.eventLane.cancel();
+      if (this.context && this.view.phase !== "denied")
+        this.patch({ phase: "stale", loadingMore: false, detail: null, detailPhase: "stale" });
+    }
     else if (this.view.phase === "stale") await this.refresh();
   }
 
@@ -158,7 +163,7 @@ export class MonitorModel {
     this.graphLane.cancel(); this.detailLane.cancel(); this.eventLane.cancel();
     if (failure.kind === "denied") {
       this.events = undefined;
-      this.patch({ window: null, selection: null });
+      this.patch({ window: null, selection: null, fetchedAt: null });
     }
     this.patch({ phase: failure.kind === "resnapshot" ? "stale" : failure.kind === "denied" ? "denied" : "failed",
       error: failure, loadingMore: false, detail: null, detailPhase: "idle" });

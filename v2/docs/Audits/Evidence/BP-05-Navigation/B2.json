@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-09-29 21:53:46",
+  "delivery": "BP-05.02/B2",
+  "status": "passed",
+  "node_tests": 65,
+  "browser_navigation": {
+    "status": "passed",
+    "browser": "153.0.8010.12",
+    "scenarios": [
+      "partial target omission",
+      "authored edge after pagination",
+      "keyboard node-to-detail selection",
+      "named lineage uses public owner route",
+      "scientific views explicitly unavailable",
+      "hidden pane performs no reads; reopening restores occurrence, selection and viewport at new cut",
+      "bounded historical capture stays at revision 2 while live advances to 3",
+      "controlled visibility event restores fresh cut; no real browser throttling claim",
+      "stale topology cleared",
+      "denied navigation clears both regions"
+    ],
+    "limits": [
+      "Scripted public HTTP contracts; not actual Runtime integration or scientific acceptance."
+    ]
+  },
+  "monitor_cases": 7,
+  "evidence_cases": 7,
+  "isolated": "78419600cae84ca997de10c5ba0544d7",
+  "limitations": [
+    "Scripted public peers; B3/V1 actual owners remain required.",
+    "Scientific comparison fixture-only.",
+    "Pins are bounded local captures, not retained frontier queries.",
+    "Visibility events controlled; no browser throttling claim."
+  ]
+}

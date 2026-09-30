@@ -1,5 +1,11 @@
 # Monitor page models
 
+Current BP-05.02/B2 checkpoint: B2 verified:65 Node tests,10 navigation browser scenarios plus7 Monitor/7 evidence regressions, desktop/narrow A/AA scans and isolated Studio78419600cae84ca997de10c5ba0544d7. Loaded-code coverage99.28% lines/86.97% branches/94.57% functions (includes test fixtures; no React instrumentation). Historical pins remain bounded ephemeral captures, not historical frontier queries. Scientific comparison is fixture-only. Child50%=2/4, Build66.67%, Acceptance0%; parent37.5%=6/16. B3 actual-owner evidence journey is active.
+
+InspectionHistory/history_pin own at most8 scope-bound2MiB local immutable captures, each with at most200 scene nodes and explicit omissions; no persistence or network. Scope change or read denial clears pins. Monitor records fetch time separately, cancels hidden requests; Navigation.observe restores occurrence/query/viewport with a fresh cut on activation. Workspace coordinates hidden navigation; pinned presentation has no loader. PropertySeries partitions exact state/method/unit/applicability/model context, retains time ties and separates explanation from causal assertions; no scientific owner implemented. Stable hash group ordering is not chronological.
+
+Earlier checkpoint evidence follows; it is historical, not current progress.
+
 BP-05.02 catalog checkpoint: ViewCatalog validates the scoped owner capability receipt and resolves only registered named views with typed/bounded filters. NamedViewsModel owns catalog and immutable lineage request lanes, fencing late replies on rebind/disposal; missing lineage is unavailable, not invented empty success. It validates run/scope/plan identity and leaves scientific views unavailable. VIEW-01/VIEW-04 and loader tests pass. Earlier coverage figures are the navigation checkpoint, not new catalog-module coverage.
 
 BP-05.02/B1 adds TopologyWindow: same-cut/scope/query pagination, unique membership, source-page link ownership and explicit unresolved targets. Whole scope storage is bounded by256 authored nodes; presentation remains independently bounded. Two focused tests pass; browser navigation is not yet implemented. Earlier coverage numbers below describe predecessor evidence only.

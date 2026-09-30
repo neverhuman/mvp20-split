@@ -1,5 +1,11 @@
 # Monitor presentation
 
+Current BP-05.02/B2 checkpoint: B2 verified:65 Node tests,10 navigation browser scenarios plus7 Monitor/7 evidence regressions, desktop/narrow A/AA scans and isolated Studio78419600cae84ca997de10c5ba0544d7. Loaded-code coverage99.28% lines/86.97% branches/94.57% functions (includes test fixtures; no React instrumentation). Historical pins remain bounded ephemeral captures, not historical frontier queries. Scientific comparison is fixture-only. Child50%=2/4, Build66.67%, Acceptance0%; parent37.5%=6/16. B3 actual-owner evidence journey is active.
+
+InspectionHistory/history_pin own at most8 scope-bound2MiB local immutable captures, each with at most200 scene nodes and explicit omissions; no persistence or network. Scope change or read denial clears pins. Monitor records fetch time separately, cancels hidden requests; Navigation.observe restores occurrence/query/viewport with a fresh cut on activation. Workspace coordinates hidden navigation; pinned presentation has no loader. PropertySeries partitions exact state/method/unit/applicability/model context, retains time ties and separates explanation from causal assertions; no scientific owner implemented. Stable hash group ordering is not chronological.
+
+Earlier checkpoint evidence follows; it is historical, not current progress.
+
 The optional NamedViewsModel supplies the named-view panel under authored graph navigation. Runtime capabilities are versioned/scoped; retained predecessor run/plan/revision and carried bindings come through the public lineage read. Property/material/model/knowledge projections explicitly remain unavailable. Seven navigation browser scenarios, two viewport/A/AA scans and screenshot review pass against scripted peers; actual-owner navigation acceptance is still open.
 
 Status: BP-05.01/B3 verified in seven Chromium scenarios/two viewports and an independent source build; V1 actual available-owner integration/replacement also passed; BP-05.01 is closed. Architecture: [Studio](../../../docs/Architecture/Experience/Studio.md), [canvas decision](../../../docs/Architecture/Experience/Studio_Canvas_Decision.md).

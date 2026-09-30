@@ -4,6 +4,9 @@ import { ReadFailure } from "../transport/failure.js";
 
 const queryKey = (query: TopologyQuery) => JSON.stringify([query.focus_activation_id ?? null, query.radius ?? 1]);
 const edgeKey = (edge: GraphTopologyPage["edges"][number]) => JSON.stringify([edge.source, edge.target, edge.route]);
+const scopeKey = (scope: GraphTopologyPage["graph_scope"]) => JSON.stringify([scope.scope_key, scope.definition_path,
+  scope.occurrences.map(item => [item.kind, item.node_id, item.index, "membership_sha256" in item ? item.membership_sha256 : null]),
+  scope.parent_activation_id, scope.status, scope.node_count]);
 const invalid = () => { throw new ReadFailure("invalid_response"); };
 
 /** A single bounded occurrence scope. Links to unloaded targets stay explicitly unresolved. */
@@ -32,7 +35,7 @@ export class TopologyWindow {
     const previous = this.page;
     if (cutKey(previous.cut) !== cutKey(page.cut)) throw new ReadFailure("resnapshot");
     if (!previous.next_cursor || page.next_cursor === previous.next_cursor ||
-        JSON.stringify(page.graph_scope) !== JSON.stringify(previous.graph_scope) ||
+        scopeKey(page.graph_scope) !== scopeKey(previous.graph_scope) ||
         queryKey(page.query) !== queryKey(previous.query) || page.node_count !== previous.node_count ||
         page.edge_count !== previous.edge_count) invalid();
     // A producer charges each edge to its source page, including later pages.

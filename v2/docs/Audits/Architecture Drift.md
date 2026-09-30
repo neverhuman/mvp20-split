@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-05 active; BP-04 and all six children closed/audited.
-- Last refreshed: `2026-09-29 21:23:21` (America/Chicago).
+- Last refreshed: `2026-09-29 21:53:46` (America/Chicago).
 - Scope: v2 design/implementation alignment
 - Active focus: BP-05 scoped graph/view navigation and explicit projection ownership; closed .01 evidence is in drift history.
-- Next gate: BP-05.02/B2 view consistency/history/comparison policy; B1 explicit owner projections and scoped consumer compatibility verified. Child B3/V1 still own actual navigation integration/replacement and final drift audit.
+- Next gate: BP-05.02/B3 actual-owner evidence journey; B1/B2 projections, consumer compatibility and pinned-view policies verified. Child B3/V1 still own actual navigation integration/replacement and final drift audit.
 
 ## Active Findings
 
