@@ -48,7 +48,7 @@ A scientist drafts a node change while a campaign runs. The editor preserves the
 
 ## Design Basis and Open Decisions
 
-Human Graph Studio requirements define editing, traversal and intervention. Remaining decisions: graph rendering/layout technology, server projection/query contract, large-context interaction budgets and representative usability tasks. A fast canvas is not proof that users can understand or safely change the campaign.
+Human Graph Studio requirements define editing, traversal and intervention. [Canvas decision](Studio_Canvas_Decision.md) selects React19.3/React Flow12.12 after the bounded B2 browser comparison. Remaining decisions: production projection/query integration, automatic layout strategy, large-context interaction budgets and representative usability tasks. A fast canvas is not proof that users can understand or safely change the campaign.
 
 ## Interaction Reference Patterns
 

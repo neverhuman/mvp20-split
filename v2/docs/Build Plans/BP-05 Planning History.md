@@ -2,6 +2,12 @@
 
 Archived first draft at `2026-09-25 13:35:12`. Historical task pairs/percentages are not the active execution tracker. The parent and linked children now own progress. Original scope is preserved below for traceability.
 
+## Verified B2 checkpoint ? 2026-09-29 19:43:46
+
+Bounded 200-record scene against a server-side 10,000-node synthetic source passed actual Chromium interaction with React Flow and Cytoscape. Both preserve selection/viewport and support keyboard/list search, paging and explicit reveal. React Flow native node keyboard selection also passed. Desktop1440?1000 and narrow390?844 automated scans found no remaining A/AA violations; actual screenshots inspected. Fixed controlled-selection callback race, attribution contrast and long-label overlap. React19.3/React Flow12.12 selected; Cytoscape3.34.3 remains a comparison dependency. Thirty Node tests and independent source build pass; scene module100% lines/branches/functions. [Evidence](../Audits/Evidence/BP-05-Interaction/B2.json), [decision](../Architecture/Experience/Studio_Canvas_Decision.md). No Runtime integration, screen-reader conformance, target-host or scientific claim.
+
+At this checkpoint child50% (2/4), Build66.67%, Acceptance0%; parent12.50% (2/16). B3 production-model browser failure proof is next. Earlier foundation evidence remains unchanged; no backend owner code changed in B2.
+
 ## Verified B1 checkpoint ? 2026-09-29 19:29:14
 
 BP-05.01/B1 completed: generated public contracts, bounded abortable transport, coherent snapshot/cursor windows, selection/revision fencing and access-denial races. 28 owned Node tests passed with 100% lines / 90.82% branches / 94% functions over loaded Studio production modules. Independent Node source build passed; full foundation passed 1223 Python tests, 19 package installs and REC-01..09. No browser or live Runtime UI claim. [Evidence](../Audits/Evidence/BP-05-Interaction/B1.json).

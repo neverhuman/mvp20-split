@@ -125,7 +125,14 @@
     "runner": "node",
     "entrypoint": "studio/scripts/verify.mjs",
     "tests": "studio/tests",
-    "coverage_sources": ["studio/src/contracts", "studio/src/transport", "studio/src/page_models"]
+    "coverage_sources": [
+      "studio/src/contracts",
+      "studio/src/transport",
+      "studio/src/page_models"
+    ],
+    "acceptance_tests": [
+      "studio/spikes/interaction/tests"
+    ]
   },
   "solver-retain": {
     "tests": "tools/solver_retain/tests",

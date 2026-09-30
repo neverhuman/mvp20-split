@@ -1,6 +1,6 @@
 # Graph Studio
 
-Status: BP-05.01/B1 transport/page-model spike verified; no rendered UI or selected canvas yet. Architecture: [Studio](../docs/Architecture/Experience/Studio.md), [read-model protocol](../docs/Architecture/Experience/Studio_Read_Model_Protocol.md).
+Status: BP-05.01/B1-B2 verified; production-model browser failure proof (B3) active. React Flow selected by measured prototype; no live-owner UI integration yet. Architecture: [Studio](../docs/Architecture/Experience/Studio.md), [read-model protocol](../docs/Architecture/Experience/Studio_Read_Model_Protocol.md).
 
 This independently packaged browser consumer owns presentation state and public HTTP transport. It owns no run database, scientific rules, execution authority or backend credentials. Runtime observations are authoritative; notifications request refresh rather than patching graph state. Design/Monitor/Explore/Compare presentation comes in the following gates; current code implements Monitor's transport/state boundary only.
 
@@ -16,4 +16,4 @@ The Python-published serialization schemas remain canonical. Generated files are
 
 `/api/runtime` is the declared same-origin gateway adapter prefix, not a claim that a deployed gateway exists. Session/backend credential handling must remain server-side. The B1 source has no component-local fetches or mutation commands. Human edits will target next-campaign drafts; this package cannot alter a live scientific pathway.
 
-Replacement must preserve generated wire compatibility, bounded reads, cancellation plus generation fencing, truthful stale/denied/partial states and selection scope. Preserve local drafts/layout independently of Runtime revisions when those modules arrive. No persistent browser run store is introduced. Browser/framework/canvas choices remain the measured B2 spike; do not substitute this package's passing Node tests for visual acceptance.
+Replacement must preserve generated wire compatibility, bounded reads, cancellation plus generation fencing, truthful stale/denied/partial states and selection scope. Preserve local drafts/layout independently of Runtime revisions when those modules arrive. No persistent browser run store is introduced. [B2 prototype](spikes/interaction/README.md) records the measured React Flow/Cytoscape comparison and actual browser evidence; it does not replace B3 production-model browser failures or V1 owner integration.

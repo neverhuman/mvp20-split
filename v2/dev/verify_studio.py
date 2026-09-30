@@ -31,7 +31,7 @@ def main():
         staged = workspace / "studio"
         staged.mkdir()
         files = [source / name for name in ("package.json", "package-lock.json", "tsconfig.json")]
-        files.extend(path for folder in ("src", "tests", "scripts") for path in (source / folder).rglob("*") if path.is_file())
+        files.extend(path for folder in ("src", "tests", "scripts", "spikes") for path in (source / folder).rglob("*") if path.is_file())
         for path in files:
             target = staged / path.relative_to(source)
             target.parent.mkdir(parents=True, exist_ok=True)

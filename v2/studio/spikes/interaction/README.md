@@ -1,0 +1,19 @@
+# Interaction comparison prototype
+
+Status: BP-05.01/B2 verified in local Chromium; production Monitor integration remains B3/V1. Architecture: [canvas decision](../../../docs/Architecture/Experience/Studio_Canvas_Decision.md).
+
+The user is an internal researcher locating a node and following its status without editing an active campaign. The primary action is selection; graph pan/zoom, server-side search and bounded page navigation provide context. This module is a disposable comparison harness, not a service, gateway, scientific tool or alternative Runtime authority.
+
+`server.mjs` serves only the bundled prototype and a labeled synthetic source. It defines 10,000 logical nodes with explicit five-stage fixture edges and returns at most 200 nodes per request. Search scans the fixture on the server. The browser never downloads all 10,000 records. The 200-node requirement means the loaded/renderable scene, not fitting every label into one screen; the canvas is intentionally pannable.
+
+`main.tsx` owns fixture request cancellation/generation fencing and the shared scene/list/inspector. `renderers.tsx` contains interchangeable React Flow and Cytoscape adapters. `style.css` owns the prototype typography, spacing, status, focus and reduced-motion vocabulary. These files are deliberately separate from production transport; do not copy the fixture loader into the real Monitor. Real observation tests must use `ObservationClient` and `MonitorModel`.
+
+The reusable [SceneWindow](../../src/page_models/scene.ts) owns a maximum of 200 nodes, validates explicit edges and keeps presentation selection and viewport. It rejects malformed replacements atomically. Retained selection outside the current window is labeled; it is not a new authoritative observation. Canvas labels are bounded to avoid overlap; the full label remains available in the list and inspector. Layout changes cannot mutate executable topology.
+
+Both candidates share accessible list buttons, search, page navigation, pan/zoom and explicit reveal controls. React Flow also supports direct node focus/Enter selection. The Cytoscape candidate exposes the graph as an image and relies on the list for keyboard node access. No layout preference is persisted and no mutations are issued. Loading, empty and unavailable states remain explicit.
+
+Run `npm run preview:interaction` for a loopback-only preview; the command prints its ephemeral URL. Run `npm run test:interaction` for the owned Playwright/axe harness after `npx playwright install chromium`. Tests and screenshots live in `tests/browser.mjs` and ignored `../.test-results/studio-interaction/<scope>/`. No remote scientific source or owner credentials are involved. Node model tests are `tests/page_models/scene.test.ts` in the Studio package; `npm test -- --area=page_models --coverage` runs them with the existing model suite.
+
+Verification covers both renderers at 1440×1000 and 390×844, five initial loads and five page updates each, keyboard/list selection, server search, explicit reveal, retained viewport/selection, long-label overlap, loading/unavailable/empty states and automated WCAG A/AA scans. Durations include Playwright navigation/action overhead, HTTP, model/render work and two animation frames; they are not frame-time or target-host latency measurements. Automated scans do not establish full accessibility conformance or replace screen-reader evaluation.
+
+Replacement acceptance: preserve the 200-record boundary, explicit edge ownership, selection/revision separation, list parity and accessible controls. Re-run the browser harness, inspect screenshots, and record candidate/version, viewport, timing method and limitations. B3 still owns production-model stale/detail/denied/expiry browser races; V1 owns real available Runtime integration.
