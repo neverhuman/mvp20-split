@@ -2,6 +2,10 @@
 
 Archived first draft at `2026-09-25 13:35:12`. Historical task pairs/percentages are not the active execution tracker. The parent and linked children now own progress. Original scope is preserved below for traceability.
 
+## BP-05.03 B1 comparison and form models - 2026-09-30 14:25:13
+
+DraftComparison now reports bounded structural changes, stable node identity/reordering, bindings and context with explicit omitted counts and no scientific compatibility grant. SchemaFields derives bounded scalar controls from reviewed object schemas; unsupported structured fields require graph bindings. Numeric text rejects overflow, nonzero underflow and fractional rounding in integer fields before conversion. 76 scoped page-model tests and106 independently installed Studio tests pass (cdbe7ac1d5f047968aba8f3080ccae6d). New module coverage: comparison100% lines/93.65% branches; numeric100%/100%; schema96.63%/94.74%. Unsupported-schema/depth defensive branches remain partially uncovered. No public schema/package/backend changes or browser acceptance claimed. B1 remains0/4; parent50%=8/16. Next: node/port editor and separate emergency presentation, then browser/owner proof.
+
 ## BP-05.01 closeout ? 2026-09-29 20:06:20
 
 V1 actual-owner integration passed scopebbdae9f627f047419c5c53283a6c7bd4: two independent npm builds (30 tests each),17 wheels/12 Python installs, real Runtime/Registry/Artifact/five tools. Browser compared all12 initial/28 successor nodes and selected details to independent DTO-only reads. Three browser/Runtime replacement checks preserved old snapshot/event cursors and immutable observations; original17-invocation/44-reservation source workflow assertions passed. [V1 evidence](../Audits/Evidence/BP-05-Interaction/V1.json), [audit](../Audits/BP-05.01_Interaction_Closeout.md).
