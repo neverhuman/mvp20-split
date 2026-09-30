@@ -1,10 +1,13 @@
 import { createRoot } from 'react-dom/client';
 import { ObservationClient } from '../../src/transport/observations.js';
 import { MonitorModel } from '../../src/page_models/monitor.js';
+import { NavigationModel } from '../../src/page_models/navigation.js';
 import { MonitorWorkspace } from '../../src/presentation/monitor_workspace.js';
 import { context } from '../fixtures/observations.js';
-const model = new MonitorModel(new ObservationClient());
-declare global { interface Window { observationHarness: { model: MonitorModel } } }
-window.observationHarness = { model };
-createRoot(document.getElementById('root')!).render(<MonitorWorkspace model={model} context={context} synthetic />);
-window.addEventListener('pagehide', () => model.dispose());
+const client = new ObservationClient();
+const model = new MonitorModel(client), navigation = new NavigationModel(client);
+declare global { interface Window { observationHarness: { model: MonitorModel; navigation: NavigationModel } } }
+window.observationHarness = { model, navigation };
+createRoot(document.getElementById('root')!).render(<MonitorWorkspace model={model} context={context} synthetic
+  {...(location.search.includes('navigation=1') ? { navigation } : {})} />);
+window.addEventListener('pagehide', () => { model.dispose(); navigation.dispose(); });

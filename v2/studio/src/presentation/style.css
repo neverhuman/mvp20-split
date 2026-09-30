@@ -176,6 +176,26 @@ aside {
   border-bottom:1px solid var(--line);
   min-height:168px;
 }
+.navigation-inspector {
+  overflow:auto;
+}
+.navigation-inspector > * {
+  flex-shrink:0;
+}
+.navigation-inspector .node-list {
+  flex:none;
+  min-height:0;
+  max-height:none;
+  overflow:visible;
+}
+.navigation-inspector > h2 {
+  padding:16px 16px 8px;
+  font-size:12px;
+}
+.navigation-inspector > p {
+  padding:12px 16px;
+  font-size:12px;
+}
 .inspector h2 {
   overflow-wrap:anywhere;
 }

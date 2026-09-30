@@ -123,3 +123,7 @@ BP-05.02 now specifies named, scoped, revision-bound scientific views and matchi
 ## 2026-09-29 20:32:51 ? BP-05.02 partial B1 checkpoint
 
 Runtime-owned authored topology and occurrence scope reads, public contracts and Studio transport/window mapping verified:109 Python regression tests,34 Node tests, isolated Studio install426906bd7a294db9a2c79536cf43d6c9. Full B1 remains open for catalog, navigation presentation and linked inspectors; child0/4=0%, parent4/16=25%. No completed predecessor reopened.
+
+## 2026-09-29 20:41:57 ? navigation consumer checkpoint
+
+Navigation loader/presentation partial B1:39 Node tests, five scripted browser scenarios/two viewport accessibility checks, seven Monitor browser regressions and isolated Studio build5606332b5b524cf1b7952308d62ff2db pass. Named catalog, full linked evidence and actual-owner navigation acceptance remain open; child0/4=0%, parent4/16=25%.

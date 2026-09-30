@@ -1,6 +1,6 @@
 # Consistent Graph Observation Protocol
 
-Design status: BP-04.05/B1 implemented with focused contract/PostgreSQL/HTTP tests; broader acceptance pending. Parent: [Graph Execution Model](Graph_Execution_Model.md).
+Design status: BP-04.05 accepted and closed; BP-05.02 additive navigation implementation in progress. Parent: [Graph Execution Model](Graph_Execution_Model.md).
 
 ## Authority and ownership
 
@@ -27,3 +27,9 @@ Snapshot pagination preserves its original expiry. Successful invalidation polli
 ## Verification and replacement
 
 Preserve all 168 predecessor schema artifacts. B1 adds owned contracts, routes/domain projections, consistent SQL reads, failure examples and module-local tests. B2/B3 use actual PostgreSQL and process barriers to prove activation/join/iteration recovery, reader consistency, duplicate/reordered invalidations, missing history, expiry and the one-active-run guard. V1 independently installs/replaces the observer and Runtime while retaining original plans, scoped cursors, receipts and committed lineage, then audits the complete BP-04 outcome. Target-host throughput, power-loss, Studio presentation and scientific validation remain separate plans.
+
+## Authored topology and occurrence navigation
+
+BP-05.02 adds Runtime-owned `graph_navigation` projections under graph-runtime0.6.0/Runtime0.12.0. Scope pages select roots or immediate children of an exact activation, preserving definition path and loop/scatter occurrence addresses. Topology reads resolve the immutable retained authored body inside Runtime and match each authored node to its activation in that occurrence scope. Activation order never creates links. Optional focus/radius0..2 bounds neighborhood discovery; returned links retain original direction/route.
+
+Both reads reuse the authenticated snapshot cut and signed query-bound continuation policy. At most100 nodes/scopes per page; one authored scope is bounded at256 nodes/1024 links. A link belongs to its source node's page; an unloaded target is explicit omitted context until fetched. Browser scenes remain independently bounded at200 nodes and expose additional windows. Read-only repeatable-read transactions and public contracts preserve owner isolation; no new persistence migration or second graph authority. Consumer and PostgreSQL regressions pass; named-view integration and independent navigation replacement remain BP-05.02 gates.

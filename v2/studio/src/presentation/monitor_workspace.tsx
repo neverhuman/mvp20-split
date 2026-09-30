@@ -4,12 +4,15 @@ import type { RunContext } from '../page_models/graph_window.js';
 import { SceneWindow } from '../page_models/scene.js';
 import { GraphCanvas } from './graph_canvas.js';
 import { MonitorDetail } from './monitor_detail.js';
+import type { NavigationModel } from '../page_models/navigation.js';
+import { NavigationPane } from './navigation_pane.js';
 import './style.css';
 
-export function MonitorWorkspace({ model, context, synthetic = false }: { model: MonitorModel; context: RunContext; synthetic?: boolean }) {
+export function MonitorWorkspace({ model, context, synthetic = false, navigation }: { model: MonitorModel; context: RunContext; synthetic?: boolean; navigation?: NavigationModel }) {
   const subscribe = useCallback((notify: () => void) => model.subscribe(notify), [model]);
   const view = useSyncExternalStore(subscribe, () => model.snapshot);
   const [filter, setFilter] = useState('');
+  const [topology, setTopology] = useState(false);
   useEffect(() => { void model.open(context); }, [model, context.scope.tenant_id, context.scope.project_id, context.run]);
   useEffect(() => {
     const visibility = () => { void model.setVisible(document.visibilityState === 'visible'); };
@@ -29,14 +32,18 @@ export function MonitorWorkspace({ model, context, synthetic = false }: { model:
     <header><span className="brand">AMPHORA<span>research studio</span></span><div className="mode">Monitor</div><span className="fixture">{synthetic ? 'Synthetic observation fixture' : 'Campaign observations'}</span></header>
     <main>
       <div className="context"><div><p className="eyebrow">Campaign / execution observations</p><h1>Follow execution</h1></div><p>Read-only · {view.window ? `revision ${view.window.snapshot.cut.revision}` : 'awaiting observation'}</p></div>
-      <div className="toolbar"><label htmlFor="node-filter">Find in loaded nodes</label><input id="node-filter" value={filter} onChange={event => setFilter(event.target.value)} maxLength={120} />
+      <div className="toolbar">{!topology && <><label htmlFor="node-filter">Find in loaded nodes</label><input id="node-filter" value={filter} onChange={event => setFilter(event.target.value)} maxLength={120} /></>}
         <button onClick={() => void model.refresh()} disabled={view.phase === 'loading'}>Refresh observation</button>
         <button onClick={() => void model.poll()} disabled={!current}>Check for updates</button></div>
-      <p className="status" role="status" data-testid="graph-status">{view.phase === 'loading' ? 'Loading observation… Previous records are not current.' :
+      {!topology && <p className="status" role="status" data-testid="graph-status">{view.phase === 'loading' ? 'Loading observation… Previous records are not current.' :
         view.phase === 'denied' ? 'Access denied. Observation data has been cleared.' : view.phase === 'stale' ? 'Observation expired or changed. Refresh to continue.' :
         view.phase === 'failed' ? `Observation unavailable. ${view.error?.message ?? ''}` : view.phase === 'empty' ? 'No activations in this scope.' :
-        `${shown.length} shown · ${scene.omitted} outside this window · ${scene.nodes.length - shown.length} filtered from this window`}</p>
-      <div className="work-area" data-phase={view.phase}>
+        `${shown.length} shown · ${scene.omitted} outside this window · ${scene.nodes.length - shown.length} filtered from this window`}</p>}
+      {navigation && <div className="toolbar" aria-label="Observation view">
+        <button aria-pressed={!topology} onClick={() => setTopology(false)}>Activation inventory</button>
+        <button aria-pressed={topology} onClick={() => setTopology(true)}>Authored graph</button>
+      </div>}
+      {topology && navigation ? <NavigationPane navigation={navigation} monitor={model} observation={view} /> : <div className="work-area" data-phase={view.phase}>
         <GraphCanvas nodes={shown} selection={view.selection} select={select} />
         <aside aria-label="Node navigator"><MonitorDetail view={view} />
           <div className="list-heading"><h2>Loaded activations</h2><span>{shown.length}</span></div>
@@ -44,8 +51,8 @@ export function MonitorWorkspace({ model, context, synthetic = false }: { model:
           <div className="pages"><button disabled={!current || view.loadingMore || !view.window?.next || scene.nodes.length >= scene.limit} onClick={() => void model.loadMore()}>{view.loadingMore ? 'Loading more…' : 'Load next page'}</button></div>
           {scene.nodes.length >= scene.limit && scene.omitted > 0 && <p className="bounded-note">Scene limit reached. Narrower scope navigation is not yet available.</p>}
         </aside>
-      </div>
-      <footer>Activation inventory · connections are not published by this observation endpoint. Layout is local; it cannot change a campaign.</footer>
+      </div>}
+      <footer>{topology ? "Authored links from the retained campaign plan. Execution status does not establish scientific acceptance." : "Activation inventory; this endpoint does not publish connections. Layout cannot change a campaign."}</footer>
     </main>
   </div>;
 }

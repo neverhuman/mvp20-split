@@ -11,3 +11,5 @@ Each scenario checks 1440×1000 and 390×844, document overflow, scoped automate
 A browser-only defect was found here: native fetch rejects the client instance as its receiver. The production transport now supplies the browser global receiver explicitly; Node-only testing had not exercised that platform behavior. Preserve this real-browser transport route when replacing the harness.
 
 This suite proves consumer behavior against scripted peers. V1 must independently build the consumer and connect it to the actual available Runtime read boundary before child acceptance. Never label these fixture screenshots as live integration evidence.
+
+BP-05.02 adds `npm run test:navigation`: the same real browser client reads scripted scope/topology routes, proves partial target omission, authored link pagination, keyboard node-to-detail selection, stale clearing and denied clearing. It checks both viewport sizes and automated A/AA scans. Evidence lives under `.test-results/studio-navigation/`; the query flag enabling navigation exists only in this test host. This is consumer evidence, not actual Runtime navigation acceptance.
