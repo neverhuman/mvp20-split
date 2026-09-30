@@ -82,3 +82,14 @@ test("malformed run commit and changed terminal receipt never produce admission 
   assert.equal(model.snapshot.phase, "unresolved"); assert.equal(model.snapshot.reason, "invalid_response");
   assert.equal(model.snapshot.runId, null); assert.equal(reads, 1);
 });
+
+
+test("only an authoritative pending receipt permits exact original activation resume", async () => {
+  const state = validated(), bodies: string[] = []; let ready = false;
+  const model = new DraftActivation(state, { submit: async command => { bodies.push(command.body);
+    if (!ready) throw new AuthoringFailure("network", true); return admitted(command);
+  }, receipt: async command => ({ outcome: { status: "pending", binding: admitted(command).outcome.binding } }) });
+  await model.request("resume-me", parameters()); assert.throws(() => model.resume());
+  await model.reconcile(); assert.equal(model.canResume, true); ready = true; await model.resume();
+  assert.equal(model.snapshot.phase, "accepted"); assert.equal(new Set(bodies).size, 1); assert.equal(bodies.length, 2);
+});

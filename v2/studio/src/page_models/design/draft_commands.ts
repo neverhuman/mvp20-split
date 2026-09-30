@@ -25,6 +25,12 @@ export class DraftCommands {
 
   save(id: string) { this.requireActive(); return this.perform(this.session.beginSave(id), true); }
   validate(id: string) { this.requireActive(); return this.perform(this.session.beginValidation(id), true); }
+  get canResume() { return !this.disposed && this.view.phase === "unresolved" && this.session.canResumeCommand; }
+  resume() {
+    this.requireActive();
+    if (!this.canResume) throw new Error("original_pending_receipt_required");
+    return this.perform(this.session.unresolvedCommand!, true);
+  }
   reconcile() {
     this.requireActive();
     const command = this.session.unresolvedCommand;

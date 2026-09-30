@@ -41,6 +41,9 @@ export async function startDraftHost() {
             state.receipts.set(id, { outcome });
             json(state.mode === 'activation-lost' ? 503 : 200, state.mode === 'activation-lost' ? {} : { outcome }); return;
           }
+          if (state.mode === 'pending-owner') {
+            state.receipts.set(id, { outcome: { status: 'pending', binding } }); json(503, {}); return;
+          }
           if (state.mode === 'identity-conflict') { json(409, { reason_code: 'command_identity_conflict' }); return; }
           if (state.mode === 'save-denied') { json(403, { detail: 'private save diagnostics' }); return; }
           if (state.mode === 'conflict') { json(200, { outcome: { status: 'rejected', binding, reason_code: 'draft_revision_conflict' } }); return; }

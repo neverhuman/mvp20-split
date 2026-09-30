@@ -9,15 +9,15 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-05 primary active; BP-06 through BP-09 queued; BP-01/BP-01A/BP-02/BP-03/BP-04 closed.
-- Last refreshed: `2026-09-30 16:23:04` (America/Chicago).
+- Last refreshed: `2026-09-30 16:45:26` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P4 / BP-05 - Graph Studio first vertical slice.
-- Primary active implementation plan / phase / task: BP-05 -> BP-05.03 / Build / B3.
-- Current task: BP-05.03/B3 controlled cancel/completion races, independent conflicting writers and original-command recovery; B1/B2 verified.
-- Next task: BP-05.03/V1 replacement and scoped closeout after B3.
-- Implementation completion: BP-04 closed100% (24/24); BP-05 active62.5% (10/16), .01/.02 closed100%, .03 active50% (Build66.67% / Acceptance0%); BP-06..09 queued0%.
-- Active focus: actual conflicting writers, cancel/completion interleavings and original-command crash recovery.
-- Blockers: no user decision pending; B3 races/recovery remain engineering work. Scientific/provider/host decisions remain later gates.
+- Primary active implementation plan / phase / task: BP-05 -> BP-05.03 / Acceptance / V1.
+- Current task: BP-05.03/V1 scoped architecture audit, replacement evidence reconciliation and closeout; B1-B3 verified.
+- Next task: BP-05.04 activation review after .03 closeout.
+- Implementation completion: BP-04 closed100% (24/24); BP-05 active68.75% (11/16), .01/.02 closed100%, .03 active75% (Build100% / Acceptance0%); BP-06..09 queued0%.
+- Active focus: scoped authoring audit and replacement closeout; real-owner recovery passed.
+- Blockers: no user decision pending; V1 audit remains engineering work. Scientific/provider/host decisions remain later gates.
 - Acceptance posture: deterministic Runtime and independent public observation/replacement accepted. Browser/UI and next-campaign authoring remain BP-05.
 - Active exception: none.
 
@@ -35,11 +35,11 @@ BP-05 is the sole primary active plan. Child trackers own delivery evidence; com
 
 | Parent | Implementation | P1 Interaction | P2 Inspection | P3 Drafts | P4 Acceptance |
 |---|---:|---:|---:|---:|---:|
-| [BP-05](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md) | 62.5% (10/16) | 100% | 100% | 50% | 0% |
+| [BP-05](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md) | 68.75% (11/16) | 100% | 100% | 75% | 0% |
 
 | Active canonical child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-05.03](BP-05/BP-05.03%20Drafts%20and%20safe%20commands.md) | 50% | 66.67% | 0% | B3 failure and recovery |
+| [BP-05.03](BP-05/BP-05.03%20Drafts%20and%20safe%20commands.md) | 75% | 100% | 0% | V1 scoped closeout |
 
 BP-02 closed32/32, BP-03 closed18/16, BP-04 closed24/24. See [completed plans](Completed/README.md). New parent progress counts only its own deliveries.
 
@@ -123,6 +123,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-30 16:45:26 | BP-05.03/B3 verified75%; parent68.75% (11/16); V1 active | 25 real-owner cases, two135-test builds, crash resume and both cancellation orderings |
 | 2026-09-30 16:23:04 | BP-05.03/B2 verified50%; parent62.5% (10/16); B3 active | Real Registry/Studio activation;1336 Python/132 Node,19 installs,REC-01..09,9 standard-worker cases |
 | 2026-09-30 15:40:27 | BP-05.03/B2 conflicts/rebase; child25%, parent56.25% unchanged | 126 isolated Node tests;10 Design/7 emergency browser cases; eligibility/activation remain |
 | 2026-09-30 15:32:23 | BP-05.03/B1 verified25%; parent56.25% (9/16); B2 active | Two119-test isolated builds; real-owner draft/validation/replacement/cancel;8 Design/6 emergency browser cases |
@@ -147,6 +148,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-29 20:41:57 | BP-05.02/B1 navigation consumer partial; percentages unchanged | 39 Node tests, navigation + Monitor browser cases, isolated Studio build; catalog/evidence journey pending |
 | 2026-09-29 20:32:51 | BP-05.02/B1 partial; child0%, parent25% unchanged | Authored topology/occurrence reads;109 Python +34 Node tests, isolated Studio build; full B1 remains open |
 | 2026-09-29 20:06:20 | BP-05.01 closed100%; parent25% (4/16); .02/B1 active0% | Two isolated Studio builds;actual12/28-node Runtime browser proof,three replacements;scoped audit aligned |
-| 2026-09-29 19:54:04 | BP-05.01 B3 verified75%; parent18.75% (3/16); V1 active | Seven browser failure cases,14 viewport scans; native fetch receiver repaired;30 Node tests, isolated build |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

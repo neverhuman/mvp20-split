@@ -112,3 +112,17 @@ test("POST identity collision cannot reconcile an older command as this save or 
   assert.equal(reads, 0);
   assert.throws(() => model.save("new-id"), /command_identity_conflict/);
 });
+
+
+test("a registered pending save resumes original bytes after a crash while preserving newer local edits", async () => {
+  const state = session(), bodies: string[] = []; let crashed = true;
+  const model = new DraftCommands(state, source({ submit: async command => {
+    bodies.push(command.body); if (crashed) throw new AuthoringFailure("network", true); return accepted(command, revision(2));
+  }, receipt: async command => ({ outcome: { status: "pending", binding: accepted(command, revision(2)).outcome.binding } }),
+    draft: async () => revision(2) }));
+  await model.save("original"); assert.equal(model.canResume, false); assert.throws(() => model.resume());
+  await model.reconcile(); assert.equal(model.canResume, true);
+  state.edit({ ...local(), title: "Newer local work" }); crashed = false; await model.resume();
+  assert.equal(model.snapshot.phase, "settled"); assert.equal(state.snapshot.local.title, "Newer local work");
+  assert.equal(bodies.length, 2); assert.equal(new Set(bodies).size, 1); assert.equal(model.canResume, false);
+});

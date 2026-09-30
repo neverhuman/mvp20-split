@@ -104,3 +104,16 @@ test("command collision cannot adopt a previous stop receipt or silently issue a
   assert.throws(() => model.reconcile()); assert.throws(() => model.request("new-id"));
   assert.equal(reads, 0);
 });
+
+
+test("pending stop resumes exact original revision and identity after receipt verification", async () => {
+  const bodies: string[] = []; let ready = false;
+  const model = new EmergencyStop("operator", context, { submit: async command => { bodies.push(command.body);
+    if (!ready) throw new AuthoringFailure("network", true); return accepted(command);
+  }, receipt: async command => ({ outcome: { status: "pending", binding: accepted(command).outcome.binding } }) });
+  model.observe(snapshot().snapshot); await model.request("resume-me"); assert.throws(() => model.resume());
+  await model.reconcile(); assert.equal(model.canResume, true);
+  model.observe(snapshot({ revision: 9 }).snapshot); ready = true; await model.resume();
+  assert.equal(model.snapshot.phase, "accepted"); assert.equal(new Set(bodies).size, 1); assert.equal(bodies.length, 2);
+  assert.equal(JSON.parse(bodies[1]!).payload.expected_run_revision, 1);
+});

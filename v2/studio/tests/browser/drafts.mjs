@@ -13,7 +13,7 @@ const evidence = { verified_at: new Intl.DateTimeFormat('sv-SE', { timeZone: 'Am
   timezone: 'America/Chicago', status: 'running', scenarios: [], screenshots: [], limits: ['Scripted public HTTP peer; validation replies are fixtures, not actual Runtime compilation or authority.', 'No deployed gateway, scientific or target-host acceptance.'] };
 let releaseSave;
 try {
-  for (const name of ['compose', 'compose-narrow', 'dense', 'lost-ack', 'conflict', 'identity-conflict', 'rebase', 'pending-edit', 'save-denied', 'catalog-denied', 'activation-accepted', 'activation-active', 'activation-lost', 'activation-denied', 'activation-collision']) {
+  for (const name of ['compose', 'compose-narrow', 'dense', 'lost-ack', 'pending-owner', 'conflict', 'identity-conflict', 'rebase', 'pending-edit', 'save-denied', 'catalog-denied', 'activation-accepted', 'activation-active', 'activation-lost', 'activation-denied', 'activation-collision']) {
     Object.assign(host.state, { mode: 'ready', head: revision(), records: new Map([[1, revision()]]), receipts: new Map(), validations: new Map(), requests: [], saveGate: null });
     if (name === 'dense') {
       host.state.head.definition.body.nodes = Array.from({ length: 256 }, (_, index) => ({ kind: 'finish', node_id: `node-${index}-${'long-label-'.repeat(8)}`, outputs: [] }));
@@ -66,8 +66,18 @@ try {
         await page.waitForFunction(() => window.draftHarness.commands.snapshot.phase === 'submitting');
         await page.getByLabel('Draft title', { exact: true }).fill('Newer local edit'); releaseSave();
       }
-      const phase = name === 'identity-conflict' ? 'conflict' : name === 'lost-ack' ? 'unresolved' : name === 'save-denied' ? 'denied' : 'settled';
+      const phase = name === 'identity-conflict' ? 'conflict' : (name === 'lost-ack' || name === 'pending-owner') ? 'unresolved' : name === 'save-denied' ? 'denied' : 'settled';
       await page.waitForFunction(phase => window.draftHarness.commands.snapshot.phase === phase, phase);
+      if (name === 'pending-owner') {
+        assert.equal(await page.getByRole('button', { name: 'Resume original command', exact: true }).count(), 0);
+        await page.getByRole('button', { name: 'Check original receipt', exact: true }).click();
+        await page.getByRole('button', { name: 'Resume original command', exact: true }).waitFor();
+        const original = await page.evaluate(() => window.draftHarness.commands.session.unresolvedCommand.body);
+        host.state.mode = 'ready';
+        await page.getByRole('button', { name: 'Resume original command', exact: true }).click();
+        await page.waitForFunction(() => window.draftHarness.commands.snapshot.phase === 'settled');
+        assert.equal(JSON.parse(original).identity.command_id, [...host.state.receipts.keys()][0]);
+      }
       if (name === 'lost-ack') {
         await page.getByRole('button', { name: 'Check original receipt', exact: true }).click();
         await page.waitForFunction(() => window.draftHarness.commands.snapshot.phase === 'settled');
@@ -112,13 +122,16 @@ try {
       if (name === 'activation-active') await region.getByText(/active_run_exists/).waitFor();
       if (name === 'activation-collision') assert.equal(await region.getByRole('button', { name: 'Check original activation receipt', exact: true }).count(), 0);
     }
+    if (['conflict', 'identity-conflict', 'pending-owner', 'save-denied', 'activation-denied'].includes(name))
+      assert.equal(await page.evaluate(() => document.activeElement?.getAttribute('role')), 'status');
+    if (name === 'pending-edit') assert.equal(await page.getByLabel('Draft title', { exact: true }).evaluate(input => input === document.activeElement), true);
     if (!composing) assert.equal(await page.getByLabel('Draft title', { exact: true }).inputValue(), name === 'pending-edit' ? 'Newer local edit' : 'Local work to retain');
     if (name === 'pending-edit' || name === 'conflict') assert.equal(await page.evaluate(() => window.draftHarness.commands.session.snapshot.dirty), true);
     if (name.endsWith('denied')) {
       assert.equal(await page.getByRole('button', { name: 'Save draft', exact: true }).isDisabled(), true);
       assert.equal(await page.getByLabel('Reviewed tool', { exact: true }).locator('option').count(), 1);
     }
-    assert.equal(host.state.requests.filter(request => request.method === 'POST' && request.path.endsWith('/save')).length, name === 'catalog-denied' ? 0 : name === 'rebase' ? 2 : 1);
+    assert.equal(host.state.requests.filter(request => request.method === 'POST' && request.path.endsWith('/save')).length, name === 'catalog-denied' ? 0 : name === 'rebase' || name === 'pending-owner' ? 2 : 1);
     assert.equal((await page.locator('body').textContent()).includes('private diagnostics'), false);
     for (const viewport of [{ width: 1440, height: 1000 }, { width: 390, height: 844 }]) {
       await page.setViewportSize(viewport);

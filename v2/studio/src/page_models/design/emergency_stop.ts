@@ -56,6 +56,11 @@ export class EmergencyStop {
     return this.perform(true);
   }
 
+  get canResume() { return !this.disposed && !(this.view.phase === "denied") && this.view.phase === "unresolved" && !!this.binding && !this.terminal; }
+  resume() {
+    if (!this.canResume) throw new Error("original_pending_receipt_required");
+    return this.perform(true);
+  }
   reconcile() {
     this.requireActive();
     if (!this.command || this.view.phase !== "unresolved") throw new Error("stop_not_unresolved");

@@ -13,6 +13,9 @@ spec = importlib.util.spec_from_file_location("studio_observation_acceptance", P
 OBSERVATION = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(OBSERVATION)
 HTTP = OBSERVATION.OBSERVED.SOLVER.HTTP
+spec = importlib.util.spec_from_file_location("studio_authoring_races", Path(__file__).with_name("authoring_races.py"))
+RACES = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(RACES)
 
 
 class AuthoringEnvironment(OBSERVATION.BrowserEnvironment):
@@ -36,10 +39,10 @@ class AuthoringEnvironment(OBSERVATION.BrowserEnvironment):
         self.registry.close()
         self.registry = self.host("registry", "amphora_capability_registry", registry, "AMPHORA_REGISTRY_DATABASE_URL", port)
 
-    def authoring_browser(self, mode, *, old=None, inputs=None, expected_reason=None):
+    def authoring_browser(self, mode, *, old=None, inputs=None, expected_reason=None, barrier=None):
         replacement = mode == "replacement"
         label = "replacement" if replacement else "original"
-        actor = "studio_cancel" if mode == "cancel" else "studio_author"
+        actor = "studio_cancel" if mode.startswith("cancel") else "studio_author"
         env = {key: value for key, value in os.environ.items() if key.upper() in {
             "SYSTEMROOT", "WINDIR", "TEMP", "TMP", "PATH", "COMSPEC", "USERPROFILE", "LOCALAPPDATA", "APPDATA"}}
         env["STUDIO_AUTHOR_TOKEN"] = self.tokens[actor]
@@ -48,7 +51,8 @@ class AuthoringEnvironment(OBSERVATION.BrowserEnvironment):
         result = subprocess.run([self.config["node"], "tests/integration/authoring_browser.mjs"],
             cwd=self.config["studio"][label], env=env, input=json.dumps({"endpoint": self.runtime.endpoint,
                 "registry_endpoint": self.registry.endpoint, "scope": self.scope, "actor": actor,
-                "run": self.active_run, "draft": "studio-draft", "mode": mode, "old": old, "inputs": inputs, "expected_reason": expected_reason, "output": str(output)}),
+                "run": self.active_run, "draft": "studio-draft", "mode": mode, "old": old, "inputs": inputs,
+                "expected_reason": expected_reason, "barrier": barrier, "output": str(output)}),
             text=True, capture_output=True, encoding="utf-8", timeout=180, check=False,
             creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0)
         assert result.returncode == 0, "Authoring browser failed: " + result.stderr[-2500:] + result.stdout[-1000:]
@@ -94,6 +98,12 @@ class AuthoringEnvironment(OBSERVATION.BrowserEnvironment):
         return [{"port": "parameters", "value": {"kind": "artifact", "artifact": artifact,
                  "representation": port["representation"], "unit": port["unit"]}}]
 
+    def conflicting_writers(self):
+        before = self.graph()
+        actual = self.authoring_browser("writers")
+        assert self.graph() == before
+        self.record("STUDIO-CONFLICTING-WRITERS", {**actual, "execution_unchanged": True})
+
     def activate_draft(self):
         for tool in self.tools:
             self.refresh_capacity(tool)
@@ -103,6 +113,7 @@ class AuthoringEnvironment(OBSERVATION.BrowserEnvironment):
         assert receipt["outcome"]["status"] == "accepted", receipt
         self.active_run = receipt["outcome"]["committed"]["object_id"]
         assert self.graph()["status"] == "running"
+        self.conflicting_writers()
         assert any(event["path"] == "/v1/registry/resolve" for event in self.eligibility_relay.events)
         # A separate new consumer cannot start a second campaign while this run is active.
         blocked = self.authoring_browser("activate-running", inputs=inputs, expected_reason="active_run_exists")
@@ -131,7 +142,7 @@ class AuthoringEnvironment(OBSERVATION.BrowserEnvironment):
         self.record("STUDIO-DRAFT-REVOKED-TOOL", {"release": tool.lock, "rejection": rejected["receipt"],
             "prior_admission_replay_preserved": True})
 
-    def emergency(self):
+    def admit_emergency_run(self):
         tool = self.stages["seed"]
         artifact = self.publish(tool, {**self.oracle["config"], "source_pins": tool.image["golden_input"]["source_pins"]})
         port = tool.descriptor["inputs"][0]
@@ -140,6 +151,9 @@ class AuthoringEnvironment(OBSERVATION.BrowserEnvironment):
                 "value": {"kind": "artifact", "artifact": artifact, "representation": port["representation"], "unit": port["unit"]}}]}))
         assert admitted["outcome"]["status"] == "accepted", admitted
         self.active_run = admitted["outcome"]["committed"]["object_id"]
+
+    def emergency(self):
+        self.admit_emergency_run()
         before = self.graph()
         actual = self.authoring_browser("cancel")
         after = self.graph()
@@ -162,6 +176,8 @@ def main():
             OBSERVATION.OBSERVED.SOLVER.scenarios(e)
             e.activate_draft()
             e.emergency()
+            RACES.cancellation_races(e, HTTP, OBSERVATION.OBSERVED.SOLVER.ENV.BINDING.GRAPH.OPS)
+            RACES.pending_crash(e, HTTP)
             e.revoke_draft_tool()
             e.record("STUDIO-INDEPENDENT-BUILDS", config["studio_pins"])
             e.save("passed")

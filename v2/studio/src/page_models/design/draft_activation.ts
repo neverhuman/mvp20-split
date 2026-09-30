@@ -37,6 +37,11 @@ export class DraftActivation {
     this.patch({ commandId: id, draftRevision: this.session.snapshot.base!.head.revision, runId: null });
     return this.perform(true);
   }
+  get canResume() { return !this.disposed && !(this.session.snapshot.denied) && this.view.phase === "unresolved" && !!this.binding && !this.terminal; }
+  resume() {
+    if (!this.canResume) throw new Error("original_pending_receipt_required");
+    return this.perform(true);
+  }
   reconcile() {
     if (this.disposed || this.session.snapshot.denied || this.view.phase !== "unresolved") throw new Error("activation_not_unresolved");
     return this.perform(false);

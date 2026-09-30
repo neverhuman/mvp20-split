@@ -1,3 +1,4 @@
+import { useCommandFocus } from "./command_focus.js";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import type { DraftCommands } from "../page_models/design/draft_commands.js";
 import type { EditorCatalog } from "../page_models/design/editor_catalog.js";
@@ -28,6 +29,7 @@ function BoundDraftWorkspace({ commands, catalog, synthetic }: { commands: Draft
   const edits = useMemo(() => new DraftEdits(commands.session, catalog), [commands, catalog]);
   useEffect(() => { const a = commands.subscribe(refresh), b = catalog.subscribe(refresh), c = commands.rebase.subscribe(refresh), d = commands.activation.subscribe(refresh); void catalog.refresh(); return () => { a(); b(); c(); d(); }; }, [commands, catalog, refresh]);
   const session = commands.session.snapshot, discovery = catalog.snapshot, command = commands.snapshot, rebase = commands.rebase.snapshot;
+  const commandStatus = useCommandFocus(command.phase);
   const disabled = session.denied || discovery.phase === "denied";
   useEffect(() => { if ((discovery.phase === "denied" || session.denied) && command.phase !== "denied") commands.deny(); }, [commands, discovery.phase, session.denied, command.phase]);
   useEffect(() => { if (session.denied && discovery.phase !== "denied") catalog.deny(); }, [catalog, discovery.phase, session.denied]);
@@ -41,8 +43,8 @@ function BoundDraftWorkspace({ commands, catalog, synthetic }: { commands: Draft
   const selectedNode = ambiguous ? undefined : nodes.find(node => node.node_id === selected);
   const rawScopeStale = rawScope !== null && rawScopeBase !== JSON.stringify(scope, null, 2);
   const perform = (action: () => void) => { try { action(); setError(null); refresh(); } catch (failure) { setError(failure instanceof Error ? failure.message : "Draft change could not be applied."); } };
-  const submit = (action: "save" | "validate" | "reconcile") => {
-    try { const pending = action === "reconcile" ? commands.reconcile() : commands[action](crypto.randomUUID()); void pending; setError(null); }
+  const submit = (action: "save" | "validate" | "reconcile" | "resume") => {
+    try { const pending = action === "reconcile" ? commands.reconcile() : action === "resume" ? commands.resume() : commands[action](crypto.randomUUID()); void pending; setError(null); }
     catch { setError("Command unavailable. Resolve the current command or save the draft first."); }
   };
   return <div className="workspace draft-workspace">
@@ -52,11 +54,12 @@ function BoundDraftWorkspace({ commands, catalog, synthetic }: { commands: Draft
       <div className="toolbar"><label>Draft title<input disabled={disabled} value={session.local.title} maxLength={200} onChange={event => perform(() => commands.session.edit({ ...session.local, title: event.target.value }))} /></label>
         <button disabled={disabled || !!session.pending} onClick={() => submit("save")}>Save draft</button>
         <button disabled={disabled || !!session.pending || session.dirty || !session.base} onClick={() => submit("validate")}>Validate saved revision</button>
+        {commands.canResume && <button disabled={disabled} onClick={() => submit("resume")}>Resume original command</button>}
         {session.pending && command.phase !== "conflict" && <button disabled={disabled || command.phase !== "unresolved"} onClick={() => submit("reconcile")}>Check original receipt</button>}
         <button disabled={disabled || !!session.pending || rebase.phase === "loading"} onClick={() => void commands.rebase.review()}>Review latest saved revision</button>
         <button disabled={!session.base || disabled} onClick={() => setCompare(value => !value)}>Compare with saved revision</button>
       </div>
-      <p role="status">{disabled ? "Access denied. Local draft retained; transmission disabled." : session.pending ? `Command ${command.phase}. Local edits are retained.` : session.reason ? `Command rejected: ${session.reason}` : "Draft changes apply to a future campaign. No active run is changed."}</p>
+      <p ref={commandStatus} tabIndex={-1} role="status">{disabled ? "Access denied. Local draft retained; transmission disabled." : session.pending ? `Command ${command.phase}. Local edits are retained.` : session.reason ? `Command rejected: ${session.reason}` : "Draft changes apply to a future campaign. No active run is changed."}</p>
       {command.phase === "conflict" && <p role="alert">Command identity conflicted. Local edits are retained; the existing receipt belongs to a different request. No replacement command was sent.</p>}
       {error && <p role="alert">{error}</p>}
       {rebase.phase === "loading" && <p role="status">Loading the latest saved revision for review.</p>}

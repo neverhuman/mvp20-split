@@ -2,16 +2,17 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-05.03 / Build / B3.
-- Last refreshed: `2026-09-30 16:23:04` (America/Chicago).
+- Status: primary_active; BP-05.03 / Acceptance / V1.
+- Last refreshed: `2026-09-30 16:45:26` (America/Chicago).
 - Owner/scope: Studio modules and thin gateway/projection adapters.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 runnable fixture and versioned read/command contracts.
-- Implementation: **62.5%**, 10/16 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
+- Implementation: **68.75%**, 11/16 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current task: BP-05.03/B3 controlled cancel/completion races, independent conflicting writers and original-command recovery; B1/B2 verified.
+- Current task: BP-05.03/V1 scoped architecture audit, replacement evidence reconciliation and closeout; B1-B3 verified.
+- Latest checkpoint: `2026-09-30 16:45:26`: B3 verified. Real-owner scopeffe3e49ccc90476684fe8477809f75cd passed25 cases and two135-test independent Studio builds. Two editors preserve losing edits/selection/focus and active execution. Controlled cancel-first rejects completion (run_not_running); completion-first preserves canonical result and rejects captured stale stop. Registered pending save survives owned host kill and resumes identical bytes/operation after independent replacement while newer local edits remain intact.16 Design/7 emergency browser cases and104 page-model tests pass; dependency boundaries/Ruff pass. Child75%=3/4, Build100%/Acceptance0%; parent68.75%=11/16. V1 scoped audit/closeout next; no user decision pending.
 - Demonstrated behavior: B1 transport and page-model contracts verified in 28 owned Node tests and an independent source build; full foundation passes. B2 also verifies bounded synthetic browser interaction at desktop/narrow sizes. B3 also proves seven production-client browser failure cases; V1 actual Runtime/Studio replacement passed; .01 is archived with its aligned audit.
-- Blockers: none for .03/B3; missing owner projections are explicit engineering scope, scientific owners remain later dependencies.
+- Blockers: none for .03/V1; missing owner projections are explicit engineering scope, scientific owners remain later dependencies.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
 
@@ -31,7 +32,7 @@ Primary services retain private state, dependencies, migrations and module READM
 |---|---:|---:|---:|---|
 | P1 / [BP-05.01 Interaction and transport boundaries](BP-05/Completed/BP-05.01%20Interaction%20and%20transport%20boundaries.md) | 100% | 100% | 100% | Parent predecessor gates |
 | P2 / [BP-05.02 Graph inspection and navigation](BP-05/Completed/BP-05.02%20Graph%20inspection%20and%20navigation.md) | 100% | 100% | 100% | BP-05.01 acceptance |
-| P3 / [BP-05.03 Drafts and safe commands](BP-05/BP-05.03%20Drafts%20and%20safe%20commands.md) | 50% | 66.67% | 0% | BP-05.02 acceptance |
+| P3 / [BP-05.03 Drafts and safe commands](BP-05/BP-05.03%20Drafts%20and%20safe%20commands.md) | 75% | 100% | 0% | BP-05.02 acceptance |
 | P4 / [BP-05.04 Visual and integration acceptance](BP-05/BP-05.04%20Visual%20and%20integration%20acceptance.md) | 0% | 0% | 0% | BP-05.03 acceptance |
 
 Each linked child is the execution tracker for its scope. Build tasks name concrete implementation; acceptance requires independent evidence and a scoped drift audit. Do not repeat the historical task pairs as a second work list. No dependent child starts before its predecessor acceptance gate; independent design review does not activate implementation.

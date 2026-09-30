@@ -19,7 +19,7 @@ type RetainedSubmission = { identity: CommandIdentity; payload: AuthoringWire["s
 declare global { interface Window { authoringIntegration: { client: AuthoringClient; recover: (submissions: RetainedSubmission[]) => Promise<(CommandReceipt | DraftCommandReceipt)[]>; commands?: DraftCommands; catalog?: EditorCatalog; monitor?: MonitorModel; emergency?: EmergencyStop } } }
 window.authoringIntegration = { client, recover: submissions => Promise.all(submissions.map(item => client.receipt(
   new Submission(item.identity.command_family === "definition.save" ? "save" : "validate", item.identity, item.payload), new AbortController().signal))) };
-if (context.mode === "cancel") {
+if (context.mode.startsWith("cancel")) {
   const runContext = { scope: context.scope, run: context.run };
   const monitor = new MonitorModel(new ObservationClient()), emergency = new EmergencyStop(context.actor, runContext, client);
   Object.assign(window.authoringIntegration, { monitor, emergency });

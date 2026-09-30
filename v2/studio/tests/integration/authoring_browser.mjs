@@ -5,6 +5,7 @@ import assert from 'node:assert/strict';
 import { build } from 'esbuild';
 import { chromium } from 'playwright';
 import AxeBuilder from '@axe-core/playwright';
+import { setTimeout as delay } from 'node:timers/promises';
 
 let input = ''; for await (const chunk of process.stdin) input += chunk;
 const job = JSON.parse(input), token = process.env.STUDIO_AUTHOR_TOKEN, registryToken = process.env.STUDIO_REGISTRY_TOKEN;
@@ -17,18 +18,27 @@ const server = createServer(async (req, res) => {
   try {
     const url = new URL(req.url, 'http://localhost'), path = url.pathname;
     const registry = path === '/api/registry/v1/releases';
-    const runtime = path.startsWith('/api/runtime/v1/') && (job.mode === 'cancel'
+    const runtime = path.startsWith('/api/runtime/v1/') && (job.mode.startsWith('cancel')
       ? [ `/api/runtime/v1/graph-observations/${encodeURIComponent(job.run)}/nodes`, `/api/runtime/v1/graph-observations/${encodeURIComponent(job.run)}/invalidations`, '/api/runtime/v1/runs/cancel'].includes(path) || path.startsWith('/api/runtime/v1/commands/runtime.cancel/')
       : path === `/api/runtime/v1/definition-drafts/${encodeURIComponent(job.draft)}` ||
         ['/api/runtime/v1/definition-drafts/save', '/api/runtime/v1/definition-drafts/validate', '/api/runtime/v1/definition-universe', '/api/runtime/v1/graph-runs/drafts'].includes(path) ||
         ['/api/runtime/v1/definition-schemas/', '/api/runtime/v1/definition-validations/', '/api/runtime/v1/definition-commands/definition.save/', '/api/runtime/v1/definition-commands/definition.validate/', '/api/runtime/v1/commands/graph.admit_draft/'].some(prefix => path.startsWith(prefix)));
     if (registry || runtime) {
-      const permittedPost = job.mode === 'cancel' ? path.endsWith('/runs/cancel') : (job.mode === 'edit' && ['/definition-drafts/save', '/definition-drafts/validate'].some(suffix => path.endsWith(suffix))) || (job.mode.startsWith('activate') && ['/definition-drafts/validate', '/graph-runs/drafts'].some(suffix => path.endsWith(suffix)));
+      const permittedPost = job.mode.startsWith('cancel') ? path.endsWith('/runs/cancel') : (['edit', 'writers', 'pending-crash'].includes(job.mode) && ['/definition-drafts/save', '/definition-drafts/validate'].some(suffix => path.endsWith(suffix))) || (job.mode.startsWith('activate') && ['/definition-drafts/validate', '/graph-runs/drafts'].some(suffix => path.endsWith(suffix)));
       if (req.method !== 'GET' && !(req.method === 'POST' && permittedPost)) { res.writeHead(405); res.end(); return; }
       const chunks = []; let size = 0;
       for await (const chunk of req) { size += chunk.length; assert.ok(size <= 262144); chunks.push(chunk); }
       const body = req.method === 'POST' ? Buffer.concat(chunks) : undefined;
       if (body) submitted.push(JSON.parse(body.toString('utf-8')));
+      if (body && job.barrier && path.endsWith('/runs/cancel')) {
+        // Controller-only files hold the real request before forwarding; never exposed to Chromium.
+        await writeFile(job.barrier.marker, body);
+        const deadline = Date.now() + 20000;
+        while (true) {
+          try { await readFile(job.barrier.release); break; } catch (error) { if (error.code !== 'ENOENT') throw error; }
+          assert.ok(Date.now() < deadline, 'Cancellation barrier not released'); await delay(20);
+        }
+      }
       const response = await fetch((registry ? job.registry_endpoint : job.endpoint) + path.slice(registry ? '/api/registry'.length : '/api/runtime'.length) + url.search, {
         method: req.method, ...(body ? { body } : {}), headers: { Authorization: 'Bearer ' + (registry ? registryToken : token), Accept: 'application/json', 'Content-Type': 'application/json' },
         redirect: 'error', signal: AbortSignal.timeout(15000) });
@@ -55,15 +65,24 @@ try {
   page.on('pageerror', error => errors.push(error.message)); page.on('request', request => headers.push(request.allHeaders()));
   await page.goto(`http://127.0.0.1:${server.address().port}`);
   let result;
-  if (job.mode === 'cancel') {
+  if (job.mode.startsWith('cancel')) {
     await page.waitForFunction(() => window.authoringIntegration?.emergency?.snapshot.revision !== null && window.authoringIntegration?.emergency?.snapshot.status === 'running');
     await page.getByRole('link', { name: 'Emergency control', exact: true }).click();
     await page.getByRole('button', { name: 'Request emergency stop', exact: true }).click();
-    await page.waitForFunction(() => window.authoringIntegration.emergency.snapshot.phase === 'accepted');
+    await page.waitForFunction(expected => window.authoringIntegration.emergency.snapshot.phase === expected, job.expected_reason ? 'rejected' : 'accepted');
+    const emergency = page.getByRole('region', { name: 'Emergency control', exact: true });
+    if (job.expected_reason) await emergency.getByRole('status').filter({ hasText: job.expected_reason }).waitFor();
+    else await emergency.getByRole('status').filter({ hasText: 'In-flight external effects may remain uncertain' }).waitFor();
+    assert.equal(await page.evaluate(() => document.activeElement?.getAttribute('role')), 'status');
     await page.getByRole('button', { name: 'Refresh observation', exact: true }).click();
-    await page.waitForFunction(() => window.authoringIntegration.monitor.snapshot.window?.snapshot.status === 'cancelled');
-    assert.equal(submitted.length, 1); assert.equal(received[0].outcome.status, 'accepted');
-    result = { receipt: received[0], observed_status: 'cancelled' };
+    const observed = job.expected_reason ? 'running' : 'cancelled';
+    await page.waitForFunction(({ status, revision }) => {
+      const snapshot = window.authoringIntegration.monitor.snapshot.window?.snapshot;
+      return snapshot?.status === status && snapshot.cut.revision > revision;
+    }, { status: observed, revision: submitted[0].payload.expected_run_revision });
+    assert.equal(submitted.length, 1); assert.equal(received[0].outcome.status, job.expected_reason ? 'rejected' : 'accepted');
+    if (job.expected_reason) assert.equal(received[0].outcome.reason_code, job.expected_reason);
+    result = { receipt: received[0], submission: submitted[0], observed_status: observed };
   } else {
     await page.waitForFunction(() => window.authoringIntegration?.catalog?.snapshot.phase === 'ready');
     if (job.mode === 'edit') {
@@ -86,6 +105,56 @@ try {
       assert.equal(result.validation.structurally_valid, true, JSON.stringify(result.validation.findings));
       assert.equal(submitted[0].encoding, 'amphora-command-v2');
       result = { ...result, receipts: received, submissions: submitted, schema_reference: schemaReference };
+    } else if (job.mode === 'pending-crash') {
+      const base = await page.evaluate(() => window.authoringIntegration.commands.session.snapshot.base.head.revision);
+      await page.getByLabel('Draft title', { exact: true }).fill('Original pending save');
+      await page.getByRole('button', { name: 'Save draft', exact: true }).click();
+      await page.waitForFunction(() => window.authoringIntegration.commands.snapshot.phase === 'unresolved');
+      assert.equal(await page.getByRole('button', { name: 'Resume original command', exact: true }).count(), 0);
+      await page.getByLabel('Draft title', { exact: true }).fill('Newer local work after crash');
+      const deadline = Date.now() + 30000;
+      while (true) {
+        try { await readFile(job.barrier.release); break; } catch (error) { if (error.code !== 'ENOENT') throw error; }
+        assert.ok(Date.now() < deadline, 'Owner did not restart'); await delay(20);
+      }
+      await page.getByRole('button', { name: 'Check original receipt', exact: true }).click();
+      await page.getByRole('button', { name: 'Resume original command', exact: true }).waitFor();
+      assert.equal(await page.evaluate(() => window.authoringIntegration.commands.session.snapshot.base.head.revision), base);
+      await page.getByRole('button', { name: 'Resume original command', exact: true }).click();
+      await page.waitForFunction(() => window.authoringIntegration.commands.snapshot.phase === 'settled');
+      const state = await page.evaluate(() => window.authoringIntegration.commands.session.snapshot);
+      assert.equal(state.base.head.revision, base + 1); assert.equal(state.base.head.title, 'Original pending save');
+      assert.equal(state.local.title, 'Newer local work after crash');
+      assert.equal(submitted.length, 2); assert.deepEqual(submitted[0], submitted[1]); assert.equal(received.length, 1);
+      assert.equal(await page.evaluate(() => document.activeElement?.getAttribute('role')), 'status');
+      result = { receipt: received[0], submission: submitted[0], newer_local_edits_preserved: true };
+    } else if (job.mode === 'writers') {
+      const secondContext = await browser.newContext({ viewport: { width: 1440, height: 1000 }, reducedMotion: 'reduce' });
+      const second = await secondContext.newPage();
+      second.on('pageerror', error => errors.push(error.message));
+      second.on('request', request => headers.push(request.allHeaders()));
+      await second.goto(`http://127.0.0.1:${server.address().port}`);
+      await second.waitForFunction(() => window.authoringIntegration?.catalog?.snapshot.phase === 'ready');
+      const base = await page.evaluate(() => window.authoringIntegration.commands.session.snapshot.base.head.revision);
+      assert.equal(await second.evaluate(() => window.authoringIntegration.commands.session.snapshot.base.head.revision), base);
+      for (const [index, editor] of [page, second].entries()) {
+        await editor.getByRole('navigation', { name: 'Draft nodes', exact: true }).getByRole('button', { name: 'seed \u00b7 invoke', exact: true }).click();
+        await editor.getByLabel('Draft title', { exact: true }).fill(index ? 'Independent writer B' : 'Independent writer A');
+      }
+      await Promise.all([page, second].map(editor => editor.getByRole('button', { name: 'Save draft', exact: true }).click()));
+      await Promise.all([page, second].map(editor => editor.waitForFunction(() => window.authoringIntegration.commands.snapshot.phase === 'settled')));
+      const states = await Promise.all([page, second].map(editor => editor.evaluate(() => window.authoringIntegration.commands.session.snapshot)));
+      assert.equal(states.filter(state => state.base.head.revision === base + 1).length, 1);
+      assert.equal(states.filter(state => state.reason === 'draft_revision_conflict').length, 1);
+      for (const [index, editor] of [page, second].entries()) {
+        assert.equal(states[index].local.title, index ? 'Independent writer B' : 'Independent writer A');
+        assert.equal(await editor.evaluate(() => document.activeElement?.getAttribute('role')), 'status');
+        await editor.getByRole('region', { name: 'Draft node inspector', exact: true }).getByRole('heading', { name: 'seed', exact: true }).waitFor();
+      }
+      result = { base_revision: base, committed_revision: base + 1, receipts: received,
+        independent_local_edits_preserved: true, selection_and_keyboard_focus_preserved: true };
+      const secondContent = await second.content(); assert.ok(!secondContent.includes(token) && !secondContent.includes(registryToken));
+      await secondContext.close();
     } else if (job.mode.startsWith('activate')) {
       await page.getByRole('button', { name: 'Validate saved revision', exact: true }).click();
       await page.waitForFunction(() => window.authoringIntegration.commands.session.snapshot.validationMatchesDraft);

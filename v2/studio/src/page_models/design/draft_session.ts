@@ -48,6 +48,7 @@ export class DraftSession {
       pending: this.pending ? { action: this.pending.command.action, identity: this.pending.command.identity } : undefined });
   }
 
+  get canResumeCommand() { return !this.denied && !!this.pending?.binding && !this.pending.terminal && !this.pending.conflicted; }
   get unresolvedCommand() { return this.pending?.command; }
   get dirty() { return !this.base || comparable(this.local) !== comparable({ title: this.base.head.title, definition: this.base.definition }); }
 

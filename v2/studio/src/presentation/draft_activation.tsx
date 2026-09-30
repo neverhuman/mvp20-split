@@ -1,3 +1,4 @@
+import { useCommandFocus } from "./command_focus.js";
 import { useCallback, useState, useSyncExternalStore } from "react";
 import type { DraftActivation } from "../page_models/design/draft_activation.js";
 import type { ActivationParameters } from "../page_models/design/draft_session.js";
@@ -6,6 +7,7 @@ import { numericInput, parseDraftJSON } from "../page_models/design/scalar_input
 export function DraftActivationControl({ model }: { model: DraftActivation }) {
   const subscribe = useCallback((notify: () => void) => model.subscribe(notify), [model]);
   const view = useSyncExternalStore(subscribe, () => model.snapshot);
+  const commandStatus = useCommandFocus(view.phase);
   const [inputs, setInputs] = useState("[]"), [budget, setBudget] = useState("100"), [maximum, setMaximum] = useState("1000"), [deadline, setDeadline] = useState("3600");
   const [error, setError] = useState<string | null>(null);
   const request = () => {
@@ -29,10 +31,11 @@ export function DraftActivationControl({ model }: { model: DraftActivation }) {
       <p>Bindings must match the graph's declared inputs. Artifact bindings reference existing scoped artifacts.</p>
     </details>
     <div className="toolbar"><button disabled={!model.canRequest} onClick={request}>Request next campaign</button>
+      {model.canResume && <button onClick={() => void model.resume()}>Resume original activation command</button>}
       {view.phase === "unresolved" && !model.session.snapshot.denied && <button onClick={() => void model.reconcile()}>Check original activation receipt</button>}
     </div>
     {error && <p role="alert">{error}</p>}
-    <p role="status">{view.phase === "accepted" ? `Campaign admitted: ${view.runId}, from draft revision ${view.draftRevision}. Inspect its execution in Monitor.`
+    <p ref={commandStatus} tabIndex={-1} role="status">{view.phase === "accepted" ? `Campaign admitted: ${view.runId}, from draft revision ${view.draftRevision}. Inspect its execution in Monitor.`
       : view.phase === "rejected" ? `Campaign was not admitted (${view.reason}). Local work is unchanged; no automatic retry was sent.`
       : view.phase === "conflict" ? "Activation command identity conflicted. Its existing receipt cannot confirm this request; no replacement command was sent."
       : view.phase === "denied" ? "Activation access denied. Local work retained; protected projections cleared."

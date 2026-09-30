@@ -1,3 +1,4 @@
+import { useCommandFocus } from "./command_focus.js";
 import { useCallback, useEffect, useSyncExternalStore } from "react";
 import type { GraphSnapshotPage } from "../contracts/observations.js";
 import type { EmergencyStop } from "../page_models/design/emergency_stop.js";
@@ -7,6 +8,7 @@ export function EmergencyControl({ model, observation, denied = false }: {
 }) {
   const subscribe = useCallback((notify: () => void) => model.subscribe(notify), [model]);
   const view = useSyncExternalStore(subscribe, () => model.snapshot);
+  const commandStatus = useCommandFocus(view.phase);
   const compatible = !observation || model.matches({ scope: observation.cut.scope, run: observation.cut.run_id });
   useEffect(() => { model.observe(compatible ? observation : null, denied); }, [model, observation, denied, compatible]);
   const canStop = compatible && !denied && !!observation && observation.status === "running" &&
@@ -16,9 +18,10 @@ export function EmergencyControl({ model, observation, denied = false }: {
     <p>Operational control for the observed run. Draft graphs are unchanged.</p>
     <div className="toolbar">
       <button disabled={!canStop} onClick={() => void model.request(crypto.randomUUID())}>Request emergency stop</button>
+      {model.canResume && !denied && <button onClick={() => void model.resume()}>Resume original stop command</button>}
       {view.phase === "unresolved" && !denied && <button onClick={() => void model.reconcile()}>Check original stop receipt</button>}
     </div>
-    <p role="status">{view.phase === "accepted" ? `Stop accepted at run revision ${view.committedRevision}. Refresh observations to inspect committed history. In-flight external effects may remain uncertain.`
+    <p ref={commandStatus} tabIndex={-1} role="status">{view.phase === "accepted" ? `Stop accepted at run revision ${view.committedRevision}. Refresh observations to inspect committed history. In-flight external effects may remain uncertain.`
       : view.phase === "conflict" ? "Stop command identity conflicted. Its existing receipt cannot confirm this request. Refresh observations; no replacement stop was sent."
       : view.phase === "rejected" ? `Stop rejected (${view.reason}). Refresh observations before deciding on another operational action.`
       : view.phase === "denied" || denied ? "Emergency control access denied. Protected observations cleared."
