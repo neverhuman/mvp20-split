@@ -1,0 +1,21 @@
+{
+  "profile": "amphora-studio-local-render-budget-v1",
+  "baseline": "2026-09-30T22-10-54-615Z",
+  "machine": {
+    "platform": "win32",
+    "release": "10.0.26200",
+    "arch": "x64",
+    "cpu": "13th Gen Intel(R) Core(TM) i7-13700KF",
+    "logical_cpus": 24,
+    "memory_gib": 64,
+    "node": "v24.18.0",
+    "browser": "153.0.8010.12"
+  },
+  "render_p95_ms": {
+    "cold_graph_50": 150,
+    "paged_graph_200": 150,
+    "warm_graph_200": 250,
+    "detail": 150
+  },
+  "derivation": "Three times the largest observed five-sample p95 across desktop/narrow, rounded up to25ms. Fixed regression guard, not an automatically recomputed threshold or product SLO. Request duration is reported separately and not bounded by this UI budget."
+}

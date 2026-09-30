@@ -1,0 +1,701 @@
+{
+  "profile": "amphora-studio-performance-v1",
+  "status": "passed",
+  "record_only": false,
+  "verified_at": "2026-09-30 17:13:27",
+  "timezone": "America/Chicago",
+  "machine": {
+    "platform": "win32",
+    "release": "10.0.26200",
+    "arch": "x64",
+    "cpu": "13th Gen Intel(R) Core(TM) i7-13700KF",
+    "logical_cpus": 24,
+    "memory_gib": 64,
+    "node": "v24.18.0",
+    "browser": "153.0.8010.12"
+  },
+  "logical_nodes": 10000,
+  "maximum_visible": 200,
+  "maximum_response_nodes": 50,
+  "fixture_delay_ms": 25,
+  "samples": [
+    {
+      "name": "cold_graph_50",
+      "model_to_paint_ms": 42.40000009536743,
+      "request_ms": 28.600000143051147,
+      "response_to_model_ms": 2.299999952316284,
+      "navigation_to_paint_ms": 539,
+      "nodes": 50,
+      "width": 1440,
+      "iteration": 0
+    },
+    {
+      "name": "intermediate_page",
+      "model_to_paint_ms": 40.90000009536743,
+      "request_ms": 27,
+      "response_to_model_ms": 1,
+      "navigation_to_paint_ms": 672.2999999523163,
+      "nodes": 100,
+      "width": 1440,
+      "iteration": 0
+    },
+    {
+      "name": "intermediate_page",
+      "model_to_paint_ms": 60.09999990463257,
+      "request_ms": 33.90000009536743,
+      "response_to_model_ms": 1.5,
+      "navigation_to_paint_ms": 806.3999998569489,
+      "nodes": 150,
+      "width": 1440,
+      "iteration": 0
+    },
+    {
+      "name": "paged_graph_200",
+      "model_to_paint_ms": 38.09999990463257,
+      "request_ms": 25.5,
+      "response_to_model_ms": 0.6000001430511475,
+      "navigation_to_paint_ms": 905.3999998569489,
+      "nodes": 200,
+      "width": 1440,
+      "iteration": 0
+    },
+    {
+      "name": "warm_graph_200",
+      "model_to_paint_ms": 53,
+      "request_ms": 0,
+      "response_to_model_ms": null,
+      "navigation_to_paint_ms": 1039.8999998569489,
+      "nodes": 200,
+      "width": 1440,
+      "iteration": 0
+    },
+    {
+      "name": "detail",
+      "model_to_paint_ms": 60.5,
+      "request_ms": 38.90000009536743,
+      "response_to_model_ms": 26.59999990463257,
+      "navigation_to_paint_ms": 1172.6999998092651,
+      "nodes": 200,
+      "width": 1440,
+      "iteration": 0
+    },
+    {
+      "name": "cold_graph_50",
+      "model_to_paint_ms": 34.799999952316284,
+      "request_ms": 41.200000047683716,
+      "response_to_model_ms": 2.200000047683716,
+      "navigation_to_paint_ms": 367.7999999523163,
+      "nodes": 50,
+      "width": 1440,
+      "iteration": 1
+    },
+    {
+      "name": "intermediate_page",
+      "model_to_paint_ms": 42.799999952316284,
+      "request_ms": 33.700000047683716,
+      "response_to_model_ms": 0.7999999523162842,
+      "navigation_to_paint_ms": 500.5,
+      "nodes": 100,
+      "width": 1440,
+      "iteration": 1
+    },
+    {
+      "name": "intermediate_page",
+      "model_to_paint_ms": 50.40000009536743,
+      "request_ms": 28.5,
+      "response_to_model_ms": 3.6999998092651367,
+      "navigation_to_paint_ms": 635,
+      "nodes": 150,
+      "width": 1440,
+      "iteration": 1
+    },
+    {
+      "name": "paged_graph_200",
+      "model_to_paint_ms": 44.80000019073486,
+      "request_ms": 35.200000047683716,
+      "response_to_model_ms": 0.6999998092651367,
+      "navigation_to_paint_ms": 750.4000000953674,
+      "nodes": 200,
+      "width": 1440,
+      "iteration": 1
+    },
+    {
+      "name": "warm_graph_200",
+      "model_to_paint_ms": 37.59999990463257,
+      "request_ms": 0,
+      "response_to_model_ms": null,
+      "navigation_to_paint_ms": 867.5,
+      "nodes": 200,
+      "width": 1440,
+      "iteration": 1
+    },
+    {
+      "name": "detail",
+      "model_to_paint_ms": 45.700000047683716,
+      "request_ms": 28.40000009536743,
+      "response_to_model_ms": 1.7000000476837158,
+      "navigation_to_paint_ms": 949.9000000953674,
+      "nodes": 200,
+      "width": 1440,
+      "iteration": 1
+    },
+    {
+      "name": "cold_graph_50",
+      "model_to_paint_ms": 36.700000047683716,
+      "request_ms": 38.40000009536743,
+      "response_to_model_ms": 2.3999998569488525,
+      "navigation_to_paint_ms": 375.40000009536743,
+      "nodes": 50,
+      "width": 1440,
+      "iteration": 2
+    },
+    {
+      "name": "intermediate_page",
+      "model_to_paint_ms": 47.5,
+      "request_ms": 29.700000047683716,
+      "response_to_model_ms": 0.7999999523162842,
+      "navigation_to_paint_ms": 508.7000000476837,
+      "nodes": 100,
+      "width": 1440,
+      "iteration": 2
+    },
+    {
+      "name": "intermediate_page",
+      "model_to_paint_ms": 46.69999980926514,
+      "request_ms": 34.59999990463257,
+      "response_to_model_ms": 0.8000001907348633,
+      "navigation_to_paint_ms": 643.5,
+      "nodes": 150,
+      "width": 1440,
+      "iteration": 2
+    },
+    {
+      "name": "paged_graph_200",
+      "model_to_paint_ms": 33.700000047683716,
+      "request_ms": 26.59999990463257,
+      "response_to_model_ms": 0.6000001430511475,
+      "navigation_to_paint_ms": 742.3000001907349,
+      "nodes": 200,
+      "width": 1440,
+      "iteration": 2
+    },
+    {
+      "name": "warm_graph_200",
+      "model_to_paint_ms": 39.700000047683716,
+      "request_ms": 0,
+      "response_to_model_ms": null,
+      "navigation_to_paint_ms": 859.3000001907349,
+      "nodes": 200,
+      "width": 1440,
+      "iteration": 2
+    },
+    {
+      "name": "detail",
+      "model_to_paint_ms": 48,
+      "request_ms": 28.200000047683716,
+      "response_to_model_ms": 1.5999999046325684,
+      "navigation_to_paint_ms": 942.5,
+      "nodes": 200,
+      "width": 1440,
+      "iteration": 2
+    },
+    {
+      "name": "cold_graph_50",
+      "model_to_paint_ms": 41.09999990463257,
+      "request_ms": 31.5,
+      "response_to_model_ms": 2.4000000953674316,
+      "navigation_to_paint_ms": 364.89999985694885,
+      "nodes": 50,
+      "width": 1440,
+      "iteration": 3
+    },
+    {
+      "name": "intermediate_page",
+      "model_to_paint_ms": 52.299999952316284,
+      "request_ms": 26.5,
+      "response_to_model_ms": 0.5999999046325684,
+      "navigation_to_paint_ms": 497.39999985694885,
+      "nodes": 100,
+      "width": 1440,
+      "iteration": 3
+    },
+    {
+      "name": "intermediate_page",
+      "model_to_paint_ms": 46.19999980926514,
+      "request_ms": 32.59999990463257,
+      "response_to_model_ms": 0.6000001430511475,
+      "navigation_to_paint_ms": 629.8999998569489,
+      "nodes": 150,
+      "width": 1440,
+      "iteration": 3
+    },
+    {
+      "name": "paged_graph_200",
+      "model_to_paint_ms": 35.69999980926514,
+      "request_ms": 28.200000047683716,
+      "response_to_model_ms": 0.7000000476837158,
+      "navigation_to_paint_ms": 730.3999998569489,
+      "nodes": 200,
+      "width": 1440,
+      "iteration": 3
+    },
+    {
+      "name": "warm_graph_200",
+      "model_to_paint_ms": 37.39999985694885,
+      "request_ms": 0,
+      "response_to_model_ms": null,
+      "navigation_to_paint_ms": 847.0999999046326,
+      "nodes": 200,
+      "width": 1440,
+      "iteration": 3
+    },
+    {
+      "name": "detail",
+      "model_to_paint_ms": 47.299999952316284,
+      "request_ms": 28.399999856948853,
+      "response_to_model_ms": 1.6000001430511475,
+      "navigation_to_paint_ms": 930,
+      "nodes": 200,
+      "width": 1440,
+      "iteration": 3
+    },
+    {
+      "name": "cold_graph_50",
+      "model_to_paint_ms": 36.90000009536743,
+      "request_ms": 30.299999952316284,
+      "response_to_model_ms": 2.299999952316284,
+      "navigation_to_paint_ms": 381.60000014305115,
+      "nodes": 50,
+      "width": 1440,
+      "iteration": 4
+    },
+    {
+      "name": "intermediate_page",
+      "model_to_paint_ms": 46,
+      "request_ms": 31.899999856948853,
+      "response_to_model_ms": 0.7999999523162842,
+      "navigation_to_paint_ms": 514.2999999523163,
+      "nodes": 100,
+      "width": 1440,
+      "iteration": 4
+    },
+    {
+      "name": "intermediate_page",
+      "model_to_paint_ms": 62.200000047683716,
+      "request_ms": 26.5,
+      "response_to_model_ms": 23.59999990463257,
+      "navigation_to_paint_ms": 681,
+      "nodes": 150,
+      "width": 1440,
+      "iteration": 4
+    },
+    {
+      "name": "paged_graph_200",
+      "model_to_paint_ms": 36.40000009536743,
+      "request_ms": 26.800000190734863,
+      "response_to_model_ms": 0.5999999046325684,
+      "navigation_to_paint_ms": 781.1000001430511,
+      "nodes": 200,
+      "width": 1440,
+      "iteration": 4
+    },
+    {
+      "name": "warm_graph_200",
+      "model_to_paint_ms": 32.80000019073486,
+      "request_ms": 0,
+      "response_to_model_ms": null,
+      "navigation_to_paint_ms": 897.6000001430511,
+      "nodes": 200,
+      "width": 1440,
+      "iteration": 4
+    },
+    {
+      "name": "detail",
+      "model_to_paint_ms": 47.59999990463257,
+      "request_ms": 27.40000009536743,
+      "response_to_model_ms": 2.0999999046325684,
+      "navigation_to_paint_ms": 981.7999999523163,
+      "nodes": 200,
+      "width": 1440,
+      "iteration": 4
+    },
+    {
+      "name": "cold_graph_50",
+      "model_to_paint_ms": 39.59999990463257,
+      "request_ms": 27.799999952316284,
+      "response_to_model_ms": 2.200000047683716,
+      "navigation_to_paint_ms": 345.5,
+      "nodes": 50,
+      "width": 390,
+      "iteration": 0
+    },
+    {
+      "name": "intermediate_page",
+      "model_to_paint_ms": 50.200000047683716,
+      "request_ms": 28.799999952316284,
+      "response_to_model_ms": 0.5999999046325684,
+      "navigation_to_paint_ms": 479.2000000476837,
+      "nodes": 100,
+      "width": 390,
+      "iteration": 0
+    },
+    {
+      "name": "intermediate_page",
+      "model_to_paint_ms": 51.700000047683716,
+      "request_ms": 27.40000009536743,
+      "response_to_model_ms": 18.09999990463257,
+      "navigation_to_paint_ms": 628.7000000476837,
+      "nodes": 150,
+      "width": 390,
+      "iteration": 0
+    },
+    {
+      "name": "paged_graph_200",
+      "model_to_paint_ms": 36.799999952316284,
+      "request_ms": 27.200000047683716,
+      "response_to_model_ms": 0.5999999046325684,
+      "navigation_to_paint_ms": 729.7000000476837,
+      "nodes": 200,
+      "width": 390,
+      "iteration": 0
+    },
+    {
+      "name": "warm_graph_200",
+      "model_to_paint_ms": 37.700000047683716,
+      "request_ms": 0,
+      "response_to_model_ms": null,
+      "navigation_to_paint_ms": 862.1000001430511,
+      "nodes": 200,
+      "width": 390,
+      "iteration": 0
+    },
+    {
+      "name": "detail",
+      "model_to_paint_ms": 46.09999990463257,
+      "request_ms": 29.59999990463257,
+      "response_to_model_ms": 1.6000001430511475,
+      "navigation_to_paint_ms": 947.2000000476837,
+      "nodes": 200,
+      "width": 390,
+      "iteration": 0
+    },
+    {
+      "name": "cold_graph_50",
+      "model_to_paint_ms": 43.200000047683716,
+      "request_ms": 39.10000014305115,
+      "response_to_model_ms": 2.0999999046325684,
+      "navigation_to_paint_ms": 364.2000000476837,
+      "nodes": 50,
+      "width": 390,
+      "iteration": 1
+    },
+    {
+      "name": "intermediate_page",
+      "model_to_paint_ms": 36.90000009536743,
+      "request_ms": 39.200000047683716,
+      "response_to_model_ms": 0.7999999523162842,
+      "navigation_to_paint_ms": 496.90000009536743,
+      "nodes": 100,
+      "width": 390,
+      "iteration": 1
+    },
+    {
+      "name": "intermediate_page",
+      "model_to_paint_ms": 38.200000047683716,
+      "request_ms": 31.09999990463257,
+      "response_to_model_ms": 11.200000047683716,
+      "navigation_to_paint_ms": 630.5,
+      "nodes": 150,
+      "width": 390,
+      "iteration": 1
+    },
+    {
+      "name": "paged_graph_200",
+      "model_to_paint_ms": 39.90000009536743,
+      "request_ms": 39.799999952316284,
+      "response_to_model_ms": 0.7999999523162842,
+      "navigation_to_paint_ms": 747.7000000476837,
+      "nodes": 200,
+      "width": 390,
+      "iteration": 1
+    },
+    {
+      "name": "warm_graph_200",
+      "model_to_paint_ms": 37.89999985694885,
+      "request_ms": 0,
+      "response_to_model_ms": null,
+      "navigation_to_paint_ms": 864.5999999046326,
+      "nodes": 200,
+      "width": 390,
+      "iteration": 1
+    },
+    {
+      "name": "detail",
+      "model_to_paint_ms": 45.700000047683716,
+      "request_ms": 30.40000009536743,
+      "response_to_model_ms": 1.3999998569488525,
+      "navigation_to_paint_ms": 947,
+      "nodes": 200,
+      "width": 390,
+      "iteration": 1
+    },
+    {
+      "name": "cold_graph_50",
+      "model_to_paint_ms": 44.09999990463257,
+      "request_ms": 27.200000047683716,
+      "response_to_model_ms": 2.299999952316284,
+      "navigation_to_paint_ms": 348.2999999523163,
+      "nodes": 50,
+      "width": 390,
+      "iteration": 2
+    },
+    {
+      "name": "intermediate_page",
+      "model_to_paint_ms": 36.700000047683716,
+      "request_ms": 39.90000009536743,
+      "response_to_model_ms": 0.7999999523162842,
+      "navigation_to_paint_ms": 481.2000000476837,
+      "nodes": 100,
+      "width": 390,
+      "iteration": 2
+    },
+    {
+      "name": "intermediate_page",
+      "model_to_paint_ms": 62.5,
+      "request_ms": 34.200000047683716,
+      "response_to_model_ms": 0.7999999523162842,
+      "navigation_to_paint_ms": 631.7000000476837,
+      "nodes": 150,
+      "width": 390,
+      "iteration": 2
+    },
+    {
+      "name": "paged_graph_200",
+      "model_to_paint_ms": 37.40000009536743,
+      "request_ms": 26.200000047683716,
+      "response_to_model_ms": 0.7999999523162842,
+      "navigation_to_paint_ms": 731.7000000476837,
+      "nodes": 200,
+      "width": 390,
+      "iteration": 2
+    },
+    {
+      "name": "warm_graph_200",
+      "model_to_paint_ms": 50.5,
+      "request_ms": 0,
+      "response_to_model_ms": null,
+      "navigation_to_paint_ms": 866.1000001430511,
+      "nodes": 200,
+      "width": 390,
+      "iteration": 2
+    },
+    {
+      "name": "detail",
+      "model_to_paint_ms": 42.299999952316284,
+      "request_ms": 29.59999990463257,
+      "response_to_model_ms": 1.4000000953674316,
+      "navigation_to_paint_ms": 948.4000000953674,
+      "nodes": 200,
+      "width": 390,
+      "iteration": 2
+    },
+    {
+      "name": "cold_graph_50",
+      "model_to_paint_ms": 41.09999990463257,
+      "request_ms": 36.200000047683716,
+      "response_to_model_ms": 2.200000047683716,
+      "navigation_to_paint_ms": 361.7999999523163,
+      "nodes": 50,
+      "width": 390,
+      "iteration": 3
+    },
+    {
+      "name": "intermediate_page",
+      "model_to_paint_ms": 50.80000019073486,
+      "request_ms": 26.700000047683716,
+      "response_to_model_ms": 0.6999998092651367,
+      "navigation_to_paint_ms": 495.2000000476837,
+      "nodes": 100,
+      "width": 390,
+      "iteration": 3
+    },
+    {
+      "name": "intermediate_page",
+      "model_to_paint_ms": 45.90000009536743,
+      "request_ms": 33.299999952316284,
+      "response_to_model_ms": 0.7999999523162842,
+      "navigation_to_paint_ms": 628.5,
+      "nodes": 150,
+      "width": 390,
+      "iteration": 3
+    },
+    {
+      "name": "paged_graph_200",
+      "model_to_paint_ms": 36,
+      "request_ms": 27.90000009536743,
+      "response_to_model_ms": 0.7000000476837158,
+      "navigation_to_paint_ms": 729.2000000476837,
+      "nodes": 200,
+      "width": 390,
+      "iteration": 3
+    },
+    {
+      "name": "warm_graph_200",
+      "model_to_paint_ms": 36.19999980926514,
+      "request_ms": 0,
+      "response_to_model_ms": null,
+      "navigation_to_paint_ms": 844.8999998569489,
+      "nodes": 200,
+      "width": 390,
+      "iteration": 3
+    },
+    {
+      "name": "detail",
+      "model_to_paint_ms": 49,
+      "request_ms": 28,
+      "response_to_model_ms": 1.7000000476837158,
+      "navigation_to_paint_ms": 929.5999999046326,
+      "nodes": 200,
+      "width": 390,
+      "iteration": 3
+    },
+    {
+      "name": "cold_graph_50",
+      "model_to_paint_ms": 40.200000047683716,
+      "request_ms": 26.5,
+      "response_to_model_ms": 3.1000001430511475,
+      "navigation_to_paint_ms": 379.2000000476837,
+      "nodes": 50,
+      "width": 390,
+      "iteration": 4
+    },
+    {
+      "name": "intermediate_page",
+      "model_to_paint_ms": 49.39999985694885,
+      "request_ms": 26.600000143051147,
+      "response_to_model_ms": 0.7000000476837158,
+      "navigation_to_paint_ms": 512.0999999046326,
+      "nodes": 100,
+      "width": 390,
+      "iteration": 4
+    },
+    {
+      "name": "intermediate_page",
+      "model_to_paint_ms": 63.5,
+      "request_ms": 33.89999985694885,
+      "response_to_model_ms": 1.1000001430511475,
+      "navigation_to_paint_ms": 662.5,
+      "nodes": 150,
+      "width": 390,
+      "iteration": 4
+    },
+    {
+      "name": "paged_graph_200",
+      "model_to_paint_ms": 37.299999952316284,
+      "request_ms": 25.299999952316284,
+      "response_to_model_ms": 0.6000001430511475,
+      "navigation_to_paint_ms": 762.7999999523163,
+      "nodes": 200,
+      "width": 390,
+      "iteration": 4
+    },
+    {
+      "name": "warm_graph_200",
+      "model_to_paint_ms": 39.59999990463257,
+      "request_ms": 0,
+      "response_to_model_ms": null,
+      "navigation_to_paint_ms": 878.7999999523163,
+      "nodes": 200,
+      "width": 390,
+      "iteration": 4
+    },
+    {
+      "name": "detail",
+      "model_to_paint_ms": 47.299999952316284,
+      "request_ms": 28.90000009536743,
+      "response_to_model_ms": 1.7000000476837158,
+      "navigation_to_paint_ms": 962,
+      "nodes": 200,
+      "width": 390,
+      "iteration": 4
+    }
+  ],
+  "method": "Resource Timing measures request/response duration. Model-ready or native input event to matching DOM plus two animation frames measures a render-settlement proxy, not GPU/compositor frame time. Paged-200 records the final bounded append separately from navigation-to-200.",
+  "limits": [
+    "Synthetic source through production client/model/view, no scientific or live-owner throughput claim.",
+    "Fresh browser contexts are cold consumer contexts, not cold OS/process caches.",
+    "Local machine baseline, not DGX/Threadripper or universal performance."
+  ],
+  "packet_bounds": {
+    "requests": 50,
+    "maximum_nodes": 50,
+    "maximum_bytes": 10755
+  },
+  "summary": [
+    {
+      "width": 1440,
+      "name": "cold_graph_50",
+      "count": 5,
+      "request_p95_ms": 41.200000047683716,
+      "render_p50_ms": 36.90000009536743,
+      "render_p95_ms": 42.40000009536743
+    },
+    {
+      "width": 1440,
+      "name": "paged_graph_200",
+      "count": 5,
+      "request_p95_ms": 35.200000047683716,
+      "render_p50_ms": 36.40000009536743,
+      "render_p95_ms": 44.80000019073486
+    },
+    {
+      "width": 1440,
+      "name": "warm_graph_200",
+      "count": 5,
+      "request_p95_ms": 0,
+      "render_p50_ms": 37.59999990463257,
+      "render_p95_ms": 53
+    },
+    {
+      "width": 1440,
+      "name": "detail",
+      "count": 5,
+      "request_p95_ms": 38.90000009536743,
+      "render_p50_ms": 47.59999990463257,
+      "render_p95_ms": 60.5
+    },
+    {
+      "width": 390,
+      "name": "cold_graph_50",
+      "count": 5,
+      "request_p95_ms": 39.10000014305115,
+      "render_p50_ms": 41.09999990463257,
+      "render_p95_ms": 44.09999990463257
+    },
+    {
+      "width": 390,
+      "name": "paged_graph_200",
+      "count": 5,
+      "request_p95_ms": 39.799999952316284,
+      "render_p50_ms": 37.299999952316284,
+      "render_p95_ms": 39.90000009536743
+    },
+    {
+      "width": 390,
+      "name": "warm_graph_200",
+      "count": 5,
+      "request_p95_ms": 0,
+      "render_p50_ms": 37.89999985694885,
+      "render_p95_ms": 50.5
+    },
+    {
+      "width": 390,
+      "name": "detail",
+      "count": 5,
+      "request_p95_ms": 30.40000009536743,
+      "render_p50_ms": 46.09999990463257,
+      "render_p95_ms": 49
+    }
+  ],
+  "budget_profile": "amphora-studio-local-render-budget-v1"
+}
