@@ -39,7 +39,7 @@ def main():
     parser.add_argument("--area", choices=["identity", "acquisition", "graph", "admission", "api", "baseline", "persistence", "lifecycle", "completion", "delivery", "inspection", "graph_inspection", "graph_navigation", "definitions", "publication", "storage", "retention", "maintenance", "acceptance", "descriptors", "routing", "transport", "executable", "compiler", "scheduling", "aggregation", "waits", "bindings", "successors", "contracts", "page_models"])
     parser.add_argument("--coverage", action="store_true")
     args, pytest_args = parser.parse_known_args()
-    areas = {"research": {"identity"}, "runtime": {"successors", "bindings", "waits", "aggregation", "scheduling", "compiler", "graph", "admission", "api", "baseline", "persistence", "lifecycle", "completion", "delivery", "inspection", "graph_inspection", "graph_navigation", "definitions", "acceptance"},
+    areas = {"research": {"identity", "persistence"}, "runtime": {"successors", "bindings", "waits", "aggregation", "scheduling", "compiler", "graph", "admission", "api", "baseline", "persistence", "lifecycle", "completion", "delivery", "inspection", "graph_inspection", "graph_navigation", "definitions", "acceptance"},
              "data-artifacts": {"acquisition", "persistence", "publication", "storage", "retention", "maintenance", "acceptance"},
              "registry": {"descriptors", "persistence", "api", "routing"},
              "worker-sdk": {"transport", "lifecycle", "acceptance"}, "campaigns": {"executable"},

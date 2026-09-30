@@ -47,6 +47,16 @@ def registry_owner(state):
         "GRANT USAGE ON SCHEMA registry TO registry_service;")
 
 
+def research_owner(state):
+    """Add Research roles/schema to the existing labeled fixture without resetting data."""
+    for role in ("research_migrator", "research_service"):
+        if sql(state, f"SELECT 1 FROM pg_roles WHERE rolname='{role}';").stdout.strip() != "1":
+            sql(state, f"CREATE ROLE {role} LOGIN PASSWORD '{state['password']}';")
+    sql(state, "GRANT CONNECT ON DATABASE amphora_bp02_test TO research_migrator,research_service; "
+        "CREATE SCHEMA IF NOT EXISTS research AUTHORIZATION research_migrator; "
+        "GRANT USAGE ON SCHEMA research TO research_service;")
+
+
 def ready(state):
     deadline = time.monotonic() + 45
     while time.monotonic() < deadline:

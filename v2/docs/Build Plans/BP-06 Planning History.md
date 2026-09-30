@@ -1,5 +1,10 @@
 # BP-06 Planning History
 
+## Research persistence checkpoint - 2026-09-30 18:01:56
+
+B1 partial: Research0.2.0 private PostgreSQL ledger verified;34 owner tests (8 persistence) and13 dev tests pass. Two separately installed processes preserved original/successor revisions and replay. Forward research_0002 fixes NULL predecessor checks without rewriting applied history. Public API/artifact-rights and Data acquisition ledger/adapters remain; child0/4 and parent0/24 unchanged. [Evidence](../Audits/Evidence/BP-06-Acquisition/Research_Ledger.json). Tests cover concurrent conflicting writers, immutable history, unknown references, cross-scope/role denial, rollback before head commit and SQL null-predecessor bypass. No process-kill or public endpoint acceptance claimed.
+
+
 ## Research identity boundary - 2026-09-30 17:52:58
 
 B1 partial: Research contracts0.1.0 and independent Research0.1.0 identity/question policies verified;9 contract and26 domain tests pass from isolated wheels. Candidate/sample unknowns quarantine; exact question revision and predeclared criteria required.216 schemas preserve all208 predecessors. Persistence, adapters and public owner integration remain; child0/4 and parent0/24 unchanged. [Evidence](../Audits/Evidence/BP-06-Acquisition/Research_Identity.json). No new API/database or scientific acceptance claim. Pure policies check chain shape; predecessor existence and current rights remain owner persistence/public-client obligations.

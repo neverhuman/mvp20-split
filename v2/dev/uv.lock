@@ -361,17 +361,23 @@ requires-dist = [
 
 [[package]]
 name = "amphora-research"
-version = "0.1.0"
+version = "0.2.0"
 source = { editable = "../services/research" }
 dependencies = [
+    { name = "alembic" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-research" },
+    { name = "psycopg", extra = ["binary"] },
+    { name = "sqlalchemy" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "alembic", specifier = ">=1.16,<2" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
     { name = "amphora-contracts-research", editable = "../contracts/research" },
+    { name = "psycopg", extras = ["binary"], specifier = ">=3,<4" },
+    { name = "sqlalchemy", specifier = ">=2,<3" },
 ]
 
 [[package]]
