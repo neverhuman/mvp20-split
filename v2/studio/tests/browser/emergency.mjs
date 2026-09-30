@@ -11,23 +11,23 @@ const host = await startObservationHost(), browser = await chromium.launch({ hea
 const evidence = { verified_at: new Intl.DateTimeFormat('sv-SE', { timeZone: 'America/Chicago', dateStyle: 'short', timeStyle: 'medium' }).format(new Date()),
   timezone: 'America/Chicago', status: 'running', scenarios: [], screenshots: [], limits: ['Scripted HTTP peer using actual Studio transport/models/presentation; no owner cancellation-race or target-host acceptance.'] };
 try {
-  for (const scenario of ['accepted', 'rejected', 'lost-ack', 'socket-loss', 'denied']) {
+  for (const scenario of ['accepted', 'revision-zero', 'rejected', 'lost-ack', 'socket-loss', 'denied']) {
     let command, posts = 0, lookups = 0; const bodies = [];
-    host.state.revision = 1; host.state.mode = 'ready';
+    host.state.revision = scenario === 'revision-zero' ? 0 : 1; host.state.mode = scenario === 'revision-zero' ? 'empty' : 'ready';
     host.state.hook = async (url, json, req) => {
       if (url.pathname.endsWith('/runs/cancel')) {
         posts++;
         let body = ''; for await (const chunk of req) body += chunk;
         bodies.push(body);
         command = JSON.parse(body);
-        assert.equal(command.payload.expected_run_revision, 1);
+        assert.equal(command.payload.expected_run_revision, host.state.revision);
         assert.equal(command.payload.run_id, 'run-1');
         if (scenario === 'lost-ack') { json(503, { detail: 'receipt unavailable after owner commit' }); return true; }
         if (scenario === 'socket-loss') { req.socket.destroy(); return true; }
         if (scenario === 'denied') { json(403, { detail: 'private emergency diagnostics' }); return true; }
         const binding = { identity: command.identity, operation_id: 'stop', request_sha256: 'a'.repeat(64) };
         json(200, { outcome: scenario === 'rejected' ? { binding, status: 'rejected', reason_code: 'run_revision_conflict' }
-          : { binding, status: 'accepted', committed: { kind: 'run', object_id: 'run-1', revision: 2 } } }); return true;
+          : { binding, status: 'accepted', committed: { kind: 'run', object_id: 'run-1', revision: host.state.revision + 1 } } }); return true;
       }
       if (url.pathname.includes('/commands/runtime.cancel/')) {
         lookups++; assert.equal(url.pathname.split('/').at(-1), command.identity.command_id);
@@ -41,7 +41,7 @@ try {
     await page.goto(host.url + '?emergency=1');
     const region = page.getByRole('region', { name: 'Emergency control', exact: true });
     const button = region.getByRole('button', { name: 'Request emergency stop', exact: true });
-    await button.waitFor(); await page.waitForFunction(() => window.observationHarness.emergency.snapshot.revision === 1);
+    await button.waitFor(); await page.waitForFunction(revision => window.observationHarness.emergency.snapshot.revision === revision, host.state.revision);
     // Historical inspection must not expose a live stop action.
     await page.getByRole('button', { name: 'Pin loaded inspection', exact: true }).click();
     assert.equal(await button.isDisabled(), true);
@@ -49,7 +49,7 @@ try {
     await page.getByRole('link', { name: 'Emergency control', exact: true }).click();
     await button.focus(); await page.keyboard.press('Enter');
     const recovery = scenario === 'lost-ack' || scenario === 'socket-loss';
-    const expected = recovery ? 'unresolved' : scenario;
+    const expected = recovery ? 'unresolved' : scenario === 'revision-zero' ? 'accepted' : scenario;
     await page.waitForFunction(phase => window.observationHarness.emergency.snapshot.phase === phase, expected);
     assert.equal(await button.isDisabled(), true);
     if (recovery) {

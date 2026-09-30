@@ -40,7 +40,7 @@ export class EmergencyStop {
     if (!snapshot) { this.patch({ revision: null, status: null }); return; }
     try {
       requireContext(this.context, snapshot.cut.scope, snapshot.cut.run_id);
-      if (!Number.isSafeInteger(snapshot.cut.revision) || snapshot.cut.revision < 1) throw new Error("invalid_run_revision");
+      if (!Number.isSafeInteger(snapshot.cut.revision) || snapshot.cut.revision < 0) throw new Error("invalid_run_revision");
     } catch {
       this.patch({ revision: null, status: null }); throw new Error("stop_observation_mismatch");
     }

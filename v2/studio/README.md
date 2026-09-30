@@ -21,4 +21,4 @@ Replacement must preserve generated wire compatibility, bounded reads, cancellat
 
 Latest acceptance: BP-05.02 closed100%; final-source scopee222d4cf32604d729ef12146860bc49c passes both independently installed65-test browser builds and actual-owner replacement. [Navigation audit](../docs/Audits/BP-05.02_Navigation_Closeout.md).
 
-Active authoring boundary: [Design models](src/page_models/design/README.md) own draft state, original receipts, reviewed tool/schema discovery, structural comparison and scalar forms. Schema/form models do not grant execution or scientific authority. Emergency control is operational Monitor behavior, independent of draft saves. BP-05.03 actual-owner failure/replacement gates remain open.
+Active authoring boundary: [Design models](src/page_models/design/README.md) own draft state, original receipts, reviewed tool/schema discovery, structural comparison and scalar forms. Schema/form models do not grant execution or scientific authority. Emergency control is operational Monitor behavior, independent of draft saves. BP-05.03/B1 actual-owner authoring/replacement/cancellation passed; B2 policy and B3 recovery gates remain open.

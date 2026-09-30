@@ -11,6 +11,16 @@ const accepted = (command: Submission): CommandReceipt => ({ outcome: { status: 
   identity: command.identity, operation_id: "stop", request_sha256: "a".repeat(64) }, committed: { kind: "run", object_id: context.run, revision: 2 } } });
 type Source = Pick<AuthoringClient, "submit" | "receipt">;
 
+test("a newly admitted revision-zero run can be stopped before any work begins", async () => {
+  const source: Source = { submit: async command => {
+    assert.equal(JSON.parse(command.body).payload.expected_run_revision, 0);
+    const result = accepted(command); if (result.outcome.status === "accepted") result.outcome.committed.revision = 1; return result;
+  }, receipt: async () => { throw new Error("unexpected"); } };
+  const model = new EmergencyStop("operator", context, source);
+  model.observe(snapshot({ revision: 0, ids: [] }).snapshot); await model.request("stop-zero");
+  assert.equal(model.snapshot.phase, "accepted"); assert.equal(model.snapshot.committedRevision, 1);
+});
+
 test("lost emergency acknowledgement reconciles original identity without another POST", async () => {
   let posts = 0, original: Submission | undefined;
   const source: Source = { submit: async command => { posts++; original = command; throw new AuthoringFailure("network", true); },

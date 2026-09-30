@@ -15,6 +15,7 @@ from verify_studio import ROOT, stage_source
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--images", required=True, type=Path)
+    parser.add_argument("--authoring", action="store_true", help="Include actual draft and emergency command consumers")
     args = parser.parse_args()
     node, npm = shutil.which("node"), shutil.which("npm.cmd" if os.name == "nt" else "npm")
     if not node or not npm:
@@ -39,7 +40,8 @@ def main():
             count = re.search(r"(?:tests|pass)\s+(\d+)", result.stdout)
             assert count, "Node test count missing"
             pins[label] = {"source_sha256": sources, "public_schema_pins": schemas, "tests": int(count.group(1))}
-        verify(args.images, "observations", probe_override=ROOT / "studio/tests/integration/probe.py",
+        probe = "authoring_probe.py" if args.authoring else "probe.py"
+        verify(args.images, "observations", probe_override=ROOT / "studio/tests/integration" / probe,
             extra_config={"studio": installs, "studio_pins": pins, "node": node,
                           "evidence": str(ROOT / ".test-results/studio-integration")})
 

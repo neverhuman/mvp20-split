@@ -40,6 +40,12 @@ try {
       await page.getByRole('region', { name: 'Draft comparison', exact: true }).getByText(/do not establish scientific/).waitFor();
       const filename = `${name}-comparison.png`; await page.screenshot({ path: resolve(output, filename), fullPage: true }); evidence.screenshots.push(filename);
       await page.getByRole('button', { name: 'Compare with saved revision', exact: true }).click();
+      const body = await page.evaluate(() => window.draftHarness.commands.session.snapshot.local.definition.body);
+      body.outputs = [{ name: 'literal', value_type: { kind: 'scalar', scalar: 'number', unit: '1' } }];
+      body.nodes.find(node => node.kind === 'finish').outputs.push({ port: 'literal', source: { kind: 'number', value: 1.25, unit: '1' } });
+      await page.getByText('Advanced scope definition', { exact: true }).click();
+      await page.getByLabel('Scope JSON', { exact: true }).fill(JSON.stringify(body));
+      await page.getByRole('button', { name: 'Apply scope definition', exact: true }).click();
     } else await page.getByLabel('Draft title', { exact: true }).fill('Local work to retain');
     if (name === 'dense') {
       assert.equal(await page.locator('.react-flow__node').count(), 200);

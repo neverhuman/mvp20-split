@@ -12,7 +12,7 @@ function ScalarEditor({ field, value, apply, disabled }: { field: SchemaField; v
   const initial = value ?? field.fixed;
   const [text, setText] = useState(initial === undefined ? "" : String(initial));
   return <div className="draft-field"><label>{field.name}{field.required ? " (required)" : ""}
-    {field.kind === "boolean" || field.choices ? <select disabled={disabled} value={text} onChange={event => setText(event.target.value)}>
+    {field.kind === "boolean" || field.choices ? <select aria-label={field.name + (field.required ? " (required)" : "")} disabled={disabled} value={text} onChange={event => setText(event.target.value)}>
       <option value="">Choose a value</option>{(field.choices ?? [true, false]).map(item => <option key={String(item)} value={String(item)}>{String(item)}</option>)}
     </select> : <input disabled={disabled} value={text} maxLength={field.kind === "string" ? 4096 : 512} onChange={event => setText(event.target.value)} />}</label>
     <button disabled={disabled} onClick={() => apply(text)}>Apply {field.name}</button><p>Applied value: {value === undefined ? "Unbound" : String(value)}</p></div>;
@@ -24,7 +24,7 @@ function InputBinding({ name, source, apply, disabled }: { name: string; source:
   const [port, setPort] = useState(source?.kind === "output" ? source.port : "");
   return <fieldset disabled={disabled}><legend>{name}</legend>
     <p>Current binding: {source ? JSON.stringify(source) : "Unbound"}</p>
-    <label>Source type<select value={kind} onChange={event => setKind(event.target.value as "input" | "output")}><option value="input">Scope input</option><option value="output">Node output</option></select></label>
+    <label>Source type<select aria-label="Source type" value={kind} onChange={event => setKind(event.target.value as "input" | "output")}><option value="input">Scope input</option><option value="output">Node output</option></select></label>
     <label>{kind === "input" ? "Input name" : "Source node"}<input maxLength={128} value={origin} onChange={event => setOrigin(event.target.value)} /></label>
     {kind === "output" && <label>Output port<input maxLength={128} value={port} onChange={event => setPort(event.target.value)} /></label>}
     <button onClick={() => apply(kind === "input" ? { kind, name: origin } : { kind, node_id: origin, port })}>Apply {name} binding</button>
@@ -80,7 +80,7 @@ export function DraftInspector({ node, edits, path, catalog, perform, openScope,
     {view.schemaPhase === "loading" && <p role="status">Loading exact reviewed schema…</p>}
     {view.schemaPhase === "unavailable" && <p role="status">Schema unavailable. Existing draft content is retained.</p>}
     <details><summary>Advanced node definition</summary><p>All executable primitives are available here. Validation checks the complete graph.</p>
-      <label>Node JSON<textarea value={raw} onChange={event => setRaw(event.target.value)} maxLength={262144} rows={16} disabled={disabled} /></label>
+      <label>Node JSON<textarea aria-label="Node JSON" value={raw} onChange={event => setRaw(event.target.value)} maxLength={262144} rows={16} disabled={disabled} /></label>
       {rawStale && <p>The node changed after this source edit began. Copy your source changes before reloading the current node.</p>}
       <button disabled={disabled || rawStale} onClick={() => perform(() => { edits.replace(path, node.node_id, parseDraftJSON(raw) as Node); setRawBase(raw); })}>Apply node definition</button>
       <button disabled={disabled} onClick={() => { setRaw(currentRaw); setRawBase(currentRaw); }}>Reload node source</button>
