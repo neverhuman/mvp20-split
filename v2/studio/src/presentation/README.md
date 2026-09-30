@@ -1,0 +1,19 @@
+# Monitor presentation
+
+Status: BP-05.01/B3 verified in seven Chromium scenarios/two viewports and an independent source build; V1 actual available-owner integration remains. Architecture: [Studio](../../../docs/Architecture/Experience/Studio.md), [canvas decision](../../../docs/Architecture/Experience/Studio_Canvas_Decision.md).
+
+The internal researcher follows accepted execution observations and selects an activation to inspect its status. This module renders public read models; it cannot issue execution commands, edit a campaign, fetch records independently, access owner credentials or assert scientific acceptance.
+
+`MonitorWorkspace` accepts one `MonitorModel`, a scoped `RunContext` and an optional synthetic-fixture label. It subscribes via React's external-store boundary, opens context through the model and forwards document visibility. The host owns model construction/disposal. Selection, refresh, paging and explicit invalidation checks go through the same model. There is no competing component-local loader or polling loop.
+
+`GraphCanvas` owns local pan/zoom and shows at most 200 activations in a deterministic inventory layout. Runtime observation DTOs do not expose authored connections; this module deliberately renders no edges and labels that limitation. Node placement is not a scientific relationship or executable sequence. Refreshes preserve the mounted canvas viewport. Buttons and native node keyboard selection call the model; they do not mutate topology. The accessible list provides all essential selection operations independently of pointing.
+
+`MonitorDetail` renders only the selected revision-bound detail, with loading/denied/stale/error states and explicit partial-attempt count. Scientific acceptance is not inferred from execution completion. Full output values, artifact navigation, attempt paging, scoped topology expansion and run catalog navigation are later owning work; their absence is visible rather than represented by invented data.
+
+`style.css` is the shared presentation vocabulary: type hierarchy, spacing, borders, status text, focus, bounded canvas labels and reduced motion. The B2 comparison prototype imports this same stylesheet. Long canvas text is bounded to avoid overlap; full labels remain in list/inspector. Narrow screens place the inspector/list below the intentional pannable canvas and avoid document-wide horizontal overflow.
+
+Failed/expired observations retain old records only with an explicit not-current status and disabled selection actions. Scope denial clears graph/detail/selection through the model. List filtering applies only to loaded nodes and says so; it is not a global run search. Scene omission and filtered counts remain separate. The Load next page control stops at the scene limit rather than downloading all context; narrower scoped navigation is not implemented yet.
+
+Owned browser tests: `studio/tests/browser/monitor.mjs`, run `npm run test:browser`. The host serves a scripted peer over actual HTTP to the production `ObservationClient`; it does not replace the client/model with browser mocks. Scenarios cover held late detail, newer snapshot revision, graph and detail denial, empty scope, page expiration and invalidation-cursor recovery at desktop/narrow viewports. Playwright/axe, DOM assertions, request barriers and screenshots are evidence; Node coverage does not measure this rendered React code. `npm test` separately checks generated contracts, TS/TSX public-import boundaries and model/transport behavior. Actual available-owner integration remains V1.
+
+Replacement must preserve the model port, context/selection/revision authority, omission/failure meanings, bounded scene, accessible controls and explicit no-topology limitation until a real versioned producer adds it. A new presentation may change layout freely; it cannot silently turn observations into executable commands or scientific evidence.

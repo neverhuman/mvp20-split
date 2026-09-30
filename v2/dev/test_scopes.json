@@ -128,10 +128,12 @@
     "coverage_sources": [
       "studio/src/contracts",
       "studio/src/transport",
-      "studio/src/page_models"
+      "studio/src/page_models",
+      "studio/src/presentation"
     ],
     "acceptance_tests": [
-      "studio/spikes/interaction/tests"
+      "studio/spikes/interaction/tests",
+      "studio/tests/browser"
     ]
   },
   "solver-retain": {

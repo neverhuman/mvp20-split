@@ -11,8 +11,8 @@ test("browser modules import only local boundaries and declared public packages"
     for (const entry of await readdir(folder, { withFileTypes: true })) {
       const path = resolve(folder, entry.name);
       if (entry.isDirectory()) { if (entry.name !== "generated") await visit(path); continue; }
-      if (!path.endsWith(".ts")) continue;
-      const tree = parse(await readFile(path, "utf8"), { sourceType: "module", plugins: ["typescript"] });
+      if (!/\.tsx?$/.test(path)) continue;
+      const tree = parse(await readFile(path, "utf8"), { sourceType: "module", plugins: ["typescript", "jsx"] });
       function record(value: unknown): Record<string, unknown> {
         return value !== null && typeof value === "object" ? value as Record<string, unknown> : {};
       }

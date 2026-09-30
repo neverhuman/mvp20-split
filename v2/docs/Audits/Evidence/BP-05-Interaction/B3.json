@@ -1,0 +1,254 @@
+{
+  "verified_at": "2026-09-29 19:52:00",
+  "timezone": "America/Chicago",
+  "status": "passed",
+  "browser": "153.0.8010.12",
+  "scenarios": [
+    {
+      "name": "slow-detail",
+      "status": "passed",
+      "elapsed_ms": 865,
+      "requests": [
+        {
+          "path": "/api/runtime/v1/graph-observations/run-1/nodes",
+          "query": "?frontier_only=false&limit=50",
+          "revision": 1
+        },
+        {
+          "path": "/api/runtime/v1/graph-observations/run-1/nodes/0000000000000000000000000000000000000000000000000000000000000001",
+          "query": "?snapshot_token=snapshot-1&limit=50",
+          "revision": 1
+        },
+        {
+          "path": "/api/runtime/v1/graph-observations/run-1/nodes/0000000000000000000000000000000000000000000000000000000000000002",
+          "query": "?snapshot_token=snapshot-1&limit=50",
+          "revision": 1
+        }
+      ]
+    },
+    {
+      "name": "new-revision",
+      "status": "passed",
+      "elapsed_ms": 813,
+      "requests": [
+        {
+          "path": "/api/runtime/v1/graph-observations/run-1/nodes",
+          "query": "?frontier_only=false&limit=50",
+          "revision": 1
+        },
+        {
+          "path": "/api/runtime/v1/graph-observations/run-1/nodes/0000000000000000000000000000000000000000000000000000000000000001",
+          "query": "?snapshot_token=snapshot-1&limit=50",
+          "revision": 1
+        },
+        {
+          "path": "/api/runtime/v1/graph-observations/run-1/nodes",
+          "query": "?frontier_only=false&limit=50",
+          "revision": 2
+        },
+        {
+          "path": "/api/runtime/v1/graph-observations/run-1/nodes/0000000000000000000000000000000000000000000000000000000000000001",
+          "query": "?snapshot_token=snapshot-2&limit=50",
+          "revision": 2
+        }
+      ]
+    },
+    {
+      "name": "denied",
+      "status": "passed",
+      "elapsed_ms": 778,
+      "requests": [
+        {
+          "path": "/api/runtime/v1/graph-observations/run-1/nodes",
+          "query": "?frontier_only=false&limit=50",
+          "revision": 1
+        },
+        {
+          "path": "/api/runtime/v1/graph-observations/run-1/nodes/0000000000000000000000000000000000000000000000000000000000000001",
+          "query": "?snapshot_token=snapshot-1&limit=50",
+          "revision": 1
+        },
+        {
+          "path": "/api/runtime/v1/graph-observations/run-1/invalidations",
+          "query": "?cursor=events-1&limit=100",
+          "revision": 1
+        }
+      ]
+    },
+    {
+      "name": "detail-denied",
+      "status": "passed",
+      "elapsed_ms": 718,
+      "requests": [
+        {
+          "path": "/api/runtime/v1/graph-observations/run-1/nodes",
+          "query": "?frontier_only=false&limit=50",
+          "revision": 1
+        },
+        {
+          "path": "/api/runtime/v1/graph-observations/run-1/nodes/0000000000000000000000000000000000000000000000000000000000000001",
+          "query": "?snapshot_token=snapshot-1&limit=50",
+          "revision": 1
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "status": "passed",
+      "elapsed_ms": 671,
+      "requests": [
+        {
+          "path": "/api/runtime/v1/graph-observations/run-1/nodes",
+          "query": "?frontier_only=false&limit=50",
+          "revision": 1
+        }
+      ]
+    },
+    {
+      "name": "cursor-expired",
+      "status": "passed",
+      "elapsed_ms": 811,
+      "requests": [
+        {
+          "path": "/api/runtime/v1/graph-observations/run-1/nodes",
+          "query": "?frontier_only=false&limit=50",
+          "revision": 1
+        },
+        {
+          "path": "/api/runtime/v1/graph-observations/run-1/nodes",
+          "query": "?frontier_only=false&cursor=next-window&limit=50",
+          "revision": 1
+        },
+        {
+          "path": "/api/runtime/v1/graph-observations/run-1/nodes",
+          "query": "?frontier_only=false&limit=50",
+          "revision": 2
+        }
+      ]
+    },
+    {
+      "name": "events-expired",
+      "status": "passed",
+      "elapsed_ms": 796,
+      "requests": [
+        {
+          "path": "/api/runtime/v1/graph-observations/run-1/nodes",
+          "query": "?frontier_only=false&limit=50",
+          "revision": 1
+        },
+        {
+          "path": "/api/runtime/v1/graph-observations/run-1/invalidations",
+          "query": "?cursor=events-1&limit=100",
+          "revision": 1
+        },
+        {
+          "path": "/api/runtime/v1/graph-observations/run-1/nodes",
+          "query": "?frontier_only=false&limit=50",
+          "revision": 2
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    "slow-detail-pending.png",
+    "slow-detail-1440.png",
+    "slow-detail-390.png",
+    "new-revision-1440.png",
+    "new-revision-390.png",
+    "denied-1440.png",
+    "denied-390.png",
+    "detail-denied-1440.png",
+    "detail-denied-390.png",
+    "empty-1440.png",
+    "empty-390.png",
+    "cursor-expired-1440.png",
+    "cursor-expired-390.png",
+    "events-expired-1440.png",
+    "events-expired-390.png"
+  ],
+  "limits": [
+    "Scripted HTTP peer, not live Runtime.",
+    "Local Chromium, no target-host or full screen-reader conformance claim."
+  ],
+  "checkpoint_at": "2026-09-29 19:54:04",
+  "task": "BP-05.01/Build/B3",
+  "node_tests": 30,
+  "independent_build": {
+    "verified_at": "2026-09-29 19:51:55",
+    "status": "passed",
+    "scope": "isolated Node dependency install, schema regeneration check, TypeScript build and owned tests",
+    "tests": 30,
+    "source_sha256": {
+      "studio/package.json": "3a899002a762c2446ea5dff6a5f1cf565dc738ce4e3abd05fd3216427d4e3a95",
+      "studio/package-lock.json": "6b9f347de86ba6c9f63ff2ecd6a3ae56359c44c869ac81ad63d94ae331ce89ae",
+      "studio/tsconfig.json": "7d95cbcb35c6c9fe5d1982199bbbead2ac597f5ca2eb360fe5054028d7a3d22d",
+      "studio/src/contracts/observations.ts": "64620771ec767adfd6d11912327bdc5622f6416dc4f58342072aea3feece0b52",
+      "studio/src/contracts/README.md": "926bf172a9a564a91701f8d71de0749f0f6c1569b8040a6a8bc23b873d32c868",
+      "studio/src/page_models/event_position.ts": "3b90a894c96df6513d245caf733fc556237b73be943980ba727343fce7d98433",
+      "studio/src/page_models/graph_window.ts": "f4164c3cf917bafda56efd66602a357ec467104cba09e627903319119f24cc89",
+      "studio/src/page_models/monitor.ts": "55cb24947cc56bc5a793e768ca3a83bbefd71a7ec1338580d2324665b4373070",
+      "studio/src/page_models/README.md": "354983f8e56772ca3f4a43992d8f8457f87955c5dc7502b6b0bde91f25f07b68",
+      "studio/src/page_models/request_lane.ts": "57956c6a44ebcaba633ebefe3ec99b5a93e84ffadb943d51048be08f224216d0",
+      "studio/src/page_models/scene.ts": "9a010cf24dc0846d3c0e7ad4a1a1556eab17c4684a08c7adadfaa65c01a015e9",
+      "studio/src/presentation/graph_canvas.tsx": "539f0efcffbc1a52bbbdce76c243c0c7ea86a4bf550b5419a5325555d2d918fe",
+      "studio/src/presentation/monitor_detail.tsx": "0ee897c9fa38eb8aaaf8faf7e2b704122a5103d7acc444b05cde3422d304cc32",
+      "studio/src/presentation/monitor_workspace.tsx": "bd65c9508556902b0b01b5c193dd570746ad2311c850883e2eb193acca4e81c5",
+      "studio/src/presentation/README.md": "80216f64128370257df905049636a9524abfee1ac7c988921676729ca2765c3d",
+      "studio/src/presentation/style.css": "d09095316db4498b6cd8329e3e02d518ace0c341b6bbf69cc01ef06a849554c8",
+      "studio/src/presentation/styles.d.ts": "da5bf71d48cf909584a01c80b445f730507068f5b34c920f352e2bfcf0315e4c",
+      "studio/src/transport/failure.ts": "118855d014ab1b5648c14b9aace6cb62df66c05b3fe2a8dc639bd40834c3213e",
+      "studio/src/transport/observations.ts": "abf51b9bde05f3a5cea3b409f9ead062916e8c72d37e1d0fa8b1f19fe4908cf3",
+      "studio/src/transport/README.md": "fc529fe7cff14dc8012fa22ab8089b93dc57988e1dba406402cc1ca43592b1e4",
+      "studio/src/contracts/generated/detail.d.ts": "3aaf6bb641b81c806c00c6b51b2d0fb3942f302c72467183ddb9acc1f16d9055",
+      "studio/src/contracts/generated/events.d.ts": "ba96f92a3414c5b4f9dac687e3754f82c159b43e0df18d6184f084b5a23a0915",
+      "studio/src/contracts/generated/manifest.json": "595278f84a53748025a89503d20d4ab523c1fb21a4fae2306ce6a845f9baa435",
+      "studio/src/contracts/generated/schemas.json": "4d1cb734fdac45a1f8755ee504e094021a67b894c75b99f7881b15beffe66f84",
+      "studio/src/contracts/generated/snapshot.d.ts": "cfb544015d89ce713a4a5c0b8d1aea46b706f7fca16410507e42a7785b1a8b87",
+      "studio/src/contracts/generated/values.d.ts": "890df6bcbc9189e3d2171f79747715bb0ba002f083f4d92f53f66c27da2706c7",
+      "studio/tests/browser/entry.tsx": "2f55d4d015038b343a5a1c3968fa9e9f9dcda5b0d212ad1be2a70edf06947908",
+      "studio/tests/browser/host.mjs": "1fa3918a9ca5135eeb946e84a0f797c47668f8590154b412efc47b7331d826ba",
+      "studio/tests/browser/monitor.mjs": "d67b9fa55f27d8686c9fb9c2aa0cb67cfa7899309e9301dd57e2823caa3c5ad5",
+      "studio/tests/browser/README.md": "29629b8dc84bc5019c5baa0b79c8d4a8c784251909fc7312bc4dcf9099c8b1e4",
+      "studio/tests/contracts/observations.test.ts": "b00cc09e6ece4713ad69ea48e5ff7afdd2ffcbd719b2c69f2fad874eb619d331",
+      "studio/tests/contracts/ownership.test.ts": "2951ddac79a88b26a406fd7dc51b001f58ea57840618498c996ff3ebe514a516",
+      "studio/tests/fixtures/observations.ts": "0edc0fea2e25c86691b8ce177206b3b22502bc8ed32cf343b1d0f2fbed3bba10",
+      "studio/tests/page_models/monitor.test.ts": "10613e2d77f4fde4a43ec4e3b5f881fe7013eb130c3a0b0a09e1ec54c1c90831",
+      "studio/tests/page_models/scene.test.ts": "916505bdeab4d86d3ec8d7a68cea8d56f259a1bf00f3e5491460011bb2bfed99",
+      "studio/tests/transport/observations.test.ts": "9c973f168ef9641f67450aab931d64850f421357b2ee7891436dd262fa6d92c5",
+      "studio/scripts/generate-contracts.mjs": "a815255e412bc5e206891fdaa94d33321f70964e6cc3dc83659ebbc87a109019",
+      "studio/scripts/test.mjs": "1a6d1119f3095ddac8a9a9fc7a54030142ce9d738258d2205318bb9cce311122",
+      "studio/scripts/verify.mjs": "9dc7fefd2c58d1d9a1f4e4cf480d4184363bbc36bfdea954bc4a4875168005ad",
+      "studio/spikes/interaction/main.tsx": "f608f6eb5b09c926c2dfd5cb8cb2edcef792c8b2e98edea61280be34fee23f54",
+      "studio/spikes/interaction/preview.mjs": "2caaea012d0f3268f6a56a90d3c6ac46e414aed66d3f28f5d50c1fd32cd789a6",
+      "studio/spikes/interaction/README.md": "068df9ae1ee092aed905330d27359b7533acdd55bbbb954874aa0932216b19ac",
+      "studio/spikes/interaction/renderers.tsx": "4d63209aad8872d683a4e5dc4161f37402641f474d12e7855a46ea740035014d",
+      "studio/spikes/interaction/server.mjs": "85ce8e842c284a307b167872db363a3fc93a1eda6bf00f805a0a64d7a57d5933",
+      "studio/spikes/interaction/styles.d.ts": "da5bf71d48cf909584a01c80b445f730507068f5b34c920f352e2bfcf0315e4c",
+      "studio/spikes/interaction/tests/browser.mjs": "4d490f7a0579a82bdc2a591138629ddf7f492198fe24bf54a54f4a4a93b80b16"
+    },
+    "public_schema_pins": {
+      "snapshot": {
+        "source": "contracts/schemas/v1/graph-runtime.snapshot-page.serialization.json",
+        "sha256": "c660a32f96dbcea1156a0e8e043d48cbbad8861be185ce977ae0b3d30695fbca"
+      },
+      "detail": {
+        "source": "contracts/schemas/v1/graph-runtime.node-detail.serialization.json",
+        "sha256": "3ad65c54baaa79c338bad71dea54724f23c526254ae2bafd37cdfdcd40a6e3f9"
+      },
+      "values": {
+        "source": "contracts/schemas/v1/graph-runtime.value-page.serialization.json",
+        "sha256": "78b1de55f9929cd3164448449cc9ec09b1e05f34e9c6de3c6286d2b2b60610e6"
+      },
+      "events": {
+        "source": "contracts/schemas/v1/graph-runtime.invalidation-page.serialization.json",
+        "sha256": "8852947bf69de0a90f24ffc866313e8b8bd5026efd5dfe3875c25ba80cf9963e"
+      }
+    },
+    "limits": [
+      "No checkout imports or Python/service source copied",
+      "No browser/live backend acceptance claim"
+    ]
+  },
+  "browser_coverage": "Seven scenarios x two viewports; no source line-coverage claim",
+  "repaired": "Native browser fetch receiver; use globalThis rather than client instance."
+}

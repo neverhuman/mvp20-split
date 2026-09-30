@@ -28,6 +28,8 @@
     "src/**/*.json",
     "tests/**/*.ts",
     "spikes/**/*.tsx",
-    "spikes/**/*.d.ts"
+    "spikes/**/*.d.ts",
+    "src/**/*.tsx",
+    "tests/**/*.tsx"
   ]
 }

@@ -12,7 +12,8 @@
     "build": "tsc -p tsconfig.json",
     "test": "node scripts/verify.mjs",
     "test:interaction": "node spikes/interaction/tests/browser.mjs",
-    "preview:interaction": "node spikes/interaction/preview.mjs"
+    "preview:interaction": "node spikes/interaction/preview.mjs",
+    "test:browser": "npm run build && node tests/browser/monitor.mjs"
   },
   "dependencies": {
     "@xyflow/react": "12.12.0",

@@ -378,3 +378,4 @@ footer {
   -webkit-line-clamp:2;
   overflow:hidden;
 }
+.bounded-note { padding: 0 12px; font-size: 12px; }

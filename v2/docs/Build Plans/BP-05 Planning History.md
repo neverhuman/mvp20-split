@@ -2,6 +2,12 @@
 
 Archived first draft at `2026-09-25 13:35:12`. Historical task pairs/percentages are not the active execution tracker. The parent and linked children now own progress. Original scope is preserved below for traceability.
 
+## Verified B3 checkpoint ? 2026-09-29 19:54:04
+
+Production Monitor presentation now uses the actual ObservationClient/MonitorModel and shared styling. Seven actual Chromium scripted-HTTP cases pass: held late detail after new selection, old detail after new revision, graph denial clearing all records, detail-only denial, empty scope, expired page refresh and expired invalidation automatic resnapshot. Each runs1440?1000 and390?844 with zero scoped A/AA violations and no document horizontal overflow. Screenshots inspected. This found and repaired native browser fetch receiver binding, missed by Node tests. Node30 tests and independent source build ef9bc1f455cc4e0993b9e6525fbc59d6 pass. [Evidence](../Audits/Evidence/BP-05-Interaction/B3.json).
+
+Child75% (3/4), Build100%, Acceptance0%; parent18.75% (3/16). V1 actual Runtime integration/replacement is next. Runtime lacks authored edges: the presentation labels its activation inventory and never invents connections. No model/scientific/target-host acceptance claim. Fixture HTTP cases are consumer proof, not owner integration.
+
 ## Verified B2 checkpoint ? 2026-09-29 19:43:46
 
 Bounded 200-record scene against a server-side 10,000-node synthetic source passed actual Chromium interaction with React Flow and Cytoscape. Both preserve selection/viewport and support keyboard/list search, paging and explicit reveal. React Flow native node keyboard selection also passed. Desktop1440?1000 and narrow390?844 automated scans found no remaining A/AA violations; actual screenshots inspected. Fixed controlled-selection callback race, attribution contrast and long-label overlap. React19.3/React Flow12.12 selected; Cytoscape3.34.3 remains a comparison dependency. Thirty Node tests and independent source build pass; scene module100% lines/branches/functions. [Evidence](../Audits/Evidence/BP-05-Interaction/B2.json), [decision](../Architecture/Experience/Studio_Canvas_Decision.md). No Runtime integration, screen-reader conformance, target-host or scientific claim.

@@ -52,7 +52,8 @@ export class ObservationClient implements ObservationSource {
     const query = new URLSearchParams(Object.entries(params).filter((entry): entry is [string, string] => entry[1] !== undefined));
     try {
       if (controller.signal.aborted) throw new ReadFailure("aborted");
-      const response = await this.fetcher(this.base + "/v1/graph-observations/" + path + "?" + query.toString(), {
+      // A native browser fetch rejects an arbitrary client object as its receiver.
+      const response = await this.fetcher.call(globalThis, this.base + "/v1/graph-observations/" + path + "?" + query.toString(), {
         signal: controller.signal, credentials: "same-origin", redirect: "error", headers: { Accept: "application/json" },
       });
       if (!response.ok) await response.body?.cancel().catch(() => undefined);

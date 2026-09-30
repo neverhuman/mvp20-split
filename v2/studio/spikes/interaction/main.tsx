@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { SceneWindow, type ScenePage } from '../../src/page_models/scene.js';
 import { FlowCanvas, CyCanvas } from './renderers.js';
-import './style.css';
+import '../../src/presentation/style.css';
 
 declare global { interface Window { spike: { scene: SceneWindow; ready: boolean; revision: number; renderer: string } } }
 

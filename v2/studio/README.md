@@ -1,13 +1,14 @@
 # Graph Studio
 
-Status: BP-05.01/B1-B2 verified; production-model browser failure proof (B3) active. React Flow selected by measured prototype; no live-owner UI integration yet. Architecture: [Studio](../docs/Architecture/Experience/Studio.md), [read-model protocol](../docs/Architecture/Experience/Studio_Read_Model_Protocol.md).
+Status: BP-05.01/B1-B3 verified; actual available-owner integration (V1) active. React Flow selected by measured prototype; no live-owner UI integration yet. Architecture: [Studio](../docs/Architecture/Experience/Studio.md), [read-model protocol](../docs/Architecture/Experience/Studio_Read_Model_Protocol.md).
 
-This independently packaged browser consumer owns presentation state and public HTTP transport. It owns no run database, scientific rules, execution authority or backend credentials. Runtime observations are authoritative; notifications request refresh rather than patching graph state. Design/Monitor/Explore/Compare presentation comes in the following gates; current code implements Monitor's transport/state boundary only.
+This independently packaged browser consumer owns presentation state and public HTTP transport. It owns no run database, scientific rules, execution authority or backend credentials. Runtime observations are authoritative; notifications request refresh rather than patching graph state. Design/Monitor/Explore/Compare presentation comes in the following gates; current code implements Monitor transport/state and a read-only activation inventory with selection detail; real Runtime UI integration remains unproven.
 
 | Module | Rebuild responsibility | Owned tests |
 |---|---|---|
 | [contracts](src/contracts/README.md) | Reproducible schema-derived DTOs and runtime response validation | `tests/contracts/` |
 | [transport](src/transport/README.md) | Abortable bounded reads and sanitized failures through one same-origin adapter | `tests/transport/` |
+| [presentation](src/presentation/README.md) | Read-only bounded activation inventory, keyboard/list selection and revision-bound detail | `tests/browser/` |
 | [page models](src/page_models/README.md) | One loader per region, coherent windows, selection/revision races and invalidation reconciliation | `tests/page_models/` |
 
 Node24 is the local build/test profile. Exact versions are in `package.json`/`package-lock.json`; use `npm ci --ignore-scripts` in this directory, then `npm test`. `npm run generate` intentionally refreshes public contract derivatives; `npm run check:contracts` rejects drift. `npm test -- --area=transport --coverage` runs one owned suite after generation/type checks. Repository dispatch: `v2/dev/.venv/Scripts/python.exe v2/dev/run_tests.py --module studio --area transport --coverage`.

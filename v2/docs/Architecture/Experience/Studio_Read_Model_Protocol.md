@@ -1,6 +1,6 @@
 # Studio Read-Model and Transport Protocol
 
-Design status: BP-05.01/B1 verified spike. Parent: [Studio](Studio.md). React Flow selected by the [B2 canvas decision](Studio_Canvas_Decision.md); synthetic browser proof does not establish live-owner acceptance. The independent Node source rebuild and28 owned tests pass; the combined foundation gate passed 1223 Python tests, 19 isolated installs and REC-01..09. B2 synthetic interaction is verified; B3 production-model browser failure proof is active.
+Design status: BP-05.01/B1 verified spike. Parent: [Studio](Studio.md). React Flow selected by the [B2 canvas decision](Studio_Canvas_Decision.md); synthetic browser proof does not establish live-owner acceptance. The independent Node source rebuild and28 owned tests pass; the combined foundation gate passed 1223 Python tests, 19 isolated installs and REC-01..09. B2 synthetic interaction is verified; B3 production-model browser failure proof passed seven cases at two viewports. V1 actual Runtime integration is active.
 
 ## Authority and data ownership
 
