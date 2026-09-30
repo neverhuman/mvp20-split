@@ -10,9 +10,12 @@ import type { GraphScopePage } from "./generated/scopes.js";
 import type { GraphTopologyPage } from "./generated/topology.js";
 import type { GraphViewCatalog } from "./generated/catalog.js";
 import type { SuccessorLineage } from "./generated/lineage.js";
+import type { CompletionRecord } from "./generated/completion.js";
+import type { ArtifactRef } from "./generated/artifact.js";
 
 export type { GraphSnapshotPage, GraphNodeDetail, GraphValuePage, GraphInvalidationPage, GraphScopePage, GraphTopologyPage };
 export type { GraphViewCatalog, SuccessorLineage };
+export type { CompletionRecord, ArtifactRef };
 export type TopologyQuery = GraphTopologyPage["query"];
 export type ReadCut = GraphSnapshotPage["snapshot"]["cut"];
 export type ReadQuery = GraphSnapshotPage["snapshot"]["query"];
@@ -26,6 +29,8 @@ export interface ObservationWire {
   topology: GraphTopologyPage;
   catalog: GraphViewCatalog;
   lineage: SuccessorLineage;
+  completion: CompletionRecord;
+  artifact: ArtifactRef;
 }
 
 const ajv = new Ajv2020({ strict: true, allErrors: false, coerceTypes: false, useDefaults: false, removeAdditional: false });
@@ -41,6 +46,8 @@ const validators = {
   topology: ajv.compile<GraphTopologyPage>(schemas.topology),
   catalog: ajv.compile<GraphViewCatalog>(schemas.catalog),
   lineage: ajv.compile<SuccessorLineage>(schemas.lineage),
+  completion: ajv.compile<CompletionRecord>(schemas.completion),
+  artifact: ajv.compile<ArtifactRef>(schemas.artifact),
 };
 
 export function decodeObservation<K extends keyof ObservationWire>(kind: K, value: unknown): ObservationWire[K] {

@@ -17,6 +17,8 @@ const roots = {
   topology: ["graph-runtime.topology-page", "GraphTopologyPage"],
   catalog: ["graph-runtime.view-catalog", "GraphViewCatalog"],
   lineage: ["graph-runtime.successor-lineage", "SuccessorLineage"],
+  completion: ["runtime.completion-record", "CompletionRecord"],
+  artifact: ["core.artifact-ref", "ArtifactRef"],
 };
 const check = process.argv.includes("--check");
 const manifest = {};

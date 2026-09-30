@@ -1,0 +1,112 @@
+{
+  "verified_at": "2026-09-29 21:23:21",
+  "timezone": "America/Chicago",
+  "status": "B1_verified",
+  "predecessor_commit": "1b65328",
+  "scope": "BP-05.02/B1 owned topology/catalog/navigation and linked inspectors",
+  "versions": {
+    "campaign_runtime": "0.13.0",
+    "graph_runtime": "0.7.0",
+    "campaigns": "0.4.1"
+  },
+  "schema_compatibility": {
+    "published_schema_files": 182,
+    "preserved_predecessor_files": 180,
+    "browser_roots": 10,
+    "migration": null
+  },
+  "foundation": {
+    "python_tests": 1245,
+    "studio_tests": 53,
+    "independent_python_installs": 19,
+    "recovery_scope": "4ad3384b504d40848373fa8fa1be4eae",
+    "recovery_scenarios": [
+      "REC-01",
+      "REC-02",
+      "REC-03",
+      "REC-04",
+      "REC-05",
+      "REC-06",
+      "REC-07",
+      "REC-08",
+      "REC-09"
+    ],
+    "registry_replacement_scope": "c455ee118dd24ea995a7359f290d690b"
+  },
+  "isolated_studio": "e34a0dbd5382429bbbc09f018dd1424f",
+  "coverage": {
+    "runtime_graph_navigation": {
+      "statements": 158,
+      "covered_statements": 158,
+      "branches": 8,
+      "covered_branches": 8
+    },
+    "loaded_studio_code": {
+      "line_percent": 99.43,
+      "branch_percent": 86.7,
+      "function_percent": 95.63
+    }
+  },
+  "browser": {
+    "monitor": "2026-09-30T02-07-40-723Z",
+    "navigation": "2026-09-30T02-07-48-911Z",
+    "evidence": "2026-09-30T02-07-51-389Z",
+    "scenarios_per_suite": 7,
+    "viewports": [
+      {
+        "width": 1440,
+        "height": 1000
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "automated_A_AA_violations": 0,
+    "peer": "scripted public HTTP contracts"
+  },
+  "remaining": [
+    "B2 policy",
+    "B3 required failure/actual-owner evidence journey",
+    "V1 independent navigation owner/browser replacement",
+    "Scientific correctness and target-host performance are not established"
+  ],
+  "source_sha256": {
+    "studio/src/contracts/observations.ts": "2048fe824a2e1ed3af1af0cddde5e32544dda8336b7c40ac7b655e5560aa8770",
+    "studio/src/page_models/event_position.ts": "3b90a894c96df6513d245caf733fc556237b73be943980ba727343fce7d98433",
+    "studio/src/page_models/evidence.ts": "ddd3419995d3f1ea5dae3ad2bb43f32a891b0d3bbd563dfe5b95a47f3183fa70",
+    "studio/src/page_models/evidence_context.ts": "78d338475693a51d34afc6a16565a006ef68ec31b7d467738a5e22a94896368c",
+    "studio/src/page_models/graph_window.ts": "f4164c3cf917bafda56efd66602a357ec467104cba09e627903319119f24cc89",
+    "studio/src/page_models/monitor.ts": "fcbeb8eaab797e4cbc6614803c9558aa5d86bcfac422ddcd91e084299a14b926",
+    "studio/src/page_models/named_views.ts": "a8a22ed3eb9836dc2d3310452e824136d8ade9b583e76449f2beb2bb7b42df3f",
+    "studio/src/page_models/navigation.ts": "ce8a2cf1e25632fa278b6e8486615a3973c6e7b5c3de8c1c73be60d689cb3088",
+    "studio/src/page_models/request_lane.ts": "57956c6a44ebcaba633ebefe3ec99b5a93e84ffadb943d51048be08f224216d0",
+    "studio/src/page_models/scene.ts": "9a010cf24dc0846d3c0e7ad4a1a1556eab17c4684a08c7adadfaa65c01a015e9",
+    "studio/src/page_models/topology_window.ts": "463ec240a2ad0517e410ba18406c8b1ac017a860b218c37a3ebc6a0395c36450",
+    "studio/src/page_models/view_catalog.ts": "c2bac0c0b8af63f4cbe12e547e2ad9651a2f8d4ea822d8abea476dfda35a3cac",
+    "studio/src/presentation/styles.d.ts": "da5bf71d48cf909584a01c80b445f730507068f5b34c920f352e2bfcf0315e4c",
+    "studio/src/transport/failure.ts": "118855d014ab1b5648c14b9aace6cb62df66c05b3fe2a8dc639bd40834c3213e",
+    "studio/src/transport/observations.ts": "b44f160d2b41eed5c2d50ffd4c83fc232820a4ba45c04a5d5c8319bce41f7e60",
+    "studio/src/contracts/generated/artifact.d.ts": "f86080aa01e55cf3add677bb1dac5c0ecb356bebd88d22fe97cc72097ed4be94",
+    "studio/src/contracts/generated/catalog.d.ts": "b3b180f1c7fcf344e211e00186a3f436af9dce6303cf10fa6713685afefd4a14",
+    "studio/src/contracts/generated/completion.d.ts": "66c2cac2b59b4b4ea80f6053b4cf1dcd10a022642b16ce6ed8e320f0e7d1093e",
+    "studio/src/contracts/generated/detail.d.ts": "3aaf6bb641b81c806c00c6b51b2d0fb3942f302c72467183ddb9acc1f16d9055",
+    "studio/src/contracts/generated/events.d.ts": "ba96f92a3414c5b4f9dac687e3754f82c159b43e0df18d6184f084b5a23a0915",
+    "studio/src/contracts/generated/lineage.d.ts": "793323279944a951ca134b781d61fa8d6fffcd826a40ac68e9c1c34af516bd32",
+    "studio/src/contracts/generated/scopes.d.ts": "28c9d42cf1ea48e22ad34e0d337663435ca0a8741045f13a4ef6451427d585c8",
+    "studio/src/contracts/generated/snapshot.d.ts": "cfb544015d89ce713a4a5c0b8d1aea46b706f7fca16410507e42a7785b1a8b87",
+    "studio/src/contracts/generated/topology.d.ts": "aa11024f7c7a0a88b018abfea18728e0745eb9fbb3f2f16436b943fbbb5afa23",
+    "studio/src/contracts/generated/values.d.ts": "890df6bcbc9189e3d2171f79747715bb0ba002f083f4d92f53f66c27da2706c7",
+    "studio/src/presentation/evidence_pane.tsx": "701a22eeb65078111dc00f33e6f2f6ed355c3d10d3b5bf84a59fa41898f4dbfa",
+    "studio/src/presentation/graph_canvas.tsx": "9302c9d2a9c6c9c09ec8a48ad551876b62f547a7a9a56fbf54633ac6155f6271",
+    "studio/src/presentation/monitor_detail.tsx": "0ee897c9fa38eb8aaaf8faf7e2b704122a5103d7acc444b05cde3422d304cc32",
+    "studio/src/presentation/monitor_workspace.tsx": "6ad40fc30b7e5a2a2de4dfcdd9957e8751b3e317d1b9685c48ef9563c85307c7",
+    "studio/src/presentation/named_views.tsx": "cde838a0c83260c6513c6c36e2d5f98d0585dced929f7983b996c762e212d25f",
+    "studio/src/presentation/navigation_pane.tsx": "572c68893668fbfa2cd51cdd3dc40dc6b9a958d96e9c2125fcd03607de1a78ee",
+    "services/campaign_runtime/src/amphora_campaign_runtime/graph_navigation/catalog.py": "93caf6ac4e52f6569a754ad659aaf6eb6250904c09329e494575502ba5ae33c2",
+    "services/campaign_runtime/src/amphora_campaign_runtime/graph_navigation/http.py": "83795abb94d06a4eaf4e92e08ff53be163bfc18b78bfeae625e4a85e25b06342",
+    "services/campaign_runtime/src/amphora_campaign_runtime/graph_navigation/reads.py": "8a60415a9c4710975623547b1b7810931b5a045d57b9c36e8275569f161e0a17",
+    "services/campaign_runtime/src/amphora_campaign_runtime/graph_navigation/topology.py": "cd4c4e0e9cccfb960cbac38b1f60ef581eb7222b49057f068bcda15181d4578f",
+    "services/campaign_runtime/src/amphora_campaign_runtime/graph_navigation/__init__.py": "4bfbb84c4b2947b4c464e430fa05ee71be5ed8171a88f9ef24b968c7b32aaa8f"
+  }
+}

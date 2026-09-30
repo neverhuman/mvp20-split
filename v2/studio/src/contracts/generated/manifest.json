@@ -30,5 +30,13 @@
   "lineage": {
     "source": "contracts/schemas/v1/graph-runtime.successor-lineage.serialization.json",
     "sha256": "92e17784d05dfaac6e40e7c7bc69d47fd2cb83fc9614c5aa81e998ce02a5fae5"
+  },
+  "completion": {
+    "source": "contracts/schemas/v1/runtime.completion-record.serialization.json",
+    "sha256": "ae04b897b4719a34e227b8712b58c4da5cbe42a82237092f425c23fc775b8815"
+  },
+  "artifact": {
+    "source": "contracts/schemas/v1/core.artifact-ref.serialization.json",
+    "sha256": "286692543f709530d480ce71f45a00e70333d68bd6473a46fa8f62080304b04e"
   }
 }

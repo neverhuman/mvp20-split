@@ -9,11 +9,10 @@ import sys
 import tempfile
 from pathlib import Path
 
-from sqlalchemy import URL
-
 from build_tool_images import closure
 from check_boundaries import ROOT, project_specs
 from postgres_fixture import owned_state
+from sqlalchemy import URL
 from verify_foundation import run
 
 

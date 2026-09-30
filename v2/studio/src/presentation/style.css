@@ -192,6 +192,23 @@ aside {
 .named-views .identity, .named-views li {
   overflow-wrap:anywhere;
 }
+.evidence-inspector {
+  padding:16px;
+  border-bottom:1px solid var(--line);
+  font-size:12px;
+  overflow-wrap:anywhere;
+}
+.evidence-inspector h2, .evidence-inspector h3 {
+  margin:12px 0;
+  font-size:12px;
+}
+.evidence-inspector ul {
+  padding-left:16px;
+}
+.evidence-inspector button {
+  max-width:100%;
+  overflow-wrap:anywhere;
+}
 .navigation-inspector > * {
   flex-shrink:0;
 }

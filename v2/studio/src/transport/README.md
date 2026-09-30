@@ -6,8 +6,10 @@ The configured prefix is a relative same-origin path, default `/api/runtime`. Re
 
 Each request relays caller cancellation to its own controller and clears timer/listener ownership on completion. The body is consumed with a byte limit and fatal UTF-8 decoding before JSON/schema validation. Responses are never accepted solely because TypeScript assigned a static type. Backend raw error text is excluded from `ReadFailure`: denied401/403, missing404, resnapshot409/410, timeout, abort, invalid response and network failure are explicit categories.
 
-The transport owns no retries, caches, polling timers or authority decisions. Page models decide whether a visible invalidated region should refresh. The eight endpoint shapes preserve Runtime's public contracts; possession of a cursor is never treated as authorization.
+The transport owns no retries, caches, polling timers or authority decisions. Page models decide whether a visible invalidated region should refresh. The ten endpoint shapes preserve Runtime's public contracts; possession of a cursor is never treated as authorization.
 
 Owned tests: `tests/transport/` cover actual local HTTP encoding/no owner credential, all DTO roots, status mapping, cancellation/timeout, malformed JSON/UTF-8/type and declared/streamed size limits. The local HTTP server is a labeled synthetic contract peer. Real Runtime/gateway/browser acceptance remains later in this child. Replacement must preserve bounds, sanitized failures, cancellation and public shape validation.
 
 NamedViewSource reads the scoped capability catalog and the existing immutable graph-runs lineage namespace. It shares bounded decoding/cancellation without introducing browser authority or arbitrary owner routes.
+
+EvidenceSource reads `/v1/runs/{run}/completions/{completion}` through the Runtime adapter and `/v1/artifacts/{artifact}` through a separately configured same-origin Artifact adapter (default `/api/artifacts`). Both use the same bounded public-schema decoding/cancellation; no owner credentials enter browser requests. Metadata inspection never fetches `/content`. Adapter prefixes reject cross-origin, protocol-relative and backslash-normalized forms. Production adapter/session deployment remains open.

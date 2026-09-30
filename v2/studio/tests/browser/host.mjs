@@ -15,7 +15,7 @@ export async function startObservationHost() {
       res.writeHead(status, { 'content-type': 'application/json', 'cache-control': 'no-store' }); res.end(JSON.stringify(data));
     };
     try {
-      if (url.pathname.startsWith('/api/runtime/v1/graph-observations/') || url.pathname.startsWith('/api/runtime/v1/graph-runs/')) {
+      if (['/api/runtime/v1/graph-observations/', '/api/runtime/v1/graph-runs/', '/api/runtime/v1/runs/', '/api/artifacts/v1/artifacts/'].some(prefix => url.pathname.startsWith(prefix))) {
         state.requests.push({ path: url.pathname, query: url.search, revision: state.revision });
         if (state.hook && await state.hook(url, json)) return;
         if (state.mode === 'denied') { json(403, { detail: 'private server diagnostics must not render' }); return; }

@@ -7,9 +7,11 @@ import { MonitorDetail } from './monitor_detail.js';
 import type { NavigationModel } from '../page_models/navigation.js';
 import type { NamedViewsModel } from '../page_models/named_views.js';
 import { NavigationPane } from './navigation_pane.js';
+import type { EvidenceModel } from '../page_models/evidence.js';
+import { EvidencePane } from './evidence_pane.js';
 import './style.css';
 
-export function MonitorWorkspace({ model, context, synthetic = false, navigation, namedViews }: { model: MonitorModel; context: RunContext; synthetic?: boolean; navigation?: NavigationModel; namedViews?: NamedViewsModel }) {
+export function MonitorWorkspace({ model, context, synthetic = false, navigation, namedViews, evidence }: { model: MonitorModel; context: RunContext; synthetic?: boolean; navigation?: NavigationModel; namedViews?: NamedViewsModel; evidence?: EvidenceModel }) {
   const subscribe = useCallback((notify: () => void) => model.subscribe(notify), [model]);
   const view = useSyncExternalStore(subscribe, () => model.snapshot);
   const [filter, setFilter] = useState('');
@@ -44,15 +46,24 @@ export function MonitorWorkspace({ model, context, synthetic = false, navigation
         <button aria-pressed={!topology} onClick={() => setTopology(false)}>Activation inventory</button>
         <button aria-pressed={topology} onClick={() => setTopology(true)}>Authored graph</button>
       </div>}
-      {topology && navigation ? <NavigationPane navigation={navigation} monitor={model} observation={view} {...(namedViews ? { namedViews } : {})} /> : <div className="work-area" data-phase={view.phase}>
+      {topology && navigation ? <NavigationPane navigation={navigation} monitor={model} observation={view} {...(namedViews ? { namedViews } : {})} {...(evidence ? { evidence } : {})} /> : <div className="work-area" data-phase={view.phase}>
         <GraphCanvas nodes={shown} selection={view.selection} select={select} />
-        <aside aria-label="Node navigator"><MonitorDetail view={view} />
+        <aside className={evidence ? 'navigation-inspector' : undefined} aria-label="Node navigator"><MonitorDetail view={view} />
+          {evidence && <EvidencePane model={evidence} monitor={model} observation={view} />}
           <div className="list-heading"><h2>Loaded activations</h2><span>{shown.length}</span></div>
           <ul className="node-list" aria-label="Loaded activation list">{shown.map(node => <li key={node.id}><button data-node-id={node.id} disabled={!current} aria-pressed={view.selection === node.id} onClick={() => select(node.id)}><span>{node.label}</span><small>{node.status}</small></button></li>)}</ul>
           <div className="pages"><button disabled={!current || view.loadingMore || !view.window?.next || scene.nodes.length >= scene.limit} onClick={() => void model.loadMore()}>{view.loadingMore ? 'Loading more…' : 'Load next page'}</button></div>
           {scene.nodes.length >= scene.limit && scene.omitted > 0 && <p className="bounded-note">Scene limit reached. Narrower scope navigation is not yet available.</p>}
         </aside>
       </div>}
+      {view.window && <details className="named-views" aria-label="Campaign observation">
+        <summary>Campaign {view.window.snapshot.cut.run_id}</summary>
+        <p>Execution {view.window.snapshot.status} · revision {view.window.snapshot.cut.revision} · frontier {view.window.snapshot.cut.frontier_revision}</p>
+        <p>Attempt budget: {view.window.snapshot.budget.spent} spent, {view.window.snapshot.budget.reserved} reserved, {view.window.snapshot.budget.limit} limit.</p>
+        <p className="identity">Plan {view.window.snapshot.cut.plan_sha256}</p>
+        <p>{view.window.snapshot.cut.scope.tenant_id} / {view.window.snapshot.cut.scope.project_id}</p>
+        <p>{current ? 'Current observation.' : 'This observation is not current.'} Scientific acceptance is a separate domain decision.</p>
+      </details>}
       <footer>{topology ? "Authored links from the retained campaign plan. Execution status does not establish scientific acceptance." : "Activation inventory; this endpoint does not publish connections. Layout cannot change a campaign."}</footer>
     </main>
   </div>;

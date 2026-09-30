@@ -131,3 +131,7 @@ Navigation loader/presentation partial B1:39 Node tests, five scripted browser s
 ## 2026-09-29 20:55:43 ? named-view catalog checkpoint
 
 Scoped Runtime named-view catalog and Studio lineage consumer verified:111 Python regressions,45 Node tests, seven navigation browser scenarios/two viewport A/AA checks and isolated Studio installa18fbcff4dfe495b983c7a3db85b5fb2. Runtime0.13.0/graph-runtime0.7.0;180 predecessor schema bytes preserved. Full linked attempt/output/artifact journey and full B1 compatibility gate remain; child0/4=0%, parent4/16=25% unchanged.
+
+## 2026-09-29 21:23:21 ? BP-05.02/B1 verified
+
+Navigation/catalog/lineage and linked execution-evidence inspectors pass their B1 gate:1245 Python tests,53 Node tests,19 isolated Python installs, REC-01..09 scope4ad3384b504d40848373fa8fa1be4eae;three7-case browser suites/two viewport A/AA checks and isolated Studio builde34a0dbd5382429bbbc09f018dd1424f. Child25%=1/4, Build33.33%, Acceptance0%; parent31.25%=5/16. B2 active; B3/V1 actual-owner navigation remains required. Evidence: `docs/Audits/Evidence/BP-05-Navigation/B1.json`.

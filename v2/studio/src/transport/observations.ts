@@ -2,6 +2,7 @@ import { decodeObservation } from "../contracts/observations.js";
 import type { GraphSnapshotPage, GraphNodeDetail, GraphValuePage, GraphInvalidationPage, ReadQuery, ObservationWire } from "../contracts/observations.js";
 import type { GraphScopePage, GraphTopologyPage, TopologyQuery } from "../contracts/observations.js";
 import type { GraphViewCatalog, SuccessorLineage } from "../contracts/observations.js";
+import type { CompletionRecord, ArtifactRef } from "../contracts/observations.js";
 import { ReadFailure } from "./failure.js";
 
 export interface ObservationSource {
@@ -19,6 +20,12 @@ export interface NavigationSource {
 export interface NamedViewSource {
   catalog(run: string, snapshot: string, signal: AbortSignal): Promise<GraphViewCatalog>;
   lineage(run: string, signal: AbortSignal): Promise<SuccessorLineage>;
+}
+
+export interface EvidenceSource {
+  completion(run: string, completion: string, signal: AbortSignal): Promise<CompletionRecord>;
+  artifact(artifact: string, signal: AbortSignal): Promise<ArtifactRef>;
+  values(run: string, activation: string, port: string, snapshot: string, cursor: string | undefined, signal: AbortSignal): Promise<GraphValuePage>;
 }
 
 async function boundedJSON(response: Response, maximum: number): Promise<unknown> {
@@ -46,15 +53,15 @@ async function boundedJSON(response: Response, maximum: number): Promise<unknown
   }
 }
 
-export class ObservationClient implements ObservationSource, NavigationSource, NamedViewSource {
+export class ObservationClient implements ObservationSource, NavigationSource, NamedViewSource, EvidenceSource {
   constructor(private readonly fetcher: typeof fetch = fetch, private readonly base = "/api/runtime",
-    private readonly timeoutMs = 15_000, private readonly maximumBytes = 2_097_152) {
-    if (!base.startsWith("/") || base.startsWith("//") || /[?#]/.test(base) || timeoutMs <= 0 || maximumBytes <= 0)
+    private readonly timeoutMs = 15_000, private readonly maximumBytes = 2_097_152, private readonly artifactBase = "/api/artifacts") {
+    if ([base, artifactBase].some(value => !value.startsWith("/") || value.startsWith("//") || /[\\?#]/.test(value)) || timeoutMs <= 0 || maximumBytes <= 0)
       throw new Error("invalid_transport_configuration");
   }
 
   private async read<K extends keyof ObservationWire>(kind: K, path: string,
-    params: Record<string, string | undefined>, signal: AbortSignal, namespace = "graph-observations"): Promise<ObservationWire[K]> {
+    params: Record<string, string | undefined>, signal: AbortSignal, namespace = "graph-observations", base = this.base): Promise<ObservationWire[K]> {
     const controller = new AbortController();
     let timedOut = false;
     const abort = () => controller.abort();
@@ -65,7 +72,7 @@ export class ObservationClient implements ObservationSource, NavigationSource, N
     try {
       if (controller.signal.aborted) throw new ReadFailure("aborted");
       // A native browser fetch rejects an arbitrary client object as its receiver.
-      const response = await this.fetcher.call(globalThis, this.base + "/v1/" + namespace + "/" + path + "?" + query.toString(), {
+      const response = await this.fetcher.call(globalThis, base + "/v1/" + namespace + "/" + path + "?" + query.toString(), {
         signal: controller.signal, credentials: "same-origin", redirect: "error", headers: { Accept: "application/json" },
       });
       if (!response.ok) await response.body?.cancel().catch(() => undefined);
@@ -98,6 +105,14 @@ export class ObservationClient implements ObservationSource, NavigationSource, N
 
   lineage(run: string, signal: AbortSignal) {
     return this.read("lineage", encodeURIComponent(run) + "/lineage", {}, signal, "graph-runs");
+  }
+
+  completion(run: string, completion: string, signal: AbortSignal) {
+    return this.read("completion", encodeURIComponent(run) + "/completions/" + encodeURIComponent(completion), {}, signal, "runs");
+  }
+
+  artifact(artifact: string, signal: AbortSignal) {
+    return this.read("artifact", encodeURIComponent(artifact), {}, signal, "artifacts", this.artifactBase);
   }
   detail(run: string, activation: string, snapshot: string, cursor: string | undefined, signal: AbortSignal) {
     return this.read("detail", `${encodeURIComponent(run)}/nodes/${encodeURIComponent(activation)}`,

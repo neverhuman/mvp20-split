@@ -6,9 +6,11 @@ import { GraphCanvas } from './graph_canvas.js';
 import { MonitorDetail } from './monitor_detail.js';
 import type { NamedViewsModel } from '../page_models/named_views.js';
 import { NamedViews } from './named_views.js';
+import type { EvidenceModel } from '../page_models/evidence.js';
+import { EvidencePane } from './evidence_pane.js';
 
-export function NavigationPane({ navigation, monitor, observation, namedViews }: {
-  navigation: NavigationModel; monitor: MonitorModel; observation: MonitorView; namedViews?: NamedViewsModel;
+export function NavigationPane({ navigation, monitor, observation, namedViews, evidence }: {
+  navigation: NavigationModel; monitor: MonitorModel; observation: MonitorView; namedViews?: NamedViewsModel; evidence?: EvidenceModel;
 }) {
   const subscribe = useCallback((notify: () => void) => navigation.subscribe(notify), [navigation]);
   const view = useSyncExternalStore(subscribe, () => navigation.snapshot);
@@ -46,6 +48,7 @@ export function NavigationPane({ navigation, monitor, observation, namedViews }:
       <GraphCanvas nodes={scene.nodes} edges={scene.edges} selection={observation.selection} select={select} />
       <aside className="navigation-inspector" aria-label="Occurrence navigator">
         <MonitorDetail view={observation} />
+        {evidence && <EvidencePane model={evidence} monitor={monitor} observation={observation} />}
         <h2>Occurrence groups</h2>
         <ul className="node-list" aria-label="Occurrence groups">{view.scopes?.scopes.map(scope => <li key={scope.scope_key}>
           <button onClick={() => void navigation.open(scope.scope_key)}>

@@ -97,6 +97,30 @@ export class MonitorModel {
     }
   }
 
+  async nextAttempts() {
+    const window = this.view.window, previous = this.view.detail;
+    if (!window || !previous?.next_cursor || this.view.detailPhase !== "ready" || this.view.phase !== "ready" || this.disposed) return;
+    const ticket = this.detailLane.begin();
+    this.patch({ detailPhase: "loading", detailError: null });
+    try {
+      const page = await this.source.detail(window.snapshot.cut.run_id, previous.node.activation_id,
+        window.snapshot.snapshot_token, previous.next_cursor, ticket.signal);
+      if (!ticket.current()) return;
+      if (cutKey(page.cut) !== cutKey(previous.cut)) throw new ReadFailure("resnapshot");
+      if (page.node.activation_id !== previous.node.activation_id || page.scope_key !== previous.scope_key ||
+          page.parent_activation_id !== previous.parent_activation_id || page.next_cursor === previous.next_cursor ||
+          page.attempts.length === 0 || new Set(page.attempts.map(item => item.attempt_id)).size !== page.attempts.length ||
+          page.attempts.some(item => previous.attempts.some(old => old.attempt_id === item.attempt_id)))
+        throw new ReadFailure("invalid_response");
+      this.patch({ detail: page, detailPhase: "ready" });
+    } catch (error) {
+      if (!ticket.current()) return;
+      const failure = asReadFailure(error);
+      if (failure.kind === "resnapshot") this.graphFailure(failure);
+      else this.patch({ detail: null, detailPhase: failure.kind === "denied" ? "denied" : "failed", detailError: failure });
+    }
+  }
+
   async poll() {
     const context = this.context, position = this.events;
     if (!context || !position || !this.visible || this.disposed || this.view.phase === "loading") return;
