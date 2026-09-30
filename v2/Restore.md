@@ -2,12 +2,19 @@
 
 ## Current Checkpoint
 
-- Last refreshed: `2026-09-29 22:06:45` (America/Chicago).
+- Last refreshed: `2026-09-29 22:18:36` (America/Chicago).
 - V1 passed final-source independent Studio/Runtime replacement, scopee222d4cf32604d729ef12146860bc49c: two65-test npm builds; initial12 nodes/4 scopes and successor28 nodes/9 scopes; three replacement comparisons preserve topology, details, lineage, completion, metadata and old cursors. Scoped audit aligned. BP-05.02 closed100%=4/4, Build100%, Acceptance100%; parent50%=8/16. BP-05.03 activation review is next.
-- Next: read BP-05.03 and record activation coherence audit before implementation. Definitions/compilation belong to Campaign Runtime per System/Service_Isolation; durable authoring draft API/store does not yet exist. Reconcile public registry descriptors, compiler request/receipt, configured-plan admission and emergency cancel. Do not build a rival execution owner or edit live runs.
-- Last pushed b0e5474; .02 B3/V1 closeout about to commit. All processes complete; session97439 passed. Final log .test-results/bp0502-v1-integration.log; durable docs/Audits/Evidence/BP-05-Navigation/V1.json and screenshots inspected. No user decision pending.
+- Current: BP-05.03 / Build / B1 active0% (Build0%/Acceptance0%), parent50%. Activation audit corrected_ready is recorded. Next implement public authoring DTOs and pure revision/change objects, then owner persistence/API and Studio forms; whole B1 remains unverified. Definitions/compilation belong to Campaign Runtime per System/Service_Isolation; durable authoring draft API/store does not yet exist. Reconcile public registry descriptors, compiler request/receipt, configured-plan admission and emergency cancel. Do not build a rival execution owner or edit live runs.
+- Last pushed c262e33; .02 closeout committed/pushed. All processes complete; session97439 passed. Final log .test-results/bp0502-v1-integration.log; durable docs/Audits/Evidence/BP-05-Navigation/V1.json and screenshots inspected. No user decision pending.
 - Tooling: mapped v2/dev/.venv/Scripts/python.exe; standalone pytest -c v2/dev/pyproject.toml; PYTHONUTF8=1 and explicit UTF-8. Git always -c safe.directory=//DesktopNAS/Code/mvp20-split. v1 frozen; no JARVIS/subagents authorized. AMPHORA_TEST_POSTGRES=1 for ownedPG; never concurrent campaign-admission suites, reset retained fixture or print credentials.
 - Latest Studio65 Node tests;28 scripted browser scenario cases plus actual installed-owner integration. Runtime0.13.0/graph-runtime0.7.0/campaigns0.4.1,182 schemas unchanged afterB1. Full B1foundation1245 Python/19 installs/REC-01..09. Exact history/coverage limits in module READMEs.
+
+## BP-05.03 Working Notes
+
+- Partial B1 authoring contracts/domain checkpoint: graph-runtime0.8.0 and Runtime0.14.0 add public draft save/validate/revision/page/validation/receipt DTOs and pure immutable revision objects.86 scoped contract/domain/dev tests pass;194 schemas published and all182 predecessor schema bytes preserved. No draft database/API/activation integration or Studio authoring yet; B1 remains0/4, Build0%, Acceptance0%; parent50% unchanged.
+- Next: Runtime-private forward migration runtime_0015 for draft heads/immutable revisions/authoring audit, save/read command handlers with atomic head+revision+original receipt, separate draft receipt endpoint (old Runtime receipt tagged kinds cannot be widened). Then pinned validation and exact reviewed-plan integration, registry-driven Studio forms. No new campaign authority, no live editing.
+- Current pure source: definitions/revisions.py, module-owned tests/definitions; all source/dependency locks synced. Authoring publication uses6 roots/12 schema files. Log .test-results/bp0503-b1-contracts.log; predecessor pins .test-results/bp0503-predecessor-schemas.json. Session36875 complete/pass; no process running.
+- Last pushed c262e33; partial authoring checkpoint about to commit. Update generated foundation inventory when next full compatibility gate runs.
 
 ## Decomposition and Resume Discipline
 

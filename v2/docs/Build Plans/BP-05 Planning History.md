@@ -147,3 +147,11 @@ B3 verified: actual installed-owner navigation/evidence and replacement passed f
 ## 2026-09-29 22:06:45 - BP-05.02 closed
 
 V1 passed final-source independent Studio/Runtime replacement, scopee222d4cf32604d729ef12146860bc49c: two65-test npm builds; initial12 nodes/4 scopes and successor28 nodes/9 scopes; three replacement comparisons preserve topology, details, lineage, completion, metadata and old cursors. Scoped audit aligned. BP-05.02 closed100%=4/4, Build100%, Acceptance100%; parent50%=8/16. BP-05.03 activation review is next.
+
+## 2026-09-29 22:10:09 - BP-05.03 activation
+
+Coherence audit corrected_ready at c262e33. Definitions belong to a focused Runtime module; missing draft persistence and dynamic validated-plan publication are explicit B1 engineering scope. Child0%, Build0%, Acceptance0%; parent50% unchanged. B1 active, no user decision pending.
+
+## 2026-09-29 22:18:36 - partial B1
+
+Partial B1 authoring contracts/domain checkpoint: graph-runtime0.8.0 and Runtime0.14.0 add public draft save/validate/revision/page/validation/receipt DTOs and pure immutable revision objects.86 scoped contract/domain/dev tests pass;194 schemas published and all182 predecessor schema bytes preserved. No draft database/API/activation integration or Studio authoring yet; B1 remains0/4, Build0%, Acceptance0%; parent50% unchanged.

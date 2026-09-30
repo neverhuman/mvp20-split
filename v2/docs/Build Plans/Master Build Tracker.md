@@ -9,13 +9,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-05 primary active; BP-06 through BP-09 queued; BP-01/BP-01A/BP-02/BP-03/BP-04 closed.
-- Last refreshed: `2026-09-29 22:06:45` (America/Chicago).
+- Last refreshed: `2026-09-29 22:18:36` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P4 / BP-05 - Graph Studio first vertical slice.
-- Primary active implementation plan / phase / task: BP-05 -> BP-05.03 / activation review.
-- Current task: BP-05.03 activation coherence review.
-- Next task: BP-05.03/B1 after ownership/contract reconciliation.
-- Implementation completion: BP-04 closed100% (24/24); BP-05 active50% (8/16), .01/.02 closed100%, .03 queued0% (Build0% / Acceptance0%); BP-06..09 queued0%.
+- Primary active implementation plan / phase / task: BP-05 -> BP-05.03 / Build / B1.
+- Current task: BP-05.03/B1 public authoring contracts and isolated Runtime definitions module.
+- Next task: BP-05.03/B2 conflict, revalidation and safe activation.
+- Implementation completion: BP-04 closed100% (24/24); BP-05 active50% (8/16), .01/.02 closed100%, .03 active0% (Build0% / Acceptance0%); BP-06..09 queued0%.
 - Active focus: reconcile definition draft persistence, registry-driven editing and Runtime safe-command boundaries.
 - Blockers: none for .03 activation review; actual owner projection gaps are scoped engineering work; scientific/provider/host decisions remain their named later gates.
 - Acceptance posture: deterministic Runtime and independent public observation/replacement accepted. Browser/UI and next-campaign authoring remain BP-05.
@@ -39,7 +39,7 @@ BP-05 is the sole primary active plan. Child trackers own delivery evidence; com
 
 | Active canonical child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-05.03](BP-05/BP-05.03%20Drafts%20and%20safe%20commands.md) | 0% | 0% | 0% | Activation review |
+| [BP-05.03](BP-05/BP-05.03%20Drafts%20and%20safe%20commands.md) | 0% | 0% | 0% | B1 authoring boundary |
 
 BP-02 closed32/32, BP-03 closed18/16, BP-04 closed24/24. See [completed plans](Completed/README.md). New parent progress counts only its own deliveries.
 

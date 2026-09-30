@@ -66,6 +66,12 @@ MODELS_V4 = {
 
 MODELS["commands.identity"] = CommandIdentity
 for name, model in {
+    "draft-save": graph_runtime_contracts.SaveDraft,
+    "draft-command-receipt": graph_runtime_contracts.DraftCommandReceipt,
+    "draft-validate": graph_runtime_contracts.ValidateDraft,
+    "draft-revision": graph_runtime_contracts.DraftRevision,
+    "draft-page": graph_runtime_contracts.DraftPage,
+    "draft-validation": graph_runtime_contracts.DraftValidation,
     "successor-proposal": graph_runtime_contracts.SuccessorProposal,
     "carry-sources": graph_runtime_contracts.CarrySources,
     "successor-lineage": graph_runtime_contracts.SuccessorLineage,
