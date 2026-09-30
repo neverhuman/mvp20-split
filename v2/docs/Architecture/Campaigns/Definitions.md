@@ -1,7 +1,7 @@
 # Graph Definitions and Activation
 
-- Design status: detailed proposed contract; implementation and scientific acceptance pending
-- Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
+- Design status: logical architecture with implemented draft/validation/admission boundary described below; scientific acceptance remains pending
+- Naming note: logical names are design vocabulary; source-adjacent module contracts define implemented APIs and limits
 - Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
 - Parent: [Domain overview](Campaign_Architecture.md)
 - Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#executable-campaign-semantics)
@@ -52,3 +52,7 @@ A tool replacement has the same JSON shape but different units or authority ceil
 Structural validation pins immutable draft content and a reviewed tool/schema universe. Current eligibility remains a separate Runtime admission check against exact public Registry observations. Resolve calls happen before the short owner transaction; Runtime rechecks draft head, reviewed universe, observation timestamps, budget and the single-active-campaign guard using its database clock before publication. Accepted eligibility evidence is retained atomically with run/receipt provenance. A terminal admission replay preserves its original outcome rather than consulting changed dependencies.
 
 The initial Registry policy is synthetic-only. Capacity/eligibility observations have bounded freshness and expiry but are not reservations or scientific acceptance. A lifecycle change after observation is not an atomic distributed revocation barrier; Runtime attempt/fence/acceptance authority remains separate. Missing or unusable current evidence rejects new admission. Stronger distributed reservation/revocation guarantees require a separately scoped protocol, not reinterpretation of the current Registry candidate contract.
+
+## Implemented Boundary and Recovery
+
+[Runtime definitions](../../../services/campaign_runtime/src/amphora_campaign_runtime/definitions/README.md) owns immutable revisions, pinned compiler material and atomic draft admission. BP-05.03 verification includes public browser edits, owner permission/revision conflicts, actual Registry eligibility, independent replacement and a process kill between command registration and definition mutation. Explicit same-identity resumption preserves original operation/digest and newer browser work; GET alone does not execute a pending command. No owner tables or private implementation cross the service boundary. [Closeout audit](../../Audits/BP-05.03_Authoring_Closeout.md).

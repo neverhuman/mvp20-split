@@ -1,6 +1,6 @@
 # Draft editing state
 
-Owner: [Studio page models](../README.md), [BP-05.03](../../../../docs/Build%20Plans/BP-05/BP-05.03%20Drafts%20and%20safe%20commands.md). B1 verified; real-owner authoring, independent replacement and emergency cancellation passed. B2 verified; B3 real-owner races/recovery verified; V1 scoped closeout active.
+Owner: [Studio page models](../README.md), [BP-05.03](../../../../docs/Build%20Plans/BP-05/Completed/BP-05.03%20Drafts%20and%20safe%20commands.md). B1 verified; real-owner authoring, independent replacement and emergency cancellation passed. B2 verified; B3 real-owner races/recovery and V1 scoped closeout verified; BP-05.03 closed.
 
 `DraftSession` owns one scoped next-campaign draft: acknowledged base, local title/definition, selected node, dirty state, latest pinned validation and one original save/validate submission awaiting reconciliation. It performs no network calls, activation, live graph editing or emergency cancellation. The caller loads public records through the authoring transport; presentation consumes copied state. There is no browser persistence or backend credential.
 

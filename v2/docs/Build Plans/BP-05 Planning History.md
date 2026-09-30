@@ -227,3 +227,7 @@ Approved numeric correction verified:Commands0.2.0/graph-runtime0.11.0/Runtime0.
 ## B3 failure and recovery verified - 2026-09-30 16:45:26
 
 `2026-09-30 16:45:26`: B3 verified. Real-owner scopeffe3e49ccc90476684fe8477809f75cd passed25 cases and two135-test independent Studio builds. Two editors preserve losing edits/selection/focus and active execution. Controlled cancel-first rejects completion (run_not_running); completion-first preserves canonical result and rejects captured stale stop. Registered pending save survives owned host kill and resumes identical bytes/operation after independent replacement while newer local edits remain intact.16 Design/7 emergency browser cases and104 page-model tests pass; dependency boundaries/Ruff pass. Child75%=3/4, Build100%/Acceptance0%; parent68.75%=11/16. V1 scoped audit/closeout next; no user decision pending. [Evidence](../Audits/Evidence/BP-05-Authoring/Recovery.json).
+
+## BP-05.03 V1 closeout and .04 activation - 2026-09-30 16:50:49
+
+Scoped [authoring audit](../Audits/BP-05.03_Authoring_Closeout.md) aligned; .03 archived100%=4/4 (Build100%/Acceptance100%), parent75%=12/16. Reconciled independent135-test browser builds,25 actual-owner cases, unchanged schemas and B1-B3 evidence. Updated stale module/architecture summaries and corrected MBT BP-03 shorthand18/16 to canonical16/16, without reopening/changing that plan. .04 coherence review corrected_ready at0%=0/4; B1 integrated journeys/keyboard/reconnect active. No user decision pending.

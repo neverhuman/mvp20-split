@@ -87,3 +87,7 @@ V1 passed final-source independent Studio/Runtime replacement, scopee222d4cf3260
 - Scope: Commands0.2.0, graph-runtime0.11.0, Runtime0.19.0 persistence and Studio transport. Authored floating NumberConstant values now cross an explicit v2 command boundary; unmarked v1 bytes/hashes and receipt replay remain unchanged. No private cross-owner imports, new service, migrations, NumberValue wire changes, scientific authority or widened tool eligibility.
 - Evidence: [numeric verification](Evidence/BP-05-Authoring/Numeric.json),170 scoped Python tests,96 isolated Studio tests, full1315/96/19/REC-01..09. Actual owner HTTP/process proof includes save/validate/admit/finish, original v1/v2 receipts after host kill/restart and cross-profile identity conflict. All200 published schema bytes remain unchanged.
 - Limits: binary64 numeric profile, server-owned canonical rendering; no claim of a JavaScript canonical hash, target-host power-loss durability or complete authoring UI.
+
+## 2026-09-30 16:50:49 - BP-05.03 aligned
+
+[Authoring closeout](BP-05.03_Authoring_Closeout.md) aligned. Runtime-owned drafts/validation/current eligibility/publication, Studio local edits/rebase/commands, separate emergency control and exact original-command crash recovery preserve authority and immutable history. Independent source/owner replacements and controlled race oracles passed. Follow-up: none within closed scope; BP-05.04 owns integrated visual/interaction acceptance.
