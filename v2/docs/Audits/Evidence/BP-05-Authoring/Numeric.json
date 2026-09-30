@@ -1,0 +1,60 @@
+{
+  "verified_at": "2026-09-30 13:55:40",
+  "status": "passed",
+  "scope": "BP-05.03/B1 approved numeric command compatibility correction",
+  "versions": {
+    "commands": "0.2.0",
+    "graph_runtime": "0.11.0",
+    "runtime": "0.19.0"
+  },
+  "scoped_python_tests": 170,
+  "full_python_tests": 1315,
+  "node_tests": 96,
+  "independent_installs": 19,
+  "isolated_studio": "5fe8eef04e5641cfb88c553e3ea871f4",
+  "registry_replacement_scope": "89c59ad0776d4f3b9356f0629a884ec8",
+  "recovery_scope": "2430739f58304c65b951ceedec5c67ae",
+  "recovery_cases": [
+    "REC-01",
+    "REC-02",
+    "REC-03",
+    "REC-04",
+    "REC-05",
+    "REC-06",
+    "REC-07",
+    "REC-08",
+    "REC-09"
+  ],
+  "canonical_coverage": {
+    "statements": [
+      152,
+      155
+    ],
+    "branches": [
+      87,
+      90
+    ]
+  },
+  "preserved": [
+    "legacy canonical bytes and digests",
+    "original v1/v2 receipts across actual host kill/restart",
+    "200 public schema files",
+    "NumberValue decimal-string inputs",
+    "artifact/schema hashing and configured admission allowlist"
+  ],
+  "verified": [
+    "numeric save/validate/admit/finish through owner APIs",
+    "finite binary64 profile and signed zero normalization",
+    "overflow/underflow/unsafe integers/Unicode/depth/size rejection",
+    "explicit family opt-in and persisted profile checks",
+    "identity conflict on profile change",
+    "immutable Studio wire submission with exponent tokens for large number values"
+  ],
+  "limits": [
+    "No new migration or schema version",
+    "No browser-authoring or entire B1 acceptance",
+    "No new scientific or current-tool eligibility",
+    "No independent browser canonical-hash implementation",
+    "No target-host power-loss proof"
+  ]
+}

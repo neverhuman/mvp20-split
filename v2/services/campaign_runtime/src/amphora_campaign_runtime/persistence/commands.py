@@ -66,15 +66,15 @@ class CommandStore:
 
     def register(self, command: CanonicalCommand) -> CommandRecord:
         bindings = {**_bindings(command), "operation": uuid.uuid4().hex,
-                    "digest": command.sha256, "canonical": command.canonical_bytes}
+                    "digest": command.sha256, "canonical": command.canonical_bytes, "profile": command.profile}
 
         def operation(connection):
             connection.execute(text("INSERT INTO runtime.commands (tenant_id,project_id,actor_id,family,"
                                     "command_id,operation_id,profile,request_sha256,canonical_bytes) VALUES "
-                                    "(:tenant,:project,:actor,:family,:command,:operation,'amphora-command-v1',"
+                                    "(:tenant,:project,:actor,:family,:command,:operation,:profile,"
                                     ":digest,:canonical) ON CONFLICT DO NOTHING"), bindings)
             row = connection.execute(text("SELECT * FROM runtime.commands WHERE " + WHERE), bindings).mappings().one()
-            if row["request_sha256"] != command.sha256 or bytes(row["canonical_bytes"]) != command.canonical_bytes:
+            if row["profile"] != command.profile or row["request_sha256"] != command.sha256 or bytes(row["canonical_bytes"]) != command.canonical_bytes:
                 raise CommandConflict("command_identity_conflict")
             return CommandRecord.from_row(row)
 
@@ -87,7 +87,7 @@ class CommandStore:
         bindings = _bindings(command)
         row = connection.execute(text("SELECT * FROM runtime.commands WHERE " + WHERE + " FOR UPDATE"),
                                  bindings).mappings().one()
-        if row["request_sha256"] != command.sha256 or bytes(row["canonical_bytes"]) != command.canonical_bytes:
+        if row["profile"] != command.profile or row["request_sha256"] != command.sha256 or bytes(row["canonical_bytes"]) != command.canonical_bytes:
             raise CommandConflict("command_identity_conflict")
         if row["status"] != "pending":
             return CommandRecord.from_row(row)

@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+import math
 from dataclasses import dataclass
 
 from amphora_contracts_core import WireModel
@@ -12,6 +13,7 @@ from .models import CommandIdentity
 MAX_BYTES = 262144
 MAX_DEPTH = 64
 MAX_INTEGER = 9007199254740991
+NUMERIC_ENCODING = "amphora-command-v2"
 
 
 class CommandEncodingError(ValueError):
@@ -29,6 +31,33 @@ def _integer(value: str) -> int:
 
 def _reject_number(value: str):
     raise CommandEncodingError("non_integer_number")
+
+
+class _NumberToken(str):
+    """Defer float interpretation until the explicit envelope profile is known."""
+
+
+def _finite_number(value: str) -> float:
+    result = float(value)
+    if not math.isfinite(result):
+        raise CommandEncodingError("non_finite_number")
+    if result == 0:
+        if any(char in "123456789" for char in value.lower().split("e")[0]):
+            raise CommandEncodingError("number_underflow")
+        return 0.0
+    return result
+
+
+def _normalize_numbers(value):
+    if isinstance(value, _NumberToken):
+        return _finite_number(value)
+    if type(value) is float:
+        return 0.0 if value == 0 else value
+    if type(value) is dict:
+        return {key: _normalize_numbers(item) for key, item in value.items()}
+    if type(value) in (list, tuple):
+        return [_normalize_numbers(item) for item in value]
+    return value
 
 
 def _object(pairs):
@@ -61,12 +90,15 @@ def _check_depth(text: str):
             depth -= 1
 
 
-def _check_value(value, depth=0):
+def _check_value(value, depth=0, *, numeric=False):
     if value is None or type(value) is bool:
         return
     if type(value) is int:
         if abs(value) > MAX_INTEGER:
             raise CommandEncodingError("unsafe_integer")
+    elif type(value) is float and numeric:
+        if not math.isfinite(value):
+            raise CommandEncodingError("non_finite_number")
     elif type(value) is str:
         if any(0xD800 <= ord(char) <= 0xDFFF for char in value):
             raise CommandEncodingError("invalid_unicode")
@@ -78,10 +110,10 @@ def _check_value(value, depth=0):
                 if type(key) is not str:
                     raise CommandEncodingError("non_string_key")
                 _check_value(key)
-                _check_value(item, depth + 1)
+                _check_value(item, depth + 1, numeric=numeric)
         else:
             for item in value:
-                _check_value(item, depth + 1)
+                _check_value(item, depth + 1, numeric=numeric)
     else:
         raise CommandEncodingError("unsupported_value")
 
@@ -106,16 +138,20 @@ class CanonicalCommand:
     def sha256(self) -> str:
         return hashlib.sha256(self.canonical_bytes).hexdigest()
 
+    @property
+    def profile(self) -> str:
+        return json.loads(self.canonical_bytes).get("encoding", "amphora-command-v1")
+
     @classmethod
     def for_family(cls, raw: str | bytes, family: str,
-                   payload_model: type[WireModel]) -> "CanonicalCommand":
-        command = cls.parse(raw, payload_model)
+                   payload_model: type[WireModel], *, allow_numeric=False) -> "CanonicalCommand":
+        command = cls.parse(raw, payload_model, allow_numeric=allow_numeric)
         if command.identity.command_family != family:
             raise CommandEncodingError("family_mismatch")
         return command
 
     @classmethod
-    def parse(cls, raw: str | bytes, payload_model: type[WireModel]) -> "CanonicalCommand":
+    def parse(cls, raw: str | bytes, payload_model: type[WireModel], *, allow_numeric=False) -> "CanonicalCommand":
         if not isinstance(payload_model, type) or not issubclass(payload_model, WireModel):
             raise TypeError("payload_model must be a registered WireModel class")
         try:
@@ -132,11 +168,19 @@ class CanonicalCommand:
         _check_depth(text)
         try:
             value = json.loads(text, object_pairs_hook=_object, parse_int=_integer,
-                               parse_float=_reject_number, parse_constant=_reject_number)
+                               parse_float=_NumberToken if allow_numeric else _reject_number, parse_constant=_reject_number)
         except json.JSONDecodeError as error:
             raise CommandEncodingError("invalid_json") from error
-        _check_value(value)
-        if type(value) is not dict or set(value) != {"identity", "payload"}:
+        if allow_numeric and type(value) is dict and "encoding" not in value:
+            # An opted-in route still preserves the exact legacy parser/default/hash behavior.
+            return cls.parse(raw, payload_model)
+        numeric = allow_numeric and type(value) is dict and value.get("encoding") == NUMERIC_ENCODING
+        if allow_numeric and not numeric:
+            raise CommandEncodingError("invalid_encoding")
+        if numeric:
+            value = _normalize_numbers(value)
+        _check_value(value, numeric=numeric)
+        if type(value) is not dict or set(value) != ({"identity", "payload", "encoding"} if numeric else {"identity", "payload"}):
             raise CommandEncodingError("invalid_envelope")
         if type(value["payload"]) is not dict:
             raise CommandEncodingError("invalid_payload")
@@ -146,7 +190,10 @@ class CanonicalCommand:
         except ValidationError as error:
             raise CommandEncodingError("schema_invalid") from error
         normalized = {"identity": identity.model_dump(), "payload": payload.model_dump()}
-        _check_value(normalized)
+        if numeric:
+            _check_value(normalized, numeric=True)
+            normalized = _normalize_numbers({"encoding": NUMERIC_ENCODING, **normalized})
+        _check_value(normalized, numeric=numeric)
         encoded = _encoded(normalized)
         if len(encoded) > MAX_BYTES:
             raise CommandEncodingError("too_large")

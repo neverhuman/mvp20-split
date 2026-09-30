@@ -5,14 +5,22 @@ type Action = "save" | "validate" | "admit" | "cancel";
 const families = { save: "definition.save", validate: "definition.validate", admit: "graph.admit_draft", cancel: "runtime.cancel" } as const;
 const paths = { save: "definition-drafts/save", validate: "definition-drafts/validate", admit: "graph-runs/drafts", cancel: "runs/cancel" } as const;
 
-function checkJSON(value: unknown, depth = 0): void {
+function checkJSON(value: unknown, numeric: boolean, depth = 0): void {
   if (value === null || typeof value === "boolean") return;
-  if (typeof value === "number" && Number.isSafeInteger(value)) return;
+  if (typeof value === "number" && (numeric ? Number.isFinite(value) : Number.isSafeInteger(value))) return;
   if (typeof value === "string" && !/[\uD800-\uDFFF]/u.test(value)) return;
   if (depth >= 64 || typeof value !== "object" || value === null) throw new Error("invalid_command_value");
-  if (Array.isArray(value)) { for (const item of value) checkJSON(item, depth + 1); return; }
+  if (Array.isArray(value)) { for (const item of value) checkJSON(item, numeric, depth + 1); return; }
   if (Object.getPrototypeOf(value) !== Object.prototype && Object.getPrototypeOf(value) !== null) throw new Error("invalid_command_value");
-  for (const [key, item] of Object.entries(value)) { checkJSON(key); checkJSON(item, depth + 1); }
+  for (const [key, item] of Object.entries(value)) { checkJSON(key, numeric); checkJSON(item, numeric, depth + 1); }
+}
+
+/** Wire encoding only; owner DTO normalization/canonical hashing still happens server-side. */
+function numericJSON(value: unknown): string {
+  if (typeof value === "number") return Number.isInteger(value) && !Number.isSafeInteger(value) ? value.toExponential() : JSON.stringify(value);
+  if (Array.isArray(value)) return "[" + value.map(numericJSON).join(",") + "]";
+  if (value && typeof value === "object") return "{" + Object.entries(value).map(([key, item]) => JSON.stringify(key) + ":" + numericJSON(item)).join(",") + "}";
+  return JSON.stringify(value);
 }
 
 function sameIdentity(left: CommandIdentity, right: CommandIdentity): boolean {
@@ -29,7 +37,9 @@ export class Submission<A extends Action = Action> {
   private readonly originalIdentity: string;
 
   constructor(readonly action: A, identity: CommandIdentity, payload: AuthoringWire[A]) {
-    checkJSON({ identity, payload });
+    const numeric = action === "save" || action === "admit";
+    const envelope = numeric ? { encoding: "amphora-command-v2", identity, payload } : { identity, payload };
+    checkJSON(envelope, numeric);
     decodeAuthoring("identity", identity);
     decodeAuthoring(action, payload);
     if (identity.command_family !== families[action]) throw new Error("command_family_mismatch");
@@ -38,7 +48,7 @@ export class Submission<A extends Action = Action> {
       if (scope.tenant_id !== identity.scope.tenant_id || scope.project_id !== identity.scope.project_id) throw new Error("command_scope_mismatch");
     }
     if (action === "cancel" && (payload as AuthoringWire["cancel"]).expected_run_revision == null) throw new Error("cancel_revision_required");
-    this.body = JSON.stringify({ identity, payload });
+    this.body = numeric ? numericJSON(envelope) : JSON.stringify(envelope);
     if (new TextEncoder().encode(this.body).byteLength > 262_144) throw new Error("command_too_large");
     this.originalIdentity = JSON.stringify(identity);
     this.path = paths[action];

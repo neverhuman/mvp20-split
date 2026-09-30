@@ -56,6 +56,26 @@ def test_foreign_definition_scope_rejected_before_registration():
         parse_authoring_command("definition.save", json.dumps(raw))
 
 
+def test_numeric_profile_is_explicit_and_limited_to_save_and_draft_admission():
+    raw = request()
+    raw["payload"]["definition"]["body"]["nodes"][0]["outputs"] = [
+        {"port": "value", "source": {"kind": "number", "value": 1.25, "unit": "1"}}]
+    with pytest.raises(CommandEncodingError, match="non_integer_number"):
+        parse_authoring_command("definition.save", json.dumps(raw))
+    raw["encoding"] = "amphora-command-v2"
+    parsed = parse_authoring_command("definition.save", json.dumps(raw))
+    assert parsed.profile == "amphora-command-v2"
+    assert parse_authoring_command("definition.save", parsed.canonical_bytes) == parsed
+    for family, payload, parser in [
+        ("definition.validate", {"draft_id": "draft-1", "revision": 1, "content_sha256": "a" * 64}, parse_authoring_command),
+        ("graph.advance", {"run_id": "run"}, parse_graph_command),
+        ("graph.admit", {"plan_sha256": "a" * 64, "inputs": [], "budget": {"limit": 1}}, parse_graph_command),
+    ]:
+        envelope = {"encoding": "amphora-command-v2", "identity": {**raw["identity"], "command_family": family}, "payload": payload}
+        with pytest.raises(CommandEncodingError, match="invalid_envelope"):
+            parser(family, json.dumps(envelope))
+
+
 def test_revision_response_preserves_scope_and_parent_identity():
     raw = {"scope": SCOPE, "head": {"draft_id": "draft-1", "revision": 2, "content_sha256": "a" * 64, "title": "Draft"},
         "parent_revision": 1, "definition": definition()}

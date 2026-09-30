@@ -1,8 +1,12 @@
 # Graph Runtime Contracts
 
-Current BP-05.03/B1 partial:graph-runtime0.10.0 adds DefinitionUniverse and DefinitionSchema for bounded compiler-reviewed metadata and exact schema bytes. Authority is explicitly compiler_configuration, not Registry eligibility. Base64 byte envelopes are canonical and limited to64KiB decoded bytes; consumers still verify digest and schema interpretation.200 schemas preserve196 predecessor bytes. Runtime0.18.0 owns scoped reads;118 scoped tests and an isolated eight-wheel Runtime closure pass. Existing AdmitDraft and authoring DTOs remain unchanged.
+Current BP-05.03/B1 partial:graph-runtime0.11.0 opts definition.save/graph.admit_draft into the explicit Commands0.2.0 numeric envelope. All200 schema bytes remain unchanged; Runtime0.19.0 persists the actual profile.170 scoped Python tests,96 isolated Studio tests and full1315 Python/96 Node/19 installs/REC-01..09 pass. No migration or eligibility grant.
+
+Metadata predecessor0.10.0 added DefinitionUniverse/DefinitionSchema for bounded compiler-reviewed pins and exact schema bytes. These retain compiler_configuration authority, canonical base64 and a64KiB decoded bound; consumers verify digest before interpretation.
 
 Authoring commands use their own DraftCommandReceipt; unchanged Runtime CommandReceipt cannot represent draft commits and is not widened. parse_authoring_command recognizes only definition.save/definition.validate and binds saved definition scope to command identity. Draft validation records pin revision/content/universe and explicitly cannot establish scientific acceptance. Revision conflict decisions belong to Runtime definitions domain objects, not DTO constructors. Owned tests: tests/test_authoring.py. No transport endpoints are implied by schema publication.
+
+Commands0.2.0 adds explicit amphora-command-v2 envelopes only for definition.save and graph.admit_draft; unmarked calls retain v1 parsing/hashes. All DTO/schema bytes remain unchanged, including decimal-string NumberValue inputs. SaveDraft NumberConstant floats can now cross the canonical command boundary. Validate/advance/configured admission/successor/receipt commands do not opt in.
 
 Earlier accepted publication history follows.
 

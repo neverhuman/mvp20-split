@@ -2,7 +2,7 @@
 name = "amphora-contracts-tools"
 version = "0.1.0"
 requires-python = ">=3.12,<3.13"
-dependencies = ["pydantic>=2.12,<3", "amphora-contracts-core==0.1.0", "amphora-contracts-commands==0.1.0"]
+dependencies = ["pydantic>=2.12,<3", "amphora-contracts-core==0.1.0", "amphora-contracts-commands==0.2.0"]
 
 [build-system]
 requires = ["hatchling>=1.27,<2"]

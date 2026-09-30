@@ -19,6 +19,12 @@ Use the validated, schema-versioned command model with defaults materialized. In
 
 Encode sorted object keys as compact UTF-8 JSON, ASCII escaping enabled, no whitespace or final newline, integers in decimal without alternate numeric spellings; SHA-256 those bytes. The initial implementation is the Python profile, not an assertion of universal language canonicalization. The command-contract package publishes golden canonical bytes/digests for optional/default fields, escaping, order, nulls, integers and rejected duplicates; any future Rust/JS producer must pass them. Artifact/schema digests retain their separately named profiles.
 
+### Explicit numeric profile 2
+
+BP-05.03 adds the owner-approved `amphora-command-v2` envelope for definition.save and graph.admit_draft. An explicit encoding marker is retained in canonical bytes/digests; unmarked envelopes and other command families retain v1. This closes the authored NumberConstant float versus command-v1 mismatch without reinterpreting historical requests. Runtime NumberValue inputs remain decimal strings.
+
+V2 permits finite binary64 values under strict consuming DTO bounds, rejects overflow/nonzero underflow, retains safe integer tokens, duplicate-key/Unicode/depth/size checks, materializes defaults and normalizes signed zero to positive zero. Python-owned shortest-round-trip JSON float rendering is fixed by public golden vectors, not assumed equivalent to browser JSON.stringify. Runtime stores and verifies the actual profile with immutable canonical bytes; changed profiles under the same identity conflict. Original v1/v2 bytes and receipts must survive restart. Studio emits explicit v2 only for the two opted-in actions and retains the original submission for reconciliation. [Commands boundary](../../../contracts/commands/README.md) owns exact profile rules and fixtures.
+
 ## Owned Records and Domain Objects
 
 | Owner record/domain object | Invariant / behavior |

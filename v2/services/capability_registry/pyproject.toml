@@ -9,7 +9,7 @@ dependencies = [
     "alembic>=1.16,<2",
     "fastapi>=0.115,<1",
     "uvicorn>=0.34,<1",
-    "amphora-contracts-commands==0.1.0",
+    "amphora-contracts-commands==0.2.0",
     "amphora-contracts-core==0.1.0",
     "amphora-contracts-tools==0.1.0",
 ]

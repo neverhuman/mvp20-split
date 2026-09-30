@@ -113,7 +113,7 @@ def parse_authoring_command(family, raw):
         model = {"definition.save": SaveDraft, "definition.validate": ValidateDraft}[family]
     except KeyError as error:
         raise CommandEncodingError("unknown_family") from error
-    command = CanonicalCommand.for_family(raw, family, model)
+    command = CanonicalCommand.for_family(raw, family, model, allow_numeric=family == "definition.save")
     if family == "definition.save":
         payload = json.loads(command.canonical_bytes)["payload"]
         if payload["definition"]["scope"] != command.identity.scope.model_dump():

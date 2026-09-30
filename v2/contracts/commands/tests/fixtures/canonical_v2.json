@@ -1,0 +1,32 @@
+[
+  {
+    "name": "integral-number",
+    "input": "{\"encoding\":\"amphora-command-v2\",\"identity\":{\"actor_id\":\"worker-1\",\"command_family\":\"test.operation\",\"command_id\":\"cmd-1\",\"schema_version\":\"1\",\"scope\":{\"project_id\":\"demo\",\"tenant_id\":\"local\"}},\"payload\":{\"amount\":1}}",
+    "canonical": "{\"encoding\":\"amphora-command-v2\",\"identity\":{\"actor_id\":\"worker-1\",\"command_family\":\"test.operation\",\"command_id\":\"cmd-1\",\"schema_version\":\"1\",\"scope\":{\"project_id\":\"demo\",\"tenant_id\":\"local\"}},\"payload\":{\"amount\":1.0,\"count\":1}}",
+    "sha256": "b4f4d693abaa74a08edf5eecf3481f0418e24a14283f6686aa75245f13f31429"
+  },
+  {
+    "name": "decimal",
+    "input": "{\"encoding\":\"amphora-command-v2\",\"identity\":{\"actor_id\":\"worker-1\",\"command_family\":\"test.operation\",\"command_id\":\"cmd-1\",\"schema_version\":\"1\",\"scope\":{\"project_id\":\"demo\",\"tenant_id\":\"local\"}},\"payload\":{\"amount\":1.25}}",
+    "canonical": "{\"encoding\":\"amphora-command-v2\",\"identity\":{\"actor_id\":\"worker-1\",\"command_family\":\"test.operation\",\"command_id\":\"cmd-1\",\"schema_version\":\"1\",\"scope\":{\"project_id\":\"demo\",\"tenant_id\":\"local\"}},\"payload\":{\"amount\":1.25,\"count\":1}}",
+    "sha256": "e80bdd839ba1ae36e95231cfd0326188a8b291c9a828c9f60e1bc6da4cb8c8c7"
+  },
+  {
+    "name": "signed-zero",
+    "input": "{\"encoding\":\"amphora-command-v2\",\"identity\":{\"actor_id\":\"worker-1\",\"command_family\":\"test.operation\",\"command_id\":\"cmd-1\",\"schema_version\":\"1\",\"scope\":{\"project_id\":\"demo\",\"tenant_id\":\"local\"}},\"payload\":{\"amount\":-0.0}}",
+    "canonical": "{\"encoding\":\"amphora-command-v2\",\"identity\":{\"actor_id\":\"worker-1\",\"command_family\":\"test.operation\",\"command_id\":\"cmd-1\",\"schema_version\":\"1\",\"scope\":{\"project_id\":\"demo\",\"tenant_id\":\"local\"}},\"payload\":{\"amount\":0.0,\"count\":1}}",
+    "sha256": "4bdbc70bbd49d1cffec7875eba616e9537b5084a9dfdde664f0a19eed4eab029"
+  },
+  {
+    "name": "exponent",
+    "input": "{\"encoding\":\"amphora-command-v2\",\"identity\":{\"actor_id\":\"worker-1\",\"command_family\":\"test.operation\",\"command_id\":\"cmd-1\",\"schema_version\":\"1\",\"scope\":{\"project_id\":\"demo\",\"tenant_id\":\"local\"}},\"payload\":{\"amount\":1e20}}",
+    "canonical": "{\"encoding\":\"amphora-command-v2\",\"identity\":{\"actor_id\":\"worker-1\",\"command_family\":\"test.operation\",\"command_id\":\"cmd-1\",\"schema_version\":\"1\",\"scope\":{\"project_id\":\"demo\",\"tenant_id\":\"local\"}},\"payload\":{\"amount\":1e+20,\"count\":1}}",
+    "sha256": "e045a3a702e529aab16058bedfecde0b052d0f4f172412ed8253d710e5942408"
+  },
+  {
+    "name": "subnormal",
+    "input": "{\"encoding\":\"amphora-command-v2\",\"identity\":{\"actor_id\":\"worker-1\",\"command_family\":\"test.operation\",\"command_id\":\"cmd-1\",\"schema_version\":\"1\",\"scope\":{\"project_id\":\"demo\",\"tenant_id\":\"local\"}},\"payload\":{\"amount\":5e-324}}",
+    "canonical": "{\"encoding\":\"amphora-command-v2\",\"identity\":{\"actor_id\":\"worker-1\",\"command_family\":\"test.operation\",\"command_id\":\"cmd-1\",\"schema_version\":\"1\",\"scope\":{\"project_id\":\"demo\",\"tenant_id\":\"local\"}},\"payload\":{\"amount\":5e-324,\"count\":1}}",
+    "sha256": "eca5575072824acf42015773e9dfad7a3ceb07d70c48445c54fc461a46016d5e"
+  }
+]

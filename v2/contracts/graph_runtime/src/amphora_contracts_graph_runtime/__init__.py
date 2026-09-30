@@ -77,7 +77,7 @@ def parse_graph_command(family, raw):
                  "graph.submit_receipt": SubmitDomainReceipt}[family]
     except KeyError as error:
         raise CommandEncodingError("unknown_family") from error
-    command = CanonicalCommand.for_family(raw, family, model)
+    command = CanonicalCommand.for_family(raw, family, model, allow_numeric=family == "graph.admit_draft")
     payload = json.loads(command.canonical_bytes)["payload"]
     if family == "graph.submit_receipt":
         receipt = payload["receipt"]

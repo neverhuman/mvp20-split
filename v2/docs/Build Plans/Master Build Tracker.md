@@ -9,15 +9,15 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-05 primary active; BP-06 through BP-09 queued; BP-01/BP-01A/BP-02/BP-03/BP-04 closed.
-- Last refreshed: `2026-09-30 11:59:37` (America/Chicago).
+- Last refreshed: `2026-09-30 13:53:50` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P4 / BP-05 - Graph Studio first vertical slice.
 - Primary active implementation plan / phase / task: BP-05 -> BP-05.03 / Build / B1.
-- Current task: BP-05.03/B1 Studio authoring consumer/forms; owner metadata and guarded admission/publication checkpoints verified.
+- Current task: BP-05.03/B1 forms/comparison/emergency presentation; numeric command correction and discovery/command-state prerequisites verified.
 - Next task: BP-05.03/B2 conflict, revalidation and safe activation.
 - Implementation completion: BP-04 closed100% (24/24); BP-05 active50% (8/16), .01/.02 closed100%, .03 active0% (Build0% / Acceptance0%); BP-06..09 queued0%.
 - Active focus: reconcile definition draft persistence, registry-driven editing and Runtime safe-command boundaries.
-- Blockers: .03/B1 numeric literal authoring needs direction on the proposed versioned command profile; discovery/nonnumeric forms/comparison remain independent. Scientific/provider/host decisions remain later gates.
+- Blockers: no user decision pending; approved numeric command correction is verified. Remaining forms/comparison/emergency controls are B1 work. Scientific/provider/host decisions remain later gates.
 - Acceptance posture: deterministic Runtime and independent public observation/replacement accepted. Browser/UI and next-campaign authoring remain BP-05.
 - Active exception: none.
 
@@ -123,6 +123,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-30 13:53:50 | BP-05.03/B1 numeric correction verified; child0%, parent50% unchanged | 1315 Python/96 Node/19 installs/REC-01..09;legacy replay and200 schemas preserved |
 | 2026-09-30 11:59:37 | BP-05.03/B1 discovery partial; child0%, parent50% unchanged | 95 isolated Node tests;numeric literal encoding mismatch documented for direction |
 | 2026-09-30 11:50:01 | BP-05.03/B1 command-loader partial; child0%, parent50% unchanged | 87 isolated Node tests;lost acknowledgement/exact-record/late-denial cases |
 | 2026-09-30 11:45:52 | BP-05.03/B1 draft-state partial; child0%, parent50% unchanged | 82 isolated Node tests;7 owned state cases;save/edit race and denial fences |
@@ -147,6 +148,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-29 18:38:04 | BP-04.05 B3 verified75%; parent95.83% (23/24); V1 active | Parallel public completions, duplicate history and explicit resnapshot failures;76 focused tests |
 | 2026-09-29 18:33:12 | BP-04.05 B2 verified50%; parent91.67% (22/24); B3 active | Three real coordinator kill cuts; consistent readers and original replay;32 focused/process tests |
 | 2026-09-29 18:27:38 | BP-04.05 B1 verified25%; parent87.50% (21/24); B2 active | Snapshot/detail/reconnect contracts;72 focused,1202 foundation,19 installs; stale queue40% mirror corrected |
-| 2026-09-29 17:57:39 | BP-04.04 closed 100%; parent 83.33% (20/24); .05/B1 active 0% | Actual five-tool installed source/successor/replacement; 44 confirmed reservations; scoped audit aligned |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

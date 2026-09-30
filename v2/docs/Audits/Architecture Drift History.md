@@ -80,3 +80,10 @@ Aligned within documentation scope; [planning review](Planning_Maturity_Review.m
 ## 2026-09-29 22:06:45 - BP-05.02 aligned
 
 V1 passed final-source independent Studio/Runtime replacement, scopee222d4cf32604d729ef12146860bc49c: two65-test npm builds; initial12 nodes/4 scopes and successor28 nodes/9 scopes; three replacement comparisons preserve topology, details, lineage, completion, metadata and old cursors. Scoped audit aligned. BP-05.02 closed100%=4/4, Build100%, Acceptance100%; parent50%=8/16. BP-05.03 activation review is next. [Scoped audit](BP-05.02_Navigation_Closeout.md). Follow-up: none within closed scope.
+
+## BP-05.03 Numeric Command Compatibility - 2026-09-30 13:55:40
+
+- Status: aligned within this bounded correction; Follow-Up: none for the numeric encoding mismatch. B1 editor forms/comparison/emergency work remains in the active child.
+- Scope: Commands0.2.0, graph-runtime0.11.0, Runtime0.19.0 persistence and Studio transport. Authored floating NumberConstant values now cross an explicit v2 command boundary; unmarked v1 bytes/hashes and receipt replay remain unchanged. No private cross-owner imports, new service, migrations, NumberValue wire changes, scientific authority or widened tool eligibility.
+- Evidence: [numeric verification](Evidence/BP-05-Authoring/Numeric.json),170 scoped Python tests,96 isolated Studio tests, full1315/96/19/REC-01..09. Actual owner HTTP/process proof includes save/validate/admit/finish, original v1/v2 receipts after host kill/restart and cross-profile identity conflict. All200 published schema bytes remain unchanged.
+- Limits: binary64 numeric profile, server-owned canonical rendering; no claim of a JavaScript canonical hash, target-host power-loss durability or complete authoring UI.

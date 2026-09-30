@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { Submission } from "../../src/transport/submission.js";
 import { AuthoringClient, AuthoringFailure } from "../../src/transport/authoring.js";
 import type { CommandIdentity, DraftCommandReceipt } from "../../src/contracts/authoring.js";
+import { local } from "../fixtures/authoring.js";
 
 const signal = () => new AbortController().signal;
 const identity = (): CommandIdentity => ({ actor_id: "researcher", command_family: "definition.validate", command_id: "validate1", scope: { tenant_id: "tenant", project_id: "project" } });
@@ -80,4 +81,32 @@ test("missing receipt keeps original command unresolved; streamed body limits ap
   await assert.rejects(missing.receipt(command(), signal()), (error: unknown) => error instanceof AuthoringFailure && error.kind === "unavailable" && error.commandUnresolved);
   const oversized = new AuthoringClient(async () => json(receipt()), "/api/runtime", "/api/registry", 1000, 32);
   await assert.rejects(oversized.submit(command(), signal()), (error: unknown) => error instanceof AuthoringFailure && error.kind === "invalid_response" && error.commandUnresolved);
+});
+
+test("numeric save explicitly selects v2 and preserves finite binary64 values without unsafe integer tokens", () => {
+  for (const value of [1, 1.25, 0.1, -0, 1e20, 1e100, 5e-324]) {
+    const draft = local();
+    draft.definition.scope = identity().scope;
+    draft.definition.body.nodes = [{ kind: "finish", node_id: "done", outputs: [{ port: "value", source: { kind: "number", value, unit: "1" } }] }];
+    const submitted = new Submission("save", { ...identity(), command_family: "definition.save" }, { ...draft, draft_id: "draft", expected_revision: 0 });
+    const wire = JSON.parse(submitted.body) as { encoding: string; payload: { definition: typeof draft.definition } };
+    assert.equal(wire.encoding, "amphora-command-v2");
+    const node = wire.payload.definition.body.nodes[0]!;
+    assert.equal(node.kind, "finish");
+    if (node.kind === "finish") {
+      const source = node.outputs[0]!.source;
+      assert.equal(source.kind, "number");
+      if (source.kind === "number") assert.equal(source.value, value === 0 ? 0 : value);
+    }
+    if (value === 1e20) assert.ok(submitted.body.includes('"value":1e+20'));
+    draft.definition.body.nodes = [];
+    assert.ok(submitted.body.includes('"kind":"finish"'));
+  }
+  assert.equal("encoding" in (JSON.parse(command().body) as object), false);
+  for (const value of [NaN, Infinity, -Infinity, 1e101]) {
+    const draft = local();
+    draft.definition.scope = identity().scope;
+    draft.definition.body.nodes = [{ kind: "finish", node_id: "done", outputs: [{ port: "value", source: { kind: "number", value } }] }];
+    assert.throws(() => new Submission("save", { ...identity(), command_family: "definition.save" }, { ...draft, draft_id: "draft", expected_revision: 0 }));
+  }
 });
