@@ -1,5 +1,7 @@
 # Campaign Definition Contracts
 
+Package0.4.1 additively exports the existing Occurrence union at the public root for navigation consumers. No wire schema changes.
+
 - Status: `amphora-contracts-campaigns` 0.3.0 preserves wire v1/v2 and adds await-capable wire v3. Runtime compiler supports v3; v3 execution remains gated in BP-04.03.
 - Architecture: [Graph Execution Model](../../docs/Architecture/System/Graph_Execution_Model.md)
 

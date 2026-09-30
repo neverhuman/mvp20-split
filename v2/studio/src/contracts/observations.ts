@@ -6,8 +6,11 @@ import type { GraphSnapshotPage } from "./generated/snapshot.js";
 import type { GraphNodeDetail } from "./generated/detail.js";
 import type { GraphValuePage } from "./generated/values.js";
 import type { GraphInvalidationPage } from "./generated/events.js";
+import type { GraphScopePage } from "./generated/scopes.js";
+import type { GraphTopologyPage } from "./generated/topology.js";
 
-export type { GraphSnapshotPage, GraphNodeDetail, GraphValuePage, GraphInvalidationPage };
+export type { GraphSnapshotPage, GraphNodeDetail, GraphValuePage, GraphInvalidationPage, GraphScopePage, GraphTopologyPage };
+export type TopologyQuery = GraphTopologyPage["query"];
 export type ReadCut = GraphSnapshotPage["snapshot"]["cut"];
 export type ReadQuery = GraphSnapshotPage["snapshot"]["query"];
 export type GraphNode = GraphSnapshotPage["nodes"][number];
@@ -16,6 +19,8 @@ export interface ObservationWire {
   detail: GraphNodeDetail;
   values: GraphValuePage;
   events: GraphInvalidationPage;
+  scopes: GraphScopePage;
+  topology: GraphTopologyPage;
 }
 
 const ajv = new Ajv2020({ strict: true, allErrors: false, coerceTypes: false, useDefaults: false, removeAdditional: false });
@@ -27,6 +32,8 @@ const validators = {
   detail: ajv.compile<GraphNodeDetail>(schemas.detail),
   values: ajv.compile<GraphValuePage>(schemas.values),
   events: ajv.compile<GraphInvalidationPage>(schemas.events),
+  scopes: ajv.compile<GraphScopePage>(schemas.scopes),
+  topology: ajv.compile<GraphTopologyPage>(schemas.topology),
 };
 
 export function decodeObservation<K extends keyof ObservationWire>(kind: K, value: unknown): ObservationWire[K] {

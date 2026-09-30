@@ -18,6 +18,9 @@ from .snapshots import GraphSnapshots
 
 
 def install_graph_inspection(app, history, credentials):
+    from ..graph_navigation.http import install_graph_navigation
+
+    install_graph_navigation(app, history, credentials)
     snapshots = GraphSnapshots(history.engine, history.cursors)
     details = GraphDetails(history.engine, history.cursors)
     invalidations = GraphInvalidations(history.engine, history.cursors)

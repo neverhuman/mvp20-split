@@ -1,5 +1,6 @@
 import { decodeObservation } from "../contracts/observations.js";
 import type { GraphSnapshotPage, GraphNodeDetail, GraphValuePage, GraphInvalidationPage, ReadQuery, ObservationWire } from "../contracts/observations.js";
+import type { GraphScopePage, GraphTopologyPage, TopologyQuery } from "../contracts/observations.js";
 import { ReadFailure } from "./failure.js";
 
 export interface ObservationSource {
@@ -7,6 +8,11 @@ export interface ObservationSource {
   detail(run: string, activation: string, snapshot: string, cursor: string | undefined, signal: AbortSignal): Promise<GraphNodeDetail>;
   values(run: string, activation: string, port: string, snapshot: string, cursor: string | undefined, signal: AbortSignal): Promise<GraphValuePage>;
   events(run: string, cursor: string, signal: AbortSignal): Promise<GraphInvalidationPage>;
+}
+
+export interface NavigationSource {
+  scopes(run: string, snapshot: string, parent: string | undefined, cursor: string | undefined, signal: AbortSignal): Promise<GraphScopePage>;
+  topology(run: string, scope: string, snapshot: string, query: TopologyQuery, cursor: string | undefined, signal: AbortSignal): Promise<GraphTopologyPage>;
 }
 
 async function boundedJSON(response: Response, maximum: number): Promise<unknown> {
@@ -34,7 +40,7 @@ async function boundedJSON(response: Response, maximum: number): Promise<unknown
   }
 }
 
-export class ObservationClient implements ObservationSource {
+export class ObservationClient implements ObservationSource, NavigationSource {
   constructor(private readonly fetcher: typeof fetch = fetch, private readonly base = "/api/runtime",
     private readonly timeoutMs = 15_000, private readonly maximumBytes = 2_097_152) {
     if (!base.startsWith("/") || base.startsWith("//") || /[?#]/.test(base) || timeoutMs <= 0 || maximumBytes <= 0)
@@ -89,5 +95,14 @@ export class ObservationClient implements ObservationSource {
   }
   events(run: string, cursor: string, signal: AbortSignal) {
     return this.read("events", encodeURIComponent(run) + "/invalidations", { cursor, limit: "100" }, signal);
+  }
+  scopes(run: string, snapshot: string, parent: string | undefined, cursor: string | undefined, signal: AbortSignal) {
+    return this.read("scopes", `${encodeURIComponent(run)}/scopes`,
+      { snapshot_token: snapshot, parent_activation_id: parent, cursor, limit: "50" }, signal);
+  }
+  topology(run: string, scope: string, snapshot: string, query: TopologyQuery, cursor: string | undefined, signal: AbortSignal) {
+    return this.read("topology", `${encodeURIComponent(run)}/scopes/${encodeURIComponent(scope)}/topology`,
+      { snapshot_token: snapshot, focus_activation_id: query.focus_activation_id ?? undefined,
+        radius: String(query.radius ?? 1), cursor, limit: "50" }, signal);
   }
 }

@@ -6,6 +6,7 @@ from amphora_contracts_commands import CanonicalCommand, CommandEncodingError
 
 from .bindings import GraphNodeViewV3, GraphRunPageV3
 from .models import AdmitGraphRun, AdvanceGraph, GraphLimits, GraphNodeView, GraphRunPage
+from .navigation import GraphControlLink, GraphScopePage, GraphScopeView, GraphTopologyNode, GraphTopologyPage, GraphTopologyQuery
 from .observations import (
     GraphAttemptView,
     GraphInvalidation,
@@ -76,7 +77,8 @@ def parse_graph_command(family, raw):
     return command
 
 
-__all__ = ["AdmitGraphRun", "AdvanceGraph", "CollectionValue", "GraphBinding", "GraphLimits", "GraphNodeView",
+__all__ = ["GraphControlLink", "GraphScopePage", "GraphScopeView", "GraphTopologyNode", "GraphTopologyPage", "GraphTopologyQuery",
+           "AdmitGraphRun", "AdvanceGraph", "CollectionValue", "GraphBinding", "GraphLimits", "GraphNodeView",
            "GraphAttemptView", "GraphInvalidation", "GraphInvalidationPage", "GraphNodeDetail", "GraphOutputSummary",
            "GraphReadBudget", "GraphReadCut", "GraphReadQuery", "GraphReadSnapshot", "GraphSnapshotPage", "GraphValueItem", "GraphValuePage",
            "GraphRunPage", "GraphValue", "MissingValue", "NumberValue", "PresentValue", "ScalarValue", "parse_graph_command",

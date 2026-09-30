@@ -119,3 +119,7 @@ Closeout evidence: pending. No implementation, deployment or scientific validati
 ## Reference refinement 2026-09-25 13:54:17
 
 BP-05.02 now specifies named, scoped, revision-bound scientific views and matching failure fixtures. Knowledge/lab views use labeled fixtures until BP-06.06 proves the actual owner integration; no graph backend is selected by the reference. Existing implementation deliveries extended with required acceptance cases; all 0%, denominator unchanged. [Reference assessment](References/Amphora_Lab_Insights.md) owns provenance and limitations.
+
+## 2026-09-29 20:32:51 ? BP-05.02 partial B1 checkpoint
+
+Runtime-owned authored topology and occurrence scope reads, public contracts and Studio transport/window mapping verified:109 Python regression tests,34 Node tests, isolated Studio install426906bd7a294db9a2c79536cf43d6c9. Full B1 remains open for catalog, navigation presentation and linked inspectors; child0/4=0%, parent4/16=25%. No completed predecessor reopened.

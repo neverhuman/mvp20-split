@@ -1,5 +1,7 @@
 # Graph Runtime Contracts
 
+Package0.6.0 adds bounded scope/topology read roots under BP-05.02/B1; Runtime0.12.0 owns their authority and authored-edge projection. campaigns0.4.1 publicly exports the existing Occurrence union. All predecessor schemas remain byte-identical; no migration. Navigation acceptance remains open.
+
 Package 0.5.0 adds graph snapshot, node detail, value page and invalidation page roots under BP-04.05/B1. Runtime 0.11.0 owns their read authority and revision/cursor policy. These are additive observations; prior command and graph page contracts remain unchanged. See [observation protocol](../../docs/Architecture/System/Graph_Observation_Protocol.md) and `tests/test_observations.py` for bounded examples and rejection cases. Earlier 0.4.0 notes below describe the accepted predecessor.
 
 Package 0.4.0 adds `SuccessorProposal`, `CarrySources` and `SuccessorLineage` without changing earlier graph/worker schema bytes. Runtime 0.10.0 owns admission authority. The new `graph.admit_successor` family names a precise predecessor plan/revision, explicit final-export or succeeded-node sources, expected value digests and distinct target inputs. Fresh Artifact input scope checks remain in the public parser; predecessor/retention/type policy belongs to Runtime domain objects.

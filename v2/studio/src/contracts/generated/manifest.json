@@ -14,5 +14,13 @@
   "events": {
     "source": "contracts/schemas/v1/graph-runtime.invalidation-page.serialization.json",
     "sha256": "8852947bf69de0a90f24ffc866313e8b8bd5026efd5dfe3875c25ba80cf9963e"
+  },
+  "scopes": {
+    "source": "contracts/schemas/v1/graph-runtime.scope-page.serialization.json",
+    "sha256": "e32e6abe1707c98ee6b2567c19fb60b6c25afe2f1bda0f6d1a5c0b4f71d123f7"
+  },
+  "topology": {
+    "source": "contracts/schemas/v1/graph-runtime.topology-page.serialization.json",
+    "sha256": "abec25985d262a798d5f52aca2a2acf71a0cbe85ab641faf3951295f8a2c145f"
   }
 }

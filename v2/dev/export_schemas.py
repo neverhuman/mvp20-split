@@ -70,6 +70,8 @@ for name, model in {
     "carry-sources": graph_runtime_contracts.CarrySources,
     "successor-lineage": graph_runtime_contracts.SuccessorLineage,
     "snapshot-page": graph_runtime_contracts.GraphSnapshotPage,
+    "scope-page": graph_runtime_contracts.GraphScopePage,
+    "topology-page": graph_runtime_contracts.GraphTopologyPage,
     "node-detail": graph_runtime_contracts.GraphNodeDetail,
     "value-page": graph_runtime_contracts.GraphValuePage,
     "invalidation-page": graph_runtime_contracts.GraphInvalidationPage,

@@ -1,5 +1,7 @@
 # Monitor page models
 
+BP-05.02/B1 adds TopologyWindow: same-cut/scope/query pagination, unique membership, source-page link ownership and explicit unresolved targets. Whole scope storage is bounded by256 authored nodes; presentation remains independently bounded. Two focused tests pass; browser navigation is not yet implemented. Earlier coverage numbers below describe predecessor evidence only.
+
 Owner: [Studio](../../README.md); architecture: [read-model protocol](../../../docs/Architecture/Experience/Studio_Read_Model_Protocol.md). These focused objects own browser observation state, never backend authority or scientific rules.
 
 `MonitorModel` owns one graph loader, one selected-detail loader and one invalidation loader. Components subscribe to a stable view snapshot and issue explicit actions. `RequestLane` aborts previous work and checks a generation even when a peer ignores cancellation. `GraphWindow` binds scope/run/query/revision, merges only compatible pages, rejects duplicate membership or false completeness and exposes the exact omitted count. `EventPosition` checks consecutive event revisions with bounded100-entry duplicate memory; too-old or conflicting replay requests resnapshot.

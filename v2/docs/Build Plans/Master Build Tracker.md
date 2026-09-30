@@ -9,14 +9,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-05 primary active; BP-06 through BP-09 queued; BP-01/BP-01A/BP-02/BP-03/BP-04 closed.
-- Last refreshed: `2026-09-29 20:06:20` (America/Chicago).
+- Last refreshed: `2026-09-29 20:32:51` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P4 / BP-05 - Graph Studio first vertical slice.
 - Primary active implementation plan / phase / task: BP-05 -> BP-05.02 / Build / B1.
 - Current task: bounded named-view contracts and actual Runtime topology/navigation projections.
 - Next task: BP-05.02/B2 revision-pinned view/grouping policy.
 - Implementation completion: BP-04 closed100% (24/24); BP-05 active25% (4/16), .01 closed100%, .02 active0% (Build0% / Acceptance0%); BP-06..09 queued0%.
-- Active focus: explicit owner projections for scoped graph/occurrence/lineage navigation and capability-gated named views.
+- Active focus: Runtime scope/topology projections verified at the partial B1 boundary; Studio navigation, named views and linked inspectors remain. No delivery percentage change.
 - Blockers: none for .02/B1; actual owner projection gaps are scoped engineering work; scientific/provider/host decisions remain their named later gates.
 - Acceptance posture: deterministic Runtime and independent public observation/replacement accepted. Browser/UI and next-campaign authoring remain BP-05.
 - Active exception: none.
@@ -123,6 +123,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-29 20:32:51 | BP-05.02/B1 partial; child0%, parent25% unchanged | Authored topology/occurrence reads;109 Python +34 Node tests, isolated Studio build; full B1 remains open |
 | 2026-09-29 20:06:20 | BP-05.01 closed100%; parent25% (4/16); .02/B1 active0% | Two isolated Studio builds;actual12/28-node Runtime browser proof,three replacements;scoped audit aligned |
 | 2026-09-29 19:54:04 | BP-05.01 B3 verified75%; parent18.75% (3/16); V1 active | Seven browser failure cases,14 viewport scans; native fetch receiver repaired;30 Node tests, isolated build |
 | 2026-09-29 19:43:46 | BP-05.01 B2 verified50%; parent12.50% (2/16); B3 active | Two actual browser candidates;200/10000 bounded scene, keyboard/viewport preservation;30 Node tests, isolated build |
@@ -147,6 +148,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-28 20:50:52 | BP-04.03 B1 passed; child 25%, parent 45% (9/20); B2 active | 920 tests/thirteen installs/REC-01..09; await wire-v3, 116 frozen predecessor schemas, isolated wait retention preparation; scope 5083de960e9142f1be186e0d77f4cf3e |
 | 2026-09-28 20:11:30 | BP-04.03 B1 aggregate snapshot/storage slice verified; parent 40%, child 0 complete gates | 33 owned cases; 842 tests/thirteen installs/REC-01..09; Runtime 0.4.1/runtime_0008; external-wait boundary remains |
 | 2026-09-28 19:47:08 | BP-04.02 closed/audited 100%; parent 40% (8/20); .03 B1 activated 0% | Eight installed graph/peer/replacement/polling/retention cases; scope bab36cf644df43e59a370437d68c94d1; [audit](../Audits/BP-04.02_Scheduling_Closeout.md) |
-| 2026-09-28 19:30:50 | BP-04.02 B3 passed; child 75%, parent 35% (7/20); V1 active | 60 scheduling tests/eight actual coordinator-process cases; exact frontier/race/kill/replay/feedback/budget proof; [evidence](../Audits/Evidence/BP-04-Scheduling/README.md) |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

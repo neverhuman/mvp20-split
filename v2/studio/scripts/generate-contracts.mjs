@@ -13,6 +13,8 @@ const roots = {
   detail: ["graph-runtime.node-detail", "GraphNodeDetail"],
   values: ["graph-runtime.value-page", "GraphValuePage"],
   events: ["graph-runtime.invalidation-page", "GraphInvalidationPage"],
+  scopes: ["graph-runtime.scope-page", "GraphScopePage"],
+  topology: ["graph-runtime.topology-page", "GraphTopologyPage"],
 };
 const check = process.argv.includes("--check");
 const manifest = {};
@@ -42,4 +44,4 @@ for (const [key, [file, title]] of Object.entries(roots)) {
 }
 await output("schemas.json", JSON.stringify(schemas, null, 2) + "\n");
 await output("manifest.json", JSON.stringify(manifest, null, 2) + "\n");
-console.log(`Studio contracts ${check ? "verified" : "generated"}: four published roots`);
+console.log(`Studio contracts ${check ? "verified" : "generated"}: ${Object.keys(roots).length} published roots`);
