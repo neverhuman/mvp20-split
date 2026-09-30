@@ -1,0 +1,10 @@
+{
+  "profile": "amphora-studio-journeys-v1",
+  "viewports": [{"width": 1440, "height": 1000}, {"width": 390, "height": 844}],
+  "journeys": [
+    {"id": "inspect-reconnect", "owner": "Runtime observations and Artifact metadata", "oracle": "Exact independently read cut, node, completion and artifact; selected node survives held request, unavailable transport and reconnect"},
+    {"id": "edit-compare-next", "owner": "Runtime definition drafts", "oracle": "Keyboard-reachable comparison exposes local structural changes before saving; numeric content and exact validation commit without changing active execution"},
+    {"id": "terminate", "owner": "Runtime command authority", "oracle": "Keyboard stop remains separate from edits; actual receipt and refreshed observation establish outcome while external effects remain uncertain"}
+  ],
+  "limits": ["Internal loopback acceptance adapter", "Pure synthetic tools", "No target-host performance or complete screen-reader conformance claim"]
+}

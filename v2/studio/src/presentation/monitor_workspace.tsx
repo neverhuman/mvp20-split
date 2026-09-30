@@ -58,7 +58,7 @@ export function MonitorWorkspace({ model, context, synthetic = false, navigation
   return <div className="workspace">
     <header><span className="brand">AMPHORA<span>research studio</span></span><div className="mode">Monitor</div><span className="fixture">{synthetic ? 'Synthetic observation fixture' : 'Campaign observations'}</span></header>
     <main>
-      <div className="context"><div><p className="eyebrow">Campaign / execution observations</p><h1>Follow execution</h1></div><p>Read-only · {view.window ? `live revision ${view.window.snapshot.cut.revision}` : 'awaiting observation'}</p></div>
+      <div className="context"><div><p className="eyebrow">Campaign / execution observations</p><h1>Follow execution</h1></div><p>Read-only · {view.window ? `${current ? 'live' : 'retained'} revision ${view.window.snapshot.cut.revision}` : 'awaiting observation'}</p></div>
       <div className="toolbar">{!topology && !pin && <><label htmlFor="node-filter">Find in loaded nodes</label><input id="node-filter" value={filter} onChange={event => setFilter(event.target.value)} maxLength={120} /></>}
         <button onClick={() => void model.refresh()} disabled={view.phase === 'loading'}>Refresh observation</button>
         <button onClick={() => void model.poll()} disabled={!current}>Check for updates</button>

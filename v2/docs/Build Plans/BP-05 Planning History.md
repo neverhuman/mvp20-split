@@ -231,3 +231,7 @@ Approved numeric correction verified:Commands0.2.0/graph-runtime0.11.0/Runtime0.
 ## BP-05.03 V1 closeout and .04 activation - 2026-09-30 16:50:49
 
 Scoped [authoring audit](../Audits/BP-05.03_Authoring_Closeout.md) aligned; .03 archived100%=4/4 (Build100%/Acceptance100%), parent75%=12/16. Reconciled independent135-test browser builds,25 actual-owner cases, unchanged schemas and B1-B3 evidence. Updated stale module/architecture summaries and corrected MBT BP-03 shorthand18/16 to canonical16/16, without reopening/changing that plan. .04 coherence review corrected_ready at0%=0/4; B1 integrated journeys/keyboard/reconnect active. No user decision pending.
+
+## BP-05.04 B1 integrated journeys - 2026-09-30 17:07:23
+
+`2026-09-30 17:07:23`: .04/B1 verified against actual Runtime/Registry/Artifact/tools, scopeb98515e54b7c4a81aa880b83043fdb88;25 cases and two135-test independent Studio builds. Versioned scenario pack proves keyboard comparison before save, narrow keyboard emergency control, retained selection across held/unavailable/reconnected observations and exact evidence navigation after replacement. Visual review corrected unavailable observation label from live to retained; final-source rerun passed. Child25%=1/4, Build33.33%/Acceptance0%; parent81.25%=13/16. B2 production interaction measurement active. [Evidence](../Audits/Evidence/BP-05-Acceptance/Journeys.json).

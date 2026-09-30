@@ -5,6 +5,7 @@ import assert from 'node:assert/strict';
 import { build } from 'esbuild';
 import { chromium } from 'playwright';
 import AxeBuilder from '@axe-core/playwright';
+import { pack, keyboardActivate, tabTo, noOverflow } from './journeys.mjs';
 
 let input=''; for await (const chunk of process.stdin) input+=chunk;
 const job=JSON.parse(input);
@@ -26,11 +27,20 @@ for(const detail of job.expected.details) for(const output of detail.outputs)
   publicPaths.add(prefix+'/nodes/'+detail.node.activation_id+'/outputs/'+encodeURIComponent(output.port));
 const artifactPath='/api/artifacts/v1/artifacts/'+encodeURIComponent(job.inspection.artifact.artifact_id);
 const forwarded=[];
+const fault={hold:null,unavailable:false};
+let releaseHeld;
 const server=createServer(async(req,res)=>{
   try {
     const url=new URL(req.url,'http://localhost');
     if(req.method!=='GET'){res.writeHead(405);res.end();return;}
     if(publicPaths.has(url.pathname)||url.pathname===artifactPath){
+      if(url.pathname===prefix+'/nodes' && fault.hold){
+        const hold=fault.hold;fault.hold=null;await hold;
+      }
+      if(url.pathname===prefix+'/nodes' && fault.unavailable){
+        fault.unavailable=false;forwarded.push({path:url.pathname,status:503,transport_fault:true});
+        res.writeHead(503,{'content-type':'application/json','cache-control':'no-store'});res.end('{}');return;
+      }
       const artifact=url.pathname===artifactPath;
       const response=await fetch((artifact?job.artifact_endpoint:job.endpoint)+url.pathname.slice(artifact?'/api/artifacts'.length:'/api/runtime'.length)+url.search,
         {headers:{Authorization:'Bearer '+(artifact?artifactToken:token),Accept:'application/json'},redirect:'error',signal:AbortSignal.timeout(15000)});
@@ -51,7 +61,8 @@ const server=createServer(async(req,res)=>{
 await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
 const browser=await chromium.launch({headless:true});
 try{
-  const context=await browser.newContext({viewport:{width:1440,height:1000},reducedMotion:'reduce'});
+  const interactionViewport=pack.viewports[job.old?1:0];
+  const context=await browser.newContext({viewport:interactionViewport,reducedMotion:'reduce'});
   const page=await context.newPage();const errors=[],headers=[];
   page.on('pageerror',error=>errors.push(error.message));
   page.on('request',request=>headers.push(request.allHeaders()));
@@ -73,6 +84,31 @@ try{
     assert.deepEqual(actual,expected);details.push(actual);
     assert.equal(await page.getByRole('region',{name:'Selected node',exact:true}).getByRole('heading',{name:expected.node.path.node_id,exact:true}).count(),1);
   }
+  const selected=job.expected.details.at(-1).node.activation_id;
+  const refresh=page.getByRole('button',{name:'Refresh observation',exact:true});
+  let holdTimer;
+  fault.hold=new Promise(resolve=>{
+    releaseHeld=()=>{clearTimeout(holdTimer);resolve();};holdTimer=setTimeout(releaseHeld,15000);
+  });
+  await tabTo(page,page.getByLabel('Find in loaded nodes',{exact:true}),refresh);
+  await page.keyboard.press('Enter');
+  await page.waitForFunction(()=>window.integrationHarness.model.snapshot.phase==='loading');
+  assert.equal(await page.evaluate(()=>window.integrationHarness.model.snapshot.selection),selected);
+  await page.getByRole('status').filter({hasText:'Loading'}).waitFor();
+  await noOverflow(page);await page.screenshot({path:resolve(job.output,'loading.png'),fullPage:true});
+  releaseHeld();releaseHeld=null;
+  await page.waitForFunction(id=>window.integrationHarness.model.snapshot.phase==='ready'&&window.integrationHarness.model.snapshot.detail?.node.activation_id===id,selected);
+  fault.unavailable=true;await keyboardActivate(page,refresh);
+  await page.waitForFunction(()=>window.integrationHarness.model.snapshot.phase==='failed');
+  await page.getByRole('status').filter({hasText:'Observation unavailable'}).waitFor();
+  await page.getByText(`Read-only · retained revision ${job.expected.cut.revision}`,{exact:true}).waitFor();
+  assert.equal(await page.evaluate(()=>window.integrationHarness.model.snapshot.selection),selected);
+  assert.equal(await page.locator(`.node-list button[data-node-id="${selected}"]`).isDisabled(),true);
+  await noOverflow(page);await page.screenshot({path:resolve(job.output,'unavailable.png'),fullPage:true});
+  await keyboardActivate(page,refresh);
+  await page.waitForFunction(id=>window.integrationHarness.model.snapshot.phase==='ready'&&window.integrationHarness.model.snapshot.detail?.node.activation_id===id,selected);
+  assert.deepEqual(await page.evaluate(()=>window.integrationHarness.model.snapshot.detail),job.expected.details.at(-1));
+  await page.getByText(`Read-only · live revision ${job.expected.cut.revision}`,{exact:true}).waitFor();
   await Promise.all([page.waitForResponse(response=>response.url().includes('/invalidations')),
     page.getByRole('button',{name:'Check for updates',exact:true}).click()]);
   if(job.old){
@@ -84,16 +120,16 @@ try{
     assert.deepEqual(replay.detail,job.expected.details[0]);assert.equal(replay.events.observed_revision,job.expected.cut.revision);assert.equal(replay.events.entries.length,0);
   }
   const completion=job.inspection.completion;
-  await page.locator(`.node-list button[data-node-id="${completion.activation_id}"]`).click();
-  await page.getByRole('button',{name:'Inspect attempt '+completion.result.attempt_id,exact:true}).click();
+  await keyboardActivate(page,page.locator(`.node-list button[data-node-id="${completion.activation_id}"]`));
+  await keyboardActivate(page,page.getByRole('button',{name:'Inspect attempt '+completion.result.attempt_id,exact:true}));
   await page.getByRole('region',{name:'Retained completion',exact:true}).waitFor();
   assert.deepEqual(await page.evaluate(()=>window.integrationHarness.evidence.snapshot.completion.value),completion);
   const port=completion.result.outcome.outputs[0].port;
-  await page.getByRole('button',{name:'Inspect output '+port,exact:true}).click();
+  await keyboardActivate(page,page.getByRole('button',{name:'Inspect output '+port,exact:true}));
   await page.getByRole('region',{name:'Output members',exact:true}).waitFor();
   const values=await page.evaluate(()=>window.integrationHarness.evidence.snapshot.values.value);
   assert.deepEqual(values.items,job.expected.values.find(item=>item.activation_id===completion.activation_id&&item.port===port).items);
-  await page.getByRole('button',{name:'Inspect artifact '+job.inspection.artifact.artifact_id,exact:true}).click();
+  await keyboardActivate(page,page.getByRole('button',{name:'Inspect artifact '+job.inspection.artifact.artifact_id,exact:true}));
   await page.getByRole('region',{name:'Verified artifact metadata',exact:true}).waitFor();
   assert.deepEqual(await page.evaluate(()=>window.integrationHarness.evidence.snapshot.artifact.value),job.inspection.artifact);
   await page.screenshot({path:resolve(job.output,'evidence.png'),fullPage:true});
@@ -123,6 +159,8 @@ try{
   assert.ok(!(await page.content()).includes(artifactToken));
   assert.ok(!forwarded.some(item=>item.path.endsWith('/content')));
   const screenshot=resolve(job.output,'monitor.png');await page.screenshot({path:screenshot,fullPage:true});
+  await noOverflow(page);
   console.log(JSON.stringify({...observation,details,inspection,browser:browser.version(),screenshot,forwarded,
-    old_cursors_preserved:!!job.old,backend_credentials_absent_from_browser:true}));
-}finally{await browser.close();await new Promise(resolve=>server.close(resolve));}
+    old_cursors_preserved:!!job.old,backend_credentials_absent_from_browser:true,journey_profile:pack.profile,
+    interaction_viewport:interactionViewport,keyboard_evidence_navigation:true,loading_unavailable_reconnect_selection_preserved:true}));
+}finally{releaseHeld?.();await browser.close();await new Promise(resolve=>server.close(resolve));}

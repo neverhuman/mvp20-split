@@ -6,6 +6,7 @@ import { build } from 'esbuild';
 import { chromium } from 'playwright';
 import AxeBuilder from '@axe-core/playwright';
 import { setTimeout as delay } from 'node:timers/promises';
+import { pack, keyboardActivate, tabTo, noOverflow } from './journeys.mjs';
 
 let input = ''; for await (const chunk of process.stdin) input += chunk;
 const job = JSON.parse(input), token = process.env.STUDIO_AUTHOR_TOKEN, registryToken = process.env.STUDIO_REGISTRY_TOKEN;
@@ -60,15 +61,17 @@ const browser = await chromium.launch({ headless: true });
 let page;
 const errors = [];
 try {
-  const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, reducedMotion: 'reduce' });
+  const context = await browser.newContext({ viewport: pack.viewports[1], reducedMotion: 'reduce' });
   page = await context.newPage(); const headers = [];
   page.on('pageerror', error => errors.push(error.message)); page.on('request', request => headers.push(request.allHeaders()));
   await page.goto(`http://127.0.0.1:${server.address().port}`);
   let result;
   if (job.mode.startsWith('cancel')) {
     await page.waitForFunction(() => window.authoringIntegration?.emergency?.snapshot.revision !== null && window.authoringIntegration?.emergency?.snapshot.status === 'running');
-    await page.getByRole('link', { name: 'Emergency control', exact: true }).click();
-    await page.getByRole('button', { name: 'Request emergency stop', exact: true }).click();
+    await keyboardActivate(page, page.getByRole('link', { name: 'Emergency control', exact: true }));
+    const stop = page.getByRole('button', { name: 'Request emergency stop', exact: true });
+    await tabTo(page, page.getByRole('region', { name: 'Emergency control', exact: true }), stop);
+    await page.keyboard.press('Enter');
     await page.waitForFunction(expected => window.authoringIntegration.emergency.snapshot.phase === expected, job.expected_reason ? 'rejected' : 'accepted');
     const emergency = page.getByRole('region', { name: 'Emergency control', exact: true });
     if (job.expected_reason) await emergency.getByRole('status').filter({ hasText: job.expected_reason }).waitFor();
@@ -96,7 +99,20 @@ try {
       await page.getByText('Advanced scope definition', { exact: true }).click();
       await page.getByLabel('Scope JSON', { exact: true }).fill(JSON.stringify(body));
       await page.getByRole('button', { name: 'Apply scope definition', exact: true }).click();
-      await page.getByRole('button', { name: 'Save draft', exact: true }).click();
+      const compare = page.getByRole('button', { name: 'Compare with saved revision', exact: true });
+      const comparisonSteps = await tabTo(page, page.getByLabel('Draft title', { exact: true }), compare);
+      await page.keyboard.press('Enter');
+      const comparison = page.getByRole('region', { name: 'Draft comparison', exact: true });
+      await comparison.getByRole('heading', { name: 'Changes from saved revision', exact: true }).waitFor();
+      assert.ok(await comparison.getByRole('listitem').count() > 0);
+      await keyboardActivate(page, comparison.getByText('Inspect change', { exact: true }).first());
+      const change = JSON.parse(await comparison.locator('pre').first().textContent());
+      assert.ok(JSON.stringify(change.after).includes('browser_literal'));
+      await noOverflow(page);
+      await page.screenshot({ path: resolve(job.output, 'keyboard-comparison-390.png'), fullPage: true });
+      await keyboardActivate(page, compare);
+      await tabTo(page, page.getByLabel('Draft title', { exact: true }), page.getByRole('button', { name: 'Save draft', exact: true }));
+      await page.keyboard.press('Enter');
       await page.waitForFunction(() => window.authoringIntegration.commands.snapshot.phase === 'settled');
       assert.equal(received[0].outcome.status, 'accepted');
       await page.getByRole('button', { name: 'Validate saved revision', exact: true }).click();
@@ -104,7 +120,8 @@ try {
       result = await page.evaluate(() => { const state = window.authoringIntegration.commands.session.snapshot; return { record: state.base, validation: state.validation }; });
       assert.equal(result.validation.structurally_valid, true, JSON.stringify(result.validation.findings));
       assert.equal(submitted[0].encoding, 'amphora-command-v2');
-      result = { ...result, receipts: received, submissions: submitted, schema_reference: schemaReference };
+      result = { ...result, receipts: received, submissions: submitted, schema_reference: schemaReference,
+        keyboard_comparison_steps: comparisonSteps, comparison_before_save: true };
     } else if (job.mode === 'pending-crash') {
       const base = await page.evaluate(() => window.authoringIntegration.commands.session.snapshot.base.head.revision);
       await page.getByLabel('Draft title', { exact: true }).fill('Original pending save');
@@ -189,7 +206,8 @@ try {
   assert.deepEqual(errors, []);
   for (const header of await Promise.all(headers)) assert.equal(header.authorization, undefined);
   const content = await page.content(); assert.ok(!content.includes(token) && !content.includes(registryToken));
-  const evidence = { ...result, screenshots, browser: browser.version(), owner_credentials_absent: true };
+  const evidence = { ...result, screenshots, browser: browser.version(), owner_credentials_absent: true,
+    journey_profile: pack.profile, interaction_viewport: pack.viewports[1] };
   await writeFile(resolve(job.output, 'browser.json'), JSON.stringify(evidence, null, 2)); console.log(JSON.stringify(evidence));
 } catch (error) {
   if (page) {

@@ -94,7 +94,10 @@ class BrowserEnvironment(OBSERVED.ObservedEnvironment):
         self.record("STUDIO-ACTUAL-OWNER", {"run": run, "cut": actual["cut"], "nodes": len(actual["nodes"]),
             "details": len(actual["details"]), "browser": actual["browser"], "read_only_principal": True,
             "browser_owner_credentials_absent": True, "artifact_read_only_principal": True,
-            "inspection": actual["inspection"], "screenshot": actual["screenshot"]})
+            "inspection": actual["inspection"], "screenshot": actual["screenshot"],
+            "journey_profile": actual["journey_profile"], "interaction_viewport": actual["interaction_viewport"],
+            "keyboard_evidence_navigation": actual["keyboard_evidence_navigation"],
+            "loading_unavailable_reconnect_selection_preserved": actual["loading_unavailable_reconnect_selection_preserved"]})
         return result
 
     def replace_runtime(self):
@@ -105,7 +108,10 @@ class BrowserEnvironment(OBSERVED.ObservedEnvironment):
             self.record("STUDIO-REPLACEMENT", {"run": run, "cut": actual["cut"], "nodes": len(actual["nodes"]),
                 "details": len(actual["details"]), "independent_browser_and_runtime_replaced": True,
                 "old_snapshot_and_event_cursor_preserved": True, "inspection": actual["inspection"],
-                "screenshot": actual["screenshot"]})
+                "screenshot": actual["screenshot"], "journey_profile": actual["journey_profile"],
+                "interaction_viewport": actual["interaction_viewport"],
+                "keyboard_evidence_navigation": actual["keyboard_evidence_navigation"],
+                "loading_unavailable_reconnect_selection_preserved": actual["loading_unavailable_reconnect_selection_preserved"]})
 
 
 def main():

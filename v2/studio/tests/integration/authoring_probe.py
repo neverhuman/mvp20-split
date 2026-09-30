@@ -79,7 +79,9 @@ class AuthoringEnvironment(OBSERVATION.BrowserEnvironment):
             self.authoring = actual
             self.record("STUDIO-AUTHORING-OWNER", {"draft_revision": record["head"], "validation": validation,
                 "running_graph_unchanged": True, "original_receipts": actual["receipts"], "schema_reference": actual["schema_reference"],
-                "browser_owner_credentials_absent": True, "screenshot": actual["screenshots"]})
+                "browser_owner_credentials_absent": True, "screenshot": actual["screenshots"],
+                "journey_profile": actual["journey_profile"], "interaction_viewport": actual["interaction_viewport"],
+                "comparison_before_save": actual["comparison_before_save"], "keyboard_comparison_steps": actual["keyboard_comparison_steps"]})
         return super().execute()
 
     def replace_runtime(self):
@@ -162,6 +164,7 @@ class AuthoringEnvironment(OBSERVATION.BrowserEnvironment):
         assert actual["observed_status"] == "cancelled"
         self.record("STUDIO-EMERGENCY-OWNER", {"run": self.active_run, "receipt": actual["receipt"],
             "observed_status": after["status"], "browser_owner_credentials_absent": True,
+            "journey_profile": actual["journey_profile"], "interaction_viewport": actual["interaction_viewport"],
             "limits": "No worker was claimed; cancel-vs-complete and uncertain remote effects remain B3."})
 
 
