@@ -9,7 +9,7 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-05 primary active; BP-06 through BP-09 queued; BP-01/BP-01A/BP-02/BP-03/BP-04 closed.
-- Last refreshed: `2026-09-30 11:27:45` (America/Chicago).
+- Last refreshed: `2026-09-30 11:39:50` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P4 / BP-05 - Graph Studio first vertical slice.
 - Primary active implementation plan / phase / task: BP-05 -> BP-05.03 / Build / B1.
@@ -123,6 +123,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-30 11:39:50 | BP-05.03/B1 consumer partial; child0%, parent50% unchanged | 75 isolated Node tests;14 authoring roots;exact schema bytes;original command receipts |
 | 2026-09-30 11:27:45 | BP-05.03/B1 editor metadata partial; child0%, parent50% unchanged | 118 scoped tests;catalog100% statements/branches;8 isolated wheels;200 schemas preserve196 predecessors |
 | 2026-09-29 23:33:01 | BP-05.03/B1 admission/publication partial; child0%, parent50% unchanged | 27 owned/87 scoped;1286 Python,65 Node,19 installs,REC-01..09; Studio authoring next |
 | 2026-09-29 23:12:03 | BP-05.03/B1 retained material/contract partial; child0%, parent50% unchanged | 110 scoped tests,8 isolated wheels;196 schemas/194 predecessor bytes preserved; admission wiring next |
@@ -147,6 +148,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-29 17:45:46 | BP-04.04 B3 verified; child 75%, parent 79.17% (19/24); V1 active | 116 scoped tests, five actual process cases; source trace/ancestry and accepted work preserved |
 | 2026-09-29 17:35:32 | BP-04.04 B2 verified; child 50%, parent 75% (18/24); B3 active | 1169 tests, nineteen installs, exact immutable successor transfer and source-derived split graph |
 | 2026-09-29 16:59:32 | BP-04.04 B1 verified; child 25%, parent 70.83% (17/24); B2 active | 1146 tests, nineteen independent installs, five source graph cases and preserved 148 schema bytes |
-| 2026-09-29 16:25:58 | BP-04.04A closed 100%; parent 66.67% (16/24); .04/B1 active 0% | Actual installed round trip and pre/post-commit replacement; all reservations confirmed; scoped audit aligned |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

@@ -1,0 +1,23 @@
+{
+  "verified_at": "2026-09-30 11:39:50",
+  "status": "passed",
+  "scope": "BP-05.03/B1 Studio authoring consumer prerequisite",
+  "node_tests": 75,
+  "isolated_install": "e69a0b862ae8462698af1efe0ead7e2a",
+  "public_roots": {
+    "observation": 10,
+    "authoring": 14
+  },
+  "verified": [
+    "schema provenance and strict DTO validation",
+    "schema identity, canonical base64, exact SHA256, UTF8 and object JSON",
+    "immutable original submitted body and identity",
+    "lost acknowledgement and missing receipt remain unresolved",
+    "bounded same-origin transport, no automatic retry or backend credential"
+  ],
+  "limits": [
+    "No authoring UI or live owner/gateway acceptance",
+    "No B1 completion credit",
+    "No new scientific/current tool eligibility"
+  ]
+}

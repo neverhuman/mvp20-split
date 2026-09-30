@@ -1,0 +1,58 @@
+{
+  "save": {
+    "source": "contracts/schemas/v1/graph-runtime.draft-save.serialization.json",
+    "sha256": "a4cb35dff9b20d752a1b727f257a8633a882500f61b5cb3333aebcd83cd79323"
+  },
+  "validate": {
+    "source": "contracts/schemas/v1/graph-runtime.draft-validate.serialization.json",
+    "sha256": "9b863e22a7b27f00ff2c16b404e594d453ca4d02d061d9ce3d78ae9c497456e3"
+  },
+  "draft": {
+    "source": "contracts/schemas/v1/graph-runtime.draft-revision.serialization.json",
+    "sha256": "40a392ebb7cd0ffa37a29cfb6536fb9d535b8b2869ba9b8148150d432c4896f2"
+  },
+  "page": {
+    "source": "contracts/schemas/v1/graph-runtime.draft-page.serialization.json",
+    "sha256": "d1edfb5461f72f3ba55612d0a36048ae3f058a3933ec2bf8fb5cf6eaef5a6ca7"
+  },
+  "validation": {
+    "source": "contracts/schemas/v1/graph-runtime.draft-validation.serialization.json",
+    "sha256": "3420a0e2e9544586c76be56b0c4e0b6d713dc49bb98f938ed80782ec3a8666bb"
+  },
+  "receipt": {
+    "source": "contracts/schemas/v1/graph-runtime.draft-command-receipt.serialization.json",
+    "sha256": "ed8f8ebcc9d9c26820553d39401efb94a8fbcec7aa00ad04314314d3a14fcdc6"
+  },
+  "admit": {
+    "source": "contracts/schemas/v1/graph-runtime.draft-admission.serialization.json",
+    "sha256": "f0b3841193a2510e5ebb18c1c5a3382612c0344cef58c4b6d8b932eebdaaa80c"
+  },
+  "universe": {
+    "source": "contracts/schemas/v1/graph-runtime.definition-universe.serialization.json",
+    "sha256": "8cabdfd4a2da5943bea657fd5a9b06fc112e6f1fd98623e17a96583002090fd2"
+  },
+  "schema": {
+    "source": "contracts/schemas/v1/graph-runtime.definition-schema.serialization.json",
+    "sha256": "943b4ad5ec2fd62fd6572411ffa2e4c1529e91e299d50bcf51a32ee4386d949b"
+  },
+  "releases": {
+    "source": "contracts/schemas/v1/tools.release-page.serialization.json",
+    "sha256": "5ac5d32c73c86c9b0582402c5411358694faec80876721e9bee836d89ba042f4"
+  },
+  "release": {
+    "source": "contracts/schemas/v1/tools.release-snapshot.serialization.json",
+    "sha256": "975c7fddaada33b70d948cac4127620c19df8dbf6a3837cf6252885760a52c77"
+  },
+  "cancel": {
+    "source": "contracts/schemas/v1/runtime.cancel.serialization.json",
+    "sha256": "5b8737c753e35743493968d3a1a196ea5190b8080300a1b516a69c182cf728e8"
+  },
+  "execution_receipt": {
+    "source": "contracts/schemas/v1/runtime.receipt.serialization.json",
+    "sha256": "b822c267d080b201c4547ed42e953d8484ba0c9e9cb114ca7f314dd7d4f25bb6"
+  },
+  "identity": {
+    "source": "contracts/schemas/v1/commands.identity.serialization.json",
+    "sha256": "93c11c7c401440fc9be35d48324cafa02eeb1136788029db12e2b67043ab8b2a"
+  }
+}

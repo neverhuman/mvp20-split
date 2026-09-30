@@ -1,0 +1,7260 @@
+{
+  "save": {
+    "$defs": {
+      "AllCollectionPolicy": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "all",
+            "title": "Kind",
+            "type": "string"
+          },
+          "skipped": {
+            "default": "exclude",
+            "enum": [
+              "exclude",
+              "fail"
+            ],
+            "title": "Skipped",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind"
+        ],
+        "title": "AllCollectionPolicy",
+        "type": "object"
+      },
+      "AllPredicate": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "all",
+            "title": "Kind",
+            "type": "string"
+          },
+          "predicates": {
+            "items": {
+              "discriminator": {
+                "mapping": {
+                  "all": "#/$defs/AllPredicate",
+                  "any": "#/$defs/AnyPredicate",
+                  "compare": "#/$defs/ComparePredicate",
+                  "constant": "#/$defs/ConstantPredicate",
+                  "not": "#/$defs/NotPredicate"
+                },
+                "propertyName": "kind"
+              },
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/ComparePredicate"
+                },
+                {
+                  "$ref": "#/$defs/ConstantPredicate"
+                },
+                {
+                  "$ref": "#/$defs/AllPredicate"
+                },
+                {
+                  "$ref": "#/$defs/AnyPredicate"
+                },
+                {
+                  "$ref": "#/$defs/NotPredicate"
+                }
+              ]
+            },
+            "maxItems": 16,
+            "minItems": 1,
+            "title": "Predicates",
+            "type": "array"
+          }
+        },
+        "required": [
+          "kind",
+          "predicates"
+        ],
+        "title": "AllPredicate",
+        "type": "object"
+      },
+      "AnyPredicate": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "any",
+            "title": "Kind",
+            "type": "string"
+          },
+          "predicates": {
+            "items": {
+              "discriminator": {
+                "mapping": {
+                  "all": "#/$defs/AllPredicate",
+                  "any": "#/$defs/AnyPredicate",
+                  "compare": "#/$defs/ComparePredicate",
+                  "constant": "#/$defs/ConstantPredicate",
+                  "not": "#/$defs/NotPredicate"
+                },
+                "propertyName": "kind"
+              },
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/ComparePredicate"
+                },
+                {
+                  "$ref": "#/$defs/ConstantPredicate"
+                },
+                {
+                  "$ref": "#/$defs/AllPredicate"
+                },
+                {
+                  "$ref": "#/$defs/AnyPredicate"
+                },
+                {
+                  "$ref": "#/$defs/NotPredicate"
+                }
+              ]
+            },
+            "maxItems": 16,
+            "minItems": 1,
+            "title": "Predicates",
+            "type": "array"
+          }
+        },
+        "required": [
+          "kind",
+          "predicates"
+        ],
+        "title": "AnyPredicate",
+        "type": "object"
+      },
+      "ArtifactConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "kind": {
+            "const": "artifact",
+            "title": "Kind",
+            "type": "string"
+          },
+          "representation": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Representation",
+            "type": "string"
+          },
+          "unit": {
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "artifact",
+          "representation",
+          "unit"
+        ],
+        "title": "ArtifactConstant",
+        "type": "object"
+      },
+      "ArtifactMaterializeV4": {
+        "additionalProperties": false,
+        "properties": {
+          "fields": {
+            "items": {
+              "$ref": "#/$defs/MaterializeField"
+            },
+            "maxItems": 64,
+            "title": "Fields",
+            "type": "array"
+          },
+          "kind": {
+            "const": "artifact_materialize",
+            "title": "Kind",
+            "type": "string"
+          },
+          "limits": {
+            "$ref": "#/$defs/BindingLimits"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "output": {
+            "$ref": "#/$defs/ValuePort"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "fields",
+          "output"
+        ],
+        "title": "ArtifactMaterializeV4",
+        "type": "object"
+      },
+      "ArtifactProjectV4": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "artifact_project",
+            "title": "Kind",
+            "type": "string"
+          },
+          "limits": {
+            "$ref": "#/$defs/BindingLimits"
+          },
+          "mode": {
+            "enum": [
+              "values",
+              "references",
+              "items"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "output": {
+            "$ref": "#/$defs/ValuePort"
+          },
+          "path": {
+            "default": [],
+            "items": {
+              "anyOf": [
+                {
+                  "maxLength": 128,
+                  "type": "string"
+                },
+                {
+                  "maximum": 10000,
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              ]
+            },
+            "maxItems": 16,
+            "title": "Path",
+            "type": "array"
+          },
+          "source": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactConstant",
+                "boolean": "#/$defs/BooleanConstant",
+                "input": "#/$defs/ScopeInput",
+                "integer": "#/$defs/IntegerConstant",
+                "number": "#/$defs/NumberConstant",
+                "output": "#/$defs/NodeOutput",
+                "result": "#/$defs/ScopeResult",
+                "string": "#/$defs/StringConstant"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ScopeInput"
+              },
+              {
+                "$ref": "#/$defs/NodeOutput"
+              },
+              {
+                "$ref": "#/$defs/ScopeResult"
+              },
+              {
+                "$ref": "#/$defs/BooleanConstant"
+              },
+              {
+                "$ref": "#/$defs/IntegerConstant"
+              },
+              {
+                "$ref": "#/$defs/NumberConstant"
+              },
+              {
+                "$ref": "#/$defs/StringConstant"
+              },
+              {
+                "$ref": "#/$defs/ArtifactConstant"
+              }
+            ],
+            "title": "Source"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "source",
+          "mode",
+          "output"
+        ],
+        "title": "ArtifactProjectV4",
+        "type": "object"
+      },
+      "ArtifactRef": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Artifact Id",
+            "type": "string"
+          },
+          "media_type": {
+            "maxLength": 128,
+            "minLength": 3,
+            "pattern": "^[^\\s/]+/[^\\s/]+$",
+            "title": "Media Type",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "size_bytes": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Size Bytes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "artifact_id",
+          "scope",
+          "sha256",
+          "media_type",
+          "schema_ref",
+          "size_bytes"
+        ],
+        "title": "ArtifactRef",
+        "type": "object"
+      },
+      "ArtifactType": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "artifact",
+            "title": "Kind",
+            "type": "string"
+          },
+          "media_type": {
+            "default": "application/json",
+            "maxLength": 128,
+            "minLength": 3,
+            "pattern": "^[^\\s/]+/[^\\s/]+$",
+            "title": "Media Type",
+            "type": "string"
+          },
+          "representation": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Representation",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          },
+          "unit": {
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "schema_ref",
+          "representation",
+          "unit"
+        ],
+        "title": "ArtifactType",
+        "type": "object"
+      },
+      "AwaitV3": {
+        "additionalProperties": false,
+        "properties": {
+          "expected_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Expected Revision",
+            "type": "string"
+          },
+          "issuer_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Issuer Id",
+            "type": "string"
+          },
+          "kind": {
+            "const": "await",
+            "title": "Kind",
+            "type": "string"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "on_timeout": {
+            "enum": [
+              "blocked",
+              "abstained"
+            ],
+            "title": "On Timeout",
+            "type": "string"
+          },
+          "output": {
+            "$ref": "#/$defs/ValuePort"
+          },
+          "purpose": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Purpose",
+            "type": "string"
+          },
+          "subject": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactConstant",
+                "boolean": "#/$defs/BooleanConstant",
+                "input": "#/$defs/ScopeInput",
+                "integer": "#/$defs/IntegerConstant",
+                "number": "#/$defs/NumberConstant",
+                "output": "#/$defs/NodeOutput",
+                "result": "#/$defs/ScopeResult",
+                "string": "#/$defs/StringConstant"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ScopeInput"
+              },
+              {
+                "$ref": "#/$defs/NodeOutput"
+              },
+              {
+                "$ref": "#/$defs/ScopeResult"
+              },
+              {
+                "$ref": "#/$defs/BooleanConstant"
+              },
+              {
+                "$ref": "#/$defs/IntegerConstant"
+              },
+              {
+                "$ref": "#/$defs/NumberConstant"
+              },
+              {
+                "$ref": "#/$defs/StringConstant"
+              },
+              {
+                "$ref": "#/$defs/ArtifactConstant"
+              }
+            ],
+            "title": "Subject"
+          },
+          "timeout_seconds": {
+            "maximum": 86400,
+            "minimum": 1,
+            "title": "Timeout Seconds",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "issuer_id",
+          "purpose",
+          "expected_revision",
+          "subject",
+          "output",
+          "timeout_seconds",
+          "on_timeout"
+        ],
+        "title": "AwaitV3",
+        "type": "object"
+      },
+      "BindingLimits": {
+        "additionalProperties": false,
+        "properties": {
+          "max_artifacts": {
+            "default": 256,
+            "maximum": 1024,
+            "minimum": 1,
+            "title": "Max Artifacts",
+            "type": "integer"
+          },
+          "max_bytes": {
+            "default": 262144,
+            "maximum": 262144,
+            "minimum": 1,
+            "title": "Max Bytes",
+            "type": "integer"
+          },
+          "max_items": {
+            "default": 256,
+            "maximum": 10000,
+            "minimum": 0,
+            "title": "Max Items",
+            "type": "integer"
+          },
+          "timeout_seconds": {
+            "default": 30,
+            "maximum": 300,
+            "minimum": 1,
+            "title": "Timeout Seconds",
+            "type": "integer"
+          }
+        },
+        "title": "BindingLimits",
+        "type": "object"
+      },
+      "BooleanConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "boolean",
+            "title": "Kind",
+            "type": "string"
+          },
+          "value": {
+            "title": "Value",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "BooleanConstant",
+        "type": "object"
+      },
+      "BranchV2": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "branch",
+            "title": "Kind",
+            "type": "string"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "predicate": {
+            "discriminator": {
+              "mapping": {
+                "all": "#/$defs/AllPredicate",
+                "any": "#/$defs/AnyPredicate",
+                "compare": "#/$defs/ComparePredicate",
+                "constant": "#/$defs/ConstantPredicate",
+                "not": "#/$defs/NotPredicate"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ComparePredicate"
+              },
+              {
+                "$ref": "#/$defs/ConstantPredicate"
+              },
+              {
+                "$ref": "#/$defs/AllPredicate"
+              },
+              {
+                "$ref": "#/$defs/AnyPredicate"
+              },
+              {
+                "$ref": "#/$defs/NotPredicate"
+              }
+            ],
+            "title": "Predicate"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "predicate"
+        ],
+        "title": "BranchV2",
+        "type": "object"
+      },
+      "CollectionType": {
+        "additionalProperties": false,
+        "properties": {
+          "item": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactType",
+                "scalar": "#/$defs/ScalarType"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ScalarType"
+              },
+              {
+                "$ref": "#/$defs/ArtifactType"
+              }
+            ],
+            "title": "Item"
+          },
+          "kind": {
+            "const": "collection",
+            "title": "Kind",
+            "type": "string"
+          },
+          "max_items": {
+            "maximum": 10000,
+            "minimum": 0,
+            "title": "Max Items",
+            "type": "integer"
+          },
+          "missing_slots": {
+            "default": false,
+            "title": "Missing Slots",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "kind",
+          "item",
+          "max_items"
+        ],
+        "title": "CollectionType",
+        "type": "object"
+      },
+      "ComparePredicate": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "compare",
+            "title": "Kind",
+            "type": "string"
+          },
+          "left": {
+            "$ref": "#/$defs/ScalarProjection"
+          },
+          "operator": {
+            "enum": [
+              "eq",
+              "ne",
+              "lt",
+              "le",
+              "gt",
+              "ge"
+            ],
+            "title": "Operator",
+            "type": "string"
+          },
+          "right": {
+            "discriminator": {
+              "mapping": {
+                "boolean": "#/$defs/BooleanConstant",
+                "integer": "#/$defs/IntegerConstant",
+                "number": "#/$defs/NumberConstant",
+                "string": "#/$defs/StringConstant"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/BooleanConstant"
+              },
+              {
+                "$ref": "#/$defs/IntegerConstant"
+              },
+              {
+                "$ref": "#/$defs/NumberConstant"
+              },
+              {
+                "$ref": "#/$defs/StringConstant"
+              }
+            ],
+            "title": "Right"
+          }
+        },
+        "required": [
+          "kind",
+          "left",
+          "operator",
+          "right"
+        ],
+        "title": "ComparePredicate",
+        "type": "object"
+      },
+      "ConstantPredicate": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "constant",
+            "title": "Kind",
+            "type": "string"
+          },
+          "value": {
+            "title": "Value",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "ConstantPredicate",
+        "type": "object"
+      },
+      "ContextPin": {
+        "additionalProperties": false,
+        "properties": {
+          "identity": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Identity",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "policy",
+              "evaluator",
+              "model",
+              "source",
+              "knowledge"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Revision",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "identity",
+          "revision",
+          "sha256"
+        ],
+        "title": "ContextPin",
+        "type": "object"
+      },
+      "ControlEdge": {
+        "additionalProperties": false,
+        "properties": {
+          "route": {
+            "default": "next",
+            "enum": [
+              "next",
+              "true",
+              "false"
+            ],
+            "title": "Route",
+            "type": "string"
+          },
+          "source": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Source",
+            "type": "string"
+          },
+          "target": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Target",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source",
+          "target"
+        ],
+        "title": "ControlEdge",
+        "type": "object"
+      },
+      "ExecutableCampaignV4": {
+        "additionalProperties": false,
+        "properties": {
+          "body": {
+            "$ref": "#/$defs/ExecutableScopeV4"
+          },
+          "campaign_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Campaign Id",
+            "type": "string"
+          },
+          "context": {
+            "default": [],
+            "items": {
+              "$ref": "#/$defs/ContextPin"
+            },
+            "maxItems": 256,
+            "title": "Context",
+            "type": "array"
+          },
+          "profile": {
+            "const": "deterministic-v3",
+            "title": "Profile",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "schema_version": {
+            "const": "4",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "schema_version",
+          "profile",
+          "campaign_id",
+          "revision",
+          "scope",
+          "body"
+        ],
+        "title": "ExecutableCampaignV4",
+        "type": "object"
+      },
+      "ExecutableScopeV4": {
+        "additionalProperties": false,
+        "properties": {
+          "edges": {
+            "default": [],
+            "items": {
+              "$ref": "#/$defs/ControlEdge"
+            },
+            "maxItems": 1024,
+            "title": "Edges",
+            "type": "array"
+          },
+          "inputs": {
+            "default": [],
+            "items": {
+              "$ref": "#/$defs/ValuePort"
+            },
+            "maxItems": 64,
+            "title": "Inputs",
+            "type": "array"
+          },
+          "nodes": {
+            "items": {
+              "discriminator": {
+                "mapping": {
+                  "artifact_materialize": "#/$defs/ArtifactMaterializeV4",
+                  "artifact_project": "#/$defs/ArtifactProjectV4",
+                  "await": "#/$defs/AwaitV3",
+                  "branch": "#/$defs/BranchV2",
+                  "finish": "#/$defs/FinishV2",
+                  "invoke": "#/$defs/InvokeV2",
+                  "iterate": "#/$defs/IterateV4",
+                  "join": "#/$defs/JoinV2",
+                  "scatter": "#/$defs/ScatterV4"
+                },
+                "propertyName": "kind"
+              },
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/InvokeV2"
+                },
+                {
+                  "$ref": "#/$defs/BranchV2"
+                },
+                {
+                  "$ref": "#/$defs/JoinV2"
+                },
+                {
+                  "$ref": "#/$defs/ScatterV4"
+                },
+                {
+                  "$ref": "#/$defs/IterateV4"
+                },
+                {
+                  "$ref": "#/$defs/FinishV2"
+                },
+                {
+                  "$ref": "#/$defs/AwaitV3"
+                },
+                {
+                  "$ref": "#/$defs/ArtifactProjectV4"
+                },
+                {
+                  "$ref": "#/$defs/ArtifactMaterializeV4"
+                }
+              ]
+            },
+            "maxItems": 256,
+            "minItems": 1,
+            "title": "Nodes",
+            "type": "array"
+          },
+          "outputs": {
+            "default": [],
+            "items": {
+              "$ref": "#/$defs/ValuePort"
+            },
+            "maxItems": 64,
+            "title": "Outputs",
+            "type": "array"
+          }
+        },
+        "required": [
+          "nodes"
+        ],
+        "title": "ExecutableScopeV4",
+        "type": "object"
+      },
+      "FinishV2": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "finish",
+            "title": "Kind",
+            "type": "string"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "outputs": {
+            "items": {
+              "$ref": "#/$defs/ValueBinding"
+            },
+            "maxItems": 64,
+            "title": "Outputs",
+            "type": "array"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "outputs"
+        ],
+        "title": "FinishV2",
+        "type": "object"
+      },
+      "IntegerConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "integer",
+            "title": "Kind",
+            "type": "string"
+          },
+          "unit": {
+            "default": "1",
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          },
+          "value": {
+            "maximum": 9007199254740991,
+            "minimum": -9007199254740991,
+            "title": "Value",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "IntegerConstant",
+        "type": "object"
+      },
+      "InvokeV2": {
+        "additionalProperties": false,
+        "properties": {
+          "checkpoint": {
+            "anyOf": [
+              {
+                "discriminator": {
+                  "mapping": {
+                    "artifact": "#/$defs/ArtifactConstant",
+                    "boolean": "#/$defs/BooleanConstant",
+                    "input": "#/$defs/ScopeInput",
+                    "integer": "#/$defs/IntegerConstant",
+                    "number": "#/$defs/NumberConstant",
+                    "output": "#/$defs/NodeOutput",
+                    "result": "#/$defs/ScopeResult",
+                    "string": "#/$defs/StringConstant"
+                  },
+                  "propertyName": "kind"
+                },
+                "oneOf": [
+                  {
+                    "$ref": "#/$defs/ScopeInput"
+                  },
+                  {
+                    "$ref": "#/$defs/NodeOutput"
+                  },
+                  {
+                    "$ref": "#/$defs/ScopeResult"
+                  },
+                  {
+                    "$ref": "#/$defs/BooleanConstant"
+                  },
+                  {
+                    "$ref": "#/$defs/IntegerConstant"
+                  },
+                  {
+                    "$ref": "#/$defs/NumberConstant"
+                  },
+                  {
+                    "$ref": "#/$defs/StringConstant"
+                  },
+                  {
+                    "$ref": "#/$defs/ArtifactConstant"
+                  }
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Checkpoint"
+          },
+          "inputs": {
+            "items": {
+              "$ref": "#/$defs/ValueBinding"
+            },
+            "maxItems": 64,
+            "title": "Inputs",
+            "type": "array"
+          },
+          "kind": {
+            "const": "invoke",
+            "title": "Kind",
+            "type": "string"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "timeout_seconds": {
+            "maximum": 86400,
+            "minimum": 1,
+            "title": "Timeout Seconds",
+            "type": "integer"
+          },
+          "tool": {
+            "$ref": "#/$defs/ToolBinding"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "tool",
+          "inputs",
+          "timeout_seconds"
+        ],
+        "title": "InvokeV2",
+        "type": "object"
+      },
+      "IterateV4": {
+        "additionalProperties": false,
+        "properties": {
+          "body": {
+            "$ref": "#/$defs/ExecutableScopeV4"
+          },
+          "captures": {
+            "default": [],
+            "items": {
+              "$ref": "#/$defs/ValueBinding"
+            },
+            "maxItems": 64,
+            "title": "Captures",
+            "type": "array"
+          },
+          "kind": {
+            "const": "iterate",
+            "title": "Kind",
+            "type": "string"
+          },
+          "max_iterations": {
+            "maximum": 10000,
+            "minimum": 1,
+            "title": "Max Iterations",
+            "type": "integer"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "on_limit": {
+            "enum": [
+              "finish",
+              "blocked"
+            ],
+            "title": "On Limit",
+            "type": "string"
+          },
+          "state": {
+            "items": {
+              "$ref": "#/$defs/LoopStateSlot"
+            },
+            "maxItems": 64,
+            "minItems": 1,
+            "title": "State",
+            "type": "array"
+          },
+          "until": {
+            "discriminator": {
+              "mapping": {
+                "all": "#/$defs/AllPredicate",
+                "any": "#/$defs/AnyPredicate",
+                "compare": "#/$defs/ComparePredicate",
+                "constant": "#/$defs/ConstantPredicate",
+                "not": "#/$defs/NotPredicate"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ComparePredicate"
+              },
+              {
+                "$ref": "#/$defs/ConstantPredicate"
+              },
+              {
+                "$ref": "#/$defs/AllPredicate"
+              },
+              {
+                "$ref": "#/$defs/AnyPredicate"
+              },
+              {
+                "$ref": "#/$defs/NotPredicate"
+              }
+            ],
+            "title": "Until"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "state",
+          "body",
+          "until",
+          "max_iterations",
+          "on_limit"
+        ],
+        "title": "IterateV4",
+        "type": "object"
+      },
+      "JoinMember": {
+        "additionalProperties": false,
+        "properties": {
+          "member_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Member Id",
+            "type": "string"
+          },
+          "required": {
+            "default": true,
+            "title": "Required",
+            "type": "boolean"
+          },
+          "source": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactConstant",
+                "boolean": "#/$defs/BooleanConstant",
+                "input": "#/$defs/ScopeInput",
+                "integer": "#/$defs/IntegerConstant",
+                "number": "#/$defs/NumberConstant",
+                "output": "#/$defs/NodeOutput",
+                "result": "#/$defs/ScopeResult",
+                "string": "#/$defs/StringConstant"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ScopeInput"
+              },
+              {
+                "$ref": "#/$defs/NodeOutput"
+              },
+              {
+                "$ref": "#/$defs/ScopeResult"
+              },
+              {
+                "$ref": "#/$defs/BooleanConstant"
+              },
+              {
+                "$ref": "#/$defs/IntegerConstant"
+              },
+              {
+                "$ref": "#/$defs/NumberConstant"
+              },
+              {
+                "$ref": "#/$defs/StringConstant"
+              },
+              {
+                "$ref": "#/$defs/ArtifactConstant"
+              }
+            ],
+            "title": "Source"
+          }
+        },
+        "required": [
+          "member_id",
+          "source"
+        ],
+        "title": "JoinMember",
+        "type": "object"
+      },
+      "JoinV2": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "join",
+            "title": "Kind",
+            "type": "string"
+          },
+          "members": {
+            "items": {
+              "$ref": "#/$defs/JoinMember"
+            },
+            "maxItems": 10000,
+            "title": "Members",
+            "type": "array"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "output": {
+            "$ref": "#/$defs/ValuePort"
+          },
+          "policy": {
+            "discriminator": {
+              "mapping": {
+                "all": "#/$defs/AllCollectionPolicy",
+                "partial": "#/$defs/PartialCollectionPolicy"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/AllCollectionPolicy"
+              },
+              {
+                "$ref": "#/$defs/PartialCollectionPolicy"
+              }
+            ],
+            "title": "Policy"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "members",
+          "policy",
+          "output"
+        ],
+        "title": "JoinV2",
+        "type": "object"
+      },
+      "LoopStateSlot": {
+        "additionalProperties": false,
+        "properties": {
+          "feedback_port": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Feedback Port",
+            "type": "string"
+          },
+          "initial": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactConstant",
+                "boolean": "#/$defs/BooleanConstant",
+                "input": "#/$defs/ScopeInput",
+                "integer": "#/$defs/IntegerConstant",
+                "number": "#/$defs/NumberConstant",
+                "output": "#/$defs/NodeOutput",
+                "result": "#/$defs/ScopeResult",
+                "string": "#/$defs/StringConstant"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ScopeInput"
+              },
+              {
+                "$ref": "#/$defs/NodeOutput"
+              },
+              {
+                "$ref": "#/$defs/ScopeResult"
+              },
+              {
+                "$ref": "#/$defs/BooleanConstant"
+              },
+              {
+                "$ref": "#/$defs/IntegerConstant"
+              },
+              {
+                "$ref": "#/$defs/NumberConstant"
+              },
+              {
+                "$ref": "#/$defs/StringConstant"
+              },
+              {
+                "$ref": "#/$defs/ArtifactConstant"
+              }
+            ],
+            "title": "Initial"
+          },
+          "name": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Name",
+            "type": "string"
+          },
+          "value_type": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactType",
+                "collection": "#/$defs/CollectionType",
+                "scalar": "#/$defs/ScalarType"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ScalarType"
+              },
+              {
+                "$ref": "#/$defs/ArtifactType"
+              },
+              {
+                "$ref": "#/$defs/CollectionType"
+              }
+            ],
+            "title": "Value Type"
+          }
+        },
+        "required": [
+          "name",
+          "value_type",
+          "initial",
+          "feedback_port"
+        ],
+        "title": "LoopStateSlot",
+        "type": "object"
+      },
+      "MaterializeField": {
+        "additionalProperties": false,
+        "properties": {
+          "mode": {
+            "enum": [
+              "inline",
+              "references"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Name",
+            "type": "string"
+          },
+          "source": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactConstant",
+                "boolean": "#/$defs/BooleanConstant",
+                "input": "#/$defs/ScopeInput",
+                "integer": "#/$defs/IntegerConstant",
+                "number": "#/$defs/NumberConstant",
+                "output": "#/$defs/NodeOutput",
+                "result": "#/$defs/ScopeResult",
+                "string": "#/$defs/StringConstant"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ScopeInput"
+              },
+              {
+                "$ref": "#/$defs/NodeOutput"
+              },
+              {
+                "$ref": "#/$defs/ScopeResult"
+              },
+              {
+                "$ref": "#/$defs/BooleanConstant"
+              },
+              {
+                "$ref": "#/$defs/IntegerConstant"
+              },
+              {
+                "$ref": "#/$defs/NumberConstant"
+              },
+              {
+                "$ref": "#/$defs/StringConstant"
+              },
+              {
+                "$ref": "#/$defs/ArtifactConstant"
+              }
+            ],
+            "title": "Source"
+          }
+        },
+        "required": [
+          "name",
+          "source",
+          "mode"
+        ],
+        "title": "MaterializeField",
+        "type": "object"
+      },
+      "NodeOutput": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "output",
+            "title": "Kind",
+            "type": "string"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "port": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Port",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "port"
+        ],
+        "title": "NodeOutput",
+        "type": "object"
+      },
+      "NotPredicate": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "not",
+            "title": "Kind",
+            "type": "string"
+          },
+          "predicate": {
+            "discriminator": {
+              "mapping": {
+                "all": "#/$defs/AllPredicate",
+                "any": "#/$defs/AnyPredicate",
+                "compare": "#/$defs/ComparePredicate",
+                "constant": "#/$defs/ConstantPredicate",
+                "not": "#/$defs/NotPredicate"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ComparePredicate"
+              },
+              {
+                "$ref": "#/$defs/ConstantPredicate"
+              },
+              {
+                "$ref": "#/$defs/AllPredicate"
+              },
+              {
+                "$ref": "#/$defs/AnyPredicate"
+              },
+              {
+                "$ref": "#/$defs/NotPredicate"
+              }
+            ],
+            "title": "Predicate"
+          }
+        },
+        "required": [
+          "kind",
+          "predicate"
+        ],
+        "title": "NotPredicate",
+        "type": "object"
+      },
+      "NumberConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "number",
+            "title": "Kind",
+            "type": "string"
+          },
+          "unit": {
+            "default": "1",
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          },
+          "value": {
+            "maximum": 1e+100,
+            "minimum": -1e+100,
+            "title": "Value",
+            "type": "number"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "NumberConstant",
+        "type": "object"
+      },
+      "PartialCollectionPolicy": {
+        "additionalProperties": false,
+        "properties": {
+          "close": {
+            "enum": [
+              "all_terminal",
+              "deadline"
+            ],
+            "title": "Close",
+            "type": "string"
+          },
+          "deadline_seconds": {
+            "anyOf": [
+              {
+                "maximum": 86400,
+                "minimum": 1,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Deadline Seconds"
+          },
+          "kind": {
+            "const": "partial",
+            "title": "Kind",
+            "type": "string"
+          },
+          "minimum": {
+            "maximum": 10000,
+            "minimum": 0,
+            "title": "Minimum",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "minimum",
+          "close"
+        ],
+        "title": "PartialCollectionPolicy",
+        "type": "object"
+      },
+      "ScalarProjection": {
+        "additionalProperties": false,
+        "properties": {
+          "path": {
+            "default": [],
+            "items": {
+              "anyOf": [
+                {
+                  "maxLength": 128,
+                  "type": "string"
+                },
+                {
+                  "maximum": 10000,
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              ]
+            },
+            "maxItems": 16,
+            "title": "Path",
+            "type": "array"
+          },
+          "source": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactConstant",
+                "boolean": "#/$defs/BooleanConstant",
+                "input": "#/$defs/ScopeInput",
+                "integer": "#/$defs/IntegerConstant",
+                "number": "#/$defs/NumberConstant",
+                "output": "#/$defs/NodeOutput",
+                "result": "#/$defs/ScopeResult",
+                "string": "#/$defs/StringConstant"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ScopeInput"
+              },
+              {
+                "$ref": "#/$defs/NodeOutput"
+              },
+              {
+                "$ref": "#/$defs/ScopeResult"
+              },
+              {
+                "$ref": "#/$defs/BooleanConstant"
+              },
+              {
+                "$ref": "#/$defs/IntegerConstant"
+              },
+              {
+                "$ref": "#/$defs/NumberConstant"
+              },
+              {
+                "$ref": "#/$defs/StringConstant"
+              },
+              {
+                "$ref": "#/$defs/ArtifactConstant"
+              }
+            ],
+            "title": "Source"
+          },
+          "value_type": {
+            "$ref": "#/$defs/ScalarType"
+          }
+        },
+        "required": [
+          "source",
+          "value_type"
+        ],
+        "title": "ScalarProjection",
+        "type": "object"
+      },
+      "ScalarType": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "scalar",
+            "title": "Kind",
+            "type": "string"
+          },
+          "scalar": {
+            "enum": [
+              "boolean",
+              "integer",
+              "number",
+              "string"
+            ],
+            "title": "Scalar",
+            "type": "string"
+          },
+          "unit": {
+            "default": "1",
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "scalar"
+        ],
+        "title": "ScalarType",
+        "type": "object"
+      },
+      "ScatterV4": {
+        "additionalProperties": false,
+        "properties": {
+          "body": {
+            "$ref": "#/$defs/ExecutableScopeV4"
+          },
+          "captures": {
+            "default": [],
+            "items": {
+              "$ref": "#/$defs/ValueBinding"
+            },
+            "maxItems": 64,
+            "title": "Captures",
+            "type": "array"
+          },
+          "collection": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactConstant",
+                "boolean": "#/$defs/BooleanConstant",
+                "input": "#/$defs/ScopeInput",
+                "integer": "#/$defs/IntegerConstant",
+                "number": "#/$defs/NumberConstant",
+                "output": "#/$defs/NodeOutput",
+                "result": "#/$defs/ScopeResult",
+                "string": "#/$defs/StringConstant"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ScopeInput"
+              },
+              {
+                "$ref": "#/$defs/NodeOutput"
+              },
+              {
+                "$ref": "#/$defs/ScopeResult"
+              },
+              {
+                "$ref": "#/$defs/BooleanConstant"
+              },
+              {
+                "$ref": "#/$defs/IntegerConstant"
+              },
+              {
+                "$ref": "#/$defs/NumberConstant"
+              },
+              {
+                "$ref": "#/$defs/StringConstant"
+              },
+              {
+                "$ref": "#/$defs/ArtifactConstant"
+              }
+            ],
+            "title": "Collection"
+          },
+          "item_input": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Item Input",
+            "type": "string"
+          },
+          "kind": {
+            "const": "scatter",
+            "title": "Kind",
+            "type": "string"
+          },
+          "max_members": {
+            "maximum": 10000,
+            "minimum": 0,
+            "title": "Max Members",
+            "type": "integer"
+          },
+          "max_parallel": {
+            "maximum": 1024,
+            "minimum": 1,
+            "title": "Max Parallel",
+            "type": "integer"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "output": {
+            "$ref": "#/$defs/ValuePort"
+          },
+          "policy": {
+            "discriminator": {
+              "mapping": {
+                "all": "#/$defs/AllCollectionPolicy",
+                "partial": "#/$defs/PartialCollectionPolicy"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/AllCollectionPolicy"
+              },
+              {
+                "$ref": "#/$defs/PartialCollectionPolicy"
+              }
+            ],
+            "title": "Policy"
+          },
+          "result_port": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Result Port",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "collection",
+          "item_input",
+          "max_members",
+          "max_parallel",
+          "body",
+          "result_port",
+          "output",
+          "policy"
+        ],
+        "title": "ScatterV4",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      },
+      "ScopeInput": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "input",
+            "title": "Kind",
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "name"
+        ],
+        "title": "ScopeInput",
+        "type": "object"
+      },
+      "ScopeResult": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "result",
+            "title": "Kind",
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "name"
+        ],
+        "title": "ScopeResult",
+        "type": "object"
+      },
+      "StringConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "string",
+            "title": "Kind",
+            "type": "string"
+          },
+          "value": {
+            "maxLength": 4096,
+            "title": "Value",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "StringConstant",
+        "type": "object"
+      },
+      "ToolBinding": {
+        "additionalProperties": false,
+        "properties": {
+          "capability_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Capability Id",
+            "type": "string"
+          },
+          "contract_version": {
+            "const": "1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "image_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Image Sha256",
+            "type": "string"
+          },
+          "release": {
+            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+            "title": "Release",
+            "type": "string"
+          }
+        },
+        "required": [
+          "capability_id",
+          "release",
+          "image_sha256",
+          "contract_version"
+        ],
+        "title": "ToolBinding",
+        "type": "object"
+      },
+      "ValueBinding": {
+        "additionalProperties": false,
+        "properties": {
+          "port": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Port",
+            "type": "string"
+          },
+          "source": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactConstant",
+                "boolean": "#/$defs/BooleanConstant",
+                "input": "#/$defs/ScopeInput",
+                "integer": "#/$defs/IntegerConstant",
+                "number": "#/$defs/NumberConstant",
+                "output": "#/$defs/NodeOutput",
+                "result": "#/$defs/ScopeResult",
+                "string": "#/$defs/StringConstant"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ScopeInput"
+              },
+              {
+                "$ref": "#/$defs/NodeOutput"
+              },
+              {
+                "$ref": "#/$defs/ScopeResult"
+              },
+              {
+                "$ref": "#/$defs/BooleanConstant"
+              },
+              {
+                "$ref": "#/$defs/IntegerConstant"
+              },
+              {
+                "$ref": "#/$defs/NumberConstant"
+              },
+              {
+                "$ref": "#/$defs/StringConstant"
+              },
+              {
+                "$ref": "#/$defs/ArtifactConstant"
+              }
+            ],
+            "title": "Source"
+          }
+        },
+        "required": [
+          "port",
+          "source"
+        ],
+        "title": "ValueBinding",
+        "type": "object"
+      },
+      "ValuePort": {
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Name",
+            "type": "string"
+          },
+          "value_type": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactType",
+                "collection": "#/$defs/CollectionType",
+                "scalar": "#/$defs/ScalarType"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ScalarType"
+              },
+              {
+                "$ref": "#/$defs/ArtifactType"
+              },
+              {
+                "$ref": "#/$defs/CollectionType"
+              }
+            ],
+            "title": "Value Type"
+          }
+        },
+        "required": [
+          "name",
+          "value_type"
+        ],
+        "title": "ValuePort",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:graph-runtime.draft-save:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "definition": {
+        "$ref": "#/$defs/ExecutableCampaignV4"
+      },
+      "draft_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+        "title": "Draft Id",
+        "type": "string"
+      },
+      "expected_revision": {
+        "maximum": 9007199254740991,
+        "minimum": 0,
+        "title": "Expected Revision",
+        "type": "integer"
+      },
+      "schema_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "title": {
+        "maxLength": 128,
+        "minLength": 1,
+        "title": "Title",
+        "type": "string"
+      }
+    },
+    "required": [
+      "draft_id",
+      "expected_revision",
+      "title",
+      "definition"
+    ],
+    "title": "SaveDraft",
+    "type": "object"
+  },
+  "validate": {
+    "$id": "urn:amphora:graph-runtime.draft-validate:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "content_sha256": {
+        "pattern": "^[0-9a-f]{64}$",
+        "title": "Content Sha256",
+        "type": "string"
+      },
+      "draft_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+        "title": "Draft Id",
+        "type": "string"
+      },
+      "revision": {
+        "maximum": 9007199254740991,
+        "minimum": 1,
+        "title": "Revision",
+        "type": "integer"
+      },
+      "schema_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Schema Version",
+        "type": "string"
+      }
+    },
+    "required": [
+      "draft_id",
+      "revision",
+      "content_sha256"
+    ],
+    "title": "ValidateDraft",
+    "type": "object"
+  },
+  "draft": {
+    "$defs": {
+      "AllCollectionPolicy": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "all",
+            "title": "Kind",
+            "type": "string"
+          },
+          "skipped": {
+            "default": "exclude",
+            "enum": [
+              "exclude",
+              "fail"
+            ],
+            "title": "Skipped",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind"
+        ],
+        "title": "AllCollectionPolicy",
+        "type": "object"
+      },
+      "AllPredicate": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "all",
+            "title": "Kind",
+            "type": "string"
+          },
+          "predicates": {
+            "items": {
+              "discriminator": {
+                "mapping": {
+                  "all": "#/$defs/AllPredicate",
+                  "any": "#/$defs/AnyPredicate",
+                  "compare": "#/$defs/ComparePredicate",
+                  "constant": "#/$defs/ConstantPredicate",
+                  "not": "#/$defs/NotPredicate"
+                },
+                "propertyName": "kind"
+              },
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/ComparePredicate"
+                },
+                {
+                  "$ref": "#/$defs/ConstantPredicate"
+                },
+                {
+                  "$ref": "#/$defs/AllPredicate"
+                },
+                {
+                  "$ref": "#/$defs/AnyPredicate"
+                },
+                {
+                  "$ref": "#/$defs/NotPredicate"
+                }
+              ]
+            },
+            "maxItems": 16,
+            "minItems": 1,
+            "title": "Predicates",
+            "type": "array"
+          }
+        },
+        "required": [
+          "kind",
+          "predicates"
+        ],
+        "title": "AllPredicate",
+        "type": "object"
+      },
+      "AnyPredicate": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "any",
+            "title": "Kind",
+            "type": "string"
+          },
+          "predicates": {
+            "items": {
+              "discriminator": {
+                "mapping": {
+                  "all": "#/$defs/AllPredicate",
+                  "any": "#/$defs/AnyPredicate",
+                  "compare": "#/$defs/ComparePredicate",
+                  "constant": "#/$defs/ConstantPredicate",
+                  "not": "#/$defs/NotPredicate"
+                },
+                "propertyName": "kind"
+              },
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/ComparePredicate"
+                },
+                {
+                  "$ref": "#/$defs/ConstantPredicate"
+                },
+                {
+                  "$ref": "#/$defs/AllPredicate"
+                },
+                {
+                  "$ref": "#/$defs/AnyPredicate"
+                },
+                {
+                  "$ref": "#/$defs/NotPredicate"
+                }
+              ]
+            },
+            "maxItems": 16,
+            "minItems": 1,
+            "title": "Predicates",
+            "type": "array"
+          }
+        },
+        "required": [
+          "kind",
+          "predicates"
+        ],
+        "title": "AnyPredicate",
+        "type": "object"
+      },
+      "ArtifactConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "kind": {
+            "const": "artifact",
+            "title": "Kind",
+            "type": "string"
+          },
+          "representation": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Representation",
+            "type": "string"
+          },
+          "unit": {
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "artifact",
+          "representation",
+          "unit"
+        ],
+        "title": "ArtifactConstant",
+        "type": "object"
+      },
+      "ArtifactMaterializeV4": {
+        "additionalProperties": false,
+        "properties": {
+          "fields": {
+            "items": {
+              "$ref": "#/$defs/MaterializeField"
+            },
+            "maxItems": 64,
+            "title": "Fields",
+            "type": "array"
+          },
+          "kind": {
+            "const": "artifact_materialize",
+            "title": "Kind",
+            "type": "string"
+          },
+          "limits": {
+            "$ref": "#/$defs/BindingLimits"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "output": {
+            "$ref": "#/$defs/ValuePort"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "fields",
+          "output"
+        ],
+        "title": "ArtifactMaterializeV4",
+        "type": "object"
+      },
+      "ArtifactProjectV4": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "artifact_project",
+            "title": "Kind",
+            "type": "string"
+          },
+          "limits": {
+            "$ref": "#/$defs/BindingLimits"
+          },
+          "mode": {
+            "enum": [
+              "values",
+              "references",
+              "items"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "output": {
+            "$ref": "#/$defs/ValuePort"
+          },
+          "path": {
+            "default": [],
+            "items": {
+              "anyOf": [
+                {
+                  "maxLength": 128,
+                  "type": "string"
+                },
+                {
+                  "maximum": 10000,
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              ]
+            },
+            "maxItems": 16,
+            "title": "Path",
+            "type": "array"
+          },
+          "source": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactConstant",
+                "boolean": "#/$defs/BooleanConstant",
+                "input": "#/$defs/ScopeInput",
+                "integer": "#/$defs/IntegerConstant",
+                "number": "#/$defs/NumberConstant",
+                "output": "#/$defs/NodeOutput",
+                "result": "#/$defs/ScopeResult",
+                "string": "#/$defs/StringConstant"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ScopeInput"
+              },
+              {
+                "$ref": "#/$defs/NodeOutput"
+              },
+              {
+                "$ref": "#/$defs/ScopeResult"
+              },
+              {
+                "$ref": "#/$defs/BooleanConstant"
+              },
+              {
+                "$ref": "#/$defs/IntegerConstant"
+              },
+              {
+                "$ref": "#/$defs/NumberConstant"
+              },
+              {
+                "$ref": "#/$defs/StringConstant"
+              },
+              {
+                "$ref": "#/$defs/ArtifactConstant"
+              }
+            ],
+            "title": "Source"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "source",
+          "mode",
+          "output"
+        ],
+        "title": "ArtifactProjectV4",
+        "type": "object"
+      },
+      "ArtifactRef": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Artifact Id",
+            "type": "string"
+          },
+          "media_type": {
+            "maxLength": 128,
+            "minLength": 3,
+            "pattern": "^[^\\s/]+/[^\\s/]+$",
+            "title": "Media Type",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "size_bytes": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Size Bytes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "artifact_id",
+          "scope",
+          "sha256",
+          "media_type",
+          "schema_ref",
+          "size_bytes"
+        ],
+        "title": "ArtifactRef",
+        "type": "object"
+      },
+      "ArtifactType": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "artifact",
+            "title": "Kind",
+            "type": "string"
+          },
+          "media_type": {
+            "default": "application/json",
+            "maxLength": 128,
+            "minLength": 3,
+            "pattern": "^[^\\s/]+/[^\\s/]+$",
+            "title": "Media Type",
+            "type": "string"
+          },
+          "representation": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Representation",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          },
+          "unit": {
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "schema_ref",
+          "representation",
+          "unit"
+        ],
+        "title": "ArtifactType",
+        "type": "object"
+      },
+      "AwaitV3": {
+        "additionalProperties": false,
+        "properties": {
+          "expected_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Expected Revision",
+            "type": "string"
+          },
+          "issuer_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Issuer Id",
+            "type": "string"
+          },
+          "kind": {
+            "const": "await",
+            "title": "Kind",
+            "type": "string"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "on_timeout": {
+            "enum": [
+              "blocked",
+              "abstained"
+            ],
+            "title": "On Timeout",
+            "type": "string"
+          },
+          "output": {
+            "$ref": "#/$defs/ValuePort"
+          },
+          "purpose": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Purpose",
+            "type": "string"
+          },
+          "subject": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactConstant",
+                "boolean": "#/$defs/BooleanConstant",
+                "input": "#/$defs/ScopeInput",
+                "integer": "#/$defs/IntegerConstant",
+                "number": "#/$defs/NumberConstant",
+                "output": "#/$defs/NodeOutput",
+                "result": "#/$defs/ScopeResult",
+                "string": "#/$defs/StringConstant"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ScopeInput"
+              },
+              {
+                "$ref": "#/$defs/NodeOutput"
+              },
+              {
+                "$ref": "#/$defs/ScopeResult"
+              },
+              {
+                "$ref": "#/$defs/BooleanConstant"
+              },
+              {
+                "$ref": "#/$defs/IntegerConstant"
+              },
+              {
+                "$ref": "#/$defs/NumberConstant"
+              },
+              {
+                "$ref": "#/$defs/StringConstant"
+              },
+              {
+                "$ref": "#/$defs/ArtifactConstant"
+              }
+            ],
+            "title": "Subject"
+          },
+          "timeout_seconds": {
+            "maximum": 86400,
+            "minimum": 1,
+            "title": "Timeout Seconds",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "issuer_id",
+          "purpose",
+          "expected_revision",
+          "subject",
+          "output",
+          "timeout_seconds",
+          "on_timeout"
+        ],
+        "title": "AwaitV3",
+        "type": "object"
+      },
+      "BindingLimits": {
+        "additionalProperties": false,
+        "properties": {
+          "max_artifacts": {
+            "default": 256,
+            "maximum": 1024,
+            "minimum": 1,
+            "title": "Max Artifacts",
+            "type": "integer"
+          },
+          "max_bytes": {
+            "default": 262144,
+            "maximum": 262144,
+            "minimum": 1,
+            "title": "Max Bytes",
+            "type": "integer"
+          },
+          "max_items": {
+            "default": 256,
+            "maximum": 10000,
+            "minimum": 0,
+            "title": "Max Items",
+            "type": "integer"
+          },
+          "timeout_seconds": {
+            "default": 30,
+            "maximum": 300,
+            "minimum": 1,
+            "title": "Timeout Seconds",
+            "type": "integer"
+          }
+        },
+        "title": "BindingLimits",
+        "type": "object"
+      },
+      "BooleanConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "boolean",
+            "title": "Kind",
+            "type": "string"
+          },
+          "value": {
+            "title": "Value",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "BooleanConstant",
+        "type": "object"
+      },
+      "BranchV2": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "branch",
+            "title": "Kind",
+            "type": "string"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "predicate": {
+            "discriminator": {
+              "mapping": {
+                "all": "#/$defs/AllPredicate",
+                "any": "#/$defs/AnyPredicate",
+                "compare": "#/$defs/ComparePredicate",
+                "constant": "#/$defs/ConstantPredicate",
+                "not": "#/$defs/NotPredicate"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ComparePredicate"
+              },
+              {
+                "$ref": "#/$defs/ConstantPredicate"
+              },
+              {
+                "$ref": "#/$defs/AllPredicate"
+              },
+              {
+                "$ref": "#/$defs/AnyPredicate"
+              },
+              {
+                "$ref": "#/$defs/NotPredicate"
+              }
+            ],
+            "title": "Predicate"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "predicate"
+        ],
+        "title": "BranchV2",
+        "type": "object"
+      },
+      "CollectionType": {
+        "additionalProperties": false,
+        "properties": {
+          "item": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactType",
+                "scalar": "#/$defs/ScalarType"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ScalarType"
+              },
+              {
+                "$ref": "#/$defs/ArtifactType"
+              }
+            ],
+            "title": "Item"
+          },
+          "kind": {
+            "const": "collection",
+            "title": "Kind",
+            "type": "string"
+          },
+          "max_items": {
+            "maximum": 10000,
+            "minimum": 0,
+            "title": "Max Items",
+            "type": "integer"
+          },
+          "missing_slots": {
+            "default": false,
+            "title": "Missing Slots",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "kind",
+          "item",
+          "max_items"
+        ],
+        "title": "CollectionType",
+        "type": "object"
+      },
+      "ComparePredicate": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "compare",
+            "title": "Kind",
+            "type": "string"
+          },
+          "left": {
+            "$ref": "#/$defs/ScalarProjection"
+          },
+          "operator": {
+            "enum": [
+              "eq",
+              "ne",
+              "lt",
+              "le",
+              "gt",
+              "ge"
+            ],
+            "title": "Operator",
+            "type": "string"
+          },
+          "right": {
+            "discriminator": {
+              "mapping": {
+                "boolean": "#/$defs/BooleanConstant",
+                "integer": "#/$defs/IntegerConstant",
+                "number": "#/$defs/NumberConstant",
+                "string": "#/$defs/StringConstant"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/BooleanConstant"
+              },
+              {
+                "$ref": "#/$defs/IntegerConstant"
+              },
+              {
+                "$ref": "#/$defs/NumberConstant"
+              },
+              {
+                "$ref": "#/$defs/StringConstant"
+              }
+            ],
+            "title": "Right"
+          }
+        },
+        "required": [
+          "kind",
+          "left",
+          "operator",
+          "right"
+        ],
+        "title": "ComparePredicate",
+        "type": "object"
+      },
+      "ConstantPredicate": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "constant",
+            "title": "Kind",
+            "type": "string"
+          },
+          "value": {
+            "title": "Value",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "ConstantPredicate",
+        "type": "object"
+      },
+      "ContextPin": {
+        "additionalProperties": false,
+        "properties": {
+          "identity": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Identity",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "policy",
+              "evaluator",
+              "model",
+              "source",
+              "knowledge"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Revision",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "identity",
+          "revision",
+          "sha256"
+        ],
+        "title": "ContextPin",
+        "type": "object"
+      },
+      "ControlEdge": {
+        "additionalProperties": false,
+        "properties": {
+          "route": {
+            "default": "next",
+            "enum": [
+              "next",
+              "true",
+              "false"
+            ],
+            "title": "Route",
+            "type": "string"
+          },
+          "source": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Source",
+            "type": "string"
+          },
+          "target": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Target",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source",
+          "target"
+        ],
+        "title": "ControlEdge",
+        "type": "object"
+      },
+      "DraftHead": {
+        "additionalProperties": false,
+        "properties": {
+          "content_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Content Sha256",
+            "type": "string"
+          },
+          "draft_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Draft Id",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "title": {
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "draft_id",
+          "revision",
+          "content_sha256",
+          "title"
+        ],
+        "title": "DraftHead",
+        "type": "object"
+      },
+      "ExecutableCampaignV4": {
+        "additionalProperties": false,
+        "properties": {
+          "body": {
+            "$ref": "#/$defs/ExecutableScopeV4"
+          },
+          "campaign_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Campaign Id",
+            "type": "string"
+          },
+          "context": {
+            "default": [],
+            "items": {
+              "$ref": "#/$defs/ContextPin"
+            },
+            "maxItems": 256,
+            "title": "Context",
+            "type": "array"
+          },
+          "profile": {
+            "const": "deterministic-v3",
+            "title": "Profile",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "schema_version": {
+            "const": "4",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "schema_version",
+          "profile",
+          "campaign_id",
+          "revision",
+          "scope",
+          "body"
+        ],
+        "title": "ExecutableCampaignV4",
+        "type": "object"
+      },
+      "ExecutableScopeV4": {
+        "additionalProperties": false,
+        "properties": {
+          "edges": {
+            "default": [],
+            "items": {
+              "$ref": "#/$defs/ControlEdge"
+            },
+            "maxItems": 1024,
+            "title": "Edges",
+            "type": "array"
+          },
+          "inputs": {
+            "default": [],
+            "items": {
+              "$ref": "#/$defs/ValuePort"
+            },
+            "maxItems": 64,
+            "title": "Inputs",
+            "type": "array"
+          },
+          "nodes": {
+            "items": {
+              "discriminator": {
+                "mapping": {
+                  "artifact_materialize": "#/$defs/ArtifactMaterializeV4",
+                  "artifact_project": "#/$defs/ArtifactProjectV4",
+                  "await": "#/$defs/AwaitV3",
+                  "branch": "#/$defs/BranchV2",
+                  "finish": "#/$defs/FinishV2",
+                  "invoke": "#/$defs/InvokeV2",
+                  "iterate": "#/$defs/IterateV4",
+                  "join": "#/$defs/JoinV2",
+                  "scatter": "#/$defs/ScatterV4"
+                },
+                "propertyName": "kind"
+              },
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/InvokeV2"
+                },
+                {
+                  "$ref": "#/$defs/BranchV2"
+                },
+                {
+                  "$ref": "#/$defs/JoinV2"
+                },
+                {
+                  "$ref": "#/$defs/ScatterV4"
+                },
+                {
+                  "$ref": "#/$defs/IterateV4"
+                },
+                {
+                  "$ref": "#/$defs/FinishV2"
+                },
+                {
+                  "$ref": "#/$defs/AwaitV3"
+                },
+                {
+                  "$ref": "#/$defs/ArtifactProjectV4"
+                },
+                {
+                  "$ref": "#/$defs/ArtifactMaterializeV4"
+                }
+              ]
+            },
+            "maxItems": 256,
+            "minItems": 1,
+            "title": "Nodes",
+            "type": "array"
+          },
+          "outputs": {
+            "default": [],
+            "items": {
+              "$ref": "#/$defs/ValuePort"
+            },
+            "maxItems": 64,
+            "title": "Outputs",
+            "type": "array"
+          }
+        },
+        "required": [
+          "nodes"
+        ],
+        "title": "ExecutableScopeV4",
+        "type": "object"
+      },
+      "FinishV2": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "finish",
+            "title": "Kind",
+            "type": "string"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "outputs": {
+            "items": {
+              "$ref": "#/$defs/ValueBinding"
+            },
+            "maxItems": 64,
+            "title": "Outputs",
+            "type": "array"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "outputs"
+        ],
+        "title": "FinishV2",
+        "type": "object"
+      },
+      "IntegerConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "integer",
+            "title": "Kind",
+            "type": "string"
+          },
+          "unit": {
+            "default": "1",
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          },
+          "value": {
+            "maximum": 9007199254740991,
+            "minimum": -9007199254740991,
+            "title": "Value",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "IntegerConstant",
+        "type": "object"
+      },
+      "InvokeV2": {
+        "additionalProperties": false,
+        "properties": {
+          "checkpoint": {
+            "anyOf": [
+              {
+                "discriminator": {
+                  "mapping": {
+                    "artifact": "#/$defs/ArtifactConstant",
+                    "boolean": "#/$defs/BooleanConstant",
+                    "input": "#/$defs/ScopeInput",
+                    "integer": "#/$defs/IntegerConstant",
+                    "number": "#/$defs/NumberConstant",
+                    "output": "#/$defs/NodeOutput",
+                    "result": "#/$defs/ScopeResult",
+                    "string": "#/$defs/StringConstant"
+                  },
+                  "propertyName": "kind"
+                },
+                "oneOf": [
+                  {
+                    "$ref": "#/$defs/ScopeInput"
+                  },
+                  {
+                    "$ref": "#/$defs/NodeOutput"
+                  },
+                  {
+                    "$ref": "#/$defs/ScopeResult"
+                  },
+                  {
+                    "$ref": "#/$defs/BooleanConstant"
+                  },
+                  {
+                    "$ref": "#/$defs/IntegerConstant"
+                  },
+                  {
+                    "$ref": "#/$defs/NumberConstant"
+                  },
+                  {
+                    "$ref": "#/$defs/StringConstant"
+                  },
+                  {
+                    "$ref": "#/$defs/ArtifactConstant"
+                  }
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Checkpoint"
+          },
+          "inputs": {
+            "items": {
+              "$ref": "#/$defs/ValueBinding"
+            },
+            "maxItems": 64,
+            "title": "Inputs",
+            "type": "array"
+          },
+          "kind": {
+            "const": "invoke",
+            "title": "Kind",
+            "type": "string"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "timeout_seconds": {
+            "maximum": 86400,
+            "minimum": 1,
+            "title": "Timeout Seconds",
+            "type": "integer"
+          },
+          "tool": {
+            "$ref": "#/$defs/ToolBinding"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "tool",
+          "inputs",
+          "timeout_seconds"
+        ],
+        "title": "InvokeV2",
+        "type": "object"
+      },
+      "IterateV4": {
+        "additionalProperties": false,
+        "properties": {
+          "body": {
+            "$ref": "#/$defs/ExecutableScopeV4"
+          },
+          "captures": {
+            "default": [],
+            "items": {
+              "$ref": "#/$defs/ValueBinding"
+            },
+            "maxItems": 64,
+            "title": "Captures",
+            "type": "array"
+          },
+          "kind": {
+            "const": "iterate",
+            "title": "Kind",
+            "type": "string"
+          },
+          "max_iterations": {
+            "maximum": 10000,
+            "minimum": 1,
+            "title": "Max Iterations",
+            "type": "integer"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "on_limit": {
+            "enum": [
+              "finish",
+              "blocked"
+            ],
+            "title": "On Limit",
+            "type": "string"
+          },
+          "state": {
+            "items": {
+              "$ref": "#/$defs/LoopStateSlot"
+            },
+            "maxItems": 64,
+            "minItems": 1,
+            "title": "State",
+            "type": "array"
+          },
+          "until": {
+            "discriminator": {
+              "mapping": {
+                "all": "#/$defs/AllPredicate",
+                "any": "#/$defs/AnyPredicate",
+                "compare": "#/$defs/ComparePredicate",
+                "constant": "#/$defs/ConstantPredicate",
+                "not": "#/$defs/NotPredicate"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ComparePredicate"
+              },
+              {
+                "$ref": "#/$defs/ConstantPredicate"
+              },
+              {
+                "$ref": "#/$defs/AllPredicate"
+              },
+              {
+                "$ref": "#/$defs/AnyPredicate"
+              },
+              {
+                "$ref": "#/$defs/NotPredicate"
+              }
+            ],
+            "title": "Until"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "state",
+          "body",
+          "until",
+          "max_iterations",
+          "on_limit"
+        ],
+        "title": "IterateV4",
+        "type": "object"
+      },
+      "JoinMember": {
+        "additionalProperties": false,
+        "properties": {
+          "member_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Member Id",
+            "type": "string"
+          },
+          "required": {
+            "default": true,
+            "title": "Required",
+            "type": "boolean"
+          },
+          "source": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactConstant",
+                "boolean": "#/$defs/BooleanConstant",
+                "input": "#/$defs/ScopeInput",
+                "integer": "#/$defs/IntegerConstant",
+                "number": "#/$defs/NumberConstant",
+                "output": "#/$defs/NodeOutput",
+                "result": "#/$defs/ScopeResult",
+                "string": "#/$defs/StringConstant"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ScopeInput"
+              },
+              {
+                "$ref": "#/$defs/NodeOutput"
+              },
+              {
+                "$ref": "#/$defs/ScopeResult"
+              },
+              {
+                "$ref": "#/$defs/BooleanConstant"
+              },
+              {
+                "$ref": "#/$defs/IntegerConstant"
+              },
+              {
+                "$ref": "#/$defs/NumberConstant"
+              },
+              {
+                "$ref": "#/$defs/StringConstant"
+              },
+              {
+                "$ref": "#/$defs/ArtifactConstant"
+              }
+            ],
+            "title": "Source"
+          }
+        },
+        "required": [
+          "member_id",
+          "source"
+        ],
+        "title": "JoinMember",
+        "type": "object"
+      },
+      "JoinV2": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "join",
+            "title": "Kind",
+            "type": "string"
+          },
+          "members": {
+            "items": {
+              "$ref": "#/$defs/JoinMember"
+            },
+            "maxItems": 10000,
+            "title": "Members",
+            "type": "array"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "output": {
+            "$ref": "#/$defs/ValuePort"
+          },
+          "policy": {
+            "discriminator": {
+              "mapping": {
+                "all": "#/$defs/AllCollectionPolicy",
+                "partial": "#/$defs/PartialCollectionPolicy"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/AllCollectionPolicy"
+              },
+              {
+                "$ref": "#/$defs/PartialCollectionPolicy"
+              }
+            ],
+            "title": "Policy"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "members",
+          "policy",
+          "output"
+        ],
+        "title": "JoinV2",
+        "type": "object"
+      },
+      "LoopStateSlot": {
+        "additionalProperties": false,
+        "properties": {
+          "feedback_port": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Feedback Port",
+            "type": "string"
+          },
+          "initial": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactConstant",
+                "boolean": "#/$defs/BooleanConstant",
+                "input": "#/$defs/ScopeInput",
+                "integer": "#/$defs/IntegerConstant",
+                "number": "#/$defs/NumberConstant",
+                "output": "#/$defs/NodeOutput",
+                "result": "#/$defs/ScopeResult",
+                "string": "#/$defs/StringConstant"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ScopeInput"
+              },
+              {
+                "$ref": "#/$defs/NodeOutput"
+              },
+              {
+                "$ref": "#/$defs/ScopeResult"
+              },
+              {
+                "$ref": "#/$defs/BooleanConstant"
+              },
+              {
+                "$ref": "#/$defs/IntegerConstant"
+              },
+              {
+                "$ref": "#/$defs/NumberConstant"
+              },
+              {
+                "$ref": "#/$defs/StringConstant"
+              },
+              {
+                "$ref": "#/$defs/ArtifactConstant"
+              }
+            ],
+            "title": "Initial"
+          },
+          "name": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Name",
+            "type": "string"
+          },
+          "value_type": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactType",
+                "collection": "#/$defs/CollectionType",
+                "scalar": "#/$defs/ScalarType"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ScalarType"
+              },
+              {
+                "$ref": "#/$defs/ArtifactType"
+              },
+              {
+                "$ref": "#/$defs/CollectionType"
+              }
+            ],
+            "title": "Value Type"
+          }
+        },
+        "required": [
+          "name",
+          "value_type",
+          "initial",
+          "feedback_port"
+        ],
+        "title": "LoopStateSlot",
+        "type": "object"
+      },
+      "MaterializeField": {
+        "additionalProperties": false,
+        "properties": {
+          "mode": {
+            "enum": [
+              "inline",
+              "references"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Name",
+            "type": "string"
+          },
+          "source": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactConstant",
+                "boolean": "#/$defs/BooleanConstant",
+                "input": "#/$defs/ScopeInput",
+                "integer": "#/$defs/IntegerConstant",
+                "number": "#/$defs/NumberConstant",
+                "output": "#/$defs/NodeOutput",
+                "result": "#/$defs/ScopeResult",
+                "string": "#/$defs/StringConstant"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ScopeInput"
+              },
+              {
+                "$ref": "#/$defs/NodeOutput"
+              },
+              {
+                "$ref": "#/$defs/ScopeResult"
+              },
+              {
+                "$ref": "#/$defs/BooleanConstant"
+              },
+              {
+                "$ref": "#/$defs/IntegerConstant"
+              },
+              {
+                "$ref": "#/$defs/NumberConstant"
+              },
+              {
+                "$ref": "#/$defs/StringConstant"
+              },
+              {
+                "$ref": "#/$defs/ArtifactConstant"
+              }
+            ],
+            "title": "Source"
+          }
+        },
+        "required": [
+          "name",
+          "source",
+          "mode"
+        ],
+        "title": "MaterializeField",
+        "type": "object"
+      },
+      "NodeOutput": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "output",
+            "title": "Kind",
+            "type": "string"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "port": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Port",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "port"
+        ],
+        "title": "NodeOutput",
+        "type": "object"
+      },
+      "NotPredicate": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "not",
+            "title": "Kind",
+            "type": "string"
+          },
+          "predicate": {
+            "discriminator": {
+              "mapping": {
+                "all": "#/$defs/AllPredicate",
+                "any": "#/$defs/AnyPredicate",
+                "compare": "#/$defs/ComparePredicate",
+                "constant": "#/$defs/ConstantPredicate",
+                "not": "#/$defs/NotPredicate"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ComparePredicate"
+              },
+              {
+                "$ref": "#/$defs/ConstantPredicate"
+              },
+              {
+                "$ref": "#/$defs/AllPredicate"
+              },
+              {
+                "$ref": "#/$defs/AnyPredicate"
+              },
+              {
+                "$ref": "#/$defs/NotPredicate"
+              }
+            ],
+            "title": "Predicate"
+          }
+        },
+        "required": [
+          "kind",
+          "predicate"
+        ],
+        "title": "NotPredicate",
+        "type": "object"
+      },
+      "NumberConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "number",
+            "title": "Kind",
+            "type": "string"
+          },
+          "unit": {
+            "default": "1",
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          },
+          "value": {
+            "maximum": 1e+100,
+            "minimum": -1e+100,
+            "title": "Value",
+            "type": "number"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "NumberConstant",
+        "type": "object"
+      },
+      "PartialCollectionPolicy": {
+        "additionalProperties": false,
+        "properties": {
+          "close": {
+            "enum": [
+              "all_terminal",
+              "deadline"
+            ],
+            "title": "Close",
+            "type": "string"
+          },
+          "deadline_seconds": {
+            "anyOf": [
+              {
+                "maximum": 86400,
+                "minimum": 1,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Deadline Seconds"
+          },
+          "kind": {
+            "const": "partial",
+            "title": "Kind",
+            "type": "string"
+          },
+          "minimum": {
+            "maximum": 10000,
+            "minimum": 0,
+            "title": "Minimum",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "minimum",
+          "close"
+        ],
+        "title": "PartialCollectionPolicy",
+        "type": "object"
+      },
+      "ScalarProjection": {
+        "additionalProperties": false,
+        "properties": {
+          "path": {
+            "default": [],
+            "items": {
+              "anyOf": [
+                {
+                  "maxLength": 128,
+                  "type": "string"
+                },
+                {
+                  "maximum": 10000,
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              ]
+            },
+            "maxItems": 16,
+            "title": "Path",
+            "type": "array"
+          },
+          "source": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactConstant",
+                "boolean": "#/$defs/BooleanConstant",
+                "input": "#/$defs/ScopeInput",
+                "integer": "#/$defs/IntegerConstant",
+                "number": "#/$defs/NumberConstant",
+                "output": "#/$defs/NodeOutput",
+                "result": "#/$defs/ScopeResult",
+                "string": "#/$defs/StringConstant"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ScopeInput"
+              },
+              {
+                "$ref": "#/$defs/NodeOutput"
+              },
+              {
+                "$ref": "#/$defs/ScopeResult"
+              },
+              {
+                "$ref": "#/$defs/BooleanConstant"
+              },
+              {
+                "$ref": "#/$defs/IntegerConstant"
+              },
+              {
+                "$ref": "#/$defs/NumberConstant"
+              },
+              {
+                "$ref": "#/$defs/StringConstant"
+              },
+              {
+                "$ref": "#/$defs/ArtifactConstant"
+              }
+            ],
+            "title": "Source"
+          },
+          "value_type": {
+            "$ref": "#/$defs/ScalarType"
+          }
+        },
+        "required": [
+          "source",
+          "value_type"
+        ],
+        "title": "ScalarProjection",
+        "type": "object"
+      },
+      "ScalarType": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "scalar",
+            "title": "Kind",
+            "type": "string"
+          },
+          "scalar": {
+            "enum": [
+              "boolean",
+              "integer",
+              "number",
+              "string"
+            ],
+            "title": "Scalar",
+            "type": "string"
+          },
+          "unit": {
+            "default": "1",
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "scalar"
+        ],
+        "title": "ScalarType",
+        "type": "object"
+      },
+      "ScatterV4": {
+        "additionalProperties": false,
+        "properties": {
+          "body": {
+            "$ref": "#/$defs/ExecutableScopeV4"
+          },
+          "captures": {
+            "default": [],
+            "items": {
+              "$ref": "#/$defs/ValueBinding"
+            },
+            "maxItems": 64,
+            "title": "Captures",
+            "type": "array"
+          },
+          "collection": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactConstant",
+                "boolean": "#/$defs/BooleanConstant",
+                "input": "#/$defs/ScopeInput",
+                "integer": "#/$defs/IntegerConstant",
+                "number": "#/$defs/NumberConstant",
+                "output": "#/$defs/NodeOutput",
+                "result": "#/$defs/ScopeResult",
+                "string": "#/$defs/StringConstant"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ScopeInput"
+              },
+              {
+                "$ref": "#/$defs/NodeOutput"
+              },
+              {
+                "$ref": "#/$defs/ScopeResult"
+              },
+              {
+                "$ref": "#/$defs/BooleanConstant"
+              },
+              {
+                "$ref": "#/$defs/IntegerConstant"
+              },
+              {
+                "$ref": "#/$defs/NumberConstant"
+              },
+              {
+                "$ref": "#/$defs/StringConstant"
+              },
+              {
+                "$ref": "#/$defs/ArtifactConstant"
+              }
+            ],
+            "title": "Collection"
+          },
+          "item_input": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Item Input",
+            "type": "string"
+          },
+          "kind": {
+            "const": "scatter",
+            "title": "Kind",
+            "type": "string"
+          },
+          "max_members": {
+            "maximum": 10000,
+            "minimum": 0,
+            "title": "Max Members",
+            "type": "integer"
+          },
+          "max_parallel": {
+            "maximum": 1024,
+            "minimum": 1,
+            "title": "Max Parallel",
+            "type": "integer"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "output": {
+            "$ref": "#/$defs/ValuePort"
+          },
+          "policy": {
+            "discriminator": {
+              "mapping": {
+                "all": "#/$defs/AllCollectionPolicy",
+                "partial": "#/$defs/PartialCollectionPolicy"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/AllCollectionPolicy"
+              },
+              {
+                "$ref": "#/$defs/PartialCollectionPolicy"
+              }
+            ],
+            "title": "Policy"
+          },
+          "result_port": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Result Port",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "collection",
+          "item_input",
+          "max_members",
+          "max_parallel",
+          "body",
+          "result_port",
+          "output",
+          "policy"
+        ],
+        "title": "ScatterV4",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      },
+      "ScopeInput": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "input",
+            "title": "Kind",
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "name"
+        ],
+        "title": "ScopeInput",
+        "type": "object"
+      },
+      "ScopeResult": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "result",
+            "title": "Kind",
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "name"
+        ],
+        "title": "ScopeResult",
+        "type": "object"
+      },
+      "StringConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "string",
+            "title": "Kind",
+            "type": "string"
+          },
+          "value": {
+            "maxLength": 4096,
+            "title": "Value",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "StringConstant",
+        "type": "object"
+      },
+      "ToolBinding": {
+        "additionalProperties": false,
+        "properties": {
+          "capability_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Capability Id",
+            "type": "string"
+          },
+          "contract_version": {
+            "const": "1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "image_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Image Sha256",
+            "type": "string"
+          },
+          "release": {
+            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+            "title": "Release",
+            "type": "string"
+          }
+        },
+        "required": [
+          "capability_id",
+          "release",
+          "image_sha256",
+          "contract_version"
+        ],
+        "title": "ToolBinding",
+        "type": "object"
+      },
+      "ValueBinding": {
+        "additionalProperties": false,
+        "properties": {
+          "port": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Port",
+            "type": "string"
+          },
+          "source": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactConstant",
+                "boolean": "#/$defs/BooleanConstant",
+                "input": "#/$defs/ScopeInput",
+                "integer": "#/$defs/IntegerConstant",
+                "number": "#/$defs/NumberConstant",
+                "output": "#/$defs/NodeOutput",
+                "result": "#/$defs/ScopeResult",
+                "string": "#/$defs/StringConstant"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ScopeInput"
+              },
+              {
+                "$ref": "#/$defs/NodeOutput"
+              },
+              {
+                "$ref": "#/$defs/ScopeResult"
+              },
+              {
+                "$ref": "#/$defs/BooleanConstant"
+              },
+              {
+                "$ref": "#/$defs/IntegerConstant"
+              },
+              {
+                "$ref": "#/$defs/NumberConstant"
+              },
+              {
+                "$ref": "#/$defs/StringConstant"
+              },
+              {
+                "$ref": "#/$defs/ArtifactConstant"
+              }
+            ],
+            "title": "Source"
+          }
+        },
+        "required": [
+          "port",
+          "source"
+        ],
+        "title": "ValueBinding",
+        "type": "object"
+      },
+      "ValuePort": {
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Name",
+            "type": "string"
+          },
+          "value_type": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactType",
+                "collection": "#/$defs/CollectionType",
+                "scalar": "#/$defs/ScalarType"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/ScalarType"
+              },
+              {
+                "$ref": "#/$defs/ArtifactType"
+              },
+              {
+                "$ref": "#/$defs/CollectionType"
+              }
+            ],
+            "title": "Value Type"
+          }
+        },
+        "required": [
+          "name",
+          "value_type"
+        ],
+        "title": "ValuePort",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:graph-runtime.draft-revision:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "definition": {
+        "$ref": "#/$defs/ExecutableCampaignV4"
+      },
+      "head": {
+        "$ref": "#/$defs/DraftHead"
+      },
+      "parent_revision": {
+        "maximum": 9007199254740991,
+        "minimum": 0,
+        "title": "Parent Revision",
+        "type": "integer"
+      },
+      "schema_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "scope": {
+        "$ref": "#/$defs/Scope"
+      }
+    },
+    "required": [
+      "scope",
+      "head",
+      "parent_revision",
+      "definition"
+    ],
+    "title": "DraftRevision",
+    "type": "object"
+  },
+  "page": {
+    "$defs": {
+      "DraftHead": {
+        "additionalProperties": false,
+        "properties": {
+          "content_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Content Sha256",
+            "type": "string"
+          },
+          "draft_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Draft Id",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "title": {
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "draft_id",
+          "revision",
+          "content_sha256",
+          "title"
+        ],
+        "title": "DraftHead",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:graph-runtime.draft-page:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "drafts": {
+        "items": {
+          "$ref": "#/$defs/DraftHead"
+        },
+        "maxItems": 50,
+        "title": "Drafts",
+        "type": "array"
+      },
+      "next_after": {
+        "anyOf": [
+          {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Next After"
+      },
+      "schema_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "scope": {
+        "$ref": "#/$defs/Scope"
+      }
+    },
+    "required": [
+      "scope",
+      "drafts",
+      "next_after"
+    ],
+    "title": "DraftPage",
+    "type": "object"
+  },
+  "validation": {
+    "$defs": {
+      "Finding": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Code",
+            "type": "string"
+          },
+          "location": {
+            "maxLength": 256,
+            "title": "Location",
+            "type": "string"
+          },
+          "message": {
+            "maxLength": 512,
+            "title": "Message",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "location",
+          "message"
+        ],
+        "title": "Finding",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:graph-runtime.draft-validation:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "content_sha256": {
+        "pattern": "^[0-9a-f]{64}$",
+        "title": "Content Sha256",
+        "type": "string"
+      },
+      "draft_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+        "title": "Draft Id",
+        "type": "string"
+      },
+      "findings": {
+        "items": {
+          "$ref": "#/$defs/Finding"
+        },
+        "maxItems": 20,
+        "title": "Findings",
+        "type": "array"
+      },
+      "pending_checks": {
+        "items": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+          "type": "string"
+        },
+        "maxItems": 16,
+        "title": "Pending Checks",
+        "type": "array"
+      },
+      "plan_sha256": {
+        "anyOf": [
+          {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Plan Sha256"
+      },
+      "revision": {
+        "maximum": 9007199254740991,
+        "minimum": 1,
+        "title": "Revision",
+        "type": "integer"
+      },
+      "schema_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "scientific_acceptance": {
+        "const": "not_established",
+        "default": "not_established",
+        "title": "Scientific Acceptance",
+        "type": "string"
+      },
+      "scope": {
+        "$ref": "#/$defs/Scope"
+      },
+      "structurally_valid": {
+        "title": "Structurally Valid",
+        "type": "boolean"
+      },
+      "universe_sha256": {
+        "pattern": "^[0-9a-f]{64}$",
+        "title": "Universe Sha256",
+        "type": "string"
+      },
+      "validation_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+        "title": "Validation Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "scope",
+      "validation_id",
+      "draft_id",
+      "revision",
+      "content_sha256",
+      "universe_sha256",
+      "structurally_valid",
+      "plan_sha256",
+      "findings",
+      "pending_checks"
+    ],
+    "title": "DraftValidation",
+    "type": "object"
+  },
+  "receipt": {
+    "$defs": {
+      "CommandIdentity": {
+        "additionalProperties": false,
+        "properties": {
+          "actor_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Actor Id",
+            "type": "string"
+          },
+          "command_family": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Command Family",
+            "type": "string"
+          },
+          "command_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Command Id",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "1",
+            "default": "1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "command_family",
+          "command_id",
+          "scope",
+          "actor_id"
+        ],
+        "title": "CommandIdentity",
+        "type": "object"
+      },
+      "DraftAccepted": {
+        "additionalProperties": false,
+        "properties": {
+          "binding": {
+            "$ref": "#/$defs/DraftReceiptBinding"
+          },
+          "committed": {
+            "$ref": "#/$defs/DraftCommit"
+          },
+          "status": {
+            "const": "accepted",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "binding",
+          "committed"
+        ],
+        "title": "DraftAccepted",
+        "type": "object"
+      },
+      "DraftCommit": {
+        "additionalProperties": false,
+        "properties": {
+          "content_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Content Sha256",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "draft_revision",
+              "draft_validation"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "object_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Object Id",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "object_id",
+          "revision",
+          "content_sha256"
+        ],
+        "title": "DraftCommit",
+        "type": "object"
+      },
+      "DraftPending": {
+        "additionalProperties": false,
+        "properties": {
+          "binding": {
+            "$ref": "#/$defs/DraftReceiptBinding"
+          },
+          "status": {
+            "const": "pending",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "binding"
+        ],
+        "title": "DraftPending",
+        "type": "object"
+      },
+      "DraftReceiptBinding": {
+        "additionalProperties": false,
+        "properties": {
+          "identity": {
+            "$ref": "#/$defs/CommandIdentity"
+          },
+          "operation_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Operation Id",
+            "type": "string"
+          },
+          "request_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Request Sha256",
+            "type": "string"
+          }
+        },
+        "required": [
+          "identity",
+          "request_sha256",
+          "operation_id"
+        ],
+        "title": "DraftReceiptBinding",
+        "type": "object"
+      },
+      "DraftRejected": {
+        "additionalProperties": false,
+        "properties": {
+          "binding": {
+            "$ref": "#/$defs/DraftReceiptBinding"
+          },
+          "reason_code": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Reason Code",
+            "type": "string"
+          },
+          "status": {
+            "const": "rejected",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "binding",
+          "reason_code"
+        ],
+        "title": "DraftRejected",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:graph-runtime.draft-command-receipt:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "outcome": {
+        "discriminator": {
+          "mapping": {
+            "accepted": "#/$defs/DraftAccepted",
+            "pending": "#/$defs/DraftPending",
+            "rejected": "#/$defs/DraftRejected"
+          },
+          "propertyName": "status"
+        },
+        "oneOf": [
+          {
+            "$ref": "#/$defs/DraftAccepted"
+          },
+          {
+            "$ref": "#/$defs/DraftRejected"
+          },
+          {
+            "$ref": "#/$defs/DraftPending"
+          }
+        ],
+        "title": "Outcome"
+      },
+      "schema_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Schema Version",
+        "type": "string"
+      }
+    },
+    "required": [
+      "outcome"
+    ],
+    "title": "DraftCommandReceipt",
+    "type": "object"
+  },
+  "admit": {
+    "$defs": {
+      "ArtifactConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "kind": {
+            "const": "artifact",
+            "title": "Kind",
+            "type": "string"
+          },
+          "representation": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Representation",
+            "type": "string"
+          },
+          "unit": {
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "artifact",
+          "representation",
+          "unit"
+        ],
+        "title": "ArtifactConstant",
+        "type": "object"
+      },
+      "ArtifactRef": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Artifact Id",
+            "type": "string"
+          },
+          "media_type": {
+            "maxLength": 128,
+            "minLength": 3,
+            "pattern": "^[^\\s/]+/[^\\s/]+$",
+            "title": "Media Type",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "size_bytes": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Size Bytes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "artifact_id",
+          "scope",
+          "sha256",
+          "media_type",
+          "schema_ref",
+          "size_bytes"
+        ],
+        "title": "ArtifactRef",
+        "type": "object"
+      },
+      "AttemptBudget": {
+        "additionalProperties": false,
+        "properties": {
+          "limit": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Limit",
+            "type": "integer"
+          },
+          "max_attempts_per_activation": {
+            "default": 3,
+            "maximum": 100,
+            "minimum": 1,
+            "title": "Max Attempts Per Activation",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "limit"
+        ],
+        "title": "AttemptBudget",
+        "type": "object"
+      },
+      "BooleanConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "boolean",
+            "title": "Kind",
+            "type": "string"
+          },
+          "value": {
+            "title": "Value",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "BooleanConstant",
+        "type": "object"
+      },
+      "CollectionValue": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "anyOf": [
+                {
+                  "discriminator": {
+                    "mapping": {
+                      "artifact": "#/$defs/ArtifactConstant",
+                      "boolean": "#/$defs/BooleanConstant",
+                      "integer": "#/$defs/IntegerConstant",
+                      "number": "#/$defs/NumberValue",
+                      "string": "#/$defs/StringConstant"
+                    },
+                    "propertyName": "kind"
+                  },
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/BooleanConstant"
+                    },
+                    {
+                      "$ref": "#/$defs/IntegerConstant"
+                    },
+                    {
+                      "$ref": "#/$defs/NumberValue"
+                    },
+                    {
+                      "$ref": "#/$defs/StringConstant"
+                    },
+                    {
+                      "$ref": "#/$defs/ArtifactConstant"
+                    }
+                  ]
+                },
+                {
+                  "$ref": "#/$defs/MissingValue"
+                }
+              ]
+            },
+            "maxItems": 10000,
+            "title": "Items",
+            "type": "array"
+          },
+          "kind": {
+            "const": "collection",
+            "title": "Kind",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "items"
+        ],
+        "title": "CollectionValue",
+        "type": "object"
+      },
+      "DraftSelection": {
+        "additionalProperties": false,
+        "properties": {
+          "content_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Content Sha256",
+            "type": "string"
+          },
+          "draft_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Draft Id",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "universe_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Universe Sha256",
+            "type": "string"
+          },
+          "validation_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Validation Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "draft_id",
+          "revision",
+          "content_sha256",
+          "validation_id",
+          "universe_sha256"
+        ],
+        "title": "DraftSelection",
+        "type": "object"
+      },
+      "GraphBinding": {
+        "additionalProperties": false,
+        "properties": {
+          "port": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Port",
+            "type": "string"
+          },
+          "value": {
+            "discriminator": {
+              "mapping": {
+                "artifact": "#/$defs/ArtifactConstant",
+                "boolean": "#/$defs/BooleanConstant",
+                "collection": "#/$defs/CollectionValue",
+                "integer": "#/$defs/IntegerConstant",
+                "number": "#/$defs/NumberValue",
+                "string": "#/$defs/StringConstant"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/BooleanConstant"
+              },
+              {
+                "$ref": "#/$defs/IntegerConstant"
+              },
+              {
+                "$ref": "#/$defs/NumberValue"
+              },
+              {
+                "$ref": "#/$defs/StringConstant"
+              },
+              {
+                "$ref": "#/$defs/ArtifactConstant"
+              },
+              {
+                "$ref": "#/$defs/CollectionValue"
+              }
+            ],
+            "title": "Value"
+          }
+        },
+        "required": [
+          "port",
+          "value"
+        ],
+        "title": "GraphBinding",
+        "type": "object"
+      },
+      "GraphLimits": {
+        "additionalProperties": false,
+        "properties": {
+          "deadline_seconds": {
+            "default": 3600,
+            "maximum": 86400,
+            "minimum": 1,
+            "title": "Deadline Seconds",
+            "type": "integer"
+          },
+          "max_activations": {
+            "default": 10000,
+            "maximum": 100000,
+            "minimum": 1,
+            "title": "Max Activations",
+            "type": "integer"
+          }
+        },
+        "title": "GraphLimits",
+        "type": "object"
+      },
+      "IntegerConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "integer",
+            "title": "Kind",
+            "type": "string"
+          },
+          "unit": {
+            "default": "1",
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          },
+          "value": {
+            "maximum": 9007199254740991,
+            "minimum": -9007199254740991,
+            "title": "Value",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "IntegerConstant",
+        "type": "object"
+      },
+      "MissingValue": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "missing",
+            "title": "Kind",
+            "type": "string"
+          },
+          "member_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Member Id",
+            "type": "string"
+          },
+          "reason_code": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Reason Code",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "reason_code",
+          "member_id"
+        ],
+        "title": "MissingValue",
+        "type": "object"
+      },
+      "NumberValue": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "number",
+            "title": "Kind",
+            "type": "string"
+          },
+          "unit": {
+            "default": "1",
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          },
+          "value": {
+            "maxLength": 427,
+            "pattern": "^-?(?:(?:0|[1-9][0-9]{0,99})(?:\\.[0-9]{1,324})?|10{100})$",
+            "title": "Value",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "NumberValue",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      },
+      "StringConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "string",
+            "title": "Kind",
+            "type": "string"
+          },
+          "value": {
+            "maxLength": 4096,
+            "title": "Value",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "StringConstant",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:graph-runtime.draft-admission:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "budget": {
+        "$ref": "#/$defs/AttemptBudget"
+      },
+      "draft": {
+        "$ref": "#/$defs/DraftSelection"
+      },
+      "inputs": {
+        "items": {
+          "$ref": "#/$defs/GraphBinding"
+        },
+        "maxItems": 64,
+        "title": "Inputs",
+        "type": "array"
+      },
+      "limits": {
+        "$ref": "#/$defs/GraphLimits",
+        "default": {
+          "deadline_seconds": 3600,
+          "max_activations": 10000
+        }
+      },
+      "plan_sha256": {
+        "pattern": "^[0-9a-f]{64}$",
+        "title": "Plan Sha256",
+        "type": "string"
+      },
+      "schema_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Schema Version",
+        "type": "string"
+      }
+    },
+    "required": [
+      "plan_sha256",
+      "inputs",
+      "budget",
+      "draft"
+    ],
+    "title": "AdmitDraft",
+    "type": "object"
+  },
+  "universe": {
+    "$defs": {
+      "LockEntry": {
+        "additionalProperties": false,
+        "properties": {
+          "checkpoint_schema": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/SchemaRef"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "descriptor_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Descriptor Sha256",
+            "type": "string"
+          },
+          "input_schemas": {
+            "items": {
+              "$ref": "#/$defs/PortSchemaLock"
+            },
+            "maxItems": 64,
+            "title": "Input Schemas",
+            "type": "array"
+          },
+          "output_schemas": {
+            "items": {
+              "$ref": "#/$defs/PortSchemaLock"
+            },
+            "maxItems": 64,
+            "title": "Output Schemas",
+            "type": "array"
+          },
+          "schema_version": {
+            "const": "1",
+            "default": "1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "tool": {
+            "$ref": "#/$defs/ToolBinding"
+          }
+        },
+        "required": [
+          "tool",
+          "descriptor_sha256",
+          "input_schemas",
+          "output_schemas",
+          "checkpoint_schema"
+        ],
+        "title": "LockEntry",
+        "type": "object"
+      },
+      "PortSchemaLock": {
+        "additionalProperties": false,
+        "properties": {
+          "port": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Port",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          }
+        },
+        "required": [
+          "port",
+          "schema_ref"
+        ],
+        "title": "PortSchemaLock",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      },
+      "ToolBinding": {
+        "additionalProperties": false,
+        "properties": {
+          "capability_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Capability Id",
+            "type": "string"
+          },
+          "contract_version": {
+            "const": "1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "image_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Image Sha256",
+            "type": "string"
+          },
+          "release": {
+            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+            "title": "Release",
+            "type": "string"
+          }
+        },
+        "required": [
+          "capability_id",
+          "release",
+          "image_sha256",
+          "contract_version"
+        ],
+        "title": "ToolBinding",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:graph-runtime.definition-universe:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "authority": {
+        "const": "compiler_configuration",
+        "default": "compiler_configuration",
+        "title": "Authority",
+        "type": "string"
+      },
+      "reviewed_tools": {
+        "items": {
+          "$ref": "#/$defs/LockEntry"
+        },
+        "maxItems": 64,
+        "title": "Reviewed Tools",
+        "type": "array"
+      },
+      "schema_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "schemas": {
+        "items": {
+          "$ref": "#/$defs/SchemaRef"
+        },
+        "maxItems": 256,
+        "title": "Schemas",
+        "type": "array"
+      },
+      "scope": {
+        "$ref": "#/$defs/Scope"
+      },
+      "universe_sha256": {
+        "pattern": "^[0-9a-f]{64}$",
+        "title": "Universe Sha256",
+        "type": "string"
+      }
+    },
+    "required": [
+      "scope",
+      "universe_sha256",
+      "reviewed_tools",
+      "schemas"
+    ],
+    "title": "DefinitionUniverse",
+    "type": "object"
+  },
+  "schema": {
+    "$defs": {
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:graph-runtime.definition-schema:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "reference": {
+        "$ref": "#/$defs/SchemaRef"
+      },
+      "schema_bytes_base64": {
+        "maxLength": 87384,
+        "minLength": 4,
+        "pattern": "^[A-Za-z0-9+/]+={0,2}$",
+        "title": "Schema Bytes Base64",
+        "type": "string"
+      },
+      "schema_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "scope": {
+        "$ref": "#/$defs/Scope"
+      },
+      "universe_sha256": {
+        "pattern": "^[0-9a-f]{64}$",
+        "title": "Universe Sha256",
+        "type": "string"
+      }
+    },
+    "required": [
+      "scope",
+      "universe_sha256",
+      "reference",
+      "schema_bytes_base64"
+    ],
+    "title": "DefinitionSchema",
+    "type": "object"
+  },
+  "releases": {
+    "$defs": {
+      "AllowedEgress": {
+        "additionalProperties": false,
+        "properties": {
+          "hosts": {
+            "items": {
+              "maxLength": 253,
+              "minLength": 1,
+              "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*$",
+              "type": "string"
+            },
+            "maxItems": 64,
+            "minItems": 1,
+            "title": "Hosts",
+            "type": "array"
+          },
+          "mode": {
+            "const": "allowlist",
+            "title": "Mode",
+            "type": "string"
+          }
+        },
+        "required": [
+          "mode",
+          "hosts"
+        ],
+        "title": "AllowedEgress",
+        "type": "object"
+      },
+      "CheckpointCompatibility": {
+        "additionalProperties": false,
+        "properties": {
+          "mode": {
+            "enum": [
+              "none",
+              "opaque_artifact"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "readable_schema_sha256": {
+            "items": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "maxItems": 64,
+            "title": "Readable Schema Sha256",
+            "type": "array"
+          }
+        },
+        "required": [
+          "mode",
+          "readable_schema_sha256"
+        ],
+        "title": "CheckpointCompatibility",
+        "type": "object"
+      },
+      "DeniedEgress": {
+        "additionalProperties": false,
+        "properties": {
+          "mode": {
+            "const": "deny",
+            "title": "Mode",
+            "type": "string"
+          }
+        },
+        "required": [
+          "mode"
+        ],
+        "title": "DeniedEgress",
+        "type": "object"
+      },
+      "LockEntry": {
+        "additionalProperties": false,
+        "properties": {
+          "checkpoint_schema": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/SchemaRef"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "descriptor_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Descriptor Sha256",
+            "type": "string"
+          },
+          "input_schemas": {
+            "items": {
+              "$ref": "#/$defs/PortSchemaLock"
+            },
+            "maxItems": 64,
+            "title": "Input Schemas",
+            "type": "array"
+          },
+          "output_schemas": {
+            "items": {
+              "$ref": "#/$defs/PortSchemaLock"
+            },
+            "maxItems": 64,
+            "title": "Output Schemas",
+            "type": "array"
+          },
+          "schema_version": {
+            "const": "1",
+            "default": "1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "tool": {
+            "$ref": "#/$defs/ToolBinding"
+          }
+        },
+        "required": [
+          "tool",
+          "descriptor_sha256",
+          "input_schemas",
+          "output_schemas",
+          "checkpoint_schema"
+        ],
+        "title": "LockEntry",
+        "type": "object"
+      },
+      "Port": {
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Name",
+            "type": "string"
+          },
+          "representation": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Representation",
+            "type": "string"
+          },
+          "required": {
+            "default": true,
+            "title": "Required",
+            "type": "boolean"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          },
+          "unit": {
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "schema_ref",
+          "representation",
+          "unit"
+        ],
+        "title": "Port",
+        "type": "object"
+      },
+      "PortSchemaLock": {
+        "additionalProperties": false,
+        "properties": {
+          "port": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Port",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          }
+        },
+        "required": [
+          "port",
+          "schema_ref"
+        ],
+        "title": "PortSchemaLock",
+        "type": "object"
+      },
+      "ReleaseDescriptor": {
+        "additionalProperties": false,
+        "properties": {
+          "anti_examples": {
+            "items": {
+              "maxLength": 2048,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 16,
+            "minItems": 1,
+            "title": "Anti Examples",
+            "type": "array"
+          },
+          "authority_ceiling": {
+            "enum": [
+              "synthetic_only",
+              "evidence_proposal"
+            ],
+            "title": "Authority Ceiling",
+            "type": "string"
+          },
+          "checkpoint": {
+            "$ref": "#/$defs/CheckpointCompatibility"
+          },
+          "egress": {
+            "discriminator": {
+              "mapping": {
+                "allowlist": "#/$defs/AllowedEgress",
+                "deny": "#/$defs/DeniedEgress"
+              },
+              "propertyName": "mode"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/DeniedEgress"
+              },
+              {
+                "$ref": "#/$defs/AllowedEgress"
+              }
+            ],
+            "title": "Egress"
+          },
+          "examples": {
+            "items": {
+              "maxLength": 2048,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 16,
+            "minItems": 1,
+            "title": "Examples",
+            "type": "array"
+          },
+          "reproducibility": {
+            "enum": [
+              "deterministic",
+              "seeded",
+              "nondeterministic"
+            ],
+            "title": "Reproducibility",
+            "type": "string"
+          },
+          "resources": {
+            "$ref": "#/$defs/ResourceBounds"
+          },
+          "schema_version": {
+            "const": "1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "tool": {
+            "$ref": "#/$defs/ToolDescriptor"
+          }
+        },
+        "required": [
+          "schema_version",
+          "tool",
+          "resources",
+          "egress",
+          "checkpoint",
+          "reproducibility",
+          "authority_ceiling",
+          "examples",
+          "anti_examples"
+        ],
+        "title": "ReleaseDescriptor",
+        "type": "object"
+      },
+      "ReleaseSnapshot": {
+        "additionalProperties": false,
+        "properties": {
+          "descriptor": {
+            "$ref": "#/$defs/ReleaseDescriptor"
+          },
+          "lock": {
+            "$ref": "#/$defs/LockEntry"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "status": {
+            "enum": [
+              "registered",
+              "active",
+              "draining",
+              "revoked"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "scope",
+          "descriptor",
+          "lock",
+          "revision",
+          "status"
+        ],
+        "title": "ReleaseSnapshot",
+        "type": "object"
+      },
+      "ResourceBounds": {
+        "additionalProperties": false,
+        "properties": {
+          "architectures": {
+            "items": {
+              "enum": [
+                "x86_64",
+                "aarch64"
+              ],
+              "type": "string"
+            },
+            "maxItems": 2,
+            "minItems": 1,
+            "title": "Architectures",
+            "type": "array"
+          },
+          "cpu_millicores": {
+            "maximum": 1048576,
+            "minimum": 1,
+            "title": "Cpu Millicores",
+            "type": "integer"
+          },
+          "gpu_count": {
+            "maximum": 64,
+            "minimum": 0,
+            "title": "Gpu Count",
+            "type": "integer"
+          },
+          "max_batch_size": {
+            "maximum": 65536,
+            "minimum": 1,
+            "title": "Max Batch Size",
+            "type": "integer"
+          },
+          "max_parallel_invocations": {
+            "maximum": 1024,
+            "minimum": 1,
+            "title": "Max Parallel Invocations",
+            "type": "integer"
+          },
+          "memory_mib": {
+            "maximum": 1048576,
+            "minimum": 1,
+            "title": "Memory Mib",
+            "type": "integer"
+          },
+          "operating_systems": {
+            "items": {
+              "enum": [
+                "linux",
+                "windows"
+              ],
+              "type": "string"
+            },
+            "maxItems": 2,
+            "minItems": 1,
+            "title": "Operating Systems",
+            "type": "array"
+          },
+          "timeout_seconds": {
+            "maximum": 86400,
+            "minimum": 1,
+            "title": "Timeout Seconds",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "architectures",
+          "operating_systems",
+          "cpu_millicores",
+          "memory_mib",
+          "gpu_count",
+          "timeout_seconds",
+          "max_parallel_invocations",
+          "max_batch_size"
+        ],
+        "title": "ResourceBounds",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      },
+      "ToolBinding": {
+        "additionalProperties": false,
+        "properties": {
+          "capability_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Capability Id",
+            "type": "string"
+          },
+          "contract_version": {
+            "const": "1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "image_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Image Sha256",
+            "type": "string"
+          },
+          "release": {
+            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+            "title": "Release",
+            "type": "string"
+          }
+        },
+        "required": [
+          "capability_id",
+          "release",
+          "image_sha256",
+          "contract_version"
+        ],
+        "title": "ToolBinding",
+        "type": "object"
+      },
+      "ToolDescriptor": {
+        "additionalProperties": false,
+        "properties": {
+          "applicability": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 64,
+            "minItems": 1,
+            "title": "Applicability",
+            "type": "array"
+          },
+          "binding": {
+            "$ref": "#/$defs/ToolBinding"
+          },
+          "checkpoint_schema": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/SchemaRef"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "inputs": {
+            "items": {
+              "$ref": "#/$defs/Port"
+            },
+            "maxItems": 64,
+            "title": "Inputs",
+            "type": "array"
+          },
+          "outputs": {
+            "items": {
+              "$ref": "#/$defs/Port"
+            },
+            "maxItems": 64,
+            "title": "Outputs",
+            "type": "array"
+          },
+          "purpose": {
+            "maxLength": 1024,
+            "minLength": 1,
+            "title": "Purpose",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "side_effects": {
+            "enum": [
+              "pure",
+              "idempotent",
+              "external"
+            ],
+            "title": "Side Effects",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_version",
+          "binding",
+          "purpose",
+          "applicability",
+          "inputs",
+          "outputs",
+          "side_effects"
+        ],
+        "title": "ToolDescriptor",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:tools.release-page:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "items": {
+        "items": {
+          "$ref": "#/$defs/ReleaseSnapshot"
+        },
+        "maxItems": 100,
+        "title": "Items",
+        "type": "array"
+      },
+      "next_after": {
+        "anyOf": [
+          {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Next After"
+      },
+      "schema_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Schema Version",
+        "type": "string"
+      }
+    },
+    "required": [
+      "items",
+      "next_after"
+    ],
+    "title": "ReleasePage",
+    "type": "object"
+  },
+  "release": {
+    "$defs": {
+      "AllowedEgress": {
+        "additionalProperties": false,
+        "properties": {
+          "hosts": {
+            "items": {
+              "maxLength": 253,
+              "minLength": 1,
+              "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*$",
+              "type": "string"
+            },
+            "maxItems": 64,
+            "minItems": 1,
+            "title": "Hosts",
+            "type": "array"
+          },
+          "mode": {
+            "const": "allowlist",
+            "title": "Mode",
+            "type": "string"
+          }
+        },
+        "required": [
+          "mode",
+          "hosts"
+        ],
+        "title": "AllowedEgress",
+        "type": "object"
+      },
+      "CheckpointCompatibility": {
+        "additionalProperties": false,
+        "properties": {
+          "mode": {
+            "enum": [
+              "none",
+              "opaque_artifact"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "readable_schema_sha256": {
+            "items": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "maxItems": 64,
+            "title": "Readable Schema Sha256",
+            "type": "array"
+          }
+        },
+        "required": [
+          "mode",
+          "readable_schema_sha256"
+        ],
+        "title": "CheckpointCompatibility",
+        "type": "object"
+      },
+      "DeniedEgress": {
+        "additionalProperties": false,
+        "properties": {
+          "mode": {
+            "const": "deny",
+            "title": "Mode",
+            "type": "string"
+          }
+        },
+        "required": [
+          "mode"
+        ],
+        "title": "DeniedEgress",
+        "type": "object"
+      },
+      "LockEntry": {
+        "additionalProperties": false,
+        "properties": {
+          "checkpoint_schema": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/SchemaRef"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "descriptor_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Descriptor Sha256",
+            "type": "string"
+          },
+          "input_schemas": {
+            "items": {
+              "$ref": "#/$defs/PortSchemaLock"
+            },
+            "maxItems": 64,
+            "title": "Input Schemas",
+            "type": "array"
+          },
+          "output_schemas": {
+            "items": {
+              "$ref": "#/$defs/PortSchemaLock"
+            },
+            "maxItems": 64,
+            "title": "Output Schemas",
+            "type": "array"
+          },
+          "schema_version": {
+            "const": "1",
+            "default": "1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "tool": {
+            "$ref": "#/$defs/ToolBinding"
+          }
+        },
+        "required": [
+          "tool",
+          "descriptor_sha256",
+          "input_schemas",
+          "output_schemas",
+          "checkpoint_schema"
+        ],
+        "title": "LockEntry",
+        "type": "object"
+      },
+      "Port": {
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Name",
+            "type": "string"
+          },
+          "representation": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Representation",
+            "type": "string"
+          },
+          "required": {
+            "default": true,
+            "title": "Required",
+            "type": "boolean"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          },
+          "unit": {
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "schema_ref",
+          "representation",
+          "unit"
+        ],
+        "title": "Port",
+        "type": "object"
+      },
+      "PortSchemaLock": {
+        "additionalProperties": false,
+        "properties": {
+          "port": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Port",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          }
+        },
+        "required": [
+          "port",
+          "schema_ref"
+        ],
+        "title": "PortSchemaLock",
+        "type": "object"
+      },
+      "ReleaseDescriptor": {
+        "additionalProperties": false,
+        "properties": {
+          "anti_examples": {
+            "items": {
+              "maxLength": 2048,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 16,
+            "minItems": 1,
+            "title": "Anti Examples",
+            "type": "array"
+          },
+          "authority_ceiling": {
+            "enum": [
+              "synthetic_only",
+              "evidence_proposal"
+            ],
+            "title": "Authority Ceiling",
+            "type": "string"
+          },
+          "checkpoint": {
+            "$ref": "#/$defs/CheckpointCompatibility"
+          },
+          "egress": {
+            "discriminator": {
+              "mapping": {
+                "allowlist": "#/$defs/AllowedEgress",
+                "deny": "#/$defs/DeniedEgress"
+              },
+              "propertyName": "mode"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/DeniedEgress"
+              },
+              {
+                "$ref": "#/$defs/AllowedEgress"
+              }
+            ],
+            "title": "Egress"
+          },
+          "examples": {
+            "items": {
+              "maxLength": 2048,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 16,
+            "minItems": 1,
+            "title": "Examples",
+            "type": "array"
+          },
+          "reproducibility": {
+            "enum": [
+              "deterministic",
+              "seeded",
+              "nondeterministic"
+            ],
+            "title": "Reproducibility",
+            "type": "string"
+          },
+          "resources": {
+            "$ref": "#/$defs/ResourceBounds"
+          },
+          "schema_version": {
+            "const": "1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "tool": {
+            "$ref": "#/$defs/ToolDescriptor"
+          }
+        },
+        "required": [
+          "schema_version",
+          "tool",
+          "resources",
+          "egress",
+          "checkpoint",
+          "reproducibility",
+          "authority_ceiling",
+          "examples",
+          "anti_examples"
+        ],
+        "title": "ReleaseDescriptor",
+        "type": "object"
+      },
+      "ResourceBounds": {
+        "additionalProperties": false,
+        "properties": {
+          "architectures": {
+            "items": {
+              "enum": [
+                "x86_64",
+                "aarch64"
+              ],
+              "type": "string"
+            },
+            "maxItems": 2,
+            "minItems": 1,
+            "title": "Architectures",
+            "type": "array"
+          },
+          "cpu_millicores": {
+            "maximum": 1048576,
+            "minimum": 1,
+            "title": "Cpu Millicores",
+            "type": "integer"
+          },
+          "gpu_count": {
+            "maximum": 64,
+            "minimum": 0,
+            "title": "Gpu Count",
+            "type": "integer"
+          },
+          "max_batch_size": {
+            "maximum": 65536,
+            "minimum": 1,
+            "title": "Max Batch Size",
+            "type": "integer"
+          },
+          "max_parallel_invocations": {
+            "maximum": 1024,
+            "minimum": 1,
+            "title": "Max Parallel Invocations",
+            "type": "integer"
+          },
+          "memory_mib": {
+            "maximum": 1048576,
+            "minimum": 1,
+            "title": "Memory Mib",
+            "type": "integer"
+          },
+          "operating_systems": {
+            "items": {
+              "enum": [
+                "linux",
+                "windows"
+              ],
+              "type": "string"
+            },
+            "maxItems": 2,
+            "minItems": 1,
+            "title": "Operating Systems",
+            "type": "array"
+          },
+          "timeout_seconds": {
+            "maximum": 86400,
+            "minimum": 1,
+            "title": "Timeout Seconds",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "architectures",
+          "operating_systems",
+          "cpu_millicores",
+          "memory_mib",
+          "gpu_count",
+          "timeout_seconds",
+          "max_parallel_invocations",
+          "max_batch_size"
+        ],
+        "title": "ResourceBounds",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      },
+      "ToolBinding": {
+        "additionalProperties": false,
+        "properties": {
+          "capability_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Capability Id",
+            "type": "string"
+          },
+          "contract_version": {
+            "const": "1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "image_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Image Sha256",
+            "type": "string"
+          },
+          "release": {
+            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+            "title": "Release",
+            "type": "string"
+          }
+        },
+        "required": [
+          "capability_id",
+          "release",
+          "image_sha256",
+          "contract_version"
+        ],
+        "title": "ToolBinding",
+        "type": "object"
+      },
+      "ToolDescriptor": {
+        "additionalProperties": false,
+        "properties": {
+          "applicability": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 64,
+            "minItems": 1,
+            "title": "Applicability",
+            "type": "array"
+          },
+          "binding": {
+            "$ref": "#/$defs/ToolBinding"
+          },
+          "checkpoint_schema": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/SchemaRef"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "inputs": {
+            "items": {
+              "$ref": "#/$defs/Port"
+            },
+            "maxItems": 64,
+            "title": "Inputs",
+            "type": "array"
+          },
+          "outputs": {
+            "items": {
+              "$ref": "#/$defs/Port"
+            },
+            "maxItems": 64,
+            "title": "Outputs",
+            "type": "array"
+          },
+          "purpose": {
+            "maxLength": 1024,
+            "minLength": 1,
+            "title": "Purpose",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "side_effects": {
+            "enum": [
+              "pure",
+              "idempotent",
+              "external"
+            ],
+            "title": "Side Effects",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_version",
+          "binding",
+          "purpose",
+          "applicability",
+          "inputs",
+          "outputs",
+          "side_effects"
+        ],
+        "title": "ToolDescriptor",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:tools.release-snapshot:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "descriptor": {
+        "$ref": "#/$defs/ReleaseDescriptor"
+      },
+      "lock": {
+        "$ref": "#/$defs/LockEntry"
+      },
+      "revision": {
+        "maximum": 9007199254740991,
+        "minimum": 1,
+        "title": "Revision",
+        "type": "integer"
+      },
+      "scope": {
+        "$ref": "#/$defs/Scope"
+      },
+      "status": {
+        "enum": [
+          "registered",
+          "active",
+          "draining",
+          "revoked"
+        ],
+        "title": "Status",
+        "type": "string"
+      }
+    },
+    "required": [
+      "scope",
+      "descriptor",
+      "lock",
+      "revision",
+      "status"
+    ],
+    "title": "ReleaseSnapshot",
+    "type": "object"
+  },
+  "cancel": {
+    "$id": "urn:amphora:runtime.cancel:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "expected_run_revision": {
+        "anyOf": [
+          {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "title": "Expected Run Revision"
+      },
+      "reason_code": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+        "title": "Reason Code",
+        "type": "string"
+      },
+      "run_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+        "title": "Run Id",
+        "type": "string"
+      }
+    },
+    "required": [
+      "run_id",
+      "reason_code"
+    ],
+    "title": "CancelRun",
+    "type": "object"
+  },
+  "execution_receipt": {
+    "$defs": {
+      "AcceptedReceipt": {
+        "additionalProperties": false,
+        "properties": {
+          "binding": {
+            "$ref": "#/$defs/ReceiptBinding"
+          },
+          "committed": {
+            "$ref": "#/$defs/CommittedReference"
+          },
+          "status": {
+            "const": "accepted",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "binding",
+          "committed"
+        ],
+        "title": "AcceptedReceipt",
+        "type": "object"
+      },
+      "CommandIdentity": {
+        "additionalProperties": false,
+        "properties": {
+          "actor_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Actor Id",
+            "type": "string"
+          },
+          "command_family": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Command Family",
+            "type": "string"
+          },
+          "command_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Command Id",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "1",
+            "default": "1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "command_family",
+          "command_id",
+          "scope",
+          "actor_id"
+        ],
+        "title": "CommandIdentity",
+        "type": "object"
+      },
+      "CommittedReference": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "run",
+              "attempt",
+              "completion",
+              "worker_policy"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "object_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Object Id",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Revision",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "object_id",
+          "revision"
+        ],
+        "title": "CommittedReference",
+        "type": "object"
+      },
+      "PendingReceipt": {
+        "additionalProperties": false,
+        "properties": {
+          "binding": {
+            "$ref": "#/$defs/ReceiptBinding"
+          },
+          "status": {
+            "const": "pending",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "binding"
+        ],
+        "title": "PendingReceipt",
+        "type": "object"
+      },
+      "ReceiptBinding": {
+        "additionalProperties": false,
+        "properties": {
+          "identity": {
+            "$ref": "#/$defs/CommandIdentity"
+          },
+          "operation_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Operation Id",
+            "type": "string"
+          },
+          "request_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Request Sha256",
+            "type": "string"
+          }
+        },
+        "required": [
+          "identity",
+          "request_sha256",
+          "operation_id"
+        ],
+        "title": "ReceiptBinding",
+        "type": "object"
+      },
+      "RejectedReceipt": {
+        "additionalProperties": false,
+        "properties": {
+          "binding": {
+            "$ref": "#/$defs/ReceiptBinding"
+          },
+          "reason_code": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Reason Code",
+            "type": "string"
+          },
+          "status": {
+            "const": "rejected",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "binding",
+          "reason_code"
+        ],
+        "title": "RejectedReceipt",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:runtime.receipt:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "outcome": {
+        "discriminator": {
+          "mapping": {
+            "accepted": "#/$defs/AcceptedReceipt",
+            "pending": "#/$defs/PendingReceipt",
+            "rejected": "#/$defs/RejectedReceipt"
+          },
+          "propertyName": "status"
+        },
+        "oneOf": [
+          {
+            "$ref": "#/$defs/PendingReceipt"
+          },
+          {
+            "$ref": "#/$defs/AcceptedReceipt"
+          },
+          {
+            "$ref": "#/$defs/RejectedReceipt"
+          }
+        ],
+        "title": "Outcome"
+      },
+      "schema_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Schema Version",
+        "type": "string"
+      }
+    },
+    "required": [
+      "outcome"
+    ],
+    "title": "CommandReceipt",
+    "type": "object"
+  },
+  "identity": {
+    "$defs": {
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:commands.identity:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "actor_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+        "title": "Actor Id",
+        "type": "string"
+      },
+      "command_family": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+        "title": "Command Family",
+        "type": "string"
+      },
+      "command_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+        "title": "Command Id",
+        "type": "string"
+      },
+      "schema_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "scope": {
+        "$ref": "#/$defs/Scope"
+      }
+    },
+    "required": [
+      "command_family",
+      "command_id",
+      "scope",
+      "actor_id"
+    ],
+    "title": "CommandIdentity",
+    "type": "object"
+  }
+}
