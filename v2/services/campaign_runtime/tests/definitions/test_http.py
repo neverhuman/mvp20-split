@@ -94,3 +94,25 @@ def test_host_authoring_is_explicit_and_typed(graph_env, tmp_path, monkeypatch):
         path.write_text(json.dumps(raw), encoding="utf-8")
         with pytest.raises(ValueError, match="explicitly configured graphs"):
             Host.load(path)
+
+
+def test_draft_registry_is_explicit_server_side_host_configuration(graph_env, tmp_path, monkeypatch):
+    path, raw = graph_host(graph_env, tmp_path, monkeypatch)
+    monkeypatch.setenv("TEST_REGISTRY_KEY", "r" * 32)
+    raw["draft_registry"] = {"endpoint": "http://127.0.0.1:1234", "token_env": "TEST_REGISTRY_KEY", "actor_id": "selector"}
+    path.write_text(json.dumps(raw), encoding="utf-8")
+    with pytest.raises(ValueError, match="requires authoring"):
+        Host.load(path)
+    raw["authoring"] = True
+    path.write_text(json.dumps(raw), encoding="utf-8")
+    host = Host.load(path)
+    try:
+        assert host.graphs[0].drafts.eligibility.actor_id == "selector"
+        assert host.graphs[0].drafts.eligibility.maximum_age_seconds == 5
+        assert host.graphs[0].drafts.eligibility.token == "r" * 32
+    finally:
+        host.close()
+    raw["draft_registry"]["maximum_age_seconds"] = 0
+    path.write_text(json.dumps(raw), encoding="utf-8")
+    with pytest.raises(ValueError, match="bounded observation age"):
+        Host.load(path)

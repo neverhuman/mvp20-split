@@ -21,6 +21,7 @@ from .coordinator.configuration import load_graphs
 from .coordinator.plans import PlanCatalog
 from .coordinator.projections import ArtifactProjections
 from .definitions.admission import DraftAdmissionGuard
+from .definitions.eligibility import RegistryEligibility
 from .definitions.published import PublishedPlanCatalog
 from .definitions.universes import from_graphs
 from .delivery.model import DeliveryPolicy
@@ -55,7 +56,7 @@ class Host:
     def load(cls, path):
         raw = json.loads(Path(path).read_text(encoding="utf-8"))
         if not {"database_url_env", "principals", "fixtures"} <= set(raw) or set(raw) - {
-            "database_url_env", "principals", "fixtures", "tools", "artifacts", "delivery", "inspection", "graphs", "projections", "bindings", "authoring"}:
+            "database_url_env", "principals", "fixtures", "tools", "artifacts", "delivery", "inspection", "graphs", "projections", "bindings", "authoring", "draft_registry"}:
             raise ValueError("Explicit database, principals and fixture allowlist required")
         entries, principals = [], []
         for item in raw["principals"]:
@@ -79,6 +80,14 @@ class Host:
         if type(authoring) is not bool or authoring and graph_catalog is None:
             raise ValueError("Authoring requires explicitly configured graphs")
         universes = from_graphs(reviewed) if authoring else None
+        eligibility = None
+        if "draft_registry" in raw:
+            peer = raw["draft_registry"]
+            if (not authoring or not {"endpoint", "token_env", "actor_id"} <= set(peer)
+                    or set(peer) - {"endpoint", "token_env", "actor_id", "maximum_age_seconds"}):
+                raise ValueError("Draft Registry configuration requires authoring and explicit peer identity")
+            eligibility = RegistryEligibility(peer["endpoint"], os.environ[peer["token_env"]], peer["actor_id"],
+                                               maximum_age_seconds=peer.get("maximum_age_seconds", 5))
         catalog = FixtureCatalog((AdmitFixtureRun.model_validate_json(json.dumps(d)) for d in raw["fixtures"]),
                                  (ToolDescriptor.model_validate_json(json.dumps(d)) for d in raw.get("tools", [])),
                                  allow_empty=graph_catalog is not None)
@@ -145,7 +154,7 @@ class Host:
                 with engine.connect() as conn:
                     conn.execute(text("SELECT validation_id FROM runtime.definition_admissions LIMIT 0"))
             bindings = None if publisher is None else BindingCoordinator(engine, PublishedPlanCatalog(engine, graph_catalog), artifacts, publisher)
-            drafts = DraftAdmissionGuard(engine, universes) if authoring else None
+            drafts = DraftAdmissionGuard(engine, universes, eligibility) if authoring else None
             return cls(FixtureAdmission(engine, catalog), credentials, tuple(principals), completion,
                        DeliveryWorker(DeliveryStore(engine, policy), targets),
                        None if cursors is None else RuntimeHistory(engine, cursors),

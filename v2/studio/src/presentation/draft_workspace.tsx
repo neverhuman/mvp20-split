@@ -6,6 +6,7 @@ import { DraftComparison } from "../page_models/design/draft_comparison.js";
 import type { ControlEdge, ExecutableScopeV4 } from "../contracts/generated/authoring/save.js";
 import { parseDraftJSON } from "../page_models/design/scalar_input.js";
 import { GraphCanvas } from "./graph_canvas.js";
+import { DraftActivationControl } from "./draft_activation.js";
 import { DraftInspector } from "./draft_inspector.js";
 import { DraftComparisonView } from "./draft_comparison.js";
 import "./style.css";
@@ -25,10 +26,10 @@ function BoundDraftWorkspace({ commands, catalog, synthetic }: { commands: Draft
   const [rawScope, setRawScope] = useState<string | null>(null);
   const [rawScopeBase, setRawScopeBase] = useState<string | null>(null);
   const edits = useMemo(() => new DraftEdits(commands.session, catalog), [commands, catalog]);
-  useEffect(() => { const a = commands.subscribe(refresh), b = catalog.subscribe(refresh), c = commands.rebase.subscribe(refresh); void catalog.refresh(); return () => { a(); b(); c(); }; }, [commands, catalog, refresh]);
+  useEffect(() => { const a = commands.subscribe(refresh), b = catalog.subscribe(refresh), c = commands.rebase.subscribe(refresh), d = commands.activation.subscribe(refresh); void catalog.refresh(); return () => { a(); b(); c(); d(); }; }, [commands, catalog, refresh]);
   const session = commands.session.snapshot, discovery = catalog.snapshot, command = commands.snapshot, rebase = commands.rebase.snapshot;
   const disabled = session.denied || discovery.phase === "denied";
-  useEffect(() => { if (discovery.phase === "denied" && !session.denied) commands.deny(); }, [commands, discovery.phase, session.denied]);
+  useEffect(() => { if ((discovery.phase === "denied" || session.denied) && command.phase !== "denied") commands.deny(); }, [commands, discovery.phase, session.denied, command.phase]);
   useEffect(() => { if (session.denied && discovery.phase !== "denied") catalog.deny(); }, [catalog, discovery.phase, session.denied]);
   let scope: ExecutableScopeV4 | undefined;
   try { scope = edits.scope(path); } catch { /* An acknowledged replacement can remove this nested scope. */ }
@@ -104,6 +105,7 @@ function BoundDraftWorkspace({ commands, catalog, synthetic }: { commands: Draft
         </details>}
       </>}
       <footer>Save retains a draft revision. Validation is structural; activation and current tool eligibility are separate owner checks.</footer>
+      <DraftActivationControl model={commands.activation} />
     </main>
   </div>;
 }

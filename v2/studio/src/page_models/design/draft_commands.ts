@@ -3,6 +3,7 @@ import type { AuthoringClient } from "../../transport/authoring.js";
 import { AuthoringFailure } from "../../transport/authoring.js";
 import type { Submission } from "../../transport/submission.js";
 import { RequestLane } from "../request_lane.js";
+import { DraftActivation } from "./draft_activation.js";
 import { DraftRebase } from "./draft_rebase.js";
 import { DraftSession } from "./draft_session.js";
 
@@ -17,7 +18,8 @@ export class DraftCommands {
   private view: { phase: DraftCommandPhase; error: AuthoringFailure | undefined } = { phase: "idle", error: undefined };
 
   readonly rebase: DraftRebase;
-  constructor(readonly session: DraftSession, private readonly source: DraftCommandSource) { this.rebase = new DraftRebase(session, source); }
+  readonly activation: DraftActivation;
+  constructor(readonly session: DraftSession, private readonly source: DraftCommandSource) { this.rebase = new DraftRebase(session, source); this.activation = new DraftActivation(session, source); }
   get snapshot() { return this.view; }
   subscribe(listener: () => void) { this.listeners.add(listener); return () => { this.listeners.delete(listener); }; }
 
@@ -31,10 +33,10 @@ export class DraftCommands {
   }
 
   deny() {
-    this.lane.cancel(); this.session.deny(); this.rebase.deny();
+    this.lane.cancel(); this.session.deny(); this.rebase.deny(); this.activation.deny();
     this.patch("denied", new AuthoringFailure("denied", !!this.session.unresolvedCommand));
   }
-  dispose() { this.disposed = true; this.lane.cancel(); this.rebase.dispose(); this.listeners.clear(); }
+  dispose() { this.disposed = true; this.lane.cancel(); this.rebase.dispose(); this.activation.dispose(); this.listeners.clear(); }
 
   private requireActive() { if (this.view.phase === "conflict") throw new Error("command_identity_conflict"); if (this.disposed || this.session.snapshot.denied) throw new Error("session_unavailable"); }
   private patch(phase: DraftCommandPhase, error?: AuthoringFailure) {

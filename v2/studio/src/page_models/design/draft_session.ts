@@ -2,6 +2,8 @@ import { decodeAuthoring } from "../../contracts/authoring.js";
 import type { AuthoringWire, CommandIdentity, DraftCommandReceipt, DraftRevision, DraftValidation, SaveDraft } from "../../contracts/authoring.js";
 import { Submission } from "../../transport/submission.js";
 
+export type ActivationParameters = Pick<AuthoringWire["admit"], "inputs" | "budget" | "limits">;
+
 type Scope = CommandIdentity["scope"];
 type LocalDraft = Pick<SaveDraft, "title" | "definition">;
 type Pending = { command: Submission<"save"> | Submission<"validate">; editVersion: number; binding?: string; terminal?: string; conflicted?: boolean };
@@ -72,6 +74,19 @@ export class DraftSession {
     const command = this.makeSubmission(commandId, "validate", { draft_id: this.draftId, revision: this.base.head.revision, content_sha256: this.base.head.content_sha256 });
     this.pending = { command, editVersion: this.editVersion }; this.reason = undefined;
     return command;
+  }
+
+  admission(commandId: string, parameters: ActivationParameters): Submission<"admit"> {
+    this.requireAvailable();
+    if (!this.snapshot.validationMatchesDraft || !this.validation?.structurally_valid || !this.validation.plan_sha256)
+      throw new Error("current_validated_draft_required");
+    const context = JSON.parse(this.context) as Pick<CommandIdentity, "actor_id" | "scope">;
+    const validated = this.validation;
+    return new Submission("admit", { ...context, command_id: commandId, command_family: "graph.admit_draft" }, {
+      ...parameters, plan_sha256: validated.plan_sha256!, draft: { draft_id: this.draftId,
+        revision: validated.revision, content_sha256: validated.content_sha256,
+        validation_id: validated.validation_id, universe_sha256: validated.universe_sha256 },
+    });
   }
 
   /** Caller follows accepted receipts to exact public records before releasing the pending command. */

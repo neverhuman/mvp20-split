@@ -20,10 +20,10 @@ const server = createServer(async (req, res) => {
     const runtime = path.startsWith('/api/runtime/v1/') && (job.mode === 'cancel'
       ? [ `/api/runtime/v1/graph-observations/${encodeURIComponent(job.run)}/nodes`, `/api/runtime/v1/graph-observations/${encodeURIComponent(job.run)}/invalidations`, '/api/runtime/v1/runs/cancel'].includes(path) || path.startsWith('/api/runtime/v1/commands/runtime.cancel/')
       : path === `/api/runtime/v1/definition-drafts/${encodeURIComponent(job.draft)}` ||
-        ['/api/runtime/v1/definition-drafts/save', '/api/runtime/v1/definition-drafts/validate', '/api/runtime/v1/definition-universe'].includes(path) ||
-        ['/api/runtime/v1/definition-schemas/', '/api/runtime/v1/definition-validations/', '/api/runtime/v1/definition-commands/definition.save/', '/api/runtime/v1/definition-commands/definition.validate/'].some(prefix => path.startsWith(prefix)));
+        ['/api/runtime/v1/definition-drafts/save', '/api/runtime/v1/definition-drafts/validate', '/api/runtime/v1/definition-universe', '/api/runtime/v1/graph-runs/drafts'].includes(path) ||
+        ['/api/runtime/v1/definition-schemas/', '/api/runtime/v1/definition-validations/', '/api/runtime/v1/definition-commands/definition.save/', '/api/runtime/v1/definition-commands/definition.validate/', '/api/runtime/v1/commands/graph.admit_draft/'].some(prefix => path.startsWith(prefix)));
     if (registry || runtime) {
-      const permittedPost = job.mode === 'cancel' ? path.endsWith('/runs/cancel') : job.mode === 'edit' && ['/definition-drafts/save', '/definition-drafts/validate'].some(suffix => path.endsWith(suffix));
+      const permittedPost = job.mode === 'cancel' ? path.endsWith('/runs/cancel') : (job.mode === 'edit' && ['/definition-drafts/save', '/definition-drafts/validate'].some(suffix => path.endsWith(suffix))) || (job.mode.startsWith('activate') && ['/definition-drafts/validate', '/graph-runs/drafts'].some(suffix => path.endsWith(suffix)));
       if (req.method !== 'GET' && !(req.method === 'POST' && permittedPost)) { res.writeHead(405); res.end(); return; }
       const chunks = []; let size = 0;
       for await (const chunk of req) { size += chunk.length; assert.ok(size <= 262144); chunks.push(chunk); }
@@ -86,6 +86,18 @@ try {
       assert.equal(result.validation.structurally_valid, true, JSON.stringify(result.validation.findings));
       assert.equal(submitted[0].encoding, 'amphora-command-v2');
       result = { ...result, receipts: received, submissions: submitted, schema_reference: schemaReference };
+    } else if (job.mode.startsWith('activate')) {
+      await page.getByRole('button', { name: 'Validate saved revision', exact: true }).click();
+      await page.waitForFunction(() => window.authoringIntegration.commands.session.snapshot.validationMatchesDraft);
+      const region = page.getByRole('region', { name: 'Next campaign activation', exact: true });
+      await region.getByText('Campaign inputs and limits', { exact: true }).click();
+      await region.getByLabel('Campaign input bindings', { exact: true }).fill(JSON.stringify(job.inputs));
+      await region.getByRole('button', { name: 'Request next campaign', exact: true }).click();
+      await page.waitForFunction(expected => window.authoringIntegration.commands.activation.snapshot.phase === expected,
+        job.expected_reason ? 'rejected' : 'accepted');
+      assert.equal(submitted.length, 2); assert.equal(submitted[1].identity.command_family, 'graph.admit_draft');
+      if (job.expected_reason) assert.equal(received[1].outcome.reason_code, job.expected_reason);
+      result = { receipt: received[1], submission: submitted[1] };
     } else {
       const reads = await page.evaluate(async old => {
         const client = window.authoringIntegration.client, signal = new AbortController().signal;
@@ -114,7 +126,7 @@ try {
   if (page) {
     await page.screenshot({ path: resolve(job.output, 'failure.png'), fullPage: true }).catch(() => undefined);
     const state = await page.evaluate(() => ({ catalog: window.authoringIntegration?.catalog?.snapshot.phase,
-      command: window.authoringIntegration?.commands?.snapshot.phase, reason: window.authoringIntegration?.commands?.session.snapshot.reason,
+      command: window.authoringIntegration?.commands?.snapshot.phase, activation: window.authoringIntegration?.commands?.activation?.snapshot, reason: window.authoringIntegration?.commands?.session.snapshot.reason,
       emergency: window.authoringIntegration?.emergency?.snapshot.phase, monitor: window.authoringIntegration?.monitor?.snapshot.phase,
       observedRevision: window.authoringIntegration?.monitor?.snapshot.window?.snapshot.cut.revision })).catch(() => null);
     await writeFile(resolve(job.output, 'failure.json'), JSON.stringify({ mode: job.mode, state, browserErrors: errors, error: String(error) }, null, 2));

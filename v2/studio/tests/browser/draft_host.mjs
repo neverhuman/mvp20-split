@@ -32,6 +32,15 @@ export async function startDraftHost() {
           let body = ''; for await (const chunk of req) body += chunk;
           const command = JSON.parse(body), id = command.identity.command_id;
           const binding = { identity: command.identity, operation_id: id, request_sha256: createHash('sha256').update(body).digest('hex') };
+          if (url.pathname.endsWith('/graph-runs/drafts')) {
+            if (state.mode === 'activation-denied') { json(403, { detail: 'private diagnostics' }); return; }
+            if (state.mode === 'activation-collision') { json(409, { reason_code: 'command_identity_conflict' }); return; }
+            const outcome = state.mode === 'activation-active'
+              ? { binding, status: 'rejected', reason_code: 'active_run_exists' }
+              : { binding, status: 'accepted', committed: { kind: 'run', object_id: 'new-run', revision: 0 } };
+            state.receipts.set(id, { outcome });
+            json(state.mode === 'activation-lost' ? 503 : 200, state.mode === 'activation-lost' ? {} : { outcome }); return;
+          }
           if (state.mode === 'identity-conflict') { json(409, { reason_code: 'command_identity_conflict' }); return; }
           if (state.mode === 'save-denied') { json(403, { detail: 'private save diagnostics' }); return; }
           if (state.mode === 'conflict') { json(200, { outcome: { status: 'rejected', binding, reason_code: 'draft_revision_conflict' } }); return; }
@@ -53,6 +62,7 @@ export async function startDraftHost() {
           if (state.saveGate && url.pathname.endsWith('/save')) await state.saveGate;
           json(state.mode === 'lost-ack' ? 503 : 200, state.mode === 'lost-ack' ? { detail: 'receipt unavailable' } : receipt); return;
         }
+        if (url.pathname.includes('/commands/graph.admit_draft/')) { json(200, state.receipts.get(url.pathname.split('/').at(-1))); return; }
         if (url.pathname.includes('/definition-commands/')) { json(200, state.receipts.get(url.pathname.split('/').at(-1))); return; }
         if (url.pathname.includes('/definition-validations/')) { json(200, state.validations.get(url.pathname.split('/').at(-1))); return; }
         if (url.pathname.endsWith('/definition-drafts/draft')) { json(200, state.records.get(Number(url.searchParams.get('revision') ?? state.head.head.revision))); return; }

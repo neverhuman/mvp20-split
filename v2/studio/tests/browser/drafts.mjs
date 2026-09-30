@@ -13,13 +13,13 @@ const evidence = { verified_at: new Intl.DateTimeFormat('sv-SE', { timeZone: 'Am
   timezone: 'America/Chicago', status: 'running', scenarios: [], screenshots: [], limits: ['Scripted public HTTP peer; validation replies are fixtures, not actual Runtime compilation or authority.', 'No deployed gateway, scientific or target-host acceptance.'] };
 let releaseSave;
 try {
-  for (const name of ['compose', 'compose-narrow', 'dense', 'lost-ack', 'conflict', 'identity-conflict', 'rebase', 'pending-edit', 'save-denied', 'catalog-denied']) {
+  for (const name of ['compose', 'compose-narrow', 'dense', 'lost-ack', 'conflict', 'identity-conflict', 'rebase', 'pending-edit', 'save-denied', 'catalog-denied', 'activation-accepted', 'activation-active', 'activation-lost', 'activation-denied', 'activation-collision']) {
     Object.assign(host.state, { mode: 'ready', head: revision(), records: new Map([[1, revision()]]), receipts: new Map(), validations: new Map(), requests: [], saveGate: null });
     if (name === 'dense') {
       host.state.head.definition.body.nodes = Array.from({ length: 256 }, (_, index) => ({ kind: 'finish', node_id: `node-${index}-${'long-label-'.repeat(8)}`, outputs: [] }));
       host.state.records.set(1, structuredClone(host.state.head));
     }
-    const composing = name.startsWith('compose');
+    const composing = name.startsWith('compose'), activating = name.startsWith('activation-');
     const context = await browser.newContext({ viewport: name === 'compose-narrow' ? { width: 390, height: 844 } : { width: 1440, height: 1000 }, reducedMotion: 'reduce' });
     const page = await context.newPage(), errors = []; page.on('pageerror', error => errors.push(error.message));
     await page.goto(host.url);
@@ -55,7 +55,7 @@ try {
       assert.equal(await page.locator('.react-flow__node').count(), 56);
       assert.equal(await page.getByRole('navigation', { name: 'Draft nodes', exact: true }).getByRole('button').last().evaluate(button => button.scrollHeight <= button.clientHeight), true);
     }
-    host.state.mode = composing || name === 'pending-edit' || name === 'dense' ? 'ready' : name === 'rebase' ? 'conflict' : name;
+    host.state.mode = composing || activating || name === 'pending-edit' || name === 'dense' ? 'ready' : name === 'rebase' ? 'conflict' : name;
     if (name === 'catalog-denied') {
       await page.getByRole('button', { name: 'Refresh tool library', exact: true }).click();
       await page.waitForFunction(() => window.draftHarness.commands.session.snapshot.denied);
@@ -92,10 +92,25 @@ try {
         await page.getByRole('button', { name: 'Validate saved revision', exact: true }).click();
         await page.waitForFunction(() => window.draftHarness.commands.session.snapshot.validationMatchesDraft);
       }
-      if (composing) {
+      if (composing || activating) {
         await page.getByRole('button', { name: 'Validate saved revision', exact: true }).click();
         await page.waitForFunction(() => window.draftHarness.commands.session.snapshot.validationMatchesDraft);
       }
+    }
+    if (activating) {
+      host.state.mode = name;
+      const region = page.getByRole('region', { name: 'Next campaign activation', exact: true });
+      await region.getByRole('button', { name: 'Request next campaign', exact: true }).click();
+      const phase = ({ 'activation-accepted': 'accepted', 'activation-active': 'rejected', 'activation-lost': 'unresolved',
+        'activation-denied': 'denied', 'activation-collision': 'conflict' })[name];
+      await page.waitForFunction(phase => window.draftHarness.commands.activation.snapshot.phase === phase, phase);
+      if (name === 'activation-lost') {
+        await region.getByRole('button', { name: 'Check original activation receipt', exact: true }).click();
+        await page.waitForFunction(() => window.draftHarness.commands.activation.snapshot.phase === 'accepted');
+      }
+      assert.equal(host.state.requests.filter(request => request.method === 'POST' && request.path.endsWith('/graph-runs/drafts')).length, 1);
+      if (name === 'activation-active') await region.getByText(/active_run_exists/).waitFor();
+      if (name === 'activation-collision') assert.equal(await region.getByRole('button', { name: 'Check original activation receipt', exact: true }).count(), 0);
     }
     if (!composing) assert.equal(await page.getByLabel('Draft title', { exact: true }).inputValue(), name === 'pending-edit' ? 'Newer local edit' : 'Local work to retain');
     if (name === 'pending-edit' || name === 'conflict') assert.equal(await page.evaluate(() => window.draftHarness.commands.session.snapshot.dirty), true);

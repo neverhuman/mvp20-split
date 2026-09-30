@@ -22,18 +22,21 @@ class AuthoringEnvironment(OBSERVATION.BrowserEnvironment):
         self.tokens.update(studio_author=uuid.uuid4().hex, studio_cancel=uuid.uuid4().hex)
         config = json.loads(Path(self.runtime.config).read_bytes())
         config["authoring"] = True
-        config["principals"].extend([self.principal("studio_author", ["read", "author", "validate"]),
+        self.eligibility_relay = HTTP.FaultRelay(self.registry.endpoint)
+        self.resources.append(self.eligibility_relay)
+        config["draft_registry"] = {"endpoint": self.eligibility_relay.endpoint, "token_env": "TOKEN_RUNTIME", "actor_id": "runtime"}
+        config["principals"].extend([self.principal("studio_author", ["read", "author", "validate", "admit"]),
                                      self.principal("studio_cancel", ["read", "cancel"])])
         port = self.runtime.port
         self.runtime.close()
         self.runtime = self.host("runtime", "amphora_campaign_runtime", config, "AMPHORA_RUNTIME_DATABASE_URL", port)
         registry = json.loads(Path(self.registry.config).read_bytes())
-        registry["principals"].append(self.principal("studio_author", ["read"]))
+        registry["principals"].extend([self.principal("studio_author", ["read"]), self.principal("runtime", ["resolve"])])
         port = self.registry.port
         self.registry.close()
         self.registry = self.host("registry", "amphora_capability_registry", registry, "AMPHORA_REGISTRY_DATABASE_URL", port)
 
-    def authoring_browser(self, mode, *, old=None):
+    def authoring_browser(self, mode, *, old=None, inputs=None, expected_reason=None):
         replacement = mode == "replacement"
         label = "replacement" if replacement else "original"
         actor = "studio_cancel" if mode == "cancel" else "studio_author"
@@ -45,7 +48,7 @@ class AuthoringEnvironment(OBSERVATION.BrowserEnvironment):
         result = subprocess.run([self.config["node"], "tests/integration/authoring_browser.mjs"],
             cwd=self.config["studio"][label], env=env, input=json.dumps({"endpoint": self.runtime.endpoint,
                 "registry_endpoint": self.registry.endpoint, "scope": self.scope, "actor": actor,
-                "run": self.active_run, "draft": "studio-draft", "mode": mode, "old": old, "output": str(output)}),
+                "run": self.active_run, "draft": "studio-draft", "mode": mode, "old": old, "inputs": inputs, "expected_reason": expected_reason, "output": str(output)}),
             text=True, capture_output=True, encoding="utf-8", timeout=180, check=False,
             creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0)
         assert result.returncode == 0, "Authoring browser failed: " + result.stderr[-2500:] + result.stdout[-1000:]
@@ -84,6 +87,50 @@ class AuthoringEnvironment(OBSERVATION.BrowserEnvironment):
             self.record("STUDIO-AUTHORING-REPLACEMENT", {"draft_revision": actual["record"]["head"],
                 "original_receipts_preserved": True, "independent_browser_and_runtime_replaced": True})
 
+    def activation_inputs(self):
+        tool = self.stages["seed"]
+        artifact = self.publish(tool, {**self.oracle["config"], "source_pins": tool.image["golden_input"]["source_pins"]})
+        port = tool.descriptor["inputs"][0]
+        return [{"port": "parameters", "value": {"kind": "artifact", "artifact": artifact,
+                 "representation": port["representation"], "unit": port["unit"]}}]
+
+    def activate_draft(self):
+        for tool in self.tools:
+            self.refresh_capacity(tool)
+        inputs = self.activation_inputs()
+        first = self.authoring_browser("activate", inputs=inputs)
+        receipt = first["receipt"]
+        assert receipt["outcome"]["status"] == "accepted", receipt
+        self.active_run = receipt["outcome"]["committed"]["object_id"]
+        assert self.graph()["status"] == "running"
+        assert any(event["path"] == "/v1/registry/resolve" for event in self.eligibility_relay.events)
+        # A separate new consumer cannot start a second campaign while this run is active.
+        blocked = self.authoring_browser("activate-running", inputs=inputs, expected_reason="active_run_exists")
+        assert blocked["receipt"]["outcome"]["reason_code"] == "active_run_exists"
+        completed, reports = self.execute()
+        assert completed["status"] == "completed" and len(reports) == 5
+        before = len(self.eligibility_relay.events)
+        # Exact terminal replay creates neither a new run nor fresh Registry observations.
+        replay = HTTP.decoded(self.runtime.endpoint, "/v1/graph-runs/drafts", self.tokens["studio_author"], first["submission"])
+        assert replay == receipt and len(self.eligibility_relay.events) == before
+        self.record("STUDIO-DRAFT-ACTIVATION-OWNER", {"run": self.active_run, "receipt": receipt,
+            "running_campaign_rejected": True, "executed_tool_invocations": len(reports), "original_replay_preserved": True,
+            "registry_requests": self.eligibility_relay.events, "scientific_acceptance": "not_established"})
+        self.activation = first
+
+    def revoke_draft_tool(self):
+        tool = self.stages["seed"]
+        current = HTTP.decoded(self.registry.endpoint, "/v1/releases/" + tool.lock["descriptor_sha256"], self.tokens["studio_author"])
+        revoked = self.registry_call("revoke", {"release": tool.lock, "expected_revision": current["revision"]})
+        assert revoked["status"] == "accepted"
+        rejected = self.authoring_browser("activate-revoked", inputs=self.activation_inputs(), expected_reason="draft_tool_ineligible")
+        assert rejected["receipt"]["outcome"]["reason_code"] == "draft_tool_ineligible"
+        old = self.activation
+        replay = HTTP.decoded(self.runtime.endpoint, "/v1/graph-runs/drafts", self.tokens["studio_author"], old["submission"])
+        assert replay == old["receipt"]
+        self.record("STUDIO-DRAFT-REVOKED-TOOL", {"release": tool.lock, "rejection": rejected["receipt"],
+            "prior_admission_replay_preserved": True})
+
     def emergency(self):
         tool = self.stages["seed"]
         artifact = self.publish(tool, {**self.oracle["config"], "source_pins": tool.image["golden_input"]["source_pins"]})
@@ -113,7 +160,9 @@ def main():
         try:
             e.setup()
             OBSERVATION.OBSERVED.SOLVER.scenarios(e)
+            e.activate_draft()
             e.emergency()
+            e.revoke_draft_tool()
             e.record("STUDIO-INDEPENDENT-BUILDS", config["studio_pins"])
             e.save("passed")
             print("Actual-owner Studio authoring passed; scope " + e.scope["project_id"], flush=True)

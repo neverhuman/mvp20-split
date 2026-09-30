@@ -46,3 +46,9 @@ A tool replacement has the same JSON shape but different units or authority ceil
 ## Design Basis and Open Decisions
 
 [Graph Design Reference](../Requirements/Graph_Native_Research_Engine.md) provides authored graph semantics. Remaining decisions: concrete graph schema/version migration, expression language for conditions and bounded topology operators. Conditions must be typed and inspectable rather than unrestricted executable strings.
+
+## Initial Admission Consistency Profile
+
+Structural validation pins immutable draft content and a reviewed tool/schema universe. Current eligibility remains a separate Runtime admission check against exact public Registry observations. Resolve calls happen before the short owner transaction; Runtime rechecks draft head, reviewed universe, observation timestamps, budget and the single-active-campaign guard using its database clock before publication. Accepted eligibility evidence is retained atomically with run/receipt provenance. A terminal admission replay preserves its original outcome rather than consulting changed dependencies.
+
+The initial Registry policy is synthetic-only. Capacity/eligibility observations have bounded freshness and expiry but are not reservations or scientific acceptance. A lifecycle change after observation is not an atomic distributed revocation barrier; Runtime attempt/fence/acceptance authority remains separate. Missing or unusable current evidence rejects new admission. Stronger distributed reservation/revocation guarantees require a separately scoped protocol, not reinterpretation of the current Registry candidate contract.
