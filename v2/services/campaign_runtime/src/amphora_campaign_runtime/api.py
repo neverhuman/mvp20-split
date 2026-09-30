@@ -85,16 +85,21 @@ class RequestBounds:
         return await self.app(scope, replay, send)
 
 
-def create_app(admission=None, credentials=None, completion=None, history=None, graphs=None) -> FastAPI:
+def create_app(admission=None, credentials=None, completion=None, history=None, graphs=None, authoring=False) -> FastAPI:
     app = FastAPI(title="Amphora runtime foundation", version="0.1.0")
     app.add_middleware(RequestBounds)
     if (admission is None) != (credentials is None):
         raise ValueError("Admission and credentials must be configured together")
     if (completion is not None or history is not None or graphs is not None) and admission is None:
         raise ValueError("Completion/history requires configured lifecycle")
+    if type(authoring) is not bool or authoring and graphs is None:
+        raise ValueError("Authoring requires explicitly configured graphs")
     if admission is not None:
         from .lifecycle.http import install_admission
         install_admission(app, admission, credentials, completion, graph_mode=graphs is not None)
+        if authoring:
+            from .definitions.http import install_definitions
+            install_definitions(app, admission.commands.engine, credentials)
         if graphs is not None:
             from .coordinator.http import install_graphs
             install_graphs(app, graphs[0], graphs[1], credentials, None if completion is None else completion.artifacts)

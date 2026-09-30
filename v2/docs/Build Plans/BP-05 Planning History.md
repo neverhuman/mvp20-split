@@ -155,3 +155,11 @@ Coherence audit corrected_ready at c262e33. Definitions belong to a focused Runt
 ## 2026-09-29 22:18:36 - partial B1
 
 Partial B1 authoring contracts/domain checkpoint: graph-runtime0.8.0 and Runtime0.14.0 add public draft save/validate/revision/page/validation/receipt DTOs and pure immutable revision objects.86 scoped contract/domain/dev tests pass;194 schemas published and all182 predecessor schema bytes preserved. No draft database/API/activation integration or Studio authoring yet; B1 remains0/4, Build0%, Acceptance0%; parent50% unchanged.
+
+## 2026-09-29 22:29:38 - Save/read boundary preparation
+
+Runtime-private migration, atomic draft save and scoped read/receipt HTTP pass9 focused real-PostgreSQL/API tests. Full foundation/install gate is running; B1 remains0/4, parent50%. Validation/admission responsibilities are decomposed in the active plan before implementation.
+
+## 2026-09-29 22:38:36 - draft save/read verified
+
+Draft save/read checkpoint verified:9 focused real-PostgreSQL/API/domain tests; full foundation1263 Python +65 Node tests,19 independent installs, Registry replacement4630d6328e264bf68d893efedda7cdc1 and REC-01..09 scope6668df086dcc4c6ab407f88aba92e4d9 pass. Runtime0.14.0/graph-runtime0.8.0;194 schemas preserve182 predecessor bytes. Validation, publication/admission and Studio authoring remain; child0%=0/4, Build0%, Acceptance0%, parent50%=8/16 unchanged.

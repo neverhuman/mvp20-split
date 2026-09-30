@@ -38,9 +38,10 @@ class Host:
     delivery: DeliveryWorker | None = None
     history: RuntimeHistory | None = None
     graphs: tuple | None = None
+    authoring: bool = False
 
     def app(self):
-        return create_app(self.admission, self.credentials, self.completion, self.history, self.graphs)
+        return create_app(self.admission, self.credentials, self.completion, self.history, self.graphs, self.authoring)
 
     def close(self):
         self.admission.commands.engine.dispose()
@@ -49,14 +50,14 @@ class Host:
     def load(cls, path):
         raw = json.loads(Path(path).read_text(encoding="utf-8"))
         if not {"database_url_env", "principals", "fixtures"} <= set(raw) or set(raw) - {
-            "database_url_env", "principals", "fixtures", "tools", "artifacts", "delivery", "inspection", "graphs", "projections", "bindings"}:
+            "database_url_env", "principals", "fixtures", "tools", "artifacts", "delivery", "inspection", "graphs", "projections", "bindings", "authoring"}:
             raise ValueError("Explicit database, principals and fixture allowlist required")
         entries, principals = [], []
         for item in raw["principals"]:
             if set(item) != {"token_env", "actor_id", "scope", "actions"}:
                 raise ValueError("Invalid principal configuration")
             actions = frozenset(item["actions"])
-            if not actions or actions - {"admit", "claim", "renew", "cancel", "revoke", "maintain", "read", "complete", "outcome", "deliver", "inspect_receipts", "submit_receipt"}:
+            if not actions or actions - {"admit", "claim", "renew", "cancel", "revoke", "maintain", "read", "complete", "outcome", "deliver", "inspect_receipts", "submit_receipt", "author"}:
                 raise ValueError("Invalid configured action")
             if not isinstance(item["actor_id"], str) or not item["actor_id"]:
                 raise ValueError("Explicit actor required")
@@ -68,6 +69,9 @@ class Host:
             raise ValueError("Duplicate configured identity")
         credentials = RuntimeCredentials(entries)
         graph_catalog = None if "graphs" not in raw else load_catalog(raw["graphs"], Path(path).parent)
+        authoring = raw.get("authoring", False)
+        if type(authoring) is not bool or authoring and graph_catalog is None:
+            raise ValueError("Authoring requires explicitly configured graphs")
         catalog = FixtureCatalog((AdmitFixtureRun.model_validate_json(json.dumps(d)) for d in raw["fixtures"]),
                                  (ToolDescriptor.model_validate_json(json.dumps(d)) for d in raw.get("tools", [])),
                                  allow_empty=graph_catalog is not None)
@@ -118,6 +122,9 @@ class Host:
                 conn.execute(text("SELECT tool_snapshot FROM runtime.runs LIMIT 0"))
                 conn.execute(text("SELECT report_id FROM runtime.attempt_reports LIMIT 0"))
                 conn.execute(text("SELECT delivery_token FROM runtime.outbox LIMIT 0"))
+                if authoring:
+                    conn.execute(text("SELECT head_revision FROM runtime.definition_heads LIMIT 0"))
+                    conn.execute(text("SELECT operation_id FROM runtime.definition_audit LIMIT 0"))
                 if graph_catalog is not None:
                     conn.execute(text("SELECT frontier_revision FROM runtime.graph_runs LIMIT 0"))
                     conn.execute(text("SELECT cut_sha256,decision_sha256 FROM runtime.graph_aggregate_decisions LIMIT 0"))
@@ -130,7 +137,7 @@ class Host:
                        DeliveryWorker(DeliveryStore(engine, policy), targets),
                        None if cursors is None else RuntimeHistory(engine, cursors),
                        None if graph_catalog is None else (GraphAdmission(engine, graph_catalog, bindings_enabled=bindings is not None),
-                                                           GraphAdvancer(engine, projections, bindings)))
+                                                           GraphAdvancer(engine, projections, bindings)), authoring)
         except BaseException:
             engine.dispose()
             raise

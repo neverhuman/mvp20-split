@@ -20,6 +20,8 @@ class RuntimeHistory:
         return {"tenant": principal.scope.tenant_id, "project": principal.scope.project_id}
 
     def receipt(self, principal, family, command_id, actor_id=None):
+        if family in {"definition.save", "definition.validate"}:
+            raise InspectionError("command_unavailable")
         params = {**self.bindings(principal), "family": family, "id": command_id,
                   "actor": actor_id or principal.actor_id}
         if params["actor"] != principal.actor_id:

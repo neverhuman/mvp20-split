@@ -1,6 +1,6 @@
 # Campaign Runtime
 
-Runtime0.14.0 / BP-05.03/B1 partial: [definitions](src/amphora_campaign_runtime/definitions/README.md) adds pure draft content/revision policy against graph-runtime0.8.0 authoring DTOs. No draft persistence/API/activation is enabled yet. Existing configured execution and navigation remain unchanged.
+Runtime0.14.0 / BP-05.03/B1 partial: [definitions](src/amphora_campaign_runtime/definitions/README.md) adds immutable draft save/read persistence and opt-in authoring HTTP against graph-runtime0.8.0 DTOs. Validation and draft activation are not enabled yet. Existing configured execution and navigation remain unchanged.
 
 Runtime0.13.0 adds a scoped named-view catalog under graph_navigation. It advertises implemented Runtime read capabilities, not scientific availability or a new projection service. Public schema, PostgreSQL and HTTP regressions plus actual Studio/Runtime independent replacement passed; BP-05.02 is closed.
 

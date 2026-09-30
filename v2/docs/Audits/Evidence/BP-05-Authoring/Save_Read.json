@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-09-29 22:38:36",
+  "status": "partial_B1_verified",
+  "python_tests": 1263,
+  "node_tests": 65,
+  "independent_installs": 19,
+  "focused_definition_tests": 9,
+  "coverage": {
+    "statements": "189/198",
+    "branches": "27/36",
+    "scope": "definitions module only"
+  },
+  "recovery_scope": "6668df086dcc4c6ab407f88aba92e4d9",
+  "registry_replacement_scope": "4630d6328e264bf68d893efedda7cdc1",
+  "limitations": [
+    "No authoring validation, publication/admission integration or Studio authoring yet.",
+    "Independent draft process replacement is not yet proven; foundation checks existing installed boundaries."
+  ]
+}

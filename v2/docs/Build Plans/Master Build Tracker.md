@@ -9,7 +9,7 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-05 primary active; BP-06 through BP-09 queued; BP-01/BP-01A/BP-02/BP-03/BP-04 closed.
-- Last refreshed: `2026-09-29 22:18:36` (America/Chicago).
+- Last refreshed: `2026-09-29 22:38:36` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P4 / BP-05 - Graph Studio first vertical slice.
 - Primary active implementation plan / phase / task: BP-05 -> BP-05.03 / Build / B1.
@@ -123,6 +123,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-29 22:38:36 | BP-05.03/B1 partial; child0%, parent50% unchanged | Draft save/read;1263 Python,65 Node,19 installs,REC-01..09; validation/UI remain |
 | 2026-09-29 22:06:45 | BP-05.02 closed100%; parent50% (8/16); .03 activation review | Final-source real-owner replacement scopee222d4cf32604d729ef12146860bc49c;65 tests per independent build; audit aligned |
 | 2026-09-29 22:01:49 | BP-05.02/B3 verified75%; parent43.75% (7/16); V1 active | Actual-owner topology/evidence/replacement scope5be3aa3cba1445448eafffe060d2a124; dense browser and denial repair |
 | 2026-09-29 21:53:46 | BP-05.02/B2 verified50%; parent37.5% (6/16); B3 active | 65 Node tests,24 browser cases, isolated Studio; bounded history/hidden policy/comparison |
@@ -147,6 +148,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-29 15:52:36 | BP-04.04A B2 passed; child 50%, parent 58.33% (14/24); B3 active | 1079 tests/thirteen installs/REC-01..09; dynamic round trip, exact protected conversions; peer/process proof remains |
 | 2026-09-29 13:25:53 | BP-04.04A B1 passed; child 25%, parent 54.17% (13/24); B2 active | 1041 tests/thirteen installs/REC-01..09; 134 predecessor schemas unchanged; v4 execution gated |
 | 2026-09-29 12:52:29 | Owner approved .04A; active B1 at 0%; parent rebaselined 12/24 (50%) | Four added prerequisite deliveries; phases P4 bindings/P5 baseline/P6 recovery; completed .01-.03 preserved |
-| 2026-09-29 09:04:11 | BP-04.03 closed/audited 100%; parent 60% (12/20); .04 activation audit next | Five installed issuer/Artifact/replacement cases; [audit](../Audits/BP-04.03_Aggregation_Closeout.md); scope 1a07a70db37f43e3a106e9abca2edbc9 |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.
