@@ -1,0 +1,18 @@
+{
+  "snapshot": {
+    "source": "contracts/schemas/v1/graph-runtime.snapshot-page.serialization.json",
+    "sha256": "c660a32f96dbcea1156a0e8e043d48cbbad8861be185ce977ae0b3d30695fbca"
+  },
+  "detail": {
+    "source": "contracts/schemas/v1/graph-runtime.node-detail.serialization.json",
+    "sha256": "3ad65c54baaa79c338bad71dea54724f23c526254ae2bafd37cdfdcd40a6e3f9"
+  },
+  "values": {
+    "source": "contracts/schemas/v1/graph-runtime.value-page.serialization.json",
+    "sha256": "78b1de55f9929cd3164448449cc9ec09b1e05f34e9c6de3c6286d2b2b60610e6"
+  },
+  "events": {
+    "source": "contracts/schemas/v1/graph-runtime.invalidation-page.serialization.json",
+    "sha256": "8852947bf69de0a90f24ffc866313e8b8bd5026efd5dfe3875c25ba80cf9963e"
+  }
+}

@@ -36,6 +36,8 @@ Keep layout coordinates, expansion state and user view preferences separate from
 
 ## Command and Refresh Protocol
 
+[Studio Read-Model and Transport Protocol](Studio_Read_Model_Protocol.md) refines the browser consumer's schema-derived boundary, scoped request ownership, bounded paging and explicit invalidation/resnapshot behavior under BP-05.01.
+
 Edits stay local drafts until submitted with actor, expected revision and intended changes. The owning domain returns accepted revision, validation errors or conflict/rebase information. Optimistic visual feedback must not depict a draft as activated work. Notifications wake refresh; revision-aware reads reconcile missed, duplicate or out-of-order notifications.
 
 Selection and drill-down preserve the same historical snapshot unless the user explicitly changes mode. Execution updates may advance live views while the user compares an older iteration. Show that difference instead of silently replacing the inspected evidence.

@@ -9,15 +9,15 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-05 primary active; BP-06 through BP-09 queued; BP-01/BP-01A/BP-02/BP-03/BP-04 closed.
-- Last refreshed: `2026-09-29 18:50:04` (America/Chicago).
+- Last refreshed: `2026-09-29 19:29:14` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P4 / BP-05 - Graph Studio first vertical slice.
-- Primary active implementation plan / phase / task: BP-05 -> BP-05.01 / Build / B1.
-- Current task: transport/page-model spike and public contract mapping.
-- Next task: BP-05.01/B2 measured canvas and accessible-list prototype.
-- Implementation completion: BP-04 closed100% (24/24); BP-05 active0% (0/16), .01 active0% (Build0% / Acceptance0%); BP-06..09 queued0%.
-- Active focus: schema-derived browser transport, explicit snapshot/cursor reconciliation and bounded view ownership.
-- Blockers: none for B1; frontend/canvas choice is an engineering spike; scientific/provider/host decisions remain their named later gates.
+- Primary active implementation plan / phase / task: BP-05 -> BP-05.01 / Build / B2.
+- Current task: measured canvas and searchable accessible-list prototype.
+- Next task: BP-05.01/B3 browser failure/recovery proof.
+- Implementation completion: BP-04 closed100% (24/24); BP-05 active6.25% (1/16), .01 active25% (Build33.33% / Acceptance0%); BP-06..09 queued0%.
+- Active focus: measured 200-visible/10000-logical-node synthetic graph, keyboard/list navigation and bounded progressive expansion.
+- Blockers: none for B2; frontend/canvas choice is an engineering spike; scientific/provider/host decisions remain their named later gates.
 - Acceptance posture: deterministic Runtime and independent public observation/replacement accepted. Browser/UI and next-campaign authoring remain BP-05.
 - Active exception: none.
 
@@ -35,11 +35,11 @@ BP-05 is the sole primary active plan. Child trackers own delivery evidence; com
 
 | Parent | Implementation | P1 Interaction | P2 Inspection | P3 Drafts | P4 Acceptance |
 |---|---:|---:|---:|---:|---:|
-| [BP-05](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md) | 0% (0/16) | 0% | 0% | 0% | 0% |
+| [BP-05](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md) | 6.25% (1/16) | 25% | 0% | 0% | 0% |
 
 | Active canonical child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-05.01](BP-05/BP-05.01%20Interaction%20and%20transport%20boundaries.md) | 0% | 0% | 0% | B1 transport/page-model spike |
+| [BP-05.01](BP-05/BP-05.01%20Interaction%20and%20transport%20boundaries.md) | 25% | 33.33% | 0% | B2 measured canvas/list prototype |
 
 BP-02 closed32/32, BP-03 closed16/16, BP-04 closed24/24. See [completed plans](Completed/README.md). New parent progress counts only its own deliveries.
 
@@ -65,7 +65,7 @@ BP-05 is `primary_active`; BP-06 through BP-09 are `design_specified / queued`. 
 
 | Order / ID | Completion | Proposed plan | Required predecessor gates | Bounded outcome / exit | Architecture owner |
 |---|---|---|---|---|---|
-| P4 / BP-05 | 0% | [Graph Studio First Vertical Slice](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md) | BP-04 runnable fixture and read/command contracts | Inspect actual live/historical execution, evidence, parallel branches and failures; edit next-campaign drafts, compare revisions and observe emergency termination; preserve autonomous progress | [Studio](../Architecture/Experience/Studio.md), [UI rules](../UI_Coding_Guidelines.md) |
+| P4 / BP-05 | 6.25% | [Graph Studio First Vertical Slice](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md) | BP-04 runnable fixture and read/command contracts | Inspect actual live/historical execution, evidence, parallel branches and failures; edit next-campaign drafts, compare revisions and observe emergency termination; preserve autonomous progress | [Studio](../Architecture/Experience/Studio.md), [UI rules](../UI_Coding_Guidelines.md) |
 | P5 / BP-06 | 0% | [Knowledge Evidence and Source Loop](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) | BP-01 contracts; BP-04 execution; BP-05 inspection | Minimal source/document/result ingestion, typed accepted-change replay, pinned knowledge revisions, bounded executable rules and explicit scientific acceptance receipts; demonstrate corrections affect later campaigns | [Knowledge](../Architecture/Knowledge/Knowledge_Architecture.md), [Data](../Architecture/Data/Data_Architecture.md), [experiments](../Architecture/Research/Experiments.md) |
 | P6 / BP-07 | 0% | [Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | BP-03 tool discovery; BP-04 runner; BP-05 UI; BP-06 grounded context/receipts | Model-generated campaign proposals and text-to-graph extraction through validated contracts; durable scoped engagements, stale-proposal/fallback races, bounded repair and truthful terminal blockers; no routine human waits | [Planning](../Architecture/Agents/Planning.md), [Graph Runner](../Architecture/System/Graph_Runner.md) |
 | P7 / BP-08 | 0% | [Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | BP-04 iteration/checkpoints; BP-06 applicability/evidence; BP-07 for LLM-guided topology | Adapt reusable numerical kernels to explicit generation/checkpoint history, separate representation fixtures and evidence-bound selection; parameter search precedes bounded topology proposals under successor-campaign rules | [Search](../Architecture/Campaigns/Search.md), [reuse baseline](../Architecture/Evolutionary_Code_Reuse_Baseline.md) |
@@ -123,6 +123,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-29 19:29:14 | BP-05.01 B1 verified25%; parent6.25% (1/16); B2 active | 28 Node tests; independent Node build; 1223 Python tests, 19 installs, REC-01..09 |
 | 2026-09-29 18:50:04 | BP-04 closed100% (24/24); BP-05/.01 B1 active0% | Installed observer/Runtime replacement and all solver assertions passed; scoped/parent audits aligned |
 | 2026-09-29 18:38:04 | BP-04.05 B3 verified75%; parent95.83% (23/24); V1 active | Parallel public completions, duplicate history and explicit resnapshot failures;76 focused tests |
 | 2026-09-29 18:33:12 | BP-04.05 B2 verified50%; parent91.67% (22/24); B3 active | Three real coordinator kill cuts; consistent readers and original replay;32 focused/process tests |
@@ -147,6 +148,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-28 19:21:42 | BP-04.02 B2 passed; child 50%, parent 30% (6/20); B3 active | 799 tests/thirteen installs/REC-01..09; durable controls/checkpoints, HTTP/polling and active-worker window; scope 4beb3aa18a6b41818bdd97a0620bc674 |
 | 2026-09-28 18:45:36 | BP-04.02 B1 passed; child 25%, parent 25% (5/20); B2 active | 765 tests/thirteen installs/REC-01..09; scoped graph admission, migration and completion guard; scope 0aabef6b736c4a7a82a3772c1c892a77 |
 | 2026-09-28 18:20:22 | BP-04.01 closed/audited 100%; parent 20% (4/20); .02 B1 active 0% | Five actual installed plans/two tools, fresh compiler/Registry replacement; scope 498bc3389bca4a96b0d7f7690bd39577 |
-| 2026-09-28 18:11:10 | BP-04.01 B3 passed; child 75%, parent 15% (3/20); V1 active | 111 compiler cases, 52 independent rejections; 100% scoped statements/branches; 23 contract and 6 legacy graph cases |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

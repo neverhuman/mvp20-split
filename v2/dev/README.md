@@ -34,6 +34,8 @@ Replacing this tooling must retain meaningful failing probes, independent instal
 
 ## Granular Verification
 
+BP-05.01 registers Studio as a separate Node runner in `test_scopes.json`. Install its exact local dependency lock with `npm ci --ignore-scripts` in `v2/studio` using Node24. `run_tests.py --module studio --area transport --coverage` (also `contracts` or `page_models`) runs deterministic schema checks, TypeScript build and only the selected Node tests. An unfiltered foundation run executes Python then Studio suites sequentially. Pytest-only trailing flags require a Python module selection. Node coverage is emitted by its own test runner and reflects loaded browser source; it is not Python/JUnit evidence or browser acceptance. `*.test.ts` files under Studio tests have the same one-owner rule as Python tests.
+
 `run_tests.py` uses `test_scopes.json` as the source/suite ownership registry. The dev tests own `boundaries/` and `schema_publication/`; contract/runtime tests live alongside their packages. Pytest uses importlib mode so module-local filenames can repeat. The full foundation gate aggregates module tests; it is not E2E.
 
 ```powershell
@@ -42,7 +44,7 @@ v2/.venv/Scripts/uv.exe run --project v2/dev --locked python v2/dev/run_tests.py
 v2/.venv/Scripts/uv.exe run --project v2/dev --locked python v2/dev/run_tests.py --coverage
 ```
 
-Additional pytest selectors such as `-k stale` are forwarded. Coverage uses the owning source boundary, includes unexecuted package files and measures branches as well as lines. JSON coverage and JUnit cases share `v2/.test-results/<selection>/`; local results are ignored by Git. No arbitrary coverage threshold is imposed in this first baseline. Dev coverage includes the runner but its CLI is exercised by command smokes outside pytest, so that coverage is not inferred from those smokes. Module READMEs record behavioral gaps. Shared wire fixtures remain reusable across languages.
+Additional pytest selectors such as `-k stale` are forwarded when a Python module is selected. Coverage uses the owning source boundary, includes unexecuted package files and measures branches as well as lines. JSON coverage and JUnit cases share `v2/.test-results/<selection>/`; local results are ignored by Git. No arbitrary coverage threshold is imposed in this first baseline. Dev coverage includes the runner but its CLI is exercised by command smokes outside pytest, so that coverage is not inferred from those smokes. Module READMEs record behavioral gaps. Shared wire fixtures remain reusable across languages.
 
 ## Disposable PostgreSQL
 
@@ -83,3 +85,5 @@ BP-04.02 adds `--module graph-runtime` for its independent command/observation p
 `verify_graphs.py --profile bindings --images <verified-image-manifest>` selects [typed binding acceptance](../services/campaign_runtime/tests/bindings/acceptance/README.md): real producer/scatter/gather/consumer feedback, Artifact finalization interrupted before Runtime acceptance, fresh owner replacement, original publication receipts and confirmed retention. Binding publishers receive explicit Artifact upload/finalize/read grants as well as retention; those grants are test configuration, not implicit production defaults.
 
 Add `--profile waits` for [installed external-wait acceptance](../services/campaign_runtime/tests/waits/acceptance/README.md): a separate synthetic issuer publishes actual Artifact evidence and submits authenticated domain receipts; open and closed waits, original replies and retained results survive fresh Runtime replacement. This uses the same independent package installations but a distinct scenario/evidence directory. Issuer/compiler subprocesses receive no owner SQL credentials.
+
+`verify_studio.py` rebuilds Studio in a verified temporary directory outside the checkout using exact npm locks and only its own source/tests/scripts plus the four published public schemas. It records source/schema hashes and owned test results under `.test-results/studio-isolated/`; this is independent consumer build proof, not browser/backend acceptance.

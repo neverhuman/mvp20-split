@@ -1,0 +1,82 @@
+{
+  "checkpoint_at": "2026-09-29 19:29:14",
+  "status": "passed",
+  "task": "BP-05.01/Build/B1",
+  "node_tests": 28,
+  "coverage": {
+    "lines": 100,
+    "branches": 90.82,
+    "functions": 94,
+    "scope": "loaded Studio production modules"
+  },
+  "foundation": {
+    "python_tests": 1223,
+    "node_tests": 28,
+    "independent_python_installs": 19,
+    "recovery_scope": "1525e057e4434c72af20c5e9948ec4f7",
+    "scenarios": "REC-01 through REC-09",
+    "result": "passed"
+  },
+  "independent_node_build": {
+    "verified_at": "2026-09-29 19:16:45",
+    "status": "passed",
+    "scope": "isolated Node dependency install, schema regeneration check, TypeScript build and owned tests",
+    "tests": 28,
+    "source_sha256": {
+      "studio/package.json": "062ffb8b4960fac811cf99887600454e09487e16c1bfe0cd72502c45c87c3b52",
+      "studio/package-lock.json": "0f47e09d36fa74bfaf0f12c1c99568969231b076c2125f7ccdc4b8178fe97d08",
+      "studio/tsconfig.json": "0c432b741bf7ea89606d3cb340d65455f6877743db6b079f1f5f97cb5a381492",
+      "studio/src/contracts/observations.ts": "64620771ec767adfd6d11912327bdc5622f6416dc4f58342072aea3feece0b52",
+      "studio/src/contracts/README.md": "926bf172a9a564a91701f8d71de0749f0f6c1569b8040a6a8bc23b873d32c868",
+      "studio/src/page_models/event_position.ts": "3b90a894c96df6513d245caf733fc556237b73be943980ba727343fce7d98433",
+      "studio/src/page_models/graph_window.ts": "f4164c3cf917bafda56efd66602a357ec467104cba09e627903319119f24cc89",
+      "studio/src/page_models/monitor.ts": "55cb24947cc56bc5a793e768ca3a83bbefd71a7ec1338580d2324665b4373070",
+      "studio/src/page_models/README.md": "4ca3a4f47c61188d73a340e3ae611503bc833be42111ecb2e77a81d503046fb2",
+      "studio/src/page_models/request_lane.ts": "57956c6a44ebcaba633ebefe3ec99b5a93e84ffadb943d51048be08f224216d0",
+      "studio/src/transport/failure.ts": "118855d014ab1b5648c14b9aace6cb62df66c05b3fe2a8dc639bd40834c3213e",
+      "studio/src/transport/observations.ts": "9c4d2beba3423937b4a6dcfc60e8985f27460dd9e82cd0a6e7b91806159a3783",
+      "studio/src/transport/README.md": "fc529fe7cff14dc8012fa22ab8089b93dc57988e1dba406402cc1ca43592b1e4",
+      "studio/src/contracts/generated/detail.d.ts": "3aaf6bb641b81c806c00c6b51b2d0fb3942f302c72467183ddb9acc1f16d9055",
+      "studio/src/contracts/generated/events.d.ts": "ba96f92a3414c5b4f9dac687e3754f82c159b43e0df18d6184f084b5a23a0915",
+      "studio/src/contracts/generated/manifest.json": "595278f84a53748025a89503d20d4ab523c1fb21a4fae2306ce6a845f9baa435",
+      "studio/src/contracts/generated/schemas.json": "4d1cb734fdac45a1f8755ee504e094021a67b894c75b99f7881b15beffe66f84",
+      "studio/src/contracts/generated/snapshot.d.ts": "cfb544015d89ce713a4a5c0b8d1aea46b706f7fca16410507e42a7785b1a8b87",
+      "studio/src/contracts/generated/values.d.ts": "890df6bcbc9189e3d2171f79747715bb0ba002f083f4d92f53f66c27da2706c7",
+      "studio/tests/contracts/observations.test.ts": "b00cc09e6ece4713ad69ea48e5ff7afdd2ffcbd719b2c69f2fad874eb619d331",
+      "studio/tests/contracts/ownership.test.ts": "373689a7474cda5cc85a9eb2aa86ff6640bfdbe039bc39375bb6cd3707292b92",
+      "studio/tests/fixtures/observations.ts": "0edc0fea2e25c86691b8ce177206b3b22502bc8ed32cf343b1d0f2fbed3bba10",
+      "studio/tests/page_models/monitor.test.ts": "10613e2d77f4fde4a43ec4e3b5f881fe7013eb130c3a0b0a09e1ec54c1c90831",
+      "studio/tests/transport/observations.test.ts": "9c973f168ef9641f67450aab931d64850f421357b2ee7891436dd262fa6d92c5",
+      "studio/scripts/generate-contracts.mjs": "a815255e412bc5e206891fdaa94d33321f70964e6cc3dc83659ebbc87a109019",
+      "studio/scripts/test.mjs": "1a6d1119f3095ddac8a9a9fc7a54030142ce9d738258d2205318bb9cce311122",
+      "studio/scripts/verify.mjs": "9dc7fefd2c58d1d9a1f4e4cf480d4184363bbc36bfdea954bc4a4875168005ad"
+    },
+    "public_schema_pins": {
+      "snapshot": {
+        "source": "contracts/schemas/v1/graph-runtime.snapshot-page.serialization.json",
+        "sha256": "c660a32f96dbcea1156a0e8e043d48cbbad8861be185ce977ae0b3d30695fbca"
+      },
+      "detail": {
+        "source": "contracts/schemas/v1/graph-runtime.node-detail.serialization.json",
+        "sha256": "3ad65c54baaa79c338bad71dea54724f23c526254ae2bafd37cdfdcd40a6e3f9"
+      },
+      "values": {
+        "source": "contracts/schemas/v1/graph-runtime.value-page.serialization.json",
+        "sha256": "78b1de55f9929cd3164448449cc9ec09b1e05f34e9c6de3c6286d2b2b60610e6"
+      },
+      "events": {
+        "source": "contracts/schemas/v1/graph-runtime.invalidation-page.serialization.json",
+        "sha256": "8852947bf69de0a90f24ffc866313e8b8bd5026efd5dfe3875c25ba80cf9963e"
+      }
+    },
+    "limits": [
+      "No checkout imports or Python/service source copied",
+      "No browser/live backend acceptance claim"
+    ]
+  },
+  "limits": [
+    "No browser rendering, canvas performance or accessibility acceptance yet.",
+    "Local HTTP fixture peer is not live Runtime integration.",
+    "Gateway prefix is a declared adapter; no gateway deployment implemented."
+  ]
+}

@@ -121,6 +121,12 @@
       "tools/solver_score/src/amphora_solver_score"
     ]
   },
+  "studio": {
+    "runner": "node",
+    "entrypoint": "studio/scripts/verify.mjs",
+    "tests": "studio/tests",
+    "coverage_sources": ["studio/src/contracts", "studio/src/transport", "studio/src/page_models"]
+  },
   "solver-retain": {
     "tests": "tools/solver_retain/tests",
     "coverage_sources": [

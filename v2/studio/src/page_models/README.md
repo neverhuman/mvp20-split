@@ -1,0 +1,13 @@
+# Monitor page models
+
+Owner: [Studio](../../README.md); architecture: [read-model protocol](../../../docs/Architecture/Experience/Studio_Read_Model_Protocol.md). These focused objects own browser observation state, never backend authority or scientific rules.
+
+`MonitorModel` owns one graph loader, one selected-detail loader and one invalidation loader. Components subscribe to a stable view snapshot and issue explicit actions. `RequestLane` aborts previous work and checks a generation even when a peer ignores cancellation. `GraphWindow` binds scope/run/query/revision, merges only compatible pages, rejects duplicate membership or false completeness and exposes the exact omitted count. `EventPosition` checks consecutive event revisions with bounded100-entry duplicate memory; too-old or conflicting replay requests resnapshot.
+
+`open` switches context; `refresh` retains selection within a run but replaces its detail cut. `loadMore` is one explicit bounded page, never an automatic whole-graph download. `select` cannot accept a response for a different activation or snapshot. `poll` performs one invalidation request when visible; it is called by a view-level scheduler, not by independent components. A visible invalidation refreshes once; a hidden region marks stale and refreshes when activated. Gap/expiry requests a fresh snapshot; there is no unbounded retry loop. `dispose` aborts all lanes and clears subscriptions.
+
+View states distinguish idle, loading, ready, empty, stale, denied and failed. Failed reads never make an old cut current. Denied graph access removes its view data and selection. Detail errors remain scoped to the selected region unless its snapshot became stale. Notifications can invalidate data but cannot create or change graph nodes. Design drafts, layout and future knowledge/fitness state need separate owners; this module cannot mutate them.
+
+Owned tests: `tests/page_models/` cover ignored cancellation, late run/selection/revision responses, coherent pagination/omission, malformed scope/query/detail, duplicate/gapped events, visibility refresh, empty/denied states and disposal. Current combined Node coverage is100% lines/90.82% branches across the loaded browser modules; remaining paths include event replay retention bounds, request-lifecycle cleanup and boundary combinations. Actual browser interaction,200-visible/10000-logical-node scene management and real backend replacement are B2/B3/V1 gates, not inferred from this coverage.
+
+Replacement preserves the `ObservationSource` port, scope/cut/selection fencing and view-state meanings. All state here is disposable presentation state. No browser-owned authoritative run database, persistent scientific cache or hidden owner mutation is permitted.

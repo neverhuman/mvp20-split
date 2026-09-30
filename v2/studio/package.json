@@ -1,0 +1,25 @@
+{
+  "name": "@amphora/studio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "generate": "node scripts/generate-contracts.mjs",
+    "check:contracts": "node scripts/generate-contracts.mjs --check",
+    "build": "tsc -p tsconfig.json",
+    "test": "node scripts/verify.mjs"
+  },
+  "dependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1"
+  },
+  "devDependencies": {
+    "@babel/parser": "7.29.9",
+    "@types/node": "24.19.0",
+    "json-schema-to-typescript": "16.0.0",
+    "typescript": "7.0.2"
+  }
+}

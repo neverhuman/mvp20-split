@@ -2,30 +2,15 @@
 
 Archived first draft at `2026-09-25 13:35:12`. Historical task pairs/percentages are not the active execution tracker. The parent and linked children now own progress. Original scope is preserved below for traceability.
 
-# BP-05 Graph Studio First Vertical Slice
+## Verified B1 checkpoint ? 2026-09-29 19:29:14
 
-## Canonical Execution Tracker
+BP-05.01/B1 completed: generated public contracts, bounded abortable transport, coherent snapshot/cursor windows, selection/revision fencing and access-denial races. 28 owned Node tests passed with 100% lines / 90.82% branches / 94% functions over loaded Studio production modules. Independent Node source build passed; full foundation passed 1223 Python tests, 19 package installs and REC-01..09. No browser or live Runtime UI claim. [Evidence](../Audits/Evidence/BP-05-Interaction/B1.json).
 
-- Status: **proposed / first draft for user review**; implementation not activated.
-- Last refreshed: `2026-09-24 12:10:07` (America/Chicago).
-- Owner/scope: Studio modules and thin gateway/projection adapters.
-- Parent: [Master Build Tracker](Master%20Build%20Tracker.md); baseline: local architecture and BP-01/BP-01A completed foundation, BP-02 active protocol work.
-- Overall implementation: **0%**; 8 equally weighted verified tasks, two per phase. Overall = completed tasks / 8; phase = completed tasks / 2. Drafting earns no implementation credit.
-- Current phase/task: none; proposed plan.
-- Next task: incorporate review, then verify predecessor gates and run the bounded pre-activation coherence audit before P1/T1.
-- Prerequisites: Completed BP-04 runnable fixture and versioned read/command contracts.
-- Completed implementation/evidence: none. All phase gates remain pending.
-- Blockers: predecessor gates are not complete; decisions below block only their dependent tasks.
-- Human acceptance: draft is available for review; no approval inferred for dependent deployment/provider actions. Campaigns remain autonomous with human changes between campaigns.
-- Active exception: none.
-- Draft coherence check: `2026-09-24 12:01:26`; ownership, ordering, scoped tests and handoffs checked against [owning architecture](../Architecture/Experience/Studio.md). This is not the implementation activation audit.
+At this checkpoint child 25% (1/4), Build 33.33%, Acceptance 0%; parent 6.25% (1/16). Current execution belongs to the [parent](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md) and child tracker.
 
-| Phase / status | Completion | Dependency | Required exit |
-|---|---:|---|---|
-| P1 Interaction and transport boundaries / proposed | 0% | Completed predecessor gates and activation audit | T1-T2: Review concrete journey/layout prototypes and API contracts; no floating revision mix, implementation jargon in user decisions or all-context initial payload. |
-| P2 Graph inspection and navigation / proposed | 0% | P1 exit | T3-T4: Module view-model tests and browser checks distinguish replay/live/stale data; large synthetic graph stays navigable with a measured baseline, not a guessed performance claim. |
-| P3 Drafts and safe commands / proposed | 0% | P2 exit | T5-T6: Stale edit cannot overwrite a newer draft; no draft can mutate active instructions; cancellation UI reflects committed state instead of optimistic success. |
-| P4 Visual and integration acceptance / proposed | 0% | P3 exit | T7-T8: Browser interaction and visual review pass with real data; no mock screenshot substituted for live behavior; tests remain component-focused plus a bounded E2E journey. |
+## Archived first-draft scope
+
+The 2026-09-24 draft used eight tasks across four phases and had no implementation. That denominator was superseded on 2026-09-25 by sixteen child deliveries. Its historical task definitions follow; they are not a second canonical tracker.
 
 ## Outcome and Boundaries
 

@@ -16,3 +16,16 @@ def test_orphan_and_overlapping_test_owners_are_rejected(tmp_path):
     assert ownership_issues(tmp_path, scopes) == []
     scopes["duplicate"] = {"tests": "services/example"}
     assert len(ownership_issues(tmp_path, scopes)) == 1
+
+
+def test_node_suites_have_one_declared_owner_and_known_runner(tmp_path):
+    tests = tmp_path / "studio/tests/transport"
+    tests.mkdir(parents=True)
+    (tests / "http.test.ts").write_text("// owned test")
+    assert ownership_issues(tmp_path, {}) == ["Expected one test owner: studio/tests/transport/http.test.ts"]
+    scopes = {"studio": {"tests": "studio/tests", "runner": "node"}}
+    assert ownership_issues(tmp_path, scopes) == []
+    scopes["overlap"] = {"tests": "studio/tests/transport", "runner": "node"}
+    assert len(ownership_issues(tmp_path, scopes)) == 1
+    scopes = {"bad": {"tests": "studio/tests", "runner": "invented"}}
+    assert "Unknown test runner: bad" in ownership_issues(tmp_path, scopes)

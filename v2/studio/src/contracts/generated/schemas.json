@@ -1,0 +1,1468 @@
+{
+  "snapshot": {
+    "$defs": {
+      "ActivationPath": {
+        "additionalProperties": false,
+        "properties": {
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "occurrences": {
+            "default": [],
+            "items": {
+              "discriminator": {
+                "mapping": {
+                  "loop": "#/$defs/LoopOccurrence",
+                  "scatter": "#/$defs/ScatterOccurrence"
+                },
+                "propertyName": "kind"
+              },
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/LoopOccurrence"
+                },
+                {
+                  "$ref": "#/$defs/ScatterOccurrence"
+                }
+              ]
+            },
+            "maxItems": 16,
+            "title": "Occurrences",
+            "type": "array"
+          },
+          "schema_version": {
+            "const": "2",
+            "title": "Schema Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_version",
+          "node_id"
+        ],
+        "title": "ActivationPath",
+        "type": "object"
+      },
+      "GraphNodeViewV3": {
+        "additionalProperties": false,
+        "properties": {
+          "activation_id": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Activation Id",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "invoke",
+              "branch",
+              "join",
+              "scatter",
+              "iterate",
+              "finish",
+              "await",
+              "artifact_project",
+              "artifact_materialize"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "path": {
+            "$ref": "#/$defs/ActivationPath"
+          },
+          "reason_code": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason Code"
+          },
+          "status": {
+            "enum": [
+              "waiting",
+              "ready",
+              "issued",
+              "succeeded",
+              "skipped",
+              "failed",
+              "blocked"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "activation_id",
+          "path",
+          "kind",
+          "status",
+          "reason_code"
+        ],
+        "title": "GraphNodeViewV3",
+        "type": "object"
+      },
+      "GraphReadBudget": {
+        "additionalProperties": false,
+        "properties": {
+          "limit": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Limit",
+            "type": "integer"
+          },
+          "reserved": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Reserved",
+            "type": "integer"
+          },
+          "spent": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Spent",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "limit",
+          "reserved",
+          "spent"
+        ],
+        "title": "GraphReadBudget",
+        "type": "object"
+      },
+      "GraphReadCut": {
+        "additionalProperties": false,
+        "properties": {
+          "frontier_revision": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Frontier Revision",
+            "type": "integer"
+          },
+          "plan_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Plan Sha256",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "run_id",
+          "plan_sha256",
+          "revision",
+          "frontier_revision"
+        ],
+        "title": "GraphReadCut",
+        "type": "object"
+      },
+      "GraphReadQuery": {
+        "additionalProperties": false,
+        "properties": {
+          "frontier_only": {
+            "default": false,
+            "title": "Frontier Only",
+            "type": "boolean"
+          },
+          "scope_key": {
+            "anyOf": [
+              {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Scope Key"
+          }
+        },
+        "title": "GraphReadQuery",
+        "type": "object"
+      },
+      "GraphReadSnapshot": {
+        "additionalProperties": false,
+        "properties": {
+          "budget": {
+            "$ref": "#/$defs/GraphReadBudget"
+          },
+          "cut": {
+            "$ref": "#/$defs/GraphReadCut"
+          },
+          "event_cursor": {
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Event Cursor",
+            "type": "string"
+          },
+          "node_count": {
+            "maximum": 100000,
+            "minimum": 0,
+            "title": "Node Count",
+            "type": "integer"
+          },
+          "query": {
+            "$ref": "#/$defs/GraphReadQuery"
+          },
+          "snapshot_token": {
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Snapshot Token",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "running",
+              "completed",
+              "cancelled",
+              "failed",
+              "blocked"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "cut",
+          "status",
+          "budget",
+          "query",
+          "node_count",
+          "snapshot_token",
+          "event_cursor"
+        ],
+        "title": "GraphReadSnapshot",
+        "type": "object"
+      },
+      "LoopOccurrence": {
+        "additionalProperties": false,
+        "properties": {
+          "index": {
+            "maximum": 9999,
+            "minimum": 0,
+            "title": "Index",
+            "type": "integer"
+          },
+          "kind": {
+            "const": "loop",
+            "title": "Kind",
+            "type": "string"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "index"
+        ],
+        "title": "LoopOccurrence",
+        "type": "object"
+      },
+      "ScatterOccurrence": {
+        "additionalProperties": false,
+        "properties": {
+          "index": {
+            "maximum": 9999,
+            "minimum": 0,
+            "title": "Index",
+            "type": "integer"
+          },
+          "kind": {
+            "const": "scatter",
+            "title": "Kind",
+            "type": "string"
+          },
+          "membership_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Membership Sha256",
+            "type": "string"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "index",
+          "membership_sha256"
+        ],
+        "title": "ScatterOccurrence",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:graph-runtime.snapshot-page:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "next_cursor": {
+        "anyOf": [
+          {
+            "maxLength": 4096,
+            "minLength": 1,
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Next Cursor"
+      },
+      "nodes": {
+        "items": {
+          "$ref": "#/$defs/GraphNodeViewV3"
+        },
+        "maxItems": 100,
+        "title": "Nodes",
+        "type": "array"
+      },
+      "schema_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "snapshot": {
+        "$ref": "#/$defs/GraphReadSnapshot"
+      }
+    },
+    "required": [
+      "snapshot",
+      "nodes",
+      "next_cursor"
+    ],
+    "title": "GraphSnapshotPage",
+    "type": "object"
+  },
+  "detail": {
+    "$defs": {
+      "ActivationPath": {
+        "additionalProperties": false,
+        "properties": {
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "occurrences": {
+            "default": [],
+            "items": {
+              "discriminator": {
+                "mapping": {
+                  "loop": "#/$defs/LoopOccurrence",
+                  "scatter": "#/$defs/ScatterOccurrence"
+                },
+                "propertyName": "kind"
+              },
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/LoopOccurrence"
+                },
+                {
+                  "$ref": "#/$defs/ScatterOccurrence"
+                }
+              ]
+            },
+            "maxItems": 16,
+            "title": "Occurrences",
+            "type": "array"
+          },
+          "schema_version": {
+            "const": "2",
+            "title": "Schema Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_version",
+          "node_id"
+        ],
+        "title": "ActivationPath",
+        "type": "object"
+      },
+      "ArtifactRef": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Artifact Id",
+            "type": "string"
+          },
+          "media_type": {
+            "maxLength": 128,
+            "minLength": 3,
+            "pattern": "^[^\\s/]+/[^\\s/]+$",
+            "title": "Media Type",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "size_bytes": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Size Bytes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "artifact_id",
+          "scope",
+          "sha256",
+          "media_type",
+          "schema_ref",
+          "size_bytes"
+        ],
+        "title": "ArtifactRef",
+        "type": "object"
+      },
+      "GraphAttemptView": {
+        "additionalProperties": false,
+        "properties": {
+          "attempt_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Attempt Id",
+            "type": "string"
+          },
+          "canonical_result": {
+            "title": "Canonical Result",
+            "type": "boolean"
+          },
+          "completion_id": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Completion Id"
+          },
+          "fence": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Fence",
+            "type": "integer"
+          },
+          "invocation_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Invocation Id",
+            "type": "string"
+          },
+          "settled": {
+            "title": "Settled",
+            "type": "boolean"
+          },
+          "status": {
+            "enum": [
+              "leased",
+              "succeeded",
+              "abstained",
+              "failed",
+              "expired",
+              "cancelled",
+              "uncertain"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "worker_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Worker Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "attempt_id",
+          "invocation_id",
+          "worker_id",
+          "fence",
+          "status",
+          "settled",
+          "completion_id",
+          "canonical_result"
+        ],
+        "title": "GraphAttemptView",
+        "type": "object"
+      },
+      "GraphNodeViewV3": {
+        "additionalProperties": false,
+        "properties": {
+          "activation_id": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Activation Id",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "invoke",
+              "branch",
+              "join",
+              "scatter",
+              "iterate",
+              "finish",
+              "await",
+              "artifact_project",
+              "artifact_materialize"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "path": {
+            "$ref": "#/$defs/ActivationPath"
+          },
+          "reason_code": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason Code"
+          },
+          "status": {
+            "enum": [
+              "waiting",
+              "ready",
+              "issued",
+              "succeeded",
+              "skipped",
+              "failed",
+              "blocked"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "activation_id",
+          "path",
+          "kind",
+          "status",
+          "reason_code"
+        ],
+        "title": "GraphNodeViewV3",
+        "type": "object"
+      },
+      "GraphOutputSummary": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/ArtifactRef"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "item_count": {
+            "maximum": 10000,
+            "minimum": 0,
+            "title": "Item Count",
+            "type": "integer"
+          },
+          "kind": {
+            "enum": [
+              "boolean",
+              "integer",
+              "number",
+              "string",
+              "artifact",
+              "collection"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "missing_count": {
+            "maximum": 10000,
+            "minimum": 0,
+            "title": "Missing Count",
+            "type": "integer"
+          },
+          "port": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Port",
+            "type": "string"
+          }
+        },
+        "required": [
+          "port",
+          "kind",
+          "item_count",
+          "missing_count"
+        ],
+        "title": "GraphOutputSummary",
+        "type": "object"
+      },
+      "GraphReadCut": {
+        "additionalProperties": false,
+        "properties": {
+          "frontier_revision": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Frontier Revision",
+            "type": "integer"
+          },
+          "plan_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Plan Sha256",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "run_id",
+          "plan_sha256",
+          "revision",
+          "frontier_revision"
+        ],
+        "title": "GraphReadCut",
+        "type": "object"
+      },
+      "LoopOccurrence": {
+        "additionalProperties": false,
+        "properties": {
+          "index": {
+            "maximum": 9999,
+            "minimum": 0,
+            "title": "Index",
+            "type": "integer"
+          },
+          "kind": {
+            "const": "loop",
+            "title": "Kind",
+            "type": "string"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "index"
+        ],
+        "title": "LoopOccurrence",
+        "type": "object"
+      },
+      "ScatterOccurrence": {
+        "additionalProperties": false,
+        "properties": {
+          "index": {
+            "maximum": 9999,
+            "minimum": 0,
+            "title": "Index",
+            "type": "integer"
+          },
+          "kind": {
+            "const": "scatter",
+            "title": "Kind",
+            "type": "string"
+          },
+          "membership_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Membership Sha256",
+            "type": "string"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "index",
+          "membership_sha256"
+        ],
+        "title": "ScatterOccurrence",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:graph-runtime.node-detail:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "attempts": {
+        "items": {
+          "$ref": "#/$defs/GraphAttemptView"
+        },
+        "maxItems": 100,
+        "title": "Attempts",
+        "type": "array"
+      },
+      "cut": {
+        "$ref": "#/$defs/GraphReadCut"
+      },
+      "next_cursor": {
+        "anyOf": [
+          {
+            "maxLength": 4096,
+            "minLength": 1,
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Next Cursor"
+      },
+      "node": {
+        "$ref": "#/$defs/GraphNodeViewV3"
+      },
+      "outputs": {
+        "items": {
+          "$ref": "#/$defs/GraphOutputSummary"
+        },
+        "maxItems": 64,
+        "title": "Outputs",
+        "type": "array"
+      },
+      "parent_activation_id": {
+        "anyOf": [
+          {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Parent Activation Id"
+      },
+      "schema_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "scope_key": {
+        "pattern": "^[0-9a-f]{64}$",
+        "title": "Scope Key",
+        "type": "string"
+      }
+    },
+    "required": [
+      "cut",
+      "node",
+      "scope_key",
+      "parent_activation_id",
+      "outputs",
+      "attempts",
+      "next_cursor"
+    ],
+    "title": "GraphNodeDetail",
+    "type": "object"
+  },
+  "values": {
+    "$defs": {
+      "ArtifactConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "kind": {
+            "const": "artifact",
+            "title": "Kind",
+            "type": "string"
+          },
+          "representation": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Representation",
+            "type": "string"
+          },
+          "unit": {
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "artifact",
+          "representation",
+          "unit"
+        ],
+        "title": "ArtifactConstant",
+        "type": "object"
+      },
+      "ArtifactRef": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Artifact Id",
+            "type": "string"
+          },
+          "media_type": {
+            "maxLength": 128,
+            "minLength": 3,
+            "pattern": "^[^\\s/]+/[^\\s/]+$",
+            "title": "Media Type",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "size_bytes": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Size Bytes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "artifact_id",
+          "scope",
+          "sha256",
+          "media_type",
+          "schema_ref",
+          "size_bytes"
+        ],
+        "title": "ArtifactRef",
+        "type": "object"
+      },
+      "BooleanConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "boolean",
+            "title": "Kind",
+            "type": "string"
+          },
+          "value": {
+            "title": "Value",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "BooleanConstant",
+        "type": "object"
+      },
+      "GraphReadCut": {
+        "additionalProperties": false,
+        "properties": {
+          "frontier_revision": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Frontier Revision",
+            "type": "integer"
+          },
+          "plan_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Plan Sha256",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "run_id",
+          "plan_sha256",
+          "revision",
+          "frontier_revision"
+        ],
+        "title": "GraphReadCut",
+        "type": "object"
+      },
+      "GraphValueItem": {
+        "additionalProperties": false,
+        "properties": {
+          "index": {
+            "maximum": 9999,
+            "minimum": 0,
+            "title": "Index",
+            "type": "integer"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "discriminator": {
+                  "mapping": {
+                    "artifact": "#/$defs/ArtifactConstant",
+                    "boolean": "#/$defs/BooleanConstant",
+                    "integer": "#/$defs/IntegerConstant",
+                    "number": "#/$defs/NumberValue",
+                    "string": "#/$defs/StringConstant"
+                  },
+                  "propertyName": "kind"
+                },
+                "oneOf": [
+                  {
+                    "$ref": "#/$defs/BooleanConstant"
+                  },
+                  {
+                    "$ref": "#/$defs/IntegerConstant"
+                  },
+                  {
+                    "$ref": "#/$defs/NumberValue"
+                  },
+                  {
+                    "$ref": "#/$defs/StringConstant"
+                  },
+                  {
+                    "$ref": "#/$defs/ArtifactConstant"
+                  }
+                ]
+              },
+              {
+                "$ref": "#/$defs/MissingValue"
+              }
+            ],
+            "title": "Value"
+          }
+        },
+        "required": [
+          "index",
+          "value"
+        ],
+        "title": "GraphValueItem",
+        "type": "object"
+      },
+      "IntegerConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "integer",
+            "title": "Kind",
+            "type": "string"
+          },
+          "unit": {
+            "default": "1",
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          },
+          "value": {
+            "maximum": 9007199254740991,
+            "minimum": -9007199254740991,
+            "title": "Value",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "IntegerConstant",
+        "type": "object"
+      },
+      "MissingValue": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "missing",
+            "title": "Kind",
+            "type": "string"
+          },
+          "member_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Member Id",
+            "type": "string"
+          },
+          "reason_code": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Reason Code",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "reason_code",
+          "member_id"
+        ],
+        "title": "MissingValue",
+        "type": "object"
+      },
+      "NumberValue": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "number",
+            "title": "Kind",
+            "type": "string"
+          },
+          "unit": {
+            "default": "1",
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          },
+          "value": {
+            "maxLength": 427,
+            "pattern": "^-?(?:(?:0|[1-9][0-9]{0,99})(?:\\.[0-9]{1,324})?|10{100})$",
+            "title": "Value",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "NumberValue",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      },
+      "StringConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "string",
+            "title": "Kind",
+            "type": "string"
+          },
+          "value": {
+            "maxLength": 4096,
+            "title": "Value",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "StringConstant",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:graph-runtime.value-page:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "activation_id": {
+        "pattern": "^[0-9a-f]{64}$",
+        "title": "Activation Id",
+        "type": "string"
+      },
+      "cut": {
+        "$ref": "#/$defs/GraphReadCut"
+      },
+      "item_count": {
+        "maximum": 10000,
+        "minimum": 0,
+        "title": "Item Count",
+        "type": "integer"
+      },
+      "items": {
+        "items": {
+          "$ref": "#/$defs/GraphValueItem"
+        },
+        "maxItems": 100,
+        "title": "Items",
+        "type": "array"
+      },
+      "next_cursor": {
+        "anyOf": [
+          {
+            "maxLength": 4096,
+            "minLength": 1,
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Next Cursor"
+      },
+      "port": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+        "title": "Port",
+        "type": "string"
+      },
+      "schema_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Schema Version",
+        "type": "string"
+      }
+    },
+    "required": [
+      "cut",
+      "activation_id",
+      "port",
+      "item_count",
+      "items",
+      "next_cursor"
+    ],
+    "title": "GraphValuePage",
+    "type": "object"
+  },
+  "events": {
+    "$defs": {
+      "GraphInvalidation": {
+        "additionalProperties": false,
+        "properties": {
+          "event_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Event Id",
+            "type": "string"
+          },
+          "kind": {
+            "const": "run_changed",
+            "default": "run_changed",
+            "title": "Kind",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Revision",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "event_id",
+          "revision"
+        ],
+        "title": "GraphInvalidation",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:graph-runtime.invalidation-page:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "entries": {
+        "items": {
+          "$ref": "#/$defs/GraphInvalidation"
+        },
+        "maxItems": 100,
+        "title": "Entries",
+        "type": "array"
+      },
+      "has_more": {
+        "title": "Has More",
+        "type": "boolean"
+      },
+      "next_cursor": {
+        "maxLength": 4096,
+        "minLength": 1,
+        "title": "Next Cursor",
+        "type": "string"
+      },
+      "observed_revision": {
+        "maximum": 9007199254740991,
+        "minimum": 0,
+        "title": "Observed Revision",
+        "type": "integer"
+      },
+      "run_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+        "title": "Run Id",
+        "type": "string"
+      },
+      "schema_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "scope": {
+        "$ref": "#/$defs/Scope"
+      }
+    },
+    "required": [
+      "scope",
+      "run_id",
+      "observed_revision",
+      "entries",
+      "next_cursor",
+      "has_more"
+    ],
+    "title": "GraphInvalidationPage",
+    "type": "object"
+  }
+}
