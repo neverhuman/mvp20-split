@@ -9,14 +9,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 primary active; BP-07 through BP-09 queued; BP-05 closed.
-- Last refreshed: `2026-09-30 17:44:31` (America/Chicago).
+- Last refreshed: `2026-09-30 17:52:58` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P5 / BP-06 - Knowledge Evidence and Source Loop.
 - Primary active implementation plan / phase / task: BP-06 -> BP-06.01 / Build / B1.
-- Current task: BP-06.01/B1 Research identities and persisted acquisition adapters.
+- Current task: BP-06.01/B1 persistence and bounded acquisition adapters.
 - Next task: Complete B1 contracts, Research identities and persisted bounded adapters.
 - Implementation completion: BP-05 closed100% (16/16); BP-06..09 remain0%.
-- Active focus: B1 source contracts/provenance subset verified; child0/4, parent0/24 unchanged.
+- Active focus: Source/provenance and Research identity subsets verified; child0/4 and parent0/24 remain unchanged.
 - Blockers: no user decision pending; synthetic source fixtures are authorized.
 - Acceptance posture: BP-05 integrated Studio accepted within synthetic software scope; scientific and deployment acceptance remains later.
 - Active exception: none.
@@ -119,6 +119,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-30 17:52:58 | BP-06.01/B1 Research identity partial;0% unchanged | 9 contract/26 domain tests in isolated wheels; [evidence](../Audits/Evidence/BP-06-Acquisition/Research_Identity.json) |
 | 2026-09-30 17:44:31 | BP-06.01/B1 partial; child/parent0% | 15 contract/25 provenance tests in isolated wheels; [evidence](../Audits/Evidence/BP-06-Acquisition/Initial_Boundary.json) |
 | 2026-09-30 17:34:15 | BP-05 closed100% (16/16); .04 closed4/4; BP-06 review0% | [Integrated audit](../Audits/BP-05_Studio_Closeout.md) |
 | 2026-09-30 17:27:10 | BP-05.04/B3 verified75%; parent93.75% (15/16); V1 active | Named-view replacement;137-test independent builds,25 owner cases, visual review passed |

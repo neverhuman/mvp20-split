@@ -5,6 +5,8 @@ requires-python = ">=3.12,<3.13"
 dependencies = [
     "amphora-contracts-core==0.1.0",
     "amphora-contracts-evidence==0.1.0",
+    "amphora-contracts-research==0.1.0",
+    "amphora-research==0.1.0",
     "amphora-contracts-tools==0.1.0",
     "amphora-contracts-campaigns==0.4.1",
     "amphora-campaign-runtime==0.20.0",
@@ -35,6 +37,8 @@ package = false
 link-mode = "copy"
 
 [tool.uv.sources]
+amphora-contracts-research = { path = "../contracts/research", editable = true }
+amphora-research = { path = "../services/research", editable = true }
 amphora-contracts-evidence = { path = "../contracts/evidence", editable = true }
 amphora-contracts-core = { path = "../contracts/core", editable = true }
 amphora-contracts-tools = { path = "../contracts/tools", editable = true }

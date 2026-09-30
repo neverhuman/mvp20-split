@@ -148,5 +148,17 @@
     "coverage_sources": [
       "contracts/evidence/src/amphora_contracts_evidence"
     ]
+  },
+  "contracts-research": {
+    "tests": "contracts/research/tests",
+    "coverage_sources": [
+      "contracts/research/src/amphora_contracts_research"
+    ]
+  },
+  "research": {
+    "tests": "services/research/tests",
+    "coverage_sources": [
+      "services/research/src/amphora_research"
+    ]
   }
 }

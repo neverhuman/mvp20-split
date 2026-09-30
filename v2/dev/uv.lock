@@ -183,6 +183,21 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-contracts-research"
+version = "0.1.0"
+source = { editable = "../contracts/research" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-runtime"
 version = "0.1.0"
 source = { editable = "../contracts/runtime" }
@@ -273,11 +288,13 @@ dependencies = [
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-evidence" },
     { name = "amphora-contracts-graph-runtime" },
+    { name = "amphora-contracts-research" },
     { name = "amphora-contracts-runtime" },
     { name = "amphora-contracts-solver-fixture" },
     { name = "amphora-contracts-tools" },
     { name = "amphora-data-artifacts" },
     { name = "amphora-numeric-affine" },
+    { name = "amphora-research" },
     { name = "amphora-sequence-statistics" },
     { name = "amphora-solver-mutate" },
     { name = "amphora-solver-retain" },
@@ -302,11 +319,13 @@ requires-dist = [
     { name = "amphora-contracts-core", editable = "../contracts/core" },
     { name = "amphora-contracts-evidence", editable = "../contracts/evidence" },
     { name = "amphora-contracts-graph-runtime", editable = "../contracts/graph_runtime" },
+    { name = "amphora-contracts-research", editable = "../contracts/research" },
     { name = "amphora-contracts-runtime", editable = "../contracts/runtime" },
     { name = "amphora-contracts-solver-fixture", editable = "../contracts/solver_fixture" },
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },
     { name = "amphora-data-artifacts", editable = "../services/data_artifacts" },
     { name = "amphora-numeric-affine", editable = "../tools/numeric_affine" },
+    { name = "amphora-research", editable = "../services/research" },
     { name = "amphora-sequence-statistics", editable = "../tools/sequence_statistics" },
     { name = "amphora-solver-mutate", editable = "../tools/solver_mutate" },
     { name = "amphora-solver-retain", editable = "../tools/solver_retain" },
@@ -338,6 +357,21 @@ requires-dist = [
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },
     { name = "amphora-tool-protocol", editable = "../sdk/tool_protocol" },
     { name = "pydantic", specifier = ">=2.11,<3" },
+]
+
+[[package]]
+name = "amphora-research"
+version = "0.1.0"
+source = { editable = "../services/research" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-research" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-research", editable = "../contracts/research" },
 ]
 
 [[package]]

@@ -20,3 +20,5 @@ BP-03.01 adds separate tool release descriptor, immutable lock, registration pay
 BP-04.02 adds [graph-runtime commands/observations](graph_runtime/README.md) as a separate package. It does not add campaign dependencies to the pinned worker contract/SDK closure. Its distinct graph-runtime namespace publishes additive wire-v1 roots; existing campaign and worker schema bytes remain unchanged.
 
 BP-06.01 adds [acquisition evidence contracts](evidence/README.md): source revisions, exact byte spans and conversion traces. DTO validity does not imply rights, provenance verification or scientific acceptance; owner implementation remains in progress.
+
+[Research identity contracts](research/README.md) distinguish candidate, sample, material-state references and versioned questions/evidence needs. They provide no scientific acceptance or owner state.

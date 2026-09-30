@@ -1,5 +1,10 @@
 # BP-06 Planning History
 
+## Research identity boundary - 2026-09-30 17:52:58
+
+B1 partial: Research contracts0.1.0 and independent Research0.1.0 identity/question policies verified;9 contract and26 domain tests pass from isolated wheels. Candidate/sample unknowns quarantine; exact question revision and predeclared criteria required.216 schemas preserve all208 predecessors. Persistence, adapters and public owner integration remain; child0/4 and parent0/24 unchanged. [Evidence](../Audits/Evidence/BP-06-Acquisition/Research_Identity.json). No new API/database or scientific acceptance claim. Pure policies check chain shape; predecessor existence and current rights remain owner persistence/public-client obligations.
+
+
 ## Initial acquisition boundary - 2026-09-30 17:44:31
 
 B1 partial: evidence0.1.0 contracts and Data/Artifacts0.2.0 pure provenance checks verified.15 contract and25 acquisition tests pass in isolated wheel installs;28 combined dev/contract tests and131 artifact-owner regression tests (PostgreSQL enabled) pass. Provenance64/64 lines and10/10 branches covered.208 published schemas preserve all200 predecessors. No ledger/adapters/Research identity yet; no delivery credit. [Activation audit](../Audits/BP-06.01_Activation.md); [wheel evidence](../Audits/Evidence/BP-06-Acquisition/Initial_Boundary.json). Source schemas are additive; old command profiles and artifact routes are unchanged. Package inventory refreshed from manifests, not a full foundation reacceptance. Next: Research identity/question/evidence-need boundary; then ingestion adapters and actual PostgreSQL ledger.

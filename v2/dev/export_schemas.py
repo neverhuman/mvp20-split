@@ -8,6 +8,7 @@ from pathlib import Path
 import amphora_contracts_artifacts as artifact_contracts
 import amphora_contracts_evidence as evidence_contracts
 import amphora_contracts_graph_runtime as graph_runtime_contracts
+import amphora_contracts_research as research_contracts
 import amphora_contracts_runtime as runtime_contracts
 import amphora_contracts_solver_fixture as solver_fixture_contracts
 import amphora_contracts_tools as tool_contracts
@@ -72,6 +73,14 @@ for name, model in {
     "conversion-trace-ref": evidence_contracts.ConversionTraceRef,
 }.items():
     MODELS["evidence." + name] = model
+
+for name, model in {
+    "candidate-revision": research_contracts.CandidateRevision,
+    "sample-identity": research_contracts.SampleIdentity,
+    "question": research_contracts.ResearchQuestion,
+    "evidence-need": research_contracts.EvidenceNeed,
+}.items():
+    MODELS["research." + name] = model
 
 MODELS["commands.identity"] = CommandIdentity
 for name, model in {

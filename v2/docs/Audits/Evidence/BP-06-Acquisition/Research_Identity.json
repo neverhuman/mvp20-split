@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-09-30 17:52:01",
+  "scope": "BP-06.01/B1 partial Research identity boundary",
+  "isolated_tests": {
+    "contracts": "9 passed in 0.36s",
+    "services": "26 passed in 0.30s"
+  },
+  "wheels": {
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_research-0.1.0-py3-none-any.whl": "025180ab16aaa55cb3a5d3fb16e20995557a003f40f418981790e043eca539b4",
+    "amphora_research-0.1.0-py3-none-any.whl": "8ad5e087007cdee98adf86468c24b11b78c2b748478b3d2afe6383b8c58bcce0"
+  },
+  "limits": [
+    "no persistence or server",
+    "identity match is not scientific acceptance",
+    "predecessor existence/rights require future owner store/public checks"
+  ]
+}

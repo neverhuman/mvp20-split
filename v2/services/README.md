@@ -7,3 +7,5 @@ Navigation only. Each service owns its implementation, state, dependencies, test
 - [Capability Registry](capability_registry/README.md): immutable releases, independent suitability policy, durable scoped discovery/registration/inventory, explicit hosting and verified retained-state replacement; tool dispatch remains runtime-owned.
 
 Generated package/dependency facts live in [foundation inventory](../docs/Generated/foundation-packages.json). Cross-owner access uses published contracts and configured public endpoints, never private imports or shared table access. The [Master Build Tracker](../docs/Build%20Plans/Master%20Build%20Tracker.md) selects current implementation work.
+
+- [Research](research/README.md): initial private identity/question policies; persistence and hosting remain in progress under BP-06.01.
