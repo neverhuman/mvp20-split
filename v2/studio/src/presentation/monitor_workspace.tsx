@@ -11,9 +11,11 @@ import type { EvidenceModel } from '../page_models/evidence.js';
 import { EvidencePane } from './evidence_pane.js';
 import { InspectionHistory } from '../page_models/inspection_history.js';
 import { PinnedInspection } from './inspection_pin.js';
+import type { EmergencyStop } from '../page_models/design/emergency_stop.js';
+import { EmergencyControl } from './emergency_control.js';
 import './style.css';
 
-export function MonitorWorkspace({ model, context, synthetic = false, navigation, namedViews, evidence }: { model: MonitorModel; context: RunContext; synthetic?: boolean; navigation?: NavigationModel; namedViews?: NamedViewsModel; evidence?: EvidenceModel }) {
+export function MonitorWorkspace({ model, context, synthetic = false, navigation, namedViews, evidence, emergency }: { model: MonitorModel; context: RunContext; synthetic?: boolean; navigation?: NavigationModel; namedViews?: NamedViewsModel; evidence?: EvidenceModel; emergency?: EmergencyStop }) {
   const subscribe = useCallback((notify: () => void) => model.subscribe(notify), [model]);
   const view = useSyncExternalStore(subscribe, () => model.snapshot);
   const [filter, setFilter] = useState('');
@@ -59,7 +61,8 @@ export function MonitorWorkspace({ model, context, synthetic = false, navigation
       <div className="context"><div><p className="eyebrow">Campaign / execution observations</p><h1>Follow execution</h1></div><p>Read-only · {view.window ? `live revision ${view.window.snapshot.cut.revision}` : 'awaiting observation'}</p></div>
       <div className="toolbar">{!topology && !pin && <><label htmlFor="node-filter">Find in loaded nodes</label><input id="node-filter" value={filter} onChange={event => setFilter(event.target.value)} maxLength={120} /></>}
         <button onClick={() => void model.refresh()} disabled={view.phase === 'loading'}>Refresh observation</button>
-        <button onClick={() => void model.poll()} disabled={!current}>Check for updates</button></div>
+        <button onClick={() => void model.poll()} disabled={!current}>Check for updates</button>
+        {emergency?.matches(context) && <a href="#emergency-control">Emergency control</a>}</div>
       {!topology && !pin && <p className="status" role="status" data-testid="graph-status">{view.phase === 'loading' ? 'Loading observation… Previous records are not current.' :
         view.phase === 'denied' ? 'Access denied. Observation data has been cleared.' : view.phase === 'stale' ? 'Observation expired or changed. Refresh to continue.' :
         view.phase === 'failed' ? `Observation unavailable. ${view.error?.message ?? ''}` : view.phase === 'empty' ? 'No activations in this scope.' :
@@ -96,6 +99,7 @@ export function MonitorWorkspace({ model, context, synthetic = false, navigation
         <p>{view.window.snapshot.cut.scope.tenant_id} / {view.window.snapshot.cut.scope.project_id}</p>
         <p>{current ? 'Current observation.' : 'This observation is not current.'} Scientific acceptance is a separate domain decision.</p>
       </details>}
+      {emergency?.matches(context) && <EmergencyControl model={emergency} observation={current && !pin ? view.window?.snapshot ?? null : null} denied={view.phase === 'denied'} />}
       <footer>{topology ? "Authored links from the retained campaign plan. Execution status does not establish scientific acceptance." : "Activation inventory; this endpoint does not publish connections. Layout cannot change a campaign."}</footer>
     </main>
   </div>;

@@ -1,6 +1,6 @@
 # Studio Monitor presentation
 
-Design: [Studio](../../../docs/Architecture/Experience/Studio.md) and [canvas decision](../../../docs/Architecture/Experience/Studio_Canvas_Decision.md). Implemented: BP-05.02 B1-B3; final-source V1 replacement/audit accepted. User: internal researcher inspecting execution and retained evidence. No execution commands, scientific acceptance, owner credentials or component-local network reads.
+Design: [Studio](../../../docs/Architecture/Experience/Studio.md) and [canvas decision](../../../docs/Architecture/Experience/Studio_Canvas_Decision.md). Implemented: BP-05.02 B1-B3; final-source V1 replacement/audit accepted. User: internal researcher inspecting execution and retained evidence. BP-05.03 adds optional separate emergency-command presentation; scientific acceptance, owner credentials and component-local network reads remain outside this module.
 
 MonitorWorkspace accepts host-owned MonitorModel plus optional NavigationModel, NamedViewsModel and EvidenceModel. The host constructs/disposes network models. React external-store subscriptions render their DTOs; workspace coordinates document visibility and hidden navigation. Its internally owned InspectionHistory has no transport or persistence. Scope/graph/detail/evidence/navigation denial clears affected captured history.
 
@@ -17,3 +17,5 @@ Verification: `npm run test:browser` (7 Monitor cases, including detail-denial p
 Replacement preserves model ownership, cut/selection/permission meaning, bounded scenes, omission labels, accessible controls and authored-link provenance. Layout may change; observations cannot become execution commands. Next-campaign drafts are BP-05.03; scientific producers and target-host deployment remain later owners.
 
 Latest acceptance: BP-05.02 closed100%; final-source scopee222d4cf32604d729ef12146860bc49c passes both independently installed65-test browser builds and actual-owner replacement. [Navigation audit](../../../docs/Audits/BP-05.02_Navigation_Closeout.md).
+
+Optional `EmergencyControl` is separate from read-only graph inspection and draft editing. A toolbar link reaches the operational region; historical/stale views disable new stops. It renders EmergencyStop state, original receipt recovery and unresolved external-effect wording. Accepted receipts never rewrite the Monitor projection. No credentials or request logic live in components. `npm run test:emergency` covers acceptance, rejection,503 lost acknowledgement, socket loss and denial at desktop/narrow widths, with historical disabling, keyboard invocation, accessibility/overflow checks and screenshots. Owner mutation/race authority is a separate integration gate.

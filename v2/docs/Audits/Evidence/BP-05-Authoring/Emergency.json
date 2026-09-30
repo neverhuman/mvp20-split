@@ -1,0 +1,64 @@
+{
+  "verified_at": "2026-09-30 14:32:07",
+  "timezone": "America/Chicago",
+  "status": "passed",
+  "scenarios": [
+    {
+      "name": "accepted",
+      "status": "passed",
+      "posts": 1,
+      "lookups": 0,
+      "distinct_command_bodies": 1
+    },
+    {
+      "name": "rejected",
+      "status": "passed",
+      "posts": 1,
+      "lookups": 0,
+      "distinct_command_bodies": 1
+    },
+    {
+      "name": "lost-ack",
+      "status": "passed",
+      "posts": 1,
+      "lookups": 1,
+      "distinct_command_bodies": 1
+    },
+    {
+      "name": "socket-loss",
+      "status": "passed",
+      "posts": 3,
+      "lookups": 1,
+      "distinct_command_bodies": 1
+    },
+    {
+      "name": "denied",
+      "status": "passed",
+      "posts": 1,
+      "lookups": 0,
+      "distinct_command_bodies": 1
+    }
+  ],
+  "screenshots": [
+    "accepted-1440.png",
+    "accepted-390.png",
+    "rejected-1440.png",
+    "rejected-390.png",
+    "lost-ack-1440.png",
+    "lost-ack-390.png",
+    "socket-loss-1440.png",
+    "socket-loss-390.png",
+    "denied-1440.png",
+    "denied-390.png"
+  ],
+  "limits": [
+    "Scripted HTTP peer using actual Studio transport/models/presentation; no owner cancellation-race or target-host acceptance."
+  ],
+  "studio_tests": 112,
+  "isolated_scope": "80dfaf9273ef46a5a71cd36fa458c29e",
+  "page_model_tests": 82,
+  "monitor_browser_cases": 7,
+  "screenshot_root": ".test-results/studio-emergency/2026-09-30T19-32-07-225Z",
+  "visual_review": "Desktop and narrow accepted states inspected; final change adds toolbar jump link.",
+  "tracker": "BP-05.03 B1 remains0/4; parent8/16."
+}

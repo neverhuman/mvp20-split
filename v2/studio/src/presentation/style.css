@@ -176,6 +176,13 @@ aside {
   border-bottom:1px solid var(--line);
   min-height:168px;
 }
+.emergency-control {
+  border-top:1px solid var(--line);
+  margin-top:var(--space);
+  padding-top:var(--space);
+  overflow-wrap:anywhere;
+}
+.emergency-control h2 { font-size:16px; margin:0 0 8px; }
 .navigation-inspector {
   overflow:auto;
 }
