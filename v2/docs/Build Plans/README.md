@@ -7,7 +7,7 @@ BP-05 is active; use its canonical tracker/MBT for current phase and percentages
 - [BP-02 Durable Runtime and Artifact Foundation](Completed/BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md).
 - [BP-03 Tool Index and Standalone Execution](Completed/BP-03%20Tool%20Index%20and%20Standalone%20Execution.md).
 - [BP-04 Deterministic Graph Runner](Completed/BP-04%20Deterministic%20Graph%20Runner.md).
-- [BP-05 Graph Studio First Vertical Slice](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md).
+- [BP-05 Graph Studio First Vertical Slice](Completed/BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md).
 - [BP-06 Knowledge Evidence and Source Loop](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md).
 - [BP-07 Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md).
 - [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md).

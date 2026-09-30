@@ -1,6 +1,6 @@
 # Graph Studio
 
-Status: BP-05.01/.02/.03 closed with actual-owner replacement accepted. BP-05.04 owns integrated visual/interaction acceptance. Architecture: [Studio](../docs/Architecture/Experience/Studio.md), [read-model protocol](../docs/Architecture/Experience/Studio_Read_Model_Protocol.md).
+Status: BP-05 closed100%; all four children and integrated parent audited. BP-06 owns scientific knowledge/evidence integration. Architecture: [Studio](../docs/Architecture/Experience/Studio.md), [read-model protocol](../docs/Architecture/Experience/Studio_Read_Model_Protocol.md).
 
 This independently packaged browser consumer owns presentation state and public HTTP transport. It owns no run database, scientific rules, execution authority or backend credentials. Runtime observations are authoritative; notifications request refresh rather than patching graph state. Monitor implements scoped observations, authored topology, occurrence navigation, linked evidence and bounded historical pins. Design implements next-campaign drafts, reviewed tool/schema forms, comparison, explicit rebase, pinned validation and owner-requested activation. Emergency termination is a separate operational control. Scientific Explore/Compare producers remain later owners.
 
@@ -22,3 +22,5 @@ Replacement must preserve generated wire compatibility, bounded reads, cancellat
 Latest acceptance: BP-05.02 closed100%; final-source scopee222d4cf32604d729ef12146860bc49c passes both independently installed65-test browser builds and actual-owner replacement. [Navigation audit](../docs/Audits/BP-05.02_Navigation_Closeout.md).
 
 Active authoring boundary: [Design models](src/page_models/design/README.md) own draft state, original receipts, reviewed tool/schema discovery, structural comparison and scalar forms. Schema/form models do not grant execution or scientific authority. Emergency control is operational Monitor behavior, independent of draft saves. BP-05.03 authoring, current eligibility, conflicting writers, cancellation orderings and registered-command crash recovery passed. [Authoring audit](../docs/Audits/BP-05.03_Authoring_Closeout.md).135 tests pass in each of two independent Studio installs; actual-owner scopeffe3e49ccc90476684fe8477809f75cd passed25 cases. The module remains an internally hosted consumer, not a deployed authentication gateway.
+
+[Integrated Studio audit](../docs/Audits/BP-05_Studio_Closeout.md) records final137-test independent builds,25 real-owner cases, bounded local performance and focused module replacement. No deployment gateway, scientific applicability, native-zoom/screen-reader conformance or target-host performance claim.

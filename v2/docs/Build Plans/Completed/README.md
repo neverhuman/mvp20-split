@@ -2,6 +2,7 @@
 
 | Plan | Completion | Closeout |
 |---|---|---|
+| [BP-05 Graph Studio First Vertical Slice](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md) | 100%;16/16 deliveries, four children audited | [Parent audit](../../Audits/BP-05_Studio_Closeout.md) |
 | [BP-04 Deterministic Graph Runner](BP-04%20Deterministic%20Graph%20Runner.md) | 100%;24/24 deliveries, six children audited | [Parent audit](../../Audits/BP-04_Graph_Runner_Closeout.md) |
 | [BP-03 Tool Index and Standalone Execution](BP-03%20Tool%20Index%20and%20Standalone%20Execution.md) | 100%; 16/16 deliveries, four children audited | [Parent audit](../../Audits/BP-03_Tool_Execution_Closeout.md) |
 | [BP-02 Durable Runtime and Artifact Foundation](BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md) | 100%; 32/32 deliveries, six children audited | [Parent audit](../../Audits/BP-02_Foundation_Closeout.md) |

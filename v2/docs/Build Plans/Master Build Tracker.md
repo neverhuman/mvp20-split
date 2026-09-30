@@ -8,17 +8,17 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-05 primary active; BP-06 through BP-09 queued; BP-01/BP-01A/BP-02/BP-03/BP-04 closed.
-- Last refreshed: `2026-09-30 17:27:10` (America/Chicago).
+- Status: BP-05 closed; BP-06 activation review; BP-07 through BP-09 queued.
+- Last refreshed: `2026-09-30 17:34:15` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
-- Current priority: P4 / BP-05 - Graph Studio first vertical slice.
-- Primary active implementation plan / phase / task: BP-05 -> BP-05.04 / Acceptance / V1.
-- Current task: BP-05.04/V1 scoped child/parent audit, evidence reconciliation and archival.
-- Next task: BP-06 activation coherence review after BP-05 closes.
-- Implementation completion: BP-04 closed100% (24/24); BP-05 active93.75% (15/16), .01-.03 closed100%, .04 active75% (Build100% / Acceptance0%); BP-06..09 queued0%.
-- Active focus: final Studio boundary/parent audit and successor handoff.
-- Blockers: no user decision pending; BP-05.04 acceptance remains engineering work. Scientific/provider/host decisions remain later gates.
-- Acceptance posture: deterministic Runtime and independent public observation/replacement accepted. Browser/UI and next-campaign authoring remain BP-05.
+- Current priority: P5 / BP-06 - Knowledge Evidence and Source Loop.
+- Primary active implementation plan / phase / task: none pending BP-06 bounded activation coherence review.
+- Current task: BP-06 / BP-06.01 prerequisite and physical boundary review.
+- Next task: BP-06.01/B1 after its activation audit.
+- Implementation completion: BP-05 closed100% (16/16); BP-06..09 remain0%.
+- Active focus: reconcile source/evidence acquisition contracts against accepted owner boundaries.
+- Blockers: no user decision pending; synthetic source fixtures are authorized.
+- Acceptance posture: BP-05 integrated Studio accepted within synthetic software scope; scientific and deployment acceptance remains later.
 - Active exception: none.
 
 ## Initial Delivery Boundary
@@ -31,17 +31,7 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-05 is the sole primary active plan. Child trackers own delivery evidence; completed plans remain in the archive.
-
-| Parent | Implementation | P1 Interaction | P2 Inspection | P3 Drafts | P4 Acceptance |
-|---|---:|---:|---:|---:|---:|
-| [BP-05](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md) | 93.75% (15/16) | 100% | 100% | 100% | 75% |
-
-| Active canonical child | Overall | Build | Acceptance | Current task |
-|---|---:|---:|---:|---|
-| [BP-05.04](BP-05/BP-05.04%20Visual%20and%20integration%20acceptance.md) | 75% | 100% | 0% | V1 closeout |
-
-BP-02 closed32/32, BP-03 closed16/16, BP-04 closed24/24. See [completed plans](Completed/README.md). New parent progress counts only its own deliveries.
+No implementation child is active during BP-06 activation review. BP-06 remains0/24; all six phases0%. BP-05 closed16/16 with all phases100%. See [completed plans](Completed/README.md).
 
 ## Queued Plans and Phase Mirrors
 
@@ -61,11 +51,10 @@ The owning plan tracker is canonical for overall and per-phase percentages. Refr
 
 ## Prioritized Build Queue
 
-BP-05 is `primary_active`; BP-06 through BP-09 are `design_specified / queued`. The later roadmap has 34 canonical children. Each child names owned objects/contracts, algorithms, failure oracles and replacement acceptance. Completed plans remain in the archive.
+BP-06 is undergoing activation review at0%; BP-07 through BP-09 are `design_specified / queued`. The later roadmap has 34 canonical children. Each child names owned objects/contracts, algorithms, failure oracles and replacement acceptance. Completed plans remain in the archive.
 
 | Order / ID | Completion | Proposed plan | Required predecessor gates | Bounded outcome / exit | Architecture owner |
 |---|---|---|---|---|---|
-| P4 / BP-05 | 62.5% | [Graph Studio First Vertical Slice](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md) | BP-04 runnable fixture and read/command contracts | Inspect actual live/historical execution, evidence, parallel branches and failures; edit next-campaign drafts, compare revisions and observe emergency termination; preserve autonomous progress | [Studio](../Architecture/Experience/Studio.md), [UI rules](../UI_Coding_Guidelines.md) |
 | P5 / BP-06 | 0% | [Knowledge Evidence and Source Loop](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) | BP-01 contracts; BP-04 execution; BP-05 inspection | Minimal source/document/result ingestion, typed accepted-change replay, pinned knowledge revisions, bounded executable rules and explicit scientific acceptance receipts; demonstrate corrections affect later campaigns | [Knowledge](../Architecture/Knowledge/Knowledge_Architecture.md), [Data](../Architecture/Data/Data_Architecture.md), [experiments](../Architecture/Research/Experiments.md) |
 | P6 / BP-07 | 0% | [Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | BP-03 tool discovery; BP-04 runner; BP-05 UI; BP-06 grounded context/receipts | Model-generated campaign proposals and text-to-graph extraction through validated contracts; durable scoped engagements, stale-proposal/fallback races, bounded repair and truthful terminal blockers; no routine human waits | [Planning](../Architecture/Agents/Planning.md), [Graph Runner](../Architecture/System/Graph_Runner.md) |
 | P7 / BP-08 | 0% | [Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | BP-04 iteration/checkpoints; BP-06 applicability/evidence; BP-07 for LLM-guided topology | Adapt reusable numerical kernels to explicit generation/checkpoint history, separate representation fixtures and evidence-bound selection; parameter search precedes bounded topology proposals under successor-campaign rules | [Search](../Architecture/Campaigns/Search.md), [reuse baseline](../Architecture/Evolutionary_Code_Reuse_Baseline.md) |
@@ -78,7 +67,7 @@ This is the default sequencing, not nine permanent file-ownership buckets. Each 
 | Milestone | Plans | Done when | Status |
 |---|---|---|---|
 | M1 ? Replaceable typed foundation | BP-01/02/03 | One standalone tool is discovered and invoked through pinned contracts with durable acceptance and recovery | Synthetic software foundation complete: BP-01/02/03 contracts, durable invocation/recovery and standalone tools accepted |
-| M2 ? Inspectable executing graph | BP-04/05 | A user can follow parallel work, joins, failures and evidence in a real running fixture, then author a subsequent campaign | In progress: BP-04 execution/observation closed; BP-05 Studio active |
+| M2 ? Inspectable executing graph | BP-04/05 | A user can follow parallel work, joins, failures and evidence in a real running fixture, then author a subsequent campaign | Accepted within synthetic software scope: BP-04 execution/observation and BP-05 Studio closed |
 | M3 ? Autonomous evidence-aware campaign | BP-06/07 | Pinned knowledge informs execution; durable LLM proposals are validated; stale or invalid responses cannot corrupt the run | Not started |
 | M4 ? Evolution and module replacement | BP-08/09 | Search history/checkpoints are inspectable; target-host demo recovers and a replacement tool preserves its documented boundaries | Not started |
 
@@ -123,6 +112,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-09-30 17:34:15 | BP-05 closed100% (16/16); .04 closed4/4; BP-06 review0% | [Integrated audit](../Audits/BP-05_Studio_Closeout.md) |
 | 2026-09-30 17:27:10 | BP-05.04/B3 verified75%; parent93.75% (15/16); V1 active | Named-view replacement;137-test independent builds,25 owner cases, visual review passed |
 | 2026-09-30 17:15:38 | BP-05.04/B2 verified50%; parent87.5% (14/16); B3 active | 10000 logical/200 rendered; separate request/render samples and fixed local regression budget |
 | 2026-09-30 17:07:23 | BP-05.04/B1 verified25%; parent81.25% (13/16); B2 active | Keyboard/narrow/reconnect journeys;25 real-owner cases and two135-test builds |
@@ -147,6 +137,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-29 22:06:45 | BP-05.02 closed100%; parent50% (8/16); .03 activation review | Final-source real-owner replacement scopee222d4cf32604d729ef12146860bc49c;65 tests per independent build; audit aligned |
 | 2026-09-29 22:01:49 | BP-05.02/B3 verified75%; parent43.75% (7/16); V1 active | Actual-owner topology/evidence/replacement scope5be3aa3cba1445448eafffe060d2a124; dense browser and denial repair |
 | 2026-09-29 21:53:46 | BP-05.02/B2 verified50%; parent37.5% (6/16); B3 active | 65 Node tests,24 browser cases, isolated Studio; bounded history/hidden policy/comparison |
-| 2026-09-29 21:23:21 | BP-05.02/B1 verified25%; parent31.25% (5/16); B2 active | 1245 Python,53 Node,19 installs,REC-01..09;21 scripted browser cases, isolated Studio; B1 evidence retained |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

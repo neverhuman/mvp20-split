@@ -2,17 +2,17 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-05.04 / Acceptance / V1.
-- Last refreshed: `2026-09-30 17:27:10` (America/Chicago).
+- Status: closed / archived; all scoped gates passed.
+- Last refreshed: `2026-09-30 17:34:15` (America/Chicago).
 - Owner/scope: Studio modules and thin gateway/projection adapters.
-- Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
+- Authority: [Master Build Tracker](../Master%20Build%20Tracker.md); [planning readiness and handoffs](../Planning_Readiness.md).
 - Prerequisites: Completed BP-04 runnable fixture and versioned read/command contracts.
-- Implementation: **93.75%**, 15/16 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
+- Implementation: **100%**, 16/16 verified child deliveries; P1-P4 each100%.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current task: BP-05.04/V1 scoped child/parent audit, evidence reconciliation and archival.
-- Latest checkpoint: `2026-09-30 17:27:10`: .04/B3 verified. NamedViewsModel rebuilt with focused projection policy; original tests/public transport preserved, two reentrant subscriber cases added.106 model tests,10 navigation scenarios,25 real-owner cases and two137-test independent builds pass (scopebeb2b8cff5464c68b6aead2682dacb3b). Desktop/narrow evidence and two200% CSS layout/accessibility probes reviewed; no blocking visual issue within supported scope. Child75%=3/4, Build100%/Acceptance0%; parent93.75%=15/16. V1 scoped parent/child closeout active.
+- Current task: none; BP-06 activation coherence review is the successor.
+- Latest checkpoint: `2026-09-30 17:34:15`: all four children and integrated parent outcome accepted; [parent audit](../../Audits/BP-05_Studio_Closeout.md).
 - Demonstrated behavior: B1 transport and page-model contracts verified in 28 owned Node tests and an independent source build; full foundation passes. B2 also verifies bounded synthetic browser interaction at desktop/narrow sizes. B3 also proves seven production-client browser failure cases; V1 actual Runtime/Studio replacement passed; .01 is archived with its aligned audit.
-- Blockers: none for .04/V1; missing owner projections are explicit engineering scope, scientific owners remain later dependencies.
+- Blockers: none within closed scope; scientific/provider/target-host acceptance remains successor work.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
 
@@ -30,10 +30,10 @@ Primary services retain private state, dependencies, migrations and module READM
 
 | Parent phase / child | Overall | Build | Acceptance | Prerequisite |
 |---|---:|---:|---:|---|
-| P1 / [BP-05.01 Interaction and transport boundaries](BP-05/Completed/BP-05.01%20Interaction%20and%20transport%20boundaries.md) | 100% | 100% | 100% | Parent predecessor gates |
-| P2 / [BP-05.02 Graph inspection and navigation](BP-05/Completed/BP-05.02%20Graph%20inspection%20and%20navigation.md) | 100% | 100% | 100% | BP-05.01 acceptance |
-| P3 / [BP-05.03 Drafts and safe commands](BP-05/Completed/BP-05.03%20Drafts%20and%20safe%20commands.md) | 100% | 100% | 100% | BP-05.02 acceptance |
-| P4 / [BP-05.04 Visual and integration acceptance](BP-05/BP-05.04%20Visual%20and%20integration%20acceptance.md) | 75% | 100% | 0% | BP-05.03 acceptance |
+| P1 / [BP-05.01 Interaction and transport boundaries](../BP-05/Completed/BP-05.01%20Interaction%20and%20transport%20boundaries.md) | 100% | 100% | 100% | Parent predecessor gates |
+| P2 / [BP-05.02 Graph inspection and navigation](../BP-05/Completed/BP-05.02%20Graph%20inspection%20and%20navigation.md) | 100% | 100% | 100% | BP-05.01 acceptance |
+| P3 / [BP-05.03 Drafts and safe commands](../BP-05/Completed/BP-05.03%20Drafts%20and%20safe%20commands.md) | 100% | 100% | 100% | BP-05.02 acceptance |
+| P4 / [BP-05.04 Visual and integration acceptance](../BP-05/Completed/BP-05.04%20Visual%20and%20integration%20acceptance.md) | 100% | 100% | 100% | BP-05.03 acceptance |
 
 Each linked child is the execution tracker for its scope. Build tasks name concrete implementation; acceptance requires independent evidence and a scoped drift audit. Do not repeat the historical task pairs as a second work list. No dependent child starts before its predecessor acceptance gate; independent design review does not activate implementation.
 
@@ -52,15 +52,15 @@ Keep scenario evidence with absolute timestamps, implementation revision, fixtur
 
 ## UI Reference Refinement
 
-`2026-09-24 12:10:07`: Use the [interaction reference map](../Architecture/Experience/Interaction_References.md) in P1/T1-T2 prototypes and P4 usability checks. Design/Monitor separation and persistent selection refine existing scope; Explore and fitness Compare depend on BP-06/BP-08. Implementation and all phase percentages remain 0%; this refines existing tasks.
+`2026-09-24 12:10:07`: Use the [interaction reference map](../../Architecture/Experience/Interaction_References.md) in P1/T1-T2 prototypes and P4 usability checks. Design/Monitor separation and persistent selection refine existing scope; Explore and fitness Compare depend on BP-06/BP-08. Implementation and all phase percentages remain 0%; this refines existing tasks.
 
 ## Reference Refinement
 
-`2026-09-25 13:54:17`: BP-05.02 now specifies named, scoped, revision-bound scientific views and matching failure fixtures. Knowledge/lab views use labeled fixtures until BP-06.06 proves the actual owner integration; no graph backend is selected by the reference. See [reference assessment](References/Amphora_Lab_Insights.md). Added requirements refine existing child B1-B3 deliveries; each child V1 gate includes them. No task is complete, implementation remains 0%, and the denominator is unchanged.
+`2026-09-25 13:54:17`: BP-05.02 now specifies named, scoped, revision-bound scientific views and matching failure fixtures. Knowledge/lab views use labeled fixtures until BP-06.06 proves the actual owner integration; no graph backend is selected by the reference. See [reference assessment](../References/Amphora_Lab_Insights.md). Added requirements refine existing child B1-B3 deliveries; each child V1 gate includes them. No task is complete, implementation remains 0%, and the denominator is unchanged.
 
 ## Decisions and Handoff
 
-Child decisions and the [cross-plan handoff register](Planning_Readiness.md) identify the exact producer, consumer and required proof. Engineering defaults are planning baselines; validate them against real predecessor contracts before coding. External choices are not inferred from examples. Do not weaken a live model, browser, database or target-host gate to a fixture when that environment is unavailable.
+Child decisions and the [cross-plan handoff register](../Planning_Readiness.md) identify the exact producer, consumer and required proof. Engineering defaults are planning baselines; validate them against real predecessor contracts before coding. External choices are not inferred from examples. Do not weaken a live model, browser, database or target-host gate to a fixture when that environment is unavailable.
 
 ## Accounting and Closeout
 

@@ -1,10 +1,10 @@
 # Architecture Drift
 
-- Status: BP-05 active; BP-04 and all six children closed/audited.
+- Status: BP-05 closed/audited; BP-06 activation coherence review.
 - Last refreshed: `2026-09-30 16:50:49` (America/Chicago).
 - Scope: v2 design/implementation alignment
-- Active focus: BP-05.04 integrated visual/interaction acceptance; .01-.03 closed with aligned audits in history.
-- Next gate: BP-05.04/B1 integrated journeys; activation coherence corrected_ready. No unresolved .03 blocking drift.
+- Active focus: source/evidence acquisition predecessor reconciliation.
+- Next gate: BP-06.01 activation audit; no unresolved BP-05 blocking drift.
 
 ## Active Findings
 
