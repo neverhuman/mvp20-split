@@ -183,6 +183,26 @@ aside {
   overflow-wrap:anywhere;
 }
 .emergency-control h2 { font-size:16px; margin:0 0 8px; }
+.draft-workspace label { display:flex; flex-direction:column; gap:5px; }
+.draft-workspace .toolbar>label { min-width:0; max-width:100%; }
+.draft-workspace select[aria-label="Reviewed tool"] { width:280px; }
+.draft-workspace input,.draft-workspace select,.draft-workspace textarea { max-width:100%; }
+.draft-area { grid-template-columns:minmax(0,1fr) 340px; }
+.draft-sidebar { overflow:hidden; min-width:0; padding:16px; border-left:1px solid var(--line); }
+.draft-sidebar nav { display:flex; flex-direction:column; gap:6px; margin-bottom:20px; max-height:220px; overflow:auto; flex-shrink:0; }
+.draft-sidebar nav button { flex-shrink:0; overflow-wrap:anywhere; white-space:normal; }
+.draft-inspector { overflow-wrap:anywhere; overflow:auto; min-height:0; }
+.draft-inspector fieldset { min-width:0; margin:12px 0; }
+.draft-inspector label,.draft-field { margin:8px 0; }
+.draft-workspace textarea { width:100%; font:12px/1.5 monospace; }
+.draft-workspace pre { white-space:pre-wrap; overflow-wrap:anywhere; }
+.draft-workspace details { margin:12px 0; }
+.draft-comparison li { margin:12px 0; overflow-wrap:anywhere; }
+@media(max-width:760px) {
+  .draft-area { grid-template-columns:1fr; height:auto; }
+  .draft-area .graph-region { height:400px; }
+  .draft-sidebar { max-height:none; border-left:0; border-top:1px solid var(--line); }
+}
 .navigation-inspector {
   overflow:auto;
 }

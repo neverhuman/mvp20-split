@@ -1,6 +1,6 @@
 # Graph Studio
 
-Status: BP-05.01/.02 closed with actual-owner replacement accepted. BP-05.03/B1 active: authoring models and separate emergency presentation implemented; full editor/owner acceptance pending. Architecture: [Studio](../docs/Architecture/Experience/Studio.md), [read-model protocol](../docs/Architecture/Experience/Studio_Read_Model_Protocol.md).
+Status: BP-05.01/.02 closed with actual-owner replacement accepted. BP-05.03/B1 active: Design editing and separate emergency presentation have scripted-peer proof; actual-owner authoring acceptance pending. Architecture: [Studio](../docs/Architecture/Experience/Studio.md), [read-model protocol](../docs/Architecture/Experience/Studio_Read_Model_Protocol.md).
 
 This independently packaged browser consumer owns presentation state and public HTTP transport. It owns no run database, scientific rules, execution authority or backend credentials. Runtime observations are authoritative; notifications request refresh rather than patching graph state. Design/Monitor/Explore/Compare presentation comes in the following gates; current code implements scoped read-only Monitor transport/state and selection detail; actual Runtime UI observation/replacement is accepted; BP-05.02 now implements authored topology, occurrence navigation, linked evidence and bounded historical pins; its final-source replacement gate is accepted.
 
@@ -21,4 +21,4 @@ Replacement must preserve generated wire compatibility, bounded reads, cancellat
 
 Latest acceptance: BP-05.02 closed100%; final-source scopee222d4cf32604d729ef12146860bc49c passes both independently installed65-test browser builds and actual-owner replacement. [Navigation audit](../docs/Audits/BP-05.02_Navigation_Closeout.md).
 
-Active authoring boundary: [Design models](src/page_models/design/README.md) own draft state, original receipts, reviewed tool/schema discovery, structural comparison and scalar forms. Schema/form models do not grant execution or scientific authority. Emergency control is operational Monitor behavior, independent of draft saves. BP-05.03 full editor/owner failure/replacement gates remain open.
+Active authoring boundary: [Design models](src/page_models/design/README.md) own draft state, original receipts, reviewed tool/schema discovery, structural comparison and scalar forms. Schema/form models do not grant execution or scientific authority. Emergency control is operational Monitor behavior, independent of draft saves. BP-05.03 actual-owner failure/replacement gates remain open.

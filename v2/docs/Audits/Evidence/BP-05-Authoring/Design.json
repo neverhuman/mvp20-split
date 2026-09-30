@@ -1,0 +1,267 @@
+{
+  "verified_at": "2026-09-30 14:55:48",
+  "timezone": "America/Chicago",
+  "status": "passed",
+  "scenarios": [
+    {
+      "name": "compose",
+      "status": "passed",
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-drafts/draft"
+        },
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-universe"
+        },
+        {
+          "method": "GET",
+          "path": "/api/registry/v1/releases"
+        },
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-schemas/350078715d2f1f1869433238c755a20719c5dfbb47b6151716619c2f9abce7af"
+        },
+        {
+          "method": "POST",
+          "path": "/api/runtime/v1/definition-drafts/save"
+        },
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-drafts/draft"
+        },
+        {
+          "method": "POST",
+          "path": "/api/runtime/v1/definition-drafts/validate"
+        },
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-validations/validation"
+        }
+      ]
+    },
+    {
+      "name": "compose-narrow",
+      "status": "passed",
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-drafts/draft"
+        },
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-universe"
+        },
+        {
+          "method": "GET",
+          "path": "/api/registry/v1/releases"
+        },
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-schemas/350078715d2f1f1869433238c755a20719c5dfbb47b6151716619c2f9abce7af"
+        },
+        {
+          "method": "POST",
+          "path": "/api/runtime/v1/definition-drafts/save"
+        },
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-drafts/draft"
+        },
+        {
+          "method": "POST",
+          "path": "/api/runtime/v1/definition-drafts/validate"
+        },
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-validations/validation"
+        }
+      ]
+    },
+    {
+      "name": "dense",
+      "status": "passed",
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-drafts/draft"
+        },
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-universe"
+        },
+        {
+          "method": "GET",
+          "path": "/api/registry/v1/releases"
+        },
+        {
+          "method": "POST",
+          "path": "/api/runtime/v1/definition-drafts/save"
+        },
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-drafts/draft"
+        }
+      ]
+    },
+    {
+      "name": "lost-ack",
+      "status": "passed",
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-drafts/draft"
+        },
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-universe"
+        },
+        {
+          "method": "GET",
+          "path": "/api/registry/v1/releases"
+        },
+        {
+          "method": "POST",
+          "path": "/api/runtime/v1/definition-drafts/save"
+        },
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-commands/definition.save/dce601d9-a8a1-4813-94b7-859d49847231"
+        },
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-drafts/draft"
+        }
+      ]
+    },
+    {
+      "name": "conflict",
+      "status": "passed",
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-drafts/draft"
+        },
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-universe"
+        },
+        {
+          "method": "GET",
+          "path": "/api/registry/v1/releases"
+        },
+        {
+          "method": "POST",
+          "path": "/api/runtime/v1/definition-drafts/save"
+        }
+      ]
+    },
+    {
+      "name": "pending-edit",
+      "status": "passed",
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-drafts/draft"
+        },
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-universe"
+        },
+        {
+          "method": "GET",
+          "path": "/api/registry/v1/releases"
+        },
+        {
+          "method": "POST",
+          "path": "/api/runtime/v1/definition-drafts/save"
+        },
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-drafts/draft"
+        }
+      ]
+    },
+    {
+      "name": "save-denied",
+      "status": "passed",
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-drafts/draft"
+        },
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-universe"
+        },
+        {
+          "method": "GET",
+          "path": "/api/registry/v1/releases"
+        },
+        {
+          "method": "POST",
+          "path": "/api/runtime/v1/definition-drafts/save"
+        }
+      ]
+    },
+    {
+      "name": "catalog-denied",
+      "status": "passed",
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-drafts/draft"
+        },
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-universe"
+        },
+        {
+          "method": "GET",
+          "path": "/api/registry/v1/releases"
+        },
+        {
+          "method": "GET",
+          "path": "/api/runtime/v1/definition-universe"
+        },
+        {
+          "method": "GET",
+          "path": "/api/registry/v1/releases"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    "compose-comparison.png",
+    "compose-1440.png",
+    "compose-390.png",
+    "compose-narrow-comparison.png",
+    "compose-narrow-1440.png",
+    "compose-narrow-390.png",
+    "dense-1440.png",
+    "dense-390.png",
+    "lost-ack-1440.png",
+    "lost-ack-390.png",
+    "conflict-1440.png",
+    "conflict-390.png",
+    "pending-edit-1440.png",
+    "pending-edit-390.png",
+    "save-denied-1440.png",
+    "save-denied-390.png",
+    "catalog-denied-1440.png",
+    "catalog-denied-390.png"
+  ],
+  "limits": [
+    "Scripted public HTTP peer; validation replies are fixtures, not actual Runtime compilation or authority.",
+    "No deployed gateway, scientific or target-host acceptance."
+  ],
+  "studio_tests": 118,
+  "isolated_scope": "f3d7043660f34e6b901da2ab41dbb8e9",
+  "page_model_tests": 88,
+  "navigation_browser_scenarios": 10,
+  "monitor_browser_scenarios": 7,
+  "screenshot_root": ".test-results/studio-drafts/2026-09-30T19-55-47-771Z",
+  "visual_review": "Desktop/narrow Design and dense long-label screenshots inspected; dense-list overlap repaired and rechecked.",
+  "tracker": "BP-05.03 B1 remains0/4; parent8/16."
+}

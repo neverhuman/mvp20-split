@@ -17,7 +17,8 @@
     "test:navigation": "npm run build && node tests/browser/navigation.mjs",
     "test:evidence": "npm run build && node tests/browser/evidence.mjs",
     "test:dense-navigation": "npm run build && node tests/browser/dense_navigation.mjs",
-    "test:emergency": "npm run build && node tests/browser/emergency.mjs"
+    "test:emergency": "npm run build && node tests/browser/emergency.mjs",
+    "test:drafts": "npm run build && node tests/browser/drafts.mjs"
   },
   "dependencies": {
     "@xyflow/react": "12.12.0",

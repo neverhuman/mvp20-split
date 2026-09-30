@@ -1,12 +1,18 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { numericInput } from "../../../src/page_models/design/scalar_input.js";
+import { numericInput, parseDraftJSON } from "../../../src/page_models/design/scalar_input.js";
 
 test("numeric form input preserves finite binary64 values and normalizes signed zero", () => {
   for (const [text, expected] of [["1", 1], [" 1.25 ", 1.25], ["1e20", 1e20], ["5e-324", 5e-324], ["-0.0e-9999", 0]] as const)
     assert.equal(numericInput(text, "number"), expected);
   for (const text of ["1e309", "-1e309", "1e-9999", "-1e-9999", "2e-324"])
     assert.throws(() => numericInput(text, "number"), /range|too small/);
+});
+
+test("advanced JSON forms check numeric lexemes before parsing and leave strings untouched", () => {
+  assert.deepEqual(parseDraftJSON('{"value":1.25,"text":"1e-9999 \\\" 0x10","large":1e20}'), { value: 1.25, text: '1e-9999 " 0x10', large: 1e20 });
+  for (const raw of ['{"value":1e-9999}', '{"value":1e9999}', '{"value":9007199254740993}', '{"value":1.00000000000000001}', '{"value":01}', '{"value":'])
+    assert.throws(() => parseDraftJSON(raw));
 });
 
 test("numeric forms reject missing, nondecimal and oversized input", () => {

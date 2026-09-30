@@ -17,3 +17,26 @@ export function numericInput(text: string, kind: "integer" | "number"): number {
   }
   return number === 0 ? 0 : number;
 }
+
+/** Preserve numeric loss checks even in the advanced JSON editor; quoted text is untouched. */
+export function parseDraftJSON(text: string): unknown {
+  if (new TextEncoder().encode(text).byteLength > 262144) throw new Error("Draft JSON is too large.");
+  let quoted = false, escaped = false;
+  for (let index = 0; index < text.length; index++) {
+    const character = text[index]!;
+    if (quoted) {
+      if (escaped) escaped = false;
+      else if (character === "\\") escaped = true;
+      else if (character === '"') quoted = false;
+    } else if (character === '"') quoted = true;
+    else if (/[0-9-]/.test(character)) {
+      let end = index + 1;
+      while (end < text.length && !/[\s,\]}:]/.test(text[end]!)) end++;
+      const token = text.slice(index, end), value = numericInput(token, "number");
+      if (Number.isSafeInteger(value)) numericInput(token, "integer");
+      if (!/[.eE]/.test(token) && !Number.isSafeInteger(value)) throw new Error("Integer JSON tokens must stay within the safe range; use explicit decimal or exponent notation for floating values.");
+      index = end - 1;
+    }
+  }
+  return JSON.parse(text) as unknown;
+}
