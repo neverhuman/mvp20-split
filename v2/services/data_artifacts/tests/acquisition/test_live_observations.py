@@ -43,6 +43,7 @@ if os.environ["OBS_SEED"] == "1":
 
 def test_actual_peer_unknown_then_known_preserves_original_observation(ingestion, tmp_path):
     e = ingestion
+    research_python = os.environ.get("AMPHORA_TEST_RESEARCH_PYTHON", sys.executable)
     source = e.source(b'{"candidate_id":"c1","candidate_revision":"1","sample_id":"s1","sample_revision":"1"}',
                       "synthetic_lab_json")
     prepared = e.workflow.prepare(e.principal, source)
@@ -58,7 +59,7 @@ def test_actual_peer_unknown_then_known_preserves_original_observation(ingestion
         OBS_MIGRATION=database.set(username="research_migrator").render_as_string(hide_password=False),
         OBS_SCOPE=e.principal.scope.model_dump_json(), OBS_ARTIFACT=source.reference.raw.model_dump_json(),
         OBS_TOKEN="t" * 32, OBS_SEED="0")
-    setup = subprocess.run([sys.executable, "-I", "-c", OWNER_SETUP], env=environment,
+    setup = subprocess.run([research_python, "-I", "-c", OWNER_SETUP], env=environment,
                            capture_output=True, timeout=30)
     assert setup.returncode == 0, "Research fixture setup failed"
     config = {"database_url_env": "OBS_DATABASE", "principals": [{"token_env": "OBS_TOKEN",
@@ -69,7 +70,7 @@ def test_actual_peer_unknown_then_known_preserves_original_observation(ingestion
         listener.bind(("127.0.0.1", 0))
         server_port = listener.getsockname()[1]
     endpoint = f"http://127.0.0.1:{server_port}"
-    process = subprocess.Popen([sys.executable, "-I", "-m", "amphora_research", "serve", "--config", str(config_path),
+    process = subprocess.Popen([research_python, "-I", "-m", "amphora_research", "serve", "--config", str(config_path),
                                 "--port", str(server_port)], env=environment, stdout=subprocess.DEVNULL,
                                stderr=subprocess.DEVNULL, creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
     try:
@@ -86,7 +87,7 @@ def test_actual_peer_unknown_then_known_preserves_original_observation(ingestion
         e.workflow.research = ResearchClient(endpoint, "t" * 32)
         original = e.workflow.observe(e.principal, command)
         assert original.resolution.reason == "unknown_candidate"
-        seeded = subprocess.run([sys.executable, "-I", "-c", OWNER_SETUP], env=environment | {"OBS_SEED": "1"},
+        seeded = subprocess.run([research_python, "-I", "-c", OWNER_SETUP], env=environment | {"OBS_SEED": "1"},
                                 capture_output=True, timeout=30)
         assert seeded.returncode == 0, "Research fixture seed failed"
         assert e.workflow.observe(e.principal, command) == original

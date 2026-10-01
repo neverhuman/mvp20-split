@@ -14,13 +14,14 @@ from pathlib import Path
 
 
 class OwnerProcess:
-    def __init__(self, config, environment, fault=None):
+    def __init__(self, config, environment, fault=None, python=None):
         with socket.socket() as listener:
             listener.bind(("127.0.0.1", 0))
             self.port = listener.getsockname()[1]
         self.events = queue.Queue()
-        args = ([sys.executable, "-I", str(Path(__file__).with_name("fault_host.py"))] if fault else
-                [sys.executable, "-I", "-m", "amphora_data_artifacts", "serve", "--config", str(config), "--port", str(self.port)])
+        python = python or sys.executable
+        args = ([python, "-I", str(Path(__file__).with_name("fault_host.py"))] if fault else
+                [python, "-I", "-m", "amphora_data_artifacts", "serve", "--config", str(config), "--port", str(self.port)])
         self.process = subprocess.Popen(args, env=environment, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
             stderr=subprocess.DEVNULL, text=True, encoding="utf-8", creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
 

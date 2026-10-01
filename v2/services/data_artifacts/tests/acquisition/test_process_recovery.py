@@ -1,6 +1,7 @@
 """Real process death before/after durable ingestion commits, followed by exact retry."""
 
 import json
+import os
 import urllib.error
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
@@ -51,7 +52,7 @@ def test_ingestion_process_death_reconciles_original_identity(ingestion, tmp_pat
     else:
         status = e.workflow.observations.history(e.principal, "process-observation")
         assert (status.result is None) == (stage == "observation_before_result")
-    replacement = OwnerProcess(config, environment)
+    replacement = OwnerProcess(config, environment, python=os.environ.get("AMPHORA_TEST_DATA_REPLACEMENT_PYTHON"))
     try:
         if stage == "source_before_head":
             with pytest.raises(urllib.error.HTTPError) as missing:

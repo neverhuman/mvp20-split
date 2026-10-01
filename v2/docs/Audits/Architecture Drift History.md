@@ -1,5 +1,7 @@
 # Architecture Drift History
 
+- `2026-10-01 18:34:28`: BP-06.01 closed100% and aligned; [source/evidence audit](BP-06.01_Source_Evidence_Closeout.md). Independent owner/peer/replacement proof complete; no follow-up within closed scope. Broader scientific/source capabilities retain their named successors.
+
 - `2026-09-30 17:34:15`: BP-05 and BP-05.04 closed/aligned; [parent audit](BP-05_Studio_Closeout.md), [acceptance audit](BP-05.04_Acceptance_Closeout.md). No unresolved blocking drift; scientific owners and target deployment remain successors.
 
 - `2026-09-29 20:06:20`: BP-05.01 closed/aligned,4/4 deliveries. [Scoped audit](BP-05.01_Interaction_Closeout.md) records schema-derived browser boundaries, measured bounded scene, seven failure cases and actual independent Studio/Runtime replacement. No unresolved finding within closed scope; explicit topology/view navigation remains BP-05.02.

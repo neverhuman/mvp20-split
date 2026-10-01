@@ -38,8 +38,30 @@ finally:
 '''
 
 
+def start_peer(python, config, environment, port):
+    process = subprocess.Popen([python, "-I", "-m", "amphora_research", "serve", "--config", str(config),
+        "--port", str(port)], env=environment, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+        creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
+    try:
+        deadline = time.monotonic() + 15
+        while True:
+            assert process.poll() is None, "Research host exited"
+            try:
+                with urllib.request.urlopen(f"http://127.0.0.1:{port}/health", timeout=3) as response:
+                    assert response.status == 200
+                return process
+            except urllib.error.URLError:
+                assert time.monotonic() < deadline, "Research readiness timeout"
+                time.sleep(0.05)
+    except BaseException:
+        process.kill()
+        process.wait(timeout=10)
+        raise
+
+
 def test_qev01_declarations_cross_owner_http_without_acceptance(ingestion, tmp_path):
     e = ingestion
+    research_python = os.environ.get("AMPHORA_TEST_RESEARCH_PYTHON", sys.executable)
     content = b"Synthetic applicability and declared method context; no accepted result."
     artifact = e.publish(content)
     scope = e.principal.scope.model_dump()
@@ -60,7 +82,7 @@ def test_qev01_declarations_cross_owner_http_without_acceptance(ingestion, tmp_p
     environment = dict(os.environ, QEV_DATABASE=database.render_as_string(hide_password=False),
         QEV_MIGRATION=database.set(username="research_migrator").render_as_string(hide_password=False),
         QEV_QUESTION=question.model_dump_json(), QEV_NEED=need.model_dump_json(), QEV_TOKEN="q"*32)
-    seeded = subprocess.run([sys.executable, "-I", "-c", SEED], env=environment, capture_output=True, timeout=30)
+    seeded = subprocess.run([research_python, "-I", "-c", SEED], env=environment, capture_output=True, timeout=30)
     assert seeded.returncode == 0, "Research-owned fixture seeding failed"
     config = tmp_path / "research.json"
     config.write_text(json.dumps({"database_url_env": "QEV_DATABASE", "principals": [
@@ -70,21 +92,9 @@ def test_qev01_declarations_cross_owner_http_without_acceptance(ingestion, tmp_p
         listener.bind(("127.0.0.1", 0))
         port = listener.getsockname()[1]
     endpoint = f"http://127.0.0.1:{port}"
-    process = subprocess.Popen([sys.executable, "-I", "-m", "amphora_research", "serve", "--config", str(config),
-        "--port", str(port)], env=environment, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
-        creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
+    process = start_peer(research_python, config, environment, port)
     data = None
     try:
-        deadline = time.monotonic() + 15
-        while True:
-            assert process.poll() is None, "Research host exited"
-            try:
-                with urllib.request.urlopen(endpoint + "/health", timeout=3) as response:
-                    assert response.status == 200
-                break
-            except urllib.error.URLError:
-                assert time.monotonic() < deadline, "Research readiness timeout"
-                time.sleep(0.05)
         data_config, data_env = configuration(e, tmp_path)
         data = OwnerProcess(data_config, data_env)
         for kind, record in [("questions", question), ("evidence-needs", need)]:
@@ -108,6 +118,15 @@ def test_qev01_declarations_cross_owner_http_without_acceptance(ingestion, tmp_p
         with pytest.raises(urllib.error.HTTPError) as error:
             urllib.request.urlopen(denied, timeout=5)
         assert error.value.code == 401
+        process.kill()
+        process.wait(timeout=10)
+        replacement_python = os.environ.get("AMPHORA_TEST_RESEARCH_REPLACEMENT_PYTHON", research_python)
+        process = start_peer(replacement_python, config, environment, port)
+        for kind, record in [("questions", question), ("evidence-needs", need)]:
+            request = urllib.request.Request(endpoint + f"/v1/{kind}/read", data=record.reference.model_dump_json().encode(),
+                headers={"Authorization": "Bearer " + "q"*32, "Content-Type": "application/json"})
+            with urllib.request.urlopen(request, timeout=5) as response:
+                assert type(record).model_validate_json(response.read()) == record
     finally:
         if data is not None:
             data.stop()
@@ -116,6 +135,8 @@ def test_qev01_declarations_cross_owner_http_without_acceptance(ingestion, tmp_p
     evidence = {"timestamp_local": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "case": "QEV-01",
         "question": question.model_dump(mode="json"), "need": need.model_dump(mode="json"),
         "artifact_sha256_verified": artifact.sha256, "cross_owner_token_status": 401,
-        "authority": "declarations_only", "owners": "actual Data and Research HTTP processes; development environment"}
+        "authority": "declarations_only", "research_replacement": "exact question/need history preserved",
+        "owners": "actual Data and Research HTTP processes",
+        "independent_peer_requested": "AMPHORA_TEST_RESEARCH_PYTHON" in os.environ}
     path = Path(__file__).absolute().parents[4] / ".test-results/bp0601-qev.json"
     path.write_text(json.dumps(evidence, indent=2) + "\n", encoding="utf-8")

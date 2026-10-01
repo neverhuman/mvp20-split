@@ -1,5 +1,9 @@
 # BP-06 Planning History
 
+## Source/evidence closeout - 2026-10-01 18:34:28
+
+BP-06.01 accepted4/4 (100%):139 independently installed Data acquisition/rights tests,70 installed Research tests and36 replacement API tests pass. Two builds/four isolated environments preserve exact history through actual peer HTTP and separate replacement processes. Scoped drift audit aligned; parent4/24 (16.67%). BP-06.02 activation audit is next; scientific authority remains separate. [Audit](../Audits/BP-06.01_Source_Evidence_Closeout.md). Private fixture seeding remains distinct from public scientific approval. No schemas or durable formats changed in V1; no v1/JARVIS access.
+
 ## B3 named failure proof complete - 2026-10-01 18:23:10
 
 B3 complete: Research0.4.0 adds scoped immutable question/need reads; QEV-01 passes through actual Research/Data HTTP and finalized bytes with separate credentials.123 acquisition,70 Research and52 contract/dev tests pass. Four process interruption cases and TRACE-01/02/03 are mapped in the evidence matrix. Child3/4 (75%), Build100%, parent3/24 (12.5%); V1 independent installed-owner replacement and audit remain. [Evidence](../Audits/Evidence/BP-06-Acquisition/Failure_Matrix.json). The QEV gap required an additive read-only Research API with a distinct grant; contracts0.2.0 and all236 schemas stay unchanged. Reference access does not grant Data access or accept science. V1 remains mandatory before successor activation.

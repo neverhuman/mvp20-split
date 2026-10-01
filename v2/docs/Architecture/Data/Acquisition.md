@@ -1,8 +1,8 @@
 # Sources and Artifact Acquisition
 
-- Design status: detailed proposed contract; implementation and scientific acceptance pending
-- Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
-- Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
+- Design status: bounded document/synthetic-lab acquisition implemented under BP-06.01; broader sources and scientific acceptance remain proposed
+- Naming note: component names below describe the wider logical design; the implementation boundary is linked below.
+- Last reviewed: `2026-10-01 18:35:58` (America/Chicago)
 - Parent: [Domain overview](Data_Architecture.md)
 - Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#data-sources-and-campaign-acquisition)
 
@@ -45,3 +45,9 @@ A paginated API changes between pages. If no stable snapshot/token exists, recor
 ## Design Basis and Open Decisions
 
 [Data Sources and Acquisition](../Requirements/Data_Sources_and_Acquisition.md) defines source/binding/artifact contracts. Remaining decisions: selected connectors, snapshot guarantees, artifact storage implementation and cleanup schedules. Each adapter's validation and rights constraints must be independent of its transport success.
+
+## Bounded implementation mapping
+
+BP-06.01 implements exact source/span/conversion contracts, plain UTF-8 and synthetic flat lab profiles, Data-owned immutable delivery/trace/observation ledgers, current-use rights/expiry fences and opt-in staged HTTP operations. Research separately owns immutable candidate/sample/question/need declarations and authenticated reads. Independent package/process replacement is verified; ingestion and identity matching grant no scientific acceptance. See the [acquisition module contract](../../../services/data_artifacts/src/amphora_data_artifacts/acquisition/README.md) and [Research transport](../../../services/research/src/amphora_research/transport/README.md) for actual routes, migrations and limits.
+
+The implemented rights profile retains audit payloads while denying future use; sources requiring payload erasure are unsupported. Live providers, pagination/snapshot acquisition, arbitrary transformations, scientific unit interpretation and reviewed laboratory eligibility remain their successor scopes. Existing local storage/publication is selected for the fixture system; real-source connectors and target-host durability remain separate decisions.

@@ -2,16 +2,16 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-06.01 / Acceptance / V1.
-- Last refreshed: `2026-10-01 18:23:10` (America/Chicago).
+- Status: primary_active; BP-06.02 / activation coherence audit.
+- Last refreshed: `2026-10-01 18:34:28` (America/Chicago).
 - Owner/scope: Knowledge, Research and focused Data/Artifacts modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 receipt/wait seams and BP-05 inspection; BP-01/02/03 public contracts and tool execution.
-- Implementation: **12.5%**, 3/24 verified child deliveries. Each child owns four deliveries; parent counts each once. Parent P1 mirrors child .01 overall75%; Build100%, Acceptance0% remain canonical in the child.
+- Implementation: **16.67%**, 4/24 verified child deliveries. Each child owns four deliveries; parent counts each once. P1/.01 is closed100%; P2/.02 is queued0% pending activation audit.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current task: BP-06.01/V1 independently installed Data/Research peer replacement, immutable-history cutover and component drift audit.
-- Demonstrated behavior: B3 complete: Research0.4.0 adds scoped immutable question/need reads; QEV-01 passes through actual Research/Data HTTP and finalized bytes with separate credentials.123 acquisition,70 Research and52 contract/dev tests pass. Four process interruption cases and TRACE-01/02/03 are mapped in the evidence matrix. Child3/4 (75%), Build100%, parent3/24 (12.5%); V1 independent installed-owner replacement and audit remain.
-- Blockers: none for bounded V1 proof; real scientific/provider choices remain scoped successor gates.
+- Current task: BP-06.02 activation coherence audit, then B1 typed Knowledge operations and replay.
+- Demonstrated behavior: BP-06.01 accepted4/4 (100%):139 independently installed Data acquisition/rights tests,70 installed Research tests and36 replacement API tests pass. Two builds/four isolated environments preserve exact history through actual peer HTTP and separate replacement processes. Scoped drift audit aligned; parent4/24 (16.67%). BP-06.02 activation audit is next; scientific authority remains separate.
+- Blockers: none for bounded activation audit; real scientific/provider choices remain scoped successor gates.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
 
@@ -29,7 +29,7 @@ Primary services retain private state, dependencies, migrations and module READM
 
 | Parent phase / child | Overall | Build | Acceptance | Prerequisite |
 |---|---:|---:|---:|---|
-| P1 / [BP-06.01 Source and evidence contracts](BP-06/BP-06.01%20Source%20and%20evidence%20contracts.md) | 75% | 100% | 0% | Parent predecessor gates |
+| P1 / [BP-06.01 Source and evidence contracts](BP-06/Completed/BP-06.01%20Source%20and%20evidence%20contracts.md) | 100% | 100% | 100% | Parent predecessor gates |
 | P2 / [BP-06.02 Typed graph authoring and replay](BP-06/BP-06.02%20Typed%20graph%20authoring%20and%20replay.md) | 0% | 0% | 0% | BP-06.01 acceptance |
 | P3 / [BP-06.03 Reasoning and domain receipts](BP-06/BP-06.03%20Reasoning%20and%20domain%20receipts.md) | 0% | 0% | 0% | BP-06.02 acceptance |
 | P4 / [BP-06.04 Laboratory returns and candidate eligibility](BP-06/BP-06.04%20Laboratory%20returns%20and%20candidate%20eligibility.md) | 0% | 0% | 0% | BP-06.03 acceptance |

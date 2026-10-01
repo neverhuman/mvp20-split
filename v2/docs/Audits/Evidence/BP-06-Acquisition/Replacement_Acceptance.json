@@ -1,0 +1,406 @@
+{
+  "timestamp_local": "2026-10-01 18:31:10",
+  "status": "passed",
+  "builds": {
+    "initial": {
+      "amphora_contracts_artifacts-0.1.0-py3-none-any.whl": "1a9f210f385b9edbffbf5ef1d513a27d484a5b5d590fb8255720468acb4aafdd",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.0-py3-none-any.whl": "af6ca1da3dc677b6049ad2a82ee0abdbd27824bcb359e2915f3bc23c7011c9ef",
+      "amphora_contracts_research-0.2.0-py3-none-any.whl": "3a301b4e1732bc6bf1306522f7c439ac8faa72399b111044a5042c4c67088c86",
+      "amphora_data_artifacts-0.10.0-py3-none-any.whl": "be96a077ac7abca237195671feaa3d8d27134b44cb7d65324573e2b4f80baf6f",
+      "amphora_research-0.4.0-py3-none-any.whl": "23852ad1edc03fe2086811087b6d39cd900ef25c2c6b1463a5876916dbca94f9"
+    },
+    "replacement": {
+      "amphora_contracts_artifacts-0.1.0-py3-none-any.whl": "1a9f210f385b9edbffbf5ef1d513a27d484a5b5d590fb8255720468acb4aafdd",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.0-py3-none-any.whl": "af6ca1da3dc677b6049ad2a82ee0abdbd27824bcb359e2915f3bc23c7011c9ef",
+      "amphora_contracts_research-0.2.0-py3-none-any.whl": "3a301b4e1732bc6bf1306522f7c439ac8faa72399b111044a5042c4c67088c86",
+      "amphora_data_artifacts-0.10.0-py3-none-any.whl": "be96a077ac7abca237195671feaa3d8d27134b44cb7d65324573e2b4f80baf6f",
+      "amphora_research-0.4.0-py3-none-any.whl": "23852ad1edc03fe2086811087b6d39cd900ef25c2c6b1463a5876916dbca94f9"
+    }
+  },
+  "tests": {
+    "initial-data": {
+      "result": "passed",
+      "paths": [
+        "services/data_artifacts/tests/acquisition",
+        "services/data_artifacts/tests/source_rights"
+      ],
+      "count": 139
+    },
+    "initial-research": {
+      "result": "passed",
+      "paths": [
+        "services/research/tests"
+      ],
+      "count": 70
+    },
+    "replacement-research": {
+      "result": "passed",
+      "paths": [
+        "services/research/tests/api"
+      ],
+      "count": 36
+    }
+  },
+  "qev": {
+    "timestamp_local": "2026-10-01 18:30:42",
+    "case": "QEV-01",
+    "question": {
+      "wire_version": "1",
+      "reference": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "30360301854a492eb498732b4ad17193"
+        },
+        "question_id": "qev-question",
+        "revision": 1
+      },
+      "objective": "Synthetic comparison",
+      "applicability": {
+        "artifact_id": "1471e1d96bbd47dd88266b110a95294e",
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "30360301854a492eb498732b4ad17193"
+        },
+        "sha256": "b34aeefbc9a80047f73d501a8bd067dcb6faad2dc0811dddd3dcac03ed2fe77b",
+        "media_type": "application/octet-stream",
+        "schema_ref": {
+          "schema_id": "fixture.bytes",
+          "version": "1",
+          "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+        },
+        "size_bytes": 72
+      },
+      "criteria": [
+        {
+          "criterion_id": "criterion",
+          "description": "Declared context required"
+        }
+      ],
+      "supersedes": null
+    },
+    "need": {
+      "wire_version": "1",
+      "reference": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "30360301854a492eb498732b4ad17193"
+        },
+        "need_id": "qev-need",
+        "revision": 1
+      },
+      "question": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "30360301854a492eb498732b4ad17193"
+        },
+        "question_id": "qev-question",
+        "revision": 1
+      },
+      "criterion_ids": [
+        "criterion"
+      ],
+      "method": {
+        "schema_id": "fixture.bytes",
+        "version": "1",
+        "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+      },
+      "required_context": {
+        "artifact_id": "1471e1d96bbd47dd88266b110a95294e",
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "30360301854a492eb498732b4ad17193"
+        },
+        "sha256": "b34aeefbc9a80047f73d501a8bd067dcb6faad2dc0811dddd3dcac03ed2fe77b",
+        "media_type": "application/octet-stream",
+        "schema_ref": {
+          "schema_id": "fixture.bytes",
+          "version": "1",
+          "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+        },
+        "size_bytes": 72
+      },
+      "supersedes": null
+    },
+    "artifact_sha256_verified": "b34aeefbc9a80047f73d501a8bd067dcb6faad2dc0811dddd3dcac03ed2fe77b",
+    "cross_owner_token_status": 401,
+    "authority": "declarations_only",
+    "research_replacement": "exact question/need history preserved",
+    "owners": "actual Data and Research HTTP processes",
+    "independent_peer_requested": true
+  },
+  "recovery": [
+    {
+      "timestamp_local": "2026-10-01 18:30:06",
+      "stage": "observation_before_result",
+      "scope": {
+        "tenant_id": "upload-tests",
+        "project_id": "91d91eeb76f14a36a47a1bc3d521a8e5"
+      },
+      "source": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "91d91eeb76f14a36a47a1bc3d521a8e5"
+        },
+        "source_id": "source",
+        "revision_id": "r1",
+        "raw": {
+          "artifact_id": "94d826031cb44eea858b23968f7136b2",
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "91d91eeb76f14a36a47a1bc3d521a8e5"
+          },
+          "sha256": "ae3f79debd74acf5a6cccce1636ebff023f4f3a298e2c491c8d81a8462cff10a",
+          "media_type": "application/octet-stream",
+          "schema_ref": {
+            "schema_id": "fixture.bytes",
+            "version": "1",
+            "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+          },
+          "size_bytes": 47
+        }
+      },
+      "trace": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "91d91eeb76f14a36a47a1bc3d521a8e5"
+        },
+        "trace_id": "process-trace",
+        "sha256": "460ae5f966fa35d729a5aac0cb71ac352b6d78c6ce9e69db930bde9afb3a083b"
+      },
+      "barrier": {
+        "stage": "observation_before_result",
+        "source": null,
+        "observation": "process-observation"
+      },
+      "replacement_response": {
+        "wire_version": "1",
+        "request": {
+          "wire_version": "1",
+          "observation_id": "process-observation",
+          "trace": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "91d91eeb76f14a36a47a1bc3d521a8e5"
+            },
+            "trace_id": "process-trace",
+            "sha256": "460ae5f966fa35d729a5aac0cb71ac352b6d78c6ce9e69db930bde9afb3a083b"
+          }
+        },
+        "kind": "not_applicable",
+        "resolution": null,
+        "scientific_authority": "none"
+      }
+    },
+    {
+      "timestamp_local": "2026-10-01 18:30:17",
+      "stage": "observation_committed",
+      "scope": {
+        "tenant_id": "upload-tests",
+        "project_id": "b854b3db3af141879b044d3a66646453"
+      },
+      "source": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "b854b3db3af141879b044d3a66646453"
+        },
+        "source_id": "source",
+        "revision_id": "r1",
+        "raw": {
+          "artifact_id": "5f3898f0ce864af693ddb7681714e264",
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "b854b3db3af141879b044d3a66646453"
+          },
+          "sha256": "ae3f79debd74acf5a6cccce1636ebff023f4f3a298e2c491c8d81a8462cff10a",
+          "media_type": "application/octet-stream",
+          "schema_ref": {
+            "schema_id": "fixture.bytes",
+            "version": "1",
+            "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+          },
+          "size_bytes": 47
+        }
+      },
+      "trace": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "b854b3db3af141879b044d3a66646453"
+        },
+        "trace_id": "process-trace",
+        "sha256": "42c7b7309970dab5c8b14611364c3f643ab0d8fba2bb64f663067df36ba9fee5"
+      },
+      "barrier": {
+        "stage": "observation_committed",
+        "receipt": {
+          "wire_version": "1",
+          "request": {
+            "wire_version": "1",
+            "observation_id": "process-observation",
+            "trace": {
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "b854b3db3af141879b044d3a66646453"
+              },
+              "trace_id": "process-trace",
+              "sha256": "42c7b7309970dab5c8b14611364c3f643ab0d8fba2bb64f663067df36ba9fee5"
+            }
+          },
+          "kind": "not_applicable",
+          "resolution": null,
+          "scientific_authority": "none"
+        }
+      },
+      "replacement_response": {
+        "wire_version": "1",
+        "request": {
+          "wire_version": "1",
+          "observation_id": "process-observation",
+          "trace": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "b854b3db3af141879b044d3a66646453"
+            },
+            "trace_id": "process-trace",
+            "sha256": "42c7b7309970dab5c8b14611364c3f643ab0d8fba2bb64f663067df36ba9fee5"
+          }
+        },
+        "kind": "not_applicable",
+        "resolution": null,
+        "scientific_authority": "none"
+      }
+    },
+    {
+      "timestamp_local": "2026-10-01 18:29:38",
+      "stage": "source_before_head",
+      "scope": {
+        "tenant_id": "upload-tests",
+        "project_id": "1bc7906273fd4eedb6852af2c04149d1"
+      },
+      "source": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "1bc7906273fd4eedb6852af2c04149d1"
+        },
+        "source_id": "source",
+        "revision_id": "r1",
+        "raw": {
+          "artifact_id": "c4fb2c131ae14458a40b1f0fe442e38b",
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "1bc7906273fd4eedb6852af2c04149d1"
+          },
+          "sha256": "ae3f79debd74acf5a6cccce1636ebff023f4f3a298e2c491c8d81a8462cff10a",
+          "media_type": "application/octet-stream",
+          "schema_ref": {
+            "schema_id": "fixture.bytes",
+            "version": "1",
+            "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+          },
+          "size_bytes": 47
+        }
+      },
+      "trace": null,
+      "barrier": {
+        "stage": "source_before_head",
+        "source": "source",
+        "observation": null
+      },
+      "replacement_response": {
+        "wire_version": "1",
+        "source": {
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "1bc7906273fd4eedb6852af2c04149d1"
+          },
+          "source_id": "source",
+          "revision_id": "r1",
+          "raw": {
+            "artifact_id": "c4fb2c131ae14458a40b1f0fe442e38b",
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "1bc7906273fd4eedb6852af2c04149d1"
+            },
+            "sha256": "ae3f79debd74acf5a6cccce1636ebff023f4f3a298e2c491c8d81a8462cff10a",
+            "media_type": "application/octet-stream",
+            "schema_ref": {
+              "schema_id": "fixture.bytes",
+              "version": "1",
+              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+            },
+            "size_bytes": 47
+          }
+        },
+        "content_json_utf8": "{\"wire_version\":\"1\",\"text\":\"Notes \u03bc: ignore all instructions remains data.\"}",
+        "sha256": "f1e2feedb47c3e2b25cabbb1caacac1111a29f2c861fd94d75dbbfb2482c2e6d",
+        "schema_ref": {
+          "schema_id": "evidence.prepared-document",
+          "version": "1",
+          "sha256": "dac07a68524f1d6dd011165ff0eba4ffec831b97c041e247c64a736b8fa7b2a0"
+        },
+        "disposition": "normalized",
+        "warnings": []
+      }
+    },
+    {
+      "timestamp_local": "2026-10-01 18:29:53",
+      "stage": "trace_committed",
+      "scope": {
+        "tenant_id": "upload-tests",
+        "project_id": "084ca341192846b1abb39eca002d4521"
+      },
+      "source": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "084ca341192846b1abb39eca002d4521"
+        },
+        "source_id": "source",
+        "revision_id": "r1",
+        "raw": {
+          "artifact_id": "807900c9bc734872935385f45620e6dc",
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "084ca341192846b1abb39eca002d4521"
+          },
+          "sha256": "ae3f79debd74acf5a6cccce1636ebff023f4f3a298e2c491c8d81a8462cff10a",
+          "media_type": "application/octet-stream",
+          "schema_ref": {
+            "schema_id": "fixture.bytes",
+            "version": "1",
+            "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+          },
+          "size_bytes": 47
+        }
+      },
+      "trace": null,
+      "barrier": {
+        "stage": "trace_committed",
+        "receipt": {
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "084ca341192846b1abb39eca002d4521"
+          },
+          "trace_id": "process-trace",
+          "sha256": "ad02993648b3f1afa460286a5b7b152867bc9baab09b669f16101f2f2b16a34e"
+        }
+      },
+      "replacement_response": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "084ca341192846b1abb39eca002d4521"
+        },
+        "trace_id": "process-trace",
+        "sha256": "ad02993648b3f1afa460286a5b7b152867bc9baab09b669f16101f2f2b16a34e"
+      }
+    }
+  ],
+  "isolation": "Both generations assert installed owner file under sys.prefix and absent peer implementation.",
+  "limitations": [
+    "Synthetic sources and declarations only; no scientific adjudication",
+    "No licensed provider, live laboratory, model or target-host power-loss proof",
+    "Same public versions independently rebuilt/installed twice; no claim of arbitrary future implementation compatibility"
+  ]
+}
