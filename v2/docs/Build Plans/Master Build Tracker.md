@@ -9,11 +9,11 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 primary active; BP-07 through BP-09 queued; BP-05 closed.
-- Last refreshed: `2026-10-01 12:06:09` (America/Chicago).
+- Last refreshed: `2026-10-01 12:30:47` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P5 / BP-06 - Knowledge Evidence and Source Loop.
 - Primary active implementation plan / phase / task: BP-06 -> BP-06.01 / Build / B1.
-- Current task: BP-06.01/B1 finalized ingestion orchestration and public operations.
+- Current task: BP-06.01/B1 public ingestion operations and durable Research lookup/result publication over the verified owner stages.
 - Next task: Complete B1 contracts, Research identities and persisted bounded adapters.
 - Implementation completion: BP-05 closed100% (16/16); BP-06..09 remain0%.
 - Active focus: Independent Data-to-Research client verified; child0/4 and parent0/24 unchanged.
@@ -119,6 +119,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-01 12:30:47 | BP-06.01/B1 finalized ingestion stages;0% unchanged | 94 acquisition/200 artifact tests; [evidence](../Audits/Evidence/BP-06-Acquisition/Ingestion_Stages.json) |
 | 2026-10-01 12:06:09 | BP-06.01/B1 public client partial;0% unchanged | 83 acquisition/189 artifact tests; [independent peers](../Audits/Evidence/BP-06-Acquisition/Public_Research_Client.json) |
 | 2026-10-01 11:58:34 | BP-06.01/B1 Research HTTP partial;0% unchanged | 61 owner tests; installed host replacement; [evidence](../Audits/Evidence/BP-06-Acquisition/Research_HTTP.json) |
 | 2026-10-01 11:46:20 | BP-06.01/B1 preparation partial;0% unchanged | 58 acquisition/164 artifact tests;52 isolated pure cases; [evidence](../Audits/Evidence/BP-06-Acquisition/Preparation.json) |
@@ -143,6 +144,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-30 11:50:01 | BP-05.03/B1 command-loader partial; child0%, parent50% unchanged | 87 isolated Node tests;lost acknowledgement/exact-record/late-denial cases |
 | 2026-09-30 11:45:52 | BP-05.03/B1 draft-state partial; child0%, parent50% unchanged | 82 isolated Node tests;7 owned state cases;save/edit race and denial fences |
 | 2026-09-30 11:39:50 | BP-05.03/B1 consumer partial; child0%, parent50% unchanged | 75 isolated Node tests;14 authoring roots;exact schema bytes;original command receipts |
-| 2026-09-30 11:27:45 | BP-05.03/B1 editor metadata partial; child0%, parent50% unchanged | 118 scoped tests;catalog100% statements/branches;8 isolated wheels;200 schemas preserve196 predecessors |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

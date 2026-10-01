@@ -2,11 +2,19 @@
 
 import hashlib
 from dataclasses import dataclass
+from typing import Protocol
 
 from amphora_contracts_artifacts import ContentDescriptor
 from amphora_contracts_core import Scope
 
-from .schemas import JsonSchemaRule, json_value
+from .schemas import json_value
+
+
+class ContentRule(Protocol):
+    @property
+    def identity(self) -> tuple[str, str, str, str]: ...
+
+    def validate(self, value) -> None: ...
 
 
 class UploadError(ValueError):
@@ -52,7 +60,7 @@ class UploadLimits:
 class ContentPolicy:
     # Exact media/schema pairs supplied by trusted deployment policy, never by request.
     allowed: frozenset[tuple[str, str, str, str]]
-    rules: tuple[JsonSchemaRule, ...] = ()
+    rules: tuple[ContentRule, ...] = ()
 
     # Narrow registered fixture schemas; arbitrary schema IDs/hashes do not install validators.
     SCHEMAS = {

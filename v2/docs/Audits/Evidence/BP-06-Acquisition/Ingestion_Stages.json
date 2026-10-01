@@ -1,0 +1,61 @@
+{
+  "timestamp_local": "2026-10-01 12:30:47",
+  "plan": "BP-06.01/B1",
+  "status": "partial",
+  "package": "amphora-data-artifacts 0.6.0",
+  "verification": {
+    "acquisition_tests": 94,
+    "artifact_regression_tests": 200,
+    "schema_publication": "224 existing schemas unchanged",
+    "dependency_boundaries": "pass",
+    "ruff": "pass"
+  },
+  "coverage": {
+    "services\\data_artifacts\\src\\amphora_data_artifacts\\acquisition\\profiles.py": {
+      "covered_lines": 17,
+      "num_statements": 17,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100",
+      "num_branches": 2,
+      "num_partial_branches": 0,
+      "covered_branches": 2,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    },
+    "services\\data_artifacts\\src\\amphora_data_artifacts\\acquisition\\workflow.py": {
+      "covered_lines": 31,
+      "num_statements": 31,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100",
+      "num_branches": 10,
+      "num_partial_branches": 0,
+      "covered_branches": 10,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    }
+  },
+  "proof": [
+    "Actual PostgreSQL and public raw/output artifact upload/finalization",
+    "Exact replay through replacement owner object",
+    "Authorization and scope denial before registration",
+    "Failed parse retains delivery; changed bytes conflict",
+    "Actual output bytes and pinned profile checked before trace retention",
+    "Corrupt raw storage rejected"
+  ],
+  "limits": [
+    "No public acquisition route yet",
+    "Research lookup observation persistence pending",
+    "Current rights/expiry enforcement pending B2",
+    "No new process replacement or crash acceptance claim"
+  ]
+}

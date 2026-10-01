@@ -1,5 +1,9 @@
 # BP-06 Planning History
 
+## Finalized ingestion stages - 2026-10-01 12:30:47
+
+B1 partial: Data/Artifacts0.6.0 verified finalized ingestion stages;94 acquisition tests and200 full artifact-owner tests pass. Raw reads, delivery registration, reviewed preparation and immutable trace retention now compose against actual finalized artifacts. Public ingestion routes and durable Research lookup observations remain; child0/4 and parent0/24 unchanged. [Evidence](../Audits/Evidence/BP-06-Acquisition/Ingestion_Stages.json). Integration exposed missing prepared-output validators; explicit installed profile rules now validate the exact public DTOs without changing generic JSON Schema restrictions. Failed conversion retains the delivery identity; retry cannot substitute corrected bytes under that identity. Replacement here is a new owner object against retained PostgreSQL, not an independent process acceptance claim.
+
 ## Public Research client - 2026-10-01 12:06:09
 
 B1 partial: Data/Artifacts0.5.0 public Research client verified;83 acquisition tests and189 full artifact-owner tests pass. Separate Data/Research wheel environments prove known, unknown and unavailable HTTP outcomes without private peer imports. Lab preparation remains quarantined. Finalized ingestion orchestration remains; child0/4 and parent0/24 unchanged. [Evidence](../Audits/Evidence/BP-06-Acquisition/Public_Research_Client.json). Response substitution, redirects, scope mismatch, oversize/malformed bodies and denial never become successful identity observations. The independent peer probe uses a synthetic raw reference; it does not replace final artifact ingestion proof.

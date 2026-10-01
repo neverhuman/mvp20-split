@@ -1,6 +1,6 @@
 # Acquisition Provenance
 
-- Status: BP-06.01/B1 partial; exact-byte verification and private acquisition ledger implemented. Bounded document and synthetic lab preparation implemented; no ingestion route yet.
+- Status: BP-06.01/B1 partial; exact-byte verification and private acquisition ledger implemented. Bounded preparation and finalized owner ingestion stages implemented; no ingestion route yet.
 - Owner: Data/Artifacts; design [Acquisition](../../../../../docs/Architecture/Data/Acquisition.md).
 
 `SourceDocument` verifies a scoped SourceRevisionRef against at most4MiB of exact bytes. `extract(SourceSpan)` checks full source identity, half-open byte bounds and digest. It does not translate character offsets or decode/execute instructions. `TraceDocument.verify(trace, source, output)` validates matching scope/schema/source identities, output content, unique target paths, ordered-transform references and copied/converted/inferred/missing field policy. Missing or inferred values cannot receive `normalized` disposition. No disposition grants scientific acceptance.
@@ -47,3 +47,13 @@ ResearchClient consumes only amphora-contracts-research DTOs over a configured l
 lab_identity_query derives explicit candidate/sample references from prepared lexical strings only when IDs and safe positive integer revisions validate. Missing/malformed references return no query; document profiles are rejected. A successful match grants identity_only and does not change the prepared lab's quarantine/scientific status.
 
 Scripted TCP tests cover valid/unknown identity, denial, redirects, loss, bounds, wrong media, malformed/duplicate JSON and response substitution. Separately installed Data and Research wheels communicate through the actual Research HTTP process and PostgreSQL owner. Neither environment has the peer implementation installed. Known, unknown and stopped-peer cases pass; the lab preparation stays quarantined. That probe uses synthetic in-memory raw references: complete finalized-source/output ingestion orchestration remains the next B1 task.
+
+## Finalized Owner Stages
+
+AcquisitionWorkflow.prepare(principal, SourceRevision) requires acquire and read, rejects mismatched scope/catalog identity, obtains actual verified bytes through ArtifactReads, registers delivery, then runs the reviewed document/lab converter selected by the declared format. Registration precedes parsing: an invalid document remains an attributable delivery, exact retries repeat the failure, and corrected bytes require a new superseding revision/delivery. No caller content or transformation implementation is accepted.
+
+AcquisitionWorkflow.retain(principal, revision, trace_id, output_ref) repeats authorized preparation, reads the actual finalized output, checks byte-for-byte equality and exact prepared schema/media, and retains the immutable trace through AcquisitionLedger. It never trusts a caller-constructed PreparedAcquisition. Equal bytes in a different artifact do not overwrite an existing trace identity. Publication remains the existing upload/stream/finalize operation, with original command receipts available for reconciliation; these stages do not introduce a second upload store or claim an atomic transaction spanning stages. Source registration can persist when later conversion or output validation fails.
+
+PreparedContentRule(document|lab) is an explicit trusted deployment-installed ContentRule. Its identity is pinned to the published prepared_schema digest and validation uses the corresponding public DTO. Unknown profiles fail configuration; missing/extra fields, wrong versions and type coercion fail validation. Existing generic JsonSchemaRule restrictions remain intact. Host configuration and public ingestion routes are not yet wired.
+
+Current-use rights fencing, durable Research identity observations and external ingress remain open. The stages do not turn historical rights references into authorization. All lab traces stay quarantined. Tests use actual upload/finalization, retained PostgreSQL and local bytes: replay, exact spans, denied reads/acquisition, foreign scopes, forged/missing artifacts, parser failure, changed delivery, substituted output, changed trace artifact and corrupt storage. Full process replacement belongs to V1.
