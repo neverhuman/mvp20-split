@@ -39,7 +39,7 @@ PreparedAcquisition owns trace construction after independent output artifact fi
 
 Tests cover instruction preservation, empty/invalid documents, output expansion, wrong-schema binding, missing versus null units, censoring, unsafe identity/revisions, duplicate keys and escaped Unicode/repeated-value spans. The independent wheel probe runs the pure provenance/preparation suites without Research or Runtime installed. This is not live scientific ingestion acceptance.
 
- 
+
 ## Public Research Client
 
 ResearchClient consumes only amphora-contracts-research DTOs over a configured loopback HTTP endpoint; no Research implementation import or SQL connection. The endpoint must explicitly name127.0.0.1 and a port, without credentials/path/query/fragment. The opaque token is supplied by trusted configuration. Requests and responses carry exact scoped candidate/sample revisions. Responses are limited to16KiB, strict JSON, matching scope/identities, and consistent disposition/reason; redirects are not followed. Default timeout is5 seconds, bounded to30. Denial, unavailable transport and malformed response remain distinct safe errors, never synthesized unknown-sample answers. No automatic retry or authority widening occurs.
