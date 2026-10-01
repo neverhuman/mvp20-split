@@ -1,5 +1,10 @@
 # BP-06 Planning History
 
+## Public Research client - 2026-10-01 12:06:09
+
+B1 partial: Data/Artifacts0.5.0 public Research client verified;83 acquisition tests and189 full artifact-owner tests pass. Separate Data/Research wheel environments prove known, unknown and unavailable HTTP outcomes without private peer imports. Lab preparation remains quarantined. Finalized ingestion orchestration remains; child0/4 and parent0/24 unchanged. [Evidence](../Audits/Evidence/BP-06-Acquisition/Public_Research_Client.json). Response substitution, redirects, scope mismatch, oversize/malformed bodies and denial never become successful identity observations. The independent peer probe uses a synthetic raw reference; it does not replace final artifact ingestion proof.
+
+
 ## Research HTTP boundary - 2026-10-01 11:58:34
 
 B1 partial: Research0.3.0 authenticated identity-only HTTP lookup/loopback host verified.61 owner tests and24 contract/dev tests pass; independently installed initial/replacement processes preserve lookup with401/403 denials.224 schemas preserve all220 predecessors. Data public client and ingestion operations remain; child0/4 and parent0/24 unchanged. [Evidence](../Audits/Evidence/BP-06-Acquisition/Research_HTTP.json). The lookup authenticates all nested scopes before SQL, preserves unknown versus unavailable, and exposes no artifact/scientific authority. Identity publication remains owner-private. Shared Research fixture moved to its test root to support granular API/persistence suites.

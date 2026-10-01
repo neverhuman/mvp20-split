@@ -3,14 +3,14 @@
 ## Canonical Parent Tracker
 
 - Status: primary_active; BP-06.01 / Build / B1.
-- Last refreshed: `2026-10-01 11:58:34` (America/Chicago).
+- Last refreshed: `2026-10-01 12:06:09` (America/Chicago).
 - Owner/scope: Knowledge, Research and focused Data/Artifacts modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 receipt/wait seams and BP-05 inspection; BP-01/02/03 public contracts and tool execution.
 - Implementation: **0%**, 0/24 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
 - Current implementation task: BP-06.01/B1 source and evidence boundary; [activation audit](../Audits/BP-06.01_Activation.md) corrected_ready.
-- Demonstrated behavior: B1 partial: Research0.3.0 authenticated identity-only HTTP lookup/loopback host verified.61 owner tests and24 contract/dev tests pass; independently installed initial/replacement processes preserve lookup with401/403 denials.224 schemas preserve all220 predecessors. Data public client and ingestion operations remain; child0/4 and parent0/24 unchanged.
+- Demonstrated behavior: B1 partial: Data/Artifacts0.5.0 public Research client verified;83 acquisition tests and189 full artifact-owner tests pass. Separate Data/Research wheel environments prove known, unknown and unavailable HTTP outcomes without private peer imports. Lab preparation remains quarantined. Finalized ingestion orchestration remains; child0/4 and parent0/24 unchanged.
 - Blockers: none for bounded synthetic B1; real scientific/provider choices remain scoped successor gates.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.

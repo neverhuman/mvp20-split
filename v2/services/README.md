@@ -8,4 +8,4 @@ Navigation only. Each service owns its implementation, state, dependencies, test
 
 Generated package/dependency facts live in [foundation inventory](../docs/Generated/foundation-packages.json). Cross-owner access uses published contracts and configured public endpoints, never private imports or shared table access. The [Master Build Tracker](../docs/Build%20Plans/Master%20Build%20Tracker.md) selects current implementation work.
 
-- [Research](research/README.md): initial private identity/question policies; persistence and hosting remain in progress under BP-06.01.
+- [Research](research/README.md): immutable identity/question ledger and authenticated identity-only loopback reads; scientific acceptance remains later scope.
