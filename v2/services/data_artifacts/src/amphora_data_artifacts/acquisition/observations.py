@@ -9,7 +9,8 @@ from amphora_contracts_evidence import (
 )
 from sqlalchemy import text
 
-from .ledger import SCOPE, _canonical, _lock
+from ..persistence.evidence_records import SCOPE, _canonical, _lock
+from ..source_rights.ledger import SourceRights
 from .provenance import ProvenanceError
 
 
@@ -64,10 +65,12 @@ class IdentityObservations:
             raise ProvenanceError("observation_trace_mismatch")
         return ConversionTrace.model_validate_json(bytes(row["trace"])), SourceRevision.model_validate_json(bytes(row["source"]))
 
-    def complete(self, principal, result):
+    def complete(self, principal, result, *, rights_snapshot):
         request = result.request
         key = self._key(principal, request)
         with self.engine.begin() as connection:
+            rights = SourceRights(self.engine)
+            rights.lock(connection, principal)
             _lock(connection, principal.scope, [("identity_observation", request.observation_id)])
             intent = connection.execute(text("SELECT canonical_bytes FROM artifacts.identity_observation_intents WHERE "
                 + SCOPE + " AND observation_id=:observation"), key).scalar_one_or_none()
@@ -76,6 +79,7 @@ class IdentityObservations:
             existing = self._result(connection, key)
             if existing is not None:
                 return existing
+            rights.fence(connection, principal, rights_snapshot)
             body = _canonical(result)
             if len(body) > 16384:
                 raise ProvenanceError("observation_result_limit")

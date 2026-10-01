@@ -5,6 +5,7 @@ from .ingestion import PreparedSource, RetainPreparedSource
 from .observations import ObserveSourceIdentity, SourceIdentityObservation, SourceIdentityStatus
 from .prepared import PreparedDocument, PreparedLabRecord, prepared_schema
 from .references import ConversionTraceRef, RightsRevisionRef, SourceRevisionRef, SourceSpan
+from .rights import SourceRightsRevision
 from .sources import AcquisitionMethod, DeliveryIdentity, SourceRevision
 
 __all__ = [
@@ -13,4 +14,5 @@ __all__ = [
     "SourceRevisionRef", "SourceSpan", "TransformStep", "PreparedDocument", "PreparedLabRecord", "prepared_schema",
     "PreparedSource", "RetainPreparedSource",
     "ObserveSourceIdentity", "SourceIdentityObservation", "SourceIdentityStatus",
+    "SourceRightsRevision",
 ]

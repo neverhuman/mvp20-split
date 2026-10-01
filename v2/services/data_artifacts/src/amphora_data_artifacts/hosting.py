@@ -64,7 +64,7 @@ class Host:
             if set(item) != {"token_env", "actor_id", "scope", "actions"}:
                 raise ValueError("Invalid principal configuration")
             actions = frozenset(item["actions"])
-            if not actions or actions - {"upload", "finalize", "read", "retention", "cleanup", "acquire", "source_history"}:
+            if not actions or actions - {"upload", "finalize", "read", "retention", "cleanup", "acquire", "source_history", "manage_source_rights"}:
                 raise ValueError("Invalid principal actions")
             principal = Principal(item["actor_id"], Scope.model_validate(item["scope"]), actions)
             principals.append(principal)
@@ -90,6 +90,7 @@ class Host:
                 if conn.execute(text("SELECT current_user")).scalar_one() != "artifact_service":
                     raise ValueError("Artifact service role required")
                 conn.execute(text("SELECT created_at FROM artifacts.uploads LIMIT 0"))
+                conn.execute(text("SELECT revision FROM artifacts.source_rights_heads LIMIT 0"))
                 if acquisition:
                     conn.execute(text("SELECT canonical_bytes FROM artifacts.source_revisions LIMIT 0"))
                     conn.execute(text("SELECT canonical_bytes FROM artifacts.conversion_traces LIMIT 0"))

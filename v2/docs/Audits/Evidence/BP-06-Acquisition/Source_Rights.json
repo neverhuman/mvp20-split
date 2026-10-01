@@ -1,0 +1,123 @@
+{
+  "timestamp_local": "2026-10-01 18:00:06",
+  "plan": "BP-06.01/B2",
+  "status": "B2 complete; B3 active; child not closed",
+  "versions": {
+    "evidence": "0.5.0",
+    "data_artifacts": "0.9.0",
+    "migration": "artifact_0006"
+  },
+  "tests": {
+    "rights": 16,
+    "acquisition": 118,
+    "artifact_regression": 240,
+    "contract_schema": 30,
+    "isolated_contract": 28,
+    "isolated_rights_postgres": 16
+  },
+  "schemas": {
+    "published": 236,
+    "predecessors_preserved": 234
+  },
+  "installed": {
+    "test_output": "............................                                             [100%]\n28 passed in 4.79s",
+    "probe": "Rights owner imports without Research implementation; migration SQL packaged",
+    "wheels": {
+      "amphora_contracts_artifacts-0.1.0-py3-none-any.whl": "1a9f210f385b9edbffbf5ef1d513a27d484a5b5d590fb8255720468acb4aafdd",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.0-py3-none-any.whl": "af6ca1da3dc677b6049ad2a82ee0abdbd27824bcb359e2915f3bc23c7011c9ef",
+      "amphora_contracts_research-0.2.0-py3-none-any.whl": "3a301b4e1732bc6bf1306522f7c439ac8faa72399b111044a5042c4c67088c86",
+      "amphora_data_artifacts-0.9.0-py3-none-any.whl": "9d9901c3e0bffcfbf6658214585536bead4145149711f0b0840413688d60441c"
+    }
+  },
+  "coverage": {
+    "services\\data_artifacts\\src\\amphora_data_artifacts\\source_rights\\__init__.py": {
+      "summary": {
+        "covered_lines": 0,
+        "num_statements": 0,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 0,
+        "num_partial_branches": 0,
+        "covered_branches": 0,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": []
+    },
+    "services\\data_artifacts\\src\\amphora_data_artifacts\\source_rights\\ledger.py": {
+      "summary": {
+        "covered_lines": 81,
+        "num_statements": 84,
+        "percent_covered": 94.82758620689656,
+        "percent_covered_display": "95",
+        "missing_lines": 3,
+        "excluded_lines": 0,
+        "percent_statements_covered": 96.42857142857143,
+        "percent_statements_covered_display": "96",
+        "num_branches": 32,
+        "num_partial_branches": 3,
+        "covered_branches": 29,
+        "missing_branches": 3,
+        "percent_branches_covered": 90.625,
+        "percent_branches_covered_display": "91"
+      },
+      "missing_lines": [
+        88,
+        93,
+        101
+      ]
+    },
+    "services\\data_artifacts\\src\\amphora_data_artifacts\\source_rights\\model.py": {
+      "summary": {
+        "covered_lines": 34,
+        "num_statements": 34,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 14,
+        "num_partial_branches": 0,
+        "covered_branches": 14,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": []
+    }
+  },
+  "scope": [
+    "Rights revisions/current heads with explicit administrative grant and immutable history",
+    "Timezone-aware expiry against PostgreSQL clock",
+    "Read/process purposes and explicit retained audit payload policy",
+    "Current rights for registered raw and recursively derived payloads",
+    "Post-I/O and transaction epoch fences; no filesystem/peer I/O under SQL locks",
+    "Existing source corrections, trace identity and inference/missing-field prohibitions preserved"
+  ],
+  "failure_oracles": [
+    "Unknown grant denies new consumption",
+    "Revocation denies registered raw/derived bytes and new conversion/observation use",
+    "Historical metadata/observation receipts stay replayable without reauthorizing use",
+    "Changed rights during storage read blocks response",
+    "Revocation during Research read leaves observation pending, not committed",
+    "Concurrent changed revision has one winner",
+    "Injected head failure rolls back rights revision and head",
+    "Old grant replay cannot move head backward",
+    "Current grant pin required for new source registration",
+    "Independent equal-byte artifacts are not conflated by hash"
+  ],
+  "limits": [
+    "Only retain_audit_payload retention profile supported; required-erasure source policies are not admitted",
+    "Authorization point cannot retract bytes already delivered or undo a peer read",
+    "Extreme lineage bound and corrupt/missing-head defensive branches not directly exercised in this bounded suite",
+    "B3 named process/crash matrix and V1 final independent peer/cutover/audit remain"
+  ]
+}

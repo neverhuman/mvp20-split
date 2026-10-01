@@ -1,32 +1,13 @@
 """Owner-private immutable acquisition history; no scientific-use permission."""
 
-import hashlib
-import json
-
 from amphora_contracts_core import ArtifactRef
 from amphora_contracts_evidence import ConversionTrace, SourceRevision
 from sqlalchemy import text
 
+from ..persistence.evidence_records import SCOPE, _canonical, _lock
+from ..source_rights.ledger import SourceRights
+from ..source_rights.model import RightsError
 from .provenance import ProvenanceError, SourceDocument, TraceDocument
-
-SCOPE = "tenant_id=:tenant AND project_id=:project"
-
-
-def _canonical(record):
-    body = json.dumps(record.model_dump(mode="json"), sort_keys=True, separators=(",", ":"),
-                      ensure_ascii=False, allow_nan=False).encode("utf-8")
-    if len(body) > 262144:
-        raise ProvenanceError("record_limit")
-    return body
-
-
-def _lock(connection, scope, identities):
-    keys = set()
-    for identity in identities:
-        raw = json.dumps([scope.tenant_id, scope.project_id, *identity], separators=(",", ":")).encode()
-        keys.add(int.from_bytes(hashlib.sha256(raw).digest()[:8], "big", signed=True))
-    for key in sorted(keys):
-        connection.execute(text("SELECT pg_advisory_xact_lock(:key)"), {"key": key})
 
 
 def _catalog(connection, principal, reference):
@@ -45,6 +26,7 @@ def _catalog(connection, principal, reference):
 class AcquisitionLedger:
     def __init__(self, engine):
         self.engine = engine
+        self.rights = SourceRights(engine)
 
     def register(self, principal, revision: SourceRevision, source: SourceDocument) -> SourceRevision:
         principal.require("acquire")
@@ -61,6 +43,7 @@ class AcquisitionLedger:
         key = principal.bindings | {"source": ref.source_id, "revision": ref.revision_id,
             "issuer": revision.delivery.issuer_id, "delivery": revision.delivery.delivery_id}
         with self.engine.begin() as connection:
+            rights = self.rights.authorize(connection, principal, (ref.raw.artifact_id,), (revision.rights,), "process")
             _lock(connection, principal.scope, [("source", ref.source_id),
                   ("delivery", revision.delivery.issuer_id, revision.delivery.delivery_id)])
             delivered = connection.execute(text("SELECT canonical_bytes FROM artifacts.source_revisions WHERE "
@@ -72,6 +55,8 @@ class AcquisitionLedger:
             existing = self._source(connection, key)
             if existing is not None:
                 raise ProvenanceError("source_revision_conflict")
+            if dict(rights.heads)[revision.rights.rights_id] != revision.rights.revision:
+                raise RightsError("rights_revision_stale")
             head = connection.execute(text("SELECT revision_id FROM artifacts.source_heads WHERE " + SCOPE
                 + " AND source_id=:source"), key).scalar_one_or_none()
             if head != (None if prior is None else prior.revision_id):
@@ -102,7 +87,7 @@ class AcquisitionLedger:
             raw = self._source(connection, principal.bindings | {"source": source_id, "revision": revision_id})
         return None if raw is None else SourceRevision.model_validate_json(bytes(raw))
 
-    def retain_trace(self, principal, trace: ConversionTrace, source: SourceDocument, output: bytes):
+    def retain_trace(self, principal, trace: ConversionTrace, source: SourceDocument, output: bytes, *, rights_snapshot=None):
         principal.require("acquire")
         if trace.scope != principal.scope:
             raise ProvenanceError("trace_scope_mismatch")
@@ -113,6 +98,9 @@ class AcquisitionLedger:
         key = principal.bindings | {"trace": trace.trace_id, "source": trace.source.source_id,
                                     "revision": trace.source.revision_id}
         with self.engine.begin() as connection:
+            self.rights.lock(connection, principal)
+            if rights_snapshot is not None:
+                self.rights.fence(connection, principal, rights_snapshot)
             _lock(connection, principal.scope, [("trace", trace.trace_id)])
             existing = connection.execute(text("SELECT canonical_bytes FROM artifacts.conversion_traces WHERE "
                 + SCOPE + " AND trace_id=:trace"), key).scalar_one_or_none()
@@ -123,6 +111,9 @@ class AcquisitionLedger:
             raw = self._source(connection, key)
             if raw is None or SourceRevision.model_validate_json(bytes(raw)).reference != source.reference:
                 raise ProvenanceError("unknown_source_revision")
+            revision = SourceRevision.model_validate_json(bytes(raw))
+            self.rights.authorize(connection, principal, (source.reference.raw.artifact_id, trace.output.artifact_id),
+                                  (revision.rights,), "process")
             _catalog(connection, principal, trace.output)
             connection.execute(text("INSERT INTO artifacts.conversion_traces "
                 "(tenant_id,project_id,trace_id,source_id,source_revision_id,output_artifact_id,output_sha256,"

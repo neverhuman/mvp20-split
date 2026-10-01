@@ -1,6 +1,6 @@
 # Acquisition Evidence Contracts
 
-- Package: `amphora-contracts-evidence` 0.4.0; wire version1.
+- Package: `amphora-contracts-evidence` 0.5.0; wire version1.
 - Status: BP-06.01/B1 boundary subset; public transport shapes; Data/Artifacts owns implemented persistence and bounded preparation, with rights/scientific policy still open.
 - Design: [Source acquisition](../../docs/Architecture/Data/Acquisition.md).
 
@@ -21,3 +21,5 @@ Version0.2.0 adds PreparedDocument and PreparedLabRecord outputs plus prepared_s
 Version0.3.0 adds PreparedSource and RetainPreparedSource. Preparation returns exact canonical output as content_json_utf8 plus digest/schema/disposition/warnings. Consumers UTF-8 encode that string verbatim for artifact upload; parsing and reserializing can change the digest. Preparation has no output artifact ID or publication receipt. Retention requires the complete original SourceRevision, chosen immutable trace ID and actual finalized output ArtifactRef; cross-record correctness belongs to the owner. Existing224 schema bytes are unchanged.
 
 Version0.4.0 adds ObserveSourceIdentity, SourceIdentityObservation and SourceIdentityStatus. A scoped observation ID binds one exact immutable ConversionTraceRef. Status carries a nullable result: null means pending, not an unknown candidate/sample. Completed records preserve a local not_applicable/unresolved result or the exact public Research IdentityResolution. scientific_authority is always none. Research is a public DTO dependency so these records reuse its identity-only response rather than duplicate or reinterpret it; this extends the initial Core-only contract packaging without introducing peer implementation/state dependencies. All228 predecessor schema files remain byte-identical.
+
+Version0.5.0 adds SourceRightsRevision: historical reference/predecessor, granted/revoked status, read/process uses, aware expiry and explicit retain_audit_payload retention. DTO shape does not grant access; Data owns sequence, combinations, current-head checks and read/commit fences. Unsupported retention profiles are rejected, not silently treated as permission to retain. All234 predecessor schema files are unchanged.

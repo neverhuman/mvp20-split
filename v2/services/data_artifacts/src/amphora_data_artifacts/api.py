@@ -42,6 +42,9 @@ def create_app(uploads, storage, credentials, outcomes=None, *, acquisition=None
             status = 404
         if reason in {"upload_too_large", "body_too_large", "artifact_read_limit"}:
             status = 413
+        if reason in {"rights_unavailable", "rights_scope_mismatch", "rights_revoked", "rights_expired",
+                      "rights_use_denied", "rights_lineage_limit"}:
+            status = 403
         return JSONResponse({"reason_code": reason}, status_code=status)
 
     @app.exception_handler(CommandEncodingError)

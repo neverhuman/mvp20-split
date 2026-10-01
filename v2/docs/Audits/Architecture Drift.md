@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-01 17:24:59` (America/Chicago).
+- Last refreshed: `2026-10-01 18:00:06` (America/Chicago).
 - Scope: v2 design/implementation alignment
-- Active focus: BP-06.01/B2 current rights/expiry; B1 ingestion and durable identity-only observations implemented.
-- Next gate: B2 policy fences; B3/V1 crash, independent cutover and child closeout audit remain. Public evidence-to-Research DTO dependency is documented in the B1 activation refinement; no private peer dependency introduced.
+- Active focus: BP-06.01/B3 named failure/recovery proof; B1-B2 boundaries and current-use rights implemented.
+- Next gate: B3 process interruption and scoped public-reference proof, then V1 independent cutover/child closeout audit. Rights retention is explicitly bounded to retained audit payloads; no required-erasure licensing support is claimed.
 
 ## Active Findings
 

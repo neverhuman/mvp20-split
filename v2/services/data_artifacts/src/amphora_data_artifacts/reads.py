@@ -8,6 +8,7 @@ from sqlalchemy import text
 
 from .publication.model import UploadError
 from .publication.uploads import SCOPE
+from .source_rights.ledger import SourceRights
 
 
 @dataclass(frozen=True, slots=True)
@@ -23,6 +24,7 @@ class StoredArtifact:
 class ArtifactReads:
     def __init__(self, engine, storage, max_bytes):
         self.engine, self.storage, self.max_bytes = engine, storage, max_bytes
+        self.rights = SourceRights(engine)
 
     def get(self, principal, artifact_id):
         principal.require("read")
@@ -39,4 +41,7 @@ class ArtifactReads:
         stored = self.get(principal, artifact_id)
         if stored.reference.size_bytes > self.max_bytes:
             raise UploadError("artifact_read_limit")
-        return stored, self.storage.verify(stored.storage_key, stored.content)
+        snapshot = self.rights.capture(principal, (artifact_id,))
+        content = self.storage.verify(stored.storage_key, stored.content)
+        self.rights.recheck(principal, snapshot)
+        return stored, content

@@ -73,6 +73,7 @@ for name, model in {
     "observe-source-identity": evidence_contracts.ObserveSourceIdentity,
     "source-identity-observation": evidence_contracts.SourceIdentityObservation,
     "source-identity-status": evidence_contracts.SourceIdentityStatus,
+    "source-rights-revision": evidence_contracts.SourceRightsRevision,
     "retain-prepared-source": evidence_contracts.RetainPreparedSource,
     "prepared-lab-record": evidence_contracts.PreparedLabRecord,
     "source-span": evidence_contracts.SourceSpan,

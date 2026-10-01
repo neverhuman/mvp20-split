@@ -19,7 +19,7 @@ DATA = b"mass=12"
 
 
 @pytest.fixture
-def acquisition(upload_env):
+def acquisition(upload_env, grant_source_rights):
     e = upload_env
     receipt = e.begin(DATA)
     response = e.client.put(f"/v1/uploads/{receipt.upload_id}/content", content=DATA, headers=e.headers)
@@ -39,6 +39,7 @@ def acquisition(upload_env):
                    "configuration_sha256": "a" * 64, "format": "utf8_document"},
         "rights": {"scope": principal.scope.model_dump(), "rights_id": "unresolved-fixture", "revision": 1},
         "supersedes": None, "completeness": "complete"}))
+    grant_source_rights(revision.rights)
     return AcquisitionLedger(e.engine), principal, revision, e
 
 

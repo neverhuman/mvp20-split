@@ -3,7 +3,7 @@
 import asyncio
 import json
 
-from amphora_contracts_core import Identifier
+from amphora_contracts_core import Identifier, SafePositiveInt
 from amphora_contracts_evidence import (
     ConversionTrace,
     ConversionTraceRef,
@@ -13,6 +13,7 @@ from amphora_contracts_evidence import (
     SourceIdentityObservation,
     SourceIdentityStatus,
     SourceRevision,
+    SourceRightsRevision,
 )
 from fastapi import APIRouter, HTTPException, Request, Response
 
@@ -96,5 +97,21 @@ def acquisition_router(workflow, credentials):
         if result is None:
             raise HTTPException(404, detail="observation_unavailable")
         return result
+
+    @router.post("/rights", response_model=SourceRightsRevision)
+    async def publish_rights(request: Request, response: Response):
+        response.headers["Cache-Control"] = "no-store"
+        principal = principal_for(request, "manage_source_rights")
+        record = await body(request, SourceRightsRevision)
+        return await owned(workflow.rights.publish, principal, record)
+
+    @router.get("/rights/{rights_id}/{revision}", response_model=SourceRightsRevision)
+    async def rights_history(rights_id: Identifier, revision: SafePositiveInt, request: Request, response: Response):
+        response.headers["Cache-Control"] = "no-store"
+        principal = principal_for(request, "source_history")
+        record = await owned(workflow.rights.history, principal, rights_id, revision)
+        if record is None:
+            raise HTTPException(404, detail="rights_unavailable")
+        return record
 
     return router

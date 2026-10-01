@@ -1,6 +1,6 @@
 # Acquisition Provenance
 
-- Status: BP-06.01/B1 implemented; B2 policy active; exact-byte verification and private acquisition ledger implemented. Bounded preparation and finalized owner ingestion stages implemented; opt-in staged ingestion routes implemented.
+- Status: BP-06.01/B1 implemented; B2 policy implemented; B3 verification next; exact-byte verification and private acquisition ledger implemented. Bounded preparation and finalized owner ingestion stages implemented; opt-in staged ingestion routes implemented.
 - Owner: Data/Artifacts; design [Acquisition](../../../../../docs/Architecture/Data/Acquisition.md).
 
 `SourceDocument` verifies a scoped SourceRevisionRef against at most4MiB of exact bytes. `extract(SourceSpan)` checks full source identity, half-open byte bounds and digest. It does not translate character offsets or decode/execute instructions. `TraceDocument.verify(trace, source, output)` validates matching scope/schema/source identities, output content, unique target paths, ordered-transform references and copied/converted/inferred/missing field policy. Missing or inferred values cannot receive `normalized` disposition. No disposition grants scientific acceptance.
@@ -9,7 +9,7 @@ Verified traces expose deterministic UTF-8 canonical bytes (sorted keys, compact
 
 Pure provenance depends only on public Core/evidence contracts and standard-library hashing/JSON. The private ledger additionally uses SQLAlchemy and the existing Data principal/catalog boundary, within the same service. No peer service imports or SQL are allowed. Callers must obtain bytes through authorized publication/read boundaries and check current rights before using these pure objects. Successful byte verification is not proof of authorization, sample identity, declared conversion algorithm execution or scientific validity.
 
-`tests/acquisition/` owns exact-byte, UTF-8 offset, cross-scope, changed-content and origin-policy cases. The scope is independently runnable via `run_tests.py --module data-artifacts --area acquisition`. Replacement must preserve error codes, canonical bytes and immutable references. Current rights fencing and final replacement acceptance remain B2-B3/V1 work; owner integration is documented below.
+`tests/acquisition/` owns exact-byte, UTF-8 offset, cross-scope, changed-content and origin-policy cases. The scope is independently runnable via `run_tests.py --module data-artifacts --area acquisition`. Replacement must preserve error codes, canonical bytes and immutable references. Current rights fencing is implemented in [Source Rights](../source_rights/README.md); final B3/V1 acceptance remains.
 
 Verification checkpoint:25 owned tests,100% lines (64/64) and branches (10/10) for provenance.py. Isolated wheel installation repeats all25 without Runtime installed. This focused suite does not measure the rest of the service or prove ingestion persistence.
 
@@ -56,7 +56,7 @@ AcquisitionWorkflow.retain(principal, revision, trace_id, output_ref) repeats au
 
 PreparedContentRule(document|lab) is an explicit trusted deployment-installed ContentRule. Its identity is pinned to the published prepared_schema digest and validation uses the corresponding public DTO. Unknown profiles fail configuration; missing/extra fields, wrong versions and type coercion fail validation. Existing generic JsonSchemaRule restrictions remain intact. Host acquisition=true explicitly installs both rules and mounts the staged routes; the default remains disabled.
 
-Current-use rights fencing and independent replacement acceptance remain open. Durable Research identity observations are implemented below. The stages do not turn historical rights references into authorization. All lab traces stay quarantined. Tests use actual upload/finalization, retained PostgreSQL and local bytes: replay, exact spans, denied reads/acquisition, foreign scopes, forged/missing artifacts, parser failure, changed delivery, substituted output, changed trace artifact and corrupt storage. Full process replacement belongs to V1.
+Current-use rights fencing is implemented in [Source Rights](../source_rights/README.md); final replacement acceptance remains open. Durable Research identity observations are implemented below. The stages do not turn historical rights references into authorization. All lab traces stay quarantined. Tests use actual upload/finalization, retained PostgreSQL and local bytes: replay, exact spans, denied reads/acquisition, foreign scopes, forged/missing artifacts, parser failure, changed delivery, substituted output, changed trace artifact and corrupt storage. Full process replacement belongs to V1.
 
 ## Staged HTTP Contract
 
@@ -83,3 +83,7 @@ Host configuration optionally names research: {endpoint, token_env} when acquisi
 artifact_0005 adds immutable intent/result tables: exact trace/hash foreign keys; insert/select only for artifact_service; result foreign key to its intent; bounded canonical bytes and database timestamps. AcquisitionWorkflow owns composition, IdentityDecision owns local/peer-result policy, and IdentityObservations owns only Data SQL. Source/trace histories and original artifact commands are unchanged.
 
 Verification includes PostgreSQL scope/grants, forged trace hashes, pending retry, first-winner concurrency, transactional rollback, denied UPDATE/DELETE, substituted identities, public status/replay and a real Research CLI HTTP peer. The real peer case records unknown, publishes synthetic Research identities through a Research-owned setup process, observes matched under a new ID, preserves the original, then proves stopped-peer pending/replay. A clean Data wheel environment imports with no Research implementation installed; full independent peer installation/crash cutover remains V1/B3.
+
+## Current-Use Rights (B2)
+
+[Source Rights](../source_rights/README.md) now fences raw/derived payload reads and new preparation, trace and identity-result use against explicit current grants and PostgreSQL-clock expiry. Historical refs are no longer sufficient for consumption. New source registrations pin the current policy revision; existing source replay retains its original pin. Source/trace commits and rights updates share an owner scope lock; no lock spans filesystem/Research I/O. Policy changes during an operation block its new result. Existing observation receipt replay and source/trace/history remain metadata, not renewed use authority. The bounded retention profile preserves audit payloads; required-erasure sources are unsupported. Acquisition and rights tests share owner fixtures at tests/conftest.py, with separate module-scoped suites.
