@@ -1,5 +1,9 @@
 # BP-06 Planning History
 
+## B3 named failure proof complete - 2026-10-01 18:23:10
+
+B3 complete: Research0.4.0 adds scoped immutable question/need reads; QEV-01 passes through actual Research/Data HTTP and finalized bytes with separate credentials.123 acquisition,70 Research and52 contract/dev tests pass. Four process interruption cases and TRACE-01/02/03 are mapped in the evidence matrix. Child3/4 (75%), Build100%, parent3/24 (12.5%); V1 independent installed-owner replacement and audit remain. [Evidence](../Audits/Evidence/BP-06-Acquisition/Failure_Matrix.json). The QEV gap required an additive read-only Research API with a distinct grant; contracts0.2.0 and all236 schemas stay unchanged. Reference access does not grant Data access or accept science. V1 remains mandatory before successor activation.
+
 ## B3 process recovery checkpoint - 2026-10-01 18:16:05
 
 B3 partial: Data0.10.0 adds scoped source-history reconciliation; four actual PostgreSQL/HTTP process-kill cases preserve original source/trace/observation identities.17 targeted and246 full artifact tests pass. QEV-01 public declaration reads and consolidated named trace matrix remain; child50%, Build66.67%, parent8.33% unchanged. [Evidence](../Audits/Evidence/BP-06-Acquisition/Process_Recovery.json). The source-history route reuses SourceRevision; no wire schemas or durable formats changed. Test-only barriers are excluded from production configuration. Replacement uses the development environment; independent wheel cutover remains V1.

@@ -2,10 +2,10 @@
 
 ## Current Checkpoint
 
-- Last refreshed: `2026-10-01 18:16:05` (America/Chicago).
-- Active plan: BP-06 -> BP-06.01 / Build / B3. Child2/4 (50%), Build2/3 (66.67%), Acceptance0/1 (0%); parent2/24 (8.33%). No user decision pending.
-- Latest checkpoint: B3 partial: Data0.10.0 adds scoped source-history reconciliation; four actual PostgreSQL/HTTP process-kill cases preserve original source/trace/observation identities.17 targeted and246 full artifact tests pass. QEV-01 public declaration reads and consolidated named trace matrix remain; child50%, Build66.67%, parent8.33% unchanged. B2 pushedb0e2fae; see Git for recovery checkpoint.
-- Next: B3 QEV-01 public declaration reads, actual Data/Research reference proof and named TRACE matrix. Recovery barriers now pass; independent installed-owner acceptance and drift audit remain V1. No user decision pending.
+- Last refreshed: `2026-10-01 18:23:10` (America/Chicago).
+- Active plan: BP-06 -> BP-06.01 / Acceptance / V1. Child3/4 (75%), Build3/3 (100%), Acceptance0/1 (0%); parent3/24 (12.5%). No user decision pending.
+- Latest checkpoint: B3 complete: Research0.4.0 adds scoped immutable question/need reads; QEV-01 passes through actual Research/Data HTTP and finalized bytes with separate credentials.123 acquisition,70 Research and52 contract/dev tests pass. Four process interruption cases and TRACE-01/02/03 are mapped in the evidence matrix. Child3/4 (75%), Build100%, parent3/24 (12.5%); V1 independent installed-owner replacement and audit remain. Recovery pusheddd070cc; see Git for B3 checkpoint.
+- Next: V1 independent Data0.10.0/Research0.4.0 installs with no private peer import; run actual peer observations/question references and preserve immutable history across replacement. Then scoped audit and child archival. B1-B3 are complete. Retention remains retain_audit_payload; mandatory-erasure licenses unsupported.
 - Recovery: only verified pending original receipts enable explicit same-identity resume. Unknown transport outcome first reconciles; collision/denial/terminal ambiguity never gets a fresh ID. Newer local edits survive recovery. Cancellation is operational and retains explicit uncertain-effects wording.
 - Runtime0.20.0, Commands0.2.0, graph-runtime0.11.0, campaigns0.4.1;236 public schemas; all234 predecessor schemas preserved. Numeric v2 only save/admit; other families/unmarked bytes v1. Input NumberValue remains decimal string. Registry eligibility synthetic-only observations are not reservations/atomic revocation. No scientific or target-host deployment claim.
 - Tooling: mapped v2/dev/.venv/Scripts/python.exe, PYTHONUTF8=1; pytest/ruff --config equivalents use v2/dev/pyproject.toml. Git always -c safe.directory=//DesktopNAS/Code/mvp20-split. Never reset retained PG or run parallel campaign-admission suites. No v1/JARVIS/subagents. Use Path.absolute for repo tooling; Path.resolve maps Z to UNC and breaks uv source identity.

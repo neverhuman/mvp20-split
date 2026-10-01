@@ -43,7 +43,10 @@ class ResearchHost:
             _keys(entry, ("token_env", "actor_id", "scope", "actions"))
             if not isinstance(entry["actor_id"], str) or not 1 <= len(entry["actor_id"]) <= 128:
                 raise ValueError("invalid_actor")
-            if entry["actions"] != ["resolve_identity"]:
+            actions = entry["actions"]
+            if (not isinstance(actions, list) or not actions
+                    or any(action not in ("resolve_identity", "read_declarations") for action in actions)
+                    or len(set(actions)) != len(actions)):
                 raise ValueError("invalid_actions")
             scope = Scope.model_validate(entry["scope"])
             grants.append((_secret(entry["token_env"]), Principal(entry["actor_id"], scope, frozenset(entry["actions"]))))

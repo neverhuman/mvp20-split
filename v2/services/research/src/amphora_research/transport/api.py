@@ -3,7 +3,14 @@
 import asyncio
 import json
 
-from amphora_contracts_research import IdentityResolution, ResolveIdentity
+from amphora_contracts_research import (
+    EvidenceNeed,
+    EvidenceNeedRef,
+    IdentityResolution,
+    ResearchQuestion,
+    ResearchQuestionRef,
+    ResolveIdentity,
+)
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from pydantic import ValidationError
@@ -11,6 +18,7 @@ from sqlalchemy.exc import SQLAlchemyError
 
 from ..identity.questions import ResearchIdentityError
 from .access import AccessDenied
+from .declarations import DeclarationReader
 
 
 class InvalidRequest(ValueError):
@@ -48,8 +56,7 @@ def create_app(resolver, credentials):
     def health():
         return {"service": "research", "authority": "identity_only"}
 
-    @app.post("/v1/identities/resolve", response_model=IdentityResolution)
-    async def resolve(request: Request):
+    async def invoke(request, model, operation):
         try:
             principal = credentials.authenticate(request.headers.get("authorization"))
             if request.headers.get("content-type", "").split(";", 1)[0].strip().lower() != "application/json":
@@ -57,8 +64,12 @@ def create_app(resolver, credentials):
             body = await asyncio.wait_for(_body(request), timeout=5)
             decoded = json.loads(body.decode("utf-8"), object_pairs_hook=_unique, parse_constant=_constant)
             # Parse in JSON mode so immutable tuple/schema rules match published wire contracts.
-            query = ResolveIdentity.model_validate_json(json.dumps(decoded))
-            return await asyncio.to_thread(resolver.resolve, principal, query)
+            query = model.model_validate_json(json.dumps(decoded))
+            result = await asyncio.to_thread(operation, principal, query)
+            if result is None:
+                return JSONResponse(status_code=404, content={"code": "declaration_unavailable"},
+                                    headers={"Cache-Control": "no-store"})
+            return JSONResponse(content=result.model_dump(mode="json"), headers={"Cache-Control": "no-store"})
         except AccessDenied as error:
             status = 401 if str(error) == "unauthorized" else 403
             return JSONResponse(status_code=status, content={"code": str(error)})
@@ -70,5 +81,19 @@ def create_app(resolver, credentials):
             return JSONResponse(status_code=422, content={"code": "invalid_request"})
         except TimeoutError:
             return JSONResponse(status_code=408, content={"code": "request_timeout"})
+
+    @app.post("/v1/identities/resolve", response_model=IdentityResolution)
+    async def resolve(request: Request):
+        return await invoke(request, ResolveIdentity, resolver.resolve)
+
+    declarations = DeclarationReader(resolver.ledger)
+
+    @app.post("/v1/questions/read", response_model=ResearchQuestion)
+    async def question(request: Request):
+        return await invoke(request, ResearchQuestionRef, declarations.read)
+
+    @app.post("/v1/evidence-needs/read", response_model=EvidenceNeed)
+    async def evidence_need(request: Request):
+        return await invoke(request, EvidenceNeedRef, declarations.read)
 
     return app

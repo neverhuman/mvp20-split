@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-01 18:00:06` (America/Chicago).
+- Last refreshed: `2026-10-01 18:23:10` (America/Chicago).
 - Scope: v2 design/implementation alignment
-- Active focus: BP-06.01/B3 named failure/recovery proof; B1-B2 boundaries and current-use rights implemented.
-- Next gate: B3 process interruption and scoped public-reference proof, then V1 independent cutover/child closeout audit. Rights retention is explicitly bounded to retained audit payloads; no required-erasure licensing support is claimed.
+- Active focus: BP-06.01/V1; B1-B3 source/rights/recovery/public-reference evidence complete.
+- Next gate: V1 independent installed-owner cutover and child closeout audit. Retention remains bounded to retained audit payloads.
 
 ## Active Findings
 
