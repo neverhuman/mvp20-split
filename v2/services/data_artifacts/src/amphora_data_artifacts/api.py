@@ -17,6 +17,7 @@ from fastapi.responses import JSONResponse, Response
 from sqlalchemy import text
 from sqlalchemy.exc import DBAPIError
 
+from .acquisition.api import acquisition_router
 from .persistence.commands import CommandConflict
 from .publication.finalize import Finalizer
 from .publication.inspection import PublicationHistory
@@ -26,7 +27,7 @@ from .retention.outcomes import OutcomeUnavailable
 from .retention.reservations import Reservations
 
 
-def create_app(uploads, storage, credentials, outcomes=None):
+def create_app(uploads, storage, credentials, outcomes=None, *, acquisition=None):
     app = FastAPI(title="Amphora artifact publication", version="0.1.0")
     finalizer = Finalizer(uploads, storage)
     reads = ArtifactReads(uploads.commands.engine, storage, uploads.limits.max_bytes)
@@ -178,4 +179,6 @@ def create_app(uploads, storage, credentials, outcomes=None):
                 await asyncio.shield(asyncio.to_thread(uploads.finish, principal, attempt,
                                                        verified=False, actual_bytes=actual))
 
+    if acquisition is not None:
+        app.include_router(acquisition_router(acquisition, credentials))
     return app

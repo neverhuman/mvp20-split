@@ -1,5 +1,9 @@
 # BP-06 Planning History
 
+## Staged ingestion HTTP - 2026-10-01 12:42:29
+
+B1 partial: evidence0.3.0/Data0.7.0 staged ingestion HTTP and explicit host activation verified.108 acquisition tests,213 artifact regression tests before the added live-process case, and21 contract/schema tests pass. Actual initial/replacement HTTP processes preserve quarantined lab trace receipts.228 schemas preserve all224 predecessor bytes. Durable Research lookup/result observations remain; child0/4 and parent0/24 unchanged. [Evidence](../Audits/Evidence/BP-06-Acquisition/Ingestion_HTTP.json). Routes use original delivery/source/trace identities rather than new command bytes. Explicit host activation installs pinned output validators, checks migrated tables and preserves default-disabled compatibility. The live test starts two actual host processes against retained PostgreSQL/local bytes; it is not an isolated-wheel replacement or crash-during-write claim.
+
 ## Finalized ingestion stages - 2026-10-01 12:30:47
 
 B1 partial: Data/Artifacts0.6.0 verified finalized ingestion stages;94 acquisition tests and200 full artifact-owner tests pass. Raw reads, delivery registration, reviewed preparation and immutable trace retention now compose against actual finalized artifacts. Public ingestion routes and durable Research lookup observations remain; child0/4 and parent0/24 unchanged. [Evidence](../Audits/Evidence/BP-06-Acquisition/Ingestion_Stages.json). Integration exposed missing prepared-output validators; explicit installed profile rules now validate the exact public DTOs without changing generic JSON Schema restrictions. Failed conversion retains the delivery identity; retry cannot substitute corrected bytes under that identity. Replacement here is a new owner object against retained PostgreSQL, not an independent process acceptance claim.

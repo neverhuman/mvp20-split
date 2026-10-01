@@ -1,0 +1,91 @@
+{
+  "timestamp_local": "2026-10-01 12:42:29",
+  "plan": "BP-06.01/B1",
+  "status": "partial",
+  "versions": {
+    "evidence": "0.3.0",
+    "data_artifacts": "0.7.0"
+  },
+  "tests": {
+    "acquisition": 108,
+    "artifact_regression_before_added_process_test": 213,
+    "contract_and_schema": 21
+  },
+  "schemas": {
+    "published": 228,
+    "predecessors_byte_identical": 224
+  },
+  "checks": [
+    "Ruff",
+    "production dependency boundaries",
+    "schema publication --check",
+    "wheel builds"
+  ],
+  "process_proof": {
+    "test": "services/data_artifacts/tests/acquisition/test_host.py::test_live_ingestion_receipt_survives_process_replacement",
+    "setup": "Two sequential actual CLI hosts, loopback HTTP, retained PostgreSQL and local artifact bytes",
+    "observed": "Preparation stays quarantined; exact retain receipt and trace history survive replacement",
+    "publication": "Raw/output published through existing owner API fixture",
+    "limitation": "Development environment; no independent wheel or crash-during-write claim"
+  },
+  "coverage": {
+    "services\\data_artifacts\\src\\amphora_data_artifacts\\acquisition\\api.py": {
+      "covered_lines": 57,
+      "num_statements": 58,
+      "percent_covered": 98.48484848484848,
+      "percent_covered_display": "98",
+      "missing_lines": 1,
+      "excluded_lines": 0,
+      "percent_statements_covered": 98.27586206896552,
+      "percent_statements_covered_display": "98",
+      "num_branches": 8,
+      "num_partial_branches": 0,
+      "covered_branches": 8,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    },
+    "services\\data_artifacts\\src\\amphora_data_artifacts\\acquisition\\preparation.py": {
+      "covered_lines": 27,
+      "num_statements": 27,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100",
+      "num_branches": 4,
+      "num_partial_branches": 0,
+      "covered_branches": 4,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    },
+    "services\\data_artifacts\\src\\amphora_data_artifacts\\hosting.py": {
+      "covered_lines": 70,
+      "num_statements": 81,
+      "percent_covered": 82.85714285714286,
+      "percent_covered_display": "83",
+      "missing_lines": 11,
+      "excluded_lines": 0,
+      "percent_statements_covered": 86.41975308641975,
+      "percent_statements_covered_display": "86",
+      "num_branches": 24,
+      "num_partial_branches": 7,
+      "covered_branches": 17,
+      "missing_branches": 7,
+      "percent_branches_covered": 70.83333333333333,
+      "percent_branches_covered_display": "71"
+    }
+  },
+  "wheel_sha256": {
+    "amphora_contracts_evidence-0.3.0-py3-none-any.whl": "74d067f233517d49a9e402eec822951c242a979a00e4c6dd2bc3585375d4f713",
+    "amphora_data_artifacts-0.7.0-py3-none-any.whl": "55440f07e205a5c341cb40bdfbfad9e6ac43d7c079ea989cee3e3f2c155e0db4"
+  },
+  "remaining": [
+    "Durable Research identity lookup observations/result publication",
+    "B2 current rights/expiry",
+    "B3 interruption/race tests, including request timeout/disconnect",
+    "V1 independent-wheel peer/replacement acceptance"
+  ]
+}

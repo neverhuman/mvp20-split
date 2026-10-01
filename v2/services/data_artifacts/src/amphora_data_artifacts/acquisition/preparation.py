@@ -8,6 +8,7 @@ from amphora_contracts_evidence import (
     ConversionTrace,
     ConversionWarning,
     FieldOrigin,
+    PreparedSource,
     SourceSpan,
     TransformStep,
 )
@@ -33,6 +34,12 @@ class PreparedAcquisition:
     def __post_init__(self):
         if len(self.content) > MAX_PROVENANCE_BYTES:
             raise ProvenanceError("prepared_output_limit")
+
+    def response(self) -> PreparedSource:
+        return PreparedSource(wire_version="1", source=self.source.reference,
+                              content_json_utf8=self.content.decode("utf-8"),
+                              sha256=hashlib.sha256(self.content).hexdigest(), schema_ref=self.output_schema,
+                              disposition=self.disposition, warnings=self.warnings)
 
     def trace(self, trace_id: str, finalized_output: ArtifactRef) -> TraceDocument:
         if finalized_output.schema_ref != self.output_schema or finalized_output.media_type != "application/json":

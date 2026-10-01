@@ -146,7 +146,7 @@ requires-dist = [{ name = "pydantic", specifier = ">=2.12,<3" }]
 
 [[package]]
 name = "amphora-contracts-evidence"
-version = "0.2.0"
+version = "0.3.0"
 source = { editable = "../contracts/evidence" }
 dependencies = [
     { name = "amphora-contracts-core" },
@@ -246,7 +246,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-data-artifacts"
-version = "0.6.0"
+version = "0.7.0"
 source = { editable = "../services/data_artifacts" }
 dependencies = [
     { name = "alembic" },
