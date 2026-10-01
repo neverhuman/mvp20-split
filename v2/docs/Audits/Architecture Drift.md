@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-01 18:34:28` (America/Chicago).
+- Last refreshed: `2026-10-01 18:51:58` (America/Chicago).
 - Scope: v2 design/implementation alignment
-- Active focus: BP-06.02 activation; BP-06.01 closed/aligned in drift history.
-- Next gate: bounded Knowledge authoring/replay activation audit; no source-loop blocking drift remains.
+- Active focus: BP-06.02/B1; public Knowledge DTOs verified, domain/persistence boundary pending. BP-06.01 remains closed/aligned.
+- Next gate: B1 deterministic typed-edit/replay and accepted-change transaction; no DTO-only implementation credit.
 
 ## Active Findings
 

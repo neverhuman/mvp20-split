@@ -59,6 +59,17 @@
     ]
   },
   {
+    "package": "amphora-contracts-knowledge",
+    "version": "0.1.0",
+    "path": "contracts/knowledge",
+    "module": "amphora_contracts_knowledge",
+    "public_dependencies": [
+      "amphora-contracts-core",
+      "amphora-contracts-evidence",
+      "amphora-contracts-research"
+    ]
+  },
+  {
     "package": "amphora-contracts-research",
     "version": "0.2.0",
     "path": "contracts/research",

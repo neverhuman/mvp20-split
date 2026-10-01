@@ -1,5 +1,13 @@
 # BP-06 Planning History
 
+## Knowledge public contracts - 2026-10-01 18:51:58
+
+B1 partial: Knowledge contracts0.1.0 publishes typed edits, scoped provenance/Research links, distinct proposals/structural decisions and immutable snapshot shapes.44 contract/dev tests and30 isolated contract tests pass;256 schemas preserve all236 predecessor bytes. No Knowledge domain/persistence/HTTP behavior exists yet; child0/4 (0%), parent4/24 (16.67%) unchanged. [Evidence](../Audits/Evidence/BP-06-Knowledge/Contracts.json). Vocabulary/policy refs are separate from JSON Schema refs. Typed receipts have structural_only authority; scientific promotion is unavailable in this profile. Cross-record semantics remain owner gates and synthetic shape fixtures are not durable receipts.
+
+## Knowledge activation - 2026-10-01 18:40:42
+
+[Coherence audit](../Audits/BP-06.02_Activation.md) activates BP-06.02/B1 at0/4; parent4/24 (16.67%) unchanged. Typed structural acceptance and atomic log/snapshot publication are distinct from scientific eligibility and LLM extraction. Predecessor public contracts are pinned; a stale dev Research pin is a bounded tooling correction. No owner decision pending.
+
 ## Source/evidence closeout - 2026-10-01 18:34:28
 
 BP-06.01 accepted4/4 (100%):139 independently installed Data acquisition/rights tests,70 installed Research tests and36 replacement API tests pass. Two builds/four isolated environments preserve exact history through actual peer HTTP and separate replacement processes. Scoped drift audit aligned; parent4/24 (16.67%). BP-06.02 activation audit is next; scientific authority remains separate. [Audit](../Audits/BP-06.01_Source_Evidence_Closeout.md). Private fixture seeding remains distinct from public scientific approval. No schemas or durable formats changed in V1; no v1/JARVIS access.

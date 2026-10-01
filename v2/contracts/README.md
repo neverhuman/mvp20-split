@@ -22,3 +22,5 @@ BP-04.02 adds [graph-runtime commands/observations](graph_runtime/README.md) as 
 BP-06.01 adds [acquisition evidence contracts](evidence/README.md): source revisions, exact byte spans and conversion traces. DTO validity does not imply rights, provenance verification or scientific acceptance; owner implementation remains in progress.
 
 [Research identity contracts](research/README.md) distinguish candidate, sample, material-state references and versioned questions/evidence needs. They provide no scientific acceptance or owner state.
+
+[Knowledge contracts](knowledge/README.md) expose scoped typed graph edits, grounding/Research links and structural-only decisions/snapshots. They grant no scientific or persistence authority; the owner implementation remains BP-06.02 work.

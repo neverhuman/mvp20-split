@@ -1,0 +1,33 @@
+{
+  "wheels": {
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_evidence-0.5.0-py3-none-any.whl": "af6ca1da3dc677b6049ad2a82ee0abdbd27824bcb359e2915f3bc23c7011c9ef",
+    "amphora_contracts_knowledge-0.1.0-py3-none-any.whl": "69b34b404f7d2c14f0ebc54857e02e4073ab1a370e686488d327d6bed260d473",
+    "amphora_contracts_research-0.2.0-py3-none-any.whl": "3a301b4e1732bc6bf1306522f7c439ac8faa72399b111044a5042c4c67088c86"
+  },
+  "result": "passed",
+  "isolation": "installed Knowledge contracts; no Data/Research implementation or SQLAlchemy",
+  "review": "Distinct vocabulary/policy revision references; no misuse of JSON Schema identity",
+  "timestamp_local": "2026-10-01 18:51:58",
+  "task": "BP-06.02/B1 partial",
+  "tests": {
+    "owned": 30,
+    "combined_contract_dev": 44,
+    "isolated": 30
+  },
+  "schemas": {
+    "published": 256,
+    "unchanged_predecessors": 236
+  },
+  "limits": [
+    "DTO shape only; no Knowledge owner implemented",
+    "Golden acceptance hashes are placeholders",
+    "Domain cross-record scope, identity, scientific authority and durable replay remain owner gates"
+  ],
+  "coverage": {
+    "statements": 187,
+    "covered_statements": 187,
+    "branches": 0,
+    "meaning": "DTO definitions only; no owner behavior coverage"
+  }
+}

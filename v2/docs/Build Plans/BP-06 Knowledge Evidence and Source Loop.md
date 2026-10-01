@@ -2,15 +2,15 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-06.02 / activation coherence audit.
-- Last refreshed: `2026-10-01 18:34:28` (America/Chicago).
+- Status: primary_active; BP-06.02 / Build / B1.
+- Last refreshed: `2026-10-01 18:51:58` (America/Chicago).
 - Owner/scope: Knowledge, Research and focused Data/Artifacts modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 receipt/wait seams and BP-05 inspection; BP-01/02/03 public contracts and tool execution.
-- Implementation: **16.67%**, 4/24 verified child deliveries. Each child owns four deliveries; parent counts each once. P1/.01 is closed100%; P2/.02 is queued0% pending activation audit.
+- Implementation: **16.67%**, 4/24 verified child deliveries. Each child owns four deliveries; parent counts each once. P1/.01 is closed100%; P2/.02 is active0% after its coherence audit.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current task: BP-06.02 activation coherence audit, then B1 typed Knowledge operations and replay.
-- Demonstrated behavior: BP-06.01 accepted4/4 (100%):139 independently installed Data acquisition/rights tests,70 installed Research tests and36 replacement API tests pass. Two builds/four isolated environments preserve exact history through actual peer HTTP and separate replacement processes. Scoped drift audit aligned; parent4/24 (16.67%). BP-06.02 activation audit is next; scientific authority remains separate.
+- Current task: BP-06.02/B1 Knowledge domain vocabulary/policy validation, immutable edit application and deterministic replay; then private accepted-change persistence/public transport.
+- Demonstrated behavior: B1 partial: Knowledge contracts0.1.0 publishes typed edits, scoped provenance/Research links, distinct proposals/structural decisions and immutable snapshot shapes.44 contract/dev tests and30 isolated contract tests pass;256 schemas preserve all236 predecessor bytes. No Knowledge domain/persistence/HTTP behavior exists yet; child0/4 (0%), parent4/24 (16.67%) unchanged.
 - Blockers: none for bounded activation audit; real scientific/provider choices remain scoped successor gates.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.

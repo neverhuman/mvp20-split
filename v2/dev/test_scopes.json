@@ -160,5 +160,11 @@
     "coverage_sources": [
       "services/research/src/amphora_research"
     ]
+  },
+  "contracts-knowledge": {
+    "tests": "contracts/knowledge/tests",
+    "coverage_sources": [
+      "contracts/knowledge/src/amphora_contracts_knowledge"
+    ]
   }
 }

@@ -185,6 +185,25 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-contracts-knowledge"
+version = "0.1.0"
+source = { editable = "../contracts/knowledge" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-evidence" },
+    { name = "amphora-contracts-research" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-evidence", editable = "../contracts/evidence" },
+    { name = "amphora-contracts-research", editable = "../contracts/research" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-research"
 version = "0.2.0"
 source = { editable = "../contracts/research" }
@@ -292,6 +311,7 @@ dependencies = [
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-evidence" },
     { name = "amphora-contracts-graph-runtime" },
+    { name = "amphora-contracts-knowledge" },
     { name = "amphora-contracts-research" },
     { name = "amphora-contracts-runtime" },
     { name = "amphora-contracts-solver-fixture" },
@@ -323,6 +343,7 @@ requires-dist = [
     { name = "amphora-contracts-core", editable = "../contracts/core" },
     { name = "amphora-contracts-evidence", editable = "../contracts/evidence" },
     { name = "amphora-contracts-graph-runtime", editable = "../contracts/graph_runtime" },
+    { name = "amphora-contracts-knowledge", editable = "../contracts/knowledge" },
     { name = "amphora-contracts-research", editable = "../contracts/research" },
     { name = "amphora-contracts-runtime", editable = "../contracts/runtime" },
     { name = "amphora-contracts-solver-fixture", editable = "../contracts/solver_fixture" },

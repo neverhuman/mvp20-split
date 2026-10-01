@@ -1,0 +1,18 @@
+# Knowledge Wire Contracts
+
+- Package: amphora-contracts-knowledge0.1.0; BP-06.02/B1 partial contract boundary.
+- Design: [Knowledge authoring](../../docs/Architecture/Knowledge/Authoring.md); [activation decisions](../../docs/Audits/BP-06.02_Activation.md).
+
+Public imports describe scoped graph/entity/assertion identities, a pinned predicate vocabulary, source grounding, exact Research question/need links, discriminated typed edits, proposals, structural acceptance decisions and immutable snapshots. Dependencies are public Core0.1.0, evidence0.5.0 and Research0.2.0 plus Pydantic. No service implementation, database, I/O, agent or scientific policy belongs here.
+
+The six edits are add_entity, add_assertion, correct_assertion, retract_assertion, merge_entities and revise_entity_context. Corrections name an exact prior assertion revision and a replacement; context edits name an exact prior entity revision. Merge records retain both identities. Shape validity alone does not verify a predecessor, endpoint, alias cycle, ontology membership, scope equality, payload existence or source meaning. The Knowledge owner must enforce those checks and authenticate every operation.
+
+GraphChangeProposal carries the observed complete head (null for genesis), requested pinned vocabulary/policy, explanatory text, source grounding and bounded edits. AcceptedGraphChange is a separate owner-issued record with actor, observed public references, acceptance time, log position and resulting snapshot. Its authority is exactly structural_only. Reported claims, hypotheses and unresolved statements remain distinct; scientifically accepted posture is deliberately unavailable in this initial profile. Research declarations and answer-proposal references do not grant acceptance or artifact access.
+
+GraphChangeDecision separates accepted heads from rejected/conflicting findings through a discriminator. Receipt hashes, matching scope/IDs, graph-head consistency and acceptance authority require owner verification; callers cannot turn a valid DTO into a committed receipt. New wire surfaces do not change existing runtime command profiles or canonical command bytes.
+
+DomainGraphContent carries complete immutable entity/assertion history plus aliases and retractions. The owner canonicalizes ordered semantic collections and hashes content, excluding incidental build timestamps. Snapshot references hold that digest; accepted-change references hash accepted content separately, avoiding self-referential hashes. A head binds both snapshot and accepted log position. These are format rules to be verified by the forthcoming owner, not behavior implemented by the DTO package.
+
+Collections, strings and integer revisions are bounded; models are strict/frozen and forbid extra fields and nonfinite numbers. Cross-record rules belong to focused owner domain objects. Module-local tests own public shape and JSON Schema parity, with synthetic examples under tests/fixtures. Generated published schemas and predecessor-byte preservation are checked by dev tooling. Independent contract installation proves serialization only; transactional replay, public reference validation and replacement acceptance remain BP-06.02 work.
+
+Verification checkpoint:30 owned and30 isolated contract tests;44 combined contract/dev tests pass.256 published schemas preserve all236 predecessor bytes. Isolated installation excludes Data/Research implementations and SQLAlchemy. VocabularyRef and StructuralPolicyRef pin their own versioned content; they are not JSON Schema identifiers. Golden accepted/snapshot hashes are deliberate shape-only placeholders, never accepted owner evidence.
