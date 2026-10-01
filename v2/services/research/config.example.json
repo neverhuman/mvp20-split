@@ -1,0 +1,11 @@
+{
+  "database_url_env": "AMPHORA_RESEARCH_DATABASE_URL",
+  "principals": [
+    {
+      "token_env": "AMPHORA_RESEARCH_READ_TOKEN",
+      "actor_id": "acquisition",
+      "scope": {"tenant_id": "local", "project_id": "synthetic-demo"},
+      "actions": ["resolve_identity"]
+    }
+  ]
+}

@@ -59,7 +59,7 @@
   },
   {
     "package": "amphora-contracts-research",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "path": "contracts/research",
     "module": "amphora_contracts_research",
     "public_dependencies": [
@@ -134,7 +134,7 @@
   },
   {
     "package": "amphora-research",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "path": "services/research",
     "module": "amphora_research",
     "public_dependencies": [

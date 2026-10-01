@@ -78,6 +78,8 @@ for name, model in {
 
 for name, model in {
     "candidate-revision": research_contracts.CandidateRevision,
+    "resolve-identity": research_contracts.ResolveIdentity,
+    "identity-resolution": research_contracts.IdentityResolution,
     "sample-identity": research_contracts.SampleIdentity,
     "question": research_contracts.ResearchQuestion,
     "evidence-need": research_contracts.EvidenceNeed,

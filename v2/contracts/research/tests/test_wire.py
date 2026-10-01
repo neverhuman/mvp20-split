@@ -1,7 +1,14 @@
 import json
 
 import pytest
-from amphora_contracts_research import CandidateRevisionRef, EvidenceNeed, ResearchQuestion, SampleIdentity
+from amphora_contracts_research import (
+    CandidateRevisionRef,
+    EvidenceNeed,
+    IdentityResolution,
+    ResearchQuestion,
+    ResolveIdentity,
+    SampleIdentity,
+)
 from jsonschema import Draft202012Validator
 from pydantic import ValidationError
 
@@ -60,3 +67,17 @@ def test_candidate_identity_does_not_substitute_for_sample_identity():
     Draft202012Validator(SampleIdentity.model_json_schema()).validate(sample)
     assert parsed.material_state is None
     assert parsed.candidate == CandidateRevisionRef.model_validate_json(json.dumps(candidate))
+
+
+def test_resolution_public_roots_never_grant_scientific_authority():
+    request = {"wire_version": "1", "scope": SCOPE,
+               "candidate": {"scope": SCOPE, "candidate_id": "c1", "revision": 1},
+               "sample": {"scope": SCOPE, "sample_id": "s1", "revision": 1}}
+    result = request | {"disposition": "matched", "reason": "exact_identity_only", "authority": "identity_only"}
+    for model, value in ((ResolveIdentity, request), (IdentityResolution, result)):
+        model.model_validate_json(json.dumps(value))
+        Draft202012Validator(model.model_json_schema()).validate(value)
+    result["authority"] = "scientific_acceptance"
+    with pytest.raises(ValidationError):
+        IdentityResolution.model_validate_json(json.dumps(result))
+    assert list(Draft202012Validator(IdentityResolution.model_json_schema()).iter_errors(result))

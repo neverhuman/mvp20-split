@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-09-30 17:44:31` (America/Chicago).
+- Last refreshed: `2026-10-01 11:58:34` (America/Chicago).
 - Scope: v2 design/implementation alignment
-- Active focus: BP-06.01/B1 source/evidence and Research identity boundaries.
-- Next gate: Complete B1 contracts, adapters and persisted ledger; no new blocking drift identified.
+- Active focus: BP-06.01/B1 public acquisition/Research integration; independent identity-only lookup accepted within bounded scope.
+- Next gate: Data-to-Research public client and full B1 ingestion boundary; no new blocking drift identified.
 
 ## Active Findings
 

@@ -1,5 +1,10 @@
 # BP-06 Planning History
 
+## Research HTTP boundary - 2026-10-01 11:58:34
+
+B1 partial: Research0.3.0 authenticated identity-only HTTP lookup/loopback host verified.61 owner tests and24 contract/dev tests pass; independently installed initial/replacement processes preserve lookup with401/403 denials.224 schemas preserve all220 predecessors. Data public client and ingestion operations remain; child0/4 and parent0/24 unchanged. [Evidence](../Audits/Evidence/BP-06-Acquisition/Research_HTTP.json). The lookup authenticates all nested scopes before SQL, preserves unknown versus unavailable, and exposes no artifact/scientific authority. Identity publication remains owner-private. Shared Research fixture moved to its test root to support granular API/persistence suites.
+
+
 ## Bounded preparation checkpoint - 2026-10-01 11:46:20
 
 B1 partial: evidence0.2.0 and Data/Artifacts0.4.0 bounded preparation verified;58 acquisition tests,164 full artifact tests,31 contract/dev tests and52 pure tests in isolated wheels pass.220 schemas preserve all216 predecessors. Lab outputs stay quarantined pending Research reconciliation. Public owner integration remains; child0/4 and parent0/24 unchanged. [Evidence](../Audits/Evidence/BP-06-Acquisition/Preparation.json). Exact raw-token spans preserve Unicode, duplicates are rejected, missing/null units remain distinct, and no instruction or unit-conversion inference executes. Windows pytest long-parameter-ID failure was fixed with bounded IDs; production behavior unchanged.
