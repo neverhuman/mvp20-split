@@ -6,8 +6,9 @@ import pytest
 from amphora_data_artifacts.hosting import Host
 
 
-def test_ordinary_artifact_configuration_rejects_fault_switch(tmp_path):
+@pytest.mark.parametrize("fault", ["upload_synced", "source_before_head", "observation_committed"])
+def test_ordinary_artifact_configuration_rejects_fault_switch(tmp_path, fault):
     path = tmp_path / "artifact.json"
-    path.write_text(json.dumps({"fault": "upload_synced"}))
+    path.write_text(json.dumps({"fault": fault}))
     with pytest.raises(ValueError, match="Unknown configuration"):
         Host.load(path)

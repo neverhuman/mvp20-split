@@ -81,6 +81,15 @@ def acquisition_router(workflow, credentials):
             raise HTTPException(404, detail="trace_unavailable")
         return result
 
+    @router.get("/sources/{source_id}/{revision_id}", response_model=SourceRevision)
+    async def source_history(source_id: Identifier, revision_id: Identifier, request: Request, response: Response):
+        response.headers["Cache-Control"] = "no-store"
+        principal = principal_for(request, "source_history")
+        result = await owned(workflow.ledger.history, principal, source_id, revision_id)
+        if result is None:
+            raise HTTPException(404, detail="source_unavailable")
+        return result
+
     @router.post("/identity-observations", response_model=SourceIdentityObservation)
     async def observe(request: Request, response: Response):
         response.headers["Cache-Control"] = "no-store"

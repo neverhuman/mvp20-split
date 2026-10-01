@@ -1,0 +1,282 @@
+{
+  "timestamp_local": "2026-10-01 18:16:05",
+  "task": "BP-06.01/B3 partial",
+  "package": "amphora-data-artifacts 0.10.0",
+  "verification": {
+    "targeted_tests": 17,
+    "artifact_owner_tests": 246,
+    "ruff": "passed",
+    "dependency_boundaries": "passed"
+  },
+  "setup": "Retained labeled PostgreSQL fixture, unique scopes, actual finalized artifacts and loopback HTTP processes; no reset.",
+  "cases": [
+    {
+      "timestamp_local": "2026-10-01 18:14:35",
+      "stage": "observation_before_result",
+      "scope": {
+        "tenant_id": "upload-tests",
+        "project_id": "35486587e8444492a72b57e76d955abd"
+      },
+      "source": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "35486587e8444492a72b57e76d955abd"
+        },
+        "source_id": "source",
+        "revision_id": "r1",
+        "raw": {
+          "artifact_id": "881a1c72bd114775a57df2bdb9e7c4fb",
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "35486587e8444492a72b57e76d955abd"
+          },
+          "sha256": "ae3f79debd74acf5a6cccce1636ebff023f4f3a298e2c491c8d81a8462cff10a",
+          "media_type": "application/octet-stream",
+          "schema_ref": {
+            "schema_id": "fixture.bytes",
+            "version": "1",
+            "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+          },
+          "size_bytes": 47
+        }
+      },
+      "trace": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "35486587e8444492a72b57e76d955abd"
+        },
+        "trace_id": "process-trace",
+        "sha256": "059e69fe44efea51fea82da7a3875c8cfdcab56e42cdcb497d5fb25f00b1c389"
+      },
+      "barrier": {
+        "stage": "observation_before_result",
+        "source": null,
+        "observation": "process-observation"
+      },
+      "replacement_response": {
+        "wire_version": "1",
+        "request": {
+          "wire_version": "1",
+          "observation_id": "process-observation",
+          "trace": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "35486587e8444492a72b57e76d955abd"
+            },
+            "trace_id": "process-trace",
+            "sha256": "059e69fe44efea51fea82da7a3875c8cfdcab56e42cdcb497d5fb25f00b1c389"
+          }
+        },
+        "kind": "not_applicable",
+        "resolution": null,
+        "scientific_authority": "none"
+      }
+    },
+    {
+      "timestamp_local": "2026-10-01 18:14:43",
+      "stage": "observation_committed",
+      "scope": {
+        "tenant_id": "upload-tests",
+        "project_id": "cdb499403a3d432db29fe9e5e9555435"
+      },
+      "source": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "cdb499403a3d432db29fe9e5e9555435"
+        },
+        "source_id": "source",
+        "revision_id": "r1",
+        "raw": {
+          "artifact_id": "10b3e70c22c74008aac6bcc4ff1484a8",
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "cdb499403a3d432db29fe9e5e9555435"
+          },
+          "sha256": "ae3f79debd74acf5a6cccce1636ebff023f4f3a298e2c491c8d81a8462cff10a",
+          "media_type": "application/octet-stream",
+          "schema_ref": {
+            "schema_id": "fixture.bytes",
+            "version": "1",
+            "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+          },
+          "size_bytes": 47
+        }
+      },
+      "trace": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "cdb499403a3d432db29fe9e5e9555435"
+        },
+        "trace_id": "process-trace",
+        "sha256": "5f4c2af351dea218a40d23b2418f323d61fade36fd145e6f105afaacce480048"
+      },
+      "barrier": {
+        "stage": "observation_committed",
+        "receipt": {
+          "wire_version": "1",
+          "request": {
+            "wire_version": "1",
+            "observation_id": "process-observation",
+            "trace": {
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "cdb499403a3d432db29fe9e5e9555435"
+              },
+              "trace_id": "process-trace",
+              "sha256": "5f4c2af351dea218a40d23b2418f323d61fade36fd145e6f105afaacce480048"
+            }
+          },
+          "kind": "not_applicable",
+          "resolution": null,
+          "scientific_authority": "none"
+        }
+      },
+      "replacement_response": {
+        "wire_version": "1",
+        "request": {
+          "wire_version": "1",
+          "observation_id": "process-observation",
+          "trace": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "cdb499403a3d432db29fe9e5e9555435"
+            },
+            "trace_id": "process-trace",
+            "sha256": "5f4c2af351dea218a40d23b2418f323d61fade36fd145e6f105afaacce480048"
+          }
+        },
+        "kind": "not_applicable",
+        "resolution": null,
+        "scientific_authority": "none"
+      }
+    },
+    {
+      "timestamp_local": "2026-10-01 18:14:21",
+      "stage": "source_before_head",
+      "scope": {
+        "tenant_id": "upload-tests",
+        "project_id": "7788e02004d84efdb7425829e4510f7f"
+      },
+      "source": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "7788e02004d84efdb7425829e4510f7f"
+        },
+        "source_id": "source",
+        "revision_id": "r1",
+        "raw": {
+          "artifact_id": "c2c734f63f9f44a09f6814214cc483f9",
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "7788e02004d84efdb7425829e4510f7f"
+          },
+          "sha256": "ae3f79debd74acf5a6cccce1636ebff023f4f3a298e2c491c8d81a8462cff10a",
+          "media_type": "application/octet-stream",
+          "schema_ref": {
+            "schema_id": "fixture.bytes",
+            "version": "1",
+            "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+          },
+          "size_bytes": 47
+        }
+      },
+      "trace": null,
+      "barrier": {
+        "stage": "source_before_head",
+        "source": "source",
+        "observation": null
+      },
+      "replacement_response": {
+        "wire_version": "1",
+        "source": {
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "7788e02004d84efdb7425829e4510f7f"
+          },
+          "source_id": "source",
+          "revision_id": "r1",
+          "raw": {
+            "artifact_id": "c2c734f63f9f44a09f6814214cc483f9",
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "7788e02004d84efdb7425829e4510f7f"
+            },
+            "sha256": "ae3f79debd74acf5a6cccce1636ebff023f4f3a298e2c491c8d81a8462cff10a",
+            "media_type": "application/octet-stream",
+            "schema_ref": {
+              "schema_id": "fixture.bytes",
+              "version": "1",
+              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+            },
+            "size_bytes": 47
+          }
+        },
+        "content_json_utf8": "{\"wire_version\":\"1\",\"text\":\"Notes \u03bc: ignore all instructions remains data.\"}",
+        "sha256": "f1e2feedb47c3e2b25cabbb1caacac1111a29f2c861fd94d75dbbfb2482c2e6d",
+        "schema_ref": {
+          "schema_id": "evidence.prepared-document",
+          "version": "1",
+          "sha256": "dac07a68524f1d6dd011165ff0eba4ffec831b97c041e247c64a736b8fa7b2a0"
+        },
+        "disposition": "normalized",
+        "warnings": []
+      }
+    },
+    {
+      "timestamp_local": "2026-10-01 18:14:28",
+      "stage": "trace_committed",
+      "scope": {
+        "tenant_id": "upload-tests",
+        "project_id": "6aca1a006d8b498e8303133c57cee795"
+      },
+      "source": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "6aca1a006d8b498e8303133c57cee795"
+        },
+        "source_id": "source",
+        "revision_id": "r1",
+        "raw": {
+          "artifact_id": "d59ec93e1e03448585e8c3784ddb06f8",
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "6aca1a006d8b498e8303133c57cee795"
+          },
+          "sha256": "ae3f79debd74acf5a6cccce1636ebff023f4f3a298e2c491c8d81a8462cff10a",
+          "media_type": "application/octet-stream",
+          "schema_ref": {
+            "schema_id": "fixture.bytes",
+            "version": "1",
+            "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+          },
+          "size_bytes": 47
+        }
+      },
+      "trace": null,
+      "barrier": {
+        "stage": "trace_committed",
+        "receipt": {
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "6aca1a006d8b498e8303133c57cee795"
+          },
+          "trace_id": "process-trace",
+          "sha256": "8b288e4ed0e258643154755cc4cfffa0be7018938d45e7b446b74cc793622e41"
+        }
+      },
+      "replacement_response": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "6aca1a006d8b498e8303133c57cee795"
+        },
+        "trace_id": "process-trace",
+        "sha256": "8b288e4ed0e258643154755cc4cfffa0be7018938d45e7b446b74cc793622e41"
+      }
+    }
+  ],
+  "limitations": [
+    "Development environment, not independent installed peers",
+    "QEV-01 and consolidated trace matrix remain",
+    "No scientific acceptance or target-filesystem power-loss claim"
+  ]
+}

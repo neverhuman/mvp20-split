@@ -57,6 +57,9 @@ def test_authentication_scope_and_history_are_separate(ingress):
     assert client.post("/v1/acquisition/prepare", json=source,
                        headers={"Authorization": "Bearer " + "e" * 32}).status_code == 409
     assert client.get("/v1/acquisition/traces/absent", headers=headers).status_code == 404
+    assert client.get("/v1/acquisition/sources/source/r1", headers=headers).status_code == 404
+    assert client.get("/v1/acquisition/sources/source/r1",
+                      headers={"Authorization": "Bearer " + "d" * 32}).status_code == 403
     assert client.get("/v1/acquisition/traces/absent",
                       headers={"Authorization": "Bearer " + "d" * 32}).status_code == 403
     assert e.ledger.history(e.principal, "source", "r1") is None

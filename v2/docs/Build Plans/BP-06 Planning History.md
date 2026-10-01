@@ -1,5 +1,9 @@
 # BP-06 Planning History
 
+## B3 process recovery checkpoint - 2026-10-01 18:16:05
+
+B3 partial: Data0.10.0 adds scoped source-history reconciliation; four actual PostgreSQL/HTTP process-kill cases preserve original source/trace/observation identities.17 targeted and246 full artifact tests pass. QEV-01 public declaration reads and consolidated named trace matrix remain; child50%, Build66.67%, parent8.33% unchanged. [Evidence](../Audits/Evidence/BP-06-Acquisition/Process_Recovery.json). The source-history route reuses SourceRevision; no wire schemas or durable formats changed. Test-only barriers are excluded from production configuration. Replacement uses the development environment; independent wheel cutover remains V1.
+
 ## B2 rights and transition completion - 2026-10-01 18:00:06
 
 B2 complete: evidence0.5.0/Data0.9.0 current rights/expiry and lineage fences verified.240 artifact tests,118 acquisition tests,16 rights tests,30 contract/schema tests,28 isolated contract tests and16 isolated rights tests pass.236 schemas preserve all234 predecessors. Child2/4 (50%); Build2/3 (66.67%); parent2/24 (8.33%). B3 named failure/recovery proof is next; scientific authority remains unchanged. [Evidence](../Audits/Evidence/BP-06-Acquisition/Source_Rights.json). Explicit grants replace historical-reference assumptions; migration0006 invents no rights for old sources. Exact predecessor/current-head checks, PostgreSQL-clock expiry and pre/post-I/O or transactional fences protect registered raw/derived data. Old source/trace/observation metadata remains immutable. Retention is explicitly limited to retained audit payloads; mandatory-erasure licenses remain unsupported. Existing deterministic/inferred/missing-field, corrected-delivery and trace-identity tests pass. B3 crash/race evidence and V1 independent integrated acceptance remain open; this does not close the child.

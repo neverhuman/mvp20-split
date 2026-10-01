@@ -16,7 +16,7 @@ Verification checkpoint:25 owned tests,100% lines (64/64) and branches (10/10) f
 
 ## Private Acquisition Ledger
 
-AcquisitionLedger.register requires the acquire action, matching source/rights scope and a SourceDocument with verified raw bytes. It verifies the entire ArtifactRef against the finalized local catalog. Rights references are historical provenance only at this stage; no current rights grant or scientific-use claim is made.
+AcquisitionLedger.register requires the acquire action, matching source/rights scope and a SourceDocument with verified raw bytes. It verifies the entire ArtifactRef against the finalized local catalog. Registration verifies explicit current processing rights; the stored reference remains immutable provenance. A rights grant does not imply scientific acceptance.
 
 Delivery uniqueness is scope/issuer/delivery, independent of source ID. Exact canonical replay returns the original revision even after newer corrections. Changed metadata or bytes under a delivery key conflict; another delivery cannot overwrite a source revision. Corrections name the exact previous reference and must match the persisted source head. Stable, sorted transaction advisory locks serialize delivery/source races; source revision and head commit together. Canonical records are bounded to256KiB.
 
@@ -64,6 +64,7 @@ Host configuration acquisition=true explicitly enables the routes and installs b
 
 - POST /v1/acquisition/prepare accepts SourceRevision and requires acquire plus read. It returns PreparedSource. UTF-8 encode content_json_utf8 verbatim, verify sha256, and use application/json with schema_ref through existing begin/upload/finalize operations. No output is published by preparation.
 - POST /v1/acquisition/retain accepts RetainPreparedSource and requires acquire plus read. It recomputes the reviewed conversion from actual raw bytes, verifies actual finalized output, and returns ConversionTraceRef only after trace commit.
+- GET /v1/acquisition/sources/{source_id}/{revision_id} requires source_history; returns the exact scoped immutable SourceRevision or404. This reconciles interrupted preparation before retry without reading raw payloads.
 - GET /v1/acquisition/traces/{trace_id} requires source_history; returns immutable ConversionTrace metadata or404. Historical access is separate from permission to read raw bytes or use evidence.
 
 Requests authenticate before parsing; mutation bodies require application/json, are capped at256KiB with a5-second read deadline, and reject duplicate keys, nonfinite numbers, malformed/extra/incorrectly typed fields. Safe HTTP statuses include401/403 authority,413 size,415 media,422 shape,408 body timeout,409 provenance conflict,404 missing artifacts/history and503 existing owner storage failures. Successful responses use Cache-Control:no-store. No body is interpreted as an instruction. Published request schemas are the wire authority; FastAPI response schemas do not substitute for them.
@@ -87,3 +88,7 @@ Verification includes PostgreSQL scope/grants, forged trace hashes, pending retr
 ## Current-Use Rights (B2)
 
 [Source Rights](../source_rights/README.md) now fences raw/derived payload reads and new preparation, trace and identity-result use against explicit current grants and PostgreSQL-clock expiry. Historical refs are no longer sufficient for consumption. New source registrations pin the current policy revision; existing source replay retains its original pin. Source/trace commits and rights updates share an owner scope lock; no lock spans filesystem/Research I/O. Policy changes during an operation block its new result. Existing observation receipt replay and source/trace/history remain metadata, not renewed use authority. The bounded retention profile preserves audit payloads; required-erasure sources are unsupported. Acquisition and rights tests share owner fixtures at tests/conftest.py, with separate module-scoped suites.
+
+## Process interruption proof (B3 partial)
+
+Four actual PostgreSQL/HTTP process-kill cases hold source registration before head insertion, trace after commit before its response, observation before result insertion, and observation after commit before its response. Replacement processes reconcile through public source/trace/observation history, then retry the original identities. Source registration rolls back atomically; trace/result receipts replay exactly; interrupted observations retain their pending intent. Test-only SQL/ASGI barriers are outside the package and production configuration rejects fault options. These tests use the development environment; independent installed-owner acceptance remains V1. QEV-01 and the consolidated named trace matrix remain B3 work.
