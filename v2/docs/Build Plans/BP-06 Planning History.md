@@ -1,5 +1,10 @@
 # BP-06 Planning History
 
+## Bounded preparation checkpoint - 2026-10-01 11:46:20
+
+B1 partial: evidence0.2.0 and Data/Artifacts0.4.0 bounded preparation verified;58 acquisition tests,164 full artifact tests,31 contract/dev tests and52 pure tests in isolated wheels pass.220 schemas preserve all216 predecessors. Lab outputs stay quarantined pending Research reconciliation. Public owner integration remains; child0/4 and parent0/24 unchanged. [Evidence](../Audits/Evidence/BP-06-Acquisition/Preparation.json). Exact raw-token spans preserve Unicode, duplicates are rejected, missing/null units remain distinct, and no instruction or unit-conversion inference executes. Windows pytest long-parameter-ID failure was fixed with bounded IDs; production behavior unchanged.
+
+
 ## Acquisition ledger - 2026-10-01 11:37:03
 
 B1 partial: Data/Artifacts0.3.0 acquisition ledger and artifact_0004 verified;31 acquisition tests and137 full artifact-owner tests pass with PostgreSQL. Exact delivery/trace replay, correction heads, finalized catalog binding, contention and rollback covered. No public acquisition route, rights fence or adapters yet; child0/4 and parent0/24 unchanged. Tests use actual public upload/finalization before registration; missing/forged catalog references fail. No scientific-use permission or current rights granted by metadata history. Independent installed acquisition/process-kill integration remains acceptance work.

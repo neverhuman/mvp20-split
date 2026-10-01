@@ -1,0 +1,71 @@
+{
+  "timestamp": "2026-10-01 11:44:35",
+  "isolated_tests": "52 passed in 0.76s",
+  "wheels": {
+    "amphora_contracts_artifacts-0.1.0-py3-none-any.whl": "1a9f210f385b9edbffbf5ef1d513a27d484a5b5d590fb8255720468acb4aafdd",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_evidence-0.2.0-py3-none-any.whl": "192f2e5986044d92816cc124ad4f37189af714ca4fb31165bb5da341863649b9",
+    "amphora_data_artifacts-0.4.0-py3-none-any.whl": "1c2cc17e821785467b28cfa1daad34682c0d8de566871db0d3b2db5a4d7722ce"
+  },
+  "limits": [
+    "fixture preparation only",
+    "no authenticated cross-owner or scientific acceptance",
+    "installed ledger process acceptance still pending"
+  ],
+  "verification": {
+    "acquisition_tests": 58,
+    "artifact_regression": 164,
+    "contract_dev_tests": 31
+  },
+  "coverage": {
+    "services\\data_artifacts\\src\\amphora_data_artifacts\\acquisition\\adapters.py": {
+      "covered_lines": 36,
+      "num_statements": 36,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100",
+      "num_branches": 14,
+      "num_partial_branches": 0,
+      "covered_branches": 14,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    },
+    "services\\data_artifacts\\src\\amphora_data_artifacts\\acquisition\\flat_json.py": {
+      "covered_lines": 68,
+      "num_statements": 69,
+      "percent_covered": 97.97979797979798,
+      "percent_covered_display": "98",
+      "missing_lines": 1,
+      "excluded_lines": 0,
+      "percent_statements_covered": 98.55072463768116,
+      "percent_statements_covered_display": "99",
+      "num_branches": 30,
+      "num_partial_branches": 1,
+      "covered_branches": 29,
+      "missing_branches": 1,
+      "percent_branches_covered": 96.66666666666667,
+      "percent_branches_covered_display": "97"
+    },
+    "services\\data_artifacts\\src\\amphora_data_artifacts\\acquisition\\preparation.py": {
+      "covered_lines": 25,
+      "num_statements": 25,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100",
+      "num_branches": 4,
+      "num_partial_branches": 0,
+      "covered_branches": 4,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    }
+  }
+}

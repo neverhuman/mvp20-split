@@ -68,6 +68,8 @@ MODELS_V4 = {
 
 for name, model in {
     "source-revision": evidence_contracts.SourceRevision,
+    "prepared-document": evidence_contracts.PreparedDocument,
+    "prepared-lab-record": evidence_contracts.PreparedLabRecord,
     "source-span": evidence_contracts.SourceSpan,
     "conversion-trace": evidence_contracts.ConversionTrace,
     "conversion-trace-ref": evidence_contracts.ConversionTraceRef,

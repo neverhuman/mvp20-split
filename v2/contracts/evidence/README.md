@@ -1,6 +1,6 @@
 # Acquisition Evidence Contracts
 
-- Package: `amphora-contracts-evidence` 0.1.0; wire version1.
+- Package: `amphora-contracts-evidence` 0.2.0; wire version1.
 - Status: BP-06.01/B1 boundary subset; persistence, adapters and authority checks remain unimplemented.
 - Design: [Source acquisition](../../docs/Architecture/Data/Acquisition.md).
 
@@ -15,3 +15,5 @@ ConversionTrace preserves source/target schemas, converter/configuration version
 The owner must enforce matching scopes, target schema/output agreement, source schema/raw agreement, immutable trace identity/content, unique field paths, valid step references, origin/step compatibility and span provenance. These cross-record rules belong to domain objects, not parallel Pydantic/JSON Schema validators. Reference syntax alone cannot establish authorization or entity existence. B1 is still open until owner implementation and persistence exist.
 
 Tests in `tests/` compare Pydantic JSON parsing with independent Draft2020-12 validation, exercise strict bounded shapes and preserve explicit missing/inferred provenance. Both schema modes are published by `dev/export_schemas.py`. Existing contract roots remain byte-identical. Replacement must preserve public roots, schema fixtures and explicit absence of authority.
+
+Version0.2.0 adds PreparedDocument and PreparedLabRecord outputs plus prepared_schema(profile), which pins published validation schema bytes. The lab profile preserves strings/nulls and grants no identity or scientific acceptance. The original source/span/trace schema roots are unchanged.

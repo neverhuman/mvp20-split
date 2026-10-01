@@ -1,0 +1,1 @@
+{"$id":"urn:amphora:evidence.prepared-document:1:serialization","$schema":"https://json-schema.org/draft/2020-12/schema","additionalProperties":false,"properties":{"text":{"maxLength":4194304,"title":"Text","type":"string"},"wire_version":{"const":"1","title":"Wire Version","type":"string"}},"required":["wire_version","text"],"title":"PreparedDocument","type":"object"}
