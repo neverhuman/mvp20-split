@@ -9,14 +9,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 primary active; BP-07 through BP-09 queued; BP-05 closed.
-- Last refreshed: `2026-09-30 18:01:56` (America/Chicago).
+- Last refreshed: `2026-10-01 11:37:03` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P5 / BP-06 - Knowledge Evidence and Source Loop.
 - Primary active implementation plan / phase / task: BP-06 -> BP-06.01 / Build / B1.
-- Current task: BP-06.01/B1 Data source delivery/revision ledger and bounded adapters.
+- Current task: BP-06.01/B1 bounded document/lab adapters and authenticated owner boundaries.
 - Next task: Complete B1 contracts, Research identities and persisted bounded adapters.
 - Implementation completion: BP-05 closed100% (16/16); BP-06..09 remain0%.
-- Active focus: Research ledger subset verified; authenticated owner integration still pending; child0/4 and parent0/24 unchanged.
+- Active focus: Source and Research private ledgers verified; child0/4 and parent0/24 unchanged.
 - Blockers: no user decision pending; synthetic source fixtures are authorized.
 - Acceptance posture: BP-05 integrated Studio accepted within synthetic software scope; scientific and deployment acceptance remains later.
 - Active exception: none.
@@ -119,6 +119,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-01 11:37:03 | BP-06.01/B1 acquisition ledger partial;0% unchanged | 31 acquisition/137 artifact tests; migration0004 preserves prior publication |
 | 2026-09-30 18:01:56 | BP-06.01/B1 Research ledger partial;0% unchanged | 34 owner tests; installed process replay; [evidence](../Audits/Evidence/BP-06-Acquisition/Research_Ledger.json) |
 | 2026-09-30 17:52:58 | BP-06.01/B1 Research identity partial;0% unchanged | 9 contract/26 domain tests in isolated wheels; [evidence](../Audits/Evidence/BP-06-Acquisition/Research_Identity.json) |
 | 2026-09-30 17:44:31 | BP-06.01/B1 partial; child/parent0% | 15 contract/25 provenance tests in isolated wheels; [evidence](../Audits/Evidence/BP-06-Acquisition/Initial_Boundary.json) |

@@ -1,5 +1,10 @@
 # BP-06 Planning History
 
+## Acquisition ledger - 2026-10-01 11:37:03
+
+B1 partial: Data/Artifacts0.3.0 acquisition ledger and artifact_0004 verified;31 acquisition tests and137 full artifact-owner tests pass with PostgreSQL. Exact delivery/trace replay, correction heads, finalized catalog binding, contention and rollback covered. No public acquisition route, rights fence or adapters yet; child0/4 and parent0/24 unchanged. Tests use actual public upload/finalization before registration; missing/forged catalog references fail. No scientific-use permission or current rights granted by metadata history. Independent installed acquisition/process-kill integration remains acceptance work.
+
+
 ## Research persistence checkpoint - 2026-09-30 18:01:56
 
 B1 partial: Research0.2.0 private PostgreSQL ledger verified;34 owner tests (8 persistence) and13 dev tests pass. Two separately installed processes preserved original/successor revisions and replay. Forward research_0002 fixes NULL predecessor checks without rewriting applied history. Public API/artifact-rights and Data acquisition ledger/adapters remain; child0/4 and parent0/24 unchanged. [Evidence](../Audits/Evidence/BP-06-Acquisition/Research_Ledger.json). Tests cover concurrent conflicting writers, immutable history, unknown references, cross-scope/role denial, rollback before head commit and SQL null-predecessor bypass. No process-kill or public endpoint acceptance claimed.

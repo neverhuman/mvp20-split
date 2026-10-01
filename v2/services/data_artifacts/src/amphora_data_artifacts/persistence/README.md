@@ -14,3 +14,5 @@ Tests use service-role TCP connections and independent migration credentials. Th
 Upload migration preserves legacy rows without assigning an actor; legacy records cannot pass new owner authorization. New rows bind principal, generation and exact selected attempt. Capacity and attempt settlement follow publication-owned transactions; only required state columns receive UPDATE grants.
 
 Migration artifact_0003 adds upload creation time and cleaning/cleaned attempt states. Existing uploads receive a fresh cleanup grace interval; identity and retained evidence stay immutable. Maintenance refunds capacity only after filesystem retirement, using the existing restricted column grants.
+
+BP-06.01 adds artifact_0004: immutable acquisition source/delivery records, source heads and conversion traces. [Acquisition](../acquisition/README.md) owns policy and tests. Scope-bound foreign keys link only to this service catalog/source records; no Research SQL access or scientific-use authority. Existing publication/retention rows and migration history are preserved.
