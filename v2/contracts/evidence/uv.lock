@@ -15,8 +15,25 @@ requires-dist = [{ name = "pydantic", specifier = ">=2.12,<3" }]
 
 [[package]]
 name = "amphora-contracts-evidence"
-version = "0.3.0"
+version = "0.4.0"
 source = { editable = "." }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-research" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../core" },
+    { name = "amphora-contracts-research", editable = "../research" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
+name = "amphora-contracts-research"
+version = "0.2.0"
+source = { editable = "../research" }
 dependencies = [
     { name = "amphora-contracts-core" },
     { name = "pydantic" },

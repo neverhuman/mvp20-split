@@ -7,14 +7,18 @@ from amphora_contracts_core import Identifier
 from amphora_contracts_evidence import (
     ConversionTrace,
     ConversionTraceRef,
+    ObserveSourceIdentity,
     PreparedSource,
     RetainPreparedSource,
+    SourceIdentityObservation,
+    SourceIdentityStatus,
     SourceRevision,
 )
 from fastapi import APIRouter, HTTPException, Request, Response
 
 from ..publication.schemas import json_value
 from .provenance import ProvenanceError
+from .research import ResearchLookupError
 
 
 def acquisition_router(workflow, credentials):
@@ -42,6 +46,8 @@ def acquisition_router(workflow, credentials):
             return await asyncio.to_thread(operation, *args)
         except ProvenanceError as error:
             raise HTTPException(409, detail=str(error)) from error
+        except ResearchLookupError as error:
+            raise HTTPException(503, detail=str(error)) from error
 
     def principal_for(request, action):
         principal = credentials.authenticate(request.headers.get("authorization"))
@@ -72,6 +78,23 @@ def acquisition_router(workflow, credentials):
         result = await owned(workflow.ledger.trace_history, principal, trace_id)
         if result is None:
             raise HTTPException(404, detail="trace_unavailable")
+        return result
+
+    @router.post("/identity-observations", response_model=SourceIdentityObservation)
+    async def observe(request: Request, response: Response):
+        response.headers["Cache-Control"] = "no-store"
+        principal = principal_for(request, "acquire")
+        principal.require("read")
+        command = await body(request, ObserveSourceIdentity)
+        return await owned(workflow.observe, principal, command)
+
+    @router.get("/identity-observations/{observation_id}", response_model=SourceIdentityStatus)
+    async def observation_history(observation_id: Identifier, request: Request, response: Response):
+        response.headers["Cache-Control"] = "no-store"
+        principal = principal_for(request, "source_history")
+        result = await owned(workflow.observations.history, principal, observation_id)
+        if result is None:
+            raise HTTPException(404, detail="observation_unavailable")
         return result
 
     return router

@@ -21,6 +21,9 @@ pytestmark = pytest.mark.postgres
 def test_host_explicitly_enables_owned_ingestion(artifact_database, tmp_path, monkeypatch, enabled):
     config = json.loads((Path(__file__).parents[2] / "config.example.json").read_text(encoding="utf-8"))
     config.update(storage_root=str(tmp_path), acquisition=enabled)
+    if enabled is True:
+        config["research"] = {"endpoint": "http://127.0.0.1:9", "token_env": "TEST_RESEARCH_TOKEN"}
+        monkeypatch.setenv("TEST_RESEARCH_TOKEN", "r" * 32)
     config["principals"][0]["actions"] = ["acquire", "read", "source_history"]
     path = tmp_path / "host.json"
     path.write_text(json.dumps(config), encoding="utf-8")
@@ -32,6 +35,7 @@ def test_host_explicitly_enables_owned_ingestion(artifact_database, tmp_path, mo
         return
     host = Host.load(path)
     try:
+        assert (host.research is not None) is enabled
         assert (PreparedContentRule("document").identity in host.uploads.policy.allowed) is enabled
         with TestClient(host.app()) as client:
             response = client.post("/v1/acquisition/prepare", json={})

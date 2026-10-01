@@ -1,0 +1,121 @@
+{
+  "timestamp_local": "2026-10-01 17:24:59",
+  "plan": "BP-06.01/B1",
+  "status": "B1 complete; B2 active; child not closed",
+  "versions": {
+    "evidence": "0.4.0",
+    "data_artifacts": "0.8.0",
+    "migration": "artifact_0005"
+  },
+  "tests": {
+    "acquisition": 118,
+    "artifact_regression": 224,
+    "contract_schema": 22,
+    "isolated_contract": 20
+  },
+  "schemas": {
+    "published": 234,
+    "predecessors_preserved": 228
+  },
+  "installed": {
+    "test_output": "....................                                                     [100%]\n20 passed in 5.43s",
+    "probe": "Data wheel imports without Research implementation",
+    "wheels": {
+      "amphora_contracts_artifacts-0.1.0-py3-none-any.whl": "1a9f210f385b9edbffbf5ef1d513a27d484a5b5d590fb8255720468acb4aafdd",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.4.0-py3-none-any.whl": "9d03e82781fd71dd77eac07bd54a954067a321491cc848afd6e095bd5469496d",
+      "amphora_contracts_research-0.2.0-py3-none-any.whl": "3a301b4e1732bc6bf1306522f7c439ac8faa72399b111044a5042c4c67088c86",
+      "amphora_data_artifacts-0.8.0-py3-none-any.whl": "47588011ebcbb29f6198d46ab93f096378ac4013c23d7cf577b653b36824e68c"
+    }
+  },
+  "coverage": {
+    "services\\data_artifacts\\src\\amphora_data_artifacts\\acquisition\\identity_decision.py": {
+      "covered_lines": 23,
+      "num_statements": 23,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100",
+      "num_branches": 8,
+      "num_partial_branches": 0,
+      "covered_branches": 8,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    },
+    "services\\data_artifacts\\src\\amphora_data_artifacts\\acquisition\\observations.py": {
+      "covered_lines": 61,
+      "num_statements": 64,
+      "percent_covered": 92.6829268292683,
+      "percent_covered_display": "93",
+      "missing_lines": 3,
+      "excluded_lines": 0,
+      "percent_statements_covered": 95.3125,
+      "percent_statements_covered_display": "95",
+      "num_branches": 18,
+      "num_partial_branches": 3,
+      "covered_branches": 15,
+      "missing_branches": 3,
+      "percent_branches_covered": 83.33333333333333,
+      "percent_branches_covered_display": "83"
+    },
+    "services\\data_artifacts\\src\\amphora_data_artifacts\\acquisition\\workflow.py": {
+      "covered_lines": 46,
+      "num_statements": 47,
+      "percent_covered": 96.72131147540983,
+      "percent_covered_display": "97",
+      "missing_lines": 1,
+      "excluded_lines": 0,
+      "percent_statements_covered": 97.87234042553192,
+      "percent_statements_covered_display": "98",
+      "num_branches": 14,
+      "num_partial_branches": 1,
+      "covered_branches": 13,
+      "missing_branches": 1,
+      "percent_branches_covered": 92.85714285714286,
+      "percent_branches_covered_display": "93"
+    },
+    "services\\data_artifacts\\src\\amphora_data_artifacts\\persistence\\migrations\\versions\\r0005_identity_observations.py": {
+      "covered_lines": 8,
+      "num_statements": 10,
+      "percent_covered": 80.0,
+      "percent_covered_display": "80",
+      "missing_lines": 2,
+      "excluded_lines": 0,
+      "percent_statements_covered": 80.0,
+      "percent_statements_covered_display": "80",
+      "num_branches": 0,
+      "num_partial_branches": 0,
+      "covered_branches": 0,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    }
+  },
+  "actual_peer_test": "services/data_artifacts/tests/acquisition/test_live_observations.py::test_actual_peer_unknown_then_known_preserves_original_observation",
+  "failure_oracles": [
+    "First committed result wins simultaneous different peer answers",
+    "Changed trace under observation ID conflicts",
+    "Malformed/missing identity stays unresolved without peer call",
+    "Peer unavailable leaves durable pending intent",
+    "Substituted identity leaves pending, never accepted",
+    "Injected result insertion failure rolls back result, not intent",
+    "Service role cannot UPDATE/DELETE intents or results",
+    "Actual Research initially unknown; new observation matches after owned setup; original remains unknown",
+    "Stopped actual peer leaves new observation pending; prior result remains replayable"
+  ],
+  "b1_gate": [
+    "Versioned contracts, independent validation/examples and existing schema preservation",
+    "Bounded document/lab preparation, finalized input/output, exact spans and persisted source/trace identities",
+    "Research candidate/sample/question/evidence-need ownership and public identity lookup",
+    "Scoped public ingestion/status operations and immutable result history"
+  ],
+  "remaining": [
+    "B2 current rights/expiry/transition policy",
+    "B3 crash/race and named trace/evidence oracles",
+    "V1 independent peer cutover and scoped architecture audit"
+  ]
+}

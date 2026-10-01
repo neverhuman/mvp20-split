@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-01 11:58:34` (America/Chicago).
+- Last refreshed: `2026-10-01 17:24:59` (America/Chicago).
 - Scope: v2 design/implementation alignment
-- Active focus: BP-06.01/B1 public acquisition/Research integration; independent identity-only lookup accepted within bounded scope.
-- Next gate: Data-to-Research public client and full B1 ingestion boundary; no new blocking drift identified.
+- Active focus: BP-06.01/B2 current rights/expiry; B1 ingestion and durable identity-only observations implemented.
+- Next gate: B2 policy fences; B3/V1 crash, independent cutover and child closeout audit remain. Public evidence-to-Research DTO dependency is documented in the B1 activation refinement; no private peer dependency introduced.
 
 ## Active Findings
 

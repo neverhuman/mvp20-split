@@ -2,16 +2,16 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-06.01 / Build / B1.
-- Last refreshed: `2026-10-01 12:42:29` (America/Chicago).
+- Status: primary_active; BP-06.01 / Build / B2.
+- Last refreshed: `2026-10-01 17:24:59` (America/Chicago).
 - Owner/scope: Knowledge, Research and focused Data/Artifacts modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 receipt/wait seams and BP-05 inspection; BP-01/02/03 public contracts and tool execution.
-- Implementation: **0%**, 0/24 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
+- Implementation: **4.17%**, 1/24 verified child deliveries. Each child owns four deliveries; parent counts each once. Parent P1 mirrors child .01 overall25%; Build33.33%, Acceptance0% remain canonical in the child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-06.01/B1 source and evidence boundary; [activation audit](../Audits/BP-06.01_Activation.md) corrected_ready.
-- Demonstrated behavior: B1 partial: evidence0.3.0/Data0.7.0 staged ingestion HTTP and explicit host activation verified.108 acquisition tests,213 artifact regression tests before the added live-process case, and21 contract/schema tests pass. Actual initial/replacement HTTP processes preserve quarantined lab trace receipts.228 schemas preserve all224 predecessor bytes. Durable Research lookup/result observations remain; child0/4 and parent0/24 unchanged.
-- Blockers: none for bounded synthetic B1; real scientific/provider choices remain scoped successor gates.
+- Current task: BP-06.01/B2 current source rights, expiry and use-policy enforcement; preserve immutable historical provenance and exact conversion/observation replay.
+- Demonstrated behavior: B1 complete: evidence0.4.0/Data0.8.0 durable identity observations verified with actual Research HTTP and retained PostgreSQL.118 acquisition tests,224 full artifact tests,22 contract/schema tests and20 isolated contract tests pass.234 schemas preserve all228 predecessors. Child1/4 (25%); parent1/24 (4.17%). B2 rights/expiry/transition policy is next; no scientific-use authority granted.
+- Blockers: none for bounded B2 policy; real scientific/provider choices remain scoped successor gates.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
 
@@ -29,7 +29,7 @@ Primary services retain private state, dependencies, migrations and module READM
 
 | Parent phase / child | Overall | Build | Acceptance | Prerequisite |
 |---|---:|---:|---:|---|
-| P1 / [BP-06.01 Source and evidence contracts](BP-06/BP-06.01%20Source%20and%20evidence%20contracts.md) | 0% | 0% | 0% | Parent predecessor gates |
+| P1 / [BP-06.01 Source and evidence contracts](BP-06/BP-06.01%20Source%20and%20evidence%20contracts.md) | 25% | 33.33% | 0% | Parent predecessor gates |
 | P2 / [BP-06.02 Typed graph authoring and replay](BP-06/BP-06.02%20Typed%20graph%20authoring%20and%20replay.md) | 0% | 0% | 0% | BP-06.01 acceptance |
 | P3 / [BP-06.03 Reasoning and domain receipts](BP-06/BP-06.03%20Reasoning%20and%20domain%20receipts.md) | 0% | 0% | 0% | BP-06.02 acceptance |
 | P4 / [BP-06.04 Laboratory returns and candidate eligibility](BP-06/BP-06.04%20Laboratory%20returns%20and%20candidate%20eligibility.md) | 0% | 0% | 0% | BP-06.03 acceptance |

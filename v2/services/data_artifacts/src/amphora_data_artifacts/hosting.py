@@ -12,6 +12,7 @@ from .access import Credentials
 from .acquisition.ledger import AcquisitionLedger
 from .acquisition.profiles import PreparedContentRule
 from .acquisition.provenance import MAX_PROVENANCE_BYTES
+from .acquisition.research import ResearchClient
 from .acquisition.workflow import AcquisitionWorkflow
 from .api import create_app
 from .publication.model import ContentPolicy, Principal, UploadLimits
@@ -30,13 +31,14 @@ class Host:
     principals: tuple
     outcomes: RuntimeOutcomes | None
     acquisition_enabled: bool = False
+    research: ResearchClient | None = None
 
     def app(self):
         acquisition = None
         if self.acquisition_enabled:
             engine = self.uploads.commands.engine
             reads = ArtifactReads(engine, self.storage, min(self.uploads.limits.max_bytes, MAX_PROVENANCE_BYTES))
-            acquisition = AcquisitionWorkflow(reads, AcquisitionLedger(engine))
+            acquisition = AcquisitionWorkflow(reads, AcquisitionLedger(engine), self.research)
         return create_app(self.uploads, self.storage, self.credentials, self.outcomes, acquisition=acquisition)
 
     def close(self):
@@ -45,11 +47,17 @@ class Host:
     @classmethod
     def load(cls, path):
         raw = json.loads(Path(path).read_text(encoding="utf-8"))
-        if set(raw) - {"database_url_env", "storage_root", "principals", "profiles", "limits", "runtime", "acquisition"}:
+        if set(raw) - {"database_url_env", "storage_root", "principals", "profiles", "limits", "runtime", "acquisition", "research"}:
             raise ValueError("Unknown configuration field")
         acquisition = raw.get("acquisition", False)
         if type(acquisition) is not bool:
             raise ValueError("Acquisition flag must be boolean")
+        research = None
+        if "research" in raw:
+            peer = raw["research"]
+            if not acquisition or set(peer) != {"endpoint", "token_env"}:
+                raise ValueError("Research peer requires enabled acquisition and explicit endpoint/token_env")
+            research = ResearchClient(peer["endpoint"], os.environ[peer["token_env"]])
         storage = LocalBytes(Path(raw["storage_root"]))
         principals, entries = [], []
         for item in raw["principals"]:
@@ -85,7 +93,9 @@ class Host:
                 if acquisition:
                     conn.execute(text("SELECT canonical_bytes FROM artifacts.source_revisions LIMIT 0"))
                     conn.execute(text("SELECT canonical_bytes FROM artifacts.conversion_traces LIMIT 0"))
-            return cls(Uploads(engine, limits, policy), storage, credentials, tuple(principals), outcomes, acquisition)
+                    conn.execute(text("SELECT canonical_bytes FROM artifacts.identity_observation_intents LIMIT 0"))
+                    conn.execute(text("SELECT canonical_bytes FROM artifacts.identity_observation_results LIMIT 0"))
+            return cls(Uploads(engine, limits, policy), storage, credentials, tuple(principals), outcomes, acquisition, research)
         except BaseException:
             engine.dispose()
             raise
