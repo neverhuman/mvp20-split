@@ -1,5 +1,9 @@
+import json
+import os
 from dataclasses import replace
 from datetime import UTC, datetime, timedelta
+from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import pytest
 from amphora_contracts_evidence import ObserveSourceIdentity
@@ -49,6 +53,29 @@ def test_revocation_blocks_bytes_and_new_use_but_preserves_history(ingestion):
     assert e.ledger.history(e.principal, "source", "r1") == source
     assert e.workflow.rights.history(e.principal, "fixture", 1).status == "granted"
     assert e.workflow.rights.history(e.principal, "fixture", 2).status == "revoked"
+
+
+def test_unassociated_publication_does_not_infer_source_lineage_from_equal_bytes(ingestion, tmp_path):
+    """Legacy identity semantics; new derivations need an explicit publication seam."""
+    e = ingestion
+    source, linked, _ = retained(e)
+    payload = e.reads.content(e.principal, linked.artifact_id)[1]
+    unassociated = e.publish(payload, linked.schema_ref)
+    assert unassociated.artifact_id != linked.artifact_id and unassociated.sha256 == linked.sha256
+    revise(e, status="revoked", uses=())
+    with pytest.raises(RightsError, match="rights_revoked"):
+        e.reads.content(e.principal, linked.artifact_id)
+    assert e.reads.content(e.principal, unassociated.artifact_id)[1] == payload
+    evidence = {"timestamp": datetime.now(ZoneInfo("America/Chicago")).strftime("%Y-%m-%d %H:%M:%S"),
+        "tier": "actual PostgreSQL and Artifact owner publication/storage/rights; synthetic input",
+        "source": source.reference.model_dump(mode="json"), "linked_output": linked.model_dump(mode="json"),
+        "unassociated_output": unassociated.model_dump(mode="json"),
+        "observations": {"linked_after_revocation": "rights_revoked", "unassociated_after_revocation": "readable",
+            "matching_hash_implies_lineage": False},
+        "implication": "General derived publication must declare and atomically retain exact input lineage; ordinary finalize cannot establish it."}
+    destination = Path(os.environ.get("AMPHORA_DERIVED_LINEAGE_EVIDENCE", str(tmp_path / "lineage.json")))
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text(json.dumps(evidence, indent=2) + "\n", encoding="utf-8")
 
 
 def test_expiry_uses_database_clock_and_read_only_disallows_processing(ingestion):

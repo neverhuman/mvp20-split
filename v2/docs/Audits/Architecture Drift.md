@@ -1,12 +1,14 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-02 09:39:22` (America/Chicago).
+- Last refreshed: `2026-10-02 09:54:48` (America/Chicago).
 - Scope: v2 design/implementation alignment
-- Active focus: BP-06.03/B1 Knowledge reasoning boundary verified; derivation publication, Research sufficiency and domain receipts remain.
-- Next gate: Implemented B1 contracts/persistence/transport with scoped fixtures before B2.
+- Active focus: DER-01: generic derived publication lacks explicit inherited-rights lineage; proposed prerequisite awaiting owner direction.
+- Next gate: DER-01 scope decision, then its bounded implementation/verification gates.
 
 ## Active Findings
+
+- `2026-10-02 09:54:48`: DER-01 blocks new derivation-artifact publication under BP-06.03/B1. Existing source/conversion lineage is enforced, while generic publication deliberately has no inferred ancestry. [PostgreSQL evidence](Evidence/BP-06-Knowledge/Derived_Publication_Gap.json) and [proposed Data-owned extension](../Build%20Plans/BP-06/BP-06.03%20Derived%20publication%20prerequisite.md) make the scope decision reviewable. Owner: Data/Knowledge; disposition: awaiting owner direction, no completed predecessor reopened.
 
 
 - `2026-09-23 09:41:20`: Service isolation replaces broad engine/domain packaging; standalone tool workloads use the existing registry as node index. Cross-service research-acceptance receipts, artifact reservations and revocation/effect checks require concrete protocol fixtures before implementation; atomic runtime commit must not be mistaken for atomic scientific-domain acceptance. Owner: System/Capabilities, prerequisite to service deployment. K3s/Kubernetes mappings remain proposed, with no operational evidence.

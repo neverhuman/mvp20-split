@@ -1,0 +1,63 @@
+{
+  "timestamp": "2026-10-02 09:50:09",
+  "tier": "actual PostgreSQL and Artifact owner publication/storage/rights; synthetic input",
+  "source": {
+    "scope": {
+      "tenant_id": "upload-tests",
+      "project_id": "396fce5e4c854051a0342366064112ba"
+    },
+    "source_id": "source",
+    "revision_id": "r1",
+    "raw": {
+      "artifact_id": "1be53b3b80ec4e92ad1d90010ce01b03",
+      "scope": {
+        "tenant_id": "upload-tests",
+        "project_id": "396fce5e4c854051a0342366064112ba"
+      },
+      "sha256": "ab5aa97074c454a0632057e704220d9a6678fbf773a0a5806fc09b8173b07309",
+      "media_type": "application/octet-stream",
+      "schema_ref": {
+        "schema_id": "fixture.bytes",
+        "version": "1",
+        "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+      },
+      "size_bytes": 5
+    }
+  },
+  "linked_output": {
+    "artifact_id": "229d56992eab4b9385587bf9ca4cebe2",
+    "scope": {
+      "tenant_id": "upload-tests",
+      "project_id": "396fce5e4c854051a0342366064112ba"
+    },
+    "sha256": "8dc1e625846fc025e1fa54d4917388ba8b3ebc0cd6b90eb596004f4685503023",
+    "media_type": "application/json",
+    "schema_ref": {
+      "schema_id": "evidence.prepared-document",
+      "version": "1",
+      "sha256": "dac07a68524f1d6dd011165ff0eba4ffec831b97c041e247c64a736b8fa7b2a0"
+    },
+    "size_bytes": 35
+  },
+  "unassociated_output": {
+    "artifact_id": "cf8c790144d344a7846ad4b453e63245",
+    "scope": {
+      "tenant_id": "upload-tests",
+      "project_id": "396fce5e4c854051a0342366064112ba"
+    },
+    "sha256": "8dc1e625846fc025e1fa54d4917388ba8b3ebc0cd6b90eb596004f4685503023",
+    "media_type": "application/json",
+    "schema_ref": {
+      "schema_id": "evidence.prepared-document",
+      "version": "1",
+      "sha256": "dac07a68524f1d6dd011165ff0eba4ffec831b97c041e247c64a736b8fa7b2a0"
+    },
+    "size_bytes": 35
+  },
+  "observations": {
+    "linked_after_revocation": "rights_revoked",
+    "unassociated_after_revocation": "readable",
+    "matching_hash_implies_lineage": false
+  },
+  "implication": "General derived publication must declare and atomically retain exact input lineage; ordinary finalize cannot establish it."
+}

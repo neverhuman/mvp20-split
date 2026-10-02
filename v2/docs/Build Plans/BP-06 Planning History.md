@@ -1,5 +1,10 @@
 # BP-06 Planning History
 
+## DER-01 prerequisite decision - 2026-10-02 09:54:48
+
+After50faa37, a focused actual-PostgreSQL probe showed that an unassociated equal-byte upload retains its legacy read policy after the registered source is revoked. This confirms a missing arbitrary-transform publication seam, not a failure of existing retained-conversion lineage. [DER-01](BP-06/BP-06.03%20Derived%20publication%20prerequisite.md) proposes a Data-owned versioned protocol, atomic catalog/lineage finalization and rights fencing before Knowledge artifact/receipt delivery. Protocol implementation awaits owner direction under AGENTS material-scope rules. One focused test passed; no production Data behavior changed. Parent8/24 and child0/4 unchanged.
+
+
 ## BP-06.03 B1 Knowledge boundary - 2026-10-02 09:39:22
 
 Knowledge0.8.0/contracts0.5.0 configured reasoning, immutable request/profile/results and optional HTTP verified:189 owner +62 contract +14 dev tests; actual Data/Research process provenance, restart, outage/resume and revoked-source checks pass.272 schemas preserve all264 predecessor bytes. knowledge_0003 applied. [Evidence](../Audits/Evidence/BP-06-Knowledge/Reasoning_Boundary.json). An outage fixture caught transient peer failures being terminalized; corrected by handling PeerUnavailable before its KnowledgeError parent. Child0/4 (0%), Build0%, Acceptance0%; parent8/24 (33.33%) because Research/artifact/receipt portions of B1 remain. Applied0003 is immutable.
