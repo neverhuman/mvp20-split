@@ -138,6 +138,7 @@ def verify(output):
                 "public_peers": json.loads((evidence / "public-peers.json").read_text(encoding="utf-8")),
                 "barriers": [json.loads(path.read_text(encoding="utf-8")) for path in sorted((evidence / "barriers").glob("*.json"))]}
             assert len(manifest["tests"][key]["barriers"]) == 4
+            assert len(manifest["tests"][key]["public_peers"]["publication_interruptions"]) == 9
             save()
         manifest["status"] = "passed"
         save()

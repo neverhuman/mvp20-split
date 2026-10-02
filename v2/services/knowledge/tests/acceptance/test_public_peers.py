@@ -20,6 +20,7 @@ from .derived_fixture import probe as derivation_probe
 from .derived_fixture import production_profile
 from .derived_fixture import profile as derivation_profile
 from .processes import Owner, owned_script
+from .publication_interruptions import prove as prove_publication_interruptions
 
 pytestmark = pytest.mark.postgres
 
@@ -177,6 +178,7 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
         assert data.request(f"/v1/artifacts/{production_artifact['artifact_id']}/content") == reasoned["decision"]["result"]
         assert {item["artifact_id"] for item in published["outcome"]["derivation"]["declaration"]["inputs"]} == {
             artifact["artifact_id"], output["artifact_id"]}
+        publication_interruptions = prove_publication_interruptions(case, config, environment, data, publication_query, knowledge_python)
         assert rebuilt["result"]["outcome"] == "published" and rebuilt["result"]["head"] == head
         knowledge.stop()
         knowledge = Owner("amphora_knowledge", config, environment, "k"*32,
@@ -267,6 +269,7 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
             "reasoning": {"initial": reasoned, "resumed_after_outage": resumed_reason, "denied_after_revocation": denied_reason},
             "production_publication": {"initial": published, "resumed_after_outage": resumed_publication,
                 "denied_after_revocation": denied_publication, "historical_replay_stable": True, "payload_after_revocation_http": 403},
+            "publication_interruptions": publication_interruptions,
             "derived_publication": {"initial": derived_initial, "resumed": derived_resumed, "revoked": derived_revoked,
                 "producer": "legacy DER-01 test-owned SDK handoff; production_publication separately exercises Knowledge orchestration"},
             "cases": ["accepted_exact_provenance", "hypothesis_not_promoted", "knowledge_restart_exact_receipt_and_snapshot",
@@ -277,7 +280,7 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
                 "production_publication_exact_inputs_and_payload", "publication_restart_replay", "publication_outage_resume",
                 "publication_current_rights_and_historical_receipt"],
             "limits": ["Synthetic software proof only", "BP-06.03 independent wheel replacement belongs to V1",
-                "Runtime receipt delivery and publication process-death gates remain unproven"]}
+                "Runtime receipt delivery and target-host power-loss gates remain unproven"]}
         destination = Path(os.environ.get("AMPHORA_KNOWLEDGE_ACCEPTANCE_EVIDENCE", str(tmp_path / "evidence.json")))
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(json.dumps(evidence, indent=2) + "\n", encoding="utf-8")

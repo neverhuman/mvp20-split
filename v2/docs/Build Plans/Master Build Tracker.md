@@ -9,11 +9,11 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 primary active; BP-07 through BP-09 queued; BP-05 closed.
-- Last refreshed: `2026-10-02 14:12:44` (America/Chicago).
+- Last refreshed: `2026-10-02 14:24:10` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P5 / BP-06 - Knowledge Evidence and Source Loop.
 - Primary active implementation plan / phase / task: BP-06 -> BP-06.03 / Build / B1.
-- Current task: B1 publication-specific process-death verification next; installed Knowledge0.13.0 publication/replacement passes981 tests across8 isolated environments. Research assessment boundary still required.
+- Current task: B1 Research evidence-assessment boundary/design next; Knowledge0.13.0 publication, installed replacement and9 actual process-death barriers verified. Child0/4,parent8/24 unchanged.
 - Next task: Durable Knowledge publication/receipts, then Research assessment and Runtime wait integration.
 - Implementation completion: BP-05 closed100% (16/16); BP-06 at33.33% (8/24); BP-07..09 remain0%.
 - Active focus: BP-06.03/B1 Knowledge publication; child0/4, parent8/24 (33.33%).
@@ -121,6 +121,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-02 14:24:10 | B1 Knowledge publication process recovery verified; Research assessment next; child0/4,parent8/24 | 9 installed kill barriers;4 rebuild regressions;14 dev checks |
 | 2026-10-02 14:12:44 | B1 installed publication/replacement verified; process-death proof next; child0/4,parent8/24 | Knowledge0.13.0;981 tests;8 isolated environments |
 | 2026-10-02 13:58:34 | B1 production publication verified; installed replacement next; child0/4,parent8/24 | Knowledge0.13.0;305 owner/dev tests;actual three-owner publication |
 | 2026-10-02 13:45:00 | B1 atomic publication terminals verified; SDK workflow next; child0/4,parent8/24 | Knowledge0.12.0;knowledge_0006;166 scoped tests |
@@ -145,6 +146,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-01 19:34:51 | BP-06.02/B1 private persistence partial; child0%, parent16.67% unchanged | [Ledger proof](../Audits/Evidence/BP-06-Knowledge/Persistence.json);47 owner/47 contract-dev/80 isolated;256 schemas preserved |
 | 2026-10-01 19:09:58 | BP-06.02/B1 pure authoring/replay partial; child0%, parent16.67% unchanged | [Domain proof](../Audits/Evidence/BP-06-Knowledge/Domain_Replay.json);36 owner/36 isolated/14 dev tests |
 | 2026-10-01 18:51:58 | BP-06.02/B1 contracts partial; child0%, parent16.67% unchanged | [Knowledge wire proof](../Audits/Evidence/BP-06-Knowledge/Contracts.json);44 scoped/30 isolated tests;236 schemas preserved |
-| 2026-10-01 18:34:28 | BP-06.01 closed100%; parent16.67%; .02 activation next | [Scoped closeout](../Audits/BP-06.01_Source_Evidence_Closeout.md);139/70/36 isolated owner cases |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

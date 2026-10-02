@@ -1,7 +1,7 @@
 # Knowledge Service
 
 - Package: amphora-knowledge0.13.0; contracts0.6.0.
-- Status: BP-06.02 closed; BP-06.03/B1 production reasoning/publication and installed replacement verified. Publication-specific process-death proof and Research assessment remain.
+- Status: BP-06.02 closed; BP-06.03/B1 production reasoning/publication and installed replacement verified. Publication-specific process-death recovery verified; Research assessment remains.
 - Design: [Knowledge](../../docs/Architecture/Knowledge/Knowledge_Architecture.md), [activation](../../docs/Audits/BP-06.02_Activation.md).
 
 Knowledge owns typed domain graph edits, immutable accepted history and snapshot reconstruction. It preserves source/Research links and conflicting interpretations without promoting them into scientifically accepted facts. Publication never changes a campaign's pinned revision.
@@ -27,6 +27,8 @@ Reasoning inputs include every actually consumed artifact, including indirect co
 
 Publication persists the original actor/result/publisher/schema selection, reviewed payload, bounded attempt history and terminal artifact/logical receipt. Unknown PUTs are explicitly abandoned and replaced at most8 times; finalization always reconciles its original identity. Receipt purpose is synthetic entailment, never a caller-supplied scientific purpose. Runtime owns execution acceptance/retention; Research owns scientific sufficiency. Autonomous callers resume pending requests; no background publication scanner is implemented.
 
-Verification at 2026-10-02 14:12:44:305 full source owner/dev tests (291 Knowledge +14 dev) and981 installed tests across8 isolated environments pass, zero failures/errors/skips. Installed suites include Data278+47, SDK94, initial Knowledge/contracts366 and replacement Knowledge196. Actual owner processes prove exact payload/input lineage, restart replay, Research outage/resume, and inherited source revocation. Existing kill barriers exercise rebuilds; publication-specific process-death proof remains next. No scientific or target-host power-loss claim is made.
+Verification at 2026-10-02 14:12:44:305 full source owner/dev tests (291 Knowledge +14 dev) and981 installed tests across8 isolated environments pass, zero failures/errors/skips. Installed suites include Data278+47, SDK94, initial Knowledge/contracts366 and replacement Knowledge196. Actual owner processes prove exact payload/input lineage, restart replay, Research outage/resume, and inherited source revocation. Nine additional installed publication kill barriers now pass; four rebuild kill regressions remain passing. Fault hosts use test-only five-second leases and replacements use production sixty seconds. No scientific or target-host power-loss claim is made.
 
 [Workflow evidence](../../docs/Audits/Evidence/BP-06-Knowledge/Publication_Workflow.json) owns scoped coverage and actual owner identities; [installed evidence](../../docs/Audits/Evidence/BP-06-Knowledge/Publication_Installed.json) owns wheel hashes/isolation/replacement results. Earlier checkpoint history stays in the owning plan, evidence files and Git rather than this module contract.
+
+[Publication process recovery](../../docs/Audits/Evidence/BP-06-Knowledge/Publication_Recovery.json) records all9 barriers, retained command identities and explicit uncertain-stream replacement. This extends the installed baseline without changing production0.13.0 code.

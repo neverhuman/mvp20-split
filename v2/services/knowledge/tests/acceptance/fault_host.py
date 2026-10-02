@@ -4,6 +4,7 @@ import argparse
 import json
 import sys
 from pathlib import Path
+from runpy import run_path
 
 import uvicorn
 from amphora_knowledge.rebuild.store import RebuildStore
@@ -13,7 +14,9 @@ from sqlalchemy import event
 parser = argparse.ArgumentParser()
 parser.add_argument("--config", required=True)
 parser.add_argument("--port", required=True, type=int)
-parser.add_argument("--barrier", required=True, choices=["candidate_staged", "publication_before_result", "publication_committed"])
+publication_faults = run_path(str(Path(__file__).with_name("publication_faults.py")))
+parser.add_argument("--barrier", required=True, choices=["candidate_staged", "publication_before_result", "publication_committed",
+                                                      *publication_faults["STAGES"]])
 args = parser.parse_args()
 reached = False
 
@@ -28,7 +31,9 @@ def barrier():
 
 
 host = KnowledgeHost.configured(json.loads(Path(args.config).read_text(encoding="utf-8")))
-if args.barrier == "candidate_staged":
+if args.barrier.startswith("reasoning_"):
+    publication_faults["install"](host, args.barrier, barrier)
+elif args.barrier == "candidate_staged":
     original = RebuildStore.stage
 
     def staged(self, candidate):
