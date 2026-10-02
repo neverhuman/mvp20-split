@@ -3,13 +3,13 @@
 ## Canonical Parent Tracker
 
 - Status: primary_active; BP-06.03/Build/B1 resumed after completed DER-01.
-- Last refreshed: `2026-10-02 14:24:10` (America/Chicago).
+- Last refreshed: `2026-10-02 15:22:13` (America/Chicago).
 - Owner/scope: Knowledge, Research and focused Data/Artifacts modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 receipt/wait seams and BP-05 inspection; BP-01/02/03 public contracts and tool execution.
 - Implementation: **33.33%**, 8/24 verified child deliveries. P1/.01 and P2/.02 closed100%; P3/.03 active0% with B1 partial implementation.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current task: B1 Research evidence-assessment boundary/design next; Knowledge0.13.0 publication, installed replacement and9 actual process-death barriers verified. Child0/4,parent8/24 unchanged.
+- Current task: B1 Research authenticated assessment boundary next; Research0.5.0 private policy verified (52 focused tests;136 Research/dev checks). Public contracts/resolution/persistence remain. Child0/4,parent8/24 unchanged.
 - Demonstrated behavior: Knowledge0.13.0 production publication/synthetic receipts:305 source owner/dev tests,981 independent installed tests,9 actual publication kill barriers,4 rebuild regressions and14 dev checks pass.286 schemas unchanged;knowledge_0006 applied. Research assessment remains B1; no scientific or target-host power-loss claim.
 - Blockers: None requiring owner input; DER-01 closed. No completed child is reopened.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.

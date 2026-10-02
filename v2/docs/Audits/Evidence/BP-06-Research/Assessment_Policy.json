@@ -1,0 +1,51 @@
+{
+  "timestamp_local": "2026-10-02 15:22:13",
+  "scope": "BP-06.03/B1 private Research assessment domain policy",
+  "version": "0.5.0",
+  "tests": {
+    "focused": 52,
+    "research_and_dev": 136
+  },
+  "coverage": {
+    "covered_lines": 187,
+    "num_statements": 187,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100",
+    "num_branches": 80,
+    "num_partial_branches": 0,
+    "covered_branches": 80,
+    "missing_branches": 0,
+    "percent_branches_covered": 100.0,
+    "percent_branches_covered_display": "100"
+  },
+  "claims": [
+    "Exact declaration/answer/method/context/issuer/purpose matching",
+    "Category separation, explicit per-criterion needs, contradiction retention",
+    "No scientific establishment or caller-created receipt authority"
+  ],
+  "remaining": [
+    "Versioned public assessment contracts",
+    "Authenticated peer reference resolution",
+    "Durable assessment and owner receipts",
+    "Actual Runtime integration and replacement acceptance"
+  ],
+  "installed_policy": {
+    "timestamp_local": "2026-10-02 15:21:43",
+    "status": "passed",
+    "scope": "independently built Research0.5.0 private policy only",
+    "wheels": {
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_research-0.2.0-py3-none-any.whl": "3a301b4e1732bc6bf1306522f7c439ac8faa72399b111044a5042c4c67088c86",
+      "amphora_research-0.5.0-py3-none-any.whl": "79290e5756d59876a8b7a60ed79f82f543ac063daf718ace95b3a4491a12561f"
+    },
+    "tests": 52,
+    "limitations": [
+      "No public assessment endpoint or receipt",
+      "No assessment persistence or process replacement claim"
+    ]
+  }
+}

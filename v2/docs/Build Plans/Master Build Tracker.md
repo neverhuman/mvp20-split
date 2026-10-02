@@ -9,14 +9,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 primary active; BP-07 through BP-09 queued; BP-05 closed.
-- Last refreshed: `2026-10-02 14:24:10` (America/Chicago).
+- Last refreshed: `2026-10-02 15:22:13` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P5 / BP-06 - Knowledge Evidence and Source Loop.
 - Primary active implementation plan / phase / task: BP-06 -> BP-06.03 / Build / B1.
-- Current task: B1 Research evidence-assessment boundary/design next; Knowledge0.13.0 publication, installed replacement and9 actual process-death barriers verified. Child0/4,parent8/24 unchanged.
-- Next task: Durable Knowledge publication/receipts, then Research assessment and Runtime wait integration.
+- Current task: B1 Research authenticated assessment boundary next; Research0.5.0 private policy verified (52 focused tests;136 Research/dev checks). Public contracts/resolution/persistence remain. Child0/4,parent8/24 unchanged.
+- Next task: Version Research assessment contracts and authenticated evidence resolution, then durable assessment/receipts; Runtime integration is B3.
 - Implementation completion: BP-05 closed100% (16/16); BP-06 at33.33% (8/24); BP-07..09 remain0%.
-- Active focus: BP-06.03/B1 Knowledge publication; child0/4, parent8/24 (33.33%).
+- Active focus: BP-06.03/B1 Research assessment; child0/4, parent8/24 (33.33%).
 - Blockers: No owner blocker; derived-publication prerequisite accepted.
 - Acceptance posture: BP-05 integrated Studio accepted within synthetic software scope; scientific and deployment acceptance remains later.
 - Active exception: none.
@@ -39,7 +39,7 @@ BP-06 is the sole active parent. BP-05 closed16/16; see [completed plans](Comple
 
 | Active canonical child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-06.03](BP-06/BP-06.03%20Reasoning%20and%20domain%20receipts.md) | 0% | 0% | 0% | B1 / Knowledge publication |
+| [BP-06.03](BP-06/BP-06.03%20Reasoning%20and%20domain%20receipts.md) | 0% | 0% | 0% | B1 / Research assessment |
 
 
 
