@@ -1,14 +1,14 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-02 11:14:56` (America/Chicago).
+- Last refreshed: `2026-10-02 11:35:16` (America/Chicago).
 - Scope: v2 design/implementation alignment
-- Active focus: DER-01: generic derived publication lacks explicit inherited-rights lineage; approved prerequisite, D2 active.
-- Next gate: DER-01 D2 transactions, then D3-D4 verification gates.
+- Active focus: DER-01: generic derived publication lacks explicit inherited-rights lineage; approved prerequisite, D3 active.
+- Next gate: DER-01 D3 SDK/failure matrix, then D4 integration.
 
 ## Active Findings
 
-- `2026-10-02 11:05:40`: DER-01 blocks new derivation-artifact publication under BP-06.03/B1. Existing source/conversion lineage is enforced, while generic publication deliberately has no inferred ancestry. [PostgreSQL evidence](Evidence/BP-06-Knowledge/Derived_Publication_Gap.json) and [proposed Data-owned extension](../Build%20Plans/BP-06/BP-06.03%20Derived%20publication%20prerequisite.md) make the scope decision reviewable. Owner: Data/Knowledge; disposition: approved by subsequent user continuation; D2 active, no completed predecessor reopened.
+- `2026-10-02 11:05:40`: DER-01 blocks new derivation-artifact publication under BP-06.03/B1. Existing source/conversion lineage is enforced, while generic publication deliberately has no inferred ancestry. [PostgreSQL evidence](Evidence/BP-06-Knowledge/Derived_Publication_Gap.json) and [proposed Data-owned extension](../Build%20Plans/BP-06/BP-06.03%20Derived%20publication%20prerequisite.md) make the scope decision reviewable. Owner: Data/Knowledge; disposition: approved by subsequent user continuation; D3 active, no completed predecessor reopened.
 
 
 - `2026-09-23 09:41:20`: Service isolation replaces broad engine/domain packaging; standalone tool workloads use the existing registry as node index. Cross-service research-acceptance receipts, artifact reservations and revocation/effect checks require concrete protocol fixtures before implementation; atomic runtime commit must not be mistaken for atomic scientific-domain acceptance. Owner: System/Capabilities, prerequisite to service deployment. K3s/Kubernetes mappings remain proposed, with no operational evidence.

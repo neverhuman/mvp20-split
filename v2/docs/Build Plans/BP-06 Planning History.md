@@ -1,5 +1,9 @@
 # BP-06 Planning History
 
+## DER-01 D2 complete - 2026-10-02 11:35:16
+
+Data0.11.0 implements immutable derived-upload declarations, atomic finalized lineage and rights fences via applied artifact_0007.266 owner tests and36 contract/dev tests pass; source-rights/legacy identity-conversion compatibility preserved after the full suite exposed no-op self-links. D1-D2 complete2/4 (50%); D3 SDK/failure proof next. [Evidence](../Audits/Evidence/BP-06-Knowledge/Derived_Publication_Transactions.json). Child0/4; parent8/24 unchanged.
+
 ## DER-01 approved / D1 complete - 2026-10-02 11:14:56
 
 User continuation authorizes the bounded Data-owned extension. D1 contracts/design complete1/4 (25%); D2 transactions next. Artifact contracts0.2.0,282 schemas preserve all272 predecessors; fixed old/new command fixtures and92 focused contract/domain/dev tests pass. No migration applied or HTTP publication enabled. BP-06.03 stays0/4; parent8/24 (33.33%).

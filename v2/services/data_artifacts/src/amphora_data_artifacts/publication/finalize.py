@@ -8,7 +8,11 @@ from amphora_contracts_artifacts import FinalizeArtifact, FinalizedReceipt
 from amphora_contracts_core import ArtifactRef
 from sqlalchemy import text
 
+from ..derivations.ledger import DerivationLedger
+from ..derivations.model import DeclaredTransformation
 from ..persistence.commands import TerminalDisposition
+from ..source_rights.ledger import SourceRights
+from ..source_rights.model import RightsSnapshot
 from .model import UploadError
 from .uploads import SCOPE
 
@@ -19,6 +23,8 @@ class ReadyPublication:
     attempt_id: str
     generation: int
     key: str
+    derivation: DeclaredTransformation | None = None
+    rights: RightsSnapshot | None = None
 
     def receipt(self, principal, artifact_id):
         reference = ArtifactRef(artifact_id=artifact_id, scope=principal.scope,
@@ -30,6 +36,7 @@ class Finalizer:
     def __init__(self, uploads, storage):
         self.uploads = uploads
         self.storage = storage
+        self.rights = SourceRights(uploads.commands.engine)
 
     def _existing(self, conn, principal, command):
         row = conn.execute(text("SELECT status,receipt FROM artifacts.commands WHERE " + SCOPE +
@@ -71,6 +78,7 @@ class Finalizer:
         self.uploads.commands.register(command)
 
         def prepare(conn):
+            self.rights.lock(conn, principal)
             self.uploads._capacity(conn, principal)
             existing = self._existing(conn, principal, command)
             if existing is not None:
@@ -88,7 +96,12 @@ class Finalizer:
                      "attempt": upload["selected_attempt"]}).mappings().one()
                 if row["status"] != "streamed" or row["generation"] != upload["generation"]:
                     raise UploadError("upload_not_ready")
-                return ReadyPublication(request, row["attempt_id"], row["generation"], row["storage_key"])
+                derivation = DerivationLedger.load(conn, principal, request.upload_id)
+                snapshot = None
+                if derivation is not None:
+                    DerivationLedger.check_inputs(conn, principal, derivation)
+                    snapshot = self.rights.authorize(conn, principal, derivation.input_ids, use="process")
+                return ReadyPublication(request, row["attempt_id"], row["generation"], row["storage_key"], derivation, snapshot)
             except UploadError as error:
                 return self._reject(conn, principal, command, error)
 
@@ -104,6 +117,7 @@ class Finalizer:
         # I/O failures propagate as retryable infrastructure errors; command remains pending.
 
         def commit(conn):
+            self.rights.lock(conn, principal)
             self.uploads._capacity(conn, principal)
             upload = self.uploads._upload(conn, principal, request.upload_id)
             existing = self._existing(conn, principal, command)
@@ -111,6 +125,11 @@ class Finalizer:
                 return existing
             if verification_error is not None:
                 return self._reject(conn, principal, command, verification_error)
+            try:
+                if ready.rights is not None:
+                    self.rights.fence(conn, principal, ready.rights)
+            except UploadError as error:
+                return self._reject(conn, principal, command, error)
             if (upload["selected_attempt"] != ready.attempt_id or upload["generation"] != ready.generation
                 or upload["status"] not in {"provisional", "finalized"}):
                 return self._reject(conn, principal, command, UploadError("upload_selection_changed"))
@@ -128,6 +147,8 @@ class Finalizer:
                      "media": content.media_type, "schema": content.schema_ref.model_dump_json()})
                 conn.execute(text("UPDATE artifacts.uploads SET status='finalized' WHERE " + SCOPE +
                                   " AND upload_id=:upload"), params)
+                if ready.derivation is not None:
+                    DerivationLedger.retain(conn, principal, ready.derivation, ready.receipt(principal, artifact_id))
             # Selected bytes were already charged by upload settlement; no second catalog charge.
             return self._terminal(conn, principal, command, ready.receipt(principal, artifact_id))
 

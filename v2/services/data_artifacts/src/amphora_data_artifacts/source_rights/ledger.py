@@ -6,22 +6,8 @@ from amphora_contracts_evidence import RightsRevisionRef, SourceRightsRevision
 from sqlalchemy import text
 
 from ..persistence.evidence_records import SCOPE, _canonical, _lock
+from .ancestry import identities
 from .model import RightsError, RightsPolicy, RightsSnapshot
-
-ANCESTRY = """
-WITH RECURSIVE ancestry(artifact_id) AS (
- SELECT CAST(:artifact AS varchar(128))
- UNION
- SELECT s.raw_artifact_id FROM ancestry a
- JOIN artifacts.conversion_traces t ON t.output_artifact_id=a.artifact_id
-  AND t.tenant_id=:tenant AND t.project_id=:project
- JOIN artifacts.source_revisions s ON (s.tenant_id,s.project_id,s.source_id,s.revision_id)=
-  (t.tenant_id,t.project_id,t.source_id,t.source_revision_id)
-)
-SELECT DISTINCT convert_from(s.canonical_bytes,'UTF8')::jsonb->'rights' AS rights
-FROM ancestry a JOIN artifacts.source_revisions s ON s.raw_artifact_id=a.artifact_id
- AND s.tenant_id=:tenant AND s.project_id=:project LIMIT 257
-"""
 
 
 class SourceRights:
@@ -79,8 +65,11 @@ class SourceRights:
         if any(ref.scope != principal.scope for ref in declared):
             raise RightsError("rights_scope_mismatch")
         refs = {(ref.rights_id, ref.revision): ref for ref in declared}
-        for artifact in artifacts:
-            rows = connection.execute(text(ANCESTRY), principal.bindings | {"artifact": artifact}).scalars()
+        ancestors = identities(connection, principal, artifacts)
+        if ancestors:
+            rows = connection.execute(text("SELECT DISTINCT convert_from(canonical_bytes,'UTF8')::jsonb->'rights' "
+                "FROM artifacts.source_revisions WHERE " + SCOPE + " AND raw_artifact_id=ANY(:artifacts) LIMIT 257"),
+                principal.bindings | {"artifacts": list(ancestors)}).scalars()
             for raw in rows:
                 ref = RightsRevisionRef.model_validate_json(json.dumps(raw))
                 refs[(ref.rights_id, ref.revision)] = ref

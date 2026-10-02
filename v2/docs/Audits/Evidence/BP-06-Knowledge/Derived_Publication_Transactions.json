@@ -1,0 +1,49 @@
+{
+  "timestamp_local": "2026-10-02 11:35:16",
+  "scope": "DER-01 D2; no D3/D4 acceptance claim",
+  "data_version": "0.11.0",
+  "contracts_artifacts_version": "0.2.0",
+  "migration": "artifact_0007 applied/immutable",
+  "tests": {
+    "data_owner": 266,
+    "contracts_and_dev": 36,
+    "failures": 0,
+    "skipped": 0
+  },
+  "coverage": {
+    "covered_lines": 2080,
+    "num_statements": 2237,
+    "percent_covered": 91.33310128785241,
+    "percent_covered_display": "91",
+    "missing_lines": 157,
+    "excluded_lines": 6,
+    "percent_statements_covered": 92.9816718819848,
+    "percent_statements_covered_display": "93",
+    "num_branches": 636,
+    "num_partial_branches": 82,
+    "covered_branches": 544,
+    "missing_branches": 92,
+    "percent_branches_covered": 85.53459119496856,
+    "percent_branches_covered_display": "86"
+  },
+  "schema_compatibility": {
+    "predecessors_unchanged": 272,
+    "total": 282
+  },
+  "proven": [
+    "actual PostgreSQL and HTTP derived begin/stream/finalize",
+    "atomic catalog/lineage rollback on injected edge-write failure",
+    "revoked or permissively changed rights during storage verification blocks publication",
+    "transitive converted-input rights deny new derived payload consumption",
+    "original begin/finalize receipts and derivation metadata survive rights revocation",
+    "shared ancestry and traversal bounds; legacy identity conversions preserve semantics"
+  ],
+  "remaining": [
+    "D3 SDK recovery and broader failure matrix",
+    "D4 installed/public Knowledge integration and scoped audit"
+  ],
+  "limits": [
+    "synthetic software fixtures only",
+    "no scientific validity or mandatory erasure claim"
+  ]
+}

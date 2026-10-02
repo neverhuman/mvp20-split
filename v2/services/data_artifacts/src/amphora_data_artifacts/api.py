@@ -3,6 +3,9 @@
 import asyncio
 
 from amphora_contracts_artifacts import (
+    DerivationReceipt,
+    DerivedUploadObservation,
+    DerivedUploadReceipt,
     FinalizedReceipt,
     PublicationObservation,
     ReservationReceipt,
@@ -18,6 +21,7 @@ from sqlalchemy import text
 from sqlalchemy.exc import DBAPIError
 
 from .acquisition.api import acquisition_router
+from .derivations.publication import DerivedPublications
 from .persistence.commands import CommandConflict
 from .publication.finalize import Finalizer
 from .publication.inspection import PublicationHistory
@@ -33,17 +37,18 @@ def create_app(uploads, storage, credentials, outcomes=None, *, acquisition=None
     reads = ArtifactReads(uploads.commands.engine, storage, uploads.limits.max_bytes)
     reservations = Reservations(uploads, outcomes)
     publication_history = PublicationHistory(uploads.commands.engine)
+    derived = DerivedPublications(uploads)
 
     @app.exception_handler(UploadError)
     async def upload_error(_request, error):
         reason = str(error)
         status = 401 if reason == "unauthenticated" else 403 if reason == "access_denied" else 409
-        if reason in {"upload_unavailable", "artifact_unavailable", "reservation_unavailable", "command_unavailable"}:
+        if reason in {"upload_unavailable", "artifact_unavailable", "reservation_unavailable", "command_unavailable", "derivation_unavailable"}:
             status = 404
         if reason in {"upload_too_large", "body_too_large", "artifact_read_limit"}:
             status = 413
         if reason in {"rights_unavailable", "rights_scope_mismatch", "rights_revoked", "rights_expired",
-                      "rights_use_denied", "rights_lineage_limit"}:
+                      "rights_use_denied", "rights_lineage_limit", "rights_lineage_cycle"}:
             status = 403
         return JSONResponse({"reason_code": reason}, status_code=status)
 
@@ -97,16 +102,32 @@ def create_app(uploads, storage, credentials, outcomes=None, *, acquisition=None
     def ready():
         with uploads.commands.engine.connect() as conn:
             conn.execute(text("SELECT created_at FROM artifacts.uploads LIMIT 0"))
+            conn.execute(text("SELECT created_at FROM artifacts.derived_uploads LIMIT 0"))
         return {"ready": True}
 
     @app.get("/health")
     def health():
         return {"mode": "verified_publication", "publication_available": True, "retention_available": outcomes is not None}
 
-    @app.get("/v1/commands/{family}/{command_id}", response_model=PublicationObservation)
+    @app.get("/v1/commands/{family}/{command_id}", response_model=PublicationObservation | DerivedUploadObservation)
     async def publication_receipt(family: Identifier, command_id: Identifier, request: Request):
         principal = credentials.authenticate(request.headers.get("authorization"))
+        if family == "artifacts.begin_derived_upload":
+            return await asyncio.to_thread(derived.history, principal, command_id)
         return await asyncio.to_thread(publication_history.read, principal, family, command_id)
+
+    @app.get("/v1/artifacts/{artifact_id}/derivation", response_model=DerivationReceipt)
+    async def derivation_metadata(artifact_id: Identifier, request: Request):
+        principal = credentials.authenticate(request.headers.get("authorization"))
+        return await asyncio.to_thread(derived.read, principal, artifact_id)
+
+    @app.post("/v1/derived-uploads", response_model=DerivedUploadReceipt)
+    async def begin_derived(request: Request):
+        principal = credentials.authenticate(request.headers.get("authorization"))
+        principal.require("upload")
+        principal.require("read")
+        command = parse_command("artifacts.begin_derived_upload", await command_body(request))
+        return await asyncio.to_thread(derived.begin, principal, command)
 
     @app.get("/v1/artifacts/{artifact_id}", response_model=ArtifactRef)
     async def metadata(artifact_id: str, request: Request):
