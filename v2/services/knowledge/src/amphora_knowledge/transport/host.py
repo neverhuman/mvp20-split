@@ -6,7 +6,7 @@ import re
 from dataclasses import dataclass
 
 from amphora_contracts_core import Scope
-from amphora_contracts_knowledge import DomainVocabulary
+from amphora_contracts_knowledge import DomainVocabulary, ReasoningRuleSet
 from sqlalchemy import create_engine, text
 from sqlalchemy.engine import make_url
 
@@ -14,6 +14,9 @@ from ..access import Principal
 from ..authoring.policy import StructuralPolicy
 from ..authoring.vocabulary import Vocabulary
 from ..persistence.ledger import KnowledgeLedger
+from ..reasoning.profile import RuleProfile
+from ..reasoning.store import ReasoningStore
+from ..reasoning.workflow import ReasoningWorkflow
 from ..validation.peers import DataReader, ResearchReader
 from ..validation.review import ReferenceReviewer
 from ..validation.transport import PeerTransport
@@ -48,7 +51,13 @@ class KnowledgeHost:
 
     @classmethod
     def configured(cls, config):
-        keys(config, ("database_url_env", "principals", "vocabulary", "policy", "data", "research"))
+        required = ("database_url_env", "principals", "vocabulary", "policy", "data", "research")
+        keys(config, required + (("reasoning",) if "reasoning" in config else ()))
+        profiles = config.get("reasoning")
+        if "reasoning" in config:
+            if not isinstance(profiles, list) or len(profiles) > 32:
+                raise ValueError("invalid_reasoning_configuration")
+            profiles = tuple(RuleProfile(ReasoningRuleSet.model_validate_json(json.dumps(profile))) for profile in profiles)
         entries = config["principals"]
         if not isinstance(entries, list) or not 1 <= len(entries) <= 32:
             raise ValueError("invalid_principals")
@@ -57,7 +66,7 @@ class KnowledgeHost:
             keys(entry, ("token_env", "actor_id", "scope", "actions"))
             actions = entry["actions"]
             if (not isinstance(actions, list) or not actions
-                    or any(action not in ("read_graph", "propose_graph", "rebuild_graph") for action in actions)
+                    or any(action not in ("read_graph", "propose_graph", "rebuild_graph", "reason_graph") for action in actions)
                     or len(set(actions)) != len(actions)):
                 raise ValueError("invalid_actions")
             grants.append((secret(entry["token_env"]), Principal(entry["actor_id"],
@@ -77,8 +86,11 @@ class KnowledgeHost:
                     raise ValueError("knowledge_service_role_required")
                 connection.execute(text("SELECT revision FROM knowledge.heads LIMIT 1"))
                 connection.execute(text("SELECT candidate_id FROM knowledge.snapshot_publications LIMIT 0"))
+                if profiles is not None:
+                    connection.execute(text("SELECT request_id FROM knowledge.reasoning_intents LIMIT 0"))
             workflow = AuthoringWorkflow(KnowledgeLedger(engine, vocabulary, policy), reviewer)
-            return cls(engine, create_app(workflow, credentials))
+            reasoning = None if profiles is None else ReasoningWorkflow(ReasoningStore(engine), profiles, reviewer)
+            return cls(engine, create_app(workflow, credentials, reasoning))
         except Exception:
             engine.dispose()
             raise

@@ -21,6 +21,10 @@ class ReferencedInputs:
 
     @classmethod
     def collect(cls, proposal):
+        return cls.collect_records(proposal.graph, (proposal,))
+
+    @classmethod
+    def collect_records(cls, graph, records):
         buckets = {kind: {} for kind in ("artifacts", "sources", "traces", "questions", "needs", "spans")}
 
         def retain(kind, key, value):
@@ -32,12 +36,12 @@ class ReferencedInputs:
                 raise KnowledgeError("reference_limit")
 
         def visit(value):
-            if isinstance(value, Scope) and value != proposal.graph.scope:
+            if isinstance(value, Scope) and value != graph.scope:
                 raise KnowledgeError("reference_scope_mismatch")
             if (isinstance(value, WireModel) and "scope" in type(value).model_fields
-                    and value.scope != proposal.graph.scope):
+                    and value.scope != graph.scope):
                 raise KnowledgeError("reference_scope_mismatch")
-            if isinstance(value, DomainGraphRef) and value != proposal.graph:
+            if isinstance(value, DomainGraphRef) and value != graph:
                 raise KnowledgeError("reference_graph_mismatch")
             if isinstance(value, ArtifactRef):
                 retain("artifacts", value.artifact_id, value)
@@ -60,6 +64,6 @@ class ReferencedInputs:
                 for item in value:
                     visit(item)
 
-        visit(proposal)
+        visit(records)
         values = {kind: tuple(bucket[key] for key in sorted(bucket)) for kind, bucket in buckets.items()}
         return cls(values["artifacts"], values["sources"], values["traces"], values["questions"], values["needs"], values["spans"])

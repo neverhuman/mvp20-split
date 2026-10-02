@@ -1,9 +1,9 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-01 21:14:19` (America/Chicago).
+- Last refreshed: `2026-10-02 09:39:22` (America/Chicago).
 - Scope: v2 design/implementation alignment
-- Active focus: BP-06.03/B1 bounded reasoning and independent owner receipt boundaries.
+- Active focus: BP-06.03/B1 Knowledge reasoning boundary verified; derivation publication, Research sufficiency and domain receipts remain.
 - Next gate: Implemented B1 contracts/persistence/transport with scoped fixtures before B2.
 
 ## Active Findings

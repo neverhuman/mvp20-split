@@ -1,0 +1,1527 @@
+{
+  "timestamp": "2026-10-02 09:41:44",
+  "scope": "BP-06.03/B1 partial: configured Knowledge reasoning boundary",
+  "service": "0.8.0",
+  "contracts": "0.5.0",
+  "schema_compatibility": {
+    "published": 272,
+    "preserved_predecessors": 264,
+    "changed_predecessors": []
+  },
+  "migration": "knowledge_0003 applied;0001/0002/0003 immutable",
+  "tests": {
+    "owner": 189,
+    "reasoning": 57,
+    "contracts": 62,
+    "dev": 14,
+    "skipped": 0,
+    "reasoning_final": 58,
+    "owner_note": "Full189 baseline followed by58 focused reasoning tests after adding pre-serialization explanation bound; one new test added."
+  },
+  "coverage": {
+    "covered_lines": 1701,
+    "num_statements": 1832,
+    "percent_covered": 90.61461794019934,
+    "percent_covered_display": "91",
+    "missing_lines": 131,
+    "excluded_lines": 0,
+    "percent_statements_covered": 92.84934497816595,
+    "percent_statements_covered_display": "93",
+    "num_branches": 576,
+    "num_partial_branches": 85,
+    "covered_branches": 481,
+    "missing_branches": 95,
+    "percent_branches_covered": 83.50694444444444,
+    "percent_branches_covered_display": "84"
+  },
+  "reasoning_coverage": {
+    "services\\knowledge\\src\\amphora_knowledge\\reasoning\\__init__.py": {
+      "summary": {
+        "covered_lines": 0,
+        "num_statements": 0,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 0,
+        "num_partial_branches": 0,
+        "covered_branches": 0,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": [],
+      "missing_branches": []
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\reasoning\\binding.py": {
+      "summary": {
+        "covered_lines": 44,
+        "num_statements": 44,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 14,
+        "num_partial_branches": 0,
+        "covered_branches": 14,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": [],
+      "missing_branches": []
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\reasoning\\evaluator.py": {
+      "summary": {
+        "covered_lines": 50,
+        "num_statements": 51,
+        "percent_covered": 97.59036144578313,
+        "percent_covered_display": "98",
+        "missing_lines": 1,
+        "excluded_lines": 0,
+        "percent_statements_covered": 98.03921568627452,
+        "percent_statements_covered_display": "98",
+        "num_branches": 32,
+        "num_partial_branches": 1,
+        "covered_branches": 31,
+        "missing_branches": 1,
+        "percent_branches_covered": 96.875,
+        "percent_branches_covered_display": "97"
+      },
+      "missing_lines": [
+        10
+      ],
+      "missing_branches": [
+        [
+          9,
+          10
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\reasoning\\model.py": {
+      "summary": {
+        "covered_lines": 100,
+        "num_statements": 100,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 24,
+        "num_partial_branches": 0,
+        "covered_branches": 24,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": [],
+      "missing_branches": []
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\reasoning\\profile.py": {
+      "summary": {
+        "covered_lines": 57,
+        "num_statements": 59,
+        "percent_covered": 95.40229885057471,
+        "percent_covered_display": "95",
+        "missing_lines": 2,
+        "excluded_lines": 0,
+        "percent_statements_covered": 96.61016949152543,
+        "percent_statements_covered_display": "97",
+        "num_branches": 28,
+        "num_partial_branches": 2,
+        "covered_branches": 26,
+        "missing_branches": 2,
+        "percent_branches_covered": 92.85714285714286,
+        "percent_branches_covered_display": "93"
+      },
+      "missing_lines": [
+        21,
+        40
+      ],
+      "missing_branches": [
+        [
+          20,
+          21
+        ],
+        [
+          39,
+          40
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\reasoning\\projection.py": {
+      "summary": {
+        "covered_lines": 29,
+        "num_statements": 30,
+        "percent_covered": 94.44444444444444,
+        "percent_covered_display": "94",
+        "missing_lines": 1,
+        "excluded_lines": 0,
+        "percent_statements_covered": 96.66666666666667,
+        "percent_statements_covered_display": "97",
+        "num_branches": 6,
+        "num_partial_branches": 1,
+        "covered_branches": 5,
+        "missing_branches": 1,
+        "percent_branches_covered": 83.33333333333333,
+        "percent_branches_covered_display": "83"
+      },
+      "missing_lines": [
+        53
+      ],
+      "missing_branches": [
+        [
+          52,
+          53
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\reasoning\\requests.py": {
+      "summary": {
+        "covered_lines": 33,
+        "num_statements": 34,
+        "percent_covered": 94.73684210526316,
+        "percent_covered_display": "95",
+        "missing_lines": 1,
+        "excluded_lines": 0,
+        "percent_statements_covered": 97.05882352941177,
+        "percent_statements_covered_display": "97",
+        "num_branches": 4,
+        "num_partial_branches": 1,
+        "covered_branches": 3,
+        "missing_branches": 1,
+        "percent_branches_covered": 75.0,
+        "percent_branches_covered_display": "75"
+      },
+      "missing_lines": [
+        26
+      ],
+      "missing_branches": [
+        [
+          25,
+          26
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\reasoning\\store.py": {
+      "summary": {
+        "covered_lines": 88,
+        "num_statements": 98,
+        "percent_covered": 84.55882352941177,
+        "percent_covered_display": "85",
+        "missing_lines": 10,
+        "excluded_lines": 0,
+        "percent_statements_covered": 89.79591836734694,
+        "percent_statements_covered_display": "90",
+        "num_branches": 38,
+        "num_partial_branches": 11,
+        "covered_branches": 27,
+        "missing_branches": 11,
+        "percent_branches_covered": 71.05263157894737,
+        "percent_branches_covered_display": "71"
+      },
+      "missing_lines": [
+        37,
+        43,
+        53,
+        55,
+        70,
+        108,
+        115,
+        117,
+        120,
+        125
+      ],
+      "missing_branches": [
+        [
+          34,
+          37
+        ],
+        [
+          42,
+          43
+        ],
+        [
+          50,
+          53
+        ],
+        [
+          54,
+          55
+        ],
+        [
+          69,
+          70
+        ],
+        [
+          82,
+          86
+        ],
+        [
+          107,
+          108
+        ],
+        [
+          114,
+          115
+        ],
+        [
+          116,
+          117
+        ],
+        [
+          119,
+          120
+        ],
+        [
+          124,
+          125
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\reasoning\\workflow.py": {
+      "summary": {
+        "covered_lines": 32,
+        "num_statements": 34,
+        "percent_covered": 90.0,
+        "percent_covered_display": "90",
+        "missing_lines": 2,
+        "excluded_lines": 0,
+        "percent_statements_covered": 94.11764705882354,
+        "percent_statements_covered_display": "94",
+        "num_branches": 6,
+        "num_partial_branches": 2,
+        "covered_branches": 4,
+        "missing_branches": 2,
+        "percent_branches_covered": 66.66666666666667,
+        "percent_branches_covered_display": "67"
+      },
+      "missing_lines": [
+        16,
+        19
+      ],
+      "missing_branches": [
+        [
+          15,
+          16
+        ],
+        [
+          18,
+          19
+        ]
+      ]
+    }
+  },
+  "actual_public_peer_evidence": {
+    "timestamp": "2026-10-02 09:34:28",
+    "tier": "actual PostgreSQL and three owner HTTP processes",
+    "graph": {
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "f15cb395067c43df895d2f7d2fba0729"
+      },
+      "graph_id": "domain"
+    },
+    "source": {
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "f15cb395067c43df895d2f7d2fba0729"
+      },
+      "source_id": "source",
+      "revision_id": "r1",
+      "raw": {
+        "artifact_id": "a34b5907196b47fda2234755da0f0a60",
+        "scope": {
+          "tenant_id": "synthetic",
+          "project_id": "f15cb395067c43df895d2f7d2fba0729"
+        },
+        "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+        "media_type": "application/octet-stream",
+        "schema_ref": {
+          "schema_id": "fixture.bytes",
+          "version": "1",
+          "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+        },
+        "size_bytes": 49
+      }
+    },
+    "trace": {
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "f15cb395067c43df895d2f7d2fba0729"
+      },
+      "trace_id": "actual-conversion",
+      "sha256": "e117f8d7aff58c95ff66e8d2a4088f1ddf81897271b67e882475ba290d317fdc"
+    },
+    "head": {
+      "snapshot": {
+        "graph": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "f15cb395067c43df895d2f7d2fba0729"
+          },
+          "graph_id": "domain"
+        },
+        "revision": 1,
+        "sha256": "7184b50df3f7a60f7d9e111528a56269c88c73c7c5c3ed4ee62b51f42c389a04"
+      },
+      "change": {
+        "graph": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "f15cb395067c43df895d2f7d2fba0729"
+          },
+          "graph_id": "domain"
+        },
+        "change_id": "first",
+        "position": 1,
+        "sha256": "f59b73e4c03de32483a812b40e753cc1aad3959042947cf291f112340b77e625"
+      }
+    },
+    "question": {
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "f15cb395067c43df895d2f7d2fba0729"
+      },
+      "question_id": "question",
+      "revision": 1
+    },
+    "need": {
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "f15cb395067c43df895d2f7d2fba0729"
+      },
+      "need_id": "need",
+      "revision": 1
+    },
+    "reasoning": {
+      "initial": {
+        "wire_version": "1",
+        "request": {
+          "wire_version": "1",
+          "request_id": "reason-initial",
+          "snapshot": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "f15cb395067c43df895d2f7d2fba0729"
+              },
+              "graph_id": "domain"
+            },
+            "revision": 1,
+            "sha256": "7184b50df3f7a60f7d9e111528a56269c88c73c7c5c3ed4ee62b51f42c389a04"
+          },
+          "rule_set": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "f15cb395067c43df895d2f7d2fba0729"
+              },
+              "graph_id": "domain"
+            },
+            "rule_set_id": "fixture",
+            "version": "v1",
+            "sha256": "2a101850d3b6fcd6366d4de769b061bc3e28478b372f1bfaaedd576c4262749c"
+          },
+          "context": {
+            "artifact_id": "a34b5907196b47fda2234755da0f0a60",
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "f15cb395067c43df895d2f7d2fba0729"
+            },
+            "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+            "media_type": "application/octet-stream",
+            "schema_ref": {
+              "schema_id": "fixture.bytes",
+              "version": "1",
+              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+            },
+            "size_bytes": 49
+          },
+          "subject": {
+            "artifact_id": "a34b5907196b47fda2234755da0f0a60",
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "f15cb395067c43df895d2f7d2fba0729"
+            },
+            "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+            "media_type": "application/octet-stream",
+            "schema_ref": {
+              "schema_id": "fixture.bytes",
+              "version": "1",
+              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+            },
+            "size_bytes": 49
+          },
+          "purpose": "fixture_support",
+          "targets": [
+            {
+              "subject": {
+                "graph": {
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                  },
+                  "graph_id": "domain"
+                },
+                "entity_id": "A",
+                "revision": 1
+              },
+              "predicate": "correlates_with",
+              "object": {
+                "graph": {
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                  },
+                  "graph_id": "domain"
+                },
+                "entity_id": "B",
+                "revision": 1
+              },
+              "polarity": "affirmed"
+            }
+          ]
+        },
+        "actor_id": "author",
+        "decision": {
+          "outcome": "evaluated",
+          "result": {
+            "wire_version": "1",
+            "authority": "synthetic_logical_entailment",
+            "request": {
+              "wire_version": "1",
+              "request_id": "reason-initial",
+              "snapshot": {
+                "graph": {
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                  },
+                  "graph_id": "domain"
+                },
+                "revision": 1,
+                "sha256": "7184b50df3f7a60f7d9e111528a56269c88c73c7c5c3ed4ee62b51f42c389a04"
+              },
+              "rule_set": {
+                "graph": {
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                  },
+                  "graph_id": "domain"
+                },
+                "rule_set_id": "fixture",
+                "version": "v1",
+                "sha256": "2a101850d3b6fcd6366d4de769b061bc3e28478b372f1bfaaedd576c4262749c"
+              },
+              "context": {
+                "artifact_id": "a34b5907196b47fda2234755da0f0a60",
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                },
+                "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 49
+              },
+              "subject": {
+                "artifact_id": "a34b5907196b47fda2234755da0f0a60",
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                },
+                "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 49
+              },
+              "purpose": "fixture_support",
+              "targets": [
+                {
+                  "subject": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "entity_id": "A",
+                    "revision": 1
+                  },
+                  "predicate": "correlates_with",
+                  "object": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "entity_id": "B",
+                    "revision": 1
+                  },
+                  "polarity": "affirmed"
+                }
+              ]
+            },
+            "outcome": {
+              "status": "complete"
+            },
+            "work": 0,
+            "findings": [
+              {
+                "target": {
+                  "subject": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "entity_id": "A",
+                    "revision": 1
+                  },
+                  "predicate": "correlates_with",
+                  "object": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "entity_id": "B",
+                    "revision": 1
+                  },
+                  "polarity": "affirmed"
+                },
+                "status": "supported",
+                "positive": true,
+                "negative": false,
+                "conflict": false,
+                "supporting_assertions": [
+                  {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "assertion_id": "claim",
+                    "revision": 1
+                  }
+                ],
+                "opposing_assertions": []
+              }
+            ],
+            "steps": [
+              {
+                "fact": {
+                  "subject": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "entity_id": "A",
+                    "revision": 1
+                  },
+                  "predicate": "correlates_with",
+                  "object": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "entity_id": "B",
+                    "revision": 1
+                  },
+                  "polarity": "affirmed"
+                },
+                "depth": 0,
+                "rule_id": null,
+                "premises": [],
+                "assertions": [
+                  {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "assertion_id": "claim",
+                    "revision": 1
+                  }
+                ]
+              }
+            ],
+            "excluded_context": []
+          },
+          "validation": {
+            "checked_at": "2026-10-02T14:34:16.659617Z",
+            "artifacts": [
+              {
+                "artifact_id": "a34b5907196b47fda2234755da0f0a60",
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                },
+                "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 49
+              }
+            ],
+            "sources": [
+              {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                },
+                "source_id": "source",
+                "revision_id": "r1",
+                "raw": {
+                  "artifact_id": "a34b5907196b47fda2234755da0f0a60",
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                  },
+                  "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+                  "media_type": "application/octet-stream",
+                  "schema_ref": {
+                    "schema_id": "fixture.bytes",
+                    "version": "1",
+                    "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                  },
+                  "size_bytes": 49
+                }
+              }
+            ],
+            "conversion_traces": [
+              {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                },
+                "trace_id": "actual-conversion",
+                "sha256": "e117f8d7aff58c95ff66e8d2a4088f1ddf81897271b67e882475ba290d317fdc"
+              }
+            ],
+            "questions": [
+              {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                },
+                "question_id": "question",
+                "revision": 1
+              }
+            ],
+            "evidence_needs": [
+              {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                },
+                "need_id": "need",
+                "revision": 1
+              }
+            ]
+          }
+        }
+      },
+      "resumed_after_outage": {
+        "wire_version": "1",
+        "request": {
+          "wire_version": "1",
+          "request_id": "reason-pending",
+          "snapshot": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "f15cb395067c43df895d2f7d2fba0729"
+              },
+              "graph_id": "domain"
+            },
+            "revision": 1,
+            "sha256": "7184b50df3f7a60f7d9e111528a56269c88c73c7c5c3ed4ee62b51f42c389a04"
+          },
+          "rule_set": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "f15cb395067c43df895d2f7d2fba0729"
+              },
+              "graph_id": "domain"
+            },
+            "rule_set_id": "fixture",
+            "version": "v1",
+            "sha256": "2a101850d3b6fcd6366d4de769b061bc3e28478b372f1bfaaedd576c4262749c"
+          },
+          "context": {
+            "artifact_id": "a34b5907196b47fda2234755da0f0a60",
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "f15cb395067c43df895d2f7d2fba0729"
+            },
+            "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+            "media_type": "application/octet-stream",
+            "schema_ref": {
+              "schema_id": "fixture.bytes",
+              "version": "1",
+              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+            },
+            "size_bytes": 49
+          },
+          "subject": {
+            "artifact_id": "a34b5907196b47fda2234755da0f0a60",
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "f15cb395067c43df895d2f7d2fba0729"
+            },
+            "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+            "media_type": "application/octet-stream",
+            "schema_ref": {
+              "schema_id": "fixture.bytes",
+              "version": "1",
+              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+            },
+            "size_bytes": 49
+          },
+          "purpose": "fixture_support",
+          "targets": [
+            {
+              "subject": {
+                "graph": {
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                  },
+                  "graph_id": "domain"
+                },
+                "entity_id": "A",
+                "revision": 1
+              },
+              "predicate": "correlates_with",
+              "object": {
+                "graph": {
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                  },
+                  "graph_id": "domain"
+                },
+                "entity_id": "B",
+                "revision": 1
+              },
+              "polarity": "affirmed"
+            }
+          ]
+        },
+        "actor_id": "author",
+        "decision": {
+          "outcome": "evaluated",
+          "result": {
+            "wire_version": "1",
+            "authority": "synthetic_logical_entailment",
+            "request": {
+              "wire_version": "1",
+              "request_id": "reason-pending",
+              "snapshot": {
+                "graph": {
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                  },
+                  "graph_id": "domain"
+                },
+                "revision": 1,
+                "sha256": "7184b50df3f7a60f7d9e111528a56269c88c73c7c5c3ed4ee62b51f42c389a04"
+              },
+              "rule_set": {
+                "graph": {
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                  },
+                  "graph_id": "domain"
+                },
+                "rule_set_id": "fixture",
+                "version": "v1",
+                "sha256": "2a101850d3b6fcd6366d4de769b061bc3e28478b372f1bfaaedd576c4262749c"
+              },
+              "context": {
+                "artifact_id": "a34b5907196b47fda2234755da0f0a60",
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                },
+                "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 49
+              },
+              "subject": {
+                "artifact_id": "a34b5907196b47fda2234755da0f0a60",
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                },
+                "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 49
+              },
+              "purpose": "fixture_support",
+              "targets": [
+                {
+                  "subject": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "entity_id": "A",
+                    "revision": 1
+                  },
+                  "predicate": "correlates_with",
+                  "object": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "entity_id": "B",
+                    "revision": 1
+                  },
+                  "polarity": "affirmed"
+                }
+              ]
+            },
+            "outcome": {
+              "status": "complete"
+            },
+            "work": 0,
+            "findings": [
+              {
+                "target": {
+                  "subject": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "entity_id": "A",
+                    "revision": 1
+                  },
+                  "predicate": "correlates_with",
+                  "object": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "entity_id": "B",
+                    "revision": 1
+                  },
+                  "polarity": "affirmed"
+                },
+                "status": "supported",
+                "positive": true,
+                "negative": false,
+                "conflict": false,
+                "supporting_assertions": [
+                  {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "assertion_id": "claim",
+                    "revision": 1
+                  }
+                ],
+                "opposing_assertions": []
+              }
+            ],
+            "steps": [
+              {
+                "fact": {
+                  "subject": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "entity_id": "A",
+                    "revision": 1
+                  },
+                  "predicate": "correlates_with",
+                  "object": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "entity_id": "B",
+                    "revision": 1
+                  },
+                  "polarity": "affirmed"
+                },
+                "depth": 0,
+                "rule_id": null,
+                "premises": [],
+                "assertions": [
+                  {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "assertion_id": "claim",
+                    "revision": 1
+                  }
+                ]
+              }
+            ],
+            "excluded_context": []
+          },
+          "validation": {
+            "checked_at": "2026-10-02T14:34:27.783317Z",
+            "artifacts": [
+              {
+                "artifact_id": "a34b5907196b47fda2234755da0f0a60",
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                },
+                "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 49
+              }
+            ],
+            "sources": [
+              {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                },
+                "source_id": "source",
+                "revision_id": "r1",
+                "raw": {
+                  "artifact_id": "a34b5907196b47fda2234755da0f0a60",
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                  },
+                  "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+                  "media_type": "application/octet-stream",
+                  "schema_ref": {
+                    "schema_id": "fixture.bytes",
+                    "version": "1",
+                    "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                  },
+                  "size_bytes": 49
+                }
+              }
+            ],
+            "conversion_traces": [
+              {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                },
+                "trace_id": "actual-conversion",
+                "sha256": "e117f8d7aff58c95ff66e8d2a4088f1ddf81897271b67e882475ba290d317fdc"
+              }
+            ],
+            "questions": [
+              {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                },
+                "question_id": "question",
+                "revision": 1
+              }
+            ],
+            "evidence_needs": [
+              {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                },
+                "need_id": "need",
+                "revision": 1
+              }
+            ]
+          }
+        }
+      },
+      "denied_after_revocation": {
+        "wire_version": "1",
+        "request": {
+          "wire_version": "1",
+          "request_id": "reason-revoked",
+          "snapshot": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "f15cb395067c43df895d2f7d2fba0729"
+              },
+              "graph_id": "domain"
+            },
+            "revision": 1,
+            "sha256": "7184b50df3f7a60f7d9e111528a56269c88c73c7c5c3ed4ee62b51f42c389a04"
+          },
+          "rule_set": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "f15cb395067c43df895d2f7d2fba0729"
+              },
+              "graph_id": "domain"
+            },
+            "rule_set_id": "fixture",
+            "version": "v1",
+            "sha256": "2a101850d3b6fcd6366d4de769b061bc3e28478b372f1bfaaedd576c4262749c"
+          },
+          "context": {
+            "artifact_id": "a34b5907196b47fda2234755da0f0a60",
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "f15cb395067c43df895d2f7d2fba0729"
+            },
+            "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+            "media_type": "application/octet-stream",
+            "schema_ref": {
+              "schema_id": "fixture.bytes",
+              "version": "1",
+              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+            },
+            "size_bytes": 49
+          },
+          "subject": {
+            "artifact_id": "a34b5907196b47fda2234755da0f0a60",
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "f15cb395067c43df895d2f7d2fba0729"
+            },
+            "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+            "media_type": "application/octet-stream",
+            "schema_ref": {
+              "schema_id": "fixture.bytes",
+              "version": "1",
+              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+            },
+            "size_bytes": 49
+          },
+          "purpose": "fixture_support",
+          "targets": [
+            {
+              "subject": {
+                "graph": {
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                  },
+                  "graph_id": "domain"
+                },
+                "entity_id": "A",
+                "revision": 1
+              },
+              "predicate": "correlates_with",
+              "object": {
+                "graph": {
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "f15cb395067c43df895d2f7d2fba0729"
+                  },
+                  "graph_id": "domain"
+                },
+                "entity_id": "B",
+                "revision": 1
+              },
+              "polarity": "affirmed"
+            }
+          ]
+        },
+        "actor_id": "author",
+        "decision": {
+          "outcome": "failed",
+          "code": "peer_access_denied"
+        }
+      }
+    },
+    "cases": [
+      "accepted_exact_provenance",
+      "hypothesis_not_promoted",
+      "knowledge_restart_exact_receipt_and_snapshot",
+      "research_outage_pending",
+      "research_recovery_exact_retry",
+      "revoked_rights_new_proposal_rejected",
+      "historical_receipt_stable_after_revocation",
+      "published_rebuild_survives_restart",
+      "historical_rebuild_never_consumes_revoked_source_payloads",
+      "reasoning_current_provenance",
+      "reasoning_restart_replay",
+      "reasoning_outage_pending_and_resume",
+      "reasoning_new_consumption_denied_after_revocation"
+    ],
+    "limits": [
+      "Synthetic software proof only",
+      "BP-06.03 independent wheel replacement belongs to V1",
+      "Reasoning publication/receipt delivery and process-death gates remain unproven"
+    ]
+  },
+  "corrected_failure": "PeerUnavailable subclasses KnowledgeError: outage tests caught terminalization; explicit transient branch now preserves pending intent and HTTP503.",
+  "remaining": [
+    "Finalize derivation artifacts and durable owner receipt publication",
+    "Research assessment/policy contracts and independent sufficiency decisions",
+    "Runtime receipt delivery, invalidation and installed replacement"
+  ],
+  "limitations": [
+    "Configured fixture logic does not establish scientific validity",
+    "Reference validation is an observation, not an enduring rights lease",
+    "Threaded SQL race/rollback proof is separate from pending-reasoning process-death proof"
+  ],
+  "final_reasoning_coverage": {
+    "services\\knowledge\\src\\amphora_knowledge\\reasoning\\__init__.py": {
+      "summary": {
+        "covered_lines": 0,
+        "num_statements": 0,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 0,
+        "num_partial_branches": 0,
+        "covered_branches": 0,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": [],
+      "missing_branches": []
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\reasoning\\binding.py": {
+      "summary": {
+        "covered_lines": 44,
+        "num_statements": 44,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 14,
+        "num_partial_branches": 0,
+        "covered_branches": 14,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": [],
+      "missing_branches": []
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\reasoning\\evaluator.py": {
+      "summary": {
+        "covered_lines": 50,
+        "num_statements": 51,
+        "percent_covered": 97.59036144578313,
+        "percent_covered_display": "98",
+        "missing_lines": 1,
+        "excluded_lines": 0,
+        "percent_statements_covered": 98.03921568627452,
+        "percent_statements_covered_display": "98",
+        "num_branches": 32,
+        "num_partial_branches": 1,
+        "covered_branches": 31,
+        "missing_branches": 1,
+        "percent_branches_covered": 96.875,
+        "percent_branches_covered_display": "97"
+      },
+      "missing_lines": [
+        10
+      ],
+      "missing_branches": [
+        [
+          9,
+          10
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\reasoning\\model.py": {
+      "summary": {
+        "covered_lines": 100,
+        "num_statements": 100,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 24,
+        "num_partial_branches": 0,
+        "covered_branches": 24,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": [],
+      "missing_branches": []
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\reasoning\\profile.py": {
+      "summary": {
+        "covered_lines": 57,
+        "num_statements": 59,
+        "percent_covered": 95.40229885057471,
+        "percent_covered_display": "95",
+        "missing_lines": 2,
+        "excluded_lines": 0,
+        "percent_statements_covered": 96.61016949152543,
+        "percent_statements_covered_display": "97",
+        "num_branches": 28,
+        "num_partial_branches": 2,
+        "covered_branches": 26,
+        "missing_branches": 2,
+        "percent_branches_covered": 92.85714285714286,
+        "percent_branches_covered_display": "93"
+      },
+      "missing_lines": [
+        21,
+        40
+      ],
+      "missing_branches": [
+        [
+          20,
+          21
+        ],
+        [
+          39,
+          40
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\reasoning\\projection.py": {
+      "summary": {
+        "covered_lines": 36,
+        "num_statements": 37,
+        "percent_covered": 95.55555555555556,
+        "percent_covered_display": "96",
+        "missing_lines": 1,
+        "excluded_lines": 0,
+        "percent_statements_covered": 97.29729729729729,
+        "percent_statements_covered_display": "97",
+        "num_branches": 8,
+        "num_partial_branches": 1,
+        "covered_branches": 7,
+        "missing_branches": 1,
+        "percent_branches_covered": 87.5,
+        "percent_branches_covered_display": "88"
+      },
+      "missing_lines": [
+        64
+      ],
+      "missing_branches": [
+        [
+          63,
+          64
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\reasoning\\requests.py": {
+      "summary": {
+        "covered_lines": 33,
+        "num_statements": 34,
+        "percent_covered": 94.73684210526316,
+        "percent_covered_display": "95",
+        "missing_lines": 1,
+        "excluded_lines": 0,
+        "percent_statements_covered": 97.05882352941177,
+        "percent_statements_covered_display": "97",
+        "num_branches": 4,
+        "num_partial_branches": 1,
+        "covered_branches": 3,
+        "missing_branches": 1,
+        "percent_branches_covered": 75.0,
+        "percent_branches_covered_display": "75"
+      },
+      "missing_lines": [
+        26
+      ],
+      "missing_branches": [
+        [
+          25,
+          26
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\reasoning\\store.py": {
+      "summary": {
+        "covered_lines": 88,
+        "num_statements": 98,
+        "percent_covered": 84.55882352941177,
+        "percent_covered_display": "85",
+        "missing_lines": 10,
+        "excluded_lines": 0,
+        "percent_statements_covered": 89.79591836734694,
+        "percent_statements_covered_display": "90",
+        "num_branches": 38,
+        "num_partial_branches": 11,
+        "covered_branches": 27,
+        "missing_branches": 11,
+        "percent_branches_covered": 71.05263157894737,
+        "percent_branches_covered_display": "71"
+      },
+      "missing_lines": [
+        37,
+        43,
+        53,
+        55,
+        70,
+        108,
+        115,
+        117,
+        120,
+        125
+      ],
+      "missing_branches": [
+        [
+          34,
+          37
+        ],
+        [
+          42,
+          43
+        ],
+        [
+          50,
+          53
+        ],
+        [
+          54,
+          55
+        ],
+        [
+          69,
+          70
+        ],
+        [
+          82,
+          86
+        ],
+        [
+          107,
+          108
+        ],
+        [
+          114,
+          115
+        ],
+        [
+          116,
+          117
+        ],
+        [
+          119,
+          120
+        ],
+        [
+          124,
+          125
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\reasoning\\workflow.py": {
+      "summary": {
+        "covered_lines": 32,
+        "num_statements": 34,
+        "percent_covered": 90.0,
+        "percent_covered_display": "90",
+        "missing_lines": 2,
+        "excluded_lines": 0,
+        "percent_statements_covered": 94.11764705882354,
+        "percent_statements_covered_display": "94",
+        "num_branches": 6,
+        "num_partial_branches": 2,
+        "covered_branches": 4,
+        "missing_branches": 2,
+        "percent_branches_covered": 66.66666666666667,
+        "percent_branches_covered_display": "67"
+      },
+      "missing_lines": [
+        16,
+        19
+      ],
+      "missing_branches": [
+        [
+          15,
+          16
+        ],
+        [
+          18,
+          19
+        ]
+      ]
+    }
+  }
+}

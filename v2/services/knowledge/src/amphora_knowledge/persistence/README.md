@@ -1,7 +1,7 @@
 # Knowledge Accepted History Persistence
 
 - Status: BP-06.02/B1 complete; private PostgreSQL boundary, authenticated HTTP and actual-peer review implemented.
-- Migration: knowledge_0001 is applied to the retained fixture; knowledge_0002 adds rebuild projections; both applied migrations are immutable.
+- Migration: knowledge_0001 is applied to the retained fixture; knowledge_0002 adds rebuild projections; knowledge_0003 adds sibling reasoning histories; all three applied migrations are immutable.
 - Design: [authoring](../../../../../docs/Architecture/Knowledge/Authoring.md), [activation protocol](../../../../../docs/Audits/BP-06.02_Activation.md).
 
 KnowledgeLedger owns immutable graph profiles, proposal intents, terminal decisions, accepted operations, full snapshots and a mutable current head. It uses only knowledge schema tables. Principal comes from a trusted owning adapter; propose_graph/read_graph grants and exact scope are checked before SQL. Sibling transport and validation modules authenticate bearer tokens and validate actual public Data/Research responses.
@@ -21,3 +21,5 @@ Records.py owns canonical proposal projection, receipt construction and stored p
 Verification: tests/persistence owns11 PostgreSQL cases covering pending/accepted replay, stored profiles, actor/content conflict, concurrent writers, rollback and SQL constraints/grants. Additional rebuild, API and process suites are separately owned. Whole-owner coverage/gaps and exact process identities are maintained in plan evidence, not inferred from SQL tests.
 
 Snapshot reads prefer a published materialization only for the exact requested semantic reference, then fall back to the original immutable snapshot. Both paths verify identity and content hash. knowledge_0002 owns rebuild audit and pointer tables in the sibling rebuild module; knowledge_0001 is unchanged.
+
+knowledge_0003 tables are owned by the [reasoning store](../reasoning/README.md), with exact snapshot/profile foreign keys and immutable intent/decision records. The accepted graph ledger and its first two migrations remain unchanged.

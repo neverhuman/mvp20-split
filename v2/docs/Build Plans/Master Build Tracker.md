@@ -9,11 +9,11 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 primary active; BP-07 through BP-09 queued; BP-05 closed.
-- Last refreshed: `2026-10-01 21:13:35` (America/Chicago).
+- Last refreshed: `2026-10-02 09:41:44` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P5 / BP-06 - Knowledge Evidence and Source Loop.
 - Primary active implementation plan / phase / task: BP-06 -> BP-06.03 / Build / B1.
-- Current task: BP-06.03/B1 public reasoning/assessment contracts and durable receipts; kernel/binding verified.
+- Current task: BP-06.03/B1 derivation artifact publication and durable domain receipts, then independent Research assessment contracts/policy and Runtime integration. B1 remains partial; no user decision pending.
 - Next task: Complete B1 before B2 category/context/supersession policy.
 - Implementation completion: BP-05 closed100% (16/16); BP-06 at33.33% (8/24); BP-07..09 remain0%.
 - Active focus: BP-06.03 B1; child0/4 (0%); parent8/24 (33.33%).
@@ -121,6 +121,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-02 09:39:22 | BP-06.03/B1 Knowledge public/durable boundary verified; child0/4; parent8/24 | [Evidence](../Audits/Evidence/BP-06-Knowledge/Reasoning_Boundary.json);189+62+14 tests |
 | 2026-10-01 21:13:35 | BP-06.03/B1 kernel and input binding verified; child0/4; parent8/24 | [Evidence](../Audits/Evidence/BP-06-Knowledge/Reasoning_Kernel.json);161 owner +14 dev tests |
 | 2026-10-01 21:01:42 | BP-06.02 closed100%; parent33.33%; successor .03 audit next | [Closeout](../Audits/BP-06.02_Knowledge_Replay_Closeout.md);169+39 installed tests |
 | 2026-10-01 20:50:22 | BP-06.02/B3 complete; child75%, parent33.33%; V1 active | [Failure matrix](../Audits/Evidence/BP-06-Knowledge/Failure_Matrix.json);130 owner tests;4 process scenarios |
@@ -145,6 +146,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-30 18:01:56 | BP-06.01/B1 Research ledger partial;0% unchanged | 34 owner tests; installed process replay; [evidence](../Audits/Evidence/BP-06-Acquisition/Research_Ledger.json) |
 | 2026-09-30 17:52:58 | BP-06.01/B1 Research identity partial;0% unchanged | 9 contract/26 domain tests in isolated wheels; [evidence](../Audits/Evidence/BP-06-Acquisition/Research_Identity.json) |
 | 2026-09-30 17:44:31 | BP-06.01/B1 partial; child/parent0% | 15 contract/25 provenance tests in isolated wheels; [evidence](../Audits/Evidence/BP-06-Acquisition/Initial_Boundary.json) |
-| 2026-09-30 17:34:15 | BP-05 closed100% (16/16); .04 closed4/4; BP-06 review0% | [Integrated audit](../Audits/BP-05_Studio_Closeout.md) |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

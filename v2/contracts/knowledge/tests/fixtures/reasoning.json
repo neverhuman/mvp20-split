@@ -1,0 +1,311 @@
+{
+  "profile": {
+    "wire_version": "1",
+    "graph": {
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "knowledge"
+      },
+      "graph_id": "domain"
+    },
+    "rule_set_id": "fixture",
+    "version": "v1",
+    "authority": "synthetic_logical_entailment",
+    "context": {
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "knowledge"
+      },
+      "artifact_id": "context",
+      "sha256": "25a5a709c010d1b37b62b58abc5944713d6e742bd634b04bf4da746772db95d8",
+      "size_bytes": 47,
+      "media_type": "text/plain",
+      "schema_ref": {
+        "schema_id": "fixture.context",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    },
+    "limits": {
+      "depth": 32,
+      "work": 100000,
+      "facts": 8192
+    },
+    "rules": []
+  },
+  "request": {
+    "wire_version": "1",
+    "request_id": "reason-1",
+    "snapshot": {
+      "graph": {
+        "scope": {
+          "tenant_id": "synthetic",
+          "project_id": "knowledge"
+        },
+        "graph_id": "domain"
+      },
+      "revision": 1,
+      "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+    },
+    "rule_set": {
+      "graph": {
+        "scope": {
+          "tenant_id": "synthetic",
+          "project_id": "knowledge"
+        },
+        "graph_id": "domain"
+      },
+      "rule_set_id": "fixture",
+      "version": "v1",
+      "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    },
+    "context": {
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "knowledge"
+      },
+      "artifact_id": "context",
+      "sha256": "25a5a709c010d1b37b62b58abc5944713d6e742bd634b04bf4da746772db95d8",
+      "size_bytes": 47,
+      "media_type": "text/plain",
+      "schema_ref": {
+        "schema_id": "fixture.context",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    },
+    "subject": {
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "knowledge"
+      },
+      "artifact_id": "context",
+      "sha256": "25a5a709c010d1b37b62b58abc5944713d6e742bd634b04bf4da746772db95d8",
+      "size_bytes": 47,
+      "media_type": "text/plain",
+      "schema_ref": {
+        "schema_id": "fixture.context",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    },
+    "purpose": "fixture_support",
+    "targets": [
+      {
+        "subject": {
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "knowledge"
+            },
+            "graph_id": "domain"
+          },
+          "entity_id": "A",
+          "revision": 1
+        },
+        "predicate": "correlates_with",
+        "object": {
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "knowledge"
+            },
+            "graph_id": "domain"
+          },
+          "entity_id": "B",
+          "revision": 1
+        },
+        "polarity": "affirmed"
+      }
+    ]
+  },
+  "result": {
+    "wire_version": "1",
+    "authority": "synthetic_logical_entailment",
+    "request": {
+      "wire_version": "1",
+      "request_id": "reason-1",
+      "snapshot": {
+        "graph": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "knowledge"
+          },
+          "graph_id": "domain"
+        },
+        "revision": 1,
+        "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+      },
+      "rule_set": {
+        "graph": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "knowledge"
+          },
+          "graph_id": "domain"
+        },
+        "rule_set_id": "fixture",
+        "version": "v1",
+        "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+      },
+      "context": {
+        "scope": {
+          "tenant_id": "synthetic",
+          "project_id": "knowledge"
+        },
+        "artifact_id": "context",
+        "sha256": "25a5a709c010d1b37b62b58abc5944713d6e742bd634b04bf4da746772db95d8",
+        "size_bytes": 47,
+        "media_type": "text/plain",
+        "schema_ref": {
+          "schema_id": "fixture.context",
+          "version": "1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      "subject": {
+        "scope": {
+          "tenant_id": "synthetic",
+          "project_id": "knowledge"
+        },
+        "artifact_id": "context",
+        "sha256": "25a5a709c010d1b37b62b58abc5944713d6e742bd634b04bf4da746772db95d8",
+        "size_bytes": 47,
+        "media_type": "text/plain",
+        "schema_ref": {
+          "schema_id": "fixture.context",
+          "version": "1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      "purpose": "fixture_support",
+      "targets": [
+        {
+          "subject": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "knowledge"
+              },
+              "graph_id": "domain"
+            },
+            "entity_id": "A",
+            "revision": 1
+          },
+          "predicate": "correlates_with",
+          "object": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "knowledge"
+              },
+              "graph_id": "domain"
+            },
+            "entity_id": "B",
+            "revision": 1
+          },
+          "polarity": "affirmed"
+        }
+      ]
+    },
+    "outcome": {
+      "status": "complete"
+    },
+    "work": 0,
+    "findings": [
+      {
+        "target": {
+          "subject": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "knowledge"
+              },
+              "graph_id": "domain"
+            },
+            "entity_id": "A",
+            "revision": 1
+          },
+          "predicate": "correlates_with",
+          "object": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "knowledge"
+              },
+              "graph_id": "domain"
+            },
+            "entity_id": "B",
+            "revision": 1
+          },
+          "polarity": "affirmed"
+        },
+        "status": "supported",
+        "positive": true,
+        "negative": false,
+        "conflict": false,
+        "supporting_assertions": [
+          {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "knowledge"
+              },
+              "graph_id": "domain"
+            },
+            "assertion_id": "claim",
+            "revision": 1
+          }
+        ],
+        "opposing_assertions": []
+      }
+    ],
+    "steps": [
+      {
+        "fact": {
+          "subject": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "knowledge"
+              },
+              "graph_id": "domain"
+            },
+            "entity_id": "A",
+            "revision": 1
+          },
+          "predicate": "correlates_with",
+          "object": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "knowledge"
+              },
+              "graph_id": "domain"
+            },
+            "entity_id": "B",
+            "revision": 1
+          },
+          "polarity": "affirmed"
+        },
+        "depth": 0,
+        "rule_id": null,
+        "premises": [],
+        "assertions": [
+          {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "knowledge"
+              },
+              "graph_id": "domain"
+            },
+            "assertion_id": "claim",
+            "revision": 1
+          }
+        ]
+      }
+    ],
+    "excluded_context": []
+  }
+}

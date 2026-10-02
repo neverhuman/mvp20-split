@@ -17,6 +17,8 @@ from amphora_contracts_knowledge import (
     GraphProposalStatus,
     GraphRebuildRequest,
     GraphRebuildStatus,
+    ReasoningRequest,
+    ReasoningStatus,
 )
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
@@ -43,7 +45,7 @@ async def body(request):
     return b"".join(parts)
 
 
-def create_app(workflow, credentials):
+def create_app(workflow, credentials, reasoning=None):
     app = FastAPI(title="Amphora Knowledge structural authoring", docs_url=None, redoc_url=None, openapi_url=None)
     ledger = workflow.ledger
     rebuild = RebuildBoundary(RebuildWorkflow(RebuildStore(ledger.engine)))
@@ -117,5 +119,15 @@ def create_app(workflow, credentials):
     @app.post("/v1/graph-rebuilds/read", response_model=GraphRebuildStatus)
     async def rebuild_status(request: Request):
         return await invoke(request, GraphRebuildRequest, rebuild.read)
+
+    if reasoning is not None:
+        @app.post("/v1/graph-reasoning", response_model=ReasoningStatus)
+        async def reason(request: Request):
+            return await invoke(request, ReasoningRequest, reasoning.submit)
+
+        @app.get("/v1/graphs/{graph_id}/reasoning/{request_id}", response_model=ReasoningStatus)
+        async def reason_status(graph_id: Identifier, request_id: Identifier, request: Request):
+            return await invoke(request, None, lambda principal, graph: reasoning.read(principal, graph, request_id),
+                lambda principal: DomainGraphRef(scope=principal.scope, graph_id=graph_id))
 
     return app

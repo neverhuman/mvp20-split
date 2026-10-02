@@ -1,5 +1,10 @@
 # BP-06 Planning History
 
+## BP-06.03 B1 Knowledge boundary - 2026-10-02 09:39:22
+
+Knowledge0.8.0/contracts0.5.0 configured reasoning, immutable request/profile/results and optional HTTP verified:189 owner +62 contract +14 dev tests; actual Data/Research process provenance, restart, outage/resume and revoked-source checks pass.272 schemas preserve all264 predecessor bytes. knowledge_0003 applied. [Evidence](../Audits/Evidence/BP-06-Knowledge/Reasoning_Boundary.json). An outage fixture caught transient peer failures being terminalized; corrected by handling PeerUnavailable before its KnowledgeError parent. Child0/4 (0%), Build0%, Acceptance0%; parent8/24 (33.33%) because Research/artifact/receipt portions of B1 remain. Applied0003 is immutable.
+
+
 ## BP-06.03 B1 partial - 2026-10-01 21:13:35
 
 Knowledge0.7.0 private bounded reasoning and exact owner-state/context binding verified:161 owner tests including31 reasoning and44 PostgreSQL cases;14 dev tests. Public contracts, durable receipts and owner integration remain B1 work. [Activation](../Audits/BP-06.03_Activation.md); [evidence](../Audits/Evidence/BP-06-Knowledge/Reasoning_Kernel.json). Child0/4, Build0%, Acceptance0%; parent8/24 (33.33%) because full B1 boundary is not yet delivered. Public schemas and applied migrations unchanged.

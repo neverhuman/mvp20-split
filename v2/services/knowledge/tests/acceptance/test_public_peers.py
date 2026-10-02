@@ -126,8 +126,12 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
         research = Owner("amphora_research", research_config, environment, "r"*32, python=research_python)
         owners.append(research)
         config = tmp_path / "knowledge.json"
+        reasoning_profile = {"wire_version": "1", "graph": proposal["graph"], "rule_set_id": "fixture",
+            "version": "v1", "authority": "synthetic_logical_entailment", "context": artifact,
+            "limits": {"depth": 32, "work": 100000, "facts": 8192}, "rules": []}
         config.write_text(json.dumps({"database_url_env": "KNOWLEDGE_DATABASE", "principals": [
-            {"token_env": "KNOWLEDGE_TOKEN", "actor_id": "author", "scope": scope, "actions": ["read_graph", "propose_graph", "rebuild_graph"]}],
+            {"token_env": "KNOWLEDGE_TOKEN", "actor_id": "author", "scope": scope, "actions": ["read_graph", "propose_graph", "rebuild_graph", "reason_graph"]}],
+            "reasoning": [reasoning_profile],
             "vocabulary": case.vocabulary.record.model_dump(mode="json"), "policy": case.policy.definition(),
             "data": {"endpoint": data.endpoint, "token_env": "DATA_READ_TOKEN"},
             "research": {"endpoint": research.endpoint, "token_env": "RESEARCH_TOKEN"}}))
@@ -141,6 +145,16 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
         assert original_snapshot["content"]["assertions"][0]["research_links"][0]["need"] == need["reference"]
         rebuild_query = {"wire_version": "1", "graph": proposal["graph"], "rebuild_id": "before-restart"}
         rebuilt = knowledge.request("/v1/graph-rebuilds", rebuild_query)
+        claim = proposal["operations"][2]["assertion"]
+        reasoning_query = {"wire_version": "1", "request_id": "reason-initial", "snapshot": head["snapshot"],
+            "rule_set": {"graph": proposal["graph"], "rule_set_id": "fixture", "version": "v1",
+                "sha256": hashlib.sha256(json.dumps(reasoning_profile, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()).hexdigest()},
+            "context": artifact, "subject": artifact, "purpose": "fixture_support",
+            "targets": [{key: claim[key] for key in ("subject", "predicate", "object", "polarity")}]}
+        reasoned = knowledge.request("/v1/graph-reasoning", reasoning_query)
+        assert reasoned["decision"]["outcome"] == "evaluated"
+        assert reasoned["decision"]["result"]["authority"] == "synthetic_logical_entailment"
+        assert reasoned["decision"]["result"]["findings"][0]["supporting_assertions"] == [claim["reference"]]
         assert rebuilt["result"]["outcome"] == "published" and rebuilt["result"]["head"] == head
         knowledge.stop()
         knowledge = Owner("amphora_knowledge", config, environment, "k"*32,
@@ -150,6 +164,8 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
         assert knowledge.request("/v1/graph-snapshots/read", head["snapshot"]) == original_snapshot
         assert knowledge.request("/v1/graph-rebuilds/read", rebuild_query) == rebuilt
         assert knowledge.request("/v1/graph-rebuilds", rebuild_query) == rebuilt
+        assert knowledge.request("/v1/graph-reasoning", reasoning_query) == reasoned
+        assert knowledge.request(f"/v1/graphs/{proposal['graph']['graph_id']}/reasoning/reason-initial") == reasoned
         change = knowledge.request("/v1/graph-changes/read", head["change"])
         assert change["content"]["actor_id"] == "author"
         assert change["content"]["validation"]["conversion_traces"] == [trace]
@@ -167,6 +183,11 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
                     regraph(child)
         regraph(pending)
         research.stop()
+        pending_reason = dict(reasoning_query, request_id="reason-pending")
+        with pytest.raises(urllib.error.HTTPError) as reasoning_error:
+            knowledge.request("/v1/graph-reasoning", pending_reason)
+        assert reasoning_error.value.code == 503
+        assert knowledge.request(f"/v1/graphs/{proposal['graph']['graph_id']}/reasoning/reason-pending")["decision"] is None
         with pytest.raises(urllib.error.HTTPError) as error:
             knowledge.request("/v1/graph-proposals", pending)
         assert error.value.code == 503
@@ -175,6 +196,8 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
             port=research.port, python=research_python)
         owners.append(research)
         assert knowledge.request("/v1/graph-proposals", pending)["decision"]["outcome"] == "accepted"
+        resumed_reason = knowledge.request("/v1/graph-reasoning", pending_reason)
+        assert resumed_reason["decision"]["outcome"] == "evaluated"
         # Current source rights gate new observations; old accepted receipt is historical.
         revoked = copy.deepcopy(rights)
         revoked.update(supersedes=rights["reference"], status="revoked", allowed_uses=[])
@@ -187,17 +210,23 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
         assert result["decision"]["findings"][0]["code"] == "peer_access_denied"
         assert knowledge.request("/v1/graph-heads/read", proposal["graph"]) == head
         assert knowledge.request("/v1/graph-proposals", proposal) == accepted
+        denied_reason = knowledge.request("/v1/graph-reasoning", dict(reasoning_query, request_id="reason-revoked"))
+        assert denied_reason["decision"] == {"outcome": "failed", "code": "peer_access_denied"}
+        assert knowledge.request("/v1/graph-reasoning", reasoning_query) == reasoned
         rebuilt_after_revocation = knowledge.request("/v1/graph-rebuilds", dict(rebuild_query, rebuild_id="after-revocation"))
         assert rebuilt_after_revocation["result"]["head"] == head
         evidence = {"timestamp": datetime.now(ZoneInfo("America/Chicago")).strftime("%Y-%m-%d %H:%M:%S"),
             "tier": "actual PostgreSQL and three owner HTTP processes", "graph": proposal["graph"],
             "source": source["reference"], "trace": trace, "head": head,
             "question": question["reference"], "need": need["reference"],
+            "reasoning": {"initial": reasoned, "resumed_after_outage": resumed_reason, "denied_after_revocation": denied_reason},
             "cases": ["accepted_exact_provenance", "hypothesis_not_promoted", "knowledge_restart_exact_receipt_and_snapshot",
                 "research_outage_pending", "research_recovery_exact_retry", "revoked_rights_new_proposal_rejected",
                 "historical_receipt_stable_after_revocation", "published_rebuild_survives_restart",
-                "historical_rebuild_never_consumes_revoked_source_payloads"],
-            "limits": ["Synthetic software proof only", "Independent wheel replacement belongs to V1", "No mid-build kill proof yet"]}
+                "historical_rebuild_never_consumes_revoked_source_payloads", "reasoning_current_provenance",
+                "reasoning_restart_replay", "reasoning_outage_pending_and_resume", "reasoning_new_consumption_denied_after_revocation"],
+            "limits": ["Synthetic software proof only", "BP-06.03 independent wheel replacement belongs to V1",
+                "Reasoning publication/receipt delivery and process-death gates remain unproven"]}
         destination = Path(os.environ.get("AMPHORA_KNOWLEDGE_ACCEPTANCE_EVIDENCE", str(tmp_path / "evidence.json")))
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(json.dumps(evidence, indent=2) + "\n", encoding="utf-8")

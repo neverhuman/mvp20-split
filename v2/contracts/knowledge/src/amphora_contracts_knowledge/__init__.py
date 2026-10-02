@@ -20,6 +20,22 @@ from .operations import (
     ReviseEntityContext,
 )
 from .profiles import GraphAuthoringProfile
+from .reasoning import (
+    CompleteReasoning,
+    DerivationStep,
+    EvaluatedReasoning,
+    FailedReasoning,
+    GroundLiteral,
+    GroundRule,
+    IncompleteReasoning,
+    ReasoningFinding,
+    ReasoningLimits,
+    ReasoningRequest,
+    ReasoningResult,
+    ReasoningRuleSet,
+    ReasoningStatus,
+    RuleSetRef,
+)
 from .rebuilds import GraphRebuildRequest, GraphRebuildStatus, PublishedRebuild, UnpublishedRebuild
 from .records import (
     AssertionRetraction,
@@ -52,4 +68,7 @@ __all__ = [
     "MergeEntities", "PredicateDefinition", "QuestionEvidenceLink", "ReferenceValidation",
     "RetractAssertion", "ReviseEntityContext", "StructuralPolicyRef", "VocabularyRef",
     "GraphRebuildRequest", "GraphRebuildStatus", "PublishedRebuild", "UnpublishedRebuild",
+    "CompleteReasoning", "DerivationStep", "GroundLiteral", "GroundRule", "IncompleteReasoning",
+    "ReasoningFinding", "ReasoningLimits", "ReasoningRequest", "ReasoningResult", "ReasoningRuleSet", "RuleSetRef",
+    "EvaluatedReasoning", "FailedReasoning", "ReasoningStatus",
 ]

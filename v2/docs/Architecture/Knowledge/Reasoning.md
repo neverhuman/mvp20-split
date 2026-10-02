@@ -1,8 +1,8 @@
 # Reasoning and Evidence Authority
 
-- Design status: private finite ground-rule kernel and exact owner-state binding implemented in BP-06.03/B1; public assessment/receipt boundary and scientific acceptance pending
+- Design status: Configured finite reasoning, exact owner-state binding, durable result history and optional HTTP implemented in BP-06.03/B1; artifact publication, Research assessment and domain receipts remain pending.
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
-- Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
+- Last reviewed: `2026-10-02 09:39:22` (America/Chicago)
 - Parent: [Domain overview](Knowledge_Architecture.md)
 - Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#neuro-symbolic-reasoning-and-evolutionary-search)
 

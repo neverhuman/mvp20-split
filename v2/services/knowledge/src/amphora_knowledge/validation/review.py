@@ -16,7 +16,16 @@ class ReferenceReviewer:
 
     def review(self, proposal):
         references = ReferencedInputs.collect(proposal)
-        session = _Review(self.data, self.research, proposal.graph.scope, ReadBudget())
+        assertions = tuple(operation.assertion if isinstance(operation, AddAssertion) else operation.replacement
+            for operation in proposal.operations if isinstance(operation, (AddAssertion, CorrectAssertion)))
+        return self._review(proposal.graph, references, (proposal.grounding,), assertions)
+
+    def review_reasoning(self, request, assertions):
+        references = ReferencedInputs.collect_records(request.snapshot.graph, (request, assertions))
+        return self._review(request.snapshot.graph, references, (), assertions)
+
+    def _review(self, graph, references, groundings, assertions):
+        session = _Review(self.data, self.research, graph.scope, ReadBudget())
         for ref in references.artifacts:
             session.artifact(ref)
         for ref in references.sources:
@@ -26,19 +35,17 @@ class ReferenceReviewer:
         traces = {ref: session.trace(ref) for ref in references.traces}
         questions = {ref: session.question(ref) for ref in references.questions}
         needs = {ref: session.need(ref) for ref in references.needs}
-        groundings = [proposal.grounding]
-        for operation in proposal.operations:
-            if isinstance(operation, (AddAssertion, CorrectAssertion)):
-                assertion = operation.assertion if isinstance(operation, AddAssertion) else operation.replacement
-                groundings.append(assertion.grounding)
-                for link in assertion.research_links:
-                    question = questions[link.question]
-                    if link.need is not None:
-                        need = needs[link.need]
-                        if need.question != question.reference:
-                            raise KnowledgeError("need_question_mismatch")
-                        if not set(need.criterion_ids) <= {item.criterion_id for item in question.criteria}:
-                            raise KnowledgeError("need_criterion_mismatch")
+        groundings = list(groundings)
+        for assertion in assertions:
+            groundings.append(assertion.grounding)
+            for link in assertion.research_links:
+                question = questions[link.question]
+                if link.need is not None:
+                    need = needs[link.need]
+                    if need.question != question.reference:
+                        raise KnowledgeError("need_question_mismatch")
+                    if not set(need.criterion_ids) <= {item.criterion_id for item in question.criteria}:
+                        raise KnowledgeError("need_criterion_mismatch")
         for grounding in groundings:
             local = [traces[ref] for ref in grounding.conversion_traces]
             for span in grounding.spans:

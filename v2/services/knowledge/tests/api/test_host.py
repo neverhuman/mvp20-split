@@ -54,7 +54,9 @@ def test_migration_role_cannot_host(configuration, knowledge_database, monkeypat
     lambda c: c["principals"][0].update(token_env="missing"),
     lambda c: c["data"].update(endpoint="http://example.org:8080"),
     lambda c: c["policy"].update(authority="scientific"),
-], ids=["extra", "empty", "action", "actor", "secret", "endpoint", "authority"])
+    lambda c: c.update(reasoning=None),
+    lambda c: c.update(reasoning={}),
+], ids=["extra", "empty", "action", "actor", "secret", "endpoint", "authority", "reasoning-null", "reasoning-object"])
 def test_invalid_configuration_fails_before_connecting(configuration, mutation):
     mutation(configuration)
     with pytest.raises(ValueError):

@@ -3,12 +3,12 @@
 ## Current Checkpoint
 
 
-- Last refreshed: `2026-10-01 21:13:35` (America/Chicago).
+- Last refreshed: `2026-10-02 09:41:44` (America/Chicago).
 - Active plan: BP-06.03 / Build / B1; child0/4 (0%); parent8/24 (33.33%). .01/.02 closed100%.
-- Latest checkpoint: Knowledge0.7.0 private bounded reasoning and exact owner-state/context binding verified:161 owner tests including31 reasoning and44 PostgreSQL cases;14 dev tests. Public contracts, durable receipts and owner integration remain B1 work. BP-06.02 closed/pusheda7aacb3. See Reasoning_Kernel.json; Git owns subsequent checkpoint identity.
-- Next: BP-06.03/B1: additive public reasoning/assessment contracts and owner-configured rule policy, then persistence/transport and artifact/receipt publication. Kernel/binding tests already pass; no user decision pending. knowledge_0001/0002 APPLIED and immutable. No public reasoning endpoint exists yet.
+- Latest checkpoint: Knowledge0.8.0/contracts0.5.0 configured reasoning, immutable request/profile/results and optional HTTP verified:189 owner baseline +58 final reasoning +62 contract +14 dev tests; actual Data/Research process provenance, restart, outage/resume and revoked-source checks pass.272 schemas preserve all264 predecessor bytes. knowledge_0003 applied. See Reasoning_Boundary.json; Git owns commit identity.
+- Next: BP-06.03/B1 derivation artifact publication and durable domain receipts, then independent Research assessment contracts/policy and Runtime integration. B1 remains partial; no user decision pending. knowledge_0001/0002/0003 APPLIED and immutable.
 - Recovery: only verified pending original receipts enable explicit same-identity resume. Unknown transport outcome first reconciles; collision/denial/terminal ambiguity never gets a fresh ID. Newer local edits survive recovery. Cancellation is operational and retains explicit uncertain-effects wording.
-- Runtime0.20.0, Commands0.2.0, graph-runtime0.11.0, campaigns0.4.1;264 public schemas; all260 predecessor schemas preserved. Numeric v2 only save/admit; other families/unmarked bytes v1. Input NumberValue remains decimal string. Registry eligibility synthetic-only observations are not reservations/atomic revocation. No scientific or target-host deployment claim.
+- Runtime0.20.0, Commands0.2.0, graph-runtime0.11.0, campaigns0.4.1;272 public schemas; all264 predecessor schemas preserved. Numeric v2 only save/admit; other families/unmarked bytes v1. Input NumberValue remains decimal string. Registry eligibility synthetic-only observations are not reservations/atomic revocation. No scientific or target-host deployment claim.
 - Tooling: mapped v2/dev/.venv/Scripts/python.exe, PYTHONUTF8=1; pytest/ruff --config equivalents use v2/dev/pyproject.toml. Git always -c safe.directory=//DesktopNAS/Code/mvp20-split. Never reset retained PG or run parallel campaign-admission suites. No v1/JARVIS/subagents. Use Path.absolute for repo tooling; Path.resolve maps Z to UNC and breaks uv source identity.
 - Integration: solver images .test-results/tool-images/bp0503-authoring-20260930/manifest.json for verify_studio_integration --authoring. Standard images bp0503-standard-20260930 for foundation optional worker gate. Do not mix profiles.
 
