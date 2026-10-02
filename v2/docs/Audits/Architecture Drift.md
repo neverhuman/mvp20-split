@@ -1,9 +1,9 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-02 15:22:13` (America/Chicago).
+- Last refreshed: `2026-10-02 16:19:17` (America/Chicago).
 - Scope: v2 design/implementation alignment
-- Active focus: BP-06.03/B1 Research assessment after verified Knowledge publication/replacement/process recovery. No child closeout yet.
+- Active focus: BP-06.03/B1.06 Research contracts; canonical B1 milestones5/10 (50%), child12.50%, parent35.42%. Closed gates remain0/4 and8/24; no child closeout or acceptance claim. Reuse verified Knowledge recovery/replacement evidence.
 - Next gate: B1 complete Knowledge/Research owner boundaries and receipts.
 
 ## Active Findings

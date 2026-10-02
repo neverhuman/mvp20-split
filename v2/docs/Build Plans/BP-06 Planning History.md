@@ -1,5 +1,15 @@
 # BP-06 Planning History
 
+## Owner-approved progress accounting correction - 2026-10-02 16:18:15
+
+User approved decomposing B1 and separating implementation progress from gate closure. The former33.33% counted only8 closed deliveries of24. BP-06.03 now owns ten bounded B1 milestones, five evidenced complete and five remaining. Keeping the existing delivery weights yields B1=50%, Build=16.67%, child=12.50%, parent=(8+0.5)/24=35.42%. Closed gates remain child0/4,parent8/24; acceptance0% for the active child. This checkpoint changes accounting, not software or acceptance evidence. Counts are explicitly equal milestone units, not estimates of hours. DER-01 stays closed without separate parent credit.
+
+Research wire contracts B1.06 are next, followed by authenticated resolution, persistence, receipt publication and integrated HTTP. Retain Knowledge crash/replacement evidence for applicable later gates; do not broaden it absent a concrete remaining obligation. No tests/gates are waived, completed phases reopened or new functional scope added. Historical percentages below remain as recorded under the prior basis.
+
+MBT checkpoint rotated to keep25 rows:
+
+| 2026-10-01 18:51:58 | BP-06.02/B1 contracts partial; child0%, parent16.67% unchanged | [Knowledge wire proof](../Audits/Evidence/BP-06-Knowledge/Contracts.json);44 scoped/30 isolated tests;236 schemas preserved |
+
 ## B1 publication contracts and values - 2026-10-02 12:34:14
 
 Contracts0.6.0 add request/status and a pinned self-contained result payload schema. Focused Knowledge values bind original actor/result and complete fresh inputs before any side effect.100 tests pass;286 schemas preserve282 predecessor bytes. [Evidence](../Audits/Evidence/BP-06-Knowledge/Publication_Contracts.json). No store/HTTP/migration yet; durable intents/attempts/leases next. Child0/4 and parent8/24 unchanged.
