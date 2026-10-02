@@ -1,6 +1,6 @@
 # Knowledge reasoning publication
 
-- Status: B1 request/result/input values and additive wire contracts implemented; store, HTTP and orchestration pending.
+- Status: B1 values, additive wire contracts and immutable intent/fenced lease store implemented; durable payload/attempts, HTTP and orchestration pending.
 - Owner: Knowledge; [implementation design](../../../../../docs/Build%20Plans/BP-06/BP-06.03%20Publication%20and%20receipt%20design.md).
 - Architecture: [Knowledge](../../../../../docs/Architecture/Knowledge/Knowledge_Architecture.md).
 
@@ -10,8 +10,12 @@
 
 Contracts0.6.0 provide a self-contained reasoning-result payload schema profile for Data's trusted configuration. Its identifier/digest is distinct from the existing schema-export URN envelope; the actual result shape and all prior public schema bytes remain unchanged. The profile contains no URI/base override or external reference. Deployment must explicitly install the pinned schema; a publication request cannot install a validator.
 
-No database tables, upload calls, owner receipt policy or HTTP publication routes exist yet in this module. Applied Knowledge migrations0001..0003 remain immutable. The next layer owns a forward migration, durable attempts/leases, receipt-first recovery and bounded uncertain streams under the linked design. Runtime owns retention and execution acceptance; Research owns scientific sufficiency. No peer implementation imports or SQL are permitted.
+knowledge_0004 owns immutable reasoning_publications and mutable publication_leases. PublicationStore.begin binds exact stored terminal result, original scoped actor, configured publisher/issuer and payload schema digest; publication authority never manufactures read_graph/reason_graph grants. Intent/lease registration is atomic. Different intent bytes or actor conflict; publisher/schema/result drift conflicts. Publisher credentials are never stored. Applied Knowledge migrations0001..0004 are immutable. The next forward migration owns durable reviewed payload and attempts; no upload calls, receipt policy or HTTP publication routes exist yet. Runtime owns retention and execution acceptance; Research owns scientific sufficiency. No peer implementation imports or SQL are permitted.
 
 Tests belong to `tests/publication`; run `dev/run_tests.py --module knowledge --area publication --coverage`. Pure value/contract tests do not establish durable publication, failure recovery or independent replacement. Module replacement must preserve exact scoped bindings, canonical payload/profile hashes, input completeness and explicit uncertainty.
 
 Verification checkpoint:11 pure owner tests and75 contracts plus14 dev tests pass. Payload module coverage56/60 statements and13/16 branches; unexercised paths are SQL key projection, failed/mismatched stored decisions and the16 MiB size guard. Durable state/failure and installed-owner acceptance remain required before claiming publication.
+
+PublicationStore.acquire issues a fresh holder UUID and monotonically increasing fence under a database-clock lease bounded1..300 seconds. One concurrent claimant wins; a busy lease returns None. Renew/release and composed fenced writes lock the lease row before checking the database clock, holder and fence. Expired/replaced holders cannot renew or commit a new owner transition. The transaction context is internal and must contain only short SQL, never peer I/O. This is owner-state fencing, not a cross-service lock or network exactly-once guarantee. Future upload recovery must preserve the same external command identities. Service grants prohibit intent mutation/deletion and lease-key mutation/deletion.
+
+2026-10-02 12:53:49:110 publication/reasoning/persistence/dev tests pass, including16 new PostgreSQL cases (duplicate intent/claim races, expired waiter, actor/result conflict, rollback and restricted grants);27 publication tests run with coverage. [Store evidence](../../../../../docs/Audits/Evidence/BP-06-Knowledge/Publication_Store.json) records coverage gaps. Independent installed publication/recovery proof remains pending.

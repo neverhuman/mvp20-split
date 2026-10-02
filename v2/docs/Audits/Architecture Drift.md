@@ -1,9 +1,9 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-02 12:04:52` (America/Chicago).
+- Last refreshed: `2026-10-02 12:53:49` (America/Chicago).
 - Scope: v2 design/implementation alignment
-- Active focus: BP-06.03/B1 Knowledge publication and complete consumed-input provenance. DER-01 closed/aligned.
+- Active focus: BP-06.03/B1 Knowledge publication payload/attempt recovery after verified complete inputs and durable intent/leases. DER-01 closed/aligned.
 - Next gate: B1 complete Knowledge/Research owner boundaries and receipts.
 
 ## Active Findings

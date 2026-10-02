@@ -3,10 +3,10 @@
 ## Current Checkpoint
 
 
-- Last refreshed: `2026-10-02 12:34:14` (America/Chicago).
+- Last refreshed: `2026-10-02 12:53:49` (America/Chicago).
 - Active plan: BP-06.03/Build/B1, child0/4; parent8/24 (33.33%). DER-01 accepted/closed4/4 (100%); resume Knowledge publication/receipts.
-- Latest checkpoint: 2b5d333 pushed complete consumed-input projection. Publication contracts0.6.0 and pure owner payload values now pass100 tests (75 contracts,11 values,14 dev);286 schemas preserve282 predecessors. Knowledge0.9.0; no new migration/HTTP/store for publication yet. Evidence: Publication_Contracts.json.
-- Next: B1 durable publication intent/attempt/lease store and forward migration after knowledge_0003; follow BP-06.03 Publication and receipt design.md. Then production Knowledge Data SDK workflow/owner receipts, Research assessment and Runtime waits. Freshly review old pre0.9 results before declaring inputs. knowledge_0001..0003 and artifact_0001..0007 immutable; no processes running or owner decision pending.
+- Latest checkpoint: 44830c8 pushed publication contracts/values. Knowledge0.10.0 now has immutable publication intent and DB-clock fenced leases;110 scoped tests plus27 publication coverage cases pass. knowledge_0004 applied/immutable;286 schemas unchanged. Evidence: Publication_Store.json. No production upload workflow yet.
+- Next: B1 persist freshly reviewed payload and bounded upload-attempt transitions in a forward migration after knowledge_0004, then SDK publication/recovery and logical receipts. Follow BP-06.03 Publication and receipt design.md. Research assessment and Runtime waits follow. No owner decision pending; no running processes.
 - Recovery: only verified pending original receipts enable explicit same-identity resume. Unknown transport outcome first reconciles; collision/denial/terminal ambiguity never gets a fresh ID. Newer local edits survive recovery. Cancellation is operational and retains explicit uncertain-effects wording.
 - Runtime0.20.0, Commands0.2.0, graph-runtime0.11.0, campaigns0.4.1;286 public schemas; all282 publication-contract predecessors preserved. Numeric v2 only save/admit; other families/unmarked bytes v1. Input NumberValue remains decimal string. Registry eligibility synthetic-only observations are not reservations/atomic revocation. No scientific or target-host deployment claim.
 - Tooling: mapped v2/dev/.venv/Scripts/python.exe, PYTHONUTF8=1; pytest/ruff --config equivalents use v2/dev/pyproject.toml. Git always -c safe.directory=//DesktopNAS/Code/mvp20-split. Never reset retained PG or run parallel campaign-admission suites. No v1/JARVIS/subagents. Use Path.absolute for repo tooling; Path.resolve maps Z to UNC and breaks uv source identity.
