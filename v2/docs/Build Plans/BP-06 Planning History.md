@@ -1,5 +1,9 @@
 # BP-06 Planning History
 
+## DER-01 approved / D1 complete - 2026-10-02 11:14:56
+
+User continuation authorizes the bounded Data-owned extension. D1 contracts/design complete1/4 (25%); D2 transactions next. Artifact contracts0.2.0,282 schemas preserve all272 predecessors; fixed old/new command fixtures and92 focused contract/domain/dev tests pass. No migration applied or HTTP publication enabled. BP-06.03 stays0/4; parent8/24 (33.33%).
+
 ## DER-01 prerequisite decision - 2026-10-02 09:54:48
 
 After50faa37, a focused actual-PostgreSQL probe showed that an unassociated equal-byte upload retains its legacy read policy after the registered source is revoked. This confirms a missing arbitrary-transform publication seam, not a failure of existing retained-conversion lineage. [DER-01](BP-06/BP-06.03%20Derived%20publication%20prerequisite.md) proposes a Data-owned versioned protocol, atomic catalog/lineage finalization and rights fencing before Knowledge artifact/receipt delivery. Protocol implementation awaits owner direction under AGENTS material-scope rules. One focused test passed; no production Data behavior changed. Parent8/24 and child0/4 unchanged.

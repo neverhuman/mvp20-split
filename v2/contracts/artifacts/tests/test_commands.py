@@ -17,6 +17,8 @@ def test_command_schema_roundtrip_and_family_binding(case):
     Draft202012Validator.check_schema(schema)
     Draft202012Validator(schema).validate(case["command"]["payload"])
     result = contracts.parse_command(case["family"], json.dumps(case["command"]))
+    assert result.canonical_bytes == case["canonical"].encode()
+    assert result.sha256 == case["sha256"]
     assert contracts.parse_command(case["family"], result.canonical_bytes) == result
     changed = copy.deepcopy(case["command"])
     changed["identity"]["command_family"] = "wrong.operation"

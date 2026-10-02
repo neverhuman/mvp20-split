@@ -1,0 +1,51 @@
+{
+  "command": {
+    "identity": {
+      "actor_id": "producer-1",
+      "command_id": "derive-1",
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "demo"
+      },
+      "command_family": "artifacts.begin_derived_upload"
+    },
+    "payload": {
+      "content": {
+        "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "size_bytes": 42,
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "synthetic.value",
+          "version": "1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      "declaration": {
+        "transformation": {
+          "transformation_id": "synthetic.rules",
+          "version": "1",
+          "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+        },
+        "inputs": [
+          {
+            "artifact_id": "input-1",
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "demo"
+            },
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "size_bytes": 42,
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "synthetic.value",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "canonical": "{\"identity\":{\"actor_id\":\"producer-1\",\"command_family\":\"artifacts.begin_derived_upload\",\"command_id\":\"derive-1\",\"schema_version\":\"1\",\"scope\":{\"project_id\":\"demo\",\"tenant_id\":\"internal\"}},\"payload\":{\"content\":{\"media_type\":\"application/json\",\"schema_ref\":{\"schema_id\":\"synthetic.value\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"version\":\"1\"},\"sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"size_bytes\":42},\"declaration\":{\"inputs\":[{\"artifact_id\":\"input-1\",\"media_type\":\"application/json\",\"schema_ref\":{\"schema_id\":\"synthetic.value\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"version\":\"1\"},\"scope\":{\"project_id\":\"demo\",\"tenant_id\":\"internal\"},\"sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"size_bytes\":42}],\"schema_version\":\"1\",\"transformation\":{\"sha256\":\"cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\",\"transformation_id\":\"synthetic.rules\",\"version\":\"1\"}}}}",
+  "sha256": "79529f210c2dff861e458f98aa9ca73a0afeff96c692b6805a85c4e9adb55109"
+}

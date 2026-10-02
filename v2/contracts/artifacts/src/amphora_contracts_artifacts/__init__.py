@@ -4,6 +4,15 @@ import json
 
 from amphora_contracts_commands import CanonicalCommand, CommandEncodingError
 
+from .derivations import (
+    BeginDerivedUpload,
+    DerivationDeclaration,
+    DerivationReceipt,
+    DerivedUploadAccepted,
+    DerivedUploadObservation,
+    DerivedUploadReceipt,
+    TransformationDescriptor,
+)
 from .models import (
     BeginUpload,
     CompletionIntentBinding,
@@ -26,6 +35,7 @@ from .models import (
 )
 
 OPERATIONS = {
+    "artifacts.begin_derived_upload": BeginDerivedUpload,
     "artifacts.begin_upload": BeginUpload,
     "artifacts.finalize": FinalizeArtifact,
     "artifacts.reserve": ReserveArtifact,
@@ -51,8 +61,12 @@ def parse_command(family: str, raw: str | bytes) -> CanonicalCommand:
 
 __all__ = ['BeginUpload', 'CompletionIntentBinding', 'ConfirmRetention', 'ContentDescriptor', 'FinalizeArtifact', 'FinalizedReceipt', 'ReconcileReservation', 'ReservationBinding', 'ReservationReceipt', 'ReserveArtifact', 'RuntimeOutcome', 'UploadContentReceipt', 'UploadReceipt', 'parse_command']
 __all__ += ['PublicationObservation', 'PublicationPending', 'PublicationRejected', 'UploadAccepted', 'FinalizationAccepted']
+__all__ += ['BeginDerivedUpload', 'DerivationDeclaration', 'DerivationReceipt', 'DerivedUploadAccepted',
+            'DerivedUploadObservation', 'DerivedUploadReceipt', 'TransformationDescriptor']
 
 
 def _references(family, payload):
+    if family == "artifacts.begin_derived_upload":
+        yield from payload["declaration"]["inputs"]
     if family == "artifacts.reserve":
         yield payload["artifact"]

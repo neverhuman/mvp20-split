@@ -24,7 +24,9 @@
           }
         }
       }
-    }
+    },
+    "canonical": "{\"identity\":{\"actor_id\":\"worker-1\",\"command_family\":\"artifacts.begin_upload\",\"command_id\":\"cmd-1\",\"schema_version\":\"1\",\"scope\":{\"project_id\":\"demo\",\"tenant_id\":\"internal\"}},\"payload\":{\"content\":{\"media_type\":\"application/json\",\"schema_ref\":{\"schema_id\":\"synthetic.value\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"version\":\"1\"},\"sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"size_bytes\":42}}}",
+    "sha256": "b10dad7a630136f46a1258e6d1daaff956994b85d6139658f606268a6f6c9ba2"
   },
   {
     "family": "artifacts.finalize",
@@ -52,7 +54,9 @@
           }
         }
       }
-    }
+    },
+    "canonical": "{\"identity\":{\"actor_id\":\"worker-1\",\"command_family\":\"artifacts.finalize\",\"command_id\":\"cmd-1\",\"schema_version\":\"1\",\"scope\":{\"project_id\":\"demo\",\"tenant_id\":\"internal\"}},\"payload\":{\"content\":{\"media_type\":\"application/json\",\"schema_ref\":{\"schema_id\":\"synthetic.value\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"version\":\"1\"},\"sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"size_bytes\":42},\"upload_id\":\"upload-1\"}}",
+    "sha256": "d57d4501390fd9411279d165eeda4e955cb9d5987292c5727e141779b015c775"
   },
   {
     "family": "artifacts.reserve",
@@ -90,7 +94,9 @@
           "output_binding": "output-1"
         }
       }
-    }
+    },
+    "canonical": "{\"identity\":{\"actor_id\":\"worker-1\",\"command_family\":\"artifacts.reserve\",\"command_id\":\"cmd-1\",\"schema_version\":\"1\",\"scope\":{\"project_id\":\"demo\",\"tenant_id\":\"internal\"}},\"payload\":{\"artifact\":{\"artifact_id\":\"input-1\",\"media_type\":\"application/json\",\"schema_ref\":{\"schema_id\":\"synthetic.value\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"version\":\"1\"},\"scope\":{\"project_id\":\"demo\",\"tenant_id\":\"internal\"},\"sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"size_bytes\":42},\"intent\":{\"intent_id\":\"intent-1\",\"output_binding\":\"output-1\",\"runtime_owner\":\"campaign-runtime\",\"semantic_completion_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}}}",
+    "sha256": "674c76b6f478efb8ab58fb853c71012ad5d1e0869a2dba2f59b6658a5086ef08"
   },
   {
     "family": "artifacts.confirm",
@@ -110,7 +116,9 @@
         "intent_id": "intent-1",
         "runtime_receipt_id": "receipt-1"
       }
-    }
+    },
+    "canonical": "{\"identity\":{\"actor_id\":\"worker-1\",\"command_family\":\"artifacts.confirm\",\"command_id\":\"cmd-1\",\"schema_version\":\"1\",\"scope\":{\"project_id\":\"demo\",\"tenant_id\":\"internal\"}},\"payload\":{\"intent_id\":\"intent-1\",\"reservation_id\":\"reserve-1\",\"runtime_receipt_id\":\"receipt-1\"}}",
+    "sha256": "6b78492fc73da7d1a91bc7d47ff77d374676bf89799a1c9590c921932b5cae3d"
   },
   {
     "family": "artifacts.reconcile",
@@ -128,6 +136,8 @@
       "payload": {
         "reservation_id": "reserve-1"
       }
-    }
+    },
+    "canonical": "{\"identity\":{\"actor_id\":\"worker-1\",\"command_family\":\"artifacts.reconcile\",\"command_id\":\"cmd-1\",\"schema_version\":\"1\",\"scope\":{\"project_id\":\"demo\",\"tenant_id\":\"internal\"}},\"payload\":{\"reservation_id\":\"reserve-1\"}}",
+    "sha256": "f252da789ad4877220b6a70604d13490ac310fe6a4714205430bab6671f57af2"
   }
 ]

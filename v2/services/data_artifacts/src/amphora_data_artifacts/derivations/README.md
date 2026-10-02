@@ -1,0 +1,15 @@
+# Derived publication boundary
+
+- Status: DER-01/D1 domain values and additive wire contract; persistence/HTTP pending D2.
+- Owner: Data/Artifacts; [plan](../../../../../docs/Build%20Plans/BP-06/BP-06.03%20Derived%20publication%20prerequisite.md).
+- Architecture: [artifact publication](../../../../../docs/Architecture/System/Artifact_Publication_Protocol.md).
+
+`DeclaredTransformation` authenticates upload/read privileges, revalidates immutable command bytes against their identity, rejects repeated input artifact IDs, and binds a final receipt to the exact output descriptor and scope. The public command parser rejects foreign input scopes. Input order is part of command identity: this boundary never silently sorts a retry. A transformation descriptor pins a producer's method/configuration digest; Data does not verify its scientific claim or execute it. No inline executable code or rights override is accepted.
+
+Public artifact contracts0.2.0 add `artifacts.begin_derived_upload`, `BeginDerivedUpload`, `DerivationDeclaration`, `DerivedUploadReceipt`, `DerivedUploadObservation` and `DerivationReceipt`. All predecessor models and command families retain their bytes. A derived begin has a separate observation union so legacy consumers do not receive a new discriminator in their existing schema. Stream/finalize continue to use the predecessor commands and receipts; the derived begin receipt embeds the ordinary upload receipt. Metadata is historical evidence, not a payload-access lease.
+
+The following transaction boundary is designed, not implemented at D1: immutable upload declarations and finalized input edges in new artifact_0007. Begin binds declaration, authenticated command and upload atomically after exact catalog identity and current process permission checks. All finalize paths consult that declaration and commit catalog/lineage/receipt/audit together. Lock order is source-rights scope -> capacity -> upload -> attempt -> terminal command. No peer or filesystem I/O under these locks. Finalization captures rights before verification and fences current rights/expiry plus upload generation before commit. Terminal command replay is historical and does not reauthorize new payload use.
+
+Ancestry will traverse conversion and derivation edges together with limits128 direct inputs,4096 visited identities and256 distinct rights bindings. Repeated shared ancestors do not imply cycles; actual cycles, bounds, missing/foreign/conflicting references and denied/expired rights fail closed. Ordinary uploads retain their explicit no-inferred-lineage semantics. A new derived input must already exist, preventing forward edges from normal publication; historical conversion edges still require defensive cycle handling.
+
+Tests belong to `tests/derivations`; contract cases belong to `contracts/artifacts/tests`. D1 pure tests do not establish PostgreSQL atomicity, installed replacement or scientific validity. D2-D4 must supply those scoped software gates before Knowledge publishes via this path. No deletion or mandatory-erasure policy is introduced.

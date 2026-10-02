@@ -197,6 +197,11 @@ for name, model in {
     MODELS["runtime." + name] = model
 for name, model in {
     "begin-upload": artifact_contracts.BeginUpload,
+    "begin-derived-upload": artifact_contracts.BeginDerivedUpload,
+    "derivation-declaration": artifact_contracts.DerivationDeclaration,
+    "derived-upload-receipt": artifact_contracts.DerivedUploadReceipt,
+    "derived-upload-observation": artifact_contracts.DerivedUploadObservation,
+    "derivation-receipt": artifact_contracts.DerivationReceipt,
     "finalize": artifact_contracts.FinalizeArtifact,
     "reserve": artifact_contracts.ReserveArtifact,
     "runtime-outcome": artifact_contracts.RuntimeOutcome,

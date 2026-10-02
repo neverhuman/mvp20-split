@@ -9,15 +9,15 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 primary active; BP-07 through BP-09 queued; BP-05 closed.
-- Last refreshed: `2026-10-02 09:54:48` (America/Chicago).
+- Last refreshed: `2026-10-02 11:14:56` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P5 / BP-06 - Knowledge Evidence and Source Loop.
 - Primary active implementation plan / phase / task: BP-06 -> BP-06.03 / Build / B1.
-- Current task: Owner direction on DER-01: Data-owned derived publication with atomic input lineage/current-rights fencing before Knowledge artifact/receipt publication.
-- Next task: If DER-01 approved, D1-D4 inside BP-06.03/B1, then resume Knowledge/Research artifact and receipt work.
+- Current task: DER-01/D2: atomic derived upload/finalization and rights traversal; D1 complete1/4 (25%).
+- Next task: DER-01 D3-D4 after D2 inside BP-06.03/B1, then resume Knowledge/Research artifact and receipt work.
 - Implementation completion: BP-05 closed100% (16/16); BP-06 at33.33% (8/24); BP-07..09 remain0%.
-- Active focus: BP-06.03/B1 paused at DER-01; child0/4, parent8/24 (33.33%).
-- Blockers: DER-01 owner direction; concrete versioned Data publication prerequisite proposed.
+- Active focus: BP-06.03/B1 active at DER-01/D2; child0/4, parent8/24 (33.33%).
+- Blockers: No owner blocker; approved DER-01 implementation is the current prerequisite.
 - Acceptance posture: BP-05 integrated Studio accepted within synthetic software scope; scientific and deployment acceptance remains later.
 - Active exception: none.
 
@@ -39,7 +39,7 @@ BP-06 is the sole active parent. BP-05 closed16/16; see [completed plans](Comple
 
 | Active canonical child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-06.03](BP-06/BP-06.03%20Reasoning%20and%20domain%20receipts.md) | 0% | 0% | 0% | B1 / DER-01 owner direction |
+| [BP-06.03](BP-06/BP-06.03%20Reasoning%20and%20domain%20receipts.md) | 0% | 0% | 0% | B1 / DER-01 D2 |
 
 
 
@@ -121,7 +121,8 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
-| 2026-10-02 09:54:48 | DER-01 proposed prerequisite; BP-06.03/B1 awaits owner direction, percentages unchanged | [Decision](BP-06/BP-06.03%20Derived%20publication%20prerequisite.md);1 PostgreSQL probe |
+| 2026-10-02 11:14:56 | DER-01 approved; D1 complete1/4 (25%); D2 active; child0/4, parent8/24 | contracts0.2.0;282 schemas preserve272;92 tests |
+| 2026-10-02 11:05:40 | DER-01 proposed prerequisite; BP-06.03/B1 awaits owner direction, percentages unchanged | [Decision](BP-06/BP-06.03%20Derived%20publication%20prerequisite.md);1 PostgreSQL probe |
 | 2026-10-02 09:39:22 | BP-06.03/B1 Knowledge public/durable boundary verified; child0/4; parent8/24 | [Evidence](../Audits/Evidence/BP-06-Knowledge/Reasoning_Boundary.json);189+62+14 tests |
 | 2026-10-01 21:13:35 | BP-06.03/B1 kernel and input binding verified; child0/4; parent8/24 | [Evidence](../Audits/Evidence/BP-06-Knowledge/Reasoning_Kernel.json);161 owner +14 dev tests |
 | 2026-10-01 21:01:42 | BP-06.02 closed100%; parent33.33%; successor .03 audit next | [Closeout](../Audits/BP-06.02_Knowledge_Replay_Closeout.md);169+39 installed tests |
@@ -145,6 +146,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-01 11:46:20 | BP-06.01/B1 preparation partial;0% unchanged | 58 acquisition/164 artifact tests;52 isolated pure cases; [evidence](../Audits/Evidence/BP-06-Acquisition/Preparation.json) |
 | 2026-10-01 11:37:03 | BP-06.01/B1 acquisition ledger partial;0% unchanged | 31 acquisition/137 artifact tests; migration0004 preserves prior publication |
 | 2026-09-30 18:01:56 | BP-06.01/B1 Research ledger partial;0% unchanged | 34 owner tests; installed process replay; [evidence](../Audits/Evidence/BP-06-Acquisition/Research_Ledger.json) |
-| 2026-09-30 17:52:58 | BP-06.01/B1 Research identity partial;0% unchanged | 9 contract/26 domain tests in isolated wheels; [evidence](../Audits/Evidence/BP-06-Acquisition/Research_Identity.json) |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

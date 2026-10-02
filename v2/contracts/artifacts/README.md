@@ -12,7 +12,7 @@ BP-03.03/B1 adds the version-1 `PublicationObservation` read projection: origina
 
 ## Public API and Dependencies
 
-Only import the public `amphora_contracts_artifacts` root. See `src/amphora_contracts_artifacts/__init__.py` for the explicit surface. The independent pyproject and lockfile define dependencies; no FastAPI, database, filesystem payload access or scientific libraries. Package version 0.1.0, wire version 1. New families extend publication without changing previous core/tool/campaign schemas. Family registry choices belong to the server, not untrusted payloads.
+Only import the public `amphora_contracts_artifacts` root. See `src/amphora_contracts_artifacts/__init__.py` for the explicit surface. The independent pyproject and lockfile define dependencies; no FastAPI, database, filesystem payload access or scientific libraries. Package version 0.2.0, wire version 1. New families extend publication without changing previous core/tool/campaign schemas. Family registry choices belong to the server, not untrusted payloads.
 
 ## Semantic and Authority Boundaries
 
@@ -27,3 +27,5 @@ Replacements must preserve canonical bytes, defaults, strict rejection, family/s
 BP-02.03/A2 adds UploadContentReceipt: streamed upload/attempt/generation identity with no ArtifactRef. Existing schemas remain compatible; schema publication adds two input/output files. Actual finalization/retention authority remains service-owned.
 
 BP-02.03/A4 adds RuntimeOutcome: a versioned exact ReservationBinding plus a closed prepared/unknown/committed/aborted proof union. This is transport evidence only; the artifact owner authenticates its configured runtime peer and enforces transitions. Existing command and receipt shapes stay unchanged.
+
+DER-01/D1 adds the separate `artifacts.begin_derived_upload` family and derived publication/metadata DTOs. Declarations require1..128 exact scoped inputs and a pinned transformation descriptor. The separate `DerivedUploadObservation` preserves the legacy publication union; all272 predecessor schema bytes and previous family canonical bytes/digests are unchanged. [Data module](../../services/data_artifacts/src/amphora_data_artifacts/derivations/README.md) owns duplicate/identity/rights/transaction semantics; D2-D4 remain pending.
