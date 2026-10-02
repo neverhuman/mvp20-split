@@ -431,10 +431,11 @@ requires-dist = [
 
 [[package]]
 name = "amphora-research"
-version = "0.6.0"
+version = "0.6.1"
 source = { editable = "../services/research" }
 dependencies = [
     { name = "alembic" },
+    { name = "amphora-contracts-artifacts" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-research" },
     { name = "fastapi" },
@@ -447,6 +448,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "alembic", specifier = ">=1.16,<2" },
+    { name = "amphora-contracts-artifacts", editable = "../contracts/artifacts" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
     { name = "amphora-contracts-research", editable = "../contracts/research" },
     { name = "fastapi", specifier = ">=0.115,<1" },

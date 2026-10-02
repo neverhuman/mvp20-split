@@ -1,5 +1,13 @@
 # BP-06 Planning History
 
+## B1.07 Data reader checkpoint - 2026-10-02 16:45:56
+
+Research0.6.1 adds scoped public Data reads and derivation producer verification;32 scripted HTTP cases and184 Research/dev tests pass. [Evidence](../Audits/Evidence/BP-06-Research/Assessment_Reader.json) records coverage and missing branches. B1.07 remains incomplete: producer payload/target/context and exact declaration binding plus actual Data/Knowledge process proof remain. B1 milestones6/10, child15%, parent35.83% unchanged. The initial sub100ms deadline probe exposed a timing assumption in the combined run; separate expired admission and actual delayed/trickling-header probes now pass. No schema or migration change.
+
+Rotated MBT checkpoint:
+
+| 2026-10-01 19:34:51 | BP-06.02/B1 private persistence partial; child0%, parent16.67% unchanged | [Ledger proof](../Audits/Evidence/BP-06-Knowledge/Persistence.json);47 owner/47 contract-dev/80 isolated;256 schemas preserved |
+
 ## B1.06 public assessment contracts complete - 2026-10-02 16:33:50
 
 Research0.6.0/contracts0.3.0;294 scoped tests,177 independently installed tests;286 predecessor schemas preserved,8 additive. [Evidence](../Audits/Evidence/BP-06-Research/Assessment_Wire.json). Coordinated compatibility-only dependency patches: Evidence0.5.1, Knowledge contracts0.6.1, Knowledge0.13.1, Data0.11.1. No peer implementation or migration changes. B1 milestone6/10; child15%, parent35.83%; closed gates0/4 and8/24 unchanged. B1.07 next.

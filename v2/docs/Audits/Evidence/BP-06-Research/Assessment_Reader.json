@@ -1,0 +1,133 @@
+{
+  "timestamp_local": "2026-10-02 16:45:56",
+  "scope": "BP-06.03/B1.07 Data reader checkpoint; milestone incomplete",
+  "research_version": "0.6.1",
+  "tests": {
+    "reader_cases": 32,
+    "research_and_dev": 184
+  },
+  "tier": "real loopback scripted HTTP server; existing owner PostgreSQL/API regression; not actual Data/Knowledge compatibility",
+  "coverage": {
+    "totals": {
+      "covered_lines": 384,
+      "num_statements": 387,
+      "percent_covered": 99.26062846580406,
+      "percent_covered_display": "99",
+      "missing_lines": 3,
+      "excluded_lines": 0,
+      "percent_statements_covered": 99.2248062015504,
+      "percent_statements_covered_display": "99",
+      "num_branches": 154,
+      "num_partial_branches": 1,
+      "covered_branches": 153,
+      "missing_branches": 1,
+      "percent_branches_covered": 99.35064935064935,
+      "percent_branches_covered_display": "99"
+    },
+    "files": {
+      "v2\\services\\research\\src\\amphora_research\\assessment\\__init__.py": {
+        "summary": {
+          "covered_lines": 0,
+          "num_statements": 0,
+          "percent_covered": 100.0,
+          "percent_covered_display": "100",
+          "missing_lines": 0,
+          "excluded_lines": 0,
+          "percent_statements_covered": 100.0,
+          "percent_statements_covered_display": "100",
+          "num_branches": 0,
+          "num_partial_branches": 0,
+          "covered_branches": 0,
+          "missing_branches": 0,
+          "percent_branches_covered": 100.0,
+          "percent_branches_covered_display": "100"
+        },
+        "missing_lines": [],
+        "missing_branches": []
+      },
+      "v2\\services\\research\\src\\amphora_research\\assessment\\boundary.py": {
+        "summary": {
+          "covered_lines": 67,
+          "num_statements": 67,
+          "percent_covered": 100.0,
+          "percent_covered_display": "100",
+          "missing_lines": 0,
+          "excluded_lines": 0,
+          "percent_statements_covered": 100.0,
+          "percent_statements_covered_display": "100",
+          "num_branches": 30,
+          "num_partial_branches": 0,
+          "covered_branches": 30,
+          "missing_branches": 0,
+          "percent_branches_covered": 100.0,
+          "percent_branches_covered_display": "100"
+        },
+        "missing_lines": [],
+        "missing_branches": []
+      },
+      "v2\\services\\research\\src\\amphora_research\\assessment\\policy.py": {
+        "summary": {
+          "covered_lines": 187,
+          "num_statements": 187,
+          "percent_covered": 100.0,
+          "percent_covered_display": "100",
+          "missing_lines": 0,
+          "excluded_lines": 0,
+          "percent_statements_covered": 100.0,
+          "percent_statements_covered_display": "100",
+          "num_branches": 80,
+          "num_partial_branches": 0,
+          "covered_branches": 80,
+          "missing_branches": 0,
+          "percent_branches_covered": 100.0,
+          "percent_branches_covered_display": "100"
+        },
+        "missing_lines": [],
+        "missing_branches": []
+      },
+      "v2\\services\\research\\src\\amphora_research\\assessment\\reader.py": {
+        "summary": {
+          "covered_lines": 130,
+          "num_statements": 133,
+          "percent_covered": 97.74011299435028,
+          "percent_covered_display": "98",
+          "missing_lines": 3,
+          "excluded_lines": 0,
+          "percent_statements_covered": 97.74436090225564,
+          "percent_statements_covered_display": "98",
+          "num_branches": 44,
+          "num_partial_branches": 1,
+          "covered_branches": 43,
+          "missing_branches": 1,
+          "percent_branches_covered": 97.72727272727273,
+          "percent_branches_covered_display": "98"
+        },
+        "missing_lines": [
+          102,
+          103,
+          131
+        ],
+        "missing_branches": [
+          [
+            133,
+            135
+          ]
+        ]
+      }
+    }
+  },
+  "verified": [
+    "Exact metadata/content size and SHA-256",
+    "Derived output, scope, command family and producer actor binding",
+    "No readable-lineage bypass of denied content",
+    "Denied/missing versus retryable outage/protocol/deadline",
+    "128 identity/384 request/32MiB/30second budgets",
+    "Multi-chunk payload and trickling-header interruption"
+  ],
+  "remaining": [
+    "Producer payload schema and parsing",
+    "Configured logical target, subject, context, purpose matching",
+    "Exact owner question/need reconciliation",
+    "Actual Data/Knowledge process compatibility"
+  ]
+}
