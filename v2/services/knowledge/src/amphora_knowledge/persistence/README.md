@@ -25,3 +25,5 @@ Snapshot reads prefer a published materialization only for the exact requested s
 knowledge_0003 tables are owned by the [reasoning store](../reasoning/README.md), with exact snapshot/profile foreign keys and immutable intent/decision records. The accepted graph ledger and its first two migrations remain unchanged.
 
 knowledge_0004 tables belong to the [publication store](../publication/README.md). Immutable selections reference terminal reasoning decisions; separately mutable DB-clock leases support short fenced transactions. No payload/attempt orchestration exists yet.0001..0004 are applied and immutable.
+
+knowledge_0005 adds immutable publication payloads and append-only attempt events (SELECT/INSERT only), owned by the publication journal. Applied migrations0001..0005 are immutable.

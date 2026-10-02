@@ -1,6 +1,6 @@
 # Knowledge Service
 
-- Package: amphora-knowledge0.10.0; contracts0.6.0.
+- Package: amphora-knowledge0.11.0; contracts0.6.0.
 - Status: BP-06.02 closed; BP-06.03/B1 configured reasoning, durable results and optional HTTP implemented; artifact/domain-receipt publication pending.
 - Design: [Knowledge](../../docs/Architecture/Knowledge/Knowledge_Architecture.md), [activation](../../docs/Audits/BP-06.02_Activation.md).
 
@@ -14,10 +14,10 @@ Knowledge owns typed domain graph edits, immutable accepted history and snapshot
 | [Validation](src/amphora_knowledge/validation/README.md) | Bounded public Data/Research reads, exact provenance and current payload access |
 | [Rebuild](src/amphora_knowledge/rebuild/README.md) | Durable private candidates and bounded compare-and-set materialization publication |
 | [Reasoning](src/amphora_knowledge/reasoning/README.md) | Bounded signed rules, exact context/snapshot binding, immutable profile/request/result history and fresh provenance review |
-| [Publication](src/amphora_knowledge/publication/README.md) | Exact result/input values, immutable publication selection and DB-clock fenced worker leases; uploads/receipts pending |
+| [Publication](src/amphora_knowledge/publication/README.md) | Exact result/input values, immutable publication selection, fenced leases and durable attempt journal; uploads/receipts pending |
 | [Transport](src/amphora_knowledge/transport/README.md) | Authenticated API, pinned-profile discovery and explicit local host configuration |
 
-Dependencies are public Commands0.2.0, Core0.1.0, Knowledge0.6.0, Artifacts0.2.0, evidence0.5.0 and Research0.2.0 contracts plus Pydantic/FastAPI/Uvicorn, SQLAlchemy/psycopg/Alembic and the standard library. No peer implementation imports, peer SQL, shared ORM, source payload storage, LLM calls or campaign execution exist. knowledge_0001/0002/0003/0004 are applied forward-only migrations; startup does not migrate. Stored graph profiles and accepted identities survive process replacement.
+Dependencies are public Commands0.2.0, Core0.1.0, Knowledge0.6.0, Artifacts0.2.0, evidence0.5.0 and Research0.2.0 contracts plus Pydantic/FastAPI/Uvicorn, SQLAlchemy/psycopg/Alembic and the standard library. No peer implementation imports, peer SQL, shared ORM, source payload storage, LLM calls or campaign execution exist. knowledge_0001/0002/0003/0004/0005 are applied forward-only migrations; startup does not migrate. Stored graph profiles and accepted identities survive process replacement.
 
 Scientific validity, question-criteria satisfaction, symbolic inference, model extraction and current-use permission are distinct from structural acceptance. Replay uses accepted operations and recorded metadata, never a fresh prompt or revoked source payload. Later source consumption rechecks Data rights. Scientific eligibility and text extraction remain in their named successor plans.
 
@@ -32,3 +32,5 @@ B1 [publication values](src/amphora_knowledge/publication/README.md) now bind ac
 Knowledge0.10.0 adds publication intent/lease persistence under knowledge_0004;110 scoped tests pass. Durable payload/attempt state and actual upload/receipt workflow remain B1. See the publication README and Publication_Store.json for the implemented boundary and unproven acceptance.
 
 The publication module also owns the pure upload-attempt transition policy and exact command construction (157 publication/SDK/dev tests). Its durable journal, logical receipt policy and production Data orchestration remain unimplemented.
+
+Knowledge0.11.0 retains exact reviewed payloads and bounded append-only upload attempts in knowledge_0005.145 scoped tests pass; journal ends at finalizing. Atomic terminal receipt and production upload recovery remain B1.

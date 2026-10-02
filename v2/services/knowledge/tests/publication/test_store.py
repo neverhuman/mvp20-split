@@ -13,19 +13,6 @@ from sqlalchemy.exc import DBAPIError
 pytestmark = pytest.mark.postgres
 
 
-@pytest.fixture
-def publication_case(reasoning_case):
-    c = reasoning_case
-    c.workflow.submit(c.principal, c.request)
-    c.publication = ReasoningPublicationRequest(wire_version="1", graph=c.request.snapshot.graph,
-        publication_id="publish", reasoning_request_id=c.request.request_id)
-    c.publisher = PublisherIdentity("data-publisher", "knowledge-synthetic")
-    # Publishing does not require (or manufacture) reason_graph/read_graph grants.
-    c.principal = replace(c.principal, actions=frozenset({"publish_reasoning"}))
-    c.publications = PublicationStore(c.case.engine)
-    return c
-
-
 def begin(c):
     return c.publications.begin(c.principal, c.publication, c.publisher)
 
