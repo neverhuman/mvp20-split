@@ -1,0 +1,83 @@
+{
+  "timestamp_local": "2026-10-02 12:17:19",
+  "scope": "BP-06.03/B1 consumed reasoning inputs",
+  "knowledge_version": "0.9.0",
+  "tests": {
+    "validation_reasoning_and_actual_public_peers": 99,
+    "validation_coverage_run": 40
+  },
+  "review_module_coverage": {
+    "summary": {
+      "covered_lines": 116,
+      "num_statements": 122,
+      "percent_covered": 92.77777777777777,
+      "percent_covered_display": "93",
+      "missing_lines": 6,
+      "excluded_lines": 0,
+      "percent_statements_covered": 95.08196721311475,
+      "percent_statements_covered_display": "95",
+      "num_branches": 58,
+      "num_partial_branches": 7,
+      "covered_branches": 51,
+      "missing_branches": 7,
+      "percent_branches_covered": 87.93103448275862,
+      "percent_branches_covered_display": "88"
+    },
+    "missing_lines": [
+      55,
+      83,
+      91,
+      102,
+      115,
+      129
+    ],
+    "missing_branches": [
+      [
+        43,
+        41
+      ],
+      [
+        54,
+        55
+      ],
+      [
+        82,
+        83
+      ],
+      [
+        90,
+        91
+      ],
+      [
+        101,
+        102
+      ],
+      [
+        114,
+        115
+      ],
+      [
+        128,
+        129
+      ]
+    ]
+  },
+  "proven": [
+    "reasoning observations retain every actually consumed trace output and Research context artifact",
+    "duplicate consumed identities retained once in deterministic order",
+    "128-input reasoning bound before further peer I/O",
+    "legacy authoring256-artifact transport bound and direct-reference observation preserved",
+    "actual Data SDK publication uses server-recorded consumed inputs and inherits revoked-source denial"
+  ],
+  "compatibility": {
+    "public_schema_files_unchanged": 282,
+    "migrations_changed": false,
+    "old_terminal_results_rewritten": false
+  },
+  "remaining": [
+    "fresh provenance review before publishing historical pre0.9 results",
+    "durable Knowledge publication and domain receipts",
+    "Research assessment and Runtime integration",
+    "independent Knowledge0.9 replacement remains child V1; DER-01 used0.8"
+  ]
+}

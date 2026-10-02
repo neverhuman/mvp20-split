@@ -22,10 +22,10 @@ class ReferenceReviewer:
 
     def review_reasoning(self, request, assertions):
         references = ReferencedInputs.collect_records(request.snapshot.graph, (request, assertions))
-        return self._review(request.snapshot.graph, references, (), assertions)
+        return self._review(request.snapshot.graph, references, (), assertions, reasoning=True)
 
-    def _review(self, graph, references, groundings, assertions):
-        session = _Review(self.data, self.research, graph.scope, ReadBudget())
+    def _review(self, graph, references, groundings, assertions, *, reasoning=False):
+        session = _Review(self.data, self.research, graph.scope, ReadBudget(), reasoning=reasoning)
         for ref in references.artifacts:
             session.artifact(ref)
         for ref in references.sources:
@@ -54,18 +54,23 @@ class ReferenceReviewer:
             if any(not any(trace.source == span.source for span in grounding.spans) for trace in local):
                 raise KnowledgeError("grounding_trace_mismatch")
         session.budget.remaining()
-        return ReferenceValidation(checked_at=datetime.now(UTC), artifacts=references.artifacts,
-            sources=references.sources, conversion_traces=references.traces,
-            questions=references.questions, evidence_needs=references.needs)
+        return session.observation(references)
 
 
 class _Review:
     """Per-review cache: bounded bytes, exact identities, no cross-request rights cache."""
 
-    def __init__(self, data, research, scope, budget):
+    def __init__(self, data, research, scope, budget, *, reasoning=False):
         self.data, self.research, self.scope, self.budget = data, research, scope, budget
+        self.reasoning = reasoning
         self.payloads, self.sources = {}, {}
         self.identities = {}
+
+    def observation(self, references):
+        artifacts = tuple(self.identities[key] for key in sorted(self.identities)) if self.reasoning else references.artifacts
+        return ReferenceValidation(checked_at=datetime.now(UTC), artifacts=artifacts,
+            sources=references.sources, conversion_traces=references.traces,
+            questions=references.questions, evidence_needs=references.needs)
 
     def scope_of(self, ref):
         if ref.scope != self.scope:
@@ -78,8 +83,10 @@ class _Review:
             raise KnowledgeError("reference_identity_conflict")
         self.identities[ref.artifact_id] = ref
         if ref not in self.payloads:
-            if len(self.payloads) >= 256:
-                raise KnowledgeError("expanded_reference_limit")
+            # The public derived-upload declaration is bounded to128 exact inputs.
+            # Authoring retains its existing256-artifact transport profile.
+            if len(self.payloads) >= (128 if self.reasoning else 256):
+                raise KnowledgeError("reasoning_input_limit" if self.reasoning else "expanded_reference_limit")
             if self.data.artifact(ref, self.budget) != ref:
                 raise KnowledgeError("artifact_binding_mismatch")
             raw = self.data.content(ref, self.budget)

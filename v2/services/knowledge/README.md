@@ -1,6 +1,6 @@
 # Knowledge Service
 
-- Package: amphora-knowledge0.8.0; contracts0.5.0.
+- Package: amphora-knowledge0.9.0; contracts0.5.0.
 - Status: BP-06.02 closed; BP-06.03/B1 configured reasoning, durable results and optional HTTP implemented; artifact/domain-receipt publication pending.
 - Design: [Knowledge](../../docs/Architecture/Knowledge/Knowledge_Architecture.md), [activation](../../docs/Audits/BP-06.02_Activation.md).
 
@@ -23,3 +23,5 @@ Scientific validity, question-criteria satisfaction, symbolic inference, model e
 Tests are owned under tests/authoring, replay, persistence, validation, rebuild, reasoning, api and acceptance. Select with dev/run_tests.py --module knowledge --area <area>; PostgreSQL requires explicit AMPHORA_TEST_POSTGRES=1. Scripted peer tests prove client rules; the actual three-owner process test proves public compatibility. Test-only crash barriers are excluded from wheels.
 
 Current verification:189 owner baseline tests,58 final focused reasoning tests,62 contract tests and14 dev tests pass. [Reasoning boundary evidence](../../docs/Audits/Evidence/BP-06-Knowledge/Reasoning_Boundary.json) owns coverage/gaps, schema compatibility and actual peer identities. Applied migrations are immutable. Earlier installed replacement proof covers the closed0.6.0 authoring/replay boundary; BP-06.03 installed replacement remains pending. No scientific or target-host power-loss claim is made.
+
+BP-06.03/B1 Knowledge0.9.0 retains every actually consumed reasoning artifact in its existing validation observation, including indirect trace outputs and Research contexts.128 distinct reasoning inputs is the publication bound; authoring keeps its existing256-artifact transport/direct-observation profile.99 validation/reasoning/actual-peer tests pass. Stored historical decisions and282 schema files remain unchanged. Durable publication always needs a fresh complete review; pre0.9 historical observations are not complete publication declarations.

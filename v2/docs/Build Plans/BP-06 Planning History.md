@@ -1,5 +1,9 @@
 # BP-06 Planning History
 
+## B1 consumed-input projection - 2026-10-02 12:17:19
+
+Knowledge0.9.0 records every reasoning-consumed artifact (trace outputs and Research contexts included), with128 distinct inputs and unchanged authoring transport/replay semantics.99 focused/actual-peer tests and40 validation coverage tests pass; schemas/migrations unchanged. [Evidence](../Audits/Evidence/BP-06-Knowledge/Consumed_Reasoning_Inputs.json). B1 durable publication contract/store is next; child0/4 and parent8/24 unchanged.
+
 ## DER-01 accepted / B1 resumed - 2026-10-02 12:04:52
 
 DER-01 closed4/4 (100%). Eight isolated installs and712 tests pass with no failures/errors/skips: Data278+47, SDK94, Knowledge252+41. [Audit](../Audits/DER-01_Derived_Publication_Closeout.md). Source-process handoff additionally passed. Return to B1: persist all reasoning-consumed input references, durable Knowledge publication/receipts, then Research/Runtime integration. BP-06.03 remains0/4; parent8/24 (33.33%). This prerequisite does not add parent delivery credit.

@@ -159,8 +159,10 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
         assert reasoned["decision"]["result"]["authority"] == "synthetic_logical_entailment"
         assert reasoned["decision"]["result"]["findings"][0]["supporting_assertions"] == [claim["reference"]]
         derived_case = tmp_path / "derived-case.json"
+        consumed = reasoned["decision"]["validation"]["artifacts"]
+        assert {item["artifact_id"] for item in consumed} == {artifact["artifact_id"], output["artifact_id"]}
         derived_case.write_text(json.dumps({"endpoint": data.endpoint, "scope": scope,
-            "result": reasoned["decision"]["result"], "inputs": [artifact, output],
+            "result": reasoned["decision"]["result"], "inputs": consumed,
             "schema": {key: derived_profile[key] for key in ("schema_id", "version", "sha256")}}), encoding="utf-8")
         derived_initial = derivation_probe(derived_case, "publish", environment)
         assert rebuilt["result"]["outcome"] == "published" and rebuilt["result"]["head"] == head
