@@ -1,6 +1,6 @@
 # Knowledge reasoning publication
 
-- Status: B1 values, additive wire contracts and immutable intent/fenced lease store implemented; durable payload/attempts, HTTP and orchestration pending.
+- Status: B1 values, additive wire contracts, immutable intent/fenced lease store and pure attempt policy implemented; durable payload/attempts, HTTP and orchestration pending.
 - Owner: Knowledge; [implementation design](../../../../../docs/Build%20Plans/BP-06/BP-06.03%20Publication%20and%20receipt%20design.md).
 - Architecture: [Knowledge](../../../../../docs/Architecture/Knowledge/Knowledge_Architecture.md).
 
@@ -19,3 +19,7 @@ Verification checkpoint:11 pure owner tests and75 contracts plus14 dev tests pas
 PublicationStore.acquire issues a fresh holder UUID and monotonically increasing fence under a database-clock lease bounded1..300 seconds. One concurrent claimant wins; a busy lease returns None. Renew/release and composed fenced writes lock the lease row before checking the database clock, holder and fence. Expired/replaced holders cannot renew or commit a new owner transition. The transaction context is internal and must contain only short SQL, never peer I/O. This is owner-state fencing, not a cross-service lock or network exactly-once guarantee. Future upload recovery must preserve the same external command identities. Service grants prohibit intent mutation/deletion and lease-key mutation/deletion.
 
 2026-10-02 12:53:49:110 publication/reasoning/persistence/dev tests pass, including16 new PostgreSQL cases (duplicate intent/claim races, expired waiter, actor/result conflict, rollback and restricted grants);27 publication tests run with coverage. [Store evidence](../../../../../docs/Audits/Evidence/BP-06-Knowledge/Publication_Store.json) records coverage gaps. Independent installed publication/recovery proof remains pending.
+
+PublicationAttempt owns prepared -> begun -> streaming -> streamed -> finalizing -> finalized transitions. Only a streaming attempt can be abandoned; only an abandoned attempt can receive a replacement identity, capped at8. There is no transition from ambiguous streaming to finalizing, nor from finalizing to abandoned/replacement/re-stream. Begin/finalize command IDs stay stable through an attempt; the public Commands0.2 encoder produces the same bytes as SDK0.2. Finalization checks the original accepted upload descriptor/declaration as well as exact output and derivation origin/hash. These values must be driven through durable fenced journal transitions before any peer I/O; that journal and actual orchestration remain unimplemented.
+
+2026-10-02 13:03:31:157 publication/SDK/dev tests pass (49 publication,94 SDK,14 dev), with coverage captured in [attempt evidence](../../../../../docs/Audits/Evidence/BP-06-Knowledge/Publication_Attempts.json).22 new pure tests cover the valid path, prohibited uncertainty transitions, cap8, peer substitutions, constructed invalid receipts and payload drift. Pure transition tests are not process-crash recovery evidence.

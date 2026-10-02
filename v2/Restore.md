@@ -3,9 +3,9 @@
 ## Current Checkpoint
 
 
-- Last refreshed: `2026-10-02 12:53:49` (America/Chicago).
+- Last refreshed: `2026-10-02 13:03:31` (America/Chicago).
 - Active plan: BP-06.03/Build/B1, child0/4; parent8/24 (33.33%). DER-01 accepted/closed4/4 (100%); resume Knowledge publication/receipts.
-- Latest checkpoint: 44830c8 pushed publication contracts/values. Knowledge0.10.0 now has immutable publication intent and DB-clock fenced leases;110 scoped tests plus27 publication coverage cases pass. knowledge_0004 applied/immutable;286 schemas unchanged. Evidence: Publication_Store.json. No production upload workflow yet.
+- Latest checkpoint: 6a39925 pushed Knowledge0.10.0 immutable publication intent/fenced leases (110 scoped tests). Pure PublicationAttempt policy now passes157 publication/SDK/dev tests (49 publication); exact SDK bytes, bounded stream uncertainty, no finalize replacement, exact lineage/output binding. Evidence: Publication_Store.json and Publication_Attempts.json. knowledge_0004 applied/immutable;286 schemas unchanged.
 - Next: B1 persist freshly reviewed payload and bounded upload-attempt transitions in a forward migration after knowledge_0004, then SDK publication/recovery and logical receipts. Follow BP-06.03 Publication and receipt design.md. Research assessment and Runtime waits follow. No owner decision pending; no running processes.
 - Recovery: only verified pending original receipts enable explicit same-identity resume. Unknown transport outcome first reconciles; collision/denial/terminal ambiguity never gets a fresh ID. Newer local edits survive recovery. Cancellation is operational and retains explicit uncertain-effects wording.
 - Runtime0.20.0, Commands0.2.0, graph-runtime0.11.0, campaigns0.4.1;286 public schemas; all282 publication-contract predecessors preserved. Numeric v2 only save/admit; other families/unmarked bytes v1. Input NumberValue remains decimal string. Registry eligibility synthetic-only observations are not reservations/atomic revocation. No scientific or target-host deployment claim.

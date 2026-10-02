@@ -17,7 +17,7 @@ Knowledge owns typed domain graph edits, immutable accepted history and snapshot
 | [Publication](src/amphora_knowledge/publication/README.md) | Exact result/input values, immutable publication selection and DB-clock fenced worker leases; uploads/receipts pending |
 | [Transport](src/amphora_knowledge/transport/README.md) | Authenticated API, pinned-profile discovery and explicit local host configuration |
 
-Dependencies are public Core0.1.0, Knowledge0.6.0, Artifacts0.2.0, evidence0.5.0 and Research0.2.0 contracts plus Pydantic/FastAPI/Uvicorn, SQLAlchemy/psycopg/Alembic and the standard library. No peer implementation imports, peer SQL, shared ORM, source payload storage, LLM calls or campaign execution exist. knowledge_0001/0002/0003/0004 are applied forward-only migrations; startup does not migrate. Stored graph profiles and accepted identities survive process replacement.
+Dependencies are public Commands0.2.0, Core0.1.0, Knowledge0.6.0, Artifacts0.2.0, evidence0.5.0 and Research0.2.0 contracts plus Pydantic/FastAPI/Uvicorn, SQLAlchemy/psycopg/Alembic and the standard library. No peer implementation imports, peer SQL, shared ORM, source payload storage, LLM calls or campaign execution exist. knowledge_0001/0002/0003/0004 are applied forward-only migrations; startup does not migrate. Stored graph profiles and accepted identities survive process replacement.
 
 Scientific validity, question-criteria satisfaction, symbolic inference, model extraction and current-use permission are distinct from structural acceptance. Replay uses accepted operations and recorded metadata, never a fresh prompt or revoked source payload. Later source consumption rechecks Data rights. Scientific eligibility and text extraction remain in their named successor plans.
 
@@ -30,3 +30,5 @@ BP-06.03/B1 Knowledge0.9.0 retains every actually consumed reasoning artifact in
 B1 [publication values](src/amphora_knowledge/publication/README.md) now bind actor/result, canonical bytes, exact input declaration and configured payload schema.100 contract/value/dev tests pass; four additive schemas preserve282 predecessors. Durable store, leases, upload orchestration, receipt policy and HTTP are the next work; no migration or endpoint added in this checkpoint.
 
 Knowledge0.10.0 adds publication intent/lease persistence under knowledge_0004;110 scoped tests pass. Durable payload/attempt state and actual upload/receipt workflow remain B1. See the publication README and Publication_Store.json for the implemented boundary and unproven acceptance.
+
+The publication module also owns the pure upload-attempt transition policy and exact command construction (157 publication/SDK/dev tests). Its durable journal, logical receipt policy and production Data orchestration remain unimplemented.

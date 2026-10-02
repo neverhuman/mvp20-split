@@ -1,0 +1,162 @@
+{
+  "timestamp_local": "2026-10-02 13:03:31",
+  "scope": "BP-06.03/B1 pure upload-attempt transition policy; no durable attempt journal",
+  "knowledge_version": "0.10.0",
+  "tests": {
+    "publication": 49,
+    "sdk": 94,
+    "dev": 14,
+    "combined": 157,
+    "new_pure_attempt_tests": 22
+  },
+  "coverage": {
+    "v2\\services\\knowledge\\src\\amphora_knowledge\\publication\\__init__.py": {
+      "summary": {
+        "covered_lines": 0,
+        "num_statements": 0,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 0,
+        "num_partial_branches": 0,
+        "covered_branches": 0,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": [],
+      "missing_branches": []
+    },
+    "v2\\services\\knowledge\\src\\amphora_knowledge\\publication\\attempt.py": {
+      "summary": {
+        "covered_lines": 74,
+        "num_statements": 74,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 10,
+        "num_partial_branches": 0,
+        "covered_branches": 10,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": [],
+      "missing_branches": []
+    },
+    "v2\\services\\knowledge\\src\\amphora_knowledge\\publication\\identity.py": {
+      "summary": {
+        "covered_lines": 21,
+        "num_statements": 21,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 2,
+        "num_partial_branches": 0,
+        "covered_branches": 2,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": [],
+      "missing_branches": []
+    },
+    "v2\\services\\knowledge\\src\\amphora_knowledge\\publication\\payload.py": {
+      "summary": {
+        "covered_lines": 57,
+        "num_statements": 60,
+        "percent_covered": 92.10526315789474,
+        "percent_covered_display": "92",
+        "missing_lines": 3,
+        "excluded_lines": 0,
+        "percent_statements_covered": 95.0,
+        "percent_statements_covered_display": "95",
+        "num_branches": 16,
+        "num_partial_branches": 3,
+        "covered_branches": 13,
+        "missing_branches": 3,
+        "percent_branches_covered": 81.25,
+        "percent_branches_covered_display": "81"
+      },
+      "missing_lines": [
+        47,
+        49,
+        76
+      ],
+      "missing_branches": [
+        [
+          46,
+          47
+        ],
+        [
+          48,
+          49
+        ],
+        [
+          75,
+          76
+        ]
+      ]
+    },
+    "v2\\services\\knowledge\\src\\amphora_knowledge\\publication\\store.py": {
+      "summary": {
+        "covered_lines": 81,
+        "num_statements": 83,
+        "percent_covered": 96.03960396039604,
+        "percent_covered_display": "96",
+        "missing_lines": 2,
+        "excluded_lines": 0,
+        "percent_statements_covered": 97.59036144578313,
+        "percent_statements_covered_display": "98",
+        "num_branches": 18,
+        "num_partial_branches": 2,
+        "covered_branches": 16,
+        "missing_branches": 2,
+        "percent_branches_covered": 88.88888888888889,
+        "percent_branches_covered_display": "89"
+      },
+      "missing_lines": [
+        43,
+        99
+      ],
+      "missing_branches": [
+        [
+          42,
+          43
+        ],
+        [
+          98,
+          99
+        ]
+      ]
+    }
+  },
+  "proven": [
+    "original begin/finalize command identities and exact SDK encoder parity",
+    "ambiguous stream requires explicit abandoned attempt before replacement; max8",
+    "uncertain finalize cannot abandon, restream or replace",
+    "upload and stream receipts strictly checked",
+    "final output matches original accepted upload descriptor and input declaration",
+    "derivation matches original Data publisher, begin ID and exact command hash"
+  ],
+  "remaining": [
+    "durable payload and fenced attempt journal",
+    "owner receipt policy and production SDK orchestration",
+    "actual Knowledge process crash recovery",
+    "Research assessments and Runtime waits"
+  ],
+  "migrations_changed": false,
+  "delivery_credit": {
+    "child": "0/4",
+    "parent": "8/24 (33.33%)"
+  }
+}

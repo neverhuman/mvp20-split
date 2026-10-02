@@ -197,6 +197,7 @@ source = { editable = "." }
 dependencies = [
     { name = "alembic" },
     { name = "amphora-contracts-artifacts" },
+    { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-evidence" },
     { name = "amphora-contracts-knowledge" },
@@ -212,6 +213,7 @@ dependencies = [
 requires-dist = [
     { name = "alembic", specifier = ">=1.16,<2" },
     { name = "amphora-contracts-artifacts", editable = "../../contracts/artifacts" },
+    { name = "amphora-contracts-commands", editable = "../../contracts/commands" },
     { name = "amphora-contracts-core", editable = "../../contracts/core" },
     { name = "amphora-contracts-evidence", editable = "../../contracts/evidence" },
     { name = "amphora-contracts-knowledge", editable = "../../contracts/knowledge" },
