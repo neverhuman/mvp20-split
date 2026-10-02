@@ -1,5 +1,9 @@
 # BP-06 Planning History
 
+## B1 publication contracts and values - 2026-10-02 12:34:14
+
+Contracts0.6.0 add request/status and a pinned self-contained result payload schema. Focused Knowledge values bind original actor/result and complete fresh inputs before any side effect.100 tests pass;286 schemas preserve282 predecessor bytes. [Evidence](../Audits/Evidence/BP-06-Knowledge/Publication_Contracts.json). No store/HTTP/migration yet; durable intents/attempts/leases next. Child0/4 and parent8/24 unchanged.
+
 ## B1 consumed-input projection - 2026-10-02 12:17:19
 
 Knowledge0.9.0 records every reasoning-consumed artifact (trace outputs and Research contexts included), with128 distinct inputs and unchanged authoring transport/replay semantics.99 focused/actual-peer tests and40 validation coverage tests pass; schemas/migrations unchanged. [Evidence](../Audits/Evidence/BP-06-Knowledge/Consumed_Reasoning_Inputs.json). B1 durable publication contract/store is next; child0/4 and parent8/24 unchanged.

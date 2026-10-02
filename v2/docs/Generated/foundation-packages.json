@@ -60,13 +60,15 @@
   },
   {
     "package": "amphora-contracts-knowledge",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "path": "contracts/knowledge",
     "module": "amphora_contracts_knowledge",
     "public_dependencies": [
       "amphora-contracts-core",
       "amphora-contracts-evidence",
-      "amphora-contracts-research"
+      "amphora-contracts-research",
+      "amphora-contracts-artifacts",
+      "amphora-contracts-graph-runtime"
     ]
   },
   {
@@ -151,6 +153,7 @@
     "path": "services/knowledge",
     "module": "amphora_knowledge",
     "public_dependencies": [
+      "amphora-contracts-artifacts",
       "amphora-contracts-core",
       "amphora-contracts-knowledge",
       "amphora-contracts-evidence",

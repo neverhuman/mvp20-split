@@ -2,7 +2,7 @@
 name = "amphora-knowledge"
 version = "0.9.0"
 requires-python = ">=3.12,<3.13"
-dependencies = ["pydantic>=2.12,<3", "fastapi>=0.115,<1", "uvicorn>=0.34,<1", "sqlalchemy>=2,<3", "psycopg[binary]>=3,<4", "alembic>=1.16,<2", "amphora-contracts-core==0.1.0", "amphora-contracts-knowledge==0.5.0", "amphora-contracts-evidence==0.5.0", "amphora-contracts-research==0.2.0"]
+dependencies = ["pydantic>=2.12,<3", "fastapi>=0.115,<1", "uvicorn>=0.34,<1", "sqlalchemy>=2,<3", "psycopg[binary]>=3,<4", "alembic>=1.16,<2", "amphora-contracts-artifacts==0.2.0", "amphora-contracts-core==0.1.0", "amphora-contracts-knowledge==0.6.0", "amphora-contracts-evidence==0.5.0", "amphora-contracts-research==0.2.0"]
 
 [build-system]
 requires = ["hatchling>=1.27,<2"]
@@ -12,10 +12,11 @@ build-backend = "hatchling.build"
 packages = ["src/amphora_knowledge"]
 
 [tool.uv.sources]
+amphora-contracts-artifacts = { path = "../../contracts/artifacts", editable = true }
 amphora-contracts-core = { path = "../../contracts/core", editable = true }
 amphora-contracts-knowledge = { path = "../../contracts/knowledge", editable = true }
 amphora-contracts-evidence = { path = "../../contracts/evidence", editable = true }
 amphora-contracts-research = { path = "../../contracts/research", editable = true }
 
 [tool.amphora]
-public-imports = ["amphora-contracts-core", "amphora-contracts-knowledge", "amphora-contracts-evidence", "amphora-contracts-research"]
+public-imports = ["amphora-contracts-artifacts", "amphora-contracts-core", "amphora-contracts-knowledge", "amphora-contracts-evidence", "amphora-contracts-research"]

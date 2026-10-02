@@ -1,0 +1,118 @@
+{
+  "request": {
+    "wire_version": "1",
+    "graph": {
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "knowledge"
+      },
+      "graph_id": "domain"
+    },
+    "publication_id": "publication-1",
+    "reasoning_request_id": "reason-1"
+  },
+  "published": {
+    "wire_version": "1",
+    "request": {
+      "wire_version": "1",
+      "graph": {
+        "scope": {
+          "tenant_id": "synthetic",
+          "project_id": "knowledge"
+        },
+        "graph_id": "domain"
+      },
+      "publication_id": "publication-1",
+      "reasoning_request_id": "reason-1"
+    },
+    "actor_id": "author",
+    "outcome": {
+      "status": "published",
+      "derivation": {
+        "schema_version": "1",
+        "origin": {
+          "schema_version": "1",
+          "command_family": "artifacts.begin_derived_upload",
+          "command_id": "derived-begin-1",
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "knowledge"
+          },
+          "actor_id": "knowledge-publisher"
+        },
+        "request_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "upload_id": "upload-1",
+        "artifact": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "knowledge"
+          },
+          "artifact_id": "derivation-1",
+          "sha256": "25a5a709c010d1b37b62b58abc5944713d6e742bd634b04bf4da746772db95d8",
+          "size_bytes": 47,
+          "media_type": "text/plain",
+          "schema_ref": {
+            "schema_id": "fixture.context",
+            "version": "1",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        "declaration": {
+          "schema_version": "1",
+          "transformation": {
+            "transformation_id": "knowledge.synthetic_logical_entailment",
+            "version": "1",
+            "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          },
+          "inputs": [
+            {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "knowledge"
+              },
+              "artifact_id": "context",
+              "sha256": "25a5a709c010d1b37b62b58abc5944713d6e742bd634b04bf4da746772db95d8",
+              "size_bytes": 47,
+              "media_type": "text/plain",
+              "schema_ref": {
+                "schema_id": "fixture.context",
+                "version": "1",
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+              }
+            }
+          ]
+        }
+      },
+      "receipt": {
+        "schema_version": "1",
+        "issuer_id": "knowledge",
+        "receipt_id": "receipt-1",
+        "scope": {
+          "tenant_id": "synthetic",
+          "project_id": "knowledge"
+        },
+        "purpose": "knowledge.synthetic_entailment",
+        "revision": "1",
+        "subject": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "knowledge"
+          },
+          "artifact_id": "context",
+          "sha256": "25a5a709c010d1b37b62b58abc5944713d6e742bd634b04bf4da746772db95d8",
+          "size_bytes": 47,
+          "media_type": "text/plain",
+          "schema_ref": {
+            "schema_id": "fixture.context",
+            "version": "1",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        "outcome": {
+          "status": "abstained",
+          "reason_code": "reasoning_unknown"
+        }
+      }
+    }
+  }
+}

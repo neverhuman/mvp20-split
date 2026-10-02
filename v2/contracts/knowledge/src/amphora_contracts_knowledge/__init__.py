@@ -20,6 +20,15 @@ from .operations import (
     ReviseEntityContext,
 )
 from .profiles import GraphAuthoringProfile
+from .publication import (
+    ReasoningPublicationFailed,
+    ReasoningPublicationPending,
+    ReasoningPublicationPublished,
+    ReasoningPublicationRequest,
+    ReasoningPublicationStatus,
+    reasoning_artifact_schema,
+    reasoning_artifact_schema_document,
+)
 from .reasoning import (
     CompleteReasoning,
     DerivationStep,
@@ -71,4 +80,6 @@ __all__ = [
     "CompleteReasoning", "DerivationStep", "GroundLiteral", "GroundRule", "IncompleteReasoning",
     "ReasoningFinding", "ReasoningLimits", "ReasoningRequest", "ReasoningResult", "ReasoningRuleSet", "RuleSetRef",
     "EvaluatedReasoning", "FailedReasoning", "ReasoningStatus",
+    "ReasoningPublicationFailed", "ReasoningPublicationPending", "ReasoningPublicationPublished",
+    "ReasoningPublicationRequest", "ReasoningPublicationStatus", "reasoning_artifact_schema", "reasoning_artifact_schema_document",
 ]

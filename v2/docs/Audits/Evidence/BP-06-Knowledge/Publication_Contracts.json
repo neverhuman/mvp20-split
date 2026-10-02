@@ -1,0 +1,65 @@
+{
+  "timestamp_local": "2026-10-02 12:34:14",
+  "scope": "BP-06.03/B1 publication contracts and pure owner values; no HTTP/store implementation",
+  "contracts_knowledge_version": "0.6.0",
+  "tests": {
+    "contracts_payload_dev": 100,
+    "publication_payload_coverage": 11
+  },
+  "payload_coverage": {
+    "summary": {
+      "covered_lines": 56,
+      "num_statements": 60,
+      "percent_covered": 90.78947368421052,
+      "percent_covered_display": "91",
+      "missing_lines": 4,
+      "excluded_lines": 0,
+      "percent_statements_covered": 93.33333333333333,
+      "percent_statements_covered_display": "93",
+      "num_branches": 16,
+      "num_partial_branches": 3,
+      "covered_branches": 13,
+      "missing_branches": 3,
+      "percent_branches_covered": 81.25,
+      "percent_branches_covered_display": "81"
+    },
+    "missing_lines": [
+      37,
+      47,
+      49,
+      76
+    ],
+    "missing_branches": [
+      [
+        46,
+        47
+      ],
+      [
+        48,
+        49
+      ],
+      [
+        75,
+        76
+      ]
+    ]
+  },
+  "schema_compatibility": {
+    "unchanged_predecessors": 282,
+    "total": 286
+  },
+  "migrations_changed": false,
+  "proven": [
+    "request cannot inject result, provenance, actor, purpose or receipt",
+    "exact original scoped actor/result binding",
+    "context, subject and source-raw inputs required; duplicate/foreign inputs denied",
+    "canonical result bytes and self-contained payload profile pinned",
+    "pending reasoning and constructed boolean work cannot become publication payloads"
+  ],
+  "remaining": [
+    "durable intent/attempt/lease state",
+    "owner receipt policy and actual publication workflow",
+    "Data SDK integration from production Knowledge",
+    "Research assessment and Runtime waits"
+  ]
+}

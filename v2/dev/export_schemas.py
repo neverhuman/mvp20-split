@@ -78,6 +78,8 @@ for name, model in {
     "reasoning-request": knowledge_contracts.ReasoningRequest,
     "reasoning-result": knowledge_contracts.ReasoningResult,
     "reasoning-status": knowledge_contracts.ReasoningStatus,
+    "reasoning-publication-request": knowledge_contracts.ReasoningPublicationRequest,
+    "reasoning-publication-status": knowledge_contracts.ReasoningPublicationStatus,
     "accepted-change": knowledge_contracts.AcceptedGraphChange,
     "change-decision": knowledge_contracts.GraphChangeDecision,
     "snapshot": knowledge_contracts.DomainGraphSnapshot,

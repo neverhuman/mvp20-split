@@ -9,11 +9,11 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 primary active; BP-07 through BP-09 queued; BP-05 closed.
-- Last refreshed: `2026-10-02 12:17:19` (America/Chicago).
+- Last refreshed: `2026-10-02 12:34:14` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P5 / BP-06 - Knowledge Evidence and Source Loop.
 - Primary active implementation plan / phase / task: BP-06 -> BP-06.03 / Build / B1.
-- Current task: B1 Knowledge publication request/status contracts and durable intent/attempt design; consumed-input projection verified (Knowledge0.9.0,99 tests).
+- Current task: B1 Knowledge durable publication intent/attempt/lease store; contracts0.6.0 and payload values verified (100 tests),286 schemas preserve282 predecessors.
 - Next task: Durable Knowledge publication/receipts, then Research assessment and Runtime wait integration.
 - Implementation completion: BP-05 closed100% (16/16); BP-06 at33.33% (8/24); BP-07..09 remain0%.
 - Active focus: BP-06.03/B1 Knowledge publication; child0/4, parent8/24 (33.33%).
@@ -121,6 +121,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-02 12:34:14 | B1 publication contracts/values verified; durable store next; child0/4,parent8/24 | contracts0.6.0;100 tests;286 schemas preserve282 |
 | 2026-10-02 12:17:19 | B1 consumed-input projection verified; publication contract/store next; child0/4,parent8/24 | Knowledge0.9.0;99 focused/actual-peer tests;282 schemas unchanged |
 | 2026-10-02 12:04:52 | DER-01 closed4/4 (100%); B1 Knowledge publication resumed; child0/4, parent8/24 | [Audit](../Audits/DER-01_Derived_Publication_Closeout.md);712 installed tests,8 isolated installs |
 | 2026-10-02 11:44:40 | DER-01 D3 complete3/4 (75%); D4 active; child0/4, parent8/24 | SDK0.2.0;141 Data/SDK tests;94 SDK and26 derivation coverage runs |
@@ -145,6 +146,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-01 17:24:59 | BP-06.01/B1 complete; child25%, parent4.17%; B2 next | [Observation/B1 proof](../Audits/Evidence/BP-06-Acquisition/Identity_Observations.json) |
 | 2026-10-01 12:42:29 | BP-06.01/B1 staged ingress partial;0% unchanged | 108 acquisition tests; [HTTP/process proof](../Audits/Evidence/BP-06-Acquisition/Ingestion_HTTP.json) |
 | 2026-10-01 12:30:47 | BP-06.01/B1 finalized ingestion stages;0% unchanged | 94 acquisition/200 artifact tests; [evidence](../Audits/Evidence/BP-06-Acquisition/Ingestion_Stages.json) |
-| 2026-10-01 12:06:09 | BP-06.01/B1 public client partial;0% unchanged | 83 acquisition/189 artifact tests; [independent peers](../Audits/Evidence/BP-06-Acquisition/Public_Research_Client.json) |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.
