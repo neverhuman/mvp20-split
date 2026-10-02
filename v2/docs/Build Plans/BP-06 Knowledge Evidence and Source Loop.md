@@ -2,15 +2,15 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-06.03 activation audit next.
-- Last refreshed: `2026-10-01 21:01:42` (America/Chicago).
+- Status: primary_active; BP-06.03 / Build / B1.
+- Last refreshed: `2026-10-01 21:13:35` (America/Chicago).
 - Owner/scope: Knowledge, Research and focused Data/Artifacts modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 receipt/wait seams and BP-05 inspection; BP-01/02/03 public contracts and tool execution.
-- Implementation: **33.33%**, 8/24 verified child deliveries. P1/.01 and P2/.02 closed100%; P3/.03 queued0%.
+- Implementation: **33.33%**, 8/24 verified child deliveries. P1/.01 and P2/.02 closed100%; P3/.03 active0% with B1 partial implementation.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current task: BP-06.03 activation audit; no successor implementation credit yet.
-- Demonstrated behavior: Independent wheel acceptance passed: initial169 and replacement39 tests, zero failures/errors/skips; six isolated service installations preserve public peer compatibility, immutable history and rebuild recovery.
+- Current task: BP-06.03/B1 public reasoning/assessment contracts and durable owner receipts.
+- Demonstrated behavior: Knowledge0.7.0 private bounded reasoning and exact owner-state/context binding verified:161 owner tests including31 reasoning and44 PostgreSQL cases;14 dev tests. Public contracts, durable receipts and owner integration remain B1 work.
 - Blockers: none for bounded activation audit; real scientific/provider choices remain scoped successor gates.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.

@@ -3,10 +3,10 @@
 ## Current Checkpoint
 
 
-- Last refreshed: `2026-10-01 21:01:42` (America/Chicago).
-- Active plan: BP-06 parent8/24 (33.33%); .01/.02 closed100%; .03 queued0%, activation audit next. No user decision pending.
-- Latest checkpoint: Independent wheel acceptance passed: initial169 and replacement39 tests, zero failures/errors/skips; six isolated service installations preserve public peer compatibility, immutable history and rebuild recovery. See BP-06.02_Knowledge_Replay_Closeout.md and Replacement_Acceptance.json; Git owns commit identity.
-- Next: BP-06.03 activation audit then B1 reasoning/receipts. knowledge_0001/0002 APPLIED and immutable; retained PostgreSQL fixture must not reset.
+- Last refreshed: `2026-10-01 21:13:35` (America/Chicago).
+- Active plan: BP-06.03 / Build / B1; child0/4 (0%); parent8/24 (33.33%). .01/.02 closed100%.
+- Latest checkpoint: Knowledge0.7.0 private bounded reasoning and exact owner-state/context binding verified:161 owner tests including31 reasoning and44 PostgreSQL cases;14 dev tests. Public contracts, durable receipts and owner integration remain B1 work. BP-06.02 closed/pusheda7aacb3. See Reasoning_Kernel.json; Git owns subsequent checkpoint identity.
+- Next: BP-06.03/B1: additive public reasoning/assessment contracts and owner-configured rule policy, then persistence/transport and artifact/receipt publication. Kernel/binding tests already pass; no user decision pending. knowledge_0001/0002 APPLIED and immutable. No public reasoning endpoint exists yet.
 - Recovery: only verified pending original receipts enable explicit same-identity resume. Unknown transport outcome first reconciles; collision/denial/terminal ambiguity never gets a fresh ID. Newer local edits survive recovery. Cancellation is operational and retains explicit uncertain-effects wording.
 - Runtime0.20.0, Commands0.2.0, graph-runtime0.11.0, campaigns0.4.1;264 public schemas; all260 predecessor schemas preserved. Numeric v2 only save/admit; other families/unmarked bytes v1. Input NumberValue remains decimal string. Registry eligibility synthetic-only observations are not reservations/atomic revocation. No scientific or target-host deployment claim.
 - Tooling: mapped v2/dev/.venv/Scripts/python.exe, PYTHONUTF8=1; pytest/ruff --config equivalents use v2/dev/pyproject.toml. Git always -c safe.directory=//DesktopNAS/Code/mvp20-split. Never reset retained PG or run parallel campaign-admission suites. No v1/JARVIS/subagents. Use Path.absolute for repo tooling; Path.resolve maps Z to UNC and breaks uv source identity.

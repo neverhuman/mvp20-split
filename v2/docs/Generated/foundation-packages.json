@@ -147,7 +147,7 @@
   },
   {
     "package": "amphora-knowledge",
-    "version": "0.6.0",
+    "version": "0.7.0",
     "path": "services/knowledge",
     "module": "amphora_knowledge",
     "public_dependencies": [

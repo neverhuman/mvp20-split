@@ -1,5 +1,10 @@
 # BP-06 Planning History
 
+## BP-06.03 B1 partial - 2026-10-01 21:13:35
+
+Knowledge0.7.0 private bounded reasoning and exact owner-state/context binding verified:161 owner tests including31 reasoning and44 PostgreSQL cases;14 dev tests. Public contracts, durable receipts and owner integration remain B1 work. [Activation](../Audits/BP-06.03_Activation.md); [evidence](../Audits/Evidence/BP-06-Knowledge/Reasoning_Kernel.json). Child0/4, Build0%, Acceptance0%; parent8/24 (33.33%) because full B1 boundary is not yet delivered. Public schemas and applied migrations unchanged.
+
+
 ## BP-06.02 closeout - 2026-10-01 21:01:42
 
 Independent wheel acceptance passed: initial169 and replacement39 tests, zero failures/errors/skips; six isolated service installations preserve public peer compatibility, immutable history and rebuild recovery. Child4/4 (100%); parent8/24 (33.33%). [Scoped audit](../Audits/BP-06.02_Knowledge_Replay_Closeout.md). BP-06.03 activation audit is next; no implementation credit for planning.

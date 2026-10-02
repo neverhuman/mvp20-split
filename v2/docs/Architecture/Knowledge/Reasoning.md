@@ -1,6 +1,6 @@
 # Reasoning and Evidence Authority
 
-- Design status: detailed proposed contract; implementation and scientific acceptance pending
+- Design status: private finite ground-rule kernel and exact owner-state binding implemented in BP-06.03/B1; public assessment/receipt boundary and scientific acceptance pending
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
 - Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
 - Parent: [Domain overview](Knowledge_Architecture.md)
@@ -45,3 +45,7 @@ Two studies disagree under different assay conditions. Preserve both observation
 ## Design Basis and Open Decisions
 
 Product Requirements defines the refinery and reasoning/evolution boundary; [Domain Model](../Requirements/Domain_Model.md) supplies assertion/applicability concepts. Remaining decisions: supported logic/rule formalism, contradiction policies, calibration and evidence-strength model. The knowledge graph is not itself proof of causal validity.
+
+## Initial implementation profile
+
+The [BP-06.03 activation audit](../../Audits/BP-06.03_Activation.md) selects finite grounded signed implications for synthetic engine proof, with exact context identity and bounded work/depth/facts. Explicit conflict remains visible; no negation-as-failure or arbitrary code is executed. The [private module](../../../services/knowledge/src/amphora_knowledge/reasoning/README.md) documents implemented behavior and limits. Logical entailment from represented hypotheses cannot grant scientific authority. General scientific rule formalism/calibration remains open beyond this fixture profile.

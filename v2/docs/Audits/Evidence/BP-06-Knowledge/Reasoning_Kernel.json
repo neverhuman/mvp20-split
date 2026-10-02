@@ -1,0 +1,140 @@
+{
+  "timestamp": "2026-10-01 21:13:35",
+  "scope": "BP-06.03/B1 partial: private kernel and exact owner-state binding",
+  "service": "0.7.0",
+  "contracts": "0.4.0 unchanged",
+  "tests": {
+    "owner": 161,
+    "reasoning": 31,
+    "postgresql": 44,
+    "skipped": 0,
+    "dev": 14
+  },
+  "coverage": {
+    "covered_lines": 1427,
+    "num_statements": 1541,
+    "percent_covered": 90.58649581074421,
+    "percent_covered_display": "91",
+    "missing_lines": 114,
+    "excluded_lines": 0,
+    "percent_statements_covered": 92.60220635950681,
+    "percent_statements_covered_display": "93",
+    "num_branches": 488,
+    "num_partial_branches": 67,
+    "covered_branches": 411,
+    "missing_branches": 77,
+    "percent_branches_covered": 84.22131147540983,
+    "percent_branches_covered_display": "84"
+  },
+  "reasoning_coverage": {
+    "services\\knowledge\\src\\amphora_knowledge\\reasoning\\__init__.py": {
+      "summary": {
+        "covered_lines": 0,
+        "num_statements": 0,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 0,
+        "num_partial_branches": 0,
+        "covered_branches": 0,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": [],
+      "missing_branches": []
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\reasoning\\binding.py": {
+      "summary": {
+        "covered_lines": 44,
+        "num_statements": 44,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 14,
+        "num_partial_branches": 0,
+        "covered_branches": 14,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": [],
+      "missing_branches": []
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\reasoning\\evaluator.py": {
+      "summary": {
+        "covered_lines": 49,
+        "num_statements": 51,
+        "percent_covered": 95.18072289156626,
+        "percent_covered_display": "95",
+        "missing_lines": 2,
+        "excluded_lines": 0,
+        "percent_statements_covered": 96.07843137254902,
+        "percent_statements_covered_display": "96",
+        "num_branches": 32,
+        "num_partial_branches": 2,
+        "covered_branches": 30,
+        "missing_branches": 2,
+        "percent_branches_covered": 93.75,
+        "percent_branches_covered_display": "94"
+      },
+      "missing_lines": [
+        10,
+        44
+      ],
+      "missing_branches": [
+        [
+          9,
+          10
+        ],
+        [
+          43,
+          44
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\reasoning\\model.py": {
+      "summary": {
+        "covered_lines": 100,
+        "num_statements": 100,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 24,
+        "num_partial_branches": 0,
+        "covered_branches": 24,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": [],
+      "missing_branches": []
+    }
+  },
+  "verification": [
+    "Explicit positive and negative premises; missing evidence remains unknown",
+    "Contradiction does not imply unrelated facts",
+    "Seeded/unseeded cycles terminate; original evidence origins retained",
+    "Canonical order and synchronous rounds; bounded exhaustion never reports complete support",
+    "Exact snapshot/context binding; stale/retracted assertions excluded; applicable conflicts retained"
+  ],
+  "remaining": [
+    "Public reasoning/assessment contracts and configured rule policy",
+    "Durable owner result/receipt publication and public peer rights checks",
+    "Actual Knowledge/Research-to-Runtime receipt integration and independent replacement"
+  ],
+  "limits": [
+    "Logical support from a hypothesis is not scientific acceptance",
+    "Pure binding trusts owner-reconstructed GraphState, never caller snapshot DTO",
+    "One witness proof per derived fact; not enumeration of all possible proofs"
+  ]
+}
