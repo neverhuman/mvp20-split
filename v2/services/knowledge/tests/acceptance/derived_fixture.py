@@ -7,7 +7,11 @@ import subprocess
 import sys
 from pathlib import Path
 
-from amphora_contracts_knowledge import ReasoningResult
+from amphora_contracts_knowledge import (
+    ReasoningResult,
+    reasoning_artifact_schema,
+    reasoning_artifact_schema_document,
+)
 
 
 def profile(directory):
@@ -17,6 +21,12 @@ def profile(directory):
     path.write_bytes(document)
     return {"media_type": "application/json", "schema_id": "fixture.knowledge.reasoning-result", "version": "1",
             "sha256": hashlib.sha256(document).hexdigest(), "schema_path": path.name}
+
+
+def production_profile(directory):
+    path = directory / "production-reasoning-result.schema.json"
+    path.write_bytes(reasoning_artifact_schema_document())
+    return {"media_type": "application/json", **reasoning_artifact_schema().model_dump(mode="json"), "schema_path": path.name}
 
 
 def probe(path, mode, environment):

@@ -63,6 +63,7 @@ def verify(output):
             with zipfile.ZipFile(knowledge_wheel) as archive:
                 names = archive.namelist()
                 assert any(name.endswith("r0002_rebuild.sql") for name in names)
+                assert any(name.endswith("r0006_publication_terminals.sql") for name in names)
                 assert not any("/tests/" in name or "fault_host" in name for name in names)
             for label, owner in OWNERS.items():
                 print(f"Installing isolated {generation} {label}", flush=True)
@@ -76,7 +77,10 @@ def verify(output):
                 run([uv, "pip", "install", "--python", python, "--constraint", requirements, *needed,
                      "pytest==" + version("pytest"), "httpx==" + version("httpx"),
                      "jsonschema[format-nongpl]==" + version("jsonschema")], log)
-                forbidden = [specs[peer][2] for peer in OWNERS.values() if peer != owner]
+                # Knowledge now legitimately consumes the public SDK. Continue
+                # excluding every peer service implementation; a declared public
+                # dependency is part of the owner's independent install closure.
+                forbidden = [specs[peer][2] for peer in OWNERS.values() if peer not in closure(owner, specs)]
                 probe = ("import importlib.util,pathlib,sys; "
                     f"import {specs[owner][2]} as owner; "
                     f"assert all(importlib.util.find_spec(name) is None for name in {forbidden!r}); "
@@ -107,7 +111,8 @@ def verify(output):
             save()
         cases = [("initial", ["services/knowledge/tests", "contracts/knowledge/tests"]),
                  ("replacement", ["services/knowledge/tests/api", "services/knowledge/tests/rebuild",
-                                  "services/knowledge/tests/acceptance"])]
+                                  "services/knowledge/tests/acceptance", "services/knowledge/tests/reasoning",
+                                  "services/knowledge/tests/publication"])]
         for generation, paths in cases:
             key = generation + "-knowledge"
             print(f"Testing {key} against actual isolated Data/Research owners", flush=True)

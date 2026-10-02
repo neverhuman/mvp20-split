@@ -56,7 +56,11 @@ def test_migration_role_cannot_host(configuration, knowledge_database, monkeypat
     lambda c: c["policy"].update(authority="scientific"),
     lambda c: c.update(reasoning=None),
     lambda c: c.update(reasoning={}),
-], ids=["extra", "empty", "action", "actor", "secret", "endpoint", "authority", "reasoning-null", "reasoning-object"])
+    lambda c: c.update(publication=None),
+    lambda c: c.update(publication={"actor_id": "bad actor", "issuer_id": "issuer", "token_env": "KNOWLEDGE_TEST_TOKEN"}),
+    lambda c: c.update(publication={"actor_id": "publisher", "issuer_id": "issuer", "token_env": "missing"}),
+], ids=["extra", "empty", "action", "actor", "secret", "endpoint", "authority", "reasoning-null", "reasoning-object",
+        "publication-null", "publication-actor", "publication-secret"])
 def test_invalid_configuration_fails_before_connecting(configuration, mutation):
     mutation(configuration)
     with pytest.raises(ValueError):

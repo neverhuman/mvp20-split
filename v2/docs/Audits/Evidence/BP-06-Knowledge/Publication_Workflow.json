@@ -1,0 +1,730 @@
+{
+  "timestamp_local": "2026-10-02 13:58:34",
+  "scope": "BP-06.03/B1 production SDK/optional HTTP publication",
+  "knowledge_version": "0.13.0",
+  "tests": {
+    "full_knowledge": 291,
+    "dev": 14,
+    "combined": 305,
+    "workflow_cases": 11,
+    "separate_actual_peer_test": 1
+  },
+  "coverage": {
+    "v2\\services\\knowledge\\src\\amphora_knowledge\\publication\\__init__.py": {
+      "summary": {
+        "covered_lines": 0,
+        "num_statements": 0,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 0,
+        "num_partial_branches": 0,
+        "covered_branches": 0,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": [],
+      "missing_branches": []
+    },
+    "v2\\services\\knowledge\\src\\amphora_knowledge\\publication\\attempt.py": {
+      "summary": {
+        "covered_lines": 74,
+        "num_statements": 74,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 10,
+        "num_partial_branches": 0,
+        "covered_branches": 10,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": [],
+      "missing_branches": []
+    },
+    "v2\\services\\knowledge\\src\\amphora_knowledge\\publication\\identity.py": {
+      "summary": {
+        "covered_lines": 21,
+        "num_statements": 21,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 2,
+        "num_partial_branches": 0,
+        "covered_branches": 2,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": [],
+      "missing_branches": []
+    },
+    "v2\\services\\knowledge\\src\\amphora_knowledge\\publication\\journal.py": {
+      "summary": {
+        "covered_lines": 80,
+        "num_statements": 86,
+        "percent_covered": 89.47368421052632,
+        "percent_covered_display": "89",
+        "missing_lines": 6,
+        "excluded_lines": 0,
+        "percent_statements_covered": 93.02325581395348,
+        "percent_statements_covered_display": "93",
+        "num_branches": 28,
+        "num_partial_branches": 6,
+        "covered_branches": 22,
+        "missing_branches": 6,
+        "percent_branches_covered": 78.57142857142857,
+        "percent_branches_covered_display": "79"
+      },
+      "missing_lines": [
+        38,
+        47,
+        52,
+        56,
+        60,
+        64
+      ],
+      "missing_branches": [
+        [
+          37,
+          38
+        ],
+        [
+          45,
+          47
+        ],
+        [
+          51,
+          52
+        ],
+        [
+          55,
+          56
+        ],
+        [
+          59,
+          60
+        ],
+        [
+          63,
+          64
+        ]
+      ]
+    },
+    "v2\\services\\knowledge\\src\\amphora_knowledge\\publication\\payload.py": {
+      "summary": {
+        "covered_lines": 57,
+        "num_statements": 60,
+        "percent_covered": 92.10526315789474,
+        "percent_covered_display": "92",
+        "missing_lines": 3,
+        "excluded_lines": 0,
+        "percent_statements_covered": 95.0,
+        "percent_statements_covered_display": "95",
+        "num_branches": 16,
+        "num_partial_branches": 3,
+        "covered_branches": 13,
+        "missing_branches": 3,
+        "percent_branches_covered": 81.25,
+        "percent_branches_covered_display": "81"
+      },
+      "missing_lines": [
+        47,
+        49,
+        76
+      ],
+      "missing_branches": [
+        [
+          46,
+          47
+        ],
+        [
+          48,
+          49
+        ],
+        [
+          75,
+          76
+        ]
+      ]
+    },
+    "v2\\services\\knowledge\\src\\amphora_knowledge\\publication\\policy.py": {
+      "summary": {
+        "covered_lines": 35,
+        "num_statements": 35,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 16,
+        "num_partial_branches": 0,
+        "covered_branches": 16,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": [],
+      "missing_branches": []
+    },
+    "v2\\services\\knowledge\\src\\amphora_knowledge\\publication\\records.py": {
+      "summary": {
+        "covered_lines": 80,
+        "num_statements": 88,
+        "percent_covered": 87.09677419354838,
+        "percent_covered_display": "87",
+        "missing_lines": 8,
+        "excluded_lines": 0,
+        "percent_statements_covered": 90.9090909090909,
+        "percent_statements_covered_display": "91",
+        "num_branches": 36,
+        "num_partial_branches": 8,
+        "covered_branches": 28,
+        "missing_branches": 8,
+        "percent_branches_covered": 77.77777777777777,
+        "percent_branches_covered_display": "78"
+      },
+      "missing_lines": [
+        40,
+        51,
+        75,
+        80,
+        86,
+        90,
+        97,
+        112
+      ],
+      "missing_branches": [
+        [
+          39,
+          40
+        ],
+        [
+          50,
+          51
+        ],
+        [
+          70,
+          75
+        ],
+        [
+          79,
+          80
+        ],
+        [
+          84,
+          86
+        ],
+        [
+          89,
+          90
+        ],
+        [
+          96,
+          97
+        ],
+        [
+          111,
+          112
+        ]
+      ]
+    },
+    "v2\\services\\knowledge\\src\\amphora_knowledge\\publication\\store.py": {
+      "summary": {
+        "covered_lines": 81,
+        "num_statements": 83,
+        "percent_covered": 96.03960396039604,
+        "percent_covered_display": "96",
+        "missing_lines": 2,
+        "excluded_lines": 0,
+        "percent_statements_covered": 97.59036144578313,
+        "percent_statements_covered_display": "98",
+        "num_branches": 18,
+        "num_partial_branches": 2,
+        "covered_branches": 16,
+        "missing_branches": 2,
+        "percent_branches_covered": 88.88888888888889,
+        "percent_branches_covered_display": "89"
+      },
+      "missing_lines": [
+        43,
+        99
+      ],
+      "missing_branches": [
+        [
+          42,
+          43
+        ],
+        [
+          98,
+          99
+        ]
+      ]
+    },
+    "v2\\services\\knowledge\\src\\amphora_knowledge\\publication\\terminal.py": {
+      "summary": {
+        "covered_lines": 81,
+        "num_statements": 90,
+        "percent_covered": 85.9375,
+        "percent_covered_display": "86",
+        "missing_lines": 9,
+        "excluded_lines": 0,
+        "percent_statements_covered": 90.0,
+        "percent_statements_covered_display": "90",
+        "num_branches": 38,
+        "num_partial_branches": 9,
+        "covered_branches": 29,
+        "missing_branches": 9,
+        "percent_branches_covered": 76.3157894736842,
+        "percent_branches_covered_display": "76"
+      },
+      "missing_lines": [
+        35,
+        58,
+        61,
+        66,
+        72,
+        74,
+        86,
+        102,
+        114
+      ],
+      "missing_branches": [
+        [
+          34,
+          35
+        ],
+        [
+          55,
+          58
+        ],
+        [
+          60,
+          61
+        ],
+        [
+          65,
+          66
+        ],
+        [
+          67,
+          74
+        ],
+        [
+          71,
+          72
+        ],
+        [
+          85,
+          86
+        ],
+        [
+          101,
+          102
+        ],
+        [
+          113,
+          114
+        ]
+      ]
+    },
+    "v2\\services\\knowledge\\src\\amphora_knowledge\\publication\\workflow.py": {
+      "summary": {
+        "covered_lines": 91,
+        "num_statements": 100,
+        "percent_covered": 88.46153846153847,
+        "percent_covered_display": "88",
+        "missing_lines": 9,
+        "excluded_lines": 0,
+        "percent_statements_covered": 91.0,
+        "percent_statements_covered_display": "91",
+        "num_branches": 30,
+        "num_partial_branches": 6,
+        "covered_branches": 24,
+        "missing_branches": 6,
+        "percent_branches_covered": 80.0,
+        "percent_branches_covered_display": "80"
+      },
+      "missing_lines": [
+        29,
+        40,
+        58,
+        78,
+        79,
+        96,
+        97,
+        103,
+        115
+      ],
+      "missing_branches": [
+        [
+          28,
+          29
+        ],
+        [
+          38,
+          40
+        ],
+        [
+          57,
+          58
+        ],
+        [
+          72,
+          97
+        ],
+        [
+          93,
+          96
+        ],
+        [
+          114,
+          115
+        ]
+      ]
+    }
+  },
+  "actual_peers": {
+    "timestamp": "2026-10-02 13:52:52",
+    "tier": "actual PostgreSQL and three owner HTTP processes",
+    "graph": {
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "d71439d175054bdd9b9593e3c794ee4e"
+      },
+      "graph_id": "domain"
+    },
+    "production_publication": {
+      "initial": {
+        "wire_version": "1",
+        "request": {
+          "wire_version": "1",
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "d71439d175054bdd9b9593e3c794ee4e"
+            },
+            "graph_id": "domain"
+          },
+          "publication_id": "production-initial",
+          "reasoning_request_id": "reason-initial"
+        },
+        "actor_id": "author",
+        "outcome": {
+          "status": "published",
+          "derivation": {
+            "schema_version": "1",
+            "origin": {
+              "schema_version": "1",
+              "command_family": "artifacts.begin_derived_upload",
+              "command_id": "71cbf658b82a4b49a5745d5e8a2ce1a1",
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "d71439d175054bdd9b9593e3c794ee4e"
+              },
+              "actor_id": "fixture"
+            },
+            "request_sha256": "bd7a41a493ad19517300fef765ee697eeb98a3764a26cd738c1a360319c5c132",
+            "upload_id": "b02c000d8c0243efb6e33affbcc6af40",
+            "artifact": {
+              "artifact_id": "56e104caf2534f53b1b57ae8d50b63c3",
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "d71439d175054bdd9b9593e3c794ee4e"
+              },
+              "sha256": "f4d7c471d7a8fcde459390387dba3a7e30cacc781fe3d024c6c46fdc248fd562",
+              "media_type": "application/json",
+              "schema_ref": {
+                "schema_id": "knowledge.reasoning-result.payload",
+                "version": "1",
+                "sha256": "cd39e024773235f97cff0dca800b0f43c18872d29df152e5097fa26cd6c55c48"
+              },
+              "size_bytes": 3093
+            },
+            "declaration": {
+              "schema_version": "1",
+              "transformation": {
+                "transformation_id": "knowledge.synthetic_logical_entailment",
+                "version": "1",
+                "sha256": "89796d174ad9e110dc79e22a899c3e92886491610977227382afe46e6ab14ad5"
+              },
+              "inputs": [
+                {
+                  "artifact_id": "3cfac4e58a9a49b9a087bbd48e0f1fcf",
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "d71439d175054bdd9b9593e3c794ee4e"
+                  },
+                  "sha256": "ee7bec908152a7c72f870043b516601843746951c7a58913fdb14d8947b2b1c1",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "schema_id": "evidence.prepared-document",
+                    "version": "1",
+                    "sha256": "dac07a68524f1d6dd011165ff0eba4ffec831b97c041e247c64a736b8fa7b2a0"
+                  },
+                  "size_bytes": 79
+                },
+                {
+                  "artifact_id": "64b93d6de8754cc98191152bcd14e545",
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "d71439d175054bdd9b9593e3c794ee4e"
+                  },
+                  "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+                  "media_type": "application/octet-stream",
+                  "schema_ref": {
+                    "schema_id": "fixture.bytes",
+                    "version": "1",
+                    "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                  },
+                  "size_bytes": 49
+                }
+              ]
+            }
+          },
+          "receipt": {
+            "schema_version": "1",
+            "issuer_id": "knowledge-synthetic",
+            "receipt_id": "knowledge-6b759efc054f5f4cc466be5464e798da63071db22bda7f4b6e1c3bc59e80d9b4",
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "d71439d175054bdd9b9593e3c794ee4e"
+            },
+            "purpose": "knowledge.synthetic_entailment",
+            "revision": "1",
+            "subject": {
+              "artifact_id": "64b93d6de8754cc98191152bcd14e545",
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "d71439d175054bdd9b9593e3c794ee4e"
+              },
+              "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+              "media_type": "application/octet-stream",
+              "schema_ref": {
+                "schema_id": "fixture.bytes",
+                "version": "1",
+                "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+              },
+              "size_bytes": 49
+            },
+            "outcome": {
+              "status": "accepted",
+              "output": {
+                "kind": "artifact",
+                "artifact": {
+                  "artifact_id": "56e104caf2534f53b1b57ae8d50b63c3",
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "d71439d175054bdd9b9593e3c794ee4e"
+                  },
+                  "sha256": "f4d7c471d7a8fcde459390387dba3a7e30cacc781fe3d024c6c46fdc248fd562",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "schema_id": "knowledge.reasoning-result.payload",
+                    "version": "1",
+                    "sha256": "cd39e024773235f97cff0dca800b0f43c18872d29df152e5097fa26cd6c55c48"
+                  },
+                  "size_bytes": 3093
+                },
+                "representation": "knowledge.reasoning_result.v1",
+                "unit": "1"
+              }
+            }
+          }
+        }
+      },
+      "resumed_after_outage": {
+        "wire_version": "1",
+        "request": {
+          "wire_version": "1",
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "d71439d175054bdd9b9593e3c794ee4e"
+            },
+            "graph_id": "domain"
+          },
+          "publication_id": "production-outage",
+          "reasoning_request_id": "reason-initial"
+        },
+        "actor_id": "author",
+        "outcome": {
+          "status": "published",
+          "derivation": {
+            "schema_version": "1",
+            "origin": {
+              "schema_version": "1",
+              "command_family": "artifacts.begin_derived_upload",
+              "command_id": "a983a63e93f4484cb982c50f5699dcc2",
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "d71439d175054bdd9b9593e3c794ee4e"
+              },
+              "actor_id": "fixture"
+            },
+            "request_sha256": "19c6c76d996991cf4bdd7f71609ebd2a4ee4630a7cb5e5335c77badc9ac65334",
+            "upload_id": "236e49383f0d40fb8c97ca9da6d6f69a",
+            "artifact": {
+              "artifact_id": "612274ccd9904929990d0dfc00202cc6",
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "d71439d175054bdd9b9593e3c794ee4e"
+              },
+              "sha256": "f4d7c471d7a8fcde459390387dba3a7e30cacc781fe3d024c6c46fdc248fd562",
+              "media_type": "application/json",
+              "schema_ref": {
+                "schema_id": "knowledge.reasoning-result.payload",
+                "version": "1",
+                "sha256": "cd39e024773235f97cff0dca800b0f43c18872d29df152e5097fa26cd6c55c48"
+              },
+              "size_bytes": 3093
+            },
+            "declaration": {
+              "schema_version": "1",
+              "transformation": {
+                "transformation_id": "knowledge.synthetic_logical_entailment",
+                "version": "1",
+                "sha256": "89796d174ad9e110dc79e22a899c3e92886491610977227382afe46e6ab14ad5"
+              },
+              "inputs": [
+                {
+                  "artifact_id": "3cfac4e58a9a49b9a087bbd48e0f1fcf",
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "d71439d175054bdd9b9593e3c794ee4e"
+                  },
+                  "sha256": "ee7bec908152a7c72f870043b516601843746951c7a58913fdb14d8947b2b1c1",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "schema_id": "evidence.prepared-document",
+                    "version": "1",
+                    "sha256": "dac07a68524f1d6dd011165ff0eba4ffec831b97c041e247c64a736b8fa7b2a0"
+                  },
+                  "size_bytes": 79
+                },
+                {
+                  "artifact_id": "64b93d6de8754cc98191152bcd14e545",
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "d71439d175054bdd9b9593e3c794ee4e"
+                  },
+                  "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+                  "media_type": "application/octet-stream",
+                  "schema_ref": {
+                    "schema_id": "fixture.bytes",
+                    "version": "1",
+                    "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                  },
+                  "size_bytes": 49
+                }
+              ]
+            }
+          },
+          "receipt": {
+            "schema_version": "1",
+            "issuer_id": "knowledge-synthetic",
+            "receipt_id": "knowledge-76b79159ce6f2467cee929b4a0739fd29f6e0bca2dd8c25a095132eb30cce682",
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "d71439d175054bdd9b9593e3c794ee4e"
+            },
+            "purpose": "knowledge.synthetic_entailment",
+            "revision": "1",
+            "subject": {
+              "artifact_id": "64b93d6de8754cc98191152bcd14e545",
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "d71439d175054bdd9b9593e3c794ee4e"
+              },
+              "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+              "media_type": "application/octet-stream",
+              "schema_ref": {
+                "schema_id": "fixture.bytes",
+                "version": "1",
+                "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+              },
+              "size_bytes": 49
+            },
+            "outcome": {
+              "status": "accepted",
+              "output": {
+                "kind": "artifact",
+                "artifact": {
+                  "artifact_id": "612274ccd9904929990d0dfc00202cc6",
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "d71439d175054bdd9b9593e3c794ee4e"
+                  },
+                  "sha256": "f4d7c471d7a8fcde459390387dba3a7e30cacc781fe3d024c6c46fdc248fd562",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "schema_id": "knowledge.reasoning-result.payload",
+                    "version": "1",
+                    "sha256": "cd39e024773235f97cff0dca800b0f43c18872d29df152e5097fa26cd6c55c48"
+                  },
+                  "size_bytes": 3093
+                },
+                "representation": "knowledge.reasoning_result.v1",
+                "unit": "1"
+              }
+            }
+          }
+        }
+      },
+      "denied_after_revocation": {
+        "wire_version": "1",
+        "request": {
+          "wire_version": "1",
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "d71439d175054bdd9b9593e3c794ee4e"
+            },
+            "graph_id": "domain"
+          },
+          "publication_id": "production-revoked",
+          "reasoning_request_id": "reason-initial"
+        },
+        "actor_id": "author",
+        "outcome": {
+          "status": "failed",
+          "code": "peer_access_denied",
+          "external_effects": "none"
+        }
+      },
+      "historical_replay_stable": true,
+      "payload_after_revocation_http": 403
+    }
+  },
+  "proven": [
+    "fresh exact-snapshot provenance before first upload",
+    "real SDK receipt-first begin/finalize",
+    "lost PUT leaves explicit uncertainty;8-attempt cap",
+    "stale lease during PUT cannot finalize",
+    "Data finalize before owner interruption resumes same identity",
+    "optional authenticated HTTP and host configuration",
+    "actual owners publish exact result/inputs, restart and outage recovery",
+    "inherited source revocation denies new payload use; history remains stable"
+  ],
+  "remaining": [
+    "publication-specific actual process-death barriers",
+    "independent wheel install/replacement",
+    "Research assessments and Runtime waits"
+  ],
+  "delivery_credit": {
+    "child": "0/4",
+    "parent": "8/24 (33.33%)"
+  }
+}

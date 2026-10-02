@@ -17,6 +17,7 @@ from sqlalchemy import URL
 
 from ..validation.conftest import records
 from .derived_fixture import probe as derivation_probe
+from .derived_fixture import production_profile
 from .derived_fixture import profile as derivation_profile
 from .processes import Owner, owned_script
 
@@ -83,7 +84,7 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
             "actions": ["read", "source_history", "upload", "finalize", "acquire", "manage_source_rights"]},
             {"token_env": "DATA_READ_TOKEN", "actor_id": "knowledge-reader", "scope": scope,
              "actions": ["read", "source_history"]}],
-        "profiles": [{"media_type": "application/octet-stream", **schema}, derived_profile]}), encoding="utf-8")
+        "profiles": [{"media_type": "application/octet-stream", **schema}, derived_profile, production_profile(tmp_path)]}), encoding="utf-8")
     owners = []
     try:
         data = Owner("amphora_data_artifacts", data_config, environment, "d"*32, python=data_python)
@@ -133,8 +134,9 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
             "version": "v1", "authority": "synthetic_logical_entailment", "context": artifact,
             "limits": {"depth": 32, "work": 100000, "facts": 8192}, "rules": []}
         config.write_text(json.dumps({"database_url_env": "KNOWLEDGE_DATABASE", "principals": [
-            {"token_env": "KNOWLEDGE_TOKEN", "actor_id": "author", "scope": scope, "actions": ["read_graph", "propose_graph", "rebuild_graph", "reason_graph"]}],
+            {"token_env": "KNOWLEDGE_TOKEN", "actor_id": "author", "scope": scope, "actions": ["read_graph", "propose_graph", "rebuild_graph", "reason_graph", "publish_reasoning"]}],
             "reasoning": [reasoning_profile],
+            "publication": {"actor_id": "fixture", "issuer_id": "knowledge-synthetic", "token_env": "DATA_TOKEN"},
             "vocabulary": case.vocabulary.record.model_dump(mode="json"), "policy": case.policy.definition(),
             "data": {"endpoint": data.endpoint, "token_env": "DATA_READ_TOKEN"},
             "research": {"endpoint": research.endpoint, "token_env": "RESEARCH_TOKEN"}}))
@@ -165,6 +167,16 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
             "result": reasoned["decision"]["result"], "inputs": consumed,
             "schema": {key: derived_profile[key] for key in ("schema_id", "version", "sha256")}}), encoding="utf-8")
         derived_initial = derivation_probe(derived_case, "publish", environment)
+        publication_query = {"wire_version": "1", "graph": proposal["graph"], "publication_id": "production-initial",
+                             "reasoning_request_id": reasoning_query["request_id"]}
+        published = knowledge.request("/v1/reasoning-publications", publication_query)
+        assert published["outcome"]["status"] == "published"
+        assert published["outcome"]["receipt"]["purpose"] == "knowledge.synthetic_entailment"
+        assert published["outcome"]["receipt"]["outcome"]["status"] == "accepted"
+        production_artifact = published["outcome"]["derivation"]["artifact"]
+        assert data.request(f"/v1/artifacts/{production_artifact['artifact_id']}/content") == reasoned["decision"]["result"]
+        assert {item["artifact_id"] for item in published["outcome"]["derivation"]["declaration"]["inputs"]} == {
+            artifact["artifact_id"], output["artifact_id"]}
         assert rebuilt["result"]["outcome"] == "published" and rebuilt["result"]["head"] == head
         knowledge.stop()
         knowledge = Owner("amphora_knowledge", config, environment, "k"*32,
@@ -176,6 +188,8 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
         assert knowledge.request("/v1/graph-rebuilds", rebuild_query) == rebuilt
         assert knowledge.request("/v1/graph-reasoning", reasoning_query) == reasoned
         assert knowledge.request(f"/v1/graphs/{proposal['graph']['graph_id']}/reasoning/reason-initial") == reasoned
+        assert knowledge.request("/v1/reasoning-publications", publication_query) == published
+        assert knowledge.request("/v1/reasoning-publications/read", publication_query) == published
         data.stop()
         data = Owner("amphora_data_artifacts", data_config, environment, "d" * 32, port=data.port,
             python=os.environ.get("AMPHORA_TEST_DATA_REPLACEMENT_PYTHON", data_python))
@@ -199,6 +213,11 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
                     regraph(child)
         regraph(pending)
         research.stop()
+        publication_pending = dict(publication_query, publication_id="production-outage")
+        with pytest.raises(urllib.error.HTTPError) as publication_error:
+            knowledge.request("/v1/reasoning-publications", publication_pending)
+        assert publication_error.value.code == 503
+        assert knowledge.request("/v1/reasoning-publications/read", publication_pending)["outcome"]["status"] == "pending"
         pending_reason = dict(reasoning_query, request_id="reason-pending")
         with pytest.raises(urllib.error.HTTPError) as reasoning_error:
             knowledge.request("/v1/graph-reasoning", pending_reason)
@@ -214,6 +233,8 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
         assert knowledge.request("/v1/graph-proposals", pending)["decision"]["outcome"] == "accepted"
         resumed_reason = knowledge.request("/v1/graph-reasoning", pending_reason)
         assert resumed_reason["decision"]["outcome"] == "evaluated"
+        resumed_publication = knowledge.request("/v1/reasoning-publications", publication_pending)
+        assert resumed_publication["outcome"]["status"] == "published"
         # Current source rights gate new observations; old accepted receipt is historical.
         revoked = copy.deepcopy(rights)
         revoked.update(supersedes=rights["reference"], status="revoked", allowed_uses=[])
@@ -221,6 +242,12 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
         data.request("/v1/acquisition/rights", revoked)
         derived_revoked = derivation_probe(derived_case, "revoked", environment)
         assert derived_revoked["derivation"] == derived_initial["derivation"]
+        assert knowledge.request("/v1/reasoning-publications", publication_query) == published
+        with pytest.raises(urllib.error.HTTPError) as production_revoked:
+            data.request(f"/v1/artifacts/{production_artifact['artifact_id']}/content")
+        assert production_revoked.value.code == 403
+        denied_publication = knowledge.request("/v1/reasoning-publications", dict(publication_query, publication_id="production-revoked"))
+        assert denied_publication["outcome"] == {"status": "failed", "code": "peer_access_denied", "external_effects": "none"}
         denied = copy.deepcopy(proposal)
         denied["change_id"] = "revoked-new"
         result = knowledge.request("/v1/graph-proposals", denied)
@@ -238,15 +265,19 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
             "source": source["reference"], "trace": trace, "head": head,
             "question": question["reference"], "need": need["reference"],
             "reasoning": {"initial": reasoned, "resumed_after_outage": resumed_reason, "denied_after_revocation": denied_reason},
+            "production_publication": {"initial": published, "resumed_after_outage": resumed_publication,
+                "denied_after_revocation": denied_publication, "historical_replay_stable": True, "payload_after_revocation_http": 403},
             "derived_publication": {"initial": derived_initial, "resumed": derived_resumed, "revoked": derived_revoked,
-                "producer": "test-owned public SDK handoff of actual Knowledge result; durable Knowledge orchestration remains B1"},
+                "producer": "legacy DER-01 test-owned SDK handoff; production_publication separately exercises Knowledge orchestration"},
             "cases": ["accepted_exact_provenance", "hypothesis_not_promoted", "knowledge_restart_exact_receipt_and_snapshot",
                 "research_outage_pending", "research_recovery_exact_retry", "revoked_rights_new_proposal_rejected",
                 "historical_receipt_stable_after_revocation", "published_rebuild_survives_restart",
                 "historical_rebuild_never_consumes_revoked_source_payloads", "reasoning_current_provenance",
-                "reasoning_restart_replay", "reasoning_outage_pending_and_resume", "reasoning_new_consumption_denied_after_revocation"],
+                "reasoning_restart_replay", "reasoning_outage_pending_and_resume", "reasoning_new_consumption_denied_after_revocation",
+                "production_publication_exact_inputs_and_payload", "publication_restart_replay", "publication_outage_resume",
+                "publication_current_rights_and_historical_receipt"],
             "limits": ["Synthetic software proof only", "BP-06.03 independent wheel replacement belongs to V1",
-                "Reasoning publication/receipt delivery and process-death gates remain unproven"]}
+                "Runtime receipt delivery and publication process-death gates remain unproven"]}
         destination = Path(os.environ.get("AMPHORA_KNOWLEDGE_ACCEPTANCE_EVIDENCE", str(tmp_path / "evidence.json")))
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(json.dumps(evidence, indent=2) + "\n", encoding="utf-8")

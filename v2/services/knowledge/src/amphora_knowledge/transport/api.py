@@ -17,6 +17,8 @@ from amphora_contracts_knowledge import (
     GraphProposalStatus,
     GraphRebuildRequest,
     GraphRebuildStatus,
+    ReasoningPublicationRequest,
+    ReasoningPublicationStatus,
     ReasoningRequest,
     ReasoningStatus,
 )
@@ -45,7 +47,7 @@ async def body(request):
     return b"".join(parts)
 
 
-def create_app(workflow, credentials, reasoning=None):
+def create_app(workflow, credentials, reasoning=None, publication=None):
     app = FastAPI(title="Amphora Knowledge structural authoring", docs_url=None, redoc_url=None, openapi_url=None)
     ledger = workflow.ledger
     rebuild = RebuildBoundary(RebuildWorkflow(RebuildStore(ledger.engine)))
@@ -129,5 +131,14 @@ def create_app(workflow, credentials, reasoning=None):
         async def reason_status(graph_id: Identifier, request_id: Identifier, request: Request):
             return await invoke(request, None, lambda principal, graph: reasoning.read(principal, graph, request_id),
                 lambda principal: DomainGraphRef(scope=principal.scope, graph_id=graph_id))
+
+    if publication is not None:
+        @app.post("/v1/reasoning-publications", response_model=ReasoningPublicationStatus)
+        async def publish_reasoning(request: Request):
+            return await invoke(request, ReasoningPublicationRequest, publication.submit)
+
+        @app.post("/v1/reasoning-publications/read", response_model=ReasoningPublicationStatus)
+        async def publication_status(request: Request):
+            return await invoke(request, ReasoningPublicationRequest, publication.read)
 
     return app
