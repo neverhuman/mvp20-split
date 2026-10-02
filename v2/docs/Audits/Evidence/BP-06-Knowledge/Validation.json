@@ -1,0 +1,349 @@
+{
+  "timestamp": "2026-10-01 19:50:16",
+  "scope": "BP-06.02/B1 partial; no delivery credit",
+  "service": "amphora-knowledge0.3.0",
+  "tests": {
+    "owner": 83,
+    "validation": 36,
+    "actual_postgresql": 13,
+    "skipped": 0
+  },
+  "coverage": {
+    "covered_lines": 810,
+    "num_statements": 856,
+    "percent_covered": 92.08695652173913,
+    "percent_covered_display": "92",
+    "missing_lines": 46,
+    "excluded_lines": 0,
+    "percent_statements_covered": 94.62616822429906,
+    "percent_statements_covered_display": "95",
+    "num_branches": 294,
+    "num_partial_branches": 45,
+    "covered_branches": 249,
+    "missing_branches": 45,
+    "percent_branches_covered": 84.6938775510204,
+    "percent_branches_covered_display": "85"
+  },
+  "uncovered": {
+    "services\\knowledge\\src\\amphora_knowledge\\access.py": {
+      "lines": [
+        19
+      ],
+      "branches": [
+        [
+          18,
+          19
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\authoring\\assertions.py": {
+      "lines": [
+        18,
+        21,
+        30,
+        37
+      ],
+      "branches": [
+        [
+          17,
+          18
+        ],
+        [
+          19,
+          21
+        ],
+        [
+          29,
+          30
+        ],
+        [
+          35,
+          37
+        ],
+        [
+          49,
+          47
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\authoring\\entities.py": {
+      "lines": [
+        34,
+        41,
+        49
+      ],
+      "branches": [
+        [
+          33,
+          34
+        ],
+        [
+          39,
+          41
+        ],
+        [
+          48,
+          49
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\authoring\\policy.py": {
+      "lines": [
+        36
+      ],
+      "branches": [
+        [
+          33,
+          36
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\authoring\\references.py": {
+      "lines": [
+        32,
+        36
+      ],
+      "branches": [
+        [
+          31,
+          32
+        ],
+        [
+          35,
+          36
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\authoring\\state.py": {
+      "lines": [
+        57,
+        62,
+        69,
+        71,
+        92
+      ],
+      "branches": [
+        [
+          56,
+          57
+        ],
+        [
+          61,
+          62
+        ],
+        [
+          68,
+          69
+        ],
+        [
+          70,
+          71
+        ],
+        [
+          89,
+          92
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\persistence\\ledger.py": {
+      "lines": [
+        98,
+        115,
+        122,
+        142,
+        152,
+        161,
+        171
+      ],
+      "branches": [
+        [
+          96,
+          98
+        ],
+        [
+          114,
+          115
+        ],
+        [
+          121,
+          122
+        ],
+        [
+          141,
+          142
+        ],
+        [
+          151,
+          152
+        ],
+        [
+          160,
+          161
+        ],
+        [
+          170,
+          171
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\persistence\\migrate.py": {
+      "lines": [
+        24
+      ],
+      "branches": [
+        [
+          23,
+          24
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\persistence\\migrations\\versions\\r0001_initial.py": {
+      "lines": [
+        14,
+        18
+      ],
+      "branches": []
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\persistence\\records.py": {
+      "lines": [
+        40,
+        69,
+        72,
+        85,
+        96
+      ],
+      "branches": [
+        [
+          39,
+          40
+        ],
+        [
+          68,
+          69
+        ],
+        [
+          70,
+          72
+        ],
+        [
+          84,
+          85
+        ],
+        [
+          94,
+          96
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\replay\\chain.py": {
+      "lines": [
+        21
+      ],
+      "branches": [
+        [
+          20,
+          21
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\validation\\peers.py": {
+      "lines": [
+        19
+      ],
+      "branches": [
+        [
+          18,
+          19
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\validation\\review.py": {
+      "lines": [
+        48,
+        71,
+        75,
+        77,
+        88,
+        101,
+        115
+      ],
+      "branches": [
+        [
+          36,
+          34
+        ],
+        [
+          47,
+          48
+        ],
+        [
+          70,
+          71
+        ],
+        [
+          74,
+          75
+        ],
+        [
+          76,
+          77
+        ],
+        [
+          87,
+          88
+        ],
+        [
+          100,
+          101
+        ],
+        [
+          114,
+          115
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\validation\\transport.py": {
+      "lines": [
+        33,
+        39,
+        87,
+        101,
+        102,
+        134
+      ],
+      "branches": [
+        [
+          29,
+          33
+        ],
+        [
+          38,
+          39
+        ],
+        [
+          85,
+          87
+        ],
+        [
+          133,
+          134
+        ],
+        [
+          142,
+          144
+        ]
+      ]
+    }
+  },
+  "proof": "v2/.test-results/bp0602-validation.log",
+  "limits": [
+    "Scripted peer records/HTTP are not actual Data/Research owner integration",
+    "Knowledge public API/host, rebuild publication and independent replacement remain pending",
+    "No scientific acceptance, licensed-derived publication or target-host proof"
+  ],
+  "schemas": {
+    "count": 258,
+    "changes": 0
+  },
+  "migration": "knowledge_0001 unchanged"
+}

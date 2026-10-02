@@ -218,3 +218,7 @@ Closeout evidence: pending. No implementation, deployment or scientific validati
 ## Reference refinement 2026-09-25 13:54:17
 
 BP-06.01/.02/.03/.04/.06 now include Research-owned questions/evidence needs, conversion traces, accepted claim/answer links, purpose-bound evidence sufficiency, processing-sensitive tested-material identity and real-view integration. Research, Knowledge and Data retain separate write authority. Existing implementation deliveries extended with required acceptance cases; all 0%, denominator unchanged. [Reference assessment](References/Amphora_Lab_Insights.md) owns provenance and limitations.
+
+## 2026-10-01 19:50:16 - B1 reference validation checkpoint
+
+B1 partial: Knowledge0.3.0 adds bounded public Data/Research clients, exact provenance/declaration review and durable review workflow.83 owner tests pass, including13 actual PostgreSQL cases; scripted HTTP covers routes, failure classes, byte/call limits and whole-review deadlines. Actual Data/Research owner integration and authenticated Knowledge API remain. Child0/4; parent4/24 (16.67%) unchanged. Connection-close transport tests exposed a closed-socket timeout update; fixed by stopping reads when the response closes. No schema/migration changes. See [validation proof](../Audits/Evidence/BP-06-Knowledge/Validation.json).
