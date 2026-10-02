@@ -1,6 +1,6 @@
 # Knowledge Service
 
-- Package: amphora-knowledge0.4.0; BP-06.02/B1 complete; B2 rebuild publication active.
+- Package: amphora-knowledge0.5.0; BP-06.02/B1 complete; B2 rebuild publication active.
 - Design: [Knowledge](../../docs/Architecture/Knowledge/Knowledge_Architecture.md), [activation](../../docs/Audits/BP-06.02_Activation.md).
 
 Knowledge owns domain entity/assertion identity, typed structural edits and deterministic accepted-history reconstruction. The package implements pure [authoring](src/amphora_knowledge/authoring/README.md) and [replay](src/amphora_knowledge/replay/README.md). The [private persistence module](src/amphora_knowledge/persistence/README.md) now commits proposals/decisions/logs/snapshots/heads and preserves stored profiles. [Reference validation](src/amphora_knowledge/validation/README.md) now implements bounded public clients and provenance checks; actual-peer integration and [authenticated HTTP](src/amphora_knowledge/transport/README.md) are verified; rebuild publication remains pending. Domain evaluation and a valid accepted-change DTO are not durable acceptance.
@@ -18,3 +18,5 @@ Persistence checkpoint:47 owner tests (11 real PostgreSQL) and33 Knowledge contr
 Validation checkpoint:83 owner tests pass (13 actual PostgreSQL);36 validation cases include scripted-record rules, real loopback scripted HTTP and durable workflow failure/retry. Scripted peers do not establish actual-owner compatibility. Public schemas and knowledge_0001 remain unchanged.
 
 Latest B1 proof:104 owner tests pass (26 PostgreSQL), including an actual three-process Data/Research/Knowledge test and Knowledge restart.35 contract and14 dev checks pass. Full in-process coverage980/1075 statements and289/348 branches; subprocess scenarios are separately recorded in Public_API evidence.260 schemas preserve258 predecessors. Independent wheel replacement and mid-build process death are not inferred from this checkpoint.
+
+B2 cursor checkpoint:112 owner tests pass, including18 replay cases. Exact watermark catch-up preserves canonical bytes and prior verified state on failure. Durable rebuild materialization publication remains pending; child completion stays25%.

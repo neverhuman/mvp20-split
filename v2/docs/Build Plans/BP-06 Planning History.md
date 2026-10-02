@@ -1,5 +1,9 @@
 # BP-06 Planning History
 
+## B2 cursor checkpoint - 2026-10-01 20:13:10
+
+B2 partial: Knowledge0.5.0 adds an immutable verified replay cursor and exact watermark catch-up.112 owner tests pass, including18 replay tests and26 PostgreSQL cases. Existing receipt/snapshot/schema bytes and knowledge_0001 are unchanged. Private rebuild intent/candidate/publication persistence and transport remain; child25%, Build33.33%, Acceptance0%; parent20.83% unchanged. [Evidence](../Audits/Evidence/BP-06-Knowledge/Rebuild_Cursor.json). Rebuilds retain semantic revision identity; planned candidate/publication tables are projections, not new accepted edits.
+
 ## B1 complete - 2026-10-01 20:05:58
 
 B1 complete: Knowledge0.4.0/contracts0.3.0 expose authenticated proposal/status/profile/head/snapshot/change reads and explicit owner hosting.104 owner tests pass (26 PostgreSQL cases), plus35 contracts/14 dev tests. Actual Data/Research/Knowledge HTTP proves exact provenance, restart replay, outage recovery and revoked-rights rejection.260 schemas preserve all258 predecessors. Child1/4 (25%), Build33.33%, Acceptance0%; parent5/24 (20.83%). [Evidence](../Audits/Evidence/BP-06-Knowledge/Public_API.json). Public profile discovery is observational for new graphs and pinned for stored graphs; it does not perform migration. Existing accepted receipts remain historical after rights revocation while new reviews fail. Independent wheel replacement and mid-build crashes remain V1/B3.

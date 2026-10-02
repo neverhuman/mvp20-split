@@ -9,11 +9,11 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 primary active; BP-07 through BP-09 queued; BP-05 closed.
-- Last refreshed: `2026-10-01 20:05:58` (America/Chicago).
+- Last refreshed: `2026-10-01 20:13:10` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P5 / BP-06 - Knowledge Evidence and Source Loop.
 - Primary active implementation plan / phase / task: BP-06 -> BP-06.02 / Build / B2.
-- Current task: BP-06.02/B2 isolated watermark rebuild, bounded catch-up and compare-and-set publication; B3 process interruption/named lineage cases and V1 replacement remain.
+- Current task: BP-06.02/B2 durable rebuild intent/candidate/result records, bounded catch-up and CAS materialization publication; follow the linked rebuild design. Rebuild cursor is verified; no0002 migration exists yet.
 - Next task: finish B2 rebuild publication, then B3 failure/lineage proof.
 - Implementation completion: BP-05 closed100% (16/16); BP-06 at20.83% (5/24); BP-07..09 remain0%.
 - Active focus: BP-06.02/B2; child25%, parent20.83%.
@@ -119,6 +119,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-01 20:13:10 | BP-06.02/B2 cursor partial; child25%, parent20.83% unchanged | [Cursor proof](../Audits/Evidence/BP-06-Knowledge/Rebuild_Cursor.json);112 owner tests |
 | 2026-10-01 20:05:58 | BP-06.02/B1 complete; child25%, parent20.83%; B2 active | [Public API/peer proof](../Audits/Evidence/BP-06-Knowledge/Public_API.json);104 owner tests;260 schemas |
 | 2026-10-01 19:50:16 | BP-06.02/B1 validator/workflow partial; child0%, parent16.67% | [Validation evidence](../Audits/Evidence/BP-06-Knowledge/Validation.json);83 owner tests; actual-peer integration pending |
 | 2026-10-01 19:34:51 | BP-06.02/B1 private persistence partial; child0%, parent16.67% unchanged | [Ledger proof](../Audits/Evidence/BP-06-Knowledge/Persistence.json);47 owner/47 contract-dev/80 isolated;256 schemas preserved |
@@ -143,6 +144,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-30 17:15:38 | BP-05.04/B2 verified50%; parent87.5% (14/16); B3 active | 10000 logical/200 rendered; separate request/render samples and fixed local regression budget |
 | 2026-09-30 17:07:23 | BP-05.04/B1 verified25%; parent81.25% (13/16); B2 active | Keyboard/narrow/reconnect journeys;25 real-owner cases and two135-test builds |
 | 2026-09-30 16:50:49 | BP-05.03 closed100%; parent75% (12/16); .04/B1 active0% | Authoring scoped audit aligned; independent replacement/recovery evidence reconciled |
-| 2026-09-30 16:45:26 | BP-05.03/B3 verified75%; parent68.75% (11/16); V1 active | 25 real-owner cases, two135-test builds, crash resume and both cancellation orderings |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.
