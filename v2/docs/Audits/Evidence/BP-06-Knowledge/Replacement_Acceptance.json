@@ -1,0 +1,1188 @@
+{
+  "timestamp_local": "2026-10-01 20:57:51",
+  "status": "passed",
+  "builds": {
+    "initial": {
+      "amphora_contracts_artifacts-0.1.0-py3-none-any.whl": "1a9f210f385b9edbffbf5ef1d513a27d484a5b5d590fb8255720468acb4aafdd",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.0-py3-none-any.whl": "af6ca1da3dc677b6049ad2a82ee0abdbd27824bcb359e2915f3bc23c7011c9ef",
+      "amphora_contracts_knowledge-0.4.0-py3-none-any.whl": "71d1a408f8c21d4e59825137c3f67d15f3c72a22df41563dd8a0b420f537172c",
+      "amphora_contracts_research-0.2.0-py3-none-any.whl": "3a301b4e1732bc6bf1306522f7c439ac8faa72399b111044a5042c4c67088c86",
+      "amphora_data_artifacts-0.10.0-py3-none-any.whl": "ae3a44fe4e892afa451807a3f6b5ee5d91c20e40f2af6f5a2a1d245acc2eb1a7",
+      "amphora_knowledge-0.6.0-py3-none-any.whl": "d3f26d21641ab0a6541987c85ea577cf2f9f3c4411444e72bfb88464cf761d78",
+      "amphora_research-0.4.0-py3-none-any.whl": "7a1434791294bab40d2a7bed1f45f0baa7dff7467dd153e6958aa4fd8fe7f419"
+    },
+    "replacement": {
+      "amphora_contracts_artifacts-0.1.0-py3-none-any.whl": "1a9f210f385b9edbffbf5ef1d513a27d484a5b5d590fb8255720468acb4aafdd",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.0-py3-none-any.whl": "af6ca1da3dc677b6049ad2a82ee0abdbd27824bcb359e2915f3bc23c7011c9ef",
+      "amphora_contracts_knowledge-0.4.0-py3-none-any.whl": "71d1a408f8c21d4e59825137c3f67d15f3c72a22df41563dd8a0b420f537172c",
+      "amphora_contracts_research-0.2.0-py3-none-any.whl": "3a301b4e1732bc6bf1306522f7c439ac8faa72399b111044a5042c4c67088c86",
+      "amphora_data_artifacts-0.10.0-py3-none-any.whl": "ae3a44fe4e892afa451807a3f6b5ee5d91c20e40f2af6f5a2a1d245acc2eb1a7",
+      "amphora_knowledge-0.6.0-py3-none-any.whl": "d3f26d21641ab0a6541987c85ea577cf2f9f3c4411444e72bfb88464cf761d78",
+      "amphora_research-0.4.0-py3-none-any.whl": "7a1434791294bab40d2a7bed1f45f0baa7dff7467dd153e6958aa4fd8fe7f419"
+    }
+  },
+  "tests": {
+    "initial-knowledge": {
+      "tests": 169,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "paths": [
+        "services/knowledge/tests",
+        "contracts/knowledge/tests"
+      ],
+      "public_peers": {
+        "timestamp": "2026-10-01 20:55:27",
+        "tier": "actual PostgreSQL and three owner HTTP processes",
+        "graph": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "57f5d8ce038a40d1a23e535d4207da55"
+          },
+          "graph_id": "domain"
+        },
+        "source": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "57f5d8ce038a40d1a23e535d4207da55"
+          },
+          "source_id": "source",
+          "revision_id": "r1",
+          "raw": {
+            "artifact_id": "a12e57b2e03c430fb9057d03d8d5dd5e",
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "57f5d8ce038a40d1a23e535d4207da55"
+            },
+            "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+            "media_type": "application/octet-stream",
+            "schema_ref": {
+              "schema_id": "fixture.bytes",
+              "version": "1",
+              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+            },
+            "size_bytes": 49
+          }
+        },
+        "trace": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "57f5d8ce038a40d1a23e535d4207da55"
+          },
+          "trace_id": "actual-conversion",
+          "sha256": "0b65600f49e93d57c349bc4e56b2ba9182755a1d2c72178cafadcd4bc8313411"
+        },
+        "head": {
+          "snapshot": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "57f5d8ce038a40d1a23e535d4207da55"
+              },
+              "graph_id": "domain"
+            },
+            "revision": 1,
+            "sha256": "beb989848aa2a02c68ba8ee6c75b6ee240e0bdb0d485586e71769445900b826e"
+          },
+          "change": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "57f5d8ce038a40d1a23e535d4207da55"
+              },
+              "graph_id": "domain"
+            },
+            "change_id": "first",
+            "position": 1,
+            "sha256": "54733687c8c546519632af178dae6f37e5c0ce9b0bca197446407b31d3745bfc"
+          }
+        },
+        "question": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "57f5d8ce038a40d1a23e535d4207da55"
+          },
+          "question_id": "question",
+          "revision": 1
+        },
+        "need": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "57f5d8ce038a40d1a23e535d4207da55"
+          },
+          "need_id": "need",
+          "revision": 1
+        },
+        "cases": [
+          "accepted_exact_provenance",
+          "hypothesis_not_promoted",
+          "knowledge_restart_exact_receipt_and_snapshot",
+          "research_outage_pending",
+          "research_recovery_exact_retry",
+          "revoked_rights_new_proposal_rejected",
+          "historical_receipt_stable_after_revocation",
+          "published_rebuild_survives_restart",
+          "historical_rebuild_never_consumes_revoked_source_payloads"
+        ],
+        "limits": [
+          "Synthetic software proof only",
+          "Independent wheel replacement belongs to V1",
+          "No mid-build kill proof yet"
+        ]
+      },
+      "barriers": [
+        {
+          "timestamp": "2026-10-01 20:55:38",
+          "scenario": "candidate_staged",
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "aac907e4fc74446f82f9c85f9d2b2db4"
+            },
+            "graph_id": "domain"
+          },
+          "initial_head": {
+            "snapshot": {
+              "graph": {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "aac907e4fc74446f82f9c85f9d2b2db4"
+                },
+                "graph_id": "domain"
+              },
+              "revision": 1,
+              "sha256": "b1987cb1a965f99104ce3b89f93b415a81ac894ed9cd1b7683f9aa0465bddaad"
+            },
+            "change": {
+              "graph": {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "aac907e4fc74446f82f9c85f9d2b2db4"
+                },
+                "graph_id": "domain"
+              },
+              "change_id": "first",
+              "position": 1,
+              "sha256": "5736ce39a997adb823b9c63e4db87c7826b6e2c3651675c9c7dcaa1e47068504"
+            }
+          },
+          "observed": {
+            "after_kill": "pending",
+            "recovered": {
+              "wire_version": "1",
+              "request": {
+                "wire_version": "1",
+                "graph": {
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "aac907e4fc74446f82f9c85f9d2b2db4"
+                  },
+                  "graph_id": "domain"
+                },
+                "rebuild_id": "interrupted"
+              },
+              "actor_id": "reviewer",
+              "initial_head": {
+                "snapshot": {
+                  "graph": {
+                    "scope": {
+                      "tenant_id": "synthetic",
+                      "project_id": "aac907e4fc74446f82f9c85f9d2b2db4"
+                    },
+                    "graph_id": "domain"
+                  },
+                  "revision": 1,
+                  "sha256": "b1987cb1a965f99104ce3b89f93b415a81ac894ed9cd1b7683f9aa0465bddaad"
+                },
+                "change": {
+                  "graph": {
+                    "scope": {
+                      "tenant_id": "synthetic",
+                      "project_id": "aac907e4fc74446f82f9c85f9d2b2db4"
+                    },
+                    "graph_id": "domain"
+                  },
+                  "change_id": "first",
+                  "position": 1,
+                  "sha256": "5736ce39a997adb823b9c63e4db87c7826b6e2c3651675c9c7dcaa1e47068504"
+                }
+              },
+              "result": {
+                "outcome": "published",
+                "head": {
+                  "snapshot": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "aac907e4fc74446f82f9c85f9d2b2db4"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "revision": 1,
+                    "sha256": "b1987cb1a965f99104ce3b89f93b415a81ac894ed9cd1b7683f9aa0465bddaad"
+                  },
+                  "change": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "aac907e4fc74446f82f9c85f9d2b2db4"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "change_id": "first",
+                    "position": 1,
+                    "sha256": "5736ce39a997adb823b9c63e4db87c7826b6e2c3651675c9c7dcaa1e47068504"
+                  }
+                },
+                "attempts": 1
+              }
+            },
+            "pointer_after_recovery": "interrupted"
+          },
+          "tier": "actual PostgreSQL and Knowledge HTTP process; accepted-input seeding is synthetic owner-local fixture"
+        },
+        {
+          "timestamp": "2026-10-01 20:55:56",
+          "scenario": "correction_race",
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "019ca8d7b6b1482885934ed91e09acc1"
+            },
+            "graph_id": "domain"
+          },
+          "initial_head": {
+            "snapshot": {
+              "graph": {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "019ca8d7b6b1482885934ed91e09acc1"
+                },
+                "graph_id": "domain"
+              },
+              "revision": 1,
+              "sha256": "97b06df0690df5a745fd3a66b28a37d772028f7aadaf9bf3a2f4e3e85b6cb522"
+            },
+            "change": {
+              "graph": {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "019ca8d7b6b1482885934ed91e09acc1"
+                },
+                "graph_id": "domain"
+              },
+              "change_id": "first",
+              "position": 1,
+              "sha256": "9899c1b3403f9dabb7b33dd8c008df0488f15ff0ab1eb806481315bb4c90b81b"
+            }
+          },
+          "observed": {
+            "rebuilt": {
+              "wire_version": "1",
+              "request": {
+                "wire_version": "1",
+                "graph": {
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "019ca8d7b6b1482885934ed91e09acc1"
+                  },
+                  "graph_id": "domain"
+                },
+                "rebuild_id": "interrupted"
+              },
+              "actor_id": "reviewer",
+              "initial_head": {
+                "snapshot": {
+                  "graph": {
+                    "scope": {
+                      "tenant_id": "synthetic",
+                      "project_id": "019ca8d7b6b1482885934ed91e09acc1"
+                    },
+                    "graph_id": "domain"
+                  },
+                  "revision": 1,
+                  "sha256": "97b06df0690df5a745fd3a66b28a37d772028f7aadaf9bf3a2f4e3e85b6cb522"
+                },
+                "change": {
+                  "graph": {
+                    "scope": {
+                      "tenant_id": "synthetic",
+                      "project_id": "019ca8d7b6b1482885934ed91e09acc1"
+                    },
+                    "graph_id": "domain"
+                  },
+                  "change_id": "first",
+                  "position": 1,
+                  "sha256": "9899c1b3403f9dabb7b33dd8c008df0488f15ff0ab1eb806481315bb4c90b81b"
+                }
+              },
+              "result": {
+                "outcome": "published",
+                "head": {
+                  "snapshot": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "019ca8d7b6b1482885934ed91e09acc1"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "revision": 2,
+                    "sha256": "467847e7def5d4915a42fd1957ef8dee56315a2271f997ad91850c23696728a3"
+                  },
+                  "change": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "019ca8d7b6b1482885934ed91e09acc1"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "change_id": "correction",
+                    "position": 2,
+                    "sha256": "ba31641bc7a7b53e2feca22a8982f6bfcd45836b00f5ae9fa4ee1ea5d9c47d67"
+                  }
+                },
+                "attempts": 2
+              }
+            },
+            "correction_head": {
+              "snapshot": {
+                "graph": {
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "019ca8d7b6b1482885934ed91e09acc1"
+                  },
+                  "graph_id": "domain"
+                },
+                "revision": 2,
+                "sha256": "467847e7def5d4915a42fd1957ef8dee56315a2271f997ad91850c23696728a3"
+              },
+              "change": {
+                "graph": {
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "019ca8d7b6b1482885934ed91e09acc1"
+                  },
+                  "graph_id": "domain"
+                },
+                "change_id": "correction",
+                "position": 2,
+                "sha256": "ba31641bc7a7b53e2feca22a8982f6bfcd45836b00f5ae9fa4ee1ea5d9c47d67"
+              }
+            },
+            "assertion_polarities": [
+              "affirmed",
+              "negated"
+            ]
+          },
+          "tier": "actual PostgreSQL and Knowledge HTTP process; accepted-input seeding is synthetic owner-local fixture"
+        },
+        {
+          "timestamp": "2026-10-01 20:55:46",
+          "scenario": "publication_before_result",
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "4856c1361d234bba965114d1c4bbdd6c"
+            },
+            "graph_id": "domain"
+          },
+          "initial_head": {
+            "snapshot": {
+              "graph": {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "4856c1361d234bba965114d1c4bbdd6c"
+                },
+                "graph_id": "domain"
+              },
+              "revision": 1,
+              "sha256": "cd17fd63217008bc39845f3a06a5d2e269883cebc8f069a71d3ce96e2f7ba606"
+            },
+            "change": {
+              "graph": {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "4856c1361d234bba965114d1c4bbdd6c"
+                },
+                "graph_id": "domain"
+              },
+              "change_id": "first",
+              "position": 1,
+              "sha256": "b66e5531b30d09a5aff96d0fc956448ad7a163878cb2259ce9873780aa21fcf7"
+            }
+          },
+          "observed": {
+            "after_kill": "pending",
+            "recovered": {
+              "wire_version": "1",
+              "request": {
+                "wire_version": "1",
+                "graph": {
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "4856c1361d234bba965114d1c4bbdd6c"
+                  },
+                  "graph_id": "domain"
+                },
+                "rebuild_id": "interrupted"
+              },
+              "actor_id": "reviewer",
+              "initial_head": {
+                "snapshot": {
+                  "graph": {
+                    "scope": {
+                      "tenant_id": "synthetic",
+                      "project_id": "4856c1361d234bba965114d1c4bbdd6c"
+                    },
+                    "graph_id": "domain"
+                  },
+                  "revision": 1,
+                  "sha256": "cd17fd63217008bc39845f3a06a5d2e269883cebc8f069a71d3ce96e2f7ba606"
+                },
+                "change": {
+                  "graph": {
+                    "scope": {
+                      "tenant_id": "synthetic",
+                      "project_id": "4856c1361d234bba965114d1c4bbdd6c"
+                    },
+                    "graph_id": "domain"
+                  },
+                  "change_id": "first",
+                  "position": 1,
+                  "sha256": "b66e5531b30d09a5aff96d0fc956448ad7a163878cb2259ce9873780aa21fcf7"
+                }
+              },
+              "result": {
+                "outcome": "published",
+                "head": {
+                  "snapshot": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "4856c1361d234bba965114d1c4bbdd6c"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "revision": 1,
+                    "sha256": "cd17fd63217008bc39845f3a06a5d2e269883cebc8f069a71d3ce96e2f7ba606"
+                  },
+                  "change": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "4856c1361d234bba965114d1c4bbdd6c"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "change_id": "first",
+                    "position": 1,
+                    "sha256": "b66e5531b30d09a5aff96d0fc956448ad7a163878cb2259ce9873780aa21fcf7"
+                  }
+                },
+                "attempts": 1
+              }
+            },
+            "pointer_after_recovery": "interrupted"
+          },
+          "tier": "actual PostgreSQL and Knowledge HTTP process; accepted-input seeding is synthetic owner-local fixture"
+        },
+        {
+          "timestamp": "2026-10-01 20:55:53",
+          "scenario": "publication_committed",
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "be96e80b8fa84bb8a978dcba475a1bc2"
+            },
+            "graph_id": "domain"
+          },
+          "initial_head": {
+            "snapshot": {
+              "graph": {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "be96e80b8fa84bb8a978dcba475a1bc2"
+                },
+                "graph_id": "domain"
+              },
+              "revision": 1,
+              "sha256": "463eea9fb69775a9de65e4c0f0bfdc19296b34919dc4d7349555849e547f656e"
+            },
+            "change": {
+              "graph": {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "be96e80b8fa84bb8a978dcba475a1bc2"
+                },
+                "graph_id": "domain"
+              },
+              "change_id": "first",
+              "position": 1,
+              "sha256": "5484a0e2b28a2a3a0e833742de9a9ea06d9fb4644948532299134802552ce57c"
+            }
+          },
+          "observed": {
+            "after_kill": "published",
+            "recovered": {
+              "wire_version": "1",
+              "request": {
+                "wire_version": "1",
+                "graph": {
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "be96e80b8fa84bb8a978dcba475a1bc2"
+                  },
+                  "graph_id": "domain"
+                },
+                "rebuild_id": "interrupted"
+              },
+              "actor_id": "reviewer",
+              "initial_head": {
+                "snapshot": {
+                  "graph": {
+                    "scope": {
+                      "tenant_id": "synthetic",
+                      "project_id": "be96e80b8fa84bb8a978dcba475a1bc2"
+                    },
+                    "graph_id": "domain"
+                  },
+                  "revision": 1,
+                  "sha256": "463eea9fb69775a9de65e4c0f0bfdc19296b34919dc4d7349555849e547f656e"
+                },
+                "change": {
+                  "graph": {
+                    "scope": {
+                      "tenant_id": "synthetic",
+                      "project_id": "be96e80b8fa84bb8a978dcba475a1bc2"
+                    },
+                    "graph_id": "domain"
+                  },
+                  "change_id": "first",
+                  "position": 1,
+                  "sha256": "5484a0e2b28a2a3a0e833742de9a9ea06d9fb4644948532299134802552ce57c"
+                }
+              },
+              "result": {
+                "outcome": "published",
+                "head": {
+                  "snapshot": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "be96e80b8fa84bb8a978dcba475a1bc2"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "revision": 1,
+                    "sha256": "463eea9fb69775a9de65e4c0f0bfdc19296b34919dc4d7349555849e547f656e"
+                  },
+                  "change": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "be96e80b8fa84bb8a978dcba475a1bc2"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "change_id": "first",
+                    "position": 1,
+                    "sha256": "5484a0e2b28a2a3a0e833742de9a9ea06d9fb4644948532299134802552ce57c"
+                  }
+                },
+                "attempts": 1
+              }
+            },
+            "pointer_after_recovery": "interrupted"
+          },
+          "tier": "actual PostgreSQL and Knowledge HTTP process; accepted-input seeding is synthetic owner-local fixture"
+        }
+      ]
+    },
+    "replacement-knowledge": {
+      "tests": 39,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "paths": [
+        "services/knowledge/tests/api",
+        "services/knowledge/tests/rebuild",
+        "services/knowledge/tests/acceptance"
+      ],
+      "public_peers": {
+        "timestamp": "2026-10-01 20:57:25",
+        "tier": "actual PostgreSQL and three owner HTTP processes",
+        "graph": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "c3db56e4a9764fe08eb1532f78f33926"
+          },
+          "graph_id": "domain"
+        },
+        "source": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "c3db56e4a9764fe08eb1532f78f33926"
+          },
+          "source_id": "source",
+          "revision_id": "r1",
+          "raw": {
+            "artifact_id": "97f155a480c94b88b6d95ce184a94b68",
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "c3db56e4a9764fe08eb1532f78f33926"
+            },
+            "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+            "media_type": "application/octet-stream",
+            "schema_ref": {
+              "schema_id": "fixture.bytes",
+              "version": "1",
+              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+            },
+            "size_bytes": 49
+          }
+        },
+        "trace": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "c3db56e4a9764fe08eb1532f78f33926"
+          },
+          "trace_id": "actual-conversion",
+          "sha256": "18d0e78d03d31df38fbdbb6873ca2cfcfaf8a35876cce01e7366419ab1f7e3cc"
+        },
+        "head": {
+          "snapshot": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "c3db56e4a9764fe08eb1532f78f33926"
+              },
+              "graph_id": "domain"
+            },
+            "revision": 1,
+            "sha256": "3a1c5c29190c9e0f21c74dda920663562c90590ea8a596c7512592303e7c3bd4"
+          },
+          "change": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "c3db56e4a9764fe08eb1532f78f33926"
+              },
+              "graph_id": "domain"
+            },
+            "change_id": "first",
+            "position": 1,
+            "sha256": "e3e76ed4d780751f900c6a0c687e43a8120fe12afad72b00e57720c6081adce0"
+          }
+        },
+        "question": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "c3db56e4a9764fe08eb1532f78f33926"
+          },
+          "question_id": "question",
+          "revision": 1
+        },
+        "need": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "c3db56e4a9764fe08eb1532f78f33926"
+          },
+          "need_id": "need",
+          "revision": 1
+        },
+        "cases": [
+          "accepted_exact_provenance",
+          "hypothesis_not_promoted",
+          "knowledge_restart_exact_receipt_and_snapshot",
+          "research_outage_pending",
+          "research_recovery_exact_retry",
+          "revoked_rights_new_proposal_rejected",
+          "historical_receipt_stable_after_revocation",
+          "published_rebuild_survives_restart",
+          "historical_rebuild_never_consumes_revoked_source_payloads"
+        ],
+        "limits": [
+          "Synthetic software proof only",
+          "Independent wheel replacement belongs to V1",
+          "No mid-build kill proof yet"
+        ]
+      },
+      "barriers": [
+        {
+          "timestamp": "2026-10-01 20:57:36",
+          "scenario": "candidate_staged",
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "e36544c0e5524c22a5745d84e3a46f99"
+            },
+            "graph_id": "domain"
+          },
+          "initial_head": {
+            "snapshot": {
+              "graph": {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "e36544c0e5524c22a5745d84e3a46f99"
+                },
+                "graph_id": "domain"
+              },
+              "revision": 1,
+              "sha256": "f37295b65985fd48f8bc0abad63090314b065c8e7ea875e83b9ef4297d3bac9d"
+            },
+            "change": {
+              "graph": {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "e36544c0e5524c22a5745d84e3a46f99"
+                },
+                "graph_id": "domain"
+              },
+              "change_id": "first",
+              "position": 1,
+              "sha256": "e1c5b71f2d5047e0bfba3137d51fed272e70c85bea88065506e9f54750630504"
+            }
+          },
+          "observed": {
+            "after_kill": "pending",
+            "recovered": {
+              "wire_version": "1",
+              "request": {
+                "wire_version": "1",
+                "graph": {
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "e36544c0e5524c22a5745d84e3a46f99"
+                  },
+                  "graph_id": "domain"
+                },
+                "rebuild_id": "interrupted"
+              },
+              "actor_id": "reviewer",
+              "initial_head": {
+                "snapshot": {
+                  "graph": {
+                    "scope": {
+                      "tenant_id": "synthetic",
+                      "project_id": "e36544c0e5524c22a5745d84e3a46f99"
+                    },
+                    "graph_id": "domain"
+                  },
+                  "revision": 1,
+                  "sha256": "f37295b65985fd48f8bc0abad63090314b065c8e7ea875e83b9ef4297d3bac9d"
+                },
+                "change": {
+                  "graph": {
+                    "scope": {
+                      "tenant_id": "synthetic",
+                      "project_id": "e36544c0e5524c22a5745d84e3a46f99"
+                    },
+                    "graph_id": "domain"
+                  },
+                  "change_id": "first",
+                  "position": 1,
+                  "sha256": "e1c5b71f2d5047e0bfba3137d51fed272e70c85bea88065506e9f54750630504"
+                }
+              },
+              "result": {
+                "outcome": "published",
+                "head": {
+                  "snapshot": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "e36544c0e5524c22a5745d84e3a46f99"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "revision": 1,
+                    "sha256": "f37295b65985fd48f8bc0abad63090314b065c8e7ea875e83b9ef4297d3bac9d"
+                  },
+                  "change": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "e36544c0e5524c22a5745d84e3a46f99"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "change_id": "first",
+                    "position": 1,
+                    "sha256": "e1c5b71f2d5047e0bfba3137d51fed272e70c85bea88065506e9f54750630504"
+                  }
+                },
+                "attempts": 1
+              }
+            },
+            "pointer_after_recovery": "interrupted"
+          },
+          "tier": "actual PostgreSQL and Knowledge HTTP process; accepted-input seeding is synthetic owner-local fixture"
+        },
+        {
+          "timestamp": "2026-10-01 20:57:51",
+          "scenario": "correction_race",
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "1ac9dc4efe754091acd5c60bdeb5ca7f"
+            },
+            "graph_id": "domain"
+          },
+          "initial_head": {
+            "snapshot": {
+              "graph": {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "1ac9dc4efe754091acd5c60bdeb5ca7f"
+                },
+                "graph_id": "domain"
+              },
+              "revision": 1,
+              "sha256": "074863410e611a9bab8ed6b78d90e95b0611e03f23e0ed6aceaf376c4f513f62"
+            },
+            "change": {
+              "graph": {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "1ac9dc4efe754091acd5c60bdeb5ca7f"
+                },
+                "graph_id": "domain"
+              },
+              "change_id": "first",
+              "position": 1,
+              "sha256": "d5c7ba68c1916e69082f774fb90859d8e6a4bc6e9daeff7cde239eb030b1f7d9"
+            }
+          },
+          "observed": {
+            "rebuilt": {
+              "wire_version": "1",
+              "request": {
+                "wire_version": "1",
+                "graph": {
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "1ac9dc4efe754091acd5c60bdeb5ca7f"
+                  },
+                  "graph_id": "domain"
+                },
+                "rebuild_id": "interrupted"
+              },
+              "actor_id": "reviewer",
+              "initial_head": {
+                "snapshot": {
+                  "graph": {
+                    "scope": {
+                      "tenant_id": "synthetic",
+                      "project_id": "1ac9dc4efe754091acd5c60bdeb5ca7f"
+                    },
+                    "graph_id": "domain"
+                  },
+                  "revision": 1,
+                  "sha256": "074863410e611a9bab8ed6b78d90e95b0611e03f23e0ed6aceaf376c4f513f62"
+                },
+                "change": {
+                  "graph": {
+                    "scope": {
+                      "tenant_id": "synthetic",
+                      "project_id": "1ac9dc4efe754091acd5c60bdeb5ca7f"
+                    },
+                    "graph_id": "domain"
+                  },
+                  "change_id": "first",
+                  "position": 1,
+                  "sha256": "d5c7ba68c1916e69082f774fb90859d8e6a4bc6e9daeff7cde239eb030b1f7d9"
+                }
+              },
+              "result": {
+                "outcome": "published",
+                "head": {
+                  "snapshot": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "1ac9dc4efe754091acd5c60bdeb5ca7f"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "revision": 2,
+                    "sha256": "97f1ebdf0e5bdc504dfacbcebabae15f645cb0d20ea14de3785349cdf711eb84"
+                  },
+                  "change": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "1ac9dc4efe754091acd5c60bdeb5ca7f"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "change_id": "correction",
+                    "position": 2,
+                    "sha256": "52a42a3e3fc450b9aaeba517b754a70496e47827190ce9bfc65bc482465f90e4"
+                  }
+                },
+                "attempts": 2
+              }
+            },
+            "correction_head": {
+              "snapshot": {
+                "graph": {
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "1ac9dc4efe754091acd5c60bdeb5ca7f"
+                  },
+                  "graph_id": "domain"
+                },
+                "revision": 2,
+                "sha256": "97f1ebdf0e5bdc504dfacbcebabae15f645cb0d20ea14de3785349cdf711eb84"
+              },
+              "change": {
+                "graph": {
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "1ac9dc4efe754091acd5c60bdeb5ca7f"
+                  },
+                  "graph_id": "domain"
+                },
+                "change_id": "correction",
+                "position": 2,
+                "sha256": "52a42a3e3fc450b9aaeba517b754a70496e47827190ce9bfc65bc482465f90e4"
+              }
+            },
+            "assertion_polarities": [
+              "affirmed",
+              "negated"
+            ]
+          },
+          "tier": "actual PostgreSQL and Knowledge HTTP process; accepted-input seeding is synthetic owner-local fixture"
+        },
+        {
+          "timestamp": "2026-10-01 20:57:42",
+          "scenario": "publication_before_result",
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "2fb5cff39d50403a80920a04182446a7"
+            },
+            "graph_id": "domain"
+          },
+          "initial_head": {
+            "snapshot": {
+              "graph": {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "2fb5cff39d50403a80920a04182446a7"
+                },
+                "graph_id": "domain"
+              },
+              "revision": 1,
+              "sha256": "f105e21ecd6b514d38c76e6ec9ed846c34a71a00a02d458d35eb6ceaa32ba395"
+            },
+            "change": {
+              "graph": {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "2fb5cff39d50403a80920a04182446a7"
+                },
+                "graph_id": "domain"
+              },
+              "change_id": "first",
+              "position": 1,
+              "sha256": "c973dc804fa8578706fd64550bac9e5831f4804c1ddc63a4980eb5d4422f68ae"
+            }
+          },
+          "observed": {
+            "after_kill": "pending",
+            "recovered": {
+              "wire_version": "1",
+              "request": {
+                "wire_version": "1",
+                "graph": {
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "2fb5cff39d50403a80920a04182446a7"
+                  },
+                  "graph_id": "domain"
+                },
+                "rebuild_id": "interrupted"
+              },
+              "actor_id": "reviewer",
+              "initial_head": {
+                "snapshot": {
+                  "graph": {
+                    "scope": {
+                      "tenant_id": "synthetic",
+                      "project_id": "2fb5cff39d50403a80920a04182446a7"
+                    },
+                    "graph_id": "domain"
+                  },
+                  "revision": 1,
+                  "sha256": "f105e21ecd6b514d38c76e6ec9ed846c34a71a00a02d458d35eb6ceaa32ba395"
+                },
+                "change": {
+                  "graph": {
+                    "scope": {
+                      "tenant_id": "synthetic",
+                      "project_id": "2fb5cff39d50403a80920a04182446a7"
+                    },
+                    "graph_id": "domain"
+                  },
+                  "change_id": "first",
+                  "position": 1,
+                  "sha256": "c973dc804fa8578706fd64550bac9e5831f4804c1ddc63a4980eb5d4422f68ae"
+                }
+              },
+              "result": {
+                "outcome": "published",
+                "head": {
+                  "snapshot": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "2fb5cff39d50403a80920a04182446a7"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "revision": 1,
+                    "sha256": "f105e21ecd6b514d38c76e6ec9ed846c34a71a00a02d458d35eb6ceaa32ba395"
+                  },
+                  "change": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "2fb5cff39d50403a80920a04182446a7"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "change_id": "first",
+                    "position": 1,
+                    "sha256": "c973dc804fa8578706fd64550bac9e5831f4804c1ddc63a4980eb5d4422f68ae"
+                  }
+                },
+                "attempts": 1
+              }
+            },
+            "pointer_after_recovery": "interrupted"
+          },
+          "tier": "actual PostgreSQL and Knowledge HTTP process; accepted-input seeding is synthetic owner-local fixture"
+        },
+        {
+          "timestamp": "2026-10-01 20:57:48",
+          "scenario": "publication_committed",
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "99272c135a304fe8a3c6559be032dd39"
+            },
+            "graph_id": "domain"
+          },
+          "initial_head": {
+            "snapshot": {
+              "graph": {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "99272c135a304fe8a3c6559be032dd39"
+                },
+                "graph_id": "domain"
+              },
+              "revision": 1,
+              "sha256": "c24d846fd1c8b55a3f62d1845aa404f74d45fdfcce7c4da2aa3aec880cb07391"
+            },
+            "change": {
+              "graph": {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "99272c135a304fe8a3c6559be032dd39"
+                },
+                "graph_id": "domain"
+              },
+              "change_id": "first",
+              "position": 1,
+              "sha256": "76f08b28c112945aadead485dcd34b60e4dc454f8659e461273949ac93c942f9"
+            }
+          },
+          "observed": {
+            "after_kill": "published",
+            "recovered": {
+              "wire_version": "1",
+              "request": {
+                "wire_version": "1",
+                "graph": {
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "99272c135a304fe8a3c6559be032dd39"
+                  },
+                  "graph_id": "domain"
+                },
+                "rebuild_id": "interrupted"
+              },
+              "actor_id": "reviewer",
+              "initial_head": {
+                "snapshot": {
+                  "graph": {
+                    "scope": {
+                      "tenant_id": "synthetic",
+                      "project_id": "99272c135a304fe8a3c6559be032dd39"
+                    },
+                    "graph_id": "domain"
+                  },
+                  "revision": 1,
+                  "sha256": "c24d846fd1c8b55a3f62d1845aa404f74d45fdfcce7c4da2aa3aec880cb07391"
+                },
+                "change": {
+                  "graph": {
+                    "scope": {
+                      "tenant_id": "synthetic",
+                      "project_id": "99272c135a304fe8a3c6559be032dd39"
+                    },
+                    "graph_id": "domain"
+                  },
+                  "change_id": "first",
+                  "position": 1,
+                  "sha256": "76f08b28c112945aadead485dcd34b60e4dc454f8659e461273949ac93c942f9"
+                }
+              },
+              "result": {
+                "outcome": "published",
+                "head": {
+                  "snapshot": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "99272c135a304fe8a3c6559be032dd39"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "revision": 1,
+                    "sha256": "c24d846fd1c8b55a3f62d1845aa404f74d45fdfcce7c4da2aa3aec880cb07391"
+                  },
+                  "change": {
+                    "graph": {
+                      "scope": {
+                        "tenant_id": "synthetic",
+                        "project_id": "99272c135a304fe8a3c6559be032dd39"
+                      },
+                      "graph_id": "domain"
+                    },
+                    "change_id": "first",
+                    "position": 1,
+                    "sha256": "76f08b28c112945aadead485dcd34b60e4dc454f8659e461273949ac93c942f9"
+                  }
+                },
+                "attempts": 1
+              }
+            },
+            "pointer_after_recovery": "interrupted"
+          },
+          "tier": "actual PostgreSQL and Knowledge HTTP process; accepted-input seeding is synthetic owner-local fixture"
+        }
+      ]
+    }
+  },
+  "closeout_note": "Production code matches tested builds; source README closeout wording was updated after builds. No scientific or target-host power-loss claim."
+}

@@ -3,10 +3,10 @@
 ## Current Checkpoint
 
 
-- Last refreshed: `2026-10-01 20:50:22` (America/Chicago).
-- Active plan: BP-06 -> BP-06.02 / Acceptance / V1, child3/4 (75%), Build100%, Acceptance0%. BP-06.01 closed100%; parent7/24 (29.17%). No user decision pending.
-- Latest checkpoint: B3 complete:130 owner tests pass (44 PostgreSQL cases). Three actual process-death barriers preserve pending/committed outcomes; a correction-versus-rebuild race catches up without overwrite. QEV-02/03/04 and TRACE-04 preserve linked declarations, conflicting methods/contexts and override provenance. Child3/4 (75%), Build100%, Acceptance0%; parent7/24 (29.17%). V1 independent replacement/audit remains. B2 pushed30b1b6f; see Git for B3 checkpoint.
-- Next: BP-06.02/V1 independent Knowledge installations, actual isolated Data/Research peers, replacement/history preservation and component-scoped architecture audit. Use verify_acquisition.py as a tooling reference, not a peer implementation dependency. knowledge_0001/0002 are APPLIED and immutable. No user decision pending.
+- Last refreshed: `2026-10-01 21:01:42` (America/Chicago).
+- Active plan: BP-06 parent8/24 (33.33%); .01/.02 closed100%; .03 queued0%, activation audit next. No user decision pending.
+- Latest checkpoint: Independent wheel acceptance passed: initial169 and replacement39 tests, zero failures/errors/skips; six isolated service installations preserve public peer compatibility, immutable history and rebuild recovery. See BP-06.02_Knowledge_Replay_Closeout.md and Replacement_Acceptance.json; Git owns commit identity.
+- Next: BP-06.03 activation audit then B1 reasoning/receipts. knowledge_0001/0002 APPLIED and immutable; retained PostgreSQL fixture must not reset.
 - Recovery: only verified pending original receipts enable explicit same-identity resume. Unknown transport outcome first reconciles; collision/denial/terminal ambiguity never gets a fresh ID. Newer local edits survive recovery. Cancellation is operational and retains explicit uncertain-effects wording.
 - Runtime0.20.0, Commands0.2.0, graph-runtime0.11.0, campaigns0.4.1;264 public schemas; all260 predecessor schemas preserved. Numeric v2 only save/admit; other families/unmarked bytes v1. Input NumberValue remains decimal string. Registry eligibility synthetic-only observations are not reservations/atomic revocation. No scientific or target-host deployment claim.
 - Tooling: mapped v2/dev/.venv/Scripts/python.exe, PYTHONUTF8=1; pytest/ruff --config equivalents use v2/dev/pyproject.toml. Git always -c safe.directory=//DesktopNAS/Code/mvp20-split. Never reset retained PG or run parallel campaign-admission suites. No v1/JARVIS/subagents. Use Path.absolute for repo tooling; Path.resolve maps Z to UNC and breaks uv source identity.

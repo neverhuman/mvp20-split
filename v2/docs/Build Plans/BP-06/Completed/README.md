@@ -3,5 +3,6 @@
 | Child | Completion | Closeout |
 |---|---|---|
 | [BP-06.01 Source and evidence contracts](BP-06.01%20Source%20and%20evidence%20contracts.md) | 100%;4/4 deliveries | [Scoped audit](../../../Audits/BP-06.01_Source_Evidence_Closeout.md) |
+| [BP-06.02 Typed graph authoring and replay](BP-06.02%20Typed%20graph%20authoring%20and%20replay.md) | 100%;4/4 deliveries | [Scoped audit](../../../Audits/BP-06.02_Knowledge_Replay_Closeout.md) |
 
 Closed children remain closed; new scope belongs to a successor. [Parent tracker](../../BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) owns sequence and rollup.

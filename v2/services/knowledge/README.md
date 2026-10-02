@@ -1,26 +1,24 @@
 # Knowledge Service
 
-- Package: amphora-knowledge0.6.0; BP-06.02/B1-B2 complete; B3 complete; V1 independent replacement/audit active.
+- Package: amphora-knowledge0.6.0; contracts0.4.0.
+- Status: BP-06.02 B1-B3 complete; independent installed replacement accepted (169 initial / 39 replacement tests).
 - Design: [Knowledge](../../docs/Architecture/Knowledge/Knowledge_Architecture.md), [activation](../../docs/Audits/BP-06.02_Activation.md).
 
-Knowledge owns domain entity/assertion identity, typed structural edits and deterministic accepted-history reconstruction. The package implements pure [authoring](src/amphora_knowledge/authoring/README.md) and [replay](src/amphora_knowledge/replay/README.md). The [private persistence module](src/amphora_knowledge/persistence/README.md) now commits proposals/decisions/logs/snapshots/heads and preserves stored profiles. [Reference validation](src/amphora_knowledge/validation/README.md) now implements bounded public clients and provenance checks; actual-peer integration and [authenticated HTTP](src/amphora_knowledge/transport/README.md) are verified; [Rebuild publication](src/amphora_knowledge/rebuild/README.md) is verified; process-interruption and independent replacement remain. Domain evaluation and a valid accepted-change DTO are not durable acceptance.
+Knowledge owns typed domain graph edits, immutable accepted history and snapshot reconstruction. It preserves source/Research links and conflicting interpretations without promoting them into scientifically accepted facts. Publication never changes a campaign's pinned revision.
 
-Dependencies are public Core0.1.0, Knowledge0.4.0, evidence0.5.0 and Research0.2.0 contracts plus FastAPI/Uvicorn, SQLAlchemy/psycopg/Alembic and the standard library. There are no private Data/Research imports, cross-owner SQL, shared ORM, source payload storage, LLM calls or campaign execution. The validation workflow checks scope/action before I/O and reads public Data/Research routes; actual-owner integration and HTTP credential binding are verified.
+| Module | Replacement boundary |
+|---|---|
+| [Authoring](src/amphora_knowledge/authoring/README.md) | Vocabulary/policy, entity/assertion histories, aliases, corrections and bounded typed edits |
+| [Replay](src/amphora_knowledge/replay/README.md) | Exact accepted-operation replay and immutable watermark catch-up cursor |
+| [Persistence](src/amphora_knowledge/persistence/README.md) | Scoped intent/receipt reconciliation and atomic accepted log/snapshot/head transactions |
+| [Validation](src/amphora_knowledge/validation/README.md) | Bounded public Data/Research reads, exact provenance and current payload access |
+| [Rebuild](src/amphora_knowledge/rebuild/README.md) | Durable private candidates and bounded compare-and-set materialization publication |
+| [Transport](src/amphora_knowledge/transport/README.md) | Authenticated API, pinned-profile discovery and explicit local host configuration |
 
-Structural acceptance preserves reported/hypothesized/unresolved assertions; it grants no scientific truth, constraint eligibility or permission to consume source payloads. Questions and evidence needs remain Research declarations. Typed operations retain corrections, aliases, contradictory contexts and retractions; replay never reinterprets descriptive prose. Graph publication must not change a campaign's pinned knowledge revision.
+Dependencies are public Core0.1.0, Knowledge0.4.0, evidence0.5.0 and Research0.2.0 contracts plus FastAPI/Uvicorn, SQLAlchemy/psycopg/Alembic and the standard library. No peer implementation imports, peer SQL, shared ORM, source payload storage, LLM calls or campaign execution exist. knowledge_0001/0002 are applied forward-only migrations; startup does not migrate. Stored graph profiles and accepted identities survive process replacement.
 
-Tests are module-owned under tests/authoring, tests/replay, tests/persistence, tests/validation, tests/api and tests/acceptance; use dev/run_tests.py --module knowledge, optionally --area authoring or --area replay. B2 rebuild publication, B3 actual concurrency/crash cases and V1 independent service/peer replacement remain required gates. Replacements must preserve canonical hashes, exact prior references, nonpromotion, safe failure codes and independently specified history semantics, not merely DTO validity.
+Scientific validity, question-criteria satisfaction, symbolic inference, model extraction and current-use permission are distinct from structural acceptance. Replay uses accepted operations and recorded metadata, never a fresh prompt or revoked source payload. Later source consumption rechecks Data rights. Scientific eligibility and text extraction remain in their named successor plans.
 
-Earlier pure-module checkpoint:36 owner tests and36 independent installed-owner tests pass;26 authoring and10 replay cases. Combined measured coverage319/334 statements and124/140 branches; remaining defensive error branches are listed in the committed Domain_Replay evidence. No transaction or scientific-authority coverage is inferred from this pure suite.
+Tests are owned under tests/authoring, replay, persistence, validation, rebuild, api and acceptance. Select with dev/run_tests.py --module knowledge --area <area>; PostgreSQL requires explicit AMPHORA_TEST_POSTGRES=1. Scripted peer tests prove client rules; the actual three-owner process test proves public compatibility. Test-only crash barriers are excluded from wheels.
 
-Persistence checkpoint:47 owner tests (11 real PostgreSQL) and33 Knowledge contract tests pass together in an independent installation with no Data/Research implementation;0 skipped.258 schemas preserve all256 predecessors. Private ledger observations remain synthetic fixtures until the public-peer validator is implemented; the B1 delivery is still open.
-
-Validation checkpoint:83 owner tests pass (13 actual PostgreSQL);36 validation cases include scripted-record rules, real loopback scripted HTTP and durable workflow failure/retry. Scripted peers do not establish actual-owner compatibility. Public schemas and knowledge_0001 remain unchanged.
-
-Latest B1 proof:104 owner tests pass (26 PostgreSQL), including an actual three-process Data/Research/Knowledge test and Knowledge restart.35 contract and14 dev checks pass. Full in-process coverage980/1075 statements and289/348 branches; subprocess scenarios are separately recorded in Public_API evidence.260 schemas preserve258 predecessors. Independent wheel replacement and mid-build process death are not inferred from this checkpoint.
-
-B2 cursor checkpoint:112 owner tests pass, including18 replay cases. Exact watermark catch-up preserves canonical bytes and prior verified state on failure. Durable rebuild materialization publication remains pending; child completion stays25%.
-
-Latest B2 checkpoint:122 owner tests pass (36 PostgreSQL), plus39 contract/14 dev tests. Applied knowledge_0002 owns durable rebuild audit and atomic projection pointers; knowledge_0001 and260 predecessor schemas are unchanged. B3 interruption/lineage proof and V1 independent replacement remain required.
-
-B3 checkpoint:130 owner tests pass, including44 PostgreSQL cases. Real process death after candidate staging, after pointer write/before result, and after commit/before HTTP reply preserves exact recovery; a paused rebuild catches up a concurrent correction. QEV-02/03/04 and TRACE-04 retain both interpretations, conflicting contexts/methods and exact authority boundaries. tests/acceptance/fault_host.py is test-only and excluded from production wheels. Independent installed-owner replacement/audit remains V1.
+B3 verification:130 owner tests pass (44 PostgreSQL cases), including three rebuild process-death barriers and a correction/publication race.39 contract tests cover264 published schemas. [Failure matrix](../../docs/Audits/Evidence/BP-06-Knowledge/Failure_Matrix.json) records exact identities, coverage gaps and QEV-02/03/04/TRACE-04 mapping. Earlier checkpoints remain in owning evidence/history rather than this replacement contract. independent installed replacement accepted (169 initial / 39 replacement tests); no scientific or target-host power-loss claim is made.

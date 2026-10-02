@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-01 20:50:22` (America/Chicago).
+- Last refreshed: `2026-10-01 21:01:42` (America/Chicago).
 - Scope: v2 design/implementation alignment
-- Active focus: BP-06.02/V1; rebuild interruption, correction race and QEV/TRACE lineage proof verified.
-- Next gate: independent installed-owner replacement and scoped closeout audit; scientific acceptance remains outside this child.
+- Active focus: BP-06.02 closed; BP-06.03 activation audit next.
+- Next gate: Reasoning and domain-receipt boundary coherence; scientific acceptance remains successor scope.
 
 ## Active Findings
 

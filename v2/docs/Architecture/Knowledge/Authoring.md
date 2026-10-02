@@ -1,6 +1,6 @@
 # Text Authoring and Graph Revisions
 
-- Design status: B1-B2 typed authoring and rebuild publication implemented; process/replacement proof, extraction and scientific acceptance remain pending
+- Design status: Typed authoring, replay, rebuild and independent replacement accepted under BP-06.02; extraction and scientific acceptance remain successor gates
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
 - Last reviewed: `2026-10-01 20:05:58` (America/Chicago)
 - Parent: [Domain overview](Knowledge_Architecture.md)

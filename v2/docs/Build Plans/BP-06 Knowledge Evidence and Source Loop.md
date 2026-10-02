@@ -2,15 +2,15 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-06.02 / Acceptance / V1.
-- Last refreshed: `2026-10-01 20:50:22` (America/Chicago).
+- Status: primary_active; BP-06.03 activation audit next.
+- Last refreshed: `2026-10-01 21:01:42` (America/Chicago).
 - Owner/scope: Knowledge, Research and focused Data/Artifacts modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 receipt/wait seams and BP-05 inspection; BP-01/02/03 public contracts and tool execution.
-- Implementation: **29.17%**, 7/24 verified child deliveries. Each child owns four deliveries; parent counts each once. P1/.01 is closed100%; P2/.02 is active75% after B1-B3 completion.
+- Implementation: **33.33%**, 8/24 verified child deliveries. P1/.01 and P2/.02 closed100%; P3/.03 queued0%.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current task: BP-06.02/V1 independent Knowledge installations, actual isolated Data/Research peers, replacement/history preservation and component-scoped architecture audit.
-- Demonstrated behavior: B3 complete:130 owner tests pass (44 PostgreSQL cases). Three actual process-death barriers preserve pending/committed outcomes; a correction-versus-rebuild race catches up without overwrite. QEV-02/03/04 and TRACE-04 preserve linked declarations, conflicting methods/contexts and override provenance. Child3/4 (75%), Build100%, Acceptance0%; parent7/24 (29.17%). V1 independent replacement/audit remains.
+- Current task: BP-06.03 activation audit; no successor implementation credit yet.
+- Demonstrated behavior: Independent wheel acceptance passed: initial169 and replacement39 tests, zero failures/errors/skips; six isolated service installations preserve public peer compatibility, immutable history and rebuild recovery.
 - Blockers: none for bounded activation audit; real scientific/provider choices remain scoped successor gates.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
@@ -30,7 +30,7 @@ Primary services retain private state, dependencies, migrations and module READM
 | Parent phase / child | Overall | Build | Acceptance | Prerequisite |
 |---|---:|---:|---:|---|
 | P1 / [BP-06.01 Source and evidence contracts](BP-06/Completed/BP-06.01%20Source%20and%20evidence%20contracts.md) | 100% | 100% | 100% | Parent predecessor gates |
-| P2 / [BP-06.02 Typed graph authoring and replay](BP-06/BP-06.02%20Typed%20graph%20authoring%20and%20replay.md) | 75% | 100% | 0% | BP-06.01 acceptance |
+| P2 / [BP-06.02 Typed graph authoring and replay](BP-06/Completed/BP-06.02%20Typed%20graph%20authoring%20and%20replay.md) | 100% | 100% | 100% | BP-06.01 acceptance |
 | P3 / [BP-06.03 Reasoning and domain receipts](BP-06/BP-06.03%20Reasoning%20and%20domain%20receipts.md) | 0% | 0% | 0% | BP-06.02 acceptance |
 | P4 / [BP-06.04 Laboratory returns and candidate eligibility](BP-06/BP-06.04%20Laboratory%20returns%20and%20candidate%20eligibility.md) | 0% | 0% | 0% | BP-06.03 acceptance |
 | P5 / [BP-06.05 Representation reuse and retrieval](BP-06/BP-06.05%20Representation%20reuse%20and%20retrieval.md) | 0% | 0% | 0% | BP-06.04 acceptance |
