@@ -1,6 +1,6 @@
 # Knowledge Service
 
-- Package: amphora-knowledge0.11.0; contracts0.6.0.
+- Package: amphora-knowledge0.12.0; contracts0.6.0.
 - Status: BP-06.02 closed; BP-06.03/B1 configured reasoning, durable results and optional HTTP implemented; artifact/domain-receipt publication pending.
 - Design: [Knowledge](../../docs/Architecture/Knowledge/Knowledge_Architecture.md), [activation](../../docs/Audits/BP-06.02_Activation.md).
 
@@ -17,7 +17,7 @@ Knowledge owns typed domain graph edits, immutable accepted history and snapshot
 | [Publication](src/amphora_knowledge/publication/README.md) | Exact result/input values, immutable publication selection, fenced leases and durable attempt journal; uploads/receipts pending |
 | [Transport](src/amphora_knowledge/transport/README.md) | Authenticated API, pinned-profile discovery and explicit local host configuration |
 
-Dependencies are public Commands0.2.0, Core0.1.0, Knowledge0.6.0, Artifacts0.2.0, evidence0.5.0 and Research0.2.0 contracts plus Pydantic/FastAPI/Uvicorn, SQLAlchemy/psycopg/Alembic and the standard library. No peer implementation imports, peer SQL, shared ORM, source payload storage, LLM calls or campaign execution exist. knowledge_0001/0002/0003/0004/0005 are applied forward-only migrations; startup does not migrate. Stored graph profiles and accepted identities survive process replacement.
+Dependencies are public graph-runtime0.11.0, Commands0.2.0, Core0.1.0, Knowledge0.6.0, Artifacts0.2.0, evidence0.5.0 and Research0.2.0 contracts plus Pydantic/FastAPI/Uvicorn, SQLAlchemy/psycopg/Alembic and the standard library. No peer implementation imports, peer SQL, shared ORM, source payload storage, LLM calls or campaign execution exist. knowledge_0001/0002/0003/0004/0005/0006 are applied forward-only migrations; startup does not migrate. Stored graph profiles and accepted identities survive process replacement.
 
 Scientific validity, question-criteria satisfaction, symbolic inference, model extraction and current-use permission are distinct from structural acceptance. Replay uses accepted operations and recorded metadata, never a fresh prompt or revoked source payload. Later source consumption rechecks Data rights. Scientific eligibility and text extraction remain in their named successor plans.
 
@@ -34,3 +34,5 @@ Knowledge0.10.0 adds publication intent/lease persistence under knowledge_0004;1
 The publication module also owns the pure upload-attempt transition policy and exact command construction (157 publication/SDK/dev tests). Its durable journal, logical receipt policy and production Data orchestration remain unimplemented.
 
 Knowledge0.11.0 retains exact reviewed payloads and bounded append-only upload attempts in knowledge_0005.145 scoped tests pass; journal ends at finalizing. Atomic terminal receipt and production upload recovery remain B1.
+
+Knowledge0.12.0 adds atomic immutable derived-artifact/logical-receipt outcomes under knowledge_0006 (166 scoped tests). Purpose is synthetic entailment; scientific sufficiency remains Research-owned. Production SDK/HTTP workflow and its process-recovery proof remain next.

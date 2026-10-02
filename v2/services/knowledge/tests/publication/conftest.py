@@ -6,6 +6,7 @@ from amphora_knowledge.publication.identity import PublisherIdentity
 from amphora_knowledge.publication.store import PublicationStore
 
 from ..reasoning.conftest import reasoning_case  # noqa: F401
+from .test_journal import journal_case  # noqa: F401
 from .test_payload import case as payload_case  # noqa: F401
 
 

@@ -25,6 +25,13 @@ class PublicationJournal:
     def __init__(self, store):
         self.store = store
 
+    @staticmethod
+    def _require_open(connection, document):
+        terminal = connection.execute(text("SELECT 1 FROM knowledge.publication_terminals WHERE " + PUBLICATION_SCOPE),
+                                      document.key).scalar_one_or_none()
+        if terminal is not None:
+            raise KnowledgeError("publication_already_terminal")
+
     def _load(self, connection, document):
         intent = self.store._intent(connection, document)
         if intent is None:
@@ -68,6 +75,7 @@ class PublicationJournal:
 
     def prepare(self, lease, observation):
         with self.store.fenced(lease) as connection:
+            self._require_open(connection, lease.document)
             previous = self._load(connection, lease.document)
             if previous is not None:
                 return previous
@@ -89,6 +97,7 @@ class PublicationJournal:
 
     def advance(self, lease, position, action, receipt=None):
         with self.store.fenced(lease) as connection:
+            self._require_open(connection, lease.document)
             progress = self._load(connection, lease.document)
             if progress is None:
                 raise KnowledgeError("publication_payload_missing")

@@ -149,10 +149,11 @@
   },
   {
     "package": "amphora-knowledge",
-    "version": "0.11.0",
+    "version": "0.12.0",
     "path": "services/knowledge",
     "module": "amphora_knowledge",
     "public_dependencies": [
+      "amphora-contracts-graph-runtime",
       "amphora-contracts-commands",
       "amphora-contracts-artifacts",
       "amphora-contracts-core",

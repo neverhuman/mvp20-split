@@ -27,3 +27,5 @@ knowledge_0003 tables are owned by the [reasoning store](../reasoning/README.md)
 knowledge_0004 tables belong to the [publication store](../publication/README.md). Immutable selections reference terminal reasoning decisions; separately mutable DB-clock leases support short fenced transactions. No payload/attempt orchestration exists yet.0001..0004 are applied and immutable.
 
 knowledge_0005 adds immutable publication payloads and append-only attempt events (SELECT/INSERT only), owned by the publication journal. Applied migrations0001..0005 are immutable.
+
+knowledge_0006 owns immutable publication terminals, pairing derived artifact metadata and synthetic logical receipt at one journal position. Failed finalization retains a matching original-command rejection proof; uncertainty cannot become failure without it.0001..0006 are applied/immutable.
