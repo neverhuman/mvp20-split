@@ -1,7 +1,7 @@
 # Data and Artifacts Service
 
 - Status: DER-01 derived-publication accepted/closed. Baseline: provisional uploads and verified finalization implemented; protective reservation handshake implemented; bounded reconciliation/cleanup sweeps implemented; standalone hosting/scoped reads implemented; BP-02.03 independently accepted and audited; actual runtime integration, REC-01..09 process recovery and independent replacement acceptance passed.
-- Package: `amphora-data-artifacts` 0.11.0.
+- Package: `amphora-data-artifacts` 0.11.1.
 - Architecture: [Artifact publication](../../docs/Architecture/System/Artifact_Publication_Protocol.md), [physical records](../../docs/Architecture/System/Persistence_Record_Design.md).
 
 This independently installed service owns provisional upload records, immutable artifact catalog bindings, protective reservations, command receipts and artifact audit/outbox state. Its [private persistence module](src/amphora_data_artifacts/persistence/README.md) implements migrations and command registration/terminal receipt transactions. `api.create_app(uploads, storage, credentials, outcomes=None)` exposes POST /v1/uploads, PUT /v1/uploads/{id}/content and POST /v1/artifacts/finalize using explicit configured principals and policy. Successful streaming returns a provisional receipt; verified finalization returns ArtifactRef. POST /v1/reservations, /confirm and /reconcile implement the protective handshake with an explicitly configured runtime outcome client. GET /v1/artifacts/{id} and /content require a scoped read grant; content is integrity checked before response. `amphora-artifacts` provides explicit loopback hosting and bounded maintenance.
@@ -47,3 +47,5 @@ Version0.9.0 adds artifact_0006 and explicit current-use rights/expiry fences. C
 DER-01/D1 introduces private [declared transformation values](src/amphora_data_artifacts/derivations/README.md) and additive public artifact contracts0.2.0. D2 adds immutable declarations, atomic finalization/lineage, current-rights fences and bounded ancestry; D3-D4 accepted; DER-01 closed. Data0.11.0 requires artifact_0007; prior migrations remain unchanged. Focused tests: `python v2/dev/run_tests.py --module data-artifacts --area derivations --coverage`.
 
 DER-01 independent acceptance: Data278 initial and47 replacement tests, SDK94, Knowledge252 initial and41 replacement tests passed. [Scoped closeout](../../docs/Audits/DER-01_Derived_Publication_Closeout.md).
+
+BP-06.03/B1.06 compatibility patch: dependency pins now consume additive Research contracts0.3.0 (Evidence0.5.1/Knowledge contracts0.6.1 where applicable). Existing public schema bytes and owner behavior are unchanged; earlier installed/recovery evidence remains tied to its recorded versions.

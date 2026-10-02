@@ -1,0 +1,62 @@
+{
+  "timestamp_local": "2026-10-02 16:33:50",
+  "scope": "BP-06.03/B1.06 Research public assessment wire and mappings",
+  "versions": {
+    "research": "0.6.0",
+    "research_contracts": "0.3.0",
+    "evidence_contracts": "0.5.1",
+    "knowledge_contracts": "0.6.1",
+    "knowledge": "0.13.1",
+    "data_artifacts": "0.11.1"
+  },
+  "tests": {
+    "source_research_contracts_and_dev": 294
+  },
+  "coverage": {
+    "covered_lines": 254,
+    "num_statements": 254,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100",
+    "num_branches": 110,
+    "num_partial_branches": 0,
+    "covered_branches": 110,
+    "missing_branches": 0,
+    "percent_branches_covered": 100.0,
+    "percent_branches_covered_display": "100"
+  },
+  "schema_compatibility": {
+    "unchanged_predecessors": 286,
+    "added": 8,
+    "total": 294
+  },
+  "installed": {
+    "timestamp_local": "2026-10-02 16:30:55",
+    "status": "passed",
+    "scope": "B1.06 Research0.6.0 domain-to-wire mapping and contracts0.3.0; existing owner API/persistence regression",
+    "wheels": {
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_research-0.3.0-py3-none-any.whl": "c87b4f38025fb4449f77e9ed5177797b1ff36131d9a45c2855e551221d055b28",
+      "amphora_research-0.6.0-py3-none-any.whl": "cdf0662c0814fbc695e06a816b7b3d9725e9b6e87b7986164011e5fba69cdb86"
+    },
+    "tests": {
+      "tests": 177,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "limitations": [
+      "No public assessment endpoint or producer authentication implemented",
+      "No assessment persistence or receipt publication implemented"
+    ]
+  },
+  "limits": [
+    "No assessment producer authentication or route yet",
+    "No assessment persistence or publication receipt yet",
+    "No scientific acceptance",
+    "Compatibility patches update dependency pins only; no peer implementation changes or migration"
+  ]
+}

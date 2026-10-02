@@ -108,6 +108,10 @@ for name, model in {
     MODELS["evidence." + name] = model
 
 for name, model in {
+    "assessment-profile": research_contracts.EvidenceAssessmentProfile,
+    "assessment-request": research_contracts.EvidenceAssessmentRequest,
+    "assessment": research_contracts.EvidenceAssessment,
+    "assessment-status": research_contracts.EvidenceAssessmentStatus,
     "candidate-revision": research_contracts.CandidateRevision,
     "resolve-identity": research_contracts.ResolveIdentity,
     "identity-resolution": research_contracts.IdentityResolution,

@@ -1,6 +1,6 @@
 # Research assessment policy
 
-- Status: BP-06.03/B1 private pure policy implemented; authenticated resolution, persistence and public assessment remain pending. No public caller can submit trusted observation fields.
+- Status: BP-06.03/B1.01-.06 verified; private policy plus public profile/request/result mappings implemented. B1.07 authenticated resolution is next; assessment persistence and HTTP remain pending. No public caller can submit trusted observation fields.
 - Design: [Research assessment boundary](../../../../../docs/Build%20Plans/BP-06/BP-06.03%20Research%20assessment%20design.md).
 - Authority: synthetic decision policy only; no scientific establishment or Runtime receipt.
 
@@ -13,5 +13,11 @@
 Every criterion/need pair returns supporting and contradicting receipt references plus an explicit gap. Conflict has precedence and produces unknown; unopposed negatives produce contradicted; remaining gaps produce unknown. Only complete supported answers with every need satisfied produce supported/sufficient. `answered` only reports complete answer-artifact coverage. `scientifically_established` is always false. A configured synthetic fixture is the only admitted authority; receipt transport/publication and scientific claims are outside this module.
 
 No SQL, network, filesystem, mutable cache or external effect occurs. Dependencies are the owner's question policy and public Core/Research contracts. Inputs/outputs are private domain objects, not a new public API. Transport must authorize and resolve immutable references before invoking the policy; durable assessment and receipt must commit before future public success. A rebuild must preserve fingerprint bytes, deterministic ordering, exact-reference matching and failure codes or explicitly version them.
+
+`ConfiguredAssessment.from_wire` compiles Research contracts0.3.0 profiles into the private policy. It requires same-scope subject, complete unique criterion targets and unique publisher/category/issuer declarations. Its public reference hashes the complete profile (including adapter trust, expected target digests and subject); this differs intentionally from AssessmentPolicy.sha256, which fingerprints only the private sufficiency algorithm's inputs. The public request always selects the full profile fingerprint. Do not replace one digest with the other.
+
+`bind` validates authenticated scope supplied by the eventual adapter, exact profile/question, unique known answer criteria and scoped artifacts/receipt identities. `BoundAssessment.evaluate` requires exactly the requested resolved answer/receipt references, calls the domain policy, then explicitly maps decisions/gaps/reviews to an EvidenceAssessment. This is not authentication: only a future verified peer adapter may supply logical dispositions and EvidenceObservation values. No caller-visible route exists yet. Status assessed means a decision record, not published output or Runtime acceptance.
+
+B1.06 verification:294 Research/contract/dev tests and177 independently installed Research/contract tests pass. Assessment policy/boundary coverage254/254 statements and110/110 branches; all286 predecessor schemas preserved,8 additive schemas. Public evidence-resolution behavior is still unproven and remains B1.07. Request collection bounds do not waive Data's128 distinct derived-input limit; the resolver/publication path must fail explicitly if complete lineage exceeds the supported bound.
 
 Tests: `tests/assessment/test_policy.py`, selectable using `dev/run_tests.py --module research --area assessment`; pure evidence-category/identity/conflict/gap/fingerprint tests. These tests do not prove producer authentication, live scientific evidence, database recovery or Runtime receipt consumption. Those remain the B1/B2/B3/V1 gates in the owning design.

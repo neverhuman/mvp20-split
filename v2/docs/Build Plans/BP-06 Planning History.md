@@ -1,5 +1,13 @@
 # BP-06 Planning History
 
+## B1.06 public assessment contracts complete - 2026-10-02 16:33:50
+
+Research0.6.0/contracts0.3.0;294 scoped tests,177 independently installed tests;286 predecessor schemas preserved,8 additive. [Evidence](../Audits/Evidence/BP-06-Research/Assessment_Wire.json). Coordinated compatibility-only dependency patches: Evidence0.5.1, Knowledge contracts0.6.1, Knowledge0.13.1, Data0.11.1. No peer implementation or migration changes. B1 milestone6/10; child15%, parent35.83%; closed gates0/4 and8/24 unchanged. B1.07 next.
+
+Rotated MBT checkpoint:
+
+| 2026-10-01 19:09:58 | BP-06.02/B1 pure authoring/replay partial; child0%, parent16.67% unchanged | [Domain proof](../Audits/Evidence/BP-06-Knowledge/Domain_Replay.json);36 owner/36 isolated/14 dev tests |
+
 ## Owner-approved progress accounting correction - 2026-10-02 16:18:15
 
 User approved decomposing B1 and separating implementation progress from gate closure. The former33.33% counted only8 closed deliveries of24. BP-06.03 now owns ten bounded B1 milestones, five evidenced complete and five remaining. Keeping the existing delivery weights yields B1=50%, Build=16.67%, child=12.50%, parent=(8+0.5)/24=35.42%. Closed gates remain child0/4,parent8/24; acceptance0% for the active child. This checkpoint changes accounting, not software or acceptance evidence. Counts are explicitly equal milestone units, not estimates of hours. DER-01 stays closed without separate parent credit.

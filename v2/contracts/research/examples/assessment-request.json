@@ -1,0 +1,23 @@
+{
+  "wire_version": "1",
+  "assessment_id": "assessment-1",
+  "profile": {
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "assessment"
+    },
+    "profile_id": "fixture-policy",
+    "version": "1",
+    "sha256": "fe41567752c8c83a9df34419ec85214299edd9d6c02d085b7c9b5db2bc948fa4"
+  },
+  "question": {
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "assessment"
+    },
+    "question_id": "q",
+    "revision": 1
+  },
+  "answers": [],
+  "receipts": []
+}

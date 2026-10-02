@@ -1,6 +1,6 @@
 # Acquisition Evidence Contracts
 
-- Package: `amphora-contracts-evidence` 0.5.0; wire version1.
+- Package: `amphora-contracts-evidence` 0.5.1; wire version1.
 - Status: BP-06.01/B1 boundary subset; public transport shapes; Data/Artifacts owns implemented persistence and bounded preparation, with rights/scientific policy still open.
 - Design: [Source acquisition](../../docs/Architecture/Data/Acquisition.md).
 
@@ -23,3 +23,5 @@ Version0.3.0 adds PreparedSource and RetainPreparedSource. Preparation returns e
 Version0.4.0 adds ObserveSourceIdentity, SourceIdentityObservation and SourceIdentityStatus. A scoped observation ID binds one exact immutable ConversionTraceRef. Status carries a nullable result: null means pending, not an unknown candidate/sample. Completed records preserve a local not_applicable/unresolved result or the exact public Research IdentityResolution. scientific_authority is always none. Research is a public DTO dependency so these records reuse its identity-only response rather than duplicate or reinterpret it; this extends the initial Core-only contract packaging without introducing peer implementation/state dependencies. All228 predecessor schema files remain byte-identical.
 
 Version0.5.0 adds SourceRightsRevision: historical reference/predecessor, granted/revoked status, read/process uses, aware expiry and explicit retain_audit_payload retention. DTO shape does not grant access; Data owns sequence, combinations, current-head checks and read/commit fences. Unsupported retention profiles are rejected, not silently treated as permission to retain. All234 predecessor schema files are unchanged.
+
+BP-06.03/B1.06 compatibility patch: dependency pins now consume additive Research contracts0.3.0 (Evidence0.5.1/Knowledge contracts0.6.1 where applicable). Existing public schema bytes and owner behavior are unchanged; earlier installed/recovery evidence remains tied to its recorded versions.

@@ -1,0 +1,118 @@
+{
+  "wire_version": "1",
+  "profile_id": "fixture-policy",
+  "version": "1",
+  "authority": "synthetic",
+  "purpose": "fixture.measurement",
+  "question": {
+    "wire_version": "1",
+    "reference": {
+      "scope": {
+        "tenant_id": "fixture",
+        "project_id": "assessment"
+      },
+      "question_id": "q",
+      "revision": 1
+    },
+    "objective": "Synthetic evidence comparison",
+    "applicability": {
+      "artifact_id": "context",
+      "scope": {
+        "tenant_id": "fixture",
+        "project_id": "assessment"
+      },
+      "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "fixture.measurement",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "size_bytes": 2
+    },
+    "criteria": [
+      {
+        "criterion_id": "c",
+        "description": "Configured measurement criterion"
+      }
+    ],
+    "supersedes": null
+  },
+  "subject": {
+    "artifact_id": "subject",
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "assessment"
+    },
+    "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "media_type": "application/json",
+    "schema_ref": {
+      "schema_id": "fixture.measurement",
+      "version": "1",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "size_bytes": 2
+  },
+  "targets": [
+    {
+      "criterion_id": "c",
+      "target_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    }
+  ],
+  "answer_publishers": [
+    "knowledge-publisher"
+  ],
+  "requirements": [
+    {
+      "need": {
+        "wire_version": "1",
+        "reference": {
+          "scope": {
+            "tenant_id": "fixture",
+            "project_id": "assessment"
+          },
+          "need_id": "n",
+          "revision": 1
+        },
+        "question": {
+          "scope": {
+            "tenant_id": "fixture",
+            "project_id": "assessment"
+          },
+          "question_id": "q",
+          "revision": 1
+        },
+        "criterion_ids": [
+          "c"
+        ],
+        "method": {
+          "schema_id": "fixture.measurement",
+          "version": "1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "required_context": {
+          "artifact_id": "context",
+          "scope": {
+            "tenant_id": "fixture",
+            "project_id": "assessment"
+          },
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "fixture.measurement",
+            "version": "1",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "size_bytes": 2
+        },
+        "supersedes": null
+      },
+      "categories": [
+        "observation"
+      ],
+      "issuers": [
+        "fixture-observer"
+      ]
+    }
+  ]
+}

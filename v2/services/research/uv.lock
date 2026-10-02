@@ -29,7 +29,7 @@ requires-dist = [{ name = "pydantic", specifier = ">=2.12,<3" }]
 
 [[package]]
 name = "amphora-contracts-research"
-version = "0.2.0"
+version = "0.3.0"
 source = { editable = "../../contracts/research" }
 dependencies = [
     { name = "amphora-contracts-core" },
@@ -44,7 +44,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-research"
-version = "0.5.0"
+version = "0.6.0"
 source = { editable = "." }
 dependencies = [
     { name = "alembic" },

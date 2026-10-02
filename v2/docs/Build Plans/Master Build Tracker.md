@@ -9,14 +9,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 primary active; BP-07 through BP-09 queued; BP-05 closed.
-- Last refreshed: `2026-10-02 16:18:15` (America/Chicago).
+- Last refreshed: `2026-10-02 16:33:50` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P5 / BP-06 - Knowledge Evidence and Source Loop.
 - Primary active implementation plan / phase / task: BP-06 -> BP-06.03 / Build / B1.
-- Current task: BP-06.03/B1.06 Research public assessment contracts; B1.07 authenticated reference resolution next. B1 milestones5/10 complete; child12.50%.
-- Next task: B1.07 authenticated evidence resolution after B1.06; then B1.08 store, B1.09 publication/receipts and B1.10 integrated API. Runtime integration is B3.
-- Implementation completion: BP-05 closed100% (16/16); BP-06 at35.42% scoped completion ((8+0.5)/24); closed gates8/24 (33.33%); BP-07..09 remain0%.
-- Active focus: BP-06.03/B1 Research assessment; B1 milestones5/10; child12.50%, parent35.42%; closed gates remain0/4 and8/24.
+- Current task: BP-06.03/B1.07 authenticated reference resolution; B1.08 immutable assessment store next. B1 milestones6/10 complete; child15.00%.
+- Next task: B1.08 store after B1.07 authenticated resolution; then B1.09 publication/receipts and B1.10 integrated API. Runtime integration is B3.
+- Implementation completion: BP-05 closed100% (16/16); BP-06 at35.83% scoped completion ((8+0.6)/24); closed gates8/24 (33.33%); BP-07..09 remain0%.
+- Active focus: BP-06.03/B1 Research assessment; B1 milestones6/10; child15.00%, parent35.83%; closed gates remain0/4 and8/24.
 - Blockers: No owner blocker; derived-publication prerequisite accepted.
 - Acceptance posture: BP-05 integrated Studio accepted within synthetic software scope; scientific and deployment acceptance remains later.
 - Active exception: none.
@@ -35,11 +35,11 @@ BP-06 is the sole active parent. BP-05 closed16/16; see [completed plans](Comple
 
 | Parent | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-06](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) | 35.42% ((8+0.5)/24) | 100% | 100% | 12.50% | 0% | 0% | 0% |
+| [BP-06](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) | 35.83% ((8+0.6)/24) | 100% | 100% | 15.00% | 0% | 0% | 0% |
 
 | Active canonical child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-06.03](BP-06/BP-06.03%20Reasoning%20and%20domain%20receipts.md) | 12.50% | 16.67% | 0% | B1.06 / Research wire contracts |
+| [BP-06.03](BP-06/BP-06.03%20Reasoning%20and%20domain%20receipts.md) | 15.00% | 20.00% | 0% | B1.07 / Authenticated resolution |
 
 
 
@@ -51,7 +51,7 @@ BP-06 is the sole active parent. BP-05 closed16/16; see [completed plans](Comple
 | [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 | [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 
-BP-06.03 B1 now credits its verified milestones fractionally:5/10, while closed delivery gates remain0/4. Its canonical table owns the computation; counts are not effort estimates. Other gates retain their existing weights and closure status.
+BP-06.03 B1 now credits its verified milestones fractionally:6/10, while closed delivery gates remain0/4. Its canonical table owns the computation; counts are not effort estimates. Other gates retain their existing weights and closure status.
 
 Each parent phase now maps to one canonical child with four verified deliveries (three build plus one acceptance). Parent denominators are BP-03: 16, BP-04: 24, BP-05: 16, BP-06: 24, BP-07: 20, BP-08: 20, BP-09: 20; trackers above own current percentages. N/A means unscoped. [Readiness/handoffs](Planning_Readiness.md) records engineering and external gates. Design writing earns no implementation credit.
 
@@ -62,11 +62,11 @@ The owning plan tracker is canonical for overall and per-phase percentages. Refr
 
 ## Prioritized Build Queue
 
-BP-06 is primary_active at35.42% scoped completion (8/24 closed gates); BP-07 through BP-09 are `design_specified / queued`. The later roadmap has 34 canonical children. Each child names owned objects/contracts, algorithms, failure oracles and replacement acceptance. Completed plans remain in the archive.
+BP-06 is primary_active at35.83% scoped completion (8/24 closed gates); BP-07 through BP-09 are `design_specified / queued`. The later roadmap has 34 canonical children. Each child names owned objects/contracts, algorithms, failure oracles and replacement acceptance. Completed plans remain in the archive.
 
 | Order / ID | Completion | Proposed plan | Required predecessor gates | Bounded outcome / exit | Architecture owner |
 |---|---|---|---|---|---|
-| P5 / BP-06 | 35.42% | [Knowledge Evidence and Source Loop](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) | BP-01 contracts; BP-04 execution; BP-05 inspection | Minimal source/document/result ingestion, typed accepted-change replay, pinned knowledge revisions, bounded executable rules and explicit scientific acceptance receipts; demonstrate corrections affect later campaigns | [Knowledge](../Architecture/Knowledge/Knowledge_Architecture.md), [Data](../Architecture/Data/Data_Architecture.md), [experiments](../Architecture/Research/Experiments.md) |
+| P5 / BP-06 | 35.83% | [Knowledge Evidence and Source Loop](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) | BP-01 contracts; BP-04 execution; BP-05 inspection | Minimal source/document/result ingestion, typed accepted-change replay, pinned knowledge revisions, bounded executable rules and explicit scientific acceptance receipts; demonstrate corrections affect later campaigns | [Knowledge](../Architecture/Knowledge/Knowledge_Architecture.md), [Data](../Architecture/Data/Data_Architecture.md), [experiments](../Architecture/Research/Experiments.md) |
 | P6 / BP-07 | 0% | [Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | BP-03 tool discovery; BP-04 runner; BP-05 UI; BP-06 grounded context/receipts | Model-generated campaign proposals and text-to-graph extraction through validated contracts; durable scoped engagements, stale-proposal/fallback races, bounded repair and truthful terminal blockers; no routine human waits | [Planning](../Architecture/Agents/Planning.md), [Graph Runner](../Architecture/System/Graph_Runner.md) |
 | P7 / BP-08 | 0% | [Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | BP-04 iteration/checkpoints; BP-06 applicability/evidence; BP-07 for LLM-guided topology | Adapt reusable numerical kernels to explicit generation/checkpoint history, separate representation fixtures and evidence-bound selection; parameter search precedes bounded topology proposals under successor-campaign rules | [Search](../Architecture/Campaigns/Search.md), [reuse baseline](../Architecture/Evolutionary_Code_Reuse_Baseline.md) |
 | P8 / BP-09 | 0% | [Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Selected host/model policy; BP-05/06/07 plus BP-08 for evolutionary demo claims | Reproducible target-host deployment, model/tool eligibility, restore/reconciliation, end-to-end autonomous demo and one independently rebuilt/replaced tool; prove replicated workloads if K3s is selected | [Topology](../Architecture/System/Runtime_Topology.md), [tool services](../Architecture/Capabilities/Tool_Services.md) |
@@ -123,6 +123,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-02 16:33:50 | B1.06 complete; B1 6/10, child15%, parent35.83%; B1.07 active | [Assessment wire](../Audits/Evidence/BP-06-Research/Assessment_Wire.json);294 source/177 installed tests;286 predecessor schemas preserved |
 | 2026-10-02 16:18:15 | Owner-approved milestone accounting: B1 5/10, child12.50%, parent35.42%; closed gates unchanged0/4 and8/24; B1.06 next | [Canonical milestones](BP-06/BP-06.03%20Reasoning%20and%20domain%20receipts.md#canonical-b1-milestones); evidence-backed reclassification only |
 | 2026-10-02 14:24:10 | B1 Knowledge publication process recovery verified; Research assessment next; child0/4,parent8/24 | 9 installed kill barriers;4 rebuild regressions;14 dev checks |
 | 2026-10-02 14:12:44 | B1 installed publication/replacement verified; process-death proof next; child0/4,parent8/24 | Knowledge0.13.0;981 tests;8 isolated environments |
@@ -147,6 +148,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-01 20:05:58 | BP-06.02/B1 complete; child25%, parent20.83%; B2 active | [Public API/peer proof](../Audits/Evidence/BP-06-Knowledge/Public_API.json);104 owner tests;260 schemas |
 | 2026-10-01 19:50:16 | BP-06.02/B1 validator/workflow partial; child0%, parent16.67% | [Validation evidence](../Audits/Evidence/BP-06-Knowledge/Validation.json);83 owner tests; actual-peer integration pending |
 | 2026-10-01 19:34:51 | BP-06.02/B1 private persistence partial; child0%, parent16.67% unchanged | [Ledger proof](../Audits/Evidence/BP-06-Knowledge/Persistence.json);47 owner/47 contract-dev/80 isolated;256 schemas preserved |
-| 2026-10-01 19:09:58 | BP-06.02/B1 pure authoring/replay partial; child0%, parent16.67% unchanged | [Domain proof](../Audits/Evidence/BP-06-Knowledge/Domain_Replay.json);36 owner/36 isolated/14 dev tests |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

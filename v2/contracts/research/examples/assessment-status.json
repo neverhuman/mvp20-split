@@ -1,0 +1,106 @@
+{
+  "wire_version": "1",
+  "request": {
+    "wire_version": "1",
+    "assessment_id": "assessment-1",
+    "profile": {
+      "scope": {
+        "tenant_id": "fixture",
+        "project_id": "assessment"
+      },
+      "profile_id": "fixture-policy",
+      "version": "1",
+      "sha256": "fe41567752c8c83a9df34419ec85214299edd9d6c02d085b7c9b5db2bc948fa4"
+    },
+    "question": {
+      "scope": {
+        "tenant_id": "fixture",
+        "project_id": "assessment"
+      },
+      "question_id": "q",
+      "revision": 1
+    },
+    "answers": [],
+    "receipts": []
+  },
+  "actor_id": "fixture-reader",
+  "outcome": {
+    "status": "assessed",
+    "assessment": {
+      "wire_version": "1",
+      "authority": "synthetic",
+      "request": {
+        "wire_version": "1",
+        "assessment_id": "assessment-1",
+        "profile": {
+          "scope": {
+            "tenant_id": "fixture",
+            "project_id": "assessment"
+          },
+          "profile_id": "fixture-policy",
+          "version": "1",
+          "sha256": "fe41567752c8c83a9df34419ec85214299edd9d6c02d085b7c9b5db2bc948fa4"
+        },
+        "question": {
+          "scope": {
+            "tenant_id": "fixture",
+            "project_id": "assessment"
+          },
+          "question_id": "q",
+          "revision": 1
+        },
+        "answers": [],
+        "receipts": []
+      },
+      "actor_id": "fixture-reader",
+      "purpose": "fixture.measurement",
+      "subject": {
+        "artifact_id": "subject",
+        "scope": {
+          "tenant_id": "fixture",
+          "project_id": "assessment"
+        },
+        "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "fixture.measurement",
+          "version": "1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "size_bytes": 2
+      },
+      "answered": false,
+      "disposition": "unknown",
+      "sufficient": false,
+      "scientifically_established": false,
+      "needs": [
+        {
+          "criterion_id": "c",
+          "need": {
+            "scope": {
+              "tenant_id": "fixture",
+              "project_id": "assessment"
+            },
+            "need_id": "n",
+            "revision": 1
+          },
+          "supporting": [],
+          "contradicting": [],
+          "gap": {
+            "criterion_id": "c",
+            "need": {
+              "scope": {
+                "tenant_id": "fixture",
+                "project_id": "assessment"
+              },
+              "need_id": "n",
+              "revision": 1
+            },
+            "reason": "missing_answer"
+          }
+        }
+      ],
+      "reviews": []
+    }
+  }
+}
