@@ -11,6 +11,7 @@ from amphora_contracts_knowledge import (
     DomainVocabulary,
     GraphChangeDecision,
     GraphChangeProposal,
+    GraphProposalStatus,
 )
 from jsonschema import Draft202012Validator
 from jsonschema.exceptions import ValidationError as SchemaError
@@ -128,3 +129,15 @@ def test_frozen_record_does_not_erase_negation_or_hypothesis():
     assert claim.research_links[0].need.revision == 1
     with pytest.raises(ValidationError):
         claim.posture = "reported"
+
+
+@pytest.mark.parametrize("decision", [None, CASES["accepted_decision"], CASES["conflict_decision"]])
+def test_status_distinguishes_pending_and_terminal_shapes(decision):
+    case = {"wire_version": "1", "proposal": CASES["proposal"], "actor_id": "reviewer",
+            "request_sha256": "a"*64, "registered_at": "2026-10-01T23:00:00Z", "decision": decision}
+    record = parse(GraphProposalStatus, case)
+    assert (record.decision is None) == (decision is None)
+    Draft202012Validator(GraphProposalStatus.model_json_schema()).validate(case)
+    case.pop("decision")
+    with pytest.raises(ValidationError):
+        parse(GraphProposalStatus, case)

@@ -22,14 +22,28 @@ class StructuralPolicy:
             if type(value) is not int or not 1 <= value <= ceiling:
                 raise KnowledgeError("invalid_structural_policy")
 
+    def definition(self):
+        return {"policy_id": "synthetic-structural", "version": "1", "authority": "structural_only",
+                "max_entities": self.max_entities, "max_assertions": self.max_assertions,
+                "max_aliases": self.max_aliases, "max_retractions": self.max_retractions}
+
+    @classmethod
+    def from_definition(cls, record):
+        limits = ("max_entities", "max_assertions", "max_aliases", "max_retractions")
+        if (not isinstance(record, dict) or set(record) != {"policy_id", "version", "authority", *limits}
+                or record["policy_id"] != "synthetic-structural" or record["version"] != "1"
+                or record["authority"] != "structural_only"):
+            raise KnowledgeError("unsupported_structural_policy")
+        return cls(**{name: record[name] for name in limits})
+
+    @property
+    def canonical_bytes(self):
+        return json.dumps(self.definition(), sort_keys=True, separators=(",", ":")).encode()
+
     @property
     def reference(self):
-        config = {"policy_id": "synthetic-structural", "version": "1", "authority": "structural_only",
-                  "max_entities": self.max_entities, "max_assertions": self.max_assertions,
-                  "max_aliases": self.max_aliases, "max_retractions": self.max_retractions}
-        raw = json.dumps(config, sort_keys=True, separators=(",", ":")).encode()
-        return StructuralPolicyRef(policy_id=config["policy_id"], version=config["version"],
-                                   sha256=hashlib.sha256(raw).hexdigest())
+        return StructuralPolicyRef(policy_id="synthetic-structural", version="1",
+                                   sha256=hashlib.sha256(self.canonical_bytes).hexdigest())
 
     def check_size(self, entities, assertions):
         if (len(entities.records) > self.max_entities or len(assertions.records) > self.max_assertions

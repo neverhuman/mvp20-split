@@ -7,6 +7,7 @@ from .changes import (
     FailedDecision,
     GraphChangeDecision,
     GraphChangeProposal,
+    GraphProposalStatus,
     ReferenceValidation,
 )
 from .operations import (
@@ -45,7 +46,7 @@ __all__ = [
     "AddAssertion", "AddEntity", "AssertionRetraction", "AssertionRevisionRef", "ClaimGrounding",
     "CorrectAssertion", "DomainAssertion", "DomainEntity", "DomainGraphContent", "DomainGraphRef",
     "DomainGraphSnapshot", "DomainHead", "DomainRevisionRef", "DomainVocabulary", "EntityAlias",
-    "EntityRevisionRef", "FailedDecision", "GraphChangeDecision", "GraphChangeProposal", "GraphOperation",
+    "EntityRevisionRef", "FailedDecision", "GraphChangeDecision", "GraphChangeProposal", "GraphOperation", "GraphProposalStatus",
     "MergeEntities", "PredicateDefinition", "QuestionEvidenceLink", "ReferenceValidation",
     "RetractAssertion", "ReviseEntityContext", "StructuralPolicyRef", "VocabularyRef",
 ]

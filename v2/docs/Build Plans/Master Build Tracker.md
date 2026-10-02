@@ -9,11 +9,11 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 primary active; BP-07 through BP-09 queued; BP-05 closed.
-- Last refreshed: `2026-10-01 19:09:58` (America/Chicago).
+- Last refreshed: `2026-10-01 19:34:51` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P5 / BP-06 - Knowledge Evidence and Source Loop.
 - Primary active implementation plan / phase / task: BP-06 -> BP-06.02 / Build / B1.
-- Current task: BP-06.02/B1 private PostgreSQL proposal/decision/accepted-log/snapshot transaction, then actual public peer validation and authenticated transport.
+- Current task: BP-06.02/B1 actual scoped Data/Research reference validation, authenticated public proposal/status/head/snapshot boundary and explicit owner hosting.
 - Next task: finish B1 Knowledge apply/replay and transactional accepted-change boundary, then B2 rebuild/catch-up publication policy.
 - Implementation completion: BP-05 closed100% (16/16); BP-06 at16.67% (4/24); BP-07..09 remain0%.
 - Active focus: BP-06.02/B1; child0%, parent16.67%.
@@ -39,7 +39,7 @@ BP-06 is the sole active parent. BP-05 closed16/16; see [completed plans](Comple
 
 | Active canonical child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-06.02](BP-06/BP-06.02%20Typed%20graph%20authoring%20and%20replay.md) | 0% | 0% | 0% | B1 Knowledge persistence |
+| [BP-06.02](BP-06/BP-06.02%20Typed%20graph%20authoring%20and%20replay.md) | 0% | 0% | 0% | B1 public peer/HTTP boundary |
 
 ## Queued Plans and Phase Mirrors
 
@@ -119,6 +119,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-01 19:34:51 | BP-06.02/B1 private persistence partial; child0%, parent16.67% unchanged | [Ledger proof](../Audits/Evidence/BP-06-Knowledge/Persistence.json);47 owner/47 contract-dev/80 isolated;256 schemas preserved |
 | 2026-10-01 19:09:58 | BP-06.02/B1 pure authoring/replay partial; child0%, parent16.67% unchanged | [Domain proof](../Audits/Evidence/BP-06-Knowledge/Domain_Replay.json);36 owner/36 isolated/14 dev tests |
 | 2026-10-01 18:51:58 | BP-06.02/B1 contracts partial; child0%, parent16.67% unchanged | [Knowledge wire proof](../Audits/Evidence/BP-06-Knowledge/Contracts.json);44 scoped/30 isolated tests;236 schemas preserved |
 | 2026-10-01 18:34:28 | BP-06.01 closed100%; parent16.67%; .02 activation next | [Scoped closeout](../Audits/BP-06.01_Source_Evidence_Closeout.md);139/70/36 isolated owner cases |
@@ -143,6 +144,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-09-30 16:45:26 | BP-05.03/B3 verified75%; parent68.75% (11/16); V1 active | 25 real-owner cases, two135-test builds, crash resume and both cancellation orderings |
 | 2026-09-30 16:23:04 | BP-05.03/B2 verified50%; parent62.5% (10/16); B3 active | Real Registry/Studio activation;1336 Python/132 Node,19 installs,REC-01..09,9 standard-worker cases |
 | 2026-09-30 15:40:27 | BP-05.03/B2 conflicts/rebase; child25%, parent56.25% unchanged | 126 isolated Node tests;10 Design/7 emergency browser cases; eligibility/activation remain |
-| 2026-09-30 15:32:23 | BP-05.03/B1 verified25%; parent56.25% (9/16); B2 active | Two119-test isolated builds; real-owner draft/validation/replacement/cancel;8 Design/6 emergency browser cases |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

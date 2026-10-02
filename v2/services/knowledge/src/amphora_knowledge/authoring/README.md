@@ -1,6 +1,6 @@
 # Knowledge Structural Authoring
 
-- Status: BP-06.02/B1 pure domain behavior implemented; persistence and public authority pending.
+- Status: BP-06.02/B1 pure domain behavior implemented; owning persistence implemented; public peer/HTTP authority pending.
 - Owner: Knowledge; [authoring architecture](../../../../../docs/Architecture/Knowledge/Authoring.md).
 
 Vocabulary validates unique type/predicate identities and declared endpoint types. Its fingerprint sorts set-like vocabulary collections while retaining descriptions and version. StructuralPolicy pins synthetic-only authority and bounded counts of complete historical entity/assertion/alias/retraction records; clients must name that exact configured policy. It never infers scientific acceptance from a predicate name or model confidence.
@@ -13,6 +13,6 @@ Assertion creation cannot reuse an existing or retracted identity. Correction ap
 
 ReferencedInputs traverses the closed public DTO tree to collect exact artifacts, source revisions/spans, traces and Research refs. It rejects foreign scope/graph, inconsistent metadata under an identity, out-of-range source spans and bounded-reference overflow before any adapter I/O. This validates structure only: it does not check source bytes, current rights, trace/source association, Research existence or semantic support. The forthcoming public-peer validator must do those checks before recording an observation.
 
-State/history constructors are private owner composition points, not untrusted snapshot loaders. State is built by applying validated edits from genesis; importing a client-supplied snapshot as trusted state is unsupported. No module operation authenticates a caller, commits state, executes a tool or contacts a model/provider. Tests name synthetic semantic oracles and failure isolation; actual authoritative transaction and process gates remain open.
+State/history constructors are private owner composition points, not untrusted snapshot loaders. State is built by applying validated edits from genesis; importing a client-supplied snapshot as trusted state is unsupported. No module operation authenticates a caller, commits state, executes a tool or contacts a model/provider. Tests name synthetic semantic oracles and failure isolation; the private transactional ledger is implemented; public peer/HTTP and process acceptance gates remain open.
 
-Verification checkpoint:36 owner tests and36 independent installed-owner tests pass;26 authoring and10 replay cases. Combined measured coverage319/334 statements and124/140 branches; remaining defensive error branches are listed in the committed Domain_Replay evidence. No transaction or scientific-authority coverage is inferred from this pure suite.
+Earlier pure-module checkpoint:36 owner tests and36 independent installed-owner tests pass;26 authoring and10 replay cases. Combined measured coverage319/334 statements and124/140 branches; remaining defensive error branches are listed in the committed Domain_Replay evidence. No transaction or scientific-authority coverage is inferred from this pure suite.

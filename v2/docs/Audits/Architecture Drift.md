@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-01 19:09:58` (America/Chicago).
+- Last refreshed: `2026-10-01 19:34:51` (America/Chicago).
 - Scope: v2 design/implementation alignment
-- Active focus: BP-06.02/B1; pure authoring/replay verified; authoritative persistence/public peer boundary pending.
-- Next gate: B1 accepted-change transaction and authenticated peer/HTTP boundary; pure evaluation is not durable acceptance.
+- Active focus: BP-06.02/B1; private persistence verified; actual public peer validation/HTTP boundary pending.
+- Next gate: B1 real Data/Research input validation and authenticated proposal/status/read boundary; supplied observation DTOs confer no authority.
 
 ## Active Findings
 

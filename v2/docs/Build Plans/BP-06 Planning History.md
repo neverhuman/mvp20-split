@@ -1,5 +1,9 @@
 # BP-06 Planning History
 
+## Knowledge persistence checkpoint - 2026-10-01 19:34:51
+
+B1 partial: Knowledge contracts/service0.2.0 add durable proposal status, immutable stored profiles and atomic accepted-log/snapshot/head/decision persistence.47 owner tests (11 actual PostgreSQL),47 contract/dev tests and80 isolated owner/contract tests pass with0 skipped in the final explicit PG run.258 schemas preserve all256 predecessors. Actual public peer validation and authenticated HTTP remain; child0/4, parent4/24 (16.67%) unchanged. [Evidence](../Audits/Evidence/BP-06-Knowledge/Persistence.json). knowledge_0001 persists graph definitions as well as refs and mutually binds accepted entries/snapshots. History admission caps avoid committing state outside the bounded replay reader. Race/rollback and role tests use the retained labeled fixture; observations remain synthetic until public validation. Initial isolated build omitted PG opt-in and skipped11; a separate explicit opt-in run passed all80 and is the authoritative proof.
+
 ## Knowledge pure authoring and replay - 2026-10-01 19:09:58
 
 B1 partial: Knowledge0.1.0 implements pure structural edits, exact reference collection, immutable correction/alias/retraction history and bounded deterministic accepted-log replay.36 owner tests,36 isolated owner tests and14 dev tests pass. No persistence/authenticated peer or HTTP acceptance yet; child0/4 (0%), parent4/24 (16.67%) unchanged. [Evidence](../Audits/Evidence/BP-06-Knowledge/Domain_Replay.json). Independent installation excludes peer implementations and SQLAlchemy. Structural revision factories require exact observation shapes but do not prove real peer reads; those remain the next adapter gates. Scope errors now precede reference-equivocation checks. No B1 delivery credit until persistence/public boundary exists.

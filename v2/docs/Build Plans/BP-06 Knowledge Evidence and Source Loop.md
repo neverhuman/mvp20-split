@@ -3,14 +3,14 @@
 ## Canonical Parent Tracker
 
 - Status: primary_active; BP-06.02 / Build / B1.
-- Last refreshed: `2026-10-01 19:09:58` (America/Chicago).
+- Last refreshed: `2026-10-01 19:34:51` (America/Chicago).
 - Owner/scope: Knowledge, Research and focused Data/Artifacts modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 receipt/wait seams and BP-05 inspection; BP-01/02/03 public contracts and tool execution.
 - Implementation: **16.67%**, 4/24 verified child deliveries. Each child owns four deliveries; parent counts each once. P1/.01 is closed100%; P2/.02 is active0% after its coherence audit.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current task: BP-06.02/B1 private PostgreSQL proposal/decision/accepted-log/snapshot transaction, then actual public peer validation and authenticated transport.
-- Demonstrated behavior: B1 partial: Knowledge0.1.0 implements pure structural edits, exact reference collection, immutable correction/alias/retraction history and bounded deterministic accepted-log replay.36 owner tests,36 isolated owner tests and14 dev tests pass. No persistence/authenticated peer or HTTP acceptance yet; child0/4 (0%), parent4/24 (16.67%) unchanged.
+- Current task: BP-06.02/B1 actual scoped Data/Research reference validation, authenticated public proposal/status/head/snapshot boundary and explicit owner hosting.
+- Demonstrated behavior: B1 partial: Knowledge contracts/service0.2.0 add durable proposal status, immutable stored profiles and atomic accepted-log/snapshot/head/decision persistence.47 owner tests (11 actual PostgreSQL),47 contract/dev tests and80 isolated owner/contract tests pass with0 skipped in the final explicit PG run.258 schemas preserve all256 predecessors. Actual public peer validation and authenticated HTTP remain; child0/4, parent4/24 (16.67%) unchanged.
 - Blockers: none for bounded activation audit; real scientific/provider choices remain scoped successor gates.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.

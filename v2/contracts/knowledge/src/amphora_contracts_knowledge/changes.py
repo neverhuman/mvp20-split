@@ -81,3 +81,12 @@ class GraphChangeDecision(WireModel):
     change_id: Identifier
     request_sha256: Digest
     decision: Annotated[AcceptedDecision | FailedDecision, Field(discriminator="outcome")]
+
+
+class GraphProposalStatus(WireModel):
+    wire_version: Literal["1"]
+    proposal: GraphChangeProposal
+    actor_id: Identifier
+    request_sha256: Digest
+    registered_at: AwareDatetime
+    decision: GraphChangeDecision | None

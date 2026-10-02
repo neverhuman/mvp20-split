@@ -1,6 +1,6 @@
 # Knowledge Wire Contracts
 
-- Package: amphora-contracts-knowledge0.1.0; BP-06.02/B1 partial contract boundary.
+- Package: amphora-contracts-knowledge0.2.0; BP-06.02/B1 partial contract boundary.
 - Design: [Knowledge authoring](../../docs/Architecture/Knowledge/Authoring.md); [activation decisions](../../docs/Audits/BP-06.02_Activation.md).
 
 Public imports describe scoped graph/entity/assertion identities, a pinned predicate vocabulary, source grounding, exact Research question/need links, discriminated typed edits, proposals, structural acceptance decisions and immutable snapshots. Dependencies are public Core0.1.0, evidence0.5.0 and Research0.2.0 plus Pydantic. No service implementation, database, I/O, agent or scientific policy belongs here.
@@ -16,3 +16,5 @@ DomainGraphContent carries complete immutable entity/assertion history plus alia
 Collections, strings and integer revisions are bounded; models are strict/frozen and forbid extra fields and nonfinite numbers. Cross-record rules belong to focused owner domain objects. Module-local tests own public shape and JSON Schema parity, with synthetic examples under tests/fixtures. Generated published schemas and predecessor-byte preservation are checked by dev tooling. Independent contract installation proves serialization only; transactional replay, public reference validation and replacement acceptance remain BP-06.02 work.
 
 Verification checkpoint:30 owned and30 isolated contract tests;44 combined contract/dev tests pass.256 published schemas preserve all236 predecessor bytes. Isolated installation excludes Data/Research implementations and SQLAlchemy. VocabularyRef and StructuralPolicyRef pin their own versioned content; they are not JSON Schema identifiers. Golden accepted/snapshot hashes are deliberate shape-only placeholders, never accepted owner evidence.
+
+Version0.2.0 adds GraphProposalStatus: exact submitted proposal, owning actor, canonical request hash, registration time and an explicit nullable terminal decision. null means a durable pending intent; unknown is a separate owning lookup result. Status scope/hash/decision binding is enforced by the ledger, not by DTO shape. This additive release publishes258 schemas while preserving all256 predecessor bytes;33 contract tests pass.
