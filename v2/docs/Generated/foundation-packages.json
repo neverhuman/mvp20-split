@@ -60,7 +60,7 @@
   },
   {
     "package": "amphora-contracts-knowledge",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "path": "contracts/knowledge",
     "module": "amphora_contracts_knowledge",
     "public_dependencies": [
@@ -147,7 +147,7 @@
   },
   {
     "package": "amphora-knowledge",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "path": "services/knowledge",
     "module": "amphora_knowledge",
     "public_dependencies": [

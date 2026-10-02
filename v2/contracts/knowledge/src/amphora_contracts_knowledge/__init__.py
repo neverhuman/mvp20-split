@@ -19,6 +19,7 @@ from .operations import (
     RetractAssertion,
     ReviseEntityContext,
 )
+from .profiles import GraphAuthoringProfile
 from .records import (
     AssertionRetraction,
     ClaimGrounding,
@@ -46,7 +47,7 @@ __all__ = [
     "AddAssertion", "AddEntity", "AssertionRetraction", "AssertionRevisionRef", "ClaimGrounding",
     "CorrectAssertion", "DomainAssertion", "DomainEntity", "DomainGraphContent", "DomainGraphRef",
     "DomainGraphSnapshot", "DomainHead", "DomainRevisionRef", "DomainVocabulary", "EntityAlias",
-    "EntityRevisionRef", "FailedDecision", "GraphChangeDecision", "GraphChangeProposal", "GraphOperation", "GraphProposalStatus",
+    "EntityRevisionRef", "FailedDecision", "GraphAuthoringProfile", "GraphChangeDecision", "GraphChangeProposal", "GraphOperation", "GraphProposalStatus",
     "MergeEntities", "PredicateDefinition", "QuestionEvidenceLink", "ReferenceValidation",
     "RetractAssertion", "ReviseEntityContext", "StructuralPolicyRef", "VocabularyRef",
 ]

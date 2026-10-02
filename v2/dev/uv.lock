@@ -186,7 +186,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-contracts-knowledge"
-version = "0.2.0"
+version = "0.3.0"
 source = { editable = "../contracts/knowledge" }
 dependencies = [
     { name = "amphora-contracts-core" },
@@ -369,7 +369,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-knowledge"
-version = "0.3.0"
+version = "0.4.0"
 source = { editable = "../services/knowledge" }
 dependencies = [
     { name = "alembic" },
@@ -377,8 +377,10 @@ dependencies = [
     { name = "amphora-contracts-evidence" },
     { name = "amphora-contracts-knowledge" },
     { name = "amphora-contracts-research" },
+    { name = "fastapi" },
     { name = "psycopg", extra = ["binary"] },
     { name = "sqlalchemy" },
+    { name = "uvicorn" },
 ]
 
 [package.metadata]
@@ -388,8 +390,10 @@ requires-dist = [
     { name = "amphora-contracts-evidence", editable = "../contracts/evidence" },
     { name = "amphora-contracts-knowledge", editable = "../contracts/knowledge" },
     { name = "amphora-contracts-research", editable = "../contracts/research" },
+    { name = "fastapi", specifier = ">=0.115,<1" },
     { name = "psycopg", extras = ["binary"], specifier = ">=3,<4" },
     { name = "sqlalchemy", specifier = ">=2,<3" },
+    { name = "uvicorn", specifier = ">=0.34,<1" },
 ]
 
 [[package]]

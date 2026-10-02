@@ -1,8 +1,8 @@
 # Text Authoring and Graph Revisions
 
-- Design status: detailed proposed contract; implementation and scientific acceptance pending
+- Design status: B1 typed structural authoring implemented; rebuild publication, extraction and scientific acceptance remain pending
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
-- Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
+- Last reviewed: `2026-10-01 20:05:58` (America/Chicago)
 - Parent: [Domain overview](Knowledge_Architecture.md)
 - Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#human-decomposition-to-neuro-symbolic-graph)
 
@@ -62,3 +62,7 @@ A reviewer corrects 'A causes B' to 'A correlates with B', then a later extracti
 ## Design Basis and Open Decisions
 
 [Authoring and Replay](../Requirements/Domain_Graph_Authoring_and_Replay.md) contains the actual initial extraction prompt and detailed history contract. Remaining decisions: executable graph/change schemas, entity-resolution thresholds, semantic-conflict rules and migration mappings. Prompt quality requires reviewed examples; structured output alone is insufficient.
+
+## Implemented boundary mapping
+
+BP-06.02/B1 implements exact typed operations, immutable source/Research links, deterministic accepted-history replay, private transactional publication and authenticated public reads/proposals in the [Knowledge owner](../../../services/knowledge/README.md). Actual Data/Research HTTP checks current source access and exact provenance; acceptance is structural_only. Explicit merges replace any implicit fuzzy identity threshold in this bounded synthetic profile. B2 owns isolated watermark rebuild/catch-up/CAS; BP-07 owns prompt/extraction quality; BP-06.03/.04 own reasoning/scientific eligibility. These distinctions prevent structural DTO validity from implying accepted science.

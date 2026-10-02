@@ -1,5 +1,9 @@
 # BP-06 Planning History
 
+## B1 complete - 2026-10-01 20:05:58
+
+B1 complete: Knowledge0.4.0/contracts0.3.0 expose authenticated proposal/status/profile/head/snapshot/change reads and explicit owner hosting.104 owner tests pass (26 PostgreSQL cases), plus35 contracts/14 dev tests. Actual Data/Research/Knowledge HTTP proves exact provenance, restart replay, outage recovery and revoked-rights rejection.260 schemas preserve all258 predecessors. Child1/4 (25%), Build33.33%, Acceptance0%; parent5/24 (20.83%). [Evidence](../Audits/Evidence/BP-06-Knowledge/Public_API.json). Public profile discovery is observational for new graphs and pinned for stored graphs; it does not perform migration. Existing accepted receipts remain historical after rights revocation while new reviews fail. Independent wheel replacement and mid-build crashes remain V1/B3.
+
 ## Knowledge persistence checkpoint - 2026-10-01 19:34:51
 
 B1 partial: Knowledge contracts/service0.2.0 add durable proposal status, immutable stored profiles and atomic accepted-log/snapshot/head/decision persistence.47 owner tests (11 actual PostgreSQL),47 contract/dev tests and80 isolated owner/contract tests pass with0 skipped in the final explicit PG run.258 schemas preserve all256 predecessors. Actual public peer validation and authenticated HTTP remain; child0/4, parent4/24 (16.67%) unchanged. [Evidence](../Audits/Evidence/BP-06-Knowledge/Persistence.json). knowledge_0001 persists graph definitions as well as refs and mutually binds accepted entries/snapshots. History admission caps avoid committing state outside the bounded replay reader. Race/rollback and role tests use the retained labeled fixture; observations remain synthetic until public validation. Initial isolated build omitted PG opt-in and skipped11; a separate explicit opt-in run passed all80 and is the authoritative proof.

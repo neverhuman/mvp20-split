@@ -10,6 +10,7 @@ from amphora_contracts_knowledge import (
     DomainGraphSnapshot,
     DomainHead,
     DomainRevisionRef,
+    GraphAuthoringProfile,
     GraphChangeDecision,
 )
 from sqlalchemy import text
@@ -83,6 +84,30 @@ class KnowledgeLedger:
         principal.require("read_graph", graph.scope)
         with self.engine.connect() as connection:
             return self._head(connection, graph)
+
+    def profile(self, principal, graph):
+        principal.require("read_graph", graph.scope)
+        with self.engine.connect() as connection:
+            row = connection.execute(text("SELECT * FROM knowledge.graph_profiles WHERE " + SCOPE), graph_key(graph)).mappings().one_or_none()
+        profile = self.default_profile if row is None else GraphProfile.restore(row)
+        return GraphAuthoringProfile(wire_version="1", graph=graph,
+            vocabulary=profile.vocabulary.canonical_record(), vocabulary_reference=profile.vocabulary.reference,
+            policy=profile.policy.reference, origin="configured_default" if row is None else "stored")
+
+    def change(self, principal, reference):
+        principal.require("read_graph", reference.graph.scope)
+        with self.engine.connect() as connection:
+            raw = connection.execute(text("SELECT canonical_bytes FROM knowledge.accepted_changes WHERE " + SCOPE +
+                " AND position=:position AND change_id=:change AND change_sha256=:sha"), graph_key(reference.graph) |
+                {"position": reference.position, "change": reference.change_id, "sha": reference.sha256}).scalar_one_or_none()
+        if raw is None:
+            return None
+        record = AcceptedGraphChange.model_validate_json(bytes(raw))
+        if (record.reference != reference or record.content.proposal.graph != reference.graph
+                or record.content.proposal.change_id != reference.change_id
+                or record.content.position != reference.position or digest(record.content) != reference.sha256):
+            raise KnowledgeError("accepted_storage_mismatch")
+        return record
 
     def snapshot(self, principal, reference):
         principal.require("read_graph", reference.graph.scope)

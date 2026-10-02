@@ -2,15 +2,15 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-06.02 / Build / B1.
-- Last refreshed: `2026-10-01 19:50:16` (America/Chicago).
+- Status: primary_active; BP-06.02 / Build / B2.
+- Last refreshed: `2026-10-01 20:05:58` (America/Chicago).
 - Owner/scope: Knowledge, Research and focused Data/Artifacts modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 receipt/wait seams and BP-05 inspection; BP-01/02/03 public contracts and tool execution.
-- Implementation: **16.67%**, 4/24 verified child deliveries. Each child owns four deliveries; parent counts each once. P1/.01 is closed100%; P2/.02 is active0% after its coherence audit.
+- Implementation: **20.83%**, 5/24 verified child deliveries. Each child owns four deliveries; parent counts each once. P1/.01 is closed100%; P2/.02 is active25% after B1 acceptance.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current task: BP-06.02/B1 authenticated Knowledge API/host and actual Data/Research integration proof; public clients are implemented but only scripted transport peers verified.
-- Demonstrated behavior: B1 partial: Knowledge0.3.0 adds bounded public Data/Research clients, exact provenance/declaration review and durable review workflow.83 owner tests pass, including13 actual PostgreSQL cases; scripted HTTP covers routes, failure classes, byte/call limits and whole-review deadlines. Actual Data/Research owner integration and authenticated Knowledge API remain. Child0/4; parent4/24 (16.67%) unchanged.
+- Current task: BP-06.02/B2 isolated watermark rebuild, bounded catch-up and compare-and-set publication; B3 process interruption/named lineage cases and V1 replacement remain.
+- Demonstrated behavior: B1 complete: Knowledge0.4.0/contracts0.3.0 expose authenticated proposal/status/profile/head/snapshot/change reads and explicit owner hosting.104 owner tests pass (26 PostgreSQL cases), plus35 contracts/14 dev tests. Actual Data/Research/Knowledge HTTP proves exact provenance, restart replay, outage recovery and revoked-rights rejection.260 schemas preserve all258 predecessors. Child1/4 (25%), Build33.33%, Acceptance0%; parent5/24 (20.83%).
 - Blockers: none for bounded activation audit; real scientific/provider choices remain scoped successor gates.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
@@ -30,7 +30,7 @@ Primary services retain private state, dependencies, migrations and module READM
 | Parent phase / child | Overall | Build | Acceptance | Prerequisite |
 |---|---:|---:|---:|---|
 | P1 / [BP-06.01 Source and evidence contracts](BP-06/Completed/BP-06.01%20Source%20and%20evidence%20contracts.md) | 100% | 100% | 100% | Parent predecessor gates |
-| P2 / [BP-06.02 Typed graph authoring and replay](BP-06/BP-06.02%20Typed%20graph%20authoring%20and%20replay.md) | 0% | 0% | 0% | BP-06.01 acceptance |
+| P2 / [BP-06.02 Typed graph authoring and replay](BP-06/BP-06.02%20Typed%20graph%20authoring%20and%20replay.md) | 25% | 33.33% | 0% | BP-06.01 acceptance |
 | P3 / [BP-06.03 Reasoning and domain receipts](BP-06/BP-06.03%20Reasoning%20and%20domain%20receipts.md) | 0% | 0% | 0% | BP-06.02 acceptance |
 | P4 / [BP-06.04 Laboratory returns and candidate eligibility](BP-06/BP-06.04%20Laboratory%20returns%20and%20candidate%20eligibility.md) | 0% | 0% | 0% | BP-06.03 acceptance |
 | P5 / [BP-06.05 Representation reuse and retrieval](BP-06/BP-06.05%20Representation%20reuse%20and%20retrieval.md) | 0% | 0% | 0% | BP-06.04 acceptance |

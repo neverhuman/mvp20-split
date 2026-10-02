@@ -9,6 +9,7 @@ from amphora_contracts_knowledge import (
     AcceptedGraphChange,
     DomainGraphSnapshot,
     DomainVocabulary,
+    GraphAuthoringProfile,
     GraphChangeDecision,
     GraphChangeProposal,
     GraphProposalStatus,
@@ -24,6 +25,21 @@ MODELS = {"vocabulary": DomainVocabulary, "proposal": GraphChangeProposal, "snap
 
 def parse(model, value):
     return model.model_validate_json(json.dumps(value))
+
+
+@pytest.mark.parametrize("origin", ["configured_default", "stored"])
+def test_profile_discovery_preserves_explicit_origin(origin):
+    proposal = CASES["proposal"]
+    value = {"wire_version": "1", "graph": proposal["graph"], "vocabulary": CASES["vocabulary"],
+        "vocabulary_reference": proposal["vocabulary"], "policy": proposal["policy"], "origin": origin}
+    parsed = parse(GraphAuthoringProfile, value)
+    assert parsed.model_dump(mode="json") == value
+    for mode in ("validation", "serialization"):
+        Draft202012Validator(GraphAuthoringProfile.model_json_schema(mode=mode)).validate(value)
+    # DTO shape alone does not prove matching profile hashes; owner computes them.
+    value["origin"] = "migrated_implicitly"
+    with pytest.raises(ValidationError):
+        parse(GraphAuthoringProfile, value)
 
 
 @pytest.mark.parametrize("name", MODELS)

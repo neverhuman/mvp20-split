@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-01 19:50:16` (America/Chicago).
+- Last refreshed: `2026-10-01 20:05:58` (America/Chicago).
 - Scope: v2 design/implementation alignment
-- Active focus: BP-06.02/B1; private persistence and bounded validator/scripted transport verified; actual-owner integration and Knowledge API pending.
-- Next gate: B1 real Data/Research input validation and authenticated proposal/status/read boundary; supplied observation DTOs confer no authority.
+- Active focus: BP-06.02/B2; authenticated B1 Knowledge boundary and actual Data/Research HTTP verified.
+- Next gate: isolated rebuild/catch-up/CAS publication, then process-failure and independent replacement proof. Scientific acceptance remains later.
 
 ## Active Findings
 

@@ -1,6 +1,6 @@
 # Knowledge reference validation
 
-Implemented in BP-06.02/B1; the public Knowledge API and actual-owner integration gate remain pending. Design: [authoring](../../../../../docs/Architecture/Knowledge/Authoring.md).
+Implemented and integrated in BP-06.02/B1; public Knowledge API and actual Data/Research HTTP are verified. Design: [authoring](../../../../../docs/Architecture/Knowledge/Authoring.md).
 
 `ReferenceReviewer` owns fresh observations of public Data and Research identities before structural acceptance. `AuthoringWorkflow.submit` first commits scoped actor-bound intent, then reviews outside any SQL transaction, then asks the Knowledge ledger to atomically accept against the expected head. It never accepts a caller-supplied validation observation as authority. Terminal decisions replay without peer I/O; pending proposals can be retried under the same identity.
 
@@ -14,4 +14,4 @@ Review budgets are 20 seconds total, 512 HTTP calls, 32 MiB total response bytes
 
 Normalized, unresolved and quarantined provenance does not become accepted science. Assertion posture remains reported/hypothesis/unresolved. A link's validation method can differ from a predeclared need's method: that distinction is retained evidence, not a claim that the need is fulfilled. This module does not run ontology extraction, infer truth, fulfill Research questions, perform external actions or mutate campaigns.
 
-Replacement tests live in `tests/validation`: scripted records prove binding rules, a real loopback scripted HTTP server proves transport parsing/bounds/deadlines, and actual PostgreSQL proves durable pending/rejection/replay workflow. These are **not** actual Data/Research owner compatibility proof; that remains a B1 gate, followed by independent installation/replacement acceptance in V1. Preserve those tiers and run `dev/run_tests.py --module knowledge --area validation` with explicit PostgreSQL opt-in when appropriate.
+Replacement tests live in `tests/validation`: scripted records prove binding rules, a real loopback scripted HTTP server proves transport parsing/bounds/deadlines, and actual PostgreSQL proves durable pending/rejection/replay workflow. These are **not** actual Data/Research owner compatibility proof; the separate tests/acceptance suite now verifies that B1 gate, followed by independent installation/replacement acceptance in V1. Preserve those tiers and run `dev/run_tests.py --module knowledge --area validation` with explicit PostgreSQL opt-in when appropriate.

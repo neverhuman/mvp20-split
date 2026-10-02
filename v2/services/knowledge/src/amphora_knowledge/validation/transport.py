@@ -72,6 +72,8 @@ def strict_json(raw):
 
 class PeerTransport:
     def __init__(self, endpoint, token):
+        if not isinstance(endpoint, str) or not 1 <= len(endpoint) <= 512:
+            raise ValueError("explicit_loopback_peer_required")
         try:
             parsed = urlsplit(endpoint)
             valid = (parsed.scheme == "http" and parsed.hostname == "127.0.0.1"

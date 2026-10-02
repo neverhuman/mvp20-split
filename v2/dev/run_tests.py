@@ -39,7 +39,7 @@ def main():
     parser.add_argument("--area", choices=["validation", "authoring", "replay", "identity", "acquisition", "source_rights", "graph", "admission", "api", "baseline", "persistence", "lifecycle", "completion", "delivery", "inspection", "graph_inspection", "graph_navigation", "definitions", "publication", "storage", "retention", "maintenance", "acceptance", "descriptors", "routing", "transport", "executable", "compiler", "scheduling", "aggregation", "waits", "bindings", "successors", "contracts", "page_models"])
     parser.add_argument("--coverage", action="store_true")
     args, pytest_args = parser.parse_known_args()
-    areas = {"knowledge": {"authoring", "replay", "persistence", "validation"}, "research": {"identity", "persistence", "api"}, "runtime": {"successors", "bindings", "waits", "aggregation", "scheduling", "compiler", "graph", "admission", "api", "baseline", "persistence", "lifecycle", "completion", "delivery", "inspection", "graph_inspection", "graph_navigation", "definitions", "acceptance"},
+    areas = {"knowledge": {"authoring", "replay", "persistence", "validation", "api", "acceptance"}, "research": {"identity", "persistence", "api"}, "runtime": {"successors", "bindings", "waits", "aggregation", "scheduling", "compiler", "graph", "admission", "api", "baseline", "persistence", "lifecycle", "completion", "delivery", "inspection", "graph_inspection", "graph_navigation", "definitions", "acceptance"},
              "data-artifacts": {"source_rights", "acquisition", "persistence", "publication", "storage", "retention", "maintenance", "acceptance"},
              "registry": {"descriptors", "persistence", "api", "routing"},
              "worker-sdk": {"transport", "lifecycle", "acceptance"}, "campaigns": {"executable"},
