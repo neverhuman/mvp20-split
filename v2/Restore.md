@@ -3,10 +3,10 @@
 ## Current Checkpoint
 
 
-- Last refreshed: `2026-10-02 11:44:40` (America/Chicago).
-- Active plan: BP-06.03/Build/B1, child0/4; parent8/24 (33.33%). DER-01 approved; D1-D3 complete3/4 (75%), active D4 installed/public integration.
-- Latest checkpoint: 83e91a8 pushed Data0.11.0 atomic derived publication (266 full owner tests). D3 now verified: SDK0.2.0 original-receipt resume and derived client;141 combined tests,94 SDK coverage,26 focused derivation tests. Evidence: Derived_Publication_Transactions.json and Derived_Publication_Recovery.json.
-- Next: DER-01/D4 actual Data/Knowledge output publication/read integration, independent Data install and scoped drift audit. Then resume Knowledge durable publication/receipt orchestration under B1. knowledge_0001/0002/0003 and artifact_0001..0007 are applied/immutable. No owner decision pending.
+- Last refreshed: `2026-10-02 12:04:52` (America/Chicago).
+- Active plan: BP-06.03/Build/B1, child0/4; parent8/24 (33.33%). DER-01 accepted/closed4/4 (100%); resume Knowledge publication/receipts.
+- Latest checkpoint: DER-01 D4 passed712 installed tests with zero failures/errors/skips across8 isolated initial/replacement installations. Data0.11.0, artifacts contracts0.2.0, SDK0.2.0, Knowledge0.8.0. See docs/Audits/DER-01_Derived_Publication_Closeout.md and Derived_Publication_Installed.json. Test-owned public SDK handoff is verified; production Knowledge publication orchestration remains B1.
+- Next: B1 first retain every reasoning-consumed artifact (trace outputs and Research contexts), then durable Knowledge derived publication/owner receipts, Research assessment and Runtime waits. Preserve authoring replay and existing DTO/schema bytes. knowledge_0001/0002/0003 and artifact_0001..0007 applied/immutable. No owner decision pending; no tests/processes left running.
 - Recovery: only verified pending original receipts enable explicit same-identity resume. Unknown transport outcome first reconciles; collision/denial/terminal ambiguity never gets a fresh ID. Newer local edits survive recovery. Cancellation is operational and retains explicit uncertain-effects wording.
 - Runtime0.20.0, Commands0.2.0, graph-runtime0.11.0, campaigns0.4.1;282 public schemas; all272 DER-01 predecessor schemas preserved. Numeric v2 only save/admit; other families/unmarked bytes v1. Input NumberValue remains decimal string. Registry eligibility synthetic-only observations are not reservations/atomic revocation. No scientific or target-host deployment claim.
 - Tooling: mapped v2/dev/.venv/Scripts/python.exe, PYTHONUTF8=1; pytest/ruff --config equivalents use v2/dev/pyproject.toml. Git always -c safe.directory=//DesktopNAS/Code/mvp20-split. Never reset retained PG or run parallel campaign-admission suites. No v1/JARVIS/subagents. Use Path.absolute for repo tooling; Path.resolve maps Z to UNC and breaks uv source identity.

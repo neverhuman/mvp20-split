@@ -1,8 +1,8 @@
 # Source Rights
 
-- Status: BP-06.01/B2 implemented within the bounded local/synthetic profile; failure/replacement acceptance remains B3/V1.
+- Status: BP-06.01 accepted/closed; DER-01 adds bounded derivation ancestry with D1-D4 accepted/closed.
 - Owner: Data/Artifacts; design [Acquisition](../../../../../docs/Architecture/Data/Acquisition.md).
-- Public contract: evidence0.5.0 SourceRightsRevision; Data/Artifacts0.9.0; artifact_0006.
+- Public contract: evidence0.5.0 SourceRightsRevision; Data/Artifacts0.11.0; artifact_0006 rights and artifact_0007 derived lineage.
 
 ## Responsibility and Authority
 
@@ -39,3 +39,5 @@ BP-06.03 DER-01 probe verifies the intentional identity boundary: a separately f
 DER-01 requires Data/Artifacts0.11.0 with artifact_0007 for derived lineage reads; earlier implementations are unsupported rollback targets after derived publication begins. Finalization uses the same rights lock/fence and never returns a new derived catalog identity without its input edges. No content-hash inference is added to ordinary uploads.
 
 Legacy identity-conversion traces whose raw/output artifact IDs are equal contribute no ancestry edge; their artifact still retains all source rights. This preserves the existing identity-converter contract. Derived outputs always have a new artifact ID; self-derived edges are prohibited. Cycles between distinct artifacts remain denied.
+
+DER-01 D4 accepted: actual public boundaries, independent Data installations and scoped audit pass. Production Knowledge orchestration remains BP-06.03/B1.

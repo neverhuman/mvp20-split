@@ -17,7 +17,8 @@ from build_tool_images import closure
 from check_boundaries import ROOT, project_specs
 from postgres_fixture import owned_state
 
-OWNERS = {"knowledge": "amphora-knowledge", "data": "amphora-data-artifacts", "research": "amphora-research"}
+OWNERS = {"knowledge": "amphora-knowledge", "data": "amphora-data-artifacts", "research": "amphora-research",
+          "publisher": "amphora-tool-protocol"}
 
 
 def run(command, log, environment=None):
@@ -86,6 +87,24 @@ def verify(output):
             save()
         manifest["status"] = "testing"
         save()
+        for generation, label, paths in [
+            ("initial", "data", ["services/data_artifacts/tests"]),
+            ("replacement", "data", ["services/data_artifacts/tests/derivations", "services/data_artifacts/tests/source_rights"]),
+            ("initial", "publisher", ["sdk/tool_protocol/tests"]),
+        ]:
+            key = generation + "-" + label
+            print(f"Testing installed {key} publication boundary", flush=True)
+            report = output / (key + ".xml")
+            environment = dict(os.environ, AMPHORA_TEST_POSTGRES="1",
+                AMPHORA_TEST_RESEARCH_PYTHON=str(interpreters[generation, "research"]),
+                AMPHORA_TEST_DATA_REPLACEMENT_PYTHON=str(interpreters["replacement", "data"]))
+            run([interpreters[generation, label], "-I", "-m", "pytest", "-c", ROOT / "dev/pyproject.toml",
+                 *[ROOT / path for path in paths], "-q", "--junitxml", report], output / (key + ".log"), environment)
+            totals = {field: sum(int(suite.attrib.get(field, 0)) for suite in ET.parse(report).getroot().iter("testsuite"))
+                      for field in ("tests", "failures", "errors", "skipped")}
+            assert totals["tests"] > 0 and totals["failures"] == totals["errors"] == totals["skipped"] == 0
+            manifest["tests"][key] = totals | {"paths": paths}
+            save()
         cases = [("initial", ["services/knowledge/tests", "contracts/knowledge/tests"]),
                  ("replacement", ["services/knowledge/tests/api", "services/knowledge/tests/rebuild",
                                   "services/knowledge/tests/acceptance"])]
@@ -96,6 +115,8 @@ def verify(output):
             evidence.mkdir()
             environment = dict(os.environ, AMPHORA_TEST_POSTGRES="1",
                 AMPHORA_TEST_DATA_PYTHON=str(interpreters[generation, "data"]),
+                AMPHORA_TEST_DATA_REPLACEMENT_PYTHON=str(interpreters["replacement", "data"]),
+                AMPHORA_TEST_SDK_PYTHON=str(interpreters[generation, "publisher"]),
                 AMPHORA_TEST_RESEARCH_PYTHON=str(interpreters[generation, "research"]),
                 AMPHORA_TEST_KNOWLEDGE_PYTHON=str(interpreters["initial", "knowledge"]),
                 AMPHORA_TEST_KNOWLEDGE_REPLACEMENT_PYTHON=str(interpreters["replacement", "knowledge"]),

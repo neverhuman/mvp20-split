@@ -1,6 +1,6 @@
 # Derived publication boundary
 
-- Status: DER-01/D2 persistence/HTTP implemented; 266 owner regressions pass; D3-D4 pending.
+- Status: DER-01/D2 persistence/HTTP implemented; 266 owner regressions pass; D3-D4 accepted; DER-01 closed.
 - Owner: Data/Artifacts; [plan](../../../../../docs/Build%20Plans/BP-06/BP-06.03%20Derived%20publication%20prerequisite.md).
 - Architecture: [artifact publication](../../../../../docs/Architecture/System/Artifact_Publication_Protocol.md).
 
@@ -19,3 +19,5 @@ Tests belong to `tests/derivations`; contract cases belong to `contracts/artifac
 `DerivationLedger` inserts the declaration link to immutable command bytes, finalized metadata and exact input edges. All three new tables grant SELECT/INSERT only; finalized metadata and inputs reference existing scoped catalog identities. Applied artifact_0007 is immutable. Ordinary Finalizer always takes the source-rights scope lock first, including ordinary uploads, before capacity/upload locks; a declaration cannot be omitted by choosing the legacy finalize route. Streaming/maintenance/retention take capacity locks without acquiring rights locks, so no reverse edge is introduced. Source registration/trace commits already take rights first and never take publication capacity locks.
 
 Legacy identity-conversion traces whose raw/output artifact IDs are equal contribute no ancestry edge; their artifact still retains all source rights. This preserves the existing identity-converter contract. Derived outputs always have a new artifact ID; self-derived edges are prohibited. Cycles between distinct artifacts remain denied.
+
+DER-01 D4 accepted: actual public boundaries, independent Data installations and scoped audit pass. Production Knowledge orchestration remains BP-06.03/B1.

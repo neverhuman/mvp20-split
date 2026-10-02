@@ -16,6 +16,8 @@ from postgres_fixture import owned_state, research_owner
 from sqlalchemy import URL
 
 from ..validation.conftest import records
+from .derived_fixture import probe as derivation_probe
+from .derived_fixture import profile as derivation_profile
 from .processes import Owner, owned_script
 
 pytestmark = pytest.mark.postgres
@@ -74,13 +76,14 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
     schema = {"schema_id": "fixture.bytes", "version": "1",
               "sha256": hashlib.sha256(b'{"type":"string","contentEncoding":"base64"}').hexdigest()}
     data_config = tmp_path / "data.json"
+    derived_profile = derivation_profile(tmp_path)
     (tmp_path / "bytes").mkdir()
     data_config.write_text(json.dumps({"database_url_env": "DATA_DATABASE", "storage_root": str(tmp_path / "bytes"),
         "acquisition": True, "principals": [{"token_env": "DATA_TOKEN", "actor_id": "fixture", "scope": scope,
             "actions": ["read", "source_history", "upload", "finalize", "acquire", "manage_source_rights"]},
             {"token_env": "DATA_READ_TOKEN", "actor_id": "knowledge-reader", "scope": scope,
              "actions": ["read", "source_history"]}],
-        "profiles": [{"media_type": "application/octet-stream", **schema}]}), encoding="utf-8")
+        "profiles": [{"media_type": "application/octet-stream", **schema}, derived_profile]}), encoding="utf-8")
     owners = []
     try:
         data = Owner("amphora_data_artifacts", data_config, environment, "d"*32, python=data_python)
@@ -155,6 +158,11 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
         assert reasoned["decision"]["outcome"] == "evaluated"
         assert reasoned["decision"]["result"]["authority"] == "synthetic_logical_entailment"
         assert reasoned["decision"]["result"]["findings"][0]["supporting_assertions"] == [claim["reference"]]
+        derived_case = tmp_path / "derived-case.json"
+        derived_case.write_text(json.dumps({"endpoint": data.endpoint, "scope": scope,
+            "result": reasoned["decision"]["result"], "inputs": [artifact, output],
+            "schema": {key: derived_profile[key] for key in ("schema_id", "version", "sha256")}}), encoding="utf-8")
+        derived_initial = derivation_probe(derived_case, "publish", environment)
         assert rebuilt["result"]["outcome"] == "published" and rebuilt["result"]["head"] == head
         knowledge.stop()
         knowledge = Owner("amphora_knowledge", config, environment, "k"*32,
@@ -166,6 +174,12 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
         assert knowledge.request("/v1/graph-rebuilds", rebuild_query) == rebuilt
         assert knowledge.request("/v1/graph-reasoning", reasoning_query) == reasoned
         assert knowledge.request(f"/v1/graphs/{proposal['graph']['graph_id']}/reasoning/reason-initial") == reasoned
+        data.stop()
+        data = Owner("amphora_data_artifacts", data_config, environment, "d" * 32, port=data.port,
+            python=os.environ.get("AMPHORA_TEST_DATA_REPLACEMENT_PYTHON", data_python))
+        owners.append(data)
+        derived_resumed = derivation_probe(derived_case, "resume", environment)
+        assert derived_resumed["derivation"] == derived_initial["derivation"]
         change = knowledge.request("/v1/graph-changes/read", head["change"])
         assert change["content"]["actor_id"] == "author"
         assert change["content"]["validation"]["conversion_traces"] == [trace]
@@ -203,6 +217,8 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
         revoked.update(supersedes=rights["reference"], status="revoked", allowed_uses=[])
         revoked["reference"]["revision"] = 2
         data.request("/v1/acquisition/rights", revoked)
+        derived_revoked = derivation_probe(derived_case, "revoked", environment)
+        assert derived_revoked["derivation"] == derived_initial["derivation"]
         denied = copy.deepcopy(proposal)
         denied["change_id"] = "revoked-new"
         result = knowledge.request("/v1/graph-proposals", denied)
@@ -220,6 +236,8 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
             "source": source["reference"], "trace": trace, "head": head,
             "question": question["reference"], "need": need["reference"],
             "reasoning": {"initial": reasoned, "resumed_after_outage": resumed_reason, "denied_after_revocation": denied_reason},
+            "derived_publication": {"initial": derived_initial, "resumed": derived_resumed, "revoked": derived_revoked,
+                "producer": "test-owned public SDK handoff of actual Knowledge result; durable Knowledge orchestration remains B1"},
             "cases": ["accepted_exact_provenance", "hypothesis_not_promoted", "knowledge_restart_exact_receipt_and_snapshot",
                 "research_outage_pending", "research_recovery_exact_retry", "revoked_rights_new_proposal_rejected",
                 "historical_receipt_stable_after_revocation", "published_rebuild_survives_restart",

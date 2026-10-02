@@ -9,15 +9,15 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 primary active; BP-07 through BP-09 queued; BP-05 closed.
-- Last refreshed: `2026-10-02 11:44:40` (America/Chicago).
+- Last refreshed: `2026-10-02 12:04:52` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P5 / BP-06 - Knowledge Evidence and Source Loop.
 - Primary active implementation plan / phase / task: BP-06 -> BP-06.03 / Build / B1.
-- Current task: DER-01/D4: actual installed/public integration; D1-D3 complete3/4 (75%),141 focused tests pass.
-- Next task: Complete DER-01 D4 inside BP-06.03/B1, then resume Knowledge/Research artifact and receipt work.
+- Current task: B1 Knowledge: retain every consumed reasoning input, then implement durable derived publication and owner receipts. DER-01 closed4/4 (100%),712 installed tests pass.
+- Next task: Durable Knowledge publication/receipts, then Research assessment and Runtime wait integration.
 - Implementation completion: BP-05 closed100% (16/16); BP-06 at33.33% (8/24); BP-07..09 remain0%.
-- Active focus: BP-06.03/B1 active at DER-01/D4; child0/4, parent8/24 (33.33%).
-- Blockers: No owner blocker; approved DER-01 implementation is the current prerequisite.
+- Active focus: BP-06.03/B1 Knowledge publication; child0/4, parent8/24 (33.33%).
+- Blockers: No owner blocker; derived-publication prerequisite accepted.
 - Acceptance posture: BP-05 integrated Studio accepted within synthetic software scope; scientific and deployment acceptance remains later.
 - Active exception: none.
 
@@ -39,7 +39,7 @@ BP-06 is the sole active parent. BP-05 closed16/16; see [completed plans](Comple
 
 | Active canonical child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-06.03](BP-06/BP-06.03%20Reasoning%20and%20domain%20receipts.md) | 0% | 0% | 0% | B1 / DER-01 D4 |
+| [BP-06.03](BP-06/BP-06.03%20Reasoning%20and%20domain%20receipts.md) | 0% | 0% | 0% | B1 / Knowledge publication |
 
 
 
@@ -121,10 +121,11 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-02 12:04:52 | DER-01 closed4/4 (100%); B1 Knowledge publication resumed; child0/4, parent8/24 | [Audit](../Audits/DER-01_Derived_Publication_Closeout.md);712 installed tests,8 isolated installs |
 | 2026-10-02 11:44:40 | DER-01 D3 complete3/4 (75%); D4 active; child0/4, parent8/24 | SDK0.2.0;141 Data/SDK tests;94 SDK and26 derivation coverage runs |
 | 2026-10-02 11:35:16 | DER-01 D2 complete2/4 (50%); D3 active; child0/4, parent8/24 | Data0.11.0;artifact_0007;266 owner +36 contract/dev tests |
-| 2026-10-02 11:14:56 | DER-01 approved; D1 complete1/4 (25%); D3 active; child0/4, parent8/24 | contracts0.2.0;282 schemas preserve272;92 tests |
-| 2026-10-02 11:05:40 | DER-01 proposed prerequisite; BP-06.03/B1 awaits owner direction, percentages unchanged | [Decision](BP-06/BP-06.03%20Derived%20publication%20prerequisite.md);1 PostgreSQL probe |
+| 2026-10-02 11:14:56 | DER-01 approved; D1 complete1/4 (25%); D2 active; child0/4, parent8/24 | contracts0.2.0;282 schemas preserve272;92 tests |
+| 2026-10-02 09:54:48 | DER-01 proposed prerequisite; BP-06.03/B1 awaits owner direction, percentages unchanged | [Decision](BP-06/BP-06.03%20Derived%20publication%20prerequisite.md);1 PostgreSQL probe |
 | 2026-10-02 09:39:22 | BP-06.03/B1 Knowledge public/durable boundary verified; child0/4; parent8/24 | [Evidence](../Audits/Evidence/BP-06-Knowledge/Reasoning_Boundary.json);189+62+14 tests |
 | 2026-10-01 21:13:35 | BP-06.03/B1 kernel and input binding verified; child0/4; parent8/24 | [Evidence](../Audits/Evidence/BP-06-Knowledge/Reasoning_Kernel.json);161 owner +14 dev tests |
 | 2026-10-01 21:01:42 | BP-06.02 closed100%; parent33.33%; successor .03 audit next | [Closeout](../Audits/BP-06.02_Knowledge_Replay_Closeout.md);169+39 installed tests |
@@ -145,6 +146,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-01 12:30:47 | BP-06.01/B1 finalized ingestion stages;0% unchanged | 94 acquisition/200 artifact tests; [evidence](../Audits/Evidence/BP-06-Acquisition/Ingestion_Stages.json) |
 | 2026-10-01 12:06:09 | BP-06.01/B1 public client partial;0% unchanged | 83 acquisition/189 artifact tests; [independent peers](../Audits/Evidence/BP-06-Acquisition/Public_Research_Client.json) |
 | 2026-10-01 11:58:34 | BP-06.01/B1 Research HTTP partial;0% unchanged | 61 owner tests; installed host replacement; [evidence](../Audits/Evidence/BP-06-Acquisition/Research_HTTP.json) |
-| 2026-10-01 11:46:20 | BP-06.01/B1 preparation partial;0% unchanged | 58 acquisition/164 artifact tests;52 isolated pure cases; [evidence](../Audits/Evidence/BP-06-Acquisition/Preparation.json) |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

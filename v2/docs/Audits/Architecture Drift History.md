@@ -1,5 +1,7 @@
 # Architecture Drift History
 
+- `2026-10-02 12:04:52`: DER-01 closed4/4 (100%), aligned; [audit](DER-01_Derived_Publication_Closeout.md).712 installed/replacement tests pass, zero failures/errors/skips. No unresolved drift within the Data/SDK prerequisite; production Knowledge orchestration remains active B1 scope.
+
 - `2026-10-01 18:34:28`: BP-06.01 closed100% and aligned; [source/evidence audit](BP-06.01_Source_Evidence_Closeout.md). Independent owner/peer/replacement proof complete; no follow-up within closed scope. Broader scientific/source capabilities retain their named successors.
 
 - `2026-09-30 17:34:15`: BP-05 and BP-05.04 closed/aligned; [parent audit](BP-05_Studio_Closeout.md), [acceptance audit](BP-05.04_Acceptance_Closeout.md). No unresolved blocking drift; scientific owners and target deployment remain successors.

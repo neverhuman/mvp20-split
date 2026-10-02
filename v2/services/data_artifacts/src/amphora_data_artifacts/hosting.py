@@ -91,6 +91,7 @@ class Host:
                     raise ValueError("Artifact service role required")
                 conn.execute(text("SELECT created_at FROM artifacts.uploads LIMIT 0"))
                 conn.execute(text("SELECT revision FROM artifacts.source_rights_heads LIMIT 0"))
+                conn.execute(text("SELECT created_at FROM artifacts.derived_uploads LIMIT 0"))
                 if acquisition:
                     conn.execute(text("SELECT canonical_bytes FROM artifacts.source_revisions LIMIT 0"))
                     conn.execute(text("SELECT canonical_bytes FROM artifacts.conversion_traces LIMIT 0"))

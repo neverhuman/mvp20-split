@@ -1,5 +1,9 @@
 # BP-06 Planning History
 
+## DER-01 accepted / B1 resumed - 2026-10-02 12:04:52
+
+DER-01 closed4/4 (100%). Eight isolated installs and712 tests pass with no failures/errors/skips: Data278+47, SDK94, Knowledge252+41. [Audit](../Audits/DER-01_Derived_Publication_Closeout.md). Source-process handoff additionally passed. Return to B1: persist all reasoning-consumed input references, durable Knowledge publication/receipts, then Research/Runtime integration. BP-06.03 remains0/4; parent8/24 (33.33%). This prerequisite does not add parent delivery credit.
+
 ## DER-01 D3 complete - 2026-10-02 11:44:40
 
 SDK0.2.0 derived begin/metadata and explicit receipt-first resume preserve original bytes/IDs and prohibit automatic ambiguous PUT retry.141 combined Data/SDK tests pass;94 full SDK and26 focused derivation coverage runs pass. D1-D3 complete3/4 (75%); D4 installed/public integration and audit next. [Evidence](../Audits/Evidence/BP-06-Knowledge/Derived_Publication_Recovery.json). Parent/child completed delivery counts unchanged.
