@@ -1,6 +1,6 @@
 # Knowledge Service
 
-- Package: amphora-knowledge0.6.0; BP-06.02/B1-B2 complete; B3 failure/lineage proof active.
+- Package: amphora-knowledge0.6.0; BP-06.02/B1-B2 complete; B3 complete; V1 independent replacement/audit active.
 - Design: [Knowledge](../../docs/Architecture/Knowledge/Knowledge_Architecture.md), [activation](../../docs/Audits/BP-06.02_Activation.md).
 
 Knowledge owns domain entity/assertion identity, typed structural edits and deterministic accepted-history reconstruction. The package implements pure [authoring](src/amphora_knowledge/authoring/README.md) and [replay](src/amphora_knowledge/replay/README.md). The [private persistence module](src/amphora_knowledge/persistence/README.md) now commits proposals/decisions/logs/snapshots/heads and preserves stored profiles. [Reference validation](src/amphora_knowledge/validation/README.md) now implements bounded public clients and provenance checks; actual-peer integration and [authenticated HTTP](src/amphora_knowledge/transport/README.md) are verified; [Rebuild publication](src/amphora_knowledge/rebuild/README.md) is verified; process-interruption and independent replacement remain. Domain evaluation and a valid accepted-change DTO are not durable acceptance.
@@ -22,3 +22,5 @@ Latest B1 proof:104 owner tests pass (26 PostgreSQL), including an actual three-
 B2 cursor checkpoint:112 owner tests pass, including18 replay cases. Exact watermark catch-up preserves canonical bytes and prior verified state on failure. Durable rebuild materialization publication remains pending; child completion stays25%.
 
 Latest B2 checkpoint:122 owner tests pass (36 PostgreSQL), plus39 contract/14 dev tests. Applied knowledge_0002 owns durable rebuild audit and atomic projection pointers; knowledge_0001 and260 predecessor schemas are unchanged. B3 interruption/lineage proof and V1 independent replacement remain required.
+
+B3 checkpoint:130 owner tests pass, including44 PostgreSQL cases. Real process death after candidate staging, after pointer write/before result, and after commit/before HTTP reply preserves exact recovery; a paused rebuild catches up a concurrent correction. QEV-02/03/04 and TRACE-04 retain both interpretations, conflicting contexts/methods and exact authority boundaries. tests/acceptance/fault_host.py is test-only and excluded from production wheels. Independent installed-owner replacement/audit remains V1.

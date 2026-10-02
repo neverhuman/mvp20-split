@@ -1,26 +1,41 @@
 """Real installed-owner processes; no peer implementation imports in the harness."""
 
 import json
+import queue
 import socket
 import subprocess
 import sys
+import threading
 import time
 import urllib.error
 import urllib.request
+from pathlib import Path
 
 
 class Owner:
-    def __init__(self, module, config, environment, token, *, port=None, python=None):
+    def __init__(self, module, config, environment, token, *, port=None, python=None, barrier=None):
         if port is None:
             with socket.socket() as listener:
                 listener.bind(("127.0.0.1", 0))
                 port = listener.getsockname()[1]
         self.port, self.token = port, token
         self.endpoint = f"http://127.0.0.1:{port}"
-        self.process = subprocess.Popen([python or sys.executable, "-I", "-m", module, "serve",
-            "--config", str(config), "--port", str(port)], env=environment,
-            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+        args = [python or sys.executable, "-I", "-m", module, "serve", "--config", str(config), "--port", str(port)]
+        if barrier is not None:
+            args = [python or sys.executable, "-I", str(Path(__file__).with_name("fault_host.py")),
+                    "--config", str(config), "--port", str(port), "--barrier", barrier]
+        self.events, self.output_thread = queue.Queue(), None
+        self.process = subprocess.Popen(args, env=environment,
+            stdin=subprocess.PIPE if barrier else subprocess.DEVNULL,
+            stdout=subprocess.PIPE if barrier else subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+            text=True, encoding="utf-8",
             creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
+        if barrier:
+            def output():
+                for line in self.process.stdout:
+                    self.events.put(json.loads(line))
+            self.output_thread = threading.Thread(target=output, daemon=True)
+            self.output_thread.start()
         try:
             deadline = time.monotonic() + 15
             while True:
@@ -47,6 +62,14 @@ class Owner:
         if self.process.poll() is None:
             self.process.kill()
             self.process.wait(timeout=10)
+        if self.output_thread is not None:
+            self.output_thread.join(timeout=5)
+            self.process.stdin.close()
+            self.process.stdout.close()
+
+    def release(self):
+        self.process.stdin.write("continue\n")
+        self.process.stdin.flush()
 
 
 def owned_script(python, script, environment):

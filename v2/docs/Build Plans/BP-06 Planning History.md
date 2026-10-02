@@ -1,5 +1,9 @@
 # BP-06 Planning History
 
+## B3 complete - 2026-10-01 20:50:22
+
+B3 complete:130 owner tests pass (44 PostgreSQL cases). Three actual process-death barriers preserve pending/committed outcomes; a correction-versus-rebuild race catches up without overwrite. QEV-02/03/04 and TRACE-04 preserve linked declarations, conflicting methods/contexts and override provenance. Child3/4 (75%), Build100%, Acceptance0%; parent7/24 (29.17%). V1 independent replacement/audit remains. [Evidence](../Audits/Evidence/BP-06-Knowledge/Failure_Matrix.json). Test barriers are excluded from wheels/configuration; accepted records are seeded with explicitly synthetic observations for interruption isolation. Actual source/Research validation is separately proven by the three-owner suite. No production/schema/migration changes in this checkpoint.
+
 ## B2 complete - 2026-10-01 20:43:08
 
 B2 complete: Knowledge0.6.0/contracts0.4.0 publish durable rebuild intent/candidates/results and atomic CAS materializations through authenticated endpoints.122 owner tests pass (36 PostgreSQL cases), plus39 contract/14 dev checks.264 schemas preserve260 predecessors. Actual owner restart and post-revocation historical rebuild pass. Child2/4 (50%), Build66.67%, Acceptance0%; parent6/24 (25%). [Evidence](../Audits/Evidence/BP-06-Knowledge/Rebuild_Publication.json). knowledge_0002 is applied; new materialization pointers require terminal published results and cannot expose private candidates. Semantic revisions remain unchanged. Three attempts are per execution, not a lifetime audit-row cap across interrupted retries.
