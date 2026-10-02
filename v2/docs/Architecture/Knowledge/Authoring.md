@@ -1,6 +1,6 @@
 # Text Authoring and Graph Revisions
 
-- Design status: B1 typed structural authoring implemented; rebuild publication, extraction and scientific acceptance remain pending
+- Design status: B1-B2 typed authoring and rebuild publication implemented; process/replacement proof, extraction and scientific acceptance remain pending
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
 - Last reviewed: `2026-10-01 20:05:58` (America/Chicago)
 - Parent: [Domain overview](Knowledge_Architecture.md)
@@ -65,4 +65,4 @@ A reviewer corrects 'A causes B' to 'A correlates with B', then a later extracti
 
 ## Implemented boundary mapping
 
-BP-06.02/B1 implements exact typed operations, immutable source/Research links, deterministic accepted-history replay, private transactional publication and authenticated public reads/proposals in the [Knowledge owner](../../../services/knowledge/README.md). Actual Data/Research HTTP checks current source access and exact provenance; acceptance is structural_only. Explicit merges replace any implicit fuzzy identity threshold in this bounded synthetic profile. B2 owns isolated watermark rebuild/catch-up/CAS; BP-07 owns prompt/extraction quality; BP-06.03/.04 own reasoning/scientific eligibility. These distinctions prevent structural DTO validity from implying accepted science.
+BP-06.02/B1 implements exact typed operations, immutable source/Research links, deterministic accepted-history replay, private transactional publication and authenticated public reads/proposals in the [Knowledge owner](../../../services/knowledge/README.md). Actual Data/Research HTTP checks current source access and exact provenance; acceptance is structural_only. Explicit merges replace any implicit fuzzy identity threshold in this bounded synthetic profile. B2 implements isolated watermark rebuild/catch-up/CAS as a private materialization projection without changing semantic revisions; BP-07 owns prompt/extraction quality; BP-06.03/.04 own reasoning/scientific eligibility. These distinctions prevent structural DTO validity from implying accepted science.

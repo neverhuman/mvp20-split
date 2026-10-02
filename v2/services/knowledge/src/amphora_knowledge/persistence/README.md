@@ -1,7 +1,7 @@
 # Knowledge Accepted History Persistence
 
 - Status: BP-06.02/B1 complete; private PostgreSQL boundary, authenticated HTTP and actual-peer review implemented.
-- Migration: knowledge_0001 is applied to the retained fixture; future changes require a new forward migration.
+- Migration: knowledge_0001 is applied to the retained fixture; knowledge_0002 adds rebuild projections; both applied migrations are immutable.
 - Design: [authoring](../../../../../docs/Architecture/Knowledge/Authoring.md), [activation protocol](../../../../../docs/Audits/BP-06.02_Activation.md).
 
 KnowledgeLedger owns immutable graph profiles, proposal intents, terminal decisions, accepted operations, full snapshots and a mutable current head. It uses only knowledge schema tables. Principal comes from a trusted owning adapter; propose_graph/read_graph grants and exact scope are checked before SQL. Sibling transport and validation modules authenticate bearer tokens and validate actual public Data/Research responses.
@@ -22,4 +22,4 @@ Verification:11 real PostgreSQL cases cover pending/accepted replay, stored-prof
 
 Full-owner measured coverage: 552/584 statements and165/196 branches. Exact missing branches are retained in the persistence evidence; byte/history ceilings, storage-corruption guards, unsupported profile versions and selected recovery races are not all exercised by this checkpoint.
 
-The earlier47/80-test persistence checkpoint remains historical evidence. B1 completion adds public profile/change reads and actual authenticated HTTP/peer tests; see owner README and Public_API evidence for latest counts. B2 adds isolated rebuild publication; knowledge_0001 remains unchanged.
+The earlier47/80-test persistence checkpoint remains historical evidence. B1 completion adds public profile/change reads and actual authenticated HTTP/peer tests; see owner README and Public_API evidence for latest counts. B2 isolated rebuild publication is implemented in the sibling rebuild module. Snapshot reads prefer an exact published candidate and retain original snapshot fallback. knowledge_0001 remains unchanged.

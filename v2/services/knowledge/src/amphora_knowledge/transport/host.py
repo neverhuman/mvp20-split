@@ -57,7 +57,7 @@ class KnowledgeHost:
             keys(entry, ("token_env", "actor_id", "scope", "actions"))
             actions = entry["actions"]
             if (not isinstance(actions, list) or not actions
-                    or any(action not in ("read_graph", "propose_graph") for action in actions)
+                    or any(action not in ("read_graph", "propose_graph", "rebuild_graph") for action in actions)
                     or len(set(actions)) != len(actions)):
                 raise ValueError("invalid_actions")
             grants.append((secret(entry["token_env"]), Principal(entry["actor_id"],
@@ -76,6 +76,7 @@ class KnowledgeHost:
                 if connection.execute(text("SELECT current_user")).scalar_one() != "knowledge_service":
                     raise ValueError("knowledge_service_role_required")
                 connection.execute(text("SELECT revision FROM knowledge.heads LIMIT 1"))
+                connection.execute(text("SELECT candidate_id FROM knowledge.snapshot_publications LIMIT 0"))
             workflow = AuthoringWorkflow(KnowledgeLedger(engine, vocabulary, policy), reviewer)
             return cls(engine, create_app(workflow, credentials))
         except Exception:

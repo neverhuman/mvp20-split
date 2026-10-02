@@ -20,6 +20,7 @@ from .operations import (
     ReviseEntityContext,
 )
 from .profiles import GraphAuthoringProfile
+from .rebuilds import GraphRebuildRequest, GraphRebuildStatus, PublishedRebuild, UnpublishedRebuild
 from .records import (
     AssertionRetraction,
     ClaimGrounding,
@@ -50,4 +51,5 @@ __all__ = [
     "EntityRevisionRef", "FailedDecision", "GraphAuthoringProfile", "GraphChangeDecision", "GraphChangeProposal", "GraphOperation", "GraphProposalStatus",
     "MergeEntities", "PredicateDefinition", "QuestionEvidenceLink", "ReferenceValidation",
     "RetractAssertion", "ReviseEntityContext", "StructuralPolicyRef", "VocabularyRef",
+    "GraphRebuildRequest", "GraphRebuildStatus", "PublishedRebuild", "UnpublishedRebuild",
 ]

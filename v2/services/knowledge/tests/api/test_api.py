@@ -20,6 +20,7 @@ pytestmark = pytest.mark.postgres
 @pytest.fixture
 def api(stored_graph):
     case = stored_graph
+    case.principal = replace(case.principal, actions=case.principal.actions | {"rebuild_graph"})
     peer = records(case.proposal)
     reader = replace(case.principal, actor_id="reader", actions=frozenset({"read_graph"}))
     credentials = Credentials([("w"*32, case.principal), ("r"*32, reader)])
@@ -115,3 +116,21 @@ def test_changed_same_id_conflicts_and_unknown_status_stays_unknown(api):
     assert post(client, "/v1/graph-proposals", peer.proposal).status_code == 200
     altered = peer.proposal.model_copy(update={"description": "Changed request"})
     assert post(client, "/v1/graph-proposals", altered).status_code == 409
+
+
+def test_rebuild_endpoint_uses_accepted_history_without_new_peer_reads(api):
+    _, peer, client = api
+    receipt = post(client, "/v1/graph-proposals", peer.proposal).json()
+    query = {"wire_version": "1", "graph": peer.proposal.graph.model_dump(mode="json"), "rebuild_id": "api-rebuild"}
+    assert client.post("/v1/graph-rebuilds/read", json=query).status_code == 404
+    peer.calls.clear()
+    response = client.post("/v1/graph-rebuilds", json=query)
+    assert response.status_code == 200
+    result = response.json()
+    assert result["result"] == {"outcome": "published", "head": receipt["decision"]["head"], "attempts": 1}
+    assert client.post("/v1/graph-rebuilds", json=query).json() == result
+    assert client.post("/v1/graph-rebuilds/read", json=query).json() == result
+    assert not peer.calls
+    client.headers["Authorization"] = "Bearer " + "r"*32
+    assert client.post("/v1/graph-rebuilds", json=query).status_code == 403
+    assert client.post("/v1/graph-rebuilds/read", json=query).json() == result

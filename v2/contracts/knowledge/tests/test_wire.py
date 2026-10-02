@@ -13,6 +13,8 @@ from amphora_contracts_knowledge import (
     GraphChangeDecision,
     GraphChangeProposal,
     GraphProposalStatus,
+    GraphRebuildRequest,
+    GraphRebuildStatus,
 )
 from jsonschema import Draft202012Validator
 from jsonschema.exceptions import ValidationError as SchemaError
@@ -25,6 +27,25 @@ MODELS = {"vocabulary": DomainVocabulary, "proposal": GraphChangeProposal, "snap
 
 def parse(model, value):
     return model.model_validate_json(json.dumps(value))
+
+
+@pytest.mark.parametrize("outcome", [None, "published", "deferred", "failed"])
+def test_rebuild_status_is_distinct_from_accepted_edits(outcome):
+    request = {"wire_version": "1", "graph": CASES["proposal"]["graph"], "rebuild_id": "rebuild"}
+    head = CASES["accepted_decision"]["decision"]["head"]
+    result = None if outcome is None else {"outcome": outcome, "attempts": 1}
+    if outcome == "published":
+        result["head"] = head
+    elif result is not None:
+        result["code"] = "bounded_failure"
+    record = {"wire_version": "1", "request": request, "actor_id": "fixture", "initial_head": head, "result": result}
+    parsed = parse(GraphRebuildStatus, record)
+    assert parsed.model_dump(mode="json") == record
+    for mode in ("validation", "serialization"):
+        Draft202012Validator(GraphRebuildStatus.model_json_schema(mode=mode)).validate(record)
+    request["snapshot"] = CASES["snapshot"]
+    with pytest.raises(ValidationError):
+        parse(GraphRebuildRequest, request)
 
 
 @pytest.mark.parametrize("origin", ["configured_default", "stored"])

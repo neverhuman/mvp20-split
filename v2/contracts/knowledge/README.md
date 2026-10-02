@@ -1,6 +1,6 @@
 # Knowledge Wire Contracts
 
-- Package: amphora-contracts-knowledge0.3.0; BP-06.02/B1 contract boundary implemented.
+- Package: amphora-contracts-knowledge0.4.0; BP-06.02/B1 contract boundary implemented.
 - Design: [Knowledge authoring](../../docs/Architecture/Knowledge/Authoring.md); [activation decisions](../../docs/Audits/BP-06.02_Activation.md).
 
 Public imports describe scoped graph/entity/assertion identities, a pinned predicate vocabulary, source grounding, exact Research question/need links, discriminated typed edits, proposals, structural acceptance decisions and immutable snapshots. Dependencies are public Core0.1.0, evidence0.5.0 and Research0.2.0 plus Pydantic. No service implementation, database, I/O, agent or scientific policy belongs here.
@@ -20,3 +20,5 @@ Verification checkpoint:30 owned and30 isolated contract tests;44 combined contr
 Version0.2.0 adds GraphProposalStatus: exact submitted proposal, owning actor, canonical request hash, registration time and an explicit nullable terminal decision. null means a durable pending intent; unknown is a separate owning lookup result. Status scope/hash/decision binding is enforced by the ledger, not by DTO shape. This additive release publishes258 schemas while preserving all256 predecessor bytes;33 contract tests pass.
 
 Version0.3.0 adds GraphAuthoringProfile with graph, vocabulary content/reference, structural-policy reference and explicit configured_default/stored origin. Discovery is observational, not a reservation or implicit migration. Owner verifies hashes.35 contract tests pass;260 schemas preserve all258 predecessors.
+
+Version0.4.0 adds GraphRebuildRequest and GraphRebuildStatus, with owner-captured initial head and a nullable discriminated result: published with exact head, or failed/deferred with bounded code. Attempts1..3 describe the terminal execution, not lifetime audit rows. No caller-supplied snapshot or actor is accepted in the request.39 contract tests pass;264 schemas preserve260 predecessors.

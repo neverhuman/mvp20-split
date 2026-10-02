@@ -72,6 +72,8 @@ for name, model in {
     "proposal": knowledge_contracts.GraphChangeProposal,
     "proposal-status": knowledge_contracts.GraphProposalStatus,
     "authoring-profile": knowledge_contracts.GraphAuthoringProfile,
+    "rebuild-request": knowledge_contracts.GraphRebuildRequest,
+    "rebuild-status": knowledge_contracts.GraphRebuildStatus,
     "accepted-change": knowledge_contracts.AcceptedGraphChange,
     "change-decision": knowledge_contracts.GraphChangeDecision,
     "snapshot": knowledge_contracts.DomainGraphSnapshot,

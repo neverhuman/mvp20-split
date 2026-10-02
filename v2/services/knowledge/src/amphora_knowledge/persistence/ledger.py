@@ -112,9 +112,14 @@ class KnowledgeLedger:
     def snapshot(self, principal, reference):
         principal.require("read_graph", reference.graph.scope)
         with self.engine.connect() as connection:
-            raw = connection.execute(text("SELECT canonical_bytes FROM knowledge.snapshots WHERE " + SCOPE +
-                " AND revision=:revision AND snapshot_sha256=:sha"), graph_key(reference.graph) |
-                {"revision": reference.revision, "sha": reference.sha256}).scalar_one_or_none()
+            key = graph_key(reference.graph) | {"revision": reference.revision, "sha": reference.sha256}
+            raw = connection.execute(text("SELECT c.canonical_bytes FROM knowledge.snapshot_publications p "
+                "JOIN knowledge.rebuild_candidates c USING (tenant_id,project_id,graph_id,rebuild_id,candidate_id) "
+                "WHERE p.tenant_id=:tenant AND p.project_id=:project AND p.graph_id=:graph "
+                "AND c.revision=:revision AND c.snapshot_sha256=:sha"), key).scalar_one_or_none()
+            if raw is None:
+                raw = connection.execute(text("SELECT canonical_bytes FROM knowledge.snapshots WHERE " + SCOPE +
+                    " AND revision=:revision AND snapshot_sha256=:sha"), key).scalar_one_or_none()
         if raw is None:
             return None
         record = DomainGraphSnapshot.model_validate_json(bytes(raw))

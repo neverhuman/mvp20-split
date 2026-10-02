@@ -1,8 +1,8 @@
 [project]
 name = "amphora-knowledge"
-version = "0.5.0"
+version = "0.6.0"
 requires-python = ">=3.12,<3.13"
-dependencies = ["fastapi>=0.115,<1", "uvicorn>=0.34,<1", "sqlalchemy>=2,<3", "psycopg[binary]>=3,<4", "alembic>=1.16,<2", "amphora-contracts-core==0.1.0", "amphora-contracts-knowledge==0.3.0", "amphora-contracts-evidence==0.5.0", "amphora-contracts-research==0.2.0"]
+dependencies = ["fastapi>=0.115,<1", "uvicorn>=0.34,<1", "sqlalchemy>=2,<3", "psycopg[binary]>=3,<4", "alembic>=1.16,<2", "amphora-contracts-core==0.1.0", "amphora-contracts-knowledge==0.4.0", "amphora-contracts-evidence==0.5.0", "amphora-contracts-research==0.2.0"]
 
 [build-system]
 requires = ["hatchling>=1.27,<2"]

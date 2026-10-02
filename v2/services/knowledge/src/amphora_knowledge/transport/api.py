@@ -15,12 +15,17 @@ from amphora_contracts_knowledge import (
     GraphChangeDecision,
     GraphChangeProposal,
     GraphProposalStatus,
+    GraphRebuildRequest,
+    GraphRebuildStatus,
 )
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from sqlalchemy.exc import SQLAlchemyError
 
 from ..authoring.canonical import KnowledgeError
+from ..rebuild.boundary import RebuildBoundary
+from ..rebuild.store import RebuildStore
+from ..rebuild.workflow import RebuildWorkflow
 from ..validation.transport import PeerUnavailable, strict_json
 
 
@@ -41,6 +46,7 @@ async def body(request):
 def create_app(workflow, credentials):
     app = FastAPI(title="Amphora Knowledge structural authoring", docs_url=None, redoc_url=None, openapi_url=None)
     ledger = workflow.ledger
+    rebuild = RebuildBoundary(RebuildWorkflow(RebuildStore(ledger.engine)))
 
     @app.get("/health")
     def health():
@@ -103,5 +109,13 @@ def create_app(workflow, credentials):
     @app.post("/v1/graph-profiles/read", response_model=GraphAuthoringProfile)
     async def profile(request: Request):
         return await invoke(request, DomainGraphRef, ledger.profile)
+
+    @app.post("/v1/graph-rebuilds", response_model=GraphRebuildStatus)
+    async def rebuild_graph(request: Request):
+        return await invoke(request, GraphRebuildRequest, rebuild.submit)
+
+    @app.post("/v1/graph-rebuilds/read", response_model=GraphRebuildStatus)
+    async def rebuild_status(request: Request):
+        return await invoke(request, GraphRebuildRequest, rebuild.read)
 
     return app

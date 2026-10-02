@@ -18,3 +18,5 @@ Earlier pure-module checkpoint:36 owner tests and36 independent installed-owner 
 GraphReplay.cursor() creates an owner-private ReplayCursor from genesis. append validates the next accepted record; through consumes an exact bounded tail to a complete DomainHead watermark. It rejects missing/extra entries, foreign heads, hash substitution, regression and duplicate change IDs across rounds. Cursor state is immutable: failed catch-up cannot mutate the prior verified prefix. This is not a public snapshot import API and performs no durable publication.
 
 B2 cursor checkpoint:18 replay tests;112 full owner tests. Durable rebuild intent/candidates and compare-and-set materialization publication remain pending under the physical rebuild design.
+
+B2 durable materialization publication is now implemented by the sibling rebuild module. Pure replay remains I/O-free; rebuild transactions, API and process evidence have separate owning suites.

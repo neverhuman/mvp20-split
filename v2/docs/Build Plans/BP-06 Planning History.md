@@ -1,5 +1,9 @@
 # BP-06 Planning History
 
+## B2 complete - 2026-10-01 20:43:08
+
+B2 complete: Knowledge0.6.0/contracts0.4.0 publish durable rebuild intent/candidates/results and atomic CAS materializations through authenticated endpoints.122 owner tests pass (36 PostgreSQL cases), plus39 contract/14 dev checks.264 schemas preserve260 predecessors. Actual owner restart and post-revocation historical rebuild pass. Child2/4 (50%), Build66.67%, Acceptance0%; parent6/24 (25%). [Evidence](../Audits/Evidence/BP-06-Knowledge/Rebuild_Publication.json). knowledge_0002 is applied; new materialization pointers require terminal published results and cannot expose private candidates. Semantic revisions remain unchanged. Three attempts are per execution, not a lifetime audit-row cap across interrupted retries.
+
 ## B2 cursor checkpoint - 2026-10-01 20:13:10
 
 B2 partial: Knowledge0.5.0 adds an immutable verified replay cursor and exact watermark catch-up.112 owner tests pass, including18 replay tests and26 PostgreSQL cases. Existing receipt/snapshot/schema bytes and knowledge_0001 are unchanged. Private rebuild intent/candidate/publication persistence and transport remain; child25%, Build33.33%, Acceptance0%; parent20.83% unchanged. [Evidence](../Audits/Evidence/BP-06-Knowledge/Rebuild_Cursor.json). Rebuilds retain semantic revision identity; planned candidate/publication tables are projections, not new accepted edits.
