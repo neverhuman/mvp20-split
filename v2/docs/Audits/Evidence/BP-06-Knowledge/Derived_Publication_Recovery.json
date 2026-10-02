@@ -1,0 +1,45 @@
+{
+  "timestamp_local": "2026-10-02 11:44:40",
+  "scope": "DER-01 D3; actual PostgreSQL Data tests plus scripted SDK peers",
+  "versions": {
+    "data": "0.11.0",
+    "artifact_contracts": "0.2.0",
+    "public_sdk": "0.2.0"
+  },
+  "tests": {
+    "combined_data_derivations_rights_and_full_sdk": 141,
+    "focused_derivations": 26,
+    "full_sdk": 94
+  },
+  "sdk_coverage": {
+    "covered_lines": 414,
+    "num_statements": 417,
+    "percent_covered": 98.8785046728972,
+    "percent_covered_display": "99",
+    "missing_lines": 3,
+    "excluded_lines": 0,
+    "percent_statements_covered": 99.28057553956835,
+    "percent_statements_covered_display": "99",
+    "num_branches": 118,
+    "num_partial_branches": 3,
+    "covered_branches": 115,
+    "missing_branches": 3,
+    "percent_branches_covered": 97.45762711864407,
+    "percent_branches_covered_display": "97"
+  },
+  "proof": [
+    "every independent input source controls descendant use",
+    "shared ancestry valid; corrupted cycle denied",
+    "revocation and expiry deny new consumption; historical metadata retained",
+    "read-only grant denies processing",
+    "concurrent begins/finalizers share one immutable identity",
+    "service role cannot UPDATE/DELETE declaration, lineage or edge tables",
+    "original-ID resume inspects before write; unavailable lookup prevents blind resubmit",
+    "exact receipt identity/digest/declaration validated; uncertain stream not retried"
+  ],
+  "limits": [
+    "SDK transport-loss cases scripted; actual installed public peer gate remains D4",
+    "Data finalizer transaction interruption proof is injected rollback, not derived process-death proof",
+    "no scientific validity or license interpretation"
+  ]
+}

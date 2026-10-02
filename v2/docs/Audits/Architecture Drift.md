@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-02 11:35:16` (America/Chicago).
+- Last refreshed: `2026-10-02 11:44:40` (America/Chicago).
 - Scope: v2 design/implementation alignment
 - Active focus: DER-01: generic derived publication lacks explicit inherited-rights lineage; approved prerequisite, D3 active.
-- Next gate: DER-01 D3 SDK/failure matrix, then D4 integration.
+- Next gate: DER-01 D4 actual installed/public integration and scoped audit.
 
 ## Active Findings
 

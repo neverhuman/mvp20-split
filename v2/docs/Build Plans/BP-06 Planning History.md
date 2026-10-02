@@ -1,5 +1,9 @@
 # BP-06 Planning History
 
+## DER-01 D3 complete - 2026-10-02 11:44:40
+
+SDK0.2.0 derived begin/metadata and explicit receipt-first resume preserve original bytes/IDs and prohibit automatic ambiguous PUT retry.141 combined Data/SDK tests pass;94 full SDK and26 focused derivation coverage runs pass. D1-D3 complete3/4 (75%); D4 installed/public integration and audit next. [Evidence](../Audits/Evidence/BP-06-Knowledge/Derived_Publication_Recovery.json). Parent/child completed delivery counts unchanged.
+
 ## DER-01 D2 complete - 2026-10-02 11:35:16
 
 Data0.11.0 implements immutable derived-upload declarations, atomic finalized lineage and rights fences via applied artifact_0007.266 owner tests and36 contract/dev tests pass; source-rights/legacy identity-conversion compatibility preserved after the full suite exposed no-op self-links. D1-D2 complete2/4 (50%); D3 SDK/failure proof next. [Evidence](../Audits/Evidence/BP-06-Knowledge/Derived_Publication_Transactions.json). Child0/4; parent8/24 unchanged.

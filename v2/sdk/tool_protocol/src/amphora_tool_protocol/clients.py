@@ -3,7 +3,11 @@
 import hashlib
 
 from amphora_contracts_artifacts import (
+    BeginDerivedUpload,
     BeginUpload,
+    DerivationReceipt,
+    DerivedUploadObservation,
+    DerivedUploadReceipt,
     FinalizeArtifact,
     FinalizedReceipt,
     PublicationObservation,
@@ -23,6 +27,7 @@ from amphora_contracts_runtime import (
 from .commands import (
     CommandExchange,
     decoded,
+    derived_publication_result,
     publication_result,
     runtime_result,
 )
@@ -85,16 +90,32 @@ class ArtifactClient:
         self.transport, self.identity = transport, identity
         self.exchange = CommandExchange(transport)
 
-    def begin(self, content, command_id, *, guard=lambda: None):
+    def begin(self, content, command_id, *, guard=lambda: None, resume=False):
         command = self.identity.command("artifacts.begin_upload", command_id, BeginUpload(content=content))
         result = self.exchange.execute(command, "/v1/uploads", lambda _cmd, body: decoded(UploadReceipt, body),
-                                       publication_result, guard=guard)
+                                       publication_result, guard=guard, resume=resume)
         if isinstance(result, PublicationObservation):
             if result.outcome.status != "uploaded":
                 raise ProtocolError("upload_receipt_mismatch")
             result = result.outcome.receipt
         if result.scope != self.identity.scope or result.content != content:
             raise ProtocolError("upload_receipt_mismatch")
+        return result
+
+    def begin_derived(self, content, declaration, command_id, *, guard=lambda: None, resume=False):
+        if any(reference.scope != self.identity.scope for reference in declaration.inputs):
+            raise ProtocolError("derivation_scope_mismatch")
+        command = self.identity.command("artifacts.begin_derived_upload", command_id,
+                                        BeginDerivedUpload(content=content, declaration=declaration))
+        result = self.exchange.execute(command, "/v1/derived-uploads", lambda _cmd, body: decoded(DerivedUploadReceipt, body),
+                                       derived_publication_result, guard=guard, resume=resume)
+        if isinstance(result, DerivedUploadObservation):
+            if result.outcome.status != "derived_uploaded":
+                raise ProtocolError("derived_receipt_mismatch")
+            result = result.outcome.receipt
+        if (result.upload.scope != self.identity.scope or result.upload.content != content
+            or result.declaration != declaration):
+            raise ProtocolError("derived_receipt_mismatch")
         return result
 
     def stream(self, upload, payload, *, guard=lambda: None):
@@ -112,13 +133,13 @@ class ArtifactClient:
             raise ProtocolError("stream_receipt_mismatch")
         return result
 
-    def finalize(self, upload, command_id, *, guard=lambda: None):
+    def finalize(self, upload, command_id, *, guard=lambda: None, resume=False):
         if upload.scope != self.identity.scope:
             raise ProtocolError("upload_scope_mismatch")
         command = self.identity.command("artifacts.finalize", command_id,
             FinalizeArtifact(upload_id=upload.upload_id, content=upload.content))
         result = self.exchange.execute(command, "/v1/artifacts/finalize", lambda _cmd, body: decoded(FinalizedReceipt, body),
-                                       publication_result, guard=guard)
+                                       publication_result, guard=guard, resume=resume)
         if isinstance(result, PublicationObservation):
             if result.outcome.status != "finalized":
                 raise ProtocolError("finalization_receipt_mismatch")
@@ -128,6 +149,19 @@ class ArtifactClient:
             or reference.sha256 != upload.content.sha256 or reference.size_bytes != upload.content.size_bytes
             or reference.media_type != upload.content.media_type or reference.schema_ref != upload.content.schema_ref):
             raise ProtocolError("finalization_receipt_mismatch")
+        return result
+
+    def derivation(self, reference: ArtifactRef):
+        if reference.scope != self.identity.scope:
+            raise ProtocolError("artifact_reference_denied")
+        reply = self.transport.request("GET", f"/v1/artifacts/{reference.artifact_id}/derivation")
+        if reply.status != 200:
+            raise ProtocolError("derivation_unavailable")
+        result = decoded(DerivationReceipt, reply.body)
+        if (result.artifact != reference or result.origin.scope != self.identity.scope
+            or result.origin.command_family != "artifacts.begin_derived_upload"
+            or any(ref.scope != self.identity.scope for ref in result.declaration.inputs)):
+            raise ProtocolError("derivation_reference_mismatch")
         return result
 
     def read(self, reference: ArtifactRef):

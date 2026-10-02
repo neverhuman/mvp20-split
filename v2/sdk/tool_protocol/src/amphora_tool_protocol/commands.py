@@ -3,7 +3,7 @@
 import json
 from dataclasses import dataclass
 
-from amphora_contracts_artifacts import PublicationObservation
+from amphora_contracts_artifacts import DerivedUploadObservation, PublicationObservation
 from amphora_contracts_commands import CanonicalCommand, CommandIdentity
 from amphora_contracts_core import Scope
 from amphora_contracts_runtime import ClaimResponse, CommandReceipt
@@ -67,15 +67,23 @@ def publication_result(command, payload):
     return result
 
 
+def derived_publication_result(command, payload):
+    result = decoded(DerivedUploadObservation, payload)
+    verify_binding(command, result.identity, result.request_sha256)
+    if result.outcome.status == "rejected":
+        raise CommandRejected(result.outcome.reason_code)
+    return result
+
+
 class CommandExchange:
     """Retries preserve bytes/key; after ambiguity, inspect before every resubmit."""
 
     def __init__(self, transport):
         self.transport = transport
 
-    def execute(self, command, path, direct, recovered, *, guard=lambda: None):
+    def execute(self, command, path, direct, recovered, *, guard=lambda: None, resume=False):
         receipt_path = f"/v1/commands/{command.identity.command_family}/{command.identity.command_id}"
-        inspect_first = False
+        inspect_first = resume
         for _ in range(3):
             if inspect_first:
                 try:

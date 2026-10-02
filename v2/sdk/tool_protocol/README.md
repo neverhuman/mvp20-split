@@ -1,7 +1,7 @@
 # Tool Protocol SDK
 
 - Status: BP-03 bounded tool/index/protocol scope complete; actual independent replica recovery and immutable release cutover verified. General graph interpretation remains BP-04.
-- Package: `amphora-tool-protocol` 0.1.0; explicit public client boundary.
+- Package: `amphora-tool-protocol` 0.2.0; explicit public client boundary.
 - Architecture: [tool services](../../docs/Architecture/Capabilities/Tool_Services.md).
 
 This library owns bounded authenticated HTTP and worker-facing claim, renew, complete, artifact publication and artifact reads. Import only `amphora_tool_protocol`. It has no server, database, graph scheduler, work-admission API, scientific algorithm, provider integration or shared business repository. Each tool owns its payload schemas and behavior. Its only internal package dependencies are public contracts; manifests/locks declare the independent install closure.
@@ -21,3 +21,9 @@ B2 coverage checkpoint: 82 focused SDK cases, 100% of 389 statements/102 branche
 ExecutionFailure preserves terminal publication reasons and permits capacity/transport retries only while the same attempt remains authorized. Schema/configuration and protocol mismatches are not scientific retries. Direct pending responses are inspected before resubmission. CompleteInvocation scope is validated by the public runtime command parser before sending. Credentials require bounded printable ASCII; malformed endpoints, timeouts and lease/clock profiles fail locally. Tool CLIs distinguish invalid input/configuration (exit 2) from incomplete worker execution (exit 3), with safe diagnostics.
 
 [Integrated replica acceptance](../../docs/Audits/BP-03.04_Replica_Closeout.md) records exact registry selection, actual peer/worker processes, stale fences, release cutover and preserved history. The fixture controller remains test-only; no production graph scheduler or deployment supervisor is implied.
+
+DER-01/D3 adds `ArtifactClient.begin_derived(content, declaration, command_id)` and `derivation(reference)` for scoped immutable lineage metadata. Derived begin validates every input scope and compares the entire returned declaration/content/scope; receipt recovery uses the separate derived observation contract. This client serves scientific owners as well as tools without importing owner implementations.
+
+`begin`, `begin_derived` and `finalize` accept `resume=True`: a reconstructed caller checks the original receipt before any POST or write guard. An exact pending receipt or authenticated404 permits identical-byte resubmission; unknown/denied lookup never permits blind writes. The caller must durably retain exact inputs/IDs and stream progress. An uncertain PUT is not retried or assumed finalized; bounded explicit replacement-upload attempts and their ambiguity history belong to the caller, not this stateless SDK. Default existing calls retain their previous behavior/bytes.
+
+D3 verification:94 complete SDK tests,99% branch-inclusive coverage (417 statements,3 uncovered defensive metadata/outcome branches);26 Data-derived PostgreSQL/domain tests run separately. Scripted SDK loss/recovery remains distinct from D4 actual installed-peer acceptance.

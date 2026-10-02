@@ -2,14 +2,14 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-06.03/Build/B1 implementing approved DER-01/D3.
-- Last refreshed: `2026-10-02 11:35:16` (America/Chicago).
+- Status: primary_active; BP-06.03/Build/B1 implementing approved DER-01/D4.
+- Last refreshed: `2026-10-02 11:44:40` (America/Chicago).
 - Owner/scope: Knowledge, Research and focused Data/Artifacts modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 receipt/wait seams and BP-05 inspection; BP-01/02/03 public contracts and tool execution.
 - Implementation: **33.33%**, 8/24 verified child deliveries. P1/.01 and P2/.02 closed100%; P3/.03 active0% with B1 partial implementation.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current task: DER-01/D3: SDK recovery and remaining failure matrix; D1-D2 complete2/4 (50%),266 owner tests pass.
+- Current task: DER-01/D4: actual installed/public integration; D1-D3 complete3/4 (75%),141 focused tests pass.
 - Demonstrated behavior: Knowledge0.8.0/contracts0.5.0 configured reasoning, immutable request/profile/results and optional HTTP verified:189 owner baseline +58 final reasoning +62 contract +14 dev tests; actual Data/Research process provenance, restart, outage/resume and revoked-source checks pass.272 schemas preserve all264 predecessor bytes. knowledge_0003 applied.
 - Blockers: None requiring owner input; DER-01 implementation precedes Knowledge publication. No completed child is reopened.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
