@@ -3,6 +3,7 @@ name = "amphora-foundation-verification"
 version = "0.1.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
+    "amphora-knowledge==0.1.0",
     "amphora-contracts-knowledge==0.1.0",
     "amphora-contracts-core==0.1.0",
     "amphora-contracts-evidence==0.5.0",
@@ -38,6 +39,7 @@ package = false
 link-mode = "copy"
 
 [tool.uv.sources]
+amphora-knowledge = { path = "../services/knowledge", editable = true }
 amphora-contracts-knowledge = { path = "../contracts/knowledge", editable = true }
 amphora-contracts-research = { path = "../contracts/research", editable = true }
 amphora-research = { path = "../services/research", editable = true }

@@ -1,0 +1,363 @@
+{
+  "vocabulary": {
+    "wire_version": "1",
+    "vocabulary_id": "fixture.ontology",
+    "entity_types": [
+      "concept"
+    ],
+    "predicates": [
+      {
+        "predicate_id": "is_a",
+        "description": "Synthetic relation shape",
+        "subject_types": [
+          "concept"
+        ],
+        "object_types": [
+          "concept"
+        ]
+      },
+      {
+        "predicate_id": "part_of",
+        "description": "Synthetic relation shape",
+        "subject_types": [
+          "concept"
+        ],
+        "object_types": [
+          "concept"
+        ]
+      },
+      {
+        "predicate_id": "causes",
+        "description": "Synthetic relation shape",
+        "subject_types": [
+          "concept"
+        ],
+        "object_types": [
+          "concept"
+        ]
+      },
+      {
+        "predicate_id": "correlates_with",
+        "description": "Synthetic relation shape",
+        "subject_types": [
+          "concept"
+        ],
+        "object_types": [
+          "concept"
+        ]
+      },
+      {
+        "predicate_id": "hypothesized_to",
+        "description": "Synthetic relation shape",
+        "subject_types": [
+          "concept"
+        ],
+        "object_types": [
+          "concept"
+        ]
+      },
+      {
+        "predicate_id": "requires",
+        "description": "Synthetic relation shape",
+        "subject_types": [
+          "concept"
+        ],
+        "object_types": [
+          "concept"
+        ]
+      },
+      {
+        "predicate_id": "contradicted_by",
+        "description": "Synthetic relation shape",
+        "subject_types": [
+          "concept"
+        ],
+        "object_types": [
+          "concept"
+        ]
+      }
+    ],
+    "version": "1"
+  },
+  "proposal": {
+    "wire_version": "1",
+    "graph": {
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "knowledge"
+      },
+      "graph_id": "domain"
+    },
+    "change_id": "first",
+    "base": null,
+    "vocabulary": {
+      "version": "1",
+      "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "vocabulary_id": "fixture.ontology"
+    },
+    "policy": {
+      "version": "1",
+      "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "policy_id": "fixture.structural-policy"
+    },
+    "description": "Record a qualified synthetic hypothesis",
+    "rationale": "Fixture only; no scientific approval",
+    "grounding": {
+      "spans": [
+        {
+          "source": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "knowledge"
+            },
+            "source_id": "source",
+            "revision_id": "r1",
+            "raw": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "knowledge"
+              },
+              "artifact_id": "context",
+              "sha256": "25a5a709c010d1b37b62b58abc5944713d6e742bd634b04bf4da746772db95d8",
+              "size_bytes": 47,
+              "media_type": "text/plain",
+              "schema_ref": {
+                "schema_id": "fixture.context",
+                "version": "1",
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+              }
+            }
+          },
+          "unit": "byte",
+          "start": 0,
+          "end": 47,
+          "sha256": "25a5a709c010d1b37b62b58abc5944713d6e742bd634b04bf4da746772db95d8"
+        }
+      ],
+      "conversion_traces": [
+        {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "knowledge"
+          },
+          "trace_id": "conversion",
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "interpretation_artifacts": []
+    },
+    "operations": [
+      {
+        "operation": "add_entity",
+        "entity": {
+          "reference": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "knowledge"
+              },
+              "graph_id": "domain"
+            },
+            "entity_id": "A",
+            "revision": 1
+          },
+          "entity_type": "concept",
+          "label": "A",
+          "context": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "knowledge"
+            },
+            "artifact_id": "context",
+            "sha256": "25a5a709c010d1b37b62b58abc5944713d6e742bd634b04bf4da746772db95d8",
+            "size_bytes": 47,
+            "media_type": "text/plain",
+            "schema_ref": {
+              "schema_id": "fixture.context",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "supersedes": null
+        }
+      },
+      {
+        "operation": "add_entity",
+        "entity": {
+          "reference": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "knowledge"
+              },
+              "graph_id": "domain"
+            },
+            "entity_id": "B",
+            "revision": 1
+          },
+          "entity_type": "concept",
+          "label": "B",
+          "context": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "knowledge"
+            },
+            "artifact_id": "context",
+            "sha256": "25a5a709c010d1b37b62b58abc5944713d6e742bd634b04bf4da746772db95d8",
+            "size_bytes": 47,
+            "media_type": "text/plain",
+            "schema_ref": {
+              "schema_id": "fixture.context",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "supersedes": null
+        }
+      },
+      {
+        "operation": "add_assertion",
+        "assertion": {
+          "reference": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "knowledge"
+              },
+              "graph_id": "domain"
+            },
+            "assertion_id": "claim",
+            "revision": 1
+          },
+          "subject": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "knowledge"
+              },
+              "graph_id": "domain"
+            },
+            "entity_id": "A",
+            "revision": 1
+          },
+          "predicate": "correlates_with",
+          "object": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "knowledge"
+              },
+              "graph_id": "domain"
+            },
+            "entity_id": "B",
+            "revision": 1
+          },
+          "statement": "A correlates with B under synthetic conditions.",
+          "polarity": "affirmed",
+          "posture": "hypothesis",
+          "applicability": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "knowledge"
+            },
+            "artifact_id": "context",
+            "sha256": "25a5a709c010d1b37b62b58abc5944713d6e742bd634b04bf4da746772db95d8",
+            "size_bytes": 47,
+            "media_type": "text/plain",
+            "schema_ref": {
+              "schema_id": "fixture.context",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          },
+          "grounding": {
+            "spans": [
+              {
+                "source": {
+                  "scope": {
+                    "tenant_id": "synthetic",
+                    "project_id": "knowledge"
+                  },
+                  "source_id": "source",
+                  "revision_id": "r1",
+                  "raw": {
+                    "scope": {
+                      "tenant_id": "synthetic",
+                      "project_id": "knowledge"
+                    },
+                    "artifact_id": "context",
+                    "sha256": "25a5a709c010d1b37b62b58abc5944713d6e742bd634b04bf4da746772db95d8",
+                    "size_bytes": 47,
+                    "media_type": "text/plain",
+                    "schema_ref": {
+                      "schema_id": "fixture.context",
+                      "version": "1",
+                      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    }
+                  }
+                },
+                "unit": "byte",
+                "start": 0,
+                "end": 47,
+                "sha256": "25a5a709c010d1b37b62b58abc5944713d6e742bd634b04bf4da746772db95d8"
+              }
+            ],
+            "conversion_traces": [
+              {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "knowledge"
+                },
+                "trace_id": "conversion",
+                "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+              }
+            ],
+            "interpretation_artifacts": []
+          },
+          "research_links": [
+            {
+              "question": {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "knowledge"
+                },
+                "question_id": "question",
+                "revision": 1
+              },
+              "need": {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "knowledge"
+                },
+                "need_id": "need",
+                "revision": 1
+              },
+              "role": "proposed_answer",
+              "answer_proposal": {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "knowledge"
+                },
+                "artifact_id": "context",
+                "sha256": "25a5a709c010d1b37b62b58abc5944713d6e742bd634b04bf4da746772db95d8",
+                "size_bytes": 47,
+                "media_type": "text/plain",
+                "schema_ref": {
+                  "schema_id": "fixture.context",
+                  "version": "1",
+                  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                }
+              },
+              "validation_method": {
+                "schema_id": "fixture.context",
+                "version": "1",
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+              }
+            }
+          ],
+          "supersedes": null
+        }
+      }
+    ]
+  }
+}

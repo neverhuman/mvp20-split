@@ -1,0 +1,354 @@
+{
+  "wheels": {
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_evidence-0.5.0-py3-none-any.whl": "af6ca1da3dc677b6049ad2a82ee0abdbd27824bcb359e2915f3bc23c7011c9ef",
+    "amphora_contracts_knowledge-0.1.0-py3-none-any.whl": "69b34b404f7d2c14f0ebc54857e02e4073ab1a370e686488d327d6bed260d473",
+    "amphora_contracts_research-0.2.0-py3-none-any.whl": "3a301b4e1732bc6bf1306522f7c439ac8faa72399b111044a5042c4c67088c86",
+    "amphora_knowledge-0.1.0-py3-none-any.whl": "bca46e271142753826366456c66611451dba545af36fbf9f4e3ddae6564552b4"
+  },
+  "result": "passed",
+  "isolation": "Installed pure Knowledge owner; no peer implementations or SQLAlchemy",
+  "timestamp_local": "2026-10-01 19:09:58",
+  "task": "BP-06.02/B1 partial",
+  "tests": {
+    "owner": 36,
+    "isolated_owner": 36,
+    "dev": 14
+  },
+  "coverage": {
+    "services\\knowledge\\src\\amphora_knowledge\\__init__.py": {
+      "summary": {
+        "covered_lines": 0,
+        "num_statements": 0,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 0,
+        "num_partial_branches": 0,
+        "covered_branches": 0,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": [],
+      "missing_branches": []
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\authoring\\__init__.py": {
+      "summary": {
+        "covered_lines": 0,
+        "num_statements": 0,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 0,
+        "num_partial_branches": 0,
+        "covered_branches": 0,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": [],
+      "missing_branches": []
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\authoring\\assertions.py": {
+      "summary": {
+        "covered_lines": 35,
+        "num_statements": 39,
+        "percent_covered": 83.63636363636364,
+        "percent_covered_display": "84",
+        "missing_lines": 4,
+        "excluded_lines": 0,
+        "percent_statements_covered": 89.74358974358974,
+        "percent_statements_covered_display": "90",
+        "num_branches": 16,
+        "num_partial_branches": 5,
+        "covered_branches": 11,
+        "missing_branches": 5,
+        "percent_branches_covered": 68.75,
+        "percent_branches_covered_display": "69"
+      },
+      "missing_lines": [
+        18,
+        21,
+        30,
+        37
+      ],
+      "missing_branches": [
+        [
+          17,
+          18
+        ],
+        [
+          19,
+          21
+        ],
+        [
+          29,
+          30
+        ],
+        [
+          35,
+          37
+        ],
+        [
+          49,
+          47
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\authoring\\canonical.py": {
+      "summary": {
+        "covered_lines": 7,
+        "num_statements": 7,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 0,
+        "num_partial_branches": 0,
+        "covered_branches": 0,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": [],
+      "missing_branches": []
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\authoring\\entities.py": {
+      "summary": {
+        "covered_lines": 47,
+        "num_statements": 50,
+        "percent_covered": 91.42857142857143,
+        "percent_covered_display": "91",
+        "missing_lines": 3,
+        "excluded_lines": 0,
+        "percent_statements_covered": 94.0,
+        "percent_statements_covered_display": "94",
+        "num_branches": 20,
+        "num_partial_branches": 3,
+        "covered_branches": 17,
+        "missing_branches": 3,
+        "percent_branches_covered": 85.0,
+        "percent_branches_covered_display": "85"
+      },
+      "missing_lines": [
+        34,
+        41,
+        49
+      ],
+      "missing_branches": [
+        [
+          33,
+          34
+        ],
+        [
+          39,
+          41
+        ],
+        [
+          48,
+          49
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\authoring\\policy.py": {
+      "summary": {
+        "covered_lines": 23,
+        "num_statements": 23,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 6,
+        "num_partial_branches": 0,
+        "covered_branches": 6,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": [],
+      "missing_branches": []
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\authoring\\references.py": {
+      "summary": {
+        "covered_lines": 52,
+        "num_statements": 54,
+        "percent_covered": 95.34883720930233,
+        "percent_covered_display": "95",
+        "missing_lines": 2,
+        "excluded_lines": 0,
+        "percent_statements_covered": 96.29629629629629,
+        "percent_statements_covered_display": "96",
+        "num_branches": 32,
+        "num_partial_branches": 2,
+        "covered_branches": 30,
+        "missing_branches": 2,
+        "percent_branches_covered": 93.75,
+        "percent_branches_covered_display": "94"
+      },
+      "missing_lines": [
+        32,
+        36
+      ],
+      "missing_branches": [
+        [
+          31,
+          32
+        ],
+        [
+          35,
+          36
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\authoring\\state.py": {
+      "summary": {
+        "covered_lines": 60,
+        "num_statements": 65,
+        "percent_covered": 89.47368421052632,
+        "percent_covered_display": "89",
+        "missing_lines": 5,
+        "excluded_lines": 0,
+        "percent_statements_covered": 92.3076923076923,
+        "percent_statements_covered_display": "92",
+        "num_branches": 30,
+        "num_partial_branches": 5,
+        "covered_branches": 25,
+        "missing_branches": 5,
+        "percent_branches_covered": 83.33333333333333,
+        "percent_branches_covered_display": "83"
+      },
+      "missing_lines": [
+        57,
+        62,
+        69,
+        71,
+        92
+      ],
+      "missing_branches": [
+        [
+          56,
+          57
+        ],
+        [
+          61,
+          62
+        ],
+        [
+          68,
+          69
+        ],
+        [
+          70,
+          71
+        ],
+        [
+          89,
+          92
+        ]
+      ]
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\authoring\\vocabulary.py": {
+      "summary": {
+        "covered_lines": 30,
+        "num_statements": 30,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 14,
+        "num_partial_branches": 0,
+        "covered_branches": 14,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": [],
+      "missing_branches": []
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\replay\\__init__.py": {
+      "summary": {
+        "covered_lines": 0,
+        "num_statements": 0,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 0,
+        "num_partial_branches": 0,
+        "covered_branches": 0,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": [],
+      "missing_branches": []
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\replay\\accepted.py": {
+      "summary": {
+        "covered_lines": 27,
+        "num_statements": 27,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "percent_statements_covered": 100.0,
+        "percent_statements_covered_display": "100",
+        "num_branches": 4,
+        "num_partial_branches": 0,
+        "covered_branches": 4,
+        "missing_branches": 0,
+        "percent_branches_covered": 100.0,
+        "percent_branches_covered_display": "100"
+      },
+      "missing_lines": [],
+      "missing_branches": []
+    },
+    "services\\knowledge\\src\\amphora_knowledge\\replay\\chain.py": {
+      "summary": {
+        "covered_lines": 38,
+        "num_statements": 39,
+        "percent_covered": 96.49122807017544,
+        "percent_covered_display": "96",
+        "missing_lines": 1,
+        "excluded_lines": 0,
+        "percent_statements_covered": 97.43589743589743,
+        "percent_statements_covered_display": "97",
+        "num_branches": 18,
+        "num_partial_branches": 1,
+        "covered_branches": 17,
+        "missing_branches": 1,
+        "percent_branches_covered": 94.44444444444444,
+        "percent_branches_covered_display": "94"
+      },
+      "missing_lines": [
+        21
+      ],
+      "missing_branches": [
+        [
+          20,
+          21
+        ]
+      ]
+    }
+  },
+  "limits": [
+    "Pure domain/replay only; no durable ledger, authentication or actual peer validation",
+    "Synthetic review observations are fixture inputs, not proof of source rights or scientific support",
+    "B1 remains incomplete; B2 publication/B3 process races/V1 service replacement remain required"
+  ]
+}

@@ -1,5 +1,9 @@
 # BP-06 Planning History
 
+## Knowledge pure authoring and replay - 2026-10-01 19:09:58
+
+B1 partial: Knowledge0.1.0 implements pure structural edits, exact reference collection, immutable correction/alias/retraction history and bounded deterministic accepted-log replay.36 owner tests,36 isolated owner tests and14 dev tests pass. No persistence/authenticated peer or HTTP acceptance yet; child0/4 (0%), parent4/24 (16.67%) unchanged. [Evidence](../Audits/Evidence/BP-06-Knowledge/Domain_Replay.json). Independent installation excludes peer implementations and SQLAlchemy. Structural revision factories require exact observation shapes but do not prove real peer reads; those remain the next adapter gates. Scope errors now precede reference-equivocation checks. No B1 delivery credit until persistence/public boundary exists.
+
 ## Knowledge public contracts - 2026-10-01 18:51:58
 
 B1 partial: Knowledge contracts0.1.0 publishes typed edits, scoped provenance/Research links, distinct proposals/structural decisions and immutable snapshot shapes.44 contract/dev tests and30 isolated contract tests pass;256 schemas preserve all236 predecessor bytes. No Knowledge domain/persistence/HTTP behavior exists yet; child0/4 (0%), parent4/24 (16.67%) unchanged. [Evidence](../Audits/Evidence/BP-06-Knowledge/Contracts.json). Vocabulary/policy refs are separate from JSON Schema refs. Typed receipts have structural_only authority; scientific promotion is unavailable in this profile. Cross-record semantics remain owner gates and synthetic shape fixtures are not durable receipts.

@@ -317,6 +317,7 @@ dependencies = [
     { name = "amphora-contracts-solver-fixture" },
     { name = "amphora-contracts-tools" },
     { name = "amphora-data-artifacts" },
+    { name = "amphora-knowledge" },
     { name = "amphora-numeric-affine" },
     { name = "amphora-research" },
     { name = "amphora-sequence-statistics" },
@@ -349,6 +350,7 @@ requires-dist = [
     { name = "amphora-contracts-solver-fixture", editable = "../contracts/solver_fixture" },
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },
     { name = "amphora-data-artifacts", editable = "../services/data_artifacts" },
+    { name = "amphora-knowledge", editable = "../services/knowledge" },
     { name = "amphora-numeric-affine", editable = "../tools/numeric_affine" },
     { name = "amphora-research", editable = "../services/research" },
     { name = "amphora-sequence-statistics", editable = "../tools/sequence_statistics" },
@@ -363,6 +365,25 @@ requires-dist = [
     { name = "pytest", specifier = ">=8,<9" },
     { name = "pytest-cov", specifier = ">=6,<8" },
     { name = "ruff", specifier = ">=0.11,<1" },
+]
+
+[[package]]
+name = "amphora-knowledge"
+version = "0.1.0"
+source = { editable = "../services/knowledge" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-evidence" },
+    { name = "amphora-contracts-knowledge" },
+    { name = "amphora-contracts-research" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-evidence", editable = "../contracts/evidence" },
+    { name = "amphora-contracts-knowledge", editable = "../contracts/knowledge" },
+    { name = "amphora-contracts-research", editable = "../contracts/research" },
 ]
 
 [[package]]
