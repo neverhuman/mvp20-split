@@ -1,5 +1,14 @@
 # BP-06 Planning History
 
+## BP-06.05/B1.04d convergence proof complete - 2026-10-03 15:26:02
+
+160 source/160 independent installed cases pass on unchanged Data0.17.0;14 dev tests and lint pass. Actual two-source fixtures share one computation but retain independent derived Artifacts and rights chains; revoking one does not deny the other. Different publishers retain separate attributable commands/Artifacts. Three concurrent aliases remain pending behind one instrumented real computation, then converge to one binding/derivation. A pending r1 source pin survives r2 registration. Evidence records actual scoped references and rights observations. Shared fixtures moved to owning conftest; no production/schema/migration change. B1.04=100%, B1=66.67%, Build22.22%, child16.67%, parent69.44%; gates unchanged0/4 and16/24. B1.05 authenticated APIs active; process/race acceptance remains B3.
+
+Rotated MBT checkpoints:
+
+| 2026-10-03 02:52:45 | BP-06.04/B1.08a complete; child22.66%, parent53.78%; B1.08b active | [API contracts](../Audits/Evidence/BP-06-Research/Scientific_API_Contracts.json);758 source/758 installed,119 compatibility/dev;376 schemas preserve352 |
+
+
 ## BP-06.05/B1.04c orchestration complete - 2026-10-03 15:18:21
 
 Data0.17.0 drives bounded request/preflight/cache/journal/publication recovery.229 scoped source plus2 publication-local probes pass; independent full435 plus2 publication-local probes pass, with separate Research0.31.0 explicitly configured.14 dev tests, lint/boundaries/schema checks pass;420 public schemas andartifact_0009 unchanged. Actual lost-response, partial writer, busy claim, bounded-step, expired OS-lock and exhausted/abandoned upload recovery pass. Recovery fences delayed writers without deletion/refund; explicit cleanup authority stays unchanged. Coverage1260/1266 statements and143/150 branches across representations/recovery/local-storage; recovery module fully covered; gaps remain explicitly assigned/reported. c complete; d source independence/concurrency next. B1.04=75%, B1=62.50%, Build20.83%, child15.63%, parent69.27%; closed gates0/4 and16/24 unchanged.

@@ -1,4 +1,4 @@
-"""Actual source/catalog/rights preflight; no binding publication or fake-source authority."""
+"""Owner-local actual source, catalog, rights and vector publication fixtures."""
 
 import hashlib
 from dataclasses import replace
@@ -6,9 +6,12 @@ from types import SimpleNamespace
 
 import pytest
 from amphora_contracts_evidence import SourceSpan
-from amphora_contracts_representations import EncodeSourceRequest
+from amphora_contracts_representations import EncodeSourceRequest, representation_vector_schema
 from amphora_data_artifacts.acquisition.provenance import SourceDocument
+from amphora_data_artifacts.publication.model import ContentPolicy
+from amphora_data_artifacts.representations.bindings.content_rule import VectorContentRule
 from amphora_data_artifacts.representations.bindings.source import SourcePreflight
+from amphora_data_artifacts.representations.bindings.workflow import BindingWorkflow
 from amphora_data_artifacts.representations.fixture import fixture_profile
 from amphora_data_artifacts.representations.storage.registry import ProfileRegistry
 
@@ -40,4 +43,27 @@ def source_setup(ingestion):
         source=source,
         request=request,
         preflight=SourcePreflight(e.reads),
+    )
+
+
+@pytest.fixture
+def flow(source_setup):
+    e = source_setup
+    principal = replace(e.principal, actions=e.principal.actions | {"upload", "finalize"})
+    uploads = e.e.env.uploads
+    ref = representation_vector_schema()
+    policy = uploads.policy
+    uploads.policy = ContentPolicy(
+        policy.allowed | {("application/json", ref.schema_id, ref.version, ref.sha256)},
+        rules=policy.rules + (VectorContentRule(),),
+    )
+    workflow = BindingWorkflow(e.e.reads, uploads, e.e.env.storage)
+    return SimpleNamespace(
+        e=e,
+        p=principal,
+        workflow=workflow,
+        uploads=uploads,
+        engine=e.e.env.engine,
+        storage=e.e.env.storage,
+        request=e.request,
     )

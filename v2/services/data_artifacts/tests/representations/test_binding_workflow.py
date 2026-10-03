@@ -1,12 +1,9 @@
 """Actual bounded source-to-vector orchestration and interruption recovery."""
 
 from dataclasses import replace
-from types import SimpleNamespace
 
 import pytest
-from amphora_contracts_representations import representation_vector_schema
 from amphora_data_artifacts.publication.model import ContentPolicy, UploadError
-from amphora_data_artifacts.representations.bindings.content_rule import VectorContentRule
 from amphora_data_artifacts.representations.bindings.workflow import BindingWorkflow, RecoveryBudget
 from amphora_data_artifacts.representations.validation import RepresentationError
 from amphora_data_artifacts.source_rights.model import RightsError
@@ -16,27 +13,6 @@ from sqlalchemy import text
 pytestmark = pytest.mark.postgres
 
 
-@pytest.fixture
-def flow(source_setup):
-    e = source_setup
-    principal = replace(e.principal, actions=e.principal.actions | {"upload", "finalize"})
-    uploads = e.e.env.uploads
-    ref = representation_vector_schema()
-    policy = uploads.policy
-    uploads.policy = ContentPolicy(
-        policy.allowed | {("application/json", ref.schema_id, ref.version, ref.sha256)},
-        rules=policy.rules + (VectorContentRule(),),
-    )
-    workflow = BindingWorkflow(e.e.reads, uploads, e.e.env.storage)
-    return SimpleNamespace(
-        e=e,
-        p=principal,
-        workflow=workflow,
-        uploads=uploads,
-        engine=e.e.env.engine,
-        storage=e.e.env.storage,
-        request=e.request,
-    )
 
 
 def encode(e):

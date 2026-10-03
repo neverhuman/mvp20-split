@@ -1,0 +1,355 @@
+{
+  "timestamp_local": "2026-10-03 15:26:02",
+  "milestone": "BP-06.05/B1.04d",
+  "status": "passed",
+  "data_version": "0.17.0",
+  "production_change": "none; actual-workflow proof and fixture decomposition only",
+  "reports": {
+    "source": {
+      "passed": 160,
+      "seconds": 24.21
+    },
+    "independent_installed": {
+      "passed": 160,
+      "seconds": 24.76
+    }
+  },
+  "installed_package": "data-binding-workflow-20261003; unchanged c wheel/manifest",
+  "observations": {
+    "independent_rights": {
+      "timestamp_local": "2026-10-03 15:22:33",
+      "scope": {
+        "tenant_id": "upload-tests",
+        "project_id": "340b97ada02c4cd7a7061209c0b50a24"
+      },
+      "observations": {
+        "first": {
+          "wire_version": "1",
+          "reference": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "340b97ada02c4cd7a7061209c0b50a24"
+            },
+            "binding_id": "binding.681c9e86f67a50258a8707dcdb0f31d3dce40a5d9f2540407bfe2dd20ae77f1b",
+            "sha256": "8e8e5c1a76967010d64a490a12e6c0359aebda7357297a0bad9a9698b75338ca"
+          },
+          "profile": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "340b97ada02c4cd7a7061209c0b50a24"
+            },
+            "profile_id": "fixture.utf8-histogram",
+            "version": "1",
+            "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+          },
+          "source": {
+            "source": {
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "340b97ada02c4cd7a7061209c0b50a24"
+              },
+              "source_id": "source",
+              "revision_id": "r1",
+              "raw": {
+                "artifact_id": "ca6f61f661d7477c865b0de0cc379748",
+                "scope": {
+                  "tenant_id": "upload-tests",
+                  "project_id": "340b97ada02c4cd7a7061209c0b50a24"
+                },
+                "sha256": "36a3e02907920e957f1e13e41a0a63904f7decc89cd66b6e8262a262a1fc2273",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 18
+              }
+            },
+            "unit": "byte",
+            "start": 7,
+            "end": 11,
+            "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+          },
+          "vector": {
+            "artifact_id": "6effcd20720547fda04c42160aaaa5f6",
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "340b97ada02c4cd7a7061209c0b50a24"
+            },
+            "sha256": "a2120029e7b57c7669664a15ae4f3bb2d4510053aec78dbf0a75b889ca9010a6",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "representations.vector",
+              "version": "1",
+              "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+            },
+            "size_bytes": 615
+          }
+        },
+        "second": {
+          "wire_version": "1",
+          "reference": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "340b97ada02c4cd7a7061209c0b50a24"
+            },
+            "binding_id": "binding.5bc6b606286aa43aee1b9f4bf227255d5ebc4f8d324600317bde2aadc86a0e24",
+            "sha256": "4aa118a49bf6bdd7bd97ac6ba97cbca27e0a91cdcdbe319845b8755876181184"
+          },
+          "profile": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "340b97ada02c4cd7a7061209c0b50a24"
+            },
+            "profile_id": "fixture.utf8-histogram",
+            "version": "1",
+            "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+          },
+          "source": {
+            "source": {
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "340b97ada02c4cd7a7061209c0b50a24"
+              },
+              "source_id": "independent",
+              "revision_id": "r1",
+              "raw": {
+                "artifact_id": "0d73ba0df21a401ab57f5902ea4923ad",
+                "scope": {
+                  "tenant_id": "upload-tests",
+                  "project_id": "340b97ada02c4cd7a7061209c0b50a24"
+                },
+                "sha256": "36a3e02907920e957f1e13e41a0a63904f7decc89cd66b6e8262a262a1fc2273",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 18
+              }
+            },
+            "unit": "byte",
+            "start": 7,
+            "end": 11,
+            "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+          },
+          "vector": {
+            "artifact_id": "911f69878e9649dda117ccc646657575",
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "340b97ada02c4cd7a7061209c0b50a24"
+            },
+            "sha256": "a2120029e7b57c7669664a15ae4f3bb2d4510053aec78dbf0a75b889ca9010a6",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "representations.vector",
+              "version": "1",
+              "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+            },
+            "size_bytes": 615
+          }
+        },
+        "revoked": {
+          "wire_version": "1",
+          "reference": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "340b97ada02c4cd7a7061209c0b50a24"
+            },
+            "rights_id": "fixture",
+            "revision": 2
+          },
+          "supersedes": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "340b97ada02c4cd7a7061209c0b50a24"
+            },
+            "rights_id": "fixture",
+            "revision": 1
+          },
+          "status": "revoked",
+          "allowed_uses": [],
+          "expires_at": null,
+          "retention": "retain_audit_payload"
+        },
+        "counts": {
+          "encoding_work": 1,
+          "encoding_results": 1,
+          "encoding_binding_jobs": 2,
+          "representation_bindings": 2,
+          "derivations": 2
+        },
+        "first_bytes": "denied",
+        "second_bytes": "allowed"
+      }
+    },
+    "publishers": {
+      "timestamp_local": "2026-10-03 15:22:34",
+      "scope": {
+        "tenant_id": "upload-tests",
+        "project_id": "8dddda74e8b14a33ac7a3acb5c8b8093"
+      },
+      "observations": {
+        "first": {
+          "wire_version": "1",
+          "reference": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "8dddda74e8b14a33ac7a3acb5c8b8093"
+            },
+            "binding_id": "binding.19ad212ca97b8ea6bfc925720f1a268bd81f31e473a370cc87e73b2d1dd2e4f6",
+            "sha256": "7f590cd392365d73b2d16d8eeeb0574cd0f15e23c2eab30c24c6f97e32874b72"
+          },
+          "profile": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "8dddda74e8b14a33ac7a3acb5c8b8093"
+            },
+            "profile_id": "fixture.utf8-histogram",
+            "version": "1",
+            "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+          },
+          "source": {
+            "source": {
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "8dddda74e8b14a33ac7a3acb5c8b8093"
+              },
+              "source_id": "source",
+              "revision_id": "r1",
+              "raw": {
+                "artifact_id": "20bad43963114d6b8e284af7ac189f46",
+                "scope": {
+                  "tenant_id": "upload-tests",
+                  "project_id": "8dddda74e8b14a33ac7a3acb5c8b8093"
+                },
+                "sha256": "36a3e02907920e957f1e13e41a0a63904f7decc89cd66b6e8262a262a1fc2273",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 18
+              }
+            },
+            "unit": "byte",
+            "start": 7,
+            "end": 11,
+            "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+          },
+          "vector": {
+            "artifact_id": "1b4b32577f1c47168afa5a0f3cb86539",
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "8dddda74e8b14a33ac7a3acb5c8b8093"
+            },
+            "sha256": "a72fc90e41dbc0adf7fb876394c219053d63819bbb5b177fbf51af824086ed59",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "representations.vector",
+              "version": "1",
+              "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+            },
+            "size_bytes": 615
+          }
+        },
+        "second": {
+          "wire_version": "1",
+          "reference": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "8dddda74e8b14a33ac7a3acb5c8b8093"
+            },
+            "binding_id": "binding.ebedb930dbe5ebfbaad7ea68af79871cbdd5b0963661d58c89d2c530ca66bd98",
+            "sha256": "1ee5061eb1e4a6f28f1754e21d75cbde157b95600ac7532f4039c416b0bcba99"
+          },
+          "profile": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "8dddda74e8b14a33ac7a3acb5c8b8093"
+            },
+            "profile_id": "fixture.utf8-histogram",
+            "version": "1",
+            "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+          },
+          "source": {
+            "source": {
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "8dddda74e8b14a33ac7a3acb5c8b8093"
+              },
+              "source_id": "source",
+              "revision_id": "r1",
+              "raw": {
+                "artifact_id": "20bad43963114d6b8e284af7ac189f46",
+                "scope": {
+                  "tenant_id": "upload-tests",
+                  "project_id": "8dddda74e8b14a33ac7a3acb5c8b8093"
+                },
+                "sha256": "36a3e02907920e957f1e13e41a0a63904f7decc89cd66b6e8262a262a1fc2273",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 18
+              }
+            },
+            "unit": "byte",
+            "start": 7,
+            "end": 11,
+            "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+          },
+          "vector": {
+            "artifact_id": "b89cc768d4f145bbb517ce93006b5d71",
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "8dddda74e8b14a33ac7a3acb5c8b8093"
+            },
+            "sha256": "a72fc90e41dbc0adf7fb876394c219053d63819bbb5b177fbf51af824086ed59",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "representations.vector",
+              "version": "1",
+              "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+            },
+            "size_bytes": 615
+          }
+        },
+        "actors": [
+          "worker",
+          "other-publisher"
+        ],
+        "counts": {
+          "encoding_work": 1,
+          "encoding_results": 1,
+          "encoding_binding_jobs": 2,
+          "representation_bindings": 2,
+          "derivations": 2
+        }
+      }
+    }
+  },
+  "oracles": [
+    "Separate source Artifacts with identical span bytes share exactly one encoding result while retaining two source-only derivations/bindings.",
+    "Revocation denies the first source/vector/new alias while independent second source/vector/alias remain permitted; original historical status remains immutable.",
+    "Different publishers share computation but have separate command actors, request histories and derived Artifacts.",
+    "Event-barrier concurrent aliases observe pending during one computation, then all converge to one binding and derivation.",
+    "A pending source revision r1 remains pinned after r2 registration; later alias preserves r1 and independent source is unaffected."
+  ],
+  "checks": {
+    "dev_tests": 14,
+    "lint": "pass",
+    "schemas": "420 unchanged; no production/schema/migration edits",
+    "migration": "artifact_0009 unchanged"
+  },
+  "limits": [
+    "Thread/in-process concurrency, not B3 process-death/race acceptance.",
+    "Synthetic vectors only; no scientific retrieval-quality claim.",
+    "Coverage from c remains applicable to unchanged production bytes; d did not recollect or claim improved coverage."
+  ]
+}
