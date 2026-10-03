@@ -2,8 +2,8 @@
 
 BP-06.03/B2.03: Knowledge0.15.0 implements owner receipt correction storage and explicit future-campaign selection under separate grants. [Correction boundary](src/amphora_knowledge/corrections/README.md) defines its rebuild contract; 393 broad source plus4 added cases and186 installed tests pass. Prior publications and active Runtime pins remain unchanged.
 
-- Package: amphora-knowledge0.13.3; contracts0.6.2.
-- Status: BP-06.02 closed; BP-06.03/B1 production reasoning/publication and installed replacement verified. Publication-specific process-death recovery verified; Research assessment remains.
+- Package: amphora-knowledge0.15.0; contracts0.7.0.
+- Status: BP-06.02 closed; BP-06.03/B1 production reasoning/publication and installed replacement verified. Publication-specific process-death recovery verified; Research assessment and actual Runtime consumption are verified; BP-06.03 delivery recovery/closeout remain active.
 - Design: [Knowledge](../../docs/Architecture/Knowledge/Knowledge_Architecture.md), [activation](../../docs/Audits/BP-06.02_Activation.md).
 
 Knowledge owns typed domain graph edits, immutable accepted history and snapshot reconstruction. It preserves source/Research links and conflicting interpretations without promoting them into scientifically accepted facts. Publication never changes a campaign's pinned revision.
@@ -17,13 +17,14 @@ Knowledge owns typed domain graph edits, immutable accepted history and snapshot
 | [Rebuild](src/amphora_knowledge/rebuild/README.md) | Durable private candidates and bounded compare-and-set materialization publication |
 | [Reasoning](src/amphora_knowledge/reasoning/README.md) | Bounded signed rules, exact context/snapshot binding, immutable profile/request/result history and fresh provenance review |
 | [Publication](src/amphora_knowledge/publication/README.md) | Exact reviewed result/inputs, fenced durable attempt journal, public Data publication/recovery and atomic synthetic logical receipts |
+| [Corrections](src/amphora_knowledge/corrections/README.md) | Immutable chain revisions and separately granted future-campaign selection |
 | [Transport](src/amphora_knowledge/transport/README.md) | Authenticated API, pinned-profile discovery and explicit local host configuration |
 
-Dependencies are public tool-protocol SDK0.2.0, graph-runtime0.11.0, Commands0.2.0, Core0.1.0, Knowledge0.6.0, Artifacts0.2.0, evidence0.5.0 and Research0.2.0 contracts plus Pydantic/FastAPI/Uvicorn, SQLAlchemy/psycopg/Alembic and the standard library. No peer implementation imports, peer SQL, shared ORM, source payload storage, LLM calls or campaign execution exist. knowledge_0001/0002/0003/0004/0005/0006 are applied forward-only migrations; startup does not migrate. Stored graph profiles and accepted identities survive process replacement.
+Dependencies are public tool-protocol SDK and Commands/Core/Knowledge/Artifacts/Evidence/Research/Graph Runtime contracts plus Pydantic/FastAPI/Uvicorn, SQLAlchemy/psycopg/Alembic and the standard library. Exact pins are canonical in pyproject.toml and uv.lock. No peer implementation imports, peer SQL, shared ORM, source payload storage, LLM calls or campaign execution exist. knowledge_0001/0002/0003/0004/0005/0006/0007 are applied forward-only migrations; startup does not migrate. Stored graph profiles and accepted identities survive process replacement.
 
 Scientific validity, question-criteria satisfaction, symbolic inference, model extraction and current-use permission are distinct from structural acceptance. Replay uses accepted operations and recorded metadata, never a fresh prompt or revoked source payload. Later source consumption rechecks Data rights. Scientific eligibility and text extraction remain in their named successor plans.
 
-Tests are owned under tests/authoring, replay, persistence, validation, rebuild, reasoning, publication, api and acceptance. Select with dev/run_tests.py --module knowledge --area <area>; PostgreSQL requires explicit AMPHORA_TEST_POSTGRES=1. Scripted peer tests prove client rules; the actual three-owner process test proves public compatibility. Test-only crash barriers are excluded from wheels.
+Tests are owned under tests/authoring, replay, persistence, validation, rebuild, reasoning, publication, corrections, api and acceptance. Select with dev/run_tests.py --module knowledge --area <area>; PostgreSQL requires explicit AMPHORA_TEST_POSTGRES=1. Scripted peer tests prove client rules; the actual three-owner process test proves public compatibility. Test-only crash barriers are excluded from wheels.
 
 Reasoning inputs include every actually consumed artifact, including indirect conversion outputs and Research contexts, capped128 for publication. Authoring preserves its256-artifact profile. New publication always performs a fresh review of the exact historical graph snapshot, including for pre0.9 results whose old observations did not retain expanded inputs. Current Data rights gate new consumption; immutable historical metadata is not an access grant.
 

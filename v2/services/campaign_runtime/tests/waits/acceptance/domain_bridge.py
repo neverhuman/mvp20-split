@@ -14,6 +14,7 @@ class DomainRuntime:
         self.root, self.scope, self.environment = root, scope, environment
         self.python, self.owner_factory = python, owner_factory
         self.runtime = None
+        self.faults = None
         self.results = {}
         with socket.socket() as listener:
             listener.bind(("127.0.0.1",0))
@@ -33,6 +34,12 @@ class DomainRuntime:
 
     def attach_data(self, endpoint):
         self.data = endpoint
+        if os.environ.get("AMPHORA_TEST_DOMAIN_FAULTS") == "1":
+            spec = importlib.util.spec_from_file_location("domain_faults", Path(__file__).with_name("domain_faults.py"))
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            self.faults = module.DomainFaults(self, endpoint)
+            self.data = self.faults.relay.endpoint
 
     def command(self, family, payload, actor="admin"):
         return {"identity":{"scope":self.scope,"actor_id":actor,"command_family":family,
@@ -55,6 +62,8 @@ class DomainRuntime:
                         assert reply["outcome"]["status"] == "accepted", reply
             finally:
                 self.runtime.stop()
+                if self.faults is not None:
+                    self.faults.close()
 
     def open_graph(self, family, view, configure=None):
         receipt = view["record"]["receipt"]
@@ -122,11 +131,13 @@ class DomainRuntime:
     def after(self, family, root, corrected):
         from amphora_tool_protocol import HttpTransport
 
-        def submit(receipt, command=None):
+        def submit(receipt, command=None, recover=False):
             expected = self.opened["expectation"]
             command = command or self.command("graph.submit_receipt",{"run_id":self.run,
                 "activation_id":expected["activation_id"],"wait_revision":expected["wait_revision"],
                 "expectation_sha256":self.opened["expectation_sha256"],"receipt":receipt},actor=receipt["issuer_id"])
+            if recover and self.faults is not None:
+                return command,self.faults.accept(command)
             response = HttpTransport(self.endpoint,"j"*32).request("POST","/v1/graph-receipts",json.dumps(command).encode())
             assert response.status == 200
             return command,json.loads(response.body)
@@ -154,27 +165,32 @@ class DomainRuntime:
         denied = HttpTransport(self.endpoint,"u"*32).request("POST","/v1/graph-receipts",json.dumps(unauthorized).encode())
         assert denied.status == 403, (denied.status, denied.body)
         assert self.runtime.request(self.wait_path) == self.opened
-        command, accepted = submit(root["record"]["receipt"])
+        command, accepted = submit(root["record"]["receipt"],recover=True)
         assert accepted["outcome"]["status"] == "accepted", accepted
         closed = self.runtime.request(self.wait_path)
         assert closed["closure"]["outcome"]["receipt"] == root["record"]["receipt"]
         self.runtime.request("/v1/graph-runs/advance",self.command("graph.advance",{"run_id":self.run}))
         graph = self.runtime.request("/v2/graph-runs/" + self.run)
         assert graph["status"] == "completed" and graph["spent"] == graph["reserved"] == 0
-        delivered = subprocess.run([self.python,"-I","-m","amphora_campaign_runtime","deliver","--config",str(self.path),
-            "--actor","admin","--tenant",self.scope["tenant_id"],"--project",self.scope["project_id"],
-            "--limit","100","--time-budget","5"],env=self.environment,capture_output=True,text=True,encoding="utf-8",timeout=30)
-        assert delivered.returncode == 0, "Runtime delivery failed"
-        delivery = json.loads(delivered.stdout)
+        delivery = self.deliver() if self.faults is None else self.faults.confirm(root["record"]["receipt"]["outcome"]["output"])
         assert delivery["acknowledged"] == 1, delivery
         self._start()
         assert self.runtime.request(self.wait_path) == closed
         assert submit(root["record"]["receipt"],command)[1] == accepted
         self.results[family].update(boundary_rejections=boundary_rejections,unauthorized_status=denied.status,notice_rejected=rejected,accepted=accepted,closure=closed,graph=graph,delivery=delivery,
-                                    replay_after_replacement=True)
+                                    replay_after_replacement=True,
+                                    recovery=None if self.faults is None else copy.deepcopy(self.faults.evidence))
 
     def partial(self, proof):
         spec = importlib.util.spec_from_file_location("domain_partial", Path(__file__).with_name("domain_partial.py"))
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
         module.prove_partial(self, proof.research["root"], proof.research["corrected"])
+
+    def deliver(self, limit=100):
+        delivered = subprocess.run([self.python,"-I","-m","amphora_campaign_runtime","deliver","--config",str(self.path),
+            "--actor","admin","--tenant",self.scope["tenant_id"],"--project",self.scope["project_id"],
+            "--limit",str(limit),"--time-budget","5"],env=self.environment,capture_output=True,text=True,encoding="utf-8",timeout=30)
+        assert delivered.returncode == 0, "Runtime delivery failed"
+        delivery = json.loads(delivered.stdout)
+        return delivery

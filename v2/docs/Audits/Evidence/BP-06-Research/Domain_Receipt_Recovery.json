@@ -1,0 +1,68 @@
+{
+  "reviewed_local": "2026-10-02 22:49:43",
+  "scope": "BP-06.03/B3.03",
+  "status": "passed",
+  "installed_actual_tests": 1,
+  "duration_seconds": 214.38,
+  "source_evidence": ".test-results/runtime-domain-recovery-bounded-20261002.json",
+  "junit": ".test-results/runtime-domain-recovery-bounded-20261002.xml",
+  "cases": {
+    "assessment": {
+      "receipt_first_caller_status": 503,
+      "receipt_command_sha256": "87d23eb9ab820a1c100c92c61a109727d76f8f3baaed59ac735b3fef5756d9e6",
+      "receipt_exact_replay_after_replacement": true,
+      "closure_preserved": true,
+      "confirmation_first_delivery": {
+        "claimed": 1,
+        "acknowledged": 0,
+        "failed": 1,
+        "stale": 0
+      },
+      "confirmation_recovery_sweep": {
+        "claimed": 5,
+        "acknowledged": 1,
+        "failed": 4,
+        "stale": 0
+      },
+      "confirmation_command_sha256": "b69ff71bb01deee59e59be3c13f9e889564156ea9759f2c781ac75a1f9f8fec0",
+      "confirmation_exact_replay": true,
+      "confirmed": "confirmed",
+      "retained_artifact_sha256": "e0eefddfe0b6cf07d9cb2df6bb1f4d191c87dc292ecde263507c24d97118f71d",
+      "unconfigured_notification_passes": 9
+    },
+    "reasoning": {
+      "receipt_first_caller_status": 503,
+      "receipt_command_sha256": "6feda4260405a59067e4f264c31d34553dba328096e412c87aff2e7fe24bab88",
+      "receipt_exact_replay_after_replacement": true,
+      "closure_preserved": true,
+      "confirmation_first_delivery": {
+        "claimed": 1,
+        "acknowledged": 0,
+        "failed": 1,
+        "stale": 0
+      },
+      "confirmation_recovery_sweep": {
+        "claimed": 5,
+        "acknowledged": 1,
+        "failed": 4,
+        "stale": 0
+      },
+      "confirmation_command_sha256": "7b73c647597b2a551287627b6cf448801690eb03a2a2308ba9957f8a9ea07c0e",
+      "confirmation_exact_replay": true,
+      "confirmed": "confirmed",
+      "retained_artifact_sha256": "447809a55bc29ea7642ec6ccdd8cfef2cd1e23f6a3579aec572433a8206b1ecc",
+      "unconfigured_notification_passes": 22
+    }
+  },
+  "prior_probe_failures": [
+    "Initial probes assumed first queued delivery was artifact confirmation; unrelated unconfigured notification was selected",
+    "One-at-a-time retry exhausted arbitrary10s budget amid unrelated notification backlog; corrected to normal bounded delivery sweep and exact captured confirmation assertions"
+  ],
+  "limits": [
+    "Synthetic science only",
+    "Post-commit acknowledgement suppression returns503 after actual upstream200; not a pre-commit crash",
+    "Runtime processes replaced through termination/restart; no host-power-loss proof",
+    "Notification sinks unconfigured and their separate failures explicitly retained",
+    "Independent fresh Research rebuild is V1"
+  ]
+}
