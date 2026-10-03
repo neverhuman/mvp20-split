@@ -1,5 +1,7 @@
 # Graph Runtime Contracts
 
+BP-06.03/B2.01: version0.12.0 adds ReceiptChainRef, ReceiptRevisionRef and ReceiptCorrection. These wire records describe owner-managed future-campaign correction chains; they grant no currentness, publication or execution authority. Research and Knowledge own separate policies/stores. Existing wait and receipt schemas are unchanged;306 total schemas preserve300 predecessors. Examples and tests/test_corrections.py cover both schema directions.
+
 Current BP-05.03/B1 partial:graph-runtime0.11.0 opts definition.save/graph.admit_draft into the explicit Commands0.2.0 numeric envelope. All200 schema bytes remain unchanged; Runtime0.19.0 persists the actual profile.170 scoped Python tests,96 isolated Studio tests and full1315 Python/96 Node/19 installs/REC-01..09 pass. No migration or eligibility grant.
 
 Metadata predecessor0.10.0 added DefinitionUniverse/DefinitionSchema for bounded compiler-reviewed pins and exact schema bytes. These retain compiler_configuration authority, canonical base64 and a64KiB decoded bound; consumers verify digest before interpretation.

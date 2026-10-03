@@ -361,3 +361,7 @@ Rotated MBT checkpoints:
 ## 2026-10-02 21:14:00 - Iterative progress clarification
 
 Owner explicitly rejects scientific perfection as a campaign completion gate. Updated requirements, Studio/Knowledge architecture and BP-07.03 to preserve multiple weak points, visible evidence quality and targeted next-campaign improvement. Created queued SQ-01 successor; closed BP-05 remains closed. Bounded user-directed documentation interruption complete; return to BP-06.03/B2.01. No code or implementation credit: B2 0%, child25%, parent37.50%. Future-campaign-only corrections remain approved.
+
+## 2026-10-02 21:17:06 - B2.01 correction contracts and owner policies
+
+Shared additive correction DTOs and separate owner policies verified;100 scoped tests plus165 tooling/dependency tests.306 schema files preserve300 predecessors. Policies retain scientific dispositions and active pins, emit fresh chain-bound receipt revisions and notices, and reject mismatched source/predecessor identity. B2 25%, child31.25%, parent38.54%; closed gates1/4 and9/24 unchanged. Next B2.02 persistence/API; no installed store or scientific readiness claim.

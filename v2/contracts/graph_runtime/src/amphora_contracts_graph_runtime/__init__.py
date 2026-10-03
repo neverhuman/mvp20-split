@@ -16,6 +16,7 @@ from .authoring import (
 )
 from .authoring_catalog import DefinitionSchema, DefinitionUniverse
 from .bindings import GraphNodeViewV3, GraphRunPageV3
+from .corrections import ReceiptChainRef, ReceiptCorrection, ReceiptRevisionRef
 from .draft_admission import AdmitDraft, DraftSelection
 from .models import AdmitGraphRun, AdvanceGraph, GraphLimits, GraphNodeView, GraphRunPage
 from .navigation import (
@@ -97,7 +98,7 @@ def parse_graph_command(family, raw):
     return command
 
 
-__all__ = ["DefinitionSchema", "DefinitionUniverse", "AdmitDraft", "DraftSelection", "DraftCommandReceipt", "DraftHead", "DraftPage", "DraftRevision", "DraftValidation", "SaveDraft", "ValidateDraft", "parse_authoring_command", "DigestViewFilter", "GraphViewCatalog", "GraphViewDefinition", "RadiusViewFilter", "GraphControlLink", "GraphScopePage", "GraphScopeView", "GraphTopologyNode", "GraphTopologyPage", "GraphTopologyQuery",
+__all__ = ["ReceiptChainRef", "ReceiptCorrection", "ReceiptRevisionRef", "DefinitionSchema", "DefinitionUniverse", "AdmitDraft", "DraftSelection", "DraftCommandReceipt", "DraftHead", "DraftPage", "DraftRevision", "DraftValidation", "SaveDraft", "ValidateDraft", "parse_authoring_command", "DigestViewFilter", "GraphViewCatalog", "GraphViewDefinition", "RadiusViewFilter", "GraphControlLink", "GraphScopePage", "GraphScopeView", "GraphTopologyNode", "GraphTopologyPage", "GraphTopologyQuery",
            "AdmitGraphRun", "AdvanceGraph", "CollectionValue", "GraphBinding", "GraphLimits", "GraphNodeView",
            "GraphAttemptView", "GraphInvalidation", "GraphInvalidationPage", "GraphNodeDetail", "GraphOutputSummary",
            "GraphReadBudget", "GraphReadCut", "GraphReadQuery", "GraphReadSnapshot", "GraphSnapshotPage", "GraphValueItem", "GraphValuePage",
