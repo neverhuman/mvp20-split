@@ -1,5 +1,14 @@
 # BP-06 Planning History
 
+## BP-06.05/B1 installed HTTP boundary complete - 2026-10-03 15:52:35
+
+Source and installed harnesses pass actual isolated Data0.18.0 server proof13.96s/12.71s;14 dev tests and lint pass. All source/rights/profile/encoding preparation is public HTTP. Known ABBA output matches an independent binary32 fixture oracle. A fresh process reconstructs the original publication and alias; public revocation denies new use while original status/POST history remains stable. Actual scoped identities/process checkpoints are retained. No production/schema/migration changes. B1=100%, Build33.33%, child25%, parent70.83%; gates1/4 and17/24. B2.01 generation lifecycle active. Clarified stale generic B1 prose: IndexGeneration belongs to the existing B2.01 milestone; no scope/weight change or generation implementation credit. Abrupt death/races remain B3; scientific/target-host validity remains unproven.
+
+Rotated MBT checkpoints:
+
+| 2026-10-03 03:42:21 | BP-06.04/B1.08c complete; child24.22%, parent54.04%; d active | [Scientific hosting](../Audits/Evidence/BP-06-Research/Scientific_Hosting.json);827 source/827 installed,119 compatibility/dev |
+
+
 ## BP-06.05/B1.05 authenticated APIs complete - 2026-10-03 15:44:22
 
 Data0.18.0 adds focused opt-in representation routes, service facade, current-rights binding view and explicit host policy/readiness.185 source and452 full independently installed cases pass;14 dev tests, lint/boundaries and420 unchanged schemas pass. New126 statements/14 branches fully covered; aggregate representation1247/1250 statements and122/126 branches retain prior B3 gaps. Profile registration remains inert and immutable; body/auth/grant/deadline failures are explicit. Source-span provenance failure now maps to409 without intent. Current binding access differs from original historical status replay. No migration/profile auto-registration; artifact_0009 unchanged. B1=83.33%, Build27.78%, child20.83%, parent70.14%; gates unchanged0/4 and16/24. B1.06 actual installed HTTP proof active.

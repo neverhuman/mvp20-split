@@ -1,0 +1,154 @@
+{
+  "timestamp_local": "2026-10-03 15:52:35",
+  "milestone": "BP-06.05/B1.06",
+  "status": "passed",
+  "data_version": "0.18.0",
+  "production_change": "none",
+  "reports": {
+    "source_harness_actual_isolated_server": {
+      "passed": 1,
+      "seconds": 13.96
+    },
+    "installed_harness_actual_isolated_server": {
+      "passed": 1,
+      "seconds": 12.71
+    },
+    "dev": {
+      "passed": 14,
+      "seconds": 12.96
+    }
+  },
+  "observed": {
+    "timestamp_local": "2026-10-03 15:48:46",
+    "scope": {
+      "tenant_id": "representation-http",
+      "project_id": "b17a8497316342c79351bba81f7b3b22"
+    },
+    "original_pid": 14976,
+    "replacement_pid": 23848,
+    "profile": {
+      "scope": {
+        "tenant_id": "representation-http",
+        "project_id": "b17a8497316342c79351bba81f7b3b22"
+      },
+      "profile_id": "fixture.utf8-histogram",
+      "version": "1",
+      "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+    },
+    "source": {
+      "scope": {
+        "tenant_id": "representation-http",
+        "project_id": "b17a8497316342c79351bba81f7b3b22"
+      },
+      "source_id": "source",
+      "revision_id": "r1",
+      "raw": {
+        "artifact_id": "aa11277657d24630a8983e843ecf2bdf",
+        "scope": {
+          "tenant_id": "representation-http",
+          "project_id": "b17a8497316342c79351bba81f7b3b22"
+        },
+        "sha256": "36a3e02907920e957f1e13e41a0a63904f7decc89cd66b6e8262a262a1fc2273",
+        "media_type": "application/octet-stream",
+        "schema_ref": {
+          "schema_id": "fixture.bytes",
+          "version": "1",
+          "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+        },
+        "size_bytes": 18
+      }
+    },
+    "binding": {
+      "wire_version": "1",
+      "reference": {
+        "scope": {
+          "tenant_id": "representation-http",
+          "project_id": "b17a8497316342c79351bba81f7b3b22"
+        },
+        "binding_id": "binding.f8e8674d91f3ad34509a2ac30f0e499e98fa3ba92d4f57c9ab0db6a372ffff6c",
+        "sha256": "8b70ee17b3af8e34aea78c4c5e6a39d68d6ca1644624524354f03db02eddf63c"
+      },
+      "profile": {
+        "scope": {
+          "tenant_id": "representation-http",
+          "project_id": "b17a8497316342c79351bba81f7b3b22"
+        },
+        "profile_id": "fixture.utf8-histogram",
+        "version": "1",
+        "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+      },
+      "source": {
+        "source": {
+          "scope": {
+            "tenant_id": "representation-http",
+            "project_id": "b17a8497316342c79351bba81f7b3b22"
+          },
+          "source_id": "source",
+          "revision_id": "r1",
+          "raw": {
+            "artifact_id": "aa11277657d24630a8983e843ecf2bdf",
+            "scope": {
+              "tenant_id": "representation-http",
+              "project_id": "b17a8497316342c79351bba81f7b3b22"
+            },
+            "sha256": "36a3e02907920e957f1e13e41a0a63904f7decc89cd66b6e8262a262a1fc2273",
+            "media_type": "application/octet-stream",
+            "schema_ref": {
+              "schema_id": "fixture.bytes",
+              "version": "1",
+              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+            },
+            "size_bytes": 18
+          }
+        },
+        "unit": "byte",
+        "start": 7,
+        "end": 11,
+        "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+      },
+      "vector": {
+        "artifact_id": "c0ac907c77ff4c119536ddcb71ca9336",
+        "scope": {
+          "tenant_id": "representation-http",
+          "project_id": "b17a8497316342c79351bba81f7b3b22"
+        },
+        "sha256": "ea374b0a61746415ea71fa644c4a3632b584bad9323278798193ab5fcad816d5",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "representations.vector",
+          "version": "1",
+          "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+        },
+        "size_bytes": 622
+      }
+    },
+    "oracle": "ABBA: finite binary32 counts2 in bins1 and2, all other bins0",
+    "statuses": {
+      "published": 200,
+      "replacement_exact_replay": 200,
+      "wrong_scope": 404,
+      "revoked_binding": 403,
+      "revoked_content": 403,
+      "revoked_new_alias": 403,
+      "historical_replay": 200
+    }
+  },
+  "installed_package": "data-representation-api-20261003; unchanged B1.05 wheel manifest, forbidden peer implementations absent",
+  "oracles": [
+    "All source/rights/profile/encoding preparation uses real public HTTP routes after database fixture bootstrap.",
+    "Known ABBA vector matches independently specified finite little-endian binary32 counts.",
+    "Fresh CLI owner process reconstructs identical request/status/binding/vector and convergent alias.",
+    "Revoked source blocks current binding, vector content and new alias; original status and POST replay remain unchanged.",
+    "Wrong authenticated scope cannot read binding."
+  ],
+  "checks": {
+    "schemas": "420 unchanged",
+    "migration": "artifact_0009 unchanged",
+    "lint": "pass"
+  },
+  "limits": [
+    "Orderly process replacement; abrupt death/race matrix remains B3.",
+    "Synthetic vector protocol proof, no scientific relevance claim.",
+    "Qdrant/retrieval generation and final module closeout remain B2/V1."
+  ]
+}

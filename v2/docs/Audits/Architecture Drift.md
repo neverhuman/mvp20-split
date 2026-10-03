@@ -1,9 +1,9 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-03 15:44:22` (America/Chicago).
+- Last refreshed: `2026-10-03 15:52:35` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.05/B1.04 source publication; child20.83%, parent70.14%,16/24 closed gates.
+- Active focus: BP-06.05/B1.04 source publication; child25%, parent70.83%,17/24 closed gates.
 - Next gate: BP-06.05 source authorization and derived vector binding proof. BP-06.03 aligned evidence is in drift history; richer scientific-quality UI remains SQ-01.
 
 ## Active Findings
@@ -54,3 +54,5 @@ B1.04c [workflow evidence](Evidence/BP-06-Representations/Binding_Workflow.json)
 B1.04d [convergence evidence](Evidence/BP-06-Representations/Binding_Convergence.json) confirms one computation with independent source-rights/Artifact bindings and publisher attribution. No blocking drift in B1.04; actual process/race acceptance remains B3 and HTTP boundaries B1.05-.06.
 
 B1.05 [API/hosting evidence](Evidence/BP-06-Representations/API_Hosting.json) verifies explicit opt-in and separate historical/current-use authority. No blocking drift in the transport scope; B1.06 owns actual installed representation HTTP reconstruction, B3 process/race acceptance.
+
+B1 [actual HTTP evidence](Evidence/BP-06-Representations/HTTP_Replacement.json) aligns scoped representation profiles/reuse/source-rights/publication/transport with fresh isolated-owner reconstruction. No blocking B1 drift remains. Index lifecycle/Qdrant/retrieval remain B2; abrupt death/races B3; final child replacement/audit V1.

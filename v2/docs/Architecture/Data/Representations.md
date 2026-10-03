@@ -1,8 +1,8 @@
 # Embedding and Retrieval Contracts
 
-- Design status: detailed proposed contract; implementation and scientific acceptance pending
+- Design status: profile/source-binding/API boundary verified under BP-06.05/B1; index/retrieval implementation and scientific acceptance pending
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
-- Last reviewed: `2026-10-03 12:43:58` (America/Chicago)
+- Last reviewed: `2026-10-03 15:52:35` (America/Chicago)
 - Parent: [Domain overview](Data_Architecture.md)
 - Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#embedding-and-representation-layer)
 
@@ -47,3 +47,5 @@ A provider changes an embedding model behind an unchanged alias. New generation 
 The embedding section of Product Requirements is the authority. Remaining decisions: encoder families, index backend, quality fixtures, chunking strategy and migration thresholds. No single vector space or similarity threshold is selected by this architecture.
 
 User-provided reference (`2026-09-22 20:46:34`): JARVIS uses Qdrant and can supply an implementation reference when vector integration is planned. Qdrant is a candidate derived retrieval backend, not a selected dependency or replacement for authoritative PostgreSQL state. Review that integration when scoped and authorized; preserve the profile, rights, publication and replay contracts above.
+
+Implementation boundary: [Data module](../../../services/data_artifacts/src/amphora_data_artifacts/representations/README.md) and [canonical plan](../../Build%20Plans/BP-06/BP-06.05%20Representation%20reuse%20and%20retrieval.md) distinguish verified synthetic representation reuse/source rights/public HTTP from pending index/retrieval and scientific validation. The scoped B2.02 adapter target is an isolated local Qdrant fixture, not a deployed production index.
