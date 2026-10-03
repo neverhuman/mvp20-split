@@ -18,7 +18,7 @@ wheels = [
 
 [[package]]
 name = "amphora-campaign-runtime"
-version = "0.20.1"
+version = "0.20.2"
 source = { editable = "../services/campaign_runtime" }
 dependencies = [
     { name = "alembic" },
@@ -146,7 +146,7 @@ requires-dist = [{ name = "pydantic", specifier = ">=2.12,<3" }]
 
 [[package]]
 name = "amphora-contracts-evidence"
-version = "0.5.4"
+version = "0.5.5"
 source = { editable = "../contracts/evidence" }
 dependencies = [
     { name = "amphora-contracts-core" },
@@ -163,7 +163,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-contracts-graph-runtime"
-version = "0.12.0"
+version = "0.13.0"
 source = { editable = "../contracts/graph_runtime" }
 dependencies = [
     { name = "amphora-contracts-campaigns" },
@@ -186,7 +186,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-contracts-knowledge"
-version = "0.6.4"
+version = "0.6.5"
 source = { editable = "../contracts/knowledge" }
 dependencies = [
     { name = "amphora-contracts-artifacts" },
@@ -209,7 +209,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-contracts-research"
-version = "0.5.1"
+version = "0.6.0"
 source = { editable = "../contracts/research" }
 dependencies = [
     { name = "amphora-contracts-artifacts" },
@@ -275,7 +275,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-data-artifacts"
-version = "0.11.4"
+version = "0.11.5"
 source = { editable = "../services/data_artifacts" }
 dependencies = [
     { name = "alembic" },
@@ -377,7 +377,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-knowledge"
-version = "0.14.0"
+version = "0.14.1"
 source = { editable = "../services/knowledge" }
 dependencies = [
     { name = "alembic" },
@@ -435,7 +435,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-research"
-version = "0.11.0"
+version = "0.12.0"
 source = { editable = "../services/research" }
 dependencies = [
     { name = "alembic" },

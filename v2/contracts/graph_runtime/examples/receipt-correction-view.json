@@ -1,0 +1,95 @@
+{
+  "schema_version": "1",
+  "reference": {
+    "schema_version": "1",
+    "chain": {
+      "schema_version": "1",
+      "scope": {
+        "tenant_id": "test",
+        "project_id": "correction"
+      },
+      "issuer_id": "issuer",
+      "chain_id": "chain"
+    },
+    "ordinal": 1,
+    "record_sha256": "b4b4ddc84592623ebb5128dd6829ea69b2f42aead7642579789e7cebf30f66a2"
+  },
+  "record": {
+    "schema_version": "1",
+    "chain": {
+      "schema_version": "1",
+      "scope": {
+        "tenant_id": "test",
+        "project_id": "correction"
+      },
+      "issuer_id": "issuer",
+      "chain_id": "chain"
+    },
+    "ordinal": 1,
+    "change_id": "change-1",
+    "actor_id": "author",
+    "reason_code": "new_evidence",
+    "source_receipt": {
+      "schema_version": "1",
+      "issuer_id": "issuer",
+      "receipt_id": "source-1",
+      "scope": {
+        "tenant_id": "test",
+        "project_id": "correction"
+      },
+      "purpose": "research.synthetic_sufficiency",
+      "revision": "1",
+      "subject": {
+        "artifact_id": "subject",
+        "scope": {
+          "tenant_id": "test",
+          "project_id": "correction"
+        },
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "fixture",
+          "version": "1",
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        "size_bytes": 2
+      },
+      "outcome": {
+        "status": "abstained",
+        "reason_code": "unknown"
+      }
+    },
+    "predecessor": null,
+    "receipt": {
+      "schema_version": "1",
+      "issuer_id": "issuer",
+      "receipt_id": "research-correction-f9a4f083a5ec2380876e7843ac1548c7b1785e6f6ee98d81bcd43d6fbec5fadf",
+      "scope": {
+        "tenant_id": "test",
+        "project_id": "correction"
+      },
+      "purpose": "research.synthetic_sufficiency",
+      "revision": "revision-f9a4f083a5ec2380876e7843ac1548c7b1785e6f6ee98d81bcd43d6fbec5fadf",
+      "subject": {
+        "artifact_id": "subject",
+        "scope": {
+          "tenant_id": "test",
+          "project_id": "correction"
+        },
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "fixture",
+          "version": "1",
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        "size_bytes": 2
+      },
+      "outcome": {
+        "status": "abstained",
+        "reason_code": "unknown"
+      }
+    },
+    "notice": null
+  }
+}

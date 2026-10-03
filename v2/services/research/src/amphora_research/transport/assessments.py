@@ -14,6 +14,7 @@ from ..assessment.policy import AssessmentError, _identifier
 from ..assessment.reader import AssessmentDataReader
 from ..assessment.resolution import AssessmentResolver
 from ..assessment.store import AssessmentStore
+from ..corrections.store import CorrectionStore
 from ..persistence.ledger import IdentityLedger
 from ..publication.store import PublicationStore
 from ..publication.workflow import PublicationWorkflow
@@ -104,3 +105,12 @@ class AssessmentOperations:
             HttpTransport(self.endpoint, self.publication_token), self.publisher, self.issuer)
         progress = workflow.submit(request.scope, request.assessment_id, principal.actor_id)
         return self._publication_status(principal, request, progress)
+
+    def correct_receipt(self, principal, request):
+        principal.require("correct_assessment_receipt", request.chain.scope)
+        return CorrectionStore(self.engine).append(request, principal.actor_id).view
+
+    def select_receipt(self, principal, request):
+        principal.require("select_assessment_receipt", request.chain.scope)
+        revision = CorrectionStore(self.engine).select(request)
+        return None if revision is None else revision.view

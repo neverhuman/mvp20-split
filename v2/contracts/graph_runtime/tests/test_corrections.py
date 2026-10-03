@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 
 import pytest
-from amphora_contracts_graph_runtime import ReceiptCorrection
+from amphora_contracts_graph_runtime import ReceiptCorrection, ReceiptCorrectionView
 from jsonschema import Draft202012Validator
 from pydantic import ValidationError
 
@@ -27,3 +27,12 @@ def test_invalid_wire_identity_is_rejected(change):
     with pytest.raises(ValidationError):
         ReceiptCorrection.model_validate_json(json.dumps(body))
     assert list(Draft202012Validator(ReceiptCorrection.model_json_schema()).iter_errors(body))
+
+
+def test_selection_view_exposes_a_reusable_public_revision_reference():
+    body = (EXAMPLES / "receipt-correction-view.json").read_text(encoding="utf-8")
+    view = ReceiptCorrectionView.model_validate_json(body)
+    assert view.reference.chain == view.record.chain
+    assert view.reference.ordinal == view.record.ordinal
+    for mode in ("validation", "serialization"):
+        Draft202012Validator(ReceiptCorrectionView.model_json_schema(mode=mode)).validate(json.loads(body))

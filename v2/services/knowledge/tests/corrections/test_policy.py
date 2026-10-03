@@ -28,6 +28,8 @@ def test_root_and_successor_replay_preserve_original_and_make_fresh_notice():
     first = issue(original)
     successor_source = source(receipt_id="source-2", outcome={"status":"rejected", "reason_code":"contradicted"})
     second = issue(successor_source, first, change_id="change-2")
+    assert first.view.reference == first.reference
+    assert first.view.record == first.record
     assert first == issue(original)
     assert second == issue(successor_source, first, change_id="change-2")
     assert second.record.predecessor == first.reference

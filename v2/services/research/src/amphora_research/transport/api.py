@@ -3,9 +3,11 @@
 import asyncio
 import json
 
+from amphora_contracts_graph_runtime import ReceiptCorrectionView
 from amphora_contracts_research import (
     AssessmentPublicationRequest,
     AssessmentPublicationStatus,
+    CorrectAssessmentReceipt,
     EvidenceAssessmentRequest,
     EvidenceAssessmentStatus,
     EvidenceNeed,
@@ -14,6 +16,7 @@ from amphora_contracts_research import (
     ResearchQuestion,
     ResearchQuestionRef,
     ResolveIdentity,
+    SelectAssessmentReceipt,
 )
 from amphora_tool_protocol import ProtocolError
 from fastapi import FastAPI, Request
@@ -88,7 +91,7 @@ def create_app(resolver, credentials, assessments=None):
         except AssessmentError as error:
             code = str(error)
             status = (403 if code in {"assessment_actor_mismatch", "peer_access_denied"} else
-                      409 if "conflict" in code or code == "publication_assessment_pending" else
+                      409 if "conflict" in code or code in {"publication_assessment_pending", "correction_publication_pending"} else
                       404 if code in {"assessment_profile_unavailable", "publication_assessment_missing"} else 422)
             return JSONResponse(status_code=status, content={"code": code}, headers={"Cache-Control": "no-store"})
         except (SQLAlchemyError, ResearchIdentityError):
@@ -128,5 +131,13 @@ def create_app(resolver, credentials, assessments=None):
         @app.post("/v1/assessment-publications/read", response_model=AssessmentPublicationStatus)
         async def read_publication(request: Request):
             return await invoke(request, AssessmentPublicationRequest, assessments.read_publication)
+
+        @app.post("/v1/assessment-receipts/correct", response_model=ReceiptCorrectionView)
+        async def correct_receipt(request: Request):
+            return await invoke(request, CorrectAssessmentReceipt, assessments.correct_receipt)
+
+        @app.post("/v1/assessment-receipts/select", response_model=ReceiptCorrectionView)
+        async def select_receipt(request: Request):
+            return await invoke(request, SelectAssessmentReceipt, assessments.select_receipt)
 
     return app

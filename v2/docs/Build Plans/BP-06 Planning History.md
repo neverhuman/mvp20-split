@@ -365,3 +365,11 @@ Owner explicitly rejects scientific perfection as a campaign completion gate. Up
 ## 2026-10-02 21:17:06 - B2.01 correction contracts and owner policies
 
 Shared additive correction DTOs and separate owner policies verified;100 scoped tests plus165 tooling/dependency tests.306 schema files preserve300 predecessors. Policies retain scientific dispositions and active pins, emit fresh chain-bound receipt revisions and notices, and reject mismatched source/predecessor identity. B2 25%, child31.25%, parent38.54%; closed gates1/4 and9/24 unchanged. Next B2.02 persistence/API; no installed store or scientific readiness claim.
+
+## 2026-10-02 21:29:29 - B2.02 Research corrections verified
+
+Research0.12.0/contracts0.6.0 and graph-runtime contracts0.13.0 verified:441 source/334 independently installed tests;312 schemas preserve306 predecessors. research_0005 appends correction history, serializes exact replay/competing successors and rolls back atomically. Distinct scoped correct/select grants expose an exact revision reference with each record. Active Runtime pins and original publications stay unchanged. B2 50%, child37.50%, parent39.58%; closed gates unchanged1/4 and9/24. Next B2.03 Knowledge. Actual public correction integration remains B2.04/B3, not implied by existing assessment/publication process proof.
+
+Rotated MBT checkpoint:
+
+| 2026-10-01 21:13:35 | BP-06.03/B1 kernel and input binding verified; child0/4; parent8/24 | [Evidence](../Audits/Evidence/BP-06-Knowledge/Reasoning_Kernel.json);161 owner +14 dev tests |

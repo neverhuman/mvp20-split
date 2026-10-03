@@ -1,5 +1,7 @@
 # Research Identity Contracts
 
+Version0.6.0 adds CorrectAssessmentReceipt and SelectAssessmentReceipt: reference-only owner correction and explicit future-campaign selection. Returns shared ReceiptCorrectionView from graph-runtime0.13.0, including the exact revision reference for later selection or expected-head comparison. Prior assessment/publication schemas are unchanged; tests/test_corrections.py and examples cover the new requests. No persistence or currentness policy lives in this package.
+
 - Package: `amphora-contracts-research` 0.5.0, wire1; identity declarations and synthetic assessment shapes.
 - Design: [Candidates](../../docs/Architecture/Research/Candidates.md), [experiments](../../docs/Architecture/Research/Experiments.md).
 

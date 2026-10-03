@@ -48,7 +48,8 @@ class ResearchHost:
             actions = entry["actions"]
             if (not isinstance(actions, list) or not actions
                     or any(action not in ("resolve_identity", "read_declarations", "assess", "read_assessment",
-                                          "publish_assessment", "read_assessment_publication") for action in actions)
+                                          "publish_assessment", "read_assessment_publication",
+                                          "correct_assessment_receipt", "select_assessment_receipt") for action in actions)
                     or len(set(actions)) != len(actions)):
                 raise ValueError("invalid_actions")
             scope = Scope.model_validate(entry["scope"])
@@ -79,6 +80,7 @@ class ResearchHost:
                 with engine.connect() as connection:
                     connection.execute(text("SELECT canonical_bytes FROM research.assessment_decisions LIMIT 1"))
                     connection.execute(text("SELECT position FROM research.publication_events LIMIT 1"))
+                    connection.execute(text("SELECT ordinal FROM research.receipt_corrections LIMIT 1"))
             return cls(engine, create_app(IdentityResolver(IdentityLedger(engine)), credentials, assessments))
         except Exception:
             engine.dispose()

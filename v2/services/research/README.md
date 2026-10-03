@@ -1,5 +1,7 @@
 # Research Service
 
+BP-06.03/B2.02: Research0.12.0 adds owner receipt correction persistence and authenticated explicit selection; 441 scoped source/334 installed-owner tests pass. [Correction boundary](src/amphora_research/corrections/README.md) owns the rebuild contract. No active campaign mutation or scientific-validity claim.
+
 - Status: BP-06.01 accepted; independent identity/question policies and PostgreSQL revision ledger implemented. Authenticated identity reads and optional synthetic assessment/publication APIs with explicit loopback hosting implemented. BP-06.03/B1.07 private authenticated evidence resolution is complete; B1.08 durable assessments are implemented.
 - Package: `amphora-research` 0.10.0.
 - Design: [Research](../../docs/Architecture/Research/Research_Architecture.md).

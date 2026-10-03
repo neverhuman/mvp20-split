@@ -1,0 +1,43 @@
+{
+  "reviewed_local": "2026-10-02 21:29:29",
+  "scope": "BP-06.03/B2.02",
+  "status": "passed",
+  "source_tests": 441,
+  "installed_tests": 334,
+  "installed_manifest": ".test-results/research-correction-view-installed-20261002/manifest.json",
+  "source_report": ".test-results/research-correction-final.xml",
+  "coverage": {
+    "statements": 166,
+    "missing_statements": 2,
+    "branches": 48,
+    "partial_branches": 2,
+    "uncovered": "Research store noncanonical-storage corruption and oversized-record defenses"
+  },
+  "schemas": {
+    "total": 312,
+    "predecessors_unchanged": 306
+  },
+  "versions": {
+    "research": "0.12.0",
+    "research_contracts": "0.6.0",
+    "graph_runtime_contracts": "0.13.0"
+  },
+  "migration": "research_0005",
+  "proven": [
+    "immutable owner-publication source binding",
+    "original actor and distinct scoped grants",
+    "exact replay and replacement store reads",
+    "concurrent same-change replay",
+    "competing successors permit one head",
+    "failed transaction leaves neither record nor head",
+    "immutable grants",
+    "explicit exact/head selection returns reusable revision reference",
+    "source-only correction requests reject caller-supplied verdicts"
+  ],
+  "limits": [
+    "Correction API uses real PostgreSQL with in-process HTTP adapter tests; actual public correction peer integration remains B2.04",
+    "Existing actual-peer/replacement tests cover assessment/publication, not correction process-kill barriers",
+    "No Knowledge correction persistence or Runtime delivery claim",
+    "No scientific validity claim"
+  ]
+}

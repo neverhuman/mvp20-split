@@ -16,3 +16,5 @@ Tests in `tests/persistence/` use real PostgreSQL and service-role connections: 
 Verification checkpoint:34 Research tests pass (8 actual PostgreSQL cases). Ledger coverage85/87 statements and32/34 branches; unknown Python model type and the defensive record-size ceiling remain uncovered. Two independently installed processes preserve old/new revision reads and original replay. This is private package/persistence compatibility, not authenticated service or process-kill acceptance.
 
 research_0004 adds Research-owned publication headers/events and separately mutable lease/fence rows; see the [publication boundary](../publication/README.md). Identity and assessment history remains immutable.
+
+research_0005 adds append-only receipt correction records under the [correction module](../corrections/README.md). A chain head is derived from its highest committed ordinal, with scoped advisory locks and expected-head comparison; no mutable head or older publication rewrite. Service grants are SELECT/INSERT only. Public correction authority and historical selection are distinct scoped transport grants.

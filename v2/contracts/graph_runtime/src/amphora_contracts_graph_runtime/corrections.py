@@ -32,3 +32,9 @@ class ReceiptCorrection(WireModel):
     predecessor: ReceiptRevisionRef | None
     receipt: DomainReceipt
     notice: DomainReceipt | None
+
+
+class ReceiptCorrectionView(WireModel):
+    schema_version: Literal["1"] = "1"
+    reference: ReceiptRevisionRef
+    record: ReceiptCorrection

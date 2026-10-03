@@ -8,6 +8,7 @@ from amphora_contracts_graph_runtime import (
     DomainReceipt,
     ReceiptChainRef,
     ReceiptCorrection,
+    ReceiptCorrectionView,
     ReceiptRevisionRef,
 )
 
@@ -27,6 +28,11 @@ class CorrectionRevision:
     def reference(self):
         return ReceiptRevisionRef(chain=self.record.chain, ordinal=self.record.ordinal,
                                   record_sha256=hashlib.sha256(encoded(self.record)).hexdigest())
+
+
+    @property
+    def view(self):
+        return ReceiptCorrectionView(reference=self.reference, record=self.record)
 
 
 class CorrectionPolicy:
