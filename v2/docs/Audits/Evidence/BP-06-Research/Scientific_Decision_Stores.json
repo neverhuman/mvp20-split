@@ -1,0 +1,91 @@
+{
+  "timestamp_local": "2026-10-03 02:09:43",
+  "milestone": "BP-06.04/B1.07b",
+  "status": "verified_private_decision_storage_and_indexes",
+  "versions": {
+    "research": "0.20.0",
+    "research_contracts": "0.10.0",
+    "migration": "research_0008"
+  },
+  "source_suite": {
+    "passed": 656,
+    "seconds": 32.82
+  },
+  "installed_suite": {
+    "passed": 656,
+    "seconds": 31.69
+  },
+  "compatibility_dev": {
+    "passed": 119,
+    "seconds": 17.51
+  },
+  "schemas": {
+    "total": 352,
+    "unchanged_predecessors": 342
+  },
+  "installation": {
+    "timestamp_local": "2026-10-03 02:04:55",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-research",
+    "forbidden_implementations": [
+      "amphora_knowledge",
+      "amphora_data_artifacts",
+      "amphora_campaign_runtime"
+    ],
+    "packages": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.9",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-knowledge": "0.7.4",
+      "amphora-contracts-research": "0.10.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-research": "0.20.0",
+      "amphora-tool-protocol": "0.2.0"
+    },
+    "wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.9-py3-none-any.whl": "dad8ae379012e21b0fd6122df22ec3cca77e931aaf0b7268651d582b762a40e7",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_knowledge-0.7.4-py3-none-any.whl": "fdbd4835936eb8b570ab3ffc0fa82324a3a2c0630c7819def0d801cecec08d19",
+      "amphora_contracts_research-0.10.0-py3-none-any.whl": "f8fc7ad144a38db0f1613b90d44bdfc2c89e25266aa97cd505430f48d35d2bbf",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_research-0.20.0-py3-none-any.whl": "21d033f213f395dd22f24bda36c363622438f74666a7850e3d391c31f22f6572",
+      "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+    }
+  },
+  "oracles": [
+    "exact full-policy/result/dependency digest",
+    "weak optional and rejected evidence retained",
+    "model evidence does not invent observation",
+    "exact observation/source links and subject validation",
+    "immutable replay/concurrent retry/actor collision",
+    "correction impact targets old revision without rewriting decision",
+    "bounded exact Artifact and observation impact pages",
+    "explicit immutable consumer pages and original actor",
+    "append-only grants and forward revision-width repair",
+    "local postcommit lost reply then exact retry"
+  ],
+  "limits": [
+    "Private source assertions require authenticated adapters before public use",
+    "Consumer registration is trusted private declaration, not producer/lineage proof",
+    "Pages are live indexes, not a cross-page snapshot",
+    "No global consumers, feedback dispatch or active campaign invalidation",
+    "No new Runtime or scientific authority",
+    "Process-kill/API/actual-owner publication acceptance remains later gates"
+  ],
+  "focused": {
+    "passed": 26,
+    "statements": 234,
+    "branches": 42,
+    "coverage_percent": 100
+  }
+}

@@ -1,5 +1,7 @@
 # Research Contracts
 
+Version0.10.0 adds ScientificDecisionRef, EligibilityDecision, SynthesisDecision, ScientificImpactPage and DecisionConsumerPage (ten additive schemas;342 predecessors unchanged). Full policy/result/dependency and original actor records are immutable; impact is explicitly future_campaigns_only. References do not grant source access, scientific validity or Runtime authority. Pages expose only registered dependents; authentication/public producer proof remain owning service responsibilities.
+
 Version0.9.0 adds LabProfileRef, LabIntakeRequest and LabIntakeStatus (six additive schemas;336 predecessors unchanged). Requests carry only intake identity, reviewed profile digest and report Artifact. Actor comes from the authenticated adapter; outcomes distinguish pending, resolved reconciliation and explicit operational failure without a scientific verdict. Full configuration and exact consumed inputs are persisted privately by Research; no new DomainReceipt authority.
 
 Version0.8.0 added SyntheticLabReport, LabReturnProfile and LabReportResolution (six additive schemas;330 predecessors unchanged). lab_reports.py owns the explicitly synthetic producer format and its self-contained payload-schema helper/digest. Producer rows omit their source Artifact to avoid a circular hash; Research attaches the authenticated source after reading Data. Profiles pin exact stored experiments, adapter versions and publishers. Rows preserve original values, binding claims and quality/control flags; empty returns are explicit, with a64-row ceiling.

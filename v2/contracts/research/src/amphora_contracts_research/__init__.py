@@ -96,6 +96,13 @@ from .observations import (
 from .publication import AssessmentPublicationRequest, AssessmentPublicationStatus
 from .questions import AnswerCriterion, EvidenceNeed, EvidenceNeedRef, ResearchQuestion, ResearchQuestionRef
 from .resolution import IdentityResolution, ResolveIdentity
+from .scientific_decisions import (
+    DecisionConsumerPage,
+    EligibilityDecision,
+    ScientificDecisionRef,
+    ScientificImpactPage,
+    SynthesisDecision,
+)
 from .synthesis import (
     RouteDecisionRecord,
     RouteEvidenceRecord,
@@ -137,3 +144,5 @@ __all__ += ['SynthesisContextRecord', 'RouteProvenanceRecord', 'RouteStepRecord'
 __all__ += ["ReportedObservation", "SyntheticLabReport", "LabReturnProfile", "ObservationMatchRecord", "LabReportResolution", "synthetic_lab_report_schema", "synthetic_lab_report_schema_document"]
 
 __all__ += ["LabProfileRef", "LabIntakeRequest", "LabIntakePending", "LabIntakeResolved", "LabIntakeFailed", "LabIntakeStatus"]
+
+__all__ += ["ScientificDecisionRef", "EligibilityDecision", "SynthesisDecision", "ScientificImpactPage", "DecisionConsumerPage"]

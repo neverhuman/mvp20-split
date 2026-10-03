@@ -460,3 +460,9 @@ Rotated MBT checkpoint:
 MBT rotated checkpoints:
 
 | 2026-10-02 13:58:34 | B1 production publication verified; installed replacement next; child0/4,parent8/24 | Knowledge0.13.0;305 owner/dev tests;actual three-owner publication |
+
+- `2026-10-03 02:09:43`: B1.07b complete; Research0.20.0/contracts0.10.0, research_0008. Immutable scientific decision and exact dependency/consumer indexes,656 source/656 installed,119 compatibility/dev;352 schemas preserve342. Forward correction widens intake membership revision to bigint, preserving applied0007. B1.07=2/3,B1=83.33%,Build27.78%,child20.83%,parent53.47%; gate counts unchanged. Next c Artifact publication.
+
+Rotated MBT checkpoints:
+
+| 2026-10-02 14:12:44 | B1 installed publication/replacement verified; process-death proof next; child0/4,parent8/24 | Knowledge0.13.0;981 tests;8 isolated environments |
