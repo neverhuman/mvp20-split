@@ -1,0 +1,141 @@
+{
+  "wire_version": "1",
+  "reference": {
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "materials"
+    },
+    "experiment_id": "assay",
+    "revision": 1
+  },
+  "supersedes": null,
+  "protocol": {
+    "method": {
+      "schema_id": "fixture.method",
+      "version": "1",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "applicability": {
+      "artifact_id": "context",
+      "scope": {
+        "tenant_id": "fixture",
+        "project_id": "materials"
+      },
+      "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "fixture.method",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "size_bytes": 2
+    },
+    "source": {
+      "artifact_id": "protocol",
+      "scope": {
+        "tenant_id": "fixture",
+        "project_id": "materials"
+      },
+      "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "fixture.method",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "size_bytes": 2
+    }
+  },
+  "samples": [
+    {
+      "sample": {
+        "wire_version": "1",
+        "reference": {
+          "scope": {
+            "tenant_id": "fixture",
+            "project_id": "materials"
+          },
+          "sample_id": "vial",
+          "revision": 1
+        },
+        "candidate": {
+          "scope": {
+            "tenant_id": "fixture",
+            "project_id": "materials"
+          },
+          "candidate_id": "nominal-design",
+          "revision": 1
+        },
+        "material_state": {
+          "scope": {
+            "tenant_id": "fixture",
+            "project_id": "materials"
+          },
+          "material_state_id": "state",
+          "revision": 1
+        },
+        "identity_evidence": {
+          "artifact_id": "identity",
+          "scope": {
+            "tenant_id": "fixture",
+            "project_id": "materials"
+          },
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "fixture.method",
+            "version": "1",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "size_bytes": 2
+        },
+        "supersedes": null
+      },
+      "state": {
+        "wire_version": "1",
+        "reference": {
+          "scope": {
+            "tenant_id": "fixture",
+            "project_id": "materials"
+          },
+          "material_state_id": "state",
+          "revision": 1
+        },
+        "candidate": {
+          "scope": {
+            "tenant_id": "fixture",
+            "project_id": "materials"
+          },
+          "candidate_id": "nominal-design",
+          "revision": 1
+        },
+        "supersedes": null,
+        "preparation": [],
+        "features": []
+      }
+    }
+  ],
+  "expectations": [
+    {
+      "expectation_id": "readout",
+      "sample": {
+        "scope": {
+          "tenant_id": "fixture",
+          "project_id": "materials"
+        },
+        "sample_id": "vial",
+        "revision": 1
+      },
+      "readout": {
+        "criterion_id": "concentration",
+        "kind": "numeric",
+        "unit": "mg/L",
+        "x_unit": null
+      },
+      "replicate": {
+        "replicate_id": "replicate-1",
+        "role": "sample"
+      }
+    }
+  ]
+}

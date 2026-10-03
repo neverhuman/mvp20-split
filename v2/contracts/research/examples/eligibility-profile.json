@@ -1,0 +1,78 @@
+{
+  "wire_version": "1",
+  "authority": "synthetic",
+  "reference": {
+    "schema_id": "fixture.method",
+    "version": "1",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "context": {
+    "subject": {
+      "candidate": {
+        "scope": {
+          "tenant_id": "fixture",
+          "project_id": "materials"
+        },
+        "candidate_id": "nominal-design",
+        "revision": 1
+      },
+      "material_state": {
+        "scope": {
+          "tenant_id": "fixture",
+          "project_id": "materials"
+        },
+        "material_state_id": "state",
+        "revision": 1
+      },
+      "sample": {
+        "scope": {
+          "tenant_id": "fixture",
+          "project_id": "materials"
+        },
+        "sample_id": "vial",
+        "revision": 1
+      }
+    },
+    "domain": "fixture.polymer",
+    "purpose": "fixture.screening",
+    "conditions": {
+      "artifact_id": "conditions",
+      "scope": {
+        "tenant_id": "fixture",
+        "project_id": "materials"
+      },
+      "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "fixture.method",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "size_bytes": 2
+    }
+  },
+  "requirements": [
+    {
+      "criterion_id": "identity",
+      "kind": "measurement",
+      "method": {
+        "schema_id": "fixture.method",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "required": true,
+      "excluded_flags": []
+    },
+    {
+      "criterion_id": "accuracy",
+      "kind": "measurement",
+      "method": {
+        "schema_id": "fixture.method",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "required": false,
+      "excluded_flags": []
+    }
+  ]
+}

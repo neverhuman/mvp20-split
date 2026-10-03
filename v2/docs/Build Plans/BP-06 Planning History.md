@@ -1,5 +1,14 @@
 # BP-06 Planning History
 
+## BP-06.04/B1.04 public documents complete - 2026-10-03 00:33:49
+
+Research0.16.0/contracts0.7.0;458 source/458 independently installed tests,119 compatibility/dev cases,1024 owner statements/174 branches covered.330 schemas preserve316 predecessors. [Evidence](../Audits/Evidence/BP-06-Research/Scientific_Documents.json). Exact value/identity/context and policy mappings preserve alternative routes and optional quality focus. Peer compatibility metadata: Evidence0.5.6, Knowledge contracts0.7.1/owner0.15.1, Data0.11.6; no peer implementation change. No new persistence/API/authenticated lab ingestion. B1 4/8=50%, child12.50%, parent52.08%; gates0/4 and12/24 unchanged. B1.05 active.
+
+Rotated MBT checkpoint:
+
+| 2026-10-02 13:03:31 | B1 pure upload-attempt policy verified; durable journal next; child0/4,parent8/24 | 157 publication/SDK/dev tests; no additional migration |
+
+
 ## BP-06.04/B1.03 synthesis/eligibility complete - 2026-10-03 00:13:55
 
 Research0.15.0;103 new direct cases,339 combined source/installed tests,14 dev tests,898 statements/154 branches covered. [Evidence](../Audits/Evidence/BP-06-Research/Synthesis_Eligibility_Policies.json). Synthesis separates route evidence from project constraints and preserves alternatives/bounded failed searches. Eligibility preserves optional weaknesses/focus while enforcing explicit action prerequisites. Fixed synthetic authority; no public schema/store/API or scientific claim. B1 3/8=37.50%, child9.38%, parent51.56%; gates0/4 and12/24 unchanged. B1.04 active.

@@ -1,13 +1,22 @@
-# Research Identity Contracts
+# Research Contracts
+
+Version0.7.0 adds MaterialStateRevision, ExperimentDefinition, ObservationRevision, SynthesisProfile/Assessment and EligibilityProfile/Assessment. Seven new roots publish14 schemas while preserving all316 predecessors. CandidateRevisionRef, MaterialStateRevisionRef and SampleIdentity remain unchanged. Examples are synthetic shape fixtures with placeholder artifact digests, not retrievable lab evidence.
+
+Focused modules measurements.py/materials.py/experiments.py/observations.py/synthesis.py/eligibility.py own their transport subsets. Exact numeric values use bounded decimal strings; discriminated numeric/categorical/censored/missing/series variants preserve original meaning. Nullable fields remain explicit. Unit/decimal lexical patterns and collection limits are transport checks; exponent/precision bounds, interval coherence, scientific identity/context, predecessor chains, step dependencies and evidence sufficiency are enforced by Research domain reconstruction. JSON Schema success is not domain acceptance. Measurement regex patterns use an explicit end-of-input assertion so trailing newlines cannot differ between Python and JSON Schema validation.
+
+Profiles are trusted configuration documents, not a permission to accept caller-supplied verdicts. Profile/assessment authority is fixed synthetic; evidence origins may retain rejected scientific claims without promoting them. Full policy configuration, exact context, alternatives, blockers/gaps, criterion reviews and follow-up focus are retained. The owner creates assessment output through domain policies. These payload documents do not yet define persistent decision identities, public submit endpoints, receipt publication or Runtime authority; later store/API milestones own their envelopes and source-resolution rules.
+
+Research explicitly maps DTOs to/from private domain objects. Mapping does not authenticate an Artifact or execute a physical experiment. Assessment output is projected from owner policy; no mapper turns arbitrary output verdicts into trusted input. New document schemas leave existing assessment/publication/correction protocols untouched. Exact dependency compatibility patches coordinate Evidence0.5.6, Knowledge contracts0.7.1, Knowledge0.15.1 and Data0.11.6; peer implementation code remains unchanged.
+
 
 Version0.6.0 adds CorrectAssessmentReceipt and SelectAssessmentReceipt: reference-only owner correction and explicit future-campaign selection. Returns shared ReceiptCorrectionView from graph-runtime0.13.0, including the exact revision reference for later selection or expected-head comparison. Prior assessment/publication schemas are unchanged; tests/test_corrections.py and examples cover the new requests. No persistence or currentness policy lives in this package.
 
-- Package: `amphora-contracts-research` 0.5.0, wire1; identity declarations and synthetic assessment shapes.
+- Package: `amphora-contracts-research` 0.7.0, wire1; identity declarations and synthetic assessment shapes.
 - Design: [Candidates](../../docs/Architecture/Research/Candidates.md), [experiments](../../docs/Architecture/Research/Experiments.md).
 
 Public imports use `amphora_contracts_research`; public Core, Artifacts and Graph Runtime contracts plus Pydantic dependencies. DTOs are immutable, strict, bounded and extra-forbidden. No service code, storage, scientific evaluation or permission is provided.
 
-CandidateRevision identifies an intended design with its exact representation artifact. SampleIdentity identifies a physical sample, its exact candidate revision, optional exact material-state revision, and identity-evidence artifact. Missing material state stays null; nominal equality never invents a preparation history or specimen. MaterialStateRevisionRef is only a reference here; processing/morphology records and scientific eligibility remain BP-06.04.
+CandidateRevision identifies an intended design with its exact representation artifact. SampleIdentity identifies a physical sample, its exact candidate revision, optional exact material-state revision, and identity-evidence artifact. Missing material state stays null; nominal equality never invents a preparation history or specimen. MaterialStateRevisionRef remains unchanged; the additive MaterialStateRevision document now preserves preparation and feature evidence.
 
 ResearchQuestion pins objective, scoped applicability artifact and predeclared answer criteria. EvidenceNeed pins an exact question revision, selected criterion IDs, required method schema and scoped context artifact. These records describe required evidence; they neither assert that a question is answered nor publish Knowledge claims. Text/criterion descriptions are data, never executable instructions.
 

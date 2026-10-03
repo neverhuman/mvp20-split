@@ -1,0 +1,459 @@
+{
+  "wire_version": "1",
+  "authority": "synthetic",
+  "policy": {
+    "wire_version": "1",
+    "authority": "synthetic",
+    "reference": {
+      "schema_id": "fixture.method",
+      "version": "1",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "context": {
+      "candidate": {
+        "scope": {
+          "tenant_id": "fixture",
+          "project_id": "materials"
+        },
+        "candidate_id": "nominal-design",
+        "revision": 1
+      },
+      "domain": "fixture.polymer",
+      "purpose": "fixture.production",
+      "conditions": {
+        "artifact_id": "conditions",
+        "scope": {
+          "tenant_id": "fixture",
+          "project_id": "materials"
+        },
+        "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "fixture.method",
+          "version": "1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "size_bytes": 2
+      },
+      "scale": {
+        "value": "1",
+        "unit": "g"
+      },
+      "purity": {
+        "artifact_id": "purity",
+        "scope": {
+          "tenant_id": "fixture",
+          "project_id": "materials"
+        },
+        "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "fixture.method",
+          "version": "1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "size_bytes": 2
+      }
+    },
+    "allowed_postures": [
+      "demonstrated"
+    ],
+    "allowed_step_postures": [
+      "demonstrated"
+    ],
+    "required_checks": [
+      "equipment",
+      "precursor_access"
+    ]
+  },
+  "alternatives": [
+    {
+      "option": {
+        "evidence": {
+          "context": {
+            "candidate": {
+              "scope": {
+                "tenant_id": "fixture",
+                "project_id": "materials"
+              },
+              "candidate_id": "nominal-design",
+              "revision": 1
+            },
+            "domain": "fixture.polymer",
+            "purpose": "fixture.production",
+            "conditions": {
+              "artifact_id": "conditions",
+              "scope": {
+                "tenant_id": "fixture",
+                "project_id": "materials"
+              },
+              "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "media_type": "application/json",
+              "schema_ref": {
+                "schema_id": "fixture.method",
+                "version": "1",
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+              },
+              "size_bytes": 2
+            },
+            "scale": {
+              "value": "1",
+              "unit": "g"
+            },
+            "purity": {
+              "artifact_id": "purity",
+              "scope": {
+                "tenant_id": "fixture",
+                "project_id": "materials"
+              },
+              "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "media_type": "application/json",
+              "schema_ref": {
+                "schema_id": "fixture.method",
+                "version": "1",
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+              },
+              "size_bytes": 2
+            }
+          },
+          "route": {
+            "artifact_id": "blocked",
+            "scope": {
+              "tenant_id": "fixture",
+              "project_id": "materials"
+            },
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "fixture.method",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "size_bytes": 2
+          },
+          "posture": "demonstrated",
+          "provenance": {
+            "method": {
+              "schema_id": "fixture.method",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "tool": {
+              "schema_id": "fixture.method",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "models": [],
+            "sources": [
+              {
+                "artifact_id": "source",
+                "scope": {
+                  "tenant_id": "fixture",
+                  "project_id": "materials"
+                },
+                "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "fixture.method",
+                  "version": "1",
+                  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                "size_bytes": 2
+              }
+            ]
+          },
+          "steps": [
+            {
+              "step_id": "prepare",
+              "requires": [],
+              "posture": "demonstrated",
+              "record": {
+                "artifact_id": "step",
+                "scope": {
+                  "tenant_id": "fixture",
+                  "project_id": "materials"
+                },
+                "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "fixture.method",
+                  "version": "1",
+                  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                "size_bytes": 2
+              },
+              "sources": [
+                {
+                  "artifact_id": "step-evidence",
+                  "scope": {
+                    "tenant_id": "fixture",
+                    "project_id": "materials"
+                  },
+                  "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "schema_id": "fixture.method",
+                    "version": "1",
+                    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                  },
+                  "size_bytes": 2
+                }
+              ],
+              "gaps": []
+            }
+          ],
+          "search": null,
+          "next_checks": []
+        },
+        "checks": [
+          {
+            "criterion_id": "equipment",
+            "disposition": "failed",
+            "evidence": [
+              {
+                "artifact_id": "equipment-evidence",
+                "scope": {
+                  "tenant_id": "fixture",
+                  "project_id": "materials"
+                },
+                "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "fixture.method",
+                  "version": "1",
+                  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                "size_bytes": 2
+              }
+            ],
+            "reasons": [
+              "fixture_assertion"
+            ]
+          },
+          {
+            "criterion_id": "precursor_access",
+            "disposition": "met",
+            "evidence": [
+              {
+                "artifact_id": "precursor_access-evidence",
+                "scope": {
+                  "tenant_id": "fixture",
+                  "project_id": "materials"
+                },
+                "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "fixture.method",
+                  "version": "1",
+                  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                "size_bytes": 2
+              }
+            ],
+            "reasons": [
+              "fixture_assertion"
+            ]
+          }
+        ]
+      },
+      "disposition": "blocked",
+      "blockers": [
+        "equipment"
+      ],
+      "gaps": []
+    },
+    {
+      "option": {
+        "evidence": {
+          "context": {
+            "candidate": {
+              "scope": {
+                "tenant_id": "fixture",
+                "project_id": "materials"
+              },
+              "candidate_id": "nominal-design",
+              "revision": 1
+            },
+            "domain": "fixture.polymer",
+            "purpose": "fixture.production",
+            "conditions": {
+              "artifact_id": "conditions",
+              "scope": {
+                "tenant_id": "fixture",
+                "project_id": "materials"
+              },
+              "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "media_type": "application/json",
+              "schema_ref": {
+                "schema_id": "fixture.method",
+                "version": "1",
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+              },
+              "size_bytes": 2
+            },
+            "scale": {
+              "value": "1",
+              "unit": "g"
+            },
+            "purity": {
+              "artifact_id": "purity",
+              "scope": {
+                "tenant_id": "fixture",
+                "project_id": "materials"
+              },
+              "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "media_type": "application/json",
+              "schema_ref": {
+                "schema_id": "fixture.method",
+                "version": "1",
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+              },
+              "size_bytes": 2
+            }
+          },
+          "route": {
+            "artifact_id": "usable",
+            "scope": {
+              "tenant_id": "fixture",
+              "project_id": "materials"
+            },
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "fixture.method",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "size_bytes": 2
+          },
+          "posture": "demonstrated",
+          "provenance": {
+            "method": {
+              "schema_id": "fixture.method",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "tool": {
+              "schema_id": "fixture.method",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "models": [],
+            "sources": [
+              {
+                "artifact_id": "source",
+                "scope": {
+                  "tenant_id": "fixture",
+                  "project_id": "materials"
+                },
+                "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "fixture.method",
+                  "version": "1",
+                  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                "size_bytes": 2
+              }
+            ]
+          },
+          "steps": [
+            {
+              "step_id": "prepare",
+              "requires": [],
+              "posture": "demonstrated",
+              "record": {
+                "artifact_id": "step",
+                "scope": {
+                  "tenant_id": "fixture",
+                  "project_id": "materials"
+                },
+                "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "fixture.method",
+                  "version": "1",
+                  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                "size_bytes": 2
+              },
+              "sources": [
+                {
+                  "artifact_id": "step-evidence",
+                  "scope": {
+                    "tenant_id": "fixture",
+                    "project_id": "materials"
+                  },
+                  "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "schema_id": "fixture.method",
+                    "version": "1",
+                    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                  },
+                  "size_bytes": 2
+                }
+              ],
+              "gaps": []
+            }
+          ],
+          "search": null,
+          "next_checks": []
+        },
+        "checks": [
+          {
+            "criterion_id": "equipment",
+            "disposition": "met",
+            "evidence": [
+              {
+                "artifact_id": "equipment-evidence",
+                "scope": {
+                  "tenant_id": "fixture",
+                  "project_id": "materials"
+                },
+                "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "fixture.method",
+                  "version": "1",
+                  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                "size_bytes": 2
+              }
+            ],
+            "reasons": [
+              "fixture_assertion"
+            ]
+          },
+          {
+            "criterion_id": "precursor_access",
+            "disposition": "met",
+            "evidence": [
+              {
+                "artifact_id": "precursor_access-evidence",
+                "scope": {
+                  "tenant_id": "fixture",
+                  "project_id": "materials"
+                },
+                "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "fixture.method",
+                  "version": "1",
+                  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                "size_bytes": 2
+              }
+            ],
+            "reasons": [
+              "fixture_assertion"
+            ]
+          }
+        ]
+      },
+      "disposition": "eligible",
+      "blockers": [],
+      "gaps": []
+    }
+  ]
+}

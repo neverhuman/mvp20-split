@@ -1,0 +1,112 @@
+{
+  "timestamp_local": "2026-10-03 00:33:49",
+  "status": "passed",
+  "scope": "BP-06.04/B1.04 additive public scientific documents and explicit mappings",
+  "owner_version": "0.16.0",
+  "contracts_version": "0.7.0",
+  "source_tests": 458,
+  "installed_tests": 458,
+  "compatibility_and_dev_tests": 119,
+  "coverage": {
+    "covered_lines": 1024,
+    "num_statements": 1024,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100",
+    "num_branches": 174,
+    "num_partial_branches": 0,
+    "covered_branches": 174,
+    "missing_branches": 0,
+    "percent_branches_covered": 100.0,
+    "percent_branches_covered_display": "100"
+  },
+  "schemas": {
+    "total": 330,
+    "unchanged_predecessors": 316,
+    "additions": {
+      "research.eligibility-assessment.serialization.json": "6366919145414688ad6b1dace620097f9ee98a3ec0eec62c2e45453d0ecae356",
+      "research.eligibility-assessment.validation.json": "50df00fb228150ee4b8dde199933a89995a183202078d10181ffe983b1b56df9",
+      "research.eligibility-profile.serialization.json": "1360c17aa688259ffd6faa34fb92eae126460cde760f3cd5755f3bc75de87aed",
+      "research.eligibility-profile.validation.json": "173b144f8c7f2c031ef42af0010f6bb1c79b5807da8c6c24a3a32059cfab2941",
+      "research.experiment-definition.serialization.json": "7a5f3543d1a5a439ad651022304f2ca4bff40d7d1edc7fc2cbd4aeaf93e0e393",
+      "research.experiment-definition.validation.json": "a027eee4ae89fb3d60a503e702f3ecb03b7a2df96076d81dd8979bbf6cc106fe",
+      "research.material-state-revision.serialization.json": "390b29d06daceef2d47f88dcb0eaedd77b58f0ffad8b50652606f59044429150",
+      "research.material-state-revision.validation.json": "cfe6ae083d62919fbe87f22065bf2c52b55a39ebed3e28a97840cdfbd619d762",
+      "research.observation-revision.serialization.json": "bca451df0678adc96836a08d928de424c259c9158b60fd91a3cccd7577c78f25",
+      "research.observation-revision.validation.json": "aad6f5aa34501acfaadd911bcf6dbd06e7247344b287ff7fe87cc707402f492a",
+      "research.synthesis-assessment.serialization.json": "ad8d4acaf14b444acdaf24ec73369cb96c1cd8bcdb7e392aa34b47d9b966c906",
+      "research.synthesis-assessment.validation.json": "d505c7a49466727e05c6670dd75c803601452f5537bdaccae99be5e458cb8bf6",
+      "research.synthesis-profile.serialization.json": "0d3186f77949b6e80a599edff0a618ecd5e2e405059e4d45d51d2457d1b1937f",
+      "research.synthesis-profile.validation.json": "fe63cc7e5e07bc75011dbcce8f8db90d933ba7429403f473cf6753ee500cb9f5"
+    }
+  },
+  "installed_manifest": {
+    "timestamp_local": "2026-10-03 00:29:40",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-research",
+    "forbidden_implementations": [
+      "amphora_knowledge",
+      "amphora_data_artifacts",
+      "amphora_campaign_runtime"
+    ],
+    "packages": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.6",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-knowledge": "0.7.1",
+      "amphora-contracts-research": "0.7.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-research": "0.16.0",
+      "amphora-tool-protocol": "0.2.0"
+    },
+    "wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.6-py3-none-any.whl": "05abdcd2bb599bcad1acd5fa819d3685fae9036c5ec67c8fd5b0ce3126732620",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_knowledge-0.7.1-py3-none-any.whl": "7e57c2c7905e0a358a48e6c6015e7ed11a70102d797411413e44a5827fe82e91",
+      "amphora_contracts_research-0.7.0-py3-none-any.whl": "f85d04f72469b2b81affa707786e0d769176543691e7d2d7cd56d31f5ef84abb",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_research-0.16.0-py3-none-any.whl": "cee58a3ef12e3973e583a9229765858d4b4d2146c0d78742c8aa078b98dd5f45",
+      "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+    }
+  },
+  "compatibility_only_versions": {
+    "evidence_contracts": "0.5.6",
+    "knowledge_contracts": "0.7.1",
+    "knowledge_service": "0.15.1",
+    "data_service": "0.11.6"
+  },
+  "oracles": [
+    "Exact decimal lexical values and original units survive JSON",
+    "Strict numeric/boolean handling and end-of-input regex parity",
+    "Censor bounds, missingness, series ordering and uncertainty survive mapping",
+    "Shape-valid semantic errors still fail domain reconstruction",
+    "Original specimen/state/context/revision identities preserved",
+    "Synthetic authority and explicit hard/optional prerequisites remain distinct",
+    "Blocked alternatives and next-iteration focus survive public documents"
+  ],
+  "checks": [
+    "ruff passed",
+    "Production dependency boundaries verified",
+    "schema publication check passed",
+    "all seven affected exact lockfiles updated offline"
+  ],
+  "limits": [
+    "No new storage, authenticated report adapter, public submission endpoint or receipt publication",
+    "No lab submission or scientific validity claim",
+    "Profile/source integrity remains a boundary resolution responsibility",
+    "Decision identity/store/API envelopes remain later scoped milestones"
+  ]
+}

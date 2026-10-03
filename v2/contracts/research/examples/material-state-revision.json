@@ -1,0 +1,22 @@
+{
+  "wire_version": "1",
+  "reference": {
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "materials"
+    },
+    "material_state_id": "state",
+    "revision": 1
+  },
+  "candidate": {
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "materials"
+    },
+    "candidate_id": "nominal-design",
+    "revision": 1
+  },
+  "supersedes": null,
+  "preparation": [],
+  "features": []
+}
