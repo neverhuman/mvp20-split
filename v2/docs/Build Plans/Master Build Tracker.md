@@ -9,12 +9,12 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 primary active; BP-06.03 closed; BP-07 through BP-09 queued; BP-05 closed.
-- Last refreshed: `2026-10-03 12:11:37` (America/Chicago).
+- Last refreshed: `2026-10-03 12:24:23` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P5 / BP-06 - Knowledge Evidence and Source Loop.
-- Primary active task: BP-06.04/Acceptance/V1.02 actual replacement/publication process proof; V1.01 complete.
-- Next task: BP-06.04/V1.03 scoped audit/archive.
-- Implementation completion: BP-06 **63.89%** ((15 + 1/3)/24),15/24 closed delivery gates. BP-06.01/.02/.03 closed100%; BP-06.04 at83.33%, later children0%. BP-07..09 remain0%.
+- Primary active task: BP-06.04/Acceptance/V1.03 scoped audit/README reconciliation and archival; replacement proof complete.
+- Next task: BP-06.05 activation after BP-06.04 acceptance.
+- Implementation completion: BP-06 **65.28%** ((15 + 2/3)/24),15/24 closed delivery gates. BP-06.01/.02/.03 closed100%; BP-06.04 at91.67%, later children0%. BP-07..09 remain0%.
 - Active focus: laboratory returns/material-state/candidate eligibility boundary reconciliation.
 - Blockers: none requiring owner direction; future-only corrections and iterative-progress policy approved.
 - Acceptance posture: BP-06.03 bounded synthetic software accepted; scientific/deployment gates remain separately scoped.
@@ -36,11 +36,11 @@ BP-06 is the sole active parent. BP-05 closed16/16; see [completed plans](Comple
 
 | Parent | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-06](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) | 63.89% ((15 + 1/3)/24) | 100% | 100% | 100% | 83.33% | 0% | 0% |
+| [BP-06](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) | 65.28% ((15 + 2/3)/24) | 100% | 100% | 100% | 91.67% | 0% | 0% |
 
 | Active canonical child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-06.04](BP-06/BP-06.04%20Laboratory%20returns%20and%20candidate%20eligibility.md) | 83.33% | 100% | 33.33% | V1.02 / Actual replacement and publication process proof |
+| [BP-06.04](BP-06/BP-06.04%20Laboratory%20returns%20and%20candidate%20eligibility.md) | 91.67% | 100% | 66.67% | V1.03 / Scoped audit and archival |
 
 
 
@@ -124,6 +124,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-03 12:24:23 | V1.02 complete; child91.67%, parent65.28%; V1.03 active | [Replacement/recovery](../Audits/Evidence/BP-06-Research/Laboratory_Replacement_Recovery.json);2 fresh cutovers and9 publisher process barriers |
 | 2026-10-03 12:11:37 | V1.01 complete; child83.33%, parent63.89%; V1.02 active | [Independent build](../Audits/Evidence/BP-06-Research/Laboratory_Independent_Build.json);fresh Research0.31.0,919 installed tests,9 separate opt-ins |
 | 2026-10-03 12:06:32 | B3 complete; child75%, parent62.50%; V1.01 active; gates3/4 and15/24 | [Defensive failures](../Audits/Evidence/BP-06-Research/Scientific_Defensive_Failures.json);108 source/108 installed,351 statements/55 of56 branches |
 | 2026-10-03 11:58:32 | B3.02 complete; child66.67%, parent61.11%; B3.03 active; gates2/4 and14/24 | [Process recovery](../Audits/Evidence/BP-06-Research/Scientific_Process_Recovery.json);6 source/6 installed actual kill cases,14 dev |
@@ -148,6 +149,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-03 00:33:49 | BP-06.04/B1.04 complete; child12.50%, parent52.08%; B1.05 active | [Public documents](../Audits/Evidence/BP-06-Research/Scientific_Documents.json);458 source/458 installed,119 compatibility/dev;330 schemas preserve316 |
 | 2026-10-03 00:13:55 | BP-06.04/B1.03 complete; child9.38%, parent51.56%; B1.04 active | [Purpose-bound policies](../Audits/Evidence/BP-06-Research/Synthesis_Eligibility_Policies.json);339 source/339 installed,898 statements/154 branches |
 | 2026-10-02 23:58:49 | BP-06.04/B1.02 complete; child6.25%, parent51.04%; B1.03 active | [Context objects](../Audits/Evidence/BP-06-Research/Material_Experiment_Observation.json);236 source/236 installed,551 statements/110 branches |
-| 2026-10-02 23:32:30 | BP-06.04/B1.01 complete; child3.13%, parent50.52%; B1.02 active | [Measurement values](../Audits/Evidence/BP-06-Research/Measurement_Values.json);97 source/97 installed,143 statements/48 branches |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

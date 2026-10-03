@@ -1,0 +1,455 @@
+{
+  "timestamp_local": "2026-10-03 12:24:23",
+  "milestone": "BP-06.04/V1.02",
+  "build_evidence": "Laboratory_Independent_Build.json",
+  "verification": {
+    "installed_cutover_workflows": 2,
+    "cutover_seconds": 83.27,
+    "installed_publication_workflows": 1,
+    "publication_barriers": 9,
+    "publication_seconds": 121.26,
+    "production_changes": false
+  },
+  "cutover_runs": [
+    {
+      "timestamp_local": "2026-10-03 12:12:58",
+      "scope": {
+        "tenant_id": "research-tests",
+        "project_id": "f8100589d51d4c089753bc1f29cae6f2"
+      },
+      "test_python": "Z:\\mvp20-split\\v2\\.test-results\\research-laboratory-closeout-20261003\\environment\\Scripts\\python.exe",
+      "research_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "replacement_python": "Z:\\mvp20-split\\v2\\.test-results\\research-laboratory-closeout-20261003\\environment\\Scripts\\python.exe",
+      "data_python": "Z:\\mvp20-split\\v2\\.test-results\\knowledge-publication-installed-20261002-1359\\initial\\data\\Scripts\\python.exe",
+      "cases": [
+        "actual_lab_and_both_decision_HTTP",
+        "partial_failed_controls_preserved",
+        "optional_accuracy_focus",
+        "typed_Artifact_only_publication",
+        "consumer_exact_lineage",
+        "separate_grants_and_original_actor",
+        "all_scientific_record_reads",
+        "isolated_Research_replacement",
+        "offline_history_and_publication_replay",
+        "pending_profile_survives_removal",
+        "fresh_rights_after_Data_restart"
+      ],
+      "limits": [
+        "Synthetic evidence, no scientific validity",
+        "Idle process replacement, not crash-barrier durability",
+        "No physical laboratory or quality UI"
+      ],
+      "workflow": "scientific"
+    },
+    {
+      "timestamp_local": "2026-10-03 12:13:40",
+      "scope": {
+        "tenant_id": "research-tests",
+        "project_id": "8cb9ed75773e42929089f0d384ce5aa0"
+      },
+      "test_python": "Z:\\mvp20-split\\v2\\.test-results\\research-laboratory-closeout-20261003\\environment\\Scripts\\python.exe",
+      "research_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "replacement_python": "Z:\\mvp20-split\\v2\\.test-results\\research-laboratory-closeout-20261003\\environment\\Scripts\\python.exe",
+      "data_python": "Z:\\mvp20-split\\v2\\.test-results\\knowledge-publication-installed-20261002-1359\\initial\\data\\Scripts\\python.exe",
+      "cases": [
+        "actual_Artifact_dependencies",
+        "authenticated_intake_and_correction",
+        "exact_normalization",
+        "weak_usable_and_focus",
+        "strict_action_only_exclusion",
+        "pending_pin_survives_correction",
+        "explicit_later_revision_selection",
+        "exact_future_only_impacts",
+        "current_Data_access_denial",
+        "independent_installed_replacement",
+        "zero_profile_offline_history",
+        "stored_profile_retry_after_access_restored"
+      ],
+      "limits": [
+        "Synthetic science; no physical validity or quality UI",
+        "Interpretation input transitions, not new Runtime authority",
+        "Idle process replacement, not crash-at-barrier proof",
+        "Access-grant denial, not per-source rights revocation"
+      ],
+      "workflow": "interpretation"
+    }
+  ],
+  "publication_run": {
+    "timestamp_local": "2026-10-03 12:21:46",
+    "scope": {
+      "tenant_id": "research-tests",
+      "project_id": "167887e1082043b0aa4501036454bad3"
+    },
+    "test_python": "Z:\\mvp20-split\\v2\\.test-results\\research-laboratory-closeout-20261003\\environment\\Scripts\\python.exe",
+    "research_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+    "replacement_python": "Z:\\mvp20-split\\v2\\.test-results\\research-laboratory-closeout-20261003\\environment\\Scripts\\python.exe",
+    "data_python": "Z:\\mvp20-split\\v2\\.test-results\\knowledge-publication-installed-20261002-1359\\initial\\data\\Scripts\\python.exe",
+    "lease_profile": "Test-only five-second DB-clock lease; production replacement sixty seconds",
+    "limits": [
+      "Synthetic science; no Runtime receipt authority",
+      "Process death, not host power loss",
+      "Lab-intake payload here; all three publication kinds have separate shape/workflow tests"
+    ]
+  },
+  "publication_cases": [
+    {
+      "timestamp_local": "2026-10-03 12:20:15",
+      "barrier": "prepared",
+      "query": {
+        "wire_version": "1",
+        "target": {
+          "kind": "lab-intake",
+          "scope": {
+            "tenant_id": "research-tests",
+            "project_id": "167887e1082043b0aa4501036454bad3"
+          },
+          "intake_id": "kill-prepared"
+        }
+      },
+      "stage_after_kill": "prepared",
+      "status_after_kill": "pending",
+      "begin_id_before": "30b7c85730dbb941b4e3e0c8c9fd943136d5a5ac5eaf076833ae197ffb764d29",
+      "finalize_id_before": "b3e211526fecfe163ec8f385fef1c4f24412f49b2827235f5c08cf074ee5be69",
+      "begin_id_after": "30b7c85730dbb941b4e3e0c8c9fd943136d5a5ac5eaf076833ae197ffb764d29",
+      "finalize_id_after": "b3e211526fecfe163ec8f385fef1c4f24412f49b2827235f5c08cf074ee5be69",
+      "recovered_ordinal": 1,
+      "abandoned_upload_not_finalized": false,
+      "artifact": {
+        "artifact_id": "5ff5104d5ae1406cb288226c49adf0ea",
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "167887e1082043b0aa4501036454bad3"
+        },
+        "sha256": "57cd62eb8b709cb42e654a9953f1abe22c4885dd461995e5278c2d27f3c7e98a",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "research.lab-intake.payload",
+          "version": "1",
+          "sha256": "67cbdaf25943f962539e400018bd0f0016b403f51adabf7739f2a5f5a0a48da8"
+        },
+        "size_bytes": 4220
+      }
+    },
+    {
+      "timestamp_local": "2026-10-03 12:20:26",
+      "barrier": "begin_returned",
+      "query": {
+        "wire_version": "1",
+        "target": {
+          "kind": "lab-intake",
+          "scope": {
+            "tenant_id": "research-tests",
+            "project_id": "167887e1082043b0aa4501036454bad3"
+          },
+          "intake_id": "kill-begin_returned"
+        }
+      },
+      "stage_after_kill": "prepared",
+      "status_after_kill": "pending",
+      "begin_id_before": "767894a31fde2d29df382d2a2d12a083fa7014660cdeb527dec702f83905450e",
+      "finalize_id_before": "184293b47b1e5f96068edcae5f4d4c1994556dbe35293a33cbacd88246459e49",
+      "begin_id_after": "767894a31fde2d29df382d2a2d12a083fa7014660cdeb527dec702f83905450e",
+      "finalize_id_after": "184293b47b1e5f96068edcae5f4d4c1994556dbe35293a33cbacd88246459e49",
+      "recovered_ordinal": 1,
+      "abandoned_upload_not_finalized": false,
+      "artifact": {
+        "artifact_id": "7dccb75663fb4a74936b5f199d69e52e",
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "167887e1082043b0aa4501036454bad3"
+        },
+        "sha256": "b4e4d865b9d00174a3406384ab53c375482109904d90b63ac82b196850580366",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "research.lab-intake.payload",
+          "version": "1",
+          "sha256": "67cbdaf25943f962539e400018bd0f0016b403f51adabf7739f2a5f5a0a48da8"
+        },
+        "size_bytes": 4226
+      }
+    },
+    {
+      "timestamp_local": "2026-10-03 12:20:39",
+      "barrier": "stream_started",
+      "query": {
+        "wire_version": "1",
+        "target": {
+          "kind": "lab-intake",
+          "scope": {
+            "tenant_id": "research-tests",
+            "project_id": "167887e1082043b0aa4501036454bad3"
+          },
+          "intake_id": "kill-stream_started"
+        }
+      },
+      "stage_after_kill": "streaming",
+      "status_after_kill": "pending",
+      "begin_id_before": "ad9c71ede20d6ed341ce83c48d60871d0dd6cca222f0e09580e92a11966523f1",
+      "finalize_id_before": "561f98c92e0fb8af39a01425e3bce4217b4bad22aef24d8912c3294fe444fca0",
+      "begin_id_after": "fb5992b1a23fbcab538de119407956e322060a1e0d9631444e1a61622b95a373",
+      "finalize_id_after": "d459e41390718cd6e4086eb0aaac38938e45b5dbf37459e7577cfa667a1d3420",
+      "recovered_ordinal": 2,
+      "abandoned_upload_not_finalized": true,
+      "artifact": {
+        "artifact_id": "e59cac39d73c468db7e75b7001bf2114",
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "167887e1082043b0aa4501036454bad3"
+        },
+        "sha256": "01528b855b3ea91b071a92de369fd8f5befcea91c77ee91431d1b3de483c7faa",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "research.lab-intake.payload",
+          "version": "1",
+          "sha256": "67cbdaf25943f962539e400018bd0f0016b403f51adabf7739f2a5f5a0a48da8"
+        },
+        "size_bytes": 4226
+      }
+    },
+    {
+      "timestamp_local": "2026-10-03 12:20:51",
+      "barrier": "stream_returned",
+      "query": {
+        "wire_version": "1",
+        "target": {
+          "kind": "lab-intake",
+          "scope": {
+            "tenant_id": "research-tests",
+            "project_id": "167887e1082043b0aa4501036454bad3"
+          },
+          "intake_id": "kill-stream_returned"
+        }
+      },
+      "stage_after_kill": "streaming",
+      "status_after_kill": "pending",
+      "begin_id_before": "7da1b683b979004b108dad44244c95ea2c480b3165c2b024b1e248798344927a",
+      "finalize_id_before": "222a1e1eb246773797b2bc076cd19a8167e4d535f7c3fedd42c2707b8ba773eb",
+      "begin_id_after": "6ec2ac3ffbe11ceb5e96888b35742259aa704c42692be6c4266279ed33ed63be",
+      "finalize_id_after": "6dfcd588e1e60841acac8b23b65ad4d9b872a3d40a0222b025d1fdf4bf28b744",
+      "recovered_ordinal": 2,
+      "abandoned_upload_not_finalized": true,
+      "artifact": {
+        "artifact_id": "bd2371d3c4694a30b81ef89589b350cf",
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "167887e1082043b0aa4501036454bad3"
+        },
+        "sha256": "f214ed73d84ff1d83ea1c4dd673bbfb794c5aadb250f66a1855cbf4ac74e263f",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "research.lab-intake.payload",
+          "version": "1",
+          "sha256": "67cbdaf25943f962539e400018bd0f0016b403f51adabf7739f2a5f5a0a48da8"
+        },
+        "size_bytes": 4227
+      }
+    },
+    {
+      "timestamp_local": "2026-10-03 12:21:02",
+      "barrier": "stream_verified",
+      "query": {
+        "wire_version": "1",
+        "target": {
+          "kind": "lab-intake",
+          "scope": {
+            "tenant_id": "research-tests",
+            "project_id": "167887e1082043b0aa4501036454bad3"
+          },
+          "intake_id": "kill-stream_verified"
+        }
+      },
+      "stage_after_kill": "streamed",
+      "status_after_kill": "pending",
+      "begin_id_before": "86f550c180defb676d6346fb6eef56aa73e38a4b380b3c9ac686ae468cb658ee",
+      "finalize_id_before": "cc3eac9fdffcaef5870569574bf40c74a2d808549376da802b2a1d6462acaa3f",
+      "begin_id_after": "86f550c180defb676d6346fb6eef56aa73e38a4b380b3c9ac686ae468cb658ee",
+      "finalize_id_after": "cc3eac9fdffcaef5870569574bf40c74a2d808549376da802b2a1d6462acaa3f",
+      "recovered_ordinal": 1,
+      "abandoned_upload_not_finalized": false,
+      "artifact": {
+        "artifact_id": "e9aad07ae87d470fbb7bd8c970dd7bc8",
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "167887e1082043b0aa4501036454bad3"
+        },
+        "sha256": "af52e5b721a36bde34bdaec320ddd34e2e103e335330538dd672f90e7e5a5214",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "research.lab-intake.payload",
+          "version": "1",
+          "sha256": "67cbdaf25943f962539e400018bd0f0016b403f51adabf7739f2a5f5a0a48da8"
+        },
+        "size_bytes": 4227
+      }
+    },
+    {
+      "timestamp_local": "2026-10-03 12:21:13",
+      "barrier": "finalizing",
+      "query": {
+        "wire_version": "1",
+        "target": {
+          "kind": "lab-intake",
+          "scope": {
+            "tenant_id": "research-tests",
+            "project_id": "167887e1082043b0aa4501036454bad3"
+          },
+          "intake_id": "kill-finalizing"
+        }
+      },
+      "stage_after_kill": "finalizing",
+      "status_after_kill": "pending",
+      "begin_id_before": "2a47e7b393c3949a8fc6d802bd243a00173fbb0a09a0ec842a766daddcad34f6",
+      "finalize_id_before": "a5be4abff8850cb5e67bc0436a788f4383634a144d0c7d8f7ab8b97a5847de83",
+      "begin_id_after": "2a47e7b393c3949a8fc6d802bd243a00173fbb0a09a0ec842a766daddcad34f6",
+      "finalize_id_after": "a5be4abff8850cb5e67bc0436a788f4383634a144d0c7d8f7ab8b97a5847de83",
+      "recovered_ordinal": 1,
+      "abandoned_upload_not_finalized": false,
+      "artifact": {
+        "artifact_id": "bd040d79bb6a4080a91214034dd24533",
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "167887e1082043b0aa4501036454bad3"
+        },
+        "sha256": "c5fac7d890d927f28ec45064834b65e212281561e10fbdb34e9d761bbcc43fb6",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "research.lab-intake.payload",
+          "version": "1",
+          "sha256": "67cbdaf25943f962539e400018bd0f0016b403f51adabf7739f2a5f5a0a48da8"
+        },
+        "size_bytes": 4222
+      }
+    },
+    {
+      "timestamp_local": "2026-10-03 12:21:24",
+      "barrier": "data_finalized",
+      "query": {
+        "wire_version": "1",
+        "target": {
+          "kind": "lab-intake",
+          "scope": {
+            "tenant_id": "research-tests",
+            "project_id": "167887e1082043b0aa4501036454bad3"
+          },
+          "intake_id": "kill-data_finalized"
+        }
+      },
+      "stage_after_kill": "finalizing",
+      "status_after_kill": "pending",
+      "begin_id_before": "e0412ebe163f69fa3e8b7d2e9ef03e109d666c974d2e52cfc84c30fb5d0a651a",
+      "finalize_id_before": "06ba35874061a0aee1b460e8610d488107977e580ed3aeaa016a4b8ee4da4f17",
+      "begin_id_after": "e0412ebe163f69fa3e8b7d2e9ef03e109d666c974d2e52cfc84c30fb5d0a651a",
+      "finalize_id_after": "06ba35874061a0aee1b460e8610d488107977e580ed3aeaa016a4b8ee4da4f17",
+      "recovered_ordinal": 1,
+      "abandoned_upload_not_finalized": false,
+      "artifact": {
+        "artifact_id": "3dab4f2d3a074a9082879f3d050c8210",
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "167887e1082043b0aa4501036454bad3"
+        },
+        "sha256": "133f0923053c8c387e2bf83d0f5e417ccc73f2cc73b33e251b6c282f71417d6a",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "research.lab-intake.payload",
+          "version": "1",
+          "sha256": "67cbdaf25943f962539e400018bd0f0016b403f51adabf7739f2a5f5a0a48da8"
+        },
+        "size_bytes": 4226
+      }
+    },
+    {
+      "timestamp_local": "2026-10-03 12:21:34",
+      "barrier": "terminal_before_commit",
+      "query": {
+        "wire_version": "1",
+        "target": {
+          "kind": "lab-intake",
+          "scope": {
+            "tenant_id": "research-tests",
+            "project_id": "167887e1082043b0aa4501036454bad3"
+          },
+          "intake_id": "kill-terminal_before_commit"
+        }
+      },
+      "stage_after_kill": "finalizing",
+      "status_after_kill": "pending",
+      "begin_id_before": "318cd28f98b6e7bfa38e1b62e3c08bcf3426dfda806be9e6def5629b38f03645",
+      "finalize_id_before": "754a83beef52f060178eacbdd1aa5bd3137d398ffc43969d649de10231184c1b",
+      "begin_id_after": "318cd28f98b6e7bfa38e1b62e3c08bcf3426dfda806be9e6def5629b38f03645",
+      "finalize_id_after": "754a83beef52f060178eacbdd1aa5bd3137d398ffc43969d649de10231184c1b",
+      "recovered_ordinal": 1,
+      "abandoned_upload_not_finalized": false,
+      "artifact": {
+        "artifact_id": "c261c262f726446c8fb7ec172f5b9582",
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "167887e1082043b0aa4501036454bad3"
+        },
+        "sha256": "f5c9bbccf4970e0a394f14d87d62cdbc0b2bcc7555c50795290ab53225be97fe",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "research.lab-intake.payload",
+          "version": "1",
+          "sha256": "67cbdaf25943f962539e400018bd0f0016b403f51adabf7739f2a5f5a0a48da8"
+        },
+        "size_bytes": 4234
+      }
+    },
+    {
+      "timestamp_local": "2026-10-03 12:21:45",
+      "barrier": "terminal_committed",
+      "query": {
+        "wire_version": "1",
+        "target": {
+          "kind": "lab-intake",
+          "scope": {
+            "tenant_id": "research-tests",
+            "project_id": "167887e1082043b0aa4501036454bad3"
+          },
+          "intake_id": "kill-terminal_committed"
+        }
+      },
+      "stage_after_kill": "published",
+      "status_after_kill": "published",
+      "begin_id_before": "ad38ec4dc83730aedca5cd88f790646ba91108f4a3d49384aa33925a443855be",
+      "finalize_id_before": "0781cea5ac996a749cb97a4649fb7461433a3a4702190aafc023a372b834fe76",
+      "begin_id_after": "ad38ec4dc83730aedca5cd88f790646ba91108f4a3d49384aa33925a443855be",
+      "finalize_id_after": "0781cea5ac996a749cb97a4649fb7461433a3a4702190aafc023a372b834fe76",
+      "recovered_ordinal": 1,
+      "abandoned_upload_not_finalized": false,
+      "artifact": {
+        "artifact_id": "e81101e23a884bc89acbcc2fd8e0e2c3",
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "167887e1082043b0aa4501036454bad3"
+        },
+        "sha256": "3a802be60f05f34de7e836c8d27f08856f25b398c84f235074cceca29f40eeca",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "research.lab-intake.payload",
+          "version": "1",
+          "sha256": "67cbdaf25943f962539e400018bd0f0016b403f51adabf7739f2a5f5a0a48da8"
+        },
+        "size_bytes": 4230
+      }
+    }
+  ],
+  "prior_attempt": {
+    "status": "failed_fixture_authorization",
+    "seconds": 96.04,
+    "scope": {
+      "tenant_id": "research-tests",
+      "project_id": "188149a18c474cbb988e49817167db7b"
+    },
+    "failure": "Finalization command lookup used fixture producer instead of original publisher; Data correctly returned404",
+    "correction": "Query command history using publication actor; verify known begin command actor before asserting absence of abandoned finalize",
+    "production_defect": false
+  },
+  "limits": [
+    "Synthetic science and fixture lab report",
+    "Artifact publication grants no DomainReceipt or Runtime acceptance",
+    "Process death, not target-host power loss",
+    "Current Data0.11.0 protocol peer; no fresh Data0.11.13 install claimed"
+  ]
+}

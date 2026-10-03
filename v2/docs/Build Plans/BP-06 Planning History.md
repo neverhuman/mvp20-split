@@ -595,3 +595,9 @@ Defensive routes/publication verified:7 new tests, surrounding108 source/108 ins
 Fresh Research0.31.0 closure excludes peer implementations;919 installed tests pass79.55s,9 separate actual-process opt-ins skipped. V1=33.33%,child83.33%,parent63.89%; gates3/4 and15/24 unchanged. V1.02 closes scientific Artifact publisher actual-kill gap and proves fresh replacement.
 
 | 2026-10-02 23:07:47 | BP-06.03 closed100%; BP-06 parent50%; .04 activation next | [Scoped audit](../Audits/BP-06.03_Reasoning_Receipts_Closeout.md);9 Research kill barriers, independent replacement, schema/isolation |
+
+## 2026-10-03 12:24:23 - V1.02 actual replacement complete
+
+Fresh installed cutover2tests83.27s; scientific publisher9actual barriers121.26s. Initial96.04s failure was wrong actor for command-history lookup; corrected test checks originalpublisher andknownbegin before absence. All old Artifact/command identities preserved except explicit uncertainstream ordinal changes; offline replay verified. V1=66.67%,child91.67%,parent65.28%,gates3/4 and15/24; V1.03 next.
+
+| 2026-10-02 23:32:30 | BP-06.04/B1.01 complete; child3.13%, parent50.52%; B1.02 active | [Measurement values](../Audits/Evidence/BP-06-Research/Measurement_Values.json);97 source/97 installed,143 statements/48 branches |
