@@ -1,0 +1,207 @@
+{
+  "wire_version": "1",
+  "request": {
+    "wire_version": "1",
+    "intake_id": "intake",
+    "profile": {
+      "scope": {
+        "tenant_id": "fixture",
+        "project_id": "materials"
+      },
+      "profile_id": "lab",
+      "version": "1",
+      "sha256": "4f784a3098c10d05f051fe6a0bf970912aaef4c08e7fe6f9ff0a0ede2fa31482"
+    },
+    "report": {
+      "artifact_id": "parsed-report",
+      "scope": {
+        "tenant_id": "fixture",
+        "project_id": "materials"
+      },
+      "sha256": "23702d842c933f60ff55407f456878675ef872730ce71de4b8d1d885da740393",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "research.synthetic-lab-report.payload",
+        "version": "1",
+        "sha256": "ba24048fea45ea444becc297ad05facc1a00f276b45d758af1ba55e67e24f853"
+      },
+      "size_bytes": 1752
+    }
+  },
+  "actor_id": "fixture",
+  "outcome": {
+    "status": "resolved",
+    "resolution": {
+      "wire_version": "1",
+      "authority": "synthetic",
+      "source": {
+        "artifact_id": "parsed-report",
+        "scope": {
+          "tenant_id": "fixture",
+          "project_id": "materials"
+        },
+        "sha256": "23702d842c933f60ff55407f456878675ef872730ce71de4b8d1d885da740393",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "research.synthetic-lab-report.payload",
+          "version": "1",
+          "sha256": "ba24048fea45ea444becc297ad05facc1a00f276b45d758af1ba55e67e24f853"
+        },
+        "size_bytes": 1752
+      },
+      "raw_report": {
+        "artifact_id": "raw",
+        "scope": {
+          "tenant_id": "fixture",
+          "project_id": "materials"
+        },
+        "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "fixture.method",
+          "version": "1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "size_bytes": 2
+      },
+      "profile": {
+        "wire_version": "1",
+        "authority": "synthetic",
+        "profile_id": "lab",
+        "version": "1",
+        "experiment": {
+          "scope": {
+            "tenant_id": "fixture",
+            "project_id": "materials"
+          },
+          "experiment_id": "assay",
+          "revision": 1
+        },
+        "adapter": {
+          "schema_id": "fixture.method",
+          "version": "1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "publishers": [
+          "fixture"
+        ]
+      },
+      "disposition": "partial",
+      "observations": [
+        {
+          "wire_version": "1",
+          "reference": {
+            "scope": {
+              "tenant_id": "fixture",
+              "project_id": "materials"
+            },
+            "observation_id": "result",
+            "revision": 1
+          },
+          "supersedes": null,
+          "source": {
+            "artifact_id": "parsed-report",
+            "scope": {
+              "tenant_id": "fixture",
+              "project_id": "materials"
+            },
+            "sha256": "23702d842c933f60ff55407f456878675ef872730ce71de4b8d1d885da740393",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "research.synthetic-lab-report.payload",
+              "version": "1",
+              "sha256": "ba24048fea45ea444becc297ad05facc1a00f276b45d758af1ba55e67e24f853"
+            },
+            "size_bytes": 1752
+          },
+          "binding": {
+            "target": {
+              "experiment": {
+                "scope": {
+                  "tenant_id": "fixture",
+                  "project_id": "materials"
+                },
+                "experiment_id": "assay",
+                "revision": 1
+              },
+              "expectation_id": "readout",
+              "replicate_id": "replicate-1"
+            },
+            "specimen": {
+              "sample": {
+                "scope": {
+                  "tenant_id": "fixture",
+                  "project_id": "materials"
+                },
+                "sample_id": "vial",
+                "revision": 1
+              },
+              "material_state": {
+                "scope": {
+                  "tenant_id": "fixture",
+                  "project_id": "materials"
+                },
+                "material_state_id": "state",
+                "revision": 1
+              }
+            },
+            "measurement": {
+              "method": {
+                "schema_id": "fixture.method",
+                "version": "1",
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+              },
+              "context": {
+                "artifact_id": "context",
+                "scope": {
+                  "tenant_id": "fixture",
+                  "project_id": "materials"
+                },
+                "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "fixture.method",
+                  "version": "1",
+                  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                "size_bytes": 2
+              }
+            },
+            "role": "sample"
+          },
+          "value": {
+            "kind": "numeric",
+            "quantity": {
+              "value": "1.25",
+              "unit": "mg/L"
+            },
+            "uncertainty": null
+          },
+          "quality": {
+            "controls": "unknown",
+            "flags": []
+          }
+        }
+      ],
+      "matches": [
+        {
+          "observation": {
+            "scope": {
+              "tenant_id": "fixture",
+              "project_id": "materials"
+            },
+            "observation_id": "result",
+            "revision": 1
+          },
+          "disposition": "matched",
+          "reasons": [],
+          "state_known": true
+        }
+      ],
+      "missing_expectations": [
+        "second"
+      ],
+      "unavailable_values": []
+    }
+  }
+}

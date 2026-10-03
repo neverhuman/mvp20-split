@@ -1,8 +1,15 @@
 """A report's return coverage is distinct from measured availability and scientific quality."""
+import hashlib
+import json
 from dataclasses import dataclass
 
 from amphora_contracts_core import ArtifactRef
-from amphora_contracts_research import LabReturnProfile, ObservationRevision, SyntheticLabReport
+from amphora_contracts_research import (
+    LabProfileRef,
+    LabReturnProfile,
+    ObservationRevision,
+    SyntheticLabReport,
+)
 
 from ..experiments.model import Experiment
 from ..experiments.wire import reference_to_wire
@@ -18,7 +25,15 @@ class ConfiguredLabReturn:
 
     def __post_init__(self):
         require(type(self.document) is LabReturnProfile,"lab_profile_required")
+        object.__setattr__(self,"document",LabReturnProfile.model_validate_json(self.document.model_dump_json()))
         require(len(set(self.document.publishers)) == len(self.document.publishers),"duplicate_lab_publisher")
+
+    @property
+    def reference(self):
+        profile = self.document
+        content = json.dumps(profile.model_dump(mode="json"),sort_keys=True,separators=(",", ":"),ensure_ascii=False).encode("utf-8")
+        return LabProfileRef(scope=profile.experiment.scope,profile_id=profile.profile_id,version=profile.version,
+                             sha256=hashlib.sha256(content).hexdigest())
 
 
 @dataclass(frozen=True, slots=True)
@@ -34,6 +49,7 @@ class ReconciledReport:
     raw_report: ArtifactRef
     entries: tuple[MatchedObservation, ...]
     missing_expectations: tuple[str, ...]
+    context_sources: tuple[ArtifactRef, ...]
 
     @property
     def disposition(self):
@@ -67,4 +83,5 @@ class ReconciledReport:
             entries.append(MatchedObservation(observation,ObservationMatch.reconcile(observation,experiment)))
         returned = {item.observation.binding.target.expectation_id for item in entries if item.match.disposition == "matched"}
         missing = tuple(item.expectation_id for item in experiment.expectations if item.expectation_id not in returned)
-        return cls(configured,source,report.raw_report,tuple(entries),missing)
+        return cls(configured,source,report.raw_report,tuple(entries),missing,
+                   (experiment.protocol.applicability,experiment.protocol.source))

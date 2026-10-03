@@ -1,0 +1,28 @@
+{
+  "wire_version": "1",
+  "intake_id": "intake",
+  "profile": {
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "materials"
+    },
+    "profile_id": "lab",
+    "version": "1",
+    "sha256": "4f784a3098c10d05f051fe6a0bf970912aaef4c08e7fe6f9ff0a0ede2fa31482"
+  },
+  "report": {
+    "artifact_id": "parsed-report",
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "materials"
+    },
+    "sha256": "23702d842c933f60ff55407f456878675ef872730ce71de4b8d1d885da740393",
+    "media_type": "application/json",
+    "schema_ref": {
+      "schema_id": "research.synthetic-lab-report.payload",
+      "version": "1",
+      "sha256": "ba24048fea45ea444becc297ad05facc1a00f276b45d758af1ba55e67e24f853"
+    },
+    "size_bytes": 1752
+  }
+}

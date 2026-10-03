@@ -46,6 +46,14 @@ from .identity import (
     SampleIdentity,
     SampleRevisionRef,
 )
+from .lab_intake import (
+    LabIntakeFailed,
+    LabIntakePending,
+    LabIntakeRequest,
+    LabIntakeResolved,
+    LabIntakeStatus,
+    LabProfileRef,
+)
 from .lab_reports import (
     LabReportResolution,
     LabReturnProfile,
@@ -127,3 +135,5 @@ __all__ += [
 __all__ += ['SynthesisContextRecord', 'RouteProvenanceRecord', 'RouteStepRecord', 'RouteSearchRecord', 'RouteEvidenceRecord', 'RouteExecutionCheck', 'RouteOptionRecord', 'SynthesisProfile', 'RouteDecisionRecord', 'SynthesisAssessment', 'EligibilitySubject', 'EligibilityContext', 'EligibilityEvidenceOrigin', 'EligibilityClaim', 'EligibilityRequirement', 'EligibilityProfile', 'EligibilityClaimReview', 'EligibilityCriterionDecision', 'EligibilityAssessment']
 
 __all__ += ["ReportedObservation", "SyntheticLabReport", "LabReturnProfile", "ObservationMatchRecord", "LabReportResolution", "synthetic_lab_report_schema", "synthetic_lab_report_schema_document"]
+
+__all__ += ["LabProfileRef", "LabIntakeRequest", "LabIntakePending", "LabIntakeResolved", "LabIntakeFailed", "LabIntakeStatus"]

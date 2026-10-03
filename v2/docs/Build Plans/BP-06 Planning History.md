@@ -454,3 +454,9 @@ Rotated MBT checkpoint:
 `2026-10-02 23:19:36`: BP-06.04 activation corrected_ready against d844cd7. Existing candidate/sample/material-state references retained; separate private modules and eight B1 milestones within unchanged delivery weight. B1.01 exact measurement representations active0%; child0%,parent50%. Future-only correction adoption clarified in experiment/intent architecture. No live laboratory/route-provider or scientific validity claim.
 
 `2026-10-02 23:32:30`: BP-06.04/B1.01 complete in Research0.13.0. Exact decimal/quantity, uncertainty, categorical/censored/missing and series objects verified by97 source/97 isolated installed cases;143 statements/48 branches,14 dev tests and granular selector pass. Public schemas unchanged316. B1 1/8=12.50%,Build4.17%,child3.13%,parent50.52%; closed gates0/4 and12/24. B1.02 active.
+
+- `2026-10-03 01:48:18`: BP-06.04/B1.07a complete: Research0.19.0/contracts0.9.0, forward research_0007, atomic intake/observation/result storage.619 source/619 installed,119 compatibility/dev tests;342 schemas preserve336 predecessors.18 focused cases cover162 statements/14 branches. B1.07 now33.33% across its three explicit equal slices, B1 79.17%,Build26.39%,child19.79%,parent53.30%; gates remain0/4 and12/24. Next B1.07b decisions/impacts, then c Artifact publication.
+
+MBT rotated checkpoints:
+
+| 2026-10-02 13:58:34 | B1 production publication verified; installed replacement next; child0/4,parent8/24 | Knowledge0.13.0;305 owner/dev tests;actual three-owner publication |

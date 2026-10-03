@@ -1,0 +1,87 @@
+{
+  "timestamp_local": "2026-10-03 01:48:18",
+  "milestone": "BP-06.04/B1.07a",
+  "status": "verified_intake_storage_only",
+  "versions": {
+    "research": "0.19.0",
+    "research_contracts": "0.9.0",
+    "migration": "research_0007"
+  },
+  "source_suite": {
+    "passed": 619,
+    "seconds": 25.42
+  },
+  "installed_suite": {
+    "passed": 619,
+    "seconds": 30.4
+  },
+  "compatibility_dev": {
+    "passed": 119,
+    "seconds": 14.36
+  },
+  "focused": {
+    "passed": 18,
+    "statements": 162,
+    "branches": 14,
+    "coverage_percent": 100
+  },
+  "schemas": {
+    "total": 342,
+    "unchanged_predecessors": 336
+  },
+  "installation": {
+    "timestamp_local": "2026-10-03 01:44:03",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-research",
+    "forbidden_implementations": [
+      "amphora_knowledge",
+      "amphora_data_artifacts",
+      "amphora_campaign_runtime"
+    ],
+    "packages": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.8",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-knowledge": "0.7.3",
+      "amphora-contracts-research": "0.9.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-research": "0.19.0",
+      "amphora-tool-protocol": "0.2.0"
+    },
+    "wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.8-py3-none-any.whl": "8553b378b4d1d09b5627663ea04b146694b95fd6b3e650153e3b5da313195416",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_knowledge-0.7.3-py3-none-any.whl": "7f4485e9b15fd78f83d860dcb9b0e421c49d20fc79e9d37ca9a01715f1426f15",
+      "amphora_contracts_research-0.9.0-py3-none-any.whl": "82cb02c78a5d11f38ea291ff44de78a643773c9099191023023dfcc294337bb5",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_research-0.19.0-py3-none-any.whl": "54af9590ac91964a155c9a7a7ff8313f40337f338820b223aa337ca6f9006ff5",
+      "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+    }
+  },
+  "oracles": [
+    "partial returns persist without quality promotion",
+    "atomic observation batch rollback on late conflict",
+    "same-intake concurrent exact completion",
+    "original actor and full profile preserved",
+    "immutable first terminal and exact replay",
+    "append-only grants and scoped historical reads",
+    "committed transaction then local reply loss recovered"
+  ],
+  "limits": [
+    "Private store verification, not new hosted API",
+    "Local postcommit reply loss is not process death",
+    "No new scientific validity, Runtime receipt authority or UI capability",
+    "Scientific decision/impact storage and Artifact publication remain B1.07b/c",
+    "Current campaign pins/history unchanged"
+  ]
+}

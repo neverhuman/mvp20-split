@@ -69,23 +69,29 @@ class RevisionJournal:
     def publish(self, scope, actor, record):
         document = RevisionDocument.prepare(scope,actor,record,self.model)
         self.validate(document.record)
-        key = document.key
         with self.engine.begin() as connection:
-            connection.execute(text("SELECT pg_advisory_xact_lock(:key)"),{"key":document.lock})
-            raw = self._read(connection,key)
-            if raw is not None:
-                if bytes(raw) != document.canonical_bytes:
-                    raise ScientificStoreError("immutable_scientific_revision_conflict")
-                return self.model.model_validate_json(bytes(raw))
-            head = connection.execute(text(f"SELECT max(revision) FROM research.{self.table} "
-                "WHERE tenant_id=:tenant AND project_id=:project AND identity_id=:id"),key).scalar_one()
-            if document.record.reference.revision != (head or 0)+1:
-                raise ScientificStoreError("scientific_revision_head_conflict")
-            connection.execute(text(f"INSERT INTO research.{self.table} "
-                "(tenant_id,project_id,identity_id,revision,prior_revision,actor_id,canonical_bytes) "
-                "VALUES (:tenant,:project,:id,:revision,:prior,:actor,:body)"),
-                key|{"prior":head,"actor":actor,"body":document.canonical_bytes})
-            self.link(connection,document.record,key)
+            return self.publish_prepared(connection,actor,document)
+
+    def publish_prepared(self, connection, actor, document):
+        """Internal owner transaction composition; prepare and domain-validate before opening it."""
+        if type(document.record) is not self.model or document.table != self.table:
+            raise ScientificStoreError("scientific_record_type")
+        key = document.key
+        connection.execute(text("SELECT pg_advisory_xact_lock(:key)"),{"key":document.lock})
+        raw = self._read(connection,key)
+        if raw is not None:
+            if bytes(raw) != document.canonical_bytes:
+                raise ScientificStoreError("immutable_scientific_revision_conflict")
+            return self.model.model_validate_json(bytes(raw))
+        head = connection.execute(text(f"SELECT max(revision) FROM research.{self.table} "
+            "WHERE tenant_id=:tenant AND project_id=:project AND identity_id=:id"),key).scalar_one()
+        if document.record.reference.revision != (head or 0)+1:
+            raise ScientificStoreError("scientific_revision_head_conflict")
+        connection.execute(text(f"INSERT INTO research.{self.table} "
+            "(tenant_id,project_id,identity_id,revision,prior_revision,actor_id,canonical_bytes) "
+            "VALUES (:tenant,:project,:id,:revision,:prior,:actor,:body)"),
+            key|{"prior":head,"actor":actor,"body":document.canonical_bytes})
+        self.link(connection,document.record,key)
         return document.record
 
     def _read(self, connection, key):

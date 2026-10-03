@@ -1,0 +1,9 @@
+{
+  "scope": {
+    "tenant_id": "fixture",
+    "project_id": "materials"
+  },
+  "profile_id": "lab",
+  "version": "1",
+  "sha256": "4f784a3098c10d05f051fe6a0bf970912aaef4c08e7fe6f9ff0a0ede2fa31482"
+}
