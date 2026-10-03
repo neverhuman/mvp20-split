@@ -1,5 +1,10 @@
 # BP-06 Planning History
 
+## BP-06.04/B1.08c optional scientific hosting complete - 2026-10-03 03:42:21
+
+Research0.24.0/contracts0.11.0;827 source/827 isolated installed plus119 compatibility/dev pass.59 focused cases measure529 statements/64 branches98%;9 statements remain: material/experiment read pass-through (d), owner error and generic malformed request/body timeout responses (B3/V1). Separately granted optional host, immutable record/publication reads, original publisher recovery, bounded no-store transport and explicit authenticated consumer lineage are implemented. CLI readiness reporting was aligned with health authority during review. All376 schemas and existing routes preserved; migration0010 unchanged. No independent Research HTTP/process replacement claim yet. B1 96.88%, Build32.29%, child24.22%, parent54.04%; gates0/4 and12/24 unchanged; d active.
+
+
 ## BP-06.04/B1.08b scientific input orchestration complete - 2026-10-03 03:23:00
 
 Research0.23.0/contracts0.11.0, forward research_0010;792 source/792 isolated installed and119 compatibility/dev tests pass.44 focused cases cover308 statements/38 branches100%. Authenticated report/raw/context dependencies, original configuration/actor intents, atomic decision/index/outcome, immutable concurrent retries and pending/offline replay verified. Actual independent Data exercises both synthetic report kinds, forged issuers, denied reads and useful optional accuracy focus. Existing default decision golden hashes and all376 public schemas unchanged. Test closure lint warnings were corrected. Coverage report emitted a harmless JSON-as-data scan warning after JSON export; measured data and JSON agree. No hosted API, scientific-validity or process-kill claim. B1 93.75%, Build31.25%, child23.44%, parent53.91%; gates0/4 and12/24 unchanged; c active.
@@ -487,3 +492,7 @@ Rotated MBT checkpoints:
 Rotated MBT checkpoint:
 
 | 2026-10-02 16:33:50 | B1.06 complete; B1 6/10, child15%, parent35.83%; B1.07 active | [Assessment wire](../Audits/Evidence/BP-06-Research/Assessment_Wire.json);294 source/177 installed tests;286 predecessor schemas preserved |
+
+Rotated MBT checkpoint:
+
+| 2026-10-02 16:45:56 | B1.07 Data reader partial; B1 6/10, child15%, parent35.83% unchanged | [Reader](../Audits/Evidence/BP-06-Research/Assessment_Reader.json);184 Research/dev tests; actual peers remain |

@@ -1,0 +1,34 @@
+{
+  "database_url_env": "AMPHORA_RESEARCH_DATABASE_URL",
+  "principals": [
+    {
+      "token_env": "AMPHORA_RESEARCH_SCIENCE_TOKEN",
+      "actor_id": "fixture",
+      "scope": {
+        "tenant_id": "local",
+        "project_id": "synthetic-demo"
+      },
+      "actions": [
+        "read_lab_intake",
+        "read_scientific_assessment",
+        "read_scientific_record",
+        "read_scientific_publication",
+        "read_scientific_impact"
+      ]
+    }
+  ],
+  "science": {
+    "lab_profiles": [],
+    "eligibility_profiles": [],
+    "synthesis_profiles": [],
+    "data": {
+      "endpoint": "http://127.0.0.1:8082",
+      "token_env": "AMPHORA_RESEARCH_DATA_READ_TOKEN"
+    },
+    "publication": {
+      "actor_id": "research-science-publisher",
+      "token_env": "AMPHORA_RESEARCH_PUBLICATION_TOKEN"
+    },
+    "consumer_publishers": []
+  }
+}

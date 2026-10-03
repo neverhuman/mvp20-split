@@ -118,6 +118,18 @@ class ScientificPublicationStore:
         with self.engine.connect() as connection:
             return self._read(connection,initial)
 
+    def lookup(self, artifact):
+        """Read original publisher/history without creating intent, leases or peer effects."""
+        self._verify_source(artifact)
+        with self.engine.connect() as connection:
+            raw = connection.execute(text("SELECT canonical_bytes FROM research.science_publication_headers WHERE "+WHERE),
+                artifact.key).scalar_one_or_none()
+            if raw is None:
+                return None
+            header = json.loads(bytes(raw))
+            IDENTIFIER.validate_python(header["publisher"],strict=True)
+            return self._read(connection,ScientificProgress(artifact,header["publisher"]))
+
     def advance(self, lease, position, action, data=None):
         with self.engine.begin() as connection:
             self._guard(connection,lease)

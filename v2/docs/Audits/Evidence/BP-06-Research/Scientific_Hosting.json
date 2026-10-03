@@ -1,0 +1,75 @@
+{
+  "timestamp_local": "2026-10-03 03:42:21",
+  "milestone": "BP-06.04/B1.08c",
+  "research_version": "0.24.0",
+  "contracts_version": "0.11.0",
+  "migration": "research_0010",
+  "verification": {
+    "source_tests": 827,
+    "installed_tests": 827,
+    "compatibility_dev_tests": 119,
+    "focused_tests": 59,
+    "coverage": {
+      "covered_lines": 520,
+      "num_statements": 529,
+      "percent_covered": 98.31365935919055,
+      "percent_covered_display": "98",
+      "missing_lines": 9,
+      "excluded_lines": 0,
+      "percent_statements_covered": 98.29867674858222,
+      "percent_statements_covered_display": "98",
+      "num_branches": 64,
+      "num_partial_branches": 1,
+      "covered_branches": 63,
+      "missing_branches": 1,
+      "percent_branches_covered": 98.4375,
+      "percent_branches_covered_display": "98"
+    },
+    "schemas_unchanged": 376
+  },
+  "cases": [
+    "optional_history_only_host",
+    "separate_scoped_grants",
+    "original_actor_denial",
+    "strict_bounded_JSON",
+    "no_store_responses",
+    "source_errors_remain_pending",
+    "partial_lab_return",
+    "read_only_publication_lookup",
+    "original_publisher_recovery",
+    "consumer_requires_exact_published_lineage",
+    "old_API_regression"
+  ],
+  "coverage_gaps": {
+    "v2\\services\\research\\src\\amphora_research\\scientific_api\\operations.py": {
+      "lines": [
+        50,
+        51,
+        54,
+        55
+      ],
+      "branches": [
+        [
+          41,
+          43
+        ]
+      ]
+    },
+    "v2\\services\\research\\src\\amphora_research\\scientific_api\\routes.py": {
+      "lines": [
+        60,
+        68,
+        69,
+        70,
+        71
+      ],
+      "branches": []
+    }
+  },
+  "limits": [
+    "Scripted API source resolution is distinct from independently installed HTTP proof (d)",
+    "Actual publication/consumer producer HTTP and process replacement remain d",
+    "Defensive owner failure/body timeout responses assigned B3/V1",
+    "Synthetic evidence only; no scientific acceptance or quality UI claim"
+  ]
+}

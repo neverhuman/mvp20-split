@@ -59,13 +59,18 @@ async def _body(request, limit=16384):
     return b"".join(parts)
 
 
-def create_app(resolver, credentials, assessments=None):
+def create_app(resolver, credentials, assessments=None, science=None):
     app = FastAPI(title="Amphora Research", docs_url=None, redoc_url=None)
     app.state.assessment_enabled = assessments is not None
+    app.state.science_enabled = science is not None
+    app.state.authority = "synthetic_science" if science is not None else ("identity_only" if assessments is None else "synthetic_assessment")
+    if science is not None:
+        from ..scientific_api.routes import install_routes
+        install_routes(app,credentials,science)
 
     @app.get("/health")
     def health():
-        return {"service": "research", "authority": "identity_only" if assessments is None else "synthetic_assessment"}
+        return {"service": "research", "authority": app.state.authority}
 
     async def invoke(request, model, operation, limit=16384):
         try:

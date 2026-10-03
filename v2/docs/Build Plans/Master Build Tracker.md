@@ -9,12 +9,12 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 primary active; BP-06.03 closed; BP-07 through BP-09 queued; BP-05 closed.
-- Last refreshed: `2026-10-03 03:23:00` (America/Chicago).
+- Last refreshed: `2026-10-03 03:42:21` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P5 / BP-06 - Knowledge Evidence and Source Loop.
-- Primary active task: BP-06.04/Build/B1.08c separately granted scientific hosting/routes; a/b complete.
+- Primary active task: BP-06.04/Build/B1.08d independently installed scientific HTTP/replacement; a/b/c complete.
 - Next task: BP-06.04/B2 normalization and future-only correction integration, after B1.08.
-- Implementation completion: BP-06 **53.91%** ((12+(7+2/4)/8)/24),12/24 closed delivery gates. BP-06.01/.02/.03 closed100%; BP-06.04 at23.44%, later children0%. BP-07..09 remain0%.
+- Implementation completion: BP-06 **54.04%** ((12+(7+3/4)/8)/24),12/24 closed delivery gates. BP-06.01/.02/.03 closed100%; BP-06.04 at24.22%, later children0%. BP-07..09 remain0%.
 - Active focus: laboratory returns/material-state/candidate eligibility boundary reconciliation.
 - Blockers: none requiring owner direction; future-only corrections and iterative-progress policy approved.
 - Acceptance posture: BP-06.03 bounded synthetic software accepted; scientific/deployment gates remain separately scoped.
@@ -36,11 +36,11 @@ BP-06 is the sole active parent. BP-05 closed16/16; see [completed plans](Comple
 
 | Parent | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-06](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) | 53.91% ((12+(7+2/4)/8)/24) | 100% | 100% | 100% | 23.44% | 0% | 0% |
+| [BP-06](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) | 54.04% ((12+(7+3/4)/8)/24) | 100% | 100% | 100% | 24.22% | 0% | 0% |
 
 | Active canonical child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-06.04](BP-06/BP-06.04%20Laboratory%20returns%20and%20candidate%20eligibility.md) | 23.44% | 31.25% | 0% | B1.08c / Scientific hosting and routes |
+| [BP-06.04](BP-06/BP-06.04%20Laboratory%20returns%20and%20candidate%20eligibility.md) | 24.22% | 32.29% | 0% | B1.08d / Actual-owner HTTP and replacement |
 
 
 
@@ -63,11 +63,11 @@ The owning plan tracker is canonical for overall and per-phase percentages. Refr
 
 ## Prioritized Build Queue
 
-BP-06 is primary_active at53.91% scoped completion (12/24 closed gates); BP-07 through BP-09 are `design_specified / queued`. The later roadmap has 34 canonical children. Each child names owned objects/contracts, algorithms, failure oracles and replacement acceptance. Completed plans remain in the archive.
+BP-06 is primary_active at54.04% scoped completion (12/24 closed gates); BP-07 through BP-09 are `design_specified / queued`. The later roadmap has 34 canonical children. Each child names owned objects/contracts, algorithms, failure oracles and replacement acceptance. Completed plans remain in the archive.
 
 | Order / ID | Completion | Proposed plan | Required predecessor gates | Bounded outcome / exit | Architecture owner |
 |---|---|---|---|---|---|
-| P5 / BP-06 | 53.91% | [Knowledge Evidence and Source Loop](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) | BP-01 contracts; BP-04 execution; BP-05 inspection | Minimal source/document/result ingestion, typed accepted-change replay, pinned knowledge revisions, bounded executable rules and explicit scientific acceptance receipts; demonstrate corrections affect later campaigns | [Knowledge](../Architecture/Knowledge/Knowledge_Architecture.md), [Data](../Architecture/Data/Data_Architecture.md), [experiments](../Architecture/Research/Experiments.md) |
+| P5 / BP-06 | 54.04% | [Knowledge Evidence and Source Loop](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) | BP-01 contracts; BP-04 execution; BP-05 inspection | Minimal source/document/result ingestion, typed accepted-change replay, pinned knowledge revisions, bounded executable rules and explicit scientific acceptance receipts; demonstrate corrections affect later campaigns | [Knowledge](../Architecture/Knowledge/Knowledge_Architecture.md), [Data](../Architecture/Data/Data_Architecture.md), [experiments](../Architecture/Research/Experiments.md) |
 | P6 / BP-07 | 0% | [Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | BP-03 tool discovery; BP-04 runner; BP-05 UI; BP-06 grounded context/receipts | Model-generated campaign proposals and text-to-graph extraction through validated contracts; durable scoped engagements, stale-proposal/fallback races, bounded repair and truthful terminal blockers; no routine human waits | [Planning](../Architecture/Agents/Planning.md), [Graph Runner](../Architecture/System/Graph_Runner.md) |
 | P7 / BP-08 | 0% | [Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | BP-04 iteration/checkpoints; BP-06 applicability/evidence; BP-07 for LLM-guided topology | Adapt reusable numerical kernels to explicit generation/checkpoint history, separate representation fixtures and evidence-bound selection; parameter search precedes bounded topology proposals under successor-campaign rules | [Search](../Architecture/Campaigns/Search.md), [reuse baseline](../Architecture/Evolutionary_Code_Reuse_Baseline.md) |
 | P8 / BP-09 | 0% | [Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Selected host/model policy; BP-05/06/07 plus BP-08 for evolutionary demo claims | Reproducible target-host deployment, model/tool eligibility, restore/reconciliation, end-to-end autonomous demo and one independently rebuilt/replaced tool; prove replicated workloads if K3s is selected | [Topology](../Architecture/System/Runtime_Topology.md), [tool services](../Architecture/Capabilities/Tool_Services.md) |
@@ -124,6 +124,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-03 03:42:21 | BP-06.04/B1.08c complete; child24.22%, parent54.04%; d active | [Scientific hosting](../Audits/Evidence/BP-06-Research/Scientific_Hosting.json);827 source/827 installed,119 compatibility/dev |
 | 2026-10-03 03:23:00 | BP-06.04/B1.08b complete; child23.44%, parent53.91%; c active | [Input orchestration](../Audits/Evidence/BP-06-Research/Scientific_Input_Orchestration.json);792 source/792 installed,119 compatibility/dev |
 | 2026-10-03 02:52:45 | BP-06.04/B1.08a complete; child22.66%, parent53.78%; B1.08b active | [API contracts](../Audits/Evidence/BP-06-Research/Scientific_API_Contracts.json);758 source/758 installed,119 compatibility/dev;376 schemas preserve352 |
 | 2026-10-03 02:32:17 | BP-06.04/B1.07 complete; child21.88%, parent53.65%; B1.08 active | [Scientific publication](../Audits/Evidence/BP-06-Research/Scientific_Artifact_Publication.json);717 source/717 installed,14 dev; actual Data Artifact-only output |
@@ -148,6 +149,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-02 20:27:44 | B1.09 complete; B1 9/10; child22.50%, parent37.08%; B1.10 active | [Publication](../Audits/Evidence/BP-06-Research/Assessment_Publication.json);298+4 source/302 installed tests |
 | 2026-10-02 19:56:27 | B1.08 complete; B1 8/10; child20%, parent36.67%; B1.09 active | [Store](../Audits/Evidence/BP-06-Research/Assessment_Store.json);271 source/271 installed tests |
 | 2026-10-02 19:05:19 | B1.07 complete; B1 7/10, child17.50%, parent36.25%; B1.08 active | [Resolution](../Audits/Evidence/BP-06-Research/Assessment_Resolution.json);374 source/257 installed tests;296 schemas preserve294 |
-| 2026-10-02 16:45:56 | B1.07 Data reader partial; B1 6/10, child15%, parent35.83% unchanged | [Reader](../Audits/Evidence/BP-06-Research/Assessment_Reader.json);184 Research/dev tests; actual peers remain |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.
