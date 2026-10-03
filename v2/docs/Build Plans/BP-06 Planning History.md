@@ -1,5 +1,14 @@
 # BP-06 Planning History
 
+## BP-06.04/B1.02 context aggregates complete - 2026-10-02 23:58:49
+
+Research0.14.0;236 source/236 independently installed tests,14 dev tests,551 statements/110 branches covered. Exact material preparation/sample/method/context identities preserve failed controls, quality flags, censoring and missingness without scientific promotion. [Evidence](../Audits/Evidence/BP-06-Research/Material_Experiment_Observation.json). Public schemas and stores unchanged. B1 2/8=25%, child6.25%, parent51.04%; closed gates0/4 and12/24. B1.03 active.
+
+Rotated MBT checkpoint:
+
+| 2026-10-02 12:34:14 | B1 publication contracts/values verified; durable store next; child0/4,parent8/24 | contracts0.6.0;100 tests;286 schemas preserve282 |
+
+
 ## B1.07 authenticated producer resolution complete - 2026-10-02 19:05:19
 
 Research0.7.0/contracts0.4.0;374 scoped tests,257 final independently installed tests, actual Data0.11.0 and Knowledge0.13.0 peers reused. [Evidence](../Audits/Evidence/BP-06-Research/Assessment_Resolution.json).296 public schemas preserve294 predecessors. The preliminary254-test installed build predated the reproduced conflict-overridden-by-negative-evidence regression; the final257-test build includes the correction. Direct Knowledge conflict remains unknown regardless of negative evidence, with pinned assertion provenance and no schema rewrite. No assessment storage/route/publication implementation claimed.

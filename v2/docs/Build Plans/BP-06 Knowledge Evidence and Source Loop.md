@@ -2,17 +2,17 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-06.03 closed; BP-06.04/Build/B1.02 active.
-- Last refreshed: `2026-10-02 23:32:30` (America/Chicago).
+- Status: primary_active; BP-06.03 closed; BP-06.04/Build/B1.03 active.
+- Last refreshed: `2026-10-02 23:58:49` (America/Chicago).
 - Owner/scope: Knowledge, Research and focused Data/Artifacts modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness](Planning_Readiness.md).
 - Prerequisites: completed BP-04 receipt/wait seams, BP-05 inspection and BP-01/02/03 boundaries.
-- Scoped implementation/verification completion: **50.52%** = (12+B1 1/8)/24;12/24 closed delivery gates. P1/.01,P2/.02,P3/.03 are100%; P4/.04 is3.13%;P5-P6 remain0%.
-- Current task: BP-06.04/B1.02 aggregate identity/context invariants; B1.01 verified97 source/97 installed tests.
+- Scoped implementation/verification completion: **51.04%** = (12+B1 2/8)/24;12/24 closed delivery gates. P1/.01,P2/.02,P3/.03 are100%; P4/.04 is6.25%;P5-P6 remain0%.
+- Current task: BP-06.04/B1.03 synthesis/eligibility policy; B1.02 verified236 source/236 installed tests.
 - Demonstrated behavior: bounded reasoning, authenticated sufficiency, immutable future-only corrections, actual Runtime receipt/retention, exploratory partial output, acknowledgement-loss recovery and independent owner replacement. Both publication owners have actual process-death evidence.
 - Blockers: none requiring owner direction. Scientific sources, assay/route engines and target-host choices remain scoped future decisions.
 - Human acceptance: no routine pause for authorized engineering; experimental validity is not inferred from software verification.
-- Next gate: B1.02 direct identity/state/observation oracles, then B1.03 synthesis/eligibility policy.
+- Next gate: purpose-bound synthesis/eligibility domain oracles, then B1.04 public DTOs/mappers.
 
 ## Outcome and Boundaries
 
@@ -31,11 +31,11 @@ Primary services retain private state, dependencies, migrations and module READM
 | P1 / [BP-06.01 Source and evidence contracts](BP-06/Completed/BP-06.01%20Source%20and%20evidence%20contracts.md) | 100% | 100% | 100% | Parent predecessor gates |
 | P2 / [BP-06.02 Typed graph authoring and replay](BP-06/Completed/BP-06.02%20Typed%20graph%20authoring%20and%20replay.md) | 100% | 100% | 100% | BP-06.01 acceptance |
 | P3 / [BP-06.03 Reasoning and domain receipts](BP-06/Completed/BP-06.03%20Reasoning%20and%20domain%20receipts.md) | 100% | 100% | 100% | BP-06.02 acceptance |
-| P4 / [BP-06.04 Laboratory returns and candidate eligibility](BP-06/BP-06.04%20Laboratory%20returns%20and%20candidate%20eligibility.md) | 3.13% | 4.17% | 0% | BP-06.03 acceptance |
+| P4 / [BP-06.04 Laboratory returns and candidate eligibility](BP-06/BP-06.04%20Laboratory%20returns%20and%20candidate%20eligibility.md) | 6.25% | 8.33% | 0% | BP-06.03 acceptance |
 | P5 / [BP-06.05 Representation reuse and retrieval](BP-06/BP-06.05%20Representation%20reuse%20and%20retrieval.md) | 0% | 0% | 0% | BP-06.04 acceptance |
 | P6 / [BP-06.06 Feedback integration and closeout](BP-06/BP-06.06%20Feedback%20integration%20and%20closeout.md) | 0% | 0% | 0% | BP-06.05 acceptance |
 
-Each linked child is the execution tracker for its scope. Build tasks name concrete implementation; acceptance requires independent evidence and a scoped drift audit. BP-06.03 owns fractional B1 progress through its canonical ten-milestone table; parent weights remain24 delivery units. Closed-gate counts are separate from scoped completion. Do not repeat the historical task pairs as a second work list. No dependent child starts before its predecessor acceptance gate; independent design review does not activate implementation.
+Each linked child is the execution tracker for its scope. Build tasks name concrete implementation; acceptance requires independent evidence and a scoped drift audit. BP-06.04 owns fractional B1 progress through its canonical eight-milestone table; parent weights remain24 delivery units. Closed-gate counts are separate from scoped completion. Do not repeat the historical task pairs as a second work list. No dependent child starts before its predecessor acceptance gate; independent design review does not activate implementation.
 
 ## Test Ownership and Evidence
 

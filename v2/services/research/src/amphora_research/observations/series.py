@@ -24,6 +24,10 @@ class SeriesValue:
     points: tuple[SeriesPoint, ...]
     kind: ClassVar[str] = "series"
 
+    @property
+    def reported_count(self):
+        return sum(type(point.y) is not MissingValue for point in self.points)
+
     def __post_init__(self):
         unit_token(self.x_unit)
         unit_token(self.y_unit)

@@ -1,7 +1,7 @@
 # Research Service
 
 - Status: BP-06.01 closed; BP-06.03 assessment/publication/correction boundaries implemented. Actual Runtime receipt acceptance and partial exploratory output verified; BP-06.03 recovery/closeout accepted; BP-06.04 begins with pure observation values.
-- Package: `amphora-research` 0.13.0; exact dependencies belong to pyproject.toml, uv.lock and the generated package inventory.
+- Package: `amphora-research` 0.14.0; exact dependencies belong to pyproject.toml, uv.lock and the generated package inventory.
 - Design: [Research architecture](../../docs/Architecture/Research/Research_Architecture.md).
 
 Research owns candidate/sample/question/evidence-need identities and purpose-bound evidence sufficiency. It does not own Artifact bytes, Knowledge assertions, model execution or campaign acceptance. Dependencies are public contracts and the tool-protocol SDK plus Pydantic/FastAPI/Uvicorn and SQLAlchemy/psycopg/Alembic. No peer implementation imports, peer SQL or shared ORM.
@@ -10,7 +10,9 @@ Research owns candidate/sample/question/evidence-need identities and purpose-bou
 |---|---|
 | [Identity](src/amphora_research/identity/README.md) | Scoped candidate/sample/question/need invariants and corrections |
 | [Persistence](src/amphora_research/persistence/README.md) | Immutable identity revisions, local links, exact replay and declaration reads |
-| [Observations](src/amphora_research/observations/README.md) | Exact bounded measurement values; report ingestion/eligibility remain later BP-06.04 milestones |
+| [Material state](src/amphora_research/material_state/README.md) | Distinct preparation/feature evidence and exact candidate/state revisions |
+| [Experiments](src/amphora_research/experiments/README.md) | Exact specimen, method/context and replicate/control expectations |
+| [Observations](src/amphora_research/observations/README.md) | Exact measurement values, immutable reported results and exact experiment matching; authenticated ingestion/eligibility remain later milestones |
 | [Assessment](src/amphora_research/assessment/README.md) | Reviewed profiles, authenticated public-peer resolution, exact applicability, explicit gaps/conflicts and immutable decisions |
 | [Publication](src/amphora_research/publication/README.md) | Reviewed payload/lineage, fenced durable recovery, actual Data publication and atomic synthetic receipt |
 | [Corrections](src/amphora_research/corrections/README.md) | Append-only owner correction chains, exact/head selection and future-campaign-only effects |
@@ -22,6 +24,6 @@ Research migrations0001 through0005 apply forward only, under the owner migrator
 
 An assessment distinguishes answered, sufficient for a declared synthetic decision, and scientifically established; the last is always false in this profile. Unknown, contradictory, opinion-only and wrong-context evidence remain explicit. Campaign execution may retain useful context and use declared partial paths without turning an abstention into accepted evidence. Rich quality visualization and next-campaign proposals remain SQ-01/BP-07.03. Laboratory/material-state/route-specific eligibility remains BP-06.04.
 
-Module-owned tests live under tests/identity, persistence, assessment, publication, corrections, observations and api. Select with dev/run_tests.py --module research --area <area>; PostgreSQL requires AMPHORA_TEST_POSTGRES=1 and serial execution. Scripted peers prove client behavior only. test_actual_resolution.py uses separately hosted Data/Knowledge/Research and optional Runtime; private migrations/seeding stay inside their owner's process. dev/verify_research_assessment.py independently installs Research and rejects peer implementation imports. Runtime/partial/fault helpers live under Runtime's owned acceptance folder.
+Module-owned tests live under tests/identity, persistence, assessment, publication, corrections, observations, material_state, experiments and api. Select with dev/run_tests.py --module research --area <area>; PostgreSQL requires AMPHORA_TEST_POSTGRES=1 and serial execution. Scripted peers prove client behavior only. test_actual_resolution.py uses separately hosted Data/Knowledge/Research and optional Runtime; private migrations/seeding stay inside their owner's process. dev/verify_research_assessment.py independently installs Research and rejects peer implementation imports. Runtime/partial/fault helpers live under Runtime's owned acceptance folder.
 
 [Assessment API evidence](../../docs/Audits/Evidence/BP-06-Research/Assessment_API.json), [correction transitions](../../docs/Audits/Evidence/BP-06-Research/Receipt_Correction_Transitions.json), [live Runtime receipts](../../docs/Audits/Evidence/BP-06-Research/Runtime_Domain_Receipts.json) and [partial progress](../../docs/Audits/Evidence/BP-06-Research/Partial_Campaign_Progress.json) retain exact versions, cases and limitations. Earlier coverage is module-scoped and excludes child processes; no aggregate end-to-end percentage or scientific/target-host durability claim is inferred. A replacement must preserve schemas, fingerprints, actor/scope authority, migrations, immutable histories and failure semantics or explicitly version the boundary.
