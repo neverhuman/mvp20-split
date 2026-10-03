@@ -1,7 +1,7 @@
 # Research Service
 
 - Status: BP-06.01 closed; BP-06.03 assessment/publication/correction boundaries implemented. Actual Runtime receipt acceptance and partial exploratory output verified; BP-06.03 recovery/closeout accepted; BP-06.04 has pure scientific domain objects, synthetic synthesis/eligibility policies and explicit public mappings; separate scientific revision storage is implemented; authenticated synthetic report resolution is implemented; atomic intake and immutable eligibility/synthesis decision/dependency storage are implemented; scientific Artifact publication is implemented; authenticated scientific input orchestration is verified; optional scientific APIs are verified under B1.08c.
-- Package: `amphora-research` 0.25.0; exact dependencies belong to pyproject.toml, uv.lock and the generated package inventory.
+- Package: `amphora-research` 0.26.0; exact dependencies belong to pyproject.toml, uv.lock and the generated package inventory.
 - Design: [Research architecture](../../docs/Architecture/Research/Research_Architecture.md).
 
 Research owns candidate/sample/question/evidence-need identities and purpose-bound evidence sufficiency. It does not own Artifact bytes, Knowledge assertions, model execution or campaign acceptance. Dependencies are public contracts and the tool-protocol SDK plus Pydantic/FastAPI/Uvicorn and SQLAlchemy/psycopg/Alembic. No peer implementation imports, peer SQL or shared ORM.
@@ -35,3 +35,5 @@ Module-owned tests live under tests/identity, persistence, assessment, publicati
 Optional science hosting is documented in the scientific API module. config.science.example.json demonstrates read-only history configuration with no active profiles. New routes have separate grants and Artifact-only publication; actual independently installed HTTP/replacement is verified under BP-06.04/B1.08d.
 
 B2.01 adds pure explicit exact unit-normalization objects under observations/normalization; no normalization API or scientific interpretation is implied. See the owning module README for preserved evidence and unresolved-value behavior.
+
+B2.02 adds pure per-action observation-use policies and immediate observation/material correction objects. Qualification, identity, coverage and scientific truth remain separate; new durable projections/API integration are pending B2.03/.04.

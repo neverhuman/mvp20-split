@@ -1,0 +1,49 @@
+{
+  "timestamp_local": "2026-10-03 04:24:09",
+  "milestone": "BP-06.04/B2.02",
+  "research_version": "0.26.0",
+  "contracts_version": "0.11.0",
+  "verification": {
+    "source_tests": 647,
+    "installed_tests": 647,
+    "dev_tests": 14,
+    "focused_tests": 14,
+    "coverage": {
+      "covered_lines": 165,
+      "num_statements": 165,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100",
+      "num_branches": 38,
+      "num_partial_branches": 0,
+      "covered_branches": 38,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    },
+    "schemas_unchanged": 376,
+    "migration_unchanged": "research_0010"
+  },
+  "cases": [
+    "exploratory_vs_strict_action_use",
+    "failed_vs_unknown_controls",
+    "optional_flags_preserved",
+    "missing_measurement_vs_missing_return",
+    "bound_state_vs_unknown_preparation_features",
+    "normalization_repairs_only_sole_unit_mismatch",
+    "same_nominal_design_not_context_equivalence",
+    "divergent_replicates_preserved",
+    "empty_duplicate_and_cross_scope_batches",
+    "immediate_observation_and_material_corrections",
+    "historical_values_preserved"
+  ],
+  "limits": [
+    "Pure policy/transition objects, not new persistent/API authority",
+    "No statistical thresholds, averaging or global campaign gates",
+    "No current head selection, consumer discovery or active pin mutation",
+    "Synthetic software evidence only"
+  ]
+}

@@ -1,0 +1,14 @@
+# Observation use and quality
+
+- Status: BP-06.04/B2.02 pure policy verified in Research0.26.0; no new public/persistent acceptance authority.
+- Owner: Research observations. [Policy design](../../../../../../docs/Build%20Plans/BP-06/BP-06.04%20Normalization%20and%20correction%20design.md).
+
+policy.py owns explicit requirements for one named action: available measurements, passed controls, a bound material-state record and excluded flags. It optionally pins a complete directed normalization catalog. Full configuration determines a policy digest. review.py retains the original observation, original exact match, effective match, normalization and separate blockers/gaps/focus. Usable means usable under that action's declared policy; it does not establish scientific truth. Failed/unknown controls and reported flags remain visible even when exploratory use is allowed. Hard failures affect this action only.
+
+Only a sole unit mismatch may be repaired by explicit catalog normalization to the experiment's exact readout units. Sample/state/method/context mismatch stays quarantined, with no nominal-material equivalence or cache substitution. Failed normalization retains original values/reasons. batch.py preserves all scoped distinct observations and their order, including divergent replicates. Missing expectation coverage and usable/focus references are separate projections; a matched unavailable or excluded result still counts as a return. Empty batches remain explicitly empty. No averaging, majority vote, statistical contradiction threshold or campaign mutation exists here.
+
+Sibling observations/corrections.py owns pure immediate ObservationCorrection transitions; material_state/corrections.py owns the analogous material transition. They retain both sides, report changed fields and expose future_campaigns_only, without selecting heads, writing records, finding consumers or invalidating current campaigns. Existing revision stores and exact dependency indexes remain authoritative. B2.03/.04 own durable projections/authenticated transition integration. Tests belong under tests/observations/quality and the respective correction modules; fixtures are synthetic.
+
+A bound state record does not establish known preparation or morphology. Unknown preparation, unreported features and explicitly unknown feature evidence remain focus markers without introducing undeclared gates.
+
+Verification `2026-10-03 04:24:09`:647 source/647 independently installed tests and14 dev;14 focused quality/correction tests cover165 statements/38 branches100%. Run dev/run_tests.py --module research --area observations/quality for the12 quality tests; observation/material correction cases stay in their respective module folders. Coverage is deterministic software evidence, not scientific acceptance.

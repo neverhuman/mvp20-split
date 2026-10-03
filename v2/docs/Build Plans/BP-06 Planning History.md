@@ -1,5 +1,10 @@
 # BP-06 Planning History
 
+## BP-06.04/B2.02 observation use/correction policies complete - 2026-10-03 04:24:09
+
+Research0.26.0/contracts0.11.0;647 source/647 independently installed and14 dev tests pass.14 focused cases cover165 statements/38 branches100%; observations/quality selector passes12 quality cases (two correction cases belong to their sibling modules). Explicit action policy separates usable/excluded/unresolved/quarantined from scientific truth. Sole unit mismatch can use exact configured normalization; identity/context mismatch cannot. Missing measurements count as returned coverage without imputation; divergent replicates retain order and independent identity. bound_state means a bound record, with separate unknown-preparation/feature focus. Pure immediate observation/material corrections retain both sides under future-only policy. One malformed unknown-feature test fixture was corrected to MissingValue. No new public DTO/store/API or scientific claim;376 schemas/research_0010 unchanged. B2=50%,Build50%,child37.50%,parent56.25%; gates1/4 and13/24 unchanged. B2.03 active.
+
+
 ## BP-06.04/B2.01 exact normalization complete - 2026-10-03 04:08:02
 
 Research0.25.0/contracts0.11.0;633 source/633 independently installed and14 dev tests pass.35 focused conversion/meaning cases cover140 statements/38 branches100%; granular observations/normalization selector passes. Catalog hashes complete directed positive-scale rules; no path/inverse/dimension inference. Integer arithmetic preserves exactness independently of Decimal context. Censored bounds, uncertainty and series order/duplicates/missingness retain meaning. Large representable outputs retain coefficient zeros; an initially incorrect overflow fixture was corrected to a truly out-of-bounds value. All376 schemas/research_0010 unchanged; no public normalization DTO/storage/API claim. B2 subdivided into four equal milestones in its existing weight; B2=25%,Build41.67%,child31.25%,parent55.21%; gates1/4 and13/24 unchanged. B2.02 active.
@@ -514,3 +519,7 @@ Rotated MBT checkpoint:
 Rotated MBT checkpoint:
 
 | 2026-10-02 19:56:27 | B1.08 complete; B1 8/10; child20%, parent36.67%; B1.09 active | [Store](../Audits/Evidence/BP-06-Research/Assessment_Store.json);271 source/271 installed tests |
+
+Rotated MBT checkpoint:
+
+| 2026-10-02 20:27:44 | B1.09 complete; B1 9/10; child22.50%, parent37.08%; B1.10 active | [Publication](../Audits/Evidence/BP-06-Research/Assessment_Publication.json);298+4 source/302 installed tests |
