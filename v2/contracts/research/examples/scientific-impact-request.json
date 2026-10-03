@@ -1,0 +1,20 @@
+{
+  "wire_version": "1",
+  "source": {
+    "artifact_id": "model-report",
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "materials"
+    },
+    "sha256": "fa491b0227a8e9d1e10245992e769d43aeeb268d97b79411119d631e85110df5",
+    "media_type": "application/json",
+    "schema_ref": {
+      "schema_id": "research.synthetic-eligibility-report.payload",
+      "version": "1",
+      "sha256": "2ea86be792aca11a88e1ea3a2009e8c91f801ab424d6522603718fd5fc9d6b51"
+    },
+    "size_bytes": 1602
+  },
+  "after": null,
+  "limit": 64
+}

@@ -1,0 +1,78 @@
+{
+  "timestamp_local": "2026-10-03 02:52:45",
+  "milestone": "BP-06.04/B1.08a",
+  "status": "verified_contracts_and_private_configuration_binding",
+  "versions": {
+    "research": "0.22.0",
+    "research_contracts": "0.11.0",
+    "migration": "research_0009_unchanged"
+  },
+  "source_suite": {
+    "passed": 758,
+    "seconds": 49.74
+  },
+  "installed_suite": {
+    "passed": 758,
+    "seconds": 47.45
+  },
+  "compatibility_dev": {
+    "passed": 119,
+    "seconds": 14.68
+  },
+  "focused": {
+    "passed": 41,
+    "private_boundary_cases": 12,
+    "private_statements": 57,
+    "private_branches": 2,
+    "private_coverage_percent": 100
+  },
+  "schemas": {
+    "total": 376,
+    "unchanged_predecessors": 352
+  },
+  "installation": {
+    "timestamp_local": "2026-10-03 02:47:14",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-research",
+    "forbidden_implementations": [
+      "amphora_knowledge",
+      "amphora_data_artifacts",
+      "amphora_campaign_runtime"
+    ],
+    "packages": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.10",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-knowledge": "0.7.5",
+      "amphora-contracts-research": "0.11.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-research": "0.22.0",
+      "amphora-tool-protocol": "0.2.0"
+    },
+    "wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.10-py3-none-any.whl": "628be92e8ab3e15df89d3f10e199e6747c123d096311e92bdb7c76d93eaa43d8",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_knowledge-0.7.5-py3-none-any.whl": "cc924b7a4178c336682f242f86e967b0355afb456e8d0c7d1f7a40a0954e874b",
+      "amphora_contracts_research-0.11.0-py3-none-any.whl": "f741710f6d402bc2793c7025455a98aae8fa4d1f562ed80515f8ce7d1b91ccfe",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_research-0.22.0-py3-none-any.whl": "2ade2bb05b2dc2e74e9dafcc6bb5c98e0b41d4e1edd9bf4cbb8914840be51023",
+      "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+    }
+  },
+  "limits": [
+    "DTO shape/configuration binding is not producer authentication",
+    "New reference-only hosted routes remain B1.08c",
+    "New scientific input resolution and pinned intents remain B1.08b",
+    "No scientific validity, new Runtime authority or UI claim"
+  ]
+}

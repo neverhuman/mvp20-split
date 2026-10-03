@@ -1,7 +1,7 @@
 # Research Service
 
 - Status: BP-06.01 closed; BP-06.03 assessment/publication/correction boundaries implemented. Actual Runtime receipt acceptance and partial exploratory output verified; BP-06.03 recovery/closeout accepted; BP-06.04 has pure scientific domain objects, synthetic synthesis/eligibility policies and explicit public mappings; separate scientific revision storage is implemented; authenticated synthetic report resolution is implemented; atomic intake and immutable eligibility/synthesis decision/dependency storage are implemented; scientific Artifact publication is implemented; new authenticated scientific APIs remain pending.
-- Package: `amphora-research` 0.21.0; exact dependencies belong to pyproject.toml, uv.lock and the generated package inventory.
+- Package: `amphora-research` 0.22.0; exact dependencies belong to pyproject.toml, uv.lock and the generated package inventory.
 - Design: [Research architecture](../../docs/Architecture/Research/Research_Architecture.md).
 
 Research owns candidate/sample/question/evidence-need identities and purpose-bound evidence sufficiency. It does not own Artifact bytes, Knowledge assertions, model execution or campaign acceptance. Dependencies are public contracts and the tool-protocol SDK plus Pydantic/FastAPI/Uvicorn and SQLAlchemy/psycopg/Alembic. No peer implementation imports, peer SQL or shared ORM.
@@ -17,6 +17,7 @@ Research owns candidate/sample/question/evidence-need identities and purpose-bou
 | [Observations](src/amphora_research/observations/README.md) | Exact measurement values, immutable reported results and exact experiment matching; authenticated synthetic report resolution; atomic durable intake; hosted intake APIs remain later milestones |
 | [Assessment](src/amphora_research/assessment/README.md) | Reviewed profiles, authenticated public-peer resolution, exact applicability, explicit gaps/conflicts and immutable decisions |
 | [Publication](src/amphora_research/publication/README.md) | Reviewed payload/lineage, fenced durable recovery, actual Data publication and atomic synthetic receipt |
+| [Scientific API](src/amphora_research/scientific_api/README.md) | Reviewed input contracts and full-profile binding; input orchestration and hosted routes pending |
 | [Scientific publication](src/amphora_research/scientific_publication/README.md) | Immutable lab/eligibility/synthesis Artifact output and fenced recovery; no DomainReceipt authority |
 | [Corrections](src/amphora_research/corrections/README.md) | Append-only owner correction chains, exact/head selection and future-campaign-only effects |
 | [Transport](src/amphora_research/transport/README.md) | Separately granted authenticated APIs and explicit optional assessment hosting |

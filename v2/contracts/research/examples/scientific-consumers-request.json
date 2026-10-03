@@ -1,0 +1,14 @@
+{
+  "wire_version": "1",
+  "decision": {
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "materials"
+    },
+    "kind": "eligibility",
+    "decision_id": "decision",
+    "sha256": "109ec0c48be425b452ad4605cb0e4631d1cb102ce870f804e081605803f3280d"
+  },
+  "after": null,
+  "limit": 64
+}

@@ -1,0 +1,79 @@
+{
+  "wire_version": "1",
+  "kind": "synthesis",
+  "profile_id": "routes",
+  "version": "1",
+  "policy": {
+    "wire_version": "1",
+    "authority": "synthetic",
+    "reference": {
+      "schema_id": "fixture.method",
+      "version": "1",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "context": {
+      "candidate": {
+        "scope": {
+          "tenant_id": "fixture",
+          "project_id": "materials"
+        },
+        "candidate_id": "nominal-design",
+        "revision": 1
+      },
+      "domain": "fixture.polymer",
+      "purpose": "fixture.production",
+      "conditions": {
+        "artifact_id": "conditions",
+        "scope": {
+          "tenant_id": "fixture",
+          "project_id": "materials"
+        },
+        "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "fixture.method",
+          "version": "1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "size_bytes": 2
+      },
+      "scale": {
+        "value": "1",
+        "unit": "g"
+      },
+      "purity": {
+        "artifact_id": "purity",
+        "scope": {
+          "tenant_id": "fixture",
+          "project_id": "materials"
+        },
+        "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "fixture.method",
+          "version": "1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "size_bytes": 2
+      }
+    },
+    "allowed_postures": [
+      "demonstrated"
+    ],
+    "allowed_step_postures": [
+      "demonstrated"
+    ],
+    "required_checks": [
+      "equipment",
+      "precursor_access"
+    ]
+  },
+  "adapter": {
+    "schema_id": "fixture.method",
+    "version": "1",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "publishers": [
+    "fixture"
+  ]
+}

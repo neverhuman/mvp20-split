@@ -472,3 +472,9 @@ Rotated MBT checkpoints:
 Rotated MBT checkpoints:
 
 | 2026-10-02 14:24:10 | B1 Knowledge publication process recovery verified; Research assessment next; child0/4,parent8/24 | 9 installed kill barriers;4 rebuild regressions;14 dev checks |
+
+- `2026-10-03 02:52:45`: B1.08a complete: reviewed input profiles, reference-only requests/status selections, producer report schemas and private full-profile binding. Research0.22.0/contracts0.11.0;758 source/758 installed,119 compatibility/dev;376 schemas preserve352. B1.08=25%,B1=90.63%,Build30.21%,child22.66%,parent53.78%; gates unchanged. B1.08b authenticated resolution/pinned intents next.
+
+Rotated MBT checkpoints:
+
+| 2026-10-02 16:18:15 | Owner-approved milestone accounting: B1 5/10, child12.50%, parent35.42%; closed gates unchanged0/4 and8/24; B1.06 next | [Canonical milestones](BP-06/Completed/BP-06.03%20Reasoning%20and%20domain%20receipts.md#canonical-b1-milestones); evidence-backed reclassification only |

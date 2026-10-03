@@ -1,0 +1,31 @@
+{
+  "wire_version": "1",
+  "decision_id": "decision",
+  "profile": {
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "materials"
+    },
+    "kind": "eligibility",
+    "profile_id": "screening",
+    "version": "1",
+    "sha256": "95140f82db9423c85d433bf577ad0c95f8d81408f22d1e7851468595b025ef31"
+  },
+  "reports": [
+    {
+      "artifact_id": "model-report",
+      "scope": {
+        "tenant_id": "fixture",
+        "project_id": "materials"
+      },
+      "sha256": "fa491b0227a8e9d1e10245992e769d43aeeb268d97b79411119d631e85110df5",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "research.synthetic-eligibility-report.payload",
+        "version": "1",
+        "sha256": "2ea86be792aca11a88e1ea3a2009e8c91f801ab424d6522603718fd5fc9d6b51"
+      },
+      "size_bytes": 1602
+    }
+  ]
+}

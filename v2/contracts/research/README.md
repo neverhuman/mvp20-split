@@ -1,5 +1,7 @@
 # Research Contracts
 
+Version0.11.0 adds reviewed eligibility/synthesis input profiles, reference-only decision/publication/impact/consumer requests, historical statuses and bounded synthetic producer report documents with self-contained schema helpers.24 additive schemas preserve352 predecessors. Full-profile configuration identity is owner-bound; shape validation is not source authentication. Requests cannot carry trusted verdicts, policies, actors or replacement result bytes. Scientific publication status contains no DomainReceipt. Actual input orchestration/routes remain later B1.08 slices.
+
 Version0.10.0 adds ScientificDecisionRef, EligibilityDecision, SynthesisDecision, ScientificImpactPage and DecisionConsumerPage (ten additive schemas;342 predecessors unchanged). Full policy/result/dependency and original actor records are immutable; impact is explicitly future_campaigns_only. References do not grant source access, scientific validity or Runtime authority. Pages expose only registered dependents; authentication/public producer proof remain owning service responsibilities.
 
 Version0.9.0 adds LabProfileRef, LabIntakeRequest and LabIntakeStatus (six additive schemas;336 predecessors unchanged). Requests carry only intake identity, reviewed profile digest and report Artifact. Actor comes from the authenticated adapter; outcomes distinguish pending, resolved reconciliation and explicit operational failure without a scientific verdict. Full configuration and exact consumed inputs are persisted privately by Research; no new DomainReceipt authority.

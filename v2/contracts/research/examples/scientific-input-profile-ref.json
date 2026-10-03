@@ -1,0 +1,10 @@
+{
+  "scope": {
+    "tenant_id": "fixture",
+    "project_id": "materials"
+  },
+  "kind": "eligibility",
+  "profile_id": "screening",
+  "version": "1",
+  "sha256": "95140f82db9423c85d433bf577ad0c95f8d81408f22d1e7851468595b025ef31"
+}

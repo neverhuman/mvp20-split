@@ -96,12 +96,40 @@ from .observations import (
 from .publication import AssessmentPublicationRequest, AssessmentPublicationStatus
 from .questions import AnswerCriterion, EvidenceNeed, EvidenceNeedRef, ResearchQuestion, ResearchQuestionRef
 from .resolution import IdentityResolution, ResolveIdentity
+from .scientific_api import (
+    LabIntakeSelection,
+    RegisterScientificConsumer,
+    ScientificAssessmentComplete,
+    ScientificAssessmentPending,
+    ScientificAssessmentStatus,
+    ScientificConsumersRequest,
+    ScientificDecisionSelection,
+    ScientificImpactRequest,
+    ScientificPublicationComplete,
+    ScientificPublicationFailed,
+    ScientificPublicationPending,
+    ScientificPublicationRequest,
+    ScientificPublicationStatus,
+    ScientificResultSelection,
+)
 from .scientific_decisions import (
     DecisionConsumerPage,
     EligibilityDecision,
     ScientificDecisionRef,
     ScientificImpactPage,
     SynthesisDecision,
+)
+from .scientific_inputs import (
+    EligibilityInputProfile,
+    ReportedEligibilityClaim,
+    ReportedEligibilityOrigin,
+    ScientificAssessmentRequest,
+    ScientificInputProfileRef,
+    SynthesisInputProfile,
+    SyntheticEligibilityReport,
+    SyntheticSynthesisReport,
+    synthetic_scientific_report_schema,
+    synthetic_scientific_report_schema_document,
 )
 from .synthesis import (
     RouteDecisionRecord,
@@ -146,3 +174,9 @@ __all__ += ["ReportedObservation", "SyntheticLabReport", "LabReturnProfile", "Ob
 __all__ += ["LabProfileRef", "LabIntakeRequest", "LabIntakePending", "LabIntakeResolved", "LabIntakeFailed", "LabIntakeStatus"]
 
 __all__ += ["ScientificDecisionRef", "EligibilityDecision", "SynthesisDecision", "ScientificImpactPage", "DecisionConsumerPage"]
+
+__all__ += ['ScientificInputProfileRef', 'EligibilityInputProfile', 'SynthesisInputProfile', 'ScientificAssessmentRequest', 'ReportedEligibilityOrigin', 'ReportedEligibilityClaim', 'SyntheticEligibilityReport', 'SyntheticSynthesisReport']
+
+__all__ += ['ScientificAssessmentPending', 'ScientificAssessmentComplete', 'ScientificAssessmentStatus', 'LabIntakeSelection', 'ScientificDecisionSelection', 'ScientificResultSelection', 'ScientificPublicationRequest', 'ScientificPublicationPending', 'ScientificPublicationComplete', 'ScientificPublicationFailed', 'ScientificPublicationStatus', 'ScientificImpactRequest', 'RegisterScientificConsumer', 'ScientificConsumersRequest']
+
+__all__ += ["synthetic_scientific_report_schema", "synthetic_scientific_report_schema_document"]
