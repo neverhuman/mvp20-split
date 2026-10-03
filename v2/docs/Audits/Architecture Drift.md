@@ -1,9 +1,9 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-03 05:30:56` (America/Chicago).
+- Last refreshed: `2026-10-03 05:46:33` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.04/B2.04b reviewed hosting/grants after private authenticated workflow; parent57.64%,13/24 closed gates.
+- Active focus: BP-06.04/B2.04c actual HTTP correction/replay after hosted grant proof; parent57.99%,13/24 closed gates.
 - Next gate: explicit normalization and future-only correction transitions. BP-06.03 aligned evidence is in drift history; richer scientific-quality UI remains SQ-01.
 
 ## Active Findings
@@ -33,3 +33,5 @@ Use [Development Process](../Development_Process.md) and the [audit template](..
 - `2026-10-03 05:18:56`: [B2.03c correction/impact evidence](Evidence/BP-06-Research/Correction_Views_Impacts.json) closes the owned material-dependency indexing gap:616 prior decisions preserved/backfilled, atomic trigger for new writes, exact read-only correction views and scoped pages. Current source authorization and public routes remain B2.04; no active invalidation or global discovery added.
 
 - `2026-10-03 05:30:56`: [B2.04a workflow](Evidence/BP-06-Research/Interpretation_Workflow.json) preserves original pending pins and distinguishes source failures from computed unresolved science. Fresh bounded reads and stored-profile retry are verified with scripted readers over actual owner storage. Hosted grants/routes and independent HTTP correction proof remain b/c; no broader authority claimed.
+
+- `2026-10-03 05:46:33`: [B2.04b hosting](Evidence/BP-06-Research/Interpretation_Hosting.json) preserves old config and separates computation/history/impact grants. Exact correction views and quality focus are available through configured APIs; independent Data/Research transition/replacement proof remains c. Historical sample-identity fixture uses a fake Artifact and must be replaced with actual Data evidence for that proof; no production validation bypass authorized.

@@ -1,0 +1,49 @@
+{
+  "timestamp_local": "2026-10-03 05:46:33",
+  "milestone": "BP-06.04/B2.04b",
+  "research_version": "0.31.0",
+  "contracts_version": "0.14.0",
+  "verification": {
+    "source_tests": 882,
+    "installed_tests": 882,
+    "skipped_each": 1,
+    "skip": "Earlier actual scientific HTTP replacement requires explicit peer environments; new transition proof is c",
+    "dev_tests": 14,
+    "focused_tests": 20,
+    "coverage": {
+      "covered_lines": 100,
+      "num_statements": 100,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100",
+      "num_branches": 14,
+      "num_partial_branches": 0,
+      "covered_branches": 14,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    },
+    "schemas_unchanged": 406,
+    "migration_unchanged": "research_0012"
+  },
+  "cases": [
+    "optional_old_configuration_compatibility",
+    "combined_reviewed_profile_bound",
+    "distinct_computation_history_impact_grants",
+    "original_actor_scope_denials",
+    "zero_active_profile_offline_history",
+    "strict_json_and_body_limits",
+    "pending_source_outage",
+    "quality_focus_preserved",
+    "exact_observation_material_correction_reads",
+    "material_and_interpretation_impact_routes"
+  ],
+  "limits": [
+    "Configured host/actual owner DB with scripted source readers or explicit outage",
+    "Independent HTTP correction/replacement proof remains c",
+    "No new scientific, publication or Runtime authority"
+  ]
+}

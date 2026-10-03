@@ -1,5 +1,8 @@
 """Separately granted scientific operations composed from focused owner modules."""
 from ..experiments.store import ExperimentStore
+from ..interpretation_api.operations import ACTIONS as INTERPRETATION_ACTIONS
+from ..interpretation_api.operations import InterpretationOperations
+from ..interpretation_api.profiles import InterpretationProfiles
 from ..material_state.store import MaterialStateStore
 from ..observations.intake_store import LabIntakeStore
 from ..observations.store import ObservationStore
@@ -11,17 +14,18 @@ from .workflow import LabIntakeWorkflow, ScientificAssessmentWorkflow
 
 ACTIONS = frozenset({"submit_lab_intake","read_lab_intake","assess_eligibility","assess_synthesis",
     "read_scientific_assessment","read_scientific_record","publish_scientific_result",
-    "read_scientific_publication","read_scientific_impact","register_scientific_consumer"})
+    "read_scientific_publication","read_scientific_impact","register_scientific_consumer"}) | INTERPRETATION_ACTIONS
 
 
 class ScientificOperations:
-    def __init__(self, engine, profiles, reader_factory, publications):
+    def __init__(self, engine, profiles, reader_factory, publications, *, interpretation_profiles=()):
         self.records = ScientificRecords(engine)
         self.index = DecisionIndex(engine)
         self.materials,self.experiments,self.observations = MaterialStateStore(engine),ExperimentStore(engine),ObservationStore(engine)
         self.lab = LabIntakeWorkflow(LabIntakeStore(engine),self.experiments,profiles,reader_factory)
         self.assessments = ScientificAssessmentWorkflow(ScientificInputStore(engine),profiles,reader_factory)
         self.publications = publications
+        self.interpretations = InterpretationOperations(engine,InterpretationProfiles(interpretation_profiles),reader_factory)
 
     def submit_lab(self, principal, request):
         principal.require("submit_lab_intake",request.profile.scope)

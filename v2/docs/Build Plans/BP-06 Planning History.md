@@ -1,5 +1,13 @@
 # BP-06 Planning History
 
+## BP-06.04/B2.04b interpretation hosting complete - 2026-10-03 05:46:33
+
+Research0.31.0/contracts0.14.0;882 source/882 installed and14 dev tests pass. One prior actual-HTTP opt-in skipped per suite; c owns the new independent transition proof.20 focused tests cover100 statements/14 branches100%;406 schemas/research_0012 unchanged. Optional normalization/use profiles preserve old science configs under combined32 cap. Four separate grants plus existing scoped record/impact grants expose exact status/correction/dependency reads without new authority. No-store strict JSON, actor/scope/action denials, zero-active history, pending source outage and quality focus verified. A malformed-body fixture initially omitted application/json and correctly received415; the test was corrected to exercise422 parsing behavior. c integration must replace the historical synthetic sample identity Artifact with real Data evidence instead of weakening dependency authentication. B2=91.67%,Build63.89%,child47.92%,parent57.99%; gates1/4 and13/24 unchanged.
+
+Rotated MBT checkpoints:
+
+| 2026-10-02 21:40:59 | B2.03 complete; B2 75%, child43.75%, parent40.63%; B2.04 active | [Knowledge corrections](../Audits/Evidence/BP-06-Knowledge/Receipt_Correction_Store_API.json);393+4 source/186 installed;316 schemas |
+
 ## BP-06.04/B2.04a authenticated interpretation workflow complete - 2026-10-03 05:30:56
 
 Research0.30.0/contracts0.14.0;762 source/762 installed and119 compatibility/dev tests pass.13 focused cases include8 actual-owner/scripted-reader tests covering49 statements/10 branches100%.406 schemas preserve402. Explicit pending/interpreted status retains original actor/request; computed unknown normalization remains distinct from source denial/outage. Workflow pins intent before fresh scope-bound source reads, requires complete prepared dependencies, resumes stored retired profiles and replays complete history offline. No current profile/source lookup on completed replay; scope/actor/input conflicts remain rejected. A test loop closure was explicitly bound after lint. No new migration, hosted routes or independent HTTP claim; B2.04b active. B2=83.33%,Build61.11%,child45.83%,parent57.64%; gates1/4 and13/24 unchanged.

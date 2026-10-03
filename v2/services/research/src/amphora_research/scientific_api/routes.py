@@ -23,6 +23,8 @@ from sqlalchemy.exc import SQLAlchemyError
 from ..assessment.policy import AssessmentError
 from ..assessment.reader import AssessmentPeerUnavailable
 from ..eligibility.evidence import EligibilityError
+from ..interpretation_api.routes import attach as attach_interpretations
+from ..material_state.validation import MaterialStateError
 from ..observations.identity import ObservationError
 from ..persistence.decision_document import DecisionStoreError
 from ..persistence.revisions import ScientificStoreError
@@ -59,11 +61,11 @@ def install_routes(app, credentials, operations):
         except SQLAlchemyError:
             return response("scientific_owner_unavailable",503)
         except (ScientificInputError,ScientificPublicationError,DecisionStoreError,ScientificStoreError,
-                ObservationError,EligibilityError,SynthesisError,AssessmentError) as error:
+                ObservationError,MaterialStateError,EligibilityError,SynthesisError,AssessmentError) as error:
             code = str(error)
             status = (403 if code == "peer_access_denied" or "actor_mismatch" in code else
                 409 if "conflict" in code or "pending" in code or code == "science_intake_not_resolved" else
-                404 if code in ("scientific_profile_unavailable","scientific_record_missing") else 422)
+                404 if code in ("scientific_profile_unavailable","interpretation_profile_unavailable","scientific_record_missing") else 422)
             return response(code,status)
         except (ValueError,UnicodeError,RecursionError):
             return response("invalid_request",422)
@@ -91,3 +93,4 @@ def install_routes(app, credentials, operations):
         ("scientific-consumers/read",ScientificConsumersRequest,operations.consumers),
     ):
         register("/v1/"+path,model,operation)
+    attach_interpretations(register,operations.interpretations)

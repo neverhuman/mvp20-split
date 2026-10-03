@@ -13,7 +13,9 @@
         "read_scientific_assessment",
         "read_scientific_record",
         "read_scientific_publication",
-        "read_scientific_impact"
+        "read_scientific_impact",
+        "read_observation_interpretation",
+        "read_interpretation_impact"
       ]
     }
   ],
@@ -29,6 +31,8 @@
       "actor_id": "research-science-publisher",
       "token_env": "AMPHORA_RESEARCH_PUBLICATION_TOKEN"
     },
-    "consumer_publishers": []
+    "consumer_publishers": [],
+    "normalization_profiles": [],
+    "observation_use_profiles": []
   }
 }

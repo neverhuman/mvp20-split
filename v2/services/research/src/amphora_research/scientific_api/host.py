@@ -7,6 +7,7 @@ from amphora_tool_protocol import HttpTransport
 from sqlalchemy import text
 
 from ..assessment.reader import AssessmentDataReader
+from ..interpretation_api.host import PROFILE_FIELDS, configured_profiles
 from ..observations.reports import ConfiguredLabReturn
 from .boundary import IDENTIFIER, ConfiguredScientificInput, require
 from .operations import ScientificOperations
@@ -15,7 +16,8 @@ from .publications import ScientificPublications
 
 
 def configured_operations(engine, config, keys, secret):
-    keys(config,("lab_profiles","eligibility_profiles","synthesis_profiles","data","publication","consumer_publishers"))
+    optional = tuple(field for field in PROFILE_FIELDS if isinstance(config,dict) and field in config)
+    keys(config,("lab_profiles","eligibility_profiles","synthesis_profiles","data","publication","consumer_publishers")+optional)
     keys(config["data"],("endpoint","token_env"))
     keys(config["publication"],("actor_id","token_env"))
     configured = []
@@ -25,7 +27,8 @@ def configured_operations(engine, config, keys, secret):
         values = config[field]
         require(isinstance(values,list) and len(values) <= 32,"invalid_scientific_profiles")
         configured.extend(wrapper(model.model_validate_json(json.dumps(raw))) for raw in values)
-    require(len(configured) <= 32,"invalid_scientific_profiles")
+    interpretations = configured_profiles(config)
+    require(len(configured)+len(interpretations) <= 32,"invalid_scientific_profiles")
     registry = ReviewedProfiles(configured)
     publishers = config["consumer_publishers"]
     require(isinstance(publishers,list) and len(publishers) <= 32,"invalid_consumer_publishers")
@@ -46,7 +49,9 @@ def configured_operations(engine, config, keys, secret):
         for table in ("lab_intents","lab_terminals","material_state_revisions","experiment_revisions","observation_revisions",
             "scientific_decisions","decision_sources","decision_observations","decision_consumers",
             "science_publication_headers","science_publication_events","science_publication_leases",
-            "scientific_input_intents","scientific_input_outcomes"):
+            "scientific_input_intents","scientific_input_outcomes","interpretation_intents","interpretation_results",
+            "interpretation_sources","interpretation_observations","interpretation_material_states","interpretation_experiments",
+            "decision_material_states"):
             connection.execute(text(f"SELECT 1 FROM research.{table} LIMIT 1"))
     publications = ScientificPublications(engine,reader,transport,publisher,publishers)
-    return ScientificOperations(engine,registry,reader,publications)
+    return ScientificOperations(engine,registry,reader,publications,interpretation_profiles=interpretations)
