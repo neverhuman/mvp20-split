@@ -1,5 +1,14 @@
 # BP-06 Planning History
 
+## BP-06.04/B1.03 synthesis/eligibility complete - 2026-10-03 00:13:55
+
+Research0.15.0;103 new direct cases,339 combined source/installed tests,14 dev tests,898 statements/154 branches covered. [Evidence](../Audits/Evidence/BP-06-Research/Synthesis_Eligibility_Policies.json). Synthesis separates route evidence from project constraints and preserves alternatives/bounded failed searches. Eligibility preserves optional weaknesses/focus while enforcing explicit action prerequisites. Fixed synthetic authority; no public schema/store/API or scientific claim. B1 3/8=37.50%, child9.38%, parent51.56%; gates0/4 and12/24 unchanged. B1.04 active.
+
+Rotated MBT checkpoint:
+
+| 2026-10-02 12:53:49 | B1 publication intent/lease store verified; durable attempts next; child0/4,parent8/24 | Knowledge0.10.0;knowledge_0004;110 scoped tests |
+
+
 ## BP-06.04/B1.02 context aggregates complete - 2026-10-02 23:58:49
 
 Research0.14.0;236 source/236 independently installed tests,14 dev tests,551 statements/110 branches covered. Exact material preparation/sample/method/context identities preserve failed controls, quality flags, censoring and missingness without scientific promotion. [Evidence](../Audits/Evidence/BP-06-Research/Material_Experiment_Observation.json). Public schemas and stores unchanged. B1 2/8=25%, child6.25%, parent51.04%; closed gates0/4 and12/24. B1.03 active.

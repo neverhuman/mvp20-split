@@ -1,0 +1,88 @@
+{
+  "timestamp_local": "2026-10-03 00:13:55",
+  "status": "passed",
+  "scope": "BP-06.04/B1.03 synthetic purpose-bound synthesis and eligibility policies",
+  "owner_version": "0.15.0",
+  "new_direct_tests": 103,
+  "combined_source_tests": 339,
+  "combined_installed_tests": 339,
+  "dev_tests": 14,
+  "coverage": {
+    "covered_lines": 898,
+    "num_statements": 898,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100",
+    "num_branches": 154,
+    "num_partial_branches": 0,
+    "covered_branches": 154,
+    "missing_branches": 0,
+    "percent_branches_covered": 100.0,
+    "percent_branches_covered_display": "100"
+  },
+  "installed_manifest": {
+    "timestamp_local": "2026-10-03 00:11:15",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-research",
+    "forbidden_implementations": [
+      "amphora_knowledge",
+      "amphora_data_artifacts",
+      "amphora_campaign_runtime"
+    ],
+    "packages": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.5",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-knowledge": "0.7.0",
+      "amphora-contracts-research": "0.6.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-research": "0.15.0",
+      "amphora-tool-protocol": "0.2.0"
+    },
+    "wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.5-py3-none-any.whl": "0a4486a87eb7cf126fbd254306f5eba645fe99c357b5e037493934e7862f7664",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_knowledge-0.7.0-py3-none-any.whl": "d36f869fa187b73c5338291cdc3afceb3ebd19026d17cbdd6d67f3e0ce1bf417",
+      "amphora_contracts_research-0.6.0-py3-none-any.whl": "4ebdb4365d30ce487af2a39cc97262154d84a8040b3693c818452457aef35e2b",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_research-0.15.0-py3-none-any.whl": "401cb22a3f3307951ecd32e982f6098bf60ff2532c83959c8bc66481b44132ee",
+      "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+    }
+  },
+  "oracles": [
+    "Route evidence and project executability are independent",
+    "Blocked route does not suppress a usable alternative",
+    "No route found retains bounded search and remains unknown",
+    "Summary evidence cannot conceal missing required step evidence",
+    "Weak optional evidence remains iteration focus without blocking exploration",
+    "Only declared action prerequisites determine eligibility",
+    "Context/domain/purpose/method/source-kind mismatches remain inspectable",
+    "Contradictions and explicit uncertainty remain unknown without majority vote",
+    "Corrections create distinct assessments without mutating earlier decisions"
+  ],
+  "checks": [
+    "ruff passed",
+    "Production dependency boundaries verified",
+    "module selectors synthesis and eligibility passed"
+  ],
+  "limits": [
+    "Synthetic policy authority only",
+    "No route engine, lab integration or scientific validity established",
+    "No new API, persistent store, authenticated claims or feedback dispatch",
+    "Numerical measurement interpretation and unit normalization remain B2",
+    "316 public schemas unchanged"
+  ]
+}

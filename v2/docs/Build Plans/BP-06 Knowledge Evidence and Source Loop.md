@@ -2,17 +2,17 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-06.03 closed; BP-06.04/Build/B1.03 active.
-- Last refreshed: `2026-10-02 23:58:49` (America/Chicago).
+- Status: primary_active; BP-06.03 closed; BP-06.04/Build/B1.04 active.
+- Last refreshed: `2026-10-03 00:13:55` (America/Chicago).
 - Owner/scope: Knowledge, Research and focused Data/Artifacts modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness](Planning_Readiness.md).
 - Prerequisites: completed BP-04 receipt/wait seams, BP-05 inspection and BP-01/02/03 boundaries.
-- Scoped implementation/verification completion: **51.04%** = (12+B1 2/8)/24;12/24 closed delivery gates. P1/.01,P2/.02,P3/.03 are100%; P4/.04 is6.25%;P5-P6 remain0%.
-- Current task: BP-06.04/B1.03 synthesis/eligibility policy; B1.02 verified236 source/236 installed tests.
+- Scoped implementation/verification completion: **51.56%** = (12+B1 3/8)/24;12/24 closed delivery gates. P1/.01,P2/.02,P3/.03 are100%; P4/.04 is9.38%;P5-P6 remain0%.
+- Current task: BP-06.04/B1.04 public DTOs/mappers; B1.03 verified339 source/339 installed tests.
 - Demonstrated behavior: bounded reasoning, authenticated sufficiency, immutable future-only corrections, actual Runtime receipt/retention, exploratory partial output, acknowledgement-loss recovery and independent owner replacement. Both publication owners have actual process-death evidence.
 - Blockers: none requiring owner direction. Scientific sources, assay/route engines and target-host choices remain scoped future decisions.
 - Human acceptance: no routine pause for authorized engineering; experimental validity is not inferred from software verification.
-- Next gate: purpose-bound synthesis/eligibility domain oracles, then B1.04 public DTOs/mappers.
+- Next gate: additive public shapes/examples, explicit mappings and predecessor compatibility; then B1.05 storage.
 
 ## Outcome and Boundaries
 
@@ -31,7 +31,7 @@ Primary services retain private state, dependencies, migrations and module READM
 | P1 / [BP-06.01 Source and evidence contracts](BP-06/Completed/BP-06.01%20Source%20and%20evidence%20contracts.md) | 100% | 100% | 100% | Parent predecessor gates |
 | P2 / [BP-06.02 Typed graph authoring and replay](BP-06/Completed/BP-06.02%20Typed%20graph%20authoring%20and%20replay.md) | 100% | 100% | 100% | BP-06.01 acceptance |
 | P3 / [BP-06.03 Reasoning and domain receipts](BP-06/Completed/BP-06.03%20Reasoning%20and%20domain%20receipts.md) | 100% | 100% | 100% | BP-06.02 acceptance |
-| P4 / [BP-06.04 Laboratory returns and candidate eligibility](BP-06/BP-06.04%20Laboratory%20returns%20and%20candidate%20eligibility.md) | 6.25% | 8.33% | 0% | BP-06.03 acceptance |
+| P4 / [BP-06.04 Laboratory returns and candidate eligibility](BP-06/BP-06.04%20Laboratory%20returns%20and%20candidate%20eligibility.md) | 9.38% | 12.50% | 0% | BP-06.03 acceptance |
 | P5 / [BP-06.05 Representation reuse and retrieval](BP-06/BP-06.05%20Representation%20reuse%20and%20retrieval.md) | 0% | 0% | 0% | BP-06.04 acceptance |
 | P6 / [BP-06.06 Feedback integration and closeout](BP-06/BP-06.06%20Feedback%20integration%20and%20closeout.md) | 0% | 0% | 0% | BP-06.05 acceptance |
 
