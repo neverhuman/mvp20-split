@@ -8,7 +8,7 @@ dependencies = [
     "amphora-contracts-core==0.1.0",
     "amphora-contracts-evidence==0.5.2",
     "amphora-contracts-research==0.4.0",
-    "amphora-research==0.8.0",
+    "amphora-research==0.9.0",
     "amphora-contracts-tools==0.1.0",
     "amphora-contracts-campaigns==0.4.1",
     "amphora-campaign-runtime==0.20.0",

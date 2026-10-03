@@ -1,0 +1,96 @@
+{
+  "timestamp_local": "2026-10-02 20:27:44",
+  "scope": "BP-06.03/B1.09 Research publication and synthetic owner receipt",
+  "research_version": "0.9.0",
+  "source_tests": {
+    "full_run": 298,
+    "additional_rejection_proof_tests": 4
+  },
+  "installed_tests": {
+    "tests": 302,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "installed_manifest_sha256": "f2188260f0e2efa2e2156423e47b13541466467fa7e9695ce036349ccec3d8c3",
+  "wheels": {
+    "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+    "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_evidence-0.5.2-py3-none-any.whl": "bb126226956a9d79f4f2a5229ea9b8fe01658ef5b1db95fbb84578835e3ebcc2",
+    "amphora_contracts_graph_runtime-0.11.0-py3-none-any.whl": "831fdf4af0b4d954619af27ed243b0d393ce898584633a367db0f446cdbf5acd",
+    "amphora_contracts_knowledge-0.6.2-py3-none-any.whl": "a6fdfaf29f660e5a749f6b76a74ecb8c8fa66e15db19d80e69c664a13fabb57b",
+    "amphora_contracts_research-0.4.0-py3-none-any.whl": "2b5f5e51a5b4932609f8f4e46a89d483f02c9feab9d7015146bc850cb300d48f",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+    "amphora_research-0.9.0-py3-none-any.whl": "aff347d739fb32bf704c88c8c326c2278ecc769117975568ee6218c6ee77ddb1",
+    "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+  },
+  "installed_peers": {
+    "data": {
+      "package": "amphora-data-artifacts",
+      "version": "0.11.0"
+    },
+    "knowledge": {
+      "package": "amphora-knowledge",
+      "version": "0.13.0"
+    }
+  },
+  "coverage": {
+    "covered_lines": 275,
+    "num_statements": 284,
+    "percent_covered": 95.6043956043956,
+    "percent_covered_display": "96",
+    "missing_lines": 9,
+    "excluded_lines": 0,
+    "percent_statements_covered": 96.83098591549296,
+    "percent_statements_covered_display": "97",
+    "num_branches": 80,
+    "num_partial_branches": 7,
+    "covered_branches": 73,
+    "missing_branches": 7,
+    "percent_branches_covered": 91.25,
+    "percent_branches_covered_display": "91"
+  },
+  "coverage_gaps": {
+    "store.py": [
+      37,
+      101
+    ],
+    "workflow.py": [
+      24,
+      34,
+      38,
+      72,
+      76,
+      77,
+      78
+    ]
+  },
+  "actual_peer_cases": [
+    "real_logical_output",
+    "explicit_missing_evidence",
+    "opinion_insufficient",
+    "matching_observation",
+    "wrong_token_denied",
+    "revoked_source_denied",
+    "data_outage_retryable",
+    "no_idle_research_transaction",
+    "durable_assessment_replacement_read",
+    "actual_assessment_publication_and_receipt",
+    "publication_terminal_replay",
+    "actual_begin_ack_loss",
+    "actual_stream_ack_loss",
+    "actual_finalize_ack_loss"
+  ],
+  "migration": "research_0004",
+  "schema_count": 296,
+  "schema_changes": 0,
+  "limits": [
+    "Private adapter only; public assessment routes remain B1.10",
+    "Actual acknowledgement-loss recovery is not process-death or target-host power-loss proof",
+    "No Runtime wait delivery or scientific establishment",
+    "Failure can retain provisional external effects; original histories remain immutable"
+  ]
+}

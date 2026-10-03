@@ -165,10 +165,12 @@
   },
   {
     "package": "amphora-research",
-    "version": "0.8.0",
+    "version": "0.9.0",
     "path": "services/research",
     "module": "amphora_research",
     "public_dependencies": [
+      "amphora-contracts-graph-runtime",
+      "amphora-tool-protocol",
       "amphora-contracts-knowledge",
       "amphora-contracts-artifacts",
       "amphora-contracts-core",

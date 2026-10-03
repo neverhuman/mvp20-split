@@ -1,10 +1,10 @@
 # Research Service
 
 - Status: BP-06.01 accepted; independent identity/question policies and PostgreSQL revision ledger implemented. Authenticated identity-only read API and explicit loopback hosting implemented. BP-06.03/B1.07 private authenticated evidence resolution is complete; B1.08 durable assessments are implemented.
-- Package: `amphora-research` 0.8.0.
+- Package: `amphora-research` 0.9.0.
 - Design: [Research](../../docs/Architecture/Research/Research_Architecture.md).
 
-Research owns intended candidate, physical sample, question and evidence-need identity. It does not own artifact bytes, Knowledge assertions, model execution or campaign acceptance. Dependencies are public Core/Research/Artifacts/Knowledge contracts and SQLAlchemy/psycopg/Alembic, FastAPI/Pydantic and Uvicorn; no imports of Data/Runtime/Knowledge implementation or access to their SQL tables.
+Research owns intended candidate, physical sample, question and evidence-need identity. It does not own artifact bytes, Knowledge assertions, model execution or campaign acceptance. Dependencies are public Core/Research/Artifacts/Knowledge/Graph Runtime contracts and the public tool-protocol SDK and SQLAlchemy/psycopg/Alembic, FastAPI/Pydantic and Uvicorn; no imports of Data/Runtime/Knowledge implementation or access to their SQL tables.
 
 The [identity module](src/amphora_research/identity/README.md) implements candidate/sample scope and correction-chain checks, exact identity reconciliation and question/need invariants. It supplies no public endpoint and must not be imported by another owner. The [transport module](src/amphora_research/transport/README.md) exposes authenticated exact identity reads; no scientific adjudicator is implemented. [Private persistence](src/amphora_research/persistence/README.md) now owns immutable candidate/sample/question/need revisions, exact local links, atomic head updates and replay. Data owns artifact-rights enforcement. B3 verifies actual peer reads of questions/needs and their finalized Data references; the declaration itself grants neither artifact access nor scientific acceptance. Independent installed-owner replacement passed:70 owner tests,36 replacement API tests and actual Data peer/history proof. Full material-state/processing and observation eligibility remain BP-06.04.
 
@@ -14,4 +14,6 @@ BP-06.03/B1 adds the private [assessment module](src/amphora_research/assessment
 
 B1.07 is complete: the bounded authenticated Data reader and resolver consume public Knowledge/Research payloads with exact producer, target/subject/context/purpose, lineage and owner declaration checks. Logical conflict remains unknown even alongside negative evidence. Verification passed374 scoped tests and257 independently installed tests, including actual Data/Knowledge processes.296 schemas preserve all294 predecessors; only two synthetic-evidence schemas were added. See the assessment module README for rebuild invariants and evidence tiers.
 
-B1.08 adds immutable assessment intent/decision storage with research_0003; research_0001/0002 remain unchanged. B1.09 output publication and B1.10 public assessment routes remain. The public HTTP API still exposes identity reads only; no assessment receipt or scientific establishment is claimed. The assessment README owns storage/replay/replacement invariants.
+B1.08 adds immutable assessment intent/decision storage with research_0003; research_0001/0002 remain unchanged. B1.09 output publication is implemented; B1.10 public assessment routes remain. The public HTTP API still exposes identity reads only; synthetic assessment receipts are implemented, without scientific establishment. The assessment README owns storage/replay/replacement invariants.
+
+B1.09 adds the private [publication module](src/amphora_research/publication/README.md), research_0004 append-only publication history and fenced recovery. Actual Data publication and acknowledgement-loss recovery are verified. Public assessment routes remain B1.10; Runtime alone accepts domain receipts.

@@ -9,6 +9,7 @@ from datetime import datetime
 from pathlib import Path
 
 import pytest
+from amphora_contracts_core import SchemaRef
 from amphora_contracts_knowledge import reasoning_artifact_schema, reasoning_artifact_schema_document
 from amphora_contracts_research import (
     EvidenceAssessmentProfile,
@@ -23,6 +24,10 @@ from amphora_research.assessment.policy import AssessmentError
 from amphora_research.assessment.reader import AssessmentDataReader, AssessmentPeerUnavailable
 from amphora_research.assessment.resolution import AssessmentResolver
 from amphora_research.assessment.store import AssessmentStore
+from amphora_research.publication.artifact import AssessmentArtifact
+from amphora_research.publication.store import PublicationStore
+from amphora_research.publication.workflow import PublicationWorkflow
+from amphora_tool_protocol import HttpTransport, ProtocolError, TransportLost
 from postgres_fixture import knowledge_owner, owned_state
 
 from .live_peers import Owner, owned_script
@@ -72,7 +77,9 @@ def test_actual_knowledge_output_and_evidence_require_authenticated_applicable_p
             f"import os; from {module}.persistence.migrate import upgrade; upgrade(os.environ['PEER_MIGRATION'])", environment)
     schemas = []
     for name, reference, document in [("reasoning", reasoning_artifact_schema(), reasoning_artifact_schema_document()),
-                                       ("evidence", synthetic_evidence_schema(), synthetic_evidence_schema_document())]:
+                                       ("evidence", synthetic_evidence_schema(), synthetic_evidence_schema_document()),
+                                       ("assessment", SchemaRef(schema_id="research.evidence-assessment.payload", version="1",
+                                        sha256=hashlib.sha256(AssessmentArtifact.schema_document()).hexdigest()), AssessmentArtifact.schema_document())]:
         (tmp_path / (name + ".json")).write_bytes(document)
         schemas.append({"media_type": "application/json", **reference.model_dump(mode="json"), "schema_path": name + ".json"})
     raw_schema = {"schema_id": "fixture.bytes", "version": "1",
@@ -167,15 +174,47 @@ def test_actual_knowledge_output_and_evidence_require_authenticated_applicable_p
         configured = ConfiguredAssessment.from_wire(profile)
         request = {"wire_version": "1", "assessment_id": "assessment", "profile": configured.reference.model_dump(mode="json"),
                    "question": question["reference"], "answers": [{"criterion_id": "c", "artifact": answer}], "receipts": []}
-        def resolve(receipts, token="b" * 32):
+        def resolve(receipts, token="b" * 32, recovery=None):
             selected = EvidenceAssessmentRequest.model_validate_json(json.dumps(request | {
-                "receipts": receipts, "assessment_id": digest(receipts)}))
+                "receipts": receipts, "assessment_id": digest([receipts, recovery])}))
             bound = configured.bind(selected, "reader", scope_model)
             journal = AssessmentStore(store.engine)
             journal.begin(bound)
             resolved = AssessmentResolver(store, AssessmentDataReader(data.endpoint, token, scope_model)).resolve(bound)
             terminal = journal.complete(bound, resolved)
             assert AssessmentStore(store.engine).read(scope_model, selected.assessment_id, "reader") == terminal
+            class LossAfterCommit:
+                def __init__(self):
+                    self.inner = HttpTransport(data.endpoint, "d" * 32)
+                    self.lost = False
+
+                def request(self, method, path, *args, **kwargs):
+                    reply = self.inner.request(method, path, *args, **kwargs)
+                    target = ((recovery == "begin" and method == "POST" and path == "/v1/derived-uploads")
+                              or (recovery == "stream" and method == "PUT")
+                              or (recovery == "finalize" and method == "POST" and path == "/v1/artifacts/finalize"))
+                    if target and reply.status in (200, 201, 202) and not self.lost:
+                        self.lost = True
+                        raise TransportLost("test_lost_response_after_actual_peer_commit")
+                    return reply
+
+            transport = LossAfterCommit()
+            publication = PublicationWorkflow(PublicationStore(store.engine),
+                AssessmentDataReader(data.endpoint, token, scope_model), transport, "fixture", "research-synthetic")
+            try:
+                published = publication.submit(scope_model, selected.assessment_id, "reader")
+            except ProtocolError:
+                assert recovery is not None and transport.lost
+                publication = PublicationWorkflow(PublicationStore(store.engine),
+                    AssessmentDataReader(data.endpoint, token, scope_model), transport, "fixture", "research-synthetic")
+                published = publication.submit(scope_model, selected.assessment_id, "reader")
+            assert published.ordinal == (2 if recovery == "stream" else 1)
+            if recovery is not None:
+                assert transport.lost
+            assert published.stage == "published"
+            assert published.receipt.purpose == "research.synthetic_sufficiency"
+            assert published.receipt.outcome.status == ("accepted" if terminal.resolved.assessment.sufficient else "abstained")
+            assert publication.submit(scope_model, selected.assessment_id, "reader") == published
             return terminal.resolved
         assert resolve([]).assessment.needs[0].gap.reason == "no_matching_evidence"
         observations = []
@@ -189,6 +228,8 @@ def test_actual_knowledge_output_and_evidence_require_authenticated_applicable_p
             assert assessment.sufficient is (category == "observation")
             assert assessment.scientifically_established is False
             observations.append(assessment.model_dump(mode="json"))
+        for recovery in ("begin", "stream", "finalize"):
+            assert resolve([receipt], recovery=recovery).assessment.sufficient
         with pytest.raises(AssessmentError, match="peer_access_denied"):
             resolve([receipt], token="z" * 32)
         rights2 = rights | {"reference": rights["reference"] | {"revision": 2}, "supersedes": rights["reference"],
@@ -203,7 +244,7 @@ def test_actual_knowledge_output_and_evidence_require_authenticated_applicable_p
         evidence = {"timestamp_local": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "scope": scope,
                     "answer": answer, "assessments": observations, "actual_processes": ["Data", "Knowledge", "Research"],
                     "cases": ["real_logical_output", "explicit_missing_evidence", "opinion_insufficient", "matching_observation",
-                              "wrong_token_denied", "revoked_source_denied", "data_outage_retryable", "no_idle_research_transaction", "durable_assessment_replacement_read"]}
+                              "wrong_token_denied", "revoked_source_denied", "data_outage_retryable", "no_idle_research_transaction", "durable_assessment_replacement_read", "actual_assessment_publication_and_receipt", "publication_terminal_replay", "actual_begin_ack_loss", "actual_stream_ack_loss", "actual_finalize_ack_loss"]}
         path = Path(os.environ.get("AMPHORA_RESEARCH_RESOLUTION_EVIDENCE", str(Path(__file__).absolute().parents[4] /
                                                                                  ".test-results/research-resolution-live.json")))
         path.write_text(json.dumps(evidence, indent=2) + "\n", encoding="utf-8")

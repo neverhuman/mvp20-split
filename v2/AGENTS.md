@@ -26,6 +26,14 @@ Short continuity notes for future relaunches so work can resume from the extract
 
 ## Canonical Execution Rules
 
+### Continue-until-needed operating rule
+
+- When the owner says to continue until needed, that authorization persists across milestones, commits, pushes, plan boundaries and context compaction. After satisfying the current gate, update canonical trackers and Restore.md, commit/push significant verified work, then immediately take the next authorized task in MBT order.
+- A completed milestone, clean working tree, passing tests, successful push or updated handoff is a progress checkpoint, not a reason to end the turn. Report those checkpoints in commentary and keep working. Do not end with "no user decision needed" while authorized work remains.
+- Stop only when the authorized scope is complete, the owner pauses/redirects work, or a concrete decision, permission or external blocker prevents further authorized progress. Explain the specific blocker and the smallest owner action needed; complete independent authorized work first. Do not invent approval gates or blockers to justify stopping.
+- Context pressure is a reason to refresh Restore.md and preserve exact state, not to request another "continue." Resume from that handoff after compaction. Keep bounded phases, prerequisite gates, scoped verification and audit requirements intact; autonomy does not waive them.
+
+
 - Enforce strict behavioral and functional isolation: primary services and scientific tools have focused packages, public versioned contracts, private state/dependencies, independent builds/tests and replacement READMEs. Do not introduce a catch-all backend, shared business/ORM layer, private cross-service imports or direct access to another service's tables. Use System Service Isolation and Capability Tool Services designs; runtime alone owns execution acceptance.
 
 - Initial product scope is internal/demo, one user and one active autonomous campaign, with domain-general tools and likely later bio-available-polymer use. Human changes take effect between campaigns; do not introduce routine in-campaign human approval gates. Synthetic fixtures are acceptable while scientific sources remain TBA, with no scientific-validity claim.

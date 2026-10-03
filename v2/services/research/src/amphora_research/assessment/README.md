@@ -1,6 +1,6 @@
 # Research assessment policy
 
-- Status: BP-06.03/B1.07 producer resolution implemented; exact owner/peer binding and actual Data/Knowledge proof verified. B1.08 immutable assessment storage is verified; output publication and HTTP remain B1.09-.10. No public caller can submit trusted observation fields.
+- Status: BP-06.03/B1.07 producer resolution implemented; exact owner/peer binding and actual Data/Knowledge proof verified. B1.08 immutable assessment storage is verified; B1.09 publication is implemented in the adjacent publication module; HTTP remains B1.10. No public caller can submit trusted observation fields.
 - Design: [Research assessment boundary](../../../../../docs/Build%20Plans/BP-06/BP-06.03%20Research%20assessment%20design.md).
 - Authority: synthetic decision policy only; no scientific establishment or Runtime receipt.
 

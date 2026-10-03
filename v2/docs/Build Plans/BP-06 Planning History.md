@@ -325,3 +325,11 @@ Research0.8.0 adds forward research_0003 and private intent/decision storage.271
 Rotated MBT checkpoints:
 
 | 2026-10-01 20:05:58 | BP-06.02/B1 complete; child25%, parent20.83%; B2 active | [Public API/peer proof](../Audits/Evidence/BP-06-Knowledge/Public_API.json);104 owner tests;260 schemas |
+
+## 2026-10-02 20:27:44 - B1.09 publication and continuation rule
+
+Owner explicitly required continuing across milestones rather than stopping after each push; v2/AGENTS.md now records that persistent rule. B1.09 complete: Research0.9.0;298+4 source/302 independently installed tests, actual Data acknowledgement-loss recovery. research_0004 retains fenced append-only history and atomic output/receipt. B1 9/10, Build30%, child22.50%, parent37.08%; gates unchanged. B1.10 active. No scientific or process-death claim.
+
+Rotated MBT checkpoints:
+
+| 2026-10-01 20:13:10 | BP-06.02/B2 cursor partial; child25%, parent20.83% unchanged | [Cursor proof](../Audits/Evidence/BP-06-Knowledge/Rebuild_Cursor.json);112 owner tests |
