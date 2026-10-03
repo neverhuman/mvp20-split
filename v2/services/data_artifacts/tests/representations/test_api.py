@@ -39,7 +39,7 @@ def test_profile_discovery_registration_and_exact_digest_scoping(http):
     response = h.client.get(BASE + "/available-profiles", headers=h.headers)
     assert response.status_code == 200 and response.headers["Cache-Control"] == "no-store"
     profiles = response.json()
-    assert len(profiles) == 1
+    assert [(p["version"], p["space"]["normalization"]) for p in profiles] == [("1", "none"), ("2", "l2")]
     result = h.client.post(BASE + "/profiles", json=profiles[0], headers=h.headers)
     assert result.status_code == 200
     ref = result.json()

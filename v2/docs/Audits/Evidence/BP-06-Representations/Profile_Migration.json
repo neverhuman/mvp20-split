@@ -1,0 +1,838 @@
+{
+  "timestamp_local": "2026-10-03 18:53:59",
+  "old": {
+    "wire_version": "1",
+    "generation": {
+      "wire_version": "1",
+      "reference": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "b54127d6ee1d44538b10344cd89bff82"
+        },
+        "corpus_id": "corpus",
+        "generation_id": "g1",
+        "sha256": "a43315c1ed9841f2428100eec01914742ae82e7f8cfa6a6ceca4a90b638c4172"
+      },
+      "actor_id": "worker",
+      "manifest": {
+        "wire_version": "1",
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "b54127d6ee1d44538b10344cd89bff82"
+        },
+        "profile": {
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "b54127d6ee1d44538b10344cd89bff82"
+          },
+          "profile_id": "fixture.utf8-histogram",
+          "version": "1",
+          "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+        },
+        "bindings": [
+          {
+            "wire_version": "1",
+            "reference": {
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "b54127d6ee1d44538b10344cd89bff82"
+              },
+              "binding_id": "binding.5360db63678745f257f3704ec3a55ad877b7da381024895ee1c6d28330e21f2b",
+              "sha256": "87cc0ac9e8ef783d2d8218a9ab25e3dbb081c1e23e41686a98d867e8ebb61847"
+            },
+            "profile": {
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "b54127d6ee1d44538b10344cd89bff82"
+              },
+              "profile_id": "fixture.utf8-histogram",
+              "version": "1",
+              "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+            },
+            "source": {
+              "source": {
+                "scope": {
+                  "tenant_id": "upload-tests",
+                  "project_id": "b54127d6ee1d44538b10344cd89bff82"
+                },
+                "source_id": "source",
+                "revision_id": "r1",
+                "raw": {
+                  "artifact_id": "0ab5d7d46865462e9a02ae4ab9c75ab8",
+                  "scope": {
+                    "tenant_id": "upload-tests",
+                    "project_id": "b54127d6ee1d44538b10344cd89bff82"
+                  },
+                  "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+                  "media_type": "application/octet-stream",
+                  "schema_ref": {
+                    "schema_id": "fixture.bytes",
+                    "version": "1",
+                    "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                  },
+                  "size_bytes": 4
+                }
+              },
+              "unit": "byte",
+              "start": 0,
+              "end": 4,
+              "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+            },
+            "vector": {
+              "artifact_id": "de34f622d17d4644b33c31989eade140",
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "b54127d6ee1d44538b10344cd89bff82"
+              },
+              "sha256": "6852be382d0f9a5ce5d84946d911d42fa96070806545873c2333e1cf9c52d369",
+              "media_type": "application/json",
+              "schema_ref": {
+                "schema_id": "representations.vector",
+                "version": "1",
+                "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+              },
+              "size_bytes": 615
+            }
+          }
+        ],
+        "watermark": "3281036178f905ef9dd0b26e36cd18387f057b23e875122ba5f727731f77462f"
+      },
+      "expected_head": null,
+      "backend_profile": {
+        "schema_id": "data.qdrant-projection",
+        "version": "1",
+        "sha256": "bbd62cf269057b3280ef7e29e8ca06dbdbf6e81f42bb69652e63fb1973327f83"
+      }
+    },
+    "state": "published"
+  },
+  "new": {
+    "wire_version": "1",
+    "generation": {
+      "wire_version": "1",
+      "reference": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "b54127d6ee1d44538b10344cd89bff82"
+        },
+        "corpus_id": "corpus",
+        "generation_id": "g2",
+        "sha256": "0d7270999acaa6567cf9faffee1f75274b137772bdd3e4fdf0182042d9f6c654"
+      },
+      "actor_id": "worker",
+      "manifest": {
+        "wire_version": "1",
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "b54127d6ee1d44538b10344cd89bff82"
+        },
+        "profile": {
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "b54127d6ee1d44538b10344cd89bff82"
+          },
+          "profile_id": "fixture.utf8-histogram",
+          "version": "2",
+          "sha256": "cf46671b7ebd0a79c9e3decab93a82834c43ce0bd567ca9b90eb28e9109cf60d"
+        },
+        "bindings": [
+          {
+            "wire_version": "1",
+            "reference": {
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "b54127d6ee1d44538b10344cd89bff82"
+              },
+              "binding_id": "binding.e7c556578e9f6960788ce369a65c762417cd9c1bab71e5fe09ff5ac51ceb6391",
+              "sha256": "676733799bbad172c5fc5c903f01d0e4730c15af0995e3c4d53f466793c40e15"
+            },
+            "profile": {
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "b54127d6ee1d44538b10344cd89bff82"
+              },
+              "profile_id": "fixture.utf8-histogram",
+              "version": "2",
+              "sha256": "cf46671b7ebd0a79c9e3decab93a82834c43ce0bd567ca9b90eb28e9109cf60d"
+            },
+            "source": {
+              "source": {
+                "scope": {
+                  "tenant_id": "upload-tests",
+                  "project_id": "b54127d6ee1d44538b10344cd89bff82"
+                },
+                "source_id": "source",
+                "revision_id": "r1",
+                "raw": {
+                  "artifact_id": "0ab5d7d46865462e9a02ae4ab9c75ab8",
+                  "scope": {
+                    "tenant_id": "upload-tests",
+                    "project_id": "b54127d6ee1d44538b10344cd89bff82"
+                  },
+                  "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+                  "media_type": "application/octet-stream",
+                  "schema_ref": {
+                    "schema_id": "fixture.bytes",
+                    "version": "1",
+                    "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                  },
+                  "size_bytes": 4
+                }
+              },
+              "unit": "byte",
+              "start": 0,
+              "end": 4,
+              "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+            },
+            "vector": {
+              "artifact_id": "efe8d96c4c20426d86de60a51600768d",
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "b54127d6ee1d44538b10344cd89bff82"
+              },
+              "sha256": "75fc3fef8fbd33a86a1c27b8d6f3a058dc678a189bdd2d21cf5157840675eabe",
+              "media_type": "application/json",
+              "schema_ref": {
+                "schema_id": "representations.vector",
+                "version": "1",
+                "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+              },
+              "size_bytes": 615
+            }
+          }
+        ],
+        "watermark": "0c5164d15a9f326b90ec1e328ba4b8b7c2cc6fe8edbbe44343ceb34a5452c99b"
+      },
+      "expected_head": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "b54127d6ee1d44538b10344cd89bff82"
+        },
+        "corpus_id": "corpus",
+        "generation_id": "g1",
+        "sha256": "a43315c1ed9841f2428100eec01914742ae82e7f8cfa6a6ceca4a90b638c4172"
+      },
+      "backend_profile": {
+        "schema_id": "data.qdrant-projection",
+        "version": "1",
+        "sha256": "bbd62cf269057b3280ef7e29e8ca06dbdbf6e81f42bb69652e63fb1973327f83"
+      }
+    },
+    "state": "published"
+  },
+  "rollback": {
+    "wire_version": "1",
+    "generation": {
+      "wire_version": "1",
+      "reference": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "b54127d6ee1d44538b10344cd89bff82"
+        },
+        "corpus_id": "corpus",
+        "generation_id": "g3",
+        "sha256": "0309afcbe52a4f0085641e29a23c63d25048cbdd9b8d237ee0b6211e05dcd8a0"
+      },
+      "actor_id": "worker",
+      "manifest": {
+        "wire_version": "1",
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "b54127d6ee1d44538b10344cd89bff82"
+        },
+        "profile": {
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "b54127d6ee1d44538b10344cd89bff82"
+          },
+          "profile_id": "fixture.utf8-histogram",
+          "version": "1",
+          "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+        },
+        "bindings": [
+          {
+            "wire_version": "1",
+            "reference": {
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "b54127d6ee1d44538b10344cd89bff82"
+              },
+              "binding_id": "binding.5360db63678745f257f3704ec3a55ad877b7da381024895ee1c6d28330e21f2b",
+              "sha256": "87cc0ac9e8ef783d2d8218a9ab25e3dbb081c1e23e41686a98d867e8ebb61847"
+            },
+            "profile": {
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "b54127d6ee1d44538b10344cd89bff82"
+              },
+              "profile_id": "fixture.utf8-histogram",
+              "version": "1",
+              "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+            },
+            "source": {
+              "source": {
+                "scope": {
+                  "tenant_id": "upload-tests",
+                  "project_id": "b54127d6ee1d44538b10344cd89bff82"
+                },
+                "source_id": "source",
+                "revision_id": "r1",
+                "raw": {
+                  "artifact_id": "0ab5d7d46865462e9a02ae4ab9c75ab8",
+                  "scope": {
+                    "tenant_id": "upload-tests",
+                    "project_id": "b54127d6ee1d44538b10344cd89bff82"
+                  },
+                  "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+                  "media_type": "application/octet-stream",
+                  "schema_ref": {
+                    "schema_id": "fixture.bytes",
+                    "version": "1",
+                    "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                  },
+                  "size_bytes": 4
+                }
+              },
+              "unit": "byte",
+              "start": 0,
+              "end": 4,
+              "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+            },
+            "vector": {
+              "artifact_id": "de34f622d17d4644b33c31989eade140",
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "b54127d6ee1d44538b10344cd89bff82"
+              },
+              "sha256": "6852be382d0f9a5ce5d84946d911d42fa96070806545873c2333e1cf9c52d369",
+              "media_type": "application/json",
+              "schema_ref": {
+                "schema_id": "representations.vector",
+                "version": "1",
+                "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+              },
+              "size_bytes": 615
+            }
+          }
+        ],
+        "watermark": "3281036178f905ef9dd0b26e36cd18387f057b23e875122ba5f727731f77462f"
+      },
+      "expected_head": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "b54127d6ee1d44538b10344cd89bff82"
+        },
+        "corpus_id": "corpus",
+        "generation_id": "g2",
+        "sha256": "0d7270999acaa6567cf9faffee1f75274b137772bdd3e4fdf0182042d9f6c654"
+      },
+      "backend_profile": {
+        "schema_id": "data.qdrant-projection",
+        "version": "1",
+        "sha256": "bbd62cf269057b3280ef7e29e8ca06dbdbf6e81f42bb69652e63fb1973327f83"
+      }
+    },
+    "state": "published"
+  },
+  "old_query": {
+    "wire_version": "1",
+    "retrieval_id": "old-query",
+    "actor_id": "worker",
+    "generation": {
+      "scope": {
+        "tenant_id": "upload-tests",
+        "project_id": "b54127d6ee1d44538b10344cd89bff82"
+      },
+      "corpus_id": "corpus",
+      "generation_id": "g1",
+      "sha256": "a43315c1ed9841f2428100eec01914742ae82e7f8cfa6a6ceca4a90b638c4172"
+    },
+    "query": {
+      "wire_version": "1",
+      "reference": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "b54127d6ee1d44538b10344cd89bff82"
+        },
+        "binding_id": "binding.5360db63678745f257f3704ec3a55ad877b7da381024895ee1c6d28330e21f2b",
+        "sha256": "87cc0ac9e8ef783d2d8218a9ab25e3dbb081c1e23e41686a98d867e8ebb61847"
+      },
+      "profile": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "b54127d6ee1d44538b10344cd89bff82"
+        },
+        "profile_id": "fixture.utf8-histogram",
+        "version": "1",
+        "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+      },
+      "source": {
+        "source": {
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "b54127d6ee1d44538b10344cd89bff82"
+          },
+          "source_id": "source",
+          "revision_id": "r1",
+          "raw": {
+            "artifact_id": "0ab5d7d46865462e9a02ae4ab9c75ab8",
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "b54127d6ee1d44538b10344cd89bff82"
+            },
+            "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+            "media_type": "application/octet-stream",
+            "schema_ref": {
+              "schema_id": "fixture.bytes",
+              "version": "1",
+              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+            },
+            "size_bytes": 4
+          }
+        },
+        "unit": "byte",
+        "start": 0,
+        "end": 4,
+        "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+      },
+      "vector": {
+        "artifact_id": "de34f622d17d4644b33c31989eade140",
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "b54127d6ee1d44538b10344cd89bff82"
+        },
+        "sha256": "6852be382d0f9a5ce5d84946d911d42fa96070806545873c2333e1cf9c52d369",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "representations.vector",
+          "version": "1",
+          "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+        },
+        "size_bytes": 615
+      }
+    },
+    "policy": {
+      "format": "data.exact-dot-ranking.v1",
+      "top_k": 1,
+      "bindings": null,
+      "metric": "dot",
+      "order": "score_desc_binding_asc",
+      "quality_filter": "none"
+    },
+    "query_sha256": "a4507236d25ce35390bcb2776a687ca213f1288741535902e929fa8003cd3f45",
+    "matches": [
+      {
+        "binding": {
+          "wire_version": "1",
+          "reference": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "b54127d6ee1d44538b10344cd89bff82"
+            },
+            "binding_id": "binding.5360db63678745f257f3704ec3a55ad877b7da381024895ee1c6d28330e21f2b",
+            "sha256": "87cc0ac9e8ef783d2d8218a9ab25e3dbb081c1e23e41686a98d867e8ebb61847"
+          },
+          "profile": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "b54127d6ee1d44538b10344cd89bff82"
+            },
+            "profile_id": "fixture.utf8-histogram",
+            "version": "1",
+            "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+          },
+          "source": {
+            "source": {
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "b54127d6ee1d44538b10344cd89bff82"
+              },
+              "source_id": "source",
+              "revision_id": "r1",
+              "raw": {
+                "artifact_id": "0ab5d7d46865462e9a02ae4ab9c75ab8",
+                "scope": {
+                  "tenant_id": "upload-tests",
+                  "project_id": "b54127d6ee1d44538b10344cd89bff82"
+                },
+                "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 4
+              }
+            },
+            "unit": "byte",
+            "start": 0,
+            "end": 4,
+            "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+          },
+          "vector": {
+            "artifact_id": "de34f622d17d4644b33c31989eade140",
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "b54127d6ee1d44538b10344cd89bff82"
+            },
+            "sha256": "6852be382d0f9a5ce5d84946d911d42fa96070806545873c2333e1cf9c52d369",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "representations.vector",
+              "version": "1",
+              "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+            },
+            "size_bytes": 615
+          }
+        },
+        "score": 8.0
+      }
+    ],
+    "sha256": "b46d57862d4d587c2626eea42ffb1a0993ccbb7149752e785ad69df45dd30018"
+  },
+  "new_query": {
+    "wire_version": "1",
+    "retrieval_id": "new-query",
+    "actor_id": "worker",
+    "generation": {
+      "scope": {
+        "tenant_id": "upload-tests",
+        "project_id": "b54127d6ee1d44538b10344cd89bff82"
+      },
+      "corpus_id": "corpus",
+      "generation_id": "g2",
+      "sha256": "0d7270999acaa6567cf9faffee1f75274b137772bdd3e4fdf0182042d9f6c654"
+    },
+    "query": {
+      "wire_version": "1",
+      "reference": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "b54127d6ee1d44538b10344cd89bff82"
+        },
+        "binding_id": "binding.e7c556578e9f6960788ce369a65c762417cd9c1bab71e5fe09ff5ac51ceb6391",
+        "sha256": "676733799bbad172c5fc5c903f01d0e4730c15af0995e3c4d53f466793c40e15"
+      },
+      "profile": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "b54127d6ee1d44538b10344cd89bff82"
+        },
+        "profile_id": "fixture.utf8-histogram",
+        "version": "2",
+        "sha256": "cf46671b7ebd0a79c9e3decab93a82834c43ce0bd567ca9b90eb28e9109cf60d"
+      },
+      "source": {
+        "source": {
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "b54127d6ee1d44538b10344cd89bff82"
+          },
+          "source_id": "source",
+          "revision_id": "r1",
+          "raw": {
+            "artifact_id": "0ab5d7d46865462e9a02ae4ab9c75ab8",
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "b54127d6ee1d44538b10344cd89bff82"
+            },
+            "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+            "media_type": "application/octet-stream",
+            "schema_ref": {
+              "schema_id": "fixture.bytes",
+              "version": "1",
+              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+            },
+            "size_bytes": 4
+          }
+        },
+        "unit": "byte",
+        "start": 0,
+        "end": 4,
+        "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+      },
+      "vector": {
+        "artifact_id": "efe8d96c4c20426d86de60a51600768d",
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "b54127d6ee1d44538b10344cd89bff82"
+        },
+        "sha256": "75fc3fef8fbd33a86a1c27b8d6f3a058dc678a189bdd2d21cf5157840675eabe",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "representations.vector",
+          "version": "1",
+          "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+        },
+        "size_bytes": 615
+      }
+    },
+    "policy": {
+      "format": "data.exact-dot-ranking.v1",
+      "top_k": 1,
+      "bindings": null,
+      "metric": "dot",
+      "order": "score_desc_binding_asc",
+      "quality_filter": "none"
+    },
+    "query_sha256": "166cbcb8ef6bc977f40e09cf83031ecea8484f4268ae8a3f1c1597f59913a021",
+    "matches": [
+      {
+        "binding": {
+          "wire_version": "1",
+          "reference": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "b54127d6ee1d44538b10344cd89bff82"
+            },
+            "binding_id": "binding.e7c556578e9f6960788ce369a65c762417cd9c1bab71e5fe09ff5ac51ceb6391",
+            "sha256": "676733799bbad172c5fc5c903f01d0e4730c15af0995e3c4d53f466793c40e15"
+          },
+          "profile": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "b54127d6ee1d44538b10344cd89bff82"
+            },
+            "profile_id": "fixture.utf8-histogram",
+            "version": "2",
+            "sha256": "cf46671b7ebd0a79c9e3decab93a82834c43ce0bd567ca9b90eb28e9109cf60d"
+          },
+          "source": {
+            "source": {
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "b54127d6ee1d44538b10344cd89bff82"
+              },
+              "source_id": "source",
+              "revision_id": "r1",
+              "raw": {
+                "artifact_id": "0ab5d7d46865462e9a02ae4ab9c75ab8",
+                "scope": {
+                  "tenant_id": "upload-tests",
+                  "project_id": "b54127d6ee1d44538b10344cd89bff82"
+                },
+                "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 4
+              }
+            },
+            "unit": "byte",
+            "start": 0,
+            "end": 4,
+            "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+          },
+          "vector": {
+            "artifact_id": "efe8d96c4c20426d86de60a51600768d",
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "b54127d6ee1d44538b10344cd89bff82"
+            },
+            "sha256": "75fc3fef8fbd33a86a1c27b8d6f3a058dc678a189bdd2d21cf5157840675eabe",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "representations.vector",
+              "version": "1",
+              "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+            },
+            "size_bytes": 615
+          }
+        },
+        "score": 0.99999994
+      }
+    ],
+    "sha256": "a2d3a4a613c1f2e767211968689e467b27b000558ff727aad604f9a6872ddf2b"
+  },
+  "counts": {
+    "encoding_profiles": 2,
+    "encoding_work": 2,
+    "representation_bindings": 2,
+    "index_publications": 3,
+    "retrieval_queries": 4,
+    "retrieval_results": 4
+  },
+  "old_bytes_unchanged": true,
+  "score_tolerance": 1e-06,
+  "claim": "Synthetic profile/projection migration only",
+  "task": "BP-06.05/B2.04b",
+  "status": "verified",
+  "package": "Data0.28.0",
+  "source": {
+    "passed": 83,
+    "seconds": 12.28
+  },
+  "installed": {
+    "passed": 83,
+    "seconds": 12.89
+  },
+  "dev": {
+    "passed": 18,
+    "seconds": 13.69
+  },
+  "coverage": {
+    "scope": "representations/fixture.py",
+    "statements": 36,
+    "covered_statements": 36,
+    "branches": 8,
+    "covered_branches": 8
+  },
+  "schemas": "438 unchanged",
+  "migration": "artifact_0012 unchanged",
+  "legacy": {
+    "baseline": "installed Data0.27.0",
+    "v1_none_and_l2_unchanged": true,
+    "profiles": [
+      {
+        "wire_version": "1",
+        "profile_id": "fixture.utf8-histogram",
+        "version": "1",
+        "encoder": {
+          "provider": "fixture",
+          "model": "utf8-byte-histogram",
+          "revision": "1",
+          "implementation": {
+            "schema_id": "fixture.histogram",
+            "version": "1",
+            "sha256": "732e37fc6d65bbfaed0dd4159713e5bea32109d7a88fbdee29d34ad10f0eaca7"
+          },
+          "runtime": {
+            "schema_id": "fixture.runtime",
+            "version": "1",
+            "sha256": "a92282a5abe5471fe905d777726c056c8bc79341965a38e4f7568330cad23229"
+          }
+        },
+        "inputs": {
+          "modality": "text",
+          "task": "fixture.retrieval",
+          "role": "shared",
+          "template": {
+            "schema_id": "fixture.identity",
+            "version": "1",
+            "sha256": "debf9314796e08f188379a6935eb7b764b63b072b0b3991a4ea20f227af56ef8"
+          },
+          "instructions": "",
+          "context_schema": null
+        },
+        "pipeline": {
+          "tokenizer": {
+            "schema_id": "fixture.identity",
+            "version": "1",
+            "sha256": "debf9314796e08f188379a6935eb7b764b63b072b0b3991a4ea20f227af56ef8"
+          },
+          "preprocessing": {
+            "schema_id": "fixture.identity",
+            "version": "1",
+            "sha256": "debf9314796e08f188379a6935eb7b764b63b072b0b3991a4ea20f227af56ef8"
+          },
+          "chunking": {
+            "schema_id": "fixture.identity",
+            "version": "1",
+            "sha256": "debf9314796e08f188379a6935eb7b764b63b072b0b3991a4ea20f227af56ef8"
+          },
+          "truncation": {
+            "schema_id": "fixture.identity",
+            "version": "1",
+            "sha256": "debf9314796e08f188379a6935eb7b764b63b072b0b3991a4ea20f227af56ef8"
+          },
+          "pooling": {
+            "schema_id": "fixture.pooling",
+            "version": "1",
+            "sha256": "06914f879d341dd20dc4b1460c62fa8ca2f945c802216a361cfb85d68fb4d601"
+          }
+        },
+        "space": {
+          "dimensions": 16,
+          "dtype": "float32-le",
+          "normalization": "none",
+          "metric": "dot"
+        },
+        "applicability": [
+          "synthetic protocol and ranking fixtures"
+        ],
+        "limitations": [
+          "No semantic or scientific similarity claim",
+          "Runtime-pinned arithmetic; no cross-provider reproducibility claim"
+        ],
+        "determinism": "runtime_pinned"
+      },
+      {
+        "wire_version": "1",
+        "profile_id": "fixture.utf8-histogram",
+        "version": "1",
+        "encoder": {
+          "provider": "fixture",
+          "model": "utf8-byte-histogram",
+          "revision": "1",
+          "implementation": {
+            "schema_id": "fixture.histogram",
+            "version": "1",
+            "sha256": "732e37fc6d65bbfaed0dd4159713e5bea32109d7a88fbdee29d34ad10f0eaca7"
+          },
+          "runtime": {
+            "schema_id": "fixture.runtime",
+            "version": "1",
+            "sha256": "a92282a5abe5471fe905d777726c056c8bc79341965a38e4f7568330cad23229"
+          }
+        },
+        "inputs": {
+          "modality": "text",
+          "task": "fixture.retrieval",
+          "role": "shared",
+          "template": {
+            "schema_id": "fixture.identity",
+            "version": "1",
+            "sha256": "debf9314796e08f188379a6935eb7b764b63b072b0b3991a4ea20f227af56ef8"
+          },
+          "instructions": "",
+          "context_schema": null
+        },
+        "pipeline": {
+          "tokenizer": {
+            "schema_id": "fixture.identity",
+            "version": "1",
+            "sha256": "debf9314796e08f188379a6935eb7b764b63b072b0b3991a4ea20f227af56ef8"
+          },
+          "preprocessing": {
+            "schema_id": "fixture.identity",
+            "version": "1",
+            "sha256": "debf9314796e08f188379a6935eb7b764b63b072b0b3991a4ea20f227af56ef8"
+          },
+          "chunking": {
+            "schema_id": "fixture.identity",
+            "version": "1",
+            "sha256": "debf9314796e08f188379a6935eb7b764b63b072b0b3991a4ea20f227af56ef8"
+          },
+          "truncation": {
+            "schema_id": "fixture.identity",
+            "version": "1",
+            "sha256": "debf9314796e08f188379a6935eb7b764b63b072b0b3991a4ea20f227af56ef8"
+          },
+          "pooling": {
+            "schema_id": "fixture.pooling",
+            "version": "1",
+            "sha256": "06914f879d341dd20dc4b1460c62fa8ca2f945c802216a361cfb85d68fb4d601"
+          }
+        },
+        "space": {
+          "dimensions": 16,
+          "dtype": "float32-le",
+          "normalization": "l2",
+          "metric": "dot"
+        },
+        "applicability": [
+          "synthetic protocol and ranking fixtures"
+        ],
+        "limitations": [
+          "No semantic or scientific similarity claim",
+          "Runtime-pinned arithmetic; no cross-provider reproducibility claim"
+        ],
+        "determinism": "runtime_pinned"
+      }
+    ]
+  }
+}

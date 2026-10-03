@@ -18,7 +18,8 @@ def _reference(name, descriptor, version="1"):
     )
 
 
-def fixture_profile(normalization="none"):
+def fixture_profile(normalization="none", *, version="1"):
+    require(version == "1" or (version == "2" and normalization == "l2"), "representation_fixture_version")
     identity = _reference("fixture.identity", "preserve exact bytes; no hidden transform")
     encoder = EncoderIdentity(
         "fixture",
@@ -40,7 +41,7 @@ def fixture_profile(normalization="none"):
     )
     return RepresentationProfile(
         "fixture.utf8-histogram",
-        "1",
+        version,
         encoder,
         inputs,
         pipeline,
@@ -57,7 +58,11 @@ def fixture_profile(normalization="none"):
 class FixtureEncoder:
     @staticmethod
     def available(profile):
-        return type(profile) is RepresentationProfile and profile == fixture_profile(profile.space.normalization)
+        if type(profile) is not RepresentationProfile or profile.version not in {"1", "2"}:
+            return False
+        if profile.version == "2" and profile.space.normalization != "l2":
+            return False
+        return profile == fixture_profile(profile.space.normalization, version=profile.version)
 
     def encode(self, profile, source):
         require(

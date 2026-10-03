@@ -777,3 +777,9 @@ Archived MBT checkpoint: | 2026-10-03 11:58:32 | B3.02 complete; child66.67%, pa
 ## 2026-10-03 18:46:24 ? BP-06.05/B2.04a optional generation/query HTTP
 
 Data0.27.0,public0.3.0/438schemas/artifact0012 unchanged. Explicit optional host config,SQL-only readiness,actor/digest-pinned generation reads,bounded advance/query/originalresult APIs. Source41 tests46.95s/installed41 tests48.53s,18dev12.87s;new boundary117 statements26branches100%;existing representation/acquisition/host checks included. Auth precedes4MiB/5s strict JSON;expiredverified returnsfailed, no implicitrepublish. No productionhostdeployment or installedserverclaim. B2.04a100%,b/c0%;B2=83.33%,Build61.11%,child45.83%,parent74.31%,closed1/4 and17/24. Next actualprofilemigration; discovery noted fixture none/l2 v1 identity collision, requiring explicit supportedv2 profile while preservingv1 compatibility.
+
+Archived MBT checkpoint: | 2026-10-03 12:06:32 | B3 complete; child75%, parent62.50%; V1.01 active; gates3/4 and15/24 | [Defensive failures](../Audits/Evidence/BP-06-Research/Scientific_Defensive_Failures.json);108 source/108 installed,351 statements/55 of56 branches |
+
+## 2026-10-03 18:56:17 ? BP-06.05/B2.04b profile/generation migration
+
+Data0.28.0 introduces reviewedL2profilev2; legacy none/l2v1 descriptors compared equal to installedData0.27.0, encoding support retained. Actualsamecorpus Qdrant migration verifies beforeheadpublication, keepsoldpins/results, rejectsbothcrossprofiledirections and supports explicitg3oldprofile rollback whileg2remainsqueryable. Counts2profiles/2work/2bindings/3publications/4queries+results. Numericoracles8andapproximately1(abs1e-6),notsemanticquality.83source12.28s/83installed12.89s,18dev13.69s;fixture36statements/8branches100%;lint/boundaries438schemas unchanged/artifact0012unchanged. B2.04a/b100%,c0%;B2=91.67%,Build63.89%,child47.92%,parent74.65%,gates1/4and17/24. Next installedHTTPproof.

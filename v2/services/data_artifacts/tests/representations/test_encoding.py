@@ -15,6 +15,22 @@ from amphora_data_artifacts.representations.vectors import Float32Vector
 SCOPE = Scope(tenant_id="fixture", project_id="representations")
 
 
+def test_reviewed_v2_l2_profile_preserves_legacy_encoders_and_rejects_arbitrary_versions():
+    encoder = FixtureEncoder()
+    source = EncodingInput(b"AAAABBB")
+    legacy = fixture_profile("l2")
+    current = fixture_profile("l2", version="2")
+    assert legacy.version == "1" and current.version == "2"
+    assert legacy.reference != current.reference
+    assert encoder.encode(legacy, source) == encoder.encode(current, source)
+    assert encoder.available(fixture_profile())
+    assert not encoder.available(replace(current, version="3"))
+    assert not encoder.available(replace(fixture_profile(), version="2"))
+    for normalization, version in (("none", "2"), ("l2", "3"), ("l2", True)):
+        with pytest.raises(RepresentationError, match="fixture_version"):
+            fixture_profile(normalization, version=version)
+
+
 def test_literal_histogram_unicode_and_explicit_float32_normalization():
     encoder = FixtureEncoder()
     plain = encoder.encode(fixture_profile(), EncodingInput(b"ABBA"))

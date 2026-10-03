@@ -17,7 +17,7 @@ class RepresentationService:
     @staticmethod
     def available_profiles(principal):
         authorize(principal, "representation_read")
-        return (profile_to_wire(fixture_profile()),)
+        return (profile_to_wire(fixture_profile()), profile_to_wire(fixture_profile("l2", version="2")))
 
     def register(self, principal, record):
         authorize(principal, "representation_manage")
