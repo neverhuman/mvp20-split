@@ -1,5 +1,10 @@
 # BP-06 Planning History
 
+## BP-06.04/B1 complete; actual HTTP/replacement - 2026-10-03 03:53:36
+
+All eight B1 milestones complete100%; B1.08d actual independently installed Data/Research HTTP workflow passes once from source and once from installed Research tests. Fresh Research environment excludes peer implementations. Partial failed controls/quality flags and optional accuracy gaps survive typed publication and replacement; consumer registration requires exact decision lineage; historical submit/read/publication replay works with Data offline and no active profiles. Pending work resumes its original profile after Data returns. Material/experiment read routes now have actual HTTP evidence. Invalid empty lineage fixture was corrected to a valid unrelated source before the first run. No production changes or package/schema/migration bump in d;827+827 regression and119 compatibility/dev baseline preserved. B1 closes, Build33.33%,child25%,parent54.17%; gates1/4 and13/24. B2 active; no scientific, active-campaign correction or process-barrier claim.
+
+
 ## BP-06.04/B1.08c optional scientific hosting complete - 2026-10-03 03:42:21
 
 Research0.24.0/contracts0.11.0;827 source/827 isolated installed plus119 compatibility/dev pass.59 focused cases measure529 statements/64 branches98%;9 statements remain: material/experiment read pass-through (d), owner error and generic malformed request/body timeout responses (B3/V1). Separately granted optional host, immutable record/publication reads, original publisher recovery, bounded no-store transport and explicit authenticated consumer lineage are implemented. CLI readiness reporting was aligned with health authority during review. All376 schemas and existing routes preserved; migration0010 unchanged. No independent Research HTTP/process replacement claim yet. B1 96.88%, Build32.29%, child24.22%, parent54.04%; gates0/4 and12/24 unchanged; d active.
@@ -496,3 +501,7 @@ Rotated MBT checkpoint:
 Rotated MBT checkpoint:
 
 | 2026-10-02 16:45:56 | B1.07 Data reader partial; B1 6/10, child15%, parent35.83% unchanged | [Reader](../Audits/Evidence/BP-06-Research/Assessment_Reader.json);184 Research/dev tests; actual peers remain |
+
+Rotated MBT checkpoint:
+
+| 2026-10-02 19:05:19 | B1.07 complete; B1 7/10, child17.50%, parent36.25%; B1.08 active | [Resolution](../Audits/Evidence/BP-06-Research/Assessment_Resolution.json);374 source/257 installed tests;296 schemas preserve294 |

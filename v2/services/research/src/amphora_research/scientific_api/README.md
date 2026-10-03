@@ -1,6 +1,6 @@
 # Research scientific input orchestration
 
-- Status: BP-06.04/B1.08b implemented in Research0.23.0/contracts0.11.0; 792 source/792 isolated installed tests pass. Optional hosted routes verified in Research0.24.0:827 source/827 installed and119 compatibility/dev tests; independently installed HTTP replacement remains d.
+- Status: BP-06.04/B1.08b implemented in Research0.23.0/contracts0.11.0; 792 source/792 isolated installed tests pass. Optional hosted routes verified in Research0.24.0:827 source/827 installed and119 compatibility/dev tests; independently installed HTTP and replacement verified under d.
 - Owner: Research. Design: [Scientific API boundary](../../../../../docs/Build%20Plans/BP-06/BP-06.04%20Scientific%20API%20design.md).
 
 ## Configuration and source boundary
@@ -42,6 +42,8 @@ records.py checks original decision/intake actor for attributed results; immutab
 | scientific-consumers | RegisterScientificConsumer | register_scientific_consumer |
 | scientific-consumers/read | ScientificConsumersRequest | read_scientific_impact |
 
-routes.py bounds JSON bodies256KiB/5seconds, rejects duplicates/nonfinite/extra fields, and marks successes and errors no-store. Missing records/profiles404, denied authentication401 or authorization403, identity conflict/pending publication409, malformed or invalid scientific input422, unavailable owner/peer503. Operational failure is never a computed negative finding. Old transport routes keep their own compatible policies. Source/private HTTP tests are not independent process replacement proof; d owns that gate.
+routes.py bounds JSON bodies256KiB/5seconds, rejects duplicates/nonfinite/extra fields, and marks successes and errors no-store. Missing records/profiles404, denied authentication401 or authorization403, identity conflict/pending publication409, malformed or invalid scientific input422, unavailable owner/peer503. Operational failure is never a computed negative finding. Old transport routes keep their own compatible policies. Source/private HTTP tests remain a separate tier from the independently installed process proof under d.
 
 Hosting verification `2026-10-03 03:42:21`:59 focused tests,529 statements/64 branches98%. Material/experiment read pass-through awaits d actual HTTP proof; owner-failure, generic malformed request and body-timeout responses remain B3/V1 defensive probes (9 statements total). CLI readiness and health report the same authority.
+
+Actual HTTP verification `2026-10-03 03:53:36`:test_actual_workflow.py/peer_fixtures.py exercise independently installed Research/Data and a fresh Research environment, no scripted peers. Partial lab/eligibility/synthesis submissions, all three Artifact-only outputs, producer-proven consumers, separate grants/original actor, material/experiment/observation reads, offline completed history and pending original-profile recovery all pass. Idle replacement is not B3 process-barrier fault proof. The prior material/experiment read coverage gap is now covered behaviorally through actual HTTP (subprocess statements are not counted by parent coverage).
