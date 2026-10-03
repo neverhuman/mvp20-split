@@ -373,3 +373,11 @@ Research0.12.0/contracts0.6.0 and graph-runtime contracts0.13.0 verified:441 sou
 Rotated MBT checkpoint:
 
 | 2026-10-01 21:13:35 | BP-06.03/B1 kernel and input binding verified; child0/4; parent8/24 | [Evidence](../Audits/Evidence/BP-06-Knowledge/Reasoning_Kernel.json);161 owner +14 dev tests |
+
+## 2026-10-02 21:40:59 - B2.03 Knowledge corrections verified
+
+Knowledge0.15.0/contracts0.7.0 verified:393 broad source tests plus4 added cases;15 final focused tests and186 independently installed boundary tests.316 schemas preserve312 predecessors. knowledge_0007 owns append-only correction history and exact/head selection. Distinct correction source authority restores original actor/graph/publication without fabricating publish_reasoning grants. B2 75%, child43.75%, parent40.63%; closed gates unchanged1/4 and9/24. Next B2.04 actual owner HTTP transitions; Runtime consumption remains B3.
+
+Rotated MBT checkpoint:
+
+| 2026-10-02 09:39:22 | BP-06.03/B1 Knowledge public/durable boundary verified; child0/4; parent8/24 | [Evidence](../Audits/Evidence/BP-06-Knowledge/Reasoning_Boundary.json);189+62+14 tests |

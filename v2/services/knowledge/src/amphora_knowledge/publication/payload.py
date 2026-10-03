@@ -32,6 +32,13 @@ class PublicationRequestDocument:
         body = canonical(request)
         return cls(request, principal.actor_id, body, hashlib.sha256(body).hexdigest())
 
+    @classmethod
+    def for_correction(cls, principal, request):
+        request = ReasoningPublicationRequest.model_validate(raw(request))
+        principal.require("correct_reasoning_receipt", request.graph.scope)
+        body = canonical(request)
+        return cls(request, principal.actor_id, body, hashlib.sha256(body).hexdigest())
+
     @property
     def key(self):
         return graph_key(self.request.graph) | {"publication": self.request.publication_id}

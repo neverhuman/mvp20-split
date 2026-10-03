@@ -1,6 +1,6 @@
 # Graph Studio and Interventions
 
-- Design status: BP-05.01 accepted; BP-05.02 topology/navigation/evidence implemented and replacement accepted; authoring and scientific projections remain later scope
+- Design status: BP-05 closed, including next-campaign authoring and replacement acceptance within synthetic software scope. Scientific quality/focus views are queued under successor SQ-01.
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
 - Last reviewed: `2026-09-29 22:04:45` (America/Chicago)
 - Parent: [Domain overview](Experience_Architecture.md)

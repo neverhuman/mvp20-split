@@ -1,0 +1,27 @@
+{
+  "wire_version": "1",
+  "chain": {
+    "schema_version": "1",
+    "scope": {
+      "tenant_id": "test",
+      "project_id": "correction"
+    },
+    "issuer_id": "knowledge-synthetic",
+    "chain_id": "chain"
+  },
+  "change_id": "correct-1",
+  "source": {
+    "wire_version": "1",
+    "graph": {
+      "scope": {
+        "tenant_id": "test",
+        "project_id": "correction"
+      },
+      "graph_id": "domain"
+    },
+    "publication_id": "publication-1",
+    "reasoning_request_id": "reason-1"
+  },
+  "reason_code": "new_reasoning",
+  "expected_head": null
+}

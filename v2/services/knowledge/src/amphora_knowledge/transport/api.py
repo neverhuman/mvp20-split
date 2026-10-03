@@ -4,9 +4,11 @@ import asyncio
 import json
 
 from amphora_contracts_core import Identifier
+from amphora_contracts_graph_runtime import ReceiptCorrectionView
 from amphora_contracts_knowledge import (
     AcceptedChangeRef,
     AcceptedGraphChange,
+    CorrectReasoningReceipt,
     DomainGraphRef,
     DomainGraphSnapshot,
     DomainHead,
@@ -21,12 +23,15 @@ from amphora_contracts_knowledge import (
     ReasoningPublicationStatus,
     ReasoningRequest,
     ReasoningStatus,
+    SelectReasoningReceipt,
 )
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from sqlalchemy.exc import SQLAlchemyError
 
 from ..authoring.canonical import KnowledgeError
+from ..corrections.boundary import CorrectionBoundary
+from ..corrections.store import CorrectionStore
 from ..rebuild.boundary import RebuildBoundary
 from ..rebuild.store import RebuildStore
 from ..rebuild.workflow import RebuildWorkflow
@@ -133,6 +138,16 @@ def create_app(workflow, credentials, reasoning=None, publication=None):
                 lambda principal: DomainGraphRef(scope=principal.scope, graph_id=graph_id))
 
     if publication is not None:
+        corrections = CorrectionBoundary(CorrectionStore(ledger.engine))
+
+        @app.post("/v1/reasoning-receipts/correct", response_model=ReceiptCorrectionView)
+        async def correct_receipt(request: Request):
+            return await invoke(request, CorrectReasoningReceipt, corrections.submit)
+
+        @app.post("/v1/reasoning-receipts/select", response_model=ReceiptCorrectionView)
+        async def select_receipt(request: Request):
+            return await invoke(request, SelectReasoningReceipt, corrections.read)
+
         @app.post("/v1/reasoning-publications", response_model=ReasoningPublicationStatus)
         async def publish_reasoning(request: Request):
             return await invoke(request, ReasoningPublicationRequest, publication.submit)

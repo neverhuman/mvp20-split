@@ -77,7 +77,7 @@ class KnowledgeHost:
             keys(entry, ("token_env", "actor_id", "scope", "actions"))
             actions = entry["actions"]
             if (not isinstance(actions, list) or not actions
-                    or any(action not in ("read_graph", "propose_graph", "rebuild_graph", "reason_graph", "publish_reasoning") for action in actions)
+                    or any(action not in ("read_graph", "propose_graph", "rebuild_graph", "reason_graph", "publish_reasoning", "correct_reasoning_receipt", "select_reasoning_receipt") for action in actions)
                     or len(set(actions)) != len(actions)):
                 raise ValueError("invalid_actions")
             grants.append((secret(entry["token_env"]), Principal(entry["actor_id"],
@@ -101,6 +101,7 @@ class KnowledgeHost:
                     connection.execute(text("SELECT request_id FROM knowledge.reasoning_intents LIMIT 0"))
                 if publisher is not None:
                     connection.execute(text("SELECT publication_id FROM knowledge.publication_terminals LIMIT 0"))
+                    connection.execute(text("SELECT ordinal FROM knowledge.receipt_corrections LIMIT 0"))
             workflow = AuthoringWorkflow(KnowledgeLedger(engine, vocabulary, policy), reviewer)
             reasoning = None if profiles is None else ReasoningWorkflow(ReasoningStore(engine), profiles, reviewer)
             publication = (None if publisher is None else

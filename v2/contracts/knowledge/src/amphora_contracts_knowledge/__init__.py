@@ -10,6 +10,7 @@ from .changes import (
     GraphProposalStatus,
     ReferenceValidation,
 )
+from .corrections import CorrectReasoningReceipt, SelectReasoningReceipt
 from .operations import (
     AddAssertion,
     AddEntity,
@@ -68,7 +69,7 @@ from .references import (
 )
 from .snapshots import DomainGraphContent, DomainGraphSnapshot
 
-__all__ = [
+__all__ = ["CorrectReasoningReceipt", "SelectReasoningReceipt",
     "AcceptedChangeContent", "AcceptedChangeRef", "AcceptedDecision", "AcceptedGraphChange",
     "AddAssertion", "AddEntity", "AssertionRetraction", "AssertionRevisionRef", "ClaimGrounding",
     "CorrectAssertion", "DomainAssertion", "DomainEntity", "DomainGraphContent", "DomainGraphRef",

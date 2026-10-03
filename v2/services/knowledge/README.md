@@ -1,5 +1,7 @@
 # Knowledge Service
 
+BP-06.03/B2.03: Knowledge0.15.0 implements owner receipt correction storage and explicit future-campaign selection under separate grants. [Correction boundary](src/amphora_knowledge/corrections/README.md) defines its rebuild contract; 393 broad source plus4 added cases and186 installed tests pass. Prior publications and active Runtime pins remain unchanged.
+
 - Package: amphora-knowledge0.13.3; contracts0.6.2.
 - Status: BP-06.02 closed; BP-06.03/B1 production reasoning/publication and installed replacement verified. Publication-specific process-death recovery verified; Research assessment remains.
 - Design: [Knowledge](../../docs/Architecture/Knowledge/Knowledge_Architecture.md), [activation](../../docs/Audits/BP-06.02_Activation.md).

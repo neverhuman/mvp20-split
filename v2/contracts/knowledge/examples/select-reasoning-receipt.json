@@ -1,0 +1,13 @@
+{
+  "wire_version": "1",
+  "chain": {
+    "schema_version": "1",
+    "scope": {
+      "tenant_id": "test",
+      "project_id": "correction"
+    },
+    "issuer_id": "knowledge-synthetic",
+    "chain_id": "chain"
+  },
+  "revision": null
+}

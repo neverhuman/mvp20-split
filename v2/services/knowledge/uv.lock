@@ -118,7 +118,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-contracts-knowledge"
-version = "0.6.5"
+version = "0.7.0"
 source = { editable = "../../contracts/knowledge" }
 dependencies = [
     { name = "amphora-contracts-artifacts" },
@@ -196,7 +196,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-knowledge"
-version = "0.14.1"
+version = "0.15.0"
 source = { editable = "." }
 dependencies = [
     { name = "alembic" },

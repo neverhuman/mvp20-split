@@ -29,3 +29,5 @@ knowledge_0004 tables belong to the [publication store](../publication/README.md
 knowledge_0005 adds immutable publication payloads and append-only attempt events (SELECT/INSERT only), owned by the publication journal. Applied migrations0001..0005 are immutable.
 
 knowledge_0006 owns immutable publication terminals, pairing derived artifact metadata and synthetic logical receipt at one journal position. Failed finalization retains a matching original-command rejection proof; uncertainty cannot become failure without it.0001..0006 are applied/immutable.
+
+knowledge_0007 adds append-only receipt correction records, owned by the [correction module](../corrections/README.md). The latest committed ordinal is the chain head; expected-head checks and scoped advisory locks serialize mutation. Service role SELECT/INSERT grants preserve all older records/publications. Source selection restores the original graph/publication/actor under a distinct correction grant. No existing migration is changed.

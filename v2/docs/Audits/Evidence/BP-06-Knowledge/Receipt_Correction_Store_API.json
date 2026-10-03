@@ -1,0 +1,46 @@
+{
+  "reviewed_local": "2026-10-02 21:40:59",
+  "scope": "BP-06.03/B2.03",
+  "status": "passed",
+  "tests": {
+    "broad_source": 393,
+    "additional_contract_examples": 2,
+    "additional_store_cases": 2,
+    "final_focused": 15,
+    "installed": 186
+  },
+  "coverage": {
+    "statements": 148,
+    "missing": 3,
+    "branches": 42,
+    "partial": 3,
+    "uncovered": "request/record size defenses and noncanonical storage corruption"
+  },
+  "schemas": {
+    "total": 316,
+    "predecessors_unchanged": 312
+  },
+  "versions": {
+    "knowledge": "0.15.0",
+    "knowledge_contracts": "0.7.0",
+    "research_metadata": "0.12.1"
+  },
+  "migration": "knowledge_0007",
+  "installed_manifest": ".test-results/knowledge-correction-installed-20261002/manifest.json",
+  "source_report": ".test-results/knowledge-correction.xml",
+  "proven": [
+    "distinct correction grant restores original publication authority without publish_reasoning",
+    "source graph scope and original actor enforcement",
+    "exact immutable replay and historical selection",
+    "competing successor serialization and same-change replay",
+    "transaction rollback and immutable service grants",
+    "pending publication cannot be a source",
+    "reference-bearing authenticated selection and no active repinning"
+  ],
+  "limits": [
+    "Installed scoped proof uses synthetic publication peers with actual owner PostgreSQL",
+    "Actual correction HTTP integration across separately hosted owners remains B2.04",
+    "Runtime consumption remains B3",
+    "No scientific validity claim"
+  ]
+}

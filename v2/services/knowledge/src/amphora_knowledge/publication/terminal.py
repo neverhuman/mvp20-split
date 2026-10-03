@@ -79,6 +79,11 @@ class PublicationTerminals:
         with self.store.engine.connect() as connection:
             return self._read(connection, document) or self._status(document, ReasoningPublicationPending())
 
+    def read_for_correction(self, principal, request):
+        document = PublicationRequestDocument.for_correction(principal, request)
+        with self.store.engine.connect() as connection:
+            return self._read(connection, document) or self._status(document, ReasoningPublicationPending())
+
     def _save(self, connection, lease, progress, outcome, rejection=None):
         status = self._status(lease.document, outcome)
         body = canonical(status)

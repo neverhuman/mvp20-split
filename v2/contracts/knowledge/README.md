@@ -1,5 +1,7 @@
 # Knowledge Wire Contracts
 
+Version0.7.0 adds CorrectReasoningReceipt and SelectReasoningReceipt for reference-only source correction and explicit selection. Shared ReceiptCorrectionView returns the exact reference plus record. Existing publication and reasoning schemas remain unchanged; owner policy and persistence are outside DTOs.
+
 - Package: amphora-contracts-knowledge0.6.3; BP-06.02/B1 contract boundary implemented.
 - Design: [Knowledge authoring](../../docs/Architecture/Knowledge/Authoring.md); [activation decisions](../../docs/Audits/BP-06.02_Activation.md).
 
