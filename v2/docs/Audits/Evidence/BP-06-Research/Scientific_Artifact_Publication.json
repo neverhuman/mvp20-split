@@ -1,0 +1,276 @@
+{
+  "timestamp_local": "2026-10-03 02:32:17",
+  "milestone": "BP-06.04/B1.07c",
+  "status": "verified_artifact_publication_boundary",
+  "versions": {
+    "research": "0.21.0",
+    "research_contracts": "0.10.0",
+    "migration": "research_0009"
+  },
+  "source_suite": {
+    "passed": 717,
+    "seconds": 47.45
+  },
+  "installed_suite": {
+    "passed": 717,
+    "seconds": 47.64
+  },
+  "dev_tests": {
+    "passed": 14,
+    "seconds": 11.38
+  },
+  "schemas": {
+    "total": 352,
+    "unchanged": 352
+  },
+  "focused": {
+    "passed": 30,
+    "statements": 284,
+    "missing_statements": 5,
+    "branches": 48,
+    "coverage_percent": 98,
+    "gaps": [
+      "workflow terminal race after lease acquisition",
+      "workflow progress-budget exhaustion",
+      "lease release failure handling"
+    ]
+  },
+  "installation": {
+    "timestamp_local": "2026-10-03 02:27:31",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-research",
+    "forbidden_implementations": [
+      "amphora_knowledge",
+      "amphora_data_artifacts",
+      "amphora_campaign_runtime"
+    ],
+    "packages": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.9",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-knowledge": "0.7.4",
+      "amphora-contracts-research": "0.10.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-research": "0.21.0",
+      "amphora-tool-protocol": "0.2.0"
+    },
+    "wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.9-py3-none-any.whl": "dad8ae379012e21b0fd6122df22ec3cca77e931aaf0b7268651d582b762a40e7",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_knowledge-0.7.4-py3-none-any.whl": "fdbd4835936eb8b570ab3ffc0fa82324a3a2c0630c7819def0d801cecec08d19",
+      "amphora_contracts_research-0.10.0-py3-none-any.whl": "f8fc7ad144a38db0f1613b90d44bdfc2c89e25266aa97cd505430f48d35d2bbf",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_research-0.21.0-py3-none-any.whl": "183f270d217edac3a251fd17f74a5d141183c76be22534209103671b0aa94cfc",
+      "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+    }
+  },
+  "actual_data_source": {
+    "timestamp_local": "2026-10-03 02:27:48",
+    "research_python": "Z:\\mvp20-split\\v2\\dev\\.venv\\Scripts\\python.exe",
+    "data_python": "Z:\\mvp20-split\\v2\\.test-results\\knowledge-publication-installed-20261002-1359\\initial\\data\\Scripts\\python.exe",
+    "decision": {
+      "scope": {
+        "tenant_id": "research-tests",
+        "project_id": "d953752e4c064eec8e6d709ca216231c"
+      },
+      "kind": "eligibility",
+      "decision_id": "actual-publication",
+      "sha256": "2c76b9e22f66aca6cb82c2500b1daa614c52677b0176c8d19c331668aacd407d"
+    },
+    "artifact": {
+      "artifact_id": "776c4a71bdcf47389b6f29323bab90bc",
+      "scope": {
+        "tenant_id": "research-tests",
+        "project_id": "d953752e4c064eec8e6d709ca216231c"
+      },
+      "sha256": "d293bc60138aa57d078e924d8a13079016b719fd1c6e675e9c9e4967e7888737",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "research.eligibility.payload",
+        "version": "1",
+        "sha256": "4fb54a28ebc56cc49e7c37572f7fda3425114a387dc307589d686148415ff459"
+      },
+      "size_bytes": 4174
+    },
+    "derivation": {
+      "schema_version": "1",
+      "origin": {
+        "schema_version": "1",
+        "command_family": "artifacts.begin_derived_upload",
+        "command_id": "35641212cd72d71fb93bba9905343565db06c7fc3c2b0610c34175b2289b87d9",
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "d953752e4c064eec8e6d709ca216231c"
+        },
+        "actor_id": "science-publisher"
+      },
+      "request_sha256": "0d5f7bf6f9d564f33d4a2fc0e3e53da5e1d090a602ce1b354347f37f4d2775b5",
+      "upload_id": "1f0b58bb9899499885a994e547ccc621",
+      "artifact": {
+        "artifact_id": "776c4a71bdcf47389b6f29323bab90bc",
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "d953752e4c064eec8e6d709ca216231c"
+        },
+        "sha256": "d293bc60138aa57d078e924d8a13079016b719fd1c6e675e9c9e4967e7888737",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "research.eligibility.payload",
+          "version": "1",
+          "sha256": "4fb54a28ebc56cc49e7c37572f7fda3425114a387dc307589d686148415ff459"
+        },
+        "size_bytes": 4174
+      },
+      "declaration": {
+        "schema_version": "1",
+        "transformation": {
+          "transformation_id": "research.scientific-artifact",
+          "version": "1",
+          "sha256": "98f12be88741e4b5c7444556433457c4c34784a764707a200e0ce9916d4fd4ae"
+        },
+        "inputs": [
+          {
+            "artifact_id": "ba7acb51e7f240ca93f082740eaf9684",
+            "scope": {
+              "tenant_id": "research-tests",
+              "project_id": "d953752e4c064eec8e6d709ca216231c"
+            },
+            "sha256": "0810207723351b0fbb728f019c33b617adaad49252b7258c3e8827b84e216365",
+            "media_type": "application/octet-stream",
+            "schema_ref": {
+              "schema_id": "fixture.bytes",
+              "version": "1",
+              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+            },
+            "size_bytes": 28
+          }
+        ]
+      }
+    },
+    "cases": [
+      "actual_Data_typed_publication",
+      "exact_bytes_and_provenance",
+      "weak_optional_focus_preserved",
+      "replacement_replay",
+      "no_DomainReceipt",
+      "no_SQL_during_peer_reads"
+    ],
+    "limits": [
+      "Private trusted synthetic model assertion, not authenticated model input ingestion",
+      "Research workflow runs in test process; hosted API/process kill proof remains B1.08/B3/V1"
+    ]
+  },
+  "actual_data_installed": {
+    "timestamp_local": "2026-10-03 02:29:46",
+    "research_python": "Z:\\mvp20-split\\v2\\.test-results\\research-scientific-publication-installed-20261003\\environment\\Scripts\\python.exe",
+    "data_python": "Z:\\mvp20-split\\v2\\.test-results\\knowledge-publication-installed-20261002-1359\\initial\\data\\Scripts\\python.exe",
+    "decision": {
+      "scope": {
+        "tenant_id": "research-tests",
+        "project_id": "989f1cb46e014949ba5df46e7aca2caa"
+      },
+      "kind": "eligibility",
+      "decision_id": "actual-publication",
+      "sha256": "d96c7e98e597ce38b09051dfeef3f1c354e924c931a8d1d0148cb6f9b2cf4a15"
+    },
+    "artifact": {
+      "artifact_id": "16747f752d70462e867c3d5a7a70b7a9",
+      "scope": {
+        "tenant_id": "research-tests",
+        "project_id": "989f1cb46e014949ba5df46e7aca2caa"
+      },
+      "sha256": "0f9b47322f5b1b910170b232ed0879185723f8fc3505903706c0a14421b932c5",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "research.eligibility.payload",
+        "version": "1",
+        "sha256": "4fb54a28ebc56cc49e7c37572f7fda3425114a387dc307589d686148415ff459"
+      },
+      "size_bytes": 4174
+    },
+    "derivation": {
+      "schema_version": "1",
+      "origin": {
+        "schema_version": "1",
+        "command_family": "artifacts.begin_derived_upload",
+        "command_id": "c237b7880827c67061055a50010ca6b63a1649263a577bc0008043b04f468034",
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "989f1cb46e014949ba5df46e7aca2caa"
+        },
+        "actor_id": "science-publisher"
+      },
+      "request_sha256": "acfaa85e493b70d5e05cedc1c9e007328dab24cd6cd3d8db6fb4d14cb163a536",
+      "upload_id": "1e18588133fb44b0b3980b2d2349965d",
+      "artifact": {
+        "artifact_id": "16747f752d70462e867c3d5a7a70b7a9",
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "989f1cb46e014949ba5df46e7aca2caa"
+        },
+        "sha256": "0f9b47322f5b1b910170b232ed0879185723f8fc3505903706c0a14421b932c5",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "research.eligibility.payload",
+          "version": "1",
+          "sha256": "4fb54a28ebc56cc49e7c37572f7fda3425114a387dc307589d686148415ff459"
+        },
+        "size_bytes": 4174
+      },
+      "declaration": {
+        "schema_version": "1",
+        "transformation": {
+          "transformation_id": "research.scientific-artifact",
+          "version": "1",
+          "sha256": "d4b2e5e520ffb1fd04ee037881f1e51bf2be8b9c54100475eeba36bf43331fe2"
+        },
+        "inputs": [
+          {
+            "artifact_id": "a8b55fa2a5ed47c695b1f0daff435fd9",
+            "scope": {
+              "tenant_id": "research-tests",
+              "project_id": "989f1cb46e014949ba5df46e7aca2caa"
+            },
+            "sha256": "0810207723351b0fbb728f019c33b617adaad49252b7258c3e8827b84e216365",
+            "media_type": "application/octet-stream",
+            "schema_ref": {
+              "schema_id": "fixture.bytes",
+              "version": "1",
+              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+            },
+            "size_bytes": 28
+          }
+        ]
+      }
+    },
+    "cases": [
+      "actual_Data_typed_publication",
+      "exact_bytes_and_provenance",
+      "weak_optional_focus_preserved",
+      "replacement_replay",
+      "no_DomainReceipt",
+      "no_SQL_during_peer_reads"
+    ],
+    "limits": [
+      "Private trusted synthetic model assertion, not authenticated model input ingestion",
+      "Research workflow runs in test process; hosted API/process kill proof remains B1.08/B3/V1"
+    ]
+  },
+  "limits": [
+    "Private trusted scientific results; reference-only hosted API remains B1.08",
+    "Scripted ACK loss and store reconstruction are not process-kill acceptance",
+    "No DomainReceipt issuance or Runtime retention acceptance",
+    "No scientific validation or UI capability",
+    "Existing sufficiency publication implementation and bytes unchanged"
+  ]
+}

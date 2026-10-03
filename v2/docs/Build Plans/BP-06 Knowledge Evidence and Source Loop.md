@@ -2,17 +2,17 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-06.03 closed; BP-06.04/Build/B1.07 active.
-- Last refreshed: `2026-10-03 02:09:43` (America/Chicago).
+- Status: primary_active; BP-06.03 closed; BP-06.04/Build/B1.08 active.
+- Last refreshed: `2026-10-03 02:32:17` (America/Chicago).
 - Owner/scope: Knowledge, Research and focused Data/Artifacts modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness](Planning_Readiness.md).
 - Prerequisites: completed BP-04 receipt/wait seams, BP-05 inspection and BP-01/02/03 boundaries.
-- Scoped implementation/verification completion: **53.47%** = (12+B1 (6+2/3)/8)/24;12/24 closed delivery gates. P1/.01,P2/.02,P3/.03 are100%; P4/.04 is20.83%;P5-P6 remain0%.
-- Current task: BP-06.04/B1.07c reviewed Artifact publication; B1.07b verified656 source/656 installed and119 compatibility/dev tests.
+- Scoped implementation/verification completion: **53.65%** = (12+B1 7/8)/24;12/24 closed delivery gates. P1/.01,P2/.02,P3/.03 are100%; P4/.04 is21.88%;P5-P6 remain0%.
+- Current task: BP-06.04/B1.08 separately granted scientific APIs; B1.07c verified717 source/717 installed and14 dev tests.
 - Demonstrated behavior: bounded reasoning, authenticated sufficiency, immutable future-only corrections, actual Runtime receipt/retention, exploratory partial output, acknowledgement-loss recovery and independent owner replacement. Both publication owners have actual process-death evidence.
 - Blockers: none requiring owner direction. Scientific sources, assay/route engines and target-host choices remain scoped future decisions.
 - Human acceptance: no routine pause for authorized engineering; experimental validity is not inferred from software verification.
-- Next gate: atomic intake/decision/impact storage and reviewed artifact publication; then B1.08 authenticated APIs.
+- Next gate: separately granted scientific APIs and isolated actual-owner workflow, then B2 normalization/corrections.
 
 ## Outcome and Boundaries
 
@@ -31,7 +31,7 @@ Primary services retain private state, dependencies, migrations and module READM
 | P1 / [BP-06.01 Source and evidence contracts](BP-06/Completed/BP-06.01%20Source%20and%20evidence%20contracts.md) | 100% | 100% | 100% | Parent predecessor gates |
 | P2 / [BP-06.02 Typed graph authoring and replay](BP-06/Completed/BP-06.02%20Typed%20graph%20authoring%20and%20replay.md) | 100% | 100% | 100% | BP-06.01 acceptance |
 | P3 / [BP-06.03 Reasoning and domain receipts](BP-06/Completed/BP-06.03%20Reasoning%20and%20domain%20receipts.md) | 100% | 100% | 100% | BP-06.02 acceptance |
-| P4 / [BP-06.04 Laboratory returns and candidate eligibility](BP-06/BP-06.04%20Laboratory%20returns%20and%20candidate%20eligibility.md) | 20.83% | 27.78% | 0% | BP-06.03 acceptance |
+| P4 / [BP-06.04 Laboratory returns and candidate eligibility](BP-06/BP-06.04%20Laboratory%20returns%20and%20candidate%20eligibility.md) | 21.88% | 29.17% | 0% | BP-06.03 acceptance |
 | P5 / [BP-06.05 Representation reuse and retrieval](BP-06/BP-06.05%20Representation%20reuse%20and%20retrieval.md) | 0% | 0% | 0% | BP-06.04 acceptance |
 | P6 / [BP-06.06 Feedback integration and closeout](BP-06/BP-06.06%20Feedback%20integration%20and%20closeout.md) | 0% | 0% | 0% | BP-06.05 acceptance |
 

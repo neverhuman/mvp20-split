@@ -466,3 +466,9 @@ MBT rotated checkpoints:
 Rotated MBT checkpoints:
 
 | 2026-10-02 14:12:44 | B1 installed publication/replacement verified; process-death proof next; child0/4,parent8/24 | Knowledge0.13.0;981 tests;8 isolated environments |
+
+- `2026-10-03 02:32:17`: B1.07c complete; Research0.21.0/research_0009; isolated scientific Artifact publication with exact owner source, stable commands,8-attempt stream cap and DB-clock fences.717 source/717 installed,14 dev;352 schemas unchanged;30 focused tests cover284 statements/48 branches at98%. Actual Data publication/replay preserves weak optional focus; no DomainReceipt or Runtime retention authority. B1.07 complete,B1=87.50%,Build29.17%,child21.88%,parent53.65%; gates0/4 and12/24. B1.08 next.
+
+Rotated MBT checkpoints:
+
+| 2026-10-02 14:24:10 | B1 Knowledge publication process recovery verified; Research assessment next; child0/4,parent8/24 | 9 installed kill barriers;4 rebuild regressions;14 dev checks |

@@ -1,6 +1,6 @@
 # Research synthesis feasibility
 
-- Status: BP-06.04/B1.07b immutable decision/dependency storage implemented in Research0.20.0/contracts0.10.0. Authenticated decision ingestion, Artifact publication and new public APIs remain following gates.
+- Status: BP-06.04/B1.07b immutable decision/dependency storage implemented in Research0.20.0/contracts0.10.0. Artifact publication is complete under B1.07c; authenticated decision ingestion and new public APIs remain B1.08.
 - Owner: Research. Design: [physical design](../../../../../docs/Build%20Plans/BP-06/BP-06.04%20Physical%20design.md); requirements: [synthesis feasibility](../../../../../docs/Architecture/Requirements/Product_Requirements.md#synthesis-feasibility-and-route-planning).
 
 evidence.py preserves an exact candidate/domain/purpose/conditions context, requested scale and purity specification, immutable route Artifact, method/tool/model versions, source records, ordered step dependencies, step evidence/gaps, bounded search and next checks. Route-step records carry domain-specific intermediates, starting materials and process detail; this module does not interpret their chemistry or biology. Missing scale/purity stays unknown. Units retain original tokens. All sources match the candidate scope; steps must follow their dependencies and cannot form cycles. Collections are bounded, identities unique and sources attributable.

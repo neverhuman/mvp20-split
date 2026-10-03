@@ -1,6 +1,6 @@
 # Research observations
 
-- Status: BP-06.04/B1.07a atomic intake storage implemented in Research0.19.0/contracts0.9.0. Scientific decision/impact/publication work remains B1.07b/c; new public APIs remain B1.08.
+- Status: BP-06.04/B1.07a atomic intake storage implemented in Research0.19.0/contracts0.9.0. Scientific decision/impact storage and Artifact publication are complete under B1.07b/c; new public APIs remain B1.08.
 - Predecessor: BP-06.04/B1.01 pure measurement values implemented in Research0.13.0;97 direct cases cover143 statements and48 branches. The independently built/installed Research wheel also passes all97 cases;14 dev tests and the granular selector pass. [Evidence](../../../../../docs/Audits/Evidence/BP-06-Research/Measurement_Values.json).
 - Owner: Research observations. [Physical design](../../../../../docs/Build%20Plans/BP-06/BP-06.04%20Physical%20design.md) and [canonical plan](../../../../../docs/Build%20Plans/BP-06/BP-06.04%20Laboratory%20returns%20and%20candidate%20eligibility.md) own subsequent scope.
 
