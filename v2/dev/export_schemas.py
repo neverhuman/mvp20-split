@@ -78,6 +78,15 @@ for name, model in {
     "encoding-status": representation_contracts.EncodingStatus,
 }.items():
     MODELS["representations." + name] = model
+for name, model in {
+    "generation-ref": representation_contracts.IndexGenerationRef,
+    "build-generation": representation_contracts.BuildIndexGeneration,
+    "index-manifest": representation_contracts.IndexManifest,
+    "generation": representation_contracts.IndexGeneration,
+    "generation-status": representation_contracts.IndexGenerationStatus,
+}.items():
+    MODELS["representations." + name] = model
+
 
 for name, model in {
     "vocabulary": knowledge_contracts.DomainVocabulary,

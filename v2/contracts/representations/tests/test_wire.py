@@ -11,6 +11,11 @@ from pydantic import ValidationError
 
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
+    "generation-ref": contracts.IndexGenerationRef,
+    "build-generation": contracts.BuildIndexGeneration,
+    "index-manifest": contracts.IndexManifest,
+    "generation": contracts.IndexGeneration,
+    "generation-status": contracts.IndexGenerationStatus,
     "profile": contracts.EncodingProfile,
     "profile-ref": contracts.EncodingProfileRef,
     "encode-source": contracts.EncodeSourceRequest,
@@ -39,6 +44,19 @@ def test_examples_roundtrip_and_match_both_published_schema_modes(name):
 @pytest.mark.parametrize(
     "name,mutation",
     [
+        ("generation-ref", lambda x: x.update(sha256="bad")),
+        ("build-generation", lambda x: x.update(bindings=[])),
+        ("build-generation", lambda x: x.update(bindings=x["bindings"] * 257)),
+        ("build-generation", lambda x: x.update(namespace="caller-target")),
+        ("build-generation", lambda x: x.update(verified=True)),
+        ("build-generation", lambda x: x.update(actor_id="other")),
+        ("build-generation", lambda x: x.pop("expected_head")),
+        ("build-generation", lambda x: x.update(backend_profile={})),
+        ("index-manifest", lambda x: x.update(watermark="bad")),
+        ("index-manifest", lambda x: x.update(bindings=[])),
+        ("generation", lambda x: x.update(scientifically_valid=True)),
+        ("generation-status", lambda x: x.update(state="ready")),
+        ("generation-status", lambda x: x.update(token="caller-authority")),
         ("profile", lambda x: x["space"].update(dimensions=True)),
         ("profile", lambda x: x["space"].update(dimensions=4097)),
         ("profile", lambda x: x["space"].update(dtype="float64")),

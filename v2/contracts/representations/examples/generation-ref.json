@@ -1,0 +1,9 @@
+{
+  "scope": {
+    "tenant_id": "fixture",
+    "project_id": "representations"
+  },
+  "corpus_id": "fixture-corpus",
+  "generation_id": "g1",
+  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+}

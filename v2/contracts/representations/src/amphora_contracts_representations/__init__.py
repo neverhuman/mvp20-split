@@ -9,6 +9,13 @@ from .bindings import (
     RepresentationBindingRef,
     RepresentationVector,
 )
+from .generations import (
+    BuildIndexGeneration,
+    IndexGeneration,
+    IndexGenerationRef,
+    IndexGenerationStatus,
+    IndexManifest,
+)
 from .profiles import (
     EncoderDescriptor,
     EncodingInputDescriptor,
@@ -20,6 +27,11 @@ from .profiles import (
 from .schema import representation_vector_schema
 
 __all__ = [
+    "BuildIndexGeneration",
+    "IndexGeneration",
+    "IndexGenerationRef",
+    "IndexGenerationStatus",
+    "IndexManifest",
     "EncodeSourceRequest",
     "EncodingPending",
     "EncodingPublished",

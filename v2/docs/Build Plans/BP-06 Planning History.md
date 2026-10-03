@@ -1,5 +1,14 @@
 # BP-06 Planning History
 
+## BP-06.05/B2.01b generation contracts complete - 2026-10-03 16:23:38
+
+Data0.20.0/public representations0.2.0 independently built. Five new roots/ten schemas; all420 prior bytes preserved (430 total).57 source domain/contract cases pass3.23s;200 installed scoped representation/HTTP cases pass49.55s;14 dev pass12.21s. Pure retrieval and public representation modules296 statements/8 branches fully exercised. Tests reject caller authority and forged/reordered manifests/identities. One initial test expected digest rejection after changing a fixed wire-version literal; corrected fixture to vary valid backend digest, preserving strict shape policy. No DB migration/backend claim. B2.01a-b100%, c-d0%; B2=12.50%, Build37.50%, child28.13%, parent71.35%; gates unchanged1/4 and17/24. c active.
+
+Rotated MBT checkpoints:
+
+| 2026-10-03 04:08:02 | BP-06.04/B2.01 complete; child31.25%, parent55.21%; B2.02 active | [Exact normalization](../Audits/Evidence/BP-06-Research/Exact_Normalization.json);633 source/633 installed,14 dev; original evidence preserved |
+
+
 ## BP-06.05/B2.01a generation models complete - 2026-10-03 16:16:12
 
 Data0.19.0 independently built;179 source and179 installed scoped cases pass,14 dev pass,420 prior schemas unchanged. Pure retrieval125 statements/8 branches fully covered. Ordered bounded manifests, exact identities, isolated attempt namespaces and phase rules are implemented; no PG/backend/public contract credit. B2.01 decomposed into four equal tasks inside its existing weight: a100%, b-d0%; B2=6.25%, Build35.42%, child26.56%, parent71.09%; gates1/4 and17/24. B2.01b active. Binding fingerprint bytes unchanged; pure projection validation now checks full scope chain.

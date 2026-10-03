@@ -165,3 +165,66 @@ def test_transition_policy_forbids_skips_and_terminal_reopening():
                     source.require_successor(target)
     with pytest.raises(RetrievalError, match="phase_required"):
         GenerationPhase.PREPARED.require_successor("building")
+
+
+def test_generation_wire_roundtrip_and_status_are_explicit_projections():
+    from amphora_data_artifacts.retrieval.mapping import (
+        plan_from_wire,
+        plan_to_wire,
+        reference_from_wire,
+        reference_to_wire,
+        status_to_wire,
+    )
+
+    old = GenerationReference(SCOPE, "corpus", "old", "b" * 64)
+    for head in (None, old):
+        plan = GenerationPlan("corpus", "new", "owner", CorpusManifest(SCOPE, PROFILE, (binding(1),)), head, BACKEND)
+        wire = plan_to_wire(plan)
+        assert plan_from_wire(PROFILE, wire) == plan
+        assert reference_from_wire(reference_to_wire(plan.reference)) == plan.reference
+        for phase in GenerationPhase:
+            status = status_to_wire(plan, phase)
+            assert status.state == phase.value
+            assert status.generation == wire
+    with pytest.raises(RetrievalError, match="phase_required"):
+        status_to_wire(plan, "published")
+
+
+def test_mapping_rejects_shape_bypasses_and_recomputed_identity_mismatches():
+    from amphora_data_artifacts.retrieval.mapping import manifest_from_wire, plan_from_wire, plan_to_wire
+
+    plan = GenerationPlan("corpus", "new", "owner", CorpusManifest(SCOPE, PROFILE, (binding(1),)), None, BACKEND)
+    wire = plan_to_wire(plan)
+    for forged in (
+        wire.model_copy(update={"actor_id": "another"}),
+        wire.model_copy(update={"backend_profile": BACKEND.model_copy(update={"sha256": "d" * 64})}),
+        wire.model_copy(update={"reference": wire.reference.model_copy(update={"scope": Scope(tenant_id="other", project_id="other")})}),
+    ):
+        with pytest.raises(RetrievalError, match="generation_digest"):
+            plan_from_wire(PROFILE, forged)
+    with pytest.raises(RetrievalError, match="manifest_watermark"):
+        manifest_from_wire(PROFILE, wire.manifest.model_copy(update={"watermark": "0" * 64}))
+    with pytest.raises(RetrievalError, match="manifest_profile"):
+        manifest_from_wire(PROFILE, wire.manifest.model_copy(update={"profile": wire.manifest.profile.model_copy(update={"version": "2"})}))
+    with pytest.raises(RepresentationError, match="wire_shape"):
+        plan_from_wire(PROFILE, wire.model_copy(update={"actor_id": False}))
+
+
+def test_generation_request_binds_exact_order_owner_actor_and_backend():
+    from amphora_contracts_representations import BuildIndexGeneration
+    from amphora_data_artifacts.retrieval.mapping import plan_from_request, reference_to_wire
+
+    bindings = (binding(1), binding(2))
+    request = BuildIndexGeneration(wire_version="1", corpus_id="corpus", generation_id="new",
+        profile=bindings[0].profile, bindings=tuple(b.reference for b in bindings), expected_head=None)
+    result = plan_from_request(SCOPE, "owner", request, PROFILE, bindings, BACKEND)
+    assert result.actor_id == "owner"
+    assert result.backend_profile == BACKEND
+    assert result.manifest.bindings == bindings
+    old = GenerationReference(SCOPE, "corpus", "old", "c" * 64)
+    request_with_head = request.model_copy(update={"expected_head": reference_to_wire(old)})
+    assert plan_from_request(SCOPE, "owner", request_with_head, PROFILE, bindings, BACKEND).expected_head == old
+    with pytest.raises(RetrievalError, match="request_bindings"):
+        plan_from_request(SCOPE, "owner", request, PROFILE, tuple(reversed(bindings)), BACKEND)
+    with pytest.raises(RetrievalError, match="request_profile"):
+        plan_from_request(SCOPE, "owner", request.model_copy(update={"profile": request.profile.model_copy(update={"version": "2"})}), PROFILE, bindings, BACKEND)

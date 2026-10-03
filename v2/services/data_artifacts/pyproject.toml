@@ -1,9 +1,9 @@
 [project]
 name = "amphora-data-artifacts"
-version = "0.19.0"
+version = "0.20.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
-    "amphora-contracts-representations==0.1.0",
+    "amphora-contracts-representations==0.2.0",
     "pydantic>=2.11,<3",
     "jsonschema[format-nongpl]>=4.25,<5",
     "sqlalchemy>=2,<3",
