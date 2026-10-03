@@ -1,0 +1,168 @@
+{
+  "timestamp_local": "2026-10-03 05:59:25",
+  "milestone": "BP-06.04/B2.04c",
+  "research_version": "0.31.0",
+  "contracts_version": "0.14.0",
+  "verification": {
+    "actual_workflows_source": 1,
+    "actual_workflows_installed": 1,
+    "prior_source_regression_preserved": 882,
+    "prior_installed_regression_preserved": 882,
+    "prior_dev_tests": 14,
+    "schemas_unchanged": 406,
+    "migration_unchanged": "research_0012"
+  },
+  "runs": [
+    {
+      "tier": "source",
+      "timestamp_local": "2026-10-03 05:52:31",
+      "scope": {
+        "tenant_id": "research-tests",
+        "project_id": "8d002e53e3844a8ca12a91f8254c0c21"
+      },
+      "test_python": "Z:\\mvp20-split\\v2\\dev\\.venv\\Scripts\\python.exe",
+      "research_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "replacement_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-http-replacement-20261003\\environment\\Scripts\\python.exe",
+      "data_python": "Z:\\mvp20-split\\v2\\.test-results\\knowledge-publication-installed-20261002-1359\\initial\\data\\Scripts\\python.exe",
+      "original": {
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "8d002e53e3844a8ca12a91f8254c0c21"
+        },
+        "observation_id": "result",
+        "revision": 1
+      },
+      "corrected": {
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "8d002e53e3844a8ca12a91f8254c0c21"
+        },
+        "observation_id": "result",
+        "revision": 2
+      },
+      "original_interpretation": {
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "8d002e53e3844a8ca12a91f8254c0c21"
+        },
+        "kind": "observation-use",
+        "interpretation_id": "explore-original",
+        "sha256": "d03dabfda8402ba3aa504fdf1f25214479c4767e547c90daaa54f0a2327244b9"
+      },
+      "pending_pin_after_correction": {
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "8d002e53e3844a8ca12a91f8254c0c21"
+        },
+        "kind": "observation-use",
+        "interpretation_id": "pinned-before-correction",
+        "sha256": "f8e4a7eb5325c8bab9b3b2ad34991bb49e0e38cd842b4ac40fcff2812dc374c3"
+      },
+      "later_interpretation": {
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "8d002e53e3844a8ca12a91f8254c0c21"
+        },
+        "kind": "observation-use",
+        "interpretation_id": "later-iteration",
+        "sha256": "a1cedfb50f0be1581fd5d480d866c602440c59a453ddf66ef169e9beee9c139a"
+      },
+      "cases": [
+        "actual_Artifact_dependencies",
+        "authenticated_intake_and_correction",
+        "exact_normalization",
+        "weak_usable_and_focus",
+        "strict_action_only_exclusion",
+        "pending_pin_survives_correction",
+        "explicit_later_revision_selection",
+        "exact_future_only_impacts",
+        "current_Data_access_denial",
+        "independent_installed_replacement",
+        "zero_profile_offline_history",
+        "stored_profile_retry_after_access_restored"
+      ],
+      "limits": [
+        "Synthetic science; no physical validity or quality UI",
+        "Interpretation input transitions, not new Runtime authority",
+        "Idle process replacement, not crash-at-barrier proof",
+        "Access-grant denial, not per-source rights revocation"
+      ]
+    },
+    {
+      "tier": "installed",
+      "timestamp_local": "2026-10-03 05:54:21",
+      "scope": {
+        "tenant_id": "research-tests",
+        "project_id": "08785015241b47598f482dc529af3605"
+      },
+      "test_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "research_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "replacement_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-http-replacement-20261003\\environment\\Scripts\\python.exe",
+      "data_python": "Z:\\mvp20-split\\v2\\.test-results\\knowledge-publication-installed-20261002-1359\\initial\\data\\Scripts\\python.exe",
+      "original": {
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "08785015241b47598f482dc529af3605"
+        },
+        "observation_id": "result",
+        "revision": 1
+      },
+      "corrected": {
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "08785015241b47598f482dc529af3605"
+        },
+        "observation_id": "result",
+        "revision": 2
+      },
+      "original_interpretation": {
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "08785015241b47598f482dc529af3605"
+        },
+        "kind": "observation-use",
+        "interpretation_id": "explore-original",
+        "sha256": "ed3c99c1fc4ace65f29512ab29440a57cbb7790fc00e105d2441b425070e1a36"
+      },
+      "pending_pin_after_correction": {
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "08785015241b47598f482dc529af3605"
+        },
+        "kind": "observation-use",
+        "interpretation_id": "pinned-before-correction",
+        "sha256": "4b3dc5fc07314bd0adc151787dcec2acdcf5dcee3d2221065127399ec0e8909c"
+      },
+      "later_interpretation": {
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "08785015241b47598f482dc529af3605"
+        },
+        "kind": "observation-use",
+        "interpretation_id": "later-iteration",
+        "sha256": "f0f32b29afab26e0be4b51fba39b7c131db32cc4288e37a4cfe1d664f2f168d2"
+      },
+      "cases": [
+        "actual_Artifact_dependencies",
+        "authenticated_intake_and_correction",
+        "exact_normalization",
+        "weak_usable_and_focus",
+        "strict_action_only_exclusion",
+        "pending_pin_survives_correction",
+        "explicit_later_revision_selection",
+        "exact_future_only_impacts",
+        "current_Data_access_denial",
+        "independent_installed_replacement",
+        "zero_profile_offline_history",
+        "stored_profile_retry_after_access_restored"
+      ],
+      "limits": [
+        "Synthetic science; no physical validity or quality UI",
+        "Interpretation input transitions, not new Runtime authority",
+        "Idle process replacement, not crash-at-barrier proof",
+        "Access-grant denial, not per-source rights revocation"
+      ]
+    }
+  ],
+  "fixture_change": "Replace fake sample identity Artifact with actual Data evidence and explicit owner sample revision2 before persisting the experiment. No authentication bypass."
+}

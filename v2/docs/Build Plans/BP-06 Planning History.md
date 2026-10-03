@@ -1,5 +1,13 @@
 # BP-06 Planning History
 
+## BP-06.04/B2 complete; actual interpretation transitions - 2026-10-03 05:59:25
+
+B2.04c passes one full independent Data/Research/fresh replacement workflow from source (57.55s) and installed Research tests (50.61s). Actual source dependencies include newly published sample identity proof; private fixture sample revision2 updates the unpublished experiment and observation binding rather than bypassing source checks. Normalization preserves original value; exploratory use keeps failed controls/low-accuracy focus while strict action alone excludes. An accepted pending interpretation finishes its original pin after authenticated correction; a later interpretation explicitly uses revision2. Exact impacts, current Data readgrant denial, zero-active-profile offline replacement/history and restored-access pending retry pass. Access-grant denial is not claimed as per-source revocation; idle replacement is not crash-barrier proof. No production/version/schema/migration change; prior882 source/882 installed +14dev baseline retained. Research0.31.0/contracts0.14.0,406 schemas/research_0012. B2=100%,Build66.67%,child50%,parent58.33%; gates2/4 and14/24. B3 subdivided into three equal existing-weight milestones; .01 actual context/return matrix active0%. A stale progress mirror in the normalization design was replaced with a canonical-tracker pointer.
+
+Rotated MBT checkpoints:
+
+| 2026-10-02 21:50:54 | B2 complete; child50%, parent41.67%; B3.01 active; gates2/4 and10/24 | [Actual corrections](../Audits/Evidence/BP-06-Research/Receipt_Correction_Transitions.json);334 installed +3 Runtime predicate tests |
+
 ## BP-06.04/B2.04b interpretation hosting complete - 2026-10-03 05:46:33
 
 Research0.31.0/contracts0.14.0;882 source/882 installed and14 dev tests pass. One prior actual-HTTP opt-in skipped per suite; c owns the new independent transition proof.20 focused tests cover100 statements/14 branches100%;406 schemas/research_0012 unchanged. Optional normalization/use profiles preserve old science configs under combined32 cap. Four separate grants plus existing scoped record/impact grants expose exact status/correction/dependency reads without new authority. No-store strict JSON, actor/scope/action denials, zero-active history, pending source outage and quality focus verified. A malformed-body fixture initially omitted application/json and correctly received415; the test was corrected to exercise422 parsing behavior. c integration must replace the historical synthetic sample identity Artifact with real Data evidence instead of weakening dependency authentication. B2=91.67%,Build63.89%,child47.92%,parent57.99%; gates1/4 and13/24 unchanged.
