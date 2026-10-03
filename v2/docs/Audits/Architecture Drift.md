@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-02 22:49:43` (America/Chicago).
-- Scope: v2 design/implementation alignment
-- Active focus: BP-06.03/V1.02 publication process-death proof active; fresh Research rebuild/history cutover verified; B1/B2 complete, B3.01 verified, child83.33%, parent47.22%. Closed gates are3/4 and11/24; no child closeout or acceptance claim. Reuse verified Knowledge recovery/replacement evidence.
-- Next gate: V1.02 process-death acceptance, then scoped closeout audit. B3 recovery now verified against both actual owners. B3.02 partial-output/eligibility proof verified; current uncertainty remains explicit. Actual live Runtime receipt/retention and original pin preservation now verified. Both owner correction stores/APIs align with future-campaign-only policy; UI quality/next-iteration focus remains queued SQ-01.
+- Last refreshed: `2026-10-02 23:09:37` (America/Chicago).
+- Scope: v2 design/implementation alignment.
+- Active focus: BP-06.04 activation audit after BP-06.03 closeout; parent12/24=50%.
+- Next gate: laboratory/material-state/eligibility boundary reconciliation. BP-06.03 aligned evidence is in drift history; richer scientific-quality UI remains SQ-01.
 
 ## Active Findings
 

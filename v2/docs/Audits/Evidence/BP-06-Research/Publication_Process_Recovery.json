@@ -1,0 +1,108 @@
+{
+  "reviewed_local": "2026-10-02 23:03:47",
+  "scope": "BP-06.03/V1.02",
+  "status": "passed",
+  "installed_actual_tests": 1,
+  "duration_seconds": 136.6,
+  "barriers": [
+    {
+      "barrier": "prepared",
+      "stage_after_kill": "prepared",
+      "terminal_after_kill": "pending",
+      "original_begin_id": "5824878ee7d61c31b2f03084b47d0dfe8e1644f4edbdc718137ee9a2d3849e22",
+      "original_finalize_id": "5d4baa151c8a331f4433097d875326d19ba211efe773b395e83c6e12ae835d85",
+      "recovered_ordinal": 1,
+      "abandoned_upload_not_finalized": false,
+      "lease_profile": "fault host five-second DB-clock lease; replacement production sixty seconds"
+    },
+    {
+      "barrier": "begin_returned",
+      "stage_after_kill": "prepared",
+      "terminal_after_kill": "pending",
+      "original_begin_id": "6806fb6c3094f0def601acf9edca02c978df6d9a690f6c43985ade8a1963ddef",
+      "original_finalize_id": "dfc2e68b052ee4d4029da3422f62c1047abbde171679c6b548dad107147a95e5",
+      "recovered_ordinal": 1,
+      "abandoned_upload_not_finalized": false,
+      "lease_profile": "fault host five-second DB-clock lease; replacement production sixty seconds"
+    },
+    {
+      "barrier": "stream_started",
+      "stage_after_kill": "streaming",
+      "terminal_after_kill": "pending",
+      "original_begin_id": "3d10323e56ff1d682c10c0c1b137f13eb4b04ac65dc8f77496090b17b9c3aaeb",
+      "original_finalize_id": "e0ab8bc21af52b0da10a49b546269fdf198254e78781ae077ad2942667bd2632",
+      "recovered_ordinal": 2,
+      "abandoned_upload_not_finalized": true,
+      "lease_profile": "fault host five-second DB-clock lease; replacement production sixty seconds"
+    },
+    {
+      "barrier": "stream_returned",
+      "stage_after_kill": "streaming",
+      "terminal_after_kill": "pending",
+      "original_begin_id": "639a6518ad9412938d3d10186b8e1b0fd55d4dd07a89a167be2be09a4080dc34",
+      "original_finalize_id": "3c51d473c4565a519ecd4556ae64a2896bde58cc5d73ee2f8fc6e959a6a1eede",
+      "recovered_ordinal": 2,
+      "abandoned_upload_not_finalized": true,
+      "lease_profile": "fault host five-second DB-clock lease; replacement production sixty seconds"
+    },
+    {
+      "barrier": "stream_verified",
+      "stage_after_kill": "streamed",
+      "terminal_after_kill": "pending",
+      "original_begin_id": "6f12fe65cfc5722a5e88a3f1b5d60af75274c40754c9112a263eee731517fc37",
+      "original_finalize_id": "5cbbbd1187791e23ff6727eec050e17703c3868ff86872b2c742d90ee2ebd7d1",
+      "recovered_ordinal": 1,
+      "abandoned_upload_not_finalized": false,
+      "lease_profile": "fault host five-second DB-clock lease; replacement production sixty seconds"
+    },
+    {
+      "barrier": "finalizing",
+      "stage_after_kill": "finalizing",
+      "terminal_after_kill": "pending",
+      "original_begin_id": "97d9dce5375db2287fd81a102408ed96902d99964c58f76302097e4cf979b374",
+      "original_finalize_id": "47142d5ef89dea5c540b0d689e3892a041dc2c29c40f761abc5d12817a9f7ab5",
+      "recovered_ordinal": 1,
+      "abandoned_upload_not_finalized": false,
+      "lease_profile": "fault host five-second DB-clock lease; replacement production sixty seconds"
+    },
+    {
+      "barrier": "data_finalized",
+      "stage_after_kill": "finalizing",
+      "terminal_after_kill": "pending",
+      "original_begin_id": "ebaae62709269d8fe41804a620c04d17e0d436a2d4cc73728e7893addc13c3cd",
+      "original_finalize_id": "d296302ad5462b1d1867995615b3262c93a66878ccf372aa6fc4b9fe62d21654",
+      "recovered_ordinal": 1,
+      "abandoned_upload_not_finalized": false,
+      "lease_profile": "fault host five-second DB-clock lease; replacement production sixty seconds"
+    },
+    {
+      "barrier": "terminal_before_commit",
+      "stage_after_kill": "finalizing",
+      "terminal_after_kill": "pending",
+      "original_begin_id": "d97c17183da27502fc724ab90766c0a6cc9db82b01f1e433c7b49f66733928b0",
+      "original_finalize_id": "fae3372b1b6e36e8551137a4f046c8770475225fb016c0ba6e49392aa701ad30",
+      "recovered_ordinal": 1,
+      "abandoned_upload_not_finalized": false,
+      "lease_profile": "fault host five-second DB-clock lease; replacement production sixty seconds"
+    },
+    {
+      "barrier": "terminal_committed",
+      "stage_after_kill": "published",
+      "terminal_after_kill": "published",
+      "original_begin_id": "52a7c9770828cd75a95421a53aeef7e1c809c55de5542648b604132c03e99d10",
+      "original_finalize_id": "1a6f2bfc4e88ed1b4b4325106ca928c175de3d0f0aeceefd2f937ce292bc6153",
+      "recovered_ordinal": 1,
+      "abandoned_upload_not_finalized": false,
+      "lease_profile": "fault host five-second DB-clock lease; replacement production sixty seconds"
+    }
+  ],
+  "source_evidence": ".test-results/research-publication-kills-20261002.json",
+  "junit": ".test-results/research-publication-kills-20261002.xml",
+  "replacement": "Z:\\mvp20-split\\v2\\.test-results\\research-v1-replacement-20261002\\environment\\Scripts\\python.exe",
+  "limits": [
+    "Synthetic science and actual owner processes only",
+    "Fault host5s lease; replacement production60s",
+    "No target-host power-loss proof",
+    "No production fault hooks"
+  ]
+}

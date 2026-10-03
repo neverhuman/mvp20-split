@@ -287,6 +287,10 @@ def test_actual_knowledge_output_and_evidence_require_authenticated_applicable_p
         owners.append(research)
         assert research.request("/v1/assessments/read", api_request) == api_result
         assert research.request("/v1/assessment-publications/read", selection) == api_publication
+        interruptions = []
+        if os.environ.get("AMPHORA_TEST_RESEARCH_PUBLICATION_KILLS") == "1":
+            from ..publication.interruptions import prove as prove_interruptions
+            interruptions = prove_interruptions(Owner,research,research_config,environment,data,api_request,store.engine)
         corrections = prove_corrections(research, knowledge, scope, api_request, api_publication, reason, runtime=runtime)
         if runtime is not None:
             runtime.partial(corrections)
@@ -317,7 +321,7 @@ def test_actual_knowledge_output_and_evidence_require_authenticated_applicable_p
             resolve([receipt])
         assert store.engine.pool.checkedout() == 0
         evidence = {"timestamp_local": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "scope": scope,
-                    "research_replacement_python":replacement, "answer": answer, "assessments": observations, "corrections": corrections.evidence(), "runtime": None if runtime is None else runtime.results, "actual_processes": ["Data", "Knowledge", "Research"],
+                    "publication_interruptions":interruptions,"research_replacement_python":replacement, "answer": answer, "assessments": observations, "corrections": corrections.evidence(), "runtime": None if runtime is None else runtime.results, "actual_processes": ["Data", "Knowledge", "Research"],
                     "cases": ["real_logical_output", "explicit_missing_evidence", "opinion_insufficient", "context_mismatch_insufficient", "matching_observation", "actual_owner_corrections", "correction_owner_replacement", "correction_replay_Data_offline",
                               "wrong_token_denied", "revoked_source_denied", "data_outage_retryable", "no_idle_research_transaction", "durable_assessment_replacement_read", "actual_assessment_publication_and_receipt", "publication_terminal_replay", "actual_begin_ack_loss", "actual_stream_ack_loss", "actual_finalize_ack_loss", "authenticated_assessment_submit_read", "authenticated_publication_submit_read", "Research_process_replacement_replay", "terminal_replay_with_Data_offline"]}
         path = Path(os.environ.get("AMPHORA_RESEARCH_RESOLUTION_EVIDENCE", str(Path(__file__).absolute().parents[4] /
