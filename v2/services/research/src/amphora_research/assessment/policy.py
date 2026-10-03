@@ -46,11 +46,14 @@ class CandidateAnswer:
     criterion_id: str
     artifact: ArtifactRef
     disposition: Disposition
+    conflict: bool = False
 
     def __post_init__(self) -> None:
         _identifier(self.criterion_id)
         if self.disposition not in DISPOSITIONS:
             raise AssessmentError("invalid_disposition")
+        if type(self.conflict) is not bool or (self.conflict and self.disposition != "unknown"):
+            raise AssessmentError("invalid_answer_conflict")
 
 
 @dataclass(frozen=True)
@@ -193,7 +196,7 @@ class AssessmentPolicy:
                 gap = _gap(answer, supporting, contradicting)
                 needs.append(NeedDecision(criterion, requirement.need.reference, supporting, contradicting, gap))
         gaps = {item.gap for item in needs}
-        if "evidence_conflict" in gaps:
+        if "evidence_conflict" in gaps or any(answer.conflict for answer in answers):
             disposition = "unknown"
         elif gaps & {"answer_contradicted", "evidence_contradicted"}:
             disposition = "contradicted"
@@ -237,6 +240,8 @@ def _gap(answer: CandidateAnswer | None, supporting: tuple[ArtifactRef, ...],
          contradicting: tuple[ArtifactRef, ...]) -> str | None:
     if supporting and contradicting:
         return "evidence_conflict"
+    if answer is not None and answer.conflict:
+        return "answer_unknown"
     if contradicting:
         return "evidence_contradicted"
     if answer is None:

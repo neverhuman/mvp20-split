@@ -1,5 +1,15 @@
 # BP-06 Planning History
 
+## B1.07 authenticated producer resolution complete - 2026-10-02 19:05:19
+
+Research0.7.0/contracts0.4.0;374 scoped tests,257 final independently installed tests, actual Data0.11.0 and Knowledge0.13.0 peers reused. [Evidence](../Audits/Evidence/BP-06-Research/Assessment_Resolution.json).296 public schemas preserve294 predecessors. The preliminary254-test installed build predated the reproduced conflict-overridden-by-negative-evidence regression; the final257-test build includes the correction. Direct Knowledge conflict remains unknown regardless of negative evidence, with pinned assertion provenance and no schema rewrite. No assessment storage/route/publication implementation claimed.
+
+B1 7/10, Build23.33%, child17.50%, parent36.25%; closed gates0/4 and8/24 unchanged. B1.08 immutable store is next. Metadata-only compatibility patches update Evidence0.5.2/Knowledge contracts0.6.2/Data0.11.2/Knowledge0.13.2 exact dependency pins; peer implementations and migrations unchanged.
+
+Rotated MBT checkpoint:
+
+| 2026-10-01 19:50:16 | BP-06.02/B1 validator/workflow partial; child0%, parent16.67% | [Validation evidence](../Audits/Evidence/BP-06-Knowledge/Validation.json);83 owner tests; actual-peer integration pending |
+
 ## B1.07 Data reader checkpoint - 2026-10-02 16:45:56
 
 Research0.6.1 adds scoped public Data reads and derivation producer verification;32 scripted HTTP cases and184 Research/dev tests pass. [Evidence](../Audits/Evidence/BP-06-Research/Assessment_Reader.json) records coverage and missing branches. B1.07 remains incomplete: producer payload/target/context and exact declaration binding plus actual Data/Knowledge process proof remain. B1 milestones6/10, child15%, parent35.83% unchanged. The initial sub100ms deadline probe exposed a timing assumption in the combined run; separate expired admission and actual delayed/trickling-header probes now pass. No schema or migration change.

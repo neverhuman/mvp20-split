@@ -146,7 +146,7 @@ requires-dist = [{ name = "pydantic", specifier = ">=2.12,<3" }]
 
 [[package]]
 name = "amphora-contracts-evidence"
-version = "0.5.1"
+version = "0.5.2"
 source = { editable = "../contracts/evidence" }
 dependencies = [
     { name = "amphora-contracts-core" },
@@ -186,7 +186,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-contracts-knowledge"
-version = "0.6.1"
+version = "0.6.2"
 source = { editable = "../contracts/knowledge" }
 dependencies = [
     { name = "amphora-contracts-artifacts" },
@@ -209,7 +209,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-contracts-research"
-version = "0.3.0"
+version = "0.4.0"
 source = { editable = "../contracts/research" }
 dependencies = [
     { name = "amphora-contracts-core" },
@@ -271,7 +271,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-data-artifacts"
-version = "0.11.1"
+version = "0.11.2"
 source = { editable = "../services/data_artifacts" }
 dependencies = [
     { name = "alembic" },
@@ -373,7 +373,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-knowledge"
-version = "0.13.1"
+version = "0.13.2"
 source = { editable = "../services/knowledge" }
 dependencies = [
     { name = "alembic" },
@@ -431,12 +431,13 @@ requires-dist = [
 
 [[package]]
 name = "amphora-research"
-version = "0.6.1"
+version = "0.7.0"
 source = { editable = "../services/research" }
 dependencies = [
     { name = "alembic" },
     { name = "amphora-contracts-artifacts" },
     { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-knowledge" },
     { name = "amphora-contracts-research" },
     { name = "fastapi" },
     { name = "psycopg", extra = ["binary"] },
@@ -450,6 +451,7 @@ requires-dist = [
     { name = "alembic", specifier = ">=1.16,<2" },
     { name = "amphora-contracts-artifacts", editable = "../contracts/artifacts" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-knowledge", editable = "../contracts/knowledge" },
     { name = "amphora-contracts-research", editable = "../contracts/research" },
     { name = "fastapi", specifier = ">=0.115,<1" },
     { name = "psycopg", extras = ["binary"], specifier = ">=3,<4" },

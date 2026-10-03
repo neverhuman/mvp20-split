@@ -1,6 +1,6 @@
 # Research Identity Contracts
 
-- Package: `amphora-contracts-research` 0.3.0, wire1; BP-06.01/B1 initial subset.
+- Package: `amphora-contracts-research` 0.4.0, wire1; identity declarations and synthetic assessment shapes.
 - Design: [Candidates](../../docs/Architecture/Research/Candidates.md), [experiments](../../docs/Architecture/Research/Experiments.md).
 
 Public imports use `amphora_contracts_research`; only Core and Pydantic dependencies. DTOs are immutable, strict, bounded and extra-forbidden. No service code, storage, scientific evaluation or permission is provided.
@@ -18,5 +18,7 @@ Version0.3.0 adds EvidenceAssessmentProfile/Request/Status and EvidenceAssessmen
 Profile fingerprints are SHA-256 of sorted-key compact UTF-8 JSON of the full wire document, no trailing newline; array order is significant. Each target_sha256 pins a Knowledge GroundLiteral using the same JSON encoding, resolved by the Research service without introducing a Knowledge-contract dependency here. Shape validation alone cannot establish target correspondence, trusted publishers or immutable store history. Examples in examples/ are synthetic shape fixtures; their placeholder artifact digests are not retrievable scientific data.
 
 The owner validates complete target coverage, unique trust entries, exact scoped request/profile bindings and resolved-reference equality before mapping domain decisions to wire records. Profile/wire schemas do not execute those rules. Existing0.2.0 schema bytes are preserved; downstream exact dependency pins were coordinated in compatibility patch releases. No assessment HTTP route, authentication adapter or persistence is supplied by this package.
+
+Version0.4.0 adds SyntheticEvidenceRecord and self-contained payload-schema helpers. The payload names exact need/criterion/answer subject, method/context, evidence category, issuer, purpose and disposition, with literal synthetic authority. It is a producer claim, not a Runtime DomainReceipt or proof of publisher identity. Research verifies Data's derived-publication origin actor against trusted configuration and the declared issuer before using it. Publication must declare the answer/context inputs and use a transformation descriptor whose id/version/digest equals the payload method SchemaRef. Unknown or wrong-category evidence cannot promote scientific acceptance. All294 predecessor schema bytes remain unchanged; two export schemas are additive. The helper payload schema omits the exporter URN/base and has its own digest.
 
 Version0.2.0 adds ResolveIdentity and IdentityResolution for authenticated scoped reads. authority is the literal identity_only; matching proves exact owner record correspondence, not artifact rights or scientific eligibility. These additive roots leave prior identity/question schemas unchanged.

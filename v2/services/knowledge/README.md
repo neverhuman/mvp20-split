@@ -1,6 +1,6 @@
 # Knowledge Service
 
-- Package: amphora-knowledge0.13.1; contracts0.6.1.
+- Package: amphora-knowledge0.13.2; contracts0.6.2.
 - Status: BP-06.02 closed; BP-06.03/B1 production reasoning/publication and installed replacement verified. Publication-specific process-death recovery verified; Research assessment remains.
 - Design: [Knowledge](../../docs/Architecture/Knowledge/Knowledge_Architecture.md), [activation](../../docs/Audits/BP-06.02_Activation.md).
 
@@ -34,3 +34,5 @@ Verification at 2026-10-02 14:12:44:305 full source owner/dev tests (291 Knowled
 [Publication process recovery](../../docs/Audits/Evidence/BP-06-Knowledge/Publication_Recovery.json) records all9 barriers, retained command identities and explicit uncertain-stream replacement. This extends the installed baseline without changing production0.13.0 code.
 
 BP-06.03/B1.06 compatibility patch: dependency pins now consume additive Research contracts0.3.0 (Evidence0.5.1/Knowledge contracts0.6.1 where applicable). Existing public schema bytes and owner behavior are unchanged; earlier installed/recovery evidence remains tied to its recorded versions.
+
+BP-06.03/B1.07 compatibility patch: exact pins now consume Research contracts0.4.0 and corresponding Evidence0.5.2/Knowledge contracts0.6.2. The only added wire root is Research synthetic evidence; peer behavior and all294 predecessor schema bytes remain unchanged.

@@ -178,6 +178,8 @@ def test_receipt_repetition_and_same_identity_different_bytes_are_errors(changed
     (lambda p, a, e: replace(p, requirements=p.requirements * 2), "duplicate_need"),
     (lambda p, a, e: replace(p, purpose="invalid purpose"), "invalid_identifier"),
     (lambda p, a, e: replace(a, disposition="certain"), "invalid_disposition"),
+    (lambda p, a, e: replace(a, conflict=True), "invalid_answer_conflict"),
+    (lambda p, a, e: replace(a, conflict=1), "invalid_answer_conflict"),
     (lambda p, a, e: replace(e, disposition="certain"), "invalid_disposition"),
     (lambda p, a, e: replace(e, category="best"), "invalid_category"),
     (lambda p, a, e: replace(e, authority="established"), "invalid_authority"),

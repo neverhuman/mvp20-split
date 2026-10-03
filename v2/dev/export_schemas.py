@@ -108,6 +108,7 @@ for name, model in {
     MODELS["evidence." + name] = model
 
 for name, model in {
+    "synthetic-evidence": research_contracts.SyntheticEvidenceRecord,
     "assessment-profile": research_contracts.EvidenceAssessmentProfile,
     "assessment-request": research_contracts.EvidenceAssessmentRequest,
     "assessment": research_contracts.EvidenceAssessment,

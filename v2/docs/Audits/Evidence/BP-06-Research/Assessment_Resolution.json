@@ -1,0 +1,222 @@
+{
+  "timestamp_local": "2026-10-02 19:05:19",
+  "scope": "BP-06.03/B1.07 authenticated Research producer resolution complete",
+  "versions": {
+    "research": "0.7.0",
+    "research_contracts": "0.4.0",
+    "evidence_contracts": "0.5.2",
+    "knowledge_contracts": "0.6.2",
+    "knowledge": "0.13.2",
+    "data_artifacts": "0.11.2"
+  },
+  "tests": {
+    "source_scoped": 374,
+    "installed": {
+      "tests": 257,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "installed_manifest_sha256": "84c9d44b903da0c6ebd29109f732da92758650f1ab1a116800b9349841813f33",
+  "installed_peers": {
+    "data": {
+      "package": "amphora-data-artifacts",
+      "version": "0.11.0"
+    },
+    "knowledge": {
+      "package": "amphora-knowledge",
+      "version": "0.13.0"
+    }
+  },
+  "installed_packages": {
+    "amphora-contracts-artifacts": "0.2.0",
+    "amphora-contracts-campaigns": "0.4.1",
+    "amphora-contracts-commands": "0.2.0",
+    "amphora-contracts-core": "0.1.0",
+    "amphora-contracts-evidence": "0.5.2",
+    "amphora-contracts-graph-runtime": "0.11.0",
+    "amphora-contracts-knowledge": "0.6.2",
+    "amphora-contracts-research": "0.4.0",
+    "amphora-contracts-runtime": "0.1.0",
+    "amphora-contracts-tools": "0.1.0",
+    "amphora-research": "0.7.0"
+  },
+  "wheel_hashes": {
+    "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+    "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_evidence-0.5.2-py3-none-any.whl": "bb126226956a9d79f4f2a5229ea9b8fe01658ef5b1db95fbb84578835e3ebcc2",
+    "amphora_contracts_graph_runtime-0.11.0-py3-none-any.whl": "831fdf4af0b4d954619af27ed243b0d393ce898584633a367db0f446cdbf5acd",
+    "amphora_contracts_knowledge-0.6.2-py3-none-any.whl": "a6fdfaf29f660e5a749f6b76a74ecb8c8fa66e15db19d80e69c664a13fabb57b",
+    "amphora_contracts_research-0.4.0-py3-none-any.whl": "2b5f5e51a5b4932609f8f4e46a89d483f02c9feab9d7015146bc850cb300d48f",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+    "amphora_research-0.7.0-py3-none-any.whl": "67e34ccf05fddf9618a8789d2f4d6df9b2c034f345305741d0761f8d717a436c"
+  },
+  "actual_peer_cases": [
+    "real_logical_output",
+    "explicit_missing_evidence",
+    "opinion_insufficient",
+    "matching_observation",
+    "wrong_token_denied",
+    "revoked_source_denied",
+    "data_outage_retryable",
+    "no_idle_research_transaction"
+  ],
+  "actual_scope": {
+    "tenant_id": "research-tests",
+    "project_id": "e6cddd11ef3e4f03992957e9c9ef9a65"
+  },
+  "actual_answer": {
+    "artifact_id": "b4bf5b8aa848472989f7823e824e146a",
+    "scope": {
+      "tenant_id": "research-tests",
+      "project_id": "e6cddd11ef3e4f03992957e9c9ef9a65"
+    },
+    "sha256": "c1fb5b3d3e25e0b3884bca69de30ba19f94dd7c44de31653f29d3c7dce64b2df",
+    "media_type": "application/json",
+    "schema_ref": {
+      "schema_id": "knowledge.reasoning-result.payload",
+      "version": "1",
+      "sha256": "cd39e024773235f97cff0dca800b0f43c18872d29df152e5097fa26cd6c55c48"
+    },
+    "size_bytes": 3125
+  },
+  "schema_compatibility": {
+    "unchanged_predecessors": 294,
+    "added": 2,
+    "total": 296
+  },
+  "coverage": {
+    "totals": {
+      "covered_lines": 489,
+      "num_statements": 491,
+      "percent_covered": 99.7080291970803,
+      "percent_covered_display": "99",
+      "missing_lines": 2,
+      "excluded_lines": 0,
+      "percent_statements_covered": 99.59266802443992,
+      "percent_statements_covered_display": "99",
+      "num_branches": 194,
+      "num_partial_branches": 0,
+      "covered_branches": 194,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    },
+    "files": {
+      "v2\\services\\research\\src\\amphora_research\\assessment\\__init__.py": {
+        "summary": {
+          "covered_lines": 0,
+          "num_statements": 0,
+          "percent_covered": 100.0,
+          "percent_covered_display": "100",
+          "missing_lines": 0,
+          "excluded_lines": 0,
+          "percent_statements_covered": 100.0,
+          "percent_statements_covered_display": "100",
+          "num_branches": 0,
+          "num_partial_branches": 0,
+          "covered_branches": 0,
+          "missing_branches": 0,
+          "percent_branches_covered": 100.0,
+          "percent_branches_covered_display": "100"
+        },
+        "missing_lines": [],
+        "missing_branches": []
+      },
+      "v2\\services\\research\\src\\amphora_research\\assessment\\boundary.py": {
+        "summary": {
+          "covered_lines": 67,
+          "num_statements": 67,
+          "percent_covered": 100.0,
+          "percent_covered_display": "100",
+          "missing_lines": 0,
+          "excluded_lines": 0,
+          "percent_statements_covered": 100.0,
+          "percent_statements_covered_display": "100",
+          "num_branches": 30,
+          "num_partial_branches": 0,
+          "covered_branches": 30,
+          "missing_branches": 0,
+          "percent_branches_covered": 100.0,
+          "percent_branches_covered_display": "100"
+        },
+        "missing_lines": [],
+        "missing_branches": []
+      },
+      "v2\\services\\research\\src\\amphora_research\\assessment\\policy.py": {
+        "summary": {
+          "covered_lines": 192,
+          "num_statements": 192,
+          "percent_covered": 100.0,
+          "percent_covered_display": "100",
+          "missing_lines": 0,
+          "excluded_lines": 0,
+          "percent_statements_covered": 100.0,
+          "percent_statements_covered_display": "100",
+          "num_branches": 84,
+          "num_partial_branches": 0,
+          "covered_branches": 84,
+          "missing_branches": 0,
+          "percent_branches_covered": 100.0,
+          "percent_branches_covered_display": "100"
+        },
+        "missing_lines": [],
+        "missing_branches": []
+      },
+      "v2\\services\\research\\src\\amphora_research\\assessment\\reader.py": {
+        "summary": {
+          "covered_lines": 131,
+          "num_statements": 133,
+          "percent_covered": 98.87005649717514,
+          "percent_covered_display": "99",
+          "missing_lines": 2,
+          "excluded_lines": 0,
+          "percent_statements_covered": 98.49624060150376,
+          "percent_statements_covered_display": "98",
+          "num_branches": 44,
+          "num_partial_branches": 0,
+          "covered_branches": 44,
+          "missing_branches": 0,
+          "percent_branches_covered": 100.0,
+          "percent_branches_covered_display": "100"
+        },
+        "missing_lines": [
+          102,
+          103
+        ],
+        "missing_branches": []
+      },
+      "v2\\services\\research\\src\\amphora_research\\assessment\\resolution.py": {
+        "summary": {
+          "covered_lines": 99,
+          "num_statements": 99,
+          "percent_covered": 100.0,
+          "percent_covered_display": "100",
+          "missing_lines": 0,
+          "excluded_lines": 0,
+          "percent_statements_covered": 100.0,
+          "percent_statements_covered_display": "100",
+          "num_branches": 36,
+          "num_partial_branches": 0,
+          "covered_branches": 36,
+          "missing_branches": 0,
+          "percent_branches_covered": 100.0,
+          "percent_branches_covered_display": "100"
+        },
+        "missing_lines": [],
+        "missing_branches": []
+      }
+    }
+  },
+  "correction": "Reproduced Knowledge conflict overridden by negative evidence; preserve private answer conflict and overall unknown without changing public schemas. Final installed build includes correction; preliminary254-test build does not.",
+  "limits": [
+    "No assessment persistence or output publication yet",
+    "No assessment submit HTTP route or Runtime acceptance yet",
+    "Synthetic evidence only; no scientific validity claim",
+    "Actual Data0.11.0 and Knowledge0.13.0 installed peers reused; no unrelated recovery-suite expansion"
+  ]
+}

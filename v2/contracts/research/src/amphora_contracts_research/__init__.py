@@ -13,6 +13,11 @@ from .assessment import (
     EvidenceAssessmentStatus,
     EvidenceGap,
 )
+from .evidence_input import (
+    SyntheticEvidenceRecord,
+    synthetic_evidence_schema,
+    synthetic_evidence_schema_document,
+)
 from .identity import (
     CandidateRevision,
     CandidateRevisionRef,
@@ -24,6 +29,7 @@ from .questions import AnswerCriterion, EvidenceNeed, EvidenceNeedRef, ResearchQ
 from .resolution import IdentityResolution, ResolveIdentity
 
 __all__ = [
+    "SyntheticEvidenceRecord", "synthetic_evidence_schema", "synthetic_evidence_schema_document",
     "AssessmentAnswerRef", "AssessmentNeedDecision", "AssessmentProfileRef", "AssessmentReceiptReview",
     "AssessmentRequirement", "AssessmentTarget", "EvidenceAssessment", "EvidenceAssessmentProfile",
     "EvidenceAssessmentRequest", "EvidenceAssessmentStatus", "EvidenceGap",

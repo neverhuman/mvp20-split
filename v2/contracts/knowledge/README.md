@@ -1,9 +1,9 @@
 # Knowledge Wire Contracts
 
-- Package: amphora-contracts-knowledge0.6.1; BP-06.02/B1 contract boundary implemented.
+- Package: amphora-contracts-knowledge0.6.2; BP-06.02/B1 contract boundary implemented.
 - Design: [Knowledge authoring](../../docs/Architecture/Knowledge/Authoring.md); [activation decisions](../../docs/Audits/BP-06.02_Activation.md).
 
-Public imports describe scoped graph/entity/assertion identities, a pinned predicate vocabulary, source grounding, exact Research question/need links, discriminated typed edits, proposals, structural acceptance decisions and immutable snapshots. Dependencies are public Core0.1.0, evidence0.5.1 and Research0.3.0 plus Pydantic. No service implementation, database, I/O, agent or scientific policy belongs here.
+Public imports describe scoped graph/entity/assertion identities, a pinned predicate vocabulary, source grounding, exact Research question/need links, discriminated typed edits, proposals, structural acceptance decisions and immutable snapshots. Dependencies are public Core0.1.0, evidence0.5.2 and Research0.4.0 plus Pydantic. No service implementation, database, I/O, agent or scientific policy belongs here.
 
 The six edits are add_entity, add_assertion, correct_assertion, retract_assertion, merge_entities and revise_entity_context. Corrections name an exact prior assertion revision and a replacement; context edits name an exact prior entity revision. Merge records retain both identities. Shape validity alone does not verify a predecessor, endpoint, alias cycle, ontology membership, scope equality, payload existence or source meaning. The Knowledge owner must enforce those checks and authenticate every operation.
 
@@ -22,3 +22,5 @@ Version0.5.0 adds ReasoningRuleSet, ReasoningRequest, ReasoningResult and Reason
 BP-06.03/B1 contracts0.6.0 add ReasoningPublicationRequest/Status and a self-contained reasoning-result payload schema profile. Requests select stored results without caller-provided observations/receipt authority. Publication can carry an abstained DomainReceipt; published does not imply accepted science. Data derivation metadata and generic Runtime receipts are reused through public contract dependencies, with no peer implementation or dependency cycle. Four new schema files preserve all282 predecessor schema bytes.75 contract tests pass; owner state/policy/HTTP remain in Knowledge.
 
 BP-06.03/B1.06 compatibility patch: dependency pins now consume additive Research contracts0.3.0 (Evidence0.5.1/Knowledge contracts0.6.1 where applicable). Existing public schema bytes and owner behavior are unchanged; earlier installed/recovery evidence remains tied to its recorded versions.
+
+BP-06.03/B1.07 compatibility patch: exact pins now consume Research contracts0.4.0 and corresponding Evidence0.5.2/Knowledge contracts0.6.2. The only added wire root is Research synthetic evidence; peer behavior and all294 predecessor schema bytes remain unchanged.
