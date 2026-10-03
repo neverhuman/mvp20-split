@@ -20,7 +20,7 @@ dependencies = [
     "amphora-contracts-commands",
     "amphora-contracts-runtime",
     "amphora-contracts-artifacts",
-    "amphora-data-artifacts",
+    "amphora-data-artifacts==0.12.0",
     "amphora-capability-registry",
     "amphora-tool-protocol",
     "amphora-numeric-affine",

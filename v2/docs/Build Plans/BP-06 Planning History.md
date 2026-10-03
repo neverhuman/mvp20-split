@@ -1,5 +1,13 @@
 # BP-06 Planning History
 
+## BP-06.05/B1.01 representation identities complete - 2026-10-03 13:18:06
+
+Data0.12.0 adds focused immutable profile/input/work/vector objects and the synthetic byte-histogram encoder.64 source and64 final independent-wheel tests pass;236 statements/22 branches fully covered. Existing Data regressions initially produced340/342 source and341/342 installed passes, with peer startup timeouts. Measured25s imports exceeded the15s harness; test-only readiness now60s. All6 affected acquisition/process scenarios pass from source and final wheel; no production timeout or crash assertion changed.14 dev tests,406 unchanged schemas and dependency boundaries pass. Final wheel excludes peer implementations. Evidence preserves failed runs separately; formatting-only wheel differences are explicit. No cache/API/retrieval/scientific claim. B1=16.67%, Build5.56%, child4.17%, parent67.36%; closed gates0/4 and16/24. B1.02 is active.
+
+Rotated MBT checkpoints:
+
+| 2026-10-03 00:33:49 | BP-06.04/B1.04 complete; child12.50%, parent52.08%; B1.05 active | [Public documents](../Audits/Evidence/BP-06-Research/Scientific_Documents.json);458 source/458 installed,119 compatibility/dev;330 schemas preserve316 |
+
 ## BP-06.04/B2 complete; actual interpretation transitions - 2026-10-03 05:59:25
 
 B2.04c passes one full independent Data/Research/fresh replacement workflow from source (57.55s) and installed Research tests (50.61s). Actual source dependencies include newly published sample identity proof; private fixture sample revision2 updates the unpublished experiment and observation binding rather than bypassing source checks. Normalization preserves original value; exploratory use keeps failed controls/low-accuracy focus while strict action alone excludes. An accepted pending interpretation finishes its original pin after authenticated correction; a later interpretation explicitly uses revision2. Exact impacts, current Data readgrant denial, zero-active-profile offline replacement/history and restored-access pending retry pass. Access-grant denial is not claimed as per-source revocation; idle replacement is not crash-barrier proof. No production/version/schema/migration change; prior882 source/882 installed +14dev baseline retained. Research0.31.0/contracts0.14.0,406 schemas/research_0012. B2=100%,Build66.67%,child50%,parent58.33%; gates2/4 and14/24. B3 subdivided into three equal existing-weight milestones; .01 actual context/return matrix active0%. A stale progress mirror in the normalization design was replaced with a canonical-tracker pointer.
@@ -607,3 +615,9 @@ Fresh installed cutover2tests83.27s; scientific publisher9actual barriers121.26s
 Scoped architecture audit aligned; README current-state contradictions repaired. B1-B3/V1 complete100%, child4/4; parent16/24 (66.67%). Independent build919 tests, separate cutover/recovery/context and defensive evidence retained with limits. Canonical child archived and links repaired. BP-06.05 activation next; no owner decision required.
 
 | 2026-10-02 23:58:49 | BP-06.04/B1.02 complete; child6.25%, parent51.04%; B1.03 active | [Context objects](../Audits/Evidence/BP-06-Research/Material_Experiment_Observation.json);236 source/236 installed,551 statements/110 branches |
+
+## 2026-10-03 12:46:50 - BP-06.05 activation corrected_ready
+
+Reconciled Data ownership, no existing vector contracts, independent source rights, exact profiles and future-only correction policy. Six B1/four B2/three B3 milestones fit existing delivery weights. B1.01 pure identity/fixture work begins; child0%,parent66.67% unchanged. Qdrant fixture/backend pinning remains B2.02; real scientific encoder/corpus choice does not block synthetic invariants.
+
+| 2026-10-03 00:13:55 | BP-06.04/B1.03 complete; child9.38%, parent51.56%; B1.04 active | [Purpose-bound policies](../Audits/Evidence/BP-06-Research/Synthesis_Eligibility_Policies.json);339 source/339 installed,898 statements/154 branches |

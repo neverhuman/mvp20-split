@@ -1,8 +1,9 @@
 [project]
 name = "amphora-data-artifacts"
-version = "0.11.13"
+version = "0.12.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
+    "pydantic>=2.11,<3",
     "jsonschema[format-nongpl]>=4.25,<5",
     "sqlalchemy>=2,<3",
     "psycopg[binary]>=3,<4",

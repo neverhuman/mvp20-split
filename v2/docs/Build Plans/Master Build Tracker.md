@@ -9,13 +9,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 primary active; BP-06.01 through BP-06.04 closed; BP-07 through BP-09 queued; BP-05 closed.
-- Last refreshed: `2026-10-03 12:31:31` (America/Chicago).
+- Last refreshed: `2026-10-03 13:18:06` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P5 / BP-06 - Knowledge Evidence and Source Loop.
-- Primary active task: BP-06.05 activation coherence audit; BP-06.04 closed100%.
-- Next task: BP-06.05/B1 after ready activation audit.
-- Implementation completion: BP-06 **66.67%** (16/24),16/24 closed delivery gates. BP-06.01 through .04 closed100%; later children0%. BP-07..09 remain0%.
-- Active focus: representation reuse/retrieval activation; exact profiles and rebuildable index ownership.
+- Primary active task: BP-06.05/Build/B1.02 public DTOs and compatibility.
+- Next task: BP-06.05/B1.03 profile/cache single-flight storage.
+- Implementation completion: BP-06 **67.36%** ((16 + 1/6)/24), 16/24 closed delivery gates. BP-06.01 through .04 closed100%; BP-06.05=4.17%; BP-06.06=0%. BP-07..09 remain0%.
+- Active focus: versioned representation DTOs and domain mappings; pure identity/fixture milestone verified.
 - Blockers: none requiring owner direction; future-only corrections and iterative-progress policy approved.
 - Acceptance posture: BP-06.01 through .04 bounded software accepted; scientific/deployment gates remain separately scoped.
 - Active exception: none.
@@ -36,11 +36,11 @@ BP-06 is the sole active parent. BP-05 closed16/16; see [completed plans](Comple
 
 | Parent | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-06](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) | 66.67% (16/24) | 100% | 100% | 100% | 100% | 0% | 0% |
+| [BP-06](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) | 67.36% ((16 + 1/6)/24) | 100% | 100% | 100% | 100% | 4.17% | 0% |
 
 | Active canonical child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-06.05](BP-06/BP-06.05%20Representation%20reuse%20and%20retrieval.md) | 0% | 0% | 0% | Activation coherence audit; implementation not started |
+| [BP-06.05](BP-06/BP-06.05%20Representation%20reuse%20and%20retrieval.md) | 4.17% | 5.56% | 0% | B1.02 / Public contracts; B1.01 verified |
 
 
 
@@ -124,6 +124,8 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-03 13:18:06 | BP-06.05/B1.01 complete; child4.17%, parent67.36%; B1.02 active | [Domain identities](../Audits/Evidence/BP-06-Representations/Domain_Identities.json);64 source/64 final wheel; repaired startup probes6+6 |
+| 2026-10-03 12:46:50 | BP-06.05 activated0%; B1.01 active; parent66.67% unchanged | [Activation audit](../Audits/BP-06.05_Activation.md);independent source rights, future-only scientific corrections, bounded fixture and index design |
 | 2026-10-03 12:31:31 | BP-06.04 closed100%; parent66.67%,16/24; BP-06.05 activation next | [Closeout audit](../Audits/BP-06.04_Laboratory_Eligibility_Closeout.md);fresh build919 tests,2 cutovers,9 publisher +6 intake/interpretation barriers |
 | 2026-10-03 12:24:23 | V1.02 complete; child91.67%, parent65.28%; V1.03 active | [Replacement/recovery](../Audits/Evidence/BP-06-Research/Laboratory_Replacement_Recovery.json);2 fresh cutovers and9 publisher process barriers |
 | 2026-10-03 12:11:37 | V1.01 complete; child83.33%, parent63.89%; V1.02 active | [Independent build](../Audits/Evidence/BP-06-Research/Laboratory_Independent_Build.json);fresh Research0.31.0,919 installed tests,9 separate opt-ins |
@@ -147,7 +149,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-03 01:48:18 | BP-06.04/B1.07a complete; child19.79%, parent53.30%; B1.07b active | [Intake storage](../Audits/Evidence/BP-06-Research/Lab_Intake_Storage.json);619 source/619 installed,119 compatibility/dev; atomic batch/replay/grants |
 | 2026-10-03 01:20:14 | BP-06.04/B1.06 complete; child18.75%, parent53.13%; B1.07 active | [Lab resolution](../Audits/Evidence/BP-06-Research/Lab_Report_Resolution.json);592 source/592 installed,119 compatibility/dev; actual Data auth/rights/outage |
 | 2026-10-03 00:53:51 | BP-06.04/B1.05 complete; child15.63%, parent52.60%; B1.06 active | [Scientific stores](../Audits/Evidence/BP-06-Research/Scientific_Revision_Stores.json);552 source/552 installed,14 dev; PostgreSQL replay/links/grants |
-| 2026-10-03 00:33:49 | BP-06.04/B1.04 complete; child12.50%, parent52.08%; B1.05 active | [Public documents](../Audits/Evidence/BP-06-Research/Scientific_Documents.json);458 source/458 installed,119 compatibility/dev;330 schemas preserve316 |
-| 2026-10-03 00:13:55 | BP-06.04/B1.03 complete; child9.38%, parent51.56%; B1.04 active | [Purpose-bound policies](../Audits/Evidence/BP-06-Research/Synthesis_Eligibility_Policies.json);339 source/339 installed,898 statements/154 branches |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

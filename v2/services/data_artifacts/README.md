@@ -57,3 +57,7 @@ B1.10 compatibility patch updates exact Research0.5.0 contract dependency closur
 BP-06.04/B1.04 compatibility release0.11.6 updates exact public Research/Evidence/Knowledge dependency pins only. This release changes no service behavior or migration; earlier actual-peer acceptance remains recorded at its tested version.
 
 BP-06.04/B1.06 compatibility release0.11.7 updates exact public contract dependencies only; no service implementation or migration change. Actual peer evidence remains tied to the recorded tested version.
+
+BP-06.05/B1.01 release0.12.0 adds the private pure [representation domain](src/amphora_data_artifacts/representations/README.md): complete profiles, scoped work identity, canonical finite vectors and a deterministic synthetic encoder. Public contracts, APIs and artifact_0007 are unchanged. Cache storage, source bindings and retrieval remain later milestones.
+
+Acquisition recovery/live-observation harness startup permits 60 seconds after measured mapped-workspace cold imports of 25.33s (editable) and 25.09s (independent wheel). This changes only test host readiness budgets; operation deadlines, crash barriers, immutable-replay assertions and production timeouts are unchanged.

@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-03 12:31:31` (America/Chicago).
+- Last refreshed: `2026-10-03 13:18:06` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.05 activation; BP-06.04 closed100%; parent66.67%,16/24 closed gates.
-- Next gate: BP-06.05 activation coherence audit. BP-06.03 aligned evidence is in drift history; richer scientific-quality UI remains SQ-01.
+- Active focus: BP-06.05/B1.02 public representation contracts; child4.17%, parent67.36%,16/24 closed gates.
+- Next gate: BP-06.05 additive DTO/schema and domain-mapping proof. BP-06.03 aligned evidence is in drift history; richer scientific-quality UI remains SQ-01.
 
 ## Active Findings
 
@@ -38,3 +38,7 @@ Use [Development Process](../Development_Process.md) and the [audit template](..
 
 
 [BP-06.04 closeout](BP-06.04_Laboratory_Eligibility_Closeout.md) is aligned; bounded source, context, correction, recovery and replacement evidence is in drift history. No unresolved BP-06.04 finding remains. Scientific quality UI, physical validation and feedback dispatch remain named successor capabilities.
+
+- `2026-10-03 12:46:50`: [BP-06.05 activation](BP-06.05_Activation.md) corrects owner navigation and distinguishes scientific corrections from access revocation. Private cache versus source-specific derived Artifact binding prevents permission merging. Implementation remains0%; later storage/backend gates require named detailed review.
+
+B1.01 representation domain aligns with the bounded design: complete scoped identities and finite fixture vectors verified, with no persistence, rights or retrieval claim. [Evidence](Evidence/BP-06-Representations/Domain_Identities.json) retains the startup-budget repair and failed-run history; B1.02 owns public transport.

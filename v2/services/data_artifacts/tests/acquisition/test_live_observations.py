@@ -74,7 +74,8 @@ def test_actual_peer_unknown_then_known_preserves_original_observation(ingestion
                                 "--port", str(server_port)], env=environment, stdout=subprocess.DEVNULL,
                                stderr=subprocess.DEVNULL, creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
     try:
-        deadline = time.monotonic() + 15
+        # Cold owner imports on the mapped workspace can exceed 25 seconds.
+        deadline = time.monotonic() + 60
         while True:
             assert process.poll() is None, "Research host exited before ready"
             try:

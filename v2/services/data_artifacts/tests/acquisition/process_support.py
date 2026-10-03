@@ -35,7 +35,9 @@ class OwnerProcess:
             self.process.stdin.write(json.dumps({"config": str(config), "port": self.port, "fault": fault}) + "\n")
             self.process.stdin.flush()
         try:
-            deadline = time.monotonic() + 15
+            # Cold imports on the mapped workspace were measured above 25s.
+            # This is a startup budget, independent of operation/fault deadlines.
+            deadline = time.monotonic() + 60
             while True:
                 if self.process.poll() is not None:
                     raise RuntimeError("Owner exited before readiness")

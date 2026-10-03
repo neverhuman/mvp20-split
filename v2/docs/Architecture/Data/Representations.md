@@ -2,7 +2,7 @@
 
 - Design status: detailed proposed contract; implementation and scientific acceptance pending
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
-- Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
+- Last reviewed: `2026-10-03 12:43:58` (America/Chicago)
 - Parent: [Domain overview](Data_Architecture.md)
 - Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#embedding-and-representation-layer)
 
@@ -18,7 +18,7 @@ Embedding tools execute through Campaigns/Capabilities. Data owns profiles and i
 
 ## Invariants and Verification
 
-Vectors/indexes are derivatives, not authoritative knowledge. Corrections invalidate dependent representations. Build migrations separately, reconcile intervening changes and publish atomically. Retain rollback and provider reproducibility limits. Verify reusable artifacts, concurrent generation, profile rejection, retrieval quality and revocation even for historical snapshots.
+Vectors/indexes are derivatives, not authoritative knowledge. Scientific corrections create superseding bindings and replacement generations for later campaign selection; active campaign pins and historical records remain unchanged. Invalid encoding and current rights revocation are separate new-use gates. Build migrations separately, reconcile intervening changes and publish atomically. Retain rollback and provider reproducibility limits. Verify reusable artifacts, concurrent generation, profile rejection, retrieval quality and revocation even for historical snapshots.
 
 ## Component and Object Design
 
