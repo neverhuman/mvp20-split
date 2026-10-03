@@ -62,3 +62,15 @@ def fingerprint(value):
     ).encode("utf-8")
     require(len(body) <= 65536, "representation_descriptor_bound")
     return hashlib.sha256(body).hexdigest()
+
+
+def canonical_record(value):
+    raw = json.dumps(
+        value.model_dump(mode="json"),
+        sort_keys=True,
+        separators=(",", ":"),
+        ensure_ascii=False,
+        allow_nan=False,
+    ).encode("utf-8")
+    require(1 <= len(raw) <= 65536, "representation_record_bound")
+    return raw

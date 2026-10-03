@@ -1,5 +1,13 @@
 # BP-06 Planning History
 
+## BP-06.05/B1.04a binding models complete - 2026-10-03 14:15:48
+
+Data0.15.0 adds pure source/publisher binding identity, canonical vector publication recipe, exact upload/finalized receipt checks and explicit content rule.121 source/121 independent installed tests pass;622 statements/36 branches fully covered.14 dev tests, lint, boundaries and420 unchanged schemas pass; artifact_0008 unchanged. Requests may alias a binding for the same actor/source/profile; different sources/publishers retain independent attribution. Only the source Artifact enters declared lineage. Self-derivation and forged origins/content are rejected. No actual publication/rights claim. Canonical record encoding moved out of SQL storage with unchanged bytes and passing cache regression. B1.04 is decomposed a-d inside its existing weight; a100%, b-d0%, B1.04=25%. B1=54.17%, Build18.06%, child13.54%, parent68.92%; closed gates unchanged. B1.04b active.
+
+Rotated MBT checkpoints:
+
+| 2026-10-03 01:48:18 | BP-06.04/B1.07a complete; child19.79%, parent53.30%; B1.07b active | [Intake storage](../Audits/Evidence/BP-06-Research/Lab_Intake_Storage.json);619 source/619 installed,119 compatibility/dev; atomic batch/replay/grants |
+
 ## BP-06.05/B1.03 profile/cache storage complete - 2026-10-03 13:57:14
 
 Data0.14.0/artifact_0008 adds immutable profiles, work intents and computed results with narrowly mutable DB-clock leases.113 scoped source and391 full installed Data/representation-contract tests pass;499 statements/34 branches fully covered.14 dev tests,420 unchanged schemas, lint and boundaries pass. Four contenders yield one lease; expiry/reclaim, stale actor/token/fence rejection, exact winning replay, registry conflict/scope/grants and repeated-migration history checks pass. Initial composite FK declaration rolled back and was corrected. The failed service-role alembic snapshot is not claimed as an initial-migration checksum. Final independent wheel excludes peer implementations. Source rights, binding publication, APIs and process crash acceptance remain later. B1=50%, Build16.67%, child12.50%, parent68.75%; gates0/4 and16/24. B1.04 active.

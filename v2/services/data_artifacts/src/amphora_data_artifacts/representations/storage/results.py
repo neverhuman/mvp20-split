@@ -4,10 +4,10 @@ from sqlalchemy import text
 
 from ..mapping import vector_to_wire
 from ..payloads import EncodedRepresentation
-from ..validation import require
+from ..validation import canonical_record, require
 from .claims import WorkLease
 from .leases import MATCH
-from .records import authorize, canonical, decode_result, load_work, lock_work, result_row
+from .records import authorize, decode_result, load_work, lock_work, result_row
 
 
 class EncodingResults:
@@ -25,7 +25,7 @@ class EncodingResults:
             == (work.profile, work.input_sha256, work.context_sha256),
             "representation_work_conflict",
         )
-        body = canonical(vector_to_wire(principal.scope, result))
+        body = canonical_record(vector_to_wire(principal.scope, result))
         with self.engine.begin() as connection:
             key = lock_work(connection, principal, work) | lease.identity
             profile = load_work(connection, principal, work)

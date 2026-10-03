@@ -4,8 +4,8 @@ from sqlalchemy import text
 
 from ...persistence.evidence_records import SCOPE, _lock
 from ..mapping import profile_reference, profile_to_wire
-from ..validation import require
-from .records import authorize, canonical, load_profile
+from ..validation import canonical_record, require
+from .records import authorize, load_profile
 
 
 class ProfileRegistry:
@@ -15,7 +15,7 @@ class ProfileRegistry:
     def register(self, principal, profile):
         authorize(principal, "representation_manage")
         ref = profile_reference(principal.scope, profile)
-        body = canonical(profile_to_wire(profile))
+        body = canonical_record(profile_to_wire(profile))
         key = principal.bindings | {"profile": ref.profile_id, "version": ref.version}
         with self.engine.begin() as connection:
             _lock(connection, principal.scope, [("encoding-profile", ref.profile_id, ref.version)])

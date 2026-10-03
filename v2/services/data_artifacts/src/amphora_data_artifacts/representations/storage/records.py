@@ -1,7 +1,5 @@
 """Bounded private row reconstruction; immutable identities are verified on every load."""
 
-import json
-
 from amphora_contracts_core import Scope
 from amphora_contracts_representations import EncodingProfile, EncodingProfileRef, RepresentationVector
 from pydantic import ValidationError
@@ -19,18 +17,6 @@ def authorize(principal, action):
     principal.require(action)
     record(principal.scope, Scope)
     identifier(principal.actor_id)
-
-
-def canonical(value):
-    raw = json.dumps(
-        value.model_dump(mode="json"),
-        sort_keys=True,
-        separators=(",", ":"),
-        ensure_ascii=False,
-        allow_nan=False,
-    ).encode("utf-8")
-    require(1 <= len(raw) <= 65536, "representation_record_bound")
-    return raw
 
 
 def reference(value, scope):
