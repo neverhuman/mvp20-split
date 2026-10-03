@@ -1,5 +1,10 @@
 # Research Contracts
 
+Version0.8.0 adds SyntheticLabReport, LabReturnProfile and LabReportResolution (six additive schemas;330 predecessors unchanged). lab_reports.py owns the explicitly synthetic producer format and its self-contained payload-schema helper/digest. Producer rows omit their source Artifact to avoid a circular hash; Research attaches the authenticated source after reading Data. Profiles pin exact stored experiments, adapter versions and publishers. Rows preserve original values, binding claims and quality/control flags; empty returns are explicit, with a64-row ceiling.
+
+A reconciliation document distinguishes expected-return coverage from unavailable values, mismatched rows and scientific quality. Complete coverage never asserts scientific acceptance. Matching does not erase failed controls or make optional weaknesses mandatory gates. Producer payloads cannot supply owner acceptance verdicts. Source/issuer/method/rights validation and semantic reconstruction are Research behavior, not DTO authority. New intake decision storage and public submission APIs remain B1.07/B1.08. Compatibility-only peer pins are Evidence0.5.7, Knowledge contracts0.7.2/owner0.15.2 and Data0.11.7.
+
+
 Version0.7.0 adds MaterialStateRevision, ExperimentDefinition, ObservationRevision, SynthesisProfile/Assessment and EligibilityProfile/Assessment. Seven new roots publish14 schemas while preserving all316 predecessors. CandidateRevisionRef, MaterialStateRevisionRef and SampleIdentity remain unchanged. Examples are synthetic shape fixtures with placeholder artifact digests, not retrievable lab evidence.
 
 Focused modules measurements.py/materials.py/experiments.py/observations.py/synthesis.py/eligibility.py own their transport subsets. Exact numeric values use bounded decimal strings; discriminated numeric/categorical/censored/missing/series variants preserve original meaning. Nullable fields remain explicit. Unit/decimal lexical patterns and collection limits are transport checks; exponent/precision bounds, interval coherence, scientific identity/context, predecessor chains, step dependencies and evidence sufficiency are enforced by Research domain reconstruction. JSON Schema success is not domain acceptance. Measurement regex patterns use an explicit end-of-input assertion so trailing newlines cannot differ between Python and JSON Schema validation.
@@ -11,7 +16,7 @@ Research explicitly maps DTOs to/from private domain objects. Mapping does not a
 
 Version0.6.0 adds CorrectAssessmentReceipt and SelectAssessmentReceipt: reference-only owner correction and explicit future-campaign selection. Returns shared ReceiptCorrectionView from graph-runtime0.13.0, including the exact revision reference for later selection or expected-head comparison. Prior assessment/publication schemas are unchanged; tests/test_corrections.py and examples cover the new requests. No persistence or currentness policy lives in this package.
 
-- Package: `amphora-contracts-research` 0.7.0, wire1; identity declarations and synthetic assessment shapes.
+- Package: `amphora-contracts-research` 0.8.0, wire1; identity declarations and synthetic assessment shapes.
 - Design: [Candidates](../../docs/Architecture/Research/Candidates.md), [experiments](../../docs/Architecture/Research/Experiments.md).
 
 Public imports use `amphora_contracts_research`; public Core, Artifacts and Graph Runtime contracts plus Pydantic dependencies. DTOs are immutable, strict, bounded and extra-forbidden. No service code, storage, scientific evaluation or permission is provided.

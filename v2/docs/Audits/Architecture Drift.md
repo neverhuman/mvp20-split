@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-03 00:53:51` (America/Chicago).
+- Last refreshed: `2026-10-03 01:20:14` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.04/B1.06 after verified scientific stores; parent52.60%,12/24 closed gates.
-- Next gate: authenticated actual Data report resolution and partial/unmatched reconciliation. BP-06.03 aligned evidence is in drift history; richer scientific-quality UI remains SQ-01.
+- Active focus: BP-06.04/B1.07 after verified authenticated lab resolution; parent53.13%,12/24 closed gates.
+- Next gate: durable intake/decision/impact records and reviewed Artifact publication boundary. BP-06.03 aligned evidence is in drift history; richer scientific-quality UI remains SQ-01.
 
 ## Active Findings
 

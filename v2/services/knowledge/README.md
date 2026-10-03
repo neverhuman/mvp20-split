@@ -43,3 +43,5 @@ BP-06.03/B1.07 compatibility patch: exact pins now consume Research contracts0.4
 B1.10 compatibility patch updates exact Research0.5.0 contract dependency closure; no owner behavior, migration or existing schema changes.
 
 BP-06.04/B1.04 compatibility release0.15.1 updates exact public Research/Evidence/Knowledge dependency pins only. This release changes no service behavior or migration; earlier actual-peer acceptance remains recorded at its tested version.
+
+BP-06.04/B1.06 compatibility release0.15.2 updates exact public contract dependencies only; no service implementation or migration change. Actual peer evidence remains tied to the recorded tested version.

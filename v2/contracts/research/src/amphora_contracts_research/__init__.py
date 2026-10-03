@@ -46,6 +46,15 @@ from .identity import (
     SampleIdentity,
     SampleRevisionRef,
 )
+from .lab_reports import (
+    LabReportResolution,
+    LabReturnProfile,
+    ObservationMatchRecord,
+    ReportedObservation,
+    SyntheticLabReport,
+    synthetic_lab_report_schema,
+    synthetic_lab_report_schema_document,
+)
 from .materials import (
     MaterialFeatureEvidence,
     MaterialFeatureRecord,
@@ -116,3 +125,5 @@ __all__ += [
 ]
 
 __all__ += ['SynthesisContextRecord', 'RouteProvenanceRecord', 'RouteStepRecord', 'RouteSearchRecord', 'RouteEvidenceRecord', 'RouteExecutionCheck', 'RouteOptionRecord', 'SynthesisProfile', 'RouteDecisionRecord', 'SynthesisAssessment', 'EligibilitySubject', 'EligibilityContext', 'EligibilityEvidenceOrigin', 'EligibilityClaim', 'EligibilityRequirement', 'EligibilityProfile', 'EligibilityClaimReview', 'EligibilityCriterionDecision', 'EligibilityAssessment']
+
+__all__ += ["ReportedObservation", "SyntheticLabReport", "LabReturnProfile", "ObservationMatchRecord", "LabReportResolution", "synthetic_lab_report_schema", "synthetic_lab_report_schema_document"]

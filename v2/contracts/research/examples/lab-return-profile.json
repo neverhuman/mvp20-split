@@ -1,0 +1,22 @@
+{
+  "wire_version": "1",
+  "authority": "synthetic",
+  "profile_id": "lab",
+  "version": "1",
+  "experiment": {
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "materials"
+    },
+    "experiment_id": "assay",
+    "revision": 1
+  },
+  "adapter": {
+    "schema_id": "fixture.method",
+    "version": "1",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "publishers": [
+    "fixture"
+  ]
+}

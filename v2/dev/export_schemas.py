@@ -110,6 +110,9 @@ for name, model in {
     MODELS["evidence." + name] = model
 
 for name, model in {
+    "synthetic-lab-report": research_contracts.SyntheticLabReport,
+    "lab-return-profile": research_contracts.LabReturnProfile,
+    "lab-report-resolution": research_contracts.LabReportResolution,
     "material-state-revision": research_contracts.MaterialStateRevision,
     "experiment-definition": research_contracts.ExperimentDefinition,
     "observation-revision": research_contracts.ObservationRevision,

@@ -1,6 +1,6 @@
 # Acquisition Evidence Contracts
 
-- Package: `amphora-contracts-evidence` 0.5.6; wire version1.
+- Package: `amphora-contracts-evidence` 0.5.7; wire version1.
 - Status: BP-06.01/B1 boundary subset; public transport shapes; Data/Artifacts owns implemented persistence and bounded preparation, with rights/scientific policy still open.
 - Design: [Source acquisition](../../docs/Architecture/Data/Acquisition.md).
 
@@ -31,3 +31,5 @@ BP-06.03/B1.07 compatibility patch: exact pins now consume Research contracts0.4
 B1.10 compatibility patch updates exact Research0.5.0 contract dependency closure; no owner behavior, migration or existing schema changes.
 
 Compatibility0.5.6 pins Research contracts0.7.0; acquisition schemas and implementation are unchanged.
+
+Compatibility0.5.7 pins Research contracts0.8.0; existing acquisition schemas are unchanged.

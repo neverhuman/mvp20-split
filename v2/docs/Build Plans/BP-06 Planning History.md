@@ -1,5 +1,14 @@
 # BP-06 Planning History
 
+## BP-06.04/B1.06 authenticated lab resolution complete - 2026-10-03 01:20:14
+
+Research0.18.0/contracts0.8.0;592 source/592 independently installed tests and119 compatibility/dev tests.27 focused resolver/reconciliation cases cover94 statements/8 branches.336 schemas preserve330 predecessors. [Evidence](../Audits/Evidence/BP-06-Research/Lab_Report_Resolution.json) includes actual Data0.11.0 source/installed HTTP proofs: partial and wrong-sample returns, failed controls/quality flags, trusted producer/issuer/adapter, current-source revocation, wrong token and outage. No owner transaction spans peer reads. Coverage completeness is distinct from scientific quality. Compatibility-only peer metadata is Evidence0.5.7, Knowledge contracts0.7.2/owner0.15.2 and Data0.11.7. Atomic intake/decision durability remains B1.07; new API remains B1.08. B1 6/8=75%, child18.75%, parent53.13%; gates0/4 and12/24 unchanged.
+
+Rotated MBT checkpoint:
+
+| 2026-10-02 13:45:00 | B1 atomic publication terminals verified; SDK workflow next; child0/4,parent8/24 | Knowledge0.12.0;knowledge_0006;166 scoped tests |
+
+
 ## BP-06.04/B1.05 scientific stores complete - 2026-10-03 00:53:51
 
 Research0.17.0;552 source/552 independently installed tests,14 dev tests.133 new store/link statements and32 branches covered. Forward research_0006 adds separate immutable material/experiment/observation journals and exact local links; existing four-kind identity ledger stays bounded. Real PostgreSQL proves concurrent conflict, atomic link rollback, null-predecessor defense, append-only grants and actual committed-reply loss. [Evidence](../Audits/Evidence/BP-06-Research/Scientific_Revision_Stores.json). First installed collection lacked optional httpx; test-only0.28.1 installed and exact suite reran successfully. No scientific/new write API/authenticated ingestion claim. B1 5/8=62.50%, child15.63%, parent52.60%; gates0/4 and12/24 unchanged. B1.06 active.
