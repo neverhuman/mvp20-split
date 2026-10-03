@@ -27,11 +27,12 @@ from .publication.finalize import Finalizer
 from .publication.inspection import PublicationHistory
 from .publication.model import UploadError
 from .reads import ArtifactReads
+from .representations.api import representation_router
 from .retention.outcomes import OutcomeUnavailable
 from .retention.reservations import Reservations
 
 
-def create_app(uploads, storage, credentials, outcomes=None, *, acquisition=None):
+def create_app(uploads, storage, credentials, outcomes=None, *, acquisition=None, representations=None):
     app = FastAPI(title="Amphora artifact publication", version="0.1.0")
     finalizer = Finalizer(uploads, storage)
     reads = ArtifactReads(uploads.commands.engine, storage, uploads.limits.max_bytes)
@@ -205,4 +206,6 @@ def create_app(uploads, storage, credentials, outcomes=None, *, acquisition=None
 
     if acquisition is not None:
         app.include_router(acquisition_router(acquisition, credentials))
+    if representations is not None:
+        app.include_router(representation_router(representations, credentials))
     return app

@@ -1,5 +1,14 @@
 # BP-06 Planning History
 
+## BP-06.05/B1.05 authenticated APIs complete - 2026-10-03 15:44:22
+
+Data0.18.0 adds focused opt-in representation routes, service facade, current-rights binding view and explicit host policy/readiness.185 source and452 full independently installed cases pass;14 dev tests, lint/boundaries and420 unchanged schemas pass. New126 statements/14 branches fully covered; aggregate representation1247/1250 statements and122/126 branches retain prior B3 gaps. Profile registration remains inert and immutable; body/auth/grant/deadline failures are explicit. Source-span provenance failure now maps to409 without intent. Current binding access differs from original historical status replay. No migration/profile auto-registration; artifact_0009 unchanged. B1=83.33%, Build27.78%, child20.83%, parent70.14%; gates unchanged0/4 and16/24. B1.06 actual installed HTTP proof active.
+
+Rotated MBT checkpoints:
+
+| 2026-10-03 03:23:00 | BP-06.04/B1.08b complete; child23.44%, parent53.91%; c active | [Input orchestration](../Audits/Evidence/BP-06-Research/Scientific_Input_Orchestration.json);792 source/792 installed,119 compatibility/dev |
+
+
 ## BP-06.05/B1.04d convergence proof complete - 2026-10-03 15:26:02
 
 160 source/160 independent installed cases pass on unchanged Data0.17.0;14 dev tests and lint pass. Actual two-source fixtures share one computation but retain independent derived Artifacts and rights chains; revoking one does not deny the other. Different publishers retain separate attributable commands/Artifacts. Three concurrent aliases remain pending behind one instrumented real computation, then converge to one binding/derivation. A pending r1 source pin survives r2 registration. Evidence records actual scoped references and rights observations. Shared fixtures moved to owning conftest; no production/schema/migration change. B1.04=100%, B1=66.67%, Build22.22%, child16.67%, parent69.44%; gates unchanged0/4 and16/24. B1.05 authenticated APIs active; process/race acceptance remains B3.
