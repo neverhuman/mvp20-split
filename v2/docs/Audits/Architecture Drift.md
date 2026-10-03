@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-03 18:28:11` (America/Chicago).
+- Last refreshed: `2026-10-03 18:34:23` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.05/B2.03c installed actual-query authority proof; child41.67%, parent73.61%,17/24 closed gates.
-- Next gate: installed actual-query proof. Durable query authority/storage passed actual PostgreSQL with a test-only query port; actual Qdrant broker proof remains B2.03c. Scientific-quality UI remains SQ-01.
+- Active focus: BP-06.05/B2.04a generation/query API and hosting; child43.75%, parent73.96%,17/24 closed gates.
+- Next gate: optional API and hosting. Actual installed Data/Qdrant query authority, reconstruction and missing-backend recovery passed B2.03c. Scientific-quality UI remains SQ-01.
 
 ## Active Findings
 
