@@ -1,0 +1,87 @@
+{
+  "timestamp_local": "2026-10-03 17:20:22",
+  "task": "BP-06.05/B2.02a",
+  "status": "verified",
+  "source": {
+    "passed": 33,
+    "seconds": 5.6
+  },
+  "independent_retrieval_and_public_contracts": {
+    "passed": 117,
+    "seconds": 32.67
+  },
+  "dev": {
+    "passed": 18,
+    "seconds": 12.61
+  },
+  "coverage": {
+    "scope": "retrieval.qdrant",
+    "statements": 152,
+    "covered_statements": 148,
+    "branches": 40,
+    "covered_branches": 38,
+    "unexercised": "Already-closed socket exception guard; connect budget exhausted and pre-read loop deadline defensive paths"
+  },
+  "schemas": {
+    "count": 430,
+    "unchanged": true
+  },
+  "migration": "artifact_0011 unchanged",
+  "lint_boundaries_schemas": "passed",
+  "fixture": {
+    "container": "amphora-bp06-qdrant-61d44f881a884955b4d5e71913230b9d",
+    "volume": "amphora-bp06-qdrant-61d44f881a884955b4d5e71913230b9d-data",
+    "image": "qdrant/qdrant@sha256:12364fe851b9f17356fc88189fc06d1b521262e04659ec7345975b00c9246a10",
+    "endpoint": "http://127.0.0.1:49410",
+    "server_version": "1.19.1",
+    "commit": "6ab21cac18ebb6f4ae29102c7f8f5cc11affd5de"
+  },
+  "api_definition": {
+    "url": "https://raw.githubusercontent.com/qdrant/qdrant/v1.19.1/docs/redoc/master/openapi.json",
+    "sha256": "eb3e5d71ba74e1d99124ca1a77d563bbfa47084f04a13ef9b197e339f5a4ce0a",
+    "bytes": 520632
+  },
+  "installation": {
+    "timestamp_local": "2026-10-03 17:15:48",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-data-artifacts",
+    "forbidden_implementations": [
+      "amphora_research",
+      "amphora_knowledge",
+      "amphora_campaign_runtime"
+    ],
+    "packages": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.13",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-representations": "0.2.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-data-artifacts": "0.23.0"
+    },
+    "wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_representations-0.2.0-py3-none-any.whl": "cf9f74c2c48bcbbc4b5623766d7d96d3b07a5cb76b3cf818751a166639131ce8",
+      "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_data_artifacts-0.23.0-py3-none-any.whl": "304fa691dc255c0ae7231ef846696abb7290b43c360b4aaf282b35915fd1882c"
+    }
+  },
+  "limits": [
+    "Actual server readiness/protected-route authentication and client transport only",
+    "No actual projection/search or retained-index reconstruction yet",
+    "HTTP version is not image attestation; fixture checks the pinned Docker image",
+    "Target host and remote TLS remain later deployment gates"
+  ]
+}

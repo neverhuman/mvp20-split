@@ -1,0 +1,15 @@
+# Qdrant boundary
+
+Owner: Data retrieval, BP-06.05/B2.02a. Pinned configuration and authenticated bounded transport are implemented; projection/search adapter and independently installed actual-index proof remain B2.02b/c.
+
+`QdrantConfiguration` separates deployment endpoint/key/deadline from the immutable backend profile. The profile pins Qdrant1.19.1, exact image digest and release OpenAPI hash, dense binary32 Dot vectors, payload protocol, bounded point count, waited writes and exact-query policy. Endpoint/token changes do not change vector semantics. The initial endpoint must be explicit loopback HTTP; remote/TLS deployment is a later profile. Credentials are excluded from configuration repr and never included in the profile digest.
+
+`QdrantTransport.request` supports selected HTTP methods and owned attempt namespace paths only. It sends the explicit API key, bypasses proxies, does not follow redirects, bounds encoded requests/responses to32MiB, rejects compressed/non-JSON/truncated/duplicate/nonfinite responses and reports safe errors. JSON traversal has explicit64-level/2,000,000-node bounds independent of Python recursion configuration. A timer shuts down the connected socket at the absolute deadline, covering trickled headers/body as well as idle timeouts. The timer is cancelled and connection closed on every outcome. Missing collections are allowed only through an explicit caller policy. A missing/denied/unavailable backend is never a scientific negative.
+
+`server()` checks the pinned runtime version and probes a protected collection route. Qdrant's root version metadata is public; reading it alone does not prove authentication. HTTP version is not cryptographic image attestation. The separately owned dev fixture checks Docker image identity/labels and proves protected-route denial with an incorrect key.
+
+There are no import-time connections, implicit model calls, production in-memory fallback, source-rights decisions or PostgreSQL mutations here. Data's generation lifecycle owns leases, exact point comparison and publication; this transport cannot confer verification or selection. Public requests cannot choose endpoints, credentials or trusted success claims.
+
+Tests under `tests/retrieval/qdrant/` distinguish scripted socket protocol/deadline failures from opt-in actual pinned Qdrant checks. Set `AMPHORA_TEST_QDRANT=1` only with the owned dev fixture. Replacement preserves pinned wire behavior, safe failure categories, operational bounds and generation namespace isolation. Actual projection, ranking and index reconstruction remain subsequent gates.
+
+B2.02a verification:33 source,117 independently installed retrieval/contract cases and18 dev cases passed. Qdrant transport coverage148/152 statements38/40 branches. Unexercised paths are the already-closed socket shutdown guard and defensive deadline checks immediately after connect/before another read; both actual slow-header/body deadline tests pass. Index/ranking behavior is not inferred from these results.

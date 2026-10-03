@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-03 17:00:42` (America/Chicago).
+- Last refreshed: `2026-10-03 17:20:22` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.05/B2.02a pinned Qdrant fixture/transport; child31.25%, parent71.88%,17/24 closed gates.
-- Next gate: actual pinned Qdrant fixture/transport. Owned projection comparison and PG publication verified with a test-only port; durable lifecycle and Qdrant remain subsequent tasks. Scientific-quality UI remains SQ-01.
+- Active focus: BP-06.05/B2.02b projection/search adapter; child33.33%, parent72.22%,17/24 closed gates.
+- Next gate: actual Qdrant projection/exact-search adapter. Pinned authenticated fixture/transport and owned PG lifecycle verified; durable lifecycle and Qdrant remain subsequent tasks. Scientific-quality UI remains SQ-01.
 
 ## Active Findings
 

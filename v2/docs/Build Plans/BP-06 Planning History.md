@@ -1,5 +1,14 @@
 # BP-06 Planning History
 
+## BP-06.05/B2.02a actual Qdrant fixture and transport complete - 2026-10-03 17:20:22
+
+Data0.23.0 independently built with final explicit JSON-depth correction.33 source cases pass5.60s;117 installed retrieval/public-contract cases pass32.67s against actual PG/Qdrant;18 dev pass12.61s. Transport148/152 statements38/40 branches covered; unexercised closed-socket guard/connect-deadline/loop-deadline defensive paths remain declared. Socket probes cover slow headers/body, truncation, redirects, access denial, bounds, duplicate/nonfinite/overflow/deep JSON and unavailable peers. Actual Qdrant1.19.1 image/API are digest-pinned and fixture labels/loopback/key isolation verified. Root metadata is public, so authentication proof uses a protected collection route. Python recursion configuration was insufficient as a depth guard; explicit64-depth/2,000,000-node traversal added and tested. Public0.2.0/430 schemas and artifact_0011 unchanged. B2.02a100%, b-c0%; B2=33.33%, Build44.44%, child33.33%, parent72.22%; gates1/4 and17/24. b adapter active. No actual projection/search/reconstruction claim yet.
+
+Rotated MBT checkpoints:
+
+| 2026-10-03 05:01:56 | B2.03b complete; child41.67%, parent56.94%; B2.03c active | [Interpretation storage](../Audits/Evidence/BP-06-Research/Interpretation_Storage.json);728 source/728 installed,14 dev; research_0011 |
+
+
 ## BP-06.05/B2.01 verified publication complete - 2026-10-03 17:00:42
 
 Data0.22.0 independently built;37 focused source cases pass31.99s,508 full installed owner/public representation cases pass217.07s,14 dev pass14.19s. Actual Data vector bytes and PG authority tested with a named test-only projection port. Exact observed point/profile/vector comparison, same-attempt verifier barrier, revocation/takeover during I/O, uncertainty recovery, verified expiry, competing-head CAS and immutable replay after later head pass. Retrieval527 statements/34 branches fully covered. Initial wrong Core-only reference helper corrected to strict DTO validation. artifact_0011 preserves measured predecessor history; public0.2.0/430 schemas unchanged. B2.01a-d100%, B2=25%, Build41.67%, child31.25%, parent71.88%; gates1/4 and17/24. Actual Qdrant is not proven. B2.02 is decomposed into three equal bounded tasks (fixture/transport, adapter, installed actual-backend proof), all0%, a active, unchanged milestone weight.
