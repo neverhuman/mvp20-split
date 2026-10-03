@@ -1,5 +1,14 @@
 # BP-06 Planning History
 
+## BP-06.05/B2.02c installed actual generation reconstruction complete - 2026-10-03 17:51:31
+
+Source harness1 pass18.71s and installed harness1 pass15.60s; both invoke fresh isolated Data0.24.0 processes with private peers absent.18 dev pass13.37s;lint/boundaries/430 schemas pass. Actual source-bound ABBA vector is materialized into pinned Qdrant, independently compared, retained as verified and published via actual PG expected-head selection. Fresh Data processes and actual retained-volume Qdrant restart preserve original status/namespace/projection/scores8. A second separately owned backend lacks the original namespace; fresh generation reuses the same exact manifest/profile/vector Artifacts, verifies the same projection fingerprint, and advances the expected old head. Original history remains byte-identical and explicitly pinned old namespace remains404 on the replacement, never retargeted. Both backend volumes remain retained. No production code/package/migration change. These are installed owner-module and actual-backend proofs; generation HTTP remains B2.04, abrupt process death B3. B2.02a-c100%,B2=50%,Build50%,child37.50%,parent72.92%;gates1/4 and17/24. B2.03 decomposed a contracts/policy,b durable broker/records,c installed actual-query proof; all0%,a active, unchanged weight.
+
+Rotated MBT checkpoints:
+
+| 2026-10-03 05:30:56 | B2.04a complete; child45.83%, parent57.64%; b active | [Interpretation workflow](../Audits/Evidence/BP-06-Research/Interpretation_Workflow.json);762 source/762 installed,119 compatibility/dev;406 schemas |
+
+
 ## BP-06.05/B2.02b actual Qdrant adapter complete - 2026-10-03 17:41:19
 
 Data0.24.0 independently built;47 source cases pass7.64s,131 installed retrieval/contract cases pass33.90s,18 dev pass20.91s. Actual pinned Qdrant build/inspect/filtered exact query matches independent Dot oracle2/1/3, preserves full profile/binding payloads, rejects incompatible settings/corrupt payloads and missing expected ids, handles256-point batches. Finite score and huge timeout bounds are explicit. Backend subtree287/299 statements53/60 branches covered; malformed server wrappers/rare unavailable-create and UUID/point-shape guards plus prior transport deadline paths remain declared gaps. No source-rights broker claim. The forced same-namespace create race initially returned409 then transient500; later read recovered3 points. Correct gate is safe operational uncertainty and exact fresh-namespace recovery, not every racing call succeeding. QD-01 tracks owner-level recovery proof in c/B3. Public0.2.0/430 schemas and artifact_0011 unchanged. B2.02a-b100%,c0%; B2=41.67%,Build47.22%,child35.42%,parent72.57%;gates1/4 and17/24. c active.

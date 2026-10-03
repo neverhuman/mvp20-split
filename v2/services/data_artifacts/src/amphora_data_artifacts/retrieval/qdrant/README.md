@@ -1,6 +1,6 @@
 # Qdrant boundary
 
-Owner: Data retrieval, BP-06.05/B2.02. Pinned configuration, authenticated bounded transport and actual projection/exact-search adapter are implemented. Independently installed Data generation/index reconstruction remains B2.02c.
+Owner: Data retrieval, BP-06.05/B2.02. Pinned configuration, authenticated bounded transport and actual projection/exact-search adapter are implemented. Independently installed Data generation/index reconstruction is verified under B2.02c.
 
 `QdrantConfiguration` separates deployment endpoint/key/deadline from the immutable backend profile. The profile pins Qdrant1.19.1, exact image digest and release OpenAPI hash, dense binary32 Dot vectors, payload protocol, bounded point count, waited writes and exact-query policy. Endpoint/token changes do not change vector semantics. The initial endpoint must be explicit loopback HTTP; remote/TLS deployment is a later profile. Credentials are excluded from configuration repr and never included in the profile digest.
 
@@ -27,3 +27,6 @@ There is no collection deletion, alias switch, in-place reconfiguration or impli
 Actual backend tests use independent two-dimensional vectors and Dot oracle scores2/1/3 for query(2,1), full256-point batching, id filtering, missing-id rejection, configuration mismatch, payload corruption and concurrent-create recovery. These refs are synthetic transport fixtures. Actual Data source admission, generation verification/publication and persisted-index reconstruction are c's separate authority gate.
 
 B2.02b verification:47 source,131 installed retrieval/contract cases and18 dev cases pass. Adapter subtree coverage287/299 statements53/60 branches; malformed backend wrapper/point/UUID guards, uncommon create failure and earlier defensive transport paths remain unexercised. Actual orphan/partial/process failure closure remains B3.
+
+
+B2.02c proves actual Data-owned source binding -> verified vector Artifact -> Qdrant projection -> PostgreSQL verified/publication/head using independently installed Data0.24.0. Fresh isolated owner processes reconstruct identical original status and scores after a retained-volume Qdrant restart. A separate owned backend missing the old namespace receives a freshly verified generation of the exact retained manifest/profile/vectors; publication uses the explicit old head. Original history stays byte-identical and an old namespace pin on the replacement remains unavailable. No collection/volume/history was deleted. The source and installed harnesses both pass; generation HTTP and query-use authorization remain later gates, and abrupt death remains B3.

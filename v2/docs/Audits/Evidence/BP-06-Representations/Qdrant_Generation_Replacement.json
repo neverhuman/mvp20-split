@@ -1,0 +1,523 @@
+{
+  "timestamp_local": "2026-10-03 17:51:31",
+  "task": "BP-06.05/B2.02c",
+  "status": "verified",
+  "source_harness": {
+    "passed": 1,
+    "seconds": 18.71
+  },
+  "installed_harness": {
+    "passed": 1,
+    "seconds": 15.6
+  },
+  "dev": {
+    "passed": 18,
+    "seconds": 13.37
+  },
+  "package": "amphora-data-artifacts 0.24.0; unchanged production bytes",
+  "schemas": {
+    "count": 430,
+    "unchanged": true
+  },
+  "migration": "artifact_0011 unchanged",
+  "lint_boundaries_schemas": "passed",
+  "actual_reconstruction": {
+    "timestamp_local": "2026-10-03 17:47:25",
+    "scope": {
+      "tenant_id": "upload-tests",
+      "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+    },
+    "binding": {
+      "wire_version": "1",
+      "reference": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+        },
+        "binding_id": "binding.73401253d4add5d9a82ce224dcfbcdb235b8455f9aaf97909819bb5f8c2c13d4",
+        "sha256": "b3a5a9da97898c456758ce5342f54346f1b15470fd0fe566811628ec357e2922"
+      },
+      "profile": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+        },
+        "profile_id": "fixture.utf8-histogram",
+        "version": "1",
+        "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+      },
+      "source": {
+        "source": {
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+          },
+          "source_id": "source",
+          "revision_id": "r1",
+          "raw": {
+            "artifact_id": "1111d8ef2cc84cb487e695828ccd4ab8",
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+            },
+            "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+            "media_type": "application/octet-stream",
+            "schema_ref": {
+              "schema_id": "fixture.bytes",
+              "version": "1",
+              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+            },
+            "size_bytes": 4
+          }
+        },
+        "unit": "byte",
+        "start": 0,
+        "end": 4,
+        "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+      },
+      "vector": {
+        "artifact_id": "5ce7823386e342989df69a37fe377714",
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+        },
+        "sha256": "2e693d114bb1793505844b9e91be13ad1ffec0ceaa2feda8360759d9f6bef5cb",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "representations.vector",
+          "version": "1",
+          "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+        },
+        "size_bytes": 615
+      }
+    },
+    "first_process": {
+      "pid": 23900,
+      "package": "0.24.0",
+      "status": {
+        "wire_version": "1",
+        "generation": {
+          "wire_version": "1",
+          "reference": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+            },
+            "corpus_id": "corpus",
+            "generation_id": "g1",
+            "sha256": "722335a84d505156130c8dba8f4fec460d4c804d6eaef4d9a53215f48c27e7d6"
+          },
+          "actor_id": "worker",
+          "manifest": {
+            "wire_version": "1",
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+            },
+            "profile": {
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+              },
+              "profile_id": "fixture.utf8-histogram",
+              "version": "1",
+              "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+            },
+            "bindings": [
+              {
+                "wire_version": "1",
+                "reference": {
+                  "scope": {
+                    "tenant_id": "upload-tests",
+                    "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+                  },
+                  "binding_id": "binding.73401253d4add5d9a82ce224dcfbcdb235b8455f9aaf97909819bb5f8c2c13d4",
+                  "sha256": "b3a5a9da97898c456758ce5342f54346f1b15470fd0fe566811628ec357e2922"
+                },
+                "profile": {
+                  "scope": {
+                    "tenant_id": "upload-tests",
+                    "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+                  },
+                  "profile_id": "fixture.utf8-histogram",
+                  "version": "1",
+                  "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+                },
+                "source": {
+                  "source": {
+                    "scope": {
+                      "tenant_id": "upload-tests",
+                      "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+                    },
+                    "source_id": "source",
+                    "revision_id": "r1",
+                    "raw": {
+                      "artifact_id": "1111d8ef2cc84cb487e695828ccd4ab8",
+                      "scope": {
+                        "tenant_id": "upload-tests",
+                        "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+                      },
+                      "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+                      "media_type": "application/octet-stream",
+                      "schema_ref": {
+                        "schema_id": "fixture.bytes",
+                        "version": "1",
+                        "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                      },
+                      "size_bytes": 4
+                    }
+                  },
+                  "unit": "byte",
+                  "start": 0,
+                  "end": 4,
+                  "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+                },
+                "vector": {
+                  "artifact_id": "5ce7823386e342989df69a37fe377714",
+                  "scope": {
+                    "tenant_id": "upload-tests",
+                    "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+                  },
+                  "sha256": "2e693d114bb1793505844b9e91be13ad1ffec0ceaa2feda8360759d9f6bef5cb",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "schema_id": "representations.vector",
+                    "version": "1",
+                    "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+                  },
+                  "size_bytes": 615
+                }
+              }
+            ],
+            "watermark": "dbc86f9ac0f890757f8cad4e6d644bc4069e69d5c13b9a48c81880d12edfcb81"
+          },
+          "expected_head": null,
+          "backend_profile": {
+            "schema_id": "data.qdrant-projection",
+            "version": "1",
+            "sha256": "bbd62cf269057b3280ef7e29e8ca06dbdbf6e81f42bb69652e63fb1973327f83"
+          }
+        },
+        "state": "published"
+      },
+      "selected": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+        },
+        "corpus_id": "corpus",
+        "generation_id": "g1",
+        "sha256": "722335a84d505156130c8dba8f4fec460d4c804d6eaef4d9a53215f48c27e7d6"
+      },
+      "namespace": "amphora_63cf726eed73a10cf4009fed8d651131dc1b8f10c00f176eed9a2b1a23c2afa9",
+      "projection_sha256": "7183dad1d0e62ccf4f8d188a6a61c9087fa56f2b04eebf5c9d926bca3ded8b8e",
+      "scores": [
+        8.0
+      ]
+    },
+    "retained_restart": {
+      "pid": 9700,
+      "package": "0.24.0",
+      "status": {
+        "wire_version": "1",
+        "generation": {
+          "wire_version": "1",
+          "reference": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+            },
+            "corpus_id": "corpus",
+            "generation_id": "g1",
+            "sha256": "722335a84d505156130c8dba8f4fec460d4c804d6eaef4d9a53215f48c27e7d6"
+          },
+          "actor_id": "worker",
+          "manifest": {
+            "wire_version": "1",
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+            },
+            "profile": {
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+              },
+              "profile_id": "fixture.utf8-histogram",
+              "version": "1",
+              "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+            },
+            "bindings": [
+              {
+                "wire_version": "1",
+                "reference": {
+                  "scope": {
+                    "tenant_id": "upload-tests",
+                    "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+                  },
+                  "binding_id": "binding.73401253d4add5d9a82ce224dcfbcdb235b8455f9aaf97909819bb5f8c2c13d4",
+                  "sha256": "b3a5a9da97898c456758ce5342f54346f1b15470fd0fe566811628ec357e2922"
+                },
+                "profile": {
+                  "scope": {
+                    "tenant_id": "upload-tests",
+                    "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+                  },
+                  "profile_id": "fixture.utf8-histogram",
+                  "version": "1",
+                  "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+                },
+                "source": {
+                  "source": {
+                    "scope": {
+                      "tenant_id": "upload-tests",
+                      "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+                    },
+                    "source_id": "source",
+                    "revision_id": "r1",
+                    "raw": {
+                      "artifact_id": "1111d8ef2cc84cb487e695828ccd4ab8",
+                      "scope": {
+                        "tenant_id": "upload-tests",
+                        "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+                      },
+                      "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+                      "media_type": "application/octet-stream",
+                      "schema_ref": {
+                        "schema_id": "fixture.bytes",
+                        "version": "1",
+                        "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                      },
+                      "size_bytes": 4
+                    }
+                  },
+                  "unit": "byte",
+                  "start": 0,
+                  "end": 4,
+                  "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+                },
+                "vector": {
+                  "artifact_id": "5ce7823386e342989df69a37fe377714",
+                  "scope": {
+                    "tenant_id": "upload-tests",
+                    "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+                  },
+                  "sha256": "2e693d114bb1793505844b9e91be13ad1ffec0ceaa2feda8360759d9f6bef5cb",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "schema_id": "representations.vector",
+                    "version": "1",
+                    "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+                  },
+                  "size_bytes": 615
+                }
+              }
+            ],
+            "watermark": "dbc86f9ac0f890757f8cad4e6d644bc4069e69d5c13b9a48c81880d12edfcb81"
+          },
+          "expected_head": null,
+          "backend_profile": {
+            "schema_id": "data.qdrant-projection",
+            "version": "1",
+            "sha256": "bbd62cf269057b3280ef7e29e8ca06dbdbf6e81f42bb69652e63fb1973327f83"
+          }
+        },
+        "state": "published"
+      },
+      "selected": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+        },
+        "corpus_id": "corpus",
+        "generation_id": "g1",
+        "sha256": "722335a84d505156130c8dba8f4fec460d4c804d6eaef4d9a53215f48c27e7d6"
+      },
+      "namespace": "amphora_63cf726eed73a10cf4009fed8d651131dc1b8f10c00f176eed9a2b1a23c2afa9",
+      "projection_sha256": "7183dad1d0e62ccf4f8d188a6a61c9087fa56f2b04eebf5c9d926bca3ded8b8e",
+      "scores": [
+        8.0
+      ]
+    },
+    "replacement_process": {
+      "pid": 24000,
+      "package": "0.24.0",
+      "status": {
+        "wire_version": "1",
+        "generation": {
+          "wire_version": "1",
+          "reference": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+            },
+            "corpus_id": "corpus",
+            "generation_id": "g2",
+            "sha256": "ff16eb7743e1f63305ce0803c535427da9f230ea817a4dfbf2648b10ec47af11"
+          },
+          "actor_id": "worker",
+          "manifest": {
+            "wire_version": "1",
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+            },
+            "profile": {
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+              },
+              "profile_id": "fixture.utf8-histogram",
+              "version": "1",
+              "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+            },
+            "bindings": [
+              {
+                "wire_version": "1",
+                "reference": {
+                  "scope": {
+                    "tenant_id": "upload-tests",
+                    "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+                  },
+                  "binding_id": "binding.73401253d4add5d9a82ce224dcfbcdb235b8455f9aaf97909819bb5f8c2c13d4",
+                  "sha256": "b3a5a9da97898c456758ce5342f54346f1b15470fd0fe566811628ec357e2922"
+                },
+                "profile": {
+                  "scope": {
+                    "tenant_id": "upload-tests",
+                    "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+                  },
+                  "profile_id": "fixture.utf8-histogram",
+                  "version": "1",
+                  "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+                },
+                "source": {
+                  "source": {
+                    "scope": {
+                      "tenant_id": "upload-tests",
+                      "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+                    },
+                    "source_id": "source",
+                    "revision_id": "r1",
+                    "raw": {
+                      "artifact_id": "1111d8ef2cc84cb487e695828ccd4ab8",
+                      "scope": {
+                        "tenant_id": "upload-tests",
+                        "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+                      },
+                      "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+                      "media_type": "application/octet-stream",
+                      "schema_ref": {
+                        "schema_id": "fixture.bytes",
+                        "version": "1",
+                        "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                      },
+                      "size_bytes": 4
+                    }
+                  },
+                  "unit": "byte",
+                  "start": 0,
+                  "end": 4,
+                  "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+                },
+                "vector": {
+                  "artifact_id": "5ce7823386e342989df69a37fe377714",
+                  "scope": {
+                    "tenant_id": "upload-tests",
+                    "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+                  },
+                  "sha256": "2e693d114bb1793505844b9e91be13ad1ffec0ceaa2feda8360759d9f6bef5cb",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "schema_id": "representations.vector",
+                    "version": "1",
+                    "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+                  },
+                  "size_bytes": 615
+                }
+              }
+            ],
+            "watermark": "dbc86f9ac0f890757f8cad4e6d644bc4069e69d5c13b9a48c81880d12edfcb81"
+          },
+          "expected_head": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+            },
+            "corpus_id": "corpus",
+            "generation_id": "g1",
+            "sha256": "722335a84d505156130c8dba8f4fec460d4c804d6eaef4d9a53215f48c27e7d6"
+          },
+          "backend_profile": {
+            "schema_id": "data.qdrant-projection",
+            "version": "1",
+            "sha256": "bbd62cf269057b3280ef7e29e8ca06dbdbf6e81f42bb69652e63fb1973327f83"
+          }
+        },
+        "state": "published"
+      },
+      "selected": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "68d0eccae09f4479b4f91e4ad03ae9a9"
+        },
+        "corpus_id": "corpus",
+        "generation_id": "g2",
+        "sha256": "ff16eb7743e1f63305ce0803c535427da9f230ea817a4dfbf2648b10ec47af11"
+      },
+      "namespace": "amphora_afe6191b2f59b8c9c257b438323663b5ced04d45287a261537324c4cf96b96d3",
+      "projection_sha256": "7183dad1d0e62ccf4f8d188a6a61c9087fa56f2b04eebf5c9d926bca3ded8b8e",
+      "scores": [
+        8.0
+      ]
+    },
+    "original_history_unchanged": true,
+    "old_pin_on_replacement": "unavailable_404_no_retargeting",
+    "primary_container": "amphora-bp06-qdrant-61d44f881a884955b4d5e71913230b9d",
+    "replacement_container": "amphora-bp06-qdrant-a35053217a73404281489c8f2972cf1f",
+    "boundary": "Installed owner modules and actual PG/Qdrant; generation HTTP remains B2.04"
+  },
+  "installation": {
+    "timestamp_local": "2026-10-03 17:35:31",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-data-artifacts",
+    "forbidden_implementations": [
+      "amphora_research",
+      "amphora_knowledge",
+      "amphora_campaign_runtime"
+    ],
+    "packages": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.13",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-representations": "0.2.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-data-artifacts": "0.24.0"
+    },
+    "wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_representations-0.2.0-py3-none-any.whl": "cf9f74c2c48bcbbc4b5623766d7d96d3b07a5cb76b3cf818751a166639131ce8",
+      "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_data_artifacts-0.24.0-py3-none-any.whl": "a2c50ebc22af9ef41f5afc6d1735ccece7ebbf21f6a8862855bfe2fef401b5ed"
+    }
+  },
+  "limits": [
+    "Actual independently installed owner modules and backend; generation HTTP remains B2.04",
+    "Orderly Qdrant restart and new owner processes, not abrupt Data process-death evidence",
+    "Query-use authorization and immutable retrieval results remain B2.03",
+    "Synthetic histogram/vector protocol oracle is not scientific relevance evidence"
+  ]
+}

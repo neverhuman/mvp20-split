@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-03 17:41:19` (America/Chicago).
+- Last refreshed: `2026-10-03 17:51:31` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.05/B2.02c actual installed index proof; child35.42%, parent72.57%,17/24 closed gates.
-- Next gate: actual installed Data/Qdrant generation reconstruction. Pinned adapter and independent exact-search oracle verified; durable lifecycle and Qdrant remain subsequent tasks. Scientific-quality UI remains SQ-01.
+- Active focus: BP-06.05/B2.03a query contracts/policy; child37.50%, parent72.92%,17/24 closed gates.
+- Next gate: query contracts and policy. Actual independently installed Data/Qdrant generation and reconstruction verified; durable lifecycle and Qdrant remain subsequent tasks. Scientific-quality UI remains SQ-01.
 
 ## Active Findings
 
