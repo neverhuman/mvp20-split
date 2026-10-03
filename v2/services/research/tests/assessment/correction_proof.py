@@ -6,7 +6,7 @@ from amphora_contracts_graph_runtime import ReceiptCorrectionView
 from amphora_tool_protocol import HttpTransport
 
 
-def _chain(owner, family, scope, issuer, first_source, next_source, source_key, expected_status):
+def _chain(owner, family, scope, issuer, first_source, next_source, source_key, expected_status, runtime=None):
     route = "/v1/" + family + "-receipts"
     chain = {"scope":scope, "issuer_id":issuer, "chain_id":family + "-quality"}
     first = {"wire_version":"1", "chain":chain, "change_id":"initial", "reason_code":"initial_evidence",
@@ -14,6 +14,8 @@ def _chain(owner, family, scope, issuer, first_source, next_source, source_key, 
     root = owner.request(route + "/correct", first)
     root_view = ReceiptCorrectionView.model_validate_json(json.dumps(root))
     assert root_view.record.receipt.outcome.status == "accepted"
+    if runtime is not None:
+        runtime.before(family, root)
     pinned = root_view.record.receipt.model_dump_json()
     successor = first | {"change_id":"correction", "reason_code":"reassessed", source_key:next_source,
                          "expected_head":root["reference"]}
@@ -24,6 +26,8 @@ def _chain(owner, family, scope, issuer, first_source, next_source, source_key, 
     assert view.record.notice.outcome.status == "superseded"
     assert view.record.notice.revision == root_view.record.receipt.revision
     assert view.record.notice.outcome.replacement_revision == view.record.receipt.revision
+    if runtime is not None:
+        runtime.after(family, root, revised)
     query = {"wire_version":"1", "chain":chain, "revision":None}
     historical = owner.request(route + "/select", query | {"revision":root["reference"]})
     assert historical == root
@@ -59,7 +63,7 @@ class CorrectionProof:
         return {"research":self.research,"knowledge":self.knowledge}
 
 
-def prove(research, knowledge, scope, assessment_request, original_publication, reason):
+def prove(research, knowledge, scope, assessment_request, original_publication, reason, runtime=None):
     weak_request = assessment_request | {"assessment_id":"weak-assessment","receipts":[]}
     weak = research.request("/v1/assessments",weak_request)
     assert weak["outcome"]["status"] == "assessed"
@@ -67,7 +71,7 @@ def prove(research, knowledge, scope, assessment_request, original_publication, 
     published = research.request("/v1/assessment-publications",{"wire_version":"1","scope":scope,"assessment_id":"weak-assessment"})
     assert published["outcome"]["receipt"]["outcome"]["status"] == "abstained"
     research_proof = _chain(research,"assessment",scope,original_publication["outcome"]["receipt"]["issuer_id"],
-                            assessment_request["assessment_id"],"weak-assessment","assessment_id","abstained")
+                            assessment_request["assessment_id"],"weak-assessment","assessment_id","abstained",runtime)
     contradicted = reason | {"request_id":"negative-reason","targets":[reason["targets"][0] | {"polarity":"negated"}]}
     evaluated = knowledge.request("/v1/graph-reasoning",contradicted)
     assert evaluated["decision"]["outcome"] == "evaluated"
@@ -76,7 +80,7 @@ def prove(research, knowledge, scope, assessment_request, original_publication, 
     publication = knowledge.request("/v1/reasoning-publications",revised)
     assert publication["outcome"]["receipt"]["outcome"]["status"] == "rejected"
     knowledge_proof = _chain(knowledge,"reasoning",scope,publication["outcome"]["receipt"]["issuer_id"],
-                             original,revised,"source","rejected")
+                             original,revised,"source","rejected",runtime)
     assert research.request("/v1/assessment-publications/read",{"wire_version":"1","scope":scope,
         "assessment_id":assessment_request["assessment_id"]}) == original_publication
     return CorrectionProof(research_proof,knowledge_proof)

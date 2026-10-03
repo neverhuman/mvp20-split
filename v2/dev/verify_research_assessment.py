@@ -35,10 +35,16 @@ def verify(output, data_python, knowledge_python):
         return result.stdout if capture else None
 
     peers = {}
-    for label, interpreter, module, package in [
+    peer_specs = [
         ("data", data_python, "amphora_data_artifacts", "amphora-data-artifacts"),
         ("knowledge", knowledge_python, "amphora_knowledge", "amphora-knowledge"),
-    ]:
+    ]
+    if os.environ.get("AMPHORA_TEST_DOMAIN_RUNTIME") == "1":
+        runtime_python = os.environ.get("AMPHORA_TEST_RUNTIME_PYTHON")
+        if not runtime_python:
+            raise ValueError("Explicit installed Runtime interpreter required for domain receipt proof")
+        peer_specs.append(("runtime", Path(runtime_python), "amphora_campaign_runtime", "amphora-campaign-runtime"))
+    for label, interpreter, module, package in peer_specs:
         probe = ("import importlib.util,json,pathlib,sys; from importlib.metadata import version; "
                  f"import {module} as owner; "
                  "assert pathlib.Path(owner.__file__).is_relative_to(pathlib.Path(sys.prefix)); "

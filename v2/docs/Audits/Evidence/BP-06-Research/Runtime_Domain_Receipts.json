@@ -1,0 +1,48 @@
+{
+  "reviewed_local": "2026-10-02 22:08:29",
+  "scope": "BP-06.03/B3.01",
+  "status": "passed",
+  "source_actual_tests": 1,
+  "installed_tests": 334,
+  "manifest": ".test-results/runtime-domain-receipts-installed-20261002/manifest.json",
+  "peers": {
+    "data": {
+      "package": "amphora-data-artifacts",
+      "version": "0.11.0"
+    },
+    "knowledge": {
+      "package": "amphora-knowledge",
+      "version": "0.15.0"
+    },
+    "runtime": {
+      "package": "amphora-campaign-runtime",
+      "version": "0.20.2"
+    }
+  },
+  "cases": {
+    "assessment": {
+      "opened_revision": "revision-c31056ebf4df244e4ed5db9ab43b425a6eea0884ee947806f872e64362948470",
+      "notice_reason": "wait_receipt_superseded",
+      "accepted_status": "accepted",
+      "graph_status": "completed",
+      "spent": 0,
+      "retention_acknowledged": 1,
+      "replayed_after_runtime_replacement": true
+    },
+    "reasoning": {
+      "opened_revision": "revision-4bb24876dabf1b2a7f64a308d7cf5024d74853278b79a540587b2fec2a575feb",
+      "notice_reason": "wait_receipt_superseded",
+      "accepted_status": "accepted",
+      "graph_status": "completed",
+      "spent": 0,
+      "retention_acknowledged": 1,
+      "replayed_after_runtime_replacement": true
+    }
+  },
+  "limits": [
+    "Synthetic scientific fixtures only",
+    "Multiple uncertain points and explicit partial output remain B3.02",
+    "Broader delivery fault injection and recovery coverage remain B3.03",
+    "No target-host or power-loss claim"
+  ]
+}

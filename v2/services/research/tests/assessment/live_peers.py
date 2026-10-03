@@ -10,10 +10,11 @@ import urllib.request
 
 
 class Owner:
-    def __init__(self, module, config, environment, token, python=None):
-        with socket.socket() as listener:
-            listener.bind(("127.0.0.1", 0))
-            port = listener.getsockname()[1]
+    def __init__(self, module, config, environment, token, python=None, *, port=None):
+        if port is None:
+            with socket.socket() as listener:
+                listener.bind(("127.0.0.1", 0))
+                port = listener.getsockname()[1]
         self.endpoint, self.token = f"http://127.0.0.1:{port}", token
         self.process = subprocess.Popen([python or sys.executable, "-I", "-m", module, "serve", "--config",
             str(config), "--port", str(port)], env=environment, stdin=subprocess.DEVNULL,

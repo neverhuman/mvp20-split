@@ -389,3 +389,11 @@ Actual separately hosted Research and Knowledge correction transitions, exact/la
 Rotated MBT checkpoint:
 
 | 2026-10-02 09:54:48 | DER-01 proposed prerequisite; BP-06.03/B1 awaits owner direction, percentages unchanged | [Decision](BP-06/BP-06.03%20Derived%20publication%20prerequisite.md);1 PostgreSQL probe |
+
+## 2026-10-02 22:08:29 - B3.01 live Runtime domain receipts
+
+Actual Research/Knowledge waits open before correction, reject notices without repinning, accept original receipts through real Artifact protection, finish with0 worker spend and confirm retention. Runtime replacement/replay preserves closures. Source actual test and334 installed tests pass with independently installed Runtime, Research, Knowledge and Data. B3 1/3, child58.33%, parent43.06%; closed gates2/4 and10/24 unchanged. Next B3.02 partial exploratory output and eligibility proof. No production changes or scientific-validity claim.
+
+Rotated MBT checkpoint:
+
+| 2026-10-02 11:14:56 | DER-01 approved; D1 complete1/4 (25%); D2 active; child0/4, parent8/24 | contracts0.2.0;282 schemas preserve272;92 tests |

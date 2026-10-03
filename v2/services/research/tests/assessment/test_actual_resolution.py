@@ -1,6 +1,7 @@
 """Real Data and Knowledge publication, with a Research-owned resolver and identity ledger."""
 
 import hashlib
+import importlib.util
 import json
 import os
 import sys
@@ -87,18 +88,34 @@ def test_actual_knowledge_output_and_evidence_require_authenticated_applicable_p
                   "sha256": hashlib.sha256(b'{"type":"string","contentEncoding":"base64"}').hexdigest()}
     (tmp_path / "bytes").mkdir()
     data_config = tmp_path / "data.json"
-    data_config.write_text(json.dumps({"database_url_env": "DATA_DB", "storage_root": str(tmp_path / "bytes"),
+    data_configuration = {"database_url_env": "DATA_DB", "storage_root": str(tmp_path / "bytes"),
         "acquisition": True, "profiles": [{"media_type": "application/octet-stream", **raw_schema}, *schemas],
         "principals": [{"token_env": "DATA_TOKEN", "actor_id": "fixture", "scope": scope,
                         "actions": ["read", "source_history", "upload", "finalize", "acquire", "manage_source_rights"]},
                        {"token_env": "READ_TOKEN", "actor_id": "reader", "scope": scope, "actions": ["read", "source_history"]},
                        {"token_env": "PUBLISH_TOKEN", "actor_id": "knowledge-publisher", "scope": scope,
-                        "actions": ["read", "upload", "finalize"]}]}))
-    owners = []
+                        "actions": ["read", "upload", "finalize"]}]}
+    runtime = None
+    if os.environ.get("AMPHORA_TEST_DOMAIN_RUNTIME") == "1":
+        runtime_python = os.environ.get("AMPHORA_TEST_RUNTIME_PYTHON", sys.executable)
+        environment["RUNTIME_DB"] = url.set(username="runtime_service").render_as_string(hide_password=False)
+        environment["PEER_MIGRATION"] = url.set(username="runtime_migrator").render_as_string(hide_password=False)
+        owned_script(runtime_python,
+            "import os; from amphora_campaign_runtime.persistence.migrate import upgrade; upgrade(os.environ['PEER_MIGRATION'])", environment)
+        bridge_path = Path(__file__).absolute().parents[4] / "services/campaign_runtime/tests/waits/acceptance/domain_bridge.py"
+        spec = importlib.util.spec_from_file_location("runtime_domain_bridge", bridge_path)
+        bridge = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(bridge)
+        runtime = bridge.DomainRuntime(tmp_path, scope, environment, runtime_python, Owner)
+        data_configuration = runtime.data_configuration(data_configuration)
+    data_config.write_text(json.dumps(data_configuration))
+    owners = [] if runtime is None else [runtime]
     try:
         data = Owner("amphora_data_artifacts", data_config, environment, "d" * 32,
                      os.environ.get("AMPHORA_TEST_DATA_PYTHON"))
         owners.append(data)
+        if runtime is not None:
+            runtime.attach_data(data.endpoint)
         raw = b"Synthetic research support."
         context = publish(data, scope, raw, raw_schema)
         rights = {"wire_version": "1", "reference": {"scope": scope, "rights_id": "rights", "revision": 1},
@@ -257,7 +274,7 @@ def test_actual_knowledge_output_and_evidence_require_authenticated_applicable_p
         owners.append(research)
         assert research.request("/v1/assessments/read", api_request) == api_result
         assert research.request("/v1/assessment-publications/read", selection) == api_publication
-        corrections = prove_corrections(research, knowledge, scope, api_request, api_publication, reason)
+        corrections = prove_corrections(research, knowledge, scope, api_request, api_publication, reason, runtime=runtime)
         # Replace both correction owners and restore their exact immutable selections.
         research.stop()
         research = Owner("amphora_research", research_config, environment, "r" * 32)
@@ -282,7 +299,7 @@ def test_actual_knowledge_output_and_evidence_require_authenticated_applicable_p
             resolve([receipt])
         assert store.engine.pool.checkedout() == 0
         evidence = {"timestamp_local": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "scope": scope,
-                    "answer": answer, "assessments": observations, "corrections": corrections.evidence(), "actual_processes": ["Data", "Knowledge", "Research"],
+                    "answer": answer, "assessments": observations, "corrections": corrections.evidence(), "runtime": None if runtime is None else runtime.results, "actual_processes": ["Data", "Knowledge", "Research"],
                     "cases": ["real_logical_output", "explicit_missing_evidence", "opinion_insufficient", "context_mismatch_insufficient", "matching_observation", "actual_owner_corrections", "correction_owner_replacement", "correction_replay_Data_offline",
                               "wrong_token_denied", "revoked_source_denied", "data_outage_retryable", "no_idle_research_transaction", "durable_assessment_replacement_read", "actual_assessment_publication_and_receipt", "publication_terminal_replay", "actual_begin_ack_loss", "actual_stream_ack_loss", "actual_finalize_ack_loss", "authenticated_assessment_submit_read", "authenticated_publication_submit_read", "Research_process_replacement_replay", "terminal_replay_with_Data_offline"]}
         path = Path(os.environ.get("AMPHORA_RESEARCH_RESOLUTION_EVIDENCE", str(Path(__file__).absolute().parents[4] /
