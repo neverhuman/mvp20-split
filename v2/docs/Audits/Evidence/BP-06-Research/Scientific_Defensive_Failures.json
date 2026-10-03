@@ -1,0 +1,56 @@
+{
+  "timestamp_local": "2026-10-03 12:06:32",
+  "milestone": "BP-06.04/B3.03",
+  "research_version": "0.31.0",
+  "contracts_version": "0.14.0",
+  "verification": {
+    "new_focused_tests": 7,
+    "source_tests": 108,
+    "installed_tests": 108,
+    "skipped_each": 1,
+    "skip_reason": "Separate older actual HTTP replacement opt-in; existing passing evidence retained",
+    "source_seconds": 46.5,
+    "installed_seconds": 42.84,
+    "schema_publication": "406 unchanged",
+    "dependency_boundaries": "pass",
+    "production_changes": false
+  },
+  "coverage": {
+    "covered_lines": 351,
+    "num_statements": 351,
+    "percent_covered": 99.75429975429975,
+    "percent_covered_display": "99",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100",
+    "num_branches": 56,
+    "num_partial_branches": 1,
+    "covered_branches": 55,
+    "missing_branches": 1,
+    "percent_branches_covered": 98.21428571428571,
+    "percent_branches_covered_display": "98"
+  },
+  "remaining_branch": {
+    "file": "scientific_publication/workflow.py",
+    "branch": [
+      55,
+      28
+    ],
+    "reason": "Unrecognized stage fallthrough; canonical owner history starts prepared and reconstructs only the closed validated transitions. No claimed 100% branch coverage."
+  },
+  "cases": [
+    "Owner error before result commit retains pending intent and permits retry",
+    "Owner error after result commit preserves exact assessed history and replay",
+    "Actual ASGI incomplete body expires after five seconds without intent creation",
+    "Competing publication terminal between read and lease returns with no peer effect",
+    "Stalled adapter exhausts twelve-transition budget; durable stage and command remain retryable",
+    "Real lost-lease release guard preserves committed success",
+    "Other cleanup failure surfaces while terminal replays with no repeated effect"
+  ],
+  "limits": [
+    "Scripted transport/failure injection over actual PostgreSQL, not independent peer process proof",
+    "Actual process proof is Scientific_Process_Recovery.json",
+    "Synthetic scientific inputs, no physical validity or quality UI"
+  ]
+}

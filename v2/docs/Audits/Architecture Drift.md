@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-03 11:58:32` (America/Chicago).
+- Last refreshed: `2026-10-03 12:06:32` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.04/B3.03 defensive failure closure after actual process recovery; parent61.11%,14/24 closed gates.
-- Next gate: defensive failure closure, then V1 rebuild/audit. BP-06.03 aligned evidence is in drift history; richer scientific-quality UI remains SQ-01.
+- Active focus: BP-06.04/V1.01 independent acceptance after B3 completion; parent62.50%,14/24 closed gates.
+- Next gate: fresh independent build/replacement and scoped closeout audit. BP-06.03 aligned evidence is in drift history; richer scientific-quality UI remains SQ-01.
 
 ## Active Findings
 
@@ -41,3 +41,5 @@ Use [Development Process](../Development_Process.md) and the [audit template](..
 - `2026-10-03 06:14:19`: [Scientific context matrix](Evidence/BP-06-Research/Scientific_Context_Matrix.json) aligns MAT-01..05 and exploratory iteration through actual peers. No blocking drift found; crash barriers remain B3.02, defensive failures B3.03, final audit V1. Fixture consumer does not establish scientific fitness implementation.
 
 - `2026-10-03 11:58:32`: [Scientific process recovery](Evidence/BP-06-Research/Scientific_Process_Recovery.json) closes the intake/interpretation actual process-interruption gap. Source/installed six-barrier matrices preserve original intent and atomic outputs/indexes. No blocking drift found; target-host power loss is unproven and remains deployment scope.
+
+- `2026-10-03 12:06:32`: [Defensive failure evidence](Evidence/BP-06-Research/Scientific_Defensive_Failures.json) closes the named B3 route/publication gaps. B1-B3 complete with no blocking production defect. V1 reconciles stale root/module documentation and verifies fresh independent replacement before archival.

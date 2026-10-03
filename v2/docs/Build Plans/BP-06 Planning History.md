@@ -583,3 +583,9 @@ Actual Data/Research matrix passes source21.88s and installed20.60s. MAT-01..05,
 Six named actual kill barriers pass from source181.51s and installed172.16s;14dev pass. Original intent/profile/actor and pending versus committed outcomes survive replacement; precommit indexes roll back, postcommit history replays offline. B3=66.67%,Build88.89%,child66.67%,parent61.11%; gates2/4 and14/24. B3.03 active, no owner blocker.
 
 | 2026-10-02 22:33:01 | B3.02 complete; child66.67%, parent44.44%; B3.03 active | [Partial progress](../Audits/Evidence/BP-06-Research/Partial_Campaign_Progress.json); retained report/two gaps;333 installed + clean rerun1 |
+
+## 2026-10-03 12:06:32 - B3 complete; independent acceptance active
+
+Defensive routes/publication verified:7 new tests, surrounding108 source/108 installed, one separate opt-in skipped each; schema/isolation pass. Coverage351 statements,55/56 branches; impossible canonical unknown-stage fallthrough remains recorded. B3=100%,Build100%,child75%,parent62.50%; gates3/4 and15/24. V1 split into three equal existing-scope parts: fresh build/regression, actual replacement, audit/archive.
+
+| 2026-10-02 22:49:43 | B3 complete; child75%, parent45.83%; V1 active | [Receipt recovery](../Audits/Evidence/BP-06-Research/Domain_Receipt_Recovery.json); both real owners, acknowledgement loss/replacement/exact retention |
