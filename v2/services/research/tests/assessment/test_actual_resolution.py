@@ -22,6 +22,7 @@ from amphora_research.assessment.boundary import ConfiguredAssessment
 from amphora_research.assessment.policy import AssessmentError
 from amphora_research.assessment.reader import AssessmentDataReader, AssessmentPeerUnavailable
 from amphora_research.assessment.resolution import AssessmentResolver
+from amphora_research.assessment.store import AssessmentStore
 from postgres_fixture import knowledge_owner, owned_state
 
 from .live_peers import Owner, owned_script
@@ -167,9 +168,15 @@ def test_actual_knowledge_output_and_evidence_require_authenticated_applicable_p
         request = {"wire_version": "1", "assessment_id": "assessment", "profile": configured.reference.model_dump(mode="json"),
                    "question": question["reference"], "answers": [{"criterion_id": "c", "artifact": answer}], "receipts": []}
         def resolve(receipts, token="b" * 32):
-            selected = EvidenceAssessmentRequest.model_validate_json(json.dumps(request | {"receipts": receipts}))
-            return AssessmentResolver(store, AssessmentDataReader(data.endpoint, token, scope_model)).resolve(
-                configured.bind(selected, "reader", scope_model))
+            selected = EvidenceAssessmentRequest.model_validate_json(json.dumps(request | {
+                "receipts": receipts, "assessment_id": digest(receipts)}))
+            bound = configured.bind(selected, "reader", scope_model)
+            journal = AssessmentStore(store.engine)
+            journal.begin(bound)
+            resolved = AssessmentResolver(store, AssessmentDataReader(data.endpoint, token, scope_model)).resolve(bound)
+            terminal = journal.complete(bound, resolved)
+            assert AssessmentStore(store.engine).read(scope_model, selected.assessment_id, "reader") == terminal
+            return terminal.resolved
         assert resolve([]).assessment.needs[0].gap.reason == "no_matching_evidence"
         observations = []
         for category in ("opinion", "observation"):
@@ -196,7 +203,7 @@ def test_actual_knowledge_output_and_evidence_require_authenticated_applicable_p
         evidence = {"timestamp_local": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "scope": scope,
                     "answer": answer, "assessments": observations, "actual_processes": ["Data", "Knowledge", "Research"],
                     "cases": ["real_logical_output", "explicit_missing_evidence", "opinion_insufficient", "matching_observation",
-                              "wrong_token_denied", "revoked_source_denied", "data_outage_retryable", "no_idle_research_transaction"]}
+                              "wrong_token_denied", "revoked_source_denied", "data_outage_retryable", "no_idle_research_transaction", "durable_assessment_replacement_read"]}
         path = Path(os.environ.get("AMPHORA_RESEARCH_RESOLUTION_EVIDENCE", str(Path(__file__).absolute().parents[4] /
                                                                                  ".test-results/research-resolution-live.json")))
         path.write_text(json.dumps(evidence, indent=2) + "\n", encoding="utf-8")

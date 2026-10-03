@@ -317,3 +317,11 @@ BP-06.01/.02/.03/.04/.06 now include Research-owned questions/evidence needs, co
 ## 2026-10-01 19:50:16 - B1 reference validation checkpoint
 
 B1 partial: Knowledge0.3.0 adds bounded public Data/Research clients, exact provenance/declaration review and durable review workflow.83 owner tests pass, including13 actual PostgreSQL cases; scripted HTTP covers routes, failure classes, byte/call limits and whole-review deadlines. Actual Data/Research owner integration and authenticated Knowledge API remain. Child0/4; parent4/24 (16.67%) unchanged. Connection-close transport tests exposed a closed-socket timeout update; fixed by stopping reads when the response closes. No schema/migration changes. See [validation proof](../Audits/Evidence/BP-06-Knowledge/Validation.json).
+
+## 2026-10-02 19:56:27 - B1.08 immutable assessment store
+
+Research0.8.0 adds forward research_0003 and private intent/decision storage.271 source tests and271 independent installed tests pass;14 focused store cases. Exact profile/request/actor replay, complete input retention, concurrent decision conflict, insertion rollback, SQLSTATE-specific permission/FK/size denials and actual peer assessment retention verified. No schema change, output publication or assessment HTTP claim. B1 8/10, Build26.67%, child20%, parent36.67%; gates unchanged. B1.09 next.
+
+Rotated MBT checkpoints:
+
+| 2026-10-01 20:05:58 | BP-06.02/B1 complete; child25%, parent20.83%; B2 active | [Public API/peer proof](../Audits/Evidence/BP-06-Knowledge/Public_API.json);104 owner tests;260 schemas |

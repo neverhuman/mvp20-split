@@ -1,7 +1,7 @@
 # Research Identity Persistence
 
 - Status: BP-06.01 accepted; PostgreSQL identity ledger and authenticated identity/declaration reads implemented. Public write/adjudication policy remains outside this bounded read service.
-- Migrations: research_0001 immutable records/heads/links; research_0002 explicitly rejects null predecessor bypass in SQL check semantics.
+- Migrations: research_0001 immutable records/heads/links; research_0002 explicitly rejects null predecessor bypass in SQL check semantics; research_0003 adds append-only assessment intents/decisions, owned by the [assessment store](../assessment/README.md#immutable-assessment-storage).
 
 `IdentityLedger.publish(scope, record)` validates a candidate/sample/question/need document under an explicit scope, obtains a transaction-scoped advisory lock for its stable scoped identity, then replays identical canonical bytes or rejects an immutable revision collision. A new revision must immediately follow the persisted head. Candidate references and question/criterion bindings resolve to exact owner records before insertion. Immutable records, reference links and head advancement commit in one PostgreSQL transaction. Reads are explicitly scope/kind/id/revision addressed, never implicit latest.
 

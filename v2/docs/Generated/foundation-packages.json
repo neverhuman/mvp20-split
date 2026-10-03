@@ -165,7 +165,7 @@
   },
   {
     "package": "amphora-research",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "path": "services/research",
     "module": "amphora_research",
     "public_dependencies": [

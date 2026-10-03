@@ -70,7 +70,7 @@ def verify(output, data_python, knowledge_python):
               for field in ("tests", "failures", "errors", "skipped")}
     assert totals["tests"] > 0 and totals["failures"] == totals["errors"] == totals["skipped"] == 0
     manifest = {"timestamp_local": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "status": "passed",
-                "scope": "B1.07 installed Research public-peer resolution; not assessment persistence/publication",
+                "scope": "B1.08 installed Research resolution and immutable assessment storage; not output publication or public assessment API",
                 "peers": peers, "tests": totals,
                 "packages": {name: specs[name][1]["project"]["version"] for name in needed},
                 "wheels": {path.name: hashlib.sha256(path.read_bytes()).hexdigest() for path in wheels.glob("*.whl")},

@@ -1,0 +1,82 @@
+{
+  "timestamp_local": "2026-10-02 19:56:27",
+  "scope": "BP-06.03/B1.08 immutable Research assessment store complete",
+  "research_version": "0.8.0",
+  "source_tests": 271,
+  "focused_store_tests": 14,
+  "installed_tests": {
+    "tests": 271,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "installed_manifest_sha256": "90c6842dac264284d85e2337e702128369c88d8507dc2f7cfadf85f32e65dc95",
+  "wheels": {
+    "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+    "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_evidence-0.5.2-py3-none-any.whl": "bb126226956a9d79f4f2a5229ea9b8fe01658ef5b1db95fbb84578835e3ebcc2",
+    "amphora_contracts_graph_runtime-0.11.0-py3-none-any.whl": "831fdf4af0b4d954619af27ed243b0d393ce898584633a367db0f446cdbf5acd",
+    "amphora_contracts_knowledge-0.6.2-py3-none-any.whl": "a6fdfaf29f660e5a749f6b76a74ecb8c8fa66e15db19d80e69c664a13fabb57b",
+    "amphora_contracts_research-0.4.0-py3-none-any.whl": "2b5f5e51a5b4932609f8f4e46a89d483f02c9feab9d7015146bc850cb300d48f",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+    "amphora_research-0.8.0-py3-none-any.whl": "bd88445e3dfd281cc6d8e206a630c3b78c86c63f554baa701012a37029959713"
+  },
+  "installed_peers": {
+    "data": {
+      "package": "amphora-data-artifacts",
+      "version": "0.11.0"
+    },
+    "knowledge": {
+      "package": "amphora-knowledge",
+      "version": "0.13.0"
+    }
+  },
+  "coverage": {
+    "covered_lines": 123,
+    "num_statements": 123,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100",
+    "num_branches": 34,
+    "num_partial_branches": 0,
+    "covered_branches": 34,
+    "missing_branches": 0,
+    "percent_branches_covered": 100.0,
+    "percent_branches_covered_display": "100"
+  },
+  "migration": "research_0003",
+  "unchanged_prior_migrations": {
+    "r0001_initial.py": "fafe5649c00326afa7f33f1617e475e7e54173c8373d7b017752505615ba5603",
+    "r0001_initial.sql": "453e04f367143c3ef5ba073a2c0c162c5162d870f1184bd52ce68c08cc2b504a",
+    "r0002_predecessor.py": "f2fbe5896fdd978abdf0ff981e339d973422012106a7062bde10cc568e67d6ef",
+    "r0002_predecessor.sql": "8b6f14d4fc756b03c876a9bbd3002850e7eab4ad1e8cdc1adaa163ba495fe241"
+  },
+  "schema_count": 296,
+  "schema_changes": 0,
+  "cases": [
+    "pending_intent_replay",
+    "terminal_replay_and_replacement_read",
+    "actor_scope_separation",
+    "changed_request_profile_actor_conflict",
+    "concurrent_decision_conflict",
+    "intent_and_decision_insert_rollback",
+    "service_role_update_delete_denied_42501",
+    "orphan_decision_rejected_23503",
+    "SQL_size_checks_23514",
+    "input_bounds_and_reference_completeness",
+    "actual_peer_resolution_stored_and_read"
+  ],
+  "limits": [
+    "Private trusted-adapter store; public assessment routes remain B1.10",
+    "Publication and atomic output artifact/receipt remain B1.09",
+    "Partial network observations are not frozen; full resolved decision and input set commit together",
+    "Synthetic assessments do not establish scientific validity",
+    "No target-host power-loss durability claim"
+  ]
+}
