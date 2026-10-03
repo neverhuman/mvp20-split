@@ -3,8 +3,8 @@
 - Status: BP-06 active; BP-05 closed/audited.
 - Last refreshed: `2026-10-02 23:09:37` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.04/B1.01 after corrected_ready activation; parent12/24=50%.
-- Next gate: exact measurement value objects and module-local oracles. BP-06.03 aligned evidence is in drift history; richer scientific-quality UI remains SQ-01.
+- Active focus: BP-06.04/B1.02 after verified measurement values; parent50.52%,12/24 closed gates.
+- Next gate: material/experiment/observation identity/context objects and module-local oracles. BP-06.03 aligned evidence is in drift history; richer scientific-quality UI remains SQ-01.
 
 ## Active Findings
 
