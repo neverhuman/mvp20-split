@@ -2,6 +2,8 @@
 
 Independent Python packages expose public imports, versioned wire schemas and language-neutral fixtures. This directory is navigation, not a shared business-service module.
 
+[Representation contracts](representations/README.md) expose complete encoding profiles, source-specific binding requests, vector Artifact documents and publication status. Data owns interpretation, provenance, rights and storage; these DTOs grant none of those authorities.
+
 - [Core](core/README.md): immutable identity, scope, schema and artifact references.
 - [Tools](tools/README.md): tool identity, ports, descriptor and invocation/completion protocol.
 - [Campaigns](campaigns/README.md): separate validation-only wire-v1 and executable wire-v2 graph boundaries.

@@ -1,0 +1,73 @@
+{
+  "wire_version": "1",
+  "profile_id": "fixture.utf8-histogram",
+  "version": "1",
+  "encoder": {
+    "provider": "fixture",
+    "model": "utf8-byte-histogram",
+    "revision": "1",
+    "implementation": {
+      "schema_id": "fixture.histogram",
+      "version": "1",
+      "sha256": "732e37fc6d65bbfaed0dd4159713e5bea32109d7a88fbdee29d34ad10f0eaca7"
+    },
+    "runtime": {
+      "schema_id": "fixture.runtime",
+      "version": "1",
+      "sha256": "a92282a5abe5471fe905d777726c056c8bc79341965a38e4f7568330cad23229"
+    }
+  },
+  "inputs": {
+    "modality": "text",
+    "task": "fixture.retrieval",
+    "role": "shared",
+    "template": {
+      "schema_id": "fixture.identity",
+      "version": "1",
+      "sha256": "debf9314796e08f188379a6935eb7b764b63b072b0b3991a4ea20f227af56ef8"
+    },
+    "instructions": "",
+    "context_schema": null
+  },
+  "pipeline": {
+    "tokenizer": {
+      "schema_id": "fixture.identity",
+      "version": "1",
+      "sha256": "debf9314796e08f188379a6935eb7b764b63b072b0b3991a4ea20f227af56ef8"
+    },
+    "preprocessing": {
+      "schema_id": "fixture.identity",
+      "version": "1",
+      "sha256": "debf9314796e08f188379a6935eb7b764b63b072b0b3991a4ea20f227af56ef8"
+    },
+    "chunking": {
+      "schema_id": "fixture.identity",
+      "version": "1",
+      "sha256": "debf9314796e08f188379a6935eb7b764b63b072b0b3991a4ea20f227af56ef8"
+    },
+    "truncation": {
+      "schema_id": "fixture.identity",
+      "version": "1",
+      "sha256": "debf9314796e08f188379a6935eb7b764b63b072b0b3991a4ea20f227af56ef8"
+    },
+    "pooling": {
+      "schema_id": "fixture.pooling",
+      "version": "1",
+      "sha256": "06914f879d341dd20dc4b1460c62fa8ca2f945c802216a361cfb85d68fb4d601"
+    }
+  },
+  "space": {
+    "dimensions": 16,
+    "dtype": "float32-le",
+    "normalization": "none",
+    "metric": "dot"
+  },
+  "applicability": [
+    "synthetic protocol and ranking fixtures"
+  ],
+  "limitations": [
+    "No semantic or scientific similarity claim",
+    "Runtime-pinned arithmetic; no cross-provider reproducibility claim"
+  ],
+  "determinism": "runtime_pinned"
+}

@@ -1,0 +1,113 @@
+{
+  "wire_version": "1",
+  "request": {
+    "wire_version": "1",
+    "encoding_id": "encode-1",
+    "profile": {
+      "scope": {
+        "tenant_id": "fixture",
+        "project_id": "representations"
+      },
+      "profile_id": "fixture.utf8-histogram",
+      "version": "1",
+      "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+    },
+    "source": {
+      "source": {
+        "scope": {
+          "tenant_id": "fixture",
+          "project_id": "representations"
+        },
+        "source_id": "source",
+        "revision_id": "r1",
+        "raw": {
+          "artifact_id": "raw",
+          "scope": {
+            "tenant_id": "fixture",
+            "project_id": "representations"
+          },
+          "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+          "media_type": "application/octet-stream",
+          "schema_ref": {
+            "schema_id": "fixture.bytes",
+            "version": "1",
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          },
+          "size_bytes": 4
+        }
+      },
+      "unit": "byte",
+      "start": 0,
+      "end": 4,
+      "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+    }
+  },
+  "actor_id": "fixture",
+  "outcome": {
+    "state": "published",
+    "binding": {
+      "wire_version": "1",
+      "reference": {
+        "scope": {
+          "tenant_id": "fixture",
+          "project_id": "representations"
+        },
+        "binding_id": "binding-1",
+        "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+      },
+      "profile": {
+        "scope": {
+          "tenant_id": "fixture",
+          "project_id": "representations"
+        },
+        "profile_id": "fixture.utf8-histogram",
+        "version": "1",
+        "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+      },
+      "source": {
+        "source": {
+          "scope": {
+            "tenant_id": "fixture",
+            "project_id": "representations"
+          },
+          "source_id": "source",
+          "revision_id": "r1",
+          "raw": {
+            "artifact_id": "raw",
+            "scope": {
+              "tenant_id": "fixture",
+              "project_id": "representations"
+            },
+            "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+            "media_type": "application/octet-stream",
+            "schema_ref": {
+              "schema_id": "fixture.bytes",
+              "version": "1",
+              "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+            },
+            "size_bytes": 4
+          }
+        },
+        "unit": "byte",
+        "start": 0,
+        "end": 4,
+        "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+      },
+      "vector": {
+        "artifact_id": "vector",
+        "scope": {
+          "tenant_id": "fixture",
+          "project_id": "representations"
+        },
+        "sha256": "005260b0ff33ac696312818bb06b89ec7c3943dedaef8663ec1522ecdd8e82a9",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "representations.vector",
+          "version": "1",
+          "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+        },
+        "size_bytes": 594
+      }
+    }
+  }
+}

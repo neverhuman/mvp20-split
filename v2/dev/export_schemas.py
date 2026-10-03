@@ -9,6 +9,7 @@ import amphora_contracts_artifacts as artifact_contracts
 import amphora_contracts_evidence as evidence_contracts
 import amphora_contracts_graph_runtime as graph_runtime_contracts
 import amphora_contracts_knowledge as knowledge_contracts
+import amphora_contracts_representations as representation_contracts
 import amphora_contracts_research as research_contracts
 import amphora_contracts_runtime as runtime_contracts
 import amphora_contracts_solver_fixture as solver_fixture_contracts
@@ -66,6 +67,17 @@ MODELS_V4 = {
     "campaigns.artifact-materialize": ArtifactMaterializeV4,
     "campaigns.binding-primitive": BindingPrimitiveDescriptor,
 }
+
+for name, model in {
+    "profile": representation_contracts.EncodingProfile,
+    "profile-ref": representation_contracts.EncodingProfileRef,
+    "encode-source": representation_contracts.EncodeSourceRequest,
+    "vector": representation_contracts.RepresentationVector,
+    "binding-ref": representation_contracts.RepresentationBindingRef,
+    "binding": representation_contracts.RepresentationBinding,
+    "encoding-status": representation_contracts.EncodingStatus,
+}.items():
+    MODELS["representations." + name] = model
 
 for name, model in {
     "vocabulary": knowledge_contracts.DomainVocabulary,

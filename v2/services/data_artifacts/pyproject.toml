@@ -1,8 +1,9 @@
 [project]
 name = "amphora-data-artifacts"
-version = "0.12.0"
+version = "0.13.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
+    "amphora-contracts-representations==0.1.0",
     "pydantic>=2.11,<3",
     "jsonschema[format-nongpl]>=4.25,<5",
     "sqlalchemy>=2,<3",
@@ -28,9 +29,10 @@ build-backend = "hatchling.build"
 packages = ["src/amphora_data_artifacts"]
 
 [tool.amphora]
-public-imports = ["amphora-contracts-research", "amphora-contracts-evidence", "amphora-contracts-commands", "amphora-contracts-core", "amphora-contracts-artifacts"]
+public-imports = ["amphora-contracts-representations", "amphora-contracts-research", "amphora-contracts-evidence", "amphora-contracts-commands", "amphora-contracts-core", "amphora-contracts-artifacts"]
 
 [tool.uv.sources]
+amphora-contracts-representations = { path = "../../contracts/representations", editable = true }
 amphora-contracts-research = { path = "../../contracts/research", editable = true }
 amphora-contracts-evidence = { path = "../../contracts/evidence", editable = true }
 amphora-contracts-commands = { path = "../../contracts/commands", editable = true }

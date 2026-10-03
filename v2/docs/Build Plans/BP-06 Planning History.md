@@ -1,5 +1,13 @@
 # BP-06 Planning History
 
+## BP-06.05/B1.02 representation contracts complete - 2026-10-03 13:32:03
+
+Data0.13.0 consumes new public representations0.1.0. Complete profile components, scoped references, source-span requests, hex vector documents, binding/status projections and explicit Data mappings pass103 source/103 independent-wheel tests.397 statements/24 branches fully covered;14 dev tests, lint and boundaries pass.420 schemas preserve all406 predecessor bytes. Pending/published wire shape and semantic scope/profile/vector checks remain distinct; no new API/cache/rights implementation. Seven examples are synthetic, with placeholder binding identity. B1=33.33%, Build11.11%, child8.33%, parent68.06%; gates0/4 and16/24. B1.03 active.
+
+Rotated MBT checkpoints:
+
+| 2026-10-03 00:53:51 | BP-06.04/B1.05 complete; child15.63%, parent52.60%; B1.06 active | [Scientific stores](../Audits/Evidence/BP-06-Research/Scientific_Revision_Stores.json);552 source/552 installed,14 dev; PostgreSQL replay/links/grants |
+
 ## BP-06.05/B1.01 representation identities complete - 2026-10-03 13:18:06
 
 Data0.12.0 adds focused immutable profile/input/work/vector objects and the synthetic byte-histogram encoder.64 source and64 final independent-wheel tests pass;236 statements/22 branches fully covered. Existing Data regressions initially produced340/342 source and341/342 installed passes, with peer startup timeouts. Measured25s imports exceeded the15s harness; test-only readiness now60s. All6 affected acquisition/process scenarios pass from source and final wheel; no production timeout or crash assertion changed.14 dev tests,406 unchanged schemas and dependency boundaries pass. Final wheel excludes peer implementations. Evidence preserves failed runs separately; formatting-only wheel differences are explicit. No cache/API/retrieval/scientific claim. B1=16.67%, Build5.56%, child4.17%, parent67.36%; closed gates0/4 and16/24. B1.02 is active.

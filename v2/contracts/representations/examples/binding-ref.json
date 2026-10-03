@@ -1,0 +1,8 @@
+{
+  "scope": {
+    "tenant_id": "fixture",
+    "project_id": "representations"
+  },
+  "binding_id": "binding-1",
+  "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+}

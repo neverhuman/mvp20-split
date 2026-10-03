@@ -172,5 +172,11 @@
     "coverage_sources": [
       "services/knowledge/src/amphora_knowledge"
     ]
+  },
+  "representations": {
+    "tests": "contracts/representations/tests",
+    "coverage_sources": [
+      "contracts/representations/src/amphora_contracts_representations"
+    ]
   }
 }

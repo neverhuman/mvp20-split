@@ -1,0 +1,18 @@
+{
+  "wire_version": "1",
+  "profile": {
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "representations"
+    },
+    "profile_id": "fixture.utf8-histogram",
+    "version": "1",
+    "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+  },
+  "input_sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+  "context_sha256": null,
+  "dimensions": 16,
+  "dtype": "float32-le",
+  "payload_hex": "00000000000000400000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "payload_sha256": "b2632083b1a374f46c0d1b794a4be1d20101f7e94568b6ffe9cecd0b6b2db79b"
+}

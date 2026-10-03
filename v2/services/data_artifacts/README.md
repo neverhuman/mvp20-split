@@ -61,3 +61,5 @@ BP-06.04/B1.06 compatibility release0.11.7 updates exact public contract depende
 BP-06.05/B1.01 release0.12.0 adds the private pure [representation domain](src/amphora_data_artifacts/representations/README.md): complete profiles, scoped work identity, canonical finite vectors and a deterministic synthetic encoder. Public contracts, APIs and artifact_0007 are unchanged. Cache storage, source bindings and retrieval remain later milestones.
 
 Acquisition recovery/live-observation harness startup permits 60 seconds after measured mapped-workspace cold imports of 25.33s (editable) and 25.09s (independent wheel). This changes only test host readiness budgets; operation deadlines, crash barriers, immutable-replay assertions and production timeouts are unchanged.
+
+BP-06.05/B1.02 release0.13.0 consumes public representation contracts0.1.0 and adds explicit profile/vector wire mappings. Internal profile, scope, byte and digest consistency remain Data-owned. No representation API, persistence migration or source binding is implemented by this contract milestone.

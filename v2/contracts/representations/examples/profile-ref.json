@@ -1,0 +1,9 @@
+{
+  "scope": {
+    "tenant_id": "fixture",
+    "project_id": "representations"
+  },
+  "profile_id": "fixture.utf8-histogram",
+  "version": "1",
+  "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+}
