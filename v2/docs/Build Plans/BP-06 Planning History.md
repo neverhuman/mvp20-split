@@ -1,5 +1,13 @@
 # BP-06 Planning History
 
+## BP-06.04/B2.03c correction views/impacts complete - 2026-10-03 05:18:56
+
+Research0.29.0/contracts0.13.0/research_0012;808 source/808 installed and119 compatibility/dev tests pass. One earlier actual-HTTP opt-in skipped in each suite; not a new integration claim.21 focused cases include7 owner tests covering83 statements/14 branches100%.402 schemas preserve392 predecessor bytes.616 retained eligibility decisions captured before migration now have exact material-state links with unchanged decision bytes. Migration locks writes through backfill/trigger installation; invoker AFTER INSERT trigger maintains every subsequent decision transaction. UPDATE/DELETE denied; forced post-trigger failure rolls back both record and index. Exact before/after correction views preserve historical transitions, unknown/first revisions are explicit, and impact queries use scoped exact references and digest-checked cursors. Initial read-only Alembic-head probe correctly failed under service role, then succeeded under owner migrator. No new HTTP/scientific/global-consumer claim. B2.03 complete;B2=75%,Build58.33%,child43.75%,parent57.29%; gates1/4 and13/24. B2.04a active, with three equal scoped slices a/b/c.
+
+Rotated MBT checkpoints:
+
+| 2026-10-02 21:09:13 | Owner chose future-campaign-only corrections; B2.01 active; progress unchanged | [Implementation](BP-06/BP-06.03%20Receipt%20correction%20implementation.md); active pins preserved |
+
 ## BP-06.04/B2.03b durable interpretation complete - 2026-10-03 05:01:56
 
 Research0.28.0/contracts0.12.0; research_0011 adds six append-only intent/result/dependency tables.728 source/728 installed and14 dev tests pass;34 focused tests cover292 statements/32 branches100%.392 schemas unchanged. Pin actor/full config/request before peer work; exact stored observations/experiments plus report/protocol/sample/material provenance prepare complete dependencies. Atomic result/index writes reject same-reference forgery and roll back at every injected insertion failure. Original pending pins survive a later correction; later interpretation explicitly selects revised observation and retains low-accuracy focus. Unknown material context is not a verified dependency. Application UPDATE/DELETE denied. Installed/replacement-object evidence does not claim HTTP source authentication or process-barrier crashes. B2.03a/b100%,c0%;B2=66.67%,Build55.56%,child41.67%,parent56.94%; gates1/4 and13/24 unchanged. B2.03c active.

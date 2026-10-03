@@ -130,6 +130,13 @@ from .scientific_api import (
     ScientificPublicationStatus,
     ScientificResultSelection,
 )
+from .scientific_corrections import (
+    InterpretationImpactPage,
+    InterpretationImpactRequest,
+    MaterialStateCorrectionView,
+    MaterialStateImpactRequest,
+    ObservationCorrectionView,
+)
 from .scientific_decisions import (
     DecisionConsumerPage,
     EligibilityDecision,
@@ -202,3 +209,5 @@ __all__ += ["synthetic_scientific_report_schema", "synthetic_scientific_report_s
 
 
 __all__ += ['ConversionRuleRecord', 'ConversionCatalogRecord', 'ObservationUseRequirements', 'ObservationUsePolicyRecord', 'InterpretationProfileRef', 'NormalizationProfile', 'ObservationUseProfile', 'NormalizationTargetRecord', 'NormalizeObservationRequest', 'AssessObservationUseRequest', 'NormalizedMeasurementRecord', 'InterpretationMatchRecord', 'ObservationUseReviewRecord', 'InterpretationRef', 'NormalizationProjection', 'ObservationUseProjection']
+
+__all__ += ['ObservationCorrectionView', 'MaterialStateCorrectionView', 'MaterialStateImpactRequest', 'InterpretationImpactRequest', 'InterpretationImpactPage']

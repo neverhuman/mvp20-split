@@ -1,0 +1,56 @@
+{
+  "wire_version": "1",
+  "policy": "future_campaigns_only",
+  "before": {
+    "wire_version": "1",
+    "reference": {
+      "scope": {
+        "tenant_id": "fixture",
+        "project_id": "materials"
+      },
+      "material_state_id": "state",
+      "revision": 1
+    },
+    "candidate": {
+      "scope": {
+        "tenant_id": "fixture",
+        "project_id": "materials"
+      },
+      "candidate_id": "nominal-design",
+      "revision": 1
+    },
+    "supersedes": null,
+    "preparation": [],
+    "features": []
+  },
+  "after": {
+    "wire_version": "1",
+    "reference": {
+      "scope": {
+        "tenant_id": "fixture",
+        "project_id": "materials"
+      },
+      "material_state_id": "state",
+      "revision": 2
+    },
+    "candidate": {
+      "scope": {
+        "tenant_id": "fixture",
+        "project_id": "materials"
+      },
+      "candidate_id": "nominal-design",
+      "revision": 1
+    },
+    "supersedes": {
+      "scope": {
+        "tenant_id": "fixture",
+        "project_id": "materials"
+      },
+      "material_state_id": "state",
+      "revision": 1
+    },
+    "preparation": [],
+    "features": []
+  },
+  "changed_fields": []
+}

@@ -1,9 +1,9 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-03 05:01:56` (America/Chicago).
+- Last refreshed: `2026-10-03 05:18:56` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.04/B2.03c correction views/material impacts after durable interpretations; parent56.94%,13/24 closed gates.
+- Active focus: BP-06.04/B2.04a authenticated interpretations after exact correction/impact proof; parent57.29%,13/24 closed gates.
 - Next gate: explicit normalization and future-only correction transitions. BP-06.03 aligned evidence is in drift history; richer scientific-quality UI remains SQ-01.
 
 ## Active Findings
@@ -29,3 +29,5 @@ Use [Development Process](../Development_Process.md) and the [audit template](..
 - `2026-10-03 04:47:00`: B2.03a pure interpretation boundary verified by [evidence](Evidence/BP-06-Research/Interpretation_Contracts.json). Original evidence and per-action usability/focus preserved; all376 predecessor schemas unchanged. Complete dependency preparation/durability remains B2.03b, authenticated routes B2.04 and quality UI SQ-01. No observed blocking drift in the completed slice.
 
 - `2026-10-03 05:01:56`: [B2.03b storage](Evidence/BP-06-Research/Interpretation_Storage.json) verifies original pending pins survive correction and completed records stay immutable. Six research_0011 tables, exact owned inputs and atomic dependency indexes align with future-campaign-only policy. Current source authentication remains B2.04; correction views/material decision impact backfill is active B2.03c.
+
+- `2026-10-03 05:18:56`: [B2.03c correction/impact evidence](Evidence/BP-06-Research/Correction_Views_Impacts.json) closes the owned material-dependency indexing gap:616 prior decisions preserved/backfilled, atomic trigger for new writes, exact read-only correction views and scoped pages. Current source authorization and public routes remain B2.04; no active invalidation or global discovery added.

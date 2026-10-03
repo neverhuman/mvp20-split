@@ -47,3 +47,5 @@ B1.08d actual hosted checkpoint `2026-10-03 03:53:36`:scientific_api owns separa
 [Action-local use policy](quality/README.md) implements B2.02 per-observation use, coverage/focus separation and explicit optional normalization. Sibling corrections.py retains immediate old/new observations under future-only policy. Neither pure module writes records or repins campaigns; B2.03/.04 own durable/authenticated integration.
 
 Research0.27.0: [interpretation](interpretation/README.md) owns reviewed profile reconstruction, exact reference-only binding and original-plus-derived public projections. Its pure builders preserve next-campaign focus separately from action eligibility; durable/authenticated integration remains B2.03b/B2.04.
+
+Research0.29.0: correction_views.py exposes exact committed successor/immediate-predecessor ObservationCorrectionView with original values, changed fields and future_campaigns_only. An absent successor returns None; an initial revision is explicitly not a correction. Reads do not choose a current head, author revisions, discover global consumers or repin campaigns. Tests/observations/test_correction_views.py owns this boundary.

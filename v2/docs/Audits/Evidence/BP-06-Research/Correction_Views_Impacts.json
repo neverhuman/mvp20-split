@@ -1,0 +1,52 @@
+{
+  "timestamp_local": "2026-10-03 05:18:56",
+  "milestone": "BP-06.04/B2.03c",
+  "research_version": "0.29.0",
+  "contracts_version": "0.13.0",
+  "migration": "research_0012",
+  "verification": {
+    "source_tests": 808,
+    "installed_tests": 808,
+    "skipped_each": 1,
+    "skip": "Earlier actual scientific HTTP replacement requires separate explicit peer environments; B2.04 owns new actual HTTP transition proof",
+    "compatibility_dev_tests": 119,
+    "focused_contract_tests": 14,
+    "focused_owner_tests": 7,
+    "coverage": {
+      "covered_lines": 83,
+      "num_statements": 83,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100",
+      "num_branches": 14,
+      "num_partial_branches": 0,
+      "covered_branches": 14,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    },
+    "schemas": 402,
+    "predecessor_schemas_preserved": 392,
+    "preexisting_material_decisions_backfilled_and_bytes_preserved": 616
+  },
+  "cases": [
+    "exact_immediate_correction_views",
+    "older_transition_not_latest",
+    "missing_and_initial_revisions",
+    "scoped_exact_material_dependencies",
+    "artifact_full_identity_and_observation_state_revision_indexes",
+    "bounded_pages_and_digest_checked_cursors",
+    "forward_backfill_without_history_rewrite",
+    "atomic_trigger_index_rollback",
+    "append_only_grants"
+  ],
+  "limits": [
+    "No authenticated new routes yet; B2.04 active",
+    "Known explicit dependencies only, no global consumers",
+    "Append-only pages are not concurrent snapshots",
+    "Future campaigns only, no active pin mutation or scientific acceptance"
+  ]
+}

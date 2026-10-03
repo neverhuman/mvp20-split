@@ -1,6 +1,6 @@
 # Observation interpretation boundary
 
-Design status: BP-06.04/B2.03b durable interpretation implemented; authenticated API remains B2.04. Research0.28.0/contracts0.12.0. Owner architecture: [experiments](../../../../../../docs/Architecture/Research/Experiments.md).
+Design status: BP-06.04/B2.03 durable interpretation and impact reads implemented; authenticated API remains B2.04. Research0.29.0/contracts0.13.0. Owner architecture: [experiments](../../../../../../docs/Architecture/Research/Experiments.md).
 
 This private Research module reconstructs reviewed conversion/action-use profiles, binds reference-only requests and computes immutable content-addressed projections. It imports public core/research DTOs and private Research observation/experiment objects. Other services use the public contracts; no private cross-service imports or shared database authority exist.
 
@@ -23,3 +23,5 @@ Tests belong in `services/research/tests/observations/interpretation`; `dev/run_
 Missing owned input or failed authentication leaves pending operational work, not an unresolved scientific result. A computed unknown conversion may complete as unresolved. Completed begin/read retries require original actor/configuration and can return stored history offline. Source rights are not renewed by history reads. Corrections appended after acceptance do not change pinned inputs, including work not yet completed. Later jobs may explicitly select corrected revisions. No SQL transaction spans Data calls; the store itself has no peer client.
 
 Tests include actual PostgreSQL concurrency, atomic rollback at every result/index insertion, original actor/configuration conflicts, same-reference forged content rejection, source omission, complete material evidence dependencies, absent material context, original pin after correction, exact replay and role-based UPDATE/DELETE denial. These are owner storage proofs; actual HTTP source authentication and process-barrier replacement remain B2.04/B3/V1.
+
+`index.py` exposes explicit known dependencies by exact Artifact bytes, observation revision or verified material-state revision. Pages hold at most128 InterpretationRef values; cursor scope/id/digest is checked against an actual committed result. C-locale kind/id ordering gives deterministic continuation, not a snapshot of concurrent additions. New earlier-sort entries need a fresh scan. This read-only index has no current-head selection, consumer discovery, source-rights renewal or active campaign effects. InterpretationImpactRequest/Page are separate from scientific decision indexes. Tests/observations/interpretation/test_index.py prove exact revisions, full Artifact identity, paging, scope and cursor rejection.

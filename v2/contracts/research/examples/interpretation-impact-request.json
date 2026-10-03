@@ -1,0 +1,13 @@
+{
+  "wire_version": "1",
+  "source": {
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "materials"
+    },
+    "observation_id": "result",
+    "revision": 1
+  },
+  "after": null,
+  "limit": 128
+}
