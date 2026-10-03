@@ -1,8 +1,8 @@
 # Experiments and Feedback
 
-- Design status: detailed proposed contract; implementation and scientific acceptance pending
+- Design status: detailed target contract; bounded synthetic owner implementation verified, physical/scientific acceptance pending
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
-- Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
+- Last reviewed: `2026-10-03 12:28:18` (America/Chicago)
 - Parent: [Domain overview](Research_Architecture.md)
 - Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#lab-in-the-loop-optimization)
 
@@ -58,3 +58,5 @@ A corrected concentration arrives after population selection. Retain the old sel
 [Acquisition Design](../Requirements/Data_Sources_and_Acquisition.md) governs transport/artifacts; [Tool Execution](../Requirements/Scientific_Tools_and_Graph_Execution.md) governs waits and handles. Remaining decisions: LIMS/CRO protocol adapters, method-specific minimum metadata and completeness/control policies. No default statistical exclusion or interpretation rule is implied.
 
 Initial BP-06.04 scope uses explicitly configured synthetic report/eligibility policies. Weak or questionable evidence remains visible and may support exploratory branches; only an explicit action prerequisite blocks that dependent action. Rich scientific-quality views and next-campaign focus are SQ-01, not a claim of existing UI implementation.
+
+Implementation boundary: [Research module directory](../../../services/research/README.md) describes the implemented storage, authenticated synthetic returns, interpretation/correction APIs and recovery. Physical submission/custody, real assay adapters, promotion and feedback dispatch in the broader design above remain separate capabilities; the synthetic owner does not claim them.

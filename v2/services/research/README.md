@@ -1,7 +1,7 @@
 # Research Service
 
-- Status: BP-06.01 closed; BP-06.03 assessment/publication/correction boundaries implemented. Actual Runtime receipt acceptance and partial exploratory output verified; BP-06.03 recovery/closeout accepted; BP-06.04 has pure scientific domain objects, synthetic synthesis/eligibility policies and explicit public mappings; separate scientific revision storage is implemented; authenticated synthetic report resolution is implemented; atomic intake and immutable eligibility/synthesis decision/dependency storage are implemented; scientific Artifact publication is implemented; authenticated scientific input orchestration is verified; optional scientific APIs are verified under B1.08c.
-- Package: `amphora-research` 0.26.0; exact dependencies belong to pyproject.toml, uv.lock and the generated package inventory.
+- Status: BP-06.01/.03 are closed. BP-06.04 scientific storage, authenticated intake, exact normalization, per-action interpretation, immutable corrections/impacts and Artifact publication are implemented and verified. Independent rebuild/replacement and process recovery pass; scoped closeout is recorded in the BP-06.04 audit.
+- Package: `amphora-research` 0.31.0; Research contracts0.14.0 and migration research_0012. Exact dependencies belong to pyproject.toml, uv.lock and the generated package inventory.
 - Design: [Research architecture](../../docs/Architecture/Research/Research_Architecture.md).
 
 Research owns candidate/sample/question/evidence-need identities and purpose-bound evidence sufficiency. It does not own Artifact bytes, Knowledge assertions, model execution or campaign acceptance. Dependencies are public contracts and the tool-protocol SDK plus Pydantic/FastAPI/Uvicorn and SQLAlchemy/psycopg/Alembic. No peer implementation imports, peer SQL or shared ORM.
@@ -18,6 +18,10 @@ Research owns candidate/sample/question/evidence-need identities and purpose-bou
 | [Assessment](src/amphora_research/assessment/README.md) | Reviewed profiles, authenticated public-peer resolution, exact applicability, explicit gaps/conflicts and immutable decisions |
 | [Publication](src/amphora_research/publication/README.md) | Reviewed payload/lineage, fenced durable recovery, actual Data publication and atomic synthetic receipt |
 | [Scientific API](src/amphora_research/scientific_api/README.md) | Reviewed input contracts and full-profile binding; authenticated input intents and separately granted optional scientific routes |
+| [Normalization](src/amphora_research/observations/normalization/README.md) | Exact directed conversions with preserved originals; no inferred unit ontology |
+| [Observation quality](src/amphora_research/observations/quality/README.md) | Per-action requirements, independent focus and explicit return coverage |
+| [Interpretation](src/amphora_research/observations/interpretation/README.md) | Complete policy/input pins, immutable derived projections and dependency indexes |
+| [Interpretation API](src/amphora_research/interpretation_api/README.md) | Fresh authenticated dependency reads, separate grants and offline history |
 | [Scientific publication](src/amphora_research/scientific_publication/README.md) | Immutable lab/eligibility/synthesis Artifact output and fenced recovery; no DomainReceipt authority |
 | [Corrections](src/amphora_research/corrections/README.md) | Append-only owner correction chains, exact/head selection and future-campaign-only effects |
 | [Transport](src/amphora_research/transport/README.md) | Separately granted authenticated APIs and explicit optional assessment hosting |
@@ -26,7 +30,7 @@ Default hosting exposes identity/declaration reads. The optional reviewed assess
 
 Research migrations0001 through0010 apply forward only, under the owner migrator. Runtime serving checks tables and never migrates. Service credentials have narrowly scoped grants; immutable assessment/correction histories have SELECT/INSERT only. Use config.example.json for identity hosting and config.assessment.example.json for optional synthetic assessment hosting, with real environment credentials and pre-established exact artifact/schema references. No default credential or external binding is supplied.
 
-An assessment distinguishes answered, sufficient for a declared synthetic decision, and scientifically established; the last is always false in this profile. Unknown, contradictory, opinion-only and wrong-context evidence remain explicit. Campaign execution may retain useful context and use declared partial paths without turning an abstention into accepted evidence. Rich quality visualization and next-campaign proposals remain SQ-01/BP-07.03. Laboratory/material-state/route-specific eligibility remains BP-06.04.
+An assessment distinguishes answered, sufficient for a declared synthetic decision, and scientifically established; the last is always false in this profile. Unknown, contradictory, opinion-only and wrong-context evidence remain explicit. Campaign execution may retain useful context and use declared partial paths without turning an abstention into accepted evidence. Rich quality visualization and next-campaign proposals remain SQ-01/BP-07.03. Synthetic laboratory/material-state/route-specific eligibility is implemented; real scientific evaluators and physical laboratory adapters remain later capabilities.
 
 Module-owned tests live under tests/identity, persistence, assessment, publication, corrections, observations, material_state, experiments, synthesis, eligibility and api. Select with dev/run_tests.py --module research --area <area>; PostgreSQL requires AMPHORA_TEST_POSTGRES=1 and serial execution. Scripted peers prove client behavior only. test_actual_resolution.py uses separately hosted Data/Knowledge/Research and optional Runtime; private migrations/seeding stay inside their owner's process. dev/verify_research_assessment.py independently installs Research and rejects peer implementation imports. Runtime/partial/fault helpers live under Runtime's owned acceptance folder.
 
@@ -34,6 +38,6 @@ Module-owned tests live under tests/identity, persistence, assessment, publicati
 
 Optional science hosting is documented in the scientific API module. config.science.example.json demonstrates read-only history configuration with no active profiles. New routes have separate grants and Artifact-only publication; actual independently installed HTTP/replacement is verified under BP-06.04/B1.08d.
 
-B2.01 adds pure explicit exact unit-normalization objects under observations/normalization; no normalization API or scientific interpretation is implied. See the owning module README for preserved evidence and unresolved-value behavior.
+Explicit directed conversion catalogs preserve original decimal values, units, censoring, uncertainty and series order. Unknown conversions remain unresolved. Durable interpretation pins the entire reviewed profile, actor and exact input revisions before fresh Data access; completed results replay offline.
 
-B2.02 adds pure per-action observation-use policies and immediate observation/material correction objects. Qualification, identity, coverage and scientific truth remain separate; new durable projections/API integration are pending B2.03/.04.
+Weak and contradictory evidence remains visible for exploratory use and next-campaign focus. Only explicit prerequisites block a named action. Correction views and known dependent indexes preserve original pending pins and committed history; no global consumer discovery or scientific truth is inferred. The separately granted interpretation API exposes normalization, observation-use and impact/correction reads.

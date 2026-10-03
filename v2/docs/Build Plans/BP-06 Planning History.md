@@ -601,3 +601,9 @@ Fresh Research0.31.0 closure excludes peer implementations;919 installed tests p
 Fresh installed cutover2tests83.27s; scientific publisher9actual barriers121.26s. Initial96.04s failure was wrong actor for command-history lookup; corrected test checks originalpublisher andknownbegin before absence. All old Artifact/command identities preserved except explicit uncertainstream ordinal changes; offline replay verified. V1=66.67%,child91.67%,parent65.28%,gates3/4 and15/24; V1.03 next.
 
 | 2026-10-02 23:32:30 | BP-06.04/B1.01 complete; child3.13%, parent50.52%; B1.02 active | [Measurement values](../Audits/Evidence/BP-06-Research/Measurement_Values.json);97 source/97 installed,143 statements/48 branches |
+
+## 2026-10-03 12:31:31 - BP-06.04 accepted and archived
+
+Scoped architecture audit aligned; README current-state contradictions repaired. B1-B3/V1 complete100%, child4/4; parent16/24 (66.67%). Independent build919 tests, separate cutover/recovery/context and defensive evidence retained with limits. Canonical child archived and links repaired. BP-06.05 activation next; no owner decision required.
+
+| 2026-10-02 23:58:49 | BP-06.04/B1.02 complete; child6.25%, parent51.04%; B1.03 active | [Context objects](../Audits/Evidence/BP-06-Research/Material_Experiment_Observation.json);236 source/236 installed,551 statements/110 branches |

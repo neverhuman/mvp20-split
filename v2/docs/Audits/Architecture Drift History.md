@@ -101,3 +101,29 @@ V1 passed final-source independent Studio/Runtime replacement, scopee222d4cf3260
 - 2026-10-01 21:01:42: [BP-06.02 closeout](BP-06.02_Knowledge_Replay_Closeout.md) aligned typed authoring/replay, rebuild publication and installed replacement; stale module status wording repaired. Follow-up: none within closed scope.
 
 `2026-10-02 23:09:37`: [BP-06.03 closeout](BP-06.03_Reasoning_Receipts_Closeout.md) aligned: reasoning/assessment, future-only correction chains, real Runtime/Artifact integration, explicit partial progress, independent replacement and both publication process-death gates. No blocking finding or follow-up in closed scope; laboratory/representation/feedback/UI/deployment remain named plans.
+
+## 2026-10-03 12:32:42 - BP-06.04 aligned closeout
+
+[Scoped audit](BP-06.04_Laboratory_Eligibility_Closeout.md) closes the bounded laboratory/interpretation owner. No follow-up within completed scope; successor scientific/UI/feedback/deployment boundaries remain explicit.
+
+- `2026-10-03 04:47:00`: B2.03a pure interpretation boundary verified by [evidence](Evidence/BP-06-Research/Interpretation_Contracts.json). Original evidence and per-action usability/focus preserved; all376 predecessor schemas unchanged. Complete dependency preparation/durability remains B2.03b, authenticated routes B2.04 and quality UI SQ-01. No observed blocking drift in the completed slice.
+
+- `2026-10-03 05:01:56`: [B2.03b storage](Evidence/BP-06-Research/Interpretation_Storage.json) verifies original pending pins survive correction and completed records stay immutable. Six research_0011 tables, exact owned inputs and atomic dependency indexes align with future-campaign-only policy. Current source authentication remains B2.04; correction views/material decision impact backfill is active B2.03c.
+
+- `2026-10-03 05:18:56`: [B2.03c correction/impact evidence](Evidence/BP-06-Research/Correction_Views_Impacts.json) closes the owned material-dependency indexing gap:616 prior decisions preserved/backfilled, atomic trigger for new writes, exact read-only correction views and scoped pages. Current source authorization and public routes remain B2.04; no active invalidation or global discovery added.
+
+- `2026-10-03 05:30:56`: [B2.04a workflow](Evidence/BP-06-Research/Interpretation_Workflow.json) preserves original pending pins and distinguishes source failures from computed unresolved science. Fresh bounded reads and stored-profile retry are verified with scripted readers over actual owner storage. Hosted grants/routes and independent HTTP correction proof remain b/c; no broader authority claimed.
+
+- `2026-10-03 05:46:33`: [B2.04b hosting](Evidence/BP-06-Research/Interpretation_Hosting.json) preserves old config and separates computation/history/impact grants. Exact correction views and quality focus are available through configured APIs; independent Data/Research transition/replacement proof remains c. Historical sample-identity fixture uses a fake Artifact and must be replaced with actual Data evidence for that proof; no production validation bypass authorized.
+
+- `2026-10-03 05:59:25`: [B2 actual interpretation transitions](Evidence/BP-06-Research/Interpretation_HTTP_Replacement.json) closes the new independent HTTP/replacement gap, including real sampleidentity evidence and original pending pins through correction. No blocking drift in B2 scope. MAT-context matrix, process barriers and named defensive failures remain B3; V1 owns final rebuild/audit. The earlier fixture-only sample evidence gap is resolved without relaxing authentication.
+
+- `2026-10-03 06:14:19`: [Scientific context matrix](Evidence/BP-06-Research/Scientific_Context_Matrix.json) aligns MAT-01..05 and exploratory iteration through actual peers. No blocking drift found; crash barriers remain B3.02, defensive failures B3.03, final audit V1. Fixture consumer does not establish scientific fitness implementation.
+
+- `2026-10-03 11:58:32`: [Scientific process recovery](Evidence/BP-06-Research/Scientific_Process_Recovery.json) closes the intake/interpretation actual process-interruption gap. Source/installed six-barrier matrices preserve original intent and atomic outputs/indexes. No blocking drift found; target-host power loss is unproven and remains deployment scope.
+
+- `2026-10-03 12:06:32`: [Defensive failure evidence](Evidence/BP-06-Research/Scientific_Defensive_Failures.json) closes the named B3 route/publication gaps. B1-B3 complete with no blocking production defect. V1 reconciles stale root/module documentation and verifies fresh independent replacement before archival.
+
+- `2026-10-03 12:11:37`: V1 audit identifies a remaining scientific Artifact publisher process-kill evidence gap and stale module progress descriptions. Both are assigned within V1.02/.03 before archival; no production defect inferred. Fresh independent build919 tests passes.
+
+- `2026-10-03 12:24:23`: [Replacement/recovery](Evidence/BP-06-Research/Laboratory_Replacement_Recovery.json) closes the standalone scientific Artifact publisher process-proof gap with nine actual barriers. Wrong-actor lookup in the first fixture run corrected; Data privacy behavior was valid. Stale module progress descriptions remain V1.03 before archival.
