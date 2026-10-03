@@ -63,3 +63,5 @@ BP-06.05/B1.01 release0.12.0 adds the private pure [representation domain](src/a
 Acquisition recovery/live-observation harness startup permits 60 seconds after measured mapped-workspace cold imports of 25.33s (editable) and 25.09s (independent wheel). This changes only test host readiness budgets; operation deadlines, crash barriers, immutable-replay assertions and production timeouts are unchanged.
 
 BP-06.05/B1.02 release0.13.0 consumes public representation contracts0.1.0 and adds explicit profile/vector wire mappings. Internal profile, scope, byte and digest consistency remain Data-owned. No representation API, persistence migration or source binding is implemented by this contract milestone.
+
+BP-06.05/B1.03 release0.14.0 adds the private [profile registry and computation cache](src/amphora_data_artifacts/representations/storage/README.md), with artifact_0008 and DB-clock lease/fence authority. Cached results remain internal; source bindings/publication, hosted APIs and retrieval are later milestones. Existing source/Artifact records are not rewritten. Data<=0.13.0 must not run migrations against artifact_0008.

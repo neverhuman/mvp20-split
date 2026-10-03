@@ -1,6 +1,7 @@
 # Artifact Persistence Boundary
 
 - Implemented: `artifact_0001` records, forward `artifact_0002` upload attempts/capacity, and owner-private command transactions.
+- Latest scoped addition: `artifact_0008` private representation profiles, work intents, leases and immutable computed results; B1.03 verified; later source-binding publication remains separate.
 - Design: [Physical records](../../../../../docs/Architecture/System/Persistence_Record_Design.md).
 
 `migrate.upgrade(url)` runs packaged SQL/Alembic resources as `artifact_migrator`. The explicit CLI is `python -m amphora_data_artifacts.persistence.migrate`, with `AMPHORA_ARTIFACT_MIGRATION_URL` supplied privately. Migration startup is independent of API processes. `artifacts.alembic_version` records owner history. Forward migrations preserve evidence; downgrade refuses destructive rollback.
@@ -20,3 +21,5 @@ BP-06.01 adds artifact_0004: immutable acquisition source/delivery records, sour
 BP-06.01 adds artifact_0005: immutable identity observation intents/results, exact scoped trace/hash foreign key and insert/select-only grants. Intents persist before external Research lookup; result insertion is a separate atomic transaction, with the first committed result returned on contention/replay. No transaction holds a lock across HTTP; failed lookup leaves pending intent. Neither historical table permits service-role UPDATE/DELETE.
 
 BP-06.01/B2 adds artifact_0006 rights revisions/current heads and lineage indexes. No historical rights are synthesized. Revision history is insert/select-only; heads allow only revision-column updates. Shared evidence_records helpers own deterministic record bytes and ordered advisory locks inside this service; they are not a cross-owner repository. Source/trace/policy/result commits coordinate through one scope lock for current-use fencing, without filesystem/peer I/O under locks. See [Source Rights](../source_rights/README.md).
+
+`artifact_0007` retains derived-upload declarations, finalized derivations and ordered scoped inputs. `artifact_0008` adds the separately bounded [representation registry/cache](../representations/storage/README.md). Its immutable tables use SELECT/INSERT-only grants; lease updates are restricted to ownership/fence/expiry columns. Existing catalog/source/derivation history is not rewritten. Data through0.13.0 is not a compatible migration tool for the newer schema; no automatic downgrade or startup migration is provided.

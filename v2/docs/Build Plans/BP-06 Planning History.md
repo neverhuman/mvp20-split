@@ -1,5 +1,13 @@
 # BP-06 Planning History
 
+## BP-06.05/B1.03 profile/cache storage complete - 2026-10-03 13:57:14
+
+Data0.14.0/artifact_0008 adds immutable profiles, work intents and computed results with narrowly mutable DB-clock leases.113 scoped source and391 full installed Data/representation-contract tests pass;499 statements/34 branches fully covered.14 dev tests,420 unchanged schemas, lint and boundaries pass. Four contenders yield one lease; expiry/reclaim, stale actor/token/fence rejection, exact winning replay, registry conflict/scope/grants and repeated-migration history checks pass. Initial composite FK declaration rolled back and was corrected. The failed service-role alembic snapshot is not claimed as an initial-migration checksum. Final independent wheel excludes peer implementations. Source rights, binding publication, APIs and process crash acceptance remain later. B1=50%, Build16.67%, child12.50%, parent68.75%; gates0/4 and16/24. B1.04 active.
+
+Rotated MBT checkpoints:
+
+| 2026-10-03 01:20:14 | BP-06.04/B1.06 complete; child18.75%, parent53.13%; B1.07 active | [Lab resolution](../Audits/Evidence/BP-06-Research/Lab_Report_Resolution.json);592 source/592 installed,119 compatibility/dev; actual Data auth/rights/outage |
+
 ## BP-06.05/B1.02 representation contracts complete - 2026-10-03 13:32:03
 
 Data0.13.0 consumes new public representations0.1.0. Complete profile components, scoped references, source-span requests, hex vector documents, binding/status projections and explicit Data mappings pass103 source/103 independent-wheel tests.397 statements/24 branches fully covered;14 dev tests, lint and boundaries pass.420 schemas preserve all406 predecessor bytes. Pending/published wire shape and semantic scope/profile/vector checks remain distinct; no new API/cache/rights implementation. Seven examples are synthetic, with placeholder binding identity. B1=33.33%, Build11.11%, child8.33%, parent68.06%; gates0/4 and16/24. B1.03 active.

@@ -2,7 +2,7 @@
 
 Design: [Data representations](../../../../../docs/Architecture/Data/Representations.md). Delivery: BP-06.05/B1.01-.02.
 
-This private Data module owns immutable encoding profiles, exact input/work identities, canonical vector bytes, a deterministic synthetic encoder and explicit public wire mappings. It performs no I/O and has no database, API, source authorization, cache, Artifact publication or retrieval implementation yet. Those are later milestones in the owning plan.
+The pure domain files own immutable encoding profiles, exact input/work identities, canonical vector bytes, a deterministic synthetic encoder and explicit public wire mappings. They perform no I/O. The separately bounded [storage module](storage/README.md) adds private registry/cache persistence under B1.03. There is no hosted representation API, source-binding publication or retrieval implementation yet.
 
 `RepresentationProfile` groups encoder identity, input contract, pipeline, vector space, applicability, limitations and determinism. Every descriptor field participates in its canonical sorted UTF-8 JSON digest. References use wire version 1; the runtime descriptor digest includes the interpreter version, build and platform. Compatibility requires the exact same profile and explicit shared query/document role. Equal dimensions grant no compatibility. Unsupported fixture profiles fail without fallback.
 

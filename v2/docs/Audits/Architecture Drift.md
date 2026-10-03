@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-03 13:32:03` (America/Chicago).
+- Last refreshed: `2026-10-03 13:57:14` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.05/B1.03 representation storage; child8.33%, parent68.06%,16/24 closed gates.
-- Next gate: BP-06.05 immutable profile and leased/fenced cache proof. BP-06.03 aligned evidence is in drift history; richer scientific-quality UI remains SQ-01.
+- Active focus: BP-06.05/B1.04 source publication; child12.50%, parent68.75%,16/24 closed gates.
+- Next gate: BP-06.05 source authorization and derived vector binding proof. BP-06.03 aligned evidence is in drift history; richer scientific-quality UI remains SQ-01.
 
 ## Active Findings
 
@@ -44,3 +44,5 @@ Use [Development Process](../Development_Process.md) and the [audit template](..
 B1.01 representation domain aligns with the bounded design: complete scoped identities and finite fixture vectors verified, with no persistence, rights or retrieval claim. [Evidence](Evidence/BP-06-Representations/Domain_Identities.json) retains the startup-budget repair and failed-run history; B1.02 owns public transport.
 
 B1.02 [public-contract evidence](Evidence/BP-06-Representations/Public_Contracts.json) verifies separate wire/domain roles and preserved predecessor schemas. Storage and source binding authority remain subsequent gates.
+
+B1.03 [storage evidence](Evidence/BP-06-Representations/Profile_Cache_Storage.json) verifies immutable private cache and DB-clock fencing under actual PostgreSQL. Cache results are not public Artifacts; source authority remains B1.04.
