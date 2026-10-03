@@ -1,5 +1,14 @@
 # BP-06 Planning History
 
+## BP-06.05/B2.01 verified publication complete - 2026-10-03 17:00:42
+
+Data0.22.0 independently built;37 focused source cases pass31.99s,508 full installed owner/public representation cases pass217.07s,14 dev pass14.19s. Actual Data vector bytes and PG authority tested with a named test-only projection port. Exact observed point/profile/vector comparison, same-attempt verifier barrier, revocation/takeover during I/O, uncertainty recovery, verified expiry, competing-head CAS and immutable replay after later head pass. Retrieval527 statements/34 branches fully covered. Initial wrong Core-only reference helper corrected to strict DTO validation. artifact_0011 preserves measured predecessor history; public0.2.0/430 schemas unchanged. B2.01a-d100%, B2=25%, Build41.67%, child31.25%, parent71.88%; gates1/4 and17/24. Actual Qdrant is not proven. B2.02 is decomposed into three equal bounded tasks (fixture/transport, adapter, installed actual-backend proof), all0%, a active, unchanged milestone weight.
+
+Rotated MBT checkpoints:
+
+| 2026-10-03 04:47:00 | B2.03a complete; child39.58%, parent56.60%; B2.03b active | [Interpretation contracts](../Audits/Evidence/BP-06-Research/Interpretation_Contracts.json);674 source/674 installed,119 compatibility/dev;392 schemas |
+
+
 ## BP-06.05/B2.01c durable generation state complete - 2026-10-03 16:41:32
 
 Data0.21.0 independently built;27 scoped source cases pass11.97s,488 full installed owner/public representation cases pass197.42s,14 dev pass13.94s. Forward artifact_0010 adds immutable generation/membership/attempt/event history and mutable lease cursor. Actual0009->0010 retained-history checksums unchanged. Admission resolves owned bindings/profile/current process rights; exact actor replay remains historical. Concurrent single-winner claims, expiry/takeover, stale/foreign/terminal guards and renewal expiry during actual DB-clock rights work pass. Retrieval346/348 statements19/20 branches covered; expired verified recovery remains d until actual verification exists. Public representations0.2.0/430 schemas unchanged. B2.01a-c100%, d0%; B2=18.75%, Build39.58%, child29.69%, parent71.61%; gates1/4 and17/24. d active; physical publication/verification matrix recorded, no implementation credit for design.

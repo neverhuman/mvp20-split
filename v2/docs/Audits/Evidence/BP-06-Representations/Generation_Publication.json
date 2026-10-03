@@ -1,0 +1,146 @@
+{
+  "timestamp_local": "2026-10-03 17:00:42",
+  "task": "BP-06.05/B2.01d",
+  "status": "verified",
+  "source": {
+    "passed": 37,
+    "seconds": 31.99
+  },
+  "independent_full_owner_and_public_contracts": {
+    "passed": 508,
+    "seconds": 217.07
+  },
+  "dev": {
+    "passed": 14,
+    "seconds": 14.19
+  },
+  "coverage": {
+    "scope": "retrieval",
+    "statements": 527,
+    "covered_statements": 527,
+    "branches": 34,
+    "covered_branches": 34
+  },
+  "schemas": {
+    "count": 430,
+    "unchanged": true
+  },
+  "lint_boundaries_schemas": "passed",
+  "migration": {
+    "before_revision": "artifact_0010",
+    "after_revision": "artifact_0011",
+    "before": {
+      "catalog": [
+        7437,
+        "f899195fc4aec8ceb0bc5aaff797ac46"
+      ],
+      "representation_bindings": [
+        312,
+        "e4caeff387f270b02aa545f45b3dff51"
+      ],
+      "index_generations": [
+        20,
+        "bab213431133f61043d5a1482250698a"
+      ],
+      "index_generation_bindings": [
+        20,
+        "b3c47a8a3c9776eaab3cadf1d02e56b0"
+      ],
+      "index_build_attempts": [
+        19,
+        "14784d2863a8d95dce11d44b518a85fc"
+      ],
+      "index_generation_events": [
+        48,
+        "fd6b4516d5b3df5443f095aaed28f3a7"
+      ],
+      "index_generation_cursors": [
+        20,
+        "64c9697b3ce581a840e02091c799ffd3"
+      ]
+    },
+    "after": {
+      "catalog": [
+        7437,
+        "f899195fc4aec8ceb0bc5aaff797ac46"
+      ],
+      "representation_bindings": [
+        312,
+        "e4caeff387f270b02aa545f45b3dff51"
+      ],
+      "index_generations": [
+        20,
+        "bab213431133f61043d5a1482250698a"
+      ],
+      "index_generation_bindings": [
+        20,
+        "b3c47a8a3c9776eaab3cadf1d02e56b0"
+      ],
+      "index_build_attempts": [
+        19,
+        "14784d2863a8d95dce11d44b518a85fc"
+      ],
+      "index_generation_events": [
+        48,
+        "fd6b4516d5b3df5443f095aaed28f3a7"
+      ],
+      "index_generation_cursors": [
+        20,
+        "64c9697b3ce581a840e02091c799ffd3"
+      ]
+    },
+    "unchanged": true
+  },
+  "installation": {
+    "timestamp_local": "2026-10-03 16:52:01",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-data-artifacts",
+    "forbidden_implementations": [
+      "amphora_research",
+      "amphora_knowledge",
+      "amphora_campaign_runtime"
+    ],
+    "packages": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.13",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-representations": "0.2.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-data-artifacts": "0.22.0"
+    },
+    "wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_representations-0.2.0-py3-none-any.whl": "cf9f74c2c48bcbbc4b5623766d7d96d3b07a5cb76b3cf818751a166639131ce8",
+      "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_data_artifacts-0.22.0-py3-none-any.whl": "1a92cbf0c30e64579a26ed5a48f52d8c4404fe31fbfd55463bb477e43904e8f5"
+    }
+  },
+  "authority": "Actual Data artifact reads, source rights, PostgreSQL lease/verification/head publication; test-only in-memory projection observations",
+  "oracles": [
+    "ABBA -> bins1/2 exactly2; AB -> bins1/2 exactly1",
+    "Missing/extra/duplicate/unknown points and wrong profile/vector/space rejected",
+    "Revocation and lease takeover during external I/O prevent verification",
+    "Two verifier threads with a barrier retain one proof",
+    "Competing expected-head publishers retain one winner; later head preserves original replay",
+    "Backend build/inspect timeout leaves no verification and can recover",
+    "Expired verified attempt fails even after rights revocation"
+  ],
+  "limitations": [
+    "Actual Qdrant remains B2.02",
+    "Public retrieval query and current-use response fencing remain B2.03",
+    "Abrupt process-death evidence remains B3"
+  ]
+}

@@ -45,3 +45,40 @@ def generation(ingestion):
     return SimpleNamespace(p=p, engine=e.env.engine, source=source, binding=binding, request=request,
         backend=backend, profile=profile, intents=GenerationIntents(e.env.engine, backend),
         leases=GenerationLeases(e.env.engine), ingestion=e)
+
+
+class TestProjectionPort:
+    """Test-only stored observations, never actual Qdrant or a production fallback."""
+    __test__ = False
+
+    def __init__(self, reference):
+        self.reference = reference
+        self.snapshots = {}
+        self.calls = []
+        self.after_build = lambda: None
+        self.transform = lambda snapshot: snapshot
+
+    def build(self, namespace, snapshot):
+        self.calls.append(("build", namespace))
+        self.snapshots[namespace] = snapshot
+        self.after_build()
+
+    def inspect(self, namespace):
+        self.calls.append(("inspect", namespace))
+        return self.transform(self.snapshots[namespace])
+
+
+@pytest.fixture
+def projection(generation):
+    from amphora_data_artifacts.retrieval.publication import GenerationPublication
+
+    e = generation
+    encoded = EncodeSourceRequest(wire_version="1", encoding_id="second", profile=e.request.profile,
+        source=SourceSpan(source=e.source.reference, unit="byte", start=0, end=2, sha256=hashlib.sha256(b"AB").hexdigest()))
+    binding = BindingWorkflow(e.ingestion.reads, e.ingestion.env.uploads, e.ingestion.env.storage).encode(e.p, encoded).outcome.binding
+    e.request = e.request.model_copy(update={"bindings": (e.binding.reference, binding.reference)})
+    e.backend_port = TestProjectionPort(e.backend)
+    e.publication = GenerationPublication(e.ingestion.reads, e.backend_port)
+    e.intents.prepare(e.p, e.request)
+    e.lease = e.leases.claim(e.p, "corpus", "g1")
+    return e
