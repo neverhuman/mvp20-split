@@ -2,10 +2,10 @@
 
 ## Current Checkpoint
 
-- Last refreshed: `2026-10-02 22:49:43` (America/Chicago).
-- Active: BP-06.03/V1 independent fresh Research rebuild, compatibility and closeout. B1 10/10,B2 4/4,B3 3/3 complete. Build100%,child75%,parent45.83%; gates3/4,11/24; acceptance0%.
+- Last refreshed: `2026-10-02 22:56:01` (America/Chicago).
+- Active: BP-06.03/V1.02 Research publication process-death proof. V1.01 fresh Research rebuild/cutover passed101.96s. B1 10/10,B2 4/4,B3 3/3 complete. Build100%,child83.33%,parent47.22%; gates3/4,11/24; acceptance33.33%.
 - B3.03 passed: actual installed test1 in214.38s, .test-results/runtime-domain-recovery-bounded-20261002.{json,xml}. Both owner receipt acknowledgements suppressed after real commit; Runtime replaced and exact command replay/closure verified. Real Data confirmation ACK suppressed, Runtime replaced, identical confirmation retried; Artifact bytes hash matches. Domain_Receipt_Recovery.json is portable evidence. Prior probe failures retained: wrong assumption first delivery was confirmation, then arbitrary10s one-process-per-entry retry budget. Current first-loss probe advances one delivery at a time; recovery uses normal bounded sweep. Notification sinks intentionally unconfigured; their failures are not Artifact failures.
-- Latest pushed137f5ed B3.02; B3.03 tooling/evidence/docs ready to commit/push. Then V1 fresh Research environment cutover preserving old assessment/publication/correction history; public schema/isolation checks and scoped audit. No owner question pending. Keep working across checkpoints.
+- Latest pushed53305c0 B3 complete. V1.01 independent Research replacement passed; .test-results/research-v1-replacement-20261002/manifest.json and research-replacement-acceptance-20261002.{json,xml}.14 dev tests, schema publication and production dependency checks pass. V1 units: rebuild complete1/3; publication interruptions active; compatibility/audit/archive pending. Publication README already names process-death acceptance; do not close without this proof. No owner question pending. Keep working across checkpoints.
 - Current uncommitted docs also repair Research/Knowledge root/module README stale versions/future statements; verify links when closing. No production code/schema changes in B3.
 
 - Helpers: services/campaign_runtime/tests/waits/acceptance/domain_bridge.py (public Runtime host/compile/receipt), domain_partial.py (partial output). Research actual fixture loads them by path; no Runtime private imports. Runtime compilation/migration in its interpreter only. Source test can use dev Python; installed runs require explicit Runtime peer.
