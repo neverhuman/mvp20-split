@@ -2,17 +2,17 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-06.03 closed; BP-06.04 activation audit next.
-- Last refreshed: `2026-10-02 23:07:47` (America/Chicago).
+- Status: primary_active; BP-06.03 closed; BP-06.04/Build/B1.01 active.
+- Last refreshed: `2026-10-02 23:19:36` (America/Chicago).
 - Owner/scope: Knowledge, Research and focused Data/Artifacts modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness](Planning_Readiness.md).
 - Prerequisites: completed BP-04 receipt/wait seams, BP-05 inspection and BP-01/02/03 boundaries.
 - Scoped implementation/verification completion: **50%**,12/24 delivery gates. P1/.01,P2/.02,P3/.03 are100%; P4-P6 remain0%.
-- Current task: BP-06.04 pre-activation coherence audit; no implementation child active during audit.
+- Current task: BP-06.04/B1.01 exact measurement value objects; activation audit corrected_ready.
 - Demonstrated behavior: bounded reasoning, authenticated sufficiency, immutable future-only corrections, actual Runtime receipt/retention, exploratory partial output, acknowledgement-loss recovery and independent owner replacement. Both publication owners have actual process-death evidence.
 - Blockers: none requiring owner direction. Scientific sources, assay/route engines and target-host choices remain scoped future decisions.
 - Human acceptance: no routine pause for authorized engineering; experimental validity is not inferred from software verification.
-- Next gate: activate BP-06.04 only after its scoped coherence audit.
+- Next gate: B1.01 direct measurement oracles, then B1.02 identity/context aggregates.
 
 ## Outcome and Boundaries
 

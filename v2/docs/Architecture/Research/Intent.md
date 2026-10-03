@@ -33,13 +33,13 @@ A field assertion includes value, unit/context, source revision/span, origin, un
 
 ## Lifecycle and Interaction
 
-`Draft -> extracted proposal -> needs clarification / reviewable -> signed -> superseded` describes contract revision state, not campaign execution. An amendment forks a revision from a signed parent. Validation reports affected requirements; the previous signed revision remains usable by its already-bound campaigns unless an explicit withdrawal policy applies.
+`Draft -> extracted proposal -> needs clarification / reviewable -> signed -> superseded` describes contract revision state, not campaign execution. An amendment forks a revision from a signed parent. Validation reports affected requirements; the previous signed revision remains usable by its already-bound campaigns under the approved future-campaign-only correction policy.
 
 For an unknown incumbent material, an evidence request references sample and method identities. Returned observations update a reconstruction hypothesis, not the signed recipe. Acceptance compares declared fingerprint and process criteria; incomplete characterization yields an underdetermined result. Campaign submission consumes the signed objective and accepted baseline references, and returns a run identity rather than modifying the objective.
 
 ## Failure and Boundary Example
 
-If a user corrects a concentration unit after sign-off, create a new field/envelope revision and an impact record. Do not reinterpret earlier candidate evaluations with the corrected value. If the change invalidates active work, submit a policy-bound pause/review command to Campaigns. Conflicting concurrent edits fail their base-revision precondition and return the current diff.
+If a user corrects a concentration unit after sign-off, create a new field/envelope revision and an impact record. Do not reinterpret earlier candidate evaluations with the corrected value. Flag affected points and propose reevaluation in the next campaign; a scientific correction alone does not pause or repin active work. Independent emergency/security revocation remains governed by its own policy. Conflicting concurrent edits fail their base-revision precondition and return the current diff.
 
 ## Design Basis and Open Decisions
 

@@ -9,11 +9,11 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 primary active; BP-06.03 closed; BP-07 through BP-09 queued; BP-05 closed.
-- Last refreshed: `2026-10-02 23:07:47` (America/Chicago).
+- Last refreshed: `2026-10-02 23:19:36` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P5 / BP-06 - Knowledge Evidence and Source Loop.
-- Primary active task: BP-06.04 activation coherence audit; implementation remains queued until audit.
-- Next task: BP-06.04/B1 after activation.
+- Primary active task: BP-06.04/Build/B1.01 exact measurement value objects; activation corrected_ready.
+- Next task: BP-06.04/B1.02 aggregate identity/context invariants.
 - Implementation completion: BP-06 **50%**,12/24 closed delivery gates. BP-06.01/.02/.03 closed100%; later children0%. BP-07..09 remain0%.
 - Active focus: laboratory returns/material-state/candidate eligibility boundary reconciliation.
 - Blockers: none requiring owner direction; future-only corrections and iterative-progress policy approved.
@@ -38,7 +38,9 @@ BP-06 is the sole active parent. BP-05 closed16/16; see [completed plans](Comple
 |---|---:|---:|---:|---:|---:|---:|---:|
 | [BP-06](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) | 50% (12/24) | 100% | 100% | 100% | 0% | 0% | 0% |
 
-No implementation child is active during the BP-06.04 activation audit.
+| Active canonical child | Overall | Build | Acceptance | Current task |
+|---|---:|---:|---:|---|
+| [BP-06.04](BP-06/BP-06.04%20Laboratory%20returns%20and%20candidate%20eligibility.md) | 0% | 0% | 0% | B1.01 / Exact measurement values |
 
 
 

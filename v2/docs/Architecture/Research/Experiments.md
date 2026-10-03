@@ -18,7 +18,7 @@ Data owns connectors and artifacts; Capabilities supplies analysis; Campaigns ow
 
 ## Invariants and Verification
 
-Match sample/candidate revisions. Do not turn missing or censored values into zero. Preserve failed controls and contradictions. Submission reconciliation and result-ingestion idempotency are distinct. Corrections supersede results and identify affected decisions. Verify partial/late/corrected returns, incompatible methods, waiting recovery and feedback traceable to raw files. Synthetic fixtures establish workflow behavior only.
+Match sample/candidate revisions. Do not turn missing or censored values into zero. Preserve failed controls and contradictions. Submission reconciliation and result-ingestion idempotency are distinct. Corrections supersede results for future-campaign selection and identify affected decisions without changing active pins. Verify partial/late/corrected returns, incompatible methods, waiting recovery and feedback traceable to raw files. Synthetic fixtures establish workflow behavior only.
 
 ## Component and Object Design
 
@@ -47,7 +47,7 @@ flowchart TD
 
 An illustrative lifecycle is `planned -> approved -> issued -> acknowledged -> running -> partially returned -> reviewable -> interpreted -> closed`; cancellation, failure and disputed identity are explicit branches. External status does not itself decide scientific acceptance. Expected-result policy determines when a partial batch may be interpreted.
 
-First, commit a measurement eligibility decision for a particular campaign purpose and emit a feedback proposal with exact result revisions. Campaigns applies it at a declared iteration boundary. Separately, submit an observation/claim proposal to Knowledge; its publication has an independent review/revision. Model-training requests similarly create Data work, never a direct live-model replacement.
+First, commit a measurement eligibility decision for a particular campaign purpose and emit a feedback proposal with exact result revisions. A campaign may consume a new requested return only through its existing pinned graph contract. Corrections and human amendments are proposed for a future campaign; they do not repin active work or rewrite committed fitness. Separately, submit an observation/claim proposal to Knowledge; its publication has an independent review/revision. Model-training requests similarly create Data work, never a direct live-model replacement.
 
 ## Failure and Boundary Example
 
@@ -56,3 +56,5 @@ A corrected concentration arrives after population selection. Retain the old sel
 ## Design Basis and Open Decisions
 
 [Acquisition Design](../Requirements/Data_Sources_and_Acquisition.md) governs transport/artifacts; [Tool Execution](../Requirements/Scientific_Tools_and_Graph_Execution.md) governs waits and handles. Remaining decisions: LIMS/CRO protocol adapters, method-specific minimum metadata and completeness/control policies. No default statistical exclusion or interpretation rule is implied.
+
+Initial BP-06.04 scope uses explicitly configured synthetic report/eligibility policies. Weak or questionable evidence remains visible and may support exploratory branches; only an explicit action prerequisite blocks that dependent action. Rich scientific-quality views and next-campaign focus are SQ-01, not a claim of existing UI implementation.
