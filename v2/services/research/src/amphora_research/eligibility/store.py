@@ -32,8 +32,8 @@ class EligibilityStore:
     def __init__(self, engine):
         self.journal = DecisionJournal(engine)
 
-    def assess(self, policy, claims, actor, decision_id):
-        return self.journal.publish(prepare(policy,claims,actor,decision_id),validate_links)
+    def assess(self, policy, claims, actor, decision_id, *, consumed=()):
+        return self.journal.publish(prepare(policy,claims,actor,decision_id,consumed=consumed),validate_links)
 
     def read(self, scope, reference):
         require(reference.kind == "eligibility","eligibility_decision_kind")

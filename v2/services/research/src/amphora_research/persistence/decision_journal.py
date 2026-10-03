@@ -30,25 +30,29 @@ class DecisionJournal:
             "tenant_id=:tenant AND project_id=:project AND kind=:kind AND decision_id=:id"),key).scalar_one_or_none()
 
     def publish(self, document, validate_links):
-        key,record = document.key,document.record
         with self.engine.begin() as connection:
-            self.lock(connection,key)
-            prior = self.raw(connection,key)
-            if prior is not None:
-                require(bytes(prior) == document.canonical_bytes,"immutable_scientific_decision_conflict")
-                return MODELS[key["kind"]].model_validate_json(bytes(prior))
-            validate_links(connection,record)
-            connection.execute(text("INSERT INTO research.scientific_decisions "
-                "(tenant_id,project_id,kind,decision_id,sha256,canonical_bytes) VALUES (:tenant,:project,:kind,:id,:sha,:body)"),
-                key|{"sha":record.reference.sha256,"body":document.canonical_bytes})
-            for source in record.sources:
-                connection.execute(text("INSERT INTO research.decision_sources "
-                    "(tenant_id,project_id,kind,decision_id,artifact_id,reference_bytes) VALUES (:tenant,:project,:kind,:id,:artifact,:body)"),
-                    key|{"artifact":source.artifact_id,"body":canonical(source.model_dump(mode="json"))})
-            for observation in getattr(record,"observations",()):
-                connection.execute(text("INSERT INTO research.decision_observations "
-                    "(tenant_id,project_id,kind,decision_id,observation_id,revision) VALUES (:tenant,:project,:kind,:id,:observation,:revision)"),
-                    key|{"observation":observation.observation_id,"revision":observation.revision})
+            return self.publish_prepared(connection,document,validate_links)
+
+    def publish_prepared(self, connection, document, validate_links):
+        """Compose a prepared owner-policy result into an existing Research transaction."""
+        key,record = document.key,document.record
+        self.lock(connection,key)
+        prior = self.raw(connection,key)
+        if prior is not None:
+            require(bytes(prior) == document.canonical_bytes,"immutable_scientific_decision_conflict")
+            return MODELS[key["kind"]].model_validate_json(bytes(prior))
+        validate_links(connection,record)
+        connection.execute(text("INSERT INTO research.scientific_decisions "
+            "(tenant_id,project_id,kind,decision_id,sha256,canonical_bytes) VALUES (:tenant,:project,:kind,:id,:sha,:body)"),
+            key|{"sha":record.reference.sha256,"body":document.canonical_bytes})
+        for source in record.sources:
+            connection.execute(text("INSERT INTO research.decision_sources "
+                "(tenant_id,project_id,kind,decision_id,artifact_id,reference_bytes) VALUES (:tenant,:project,:kind,:id,:artifact,:body)"),
+                key|{"artifact":source.artifact_id,"body":canonical(source.model_dump(mode="json"))})
+        for observation in getattr(record,"observations",()):
+            connection.execute(text("INSERT INTO research.decision_observations "
+                "(tenant_id,project_id,kind,decision_id,observation_id,revision) VALUES (:tenant,:project,:kind,:id,:observation,:revision)"),
+                key|{"observation":observation.observation_id,"revision":observation.revision})
         return record
 
     def read(self, scope, reference):

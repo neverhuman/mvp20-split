@@ -12,8 +12,8 @@ class SynthesisStore:
     def __init__(self, engine):
         self.journal = DecisionJournal(engine)
 
-    def assess(self, policy, options, actor, decision_id):
-        return self.journal.publish(prepare(policy,options,actor,decision_id),validate_links)
+    def assess(self, policy, options, actor, decision_id, *, consumed=()):
+        return self.journal.publish(prepare(policy,options,actor,decision_id,consumed=consumed),validate_links)
 
     def read(self, scope, reference):
         require(reference.kind == "synthesis","synthesis_decision_kind")

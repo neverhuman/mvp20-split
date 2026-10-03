@@ -3,9 +3,9 @@ from ..persistence.decision_document import DecisionDocument
 from .wire import assess_to_wire
 
 
-def prepare(policy, claims, actor, decision_id):
+def prepare(policy, claims, actor, decision_id, *, consumed=()):
     assessment = assess_to_wire(policy,claims)
-    sources = [assessment.policy.context.conditions]
+    sources = [assessment.policy.context.conditions,*consumed]
     observations = []
     for review in assessment.reviews:
         claim = review.claim

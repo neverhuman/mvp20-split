@@ -1,5 +1,8 @@
 """Decision history includes full policy and rejected evidence, not only favorable claims."""
 from dataclasses import replace
+from pathlib import Path
+
+from amphora_contracts_research import EligibilityDecision
 
 from amphora_research.eligibility.decision import prepare
 
@@ -28,3 +31,9 @@ def test_rejected_evidence_remains_a_dependency_for_future_review():
     assert result.assessment.disposition == "unknown"
     assert result.assessment.reviews[0].reasons == ("authority_mismatch",)
     assert result.observations[0].observation_id == "result"
+
+
+def test_default_preparation_preserves_committed_predecessor_example_and_digest():
+    path = Path(__file__).absolute().parents[4]/"contracts/research/examples/eligibility-decision.json"
+    expected = EligibilityDecision.model_validate_json(path.read_bytes())
+    assert prepare(policy(),(claim(),),"fixture","decision").record == expected

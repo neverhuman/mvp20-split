@@ -1,5 +1,10 @@
 # BP-06 Planning History
 
+## BP-06.04/B1.08b scientific input orchestration complete - 2026-10-03 03:23:00
+
+Research0.23.0/contracts0.11.0, forward research_0010;792 source/792 isolated installed and119 compatibility/dev tests pass.44 focused cases cover308 statements/38 branches100%. Authenticated report/raw/context dependencies, original configuration/actor intents, atomic decision/index/outcome, immutable concurrent retries and pending/offline replay verified. Actual independent Data exercises both synthetic report kinds, forged issuers, denied reads and useful optional accuracy focus. Existing default decision golden hashes and all376 public schemas unchanged. Test closure lint warnings were corrected. Coverage report emitted a harmless JSON-as-data scan warning after JSON export; measured data and JSON agree. No hosted API, scientific-validity or process-kill claim. B1 93.75%, Build31.25%, child23.44%, parent53.91%; gates0/4 and12/24 unchanged; c active.
+
+
 ## BP-06.04/B1.06 authenticated lab resolution complete - 2026-10-03 01:20:14
 
 Research0.18.0/contracts0.8.0;592 source/592 independently installed tests and119 compatibility/dev tests.27 focused resolver/reconciliation cases cover94 statements/8 branches.336 schemas preserve330 predecessors. [Evidence](../Audits/Evidence/BP-06-Research/Lab_Report_Resolution.json) includes actual Data0.11.0 source/installed HTTP proofs: partial and wrong-sample returns, failed controls/quality flags, trusted producer/issuer/adapter, current-source revocation, wrong token and outage. No owner transaction spans peer reads. Coverage completeness is distinct from scientific quality. Compatibility-only peer metadata is Evidence0.5.7, Knowledge contracts0.7.2/owner0.15.2 and Data0.11.7. Atomic intake/decision durability remains B1.07; new API remains B1.08. B1 6/8=75%, child18.75%, parent53.13%; gates0/4 and12/24 unchanged.
@@ -478,3 +483,7 @@ Rotated MBT checkpoints:
 Rotated MBT checkpoints:
 
 | 2026-10-02 16:18:15 | Owner-approved milestone accounting: B1 5/10, child12.50%, parent35.42%; closed gates unchanged0/4 and8/24; B1.06 next | [Canonical milestones](BP-06/Completed/BP-06.03%20Reasoning%20and%20domain%20receipts.md#canonical-b1-milestones); evidence-backed reclassification only |
+
+Rotated MBT checkpoint:
+
+| 2026-10-02 16:33:50 | B1.06 complete; B1 6/10, child15%, parent35.83%; B1.07 active | [Assessment wire](../Audits/Evidence/BP-06-Research/Assessment_Wire.json);294 source/177 installed tests;286 predecessor schemas preserved |

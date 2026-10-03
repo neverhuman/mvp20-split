@@ -1,0 +1,1547 @@
+{
+  "timestamp_local": "2026-10-03 03:23:00",
+  "milestone": "BP-06.04/B1.08b",
+  "research_version": "0.23.0",
+  "contracts_version": "0.11.0",
+  "migration": "research_0010",
+  "verification": {
+    "source_tests": 792,
+    "installed_tests": 792,
+    "compatibility_dev_tests": 119,
+    "focused_tests": 44,
+    "statements": 308,
+    "branches": 38,
+    "coverage_percent": 100,
+    "public_schemas_unchanged": 376
+  },
+  "source_input": {
+    "scope": {
+      "tenant_id": "research-tests",
+      "project_id": "5e722e759d5e4b83b48994190b2e3013"
+    },
+    "results": [
+      {
+        "wire_version": "1",
+        "request": {
+          "wire_version": "1",
+          "decision_id": "eligibility",
+          "profile": {
+            "scope": {
+              "tenant_id": "research-tests",
+              "project_id": "5e722e759d5e4b83b48994190b2e3013"
+            },
+            "kind": "eligibility",
+            "profile_id": "screening",
+            "version": "1",
+            "sha256": "67526e8950adf453fca7a896c0065412f974a2cdb71b6e37aaac2f3084c91c22"
+          },
+          "reports": [
+            {
+              "artifact_id": "598467238cb84ee3aeaf3a9189dcc1d9",
+              "scope": {
+                "tenant_id": "research-tests",
+                "project_id": "5e722e759d5e4b83b48994190b2e3013"
+              },
+              "sha256": "a4c530080e868272bc589097597e490e3cc709fc6a4b8686b8e52ce12a327839",
+              "media_type": "application/json",
+              "schema_ref": {
+                "schema_id": "research.synthetic-eligibility-report.payload",
+                "version": "1",
+                "sha256": "2ea86be792aca11a88e1ea3a2009e8c91f801ab424d6522603718fd5fc9d6b51"
+              },
+              "size_bytes": 1819
+            }
+          ]
+        },
+        "actor_id": "fixture",
+        "outcome": {
+          "status": "assessed",
+          "decision": {
+            "wire_version": "1",
+            "reference": {
+              "scope": {
+                "tenant_id": "research-tests",
+                "project_id": "5e722e759d5e4b83b48994190b2e3013"
+              },
+              "kind": "eligibility",
+              "decision_id": "eligibility",
+              "sha256": "51de05a630966c1374aa39cb929ef50b5e26fc81ee24f6a19d090482c80815f3"
+            },
+            "actor_id": "fixture",
+            "assessment": {
+              "wire_version": "1",
+              "authority": "synthetic",
+              "policy": {
+                "wire_version": "1",
+                "authority": "synthetic",
+                "reference": {
+                  "schema_id": "fixture.method",
+                  "version": "1",
+                  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                "context": {
+                  "subject": {
+                    "candidate": {
+                      "scope": {
+                        "tenant_id": "research-tests",
+                        "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                      },
+                      "candidate_id": "nominal-design",
+                      "revision": 1
+                    },
+                    "material_state": {
+                      "scope": {
+                        "tenant_id": "research-tests",
+                        "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                      },
+                      "material_state_id": "state",
+                      "revision": 1
+                    },
+                    "sample": {
+                      "scope": {
+                        "tenant_id": "research-tests",
+                        "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                      },
+                      "sample_id": "vial",
+                      "revision": 1
+                    }
+                  },
+                  "domain": "fixture.polymer",
+                  "purpose": "fixture.screening",
+                  "conditions": {
+                    "artifact_id": "c9d9fec303fb4f049056e7e03ad9d3b0",
+                    "scope": {
+                      "tenant_id": "research-tests",
+                      "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                    },
+                    "sha256": "c0ffebe0f36c311dd16a893e27f8ed91c73888a8014552541f7e4bac51a8990d",
+                    "media_type": "application/octet-stream",
+                    "schema_ref": {
+                      "schema_id": "fixture.bytes",
+                      "version": "1",
+                      "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                    },
+                    "size_bytes": 32
+                  }
+                },
+                "requirements": [
+                  {
+                    "criterion_id": "identity",
+                    "kind": "model",
+                    "method": {
+                      "schema_id": "fixture.method",
+                      "version": "1",
+                      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    },
+                    "required": true,
+                    "excluded_flags": []
+                  },
+                  {
+                    "criterion_id": "accuracy",
+                    "kind": "measurement",
+                    "method": {
+                      "schema_id": "fixture.method",
+                      "version": "1",
+                      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    },
+                    "required": false,
+                    "excluded_flags": []
+                  }
+                ]
+              },
+              "disposition": "eligible",
+              "criteria": [
+                {
+                  "criterion_id": "identity",
+                  "disposition": "supported",
+                  "reason": "bounded_support"
+                },
+                {
+                  "criterion_id": "accuracy",
+                  "disposition": "unknown",
+                  "reason": "missing_eligible_evidence"
+                }
+              ],
+              "reviews": [
+                {
+                  "claim": {
+                    "criterion_id": "identity",
+                    "context": {
+                      "subject": {
+                        "candidate": {
+                          "scope": {
+                            "tenant_id": "research-tests",
+                            "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                          },
+                          "candidate_id": "nominal-design",
+                          "revision": 1
+                        },
+                        "material_state": {
+                          "scope": {
+                            "tenant_id": "research-tests",
+                            "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                          },
+                          "material_state_id": "state",
+                          "revision": 1
+                        },
+                        "sample": {
+                          "scope": {
+                            "tenant_id": "research-tests",
+                            "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                          },
+                          "sample_id": "vial",
+                          "revision": 1
+                        }
+                      },
+                      "domain": "fixture.polymer",
+                      "purpose": "fixture.screening",
+                      "conditions": {
+                        "artifact_id": "c9d9fec303fb4f049056e7e03ad9d3b0",
+                        "scope": {
+                          "tenant_id": "research-tests",
+                          "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                        },
+                        "sha256": "c0ffebe0f36c311dd16a893e27f8ed91c73888a8014552541f7e4bac51a8990d",
+                        "media_type": "application/octet-stream",
+                        "schema_ref": {
+                          "schema_id": "fixture.bytes",
+                          "version": "1",
+                          "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                        },
+                        "size_bytes": 32
+                      }
+                    },
+                    "origin": {
+                      "source": {
+                        "artifact_id": "598467238cb84ee3aeaf3a9189dcc1d9",
+                        "scope": {
+                          "tenant_id": "research-tests",
+                          "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                        },
+                        "sha256": "a4c530080e868272bc589097597e490e3cc709fc6a4b8686b8e52ce12a327839",
+                        "media_type": "application/json",
+                        "schema_ref": {
+                          "schema_id": "research.synthetic-eligibility-report.payload",
+                          "version": "1",
+                          "sha256": "2ea86be792aca11a88e1ea3a2009e8c91f801ab424d6522603718fd5fc9d6b51"
+                        },
+                        "size_bytes": 1819
+                      },
+                      "method": {
+                        "schema_id": "fixture.method",
+                        "version": "1",
+                        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      },
+                      "kind": "model",
+                      "authority": "synthetic",
+                      "observation": null
+                    },
+                    "disposition": "supported",
+                    "flags": []
+                  },
+                  "reasons": []
+                }
+              ],
+              "focus": [
+                "accuracy"
+              ]
+            },
+            "sources": [
+              {
+                "artifact_id": "5081d4c6201b454a8295865cfbf1ae19",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                },
+                "sha256": "8031ed471c0adf0f1b182ad96afbb78d1270c3e8b1e9e0dca5004289665374f6",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 25
+              },
+              {
+                "artifact_id": "598467238cb84ee3aeaf3a9189dcc1d9",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                },
+                "sha256": "a4c530080e868272bc589097597e490e3cc709fc6a4b8686b8e52ce12a327839",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "research.synthetic-eligibility-report.payload",
+                  "version": "1",
+                  "sha256": "2ea86be792aca11a88e1ea3a2009e8c91f801ab424d6522603718fd5fc9d6b51"
+                },
+                "size_bytes": 1819
+              },
+              {
+                "artifact_id": "c9d9fec303fb4f049056e7e03ad9d3b0",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                },
+                "sha256": "c0ffebe0f36c311dd16a893e27f8ed91c73888a8014552541f7e4bac51a8990d",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 32
+              }
+            ],
+            "observations": []
+          }
+        }
+      },
+      {
+        "wire_version": "1",
+        "request": {
+          "wire_version": "1",
+          "decision_id": "synthesis",
+          "profile": {
+            "scope": {
+              "tenant_id": "research-tests",
+              "project_id": "5e722e759d5e4b83b48994190b2e3013"
+            },
+            "kind": "synthesis",
+            "profile_id": "routes",
+            "version": "1",
+            "sha256": "f48482581f60fdbb97104aae76911680e8486c0041356bdcb385eb7213bf7537"
+          },
+          "reports": [
+            {
+              "artifact_id": "882f7978e02e4acaae732a761a8a0976",
+              "scope": {
+                "tenant_id": "research-tests",
+                "project_id": "5e722e759d5e4b83b48994190b2e3013"
+              },
+              "sha256": "ab93528789d3ff1d650a4c05b11b0f60b5cbdaddd9e5e638697bef72df5330ce",
+              "media_type": "application/json",
+              "schema_ref": {
+                "schema_id": "research.synthetic-synthesis-report.payload",
+                "version": "1",
+                "sha256": "8813ba395a4173561327909c0377f9f7b56817607ad4679a8d8b50d298ba901d"
+              },
+              "size_bytes": 4801
+            }
+          ]
+        },
+        "actor_id": "fixture",
+        "outcome": {
+          "status": "assessed",
+          "decision": {
+            "wire_version": "1",
+            "reference": {
+              "scope": {
+                "tenant_id": "research-tests",
+                "project_id": "5e722e759d5e4b83b48994190b2e3013"
+              },
+              "kind": "synthesis",
+              "decision_id": "synthesis",
+              "sha256": "4d91455be979303de675989608347b07b77eb8b39b6bf8fbf2bdb9b63a65d0b8"
+            },
+            "actor_id": "fixture",
+            "assessment": {
+              "wire_version": "1",
+              "authority": "synthetic",
+              "policy": {
+                "wire_version": "1",
+                "authority": "synthetic",
+                "reference": {
+                  "schema_id": "fixture.method",
+                  "version": "1",
+                  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                "context": {
+                  "candidate": {
+                    "scope": {
+                      "tenant_id": "research-tests",
+                      "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                    },
+                    "candidate_id": "nominal-design",
+                    "revision": 1
+                  },
+                  "domain": "fixture.polymer",
+                  "purpose": "fixture.production",
+                  "conditions": {
+                    "artifact_id": "00de9c4bcc4a4992b04eda5d090ad1d9",
+                    "scope": {
+                      "tenant_id": "research-tests",
+                      "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                    },
+                    "sha256": "aaa8fbc2698a60681adc76d144d846e3132faea34fe2d300648b26c20aa5e238",
+                    "media_type": "application/octet-stream",
+                    "schema_ref": {
+                      "schema_id": "fixture.bytes",
+                      "version": "1",
+                      "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                    },
+                    "size_bytes": 30
+                  },
+                  "scale": {
+                    "value": "1",
+                    "unit": "g"
+                  },
+                  "purity": {
+                    "artifact_id": "8317a9912d024f2f9fb1b7acd52adeec",
+                    "scope": {
+                      "tenant_id": "research-tests",
+                      "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                    },
+                    "sha256": "eb9d959af0d7be90faf37caac4e7a261c8c521fedae445f37699155d073add96",
+                    "media_type": "application/octet-stream",
+                    "schema_ref": {
+                      "schema_id": "fixture.bytes",
+                      "version": "1",
+                      "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                    },
+                    "size_bytes": 26
+                  }
+                },
+                "allowed_postures": [
+                  "demonstrated"
+                ],
+                "allowed_step_postures": [
+                  "demonstrated"
+                ],
+                "required_checks": [
+                  "equipment",
+                  "precursor_access"
+                ]
+              },
+              "alternatives": [
+                {
+                  "option": {
+                    "evidence": {
+                      "context": {
+                        "candidate": {
+                          "scope": {
+                            "tenant_id": "research-tests",
+                            "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                          },
+                          "candidate_id": "nominal-design",
+                          "revision": 1
+                        },
+                        "domain": "fixture.polymer",
+                        "purpose": "fixture.production",
+                        "conditions": {
+                          "artifact_id": "00de9c4bcc4a4992b04eda5d090ad1d9",
+                          "scope": {
+                            "tenant_id": "research-tests",
+                            "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                          },
+                          "sha256": "aaa8fbc2698a60681adc76d144d846e3132faea34fe2d300648b26c20aa5e238",
+                          "media_type": "application/octet-stream",
+                          "schema_ref": {
+                            "schema_id": "fixture.bytes",
+                            "version": "1",
+                            "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                          },
+                          "size_bytes": 30
+                        },
+                        "scale": {
+                          "value": "1",
+                          "unit": "g"
+                        },
+                        "purity": {
+                          "artifact_id": "8317a9912d024f2f9fb1b7acd52adeec",
+                          "scope": {
+                            "tenant_id": "research-tests",
+                            "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                          },
+                          "sha256": "eb9d959af0d7be90faf37caac4e7a261c8c521fedae445f37699155d073add96",
+                          "media_type": "application/octet-stream",
+                          "schema_ref": {
+                            "schema_id": "fixture.bytes",
+                            "version": "1",
+                            "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                          },
+                          "size_bytes": 26
+                        }
+                      },
+                      "route": {
+                        "artifact_id": "f1fd025ec59b4e67830e77e8ffdb8e79",
+                        "scope": {
+                          "tenant_id": "research-tests",
+                          "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                        },
+                        "sha256": "4a89698c656c54a1d284f1f118cc86d61b86c8d55d18346d28c7e4ada284d185",
+                        "media_type": "application/octet-stream",
+                        "schema_ref": {
+                          "schema_id": "fixture.bytes",
+                          "version": "1",
+                          "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                        },
+                        "size_bytes": 25
+                      },
+                      "posture": "demonstrated",
+                      "provenance": {
+                        "method": {
+                          "schema_id": "fixture.method",
+                          "version": "1",
+                          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                        },
+                        "tool": {
+                          "schema_id": "fixture.method",
+                          "version": "1",
+                          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                        },
+                        "models": [],
+                        "sources": [
+                          {
+                            "artifact_id": "13a08edf63be4bbdabf1a5aa8e51b5d5",
+                            "scope": {
+                              "tenant_id": "research-tests",
+                              "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                            },
+                            "sha256": "7b70bd482cf84c406407842774a9415eea246e776b4e24e9edf8e94b25669f78",
+                            "media_type": "application/octet-stream",
+                            "schema_ref": {
+                              "schema_id": "fixture.bytes",
+                              "version": "1",
+                              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                            },
+                            "size_bytes": 26
+                          }
+                        ]
+                      },
+                      "steps": [
+                        {
+                          "step_id": "prepare",
+                          "requires": [],
+                          "posture": "demonstrated",
+                          "record": {
+                            "artifact_id": "adb90d061a1c42f88c5ceee0dfee1078",
+                            "scope": {
+                              "tenant_id": "research-tests",
+                              "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                            },
+                            "sha256": "f3c0a6e4b4539635fc186f151624a9fdb8d3b19d7237da7906d3b279b69d3a70",
+                            "media_type": "application/octet-stream",
+                            "schema_ref": {
+                              "schema_id": "fixture.bytes",
+                              "version": "1",
+                              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                            },
+                            "size_bytes": 24
+                          },
+                          "sources": [
+                            {
+                              "artifact_id": "e1f9a1422ff54fcababc725c448de3b0",
+                              "scope": {
+                                "tenant_id": "research-tests",
+                                "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                              },
+                              "sha256": "bf77a07b777974f4ac2af99be6dd8462387c3d1d87085cc49b967fa2de5a45d1",
+                              "media_type": "application/octet-stream",
+                              "schema_ref": {
+                                "schema_id": "fixture.bytes",
+                                "version": "1",
+                                "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                              },
+                              "size_bytes": 33
+                            }
+                          ],
+                          "gaps": []
+                        }
+                      ],
+                      "search": null,
+                      "next_checks": []
+                    },
+                    "checks": [
+                      {
+                        "criterion_id": "equipment",
+                        "disposition": "met",
+                        "evidence": [
+                          {
+                            "artifact_id": "1853e783a0a34e89961da723fcbcfa34",
+                            "scope": {
+                              "tenant_id": "research-tests",
+                              "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                            },
+                            "sha256": "d53a59c1d7549a413b9a3cc56989c1141e0d4015c3947b7328a371ae050a6807",
+                            "media_type": "application/octet-stream",
+                            "schema_ref": {
+                              "schema_id": "fixture.bytes",
+                              "version": "1",
+                              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                            },
+                            "size_bytes": 38
+                          }
+                        ],
+                        "reasons": [
+                          "fixture_assertion"
+                        ]
+                      },
+                      {
+                        "criterion_id": "precursor_access",
+                        "disposition": "met",
+                        "evidence": [
+                          {
+                            "artifact_id": "8d0981b4267c480d85703b15c74b2d09",
+                            "scope": {
+                              "tenant_id": "research-tests",
+                              "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                            },
+                            "sha256": "c47d720638a3ac8d1fd364c2877f7a29f46363575f38e4e678f4beebdaf711f7",
+                            "media_type": "application/octet-stream",
+                            "schema_ref": {
+                              "schema_id": "fixture.bytes",
+                              "version": "1",
+                              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                            },
+                            "size_bytes": 45
+                          }
+                        ],
+                        "reasons": [
+                          "fixture_assertion"
+                        ]
+                      }
+                    ]
+                  },
+                  "disposition": "eligible",
+                  "blockers": [],
+                  "gaps": []
+                }
+              ]
+            },
+            "sources": [
+              {
+                "artifact_id": "00de9c4bcc4a4992b04eda5d090ad1d9",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                },
+                "sha256": "aaa8fbc2698a60681adc76d144d846e3132faea34fe2d300648b26c20aa5e238",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 30
+              },
+              {
+                "artifact_id": "13a08edf63be4bbdabf1a5aa8e51b5d5",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                },
+                "sha256": "7b70bd482cf84c406407842774a9415eea246e776b4e24e9edf8e94b25669f78",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 26
+              },
+              {
+                "artifact_id": "1853e783a0a34e89961da723fcbcfa34",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                },
+                "sha256": "d53a59c1d7549a413b9a3cc56989c1141e0d4015c3947b7328a371ae050a6807",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 38
+              },
+              {
+                "artifact_id": "7f7a1301e96545b7b3b121b288cc8fb5",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                },
+                "sha256": "7434780c36c028e6fab0a5901c8f9308e07f24005f094815a5063af619f9a09c",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 29
+              },
+              {
+                "artifact_id": "8317a9912d024f2f9fb1b7acd52adeec",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                },
+                "sha256": "eb9d959af0d7be90faf37caac4e7a261c8c521fedae445f37699155d073add96",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 26
+              },
+              {
+                "artifact_id": "882f7978e02e4acaae732a761a8a0976",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                },
+                "sha256": "ab93528789d3ff1d650a4c05b11b0f60b5cbdaddd9e5e638697bef72df5330ce",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "research.synthetic-synthesis-report.payload",
+                  "version": "1",
+                  "sha256": "8813ba395a4173561327909c0377f9f7b56817607ad4679a8d8b50d298ba901d"
+                },
+                "size_bytes": 4801
+              },
+              {
+                "artifact_id": "8d0981b4267c480d85703b15c74b2d09",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                },
+                "sha256": "c47d720638a3ac8d1fd364c2877f7a29f46363575f38e4e678f4beebdaf711f7",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 45
+              },
+              {
+                "artifact_id": "adb90d061a1c42f88c5ceee0dfee1078",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                },
+                "sha256": "f3c0a6e4b4539635fc186f151624a9fdb8d3b19d7237da7906d3b279b69d3a70",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 24
+              },
+              {
+                "artifact_id": "e1f9a1422ff54fcababc725c448de3b0",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                },
+                "sha256": "bf77a07b777974f4ac2af99be6dd8462387c3d1d87085cc49b967fa2de5a45d1",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 33
+              },
+              {
+                "artifact_id": "f1fd025ec59b4e67830e77e8ffdb8e79",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "5e722e759d5e4b83b48994190b2e3013"
+                },
+                "sha256": "4a89698c656c54a1d284f1f118cc86d61b86c8d55d18346d28c7e4ada284d185",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 25
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "cases": [
+      "actual_producer_authentication",
+      "forged_issuer_denied",
+      "unauthorized_source_denied",
+      "pending_keeps_original_profile",
+      "offline_completed_replay",
+      "optional_accuracy_focus",
+      "all_consumed_dependencies",
+      "no_owner_transaction_during_peer_IO"
+    ]
+  },
+  "installed_input": {
+    "scope": {
+      "tenant_id": "research-tests",
+      "project_id": "c583887965ad4a2d94115bcccbb30a71"
+    },
+    "results": [
+      {
+        "wire_version": "1",
+        "request": {
+          "wire_version": "1",
+          "decision_id": "eligibility",
+          "profile": {
+            "scope": {
+              "tenant_id": "research-tests",
+              "project_id": "c583887965ad4a2d94115bcccbb30a71"
+            },
+            "kind": "eligibility",
+            "profile_id": "screening",
+            "version": "1",
+            "sha256": "369cfc4e0d992dc320d94aa496d6b7dc49c41d2bfe86ea99a30c9ac65489f261"
+          },
+          "reports": [
+            {
+              "artifact_id": "f54dabb5b4dc4c3595216d208b8933b2",
+              "scope": {
+                "tenant_id": "research-tests",
+                "project_id": "c583887965ad4a2d94115bcccbb30a71"
+              },
+              "sha256": "f003aac11eef7eae9250f4fb2a8fa5e74356cd1a1af9df747a70ad6227f7ebe6",
+              "media_type": "application/json",
+              "schema_ref": {
+                "schema_id": "research.synthetic-eligibility-report.payload",
+                "version": "1",
+                "sha256": "2ea86be792aca11a88e1ea3a2009e8c91f801ab424d6522603718fd5fc9d6b51"
+              },
+              "size_bytes": 1819
+            }
+          ]
+        },
+        "actor_id": "fixture",
+        "outcome": {
+          "status": "assessed",
+          "decision": {
+            "wire_version": "1",
+            "reference": {
+              "scope": {
+                "tenant_id": "research-tests",
+                "project_id": "c583887965ad4a2d94115bcccbb30a71"
+              },
+              "kind": "eligibility",
+              "decision_id": "eligibility",
+              "sha256": "311596730afd7b201027960cc1422dcc81bca6246c5e1a4cfeefbccffdfdae7c"
+            },
+            "actor_id": "fixture",
+            "assessment": {
+              "wire_version": "1",
+              "authority": "synthetic",
+              "policy": {
+                "wire_version": "1",
+                "authority": "synthetic",
+                "reference": {
+                  "schema_id": "fixture.method",
+                  "version": "1",
+                  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                "context": {
+                  "subject": {
+                    "candidate": {
+                      "scope": {
+                        "tenant_id": "research-tests",
+                        "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                      },
+                      "candidate_id": "nominal-design",
+                      "revision": 1
+                    },
+                    "material_state": {
+                      "scope": {
+                        "tenant_id": "research-tests",
+                        "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                      },
+                      "material_state_id": "state",
+                      "revision": 1
+                    },
+                    "sample": {
+                      "scope": {
+                        "tenant_id": "research-tests",
+                        "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                      },
+                      "sample_id": "vial",
+                      "revision": 1
+                    }
+                  },
+                  "domain": "fixture.polymer",
+                  "purpose": "fixture.screening",
+                  "conditions": {
+                    "artifact_id": "ffd0fce650744600a26e6cff55c27d9c",
+                    "scope": {
+                      "tenant_id": "research-tests",
+                      "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                    },
+                    "sha256": "c0ffebe0f36c311dd16a893e27f8ed91c73888a8014552541f7e4bac51a8990d",
+                    "media_type": "application/octet-stream",
+                    "schema_ref": {
+                      "schema_id": "fixture.bytes",
+                      "version": "1",
+                      "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                    },
+                    "size_bytes": 32
+                  }
+                },
+                "requirements": [
+                  {
+                    "criterion_id": "identity",
+                    "kind": "model",
+                    "method": {
+                      "schema_id": "fixture.method",
+                      "version": "1",
+                      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    },
+                    "required": true,
+                    "excluded_flags": []
+                  },
+                  {
+                    "criterion_id": "accuracy",
+                    "kind": "measurement",
+                    "method": {
+                      "schema_id": "fixture.method",
+                      "version": "1",
+                      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    },
+                    "required": false,
+                    "excluded_flags": []
+                  }
+                ]
+              },
+              "disposition": "eligible",
+              "criteria": [
+                {
+                  "criterion_id": "identity",
+                  "disposition": "supported",
+                  "reason": "bounded_support"
+                },
+                {
+                  "criterion_id": "accuracy",
+                  "disposition": "unknown",
+                  "reason": "missing_eligible_evidence"
+                }
+              ],
+              "reviews": [
+                {
+                  "claim": {
+                    "criterion_id": "identity",
+                    "context": {
+                      "subject": {
+                        "candidate": {
+                          "scope": {
+                            "tenant_id": "research-tests",
+                            "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                          },
+                          "candidate_id": "nominal-design",
+                          "revision": 1
+                        },
+                        "material_state": {
+                          "scope": {
+                            "tenant_id": "research-tests",
+                            "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                          },
+                          "material_state_id": "state",
+                          "revision": 1
+                        },
+                        "sample": {
+                          "scope": {
+                            "tenant_id": "research-tests",
+                            "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                          },
+                          "sample_id": "vial",
+                          "revision": 1
+                        }
+                      },
+                      "domain": "fixture.polymer",
+                      "purpose": "fixture.screening",
+                      "conditions": {
+                        "artifact_id": "ffd0fce650744600a26e6cff55c27d9c",
+                        "scope": {
+                          "tenant_id": "research-tests",
+                          "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                        },
+                        "sha256": "c0ffebe0f36c311dd16a893e27f8ed91c73888a8014552541f7e4bac51a8990d",
+                        "media_type": "application/octet-stream",
+                        "schema_ref": {
+                          "schema_id": "fixture.bytes",
+                          "version": "1",
+                          "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                        },
+                        "size_bytes": 32
+                      }
+                    },
+                    "origin": {
+                      "source": {
+                        "artifact_id": "f54dabb5b4dc4c3595216d208b8933b2",
+                        "scope": {
+                          "tenant_id": "research-tests",
+                          "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                        },
+                        "sha256": "f003aac11eef7eae9250f4fb2a8fa5e74356cd1a1af9df747a70ad6227f7ebe6",
+                        "media_type": "application/json",
+                        "schema_ref": {
+                          "schema_id": "research.synthetic-eligibility-report.payload",
+                          "version": "1",
+                          "sha256": "2ea86be792aca11a88e1ea3a2009e8c91f801ab424d6522603718fd5fc9d6b51"
+                        },
+                        "size_bytes": 1819
+                      },
+                      "method": {
+                        "schema_id": "fixture.method",
+                        "version": "1",
+                        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      },
+                      "kind": "model",
+                      "authority": "synthetic",
+                      "observation": null
+                    },
+                    "disposition": "supported",
+                    "flags": []
+                  },
+                  "reasons": []
+                }
+              ],
+              "focus": [
+                "accuracy"
+              ]
+            },
+            "sources": [
+              {
+                "artifact_id": "eb5ec16c057b440c9c0111ed5630a142",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                },
+                "sha256": "8031ed471c0adf0f1b182ad96afbb78d1270c3e8b1e9e0dca5004289665374f6",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 25
+              },
+              {
+                "artifact_id": "f54dabb5b4dc4c3595216d208b8933b2",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                },
+                "sha256": "f003aac11eef7eae9250f4fb2a8fa5e74356cd1a1af9df747a70ad6227f7ebe6",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "research.synthetic-eligibility-report.payload",
+                  "version": "1",
+                  "sha256": "2ea86be792aca11a88e1ea3a2009e8c91f801ab424d6522603718fd5fc9d6b51"
+                },
+                "size_bytes": 1819
+              },
+              {
+                "artifact_id": "ffd0fce650744600a26e6cff55c27d9c",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                },
+                "sha256": "c0ffebe0f36c311dd16a893e27f8ed91c73888a8014552541f7e4bac51a8990d",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 32
+              }
+            ],
+            "observations": []
+          }
+        }
+      },
+      {
+        "wire_version": "1",
+        "request": {
+          "wire_version": "1",
+          "decision_id": "synthesis",
+          "profile": {
+            "scope": {
+              "tenant_id": "research-tests",
+              "project_id": "c583887965ad4a2d94115bcccbb30a71"
+            },
+            "kind": "synthesis",
+            "profile_id": "routes",
+            "version": "1",
+            "sha256": "accc2a5d708e6b8c48328b03e6e0890a739c3ef945f31f736f8ac4a38d348afd"
+          },
+          "reports": [
+            {
+              "artifact_id": "aa84287b700343d98215e389fd07eece",
+              "scope": {
+                "tenant_id": "research-tests",
+                "project_id": "c583887965ad4a2d94115bcccbb30a71"
+              },
+              "sha256": "4b51b350df634566643cca6b2ebb45af6a52667fb81866229c3446019c0d9b18",
+              "media_type": "application/json",
+              "schema_ref": {
+                "schema_id": "research.synthetic-synthesis-report.payload",
+                "version": "1",
+                "sha256": "8813ba395a4173561327909c0377f9f7b56817607ad4679a8d8b50d298ba901d"
+              },
+              "size_bytes": 4801
+            }
+          ]
+        },
+        "actor_id": "fixture",
+        "outcome": {
+          "status": "assessed",
+          "decision": {
+            "wire_version": "1",
+            "reference": {
+              "scope": {
+                "tenant_id": "research-tests",
+                "project_id": "c583887965ad4a2d94115bcccbb30a71"
+              },
+              "kind": "synthesis",
+              "decision_id": "synthesis",
+              "sha256": "b2a0138252f498f8bf42b74d7d2be89347abfe94719fa6d44d8acccd3024673c"
+            },
+            "actor_id": "fixture",
+            "assessment": {
+              "wire_version": "1",
+              "authority": "synthetic",
+              "policy": {
+                "wire_version": "1",
+                "authority": "synthetic",
+                "reference": {
+                  "schema_id": "fixture.method",
+                  "version": "1",
+                  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                "context": {
+                  "candidate": {
+                    "scope": {
+                      "tenant_id": "research-tests",
+                      "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                    },
+                    "candidate_id": "nominal-design",
+                    "revision": 1
+                  },
+                  "domain": "fixture.polymer",
+                  "purpose": "fixture.production",
+                  "conditions": {
+                    "artifact_id": "9c8d16df24cd4b6eb13277da0d1c5ed2",
+                    "scope": {
+                      "tenant_id": "research-tests",
+                      "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                    },
+                    "sha256": "aaa8fbc2698a60681adc76d144d846e3132faea34fe2d300648b26c20aa5e238",
+                    "media_type": "application/octet-stream",
+                    "schema_ref": {
+                      "schema_id": "fixture.bytes",
+                      "version": "1",
+                      "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                    },
+                    "size_bytes": 30
+                  },
+                  "scale": {
+                    "value": "1",
+                    "unit": "g"
+                  },
+                  "purity": {
+                    "artifact_id": "fc9b671590d04e418fd1161b98f690d3",
+                    "scope": {
+                      "tenant_id": "research-tests",
+                      "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                    },
+                    "sha256": "eb9d959af0d7be90faf37caac4e7a261c8c521fedae445f37699155d073add96",
+                    "media_type": "application/octet-stream",
+                    "schema_ref": {
+                      "schema_id": "fixture.bytes",
+                      "version": "1",
+                      "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                    },
+                    "size_bytes": 26
+                  }
+                },
+                "allowed_postures": [
+                  "demonstrated"
+                ],
+                "allowed_step_postures": [
+                  "demonstrated"
+                ],
+                "required_checks": [
+                  "equipment",
+                  "precursor_access"
+                ]
+              },
+              "alternatives": [
+                {
+                  "option": {
+                    "evidence": {
+                      "context": {
+                        "candidate": {
+                          "scope": {
+                            "tenant_id": "research-tests",
+                            "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                          },
+                          "candidate_id": "nominal-design",
+                          "revision": 1
+                        },
+                        "domain": "fixture.polymer",
+                        "purpose": "fixture.production",
+                        "conditions": {
+                          "artifact_id": "9c8d16df24cd4b6eb13277da0d1c5ed2",
+                          "scope": {
+                            "tenant_id": "research-tests",
+                            "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                          },
+                          "sha256": "aaa8fbc2698a60681adc76d144d846e3132faea34fe2d300648b26c20aa5e238",
+                          "media_type": "application/octet-stream",
+                          "schema_ref": {
+                            "schema_id": "fixture.bytes",
+                            "version": "1",
+                            "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                          },
+                          "size_bytes": 30
+                        },
+                        "scale": {
+                          "value": "1",
+                          "unit": "g"
+                        },
+                        "purity": {
+                          "artifact_id": "fc9b671590d04e418fd1161b98f690d3",
+                          "scope": {
+                            "tenant_id": "research-tests",
+                            "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                          },
+                          "sha256": "eb9d959af0d7be90faf37caac4e7a261c8c521fedae445f37699155d073add96",
+                          "media_type": "application/octet-stream",
+                          "schema_ref": {
+                            "schema_id": "fixture.bytes",
+                            "version": "1",
+                            "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                          },
+                          "size_bytes": 26
+                        }
+                      },
+                      "route": {
+                        "artifact_id": "eff6a350056e4d0784a1fb583fff85f6",
+                        "scope": {
+                          "tenant_id": "research-tests",
+                          "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                        },
+                        "sha256": "4a89698c656c54a1d284f1f118cc86d61b86c8d55d18346d28c7e4ada284d185",
+                        "media_type": "application/octet-stream",
+                        "schema_ref": {
+                          "schema_id": "fixture.bytes",
+                          "version": "1",
+                          "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                        },
+                        "size_bytes": 25
+                      },
+                      "posture": "demonstrated",
+                      "provenance": {
+                        "method": {
+                          "schema_id": "fixture.method",
+                          "version": "1",
+                          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                        },
+                        "tool": {
+                          "schema_id": "fixture.method",
+                          "version": "1",
+                          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                        },
+                        "models": [],
+                        "sources": [
+                          {
+                            "artifact_id": "ad3c6e201b9d46d2b282c72466fbce54",
+                            "scope": {
+                              "tenant_id": "research-tests",
+                              "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                            },
+                            "sha256": "7b70bd482cf84c406407842774a9415eea246e776b4e24e9edf8e94b25669f78",
+                            "media_type": "application/octet-stream",
+                            "schema_ref": {
+                              "schema_id": "fixture.bytes",
+                              "version": "1",
+                              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                            },
+                            "size_bytes": 26
+                          }
+                        ]
+                      },
+                      "steps": [
+                        {
+                          "step_id": "prepare",
+                          "requires": [],
+                          "posture": "demonstrated",
+                          "record": {
+                            "artifact_id": "aaa4a6e942b4454ead07de0b59c9561f",
+                            "scope": {
+                              "tenant_id": "research-tests",
+                              "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                            },
+                            "sha256": "f3c0a6e4b4539635fc186f151624a9fdb8d3b19d7237da7906d3b279b69d3a70",
+                            "media_type": "application/octet-stream",
+                            "schema_ref": {
+                              "schema_id": "fixture.bytes",
+                              "version": "1",
+                              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                            },
+                            "size_bytes": 24
+                          },
+                          "sources": [
+                            {
+                              "artifact_id": "369826b127ed4bfa8134409f4dbda2d7",
+                              "scope": {
+                                "tenant_id": "research-tests",
+                                "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                              },
+                              "sha256": "bf77a07b777974f4ac2af99be6dd8462387c3d1d87085cc49b967fa2de5a45d1",
+                              "media_type": "application/octet-stream",
+                              "schema_ref": {
+                                "schema_id": "fixture.bytes",
+                                "version": "1",
+                                "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                              },
+                              "size_bytes": 33
+                            }
+                          ],
+                          "gaps": []
+                        }
+                      ],
+                      "search": null,
+                      "next_checks": []
+                    },
+                    "checks": [
+                      {
+                        "criterion_id": "equipment",
+                        "disposition": "met",
+                        "evidence": [
+                          {
+                            "artifact_id": "8de584685cab49bb80740a07ef7767c4",
+                            "scope": {
+                              "tenant_id": "research-tests",
+                              "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                            },
+                            "sha256": "d53a59c1d7549a413b9a3cc56989c1141e0d4015c3947b7328a371ae050a6807",
+                            "media_type": "application/octet-stream",
+                            "schema_ref": {
+                              "schema_id": "fixture.bytes",
+                              "version": "1",
+                              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                            },
+                            "size_bytes": 38
+                          }
+                        ],
+                        "reasons": [
+                          "fixture_assertion"
+                        ]
+                      },
+                      {
+                        "criterion_id": "precursor_access",
+                        "disposition": "met",
+                        "evidence": [
+                          {
+                            "artifact_id": "44620d7c13114302a9f3cf67c9aba1f2",
+                            "scope": {
+                              "tenant_id": "research-tests",
+                              "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                            },
+                            "sha256": "c47d720638a3ac8d1fd364c2877f7a29f46363575f38e4e678f4beebdaf711f7",
+                            "media_type": "application/octet-stream",
+                            "schema_ref": {
+                              "schema_id": "fixture.bytes",
+                              "version": "1",
+                              "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                            },
+                            "size_bytes": 45
+                          }
+                        ],
+                        "reasons": [
+                          "fixture_assertion"
+                        ]
+                      }
+                    ]
+                  },
+                  "disposition": "eligible",
+                  "blockers": [],
+                  "gaps": []
+                }
+              ]
+            },
+            "sources": [
+              {
+                "artifact_id": "369826b127ed4bfa8134409f4dbda2d7",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                },
+                "sha256": "bf77a07b777974f4ac2af99be6dd8462387c3d1d87085cc49b967fa2de5a45d1",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 33
+              },
+              {
+                "artifact_id": "44620d7c13114302a9f3cf67c9aba1f2",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                },
+                "sha256": "c47d720638a3ac8d1fd364c2877f7a29f46363575f38e4e678f4beebdaf711f7",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 45
+              },
+              {
+                "artifact_id": "859e1bcfc40f4508bf81dc51b1fd1813",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                },
+                "sha256": "7434780c36c028e6fab0a5901c8f9308e07f24005f094815a5063af619f9a09c",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 29
+              },
+              {
+                "artifact_id": "8de584685cab49bb80740a07ef7767c4",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                },
+                "sha256": "d53a59c1d7549a413b9a3cc56989c1141e0d4015c3947b7328a371ae050a6807",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 38
+              },
+              {
+                "artifact_id": "9c8d16df24cd4b6eb13277da0d1c5ed2",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                },
+                "sha256": "aaa8fbc2698a60681adc76d144d846e3132faea34fe2d300648b26c20aa5e238",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 30
+              },
+              {
+                "artifact_id": "aa84287b700343d98215e389fd07eece",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                },
+                "sha256": "4b51b350df634566643cca6b2ebb45af6a52667fb81866229c3446019c0d9b18",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "research.synthetic-synthesis-report.payload",
+                  "version": "1",
+                  "sha256": "8813ba395a4173561327909c0377f9f7b56817607ad4679a8d8b50d298ba901d"
+                },
+                "size_bytes": 4801
+              },
+              {
+                "artifact_id": "aaa4a6e942b4454ead07de0b59c9561f",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                },
+                "sha256": "f3c0a6e4b4539635fc186f151624a9fdb8d3b19d7237da7906d3b279b69d3a70",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 24
+              },
+              {
+                "artifact_id": "ad3c6e201b9d46d2b282c72466fbce54",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                },
+                "sha256": "7b70bd482cf84c406407842774a9415eea246e776b4e24e9edf8e94b25669f78",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 26
+              },
+              {
+                "artifact_id": "eff6a350056e4d0784a1fb583fff85f6",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                },
+                "sha256": "4a89698c656c54a1d284f1f118cc86d61b86c8d55d18346d28c7e4ada284d185",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 25
+              },
+              {
+                "artifact_id": "fc9b671590d04e418fd1161b98f690d3",
+                "scope": {
+                  "tenant_id": "research-tests",
+                  "project_id": "c583887965ad4a2d94115bcccbb30a71"
+                },
+                "sha256": "eb9d959af0d7be90faf37caac4e7a261c8c521fedae445f37699155d073add96",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.bytes",
+                  "version": "1",
+                  "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                },
+                "size_bytes": 26
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "cases": [
+      "actual_producer_authentication",
+      "forged_issuer_denied",
+      "unauthorized_source_denied",
+      "pending_keeps_original_profile",
+      "offline_completed_replay",
+      "optional_accuracy_focus",
+      "all_consumed_dependencies",
+      "no_owner_transaction_during_peer_IO"
+    ]
+  },
+  "limits": [
+    "Synthetic scientific assertions, not validated science",
+    "Research resolver runs in owning test process; public hosting c/d pending",
+    "Scripted reply loss and transaction rollback are not process-kill proof",
+    "Quality UI remains SQ-01"
+  ]
+}

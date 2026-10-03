@@ -1,5 +1,8 @@
 """Route alternative provenance is lossless and purpose-bound."""
 from dataclasses import replace
+from pathlib import Path
+
+from amphora_contracts_research import SynthesisDecision
 
 from amphora_research.synthesis.decision import prepare
 from amphora_research.synthesis.evidence import SearchRecord
@@ -23,3 +26,9 @@ def test_bounded_no_route_search_remains_unknown_with_search_dependency():
     document = prepare(policy(),(replace(original,evidence=evidence,checks=()),),"fixture","decision")
     assert document.record.assessment.alternatives[0].disposition == "unknown"
     assert "search-context" in {item.artifact_id for item in document.record.sources}
+
+
+def test_default_preparation_preserves_committed_predecessor_example_and_digest():
+    path = Path(__file__).absolute().parents[4]/"contracts/research/examples/synthesis-decision.json"
+    expected = SynthesisDecision.model_validate_json(path.read_bytes())
+    assert prepare(policy(),(option("blocked",status="failed"),option("useful")),"fixture","routes").record == expected
