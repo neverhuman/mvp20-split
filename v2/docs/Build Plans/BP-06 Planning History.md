@@ -397,3 +397,5 @@ Actual Research/Knowledge waits open before correction, reject notices without r
 Rotated MBT checkpoint:
 
 | 2026-10-02 11:14:56 | DER-01 approved; D1 complete1/4 (25%); D2 active; child0/4, parent8/24 | contracts0.2.0;282 schemas preserve272;92 tests |
+
+`2026-10-02 22:33:01`: B3.02 complete. Partial campaign preserves one prior report as context and two explicit evidence_insufficient slots; actual owner QEV-05..07 and Runtime authority/purpose/context rejection verified. Installed batch333 pass; failed authority probe corrected, stranded exact test campaign cancelled through public API, isolated rerun1 passes. Harness now cancels only its own unfinished run on failure. Build88.89%,child66.67%,parent44.44%; closed gates unchanged2/4,10/24. B3.03 active.

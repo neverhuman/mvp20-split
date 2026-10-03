@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-02 22:08:29` (America/Chicago).
+- Last refreshed: `2026-10-02 22:33:01` (America/Chicago).
 - Scope: v2 design/implementation alignment
-- Active focus: BP-06.03/B3.02 partial exploratory output next; B1/B2 complete, B3.01 verified, child58.33%, parent43.06%. Closed gates are2/4 and10/24; no child closeout or acceptance claim. Reuse verified Knowledge recovery/replacement evidence.
-- Next gate: B3.02 eligibility and partial-output proof. Actual live Runtime receipt/retention and original pin preservation now verified. Both owner correction stores/APIs align with future-campaign-only policy; UI quality/next-iteration focus remains queued SQ-01.
+- Active focus: BP-06.03/B3.03 delivery recovery next; B1/B2 complete, B3.01 verified, child66.67%, parent44.44%. Closed gates are2/4 and10/24; no child closeout or acceptance claim. Reuse verified Knowledge recovery/replacement evidence.
+- Next gate: B3.03 delivery fault recovery. B3.02 partial-output/eligibility proof verified; current uncertainty remains explicit. Actual live Runtime receipt/retention and original pin preservation now verified. Both owner correction stores/APIs align with future-campaign-only policy; UI quality/next-iteration focus remains queued SQ-01.
 
 ## Active Findings
 

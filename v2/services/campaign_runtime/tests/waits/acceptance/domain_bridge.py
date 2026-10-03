@@ -1,4 +1,6 @@
 """Test-only public HTTP bridge; Runtime compilation/migration stay in its interpreter."""
+import copy
+import importlib.util
 import json
 import os
 import socket
@@ -18,7 +20,8 @@ class DomainRuntime:
             self.port = listener.getsockname()[1]
         self.endpoint = "http://127.0.0.1:" + str(self.port)
         self.environment.update(RUNTIME_ADMIN_TOKEN="u"*32,RUNTIME_ISSUER_TOKEN="j"*32,
-                                RUNTIME_OUTCOME_TOKEN="o"*32,RUNTIME_RETENTION_TOKEN="t"*32)
+                                RUNTIME_OUTCOME_TOKEN="o"*32,RUNTIME_RETENTION_TOKEN="t"*32,
+                                RUNTIME_CURSOR_KEY="c"*32)
         self.path = root / "domain-runtime.json"
 
     def data_configuration(self, config):
@@ -43,15 +46,23 @@ class DomainRuntime:
 
     def stop(self):
         if self.runtime is not None:
-            self.runtime.stop()
+            try:
+                if hasattr(self, "run") and self.runtime.process.poll() is None:
+                    page = self.runtime.request("/v2/graph-runs/" + self.run)
+                    if page["status"] == "running":
+                        reply = self.runtime.request("/v1/runs/cancel", self.command("runtime.cancel",
+                            {"run_id":self.run,"reason_code":"test_failure_cleanup"}))
+                        assert reply["outcome"]["status"] == "accepted", reply
+            finally:
+                self.runtime.stop()
 
-    def before(self, family, view):
+    def open_graph(self, family, view, configure=None):
         receipt = view["record"]["receipt"]
         subject, output = receipt["subject"], receipt["outcome"]["output"]
         # The fixture retains exact source/output schema bytes beside peer configuration.
         raw_document = b'{"type":"string","contentEncoding":"base64"}'
         (self.root / "context-schema.json").write_bytes(raw_document)
-        output_schema = "assessment.json" if family == "assessment" else "reasoning.json"
+        output_schema = "assessment.json" if family.startswith("assessment") else "reasoning.json"
         input_type = {"kind":"artifact","schema_ref":subject["schema_ref"],"representation":"domain-context",
                       "unit":"1","media_type":subject["media_type"]}
         output_type = {"kind":"artifact","schema_ref":output["artifact"]["schema_ref"],
@@ -68,10 +79,14 @@ class DomainRuntime:
                     {"kind":"finish","node_id":"finish","outputs":[{"port":"result",
                       "source":{"kind":"output","node_id":"evidence","port":"result"}}]}],
                 "edges":[{"source":"evidence","target":"finish","route":"next"}]}}
+        inputs = [{"port":"subject","value":{"kind":"artifact","artifact":subject,
+                   "representation":"domain-context","unit":"1"}}]
+        if configure is not None:
+            configure(definition, inputs)
         definition_path = self.root/(family + "-runtime-graph.json")
         definition_path.write_text(json.dumps(definition),encoding="utf-8")
-        config = {"database_url_env":"RUNTIME_DB","fixtures":[],"principals":[
-            {"token_env":"RUNTIME_ADMIN_TOKEN","actor_id":"admin","scope":self.scope,"actions":["admit","maintain","read","deliver"]},
+        config = {"database_url_env":"RUNTIME_DB","inspection":{"cursor_key_env":"RUNTIME_CURSOR_KEY"},"fixtures":[],"principals":[
+            {"token_env":"RUNTIME_ADMIN_TOKEN","actor_id":"admin","scope":self.scope,"actions":["admit","maintain","read","deliver","cancel"]},
             {"token_env":"RUNTIME_ISSUER_TOKEN","actor_id":receipt["issuer_id"],"scope":self.scope,"actions":["submit_receipt","read"]},
             {"token_env":"RUNTIME_OUTCOME_TOKEN","actor_id":"artifact-service","scope":self.scope,"actions":["outcome"]}],
             "artifacts":{"runtime_owner":"runtime","reserve_endpoint":self.data + "/v1/reservations","token_env":"RUNTIME_RETENTION_TOKEN"},
@@ -86,13 +101,17 @@ class DomainRuntime:
         assert compiled.returncode == 0, compiled.stderr[-2000:]
         plan = json.loads(compiled.stdout)[definition["campaign_id"]]
         self._start()
-        admission = self.command("graph.admit",{"plan_sha256":plan["sha256"],"inputs":[{"port":"subject",
-            "value":{"kind":"artifact","artifact":subject,"representation":"domain-context","unit":"1"}}],"budget":{"limit":1}})
+        admission = self.command("graph.admit",{"plan_sha256":plan["sha256"],"inputs":inputs,"budget":{"limit":1}})
         admitted = self.runtime.request("/v1/graph-runs",admission)
         assert admitted["outcome"]["status"] == "accepted", admitted
         self.run = admitted["outcome"]["committed"]["object_id"]
         self.runtime.request("/v1/graph-runs/advance",self.command("graph.advance",{"run_id":self.run}))
         page = self.runtime.request("/v2/graph-runs/" + self.run)
+        return admitted, page
+
+    def before(self, family, view):
+        admitted, page = self.open_graph(family, view)
+        receipt = view["record"]["receipt"]
         activation = next(node["activation_id"] for node in page["nodes"] if node["kind"] == "await")
         self.wait_path = "/v1/graph-runs/" + self.run + "/waits/" + activation
         self.opened = self.runtime.request(self.wait_path)
@@ -115,6 +134,26 @@ class DomainRuntime:
         _, rejected = submit(corrected["record"]["notice"])
         assert rejected["outcome"]["reason_code"] == "wait_receipt_superseded"
         assert self.runtime.request(self.wait_path) == self.opened
+        boundary_rejections = {}
+        for field, reason in (("purpose","wait_receipt_purpose_mismatch"), ("subject","wait_receipt_subject_mismatch")):
+            wrong = copy.deepcopy(root["record"]["receipt"])
+            wrong["receipt_id"] = "boundary-" + uuid.uuid4().hex
+            if field == "purpose":
+                wrong[field] = "unrelated-purpose"
+            else:
+                wrong[field]["artifact_id"] = "unrelated-context"
+            _, rejection = submit(wrong)
+            assert rejection["outcome"]["reason_code"] == reason, rejection
+            assert self.runtime.request(self.wait_path) == self.opened
+            boundary_rejections[field] = rejection
+        expected = self.opened["expectation"]
+        unauthorized = self.command("graph.submit_receipt", {"run_id":self.run,
+            "activation_id":expected["activation_id"],"wait_revision":expected["wait_revision"],
+            "expectation_sha256":self.opened["expectation_sha256"],"receipt":root["record"]["receipt"]},
+            actor=root["record"]["receipt"]["issuer_id"])
+        denied = HttpTransport(self.endpoint,"u"*32).request("POST","/v1/graph-receipts",json.dumps(unauthorized).encode())
+        assert denied.status == 403, (denied.status, denied.body)
+        assert self.runtime.request(self.wait_path) == self.opened
         command, accepted = submit(root["record"]["receipt"])
         assert accepted["outcome"]["status"] == "accepted", accepted
         closed = self.runtime.request(self.wait_path)
@@ -131,5 +170,11 @@ class DomainRuntime:
         self._start()
         assert self.runtime.request(self.wait_path) == closed
         assert submit(root["record"]["receipt"],command)[1] == accepted
-        self.results[family].update(notice_rejected=rejected,accepted=accepted,closure=closed,graph=graph,delivery=delivery,
+        self.results[family].update(boundary_rejections=boundary_rejections,unauthorized_status=denied.status,notice_rejected=rejected,accepted=accepted,closure=closed,graph=graph,delivery=delivery,
                                     replay_after_replacement=True)
+
+    def partial(self, proof):
+        spec = importlib.util.spec_from_file_location("domain_partial", Path(__file__).with_name("domain_partial.py"))
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        module.prove_partial(self, proof.research["root"], proof.research["corrected"])

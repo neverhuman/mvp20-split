@@ -1,0 +1,112 @@
+{
+  "reviewed_local": "2026-10-02 22:33:01",
+  "scope": "BP-06.03/B3.02",
+  "status": "passed",
+  "source_partial_test": 1,
+  "installed_verification": {
+    "original_batch": {
+      "passed": 333,
+      "failed": 1,
+      "reason": "test command actor did not match receipt issuer before authorization probe"
+    },
+    "first_rerun": "blocked by stranded prior test campaign; exact campaign cancelled via public API",
+    "clean_rerun": {
+      "passed": 1,
+      "failed": 0
+    },
+    "results": "runtime-partial-progress-installed-20261002/rerun-clean.xml",
+    "wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.5-py3-none-any.whl": "0a4486a87eb7cf126fbd254306f5eba645fe99c357b5e037493934e7862f7664",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_knowledge-0.7.0-py3-none-any.whl": "d36f869fa187b73c5338291cdc3afceb3ebd19026d17cbdd6d67f3e0ce1bf417",
+      "amphora_contracts_research-0.6.0-py3-none-any.whl": "4ebdb4365d30ce487af2a39cc97262154d84a8040b3693c818452457aef35e2b",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_research-0.12.1-py3-none-any.whl": "a4f81a39bb7e8479e69c9784658eebd968425a1d4ca0594093d2475f88a43311",
+      "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+    }
+  },
+  "partial_progress": {
+    "status": "completed",
+    "items": [
+      {
+        "index": 0,
+        "value": {
+          "kind": "artifact",
+          "artifact": {
+            "artifact_id": "cdbc6c87335a4d2b9f5a19fb6ce5a1fd",
+            "scope": {
+              "tenant_id": "research-tests",
+              "project_id": "69129f13e700468ab8663b2b1c39f5a4"
+            },
+            "sha256": "9f5ed379fbc6201d546dd26e89a634b885ea9337a1fa315acdabd85c94eeadad",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "research.evidence-assessment.payload",
+              "version": "1",
+              "sha256": "fa1802fa7d30128c0328a20351c2fa55c0ca1378e16859a0671d42fc77d7e3af"
+            },
+            "size_bytes": 2994
+          },
+          "representation": "research.evidence_assessment.v1",
+          "unit": "1"
+        }
+      },
+      {
+        "index": 1,
+        "value": {
+          "kind": "missing",
+          "reason_code": "evidence_insufficient",
+          "member_id": "uncertain-a"
+        }
+      },
+      {
+        "index": 2,
+        "value": {
+          "kind": "missing",
+          "reason_code": "evidence_insufficient",
+          "member_id": "uncertain-b"
+        }
+      }
+    ],
+    "closures": [
+      "abstained",
+      "abstained"
+    ],
+    "meaning": "retained_context_not_current_scientific_acceptance"
+  },
+  "boundaries": {
+    "assessment": {
+      "denied_http": 403,
+      "rejections": {
+        "purpose": "wait_receipt_purpose_mismatch",
+        "subject": "wait_receipt_subject_mismatch"
+      }
+    },
+    "reasoning": {
+      "denied_http": 403,
+      "rejections": {
+        "purpose": "wait_receipt_purpose_mismatch",
+        "subject": "wait_receipt_subject_mismatch"
+      }
+    }
+  },
+  "qev": {
+    "05": [
+      "category_mismatch",
+      "context_mismatch"
+    ],
+    "06": "exact criterion and need revision retained in no_matching_evidence gap",
+    "07": "exact profile/question/need revisions and matching supporting ArtifactRef retained"
+  },
+  "limits": [
+    "Synthetic fixtures, not scientific validity",
+    "Two graph points share one current abstained assessment receipt",
+    "UI quality view remains queued SQ-01",
+    "Delivery fault recovery remains B3.03"
+  ]
+}

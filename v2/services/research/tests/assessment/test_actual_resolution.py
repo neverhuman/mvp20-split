@@ -245,6 +245,19 @@ def test_actual_knowledge_output_and_evidence_require_authenticated_applicable_p
             assessment = resolve([receipt]).assessment
             assert assessment.sufficient is (category == "observation" and observation_context == context)
             assert assessment.scientifically_established is False
+            wire = assessment.model_dump(mode="json")
+            assert wire["request"]["profile"] == request["profile"]
+            assert wire["request"]["question"] == request["question"]
+            assert wire["needs"][0]["need"] == need["reference"]
+            assert wire["needs"][0]["criterion_id"] == "c"
+            if not assessment.sufficient:
+                assert wire["needs"][0]["gap"] == {"criterion_id":"c", "need":need["reference"],
+                                                  "reason":"no_matching_evidence"}
+                expected_reason = "category_mismatch" if category == "opinion" else "context_mismatch"
+                assert wire["reviews"][0]["reason"] == expected_reason
+            else:
+                assert wire["needs"][0]["gap"] is None
+                assert wire["needs"][0]["supporting"] == [receipt]
             observations.append(assessment.model_dump(mode="json"))
         for recovery in ("begin", "stream", "finalize"):
             assert resolve([receipt], recovery=recovery).assessment.sufficient
@@ -275,6 +288,8 @@ def test_actual_knowledge_output_and_evidence_require_authenticated_applicable_p
         assert research.request("/v1/assessments/read", api_request) == api_result
         assert research.request("/v1/assessment-publications/read", selection) == api_publication
         corrections = prove_corrections(research, knowledge, scope, api_request, api_publication, reason, runtime=runtime)
+        if runtime is not None:
+            runtime.partial(corrections)
         # Replace both correction owners and restore their exact immutable selections.
         research.stop()
         research = Owner("amphora_research", research_config, environment, "r" * 32)
