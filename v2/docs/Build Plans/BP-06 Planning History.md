@@ -1,5 +1,13 @@
 # BP-06 Planning History
 
+## BP-06.04/B2.03b durable interpretation complete - 2026-10-03 05:01:56
+
+Research0.28.0/contracts0.12.0; research_0011 adds six append-only intent/result/dependency tables.728 source/728 installed and14 dev tests pass;34 focused tests cover292 statements/32 branches100%.392 schemas unchanged. Pin actor/full config/request before peer work; exact stored observations/experiments plus report/protocol/sample/material provenance prepare complete dependencies. Atomic result/index writes reject same-reference forgery and roll back at every injected insertion failure. Original pending pins survive a later correction; later interpretation explicitly selects revised observation and retains low-accuracy focus. Unknown material context is not a verified dependency. Application UPDATE/DELETE denied. Installed/replacement-object evidence does not claim HTTP source authentication or process-barrier crashes. B2.03a/b100%,c0%;B2=66.67%,Build55.56%,child41.67%,parent56.94%; gates1/4 and13/24 unchanged. B2.03c active.
+
+Rotated MBT checkpoints:
+
+| 2026-10-02 20:50:17 | B2 awaits receipt invalidation policy choice; B1 complete; child25%, parent37.50% unchanged | [Decision](BP-06/BP-06.03%20Receipt%20invalidation%20decision.md);2 boundary probes pass |
+
 ## BP-06.04/B2.03a interpretation contracts complete - 2026-10-03 04:47:00
 
 Research0.27.0/contracts0.12.0;674 source/674 installed and119 compatibility/dev tests pass.27 focused cases,116 owner statements/8 branches100%.392 public schemas preserve376 predecessor bytes. Complete scoped profile reconstruction verifies nested catalog hashes; reference-only requests bind exact original observations/experiments. Computed projections retain original lexical evidence, raw/effective matching and independent usability/focus. Canonical content includes actor/config/input/result; supplied source lists are bounded, not authentication proof. One mismatched-revision test fixture was corrected to an independent valid observation identity. No migration/API/scientific authority added. B2.03a100%,b/c0%, B2=58.33%,Build52.78%,child39.58%,parent56.60%; closed gates1/4 and13/24 unchanged. B2.03b active.

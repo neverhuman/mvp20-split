@@ -1,0 +1,52 @@
+{
+  "timestamp_local": "2026-10-03 05:01:56",
+  "milestone": "BP-06.04/B2.03b",
+  "research_version": "0.28.0",
+  "contracts_version": "0.12.0",
+  "migration": "research_0011",
+  "verification": {
+    "source_tests": 728,
+    "installed_tests": 728,
+    "dev_tests": 14,
+    "focused_tests": 34,
+    "coverage": {
+      "covered_lines": 292,
+      "num_statements": 292,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100",
+      "num_branches": 32,
+      "num_partial_branches": 0,
+      "covered_branches": 32,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    },
+    "schemas_unchanged": 392
+  },
+  "cases": [
+    "pinned_full_profile_request_actor",
+    "exact_owned_revision_revalidation",
+    "complete_report_protocol_sample_material_dependencies",
+    "atomic_result_and_all_indexes",
+    "concurrent_completion",
+    "offline_original_actor_replay",
+    "changed_intent_and_result_conflicts",
+    "same_reference_forgery_rejected",
+    "unknown_input_stays_pending",
+    "correction_after_begin_preserves_original_pin",
+    "future_interpretation_explicitly_selects_corrected_revision",
+    "unknown_context_not_verified_dependency",
+    "append_only_service_grants",
+    "forward_migration_replay"
+  ],
+  "limits": [
+    "Source authentication and public HTTP remain B2.04",
+    "Read-only correction views/material decision impacts remain B2.03c",
+    "No current-head selection, scientific acceptance or Runtime authority",
+    "Replacement object and installed-wheel proof, not process-barrier crash proof"
+  ]
+}
