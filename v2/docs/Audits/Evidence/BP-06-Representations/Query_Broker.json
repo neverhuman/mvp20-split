@@ -1,0 +1,192 @@
+{
+  "timestamp_local": "2026-10-03 18:28:11",
+  "task": "BP-06.05/B2.03b",
+  "status": "verified",
+  "package": "Data0.26.0",
+  "source": {
+    "passed": 76,
+    "seconds": 65.01
+  },
+  "independent_full_owner": {
+    "passed": 547,
+    "failed_stale_head_assertion": 1,
+    "seconds": 266.06
+  },
+  "independent_corrected_and_added": {
+    "passed": 28,
+    "seconds": 30.31,
+    "includes": "corrected migration head, added partial-access filter"
+  },
+  "dev": {
+    "passed": 18,
+    "seconds": 13.48
+  },
+  "coverage": {
+    "scope": "retrieval/queries",
+    "statements": 317,
+    "covered_statements": 317,
+    "branches": 32,
+    "covered_branches": 32
+  },
+  "migration": {
+    "timestamp_local": "2026-10-03 18:14:43",
+    "before_version": "artifact_0011",
+    "after_version": "artifact_0012",
+    "retained": {
+      "audit_events": [
+        26708,
+        "d3aa3bfde18203c7724a84ddddae18c9"
+      ],
+      "capacity": [
+        6871,
+        "df4d7107102b33c2ac03177612d8e557"
+      ],
+      "catalog": [
+        8080,
+        "b4550970bc000d46aa0ae0d55e5d02d3"
+      ],
+      "commands": [
+        27642,
+        "206721e3b680a7d691f7ad4bdd3c569d"
+      ],
+      "conversion_traces": [
+        868,
+        "4d58307885bc71cb6ebed8f5ba111332"
+      ],
+      "derivation_inputs": [
+        2420,
+        "af493997f2997fb13d0e2b9522ab4559"
+      ],
+      "derivations": [
+        1335,
+        "fe159c74f4ea233f26cf1b9bc4d48b80"
+      ],
+      "derived_uploads": [
+        1508,
+        "2367127b866c446dfcbb1e00fb65cea5"
+      ],
+      "encoding_binding_cursors": [
+        721,
+        "0eaad58e66e4f80e84f4e024cff6a4c6"
+      ],
+      "encoding_binding_events": [
+        3972,
+        "83669dbb9fd38fcdda6c219739734b08"
+      ],
+      "encoding_binding_jobs": [
+        770,
+        "956685b29bfc002ac232d7ef3b31b470"
+      ],
+      "encoding_leases": [
+        980,
+        "7d68dd07f8b3460bb1a9ae67c25d2255"
+      ],
+      "encoding_profiles": [
+        1120,
+        "5e49414ba56509c9aa9562503e3935da"
+      ],
+      "encoding_requests": [
+        881,
+        "7b5e96297dc82b1e373f7dfc411d8726"
+      ],
+      "encoding_results": [
+        827,
+        "2afcb6fa1fb14abb89004e84d6a9354a"
+      ],
+      "encoding_work": [
+        980,
+        "8bb2fa3818d6996ab349c99384b4b8bb"
+      ],
+      "fixture_probe": [
+        1,
+        "9cfb5a1d321e51a1a5b1e485d384729b"
+      ],
+      "identity_observation_intents": [
+        371,
+        "a25ebdeb9332848834ea290531d1b990"
+      ],
+      "identity_observation_results": [
+        284,
+        "4e3630ac65ef76c9b24fa2a625e80a4b"
+      ],
+      "index_build_attempts": [
+        194,
+        "e1f3a8fba6966100d22d5449c915673b"
+      ],
+      "index_generation_bindings": [
+        314,
+        "0e077495dd189b8a87dd5fa956486d9d"
+      ],
+      "index_generation_cursors": [
+        190,
+        "64ab260a4ac0109823176060c15e44cf"
+      ],
+      "index_generation_events": [
+        528,
+        "38ffa1c7bb6a95ef1f5993140515dd43"
+      ],
+      "index_generations": [
+        190,
+        "580128645824d6be5f1eb29943c4f78a"
+      ],
+      "index_heads": [
+        39,
+        "7be09145360aa2c0d8427d3c008b9626"
+      ],
+      "index_publications": [
+        46,
+        "ec3a8d9ca093f68ef38dc949053f2ea8"
+      ],
+      "index_verifications": [
+        61,
+        "76994fc8744a31d740cc55351d18060b"
+      ],
+      "outbox": [
+        8299,
+        "f6e75fb4157178a8125279237fb55afe"
+      ],
+      "representation_bindings": [
+        610,
+        "70ddd0ae4043da5e00d8d602c4626d01"
+      ],
+      "reservations": [
+        3022,
+        "8ea2233275b2f882ebe429c980bb8811"
+      ],
+      "source_heads": [
+        1934,
+        "ba80fddaf6deb2444bc586dc03c94268"
+      ],
+      "source_revisions": [
+        2016,
+        "4a7d04ac5005ed439e9a67932757a370"
+      ],
+      "source_rights_heads": [
+        1914,
+        "4c8f162a2138a42e1bd5a475fae1203a"
+      ],
+      "source_rights_revisions": [
+        2520,
+        "3ea2918c072c9e805426730a3fc2f45a"
+      ],
+      "upload_attempts": [
+        10453,
+        "d190f436c12aa83b8578e8d695156a05"
+      ],
+      "uploads": [
+        10670,
+        "90e62e47ee85ce0e523ad2577a2cbd22"
+      ]
+    },
+    "unchanged": true,
+    "repair": "Initial missing explicit unique FK target rolled back; verified0011/no query tables before corrected migration."
+  },
+  "schema_count": 438,
+  "schema_changes": false,
+  "checks": "lint/dependency boundaries/schema pass",
+  "limitations": [
+    "Query broker uses test-only search port in focused authority tests; installed actual Qdrant broker proof remainsB2.03c",
+    "Existing full-suite Qdrant adapter/generation reconstruction is not substituted for query proof",
+    "HTTP remains B2.04; process-death B3; scientific relevance unproven"
+  ]
+}
