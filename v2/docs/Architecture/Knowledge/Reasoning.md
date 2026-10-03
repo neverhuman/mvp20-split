@@ -1,6 +1,6 @@
 # Reasoning and Evidence Authority
 
-- Design status: Configured finite reasoning, exact owner-state binding, durable result history and optional HTTP implemented in BP-06.03/B1; artifact publication, Research assessment and domain receipts remain pending.
+- Design status: BP-06.03/B1 complete: configured finite reasoning, exact owner-state binding, durable result history, artifact publication, synthetic Research assessment/domain receipts and optional authenticated HTTP are verified. B2 supersession/invalidation policy awaits owner direction; B3 Runtime receipt integration and scientific validation remain unproven.
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
 - Last reviewed: `2026-10-02 09:39:22` (America/Chicago)
 - Parent: [Domain overview](Knowledge_Architecture.md)

@@ -1,0 +1,19 @@
+{
+  "timestamp_local": "2026-10-02 20:49:48",
+  "scope": "BP-06.03/B2 receipt invalidation semantics discovery",
+  "tests": 2,
+  "cases": [
+    "Pure Runtime disposition rejects a superseded notice but still accepts the original matching receipt shape",
+    "Actual PostgreSQL rejects changed revision bytes under the same scoped issuer receipt ID"
+  ],
+  "source_tests": [
+    "services/campaign_runtime/tests/waits/test_supersession_boundary.py",
+    "services/campaign_runtime/tests/waits/test_storage.py::test_issuer_receipt_identity_is_immutable_and_exact_replay_is_safe"
+  ],
+  "limitations": [
+    "No domain correction or notification delivery was implemented by this probe",
+    "Pure disposition proof is not an end-to-end campaign acceptance claim",
+    "Existing Runtime history and migrations remain unchanged"
+  ],
+  "decision_required": "Whether corrections invalidate pending consumption in an already-running campaign or only affect subsequent campaigns"
+}

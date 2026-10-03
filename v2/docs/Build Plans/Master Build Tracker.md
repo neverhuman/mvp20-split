@@ -9,15 +9,15 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 primary active; BP-07 through BP-09 queued; BP-05 closed.
-- Last refreshed: `2026-10-02 20:45:17` (America/Chicago).
+- Last refreshed: `2026-10-02 20:49:48` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P5 / BP-06 - Knowledge Evidence and Source Loop.
 - Primary active implementation plan / phase / task: BP-06 -> BP-06.03 / Build / B2.
-- Current task: BP-06.03/B2 transition/supersession design and implementation; B3 integration next. B1 milestones10/10 complete; child25%.
+- Current task: B2 awaits owner choice: invalidate unconsumed receipts in active campaigns after Runtime accepts a notice (recommended), or preserve active campaign pins and apply corrections only to future campaigns. See [receipt invalidation decision](BP-06/BP-06.03%20Receipt%20invalidation%20decision.md). B1 complete; no further decision-independent implementation remains at this gate.
 - Next task: B3 actual Runtime receipt integration after B2 transitions. Runtime integration is B3.
 - Implementation completion: BP-05 closed100% (16/16); BP-06 at37.50% scoped completion ((8+1)/24); closed gates9/24 (37.50%); BP-07..09 remain0%.
 - Active focus: BP-06.03/B2 transitions; B1 milestones10/10; child25%, parent37.50%; closed gates are1/4 and9/24.
-- Blockers: No owner blocker; derived-publication prerequisite accepted.
+- Blockers: B2 receipt invalidation policy choice; B1 complete. Existing acceptance/history stays immutable under both options.
 - Acceptance posture: BP-05 integrated Studio accepted within synthetic software scope; scientific and deployment acceptance remains later.
 - Active exception: none.
 
@@ -123,6 +123,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-02 20:50:17 | B2 awaits receipt invalidation policy choice; B1 complete; child25%, parent37.50% unchanged | [Decision](BP-06/BP-06.03%20Receipt%20invalidation%20decision.md);2 boundary probes pass |
 | 2026-10-02 20:45:17 | B1 complete10/10; child25%, parent37.50%; B2 active; gates1/4 and9/24 | [API](../Audits/Evidence/BP-06-Research/Assessment_API.json);434 source/317 installed tests |
 | 2026-10-02 20:27:44 | B1.09 complete; B1 9/10; child22.50%, parent37.08%; B1.10 active | [Publication](../Audits/Evidence/BP-06-Research/Assessment_Publication.json);298+4 source/302 installed tests |
 | 2026-10-02 19:56:27 | B1.08 complete; B1 8/10; child20%, parent36.67%; B1.09 active | [Store](../Audits/Evidence/BP-06-Research/Assessment_Store.json);271 source/271 installed tests |
@@ -147,6 +148,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-02 09:39:22 | BP-06.03/B1 Knowledge public/durable boundary verified; child0/4; parent8/24 | [Evidence](../Audits/Evidence/BP-06-Knowledge/Reasoning_Boundary.json);189+62+14 tests |
 | 2026-10-01 21:13:35 | BP-06.03/B1 kernel and input binding verified; child0/4; parent8/24 | [Evidence](../Audits/Evidence/BP-06-Knowledge/Reasoning_Kernel.json);161 owner +14 dev tests |
 | 2026-10-01 21:01:42 | BP-06.02 closed100%; parent33.33%; successor .03 audit next | [Closeout](../Audits/BP-06.02_Knowledge_Replay_Closeout.md);169+39 installed tests |
-| 2026-10-01 20:50:22 | BP-06.02/B3 complete; child75%, parent33.33%; V1 active | [Failure matrix](../Audits/Evidence/BP-06-Knowledge/Failure_Matrix.json);130 owner tests;4 process scenarios |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

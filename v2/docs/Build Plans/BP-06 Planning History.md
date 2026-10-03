@@ -341,3 +341,11 @@ B1.10 Research0.10.0/contracts0.5.0 adds optional scoped assessment/publication 
 Rotated MBT checkpoints:
 
 | 2026-10-01 20:43:08 | BP-06.02/B2 complete; child50%, parent25%; B3 active | [Rebuild proof](../Audits/Evidence/BP-06-Knowledge/Rebuild_Publication.json);122 owner tests;264 schemas |
+
+## 2026-10-02 20:49:48 - B2 invalidation policy decision
+
+Two bounded probes confirm immutable receipt-ID semantics and the distinction between rejecting a superseded document and revoking its earlier accepted version. Prepared the concrete two-option decision before seeking owner input. Recommended: notices invalidate uncommitted consumption after Runtime records them, retaining already committed history. Alternative: future-campaign-only corrections. No production Runtime change, no reopened plan, no progress credit. B1 remains complete; B2 awaits policy direction.
+
+Rotated MBT checkpoints:
+
+| 2026-10-01 20:50:22 | BP-06.02/B3 complete; child75%, parent33.33%; V1 active | [Failure matrix](../Audits/Evidence/BP-06-Knowledge/Failure_Matrix.json);130 owner tests;4 process scenarios |
