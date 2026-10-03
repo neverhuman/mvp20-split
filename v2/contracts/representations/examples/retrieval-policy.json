@@ -1,0 +1,8 @@
+{
+  "format": "data.exact-dot-ranking.v1",
+  "top_k": 5,
+  "bindings": null,
+  "metric": "dot",
+  "order": "score_desc_binding_asc",
+  "quality_filter": "none"
+}

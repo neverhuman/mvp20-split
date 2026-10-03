@@ -1,14 +1,14 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-03 17:51:31` (America/Chicago).
+- Last refreshed: `2026-10-03 18:09:05` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.05/B2.03a query contracts/policy; child37.50%, parent72.92%,17/24 closed gates.
-- Next gate: query contracts and policy. Actual independently installed Data/Qdrant generation and reconstruction verified; durable lifecycle and Qdrant remain subsequent tasks. Scientific-quality UI remains SQ-01.
+- Active focus: BP-06.05/B2.03b durable rights-aware query broker; child39.58%, parent73.26%,17/24 closed gates.
+- Next gate: durable query broker. Actual independently installed Data/Qdrant reconstruction and pure query contracts/policy verified; query storage/authority remains B2.03b/c. Scientific-quality UI remains SQ-01.
 
 ## Active Findings
 
-- BP-06.05/QD-01: actual Qdrant1.19.1 simultaneous creation of one attempt namespace returned409 and a temporary500 read; a later read recovered expected content. Adapter errors remain operational and no create acknowledgement grants verification. Separate fenced attempt namespaces and exact content comparison preserve authority. Actual fresh-namespace recovery is tested at the adapter boundary; Data generation/index reconstruction is B2.02c and abrupt process/race proof is B3. No claim that every concurrent backend call succeeds. This does not block bounded adapter work.
+- BP-06.05/QD-01: actual Qdrant1.19.1 simultaneous creation of one attempt namespace returned409 and a temporary500 read; a later read recovered expected content. Adapter errors remain operational and no create acknowledgement grants verification. Separate fenced attempt namespaces and exact content comparison preserve authority. Actual fresh-namespace recovery is tested at the adapter boundary; Data generation/index reconstruction passed B2.02c and abrupt process/race proof is B3. No claim that every concurrent backend call succeeds. This does not block bounded adapter work.
 
 
 

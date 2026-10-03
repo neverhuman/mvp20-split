@@ -24,9 +24,14 @@ from .profiles import (
     EncodingProfileRef,
     VectorSpaceDescriptor,
 )
+from .retrieval import RetrievalMatch, RetrievalPolicy, RetrievalRecord, RetrieveRepresentations
 from .schema import representation_vector_schema
 
 __all__ = [
+    "RetrieveRepresentations",
+    "RetrievalMatch",
+    "RetrievalPolicy",
+    "RetrievalRecord",
     "BuildIndexGeneration",
     "IndexGeneration",
     "IndexGenerationRef",

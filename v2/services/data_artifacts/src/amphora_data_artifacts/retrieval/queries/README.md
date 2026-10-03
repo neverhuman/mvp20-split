@@ -1,0 +1,11 @@
+# Pinned retrieval queries
+
+Data owns query identity and ranking here. `QueryPlan` pins the authenticated actor, request id, exact generation, complete query binding and explicit policy. The query is a retained source representation under exactly the generation's shared-role profile; equal dimensions or caller-supplied vectors cannot establish compatibility. These pure objects validate consistency, not publication or current rights. Durable admission and result history remain B2.03b.
+
+`QueryPolicy` supports exact Dot scores, 1..256 top-k and an optional exact binding allow-set. Null means the whole manifest; an empty tuple means no targets. Filter order is canonical and does not affect identity. Unknown references, conflicting digests and foreign scopes fail. There is no implicit latest generation or scientific-quality filter. Current Data source records carry completeness but no Knowledge review status; unsupported review-state predicates must be rejected, never silently interpreted as promotion or inferred from similarity.
+
+`BindingScore` accepts finite numeric observations, normalizes signed zero and rejects booleans, overflow and nonfinite values. Ranking requires exactly one score for every owner-authorized eligible binding, rejects unexpected/duplicate/missing results, then sorts by descending score and ascending binding id/digest. All negative scores remain eligible. Scores are backend metric observations, not probabilities or scientific confidence. Backend response order never breaks ties.
+
+The broker must resolve publication/profile/binding authority, determine current read/process access before backend I/O, validate observed point identities and fence current rights before committing/exposing results. This module cannot grant that authority. No unauthorized omission count, source payload or backend namespace belongs in the public result. Historical records preserve original selections; they do not grant fresh content access. Scientific corrections affect later campaign selection, not pinned current queries.
+
+Tests belong in `tests/retrieval/queries/`. Replacement must preserve descriptor formats and canonical identity, exact profile/scope rejection, full eligible-set validation and deterministic tie behavior. Persistence, HTTP, installed-owner and actual backend tests remain separate evidence tiers.

@@ -1,0 +1,43 @@
+{
+  "timestamp_local": "2026-10-03 18:09:05",
+  "task": "BP-06.05/B2.03a",
+  "status": "verified",
+  "packages": {
+    "data": "0.25.0",
+    "representations": "0.3.0"
+  },
+  "source": {
+    "passed": 98,
+    "seconds": 4.13
+  },
+  "independent": {
+    "passed": 181,
+    "skipped_postgres": 60,
+    "seconds": 2.81,
+    "directory": ".test-results/data-query-policy-20261003",
+    "private_peers_absent": true
+  },
+  "dev": {
+    "passed": 18,
+    "seconds": 12.15
+  },
+  "coverage": {
+    "scope": "retrieval/queries",
+    "statements": 143,
+    "covered_statements": 143,
+    "branches": 14,
+    "covered_branches": 14
+  },
+  "schemas": {
+    "total": 438,
+    "prior_unchanged": 430,
+    "new": 8
+  },
+  "boundaries": "verified",
+  "migration": "artifact_0011 unchanged",
+  "limits": [
+    "Pure policy and public contracts only; broker/current rights/persistence B2.03b",
+    "Installed regression skipped60 explicit PG gates, not claimed as persistence proof",
+    "Synthetic Dot semantics are not scientific quality"
+  ]
+}

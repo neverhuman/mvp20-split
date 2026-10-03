@@ -1,0 +1,29 @@
+{
+  "wire_version": "1",
+  "retrieval_id": "query1",
+  "generation": {
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "representations"
+    },
+    "corpus_id": "fixture-corpus",
+    "generation_id": "g1",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "query": {
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "representations"
+    },
+    "binding_id": "binding-1",
+    "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+  },
+  "policy": {
+    "format": "data.exact-dot-ranking.v1",
+    "top_k": 5,
+    "bindings": null,
+    "metric": "dot",
+    "order": "score_desc_binding_asc",
+    "quality_filter": "none"
+  }
+}

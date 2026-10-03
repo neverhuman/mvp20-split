@@ -79,6 +79,10 @@ for name, model in {
 }.items():
     MODELS["representations." + name] = model
 for name, model in {
+    "retrieval-policy": representation_contracts.RetrievalPolicy,
+    "retrieve": representation_contracts.RetrieveRepresentations,
+    "retrieval-match": representation_contracts.RetrievalMatch,
+    "retrieval-record": representation_contracts.RetrievalRecord,
     "generation-ref": representation_contracts.IndexGenerationRef,
     "build-generation": representation_contracts.BuildIndexGeneration,
     "index-manifest": representation_contracts.IndexManifest,

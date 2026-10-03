@@ -3,7 +3,7 @@ name = "amphora-foundation-verification"
 version = "0.1.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
-    "amphora-contracts-representations==0.2.0",
+    "amphora-contracts-representations==0.3.0",
     "amphora-knowledge==0.15.8",
     "amphora-contracts-knowledge==0.7.8",
     "amphora-contracts-core==0.1.0",
@@ -21,7 +21,7 @@ dependencies = [
     "amphora-contracts-commands",
     "amphora-contracts-runtime",
     "amphora-contracts-artifacts",
-    "amphora-data-artifacts==0.24.0",
+    "amphora-data-artifacts==0.25.0",
     "amphora-capability-registry",
     "amphora-tool-protocol",
     "amphora-numeric-affine",

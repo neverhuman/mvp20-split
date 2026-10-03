@@ -11,6 +11,10 @@ from pydantic import ValidationError
 
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
+    "retrieve": contracts.RetrieveRepresentations,
+    "retrieval-policy": contracts.RetrievalPolicy,
+    "retrieval-match": contracts.RetrievalMatch,
+    "retrieval-record": contracts.RetrievalRecord,
     "generation-ref": contracts.IndexGenerationRef,
     "build-generation": contracts.BuildIndexGeneration,
     "index-manifest": contracts.IndexManifest,
@@ -44,6 +48,18 @@ def test_examples_roundtrip_and_match_both_published_schema_modes(name):
 @pytest.mark.parametrize(
     "name,mutation",
     [
+        ("retrieve", lambda x: x.update(actor_id="other")),
+        ("retrieve", lambda x: x.update(vector=[1.0])),
+        ("retrieve", lambda x: x.update(namespace="caller-target")),
+        ("retrieve", lambda x: x.update(generation="latest")),
+        ("retrieval-policy", lambda x: x.update(top_k=True)),
+        ("retrieval-policy", lambda x: x.update(top_k=257)),
+        ("retrieval-policy", lambda x: x.update(quality_filter="trusted")),
+        ("retrieval-policy", lambda x: x.update(review_state="promoted")),
+        ("retrieval-policy", lambda x: x.update(metric="cosine")),
+        ("retrieval-match", lambda x: x.update(score=True)),
+        ("retrieval-record", lambda x: x.update(omitted_count=5)),
+        ("retrieval-record", lambda x: x.update(scientific_confidence=1.0)),
         ("generation-ref", lambda x: x.update(sha256="bad")),
         ("build-generation", lambda x: x.update(bindings=[])),
         ("build-generation", lambda x: x.update(bindings=x["bindings"] * 257)),
@@ -94,3 +110,12 @@ def test_pending_has_no_binding_and_vector_schema_matches_published_bytes():
     assert contracts.EncodingStatus.model_validate_json(json.dumps(value)).outcome.state == "pending"
     raw = (ROOT.parent / "schemas/v1/representations.vector.validation.json").read_bytes()
     assert contracts.representation_vector_schema().sha256 == hashlib.sha256(raw).hexdigest()
+
+
+@pytest.mark.parametrize("score", [float("nan"), float("inf"), -float("inf")])
+def test_non_json_numeric_values_fail_at_wire_boundary(score):
+    # JSON Schema assumes valid JSON numbers; Python NaN is outside that domain.
+    value = example("retrieval-match")
+    value["score"] = score
+    with pytest.raises(ValidationError):
+        contracts.RetrievalMatch.model_validate_json(json.dumps(value))

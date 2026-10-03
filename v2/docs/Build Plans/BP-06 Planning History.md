@@ -753,3 +753,9 @@ Scoped architecture audit aligned; README current-state contradictions repaired.
 Reconciled Data ownership, no existing vector contracts, independent source rights, exact profiles and future-only correction policy. Six B1/four B2/three B3 milestones fit existing delivery weights. B1.01 pure identity/fixture work begins; child0%,parent66.67% unchanged. Qdrant fixture/backend pinning remains B2.02; real scientific encoder/corpus choice does not block synthetic invariants.
 
 | 2026-10-03 00:13:55 | BP-06.04/B1.03 complete; child9.38%, parent51.56%; B1.04 active | [Purpose-bound policies](../Audits/Evidence/BP-06-Research/Synthesis_Eligibility_Policies.json);339 source/339 installed,898 statements/154 branches |
+
+Archived MBT checkpoint: | 2026-10-03 05:46:33 | B2.04b complete; child47.92%, parent57.99%; c active | [Interpretation hosting](../Audits/Evidence/BP-06-Research/Interpretation_Hosting.json);882 source/882 installed,14 dev |
+
+## 2026-10-03 18:09:05 ? BP-06.05/B2.03a query contracts/policy
+
+Data0.25.0/representations0.3.0;98 source tests4.13s,181 installed2.81s (60 PG opt-ins skipped; no persistence claim),18 dev12.15s. Query subtree143 statements/14 branches fully exercised. Four additive roots/eight schemas; prior430 byte-identical. Fixture test needed an explicitly synthetic non-Dot descriptor; JSON Schema assumes valid JSON numbers, so NaN rejection is separately tested at Pydantic/transport boundary. Strict tuple mapping repaired using canonical JSON. artifact_0011 unchanged. B2.03a100%,b/c0%;B2=58.33%,Build52.78%,child39.58%,parent73.26%,closed gates1/4 and17/24. Next durable broker; no owner blocker.

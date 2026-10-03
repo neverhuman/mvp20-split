@@ -1,6 +1,6 @@
 # Retrieval generation boundary
 
-Owner: Data/Artifacts, BP-06.05/B2.01. Pure manifest/generation/attempt identities and transition policy are implemented; private generation admission/history/build claims are implemented. Verified projection records and authoritative PG heads are implemented with an injected backend port. No actual Qdrant adapter or retrieval API exists yet.
+Owner: Data/Artifacts, BP-06.05/B2.01. Pure manifest/generation/attempt identities and transition policy are implemented; private generation admission/history/build claims are implemented. Verified projection records and authoritative PG heads are implemented with an injected backend port. Actual pinned Qdrant adapter/reconstruction is verified; retrieval API remains B2.04.
 
 This module owns index snapshot identity, ordered corpus manifests, build lifecycle, projection verification and authoritative generation selection. It consumes Data representation profiles, validated source-binding projections and current source rights through their focused boundaries. It does not own source policies, encode scientific inputs, mutate Knowledge, schedule campaigns or treat a backend alias as truth.
 
@@ -8,7 +8,7 @@ A corpus contains 1..256 unique binding IDs in explicit order and one exact shar
 
 Generation transitions are prepared -> building -> verified -> published, with failure/abandonment only from nonterminal states. Pure transition permission is not evidence that a projection exists or that publication is authorized. The lifecycle store verifies owner source/profile records and current process rights. Build claims are lease-fenced; actual point comparison and expected-head publication are implemented in B2.01d. Backend integration is a required explicit port, never a hidden fallback; actual Qdrant proof belongs to B2.02.
 
-Tests live in `tests/retrieval/` and must distinguish pure synthetic records, actual PostgreSQL authority, actual Qdrant behavior and process/race proof. Replacement preserves ordered manifest fingerprints, full profile/source/vector identity, attempt namespace isolation and immutable generation history. Actual Qdrant and retrieval APIs are subsequent tasks; no pure-object test grants those completion claims.
+Tests live in `tests/retrieval/` and must distinguish pure synthetic records, actual PostgreSQL authority, actual Qdrant behavior and process/race proof. Replacement preserves ordered manifest fingerprints, full profile/source/vector identity, attempt namespace isolation and immutable generation history. Actual Qdrant is verified; retrieval APIs are subsequent tasks; no pure-object test grants those completion claims.
 
 B2.01a coverage: all 125 statements and 8 branches in this pure module exercised, including maximum manifest size, duplicate/colliding points, scope/profile separation, generation head and namespace isolation, and every transition pair. This is domain-policy evidence, not database or backend evidence.
 
@@ -38,3 +38,5 @@ The focused [Qdrant boundary](qdrant/README.md) now owns pinned configuration an
 
 
 Actual Qdrant integration/reconstruction is now verified in B2.02c: installed owner processes reconstruct a published generation after Qdrant restart, and a separate backend is rebuilt through a fresh generation/namespace with the same exact manifest and expected previous head. Neither partial in-place rebuild nor silent redirection of old pins is permitted. Current-rights retrieval broker/results and generation HTTP remain B2.03/B2.04.
+
+B2.03a adds [query identities and ranking](queries/README.md): full source/profile/generation pins, explicit binding filters and deterministic finite Dot ranking with no scientific-quality threshold. Public representations0.3.0 adds four roots/eight schemas, preserving430 predecessors. Pure query subtree143 statements/14 branches fully exercised; actual query storage/authority remains B2.03b/c.
