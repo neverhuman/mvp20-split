@@ -1,7 +1,7 @@
 # Research Service
 
-- Status: BP-06.01 closed; BP-06.03 assessment/publication/correction boundaries implemented. Actual Runtime receipt acceptance and partial exploratory output verified; BP-06.03 recovery/closeout accepted; BP-06.04 has pure scientific domain objects, synthetic synthesis/eligibility policies and explicit public mappings; new storage and lab ingestion remain pending.
-- Package: `amphora-research` 0.16.0; exact dependencies belong to pyproject.toml, uv.lock and the generated package inventory.
+- Status: BP-06.01 closed; BP-06.03 assessment/publication/correction boundaries implemented. Actual Runtime receipt acceptance and partial exploratory output verified; BP-06.03 recovery/closeout accepted; BP-06.04 has pure scientific domain objects, synthetic synthesis/eligibility policies and explicit public mappings; separate scientific revision storage is implemented; authenticated lab ingestion remains pending.
+- Package: `amphora-research` 0.17.0; exact dependencies belong to pyproject.toml, uv.lock and the generated package inventory.
 - Design: [Research architecture](../../docs/Architecture/Research/Research_Architecture.md).
 
 Research owns candidate/sample/question/evidence-need identities and purpose-bound evidence sufficiency. It does not own Artifact bytes, Knowledge assertions, model execution or campaign acceptance. Dependencies are public contracts and the tool-protocol SDK plus Pydantic/FastAPI/Uvicorn and SQLAlchemy/psycopg/Alembic. No peer implementation imports, peer SQL or shared ORM.

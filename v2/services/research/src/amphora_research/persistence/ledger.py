@@ -10,6 +10,7 @@ from sqlalchemy import Engine, text
 
 from ..identity.questions import QuestionDefinition, ResearchIdentityError
 from ..identity.samples import CandidateDefinition, SampleDefinition
+from ..material_state.links import link_sample, require_sample_state
 
 Record = CandidateRevision | SampleIdentity | ResearchQuestion | EvidenceNeed
 MODELS = {"candidate": CandidateRevision, "sample": SampleIdentity,
@@ -35,8 +36,6 @@ class IdentityDocument:
             CandidateDefinition(record)
         elif kind == "sample":
             SampleDefinition(record)
-            if record.material_state is not None:
-                raise ResearchIdentityError("material_state_owner_not_implemented")
         elif kind == "question":
             QuestionDefinition(record)
         canonical = json.dumps(record.model_dump(mode="json"), sort_keys=True,
@@ -80,6 +79,8 @@ class IdentityLedger:
                 connection.execute(text("INSERT INTO research.identity_links "
                     "(tenant_id,project_id,kind,identity_id,revision,target_kind,target_id,target_revision) "
                     "VALUES (:tenant,:project,:kind,:id,:revision,:target_kind,:target_id,:target_revision)"), key | target)
+            if document.kind == "sample" and record.material_state is not None:
+                link_sample(connection,record)
             connection.execute(text("INSERT INTO research.identity_heads "
                 "(tenant_id,project_id,kind,identity_id,revision) VALUES (:tenant,:project,:kind,:id,:revision) "
                 "ON CONFLICT (tenant_id,project_id,kind,identity_id) DO UPDATE SET revision=EXCLUDED.revision"), key)
@@ -107,6 +108,8 @@ class IdentityLedger:
             raise ResearchIdentityError("unknown_" + target_kind)
         if document.kind == "need":
             QuestionDefinition(ResearchQuestion.model_validate_json(bytes(raw))).bind_need(record)
+        if document.kind == "sample" and record.material_state is not None:
+            require_sample_state(connection,record)
         return {"target_kind": target_kind, "target_id": target_id, "target_revision": ref.revision}
 
     def read(self, scope: Scope, kind: str, identity_id: str, revision: int) -> Record | None:

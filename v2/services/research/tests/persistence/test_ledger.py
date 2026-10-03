@@ -75,9 +75,9 @@ def test_unknown_candidate_rolls_back_sample_identity_and_head(ledger):
     assert store.read(scope, "sample", "s", 1) is None
     store.publish(scope, c)
     assert store.publish(scope, sample) == sample
-    with pytest.raises(ResearchIdentityError, match="material_state_owner_not_implemented"):
-        store.publish(scope, sample.model_copy(update={"material_state": MaterialStateRevisionRef(
-            scope=scope, material_state_id="unimplemented", revision=1)}))
+    with pytest.raises(ResearchIdentityError, match="unknown_material_state"):
+        store.publish(scope, sample.model_copy(update={"reference":sample.reference.model_copy(update={"sample_id":"unknown-state"}),
+            "material_state": MaterialStateRevisionRef(scope=scope, material_state_id="unrecorded", revision=1)}))
 
 
 def test_need_requires_persisted_question_and_known_criteria(ledger):

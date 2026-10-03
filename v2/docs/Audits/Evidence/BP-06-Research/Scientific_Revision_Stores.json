@@ -1,0 +1,98 @@
+{
+  "timestamp_local": "2026-10-03 00:53:51",
+  "status": "passed",
+  "scope": "BP-06.04/B1.05 separate immutable scientific revision stores and forward migration",
+  "owner_version": "0.17.0",
+  "contracts_version": "0.7.0",
+  "source_tests": 552,
+  "installed_tests": 552,
+  "dev_tests": 14,
+  "migration": "research_0006",
+  "coverage_scope": "RevisionJournal and three stores plus material links; historical modules not included in this percentage",
+  "coverage": {
+    "covered_lines": 133,
+    "num_statements": 133,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100",
+    "num_branches": 32,
+    "num_partial_branches": 0,
+    "covered_branches": 32,
+    "missing_branches": 0,
+    "percent_branches_covered": 100.0,
+    "percent_branches_covered_display": "100"
+  },
+  "installed_manifest": {
+    "timestamp_local": "2026-10-03 00:49:06",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-research",
+    "forbidden_implementations": [
+      "amphora_knowledge",
+      "amphora_data_artifacts",
+      "amphora_campaign_runtime"
+    ],
+    "packages": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.6",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-knowledge": "0.7.1",
+      "amphora-contracts-research": "0.7.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-research": "0.17.0",
+      "amphora-tool-protocol": "0.2.0"
+    },
+    "wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.6-py3-none-any.whl": "05abdcd2bb599bcad1acd5fa819d3685fae9036c5ec67c8fd5b0ce3126732620",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_knowledge-0.7.1-py3-none-any.whl": "7e57c2c7905e0a358a48e6c6015e7ed11a70102d797411413e44a5827fe82e91",
+      "amphora_contracts_research-0.7.0-py3-none-any.whl": "f85d04f72469b2b81affa707786e0d769176543691e7d2d7cd56d31f5ef84abb",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_research-0.17.0-py3-none-any.whl": "233536ad42fc7c35a6b78b4965512b6704b85a6655976fb7bd28673bc2c38fa6",
+      "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+    }
+  },
+  "initial_installed_attempt": {
+    "result": "collection_failed",
+    "reason": "Missing optional httpx test dependency; no application cases executed",
+    "correction": "Installed test-only httpx0.28.1 offline, reran the exact suite successfully"
+  },
+  "oracles": [
+    "Repeated forward upgrade on retained PostgreSQL",
+    "Immediate predecessor checks reject null bypass",
+    "Concurrent different writers produce one revision and one immutable conflict",
+    "New records and local links roll back together",
+    "Exact original record/actor survive replacement and replay",
+    "Actual commit followed by lost local reply replays one original record",
+    "Sample corrections preserve both old and new material-state links",
+    "Experiment embedded sample/state records must equal persisted owner records",
+    "Unmatched observations retain their claims without fabricated acceptance",
+    "New tables allow SELECT/INSERT and deny UPDATE/DELETE/TRUNCATE/REFERENCES/TRIGGER",
+    "Canonical1MiB limit rejects without truncation"
+  ],
+  "checks": [
+    "ruff passed",
+    "Production dependency boundaries verified",
+    "service/dev locks and generated inventory synchronized"
+  ],
+  "limits": [
+    "Private stores and existing identity-read regressions; no new public scientific write endpoints",
+    "No authenticated report adapter or source-rights validation added",
+    "Observation storage is not scientific acceptance",
+    "Actual process-death and end-to-end integration remain later B3/V1 gates",
+    "Historical service credentials are trusted infrastructure; no tenant database roles",
+    "Existing Starlette/httpx deprecation remains separately tracked"
+  ]
+}

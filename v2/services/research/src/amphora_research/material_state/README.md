@@ -1,6 +1,6 @@
 # Research material state
 
-- Status: BP-06.04/B1.04 domain objects and explicit public mappings implemented in Research0.16.0/contracts0.7.0. New scientific storage, authenticated ingestion and public APIs remain later milestones.
+- Status: BP-06.04/B1.05 immutable PostgreSQL storage implemented in Research0.17.0; authenticated ingestion and public APIs remain later milestones.
 - Owner: Research. Design: [Experiments](../../../../../docs/Architecture/Research/Experiments.md).
 
 state.py binds a MaterialState to an exact CandidateRevisionRef and MaterialStateRevisionRef. Distinct preparations never collapse on nominal candidate equality. StateIdentity requires root revision1 or an exact one-step predecessor in the same scope and identity. Constructing a successor does not mutate the predecessor or select a new campaign pin.
@@ -14,3 +14,5 @@ These frozen objects have no I/O, SQL, authorization, lab submission, evidence p
 Replacement verification: tests/material_state, selectable with dev/run_tests.py --module research --area material_state. Preserve same-design/different-preparation identity, ordered conditions/units, explicit unknowns, measured versus inferred attribution, exact predecessor chains and scoped source checks. Malformed structures raise stable MaterialStateError codes; malformed measurement quantities retain MeasurementError.
 
 BP-06.04/B1.04, Research0.16.0/contracts0.7.0: wire.py now maps MaterialStateRevision and reconstructs StateIdentity, ordered preparation and attributed features. Shape-valid duplicates and invalid revision/scope relationships fail owner validation. Public contracts are exported only from amphora_contracts_research. No new storage, source authentication, HTTP API or campaign effects are added by these mappings.
+
+Research0.17.0 storage boundary: store.py owns MaterialStateStore over research.material_state_revisions and material_state_candidates. It reconstructs domain invariants, verifies the exact persisted candidate and commits both records atomically. links.py owns exact material reads and the sample-to-state validation/link used by the existing identity ledger. A sample cannot borrow another candidate's preparation. Corrected states and samples keep prior links unchanged. There is no latest-state substitution or active-campaign mutation. Shared private revisions.py provides closed-table transaction mechanics only. See [persistence](../persistence/README.md) for exact replay,1MiB canonical limit, actor/scope, append-only grants and migration rules. Tests in this module include actual PostgreSQL with AMPHORA_TEST_POSTGRES=1; run PostgreSQL suites serially. Store replacement must replay original bytes and preserve all historical references.
