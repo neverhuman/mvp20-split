@@ -1,5 +1,14 @@
 # BP-06 Planning History
 
+## BP-06.05/B1.04c orchestration complete - 2026-10-03 15:18:21
+
+Data0.17.0 drives bounded request/preflight/cache/journal/publication recovery.229 scoped source plus2 publication-local probes pass; independent full435 plus2 publication-local probes pass, with separate Research0.31.0 explicitly configured.14 dev tests, lint/boundaries/schema checks pass;420 public schemas andartifact_0009 unchanged. Actual lost-response, partial writer, busy claim, bounded-step, expired OS-lock and exhausted/abandoned upload recovery pass. Recovery fences delayed writers without deletion/refund; explicit cleanup authority stays unchanged. Coverage1260/1266 statements and143/150 branches across representations/recovery/local-storage; recovery module fully covered; gaps remain explicitly assigned/reported. c complete; d source independence/concurrency next. B1.04=75%, B1=62.50%, Build20.83%, child15.63%, parent69.27%; closed gates0/4 and16/24 unchanged.
+
+Rotated MBT checkpoints:
+
+| 2026-10-03 02:32:17 | BP-06.04/B1.07 complete; child21.88%, parent53.65%; B1.08 active | [Scientific publication](../Audits/Evidence/BP-06-Research/Scientific_Artifact_Publication.json);717 source/717 installed,14 dev; actual Data Artifact-only output |
+
+
 ## BP-06.05/B1.04b source and durable binding state complete - 2026-10-03 15:00:03
 
 Data0.16.0/artifact_0009 adds exact source preflight, actor request aliases, separate publication leases and actual-owner journal proofs.147 source checks pass; full independent run418 passed and2 failed because the separate Research interpreter was omitted; both pass38.17s with Research0.31.0 configured, completing420 distinct cases.14 dev tests, lint, boundaries and420 unchanged schemas pass. Coverage982/983 statements and63/64 branches; publication-during-claim barrier remains B3. Rights revocation before final visibility prevents binding publication; immutable Artifact/history persists. Only actual command rejection allows numbered retry. First-attempt bytes are preserved. No reset/initial-migration checksum claim. Data<=0.15.0 cannot migrate0009. Automated workflow remains c; broader convergence d. B1.04=50%, B1=58.33%, Build19.44%, child14.58%, parent69.10%; gates unchanged0/4 and16/24. B1.04c active. Corrected two stale MBT roadmap mirrors, including a malformed concatenated percentage, to the canonical69.10% and16/24 gates.

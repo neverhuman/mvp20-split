@@ -8,6 +8,7 @@ from sqlalchemy import text
 
 from ...derivations.ledger import DerivationLedger
 from ...persistence.commands import CommandStore
+from ...publication.recovery import StreamRecovery
 from ...publication.uploads import Uploads
 from ...source_rights.ledger import SourceRights
 from ..storage.records import authorize, decode_result, load_profile, result_row
@@ -179,6 +180,19 @@ class BindingJournal:
             )
             append(connection, key, lease, prefix, "streamed", event_bytes(selected))
             return True
+
+        return self._transaction(principal, lease, operation)
+
+    def prepare_unavailable_upload(self, principal, lease, limits):
+        """Only an owner-proven exhausted/abandoned upload may skip streaming for terminal disposition."""
+
+        def operation(connection, key, job, prefix):
+            require(prefix.stage == "upload_begun", "representation_publication_order")
+            state = StreamRecovery.inspect_in(connection, principal, prefix.upload_id)
+            require(state.terminal_reason(limits) is not None, "representation_upload_recoverable")
+            command = prefix.command("finalize")
+            append(connection, key, lease, prefix, "finalize_prepared", command.canonical_bytes)
+            return command
 
         return self._transaction(principal, lease, operation)
 

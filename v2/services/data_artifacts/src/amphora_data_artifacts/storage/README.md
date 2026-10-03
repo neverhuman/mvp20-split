@@ -9,3 +9,5 @@ Local writes are synchronous and bounded; the API uses worker threads for DB tra
 `tests/storage/` checks traversal, linked paths, exclusive creation and bounded writes; `tests/publication/` checks authority/fencing/interruptions. Replacement must preserve immutable attempt keys and no-catalog-before-verification semantics; a plain move/rename never substitutes for the owning publication transaction.
 
 `storage/lease.py` holds a nonblocking OS file lock from writer creation through close; cleanup uses the same permanent lock sidecar. Service-owned sidecars receive the same path/reparse checks. Old writer versions must be stopped before enabling cleanup.
+
+`LocalBytes.fence_writer(key)` requires the caller-held guard and fsyncs the existing retired marker without unlinking content. Upload recovery can thereby prevent delayed writers while conservatively retaining allocation. `retire` calls the same primitive before its existing authorized unlink; deletion authority does not transfer to recovery.

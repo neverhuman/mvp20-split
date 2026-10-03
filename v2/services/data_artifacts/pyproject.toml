@@ -1,6 +1,6 @@
 [project]
 name = "amphora-data-artifacts"
-version = "0.16.0"
+version = "0.17.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
     "amphora-contracts-representations==0.1.0",

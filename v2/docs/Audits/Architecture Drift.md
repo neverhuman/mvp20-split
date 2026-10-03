@@ -1,9 +1,9 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-03 15:00:03` (America/Chicago).
+- Last refreshed: `2026-10-03 15:18:21` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.05/B1.04 source publication; child14.58%, parent69.10%,16/24 closed gates.
+- Active focus: BP-06.05/B1.04 source publication; child15.63%, parent69.27%,16/24 closed gates.
 - Next gate: BP-06.05 source authorization and derived vector binding proof. BP-06.03 aligned evidence is in drift history; richer scientific-quality UI remains SQ-01.
 
 ## Active Findings
@@ -48,3 +48,5 @@ B1.02 [public-contract evidence](Evidence/BP-06-Representations/Public_Contracts
 B1.03 [storage evidence](Evidence/BP-06-Representations/Profile_Cache_Storage.json) verifies immutable private cache and DB-clock fencing under actual PostgreSQL. Cache results are not public Artifacts; source authority remains B1.04.
 
 B1.04b [binding-state evidence](Evidence/BP-06-Representations/Binding_State.json) verifies exact source/current-rights admission, actor-scoped aliases and actual-owner journal reconstruction. No blocking drift in this milestone. Publication-during-claim barrier belongs to B3; automated orchestration c and broader rights/convergence d remain unimplemented.
+
+B1.04c [workflow evidence](Evidence/BP-06-Representations/Binding_Workflow.json) verifies bounded actual-owner publication recovery without expanding cleanup/deletion authority. No blocking drift in c; independent-source convergence remains d and process/race matrix B3.

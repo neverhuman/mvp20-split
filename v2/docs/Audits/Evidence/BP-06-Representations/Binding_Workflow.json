@@ -1,0 +1,104 @@
+{
+  "timestamp_local": "2026-10-03 15:18:21",
+  "milestone": "BP-06.05/B1.04c",
+  "status": "passed",
+  "data_version": "0.17.0",
+  "reports": {
+    "scoped_source": {
+      "passed": 229,
+      "seconds": 50.64
+    },
+    "publication_local_source": {
+      "passed": 2,
+      "seconds": 2.62
+    },
+    "full_independent": {
+      "passed": 435,
+      "seconds": 166.79
+    },
+    "publication_local_independent": {
+      "passed": 2,
+      "seconds": 2.51
+    }
+  },
+  "coverage": {
+    "covered_lines": 1260,
+    "num_statements": 1266,
+    "percent_covered": 99.0819209039548,
+    "percent_covered_display": "99",
+    "missing_lines": 6,
+    "excluded_lines": 0,
+    "percent_statements_covered": 99.5260663507109,
+    "percent_statements_covered_display": "99",
+    "num_branches": 150,
+    "num_partial_branches": 7,
+    "covered_branches": 143,
+    "missing_branches": 7,
+    "percent_branches_covered": 95.33333333333333,
+    "percent_branches_covered_display": "95"
+  },
+  "coverage_gaps": [
+    "Publication-during-claim locked recheck remains B3 barrier.",
+    "Unreachable unknown retained stage guard; previously retained rejected command observed after lost error response; writer-construction failure settlement remain B3 adversarial matrix.",
+    "Existing local-storage unsafe-link, oversized-read and invalid-chunk branches not exercised by this scoped run; no complete local-storage coverage claim."
+  ],
+  "independent_build": {
+    "timestamp_local": "2026-10-03 15:10:06",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-data-artifacts",
+    "forbidden_implementations": [
+      "amphora_research",
+      "amphora_knowledge",
+      "amphora_campaign_runtime"
+    ],
+    "packages": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.13",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-representations": "0.1.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-data-artifacts": "0.17.0"
+    },
+    "wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_representations-0.1.0-py3-none-any.whl": "4cbca5406398388b2df4fe6ab30842b1fb1055a7c6b0189bf164010ef9ec5b3a",
+      "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_data_artifacts-0.17.0-py3-none-any.whl": "e3ab1969e9613a350713176e2eb9f79197ed04c877e30405c678499649d0a5d3"
+    }
+  },
+  "checks": {
+    "schemas": "420 unchanged",
+    "migration": "artifact_0009 unchanged",
+    "dev_tests": 14,
+    "boundaries": "pass",
+    "lint": "pass",
+    "installed_source_bytes": "Python and SQL match"
+  },
+  "oracles": [
+    "Actual source-to-vector publication, exact offline published replay, current-rights alias denial.",
+    "Busy compute/publication claims return bounded pending; 1..64 recovery steps with no polling sleep.",
+    "Lost begin/finalize/publish/stream-settlement responses recover original owner history.",
+    "Partial writer closes and settles before retry.",
+    "Expired stream requires OS guard and durable writer fence; no byte deletion/refund; held writer defers.",
+    "Exhausted/abandoned upload uses actual final-command rejection before next numbered attempt.",
+    "Publication-local probes establish recovery behavior without representation fixtures."
+  ],
+  "limits": [
+    "In-process faults and actual PostgreSQL/Artifact operations; B3 owns process-death/race proofs.",
+    "B1.04d owns independent-source rights and concurrent alias convergence; hosted APIs remain B1.05-.06.",
+    "Synthetic encoder only; no scientific similarity claim."
+  ]
+}

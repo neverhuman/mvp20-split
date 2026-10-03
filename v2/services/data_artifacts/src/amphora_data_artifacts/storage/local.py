@@ -42,13 +42,17 @@ class LocalBytes:
     def guard(self, key):
         return exclusive(self.sidecar(key, ".lock"))
 
-    def retire(self, key):
-        """Caller holds guard; durable marker precedes unlink and forbids delayed writers."""
+    def fence_writer(self, key):
+        """Caller holds guard; persist a no-new-writer marker without deleting retained bytes."""
         marker = self.sidecar(key, ".retired")
         descriptor = os.open(marker, os.O_WRONLY | os.O_CREAT | getattr(os, "O_NOFOLLOW", 0), 0o600)
         with os.fdopen(descriptor, "wb") as handle:
             handle.flush()
             os.fsync(handle.fileno())
+
+    def retire(self, key):
+        """Caller holds guard; durable marker precedes unlink and forbids delayed writers."""
+        self.fence_writer(key)
         self.path(key).unlink(missing_ok=True)
 
     def writer(self, attempt):

@@ -69,3 +69,5 @@ BP-06.05/B1.03 release0.14.0 adds the private [profile registry and computation 
 BP-06.05/B1.04a release0.15.0 adds pure [source binding publication identities and receipt checks](src/amphora_data_artifacts/representations/bindings/README.md). Canonical wire serialization now lives in the pure validation helper and preserves cache bytes. Source preflight/state, orchestration, current-rights proof and hosted APIs remain subsequent tasks; artifact_0008 and420 public schemas are unchanged.
 
 BP-06.05/B1.04b release0.16.0 adds exact source preflight and durable binding request/lease/journal state under artifact_0009. Owner-local command/upload inspection verifies actual outcomes. Recoverable orchestration and hosted APIs remain later gates. Existing public schemas remain unchanged. Data<=0.15.0 must not migrate artifact_0009.
+
+BP-06.05/B1.04c release0.17.0 adds bounded source-to-vector orchestration and expired-upload recovery. Actual owner outcomes drive retry; nondeleting writer fences precede expired stream settlement. artifact_0009/public schemas remain unchanged; hosted representation APIs and process-crash acceptance remain later gates.
