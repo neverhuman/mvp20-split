@@ -76,3 +76,27 @@ class BindingReceipts:
             source=identity.source,
             vector=artifact,
         )
+
+
+def validate_binding_projection(scope, value):
+    """Shape/scope/content digest only; this does not establish retained owner state or rights."""
+    value = _validated(value, RepresentationBinding)
+    require(
+        value.reference.scope
+        == value.profile.scope
+        == value.source.source.scope
+        == value.source.source.raw.scope
+        == value.vector.scope
+        == scope,
+        "representation_binding_scope",
+    )
+    body = {
+        "format": "data.representation-binding.v1",
+        "binding_id": value.reference.binding_id,
+        "scope": scope.model_dump(mode="json"),
+        "profile": value.profile.model_dump(mode="json"),
+        "source": value.source.model_dump(mode="json"),
+        "vector": value.vector.model_dump(mode="json"),
+    }
+    require(value.reference.sha256 == fingerprint(body), "representation_binding_conflict")
+    return value

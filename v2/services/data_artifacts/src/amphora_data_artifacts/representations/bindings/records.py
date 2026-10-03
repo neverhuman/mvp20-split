@@ -9,8 +9,9 @@ from sqlalchemy import text
 from ...persistence.evidence_records import SCOPE, _lock
 from ..identity import EncodingWorkIdentity
 from ..storage.records import load_profile
-from ..validation import fingerprint, require
+from ..validation import require
 from .identity import SourceBindingIdentity
+from .receipts import validate_binding_projection
 
 BINDING = SCOPE + " AND binding_id=:binding"
 
@@ -59,16 +60,7 @@ def published(connection, principal, binding_id):
         result.reference.scope == principal.scope and result.reference.binding_id == binding_id,
         "representation_binding_conflict",
     )
-    body = {
-        "format": "data.representation-binding.v1",
-        "binding_id": binding_id,
-        "scope": principal.scope.model_dump(mode="json"),
-        "profile": result.profile.model_dump(mode="json"),
-        "source": result.source.model_dump(mode="json"),
-        "vector": result.vector.model_dump(mode="json"),
-    }
-    require(result.reference.sha256 == fingerprint(body), "representation_binding_conflict")
-    return result
+    return validate_binding_projection(principal.scope, result)
 
 
 def event_bytes(value):

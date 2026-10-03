@@ -1,0 +1,13 @@
+# Retrieval generation boundary
+
+Owner: Data/Artifacts, BP-06.05/B2.01. Pure manifest/generation/attempt identities and transition policy are implemented; no persisted generation, Qdrant adapter, published head or retrieval API exists yet.
+
+This module owns index snapshot identity, ordered corpus manifests, build lifecycle, projection verification and authoritative generation selection. It consumes Data representation profiles, validated source-binding projections and current source rights through their focused boundaries. It does not own source policies, encode scientific inputs, mutate Knowledge, schedule campaigns or treat a backend alias as truth.
+
+A corpus contains 1..256 unique binding IDs in explicit order and one exact shared-role profile. Binding shape/fingerprint checks are distinct from actual retained source/rights authority, supplied by later admission. Canonical manifests have a 4MiB limit; their digest is the exact source watermark. A generation pins scope/corpus/id, owner actor, manifest, expected prior head and trusted backend profile. Build token/fence identity yields a distinct backend namespace per attempt; a stale builder cannot write into its successor's namespace. Point IDs are deterministic per complete binding reference and must remain unique.
+
+Generation transitions are prepared -> building -> verified -> published, with failure/abandonment only from nonterminal states. Pure transition permission is not evidence that a projection exists or that publication is authorized. The later lifecycle store must verify owner source/profile records, winning leases, actual projection evidence, current rights and expected-head CAS. Backend integration is a required explicit port, never a hidden fallback; actual Qdrant proof belongs to B2.02.
+
+Tests live in `tests/retrieval/` and must distinguish pure synthetic records, actual PostgreSQL authority, actual Qdrant behavior and process/race proof. Replacement preserves ordered manifest fingerprints, full profile/source/vector identity, attempt namespace isolation and immutable generation history. Public contracts/schema, durable state and APIs are subsequent tasks; no pure-object test grants those completion claims.
+
+B2.01a coverage: all 125 statements and 8 branches in this pure module exercised, including maximum manifest size, duplicate/colliding points, scope/profile separation, generation head and namespace isolation, and every transition pair. This is domain-policy evidence, not database or backend evidence.

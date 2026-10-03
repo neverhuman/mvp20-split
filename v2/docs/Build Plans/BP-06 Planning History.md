@@ -1,5 +1,14 @@
 # BP-06 Planning History
 
+## BP-06.05/B2.01a generation models complete - 2026-10-03 16:16:12
+
+Data0.19.0 independently built;179 source and179 installed scoped cases pass,14 dev pass,420 prior schemas unchanged. Pure retrieval125 statements/8 branches fully covered. Ordered bounded manifests, exact identities, isolated attempt namespaces and phase rules are implemented; no PG/backend/public contract credit. B2.01 decomposed into four equal tasks inside its existing weight: a100%, b-d0%; B2=6.25%, Build35.42%, child26.56%, parent71.09%; gates1/4 and17/24. B2.01b active. Binding fingerprint bytes unchanged; pure projection validation now checks full scope chain.
+
+Rotated MBT checkpoints:
+
+| 2026-10-03 03:53:36 | BP-06.04/B1 complete; child25%, parent54.17%; B2 active; gates1/4 and13/24 | [Actual scientific HTTP](../Audits/Evidence/BP-06-Research/Scientific_HTTP_Replacement.json); source/installed workflow, independent replacement/offline history |
+
+
 ## BP-06.05/B1 installed HTTP boundary complete - 2026-10-03 15:52:35
 
 Source and installed harnesses pass actual isolated Data0.18.0 server proof13.96s/12.71s;14 dev tests and lint pass. All source/rights/profile/encoding preparation is public HTTP. Known ABBA output matches an independent binary32 fixture oracle. A fresh process reconstructs the original publication and alias; public revocation denies new use while original status/POST history remains stable. Actual scoped identities/process checkpoints are retained. No production/schema/migration changes. B1=100%, Build33.33%, child25%, parent70.83%; gates1/4 and17/24. B2.01 generation lifecycle active. Clarified stale generic B1 prose: IndexGeneration belongs to the existing B2.01 milestone; no scope/weight change or generation implementation credit. Abrupt death/races remain B3; scientific/target-host validity remains unproven.

@@ -1,0 +1,91 @@
+{
+  "timestamp_local": "2026-10-03 16:16:12",
+  "task": "BP-06.05/B2.01a",
+  "status": "verified",
+  "package": "amphora-data-artifacts 0.19.0",
+  "scope": "Pure ordered corpus/generation/attempt identities and transition policy; no persisted generation or backend claim",
+  "verification": {
+    "source": {
+      "passed": 179,
+      "seconds": 51.67
+    },
+    "independent": {
+      "passed": 179,
+      "seconds": 49.22
+    },
+    "dev": {
+      "passed": 14,
+      "seconds": 12.83
+    },
+    "boundaries": "passed",
+    "lint": "passed",
+    "existing_schemas": {
+      "count": 420,
+      "unchanged": true
+    }
+  },
+  "coverage": {
+    "retrieval": {
+      "statements": 125,
+      "covered_statements": 125,
+      "branches": 8,
+      "covered_branches": 8
+    },
+    "binding_and_retrieval": {
+      "statements": 771,
+      "covered_statements": 768,
+      "branches": 86,
+      "uncovered": "Existing binding lease recheck and workflow uncertainty paths remain B3."
+    }
+  },
+  "oracles": [
+    "Explicit manifest order and full profile/scope separation",
+    "Maximum 256-binding manifest exceeds 64KiB and fits separate 4MiB bound",
+    "Deterministic point identity with explicit collision rejection",
+    "Generation actor/manifest/head/backend identity and attempt namespace isolation",
+    "All 36 phase pairs with forbidden/skipped/repeated transitions rejected"
+  ],
+  "installation": {
+    "timestamp_local": "2026-10-03 16:07:43",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-data-artifacts",
+    "forbidden_implementations": [
+      "amphora_research",
+      "amphora_knowledge",
+      "amphora_campaign_runtime"
+    ],
+    "packages": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.13",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-representations": "0.1.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-data-artifacts": "0.19.0"
+    },
+    "wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_representations-0.1.0-py3-none-any.whl": "4cbca5406398388b2df4fe6ab30842b1fb1055a7c6b0189bf164010ef9ec5b3a",
+      "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_data_artifacts-0.19.0-py3-none-any.whl": "e7e61e74bc98f6d719c9c099bb3b414654424dc47c1a5d3fe88709cf5090fb0b"
+    }
+  },
+  "limits": [
+    "No persistence schema change; artifact_0009 unchanged",
+    "Public representations remains 0.1.0",
+    "Current rights and actual binding authority remain later durable admission checks",
+    "Actual Qdrant proof remains B2.02"
+  ]
+}
