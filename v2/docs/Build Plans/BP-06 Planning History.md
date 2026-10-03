@@ -771,3 +771,9 @@ Archived MBT checkpoint: | 2026-10-03 06:14:19 | B3.01 complete; child58.33%, pa
 ## 2026-10-03 18:34:23 ? BP-06.05/B2.03c actual installed query proof
 
 Source harness1 passed42.99s; installed1 passed41.03s. Actual Data/PG/Qdrant, fresh isolated query/read/retry processes; equal8 scores stableordered, missing namespace is404/pending intent not negative; original replay works without projection; fresh retrieval filters revoked target only; foreignscope denied; process-only denial does not revoke readable history. Original record bytes unchanged. No production/schema/migration change. B2.03 complete;B2=75%,Build58.33%,child43.75%,parent73.96%,gates1/4 and17/24. B2.04 split threeequaltasks(aHTTP/hosting,bprofile/generationmigration,cinstalledHTTPproof),all0%,a active.
+
+Archived MBT checkpoint: | 2026-10-03 11:58:32 | B3.02 complete; child66.67%, parent61.11%; B3.03 active; gates2/4 and14/24 | [Process recovery](../Audits/Evidence/BP-06-Research/Scientific_Process_Recovery.json);6 source/6 installed actual kill cases,14 dev |
+
+## 2026-10-03 18:46:24 ? BP-06.05/B2.04a optional generation/query HTTP
+
+Data0.27.0,public0.3.0/438schemas/artifact0012 unchanged. Explicit optional host config,SQL-only readiness,actor/digest-pinned generation reads,bounded advance/query/originalresult APIs. Source41 tests46.95s/installed41 tests48.53s,18dev12.87s;new boundary117 statements26branches100%;existing representation/acquisition/host checks included. Auth precedes4MiB/5s strict JSON;expiredverified returnsfailed, no implicitrepublish. No productionhostdeployment or installedserverclaim. B2.04a100%,b/c0%;B2=83.33%,Build61.11%,child45.83%,parent74.31%,closed1/4 and17/24. Next actualprofilemigration; discovery noted fixture none/l2 v1 identity collision, requiring explicit supportedv2 profile while preservingv1 compatibility.

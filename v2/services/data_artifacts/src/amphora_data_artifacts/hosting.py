@@ -23,6 +23,11 @@ from .representations.hosting import content_policy as representation_policy
 from .representations.hosting import probe as representation_probe
 from .representations.service import RepresentationService
 from .retention.outcomes import RuntimeOutcomes
+from .retrieval.hosting import configuration as retrieval_configuration
+from .retrieval.hosting import probe as retrieval_probe
+from .retrieval.qdrant.adapter import QdrantAdapter
+from .retrieval.qdrant.configuration import QdrantConfiguration
+from .retrieval.service import RetrievalService
 from .storage.local import LocalBytes
 
 
@@ -36,18 +41,21 @@ class Host:
     acquisition_enabled: bool = False
     research: ResearchClient | None = None
     representations_enabled: bool = False
+    retrieval_configuration: QdrantConfiguration | None = None
 
     def app(self):
-        acquisition = representations = None
-        if self.acquisition_enabled or self.representations_enabled:
+        acquisition = representations = retrieval = None
+        if self.acquisition_enabled or self.representations_enabled or self.retrieval_configuration is not None:
             engine = self.uploads.commands.engine
             reads = ArtifactReads(engine, self.storage, min(self.uploads.limits.max_bytes, MAX_PROVENANCE_BYTES))
             if self.acquisition_enabled:
                 acquisition = AcquisitionWorkflow(reads, AcquisitionLedger(engine), self.research)
             if self.representations_enabled:
                 representations = RepresentationService(reads, self.uploads, self.storage)
+            if self.retrieval_configuration is not None:
+                retrieval = RetrievalService(reads, QdrantAdapter(self.retrieval_configuration))
         return create_app(self.uploads, self.storage, self.credentials, self.outcomes,
-                          acquisition=acquisition, representations=representations)
+                          acquisition=acquisition, representations=representations, retrieval=retrieval)
 
     def close(self):
         self.uploads.commands.engine.dispose()
@@ -55,7 +63,7 @@ class Host:
     @classmethod
     def load(cls, path):
         raw = json.loads(Path(path).read_text(encoding="utf-8"))
-        if set(raw) - {"database_url_env", "storage_root", "principals", "profiles", "limits", "runtime", "acquisition", "research", "representations"}:
+        if set(raw) - {"database_url_env", "storage_root", "principals", "profiles", "limits", "runtime", "acquisition", "research", "representations", "retrieval"}:
             raise ValueError("Unknown configuration field")
         acquisition = raw.get("acquisition", False)
         if type(acquisition) is not bool:
@@ -63,6 +71,7 @@ class Host:
         representations = raw.get("representations", False)
         if type(representations) is not bool:
             raise ValueError("Representations flag must be boolean")
+        retrieval = retrieval_configuration(raw["retrieval"]) if "retrieval" in raw else None
         research = None
         if "research" in raw:
             peer = raw["research"]
@@ -107,13 +116,16 @@ class Host:
                 conn.execute(text("SELECT created_at FROM artifacts.derived_uploads LIMIT 0"))
                 if representations:
                     representation_probe(conn)
+                if retrieval is not None:
+                    retrieval_probe(conn)
                 if acquisition:
                     conn.execute(text("SELECT canonical_bytes FROM artifacts.source_revisions LIMIT 0"))
                     conn.execute(text("SELECT canonical_bytes FROM artifacts.conversion_traces LIMIT 0"))
                     conn.execute(text("SELECT canonical_bytes FROM artifacts.identity_observation_intents LIMIT 0"))
                     conn.execute(text("SELECT canonical_bytes FROM artifacts.identity_observation_results LIMIT 0"))
             return cls(Uploads(engine, limits, policy), storage, credentials, tuple(principals), outcomes,
-                       acquisition_enabled=acquisition, research=research, representations_enabled=representations)
+                       acquisition_enabled=acquisition, research=research, representations_enabled=representations,
+                       retrieval_configuration=retrieval)
         except BaseException:
             engine.dispose()
             raise

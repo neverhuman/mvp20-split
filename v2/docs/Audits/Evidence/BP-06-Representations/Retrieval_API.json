@@ -1,0 +1,34 @@
+{
+  "timestamp_local": "2026-10-03 18:46:24",
+  "task": "BP-06.05/B2.04a",
+  "status": "verified",
+  "package": "Data0.27.0",
+  "source": {
+    "passed": 41,
+    "seconds": 46.95
+  },
+  "independently_installed": {
+    "passed": 41,
+    "seconds": 48.53,
+    "private_peers_absent": true
+  },
+  "dev": {
+    "passed": 18,
+    "seconds": 12.87
+  },
+  "coverage": {
+    "scope": "retrieval api/service/hosting",
+    "statements": 117,
+    "covered_statements": 117,
+    "branches": 26,
+    "covered_branches": 26
+  },
+  "schema_count": 438,
+  "schema_changes": false,
+  "migration": "artifact_0012 unchanged",
+  "checks": "lint/dependency boundaries/schema pass",
+  "limitations": [
+    "Actual owner HTTP handling with injected test backend; installed server process remains B2.04c",
+    "Profile migration B2.04b; abrupt process barriers B3; scientific quality unproven"
+  ]
+}

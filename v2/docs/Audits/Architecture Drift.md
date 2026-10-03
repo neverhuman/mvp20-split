@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-03 18:34:23` (America/Chicago).
+- Last refreshed: `2026-10-03 18:46:24` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.05/B2.04a generation/query API and hosting; child43.75%, parent73.96%,17/24 closed gates.
-- Next gate: optional API and hosting. Actual installed Data/Qdrant query authority, reconstruction and missing-backend recovery passed B2.03c. Scientific-quality UI remains SQ-01.
+- Active focus: BP-06.05/B2.04b profile/generation migration integration; child45.83%, parent74.31%,17/24 closed gates.
+- Next gate: profile migration integration. Optional API/hosting verified in source and installed Data0.27.0; actual installed HTTP reconstruction remains B2.04c. Scientific-quality UI remains SQ-01.
 
 ## Active Findings
 

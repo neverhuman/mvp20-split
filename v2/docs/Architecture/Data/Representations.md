@@ -1,8 +1,8 @@
 # Embedding and Retrieval Contracts
 
-- Design status: profile/source-binding/API boundary verified under BP-06.05/B1; index/retrieval implementation and scientific acceptance pending
+- Design status: profile/source bindings, index/query authority and optional APIs implemented; installed HTTP migration/replacement and scientific acceptance remain scoped gates
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
-- Last reviewed: `2026-10-03 15:52:35` (America/Chicago)
+- Last reviewed: `2026-10-03 18:46:24` (America/Chicago)
 - Parent: [Domain overview](Data_Architecture.md)
 - Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#embedding-and-representation-layer)
 
