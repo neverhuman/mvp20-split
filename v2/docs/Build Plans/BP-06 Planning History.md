@@ -589,3 +589,9 @@ Six named actual kill barriers pass from source181.51s and installed172.16s;14de
 Defensive routes/publication verified:7 new tests, surrounding108 source/108 installed, one separate opt-in skipped each; schema/isolation pass. Coverage351 statements,55/56 branches; impossible canonical unknown-stage fallthrough remains recorded. B3=100%,Build100%,child75%,parent62.50%; gates3/4 and15/24. V1 split into three equal existing-scope parts: fresh build/regression, actual replacement, audit/archive.
 
 | 2026-10-02 22:49:43 | B3 complete; child75%, parent45.83%; V1 active | [Receipt recovery](../Audits/Evidence/BP-06-Research/Domain_Receipt_Recovery.json); both real owners, acknowledgement loss/replacement/exact retention |
+
+## 2026-10-03 12:11:37 - V1.01 independent build complete
+
+Fresh Research0.31.0 closure excludes peer implementations;919 installed tests pass79.55s,9 separate actual-process opt-ins skipped. V1=33.33%,child83.33%,parent63.89%; gates3/4 and15/24 unchanged. V1.02 closes scientific Artifact publisher actual-kill gap and proves fresh replacement.
+
+| 2026-10-02 23:07:47 | BP-06.03 closed100%; BP-06 parent50%; .04 activation next | [Scoped audit](../Audits/BP-06.03_Reasoning_Receipts_Closeout.md);9 Research kill barriers, independent replacement, schema/isolation |

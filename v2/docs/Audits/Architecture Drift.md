@@ -1,9 +1,9 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-03 12:06:32` (America/Chicago).
+- Last refreshed: `2026-10-03 12:11:37` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.04/V1.01 independent acceptance after B3 completion; parent62.50%,14/24 closed gates.
+- Active focus: BP-06.04/V1.02 actual replacement/publication process proof; parent63.89%,14/24 closed gates.
 - Next gate: fresh independent build/replacement and scoped closeout audit. BP-06.03 aligned evidence is in drift history; richer scientific-quality UI remains SQ-01.
 
 ## Active Findings
@@ -43,3 +43,5 @@ Use [Development Process](../Development_Process.md) and the [audit template](..
 - `2026-10-03 11:58:32`: [Scientific process recovery](Evidence/BP-06-Research/Scientific_Process_Recovery.json) closes the intake/interpretation actual process-interruption gap. Source/installed six-barrier matrices preserve original intent and atomic outputs/indexes. No blocking drift found; target-host power loss is unproven and remains deployment scope.
 
 - `2026-10-03 12:06:32`: [Defensive failure evidence](Evidence/BP-06-Research/Scientific_Defensive_Failures.json) closes the named B3 route/publication gaps. B1-B3 complete with no blocking production defect. V1 reconciles stale root/module documentation and verifies fresh independent replacement before archival.
+
+- `2026-10-03 12:11:37`: V1 audit identifies a remaining scientific Artifact publisher process-kill evidence gap and stale module progress descriptions. Both are assigned within V1.02/.03 before archival; no production defect inferred. Fresh independent build919 tests passes.
