@@ -1,0 +1,129 @@
+{
+  "timestamp_local": "2026-10-03 16:41:32",
+  "task": "BP-06.05/B2.01c",
+  "status": "verified",
+  "source": {
+    "passed": 27,
+    "seconds": 11.97
+  },
+  "independent_full_owner_and_public_contracts": {
+    "passed": 488,
+    "seconds": 197.42
+  },
+  "dev": {
+    "passed": 14,
+    "seconds": 13.94
+  },
+  "coverage": {
+    "scope": "retrieval",
+    "statements": 348,
+    "covered_statements": 346,
+    "branches": 20,
+    "covered_branches": 19,
+    "gap": "Expired verified claim path requires actual verification in B2.01d"
+  },
+  "schemas": {
+    "count": 430,
+    "unchanged": true
+  },
+  "lint_boundaries_schemas": "passed",
+  "migration": {
+    "before_revision": "artifact_0009",
+    "after_revision": "artifact_0010",
+    "before": {
+      "catalog": [
+        7184,
+        "1e4c0d4c3a71b3fb853e8ff75d663dd1"
+      ],
+      "source_revisions": [
+        1644,
+        "9c8bb626e00cac0f2639b743c96e7ec0"
+      ],
+      "derivations": [
+        973,
+        "b66000f9bf42029d1b587434b107918d"
+      ],
+      "encoding_profiles": [
+        808,
+        "cf1ceb6aa215fa4713261f20c34209df"
+      ],
+      "representation_bindings": [
+        266,
+        "c469aca1499edab7bade6782c4e0fa05"
+      ],
+      "encoding_binding_events": [
+        1864,
+        "ee0bf079bbbbae9811d5d6fc02f59e8e"
+      ]
+    },
+    "after": {
+      "catalog": [
+        7184,
+        "1e4c0d4c3a71b3fb853e8ff75d663dd1"
+      ],
+      "source_revisions": [
+        1644,
+        "9c8bb626e00cac0f2639b743c96e7ec0"
+      ],
+      "derivations": [
+        973,
+        "b66000f9bf42029d1b587434b107918d"
+      ],
+      "encoding_profiles": [
+        808,
+        "cf1ceb6aa215fa4713261f20c34209df"
+      ],
+      "representation_bindings": [
+        266,
+        "c469aca1499edab7bade6782c4e0fa05"
+      ],
+      "encoding_binding_events": [
+        1864,
+        "ee0bf079bbbbae9811d5d6fc02f59e8e"
+      ]
+    },
+    "unchanged": true
+  },
+  "installation": {
+    "timestamp_local": "2026-10-03 16:35:12",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-data-artifacts",
+    "forbidden_implementations": [
+      "amphora_research",
+      "amphora_knowledge",
+      "amphora_campaign_runtime"
+    ],
+    "packages": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.13",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-representations": "0.2.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-data-artifacts": "0.21.0"
+    },
+    "wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_representations-0.2.0-py3-none-any.whl": "cf9f74c2c48bcbbc4b5623766d7d96d3b07a5cb76b3cf818751a166639131ce8",
+      "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_data_artifacts-0.21.0-py3-none-any.whl": "f3c49ee8f0da2524fb37b28a9f49a66a4641af574e745efe581fe9f1ce2c0b08"
+    }
+  },
+  "limitations": [
+    "No owned projection verification or corpus-head publication yet",
+    "No actual Qdrant adapter; B2.02",
+    "Thread/lease tests are not abrupt process-death evidence; B3"
+  ]
+}

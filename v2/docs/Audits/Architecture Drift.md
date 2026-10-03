@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-03 16:23:38` (America/Chicago).
+- Last refreshed: `2026-10-03 16:41:32` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.05/B2.01c durable generation state; child28.13%, parent71.35%,17/24 closed gates.
-- Next gate: durable generation schema/state/build leases. Pure identity and additive contracts verified; durable lifecycle and Qdrant remain subsequent tasks. Scientific-quality UI remains SQ-01.
+- Active focus: BP-06.05/B2.01d verified projection/publication; child29.69%, parent71.61%,17/24 closed gates.
+- Next gate: owned projection verification and PG expected-head publication. Generation admission/build claims verified; durable lifecycle and Qdrant remain subsequent tasks. Scientific-quality UI remains SQ-01.
 
 ## Active Findings
 

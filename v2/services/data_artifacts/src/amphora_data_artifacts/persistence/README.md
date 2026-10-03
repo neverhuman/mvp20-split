@@ -1,7 +1,7 @@
 # Artifact Persistence Boundary
 
 - Implemented: `artifact_0001` records, forward `artifact_0002` upload attempts/capacity, and owner-private command transactions.
-- Previous scoped addition: `artifact_0008` private representation profiles, work intents, leases and immutable computed results; B1.03 verified; later source-binding publication remains separate.
+- Earlier scoped addition: `artifact_0008` private representation profiles, work intents, leases and immutable computed results; B1.03 verified; later source-binding publication remains separate.
 - Design: [Physical records](../../../../../docs/Architecture/System/Persistence_Record_Design.md).
 
 `migrate.upgrade(url)` runs packaged SQL/Alembic resources as `artifact_migrator`. The explicit CLI is `python -m amphora_data_artifacts.persistence.migrate`, with `AMPHORA_ARTIFACT_MIGRATION_URL` supplied privately. Migration startup is independent of API processes. `artifacts.alembic_version` records owner history. Forward migrations preserve evidence; downgrade refuses destructive rollback.
@@ -27,3 +27,5 @@ BP-06.01/B2 adds artifact_0006 rights revisions/current heads and lineage indexe
 `artifact_0009` adds immutable encoding binding jobs, actor-scoped request aliases, publication events and final bindings, plus narrowly mutable publication cursors. See [binding boundary](../representations/bindings/README.md). Data0.16.0 or newer is required to migrate retained artifact_0009; older migrators must not run on it. Existing rows remain intact.
 
 CommandStore.inspect/inspect_in read exact canonical-command history without registering or mutating it; conflicting bytes reject. Binding recovery uses this to distinguish missing/pending from retained rejection.
+
+BP-06.05/B2.01c adds artifact_0010: immutable `index_generations`, ordered `index_generation_bindings`, numbered `index_build_attempts` and `index_generation_events`, with narrow mutable `index_generation_cursors`. Scoped generation/profile/binding foreign keys preserve owner identity. SELECT/INSERT-only history grants and column-limited cursor updates keep the authority in the retrieval lifecycle. No cross-owner SQL, index backend, publication head or query record is introduced. Explicit0009->0010 migration preserved measured catalog/source/derivation/profile/binding/event counts and row checksums. Repeat-upgrade tests retain history; no reset/downgrade.

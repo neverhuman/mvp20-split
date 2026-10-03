@@ -1,5 +1,14 @@
 # BP-06 Planning History
 
+## BP-06.05/B2.01c durable generation state complete - 2026-10-03 16:41:32
+
+Data0.21.0 independently built;27 scoped source cases pass11.97s,488 full installed owner/public representation cases pass197.42s,14 dev pass13.94s. Forward artifact_0010 adds immutable generation/membership/attempt/event history and mutable lease cursor. Actual0009->0010 retained-history checksums unchanged. Admission resolves owned bindings/profile/current process rights; exact actor replay remains historical. Concurrent single-winner claims, expiry/takeover, stale/foreign/terminal guards and renewal expiry during actual DB-clock rights work pass. Retrieval346/348 statements19/20 branches covered; expired verified recovery remains d until actual verification exists. Public representations0.2.0/430 schemas unchanged. B2.01a-c100%, d0%; B2=18.75%, Build39.58%, child29.69%, parent71.61%; gates1/4 and17/24. d active; physical publication/verification matrix recorded, no implementation credit for design.
+
+Rotated MBT checkpoints:
+
+| 2026-10-03 04:24:09 | BP-06.04/B2.02 complete; child37.50%, parent56.25%; B2.03 active | [Use/correction policies](../Audits/Evidence/BP-06-Research/Observation_Use_Policies.json);647 source/647 installed,14 dev |
+
+
 ## BP-06.05/B2.01b generation contracts complete - 2026-10-03 16:23:38
 
 Data0.20.0/public representations0.2.0 independently built. Five new roots/ten schemas; all420 prior bytes preserved (430 total).57 source domain/contract cases pass3.23s;200 installed scoped representation/HTTP cases pass49.55s;14 dev pass12.21s. Pure retrieval and public representation modules296 statements/8 branches fully exercised. Tests reject caller authority and forged/reordered manifests/identities. One initial test expected digest rejection after changing a fixed wire-version literal; corrected fixture to vary valid backend digest, preserving strict shape policy. No DB migration/backend claim. B2.01a-b100%, c-d0%; B2=12.50%, Build37.50%, child28.13%, parent71.35%; gates unchanged1/4 and17/24. c active.

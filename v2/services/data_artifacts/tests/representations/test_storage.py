@@ -285,7 +285,7 @@ def test_repeated_migration_preserves_existing_artifact_and_source_history(cache
         with migrator.connect() as connection:
             assert (
                 connection.execute(text("SELECT version_num FROM artifacts.alembic_version")).scalar_one()
-                == "artifact_0009"
+                == "artifact_0010"
             )
     finally:
         migrator.dispose()
