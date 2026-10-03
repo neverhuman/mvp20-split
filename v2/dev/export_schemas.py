@@ -120,6 +120,8 @@ for name, model in {
     "eligibility-input-profile": research_contracts.EligibilityInputProfile,
     "synthesis-input-profile": research_contracts.SynthesisInputProfile,
     "scientific-assessment-request": research_contracts.ScientificAssessmentRequest,
+    "interpretation-selection": research_contracts.InterpretationSelection,
+    "interpretation-status": research_contracts.InterpretationStatus,
     "observation-correction-view": research_contracts.ObservationCorrectionView,
     "material-state-correction-view": research_contracts.MaterialStateCorrectionView,
     "material-state-impact-request": research_contracts.MaterialStateImpactRequest,

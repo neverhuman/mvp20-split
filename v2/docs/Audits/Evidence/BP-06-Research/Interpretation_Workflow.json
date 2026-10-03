@@ -1,0 +1,50 @@
+{
+  "timestamp_local": "2026-10-03 05:30:56",
+  "milestone": "BP-06.04/B2.04a",
+  "research_version": "0.30.0",
+  "contracts_version": "0.14.0",
+  "verification": {
+    "source_tests": 762,
+    "installed_tests": 762,
+    "compatibility_dev_tests": 119,
+    "focused_contract_tests": 5,
+    "focused_owner_tests": 8,
+    "coverage": {
+      "covered_lines": 49,
+      "num_statements": 49,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100",
+      "num_branches": 10,
+      "num_partial_branches": 0,
+      "covered_branches": 10,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    },
+    "schemas": 406,
+    "predecessor_schemas_preserved": 402,
+    "migration_unchanged": "research_0012"
+  },
+  "cases": [
+    "pending_vs_interpreted_status",
+    "computed_unresolved_not_operational_failure",
+    "pin_before_peer",
+    "fresh_reader_each_retry",
+    "current_rights_denial_stays_pending",
+    "retired_profile_resume",
+    "offline_completed_history",
+    "complete_dependency_reads",
+    "scope_actor_input_conflicts",
+    "bounded_unique_reviewed_profiles"
+  ],
+  "limits": [
+    "Scripted reader contract over actual owner PostgreSQL",
+    "Separate authenticated hosting/grants/routes remain b",
+    "Independent actual Data/Research HTTP correction transitions remain c",
+    "No scientific or Runtime authority"
+  ]
+}

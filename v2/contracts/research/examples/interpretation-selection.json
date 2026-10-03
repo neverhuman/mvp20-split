@@ -1,0 +1,8 @@
+{
+  "scope": {
+    "tenant_id": "fixture",
+    "project_id": "materials"
+  },
+  "kind": "observation-use",
+  "interpretation_id": "use-1"
+}

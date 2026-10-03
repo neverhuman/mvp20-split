@@ -64,6 +64,12 @@ from .interpretation import (
     ObservationUseRequirements,
     ObservationUseReviewRecord,
 )
+from .interpretation_api import (
+    InterpretationComplete,
+    InterpretationPending,
+    InterpretationSelection,
+    InterpretationStatus,
+)
 from .lab_intake import (
     LabIntakeFailed,
     LabIntakePending,
@@ -211,3 +217,5 @@ __all__ += ["synthetic_scientific_report_schema", "synthetic_scientific_report_s
 __all__ += ['ConversionRuleRecord', 'ConversionCatalogRecord', 'ObservationUseRequirements', 'ObservationUsePolicyRecord', 'InterpretationProfileRef', 'NormalizationProfile', 'ObservationUseProfile', 'NormalizationTargetRecord', 'NormalizeObservationRequest', 'AssessObservationUseRequest', 'NormalizedMeasurementRecord', 'InterpretationMatchRecord', 'ObservationUseReviewRecord', 'InterpretationRef', 'NormalizationProjection', 'ObservationUseProjection']
 
 __all__ += ['ObservationCorrectionView', 'MaterialStateCorrectionView', 'MaterialStateImpactRequest', 'InterpretationImpactRequest', 'InterpretationImpactPage']
+
+__all__ += ['InterpretationSelection', 'InterpretationPending', 'InterpretationComplete', 'InterpretationStatus']

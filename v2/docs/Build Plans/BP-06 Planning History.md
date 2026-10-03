@@ -1,5 +1,13 @@
 # BP-06 Planning History
 
+## BP-06.04/B2.04a authenticated interpretation workflow complete - 2026-10-03 05:30:56
+
+Research0.30.0/contracts0.14.0;762 source/762 installed and119 compatibility/dev tests pass.13 focused cases include8 actual-owner/scripted-reader tests covering49 statements/10 branches100%.406 schemas preserve402. Explicit pending/interpreted status retains original actor/request; computed unknown normalization remains distinct from source denial/outage. Workflow pins intent before fresh scope-bound source reads, requires complete prepared dependencies, resumes stored retired profiles and replays complete history offline. No current profile/source lookup on completed replay; scope/actor/input conflicts remain rejected. A test loop closure was explicitly bound after lint. No new migration, hosted routes or independent HTTP claim; B2.04b active. B2=83.33%,Build61.11%,child45.83%,parent57.64%; gates1/4 and13/24 unchanged.
+
+Rotated MBT checkpoints:
+
+| 2026-10-02 21:29:29 | B2.02 complete; B2 50%, child37.50%, parent39.58%; B2.03 active | [Correction store/API](../Audits/Evidence/BP-06-Research/Receipt_Correction_Store_API.json);441 source/334 installed;312 schemas |
+
 ## BP-06.04/B2.03c correction views/impacts complete - 2026-10-03 05:18:56
 
 Research0.29.0/contracts0.13.0/research_0012;808 source/808 installed and119 compatibility/dev tests pass. One earlier actual-HTTP opt-in skipped in each suite; not a new integration claim.21 focused cases include7 owner tests covering83 statements/14 branches100%.402 schemas preserve392 predecessor bytes.616 retained eligibility decisions captured before migration now have exact material-state links with unchanged decision bytes. Migration locks writes through backfill/trigger installation; invoker AFTER INSERT trigger maintains every subsequent decision transaction. UPDATE/DELETE denied; forced post-trigger failure rolls back both record and index. Exact before/after correction views preserve historical transitions, unknown/first revisions are explicit, and impact queries use scoped exact references and digest-checked cursors. Initial read-only Alembic-head probe correctly failed under service role, then succeeded under owner migrator. No new HTTP/scientific/global-consumer claim. B2.03 complete;B2=75%,Build58.33%,child43.75%,parent57.29%; gates1/4 and13/24. B2.04a active, with three equal scoped slices a/b/c.
