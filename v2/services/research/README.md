@@ -1,7 +1,7 @@
 # Research Service
 
-- Status: BP-06.01 accepted; independent identity/question policies and PostgreSQL revision ledger implemented. Authenticated identity-only read API and explicit loopback hosting implemented. BP-06.03/B1.07 private authenticated evidence resolution is complete; B1.08 durable assessments are implemented.
-- Package: `amphora-research` 0.9.0.
+- Status: BP-06.01 accepted; independent identity/question policies and PostgreSQL revision ledger implemented. Authenticated identity reads and optional synthetic assessment/publication APIs with explicit loopback hosting implemented. BP-06.03/B1.07 private authenticated evidence resolution is complete; B1.08 durable assessments are implemented.
+- Package: `amphora-research` 0.10.0.
 - Design: [Research](../../docs/Architecture/Research/Research_Architecture.md).
 
 Research owns intended candidate, physical sample, question and evidence-need identity. It does not own artifact bytes, Knowledge assertions, model execution or campaign acceptance. Dependencies are public Core/Research/Artifacts/Knowledge/Graph Runtime contracts and the public tool-protocol SDK and SQLAlchemy/psycopg/Alembic, FastAPI/Pydantic and Uvicorn; no imports of Data/Runtime/Knowledge implementation or access to their SQL tables.
@@ -14,6 +14,6 @@ BP-06.03/B1 adds the private [assessment module](src/amphora_research/assessment
 
 B1.07 is complete: the bounded authenticated Data reader and resolver consume public Knowledge/Research payloads with exact producer, target/subject/context/purpose, lineage and owner declaration checks. Logical conflict remains unknown even alongside negative evidence. Verification passed374 scoped tests and257 independently installed tests, including actual Data/Knowledge processes.296 schemas preserve all294 predecessors; only two synthetic-evidence schemas were added. See the assessment module README for rebuild invariants and evidence tiers.
 
-B1.08 adds immutable assessment intent/decision storage with research_0003; research_0001/0002 remain unchanged. B1.09 output publication is implemented; B1.10 public assessment routes remain. The public HTTP API still exposes identity reads only; synthetic assessment receipts are implemented, without scientific establishment. The assessment README owns storage/replay/replacement invariants.
+B1.08 adds immutable assessment intent/decision storage with research_0003; research_0001/0002 remain unchanged. B1.09 output publication is implemented; B1.10 public assessment routes are implemented. The optional assessment API composes these boundaries; synthetic assessment receipts are implemented, without scientific establishment. The assessment README owns storage/replay/replacement invariants.
 
-B1.09 adds the private [publication module](src/amphora_research/publication/README.md), research_0004 append-only publication history and fenced recovery. Actual Data publication and acknowledgement-loss recovery are verified. Public assessment routes remain B1.10; Runtime alone accepts domain receipts.
+B1.09 adds the private [publication module](src/amphora_research/publication/README.md), research_0004 append-only publication history and fenced recovery. Actual Data publication and acknowledgement-loss recovery are verified. Optional public assessment routes are implemented in B1.10; Runtime alone accepts domain receipts.

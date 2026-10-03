@@ -2,16 +2,16 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-06.03/Build/B1 resumed after completed DER-01.
-- Last refreshed: `2026-10-02 20:27:44` (America/Chicago).
+- Status: primary_active; BP-06.03/Build/B2 active after B1 completion.
+- Last refreshed: `2026-10-02 20:45:17` (America/Chicago).
 - Owner/scope: Knowledge, Research and focused Data/Artifacts modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 receipt/wait seams and BP-05 inspection; BP-01/02/03 public contracts and tool execution.
-- Scoped implementation/verification completion: **37.08%** = (8 completed delivery units + B1 9/10) /24. P1/.01 and P2/.02 remain100%; P3/.03 is22.50%.
-- Closed delivery gates: **8/24 (33.33%)**; BP-06.03 remains0/4, acceptance open. Fractions measure completed milestone scope, not hours or scientific readiness.
+- Scoped implementation/verification completion: **37.50%** = (8 completed delivery units + B1 10/10) /24. P1/.01 and P2/.02 remain100%; P3/.03 is25%.
+- Closed delivery gates: **9/24 (37.50%)**; BP-06.03 is1/4, acceptance open. Fractions measure completed milestone scope, not hours or scientific readiness.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current task: BP-06.03/B1.10 authenticated assessment submit/read API; B2 transitions next. B1 milestones9/10 verified; no owner blocker.
-- Demonstrated behavior: B1.09 Research0.9.0 publishes exact assessment artifacts and atomic synthetic receipts;298+4 source/302 installed tests pass, including actual Data acknowledgement-loss recovery. Forward research_0004;296 schemas unchanged. Public assessment routes remain.
+- Current task: BP-06.03/B2 transition/supersession design and implementation; B3 integration next. B1 milestones10/10 verified; no owner blocker.
+- Demonstrated behavior: B1.10 Research0.10.0/contracts0.5.0 authenticated assessment/publication API;434 source/317 installed tests pass, including actual Research process replacement and replay with Data offline.300 schemas preserve296 predecessors. B1 complete; B2 transitions active.
 - Blockers: None requiring owner input; DER-01 closed. No completed child is reopened.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
@@ -32,7 +32,7 @@ Primary services retain private state, dependencies, migrations and module READM
 |---|---:|---:|---:|---|
 | P1 / [BP-06.01 Source and evidence contracts](BP-06/Completed/BP-06.01%20Source%20and%20evidence%20contracts.md) | 100% | 100% | 100% | Parent predecessor gates |
 | P2 / [BP-06.02 Typed graph authoring and replay](BP-06/Completed/BP-06.02%20Typed%20graph%20authoring%20and%20replay.md) | 100% | 100% | 100% | BP-06.01 acceptance |
-| P3 / [BP-06.03 Reasoning and domain receipts](BP-06/BP-06.03%20Reasoning%20and%20domain%20receipts.md) | 22.50% | 30% | 0% | BP-06.02 acceptance |
+| P3 / [BP-06.03 Reasoning and domain receipts](BP-06/BP-06.03%20Reasoning%20and%20domain%20receipts.md) | 25% | 33.33% | 0% | BP-06.02 acceptance |
 | P4 / [BP-06.04 Laboratory returns and candidate eligibility](BP-06/BP-06.04%20Laboratory%20returns%20and%20candidate%20eligibility.md) | 0% | 0% | 0% | BP-06.03 acceptance |
 | P5 / [BP-06.05 Representation reuse and retrieval](BP-06/BP-06.05%20Representation%20reuse%20and%20retrieval.md) | 0% | 0% | 0% | BP-06.04 acceptance |
 | P6 / [BP-06.06 Feedback integration and closeout](BP-06/BP-06.06%20Feedback%20integration%20and%20closeout.md) | 0% | 0% | 0% | BP-06.05 acceptance |

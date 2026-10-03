@@ -37,7 +37,7 @@
   },
   {
     "package": "amphora-contracts-evidence",
-    "version": "0.5.2",
+    "version": "0.5.3",
     "path": "contracts/evidence",
     "module": "amphora_contracts_evidence",
     "public_dependencies": [
@@ -60,7 +60,7 @@
   },
   {
     "package": "amphora-contracts-knowledge",
-    "version": "0.6.2",
+    "version": "0.6.3",
     "path": "contracts/knowledge",
     "module": "amphora_contracts_knowledge",
     "public_dependencies": [
@@ -73,10 +73,12 @@
   },
   {
     "package": "amphora-contracts-research",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "path": "contracts/research",
     "module": "amphora_contracts_research",
     "public_dependencies": [
+      "amphora-contracts-artifacts",
+      "amphora-contracts-graph-runtime",
       "amphora-contracts-core"
     ]
   },
@@ -136,7 +138,7 @@
   },
   {
     "package": "amphora-data-artifacts",
-    "version": "0.11.2",
+    "version": "0.11.3",
     "path": "services/data_artifacts",
     "module": "amphora_data_artifacts",
     "public_dependencies": [
@@ -149,7 +151,7 @@
   },
   {
     "package": "amphora-knowledge",
-    "version": "0.13.2",
+    "version": "0.13.3",
     "path": "services/knowledge",
     "module": "amphora_knowledge",
     "public_dependencies": [
@@ -165,7 +167,7 @@
   },
   {
     "package": "amphora-research",
-    "version": "0.9.0",
+    "version": "0.10.0",
     "path": "services/research",
     "module": "amphora_research",
     "public_dependencies": [

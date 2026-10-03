@@ -1,0 +1,8 @@
+{
+  "wire_version": "1",
+  "scope": {
+    "tenant_id": "fixture",
+    "project_id": "assessment"
+  },
+  "assessment_id": "assessment-1"
+}

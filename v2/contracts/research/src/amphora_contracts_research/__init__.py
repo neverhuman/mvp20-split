@@ -37,3 +37,7 @@ __all__ = [
     "EvidenceNeedRef", "MaterialStateRevisionRef", "ResearchQuestion", "ResearchQuestionRef",
     "SampleIdentity", "SampleRevisionRef", "IdentityResolution", "ResolveIdentity",
 ]
+
+from .publication import AssessmentPublicationRequest, AssessmentPublicationStatus
+
+__all__ += ["AssessmentPublicationRequest", "AssessmentPublicationStatus"]

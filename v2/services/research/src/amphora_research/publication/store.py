@@ -29,6 +29,28 @@ class PublicationStore:
     def __init__(self, engine):
         self.engine = engine
 
+    def lookup(self, scope, assessment_id, actor_id):
+        stored = AssessmentStore(self.engine).read(scope, assessment_id, actor_id)
+        if stored is None:
+            return None
+        with self.engine.connect() as connection:
+            raw = connection.execute(text("SELECT canonical_bytes FROM research.publication_headers WHERE " + WHERE),
+                                     stored.intent.key).scalar_one_or_none()
+        if raw is None:
+            return None
+        header = json.loads(bytes(raw))
+        initial = PublicationProgress(AssessmentArtifact.from_stored(stored), header["publisher"], header["issuer"])
+        if bytes(raw) != self._header(initial):
+            raise AssessmentError("publication_identity_conflict")
+        return self.read(initial)
+
+    @staticmethod
+    def _header(initial):
+        artifact = initial.artifact
+        return canonical({"format": "research.publication.v1", "publisher": initial.publisher, "issuer": initial.issuer,
+                          "policy": SyntheticReceiptPolicy.version, "content": artifact.content.model_dump(mode="json"),
+                          "declaration": artifact.declaration.model_dump(mode="json")}, 2097152)
+
     def begin(self, scope, assessment_id, actor_id, publisher, issuer):
         _identifier(publisher)
         _identifier(issuer)
@@ -37,9 +59,7 @@ class PublicationStore:
             raise AssessmentError("publication_assessment_missing")
         artifact = AssessmentArtifact.from_stored(stored)
         initial = PublicationProgress(artifact, publisher, issuer)
-        header = canonical({"format": "research.publication.v1", "publisher": publisher, "issuer": issuer,
-                            "policy": SyntheticReceiptPolicy.version, "content": artifact.content.model_dump(mode="json"),
-                            "declaration": artifact.declaration.model_dump(mode="json")}, 2097152)
+        header = self._header(initial)
         key = stored.intent.key
         with self.engine.begin() as connection:
             AssessmentStore._lock(connection, key)

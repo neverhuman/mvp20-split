@@ -4,6 +4,10 @@ import asyncio
 import json
 
 from amphora_contracts_research import (
+    AssessmentPublicationRequest,
+    AssessmentPublicationStatus,
+    EvidenceAssessmentRequest,
+    EvidenceAssessmentStatus,
     EvidenceNeed,
     EvidenceNeedRef,
     IdentityResolution,
@@ -11,11 +15,14 @@ from amphora_contracts_research import (
     ResearchQuestionRef,
     ResolveIdentity,
 )
+from amphora_tool_protocol import ProtocolError
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from pydantic import ValidationError
 from sqlalchemy.exc import SQLAlchemyError
 
+from ..assessment.policy import AssessmentError
+from ..assessment.reader import AssessmentPeerUnavailable
 from ..identity.questions import ResearchIdentityError
 from .access import AccessDenied
 from .declarations import DeclarationReader
@@ -38,30 +45,31 @@ def _constant(_value):
     raise InvalidRequest("invalid_json_constant")
 
 
-async def _body(request):
+async def _body(request, limit=16384):
     parts = []
     count = 0
     async for part in request.stream():
         count += len(part)
-        if count > 16384:
+        if count > limit:
             raise InvalidRequest("request_limit")
         parts.append(part)
     return b"".join(parts)
 
 
-def create_app(resolver, credentials):
-    app = FastAPI(title="Amphora Research identity reads", docs_url=None, redoc_url=None)
+def create_app(resolver, credentials, assessments=None):
+    app = FastAPI(title="Amphora Research", docs_url=None, redoc_url=None)
+    app.state.assessment_enabled = assessments is not None
 
     @app.get("/health")
     def health():
-        return {"service": "research", "authority": "identity_only"}
+        return {"service": "research", "authority": "identity_only" if assessments is None else "synthetic_assessment"}
 
-    async def invoke(request, model, operation):
+    async def invoke(request, model, operation, limit=16384):
         try:
             principal = credentials.authenticate(request.headers.get("authorization"))
             if request.headers.get("content-type", "").split(";", 1)[0].strip().lower() != "application/json":
                 return JSONResponse(status_code=415, content={"code": "json_required"})
-            body = await asyncio.wait_for(_body(request), timeout=5)
+            body = await asyncio.wait_for(_body(request, limit), timeout=5)
             decoded = json.loads(body.decode("utf-8"), object_pairs_hook=_unique, parse_constant=_constant)
             # Parse in JSON mode so immutable tuple/schema rules match published wire contracts.
             query = model.model_validate_json(json.dumps(decoded))
@@ -75,6 +83,14 @@ def create_app(resolver, credentials):
             return JSONResponse(status_code=status, content={"code": str(error)})
         except InvalidRequest as error:
             return JSONResponse(status_code=413 if str(error) == "request_limit" else 422, content={"code": str(error)})
+        except (AssessmentPeerUnavailable, ProtocolError):
+            return JSONResponse(status_code=503, content={"code": "assessment_peer_unavailable"})
+        except AssessmentError as error:
+            code = str(error)
+            status = (403 if code in {"assessment_actor_mismatch", "peer_access_denied"} else
+                      409 if "conflict" in code or code == "publication_assessment_pending" else
+                      404 if code in {"assessment_profile_unavailable", "publication_assessment_missing"} else 422)
+            return JSONResponse(status_code=status, content={"code": code}, headers={"Cache-Control": "no-store"})
         except (SQLAlchemyError, ResearchIdentityError):
             return JSONResponse(status_code=503, content={"code": "identity_owner_unavailable"})
         except (ValueError, UnicodeError, RecursionError, ValidationError):
@@ -95,5 +111,22 @@ def create_app(resolver, credentials):
     @app.post("/v1/evidence-needs/read", response_model=EvidenceNeed)
     async def evidence_need(request: Request):
         return await invoke(request, EvidenceNeedRef, declarations.read)
+
+    if assessments is not None:
+        @app.post("/v1/assessments", response_model=EvidenceAssessmentStatus)
+        async def assess(request: Request):
+            return await invoke(request, EvidenceAssessmentRequest, assessments.submit, limit=262144)
+
+        @app.post("/v1/assessments/read", response_model=EvidenceAssessmentStatus)
+        async def read_assessment(request: Request):
+            return await invoke(request, EvidenceAssessmentRequest, assessments.read, limit=262144)
+
+        @app.post("/v1/assessment-publications", response_model=AssessmentPublicationStatus)
+        async def publish_assessment(request: Request):
+            return await invoke(request, AssessmentPublicationRequest, assessments.publish)
+
+        @app.post("/v1/assessment-publications/read", response_model=AssessmentPublicationStatus)
+        async def read_publication(request: Request):
+            return await invoke(request, AssessmentPublicationRequest, assessments.read_publication)
 
     return app

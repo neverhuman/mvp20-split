@@ -3,6 +3,8 @@ from pathlib import Path
 
 import pytest
 from amphora_contracts_research import (
+    AssessmentPublicationRequest,
+    AssessmentPublicationStatus,
     EvidenceAssessment,
     EvidenceAssessmentProfile,
     EvidenceAssessmentRequest,
@@ -13,7 +15,9 @@ from pydantic import ValidationError
 
 EXAMPLES = Path(__file__).absolute().parents[1] / "examples"
 MODELS = {"assessment-profile": EvidenceAssessmentProfile, "assessment-request": EvidenceAssessmentRequest,
-          "assessment": EvidenceAssessment, "assessment-status": EvidenceAssessmentStatus}
+          "assessment": EvidenceAssessment, "assessment-status": EvidenceAssessmentStatus,
+          "assessment-publication-request": AssessmentPublicationRequest,
+          "assessment-publication-status": AssessmentPublicationStatus}
 
 
 @pytest.mark.parametrize("name", MODELS)

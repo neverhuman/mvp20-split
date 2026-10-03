@@ -230,6 +230,32 @@ def test_actual_knowledge_output_and_evidence_require_authenticated_applicable_p
             observations.append(assessment.model_dump(mode="json"))
         for recovery in ("begin", "stream", "finalize"):
             assert resolve([receipt], recovery=recovery).assessment.sufficient
+        # Exercise the optional public boundary through a separately hosted Research process.
+        research.stop()
+        research_config.write_text(json.dumps({"database_url_env": "RESEARCH_DB", "principals": [
+            {"token_env": "RESEARCH_TOKEN", "actor_id": "reader", "scope": scope,
+             "actions": ["read_declarations", "assess", "read_assessment", "publish_assessment", "read_assessment_publication"]}],
+            "assessment": {"profiles": [profile.model_dump(mode="json")],
+                           "data": {"endpoint": data.endpoint, "token_env": "READ_TOKEN"},
+                           "publication": {"actor_id": "fixture", "issuer_id": "research-synthetic", "token_env": "DATA_TOKEN"}}}))
+        research = Owner("amphora_research", research_config, environment, "r" * 32)
+        owners.append(research)
+        api_request = request | {"assessment_id": "public-assessment", "receipts": [receipt]}
+        api_result = research.request("/v1/assessments", api_request)
+        assert api_result["outcome"]["status"] == "assessed"
+        assert api_result["outcome"]["assessment"]["sufficient"]
+        selection = {"wire_version": "1", "scope": scope, "assessment_id": "public-assessment"}
+        api_publication = research.request("/v1/assessment-publications", selection)
+        assert api_publication["outcome"]["status"] == "published"
+        assert api_publication["outcome"]["receipt"]["purpose"] == "research.synthetic_sufficiency"
+        assert api_publication["outcome"]["receipt"]["outcome"]["status"] == "accepted"
+        wrong = HttpTransport(research.endpoint, "z" * 32).request("POST", "/v1/assessments", encoded(api_request))
+        assert wrong.status == 401
+        research.stop()
+        research = Owner("amphora_research", research_config, environment, "r" * 32)
+        owners.append(research)
+        assert research.request("/v1/assessments/read", api_request) == api_result
+        assert research.request("/v1/assessment-publications/read", selection) == api_publication
         with pytest.raises(AssessmentError, match="peer_access_denied"):
             resolve([receipt], token="z" * 32)
         rights2 = rights | {"reference": rights["reference"] | {"revision": 2}, "supersedes": rights["reference"],
@@ -238,13 +264,15 @@ def test_actual_knowledge_output_and_evidence_require_authenticated_applicable_p
         with pytest.raises(AssessmentError, match="peer_access_denied"):
             resolve([receipt])
         data.stop()
+        assert research.request("/v1/assessments", api_request) == api_result
+        assert research.request("/v1/assessment-publications", selection) == api_publication
         with pytest.raises(AssessmentPeerUnavailable):
             resolve([receipt])
         assert store.engine.pool.checkedout() == 0
         evidence = {"timestamp_local": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "scope": scope,
                     "answer": answer, "assessments": observations, "actual_processes": ["Data", "Knowledge", "Research"],
                     "cases": ["real_logical_output", "explicit_missing_evidence", "opinion_insufficient", "matching_observation",
-                              "wrong_token_denied", "revoked_source_denied", "data_outage_retryable", "no_idle_research_transaction", "durable_assessment_replacement_read", "actual_assessment_publication_and_receipt", "publication_terminal_replay", "actual_begin_ack_loss", "actual_stream_ack_loss", "actual_finalize_ack_loss"]}
+                              "wrong_token_denied", "revoked_source_denied", "data_outage_retryable", "no_idle_research_transaction", "durable_assessment_replacement_read", "actual_assessment_publication_and_receipt", "publication_terminal_replay", "actual_begin_ack_loss", "actual_stream_ack_loss", "actual_finalize_ack_loss", "authenticated_assessment_submit_read", "authenticated_publication_submit_read", "Research_process_replacement_replay", "terminal_replay_with_Data_offline"]}
         path = Path(os.environ.get("AMPHORA_RESEARCH_RESOLUTION_EVIDENCE", str(Path(__file__).absolute().parents[4] /
                                                                                  ".test-results/research-resolution-live.json")))
         path.write_text(json.dumps(evidence, indent=2) + "\n", encoding="utf-8")

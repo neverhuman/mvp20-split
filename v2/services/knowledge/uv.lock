@@ -78,7 +78,7 @@ requires-dist = [{ name = "pydantic", specifier = ">=2.12,<3" }]
 
 [[package]]
 name = "amphora-contracts-evidence"
-version = "0.5.2"
+version = "0.5.3"
 source = { editable = "../../contracts/evidence" }
 dependencies = [
     { name = "amphora-contracts-core" },
@@ -118,7 +118,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-contracts-knowledge"
-version = "0.6.2"
+version = "0.6.3"
 source = { editable = "../../contracts/knowledge" }
 dependencies = [
     { name = "amphora-contracts-artifacts" },
@@ -141,16 +141,20 @@ requires-dist = [
 
 [[package]]
 name = "amphora-contracts-research"
-version = "0.4.0"
+version = "0.5.0"
 source = { editable = "../../contracts/research" }
 dependencies = [
+    { name = "amphora-contracts-artifacts" },
     { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-graph-runtime" },
     { name = "pydantic" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "amphora-contracts-artifacts", editable = "../../contracts/artifacts" },
     { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-graph-runtime", editable = "../../contracts/graph_runtime" },
     { name = "pydantic", specifier = ">=2.12,<3" },
 ]
 
@@ -192,7 +196,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-knowledge"
-version = "0.13.2"
+version = "0.13.3"
 source = { editable = "." }
 dependencies = [
     { name = "alembic" },

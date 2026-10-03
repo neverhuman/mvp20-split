@@ -1,0 +1,150 @@
+{
+  "database_url_env": "AMPHORA_RESEARCH_DATABASE_URL",
+  "principals": [
+    {
+      "token_env": "AMPHORA_RESEARCH_TOKEN",
+      "actor_id": "research-client",
+      "scope": {
+        "tenant_id": "fixture",
+        "project_id": "assessment"
+      },
+      "actions": [
+        "assess",
+        "read_assessment",
+        "publish_assessment",
+        "read_assessment_publication"
+      ]
+    }
+  ],
+  "assessment": {
+    "profiles": [
+      {
+        "wire_version": "1",
+        "profile_id": "fixture-policy",
+        "version": "1",
+        "authority": "synthetic",
+        "purpose": "fixture.measurement",
+        "question": {
+          "wire_version": "1",
+          "reference": {
+            "scope": {
+              "tenant_id": "fixture",
+              "project_id": "assessment"
+            },
+            "question_id": "q",
+            "revision": 1
+          },
+          "objective": "Synthetic evidence comparison",
+          "applicability": {
+            "artifact_id": "context",
+            "scope": {
+              "tenant_id": "fixture",
+              "project_id": "assessment"
+            },
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "fixture.measurement",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "size_bytes": 2
+          },
+          "criteria": [
+            {
+              "criterion_id": "c",
+              "description": "Configured measurement criterion"
+            }
+          ],
+          "supersedes": null
+        },
+        "subject": {
+          "artifact_id": "subject",
+          "scope": {
+            "tenant_id": "fixture",
+            "project_id": "assessment"
+          },
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "fixture.measurement",
+            "version": "1",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "size_bytes": 2
+        },
+        "targets": [
+          {
+            "criterion_id": "c",
+            "target_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          }
+        ],
+        "answer_publishers": [
+          "knowledge-publisher"
+        ],
+        "requirements": [
+          {
+            "need": {
+              "wire_version": "1",
+              "reference": {
+                "scope": {
+                  "tenant_id": "fixture",
+                  "project_id": "assessment"
+                },
+                "need_id": "n",
+                "revision": 1
+              },
+              "question": {
+                "scope": {
+                  "tenant_id": "fixture",
+                  "project_id": "assessment"
+                },
+                "question_id": "q",
+                "revision": 1
+              },
+              "criterion_ids": [
+                "c"
+              ],
+              "method": {
+                "schema_id": "fixture.measurement",
+                "version": "1",
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+              },
+              "required_context": {
+                "artifact_id": "context",
+                "scope": {
+                  "tenant_id": "fixture",
+                  "project_id": "assessment"
+                },
+                "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "fixture.measurement",
+                  "version": "1",
+                  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                "size_bytes": 2
+              },
+              "supersedes": null
+            },
+            "categories": [
+              "observation"
+            ],
+            "issuers": [
+              "fixture-observer"
+            ]
+          }
+        ]
+      }
+    ],
+    "data": {
+      "endpoint": "http://127.0.0.1:8081",
+      "token_env": "AMPHORA_RESEARCH_DATA_READ_TOKEN"
+    },
+    "publication": {
+      "actor_id": "research-publisher",
+      "issuer_id": "research-synthetic",
+      "token_env": "AMPHORA_RESEARCH_DATA_PUBLISH_TOKEN"
+    }
+  }
+}

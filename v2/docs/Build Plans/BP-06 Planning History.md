@@ -333,3 +333,11 @@ Owner explicitly required continuing across milestones rather than stopping afte
 Rotated MBT checkpoints:
 
 | 2026-10-01 20:13:10 | BP-06.02/B2 cursor partial; child25%, parent20.83% unchanged | [Cursor proof](../Audits/Evidence/BP-06-Knowledge/Rebuild_Cursor.json);112 owner tests |
+
+## 2026-10-02 20:45:17 - B1 complete; B2 active
+
+B1.10 Research0.10.0/contracts0.5.0 adds optional scoped assessment/publication HTTP and reference-only public publication DTOs.434 source/317 installed tests pass; actual process replacement and Data-offline replay preserve decisions.300 schemas retain296 predecessors. Metadata-only peer dependency patches preserve behavior. B1 closes1/4; parent9/24 (37.50%), child25%, Build33.33%. B2 requires correction/invalidation behavior; pure eligibility evidence is retained but does not alone close it. Runtime immutable receipt identity excludes revision from its key, so fresh receipt IDs/linkage are required for corrections.
+
+Rotated MBT checkpoints:
+
+| 2026-10-01 20:43:08 | BP-06.02/B2 complete; child50%, parent25%; B3 active | [Rebuild proof](../Audits/Evidence/BP-06-Knowledge/Rebuild_Publication.json);122 owner tests;264 schemas |

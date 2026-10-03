@@ -1,6 +1,6 @@
 # Knowledge Wire Contracts
 
-- Package: amphora-contracts-knowledge0.6.2; BP-06.02/B1 contract boundary implemented.
+- Package: amphora-contracts-knowledge0.6.3; BP-06.02/B1 contract boundary implemented.
 - Design: [Knowledge authoring](../../docs/Architecture/Knowledge/Authoring.md); [activation decisions](../../docs/Audits/BP-06.02_Activation.md).
 
 Public imports describe scoped graph/entity/assertion identities, a pinned predicate vocabulary, source grounding, exact Research question/need links, discriminated typed edits, proposals, structural acceptance decisions and immutable snapshots. Dependencies are public Core0.1.0, evidence0.5.2 and Research0.4.0 plus Pydantic. No service implementation, database, I/O, agent or scientific policy belongs here.
@@ -24,3 +24,5 @@ BP-06.03/B1 contracts0.6.0 add ReasoningPublicationRequest/Status and a self-con
 BP-06.03/B1.06 compatibility patch: dependency pins now consume additive Research contracts0.3.0 (Evidence0.5.1/Knowledge contracts0.6.1 where applicable). Existing public schema bytes and owner behavior are unchanged; earlier installed/recovery evidence remains tied to its recorded versions.
 
 BP-06.03/B1.07 compatibility patch: exact pins now consume Research contracts0.4.0 and corresponding Evidence0.5.2/Knowledge contracts0.6.2. The only added wire root is Research synthetic evidence; peer behavior and all294 predecessor schema bytes remain unchanged.
+
+B1.10 compatibility patch updates exact Research0.5.0 contract dependency closure; no owner behavior, migration or existing schema changes.

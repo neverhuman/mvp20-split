@@ -113,6 +113,8 @@ for name, model in {
     "assessment-request": research_contracts.EvidenceAssessmentRequest,
     "assessment": research_contracts.EvidenceAssessment,
     "assessment-status": research_contracts.EvidenceAssessmentStatus,
+    "assessment-publication-request": research_contracts.AssessmentPublicationRequest,
+    "assessment-publication-status": research_contracts.AssessmentPublicationStatus,
     "candidate-revision": research_contracts.CandidateRevision,
     "resolve-identity": research_contracts.ResolveIdentity,
     "identity-resolution": research_contracts.IdentityResolution,

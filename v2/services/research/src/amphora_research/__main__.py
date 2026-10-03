@@ -30,7 +30,7 @@ def main():
         return 2
     try:
         if args.command == "check":
-            print(json.dumps({"status": "ready", "authority": "identity_only"}))
+            print(json.dumps({"status": "ready", "authority": "synthetic_assessment" if host.app.state.assessment_enabled else "identity_only"}))
             return 0
         uvicorn.run(host.app, host="127.0.0.1", port=args.port, limit_concurrency=16)
     finally:

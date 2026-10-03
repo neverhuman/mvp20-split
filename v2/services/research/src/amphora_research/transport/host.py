@@ -10,6 +10,7 @@ from sqlalchemy.engine import make_url
 from ..persistence.ledger import IdentityLedger
 from .access import Credentials, Principal
 from .api import create_app
+from .assessments import AssessmentOperations
 from .resolver import IdentityResolver
 
 
@@ -34,7 +35,8 @@ class ResearchHost:
 
     @classmethod
     def configured(cls, config):
-        _keys(config, ("database_url_env", "principals"))
+        optional = ("assessment",) if isinstance(config, dict) and "assessment" in config else ()
+        _keys(config, ("database_url_env", "principals", *optional))
         entries = config["principals"]
         if not isinstance(entries, list) or not 1 <= len(entries) <= 32:
             raise ValueError("invalid_principals")
@@ -45,11 +47,14 @@ class ResearchHost:
                 raise ValueError("invalid_actor")
             actions = entry["actions"]
             if (not isinstance(actions, list) or not actions
-                    or any(action not in ("resolve_identity", "read_declarations") for action in actions)
+                    or any(action not in ("resolve_identity", "read_declarations", "assess", "read_assessment",
+                                          "publish_assessment", "read_assessment_publication") for action in actions)
                     or len(set(actions)) != len(actions)):
                 raise ValueError("invalid_actions")
             scope = Scope.model_validate(entry["scope"])
             grants.append((_secret(entry["token_env"]), Principal(entry["actor_id"], scope, frozenset(entry["actions"]))))
+        if not optional and any(principal.actions - {"resolve_identity", "read_declarations"} for _, principal in grants):
+            raise ValueError("assessment_configuration_required")
         credentials = Credentials(grants)
         url = make_url(_secret(config["database_url_env"]))
         if url.drivername != "postgresql+psycopg" or url.username != "research_service":
@@ -61,7 +66,20 @@ class ResearchHost:
                 if connection.execute(text("SELECT current_user")).scalar_one() != "research_service":
                     raise ValueError("research_service_role_required")
                 connection.execute(text("SELECT revision FROM research.identity_heads LIMIT 1"))
-            return cls(engine, create_app(IdentityResolver(IdentityLedger(engine)), credentials))
+            assessments = None
+            if optional:
+                assessment = config["assessment"]
+                _keys(assessment, ("profiles", "data", "publication"))
+                _keys(assessment["data"], ("endpoint", "token_env"))
+                _keys(assessment["publication"], ("actor_id", "issuer_id", "token_env"))
+                publisher = assessment["publication"]
+                assessments = AssessmentOperations(engine, assessment["profiles"], assessment["data"]["endpoint"],
+                    _secret(assessment["data"]["token_env"]), publisher["actor_id"], publisher["issuer_id"],
+                    _secret(publisher["token_env"]))
+                with engine.connect() as connection:
+                    connection.execute(text("SELECT canonical_bytes FROM research.assessment_decisions LIMIT 1"))
+                    connection.execute(text("SELECT position FROM research.publication_events LIMIT 1"))
+            return cls(engine, create_app(IdentityResolver(IdentityLedger(engine)), credentials, assessments))
         except Exception:
             engine.dispose()
             raise
