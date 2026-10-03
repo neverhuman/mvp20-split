@@ -45,3 +45,5 @@ B1.08d actual hosted checkpoint `2026-10-03 03:53:36`:scientific_api owns separa
 [Explicit normalization](normalization/README.md) implements B2.01 pure directed conversion catalogs and derived measurements in Research0.25.0. Original values/units/uncertainty/censoring/series are retained. Public projection/storage/API integration remains B2.03/.04.
 
 [Action-local use policy](quality/README.md) implements B2.02 per-observation use, coverage/focus separation and explicit optional normalization. Sibling corrections.py retains immediate old/new observations under future-only policy. Neither pure module writes records or repins campaigns; B2.03/.04 own durable/authenticated integration.
+
+Research0.27.0: [interpretation](interpretation/README.md) owns reviewed profile reconstruction, exact reference-only binding and original-plus-derived public projections. Its pure builders preserve next-campaign focus separately from action eligibility; durable/authenticated integration remains B2.03b/B2.04.

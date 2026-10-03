@@ -46,3 +46,7 @@ Version0.5.0 adds SyntheticEvidenceRecord and self-contained payload-schema help
 Version0.2.0 adds ResolveIdentity and IdentityResolution for authenticated scoped reads. authority is the literal identity_only; matching proves exact owner record correspondence, not artifact rights or scientific eligibility. These additive roots leave prior identity/question schemas unchanged.
 
 B1.10 adds reference-only AssessmentPublicationRequest and typed pending/failed/published AssessmentPublicationStatus. Published output includes the public DerivationReceipt and DomainReceipt; their presence is not Runtime acceptance. Failed publication explicitly preserves possible external effects. Four additive schemas preserve prior public schema bytes. Dependency direction remains acyclic: Research contracts consume Graph Runtime/Artifacts, never Knowledge contracts; Knowledge can continue consuming Research.
+
+## Interpretation projections (0.12.0)
+
+Additive normalization/use profiles, reference-only requests and typed projections preserve exact original evidence and reviewed policy configuration. InterpretationRef is separate from ScientificDecisionRef. Policy interpretation is not scientific acceptance or execution authority; usability and next-campaign focus are independent. Scope/reference/digest semantics are reconstructed by Research, not conferred by DTO shape validation. Eight new schema roots/examples preserve all376 predecessor schemas. Durable/authenticated integration remains BP-06.04/B2.03b/B2.04.

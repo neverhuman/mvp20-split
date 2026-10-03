@@ -1,0 +1,50 @@
+{
+  "timestamp_local": "2026-10-03 04:47:00",
+  "milestone": "BP-06.04/B2.03a",
+  "research_version": "0.27.0",
+  "contracts_version": "0.12.0",
+  "verification": {
+    "source_tests": 674,
+    "installed_tests": 674,
+    "compatibility_dev_tests": 119,
+    "focused_contract_tests": 13,
+    "focused_owner_tests": 14,
+    "coverage": {
+      "covered_lines": 116,
+      "num_statements": 116,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100",
+      "num_branches": 8,
+      "num_partial_branches": 0,
+      "covered_branches": 8,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    },
+    "schemas": 392,
+    "predecessor_schemas_preserved": 376,
+    "migration_unchanged": "research_0010"
+  },
+  "cases": [
+    "complete_nested_profile_hashes",
+    "semantic_reconstruction",
+    "reference_only_exact_scoped_binding",
+    "original_lexical_measurement_retained",
+    "raw_vs_effective_matching",
+    "usable_and_focus_independent",
+    "actor_and_content_addressed_projection",
+    "unresolved_normalization_not_operational_failure",
+    "empty_batch_missing_coverage",
+    "bounded_conflict_free_sources"
+  ],
+  "limits": [
+    "Pure mappings/builders; no owned storage or current source-rights proof",
+    "B2.03b owns complete dependency preparation and atomic durability",
+    "B2.04 owns authenticated APIs; SQ-01 owns UI",
+    "No scientific acceptance, publication or Runtime authority"
+  ]
+}

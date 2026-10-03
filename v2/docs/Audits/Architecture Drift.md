@@ -1,9 +1,9 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-03 04:24:09` (America/Chicago).
+- Last refreshed: `2026-10-03 04:47:00` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.04/B2.03 durable projections after exact normalization and action-local quality policy; parent56.25%,13/24 closed gates.
+- Active focus: BP-06.04/B2.03b durable interpretations after public projection verification; parent56.60%,13/24 closed gates.
 - Next gate: explicit normalization and future-only correction transitions. BP-06.03 aligned evidence is in drift history; richer scientific-quality UI remains SQ-01.
 
 ## Active Findings
@@ -25,3 +25,5 @@ Use [Development Process](../Development_Process.md) and the [audit template](..
 [Roadmap planning review](Planning_Maturity_Review.md) is aligned for documentation, with explicit current/future evidence boundaries. [Planning readiness](../Build%20Plans/Planning_Readiness.md) now owns cross-plan design handoffs and decision gates. This closes the plan-depth gap, not the still-unimplemented runtime/scientific capabilities.
 
 - `2026-09-26 16:31:31`: frozen-baseline verification reports `ADDED v1/LICENSE`, already introduced in committed baseline `99d219c`; all manifest content hashes match. No v1 edits made. Owner: repository baseline metadata; follow-up requires explicit baseline maintenance authorization, not implementation blocker. Artifact A2-A4 gates pass; service closeout audit remains A6.
+
+- `2026-10-03 04:47:00`: B2.03a pure interpretation boundary verified by [evidence](Evidence/BP-06-Research/Interpretation_Contracts.json). Original evidence and per-action usability/focus preserved; all376 predecessor schemas unchanged. Complete dependency preparation/durability remains B2.03b, authenticated routes B2.04 and quality UI SQ-01. No observed blocking drift in the completed slice.

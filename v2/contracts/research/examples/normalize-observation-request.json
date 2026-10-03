@@ -1,0 +1,29 @@
+{
+  "wire_version": "1",
+  "kind": "normalization",
+  "interpretation_id": "normalize-1",
+  "profile": {
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "materials"
+    },
+    "kind": "normalization",
+    "policy": {
+      "schema_id": "research.normalization",
+      "version": "1",
+      "sha256": "0bcba446edbf5f5ec1077246ca277005d3036ec077e718fbb491c09596b062da"
+    }
+  },
+  "observation": {
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "materials"
+    },
+    "observation_id": "result",
+    "revision": 1
+  },
+  "targets": {
+    "value_unit": "g",
+    "coordinate_unit": null
+  }
+}

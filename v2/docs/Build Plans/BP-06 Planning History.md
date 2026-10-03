@@ -1,5 +1,13 @@
 # BP-06 Planning History
 
+## BP-06.04/B2.03a interpretation contracts complete - 2026-10-03 04:47:00
+
+Research0.27.0/contracts0.12.0;674 source/674 installed and119 compatibility/dev tests pass.27 focused cases,116 owner statements/8 branches100%.392 public schemas preserve376 predecessor bytes. Complete scoped profile reconstruction verifies nested catalog hashes; reference-only requests bind exact original observations/experiments. Computed projections retain original lexical evidence, raw/effective matching and independent usability/focus. Canonical content includes actor/config/input/result; supplied source lists are bounded, not authentication proof. One mismatched-revision test fixture was corrected to an independent valid observation identity. No migration/API/scientific authority added. B2.03a100%,b/c0%, B2=58.33%,Build52.78%,child39.58%,parent56.60%; closed gates1/4 and13/24 unchanged. B2.03b active.
+
+Rotated MBT checkpoints:
+
+| 2026-10-02 20:45:17 | B1 complete10/10; child25%, parent37.50%; B2 active; gates1/4 and9/24 | [API](../Audits/Evidence/BP-06-Research/Assessment_API.json);434 source/317 installed tests |
+
 ## BP-06.04/B2.02 observation use/correction policies complete - 2026-10-03 04:24:09
 
 Research0.26.0/contracts0.11.0;647 source/647 independently installed and14 dev tests pass.14 focused cases cover165 statements/38 branches100%; observations/quality selector passes12 quality cases (two correction cases belong to their sibling modules). Explicit action policy separates usable/excluded/unresolved/quarantined from scientific truth. Sole unit mismatch can use exact configured normalization; identity/context mismatch cannot. Missing measurements count as returned coverage without imputation; divergent replicates retain order and independent identity. bound_state means a bound record, with separate unknown-preparation/feature focus. Pure immediate observation/material corrections retain both sides under future-only policy. One malformed unknown-feature test fixture was corrected to MissingValue. No new public DTO/store/API or scientific claim;376 schemas/research_0010 unchanged. B2=50%,Build50%,child37.50%,parent56.25%; gates1/4 and13/24 unchanged. B2.03 active.

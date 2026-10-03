@@ -1,0 +1,49 @@
+{
+  "wire_version": "1",
+  "kind": "normalization",
+  "scope": {
+    "tenant_id": "fixture",
+    "project_id": "materials"
+  },
+  "catalog": {
+    "profile_id": "fixture.mass-time",
+    "version": "1",
+    "reference": {
+      "schema_id": "research.normalization",
+      "version": "1",
+      "sha256": "0bcba446edbf5f5ec1077246ca277005d3036ec077e718fbb491c09596b062da"
+    },
+    "rules": [
+      {
+        "dimension": "mass",
+        "source_unit": "mg",
+        "target_unit": "g",
+        "scale": "0.001"
+      },
+      {
+        "dimension": "mass",
+        "source_unit": "g",
+        "target_unit": "kg",
+        "scale": "0.001"
+      },
+      {
+        "dimension": "mass",
+        "source_unit": "kg",
+        "target_unit": "g",
+        "scale": "1000"
+      },
+      {
+        "dimension": "time",
+        "source_unit": "min",
+        "target_unit": "s",
+        "scale": "60"
+      },
+      {
+        "dimension": "time",
+        "source_unit": "h",
+        "target_unit": "s",
+        "scale": "3600"
+      }
+    ]
+  }
+}

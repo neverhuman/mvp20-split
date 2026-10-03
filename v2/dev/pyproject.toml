@@ -3,12 +3,12 @@ name = "amphora-foundation-verification"
 version = "0.1.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
-    "amphora-knowledge==0.15.5",
-    "amphora-contracts-knowledge==0.7.5",
+    "amphora-knowledge==0.15.6",
+    "amphora-contracts-knowledge==0.7.6",
     "amphora-contracts-core==0.1.0",
-    "amphora-contracts-evidence==0.5.10",
-    "amphora-contracts-research==0.11.0",
-    "amphora-research==0.26.0",
+    "amphora-contracts-evidence==0.5.11",
+    "amphora-contracts-research==0.12.0",
+    "amphora-research==0.27.0",
     "amphora-contracts-tools==0.1.0",
     "amphora-contracts-campaigns==0.4.1",
     "amphora-campaign-runtime==0.20.2",

@@ -1,0 +1,9 @@
+{
+  "scope": {
+    "tenant_id": "fixture",
+    "project_id": "materials"
+  },
+  "kind": "observation-use",
+  "interpretation_id": "use-1",
+  "sha256": "a229f0c157b82f28207fb15ebf964ca24609a1ad519ba5981eb30c35465d3b77"
+}

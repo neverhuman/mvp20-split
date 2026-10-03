@@ -1,0 +1,12 @@
+{
+  "scope": {
+    "tenant_id": "fixture",
+    "project_id": "materials"
+  },
+  "kind": "normalization",
+  "policy": {
+    "schema_id": "research.normalization",
+    "version": "1",
+    "sha256": "0bcba446edbf5f5ec1077246ca277005d3036ec077e718fbb491c09596b062da"
+  }
+}

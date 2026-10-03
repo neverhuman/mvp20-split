@@ -1,0 +1,35 @@
+{
+  "wire_version": "1",
+  "kind": "observation-use",
+  "interpretation_id": "use-1",
+  "profile": {
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "materials"
+    },
+    "kind": "observation-use",
+    "policy": {
+      "schema_id": "research.observation-use",
+      "version": "1",
+      "sha256": "9f59fff8817c2fdc149bc48c3c398eaade0724c8897515adf9a614dc43ec6c3a"
+    }
+  },
+  "experiment": {
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "materials"
+    },
+    "experiment_id": "assay",
+    "revision": 1
+  },
+  "observations": [
+    {
+      "scope": {
+        "tenant_id": "fixture",
+        "project_id": "materials"
+      },
+      "observation_id": "result",
+      "revision": 1
+    }
+  ]
+}
