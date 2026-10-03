@@ -90,6 +90,7 @@ def test_authenticated_request_and_endpoint_independent_backend_identity():
         {"timeout": True},
         {"timeout": float("nan")},
         {"timeout": 31},
+        {"timeout": 10**400},
         {"response_limit": True},
         {"response_limit": 1023},
     ],

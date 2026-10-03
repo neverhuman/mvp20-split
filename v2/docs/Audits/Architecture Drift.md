@@ -1,12 +1,14 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-03 17:20:22` (America/Chicago).
+- Last refreshed: `2026-10-03 17:41:19` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.05/B2.02b projection/search adapter; child33.33%, parent72.22%,17/24 closed gates.
-- Next gate: actual Qdrant projection/exact-search adapter. Pinned authenticated fixture/transport and owned PG lifecycle verified; durable lifecycle and Qdrant remain subsequent tasks. Scientific-quality UI remains SQ-01.
+- Active focus: BP-06.05/B2.02c actual installed index proof; child35.42%, parent72.57%,17/24 closed gates.
+- Next gate: actual installed Data/Qdrant generation reconstruction. Pinned adapter and independent exact-search oracle verified; durable lifecycle and Qdrant remain subsequent tasks. Scientific-quality UI remains SQ-01.
 
 ## Active Findings
+
+- BP-06.05/QD-01: actual Qdrant1.19.1 simultaneous creation of one attempt namespace returned409 and a temporary500 read; a later read recovered expected content. Adapter errors remain operational and no create acknowledgement grants verification. Separate fenced attempt namespaces and exact content comparison preserve authority. Actual fresh-namespace recovery is tested at the adapter boundary; Data generation/index reconstruction is B2.02c and abrupt process/race proof is B3. No claim that every concurrent backend call succeeds. This does not block bounded adapter work.
 
 
 

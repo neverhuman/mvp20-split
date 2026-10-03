@@ -59,7 +59,7 @@ class QdrantConfiguration:
             "qdrant_credential_required",
         )
         require(
-            type(self.timeout) in (int, float) and math.isfinite(self.timeout) and 0.1 <= self.timeout <= 30,
+            type(self.timeout) in (int, float) and 0.1 <= self.timeout <= 30 and math.isfinite(self.timeout),
             "qdrant_timeout_bound",
         )
         require(

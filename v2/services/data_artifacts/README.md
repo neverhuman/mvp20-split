@@ -1,7 +1,7 @@
 # Data and Artifacts Service
 
 - Status: DER-01 derived-publication accepted/closed. Baseline: provisional uploads and verified finalization implemented; protective reservation handshake implemented; bounded reconciliation/cleanup sweeps implemented; standalone hosting/scoped reads implemented; BP-02.03 independently accepted and audited; actual runtime integration, REC-01..09 process recovery and independent replacement acceptance passed.
-- Package: `amphora-data-artifacts` 0.23.0.
+- Package: `amphora-data-artifacts` 0.24.0.
 - Architecture: [Artifact publication](../../docs/Architecture/System/Artifact_Publication_Protocol.md), [physical records](../../docs/Architecture/System/Persistence_Record_Design.md).
 
 This independently installed service owns provisional upload records, immutable artifact catalog bindings, protective reservations, command receipts and artifact audit/outbox state. Its [private persistence module](src/amphora_data_artifacts/persistence/README.md) implements migrations and command registration/terminal receipt transactions. `api.create_app(uploads, storage, credentials, outcomes=None)` exposes POST /v1/uploads, PUT /v1/uploads/{id}/content and POST /v1/artifacts/finalize using explicit configured principals and policy. Successful streaming returns a provisional receipt; verified finalization returns ArtifactRef. POST /v1/reservations, /confirm and /reconcile implement the protective handshake with an explicitly configured runtime outcome client. GET /v1/artifacts/{id} and /content require a scoped read grant; content is integrity checked before response. `amphora-artifacts` provides explicit loopback hosting and bounded maintenance.
@@ -76,4 +76,4 @@ BP-06.05/B1.05 release0.18.0 adds optional authenticated `/v1/representations` r
 
 [Retrieval generations](src/amphora_data_artifacts/retrieval/README.md) owns ordered corpus/generation identity, private immutable intent/history and lease-fenced build state. Its `tests/retrieval/` suite is selectable independently. Verified projection/PG head publication is implemented; actual Qdrant and retrieval APIs remain subsequent BP-06.05 tasks.
 
-The [Qdrant boundary](src/amphora_data_artifacts/retrieval/qdrant/README.md) provides pinned backend configuration and bounded authenticated transport. Actual projection/search integration remains the next B2.02 gate; no API exposes caller-selected backend configuration.
+The [Qdrant boundary](src/amphora_data_artifacts/retrieval/qdrant/README.md) provides pinned backend configuration and bounded authenticated transport. Actual projection/exact-search adapter is implemented; independently installed Data/index reconstruction remains B2.02c; no API exposes caller-selected backend configuration.

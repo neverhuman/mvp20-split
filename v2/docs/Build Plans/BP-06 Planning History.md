@@ -1,5 +1,14 @@
 # BP-06 Planning History
 
+## BP-06.05/B2.02b actual Qdrant adapter complete - 2026-10-03 17:41:19
+
+Data0.24.0 independently built;47 source cases pass7.64s,131 installed retrieval/contract cases pass33.90s,18 dev pass20.91s. Actual pinned Qdrant build/inspect/filtered exact query matches independent Dot oracle2/1/3, preserves full profile/binding payloads, rejects incompatible settings/corrupt payloads and missing expected ids, handles256-point batches. Finite score and huge timeout bounds are explicit. Backend subtree287/299 statements53/60 branches covered; malformed server wrappers/rare unavailable-create and UUID/point-shape guards plus prior transport deadline paths remain declared gaps. No source-rights broker claim. The forced same-namespace create race initially returned409 then transient500; later read recovered3 points. Correct gate is safe operational uncertainty and exact fresh-namespace recovery, not every racing call succeeding. QD-01 tracks owner-level recovery proof in c/B3. Public0.2.0/430 schemas and artifact_0011 unchanged. B2.02a-b100%,c0%; B2=41.67%,Build47.22%,child35.42%,parent72.57%;gates1/4 and17/24. c active.
+
+Rotated MBT checkpoints:
+
+| 2026-10-03 05:18:56 | B2.03 complete; child43.75%, parent57.29%; B2.04a active | [Correction/impacts](../Audits/Evidence/BP-06-Research/Correction_Views_Impacts.json);808 source/808 installed,119 compatibility/dev;616 backfilled dependencies |
+
+
 ## BP-06.05/B2.02a actual Qdrant fixture and transport complete - 2026-10-03 17:20:22
 
 Data0.23.0 independently built with final explicit JSON-depth correction.33 source cases pass5.60s;117 installed retrieval/public-contract cases pass32.67s against actual PG/Qdrant;18 dev pass12.61s. Transport148/152 statements38/40 branches covered; unexercised closed-socket guard/connect-deadline/loop-deadline defensive paths remain declared. Socket probes cover slow headers/body, truncation, redirects, access denial, bounds, duplicate/nonfinite/overflow/deep JSON and unavailable peers. Actual Qdrant1.19.1 image/API are digest-pinned and fixture labels/loopback/key isolation verified. Root metadata is public, so authentication proof uses a protected collection route. Python recursion configuration was insufficient as a depth guard; explicit64-depth/2,000,000-node traversal added and tested. Public0.2.0/430 schemas and artifact_0011 unchanged. B2.02a100%, b-c0%; B2=33.33%, Build44.44%, child33.33%, parent72.22%; gates1/4 and17/24. b adapter active. No actual projection/search/reconstruction claim yet.

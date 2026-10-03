@@ -1,0 +1,110 @@
+{
+  "timestamp_local": "2026-10-03 17:41:19",
+  "task": "BP-06.05/B2.02b",
+  "status": "verified",
+  "source": {
+    "passed": 47,
+    "seconds": 7.64
+  },
+  "independent_retrieval_and_public_contracts": {
+    "passed": 131,
+    "seconds": 33.9
+  },
+  "dev": {
+    "passed": 18,
+    "seconds": 20.91
+  },
+  "coverage": {
+    "scope": "retrieval.qdrant",
+    "statements": 299,
+    "covered_statements": 287,
+    "branches": 60,
+    "covered_branches": 53,
+    "gaps": "Malformed server wrappers/shape guards, uncommon create error path and invalid UUID; previous defensive transport paths"
+  },
+  "schemas": {
+    "count": 430,
+    "unchanged": true
+  },
+  "migration": "artifact_0011 unchanged",
+  "lint_boundaries_schemas": "passed",
+  "actual_oracle": {
+    "timestamp_local": "2026-10-03 17:38:14",
+    "namespace": "amphora_9da7c50e92dcce8d2f6b950c321330c0ac6c591d0612e874a00baff46f4b2144",
+    "backend_profile": {
+      "schema_id": "data.qdrant-projection",
+      "version": "1",
+      "sha256": "bbd62cf269057b3280ef7e29e8ca06dbdbf6e81f42bb69652e63fb1973327f83"
+    },
+    "scope": {
+      "tenant_id": "qdrant-oracle",
+      "project_id": "3a9f0bc5c4f64314af12ae996b934f55"
+    },
+    "point_ids": [
+      "83f30bb7-07d9-5e1b-958b-bdc6ff06bd24",
+      "97399dd4-fe92-5aef-a7f5-6006a53bdc3b",
+      "dd25be48-2930-5847-86c6-fa69f19400e5"
+    ],
+    "query": [
+      2.0,
+      1.0
+    ],
+    "scores": {
+      "point-2": 3.0,
+      "point-0": 2.0,
+      "point-1": 1.0
+    },
+    "filtered_point": "97399dd4-fe92-5aef-a7f5-6006a53bdc3b",
+    "authority": "Actual Qdrant; synthetic reference fixtures, no Data source admission claim"
+  },
+  "installation": {
+    "timestamp_local": "2026-10-03 17:35:31",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-data-artifacts",
+    "forbidden_implementations": [
+      "amphora_research",
+      "amphora_knowledge",
+      "amphora_campaign_runtime"
+    ],
+    "packages": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.13",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-representations": "0.2.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-data-artifacts": "0.24.0"
+    },
+    "wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_representations-0.2.0-py3-none-any.whl": "cf9f74c2c48bcbbc4b5623766d7d96d3b07a5cb76b3cf818751a166639131ce8",
+      "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_data_artifacts-0.24.0-py3-none-any.whl": "a2c50ebc22af9ef41f5afc6d1735ccece7ebbf21f6a8862855bfe2fef401b5ed"
+    }
+  },
+  "known_backend_observation": {
+    "id": "QD-01",
+    "namespace": "amphora_956d09e8a86d26df0bac9d60f677d24002f1d50cb0ddd00b680ec13e54471954",
+    "initial": "Concurrent create409 followed by temporary GET500; client failed safely",
+    "later": "Actual inspect returned3 expected points",
+    "policy": "No verification from acknowledgement; unavailable reads stay errors; fresh namespace recovery verified"
+  },
+  "limits": [
+    "Adapter vectors/references are synthetic fixtures, not authorized Data source bindings",
+    "Actual Data generation/index reconstruction remains B2.02c",
+    "Current-use rights and immutable retrieval records remain B2.03",
+    "Process-death/race closure remains B3"
+  ]
+}

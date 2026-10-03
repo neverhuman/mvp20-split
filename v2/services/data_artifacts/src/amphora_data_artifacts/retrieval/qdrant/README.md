@@ -1,6 +1,6 @@
 # Qdrant boundary
 
-Owner: Data retrieval, BP-06.05/B2.02a. Pinned configuration and authenticated bounded transport are implemented; projection/search adapter and independently installed actual-index proof remain B2.02b/c.
+Owner: Data retrieval, BP-06.05/B2.02. Pinned configuration, authenticated bounded transport and actual projection/exact-search adapter are implemented. Independently installed Data generation/index reconstruction remains B2.02c.
 
 `QdrantConfiguration` separates deployment endpoint/key/deadline from the immutable backend profile. The profile pins Qdrant1.19.1, exact image digest and release OpenAPI hash, dense binary32 Dot vectors, payload protocol, bounded point count, waited writes and exact-query policy. Endpoint/token changes do not change vector semantics. The initial endpoint must be explicit loopback HTTP; remote/TLS deployment is a later profile. Credentials are excluded from configuration repr and never included in the profile digest.
 
@@ -13,3 +13,17 @@ There are no import-time connections, implicit model calls, production in-memory
 Tests under `tests/retrieval/qdrant/` distinguish scripted socket protocol/deadline failures from opt-in actual pinned Qdrant checks. Set `AMPHORA_TEST_QDRANT=1` only with the owned dev fixture. Replacement preserves pinned wire behavior, safe failure categories, operational bounds and generation namespace isolation. Actual projection, ranking and index reconstruction remain subsequent gates.
 
 B2.02a verification:33 source,117 independently installed retrieval/contract cases and18 dev cases passed. Qdrant transport coverage148/152 statements38/40 branches. Unexercised paths are the already-closed socket shutdown guard and defensive deadline checks immediately after connect/before another read; both actual slow-header/body deadline tests pass. Index/ranking behavior is not inferred from these results.
+
+## Actual projection and exact search
+
+`QdrantAdapter(configuration)` implements the generation projection port. `build(namespace, snapshot)` validates one complete profile, unique ids, 1..256 points and canonical binary32 values before backend I/O. It checks the pinned server and existing collection configuration, creates an absent dense Dot/float32 collection, then upserts at most64 points per waited operation. An operation must report completed; this is still not owner content verification. Existing incompatible dimensions/distance/datatype, sparse/multivector or quantization settings are rejected without overwriting the collection.
+
+`inspect(namespace)` reads actual collection parameters and scrolls payloads/vectors with limit257. More than256 points or another page is a bound failure, never truncation. Point payloads must contain the exact versioned format and full profile/binding refs; UUID ids, scope and canonical vectors are checked. Data's owner separately compares the whole observation against its retained Artifact bytes. Observation order is not manifest order.
+
+`query(namespace, values, allowed_ids)` requests exact search with an explicit id filter and returns all bounded allowed scores with observed points. Empty eligibility performs no network call. Duplicate/foreign/missing returned ids, nonfinite or overflowing scores, wrong query dimensions and malformed points fail. Missing expected points are an incomplete backend result, not zero similarity or no match. Scores normalize to finite binary64 numbers; they are not confidence values. The future broker owns source rights, profile pairing, stable tie order, top-k selection and immutable retrieval records. This low-level adapter does not authorize a caller's id list.
+
+There is no collection deletion, alias switch, in-place reconfiguration or implicit retry loop. Qdrant1.19.1 produced409 followed by a temporary500 on simultaneous collection creation in an actual probe; a later inspection recovered. A successful create acknowledgement never grants owner verification. Conflicts may be re-read only as actual compatible configuration; unavailable reads remain operational errors. Fresh fenced attempts use fresh namespaces and can recover without adopting uncertain state. The test suite exercises a forced creation race and exact recovery in a different namespace; it does not promise that every racing call succeeds.
+
+Actual backend tests use independent two-dimensional vectors and Dot oracle scores2/1/3 for query(2,1), full256-point batching, id filtering, missing-id rejection, configuration mismatch, payload corruption and concurrent-create recovery. These refs are synthetic transport fixtures. Actual Data source admission, generation verification/publication and persisted-index reconstruction are c's separate authority gate.
+
+B2.02b verification:47 source,131 installed retrieval/contract cases and18 dev cases pass. Adapter subtree coverage287/299 statements53/60 branches; malformed backend wrapper/point/UUID guards, uncommon create failure and earlier defensive transport paths remain unexercised. Actual orphan/partial/process failure closure remains B3.
