@@ -1,4 +1,4 @@
-"""Characterize the current boundary for BP-06's pending invalidation-policy decision."""
+"""Preserve the owner-approved future-campaign-only receipt correction boundary."""
 
 import pytest
 from amphora_campaign_runtime.lifecycle.model import TransitionError

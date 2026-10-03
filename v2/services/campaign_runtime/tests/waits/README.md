@@ -15,3 +15,5 @@ The process oracles are independent of scheduler arrival order:
 - Two prepared receipt processes: one accepted command and one rejected command, one immutable closure, one committed and one aborted protection intent.
 
 These tests deliberately script Artifact reservation responses to isolate Runtime failure handling. They do not establish actual Artifact retention, independent package installation, scientific authority or target-host durability. V1 owns installed issuer/peer and replacement acceptance. Aggregation's independent ordered-member/minimum/duplicate/late-cut oracles remain in the separate `aggregation` suite.
+
+BP-06.03/B2.04 adds test_owner_corrections.py and fixtures/owner_corrections.json. The fixture captures actual separately hosted Research/Knowledge HTTP correction receipts with its source-evidence hash. Pure Runtime disposition checks show old pinned acceptance survives a superseded notice, newer revisions cannot replace that pin, and future explicitly repinned waits retain abstained/blocked meaning. This is not a live Runtime commit or scientific-validity claim; B3 owns actual receipt delivery/retention and exploratory partial-output proof.

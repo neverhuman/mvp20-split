@@ -30,6 +30,7 @@ from amphora_research.publication.workflow import PublicationWorkflow
 from amphora_tool_protocol import HttpTransport, ProtocolError, TransportLost
 from postgres_fixture import knowledge_owner, owned_state
 
+from .correction_proof import prove as prove_corrections
 from .live_peers import Owner, owned_script
 
 pytestmark = pytest.mark.postgres
@@ -137,7 +138,7 @@ def test_actual_knowledge_output_and_evidence_require_authenticated_applicable_p
         knowledge_config.write_text(json.dumps({"database_url_env": "KNOWLEDGE_DB", "vocabulary": vocabulary, "policy": policy,
             "reasoning": [rules], "publication": {"actor_id": "knowledge-publisher", "issuer_id": "logical", "token_env": "PUBLISH_TOKEN"},
             "principals": [{"token_env": "KNOWLEDGE_TOKEN", "actor_id": "author", "scope": scope,
-                            "actions": ["read_graph", "propose_graph", "reason_graph", "publish_reasoning"]}],
+                            "actions": ["read_graph", "propose_graph", "reason_graph", "publish_reasoning", "correct_reasoning_receipt", "select_reasoning_receipt"]}],
             "data": {"endpoint": data.endpoint, "token_env": "READ_TOKEN"},
             "research": {"endpoint": research.endpoint, "token_env": "RESEARCH_TOKEN"}}))
         knowledge = Owner("amphora_knowledge", knowledge_config, environment, "k" * 32,
@@ -218,14 +219,14 @@ def test_actual_knowledge_output_and_evidence_require_authenticated_applicable_p
             return terminal.resolved
         assert resolve([]).assessment.needs[0].gap.reason == "no_matching_evidence"
         observations = []
-        for category in ("opinion", "observation"):
+        for category, observation_context in (("opinion", context), ("observation", answer), ("observation", context)):
             record = {"wire_version": "1", "authority": "synthetic", "need": need["reference"], "criterion_id": "c",
-                      "subject": answer, "method": raw_schema, "context": context, "category": category,
+                      "subject": answer, "method": raw_schema, "context": observation_context, "category": category,
                       "issuer": "fixture", "purpose": reason["purpose"], "disposition": "supported"}
             receipt = publish(data, scope, encoded(record), synthetic_evidence_schema().model_dump(mode="json"),
                 inputs=[answer, context], method={"transformation_id": raw_schema["schema_id"], "version": "1", "sha256": raw_schema["sha256"]})
             assessment = resolve([receipt]).assessment
-            assert assessment.sufficient is (category == "observation")
+            assert assessment.sufficient is (category == "observation" and observation_context == context)
             assert assessment.scientifically_established is False
             observations.append(assessment.model_dump(mode="json"))
         for recovery in ("begin", "stream", "finalize"):
@@ -234,7 +235,7 @@ def test_actual_knowledge_output_and_evidence_require_authenticated_applicable_p
         research.stop()
         research_config.write_text(json.dumps({"database_url_env": "RESEARCH_DB", "principals": [
             {"token_env": "RESEARCH_TOKEN", "actor_id": "reader", "scope": scope,
-             "actions": ["read_declarations", "assess", "read_assessment", "publish_assessment", "read_assessment_publication"]}],
+             "actions": ["read_declarations", "assess", "read_assessment", "publish_assessment", "read_assessment_publication", "correct_assessment_receipt", "select_assessment_receipt"]}],
             "assessment": {"profiles": [profile.model_dump(mode="json")],
                            "data": {"endpoint": data.endpoint, "token_env": "READ_TOKEN"},
                            "publication": {"actor_id": "fixture", "issuer_id": "research-synthetic", "token_env": "DATA_TOKEN"}}}))
@@ -256,6 +257,16 @@ def test_actual_knowledge_output_and_evidence_require_authenticated_applicable_p
         owners.append(research)
         assert research.request("/v1/assessments/read", api_request) == api_result
         assert research.request("/v1/assessment-publications/read", selection) == api_publication
+        corrections = prove_corrections(research, knowledge, scope, api_request, api_publication, reason)
+        # Replace both correction owners and restore their exact immutable selections.
+        research.stop()
+        research = Owner("amphora_research", research_config, environment, "r" * 32)
+        owners.append(research)
+        knowledge.stop()
+        knowledge = Owner("amphora_knowledge", knowledge_config, environment, "k" * 32,
+                          os.environ.get("AMPHORA_TEST_KNOWLEDGE_PYTHON"))
+        owners.append(knowledge)
+        corrections.replay(research, knowledge)
         with pytest.raises(AssessmentError, match="peer_access_denied"):
             resolve([receipt], token="z" * 32)
         rights2 = rights | {"reference": rights["reference"] | {"revision": 2}, "supersedes": rights["reference"],
@@ -264,14 +275,15 @@ def test_actual_knowledge_output_and_evidence_require_authenticated_applicable_p
         with pytest.raises(AssessmentError, match="peer_access_denied"):
             resolve([receipt])
         data.stop()
+        corrections.replay(research, knowledge)
         assert research.request("/v1/assessments", api_request) == api_result
         assert research.request("/v1/assessment-publications", selection) == api_publication
         with pytest.raises(AssessmentPeerUnavailable):
             resolve([receipt])
         assert store.engine.pool.checkedout() == 0
         evidence = {"timestamp_local": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "scope": scope,
-                    "answer": answer, "assessments": observations, "actual_processes": ["Data", "Knowledge", "Research"],
-                    "cases": ["real_logical_output", "explicit_missing_evidence", "opinion_insufficient", "matching_observation",
+                    "answer": answer, "assessments": observations, "corrections": corrections.evidence(), "actual_processes": ["Data", "Knowledge", "Research"],
+                    "cases": ["real_logical_output", "explicit_missing_evidence", "opinion_insufficient", "context_mismatch_insufficient", "matching_observation", "actual_owner_corrections", "correction_owner_replacement", "correction_replay_Data_offline",
                               "wrong_token_denied", "revoked_source_denied", "data_outage_retryable", "no_idle_research_transaction", "durable_assessment_replacement_read", "actual_assessment_publication_and_receipt", "publication_terminal_replay", "actual_begin_ack_loss", "actual_stream_ack_loss", "actual_finalize_ack_loss", "authenticated_assessment_submit_read", "authenticated_publication_submit_read", "Research_process_replacement_replay", "terminal_replay_with_Data_offline"]}
         path = Path(os.environ.get("AMPHORA_RESEARCH_RESOLUTION_EVIDENCE", str(Path(__file__).absolute().parents[4] /
                                                                                  ".test-results/research-resolution-live.json")))

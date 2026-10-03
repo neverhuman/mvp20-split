@@ -381,3 +381,11 @@ Knowledge0.15.0/contracts0.7.0 verified:393 broad source tests plus4 added cases
 Rotated MBT checkpoint:
 
 | 2026-10-02 09:39:22 | BP-06.03/B1 Knowledge public/durable boundary verified; child0/4; parent8/24 | [Evidence](../Audits/Evidence/BP-06-Knowledge/Reasoning_Boundary.json);189+62+14 tests |
+
+## 2026-10-02 21:50:54 - B2 complete, actual corrections verified
+
+Actual separately hosted Research and Knowledge correction transitions, exact/latest reads, authority conflicts, both owner replacements and Data-offline replay pass in source and334 installed tests. Wrong-context/opinion inputs remain insufficient. Three pure Runtime tests on captured owner wires preserve old pins and truthful new verdicts; live Runtime commit remains B3. B2 complete4/4, child50%, parent41.67%, closed gates2/4 and10/24. B3 split into three ordered integration/eligibility/recovery units within its original weight; no design credit or changed parent denominator. B3.01 active.
+
+Rotated MBT checkpoint:
+
+| 2026-10-02 09:54:48 | DER-01 proposed prerequisite; BP-06.03/B1 awaits owner direction, percentages unchanged | [Decision](BP-06/BP-06.03%20Derived%20publication%20prerequisite.md);1 PostgreSQL probe |

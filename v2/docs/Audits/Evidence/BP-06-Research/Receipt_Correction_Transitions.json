@@ -1,0 +1,37 @@
+{
+  "reviewed_local": "2026-10-02 21:50:54",
+  "scope": "BP-06.03/B2.04",
+  "status": "passed",
+  "source_actual_http_tests": 1,
+  "installed_research_tests": 334,
+  "runtime_pure_boundary_tests": 3,
+  "installed_manifest": ".test-results/owner-correction-transitions-installed-20261002/manifest.json",
+  "actual_peer_evidence": ".test-results/owner-correction-transitions-installed-20261002/actual-peers.json",
+  "actual_peer_sha256": "a59f5986cd4799c6f1150a3129411368e8f0651d769911ea6d59d67a3252f7bb",
+  "peers": {
+    "data": {
+      "package": "amphora-data-artifacts",
+      "version": "0.11.0"
+    },
+    "knowledge": {
+      "package": "amphora-knowledge",
+      "version": "0.15.0"
+    }
+  },
+  "schemas": 316,
+  "proven": [
+    "actual Research accepted-to-abstained correction",
+    "actual Knowledge accepted-to-contradicted correction",
+    "exact immutable source/history and explicit head selection",
+    "identity conflict and foreign-scope denial",
+    "both owner process replacements restore correction history",
+    "exact correction replay with Data offline",
+    "actual opinion and wrong-context observations stay insufficient",
+    "original Runtime pin accepts original receipt after notice; corrected revision requires distinct pin"
+  ],
+  "limits": [
+    "Runtime tests use captured actual owner wires through pure disposition, not live Runtime commit",
+    "B3 still owns actual receipt delivery/retention, partial exploratory output and Runtime failure/recovery",
+    "Synthetic logical/evidence fixtures do not establish scientific validity"
+  ]
+}
