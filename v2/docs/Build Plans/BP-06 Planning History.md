@@ -1,5 +1,10 @@
 # BP-06 Planning History
 
+## BP-06.04/B2.01 exact normalization complete - 2026-10-03 04:08:02
+
+Research0.25.0/contracts0.11.0;633 source/633 independently installed and14 dev tests pass.35 focused conversion/meaning cases cover140 statements/38 branches100%; granular observations/normalization selector passes. Catalog hashes complete directed positive-scale rules; no path/inverse/dimension inference. Integer arithmetic preserves exactness independently of Decimal context. Censored bounds, uncertainty and series order/duplicates/missingness retain meaning. Large representable outputs retain coefficient zeros; an initially incorrect overflow fixture was corrected to a truly out-of-bounds value. All376 schemas/research_0010 unchanged; no public normalization DTO/storage/API claim. B2 subdivided into four equal milestones in its existing weight; B2=25%,Build41.67%,child31.25%,parent55.21%; gates1/4 and13/24 unchanged. B2.02 active.
+
+
 ## BP-06.04/B1 complete; actual HTTP/replacement - 2026-10-03 03:53:36
 
 All eight B1 milestones complete100%; B1.08d actual independently installed Data/Research HTTP workflow passes once from source and once from installed Research tests. Fresh Research environment excludes peer implementations. Partial failed controls/quality flags and optional accuracy gaps survive typed publication and replacement; consumer registration requires exact decision lineage; historical submit/read/publication replay works with Data offline and no active profiles. Pending work resumes its original profile after Data returns. Material/experiment read routes now have actual HTTP evidence. Invalid empty lineage fixture was corrected to a valid unrelated source before the first run. No production changes or package/schema/migration bump in d;827+827 regression and119 compatibility/dev baseline preserved. B1 closes, Build33.33%,child25%,parent54.17%; gates1/4 and13/24. B2 active; no scientific, active-campaign correction or process-barrier claim.
@@ -505,3 +510,7 @@ Rotated MBT checkpoint:
 Rotated MBT checkpoint:
 
 | 2026-10-02 19:05:19 | B1.07 complete; B1 7/10, child17.50%, parent36.25%; B1.08 active | [Resolution](../Audits/Evidence/BP-06-Research/Assessment_Resolution.json);374 source/257 installed tests;296 schemas preserve294 |
+
+Rotated MBT checkpoint:
+
+| 2026-10-02 19:56:27 | B1.08 complete; B1 8/10; child20%, parent36.67%; B1.09 active | [Store](../Audits/Evidence/BP-06-Research/Assessment_Store.json);271 source/271 installed tests |

@@ -1,0 +1,50 @@
+{
+  "timestamp_local": "2026-10-03 04:08:02",
+  "milestone": "BP-06.04/B2.01",
+  "research_version": "0.25.0",
+  "contracts_version": "0.11.0",
+  "verification": {
+    "source_tests": 633,
+    "installed_tests": 633,
+    "dev_tests": 14,
+    "focused_tests": 35,
+    "coverage": {
+      "covered_lines": 140,
+      "num_statements": 140,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100",
+      "num_branches": 38,
+      "num_partial_branches": 0,
+      "covered_branches": 38,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    },
+    "schemas_unchanged": 376,
+    "migration_unchanged": "research_0010"
+  },
+  "cases": [
+    "explicit_directed_mass_time_rules",
+    "full_configuration_digest",
+    "ambient_decimal_precision_independence",
+    "original_lexical_values",
+    "uncertainty_ranges",
+    "censor_bounds_and_inclusion",
+    "series_order_duplicates_missingness",
+    "unknown_or_incompatible_units_unresolved",
+    "no_inverse_or_path_inference",
+    "exact_representable_large_values",
+    "out_of_bounds_no_rounding",
+    "all_or_none_series"
+  ],
+  "limits": [
+    "Pure normalization objects only",
+    "No public projection/storage/API until B2.03/.04",
+    "No production unit catalog, scientific ontology or assay validity",
+    "No source or campaign history changes"
+  ]
+}

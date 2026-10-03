@@ -1,9 +1,9 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-03 03:53:36` (America/Chicago).
+- Last refreshed: `2026-10-03 04:08:02` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.04/B2 normalization/quality/corrections after actual scientific HTTP/replacement; parent54.17%,13/24 closed gates.
+- Active focus: BP-06.04/B2.02 quality/context/corrections after exact normalization; parent55.21%,13/24 closed gates.
 - Next gate: explicit normalization and future-only correction transitions. BP-06.03 aligned evidence is in drift history; richer scientific-quality UI remains SQ-01.
 
 ## Active Findings

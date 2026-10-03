@@ -1,0 +1,12 @@
+# Explicit measurement normalization
+
+- Status: BP-06.04/B2.01 verified in Research0.25.0; no public DTO/storage/API or scientific acceptance claim.
+- Owner: Research observations. [Policy design](../../../../../../docs/Build%20Plans/BP-06/BP-06.04%20Normalization%20and%20correction%20design.md).
+
+catalog.py owns bounded directed positive-decimal scale rules and ConversionCatalog. Complete ordered catalog content, id and version determine its method digest. Units are opaque: only reviewed rules declare dimensions and directions. Identity normalization requires a unit present in the catalog. No inverse, path, unit-name inference, affine calibration or production catalog is installed. Conflicting dimensions and duplicate directions fail configuration. Integer coefficient/exponent multiplication is independent of ambient Decimal arithmetic precision. Results outside existing exact-decimal bounds are unresolved, never rounded or truncated.
+
+transform.py owns target selection and NormalizedMeasurement.evaluate. Output retains original immutable measurement, exact targets/policy, derived value and applied rules or an explicit unresolved reason. Numerical uncertainty and censor boundaries scale without changing descriptions/inclusivity or becoming point estimates. Series retain order, duplicates and missing values; an unspecified coordinate target keeps original coordinates. Standalone missing/category values are unresolved for numeric normalization. Failure anywhere returns no partially converted measurement. Original observation revisions, source bytes, material context, scientific quality and campaign history are not modified.
+
+Tests belong under tests/observations/normalization. Replacement must preserve exact original evidence, full catalog fingerprints, representation bounds, censor/missingness/series semantics and absence of inferred conversion authority. Persistence, source authorization, public projections and correction integration remain B2.03/.04; statistical interpretation, equivalence/caching and a general scientific unit ontology are outside this module.
+
+Verification `2026-10-03 04:08:02`:633 source/633 independently installed tests and14 dev tests;35 focused tests cover140 statements/38 branches100%. Run dev/run_tests.py --module research --area observations/normalization. Tests compare independently specified exact values and preserve measurement meaning; software coverage does not imply scientific validity.

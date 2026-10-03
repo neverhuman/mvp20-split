@@ -1,7 +1,7 @@
 # Research Service
 
 - Status: BP-06.01 closed; BP-06.03 assessment/publication/correction boundaries implemented. Actual Runtime receipt acceptance and partial exploratory output verified; BP-06.03 recovery/closeout accepted; BP-06.04 has pure scientific domain objects, synthetic synthesis/eligibility policies and explicit public mappings; separate scientific revision storage is implemented; authenticated synthetic report resolution is implemented; atomic intake and immutable eligibility/synthesis decision/dependency storage are implemented; scientific Artifact publication is implemented; authenticated scientific input orchestration is verified; optional scientific APIs are verified under B1.08c.
-- Package: `amphora-research` 0.24.0; exact dependencies belong to pyproject.toml, uv.lock and the generated package inventory.
+- Package: `amphora-research` 0.25.0; exact dependencies belong to pyproject.toml, uv.lock and the generated package inventory.
 - Design: [Research architecture](../../docs/Architecture/Research/Research_Architecture.md).
 
 Research owns candidate/sample/question/evidence-need identities and purpose-bound evidence sufficiency. It does not own Artifact bytes, Knowledge assertions, model execution or campaign acceptance. Dependencies are public contracts and the tool-protocol SDK plus Pydantic/FastAPI/Uvicorn and SQLAlchemy/psycopg/Alembic. No peer implementation imports, peer SQL or shared ORM.
@@ -33,3 +33,5 @@ Module-owned tests live under tests/identity, persistence, assessment, publicati
 [Assessment API evidence](../../docs/Audits/Evidence/BP-06-Research/Assessment_API.json), [correction transitions](../../docs/Audits/Evidence/BP-06-Research/Receipt_Correction_Transitions.json), [live Runtime receipts](../../docs/Audits/Evidence/BP-06-Research/Runtime_Domain_Receipts.json) and [partial progress](../../docs/Audits/Evidence/BP-06-Research/Partial_Campaign_Progress.json) retain exact versions, cases and limitations. Earlier coverage is module-scoped and excludes child processes; no aggregate end-to-end percentage or scientific/target-host durability claim is inferred. A replacement must preserve schemas, fingerprints, actor/scope authority, migrations, immutable histories and failure semantics or explicitly version the boundary.
 
 Optional science hosting is documented in the scientific API module. config.science.example.json demonstrates read-only history configuration with no active profiles. New routes have separate grants and Artifact-only publication; actual independently installed HTTP/replacement is verified under BP-06.04/B1.08d.
+
+B2.01 adds pure explicit exact unit-normalization objects under observations/normalization; no normalization API or scientific interpretation is implied. See the owning module README for preserved evidence and unresolved-value behavior.
