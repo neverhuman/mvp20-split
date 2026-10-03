@@ -1,0 +1,491 @@
+{
+  "timestamp_local": "2026-10-03 11:58:32",
+  "milestone": "BP-06.04/B3.02",
+  "research_version": "0.31.0",
+  "contracts_version": "0.14.0",
+  "verification": {
+    "source_cases": 6,
+    "installed_cases": 6,
+    "source_seconds": 181.51,
+    "installed_seconds": 172.16,
+    "dev_tests": 14,
+    "dev_seconds": 14.6,
+    "production_changes": false,
+    "prior_regression_source": 882,
+    "prior_regression_installed": 882
+  },
+  "runs": [
+    {
+      "timestamp_local": "2026-10-03 11:51:27",
+      "barrier": "interpretation:intent_committed",
+      "scope": {
+        "tenant_id": "research-tests",
+        "project_id": "ca9baef908c045899141bfedca34b5c3"
+      },
+      "test_python": "Z:\\mvp20-split\\v2\\dev\\.venv\\Scripts\\python.exe",
+      "research_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "replacement_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-http-replacement-20261003\\environment\\Scripts\\python.exe",
+      "data_python": "Z:\\mvp20-split\\v2\\.test-results\\knowledge-publication-installed-20261002-1359\\initial\\data\\Scripts\\python.exe",
+      "intent_sha256": "b8d593e61f35c99015a697e68b21d0fa7f32c56b871a3c1583fa995b720b73f9",
+      "counts_before_kill": {
+        "interpretation_intents": 1,
+        "interpretation_results": 0,
+        "interpretation_sources": 0,
+        "interpretation_observations": 0,
+        "interpretation_material_states": 0,
+        "interpretation_experiments": 0
+      },
+      "counts_after_kill": {
+        "interpretation_intents": 1,
+        "interpretation_results": 0,
+        "interpretation_sources": 0,
+        "interpretation_observations": 0,
+        "interpretation_material_states": 0,
+        "interpretation_experiments": 0
+      },
+      "counts_after_recovery": {
+        "interpretation_intents": 1,
+        "interpretation_results": 1,
+        "interpretation_sources": 3,
+        "interpretation_observations": 1,
+        "interpretation_material_states": 1,
+        "interpretation_experiments": 1
+      },
+      "replay_offline": false,
+      "retired_profile_resumed": true,
+      "tier": "source",
+      "before_status": "pending",
+      "recovered_status": "interpreted"
+    },
+    {
+      "timestamp_local": "2026-10-03 11:52:27",
+      "barrier": "interpretation:result_before_commit",
+      "scope": {
+        "tenant_id": "research-tests",
+        "project_id": "ad717cdc3dcf4f7d9c821c5c234393cb"
+      },
+      "test_python": "Z:\\mvp20-split\\v2\\dev\\.venv\\Scripts\\python.exe",
+      "research_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "replacement_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-http-replacement-20261003\\environment\\Scripts\\python.exe",
+      "data_python": "Z:\\mvp20-split\\v2\\.test-results\\knowledge-publication-installed-20261002-1359\\initial\\data\\Scripts\\python.exe",
+      "intent_sha256": "21dd3842d4198df46299543e142b934279a7f93c4347fb1e6b10e41e41285eac",
+      "counts_before_kill": {
+        "interpretation_intents": 1,
+        "interpretation_results": 0,
+        "interpretation_sources": 0,
+        "interpretation_observations": 0,
+        "interpretation_material_states": 0,
+        "interpretation_experiments": 0
+      },
+      "counts_after_kill": {
+        "interpretation_intents": 1,
+        "interpretation_results": 0,
+        "interpretation_sources": 0,
+        "interpretation_observations": 0,
+        "interpretation_material_states": 0,
+        "interpretation_experiments": 0
+      },
+      "counts_after_recovery": {
+        "interpretation_intents": 1,
+        "interpretation_results": 1,
+        "interpretation_sources": 3,
+        "interpretation_observations": 1,
+        "interpretation_material_states": 1,
+        "interpretation_experiments": 1
+      },
+      "replay_offline": false,
+      "retired_profile_resumed": true,
+      "tier": "source",
+      "before_status": "pending",
+      "recovered_status": "interpreted"
+    },
+    {
+      "timestamp_local": "2026-10-03 11:53:17",
+      "barrier": "interpretation:result_committed",
+      "scope": {
+        "tenant_id": "research-tests",
+        "project_id": "fc5d2b50a9354dc6a581f76105e4f946"
+      },
+      "test_python": "Z:\\mvp20-split\\v2\\dev\\.venv\\Scripts\\python.exe",
+      "research_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "replacement_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-http-replacement-20261003\\environment\\Scripts\\python.exe",
+      "data_python": "Z:\\mvp20-split\\v2\\.test-results\\knowledge-publication-installed-20261002-1359\\initial\\data\\Scripts\\python.exe",
+      "intent_sha256": "8e2d787795d0d1d6de9c1c09d612090b10da9f0206b3e2d29dc998d5f5d15f48",
+      "counts_before_kill": {
+        "interpretation_intents": 1,
+        "interpretation_results": 1,
+        "interpretation_sources": 3,
+        "interpretation_observations": 1,
+        "interpretation_material_states": 1,
+        "interpretation_experiments": 1
+      },
+      "counts_after_kill": {
+        "interpretation_intents": 1,
+        "interpretation_results": 1,
+        "interpretation_sources": 3,
+        "interpretation_observations": 1,
+        "interpretation_material_states": 1,
+        "interpretation_experiments": 1
+      },
+      "counts_after_recovery": {
+        "interpretation_intents": 1,
+        "interpretation_results": 1,
+        "interpretation_sources": 3,
+        "interpretation_observations": 1,
+        "interpretation_material_states": 1,
+        "interpretation_experiments": 1
+      },
+      "replay_offline": true,
+      "retired_profile_resumed": false,
+      "tier": "source",
+      "before_status": "interpreted",
+      "recovered_status": "interpreted"
+    },
+    {
+      "timestamp_local": "2026-10-03 11:50:53",
+      "barrier": "lab:intent_committed",
+      "scope": {
+        "tenant_id": "research-tests",
+        "project_id": "3c0abb772af448638827fc390ca6b3e8"
+      },
+      "test_python": "Z:\\mvp20-split\\v2\\dev\\.venv\\Scripts\\python.exe",
+      "research_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "replacement_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-http-replacement-20261003\\environment\\Scripts\\python.exe",
+      "data_python": "Z:\\mvp20-split\\v2\\.test-results\\knowledge-publication-installed-20261002-1359\\initial\\data\\Scripts\\python.exe",
+      "intent_sha256": "cd0ac3cf025e032096acabf92ff6d03c4fcc1a30956eb8f5e24673e7d7e44e09",
+      "counts_before_kill": {
+        "lab_intents": 1,
+        "lab_terminals": 0,
+        "observation_revisions": 0,
+        "lab_observations": 0
+      },
+      "counts_after_kill": {
+        "lab_intents": 1,
+        "lab_terminals": 0,
+        "observation_revisions": 0,
+        "lab_observations": 0
+      },
+      "counts_after_recovery": {
+        "lab_intents": 1,
+        "lab_terminals": 1,
+        "observation_revisions": 1,
+        "lab_observations": 1
+      },
+      "replay_offline": false,
+      "retired_profile_resumed": true,
+      "tier": "source",
+      "before_status": "pending",
+      "recovered_status": "resolved"
+    },
+    {
+      "timestamp_local": "2026-10-03 11:51:55",
+      "barrier": "lab:result_before_commit",
+      "scope": {
+        "tenant_id": "research-tests",
+        "project_id": "e1382094575e4ea3b58bfb70ed031719"
+      },
+      "test_python": "Z:\\mvp20-split\\v2\\dev\\.venv\\Scripts\\python.exe",
+      "research_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "replacement_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-http-replacement-20261003\\environment\\Scripts\\python.exe",
+      "data_python": "Z:\\mvp20-split\\v2\\.test-results\\knowledge-publication-installed-20261002-1359\\initial\\data\\Scripts\\python.exe",
+      "intent_sha256": "ad32273295003d5e105351d0b46d89d9b92b536df6d695ff32ce9740abd8eb2c",
+      "counts_before_kill": {
+        "lab_intents": 1,
+        "lab_terminals": 0,
+        "observation_revisions": 0,
+        "lab_observations": 0
+      },
+      "counts_after_kill": {
+        "lab_intents": 1,
+        "lab_terminals": 0,
+        "observation_revisions": 0,
+        "lab_observations": 0
+      },
+      "counts_after_recovery": {
+        "lab_intents": 1,
+        "lab_terminals": 1,
+        "observation_revisions": 1,
+        "lab_observations": 1
+      },
+      "replay_offline": false,
+      "retired_profile_resumed": true,
+      "tier": "source",
+      "before_status": "pending",
+      "recovered_status": "resolved"
+    },
+    {
+      "timestamp_local": "2026-10-03 11:52:49",
+      "barrier": "lab:result_committed",
+      "scope": {
+        "tenant_id": "research-tests",
+        "project_id": "0814055b10c946efbb4a2dc4e52917ae"
+      },
+      "test_python": "Z:\\mvp20-split\\v2\\dev\\.venv\\Scripts\\python.exe",
+      "research_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "replacement_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-http-replacement-20261003\\environment\\Scripts\\python.exe",
+      "data_python": "Z:\\mvp20-split\\v2\\.test-results\\knowledge-publication-installed-20261002-1359\\initial\\data\\Scripts\\python.exe",
+      "intent_sha256": "cacb5664d6d86aa2c9d4209048406cc1f718f8f2261160884eaf7b63c3c59b4b",
+      "counts_before_kill": {
+        "lab_intents": 1,
+        "lab_terminals": 1,
+        "observation_revisions": 1,
+        "lab_observations": 1
+      },
+      "counts_after_kill": {
+        "lab_intents": 1,
+        "lab_terminals": 1,
+        "observation_revisions": 1,
+        "lab_observations": 1
+      },
+      "counts_after_recovery": {
+        "lab_intents": 1,
+        "lab_terminals": 1,
+        "observation_revisions": 1,
+        "lab_observations": 1
+      },
+      "replay_offline": true,
+      "retired_profile_resumed": false,
+      "tier": "source",
+      "before_status": "resolved",
+      "recovered_status": "resolved"
+    },
+    {
+      "timestamp_local": "2026-10-03 11:54:52",
+      "barrier": "interpretation:intent_committed",
+      "scope": {
+        "tenant_id": "research-tests",
+        "project_id": "aad70f06db1040e286a3bf0368941216"
+      },
+      "test_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "research_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "replacement_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-http-replacement-20261003\\environment\\Scripts\\python.exe",
+      "data_python": "Z:\\mvp20-split\\v2\\.test-results\\knowledge-publication-installed-20261002-1359\\initial\\data\\Scripts\\python.exe",
+      "intent_sha256": "347702f56083406f6bb13e79d1e163fdee77c950f437421c1b926453b74ffac6",
+      "counts_before_kill": {
+        "interpretation_intents": 1,
+        "interpretation_results": 0,
+        "interpretation_sources": 0,
+        "interpretation_observations": 0,
+        "interpretation_material_states": 0,
+        "interpretation_experiments": 0
+      },
+      "counts_after_kill": {
+        "interpretation_intents": 1,
+        "interpretation_results": 0,
+        "interpretation_sources": 0,
+        "interpretation_observations": 0,
+        "interpretation_material_states": 0,
+        "interpretation_experiments": 0
+      },
+      "counts_after_recovery": {
+        "interpretation_intents": 1,
+        "interpretation_results": 1,
+        "interpretation_sources": 3,
+        "interpretation_observations": 1,
+        "interpretation_material_states": 1,
+        "interpretation_experiments": 1
+      },
+      "replay_offline": false,
+      "retired_profile_resumed": true,
+      "tier": "installed",
+      "before_status": "pending",
+      "recovered_status": "interpreted"
+    },
+    {
+      "timestamp_local": "2026-10-03 11:55:51",
+      "barrier": "interpretation:result_before_commit",
+      "scope": {
+        "tenant_id": "research-tests",
+        "project_id": "998992a97d3e4cde951234c2aa1bb107"
+      },
+      "test_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "research_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "replacement_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-http-replacement-20261003\\environment\\Scripts\\python.exe",
+      "data_python": "Z:\\mvp20-split\\v2\\.test-results\\knowledge-publication-installed-20261002-1359\\initial\\data\\Scripts\\python.exe",
+      "intent_sha256": "5589726a583be92c21d5bfab7b6344bf257cb2bf6fc0a5ded7f4b872cdf8ccfd",
+      "counts_before_kill": {
+        "interpretation_intents": 1,
+        "interpretation_results": 0,
+        "interpretation_sources": 0,
+        "interpretation_observations": 0,
+        "interpretation_material_states": 0,
+        "interpretation_experiments": 0
+      },
+      "counts_after_kill": {
+        "interpretation_intents": 1,
+        "interpretation_results": 0,
+        "interpretation_sources": 0,
+        "interpretation_observations": 0,
+        "interpretation_material_states": 0,
+        "interpretation_experiments": 0
+      },
+      "counts_after_recovery": {
+        "interpretation_intents": 1,
+        "interpretation_results": 1,
+        "interpretation_sources": 3,
+        "interpretation_observations": 1,
+        "interpretation_material_states": 1,
+        "interpretation_experiments": 1
+      },
+      "replay_offline": false,
+      "retired_profile_resumed": true,
+      "tier": "installed",
+      "before_status": "pending",
+      "recovered_status": "interpreted"
+    },
+    {
+      "timestamp_local": "2026-10-03 11:56:37",
+      "barrier": "interpretation:result_committed",
+      "scope": {
+        "tenant_id": "research-tests",
+        "project_id": "1e4805d29d1143dfa9875659203c5254"
+      },
+      "test_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "research_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "replacement_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-http-replacement-20261003\\environment\\Scripts\\python.exe",
+      "data_python": "Z:\\mvp20-split\\v2\\.test-results\\knowledge-publication-installed-20261002-1359\\initial\\data\\Scripts\\python.exe",
+      "intent_sha256": "cabdb026a994d314b31ef447e8e4d91823fea55909bc83996153a3636bf37962",
+      "counts_before_kill": {
+        "interpretation_intents": 1,
+        "interpretation_results": 1,
+        "interpretation_sources": 3,
+        "interpretation_observations": 1,
+        "interpretation_material_states": 1,
+        "interpretation_experiments": 1
+      },
+      "counts_after_kill": {
+        "interpretation_intents": 1,
+        "interpretation_results": 1,
+        "interpretation_sources": 3,
+        "interpretation_observations": 1,
+        "interpretation_material_states": 1,
+        "interpretation_experiments": 1
+      },
+      "counts_after_recovery": {
+        "interpretation_intents": 1,
+        "interpretation_results": 1,
+        "interpretation_sources": 3,
+        "interpretation_observations": 1,
+        "interpretation_material_states": 1,
+        "interpretation_experiments": 1
+      },
+      "replay_offline": true,
+      "retired_profile_resumed": false,
+      "tier": "installed",
+      "before_status": "interpreted",
+      "recovered_status": "interpreted"
+    },
+    {
+      "timestamp_local": "2026-10-03 11:54:19",
+      "barrier": "lab:intent_committed",
+      "scope": {
+        "tenant_id": "research-tests",
+        "project_id": "8215774bac764975afc9b28b014bd777"
+      },
+      "test_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "research_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "replacement_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-http-replacement-20261003\\environment\\Scripts\\python.exe",
+      "data_python": "Z:\\mvp20-split\\v2\\.test-results\\knowledge-publication-installed-20261002-1359\\initial\\data\\Scripts\\python.exe",
+      "intent_sha256": "03933454148a84cb6b67f3d4c5471a87aa8a7632ee55d0e26794d32747faab98",
+      "counts_before_kill": {
+        "lab_intents": 1,
+        "lab_terminals": 0,
+        "observation_revisions": 0,
+        "lab_observations": 0
+      },
+      "counts_after_kill": {
+        "lab_intents": 1,
+        "lab_terminals": 0,
+        "observation_revisions": 0,
+        "lab_observations": 0
+      },
+      "counts_after_recovery": {
+        "lab_intents": 1,
+        "lab_terminals": 1,
+        "observation_revisions": 1,
+        "lab_observations": 1
+      },
+      "replay_offline": false,
+      "retired_profile_resumed": true,
+      "tier": "installed",
+      "before_status": "pending",
+      "recovered_status": "resolved"
+    },
+    {
+      "timestamp_local": "2026-10-03 11:55:20",
+      "barrier": "lab:result_before_commit",
+      "scope": {
+        "tenant_id": "research-tests",
+        "project_id": "c6972edbaf86416fb6d955a15f2f11f7"
+      },
+      "test_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "research_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "replacement_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-http-replacement-20261003\\environment\\Scripts\\python.exe",
+      "data_python": "Z:\\mvp20-split\\v2\\.test-results\\knowledge-publication-installed-20261002-1359\\initial\\data\\Scripts\\python.exe",
+      "intent_sha256": "bcb8bf60a640589e15716eb1a7fb05f906173e4ae3a9cf75742b55d778bee2f1",
+      "counts_before_kill": {
+        "lab_intents": 1,
+        "lab_terminals": 0,
+        "observation_revisions": 0,
+        "lab_observations": 0
+      },
+      "counts_after_kill": {
+        "lab_intents": 1,
+        "lab_terminals": 0,
+        "observation_revisions": 0,
+        "lab_observations": 0
+      },
+      "counts_after_recovery": {
+        "lab_intents": 1,
+        "lab_terminals": 1,
+        "observation_revisions": 1,
+        "lab_observations": 1
+      },
+      "replay_offline": false,
+      "retired_profile_resumed": true,
+      "tier": "installed",
+      "before_status": "pending",
+      "recovered_status": "resolved"
+    },
+    {
+      "timestamp_local": "2026-10-03 11:56:10",
+      "barrier": "lab:result_committed",
+      "scope": {
+        "tenant_id": "research-tests",
+        "project_id": "d22f2fddcad748cd9cf4996a973acf28"
+      },
+      "test_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "research_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "replacement_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-http-replacement-20261003\\environment\\Scripts\\python.exe",
+      "data_python": "Z:\\mvp20-split\\v2\\.test-results\\knowledge-publication-installed-20261002-1359\\initial\\data\\Scripts\\python.exe",
+      "intent_sha256": "657931237177f8546b69e4218822af8ec26ce14c490f8e3096cd3892511b8588",
+      "counts_before_kill": {
+        "lab_intents": 1,
+        "lab_terminals": 1,
+        "observation_revisions": 1,
+        "lab_observations": 1
+      },
+      "counts_after_kill": {
+        "lab_intents": 1,
+        "lab_terminals": 1,
+        "observation_revisions": 1,
+        "lab_observations": 1
+      },
+      "counts_after_recovery": {
+        "lab_intents": 1,
+        "lab_terminals": 1,
+        "observation_revisions": 1,
+        "lab_observations": 1
+      },
+      "replay_offline": true,
+      "retired_profile_resumed": false,
+      "tier": "installed",
+      "before_status": "resolved",
+      "recovered_status": "resolved"
+    }
+  ],
+  "limits": [
+    "Actual process death, not target-host power loss",
+    "Synthetic science; no quality UI or new Runtime authority"
+  ]
+}

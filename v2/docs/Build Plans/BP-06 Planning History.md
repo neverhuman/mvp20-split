@@ -577,3 +577,9 @@ Rotated MBT checkpoint:
 Actual Data/Research matrix passes source21.88s and installed20.60s. MAT-01..05, return variants, directed units, per-action quality, exact correction impacts and registered fixture consumer verified. B3=33.33%, Build77.78%, child58.33%, parent59.72%; gates2/4 and14/24 unchanged. B3.02 is next. No production changes.
 
 | 2026-10-02 22:08:29 | B3.01 complete; child58.33%, parent43.06%; B3.02 active | [Runtime domain receipts](../Audits/Evidence/BP-06-Research/Runtime_Domain_Receipts.json);334 installed; actual protection/confirmation/replacement |
+
+## 2026-10-03 11:58:32 - B3.02 process recovery complete
+
+Six named actual kill barriers pass from source181.51s and installed172.16s;14dev pass. Original intent/profile/actor and pending versus committed outcomes survive replacement; precommit indexes roll back, postcommit history replays offline. B3=66.67%,Build88.89%,child66.67%,parent61.11%; gates2/4 and14/24. B3.03 active, no owner blocker.
+
+| 2026-10-02 22:33:01 | B3.02 complete; child66.67%, parent44.44%; B3.03 active | [Partial progress](../Audits/Evidence/BP-06-Research/Partial_Campaign_Progress.json); retained report/two gaps;333 installed + clean rerun1 |

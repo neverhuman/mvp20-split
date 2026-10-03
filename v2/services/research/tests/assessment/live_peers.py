@@ -13,7 +13,7 @@ from pathlib import Path
 
 
 class Owner:
-    def __init__(self, module, config, environment, token, python=None, *, port=None, barrier=None):
+    def __init__(self, module, config, environment, token, python=None, *, port=None, barrier=None, fault_host=None):
         if port is None:
             with socket.socket() as listener:
                 listener.bind(("127.0.0.1", 0))
@@ -22,7 +22,8 @@ class Owner:
         args = [python or sys.executable, "-I", "-m", module, "serve", "--config",str(config),"--port",str(port)]
         if barrier is not None:
             assert module == "amphora_research", "Research barrier belongs only to Research"
-            args = [python or sys.executable,"-I",str(Path(__file__).parents[1]/"publication/fault_host.py"),
+            script = fault_host or Path(__file__).parents[1]/"publication/fault_host.py"
+            args = [python or sys.executable,"-I",str(script),
                     "--config",str(config),"--port",str(port),"--barrier",barrier]
         self.events, self.output_thread = queue.Queue(), None
         self.process = subprocess.Popen(args, env=environment,
