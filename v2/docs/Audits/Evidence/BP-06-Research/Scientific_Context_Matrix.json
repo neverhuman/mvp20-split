@@ -1,0 +1,139 @@
+{
+  "timestamp_local": "2026-10-03 06:14:19",
+  "milestone": "BP-06.04/B3.01",
+  "research_version": "0.31.0",
+  "contracts_version": "0.14.0",
+  "verification": {
+    "source_actual_matrix": 1,
+    "installed_actual_matrix": 1,
+    "source_seconds": 21.88,
+    "installed_seconds": 20.6,
+    "prior_regression_source": 882,
+    "prior_regression_installed": 882,
+    "prior_dev": 14,
+    "production_changes": false
+  },
+  "cases": [
+    "MAT-01 exact state attribution",
+    "MAT-02 wrong sample/state quarantined alongside usable points",
+    "MAT-03 ordered preparation and original units",
+    "MAT-04 observed/proposed and measured/unknown morphology",
+    "partial/missing/censored/explicit divergent replicates",
+    "direct conversion without implicit inverse",
+    "exploratory use independent of action prerequisites",
+    "MAT-05 correction impact and explicitly registered fixture consumer",
+    "historical decision and interpretation bytes unchanged"
+  ],
+  "runs": [
+    {
+      "timestamp_local": "2026-10-03 06:11:35",
+      "scope": {
+        "tenant_id": "research-tests",
+        "project_id": "0b8e8122b2434b01a1b3dae9a31ae1b8"
+      },
+      "test_python": "Z:\\mvp20-split\\v2\\dev\\.venv\\Scripts\\python.exe",
+      "research_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "data_python": "Z:\\mvp20-split\\v2\\.test-results\\knowledge-publication-installed-20261002-1359\\initial\\data\\Scripts\\python.exe",
+      "tier": "source",
+      "interpretation": {
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "0b8e8122b2434b01a1b3dae9a31ae1b8"
+        },
+        "kind": "observation-use",
+        "interpretation_id": "matrix-explore",
+        "sha256": "f285502fb69e5f4f5e2ee820875a881ced29ce4ca22454b0350fea27b6d8210e"
+      },
+      "decision": {
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "0b8e8122b2434b01a1b3dae9a31ae1b8"
+        },
+        "kind": "eligibility",
+        "decision_id": "matrix-eligibility",
+        "sha256": "50fbba929c9c79d28dfd96a290cce9680c2be934806fbfea3f0d56ead8f75b74"
+      },
+      "correction": {
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "0b8e8122b2434b01a1b3dae9a31ae1b8"
+        },
+        "observation_id": "matched-observed",
+        "revision": 2
+      },
+      "consumer": {
+        "artifact_id": "d6b150bd9b304c26be2b29fe26dbc1ff",
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "0b8e8122b2434b01a1b3dae9a31ae1b8"
+        },
+        "sha256": "c6aac64dda2183bb03e4c23aa9fb4d1ce5285754691e38400f408abe8875f80b",
+        "media_type": "application/octet-stream",
+        "schema_ref": {
+          "schema_id": "fixture.bytes",
+          "version": "1",
+          "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+        },
+        "size_bytes": 461
+      }
+    },
+    {
+      "timestamp_local": "2026-10-03 06:12:26",
+      "scope": {
+        "tenant_id": "research-tests",
+        "project_id": "c90bd0a3da8f45baa3f05d0d54dec86d"
+      },
+      "test_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "research_python": "Z:\\mvp20-split\\v2\\.test-results\\research-interpretation-host-installed-20261003\\environment\\Scripts\\python.exe",
+      "data_python": "Z:\\mvp20-split\\v2\\.test-results\\knowledge-publication-installed-20261002-1359\\initial\\data\\Scripts\\python.exe",
+      "tier": "installed",
+      "interpretation": {
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "c90bd0a3da8f45baa3f05d0d54dec86d"
+        },
+        "kind": "observation-use",
+        "interpretation_id": "matrix-explore",
+        "sha256": "ff3d3dc99a058c7dcb254dd70c2381c01fc28ecfe058fa512097b557dcb9dc7a"
+      },
+      "decision": {
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "c90bd0a3da8f45baa3f05d0d54dec86d"
+        },
+        "kind": "eligibility",
+        "decision_id": "matrix-eligibility",
+        "sha256": "323cad8dc861a54f9eafee2b2db189a403f8a3fdf357f2bb2f143922dfe7d6ed"
+      },
+      "correction": {
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "c90bd0a3da8f45baa3f05d0d54dec86d"
+        },
+        "observation_id": "matched-observed",
+        "revision": 2
+      },
+      "consumer": {
+        "artifact_id": "280505e3ceb34d70aca95e704df07b04",
+        "scope": {
+          "tenant_id": "research-tests",
+          "project_id": "c90bd0a3da8f45baa3f05d0d54dec86d"
+        },
+        "sha256": "3149247355610cfdc6be65132a6c820289771755074695e6ac4c6343e92d4611",
+        "media_type": "application/octet-stream",
+        "schema_ref": {
+          "schema_id": "fixture.bytes",
+          "version": "1",
+          "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+        },
+        "size_bytes": 461
+      }
+    }
+  ],
+  "limits": [
+    "Synthetic evidence only; no scientific validity",
+    "Fixture consumer proves dependency seam, not deployed fitness engine",
+    "Quality UI remains SQ-01; no new Runtime authority",
+    "Process interruption remains B3.02"
+  ]
+}

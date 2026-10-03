@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-03 05:59:25` (America/Chicago).
+- Last refreshed: `2026-10-03 06:14:19` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.04/B3.01 actual context/return matrix after B2 actual HTTP proof; parent58.33%,14/24 closed gates.
-- Next gate: explicit normalization and future-only correction transitions. BP-06.03 aligned evidence is in drift history; richer scientific-quality UI remains SQ-01.
+- Active focus: BP-06.04/B3.02 durable process interruption proof after context matrix; parent59.72%,14/24 closed gates.
+- Next gate: named process interruption and defensive failure closure. BP-06.03 aligned evidence is in drift history; richer scientific-quality UI remains SQ-01.
 
 ## Active Findings
 
@@ -37,3 +37,5 @@ Use [Development Process](../Development_Process.md) and the [audit template](..
 - `2026-10-03 05:46:33`: [B2.04b hosting](Evidence/BP-06-Research/Interpretation_Hosting.json) preserves old config and separates computation/history/impact grants. Exact correction views and quality focus are available through configured APIs; independent Data/Research transition/replacement proof remains c. Historical sample-identity fixture uses a fake Artifact and must be replaced with actual Data evidence for that proof; no production validation bypass authorized.
 
 - `2026-10-03 05:59:25`: [B2 actual interpretation transitions](Evidence/BP-06-Research/Interpretation_HTTP_Replacement.json) closes the new independent HTTP/replacement gap, including real sampleidentity evidence and original pending pins through correction. No blocking drift in B2 scope. MAT-context matrix, process barriers and named defensive failures remain B3; V1 owns final rebuild/audit. The earlier fixture-only sample evidence gap is resolved without relaxing authentication.
+
+- `2026-10-03 06:14:19`: [Scientific context matrix](Evidence/BP-06-Research/Scientific_Context_Matrix.json) aligns MAT-01..05 and exploratory iteration through actual peers. No blocking drift found; crash barriers remain B3.02, defensive failures B3.03, final audit V1. Fixture consumer does not establish scientific fitness implementation.

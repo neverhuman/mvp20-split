@@ -571,3 +571,9 @@ Rotated MBT checkpoint:
 Rotated MBT checkpoint:
 
 | 2026-10-02 20:27:44 | B1.09 complete; B1 9/10; child22.50%, parent37.08%; B1.10 active | [Publication](../Audits/Evidence/BP-06-Research/Assessment_Publication.json);298+4 source/302 installed tests |
+
+## 2026-10-03 06:14:19 - B3.01 context matrix complete
+
+Actual Data/Research matrix passes source21.88s and installed20.60s. MAT-01..05, return variants, directed units, per-action quality, exact correction impacts and registered fixture consumer verified. B3=33.33%, Build77.78%, child58.33%, parent59.72%; gates2/4 and14/24 unchanged. B3.02 is next. No production changes.
+
+| 2026-10-02 22:08:29 | B3.01 complete; child58.33%, parent43.06%; B3.02 active | [Runtime domain receipts](../Audits/Evidence/BP-06-Research/Runtime_Domain_Receipts.json);334 installed; actual protection/confirmation/replacement |
