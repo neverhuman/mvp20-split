@@ -58,8 +58,8 @@ class VectorPublication:
             inputs=(self.identity.source.source.raw,),
         )
 
-    def command(self, stage, upload_id=None):
-        command_id = self.identity.command_id(stage)
+    def command(self, stage, upload_id=None, *, attempt=1):
+        command_id = self.identity.command_id(stage, attempt)
         family = "artifacts.begin_derived_upload" if stage == "begin" else "artifacts.finalize"
         payload = {"content": self.content.model_dump(mode="json")}
         if stage == "begin":

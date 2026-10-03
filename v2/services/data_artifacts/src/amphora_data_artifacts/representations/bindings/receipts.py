@@ -13,13 +13,15 @@ from .document import VectorPublication
 @dataclass(frozen=True, slots=True)
 class BindingReceipts:
     publication: VectorPublication
+    attempt: int = 1
 
     def __post_init__(self):
         require(type(self.publication) is VectorPublication, "representation_publication_required")
+        self.publication.identity.command_id("begin", self.attempt)
 
     def upload(self, observation):
         observation = _validated(observation, DerivedUploadObservation)
-        command = self.publication.command("begin")
+        command = self.publication.command("begin", attempt=self.attempt)
         require(
             observation.identity == command.identity and observation.request_sha256 == command.sha256,
             "representation_upload_identity",
@@ -37,7 +39,7 @@ class BindingReceipts:
     def finalized(self, upload_id, receipt):
         receipt = _validated(receipt, DerivationReceipt)
         identity = self.publication.identity
-        command = self.publication.command("begin")
+        command = self.publication.command("begin", attempt=self.attempt)
         require(
             receipt.origin == command.identity
             and receipt.request_sha256 == command.sha256

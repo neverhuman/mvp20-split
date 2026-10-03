@@ -243,3 +243,27 @@ def test_vector_content_rule_checks_canonical_binary_bytes_not_just_json_shape(p
     ]:
         with pytest.raises(RepresentationError, match=reason):
             rule.validate(value | updates)
+
+
+def test_numbered_retry_preserves_first_command_and_rejects_prior_receipts(publication):
+    _, _, pub = publication
+    first = pub.command("begin")
+    assert pub.command("begin", attempt=1).canonical_bytes == first.canonical_bytes
+    second = pub.command("begin", attempt=2)
+    assert second.identity.command_id == first.identity.command_id + ".a2"
+    assert second.sha256 != first.sha256
+    observation, final = receipts(pub)
+    checker = BindingReceipts(pub, 2)
+    with pytest.raises(RepresentationError, match="upload_identity"):
+        checker.upload(observation)
+    with pytest.raises(RepresentationError, match="derivation_identity"):
+        checker.finalized("upload", final)
+    observation = observation.model_copy(
+        update={"identity": second.identity, "request_sha256": second.sha256}
+    )
+    final = final.model_copy(update={"origin": second.identity, "request_sha256": second.sha256})
+    assert checker.upload(observation) == "upload"
+    assert checker.finalized("upload", final).reference.binding_id == pub.identity.binding_id
+    for attempt in (0, -1, True, 1.0, 9007199254740992):
+        with pytest.raises(RepresentationError, match="publication_attempt"):
+            BindingReceipts(pub, attempt)

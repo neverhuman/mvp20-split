@@ -1,5 +1,14 @@
 # BP-06 Planning History
 
+## BP-06.05/B1.04b source and durable binding state complete - 2026-10-03 15:00:03
+
+Data0.16.0/artifact_0009 adds exact source preflight, actor request aliases, separate publication leases and actual-owner journal proofs.147 source checks pass; full independent run418 passed and2 failed because the separate Research interpreter was omitted; both pass38.17s with Research0.31.0 configured, completing420 distinct cases.14 dev tests, lint, boundaries and420 unchanged schemas pass. Coverage982/983 statements and63/64 branches; publication-during-claim barrier remains B3. Rights revocation before final visibility prevents binding publication; immutable Artifact/history persists. Only actual command rejection allows numbered retry. First-attempt bytes are preserved. No reset/initial-migration checksum claim. Data<=0.15.0 cannot migrate0009. Automated workflow remains c; broader convergence d. B1.04=50%, B1=58.33%, Build19.44%, child14.58%, parent69.10%; gates unchanged0/4 and16/24. B1.04c active. Corrected two stale MBT roadmap mirrors, including a malformed concatenated percentage, to the canonical69.10% and16/24 gates.
+
+Rotated MBT checkpoints:
+
+| 2026-10-03 02:09:43 | BP-06.04/B1.07b complete; child20.83%, parent53.47%; B1.07c active | [Decision stores](../Audits/Evidence/BP-06-Research/Scientific_Decision_Stores.json);656 source/656 installed,119 compatibility/dev; exact dependencies/impact/consumers |
+
+
 ## BP-06.05/B1.04a binding models complete - 2026-10-03 14:15:48
 
 Data0.15.0 adds pure source/publisher binding identity, canonical vector publication recipe, exact upload/finalized receipt checks and explicit content rule.121 source/121 independent installed tests pass;622 statements/36 branches fully covered.14 dev tests, lint, boundaries and420 unchanged schemas pass; artifact_0008 unchanged. Requests may alias a binding for the same actor/source/profile; different sources/publishers retain independent attribution. Only the source Artifact enters declared lineage. Self-derivation and forged origins/content are rejected. No actual publication/rights claim. Canonical record encoding moved out of SQL storage with unchanged bytes and passing cache regression. B1.04 is decomposed a-d inside its existing weight; a100%, b-d0%, B1.04=25%. B1=54.17%, Build18.06%, child13.54%, parent68.92%; closed gates unchanged. B1.04b active.

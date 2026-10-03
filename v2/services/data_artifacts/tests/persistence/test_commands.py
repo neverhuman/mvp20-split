@@ -157,3 +157,16 @@ def test_retry_exhaustion_is_bounded_and_not_a_success_receipt(store):
     with pytest.raises(DBAPIError):
         store.transact(fail)
     assert len(attempts)==3
+
+
+def test_exact_read_only_inspection_distinguishes_absent_pending_and_terminal(store):
+    command = make_command()
+    assert store.inspect(command) is None
+    pending = store.register(command)
+    assert store.inspect(command) == pending
+    with pytest.raises(CommandConflict, match="command_identity_conflict"):
+        store.inspect(make_command(2, command.identity.command_id))
+    with store.engine.begin() as connection:
+        terminal = store.finish(connection, command, TerminalDisposition("rejected", b'{"reason_code":"fixture"}'))
+        assert store.inspect_in(connection, command) == terminal
+    assert store.inspect(command) == terminal

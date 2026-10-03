@@ -56,6 +56,10 @@ class SourceBindingIdentity:
     def binding_id(self):
         return "binding." + self.sha256
 
-    def command_id(self, stage):
+    def command_id(self, stage, attempt=1):
         require(stage in ("begin", "finalize"), "representation_publication_stage")
-        return "binding." + stage + "." + self.sha256
+        require(
+            type(attempt) is int and 1 <= attempt <= 9007199254740991, "representation_publication_attempt"
+        )
+        suffix = "" if attempt == 1 else ".a" + str(attempt)
+        return "binding." + stage + "." + self.sha256 + suffix

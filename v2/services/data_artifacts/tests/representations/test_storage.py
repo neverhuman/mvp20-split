@@ -280,11 +280,15 @@ def test_repeated_migration_preserves_existing_artifact_and_source_history(cache
     upgrade(url.render_as_string(hide_password=False))
     upgrade(url.render_as_string(hide_password=False))
     assert snapshot() == before
-    with create_engine(url).connect() as connection:
-        assert (
-            connection.execute(text("SELECT version_num FROM artifacts.alembic_version")).scalar_one()
-            == "artifact_0008"
-        )
+    migrator = create_engine(url)
+    try:
+        with migrator.connect() as connection:
+            assert (
+                connection.execute(text("SELECT version_num FROM artifacts.alembic_version")).scalar_one()
+                == "artifact_0009"
+            )
+    finally:
+        migrator.dispose()
     assert e.registry.read(e.principal, e.ref) == e.profile
 
 

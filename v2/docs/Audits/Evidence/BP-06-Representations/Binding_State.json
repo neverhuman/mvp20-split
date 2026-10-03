@@ -1,0 +1,101 @@
+{
+  "timestamp_local": "2026-10-03 15:00:03",
+  "milestone": "BP-06.05/B1.04b",
+  "status": "passed",
+  "data_version": "0.16.0",
+  "reports": {
+    "focused_source": {
+      "passed": 147,
+      "seconds": 11.1
+    },
+    "independent_full_initial": {
+      "passed": 418,
+      "failed": 2,
+      "seconds": 114.84,
+      "failure": "Harness omitted AMPHORA_TEST_RESEARCH_PYTHON; separate Research implementation unavailable in isolated Data interpreter."
+    },
+    "independent_peer_rerun": {
+      "passed": 2,
+      "seconds": 38.17,
+      "peer": "research-laboratory-closeout-20261003 Research0.31.0"
+    },
+    "independent_distinct_cases_passed": 420
+  },
+  "coverage": {
+    "covered_lines": 982,
+    "num_statements": 983,
+    "percent_covered": 99.80897803247373,
+    "percent_covered_display": "99",
+    "missing_lines": 1,
+    "excluded_lines": 0,
+    "percent_statements_covered": 99.89827060020346,
+    "percent_statements_covered_display": "99",
+    "num_branches": 64,
+    "num_partial_branches": 1,
+    "covered_branches": 63,
+    "missing_branches": 1,
+    "percent_branches_covered": 98.4375,
+    "percent_branches_covered_display": "98"
+  },
+  "coverage_gaps": [
+    "One statement/branch: publication completes between initial claim read and rights/binding lock; actual concurrent barrier remains B3."
+  ],
+  "independent_build": {
+    "timestamp_local": "2026-10-03 14:53:26",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-data-artifacts",
+    "forbidden_implementations": [
+      "amphora_research",
+      "amphora_knowledge",
+      "amphora_campaign_runtime"
+    ],
+    "packages": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.13",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-representations": "0.1.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-data-artifacts": "0.16.0"
+    },
+    "wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_representations-0.1.0-py3-none-any.whl": "4cbca5406398388b2df4fe6ab30842b1fb1055a7c6b0189bf164010ef9ec5b3a",
+      "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_data_artifacts-0.16.0-py3-none-any.whl": "ed7403e16f9cdc19775877140ecbec857c34eb18df9e303e1913888d0d28386e"
+    }
+  },
+  "checks": {
+    "schemas": "420 unchanged",
+    "migration": "artifact_0009 applied; repeated-upgrade history preservation verified; no initial before/after checksum claim",
+    "dev_tests": 14,
+    "boundaries": "pass",
+    "lint": "pass"
+  },
+  "oracles": [
+    "Exact registered source, Artifact/span/hash/UTF8 and current rights precede cache use; unavailable exact encoder may reuse valid cache.",
+    "Actor aliases converge; real conflicting request rolls back new job; other actor cannot read request or claim its job.",
+    "Four contenders obtain one publication lease; expiry/release/reclaim reject stale writes.",
+    "Commands precede effects; lost-response reconstruction uses actual owner command/derivation history.",
+    "Only retained begin/finalize rejection advances a numbered attempt; absent/pending cannot.",
+    "Current rights block final binding visibility after finalized Artifact; restored rights can complete, later revocation preserves history and denies bytes.",
+    "Immutable grants, exact final cache/Artifact FKs, source-only ancestry and independent actor attribution."
+  ],
+  "limits": [
+    "Manually driven actual owner protocol, not implemented orchestration/API/process-crash acceptance.",
+    "Synthetic representation; no scientific retrieval-quality claim.",
+    "Data<=0.15.0 must not migrate retained artifact_0009."
+  ]
+}

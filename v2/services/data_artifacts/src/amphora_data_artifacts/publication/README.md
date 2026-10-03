@@ -19,3 +19,5 @@ ContentPolicy preserves the three built-in profiles (opaque octets, UTF-8 text a
 ContentPolicy consumes the owner-local ContentRule protocol (identity plus validate). BP-06.01 installs PreparedContentRule explicitly for published document/lab DTO profiles; it does not broaden generic schema-file reference support or allow requests to install validators.
 
 DER-01/D2: Finalizer consults the immutable [derived declaration](../derivations/README.md) regardless of endpoint. It captures process rights before storage/schema I/O and fences current heads/expiry before atomic catalog/lineage/terminal receipt/audit commit. Rejected fences expose no new catalog identity; exact terminal replay skips new-use authorization and remains historical. `/ready` checks the new migration table; older reader implementations must not serve derived artifacts after activation.
+
+Uploads.selected_in is an actor/scoped read of the current streamed selection for owner-local binding recovery; it does not reserve capacity or change upload/finalization state.

@@ -33,6 +33,21 @@ class Uploads:
             raise UploadError("upload_unavailable")
         return row
 
+    @staticmethod
+    def selected_in(connection, principal, upload_id):
+        """Inspect selected durable bytes without changing uploads or reserving capacity."""
+        principal.require("upload")
+        row = connection.execute(text("SELECT a.* FROM artifacts.uploads u JOIN artifacts.upload_attempts a "
+            "ON (a.tenant_id,a.project_id,a.upload_id,a.attempt_id)="
+            "(u.tenant_id,u.project_id,u.upload_id,u.selected_attempt) "
+            "WHERE u.tenant_id=:tenant AND u.project_id=:project AND u.actor_id=:actor AND u.upload_id=:upload "
+            "AND u.status IN ('provisional','finalized') AND a.status='streamed' AND a.generation=u.generation"),
+            principal.bindings | {"upload": upload_id}).mappings().one_or_none()
+        if row is None:
+            return None
+        return {"upload_id": upload_id, "attempt_id": row["attempt_id"], "generation": row["generation"],
+                "actual_bytes": row["actual_bytes"]}
+
     def begin(self, principal, command):
         principal.require("upload", command.identity)
         if command.identity.command_family != "artifacts.begin_upload":

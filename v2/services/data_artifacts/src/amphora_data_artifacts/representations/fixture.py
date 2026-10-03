@@ -55,13 +55,16 @@ def fixture_profile(normalization="none"):
 
 
 class FixtureEncoder:
+    @staticmethod
+    def available(profile):
+        return type(profile) is RepresentationProfile and profile == fixture_profile(profile.space.normalization)
+
     def encode(self, profile, source):
         require(
             type(profile) is RepresentationProfile and type(source) is EncodingInput,
             "representation_encoder_input",
         )
-        expected = fixture_profile(profile.space.normalization)
-        require(profile == expected and source.context_sha256 is None, "representation_encoder_unavailable")
+        require(self.available(profile) and source.context_sha256 is None, "representation_encoder_unavailable")
         counts = [0] * 16
         for value in source.content:
             counts[value % 16] += 1

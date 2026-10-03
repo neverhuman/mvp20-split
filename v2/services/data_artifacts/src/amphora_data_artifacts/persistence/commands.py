@@ -64,6 +64,21 @@ class CommandStore:
                     raise
         raise AssertionError("Unreachable transaction retry")
 
+    def inspect(self, command: CanonicalCommand) -> CommandRecord | None:
+        """Read the exact command without registering it or changing its disposition."""
+        with self.engine.connect() as connection:
+            return self.inspect_in(connection, command)
+
+    @staticmethod
+    def inspect_in(connection: Connection, command: CanonicalCommand) -> CommandRecord | None:
+        row = connection.execute(text("SELECT * FROM artifacts.commands WHERE " + WHERE),
+                                 _bindings(command)).mappings().one_or_none()
+        if row is None:
+            return None
+        if row["request_sha256"] != command.sha256 or bytes(row["canonical_bytes"]) != command.canonical_bytes:
+            raise CommandConflict("command_identity_conflict")
+        return CommandRecord.from_row(row)
+
     def register(self, command: CanonicalCommand) -> CommandRecord:
         bindings = {**_bindings(command), "operation": uuid.uuid4().hex,
                     "digest": command.sha256, "canonical": command.canonical_bytes}
