@@ -349,3 +349,15 @@ Two bounded probes confirm immutable receipt-ID semantics and the distinction be
 Rotated MBT checkpoints:
 
 | 2026-10-01 20:50:22 | BP-06.02/B3 complete; child75%, parent33.33%; V1 active | [Failure matrix](../Audits/Evidence/BP-06-Knowledge/Failure_Matrix.json);130 owner tests;4 process scenarios |
+
+## 2026-10-02 21:07:39 - Owner selects future-campaign-only corrections
+
+Option B approved. Active campaigns retain original receipt pins even before consumption commits; corrections affect later campaign selection. Implement immutable owner correction chains, notices and current-selection reads, without Runtime active-wait invalidation or repinning. B2 unblocked; percentages unchanged until verified scope is complete.
+
+Rotated MBT checkpoints:
+
+| 2026-10-01 21:01:42 | BP-06.02 closed100%; parent33.33%; successor .03 audit next | [Closeout](../Audits/BP-06.02_Knowledge_Replay_Closeout.md);169+39 installed tests |
+
+## 2026-10-02 21:14:00 - Iterative progress clarification
+
+Owner explicitly rejects scientific perfection as a campaign completion gate. Updated requirements, Studio/Knowledge architecture and BP-07.03 to preserve multiple weak points, visible evidence quality and targeted next-campaign improvement. Created queued SQ-01 successor; closed BP-05 remains closed. Bounded user-directed documentation interruption complete; return to BP-06.03/B2.01. No code or implementation credit: B2 0%, child25%, parent37.50%. Future-campaign-only corrections remain approved.

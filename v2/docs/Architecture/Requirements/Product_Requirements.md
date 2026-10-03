@@ -159,12 +159,24 @@ Before activation, a proposed graph must pass:
 3. Cycle, loop, and termination checks.
 4. Resource and budget feasibility checks.
 5. Domain-boundary and applicability checks.
-6. Evidence sufficiency and authority checks.
+6. Evidence authority checks and action-specific sufficiency prerequisites, distinguishing hard requirements from advisory uncertainty in exploratory work.
 7. Simulation or dry run where supported, with unsupported checks and limitations recorded.
 8. Policy-bound review of the graph, dependencies, gaps and expected effects. The initial autonomous profile uses deterministic checks and eligible evaluator agents; human inspection is available between campaigns and is not a mandatory per-campaign gate.
 9. Explicit authorized activation of the reviewed revision and lockfile, which may be automatic under the configured campaign authority.
 
-Failed checks must identify the affected nodes/edges and block activation until resolved. LLM proposals and evolutionary amendments must use the same validation boundary and cannot issue unrestricted execution commands, alter signed constraints, or grant themselves authority.
+Failed hard prerequisites must identify the affected nodes/edges and block the actions that depend on them; activation is blocked only where the graph cannot legally execute with its declared fallback or branch policy. Advisory uncertainty, contradictions and low-confidence hypotheses do not by themselves block exploration. LLM proposals and evolutionary amendments must use the same validation boundary and cannot issue unrestricted execution commands, alter signed constraints, or grant themselves authority.
+
+### Campaign progress, uncertainty and subsequent iteration
+
+Campaigns are bounded research iterations, not promises of a correct or complete scientific answer. A completed campaign may contain weak hypotheses, contradictory findings, inconclusive branches and failed experiments. Retain useful outputs and explicit limitations; report execution completion separately from scientific quality and research-question sufficiency. Do not require every point to become accurate before unrelated or valid exploratory work can proceed. Progress can mean reducing uncertainty, ruling out an idea, identifying a gap or proposing a better next experiment; it need not mean a higher fitness score in every campaign.
+
+Graph Studio must visibly mark questionable, low-confidence, contradictory, unassessed and demonstrably inaccurate points on nodes, claims and outputs. Distinguish those states from execution failures and missing permissions. Show the reason, assessment method/version, applicability, supporting and conflicting evidence, exact revision and affected downstream uses. Do not invent calibrated accuracy percentages where no measurement supports them. Provide filtering and drill-down so humans or authorized AI agents can focus on consequential weak points without losing useful surrounding context.
+
+Between campaigns, humans and agents can select those points for follow-up, linking the next campaign's proposed changes or experiments to the original point, evidence and intended improvement. Prioritization should consider objective relevance, expected information gain, dependencies and budget; unresolved items remain visible without becoming mandatory approval queues. Compare successive campaigns with retained lineage and explicit remaining uncertainty, rather than declaring a single iteration the destination.
+
+Receipt corrections apply to future campaigns only. Active campaigns retain their pinned revisions, including consumption not yet committed; later corrections can be displayed as annotations without silently altering active inputs or execution disposition. Subsequent campaign authoring explicitly selects revised evidence. Preserve old results and decisions. Operational prerequisites, authority and emergency termination remain separate from advisory scientific quality; accepting an exploratory run never promotes a hypothesis into established evidence.
+
+Acceptance must demonstrate a campaign progressing with multiple flagged weak points, retained partial results, truthful scientific status, inspectable downstream impact, human and AI follow-up proposals for a subsequent campaign, and original active pins remaining unchanged after a correction. This is required future behavior, not a claim that the current synthetic implementation delivers the UI or scientific assessment.
 
 ### Campaign evolution and cross-project discovery
 
@@ -182,7 +194,7 @@ These are product acceptance requirements, not statements of implemented capabil
 2. **Deterministic execution:** a domain-neutral synthetic workflow, plus a narrowly applicable reused calculator when available, expressed as graph fixtures and executed by a minimal interpreter with pinned inputs, retained artifacts, explicit failure/termination behavior and reconstructible node-transition events. Existing epoxy workflows may supply additional regression fixtures. A branch or bounded-loop change using existing modules must run without an orchestration-code change.
 3. **Human inspection:** execution inspection of that fixture, including branches, loop counts, intermediate artifacts and revision comparison, with human edits staged for subsequent campaigns. Demonstrate autonomous continuation and truthful terminal blockers rather than routine in-campaign approval waits.
 4. **Domain traceability:** inspection in both directions between campaign decisions and the exact domain assertions they consumed, including contradictions, applicability, and affected historical runs.
-5. **Governed LLM design:** graph proposals pass all activation checks; incompatible ports, invalid loops, insufficient evidence, and unauthorized changes are visibly rejected.
+5. **Governed LLM design:** graph proposals pass all activation checks; incompatible ports, invalid loops, unmet explicit action prerequisites, and unauthorized changes are visibly rejected; advisory evidence gaps remain visible without preventing valid exploratory execution.
 6. **Evolution and reuse:** parameter evolution followed by bounded topology mutation/crossover produces reviewable descendants with reproducible comparisons; rights-eligible motifs are proposed with ancestry and applicability rather than automatically promoted.
 
 Exact replay must be demonstrated for deterministic fixtures. Runs involving nondeterministic modules or unavailable external dependencies must expose their replay limits and retained evidence.

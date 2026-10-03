@@ -3,16 +3,16 @@
 ## Canonical Parent Tracker
 
 - Status: primary_active; BP-06.03/Build/B2 active after B1 completion.
-- Last refreshed: `2026-10-02 20:49:48` (America/Chicago).
+- Last refreshed: `2026-10-02 21:14:00` (America/Chicago).
 - Owner/scope: Knowledge, Research and focused Data/Artifacts modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 receipt/wait seams and BP-05 inspection; BP-01/02/03 public contracts and tool execution.
 - Scoped implementation/verification completion: **37.50%** = (8 completed delivery units + B1 10/10) /24. P1/.01 and P2/.02 remain100%; P3/.03 is25%.
 - Closed delivery gates: **9/24 (37.50%)**; BP-06.03 is1/4, acceptance open. Fractions measure completed milestone scope, not hours or scientific readiness.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current task: B2 awaits owner choice: invalidate unconsumed receipts in active campaigns after Runtime accepts a notice (recommended), or preserve active campaign pins and apply corrections only to future campaigns. See [receipt invalidation decision](BP-06/BP-06.03%20Receipt%20invalidation%20decision.md). B1 complete; no further decision-independent implementation remains at this gate.
+- Current task: B2 owner correction chains and future-campaign selection. Owner selected future-campaign-only corrections; active pins/history remain unchanged. B2 remains0%, child25%, parent37.50% until implementation gates pass.
 - Demonstrated behavior: B1.10 Research0.10.0/contracts0.5.0 authenticated assessment/publication API;434 source/317 installed tests pass, including actual Research process replacement and replay with Data offline.300 schemas preserve296 predecessors. B1 complete; B2 transitions active.
-- Blockers: B2 receipt invalidation policy choice; B1 complete. Existing acceptance/history stays immutable under both options.
+- Blockers: none requiring owner direction; future-campaign-only correction policy is approved.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
 

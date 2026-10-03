@@ -3,14 +3,16 @@
 ## Current Checkpoint
 
 
-- Last refreshed: `2026-10-02 20:49:48` (America/Chicago).
+- Last refreshed: `2026-10-02 21:14:00` (America/Chicago).
 - Active plan: BP-06.03/Build/B2 transitions and supersession; B1 complete10/10. Build33.33%, child25%, parent37.50% (9/24). Closed gateschild1/4,parent9/24; acceptance0%. DER-01 stays closed without extra credit.
 - Latest checkpoint: B1.10 complete, Research0.10.0/contracts0.5.0.434 source and317 independently installed tests pass. Actual authenticated API, publication and Research replacement/offline replay verified.300 schemas preserve296 predecessors. Evidence: Assessment_API.json. Migrations research_0001..0004 unchanged by API work. B1/API pushed as099a830; continuation rule/publication pushed67a44b8. Two additional boundary probes confirm the B2 decision; no production behavior changed.
-- Next: B2 awaits owner choice: invalidate unconsumed receipts in active campaigns after Runtime accepts a notice (recommended), or preserve active campaign pins and apply corrections only to future campaigns. See BP-06.03 Receipt invalidation decision.md. B1 complete; no further decision-independent implementation remains at this gate.
+- Next: B2.01 correction contracts and separate owner policies, then B2 owner correction chains/notices and explicit future-campaign selection. Owner chose future campaigns only: active waits keep original pins and no Runtime invalidation mechanism is authorized. Decompose B2 and implement public versioned correction contracts, private owner stores and selection endpoints, with immutable replay/branch-race and scoped authority tests. Continue across checkpoints; do not stop after commits.
 - Recovery: only verified pending original receipts enable explicit same-identity resume. Unknown transport outcome first reconciles; collision/denial/terminal ambiguity never gets a fresh ID. Newer local edits survive recovery. Cancellation is operational and retains explicit uncertain-effects wording.
 - Runtime0.20.0, Commands0.2.0, graph-runtime0.11.0, campaigns0.4.1;300 public schemas; all296 pre-API predecessors preserved. Numeric v2 only save/admit; other families/unmarked bytes v1. Input NumberValue remains decimal string. Registry eligibility synthetic-only observations are not reservations/atomic revocation. No scientific or target-host deployment claim.
 - Tooling: mapped v2/dev/.venv/Scripts/python.exe, PYTHONUTF8=1; pytest/ruff --config equivalents use v2/dev/pyproject.toml. Git always -c safe.directory=//DesktopNAS/Code/mvp20-split. Never reset retained PG or run parallel campaign-admission suites. No v1/JARVIS/subagents. Use Path.absolute for repo tooling; Path.resolve maps Z to UNC and breaks uv source identity.
 - Integration: solver images .test-results/tool-images/bp0503-authoring-20260930/manifest.json for verify_studio_integration --authoring. Standard images bp0503-standard-20260930 for foundation optional worker gate. Do not mix profiles.
+
+Owner clarification: campaign progress does not require scientific certainty. Requirements now distinguish advisory weak points from hard action prerequisites; queued SQ-01 owns visible quality markers and next-campaign focus, linked to BP-07.03 proposals. BP-05 stays closed. Documentation changes earn no implementation credit.
 
 ## Decomposition and Resume Discipline
 

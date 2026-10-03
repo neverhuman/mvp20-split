@@ -1,6 +1,6 @@
 # Reasoning and Evidence Authority
 
-- Design status: BP-06.03/B1 complete: configured finite reasoning, exact owner-state binding, durable result history, artifact publication, synthetic Research assessment/domain receipts and optional authenticated HTTP are verified. B2 supersession/invalidation policy awaits owner direction; B3 Runtime receipt integration and scientific validation remain unproven.
+- Design status: BP-06.03/B1 complete: configured finite reasoning, exact owner-state binding, durable result history, artifact publication, synthetic Research assessment/domain receipts and optional authenticated HTTP are verified. Owner selected future-campaign-only corrections; B2 implements owner chains/selection while preserving active pins; B3 Runtime receipt integration and scientific validation remain unproven.
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
 - Last reviewed: `2026-10-02 09:39:22` (America/Chicago)
 - Parent: [Domain overview](Knowledge_Architecture.md)
@@ -49,3 +49,7 @@ Product Requirements defines the refinery and reasoning/evolution boundary; [Dom
 ## Initial implementation profile
 
 The [BP-06.03 activation audit](../../Audits/BP-06.03_Activation.md) selects finite grounded signed implications for synthetic engine proof, with exact context identity and bounded work/depth/facts. Explicit conflict remains visible; no negation-as-failure or arbitrary code is executed. The [private module](../../../services/knowledge/src/amphora_knowledge/reasoning/README.md) documents implemented behavior and limits. Logical entailment from represented hypotheses cannot grant scientific authority. General scientific rule formalism/calibration remains open beyond this fixture profile.
+
+## Iterative research posture
+
+Evidence quality is an advisory planning signal unless an action explicitly requires that evidence as a hard prerequisite. Keep uncertain, conflicting and negative results available with their authority and applicability; do not promote them merely because execution completed. Corrections annotate earlier consumers while preserving active campaign pins. Expose exact point/revision, reasons and supporting/conflicting evidence for future Studio quality views and agent follow-up selection. Research progress includes narrowing uncertainty and learning from failure, not just satisfying a question in one run.

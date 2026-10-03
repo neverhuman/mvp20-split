@@ -72,3 +72,9 @@ Save/validate/activate/stop are separate commands. A lost acknowledgement first 
 ## Accepted Internal Vertical Slice
 
 [BP-05 integrated audit](../../Audits/BP-05_Studio_Closeout.md) records actual-owner keyboard/narrow/reconnect journeys, a measured bounded200-node scene over10000 logical fixture records and a named-view module replacement with preserved public tests. Performance limits remain tied to the recorded client machine and separate from request latency. Research/knowledge/lab/model producers and production deployment remain successor owners; these fixtures do not establish scientific suitability.
+
+## Exploratory quality and next-campaign focus
+
+Required successor capability: show evidence quality independently of execution status. A completed node may still be uncertain, contradicted or unassessed. Use visible labels and accessible markers, scoped filters and evidence drill-down; never equate a green execution status with scientific correctness or invent numerical accuracy. Preserve the pinned view while displaying newer corrections as separately identified annotations. Humans and authorized agents can select weak points and inspect affected consumers, then propose linked next-campaign changes with rationale and expected information gain. The UI must not demand resolution of every warning before valid exploration continues.
+
+Verification must include several simultaneous weak points, useful retained outputs, independent execution progress and a traceable successor proposal without active-run mutation. BP-05 remains closed; this scientific-quality presentation is a named successor scope, SQ-01, to be activated after the owner quality projections and proposal contracts exist.

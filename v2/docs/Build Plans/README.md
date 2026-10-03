@@ -16,3 +16,5 @@ BP-06 is active; use its canonical tracker/MBT for current phase and percentages
 Read the selected plan's tracker first. Complete each phase gate before advancing. Use module-owned tests and replacement READMEs; keep integration/E2E separate. [Development Process](../Development_Process.md) governs activation audits, percentages, closeout audits and archival. Older Architecture/Requirements proposals are reference inputs, not competing execution trackers.
 
 [Planning Readiness and Cross-Plan Handoffs](Planning_Readiness.md) summarizes child maturity, producer/consumer contracts, evidence tiers and the exact later gates needing owner decisions. Open the parent first, then its immediate child; history preserves prior scope and is not an execution tracker.
+
+- [SQ-01 Scientific Quality and Iteration Views](SQ-01%20Scientific%20Quality%20and%20Iteration%20Views.md): queued BP-05 successor after BP-06 quality projections and BP-07.03 proposal contracts; 0%.
