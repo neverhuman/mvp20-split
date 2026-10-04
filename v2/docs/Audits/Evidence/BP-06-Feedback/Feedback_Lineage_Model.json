@@ -1,0 +1,28 @@
+{
+  "verified_at": "2026-10-03 23:44:07",
+  "status": "passed",
+  "scope": "BP-06.06 B2.03b lineage model",
+  "independent_tests": 210,
+  "owned_tests": 13,
+  "source_tests_before_final_structural_case": 209,
+  "independent_manifest": ".test-results/studio-isolated/daa1e0868dbf44f2b8703fea322a5764/manifest.json",
+  "coverage": {
+    "context": {
+      "lines": 100,
+      "branches": 100
+    },
+    "lineage": {
+      "lines": 100,
+      "branches": 91.89
+    },
+    "model": {
+      "lines": 100,
+      "branches": 90.74
+    }
+  },
+  "limits": [
+    "No visible UI or actual-owner successor claim",
+    "Untested branches include some negative link combinations, sufficient projection and generic thrown error conversion",
+    "Research correction bundle only; Knowledge receipts remain separate transport records"
+  ]
+}

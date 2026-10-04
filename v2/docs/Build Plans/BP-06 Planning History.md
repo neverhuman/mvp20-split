@@ -1,5 +1,7 @@
 # BP-06 Planning History
 
+2026-10-03 23:44:07 B2.03b model verified:210 independent Studio tests,13 new context/lineage/race cases. B2.03=50%,B2=62.50%,Build54.17%,child40.63%,parent90.10%. Visible lineage c active; actual progression d remains0%.
+
 2026-10-03 23:33:39 B2.03a feedback reader verified:197 source/independent tests,9 public schema derivatives, exact historical selections and Python record fingerprints. B2.03=25%,B2=56.25%,Build52.08%,child39.06%,parent89.84%; B2.03b active. No actual feedback UI/owner progression claimed.
 
 ## B2.02 Visible Explore - 2026-10-03 23:17:26
