@@ -1,0 +1,65 @@
+{
+  "verified_at": "2026-10-04 18:55:41",
+  "status": "passed",
+  "task": "BP-07.03/B1.02d",
+  "planning": "0.39.0",
+  "owner_versions": {
+    "registry": "0.1.0",
+    "runtime": "0.20.2",
+    "data": "0.29.0",
+    "knowledge": "0.18.0"
+  },
+  "planning_workers": 10,
+  "owner_processes": {
+    "registry": [
+      23832,
+      33692
+    ],
+    "runtime": [
+      26100,
+      25748
+    ],
+    "data": [
+      25060,
+      10580,
+      9248
+    ],
+    "knowledge": [
+      26824,
+      26592
+    ]
+  },
+  "knowledge_fixture_processes": [
+    32112,
+    3680
+  ],
+  "stages": [
+    "original",
+    "partial",
+    "denied",
+    "foreign",
+    "original-after-correction",
+    "future-campaign",
+    "original-after-owner-restarts",
+    "processing-denied",
+    "processing-denied-after-restart",
+    "processing-restored"
+  ],
+  "scope": {
+    "tenant_id": "campaign-context",
+    "project_id": "c98419a9443c4541b34f2cb214348300"
+  },
+  "retained_manifest": ".test-results/planning-campaign-context-owners-v2-20261004/manifest.json",
+  "reused_research": {
+    "evidence": "docs/Audits/Evidence/BP-07-Campaigns/Research_Owner_Reads.json",
+    "client_contract_diff_from": "b783d7e3",
+    "diff": "unchanged"
+  },
+  "limits": [
+    "Synthetic public Data/Registry setup and Knowledge-local reference fixture; no scientific validity claim",
+    "Actual retained PostgreSQL/Qdrant, installed service CLIs and Planning-only workers; no migrations or reset",
+    "Research public clients/contracts unchanged since separate actual-owner checkpoint",
+    "Request root Artifacts remain fixture pins; this gate does not assemble or tokenize a complete provider context"
+  ],
+  "fixture_repair": "Initial attempt used hidden Knowledge OpenAPI readiness route; corrected to health, all initial hosts closed and evidence retained. No production defect or state reset."
+}

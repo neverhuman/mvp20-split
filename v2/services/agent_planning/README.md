@@ -55,3 +55,5 @@ Real provider/model, egress and spend remain owner choices before actual calls. 
 [retrieval_access](src/amphora_agent_planning/retrieval_access/README.md) verifies exact retained Data query/result and source-binding identities; retrieval history does not grant fresh processing access or scientific confidence.
 
 [campaign_knowledge_access](src/amphora_agent_planning/campaign_knowledge_access/README.md) reads exact pinned campaign graph context through public Knowledge endpoints. [graph_context](src/amphora_agent_planning/graph_context/README.md) owns shared pure record invariants; extraction retains its original adapter and byte identities.
+
+Actual combined-owner context verified 2026-10-04 18:55:41:10 isolated Planning workers,9 Registry/Runtime/Data/Knowledge hosts, retained PostgreSQL/Qdrant and original/future graph selections. Exact reads, partial/denied/foreign outcomes, restarts and fresh processing permission changes passed; Research unchanged-client proof reused explicitly. See docs/Audits/Evidence/BP-07-Campaigns/Combined_Owner_Context.json. Context assembly/token fitting and live provider quality remain later gates.

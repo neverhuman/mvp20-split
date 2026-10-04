@@ -567,3 +567,9 @@ B1.02c.iii verified 2026-10-04 18:44:12:Planning0.39/public0.8 original campaign
 MBT checkpoint overflow:
 
 | 2026-10-04 08:01:56 | BP-07.02/B2.02b complete; child38.89%,parent27.78%; c.i active | [Repair admission](../Audits/Evidence/BP-07-Extraction/Repair_Admission.json);588 source,570 installed25 processes; unsettled overage fenced |
+
+B1.02d verified 2026-10-04 18:55:41:Planning0.39 reads actual Registry0.1/Runtime0.20.2/Data0.29/Knowledge0.18 through10 isolated Planning workers,9 owner hosts and2 Knowledge-local fixture processes. Public source/vector/generation/query setup uses retained actual PostgreSQL/Qdrant. Exact inventory/lock/universe/schema/processing/retrieval/graph reads, denied/foreign/partial inputs, all-owner restart, future-only retraction and fresh processing denial/restoration passed. Research actual-owner evidence explicitly reused; clients/contracts unchanged from b783d7e3. No migration/reset/provider/scientific claim. B1.02=100%,B1=50%,child12.5%,Build16.67%,parent42.5%;closed0/4 and8/20. Current B1.03 context preparation.
+
+MBT checkpoint overflow:
+
+| 2026-10-04 10:04:40 | BP-07.02/B2.03a.ii complete; child44.44%,parent28.89%; b active | [Research declarations](../Audits/Evidence/BP-07-Extraction/Research_Declarations.json);382 installed cases,2 actual process interruption/replacement stages |

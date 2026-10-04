@@ -27,7 +27,7 @@ from sqlalchemy import create_engine
 
 
 def run(stage, fixture):
-    assert version('amphora-knowledge') == '0.17.0'
+    assert version('amphora-knowledge') in {'0.17.0', '0.18.0'}
     raw = json.loads(fixture.read_bytes())
     vocabulary = Vocabulary(DomainVocabulary.model_validate_json(json.dumps(raw['vocabulary'])))
     policy = StructuralPolicy()
