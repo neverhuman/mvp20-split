@@ -1,5 +1,7 @@
 # BP-06 Planning History
 
+2026-10-04 00:16:14 B2.04a exact scientific comparison verified:10 owned cases,220 independent Studio. No timestamps invented, no nominal candidate merge, reuse still owner-authorized. B2.04=25%,B2=81.25%,Build60.42%,child45.31%,parent90.89%; B2.04b active.
+
 2026-10-04 00:09:05 B2.03 complete: actual successor1test95.92s,210 independent Studio+13browser,18dev. Preserved original receipts/measurements/Runtime waits; explicit future graph/report/profile/receipt pins. B2=75%,Build58.33%,child43.75%,parent90.63%. B2.04 active.
 
 2026-10-03 23:55:34 B2.03c visible feedback verified:210 independent Studio tests,13 browser cases; desktop/narrow/long screenshots reviewed. B2.03=75%,B2=68.75%,Build56.25%,child42.19%,parent90.36%. Actual-owner progression d active.

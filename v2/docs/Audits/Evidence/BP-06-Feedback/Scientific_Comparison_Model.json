@@ -1,0 +1,18 @@
+{
+  "verified_at": "2026-10-04 00:16:14",
+  "status": "passed",
+  "scope": "BP-06.06 B2.04a scientific comparison projection",
+  "owned_tests": 10,
+  "independent_tests": 220,
+  "independent_manifest": ".test-results/studio-isolated/aa7da020b4ce43d38ac46d7bf0e885ca/manifest.json",
+  "coverage": {
+    "lines": 100,
+    "branches": 91.78,
+    "functions": 100
+  },
+  "limits": [
+    "Pure display projection, not a cache or owner eligibility verdict",
+    "Actual two-specimen comparison and reuse proof remain c/d",
+    "Uncovered branches include absent material summaries and some censored-unit combinations"
+  ]
+}
