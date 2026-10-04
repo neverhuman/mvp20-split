@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-- Version:0.30.0 verified; public Planning0.7.0. BP-07.02/B2.02 complete; B2.03b.i result payloads verified; b.ii.a storage verified; b.ii.b Data workflow verified; b.ii.c diagnostic producer/actual Data verified; b.iii.a owner values/transport verified; b.iii.b owned handoff storage verified; b.iii.c coordinator/actual Research recovery verified; outerB2.03c combined-owner acceptance active.
+- Version:0.30.0 verified; public Planning0.7.0. BP-07.02/B2.02 complete; B2.03b.i result payloads verified; b.ii.a storage verified; b.ii.b Data workflow verified; b.ii.c diagnostic producer/actual Data verified; b.iii.a owner values/transport verified; b.iii.b owned handoff storage verified; b.iii.c coordinator/actual Research recovery verified; outerB2.03c combined-owner acceptance verified; B3.01 trace oracles active.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Canonical progress: [BP-07.02](../../docs/Build%20Plans/BP-07/BP-07.02%20Reliable%20text%20decomposition.md).
 
@@ -35,3 +35,6 @@ Planning0.26 adds a result-specific SDK coordinator and shares the unchanged bou
 Result preparation/diagnostics/producer are verified under BP-07.02/B2.03b.ii.c. They use current public Data processing and exact owner contexts, preserve prepared history, and supply the bounded RepairChain; no live provider or owner acceptance is implied. See the result_publication module README for the replacement boundary and current evidence.
 
 [owner_handoff](src/amphora_agent_planning/owner_handoff/README.md) owns stable selections, exact request/receipt binding, immutable prepared origin/dependency/event history and bounded Research/Knowledge reconciliation. Planning0.30 adds read-first coordination, fresh processing checks before new POSTs, sticky rejection/capacity policy and a97-slot bounded question/need/answer/graph pass. Actual Research recovery/dependent registration is verified across owner restart; combined actual Data/Research/Knowledge acceptance remains B2.03c. Research presence never implies original creation or scientific adequacy; Knowledge acknowledgment requires exact status and accepted-change readback.
+
+
+Combined owner acceptance 2026-10-04 15:50:14: [evidence](../../docs/Audits/Evidence/BP-07-Extraction/Combined_Owner_Acceptance.json). Nine installed Planning workers/six actual Data/Research/Knowledge processes prove published provenance, ordered declarations, exact accepted recovery, typed-correction rebuild under withdrawn source rights and unchanged original campaign pins. Explicit future task selection uses the corrected head. Synthetic scientific/provider fixtures; no live model or abrupt-crash claim.

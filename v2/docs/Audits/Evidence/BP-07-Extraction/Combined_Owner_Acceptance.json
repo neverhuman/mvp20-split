@@ -1,0 +1,109 @@
+{
+  "verified_at": "2026-10-04 15:50:14",
+  "status": "passed",
+  "gate": "BP-07.02/B2.03c",
+  "planning": "0.30.0",
+  "research": "0.34.0",
+  "knowledge": "0.18.0",
+  "data": "0.29.0",
+  "source_changes": "Acceptance/dev fixtures only; public schemas and owner migrations unchanged",
+  "retained_manifest": ".test-results/planning-combined-owners-r3-20261004/manifest.json",
+  "manifest_sha256": "26dd4fe69278751263e56b9bdeabf03261916f3d74886f15ebe24139adda292c",
+  "planning_workers": 9,
+  "owner_processes": {
+    "data": [
+      4164
+    ],
+    "research": [
+      3728
+    ],
+    "knowledge": [
+      1656,
+      27412,
+      18628,
+      32456
+    ]
+  },
+  "scope": {
+    "tenant_id": "planning-combined",
+    "project_id": "6c7abd06e6c946528e5eda6c44601726"
+  },
+  "original_head": {
+    "change": {
+      "change_id": "p-a6342e95734b76e8c3bf9d59aa6bffd5e5f0465713acf239deb76851466b4f01",
+      "graph": {
+        "graph_id": "domain",
+        "scope": {
+          "project_id": "6c7abd06e6c946528e5eda6c44601726",
+          "tenant_id": "planning-combined"
+        }
+      },
+      "position": 1,
+      "sha256": "8bdc66e6dff90685ed91f2aaf1c1bf5e57349cb44a000cfdcd99d49e01f9deb6"
+    },
+    "snapshot": {
+      "graph": {
+        "graph_id": "domain",
+        "scope": {
+          "project_id": "6c7abd06e6c946528e5eda6c44601726",
+          "tenant_id": "planning-combined"
+        }
+      },
+      "revision": 1,
+      "sha256": "30cf559f8aad4ec7c22efc41b1ef5427500c62bf77442530dd21c88fd23297fc"
+    }
+  },
+  "corrected_head": {
+    "snapshot": {
+      "graph": {
+        "scope": {
+          "tenant_id": "planning-combined",
+          "project_id": "6c7abd06e6c946528e5eda6c44601726"
+        },
+        "graph_id": "domain"
+      },
+      "revision": 3,
+      "sha256": "ee904d95843b51a630709eacb78fb28a1040eba19287b67a43e21251ecf7cbff"
+    },
+    "change": {
+      "graph": {
+        "scope": {
+          "tenant_id": "planning-combined",
+          "project_id": "6c7abd06e6c946528e5eda6c44601726"
+        },
+        "graph_id": "domain"
+      },
+      "change_id": "pending-correction",
+      "position": 3,
+      "sha256": "6dffd5880bfd06e0b0a908a074ed2fbd04d234113c6d3adaf985760a8a1f0acb"
+    }
+  },
+  "oracles": [
+    "Actual v2 source/prompt/applicability/trace/diagnostic/answer publication",
+    "Scoped independent Planning/Data/Research/Knowledge credentials; no peer SQL or private imports",
+    "Question precedes dependent need and answer; scientific authority stays proposal-only",
+    "Processing withdrawal blocks unprepared effects; regrant enables original preparation",
+    "Lost Knowledge response after committed acceptance stays uncertain; denied status never resubmits",
+    "Replacement exact status/accepted readback acknowledges original bytes without source processing",
+    "Terminal denied-credential replay makes zero owner calls and zero processing reads",
+    "Wrong scope, altered snapshot, missing accepted record and altered proposal bytes fail",
+    "Knowledge rejects new consumption under process withdrawal; stale genesis conflicts without rebasing",
+    "Typed retraction remains pending while public Data endpoint is unavailable; exact intent recovers after replacement",
+    "Two accepted typed corrections rebuild from Knowledge log with all source uses revoked",
+    "Contradictory hypothesis records and original snapshot persist through correction/rebuild",
+    "Original campaign/task bytes stay pinned; separately registered future task selects corrected head without model call"
+  ],
+  "checks": [
+    "Ruff passed",
+    "Production dependency boundaries passed"
+  ],
+  "limits": [
+    "Synthetic provider output and scientific sources; no scientific validity or live model claim",
+    "Actual owner HTTP and scoped credentials; Knowledge replacement, synthetic lost reply after real commit",
+    "Historical rebuild/replay under revoked processing; no new model invocation, source grant or campaign repin",
+    "No cross-owner SQL, migrators, fixture reset or abrupt-process-death claim",
+    "Pending fixture configures an unavailable loopback Data endpoint; no actual Data process-death claim",
+    "Failed r1/r2 fixture attempts retained; only r3 is passed acceptance evidence",
+    "Existing verified independent Planning0.30 wheels reused; no implementation source changed"
+  ]
+}

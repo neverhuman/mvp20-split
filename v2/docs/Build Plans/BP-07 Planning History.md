@@ -417,3 +417,12 @@ Archived MBT checkpoint:
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
 | 2026-10-04 02:17:10 | B1complete; child25%,parent5%; B2.01 active; gates1/4 and1/20 | [Installed journal](../Audits/Evidence/BP-07-Planning/Installed_Journal.json);86 installed,4 processes,2 installs |
+
+
+## Combined owner acceptance 2026-10-04 15:50:14
+
+B2.03c verified 2026-10-04 15:50:14:Planning0.30 with actual Data0.29/Research0.34/Knowledge0.18;9 Planning workers and6 owner processes. Published inputs/interpretations/diagnostics/answers, ordered declarations, processing denial/regrant, lost-response exact acceptance recovery, scope/hash/missing/altered-byte negatives, stale-head conflict and pending-intent recovery pass. Two typed corrections rebuild with all source uses revoked; contradictory hypothesis history remains; a separate future task selects the corrected head while the original stays pinned. No source-package/public-schema/migration change or live scientific claim. B2/B2.03=100%;child50.00%,Build66.67%,parent30.00%;closed2/4 and6/20. Current B3.01. [Evidence](../Audits/Evidence/BP-07-Extraction/Combined_Owner_Acceptance.json).
+
+Archived MBT checkpoint:
+
+| 2026-10-04 02:25:10 | B2.01a complete; child29.17%,parent5.83%; B2.01b active; MBT mirror corrected | [Budget policy](../Audits/Evidence/BP-07-Planning/Budget_Policy.json);40 source/dev,108 installed |

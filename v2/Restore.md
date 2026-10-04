@@ -2,13 +2,13 @@
 
 ## Resume here
 
-- Refreshed 2026-10-04 15:29:00 (America/Chicago). **Read this first after every compression**, explicitly requested by the owner.
+- Refreshed 2026-10-04 15:50:14 (America/Chicago). **Read this first after every compression**, explicitly requested by the owner.
 - Continue across milestones, commits/pushes and compaction until genuinely blocked. No subagents, JARVIS access or v1 edits. No milestone-only final pause.
-- **Current BP-07.02/B2.03c: combined actual-owner acceptance and typed-correction replay.** b.iii.c coordinator is verified, ready for final diff/commit/push. Latest pushed is still **c54950e6** Planning0.29 storage; record the0.30 hash after pushing.
-- **No tests/hosts running.** Session44759 passed844 tests488.320s/39 process stages/two installs. Session50595 passed6 Planning workers/2 actual Research hosts; cleanup completed.
+- **Current BP-07.02/B3.01: source-stated/inferred/failed/repaired trace oracles.** B2.03c combined acceptance passed; checkpoint pending commit/push. Latest pushed **77d3a2a4** Planning0.30. Prior storage c54950e6.
+- **No tests/hosts running.** Session51361 passed combined r3,9 Planning workers/6 owners; cleanup completed. Manifest `v2/.test-results/planning-combined-owners-r3-20261004/manifest.json`. R1/r2 failed fixture setup cases retained; no reset.
 - Planning/dev0.30/publicPlanning0.7; planning0011 unchanged. Never run Planning<=0.28 migrators. Research0013/Data artifact0012 unchanged; no Research<=0.33 or Data<=0.25 migrators. No reset/downgrade/deletion of retained fixtures.
-- Canonical child47.22%,Build62.96%,Acceptance0%,1/4 closed. B1=100%,B2=88.89%,B3/V1=0%; B2 .01/.02=100%,.03=66.67% (a/b100%,c0%; b i/ii/iii100%). Parent29.44%,5/20; P1=100%,P2=47.22%,others0%.
-- Child/parent/MBT/history/design/module READMEs updated; MBT25 rows. Evidence Owner_Handoff_Coordinator.json. Final whitespace/diff consistency and commit/push remain before dependent implementation.
+- Canonical child50.00%,Build66.67%,Acceptance0%,2/4 closed. B1/B2=100%,B3/V1=0%; B2 all milestones/substeps100%. Parent30.00%,6/20; P1=100%,P2=50.00%,others0%.
+- Child/parent/MBT/history/design/module READMEs updated; MBT25 rows. Evidence Combined_Owner_Acceptance.json. Ruff/boundaries passed; final whitespace/tracker review then commit/push before B3.01.
 
 ## Verified Planning0.30 coordinator
 
@@ -25,18 +25,17 @@
 
 ## Next authorized work
 
-1. Final diff/consistency, commit/push0.30, update pushed hash here, then immediately outerB2.03c. No owner decision currently blocks deterministic work.
-2. Read c acceptance/replay boundaries in BP-07.02 Owner handoff and accepted replay.md. Use actual published sources/interpretations/diagnostics with independent credentials; exercise question/need declaration, answer publication, graph submit and exact accepted readback.
-3. Negative controls: scope, altered bytes, missing records, revoked processing rights, changed head, uncertain replies. Never silently rebase the original campaign. New campaigns may explicitly select a later corrected head.
-4. Apply accepted typed corrections through Knowledge-owned log/rebuild APIs. No model rerun, prose reinterpretation, new source payload rights or active repinning during historical rebuild. Preserve partial/contradictory/unknown science as useful attributed results.
-5. Knowledge public APIs already include POST /v1/graph-rebuilds and /v1/graph-rebuilds/read (GraphRebuildRequest/Status), grants rebuild_graph/read_graph; Knowledge transport/rebuild READMEs explain semantics. Planning transport deliberately owns submission/readback, not administrative rebuild authority. Harness may use exact public owner APIs.
-6. Relevant fixtures: dev/planning_publication_fixture.py (actualData), planning_knowledge_fixture.py (ReadOwnerHost/seed), planning_knowledge_seed.py; old verify_planning_result_data pins0.27, verify_planning_knowledge/research pin0.20, verify_knowledge_processing.py pinsResearch0.33 and migrates. Update before reuse, never run incompatible old migrators. Existing actualKnowledge0.18 processing proof used realData but oldResearch; currentResearch0.34 is available.
-7. After B2 closes, B3 failure/corpus verification precedes V1 acceptance. Live provider/model/egress/spend choices block only actual calls, not synthetic software work. No subagents or externalJARVIS access.
+1. Commit/push the verified combined acceptance checkpoint, then B3.01 trace oracles. No owner decision blocks deterministic work.
+2. Physical design: B3 equal .01 source-stated/inferred/failed/repaired trace oracles; .02 synthetic semantic-category corpus; .03 peer/head/retry/process failures. V1 equal independent acceptance and scoped audit/archive. Preserve order.
+3. B3.01 inspection started read-only: tests/extraction/test_trace.py already has pure source/inferred/missing-context/failed-and-repaired invariants. Map EXT-TRACE-01/02/03 and QEV-08 to concrete reviewed oracles, use actual owned persistence/replacement where required, close remaining gaps without redundant tests.
+4. Corpus has eighteen pinned manually authored source/oracle pairs under tests/extraction/corpus, calibration/held_out across nine categories. Existing test_corpus.py checks hashes/split/completeness only, not semantic evaluation. Meaning oracles are prose, reviewed by coding agent, not human/domain gold. Do not modify pinned corpus or invent live model results.
+5. Combined gate uses real Data0.29/Research0.34/Knowledge0.18, independent scoped credentials and both verified Planning0.30 installs. Nine workers/six owners pass. Only tests/dev files changed; no source-package version/migration changes. Two accepted corrections rebuild after full source rights withdrawal; original campaign stable, explicit future pin. Pending case configures unavailable loopback Data endpoint; no actual Data death claim.
+6. Live provider/model/egress/spend choices block only actual calls. Continue through authorized deterministic work and keep this handoff current.
 
 ## Canonical navigation and prior evidence
 
 - Child docs/Build Plans/BP-07/BP-07.02 Reliable text decomposition.md; parent docs/Build Plans/BP-07 Autonomous LLM Campaign Supervision.md; history docs/Build Plans/BP-07 Planning History.md; MBT docs/Build Plans/Master Build Tracker.md.
-- Owner submission.md is now scoped construction100%; outerB2.03c remains0%. Do not confuse its completed c unit with the outer acceptance c.
+- Owner submission.md is now scoped construction100%; outerB2.03c is now100%. Do not confuse its completed c unit with the outer acceptance c.
 - Replace only current header/basis before child B1.01 verified and MBT Recent Checkpoints; keep historical percentages. MBT25 newest descending checkpoints, archive older rows in history. Percent replacements must be simultaneous: build62.96% and olderB2.03 percentages can overlap.
 - Prior storage evidence Owner_Handoff_Storage.json:Planning0.29/planning0011,95 focused237.69s,808 installed405.569s39 stages. New state/preparation/event/origin code100%; transport cleanup gaps. Shared publication/origin.py preserves ResultHistory errors/bytes. Need preparation/dispatch requires exact acknowledged original local question. Histories immutable; separate DB-clock controls; no peer I/O in SQL.
 - Prior values e8a2434c and producer995db699 remain historical. Only planning-result-actual-data-final-20261004 passed; failed first fixture remains retained. Existing scientific/source fixtures are synthetic; no scientific-validity claim.

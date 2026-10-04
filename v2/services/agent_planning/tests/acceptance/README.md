@@ -1,0 +1,11 @@
+# Planning process acceptance
+
+These probes run under isolated installed Planning interpreters. They own Planning SQL only; cross-service effects use public HTTP or explicitly labeled scripted ports. The owning implementation contract is [Planning](../../README.md). Test construction and execution do not grant service, scientific or deployment authority.
+
+`combined_owner_probe.py`, orchestrated by `dev/verify_planning_owners.py`, is the BP-07.02/B2.03c combined-owner gate. `dev/planning_owner_fixture.py` publishes actual synthetic source/prompt/applicability bytes and acquisition provenance; it does not seed peer tables. Separate scoped credentials configure Planning publication, Research declarations, Knowledge proposals, Knowledge peer reads and administrative rebuilds. Planning never receives rebuild authority.
+
+The probe persists deterministic provider observations, publishes interpretations and diagnostics, then exercises question-before-need declaration, candidate-answer publication and graph submission. The harness checks processing revocation, exact accepted readback after a synthetic lost reply, replacement, negative public reads and immutable old campaign selection after accepted typed corrections. Contradictory hypotheses remain attributed records. A method schema identity is not an executable or scientifically validated assay.
+
+Combined acceptance passed 2026-10-04 15:50:14: nine Planning workers and six owner processes; [evidence](../../../../docs/Audits/Evidence/BP-07-Extraction/Combined_Owner_Acceptance.json). Existing `handoff_research_probe.py` proves actual Research registration and replacement with scripted Data/source review. Existing `result_data_probe.py` proves actual Data publication and repair with a scripted graph profile. Those proofs do not substitute for the combined gate. Storage/replacement probes using scripted peer records establish local persistence only.
+
+Retain failed fixture directories for diagnosis. Never run old package migrators against later retained schemas, rewrite immutable fixtures, or report normal process replacement as abrupt-crash proof. Live model/corpus quality remains a separate evaluation gate.
