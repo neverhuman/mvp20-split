@@ -1,5 +1,14 @@
 # BP-06 Planning History
 
+## BP-06.05/B3.02a process interruption complete - 2026-10-03 19:31:45
+
+Eight source tests passed82.59s; eight independent installed tests passed84.89s against actual retained PostgreSQL/Qdrant. Forced death covers intent, projection, verification, publication, query intent/observation/precommit/postcommit. Recovery proves fresh fenced namespaces, explicit replacement after verified lease expiry, and exact committed replay. No production/package/schema change. Ruff and dependency boundaries pass. B3.02a100%,b0%;B3.0250%,B350%;Build83.33%,child62.50%,parent77.08%;closed gates remain2/4 and18/24. Live authority barriers are next. Process death does not prove target-host power-loss durability.
+
+Rotated MBT checkpoints:
+
+| 2026-10-03 12:31:31 | BP-06.04 closed100%; parent66.67%,16/24; BP-06.05 activation next | [Closeout audit](../Audits/BP-06.04_Laboratory_Eligibility_Closeout.md);fresh build919 tests,2 cutovers,9 publisher +6 intake/interpretation barriers |
+
+
 ## BP-06.05/B2.02c installed actual generation reconstruction complete - 2026-10-03 17:51:31
 
 Source harness1 pass18.71s and installed harness1 pass15.60s; both invoke fresh isolated Data0.24.0 processes with private peers absent.18 dev pass13.37s;lint/boundaries/430 schemas pass. Actual source-bound ABBA vector is materialized into pinned Qdrant, independently compared, retained as verified and published via actual PG expected-head selection. Fresh Data processes and actual retained-volume Qdrant restart preserve original status/namespace/projection/scores8. A second separately owned backend lacks the original namespace; fresh generation reuses the same exact manifest/profile/vector Artifacts, verifies the same projection fingerprint, and advances the expected old head. Original history remains byte-identical and explicitly pinned old namespace remains404 on the replacement, never retargeted. Both backend volumes remain retained. No production code/package/migration change. These are installed owner-module and actual-backend proofs; generation HTTP remains B2.04, abrupt process death B3. B2.02a-c100%,B2=50%,Build50%,child37.50%,parent72.92%;gates1/4 and17/24. B2.03 decomposed a contracts/policy,b durable broker/records,c installed actual-query proof; all0%,a active, unchanged weight.
