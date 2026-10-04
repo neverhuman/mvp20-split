@@ -1,0 +1,210 @@
+{
+  "timestamp_local": "2026-10-03 19:15:58",
+  "task": "BP-06.05/B3.01",
+  "status": "verified",
+  "source": {
+    "passed": 59,
+    "seconds": 61.8
+  },
+  "installed": {
+    "passed": 59,
+    "seconds": 63.71
+  },
+  "installed_evidence_capture": {
+    "passed": 3,
+    "seconds": 9.59
+  },
+  "production_changes": false,
+  "packages": "Data0.28.0/public0.3.0/438schemas/artifact0012 unchanged",
+  "cases": {
+    "competing_publishers": {
+      "timestamp_local": "2026-10-03 19:12:21",
+      "scope": {
+        "tenant_id": "upload-tests",
+        "project_id": "16e137964a624b0b8547dcb8eff3212d"
+      },
+      "source": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "16e137964a624b0b8547dcb8eff3212d"
+        },
+        "source_id": "source",
+        "revision_id": "r1",
+        "raw": {
+          "artifact_id": "75fad6cf42a6481cacd4697e1e3aefbf",
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "16e137964a624b0b8547dcb8eff3212d"
+          },
+          "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+          "media_type": "application/octet-stream",
+          "schema_ref": {
+            "schema_id": "fixture.bytes",
+            "version": "1",
+            "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+          },
+          "size_bytes": 4
+        }
+      },
+      "details": {
+        "winner": {
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "16e137964a624b0b8547dcb8eff3212d"
+          },
+          "corpus_id": "corpus",
+          "generation_id": "left",
+          "sha256": "af7e6609ec6abd142f5f701f398b3d84526740cf7cd3cb1256eebe1a9fce198f"
+        },
+        "loser": {
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "16e137964a624b0b8547dcb8eff3212d"
+          },
+          "corpus_id": "corpus",
+          "generation_id": "right",
+          "sha256": "2c0ab210b0835b335e5bf8f8b7caec64de0010e42b5872d524030e2ed1776ded"
+        },
+        "verified_count": 2,
+        "published_count": 1
+      }
+    },
+    "corruption": {
+      "timestamp_local": "2026-10-03 19:12:20",
+      "scope": {
+        "tenant_id": "upload-tests",
+        "project_id": "7d6495c5f9644db390b0f4721fc3d25b"
+      },
+      "source": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "7d6495c5f9644db390b0f4721fc3d25b"
+        },
+        "source_id": "source",
+        "revision_id": "r1",
+        "raw": {
+          "artifact_id": "016499ba07a8447296fe4eddd61e9d8d",
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "7d6495c5f9644db390b0f4721fc3d25b"
+          },
+          "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+          "media_type": "application/octet-stream",
+          "schema_ref": {
+            "schema_id": "fixture.bytes",
+            "version": "1",
+            "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+          },
+          "size_bytes": 4
+        }
+      },
+      "details": {
+        "original": {
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "7d6495c5f9644db390b0f4721fc3d25b"
+          },
+          "corpus_id": "actual",
+          "generation_id": "g1",
+          "sha256": "e52feb1f9629db4da2d65a7ea49ec33bd7802201f946d57190f7c8a03ce0576c"
+        },
+        "repaired": {
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "7d6495c5f9644db390b0f4721fc3d25b"
+          },
+          "corpus_id": "actual",
+          "generation_id": "g2",
+          "sha256": "7925fe7ca8d07e9b7f7919a374fe291c48c43076b70c260374e9cec07cea6d2a"
+        },
+        "original_namespace": "amphora_0f278ff29585759a83f80d77d7342be537f94dae412d567f57a162dc21e0193a",
+        "original_pin_still_fails": true,
+        "repaired_score": 8.0,
+        "original_history_unchanged": true
+      }
+    },
+    "expiry": {
+      "timestamp_local": "2026-10-03 19:12:18",
+      "scope": {
+        "tenant_id": "upload-tests",
+        "project_id": "eefea60a208249a092d992cbf76ad4ac"
+      },
+      "source": {
+        "scope": {
+          "tenant_id": "upload-tests",
+          "project_id": "eefea60a208249a092d992cbf76ad4ac"
+        },
+        "source_id": "source",
+        "revision_id": "r1",
+        "raw": {
+          "artifact_id": "ed9e2050fdcb4204a1c45fe767705f26",
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "eefea60a208249a092d992cbf76ad4ac"
+          },
+          "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+          "media_type": "application/octet-stream",
+          "schema_ref": {
+            "schema_id": "fixture.bytes",
+            "version": "1",
+            "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+          },
+          "size_bytes": 4
+        }
+      },
+      "details": {
+        "generation": {
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "eefea60a208249a092d992cbf76ad4ac"
+          },
+          "corpus_id": "actual",
+          "generation_id": "g1",
+          "sha256": "247b157046e685dff07e59b701bfffd471f3fb1062a9cd87b124d265b9262735"
+        },
+        "expired_policy": {
+          "wire_version": "1",
+          "reference": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "eefea60a208249a092d992cbf76ad4ac"
+            },
+            "rights_id": "fixture",
+            "revision": 2
+          },
+          "supersedes": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "eefea60a208249a092d992cbf76ad4ac"
+            },
+            "rights_id": "fixture",
+            "revision": 1
+          },
+          "status": "granted",
+          "allowed_uses": [
+            "read",
+            "process"
+          ],
+          "expires_at": "2026-10-04T00:12:18.099867Z",
+          "retention": "retain_audit_payload"
+        },
+        "observed_score": 8.0,
+        "first_result_count": 0,
+        "retry_matches": [],
+        "head_revision_unchanged": true
+      }
+    }
+  },
+  "inherited_oracles": [
+    "representation binding convergence and independent rights",
+    "Qdrant adapter shape/capacity/exact-score oracles",
+    "generation verification/publication/current-rights fences",
+    "query broker rights/epoch/convergence and immutable replay",
+    "profile migration and pin compatibility"
+  ],
+  "limits": [
+    "In-process threads with actual database/backend, not forced process death",
+    "No target-host power-loss or scientific validity claim"
+  ],
+  "coverage": "No production change; inherited scoped coverage remains in owning B1/B2 evidence."
+}

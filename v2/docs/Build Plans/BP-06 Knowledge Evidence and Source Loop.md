@@ -2,17 +2,17 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-06.01 through BP-06.04 closed; BP-06.05/Build/B3.01 active.
-- Last refreshed: `2026-10-03 19:04:12` (America/Chicago).
+- Status: primary_active; BP-06.01 through BP-06.04 closed; BP-06.05/Build/B3.02a active.
+- Last refreshed: `2026-10-03 19:15:58` (America/Chicago).
 - Owner/scope: Knowledge, Research and focused Data/Artifacts modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness](Planning_Readiness.md).
 - Prerequisites: completed BP-04 receipt/wait seams, BP-05 inspection and BP-01/02/03 boundaries.
-- Scoped implementation/verification completion: **75%** = 18/24; 18/24 closed delivery gates. P1-P4 are 100%; P5 is 50%; P6 is 0%.
-- Current task: BP-06.05/B3.01 concurrency/rights/profile adversaries; durable query broker verified against actual PostgreSQL and independently installed Data0.26.0.
+- Scoped implementation/verification completion: **76.39%** = (18+1/3)/24; 18/24 closed delivery gates. P1-P4 are 100%; P5 is 58.33%; P6 is 0%.
+- Current task: BP-06.05/B3.02a forced-death/replay barriers; durable query broker verified against actual PostgreSQL and independently installed Data0.26.0.
 - Demonstrated behavior: bounded reasoning, authenticated sufficiency, immutable future-only corrections, actual Runtime receipt/retention, exploratory partial output, acknowledgement-loss recovery and independent owner replacement. Both publication owners have actual process-death evidence.
 - Blockers: none requiring owner direction. Scientific sources, assay/route engines and target-host choices remain scoped future decisions.
 - Human acceptance: no routine pause for authorized engineering; experimental validity is not inferred from software verification.
-- Next gate: BP-06.05/B3.01 adversarial ownership/rights/profile cases and existing oracle reconciliation.
+- Next gate: BP-06.05/B3.02a eight actual HTTP process-death/replay points.
 
 ## Outcome and Boundaries
 
@@ -32,7 +32,7 @@ Primary services retain private state, dependencies, migrations and module READM
 | P2 / [BP-06.02 Typed graph authoring and replay](BP-06/Completed/BP-06.02%20Typed%20graph%20authoring%20and%20replay.md) | 100% | 100% | 100% | BP-06.01 acceptance |
 | P3 / [BP-06.03 Reasoning and domain receipts](BP-06/Completed/BP-06.03%20Reasoning%20and%20domain%20receipts.md) | 100% | 100% | 100% | BP-06.02 acceptance |
 | P4 / [BP-06.04 Laboratory returns and candidate eligibility](BP-06/Completed/BP-06.04%20Laboratory%20returns%20and%20candidate%20eligibility.md) | 100% | 100% | 100% | BP-06.03 acceptance |
-| P5 / [BP-06.05 Representation reuse and retrieval](BP-06/BP-06.05%20Representation%20reuse%20and%20retrieval.md) | 50% | 66.67% | 0% | BP-06.04 acceptance |
+| P5 / [BP-06.05 Representation reuse and retrieval](BP-06/BP-06.05%20Representation%20reuse%20and%20retrieval.md) | 58.33% | 77.78% | 0% | BP-06.04 acceptance |
 | P6 / [BP-06.06 Feedback integration and closeout](BP-06/BP-06.06%20Feedback%20integration%20and%20closeout.md) | 0% | 0% | 0% | BP-06.05 acceptance |
 
 Each linked child is the execution tracker for its scope. Build tasks name concrete implementation; acceptance requires independent evidence and a scoped drift audit. BP-06.05 owns fractional progress through its canonical milestone basis; parent weights remain24 delivery units. Closed-gate counts are separate from scoped completion. Do not repeat the historical task pairs as a second work list. No dependent child starts before its predecessor acceptance gate; independent design review does not activate implementation.

@@ -789,3 +789,9 @@ Archived MBT checkpoint: | 2026-10-03 12:11:37 | V1.01 complete; child83.33%, pa
 ## 2026-10-03 19:04:12 ? BP-06.05/B2.04c installed public HTTP proof
 
 Data0.28.0 actualCLIserver over3processes,source/upload/rights/encode/profile/index/query allpublicHTTP afterfixture setup; actualQdrant. Old/newprofilepins surviveheadadvance/serverreplacement. Missingnamespace503/newintentpending409; restoringbackendrecovers. Currentrevocation403; explicitrightsrestore returnsoriginalrecordsunchanged. Unknowncompleteness remainsusable. Source1 pass22.41s/installed1 pass17.95s. Initialfixture lackedownedstorage directory; startupcorrectlyrefused, fixturecorrected. No production/schema/migrationchange. B2complete100%,Build66.67%,child50%,parent75%,gates2/4 and18/24. NextB3.01adversarialcoverage; B3threeequalmilestones unchanged.
+
+Archived MBT checkpoint: | 2026-10-03 12:24:23 | V1.02 complete; child91.67%, parent65.28%; V1.03 active | [Replacement/recovery](../Audits/Evidence/BP-06-Research/Laboratory_Replacement_Recovery.json);2 fresh cutovers and9 publisher process barriers |
+
+## 2026-10-03 19:15:58 ? BP-06.05/B3.01 adversarial boundaries
+
+Actualexpirywithoutpolicyrevisiondiscardsobservedscore8;intentremains/noresult;subsequentemptyeligiblequerydoesnotcallbackend. Actualselectedvectorcorruptioncannotpublishresult;freshgenerationrepairswhileoldpinstillfails/historyunchanged. Twodistinctactualverifiedpublishersraceonehead;exactlyonepublishes. Existingbinding/profile/rights/correction/queryoraclesreconciled59source61.80s/59installed63.71s;final3installedcapture9.59s. No production/version/schema/migrationchange. B3.01=100%,B3.02/.03=0%;B3=33.33%,Build77.78%,child58.33%,parent76.39%,gates2/4and18/24. B3.02split(a8deathpoints,b livebarriers),each0%;aactive. Verificationindex replaces oversized tracker evidence prose; no historical evidence removed.
