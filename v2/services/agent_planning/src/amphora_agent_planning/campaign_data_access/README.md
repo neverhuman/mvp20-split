@@ -1,0 +1,13 @@
+# Campaign Artifact processing reads
+
+Owner: Planning; BP-07.03/B1.02c.i. This module selects immutable Artifact identities and captures exact bytes through the existing source_access DataReader/ArtifactReview boundary. It owns no Data state, source rights, retrieval ranking, provider call, database or durable context journal.
+
+`ArtifactSelection.bind(request, references)` binds the original campaign_proposal/supervision RequestSnapshot and at most128 unique exact Artifact references. All references share request scope; each is at most4MiB and the selection encoding at most256KiB. Caller DTO fields are revalidated before serialization, including rejecting Boolean numeric fields. Selection hash binds ordered exact references and original request hash. No authority follows from constructing a selection.
+
+`CampaignArtifactReader.read(selection, budget)` creates a fresh ArtifactReview for every operation. Each selected Artifact is read through exact metadata then `/processing-content`; identity, size, SHA256 and final deadline must match. The existing20s/512-call/32MiB ReadBudget may be narrowed. No ordinary-content fallback or cross-operation cache exists. Returned immutable bytes are an observation of a processing-authorized read, not a renewable source-rights lease. Any fresh preparation/publication/provider use must satisfy its separate current-rights and egress gates.
+
+Results preserve verified bodies plus exact reference-bound technical failures and call/byte deltas. A denied/missing/malformed Artifact does not erase other useful data. Global peer outage/deadline/call/byte exhaustion stops remaining calls with explicit unavailable results. Unknown programming errors propagate. Zero selections makes zero calls. No unrequested Artifact is discovered or automatically fetched.
+
+Mandatory objective/policy/prompt/model inclusion, source/conversion provenance, optional omissions, tokenizer budget and durable replay belong to B1.03 assembly; this reader does not claim to produce a complete model request or scientific interpretation. Data retrieval results and current processing permission remain distinct.
+
+Tests live under tests/campaign_data_access and source_access. They cover exact bytes/identity, partial failures, global limits, fresh revocation, forged DTOs, end-of-read deadline and actual loopback metadata/processing routes. Shared ArtifactReview now revalidates original Python values before JSON serialization, preserving valid predecessor bytes. Actual combined Data owner proof remains B1.02d; scripted HTTP is not a real source grant or scientific-validity claim.

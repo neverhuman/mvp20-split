@@ -543,3 +543,12 @@ B1.02b.ii verified 2026-10-04 18:12:22:Planning0.36 exact reviewed Runtime unive
 Archived MBT rows:
 
 | 2026-10-04 06:45:26 | BP-07.02/B2.01 complete; child33.33%,parent26.67%; B2.02 active | [Knowledge reads](../Audits/Evidence/BP-07-Extraction/Knowledge_Read_Binding.json);497 installed20 processes,8 actual Planning/2 Knowledge hosts |
+
+
+## Campaign Artifact reads 2026-10-04 18:17:02
+
+B1.02c.i verified 2026-10-04 18:17:02:Planning0.37 campaign-selected Artifact processing reads, exact bytes/identity, partial failures and fresh per-operation rights checks.78 focused/source regressions3.36s,109 statements12 branches100%;397 independently installed tests15.646s. Shared ArtifactReview rejects forged Boolean DTO sizes before normalization; valid wire bytes unchanged.508 schemas/planning0011 unchanged. c33.33%,B1.02=58.3333%,B1=39.5833%,child9.90%,Build13.19%,parent41.98%;closed0/4 and8/20. Current c.ii retrieval selections. [Evidence](../Audits/Evidence/BP-07-Campaigns/Campaign_Artifact_Reads.json).
+
+Archived MBT rows:
+
+| 2026-10-04 07:07:14 | BP-07.02/B2.02a.i verified; child34.72%,parent26.94%; a.ii active | [Research proposals](../Audits/Evidence/BP-07-Extraction/Research_Proposals.json);542 source,524 installed20 processes,504 predecessor schemas unchanged |

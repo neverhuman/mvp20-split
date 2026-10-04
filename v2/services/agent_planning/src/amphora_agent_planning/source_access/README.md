@@ -55,3 +55,5 @@ identity, byte-count and SHA guards. SourceReviewer and repair preparation reuse
 it with per-operation caches only. ReadBudget.remaining_total exposes the whole
 deadline so sequential Data, Knowledge and Research reads cannot each restart
 an elapsed-time allowance; remaining still caps socket inactivity at5s.
+
+BP-07.03/B1.02c.i: ArtifactReview now validates original Python DTO values before serialization, rejecting forged Boolean numeric fields without changing valid wire bytes. Campaign Artifact reads reuse this boundary with a fresh operation-local review; source/extraction regressions remain in the scoped gate.

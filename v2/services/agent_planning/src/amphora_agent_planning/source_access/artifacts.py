@@ -13,7 +13,7 @@ class ArtifactReview:
         self.identities, self.payloads = {}, {}
 
     def artifact(self, reference):
-        reference = ArtifactRef.model_validate_json(reference.model_dump_json(warnings=False))
+        reference = ArtifactRef.model_validate(reference.model_dump(mode="python", warnings=False))
         require(reference.scope == self.scope, "source_artifact_scope")
         existing = self.identities.get(reference.artifact_id)
         require(existing is None or existing == reference, "source_artifact_conflict")
@@ -22,7 +22,7 @@ class ArtifactReview:
             require(reference.size_bytes <= 4194304, "source_artifact_size")
             self.identities[reference.artifact_id] = reference
             actual = self.data.artifact(reference, self.budget)
-            actual = ArtifactRef.model_validate_json(actual.model_dump_json(warnings=False))
+            actual = ArtifactRef.model_validate(actual.model_dump(mode="python", warnings=False))
             require(actual == reference, "source_artifact_binding")
             content = self.data.content(reference, self.budget)
             require(type(content) is bytes and len(content) == reference.size_bytes and
