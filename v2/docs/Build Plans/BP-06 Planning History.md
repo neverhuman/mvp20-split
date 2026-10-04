@@ -1,5 +1,12 @@
 # BP-06 Planning History
 
+## BP-06.06 activation and scenario protocol - 2026-10-03 20:26:20
+
+Activation corrected_ready against actual owner APIs; no private joins or Runtime scientific-catalog expansion. B1 five/B2 four/B3 four/V1 two equal internal milestones preserve parent24-unit basis. B1.01 pure manifest and capability map implemented;30tests2.634s,123statements16branches100%;18dev15.87s. Bounded strict JSON, nested scope checks, exact source/graph pins, distinct specimens and immutable fingerprints; declared fixture only, no actual-owner claim. Repaired documented Data granular selectors; collection succeeds. Initial test-name length/coverage-path harness errors corrected and rerun. B1=20%,Build6.67%,child5%,parent84.17%;0/4 child/20/24 parent closed gates. B1.02a contracts/pure Knowledge projection active; b owner/API later, equal halves.
+
+| 2026-10-03 13:57:14 | BP-06.05/B1.03 complete; child12.50%, parent68.75%; B1.04 active | [Profile/cache storage](../Audits/Evidence/BP-06-Representations/Profile_Cache_Storage.json);113 source/391 installed;artifact_0008 |
+
+
 ## BP-06.05 accepted and archived - 2026-10-03 20:03:23
 
 V1b scope audit aligned; predecessor gap reconciliation verified, architecture/module status and scientific-quality wording corrected, canonical child archived with inbound/outbound links repaired. B1/B2/B3/V1100%;child4/4,parent20/24 (83.33%). BP-06.06 pre-activation coherence review is next; no scientific/provider/deployment claim inferred. Independent_Closeout.json and scoped audit preserve fresh build,649+4 installed cases and coverage gaps.

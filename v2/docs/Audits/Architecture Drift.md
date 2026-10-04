@@ -1,9 +1,9 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-03 20:03:23` (America/Chicago).
+- Last refreshed: `2026-10-03 20:26:20` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.06 pre-activation coherence review; BP-06.05 closed100%, parent83.33%,20/24 closed gates.
+- Active focus: BP-06.06/B1.02a bounded Knowledge projections; child5%, parent84.17%,20/24 closed gates.
 - Next gate: reconcile feedback integration and Studio public owner projections; scientific-quality UI remains SQ-01.
 
 ## Active Findings

@@ -2,15 +2,12 @@
 
 ## Current checkpoint
 
-- Last refreshed: 2026-10-03 20:07:00 (America/Chicago).
-- BP-06.05 accepted/archived100% (4/4); parent83.33% (20/24). BP-06.01-.05 remain closed. Current task: BP-06.06 pre-activation coherence audit, implementation0%; next bounded B1 after audit/decomposition.
-- Closeout verified pending commit/push; last pushed528f406. Continue through milestones, commits and compaction until genuinely blocked. No owner decision required. No tests/processes running.
-- Canonical: docs/Build Plans/Master Build Tracker.md; BP-06 parent; BP-06/BP-06.06 Feedback integration and closeout.md; closed BP-06.05 under BP-06/Completed; docs/Audits/BP-06.05_Representation_Retrieval_Closeout.md.
-- Fresh independent Data0.28 closure:11 wheels with locked external constraints, private Research/Knowledge/Runtime implementations absent. Full installed Data+representation contracts649pass507.73s, zero skips. Four additional binding acceptance cases source4pass4.42s/installed4pass8.14s. Independent_Closeout.json preserves wheel hashes/gaps.
-- Final owner coverage4628/4782 statements852/950 branches; representations1259/1260,129/130 (only impossible-stage guard); retrieval1248/1260,145/152. No production/version change during B3/V1.
-- V1 closed three named predecessor gaps outside retrieval B3: publication during claim reads, lost begin/final rejection, writer constructor failure. Four actual-PG tests in representations/test_binding_acceptance_gaps.py; thread/in-process evidence, not whole-process binding-death proof.
-- B3 retrieval158 installed303.24s; eight forced HTTP death points8source/8installed; five live authority cases5source/5installed. QD-01 bounded recovery aligned in drift history: actual concurrent backend create may fail; injected409/500 after actual writes prove no false authority, fresh fenced recovery and retained orphan. No server-defect fix claim.
-- Lint/boundaries/438schemas/dev18tests14.00s and19 touched Markdown link checks passed. Archival repaired inbound/outbound links. No v1/JARVIS writes/access. Known Starlette/httpx deprecation remains dev maintenance debt.
+- Last refreshed: 2026-10-03 20:26:20 (America/Chicago).
+- BP-06.05 closed/pushed1758c99; BP-06.06 active B1.02a bounded Knowledge projection contracts/policy. B1.01 complete; B1=20%,Build6.67%,child5%,parent84.17%=(20+1/5)/24. Closed gates0/4 child,20/24 parent. Continue without routine pauses.
+- Current uncommitted checkpoint: activation audit/physical design, pure scenario protocol and Data CLI selector repair.30tests2.634s,123statements16branches100%,18dev15.87s;lint/import boundary/selector collection pass. Evidence docs/Audits/Evidence/BP-06-Feedback/Scenario_Manifest.json. No tests running. Commit/push then continue B1.02a.
+- Protocol source tests/integration/knowledge_feedback/protocol (wire DTOs plus immutable ScenarioManifest/ScopeBoundary/SpecimenSet); tests at owning root, registered knowledge-feedback-integration. Pure declared fixtures only, no actual owner evidence or production schema change. Initial huge pytest parameter ids and file coverage targets corrected; rerun passed.
+- B1.02 two equal substeps: a additive query/projection contracts and pure bounded Knowledge policy; b actual owner/API proof. Both0%,a active. Read activation/physical design before code. Need public contract version evolution preserving predecessor schemas; focused service projection domain objects and module README. Source bounds search50/entities64/assertions128/1MiB, exact immutable revision/query scope, radius0..2, no browser universe download. Actual full snapshot content can4096entities/8192assertions.
+- Independent prior Data0.28 closure11wheels,649installed+4binding tests. No private peers. Whole coverage4628/4782statements852/950branches; representations1259/1260,129/130;retrieval1248/1260,145/152. Prior audit/evidence archived; do not reopen.
 
 ## Next activation scope
 

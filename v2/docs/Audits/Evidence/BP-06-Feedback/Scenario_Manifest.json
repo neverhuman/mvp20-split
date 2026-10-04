@@ -1,0 +1,42 @@
+{
+  "timestamp_local": "2026-10-03 20:26:20",
+  "task": "BP-06.06/B1.01",
+  "status": "verified",
+  "tests": {
+    "passed": 30,
+    "seconds": 2.634,
+    "skipped": 0
+  },
+  "dev": {
+    "passed": 18,
+    "seconds": 15.87
+  },
+  "coverage": {
+    "covered_lines": 123,
+    "num_statements": 123,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100",
+    "num_branches": 16,
+    "num_partial_branches": 0,
+    "covered_branches": 16,
+    "missing_branches": 0,
+    "percent_branches_covered": 100.0,
+    "percent_branches_covered_display": "100"
+  },
+  "boundary": "Pure credential-free verification manifest, not owner existence/acceptance or scientific authority",
+  "checks": [
+    "lint",
+    "public-contract-only protocol import inspection",
+    "one-owner test registry",
+    "Data representations/retrieval CLI collection"
+  ],
+  "corrections": [
+    "Initial malformed-input parameter names exceeded filesystem/report bounds; fixed explicit short ids",
+    "Initial coverage targets were files rather than source directory; protocol isolated and coverage rerun"
+  ],
+  "production_schema_changes": false
+}

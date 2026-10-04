@@ -178,5 +178,11 @@
     "coverage_sources": [
       "contracts/representations/src/amphora_contracts_representations"
     ]
+  },
+  "knowledge-feedback-integration": {
+    "tests": "tests/integration/knowledge_feedback",
+    "coverage_sources": [
+      "tests/integration/knowledge_feedback/protocol"
+    ]
   }
 }
