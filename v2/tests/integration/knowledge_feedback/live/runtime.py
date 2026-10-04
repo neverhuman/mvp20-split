@@ -15,7 +15,8 @@ class CampaignScenario:
         self.environment = dict(environment, ISSUER_TOKEN=secrets.token_hex(24), OUTCOME_TOKEN=secrets.token_hex(24),
             RETENTION_TOKEN=secrets.token_hex(24), CURSOR_KEY=secrets.token_hex(32))
         with socket.socket() as listener:
-            listener.bind(('127.0.0.1', 0)); self.port = listener.getsockname()[1]
+            listener.bind(('127.0.0.1', 0))
+            self.port = listener.getsockname()[1]
         self.endpoint = f'http://127.0.0.1:{self.port}'
         self.owner, self.run_id = None, None
         self.path = directory / 'campaign_runtime.json'

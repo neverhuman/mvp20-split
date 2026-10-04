@@ -1,8 +1,8 @@
 # Research Lifecycle
 
 - Document role: intended domain architecture; not an implemented code-module contract
-- Design status: proposed architecture; implementation not claimed
-- Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
+- Design status: target architecture; immutable scientific records, questions/needs, synthetic lab returns, scoped assessments and scientific read projections implemented; physical laboratory integration and validated science remain successor scope
+- Last reviewed: `2026-10-04 01:40:15` (America/Chicago)
 - Parent: [Master Architecture](../../../Architecture.md)
 
 ## Scope and Ownership

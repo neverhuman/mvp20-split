@@ -7,10 +7,12 @@ from pathlib import Path
 
 from amphora_contracts_knowledge import reasoning_artifact_schema, reasoning_artifact_schema_document
 
-from .process import Owner, owned_setup
-from .specimens import install as install_specimens, read_views
 from .feedback import data_profiles, research_profiles
-from .reuse import data_profile as reuse_data_profile, profiles as reuse_profiles
+from .process import Owner, owned_setup
+from .reuse import data_profile as reuse_data_profile
+from .reuse import profiles as reuse_profiles
+from .specimens import install as install_specimens
+from .specimens import read_views
 
 
 def canonical(value):
@@ -106,11 +108,14 @@ class SourceGraphScenario:
                 if set(value) == {'tenant_id', 'project_id'}:
                     value.update(scope)
                 elif 'artifact_id' in value:
-                    value.clear(); value.update(copy.deepcopy(artifact))
+                    value.clear()
+                    value.update(copy.deepcopy(artifact))
                 elif 'trace_id' in value:
-                    value.clear(); value.update(copy.deepcopy(trace))
+                    value.clear()
+                    value.update(copy.deepcopy(trace))
                 elif value.get('unit') == 'byte':
-                    value.clear(); value.update(copy.deepcopy(span))
+                    value.clear()
+                    value.update(copy.deepcopy(span))
                 for child in value.values():
                     patch(child)
             elif isinstance(value, list):
@@ -144,7 +149,7 @@ finally: engine.dispose()
         self.environments['research']['DATA_TOKEN'] = self.environments['data_artifacts']['OWNER_TOKEN']
         research = self.start('research', {'database_url_env': 'OWNER_DATABASE', 'principals': [
             {'token_env': 'OWNER_TOKEN', 'actor_id': 'reader', 'scope': scope, 'actions': ['read_declarations', 'assess_eligibility', 'read_scientific_assessment', 'read_scientific_record', 'assess', 'read_assessment', 'publish_assessment', 'read_assessment_publication', 'correct_assessment_receipt', 'select_assessment_receipt']},
-            {'token_env': 'BROWSER_TOKEN', 'actor_id': 'browser', 'scope': scope, 'actions': ['read_scientific_record']}],
+            {'token_env': 'BROWSER_TOKEN', 'actor_id': 'reader', 'scope': scope, 'actions': ['read_scientific_record', 'read_declarations', 'read_assessment', 'read_assessment_publication', 'select_assessment_receipt']}],
             'assessment': {'profiles': profiles, 'data': {'endpoint': data.endpoint, 'token_env': 'DATA_TOKEN'},
                 'publication': {'actor_id': 'fixture', 'issuer_id': 'research-synthetic', 'token_env': 'DATA_TOKEN'}},
             'science': {'lab_profiles': [], 'eligibility_profiles': eligibility_profiles, 'synthesis_profiles': [],

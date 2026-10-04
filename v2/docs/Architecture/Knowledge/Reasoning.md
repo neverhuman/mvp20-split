@@ -1,8 +1,8 @@
 # Reasoning and Evidence Authority
 
-- Design status: BP-06.03/B1 complete: configured finite reasoning, exact owner-state binding, durable result history, artifact publication, synthetic Research assessment/domain receipts and optional authenticated HTTP are verified. Owner selected future-campaign-only corrections; B2 implements owner chains/selection while preserving active pins; B3 Runtime receipt integration and scientific validation remain unproven.
+- Design status: BP-06.03 bounded finite reasoning, durable publication, authenticated synthetic assessments, future-only correction chains and actual Runtime receipt integration accepted. Active pins and committed history remain immutable; scientific validation and general rule/calibration capabilities remain unproven
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
-- Last reviewed: `2026-10-02 09:39:22` (America/Chicago)
+- Last reviewed: `2026-10-04 01:40:15` (America/Chicago)
 - Parent: [Domain overview](Knowledge_Architecture.md)
 - Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#neuro-symbolic-reasoning-and-evolutionary-search)
 

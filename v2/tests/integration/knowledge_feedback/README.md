@@ -1,6 +1,6 @@
 # Knowledge feedback verification boundary
 
-Owner: BP-06.06/B1.01. This is verification tooling, not a deployed service, scientific evaluator or joined owner database. [Physical design](../../../docs/Build%20Plans/BP-06/BP-06.06%20Physical%20design.md) owns the staged integration scope.
+Owner: BP-06.06 integration verification. This is verification tooling, not a deployed service, scientific evaluator or joined owner database. [Physical design](../../../docs/Build%20Plans/BP-06/BP-06.06%20Physical%20design.md) owns the staged integration scope.
 
 Implemented: a credential-free, versioned declared-fixture manifest with exact question/need/method, source byte span/trace, graph/assertion, specimen/material/experiment/observation, profile/generation, campaign cut/receipt and named-view pins. The [actual baseline](live/README.md) separately proves public acquisition, graph acceptance/publication, scientific views, Qdrant generation, Runtime receipt consumption/replacement and compiled Studio readback. Parsing a manifest alone does not establish that a record exists, a receipt is accepted, a view is available or science is correct.
 
@@ -10,14 +10,14 @@ Input is at most256KiB strict UTF-8 JSON; duplicate keys/nonfinite values, unkno
 
 Run `dev/.venv/Scripts/python.exe dev/run_tests.py --module knowledge-feedback-integration --coverage` from v2. Tests own valid/invalid pin models, nested foreign scopes, ambiguous attribution, immutable iteration snapshots and bounded/strict JSON. Coverage measures only `protocol/`; test fixtures are excluded from its denominator. Short explicit malformed-input case names prevent filesystem/report overflow. Actual multi-owner/process/browser evidence must be reported separately; these pure tests cannot substitute for it.
 
-## Public capability map at activation
+## Verified public capability map
 
-| Owner | Existing usable public boundary | Required next addition |
+| Owner | Verified public boundary | Boundary retained |
 |---|---|---|
-| Knowledge | Exact graph/profile/head/snapshot/change/rebuild; reasoning/publication and bounded exploration reads | Correction/browser/rebuild integration remains B2/B3 |
-| Research | Exact scientific records, corrections, interpretation and bounded specimen/property/series views | Iteration and distinct-specimen integration remains B2/B3 |
-| Data | Source/trace/Artifact reads plus real profile/binding/generation/query APIs | Independent reconstruction and browser provenance remains B3 |
-| Runtime | Actual pinned wait/receipt consumption, retention and replacement replay | Corrected iteration integration remains B2/B3 |
-| Studio | Separate scientific-owner/provenance adapters verified against actual owners | Explore page models and visible views remain B2 |
+| Knowledge | Pinned projections, accepted correction race, explicit snapshots and rebuild/replacement | Structural acceptance, not scientific truth |
+| Research | Exact records, unmet/sufficient fixture assessments, correction lineage, distinct preparation/eligibility | Purpose/context-specific synthetic authority |
+| Data | Verified spans/derivations, reusable profiles, independent Qdrant generation and pending query recovery | Current rights and explicit generation selection |
+| Runtime | Old/new pinned waits, retention, replay after replacement, correction barrier | Only Runtime accepts execution; active pins do not change |
+| Studio | Actual compiled models and browser traversal in source and independent builds | Read-only acceptance host, no deployed gateway or identity picker |
 
-Subsequent actual driver records exact returned identities and verifies them through owners before claiming a checkpoint. Maintain per-owner credentials/processes, visible synthetic limitations and independent expected outcomes. No private peer SQL/imports or fabricated successful response is permitted. Independent replacement preserves this format/canonical fingerprint and all local invariants; intentional format changes use a new version.
+[Verification index](../../../docs/Build%20Plans/BP-06/BP-06.06%20Verification%20index.md) separates pure, installed owner, model and browser tiers. The actual driver records returned identities and verifies them through their owners. Maintain per-owner credentials/processes, visible synthetic limitations and independent expected outcomes. No private peer SQL/imports or fabricated successful response is permitted. Independent replacement preserves this format/canonical fingerprint and all local invariants; intentional format changes use a new version.

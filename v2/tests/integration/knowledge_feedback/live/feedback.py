@@ -5,8 +5,11 @@ import json
 import uuid
 
 from amphora_contracts_research import (
-    EvidenceAssessment, EvidenceAssessmentProfile, ObservationRevision,
-    synthetic_evidence_schema, synthetic_evidence_schema_document,
+    EvidenceAssessment,
+    EvidenceAssessmentProfile,
+    ObservationRevision,
+    synthetic_evidence_schema,
+    synthetic_evidence_schema_document,
 )
 
 from .process import owned_setup

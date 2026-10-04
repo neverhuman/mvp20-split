@@ -6,14 +6,14 @@ import uuid
 from pathlib import Path
 
 import pytest
-from sqlalchemy import URL
 from postgres_fixture import owned_state
+from sqlalchemy import URL
 
-from .live.process import base_environment, owned_setup
-from .live.source_graph import SourceGraphScenario
-from .live.runtime import CampaignScenario
-from .live.representation import publish_representation
 from .live.manifest import observed_manifest
+from .live.process import base_environment, owned_setup
+from .live.representation import publish_representation
+from .live.runtime import CampaignScenario
+from .live.source_graph import SourceGraphScenario
 
 pytestmark = pytest.mark.postgres
 

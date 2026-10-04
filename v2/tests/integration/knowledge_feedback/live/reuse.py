@@ -3,7 +3,11 @@ import hashlib
 import json
 import urllib.error
 
-from amphora_contracts_research import EligibilityInputProfile, synthetic_scientific_report_schema, synthetic_scientific_report_schema_document
+from amphora_contracts_research import (
+    EligibilityInputProfile,
+    synthetic_scientific_report_schema,
+    synthetic_scientific_report_schema_document,
+)
 
 from .feedback import derived, digest
 

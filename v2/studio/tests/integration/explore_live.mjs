@@ -12,7 +12,7 @@ const { owners, records, output } = JSON.parse(raw); raw = '';
 await mkdir(output, { recursive: true });
 const pins = { graph: records.head.snapshot, experiment: records.comparison.properties.request.experiment,
   observations: records.comparison.properties.request.observations };
-const host = await startHost(owners, pins, resolve(output, 'assets'));
+const host = await startHost(owners, pins, resolve(output, 'assets'), records.feedback?.pins ?? null);
 let browser;
 const evidence = { status: 'running', scenarios: [], screenshots: [], requests: [] };
 try {
@@ -93,6 +93,47 @@ try {
       await comparison.screenshot({ path: resolve(output, image) }); evidence.screenshots.push(image);
     }
     evidence.scenarios.push('omitted specimen remains unresolved across real pages; conflicting sample/state/method/unit remains visible and qualified');
+    await page.getByRole('button', { name: 'Properties', exact: true }).click();
+  }
+  if (records.feedback) {
+    await page.getByRole('button', { name: 'Question & feedback', exact: true }).click();
+    await page.getByRole('region', { name: 'Selected research question', exact: true }).waitFor();
+    await page.evaluate(context => window.liveExplore.feedback.bind(context), { ...records.feedback.pins,
+      assessment: records.feedback.unmet.request, publication: null, proposal: null, corrections: null });
+    await page.getByRole('button', { name: 'Refresh feedback', exact: true }).click();
+    await page.getByRole('button', { name: '02 Evidence need', exact: true }).click();
+    await page.getByText('Evidence gaps remain', { exact: true }).waitFor();
+    await page.getByRole('button', { name: '03 Scoped answer', exact: true }).click();
+    await page.getByRole('table', { name: 'Evidence need decisions' }).waitFor();
+    assert.equal(await page.evaluate(() => window.liveExplore.feedback.snapshot.lineage.evidenceState), 'gap');
+    await page.evaluate(context => window.liveExplore.feedback.bind(context), records.feedback.pins);
+    await page.getByRole('button', { name: 'Refresh feedback', exact: true }).click();
+    await page.getByRole('button', { name: '03 Scoped answer', exact: true }).click();
+    await page.getByRole('heading', { name: 'Sufficient for this synthetic assessment', exact: true }).waitFor();
+    assert.match(await page.getByRole('region', { name: 'Scoped evidence assessment' }).textContent(), /not scientifically established/);
+    await page.getByRole('button', { name: '04 Next campaign', exact: true }).click();
+    const receipts = page.getByRole('table', { name: 'Historical and corrected receipts' });
+    await receipts.waitFor();
+    const lineage = await page.evaluate(() => window.liveExplore.feedback.snapshot.lineage.records);
+    assert.deepEqual(lineage.proposal, records.feedback.proposal);
+    assert.deepEqual(lineage.corrections.previous.reference, records.feedback.pins.corrections.previous.revision);
+    assert.deepEqual(lineage.corrections.next.reference, records.feedback.pins.corrections.next.revision);
+    const future = page.getByRole('region', { name: 'Future campaign feedback' });
+    assert.match(await future.textContent(), /Current campaign pins and committed history stay unchanged/);
+    assert.match(await future.textContent(), /Resulting domain revision: 2/);
+    await page.getByRole('button', { name: 'Read feedback source 1', exact: true }).click();
+    await source.waitFor();
+    assert.deepEqual(await page.evaluate(() => window.liveExplore.model.snapshot.regions.source.value.span), records.span);
+    for (const width of [1440, 390]) {
+      await page.setViewportSize({ width, height: width === 1440 ? 1000 : 844 });
+      const scan = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
+      assert.deepEqual(scan.violations.map(v => v.id), []);
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+      const image = `actual-feedback-${width}.png`;
+      await page.getByRole('region', { name: 'Question and feedback lineage', exact: true }).screenshot({ path: resolve(output, image) });
+      evidence.screenshots.push(image);
+    }
+    evidence.scenarios.push('actual unmet need -> scoped synthetic answer -> historical/corrected receipts -> explicitly pinned revision 2 -> verified source');
     await page.getByRole('button', { name: 'Properties', exact: true }).click();
   }
   const timeoutGate = host.holdContent();

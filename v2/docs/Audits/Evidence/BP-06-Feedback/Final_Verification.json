@@ -1,0 +1,59 @@
+{
+  "verified_at": "2026-10-04 01:42:10",
+  "status": "passed",
+  "scope": "BP-06.06 V1.01 final source and independent actual acceptance",
+  "tests": 1,
+  "seconds": 210.37,
+  "actual_records": ".test-results/feedback-final-ui-20261004.json",
+  "sha256": "a7decef5b5cb44858b038379122b2ccd41e9e9e374039349ff874150868ec454",
+  "project": "4762fd6e51af4b7395355c79ca6e9662",
+  "consumer_tests": 222,
+  "consumer_manifest_sha256": "5de7eaeb330ab989f91ca5965aa51fa7c941d6ca3536cd42072d3f221d374692",
+  "actual_browser": {
+    "source": [
+      "keyboard concept -> exact pinned claim -> hash-verified source span",
+      "explicit size-one windows and visible next controls preserve owner graph/specimen/property pages",
+      "omitted specimen remains unresolved across real pages; conflicting sample/state/method/unit remains visible and qualified",
+      "actual unmet need -> scoped synthetic answer -> historical/corrected receipts -> explicitly pinned revision 2 -> verified source",
+      "foreign experiment denied by actual owner and prior protected detail cleared",
+      "actual Data response held beyond production 15s deadline clears source; later response across context denial cannot restore it"
+    ],
+    "replacement": [
+      "keyboard concept -> exact pinned claim -> hash-verified source span",
+      "explicit size-one windows and visible next controls preserve owner graph/specimen/property pages",
+      "omitted specimen remains unresolved across real pages; conflicting sample/state/method/unit remains visible and qualified",
+      "actual unmet need -> scoped synthetic answer -> historical/corrected receipts -> explicitly pinned revision 2 -> verified source",
+      "foreign experiment denied by actual owner and prior protected detail cleared",
+      "actual Data response held beyond production 15s deadline clears source; later response across context denial cannot restore it"
+    ]
+  },
+  "screenshots_reviewed": [
+    "source actual-feedback-1440.png",
+    "source actual-feedback-390.png",
+    "replacement actual-feedback-390.png"
+  ],
+  "dev_protocol": {
+    "tests": 48,
+    "seconds": 19.88,
+    "protocol_statements": 123,
+    "protocol_branches": 16,
+    "coverage_percent": 100
+  },
+  "schemas": 466,
+  "studio_coverage": {
+    "line_percent": 98.86,
+    "branch_percent": 89.61,
+    "function_percent": 94.29,
+    "limit": "Node-instrumented code; no React coverage claim"
+  },
+  "scripted_browser_reuse": {
+    "manifest": ".test-results/studio-isolated/ebb733cf566d441d8e1d0180f22389ee/manifest.json",
+    "production_source_files_compared": 161,
+    "mismatches": 0,
+    "scenarios": 16
+  },
+  "limits": [
+    "Synthetic hypothesis; no scientific-validity claim",
+    "Evidence covers explicitly enabled scenarios; production deployment and scientific validity are not claimed"
+  ]
+}

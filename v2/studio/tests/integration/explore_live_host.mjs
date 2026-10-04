@@ -6,7 +6,7 @@ import { build } from 'esbuild';
 import { allowedRoute } from '../../dist/src/transport/scientific/routes.js';
 import { ResponseHold } from './explore_live_barrier.mjs';
 
-export async function startHost(owners, pins, output) {
+export async function startHost(owners, pins, output, feedback = null) {
   for (const owner of Object.values(owners)) {
     const url = new URL(owner.endpoint);
     if (url.protocol !== 'http:' || url.hostname !== '127.0.0.1' || url.pathname !== '/') throw new Error('owner_origin');
@@ -44,7 +44,7 @@ export async function startHost(owners, pins, output) {
       if (req.method !== 'GET') { res.writeHead(405); res.end(); return; }
       if (path === '/') {
         res.setHeader('content-type', 'text/html');
-        res.end('<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Amphora actual Explore acceptance</title><link rel="stylesheet" href="/explore_live_entry.css"></head><body><div id="root"></div><script type="application/json" id="explore-context">' + JSON.stringify(pins).replaceAll('<', '\\u003c') + '</script><script type="module" src="/explore_live_entry.js"></script></body></html>'); return;
+        res.end('<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Amphora actual Explore acceptance</title><link rel="stylesheet" href="/explore_live_entry.css"></head><body><div id="root"></div><script type="application/json" id="explore-context">' + JSON.stringify({ explore: pins, feedback }).replaceAll('<', '\\u003c') + '</script><script type="module" src="/explore_live_entry.js"></script></body></html>'); return;
       }
       if (!['/explore_live_entry.js', '/explore_live_entry.css'].includes(path)) { res.writeHead(404); res.end(); return; }
       res.setHeader('content-type', path.endsWith('.css') ? 'text/css' : 'text/javascript');

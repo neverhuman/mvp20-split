@@ -1,7 +1,7 @@
 # Amphora Master Architecture
 
-- Design status: v2 architecture with contract/validation and isolated persistence foundations implemented; durable graph execution pending
-- Last reviewed: `2026-09-25 13:42:37` (America/Chicago)
+- Design status: v2 bounded synthetic software foundations, durable graph execution, Studio inspection and evidence integration implemented; autonomous model supervision, evolutionary integration and target-host deployment remain successor scope
+- Last reviewed: `2026-10-04 01:40:15` (America/Chicago)
 - Scope: system principles, construction boundary and functional responsibility domains
 - Requirement authority: Product_Requirements.md in docs/Architecture/Requirements
 

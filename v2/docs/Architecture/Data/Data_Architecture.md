@@ -1,8 +1,8 @@
 # Data and Reusable Representations
 
 - Document role: intended domain architecture; not an implemented code-module contract
-- Design status: proposed architecture; implementation not claimed
-- Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
+- Design status: target architecture; bounded source acquisition/provenance and synthetic representation/retrieval lifecycle implemented; scientific relevance, broader source connectors and learning remain successor scope
+- Last reviewed: `2026-10-04 01:40:15` (America/Chicago)
 - Parent: [Master Architecture](../../../Architecture.md)
 
 ## Scope and Ownership

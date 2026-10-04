@@ -1,6 +1,6 @@
 """Explicit synthetic scientific fixture, installed only inside Research's process."""
-import json
 import copy
+import json
 from pathlib import Path
 
 from .process import owned_setup
