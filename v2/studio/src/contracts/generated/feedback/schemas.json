@@ -1,0 +1,4387 @@
+{
+  "assessment_request": {
+    "$defs": {
+      "ArtifactRef": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Artifact Id",
+            "type": "string"
+          },
+          "media_type": {
+            "maxLength": 128,
+            "minLength": 3,
+            "pattern": "^[^\\s/]+/[^\\s/]+$",
+            "title": "Media Type",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "size_bytes": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Size Bytes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "artifact_id",
+          "scope",
+          "sha256",
+          "media_type",
+          "schema_ref",
+          "size_bytes"
+        ],
+        "title": "ArtifactRef",
+        "type": "object"
+      },
+      "AssessmentAnswerRef": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "criterion_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Criterion Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "criterion_id",
+          "artifact"
+        ],
+        "title": "AssessmentAnswerRef",
+        "type": "object"
+      },
+      "AssessmentProfileRef": {
+        "additionalProperties": false,
+        "properties": {
+          "profile_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Profile Id",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "scope",
+          "profile_id",
+          "version",
+          "sha256"
+        ],
+        "title": "AssessmentProfileRef",
+        "type": "object"
+      },
+      "ResearchQuestionRef": {
+        "additionalProperties": false,
+        "properties": {
+          "question_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Question Id",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "question_id",
+          "revision"
+        ],
+        "title": "ResearchQuestionRef",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:research.assessment-request:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "answers": {
+        "items": {
+          "$ref": "#/$defs/AssessmentAnswerRef"
+        },
+        "maxItems": 32,
+        "title": "Answers",
+        "type": "array"
+      },
+      "assessment_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+        "title": "Assessment Id",
+        "type": "string"
+      },
+      "profile": {
+        "$ref": "#/$defs/AssessmentProfileRef"
+      },
+      "question": {
+        "$ref": "#/$defs/ResearchQuestionRef"
+      },
+      "receipts": {
+        "items": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "maxItems": 256,
+        "title": "Receipts",
+        "type": "array"
+      },
+      "wire_version": {
+        "const": "1",
+        "title": "Wire Version",
+        "type": "string"
+      }
+    },
+    "required": [
+      "wire_version",
+      "assessment_id",
+      "profile",
+      "question",
+      "answers",
+      "receipts"
+    ],
+    "title": "EvidenceAssessmentRequest",
+    "type": "object"
+  },
+  "assessment": {
+    "$defs": {
+      "ArtifactRef": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Artifact Id",
+            "type": "string"
+          },
+          "media_type": {
+            "maxLength": 128,
+            "minLength": 3,
+            "pattern": "^[^\\s/]+/[^\\s/]+$",
+            "title": "Media Type",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "size_bytes": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Size Bytes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "artifact_id",
+          "scope",
+          "sha256",
+          "media_type",
+          "schema_ref",
+          "size_bytes"
+        ],
+        "title": "ArtifactRef",
+        "type": "object"
+      },
+      "AssessmentAnswerRef": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "criterion_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Criterion Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "criterion_id",
+          "artifact"
+        ],
+        "title": "AssessmentAnswerRef",
+        "type": "object"
+      },
+      "AssessmentNeedDecision": {
+        "additionalProperties": false,
+        "properties": {
+          "contradicting": {
+            "items": {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            "maxItems": 256,
+            "title": "Contradicting",
+            "type": "array"
+          },
+          "criterion_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Criterion Id",
+            "type": "string"
+          },
+          "gap": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/EvidenceGap"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "need": {
+            "$ref": "#/$defs/EvidenceNeedRef"
+          },
+          "supporting": {
+            "items": {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            "maxItems": 256,
+            "title": "Supporting",
+            "type": "array"
+          }
+        },
+        "required": [
+          "criterion_id",
+          "need",
+          "supporting",
+          "contradicting",
+          "gap"
+        ],
+        "title": "AssessmentNeedDecision",
+        "type": "object"
+      },
+      "AssessmentProfileRef": {
+        "additionalProperties": false,
+        "properties": {
+          "profile_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Profile Id",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "scope",
+          "profile_id",
+          "version",
+          "sha256"
+        ],
+        "title": "AssessmentProfileRef",
+        "type": "object"
+      },
+      "AssessmentReceiptReview": {
+        "additionalProperties": false,
+        "properties": {
+          "reason": {
+            "enum": [
+              "supporting",
+              "contradicting",
+              "unknown",
+              "scope_mismatch",
+              "need_revision_mismatch",
+              "criterion_mismatch",
+              "missing_answer",
+              "answer_revision_mismatch",
+              "method_mismatch",
+              "context_mismatch",
+              "category_mismatch",
+              "untrusted_issuer",
+              "purpose_mismatch",
+              "authority_mismatch"
+            ],
+            "title": "Reason",
+            "type": "string"
+          },
+          "receipt": {
+            "$ref": "#/$defs/ArtifactRef"
+          }
+        },
+        "required": [
+          "receipt",
+          "reason"
+        ],
+        "title": "AssessmentReceiptReview",
+        "type": "object"
+      },
+      "CompletedAssessment": {
+        "additionalProperties": false,
+        "properties": {
+          "assessment": {
+            "$ref": "#/$defs/EvidenceAssessment"
+          },
+          "status": {
+            "const": "assessed",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "assessment"
+        ],
+        "title": "CompletedAssessment",
+        "type": "object"
+      },
+      "EvidenceAssessment": {
+        "additionalProperties": false,
+        "properties": {
+          "actor_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Actor Id",
+            "type": "string"
+          },
+          "answered": {
+            "title": "Answered",
+            "type": "boolean"
+          },
+          "authority": {
+            "const": "synthetic",
+            "title": "Authority",
+            "type": "string"
+          },
+          "disposition": {
+            "enum": [
+              "supported",
+              "contradicted",
+              "unknown"
+            ],
+            "title": "Disposition",
+            "type": "string"
+          },
+          "needs": {
+            "items": {
+              "$ref": "#/$defs/AssessmentNeedDecision"
+            },
+            "maxItems": 4096,
+            "minItems": 1,
+            "title": "Needs",
+            "type": "array"
+          },
+          "purpose": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Purpose",
+            "type": "string"
+          },
+          "request": {
+            "$ref": "#/$defs/EvidenceAssessmentRequest"
+          },
+          "reviews": {
+            "items": {
+              "$ref": "#/$defs/AssessmentReceiptReview"
+            },
+            "maxItems": 256,
+            "title": "Reviews",
+            "type": "array"
+          },
+          "scientifically_established": {
+            "const": false,
+            "title": "Scientifically Established",
+            "type": "boolean"
+          },
+          "subject": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "sufficient": {
+            "title": "Sufficient",
+            "type": "boolean"
+          },
+          "wire_version": {
+            "const": "1",
+            "title": "Wire Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "wire_version",
+          "authority",
+          "request",
+          "actor_id",
+          "purpose",
+          "subject",
+          "answered",
+          "disposition",
+          "sufficient",
+          "scientifically_established",
+          "needs",
+          "reviews"
+        ],
+        "title": "EvidenceAssessment",
+        "type": "object"
+      },
+      "EvidenceAssessmentRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "answers": {
+            "items": {
+              "$ref": "#/$defs/AssessmentAnswerRef"
+            },
+            "maxItems": 32,
+            "title": "Answers",
+            "type": "array"
+          },
+          "assessment_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Assessment Id",
+            "type": "string"
+          },
+          "profile": {
+            "$ref": "#/$defs/AssessmentProfileRef"
+          },
+          "question": {
+            "$ref": "#/$defs/ResearchQuestionRef"
+          },
+          "receipts": {
+            "items": {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            "maxItems": 256,
+            "title": "Receipts",
+            "type": "array"
+          },
+          "wire_version": {
+            "const": "1",
+            "title": "Wire Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "wire_version",
+          "assessment_id",
+          "profile",
+          "question",
+          "answers",
+          "receipts"
+        ],
+        "title": "EvidenceAssessmentRequest",
+        "type": "object"
+      },
+      "EvidenceGap": {
+        "additionalProperties": false,
+        "properties": {
+          "criterion_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Criterion Id",
+            "type": "string"
+          },
+          "need": {
+            "$ref": "#/$defs/EvidenceNeedRef"
+          },
+          "reason": {
+            "enum": [
+              "missing_answer",
+              "answer_contradicted",
+              "answer_unknown",
+              "no_matching_evidence",
+              "evidence_contradicted",
+              "evidence_conflict"
+            ],
+            "title": "Reason",
+            "type": "string"
+          }
+        },
+        "required": [
+          "criterion_id",
+          "need",
+          "reason"
+        ],
+        "title": "EvidenceGap",
+        "type": "object"
+      },
+      "EvidenceNeedRef": {
+        "additionalProperties": false,
+        "properties": {
+          "need_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Need Id",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "need_id",
+          "revision"
+        ],
+        "title": "EvidenceNeedRef",
+        "type": "object"
+      },
+      "FailedAssessment": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Code",
+            "type": "string"
+          },
+          "status": {
+            "const": "failed",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "code"
+        ],
+        "title": "FailedAssessment",
+        "type": "object"
+      },
+      "PendingAssessment": {
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "const": "pending",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "title": "PendingAssessment",
+        "type": "object"
+      },
+      "ResearchQuestionRef": {
+        "additionalProperties": false,
+        "properties": {
+          "question_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Question Id",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "question_id",
+          "revision"
+        ],
+        "title": "ResearchQuestionRef",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:research.assessment-status:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "actor_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+        "title": "Actor Id",
+        "type": "string"
+      },
+      "outcome": {
+        "discriminator": {
+          "mapping": {
+            "assessed": "#/$defs/CompletedAssessment",
+            "failed": "#/$defs/FailedAssessment",
+            "pending": "#/$defs/PendingAssessment"
+          },
+          "propertyName": "status"
+        },
+        "oneOf": [
+          {
+            "$ref": "#/$defs/PendingAssessment"
+          },
+          {
+            "$ref": "#/$defs/FailedAssessment"
+          },
+          {
+            "$ref": "#/$defs/CompletedAssessment"
+          }
+        ],
+        "title": "Outcome"
+      },
+      "request": {
+        "$ref": "#/$defs/EvidenceAssessmentRequest"
+      },
+      "wire_version": {
+        "const": "1",
+        "title": "Wire Version",
+        "type": "string"
+      }
+    },
+    "required": [
+      "wire_version",
+      "request",
+      "actor_id",
+      "outcome"
+    ],
+    "title": "EvidenceAssessmentStatus",
+    "type": "object"
+  },
+  "publication_request": {
+    "$defs": {
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:research.assessment-publication-request:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "assessment_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+        "title": "Assessment Id",
+        "type": "string"
+      },
+      "scope": {
+        "$ref": "#/$defs/Scope"
+      },
+      "wire_version": {
+        "const": "1",
+        "title": "Wire Version",
+        "type": "string"
+      }
+    },
+    "required": [
+      "wire_version",
+      "scope",
+      "assessment_id"
+    ],
+    "title": "AssessmentPublicationRequest",
+    "type": "object"
+  },
+  "publication": {
+    "$defs": {
+      "AbstainedEvidence": {
+        "additionalProperties": false,
+        "properties": {
+          "reason_code": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Reason Code",
+            "type": "string"
+          },
+          "status": {
+            "const": "abstained",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "reason_code"
+        ],
+        "title": "AbstainedEvidence",
+        "type": "object"
+      },
+      "AcceptedEvidence": {
+        "additionalProperties": false,
+        "properties": {
+          "output": {
+            "$ref": "#/$defs/ArtifactConstant"
+          },
+          "status": {
+            "const": "accepted",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "output"
+        ],
+        "title": "AcceptedEvidence",
+        "type": "object"
+      },
+      "ArtifactConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "kind": {
+            "const": "artifact",
+            "title": "Kind",
+            "type": "string"
+          },
+          "representation": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Representation",
+            "type": "string"
+          },
+          "unit": {
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "artifact",
+          "representation",
+          "unit"
+        ],
+        "title": "ArtifactConstant",
+        "type": "object"
+      },
+      "ArtifactRef": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Artifact Id",
+            "type": "string"
+          },
+          "media_type": {
+            "maxLength": 128,
+            "minLength": 3,
+            "pattern": "^[^\\s/]+/[^\\s/]+$",
+            "title": "Media Type",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "size_bytes": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Size Bytes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "artifact_id",
+          "scope",
+          "sha256",
+          "media_type",
+          "schema_ref",
+          "size_bytes"
+        ],
+        "title": "ArtifactRef",
+        "type": "object"
+      },
+      "AssessmentPublicationFailed": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Code",
+            "type": "string"
+          },
+          "external_effects": {
+            "const": "possible",
+            "title": "External Effects",
+            "type": "string"
+          },
+          "status": {
+            "const": "failed",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "code",
+          "external_effects"
+        ],
+        "title": "AssessmentPublicationFailed",
+        "type": "object"
+      },
+      "AssessmentPublicationPending": {
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "const": "pending",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "title": "AssessmentPublicationPending",
+        "type": "object"
+      },
+      "AssessmentPublicationRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "assessment_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Assessment Id",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "wire_version": {
+            "const": "1",
+            "title": "Wire Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "wire_version",
+          "scope",
+          "assessment_id"
+        ],
+        "title": "AssessmentPublicationRequest",
+        "type": "object"
+      },
+      "AssessmentPublished": {
+        "additionalProperties": false,
+        "properties": {
+          "derivation": {
+            "$ref": "#/$defs/DerivationReceipt"
+          },
+          "receipt": {
+            "$ref": "#/$defs/DomainReceipt"
+          },
+          "status": {
+            "const": "published",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "derivation",
+          "receipt"
+        ],
+        "title": "AssessmentPublished",
+        "type": "object"
+      },
+      "CommandIdentity": {
+        "additionalProperties": false,
+        "properties": {
+          "actor_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Actor Id",
+            "type": "string"
+          },
+          "command_family": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Command Family",
+            "type": "string"
+          },
+          "command_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Command Id",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "1",
+            "default": "1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "command_family",
+          "command_id",
+          "scope",
+          "actor_id"
+        ],
+        "title": "CommandIdentity",
+        "type": "object"
+      },
+      "DerivationDeclaration": {
+        "additionalProperties": false,
+        "properties": {
+          "inputs": {
+            "items": {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            "maxItems": 128,
+            "minItems": 1,
+            "title": "Inputs",
+            "type": "array"
+          },
+          "schema_version": {
+            "const": "1",
+            "default": "1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "transformation": {
+            "$ref": "#/$defs/TransformationDescriptor"
+          }
+        },
+        "required": [
+          "transformation",
+          "inputs"
+        ],
+        "title": "DerivationDeclaration",
+        "type": "object"
+      },
+      "DerivationReceipt": {
+        "additionalProperties": false,
+        "description": "Immutable finalized lineage; reading it does not grant payload access.",
+        "properties": {
+          "artifact": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "declaration": {
+            "$ref": "#/$defs/DerivationDeclaration"
+          },
+          "origin": {
+            "$ref": "#/$defs/CommandIdentity"
+          },
+          "request_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Request Sha256",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "1",
+            "default": "1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "upload_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Upload Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "origin",
+          "request_sha256",
+          "upload_id",
+          "artifact",
+          "declaration"
+        ],
+        "title": "DerivationReceipt",
+        "type": "object"
+      },
+      "DomainReceipt": {
+        "additionalProperties": false,
+        "properties": {
+          "issuer_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Issuer Id",
+            "type": "string"
+          },
+          "outcome": {
+            "discriminator": {
+              "mapping": {
+                "abstained": "#/$defs/AbstainedEvidence",
+                "accepted": "#/$defs/AcceptedEvidence",
+                "rejected": "#/$defs/RejectedEvidence",
+                "superseded": "#/$defs/SupersededEvidence"
+              },
+              "propertyName": "status"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/AcceptedEvidence"
+              },
+              {
+                "$ref": "#/$defs/RejectedEvidence"
+              },
+              {
+                "$ref": "#/$defs/AbstainedEvidence"
+              },
+              {
+                "$ref": "#/$defs/SupersededEvidence"
+              }
+            ],
+            "title": "Outcome"
+          },
+          "purpose": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Purpose",
+            "type": "string"
+          },
+          "receipt_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Receipt Id",
+            "type": "string"
+          },
+          "revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Revision",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "1",
+            "default": "1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "subject": {
+            "$ref": "#/$defs/ArtifactRef"
+          }
+        },
+        "required": [
+          "issuer_id",
+          "receipt_id",
+          "scope",
+          "purpose",
+          "revision",
+          "subject",
+          "outcome"
+        ],
+        "title": "DomainReceipt",
+        "type": "object"
+      },
+      "RejectedEvidence": {
+        "additionalProperties": false,
+        "properties": {
+          "reason_code": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Reason Code",
+            "type": "string"
+          },
+          "status": {
+            "const": "rejected",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "reason_code"
+        ],
+        "title": "RejectedEvidence",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      },
+      "SupersededEvidence": {
+        "additionalProperties": false,
+        "properties": {
+          "reason_code": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Reason Code",
+            "type": "string"
+          },
+          "replacement_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Replacement Revision",
+            "type": "string"
+          },
+          "status": {
+            "const": "superseded",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "replacement_revision",
+          "reason_code"
+        ],
+        "title": "SupersededEvidence",
+        "type": "object"
+      },
+      "TransformationDescriptor": {
+        "additionalProperties": false,
+        "description": "Pinned producer method/configuration digest, not a scientific attestation.",
+        "properties": {
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "transformation_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Transformation Id",
+            "type": "string"
+          },
+          "version": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "transformation_id",
+          "version",
+          "sha256"
+        ],
+        "title": "TransformationDescriptor",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:research.assessment-publication-status:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "actor_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+        "title": "Actor Id",
+        "type": "string"
+      },
+      "outcome": {
+        "discriminator": {
+          "mapping": {
+            "failed": "#/$defs/AssessmentPublicationFailed",
+            "pending": "#/$defs/AssessmentPublicationPending",
+            "published": "#/$defs/AssessmentPublished"
+          },
+          "propertyName": "status"
+        },
+        "oneOf": [
+          {
+            "$ref": "#/$defs/AssessmentPublicationPending"
+          },
+          {
+            "$ref": "#/$defs/AssessmentPublicationFailed"
+          },
+          {
+            "$ref": "#/$defs/AssessmentPublished"
+          }
+        ],
+        "title": "Outcome"
+      },
+      "request": {
+        "$ref": "#/$defs/AssessmentPublicationRequest"
+      },
+      "wire_version": {
+        "const": "1",
+        "title": "Wire Version",
+        "type": "string"
+      }
+    },
+    "required": [
+      "wire_version",
+      "request",
+      "actor_id",
+      "outcome"
+    ],
+    "title": "AssessmentPublicationStatus",
+    "type": "object"
+  },
+  "assessment_selection": {
+    "$defs": {
+      "ReceiptChainRef": {
+        "additionalProperties": false,
+        "properties": {
+          "chain_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Chain Id",
+            "type": "string"
+          },
+          "issuer_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Issuer Id",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "1",
+            "default": "1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "issuer_id",
+          "chain_id"
+        ],
+        "title": "ReceiptChainRef",
+        "type": "object"
+      },
+      "ReceiptRevisionRef": {
+        "additionalProperties": false,
+        "properties": {
+          "chain": {
+            "$ref": "#/$defs/ReceiptChainRef"
+          },
+          "ordinal": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Ordinal",
+            "type": "integer"
+          },
+          "record_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Record Sha256",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "1",
+            "default": "1",
+            "title": "Schema Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "chain",
+          "ordinal",
+          "record_sha256"
+        ],
+        "title": "ReceiptRevisionRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:research.select-assessment-receipt:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "chain": {
+        "$ref": "#/$defs/ReceiptChainRef"
+      },
+      "revision": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/ReceiptRevisionRef"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "wire_version": {
+        "const": "1",
+        "title": "Wire Version",
+        "type": "string"
+      }
+    },
+    "required": [
+      "wire_version",
+      "chain",
+      "revision"
+    ],
+    "title": "SelectAssessmentReceipt",
+    "type": "object"
+  },
+  "reasoning_selection": {
+    "$defs": {
+      "ReceiptChainRef": {
+        "additionalProperties": false,
+        "properties": {
+          "chain_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Chain Id",
+            "type": "string"
+          },
+          "issuer_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Issuer Id",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "1",
+            "default": "1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "issuer_id",
+          "chain_id"
+        ],
+        "title": "ReceiptChainRef",
+        "type": "object"
+      },
+      "ReceiptRevisionRef": {
+        "additionalProperties": false,
+        "properties": {
+          "chain": {
+            "$ref": "#/$defs/ReceiptChainRef"
+          },
+          "ordinal": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Ordinal",
+            "type": "integer"
+          },
+          "record_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Record Sha256",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "1",
+            "default": "1",
+            "title": "Schema Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "chain",
+          "ordinal",
+          "record_sha256"
+        ],
+        "title": "ReceiptRevisionRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:knowledge.select-reasoning-receipt:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "chain": {
+        "$ref": "#/$defs/ReceiptChainRef"
+      },
+      "revision": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/ReceiptRevisionRef"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "wire_version": {
+        "const": "1",
+        "title": "Wire Version",
+        "type": "string"
+      }
+    },
+    "required": [
+      "wire_version",
+      "chain",
+      "revision"
+    ],
+    "title": "SelectReasoningReceipt",
+    "type": "object"
+  },
+  "correction": {
+    "$defs": {
+      "AbstainedEvidence": {
+        "additionalProperties": false,
+        "properties": {
+          "reason_code": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Reason Code",
+            "type": "string"
+          },
+          "status": {
+            "const": "abstained",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "reason_code"
+        ],
+        "title": "AbstainedEvidence",
+        "type": "object"
+      },
+      "AcceptedEvidence": {
+        "additionalProperties": false,
+        "properties": {
+          "output": {
+            "$ref": "#/$defs/ArtifactConstant"
+          },
+          "status": {
+            "const": "accepted",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "output"
+        ],
+        "title": "AcceptedEvidence",
+        "type": "object"
+      },
+      "ArtifactConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "kind": {
+            "const": "artifact",
+            "title": "Kind",
+            "type": "string"
+          },
+          "representation": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Representation",
+            "type": "string"
+          },
+          "unit": {
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "artifact",
+          "representation",
+          "unit"
+        ],
+        "title": "ArtifactConstant",
+        "type": "object"
+      },
+      "ArtifactRef": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Artifact Id",
+            "type": "string"
+          },
+          "media_type": {
+            "maxLength": 128,
+            "minLength": 3,
+            "pattern": "^[^\\s/]+/[^\\s/]+$",
+            "title": "Media Type",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "size_bytes": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Size Bytes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "artifact_id",
+          "scope",
+          "sha256",
+          "media_type",
+          "schema_ref",
+          "size_bytes"
+        ],
+        "title": "ArtifactRef",
+        "type": "object"
+      },
+      "DomainReceipt": {
+        "additionalProperties": false,
+        "properties": {
+          "issuer_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Issuer Id",
+            "type": "string"
+          },
+          "outcome": {
+            "discriminator": {
+              "mapping": {
+                "abstained": "#/$defs/AbstainedEvidence",
+                "accepted": "#/$defs/AcceptedEvidence",
+                "rejected": "#/$defs/RejectedEvidence",
+                "superseded": "#/$defs/SupersededEvidence"
+              },
+              "propertyName": "status"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/AcceptedEvidence"
+              },
+              {
+                "$ref": "#/$defs/RejectedEvidence"
+              },
+              {
+                "$ref": "#/$defs/AbstainedEvidence"
+              },
+              {
+                "$ref": "#/$defs/SupersededEvidence"
+              }
+            ],
+            "title": "Outcome"
+          },
+          "purpose": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Purpose",
+            "type": "string"
+          },
+          "receipt_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Receipt Id",
+            "type": "string"
+          },
+          "revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Revision",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "1",
+            "default": "1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "subject": {
+            "$ref": "#/$defs/ArtifactRef"
+          }
+        },
+        "required": [
+          "issuer_id",
+          "receipt_id",
+          "scope",
+          "purpose",
+          "revision",
+          "subject",
+          "outcome"
+        ],
+        "title": "DomainReceipt",
+        "type": "object"
+      },
+      "ReceiptChainRef": {
+        "additionalProperties": false,
+        "properties": {
+          "chain_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Chain Id",
+            "type": "string"
+          },
+          "issuer_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Issuer Id",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "1",
+            "default": "1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "issuer_id",
+          "chain_id"
+        ],
+        "title": "ReceiptChainRef",
+        "type": "object"
+      },
+      "ReceiptCorrection": {
+        "additionalProperties": false,
+        "properties": {
+          "actor_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Actor Id",
+            "type": "string"
+          },
+          "chain": {
+            "$ref": "#/$defs/ReceiptChainRef"
+          },
+          "change_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Change Id",
+            "type": "string"
+          },
+          "notice": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/DomainReceipt"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "ordinal": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Ordinal",
+            "type": "integer"
+          },
+          "predecessor": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/ReceiptRevisionRef"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "reason_code": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Reason Code",
+            "type": "string"
+          },
+          "receipt": {
+            "$ref": "#/$defs/DomainReceipt"
+          },
+          "schema_version": {
+            "const": "1",
+            "default": "1",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "source_receipt": {
+            "$ref": "#/$defs/DomainReceipt"
+          }
+        },
+        "required": [
+          "chain",
+          "ordinal",
+          "change_id",
+          "actor_id",
+          "reason_code",
+          "source_receipt",
+          "predecessor",
+          "receipt",
+          "notice"
+        ],
+        "title": "ReceiptCorrection",
+        "type": "object"
+      },
+      "ReceiptRevisionRef": {
+        "additionalProperties": false,
+        "properties": {
+          "chain": {
+            "$ref": "#/$defs/ReceiptChainRef"
+          },
+          "ordinal": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Ordinal",
+            "type": "integer"
+          },
+          "record_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Record Sha256",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "1",
+            "default": "1",
+            "title": "Schema Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "chain",
+          "ordinal",
+          "record_sha256"
+        ],
+        "title": "ReceiptRevisionRef",
+        "type": "object"
+      },
+      "RejectedEvidence": {
+        "additionalProperties": false,
+        "properties": {
+          "reason_code": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Reason Code",
+            "type": "string"
+          },
+          "status": {
+            "const": "rejected",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "reason_code"
+        ],
+        "title": "RejectedEvidence",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      },
+      "SupersededEvidence": {
+        "additionalProperties": false,
+        "properties": {
+          "reason_code": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Reason Code",
+            "type": "string"
+          },
+          "replacement_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Replacement Revision",
+            "type": "string"
+          },
+          "status": {
+            "const": "superseded",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "replacement_revision",
+          "reason_code"
+        ],
+        "title": "SupersededEvidence",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:graph-runtime.receipt-correction-view:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "record": {
+        "$ref": "#/$defs/ReceiptCorrection"
+      },
+      "reference": {
+        "$ref": "#/$defs/ReceiptRevisionRef"
+      },
+      "schema_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Schema Version",
+        "type": "string"
+      }
+    },
+    "required": [
+      "reference",
+      "record"
+    ],
+    "title": "ReceiptCorrectionView",
+    "type": "object"
+  },
+  "proposal": {
+    "$defs": {
+      "AcceptedChangeRef": {
+        "additionalProperties": false,
+        "properties": {
+          "change_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Change Id",
+            "type": "string"
+          },
+          "graph": {
+            "$ref": "#/$defs/DomainGraphRef"
+          },
+          "position": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Position",
+            "type": "integer"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          }
+        },
+        "required": [
+          "graph",
+          "change_id",
+          "position",
+          "sha256"
+        ],
+        "title": "AcceptedChangeRef",
+        "type": "object"
+      },
+      "AcceptedDecision": {
+        "additionalProperties": false,
+        "properties": {
+          "head": {
+            "$ref": "#/$defs/DomainHead"
+          },
+          "outcome": {
+            "const": "accepted",
+            "title": "Outcome",
+            "type": "string"
+          }
+        },
+        "required": [
+          "outcome",
+          "head"
+        ],
+        "title": "AcceptedDecision",
+        "type": "object"
+      },
+      "AddAssertion": {
+        "additionalProperties": false,
+        "properties": {
+          "assertion": {
+            "$ref": "#/$defs/DomainAssertion"
+          },
+          "operation": {
+            "const": "add_assertion",
+            "title": "Operation",
+            "type": "string"
+          }
+        },
+        "required": [
+          "operation",
+          "assertion"
+        ],
+        "title": "AddAssertion",
+        "type": "object"
+      },
+      "AddEntity": {
+        "additionalProperties": false,
+        "properties": {
+          "entity": {
+            "$ref": "#/$defs/DomainEntity"
+          },
+          "operation": {
+            "const": "add_entity",
+            "title": "Operation",
+            "type": "string"
+          }
+        },
+        "required": [
+          "operation",
+          "entity"
+        ],
+        "title": "AddEntity",
+        "type": "object"
+      },
+      "ArtifactRef": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Artifact Id",
+            "type": "string"
+          },
+          "media_type": {
+            "maxLength": 128,
+            "minLength": 3,
+            "pattern": "^[^\\s/]+/[^\\s/]+$",
+            "title": "Media Type",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "size_bytes": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Size Bytes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "artifact_id",
+          "scope",
+          "sha256",
+          "media_type",
+          "schema_ref",
+          "size_bytes"
+        ],
+        "title": "ArtifactRef",
+        "type": "object"
+      },
+      "AssertionRevisionRef": {
+        "additionalProperties": false,
+        "properties": {
+          "assertion_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Assertion Id",
+            "type": "string"
+          },
+          "graph": {
+            "$ref": "#/$defs/DomainGraphRef"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "graph",
+          "assertion_id",
+          "revision"
+        ],
+        "title": "AssertionRevisionRef",
+        "type": "object"
+      },
+      "ClaimGrounding": {
+        "additionalProperties": false,
+        "properties": {
+          "conversion_traces": {
+            "items": {
+              "$ref": "#/$defs/ConversionTraceRef"
+            },
+            "maxItems": 64,
+            "minItems": 1,
+            "title": "Conversion Traces",
+            "type": "array"
+          },
+          "interpretation_artifacts": {
+            "items": {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            "maxItems": 16,
+            "title": "Interpretation Artifacts",
+            "type": "array"
+          },
+          "spans": {
+            "items": {
+              "$ref": "#/$defs/SourceSpan"
+            },
+            "maxItems": 64,
+            "minItems": 1,
+            "title": "Spans",
+            "type": "array"
+          }
+        },
+        "required": [
+          "spans",
+          "conversion_traces",
+          "interpretation_artifacts"
+        ],
+        "title": "ClaimGrounding",
+        "type": "object"
+      },
+      "ConversionTraceRef": {
+        "additionalProperties": false,
+        "properties": {
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "trace_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Trace Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "scope",
+          "trace_id",
+          "sha256"
+        ],
+        "title": "ConversionTraceRef",
+        "type": "object"
+      },
+      "CorrectAssertion": {
+        "additionalProperties": false,
+        "properties": {
+          "operation": {
+            "const": "correct_assertion",
+            "title": "Operation",
+            "type": "string"
+          },
+          "prior": {
+            "$ref": "#/$defs/AssertionRevisionRef"
+          },
+          "replacement": {
+            "$ref": "#/$defs/DomainAssertion"
+          }
+        },
+        "required": [
+          "operation",
+          "prior",
+          "replacement"
+        ],
+        "title": "CorrectAssertion",
+        "type": "object"
+      },
+      "DomainAssertion": {
+        "additionalProperties": false,
+        "properties": {
+          "applicability": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "grounding": {
+            "$ref": "#/$defs/ClaimGrounding"
+          },
+          "object": {
+            "$ref": "#/$defs/EntityRevisionRef"
+          },
+          "polarity": {
+            "enum": [
+              "affirmed",
+              "negated"
+            ],
+            "title": "Polarity",
+            "type": "string"
+          },
+          "posture": {
+            "enum": [
+              "reported",
+              "hypothesis",
+              "unresolved"
+            ],
+            "title": "Posture",
+            "type": "string"
+          },
+          "predicate": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Predicate",
+            "type": "string"
+          },
+          "reference": {
+            "$ref": "#/$defs/AssertionRevisionRef"
+          },
+          "research_links": {
+            "items": {
+              "$ref": "#/$defs/QuestionEvidenceLink"
+            },
+            "maxItems": 32,
+            "title": "Research Links",
+            "type": "array"
+          },
+          "statement": {
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Statement",
+            "type": "string"
+          },
+          "subject": {
+            "$ref": "#/$defs/EntityRevisionRef"
+          },
+          "supersedes": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/AssertionRevisionRef"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "reference",
+          "subject",
+          "predicate",
+          "object",
+          "statement",
+          "polarity",
+          "posture",
+          "applicability",
+          "grounding",
+          "research_links",
+          "supersedes"
+        ],
+        "title": "DomainAssertion",
+        "type": "object"
+      },
+      "DomainEntity": {
+        "additionalProperties": false,
+        "properties": {
+          "context": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "entity_type": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Entity Type",
+            "type": "string"
+          },
+          "label": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Label",
+            "type": "string"
+          },
+          "reference": {
+            "$ref": "#/$defs/EntityRevisionRef"
+          },
+          "supersedes": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/EntityRevisionRef"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "reference",
+          "entity_type",
+          "label",
+          "context",
+          "supersedes"
+        ],
+        "title": "DomainEntity",
+        "type": "object"
+      },
+      "DomainGraphRef": {
+        "additionalProperties": false,
+        "properties": {
+          "graph_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Graph Id",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "graph_id"
+        ],
+        "title": "DomainGraphRef",
+        "type": "object"
+      },
+      "DomainHead": {
+        "additionalProperties": false,
+        "properties": {
+          "change": {
+            "$ref": "#/$defs/AcceptedChangeRef"
+          },
+          "snapshot": {
+            "$ref": "#/$defs/DomainRevisionRef"
+          }
+        },
+        "required": [
+          "snapshot",
+          "change"
+        ],
+        "title": "DomainHead",
+        "type": "object"
+      },
+      "DomainRevisionRef": {
+        "additionalProperties": false,
+        "properties": {
+          "graph": {
+            "$ref": "#/$defs/DomainGraphRef"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          }
+        },
+        "required": [
+          "graph",
+          "revision",
+          "sha256"
+        ],
+        "title": "DomainRevisionRef",
+        "type": "object"
+      },
+      "EntityRevisionRef": {
+        "additionalProperties": false,
+        "properties": {
+          "entity_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Entity Id",
+            "type": "string"
+          },
+          "graph": {
+            "$ref": "#/$defs/DomainGraphRef"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "graph",
+          "entity_id",
+          "revision"
+        ],
+        "title": "EntityRevisionRef",
+        "type": "object"
+      },
+      "EvidenceNeedRef": {
+        "additionalProperties": false,
+        "properties": {
+          "need_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Need Id",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "need_id",
+          "revision"
+        ],
+        "title": "EvidenceNeedRef",
+        "type": "object"
+      },
+      "FailedDecision": {
+        "additionalProperties": false,
+        "properties": {
+          "findings": {
+            "items": {
+              "$ref": "#/$defs/Finding"
+            },
+            "maxItems": 64,
+            "minItems": 1,
+            "title": "Findings",
+            "type": "array"
+          },
+          "outcome": {
+            "enum": [
+              "rejected",
+              "conflict"
+            ],
+            "title": "Outcome",
+            "type": "string"
+          }
+        },
+        "required": [
+          "outcome",
+          "findings"
+        ],
+        "title": "FailedDecision",
+        "type": "object"
+      },
+      "Finding": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Code",
+            "type": "string"
+          },
+          "location": {
+            "maxLength": 256,
+            "title": "Location",
+            "type": "string"
+          },
+          "message": {
+            "maxLength": 512,
+            "title": "Message",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "location",
+          "message"
+        ],
+        "title": "Finding",
+        "type": "object"
+      },
+      "GraphChangeDecision": {
+        "additionalProperties": false,
+        "properties": {
+          "change_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Change Id",
+            "type": "string"
+          },
+          "decision": {
+            "discriminator": {
+              "mapping": {
+                "accepted": "#/$defs/AcceptedDecision",
+                "conflict": "#/$defs/FailedDecision",
+                "rejected": "#/$defs/FailedDecision"
+              },
+              "propertyName": "outcome"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/AcceptedDecision"
+              },
+              {
+                "$ref": "#/$defs/FailedDecision"
+              }
+            ],
+            "title": "Decision"
+          },
+          "graph": {
+            "$ref": "#/$defs/DomainGraphRef"
+          },
+          "request_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Request Sha256",
+            "type": "string"
+          },
+          "wire_version": {
+            "const": "1",
+            "title": "Wire Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "wire_version",
+          "graph",
+          "change_id",
+          "request_sha256",
+          "decision"
+        ],
+        "title": "GraphChangeDecision",
+        "type": "object"
+      },
+      "GraphChangeProposal": {
+        "additionalProperties": false,
+        "properties": {
+          "base": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/DomainHead"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "change_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Change Id",
+            "type": "string"
+          },
+          "description": {
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Description",
+            "type": "string"
+          },
+          "graph": {
+            "$ref": "#/$defs/DomainGraphRef"
+          },
+          "grounding": {
+            "$ref": "#/$defs/ClaimGrounding"
+          },
+          "operations": {
+            "items": {
+              "discriminator": {
+                "mapping": {
+                  "add_assertion": "#/$defs/AddAssertion",
+                  "add_entity": "#/$defs/AddEntity",
+                  "correct_assertion": "#/$defs/CorrectAssertion",
+                  "merge_entities": "#/$defs/MergeEntities",
+                  "retract_assertion": "#/$defs/RetractAssertion",
+                  "revise_entity_context": "#/$defs/ReviseEntityContext"
+                },
+                "propertyName": "operation"
+              },
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/AddEntity"
+                },
+                {
+                  "$ref": "#/$defs/AddAssertion"
+                },
+                {
+                  "$ref": "#/$defs/CorrectAssertion"
+                },
+                {
+                  "$ref": "#/$defs/RetractAssertion"
+                },
+                {
+                  "$ref": "#/$defs/MergeEntities"
+                },
+                {
+                  "$ref": "#/$defs/ReviseEntityContext"
+                }
+              ]
+            },
+            "maxItems": 128,
+            "minItems": 1,
+            "title": "Operations",
+            "type": "array"
+          },
+          "policy": {
+            "$ref": "#/$defs/StructuralPolicyRef"
+          },
+          "rationale": {
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Rationale",
+            "type": "string"
+          },
+          "vocabulary": {
+            "$ref": "#/$defs/VocabularyRef"
+          },
+          "wire_version": {
+            "const": "1",
+            "title": "Wire Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "wire_version",
+          "graph",
+          "change_id",
+          "base",
+          "vocabulary",
+          "policy",
+          "description",
+          "rationale",
+          "grounding",
+          "operations"
+        ],
+        "title": "GraphChangeProposal",
+        "type": "object"
+      },
+      "MergeEntities": {
+        "additionalProperties": false,
+        "properties": {
+          "operation": {
+            "const": "merge_entities",
+            "title": "Operation",
+            "type": "string"
+          },
+          "source": {
+            "$ref": "#/$defs/EntityRevisionRef"
+          },
+          "target": {
+            "$ref": "#/$defs/EntityRevisionRef"
+          }
+        },
+        "required": [
+          "operation",
+          "source",
+          "target"
+        ],
+        "title": "MergeEntities",
+        "type": "object"
+      },
+      "QuestionEvidenceLink": {
+        "additionalProperties": false,
+        "properties": {
+          "answer_proposal": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/ArtifactRef"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "need": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/EvidenceNeedRef"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "question": {
+            "$ref": "#/$defs/ResearchQuestionRef"
+          },
+          "role": {
+            "enum": [
+              "proposed_answer",
+              "support",
+              "contradiction",
+              "context"
+            ],
+            "title": "Role",
+            "type": "string"
+          },
+          "validation_method": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/SchemaRef"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "question",
+          "need",
+          "role",
+          "answer_proposal",
+          "validation_method"
+        ],
+        "title": "QuestionEvidenceLink",
+        "type": "object"
+      },
+      "ResearchQuestionRef": {
+        "additionalProperties": false,
+        "properties": {
+          "question_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Question Id",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "question_id",
+          "revision"
+        ],
+        "title": "ResearchQuestionRef",
+        "type": "object"
+      },
+      "RetractAssertion": {
+        "additionalProperties": false,
+        "properties": {
+          "assertion": {
+            "$ref": "#/$defs/AssertionRevisionRef"
+          },
+          "operation": {
+            "const": "retract_assertion",
+            "title": "Operation",
+            "type": "string"
+          }
+        },
+        "required": [
+          "operation",
+          "assertion"
+        ],
+        "title": "RetractAssertion",
+        "type": "object"
+      },
+      "ReviseEntityContext": {
+        "additionalProperties": false,
+        "properties": {
+          "operation": {
+            "const": "revise_entity_context",
+            "title": "Operation",
+            "type": "string"
+          },
+          "prior": {
+            "$ref": "#/$defs/EntityRevisionRef"
+          },
+          "replacement": {
+            "$ref": "#/$defs/DomainEntity"
+          }
+        },
+        "required": [
+          "operation",
+          "prior",
+          "replacement"
+        ],
+        "title": "ReviseEntityContext",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      },
+      "SourceRevisionRef": {
+        "additionalProperties": false,
+        "properties": {
+          "raw": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "revision_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Revision Id",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "source_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Source Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "scope",
+          "source_id",
+          "revision_id",
+          "raw"
+        ],
+        "title": "SourceRevisionRef",
+        "type": "object"
+      },
+      "SourceSpan": {
+        "additionalProperties": false,
+        "description": "Half-open byte range; owner verifies ordering, bounds and exact content.",
+        "properties": {
+          "end": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "End",
+            "type": "integer"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "source": {
+            "$ref": "#/$defs/SourceRevisionRef"
+          },
+          "start": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Start",
+            "type": "integer"
+          },
+          "unit": {
+            "const": "byte",
+            "title": "Unit",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source",
+          "unit",
+          "start",
+          "end",
+          "sha256"
+        ],
+        "title": "SourceSpan",
+        "type": "object"
+      },
+      "StructuralPolicyRef": {
+        "additionalProperties": false,
+        "properties": {
+          "policy_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Policy Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "policy_id",
+          "version",
+          "sha256"
+        ],
+        "title": "StructuralPolicyRef",
+        "type": "object"
+      },
+      "VocabularyRef": {
+        "additionalProperties": false,
+        "properties": {
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Version",
+            "type": "string"
+          },
+          "vocabulary_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Vocabulary Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "vocabulary_id",
+          "version",
+          "sha256"
+        ],
+        "title": "VocabularyRef",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:knowledge.proposal-status:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "actor_id": {
+        "maxLength": 128,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+        "title": "Actor Id",
+        "type": "string"
+      },
+      "decision": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/GraphChangeDecision"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "proposal": {
+        "$ref": "#/$defs/GraphChangeProposal"
+      },
+      "registered_at": {
+        "format": "date-time",
+        "title": "Registered At",
+        "type": "string"
+      },
+      "request_sha256": {
+        "pattern": "^[0-9a-f]{64}$",
+        "title": "Request Sha256",
+        "type": "string"
+      },
+      "wire_version": {
+        "const": "1",
+        "title": "Wire Version",
+        "type": "string"
+      }
+    },
+    "required": [
+      "wire_version",
+      "proposal",
+      "actor_id",
+      "request_sha256",
+      "registered_at",
+      "decision"
+    ],
+    "title": "GraphProposalStatus",
+    "type": "object"
+  },
+  "change": {
+    "$defs": {
+      "AcceptedChangeContent": {
+        "additionalProperties": false,
+        "properties": {
+          "accepted_at": {
+            "format": "date-time",
+            "title": "Accepted At",
+            "type": "string"
+          },
+          "actor_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Actor Id",
+            "type": "string"
+          },
+          "authority": {
+            "const": "structural_only",
+            "title": "Authority",
+            "type": "string"
+          },
+          "policy": {
+            "$ref": "#/$defs/StructuralPolicyRef"
+          },
+          "position": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Position",
+            "type": "integer"
+          },
+          "proposal": {
+            "$ref": "#/$defs/GraphChangeProposal"
+          },
+          "resulting_snapshot": {
+            "$ref": "#/$defs/DomainRevisionRef"
+          },
+          "validation": {
+            "$ref": "#/$defs/ReferenceValidation"
+          }
+        },
+        "required": [
+          "proposal",
+          "actor_id",
+          "policy",
+          "validation",
+          "accepted_at",
+          "position",
+          "resulting_snapshot",
+          "authority"
+        ],
+        "title": "AcceptedChangeContent",
+        "type": "object"
+      },
+      "AcceptedChangeRef": {
+        "additionalProperties": false,
+        "properties": {
+          "change_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Change Id",
+            "type": "string"
+          },
+          "graph": {
+            "$ref": "#/$defs/DomainGraphRef"
+          },
+          "position": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Position",
+            "type": "integer"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          }
+        },
+        "required": [
+          "graph",
+          "change_id",
+          "position",
+          "sha256"
+        ],
+        "title": "AcceptedChangeRef",
+        "type": "object"
+      },
+      "AddAssertion": {
+        "additionalProperties": false,
+        "properties": {
+          "assertion": {
+            "$ref": "#/$defs/DomainAssertion"
+          },
+          "operation": {
+            "const": "add_assertion",
+            "title": "Operation",
+            "type": "string"
+          }
+        },
+        "required": [
+          "operation",
+          "assertion"
+        ],
+        "title": "AddAssertion",
+        "type": "object"
+      },
+      "AddEntity": {
+        "additionalProperties": false,
+        "properties": {
+          "entity": {
+            "$ref": "#/$defs/DomainEntity"
+          },
+          "operation": {
+            "const": "add_entity",
+            "title": "Operation",
+            "type": "string"
+          }
+        },
+        "required": [
+          "operation",
+          "entity"
+        ],
+        "title": "AddEntity",
+        "type": "object"
+      },
+      "ArtifactRef": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Artifact Id",
+            "type": "string"
+          },
+          "media_type": {
+            "maxLength": 128,
+            "minLength": 3,
+            "pattern": "^[^\\s/]+/[^\\s/]+$",
+            "title": "Media Type",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "size_bytes": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Size Bytes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "artifact_id",
+          "scope",
+          "sha256",
+          "media_type",
+          "schema_ref",
+          "size_bytes"
+        ],
+        "title": "ArtifactRef",
+        "type": "object"
+      },
+      "AssertionRevisionRef": {
+        "additionalProperties": false,
+        "properties": {
+          "assertion_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Assertion Id",
+            "type": "string"
+          },
+          "graph": {
+            "$ref": "#/$defs/DomainGraphRef"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "graph",
+          "assertion_id",
+          "revision"
+        ],
+        "title": "AssertionRevisionRef",
+        "type": "object"
+      },
+      "ClaimGrounding": {
+        "additionalProperties": false,
+        "properties": {
+          "conversion_traces": {
+            "items": {
+              "$ref": "#/$defs/ConversionTraceRef"
+            },
+            "maxItems": 64,
+            "minItems": 1,
+            "title": "Conversion Traces",
+            "type": "array"
+          },
+          "interpretation_artifacts": {
+            "items": {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            "maxItems": 16,
+            "title": "Interpretation Artifacts",
+            "type": "array"
+          },
+          "spans": {
+            "items": {
+              "$ref": "#/$defs/SourceSpan"
+            },
+            "maxItems": 64,
+            "minItems": 1,
+            "title": "Spans",
+            "type": "array"
+          }
+        },
+        "required": [
+          "spans",
+          "conversion_traces",
+          "interpretation_artifacts"
+        ],
+        "title": "ClaimGrounding",
+        "type": "object"
+      },
+      "ConversionTraceRef": {
+        "additionalProperties": false,
+        "properties": {
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "trace_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Trace Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "scope",
+          "trace_id",
+          "sha256"
+        ],
+        "title": "ConversionTraceRef",
+        "type": "object"
+      },
+      "CorrectAssertion": {
+        "additionalProperties": false,
+        "properties": {
+          "operation": {
+            "const": "correct_assertion",
+            "title": "Operation",
+            "type": "string"
+          },
+          "prior": {
+            "$ref": "#/$defs/AssertionRevisionRef"
+          },
+          "replacement": {
+            "$ref": "#/$defs/DomainAssertion"
+          }
+        },
+        "required": [
+          "operation",
+          "prior",
+          "replacement"
+        ],
+        "title": "CorrectAssertion",
+        "type": "object"
+      },
+      "DomainAssertion": {
+        "additionalProperties": false,
+        "properties": {
+          "applicability": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "grounding": {
+            "$ref": "#/$defs/ClaimGrounding"
+          },
+          "object": {
+            "$ref": "#/$defs/EntityRevisionRef"
+          },
+          "polarity": {
+            "enum": [
+              "affirmed",
+              "negated"
+            ],
+            "title": "Polarity",
+            "type": "string"
+          },
+          "posture": {
+            "enum": [
+              "reported",
+              "hypothesis",
+              "unresolved"
+            ],
+            "title": "Posture",
+            "type": "string"
+          },
+          "predicate": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Predicate",
+            "type": "string"
+          },
+          "reference": {
+            "$ref": "#/$defs/AssertionRevisionRef"
+          },
+          "research_links": {
+            "items": {
+              "$ref": "#/$defs/QuestionEvidenceLink"
+            },
+            "maxItems": 32,
+            "title": "Research Links",
+            "type": "array"
+          },
+          "statement": {
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Statement",
+            "type": "string"
+          },
+          "subject": {
+            "$ref": "#/$defs/EntityRevisionRef"
+          },
+          "supersedes": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/AssertionRevisionRef"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "reference",
+          "subject",
+          "predicate",
+          "object",
+          "statement",
+          "polarity",
+          "posture",
+          "applicability",
+          "grounding",
+          "research_links",
+          "supersedes"
+        ],
+        "title": "DomainAssertion",
+        "type": "object"
+      },
+      "DomainEntity": {
+        "additionalProperties": false,
+        "properties": {
+          "context": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "entity_type": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Entity Type",
+            "type": "string"
+          },
+          "label": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Label",
+            "type": "string"
+          },
+          "reference": {
+            "$ref": "#/$defs/EntityRevisionRef"
+          },
+          "supersedes": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/EntityRevisionRef"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "reference",
+          "entity_type",
+          "label",
+          "context",
+          "supersedes"
+        ],
+        "title": "DomainEntity",
+        "type": "object"
+      },
+      "DomainGraphRef": {
+        "additionalProperties": false,
+        "properties": {
+          "graph_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Graph Id",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "graph_id"
+        ],
+        "title": "DomainGraphRef",
+        "type": "object"
+      },
+      "DomainHead": {
+        "additionalProperties": false,
+        "properties": {
+          "change": {
+            "$ref": "#/$defs/AcceptedChangeRef"
+          },
+          "snapshot": {
+            "$ref": "#/$defs/DomainRevisionRef"
+          }
+        },
+        "required": [
+          "snapshot",
+          "change"
+        ],
+        "title": "DomainHead",
+        "type": "object"
+      },
+      "DomainRevisionRef": {
+        "additionalProperties": false,
+        "properties": {
+          "graph": {
+            "$ref": "#/$defs/DomainGraphRef"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          }
+        },
+        "required": [
+          "graph",
+          "revision",
+          "sha256"
+        ],
+        "title": "DomainRevisionRef",
+        "type": "object"
+      },
+      "EntityRevisionRef": {
+        "additionalProperties": false,
+        "properties": {
+          "entity_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Entity Id",
+            "type": "string"
+          },
+          "graph": {
+            "$ref": "#/$defs/DomainGraphRef"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "graph",
+          "entity_id",
+          "revision"
+        ],
+        "title": "EntityRevisionRef",
+        "type": "object"
+      },
+      "EvidenceNeedRef": {
+        "additionalProperties": false,
+        "properties": {
+          "need_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Need Id",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "need_id",
+          "revision"
+        ],
+        "title": "EvidenceNeedRef",
+        "type": "object"
+      },
+      "GraphChangeProposal": {
+        "additionalProperties": false,
+        "properties": {
+          "base": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/DomainHead"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "change_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Change Id",
+            "type": "string"
+          },
+          "description": {
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Description",
+            "type": "string"
+          },
+          "graph": {
+            "$ref": "#/$defs/DomainGraphRef"
+          },
+          "grounding": {
+            "$ref": "#/$defs/ClaimGrounding"
+          },
+          "operations": {
+            "items": {
+              "discriminator": {
+                "mapping": {
+                  "add_assertion": "#/$defs/AddAssertion",
+                  "add_entity": "#/$defs/AddEntity",
+                  "correct_assertion": "#/$defs/CorrectAssertion",
+                  "merge_entities": "#/$defs/MergeEntities",
+                  "retract_assertion": "#/$defs/RetractAssertion",
+                  "revise_entity_context": "#/$defs/ReviseEntityContext"
+                },
+                "propertyName": "operation"
+              },
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/AddEntity"
+                },
+                {
+                  "$ref": "#/$defs/AddAssertion"
+                },
+                {
+                  "$ref": "#/$defs/CorrectAssertion"
+                },
+                {
+                  "$ref": "#/$defs/RetractAssertion"
+                },
+                {
+                  "$ref": "#/$defs/MergeEntities"
+                },
+                {
+                  "$ref": "#/$defs/ReviseEntityContext"
+                }
+              ]
+            },
+            "maxItems": 128,
+            "minItems": 1,
+            "title": "Operations",
+            "type": "array"
+          },
+          "policy": {
+            "$ref": "#/$defs/StructuralPolicyRef"
+          },
+          "rationale": {
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Rationale",
+            "type": "string"
+          },
+          "vocabulary": {
+            "$ref": "#/$defs/VocabularyRef"
+          },
+          "wire_version": {
+            "const": "1",
+            "title": "Wire Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "wire_version",
+          "graph",
+          "change_id",
+          "base",
+          "vocabulary",
+          "policy",
+          "description",
+          "rationale",
+          "grounding",
+          "operations"
+        ],
+        "title": "GraphChangeProposal",
+        "type": "object"
+      },
+      "MergeEntities": {
+        "additionalProperties": false,
+        "properties": {
+          "operation": {
+            "const": "merge_entities",
+            "title": "Operation",
+            "type": "string"
+          },
+          "source": {
+            "$ref": "#/$defs/EntityRevisionRef"
+          },
+          "target": {
+            "$ref": "#/$defs/EntityRevisionRef"
+          }
+        },
+        "required": [
+          "operation",
+          "source",
+          "target"
+        ],
+        "title": "MergeEntities",
+        "type": "object"
+      },
+      "QuestionEvidenceLink": {
+        "additionalProperties": false,
+        "properties": {
+          "answer_proposal": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/ArtifactRef"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "need": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/EvidenceNeedRef"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "question": {
+            "$ref": "#/$defs/ResearchQuestionRef"
+          },
+          "role": {
+            "enum": [
+              "proposed_answer",
+              "support",
+              "contradiction",
+              "context"
+            ],
+            "title": "Role",
+            "type": "string"
+          },
+          "validation_method": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/SchemaRef"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "question",
+          "need",
+          "role",
+          "answer_proposal",
+          "validation_method"
+        ],
+        "title": "QuestionEvidenceLink",
+        "type": "object"
+      },
+      "ReferenceValidation": {
+        "additionalProperties": false,
+        "properties": {
+          "artifacts": {
+            "items": {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            "maxItems": 128,
+            "title": "Artifacts",
+            "type": "array"
+          },
+          "checked_at": {
+            "format": "date-time",
+            "title": "Checked At",
+            "type": "string"
+          },
+          "conversion_traces": {
+            "items": {
+              "$ref": "#/$defs/ConversionTraceRef"
+            },
+            "maxItems": 128,
+            "title": "Conversion Traces",
+            "type": "array"
+          },
+          "evidence_needs": {
+            "items": {
+              "$ref": "#/$defs/EvidenceNeedRef"
+            },
+            "maxItems": 128,
+            "title": "Evidence Needs",
+            "type": "array"
+          },
+          "questions": {
+            "items": {
+              "$ref": "#/$defs/ResearchQuestionRef"
+            },
+            "maxItems": 128,
+            "title": "Questions",
+            "type": "array"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/$defs/SourceRevisionRef"
+            },
+            "maxItems": 128,
+            "title": "Sources",
+            "type": "array"
+          }
+        },
+        "required": [
+          "checked_at",
+          "artifacts",
+          "sources",
+          "conversion_traces",
+          "questions",
+          "evidence_needs"
+        ],
+        "title": "ReferenceValidation",
+        "type": "object"
+      },
+      "ResearchQuestionRef": {
+        "additionalProperties": false,
+        "properties": {
+          "question_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Question Id",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "question_id",
+          "revision"
+        ],
+        "title": "ResearchQuestionRef",
+        "type": "object"
+      },
+      "RetractAssertion": {
+        "additionalProperties": false,
+        "properties": {
+          "assertion": {
+            "$ref": "#/$defs/AssertionRevisionRef"
+          },
+          "operation": {
+            "const": "retract_assertion",
+            "title": "Operation",
+            "type": "string"
+          }
+        },
+        "required": [
+          "operation",
+          "assertion"
+        ],
+        "title": "RetractAssertion",
+        "type": "object"
+      },
+      "ReviseEntityContext": {
+        "additionalProperties": false,
+        "properties": {
+          "operation": {
+            "const": "revise_entity_context",
+            "title": "Operation",
+            "type": "string"
+          },
+          "prior": {
+            "$ref": "#/$defs/EntityRevisionRef"
+          },
+          "replacement": {
+            "$ref": "#/$defs/DomainEntity"
+          }
+        },
+        "required": [
+          "operation",
+          "prior",
+          "replacement"
+        ],
+        "title": "ReviseEntityContext",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      },
+      "SourceRevisionRef": {
+        "additionalProperties": false,
+        "properties": {
+          "raw": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "revision_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Revision Id",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "source_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Source Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "scope",
+          "source_id",
+          "revision_id",
+          "raw"
+        ],
+        "title": "SourceRevisionRef",
+        "type": "object"
+      },
+      "SourceSpan": {
+        "additionalProperties": false,
+        "description": "Half-open byte range; owner verifies ordering, bounds and exact content.",
+        "properties": {
+          "end": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "End",
+            "type": "integer"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "source": {
+            "$ref": "#/$defs/SourceRevisionRef"
+          },
+          "start": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Start",
+            "type": "integer"
+          },
+          "unit": {
+            "const": "byte",
+            "title": "Unit",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source",
+          "unit",
+          "start",
+          "end",
+          "sha256"
+        ],
+        "title": "SourceSpan",
+        "type": "object"
+      },
+      "StructuralPolicyRef": {
+        "additionalProperties": false,
+        "properties": {
+          "policy_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Policy Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "policy_id",
+          "version",
+          "sha256"
+        ],
+        "title": "StructuralPolicyRef",
+        "type": "object"
+      },
+      "VocabularyRef": {
+        "additionalProperties": false,
+        "properties": {
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Version",
+            "type": "string"
+          },
+          "vocabulary_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Vocabulary Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "vocabulary_id",
+          "version",
+          "sha256"
+        ],
+        "title": "VocabularyRef",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:knowledge.accepted-change:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "content": {
+        "$ref": "#/$defs/AcceptedChangeContent"
+      },
+      "reference": {
+        "$ref": "#/$defs/AcceptedChangeRef"
+      },
+      "wire_version": {
+        "const": "1",
+        "title": "Wire Version",
+        "type": "string"
+      }
+    },
+    "required": [
+      "wire_version",
+      "reference",
+      "content"
+    ],
+    "title": "AcceptedGraphChange",
+    "type": "object"
+  }
+}

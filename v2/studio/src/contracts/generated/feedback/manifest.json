@@ -1,0 +1,38 @@
+{
+  "assessment_request": {
+    "source": "contracts/schemas/v1/research.assessment-request.serialization.json",
+    "sha256": "9dbd85002a73d5b91f99dc58798e9561fa09ad35c1bd4f8490ce02c7096277fc"
+  },
+  "assessment": {
+    "source": "contracts/schemas/v1/research.assessment-status.serialization.json",
+    "sha256": "c7b5f0e59fd45a41861c34dc50d1a903b0b0fff3f522c5c9cdd867e6870fac8b"
+  },
+  "publication_request": {
+    "source": "contracts/schemas/v1/research.assessment-publication-request.serialization.json",
+    "sha256": "7fed7ec1cf14744d06a162d473593b67838dabf2b160c358e089807e58e85a9d"
+  },
+  "publication": {
+    "source": "contracts/schemas/v1/research.assessment-publication-status.serialization.json",
+    "sha256": "80a96e03c409300b68f2e3952efe5fd3136cb573be41623ad35d14887a6ad76f"
+  },
+  "assessment_selection": {
+    "source": "contracts/schemas/v1/research.select-assessment-receipt.serialization.json",
+    "sha256": "ad6a296006d0138768762c0b303605b21f66092fba064a6369b7821512a85ad1"
+  },
+  "reasoning_selection": {
+    "source": "contracts/schemas/v1/knowledge.select-reasoning-receipt.serialization.json",
+    "sha256": "25e9bac0fb3176c1e116dc00cc40172312b3a7b1664726258bcd94b26dee33ee"
+  },
+  "correction": {
+    "source": "contracts/schemas/v1/graph-runtime.receipt-correction-view.serialization.json",
+    "sha256": "0b8070f0628d3fb74a72ac2b9d35d97cb91416a59298e3199550dfc026d70eb9"
+  },
+  "proposal": {
+    "source": "contracts/schemas/v1/knowledge.proposal-status.serialization.json",
+    "sha256": "3234c656c6aad095478cce5ad1e0cfc1ccc69004b55dd6be88733febb8bff77b"
+  },
+  "change": {
+    "source": "contracts/schemas/v1/knowledge.accepted-change.serialization.json",
+    "sha256": "c5f082a9cb25d3b7742dc29474d6a8ef7aab9196ad14be8498d0e22e6d46f82d"
+  }
+}

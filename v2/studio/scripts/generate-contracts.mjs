@@ -120,6 +120,44 @@ const provenanceRoots = {
     "MaterialStateCorrectionView"
   ]
 };
+const feedbackRoots = {
+  "assessment_request": [
+    "research.assessment-request",
+    "EvidenceAssessmentRequest"
+  ],
+  "assessment": [
+    "research.assessment-status",
+    "EvidenceAssessmentStatus"
+  ],
+  "publication_request": [
+    "research.assessment-publication-request",
+    "AssessmentPublicationRequest"
+  ],
+  "publication": [
+    "research.assessment-publication-status",
+    "AssessmentPublicationStatus"
+  ],
+  "assessment_selection": [
+    "research.select-assessment-receipt",
+    "SelectAssessmentReceipt"
+  ],
+  "reasoning_selection": [
+    "knowledge.select-reasoning-receipt",
+    "SelectReasoningReceipt"
+  ],
+  "correction": [
+    "graph-runtime.receipt-correction-view",
+    "ReceiptCorrectionView"
+  ],
+  "proposal": [
+    "knowledge.proposal-status",
+    "GraphProposalStatus"
+  ],
+  "change": [
+    "knowledge.accepted-change",
+    "AcceptedGraphChange"
+  ]
+};
 const check = process.argv.includes("--check");
 async function generate(roots, target) {
   const manifest = {};
@@ -159,3 +197,5 @@ await generate(knowledgeRoots, resolve(target, "knowledge"));
 await generate(researchRoots, resolve(target, "research"));
 
 await generate(provenanceRoots, resolve(target, "provenance"));
+
+await generate(feedbackRoots, resolve(target, "feedback"));

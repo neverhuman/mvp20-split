@@ -1,0 +1,42 @@
+{
+  "verified_at": "2026-10-03 23:33:39",
+  "status": "passed",
+  "scope": "BP-06.06 B2.03a feedback read boundary",
+  "source_tests": 197,
+  "independent_tests": 197,
+  "new_owned_tests": 11,
+  "independent_manifest": ".test-results/studio-isolated/c5e7a9637b6144fba55c790add4b7b46/manifest.json",
+  "schema_roots_added": 9,
+  "python_schemas_changed": 0,
+  "coverage": {
+    "client": {
+      "lines": 100,
+      "branches": 97.3
+    },
+    "correction": {
+      "lines": 100,
+      "branches": 95.24
+    }
+  },
+  "limits": [
+    "No actual-owner or browser feedback proof yet",
+    "No mutation or implicit head selection",
+    "Synthetic fixtures are not scientific validation"
+  ],
+  "source_sha256": {
+    "studio/src/transport/feedback/client.ts": "5dc06e725bbe879c370fc9e2c63ea3d1fb1ffbf5371a228f211d2f7e3a4de958",
+    "studio/src/transport/feedback/correction.ts": "5f63aa1482212dc6a79d070bf2cae9ac8074354e713a321a39ab1f209bde3a0c",
+    "studio/src/transport/feedback/README.md": "f181d786f1d64244565a676e69b60f5c0f11da8c34043fa2501fbbedcc934905",
+    "studio/src/contracts/generated/feedback/assessment.d.ts": "5d596207b26dc729b836c1a259ed19b306bc88863228f3afc63a5c91a5bbdd11",
+    "studio/src/contracts/generated/feedback/assessment_request.d.ts": "527f0aa4e4fa8020270b2780d0e8940fd93ff076425bc3039b2d34d98c35988b",
+    "studio/src/contracts/generated/feedback/assessment_selection.d.ts": "b1db9e50d09909b4147709b275f1b9404f65e864dacc2b9f193568c546f14f26",
+    "studio/src/contracts/generated/feedback/change.d.ts": "d9eacb1ae9fec504e9371ebf90d332a9c825ae36839dfb3ebcde0bc12ed0d612",
+    "studio/src/contracts/generated/feedback/correction.d.ts": "59bcbf9524a99f23c7598d8097f5a4b009aa6350194043a17866cc8beba59566",
+    "studio/src/contracts/generated/feedback/manifest.json": "b1a18464869a5939e4fd0a7cc593998f2bc1b712c0e5100eb6cb28ab6091499d",
+    "studio/src/contracts/generated/feedback/proposal.d.ts": "ff4822585c08646bd3c07f059a6176603e070327ac1ceab59880d57b50efa4e5",
+    "studio/src/contracts/generated/feedback/publication.d.ts": "af6101a72561fd37139c05148c6e7d829b5a4c3d5ae7ef3b8da49a7a33fccd41",
+    "studio/src/contracts/generated/feedback/publication_request.d.ts": "4ab08716bb8f597865bbfb2439cb4dbcadea07c018a8e4b7c2a4559eca86a2ad",
+    "studio/src/contracts/generated/feedback/reasoning_selection.d.ts": "c76b20f6f6f65fe138e942693e13a70db200b60e945e0e3c37dfdf988b840da9",
+    "studio/src/contracts/generated/feedback/schemas.json": "c81aaf0334c578e9d8150627460511f233e2209342c180ec4ec28c750187b9ad"
+  }
+}
