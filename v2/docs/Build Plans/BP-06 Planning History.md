@@ -783,3 +783,9 @@ Archived MBT checkpoint: | 2026-10-03 12:06:32 | B3 complete; child75%, parent62
 ## 2026-10-03 18:56:17 ? BP-06.05/B2.04b profile/generation migration
 
 Data0.28.0 introduces reviewedL2profilev2; legacy none/l2v1 descriptors compared equal to installedData0.27.0, encoding support retained. Actualsamecorpus Qdrant migration verifies beforeheadpublication, keepsoldpins/results, rejectsbothcrossprofiledirections and supports explicitg3oldprofile rollback whileg2remainsqueryable. Counts2profiles/2work/2bindings/3publications/4queries+results. Numericoracles8andapproximately1(abs1e-6),notsemanticquality.83source12.28s/83installed12.89s,18dev13.69s;fixture36statements/8branches100%;lint/boundaries438schemas unchanged/artifact0012unchanged. B2.04a/b100%,c0%;B2=91.67%,Build63.89%,child47.92%,parent74.65%,gates1/4and17/24. Next installedHTTPproof.
+
+Archived MBT checkpoint: | 2026-10-03 12:11:37 | V1.01 complete; child83.33%, parent63.89%; V1.02 active | [Independent build](../Audits/Evidence/BP-06-Research/Laboratory_Independent_Build.json);fresh Research0.31.0,919 installed tests,9 separate opt-ins |
+
+## 2026-10-03 19:04:12 ? BP-06.05/B2.04c installed public HTTP proof
+
+Data0.28.0 actualCLIserver over3processes,source/upload/rights/encode/profile/index/query allpublicHTTP afterfixture setup; actualQdrant. Old/newprofilepins surviveheadadvance/serverreplacement. Missingnamespace503/newintentpending409; restoringbackendrecovers. Currentrevocation403; explicitrightsrestore returnsoriginalrecordsunchanged. Unknowncompleteness remainsusable. Source1 pass22.41s/installed1 pass17.95s. Initialfixture lackedownedstorage directory; startupcorrectlyrefused, fixturecorrected. No production/schema/migrationchange. B2complete100%,Build66.67%,child50%,parent75%,gates2/4 and18/24. NextB3.01adversarialcoverage; B3threeequalmilestones unchanged.
