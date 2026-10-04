@@ -46,7 +46,7 @@ class CampaignScenario:
             finally:
                 self.owner.close()
 
-    def consume(self, data, receipt, *, campaign_id='feedback-baseline', output_schema='reasoning.json'):
+    def consume(self, data, receipt, *, campaign_id='feedback-baseline', output_schema='reasoning.json', before_receipt=None):
         subject, output = receipt['subject'], receipt['outcome']['output']
         (self.directory / 'context-schema.json').write_bytes(b'{"type":"string"}')
         input_type = {'kind': 'artifact', 'schema_ref': subject['schema_ref'], 'representation': 'domain-context', 'unit': '1', 'media_type': subject['media_type']}
@@ -84,6 +84,8 @@ class CampaignScenario:
         wait_path = '/v1/graph-runs/' + self.run_id + '/waits/' + activation
         opened = self.owner.request(wait_path)
         assert opened['closure'] is None
+        barrier = before_receipt(self, opened) if before_receipt is not None else None
+        assert self.owner.request(wait_path) == opened
         command = self.command('graph.submit_receipt', {'run_id': self.run_id, 'activation_id': activation,
             'wait_revision': opened['expectation']['wait_revision'], 'expectation_sha256': opened['expectation_sha256'], 'receipt': receipt}, receipt['issuer_id'])
         accepted = self.owner.request('/v1/graph-receipts', command, token=self.environment['ISSUER_TOKEN'])
@@ -107,4 +109,4 @@ class CampaignScenario:
         assert hashlib.sha256(content).hexdigest() == output['artifact']['sha256']
         snapshot = self.owner.request('/v1/graph-observations/' + self.run_id + '/nodes')
         return {'opened': opened, 'closed': closed, 'accepted': accepted, 'graph': completed,
-            'snapshot': snapshot, 'delivery': deliveries, 'replacement_replay': True}
+            'snapshot': snapshot, 'delivery': deliveries, 'replacement_replay': True, 'barrier': barrier}

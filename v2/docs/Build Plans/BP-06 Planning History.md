@@ -1,5 +1,7 @@
 # BP-06 Planning History
 
+2026-10-04 01:03:42 B3.02 correction races verified1test123.50s: Knowledge accepted/conflict and Research200/409; notice/new receipt rejected by open original wait, original and explicit future campaign retained/replayed. Fixed fixture command IDs to respect issuer-scope uniqueness across chains. B3=50%,Build83.33%,child62.50%,parent93.75%; B3.03 active.
+
 2026-10-04 00:56:34 B3.01 actual owner/browser verified1test96.91s. Exact windows, cursor conflicts, foreign-scope denial, source hash traversal and reviewed desktop/narrow inspectors. Harness repaired explicit Axe browser context and scrolled inspector capture. B3=25%,Build75%,child56.25%,parent92.71%; B3.02 correction races active.
 
 2026-10-04 00:46:37 B2.04d owner reuse verified1test93.51s: exact prepared-state applicability, decision identity conflict, optional quality focus and immutable readback. B2=100%,Build66.67%,child50%,parent91.67%; gates2/4 and22/24. B3.01 actual-owner scope/pagination/browser active.

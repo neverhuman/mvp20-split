@@ -1,0 +1,36 @@
+{
+  "verified_at": "2026-10-04 01:03:42",
+  "status": "passed",
+  "scope": "BP-06.06 B3.02 LAB-REF02",
+  "tests": 1,
+  "seconds": 123.5,
+  "actual_records": ".test-results/feedback-races-20261004.json",
+  "sha256": "a8d3cde946087519dd62ce3825945734ecc7a8d7f06af9a3d6630c033a3a8361",
+  "project": "44313ac2c13f45d1827d2b10f815a00b",
+  "knowledge_outcomes": [
+    "conflict",
+    "accepted"
+  ],
+  "research_http_statuses": [
+    409,
+    200
+  ],
+  "runtime_rejections": [
+    "wait_receipt_superseded",
+    "wait_receipt_revision_mismatch"
+  ],
+  "old_run": "d845da431e0e4a6aa7c5d746fe62a477",
+  "next_run": "fb9d2d80dd344eb998c3f4c4cee813d9",
+  "checks": [
+    "Actual Runtime wait open before client release barriers",
+    "One committed writer per owner base/head; exact replay and immutable history",
+    "Notice/new revision rejected without changing open expectation or closure",
+    "Original receipt accepted after correction and retained across Runtime replacement",
+    "Explicit successor uses different pinned revision, plan and output",
+    "Prior live browser, scope, reuse and successor proofs still pass"
+  ],
+  "limits": [
+    "Client release barriers; no internal database scheduling or throughput claim",
+    "Synthetic evidence authority; accepted alternative is not automatically adopted"
+  ]
+}
