@@ -36,7 +36,7 @@ def request(endpoint, token, path, body=None, *, expected=200):
     return json.loads(raw)
 
 
-def verify(output, installation, data_python, research_installation, knowledge_installation):
+def verify(output, installation, data_python, research_installation, knowledge_installation, *, extension=None):
     assert os.environ.get("AMPHORA_TEST_POSTGRES") == "1", "Explicit retained PostgreSQL opt-in required"
     output, installation, data_python = output.absolute(), installation.absolute(), data_python.absolute()
     research_installation, knowledge_installation = research_installation.absolute(), knowledge_installation.absolute()
@@ -46,12 +46,12 @@ def verify(output, installation, data_python, research_installation, knowledge_i
         "SYSTEMROOT", "WINDIR", "PATH", "TEMP", "TMP", "COMSPEC", "USERPROFILE", "APPDATA", "LOCALAPPDATA"}}
     environment["PYTHONUTF8"] = "1"
 
-    def run(python, args, env=environment):
+    def run(python, args, env=environment, *, expected=0):
         result = subprocess.run([str(python), "-I", *map(str, args)], cwd=output, env=env,
             stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding="utf-8", timeout=180)
         with (output / "workers.log").open("a", encoding="utf-8") as stream:
             stream.write(result.stdout)
-        assert result.returncode == 0, "Combined owner worker failed; inspect workers.log"
+        assert result.returncode == expected, "Combined owner worker failed; inspect workers.log"
 
     installations = {"planning": installation, "research": research_installation, "knowledge": knowledge_installation}
     versions = {"planning": ("amphora-agent-planning", "0.30.0"), "research": ("amphora-research", "0.34.0"),
@@ -116,16 +116,18 @@ def verify(output, installation, data_python, research_installation, knowledge_i
         owners.append(knowledge)
         pids.update(data=[data.process.pid], research=[research.process.pid], knowledge=[knowledge.process.pid])
 
-        def worker(stage, label="replacement", *, denied=False):
-            destination = output / (stage + ".json")
+        def worker(stage, label="replacement", *, denied=False, expected=0, result_id=None, origins="origins.json"):
+            result_id = stage if result_id is None else result_id
+            destination = output / (result_id + ".json")
+            assert not destination.exists(), "Retained worker evidence must not be overwritten"
             env = {**environment, "COMBINED_PLANNING_DB": base.render_as_string(hide_password=False),
                 "COMBINED_DATA_ENDPOINT": data.endpoint, "COMBINED_DATA_TOKEN": tokens["planning_data"],
                 "COMBINED_RESEARCH_ENDPOINT": research.endpoint, "COMBINED_RESEARCH_TOKEN": tokens["planning_research"],
                 "COMBINED_KNOWLEDGE_ENDPOINT": knowledge.endpoint,
                 "COMBINED_KNOWLEDGE_TOKEN": tokens["denied" if denied else "planning_knowledge"]}
-            run(installation / label / "Scripts/python.exe", [probe, stage, fixture_path, output / "origins.json", destination], env)
-            records[stage] = json.loads(destination.read_bytes())
-            return records[stage]
+            run(installation / label / "Scripts/python.exe", [probe, stage, fixture_path, output / origins, destination], env, expected=expected)
+            records[result_id] = json.loads(destination.read_bytes())
+            return records[result_id]
 
         def revise(uses):
             nonlocal rights
@@ -230,13 +232,16 @@ def verify(output, installation, data_python, research_installation, knowledge_i
         final = worker("after-correction", denied=True)
         assert final["effects"] == recovered["effects"] and final["task_sha256"] == recovered["task_sha256"]
         assert not final["processing_reads"] and not final["owner_calls"] and final["pinned_base"] is None
+        extended = None if extension is None else extension(output, worker, revise, k)
         manifest = {"status": "passed", "verified_at": datetime.now(ZoneInfo("America/Chicago")).strftime("%Y-%m-%d %H:%M:%S"),
             "versions": versions, "scope": scope, "owner_pids": pids, "stages": records, "negative_controls": negative,
             "original_head": head, "corrected_head": corrected_head, "rebuild": rebuilt,
+            "extension": extended,
             "limits": ["Synthetic provider output and scientific sources; no scientific validity or live model claim",
                 "Actual owner HTTP and scoped credentials; Knowledge replacement, synthetic lost reply after real commit",
                 "Historical rebuild/replay under revoked processing; no new model invocation, source grant or campaign repin",
-                "No cross-owner SQL, migrators, fixture reset or abrupt-process-death claim"]}
+                "No cross-owner SQL, migrators or fixture reset",
+                "Base stages use normal replacement; optional extension evidence owns its named abrupt exits"]}
         (output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
         print(json.dumps({"status": "passed", "planning_workers": len(records), "owner_processes": sum(map(len, pids.values()))}))
     finally:

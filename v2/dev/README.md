@@ -136,3 +136,6 @@ Combined Planning owner acceptance (verified 2026-10-04 15:50:14): `verify_plann
 
 
 Synthetic Planning semantics (verified 2026-10-04 16:15:15): `verify_planning_semantics.py --output <new-directory> --installation <verified-Planning0.30-directory>` snapshots module-owned tests, uses both installed interpreters and emits identical split/category review reports.88 tests each; no PostgreSQL or peer host needed. Existing wheel isolation is required; scientific labels are explicit coding-agent synthetic reviews, not machine entailment or live model performance. Original corpus bytes remain unchanged.
+
+
+Actual Planning failure proof (verified 2026-10-04 16:44:01): `verify_planning_failures.py` takes the same output/installation/peer arguments as `verify_planning_owners.py`. It reruns the base proof, then exits two installed Planning workers at named durable/remote boundaries and waits genuine120s leases; do not run other PostgreSQL suites concurrently. Per-boundary JSON survives later control failures. Nineteen workers/six owners, public conflicting-span/false-digest/grant negatives and no state reset. The base verifier retains its default behavior; the optional extension owns crash claims.

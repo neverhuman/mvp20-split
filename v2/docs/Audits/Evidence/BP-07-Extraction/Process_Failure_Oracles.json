@@ -1,0 +1,207 @@
+{
+  "verified_at": "2026-10-04 16:44:01",
+  "status": "passed",
+  "gate": "BP-07.02/B3.03",
+  "planning": "0.30.0",
+  "scope": "Acceptance tooling only; production source, schemas and migrations unchanged",
+  "pure_tests": {
+    "tests": 14,
+    "seconds": 4.48,
+    "report": ".test-results/planning-failure-pure-20261004.xml"
+  },
+  "postgres_tests": {
+    "tests": 25,
+    "seconds": 93.02,
+    "report": ".test-results/planning-failure-sql-20261004.xml"
+  },
+  "coverage": "No new production code. Same0.30 line/branch evidence explicitly reused from Owner_Handoff_Coordinator.json and Owner_Handoff_Storage.json.",
+  "retained_manifest": ".test-results/planning-owner-crashes-final-20261004/manifest.json",
+  "manifest_sha256": "10811d49ae6b292d1866da0c605063094422dcaaa24a9e4f9ca70e233be945f4",
+  "failure_oracles_sha256": "555baf1ee5f3979903189795cf5d6381bb84afccd18a0b84b05385e1f5bec726",
+  "planning_workers": 19,
+  "owner_processes": {
+    "data": [
+      29480
+    ],
+    "research": [
+      1076
+    ],
+    "knowledge": [
+      24564,
+      14608,
+      26616,
+      10904
+    ]
+  },
+  "scope_identity": {
+    "tenant_id": "planning-combined",
+    "project_id": "8bf6db6ad41a490a81a9ad0da4379270"
+  },
+  "boundaries": {
+    "before": {
+      "exit_code": 71,
+      "pid": 692,
+      "state_at_exit": "dispatching",
+      "position_at_exit": 2,
+      "original_request_sha256": "8d0fa0358050a64d3286f957cd5d3e9bcc9c9a07f6c06ca9d2976b208dedc4ee",
+      "payload_sha256": "3f59f8b83489894184697d75c9b39fa9cc0b5ec7e2d173e2abd84f2df2b6ef79",
+      "prepared_at": "2026-10-04T21:34:59.977161+00:00",
+      "lease_expires": "2026-10-04T21:36:59.013050+00:00",
+      "fence_at_exit": 1,
+      "live_replacement": [
+        {
+          "kind": "graph",
+          "reason": "busy",
+          "status": "blocked"
+        }
+      ],
+      "recovery_pid": 2588,
+      "recovery_status": "acknowledged",
+      "recovery_owner_calls": [
+        [
+          "knowledge",
+          "read"
+        ],
+        [
+          "knowledge",
+          "submit"
+        ],
+        [
+          "knowledge",
+          "read"
+        ],
+        [
+          "knowledge",
+          "accepted"
+        ]
+      ],
+      "recovery_processing_reads": 8,
+      "original_binding_preserved": true,
+      "terminal_replay_owner_calls": [],
+      "terminal_replay_processing_reads": []
+    },
+    "after": {
+      "exit_code": 72,
+      "pid": 27176,
+      "state_at_exit": "dispatching",
+      "position_at_exit": 2,
+      "original_request_sha256": "ad385fffa97ca90d8afb338075616973791b1c36be57b19b421256c719ceb3a8",
+      "payload_sha256": "782bd1163ec6dbaac3fc2f2bf0e8810bf6e2ae8eaa6fb7330a2476209c1c998f",
+      "prepared_at": "2026-10-04T21:37:20.350066+00:00",
+      "lease_expires": "2026-10-04T21:39:19.386499+00:00",
+      "fence_at_exit": 1,
+      "live_replacement": [
+        {
+          "kind": "graph",
+          "reason": "busy",
+          "status": "blocked"
+        }
+      ],
+      "recovery_pid": 1068,
+      "recovery_status": "acknowledged",
+      "recovery_owner_calls": [
+        [
+          "knowledge",
+          "read"
+        ],
+        [
+          "knowledge",
+          "accepted"
+        ]
+      ],
+      "recovery_processing_reads": 0,
+      "original_binding_preserved": true,
+      "terminal_replay_owner_calls": [],
+      "terminal_replay_processing_reads": []
+    }
+  },
+  "authority_negatives": {
+    "conflicting_span": {
+      "wire_version": "1",
+      "graph": {
+        "scope": {
+          "tenant_id": "planning-combined",
+          "project_id": "8bf6db6ad41a490a81a9ad0da4379270"
+        },
+        "graph_id": "fabricated-span"
+      },
+      "change_id": "conflicting-source-span",
+      "request_sha256": "46b9f0f8c77756c6cfc0a70352e921c93e31d779affe68c5ac88208cd8c1f7e3",
+      "decision": {
+        "outcome": "rejected",
+        "findings": [
+          {
+            "code": "reference_identity_conflict",
+            "location": "proposal",
+            "message": "Structural edit was not accepted"
+          }
+        ]
+      }
+    },
+    "fabricated_span": {
+      "wire_version": "1",
+      "graph": {
+        "scope": {
+          "tenant_id": "planning-combined",
+          "project_id": "8bf6db6ad41a490a81a9ad0da4379270"
+        },
+        "graph_id": "fabricated-span"
+      },
+      "change_id": "fabricated-source-span",
+      "request_sha256": "b00e30c273291e206eab9701fba3d3c55720299af38a9a3f0cda48b13111875e",
+      "decision": {
+        "outcome": "rejected",
+        "findings": [
+          {
+            "code": "source_span_digest_mismatch",
+            "location": "proposal",
+            "message": "Structural edit was not accepted"
+          }
+        ]
+      }
+    },
+    "unauthorized": {
+      "code": "access_denied"
+    },
+    "original_head_unchanged": {
+      "snapshot": {
+        "graph": {
+          "scope": {
+            "tenant_id": "planning-combined",
+            "project_id": "8bf6db6ad41a490a81a9ad0da4379270"
+          },
+          "graph_id": "crash-after"
+        },
+        "revision": 1,
+        "sha256": "c2ad4d7bec3c470587d9f363cd426699c10c4d64ad493e60d95e35d93a093bb3"
+      },
+      "change": {
+        "graph": {
+          "scope": {
+            "tenant_id": "planning-combined",
+            "project_id": "8bf6db6ad41a490a81a9ad0da4379270"
+          },
+          "graph_id": "crash-after"
+        },
+        "change_id": "p-46795b840b31668ee10c2a749b4cf1a11c66f371492c2ca9c7dff32dfc298aaf",
+        "position": 1,
+        "sha256": "82056134c59f1c77bd68a6388e97aad096b5c7d46a58915fa71b56ee3b8e9f2a"
+      }
+    }
+  },
+  "unauthorized_accepted_changes": 0,
+  "fabricated_accepted_citations": 0,
+  "checks": [
+    "Ruff passed",
+    "Production dependency boundaries passed",
+    "Production120s leases expired naturally; no control edits"
+  ],
+  "limits": [
+    "Abrupt os._exit at named Planning boundaries; actual remote Knowledge HTTP and retained SQL",
+    "Production120s leases expire naturally; no control reset, clock mutation or shortened lease",
+    "Synthetic scientific/provider inputs; no machine/power-failure or live-model claim",
+    "Original failed run retained: both crash cases passed but duplicated-span negative hit an earlier identity guard",
+    "Final run separately verifies conflicting copies and consistently false span digest; no relaxed assertion",
+    "Fourteen pure and25 owned-SQL tests complement actual peers; no live model/scientific or whole-system outage claim"
+  ]
+}

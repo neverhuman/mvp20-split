@@ -12,3 +12,6 @@ Retain failed fixture directories for diagnosis. Never run old package migrators
 
 
 `semantic_report_probe.py`, orchestrated by `dev/verify_planning_semantics.py`, verifies native extraction boundaries and explicit semantic-review accounting across both installed0.30 environments. Verified 2026-10-04 16:15:15:88 tests each, identical reports; no database or remote owner calls. [Fixture contract](../extraction/semantic_fixtures/README.md) defines label authority and the unchanged corpus split. [Evidence](../../../../docs/Audits/Evidence/BP-07-Extraction/Semantic_Corpus.json) retains all faithful, deliberately incorrect and abstaining variants.
+
+
+B3.03 abrupt recovery verified 2026-10-04 16:44:01: `verify_planning_failures.py` extends the combined actual-owner fixture. Nineteen Planning workers/six owners; os._exit71 before POST and72 after accepted response leave durable dispatching state. Live production120s leases exclude replacement and expire naturally. Original bytes recover after rights regrant when unsubmitted; already accepted history recovers without processing or another POST. Terminal replay makes zero calls. Actual conflicting-span, false-digest and missing-grant proposals accept nothing.14 pure/25 SQL checks pass; no production change. [Evidence](../../../../docs/Audits/Evidence/BP-07-Extraction/Process_Failure_Oracles.json).

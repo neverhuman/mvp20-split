@@ -51,7 +51,7 @@ from amphora_tool_protocol import ArtifactClient, WorkerIdentity
 from sqlalchemy import create_engine
 
 
-def run(stage, fixture_path, origin_path):
+def run(stage, fixture_path, origin_path, output_path=None):
     assert all(importlib.util.find_spec(name) is None for name in
         ("amphora_data_artifacts", "amphora_knowledge", "amphora_research"))
     raw = json.loads(fixture_path.read_bytes())
@@ -59,6 +59,26 @@ def run(stage, fixture_path, origin_path):
     principal = Principal("fixture", scope, frozenset({"record_requests", "record_attempts", "read_attempts"}))
     engine = create_engine(os.environ["COMBINED_PLANNING_DB"], connect_args={"options": "-c statement_timeout=5000"})
     calls, reads, owner_calls = [], [], []
+    leases = {}
+
+    class ObservedStore(HandoffStore):
+        def acquire(self, principal, effect_id, seconds=30):
+            lease = super().acquire(principal, effect_id, seconds=seconds)
+            leases[effect_id] = lease
+            return lease
+
+    def crash(request, response=None):
+        # No finally/release runs. The driver waits for the real120s lease,
+        # retaining both the Planning dispatch and the independently read owner.
+        state = owners["knowledge"].journal.read(principal, request.selection.effect_id)
+        lease = leases[request.selection.effect_id]
+        assert state.progress.state == "dispatching" and output_path is not None
+        output_path.write_bytes(encode({"pid": os.getpid(), "stage": stage, "request": request.document().model_dump(mode="json"),
+            "payload_sha256": state.payload.sha256, "prepared_at": state.prepared_at.isoformat(), "position": state.position,
+            "state": state.progress.state, "lease_expires": lease.expires_at.isoformat(), "fence": lease.fence,
+            "remote_response": None if response is None else response.model_dump(mode="json"),
+            "provider_calls": calls, "processing_reads": reads, "owner_calls": owner_calls}))
+        os._exit(71 if stage == "die-before" else 72)
 
     class Provider:
         def __init__(self, name, body):
@@ -87,7 +107,11 @@ def run(stage, fixture_path, origin_path):
 
         def submit(self, request, window, *, guard=None):
             owner_calls.append([request.owner, "submit"])
+            if stage == "die-before" and request.owner == "knowledge":
+                crash(request)
             reply = super().submit(request, window, guard=guard)
+            if stage == "die-after" and request.owner == "knowledge":
+                crash(request, reply)
             if stage == "uncertain" and request.owner == "knowledge":
                 raise OwnerUnavailable("synthetic_lost_reply_after_actual_commit")
             return reply
@@ -102,24 +126,27 @@ def run(stage, fixture_path, origin_path):
     results = ResultPublisher(ResultJournal(ResultStore(engine, "combined-data", trace_publisher_id="combined-data")),
         ResultPreparer(data, knowledge=knowledge, research=questions), client)
     preparer = HandoffPreparer(data, knowledge=knowledge, research=questions)
-    owners = {name: OwnerHandoff(HandoffJournal(HandoffStore(engine, "combined-" + name, trace_publisher_id="combined-data")),
+    owners = {name: OwnerHandoff(HandoffJournal(ObservedStore(engine, "combined-" + name, trace_publisher_id="combined-data")),
         preparer, Transport("combined-" + name, name, os.environ["COMBINED_" + name.upper() + "_ENDPOINT"],
             os.environ["COMBINED_" + name.upper() + "_TOKEN"])) for name in ("research", "knowledge")}
     coordinator = HandoffCoordinator(traces, research=owners["research"], knowledge=owners["knowledge"], answers=results, questions=questions)
     result = {"pid": os.getpid(), "stage": stage, "provider_calls": calls, "processing_reads": reads, "owner_calls": owner_calls}
     try:
-        if stage == "seed":
+        if stage in {"seed", "seed-crashes"}:
             graph = DomainGraphRef.model_validate(raw["task"]["target"]["graph"])
             profile = knowledge.transport.read("/v1/graph-profiles/read", graph, KnowledgeReadWindow())
             raw["task"]["target"].update(vocabulary=profile.vocabulary_reference.model_dump(mode="json"),
                 policy=profile.policy.model_dump(mode="json"), operation_schema=proposal_schema().model_dump(mode="json"))
             origins = {}
-            for name in ("diagnostic", "campaign", "stale"):
+            names = ("diagnostic", "campaign", "stale") if stage == "seed" else ("crash-before", "crash-after")
+            for name in names:
                 candidate = copy.deepcopy(raw)
                 candidate["request"]["reference"]["engagement_id"] = name
                 candidate["task"].update(task_id=name, engagement=candidate["request"]["reference"])
-                if name == "stale":
+                if name == "stale" or name.startswith("crash-"):
                     candidate["draft"].update(questions=[], answers=[], evidence_needs=[])
+                if name.startswith("crash-"):
+                    candidate["task"]["target"]["graph"]["graph_id"] = name
                 request = RequestSnapshot.from_bytes(encode(candidate["request"]), actor_id="fixture", scope=scope)
                 candidate["task"]["request_sha256"] = request.sha256
                 task = ExtractionSnapshot.from_bytes(encode(candidate["task"]), request)
@@ -166,7 +193,10 @@ def run(stage, fixture_path, origin_path):
             assert context.task_sha256 == task.sha256
         else:
             origins = json.loads(origin_path.read_bytes())
-            origin = origins["stale" if stage == "stale" else "campaign"]
+            name = "stale" if stage == "stale" else "campaign"
+            if stage.endswith(("-before", "-after")):
+                name = "crash-" + stage.rsplit("-", 1)[1]
+            origin = origins[name]
             report = coordinator.run(principal, ExtractionTraceRef.model_validate(origin["trace"]), origin["interpretation_id"])
             effects = []
             for effect in report.effects:
@@ -188,4 +218,4 @@ def run(stage, fixture_path, origin_path):
 
 if __name__ == "__main__":
     mode, fixture_file, origins_file, output_file = sys.argv[1:]
-    Path(output_file).write_bytes(encode(run(mode, Path(fixture_file), Path(origins_file))))
+    Path(output_file).write_bytes(encode(run(mode, Path(fixture_file), Path(origins_file), Path(output_file))))

@@ -444,3 +444,12 @@ B3.02 verified 2026-10-04 16:15:15:54 explicitly reviewed synthetic responses/18
 Archived MBT checkpoint:
 
 | 2026-10-04 04:07:44 | BP-07.02/B1.03a verified; child14.58%,parent22.92%; B1.03b active | Trace_Domain.json;263 tests,64 statements14 branches100%,500 schemas |
+
+
+## Process failure verification 2026-10-04 16:44:01
+
+B3.03 verified 2026-10-04 16:44:01:19 Planning workers/six actual owners prove abrupt exits before Knowledge POST and after actual acceptance, real120s lease exclusion/expiry, original-byte recovery and zero-call terminal replay. Before-POST rights withdrawal blocks new consumption; after-response recovery needs no processing or POST. Conflicting span identity, false span digest and missing grant yield zero accepted changes/citations.14 pure4.48s plus25 scoped PostgreSQL93.02s pass; existing same0.30 coverage explicitly reused. B3/Build100%;child75.00%,parent35.00%;closed3/4 and7/20. Current V1.01. [Evidence](../Audits/Evidence/BP-07-Extraction/Process_Failure_Oracles.json).
+
+Archived MBT checkpoint:
+
+| 2026-10-04 04:16:09 | BP-07.02/B1.03b verified; child16.67%,parent23.33%; B1.03c active | Extraction_Journal.json;272 regression plus10 final PG cases;102 statements8 branches100% |
