@@ -5,7 +5,7 @@
 - Refreshed 2026-10-04 11:21:46 (America/Chicago). **Read this file first after every compression**, explicitly requested by the owner.
 - Continue authorized work across milestones, commits/pushes and compaction. No subagents, JARVIS access or v1 edits. No milestone-only final pauses.
 - **Current BP-07.02/B2.03b.ii.c: concrete diagnostic producer and actual Data integration.** Next b.iii owner handoff. c combined owner acceptance/rebuild follows b.
-- Latest pushed Planning0.25 storage checkpoint **f6b14ef4**; earlier values f9521f97. The0.26 workflow is now verified and ready for commit.
+- Latest pushed Planning0.26 workflow checkpoint **e717e9a3**; earlier storage f6b14ef4 and values f9521f97.
 - Child45.99%,Build61.32%,Acceptance0%,1/4 closed; B1=100%,B2=83.95%,B3/V1=0%. B2 .01/.02=100%,.03=51.85% (a100%,b55.56%,c0%; b i100%,ii66.67%,iii0%; b.ii a/b100%,c0%). Parent29.20%,5/20 closed; P1=100%,P2=45.99%,others0%. Canonical tracker/parent/MBT/history are updated; MBT25 recent rows.
 
 ## Latest SDK workflow checkpoint
@@ -15,7 +15,7 @@
 - publication/driver.py extracts the unchanged bounded upload loop. ResultPublisher registers owned selection, prepares outside SQL, reconstructs/journals exact bytes, then drives upload with DB-clock fencing. Terminal histories avoid preparation/peer calls. Scripted Data/preparer only; concrete current-rights preparer and automatic diagnostic producer remain b.ii.c.
 - Three new installed result stages preserve exact payload/identity/time, recover uncertain PUT through a distinct upload and replay with zero preparation/peer calls. No actual Data or abrupt-kill claim. Trace tests protect unchanged prior behavior.
 - Ruff for touched files, dependency boundaries,506 schema checks and whitespace checks pass. Explicit dev-only Ruff configuration has unrelated/different formatting rules; normal discovery is the existing project gate. Earlier broad-directory lint found a preexisting untouched payload import formatting issue; no unrelated source change.
-- Canonical tracker/parent/MBT/history and module READMEs updated. Workflow changes ready for final diff review and commit/push, then proceed b.ii.c. Latest pushed remains f6b14ef4 until this checkpoint is committed.
+- Canonical tracker/parent/MBT/history and module READMEs updated. Workflow committed/pushed as e717e9a3. b.ii.c concrete preparation/diagnostic producer is now active; no new code for it yet.
 ## Latest result-storage checkpoint
 
 - Planning/dev0.25/public0.7. **planning0010 APPLIED and immutable; never run Planning<=0.24 migrators.** Research0013 also applied; never run Research<=0.33 migrators. No fixture reset/downgrade.
@@ -47,7 +47,7 @@
 
 ## Next authorized work
 
-1. Final diff/tracker review, then commit/push the verified0.26 workflow. Continue b.ii.c afterward.
+1. Workflow0.26 committed/pushed as e717e9a3. Continue b.ii.c concrete preparation/diagnostic producer and actual Data proof.
 2. Read result_publication README and BP-07.02 Result publication.md. Add concrete ResultPreparer using SourceReviewer and ArtifactReview with one shared ReadBudget outside SQL; verify interpretation body equals owned trace. Exact selected Research QuestionReader inputs for answers; gaps withhold only dependent answers.
 3. Derive diagnostic decisions from owned task/observation/trace and configured validators. RepairFeedback.create binds diagnostics to exact history. Do not accept caller acceptance or arbitrary feedback as authoritative producer input. Persist the first diagnostic snapshot; one immutable diagnostics slot per parent. Later model output creates a new trace.
 4. Connect actual interpretation/result publication to RepairChain producer.next(step), yielding RepairInputs or a bounded no-repair/unavailable result. Preserve root attempt and aggregate budget limits, prior useful output, abstention/policy stops and future-campaign-only corrections.
