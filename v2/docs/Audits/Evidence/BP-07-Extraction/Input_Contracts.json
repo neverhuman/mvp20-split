@@ -1,0 +1,218 @@
+{
+  "verified_at": "2026-10-04 03:35:32",
+  "status": "passed",
+  "tests": 207,
+  "project": "042478ceab19468e972bf79cb75b817b",
+  "stages": {
+    "prepare": {
+      "pid": 23084,
+      "request_sha256": "48a06d739d446d6bc9e7c28a64865bfd8362f4dd76a4c4ce787d70f0b5f0c817",
+      "attempts": [
+        {
+          "ordinal": 1,
+          "status": "pending"
+        },
+        null
+      ]
+    },
+    "interrupted": {
+      "pid": 18660,
+      "request_sha256": "48a06d739d446d6bc9e7c28a64865bfd8362f4dd76a4c4ce787d70f0b5f0c817",
+      "attempts": [
+        {
+          "ordinal": 1,
+          "status": "unknown",
+          "record_sha256": "260fe04f7871097fd4b1c61264a897d8533b09bd8788ef82f2d5c3e5e82377c4",
+          "capture_sha256": "c0cc5a4ffaffaa209c0244ef5b7427ec0d2aa1c7a46ff5c922d81a10502b4cb7",
+          "usage": {
+            "input_tokens": null,
+            "output_tokens": null,
+            "accounting_units": null,
+            "certainty": "unknown"
+          }
+        },
+        {
+          "ordinal": 2,
+          "status": "pending"
+        }
+      ]
+    },
+    "finish": {
+      "pid": 10316,
+      "request_sha256": "48a06d739d446d6bc9e7c28a64865bfd8362f4dd76a4c4ce787d70f0b5f0c817",
+      "attempts": [
+        {
+          "ordinal": 1,
+          "status": "unknown",
+          "record_sha256": "260fe04f7871097fd4b1c61264a897d8533b09bd8788ef82f2d5c3e5e82377c4",
+          "capture_sha256": "c0cc5a4ffaffaa209c0244ef5b7427ec0d2aa1c7a46ff5c922d81a10502b4cb7",
+          "usage": {
+            "input_tokens": null,
+            "output_tokens": null,
+            "accounting_units": null,
+            "certainty": "unknown"
+          }
+        },
+        {
+          "ordinal": 2,
+          "status": "proposed",
+          "record_sha256": "0bcb7cc53408a73d6c3604c69c604f3b9668be19e75d2631ec02edb8aeea15d9",
+          "capture_sha256": "de3aa27afcd532c5af6222fc5c9c861d49d7046b85d2509dfe91e45f30de98eb",
+          "usage": {
+            "input_tokens": 10,
+            "output_tokens": 10,
+            "accounting_units": 1,
+            "certainty": "reported"
+          }
+        }
+      ]
+    },
+    "replay": {
+      "pid": 17728,
+      "request_sha256": "48a06d739d446d6bc9e7c28a64865bfd8362f4dd76a4c4ce787d70f0b5f0c817",
+      "attempts": [
+        {
+          "ordinal": 1,
+          "status": "unknown",
+          "record_sha256": "260fe04f7871097fd4b1c61264a897d8533b09bd8788ef82f2d5c3e5e82377c4",
+          "capture_sha256": "c0cc5a4ffaffaa209c0244ef5b7427ec0d2aa1c7a46ff5c922d81a10502b4cb7",
+          "usage": {
+            "input_tokens": null,
+            "output_tokens": null,
+            "accounting_units": null,
+            "certainty": "unknown"
+          }
+        },
+        {
+          "ordinal": 2,
+          "status": "proposed",
+          "record_sha256": "0bcb7cc53408a73d6c3604c69c604f3b9668be19e75d2631ec02edb8aeea15d9",
+          "capture_sha256": "de3aa27afcd532c5af6222fc5c9c861d49d7046b85d2509dfe91e45f30de98eb",
+          "usage": {
+            "input_tokens": 10,
+            "output_tokens": 10,
+            "accounting_units": 1,
+            "certainty": "reported"
+          }
+        }
+      ]
+    }
+  },
+  "reservation_stages": {
+    "budget_prepare": {
+      "pid": 23120,
+      "request_sha256": "e20407ecd4d1f88eaf1aec671b10b17abc393ebc12888553ba6b7c9f53b8a3f6",
+      "policy_sha256": "e6bb8f4ce296a0225ef01f5fd5fd60b39d56695aeb794dfca4460676c3d44803",
+      "tokens": 2048,
+      "units": 60,
+      "registered_at": "2026-10-04T08:35:18.807745+00:00"
+    },
+    "budget_replay": {
+      "pid": 31688,
+      "request_sha256": "e20407ecd4d1f88eaf1aec671b10b17abc393ebc12888553ba6b7c9f53b8a3f6",
+      "policy_sha256": "e6bb8f4ce296a0225ef01f5fd5fd60b39d56695aeb794dfca4460676c3d44803",
+      "tokens": 2048,
+      "units": 60,
+      "registered_at": "2026-10-04T08:35:18.807745+00:00"
+    }
+  },
+  "settlement_stages": {
+    "budget_settle": {
+      "pid": 31708,
+      "request_sha256": "e20407ecd4d1f88eaf1aec671b10b17abc393ebc12888553ba6b7c9f53b8a3f6",
+      "observation_sha256": "ee6be4ddd81e48731e536aa1be63ec8499aa0cff7d5ee4a651bed5a334fa1be9",
+      "tokens": 2048,
+      "units": 60,
+      "overage": false,
+      "registered_at": "2026-10-04T08:35:22.829075+00:00"
+    },
+    "budget_settle_replay": {
+      "pid": 10800,
+      "request_sha256": "e20407ecd4d1f88eaf1aec671b10b17abc393ebc12888553ba6b7c9f53b8a3f6",
+      "observation_sha256": "ee6be4ddd81e48731e536aa1be63ec8499aa0cff7d5ee4a651bed5a334fa1be9",
+      "tokens": 2048,
+      "units": 60,
+      "overage": false,
+      "registered_at": "2026-10-04T08:35:22.829075+00:00"
+    }
+  },
+  "dispatch_stages": {
+    "dispatch_prepare": {
+      "pid": 26124,
+      "request_sha256": "e000b8e576340ee554d87e9b1715b146cd89c9199f9c24cc7cb0c4251a300675",
+      "deadline": "2026-10-04T08:35:27.823071+00:00",
+      "status": "pending"
+    },
+    "dispatch_run": {
+      "pid": 30776,
+      "request_sha256": "e000b8e576340ee554d87e9b1715b146cd89c9199f9c24cc7cb0c4251a300675",
+      "calls": [
+        2
+      ],
+      "records": [
+        "6df889ac99b89ef9ef2b9ffb43c4bb65e100dfb3ed1bcd48646bea7f9adcf7ad",
+        "76630906181f8d870724529db99ef067b69309d5dd5bee2d1f2bd388198e2310"
+      ],
+      "charges": [
+        40,
+        40
+      ],
+      "stop": "abstained"
+    },
+    "dispatch_replay": {
+      "pid": 27028,
+      "request_sha256": "e000b8e576340ee554d87e9b1715b146cd89c9199f9c24cc7cb0c4251a300675",
+      "calls": [],
+      "records": [
+        "6df889ac99b89ef9ef2b9ffb43c4bb65e100dfb3ed1bcd48646bea7f9adcf7ad",
+        "76630906181f8d870724529db99ef067b69309d5dd5bee2d1f2bd388198e2310"
+      ],
+      "charges": [
+        40,
+        40
+      ],
+      "stop": "abstained"
+    }
+  },
+  "wheels": {
+    "amphora_agent_planning-0.8.0-py3-none-any.whl": "8676bbc4f36c6dad664dd6281eccf58f7431da865d2db64189f9456cb9043f28",
+    "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+    "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+    "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+    "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+    "amphora_contracts_planning-0.3.0-py3-none-any.whl": "f2e50d919413bb25ee4106811351286e57e9031e6b654bac51142725a4c7d1e4",
+    "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee"
+  },
+  "limits": [
+    "Pure byte quotation geometry is not current source rights or scientific entailment",
+    "Typed extraction output dispatch remains B1.02",
+    "No actual tokenizer/model/source peer call in this milestone"
+  ],
+  "scope": "BP-07.02 B1.01 extraction task/quotation/prompt boundary",
+  "source_dev_tests": 52,
+  "source_dev_seconds": 19.96,
+  "owned_tests": 34,
+  "coverage": {
+    "covered_lines": 154,
+    "num_statements": 154,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100",
+    "num_branches": 20,
+    "num_partial_branches": 0,
+    "covered_branches": 20,
+    "missing_branches": 0,
+    "percent_branches_covered": 100.0,
+    "percent_branches_covered_display": "100"
+  },
+  "schemas": 492,
+  "predecessor_schemas_unchanged": 488
+}

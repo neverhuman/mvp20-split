@@ -9,3 +9,23 @@ __all__ = [
     "EngagementRequest", "ModelBinding", "ProposalAction", "ProviderAttemptRef", "ProviderUsage",
     "ProviderObservation", "ReferenceProposal", "reference_proposal_schema",
 ]
+
+from .extraction import (
+    AnswerDraft,
+    EvidenceNeedDraft,
+    ExtractionAssertion,
+    ExtractionAttribution,
+    ExtractionDiagnostic,
+    ExtractionDraft,
+    ExtractionEntity,
+    ExtractionSource,
+    ExtractionTarget,
+    ExtractionTask,
+    QuestionDraft,
+    SourceQuotation,
+    extraction_draft_schema,
+)
+
+__all__ += ["AnswerDraft", "EvidenceNeedDraft", "ExtractionAssertion", "ExtractionAttribution",
+            "ExtractionDiagnostic", "ExtractionDraft", "ExtractionEntity", "ExtractionSource", "ExtractionTarget",
+            "ExtractionTask", "QuestionDraft", "SourceQuotation", "extraction_draft_schema"]

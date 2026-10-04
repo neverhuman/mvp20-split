@@ -59,6 +59,7 @@ def verify(output):
         assert any(name.endswith("r0002_reservations.sql") for name in archive.namelist())
         assert any(name.endswith("r0003_settlements.sql") for name in archive.namelist())
         assert any(name.endswith("r0004_dispatch.sql") for name in archive.namelist())
+        assert any(name.endswith("prompts/domain-decomposition-v1.txt") for name in archive.namelist())
         assert not any("/tests/" in name for name in archive.namelist())
     external = ["pydantic", "pydantic-core", "annotated-types", "typing-extensions", "typing-inspection",
         "sqlalchemy", "psycopg", "psycopg-binary", "alembic", "Mako", "MarkupSafe",

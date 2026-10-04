@@ -73,12 +73,15 @@
   },
   {
     "package": "amphora-contracts-planning",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "path": "contracts/planning",
     "module": "amphora_contracts_planning",
     "public_dependencies": [
       "amphora-contracts-core",
-      "amphora-contracts-graph-runtime"
+      "amphora-contracts-graph-runtime",
+      "amphora-contracts-knowledge",
+      "amphora-contracts-evidence",
+      "amphora-contracts-research"
     ]
   },
   {
@@ -142,7 +145,7 @@
   },
   {
     "package": "amphora-agent-planning",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "path": "services/agent_planning",
     "module": "amphora_agent_planning",
     "public_dependencies": [

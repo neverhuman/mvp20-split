@@ -5,6 +5,7 @@
 
 # Published schema manifests hash the exact UTF-8/LF bytes across platforms.
 /v2/contracts/schemas/**/*.json text eol=lf
+/v2/services/agent_planning/src/amphora_agent_planning/extraction/prompts/*.txt text eol=lf
 /v2/tools/**/schemas/*.json text eol=lf
 /v2/services/campaign_runtime/tests/fixtures/compiler/*.json text eol=lf
 /v2/docs/Audits/Evidence/BP-03-Workers/*.json -text

@@ -171,3 +171,11 @@ Five committed boundaries across15 installed processes passed: reservation, issu
 ## 2026-10-04 03:14:24 ? V1 acceptance and BP-07.01 closeout
 
 V1.01 verified173 source/installed cases,18 dev,11 replay processes and15 abrupt-exit processes on final installations; V1.02 scoped audit aligned after consolidating stale persistence README. Child100%,Build100%,Acceptance100%; parent20%,4/20. Archive child and rebase links; BP-07.02 activation audit next. [Audit](../Audits/BP-07.01_Model_Engagement_Closeout.md). MBT redundant queue had stale5.83%; corrected to20% and removed numeric duplication from navigation prose. Future tracker refresh must include all active phase/queue mirrors, not historical checkpoint rows.
+
+## 2026-10-04 03:20:21 ? BP-07.02 activation
+
+[Coherence audit](../Audits/BP-07.02_Activation.md) reconciles Planning0.7, public Knowledge0.8/Research0.14/Evidence0.5.13 and actual owner boundaries. Reuse byte spans, Data traces, typed Knowledge proposals and interpretation Artifact linkage; preserve structural-only acceptance and future-campaign correction policy. Physical design sets ordered B1/B2/B3/V1 milestones. Child0%,Build0%,Acceptance0%; parent20%,4/20. B1.01 active; no live provider choice required for deterministic work.
+
+## 2026-10-04 03:37:23 ? BP-07.02/B1.01 extraction inputs
+
+Planning0.8/public Planning0.3 add immutable task/source/head/reference binding, exact raw UTF-8 quotation geometry, distinct graph/Research candidate DTOs and reviewed prompt/data compartments.52 source/dev19.96s,207 installed/11 processes/two installs;154 statements20 branches100%.492 schemas preserve488 prior bytes. Fixture generation lost Greek characters through Windows shell piping; corrected literal UTF-8 fixture and pinned prompt LF bytes in .gitattributes. Child6.25%,Build8.33%,parent21.25%; B1.02 active. [Evidence](../Audits/Evidence/BP-07-Extraction/Input_Contracts.json).
