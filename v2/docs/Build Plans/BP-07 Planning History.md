@@ -289,3 +289,13 @@ Planning0.17 adds decomposed deterministic graph proposal validation and direct 
 ## 2026-10-04 06:45:26 - BP-07.02/B2.01c verified
 
 Planning0.18 public Knowledge reads and graph packet preparation verified.513 regression plus2 additional focused cases;497 independently installed cases20 process stages; actual public reads8 Planning workers/2 Knowledge hosts, with2 synthetic Knowledge-local fixture processes. Old pins survive future retraction and owner restart; new tasks see the new revision; denials/missing exact records are explicit. Child33.33%,Build44.44%,parent26.67%,closed1/4 and5/20. [Evidence](../Audits/Evidence/BP-07-Extraction/Knowledge_Read_Binding.json). B2.02 starts with explicit aggregate repair admission design; no credit for design.
+
+## Archived MBT checkpoint 2026-10-04 07:07:14
+
+| Timestamp | Checkpoint | Evidence |
+|---|---|---|
+| 2026-10-04 00:56:34 | B3.01 complete; child56.25%,parent92.71%; B3.02 active | [Actual Explore](../Audits/Evidence/BP-06-Feedback/Explore_Actual_Browser.json);1test96.91s, actual owner windows/browser, reviewed screenshots |
+
+## 2026-10-04 07:07:14 - BP-07.02/B2.02a.i verified
+
+Typed Research proposals and shared publication candidate binding verified:542 source,524 independently installed tests20 process stages,56 focused cases206 statements28 branches96%.506 schemas preserveall504 predecessors; Planning0.19/public0.7. Child34.72%,Build46.30%,parent26.94%; closed1/4 and5/20. The aggregate repair admission design was fixed before implementation; a.i is half of a, which is one third of B2.02. [Evidence](../Audits/Evidence/BP-07-Extraction/Research_Proposals.json). Public question reads are next; no Research acceptance or method-execution authority claimed.

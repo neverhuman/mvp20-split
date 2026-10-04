@@ -29,6 +29,7 @@ from .extraction import (
     extraction_draft_schema,
 )
 from .proposals import ProviderObservation, ReferenceProposal, reference_proposal_schema
+from .research_proposals import AnswerProposal, NeedProposal, QuestionProposal, ResearchProposalSet
 from .task_output import TaskProviderObservation, TypedProposal
 from .trace import ExtractionTrace, ExtractionTraceRef, InterpretationOrigin, InterpretationOutcome
 
@@ -48,3 +49,5 @@ __all__ += ["TaskProviderObservation", "TypedProposal"]
 __all__ += ["ExtractionTrace", "ExtractionTraceRef", "InterpretationOrigin", "InterpretationOutcome"]
 __all__ += ["AssertionCorrectionDraft", "AssertionRetractionDraft", "EntityContextRevisionDraft", "EntityMergeDraft",
             "ExtractionDraftV2", "ExtractionEdit", "ExtractionEntityV2", "ExtractionTaskV2", "extraction_edit_schema"]
+
+__all__ += ["AnswerProposal", "NeedProposal", "QuestionProposal", "ResearchProposalSet"]

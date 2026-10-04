@@ -39,6 +39,7 @@ from amphora_contracts_tools import Completion, Invocation, ToolBinding, ToolDes
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
     "planning.extraction-edit-draft": planning_contracts.ExtractionDraftV2,
+    "planning.research-proposal-set": planning_contracts.ResearchProposalSet,
     "planning.extraction-trace": planning_contracts.ExtractionTrace,
     "planning.extraction-trace-ref": planning_contracts.ExtractionTraceRef,
     "planning.typed-proposal": planning_contracts.TypedProposal,
