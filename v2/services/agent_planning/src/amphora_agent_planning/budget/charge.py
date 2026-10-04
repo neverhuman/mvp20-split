@@ -3,9 +3,8 @@
 import hashlib
 from dataclasses import dataclass
 
-from amphora_contracts_planning import ProviderObservation
-
 from ..context.policy import require
+from ..providers.wire import observation_document
 from .policy import ReservationDemand
 
 
@@ -19,7 +18,7 @@ class BudgetCharge:
 
     @classmethod
     def reconcile(cls, demand: ReservationDemand, canonical_observation: bytes):
-        wire = ProviderObservation.model_validate_json(canonical_observation)
+        wire = observation_document(canonical_observation)
         require(wire.attempt == demand.attempt, "charge_attempt_mismatch")
         observed = (wire.usage.input_tokens, wire.usage.output_tokens, wire.usage.accounting_units)
         reserved = (demand.input_tokens, demand.output_tokens, demand.accounting_units)

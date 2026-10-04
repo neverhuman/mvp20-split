@@ -3,11 +3,12 @@
 import hashlib
 from dataclasses import dataclass
 
-from amphora_contracts_planning import ProviderObservation, ProviderUsage, reference_proposal_schema
+from amphora_contracts_planning import ProviderUsage
 
 from ..context import AttemptBinding
 from .port import ProviderPort, ProviderUnavailable
-from .proposal import ProposalPolicy
+from .profiles import OutputProfiles
+from .wire import observation_document
 
 MAX_OUTPUT_BYTES = 65536
 MAX_CHUNKS = 256
@@ -34,19 +35,19 @@ class Observation:
 
     @classmethod
     def record(cls, attempt, capture, status, reason, usage, proposal=None):
-        wire = ProviderObservation(attempt=attempt.reference(), status=status, reason_code=reason,
+        wire = OutputProfiles.observation_model(attempt)(attempt=attempt.reference(), status=status, reason_code=reason,
             output_sha256=capture.sha256, captured_bytes=len(capture.content), output_complete=capture.complete,
             usage=usage, proposal=proposal)
         return cls(capture, wire.model_dump_json().encode("utf-8"))
 
-    def document(self) -> ProviderObservation:
-        return ProviderObservation.model_validate_json(self.canonical)
+    def document(self):
+        return observation_document(self.canonical)
 
 
 def observe(attempt: AttemptBinding, provider: ProviderPort) -> Observation:
     context = attempt.request.document().context
     empty = CapturedOutput(b"", False)
-    if not provider.supports(context.model) or context.output_schema != reference_proposal_schema():
+    if not provider.supports(context.model) or not OutputProfiles.supported(attempt):
         return Observation.record(attempt, empty, "policy_rejected", "provider_or_profile_mismatch", unknown_usage())
     try:
         reply = provider.reply(attempt)
@@ -77,7 +78,7 @@ def observe(attempt: AttemptBinding, provider: ProviderPort) -> Observation:
             "unknown", "response_interrupted", usage)
     capture = CapturedOutput(bytes(captured), True)
     try:
-        proposal = ProposalPolicy.parse(capture.content, attempt)
+        proposal = OutputProfiles.parse(capture.content, attempt)
     except ValueError as exc:
         code = str(exc)
         policy = code in {"action_not_allowed", "proposal_scope_mismatch", "unselected_payload"}

@@ -4,13 +4,13 @@ import uuid
 from dataclasses import dataclass
 from datetime import datetime
 
-from amphora_contracts_planning import ProviderObservation
 from sqlalchemy import text
 
 from ..budget.charge import BudgetCharge
 from ..context import AttemptBinding
 from ..context.policy import require
 from ..providers.capture import CapturedOutput, Observation, unknown_usage
+from ..providers.wire import observation_document
 from .budget import BudgetLedger
 from .journal import KEY
 from .records import verified_observation
@@ -85,7 +85,7 @@ class DispatchJournal:
                 " AND ordinal=:ordinal"), key).mappings().first()
             if row is None:
                 return None
-            wire = ProviderObservation.model_validate_json(bytes(row["canonical_bytes"]))
+            wire = observation_document(bytes(row["canonical_bytes"]))
             observed = verified_observation(bound, Observation(
                 CapturedOutput(bytes(row["capture_bytes"]), wire.output_complete), bytes(row["canonical_bytes"])))
             charge = BudgetCharge.reconcile(reservation.demand, observed.canonical)

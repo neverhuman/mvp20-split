@@ -38,6 +38,7 @@ from amphora_contracts_tools import Completion, Invocation, ToolBinding, ToolDes
 
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
+    "planning.typed-proposal": planning_contracts.TypedProposal,
     "planning.extraction-task": planning_contracts.ExtractionTask,
     "planning.extraction-draft": planning_contracts.ExtractionDraft,
     "planning.reference-proposal": planning_contracts.ReferenceProposal,
@@ -70,6 +71,7 @@ MODELS = {
     "campaigns.definition": CampaignDefinition,
 }
 MODELS_V2 = {
+    "planning.provider-observation": planning_contracts.TaskProviderObservation,
     "campaigns.definition": ExecutableCampaign,
     "campaigns.execution-plan": ExecutionPlan,
     "campaigns.plan-lock": PlanLock,

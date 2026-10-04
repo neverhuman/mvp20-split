@@ -1,7 +1,7 @@
 # Planning persistence boundary
 
-- Reviewed implementation: Agent Planning0.7; BP-07.01.
-- State: private planning schema, forward migrations planning_0001 through planning_0004.
+- Reviewed implementation: Agent Planning0.9; BP-07.02/B1.02.
+- State: private planning schema, forward migrations planning_0001 through planning_0005.
 - Responsibility: immutable request, attempt, observation, policy, reservation, settlement, issuance and late-evidence records. The orchestration module composes these objects; Runtime alone owns campaign decisions.
 
 ## Authority and immutable journal
@@ -28,6 +28,10 @@ The deadline fences accepted observations, not physical remote cancellation or n
 
 ## Replacement and verification
 
-Preserve canonical policy/request/observation bytes, exact attempt identities, first-writer outcomes, unknown/pending distinctions, actor/scope checks, conservative arithmetic and all issuance/late evidence. Migrations are forward-only and immutable after application; Planning<=0.6 migrators must not run against planning_0004. There is no fixture reset, downgrade or deletion authority.
+Preserve canonical policy/request/observation bytes, exact attempt identities, first-writer outcomes, unknown/pending distinctions, actor/scope checks, conservative arithmetic and all issuance/late evidence. Migrations are forward-only and immutable after application; Planning<=0.8 migrators must not run against planning_0005. There is no fixture reset, downgrade or deletion authority.
 
 Owned tests/persistence cover actual PostgreSQL migration/idempotency, competing writers, admission rollback and limits, legacy distinction, settlement/retry, expiry/late races, stored-record integrity and SQLSTATE42501 for forbidden mutations. tests/orchestration separately cover bounded composition and non-starvation. dev/verify_planning.py installs the public dependency closure twice and verifies isolated owner/process readback; dev/verify_planning_recovery.py exits installed workers abruptly at five committed boundaries. The latter uses exclusive synthetic call markers, not real remote effects. Neither harness claims independently authored replacement code, power-loss durability, scientific validity or live model quality. Detailed evidence lives under docs/Audits/Evidence/BP-07-Planning.
+
+## Versioned observation storage
+
+planning_0005 conditionally extends encoded observations and late observations to256KiB only for explicit string format2. Missing/numeric/legacy version records do not gain that allowance; v1 retains64KiB. Raw capture remains64KiB for both. The shared strict decoder and closed output catalog reconstruct either legacy ReferenceProposal or TypedProposal from retained capture before writing/replaying. Budget/issuance/settlement rows and all prior observation bytes remain unchanged. Actual SQL cases verify the conditional constraints and format2 late output/charges; an optional --legacy-manifest argument to dev/verify_planning.py verifies retained predecessor project hashes after migration using only service credentials.

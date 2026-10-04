@@ -179,3 +179,7 @@ V1.01 verified173 source/installed cases,18 dev,11 replay processes and15 abrupt
 ## 2026-10-04 03:37:23 ? BP-07.02/B1.01 extraction inputs
 
 Planning0.8/public Planning0.3 add immutable task/source/head/reference binding, exact raw UTF-8 quotation geometry, distinct graph/Research candidate DTOs and reviewed prompt/data compartments.52 source/dev19.96s,207 installed/11 processes/two installs;154 statements20 branches100%.492 schemas preserve488 prior bytes. Fixture generation lost Greek characters through Windows shell piping; corrected literal UTF-8 fixture and pinned prompt LF bytes in .gitattributes. Child6.25%,Build8.33%,parent21.25%; B1.02 active. [Evidence](../Audits/Evidence/BP-07-Extraction/Input_Contracts.json).
+
+## 2026-10-04 03:54:55 ? BP-07.02/B1.02 typed output compatibility
+
+Planning0.9/public Planning0.4 add closed profile catalog, TypedProposal/v1 and observation/v2 while retaining legacy v1 bytes. Conditional planning_0005 allows256KiB encoded v2 overhead only; raw capture/canonical payload remain64KiB.233 source23.52s,233 installed/14 processes/two installs incl retained0.7 readback,18 dev14.82s. Golden0.8 canonical v1 bytes unchanged.496 schemas preserve492 predecessors; profiles53 statements14 branches100%, decoder17 statements100%; service1026/1027 statements151/152 branches (CLI separately executed). Child12.50%,Build16.67%,parent22.50%; B1.03 active. [Evidence](../Audits/Evidence/BP-07-Extraction/Task_Output.json).

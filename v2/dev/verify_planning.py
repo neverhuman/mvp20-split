@@ -21,7 +21,7 @@ from postgres_fixture import owned_state, planning_owner
 from sqlalchemy import URL
 
 
-def verify(output):
+def verify(output, legacy_manifest=None):
     if os.environ.get("AMPHORA_TEST_POSTGRES") != "1":
         raise ValueError("Explicit retained PostgreSQL fixture opt-in required")
     state = owned_state()
@@ -59,6 +59,7 @@ def verify(output):
         assert any(name.endswith("r0002_reservations.sql") for name in archive.namelist())
         assert any(name.endswith("r0003_settlements.sql") for name in archive.namelist())
         assert any(name.endswith("r0004_dispatch.sql") for name in archive.namelist())
+        assert any(name.endswith("r0005_task_output.sql") for name in archive.namelist())
         assert any(name.endswith("prompts/domain-decomposition-v1.txt") for name in archive.namelist())
         assert not any("/tests/" in name for name in archive.namelist())
     external = ["pydantic", "pydantic-core", "annotated-types", "typing-extensions", "typing-inspection",
@@ -137,17 +138,35 @@ def verify(output):
     assert dispatches["dispatch_run"]["records"] == dispatches["dispatch_replay"]["records"]
     assert dispatches["dispatch_run"]["calls"] == [2] and dispatches["dispatch_replay"]["calls"] == []
     assert dispatches["dispatch_run"]["charges"] == [40, 40]
+    typed = {}
+    for stage, label in (("write", "initial"), ("replay", "replacement")):
+        typed[stage] = run([interpreters[label], "-I", output / "tests/service/acceptance/task_output_probe.py",
+                           stage, project], env=probe_env, capture=True)
+    assert typed["write"]["pid"] != typed["replay"]["pid"]
+    assert {k: v for k, v in typed["write"].items() if k not in {"pid", "calls"}} == {
+        k: v for k, v in typed["replay"].items() if k not in {"pid", "calls"}}
+    assert typed["write"]["calls"] == [1] and typed["replay"]["calls"] == []
+    legacy = None
+    if legacy_manifest is not None:
+        legacy_path = legacy_manifest.absolute()
+        previous = json.loads(legacy_path.read_text(encoding="utf-8"))
+        legacy = run([interpreters["replacement"], "-I", output / "tests/service/acceptance/journal_probe.py",
+                      "replay", previous["project"]], env=probe_env, capture=True)
+        assert legacy["attempts"] == previous["stages"]["replay"]["attempts"]
+        assert legacy["request_sha256"] == previous["stages"]["replay"]["request_sha256"]
     manifest = {"verified_at": datetime.now(ZoneInfo("America/Chicago")).strftime("%Y-%m-%d %H:%M:%S"),
         "status": "passed", "tests": tests, "project": project, "stages": stages,
-        "reservation_stages": reservations, "settlement_stages": settlements, "dispatch_stages": dispatches,
+        "reservation_stages": reservations, "settlement_stages": settlements, "dispatch_stages": dispatches, "typed_stages": typed, "legacy_replay": legacy,
         "wheels": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(wheels.glob("*.whl"))},
         "limits": ["Own PostgreSQL journal only; no live provider/domain acceptance", "Deterministic bounded dispatch only; no actual remote transport",
                    "Two independent installs from one source-built wheel closure; no new implementation rewrite"]}
     (output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({"status": "passed", "tests": tests, "processes": 11, "installations": 2}))
+    print(json.dumps({"status": "passed", "tests": tests, "processes": 13 + (legacy is not None), "installations": 2}))
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
-    verify(parser.parse_args().output)
+    parser.add_argument("--legacy-manifest", type=Path)
+    args = parser.parse_args()
+    verify(args.output, args.legacy_manifest)
