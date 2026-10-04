@@ -18,10 +18,12 @@ wheels = [
 
 [[package]]
 name = "amphora-agent-planning"
-version = "0.12.0"
+version = "0.13.0"
 source = { editable = "../services/agent_planning" }
 dependencies = [
     { name = "alembic" },
+    { name = "amphora-contracts-artifacts" },
+    { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-evidence" },
     { name = "amphora-contracts-planning" },
@@ -33,6 +35,8 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "alembic", specifier = ">=1.16,<2" },
+    { name = "amphora-contracts-artifacts", editable = "../contracts/artifacts" },
+    { name = "amphora-contracts-commands", editable = "../contracts/commands" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
     { name = "amphora-contracts-evidence", editable = "../contracts/evidence" },
     { name = "amphora-contracts-planning", editable = "../contracts/planning" },

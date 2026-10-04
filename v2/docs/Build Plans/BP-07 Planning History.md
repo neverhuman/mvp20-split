@@ -223,3 +223,11 @@ Planning0.12 consumes public Evidence directly. Own source_access module uses co
 Archived MBT checkpoints:
 
 | 2026-10-03 21:22:59 | B1.03a verified; child12.50%,parent85.42%; B1.03b active | [Research views](../Audits/Evidence/BP-06-Feedback/Research_Views.json);38 source/254 installed,466 schemas |
+
+## 2026-10-04 04:54:02 - BP-07.02 publication values
+
+B1.04c.i verified:351 tests51.04s,22 pure publication cases,158 statements2 branches100%. Exact canonical trace content,self-contained schema,full ancestry,stable commands and bounded upload transitions. Child22.40%,Build29.86%,parent24.48%; c.ii journal next.
+
+Archived MBT checkpoints:
+
+| 2026-10-03 21:34:15 | B1.03 complete; child15%,parent85.83%; B1.04a active | [Research HTTP](../Audits/Evidence/BP-06-Feedback/Research_Views_HTTP.json);35 source/275 installed,actual replacement |

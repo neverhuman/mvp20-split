@@ -28,3 +28,5 @@
 
 # Corpus source hashes must survive platform checkout.
 v2/services/agent_planning/tests/extraction/corpus/** text eol=lf
+
+v2/services/agent_planning/src/amphora_agent_planning/publication/*.schema.json text eol=lf
