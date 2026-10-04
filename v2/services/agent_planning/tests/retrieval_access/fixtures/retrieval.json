@@ -1,0 +1,256 @@
+{
+  "producer": "Data0.29 installed pure QueryPlan/QueryRecord; synthetic non-persisted compatibility vector",
+  "query": {
+    "wire_version": "1",
+    "retrieval_id": "retrieval-1",
+    "generation": {
+      "scope": {
+        "tenant_id": "planning-fixture",
+        "project_id": "context"
+      },
+      "corpus_id": "corpus",
+      "generation_id": "g1",
+      "sha256": "44069fe57a51fff68c7138d6a44f1e5b08a513e5bfeb00e47094836b5121d60a"
+    },
+    "query": {
+      "scope": {
+        "tenant_id": "planning-fixture",
+        "project_id": "context"
+      },
+      "binding_id": "binding.4a11d81fbc2c8a85aef3b15904a0b1fe0c56638a8f3920c055301801ccbc315f",
+      "sha256": "23d0c7715ab1f9f4b8b9bead47958df3f76eb1f237f3b5908e3333f7d4b47710"
+    },
+    "policy": {
+      "format": "data.exact-dot-ranking.v1",
+      "top_k": 2,
+      "bindings": null,
+      "metric": "dot",
+      "order": "score_desc_binding_asc",
+      "quality_filter": "none"
+    }
+  },
+  "record": {
+    "wire_version": "1",
+    "retrieval_id": "retrieval-1",
+    "actor_id": "fixture",
+    "generation": {
+      "scope": {
+        "tenant_id": "planning-fixture",
+        "project_id": "context"
+      },
+      "corpus_id": "corpus",
+      "generation_id": "g1",
+      "sha256": "44069fe57a51fff68c7138d6a44f1e5b08a513e5bfeb00e47094836b5121d60a"
+    },
+    "query": {
+      "wire_version": "1",
+      "reference": {
+        "scope": {
+          "tenant_id": "planning-fixture",
+          "project_id": "context"
+        },
+        "binding_id": "binding.4a11d81fbc2c8a85aef3b15904a0b1fe0c56638a8f3920c055301801ccbc315f",
+        "sha256": "23d0c7715ab1f9f4b8b9bead47958df3f76eb1f237f3b5908e3333f7d4b47710"
+      },
+      "profile": {
+        "scope": {
+          "tenant_id": "planning-fixture",
+          "project_id": "context"
+        },
+        "profile_id": "fixture.utf8-histogram",
+        "version": "1",
+        "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+      },
+      "source": {
+        "source": {
+          "scope": {
+            "tenant_id": "planning-fixture",
+            "project_id": "context"
+          },
+          "source_id": "source-9",
+          "revision_id": "r1",
+          "raw": {
+            "artifact_id": "raw-9",
+            "scope": {
+              "tenant_id": "planning-fixture",
+              "project_id": "context"
+            },
+            "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+            "media_type": "application/octet-stream",
+            "schema_ref": {
+              "schema_id": "fixture.histogram",
+              "version": "1",
+              "sha256": "732e37fc6d65bbfaed0dd4159713e5bea32109d7a88fbdee29d34ad10f0eaca7"
+            },
+            "size_bytes": 4
+          }
+        },
+        "unit": "byte",
+        "start": 0,
+        "end": 4,
+        "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+      },
+      "vector": {
+        "artifact_id": "vector-9",
+        "scope": {
+          "tenant_id": "planning-fixture",
+          "project_id": "context"
+        },
+        "sha256": "1b551c4c378599f8040241eb457213d159cf186515b62745d0bf7cec9c47aaf1",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "representations.vector",
+          "version": "1",
+          "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+        },
+        "size_bytes": 594
+      }
+    },
+    "policy": {
+      "format": "data.exact-dot-ranking.v1",
+      "top_k": 2,
+      "bindings": null,
+      "metric": "dot",
+      "order": "score_desc_binding_asc",
+      "quality_filter": "none"
+    },
+    "query_sha256": "0e8ca17606c12b7258850732d2df75a3f16ed3caf97de1ff28bf3f70caa2ce23",
+    "matches": [
+      {
+        "binding": {
+          "wire_version": "1",
+          "reference": {
+            "scope": {
+              "tenant_id": "planning-fixture",
+              "project_id": "context"
+            },
+            "binding_id": "binding.812fb1afd515f8ddbdcb0f1cacd36cb2fdcff458c9353d8fe18b06361ed3469c",
+            "sha256": "3ba19b5ea3f5ab2072216c01445d475210cb1e0bc87baa8ebb2fbf2ccecb87d2"
+          },
+          "profile": {
+            "scope": {
+              "tenant_id": "planning-fixture",
+              "project_id": "context"
+            },
+            "profile_id": "fixture.utf8-histogram",
+            "version": "1",
+            "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+          },
+          "source": {
+            "source": {
+              "scope": {
+                "tenant_id": "planning-fixture",
+                "project_id": "context"
+              },
+              "source_id": "source-2",
+              "revision_id": "r1",
+              "raw": {
+                "artifact_id": "raw-2",
+                "scope": {
+                  "tenant_id": "planning-fixture",
+                  "project_id": "context"
+                },
+                "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.histogram",
+                  "version": "1",
+                  "sha256": "732e37fc6d65bbfaed0dd4159713e5bea32109d7a88fbdee29d34ad10f0eaca7"
+                },
+                "size_bytes": 4
+              }
+            },
+            "unit": "byte",
+            "start": 0,
+            "end": 4,
+            "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+          },
+          "vector": {
+            "artifact_id": "vector-2",
+            "scope": {
+              "tenant_id": "planning-fixture",
+              "project_id": "context"
+            },
+            "sha256": "1b551c4c378599f8040241eb457213d159cf186515b62745d0bf7cec9c47aaf1",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "representations.vector",
+              "version": "1",
+              "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+            },
+            "size_bytes": 594
+          }
+        },
+        "score": -2.0
+      },
+      {
+        "binding": {
+          "wire_version": "1",
+          "reference": {
+            "scope": {
+              "tenant_id": "planning-fixture",
+              "project_id": "context"
+            },
+            "binding_id": "binding.da65253ae9913b5501c3e23f977d89eb8eac4fb78236f5710c3ded5ba79c5432",
+            "sha256": "d83c43e1cdc6221230ab27ee79abf1c46e0b6029fa092f3dbabf0493f502bcd1"
+          },
+          "profile": {
+            "scope": {
+              "tenant_id": "planning-fixture",
+              "project_id": "context"
+            },
+            "profile_id": "fixture.utf8-histogram",
+            "version": "1",
+            "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+          },
+          "source": {
+            "source": {
+              "scope": {
+                "tenant_id": "planning-fixture",
+                "project_id": "context"
+              },
+              "source_id": "source-1",
+              "revision_id": "r1",
+              "raw": {
+                "artifact_id": "raw-1",
+                "scope": {
+                  "tenant_id": "planning-fixture",
+                  "project_id": "context"
+                },
+                "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+                "media_type": "application/octet-stream",
+                "schema_ref": {
+                  "schema_id": "fixture.histogram",
+                  "version": "1",
+                  "sha256": "732e37fc6d65bbfaed0dd4159713e5bea32109d7a88fbdee29d34ad10f0eaca7"
+                },
+                "size_bytes": 4
+              }
+            },
+            "unit": "byte",
+            "start": 0,
+            "end": 4,
+            "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+          },
+          "vector": {
+            "artifact_id": "vector-1",
+            "scope": {
+              "tenant_id": "planning-fixture",
+              "project_id": "context"
+            },
+            "sha256": "1b551c4c378599f8040241eb457213d159cf186515b62745d0bf7cec9c47aaf1",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "representations.vector",
+              "version": "1",
+              "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+            },
+            "size_bytes": 594
+          }
+        },
+        "score": -2.0
+      }
+    ],
+    "sha256": "d6c5c259b6a0bf9abd201d1aa63b16e121fb3095b35bac0e72c594a3d87c8ea6"
+  }
+}

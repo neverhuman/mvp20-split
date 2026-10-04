@@ -552,3 +552,12 @@ B1.02c.i verified 2026-10-04 18:17:02:Planning0.37 campaign-selected Artifact pr
 Archived MBT rows:
 
 | 2026-10-04 07:07:14 | BP-07.02/B2.02a.i verified; child34.72%,parent26.94%; a.ii active | [Research proposals](../Audits/Evidence/BP-07-Extraction/Research_Proposals.json);542 source,524 installed20 processes,504 predecessor schemas unchanged |
+
+
+## Retained retrieval context 2026-10-04 18:27:12
+
+B1.02c.ii verified 2026-10-04 18:27:12:Planning0.38 exact retained Data retrieval selection, query/result/full binding fingerprints, actor/scope/profile/filter/rank checks and one closed GET.116 focused/regression tests2.45s;422 independently installed tests16.043s. New retrieval policy100%;263 shared/new statements26 branches97.58%, transport timer/EOF cleanup gaps explicit.508 schemas/planning0011 unchanged. c66.67%,B1.02=66.6667%,B1=41.6667%,child10.42%,Build13.89%,parent42.08%;closed0/4 and8/20. Current c.iii campaign Knowledge context. [Evidence](../Audits/Evidence/BP-07-Campaigns/Retrieval_Context.json).
+
+Archived MBT rows:
+
+| 2026-10-04 07:31:11 | BP-07.02/B2.02a.ii | Actual Research/Knowledge reads verified;560 source,542 installed tests. Child36.11%,parent27.22%; B2.02b active. |

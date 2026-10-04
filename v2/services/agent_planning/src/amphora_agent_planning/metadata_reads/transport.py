@@ -13,7 +13,7 @@ from .targets import target
 
 class MetadataTransport:
     def __init__(self, owner, endpoint, token):
-        require(owner in {"registry", "runtime"}, "metadata_owner")
+        require(owner in {"registry", "runtime", "data"}, "metadata_owner")
         require(type(endpoint) is str and 1 <= len(endpoint) <= 512, "metadata_endpoint")
         try:
             parsed = urlsplit(endpoint)

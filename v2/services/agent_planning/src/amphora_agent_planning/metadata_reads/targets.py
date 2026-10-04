@@ -4,6 +4,7 @@ import re
 from urllib.parse import parse_qsl, urlsplit
 
 from amphora_contracts_graph_runtime import DefinitionSchema, DefinitionUniverse
+from amphora_contracts_representations import RetrievalRecord
 from amphora_contracts_tools import ReleasePage, ReleaseSnapshot
 
 from ..context.policy import require
@@ -40,4 +41,7 @@ def target(owner, path):
         require(set(query) == {"schema_id", "version", "universe_sha256"} and query["version"] == "1" and
                 matches(IDENTIFIER, query["schema_id"]) and matches(DIGEST, query["universe_sha256"]), "metadata_query")
         return DefinitionSchema
+    if owner == "data" and matches(r"/v1/retrieval/queries/" + IDENTIFIER, parsed.path):
+        require(not query and not parsed.query, "metadata_query")
+        return RetrievalRecord
     raise ValueError("metadata_path")

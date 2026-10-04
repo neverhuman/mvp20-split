@@ -18,7 +18,7 @@ wheels = [
 
 [[package]]
 name = "amphora-agent-planning"
-version = "0.37.0"
+version = "0.38.0"
 source = { editable = "../services/agent_planning" }
 dependencies = [
     { name = "alembic" },
@@ -29,6 +29,7 @@ dependencies = [
     { name = "amphora-contracts-graph-runtime" },
     { name = "amphora-contracts-knowledge" },
     { name = "amphora-contracts-planning" },
+    { name = "amphora-contracts-representations" },
     { name = "amphora-contracts-research" },
     { name = "amphora-contracts-research-views" },
     { name = "amphora-contracts-tools" },
@@ -48,6 +49,7 @@ requires-dist = [
     { name = "amphora-contracts-graph-runtime", editable = "../contracts/graph_runtime" },
     { name = "amphora-contracts-knowledge", editable = "../contracts/knowledge" },
     { name = "amphora-contracts-planning", editable = "../contracts/planning" },
+    { name = "amphora-contracts-representations", editable = "../contracts/representations" },
     { name = "amphora-contracts-research", editable = "../contracts/research" },
     { name = "amphora-contracts-research-views", editable = "../contracts/research_views" },
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },

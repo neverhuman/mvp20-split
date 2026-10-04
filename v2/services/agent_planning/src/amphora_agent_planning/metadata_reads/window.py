@@ -8,10 +8,10 @@ from ..context.policy import require
 
 class MetadataWindow:
     def __init__(self, owner, seconds=30):
-        require(owner in {"registry", "runtime"}, "metadata_owner")
+        require(owner in {"registry", "runtime", "data"}, "metadata_owner")
         require(type(seconds) in (int, float) and math.isfinite(seconds) and 0 < seconds <= 30, "metadata_seconds")
         self.owner, self.deadline = owner, time.monotonic() + seconds
-        self.max_calls = 8 if owner == "registry" else 257
+        self.max_calls = {"registry": 8, "runtime": 257, "data": 32}[owner]
         self.calls, self.consumed = 0, 0
 
     def remaining(self):

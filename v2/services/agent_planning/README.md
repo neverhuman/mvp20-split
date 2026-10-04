@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-- Version: Planning0.37.0; public Planning0.8.0. BP-07.02 complete and audited;930 installed tests,39 process/replay stages and actual-owner recovery verified.
+- Version: Planning0.38.0; public Planning0.8.0. BP-07.02 complete and audited;930 installed tests,39 process/replay stages and actual-owner recovery verified.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Canonical progress: [BP-07.02](../../docs/Build%20Plans/BP-07/Completed/BP-07.02%20Reliable%20text%20decomposition.md).
 
@@ -51,3 +51,5 @@ Real provider/model, egress and spend remain owner choices before actual calls. 
 [runtime_metadata](src/amphora_agent_planning/runtime_metadata/README.md) verifies the reviewed compiler universe and selected exact schema bytes, preserving partial failures and original pins. Actual compilation/admission stays Runtime-owned.
 
 [campaign_data_access](src/amphora_agent_planning/campaign_data_access/README.md) selects exact campaign Artifact references and captures fresh processing-authorized bytes, preserving per-reference failures without retaining an access lease.
+
+[retrieval_access](src/amphora_agent_planning/retrieval_access/README.md) verifies exact retained Data query/result and source-binding identities; retrieval history does not grant fresh processing access or scientific confidence.
