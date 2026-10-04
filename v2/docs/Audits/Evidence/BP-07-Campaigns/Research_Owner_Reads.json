@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "verified_at": "2026-10-04 17:59:21",
+  "planning": "0.34.0",
+  "research": "0.34.0",
+  "scope": {
+    "tenant_id": "campaign-research",
+    "project_id": "0f38710b3c3147cfa5425b01962c7825"
+  },
+  "owner_pids": [
+    18268,
+    1712
+  ],
+  "worker_pids": [
+    28120,
+    1844,
+    4444,
+    30180,
+    29672,
+    31888,
+    7184
+  ],
+  "stages": [
+    "original",
+    "missing-question",
+    "denied",
+    "foreign-scope",
+    "original-after-correction",
+    "future-campaign",
+    "original-after-owner-restart"
+  ],
+  "fixture_sha256": "2e0405ff4d56a28134c3c204c88122f024451cc6f25e3d626b1a236298808ecd",
+  "limits": [
+    "Owner-local synthetic fixture setup, not public registration or scientific proof",
+    "Planning has only public contracts; no Research implementation or SQL in its worker",
+    "Retained PostgreSQL scope; no migrator, reset, source processing, provider or active campaign rebase",
+    "Fresh workers and owner restart use existing independently verified wheels; no new replacement wheel"
+  ],
+  "task": "BP-07.03/B1.02a.iii",
+  "retained_manifest": ".test-results/planning-campaign-research-owner-verified-20261004/manifest.json",
+  "original_record_hashes": [
+    "2d683421b54c9340a317f4b7b9e54fdecb3912ecb05a251fa7ca5fd1fbf680e3",
+    "465c253e914563b9ca34b1e5a1d57acbdb1aa2ee9d9699670ba4aad50cb057e7",
+    "143b4d22047e6a699334b094a4e499ddd2da941207736119c56d0d192f61d979"
+  ],
+  "future_record_hashes": [
+    "9b851b392e33443505f9fa6290140a5056d537420f37c170611172fc45ae4f85"
+  ],
+  "original_page_hashes": {
+    "specimens": "331b48c44cd0b20b225c6276d6faa8212b12b3d07146bb97261502b15288fd49",
+    "properties": "c583a11aaf2055d0790ae2d9cec9062ff29df4fc08e7467399ca0e519fae4dc7",
+    "observation_series": "432f5a96e12e029b5ac9632d926eee8ee8aae754157e4f89a886348ce4731802"
+  },
+  "checks": [
+    "Exact question/need/completed unknown assessment bytes; pending remains explicit gap",
+    "Exact lexical observation values/quality, property and series continuations, catalog schema pins",
+    "Missing question preserves useful lanes; denied and foreign scope return no records/pages",
+    "Original selections unchanged after future revision and owner restart; explicitly selected future query observes missing corrected value"
+  ]
+}

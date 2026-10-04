@@ -516,3 +516,12 @@ B1.02a.ii verified 2026-10-04 17:54:48:Planning0.34/public0.8 campaign-bound nam
 Archived MBT rows:
 
 | 2026-10-04 05:38:25 | BP-07.02/B1 complete; child25%,parent25%; B2.01a active | [Actual publication](../Audits/Evidence/BP-07-Extraction/Actual_Publication.json);403 installed,17 readback,20 Planning/2 Data processes |
+
+
+## Actual Research clients 2026-10-04 18:00:02
+
+B1.02a.iii verified 2026-10-04 18:00:02:Planning0.34 reads actual Research0.34 through public HTTP in7 isolated workers and2 owner hosts. Exact question/need/completed unknown and pending assessments, named pages/catalog/continuations, denied/foreign/partial reads, restart and future-only correction passed. No migrator/reset/source/provider/scientific claim. Research substep a100%;B1.02=25%,B1=31.25%,child7.81%,Build10.42%,parent41.56%;closed0/4 and8/20. Current B1.02b Registry/Runtime metadata. [Evidence](../Audits/Evidence/BP-07-Campaigns/Research_Owner_Reads.json).
+
+Archived MBT rows:
+
+| 2026-10-04 05:57:15 | BP-07.02/B2.01a verified; child27.78%,parent25.56%; b active | [Edit profile](../Audits/Evidence/BP-07-Extraction/Edit_Profile.json);447 source,429 installed20 processes,500 predecessor schemas unchanged |

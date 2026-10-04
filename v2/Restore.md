@@ -2,21 +2,19 @@
 
 ## Resume here
 
-- Refreshed 2026-10-04 17:54:48 (America/Chicago). **Read this FIRST after every compression**, explicitly requested by owner.
-- Continue across milestones/commits/pushes/compaction until genuinely blocked. No subagents, JARVIS access or v1 edits. No milestone-only final pause.
-- **Current BP-07.03/Build/B1.02a.iii actual Research compatibility.** a.ii verified; finish diff review then commit/push before next implementation. Latest pushed266e9ac9 (a.i).
-- No tests/hosts running. a.ii85 focused18.70s,228 independently installed12.088s. New client100%; combined291 statements38 branches98.48%, shared transport missing53/54/79 and branches78->79/94->96. Ruff/boundaries pass. Evidence Research_View_Reads.json.
-- Child7.29%,Build9.72%,Acceptance0%,0/4; parent41.46%,8/20. B1=.01 100%,.02 16.67%,.03/.04 0%; B1=29.17%. B1.02a66.67%,b/c/d0%;a.i/ii100%,iii0%. B2/B3/V1 remain0%. Use unrounded milestone weights.
-- Planning0.34/public0.8;508 schemas/planning0011 unchanged. New independent install .test-results/planning-research-views-independent-20261004/environment/Scripts/python.exe.
+- Refreshed 2026-10-04 18:00:02 (America/Chicago). Read FIRST after compression. Continue across milestones/commits/pushes/compaction until genuinely blocked. No subagents, JARVIS access or v1 edits.
+- **Current BP-07.03/Build/B1.02b Registry/Runtime metadata.** a.iii verified; finish review/commit/push then b. Latest pushed f5e6ae18 (named views); previous266e9ac9 records.
+- No tests/hosts running. Actual Research gate passed seven isolated Planning workers/two Research hosts, strengthened exact payload/unknown/pending/quality assertions. No migrator/reset. Evidence Research_Owner_Reads.json. Retained manifest .test-results/planning-campaign-research-owner-verified-20261004/manifest.json; initial weaker-assertion pass also retained.
+- Child7.81%,Build10.42%,Acceptance0%,0/4;parent41.56%,8/20. B1=.01 100%,.02 25%,.03/.04 0%;B1=31.25%. B1.02a100%,b/c/d0%;a.i/ii/iii100%. B2/B3/V1 remain0%. Use unrounded weights.
+- Planning0.34/public0.8,508 schemas,planning0011 unchanged. Independent install .test-results/planning-research-views-independent-20261004/environment/Scripts/python.exe;228 tests12.12s. Named view source85 tests18.70s,new client100%; shared cleanup gaps remain explicit.
 
 ## Immediate next work
 
-1. Commit/push verified named views, then actual Research proof a.iii. research_view_access owns exact campaign-bound ViewSelection, ViewPage and ResearchViewReader, four closed routes,20s/32calls/4MiB aggregate/1MiB reply/256KiB request. Each read is one page; no automatic continuation. Catalog binds exact experiment and three local result-schema pins. Numeric/scientific/quality data remains reported only.
-2. Reuse retained Research0.34 installation and owned PostgreSQL fixture serially. Existing verify_planning_research.py assumes two Planning installs and seed pins Research0.33: do not run unchanged. planning_research_seed.py only seeds a question. Need actual question/need/assessment reads plus view pages, denials/partial results, restart and future-only corrections. No old migrators or fixture reset. New dedicated Planning probe/owner seed harness may be appropriate.
-3. Research exploration test_process.py/conftest.py/test_api.py and assessment fixtures show actual scientific store setup and read routes. ReadOwnerHost is in dev/planning_knowledge_fixture.py. Copy only appropriate public probe into isolated Planning; peer-private imports remain forbidden there. Owner-local test setup is explicitly synthetic, not registration/scientific proof.
-4. B1.02b Registry/Runtime metadata; c Data retrieval/Knowledge; d combined actual-owner integration. Runtime public definition-universe/schema/draft save/validate/receipt; never private compiler. Registry pages100; Runtime universe64;300 metadata corpus is B3.
-5. Provider/model/egress/spend block only actual calls. Corrections affect future campaigns only. Preserve weak/contradictory/unknown science; no global veto.
-6. New negative test found Pydantic model_dump_json normalizes forged total=True to1; new view factories first validate model_dump(mode=python), so malformed local DTOs reject before serialization. HTTP strict JSON already rejects. Consider other local DTO factories only when touched; do not broaden this checkpoint into speculative sweep.
+1. Commit/push actual-owner acceptance. Added dev/planning_campaign_research_seed.py (owner-local fixtures), verify_planning_campaign_research.py and tests/acceptance/campaign_research_probe.py (public-only Planning). Ruff passed before final assertions; recheck touched scripts. Production source unchanged except module README evidence. All host processes closed.
+2. B1.02b needs focused design for Registry discovery and Runtime metadata. Registry GET /v1/releases accepts limit1..100/after digest/exact capability_id/release; page ReleasePage has items and next_after. Exact GET /v1/releases/{digest} gives ReleaseSnapshot. No caller scope query: authenticated principal owns it; returned records must bind original request scope. Discovery is not snapshot/eligibility. Public tools/registry.py and capability_registry/api.py already inspected; descriptor canonical lock policy is next. Need declared pagination/scan/byte/deadline limits and preserve inactive statuses.
+3. Existing peer_reads is compiled Research/Knowledge POST only. Avoid casually widening it to arbitrary GET; focused metadata GET transport or carefully reviewed shared I/O core with unchanged old profiles. Runtime public definition-universe/schema metadata is the second client; never private compiler. Registry300 corpus remains B3; Runtime universe64. Refine substep weights before implementing.
+4. B1.02c Data retrieval/Knowledge; d combined actual-owner gate. Provider/model/egress/spend block only actual calls. Corrections apply future campaigns only; no active repin/rebase/global quality veto.
+5. New view factories validate Python field values before JSON serialization: forged DTO total=True otherwise serializes to1. Strict HTTP JSON already rejects; no broad sweep authorized/needed here. Module tests own this regression.
 
 ## Current implemented boundaries
 

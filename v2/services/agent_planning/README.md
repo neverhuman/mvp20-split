@@ -42,6 +42,6 @@ Real provider/model, egress and spend remain owner choices before actual calls. 
 
 [campaign_context](src/amphora_agent_planning/campaign_context/README.md) adds pure exact Research selection/request binding and selected-record/relevance projections under BP-07.03/B1.01. Context assembly and campaign proposal compilation remain later gates; the closed extraction boundary is unchanged.
 
-[campaign_research_access](src/amphora_agent_planning/campaign_research_access/README.md) supplies bounded exact Research record reads and per-record safe failure reports. Actual owner compatibility retains a separate gate.
+[campaign_research_access](src/amphora_agent_planning/campaign_research_access/README.md) supplies bounded exact Research record reads and per-record safe failure reports. Actual Research compatibility is verified under the scoped BP-07.03/B1.02a.iii gate.
 
 [research_view_access](src/amphora_agent_planning/research_view_access/README.md) binds explicitly selected specimen/property/series pages and reviewed catalog schemas to the original campaign request. No hidden pagination or scientific acceptance.
