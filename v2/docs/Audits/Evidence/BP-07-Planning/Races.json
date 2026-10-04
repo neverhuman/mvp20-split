@@ -1,0 +1,18 @@
+{
+  "verified_at": "2026-10-04 03:01:54",
+  "scope": "BP-07.01 B3.02 actual owner concurrency barriers",
+  "status": "passed",
+  "tests": 15,
+  "seconds": 9.89,
+  "oracles": [
+    "Three competitors return pending, one call only",
+    "Unrelated engagement completes while provider blocked",
+    "Recovery first, provider return first and simultaneous ordering preserve unknown",
+    "Late abstention retained separately and charged once",
+    "Late overage blocks new reservation and unissued successor"
+  ],
+  "limits": [
+    "Actual PostgreSQL, synthetic provider",
+    "No Runtime acceptance race or remote transport cancellation claim"
+  ]
+}

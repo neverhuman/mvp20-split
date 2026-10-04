@@ -1,0 +1,35 @@
+{
+  "verified_at": "2026-10-04 02:58:15",
+  "scope": "BP-07.01 B3.01 full-runner adversarial proof",
+  "status": "passed",
+  "source_tests": 24,
+  "seconds": 5.11,
+  "coverage": {
+    "covered_lines": 68,
+    "num_statements": 68,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100",
+    "num_branches": 16,
+    "num_partial_branches": 0,
+    "covered_branches": 16,
+    "missing_branches": 0,
+    "percent_branches_covered": 100.0,
+    "percent_branches_covered_display": "100"
+  },
+  "oracles": [
+    "64KiB/256-chunk output bound",
+    "strict duplicate/nonfinite/UTF8/schema rejection",
+    "no invented action or substituted Artifact authority",
+    "immutable request and policy across two attempts",
+    "conservative unknown usage and truthful partial overage",
+    "storage errors propagate without repeat dispatch"
+  ],
+  "limits": [
+    "Deterministic synthetic provider only",
+    "New tests independently installed at V1; production wheel remains verified0.7"
+  ]
+}

@@ -155,3 +155,11 @@ Planning0.6/planning_0003 preserves policy-v1 bytes and immutable observations. 
 ## 2026-10-04 02:54:55 ? B2.03 durable dispatch and bounded outcomes
 
 Planning0.7/planning_0004 adds once-only issuance, database-clock deadlines, immutable recovery and separate late evidence. Per-component charge maxima prevent late undercount/double charge. PlanningRunner preserves context/permissions and enforces bounded retries with pending/outcome/budget stops.156 source10.85s,156 installed/11 processes/two installations,18 dev16.63s. Dispatch108 statements/14 branches100%; runner64/66 statements14/16 branches (exception propagation branches remain for B3); total800/803 statements115/118 branches. Installed replacement recovers pending issued first attempt, calls only second, then replays both without dispatch. B1/B2complete; child50%,Build66.67%,parent10%,closed2/4 and2/20. [Evidence](../Audits/Evidence/BP-07-Planning/Orchestration.json). Next B3.01.
+
+## 2026-10-04 02:58:15 ? B3.01 adversarial runner oracles
+
+13 additional actual-PostgreSQL full-runner cases;24 orchestration cases5.11s, runner propagation branches now exercised. Output bounds, schema/action/scope protection, immutable retries, partial usage overage and non-provider storage failures verified. Source/production unchanged; final independent test installation remains V1. Child58.33%,Build77.78%,parent11.67%; next B3.02.
+
+## 2026-10-04 03:01:54 ? B3.02 barrier proof
+
+15 actual PostgreSQL cases9.89s pass, including independent engagement progress while three contenders observe pending, and recovery-first/return-first/simultaneous expiry races. Immutable original outcome, separate late evidence and single charge preserved. Child66.67%,Build88.89%,parent13.33%; next B3.03 abrupt process exit.
