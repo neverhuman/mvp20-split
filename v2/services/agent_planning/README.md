@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-- Version:0.27.0 verified; public Planning0.7.0. BP-07.02/B2.02 complete; B2.03b.i result payloads verified; b.ii.a storage verified; b.ii.b Data workflow verified; b.ii.c diagnostic producer/actual Data verified; b.iii owner handoff active.
+- Version:0.28.0 verified; public Planning0.7.0. BP-07.02/B2.02 complete; B2.03b.i result payloads verified; b.ii.a storage verified; b.ii.b Data workflow verified; b.ii.c diagnostic producer/actual Data verified; b.iii.a owner values/transport verified; b.iii.b owned handoff storage active.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Canonical progress: [BP-07.02](../../docs/Build%20Plans/BP-07/BP-07.02%20Reliable%20text%20decomposition.md).
 
@@ -20,7 +20,7 @@ Extraction owns exact task/request binding, selected UTF-8 source bytes, quotati
 
 ## Replacement and verification
 
-Tests remain under this owner's tests/context, providers, persistence, budget, orchestration, extraction, source_access, publication, proposals, knowledge_access, research_proposals, research_access, repair and result_publication folders. For example, dev/run_tests.py --module agent-planning --area proposals selects the pure proposal cases. dev/verify_planning.py builds two independent wheel installations and verifies owned tests and retained history across fresh processes, without peer implementations installed.
+Tests remain under this owner's tests/context, providers, persistence, budget, orchestration, extraction, source_access, publication, proposals, knowledge_access, research_proposals, research_access, repair, result_publication and owner_handoff folders. For example, dev/run_tests.py --module agent-planning --area proposals selects the pure proposal cases. dev/verify_planning.py builds two independent wheel installations and verifies owned tests and retained history across fresh processes, without peer implementations installed.
 
 Replacement must preserve canonical hashes/bytes, explicit omission semantics, actor/scope and source identity, bounded inputs/budgets, exact physical attempts, immutable migration history and truthful uncertainty. planning_0001 through0010 are applied and immutable. Never run Planning<=0.24 migrators on0010. Replace all admission writers before enabling repair families; Planning<=0.20 lacks enforcement and its migrator must not touch0008. Planning<=0.22 migrators/writers must not touch the new preparation workflow. Public schema bytes and predecessor histories remain unchanged.
 
@@ -33,3 +33,5 @@ Verified 2026-10-04 09:21:08:630 final installed tests,28 process stages/two ins
 Planning0.26 adds a result-specific SDK coordinator and shares the unchanged bounded upload driver with trace publication. Planning0.27 supplies verified current-rights preparation/automatic diagnostic production and actual result Data integration under b.ii.c; owner handoff remains b.iii. No new migration or public schema accompanies the driver extraction.
 
 Result preparation/diagnostics/producer are verified under BP-07.02/B2.03b.ii.c. They use current public Data processing and exact owner contexts, preserve prepared history, and supply the bounded RepairChain; no live provider or owner acceptance is implied. See the result_publication module README for the replacement boundary and current evidence.
+
+[owner_handoff](src/amphora_agent_planning/owner_handoff/README.md) owns stable effect selections, exact public request/receipt binding and bounded Research/Knowledge transport.0.28 verifies these pure/client boundaries without new SQL or a submission coordinator. Historical declaration presence is distinct from creation; Knowledge acceptance requires status plus accepted-change readback. Durable origin/dependencies and execution remain b.iii.b/c.

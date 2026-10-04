@@ -1,0 +1,18 @@
+# Planning owner handoff
+
+- Status: BP-07.02/B2.03b.iii.a request/receipt values and bounded transport verified; owned storage and coordinator not implemented.
+- Design: [owner submission](../../../../../docs/Build%20Plans/BP-07/BP-07.02%20Owner%20submission.md).
+- Owner: Planning intent/provenance and reconciliation only. Research owns declarations/sufficiency; Knowledge owns structural graph acceptance; Data owns processing rights.
+
+HandoffSelection owns canonical actor/trace/interpretation/kind/local slot/configuration bytes. Stable effect IDs exclude payload and configuration, requiring immutable conflicts in the later journal. Read-only restoration requires exact actor/scope and canonical bytes without a write grant. Selection is not proof of owned storage origin.
+
+OwnerRequest validates public ResearchQuestion, EvidenceNeed or GraphChangeProposal DTOs, exact scope and256KiB canonical request size. Routes/models are compiled by kind. No caller-selected endpoint, acceptance flag or actor field is serialized into an owner DTO. Later preparation must derive these bytes from owned task/observation/interpretation and fresh permitted peer inputs; direct pure construction proves shape only.
+
+OwnerOutcome distinguishes Research declaration presence from Knowledge structural-only pending, rejected, conflict, awaiting accepted readback and acknowledged states. Research acknowledgments match complete request bytes and do not infer original creation/actor metadata. Knowledge status binds exact original actor/proposal/digest. Accepted outcomes require the exact accepted-change content hash, request, actor, policy, expected position and resulting snapshot/change references. No implicit latest head or active rebasing is allowed.
+
+No SQL, durable state, scientific sufficiency or provider calls exist in these value files. Tests belong under tests/owner_handoff. b.iii.a is100% after scoped and independent verification. New storage is b.iii.b; coordinator/replacement is b.iii.c; combined actual-owner correction replay is parent B2.03c.
+
+OwnerTransport binds a configured owner ID and owner kind, explicit authenticated loopback endpoint, and compiled request/status/accepted-read routes. HandoffWindow bounds the entire sequence to20 seconds,4 exchanges and4MiB aggregate responses; each response has its owner-specific cap. A socket shutdown timer bounds trickled headers/body. Strict JSON rejects duplicate/nonfinite or malformed records; error bodies are never retained. Absence is distinguished from a missing write dependency, denial, identity conflict, invalid write and uncertain outcome. No automatic retries, redirects/proxies, caller routes or source rights grants are supplied here. A guarded caller can fence before connect and immediately before sending. HTTP success still requires OwnerOutcome binding and later durable journaling.
+
+Current-source processing and dependency ordering belong to the later coordinator. This transport is an internal primitive, not a public endpoint that authorizes arbitrary requests. Values/transport tests use scripted public records and actual loopback HTTP; they do not prove peer acceptance or stored origin.
+Verified47 scoped cases32.42s;265 statements34 branches97.66%. Selection/request/receipt values100%; transport expiry/timer-close/EOF paths remain partially uninstrumented.776 independent cases334.62s and35 existing process/replay stages pass across two installations. Those process stages protect prior Planning behavior, not new handoff storage. [Evidence](../../../../../docs/Audits/Evidence/BP-07-Extraction/Owner_Handoff_Values.json).

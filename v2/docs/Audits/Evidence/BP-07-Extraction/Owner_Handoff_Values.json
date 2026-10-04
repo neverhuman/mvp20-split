@@ -1,0 +1,63 @@
+{
+  "verified_at": "2026-10-04 14:10:32",
+  "status": "passed",
+  "gate": "BP-07.02/B2.03b.iii.a",
+  "planning": "0.28.0",
+  "public_planning": "0.7.0",
+  "migration": "planning0010 unchanged",
+  "focused": {
+    "tests": 47,
+    "seconds": 32.42,
+    "coverage": {
+      "covered_lines": 261,
+      "num_statements": 265,
+      "percent_covered": 97.65886287625418,
+      "percent_covered_display": "98",
+      "missing_lines": 4,
+      "excluded_lines": 0,
+      "percent_statements_covered": 98.49056603773585,
+      "percent_statements_covered_display": "98",
+      "num_branches": 34,
+      "num_partial_branches": 3,
+      "covered_branches": 31,
+      "missing_branches": 3,
+      "percent_branches_covered": 91.17647058823529,
+      "percent_branches_covered_display": "91"
+    }
+  },
+  "installed": {
+    "tests": 776,
+    "seconds": 334.62,
+    "process_stages": 35,
+    "installations": 2
+  },
+  "wheels": {
+    "amphora_agent_planning-0.28.0-py3-none-any.whl": "46812273313275a19d66a1b1d683168adbebe527faae9ddb347eadd31ef42c47",
+    "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+    "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+    "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+    "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+    "amphora_contracts_planning-0.7.0-py3-none-any.whl": "0f09c0f8bb69e5b0f33929ed1eb4623d768aae1373b651b9c4bb07f5537da9f1",
+    "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+    "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+  },
+  "oracles": [
+    "Stable actor/trace/kind/local slots bind exact owner configuration and canonical public request bytes",
+    "Research acknowledges complete record presence without inferring original creator",
+    "Knowledge status binds original actor/proposal/digest; acceptance requires exact accepted content/hash/policy/base successor/head",
+    "Pending, rejected, conflict and awaiting readback never become acknowledgment",
+    "Actual loopback transport uses closed owner routes, explicit credentials, whole20s/4-exchange/4MiB limits and socket shutdown deadlines",
+    "No blind retries, redirects, source-rights grants or peer error body leakage"
+  ],
+  "limits": [
+    "Scripted owner records and loopback servers; no actual owner registration or storage-origin claim",
+    "Durable handoff state/coordinator remain b.iii.b/c;35 process stages protect prior behavior only",
+    "Values have100% scoped coverage; transport expiry/timer-close/EOF paths remain partly outside final instrumentation",
+    "No migration, public schema, live model, scientific acceptance or active repinning changes"
+  ]
+}

@@ -390,3 +390,12 @@ Archived MBT checkpoint:
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
 | 2026-10-04 01:53:10 | BP-07.01/B1.01 complete; child6.25%, parent1.25%; B1.02 active | [Context contracts](../Audits/Evidence/BP-07-Planning/Context_Contracts.json);60 source/dev,42 independent;484 schemas |
+
+
+B2.03b.iii.a verified 2026-10-04 14:10:32:Planning0.28 adds stable owner selection/request values and exact Research/Knowledge receipt binding with bounded owner transport. 47 scoped cases32.42s cover265 statements34 branches97.66%; values100%, transport deadline/cleanup/EOF gaps explicit. 776 isolated tests334.62s and35 existing process stages pass across two installations. Scripted owner records/actual loopback HTTP, no actual registration or stored-origin claim. Public0.7/506 schemas/planning0010 unchanged. b.iii a100%,b/c0%,b.iii33.33%;b77.78%;B2.03=59.26%,B2=86.42%;child46.60%,Build62.14%,parent29.32%;closed1/4 and5/20. Current b.iii.b owned preparation/event storage. [Evidence](../Audits/Evidence/BP-07-Extraction/Owner_Handoff_Values.json).
+
+Archived MBT checkpoint:
+
+| Timestamp | Checkpoint | Evidence |
+|---|---|---|
+| 2026-10-04 02:00:10 | B1.02 complete; child12.50%,parent2.50%; B1.03 active | [Provider port](../Audits/Evidence/BP-07-Planning/Provider_Port.json);87 source/dev,69 independent;488 schemas |
