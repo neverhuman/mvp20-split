@@ -8,9 +8,10 @@ import knowledge from "../fixtures/scientific/knowledge.json" with { type: "json
 import research from "../fixtures/scientific/research.json" with { type: "json" };
 import knowledgeManifest from "../../src/contracts/generated/knowledge/manifest.json" with { type: "json" };
 import researchManifest from "../../src/contracts/generated/research/manifest.json" with { type: "json" };
+import provenanceManifest from "../../src/contracts/generated/provenance/manifest.json" with { type: "json" };
 
 test("scientific schema derivatives pin every owner-published byte", async () => {
-  for (const manifest of [knowledgeManifest, researchManifest]) for (const entry of Object.values(manifest)) {
+  for (const manifest of [knowledgeManifest, researchManifest, provenanceManifest]) for (const entry of Object.values(manifest)) {
     assert.equal(createHash("sha256").update(await readFile("../" + entry.source)).digest("hex"), entry.sha256);
   }
 });

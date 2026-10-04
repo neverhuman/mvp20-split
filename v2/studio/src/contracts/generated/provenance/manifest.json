@@ -1,0 +1,66 @@
+{
+  "artifact": {
+    "source": "contracts/schemas/v1/core.artifact-ref.serialization.json",
+    "sha256": "286692543f709530d480ce71f45a00e70333d68bd6473a46fa8f62080304b04e"
+  },
+  "source": {
+    "source": "contracts/schemas/v1/evidence.source-revision.serialization.json",
+    "sha256": "afcc3da7f692be4749f2f17d4b070be59ee675078ccd4f12842f3244a031114c"
+  },
+  "span": {
+    "source": "contracts/schemas/v1/evidence.source-span.serialization.json",
+    "sha256": "31a440a7a98a496e057380d78053aa4f6a18a4a90003e3085094fcd4e22348a9"
+  },
+  "trace": {
+    "source": "contracts/schemas/v1/evidence.conversion-trace.serialization.json",
+    "sha256": "c09efedf86b4c527c2c331e44b0212638f9769ef312144dc055fa607176acd5a"
+  },
+  "trace_ref": {
+    "source": "contracts/schemas/v1/evidence.conversion-trace-ref.serialization.json",
+    "sha256": "f9d3b2e36514ffbc0a34e71d7cfb40d166acae119b52c2680a6e38d2b110e093"
+  },
+  "derivation": {
+    "source": "contracts/schemas/v1/artifacts.derivation-receipt.serialization.json",
+    "sha256": "35a5a58cf97a8b00060ba337f340f8a66ec57a2945cc36809f6e080e573001cc"
+  },
+  "material": {
+    "source": "contracts/schemas/v1/research.material-state-revision.serialization.json",
+    "sha256": "390b29d06daceef2d47f88dcb0eaedd77b58f0ffad8b50652606f59044429150"
+  },
+  "experiment": {
+    "source": "contracts/schemas/v1/research.experiment-definition.serialization.json",
+    "sha256": "7a5f3543d1a5a439ad651022304f2ca4bff40d7d1edc7fc2cbd4aeaf93e0e393"
+  },
+  "observation": {
+    "source": "contracts/schemas/v1/research.observation-revision.serialization.json",
+    "sha256": "bca451df0678adc96836a08d928de424c259c9158b60fd91a3cccd7577c78f25"
+  },
+  "question": {
+    "source": "contracts/schemas/v1/research.question.serialization.json",
+    "sha256": "78e1e6970c1e4410583e29f660fb2c1e32bda1c9cabe3888b06695697d7a4624"
+  },
+  "need": {
+    "source": "contracts/schemas/v1/research.evidence-need.serialization.json",
+    "sha256": "d79270939890e64ecc24768b9628a9628246acdb2cbcdfad6ad2f8c718eff1de"
+  },
+  "interpretation_selection": {
+    "source": "contracts/schemas/v1/research.interpretation-selection.serialization.json",
+    "sha256": "8ea1951449fb35ef2adcd5593d9a990cf75af03b2b37a73a0a25199493edddf7"
+  },
+  "interpretation_ref": {
+    "source": "contracts/schemas/v1/research.interpretation-ref.serialization.json",
+    "sha256": "372b1357ca2232f1d3684d16c0f7e218c96776d53042108a48d3434278671720"
+  },
+  "interpretation": {
+    "source": "contracts/schemas/v1/research.interpretation-status.serialization.json",
+    "sha256": "90e7d445dbbd5a0ae09707be22682767f7bd121a6fa84447570764dc35f26c3b"
+  },
+  "observation_correction": {
+    "source": "contracts/schemas/v1/research.observation-correction-view.serialization.json",
+    "sha256": "c2ed221d4908b37ad485855be7f913774b442869e438346a670ec78323faf170"
+  },
+  "material_correction": {
+    "source": "contracts/schemas/v1/research.material-state-correction-view.serialization.json",
+    "sha256": "f601e881d0bb11ef027cd1bec67a059f3007a89de4f26887d22e3acdaf37606e"
+  }
+}

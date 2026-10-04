@@ -1,0 +1,79 @@
+{
+  "question": {
+    "wire_version": "1",
+    "reference": {
+      "scope": {
+        "tenant_id": "test",
+        "project_id": "research"
+      },
+      "question_id": "q1",
+      "revision": 1
+    },
+    "objective": "Compare synthetic observations",
+    "applicability": {
+      "artifact_id": "context",
+      "scope": {
+        "tenant_id": "test",
+        "project_id": "research"
+      },
+      "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "fixture",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "size_bytes": 2
+    },
+    "criteria": [
+      {
+        "criterion_id": "c1",
+        "description": "Required context"
+      }
+    ],
+    "supersedes": null
+  },
+  "need": {
+    "wire_version": "1",
+    "reference": {
+      "scope": {
+        "tenant_id": "test",
+        "project_id": "research"
+      },
+      "need_id": "n1",
+      "revision": 1
+    },
+    "question": {
+      "scope": {
+        "tenant_id": "test",
+        "project_id": "research"
+      },
+      "question_id": "q1",
+      "revision": 1
+    },
+    "criterion_ids": [
+      "c1"
+    ],
+    "method": {
+      "schema_id": "fixture",
+      "version": "1",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "required_context": {
+      "artifact_id": "context",
+      "scope": {
+        "tenant_id": "test",
+        "project_id": "research"
+      },
+      "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "fixture",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "size_bytes": 2
+    },
+    "supersedes": null
+  }
+}

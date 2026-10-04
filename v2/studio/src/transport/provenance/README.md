@@ -1,0 +1,11 @@
+# Provenance reads
+
+BP-06.06/B1.04b, Studio0.3. DataProvenanceClient reads exact source revisions, artifact metadata, conversion traces, derivation receipts and selected source text. ResearchRecordClient reads exact scientific records, questions, needs, interpretations and future-campaign correction pairs. Public generated contracts are the only owner dependencies; no database, service-private imports, owner credentials, mutation, head-following or persistent cache belongs here.
+
+Data metadata does not grant content access: selected text requires a separate current-rights content read. The full source is bounded to4MiB, the selected byte range to64KiB. Exact metadata/size and whole SHA-256 precede the selected-range SHA-256 and fatal UTF-8 decoding. Empty spans are valid; byte-order marks are preserved. Only text/plain and application/json are displayed as text. Source URLs are never fetched and source HTML is never executed. No range-read API is assumed. Conversion traces must reproduce the pinned SHA using the owner's compact sorted-key UTF-8 JSON profile, bounded to256KiB.
+
+Research returns exact revisions without normalizing measurement values or scientific claims. Correction views retain before/after and require a contiguous successor with matching supersedes; they never repin an active campaign. Pending interpretation is unavailable, distinct from a completed unresolved scientific result. Full record responses retain the shared1MiB limit; larger records yield a bounded failure rather than truncation.
+
+Transport owns fixed same-origin routes, canonical encoded identifiers, response limits, cancellation and sanitized failures. Page models will own selection races, loading and visible quality/context states. These clients do not certify scientific validity, receipt consumption or current-campaign authority.
+
+Owned tests: tests/transport/provenance.test.ts and provenance_research.test.ts, with public synthetic Research examples copied into fixtures. They test byte integrity, UTF-8, permission failure, exact revision reads and correction/pending distinctions. Independent Studio staging must regenerate pinned schemas, build and pass module tests. Actual owner/browser traversal remains the subsequent integrated gates; these fixtures do not establish that acceptance.

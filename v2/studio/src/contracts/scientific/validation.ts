@@ -11,3 +11,15 @@ export function decoder<T extends object>(schemas: Record<keyof T, object>) {
     return value as T[K];
   };
 }
+
+export function referenceDecoder<T>(schema: { $id: string }, definition: string) {
+  const ajv = new Ajv2020({ strict: true, coerceTypes: false, useDefaults: false, removeAdditional: false });
+  ajv.addKeyword({ keyword: "discriminator", schemaType: "object", valid: true });
+  addFormats.default(ajv);
+  ajv.addSchema(schema);
+  const validate = ajv.compile({ $ref: schema.$id + "#/$defs/" + definition });
+  return (value: unknown): T => {
+    if (!validate(value)) throw new Error("invalid_scientific_reference");
+    return value as T;
+  };
+}

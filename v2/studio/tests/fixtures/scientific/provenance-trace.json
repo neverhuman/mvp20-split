@@ -1,0 +1,119 @@
+{
+  "trace": {
+    "wire_version": "1",
+    "scope": {
+      "tenant_id": "test",
+      "project_id": "source"
+    },
+    "trace_id": "t1",
+    "source": {
+      "scope": {
+        "tenant_id": "test",
+        "project_id": "source"
+      },
+      "source_id": "lab",
+      "revision_id": "r1",
+      "raw": {
+        "artifact_id": "raw",
+        "scope": {
+          "tenant_id": "test",
+          "project_id": "source"
+        },
+        "sha256": "e941d6a08997f4939b0993be09103c68340e76715d73f45cf44c7fc924202652",
+        "media_type": "text/plain",
+        "schema_ref": {
+          "schema_id": "fixture",
+          "version": "1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "size_bytes": 8
+      }
+    },
+    "source_schema": {
+      "schema_id": "fixture",
+      "version": "1",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "target_schema": {
+      "schema_id": "fixture",
+      "version": "1",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "converter_id": "fixture",
+    "converter_version": "1",
+    "configuration_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "transforms": [
+      {
+        "transform_id": "copy",
+        "version": "1",
+        "configuration_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "kind": "deterministic"
+      }
+    ],
+    "output": {
+      "artifact_id": "output",
+      "scope": {
+        "tenant_id": "test",
+        "project_id": "source"
+      },
+      "sha256": "b01cd8614e7b03eb3587195ffdddf5b6b22c8c21be424aea91d3a4ab689a517e",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "fixture",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "size_bytes": 25
+    },
+    "fields": [
+      {
+        "target_path": "/unit",
+        "origin": "copied",
+        "spans": [
+          {
+            "source": {
+              "scope": {
+                "tenant_id": "test",
+                "project_id": "source"
+              },
+              "source_id": "lab",
+              "revision_id": "r1",
+              "raw": {
+                "artifact_id": "raw",
+                "scope": {
+                  "tenant_id": "test",
+                  "project_id": "source"
+                },
+                "sha256": "e941d6a08997f4939b0993be09103c68340e76715d73f45cf44c7fc924202652",
+                "media_type": "text/plain",
+                "schema_ref": {
+                  "schema_id": "fixture",
+                  "version": "1",
+                  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                },
+                "size_bytes": 8
+              }
+            },
+            "unit": "byte",
+            "start": 0,
+            "end": 3,
+            "sha256": "7ec1b5816649870d81ec19b1e46e637ae95cf4aebd9d313c8851e2e7b0577f2b"
+          }
+        ],
+        "step_indices": [
+          0
+        ]
+      }
+    ],
+    "warnings": [],
+    "disposition": "normalized"
+  },
+  "reference": {
+    "scope": {
+      "tenant_id": "test",
+      "project_id": "source"
+    },
+    "trace_id": "t1",
+    "sha256": "8655d8902d266bb8e7a27dcce51b48f0ec5a376941da3974f79c4310e86d2d93"
+  }
+}

@@ -54,6 +54,72 @@ const researchRoots = {
   series_page: ["research-views.observation-series-page", "ObservationSeriesPage"],
   catalog: ["research-views.catalog", "ResearchViewCatalog"],
 };
+const provenanceRoots = {
+  "artifact": [
+    "core.artifact-ref",
+    "ArtifactRef"
+  ],
+  "source": [
+    "evidence.source-revision",
+    "SourceRevision"
+  ],
+  "span": [
+    "evidence.source-span",
+    "SourceSpan"
+  ],
+  "trace": [
+    "evidence.conversion-trace",
+    "ConversionTrace"
+  ],
+  "trace_ref": [
+    "evidence.conversion-trace-ref",
+    "ConversionTraceRef"
+  ],
+  "derivation": [
+    "artifacts.derivation-receipt",
+    "DerivationReceipt"
+  ],
+  "material": [
+    "research.material-state-revision",
+    "MaterialStateRevision"
+  ],
+  "experiment": [
+    "research.experiment-definition",
+    "ExperimentDefinition"
+  ],
+  "observation": [
+    "research.observation-revision",
+    "ObservationRevision"
+  ],
+  "question": [
+    "research.question",
+    "ResearchQuestion"
+  ],
+  "need": [
+    "research.evidence-need",
+    "EvidenceNeed"
+  ],
+  "interpretation_selection": [
+    "research.interpretation-selection",
+    "InterpretationSelection"
+  ],
+  "interpretation_ref": [
+    "research.interpretation-ref",
+    "InterpretationRef"
+  ],
+  "interpretation": [
+    "research.interpretation-status",
+    "InterpretationStatus"
+  ],
+  "observation_correction": [
+    "research.observation-correction-view",
+    "ObservationCorrectionView"
+  ],
+  "material_correction": [
+    "research.material-state-correction-view",
+    "MaterialStateCorrectionView"
+  ]
+};
 const check = process.argv.includes("--check");
 async function generate(roots, target) {
   const manifest = {};
@@ -91,3 +157,5 @@ await generate(authoringRoots, resolve(target, "authoring"));
 
 await generate(knowledgeRoots, resolve(target, "knowledge"));
 await generate(researchRoots, resolve(target, "research"));
+
+await generate(provenanceRoots, resolve(target, "provenance"));

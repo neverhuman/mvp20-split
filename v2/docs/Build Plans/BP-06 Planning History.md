@@ -1,5 +1,9 @@
 # BP-06 Planning History
 
+## B1.04b Studio provenance - 2026-10-03 22:15:08
+
+Studio0.3 adds16 public schema roots and exact source/trace/derivation/scientific/correction clients.168 source/168 independent tests,18dev; source4MiB/span64KiB limits, byte hashes and strict UTF8, native HTTP with no owner credentials. Coverage/gaps and fixture Unicode repair recorded in Studio_Provenance.json. No Python schema/migration change or actual-owner/browser claim. B1=80%,Build26.67%,child20.00%,parent86.67%; B1.05 integrated baseline active.
+
 ## B1.04a Studio scientific transport - 2026-10-03 21:51:08
 
 Studio0.2 adds14 owner-published derivatives, strict scientific decoders and separate Knowledge/Research fixed-route clients.154 source/154 independent tests,18dev; exact golden query hashes, scoped identity, page/schema guards, native HTTP and streaming deadlines. Scoped coverage/gaps retained in evidence; no source-byte or actual-owner/browser claim. B1=70%,Build23.33%,child17.50%,parent86.25%; B1.04b provenance active. Existing Runtime/authoring derivatives unchanged.
@@ -867,3 +871,5 @@ Archived MBT checkpoint: | 2026-10-03 12:24:23 | V1.02 complete; child91.67%, pa
 ## 2026-10-03 19:15:58 ? BP-06.05/B3.01 adversarial boundaries
 
 Actualexpirywithoutpolicyrevisiondiscardsobservedscore8;intentremains/noresult;subsequentemptyeligiblequerydoesnotcallbackend. Actualselectedvectorcorruptioncannotpublishresult;freshgenerationrepairswhileoldpinstillfails/historyunchanged. Twodistinctactualverifiedpublishersraceonehead;exactlyonepublishes. Existingbinding/profile/rights/correction/queryoraclesreconciled59source61.80s/59installed63.71s;final3installedcapture9.59s. No production/version/schema/migrationchange. B3.01=100%,B3.02/.03=0%;B3=33.33%,Build77.78%,child58.33%,parent76.39%,gates2/4and18/24. B3.02split(a8deathpoints,b livebarriers),each0%;aactive. Verificationindex replaces oversized tracker evidence prose; no historical evidence removed.
+
+| 2026-10-03 15:52:35 | B1 complete; child25%, parent70.83%; B2.01 active; gates1/4 and17/24 | [Actual HTTP](../Audits/Evidence/BP-06-Representations/HTTP_Replacement.json);source/installed isolated-server public-only replay/revocation |

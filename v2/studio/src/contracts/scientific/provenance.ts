@@ -1,0 +1,45 @@
+import schemas from "../generated/provenance/schemas.json" with { type: "json" };
+import type { ArtifactRef } from "../generated/provenance/artifact.js";
+import type { SourceRevision } from "../generated/provenance/source.js";
+import type { SourceSpan } from "../generated/provenance/span.js";
+import type { ConversionTrace } from "../generated/provenance/trace.js";
+import type { ConversionTraceRef } from "../generated/provenance/trace_ref.js";
+import type { DerivationReceipt } from "../generated/provenance/derivation.js";
+import type { MaterialStateRevision } from "../generated/provenance/material.js";
+import type { ExperimentDefinition } from "../generated/provenance/experiment.js";
+import type { ObservationRevision } from "../generated/provenance/observation.js";
+import type { ResearchQuestion } from "../generated/provenance/question.js";
+import type { EvidenceNeed } from "../generated/provenance/need.js";
+import type { InterpretationSelection } from "../generated/provenance/interpretation_selection.js";
+import type { InterpretationRef } from "../generated/provenance/interpretation_ref.js";
+import type { InterpretationStatus } from "../generated/provenance/interpretation.js";
+import type { ObservationCorrectionView } from "../generated/provenance/observation_correction.js";
+import type { MaterialStateCorrectionView } from "../generated/provenance/material_correction.js";
+import { decoder, referenceDecoder } from "./validation.js";
+
+export type { ArtifactRef, SourceRevision, SourceSpan, ConversionTrace, ConversionTraceRef, DerivationReceipt, MaterialStateRevision, ExperimentDefinition, ObservationRevision, ResearchQuestion, EvidenceNeed, InterpretationSelection, InterpretationRef, InterpretationStatus, ObservationCorrectionView, MaterialStateCorrectionView };
+export interface ProvenanceWire {
+  artifact: ArtifactRef;
+  source: SourceRevision;
+  span: SourceSpan;
+  trace: ConversionTrace;
+  trace_ref: ConversionTraceRef;
+  derivation: DerivationReceipt;
+  material: MaterialStateRevision;
+  experiment: ExperimentDefinition;
+  observation: ObservationRevision;
+  question: ResearchQuestion;
+  need: EvidenceNeed;
+  interpretation_selection: InterpretationSelection;
+  interpretation_ref: InterpretationRef;
+  interpretation: InterpretationStatus;
+  observation_correction: ObservationCorrectionView;
+  material_correction: MaterialStateCorrectionView;
+}
+export const decodeProvenance = decoder<ProvenanceWire>(schemas);
+export const decodeSourceRevisionRef = referenceDecoder<SourceRevision["reference"]>(schemas.source, "SourceRevisionRef");
+export const decodeMaterialStateRevisionRef = referenceDecoder<MaterialStateRevision["reference"]>(schemas.material, "MaterialStateRevisionRef");
+export const decodeExperimentRevisionRef = referenceDecoder<ExperimentDefinition["reference"]>(schemas.experiment, "ExperimentRevisionRef");
+export const decodeObservationRevisionRef = referenceDecoder<ObservationRevision["reference"]>(schemas.observation, "ObservationRevisionRef");
+export const decodeResearchQuestionRef = referenceDecoder<ResearchQuestion["reference"]>(schemas.question, "ResearchQuestionRef");
+export const decodeEvidenceNeedRef = referenceDecoder<EvidenceNeed["reference"]>(schemas.need, "EvidenceNeedRef");

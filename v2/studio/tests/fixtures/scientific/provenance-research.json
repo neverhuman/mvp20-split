@@ -1,0 +1,1013 @@
+﻿{
+    "material-state-revision":  {
+                                    "wire_version":  "1",
+                                    "reference":  {
+                                                      "scope":  {
+                                                                    "tenant_id":  "fixture",
+                                                                    "project_id":  "materials"
+                                                                },
+                                                      "material_state_id":  "state",
+                                                      "revision":  1
+                                                  },
+                                    "candidate":  {
+                                                      "scope":  {
+                                                                    "tenant_id":  "fixture",
+                                                                    "project_id":  "materials"
+                                                                },
+                                                      "candidate_id":  "nominal-design",
+                                                      "revision":  1
+                                                  },
+                                    "supersedes":  null,
+                                    "preparation":  [
+
+                                                    ],
+                                    "features":  [
+
+                                                 ]
+                                },
+    "interpretation-status":  {
+                                  "wire_version":  "1",
+                                  "request":  {
+                                                  "wire_version":  "1",
+                                                  "kind":  "observation-use",
+                                                  "interpretation_id":  "use-1",
+                                                  "profile":  {
+                                                                  "scope":  {
+                                                                                "tenant_id":  "fixture",
+                                                                                "project_id":  "materials"
+                                                                            },
+                                                                  "kind":  "observation-use",
+                                                                  "policy":  {
+                                                                                 "schema_id":  "research.observation-use",
+                                                                                 "version":  "1",
+                                                                                 "sha256":  "9f59fff8817c2fdc149bc48c3c398eaade0724c8897515adf9a614dc43ec6c3a"
+                                                                             }
+                                                              },
+                                                  "experiment":  {
+                                                                     "scope":  {
+                                                                                   "tenant_id":  "fixture",
+                                                                                   "project_id":  "materials"
+                                                                               },
+                                                                     "experiment_id":  "assay",
+                                                                     "revision":  1
+                                                                 },
+                                                  "observations":  [
+                                                                       {
+                                                                           "scope":  {
+                                                                                         "tenant_id":  "fixture",
+                                                                                         "project_id":  "materials"
+                                                                                     },
+                                                                           "observation_id":  "result",
+                                                                           "revision":  1
+                                                                       }
+                                                                   ]
+                                              },
+                                  "actor_id":  "fixture.actor",
+                                  "outcome":  {
+                                                  "status":  "interpreted",
+                                                  "projection":  {
+                                                                     "wire_version":  "1",
+                                                                     "authority":  "policy_interpretation",
+                                                                     "kind":  "observation-use",
+                                                                     "reference":  {
+                                                                                       "scope":  {
+                                                                                                     "tenant_id":  "fixture",
+                                                                                                     "project_id":  "materials"
+                                                                                                 },
+                                                                                       "kind":  "observation-use",
+                                                                                       "interpretation_id":  "use-1",
+                                                                                       "sha256":  "a229f0c157b82f28207fb15ebf964ca24609a1ad519ba5981eb30c35465d3b77"
+                                                                                   },
+                                                                     "actor_id":  "fixture.actor",
+                                                                     "profile":  {
+                                                                                     "wire_version":  "1",
+                                                                                     "kind":  "observation-use",
+                                                                                     "scope":  {
+                                                                                                   "tenant_id":  "fixture",
+                                                                                                   "project_id":  "materials"
+                                                                                               },
+                                                                                     "policy":  {
+                                                                                                    "profile_id":  "fixture.use",
+                                                                                                    "version":  "1",
+                                                                                                    "reference":  {
+                                                                                                                      "schema_id":  "research.observation-use",
+                                                                                                                      "version":  "1",
+                                                                                                                      "sha256":  "9f59fff8817c2fdc149bc48c3c398eaade0724c8897515adf9a614dc43ec6c3a"
+                                                                                                                  },
+                                                                                                    "action":  "fixture.screening",
+                                                                                                    "requirements":  {
+                                                                                                                         "available_value":  false,
+                                                                                                                         "passed_controls":  false,
+                                                                                                                         "bound_state":  false,
+                                                                                                                         "excluded_flags":  [
+
+                                                                                                                                            ]
+                                                                                                                     },
+                                                                                                    "normalization":  {
+                                                                                                                          "profile_id":  "fixture.mass-time",
+                                                                                                                          "version":  "1",
+                                                                                                                          "reference":  {
+                                                                                                                                            "schema_id":  "research.normalization",
+                                                                                                                                            "version":  "1",
+                                                                                                                                            "sha256":  "0bcba446edbf5f5ec1077246ca277005d3036ec077e718fbb491c09596b062da"
+                                                                                                                                        },
+                                                                                                                          "rules":  [
+                                                                                                                                        {
+                                                                                                                                            "dimension":  "mass",
+                                                                                                                                            "source_unit":  "mg",
+                                                                                                                                            "target_unit":  "g",
+                                                                                                                                            "scale":  "0.001"
+                                                                                                                                        },
+                                                                                                                                        {
+                                                                                                                                            "dimension":  "mass",
+                                                                                                                                            "source_unit":  "g",
+                                                                                                                                            "target_unit":  "kg",
+                                                                                                                                            "scale":  "0.001"
+                                                                                                                                        },
+                                                                                                                                        {
+                                                                                                                                            "dimension":  "mass",
+                                                                                                                                            "source_unit":  "kg",
+                                                                                                                                            "target_unit":  "g",
+                                                                                                                                            "scale":  "1000"
+                                                                                                                                        },
+                                                                                                                                        {
+                                                                                                                                            "dimension":  "time",
+                                                                                                                                            "source_unit":  "min",
+                                                                                                                                            "target_unit":  "s",
+                                                                                                                                            "scale":  "60"
+                                                                                                                                        },
+                                                                                                                                        {
+                                                                                                                                            "dimension":  "time",
+                                                                                                                                            "source_unit":  "h",
+                                                                                                                                            "target_unit":  "s",
+                                                                                                                                            "scale":  "3600"
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                      }
+                                                                                                }
+                                                                                 },
+                                                                     "experiment":  {
+                                                                                        "wire_version":  "1",
+                                                                                        "reference":  {
+                                                                                                          "scope":  {
+                                                                                                                        "tenant_id":  "fixture",
+                                                                                                                        "project_id":  "materials"
+                                                                                                                    },
+                                                                                                          "experiment_id":  "assay",
+                                                                                                          "revision":  1
+                                                                                                      },
+                                                                                        "supersedes":  null,
+                                                                                        "protocol":  {
+                                                                                                         "method":  {
+                                                                                                                        "schema_id":  "fixture.method",
+                                                                                                                        "version":  "1",
+                                                                                                                        "sha256":  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                                                                                                                    },
+                                                                                                         "applicability":  {
+                                                                                                                               "artifact_id":  "context",
+                                                                                                                               "scope":  {
+                                                                                                                                             "tenant_id":  "fixture",
+                                                                                                                                             "project_id":  "materials"
+                                                                                                                                         },
+                                                                                                                               "sha256":  "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                                                                                                                               "media_type":  "application/json",
+                                                                                                                               "schema_ref":  {
+                                                                                                                                                  "schema_id":  "fixture.method",
+                                                                                                                                                  "version":  "1",
+                                                                                                                                                  "sha256":  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                                                                                                                                              },
+                                                                                                                               "size_bytes":  2
+                                                                                                                           },
+                                                                                                         "source":  {
+                                                                                                                        "artifact_id":  "protocol",
+                                                                                                                        "scope":  {
+                                                                                                                                      "tenant_id":  "fixture",
+                                                                                                                                      "project_id":  "materials"
+                                                                                                                                  },
+                                                                                                                        "sha256":  "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                                                                                                                        "media_type":  "application/json",
+                                                                                                                        "schema_ref":  {
+                                                                                                                                           "schema_id":  "fixture.method",
+                                                                                                                                           "version":  "1",
+                                                                                                                                           "sha256":  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                                                                                                                                       },
+                                                                                                                        "size_bytes":  2
+                                                                                                                    }
+                                                                                                     },
+                                                                                        "samples":  [
+                                                                                                        {
+                                                                                                            "sample":  {
+                                                                                                                           "wire_version":  "1",
+                                                                                                                           "reference":  {
+                                                                                                                                             "scope":  {
+                                                                                                                                                           "tenant_id":  "fixture",
+                                                                                                                                                           "project_id":  "materials"
+                                                                                                                                                       },
+                                                                                                                                             "sample_id":  "vial",
+                                                                                                                                             "revision":  1
+                                                                                                                                         },
+                                                                                                                           "candidate":  {
+                                                                                                                                             "scope":  {
+                                                                                                                                                           "tenant_id":  "fixture",
+                                                                                                                                                           "project_id":  "materials"
+                                                                                                                                                       },
+                                                                                                                                             "candidate_id":  "nominal-design",
+                                                                                                                                             "revision":  1
+                                                                                                                                         },
+                                                                                                                           "material_state":  {
+                                                                                                                                                  "scope":  {
+                                                                                                                                                                "tenant_id":  "fixture",
+                                                                                                                                                                "project_id":  "materials"
+                                                                                                                                                            },
+                                                                                                                                                  "material_state_id":  "state",
+                                                                                                                                                  "revision":  1
+                                                                                                                                              },
+                                                                                                                           "identity_evidence":  {
+                                                                                                                                                     "artifact_id":  "identity",
+                                                                                                                                                     "scope":  {
+                                                                                                                                                                   "tenant_id":  "fixture",
+                                                                                                                                                                   "project_id":  "materials"
+                                                                                                                                                               },
+                                                                                                                                                     "sha256":  "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                                                                                                                                                     "media_type":  "application/json",
+                                                                                                                                                     "schema_ref":  {
+                                                                                                                                                                        "schema_id":  "fixture.method",
+                                                                                                                                                                        "version":  "1",
+                                                                                                                                                                        "sha256":  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                                                                                                                                                                    },
+                                                                                                                                                     "size_bytes":  2
+                                                                                                                                                 },
+                                                                                                                           "supersedes":  null
+                                                                                                                       },
+                                                                                                            "state":  {
+                                                                                                                          "wire_version":  "1",
+                                                                                                                          "reference":  {
+                                                                                                                                            "scope":  {
+                                                                                                                                                          "tenant_id":  "fixture",
+                                                                                                                                                          "project_id":  "materials"
+                                                                                                                                                      },
+                                                                                                                                            "material_state_id":  "state",
+                                                                                                                                            "revision":  1
+                                                                                                                                        },
+                                                                                                                          "candidate":  {
+                                                                                                                                            "scope":  {
+                                                                                                                                                          "tenant_id":  "fixture",
+                                                                                                                                                          "project_id":  "materials"
+                                                                                                                                                      },
+                                                                                                                                            "candidate_id":  "nominal-design",
+                                                                                                                                            "revision":  1
+                                                                                                                                        },
+                                                                                                                          "supersedes":  null,
+                                                                                                                          "preparation":  [
+
+                                                                                                                                          ],
+                                                                                                                          "features":  [
+
+                                                                                                                                       ]
+                                                                                                                      }
+                                                                                                        }
+                                                                                                    ],
+                                                                                        "expectations":  [
+                                                                                                             {
+                                                                                                                 "expectation_id":  "readout",
+                                                                                                                 "sample":  {
+                                                                                                                                "scope":  {
+                                                                                                                                              "tenant_id":  "fixture",
+                                                                                                                                              "project_id":  "materials"
+                                                                                                                                          },
+                                                                                                                                "sample_id":  "vial",
+                                                                                                                                "revision":  1
+                                                                                                                            },
+                                                                                                                 "readout":  {
+                                                                                                                                 "criterion_id":  "concentration",
+                                                                                                                                 "kind":  "numeric",
+                                                                                                                                 "unit":  "g",
+                                                                                                                                 "x_unit":  null
+                                                                                                                             },
+                                                                                                                 "replicate":  {
+                                                                                                                                   "replicate_id":  "replicate-1",
+                                                                                                                                   "role":  "sample"
+                                                                                                                               }
+                                                                                                             }
+                                                                                                         ]
+                                                                                    },
+                                                                     "reviews":  [
+                                                                                     {
+                                                                                         "observation":  {
+                                                                                                             "wire_version":  "1",
+                                                                                                             "reference":  {
+                                                                                                                               "scope":  {
+                                                                                                                                             "tenant_id":  "fixture",
+                                                                                                                                             "project_id":  "materials"
+                                                                                                                                         },
+                                                                                                                               "observation_id":  "result",
+                                                                                                                               "revision":  1
+                                                                                                                           },
+                                                                                                             "supersedes":  null,
+                                                                                                             "source":  {
+                                                                                                                            "artifact_id":  "report",
+                                                                                                                            "scope":  {
+                                                                                                                                          "tenant_id":  "fixture",
+                                                                                                                                          "project_id":  "materials"
+                                                                                                                                      },
+                                                                                                                            "sha256":  "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                                                                                                                            "media_type":  "application/json",
+                                                                                                                            "schema_ref":  {
+                                                                                                                                               "schema_id":  "fixture.method",
+                                                                                                                                               "version":  "1",
+                                                                                                                                               "sha256":  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                                                                                                                                           },
+                                                                                                                            "size_bytes":  2
+                                                                                                                        },
+                                                                                                             "binding":  {
+                                                                                                                             "target":  {
+                                                                                                                                            "experiment":  {
+                                                                                                                                                               "scope":  {
+                                                                                                                                                                             "tenant_id":  "fixture",
+                                                                                                                                                                             "project_id":  "materials"
+                                                                                                                                                                         },
+                                                                                                                                                               "experiment_id":  "assay",
+                                                                                                                                                               "revision":  1
+                                                                                                                                                           },
+                                                                                                                                            "expectation_id":  "readout",
+                                                                                                                                            "replicate_id":  "replicate-1"
+                                                                                                                                        },
+                                                                                                                             "specimen":  {
+                                                                                                                                              "sample":  {
+                                                                                                                                                             "scope":  {
+                                                                                                                                                                           "tenant_id":  "fixture",
+                                                                                                                                                                           "project_id":  "materials"
+                                                                                                                                                                       },
+                                                                                                                                                             "sample_id":  "vial",
+                                                                                                                                                             "revision":  1
+                                                                                                                                                         },
+                                                                                                                                              "material_state":  {
+                                                                                                                                                                     "scope":  {
+                                                                                                                                                                                   "tenant_id":  "fixture",
+                                                                                                                                                                                   "project_id":  "materials"
+                                                                                                                                                                               },
+                                                                                                                                                                     "material_state_id":  "state",
+                                                                                                                                                                     "revision":  1
+                                                                                                                                                                 }
+                                                                                                                                          },
+                                                                                                                             "measurement":  {
+                                                                                                                                                 "method":  {
+                                                                                                                                                                "schema_id":  "fixture.method",
+                                                                                                                                                                "version":  "1",
+                                                                                                                                                                "sha256":  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                                                                                                                                                            },
+                                                                                                                                                 "context":  {
+                                                                                                                                                                 "artifact_id":  "context",
+                                                                                                                                                                 "scope":  {
+                                                                                                                                                                               "tenant_id":  "fixture",
+                                                                                                                                                                               "project_id":  "materials"
+                                                                                                                                                                           },
+                                                                                                                                                                 "sha256":  "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                                                                                                                                                                 "media_type":  "application/json",
+                                                                                                                                                                 "schema_ref":  {
+                                                                                                                                                                                    "schema_id":  "fixture.method",
+                                                                                                                                                                                    "version":  "1",
+                                                                                                                                                                                    "sha256":  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                                                                                                                                                                                },
+                                                                                                                                                                 "size_bytes":  2
+                                                                                                                                                             }
+                                                                                                                                             },
+                                                                                                                             "role":  "sample"
+                                                                                                                         },
+                                                                                                             "value":  {
+                                                                                                                           "kind":  "numeric",
+                                                                                                                           "quantity":  {
+                                                                                                                                            "value":  "1.2500",
+                                                                                                                                            "unit":  "mg"
+                                                                                                                                        },
+                                                                                                                           "uncertainty":  null
+                                                                                                                       },
+                                                                                                             "quality":  {
+                                                                                                                             "controls":  "unknown",
+                                                                                                                             "flags":  [
+
+                                                                                                                                       ]
+                                                                                                                         }
+                                                                                                         },
+                                                                                         "raw_match":  {
+                                                                                                           "disposition":  "quarantined",
+                                                                                                           "reasons":  [
+                                                                                                                           "readout_unit_mismatch"
+                                                                                                                       ],
+                                                                                                           "state_bound":  true
+                                                                                                       },
+                                                                                         "effective_match":  {
+                                                                                                                 "disposition":  "matched",
+                                                                                                                 "reasons":  [
+
+                                                                                                                             ],
+                                                                                                                 "state_bound":  true
+                                                                                                             },
+                                                                                         "normalization":  {
+                                                                                                               "original":  {
+                                                                                                                                "kind":  "numeric",
+                                                                                                                                "quantity":  {
+                                                                                                                                                 "value":  "1.2500",
+                                                                                                                                                 "unit":  "mg"
+                                                                                                                                             },
+                                                                                                                                "uncertainty":  null
+                                                                                                                            },
+                                                                                                               "targets":  {
+                                                                                                                               "value_unit":  "g",
+                                                                                                                               "coordinate_unit":  null
+                                                                                                                           },
+                                                                                                               "policy":  {
+                                                                                                                              "schema_id":  "research.normalization",
+                                                                                                                              "version":  "1",
+                                                                                                                              "sha256":  "0bcba446edbf5f5ec1077246ca277005d3036ec077e718fbb491c09596b062da"
+                                                                                                                          },
+                                                                                                               "status":  "normalized",
+                                                                                                               "normalized":  {
+                                                                                                                                  "kind":  "numeric",
+                                                                                                                                  "quantity":  {
+                                                                                                                                                   "value":  "125e-5",
+                                                                                                                                                   "unit":  "g"
+                                                                                                                                               },
+                                                                                                                                  "uncertainty":  null
+                                                                                                                              },
+                                                                                                               "applied":  [
+                                                                                                                               {
+                                                                                                                                   "dimension":  "mass",
+                                                                                                                                   "source_unit":  "mg",
+                                                                                                                                   "target_unit":  "g",
+                                                                                                                                   "scale":  "0.001"
+                                                                                                                               }
+                                                                                                                           ],
+                                                                                                               "reason":  null
+                                                                                                           },
+                                                                                         "disposition":  "usable",
+                                                                                         "blockers":  [
+
+                                                                                                      ],
+                                                                                         "gaps":  [
+
+                                                                                                  ],
+                                                                                         "focus":  [
+                                                                                                       "controls_unknown",
+                                                                                                       "preparation_unknown",
+                                                                                                       "material_features_unreported"
+                                                                                                   ]
+                                                                                     }
+                                                                                 ],
+                                                                     "usable":  [
+                                                                                    {
+                                                                                        "scope":  {
+                                                                                                      "tenant_id":  "fixture",
+                                                                                                      "project_id":  "materials"
+                                                                                                  },
+                                                                                        "observation_id":  "result",
+                                                                                        "revision":  1
+                                                                                    }
+                                                                                ],
+                                                                     "focus":  [
+                                                                                   {
+                                                                                       "scope":  {
+                                                                                                     "tenant_id":  "fixture",
+                                                                                                     "project_id":  "materials"
+                                                                                                 },
+                                                                                       "observation_id":  "result",
+                                                                                       "revision":  1
+                                                                                   }
+                                                                               ],
+                                                                     "missing_expectations":  [
+
+                                                                                              ],
+                                                                     "sources":  [
+                                                                                     {
+                                                                                         "artifact_id":  "report",
+                                                                                         "scope":  {
+                                                                                                       "tenant_id":  "fixture",
+                                                                                                       "project_id":  "materials"
+                                                                                                   },
+                                                                                         "sha256":  "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                                                                                         "media_type":  "application/json",
+                                                                                         "schema_ref":  {
+                                                                                                            "schema_id":  "fixture.method",
+                                                                                                            "version":  "1",
+                                                                                                            "sha256":  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                                                                                                        },
+                                                                                         "size_bytes":  2
+                                                                                     }
+                                                                                 ]
+                                                                 }
+                                              }
+                              },
+    "observation-revision":  {
+                                 "wire_version":  "1",
+                                 "reference":  {
+                                                   "scope":  {
+                                                                 "tenant_id":  "fixture",
+                                                                 "project_id":  "materials"
+                                                             },
+                                                   "observation_id":  "result",
+                                                   "revision":  1
+                                               },
+                                 "supersedes":  null,
+                                 "source":  {
+                                                "artifact_id":  "report",
+                                                "scope":  {
+                                                              "tenant_id":  "fixture",
+                                                              "project_id":  "materials"
+                                                          },
+                                                "sha256":  "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                                                "media_type":  "application/json",
+                                                "schema_ref":  {
+                                                                   "schema_id":  "fixture.method",
+                                                                   "version":  "1",
+                                                                   "sha256":  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                                                               },
+                                                "size_bytes":  2
+                                            },
+                                 "binding":  {
+                                                 "target":  {
+                                                                "experiment":  {
+                                                                                   "scope":  {
+                                                                                                 "tenant_id":  "fixture",
+                                                                                                 "project_id":  "materials"
+                                                                                             },
+                                                                                   "experiment_id":  "assay",
+                                                                                   "revision":  1
+                                                                               },
+                                                                "expectation_id":  "readout",
+                                                                "replicate_id":  "replicate-1"
+                                                            },
+                                                 "specimen":  {
+                                                                  "sample":  {
+                                                                                 "scope":  {
+                                                                                               "tenant_id":  "fixture",
+                                                                                               "project_id":  "materials"
+                                                                                           },
+                                                                                 "sample_id":  "vial",
+                                                                                 "revision":  1
+                                                                             },
+                                                                  "material_state":  {
+                                                                                         "scope":  {
+                                                                                                       "tenant_id":  "fixture",
+                                                                                                       "project_id":  "materials"
+                                                                                                   },
+                                                                                         "material_state_id":  "state",
+                                                                                         "revision":  1
+                                                                                     }
+                                                              },
+                                                 "measurement":  {
+                                                                     "method":  {
+                                                                                    "schema_id":  "fixture.method",
+                                                                                    "version":  "1",
+                                                                                    "sha256":  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                                                                                },
+                                                                     "context":  {
+                                                                                     "artifact_id":  "context",
+                                                                                     "scope":  {
+                                                                                                   "tenant_id":  "fixture",
+                                                                                                   "project_id":  "materials"
+                                                                                               },
+                                                                                     "sha256":  "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                                                                                     "media_type":  "application/json",
+                                                                                     "schema_ref":  {
+                                                                                                        "schema_id":  "fixture.method",
+                                                                                                        "version":  "1",
+                                                                                                        "sha256":  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                                                                                                    },
+                                                                                     "size_bytes":  2
+                                                                                 }
+                                                                 },
+                                                 "role":  "sample"
+                                             },
+                                 "value":  {
+                                               "kind":  "numeric",
+                                               "quantity":  {
+                                                                "value":  "1.25",
+                                                                "unit":  "mg/L"
+                                                            },
+                                               "uncertainty":  null
+                                           },
+                                 "quality":  {
+                                                 "controls":  "unknown",
+                                                 "flags":  [
+
+                                                           ]
+                                             }
+                             },
+    "material-state-correction-view":  {
+                                           "wire_version":  "1",
+                                           "policy":  "future_campaigns_only",
+                                           "before":  {
+                                                          "wire_version":  "1",
+                                                          "reference":  {
+                                                                            "scope":  {
+                                                                                          "tenant_id":  "fixture",
+                                                                                          "project_id":  "materials"
+                                                                                      },
+                                                                            "material_state_id":  "state",
+                                                                            "revision":  1
+                                                                        },
+                                                          "candidate":  {
+                                                                            "scope":  {
+                                                                                          "tenant_id":  "fixture",
+                                                                                          "project_id":  "materials"
+                                                                                      },
+                                                                            "candidate_id":  "nominal-design",
+                                                                            "revision":  1
+                                                                        },
+                                                          "supersedes":  null,
+                                                          "preparation":  [
+
+                                                                          ],
+                                                          "features":  [
+
+                                                                       ]
+                                                      },
+                                           "after":  {
+                                                         "wire_version":  "1",
+                                                         "reference":  {
+                                                                           "scope":  {
+                                                                                         "tenant_id":  "fixture",
+                                                                                         "project_id":  "materials"
+                                                                                     },
+                                                                           "material_state_id":  "state",
+                                                                           "revision":  2
+                                                                       },
+                                                         "candidate":  {
+                                                                           "scope":  {
+                                                                                         "tenant_id":  "fixture",
+                                                                                         "project_id":  "materials"
+                                                                                     },
+                                                                           "candidate_id":  "nominal-design",
+                                                                           "revision":  1
+                                                                       },
+                                                         "supersedes":  {
+                                                                            "scope":  {
+                                                                                          "tenant_id":  "fixture",
+                                                                                          "project_id":  "materials"
+                                                                                      },
+                                                                            "material_state_id":  "state",
+                                                                            "revision":  1
+                                                                        },
+                                                         "preparation":  [
+
+                                                                         ],
+                                                         "features":  [
+
+                                                                      ]
+                                                     },
+                                           "changed_fields":  [
+
+                                                              ]
+                                       },
+    "observation-correction-view":  {
+                                        "wire_version":  "1",
+                                        "policy":  "future_campaigns_only",
+                                        "before":  {
+                                                       "wire_version":  "1",
+                                                       "reference":  {
+                                                                         "scope":  {
+                                                                                       "tenant_id":  "fixture",
+                                                                                       "project_id":  "materials"
+                                                                                   },
+                                                                         "observation_id":  "result",
+                                                                         "revision":  1
+                                                                     },
+                                                       "supersedes":  null,
+                                                       "source":  {
+                                                                      "artifact_id":  "report",
+                                                                      "scope":  {
+                                                                                    "tenant_id":  "fixture",
+                                                                                    "project_id":  "materials"
+                                                                                },
+                                                                      "sha256":  "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                                                                      "media_type":  "application/json",
+                                                                      "schema_ref":  {
+                                                                                         "schema_id":  "fixture.method",
+                                                                                         "version":  "1",
+                                                                                         "sha256":  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                                                                                     },
+                                                                      "size_bytes":  2
+                                                                  },
+                                                       "binding":  {
+                                                                       "target":  {
+                                                                                      "experiment":  {
+                                                                                                         "scope":  {
+                                                                                                                       "tenant_id":  "fixture",
+                                                                                                                       "project_id":  "materials"
+                                                                                                                   },
+                                                                                                         "experiment_id":  "assay",
+                                                                                                         "revision":  1
+                                                                                                     },
+                                                                                      "expectation_id":  "readout",
+                                                                                      "replicate_id":  "replicate-1"
+                                                                                  },
+                                                                       "specimen":  {
+                                                                                        "sample":  {
+                                                                                                       "scope":  {
+                                                                                                                     "tenant_id":  "fixture",
+                                                                                                                     "project_id":  "materials"
+                                                                                                                 },
+                                                                                                       "sample_id":  "vial",
+                                                                                                       "revision":  1
+                                                                                                   },
+                                                                                        "material_state":  {
+                                                                                                               "scope":  {
+                                                                                                                             "tenant_id":  "fixture",
+                                                                                                                             "project_id":  "materials"
+                                                                                                                         },
+                                                                                                               "material_state_id":  "state",
+                                                                                                               "revision":  1
+                                                                                                           }
+                                                                                    },
+                                                                       "measurement":  {
+                                                                                           "method":  {
+                                                                                                          "schema_id":  "fixture.method",
+                                                                                                          "version":  "1",
+                                                                                                          "sha256":  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                                                                                                      },
+                                                                                           "context":  {
+                                                                                                           "artifact_id":  "context",
+                                                                                                           "scope":  {
+                                                                                                                         "tenant_id":  "fixture",
+                                                                                                                         "project_id":  "materials"
+                                                                                                                     },
+                                                                                                           "sha256":  "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                                                                                                           "media_type":  "application/json",
+                                                                                                           "schema_ref":  {
+                                                                                                                              "schema_id":  "fixture.method",
+                                                                                                                              "version":  "1",
+                                                                                                                              "sha256":  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                                                                                                                          },
+                                                                                                           "size_bytes":  2
+                                                                                                       }
+                                                                                       },
+                                                                       "role":  "sample"
+                                                                   },
+                                                       "value":  {
+                                                                     "kind":  "numeric",
+                                                                     "quantity":  {
+                                                                                      "value":  "1.25",
+                                                                                      "unit":  "mg/L"
+                                                                                  },
+                                                                     "uncertainty":  null
+                                                                 },
+                                                       "quality":  {
+                                                                       "controls":  "unknown",
+                                                                       "flags":  [
+
+                                                                                 ]
+                                                                   }
+                                                   },
+                                        "after":  {
+                                                      "wire_version":  "1",
+                                                      "reference":  {
+                                                                        "scope":  {
+                                                                                      "tenant_id":  "fixture",
+                                                                                      "project_id":  "materials"
+                                                                                  },
+                                                                        "observation_id":  "result",
+                                                                        "revision":  2
+                                                                    },
+                                                      "supersedes":  {
+                                                                         "scope":  {
+                                                                                       "tenant_id":  "fixture",
+                                                                                       "project_id":  "materials"
+                                                                                   },
+                                                                         "observation_id":  "result",
+                                                                         "revision":  1
+                                                                     },
+                                                      "source":  {
+                                                                     "artifact_id":  "report",
+                                                                     "scope":  {
+                                                                                   "tenant_id":  "fixture",
+                                                                                   "project_id":  "materials"
+                                                                               },
+                                                                     "sha256":  "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                                                                     "media_type":  "application/json",
+                                                                     "schema_ref":  {
+                                                                                        "schema_id":  "fixture.method",
+                                                                                        "version":  "1",
+                                                                                        "sha256":  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                                                                                    },
+                                                                     "size_bytes":  2
+                                                                 },
+                                                      "binding":  {
+                                                                      "target":  {
+                                                                                     "experiment":  {
+                                                                                                        "scope":  {
+                                                                                                                      "tenant_id":  "fixture",
+                                                                                                                      "project_id":  "materials"
+                                                                                                                  },
+                                                                                                        "experiment_id":  "assay",
+                                                                                                        "revision":  1
+                                                                                                    },
+                                                                                     "expectation_id":  "readout",
+                                                                                     "replicate_id":  "replicate-1"
+                                                                                 },
+                                                                      "specimen":  {
+                                                                                       "sample":  {
+                                                                                                      "scope":  {
+                                                                                                                    "tenant_id":  "fixture",
+                                                                                                                    "project_id":  "materials"
+                                                                                                                },
+                                                                                                      "sample_id":  "vial",
+                                                                                                      "revision":  1
+                                                                                                  },
+                                                                                       "material_state":  {
+                                                                                                              "scope":  {
+                                                                                                                            "tenant_id":  "fixture",
+                                                                                                                            "project_id":  "materials"
+                                                                                                                        },
+                                                                                                              "material_state_id":  "state",
+                                                                                                              "revision":  1
+                                                                                                          }
+                                                                                   },
+                                                                      "measurement":  {
+                                                                                          "method":  {
+                                                                                                         "schema_id":  "fixture.method",
+                                                                                                         "version":  "1",
+                                                                                                         "sha256":  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                                                                                                     },
+                                                                                          "context":  {
+                                                                                                          "artifact_id":  "context",
+                                                                                                          "scope":  {
+                                                                                                                        "tenant_id":  "fixture",
+                                                                                                                        "project_id":  "materials"
+                                                                                                                    },
+                                                                                                          "sha256":  "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                                                                                                          "media_type":  "application/json",
+                                                                                                          "schema_ref":  {
+                                                                                                                             "schema_id":  "fixture.method",
+                                                                                                                             "version":  "1",
+                                                                                                                             "sha256":  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                                                                                                                         },
+                                                                                                          "size_bytes":  2
+                                                                                                      }
+                                                                                      },
+                                                                      "role":  "sample"
+                                                                  },
+                                                      "value":  {
+                                                                    "kind":  "numeric",
+                                                                    "quantity":  {
+                                                                                     "value":  "1.25",
+                                                                                     "unit":  "mg/L"
+                                                                                 },
+                                                                    "uncertainty":  null
+                                                                },
+                                                      "quality":  {
+                                                                      "controls":  "failed",
+                                                                      "flags":  [
+                                                                                    "low_accuracy"
+                                                                                ]
+                                                                  }
+                                                  },
+                                        "changed_fields":  [
+                                                               "quality"
+                                                           ]
+                                    },
+    "experiment-definition":  {
+                                  "wire_version":  "1",
+                                  "reference":  {
+                                                    "scope":  {
+                                                                  "tenant_id":  "fixture",
+                                                                  "project_id":  "materials"
+                                                              },
+                                                    "experiment_id":  "assay",
+                                                    "revision":  1
+                                                },
+                                  "supersedes":  null,
+                                  "protocol":  {
+                                                   "method":  {
+                                                                  "schema_id":  "fixture.method",
+                                                                  "version":  "1",
+                                                                  "sha256":  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                                                              },
+                                                   "applicability":  {
+                                                                         "artifact_id":  "context",
+                                                                         "scope":  {
+                                                                                       "tenant_id":  "fixture",
+                                                                                       "project_id":  "materials"
+                                                                                   },
+                                                                         "sha256":  "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                                                                         "media_type":  "application/json",
+                                                                         "schema_ref":  {
+                                                                                            "schema_id":  "fixture.method",
+                                                                                            "version":  "1",
+                                                                                            "sha256":  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                                                                                        },
+                                                                         "size_bytes":  2
+                                                                     },
+                                                   "source":  {
+                                                                  "artifact_id":  "protocol",
+                                                                  "scope":  {
+                                                                                "tenant_id":  "fixture",
+                                                                                "project_id":  "materials"
+                                                                            },
+                                                                  "sha256":  "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                                                                  "media_type":  "application/json",
+                                                                  "schema_ref":  {
+                                                                                     "schema_id":  "fixture.method",
+                                                                                     "version":  "1",
+                                                                                     "sha256":  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                                                                                 },
+                                                                  "size_bytes":  2
+                                                              }
+                                               },
+                                  "samples":  [
+                                                  {
+                                                      "sample":  {
+                                                                     "wire_version":  "1",
+                                                                     "reference":  {
+                                                                                       "scope":  {
+                                                                                                     "tenant_id":  "fixture",
+                                                                                                     "project_id":  "materials"
+                                                                                                 },
+                                                                                       "sample_id":  "vial",
+                                                                                       "revision":  1
+                                                                                   },
+                                                                     "candidate":  {
+                                                                                       "scope":  {
+                                                                                                     "tenant_id":  "fixture",
+                                                                                                     "project_id":  "materials"
+                                                                                                 },
+                                                                                       "candidate_id":  "nominal-design",
+                                                                                       "revision":  1
+                                                                                   },
+                                                                     "material_state":  {
+                                                                                            "scope":  {
+                                                                                                          "tenant_id":  "fixture",
+                                                                                                          "project_id":  "materials"
+                                                                                                      },
+                                                                                            "material_state_id":  "state",
+                                                                                            "revision":  1
+                                                                                        },
+                                                                     "identity_evidence":  {
+                                                                                               "artifact_id":  "identity",
+                                                                                               "scope":  {
+                                                                                                             "tenant_id":  "fixture",
+                                                                                                             "project_id":  "materials"
+                                                                                                         },
+                                                                                               "sha256":  "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                                                                                               "media_type":  "application/json",
+                                                                                               "schema_ref":  {
+                                                                                                                  "schema_id":  "fixture.method",
+                                                                                                                  "version":  "1",
+                                                                                                                  "sha256":  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                                                                                                              },
+                                                                                               "size_bytes":  2
+                                                                                           },
+                                                                     "supersedes":  null
+                                                                 },
+                                                      "state":  {
+                                                                    "wire_version":  "1",
+                                                                    "reference":  {
+                                                                                      "scope":  {
+                                                                                                    "tenant_id":  "fixture",
+                                                                                                    "project_id":  "materials"
+                                                                                                },
+                                                                                      "material_state_id":  "state",
+                                                                                      "revision":  1
+                                                                                  },
+                                                                    "candidate":  {
+                                                                                      "scope":  {
+                                                                                                    "tenant_id":  "fixture",
+                                                                                                    "project_id":  "materials"
+                                                                                                },
+                                                                                      "candidate_id":  "nominal-design",
+                                                                                      "revision":  1
+                                                                                  },
+                                                                    "supersedes":  null,
+                                                                    "preparation":  [
+
+                                                                                    ],
+                                                                    "features":  [
+
+                                                                                 ]
+                                                                }
+                                                  }
+                                              ],
+                                  "expectations":  [
+                                                       {
+                                                           "expectation_id":  "readout",
+                                                           "sample":  {
+                                                                          "scope":  {
+                                                                                        "tenant_id":  "fixture",
+                                                                                        "project_id":  "materials"
+                                                                                    },
+                                                                          "sample_id":  "vial",
+                                                                          "revision":  1
+                                                                      },
+                                                           "readout":  {
+                                                                           "criterion_id":  "concentration",
+                                                                           "kind":  "numeric",
+                                                                           "unit":  "mg/L",
+                                                                           "x_unit":  null
+                                                                       },
+                                                           "replicate":  {
+                                                                             "replicate_id":  "replicate-1",
+                                                                             "role":  "sample"
+                                                                         }
+                                                       }
+                                                   ]
+                              }
+}
