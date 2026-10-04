@@ -7,7 +7,9 @@ import sys
 from pathlib import Path
 
 from amphora_agent_planning.access import Principal
+from amphora_agent_planning.budget import BudgetPolicy
 from amphora_agent_planning.context import AttemptBinding, RequestSnapshot
+from amphora_agent_planning.persistence.budget import BudgetLedger
 from amphora_agent_planning.persistence.journal import PlanningJournal
 from amphora_agent_planning.providers import FixtureProvider, observe
 from amphora_contracts_core import Scope
@@ -29,6 +31,8 @@ def main():
             for child in value:
                 rescope(child)
     rescope(raw)
+    if stage.startswith("budget_"):
+        raw["reference"]["engagement_id"] = "budget-decision"
     raw["context"]["output_schema"] = reference_proposal_schema().model_dump(mode="json")
     request = RequestSnapshot.from_bytes(json.dumps(raw).encode(), actor_id="fixture", scope=scope)
     principal = Principal("fixture", scope, frozenset({"record_requests", "record_attempts", "read_attempts"}))
@@ -37,6 +41,24 @@ def main():
                            connect_args={"options": "-c statement_timeout=5000"})
     journal = PlanningJournal(engine)
     try:
+        if stage in {"budget_prepare", "budget_replay"}:
+            context = request.document().context.model_dump(mode="json")
+            fixture_policy = {key: context[key] for key in
+                ("model", "prompt", "policy", "output_schema", "allowed_actions", "limits")}
+            fixture_policy.update(format="planning-budget-policy.v1", per_attempt_accounting_units=60)
+            policy = BudgetPolicy.from_bytes(json.dumps(fixture_policy).encode())
+            ledger = BudgetLedger(engine)
+            if stage == "budget_prepare":
+                journal.register(principal, request)
+                reserved = ledger.reserve(principal, first, policy)
+            else:
+                reserved = ledger.read(principal, first.reference())
+                assert reserved is not None and ledger.reserve(principal, first, policy) == reserved
+            assert journal.read_attempt(principal, first.reference()).observation is None
+            print(json.dumps({"pid": os.getpid(), "request_sha256": request.sha256,
+                "policy_sha256": reserved.demand.policy_sha256, "tokens": reserved.demand.tokens,
+                "units": reserved.demand.accounting_units, "registered_at": reserved.registered_at.isoformat()}))
+            return
         if stage == "prepare":
             journal.register(principal, request)
             assert journal.begin_attempt(principal, first).observation is None

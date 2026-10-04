@@ -1,6 +1,6 @@
 [project]
 name = "amphora-agent-planning"
-version = "0.4.0"
+version = "0.5.0"
 requires-python = ">=3.12,<3.13"
 dependencies = ["sqlalchemy>=2,<3", "psycopg[binary]>=3,<4", "alembic>=1.16,<2","pydantic>=2.12,<3", "amphora-contracts-core==0.1.0", "amphora-contracts-planning==0.2.0"]
 

@@ -1,0 +1,108 @@
+"""Atomic own-request reservation with journal intent; never dispatches a provider."""
+
+from dataclasses import dataclass
+from datetime import datetime
+
+from sqlalchemy import text
+
+from ..budget import BudgetPolicy, ReservationDemand
+from ..context import AttemptBinding
+from ..context.policy import require
+from .journal import KEY, PlanningJournal
+
+
+@dataclass(frozen=True)
+class BudgetReservation:
+    demand: ReservationDemand
+    registered_at: datetime
+
+
+class BudgetLedger:
+    def __init__(self, engine):
+        self.engine = engine
+        self.journal = PlanningJournal(engine)
+
+    @staticmethod
+    def _policy(connection, key):
+        row = connection.execute(text("SELECT * FROM planning.budget_policies WHERE " + KEY), key).mappings().first()
+        if row is None:
+            return None
+        policy = BudgetPolicy.from_bytes(bytes(row["canonical_bytes"]))
+        require(policy.sha256 == row["policy_sha256"], "stored_budget_policy_corrupt")
+        return policy
+
+    @staticmethod
+    def _reservation(connection, key, binding, policy):
+        row = connection.execute(text("SELECT * FROM planning.reservations WHERE " + KEY +
+            " AND ordinal=:ordinal"), key).mappings().first()
+        if row is None:
+            return None
+        require(policy is not None, "stored_budget_policy_missing")
+        demand = policy.demand(binding)
+        require((row["policy_sha256"], row["input_tokens"], row["output_tokens"], row["accounting_units"]) ==
+                (demand.policy_sha256, demand.input_tokens, demand.output_tokens, demand.accounting_units),
+                "stored_reservation_corrupt")
+        return BudgetReservation(demand, row["registered_at"])
+
+    def reserve(self, principal, binding, reviewed_policy):
+        reference = binding.reference()
+        principal.require("record_attempts", reference.engagement.scope)
+        reviewed_policy = BudgetPolicy.from_bytes(reviewed_policy.canonical)
+        demand = reviewed_policy.demand(binding)
+        key = {**self.journal._key(reference.engagement), "ordinal": reference.ordinal}
+        with self.engine.begin() as connection:
+            self.journal._lock(connection, key)
+            snapshot = self.journal._request(connection, key, principal)
+            require(snapshot is not None, "request_unknown")
+            require(snapshot.sha256 == reference.request_sha256, "request_conflict")
+            stored_policy = self._policy(connection, key)
+            if stored_policy is not None:
+                require(stored_policy.canonical == reviewed_policy.canonical, "budget_policy_conflict")
+            existing = self._reservation(connection, key, binding, stored_policy)
+            if existing is not None:
+                return existing
+            # Never retroactively authorize a journal intent created outside budget admission.
+            unbudgeted = connection.execute(text("SELECT count(*) FROM planning.attempts a WHERE "
+                "a.tenant_id=:tenant AND a.project_id=:project AND a.engagement_id=:engagement AND NOT EXISTS "
+                "(SELECT 1 FROM planning.reservations r WHERE r.tenant_id=a.tenant_id AND r.project_id=a.project_id "
+                "AND r.engagement_id=a.engagement_id AND r.ordinal=a.ordinal)"), key).scalar_one()
+            require(unbudgeted == 0, "unbudgeted_attempt_history")
+            if stored_policy is None:
+                connection.execute(text("INSERT INTO planning.budget_policies "
+                    "(tenant_id,project_id,engagement_id,request_sha256,policy_sha256,canonical_bytes) "
+                    "VALUES (:tenant,:project,:engagement,:request,:policy,:content)"),
+                    {**key, "request": snapshot.sha256, "policy": reviewed_policy.sha256,
+                     "content": reviewed_policy.canonical})
+            latest = connection.execute(text("SELECT COALESCE(MAX(ordinal),0) FROM planning.attempts WHERE " + KEY),
+                                         key).scalar_one()
+            require(reference.ordinal == latest + 1, "attempt_sequence")
+            if latest:
+                previous = self.journal._attempt(connection, {**key, "ordinal": latest}, snapshot)
+                require(previous.observation is not None, "attempt_pending")
+            held = connection.execute(text("SELECT COALESCE(SUM(input_tokens+output_tokens),0) AS tokens, "
+                "COALESCE(SUM(accounting_units),0) AS units FROM planning.reservations WHERE " + KEY),
+                key).mappings().one()
+            limits = snapshot.document().context.limits
+            require(int(held["tokens"]) + demand.tokens <= limits.total_tokens, "token_budget_exhausted")
+            require(int(held["units"]) + demand.accounting_units <= limits.total_accounting_units,
+                    "accounting_budget_exhausted")
+            connection.execute(text("INSERT INTO planning.attempts "
+                "(tenant_id,project_id,engagement_id,ordinal,request_sha256) "
+                "VALUES (:tenant,:project,:engagement,:ordinal,:request)"), {**key, "request": snapshot.sha256})
+            connection.execute(text("INSERT INTO planning.reservations "
+                "(tenant_id,project_id,engagement_id,ordinal,policy_sha256,input_tokens,output_tokens,accounting_units) "
+                "VALUES (:tenant,:project,:engagement,:ordinal,:policy,:input,:output,:units)"),
+                {**key, "policy": demand.policy_sha256, "input": demand.input_tokens,
+                 "output": demand.output_tokens, "units": demand.accounting_units})
+            return self._reservation(connection, key, binding, reviewed_policy)
+
+    def read(self, principal, reference):
+        principal.require("read_attempts", reference.engagement.scope)
+        key = {**self.journal._key(reference.engagement), "ordinal": reference.ordinal}
+        with self.engine.connect() as connection:
+            snapshot = self.journal._request(connection, key, principal)
+            if snapshot is None:
+                return None
+            require(snapshot.sha256 == reference.request_sha256, "request_conflict")
+            policy = self._policy(connection, key)
+            return self._reservation(connection, key, AttemptBinding(snapshot, reference.ordinal), policy)

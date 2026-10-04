@@ -143,3 +143,7 @@ B1.04 reusable installed verifier:8-wheel closure,2 independent installs,86 owne
 ## 2026-10-04 02:25:10 - B2.01a policy and tracker reconciliation
 
 Agent Planning0.4 private reviewed budget policy/demand:22 source,40 with dev,108 independent cases/four processes;65 statements/2 branches100%. No actual reservation or dispatch claim. Child29.17%,parent5.83%,Build38.89%,gates1/4 and1/20. MBT child/build rows had drifted through substring numeric replacement while canonical child/parent trackers stayed correct; rewrote full rows and asserted readback against canonical values. All future updates use exact rows/fields, never unbounded percentage replacement.
+
+## 2026-10-04 02:37:29 ? B2.01b atomic reservations
+
+Planning0.5/planning_0002 stores policy and conservative holds atomically with intents.47 source cases,116 installed cases,6 processes/2 installations and18 dev cases pass. New ledger75 statements/14 branches100%; combined persistence/budget287/288 statements,33/34 branches (migration CLI independently exercised). Scoped dev-config lint passes. Child33.33%,Build44.44%,parent6.67%; next B2.02. Evidence: [Reservations](../Audits/Evidence/BP-07-Planning/Reservations.json).

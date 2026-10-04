@@ -55,6 +55,7 @@ def verify(output):
         run([uv, "build", "--project", specs[name][0], "--wheel", "--out-dir", wheels])
     with zipfile.ZipFile(next(wheels.glob("amphora_agent_planning-*.whl"))) as archive:
         assert any(name.endswith("r0001_initial.sql") for name in archive.namelist())
+        assert any(name.endswith("r0002_reservations.sql") for name in archive.namelist())
         assert not any("/tests/" in name for name in archive.namelist())
     external = ["pydantic", "pydantic-core", "annotated-types", "typing-extensions", "typing-inspection",
         "sqlalchemy", "psycopg", "psycopg-binary", "alembic", "Mako", "MarkupSafe",
@@ -102,13 +103,22 @@ def verify(output):
     assert stages["finish"]["attempts"][0] == stages["interrupted"]["attempts"][0]
     assert stages["finish"]["attempts"][1]["status"] == "proposed"
     assert stages["finish"]["attempts"] == stages["replay"]["attempts"]
+    reservations = {}
+    for stage, label in (("budget_prepare", "initial"), ("budget_replay", "replacement")):
+        reservations[stage] = run([interpreters[label], "-I", output / "tests/service/acceptance/journal_probe.py",
+                                  stage, project], env=probe_env, capture=True)
+    assert reservations["budget_prepare"]["pid"] != reservations["budget_replay"]["pid"]
+    assert {k: v for k, v in reservations["budget_prepare"].items() if k != "pid"} == {
+        k: v for k, v in reservations["budget_replay"].items() if k != "pid"}
+    assert reservations["budget_replay"]["tokens"] == 2048 and reservations["budget_replay"]["units"] == 60
     manifest = {"verified_at": datetime.now(ZoneInfo("America/Chicago")).strftime("%Y-%m-%d %H:%M:%S"),
         "status": "passed", "tests": tests, "project": project, "stages": stages,
+        "reservation_stages": reservations,
         "wheels": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(wheels.glob("*.whl"))},
         "limits": ["Own PostgreSQL journal only; no live provider/domain acceptance", "No durable budget dispatch yet",
                    "Two independent installs from one source-built wheel closure; no new implementation rewrite"]}
     (output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({"status": "passed", "tests": tests, "processes": 4, "installations": 2}))
+    print(json.dumps({"status": "passed", "tests": tests, "processes": 6, "installations": 2}))
 
 
 if __name__ == "__main__":

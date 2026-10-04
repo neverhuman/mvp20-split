@@ -1,0 +1,140 @@
+{
+  "verified_at": "2026-10-04 02:32:33",
+  "status": "passed",
+  "tests": 116,
+  "project": "5de1331c4bdb481b86c068a4b34520a7",
+  "stages": {
+    "prepare": {
+      "pid": 15276,
+      "request_sha256": "8bba24c1170752717113049e54c274ea2c9f192c3c082350084aaa7cc5fa02b6",
+      "attempts": [
+        {
+          "ordinal": 1,
+          "status": "pending"
+        },
+        null
+      ]
+    },
+    "interrupted": {
+      "pid": 27452,
+      "request_sha256": "8bba24c1170752717113049e54c274ea2c9f192c3c082350084aaa7cc5fa02b6",
+      "attempts": [
+        {
+          "ordinal": 1,
+          "status": "unknown",
+          "record_sha256": "86ff48ad55036e5ede4dc30dc0965ed57400a2f8fd971cc71b3572b34f5e0311",
+          "capture_sha256": "c0cc5a4ffaffaa209c0244ef5b7427ec0d2aa1c7a46ff5c922d81a10502b4cb7",
+          "usage": {
+            "input_tokens": null,
+            "output_tokens": null,
+            "accounting_units": null,
+            "certainty": "unknown"
+          }
+        },
+        {
+          "ordinal": 2,
+          "status": "pending"
+        }
+      ]
+    },
+    "finish": {
+      "pid": 20160,
+      "request_sha256": "8bba24c1170752717113049e54c274ea2c9f192c3c082350084aaa7cc5fa02b6",
+      "attempts": [
+        {
+          "ordinal": 1,
+          "status": "unknown",
+          "record_sha256": "86ff48ad55036e5ede4dc30dc0965ed57400a2f8fd971cc71b3572b34f5e0311",
+          "capture_sha256": "c0cc5a4ffaffaa209c0244ef5b7427ec0d2aa1c7a46ff5c922d81a10502b4cb7",
+          "usage": {
+            "input_tokens": null,
+            "output_tokens": null,
+            "accounting_units": null,
+            "certainty": "unknown"
+          }
+        },
+        {
+          "ordinal": 2,
+          "status": "proposed",
+          "record_sha256": "d6cf33ecc081e5b20dd94a76af67d466fa82115a99ab018b92e949b8bb38cd9a",
+          "capture_sha256": "99047ef9a9a99de2d0fd757d15028e716dfb7ede948fb783b413df34f1472d5d",
+          "usage": {
+            "input_tokens": 10,
+            "output_tokens": 10,
+            "accounting_units": 1,
+            "certainty": "reported"
+          }
+        }
+      ]
+    },
+    "replay": {
+      "pid": 1428,
+      "request_sha256": "8bba24c1170752717113049e54c274ea2c9f192c3c082350084aaa7cc5fa02b6",
+      "attempts": [
+        {
+          "ordinal": 1,
+          "status": "unknown",
+          "record_sha256": "86ff48ad55036e5ede4dc30dc0965ed57400a2f8fd971cc71b3572b34f5e0311",
+          "capture_sha256": "c0cc5a4ffaffaa209c0244ef5b7427ec0d2aa1c7a46ff5c922d81a10502b4cb7",
+          "usage": {
+            "input_tokens": null,
+            "output_tokens": null,
+            "accounting_units": null,
+            "certainty": "unknown"
+          }
+        },
+        {
+          "ordinal": 2,
+          "status": "proposed",
+          "record_sha256": "d6cf33ecc081e5b20dd94a76af67d466fa82115a99ab018b92e949b8bb38cd9a",
+          "capture_sha256": "99047ef9a9a99de2d0fd757d15028e716dfb7ede948fb783b413df34f1472d5d",
+          "usage": {
+            "input_tokens": 10,
+            "output_tokens": 10,
+            "accounting_units": 1,
+            "certainty": "reported"
+          }
+        }
+      ]
+    }
+  },
+  "reservation_stages": {
+    "budget_prepare": {
+      "pid": 28780,
+      "request_sha256": "0f397af40ae3e535719a9b2953e10deb260bd3160146a474febd02f12656b998",
+      "policy_sha256": "f64d4cec94f7dfa8f50525a5cf7c12195ecf3edc83062908e9677c89c32238d0",
+      "tokens": 2048,
+      "units": 60,
+      "registered_at": "2026-10-04T07:32:31.276778+00:00"
+    },
+    "budget_replay": {
+      "pid": 20912,
+      "request_sha256": "0f397af40ae3e535719a9b2953e10deb260bd3160146a474febd02f12656b998",
+      "policy_sha256": "f64d4cec94f7dfa8f50525a5cf7c12195ecf3edc83062908e9677c89c32238d0",
+      "tokens": 2048,
+      "units": 60,
+      "registered_at": "2026-10-04T07:32:31.276778+00:00"
+    }
+  },
+  "wheels": {
+    "amphora_agent_planning-0.5.0-py3-none-any.whl": "4cc67f45d81b9942f5b58249a03aa0e8b1d954973d8df8fce8fc4ddf9bcada80",
+    "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+    "amphora_contracts_planning-0.2.0-py3-none-any.whl": "c0e1ce8cd2d87ae2bbb443536e46ac2c1d9f9875dcac8d9498d0ef061291aa56",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee"
+  },
+  "limits": [
+    "No provider dispatch or settlement yet",
+    "No live provider/model/egress/spend selection",
+    "Same implementation installed twice, not independently authored replacement"
+  ],
+  "scope": "BP-07.01 B2.01b atomic reservations",
+  "source_tests": 47,
+  "source_seconds": 3.23,
+  "dev_tests": 18,
+  "dev_seconds": 14.09,
+  "schemas_unchanged": 488
+}
