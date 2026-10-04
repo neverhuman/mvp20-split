@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-Version0.14.0, BP-07.02/B1.04c.ii. This isolated owner implements pure context/request validation, physical-attempt binding and a deterministic adversarial provider/capture boundary. It now has a private PostgreSQL request/attempt/observation journal; no server, live provider, output publication, live transport or Runtime acceptance implementation yet. [Design](../../docs/Architecture/Agents/Planning.md) describes the larger target; [build plan](../../docs/Build%20Plans/BP-07/BP-07.02%20Reliable%20text%20decomposition.md) owns current progress.
+Version0.15.0, BP-07.02/B1.04c.iii. This isolated owner implements pure context/request validation, physical-attempt binding and a deterministic adversarial provider/capture boundary. It now has a private PostgreSQL request/attempt/observation journal; no server, live provider, actual-peer acceptance or Runtime acceptance implementation yet. [Design](../../docs/Architecture/Agents/Planning.md) describes the larger target; [build plan](../../docs/Build%20Plans/BP-07/BP-07.02%20Reliable%20text%20decomposition.md) owns current progress.
 
 Public dependencies are planning/core contracts; SQLAlchemy/psycopg/Alembic are private persistence dependencies. Private modules group behavior with its data; transport DTOs do not own policy. Context owns scoped immutable input snapshots. Providers owns bounded deterministic call parsing; persistence owns immutable request/attempt/observation history. Runtime alone accepts execution decisions; Knowledge and Research retain domain authority. No peer private imports, shared ORM or peer-table reads.
 
@@ -12,7 +12,7 @@ The extraction module adds immutable task/request binding, selected raw UTF-8 so
 
 ExtractionTrace/ExtractionTraceRef retain interpretation-only provenance and profile-only validation. Model-claimed source attribution, inference and missing values remain distinct; no trace grants scientific acceptance. A prior trace is bounded lineage, not dispatch permission or a fresh budget.
 
-ExtractionJournal persists one task per engagement and one immutable interpretation trace per observed physical attempt through planning_0006, reconstructing provenance and bounded prior chains on readback. Tests remain scoped to extraction and persistence; Bounded Data processing reads and the private publication journal are implemented; SDK publication, actual-peer integration and semantic validation remain subsequent gates.
+ExtractionJournal persists one task per engagement and one immutable interpretation trace per observed physical attempt through planning_0006, reconstructing provenance and bounded prior chains on readback. Tests remain scoped to extraction and persistence; Bounded Data processing reads and the private publication journal are implemented; Public SDK publication/recovery is implemented; actual-peer integration and semantic validation remain subsequent gates.
 
 Verified2026-10-04 04:24:20:274 source/contract/dev cases;256 cases in two independent installations plus17 readback processes including failed/repaired extraction trace continuity and retained v1 history. Eighteen synthetic corpus cases are software oracles only; B3 owns semantic scoring. Trace authority remains interpretation-only.
 

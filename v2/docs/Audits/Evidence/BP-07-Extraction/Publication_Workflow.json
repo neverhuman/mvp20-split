@@ -1,0 +1,21 @@
+{
+  "verified_at": "2026-10-04 05:23:21",
+  "timezone": "America/Chicago",
+  "task": "BP-07.02/B1.04c.iii",
+  "planning": "0.15.0",
+  "public_sdk": "0.2.0",
+  "tests": 421,
+  "seconds": 109.26,
+  "publication_cases": 92,
+  "coverage": {
+    "statements": 608,
+    "covered_statements": 602,
+    "branches": 62,
+    "covered_branches": 58
+  },
+  "limits": [
+    "Actual Planning PostgreSQL with scripted Data receipts; actual installed Data remains d",
+    "Defensive closed-socket/expiry paths, unexpected release error and workflow exhaustion guard remain uncovered",
+    "No live model, Knowledge acceptance or scientific-validity claim"
+  ]
+}

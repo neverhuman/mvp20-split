@@ -239,3 +239,11 @@ MBT checkpoint archive 2026-10-04 05:11:45:
 ## 2026-10-04 05:11:45 - B1.04c.ii publication journal
 
 Planning0.14 adds planning_0007 immutable intents, payloads and transition history with separately mutable lease/control columns. Original actor, exact trace/task, configured publisher/schema and historical metadata are reconstructed on every read. Lease expiry is checked at the actual position write; inserted events/payload roll back together on expiry or failure. No peer I/O or fresh authorization is claimed by historical readback.375 regression cases65.55s;469 publication statements28 branches100%. Child22.92%,Build30.56%,parent24.58%; c.iii SDK workflow/recovery next, d actual installed peers remains required.
+
+MBT archive 2026-10-04 05:23:21:
+
+| 2026-10-03 22:15:08 | B1.04b verified; child20.00%,parent86.67%; B1.05 active | [Studio provenance](../Audits/Evidence/BP-06-Feedback/Studio_Provenance.json);168 source/168 independent,18dev |
+
+## 2026-10-04 05:23:21 - B1.04c.iii public SDK workflow
+
+Planning0.15/public0.5/SDK0.2;421 owner/contract/dev cases109.26s;92 publication cases.602/608 statements58/62 branches covered; residuals explicitly documented in module README. Actual SQL plus public SDK scripted Data peer and loopback transport verify finite receipt-first command recovery, no repeated uncertain PUT, stable finalize identities, derivation binding, durable rejection, interruption at each local transition and stale lease denial. Dependency boundaries and Ruff pass. Child23.44%,Build31.25%,parent24.69%; d actual installed Data/Planning proof remains required before B1 closes.
