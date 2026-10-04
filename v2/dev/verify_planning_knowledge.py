@@ -12,7 +12,7 @@ from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from planning_knowledge_fixture import ROOT, KnowledgeHost, rescope, task_file
+from planning_knowledge_fixture import ROOT, ReadOwnerHost, rescope, task_file
 from postgres_fixture import owned_state
 from sqlalchemy import URL
 
@@ -62,7 +62,7 @@ def verify(output, installation, knowledge_python):
     missing = task_file(output / 'missing.json', copy.deepcopy(first), unavailable=True)
     probe = output / 'knowledge_read_probe.py'
     shutil.copyfile(ROOT / 'services/agent_planning/tests/acceptance/knowledge_read_probe.py', probe)
-    owner = KnowledgeHost(knowledge_python, config_path, host_env)
+    owner = ReadOwnerHost(knowledge_python, config_path, host_env)
     owner_pids, records = [owner.process.pid], {}
 
     def read(label, path, credential=token, python=None):
@@ -82,7 +82,7 @@ def verify(output, installation, knowledge_python):
         after = read('after-new-head', historical)
         assert after['snapshot_sha256'] == original['snapshot_sha256']
         owner.close()
-        owner = KnowledgeHost(knowledge_python, config_path, host_env)
+        owner = ReadOwnerHost(knowledge_python, config_path, host_env)
         owner_pids.append(owner.process.pid)
         restored = read('after-owner-restart', historical)
         assert restored['snapshot_sha256'] == original['snapshot_sha256'] and restored['profile_sha256'] == original['profile_sha256']
@@ -95,7 +95,7 @@ def verify(output, installation, knowledge_python):
         owner.close()
     assert len({row['pid'] for row in records.values()}) == len(records)
     manifest = {'verified_at': datetime.now(ZoneInfo('America/Chicago')).strftime('%Y-%m-%d %H:%M:%S'),
-        'status': 'passed', 'planning': '0.18.0', 'knowledge': '0.17.0', 'knowledge_contracts': '0.8.0',
+        'status': 'passed', 'planning': '0.20.0', 'knowledge': '0.17.0', 'knowledge_contracts': '0.8.0',
         'knowledge_host_pids': owner_pids, 'knowledge_fixture_pids': [first['pid'], second['pid']],
         'planning_processes': records,
         'limits': ['Synthetic owner-local accepted input fixture; no real source rights or Planning proposal acceptance',

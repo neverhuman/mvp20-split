@@ -15,7 +15,7 @@ from amphora_contracts_core import Scope
 
 
 def run(path):
-    assert version('amphora-agent-planning') == '0.18.0'
+    assert version('amphora-agent-planning') == '0.20.0'
     assert all(importlib.util.find_spec(name) is None for name in
                ('amphora_knowledge', 'amphora_research', 'amphora_data_artifacts', 'amphora_campaign_runtime'))
     document = json.loads(path.read_bytes())

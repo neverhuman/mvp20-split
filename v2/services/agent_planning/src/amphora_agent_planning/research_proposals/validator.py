@@ -24,7 +24,7 @@ class ResearchProposals:
 class ResearchProposalValidator:
     def validate(self, candidate, questions):
         require(questions.task_sha256 == candidate.task.sha256, 'research_context_task_binding')
-        questions = QuestionContext.bind(candidate.task, questions.documents())
+        questions = QuestionContext.bind(candidate.task, questions.documents(), questions.unavailable())
         return _Validation(candidate, questions).run()
 
 
@@ -34,6 +34,8 @@ class _Validation:
         self.known = questions.index()
         self.selected = tuple(entry.artifact for entry in candidate.task.request.document().context.entries)
         self.findings = Findings()
+        for finding in questions.findings(candidate.task):
+            self.findings.add(finding.location, finding.code, withhold=False)
         self.questions, self.answers, self.needs, self.local_questions = [], [], [], {}
 
     def identity(self, kind, local_id):

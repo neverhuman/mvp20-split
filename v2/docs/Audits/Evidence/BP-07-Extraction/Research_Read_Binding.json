@@ -1,0 +1,500 @@
+{
+  "verified_at": "2026-10-04 07:31:11",
+  "task": "BP-07.02/B2.02a.ii",
+  "status": "passed",
+  "planning": "0.20.0",
+  "contracts": "0.7.0",
+  "source_tests": 560,
+  "source_seconds": 107.16,
+  "focused_tests": 70,
+  "installed_tests": 542,
+  "installed_processes": 20,
+  "installations": 2,
+  "coverage": {
+    "statements": 212,
+    "branches": 28,
+    "missing_statements": 3,
+    "partial_branches": 2,
+    "percent_rounded": 98
+  },
+  "schemas": 506,
+  "migration": "none; planning0001..0007 unchanged",
+  "wheels": {
+    "amphora_agent_planning-0.20.0-py3-none-any.whl": "dcc838166893d19ee8e043f7679278730d974e9bc065d0e8a6fa4a9df1548a8a",
+    "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+    "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+    "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+    "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+    "amphora_contracts_planning-0.7.0-py3-none-any.whl": "0f09c0f8bb69e5b0f33929ed1eb4623d768aae1373b651b9c4bb07f5537da9f1",
+    "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+    "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+  },
+  "actual": {
+    "research": {
+      "verified_at": "2026-10-04 07:28:59",
+      "status": "passed",
+      "planning": "0.20.0",
+      "research": "0.33.0",
+      "research_contracts": "0.14.0",
+      "research_host_pids": [
+        26884,
+        19664
+      ],
+      "research_fixture_pids": [
+        23088,
+        9272
+      ],
+      "planning_processes": {
+        "original": {
+          "pid": 11368,
+          "task_sha256": "a583c8034f25fedbbd60af064fd8045f8e974ee312cd60a12911b9ce608d96ea",
+          "calls": 1,
+          "records": [
+            {
+              "wire_version": "1",
+              "reference": {
+                "scope": {
+                  "tenant_id": "planning-research-read",
+                  "project_id": "9d4a4699a5d54a35b57934835400aba8"
+                },
+                "question_id": "q",
+                "revision": 1
+              },
+              "objective": "Original synthetic question",
+              "applicability": {
+                "artifact_id": "objective",
+                "scope": {
+                  "tenant_id": "planning-research-read",
+                  "project_id": "9d4a4699a5d54a35b57934835400aba8"
+                },
+                "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+                "media_type": "text/plain",
+                "schema_ref": {
+                  "schema_id": "fixture.text",
+                  "version": "1",
+                  "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+                },
+                "size_bytes": 12
+              },
+              "criteria": [
+                {
+                  "criterion_id": "c",
+                  "description": "Explicit criterion"
+                }
+              ],
+              "supersedes": null
+            }
+          ],
+          "record_sha256": [
+            "67c7ac4e0f722218a73605a1be61af1879e00d44b7ef3d7520970566561ac65b"
+          ],
+          "gaps": []
+        },
+        "after-new-revision": {
+          "pid": 17568,
+          "task_sha256": "a583c8034f25fedbbd60af064fd8045f8e974ee312cd60a12911b9ce608d96ea",
+          "calls": 1,
+          "records": [
+            {
+              "wire_version": "1",
+              "reference": {
+                "scope": {
+                  "tenant_id": "planning-research-read",
+                  "project_id": "9d4a4699a5d54a35b57934835400aba8"
+                },
+                "question_id": "q",
+                "revision": 1
+              },
+              "objective": "Original synthetic question",
+              "applicability": {
+                "artifact_id": "objective",
+                "scope": {
+                  "tenant_id": "planning-research-read",
+                  "project_id": "9d4a4699a5d54a35b57934835400aba8"
+                },
+                "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+                "media_type": "text/plain",
+                "schema_ref": {
+                  "schema_id": "fixture.text",
+                  "version": "1",
+                  "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+                },
+                "size_bytes": 12
+              },
+              "criteria": [
+                {
+                  "criterion_id": "c",
+                  "description": "Explicit criterion"
+                }
+              ],
+              "supersedes": null
+            }
+          ],
+          "record_sha256": [
+            "67c7ac4e0f722218a73605a1be61af1879e00d44b7ef3d7520970566561ac65b"
+          ],
+          "gaps": []
+        },
+        "after-owner-restart": {
+          "pid": 25952,
+          "task_sha256": "a583c8034f25fedbbd60af064fd8045f8e974ee312cd60a12911b9ce608d96ea",
+          "calls": 1,
+          "records": [
+            {
+              "wire_version": "1",
+              "reference": {
+                "scope": {
+                  "tenant_id": "planning-research-read",
+                  "project_id": "9d4a4699a5d54a35b57934835400aba8"
+                },
+                "question_id": "q",
+                "revision": 1
+              },
+              "objective": "Original synthetic question",
+              "applicability": {
+                "artifact_id": "objective",
+                "scope": {
+                  "tenant_id": "planning-research-read",
+                  "project_id": "9d4a4699a5d54a35b57934835400aba8"
+                },
+                "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+                "media_type": "text/plain",
+                "schema_ref": {
+                  "schema_id": "fixture.text",
+                  "version": "1",
+                  "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+                },
+                "size_bytes": 12
+              },
+              "criteria": [
+                {
+                  "criterion_id": "c",
+                  "description": "Explicit criterion"
+                }
+              ],
+              "supersedes": null
+            }
+          ],
+          "record_sha256": [
+            "67c7ac4e0f722218a73605a1be61af1879e00d44b7ef3d7520970566561ac65b"
+          ],
+          "gaps": []
+        },
+        "future-campaign": {
+          "pid": 27604,
+          "task_sha256": "e398e4deec18318b9695aea984c00154e1d596d8e9931f59ca55432a2a0e85a9",
+          "calls": 1,
+          "records": [
+            {
+              "wire_version": "1",
+              "reference": {
+                "scope": {
+                  "tenant_id": "planning-research-read",
+                  "project_id": "9d4a4699a5d54a35b57934835400aba8"
+                },
+                "question_id": "q",
+                "revision": 2
+              },
+              "objective": "Revised synthetic question for a future campaign",
+              "applicability": {
+                "artifact_id": "objective",
+                "scope": {
+                  "tenant_id": "planning-research-read",
+                  "project_id": "9d4a4699a5d54a35b57934835400aba8"
+                },
+                "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+                "media_type": "text/plain",
+                "schema_ref": {
+                  "schema_id": "fixture.text",
+                  "version": "1",
+                  "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+                },
+                "size_bytes": 12
+              },
+              "criteria": [
+                {
+                  "criterion_id": "c",
+                  "description": "Explicit criterion"
+                }
+              ],
+              "supersedes": {
+                "scope": {
+                  "tenant_id": "planning-research-read",
+                  "project_id": "9d4a4699a5d54a35b57934835400aba8"
+                },
+                "question_id": "q",
+                "revision": 1
+              }
+            }
+          ],
+          "record_sha256": [
+            "4ce3cd3ef61407331d0698fb42ab768aa9b2458713dd092857e0f6e731166cce"
+          ],
+          "gaps": []
+        },
+        "grant-denied": {
+          "pid": 19548,
+          "task_sha256": "a583c8034f25fedbbd60af064fd8045f8e974ee312cd60a12911b9ce608d96ea",
+          "calls": 1,
+          "records": [],
+          "record_sha256": [],
+          "gaps": [
+            {
+              "reference": {
+                "scope": {
+                  "tenant_id": "planning-research-read",
+                  "project_id": "9d4a4699a5d54a35b57934835400aba8"
+                },
+                "question_id": "q",
+                "revision": 1
+              },
+              "reason": "research_access_denied"
+            }
+          ]
+        },
+        "foreign-scope": {
+          "pid": 17344,
+          "task_sha256": "be766d26be56cb9f1e287e527adb04c0944555141e9fcd67fa2688388d9d3878",
+          "calls": 1,
+          "records": [],
+          "record_sha256": [],
+          "gaps": [
+            {
+              "reference": {
+                "scope": {
+                  "tenant_id": "planning-research-read",
+                  "project_id": "foreign"
+                },
+                "question_id": "q",
+                "revision": 1
+              },
+              "reason": "research_access_denied"
+            }
+          ]
+        },
+        "missing-plus-available": {
+          "pid": 14276,
+          "task_sha256": "54d25ccbb3f0d96d7c5c675ebef57d576d92a3c0c4b17b41142d082f29517062",
+          "calls": 2,
+          "records": [
+            {
+              "wire_version": "1",
+              "reference": {
+                "scope": {
+                  "tenant_id": "planning-research-read",
+                  "project_id": "9d4a4699a5d54a35b57934835400aba8"
+                },
+                "question_id": "q",
+                "revision": 1
+              },
+              "objective": "Original synthetic question",
+              "applicability": {
+                "artifact_id": "objective",
+                "scope": {
+                  "tenant_id": "planning-research-read",
+                  "project_id": "9d4a4699a5d54a35b57934835400aba8"
+                },
+                "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+                "media_type": "text/plain",
+                "schema_ref": {
+                  "schema_id": "fixture.text",
+                  "version": "1",
+                  "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+                },
+                "size_bytes": 12
+              },
+              "criteria": [
+                {
+                  "criterion_id": "c",
+                  "description": "Explicit criterion"
+                }
+              ],
+              "supersedes": null
+            }
+          ],
+          "record_sha256": [
+            "67c7ac4e0f722218a73605a1be61af1879e00d44b7ef3d7520970566561ac65b"
+          ],
+          "gaps": [
+            {
+              "reference": {
+                "scope": {
+                  "tenant_id": "planning-research-read",
+                  "project_id": "9d4a4699a5d54a35b57934835400aba8"
+                },
+                "question_id": "missing",
+                "revision": 1
+              },
+              "reason": "research_reference_unavailable"
+            }
+          ]
+        },
+        "owner-offline": {
+          "pid": 5508,
+          "task_sha256": "a583c8034f25fedbbd60af064fd8045f8e974ee312cd60a12911b9ce608d96ea",
+          "calls": 1,
+          "records": [],
+          "record_sha256": [],
+          "gaps": [
+            {
+              "reference": {
+                "scope": {
+                  "tenant_id": "planning-research-read",
+                  "project_id": "9d4a4699a5d54a35b57934835400aba8"
+                },
+                "question_id": "q",
+                "revision": 1
+              },
+              "reason": "research_peer_unavailable"
+            }
+          ]
+        }
+      },
+      "limits": [
+        "Synthetic Research-local question publication; no production declaration-write API or Data rights proof",
+        "Actual authenticated immutable reads, retained owner PostgreSQL, two host processes; Data/Knowledge offline",
+        "No provider/model/scientific acceptance; Planning proposal submission remains B2.03"
+      ]
+    },
+    "knowledge": {
+      "verified_at": "2026-10-04 07:29:43",
+      "status": "passed",
+      "planning": "0.20.0",
+      "knowledge": "0.17.0",
+      "knowledge_contracts": "0.8.0",
+      "knowledge_host_pids": [
+        19996,
+        1928
+      ],
+      "knowledge_fixture_pids": [
+        28620,
+        17392
+      ],
+      "planning_processes": {
+        "original": {
+          "pid": 31768,
+          "status": "read",
+          "task_sha256": "073ad548e463aea0b99ddee7ebadf95423e3467f5b6816fcefade7f0271414ce",
+          "snapshot": {
+            "graph": {
+              "scope": {
+                "tenant_id": "planning-knowledge-read",
+                "project_id": "4f790cb7019543af9ce3c4eefa81c583"
+              },
+              "graph_id": "domain"
+            },
+            "revision": 1,
+            "sha256": "bff8ca14a5690abf62e2f12acfa0c79dd62b4729dbc0a753eb3213102490a72e"
+          },
+          "profile_sha256": "c99e67abb6189be5956ac3c0eae0f22874c49080ed43882cdb9f319da9cb7553",
+          "snapshot_sha256": "bfeb5d706905511f41f2bf4c1ef55850db735c4eabeb86ae2653c90dcd1b464f",
+          "calls": 3,
+          "bytes": 14185
+        },
+        "genesis": {
+          "pid": 10020,
+          "status": "read",
+          "task_sha256": "51de0c46f4cb08cc8cd95688ff4deff7da7e5498364e7937cc1f004eb384a2b1",
+          "snapshot": null,
+          "profile_sha256": "40a6a49478f6967b1c193809cc9ddbc40942263d4db5a65e9b1a0e4d8ed322d2",
+          "snapshot_sha256": null,
+          "calls": 1,
+          "bytes": 1481
+        },
+        "after-new-head": {
+          "pid": 9408,
+          "status": "read",
+          "task_sha256": "073ad548e463aea0b99ddee7ebadf95423e3467f5b6816fcefade7f0271414ce",
+          "snapshot": {
+            "graph": {
+              "scope": {
+                "tenant_id": "planning-knowledge-read",
+                "project_id": "4f790cb7019543af9ce3c4eefa81c583"
+              },
+              "graph_id": "domain"
+            },
+            "revision": 1,
+            "sha256": "bff8ca14a5690abf62e2f12acfa0c79dd62b4729dbc0a753eb3213102490a72e"
+          },
+          "profile_sha256": "c99e67abb6189be5956ac3c0eae0f22874c49080ed43882cdb9f319da9cb7553",
+          "snapshot_sha256": "bfeb5d706905511f41f2bf4c1ef55850db735c4eabeb86ae2653c90dcd1b464f",
+          "calls": 3,
+          "bytes": 14185
+        },
+        "after-owner-restart": {
+          "pid": 18412,
+          "status": "read",
+          "task_sha256": "073ad548e463aea0b99ddee7ebadf95423e3467f5b6816fcefade7f0271414ce",
+          "snapshot": {
+            "graph": {
+              "scope": {
+                "tenant_id": "planning-knowledge-read",
+                "project_id": "4f790cb7019543af9ce3c4eefa81c583"
+              },
+              "graph_id": "domain"
+            },
+            "revision": 1,
+            "sha256": "bff8ca14a5690abf62e2f12acfa0c79dd62b4729dbc0a753eb3213102490a72e"
+          },
+          "profile_sha256": "c99e67abb6189be5956ac3c0eae0f22874c49080ed43882cdb9f319da9cb7553",
+          "snapshot_sha256": "bfeb5d706905511f41f2bf4c1ef55850db735c4eabeb86ae2653c90dcd1b464f",
+          "calls": 3,
+          "bytes": 14185
+        },
+        "future-campaign": {
+          "pid": 33720,
+          "status": "read",
+          "task_sha256": "70b97fef0b750a1712142043c52e29dd107701b0768ebff6b1c228aa655b9df3",
+          "snapshot": {
+            "graph": {
+              "scope": {
+                "tenant_id": "planning-knowledge-read",
+                "project_id": "4f790cb7019543af9ce3c4eefa81c583"
+              },
+              "graph_id": "domain"
+            },
+            "revision": 2,
+            "sha256": "807ad7d1cbaded32f31521f1c9cf20a69c650e9c853fbba57d6f1b5e9ad97de5"
+          },
+          "profile_sha256": "c99e67abb6189be5956ac3c0eae0f22874c49080ed43882cdb9f319da9cb7553",
+          "snapshot_sha256": "9fb48a482895939062353495c68cf10dbb07c0f64af2c5a5eba644927081e997",
+          "calls": 3,
+          "bytes": 10670
+        },
+        "read-grant-denied": {
+          "pid": 30516,
+          "status": "knowledge_access_denied",
+          "task_sha256": "073ad548e463aea0b99ddee7ebadf95423e3467f5b6816fcefade7f0271414ce",
+          "calls": 1
+        },
+        "foreign-scope": {
+          "pid": 20668,
+          "status": "knowledge_access_denied",
+          "task_sha256": "ced5bfebca2ae93e77d1536ea7c48a56f485b671c571e5b96820b4c328f55a68",
+          "calls": 1
+        },
+        "missing-exact-revision": {
+          "pid": 17840,
+          "status": "knowledge_reference_unavailable",
+          "task_sha256": "b4bed6ff88d20bae6083497f325a8c7948bfd86e179aa970f2ff5aae2a1af0a5",
+          "calls": 2
+        }
+      },
+      "limits": [
+        "Synthetic owner-local accepted input fixture; no real source rights or Planning proposal acceptance",
+        "Actual public authenticated reads, owner PostgreSQL and two host processes; Data/Research offline",
+        "No live model or scientific validity claim; accepted Planning proposal replay remains B2.03"
+      ]
+    }
+  },
+  "limits": [
+    "Synthetic owner-local fixture publication; no public declaration-write API or Data rights proof",
+    "No model call, proposal submission or scientific acceptance",
+    "Aggregate repair budgets remain B2.02b/c"
+  ]
+}

@@ -1,10 +1,10 @@
 # Planning Research proposals
 
-- Status: BP-07.02/B2.02a.i verified; actual owner-read binding remains a.ii.
+- Status: BP-07.02/B2.02a verified; research_access supplies authenticated owner-read binding.
 - Owner: Agent Planning; Research owns declarations/assessment, Data owns published answer Artifacts.
 - Inputs: exact PublishedCandidate and immutable selected QuestionContext. No Knowledge snapshot is required by this module.
 
-QuestionContext binds exact public ResearchQuestion records to task-selected references and validates scope, unique criteria and predecessor shape. It owns bytes rather than caller-mutable DTOs. Missing selected records remain unavailable; their dependent items cannot be resolved by guessing. This pure context does not prove Research was contacted; B2.02a.ii owns public read binding.
+QuestionContext binds exact public ResearchQuestion records to task-selected references and validates scope, unique criteria and predecessor shape. It owns bytes rather than caller-mutable DTOs. Missing selected records remain unavailable; their dependent items cannot be resolved by guessing. This pure context does not prove Research was contacted; research_access owns authenticated public read binding. Explicit read gaps remain context findings without withholding unrelated proposals.
 
 ResearchProposalValidator resolves questions first, then candidate answers and evidence needs. Duplicate local IDs withhold every conflicting candidate. A target is exactly one local proposed question or selected owner reference. Missing/ambiguous questions withhold dependents while unrelated useful proposals proceed. New question/need IDs derive from task identity, kind and local key. Context must be explicitly selected, methods explicitly supplied, and need criteria a unique subset of the exact target question. Method references are declarations, not verified capabilities or permission to run tools.
 

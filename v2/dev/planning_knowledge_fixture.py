@@ -57,26 +57,27 @@ def task_file(path, prepared, *, genesis=False, scope=None, unavailable=False):
     return path
 
 
-class KnowledgeHost:
-    def __init__(self, python, config, environment):
+class ReadOwnerHost:
+    def __init__(self, python, config, environment, *, module='amphora_knowledge'):
+        assert module in {'amphora_knowledge', 'amphora_research'}
         with socket.socket() as listener:
             listener.bind(('127.0.0.1', 0))
             port = listener.getsockname()[1]
         self.endpoint = f'http://127.0.0.1:{port}'
-        self.process = subprocess.Popen([str(python), '-I', '-m', 'amphora_knowledge', 'serve', '--config',
+        self.process = subprocess.Popen([str(python), '-I', '-m', module, 'serve', '--config',
             str(config), '--port', str(port)], env=environment, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
             creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
         try:
             deadline = time.monotonic() + 20
             while time.monotonic() < deadline:
-                assert self.process.poll() is None, 'Knowledge host exited before readiness'
+                assert self.process.poll() is None, 'Read owner host exited before readiness'
                 try:
                     with urllib.request.urlopen(self.endpoint + '/health', timeout=1) as response:
                         assert response.status == 200
                         return
                 except (urllib.error.URLError, TimeoutError):
                     time.sleep(0.05)
-            raise RuntimeError('Knowledge host readiness deadline')
+            raise RuntimeError('Read owner host readiness deadline')
         except BaseException:
             self.close()
             raise
@@ -85,3 +86,7 @@ class KnowledgeHost:
         if self.process.poll() is None:
             self.process.kill()
             self.process.wait(timeout=10)
+
+
+# Compatibility for the retained Knowledge-only fixture harness.
+KnowledgeHost = ReadOwnerHost
