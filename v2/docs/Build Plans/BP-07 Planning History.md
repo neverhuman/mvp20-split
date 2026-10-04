@@ -259,3 +259,13 @@ Planning0.15/public0.5/SDK0.2 and Data0.29 actual installed integration passed20
 Two exploratory acceptance runs exposed incorrect test assumptions about HTTP403, not a production workflow defect. Rights denial can return command_request_denied while Data already retains a terminal rights_use_denied receipt. Planning truthfully stays prepared/finalizing until observing that receipt; retry then retains rejection. Final acceptance explicitly reads the original Data receipt, verifies terminal rejection survives regrant, and uses separately identified future publications after rights restore. No fabricated failure/success or rewrite of previously finalized history. Actual scope is synthetic software behavior, not live model quality or Knowledge acceptance.
 
 B1=100%,child25%,Build33.33%,parent25%,closed1/4 and5/20. B2.01a active; three substeps scoped in Graph proposal validation companion without added parent weight. Exact v1 task/draft/schema/trace bytes remain compatibility requirements.
+
+MBT archive 2026-10-04 05:57:15:
+
+| 2026-10-03 22:49:16 | B2.01 complete; child31.25%,parent88.54%; B2.02 active | [Explore model](../Audits/Evidence/BP-06-Feedback/Explore_Page_Model.json);182 source/independent,actual owner model proof |
+
+## 2026-10-04 05:57:15 - B2.01a typed edit profile
+
+Planning0.16/public0.6 introduces task/v2 selected assertion revisions, explicit entity context and attributed correction/retraction/merge/context-revision candidates. The closed provider catalog binds exact schema, keeps selected/scope/action guards and retains typed edits in immutable trace paths. Core SchemaRef only permits version1; a separate planning.extraction-edit-draft/v1 profile carries schema_version2 payload without changing shared schemas. An initial attempted version2 reference failed strict validation, resolved before verification by the separate identity. All500 predecessor validation/serialization hashes unchanged,504 total. No SQL migration or raw output bound increase; a separate LF-pinned v2 prompt leaves v1 bytes intact.
+
+447 source owner/contract/dev cases136.96s,299 extraction/profile statements62 branches100%;429 owned cases in two independent installs plus20 processes including failed/repaired v2 traces and retained0.7 history. This is typed shape/provenance compatibility, not semantic edit acceptance. B2.01a100%,b/c0%;B2.01=33.33%,B2=11.11%,child27.78%,Build37.04%,parent25.56%. B2.01b deterministic validation is current; actual owner read binding is c.

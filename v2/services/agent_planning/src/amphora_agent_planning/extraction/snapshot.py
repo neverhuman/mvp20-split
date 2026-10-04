@@ -4,7 +4,12 @@ import hashlib
 import json
 from dataclasses import dataclass
 
-from amphora_contracts_planning import ExtractionTask, extraction_draft_schema
+from amphora_contracts_planning import (
+    ExtractionTask,
+    ExtractionTaskV2,
+    extraction_draft_schema,
+    extraction_edit_schema,
+)
 from pydantic import ValidationError
 
 from ..context import RequestSnapshot
@@ -24,14 +29,17 @@ class ExtractionSnapshot:
         request = RequestSnapshot.bind(original, actor_id=original.actor_id, scope=original.reference.scope)
         try:
             value = json.loads(raw.decode("utf-8"), object_pairs_hook=_object, parse_constant=_constant)
-            task = ExtractionTask.model_validate_json(json.dumps(value, allow_nan=False))
+            require(type(value) is dict, "invalid_extraction_task")
+            model = ExtractionTaskV2 if value.get("schema_version") == "2" else ExtractionTask
+            task = model.model_validate_json(json.dumps(value, allow_nan=False))
         except (UnicodeDecodeError, json.JSONDecodeError, ValidationError, RecursionError) as exc:
             raise ValueError("invalid_extraction_task") from exc
         require(task.scope == original.reference.scope and task.engagement == original.reference,
                 "extraction_request_scope")
         require(task.request_sha256 == request.sha256, "extraction_request_digest")
         require(original.purpose == "knowledge_decomposition", "extraction_request_purpose")
-        require(original.context.output_schema == extraction_draft_schema(), "extraction_output_profile")
+        profile = extraction_edit_schema() if task.schema_version == "2" else extraction_draft_schema()
+        require(original.context.output_schema == profile, "extraction_output_profile")
         require(task.target.graph.scope == task.scope, "extraction_graph_scope")
         if task.target.base is not None:
             require(task.target.base.snapshot.graph == task.target.graph and
@@ -55,7 +63,13 @@ class ExtractionSnapshot:
                 traces.add(trace.trace_id)
         for ref in task.existing_entities:
             require(ref.graph == task.target.graph, "extraction_entity_graph")
-        for refs in (task.existing_entities, task.known_questions, task.known_needs):
+        assertions = task.existing_assertions if task.schema_version == "2" else ()
+        if task.schema_version == "2":
+            require(task.target.base is not None or not (task.existing_entities or assertions),
+                    "extraction_selection_without_head")
+        for ref in assertions:
+            require(ref.graph == task.target.graph, "extraction_assertion_graph")
+        for refs in (task.existing_entities, assertions, task.known_questions, task.known_needs):
             require(len({ref.model_dump_json() for ref in refs}) == len(refs), "extraction_reference_duplicate")
         for ref in (*task.known_questions, *task.known_needs):
             require(ref.scope == task.scope, "extraction_research_scope")
@@ -65,7 +79,8 @@ class ExtractionSnapshot:
         return cls(canonical, request)
 
     def document(self):
-        return ExtractionTask.model_validate_json(self.canonical)
+        model = ExtractionTaskV2 if json.loads(self.canonical).get("schema_version") == "2" else ExtractionTask
+        return model.model_validate_json(self.canonical)
 
     @property
     def sha256(self):

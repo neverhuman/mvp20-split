@@ -6,6 +6,7 @@ from dataclasses import dataclass
 
 from amphora_contracts_planning import (
     ExtractionDraft,
+    ExtractionDraftV2,
     ExtractionTrace,
     ExtractionTraceRef,
     InterpretationOrigin,
@@ -15,27 +16,26 @@ from amphora_contracts_planning import (
 from ..context import AttemptBinding
 from ..context.policy import require
 from ..persistence.records import verified_observation
+from ..providers.profiles import OutputProfiles
 from .snapshot import ExtractionSnapshot
 
 
 @dataclass(frozen=True)
 class CandidateOrigins:
-    draft: ExtractionDraft
+    draft: ExtractionDraft | ExtractionDraftV2
 
     def fields(self):
         result = []
-        for group in ("entities", "assertions", "questions", "answers", "evidence_needs"):
-            for index, item in enumerate(getattr(self.draft, group)):
-                path = f"/{group}/{index}"
-                attribution = item.attribution
-                result.append(InterpretationOrigin(
-                    target_path=path,
-                    origin="model_claimed_source" if attribution.origin == "source_stated" else "model_inferred",
-                    confidence=attribution.confidence,
-                    spans=tuple(quote.span for quote in attribution.quotations)))
-                for field in ("applicability", "validation_method", "context", "method", "required_context"):
-                    if hasattr(item, field) and getattr(item, field) is None:
-                        result.append(self.missing(f"{path}/{field}"))
+        for path, item in OutputProfiles.attributed_items(self.draft):
+            attribution = item.attribution
+            result.append(InterpretationOrigin(
+                target_path=path,
+                origin="model_claimed_source" if attribution.origin == "source_stated" else "model_inferred",
+                confidence=attribution.confidence,
+                spans=tuple(quote.span for quote in attribution.quotations)))
+            for field in ("applicability", "validation_method", "context", "method", "required_context"):
+                if hasattr(item, field) and getattr(item, field) is None:
+                    result.append(self.missing(f"{path}/{field}"))
         paths = {item.target_path for item in result if item.origin == "missing"}
         for diagnostic in self.draft.diagnostics:
             if diagnostic.kind == "missing" and diagnostic.target_path not in paths:
@@ -70,7 +70,8 @@ class TraceProjection:
             require(parent.trace_id != trace_id and parent.attempt != wire.attempt,
                     "extraction_repair_identity")
             require(parent.repair_depth < 16, "extraction_repair_depth")
-        draft = None if wire.proposal is None else ExtractionDraft.model_validate_json(wire.proposal.payload_json)
+        draft = None if wire.proposal is None else OutputProfiles.draft_model(context.output_schema).model_validate_json(
+            wire.proposal.payload_json)
         outcome = InterpretationOutcome(
             observation_sha256=hashlib.sha256(observation.canonical).hexdigest(),
             capture_sha256=wire.output_sha256, captured_bytes=wire.captured_bytes,

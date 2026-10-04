@@ -18,9 +18,11 @@ from sqlalchemy import create_engine
 
 
 def main():
-    stage, project = sys.argv[1:]
-    raw = json.loads((Path(__file__).parents[1] / "extraction/fixtures/extraction.json").read_bytes())
-    scope = Scope(tenant_id="planning-extraction-traces", project_id=project)
+    stage, project, *profile = sys.argv[1:]
+    assert profile in ([], ["edits"])
+    fixture = "extraction-edits.json" if profile else "extraction.json"
+    raw = json.loads((Path(__file__).parents[1] / "extraction/fixtures" / fixture).read_bytes())
+    scope = Scope(tenant_id="planning-extraction-edits" if profile else "planning-extraction-traces", project_id=project)
     def rescope(value):
         if isinstance(value, dict):
             if set(value) == {"tenant_id", "project_id"}:
@@ -72,6 +74,8 @@ def main():
                    for row in records]
         assert charges == [40] * len(records)
         print(json.dumps({"pid": os.getpid(), "calls": calls, "task_sha256": task.sha256,
+            "task_version": task.document().schema_version,
+            "output_profile": snapshot.document().context.output_schema.model_dump(mode="json"),
             "registered_at": registered.registered_at.isoformat(), "charges": charges,
             "traces": [{"sha256": row.projection.sha256, "recorded_at": row.recorded_at.isoformat(),
                         "status": row.projection.document().outcome.status} for row in records]}))

@@ -34,7 +34,7 @@ class PromptTemplate:
         snapshot = ExtractionSnapshot.from_bytes(snapshot.canonical, snapshot.request)
         require(reference == snapshot.request.document().context.prompt, "extraction_prompt_binding")
         bundle = SourceBundle.bind(snapshot, bundle.sources)
-        packet = {"profile": "planning-extraction-input.v1",
+        packet = {"profile": "planning-extraction-input.v" + snapshot.document().schema_version,
                   "trusted_instructions": self.instructions.decode("utf-8"),
                   "task": snapshot.document().model_dump(mode="json"),
                   "source_data": [{"source": row.descriptor().source.model_dump(mode="json"),

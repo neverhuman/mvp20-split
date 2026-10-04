@@ -1,0 +1,109 @@
+{
+  "verified_at": "2026-10-04 05:57:15",
+  "task": "BP-07.02/B2.01a",
+  "status": "passed",
+  "planning": "0.16.0",
+  "contracts": "0.6.0",
+  "source_tests": 447,
+  "source_seconds": 136.96,
+  "installed_tests": 429,
+  "installed_processes": 20,
+  "installations": 2,
+  "coverage": {
+    "statements": 299,
+    "branches": 62,
+    "percent": 100
+  },
+  "schemas": 504,
+  "unchanged_predecessors": 500,
+  "migration": "none; planning_0007 retained",
+  "edit_stages": {
+    "failed": {
+      "pid": 30260,
+      "calls": [
+        1
+      ],
+      "task_sha256": "bda2181b24c8186aa1f956c7d578a37064ab6fc2433978a3e6b683e324554371",
+      "task_version": "2",
+      "output_profile": {
+        "schema_id": "planning.extraction-edit-draft",
+        "version": "1",
+        "sha256": "b2d23e7e358243896a333c8b6cdaecaabcc540c7f5792c89904e97ca04b47f3d"
+      },
+      "registered_at": "2026-10-04T10:56:57.789392+00:00",
+      "charges": [
+        40
+      ],
+      "traces": [
+        {
+          "sha256": "ea27d557d0eff1eeac932b99b27c8dd9f58cb1e52d69803bd15f640fb8c85752",
+          "recorded_at": "2026-10-04T10:56:57.879786+00:00",
+          "status": "invalid"
+        }
+      ]
+    },
+    "repair": {
+      "pid": 25276,
+      "calls": [
+        2
+      ],
+      "task_sha256": "bda2181b24c8186aa1f956c7d578a37064ab6fc2433978a3e6b683e324554371",
+      "task_version": "2",
+      "output_profile": {
+        "schema_id": "planning.extraction-edit-draft",
+        "version": "1",
+        "sha256": "b2d23e7e358243896a333c8b6cdaecaabcc540c7f5792c89904e97ca04b47f3d"
+      },
+      "registered_at": "2026-10-04T10:56:57.789392+00:00",
+      "charges": [
+        40,
+        40
+      ],
+      "traces": [
+        {
+          "sha256": "ea27d557d0eff1eeac932b99b27c8dd9f58cb1e52d69803bd15f640fb8c85752",
+          "recorded_at": "2026-10-04T10:56:57.879786+00:00",
+          "status": "invalid"
+        },
+        {
+          "sha256": "c871da93b08e8ff0d890f8ea483fbec7933888b6ac0a1f79f8ac0fde5db0a3f1",
+          "recorded_at": "2026-10-04T10:57:00.391385+00:00",
+          "status": "proposed"
+        }
+      ]
+    },
+    "replay": {
+      "pid": 25344,
+      "calls": [],
+      "task_sha256": "bda2181b24c8186aa1f956c7d578a37064ab6fc2433978a3e6b683e324554371",
+      "task_version": "2",
+      "output_profile": {
+        "schema_id": "planning.extraction-edit-draft",
+        "version": "1",
+        "sha256": "b2d23e7e358243896a333c8b6cdaecaabcc540c7f5792c89904e97ca04b47f3d"
+      },
+      "registered_at": "2026-10-04T10:56:57.789392+00:00",
+      "charges": [
+        40,
+        40
+      ],
+      "traces": [
+        {
+          "sha256": "ea27d557d0eff1eeac932b99b27c8dd9f58cb1e52d69803bd15f640fb8c85752",
+          "recorded_at": "2026-10-04T10:56:57.879786+00:00",
+          "status": "invalid"
+        },
+        {
+          "sha256": "c871da93b08e8ff0d890f8ea483fbec7933888b6ac0a1f79f8ac0fde5db0a3f1",
+          "recorded_at": "2026-10-04T10:57:00.391385+00:00",
+          "status": "proposed"
+        }
+      ]
+    }
+  },
+  "installation_manifest_sha256": "afdc6a21291e925cb6db467109862e6a370b09ee393c2fbc9c87090ab2bd4c6d",
+  "limits": [
+    "Typed shape/provenance only; identity/context/semantic validation is next",
+    "No Knowledge acceptance or live model quality claim"
+  ]
+}

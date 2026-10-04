@@ -1,6 +1,17 @@
 """Public planning DTOs only; ownership and acceptance remain in named services."""
 
 from .context import CallLimits, ContextEntry, ContextManifest, ContextOmission, ModelBinding, ProposalAction
+from .edits import (
+    AssertionCorrectionDraft,
+    AssertionRetractionDraft,
+    EntityContextRevisionDraft,
+    EntityMergeDraft,
+    ExtractionDraftV2,
+    ExtractionEdit,
+    ExtractionEntityV2,
+    ExtractionTaskV2,
+    extraction_edit_schema,
+)
 from .engagement import EngagementRef, EngagementRequest, ProviderAttemptRef, ProviderUsage
 from .extraction import (
     AnswerDraft,
@@ -35,3 +46,5 @@ __all__ += ["AnswerDraft", "EvidenceNeedDraft", "ExtractionAssertion", "Extracti
 
 __all__ += ["TaskProviderObservation", "TypedProposal"]
 __all__ += ["ExtractionTrace", "ExtractionTraceRef", "InterpretationOrigin", "InterpretationOutcome"]
+__all__ += ["AssertionCorrectionDraft", "AssertionRetractionDraft", "EntityContextRevisionDraft", "EntityMergeDraft",
+            "ExtractionDraftV2", "ExtractionEdit", "ExtractionEntityV2", "ExtractionTaskV2", "extraction_edit_schema"]

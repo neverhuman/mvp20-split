@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-Version0.15.0, BP-07.02/B1 complete; B2.01a active. This isolated owner implements pure context/request validation, physical-attempt binding and a deterministic adversarial provider/capture boundary. It now has a private PostgreSQL request/attempt/observation journal; no server, live provider or Runtime acceptance implementation yet. [Design](../../docs/Architecture/Agents/Planning.md) describes the larger target; [build plan](../../docs/Build%20Plans/BP-07/BP-07.02%20Reliable%20text%20decomposition.md) owns current progress.
+Version0.16.0, BP-07.02/B2.01a verified; B2.01b active. This isolated owner implements pure context/request validation, physical-attempt binding and a deterministic adversarial provider/capture boundary. It now has a private PostgreSQL request/attempt/observation journal; no server, live provider or Runtime acceptance implementation yet. [Design](../../docs/Architecture/Agents/Planning.md) describes the larger target; [build plan](../../docs/Build%20Plans/BP-07/BP-07.02%20Reliable%20text%20decomposition.md) owns current progress.
 
 Public dependencies are planning/core contracts; SQLAlchemy/psycopg/Alembic are private persistence dependencies. Private modules group behavior with its data; transport DTOs do not own policy. Context owns scoped immutable input snapshots. Providers owns bounded deterministic call parsing; persistence owns immutable request/attempt/observation history. Runtime alone accepts execution decisions; Knowledge and Research retain domain authority. No peer private imports, shared ORM or peer-table reads.
 
@@ -23,3 +23,5 @@ Verified2026-10-04 04:24:20:274 source/contract/dev cases;256 cases in two indep
 Publication journal checkpoint2026-10-04 05:11:45:375 regression cases65.55s,469 publication statements28 branches100%; planning_0007 applied. See [publication rebuild boundary](src/amphora_agent_planning/publication/README.md).
 
 Actual publication verified2026-10-04 05:38:25:403 independent cases17 readback processes;20 actual Planning publication processes/2 Data processes, including abrupt exits and rights-denial receipts. See publication README for precise scope; deterministic provider fixtures do not establish live model reliability.
+
+Edit profile checkpoint2026-10-04 05:57:15:447 source/429 independent cases,20 process stages;299 extraction/profile statements62 branches100%. Public Planning0.6 adds task/v2 and planning.extraction-edit-draft/v1(schema_version2 payload); all500 predecessor schemas unchanged. Exact v1/v2 storage and failed/repaired trace replay verified without DDL. Local typed records grant no Knowledge acceptance.

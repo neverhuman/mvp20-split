@@ -64,6 +64,7 @@ def verify(output, legacy_manifest=None):
         assert any(name.endswith("r0007_trace_publication.sql") for name in archive.namelist())
         assert any(name.endswith("publication/extraction-trace-v1.schema.json") for name in archive.namelist())
         assert any(name.endswith("prompts/domain-decomposition-v1.txt") for name in archive.namelist())
+        assert any(name.endswith("prompts/domain-decomposition-v2.txt") for name in archive.namelist())
         assert not any("/tests/" in name for name in archive.namelist())
     external = ["pydantic", "pydantic-core", "annotated-types", "typing-extensions", "typing-inspection",
         "sqlalchemy", "psycopg", "psycopg-binary", "alembic", "Mako", "MarkupSafe",
@@ -160,6 +161,19 @@ def verify(output, legacy_manifest=None):
     assert extraction["repair"]["traces"] == extraction["replay"]["traces"]
     assert [row["status"] for row in extraction["replay"]["traces"]] == ["invalid", "proposed"]
     assert extraction["replay"]["charges"] == [40, 40]
+    edits = {}
+    for stage, label in (("failed", "initial"), ("repair", "replacement"), ("replay", "replacement")):
+        edits[stage] = run([interpreters[label], "-I", output / "tests/service/acceptance/extraction_probe.py",
+                           stage, project, "edits"], env=probe_env, capture=True)
+    assert len({record["pid"] for record in edits.values()}) == 3
+    assert all(record["task_version"] == "2" and
+               record["output_profile"]["schema_id"] == "planning.extraction-edit-draft" for record in edits.values())
+    assert len({record["task_sha256"] for record in edits.values()}) == 1
+    assert len({record["registered_at"] for record in edits.values()}) == 1
+    assert edits["failed"]["traces"] == edits["repair"]["traces"][:1]
+    assert edits["repair"]["traces"] == edits["replay"]["traces"]
+    assert [row["status"] for row in edits["replay"]["traces"]] == ["invalid", "proposed"]
+    assert edits["replay"]["charges"] == [40, 40]
     legacy = None
     if legacy_manifest is not None:
         legacy_path = legacy_manifest.absolute()
@@ -171,12 +185,12 @@ def verify(output, legacy_manifest=None):
     manifest = {"verified_at": datetime.now(ZoneInfo("America/Chicago")).strftime("%Y-%m-%d %H:%M:%S"),
         "status": "passed", "tests": tests, "project": project, "stages": stages,
         "reservation_stages": reservations, "settlement_stages": settlements, "dispatch_stages": dispatches,
-        "typed_stages": typed, "extraction_stages": extraction, "legacy_replay": legacy,
+        "typed_stages": typed, "extraction_stages": extraction, "edit_stages": edits, "legacy_replay": legacy,
         "wheels": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(wheels.glob("*.whl"))},
         "limits": ["Own PostgreSQL journal only; no live provider/domain acceptance", "Deterministic bounded dispatch only; no actual remote transport",
                    "Two independent installs from one source-built wheel closure; no new implementation rewrite"]}
     (output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({"status": "passed", "tests": tests, "processes": 16 + (legacy is not None), "installations": 2}))
+    print(json.dumps({"status": "passed", "tests": tests, "processes": 19 + (legacy is not None), "installations": 2}))
 
 
 if __name__ == "__main__":
