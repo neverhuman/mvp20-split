@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-- Version: Planning0.30.0; public Planning0.7.0. BP-07.02 complete and audited;930 installed tests,39 process/replay stages and actual-owner recovery verified.
+- Version: Planning0.31.0; public Planning0.8.0. BP-07.02 complete and audited;930 installed tests,39 process/replay stages and actual-owner recovery verified.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Canonical progress: [BP-07.02](../../docs/Build%20Plans/BP-07/Completed/BP-07.02%20Reliable%20text%20decomposition.md).
 
@@ -38,3 +38,6 @@ Tests belong under this owner's tests/ behavioral folders; dev/test_scopes.json 
 Replacement must preserve canonical bytes/hashes, actors/scopes, source identities, omissions, budgets, attempts, pinned revisions, historical output profiles and immutable migration history. Never run Planning<=0.28 migrators on0011. Replace old admission writers before enabling repair families: Planning<=0.20 does not enforce aggregate family ceilings, and Planning<=0.22 lacks prepared repair workflow handling. Read the persistence/repair contracts before cutover; retained state is not disposable test setup.
 
 Real provider/model, egress and spend remain owner choices before actual calls. Full context-body assembly, actual tokenizer/window fit, campaign proposal compilation, Runtime engagement acceptance and live scientific evaluation remain successor gates. The reviewed synthetic corpus measures explicit software-oracle accounting, not human expert agreement, real-model accuracy or scientific validity.
+
+
+[campaign_context](src/amphora_agent_planning/campaign_context/README.md) adds pure exact Research selection/request binding under BP-07.03/B1.01a. Record projection, actual context reads and campaign proposal compilation remain later gates; the closed extraction boundary is unchanged.

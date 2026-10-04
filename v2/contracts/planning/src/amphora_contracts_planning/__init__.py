@@ -1,6 +1,14 @@
 """Public planning DTOs only; ownership and acceptance remain in named services."""
 
-from .context import CallLimits, ContextEntry, ContextManifest, ContextOmission, ModelBinding, ProposalAction
+from .campaign_context import CampaignAssessmentSelection, CampaignResearchSelection
+from .context import (
+    CallLimits,
+    ContextEntry,
+    ContextManifest,
+    ContextOmission,
+    ModelBinding,
+    ProposalAction,
+)
 from .edits import (
     AssertionCorrectionDraft,
     AssertionRetractionDraft,
@@ -12,7 +20,12 @@ from .edits import (
     ExtractionTaskV2,
     extraction_edit_schema,
 )
-from .engagement import EngagementRef, EngagementRequest, ProviderAttemptRef, ProviderUsage
+from .engagement import (
+    EngagementRef,
+    EngagementRequest,
+    ProviderAttemptRef,
+    ProviderUsage,
+)
 from .extraction import (
     AnswerDraft,
     EvidenceNeedDraft,
@@ -29,14 +42,34 @@ from .extraction import (
     extraction_draft_schema,
 )
 from .proposals import ProviderObservation, ReferenceProposal, reference_proposal_schema
-from .research_proposals import AnswerProposal, NeedProposal, QuestionProposal, ResearchProposalSet
+from .research_proposals import (
+    AnswerProposal,
+    NeedProposal,
+    QuestionProposal,
+    ResearchProposalSet,
+)
 from .task_output import TaskProviderObservation, TypedProposal
-from .trace import ExtractionTrace, ExtractionTraceRef, InterpretationOrigin, InterpretationOutcome
+from .trace import (
+    ExtractionTrace,
+    ExtractionTraceRef,
+    InterpretationOrigin,
+    InterpretationOutcome,
+)
 
 __all__ = [
-    "CallLimits", "ContextEntry", "ContextManifest", "ContextOmission", "EngagementRef",
-    "EngagementRequest", "ModelBinding", "ProposalAction", "ProviderAttemptRef", "ProviderUsage",
-    "ProviderObservation", "ReferenceProposal", "reference_proposal_schema",
+    "CallLimits",
+    "ContextEntry",
+    "ContextManifest",
+    "ContextOmission",
+    "EngagementRef",
+    "EngagementRequest",
+    "ModelBinding",
+    "ProposalAction",
+    "ProviderAttemptRef",
+    "ProviderObservation",
+    "ProviderUsage",
+    "ReferenceProposal",
+    "reference_proposal_schema",
 ]
 
 
@@ -51,3 +84,4 @@ __all__ += ["AssertionCorrectionDraft", "AssertionRetractionDraft", "EntityConte
             "ExtractionDraftV2", "ExtractionEdit", "ExtractionEntityV2", "ExtractionTaskV2", "extraction_edit_schema"]
 
 __all__ += ["AnswerProposal", "NeedProposal", "QuestionProposal", "ResearchProposalSet"]
+__all__ += ["CampaignAssessmentSelection", "CampaignResearchSelection"]

@@ -2,12 +2,15 @@
 
 ## Resume here
 
-- Refreshed 2026-10-04 17:03:06 (America/Chicago). **Read this first after every compression**, explicitly requested by the owner.
-- Continue across milestones, commits/pushes and compaction until genuinely blocked. No subagents, JARVIS access or v1 edits. No milestone-only final pause.
-- **BP-07.02 closed100%,4/4; parent40%,8/20. Current: BP-07.03 activation coherence audit, then earliest B1 task.** Closeout docs ready for diff/link checks, commit/push. Latest pushed e2cfcba7; no owner decision blocks deterministic work.
-- **No tests/peer hosts running.** Independent session83142 passed930 tests494.233s,39 process stages,two fresh0.30 installations; exact legacy replay. Evidence Final_Installation.json; retained planning-extraction-closeout-independent-20261004. Runtime payloads identical to prior actual-owner wheels; reuse explicit. Boundaries/506 schemas pass.
-- Archived tracker docs/Build Plans/BP-07/Completed/BP-07.02 Reliable text decomposition.md; scoped audit docs/Audits/BP-07.02_Text_Decomposition_Closeout.md. Child/parent/MBT/history/index/drift/modules/inventory synchronized; MBT25 rows. Documentation stale claims fixed, no production/schema/migration change.
-- Planning0.30/publicPlanning0.7; planning0011 immutable. No Planning<=0.28, Research<=0.33 or Data<=0.25 migrators. Do not reset/downgrade/delete retained fixtures.
+- Refreshed 2026-10-04 17:18:21 (America/Chicago). **Read first after every compression**.
+- Continue across milestones/commits/pushes/compaction until genuinely blocked. No subagents, JARVIS access or v1 edits. No milestone-only final pause.
+- **Current BP-07.03/Build/B1.01b: selected Research record/read-set projection.** B1.01a verified; child3.13%,Build4.17%,Acceptance0%,0/4. Parent40.63%,8/20. B1.01a/b equal; a100%,b0%;B1 four equal milestones .01=50%,others0%;B1=12.50%. Use exact unrounded weights.
+- Latest pushed f209a350 closes BP-07.02. New activation/selection checkpoint needs final diff/link review and commit/push, then continue B1.01b. No owner decision blocks deterministic work.
+- **No tests/hosts running.** Pure111 source tests1.04s,111 independently installed tests3.663s; new module67 statements8 branches100%. Independent session77044 passed; output planning-campaign-selection-independent-20261004. Research_Selection.json owns evidence. Production boundaries/Ruff pass;508 schemas preserve all506 predecessor bytes.
+- Planning0.31/public0.8, planning0011 unchanged. New CampaignResearchSelection/CampaignAssessmentSelection DTOs and campaign_context.ResearchSelection factory. Pure immutable scope/purpose/request/duplicate/dependency/Artifact binding only. No status digest verification, owner contact or rights grant yet. Exact explicit historical revisions and selection order preserved; empty selections allowed.
+- B1.01b should bind selected actual ResearchQuestion/EvidenceNeed/completed EvidenceAssessmentStatus records into immutable projections and read sets, verify selected hashes/criteria/dependencies, preserve explicit unavailable/denied inputs and weak/contradictory science. Domain objects own rules; DTOs only transport. Read physical design first.
+- dev/verify_planning_context.py is the scoped pure installer (contracts + context + campaign_context) with no AMPHORA configuration, SQL or migrator. Prior full extraction930/39 and actual peers remain separate0.30 evidence. No test/dev/source edits while verification runs; SQL suites serial.
+- No Planning<=0.28, Research<=0.33 or Data<=0.25 migrators. No fixture reset/deletion. Set PYTHONUTF8=1 for scripts. One normal Ruff broad contract-src run exposed old import formatting; only touched imports fixed.
 
 ## Latest verification and limits
 
@@ -21,11 +24,9 @@
 
 ## Next authorized work
 
-1. Finish link/diff review and commit/push BP-07.02 closeout. Then perform BP-07.03 bounded activation audit; no milestone pause.
-2. Read BP-07.03 Campaign proposals and context.md, reconcile actual public Research/Registry/Data/Runtime boundaries, and write focused physical milestones before implementation. Existing proposals module owns Knowledge extraction, so campaign compilation/context needs distinct behavioral ownership.
-3. BP-07.03 includes300 representative descriptor metadata/planning acceptance, typed question/evidence/assessment revisions, exact relevant read-set, current rights, explicit omissions and successor improvement proposals. Live model/scientific efficacy is not implied. Runtime remains sole compiler/execution acceptance owner; no private peer imports.
-4. BP-07.04 owns durable Runtime engagement/races; BP-07.05 live evaluation. Provider/model/egress/spend choices block only real calls, not deterministic work.
-5. Keep Restore current before compaction and reread afterward. No test/source/dev edits during verification; SQL suites serial.
+1. Commit/push verified B1.01a checkpoint after diff/link checks. Continue B1.01b actual selected-record/read-set values and pure verification. B1.02 public owner clients follows; no milestone pause.
+2. Next record boundary must distinguish valid selected immutable records, unavailable/pending inputs, explicit contradictions and identity/hash conflicts. It must not claim owner contact or invent scientific acceptance. Same-question historical revisions remain explicit; no latest substitution.
+3. Keep canonical milestone percentages synchronized before each implementation commit. Live provider/model/egress/spend choices block only actual calls. Continue deterministic work.
 
 ## Canonical navigation and prior evidence
 

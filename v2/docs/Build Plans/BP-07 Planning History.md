@@ -471,3 +471,21 @@ BP-07.02 accepted100%,4/4; parent40%,8/20. Final930 installed tests494.233s,39 p
 Archived MBT checkpoint:
 
 | 2026-10-04 04:31:33 | BP-07.02/B1.04a complete; child20.31%,parent24.06%; B1.04b active | [Processing content](../Audits/Evidence/BP-07-Extraction/Processing_Content.json);176 regression,installed HTTP replacement,read module100% |
+
+
+## Campaign proposal activation 2026-10-04 17:08:34
+
+[Audit](../Audits/BP-07.03_Activation.md): corrected_ready against f209a350 and actual public interfaces. Child0%,parent40%; B1.01a current. Runtime save/validate is reused through public HTTP; existing extraction proposal modules retain their boundary.300-descriptor discovery remains a bounded metadata gate, not a widened compiler universe.
+
+Archived MBT checkpoint:
+
+| 2026-10-04 04:43:42 | BP-07.02/B1.04b complete; child21.88%,parent24.38%; c.i active | [Source access](../Audits/Evidence/BP-07-Extraction/Source_Access.json);55 focused,329 regression,194/196 statements28/28 branches |
+
+
+## Research context selection 2026-10-04 17:18:21
+
+B1.01a verified 2026-10-04 17:18:21:Planning0.31/public0.8 pure CampaignResearchSelection/ResearchSelection binding;111 source tests1.04s and111 independently installed tests3.663s.67 statements8 branches100%. All506 predecessor schema bytes preserved,508 total; no migration or owner-contact/scientific claim. Child3.13%,Build4.17%,parent40.63%;closed0/4 and8/20. Current B1.01b. [Evidence](../Audits/Evidence/BP-07-Campaigns/Research_Selection.json).
+
+Archived MBT checkpoint:
+
+| 2026-10-04 04:54:02 | BP-07.02/c.i complete; child22.40%,parent24.48%; c.ii active | [Publication values](../Audits/Evidence/BP-07-Extraction/Publication_Values.json);351 tests,158 statements2 branches100% |

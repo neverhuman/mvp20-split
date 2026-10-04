@@ -73,7 +73,7 @@
   },
   {
     "package": "amphora-contracts-planning",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "path": "contracts/planning",
     "module": "amphora_contracts_planning",
     "public_dependencies": [
@@ -145,7 +145,7 @@
   },
   {
     "package": "amphora-agent-planning",
-    "version": "0.30.0",
+    "version": "0.31.0",
     "path": "services/agent_planning",
     "module": "amphora_agent_planning",
     "public_dependencies": [
