@@ -4,6 +4,7 @@ import { DataProvenanceClient } from '../dist/src/transport/provenance/data.js';
 import { ResearchRecordClient } from '../dist/src/transport/provenance/research.js';
 import { KnowledgeClient } from '../dist/src/transport/scientific/knowledge.js';
 import { ResearchClient } from '../dist/src/transport/scientific/research.js';
+import { ExploreModel } from '../dist/src/page_models/explore/model.js';
 
 let raw = '';
 for await (const chunk of process.stdin) {
@@ -35,5 +36,16 @@ assert.deepEqual(await knowledge.search(records.knowledge_views.entities.request
 assert.deepEqual(await views.catalog(records.specimens['experiment-definition'].reference, signal()), records.research_views.catalog);
 assert.deepEqual(await views.specimens(records.research_views.specimens.request, signal()), records.research_views.specimens);
 assert.deepEqual(await views.properties(records.research_views.properties.request, signal()), records.research_views.properties);
+const model = new ExploreModel({ knowledge, research: views, data });
+model.bind({ graph: records.head.snapshot, experiment: records.specimens['experiment-definition'].reference,
+  observations: records.research_views.properties.request.observations });
+await Promise.all([model.search(records.knowledge_views.entities.request), model.specimens(records.research_views.specimens.request),
+  model.properties(records.research_views.properties.request), model.source(records.span)]);
+assert.deepEqual(model.snapshot.regions.search.value, records.knowledge_views.entities);
+assert.deepEqual(model.snapshot.regions.properties.value, records.research_views.properties);
+assert.equal(model.snapshot.regions.source.value.text, text.text);
+model.visibility(false);
+assert.ok(Object.values(model.snapshot.regions).every(region => region.phase === 'stale' && region.value === null));
+model.dispose();
 process.stdout.write(JSON.stringify({ status: 'verified', artifact_sha256: text.artifact_sha256, span_sha256: text.span_sha256,
-  boundary: 'actual owner HTTP through compiled Studio clients', browser_claim: false }));
+  boundary: 'actual owner HTTP through compiled Studio clients and Explore model', browser_claim: false }));

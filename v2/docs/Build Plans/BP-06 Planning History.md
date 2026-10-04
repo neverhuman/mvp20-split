@@ -1,5 +1,9 @@
 # BP-06 Planning History
 
+## B2.01 Explore page model - 2026-10-03 22:49:16
+
+Studio0.4 implements graph-only/lab-only/combined pinned contexts, immutable projections and seven independent lanes. Protected data clears on context/denial/conflict/hide; late responses cannot overwrite newer selections.14 owned tests,182 source/independent; actual four-owner/Qdrant compiled-model proof60.99s. All module lines100%, coordinatorbranches85.54%, context/projection100%. Fixture shared-mutation and assumed-pagination test errors repaired; no browser claim. B2=25%,Build41.67%,child31.25%,parent88.54%;21/24 and1/4 gates unchanged. B2.02 visible views active.
+
 ## B1.05 actual integrated baseline - 2026-10-03 22:35:26
 
 Four independent Data0.28/Research0.33/Knowledge0.17/Runtime0.20.2 processes with actual PostgreSQL/Qdrant. Source/rights/conversion, accepted hypothesis, synthetic entailment publication, scientific views, encoding/generation/query, exact receipt wait/retention/completion and Runtime replacement replay passed. Compiled Studio clients read those same actual records and verified selected bytes. Manifest contains observed pins.1 actual62.63s,48 protocol/dev14.58s,168 independent Studio; peer implementation absence separately checked. Owner-local Research fixture seeding is not a public ingestion write API; no scientific/browser-quality claim. B1=100%,Build33.33%,child25.00%,parent87.50%; gates1/4 and21/24. B2.01 active.
@@ -879,3 +883,5 @@ Actualexpirywithoutpolicyrevisiondiscardsobservedscore8;intentremains/noresult;s
 | 2026-10-03 15:52:35 | B1 complete; child25%, parent70.83%; B2.01 active; gates1/4 and17/24 | [Actual HTTP](../Audits/Evidence/BP-06-Representations/HTTP_Replacement.json);source/installed isolated-server public-only replay/revocation |
 
 | 2026-10-03 16:16:12 | B2.01a complete; child26.56%, parent71.09%; b active | [Generation models](../Audits/Evidence/BP-06-Representations/Generation_Models.json);179 source/179 installed,14 dev |
+
+| 2026-10-03 16:23:38 | B2.01b complete; child28.13%, parent71.35%; c active | [Generation contracts](../Audits/Evidence/BP-06-Representations/Generation_Contracts.json);57 source/200 installed,14 dev |

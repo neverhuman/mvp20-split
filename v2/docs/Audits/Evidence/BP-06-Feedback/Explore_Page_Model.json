@@ -1,0 +1,62 @@
+{
+  "timestamp_local": "2026-10-03 22:49:16",
+  "task": "BP-06.06/B2.01",
+  "status": "verified",
+  "studio_version": "0.4.0",
+  "source_tests": 182,
+  "installed_tests": 182,
+  "actual_tests": 1,
+  "actual_seconds": 60.99,
+  "independent_manifest": "v2\\.test-results\\studio-isolated\\2749c565ebaa4668ac21cfc646ed9056\\manifest.json",
+  "independent_manifest_sha256": "935fb4d8ceeb9969231953e255d374a171a6d882713bd437b72820cfd5575f48",
+  "actual_evidence": "v2\\.test-results\\feedback-explore-model.json",
+  "actual_sha256": "309164a6a49eb1c31f618d37e6c42112a73ad2620ce7ad09656c33b2ea67ca67",
+  "model_result": {
+    "status": "verified",
+    "artifact_sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+    "span_sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+    "boundary": "actual owner HTTP through compiled Studio clients and Explore model",
+    "browser_claim": false
+  },
+  "source_hashes": {
+    "studio/src/page_models/explore/context.ts": "09907f5d6917174453dac6bf33f31a1efd3fd91d42d15b1b445cfb03cef6dac6",
+    "studio/src/page_models/explore/model.ts": "2f71259674de90cdf9dc7df2cbc8d637f7391bd212a508a51145cf01fb97f9f5",
+    "studio/src/page_models/explore/projection.ts": "f10086f7fdb4da039ba2f34f152521ebee7393c2a1b1f6d0b2849064d5bd8710",
+    "studio/src/page_models/explore/README.md": "85490fb97f166409c6f7a23ae142e74ac457adef4a0a1e7fcfb459e789433754",
+    "studio/tests/page_models/explore.test.ts": "7ea5a2e92934ad756097900597da6eafb7dfb58867df8b0509c5bf9c358d06d0",
+    "studio/scripts/probe-scientific.mjs": "00cbe8b685982472d19914ceeaa60645651ed6a3d5688f36ab8be6589572414a"
+  },
+  "coverage": {
+    "context": {
+      "lines": 100,
+      "branches": 100
+    },
+    "projection": {
+      "lines": 100,
+      "branches": 100
+    },
+    "model": {
+      "lines": 100,
+      "branches": 85.54
+    }
+  },
+  "gaps": [
+    "Remaining combinations of empty/partial/failure/lifecycle guards",
+    "Visible components/browser are B2.02"
+  ],
+  "oracles": [
+    "Graph-only, laboratory-only, combined scope-pinned context",
+    "Frozen snapshots and copied queries",
+    "Bounded replacement pages and explicit incompleteness",
+    "Late response, synchronous rebind, hidden and disposed races",
+    "Global denial/conflict cancellation and protected-data clearing",
+    "Exact observation selection and original measurement/series preservation",
+    "Actual owner graph/property/source reads through compiled model"
+  ],
+  "limits": [
+    "No scientific compatibility inference",
+    "No UI mutation or browser presentation claim"
+  ],
+  "dev_tests": 18,
+  "dev_seconds": 14.27
+}
