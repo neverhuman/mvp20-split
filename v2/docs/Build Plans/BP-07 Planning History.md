@@ -332,3 +332,13 @@ Archived program checkpoint from MBT:
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
 | 2026-10-04 01:25:10 | B3 complete; child 75%, parent 95.83%; V1.01 active; gates 3/4 and23/24 | [Failure recovery](../Audits/Evidence/BP-06-Feedback/Failure_Recovery.json); 203.38s, 222 clean Studio tests, actual timeout/late/query recovery |
+
+## 2026-10-04 09:44:02 - Knowledge processing authorization verified
+
+B2.03a.i verified 2026-10-04 09:44:02:Knowledge0.18 uses Data0.29 processing-content for new review, with no fallback.42 focused validation tests10.60s;24 transport cases6.61s,23/24 peer-reader statements and1/2 branches covered (unchanged oversize guard omitted). Two independent installs pass325 owner/contract cases plus actual three-owner acceptance170.47s, including9 publication interruption stages. Ordinary readable bytes cannot authorize processing; historical decisions/rebuilds remain stable, and regrant permits only new requests.506 public schemas and Knowledge migrations unchanged. B2.03a i100%,ii0%,a50%;B2.03=16.67%,B2=72.22%;child43.06%,Build57.41%,parent28.61%;closed1/4 and5/20. Current a.ii Research declaration registration. [Evidence](../Audits/Evidence/BP-07-Extraction/Knowledge_Processing.json).
+
+Archived program checkpoint from MBT:
+
+| Timestamp | Checkpoint | Evidence |
+|---|---|---|
+| 2026-10-04 01:42:10 | V1.01 complete; child87.50%, parent97.92%; V1.02 active | [Final verification](../Audits/Evidence/BP-06-Feedback/Final_Verification.json);210.37s,222 independent Studio, real feedback browser |

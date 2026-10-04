@@ -1,9 +1,9 @@
 # Knowledge Service
 
-BP-06.03/B2.03: Knowledge0.15.0 implements owner receipt correction storage and explicit future-campaign selection under separate grants. [Correction boundary](src/amphora_knowledge/corrections/README.md) defines its rebuild contract; 393 broad source plus4 added cases and186 installed tests pass. Prior publications and active Runtime pins remain unchanged.
+BP-07.02/B2.03a.i has verified current processing authorization for new Knowledge consumption. Closed BP-06 deliveries remain closed; their historical evidence is retained below.
 
-- Package: amphora-knowledge0.15.0; contracts0.7.0.
-- Status: BP-06.02 closed; BP-06.03/B1 production reasoning/publication and installed replacement verified. Publication-specific process-death recovery verified; Research assessment and actual Runtime consumption are verified; BP-06.03 delivery recovery/closeout remain active.
+- Package: amphora-knowledge0.18.0; public contracts0.8.0. No new migration or public schema change.
+- Status: new validation/reasoning/publication reviews use Data0.29 processing-content; installed and actual-peer verification passed. Committed decisions and accepted-log rebuild remain historical operations.
 - Design: [Knowledge](../../docs/Architecture/Knowledge/Knowledge_Architecture.md), [activation](../../docs/Audits/BP-06.02_Activation.md).
 
 Knowledge owns typed domain graph edits, immutable accepted history and snapshot reconstruction. It preserves source/Research links and conflicting interpretations without promoting them into scientifically accepted facts. Publication never changes a campaign's pinned revision.
@@ -48,3 +48,7 @@ BP-06.04/B1.04 compatibility release0.15.1 updates exact public Research/Evidenc
 BP-06.04/B1.06 compatibility release0.15.2 updates exact public contract dependencies only; no service implementation or migration change. Actual peer evidence remains tied to the recorded tested version.
 
 BP-06.06 Knowledge0.17 adds read-only bounded graph-explore routes. Public Knowledge0.8 contracts and452 schemas remain unchanged; no migration or new grant. See exploration module for exact history, pagination and failure semantics.
+
+Verified 2026-10-04 09:44:02:42 focused validation cases,325 installed owner/contract cases and actual Data0.29/Research0.33 acceptance across two Knowledge0.18 installations. Read-only source rights deny new graph/reasoning work while ordinary read, historical decisions and accepted-log rebuild retain their distinct behavior. Regrant leaves old rejections unchanged; nine existing publication interruption stages remain passing. [Evidence](../../docs/Audits/Evidence/BP-07-Extraction/Knowledge_Processing.json).
+
+Cutover: replace all authoring, reasoning and publication-review workers with Knowledge0.18 before relying on the processing fence; older consumers still use ordinary reads. This is an application replacement requirement, not a rewrite of historical decisions or migrations.

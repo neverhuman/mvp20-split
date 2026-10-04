@@ -6,6 +6,7 @@ import json
 import os
 import sys
 import urllib.error
+import urllib.request
 import uuid
 from datetime import datetime
 from pathlib import Path
@@ -237,10 +238,37 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
         assert resumed_reason["decision"]["outcome"] == "evaluated"
         resumed_publication = knowledge.request("/v1/reasoning-publications", publication_pending)
         assert resumed_publication["outcome"]["status"] == "published"
+        # Readable payloads do not authorize new graph/reasoning processing.
+        read_only = copy.deepcopy(rights)
+        read_only.update(supersedes=rights["reference"], allowed_uses=["read"])
+        read_only["reference"]["revision"] = 2
+        data.request("/v1/acquisition/rights", read_only)
+        ordinary_read = urllib.request.Request(data.endpoint + f"/v1/artifacts/{artifact['artifact_id']}/content",
+            headers={"Authorization": "Bearer " + environment["DATA_READ_TOKEN"]})
+        with urllib.request.urlopen(ordinary_read, timeout=10) as response:
+            assert response.status == 200 and response.read() == peer.raw
+        process_denied = copy.deepcopy(proposal)
+        process_denied["change_id"] = "read-only-new"
+        read_only_decision = knowledge.request("/v1/graph-proposals", process_denied)
+        assert read_only_decision["decision"]["outcome"] == "rejected"
+        assert read_only_decision["decision"]["findings"][0]["code"] == "peer_access_denied"
+        read_only_reasoning = knowledge.request("/v1/graph-reasoning", dict(reasoning_query, request_id="reason-read-only"))
+        assert read_only_reasoning["decision"] == {"outcome": "failed", "code": "peer_access_denied"}
+        assert knowledge.request("/v1/graph-proposals", proposal) == accepted
+        assert knowledge.request("/v1/graph-reasoning", reasoning_query) == reasoned
+        assert knowledge.request("/v1/graph-rebuilds", dict(rebuild_query, rebuild_id="read-only-history"))["result"]["head"] == head
+        restored = copy.deepcopy(rights)
+        restored.update(supersedes=read_only["reference"])
+        restored["reference"]["revision"] = 3
+        data.request("/v1/acquisition/rights", restored)
+        # A new identity can consume after regrant; old rejection remains immutable.
+        assert knowledge.request("/v1/graph-proposals", process_denied) == read_only_decision
+        assert knowledge.request("/v1/graph-reasoning", dict(reasoning_query, request_id="reason-regranted"))["decision"]["outcome"] == "evaluated"
+        rights = restored
         # Current source rights gate new observations; old accepted receipt is historical.
         revoked = copy.deepcopy(rights)
         revoked.update(supersedes=rights["reference"], status="revoked", allowed_uses=[])
-        revoked["reference"]["revision"] = 2
+        revoked["reference"]["revision"] = rights["reference"]["revision"] + 1
         data.request("/v1/acquisition/rights", revoked)
         derived_revoked = derivation_probe(derived_case, "revoked", environment)
         assert derived_revoked["derivation"] == derived_initial["derivation"]
@@ -267,6 +295,9 @@ def test_actual_peer_validation_and_owner_restart(stored_graph, tmp_path):
             "source": source["reference"], "trace": trace, "head": head,
             "question": question["reference"], "need": need["reference"],
             "reasoning": {"initial": reasoned, "resumed_after_outage": resumed_reason, "denied_after_revocation": denied_reason},
+            "processing_permission": {"ordinary_read_allowed": True, "new_proposal": read_only_decision,
+                "new_reasoning": read_only_reasoning, "historical_replay_and_rebuild_stable": True,
+                "new_reasoning_after_regrant": "evaluated", "old_rejection_after_regrant": "unchanged"},
             "production_publication": {"initial": published, "resumed_after_outage": resumed_publication,
                 "denied_after_revocation": denied_publication, "historical_replay_stable": True, "payload_after_revocation_http": 403},
             "publication_interruptions": publication_interruptions,

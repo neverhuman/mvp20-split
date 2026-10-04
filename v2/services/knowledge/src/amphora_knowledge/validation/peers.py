@@ -17,7 +17,7 @@ class DataReader:
     def content(self, reference, budget):
         if reference.size_bytes > 4 * 1024 * 1024:
             raise KnowledgeError("artifact_read_limit")
-        return self.transport.read(f"/v1/artifacts/{reference.artifact_id}/content", budget,
+        return self.transport.read(f"/v1/artifacts/{reference.artifact_id}/processing-content", budget,
             limit=reference.size_bytes, json_body=False)
 
     def source(self, reference, budget):

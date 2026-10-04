@@ -97,7 +97,17 @@ def test_exact_public_routes_and_scoped_research_body(server, peers):
     assert json.loads(server.requests[-1][3]) == peers.need_record.reference.model_dump(mode="json")
     server.response = 200, "text/plain", peers.raw
     assert data.content(artifact, budget) == peers.raw
+    assert server.requests[-1][1] == "/v1/artifacts/context/processing-content"
     assert budget.calls == 6 and budget.consumed > len(peers.raw)
+
+
+@pytest.mark.parametrize("status,code", [(403, "peer_access_denied"), (404, "reference_unavailable")])
+def test_processing_denial_or_missing_route_never_falls_back_to_read(server, peers, status, code):
+    server.response = status, "application/json", b"{}"
+    with pytest.raises(KnowledgeError, match="^" + code + "$"):
+        DataReader(server.client).content(peers.source_record.reference.raw, ReadBudget())
+    assert [(method, path) for method, path, _, _ in server.requests] == [
+        ("GET", "/v1/artifacts/context/processing-content")]
 
 
 def test_body_and_aggregate_budgets(server):

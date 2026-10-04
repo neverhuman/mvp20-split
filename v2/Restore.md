@@ -2,11 +2,19 @@
 
 ## Resume here
 
-- Refreshed 2026-10-04 09:22:48 (America/Chicago). **Read this file first after compression**, as the owner explicitly requested. This was done at the previous compression.
+- Refreshed 2026-10-04 09:45:34 (America/Chicago). **Read this file first after compression**, as the owner explicitly requested. This was done at the previous compression.
 - Continue authorized work across milestones, commits, pushes and compression. Do not stop merely to report completion of a checkpoint. No subagents, no JARVIS access, and no v1 edits.
-- **BP-07.02/B2.02c.ii is verified complete. Current task: B2.03 owner handoff and accepted typed-correction replay.** Next: B3 failure and semantic-category oracles.
-- The verified checkpoint is ready for final diff review, commit and push. Previous pushed commit:565c0622. Check Git log/status before repeating any commit; then continue B2.03 without another permission request.
-- Canonical child, parent, MBT and history are updated. Child41.67%, Build55.56%, Acceptance0%,1/4 deliveries closed. B1=100%, B2=66.67% (.01/.02=100%, .03=0%), B3/V1=0%. Parent28.33%,5/20 closed; P1=100%, P2=41.67%, remaining phases0%. MBT has25 recent rows.
+- **BP-07.02/B2.02c.ii is verified complete. Current task: B2.03a.ii Research declaration registration.** Next: B2.03b Planning publication and owner handoff.
+- Verified B2.02 checkpoint committed/pushed as **6ee28ddc**. New verified work is B2.03a.i Knowledge processing authorization, ready for commit/push; no Research declaration implementation yet. Continue without another permission request.
+- Canonical child, parent, MBT and history are updated. Child43.06%, Build57.41%, Acceptance0%,1/4 deliveries closed. B1=100%, B2=72.22% (.01/.02=100%, .03=16.67%), B3/V1=0%. Parent28.61%,5/20 closed; P1=100%, P2=43.06%, remaining phases0%. MBT has25 recent rows.
+
+## Latest verified Knowledge checkpoint
+
+- B2.03a.i complete: Knowledge0.18 now uses `/processing-content` for all new validation, reasoning and publication review, with no ordinary-read fallback. Terminal decisions and accepted-log rebuild remain historical. No public schema or migration change. Knowledge/dev versions and locks are updated.
+- Focused validation42 passed10.60s. Scoped transport24 passed6.61s; peers.py23/24 statements,1/2 branches (unchanged oversized-Artifact guard not exercised). Ruff, dependency boundaries and506-schema check passed.
+- `.test-results/knowledge-processing-independent-20261004/manifest.json`: two isolated Knowledge0.18 installs,325 scoped owner/contract cases37.56s and actual three-owner acceptance170.47s, including9 publication interruption stages. Uses retained Data0.29/Research0.33 and SDK0.2. Sessions75087,65099 and55741 FINISHED; no active tests/hosts known.
+- Actual evidence proves ordinary read200 with process permission absent, new graph/reasoning rejection, old decisions/rebuild stable, regrant permitting new reasoning without changing an old rejection, then full revocation/replacement behavior. Evidence: `docs/Audits/Evidence/BP-07-Extraction/Knowledge_Processing.json`.
+- Source-adjacent Knowledge service/validation/transport READMEs updated. Replace new-consumption workers with0.18 before relying on this fence; older builds still use ordinary reads. Earlier accepted records remain unchanged.
 
 ## Versions, verification and cutover
 
@@ -37,10 +45,13 @@ The failed first fixture `.test-results/planning-repair-data-actual-20261004` is
 
 ## Next authorized work
 
-1. Finish final Git diff/tracker consistency review, commit/push the verified B2.02 checkpoint if not already done, then continue. All known working changes belong to this task.
-2. Start B2.03 with a bounded design/coherence review against actual owner contracts. Scope includes automatic published diagnostic production, public Research declarations, Data candidate-answer Artifacts, Knowledge proposal submission and accepted typed-correction replay. Research currently exposes reads but **no public declaration-write endpoint**. Do not bypass that gap with Planning access to peer SQL/private implementations.
-3. Read the current tracker and owning Research/Knowledge/Data/Planning READMEs/public contracts before targeted source. Decompose B2.03 inside its existing milestone weight before implementing it. Preserve exact owner receipts, immutable idempotency, current rights and future-campaign correction policy. Knowledge accepts domain changes; Research owns research state; Runtime accepts execution decisions.
-4. Keep canonical trackers, MBT, history and Restore current before significant commits. Use absolute local timestamps with seconds. MBT retains at most25 recent rows; archive overflow under a proper table header in BP-07 Planning History. Design writing earns no implementation credit. Earlier phases stay closed.
+1. Finish final tracker/diff consistency review and commit/push the verified Knowledge checkpoint if not already done. B2.02 was pushed as6ee28ddc. Continue after push.
+2. Current B2.03a.ii: read `docs/Build Plans/BP-07/BP-07.02 Owner handoff and accepted replay.md`. It has equal a/b/c gates; a splits i/ii. Current progress: a.i100%, a.ii0%, a50%, b/c0%; B2.03=16.67%. No declaration code exists yet.
+3. Research0.33 public reads/DTOs already exist for ResearchQuestion and EvidenceNeed. `persistence/ledger.py` atomically publishes private immutable revisions/heads/links but has no authenticated public registrant. Add a focused declarations module, explicit optional host enablement and separate question/need write grants. Reuse existing declaration DTOs rather than inventing scientific acceptance. Return exact owner-stored declarations; changed bytes or stale head conflict. Do not access Research tables from Planning.
+4. New registration provenance must commit atomically with new record/head/link changes. Extract a transaction-level private ledger publication helper without changing existing publish semantics. A forward Research0013 may add immutable first-public-registration actor/time/digest and distinguish a preexisting private record; never relabel the first public registrant as the historical creator. Keep applied0001..0012 immutable. Once0013 is applied, forbid older Research migrators, including the retained0.33 used by current fixture scripts. Closed BP-06 plans remain closed.
+5. Refine a.ii into bounded owner-store and HTTP/installed-proof substeps if useful, preserving its weight and updating canonical current task. Before implementation read Research declarations/identity/persistence/transport boundaries and targeted tests. Existing API invoke maps ResearchIdentityError to503 for reads; new declaration policy failures need their own safe403/404/409/422 mapping without changing read corruption behavior. Public writes require an explicit host flag; default read hosting stays read-only.
+6. Gate b later owns Planning automatic diagnostics/candidate-answer Artifact publication and durable question/need/graph handoff. Gate c owns actual receipt binding and accepted typed-correction replay. Do not start these before owner prerequisites pass. Preserve exact original requests, stable retry identities, current rights, and future-campaign correction policy. Knowledge/Research retain acceptance authority; Runtime owns execution acceptance.
+7. Update canonical trackers, MBT, history and Restore before significant commits. Absolute local timestamps with seconds; MBT at most25 recent rows, archived under proper table headings. Design writing earns no credit. No live provider call without model/egress/spend choices.
 
 No owner choice blocks deterministic work. Live provider/model, egress and spend are still unset and block only real calls. Human scientific corrections apply between campaigns. Preserve weak, contradictory and unknown points for future improvement; do not add an in-campaign human wait or global scientific-quality veto.
 
@@ -52,7 +63,7 @@ No owner choice blocks deterministic work. Live provider/model, egress and spend
 - Tests use importlib mode; behavior folders have no `__init__.py`. Use `.absolute()`, not `.resolve()`, on the mapped drive. Discover filenames with `rg --files`; avoid Windows wildcard paths as rg operands. Verify new patch paths exist.
 - Latest Planning: `.test-results/planning-repair-workflow-final-independent-20261004/{initial,replacement}/Scripts/python.exe`. `verify_planning.py` includes0009, both feedback schemas and preparation/run/replay process stages. Old-history replay uses the new installation, never an old migrator.
 - Data0.29: `.test-results/data-processing-content-independent-20261004/environment/Scripts/python.exe`. `verify_planning_repair_data.py` pins Planning0.23/Data0.29.
-- Knowledge0.17: `.test-results/knowledge-exploration-http-20261003/environment/Scripts/python.exe`.
+- Latest Knowledge0.18: `.test-results/knowledge-processing-independent-20261004/{initial,replacement}/Scripts/python.exe`. Prior0.17 read fixture remains `.test-results/knowledge-exploration-http-20261003/environment/Scripts/python.exe`; do not use it for new processing authorization.
 - Research0.33: `.test-results/research-views-http-20261003/environment/Scripts/python.exe`.
 - Runtime0.20.2: `.test-results/runtime-domain-receipt-peer-20261002/environment/Scripts/python.exe`.
 - `verify_planning_knowledge.py`, `verify_planning_research.py` and their probes still pin Planning0.20. Update pins before future runs. Do not relabel those earlier reader proofs as combined actual Knowledge repair execution.

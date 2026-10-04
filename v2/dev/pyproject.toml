@@ -7,7 +7,7 @@ dependencies = [
     "amphora-agent-planning==0.23.0",
     "amphora-contracts-research-views==0.1.0",
     "amphora-contracts-representations==0.3.0",
-    "amphora-knowledge==0.17.0",
+    "amphora-knowledge==0.18.0",
     "amphora-contracts-knowledge==0.8.0",
     "amphora-contracts-core==0.1.0",
     "amphora-contracts-evidence==0.5.13",

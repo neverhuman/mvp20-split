@@ -1,0 +1,187 @@
+{
+  "verified_at": "2026-10-04 09:44:02",
+  "task": "BP-07.02/B2.03a.i",
+  "status": "passed",
+  "knowledge": "0.18.0",
+  "public_contracts": "0.8.0",
+  "migration": "none; knowledge0001..0007 unchanged",
+  "public_schemas": 506,
+  "focused_tests": 42,
+  "focused_seconds": 10.6,
+  "transport_tests": 24,
+  "transport_seconds": 6.61,
+  "coverage": {
+    "module": "amphora_knowledge.validation.peers",
+    "statements": 24,
+    "branches": 2,
+    "percent": 92.3076923076923,
+    "gap": "Unchanged artifact_read_limit oversized-input branch not exercised by this scoped transport run"
+  },
+  "installed_tests": {
+    "owner": {
+      "tests": 325,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "actual": {
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "installations": 2,
+  "actual_seconds": 170.47,
+  "publication_interruption_stages": 9,
+  "processing_permission": {
+    "ordinary_read_allowed": true,
+    "new_proposal": {
+      "wire_version": "1",
+      "graph": {
+        "scope": {
+          "tenant_id": "synthetic",
+          "project_id": "4f79cfc37b28435daeeb171477f0d4b6"
+        },
+        "graph_id": "domain"
+      },
+      "change_id": "read-only-new",
+      "request_sha256": "2228d214c888c87fcaef0eba32f629a8be465a9f479ad2f044f8d8ad0f2c7480",
+      "decision": {
+        "outcome": "rejected",
+        "findings": [
+          {
+            "code": "peer_access_denied",
+            "location": "proposal",
+            "message": "Structural edit was not accepted"
+          }
+        ]
+      }
+    },
+    "new_reasoning": {
+      "wire_version": "1",
+      "request": {
+        "wire_version": "1",
+        "request_id": "reason-read-only",
+        "snapshot": {
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "4f79cfc37b28435daeeb171477f0d4b6"
+            },
+            "graph_id": "domain"
+          },
+          "revision": 1,
+          "sha256": "8817d9f37c3378bb98b11d17336c6f3379843e3589db7375717ae05073c69a0a"
+        },
+        "rule_set": {
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "4f79cfc37b28435daeeb171477f0d4b6"
+            },
+            "graph_id": "domain"
+          },
+          "rule_set_id": "fixture",
+          "version": "v1",
+          "sha256": "3d8781af0ac886bd2005dfb064134a1e6d7c3968b538ff05758963e4c1dc52c3"
+        },
+        "context": {
+          "artifact_id": "6ccffd5c2743426a82df63e20fc16910",
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "4f79cfc37b28435daeeb171477f0d4b6"
+          },
+          "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+          "media_type": "application/octet-stream",
+          "schema_ref": {
+            "schema_id": "fixture.bytes",
+            "version": "1",
+            "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+          },
+          "size_bytes": 49
+        },
+        "subject": {
+          "artifact_id": "6ccffd5c2743426a82df63e20fc16910",
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "4f79cfc37b28435daeeb171477f0d4b6"
+          },
+          "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+          "media_type": "application/octet-stream",
+          "schema_ref": {
+            "schema_id": "fixture.bytes",
+            "version": "1",
+            "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+          },
+          "size_bytes": 49
+        },
+        "purpose": "fixture_support",
+        "targets": [
+          {
+            "subject": {
+              "graph": {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "4f79cfc37b28435daeeb171477f0d4b6"
+                },
+                "graph_id": "domain"
+              },
+              "entity_id": "A",
+              "revision": 1
+            },
+            "predicate": "correlates_with",
+            "object": {
+              "graph": {
+                "scope": {
+                  "tenant_id": "synthetic",
+                  "project_id": "4f79cfc37b28435daeeb171477f0d4b6"
+                },
+                "graph_id": "domain"
+              },
+              "entity_id": "B",
+              "revision": 1
+            },
+            "polarity": "affirmed"
+          }
+        ]
+      },
+      "actor_id": "author",
+      "decision": {
+        "outcome": "failed",
+        "code": "peer_access_denied"
+      }
+    },
+    "historical_replay_and_rebuild_stable": true,
+    "new_reasoning_after_regrant": "evaluated",
+    "old_rejection_after_regrant": "unchanged"
+  },
+  "wheels": {
+    "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+    "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+    "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+    "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+    "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+    "amphora_knowledge-0.18.0-py3-none-any.whl": "e10a5fd407c827ab40e080f8fdc57060ad4b1beed703327ac731f6d8c87a48df",
+    "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+  },
+  "proven": [
+    "New validation/reasoning/publication review uses processing-content with no ordinary-read fallback",
+    "Actual Data ordinary read remains allowed while new graph/reasoning processing is denied",
+    "Historical decisions and accepted-log rebuild remain stable without fresh source processing",
+    "Regrant allows a new request but does not rewrite the prior rejection",
+    "Actual Data/Research/Knowledge replacement and existing publication interruption oracles remain passing"
+  ],
+  "limits": [
+    "Synthetic structural/authorization proof, not scientific truth",
+    "New reads require Data0.29 or later",
+    "No historical acceptance or schema/migration bytes rewritten",
+    "Research declaration writes remain the next gate"
+  ],
+  "retained_manifest": ".test-results/knowledge-processing-independent-20261004/manifest.json"
+}
