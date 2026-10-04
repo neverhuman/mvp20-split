@@ -215,3 +215,11 @@ Data0.29 exposes GET /v1/artifacts/{id}/processing-content with existing scoped 
 Archived MBT checkpoints:
 
 | 2026-10-03 21:07:50 | B1.02 complete; child10%,parent85%; B1.03a active | [Knowledge HTTP](../Audits/Evidence/BP-06-Feedback/Knowledge_Projection_HTTP.json);56 source/205 installed,actual process replacement |
+
+## 2026-10-04 04:43:42 - BP-07.02/B1.04b bounded source review
+
+Planning0.12 consumes public Evidence directly. Own source_access module uses configured loopback Data processing-content,exact source/trace/span/Artifact/prompt binding and complete consumed inputs<=128. Every review reacquires bytes; partial/quarantined metadata remains explicit.20s whole-review deadline interrupts stalled/trickled headers/body,512 calls32MiB maximum; safe denied/missing versus transient classification,no redirects/proxies/implicit retries.55 focused2.78s,194/196 statements28/28 branches (defensive shutdown catch only),329 owner/contract/dev36.34s. Child21.88%,Build29.17%,parent24.38%; c.i payload/transitions next. Actual owner integration d remains required.
+
+Archived MBT checkpoints:
+
+| 2026-10-03 21:22:59 | B1.03a verified; child12.50%,parent85.42%; B1.03b active | [Research views](../Audits/Evidence/BP-06-Feedback/Research_Views.json);38 source/254 installed,466 schemas |

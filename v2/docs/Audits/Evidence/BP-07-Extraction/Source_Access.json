@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-10-04 04:43:42",
+  "status": "passed",
+  "owner": "Planning0.12",
+  "focused_tests": 55,
+  "focused_seconds": 2.78,
+  "regression_tests": 329,
+  "regression_seconds": 36.34,
+  "covered_statements": 194,
+  "statements": 196,
+  "covered_branches": 28,
+  "branches": 28,
+  "uncovered": "Defensive OSError suppression for shutdown of an already closed socket",
+  "limits": [
+    "Scripted public records and real scripted loopback HTTP; actual owner integration B1.04d",
+    "No persistent rights grant or scientific validation"
+  ]
+}

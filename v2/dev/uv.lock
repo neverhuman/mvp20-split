@@ -18,11 +18,12 @@ wheels = [
 
 [[package]]
 name = "amphora-agent-planning"
-version = "0.11.0"
+version = "0.12.0"
 source = { editable = "../services/agent_planning" }
 dependencies = [
     { name = "alembic" },
     { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-evidence" },
     { name = "amphora-contracts-planning" },
     { name = "psycopg", extra = ["binary"] },
     { name = "pydantic" },
@@ -33,6 +34,7 @@ dependencies = [
 requires-dist = [
     { name = "alembic", specifier = ">=1.16,<2" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-evidence", editable = "../contracts/evidence" },
     { name = "amphora-contracts-planning", editable = "../contracts/planning" },
     { name = "psycopg", extras = ["binary"], specifier = ">=3,<4" },
     { name = "pydantic", specifier = ">=2.12,<3" },
