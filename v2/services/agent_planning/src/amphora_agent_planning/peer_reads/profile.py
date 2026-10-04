@@ -20,12 +20,14 @@ class ReadProfile:
     calls: int
     bytes: int
     routes: dict
+    request_bytes: int = 4096
 
     def __post_init__(self):
         require(self.owner in {'knowledge', 'research'}, 'peer_read_owner')
         require(type(self.seconds) is int and 1 <= self.seconds <= 30 and
-                type(self.calls) is int and 1 <= self.calls <= 64 and
-                type(self.bytes) is int and 1 <= self.bytes <= 33554432, 'peer_read_limits')
+                type(self.calls) is int and 1 <= self.calls <= 160 and
+                type(self.bytes) is int and 1 <= self.bytes <= 33554432 and
+                type(self.request_bytes) is int and 1 <= self.request_bytes <= 262144, 'peer_read_limits')
         require(type(self.routes) is dict and 1 <= len(self.routes) <= 8, 'peer_read_routes')
         for path, (_, _, limit) in self.routes.items():
             require(type(path) is str and re.fullmatch(r'/v1/[a-z-]+/read', path) is not None and

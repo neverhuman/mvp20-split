@@ -46,11 +46,15 @@ def verify(output):
          "('amphora_campaign_runtime','amphora_research','amphora_knowledge','amphora_data_artifacts','fastapi'))"])
     for source, destination in (
         (ROOT / "contracts/planning/tests", output / "tests/contracts"),
-        (ROOT / "services/agent_planning/tests/context", output / "tests/context"),
-        (ROOT / "services/agent_planning/tests/campaign_context", output / "tests/campaign_context"),
+        # Retain support modules used by relative test imports; collect only the
+        # explicit pure/context/loopback areas below, never persistence tests.
+        (ROOT / "services/agent_planning/tests", output / "tests/service"),
     ):
         shutil.copytree(source, destination, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
-    run([python, "-I", "-m", "pytest", output / "tests", "--import-mode=importlib", "--tb=short", "-q",
+    areas = [output / "tests/contracts", *(output / "tests/service" / area for area in
+        ("context", "campaign_context", "campaign_research_access", "knowledge_access/test_transport.py",
+         "research_access/test_transport.py"))]
+    run([python, "-I", "-m", "pytest", *areas, "--import-mode=importlib", "--tb=short", "-q",
          "--junitxml=" + str(output / "tests.xml")])
     suites = ET.parse(output / "tests.xml").getroot().findall("testsuite")
     tests = sum(int(suite.attrib["tests"]) for suite in suites)

@@ -39,7 +39,7 @@ class BoundedReadTransport:
         request_model, response_model, limit = self.profile.routes[path]
         reference = request_model.model_validate_json(reference.model_dump_json(warnings=False))
         body = canonical(reference)
-        require(len(body) <= 4096, self.profile.code('request_size'))
+        require(len(body) <= self.profile.request_bytes, self.profile.code('request_size'))
         window.start()
         connection = http.client.HTTPConnection(self._host, self._port, timeout=window.remaining())
         timer = None

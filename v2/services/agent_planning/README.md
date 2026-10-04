@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-- Version: Planning0.32.0; public Planning0.8.0. BP-07.02 complete and audited;930 installed tests,39 process/replay stages and actual-owner recovery verified.
+- Version: Planning0.33.0; public Planning0.8.0. BP-07.02 complete and audited;930 installed tests,39 process/replay stages and actual-owner recovery verified.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Canonical progress: [BP-07.02](../../docs/Build%20Plans/BP-07/Completed/BP-07.02%20Reliable%20text%20decomposition.md).
 
@@ -41,3 +41,5 @@ Real provider/model, egress and spend remain owner choices before actual calls. 
 
 
 [campaign_context](src/amphora_agent_planning/campaign_context/README.md) adds pure exact Research selection/request binding and selected-record/relevance projections under BP-07.03/B1.01. Actual context reads and campaign proposal compilation remain later gates; the closed extraction boundary is unchanged.
+
+[campaign_research_access](src/amphora_agent_planning/campaign_research_access/README.md) supplies bounded exact Research record reads and per-record safe failure reports. Actual owner compatibility and typed view reads retain separate gates.

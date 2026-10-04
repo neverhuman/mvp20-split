@@ -498,3 +498,12 @@ B1.01b verified 2026-10-04 17:28:41:Planning0.32/public0.8 selected records, exp
 Archived MBT checkpoint:
 
 | 2026-10-04 05:11:45 | BP-07.02/c.ii complete; child22.92%,parent24.58%; c.iii active | [Publication journal](../Audits/Evidence/BP-07-Extraction/Publication_Journal.json);375 tests,469 statements28 branches100% |
+
+
+## Campaign Research record reads 2026-10-04 17:41:49
+
+B1.02a.i verified 2026-10-04 17:41:49:Planning0.33/public0.8 exact question/need/assessment reader, per-record failures and bounded profile-specific request limits.135 focused tests24.87s;193 independent tests8.799s. New reader100%; combined193 statements30 branches97.76%, inherited socket cleanup/EOF gaps explicit.508 schemas/planning0011 unchanged. Child6.77%,Build9.03%,parent41.35%,closed0/4 and8/20. Current a.ii named views; actual Research remains a.iii. [Evidence](../Audits/Evidence/BP-07-Campaigns/Research_Record_Reads.json).
+
+Archived MBT checkpoint:
+
+| 2026-10-04 05:23:21 | BP-07.02/c.iii complete; child23.44%,parent24.69%; d active | [Publication workflow](../Audits/Evidence/BP-07-Extraction/Publication_Workflow.json);421 tests, public SDK recovery |
