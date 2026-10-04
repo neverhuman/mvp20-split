@@ -4,6 +4,7 @@ import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { build } from 'esbuild';
 import { allowedRoute } from '../../dist/src/transport/scientific/routes.js';
+import { ResponseHold } from './explore_live_barrier.mjs';
 
 export async function startHost(owners, pins, output) {
   for (const owner of Object.values(owners)) {
@@ -13,6 +14,7 @@ export async function startHost(owners, pins, output) {
   await build({ entryPoints: ['tests/integration/explore_live_entry.tsx'], bundle: true,
     outdir: output, format: 'esm', jsx: 'automatic' });
   const requests = [];
+  const holds = new Set(); let nextContent = null;
   const server = createServer(async (req, res) => {
     res.setHeader('cache-control', 'no-store');
     try {
@@ -28,9 +30,16 @@ export async function startHost(owners, pins, output) {
           ...(req.method === 'POST' ? { body: Buffer.concat(chunks) } : {}), signal: AbortSignal.timeout(15000) });
         const parts = []; length = 0;
         for await (const chunk of upstream.body) { length += chunk.length; if (length > 4194304) throw new Error('output_limit'); parts.push(chunk); }
-        requests.push({ path, method: req.method, status: upstream.status });
+        let gate = null;
+        if (nextContent && name === 'data' && path.endsWith('/content')) {
+          gate = nextContent; nextContent = null;
+          gate.enter({ path, bytes: length, status: upstream.status }); await gate.released;
+        }
+        const delivery = { path, method: req.method, status: upstream.status, held: gate !== null, client_closed: res.destroyed };
+        requests.push(delivery);
+        if (res.destroyed) { gate?.delivered(delivery); return; }
         res.writeHead(upstream.status, { 'content-type': upstream.headers.get('content-type') ?? 'application/json' });
-        res.end(Buffer.concat(parts)); return;
+        res.end(Buffer.concat(parts), () => gate?.delivered(delivery)); return;
       }
       if (req.method !== 'GET') { res.writeHead(405); res.end(); return; }
       if (path === '/') {
@@ -44,5 +53,9 @@ export async function startHost(owners, pins, output) {
   });
   await new Promise(done => server.listen(0, '127.0.0.1', done));
   return { url: `http://127.0.0.1:${server.address().port}`, requests,
-    close: () => { server.closeAllConnections(); return new Promise(done => server.close(done)); } };
+    holdContent: () => {
+      if (nextContent) throw new Error('response_hold_already_pending');
+      nextContent = new ResponseHold(); holds.add(nextContent); return nextContent;
+    },
+    close: () => { for (const gate of holds) gate.release(); server.closeAllConnections(); return new Promise(done => server.close(done)); } };
 }

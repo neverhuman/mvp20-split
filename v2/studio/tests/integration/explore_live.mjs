@@ -95,13 +95,33 @@ try {
     evidence.scenarios.push('omitted specimen remains unresolved across real pages; conflicting sample/state/method/unit remains visible and qualified');
     await page.getByRole('button', { name: 'Properties', exact: true }).click();
   }
+  const timeoutGate = host.holdContent();
+  await page.evaluate(span => { void window.liveExplore.model.source(span); }, records.span);
+  const timeoutHeld = await timeoutGate.entered;
+  assert.equal(timeoutHeld.status, 200); assert.equal(timeoutHeld.bytes, records.span.source.raw.size_bytes);
+  await page.waitForFunction(() => window.liveExplore.model.snapshot.regions.source.phase === 'failed' && window.liveExplore.model.snapshot.regions.source.error.kind === 'timeout', null, { timeout: 20000 });
+  await page.getByText(/The evidence read timed out\./).waitFor();
+  assert.equal(await page.evaluate(() => window.liveExplore.model.snapshot.regions.source.value), null);
+  timeoutGate.release();
+  const timeoutDelivery = await timeoutGate.completed;
+  const lateGate = host.holdContent();
+  await page.evaluate(span => { window.liveSourceRead = window.liveExplore.model.source(span); }, records.span);
+  const lateHeld = await lateGate.entered;
+  assert.equal(lateHeld.status, 200);
   const foreign = structuredClone(pins); foreign.graph = null; foreign.experiment.scope.project_id = 'unowned-project';
   for (const ref of foreign.observations) ref.scope.project_id = 'unowned-project';
   await page.evaluate(context => window.liveExplore.model.bind(context), foreign);
   await page.waitForFunction(() => window.liveExplore.model.snapshot.regions.properties.phase === 'denied');
+  lateGate.release();
+  const lateDelivery = await lateGate.completed;
+  await page.evaluate(() => window.liveSourceRead);
+  await page.waitForFunction(() => window.liveExplore.model.snapshot.regions.source.value === null);
   assert.equal(await page.getByRole('table', { name: 'Observations under the pinned method' }).count(), 0);
   assert.equal(await page.getByRole('region', { name: 'Conversion history', exact: true }).count(), 0);
   evidence.scenarios.push('foreign experiment denied by actual owner and prior protected detail cleared');
+  evidence.scenarios.push('actual Data response held beyond production 15s deadline clears source; later response across context denial cannot restore it');
+  evidence.response_holds = { timeout: timeoutHeld, late: lateHeld, timeout_delivery: timeoutDelivery,
+    late_delivery: lateDelivery, deadline_ms: 15000 };
   assert.equal((await fetch(host.url + '/api/knowledge/v1/graph-proposals', { method: 'POST', body: '{}' })).status, 403);
   assert.deepEqual(errors, []); assert.deepEqual(authorizations, []);
   const content = await page.content();

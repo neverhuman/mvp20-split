@@ -1,5 +1,7 @@
 # BP-06 Planning History
 
+2026-10-04 01:25:10 B3 complete: 203.38s final actual integration, 222 clean Studio tests, both source/independent browser timeout and late-response barriers. Pending query identity recovers on restored backend, remains readable after replacement, fresh rebuilt-generation query matches. Build=100%, child=75%, parent=95.83%; gates3/4 and23/24. V1.01 final verification reconciliation is active.
+
 2026-10-04 01:18:09 B3.04a verified: 164.81s actual integration, 222 clean Studio tests and live browser. Three snapshots preserved; rebuild succeeds with Data offline; second Qdrant generation reconstructs exact matches. Existing B3.04 scope now has two equal substeps, a reconstruction/replacement and b pending-query/timeout/late-response recovery. B3.04=50%, B3=87.50%, Build=95.83%, child=71.88%, parent=95.31%.
 
 2026-10-04 01:09:35 B3.03 verified: 1 actual integration test passed in 129.50s. Conflicting specimen claims and omitted rows remain unresolved; Research retains unknown eligibility with explicit mismatch reasons. Earlier valid records unchanged. Desktop/narrow comparison screenshots reviewed. B3=75%, Build=91.67%, child=68.75%, parent=94.79%; B3.04 active.

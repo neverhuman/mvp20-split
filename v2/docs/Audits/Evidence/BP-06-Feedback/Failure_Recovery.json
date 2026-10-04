@@ -1,0 +1,105 @@
+{
+  "verified_at": "2026-10-04 01:25:10",
+  "status": "passed",
+  "scope": "BP-06.06 B3.04b failure recovery",
+  "tests": 1,
+  "seconds": 203.38,
+  "actual_records": ".test-results/feedback-replacement-20261004.json",
+  "sha256": "d845f0e95b0e87de0c3f5c852ba0aa0c48e6166f03d70dfa26ab385b04975e02",
+  "project": "d0c2080d6f244458a8f6fad643c9795c",
+  "consumer_tests": 222,
+  "consumer_manifest_sha256": "176daa21f790b2082a6b85fb997b9e57622a0323b25810c6361c8606fcb897b6",
+  "processes": {
+    "knowledge": {
+      "previous_pid": 29764,
+      "replacement_pid": 28484
+    },
+    "research": {
+      "previous_pid": 28024,
+      "replacement_pid": 28724
+    },
+    "data": {
+      "previous_pid": 28980,
+      "replacement_pid": 29012
+    },
+    "data_recovery": {
+      "previous_pid": 29012,
+      "replacement_pid": 16416
+    },
+    "data_final": {
+      "previous_pid": 16416,
+      "replacement_pid": 29096
+    }
+  },
+  "recovered_query_id": "absent-projection",
+  "fresh_query_id": "after-owner-replacement",
+  "response_holds": {
+    "source": {
+      "timeout": {
+        "path": "/api/data/v1/artifacts/068318cd94934bf49f16f5e6d8314241/content",
+        "bytes": 49,
+        "status": 200
+      },
+      "late": {
+        "path": "/api/data/v1/artifacts/068318cd94934bf49f16f5e6d8314241/content",
+        "bytes": 49,
+        "status": 200
+      },
+      "timeout_delivery": {
+        "path": "/api/data/v1/artifacts/068318cd94934bf49f16f5e6d8314241/content",
+        "method": "GET",
+        "status": 200,
+        "held": true,
+        "client_closed": true
+      },
+      "late_delivery": {
+        "path": "/api/data/v1/artifacts/068318cd94934bf49f16f5e6d8314241/content",
+        "method": "GET",
+        "status": 200,
+        "held": true,
+        "client_closed": true
+      },
+      "deadline_ms": 15000
+    },
+    "replacement": {
+      "timeout": {
+        "path": "/api/data/v1/artifacts/068318cd94934bf49f16f5e6d8314241/content",
+        "bytes": 49,
+        "status": 200
+      },
+      "late": {
+        "path": "/api/data/v1/artifacts/068318cd94934bf49f16f5e6d8314241/content",
+        "bytes": 49,
+        "status": 200
+      },
+      "timeout_delivery": {
+        "path": "/api/data/v1/artifacts/068318cd94934bf49f16f5e6d8314241/content",
+        "method": "GET",
+        "status": 200,
+        "held": true,
+        "client_closed": true
+      },
+      "late_delivery": {
+        "path": "/api/data/v1/artifacts/068318cd94934bf49f16f5e6d8314241/content",
+        "method": "GET",
+        "status": 200,
+        "held": true,
+        "client_closed": true
+      },
+      "deadline_ms": 15000
+    }
+  },
+  "checks": [
+    "Exact pending query recovers after original physical backend returns; canonical replay/readback preserved",
+    "Another Data replacement retains recovered result; fresh query verifies rebuilt backend",
+    "Actual Data bytes held after owner200; default15s browser timeout visibly fails and clears protected source",
+    "Late actual response released after foreign context; request completion observed, protected source remains cleared",
+    "Both source and clean consumer installations pass failure journey",
+    "Earlier owner/graph/receipt/specimen/reuse/reconstruction gates pass"
+  ],
+  "limits": [
+    "New explicitly pinned retrieval generation, not same-ID physical rematerialization",
+    "Fresh processes of independently installed owners; separate clean Studio installation",
+    "No power-loss, production gateway, semantic-vector quality or scientific-validity claim"
+  ]
+}

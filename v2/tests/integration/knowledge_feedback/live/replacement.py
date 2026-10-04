@@ -45,6 +45,8 @@ def prove(scenario, records, output):
     with patch.object(qdrant_fixture, 'STATE', qdrant_fixture.ROOT / '.test-results/qdrant-replacement-fixture.json'):
         backend = qdrant_fixture.owned_state()
     config = json.loads((scenario.directory / 'data_artifacts.json').read_text(encoding='utf-8'))
+    primary_endpoint = config['retrieval']['endpoint']
+    primary_token = scenario.environments['data_artifacts']['QDRANT_TOKEN']
     assert config['retrieval']['endpoint'] != backend['endpoint']
     config['retrieval']['endpoint'] = backend['endpoint']
     scenario.environments['data_artifacts']['QDRANT_TOKEN'] = backend['api_key']
@@ -67,6 +69,19 @@ def prove(scenario, records, output):
     assert scenario.data.request('/v1/retrieval/queries/baseline') == original['query']
     assert scenario.data.request('/v1/retrieval/generations', generation_request) == generation
     assert scenario.data.request('/v1/retrieval/queries', query) == result
+    config['retrieval']['endpoint'] = primary_endpoint
+    scenario.environments['data_artifacts']['QDRANT_TOKEN'] = primary_token
+    processes['data_recovery'] = scenario.replace('data_artifacts', config=config)
+    recovered = scenario.data.request('/v1/retrieval/queries', old_query)
+    assert recovered['matches'] == original['query']['matches']
+    assert scenario.data.request('/v1/retrieval/queries', old_query) == recovered
+    assert scenario.data.request('/v1/retrieval/queries/absent-projection') == recovered
+    config['retrieval']['endpoint'] = backend['endpoint']
+    scenario.environments['data_artifacts']['QDRANT_TOKEN'] = backend['api_key']
+    processes['data_final'] = scenario.replace('data_artifacts', config=config)
+    fresh = scenario.data.request('/v1/retrieval/queries', {**query, 'retrieval_id': 'after-owner-replacement'})
+    assert fresh['matches'] == original['query']['matches']
+    assert scenario.data.request('/v1/retrieval/queries/absent-projection') == recovered
     with tempfile.TemporaryDirectory(prefix='amphora-feedback-consumer-') as temporary:
         workspace = Path(temporary).resolve()
         assert workspace.is_relative_to(Path(tempfile.gettempdir()).resolve())
@@ -89,7 +104,8 @@ def prove(scenario, records, output):
         consumer = verify(scenario, records, studio, output / 'browser', browser=True)
     return {'knowledge': rebuilt, 'snapshots_preserved': [head['snapshot'] for head in heads],
         'processes': processes, 'missing_physical_index': missing, 'pending_query': pending,
-        'generation': generation, 'retrieval': result, 'consumer': consumer, 'consumer_tests': manifest['tests'],
+        'generation': generation, 'retrieval': result, 'recovered_query': recovered, 'fresh_query': fresh,
+        'consumer': consumer, 'consumer_tests': manifest['tests'],
         'consumer_manifest_sha256': hashlib.sha256(manifest_path.read_bytes()).hexdigest(),
         'limits': ['New explicitly pinned retrieval generation, not same-ID physical rematerialization',
                    'Fresh processes of independently installed owners; separate clean Studio installation',

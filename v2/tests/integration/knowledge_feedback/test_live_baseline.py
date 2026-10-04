@@ -80,7 +80,7 @@ def test_actual_source_graph_baseline(tmp_path):
         path = os.environ.get('AMPHORA_TEST_FEEDBACK_EVIDENCE')
         if path:
             Path(path).write_text(json.dumps({'scope': scope, 'status': 'integrated_baseline_verified',
-                'limits': ['Synthetic hypothesis; no scientific-validity claim', 'Independent rebuild/replacement and final audit remain later gates'],
+                'limits': ['Synthetic hypothesis; no scientific-validity claim', 'Evidence covers explicitly enabled scenarios; production deployment and scientific validity are not claimed'],
                 'records': result}, indent=2) + '\n', encoding='utf-8')
     finally:
         runtime.close()
