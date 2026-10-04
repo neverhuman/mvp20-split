@@ -2,12 +2,12 @@
 
 ## Current checkpoint
 
-- Last refreshed: 2026-10-04 01:53:10 (America/Chicago).
-- Latest pushed90cda1c closes BP-06. BP-07.01 activated, B1.01 complete pending commit. Child6.25%,Build8.33%,Acceptance0%; parent1.25%,0/20 closed gates. Current B1.02 deterministic provider port, next B1.03 own persistence. Read canonical child and BP-07.01 Physical design before coding.
-- New contracts/planning0.1 + services/agent_planning0.1: strict context/model/request/attempt DTOs, pure immutable RequestSnapshot/ContextPolicy/AttemptBinding.42 source/42 independent tests,60 with dev20.65s;84 statements/8 branches100%;484 schemas preserve466 predecessors. Dev uv sync installed both. No tests running.
-- Independent8-wheel closure .test-results/planning-context-independent-20261004/environment/Scripts/python.exe, manifest/build.log/tests.xml. Context_Contracts.json records evidence. No private service peers, FastAPI or SQLAlchemy installed in that pure closure. No provider dispatch, DB, live model or Runtime acceptance implemented yet.
-- Continue after commit/push to B1.02 deterministic adversarial provider and bounded output/proposal envelope; B1.03 persistence then B1.04 actual owner readback. B2 durable budget/attempt accounting, B3 recovery, V1 independent audit. Live provider/model, egress and spend choices require owner direction only before real calls; deterministic work unblocked.
-- Use PYTHONUTF8=1 in each tool shell before Python scripts. Explicit short pytest IDs for large malformed input cases; default IDs previously overflowed filesystem/logs and were fixed. Source/provider tests should remain scoped; DB suites serial.
+- Last refreshed: 2026-10-04 02:00:10 (America/Chicago).
+- Latest pushed98b2ac2; B1.02 verified pending commit/push. BP-07.01 child12.50%,Build16.67%,Acceptance0%; parent2.50%,0/20 closed gates. Current B1.03 private request/attempt/output persistence, next B1.04 actual replay/independent proof. Read canonical child/physical design.
+- planning0.2/Agent Planning0.2 deterministic provider/capture/reference-only proposal profile.69 source69 independent tests,87 with dev14.62s;233 statements42 branches100%;488 schemas preserve484 predecessors. Independent8-wheel .test-results/planning-provider-independent-20261004/environment/Scripts/python.exe (pure only; no SQLAlchemy). Provider_Port.json evidence. No tests running.
+- B1.03 next design: separate planning migrator/service roles and planning schema in retained fixture, immutable request canonical bytes/provenance, exact physical attempt identity and bounded output/usage journal. No cross-owner SQL/import. Persist attempt intent before any orchestrated call; B2 owns conservative budget reservations/fencing/retries. Do not expose actual dispatch before B2; pure observe is an internal adapter boundary. Need review existing owner migration conventions before coding; no schema/service persistence files created yet.
+- Provider profile supports only deterministic/adversarial-fixture/revision1 and exact reviewed ReferenceProposal schema. Captures64KiB/256 chunks; no live transport timeout guarantee. Proposals reference selected Artifacts only or abstain; no inline extraction/domain acceptance. Later BP-07.02/.03 profiles expand task payloads. Raw output remains private request-scoped diagnostic content.
+- Continue after commit/push; live model/provider, egress and spend require owner choices only before real calls. PYTHONUTF8=1 each shell. Short pytest IDs for large inputs. PostgreSQL suites serial, no resets/downgrades; add only own schema/roles. No subagents.
 
 ## Retained installations and fixtures
 

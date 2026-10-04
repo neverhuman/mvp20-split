@@ -127,3 +127,7 @@ BP-07.02/.03 now preserve extraction/repair provenance, distinguish inferred fro
 ## 2026-10-04 01:53:10 - Activation and B1.01
 
 BP-06 closed90cda1c; corrected-ready activation preserves Runtime/domain authority. New planning0.1/Agent Planning0.1 pure context and attempt boundary.42 source/42 independent;60 including dev;84 statements/8 branches100%;484 schemas preserve466 predecessor bytes.8-wheel isolated closure excludes private peers. Child6.25%,parent1.25%, Build8.33%,Acceptance0%; B1.02 provider port active.
+
+## 2026-10-04 02:00:10 - B1.02 deterministic provider
+
+Additive planning0.2/Agent Planning0.2, bounded64KiB/256-chunk capture and distinct policy/invalid/unavailable/unknown/abstain/proposed outcomes. Reference-only profile cannot invent or substitute selected Artifact identity; actual task payload generation remains later profiles.69 source/69 independent tests,87 with dev;233 statements/42 branches100%;488 schemas preserve484 old bytes. Child12.50%,parent2.50%,Build16.67%; B1.03 persistence active.

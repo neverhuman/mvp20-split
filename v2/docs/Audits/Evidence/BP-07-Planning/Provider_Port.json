@@ -1,0 +1,48 @@
+{
+  "verified_at": "2026-10-04 02:00:10",
+  "status": "passed",
+  "scope": "BP-07.01 B1.02 deterministic provider and reference-only proposal profile",
+  "source_tests": 69,
+  "source_seconds": 2.7,
+  "source_and_dev_tests": 87,
+  "source_and_dev_seconds": 14.62,
+  "independent_tests": 69,
+  "independent_seconds": 5.14,
+  "wheels": {
+    "amphora_agent_planning-0.2.0-py3-none-any.whl": "a4df810a6bfebe8d9806f47094c44771c247d268655b5e00bacbd39fb7042add",
+    "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+    "amphora_contracts_planning-0.2.0-py3-none-any.whl": "c0e1ce8cd2d87ae2bbb443536e46ac2c1d9f9875dcac8d9498d0ef061291aa56",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee"
+  },
+  "coverage": {
+    "covered_lines": 233,
+    "num_statements": 233,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 4,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100",
+    "num_branches": 42,
+    "num_partial_branches": 0,
+    "covered_branches": 42,
+    "missing_branches": 0,
+    "percent_branches_covered": 100.0,
+    "percent_branches_covered_display": "100"
+  },
+  "schemas": {
+    "total": 488,
+    "added": 4,
+    "unchanged_predecessors": 484,
+    "proposal_profile_digest_matches_publication": true
+  },
+  "limits": [
+    "No live provider or network deadline proof",
+    "No durable request/attempt storage or budget reservation yet",
+    "Reference-only proposal; no content creation or domain acceptance"
+  ]
+}

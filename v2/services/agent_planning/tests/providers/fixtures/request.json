@@ -1,0 +1,150 @@
+{
+  "schema_version": "1",
+  "reference": {
+    "scope": {
+      "tenant_id": "planning-fixture",
+      "project_id": "context"
+    },
+    "engagement_id": "decision-1"
+  },
+  "actor_id": "fixture",
+  "purpose": "knowledge_decomposition",
+  "decision_scope": "3333333333333333333333333333333333333333333333333333333333333333",
+  "runtime_cut": null,
+  "context": {
+    "schema_version": "1",
+    "scope": {
+      "tenant_id": "planning-fixture",
+      "project_id": "context"
+    },
+    "objective": {
+      "scope": {
+        "tenant_id": "planning-fixture",
+        "project_id": "context"
+      },
+      "artifact_id": "objective",
+      "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "media_type": "text/plain",
+      "schema_ref": {
+        "schema_id": "fixture.text",
+        "version": "1",
+        "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+      },
+      "size_bytes": 12
+    },
+    "prompt": {
+      "scope": {
+        "tenant_id": "planning-fixture",
+        "project_id": "context"
+      },
+      "artifact_id": "prompt",
+      "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "media_type": "text/plain",
+      "schema_ref": {
+        "schema_id": "fixture.text",
+        "version": "1",
+        "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+      },
+      "size_bytes": 12
+    },
+    "policy": {
+      "scope": {
+        "tenant_id": "planning-fixture",
+        "project_id": "context"
+      },
+      "artifact_id": "policy",
+      "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "media_type": "text/plain",
+      "schema_ref": {
+        "schema_id": "fixture.text",
+        "version": "1",
+        "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+      },
+      "size_bytes": 12
+    },
+    "model": {
+      "provider_id": "deterministic",
+      "model_id": "adversarial-fixture",
+      "model_revision": "1",
+      "configuration": {
+        "scope": {
+          "tenant_id": "planning-fixture",
+          "project_id": "context"
+        },
+        "artifact_id": "configuration",
+        "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+        "media_type": "text/plain",
+        "schema_ref": {
+          "schema_id": "fixture.text",
+          "version": "1",
+          "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+        },
+        "size_bytes": 12
+      },
+      "tokenizer": {
+        "schema_id": "fixture.text",
+        "version": "1",
+        "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+      },
+      "context_window_tokens": 4096
+    },
+    "entries": [
+      {
+        "artifact": {
+          "scope": {
+            "tenant_id": "planning-fixture",
+            "project_id": "context"
+          },
+          "artifact_id": "source",
+          "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+          "media_type": "text/plain",
+          "schema_ref": {
+            "schema_id": "fixture.text",
+            "version": "1",
+            "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+          },
+          "size_bytes": 12
+        },
+        "role": "source",
+        "required": true
+      }
+    ],
+    "omissions": [
+      {
+        "artifact": {
+          "scope": {
+            "tenant_id": "planning-fixture",
+            "project_id": "context"
+          },
+          "artifact_id": "extra",
+          "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+          "media_type": "text/plain",
+          "schema_ref": {
+            "schema_id": "fixture.text",
+            "version": "1",
+            "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+          },
+          "size_bytes": 12
+        },
+        "reason": "budget"
+      }
+    ],
+    "allowed_actions": [
+      "propose_knowledge_change",
+      "abstain"
+    ],
+    "output_schema": {
+      "schema_id": "fixture.text",
+      "version": "1",
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    "limits": {
+      "max_input_tokens": 1024,
+      "max_output_tokens": 1024,
+      "max_attempts": 2,
+      "total_tokens": 4096,
+      "total_accounting_units": 100,
+      "accounting_unit": "fixture-unit"
+    }
+  }
+}

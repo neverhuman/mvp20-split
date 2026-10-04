@@ -933,3 +933,5 @@ Archived MBT checkpoints:
 | 2026-10-03 18:46:24 | B2.04a complete; child45.83%, parent74.31%; b active | [Retrieval API/hosting](../../Audits/Evidence/BP-06-Representations/Retrieval_API.json);41 source/41 installed,18 dev;117 statements/26 branches |
 
 | 2026-10-03 18:56:17 | B2.04b complete; child47.92%, parent74.65%; c active | [Profile migration](../../Audits/Evidence/BP-06-Representations/Profile_Migration.json);83 source/83 installed,18 dev;legacy v1 descriptors unchanged |
+
+| 2026-10-03 19:04:12 | B2 complete; child50%, parent75%; B3.01 active; gates2/4 and18/24 | [Installed retrieval HTTP](../../Audits/Evidence/BP-06-Representations/Retrieval_HTTP_Replacement.json);source/installed public-only3process reconstruction and authority |
