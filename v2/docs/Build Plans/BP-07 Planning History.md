@@ -426,3 +426,12 @@ B2.03c verified 2026-10-04 15:50:14:Planning0.30 with actual Data0.29/Research0.
 Archived MBT checkpoint:
 
 | 2026-10-04 02:25:10 | B2.01a complete; child29.17%,parent5.83%; B2.01b active; MBT mirror corrected | [Budget policy](../Audits/Evidence/BP-07-Planning/Budget_Policy.json);40 source/dev,108 installed |
+
+
+## Trace oracle verification 2026-10-04 15:56:11
+
+B3.01 verified 2026-10-04 15:56:11:136 scoped cases53.24s cover EXT-TRACE-01/02/03 and QEV-08, including actual owned SQL failed/repaired history and replay. Existing meaningful tests reused; no duplicate tests or production changes. Same0.30 independent39-stage and combined-owner evidence is explicitly reused. No live semantic/scientific or new coverage claim. B3=33.33%;child58.33%,Build77.78%,parent31.67%;closed2/4 and6/20. Current B3.02. [Oracle map](BP-07/BP-07.02%20Trace%20oracles.md), [evidence](../Audits/Evidence/BP-07-Extraction/Trace_Oracles.json).
+
+Archived MBT checkpoint:
+
+| 2026-10-04 03:14:24 | BP-07.01 closed100%,4/4; parent20%,4/20; BP-07.02 activation next | [Closeout](../Audits/BP-07.01_Model_Engagement_Closeout.md);173 source/installed,11 readback+15 abrupt-recovery processes |

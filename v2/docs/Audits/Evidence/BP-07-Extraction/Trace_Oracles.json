@@ -1,0 +1,43 @@
+{
+  "verified_at": "2026-10-04 15:56:11",
+  "status": "passed",
+  "gate": "BP-07.02/B3.01",
+  "planning": "0.30.0",
+  "tests": {
+    "tests": 136,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0
+  },
+  "pytest_seconds": 53.24,
+  "junit_seconds": 53.139,
+  "report": ".test-results/planning-trace-oracles-20261004.xml",
+  "report_sha256": "6de40d22702d5378a216c3a7a7ce0ed31e5d3a716affdbba968f6a55b274c74b",
+  "scope": [
+    "extraction/",
+    "source_access/test_review.py",
+    "research_proposals/test_validation.py",
+    "result_publication/test_payloads.py",
+    "persistence/test_extraction.py",
+    "persistence/test_edit_profiles.py",
+    "persistence/test_repair_runner.py",
+    "persistence/test_repair_chain.py"
+  ],
+  "oracles": [
+    "EXT-TRACE-01",
+    "EXT-TRACE-02",
+    "EXT-TRACE-03",
+    "QEV-08"
+  ],
+  "oracle_map": "BP-07.02 Trace oracles.md",
+  "reused_process_evidence": [
+    "Owner_Handoff_Coordinator.json: same production0.30 independent844 tests/39 process stages",
+    "Combined_Owner_Acceptance.json: nine Planning workers/six owners, exact historical replay and future pin"
+  ],
+  "limits": [
+    "Existing meaningful tests reused; no new implementation or duplicate test added",
+    "Owned PostgreSQL tests use fresh scopes; peer inputs/provider responses remain scripted in this run",
+    "Process/actual-owner evidence is previously verified and explicitly reused, not rerun here",
+    "No new coverage, live semantic/model-quality or scientific-validity claim"
+  ]
+}

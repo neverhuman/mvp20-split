@@ -2,13 +2,13 @@
 
 ## Resume here
 
-- Refreshed 2026-10-04 15:50:14 (America/Chicago). **Read this first after every compression**, explicitly requested by the owner.
+- Refreshed 2026-10-04 15:56:11 (America/Chicago). **Read this first after every compression**, explicitly requested by the owner.
 - Continue across milestones, commits/pushes and compaction until genuinely blocked. No subagents, JARVIS access or v1 edits. No milestone-only final pause.
-- **Current BP-07.02/B3.01: source-stated/inferred/failed/repaired trace oracles.** B2.03c combined acceptance passed; checkpoint pending commit/push. Latest pushed **77d3a2a4** Planning0.30. Prior storage c54950e6.
+- **Current BP-07.02/B3.02: synthetic semantic-category corpus.** B3.01 passed136 cases53.24s; docs checkpoint pending commit/push. Latest pushed **22712feb** combined owner acceptance, Planning0.30. Prior storage c54950e6.
 - **No tests/hosts running.** Session51361 passed combined r3,9 Planning workers/6 owners; cleanup completed. Manifest `v2/.test-results/planning-combined-owners-r3-20261004/manifest.json`. R1/r2 failed fixture setup cases retained; no reset.
 - Planning/dev0.30/publicPlanning0.7; planning0011 unchanged. Never run Planning<=0.28 migrators. Research0013/Data artifact0012 unchanged; no Research<=0.33 or Data<=0.25 migrators. No reset/downgrade/deletion of retained fixtures.
-- Canonical child50.00%,Build66.67%,Acceptance0%,2/4 closed. B1/B2=100%,B3/V1=0%; B2 all milestones/substeps100%. Parent30.00%,6/20; P1=100%,P2=50.00%,others0%.
-- Child/parent/MBT/history/design/module READMEs updated; MBT25 rows. Evidence Combined_Owner_Acceptance.json. Ruff/boundaries passed; final whitespace/tracker review then commit/push before B3.01.
+- Canonical child58.33%,Build77.78%,Acceptance0%,2/4 closed. B1/B2=100%,B3=33.33%,V1=0%; B2 all milestones/substeps100%. Parent31.67%,6/20; P1=100%,P2=58.33%,others0%.
+- Child/parent/MBT/history/design/module READMEs updated; MBT25 rows. Evidence Trace_Oracles.json and BP-07.02 Trace oracles.md. No tests running; session20841 passed136 cases. Review/commit/push docs then B3.02.
 
 ## Verified Planning0.30 coordinator
 
@@ -25,9 +25,9 @@
 
 ## Next authorized work
 
-1. Commit/push the verified combined acceptance checkpoint, then B3.01 trace oracles. No owner decision blocks deterministic work.
+1. Commit/push verified B3.01 checkpoint, then B3.02 synthetic semantic-category corpus. No owner decision blocks deterministic work.
 2. Physical design: B3 equal .01 source-stated/inferred/failed/repaired trace oracles; .02 synthetic semantic-category corpus; .03 peer/head/retry/process failures. V1 equal independent acceptance and scoped audit/archive. Preserve order.
-3. B3.01 inspection started read-only: tests/extraction/test_trace.py already has pure source/inferred/missing-context/failed-and-repaired invariants. Map EXT-TRACE-01/02/03 and QEV-08 to concrete reviewed oracles, use actual owned persistence/replacement where required, close remaining gaps without redundant tests.
+3. B3.01 verification complete: tests/extraction/test_trace.py already has pure source/inferred/missing-context/failed-and-repaired invariants. Oracle map links EXT-TRACE-01/02/03 and QEV-08 to136 passing focused cases and explicitly reused same0.30 independent replacement evidence. No new production or duplicate tests needed.
 4. Corpus has eighteen pinned manually authored source/oracle pairs under tests/extraction/corpus, calibration/held_out across nine categories. Existing test_corpus.py checks hashes/split/completeness only, not semantic evaluation. Meaning oracles are prose, reviewed by coding agent, not human/domain gold. Do not modify pinned corpus or invent live model results.
 5. Combined gate uses real Data0.29/Research0.34/Knowledge0.18, independent scoped credentials and both verified Planning0.30 installs. Nine workers/six owners pass. Only tests/dev files changed; no source-package version/migration changes. Two accepted corrections rebuild after full source rights withdrawal; original campaign stable, explicit future pin. Pending case configures unavailable loopback Data endpoint; no actual Data death claim.
 6. Live provider/model/egress/spend choices block only actual calls. Continue through authorized deterministic work and keep this handoff current.
