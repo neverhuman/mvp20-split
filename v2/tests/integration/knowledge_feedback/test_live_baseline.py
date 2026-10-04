@@ -59,6 +59,8 @@ def test_actual_source_graph_baseline(tmp_path):
         if os.environ.get('AMPHORA_TEST_FEEDBACK_SUCCESSOR') == '1':
             from .live.feedback import progress
             result['feedback'] = progress(scenario, result, runtime)
+        from .live.reuse import prove as prove_reuse
+        result['reuse'] = prove_reuse(scenario, result)
         root = Path(__file__).absolute().parents[3]
         owners = {name: {'endpoint': owner.endpoint, 'token': owner.token} for name, owner in
             [('data', scenario.data), ('research', scenario.research), ('knowledge', scenario.knowledge)]}
@@ -71,7 +73,7 @@ def test_actual_source_graph_baseline(tmp_path):
         path = os.environ.get('AMPHORA_TEST_FEEDBACK_EVIDENCE')
         if path:
             Path(path).write_text(json.dumps({'scope': scope, 'status': 'integrated_baseline_verified',
-                'limits': ['Synthetic hypothesis; no scientific-validity claim', 'Browser races, distinct-specimen comparison and independent rebuild remain later gates'],
+                'limits': ['Synthetic hypothesis; no scientific-validity claim', 'Actual browser, adverse races and independent rebuild remain later gates'],
                 'records': result}, indent=2) + '\n', encoding='utf-8')
     finally:
         runtime.close()

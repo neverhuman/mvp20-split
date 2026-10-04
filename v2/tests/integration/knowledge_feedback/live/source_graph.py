@@ -10,6 +10,7 @@ from amphora_contracts_knowledge import reasoning_artifact_schema, reasoning_art
 from .process import Owner, owned_setup
 from .specimens import install as install_specimens, read_views
 from .feedback import data_profiles, research_profiles
+from .reuse import data_profile as reuse_data_profile, profiles as reuse_profiles
 
 
 def canonical(value):
@@ -60,7 +61,9 @@ class SourceGraphScenario:
             'profiles': [{'media_type': 'text/plain', **source_schema},
                 {'media_type': 'application/json', **reasoning_artifact_schema().model_dump(mode='json'),
                  'schema_path': 'reasoning.json'}]}
-        data_config['profiles'].extend(data_profiles(self.directory))
+        feedback_profiles = data_profiles(self.directory)
+        data_config['profiles'].extend(feedback_profiles)
+        data_config['profiles'].append(reuse_data_profile(self.directory))
         if self.runtime is not None:
             self.runtime.configure_data(data_config, self.environments['data_artifacts'])
         if self.retrieval is not None:
@@ -121,12 +124,13 @@ try:
 finally: engine.dispose()
 ''', seed_environment)
         profiles = research_profiles(question, need, claim, artifact)
+        eligibility_profiles = reuse_profiles(specimens, artifact)
         self.environments['research']['DATA_TOKEN'] = self.environments['data_artifacts']['OWNER_TOKEN']
         research = self.start('research', {'database_url_env': 'OWNER_DATABASE', 'principals': [
-            {'token_env': 'OWNER_TOKEN', 'actor_id': 'reader', 'scope': scope, 'actions': ['read_declarations', 'read_scientific_record', 'assess', 'read_assessment', 'publish_assessment', 'read_assessment_publication', 'correct_assessment_receipt', 'select_assessment_receipt']}],
+            {'token_env': 'OWNER_TOKEN', 'actor_id': 'reader', 'scope': scope, 'actions': ['read_declarations', 'assess_eligibility', 'read_scientific_assessment', 'read_scientific_record', 'assess', 'read_assessment', 'publish_assessment', 'read_assessment_publication', 'correct_assessment_receipt', 'select_assessment_receipt']}],
             'assessment': {'profiles': profiles, 'data': {'endpoint': data.endpoint, 'token_env': 'DATA_TOKEN'},
                 'publication': {'actor_id': 'fixture', 'issuer_id': 'research-synthetic', 'token_env': 'DATA_TOKEN'}},
-            'science': {'lab_profiles': [], 'eligibility_profiles': [], 'synthesis_profiles': [],
+            'science': {'lab_profiles': [], 'eligibility_profiles': eligibility_profiles, 'synthesis_profiles': [],
                 'data': {'endpoint': data.endpoint, 'token_env': 'DATA_TOKEN'},
                 'publication': {'actor_id': 'fixture', 'token_env': 'DATA_TOKEN'}, 'consumer_publishers': []}},
             self.environments['research']['OWNER_TOKEN'])
@@ -166,5 +170,7 @@ finally: engine.dispose()
         graph_views = {'catalog': knowledge.request('/v1/graph-explore/catalog', head['snapshot']),
             'entities': knowledge.request('/v1/graph-explore/entities', {'wire_version': '1', 'revision': head['snapshot'], 'limit': 50})}
         return {'source': source, 'span': span, 'trace': trace, 'question': question, 'need': need,
+            'eligibility_profiles': eligibility_profiles,
+            'feedback_schemas': {p['schema_id']: {k: p[k] for k in ('schema_id', 'version', 'sha256')} for p in feedback_profiles},
             'specimens': specimens, 'research_views': views, 'knowledge_views': graph_views,
             'proposal': proposal, 'assessment_profiles': profiles, 'head': head, 'assertion': claim['reference'], 'reasoning': reasoning, 'publication': published}

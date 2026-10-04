@@ -1,0 +1,27 @@
+{
+  "verified_at": "2026-10-04 00:46:37",
+  "status": "passed",
+  "scope": "BP-06.06 B2.04d prepared-state reuse acceptance",
+  "tests": 1,
+  "seconds": 93.51,
+  "actual_records": ".test-results/feedback-reuse-20261004.json",
+  "sha256": "e520b067af12b4b720c1bfa371306a19ef3eacc2d1d9f8ce95e2ae98200cd1c1",
+  "checks": [
+    "Exact-context original assessment eligible and idempotent",
+    "Changed profile with same decision identity rejected HTTP409",
+    "Different prepared-state evidence is unknown with applicability_mismatch",
+    "Matching second-state evidence remains eligible with temperature_review and focus retained",
+    "All persisted decisions and original history read back exactly",
+    "Prior source, Qdrant, corrected campaigns and compiled Studio checks pass"
+  ],
+  "observed": {
+    "original": "eligible",
+    "wrong_state": "unknown",
+    "correct_state": "eligible"
+  },
+  "limits": [
+    "Synthetic purpose-specific eligibility; no scientific validity claim",
+    "No generic cache implementation or UI authority claim",
+    "Actual browser, adverse races and independent rebuild remain B3"
+  ]
+}

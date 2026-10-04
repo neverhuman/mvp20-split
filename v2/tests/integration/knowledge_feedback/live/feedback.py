@@ -86,7 +86,7 @@ def progress(scenario, baseline, runtime):
     question, need = baseline['question'], baseline['need']
     context = question['applicability']
     original_observation = baseline['specimens']['observation-revision']
-    report_profile = next(p for p in data_profiles(scenario.directory) if p['schema_id'] == 'fixture.observation-report')
+    report_profile = baseline['feedback_schemas']['fixture.observation-report']
     report_schema = {k: report_profile[k] for k in ('schema_id', 'version', 'sha256')}
     method = {'transformation_id': need['method']['schema_id'], 'version': need['method']['version'], 'sha256': need['method']['sha256']}
     profiles = baseline['assessment_profiles']
