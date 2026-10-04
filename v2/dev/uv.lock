@@ -400,7 +400,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-knowledge"
-version = "0.16.0"
+version = "0.17.0"
 source = { editable = "../services/knowledge" }
 dependencies = [
     { name = "alembic" },

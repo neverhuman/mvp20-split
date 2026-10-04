@@ -18,7 +18,7 @@ Knowledge owns typed domain graph edits, immutable accepted history and snapshot
 | [Reasoning](src/amphora_knowledge/reasoning/README.md) | Bounded signed rules, exact context/snapshot binding, immutable profile/request/result history and fresh provenance review |
 | [Publication](src/amphora_knowledge/publication/README.md) | Exact reviewed result/inputs, fenced durable attempt journal, public Data publication/recovery and atomic synthetic logical receipts |
 | [Corrections](src/amphora_knowledge/corrections/README.md) | Immutable chain revisions and separately granted future-campaign selection |
-| [Exploration](src/amphora_knowledge/exploration/README.md) | Bounded exact-snapshot search, neighborhood, selected detail and schema-pinned catalog; pure policy implemented, owner/API integration pending |
+| [Exploration](src/amphora_knowledge/exploration/README.md) | Bounded exact-snapshot search, neighborhood, selected detail and schema-pinned catalog; authenticated owner/API reads through the exact-revision ledger |
 | [Transport](src/amphora_knowledge/transport/README.md) | Authenticated API, pinned-profile discovery and explicit local host configuration |
 
 Dependencies are public tool-protocol SDK and Commands/Core/Knowledge/Artifacts/Evidence/Research/Graph Runtime contracts plus Pydantic/FastAPI/Uvicorn, SQLAlchemy/psycopg/Alembic and the standard library. Exact pins are canonical in pyproject.toml and uv.lock. No peer implementation imports, peer SQL, shared ORM, source payload storage, LLM calls or campaign execution exist. knowledge_0001/0002/0003/0004/0005/0006/0007 are applied forward-only migrations; startup does not migrate. Stored graph profiles and accepted identities survive process replacement.
@@ -46,3 +46,5 @@ B1.10 compatibility patch updates exact Research0.5.0 contract dependency closur
 BP-06.04/B1.04 compatibility release0.15.1 updates exact public Research/Evidence/Knowledge dependency pins only. This release changes no service behavior or migration; earlier actual-peer acceptance remains recorded at its tested version.
 
 BP-06.04/B1.06 compatibility release0.15.2 updates exact public contract dependencies only; no service implementation or migration change. Actual peer evidence remains tied to the recorded tested version.
+
+BP-06.06 Knowledge0.17 adds read-only bounded graph-explore routes. Public Knowledge0.8 contracts and452 schemas remain unchanged; no migration or new grant. See exploration module for exact history, pagination and failure semantics.

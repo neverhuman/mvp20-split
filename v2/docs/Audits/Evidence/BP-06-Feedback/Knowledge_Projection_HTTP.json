@@ -1,0 +1,427 @@
+{
+  "timestamp_local": "2026-10-03 21:07:50",
+  "task": "BP-06.06/B1.02b",
+  "status": "verified",
+  "source": {
+    "tests": 56,
+    "seconds": 27.25,
+    "coverage": {
+      "covered_lines": 233,
+      "num_statements": 233,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100",
+      "num_branches": 32,
+      "num_partial_branches": 0,
+      "covered_branches": 32,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    }
+  },
+  "installed": {
+    "timestamp_local": "2026-10-03 21:05:14",
+    "status": "passed",
+    "scope": "Installed Knowledge exploration/API/authoring/replay and public contracts; actual owner SQL and installed HTTP/replacement with peers offline, synthetic accepted-input seeding",
+    "tests": {
+      "tests": 205,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "packages": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.13",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-knowledge": "0.8.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-knowledge": "0.17.0",
+      "amphora-tool-protocol": "0.2.0"
+    },
+    "wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+      "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_knowledge-0.17.0-py3-none-any.whl": "4e9214df3d46ae34902cd6dd6ba188df7fe9b5a64353f854d92ab397055203eb",
+      "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+    }
+  },
+  "installed_seconds": 34.76,
+  "process": {
+    "timestamp_local": "2026-10-03 21:05:08",
+    "original": {
+      "graph": {
+        "scope": {
+          "tenant_id": "synthetic",
+          "project_id": "d26da072319c402fa6a66260ae91a62b"
+        },
+        "graph_id": "domain"
+      },
+      "revision": 1,
+      "sha256": "b699293e3c5357c39798144fb0fb405f20588d7bf8e1cbbf745bcd3ef79f57a5"
+    },
+    "successor": {
+      "graph": {
+        "scope": {
+          "tenant_id": "synthetic",
+          "project_id": "d26da072319c402fa6a66260ae91a62b"
+        },
+        "graph_id": "domain"
+      },
+      "revision": 2,
+      "sha256": "65a7affeece1c7223968245f5c0b2bc0a74a5a81c30810c1e0d569c4e0069b3c"
+    },
+    "first_page": {
+      "wire_version": "1",
+      "request": {
+        "wire_version": "1",
+        "revision": {
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "d26da072319c402fa6a66260ae91a62b"
+            },
+            "graph_id": "domain"
+          },
+          "revision": 1,
+          "sha256": "b699293e3c5357c39798144fb0fb405f20588d7bf8e1cbbf745bcd3ef79f57a5"
+        },
+        "text": "",
+        "entity_type": null,
+        "history": "current",
+        "limit": 1,
+        "position": null
+      },
+      "query_sha256": "e49b04cc78293da97bb64e858d3fb207e2d5645a2e333362f3a6cc2f6a1dbc9d",
+      "total": 2,
+      "entities": [
+        {
+          "reference": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "d26da072319c402fa6a66260ae91a62b"
+              },
+              "graph_id": "domain"
+            },
+            "entity_id": "A",
+            "revision": 1
+          },
+          "entity_type": "concept",
+          "label": "A",
+          "is_latest": true,
+          "alias_target": null
+        }
+      ],
+      "next_position": {
+        "query_sha256": "e49b04cc78293da97bb64e858d3fb207e2d5645a2e333362f3a6cc2f6a1dbc9d",
+        "entity_offset": 1,
+        "assertion_offset": 0
+      }
+    },
+    "second_page": {
+      "wire_version": "1",
+      "request": {
+        "wire_version": "1",
+        "revision": {
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "d26da072319c402fa6a66260ae91a62b"
+            },
+            "graph_id": "domain"
+          },
+          "revision": 1,
+          "sha256": "b699293e3c5357c39798144fb0fb405f20588d7bf8e1cbbf745bcd3ef79f57a5"
+        },
+        "text": "",
+        "entity_type": null,
+        "history": "current",
+        "limit": 1,
+        "position": {
+          "query_sha256": "e49b04cc78293da97bb64e858d3fb207e2d5645a2e333362f3a6cc2f6a1dbc9d",
+          "entity_offset": 1,
+          "assertion_offset": 0
+        }
+      },
+      "query_sha256": "e49b04cc78293da97bb64e858d3fb207e2d5645a2e333362f3a6cc2f6a1dbc9d",
+      "total": 2,
+      "entities": [
+        {
+          "reference": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "d26da072319c402fa6a66260ae91a62b"
+              },
+              "graph_id": "domain"
+            },
+            "entity_id": "B",
+            "revision": 1
+          },
+          "entity_type": "concept",
+          "label": "B",
+          "is_latest": true,
+          "alias_target": null
+        }
+      ],
+      "next_position": null
+    },
+    "catalog": {
+      "wire_version": "1",
+      "owner": "knowledge",
+      "revision": {
+        "graph": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "d26da072319c402fa6a66260ae91a62b"
+          },
+          "graph_id": "domain"
+        },
+        "revision": 1,
+        "sha256": "b699293e3c5357c39798144fb0fb405f20588d7bf8e1cbbf745bcd3ef79f57a5"
+      },
+      "views": [
+        {
+          "view_id": "entity_search",
+          "version": "1",
+          "result_schema": {
+            "schema_id": "knowledge.entity-search-page",
+            "version": "1",
+            "sha256": "b8242e0a174460ea260da1e2acdce718066a720cc168af79eba593a77a146b0b"
+          }
+        },
+        {
+          "view_id": "neighborhood",
+          "version": "1",
+          "result_schema": {
+            "schema_id": "knowledge.neighborhood-page",
+            "version": "1",
+            "sha256": "643a4a591788af1b1cadbc23c2917cb20eb16b46568016621e63b8447ac3c86a"
+          }
+        },
+        {
+          "view_id": "object_detail",
+          "version": "1",
+          "result_schema": {
+            "schema_id": "knowledge.object-detail",
+            "version": "1",
+            "sha256": "49e0e757373fa7c8cf55b96db04493ae83c9676b2a5bdb41a44386e91cecfcb1"
+          }
+        }
+      ],
+      "limits": {
+        "search_page": 50,
+        "entity_page": 64,
+        "assertion_page": 128,
+        "radius": 2,
+        "response_bytes": 1048576,
+        "source_fetch": "separate_data_authority"
+      }
+    },
+    "assertions_original": 1,
+    "assertions_successor": 0,
+    "replacement_equality": true,
+    "revoked_grant_status": 403,
+    "scope": "Actual PostgreSQL, independently installed Knowledge HTTP and process replacement; synthetic accepted-input seeding, Data/Research offline; no scientific authority"
+  },
+  "source_process": {
+    "timestamp_local": "2026-10-03 21:05:57",
+    "original": {
+      "graph": {
+        "scope": {
+          "tenant_id": "synthetic",
+          "project_id": "1a0384c9af6948ab8c6abba92b359ada"
+        },
+        "graph_id": "domain"
+      },
+      "revision": 1,
+      "sha256": "fbcbc4b83c20d9ad6a30cdd9a9b2a0ab41d9feb84894e64f65297278c40e9062"
+    },
+    "successor": {
+      "graph": {
+        "scope": {
+          "tenant_id": "synthetic",
+          "project_id": "1a0384c9af6948ab8c6abba92b359ada"
+        },
+        "graph_id": "domain"
+      },
+      "revision": 2,
+      "sha256": "df4474c360ad68225be23e087f5683b8dbe35e6109fb314794e4d3c7ac80ae99"
+    },
+    "first_page": {
+      "wire_version": "1",
+      "request": {
+        "wire_version": "1",
+        "revision": {
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "1a0384c9af6948ab8c6abba92b359ada"
+            },
+            "graph_id": "domain"
+          },
+          "revision": 1,
+          "sha256": "fbcbc4b83c20d9ad6a30cdd9a9b2a0ab41d9feb84894e64f65297278c40e9062"
+        },
+        "text": "",
+        "entity_type": null,
+        "history": "current",
+        "limit": 1,
+        "position": null
+      },
+      "query_sha256": "553b25c6bc7a61d380e8f9aac72122a95b4586fc0faf1271bd12188ba90dcc39",
+      "total": 2,
+      "entities": [
+        {
+          "reference": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "1a0384c9af6948ab8c6abba92b359ada"
+              },
+              "graph_id": "domain"
+            },
+            "entity_id": "A",
+            "revision": 1
+          },
+          "entity_type": "concept",
+          "label": "A",
+          "is_latest": true,
+          "alias_target": null
+        }
+      ],
+      "next_position": {
+        "query_sha256": "553b25c6bc7a61d380e8f9aac72122a95b4586fc0faf1271bd12188ba90dcc39",
+        "entity_offset": 1,
+        "assertion_offset": 0
+      }
+    },
+    "second_page": {
+      "wire_version": "1",
+      "request": {
+        "wire_version": "1",
+        "revision": {
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "1a0384c9af6948ab8c6abba92b359ada"
+            },
+            "graph_id": "domain"
+          },
+          "revision": 1,
+          "sha256": "fbcbc4b83c20d9ad6a30cdd9a9b2a0ab41d9feb84894e64f65297278c40e9062"
+        },
+        "text": "",
+        "entity_type": null,
+        "history": "current",
+        "limit": 1,
+        "position": {
+          "query_sha256": "553b25c6bc7a61d380e8f9aac72122a95b4586fc0faf1271bd12188ba90dcc39",
+          "entity_offset": 1,
+          "assertion_offset": 0
+        }
+      },
+      "query_sha256": "553b25c6bc7a61d380e8f9aac72122a95b4586fc0faf1271bd12188ba90dcc39",
+      "total": 2,
+      "entities": [
+        {
+          "reference": {
+            "graph": {
+              "scope": {
+                "tenant_id": "synthetic",
+                "project_id": "1a0384c9af6948ab8c6abba92b359ada"
+              },
+              "graph_id": "domain"
+            },
+            "entity_id": "B",
+            "revision": 1
+          },
+          "entity_type": "concept",
+          "label": "B",
+          "is_latest": true,
+          "alias_target": null
+        }
+      ],
+      "next_position": null
+    },
+    "catalog": {
+      "wire_version": "1",
+      "owner": "knowledge",
+      "revision": {
+        "graph": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "1a0384c9af6948ab8c6abba92b359ada"
+          },
+          "graph_id": "domain"
+        },
+        "revision": 1,
+        "sha256": "fbcbc4b83c20d9ad6a30cdd9a9b2a0ab41d9feb84894e64f65297278c40e9062"
+      },
+      "views": [
+        {
+          "view_id": "entity_search",
+          "version": "1",
+          "result_schema": {
+            "schema_id": "knowledge.entity-search-page",
+            "version": "1",
+            "sha256": "b8242e0a174460ea260da1e2acdce718066a720cc168af79eba593a77a146b0b"
+          }
+        },
+        {
+          "view_id": "neighborhood",
+          "version": "1",
+          "result_schema": {
+            "schema_id": "knowledge.neighborhood-page",
+            "version": "1",
+            "sha256": "643a4a591788af1b1cadbc23c2917cb20eb16b46568016621e63b8447ac3c86a"
+          }
+        },
+        {
+          "view_id": "object_detail",
+          "version": "1",
+          "result_schema": {
+            "schema_id": "knowledge.object-detail",
+            "version": "1",
+            "sha256": "49e0e757373fa7c8cf55b96db04493ae83c9676b2a5bdb41a44386e91cecfcb1"
+          }
+        }
+      ],
+      "limits": {
+        "search_page": 50,
+        "entity_page": 64,
+        "assertion_page": 128,
+        "radius": 2,
+        "response_bytes": 1048576,
+        "source_fetch": "separate_data_authority"
+      }
+    },
+    "assertions_original": 1,
+    "assertions_successor": 0,
+    "replacement_equality": true,
+    "revoked_grant_status": 403,
+    "scope": "Actual PostgreSQL, independently installed Knowledge HTTP and process replacement; synthetic accepted-input seeding, Data/Research offline; no scientific authority"
+  },
+  "compatibility": "452 schemas unchanged; no migration or new grant",
+  "limits": [
+    "Synthetic owner-local accepted-input fixtures; no actual Data/Research source availability or scientific validation claim",
+    "Parent-process coverage excludes installed HTTP children",
+    "Initial new correction test used wrong DTO field names; repaired fixture before passing rerun"
+  ]
+}

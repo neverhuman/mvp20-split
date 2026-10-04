@@ -1,6 +1,6 @@
 # Knowledge exploration
 
-Design: [bounded exploration](../../../../../docs/Build%20Plans/BP-06/BP-06.06%20Knowledge%20exploration%20design.md). BP-06.06/B1.02a implements pure projections; authenticated owner/API integration is B1.02b.
+Design: [bounded exploration](../../../../../docs/Build%20Plans/BP-06/BP-06.06%20Knowledge%20exploration%20design.md). BP-06.06/B1.02 implements pure projections and authenticated owner/API reads.
 
 `GraphExploration` consumes one exact `DomainGraphSnapshot` and produces public Knowledge0.8 search, neighborhood, detail and capability DTOs. It owns no database, network calls, mutable cache, source bytes or authorization. The caller must obtain the snapshot through the Knowledge ledger's scope/read grant and immutable revision checks. A valid DTO or continuation position is never an access grant.
 
@@ -11,3 +11,5 @@ Design: [bounded exploration](../../../../../docs/Build%20Plans/BP-06/BP-06.06%2
 Response limits are50 search entities,64 neighborhood entities,128 assertions and1MiB canonical UTF-8. Whole accepted snapshot processing stays bounded by4096 entities/8192 assertions and64MiB. Detail returns an exact retained record with status; catalog pins published serialization schema digests. Oversized results fail rather than silently truncate scientific context. `KnowledgeError` codes begin `explore_`; malformed DTOs also raise validation errors. No scientific truth, receipt eligibility, head following or correction adoption is inferred.
 
 Replacement must preserve exact revisions, ordering, complete query fingerprints, alias/history semantics, limits, schema identities and owner authority separation. Tests live in `tests/exploration`; pure oracles cover chain radius, context revisions, merges, corrections/retractions, malformed history, dense pagination and byte limits. They do not prove owner persistence, HTTP authentication, source availability or browser behavior; those have separate gates.
+
+`ExplorationBoundary` obtains every snapshot through the existing ledger and projects it only after current read_graph/scope and exact persisted identity checks. It stores no state and follows no moving head. Stored projection corruption becomes a safe503 owner failure. POST `/v1/graph-explore/catalog` accepts DomainRevisionRef; `/entities`, `/neighborhood`, `/object` accept their respective public requests. Existing HTTP strict JSON/auth/time/body bounds and no-store responses apply. Missing revision404; denied grant/scope403; query mismatch/missing selected member409; invalid shape422. Current Data rights are not queried for metadata; source payload access remains separately gated. Tests include actual PostgreSQL routes, fault injection and isolated HTTP restart/new-head/grant-removal oracles.

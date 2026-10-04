@@ -1,5 +1,11 @@
 # BP-06 Planning History
 
+## B1.02b Knowledge exploration HTTP - 2026-10-03 21:07:50
+
+Knowledge0.17 adds authenticated exact ledger projections with no new store/grant/migration.56 source/205 isolated tests,233 statements/32 branches100%; source/installed actual HTTP replacement with peers offline, correction separation and removed-grant continuation denial.452 schemas unchanged. Synthetic accepted-input seeding, no scientific validity claim. Initial correction test fixture field mismatch repaired. B1=40%,Build13.33%,child10%,parent85%; B1.03a scientific contracts/policy active, b actual Research proof next.
+
+| 2026-10-03 15:00:03 | B1.04b complete; child14.58%, parent69.10%; B1.04c active | [Binding state](../Audits/Evidence/BP-06-Representations/Binding_State.json);147 source;420 distinct installed;artifact_0009 |
+
 ## B1.02a projection boundary verified - 2026-10-03 20:57:09
 
 Knowledge0.8/owner0.16 and dependency-only Research0.31.1;452 schemas preserve438 old bytes.25 pure tests,208 statements/30 branches100%;174 final isolated tests without peer implementations;149 source compatibility/dev tests. Alias/context/history retained exactly, literal bounded search and induced neighborhoods. No actual HTTP claim yet. B1=30%,Build10%,child7.50%,parent84.58%; b owner/API active. Final wheel rebuild followed import-format repair.

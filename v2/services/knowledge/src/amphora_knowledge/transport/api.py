@@ -16,6 +16,13 @@ from amphora_contracts_knowledge import (
     GraphAuthoringProfile,
     GraphChangeDecision,
     GraphChangeProposal,
+    GraphEntitySearchPage,
+    GraphEntitySearchRequest,
+    GraphExploreCatalog,
+    GraphNeighborhoodPage,
+    GraphNeighborhoodRequest,
+    GraphObjectDetail,
+    GraphObjectRequest,
     GraphProposalStatus,
     GraphRebuildRequest,
     GraphRebuildStatus,
@@ -32,6 +39,7 @@ from sqlalchemy.exc import SQLAlchemyError
 from ..authoring.canonical import KnowledgeError
 from ..corrections.boundary import CorrectionBoundary
 from ..corrections.store import CorrectionStore
+from ..exploration.boundary import ExplorationBoundary
 from ..rebuild.boundary import RebuildBoundary
 from ..rebuild.store import RebuildStore
 from ..rebuild.workflow import RebuildWorkflow
@@ -55,6 +63,7 @@ async def body(request):
 def create_app(workflow, credentials, reasoning=None, publication=None):
     app = FastAPI(title="Amphora Knowledge structural authoring", docs_url=None, redoc_url=None, openapi_url=None)
     ledger = workflow.ledger
+    exploration = ExplorationBoundary(ledger)
     rebuild = RebuildBoundary(RebuildWorkflow(RebuildStore(ledger.engine)))
 
     @app.get("/health")
@@ -110,6 +119,22 @@ def create_app(workflow, credentials, reasoning=None, publication=None):
     @app.post("/v1/graph-snapshots/read", response_model=DomainGraphSnapshot)
     async def snapshot(request: Request):
         return await invoke(request, DomainRevisionRef, ledger.snapshot)
+
+    @app.post("/v1/graph-explore/catalog", response_model=GraphExploreCatalog)
+    async def explore_catalog(request: Request):
+        return await invoke(request, DomainRevisionRef, exploration.catalog)
+
+    @app.post("/v1/graph-explore/entities", response_model=GraphEntitySearchPage)
+    async def explore_entities(request: Request):
+        return await invoke(request, GraphEntitySearchRequest, exploration.search)
+
+    @app.post("/v1/graph-explore/neighborhood", response_model=GraphNeighborhoodPage)
+    async def explore_neighborhood(request: Request):
+        return await invoke(request, GraphNeighborhoodRequest, exploration.neighborhood)
+
+    @app.post("/v1/graph-explore/object", response_model=GraphObjectDetail)
+    async def explore_object(request: Request):
+        return await invoke(request, GraphObjectRequest, exploration.detail)
 
     @app.post("/v1/graph-changes/read", response_model=AcceptedGraphChange)
     async def change(request: Request):
