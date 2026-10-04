@@ -2,13 +2,12 @@
 
 ## Current checkpoint
 
-- Last refreshed: 2026-10-04 02:37:29 (America/Chicago).
-- Latest pushed ca403e1; B2.01b verified and ready to commit/push. Child33.33%,Build44.44%,Acceptance0%; parent6.67%,closed gates1/4 and1/20. B1=100%,B2=33.33%; B2.01a/b complete. Current B2.02 conservative settlement/retry accounting; next B2.03 bounded outcomes.
-- Agent Planning0.5/dev synced; planning contracts0.2;488 schemas unchanged. planning_0001/0002 immutable.47 source cases;116 independent tests,6 processes,2 installs in .test-results/planning-reservations-independent-20261004 (manifest/initial/replacement).18 dev14.09s; scoped dev-config lint passed. No tests running. Reservations.json durable evidence.
-- Reservations atomically persist reviewed policy and attempt under own request advisory lock. Conservative holds survive process replacement, concurrency exact replay, pending/budget exhaustion, legacy unbudgeted rejection verified. No dispatch/settlement yet. Old Planning<=0.4 migrators must not touch planning_0002.
-- B2.02 next: separate observed usage from charged totals; unknown/incomplete/interrupted usage holds maxima, truthful overage never clipped. Private policy format v1 already persisted: do not silently change. Internal aggregate exact integers may exceed JSON-safe per-call values. Runtime budget remains separately owned. Need forward migration for immutable settlement and admission using settled charges plus holds; no locks span calls. Durable dispatch fencing still required before public provider call surface.
-- Use exact whole tracker row/field changes, never substring percentages. MBT and parent mirrors asserted against canonical33.33/44.44/6.67. History preserves prior MBT correction.
-- PostgreSQL suites serial; no resets/downgrades. Live provider/model, egress and spend choices required only before real calls; deterministic work unblocked. PYTHONUTF8=1, short pytest IDs, --tb=short. No subagents. Continue after commit/push.
+- Last refreshed: 2026-10-04 02:43:09 (America/Chicago).
+- Latest pushed8779abb; B2.02 verified ready to commit/push. Child41.67%,Build55.56%,Acceptance0%; parent8.33%,closed gates1/4 and1/20. B1=100%,B2=66.67%. Current B2.03 bounded outcome/dispatch fencing; next B3.01 adversarial proof.
+- Planning0.6/dev synced; planning contracts0.2;488 schemas unchanged. planning_0001/0002/0003 immutable.65 scoped source3.89s;134 independent tests,8 processes,2 installs in .test-results/planning-settlements-independent-20261004.18 dev14.54s; scoped dev-config lint passes. No tests running. Settlements.json evidence.
+- B2.02 BudgetCharge reserved_floor_v1 never refunds: component max(reserved, observed lower bound); unknown/partial usage still charged. Immutable SettlementJournal records exact hash/counts/time, actor/request checks and duplicate replay; any observed per-call overage blocks new reservation. Next attempt requires prior settlement. Old Planning<=0.5 migrators cannot touch0003.
+- B2.03 next: durable once-only issuance before provider call, no lock during call, persisted DB-clock deadline and recovery to unknown; unchanged context/policy/budgets across retries. No public dispatch yet. Need handle late responses without overwriting committed observation or discarding truthful cost evidence. Suggested append-only late evidence plus aggregate max charge adjustment; any late overage stops future admission, cannot undo an already-issued call. Design before implementation. Runtime decision races remain BP-07.04.
+- Exact full-row tracker updates only: canonical41.67/55.56/8.33 mirrors asserted. History has previous substring-replacement correction. No live provider/model, egress or spend selection; deterministic work unblocked. PostgreSQL suites serial, no reset/downgrade. PYTHONUTF8=1, short pytest IDs,--tb=short. Continue after commit/push, no subagents.
 
 ## Retained installations and fixtures
 

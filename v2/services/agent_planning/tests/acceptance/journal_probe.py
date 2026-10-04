@@ -11,6 +11,7 @@ from amphora_agent_planning.budget import BudgetPolicy
 from amphora_agent_planning.context import AttemptBinding, RequestSnapshot
 from amphora_agent_planning.persistence.budget import BudgetLedger
 from amphora_agent_planning.persistence.journal import PlanningJournal
+from amphora_agent_planning.persistence.settlement import SettlementJournal
 from amphora_agent_planning.providers import FixtureProvider, observe
 from amphora_contracts_core import Scope
 from amphora_contracts_planning import reference_proposal_schema
@@ -41,7 +42,7 @@ def main():
                            connect_args={"options": "-c statement_timeout=5000"})
     journal = PlanningJournal(engine)
     try:
-        if stage in {"budget_prepare", "budget_replay"}:
+        if stage.startswith("budget_"):
             context = request.document().context.model_dump(mode="json")
             fixture_policy = {key: context[key] for key in
                 ("model", "prompt", "policy", "output_schema", "allowed_actions", "limits")}
@@ -54,6 +55,26 @@ def main():
             else:
                 reserved = ledger.read(principal, first.reference())
                 assert reserved is not None and ledger.reserve(principal, first, policy) == reserved
+            if stage in {"budget_settle", "budget_settle_replay"}:
+                settlements = SettlementJournal(engine)
+                if stage == "budget_settle":
+                    journal.record(principal, first, observe(first, FixtureProvider("interrupted")))
+                    settled = settlements.settle(principal, first)
+                else:
+                    settled = settlements.read(principal, first.reference())
+                    assert settled is not None and settlements.settle(principal, first) == settled
+                try:
+                    ledger.reserve(principal, second, policy)
+                except ValueError as exc:
+                    assert str(exc) == "accounting_budget_exhausted"
+                else:
+                    raise AssertionError("Unknown usage incorrectly refunded")
+                assert journal.read_attempt(principal, second.reference()) is None
+                print(json.dumps({"pid": os.getpid(), "request_sha256": request.sha256,
+                    "observation_sha256": settled.charge.observation_sha256,
+                    "tokens": settled.charge.tokens, "units": settled.charge.accounting_units,
+                    "overage": settled.charge.overage, "registered_at": settled.registered_at.isoformat()}))
+                return
             assert journal.read_attempt(principal, first.reference()).observation is None
             print(json.dumps({"pid": os.getpid(), "request_sha256": request.sha256,
                 "policy_sha256": reserved.demand.policy_sha256, "tokens": reserved.demand.tokens,

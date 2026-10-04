@@ -79,9 +79,18 @@ class BudgetLedger:
             if latest:
                 previous = self.journal._attempt(connection, {**key, "ordinal": latest}, snapshot)
                 require(previous.observation is not None, "attempt_pending")
-            held = connection.execute(text("SELECT COALESCE(SUM(input_tokens+output_tokens),0) AS tokens, "
-                "COALESCE(SUM(accounting_units),0) AS units FROM planning.reservations WHERE " + KEY),
+                settled = connection.execute(text("SELECT 1 FROM planning.settlements WHERE " + KEY +
+                    " AND ordinal=:ordinal"), {**key, "ordinal": latest}).first()
+                require(settled is not None, "attempt_unsettled")
+            held = connection.execute(text("SELECT "
+                "COALESCE(SUM(COALESCE(s.input_tokens,r.input_tokens)+"
+                "COALESCE(s.output_tokens,r.output_tokens)),0) AS tokens, "
+                "COALESCE(SUM(COALESCE(s.accounting_units,r.accounting_units)),0) AS units, "
+                "COALESCE(bool_or(s.overage),false) AS overage "
+                "FROM planning.reservations r LEFT JOIN planning.settlements s "
+                "USING(tenant_id,project_id,engagement_id,ordinal) WHERE " + KEY),
                 key).mappings().one()
+            require(not held["overage"], "provider_usage_overage")
             limits = snapshot.document().context.limits
             require(int(held["tokens"]) + demand.tokens <= limits.total_tokens, "token_budget_exhausted")
             require(int(held["units"]) + demand.accounting_units <= limits.total_accounting_units,

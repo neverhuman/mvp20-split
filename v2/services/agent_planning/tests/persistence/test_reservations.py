@@ -7,6 +7,7 @@ import pytest
 from amphora_agent_planning.budget import BudgetPolicy
 from amphora_agent_planning.context import AttemptBinding, RequestSnapshot
 from amphora_agent_planning.persistence.budget import BudgetLedger
+from amphora_agent_planning.persistence.settlement import SettlementJournal
 from amphora_agent_planning.providers import FixtureProvider, observe
 from sqlalchemy import create_engine, text
 from sqlalchemy.exc import DBAPIError
@@ -50,7 +51,8 @@ def test_pending_intent_and_conservative_hold_prevent_further_reservation(stored
     with pytest.raises(ValueError, match="attempt_pending"):
         ledger.reserve(s.principal, s.second, reviewed)
     s.journal.record(s.principal, s.first, observe(s.first, FixtureProvider("abstain")))
-    # Provider-reported 1 unit is not a settlement; all 60 units remain held.
+    # Even after settlement, v1 retains its 60-unit reservation floor.
+    SettlementJournal(s.engine).settle(s.principal, s.first)
     with pytest.raises(ValueError, match="accounting_budget_exhausted"):
         ledger.reserve(s.principal, s.second, reviewed)
     assert ledger.read(s.principal, s.second.reference()) is None
@@ -68,6 +70,7 @@ def test_exact_token_hold_is_independent_of_accounting_headroom(stored):
     s.journal.register(s.principal, snapshot)
     ledger.reserve(s.principal, first, reviewed)
     s.journal.record(s.principal, first, observe(first, FixtureProvider("interrupted")))
+    SettlementJournal(s.engine).settle(s.principal, first)
     with pytest.raises(ValueError, match="token_budget_exhausted"):
         ledger.reserve(s.principal, second, reviewed)
     assert ledger.read(s.principal, second.reference()) is None
@@ -123,6 +126,7 @@ def test_concurrent_exact_reservation_has_one_hold_and_one_intent(stored):
         first, replay = [future.result(10) for future in [pool.submit(reserve), pool.submit(reserve)]]
     assert first == replay
     s.journal.record(s.principal, s.first, observe(s.first, FixtureProvider("abstain")))
+    SettlementJournal(s.engine).settle(s.principal, s.first)
     assert ledger.reserve(s.principal, s.second, reviewed).demand.accounting_units == 40
     with s.engine.connect() as connection:
         totals = connection.execute(text("SELECT count(*),sum(accounting_units) FROM planning.reservations "

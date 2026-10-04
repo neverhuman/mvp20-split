@@ -147,3 +147,7 @@ Agent Planning0.4 private reviewed budget policy/demand:22 source,40 with dev,10
 ## 2026-10-04 02:37:29 ? B2.01b atomic reservations
 
 Planning0.5/planning_0002 stores policy and conservative holds atomically with intents.47 source cases,116 installed cases,6 processes/2 installations and18 dev cases pass. New ledger75 statements/14 branches100%; combined persistence/budget287/288 statements,33/34 branches (migration CLI independently exercised). Scoped dev-config lint passes. Child33.33%,Build44.44%,parent6.67%; next B2.02. Evidence: [Reservations](../Audits/Evidence/BP-07-Planning/Reservations.json).
+
+## 2026-10-04 02:43:09 ? B2.02 conservative settlements
+
+Planning0.6/planning_0003 preserves policy-v1 bytes and immutable observations. Reserved-floor charges never refund unknown/low usage; exact overage blocks new admission. Prior settlement is required before retry.65 source cases3.89s,134 independent cases/eight processes/two installs,18 dev14.54s and scoped lint pass. Pure charge23 statements100%; settlement59 statements/8 branches100%; combined372/373 statements41/42 branches (migration CLI independently exercised). Child41.67%,Build55.56%,parent8.33%; next B2.03 dispatch/outcomes. [Evidence](../Audits/Evidence/BP-07-Planning/Settlements.json).
