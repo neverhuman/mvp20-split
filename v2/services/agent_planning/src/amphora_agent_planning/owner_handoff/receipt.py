@@ -1,11 +1,13 @@
 """Exact presence and structural acceptance; never scientific adequacy."""
 
 import hashlib
+import json
 from dataclasses import dataclass
 
 from amphora_contracts_knowledge import AcceptedGraphChange, GraphProposalStatus
 
 from ..context.policy import require
+from ..context.snapshot import _constant, _object
 from ..publication.records import encode
 from .request import MODELS
 
@@ -61,3 +63,21 @@ class OwnerOutcome:
             "request_sha256": request.sha256, "state": state, **body})
         require(len(raw) <= 2097152, "handoff_receipt_limit")
         return cls(state, raw)
+
+    @classmethod
+    def restore(cls, request, raw):
+        require(type(raw) is bytes and 0 < len(raw) <= 2097152, "handoff_receipt_limit")
+        value = json.loads(raw.decode("utf-8"), object_pairs_hook=_object, parse_constant=_constant)
+        require(type(value) is dict, "handoff_receipt_shape")
+        if request.owner == "research":
+            require(set(value) == {"format", "effect_id", "request_sha256", "state", "authority", "record"},
+                    "handoff_receipt_shape")
+            result = cls.research(request, MODELS[request.kind].model_validate_json(json.dumps(value["record"])))
+        else:
+            require(set(value) == {"format", "effect_id", "request_sha256", "state", "authority", "status", "accepted"},
+                    "handoff_receipt_shape")
+            status = GraphProposalStatus.model_validate_json(json.dumps(value["status"]))
+            accepted = None if value["accepted"] is None else AcceptedGraphChange.model_validate_json(json.dumps(value["accepted"]))
+            result = cls.knowledge(request, status, accepted)
+        require(result.canonical == raw, "handoff_receipt_canonical")
+        return result

@@ -2,54 +2,46 @@
 
 ## Resume here
 
-- Refreshed 2026-10-04 14:11:41 (America/Chicago). **Read this file first after every compression**, explicitly requested by the owner.
-- Continue authorized work across milestones, commits/pushes and compaction. No subagents, JARVIS access or v1 edits. No milestone-only final pauses.
-- **Current BP-07.02/B2.03b.iii.b: owned handoff preparation/event storage.** Next b.iii.c coordinator/replacement, then c combined owner acceptance/rebuild.
-- Latest pushed Planning0.27 producer checkpoint **995db699**; earlier workflow e717e9a3, storage f6b14ef4 and values f9521f97.
-- Child46.60%,Build62.14%,Acceptance0%,1/4 closed; B1=100%,B2=86.42%,B3/V1=0%. B2 .01/.02=100%,.03=59.26% (a100%,b77.78%,c0%; b i/ii100%,iii33.33%; b.iii a100%,b/c0%). Parent29.32%,5/20 closed; P1=100%,P2=46.60%,others0%. Canonical tracker/parent/MBT/history are updated; MBT25 recent rows.
+- Refreshed 2026-10-04 14:43:29 (America/Chicago). **Read this first after every compression**, explicitly requested by the owner.
+- Continue across milestones, commits/pushes and compaction until genuinely blocked. No subagents, JARVIS access or v1 edits. Do not stop at a passing gate.
+- **Current BP-07.02/B2.03b.iii.c: owner handoff coordinator and replacement proof.** Storage b.iii.b is verified, ready for final diff/commit/push. Latest pushed is still **e8a2434c** (Planning0.28 values); record the new hash after pushing.
+- **No tests or hosts running.** Session44520 passed808 tests405.569s,39 process stages/two installations. Manifest `v2/.test-results/planning-owner-handoff-storage-independent-20261004/manifest.json`. Four new stages prove prepared/dispatch/recover/replay using scripted owner receipts; no actual-owner acceptance or abrupt-kill claim.
+- Planning/dev0.29/publicPlanning0.7. **planning0011 applied**,0001..0010 unchanged. Never run Planning<=0.28 migrators. Research0013/Data artifact0012 immutable; no Research<=0.33/Data<=0.25 migrators. No reset/downgrade/deletion.
+- Canonical child46.91%,Build62.55%,Acceptance0%,1/4 closed; B1=100%,B2=87.65%,B3/V1=0%; B2 .01/.02=100%,.03=62.96% (a100%,b88.89%,c0%; b i/ii100%,iii66.67%; b.iii a/b100%,c0%). Parent29.38%,5/20; P1=100%,P2=46.91%,others0%.
+- Child/parent/MBT/history/Owner submission design and module READMEs updated; MBT25 rows. Evidence Owner_Handoff_Storage.json. Final whitespace/diff consistency and commit/push remain before dependent code.
 
-## Latest SDK workflow checkpoint
+## Verified storage checkpoint
 
-- Verified 2026-10-04 11:19:18. Planning0.26/public0.7, planning0010 unchanged.39 focused cases243.14s; result workflow39 statements4 branches100%; combined driver/trace/result104 statements24 branches96.88%. Driver transition ceiling/loop edge and one trace-wrapper defensive line remain uncovered.
-- Final .test-results/planning-result-workflow-independent-20261004/manifest.json:705 installed tests314.97s,35 process/replay stages,two installs. Session54350 finished successfully. No PostgreSQL suite running. Evidence Result_Workflow.json.
-- publication/driver.py extracts the unchanged bounded upload loop. ResultPublisher registers owned selection, prepares outside SQL, reconstructs/journals exact bytes, then drives upload with DB-clock fencing. Terminal histories avoid preparation/peer calls. Scripted Data/preparer only; concrete current-rights preparer and automatic diagnostic producer remain b.ii.c.
-- Three new installed result stages preserve exact payload/identity/time, recover uncertain PUT through a distinct upload and replay with zero preparation/peer calls. No actual Data or abrupt-kill claim. Trace tests protect unchanged prior behavior.
-- Ruff for touched files, dependency boundaries,506 schema checks and whitespace checks pass. Explicit dev-only Ruff configuration has unrelated/different formatting rules; normal discovery is the existing project gate. Earlier broad-directory lint found a preexisting untouched payload import formatting issue; no unrelated source change.
-- Canonical tracker/parent/MBT/history and module READMEs updated. Workflow committed/pushed as e717e9a3. The subsequent0.27 producer checkpoint appears below.
-## Latest producer checkpoint: committed/pushed995db699
+- Shared publication/origin.py preserves exact ResultHistory loader/error behavior and supplies HandoffHistory task/observation/prior/finalized interpretation binding.
+- owner_handoff prepared/store/journal/events add immutable first request/review/witness/manifest, local-question acknowledgment prerequisites, DB-clock leases/fences/final-CAS rollback and64-event bound with last slot reserved for terminal evidence. OwnerOutcome.restore rederives typed receipts; flags alone cannot acknowledge.
+- Local needs require exact acknowledged original question before prepare/dispatch. Missing dependencies leave only that slot unprepared. Historical readback has no source processing or scientific reinterpretation. Fresh rights before new POST are upcoming coordinator responsibility.
+- Histories SELECT/INSERT only; control UPDATE only holder/fence/expiry/position. No peer I/O in SQL. New witnesses cap1MiB; owner outcomes2MiB, event framing2MiB+1KiB. All prior migration/public schema bytes unchanged.
+- Session48882 passed95 focused cases237.69s; root `.test-results/planning-owner-handoff-storage-tests.xml` and `planning-owner-handoff-storage-coverage.json`.703 statements78 branches99.3598%; all new state/origin/receipt code100%, transport lines123/124/154 and2 branches uncovered. Ruff/boundaries/506 schemas passed. Source/test files unchanged during independent verification.
+- verify_planning now asserts0011 packaging, adds4 handoff workers and has600s subprocess budget justified by measured405.569s full suite. Tests are module-owned. No live model/scientific proof.
 
-- Planning/dev0.27, public0.7, planning0010 unchanged. New result_publication/diagnostics.py, preparation.py, producer.py and owned tests/probe.24 focused cases14.73s;110 statements24 branches98.51%; preparation/producer100%, terminal DiagnosticPolicy guard uninstrumented.
-- DiagnosticPolicy derives structural feedback from exact history and existing validators. Unknown/invalid captures retain exact bytes; abstention/policy rejection and useful weak science do not request repair. Missing selected question/Knowledge context does not itself cause more model calls; unrelated Research structural diagnostics survive Knowledge transport unavailability. No scientific acceptance or active repinning.
-- ResultPreparer uses current source/interpretation processing with one shared deadline and exact selected Research/pinned Knowledge. Answers have no graph dependency. First prepared feedback is immutable. DiagnosticProducer supplies RepairChain.next through owned trace lookup and stable interpretation/result publishers; safe uncertainty/rejection states never yield repair inputs.
-- .test-results/planning-result-producer-independent-20261004/manifest.json:720 cases317.56s,35 process stages,two0.27 installs. Nine subsequent producer guard tests independently passed5.71s against the same replacement wheel under planning-result-producer-guards-installed-20261004. No production code changed after the full install run.
-- Final actual Data .test-results/planning-result-actual-data-final-20261004/manifest.json passed7 workers/2 Data hosts. Denial/regrant; actual committed PUT with synthetic lost reply; distinct successor after owner restart; no-read replay under withdrawal; production repair chain stopping repair_attempt_budget_exhausted; actual proposal-only answer publication. Provider/graph profile synthetic. Not abrupt-kill or scientific proof.
-- Earlier actual run planning-result-actual-data-20261004 failed only on probe import before producer execution. Fixed direct module imports; final run is the evidence. Never delete/reset the failed fixture. Sessions78691/99283/43652/58038 finished. No tests/hosts running.
-- Evidence Result_Producer.json; child/parent/MBT/history/module READMEs updated. Committed/pushed995db699. Continue b.iii.a request/receipt values and transport; bounded design is now BP-07.02 Owner submission.md (uncommitted).
-## Latest owner handoff values/transport: ready for commit
-
-- Planning/dev0.28, public0.7 and planning0010 unchanged. owner_handoff selection/request/receipt/transport and scoped tests verified. No storage/migration/coordinator yet. b.iii.a100%; b/c0%.
-- BP-07.02 Owner submission.md scopes exact peer APIs, a/b/c equal units, immutable preparations, rights-before-new-POST, dependency ordering and terminal-slot reservation within64 events. No new public DTOs or peer-private imports needed.
-- HandoffSelection stable slot excludes payload/config changes; OwnerRequest holds exact public bytes/routes; OwnerOutcome binds exact status and accepted readback actor/request/hash/policy/position/head. Research response proves presence, not original creator. OwnerTransport uses closed routes, explicit loopback credentials,20s/4 exchanges/4MiB and socket shutdown deadlines; no retries or blind write after denied/ambiguous read.
-- Final47 scoped cases32.42s,265 statements34 branches97.66%; values100%, transport expiry/timer-close/EOF paths partially uninstrumented. .test-results/planning-owner-handoff-values-independent-20261004/manifest.json passes776 tests334.62s,35 existing process stages/two0.28 installs. Session54819 finished; no suite/host active. Those35 stages protect earlier Planning behavior, not new handoff storage. Evidence Owner_Handoff_Values.json.
-- Ruff, dependency boundaries,506 schema and whitespace checks passed before final docs. Canonical child/parent/MBT/history updated. Finish final diff/consistency review and commit/push0.28, then immediately b.iii.b. Latest pushed still995db699 until this commit.
-## Compatibility and previous proof
-
-- Applied Planning0010, Research0013, Data artifact0012 are immutable. Never run Planning<=0.24, Research<=0.33 or Data<=0.25 migrators. No reset, downgrade or deletion of retained fixtures.
-- Result selection/preparation/events use separate private tables and DB-clock controls; public Planning0.7 and506 schemas unchanged. Storage0.25 passed54 scoped/684 installed cases32 process stages; Result_Storage.json.
-- Result payload0.24 passed24 scoped/654 installed cases28 process stages; Result_Payloads.json. Complete source+interpretation ancestry,256KiB payload/128 inputs, separate closed answer profile. No scientific acceptance.
-- Research0.34 declaration registration: exact retry/first-public-origin retained under atomic identity lock; optional routes/separate grants.382 installed cases and2 actual HTTP interruption stages; Research_Declarations.json.
-- Knowledge0.18 new processing uses Data /processing-content; historical accepted decisions/replay unchanged.325 isolated cases plus actual three-owner acceptance; Knowledge_Processing.json. verify_knowledge_processing.py still pins old Research and must be updated before use.
-- Planning0.23 repair manifests/runner/chain passed630 installed cases28 stages and actual Data7 workers/2 hosts. Legacy feedback schema unchanged; separate publication-compatible schema omits only unsupported root $id. Repair_Workflow.json. Earlier fixture producer was scripted; do not retroactively claim the new producer there.
 ## Next authorized work
 
-1. Commit/push verified0.28 owner request/receipt/transport checkpoint after final diff review. Continue b.iii.b; no milestone pause.
-2. Read BP-07.02 Owner submission.md storage constraints. Add owned handoff selection/preparation/event/control state under a forward planning0011. It is NOT APPLIED yet. Original actor/task/observation/prior/finalized interpretation must bind before first preparation/effects. Histories SELECT/INSERT only; controls DB-clock lease/fence/position CAS. No peer I/O under SQL.
-3. Reuse source-origin mechanics only where unchanged. A publication/origin.py PublishedHistory base can factor ResultHistory's exact loader, with ResultHistory restoring ResultSelection and HandoffHistory restoring HandoffSelection. Preserve existing result error codes/bytes/tests. Do not import peer implementations.
-4. Prepared handoff derives exact question/need/graph request through existing validators and fresh reviewed inputs; callers cannot provide trusted raw payloads/acceptance. Persist first bounded input-observation witnesses, not a lasting rights grant. Historical reconstruction checks owned facts/hashes without source processing or reinterpreting science. Unavailable dependencies can leave only their slots unprepared; later exact pinned record availability must not freeze unrelated lanes.
-5. Events distinguish dispatch intent, pending observation, blocked input, explicit rejection/conflict and exact acknowledged receipt. Preserve one terminal slot within64 events; exhausted retries cannot erase later readback of an already-committed owner outcome. Fences recheck at actual write. Owner outcome findings cannot overwrite an existing structural feedback artifact or silently rebase a stale graph head.
-6. b.iii.c adds question-before-dependent coordination and fresh processing permission before new POSTs, original-identity readback/retry, process replacement and owner compatibility. Research registration itself does not check Data rights. c afterward proves combined Data/Research/Knowledge acceptance/rebuild; active pins stay unchanged.
-7. Keep canonical trackers/MBT/history/Restore current. No owner choice blocks deterministic work. Read Restore first after every compression.
+1. Finish final diff/consistency, commit/push0.29, update pushed hash here, then immediately b.iii.c. No milestone pause.
+2. Read BP-07.02 Owner submission.md coordinator construction sequence. Register original selection; terminal local replay avoids peers. Prepare per effect outside SQL using exact original facts. Preserve immutable first request/configuration/identity.
+3. Read original owner identity before retry. Denied/malformed/unavailable reads never authorize writes. Explicit absence or exact Knowledge pending intent permits original resubmission only after fresh source and interpretation processing review and durable dispatch intent. Research registration does not enforce Data processing rights itself.
+4. Exact historical readback may acknowledge already-existing outcomes without fresh processing. Accepted Knowledge status requires exact accepted-change record. At63 events forbid new dispatch but allow terminal readback64. Lost writes remain uncertain; no immediate blind retry, active rebase/repinning or rewritten feedback Artifact.
+5. Visit at most97 public candidate slots once (32 questions/needs/answers plus graph). Local questions precede dependent needs/answers; selected external questions require exact revisions. Independent failures do not freeze unrelated effects; ResultPublisher owns answer Artifacts. No model calls in this pass.
+6. OuterB2.03c is combined actual Data/Research/Knowledge acceptance and typed-correction rebuild. Live model/egress/spend choices block only real calls; no owner choice blocks deterministic work.
+
+## Canonical navigation and evidence
+
+- Child: docs/Build Plans/BP-07/BP-07.02 Reliable text decomposition.md; current design BP-07.02 Owner submission.md and BP-07.02 Owner handoff and accepted replay.md.
+- Parent: docs/Build Plans/BP-07 Autonomous LLM Campaign Supervision.md; history docs/Build Plans/BP-07 Planning History.md; MBT docs/Build Plans/Master Build Tracker.md.
+- Replace current percentages only before child B1.01 verified and MBT Recent Checkpoints; historical values remain historical. MBT25 most recent descending rows, older checkpoints archive to history. v2/.test-results/update_owner_values_docs.py is a prior pattern, not a script to rerun unchanged.
+- New source files: owner_handoff/history.py, prepared.py, events.py, store.py, journal.py; publication/origin.py; migration versions/r0011_owner_handoff.py/sql. Existing receipt.py adds typed restore; ResultHistory delegates unchanged behavior to shared loader. Tests scoped under owner_handoff; acceptance/handoff_storage_probe.py is scripted-owner replacement proof.
+- planning0011 histories allow SELECT/INSERT; controls update only holder/fence/expiry/position. First review metadata and request/witness/manifest immutable; no peer I/O in SQL. Need dependencies bind exact acknowledged original local question. Historical reconstruction never reinterprets science or grants ongoing rights.
+- Earlier checks:21 origin/result regressions35.57s;16 preparation/events7.10s;9 PostgreSQL28.41s. Final focused95 cases237.69s supersede these, not additive unique case counts.703 statements78 branches99.3598%; all new state code100%, transport lines123/124/154 and2 branches uninstrumented.
+- Prior committed evidence: Owner_Handoff_Values.json (Planning0.28,47 focused/776 installed/35 prior process stages); Result_Producer.json (Planning0.27,24 focused,720 installed plus9 guards, actualData7 Planning workers/2 hosts). Only planning-result-actual-data-final-20261004 passed; failed first fixture stays retained.
+- Applied planning0011, research0013, artifact0012 immutable. No Planning<=0.28, Research<=0.33 or Data<=0.25 migrators. No reset/downgrade/deletion. Earlier publicPlanning0.7 and506 schemas remain unchanged.
+
 ## Environment and installations
+
+- Installation paths in this section are relative to v2. Verified Planning0.29: `.test-results/planning-owner-handoff-storage-independent-20261004/{initial,replacement}/Scripts/python.exe`.
 
 - Workspace Z:\mvp20-split; active v2. PowerShell, America/Chicago. Git `git -c safe.directory=//DesktopNAS/Code/mvp20-split`; main; remote https://github.com/neverhumanbot/mvp20-split.git. Commit/push authorization persists.
 - Set PYTHONUTF8=1. Python v2/dev/.venv/Scripts/python.exe; uv v2/.venv/Scripts/uv.exe. Sync dev without --extra test (extra does not exist). pytest -c v2/dev/pyproject.toml --tb=short.
@@ -57,10 +49,10 @@
 - Tests use importlib mode, no __init__.py in behavioral folders. Use .absolute(), not .resolve(), on mapped drive. rg --files first; no Windows wildcard operands. Give large parametrized payload cases explicit short ids to avoid Windows temp-path failure/log blowup.
 - **Research0.34:** .test-results/research-declarations-final-independent-20261004/{initial,replacement}/Scripts/python.exe. Previous research-views-http-20261003 is0.33 and must not run migrations again.
 - Knowledge0.18: .test-results/knowledge-processing-independent-20261004/{initial,replacement}/Scripts/python.exe.
-- Latest verified Planning0.28: .test-results/planning-owner-handoff-values-independent-20261004/{initial,replacement}/Scripts/python.exe.
-- Prior compatible Planning0.27: .test-results/planning-result-producer-independent-20261004/{initial,replacement}/Scripts/python.exe.
-- Prior compatible Planning0.26: .test-results/planning-result-workflow-independent-20261004/{initial,replacement}/Scripts/python.exe.
-- Prior compatible Planning0.25: .test-results/planning-result-storage-independent-20261004/{initial,replacement}/Scripts/python.exe.
+- Prior verified Planning0.28 (must not migrate0011): .test-results/planning-owner-handoff-values-independent-20261004/{initial,replacement}/Scripts/python.exe.
+- Prior historical Planning0.27 (must not migrate0011): .test-results/planning-result-producer-independent-20261004/{initial,replacement}/Scripts/python.exe.
+- Prior historical Planning0.26 (must not migrate0011): .test-results/planning-result-workflow-independent-20261004/{initial,replacement}/Scripts/python.exe.
+- Prior historical Planning0.25 (must not migrate0011): .test-results/planning-result-storage-independent-20261004/{initial,replacement}/Scripts/python.exe.
 - Prior verified Planning0.24 (must not migrate0010): .test-results/planning-result-payloads-independent-20261004/{initial,replacement}/Scripts/python.exe. Prior0.23 final repair installs remain retained.
 - Data0.29: .test-results/data-processing-content-independent-20261004/environment/Scripts/python.exe.
 - Runtime0.20.2: .test-results/runtime-domain-receipt-peer-20261002/environment/Scripts/python.exe.

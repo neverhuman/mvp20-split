@@ -1,7 +1,7 @@
 # Planning persistence boundary
 
-- Reviewed implementation: Agent Planning0.23; BP-07.02/B2.02c.ii preparation journal verified.
-- State: private planning schema, forward migrations planning_0001 through planning_0009.
+- Reviewed implementation: Agent Planning0.29; BP-07.02/B2.03b.iii.b owner handoff storage verified.
+- State: private planning schema, forward migrations planning_0001 through planning_0011. Never run Planning<=0.28 migrators on0011.
 - Responsibility: immutable request, attempt, observation, policy, reservation, settlement, issuance and late-evidence records. The orchestration module composes these objects; Runtime alone owns campaign decisions.
 
 ## Repair preparation journal
@@ -72,3 +72,6 @@ Preparation verified 2026-10-04 09:21:08:owned PostgreSQL cases cover concurrent
 
 
 Planning0.25 adds forward planning_0010 for the [result publication](../result_publication/README.md) selection/preparation/event journals and separate lease/fence controls. Existing trace-publication tables and0001..0009 are unchanged. Result history grants are SELECT/INSERT; control grants are column-scoped. Never run Planning<=0.24 migrators after0010. BP-07.02/B2.03b.ii.a storage is verified:54 scoped and684 installed cases,32 process/replay stages. Production upload/producer work remains b.ii.b/c.
+
+
+Owner handoff storage is implemented in the owner_handoff module under planning0011. It separates immutable selections/preparations/events from mutable DB-clock controls. Result publication uses its existing separate planning0010 tables. See each module README for payload limits, authority, recovery and replacement verification; earlier migration bytes are immutable.

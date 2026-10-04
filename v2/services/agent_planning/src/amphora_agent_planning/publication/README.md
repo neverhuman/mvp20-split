@@ -2,7 +2,7 @@
 
 - Status: trace publication and actual Data replacement/recovery are verified under BP-07.02/B1. Planning0.26 shared-driver extraction passed39 focused cases and705 isolated tests/35 process stages.
 - Owner: Planning trace publication and provenance; Data owns Artifact bytes, current processing authorization and derived-upload acceptance. Knowledge/Research own scientific acceptance.
-- State: planning_0007 trace-publication history; later result publication uses separate planning_0010 tables. Never run Planning<=0.24 migrators on the current retained database.
+- State: planning_0007 trace-publication history; later result publication uses separate planning_0010 tables. The current database now includes planning0011; never run Planning<=0.28 migrators.
 - Evidence: [actual trace publication](../../../../../docs/Audits/Evidence/BP-07-Extraction/Actual_Publication.json). Detailed historical checkpoint counts belong to the owning BP-07 plan/history.
 
 ## Responsibilities and exclusions
@@ -42,3 +42,5 @@ Current process-rights denial gates new effects. HTTP403 alone cannot establish 
 Tests/publication separates pure values/records, actual PostgreSQL journal/fence tests, bounded transport and SDK workflow tests with scripted Data. Both publication and result_publication workflow tests protect the shared driver. Trace acceptance already exercised actual installed Data source/conversion provenance, matched content/ancestry, rights denial/regrant, Data restart and abrupt os._exit73 after preparation/stream intent/streamed/remote-finalize boundaries. Only uncertain streaming chooses a successor; remote-finalize recovery returns the original Artifact. Test leases expire naturally; production default remains120s.
 
 This proves synthetic software ownership/recovery, not provider quality, machine power loss or Knowledge acceptance. dev/verify_planning_publication.py records the earlier actual-owner proof, but its old version pins must be updated before reuse; do not run incompatible retained migrators. Result publication's actual Data integration is a distinct later gate and cannot inherit this trace-only evidence.
+
+PublishedHistory in origin.py owns the same-owner exact task/trace/observation/prior/finalized-interpretation loader shared by result and owner-handoff histories. Each wrapper restores its own selection and supplies its error-code prefix. This refactoring changes no trace/result bytes or source processing behavior; historical loads do not contact peers.

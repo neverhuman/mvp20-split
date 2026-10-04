@@ -1,6 +1,6 @@
 # Planning owner handoff
 
-- Status: BP-07.02/B2.03b.iii.a request/receipt values and bounded transport verified; owned storage and coordinator not implemented.
+- Status: BP-07.02/B2.03b.iii.a request/receipt values and bounded transport verified; owned storage verified in Planning0.29; coordinator is current b.iii.c.
 - Design: [owner submission](../../../../../docs/Build%20Plans/BP-07/BP-07.02%20Owner%20submission.md).
 - Owner: Planning intent/provenance and reconciliation only. Research owns declarations/sufficiency; Knowledge owns structural graph acceptance; Data owns processing rights.
 
@@ -10,9 +10,27 @@ OwnerRequest validates public ResearchQuestion, EvidenceNeed or GraphChangePropo
 
 OwnerOutcome distinguishes Research declaration presence from Knowledge structural-only pending, rejected, conflict, awaiting accepted readback and acknowledged states. Research acknowledgments match complete request bytes and do not infer original creation/actor metadata. Knowledge status binds exact original actor/proposal/digest. Accepted outcomes require the exact accepted-change content hash, request, actor, policy, expected position and resulting snapshot/change references. No implicit latest head or active rebasing is allowed.
 
-No SQL, durable state, scientific sufficiency or provider calls exist in these value files. Tests belong under tests/owner_handoff. b.iii.a is100% after scoped and independent verification. New storage is b.iii.b; coordinator/replacement is b.iii.c; combined actual-owner correction replay is parent B2.03c.
+Value files have no SQL, scientific sufficiency or provider calls. Separate storage files own private persistence. Tests belong under tests/owner_handoff. b.iii.a is100% after scoped and independent verification. Storage is verified under b.iii.b; coordinator/replacement is b.iii.c; combined actual-owner correction replay is parent B2.03c.
 
 OwnerTransport binds a configured owner ID and owner kind, explicit authenticated loopback endpoint, and compiled request/status/accepted-read routes. HandoffWindow bounds the entire sequence to20 seconds,4 exchanges and4MiB aggregate responses; each response has its owner-specific cap. A socket shutdown timer bounds trickled headers/body. Strict JSON rejects duplicate/nonfinite or malformed records; error bodies are never retained. Absence is distinguished from a missing write dependency, denial, identity conflict, invalid write and uncertain outcome. No automatic retries, redirects/proxies, caller routes or source rights grants are supplied here. A guarded caller can fence before connect and immediately before sending. HTTP success still requires OwnerOutcome binding and later durable journaling.
 
 Current-source processing and dependency ordering belong to the later coordinator. This transport is an internal primitive, not a public endpoint that authorizes arbitrary requests. Values/transport tests use scripted public records and actual loopback HTTP; they do not prove peer acceptance or stored origin.
 Verified47 scoped cases32.42s;265 statements34 branches97.66%. Selection/request/receipt values100%; transport expiry/timer-close/EOF paths remain partially uninstrumented.776 independent cases334.62s and35 existing process/replay stages pass across two installations. Those process stages protect prior Planning behavior, not new handoff storage. [Evidence](../../../../../docs/Audits/Evidence/BP-07-Extraction/Owner_Handoff_Values.json).
+
+## Owned storage and replacement
+
+HandoffHistory uses publication/origin.py to load original actor/task/attempt/observation/prior and exact finalized interpretation. ResultHistory retains the same loader and result-specific error codes. Pure request construction is not evidence of stored origin: HandoffStore.register establishes that origin before creating a slot.
+
+planning0011 adds immutable owner_handoffs, owner_handoff_payloads and owner_handoff_events, with separate owner_handoff_control. Histories allow SELECT/INSERT only; control grants UPDATE only on holder/fence/expiry/position. Existing migrations and public schemas are unchanged. Never run Planning<=0.28 migrators on0011. Service imports do not migrate.
+
+PreparedHandoff derives one request through the existing graph or Research validators, using fresh reviewed inputs supplied outside SQL. Its first body, review metadata, bounded witness and manifest are immutable. Witnesses preserve exact Research proposal grounding and question dependency, or pinned Knowledge authoring profile/base. They do not duplicate graph snapshots or grant ongoing processing rights. Historical restoration validates owned origin, canonical bytes, request/provenance hashes and typed witnesses without rerunning source processing or scientific interpretation.
+
+Question dependencies identify an exact selected revision or same-origin local question slot. A local need cannot prepare or record dispatch until the original question slot is acknowledged with the exact request bytes. Missing dependencies roll back only the dependent preparation; independent slots remain available. Exact selected external questions are reviewed before preparation; current source authorization before any new owner POST remains coordinator responsibility.
+
+DB-clock leases last1..300 seconds and increment fences. Each append checks the expected position and fence/expiry again at the final control write; expiry rolls back the entire transaction. Reads use a short scoped lock for consistent reconstruction. No peer I/O occurs under SQL.
+
+HandoffEvent records prepared, dispatch, uncertain, bounded operational blocked reasons and factory-validated observations. OwnerOutcome.restore reconstructs typed receipts, so a stored state flag alone cannot assert acknowledgment. Terminal acknowledged/rejected/conflict outcomes cannot advance. At most64 events are retained; nonterminal events stop at63, leaving room for exact terminal readback after exhausted retries. Dispatch intent does not prove that a remote write happened. A denied/malformed response does not prove absence or rejection.
+
+Replacement preserves selection/request/witness/event bytes, timestamps, actor/configuration, dependencies, fences and uncertainty. Tests under tests/owner_handoff cover values, origin, preparation, events and actual PostgreSQL ownership; acceptance/handoff_storage_probe.py verifies separate installed worker replay with scripted owner records. Actual owner compatibility and the read-first coordinator remain b.iii.c; combined owner acceptance remains B2.03c.
+
+Storage verified 2026-10-04 14:43:29:95 scoped cases237.69s;703 statements78 branches99.36%. New storage/preparation/events/origin and typed receipt restoration100%; transport cleanup lines123/124/154 and2 branches remain outside this run.808 installed cases405.569s and39 process stages/two installations pass. Four new handoff workers preserve exact prepared bytes/time, recorded dispatch and scripted terminal receipt replay. No actual owner-acceptance or abrupt-kill claim. [Evidence](../../../../../docs/Audits/Evidence/BP-07-Extraction/Owner_Handoff_Storage.json).

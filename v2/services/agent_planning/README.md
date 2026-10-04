@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-- Version:0.28.0 verified; public Planning0.7.0. BP-07.02/B2.02 complete; B2.03b.i result payloads verified; b.ii.a storage verified; b.ii.b Data workflow verified; b.ii.c diagnostic producer/actual Data verified; b.iii.a owner values/transport verified; b.iii.b owned handoff storage active.
+- Version:0.29.0 verified; public Planning0.7.0. BP-07.02/B2.02 complete; B2.03b.i result payloads verified; b.ii.a storage verified; b.ii.b Data workflow verified; b.ii.c diagnostic producer/actual Data verified; b.iii.a owner values/transport verified; b.iii.b owned handoff storage verified; b.iii.c coordinator active.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Canonical progress: [BP-07.02](../../docs/Build%20Plans/BP-07/BP-07.02%20Reliable%20text%20decomposition.md).
 
@@ -22,7 +22,7 @@ Extraction owns exact task/request binding, selected UTF-8 source bytes, quotati
 
 Tests remain under this owner's tests/context, providers, persistence, budget, orchestration, extraction, source_access, publication, proposals, knowledge_access, research_proposals, research_access, repair, result_publication and owner_handoff folders. For example, dev/run_tests.py --module agent-planning --area proposals selects the pure proposal cases. dev/verify_planning.py builds two independent wheel installations and verifies owned tests and retained history across fresh processes, without peer implementations installed.
 
-Replacement must preserve canonical hashes/bytes, explicit omission semantics, actor/scope and source identity, bounded inputs/budgets, exact physical attempts, immutable migration history and truthful uncertainty. planning_0001 through0010 are applied and immutable. Never run Planning<=0.24 migrators on0010. Replace all admission writers before enabling repair families; Planning<=0.20 lacks enforcement and its migrator must not touch0008. Planning<=0.22 migrators/writers must not touch the new preparation workflow. Public schema bytes and predecessor histories remain unchanged.
+Replacement must preserve canonical hashes/bytes, explicit omission semantics, actor/scope and source identity, bounded inputs/budgets, exact physical attempts, immutable migration history and truthful uncertainty. planning_0001 through0011 are applied and immutable. Never run Planning<=0.28 migrators on0011. Replace all admission writers before enabling repair families; Planning<=0.20 lacks enforcement and its migrator must not touch0008. Planning<=0.22 migrators/writers must not touch the new preparation workflow. Public schema bytes and predecessor histories remain unchanged.
 
 Evidence lives in [BP-07 extraction evidence](../../docs/Audits/Evidence/BP-07-Extraction/); the owning tracker holds current numeric progress. Synthetic cases establish software behavior only. Real provider/model, egress and spend policy remain owner choices before actual calls. The graph-aware packet includes exact schemas and pinned selected owner records; full context-body assembly and tokenizer/context-window fit remain later live adapter/evaluation gates.
 

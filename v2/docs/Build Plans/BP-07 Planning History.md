@@ -399,3 +399,12 @@ Archived MBT checkpoint:
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
 | 2026-10-04 02:00:10 | B1.02 complete; child12.50%,parent2.50%; B1.03 active | [Provider port](../Audits/Evidence/BP-07-Planning/Provider_Port.json);87 source/dev,69 independent;488 schemas |
+
+
+B2.03b.iii.b verified 2026-10-04 14:42:29:Planning0.29/planning0011 owns immutable handoff preparations and bounded outcome history, exact local question dependencies, DB-clock fences and terminal-slot reservation.95 scoped cases237.69s;703 statements78 branches99.36%, new state/origin code100%, transport cleanup gaps explicit.808 installed tests405.569s/39 process stages/two installs;4 new handoff workers preserve bytes/time through recorded dispatch and scripted receipt recovery.506 schemas unchanged; no actual owner-acceptance or abrupt-kill claim. Child46.91%,Build62.55%,parent29.38%;B2=87.65%,B2.03=62.96%,b88.89%,b.iii66.67%;closed1/4 and5/20. Current b.iii.c. [Evidence](../Audits/Evidence/BP-07-Extraction/Owner_Handoff_Storage.json).
+
+Archived MBT checkpoint:
+
+| Timestamp | Checkpoint | Evidence |
+|---|---|---|
+| 2026-10-04 02:08:10 | B1.03 complete; child18.75%,parent3.75%; B1.04 active | [Attempt journal](../Audits/Evidence/BP-07-Planning/Attempt_Journal.json);104 tests incl11 actual PostgreSQL cases |

@@ -1,0 +1,131 @@
+{
+  "verified_at": "2026-10-04 14:42:29",
+  "status": "passed",
+  "gate": "BP-07.02/B2.03b.iii.b",
+  "planning": "0.29.0",
+  "public_planning": "0.7.0",
+  "migration": "planning0011 applied;0001..0010 unchanged",
+  "focused": {
+    "tests": 95,
+    "seconds": 237.69,
+    "coverage": {
+      "covered_lines": 700,
+      "num_statements": 703,
+      "percent_covered": 99.35979513444302,
+      "percent_covered_display": "99",
+      "missing_lines": 3,
+      "excluded_lines": 0,
+      "percent_statements_covered": 99.57325746799431,
+      "percent_statements_covered_display": "99",
+      "num_branches": 78,
+      "num_partial_branches": 2,
+      "covered_branches": 76,
+      "missing_branches": 2,
+      "percent_branches_covered": 97.43589743589743,
+      "percent_branches_covered_display": "97"
+    }
+  },
+  "installed": {
+    "tests": 808,
+    "seconds": 405.569,
+    "process_stages": 39,
+    "installations": 2
+  },
+  "wheels": {
+    "amphora_agent_planning-0.29.0-py3-none-any.whl": "0eabff9a6a9bad2cb87bc12aa462639cea0cc8c84e17f5cee863e68490bbcff3",
+    "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+    "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+    "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+    "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+    "amphora_contracts_planning-0.7.0-py3-none-any.whl": "0f09c0f8bb69e5b0f33929ed1eb4623d768aae1373b651b9c4bb07f5537da9f1",
+    "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+    "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+  },
+  "handoff_stages": {
+    "prepare": {
+      "pid": 17756,
+      "stage": "prepare",
+      "effect_id": "h-26ad5f58b05feeafca5cb748b4a7ea32567521cb5cf784f92d745598ad56a21a",
+      "request": "9a8f2bbe0f259b7f84c5eb6d7a2f04aede2099b50e83f9205f1acf5125f5fd3c",
+      "payload": "9a70d5bf5794283cb6828ee26e53f3e7cac2a2a2012f4ebfbc83d1a76c535a12",
+      "prepared_at": "2026-10-04T19:40:54.360867+00:00",
+      "position": 1,
+      "dispatches": 0,
+      "outcome": "prepared",
+      "selection_sha256": "303667d125b11a145a85e05b1480497a7cf583d92715e64dd07bb1085fecf2c1",
+      "event_sha256": [
+        "ad77274305916d758882eff8ae5d5a883ec3d44717c6ab7d08843162c440139f"
+      ]
+    },
+    "dispatch": {
+      "pid": 26696,
+      "stage": "dispatch",
+      "effect_id": "h-26ad5f58b05feeafca5cb748b4a7ea32567521cb5cf784f92d745598ad56a21a",
+      "request": "9a8f2bbe0f259b7f84c5eb6d7a2f04aede2099b50e83f9205f1acf5125f5fd3c",
+      "payload": "9a70d5bf5794283cb6828ee26e53f3e7cac2a2a2012f4ebfbc83d1a76c535a12",
+      "prepared_at": "2026-10-04T19:40:54.360867+00:00",
+      "position": 2,
+      "dispatches": 1,
+      "outcome": "dispatching",
+      "selection_sha256": "303667d125b11a145a85e05b1480497a7cf583d92715e64dd07bb1085fecf2c1",
+      "event_sha256": [
+        "ad77274305916d758882eff8ae5d5a883ec3d44717c6ab7d08843162c440139f",
+        "e946095f5dfd8b05bba5148eb141e398929fff120fc76afd832d6e160af7ec2a"
+      ]
+    },
+    "recover": {
+      "pid": 26732,
+      "stage": "recover",
+      "effect_id": "h-26ad5f58b05feeafca5cb748b4a7ea32567521cb5cf784f92d745598ad56a21a",
+      "request": "9a8f2bbe0f259b7f84c5eb6d7a2f04aede2099b50e83f9205f1acf5125f5fd3c",
+      "payload": "9a70d5bf5794283cb6828ee26e53f3e7cac2a2a2012f4ebfbc83d1a76c535a12",
+      "prepared_at": "2026-10-04T19:40:54.360867+00:00",
+      "position": 3,
+      "dispatches": 1,
+      "outcome": "acknowledged",
+      "selection_sha256": "303667d125b11a145a85e05b1480497a7cf583d92715e64dd07bb1085fecf2c1",
+      "event_sha256": [
+        "ad77274305916d758882eff8ae5d5a883ec3d44717c6ab7d08843162c440139f",
+        "e946095f5dfd8b05bba5148eb141e398929fff120fc76afd832d6e160af7ec2a",
+        "9893846b0289e0df643fee830299959844ee1cc4c8162fbaca6bed065c8c4047"
+      ]
+    },
+    "replay": {
+      "pid": 28148,
+      "stage": "replay",
+      "effect_id": "h-26ad5f58b05feeafca5cb748b4a7ea32567521cb5cf784f92d745598ad56a21a",
+      "request": "9a8f2bbe0f259b7f84c5eb6d7a2f04aede2099b50e83f9205f1acf5125f5fd3c",
+      "payload": "9a70d5bf5794283cb6828ee26e53f3e7cac2a2a2012f4ebfbc83d1a76c535a12",
+      "prepared_at": "2026-10-04T19:40:54.360867+00:00",
+      "position": 3,
+      "dispatches": 1,
+      "outcome": "acknowledged",
+      "selection_sha256": "303667d125b11a145a85e05b1480497a7cf583d92715e64dd07bb1085fecf2c1",
+      "event_sha256": [
+        "ad77274305916d758882eff8ae5d5a883ec3d44717c6ab7d08843162c440139f",
+        "e946095f5dfd8b05bba5148eb141e398929fff120fc76afd832d6e160af7ec2a",
+        "9893846b0289e0df643fee830299959844ee1cc4c8162fbaca6bed065c8c4047"
+      ]
+    }
+  },
+  "oracles": [
+    "Owned original task/observation/prior/finalized interpretation before preparation",
+    "Immutable first request/review/witness/manifest; historical replay without source processing",
+    "Local need preparation/dispatch requires exact acknowledged local question",
+    "DB-clock fencing, competing leases, final-CAS expiry rollback and scoped grants",
+    "Typed receipt reconstruction rejects fabricated acknowledgment flags",
+    "Nonterminal events stop63; exact terminal readback can commit64",
+    "Separate installed workers preserve request/payload/timestamp/event history across dispatch recovery"
+  ],
+  "limits": [
+    "Scripted owner receipts; no actual registration/graph acceptance or abrupt-kill claim",
+    "Coordinator/current rights before new POST remain b.iii.c; combined actual-owner proof remains outerc",
+    "New storage/preparation/events/origin100% scoped coverage; transport lines123/124/154 and2 branches remain uninstrumented",
+    "506 public schemas unchanged; no live model/scientific acceptance/active repinning"
+  ]
+}
