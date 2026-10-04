@@ -1,5 +1,11 @@
 # BP-06 Planning History
 
+## B1.03a Research projection boundary - 2026-10-03 21:22:59
+
+Separate public research-views0.1 avoids cascading scientific core contract changes. Research0.32 pure query/experiment/observation projections preserve reported context, exact decimal/censor/missing/uncertainty, distinct prepared specimens and original4096-point series order.38 source/254 isolated tests;110 statements12 branches100%;18dev.466 schemas preserve452 predecessor bytes. Owner/API remains B1.03b. B1=50%,Build16.67%,child12.50%,parent85.42%; no closed-gate change.
+
+| 2026-10-03 15:18:21 | B1.04c complete; child15.63%, parent69.27%; B1.04d active | [Workflow](../Audits/Evidence/BP-06-Representations/Binding_Workflow.json);229+2 source;435+2 installed;no schema/migration change |
+
 ## B1.02b Knowledge exploration HTTP - 2026-10-03 21:07:50
 
 Knowledge0.17 adds authenticated exact ledger projections with no new store/grant/migration.56 source/205 isolated tests,233 statements/32 branches100%; source/installed actual HTTP replacement with peers offline, correction separation and removed-grant continuation denial.452 schemas unchanged. Synthetic accepted-input seeding, no scientific validity claim. Initial correction test fixture field mismatch repaired. B1=40%,Build13.33%,child10%,parent85%; B1.03a scientific contracts/policy active, b actual Research proof next.

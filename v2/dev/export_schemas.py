@@ -11,6 +11,7 @@ import amphora_contracts_graph_runtime as graph_runtime_contracts
 import amphora_contracts_knowledge as knowledge_contracts
 import amphora_contracts_representations as representation_contracts
 import amphora_contracts_research as research_contracts
+import amphora_contracts_research_views as research_view_contracts
 import amphora_contracts_runtime as runtime_contracts
 import amphora_contracts_solver_fixture as solver_fixture_contracts
 import amphora_contracts_tools as tool_contracts
@@ -36,6 +37,14 @@ from amphora_contracts_tools import Completion, Invocation, ToolBinding, ToolDes
 
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
+    "research-views.specimen-view-request": research_view_contracts.SpecimenViewRequest,
+    "research-views.specimen-view-page": research_view_contracts.SpecimenViewPage,
+    "research-views.property-view-request": research_view_contracts.PropertyViewRequest,
+    "research-views.property-view-page": research_view_contracts.PropertyViewPage,
+    "research-views.observation-series-request": research_view_contracts.ObservationSeriesRequest,
+    "research-views.observation-series-page": research_view_contracts.ObservationSeriesPage,
+    "research-views.catalog": research_view_contracts.ResearchViewCatalog,
+
     "core.scope": Scope,
     "core.schema-ref": SchemaRef,
     "core.artifact-ref": ArtifactRef,

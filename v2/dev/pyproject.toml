@@ -3,13 +3,14 @@ name = "amphora-foundation-verification"
 version = "0.1.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
+    "amphora-contracts-research-views==0.1.0",
     "amphora-contracts-representations==0.3.0",
     "amphora-knowledge==0.17.0",
     "amphora-contracts-knowledge==0.8.0",
     "amphora-contracts-core==0.1.0",
     "amphora-contracts-evidence==0.5.13",
     "amphora-contracts-research==0.14.0",
-    "amphora-research==0.31.1",
+    "amphora-research==0.32.0",
     "amphora-contracts-tools==0.1.0",
     "amphora-contracts-campaigns==0.4.1",
     "amphora-campaign-runtime==0.20.2",
@@ -40,6 +41,7 @@ package = false
 link-mode = "copy"
 
 [tool.uv.sources]
+amphora-contracts-research-views = { path = "../contracts/research_views", editable = true }
 amphora-contracts-representations = { path = "../contracts/representations", editable = true }
 amphora-knowledge = { path = "../services/knowledge", editable = true }
 amphora-contracts-knowledge = { path = "../contracts/knowledge", editable = true }

@@ -159,6 +159,23 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-contracts-research-views"
+version = "0.1.0"
+source = { editable = "../../contracts/research_views" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-research" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-research", editable = "../../contracts/research" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-runtime"
 version = "0.1.0"
 source = { editable = "../../contracts/runtime" }
@@ -196,7 +213,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-research"
-version = "0.31.1"
+version = "0.32.0"
 source = { editable = "." }
 dependencies = [
     { name = "alembic" },
@@ -205,6 +222,7 @@ dependencies = [
     { name = "amphora-contracts-graph-runtime" },
     { name = "amphora-contracts-knowledge" },
     { name = "amphora-contracts-research" },
+    { name = "amphora-contracts-research-views" },
     { name = "amphora-tool-protocol" },
     { name = "fastapi" },
     { name = "psycopg", extra = ["binary"] },
@@ -221,6 +239,7 @@ requires-dist = [
     { name = "amphora-contracts-graph-runtime", editable = "../../contracts/graph_runtime" },
     { name = "amphora-contracts-knowledge", editable = "../../contracts/knowledge" },
     { name = "amphora-contracts-research", editable = "../../contracts/research" },
+    { name = "amphora-contracts-research-views", editable = "../../contracts/research_views" },
     { name = "amphora-tool-protocol", editable = "../../sdk/tool_protocol" },
     { name = "fastapi", specifier = ">=0.115,<1" },
     { name = "psycopg", extras = ["binary"], specifier = ">=3,<4" },
