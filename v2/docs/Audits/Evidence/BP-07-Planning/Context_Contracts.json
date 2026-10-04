@@ -1,0 +1,46 @@
+{
+  "verified_at": "2026-10-04 01:53:10",
+  "status": "passed",
+  "scope": "BP-07.01 B1.01 pure request/context and public contracts",
+  "source_tests": 42,
+  "source_and_dev_tests": 60,
+  "source_and_dev_seconds": 20.65,
+  "independent_tests": 42,
+  "independent_seconds": 4.46,
+  "independent_wheels": {
+    "amphora_agent_planning-0.1.0-py3-none-any.whl": "4523114c47e0476c3fe1a0bd63af6bdf9503ebd7f58a5df7f5420471cb539e1b",
+    "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+    "amphora_contracts_planning-0.1.0-py3-none-any.whl": "cda14bd33e038fa916230c37e3ba8d97f263a5cc40af6eddeada3b5223482be7",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee"
+  },
+  "coverage": {
+    "covered_lines": 84,
+    "num_statements": 84,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100",
+    "num_branches": 8,
+    "num_partial_branches": 0,
+    "covered_branches": 8,
+    "missing_branches": 0,
+    "percent_branches_covered": 100.0,
+    "percent_branches_covered_display": "100"
+  },
+  "schemas": {
+    "total": 484,
+    "added": 18,
+    "unchanged_predecessors": 466
+  },
+  "limits": [
+    "pure context and public DTO acceptance only",
+    "no provider, persistence or runtime authority implementation"
+  ],
+  "test_harness_repair": "Explicit short parameter IDs replaced oversized pytest case names; corrected final runs pass without warnings."
+}

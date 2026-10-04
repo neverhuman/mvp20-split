@@ -2,11 +2,12 @@
 
 ## Current checkpoint
 
-- Last refreshed: 2026-10-04 01:46:10 (America/Chicago).
-- Latest pushed8d3ec82. BP-06 and final child closed100%,24/24 and4/4; parent/child/history archived with inbound links repaired. Closeout docs pending commit/push after link checks. No tests running.
-- Final actual acceptance210.37s,222 independent Studio tests,48 protocol/dev,466 schemas, lint/build passed. Source and independent actual feedback browser, races, pending-query recovery and immutable campaign pins verified. Final_Verification.json and BP-06.06 Verification index retain scope/coverage/evidence.
-- Next authorized task: BP-07 parent/first-child bounded activation audit, then BP-07.01/B1 deterministic model/engagement contracts. Read MBT -> parent -> child -> owning module contracts. Live provider/model/egress/spend choices are explicitly required before real calls; deterministic work remains unblocked. No automatic provider choice or external calls.
-- Check draft-to-final audit status, touched Markdown links, canonical100% mirrors, clean diff; commit/push closeout, continue. Closed plans stay closed; no routine owner approval gate.
+- Last refreshed: 2026-10-04 01:53:10 (America/Chicago).
+- Latest pushed90cda1c closes BP-06. BP-07.01 activated, B1.01 complete pending commit. Child6.25%,Build8.33%,Acceptance0%; parent1.25%,0/20 closed gates. Current B1.02 deterministic provider port, next B1.03 own persistence. Read canonical child and BP-07.01 Physical design before coding.
+- New contracts/planning0.1 + services/agent_planning0.1: strict context/model/request/attempt DTOs, pure immutable RequestSnapshot/ContextPolicy/AttemptBinding.42 source/42 independent tests,60 with dev20.65s;84 statements/8 branches100%;484 schemas preserve466 predecessors. Dev uv sync installed both. No tests running.
+- Independent8-wheel closure .test-results/planning-context-independent-20261004/environment/Scripts/python.exe, manifest/build.log/tests.xml. Context_Contracts.json records evidence. No private service peers, FastAPI or SQLAlchemy installed in that pure closure. No provider dispatch, DB, live model or Runtime acceptance implemented yet.
+- Continue after commit/push to B1.02 deterministic adversarial provider and bounded output/proposal envelope; B1.03 persistence then B1.04 actual owner readback. B2 durable budget/attempt accounting, B3 recovery, V1 independent audit. Live provider/model, egress and spend choices require owner direction only before real calls; deterministic work unblocked.
+- Use PYTHONUTF8=1 in each tool shell before Python scripts. Explicit short pytest IDs for large malformed input cases; default IDs previously overflowed filesystem/logs and were fixed. Source/provider tests should remain scoped; DB suites serial.
 
 ## Retained installations and fixtures
 

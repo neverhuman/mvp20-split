@@ -9,6 +9,7 @@ import amphora_contracts_artifacts as artifact_contracts
 import amphora_contracts_evidence as evidence_contracts
 import amphora_contracts_graph_runtime as graph_runtime_contracts
 import amphora_contracts_knowledge as knowledge_contracts
+import amphora_contracts_planning as planning_contracts
 import amphora_contracts_representations as representation_contracts
 import amphora_contracts_research as research_contracts
 import amphora_contracts_research_views as research_view_contracts
@@ -37,6 +38,15 @@ from amphora_contracts_tools import Completion, Invocation, ToolBinding, ToolDes
 
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
+    "planning.model-binding": planning_contracts.ModelBinding,
+    "planning.call-limits": planning_contracts.CallLimits,
+    "planning.context-entry": planning_contracts.ContextEntry,
+    "planning.context-omission": planning_contracts.ContextOmission,
+    "planning.context-manifest": planning_contracts.ContextManifest,
+    "planning.engagement-ref": planning_contracts.EngagementRef,
+    "planning.engagement-request": planning_contracts.EngagementRequest,
+    "planning.provider-attempt-ref": planning_contracts.ProviderAttemptRef,
+    "planning.provider-usage": planning_contracts.ProviderUsage,
     "research-views.specimen-view-request": research_view_contracts.SpecimenViewRequest,
     "research-views.specimen-view-page": research_view_contracts.SpecimenViewPage,
     "research-views.property-view-request": research_view_contracts.PropertyViewRequest,

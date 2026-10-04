@@ -123,3 +123,7 @@ Closeout evidence: pending. No implementation, deployment or scientific validati
 ## Reference refinement 2026-09-25 13:54:17
 
 BP-07.02/.03 now preserve extraction/repair provenance, distinguish inferred from source-stated values, and bind proposed experiment steps to exact unmet question criteria. Model answers cannot self-certify scientific sufficiency or bypass between-campaign human changes. Existing implementation deliveries extended with required acceptance cases; all 0%, denominator unchanged. [Reference assessment](References/Amphora_Lab_Insights.md) owns provenance and limitations.
+
+## 2026-10-04 01:53:10 - Activation and B1.01
+
+BP-06 closed90cda1c; corrected-ready activation preserves Runtime/domain authority. New planning0.1/Agent Planning0.1 pure context and attempt boundary.42 source/42 independent;60 including dev;84 statements/8 branches100%;484 schemas preserve466 predecessor bytes.8-wheel isolated closure excludes private peers. Child6.25%,parent1.25%, Build8.33%,Acceptance0%; B1.02 provider port active.

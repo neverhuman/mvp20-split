@@ -190,5 +190,17 @@
     "coverage_sources": [
       "contracts/research_views/src/amphora_contracts_research_views"
     ]
+  },
+  "contracts-planning": {
+    "tests": "contracts/planning/tests",
+    "coverage_sources": [
+      "contracts/planning/src/amphora_contracts_planning"
+    ]
+  },
+  "agent-planning": {
+    "tests": "services/agent_planning/tests",
+    "coverage_sources": [
+      "services/agent_planning/src/amphora_agent_planning"
+    ]
   }
 }

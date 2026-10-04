@@ -931,3 +931,5 @@ All24 deliveries accepted, each child100%. Final verification8d3ec82; component/
 Archived MBT checkpoints:
 
 | 2026-10-03 18:46:24 | B2.04a complete; child45.83%, parent74.31%; b active | [Retrieval API/hosting](../../Audits/Evidence/BP-06-Representations/Retrieval_API.json);41 source/41 installed,18 dev;117 statements/26 branches |
+
+| 2026-10-03 18:56:17 | B2.04b complete; child47.92%, parent74.65%; c active | [Profile migration](../../Audits/Evidence/BP-06-Representations/Profile_Migration.json);83 source/83 installed,18 dev;legacy v1 descriptors unchanged |

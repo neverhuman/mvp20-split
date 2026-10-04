@@ -1,0 +1,9 @@
+# Context request snapshot
+
+BP-07.01/B1.01. RequestSnapshot.from_bytes/bind validates at most256KiB strict UTF-8 JSON, rejecting duplicate keys, nonfinite numbers, malformed/deep input and unknown fields. It binds the trusted caller actor/scope to the request, context, Runtime cut and all Artifact refs. Stored bytes are canonical sorted compact UTF-8; document() returns a fresh DTO. Fingerprints include exact request/prompt/model/configuration, declared actions, budget and omissions. Direct construction is internal; public boundary callers use validated factories.
+
+ContextPolicy owns cross-field rules: supervision requires a cut; Artifact IDs cannot alias conflicting identities; entry and omission lists have no duplicates/overlap; objective/prompt/policy/configuration cannot be omitted; actions are unique; one conservative input+output call fits context window and total token limits. The trusted workflow still must read/authorize actual Artifacts and policy, obtain tokenizer evidence and reserve durable usage before dispatch. These are not inferred from shape validation or a digest.
+
+AttemptBinding separates one logical request from up to its declared physical-attempt limit and verifies exact request digest, scoped engagement and ordinal. It neither allocates attempts nor spends budget. Runtime cut changes alter request identity but this module does not decide relevance-aware staleness. No provider, database, filesystem I/O, clock or network side effects occur.
+
+Rebuild tests: tests/context/test_snapshot.py covers scope/actor, immutable caller copies, identity/omission conflicts, conservative shape limits, strict JSON and attempt mismatch. Pure coverage is scoped here; later persistence/provider tests separately prove dispatch/recovery. Changes to canonical bytes require a new format/version and retained replay evidence. No live scientific or model correctness claim.
