@@ -36,7 +36,7 @@ def test_actual_source_graph_baseline(tmp_path):
         url = URL.create('postgresql+psycopg', username=role + '_service', password=state['password'],
             host=host, port=int(port), database=state['database'])
         environment = dict(base_environment(), OWNER_DATABASE=url.render_as_string(hide_password=False),
-            OWNER_TOKEN=tokens[owner])
+            OWNER_TOKEN=tokens[owner], BROWSER_TOKEN=secrets.token_hex(24))
         setup = dict(environment, OWNER_MIGRATION=url.set(username=role + '_migrator').render_as_string(hide_password=False))
         owned_setup(interpreters[owner], 'import os; from amphora_' + owner +
             '.persistence.migrate import upgrade; upgrade(os.environ["OWNER_MIGRATION"])', setup)
@@ -61,6 +61,8 @@ def test_actual_source_graph_baseline(tmp_path):
             result['feedback'] = progress(scenario, result, runtime)
         from .live.reuse import prove as prove_reuse
         result['reuse'] = prove_reuse(scenario, result)
+        from .live.views import prove as prove_views
+        result['windows'] = prove_views(scenario, result)
         root = Path(__file__).absolute().parents[3]
         owners = {name: {'endpoint': owner.endpoint, 'token': owner.token} for name, owner in
             [('data', scenario.data), ('research', scenario.research), ('knowledge', scenario.knowledge)]}
@@ -70,6 +72,15 @@ def test_actual_source_graph_baseline(tmp_path):
             creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
         assert probe.returncode == 0, 'Compiled Studio actual-owner probe failed: ' + probe.stderr[-1200:]
         result['studio'] = json.loads(probe.stdout)
+        if os.environ.get('AMPHORA_TEST_FEEDBACK_BROWSER') == '1':
+            browser_owners = {name: {'endpoint': owner.endpoint, 'token': environments[key]['BROWSER_TOKEN']}
+                for name, key, owner in [('data', 'data_artifacts', scenario.data), ('research', 'research', scenario.research), ('knowledge', 'knowledge', scenario.knowledge)]}
+            output = root / '.test-results' / 'feedback-browser' / scope['project_id']
+            browser = subprocess.run(['node', 'tests/integration/explore_live.mjs'], cwd=root / 'studio',
+                input=json.dumps({'owners': browser_owners, 'records': result, 'output': str(output)}), env=base_environment(),
+                capture_output=True, text=True, encoding='utf-8', timeout=120, creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
+            assert browser.returncode == 0, 'Actual Explore browser failed: ' + browser.stderr[-2000:]
+            result['browser'] = json.loads(browser.stdout)
         path = os.environ.get('AMPHORA_TEST_FEEDBACK_EVIDENCE')
         if path:
             Path(path).write_text(json.dumps({'scope': scope, 'status': 'integrated_baseline_verified',

@@ -1,0 +1,130 @@
+{
+  "verified_at": "2026-10-04 00:56:34",
+  "status": "passed",
+  "scope": "BP-06.06 B3.01 LAB-REF01",
+  "tests": 1,
+  "seconds": 96.91,
+  "actual_records": ".test-results/feedback-browser-20261004.json",
+  "sha256": "a3c1304ebf06934d279bbabd34051ee1933799c92b72c2d03c09179d22a99bd6",
+  "project": "30f8413cc0704e0ca92a9bf8d7527f5d",
+  "owner_checks": [
+    "Knowledge and Research scope403",
+    "Changed graph filter and reversed observation selection reject prior cursor409",
+    "Size-one pages exhaust exact two-member sets without merge or precision loss",
+    "Original pages replay after successor corrections"
+  ],
+  "browser": {
+    "status": "passed",
+    "scenarios": [
+      "keyboard concept -> exact pinned claim -> hash-verified source span",
+      "explicit size-one windows and visible next controls preserve owner graph/specimen/property pages",
+      "foreign experiment denied by actual owner and prior protected detail cleared"
+    ],
+    "screenshots": [
+      "actual-source-1440.png",
+      "actual-source-390.png"
+    ],
+    "requests": [
+      {
+        "path": "/api/knowledge/v1/graph-explore/entities",
+        "method": "POST",
+        "status": 200
+      },
+      {
+        "path": "/api/knowledge/v1/graph-explore/object",
+        "method": "POST",
+        "status": 200
+      },
+      {
+        "path": "/api/knowledge/v1/graph-explore/neighborhood",
+        "method": "POST",
+        "status": 200
+      },
+      {
+        "path": "/api/knowledge/v1/graph-explore/object",
+        "method": "POST",
+        "status": 200
+      },
+      {
+        "path": "/api/data/v1/acquisition/sources/document/r1",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "path": "/api/data/v1/artifacts/3c2663b955ec4a558e0ea847d316c44e",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "path": "/api/data/v1/artifacts/3c2663b955ec4a558e0ea847d316c44e/content",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "path": "/api/data/v1/acquisition/traces/conversion",
+        "method": "GET",
+        "status": 200
+      },
+      {
+        "path": "/api/knowledge/v1/graph-explore/entities",
+        "method": "POST",
+        "status": 200
+      },
+      {
+        "path": "/api/knowledge/v1/graph-explore/entities",
+        "method": "POST",
+        "status": 200
+      },
+      {
+        "path": "/api/research/v1/research-explore/specimens",
+        "method": "POST",
+        "status": 200
+      },
+      {
+        "path": "/api/research/v1/research-explore/specimens",
+        "method": "POST",
+        "status": 200
+      },
+      {
+        "path": "/api/research/v1/research-explore/specimens",
+        "method": "POST",
+        "status": 200
+      },
+      {
+        "path": "/api/research/v1/research-explore/properties",
+        "method": "POST",
+        "status": 200
+      },
+      {
+        "path": "/api/research/v1/research-explore/properties",
+        "method": "POST",
+        "status": 200
+      },
+      {
+        "path": "/api/research/v1/research-explore/properties",
+        "method": "POST",
+        "status": 200
+      },
+      {
+        "path": "/api/research/v1/research-explore/properties",
+        "method": "POST",
+        "status": 403
+      }
+    ],
+    "browser": "153.0.8010.12"
+  },
+  "visual_review": {
+    "widths": [
+      1440,
+      390
+    ],
+    "inspected": true,
+    "narrow": "Scrolled source and conversion inspector; initial navigation also reviewed in preceding run",
+    "directory": ".test-results/feedback-browser/30f8413cc0704e0ca92a9bf8d7527f5d"
+  },
+  "limits": [
+    "Synthetic evidence, no scientific validity",
+    "Loopback read adapter, not deployed gateway",
+    "Independent browser replacement and correction races remain later gates"
+  ]
+}

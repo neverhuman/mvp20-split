@@ -57,7 +57,8 @@ class SourceGraphScenario:
         data_config = {'database_url_env': 'OWNER_DATABASE',
             'storage_root': str(self.directory / 'bytes'), 'acquisition': True,
             'principals': [{'token_env': 'OWNER_TOKEN', 'actor_id': 'fixture', 'scope': scope,
-                'actions': ['read', 'source_history', 'upload', 'finalize', 'acquire', 'manage_source_rights']}],
+                'actions': ['read', 'source_history', 'upload', 'finalize', 'acquire', 'manage_source_rights']},
+                {'token_env': 'BROWSER_TOKEN', 'actor_id': 'browser', 'scope': scope, 'actions': ['read', 'source_history']}],
             'profiles': [{'media_type': 'text/plain', **source_schema},
                 {'media_type': 'application/json', **reasoning_artifact_schema().model_dump(mode='json'),
                  'schema_path': 'reasoning.json'}]}
@@ -127,7 +128,8 @@ finally: engine.dispose()
         eligibility_profiles = reuse_profiles(specimens, artifact)
         self.environments['research']['DATA_TOKEN'] = self.environments['data_artifacts']['OWNER_TOKEN']
         research = self.start('research', {'database_url_env': 'OWNER_DATABASE', 'principals': [
-            {'token_env': 'OWNER_TOKEN', 'actor_id': 'reader', 'scope': scope, 'actions': ['read_declarations', 'assess_eligibility', 'read_scientific_assessment', 'read_scientific_record', 'assess', 'read_assessment', 'publish_assessment', 'read_assessment_publication', 'correct_assessment_receipt', 'select_assessment_receipt']}],
+            {'token_env': 'OWNER_TOKEN', 'actor_id': 'reader', 'scope': scope, 'actions': ['read_declarations', 'assess_eligibility', 'read_scientific_assessment', 'read_scientific_record', 'assess', 'read_assessment', 'publish_assessment', 'read_assessment_publication', 'correct_assessment_receipt', 'select_assessment_receipt']},
+            {'token_env': 'BROWSER_TOKEN', 'actor_id': 'browser', 'scope': scope, 'actions': ['read_scientific_record']}],
             'assessment': {'profiles': profiles, 'data': {'endpoint': data.endpoint, 'token_env': 'DATA_TOKEN'},
                 'publication': {'actor_id': 'fixture', 'issuer_id': 'research-synthetic', 'token_env': 'DATA_TOKEN'}},
             'science': {'lab_profiles': [], 'eligibility_profiles': eligibility_profiles, 'synthesis_profiles': [],
@@ -141,7 +143,8 @@ finally: engine.dispose()
             'max_entities': 4096, 'max_assertions': 8192, 'max_aliases': 4096, 'max_retractions': 8192}
         knowledge = self.start('knowledge', {'database_url_env': 'OWNER_DATABASE', 'principals': [
             {'token_env': 'OWNER_TOKEN', 'actor_id': 'author', 'scope': scope,
-             'actions': ['read_graph', 'propose_graph', 'reason_graph', 'publish_reasoning', 'rebuild_graph']}],
+             'actions': ['read_graph', 'propose_graph', 'reason_graph', 'publish_reasoning', 'rebuild_graph']},
+            {'token_env': 'BROWSER_TOKEN', 'actor_id': 'browser', 'scope': scope, 'actions': ['read_graph']}],
             'vocabulary': fixture['vocabulary'], 'policy': policy, 'reasoning': [rules],
             'publication': {'actor_id': 'fixture', 'issuer_id': 'knowledge-synthetic', 'token_env': 'DATA_TOKEN'},
             'data': {'endpoint': data.endpoint, 'token_env': 'DATA_TOKEN'},
