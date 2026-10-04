@@ -1,74 +1,44 @@
 # Planning trace publication boundary
 
-Planning0.15, BP-07.02/B1 complete. Pure identities/payloads/transitions, the owned PostgreSQL journal and public SDK workflow are implemented. Actual installed Data integration is verified; only exact finalized receipt/derivation readback proves publication. A prepared payload alone does not prove an Artifact exists.
+- Status: trace publication and actual Data replacement/recovery are verified under BP-07.02/B1. Planning0.26 shared-driver extraction passed39 focused cases and705 isolated tests/35 process stages.
+- Owner: Planning trace publication and provenance; Data owns Artifact bytes, current processing authorization and derived-upload acceptance. Knowledge/Research own scientific acceptance.
+- State: planning_0007 trace-publication history; later result publication uses separate planning_0010 tables. Never run Planning<=0.24 migrators on the current retained database.
+- Evidence: [actual trace publication](../../../../../docs/Audits/Evidence/BP-07-Extraction/Actual_Publication.json). Detailed historical checkpoint counts belong to the owning BP-07 plan/history.
 
-PublicationIdentity binds a record_attempts principal, scoped exact trace
-reference, publication ID and trusted publisher configuration identity. Its
-immutable canonical bytes determine stable begin/finalize command IDs per upload
-ordinal. The configured publisher identity contains no credential. The owner
-journal loads the original actor's exact stored trace/task and reject
-ID/content/configuration conflicts before any external effect.
+## Responsibilities and exclusions
 
-TraceArtifact.reviewed validates the exact trace/task/request/actor/context pins
-against a SourceReviewer observation, verifies source bundle and prompt bytes,
-requires every declared source/conversion trace and includes all consumed inputs
-without duplicates, foreign scope, missing or unreviewed entries. Derived input
-order is stable by Artifact ID and bounded128. The exact canonical trace body is
-bounded1MiB; it retains interpretation_only/profile_only metadata for failed and
-successful attempts. Publishing does not upgrade citations or scientific truth.
+PublicationIdentity binds original actor, exact owned trace, publication ID and trusted publisher configuration ID. PublicationJournal loads the exact stored task/trace and persists immutable prepared trace bytes, reviewed provenance and bounded upload events. TracePublisher coordinates fresh source review and public Data SDK effects. PublicationTransport supplies bounded local HTTP. This module does not accept scientific claims, run models, repin campaigns or own generic result payloads; result_publication owns feedback/answer preparation and its separate journal.
 
-extraction-trace-v1.schema.json is the trusted self-contained Data content schema,
-pinned by exact UTF-8/LF file hash under planning.extraction-trace-content/v1.
-It differs from the exported URN root identity; no caller may install validators.
-The transformation descriptor binds the interpretation profile and exact task,
-trace and observation hashes. Publication must freshly review sources; historical
-payload reconstruction is not new-use permission. Data rechecks complete current
-process ancestry at derived begin/finalize.
+PublishedCandidate is the shared pure binding of observed typed output, byte-reviewed sources and finalized interpretation payload/receipt. It rechecks receipt, task/observation and attribution before exposing candidate parsing/grounding. It acquires no Knowledge or Research facts: graph ProposalInputs adds KnowledgeContext; Research validation adds QuestionContext. Hand-constructed values are not proof of stored origin or peer contact.
 
-PublicationAttempt permits prepared -> begun -> streaming -> streamed ->
-finalizing -> finalized. Receipt checks bind complete upload descriptor/scope,
-stream upload identity, final content and exact derivation inputs/origin command
-identity/hash. Stream intent must be persisted before PUT by the forthcoming
-workflow. Uncertain streaming becomes abandoned; replacement has distinct stable
-command IDs, at most8 upload attempts. It cannot repeat the old PUT or proceed
-to finalization. An ambiguous finalization stays finalizing, using its original
-command; abandonment/re-streaming is forbidden. Rejected begin/finalize outcomes
-are terminal for that attempt. Old histories and charged uploads remain intact.
+## Trace payload and ancestry
 
-Tests/publication/test_values.py owns payload, actor/trace/task/source/ancestry,
-schema, deterministic commands, transition, failed-interpretation and forged
-receipt oracles.22 pure cases are included in351 owner/contract/dev checks;
-158 statements2 branches100%. These are software boundary tests, not actual
-Data publication or process recovery proof. Rebuilds must preserve exact content
-and command identities, bounded attempts, honest uncertain states and complete
-source ancestry; c.iii/d must add SDK recovery and actual-peer evidence.
+TraceArtifact.reviewed binds exact trace/task/request/actor/context, source bundle and pinned prompt bytes. It verifies all declared source/conversion traces and includes every consumed objective, prompt, policy, model configuration, selected context, source raw Artifact and conversion output. Inputs are unique exact references in stable Artifact-ID order, same scope, capped128; missing, foreign, conflicting or unreviewed inputs fail. Canonical trace body is at most1MiB and retains interpretation_only/profile_only metadata for successful and failed attempts.
 
-## Owned durable boundary
+extraction-trace-v1.schema.json is the trusted packaged content profile, pinned by exact LF byte hash as planning.extraction-trace-content/v1. It differs from public exported schema URN identity. Callers cannot install validators. The transformation descriptor binds interpretation profile and exact task/trace/observation hashes. Historical reconstruction uses stored metadata; it never grants continuing processing rights. New preparation reviews source bytes, and Data rechecks current ancestry permission at new begin/finalize.
 
-PublicationStore owns exact registration plus DB-clock leases (1..300 seconds), holder/fence, renewal and release. PublicationJournal prepares from the original stored trace/task and reviewed source metadata, then appends bounded events through compare-and-set position writes. planning_0007 stores immutable intents/payloads/events and separately mutable control columns. Only SELECT/INSERT is granted on history; lease/control updates are column-scoped. No peer I/O occurs under SQL locks.
+## Immutable state and replacement
 
-Readback requires read_attempts and the original actor; it does not invent a write grant. Every payload is rebuilt from the stored trace/task plus bounded historical Artifact/source/conversion metadata, then all contiguous events (max64) replay through the pure transition rules. Raw source bytes are not duplicated in publication storage. Metadata replay is not fresh rights authorization. A new lease cannot reuse a previous streaming intent to repeat PUT. Final-write lease expiry rolls back both event and position; readback takes a short owner lock for consistent multi-query reconstruction.
+planning_0007 stores SELECT/INSERT-only intents, payloads and events. Separate control columns own holder, fence, expiry and position with scoped update grants. PublicationStore uses stable scoped locks and DB-clock leases1..300s; TracePublisher requests120s. No peer/provider I/O occurs under SQL. Prepare reconstructs exact owned facts and binds review metadata before committing payload plus initial event. Every transition checks lease/fence/expected position, including the final position write so late expiry rolls back event/payload effects.
 
-Verified2026-10-04 05:11:45:375 owner/contract/dev cases65.55s,46 publication cases including8 actual PostgreSQL cases;469 publication statements28 branches100%. Tests include competing holders, stale writers, expiry during write, injected rollback, immutable SQL grants, read-only replacement and strict corruption detection. Planning<=0.13 migrators must not touch planning_0007. Real Data calls and abruptly interrupted publication processes remain unproven until c.iii/d.
+Read requires read_attempts and the original actor. It takes a short owner lock for consistent multi-query reconstruction, rebuilds payload from original trace/task and canonical Artifact/source/conversion metadata, then replays at most64 contiguous digest-checked events. Source bytes are not duplicated in publication storage. Changed ID/content/publisher/schema bindings conflict; old bytes and timestamps remain unchanged. New execution requires record_attempts plus read_attempts and matching client actor/scope.
 
-## SDK workflow and bounded transport
+## SDK coordination and shared driver
 
-TracePublisher composes the journal, SourceReviewer and public ArtifactClient from amphora-tool-protocol0.2. It validates configured client actor/scope before registration, acquires a120-second DB-clock lease, re-reads state, and reviews source bytes outside SQL before first preparation. Completed/rejected histories replay without new peer effects. The original actor requires both record_attempts and read_attempts for execution. A publisher configuration ID binds the intended peer/configuration independently of its secret credential.
+TracePublisher registers intent, returns terminal finalized/rejected history without fresh input or peer calls, acquires/re-reads under its lease, reviews sources outside SQL if no payload exists, then drives upload. driver.py contains the bounded upload loop shared with ResultPublisher; it owns no preparation rules, schema, journal table or persisted event format. TracePublisher._drive delegates to it. The extraction changes no trace identities, body/event/command bytes or limits.
 
-Begin/finalize use receipt-first SDK recovery with original stable IDs and exact command bytes. Only the invocation that commits the streaming transition may issue its single PUT. Any recovered streaming state is uncertain even if a crash occurred before the call; retain abandonment, then use a distinct next upload. An uncertain finalize or derivation lookup stays finalizing and reconciles the same command. A verified Data rejection becomes immutable rejected history; an unavailable/denied lookup never fabricates rejection or success. Every local transition rechecks lease/fence/position. Release ignores only expected lease loss; other persistence failures remain visible. Remote effects can outlive a lease and must be reconciled; no network exactly-once claim.
+Begin/finalize use receipt-first SDK recovery with original command IDs and canonical bytes. Only the invocation committing streaming intent may perform its one PUT. Recovered streaming intent is uncertain even if the process stopped before sending; retain abandonment and choose a distinct next upload. Uncertain finalize or derivation lookup stays finalizing and reconciles the original command; no abandonment/re-streaming is allowed there. A verified Data rejection becomes immutable history. An unavailable/denied receipt lookup never fabricates rejection or success.
 
-PublicationTransport implements the public SDK transport protocol for a closed GET receipt/derivation, POST derived-begin/finalize and PUT content catalog. Only explicitly configured127.0.0.1 HTTP with port is supported in this first local deployment. No redirects/proxies/implicit retries. Each exchange has a maximum5-second wall-clock deadline covering headers, body and writes,1MiB outbound bound and256KiB reply bound. Successful responses require JSON media and strict duplicate/non-finite rejection before SDK decoding. Errors expose safe reasons. SDK command recovery is bounded to three rounds; workflow transitions are capped at10 per invocation and8 lifetime uploads. A failing PUT exits this invocation; it does not immediately spend every successor attempt. Historical payload metadata is not continuing source authorization; Data must recheck current ancestry on each newly committed begin/finalize.
+One invocation drives at most10 transitions; lifetime upload attempts are capped8 and events64. A failed PUT exits that invocation rather than immediately exhausting all successors. Receipt checks bind upload/content/declaration, stream upload identity and final Artifact/derivation to exact original command identity/hash. Guard checks precede effects, but remote effects may outlive a lease; this is bounded reconciliation, not network exactly-once. Release ignores only expected publication_lease_lost; other persistence failures remain visible.
 
-Owned tests/publication/test_workflow.py uses the actual Planning PostgreSQL journal and public SDK with scripted Data records; test_transport.py uses actual loopback HTTP with scripted responses. They prove lost replies, uncertain PUT, exact command resume, derivation mismatch, terminal rejection, lease loss, interrupted local transitions, finite attempts, strict routes/JSON and trickle bounds. B1.04d must still prove actual independently installed Data publication, inherited rights denial and replacement after process termination. Scientific meaning, Knowledge acceptance and live provider behavior are not this module's authority.
+## Transport and processing policy
 
-Verified2026-10-04 05:23:21:421 owner/contract/dev cases109.26s;92 publication cases;602/608 statements58/62 branches covered. Residuals: closed-socket shutdown catch and explicit timer-expiry fallback branches; unexpected release-error propagation and defensive workflow exhaustion. Actual SQL/SDK behavior is verified, actual installed Data acceptance remains d.
+PublicationTransport permits only the closed GET receipt/derivation, POST derived-begin/finalize and PUT content routes. Initial deployment permits explicit127.0.0.1 HTTP with port, without redirects/proxies/implicit retries. Each exchange has a5s wall-clock deadline covering headers/body/writes,1MiB outbound and256KiB reply bounds. Success requires JSON media and strict duplicate/nonfinite rejection. SDK receipt recovery has at most3 rounds; errors expose safe codes.
 
-## Actual-owner replacement acceptance
+Current process-rights denial gates new effects. HTTP403 alone cannot establish whether Data committed a rejection; only exact receipt observation resolves that. An observed terminal rejection remains rejected after regrant. A separately identified future publication may proceed after reauthorization. Previously finalized history stays byte-exact without new source processing.
 
-Verified2026-10-04 05:38:25:403 owned tests in two independent Planning installations plus17 retained-history processes; actual Data0.29/Planning0.15 publication20 Planning processes and2 Data processes. Public upload/source rights/prepare/retain routes create six real input Artifacts and conversion provenance. Actual SourceReviewer and SDK produce matching content/ancestry under the trusted trace schema. Abrupt os._exit73 after prepared, streaming intent, streamed and remote-finalize boundaries preserves prior bytes/timestamps. Only uncertain stream intent selects a new upload; remote-finalize recovery returns the original Artifact. Data restart preserves source/conversion history. Test-only8-second leases expire naturally; production default remains120 seconds.
+## Owned verification and limits
 
-Current process-rights denial is an operational authorization gate. HTTP403 alone does not identify whether Data committed a rejection. Planning retains uncertainty until exact receipt observation; an observed terminal rejection stays rejected after regrant. A separately identified future publication can proceed after reauthorization. Previously finalized history remains byte-exact throughout. dev/verify_planning_publication.py is the repeatable installed proof; full source/manifest identities are referenced by docs/Audits/Evidence/BP-07-Extraction/Actual_Publication.json. These are synthetic software acceptance cases, not real-provider quality, machine power-loss testing or Knowledge change acceptance.
+Tests/publication separates pure values/records, actual PostgreSQL journal/fence tests, bounded transport and SDK workflow tests with scripted Data. Both publication and result_publication workflow tests protect the shared driver. Trace acceptance already exercised actual installed Data source/conversion provenance, matched content/ancestry, rights denial/regrant, Data restart and abrupt os._exit73 after preparation/stream intent/streamed/remote-finalize boundaries. Only uncertain streaming chooses a successor; remote-finalize recovery returns the original Artifact. Test leases expire naturally; production default remains120s.
 
-## Shared published candidate binding
-
-Publication/candidate.py now owns PublishedCandidate, the common pure binding of a task, observed typed output, byte-reviewed sources and finalized interpretation payload/receipt. It replays receipt/payload identity and reconstructs attribution before exposing candidate parsing/grounding. It does not acquire Knowledge or Research facts. Graph ProposalInputs extends it with KnowledgeContext; Research proposals combine it with selected QuestionContext. This refactoring changes no stored trace/publication bytes, schema or migration. Callers must supply actual owned journal/read results in integrated workflows; a hand-constructed domain object is not proof of peer contact.
+This proves synthetic software ownership/recovery, not provider quality, machine power loss or Knowledge acceptance. dev/verify_planning_publication.py records the earlier actual-owner proof, but its old version pins must be updated before reuse; do not run incompatible retained migrators. Result publication's actual Data integration is a distinct later gate and cannot inherit this trace-only evidence.

@@ -226,6 +226,21 @@ def verify(output, legacy_manifest=None):
     assert results["stream"]["outcome"] == "streaming" and results["recover"]["upload_ordinal"] == 2
     assert {k: v for k, v in results["recover"].items() if k not in {"pid", "stage"}} == {
         k: v for k, v in results["replay"].items() if k not in {"pid", "stage"}}
+    result_workflow = {}
+    for stage, label in (("uncertain", "initial"), ("recover", "replacement"), ("replay", "replacement")):
+        result_path = output / ("result-workflow-" + stage + ".json")
+        result_env = {**probe_env, "AMPHORA_RESULT_WORKFLOW_STAGE": stage, "AMPHORA_RESULT_PROJECT": project,
+            "AMPHORA_RESULT_WORKFLOW_ORIGIN": str(output / "result-workflow-uncertain.json"),
+            "AMPHORA_RESULT_PEER_STATE": str(output / "result-scripted-peer.json"),
+            "AMPHORA_RESULT_WORKFLOW_OUTPUT": str(result_path)}
+        run([interpreters[label], "-I", "-m", "pytest", output / "tests/service/acceptance/result_workflow_probe.py",
+             "--import-mode=importlib", "--tb=short", "-q"], env=result_env)
+        result_workflow[stage] = json.loads(result_path.read_bytes())
+    assert len({record["pid"] for record in result_workflow.values()}) == 3
+    assert len({(record["identity"], record["payload"], record["prepared_at"]) for record in result_workflow.values()}) == 1
+    assert result_workflow["uncertain"]["outcome"] == "streaming" and result_workflow["replay"]["peer_calls"] == 0
+    assert {k: v for k, v in result_workflow["recover"].items() if k not in {"pid", "stage", "peer_calls"}} == {
+        k: v for k, v in result_workflow["replay"].items() if k not in {"pid", "stage", "peer_calls"}}
     legacy = None
     if legacy_manifest is not None:
         legacy_path = legacy_manifest.absolute()
@@ -238,12 +253,12 @@ def verify(output, legacy_manifest=None):
         "status": "passed", "tests": tests, "project": project, "stages": stages,
         "reservation_stages": reservations, "settlement_stages": settlements, "dispatch_stages": dispatches,
         "typed_stages": typed, "extraction_stages": extraction, "edit_stages": edits, "family_stages": families,
-        "unsettled_exposure_stages": exposure, "repair_workflow_stages": workflow, "result_storage_stages": results, "legacy_replay": legacy,
+        "unsettled_exposure_stages": exposure, "repair_workflow_stages": workflow, "result_storage_stages": results, "result_workflow_stages": result_workflow, "legacy_replay": legacy,
         "wheels": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(wheels.glob("*.whl"))},
         "limits": ["Own PostgreSQL journal only; no live provider/domain acceptance", "Deterministic bounded dispatch only; no actual remote transport",
                    "Two independent installs from one source-built wheel closure; no new implementation rewrite"]}
     (output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({"status": "passed", "tests": tests, "processes": 31 + (legacy is not None), "installations": 2}))
+    print(json.dumps({"status": "passed", "tests": tests, "processes": 34 + (legacy is not None), "installations": 2}))
 
 
 if __name__ == "__main__":

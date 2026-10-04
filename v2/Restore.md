@@ -2,21 +2,29 @@
 
 ## Resume here
 
-- Refreshed 2026-10-04 10:53:47 (America/Chicago). **Read this file first after every compression**, as the owner requested. Done at the latest compression.
+- Refreshed 2026-10-04 11:21:46 (America/Chicago). **Read this file first after every compression**, explicitly requested by the owner.
 - Continue authorized work across milestones, commits/pushes and compaction. No subagents, JARVIS access or v1 edits. No milestone-only final pauses.
-- **Current BP-07.02/B2.03b.ii.b: Data workflow/recovery.** Next b.ii.c concrete diagnostic producer and actual Data integration; b.iii owner handoff follows b.ii. c combined owner acceptance/rebuild follows b.
-- Latest pushed Planning0.24 values checkpoint **f9521f97**. New Planning0.25 storage checkpoint is fully verified and ready for final consistency review/commit/push; inspect git log before repeating.
-- Child45.68%,Build60.91%,Acceptance0%,1/4 closed; B1=100%,B2=82.72%,B3/V1=0%. B2 .01/.02=100%,.03=48.15% (a100%,b44.44%,c0%; b i100%,ii33.33%,iii0%; b.ii a100%,b/c0%). Parent29.14%,5/20 closed; P1=100%,P2=45.68%,others0%. Canonical tracker/parent/MBT/history are updated; MBT25 recent rows.
+- **Current BP-07.02/B2.03b.ii.c: concrete diagnostic producer and actual Data integration.** Next b.iii owner handoff. c combined owner acceptance/rebuild follows b.
+- Latest pushed Planning0.25 storage checkpoint **f6b14ef4**; earlier values f9521f97. The0.26 workflow is now verified and ready for commit.
+- Child45.99%,Build61.32%,Acceptance0%,1/4 closed; B1=100%,B2=83.95%,B3/V1=0%. B2 .01/.02=100%,.03=51.85% (a100%,b55.56%,c0%; b i100%,ii66.67%,iii0%; b.ii a/b100%,c0%). Parent29.20%,5/20 closed; P1=100%,P2=45.99%,others0%. Canonical tracker/parent/MBT/history are updated; MBT25 recent rows.
 
+## Latest SDK workflow checkpoint
+
+- Verified 2026-10-04 11:19:18. Planning0.26/public0.7, planning0010 unchanged.39 focused cases243.14s; result workflow39 statements4 branches100%; combined driver/trace/result104 statements24 branches96.88%. Driver transition ceiling/loop edge and one trace-wrapper defensive line remain uncovered.
+- Final .test-results/planning-result-workflow-independent-20261004/manifest.json:705 installed tests314.97s,35 process/replay stages,two installs. Session54350 finished successfully. No PostgreSQL suite running. Evidence Result_Workflow.json.
+- publication/driver.py extracts the unchanged bounded upload loop. ResultPublisher registers owned selection, prepares outside SQL, reconstructs/journals exact bytes, then drives upload with DB-clock fencing. Terminal histories avoid preparation/peer calls. Scripted Data/preparer only; concrete current-rights preparer and automatic diagnostic producer remain b.ii.c.
+- Three new installed result stages preserve exact payload/identity/time, recover uncertain PUT through a distinct upload and replay with zero preparation/peer calls. No actual Data or abrupt-kill claim. Trace tests protect unchanged prior behavior.
+- Ruff for touched files, dependency boundaries,506 schema checks and whitespace checks pass. Explicit dev-only Ruff configuration has unrelated/different formatting rules; normal discovery is the existing project gate. Earlier broad-directory lint found a preexisting untouched payload import formatting issue; no unrelated source change.
+- Canonical tracker/parent/MBT/history and module READMEs updated. Workflow changes ready for final diff review and commit/push, then proceed b.ii.c. Latest pushed remains f6b14ef4 until this checkpoint is committed.
 ## Latest result-storage checkpoint
 
 - Planning/dev0.25/public0.7. **planning0010 APPLIED and immutable; never run Planning<=0.24 migrators.** Research0013 also applied; never run Research<=0.33 migrators. No fixture reset/downgrade.
 - selection/history/prepared/store/events/journal bind exact actor-owned task/observation/prior/finalized interpretation and complete result ancestry. Separate result selection/preparation/events are immutable; control holds DB-clock lease/fence/position. Existing trace-publication history is unchanged.
 - PreparedResult stores exact body/manifest plus bounded review/question witnesses. Historical read-only replay verifies original owned facts, canonical hashes and ancestry without source processing or rerunning scientific validation. Data remains authoritative for future processing rights. No result network workflow or automatic diagnostic producer exists yet.
 - Final source54 cases121.15s,531 statements36 branches100%. Full independent `.test-results/planning-result-storage-independent-20261004/manifest.json`:684 tests221.26s,32 process/replay stages,two isolated0.25 installs. Four new result stages: prepare, persist streaming intent/process exit without release, successor upload after lease expiry, read-only replay. Payload/identity/preparation time remain exact. Receipts are scripted; no actual Data upload or abrupt kill claim.
-- Sessions45341(independent),15458(source),94302(schema) finished. **No active test/host processes remain.** Earlier65245 coverage was superseded after a witness task-hash guard was added during that run; final54-case evidence covers final source.
+- Earlier storage sessions45341(independent),15458(source),94302(schema) finished; the final workflow coverage session above is now active. Earlier65245 coverage was superseded after a witness task-hash guard was added during that run; final54-case evidence covers final source.
 - Evidence `docs/Audits/Evidence/BP-07-Extraction/Result_Storage.json`. Source README/persistence/service boundaries updated. dev/verify_planning.py includes0010 wheel assertion and4 result stages through tests/acceptance/result_storage_probe.py. ResearchCase test helper now takes optional scope for persistent answer fixtures.
-- Ruff, dependency boundaries,506-schema and git diff whitespace checks passed before final docs. No public schema or earlier migration changes. Commit/push next, then continue b.ii.b without permission.
+- Ruff, dependency boundaries,506-schema and git diff whitespace checks passed before final docs. No public schema or earlier migration changes. Storage checkpoint committed/pushed asf6b14ef4; continue b.ii.b without permission.
 
 ## Latest result-payload checkpoint
 
@@ -39,14 +47,13 @@
 
 ## Next authorized work
 
-1. Finish final tracker/diff consistency review and commit/push the verified0.25 storage checkpoint if not already done; continue afterward.
-2. Current b.ii.b: implement bounded Data SDK result workflow over ResultStore/ResultJournal. Read result_publication README and `docs/Build Plans/BP-07/BP-07.02 Result publication.md`. b.ii has equal a storage/b workflow/c producer+actualData units; only a is complete.
-3. Existing TracePublisher._drive is a bounded upload loop using only journal/store, client and prepared artifact/identity. It may be extracted into a focused same-owner upload driver with identical behavior/bytes and existing tests, then reused by ResultPublisher. Trace-specific preparation/journal/event formats must remain distinct. No extraction code has been written yet; old trace behavior remains exactly committed.
-4. ResultPublisher should register exact selection before effects, return terminal histories without source/provider calls, acquire/re-read under a bounded lease, prepare outside SQL through a configured reviewed input boundary, then journal.prepare rechecks owned facts. Source/interpretation processing and Research question reads must be fresh before new preparation; historical witness metadata is not a rights grant. Result input preparation/automatic diagnostics policy must not accept arbitrary caller acceptance or raw payload bytes.
-5. Only the invocation committing streaming CAS may PUT. Recovered streaming intent is uncertain and requires a bounded next upload. Uncertain finalize retains its original command. Existing8-upload/64-event and10-drive-transition ceilings remain. Every local write rechecks fence/position/DB clock; no peer I/O under SQL. New Data begin/finalize recheck current ancestry rights; terminal local history remains replayable.
-6. b.ii.c provides concrete diagnostic producer and actual installed Data proof; b.iii adds durable Research/Knowledge handoff and receipt binding. Scope/gaps affect dependent items only; no global scientific-quality veto or routine human wait. Corrections remain future-campaign-only, never active repinning.
-7. Keep canonical tracker/MBT/history/Restore current before commits. Live provider/model/egress/spend choices block only actual calls; no owner decision blocks deterministic work. Closed BP-06 plans stay closed.
-
+1. Final diff/tracker review, then commit/push the verified0.26 workflow. Continue b.ii.c afterward.
+2. Read result_publication README and BP-07.02 Result publication.md. Add concrete ResultPreparer using SourceReviewer and ArtifactReview with one shared ReadBudget outside SQL; verify interpretation body equals owned trace. Exact selected Research QuestionReader inputs for answers; gaps withhold only dependent answers.
+3. Derive diagnostic decisions from owned task/observation/trace and configured validators. RepairFeedback.create binds diagnostics to exact history. Do not accept caller acceptance or arbitrary feedback as authoritative producer input. Persist the first diagnostic snapshot; one immutable diagnostics slot per parent. Later model output creates a new trace.
+4. Connect actual interpretation/result publication to RepairChain producer.next(step), yielding RepairInputs or a bounded no-repair/unavailable result. Preserve root attempt and aggregate budget limits, prior useful output, abstention/policy stops and future-campaign-only corrections.
+5. Prove real installed Data profile/ancestry/current-process-rights denial/regrant and restart behavior. dev/planning_publication_fixture.py and verify_planning_repair_data.py are useful patterns but pin old Planning: update before use. Never run an old migrator.
+6. b.iii adds durable Research/Knowledge submissions and receipt binding. c proves combined actual-owner acceptance and typed-correction replay. No cross-owner SQL/private imports. Actual provider choices block only live calls.
+7. Keep canonical trackers/MBT/history/Restore current. No milestone pause or new permission needed for authorized deterministic work.
 ## Prior verified foundations
 
 - Knowledge0.18 uses Data /processing-content for new validation, reasoning and publication review, with no /content fallback. Historical terminal decisions and accepted-log reconstruction remain stable. Source42 validation cases, two isolated builds325 cases plus actual three-owner acceptance including9 interruption stages. Evidence Knowledge_Processing.json; pushed dbb3b258. No Knowledge migration/public-schema change.
@@ -63,7 +70,8 @@
 - Tests use importlib mode, no __init__.py in behavioral folders. Use .absolute(), not .resolve(), on mapped drive. rg --files first; no Windows wildcard operands. Give large parametrized payload cases explicit short ids to avoid Windows temp-path failure/log blowup.
 - **Research0.34:** .test-results/research-declarations-final-independent-20261004/{initial,replacement}/Scripts/python.exe. Previous research-views-http-20261003 is0.33 and must not run migrations again.
 - Knowledge0.18: .test-results/knowledge-processing-independent-20261004/{initial,replacement}/Scripts/python.exe.
-- Latest Planning0.25: .test-results/planning-result-storage-independent-20261004/{initial,replacement}/Scripts/python.exe.
+- Latest verified Planning0.26: .test-results/planning-result-workflow-independent-20261004/{initial,replacement}/Scripts/python.exe.
+- Prior compatible Planning0.25: .test-results/planning-result-storage-independent-20261004/{initial,replacement}/Scripts/python.exe.
 - Prior verified Planning0.24 (must not migrate0010): .test-results/planning-result-payloads-independent-20261004/{initial,replacement}/Scripts/python.exe. Prior0.23 final repair installs remain retained.
 - Data0.29: .test-results/data-processing-content-independent-20261004/environment/Scripts/python.exe.
 - Runtime0.20.2: .test-results/runtime-domain-receipt-peer-20261002/environment/Scripts/python.exe.

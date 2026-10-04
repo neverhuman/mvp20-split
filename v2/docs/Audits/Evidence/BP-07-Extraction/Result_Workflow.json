@@ -1,0 +1,127 @@
+{
+  "verified_at": "2026-10-04 11:19:18",
+  "status": "passed",
+  "gate": "BP-07.02/B2.03b.ii.b",
+  "planning": "0.26.0",
+  "public_planning": "0.7.0",
+  "migration": "planning0010 unchanged",
+  "focused": {
+    "tests": 39,
+    "seconds": 243.14,
+    "coverage": {
+      "covered_lines": 102,
+      "num_statements": 104,
+      "percent_covered": 96.875,
+      "percent_covered_display": "97",
+      "missing_lines": 2,
+      "excluded_lines": 0,
+      "percent_statements_covered": 98.07692307692308,
+      "percent_statements_covered_display": "98",
+      "num_branches": 24,
+      "num_partial_branches": 2,
+      "covered_branches": 22,
+      "missing_branches": 2,
+      "percent_branches_covered": 91.66666666666667,
+      "percent_branches_covered_display": "92"
+    }
+  },
+  "installed": {
+    "tests": 705,
+    "seconds": 314.97,
+    "process_stages": 35,
+    "installations": 2,
+    "result_workflow_stages": {
+      "uncertain": {
+        "pid": 26480,
+        "stage": "uncertain",
+        "identity": "53bc082c6b34e89917927e240171efbe2d625f46e91a45941b62cd2ec61faa94",
+        "payload": "cb8a9f55f6e08c9592b15a851af2869bbe1bafb1f02e5f1abecd6066b1695ce8",
+        "prepared_at": "2026-10-04T16:18:59.248496+00:00",
+        "position": 3,
+        "upload_ordinal": 1,
+        "outcome": "streaming",
+        "peer_calls": 3,
+        "event_digests": [
+          "5c92e2d06ddec7d9d28b11086cf8d16a5316193129b3fcca7c6c0fa6830d69ed",
+          "cf6c2a54f70e6225744a0a93d4564e06103e814d9cade446c7c5587e4279d83d",
+          "cf7b16a484c0e756fb789301de9f9de5555a23a048cbbff7833543741fc1b42f"
+        ]
+      },
+      "recover": {
+        "pid": 11132,
+        "stage": "recover",
+        "identity": "53bc082c6b34e89917927e240171efbe2d625f46e91a45941b62cd2ec61faa94",
+        "payload": "cb8a9f55f6e08c9592b15a851af2869bbe1bafb1f02e5f1abecd6066b1695ce8",
+        "prepared_at": "2026-10-04T16:18:59.248496+00:00",
+        "position": 10,
+        "upload_ordinal": 2,
+        "outcome": "finalized",
+        "peer_calls": 6,
+        "event_digests": [
+          "5c92e2d06ddec7d9d28b11086cf8d16a5316193129b3fcca7c6c0fa6830d69ed",
+          "cf6c2a54f70e6225744a0a93d4564e06103e814d9cade446c7c5587e4279d83d",
+          "cf7b16a484c0e756fb789301de9f9de5555a23a048cbbff7833543741fc1b42f",
+          "38d53540deff9c12e7649f9e171575eaf16f93a9fbc997cccf7d504757f254f5",
+          "13637af1742780899b6ff6f22ca69c7243722dad53f54098010b8fa968b15e1d",
+          "bb5f983d2f67a694ff1c9888a1504443800265e532e8f4016b9e0201721555d7",
+          "50855db27c2c12e899ce6160807da8a400282cfa852e5676efb7562e0c7114fd",
+          "ef18c2842116aaa1288913775eb0185a31f4444d9bb48aa26cb91a8181746b7d",
+          "004ee55eced55e7884626141f64e547a5c5da5ba3430ae5ac35c351252e8666b",
+          "5893e7ff8f6d3fd8f9a99efa50dc1b069beedb324f61fecad24cea4d1679cd27"
+        ]
+      },
+      "replay": {
+        "pid": 22272,
+        "stage": "replay",
+        "identity": "53bc082c6b34e89917927e240171efbe2d625f46e91a45941b62cd2ec61faa94",
+        "payload": "cb8a9f55f6e08c9592b15a851af2869bbe1bafb1f02e5f1abecd6066b1695ce8",
+        "prepared_at": "2026-10-04T16:18:59.248496+00:00",
+        "position": 10,
+        "upload_ordinal": 2,
+        "outcome": "finalized",
+        "peer_calls": 0,
+        "event_digests": [
+          "5c92e2d06ddec7d9d28b11086cf8d16a5316193129b3fcca7c6c0fa6830d69ed",
+          "cf6c2a54f70e6225744a0a93d4564e06103e814d9cade446c7c5587e4279d83d",
+          "cf7b16a484c0e756fb789301de9f9de5555a23a048cbbff7833543741fc1b42f",
+          "38d53540deff9c12e7649f9e171575eaf16f93a9fbc997cccf7d504757f254f5",
+          "13637af1742780899b6ff6f22ca69c7243722dad53f54098010b8fa968b15e1d",
+          "bb5f983d2f67a694ff1c9888a1504443800265e532e8f4016b9e0201721555d7",
+          "50855db27c2c12e899ce6160807da8a400282cfa852e5676efb7562e0c7114fd",
+          "ef18c2842116aaa1288913775eb0185a31f4444d9bb48aa26cb91a8181746b7d",
+          "004ee55eced55e7884626141f64e547a5c5da5ba3430ae5ac35c351252e8666b",
+          "5893e7ff8f6d3fd8f9a99efa50dc1b069beedb324f61fecad24cea4d1679cd27"
+        ]
+      }
+    }
+  },
+  "wheels": {
+    "amphora_agent_planning-0.26.0-py3-none-any.whl": "6ead6829289b6d6e4f2aecd2ebaafcc331433bd5bbd84109fa727e393ccc78a6",
+    "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+    "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+    "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+    "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+    "amphora_contracts_planning-0.7.0-py3-none-any.whl": "0f09c0f8bb69e5b0f33929ed1eb4623d768aae1373b651b9c4bb07f5537da9f1",
+    "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+    "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+  },
+  "oracles": [
+    "Exact shared upload loop preserves trace publication behavior and historical bytes",
+    "Owned result registration/preparation, leases and short SQL transactions precede public effects",
+    "Only committed streaming intent authorizes PUT; uncertain PUT uses distinct upload",
+    "Uncertain finalize retains original command; terminal rejection/replay performs no peer calls",
+    "Six committed transition interruptions preserve retained prefix and preparation",
+    "Three fresh result processes preserve payload/identity/time and recover with no preparation"
+  ],
+  "limits": [
+    "Scripted Data and preparer; actual Data and concrete diagnostics remain b.ii.c",
+    "Fresh-process replacement is not an abrupt-kill proof",
+    "Result workflow coverage is 100%; shared driver has uncovered transition ceiling and loop edge; trace wrapper has one defensive line uncovered",
+    "No provider calls, scientific acceptance or active campaign repinning"
+  ]
+}

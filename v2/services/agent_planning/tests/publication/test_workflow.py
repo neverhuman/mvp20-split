@@ -46,13 +46,14 @@ class DataPeer:
                 attempt = PublicationAttempt(AttemptIdentity.for_publication(self.identity, ordinal))
                 assert attempt.begin_command(self.identity, self.artifact).canonical_bytes == body
                 upload, stream, final, derivation = receipts(self.identity, self.artifact, attempt)
-                def rename(value):
-                    if isinstance(value, dict):
-                        return {key: rename(item) for key, item in value.items()}
-                    if isinstance(value, list):
-                        return [rename(item) for item in value]
-                    return value + '-' + str(ordinal) if value in ('upload', 'output') else value
-                values = [rename(v.model_dump(mode='json')) for v in (upload, stream, final, derivation)]
+                # Only newly allocated output/upload identities change. Inputs
+                # named "output" remain exact immutable derivation references.
+                values = [v.model_dump(mode='json') for v in (upload, stream, final, derivation)]
+                values[0]['upload']['upload_id'] = 'upload-' + str(ordinal)
+                for value in values[1:]:
+                    value['upload_id'] = 'upload-' + str(ordinal)
+                for value in values[2:]:
+                    value['artifact']['artifact_id'] = 'output-' + str(ordinal)
                 self.uploads['upload-' + str(ordinal)] = values
                 outcome = {'status': 'derived_uploaded', 'receipt': values[0]}
                 response = values[0]
@@ -114,7 +115,7 @@ def workflow(s):
 
 
 def test_sdk_commands_exact_and_lost_begin_reconciles_without_duplicate_upload(stored):
-    publisher, peer, reviewer, identity, store, journal = workflow(stored)
+    publisher, peer, reviewer, identity, _store, journal = workflow(stored)
     peer.lost_begin = True
     result = publisher.publish(stored.principal, 'publication', identity.trace())
     assert result.attempt.stage == 'finalized' and result.position == 6
@@ -127,7 +128,7 @@ def test_sdk_commands_exact_and_lost_begin_reconciles_without_duplicate_upload(s
 
 
 def test_lost_put_preserved_then_replaced_never_repeated(stored):
-    publisher, peer, reviewer, identity, store, journal = workflow(stored)
+    publisher, peer, reviewer, identity, _store, journal = workflow(stored)
     peer.lost_put = True
     with pytest.raises(TransportLost):
         publisher.publish(stored.principal, 'publication', identity.trace())
@@ -145,7 +146,7 @@ def test_lost_put_preserved_then_replaced_never_repeated(stored):
 
 @pytest.mark.parametrize('failure', ['finalize', 'derivation', 'forged_derivation'])
 def test_uncertain_finalization_preserves_command_and_never_restreams(stored, failure):
-    publisher, peer, reviewer, identity, store, journal = workflow(stored)
+    publisher, peer, _reviewer, identity, _store, journal = workflow(stored)
     peer.lost_finalize = failure == 'finalize'
     peer.derivation_down = failure == 'derivation'
     peer.forge = failure == 'forged_derivation'
@@ -163,7 +164,7 @@ def test_uncertain_finalization_preserves_command_and_never_restreams(stored, fa
 
 @pytest.mark.parametrize('stage', ['begin', 'finalize'])
 def test_durable_rejection_is_terminal_and_replay_does_not_call_peer(stored, stage):
-    publisher, peer, reviewer, identity, store, journal = workflow(stored)
+    publisher, peer, _reviewer, identity, _store, _journal = workflow(stored)
     if stage == 'begin':
         peer.reject = True
     else:
@@ -193,7 +194,7 @@ def test_foreign_client_denied_before_journal_or_peer_and_source_failure_retains
 
 
 def test_lease_loss_after_put_never_records_success_or_finalizes(stored):
-    publisher, peer, reviewer, identity, store, journal = workflow(stored)
+    publisher, peer, _reviewer, identity, store, journal = workflow(stored)
     original = store.acquire
     leases = []
     def acquire(*args, **kwargs):
@@ -211,7 +212,7 @@ def test_lease_loss_after_put_never_records_success_or_finalizes(stored):
 
 
 def test_eight_uncertain_uploads_bound_recovery_without_ninth_effect(stored):
-    publisher, peer, reviewer, identity, store, journal = workflow(stored)
+    publisher, peer, _reviewer, identity, _store, journal = workflow(stored)
     peer.lost_put = True
     for _ in range(8):
         with pytest.raises(TransportLost):
@@ -225,7 +226,7 @@ def test_eight_uncertain_uploads_bound_recovery_without_ninth_effect(stored):
 
 @pytest.mark.parametrize('boundary', ['prepared', 'begun', 'streaming', 'streamed', 'finalizing', 'finalized'])
 def test_exception_after_committed_transition_resumes_from_history(stored, boundary):
-    publisher, peer, reviewer, identity, store, journal = workflow(stored)
+    publisher, peer, _reviewer, identity, _store, journal = workflow(stored)
     original_prepare, original_advance = journal.prepare, journal.advance
     def fail_after(state):
         if state.attempt.stage == boundary:
@@ -248,7 +249,7 @@ def test_exception_after_committed_transition_resumes_from_history(stored, bound
 
 @pytest.mark.parametrize('status', [403, 503])
 def test_unknown_or_denied_begin_lookup_never_blindly_submits(stored, status):
-    publisher, peer, reviewer, identity, store, journal = workflow(stored)
+    publisher, peer, _reviewer, identity, _store, journal = workflow(stored)
     calls = []
     def unavailable(method, path, body=None, **kwargs):
         calls.append((method, path))

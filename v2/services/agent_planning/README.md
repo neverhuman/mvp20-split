@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-- Version:0.25.0; public Planning0.7.0. BP-07.02/B2.02 complete; B2.03b.i result payloads verified; b.ii.a storage verified; b.ii.b Data workflow active.
+- Version:0.26.0 verified; public Planning0.7.0. BP-07.02/B2.02 complete; B2.03b.i result payloads verified; b.ii.a storage verified; b.ii.b Data workflow verified; b.ii.c diagnostic producer/actual Data active.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Canonical progress: [BP-07.02](../../docs/Build%20Plans/BP-07/BP-07.02%20Reliable%20text%20decomposition.md).
 
@@ -29,3 +29,5 @@ Evidence lives in [BP-07 extraction evidence](../../docs/Audits/Evidence/BP-07-E
 Verified 2026-10-04 09:21:08:630 final installed tests,28 process stages/two installations;7 Planning workers/2 actual Data0.29 hosts. Preparation survives replacement, unissued calls recheck processing rights, completed replay makes no new input reads/calls. A separately identified publication feedback schema corrects Data compatibility without rewriting the legacy schema. Detailed [evidence](../../docs/Audits/Evidence/BP-07-Extraction/Repair_Workflow.json) separates scripted graph/model fixtures from actual owner proof.
 
 [result_publication](src/amphora_agent_planning/result_publication/README.md) prepares exact diagnostic and candidate-answer payloads with complete derived ancestry and stable effect slots. Its separate owner SQL preparation/event journal is verified under B2.03b.ii.a; the result upload workflow/producer and owner handoff remain subsequent units. Existing trace publication and public schemas remain unchanged.
+
+Planning0.26 adds a result-specific SDK coordinator and shares the unchanged bounded upload driver with trace publication. Concrete current-rights preparation/automatic diagnostic production and actual result Data integration remain b.ii.c; owner handoff remains b.iii. No new migration or public schema accompanies the driver extraction.

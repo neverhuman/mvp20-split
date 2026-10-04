@@ -372,3 +372,12 @@ Archived MBT checkpoint:
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
 | 2026-10-04 08:27:00 | BP-07.02/B2.02c.i complete; child40.28%,parent28.06%; c.ii active | [Repair feedback](../Audits/Evidence/BP-07-Extraction/Repair_Feedback.json);617 source,599 installed25 processes; pure tentative requests |
+
+
+## 2026-10-04 11:19:18 Result workflow checkpoint
+
+B2.03b.ii.b verified 2026-10-04 11:19:18:Planning0.26 shared SDK driver and result workflow preserve owned preparation, command recovery and fencing.39 scoped cases243.14s; result workflow100%, combined104 statements24 branches96.88%. 705 isolated cases314.97s and35 process/replay stages across two installations. Three new result processes recover uncertain PUT with a distinct upload and replay terminal history without preparation or peer calls. Scripted Data/preparation only; concrete producer and actual Data remain b.ii.c. Public0.7/506 schemas/planning0010 unchanged. b.ii66.67%,b55.56%,B2.03=51.85%,B2=83.95%;child45.99%,Build61.32%,parent29.20%;closed1/4 and5/20. Current b.ii.c. [Evidence](../Audits/Evidence/BP-07-Extraction/Result_Workflow.json).
+
+Archived MBT checkpoint:
+
+| 2026-10-04 01:46:10 | BP-06 closed100%,24/24; BP-07 activation review next | [Parent audit](../Audits/BP-06_Knowledge_Evidence_Closeout.md);six accepted children, actual source/independent consumer proof |
