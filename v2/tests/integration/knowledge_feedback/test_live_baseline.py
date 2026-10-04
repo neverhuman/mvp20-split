@@ -66,6 +66,9 @@ def test_actual_source_graph_baseline(tmp_path):
         if os.environ.get('AMPHORA_TEST_FEEDBACK_RACES') == '1':
             from .live.races import prove as prove_races
             result['races'] = prove_races(scenario, result, runtime)
+        if os.environ.get('AMPHORA_TEST_FEEDBACK_ADVERSARIES') == '1':
+            from .live.adversaries import prove as prove_adversaries
+            result['adversaries'] = prove_adversaries(scenario, result)
         root = Path(__file__).absolute().parents[3]
         owners = {name: {'endpoint': owner.endpoint, 'token': owner.token} for name, owner in
             [('data', scenario.data), ('research', scenario.research), ('knowledge', scenario.knowledge)]}
@@ -87,7 +90,7 @@ def test_actual_source_graph_baseline(tmp_path):
         path = os.environ.get('AMPHORA_TEST_FEEDBACK_EVIDENCE')
         if path:
             Path(path).write_text(json.dumps({'scope': scope, 'status': 'integrated_baseline_verified',
-                'limits': ['Synthetic hypothesis; no scientific-validity claim', 'Further specimen adversaries, independent rebuild/replacement and final audit remain later gates'],
+                'limits': ['Synthetic hypothesis; no scientific-validity claim', 'Independent rebuild/replacement and final audit remain later gates'],
                 'records': result}, indent=2) + '\n', encoding='utf-8')
     finally:
         runtime.close()

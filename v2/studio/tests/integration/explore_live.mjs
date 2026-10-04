@@ -68,6 +68,33 @@ try {
   await page.waitForFunction(() => window.liveExplore.model.snapshot.regions.properties.phase === 'ready' && window.liveExplore.model.snapshot.regions.properties.value.request.position !== null);
   assert.deepEqual(await page.evaluate(() => window.liveExplore.model.snapshot.regions.properties.value), records.windows.property_pages[1]);
   evidence.scenarios.push('explicit size-one windows and visible next controls preserve owner graph/specimen/property pages');
+  if (records.adversaries) {
+    await page.getByRole('button', { name: 'Compare specimens', exact: true }).click();
+    const comparison = page.getByRole('region', { name: 'Prepared specimen comparison', exact: true });
+    await page.getByRole('table', { name: 'Selected observations and preparation' }).waitFor();
+    await page.evaluate(query => window.liveExplore.model.specimens(query), records.adversaries.specimen_windows[0].request);
+    await comparison.getByText('outside window', { exact: true }).waitFor();
+    assert.equal(await comparison.getByText('Unresolved specimen', { exact: true }).count(), 1);
+    await comparison.getByRole('button', { name: 'Next comparison specimens', exact: true }).click();
+    await page.waitForFunction(() => window.liveExplore.model.snapshot.regions.specimens.phase === 'ready' && window.liveExplore.model.snapshot.regions.specimens.value.request.position !== null);
+    assert.equal(await comparison.getByText('outside window', { exact: true }).count(), 1);
+    assert.deepEqual(await page.evaluate(() => window.liveExplore.model.snapshot.regions.specimens.value), records.adversaries.specimen_windows[1]);
+    await page.evaluate(context => window.liveExplore.model.bind(context), { ...pins, observations: records.adversaries.properties.request.observations });
+    await comparison.getByText('conflicting', { exact: true }).waitFor();
+    assert.equal(await comparison.getByText('Unresolved specimen', { exact: true }).count(), 1);
+    assert.match(await comparison.textContent(), /12\.340 synthetic-other-unit/);
+    assert.match(await comparison.textContent(), /specimen_context_review/);
+    for (const width of [1440, 390]) {
+      await page.setViewportSize({ width, height: width === 1440 ? 1000 : 844 });
+      const scan = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
+      assert.deepEqual(scan.violations.map(v => v.id), []);
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+      const image = `incompatible-comparison-${width}.png`;
+      await comparison.screenshot({ path: resolve(output, image) }); evidence.screenshots.push(image);
+    }
+    evidence.scenarios.push('omitted specimen remains unresolved across real pages; conflicting sample/state/method/unit remains visible and qualified');
+    await page.getByRole('button', { name: 'Properties', exact: true }).click();
+  }
   const foreign = structuredClone(pins); foreign.graph = null; foreign.experiment.scope.project_id = 'unowned-project';
   for (const ref of foreign.observations) ref.scope.project_id = 'unowned-project';
   await page.evaluate(context => window.liveExplore.model.bind(context), foreign);

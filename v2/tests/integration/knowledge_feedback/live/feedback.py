@@ -64,9 +64,9 @@ def derived(data, scope, value, schema, inputs, method):
     return artifact
 
 
-def install_correction(scenario, observation):
+def install_observation(scenario, observation):
     # The bounded fixture owns this synthetic measurement; no actual instrument is claimed.
-    path = scenario.directory / 'corrected-observation.json'
+    path = scenario.directory / 'observation-fixture.json'
     path.write_text(json.dumps(observation), encoding='utf-8')
     owned_setup(scenario.interpreters['research'], '''
 import json,os
@@ -127,7 +127,7 @@ def progress(scenario, baseline, runtime):
     corrected['reference']['revision'] += 1
     corrected['supersedes'] = original_observation['reference']
     corrected['quality']['flags'].append('review_next_campaign')
-    install_correction(scenario, corrected)
+    install_observation(scenario, corrected)
     correction = research.request('/v1/observation-corrections/read', corrected['reference'])
     assert correction['before'] == original_observation and correction['after'] == corrected
     assert correction['policy'] == 'future_campaigns_only'

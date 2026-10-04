@@ -69,6 +69,22 @@ if (records.comparison) {
   }
   inspection.dispose();
 }
+if (records.adversaries) {
+  const adverse = new ScientificComparison(records.comparison.specimens, records.adversaries.properties);
+  assert.equal(adverse.rows[1].specimenContext, 'conflicting');
+  assert.deepEqual(adverse.rows[1].observation.value, records.adversaries.observation.value);
+  const pair = adverse.pair(adverse.rows[0].identity, adverse.rows[1].identity);
+  assert.equal(pair.differences.find(d => d.field === 'candidate').relationship, 'unknown');
+  for (const field of ['prepared_state', 'method', 'units']) assert.equal(pair.differences.find(d => d.field === field).relationship, 'different');
+  assert.equal(pair.reuseAuthority, 'owner_policy_required');
+  for (const [index, page] of records.adversaries.specimen_windows.entries()) {
+    const partial = new ScientificComparison(page, records.comparison.properties);
+    assert.equal(partial.omittedSpecimens, 1);
+    assert.equal(partial.rows[index].specimenContext, 'exact');
+    assert.equal(partial.rows[1 - index].specimenContext, 'outside_window');
+    assert.equal(partial.pair(partial.rows[0].identity, partial.rows[1].identity).differences.find(d => d.field === 'candidate').relationship, 'unknown');
+  }
+}
 if (records.feedback) {
   const feedback = new FeedbackModel({ research, feedback: new FeedbackClient(fetcher) });
   feedback.bind({ ...records.feedback.pins, assessment: records.feedback.unmet.request, publication: null, proposal: null, corrections: null });

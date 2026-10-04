@@ -1,5 +1,7 @@
 # BP-06 Planning History
 
+2026-10-04 01:09:35 B3.03 verified: 1 actual integration test passed in 129.50s. Conflicting specimen claims and omitted rows remain unresolved; Research retains unknown eligibility with explicit mismatch reasons. Earlier valid records unchanged. Desktop/narrow comparison screenshots reviewed. B3=75%, Build=91.67%, child=68.75%, parent=94.79%; B3.04 active.
+
 2026-10-04 01:03:42 B3.02 correction races verified1test123.50s: Knowledge accepted/conflict and Research200/409; notice/new receipt rejected by open original wait, original and explicit future campaign retained/replayed. Fixed fixture command IDs to respect issuer-scope uniqueness across chains. B3=50%,Build83.33%,child62.50%,parent93.75%; B3.03 active.
 
 2026-10-04 00:56:34 B3.01 actual owner/browser verified1test96.91s. Exact windows, cursor conflicts, foreign-scope denial, source hash traversal and reviewed desktop/narrow inspectors. Harness repaired explicit Axe browser context and scrolled inspector capture. B3=25%,Build75%,child56.25%,parent92.71%; B3.02 correction races active.

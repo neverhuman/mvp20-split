@@ -1,0 +1,32 @@
+{
+  "verified_at": "2026-10-04 01:09:35",
+  "status": "passed",
+  "scope": "BP-06.06 B3.03 LAB-REF03",
+  "tests": 1,
+  "seconds": 129.5,
+  "actual_records": ".test-results/feedback-adversaries-20261004.json",
+  "sha256": "9b83fca7fc5dbef95c9bd135c33b0d9f4389dd457306574e339b8a68ca95464c",
+  "project": "55f6462636534932ae78f838bd264ee6",
+  "eligibility": "unknown",
+  "reasons": [
+    "applicability_mismatch",
+    "method_mismatch"
+  ],
+  "checks": [
+    "Raw inconsistent sample/prepared-state claims remain readable",
+    "Original lexical value, distinct unit/method and failed-control/review flag preserved",
+    "Research context/method mismatch yields unknown; earlier valid decisions unchanged",
+    "Compiled comparison marks conflicting association and unknown candidate",
+    "Omitted specimen stays outside_window across actual pages",
+    "Production browser displays unresolved association; desktop/narrow screenshots and accessibility reviewed",
+    "Earlier correction-race, provenance, reuse and actual browser proofs pass"
+  ],
+  "screenshots": {
+    "incompatible-comparison-1440.png": "91e7722ce4ca2cbc7de5c3c193997ec712762517140af4ab3c232cd655e24a70",
+    "incompatible-comparison-390.png": "0fc8e8259e6be97b533968381ea87f01b958a78ffd4fab4c9bce48ef014fae06"
+  },
+  "limits": [
+    "Synthetic raw fixture; no physical lab ingestion or scientific validity",
+    "Independent rebuild/replacement and final audit remain"
+  ]
+}
