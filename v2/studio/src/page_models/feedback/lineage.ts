@@ -57,7 +57,10 @@ export class FeedbackLineage {
       requireReply(same(proposal.proposal.graph, context.pins.proposal!.graph) && proposal.proposal.change_id === context.pins.proposal!.change_id);
       this.proposalState = proposal.decision?.decision.outcome ?? "pending";
       // A selected proposal must actually name this question/need, not merely share a scope.
-      requireReply(proposal.proposal.operations.some(op => op.operation === "add_assertion" && op.assertion.research_links.some(link => same(link.question, question.reference) && same(link.need, need.reference))));
+      requireReply(proposal.proposal.operations.some(op => {
+        const assertion = op.operation === "add_assertion" ? op.assertion : op.operation === "correct_assertion" ? op.replacement : null;
+        return assertion?.research_links.some(link => same(link.question, question.reference) && same(link.need, need.reference)) ?? false;
+      }));
     }
     if (change) {
       requireReply(proposal?.decision?.decision.outcome === "accepted");

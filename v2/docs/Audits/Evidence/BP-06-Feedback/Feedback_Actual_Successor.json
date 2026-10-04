@@ -1,0 +1,62 @@
+{
+  "verified_at": "2026-10-04 00:09:05",
+  "status": "passed",
+  "scope": "BP-06.06 B2.03d actual successor progression",
+  "actual_tests": 1,
+  "actual_seconds": 95.92,
+  "independent_studio_tests": 210,
+  "independent_browser_scenarios": 13,
+  "dev_tests": 18,
+  "dev_seconds": 14.68,
+  "independent_manifest": ".test-results/studio-isolated/ecbfa1b88c1e4a3daff9d2af982a1307/manifest.json",
+  "actual_records": ".test-results/feedback-successor-20261004.json",
+  "actual_sha256": "17ebb75bb269932bcd8446992cbf3e3f51a94adae3c4f0d9353e36ba3c258546",
+  "observed": {
+    "prior_plan": "5229b1c1c0eb78b0787c38bacf987d5bb85b8a90841da1ee29fe687881c6f706",
+    "next_plan": "b3b656fbd4aaa6c3d87c0a023dc220def53fbf14ff56fcaab4b6be71b2c23796",
+    "prior_receipt": {
+      "schema_version": "1",
+      "chain": {
+        "schema_version": "1",
+        "scope": {
+          "tenant_id": "feedback-fixture",
+          "project_id": "7b96eaf1572f4df982decfb56fafe455"
+        },
+        "issuer_id": "research-synthetic",
+        "chain_id": "feedback"
+      },
+      "ordinal": 1,
+      "record_sha256": "010c466a960ffac7d11392d7925f52b15ea185fae2e97784a14d1f32f8423531"
+    },
+    "next_receipt": {
+      "schema_version": "1",
+      "chain": {
+        "schema_version": "1",
+        "scope": {
+          "tenant_id": "feedback-fixture",
+          "project_id": "7b96eaf1572f4df982decfb56fafe455"
+        },
+        "issuer_id": "research-synthetic",
+        "chain_id": "feedback"
+      },
+      "ordinal": 2,
+      "record_sha256": "096d0b4aff502e83e5f260c934244bd5f3243d22ec7b747929de1c4dc54d33f7"
+    },
+    "next_graph": {
+      "graph": {
+        "scope": {
+          "tenant_id": "feedback-fixture",
+          "project_id": "7b96eaf1572f4df982decfb56fafe455"
+        },
+        "graph_id": "domain"
+      },
+      "revision": 2,
+      "sha256": "574549b90d8dcaf9d0b57c039b601f28ff2a3603387ced8e1c2ee7d7a8842027"
+    }
+  },
+  "limits": [
+    "Synthetic owner-installed observation fixture, not physical instrument or deployed lab intake",
+    "Sequential correction; overlapping correction races and actual browser-owner acceptance remain B3",
+    "Assessment profile v2 is an explicit synthetic configuration revision, not a validated scientific evaluator"
+  ]
+}

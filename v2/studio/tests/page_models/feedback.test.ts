@@ -84,6 +84,8 @@ test("a proposed graph edit must explicitly reference the chosen question and ne
   assert.ok(operation?.operation === "add_assertion");
   operation.assertion.research_links = [{ question: f.pins.question, need: f.pins.need, role: "proposed_answer", answer_proposal: null, validation_method: null }];
   assert.equal(new FeedbackLineage(context, f.records).proposalState, "pending");
+  proposal.proposal.operations = [{ operation: "correct_assertion", prior: operation.assertion.reference, replacement: operation.assertion }];
+  assert.equal(new FeedbackLineage(context, f.records).proposalState, "pending");
 });
 
 test("newer selection wins when older peer ignores cancellation", async () => {

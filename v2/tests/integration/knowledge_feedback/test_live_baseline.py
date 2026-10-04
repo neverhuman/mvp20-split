@@ -54,6 +54,9 @@ def test_actual_source_graph_baseline(tmp_path):
         result['representation'] = publish_representation(scenario.data, result['span'])
         result['runtime'] = runtime.consume(scenario.data, result['publication']['outcome']['receipt'])
         result['manifest'] = observed_manifest(scope, result)
+        if os.environ.get('AMPHORA_TEST_FEEDBACK_SUCCESSOR') == '1':
+            from .live.feedback import progress
+            result['feedback'] = progress(scenario, result, runtime)
         root = Path(__file__).absolute().parents[3]
         owners = {name: {'endpoint': owner.endpoint, 'token': owner.token} for name, owner in
             [('data', scenario.data), ('research', scenario.research), ('knowledge', scenario.knowledge)]}
@@ -66,7 +69,7 @@ def test_actual_source_graph_baseline(tmp_path):
         path = os.environ.get('AMPHORA_TEST_FEEDBACK_EVIDENCE')
         if path:
             Path(path).write_text(json.dumps({'scope': scope, 'status': 'integrated_baseline_verified',
-                'limits': ['Synthetic hypothesis; no scientific-validity claim', 'Browser/correction/distinct-specimen acceptance remain later gates'],
+                'limits': ['Synthetic hypothesis; no scientific-validity claim', 'Browser races, distinct-specimen comparison and independent rebuild remain later gates'],
                 'records': result}, indent=2) + '\n', encoding='utf-8')
     finally:
         runtime.close()

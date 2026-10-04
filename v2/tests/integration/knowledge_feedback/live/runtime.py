@@ -46,12 +46,12 @@ class CampaignScenario:
             finally:
                 self.owner.close()
 
-    def consume(self, data, receipt):
+    def consume(self, data, receipt, *, campaign_id='feedback-baseline', output_schema='reasoning.json'):
         subject, output = receipt['subject'], receipt['outcome']['output']
         (self.directory / 'context-schema.json').write_bytes(b'{"type":"string"}')
         input_type = {'kind': 'artifact', 'schema_ref': subject['schema_ref'], 'representation': 'domain-context', 'unit': '1', 'media_type': subject['media_type']}
         output_type = {'kind': 'artifact', 'schema_ref': output['artifact']['schema_ref'], 'representation': output['representation'], 'unit': output['unit'], 'media_type': output['artifact']['media_type']}
-        definition = {'schema_version': '3', 'profile': 'deterministic-v2', 'campaign_id': 'feedback-baseline', 'revision': 1,
+        definition = {'schema_version': '3', 'profile': 'deterministic-v2', 'campaign_id': campaign_id, 'revision': 1,
             'scope': self.scope, 'context': [], 'body': {'inputs': [{'name': 'subject', 'value_type': input_type}],
             'outputs': [{'name': 'result', 'value_type': output_type}], 'nodes': [
                 {'kind': 'await', 'node_id': 'evidence', 'issuer_id': receipt['issuer_id'], 'purpose': receipt['purpose'],
@@ -67,12 +67,12 @@ class CampaignScenario:
             'artifacts': {'runtime_owner': 'runtime', 'reserve_endpoint': data.endpoint + '/v1/reservations', 'token_env': 'RETENTION_TOKEN'},
             'graphs': [{'definition': 'campaign.json', 'releases': [], 'schemas': [
                 {'schema_ref': subject['schema_ref'], 'path': 'context-schema.json'},
-                {'schema_ref': output['artifact']['schema_ref'], 'path': 'reasoning.json'}]}]}
+                {'schema_ref': output['artifact']['schema_ref'], 'path': output_schema}]}]}
         self.path.write_text(json.dumps(config), encoding='utf-8')
         compiled = subprocess.run([str(self.python), '-I', str(Path(__file__).with_name('compile_plan.py')), str(self.path)],
             env=base_environment(), capture_output=True, timeout=30, creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
         assert compiled.returncode == 0, 'Isolated Runtime compilation failed'
-        plan = json.loads(compiled.stdout)['feedback-baseline']
+        plan = json.loads(compiled.stdout)[campaign_id]
         self.start()
         admitted = self.owner.request('/v1/graph-runs', self.command('graph.admit', {'plan_sha256': plan['sha256'],
             'inputs': [{'port': 'subject', 'value': {'kind': 'artifact', 'artifact': subject, 'representation': 'domain-context', 'unit': '1'}}], 'budget': {'limit': 1}}))

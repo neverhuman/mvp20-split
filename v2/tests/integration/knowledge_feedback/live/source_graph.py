@@ -9,6 +9,7 @@ from amphora_contracts_knowledge import reasoning_artifact_schema, reasoning_art
 
 from .process import Owner, owned_setup
 from .specimens import install as install_specimens, read_views
+from .feedback import data_profiles, research_profiles
 
 
 def canonical(value):
@@ -59,6 +60,7 @@ class SourceGraphScenario:
             'profiles': [{'media_type': 'text/plain', **source_schema},
                 {'media_type': 'application/json', **reasoning_artifact_schema().model_dump(mode='json'),
                  'schema_path': 'reasoning.json'}]}
+        data_config['profiles'].extend(data_profiles(self.directory))
         if self.runtime is not None:
             self.runtime.configure_data(data_config, self.environments['data_artifacts'])
         if self.retrieval is not None:
@@ -96,13 +98,14 @@ class SourceGraphScenario:
                 for child in value:
                     patch(child)
         patch(proposal)
+        specimens = install_specimens(self.directory, scope, artifact, self.interpreters['research'], self.environments['research'])
         claim = proposal['operations'][2]['assertion']
         link = claim['research_links'][0]
-        link['validation_method'] = source_schema
+        link['validation_method'] = specimens['experiment-definition']['protocol']['method']
         question = {'wire_version': '1', 'reference': link['question'], 'objective': 'Inspect a synthetic hypothesis',
             'applicability': artifact, 'criteria': [{'criterion_id': 'declared', 'description': 'Preserve uncertainty'}], 'supersedes': None}
         need = {'wire_version': '1', 'reference': link['need'], 'question': link['question'], 'criterion_ids': ['declared'],
-            'method': source_schema, 'required_context': artifact, 'supersedes': None}
+            'method': specimens['experiment-definition']['protocol']['method'], 'required_context': artifact, 'supersedes': None}
         # Declarations have read-only HTTP routes: fixture installation remains inside Research.
         seed_environment = dict(self.environments['research'], FIXTURE_RECORDS=json.dumps([question, need]))
         owned_setup(self.interpreters['research'], '''
@@ -117,10 +120,12 @@ try:
   value=model.model_validate_json(json.dumps(raw)); ledger.publish(value.reference.scope,value)
 finally: engine.dispose()
 ''', seed_environment)
-        specimens = install_specimens(self.directory, scope, artifact, self.interpreters['research'], self.environments['research'])
+        profiles = research_profiles(question, need, claim, artifact)
         self.environments['research']['DATA_TOKEN'] = self.environments['data_artifacts']['OWNER_TOKEN']
         research = self.start('research', {'database_url_env': 'OWNER_DATABASE', 'principals': [
-            {'token_env': 'OWNER_TOKEN', 'actor_id': 'reader', 'scope': scope, 'actions': ['read_declarations', 'read_scientific_record']}],
+            {'token_env': 'OWNER_TOKEN', 'actor_id': 'reader', 'scope': scope, 'actions': ['read_declarations', 'read_scientific_record', 'assess', 'read_assessment', 'publish_assessment', 'read_assessment_publication', 'correct_assessment_receipt', 'select_assessment_receipt']}],
+            'assessment': {'profiles': profiles, 'data': {'endpoint': data.endpoint, 'token_env': 'DATA_TOKEN'},
+                'publication': {'actor_id': 'fixture', 'issuer_id': 'research-synthetic', 'token_env': 'DATA_TOKEN'}},
             'science': {'lab_profiles': [], 'eligibility_profiles': [], 'synthesis_profiles': [],
                 'data': {'endpoint': data.endpoint, 'token_env': 'DATA_TOKEN'},
                 'publication': {'actor_id': 'fixture', 'token_env': 'DATA_TOKEN'}, 'consumer_publishers': []}},
@@ -162,4 +167,4 @@ finally: engine.dispose()
             'entities': knowledge.request('/v1/graph-explore/entities', {'wire_version': '1', 'revision': head['snapshot'], 'limit': 50})}
         return {'source': source, 'span': span, 'trace': trace, 'question': question, 'need': need,
             'specimens': specimens, 'research_views': views, 'knowledge_views': graph_views,
-            'head': head, 'assertion': claim['reference'], 'reasoning': reasoning, 'publication': published}
+            'proposal': proposal, 'assessment_profiles': profiles, 'head': head, 'assertion': claim['reference'], 'reasoning': reasoning, 'publication': published}

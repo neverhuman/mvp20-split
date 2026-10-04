@@ -5,6 +5,8 @@ import { ResearchRecordClient } from '../dist/src/transport/provenance/research.
 import { KnowledgeClient } from '../dist/src/transport/scientific/knowledge.js';
 import { ResearchClient } from '../dist/src/transport/scientific/research.js';
 import { ExploreModel } from '../dist/src/page_models/explore/model.js';
+import { FeedbackClient } from '../dist/src/transport/feedback/client.js';
+import { FeedbackModel } from '../dist/src/page_models/feedback/model.js';
 
 let raw = '';
 for await (const chunk of process.stdin) {
@@ -51,5 +53,26 @@ assert.deepEqual(model.snapshot.regions.derivation.value, records.publication.ou
 model.visibility(false);
 assert.ok(Object.values(model.snapshot.regions).every(region => region.phase === 'stale' && region.value === null));
 model.dispose();
+if (records.feedback) {
+  const feedback = new FeedbackModel({ research, feedback: new FeedbackClient(fetcher) });
+  feedback.bind({ ...records.feedback.pins, assessment: records.feedback.unmet.request, publication: null, proposal: null, corrections: null });
+  await feedback.refresh();
+  assert.equal(feedback.snapshot.phase, 'ready');
+  assert.equal(feedback.snapshot.lineage.evidenceState, 'gap');
+  feedback.bind(records.feedback.pins);
+  await feedback.refresh();
+  assert.equal(feedback.snapshot.phase, 'ready', feedback.snapshot.error?.kind);
+  assert.deepEqual(feedback.snapshot.lineage.records.proposal, records.feedback.proposal);
+  assert.deepEqual(feedback.snapshot.lineage.records.change, records.feedback.change);
+  assert.deepEqual(feedback.snapshot.lineage.records.corrections.previous, records.feedback.root);
+  assert.deepEqual(feedback.snapshot.lineage.records.corrections.next, records.feedback.next);
+  assert.equal(feedback.snapshot.lineage.evidenceState, 'sufficient');
+  assert.equal(feedback.snapshot.lineage.futureOnly, true);
+  const provenance = await data.derivation(records.feedback.second.evidence, signal());
+  assert.ok(provenance.declaration.inputs.some(ref => ref.artifact_id === records.feedback.second.report.artifact_id));
+  assert.ok(records.feedback.proposal.proposal.grounding.interpretation_artifacts.some(ref => ref.artifact_id === records.feedback.second.report.artifact_id));
+  assert.deepEqual(await research.observationCorrection(records.feedback.observation_correction.after.reference, signal()), records.feedback.observation_correction);
+  feedback.dispose();
+}
 process.stdout.write(JSON.stringify({ status: 'verified', artifact_sha256: text.artifact_sha256, span_sha256: text.span_sha256,
   boundary: 'actual owner HTTP through compiled Studio clients and Explore model', browser_claim: false }));
