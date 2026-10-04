@@ -5,7 +5,12 @@ import json
 from dataclasses import dataclass
 
 from amphora_contracts_core import Scope
-from amphora_contracts_research import CandidateRevision, EvidenceNeed, ResearchQuestion, SampleIdentity
+from amphora_contracts_research import (
+    CandidateRevision,
+    EvidenceNeed,
+    ResearchQuestion,
+    SampleIdentity,
+)
 from sqlalchemy import Engine, text
 
 from ..identity.questions import QuestionDefinition, ResearchIdentityError
@@ -55,36 +60,46 @@ class IdentityLedger:
 
     def publish(self, scope: Scope, record: Record) -> Record:
         document = IdentityDocument.from_record(scope, record)
+        with self.engine.begin() as connection:
+            self.publish_prepared(connection, document)
+        return document.record
+
+    def publish_prepared(self, connection, document: IdentityDocument) -> bool:
+        """Commit within an owner transaction; return whether the record is new.
+
+        The transaction retains the identity lock for atomic owner-local extensions.
+        Callers supply a validated document and never perform peer I/O here.
+        """
+        record = document.record
         key = document.key()
         # Stable scoped identity lock, not Python's randomized hash. Collisions only serialize extra work.
         lock_bytes = json.dumps([key[k] for k in ("tenant", "project", "kind", "id")], separators=(",", ":")).encode()
         lock = int.from_bytes(hashlib.sha256(lock_bytes).digest()[:8], "big", signed=True)
-        with self.engine.begin() as connection:
-            connection.execute(text("SELECT pg_advisory_xact_lock(:key)"), {"key": lock})
-            existing = self._read(connection, key)
-            if existing is not None:
-                if bytes(existing) != document.canonical_bytes:
-                    raise ResearchIdentityError("immutable_revision_conflict")
-                return record
-            head = connection.execute(text("SELECT revision FROM research.identity_heads WHERE "
-                "tenant_id=:tenant AND project_id=:project AND kind=:kind AND identity_id=:id"), key).scalar_one_or_none()
-            if record.reference.revision != (head or 0) + 1:
-                raise ResearchIdentityError("revision_head_conflict")
-            target = self._target(connection, document)
-            connection.execute(text("INSERT INTO research.identity_records "
-                "(tenant_id,project_id,kind,identity_id,revision,prior_revision,canonical_bytes) "
-                "VALUES (:tenant,:project,:kind,:id,:revision,:prior,:body)"),
-                key | {"prior": head, "body": document.canonical_bytes})
-            if target is not None:
-                connection.execute(text("INSERT INTO research.identity_links "
-                    "(tenant_id,project_id,kind,identity_id,revision,target_kind,target_id,target_revision) "
-                    "VALUES (:tenant,:project,:kind,:id,:revision,:target_kind,:target_id,:target_revision)"), key | target)
-            if document.kind == "sample" and record.material_state is not None:
-                link_sample(connection,record)
-            connection.execute(text("INSERT INTO research.identity_heads "
-                "(tenant_id,project_id,kind,identity_id,revision) VALUES (:tenant,:project,:kind,:id,:revision) "
-                "ON CONFLICT (tenant_id,project_id,kind,identity_id) DO UPDATE SET revision=EXCLUDED.revision"), key)
-        return record
+        connection.execute(text("SELECT pg_advisory_xact_lock(:key)"), {"key": lock})
+        existing = self._read(connection, key)
+        if existing is not None:
+            if bytes(existing) != document.canonical_bytes:
+                raise ResearchIdentityError("immutable_revision_conflict")
+            return False
+        head = connection.execute(text("SELECT revision FROM research.identity_heads WHERE "
+            "tenant_id=:tenant AND project_id=:project AND kind=:kind AND identity_id=:id"), key).scalar_one_or_none()
+        if record.reference.revision != (head or 0) + 1:
+            raise ResearchIdentityError("revision_head_conflict")
+        target = self._target(connection, document)
+        connection.execute(text("INSERT INTO research.identity_records "
+            "(tenant_id,project_id,kind,identity_id,revision,prior_revision,canonical_bytes) "
+            "VALUES (:tenant,:project,:kind,:id,:revision,:prior,:body)"),
+            key | {"prior": head, "body": document.canonical_bytes})
+        if target is not None:
+            connection.execute(text("INSERT INTO research.identity_links "
+                "(tenant_id,project_id,kind,identity_id,revision,target_kind,target_id,target_revision) "
+                "VALUES (:tenant,:project,:kind,:id,:revision,:target_kind,:target_id,:target_revision)"), key | target)
+        if document.kind == "sample" and record.material_state is not None:
+            link_sample(connection,record)
+        connection.execute(text("INSERT INTO research.identity_heads "
+            "(tenant_id,project_id,kind,identity_id,revision) VALUES (:tenant,:project,:kind,:id,:revision) "
+            "ON CONFLICT (tenant_id,project_id,kind,identity_id) DO UPDATE SET revision=EXCLUDED.revision"), key)
+        return True
 
     @staticmethod
     def _read(connection, key):

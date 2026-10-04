@@ -342,3 +342,13 @@ Archived program checkpoint from MBT:
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
 | 2026-10-04 01:42:10 | V1.01 complete; child87.50%, parent97.92%; V1.02 active | [Final verification](../Audits/Evidence/BP-06-Feedback/Final_Verification.json);210.37s,222 independent Studio, real feedback browser |
+
+## 2026-10-04 10:04:40 ? Research declaration registration
+
+B2.03a.ii complete. Research0.34 adds isolated declaration registration, explicit host opt-in/separate grants and atomic first-public-registration provenance under research_0013. Exact retries retain original attribution; privately seeded records are marked preexisting. No public DTO/schema or historical record change.382 installed cases pass across two isolated installs; actual process interruption before commit and after commit/before reply preserves correct rollback/replay. Earlier0012 optional pre-migration backfill test explicitly excluded, with no reset/downgrade. Child44.44%,Build59.26%,Acceptance0%;B2=77.78%;parent28.89%;closed1/4 and5/20. Next b Planning publication/handoff.
+
+Archived MBT checkpoint:
+
+| Timestamp | Checkpoint | Evidence |
+|---|---|---|
+| 2026-10-04 09:44:02 | BP-07.02/B2.03a.i complete; child43.06%,parent28.61%; a.ii active | [Knowledge processing](../Audits/Evidence/BP-07-Extraction/Knowledge_Processing.json);325 installed owner cases, actual three-owner rights/replay and9 interruption stages |

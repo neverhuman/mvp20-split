@@ -7,6 +7,8 @@ from amphora_contracts_core import Scope
 from sqlalchemy import create_engine, text
 from sqlalchemy.engine import make_url
 
+from ..declarations.registration import ACTIONS as DECLARATION_ACTIONS
+from ..declarations.registration import DeclarationRegistrar
 from ..persistence.ledger import IdentityLedger
 from ..scientific_api.host import configured_operations
 from ..scientific_api.operations import ACTIONS as SCIENTIFIC_ACTIONS
@@ -37,8 +39,11 @@ class ResearchHost:
 
     @classmethod
     def configured(cls, config):
-        optional = tuple(key for key in ("assessment","science") if isinstance(config,dict) and key in config)
+        optional = tuple(key for key in ("assessment","science","declarations") if isinstance(config,dict) and key in config)
         _keys(config, ("database_url_env", "principals", *optional))
+        if "declarations" in optional and type(config["declarations"]) is not bool:
+            raise ValueError("invalid_declarations_configuration")
+        declarations_enabled = config.get("declarations", False)
         entries = config["principals"]
         if not isinstance(entries, list) or not 1 <= len(entries) <= 32:
             raise ValueError("invalid_principals")
@@ -52,15 +57,17 @@ class ResearchHost:
                     or any(action not in ("resolve_identity", "read_declarations", "assess", "read_assessment",
                                           "publish_assessment", "read_assessment_publication",
                                           "correct_assessment_receipt", "select_assessment_receipt")
-                           and action not in SCIENTIFIC_ACTIONS for action in actions)
+                           and action not in SCIENTIFIC_ACTIONS and action not in DECLARATION_ACTIONS for action in actions)
                     or len(set(actions)) != len(actions)):
                 raise ValueError("invalid_actions")
             scope = Scope.model_validate(entry["scope"])
             grants.append((_secret(entry["token_env"]), Principal(entry["actor_id"], scope, frozenset(entry["actions"]))))
-        if "assessment" not in optional and any(principal.actions - {"resolve_identity", "read_declarations"} - SCIENTIFIC_ACTIONS for _, principal in grants):
+        if "assessment" not in optional and any(principal.actions - {"resolve_identity", "read_declarations"} - SCIENTIFIC_ACTIONS - DECLARATION_ACTIONS for _, principal in grants):
             raise ValueError("assessment_configuration_required")
         if "science" not in optional and any(principal.actions & SCIENTIFIC_ACTIONS for _, principal in grants):
             raise ValueError("science_configuration_required")
+        if not declarations_enabled and any(principal.actions & DECLARATION_ACTIONS for _, principal in grants):
+            raise ValueError("declarations_configuration_required")
         credentials = Credentials(grants)
         url = make_url(_secret(config["database_url_env"]))
         if url.drivername != "postgresql+psycopg" or url.username != "research_service":
@@ -87,7 +94,12 @@ class ResearchHost:
                     connection.execute(text("SELECT position FROM research.publication_events LIMIT 1"))
                     connection.execute(text("SELECT ordinal FROM research.receipt_corrections LIMIT 1"))
             science = configured_operations(engine,config["science"],_keys,_secret) if "science" in optional else None
-            return cls(engine, create_app(IdentityResolver(IdentityLedger(engine)), credentials, assessments,science))
+            ledger = IdentityLedger(engine)
+            registrar = DeclarationRegistrar(ledger) if declarations_enabled else None
+            if registrar is not None:
+                with engine.connect() as connection:
+                    connection.execute(text("SELECT record_sha256 FROM research.declaration_registrations LIMIT 1"))
+            return cls(engine, create_app(IdentityResolver(ledger), credentials, assessments, science, registrar))
         except Exception:
             engine.dispose()
             raise

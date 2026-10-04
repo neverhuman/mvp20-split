@@ -26,6 +26,7 @@ from sqlalchemy.exc import SQLAlchemyError
 
 from ..assessment.policy import AssessmentError
 from ..assessment.reader import AssessmentPeerUnavailable
+from ..declarations.registration import DeclarationError
 from ..identity.questions import ResearchIdentityError
 from .access import AccessDenied
 from .declarations import DeclarationReader
@@ -59,8 +60,9 @@ async def _body(request, limit=16384):
     return b"".join(parts)
 
 
-def create_app(resolver, credentials, assessments=None, science=None):
+def create_app(resolver, credentials, assessments=None, science=None, registrar=None):
     app = FastAPI(title="Amphora Research", docs_url=None, redoc_url=None)
+    app.state.declarations_enabled = registrar is not None
     app.state.assessment_enabled = assessments is not None
     app.state.science_enabled = science is not None
     app.state.authority = "synthetic_science" if science is not None else ("identity_only" if assessments is None else "synthetic_assessment")
@@ -98,6 +100,12 @@ def create_app(resolver, credentials, assessments=None, science=None):
             status = (403 if code in {"assessment_actor_mismatch", "peer_access_denied"} else
                       409 if "conflict" in code or code in {"publication_assessment_pending", "correction_publication_pending"} else
                       404 if code in {"assessment_profile_unavailable", "publication_assessment_missing"} else 422)
+            return JSONResponse(status_code=status, content={"code": code}, headers={"Cache-Control": "no-store"})
+        except DeclarationError as error:
+            code = str(error)
+            status = (403 if "scope_mismatch" in code else
+                      409 if code in {"immutable_revision_conflict", "revision_head_conflict"} else
+                      404 if code == "unknown_question" else 422)
             return JSONResponse(status_code=status, content={"code": code}, headers={"Cache-Control": "no-store"})
         except (SQLAlchemyError, ResearchIdentityError):
             return JSONResponse(status_code=503, content={"code": "identity_owner_unavailable"})
@@ -144,5 +152,9 @@ def create_app(resolver, credentials, assessments=None, science=None):
         @app.post("/v1/assessment-receipts/select", response_model=ReceiptCorrectionView)
         async def select_receipt(request: Request):
             return await invoke(request, SelectAssessmentReceipt, assessments.select_receipt)
+
+    if registrar is not None:
+        from ..declarations.routes import install_routes
+        install_routes(app, invoke, registrar)
 
     return app
