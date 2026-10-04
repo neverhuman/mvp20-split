@@ -1,7 +1,7 @@
 # Planning persistence boundary
 
-- Reviewed implementation: Agent Planning0.11; BP-07.02/B1.03.
-- State: private planning schema, forward migrations planning_0001 through planning_0006.
+- Reviewed implementation: Agent Planning0.21; BP-07.02/B2.02b verified.
+- State: private planning schema, forward migrations planning_0001 through planning_0008.
 - Responsibility: immutable request, attempt, observation, policy, reservation, settlement, issuance and late-evidence records. The orchestration module composes these objects; Runtime alone owns campaign decisions.
 
 ## Authority and immutable journal
@@ -10,11 +10,11 @@ The migrator role applies explicit forward DDL; imports never migrate. The servi
 
 PlanningJournal.register preserves exact canonical request bytes and fingerprint. Same-actor exact retry replays; changed identity/content conflicts. begin_attempt is a private legacy journal primitive, not authorization to call a provider. Unknown request, absent attempt, pending intent and terminal observation remain distinct. Ordinals are sequential and bounded by the immutable request. record validates attempt/capture size/hash/completeness and any successful proposal; first observation wins and differing writes conflict. The internal transaction helper lets DispatchJournal share that invariant without nested transactions.
 
-All writes serialize under the same request-key advisory transaction lock. No SQL lock spans a provider, filesystem or peer call. Database timestamps describe persistence time, not fabricated provider duration. Reconstruction revalidates canonical identity and capture bindings. Existing unbudgeted histories stay readable and cannot be retroactively relabeled authorized.
+Request writes serialize under a request-key advisory transaction lock; enrolled budget, dispatch, settlement and trace operations first acquire the immutable family lock. No SQL lock spans a provider, filesystem or peer call. Database timestamps describe persistence time, not fabricated provider duration. Reconstruction revalidates canonical identity and capture bindings. Existing unbudgeted histories stay readable and cannot be retroactively relabeled authorized.
 
 ## Reservation and conservative settlement
 
-BudgetLedger.reserve validates the trusted private policy and atomically stores exact policy/demand with the attempt intent. Existing reservation replay preserves its original identity/time; replay is not a repeated dispatch grant. Changed policy/request conflicts; failed admission rolls back new policy/intent rows together. The next ordinal needs a prior observation and settlement. Limits remain per logical request; Runtime's campaign budget is separate.
+BudgetLedger.reserve validates the trusted private policy and atomically stores exact policy/demand with the attempt intent. Existing reservation replay preserves its original identity/time; replay is not a repeated dispatch grant. Changed policy/request conflicts; failed admission rolls back new policy/intent rows together. The next ordinal needs a prior observation and settlement. Per-request limits remain in force. Enrolled requests also share their root ceilings across every family member; Runtime's campaign budget remains separate.
 
 SettlementJournal.settle/read stores and verifies immutable observation hash, reserved_floor_v1 charge and timestamp. The v1 policy has no refund authority: each component is max(reserved, observed lower bound). Unknown, missing, interrupted, zero or low reported usage never releases the floor. Reported overage remains exact, even when certainty is unknown, and stops further reservation/issuance. This does not gate scientific quality. Exact duplicate settlement replays; pending/unreserved attempts cannot settle. Future refund behavior requires a deliberate new profile, preserving v1 policy bytes and history.
 
@@ -47,3 +47,19 @@ Verified2026-10-04 04:24:20:274 source/contract/dev cases;256 cases in two indep
 ## Publication persistence
 
 planning_0007 belongs to the adjacent [publication module](../publication/README.md): exact trace-bound intents, immutable prepared payloads/events, mutable DB-clock leases and positions. This migration is applied and immutable. Publication reads reconstruct historical facts without granting new source use.375 owner/contract/dev cases65.55s verify the combined owner; publication469 statements28 branches100%. SDK I/O and actual Data integration remain subsequent gates.
+
+## Repair-family admission
+
+planning_0008 adds immutable repair_families and repair_members with owner-scoped task/request/policy/parent foreign keys, exact canonical bytes and SELECT/INSERT-only service grants. RepairJournal.enroll_root binds the stored task and reviewed policy. Legacy roots may be adopted only with complete budgeted attempt history and an unchanged policy; existing charges are counted without rewriting history. Enrollment is allowed even when already exhausted, but grants no further spend. A child must have no physical attempt before enrollment and must identify a persisted parent in the family. Exact replay preserves original membership/timestamp; changed roots, policies or parents conflict.
+
+RepairRoot owns narrowing and source/target/context authority. BudgetLedger acquires family then request locks, rechecks membership after lock selection and atomically counts all family reservations using componentwise greatest reservation/settlement/late charges. Request-level admission still applies. Failed admission creates neither an attempt nor policy row. Existing reservations replay unchanged. Family ceilings use the original request, not a child's allowance or caller-supplied totals. Legacy begin_attempt cannot create new unbudgeted attempts inside a family.
+
+Dispatch issue rechecks family-wide known overage, including late reports from siblings. Settlement/late writes use the same family lock, ordering their committed facts against new admission. Membership-change races abort with repair_membership_changed; callers may retry the unchanged operation, never reverse the lock order or create a fresh root. Enrollment and trace linking additionally acquire a scope lineage lock before family/request locks, preventing a concurrent legacy-root adoption from authorizing a post-hoc outsider trace. Only these short owned-state operations use that scope lock; no external I/O occurs inside them.
+
+ExtractionJournal requires a child's enrolled parent on its first trace; later local retries may chain within that member. Cross-request links involving a family require both memberships and the exact enrolled parent. Unrelated legacy history remains readable. This is admission/lineage enforcement, not published findings, owner submission or integrated repair orchestration.
+
+Cutover must replace all Planning admission writers before enabling families. Planning<=0.20 lacks this enforcement and its migrator must not run against0008. Preserve0001..0008 and all predecessor bytes; no reset/downgrade. Tests/persistence/test_repair_families.py covers actual PostgreSQL sibling contention, rollback, adoption, enrollment/trace races, late overage, immutable replay and ordinary runner enforcement. The installed repair_family_probe verifies replacement between reservation and dispatch.
+
+Unsettled recorded replies also count as known exposure. A crash between observation commit and settlement must not let a sibling spend through reported overage. Family totals reconcile those bounded stored observations with the existing BudgetCharge domain policy, without inserting settlement or rewriting history. Direct observation writes share the family lock so the committed ordering against admission is explicit.
+
+Verified 2026-10-04 08:01:56:588 source tests,570 independently installed tests25 process stages/two builds. Changed persistence/repair/orchestration coverage799 statements118 branches99.78%; only migration CLI outside instrumentation. Family modules217 statements32 branches100%. Installed proof preserves pending reservations and known unsettled overage across fresh processes.

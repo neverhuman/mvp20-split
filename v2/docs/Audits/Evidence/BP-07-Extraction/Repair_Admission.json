@@ -1,0 +1,158 @@
+{
+  "verified_at": "2026-10-04 08:01:56",
+  "task": "BP-07.02/B2.02b",
+  "status": "passed",
+  "planning": "0.21.0",
+  "contracts": "0.7.0",
+  "source_tests": 588,
+  "source_seconds": 210.7,
+  "new_family_cases": 28,
+  "installed_tests": 570,
+  "installed_processes": 25,
+  "installations": 2,
+  "schemas": 506,
+  "migration": "planning0008 immutable family/member tables;0001..0007 unchanged",
+  "coverage": {
+    "statements": 799,
+    "missing_statements": 1,
+    "branches": 118,
+    "partial_branches": 1,
+    "percent": 99.78189749182116,
+    "remaining": "Migration CLI entry point outside instrumentation; executed installed"
+  },
+  "family_coverage": {
+    "statements": 217,
+    "branches": 32,
+    "percent": 100
+  },
+  "wheels": {
+    "amphora_agent_planning-0.21.0-py3-none-any.whl": "2383eb0ebcd0f556a41d0f511f925ef8d0b8defd9cce754b08ff6d8928dfc488",
+    "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+    "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+    "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+    "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+    "amphora_contracts_planning-0.7.0-py3-none-any.whl": "0f09c0f8bb69e5b0f33929ed1eb4623d768aae1373b651b9c4bb07f5537da9f1",
+    "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+    "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+  },
+  "family_stages": {
+    "prepare": {
+      "pid": 27308,
+      "calls": [
+        "root"
+      ],
+      "blocked": "repair_attempt_budget_exhausted",
+      "root": {
+        "sha256": "f15586124ce38d20fc61ce2fbce0a6dfb286b5dc8ec36be87b9024dc8a0dbbdd",
+        "registered_at": "2026-10-04T12:59:53.431819+00:00"
+      },
+      "child": {
+        "sha256": "4c434ea26cb361b9b6eaff27c210747a31a538a1a1545cc964743f70406e3088",
+        "registered_at": "2026-10-04T12:59:53.591893+00:00"
+      },
+      "reservation_at": "2026-10-04T12:59:53.639872+00:00",
+      "traces": [
+        {
+          "sha256": "20fab6f6f5e068bf9c571c3968418d31fd2c31a69cf9e09e08924291923441cf",
+          "recorded_at": "2026-10-04T12:59:53.540591+00:00",
+          "charge": 40
+        }
+      ]
+    },
+    "run": {
+      "pid": 30380,
+      "calls": [
+        "child"
+      ],
+      "blocked": "repair_attempt_budget_exhausted",
+      "root": {
+        "sha256": "f15586124ce38d20fc61ce2fbce0a6dfb286b5dc8ec36be87b9024dc8a0dbbdd",
+        "registered_at": "2026-10-04T12:59:53.431819+00:00"
+      },
+      "child": {
+        "sha256": "4c434ea26cb361b9b6eaff27c210747a31a538a1a1545cc964743f70406e3088",
+        "registered_at": "2026-10-04T12:59:53.591893+00:00"
+      },
+      "reservation_at": "2026-10-04T12:59:53.639872+00:00",
+      "traces": [
+        {
+          "sha256": "20fab6f6f5e068bf9c571c3968418d31fd2c31a69cf9e09e08924291923441cf",
+          "recorded_at": "2026-10-04T12:59:53.540591+00:00",
+          "charge": 40
+        },
+        {
+          "sha256": "e43bc3170b762b712f71ea9b1b233dc88d888e33f67cf2fbda50a1f294259f21",
+          "recorded_at": "2026-10-04T12:59:56.403005+00:00",
+          "charge": 40
+        }
+      ]
+    },
+    "replay": {
+      "pid": 30232,
+      "calls": [],
+      "blocked": "repair_attempt_budget_exhausted",
+      "root": {
+        "sha256": "f15586124ce38d20fc61ce2fbce0a6dfb286b5dc8ec36be87b9024dc8a0dbbdd",
+        "registered_at": "2026-10-04T12:59:53.431819+00:00"
+      },
+      "child": {
+        "sha256": "4c434ea26cb361b9b6eaff27c210747a31a538a1a1545cc964743f70406e3088",
+        "registered_at": "2026-10-04T12:59:53.591893+00:00"
+      },
+      "reservation_at": "2026-10-04T12:59:53.639872+00:00",
+      "traces": [
+        {
+          "sha256": "20fab6f6f5e068bf9c571c3968418d31fd2c31a69cf9e09e08924291923441cf",
+          "recorded_at": "2026-10-04T12:59:53.540591+00:00",
+          "charge": 40
+        },
+        {
+          "sha256": "e43bc3170b762b712f71ea9b1b233dc88d888e33f67cf2fbda50a1f294259f21",
+          "recorded_at": "2026-10-04T12:59:56.403005+00:00",
+          "charge": 40
+        }
+      ]
+    }
+  },
+  "unsettled_exposure_stages": {
+    "overage_write": {
+      "pid": 8336,
+      "calls": [
+        "root",
+        "child"
+      ],
+      "observation_sha256": "c6db8d5336cc1d9e68964493d39b2563273007df0ee680ccb93cdd4e9a434571",
+      "reservation_at": "2026-10-04T13:00:01.869456+00:00",
+      "settlement": null,
+      "blocked": "provider_usage_overage"
+    },
+    "overage_replay": {
+      "pid": 25408,
+      "calls": [],
+      "observation_sha256": "c6db8d5336cc1d9e68964493d39b2563273007df0ee680ccb93cdd4e9a434571",
+      "reservation_at": "2026-10-04T13:00:01.869456+00:00",
+      "settlement": null,
+      "blocked": "provider_usage_overage"
+    }
+  },
+  "proven": [
+    "Root-pinned authority and narrowing; immutable task/policy/parent membership before child attempts",
+    "Atomic sibling attempts/token/unit accounting and failed-admission rollback",
+    "Legacy root history counted without byte changes; pre-reserved children rejected",
+    "Family-before-request and lineage-before-family lock ordering with enrollment race rejection",
+    "Ordinary runner enforcement, immutable process replay and no fresh allowance",
+    "Late and observed-but-unsettled overage fence subsequent sibling admission/issuance",
+    "No scientific quality veto or authority promotion"
+  ],
+  "limits": [
+    "Deterministic providers; no live model, egress or scientific acceptance",
+    "Repair feedback construction/execution loop remains c; owner handoffs B2.03",
+    "Replace all old admission writers; Planning<=0.20 lacks family enforcement",
+    "No global program spend cap or remote physical cancellation claim"
+  ]
+}

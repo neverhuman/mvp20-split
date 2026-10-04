@@ -9,6 +9,7 @@ from ..budget.charge import BudgetCharge
 from ..context import AttemptBinding
 from ..context.policy import require
 from .budget import BudgetLedger
+from .family_state import lock_request
 from .journal import KEY
 
 
@@ -49,7 +50,7 @@ class SettlementJournal:
         principal.require("record_attempts", reference.engagement.scope)
         key = {**self.journal._key(reference.engagement), "ordinal": reference.ordinal}
         with self.engine.begin() as connection:
-            self.journal._lock(connection, key)
+            lock_request(connection, key)
             snapshot = self.journal._request(connection, key, principal)
             require(snapshot is not None, "request_unknown")
             require(snapshot.sha256 == reference.request_sha256, "request_conflict")

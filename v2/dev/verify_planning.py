@@ -62,6 +62,7 @@ def verify(output, legacy_manifest=None):
         assert any(name.endswith("r0005_task_output.sql") for name in archive.namelist())
         assert any(name.endswith("r0006_extraction.sql") for name in archive.namelist())
         assert any(name.endswith("r0007_trace_publication.sql") for name in archive.namelist())
+        assert any(name.endswith("r0008_repair_families.sql") for name in archive.namelist())
         assert any(name.endswith("publication/extraction-trace-v1.schema.json") for name in archive.namelist())
         assert any(name.endswith("prompts/domain-decomposition-v1.txt") for name in archive.namelist())
         assert any(name.endswith("prompts/domain-decomposition-v2.txt") for name in archive.namelist())
@@ -174,6 +175,22 @@ def verify(output, legacy_manifest=None):
     assert edits["repair"]["traces"] == edits["replay"]["traces"]
     assert [row["status"] for row in edits["replay"]["traces"]] == ["invalid", "proposed"]
     assert edits["replay"]["charges"] == [40, 40]
+    families = {}
+    for stage, label in (("prepare", "initial"), ("run", "replacement"), ("replay", "replacement")):
+        families[stage] = run([interpreters[label], "-I", output / "tests/service/acceptance/repair_family_probe.py",
+                              stage, project], env=probe_env, capture=True)
+    assert len({record["pid"] for record in families.values()}) == 3
+    for field in ("root", "child", "reservation_at", "blocked"):
+        assert families["prepare"][field] == families["run"][field] == families["replay"][field]
+    assert families["prepare"]["traces"] == families["run"]["traces"][:1]
+    assert families["run"]["traces"] == families["replay"]["traces"]
+    exposure = {}
+    for stage, label in (("overage_write", "initial"), ("overage_replay", "replacement")):
+        exposure[stage] = run([interpreters[label], "-I", output / "tests/service/acceptance/repair_family_probe.py",
+                              stage, project], env=probe_env, capture=True)
+    assert exposure["overage_write"]["pid"] != exposure["overage_replay"]["pid"]
+    assert {key: value for key, value in exposure["overage_write"].items() if key not in {"pid", "calls"}} == {
+        key: value for key, value in exposure["overage_replay"].items() if key not in {"pid", "calls"}}
     legacy = None
     if legacy_manifest is not None:
         legacy_path = legacy_manifest.absolute()
@@ -185,12 +202,13 @@ def verify(output, legacy_manifest=None):
     manifest = {"verified_at": datetime.now(ZoneInfo("America/Chicago")).strftime("%Y-%m-%d %H:%M:%S"),
         "status": "passed", "tests": tests, "project": project, "stages": stages,
         "reservation_stages": reservations, "settlement_stages": settlements, "dispatch_stages": dispatches,
-        "typed_stages": typed, "extraction_stages": extraction, "edit_stages": edits, "legacy_replay": legacy,
+        "typed_stages": typed, "extraction_stages": extraction, "edit_stages": edits, "family_stages": families,
+        "unsettled_exposure_stages": exposure, "legacy_replay": legacy,
         "wheels": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(wheels.glob("*.whl"))},
         "limits": ["Own PostgreSQL journal only; no live provider/domain acceptance", "Deterministic bounded dispatch only; no actual remote transport",
                    "Two independent installs from one source-built wheel closure; no new implementation rewrite"]}
     (output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({"status": "passed", "tests": tests, "processes": 19 + (legacy is not None), "installations": 2}))
+    print(json.dumps({"status": "passed", "tests": tests, "processes": 24 + (legacy is not None), "installations": 2}))
 
 
 if __name__ == "__main__":

@@ -9,6 +9,7 @@ from sqlalchemy import text
 from ..context.policy import require
 from ..extraction.snapshot import ExtractionSnapshot
 from ..extraction.trace import TraceProjection
+from .family_state import lineage_lock, lock_request, member
 from .journal import KEY, PlanningJournal
 
 SCOPE_KEY = "tenant_id=:tenant AND project_id=:project"
@@ -117,7 +118,8 @@ class ExtractionJournal:
             prior = ExtractionTraceRef.model_validate_json(prior.model_dump_json(warnings=False))
         key = {**self.journal._key(attempt_ref.engagement), "ordinal": attempt_ref.ordinal}
         with self.engine.begin() as connection:
-            self.journal._lock(connection, key)
+            lineage_lock(connection, key)
+            membership = lock_request(connection, key)
             task = self._task(connection, principal, task_id)
             require(task is not None, "extraction_task_unknown")
             require(task.snapshot.document().engagement == attempt_ref.engagement and
@@ -126,6 +128,19 @@ class ExtractionJournal:
             require(attempt is not None, "extraction_attempt_unknown")
             parent = None if prior is None else self._trace(connection, principal, prior)
             require(prior is None or parent is not None, "extraction_parent_unknown")
+            if parent is not None:
+                parent_key = self.journal._key(parent.projection.document().attempt.engagement)
+                parent_membership = member(connection, parent_key)
+                if parent_key["engagement"] != key["engagement"] and (membership is not None or parent_membership is not None):
+                    require(membership is not None and parent_membership is not None and
+                            membership["root_engagement_id"] == parent_membership["root_engagement_id"] and
+                            membership["parent_trace_id"] == prior.trace_id and membership["parent_sha256"] == prior.sha256,
+                            "repair_trace_membership")
+            if membership is not None and membership["parent_trace_id"] is not None:
+                # Every child's first trace must identify its enrolled parent. Local retries may chain locally.
+                require(parent is not None and (parent.projection.document().attempt.engagement == attempt_ref.engagement or
+                        (prior.trace_id == membership["parent_trace_id"] and prior.sha256 == membership["parent_sha256"])),
+                        "repair_trace_parent_required")
             projection = TraceProjection.derive(trace_id, task.snapshot, attempt.observation,
                                                  None if parent is None else parent.projection)
             connection.execute(text("INSERT INTO planning.extraction_traces "

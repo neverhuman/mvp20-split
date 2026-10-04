@@ -12,7 +12,8 @@ from ..persistence.settlement import SettlementJournal
 from ..providers import observe
 from ..providers.capture import CapturedOutput, Observation, unknown_usage
 
-BUDGET_STOPS = frozenset({"token_budget_exhausted", "accounting_budget_exhausted", "provider_usage_overage"})
+BUDGET_STOPS = frozenset({"token_budget_exhausted", "accounting_budget_exhausted", "provider_usage_overage",
+    "repair_attempt_budget_exhausted", "repair_token_budget_exhausted", "repair_accounting_budget_exhausted"})
 
 
 @dataclass(frozen=True)

@@ -8,6 +8,7 @@ from sqlalchemy import text
 from ..budget import BudgetPolicy, ReservationDemand
 from ..context import AttemptBinding
 from ..context.policy import require
+from . import family_state
 from .journal import KEY, PlanningJournal
 
 
@@ -51,7 +52,7 @@ class BudgetLedger:
         demand = reviewed_policy.demand(binding)
         key = {**self.journal._key(reference.engagement), "ordinal": reference.ordinal}
         with self.engine.begin() as connection:
-            self.journal._lock(connection, key)
+            membership = family_state.lock_request(connection, key)
             snapshot = self.journal._request(connection, key, principal)
             require(snapshot is not None, "request_unknown")
             require(snapshot.sha256 == reference.request_sha256, "request_conflict")
@@ -61,6 +62,7 @@ class BudgetLedger:
             existing = self._reservation(connection, key, binding, stored_policy)
             if existing is not None:
                 return existing
+            family_state.require_budget(connection, key, membership, self.journal, principal, reviewed_policy, demand)
             # Never retroactively authorize a journal intent created outside budget admission.
             unbudgeted = connection.execute(text("SELECT count(*) FROM planning.attempts a WHERE "
                 "a.tenant_id=:tenant AND a.project_id=:project AND a.engagement_id=:engagement AND NOT EXISTS "

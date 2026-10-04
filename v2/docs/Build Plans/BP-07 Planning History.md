@@ -302,3 +302,13 @@ Typed Research proposals and shared publication candidate binding verified:542 s
 
 B2.02a.ii verified 2026-10-04 07:31:11:560 source/contract/dev tests107.16s;70 focused cases212 statements28 branches98%;542 installed tests20 process stages/two installations. Actual public reads:8 isolated Planning workers/2 Research hosts and8 workers/2 Knowledge hosts; each with2 synthetic owner-local fixture processes. Exact historical revisions survive newer revisions/restarts; future selections see corrections; scope/grant/missing/outage states explicit. Planning0.20/public0.7;506 schemas and planning0001..0007 unchanged. B2.02a i/ii100%,a100%,b/c0%; B2.02=33.33%,B2=44.44%;child36.11%,Build48.15%,parent27.22%. Current B2.02b aggregate repair-family admission. [Evidence](../Audits/Evidence/BP-07-Extraction/Research_Read_Binding.json).
 | 2026-10-04 01:03:42 | B3.02 complete; child62.50%,parent93.75%; B3.03 active | [Correction races](../Audits/Evidence/BP-06-Feedback/Correction_Races.json);1test123.50s, actual competing writers and open wait |
+
+## 2026-10-04 08:01:56 - Repair admission verified
+
+B2.02b verified 2026-10-04 08:01:56:588 source/contract/dev tests210.70s;570 independent tests25 process stages/two installs. Persistence/repair/orchestration799 statements118 branches99.78%; only migration CLI line/branch outside instrumentation, executed installed. New family modules217 statements32 branches100%;28 new pure/SQL cases. Planning0.21/public0.7,506 schemas unchanged; planning0008 adds immutable family/member authority. Concurrent siblings, rollback, legacy adoption, enrollment/trace races, exact replay, common runner enforcement and recorded-but-unsettled/late overage verified. Family checks preserve history and block further spend without scientific quality veto. B2.02a/b100%,c0%;.02=66.67%,B2=55.56%;child38.89%,Build51.85%,parent27.78%,closed1/4 and5/20. Current c.i; [evidence](../Audits/Evidence/BP-07-Extraction/Repair_Admission.json).
+
+Archived program checkpoint from MBT:
+
+| Timestamp | Checkpoint | Evidence |
+|---|---|---|
+| 2026-10-04 01:09:35 | B3.03 complete; child 68.75%, parent 94.79%; B3.04 active | [Specimen adversaries](../Audits/Evidence/BP-06-Feedback/Specimen_Adversaries.json); 1 test, 129.50s; actual policy/model/browser and reviewed screenshots |

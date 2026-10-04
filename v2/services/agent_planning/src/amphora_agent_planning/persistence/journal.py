@@ -6,6 +6,7 @@ from sqlalchemy import text
 
 from ..context import RequestSnapshot
 from ..context.policy import require
+from .family_state import lock_request
 from .records import AttemptJournal, request_from_row, verified_observation
 
 KEY = "tenant_id=:tenant AND project_id=:project AND engagement_id=:engagement"
@@ -67,13 +68,14 @@ class PlanningJournal:
         principal.require("record_attempts", reference.engagement.scope)
         key = {**self._key(reference.engagement), "ordinal": reference.ordinal}
         with self.engine.begin() as connection:
-            self._lock(connection, key)
+            membership = lock_request(connection, key)
             snapshot = self._request(connection, key, principal)
             require(snapshot is not None, "request_unknown")
             require(snapshot.sha256 == reference.request_sha256, "request_conflict")
             existing = self._attempt(connection, key, snapshot)
             if existing:
                 return existing
+            require(membership is None, "repair_requires_budget_admission")
             latest = connection.execute(text("SELECT COALESCE(MAX(ordinal),0) FROM planning.attempts WHERE " + KEY),
                                          key).scalar_one()
             require(reference.ordinal == latest + 1, "attempt_sequence")
@@ -91,7 +93,7 @@ class PlanningJournal:
         observation = verified_observation(binding, observation)
         key = {**self._key(reference.engagement), "ordinal": reference.ordinal}
         with self.engine.begin() as connection:
-            self._lock(connection, key)
+            lock_request(connection, key)
             snapshot = self._request(connection, key, principal)
             require(snapshot is not None and snapshot.sha256 == reference.request_sha256, "request_conflict")
             return self._record(connection, key, snapshot, binding, observation)

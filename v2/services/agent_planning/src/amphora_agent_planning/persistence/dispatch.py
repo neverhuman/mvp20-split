@@ -12,6 +12,7 @@ from ..context.policy import require
 from ..providers.capture import CapturedOutput, Observation, unknown_usage
 from ..providers.wire import observation_document
 from .budget import BudgetLedger
+from .family_state import lock_request, totals
 from .journal import KEY
 from .records import verified_observation
 
@@ -49,10 +50,12 @@ class DispatchJournal:
         principal.require("record_attempts", reference.engagement.scope)
         key = {**self.journal._key(reference.engagement), "ordinal": reference.ordinal}
         with self.engine.begin() as connection:
-            self.journal._lock(connection, key)
+            membership = lock_request(connection, key)
             bound, _ = self._bound(connection, key, principal, binding)
             if self._issued(connection, key) is not None:
                 return None
+            if membership is not None:
+                require(not totals(connection, key, membership["root_engagement_id"])["overage"], "provider_usage_overage")
             overage = connection.execute(text("SELECT EXISTS (SELECT 1 FROM planning.settlements WHERE " + KEY +
                 " AND overage UNION ALL SELECT 1 FROM planning.late_observations WHERE " + KEY +
                 " AND overage)"), key).scalar_one()
@@ -99,7 +102,7 @@ class DispatchJournal:
         principal.require("record_attempts", reference.engagement.scope)
         key = {**self.journal._key(reference.engagement), "ordinal": reference.ordinal}
         with self.engine.begin() as connection:
-            self.journal._lock(connection, key)
+            lock_request(connection, key)
             bound, _ = self._bound(connection, key, principal, binding)
             issued = self._issued(connection, key)
             require(issued is not None, "dispatch_unknown")
@@ -115,7 +118,7 @@ class DispatchJournal:
         observation = verified_observation(binding, observation)
         key = {**self.journal._key(reference.engagement), "ordinal": reference.ordinal}
         with self.engine.begin() as connection:
-            self.journal._lock(connection, key)
+            lock_request(connection, key)
             bound, reservation = self._bound(connection, key, principal, binding)
             issued = self._issued(connection, key)
             require(issued is not None, "dispatch_unknown")
