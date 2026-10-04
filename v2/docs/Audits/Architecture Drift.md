@@ -1,14 +1,13 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-03 19:36:53` (America/Chicago).
+- Last refreshed: `2026-10-03 19:47:01` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.05/B3.03 reconstruction/failure closure; child66.67%, parent77.78%,18/24 closed gates.
-- Next gate: QD-01/failure matrix closure; eight forced-death and five live authority cases pass in source and installed runs. B3.01 actual expiry, selected-vector corruption/fresh repair and competing publishers verified alongside inherited adversaries. Scientific-quality UI remains SQ-01.
+- Active focus: BP-06.05/V1a independent package and whole-owner regression; child75%, parent79.17%,19/24 closed gates.
+- Next gate: independent closeout and scoped audit. QD-01 bounded owner recovery aligned; evidence preserved in drift history. Scientific-quality UI remains SQ-01.
 
 ## Active Findings
 
-- BP-06.05/QD-01: actual Qdrant1.19.1 simultaneous creation of one attempt namespace returned409 and a temporary500 read; a later read recovered expected content. Adapter errors remain operational and no create acknowledgement grants verification. Separate fenced attempt namespaces and exact content comparison preserve authority. Actual fresh-namespace recovery is tested at the adapter boundary; Data generation/index reconstruction passed B2.02c and abrupt process/race proof is B3. No claim that every concurrent backend call succeeds. This does not block bounded adapter work.
 
 
 

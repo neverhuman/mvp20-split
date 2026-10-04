@@ -1,5 +1,12 @@
 # BP-06 Planning History
 
+## BP-06.05/B3 closure - 2026-10-03 19:47:01
+
+Installed retrieval158pass303.24s; new source uncertainty2pass3.75s; dev18pass14.00s. Actual effects plus injected response uncertainty preserve no false proof/head and retain orphan across fresh fenced recovery. Actual backend create race and process proofs remain distinct tiers. Failure matrix reconciles all obligations. Retrieval coverage1248/1260 statements145/152 branches; declared defensive backend/transport gaps remain, no100% claim. Initial new-test evidence serialization errors were corrected without product changes. Lint/boundaries/schemas/links pass. QD-01 bounded recovery aligned, no backend defect-fix claim. B1/B2/B3100%;Build100%,child75%,parent79.17%,3/4 and19/24 gates. V1a independent rebuild/full owner suite and V1b audit/archive each0%,a active.
+
+| 2026-10-03 13:18:06 | BP-06.05/B1.01 complete; child4.17%, parent67.36%; B1.02 active | [Domain identities](../Audits/Evidence/BP-06-Representations/Domain_Identities.json);64 source/64 final wheel; repaired startup probes6+6 |
+
+
 ## BP-06.05/B3.02b live authority complete - 2026-10-03 19:36:53
 
 Five source cases passed40.78s; five installed cases passed38.04s. Actual HTTP workers lose authority after revocation at projection, verified-proof and observed-query barriers. An expired worker cannot overwrite its newly published replacement. Two verified processes race one expected head; exactly one publishes. No production change; lint passed. B3.02a/b100%,B3.02100%,B366.67%;Build88.89%,child66.67%,parent77.78%;closed gates unchanged. B3.03 reconciles recovery/orphan/backend uncertainty next.

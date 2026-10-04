@@ -1,0 +1,413 @@
+{
+  "timestamp_local": "2026-10-03 19:47:01",
+  "task": "BP-06.05/B3.03",
+  "status": "verified",
+  "installed_retrieval": {
+    "passed": 158,
+    "seconds": 303.24
+  },
+  "source_new_cases": {
+    "passed": 2,
+    "seconds": 3.75
+  },
+  "source_adapter": {
+    "passed": 13,
+    "note": "Initial combined run also had two evidence serialization errors, corrected; no product failure"
+  },
+  "dev": {
+    "passed": 18,
+    "seconds": 14.0
+  },
+  "coverage": {
+    "covered_lines": 1248,
+    "num_statements": 1260,
+    "percent_covered": 98.65439093484419,
+    "percent_covered_display": "99",
+    "missing_lines": 12,
+    "excluded_lines": 8,
+    "percent_statements_covered": 99.04761904761905,
+    "percent_statements_covered_display": "99",
+    "num_branches": 152,
+    "num_partial_branches": 7,
+    "covered_branches": 145,
+    "missing_branches": 7,
+    "percent_branches_covered": 95.39473684210526,
+    "percent_branches_covered_display": "95"
+  },
+  "coverage_gaps": {
+    "\\retrieval\\qdrant\\adapter.py": {
+      "lines": [
+        49,
+        85
+      ],
+      "branches": [
+        [
+          48,
+          49
+        ],
+        [
+          84,
+          85
+        ]
+      ]
+    },
+    "\\retrieval\\qdrant\\collections.py": {
+      "lines": [
+        16,
+        40,
+        70
+      ],
+      "branches": [
+        [
+          15,
+          16
+        ],
+        [
+          69,
+          70
+        ]
+      ]
+    },
+    "\\retrieval\\qdrant\\points.py": {
+      "lines": [
+        19,
+        20,
+        47
+      ],
+      "branches": [
+        [
+          46,
+          47
+        ]
+      ]
+    },
+    "\\retrieval\\qdrant\\transport.py": {
+      "lines": [
+        42,
+        43,
+        98,
+        135
+      ],
+      "branches": [
+        [
+          97,
+          98
+        ],
+        [
+          134,
+          135
+        ]
+      ]
+    }
+  },
+  "cases": {
+    "qdrant_http_409": {
+      "timestamp_local": "2026-10-03 19:42:40",
+      "scope": {
+        "tenant_id": "upload-tests",
+        "project_id": "969be900d7af4745a2b7601470a3c33e"
+      },
+      "injected_error_after_actual_write": "qdrant_http_409",
+      "old_attempt": {
+        "generation": {
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "969be900d7af4745a2b7601470a3c33e"
+          },
+          "corpus_id": "corpus",
+          "generation_id": "g1",
+          "sha256": "012bd39f59cdf10e625eacab4195e2ab41dce38d2e2aa5ce2328371d9ea9032e"
+        },
+        "namespace": "amphora_c3d2a56e092b28f427f0301563f24733a0719bfa01274e431f83bfc4cf3dd249",
+        "fence": 1,
+        "token": "64df7f3e2d5849b9ad55ff10fb603b21"
+      },
+      "verified": {
+        "format": "data.index-verification.v1",
+        "generation": {
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "969be900d7af4745a2b7601470a3c33e"
+          },
+          "corpus_id": "corpus",
+          "generation_id": "g1",
+          "sha256": "012bd39f59cdf10e625eacab4195e2ab41dce38d2e2aa5ce2328371d9ea9032e"
+        },
+        "token": "f616304fa60d4cd69e2f3d294213ff70",
+        "fence": 2,
+        "namespace": "amphora_df2ccb26f194028bf05edf342e064d9e0b8bef25c0869b474488dfde5206e703",
+        "manifest_sha256": "ccd86d61e025c9c5b148225b8f2cc35e9199b83e868c7440747ac3d304ba1a52",
+        "projection_sha256": "9a87e23c544f54239ef620570f6a57367ad285667d319eceb565165a58d60f65",
+        "point_count": 1
+      },
+      "published": {
+        "wire_version": "1",
+        "generation": {
+          "wire_version": "1",
+          "reference": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "969be900d7af4745a2b7601470a3c33e"
+            },
+            "corpus_id": "corpus",
+            "generation_id": "g1",
+            "sha256": "012bd39f59cdf10e625eacab4195e2ab41dce38d2e2aa5ce2328371d9ea9032e"
+          },
+          "actor_id": "worker",
+          "manifest": {
+            "wire_version": "1",
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "969be900d7af4745a2b7601470a3c33e"
+            },
+            "profile": {
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "969be900d7af4745a2b7601470a3c33e"
+              },
+              "profile_id": "fixture.utf8-histogram",
+              "version": "1",
+              "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+            },
+            "bindings": [
+              {
+                "wire_version": "1",
+                "reference": {
+                  "scope": {
+                    "tenant_id": "upload-tests",
+                    "project_id": "969be900d7af4745a2b7601470a3c33e"
+                  },
+                  "binding_id": "binding.f842bb4cdb330ffc7d1eccbf5d487e79bb1569598a5dc6a937c1916e5c3f267c",
+                  "sha256": "4eccefa4fcefe718fc9fdaab659f889cadfe61ff2d9b4cfc5c0fa9d126a9bc1b"
+                },
+                "profile": {
+                  "scope": {
+                    "tenant_id": "upload-tests",
+                    "project_id": "969be900d7af4745a2b7601470a3c33e"
+                  },
+                  "profile_id": "fixture.utf8-histogram",
+                  "version": "1",
+                  "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+                },
+                "source": {
+                  "source": {
+                    "scope": {
+                      "tenant_id": "upload-tests",
+                      "project_id": "969be900d7af4745a2b7601470a3c33e"
+                    },
+                    "source_id": "source",
+                    "revision_id": "r1",
+                    "raw": {
+                      "artifact_id": "e698c4d6de3542e98e1b27c8081b6d97",
+                      "scope": {
+                        "tenant_id": "upload-tests",
+                        "project_id": "969be900d7af4745a2b7601470a3c33e"
+                      },
+                      "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+                      "media_type": "application/octet-stream",
+                      "schema_ref": {
+                        "schema_id": "fixture.bytes",
+                        "version": "1",
+                        "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                      },
+                      "size_bytes": 4
+                    }
+                  },
+                  "unit": "byte",
+                  "start": 0,
+                  "end": 4,
+                  "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+                },
+                "vector": {
+                  "artifact_id": "f0b080ee0aae4afb8a63ff343ab25aff",
+                  "scope": {
+                    "tenant_id": "upload-tests",
+                    "project_id": "969be900d7af4745a2b7601470a3c33e"
+                  },
+                  "sha256": "c3a8ca2f01e39c6f2e63c8249acd95e4002899566cf5c5908cb2c1043971f77f",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "schema_id": "representations.vector",
+                    "version": "1",
+                    "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+                  },
+                  "size_bytes": 615
+                }
+              }
+            ],
+            "watermark": "ccd86d61e025c9c5b148225b8f2cc35e9199b83e868c7440747ac3d304ba1a52"
+          },
+          "expected_head": null,
+          "backend_profile": {
+            "schema_id": "data.qdrant-projection",
+            "version": "1",
+            "sha256": "bbd62cf269057b3280ef7e29e8ca06dbdbf6e81f42bb69652e63fb1973327f83"
+          }
+        },
+        "state": "published"
+      },
+      "orphan_retained": true,
+      "claim": "Owner recovery under injected response uncertainty; actual Qdrant effects, no induced server fault claim"
+    },
+    "qdrant_http_500": {
+      "timestamp_local": "2026-10-03 19:42:41",
+      "scope": {
+        "tenant_id": "upload-tests",
+        "project_id": "e6b3f2ead4a146b8a0e8ce4da9b20ec8"
+      },
+      "injected_error_after_actual_write": "qdrant_http_500",
+      "old_attempt": {
+        "generation": {
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "e6b3f2ead4a146b8a0e8ce4da9b20ec8"
+          },
+          "corpus_id": "corpus",
+          "generation_id": "g1",
+          "sha256": "0c22038e8fa7f8aef22245a87677d76fb5d5b04196fb716bffb5c98444a9c446"
+        },
+        "namespace": "amphora_6340adc620a6f97f2222abbfac26b988c8ada8b36688ab2c297813c0bafe98c1",
+        "fence": 1,
+        "token": "2278a2b3124c4ffe9eda81930592c297"
+      },
+      "verified": {
+        "format": "data.index-verification.v1",
+        "generation": {
+          "scope": {
+            "tenant_id": "upload-tests",
+            "project_id": "e6b3f2ead4a146b8a0e8ce4da9b20ec8"
+          },
+          "corpus_id": "corpus",
+          "generation_id": "g1",
+          "sha256": "0c22038e8fa7f8aef22245a87677d76fb5d5b04196fb716bffb5c98444a9c446"
+        },
+        "token": "e1fa6ad10de24cd79202d51c42abbf83",
+        "fence": 2,
+        "namespace": "amphora_73ab4c3b29a345953650b7edb8ad2b47443e3949563404dd6936eae0a179584c",
+        "manifest_sha256": "a65749e62a19e08212e3ec06ff6b6bcb20b1158a9a10724edb8a85c4752cc1cf",
+        "projection_sha256": "180fb4240bd8a92de27e514bfa043b6bab234ba0e209881a2d277c3e11e12381",
+        "point_count": 1
+      },
+      "published": {
+        "wire_version": "1",
+        "generation": {
+          "wire_version": "1",
+          "reference": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "e6b3f2ead4a146b8a0e8ce4da9b20ec8"
+            },
+            "corpus_id": "corpus",
+            "generation_id": "g1",
+            "sha256": "0c22038e8fa7f8aef22245a87677d76fb5d5b04196fb716bffb5c98444a9c446"
+          },
+          "actor_id": "worker",
+          "manifest": {
+            "wire_version": "1",
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "e6b3f2ead4a146b8a0e8ce4da9b20ec8"
+            },
+            "profile": {
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "e6b3f2ead4a146b8a0e8ce4da9b20ec8"
+              },
+              "profile_id": "fixture.utf8-histogram",
+              "version": "1",
+              "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+            },
+            "bindings": [
+              {
+                "wire_version": "1",
+                "reference": {
+                  "scope": {
+                    "tenant_id": "upload-tests",
+                    "project_id": "e6b3f2ead4a146b8a0e8ce4da9b20ec8"
+                  },
+                  "binding_id": "binding.3d4ed888092b12a477e3816a22cff0f39061d1fb83c6332aab0ab6b13d162ef2",
+                  "sha256": "94a02e66d77925666c9af754bbbd1dead8dfc1e7b04fc896b5c661d4ff3e6a83"
+                },
+                "profile": {
+                  "scope": {
+                    "tenant_id": "upload-tests",
+                    "project_id": "e6b3f2ead4a146b8a0e8ce4da9b20ec8"
+                  },
+                  "profile_id": "fixture.utf8-histogram",
+                  "version": "1",
+                  "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+                },
+                "source": {
+                  "source": {
+                    "scope": {
+                      "tenant_id": "upload-tests",
+                      "project_id": "e6b3f2ead4a146b8a0e8ce4da9b20ec8"
+                    },
+                    "source_id": "source",
+                    "revision_id": "r1",
+                    "raw": {
+                      "artifact_id": "349dfe942a944a009dcf9d3759ec7408",
+                      "scope": {
+                        "tenant_id": "upload-tests",
+                        "project_id": "e6b3f2ead4a146b8a0e8ce4da9b20ec8"
+                      },
+                      "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+                      "media_type": "application/octet-stream",
+                      "schema_ref": {
+                        "schema_id": "fixture.bytes",
+                        "version": "1",
+                        "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                      },
+                      "size_bytes": 4
+                    }
+                  },
+                  "unit": "byte",
+                  "start": 0,
+                  "end": 4,
+                  "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+                },
+                "vector": {
+                  "artifact_id": "a20cc91b1ca54f4786333f252a42cab2",
+                  "scope": {
+                    "tenant_id": "upload-tests",
+                    "project_id": "e6b3f2ead4a146b8a0e8ce4da9b20ec8"
+                  },
+                  "sha256": "9e3f0546d348f3a4f464f7db2650b1367bd8af9e06995a27ba8fe6f6adfda3fa",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "schema_id": "representations.vector",
+                    "version": "1",
+                    "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+                  },
+                  "size_bytes": 615
+                }
+              }
+            ],
+            "watermark": "a65749e62a19e08212e3ec06ff6b6bcb20b1158a9a10724edb8a85c4752cc1cf"
+          },
+          "expected_head": null,
+          "backend_profile": {
+            "schema_id": "data.qdrant-projection",
+            "version": "1",
+            "sha256": "bbd62cf269057b3280ef7e29e8ca06dbdbf6e81f42bb69652e63fb1973327f83"
+          }
+        },
+        "state": "published"
+      },
+      "orphan_retained": true,
+      "claim": "Owner recovery under injected response uncertainty; actual Qdrant effects, no induced server fault claim"
+    }
+  },
+  "checks": [
+    "lint",
+    "production boundaries",
+    "438 published schemas unchanged",
+    "touched boundary/matrix links"
+  ],
+  "QD-01": "closed for bounded owner recovery; backend race need not succeed; no backend defect repair claim",
+  "limits": [
+    "Injected409/500 after actual write is distinct from actual server race",
+    "Uncovered malformed backend wrappers/UUID/point guards, uncommon create failure, closed socket/deadline guards",
+    "No target-host power-loss or scientific relevance claim"
+  ]
+}

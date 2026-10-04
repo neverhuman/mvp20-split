@@ -127,3 +127,9 @@ V1 passed final-source independent Studio/Runtime replacement, scopee222d4cf3260
 - `2026-10-03 12:11:37`: V1 audit identifies a remaining scientific Artifact publisher process-kill evidence gap and stale module progress descriptions. Both are assigned within V1.02/.03 before archival; no production defect inferred. Fresh independent build919 tests passes.
 
 - `2026-10-03 12:24:23`: [Replacement/recovery](Evidence/BP-06-Research/Laboratory_Replacement_Recovery.json) closes the standalone scientific Artifact publisher process-proof gap with nine actual barriers. Wrong-actor lookup in the first fixture run corrected; Data privacy behavior was valid. Stale module progress descriptions remain V1.03 before archival.
+
+## BP-06.05/QD-01 bounded recovery aligned - 2026-10-03 19:47:01
+
+- BP-06.05/QD-01: actual Qdrant1.19.1 simultaneous creation of one attempt namespace returned409 and a temporary500 read; a later read recovered expected content. Adapter errors remain operational and no create acknowledgement grants verification. Separate fenced attempt namespaces and exact content comparison preserve authority. Actual fresh-namespace recovery is tested at the adapter boundary; Data generation/index reconstruction passed B2.02c and abrupt process/race proof is B3. No claim that every concurrent backend call succeeds. This does not block bounded adapter work.
+
+Disposition: aligned; Follow-Up: none within this bounded owner recovery scope. Actual backend create race may fail; errors confer no proof/head. Installed retrieval158 cases include actual fresh-namespace reconstruction, forced process death, stale fencing and competing publishers. Injected409/500 after actual writes deterministically prove no publication plus retained orphan/fresh recovery. This closes owner authority/recovery uncertainty, not the underlying backend defect or target-host durability. [Evidence](Evidence/BP-06-Representations/Failure_Closure.json).
