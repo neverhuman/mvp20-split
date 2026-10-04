@@ -2,12 +2,13 @@
 
 ## Current checkpoint
 
-- Last refreshed: 2026-10-03 22:15:08 (America/Chicago).
-- Last pushed ba66514; B1.04b Studio0.3 provenance verified, pending commit/push.168 source/168 independent tests,18dev13.15s. Evidence Studio_Provenance.json; isolated build .test-results/studio-isolated/6524326ea95648fa80d902d3d2bef96b. No tests running.
-- B1.01-.04 complete; B1.05 actual integrated baseline active. B1=80%,Build26.67%,child20.00%,parent86.67%;0/4 child,20/24 parent gates. Continue without routine stops.
-- Studio exact Data source/trace/artifact/derivation/span and Research record/question/need/interpretation/correction clients.16 additional schema roots, existing38 unchanged. Fullsource4MiB/span64KiB; fullhash then spanhash then fatalUTF8, emptyspan valid. Current content rights separate. No scientific/actual-owner/browser claim. Fixture Unicode damaged by PowerShell default encoding was repaired with explicit escape; all source/independent tests rerun.
-- Next: commit/push verified B1.04b; implement B1.05 actual document->accepted graph->Runtime wait using public owner processes and the existing scenario manifest. Read integration knowledge_feedback README, physical design, existing Knowledge/Research live test support and retained installations below. No private cross-owner imports/SQL. B2 UI depends on completed B1 baseline.
-- Research0.33 independent .test-results/research-views-http-20261003/environment/Scripts/python.exe; Knowledge0.17 .test-results/knowledge-exploration-http-20261003/environment/Scripts/python.exe; Data0.28 installation below.466 Python schemas unchanged. No PG suites running.
+- Last refreshed: 2026-10-03 22:35:26 (America/Chicago).
+- Last pushed07c77e8; B1.05 actual integrated baseline verified pending commit/push. Evidence Integrated_Baseline.json;1actual62.63s,48protocol/dev14.58s,168independent Studio. No tests/process suites running.
+- B1 complete100%; B2.01 Explore page models active. Build33.33%,child25.00%,parent87.50%;1/4 child,21/24 parent gates. Commit/push significant checkpoint then continue without routine stops.
+- Actual integration lives tests/integration/knowledge_feedback/live with focused README/process/source_graph/specimens/representation/runtime/manifest. Public owner calls only; isolated own migration/Research seed. Source and science are declared synthetic fixtures. Real source->accepted hypothesis->reasoning receipt->Runtime wait/retention/completion/restart replay, scientific view pages, Qdrant generation/query, observed immutable manifest and compiled Studio client readback passed. No browser/quality claim. Probe script studio/scripts/probe-scientific.mjs receives secrets only via stdin, not evidence.
+- Latest full ignored evidence .test-results/feedback-full-baseline.json; isolation .test-results/feedback-owner-isolation.json; Studio isolated ec4fdf07d8e24a14873371f139ef66e1. Actual run opt-ins/commands in live/README.md; do not overlap PG suites. Runtime0.20.2 interpreter .test-results/runtime-domain-receipt-peer-20261002/environment/Scripts/python.exe. Other similarly named folders may contain Research, not Runtime.
+- Next B2.01: scientific Explore page models, exact context/selection and separate request lanes (loading/empty/partial/stale/denied/error/ready), bounded pages and navigation to exact provenance. Read Studio request_lane/named_views/README, full UI_Coding_Guidelines and Interaction_References before UI implementation. B2.02 visible views after model gate. Source clients/Studio0.3 already complete,54 generated roots;466 Python schemas unchanged.
+- Research0.33 independent .test-results/research-views-http-20261003/environment/Scripts/python.exe; Knowledge0.17 .test-results/knowledge-exploration-http-20261003/environment/Scripts/python.exe; Data0.28 installation below. No schema/migration change in B1.05.
 
 ## Next activation scope
 

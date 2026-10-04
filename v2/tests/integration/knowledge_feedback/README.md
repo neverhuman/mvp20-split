@@ -2,7 +2,7 @@
 
 Owner: BP-06.06/B1.01. This is verification tooling, not a deployed service, scientific evaluator or joined owner database. [Physical design](../../../docs/Build%20Plans/BP-06/BP-06.06%20Physical%20design.md) owns the staged integration scope.
 
-Implemented: a credential-free, versioned declared-fixture manifest with exact question/need/method, source byte span/trace, graph/assertion, specimen/material/experiment/observation, profile/generation, campaign cut/receipt and named-view pins. Actual public owner acquisition, mutation and readback are later milestones. Parsing a manifest does not establish that a record exists, a receipt is accepted, a view is available or science is correct.
+Implemented: a credential-free, versioned declared-fixture manifest with exact question/need/method, source byte span/trace, graph/assertion, specimen/material/experiment/observation, profile/generation, campaign cut/receipt and named-view pins. The [actual baseline](live/README.md) separately proves public acquisition, graph acceptance/publication, scientific views, Qdrant generation, Runtime receipt consumption/replacement and compiled Studio readback. Parsing a manifest alone does not establish that a record exists, a receipt is accepted, a view is available or science is correct.
 
 `protocol/wire.py` owns private verification DTO shape using existing public owner contracts; no new production schema/package/version is introduced. `protocol/manifest.py` owns immutable canonical bytes/SHA, recursive scope fencing, span bounds, graph identity, unique specimen/sample/observation attribution and nonambiguous view pins. Distinct preparations of the same candidate remain distinct. It retains no caller-owned containers; every DTO is revalidated. `document()` returns a fresh DTO. No inferred cross-owner relationship, rights grant or publication authority comes from structural validity.
 
@@ -14,10 +14,10 @@ Run `dev/.venv/Scripts/python.exe dev/run_tests.py --module knowledge-feedback-i
 
 | Owner | Existing usable public boundary | Required next addition |
 |---|---|---|
-| Knowledge | Exact graph/profile/head/snapshot/change/rebuild; reasoning and correction/publication reads | Bounded scoped search/neighborhood/detail capability and projections |
-| Research | Question/need declarations; exact scientific records, observation/material corrections, interpretation/impact/consumer pages | Versioned material/property named views preserving actual measurement semantics |
-| Data | Source/trace history, current rights, Artifact/content reads, profile/binding/generation/query APIs | Consumer span-integrity/access adapter; no shared provenance database |
-| Runtime | Campaign cuts, accepted receipts, actual waits/continuations and successor lineage | Scenario wiring through existing public commands; no science adjudication in harness |
-| Studio | Runtime topology/lineage catalog, strict transport, request lanes, graph/evidence selection and comparison policy | Separate scientific-owner adapters, page models and Explore views |
+| Knowledge | Exact graph/profile/head/snapshot/change/rebuild; reasoning/publication and bounded exploration reads | Correction/browser/rebuild integration remains B2/B3 |
+| Research | Exact scientific records, corrections, interpretation and bounded specimen/property/series views | Iteration and distinct-specimen integration remains B2/B3 |
+| Data | Source/trace/Artifact reads plus real profile/binding/generation/query APIs | Independent reconstruction and browser provenance remains B3 |
+| Runtime | Actual pinned wait/receipt consumption, retention and replacement replay | Corrected iteration integration remains B2/B3 |
+| Studio | Separate scientific-owner/provenance adapters verified against actual owners | Explore page models and visible views remain B2 |
 
 Subsequent actual driver records exact returned identities and verifies them through owners before claiming a checkpoint. Maintain per-owner credentials/processes, visible synthetic limitations and independent expected outcomes. No private peer SQL/imports or fabricated successful response is permitted. Independent replacement preserves this format/canonical fingerprint and all local invariants; intentional format changes use a new version.

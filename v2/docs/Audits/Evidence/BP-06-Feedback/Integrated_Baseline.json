@@ -1,0 +1,377 @@
+{
+  "timestamp_local": "2026-10-03 22:35:26",
+  "task": "BP-06.06/B1.05",
+  "status": "verified",
+  "actual_tests": 1,
+  "actual_seconds": 62.63,
+  "pure_protocol_and_dev_tests": 48,
+  "pure_protocol_and_dev_seconds": 14.58,
+  "independent_studio_tests": 168,
+  "independent_studio_manifest": "v2\\.test-results\\studio-isolated\\ec4fdf07d8e24a14873371f139ef66e1\\manifest.json",
+  "independent_studio_manifest_sha256": "2544951a37ace76e1d62c1a5a1cdcb6d7b821b1c87c1a4caa6c23e70ae8c33de",
+  "owners": {
+    "data_artifacts": {
+      "version": "0.28.0",
+      "peer_implementations_absent": true,
+      "interpreter": "v2\\.test-results\\data-retrieval-closeout-20261003\\environment\\Scripts\\python.exe"
+    },
+    "research": {
+      "version": "0.33.0",
+      "peer_implementations_absent": true,
+      "interpreter": "v2\\.test-results\\research-views-http-20261003\\environment\\Scripts\\python.exe"
+    },
+    "knowledge": {
+      "version": "0.17.0",
+      "peer_implementations_absent": true,
+      "interpreter": "v2\\.test-results\\knowledge-exploration-http-20261003\\environment\\Scripts\\python.exe"
+    },
+    "campaign_runtime": {
+      "version": "0.20.2",
+      "peer_implementations_absent": true,
+      "interpreter": "v2\\.test-results\\runtime-domain-receipt-peer-20261002\\environment\\Scripts\\python.exe"
+    }
+  },
+  "actual_evidence_path": "v2\\.test-results\\feedback-full-baseline.json",
+  "actual_evidence_sha256": "ee508657311b48a7859992f6bbe6018eb9aeecf74b7d9ce048f017fe6740ef4b",
+  "manifest": {
+    "document": {
+      "authority": "declared_fixture_only",
+      "campaign": {
+        "cut": {
+          "frontier_revision": 2,
+          "plan_sha256": "a84ee8007c8de402d841c1d97a3adbc40601f6c22d73fa942f19126bace8c98f",
+          "revision": 3,
+          "run_id": "c5650c39051c47429391e56fc6c2f616",
+          "scope": {
+            "project_id": "3c4aacdb66724be69f445679282ed4ba",
+            "tenant_id": "feedback-fixture"
+          }
+        },
+        "receipt": {
+          "artifact_id": "b0e38b8d596141db90d09d5ce53d15d0",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "knowledge.reasoning-result.payload",
+            "sha256": "cd39e024773235f97cff0dca800b0f43c18872d29df152e5097fa26cd6c55c48",
+            "version": "1"
+          },
+          "scope": {
+            "project_id": "3c4aacdb66724be69f445679282ed4ba",
+            "tenant_id": "feedback-fixture"
+          },
+          "sha256": "480eb2968c8d21c63a67b4f80b11f8bf4a893dd89631756baeda9caee67e1f26",
+          "size_bytes": 3147
+        }
+      },
+      "format": "amphora.knowledge-feedback-fixture.v1",
+      "graph": {
+        "assertion": {
+          "assertion_id": "claim",
+          "graph": {
+            "graph_id": "domain",
+            "scope": {
+              "project_id": "3c4aacdb66724be69f445679282ed4ba",
+              "tenant_id": "feedback-fixture"
+            }
+          },
+          "revision": 1
+        },
+        "snapshot": {
+          "graph": {
+            "graph_id": "domain",
+            "scope": {
+              "project_id": "3c4aacdb66724be69f445679282ed4ba",
+              "tenant_id": "feedback-fixture"
+            }
+          },
+          "revision": 1,
+          "sha256": "af67881d1f267c06a66b4bb07e64d1b20dae6c0ee945fbb052fbceed7c706e38"
+        }
+      },
+      "question": {
+        "method": {
+          "schema_id": "fixture.text",
+          "sha256": "00404e686415370f1711c4d7acfa2905444d3cf23cef2e10c47d445ebe690f96",
+          "version": "1"
+        },
+        "need": {
+          "need_id": "need",
+          "revision": 1,
+          "scope": {
+            "project_id": "3c4aacdb66724be69f445679282ed4ba",
+            "tenant_id": "feedback-fixture"
+          }
+        },
+        "question": {
+          "question_id": "question",
+          "revision": 1,
+          "scope": {
+            "project_id": "3c4aacdb66724be69f445679282ed4ba",
+            "tenant_id": "feedback-fixture"
+          }
+        }
+      },
+      "representation": {
+        "generation": {
+          "corpus_id": "feedback",
+          "generation_id": "baseline",
+          "scope": {
+            "project_id": "3c4aacdb66724be69f445679282ed4ba",
+            "tenant_id": "feedback-fixture"
+          },
+          "sha256": "e3b36359b1b34cd162fc4cd8eaab9ecaf780ec957f1bd76821bc89530c7f007f"
+        },
+        "profile": {
+          "profile_id": "fixture.utf8-histogram",
+          "scope": {
+            "project_id": "3c4aacdb66724be69f445679282ed4ba",
+            "tenant_id": "feedback-fixture"
+          },
+          "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b",
+          "version": "1"
+        }
+      },
+      "scenario_id": "actual-baseline",
+      "scope": {
+        "project_id": "3c4aacdb66724be69f445679282ed4ba",
+        "tenant_id": "feedback-fixture"
+      },
+      "source": {
+        "span": {
+          "end": 49,
+          "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+          "source": {
+            "raw": {
+              "artifact_id": "1b1653ff51894f10a4b6ce6b4779e935",
+              "media_type": "text/plain",
+              "schema_ref": {
+                "schema_id": "fixture.text",
+                "sha256": "00404e686415370f1711c4d7acfa2905444d3cf23cef2e10c47d445ebe690f96",
+                "version": "1"
+              },
+              "scope": {
+                "project_id": "3c4aacdb66724be69f445679282ed4ba",
+                "tenant_id": "feedback-fixture"
+              },
+              "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+              "size_bytes": 49
+            },
+            "revision_id": "r1",
+            "scope": {
+              "project_id": "3c4aacdb66724be69f445679282ed4ba",
+              "tenant_id": "feedback-fixture"
+            },
+            "source_id": "document"
+          },
+          "start": 0,
+          "unit": "byte"
+        },
+        "trace": {
+          "scope": {
+            "project_id": "3c4aacdb66724be69f445679282ed4ba",
+            "tenant_id": "feedback-fixture"
+          },
+          "sha256": "577cc9e5c41ae699d3895b98df3c3531248dcf690115d2a15d2645ea4b763d46",
+          "trace_id": "conversion"
+        }
+      },
+      "specimens": [
+        {
+          "candidate": {
+            "candidate_id": "nominal-design",
+            "revision": 1,
+            "scope": {
+              "project_id": "3c4aacdb66724be69f445679282ed4ba",
+              "tenant_id": "feedback-fixture"
+            }
+          },
+          "experiment": {
+            "experiment_id": "assay",
+            "revision": 1,
+            "scope": {
+              "project_id": "3c4aacdb66724be69f445679282ed4ba",
+              "tenant_id": "feedback-fixture"
+            }
+          },
+          "key": "specimen-one",
+          "material": {
+            "material_state_id": "state",
+            "revision": 1,
+            "scope": {
+              "project_id": "3c4aacdb66724be69f445679282ed4ba",
+              "tenant_id": "feedback-fixture"
+            }
+          },
+          "observation": {
+            "observation_id": "result",
+            "revision": 1,
+            "scope": {
+              "project_id": "3c4aacdb66724be69f445679282ed4ba",
+              "tenant_id": "feedback-fixture"
+            }
+          },
+          "sample": {
+            "revision": 1,
+            "sample_id": "vial",
+            "scope": {
+              "project_id": "3c4aacdb66724be69f445679282ed4ba",
+              "tenant_id": "feedback-fixture"
+            }
+          }
+        }
+      ],
+      "views": [
+        {
+          "owner": "knowledge",
+          "result_schema": {
+            "schema_id": "knowledge.entity-search-page",
+            "sha256": "b8242e0a174460ea260da1e2acdce718066a720cc168af79eba593a77a146b0b",
+            "version": "1"
+          },
+          "version": "1",
+          "view_id": "entity_search"
+        },
+        {
+          "owner": "knowledge",
+          "result_schema": {
+            "schema_id": "knowledge.neighborhood-page",
+            "sha256": "643a4a591788af1b1cadbc23c2917cb20eb16b46568016621e63b8447ac3c86a",
+            "version": "1"
+          },
+          "version": "1",
+          "view_id": "neighborhood"
+        },
+        {
+          "owner": "knowledge",
+          "result_schema": {
+            "schema_id": "knowledge.object-detail",
+            "sha256": "49e0e757373fa7c8cf55b96db04493ae83c9676b2a5bdb41a44386e91cecfcb1",
+            "version": "1"
+          },
+          "version": "1",
+          "view_id": "object_detail"
+        },
+        {
+          "owner": "research",
+          "result_schema": {
+            "schema_id": "research-views.specimen-view-page",
+            "sha256": "9e46b1b960ef87a55c023d6d7954a012faf048b497f1323b34263b1c673be2c6",
+            "version": "1"
+          },
+          "version": "1",
+          "view_id": "specimens"
+        },
+        {
+          "owner": "research",
+          "result_schema": {
+            "schema_id": "research-views.property-view-page",
+            "sha256": "8313e0184396d9eaedc35573e7191347d8444e9301f491eac16bf670497c99d2",
+            "version": "1"
+          },
+          "version": "1",
+          "view_id": "properties"
+        },
+        {
+          "owner": "research",
+          "result_schema": {
+            "schema_id": "research-views.observation-series-page",
+            "sha256": "e106337186559f1b4262ff514e43308336a247d10b7823d631c6f80908cde257",
+            "version": "1"
+          },
+          "version": "1",
+          "view_id": "observation_series"
+        }
+      ]
+    },
+    "sha256": "b5a51b686d3eee9b68442efa5ab5772cda4dde9288c4911211450b6909aa79c6"
+  },
+  "studio": {
+    "status": "verified",
+    "artifact_sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+    "span_sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+    "boundary": "actual owner HTTP through compiled Studio clients",
+    "browser_claim": false
+  },
+  "runtime": {
+    "run_id": "c5650c39051c47429391e56fc6c2f616",
+    "status": "completed",
+    "replacement_replay": true,
+    "delivery": {
+      "claimed": 5,
+      "acknowledged": 1,
+      "failed": 4,
+      "stale": 0
+    },
+    "receipt": {
+      "schema_version": "1",
+      "issuer_id": "knowledge-synthetic",
+      "receipt_id": "knowledge-9e19428407aeb068425bc42df23efff5a36dc80b3fff4cd1c3736dbd6fcc53c5",
+      "scope": {
+        "tenant_id": "feedback-fixture",
+        "project_id": "3c4aacdb66724be69f445679282ed4ba"
+      },
+      "purpose": "knowledge.synthetic_entailment",
+      "revision": "1",
+      "subject": {
+        "artifact_id": "1b1653ff51894f10a4b6ce6b4779e935",
+        "scope": {
+          "tenant_id": "feedback-fixture",
+          "project_id": "3c4aacdb66724be69f445679282ed4ba"
+        },
+        "sha256": "76265c5741affc6678002ef0be512e1997e3f56815370d35c066991cef696743",
+        "media_type": "text/plain",
+        "schema_ref": {
+          "schema_id": "fixture.text",
+          "version": "1",
+          "sha256": "00404e686415370f1711c4d7acfa2905444d3cf23cef2e10c47d445ebe690f96"
+        },
+        "size_bytes": 49
+      },
+      "outcome": {
+        "status": "accepted",
+        "output": {
+          "kind": "artifact",
+          "artifact": {
+            "artifact_id": "b0e38b8d596141db90d09d5ce53d15d0",
+            "scope": {
+              "tenant_id": "feedback-fixture",
+              "project_id": "3c4aacdb66724be69f445679282ed4ba"
+            },
+            "sha256": "480eb2968c8d21c63a67b4f80b11f8bf4a893dd89631756baeda9caee67e1f26",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "knowledge.reasoning-result.payload",
+              "version": "1",
+              "sha256": "cd39e024773235f97cff0dca800b0f43c18872d29df152e5097fa26cd6c55c48"
+            },
+            "size_bytes": 3147
+          },
+          "representation": "knowledge.reasoning_result.v1",
+          "unit": "1"
+        }
+      }
+    }
+  },
+  "source_hashes": {
+    "tests/integration/knowledge_feedback/live/compile_plan.py": "ccf072e2a4fc23b564de929d7edbb30da68e8c0497c610c4a5cdc3c07bd48144",
+    "tests/integration/knowledge_feedback/live/graph.json": "04186e7a15886b35fddbd7e3fc6bbed951cac3f212265f5badfb36e0f8164e45",
+    "tests/integration/knowledge_feedback/live/manifest.py": "6ffb756c11ab43cae8db6c72ecc0d951b559fa0d7b835ad1c4e96d17fdad195d",
+    "tests/integration/knowledge_feedback/live/process.py": "f80e59a257b3cbd899ff64806097d12bf217c300ebf0c645df17237d66292d7e",
+    "tests/integration/knowledge_feedback/live/README.md": "a8acadaa11196dfd45791642f1bad2cb53f195a0a5d45a822099474ea974e8f8",
+    "tests/integration/knowledge_feedback/live/representation.py": "f2e8e404e54d603c27b996af37f1810ada46dc3f78aa07cbda00adc7fa1202b8",
+    "tests/integration/knowledge_feedback/live/runtime.py": "2df1ab91253f830fd81c9194d3c7216a4d28fa8eb835aaf67d9f23b5938e81b9",
+    "tests/integration/knowledge_feedback/live/source_graph.py": "47e6fff5a1a28ae736c1e2befa2ff8cf374d5b16e9bac72025457dae532d99bd",
+    "tests/integration/knowledge_feedback/live/specimen.json": "93aa9c36a6ec0b5417cbaaf3c127bd0901313b9a7a82dae5f97e37a593c9e088",
+    "tests/integration/knowledge_feedback/live/specimens.py": "1b212dd34088e794768cf2d6eb396ba3c6fc85f54abe2ee17cc2d752ce46aac7",
+    "tests/integration/knowledge_feedback/live/__init__.py": "684e9470111de056b57667c6f81424e02b13c78477e918da323b83dfa68c3f54",
+    "tests/integration/knowledge_feedback/test_live_baseline.py": "eb1c18235cb22dd45e0f3fbf570c5fadb0a1cfb74d1618d6ae6de1e0dbd128d3",
+    "studio/scripts/probe-scientific.mjs": "1b23c56d4a18aa626d9733eb6856fcc0dfd7bd810470f8af96e78b3f600386f9"
+  },
+  "limits": [
+    "Synthetic hypothesis; no scientific-validity claim",
+    "Browser/correction/distinct-specimen acceptance remain later gates",
+    "Owner-local synthetic Research seeding is fixture setup, not a deployed write API",
+    "No gateway/browser or semantic embedding-quality claim",
+    "Harness code is not production coverage credit"
+  ]
+}

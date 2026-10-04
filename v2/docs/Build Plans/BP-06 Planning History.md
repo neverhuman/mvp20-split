@@ -1,5 +1,9 @@
 # BP-06 Planning History
 
+## B1.05 actual integrated baseline - 2026-10-03 22:35:26
+
+Four independent Data0.28/Research0.33/Knowledge0.17/Runtime0.20.2 processes with actual PostgreSQL/Qdrant. Source/rights/conversion, accepted hypothesis, synthetic entailment publication, scientific views, encoding/generation/query, exact receipt wait/retention/completion and Runtime replacement replay passed. Compiled Studio clients read those same actual records and verified selected bytes. Manifest contains observed pins.1 actual62.63s,48 protocol/dev14.58s,168 independent Studio; peer implementation absence separately checked. Owner-local Research fixture seeding is not a public ingestion write API; no scientific/browser-quality claim. B1=100%,Build33.33%,child25.00%,parent87.50%; gates1/4 and21/24. B2.01 active.
+
 ## B1.04b Studio provenance - 2026-10-03 22:15:08
 
 Studio0.3 adds16 public schema roots and exact source/trace/derivation/scientific/correction clients.168 source/168 independent tests,18dev; source4MiB/span64KiB limits, byte hashes and strict UTF8, native HTTP with no owner credentials. Coverage/gaps and fixture Unicode repair recorded in Studio_Provenance.json. No Python schema/migration change or actual-owner/browser claim. B1=80%,Build26.67%,child20.00%,parent86.67%; B1.05 integrated baseline active.
@@ -873,3 +877,5 @@ Archived MBT checkpoint: | 2026-10-03 12:24:23 | V1.02 complete; child91.67%, pa
 Actualexpirywithoutpolicyrevisiondiscardsobservedscore8;intentremains/noresult;subsequentemptyeligiblequerydoesnotcallbackend. Actualselectedvectorcorruptioncannotpublishresult;freshgenerationrepairswhileoldpinstillfails/historyunchanged. Twodistinctactualverifiedpublishersraceonehead;exactlyonepublishes. Existingbinding/profile/rights/correction/queryoraclesreconciled59source61.80s/59installed63.71s;final3installedcapture9.59s. No production/version/schema/migrationchange. B3.01=100%,B3.02/.03=0%;B3=33.33%,Build77.78%,child58.33%,parent76.39%,gates2/4and18/24. B3.02split(a8deathpoints,b livebarriers),each0%;aactive. Verificationindex replaces oversized tracker evidence prose; no historical evidence removed.
 
 | 2026-10-03 15:52:35 | B1 complete; child25%, parent70.83%; B2.01 active; gates1/4 and17/24 | [Actual HTTP](../Audits/Evidence/BP-06-Representations/HTTP_Replacement.json);source/installed isolated-server public-only replay/revocation |
+
+| 2026-10-03 16:16:12 | B2.01a complete; child26.56%, parent71.09%; b active | [Generation models](../Audits/Evidence/BP-06-Representations/Generation_Models.json);179 source/179 installed,14 dev |
