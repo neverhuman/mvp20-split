@@ -30,4 +30,5 @@
 v2/services/agent_planning/tests/extraction/corpus/** text eol=lf
 
 v2/services/agent_planning/src/amphora_agent_planning/publication/*.schema.json text eol=lf
+v2/services/agent_planning/src/amphora_agent_planning/repair/*.schema.json text eol=lf
 v2/services/agent_planning/src/amphora_agent_planning/extraction/prompts/domain-decomposition-v2.txt text eol=lf

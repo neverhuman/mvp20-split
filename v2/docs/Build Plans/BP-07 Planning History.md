@@ -312,3 +312,13 @@ Archived program checkpoint from MBT:
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
 | 2026-10-04 01:09:35 | B3.03 complete; child 68.75%, parent 94.79%; B3.04 active | [Specimen adversaries](../Audits/Evidence/BP-06-Feedback/Specimen_Adversaries.json); 1 test, 129.50s; actual policy/model/browser and reviewed screenshots |
+
+## 2026-10-04 08:27:00 - Repair feedback verified
+
+B2.02c.i verified 2026-10-04 08:27:00:617 source/contract/dev tests215.42s;599 independent tests25 process stages/two installs. Repair package208 statements16 branches100%,42 focused cases including29 new feedback/request/packet cases. Planning0.22/public0.7,506 public schemas and planning0001..0008 unchanged; packaged feedback content schema added with LF checkout rule. Exact parent/observation re-derivation, lossless incomplete/invalid-byte output, bounded findings, deterministic child identities, authority preservation, context collisions/capacity, abstention and graph/data packet retention verified. Proposed Artifact bindings are not publication/current-rights proof. c.i100%,c.ii0%,c50%;B2.02=83.33%,B2=61.11%;child40.28%,Build53.70%,parent28.06%;closed1/4 and5/20. Current c.ii. [Evidence](../Audits/Evidence/BP-07-Extraction/Repair_Feedback.json).
+
+Archived program checkpoint from MBT:
+
+| Timestamp | Checkpoint | Evidence |
+|---|---|---|
+| 2026-10-04 01:18:09 | B3.04a complete; child 71.88%, parent 95.31%; B3.04b active | [Independent reconstruction](../Audits/Evidence/BP-06-Feedback/Independent_Reconstruction.json); 164.81s; 222 clean Studio tests and actual browser |

@@ -63,6 +63,7 @@ def verify(output, legacy_manifest=None):
         assert any(name.endswith("r0006_extraction.sql") for name in archive.namelist())
         assert any(name.endswith("r0007_trace_publication.sql") for name in archive.namelist())
         assert any(name.endswith("r0008_repair_families.sql") for name in archive.namelist())
+        assert any(name.endswith("repair/feedback-v1.schema.json") for name in archive.namelist())
         assert any(name.endswith("publication/extraction-trace-v1.schema.json") for name in archive.namelist())
         assert any(name.endswith("prompts/domain-decomposition-v1.txt") for name in archive.namelist())
         assert any(name.endswith("prompts/domain-decomposition-v2.txt") for name in archive.namelist())

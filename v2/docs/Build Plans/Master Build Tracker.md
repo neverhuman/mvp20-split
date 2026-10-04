@@ -9,12 +9,12 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 closed100%; BP-07 primary active; BP-08/09 queued.
-- Last refreshed: `2026-10-04 08:01:56` (America/Chicago).
+- Last refreshed: `2026-10-04 08:27:00` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P6 / BP-07 - Autonomous LLM Campaign Supervision.
-- Primary active task: BP-07.02/Build/B2.02c.i exact feedback and repair-request construction.
-- Next task: BP-07.02/B2.02c.ii bounded execution and installed proof.
-- Implementation completion: BP-07=27.78%,5/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
+- Primary active task: BP-07.02/Build/B2.02c.ii bounded execution and public input binding.
+- Next task: BP-07.02/B2.03 owner handoff and accepted replay.
+- Implementation completion: BP-07=28.06%,5/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
 - Active focus: text-decomposition proposal/source-span contracts; Knowledge owns change acceptance.
 - Blockers: no owner decision blocks deterministic preparation. Live provider/model, egress and spend require explicit choices before real calls.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
@@ -32,15 +32,15 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-07.01 is closed100%. BP-07.02 is primary active; child38.89%,Build51.85%,Acceptance0%.
+BP-07.01 is closed100%. BP-07.02 is primary active; child40.28%,Build53.70%,Acceptance0%.
 
 | Parent | Overall | P1 | P2 | P3 | P4 | P5 |
 |---|---:|---:|---:|---:|---:|---:|
-| BP-07 | 27.78% | 100% | 38.89% | 0% | 0% | 0% |
+| BP-07 | 28.06% | 100% | 40.28% | 0% | 0% | 0% |
 
 | Active child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-07.02](BP-07/BP-07.02%20Reliable%20text%20decomposition.md) | 38.89% | 51.85% | 0% | B2.02c.i |
+| [BP-07.02](BP-07/BP-07.02%20Reliable%20text%20decomposition.md) | 40.28% | 53.70% | 0% | B2.02c.ii |
 
  BP-06 is [closed100%](Completed/BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md); completed parents are in the [archive](Completed/README.md).
 
@@ -48,7 +48,7 @@ BP-07.01 is closed100%. BP-07.02 is primary active; child38.89%,Build51.85%,Acce
 
 | Canonical plan | Status | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-07 Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | Active | 27.78% | 100% | 38.89% | 0% | 0% | 0% | N/A |
+| [BP-07 Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | Active | 28.06% | 100% | 40.28% | 0% | 0% | 0% | N/A |
 | [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 | [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 
@@ -63,11 +63,11 @@ The owning plan tracker is canonical for overall and per-phase percentages. Refr
 
 ## Prioritized Build Queue
 
-BP-07.02/B2.02c.i is current; use the canonical phase mirror above for percentages. Remaining children retain their own prerequisite and acceptance gates.
+BP-07.02/B2.02c.ii is current; use the canonical phase mirror above for percentages. Remaining children retain their own prerequisite and acceptance gates.
 
 | Order / ID | Completion | Proposed plan | Required predecessor gates | Bounded outcome / exit | Architecture owner |
 |---|---|---|---|---|---|
-| P6 / BP-07 | 27.78% | [Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | BP-03 tool discovery; BP-04 runner; BP-05 UI; BP-06 grounded context/receipts | Model-generated campaign proposals and text-to-graph extraction through validated contracts; durable scoped engagements, stale-proposal/fallback races, bounded repair and truthful terminal blockers; no routine human waits | [Planning](../Architecture/Agents/Planning.md), [Graph Runner](../Architecture/System/Graph_Runner.md) |
+| P6 / BP-07 | 28.06% | [Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | BP-03 tool discovery; BP-04 runner; BP-05 UI; BP-06 grounded context/receipts | Model-generated campaign proposals and text-to-graph extraction through validated contracts; durable scoped engagements, stale-proposal/fallback races, bounded repair and truthful terminal blockers; no routine human waits | [Planning](../Architecture/Agents/Planning.md), [Graph Runner](../Architecture/System/Graph_Runner.md) |
 | P7 / BP-08 | 0% | [Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | BP-04 iteration/checkpoints; BP-06 applicability/evidence; BP-07 for LLM-guided topology | Adapt reusable numerical kernels to explicit generation/checkpoint history, separate representation fixtures and evidence-bound selection; parameter search precedes bounded topology proposals under successor-campaign rules | [Search](../Architecture/Campaigns/Search.md), [reuse baseline](../Architecture/Evolutionary_Code_Reuse_Baseline.md) |
 | P8 / BP-09 | 0% | [Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Selected host/model policy; BP-05/06/07 plus BP-08 for evolutionary demo claims | Reproducible target-host deployment, model/tool eligibility, restore/reconciliation, end-to-end autonomous demo and one independently rebuilt/replaced tool; prove replicated workloads if K3s is selected | [Topology](../Architecture/System/Runtime_Topology.md), [tool services](../Architecture/Capabilities/Tool_Services.md) |
 
@@ -124,6 +124,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-04 08:27:00 | BP-07.02/B2.02c.i complete; child40.28%,parent28.06%; c.ii active | [Repair feedback](../Audits/Evidence/BP-07-Extraction/Repair_Feedback.json);617 source,599 installed25 processes; pure tentative requests |
 | 2026-10-04 08:01:56 | BP-07.02/B2.02b complete; child38.89%,parent27.78%; c.i active | [Repair admission](../Audits/Evidence/BP-07-Extraction/Repair_Admission.json);588 source,570 installed25 processes; unsettled overage fenced |
 | 2026-10-04 07:31:11 | BP-07.02/B2.02a.ii | Actual Research/Knowledge reads verified;560 source,542 installed tests. Child36.11%,parent27.22%; B2.02b active. |
 | 2026-10-04 07:07:14 | BP-07.02/B2.02a.i verified; child34.72%,parent26.94%; a.ii active | [Research proposals](../Audits/Evidence/BP-07-Extraction/Research_Proposals.json);542 source,524 installed20 processes,504 predecessor schemas unchanged |
@@ -148,6 +149,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-04 01:46:10 | BP-06 closed100%,24/24; BP-07 activation review next | [Parent audit](../Audits/BP-06_Knowledge_Evidence_Closeout.md);six accepted children, actual source/independent consumer proof |
 | 2026-10-04 01:42:10 | V1.01 complete; child87.50%, parent97.92%; V1.02 active | [Final verification](../Audits/Evidence/BP-06-Feedback/Final_Verification.json);210.37s,222 independent Studio, real feedback browser |
 | 2026-10-04 01:25:10 | B3 complete; child 75%, parent 95.83%; V1.01 active; gates 3/4 and23/24 | [Failure recovery](../Audits/Evidence/BP-06-Feedback/Failure_Recovery.json); 203.38s, 222 clean Studio tests, actual timeout/late/query recovery |
-| 2026-10-04 01:18:09 | B3.04a complete; child 71.88%, parent 95.31%; B3.04b active | [Independent reconstruction](../Audits/Evidence/BP-06-Feedback/Independent_Reconstruction.json); 164.81s; 222 clean Studio tests and actual browser |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.
