@@ -44,4 +44,6 @@ Weak and contradictory evidence remains visible for exploratory use and next-cam
 
 BP-06.06/B1.02 compatibility0.31.1 changes only the exact public Knowledge contract dependency to0.8.0. No Research behavior, schema or migration change.
 
-BP-06.06 Research0.32 adds pure bounded [exploration](src/amphora_research/exploration/README.md) through public research-views0.1. Existing scientific contracts and behavior remain unchanged; owner/API projection integration is B1.03b.
+BP-06.06 Research0.32 adds pure bounded [exploration](src/amphora_research/exploration/README.md) through public research-views0.1. Existing scientific contracts and behavior remain unchanged; owner/API projection integration follows in Research0.33.
+
+Research0.33 exposes authenticated research-explore catalog/specimens/properties/observation-series routes through optional scientific hosting. No schema/migration/new-grant change; complete selected-set existence is checked before bounded record loads. See exploration module for read and replacement contracts.

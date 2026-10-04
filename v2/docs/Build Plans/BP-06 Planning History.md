@@ -1,5 +1,11 @@
 # BP-06 Planning History
 
+## B1.03b Research owner views - 2026-10-03 21:34:15
+
+Research0.33 read-only science hosting; bounded whole-selection metadata existence before loading page records.35 source/275 installed tests,182 statements24 branches100%;18dev11.03s. Actual retained PostgreSQL and independently installed HTTP/replacement preserve exact pages under correction and deny revoked grants.466 schemas unchanged; no migration. B1=60%,Build20%,child15%,parent85.83%; B1.04a Studio scientific contracts/transport active, b provenance next. Both equal halves within existing milestone.
+
+| 2026-10-03 15:26:02 | B1.04 complete; child16.67%, parent69.44%; B1.05 active | [Convergence](../Audits/Evidence/BP-06-Representations/Binding_Convergence.json);160 source/160 installed;independent rights,one compute,attributed publishers |
+
 ## B1.03a Research projection boundary - 2026-10-03 21:22:59
 
 Separate public research-views0.1 avoids cascading scientific core contract changes. Research0.32 pure query/experiment/observation projections preserve reported context, exact decimal/censor/missing/uncertainty, distinct prepared specimens and original4096-point series order.38 source/254 isolated tests;110 statements12 branches100%;18dev.466 schemas preserve452 predecessor bytes. Owner/API remains B1.03b. B1=50%,Build16.67%,child12.50%,parent85.42%; no closed-gate change.

@@ -1,5 +1,6 @@
 """Separately granted scientific operations composed from focused owner modules."""
 from ..experiments.store import ExperimentStore
+from ..exploration.boundary import ExplorationBoundary
 from ..interpretation_api.operations import ACTIONS as INTERPRETATION_ACTIONS
 from ..interpretation_api.operations import InterpretationOperations
 from ..interpretation_api.profiles import InterpretationProfiles
@@ -20,6 +21,7 @@ ACTIONS = frozenset({"submit_lab_intake","read_lab_intake","assess_eligibility",
 class ScientificOperations:
     def __init__(self, engine, profiles, reader_factory, publications, *, interpretation_profiles=()):
         self.records = ScientificRecords(engine)
+        self.exploration = ExplorationBoundary(engine)
         self.index = DecisionIndex(engine)
         self.materials,self.experiments,self.observations = MaterialStateStore(engine),ExperimentStore(engine),ObservationStore(engine)
         self.lab = LabIntakeWorkflow(LabIntakeStore(engine),self.experiments,profiles,reader_factory)

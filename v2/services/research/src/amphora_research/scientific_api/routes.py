@@ -23,6 +23,9 @@ from sqlalchemy.exc import SQLAlchemyError
 from ..assessment.policy import AssessmentError
 from ..assessment.reader import AssessmentPeerUnavailable
 from ..eligibility.evidence import EligibilityError
+from ..exploration.boundary import ViewOwnerUnavailable
+from ..exploration.query import ResearchViewError
+from ..exploration.routes import attach as attach_exploration
 from ..interpretation_api.routes import attach as attach_interpretations
 from ..material_state.validation import MaterialStateError
 from ..observations.identity import ObservationError
@@ -60,6 +63,13 @@ def install_routes(app, credentials, operations):
             return response("scientific_peer_unavailable",503)
         except SQLAlchemyError:
             return response("scientific_owner_unavailable",503)
+        except ViewOwnerUnavailable:
+            return response("scientific_owner_unavailable",503)
+        except ResearchViewError as error:
+            code = str(error)
+            status = (413 if code == "view_response_limit" else
+                409 if code in ("view_position_query", "view_position_bound", "view_not_series") else 422)
+            return response(code,status)
         except (ScientificInputError,ScientificPublicationError,DecisionStoreError,ScientificStoreError,
                 ObservationError,MaterialStateError,EligibilityError,SynthesisError,AssessmentError) as error:
             code = str(error)
@@ -94,3 +104,4 @@ def install_routes(app, credentials, operations):
     ):
         register("/v1/"+path,model,operation)
     attach_interpretations(register,operations.interpretations)
+    attach_exploration(register,operations.exploration)
