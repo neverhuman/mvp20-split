@@ -38,3 +38,13 @@
 .explore-table td > button { display:block; margin-top:8px; }
 @media(max-width:1000px) { .explore-area { grid-template-columns:minmax(0,1fr); } .explore-inspector { border-left:0; border-top:1px solid var(--line); padding:20px 0; } }
 @media(max-width:600px) { .explore-tabs button:last-child { margin-left:0; } .explore-context { align-items:flex-start; } .explore-context span+span { border-left:0; padding-left:0; } .explore-empty { padding:36px 0; } .explore-domain .graph-region { height:350px; } .explore-search label { width:100%; } .explore-workspace header { gap:16px; } .explore-table th,.explore-table td { padding:10px 6px; } }
+
+.comparison-selectors { display:flex; gap:16px; flex-wrap:wrap; margin-block:18px; }
+.comparison-selectors label { flex:1; min-width:200px; display:grid; gap:8px; }
+.comparison-selectors select { max-width:100%; width:100%; padding:10px; border:1px solid var(--line); background:var(--surface); color:inherit; font:inherit; border-radius:4px; }
+.comparison-differences { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; }
+.comparison-differences div { border-top:1px solid var(--line); padding-top:8px; }
+.comparison-differences dt { text-transform:capitalize; color:var(--muted); }
+.comparison-differences dd { margin:6px 0; font-weight:600; }
+.material-preparation { padding-left:20px; }
+.material-preparation li { padding-block:10px; overflow-wrap:anywhere; }

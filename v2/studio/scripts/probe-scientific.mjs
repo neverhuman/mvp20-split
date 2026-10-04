@@ -38,7 +38,7 @@ assert.deepEqual(await knowledge.search(records.knowledge_views.entities.request
 assert.deepEqual(await views.catalog(records.specimens['experiment-definition'].reference, signal()), records.research_views.catalog);
 assert.deepEqual(await views.specimens(records.research_views.specimens.request, signal()), records.research_views.specimens);
 assert.deepEqual(await views.properties(records.research_views.properties.request, signal()), records.research_views.properties);
-const model = new ExploreModel({ knowledge, research: views, data });
+const model = new ExploreModel({ knowledge, research: views, records: research, data });
 model.bind({ graph: records.head.snapshot, experiment: records.specimens['experiment-definition'].reference,
   observations: records.research_views.properties.request.observations });
 await Promise.all([model.search(records.knowledge_views.entities.request), model.specimens(records.research_views.specimens.request),

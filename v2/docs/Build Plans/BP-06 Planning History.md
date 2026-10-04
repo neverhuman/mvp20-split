@@ -1,5 +1,7 @@
 # BP-06 Planning History
 
+2026-10-04 00:29:54 B2.04b visible comparison verified:222 source/independent tests,16 browser scenarios, reviewed desktop/narrow preparation comparison. B2.04=50%,B2=87.50%,Build62.50%,child46.88%,parent91.15%; c actual two-specimen progression active.
+
 2026-10-04 00:16:14 B2.04a exact scientific comparison verified:10 owned cases,220 independent Studio. No timestamps invented, no nominal candidate merge, reuse still owner-authorized. B2.04=25%,B2=81.25%,Build60.42%,child45.31%,parent90.89%; B2.04b active.
 
 2026-10-04 00:09:05 B2.03 complete: actual successor1test95.92s,210 independent Studio+13browser,18dev. Preserved original receipts/measurements/Runtime waits; explicit future graph/report/profile/receipt pins. B2=75%,Build58.33%,child43.75%,parent90.63%. B2.04 active.

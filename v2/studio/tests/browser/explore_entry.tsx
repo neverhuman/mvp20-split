@@ -14,7 +14,7 @@ import { decodeResearch } from "../../src/contracts/scientific/research.js";
 import fixture from "../fixtures/scientific/explore.json" with { type: "json" };
 const graph = decodeKnowledge("search_request", { wire_version: "1", revision: fixture.revision }).revision;
 const science = decodeResearch("property_request", fixture.research.property_request);
-const model = new ExploreModel({ knowledge: new KnowledgeClient(), research: new ResearchClient(), data: new DataProvenanceClient() });
+const model = new ExploreModel({ knowledge: new KnowledgeClient(), research: new ResearchClient(), records: new ResearchRecordClient(), data: new DataProvenanceClient() });
 model.bind({ graph, experiment: science.experiment, observations: science.observations });
 const feedback = new FeedbackModel({ research: new ResearchRecordClient(), feedback: new FeedbackClient() });
 const pins = new FeedbackContext(feedbackFixture.pins as Parameters<typeof feedback.bind>[0] & {}).pins;

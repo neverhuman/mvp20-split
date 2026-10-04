@@ -54,6 +54,38 @@ try {
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
     await page.screenshot({ path: resolve(output, `properties-${width}.png`), fullPage: true });
   }
+  await page.getByRole('button', { name: 'Compare specimens', exact: true }).click();
+  await page.getByLabel('Second observation', { exact: true }).selectOption({ label: 'second-preparation-result / revision 1' });
+  const comparison = page.getByRole('region', { name: 'Prepared specimen comparison' });
+  await page.getByRole('button', { name: 'Inspect preparation 1', exact: true }).click();
+  let preparation = page.getByRole('region', { name: 'Prepared material state' });
+  await preparation.getByText('1 processing conditions', { exact: true }).click();
+  await preparation.getByText('80.0 degC', { exact: true }).waitFor();
+  await page.getByRole('button', { name: 'Inspect preparation 2', exact: true }).click();
+  await preparation.getByText('prepared-hot', { exact: true }).waitFor();
+  await preparation.getByText('1 processing conditions', { exact: true }).click();
+  await preparation.getByText('120.0 degC', { exact: true }).waitFor();
+  assert.match(await comparison.textContent(), /temperature_review/);
+  assert.match(await comparison.textContent(), /Context identity: different/);
+  for (const width of [1440, 390]) {
+    await page.setViewportSize({ width, height: width === 1440 ? 1000 : 844 });
+    const scan = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
+    assert.deepEqual(scan.violations.map(item => ({ id: item.id, nodes: item.nodes.map(node => node.target) })), []);
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+    await page.screenshot({ path: resolve(output, `comparison-${width}.png`), fullPage: true });
+  }
+  evidence.scenarios.push('same nominal candidate -> explicit distinct prepared states -> 80 versus120 degree preparation -> retained quality flag');
+  host.state.mode = 'preparation-many'; await page.getByRole('button', { name: 'Inspect preparation 2', exact: true }).click();
+  await preparation.getByText('step-8', { exact: true }).waitFor(); assert.equal(await preparation.locator('li').count(), 8);
+  await preparation.getByRole('button', { name: 'Next preparation', exact: true }).click();
+  await preparation.getByText('step-9', { exact: true }).waitFor(); assert.equal(await preparation.locator('li').count(), 1);
+  evidence.scenarios.push('prepared-state history uses an explicit 8-step window');
+  host.state.mode = 'material-denied'; await page.getByRole('button', { name: 'Inspect preparation 1', exact: true }).click();
+  await page.waitForFunction(() => window.exploreHarness.model.snapshot.regions.material.phase === 'denied');
+  assert.equal(await preparation.count(), 0); assert.equal(await page.getByRole('table', { name: 'Selected observations and preparation' }).count(), 0);
+  evidence.scenarios.push('material denial clears protected comparison and preparation');
+  host.state.mode = 'ready';
+
   await page.getByRole('button', { name: 'Question & feedback', exact: true }).click();
   await page.getByRole('region', { name: 'Selected research question', exact: true }).waitFor();
   await page.getByRole('button', { name: '02 Evidence need', exact: true }).focus(); await page.keyboard.press('Enter');

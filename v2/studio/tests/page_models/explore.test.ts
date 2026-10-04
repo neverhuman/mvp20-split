@@ -11,6 +11,7 @@ import research from "../fixtures/scientific/research.json" with { type: "json" 
 import { deferred } from "../fixtures/observations.js";
 import trace from "../fixtures/scientific/provenance-trace.json" with { type: "json" };
 import { decodeProvenance } from "../../src/contracts/scientific/provenance.js";
+import exploreFixture from "../fixtures/scientific/explore.json" with { type: "json" };
 
 const decodeKnowledge: typeof knowledgeDecoder = (name, value) => knowledgeDecoder(name, structuredClone(value));
 const decodeResearch: typeof researchDecoder = (name, value) => researchDecoder(name, structuredClone(value));
@@ -24,6 +25,29 @@ const peers = (): ExploreSources => ({
   research: { specimens: async () => decodeResearch("specimen_page", research.specimen_page), properties: async () => decodeResearch("property_page", research.property_page), series: async () => decodeResearch("series_page", research.series_page) },
   data: { span: async span => ({ span, text: "synthetic", artifact_sha256: span.source.raw.sha256, span_sha256: span.sha256 }),
     artifact: async reference => reference, trace: async () => { throw new ScientificReadFailure("unavailable"); }, derivation: async () => { throw new ScientificReadFailure("unavailable"); } },
+});
+
+test("prepared-state inspection uses exact owner references and cancels older selection", async () => {
+  const first = decodeProvenance("material", structuredClone(exploreFixture.material_records[0]));
+  const second = decodeProvenance("material", structuredClone(exploreFixture.material_records[1]));
+  const held = deferred<typeof first>(), source = peers();
+  source.records = { material: async ref => ref.material_state_id === first.reference.material_state_id ? held.promise : second };
+  const model = new ExploreModel(source);
+  model.bind({ graph: null, experiment: exploreFixture.research.property_request.experiment, observations: exploreFixture.research.property_request.observations });
+  const old = model.material(first.reference); await model.material(second.reference);
+  held.resolve(first); await old;
+  assert.deepEqual(model.snapshot.regions.material.value, second);
+  assert.equal(model.snapshot.regions.material.value?.preparation[0]?.context.conditions[0]?.quantity.value, "120.0");
+  model.clearInspection(); assert.equal(model.snapshot.regions.material.phase, "idle"); assert.equal(model.snapshot.regions.material.value, null);
+});
+
+test("missing material loader and foreign state have explicit failures", async () => {
+  const material = decodeProvenance("material", structuredClone(exploreFixture.material_records[0]));
+  const model = new ExploreModel(peers());
+  model.bind({ graph: null, experiment: exploreFixture.research.property_request.experiment, observations: exploreFixture.research.property_request.observations });
+  await model.material(material.reference); assert.equal(model.snapshot.regions.material.phase, "unavailable");
+  await model.material({ ...material.reference, scope: { ...material.reference.scope, project_id: "foreign" } });
+  assert.equal(model.snapshot.regions.material.error?.kind, "invalid_request");
 });
 
 test("Explore supports graph-only and laboratory-only pins and rejects cross-scope or duplicate context", () => {

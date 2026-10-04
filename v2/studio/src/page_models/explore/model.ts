@@ -1,9 +1,10 @@
 import type { KnowledgeClient } from "../../transport/scientific/knowledge.js";
 import type { ResearchClient } from "../../transport/scientific/research.js";
 import type { DataProvenanceClient } from "../../transport/provenance/data.js";
+import type { ResearchRecordClient } from "../../transport/provenance/research.js";
 import type { GraphEntitySearchRequest, GraphNeighborhoodRequest, GraphObjectRequest } from "../../contracts/scientific/knowledge.js";
 import type { SpecimenViewRequest, PropertyViewRequest, ObservationSeriesRequest } from "../../contracts/scientific/research.js";
-import type { SourceSpan, ArtifactRef, ConversionTraceRef } from "../../contracts/scientific/provenance.js";
+import type { SourceSpan, ArtifactRef, ConversionTraceRef, MaterialStateRevision } from "../../contracts/scientific/provenance.js";
 import { ScientificReadFailure } from "../../transport/scientific/failure.js";
 import { RequestLane } from "../request_lane.js";
 import { ExploreContext, immutable } from "./context.js";
@@ -15,6 +16,7 @@ export interface ExploreSources {
   knowledge: Pick<KnowledgeClient, "search" | "neighborhood" | "detail">;
   research: Pick<ResearchClient, "specimens" | "properties" | "series">;
   data: Pick<DataProvenanceClient, "span" | "artifact" | "trace" | "derivation">;
+  records?: Pick<ResearchRecordClient, "material">;
 }
 
 export class ExploreModel {
@@ -45,12 +47,21 @@ export class ExploreModel {
   clearInspection() {
     if (this.disposed) return;
     let next = this.projection;
-    for (const region of ["detail", "source", "artifact", "trace", "derivation"] as const) {
+    for (const region of ["detail", "source", "artifact", "trace", "derivation", "material"] as const) {
       this.lanes[region].cancel(); next = next.region(region, "idle");
     }
     this.publish(next);
   }
   dispose() { this.disposed = true; this.cancel(); this.listeners.clear(); this.context = null; this.projection = ExploreProjection.empty(null, false); }
+  material(reference: MaterialStateRevision["reference"]) {
+    const query = immutable(reference);
+    this.clearInspection();
+    return this.read("material", (context, signal) => {
+      context.scope(query.scope);
+      if (!this.sources.records) throw new ScientificReadFailure("unavailable");
+      return this.sources.records.material(query, signal);
+    }, () => "ready");
+  }
 
   search(request: GraphEntitySearchRequest) {
     const query = immutable(request);
@@ -64,7 +75,7 @@ export class ExploreModel {
   }
   detail(request: GraphObjectRequest) {
     const query = immutable(request);
-    for (const name of ["source", "artifact", "trace", "derivation"] as const) this.lanes[name].cancel();
+    for (const name of ["source", "artifact", "trace", "derivation", "material"] as const) this.lanes[name].cancel();
     return this.read("detail", (context, signal) => { context.graph(query.revision); return this.sources.knowledge.detail(query, signal); }, () => "ready", true);
   }
   specimens(request: SpecimenViewRequest) {
@@ -88,7 +99,7 @@ export class ExploreModel {
   }
   artifact(reference: ArtifactRef, replaceSelection = false) {
     const query = immutable(reference);
-    if (replaceSelection) for (const name of ["detail", "source", "artifact", "trace", "derivation"] as const) this.lanes[name].cancel();
+    if (replaceSelection) for (const name of ["detail", "source", "artifact", "trace", "derivation", "material"] as const) this.lanes[name].cancel();
     return this.read("artifact", (context, signal) => { context.scope(query.scope); return this.sources.data.artifact(query, signal); }, () => "ready", replaceSelection);
   }
   trace(reference: ConversionTraceRef) {
@@ -104,7 +115,7 @@ export class ExploreModel {
     if (this.disposed || !this.snapshot.visible || !this.context) return;
     const context = this.context, request = this.lanes[region].begin();
     let pending = this.projection;
-    if (clearSource) for (const name of ["detail", "source", "artifact", "trace", "derivation"] as const) pending = pending.region(name, "idle");
+    if (clearSource) for (const name of ["detail", "source", "artifact", "trace", "derivation", "material"] as const) pending = pending.region(name, "idle");
     this.publish(pending.region(region, "loading"));
     if (!request.current()) return;
     try {

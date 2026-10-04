@@ -760,6 +760,14 @@
           },
           "observation_id": "series",
           "revision": 1
+        },
+        {
+          "scope": {
+            "tenant_id": "fixture",
+            "project_id": "materials"
+          },
+          "observation_id": "second-preparation-result",
+          "revision": 1
         }
       ],
       "limit": 16,
@@ -794,7 +802,7 @@
         "position": null
       },
       "query_sha256": "2bb69d5faf44fbfbebc2cb1db11196d17519254a68acdbc817d423a9acd8fedc",
-      "total": 1,
+      "total": 2,
       "rows": [
         {
           "sample": {
@@ -858,7 +866,73 @@
               "revision": 1
             },
             "supersedes": null,
-            "preparation_count": 0,
+            "preparation_count": 1,
+            "feature_count": 0
+          }
+        },
+        {
+          "sample": {
+            "wire_version": "1",
+            "reference": {
+              "scope": {
+                "tenant_id": "fixture",
+                "project_id": "materials"
+              },
+              "sample_id": "specimen-hot",
+              "revision": 1
+            },
+            "candidate": {
+              "scope": {
+                "tenant_id": "fixture",
+                "project_id": "materials"
+              },
+              "candidate_id": "nominal-design",
+              "revision": 1
+            },
+            "material_state": {
+              "scope": {
+                "tenant_id": "fixture",
+                "project_id": "materials"
+              },
+              "material_state_id": "prepared-hot",
+              "revision": 1
+            },
+            "identity_evidence": {
+              "artifact_id": "identity",
+              "scope": {
+                "tenant_id": "fixture",
+                "project_id": "materials"
+              },
+              "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "media_type": "application/json",
+              "schema_ref": {
+                "schema_id": "fixture.method",
+                "version": "1",
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+              },
+              "size_bytes": 2
+            },
+            "supersedes": null
+          },
+          "material": {
+            "reference": {
+              "scope": {
+                "tenant_id": "fixture",
+                "project_id": "materials"
+              },
+              "material_state_id": "prepared-hot",
+              "revision": 1
+            },
+            "candidate": {
+              "scope": {
+                "tenant_id": "fixture",
+                "project_id": "materials"
+              },
+              "candidate_id": "nominal-design",
+              "revision": 1
+            },
+            "supersedes": null,
+            "preparation_count": 1,
             "feature_count": 0
           }
         }
@@ -1211,6 +1285,242 @@
         "response_bytes": 1048576,
         "source_fetch": "separate_data_authority"
       }
+    },
+    "second_observation": {
+      "wire_version": "1",
+      "reference": {
+        "scope": {
+          "tenant_id": "fixture",
+          "project_id": "materials"
+        },
+        "observation_id": "second-preparation-result",
+        "revision": 1
+      },
+      "supersedes": null,
+      "source": {
+        "artifact_id": "report",
+        "scope": {
+          "tenant_id": "fixture",
+          "project_id": "materials"
+        },
+        "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "fixture.method",
+          "version": "1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "size_bytes": 2
+      },
+      "binding": {
+        "target": {
+          "experiment": {
+            "scope": {
+              "tenant_id": "fixture",
+              "project_id": "materials"
+            },
+            "experiment_id": "assay",
+            "revision": 1
+          },
+          "expectation_id": "readout",
+          "replicate_id": "replicate-1"
+        },
+        "specimen": {
+          "sample": {
+            "scope": {
+              "tenant_id": "fixture",
+              "project_id": "materials"
+            },
+            "sample_id": "specimen-hot",
+            "revision": 1
+          },
+          "material_state": {
+            "scope": {
+              "tenant_id": "fixture",
+              "project_id": "materials"
+            },
+            "material_state_id": "prepared-hot",
+            "revision": 1
+          }
+        },
+        "measurement": {
+          "method": {
+            "schema_id": "fixture.method",
+            "version": "1",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "context": {
+            "artifact_id": "context",
+            "scope": {
+              "tenant_id": "fixture",
+              "project_id": "materials"
+            },
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "fixture.method",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "size_bytes": 2
+          }
+        },
+        "role": "sample"
+      },
+      "value": {
+        "kind": "numeric",
+        "quantity": {
+          "value": "9.000",
+          "unit": "mg/L"
+        },
+        "uncertainty": null
+      },
+      "quality": {
+        "controls": "unknown",
+        "flags": [
+          "temperature_review"
+        ]
+      }
     }
-  }
+  },
+  "material_records": [
+    {
+      "wire_version": "1",
+      "reference": {
+        "scope": {
+          "tenant_id": "fixture",
+          "project_id": "materials"
+        },
+        "material_state_id": "state",
+        "revision": 1
+      },
+      "candidate": {
+        "scope": {
+          "tenant_id": "fixture",
+          "project_id": "materials"
+        },
+        "candidate_id": "nominal-design",
+        "revision": 1
+      },
+      "supersedes": null,
+      "preparation": [
+        {
+          "event_id": "annealing",
+          "context": {
+            "method": {
+              "schema_id": "fixture.preparation",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "conditions": [
+              {
+                "name": "temperature",
+                "quantity": {
+                  "value": "80.0",
+                  "unit": "degC"
+                }
+              }
+            ],
+            "duration": {
+              "value": "30",
+              "unit": "min"
+            },
+            "atmosphere": "air"
+          },
+          "attribution": {
+            "basis": "observed",
+            "actor": "fixture",
+            "equipment": [
+              "synthetic-oven"
+            ],
+            "source": {
+              "artifact_id": "identity",
+              "scope": {
+                "tenant_id": "fixture",
+                "project_id": "materials"
+              },
+              "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "media_type": "application/json",
+              "schema_ref": {
+                "schema_id": "fixture.method",
+                "version": "1",
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+              },
+              "size_bytes": 2
+            }
+          }
+        }
+      ],
+      "features": []
+    },
+    {
+      "wire_version": "1",
+      "reference": {
+        "scope": {
+          "tenant_id": "fixture",
+          "project_id": "materials"
+        },
+        "material_state_id": "prepared-hot",
+        "revision": 1
+      },
+      "candidate": {
+        "scope": {
+          "tenant_id": "fixture",
+          "project_id": "materials"
+        },
+        "candidate_id": "nominal-design",
+        "revision": 1
+      },
+      "supersedes": null,
+      "preparation": [
+        {
+          "event_id": "annealing",
+          "context": {
+            "method": {
+              "schema_id": "fixture.preparation",
+              "version": "1",
+              "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "conditions": [
+              {
+                "name": "temperature",
+                "quantity": {
+                  "value": "120.0",
+                  "unit": "degC"
+                }
+              }
+            ],
+            "duration": {
+              "value": "60",
+              "unit": "min"
+            },
+            "atmosphere": "air"
+          },
+          "attribution": {
+            "basis": "observed",
+            "actor": "fixture",
+            "equipment": [
+              "synthetic-oven"
+            ],
+            "source": {
+              "artifact_id": "identity",
+              "scope": {
+                "tenant_id": "fixture",
+                "project_id": "materials"
+              },
+              "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "media_type": "application/json",
+              "schema_ref": {
+                "schema_id": "fixture.method",
+                "version": "1",
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+              },
+              "size_bytes": 2
+            }
+          }
+        }
+      ],
+      "features": []
+    }
+  ]
 }

@@ -1,0 +1,40 @@
+{
+  "verified_at": "2026-10-04 00:29:54",
+  "status": "passed",
+  "scope": "BP-06.06 B2.04b visible comparison and prepared-state inspector",
+  "source_tests": 222,
+  "independent_tests": 222,
+  "browser_scenarios": [
+    "keyboard concept -> bounded graph -> qualified claim -> verified inert source -> conversion",
+    "distinct specimen context -> lossless properties -> original repeated-coordinate series",
+    "same nominal candidate -> explicit distinct prepared states -> 80 versus120 degree preparation -> retained quality flag",
+    "prepared-state history uses an explicit 8-step window",
+    "material denial clears protected comparison and preparation",
+    "keyboard question -> declared method -> qualified contradicted answer -> historical correction -> future proposal -> verified source",
+    "feedback denial clears qualified owner records",
+    "pending assessment remains inspectable without a publication",
+    "long question and 32 need decisions remain bounded at 20 rows with explicit paging",
+    "current content denial clears every protected region",
+    "altered source bytes never become a verified passage",
+    "empty state remains explicit and bounded",
+    "offline state remains explicit and bounded",
+    "paged state remains explicit and bounded",
+    "long state remains explicit and bounded",
+    "hidden domain request cannot repopulate an inactive view"
+  ],
+  "independent_manifest": ".test-results/studio-isolated/ebb733cf566d441d8e1d0180f22389ee/manifest.json",
+  "visual_review": [
+    "1440 desktop comparison and selected preparation",
+    "390 narrow comparison and selected preparation"
+  ],
+  "source_browser_artifacts": ".test-results/studio-explore-browser/2026-10-04T05-25-36-656Z",
+  "repairs": [
+    "Explicit accessible select names",
+    "Entering comparison and changing pages clear unrelated inspector context"
+  ],
+  "limits": [
+    "Scripted synthetic HTTP fixture; actual two-specimen owner progression remains c",
+    "No owner cache/eligibility authorization from UI identity comparisons",
+    "Material feature content editing/visualization not part of preparation inspector"
+  ]
+}

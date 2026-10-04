@@ -76,13 +76,14 @@ export async function startExploreHost() {
         if (path.endsWith('/assessment-receipts/select')) { reply(200, query.revision.ordinal === 1 ? feedback.root : feedback.next); return; }
         if (path.includes('/proposals/')) { reply(200, feedback.proposal); return; }
         if (path.endsWith('/graph-changes/read')) { reply(200, feedback.change); return; }
+        if (path.endsWith('/material-states/read')) { const selected = fixture.material_records.find(r => JSON.stringify(ordered(r.reference)) === JSON.stringify(ordered(query))); const material = selected ? structuredClone(selected) : null; if (material && state.mode === 'preparation-many') material.preparation = Array.from({ length: 9 }, (_, i) => ({ ...material.preparation[0], event_id: 'step-' + (i + 1) })); reply(state.mode === 'material-denied' ? 403 : material ? 200 : 404, material ?? {}); return; }
         const research = fixture.research;
         if (path.endsWith('/specimens')) {
           reply(200, { ...research.specimen_page, request: query, query_sha256: digest('research.view-query.v1', 'specimens', query), next_position: null }); return;
         }
         if (path.endsWith('/properties')) {
           const rows = query.observations.map(ref => {
-            const record = ref.observation_id === research.series.reference.observation_id ? research.series : research.observation;
+            const record = ref.observation_id === research.series.reference.observation_id ? research.series : ref.observation_id === research.second_observation.reference.observation_id ? research.second_observation : research.observation;
             const value = record.value.kind === 'series' ? { kind: 'series', point_count: record.value.points.length, x_unit: record.value.x_unit, y_unit: record.value.y_unit } : record.value;
             return { ...research.property_page.rows[0], reference: ref, source: record.source, binding: record.binding, value, quality: record.quality };
           });
