@@ -1,7 +1,7 @@
 # Planning persistence boundary
 
-- Reviewed implementation: Agent Planning0.9; BP-07.02/B1.02.
-- State: private planning schema, forward migrations planning_0001 through planning_0005.
+- Reviewed implementation: Agent Planning0.11; BP-07.02/B1.03b.
+- State: private planning schema, forward migrations planning_0001 through planning_0006.
 - Responsibility: immutable request, attempt, observation, policy, reservation, settlement, issuance and late-evidence records. The orchestration module composes these objects; Runtime alone owns campaign decisions.
 
 ## Authority and immutable journal
@@ -28,10 +28,16 @@ The deadline fences accepted observations, not physical remote cancellation or n
 
 ## Replacement and verification
 
-Preserve canonical policy/request/observation bytes, exact attempt identities, first-writer outcomes, unknown/pending distinctions, actor/scope checks, conservative arithmetic and all issuance/late evidence. Migrations are forward-only and immutable after application; Planning<=0.8 migrators must not run against planning_0005. There is no fixture reset, downgrade or deletion authority.
+Preserve canonical policy/request/observation bytes, exact attempt identities, first-writer outcomes, unknown/pending distinctions, actor/scope checks, conservative arithmetic and all issuance/late evidence. Migrations are forward-only and immutable after application; Planning<=0.10 migrators must not run against planning_0006. There is no fixture reset, downgrade or deletion authority.
 
 Owned tests/persistence cover actual PostgreSQL migration/idempotency, competing writers, admission rollback and limits, legacy distinction, settlement/retry, expiry/late races, stored-record integrity and SQLSTATE42501 for forbidden mutations. tests/orchestration separately cover bounded composition and non-starvation. dev/verify_planning.py installs the public dependency closure twice and verifies isolated owner/process readback; dev/verify_planning_recovery.py exits installed workers abruptly at five committed boundaries. The latter uses exclusive synthetic call markers, not real remote effects. Neither harness claims independently authored replacement code, power-loss durability, scientific validity or live model quality. Detailed evidence lives under docs/Audits/Evidence/BP-07-Planning.
 
 ## Versioned observation storage
 
 planning_0005 conditionally extends encoded observations and late observations to256KiB only for explicit string format2. Missing/numeric/legacy version records do not gain that allowance; v1 retains64KiB. Raw capture remains64KiB for both. The shared strict decoder and closed output catalog reconstruct either legacy ReferenceProposal or TypedProposal from retained capture before writing/replaying. Budget/issuance/settlement rows and all prior observation bytes remain unchanged. Actual SQL cases verify the conditional constraints and format2 late output/charges; an optional --legacy-manifest argument to dev/verify_planning.py verifies retained predecessor project hashes after migration using only service credentials.
+
+## Extraction task and trace history
+
+ExtractionJournal registers one immutable ExtractionSnapshot per engagement, bound to the already registered actor/request digest; task identities cannot move between requests. record accepts task/observed-attempt identity and optional prior trace reference, then derives all provenance from stored facts. Pending/unknown attempts cannot be traced. The task row is not dispatch authorization. Existing exact traces replay original bytes/digest/database timestamp; changed trace identity/content or parent conflicts. planning_0006 adds own extraction_tasks and extraction_traces with task/request/observed-attempt FKs, unique physical-attempt trace, exact parent digest FK, size bounds256KiB/1MiB and SELECT/INSERT-only role grants.
+
+Readback verifies task/request bytes, trace digest, database identity columns and complete parent chain, then reconstructs the projection from immutable observations. Parent records must exist, share source/target/scope and original actor, and have bounded acyclic depth<=16. Repairs preserve failed traces; lineage grants no call or new budget. No peer calls occur under request-key SQL locks. Trace publication, current Data rights and Knowledge acceptance remain later workflow gates. Own actual PostgreSQL tests cover exact retry/time, replacement connections, failed/repaired lineage, unique task and competing trace writers, grants/actor/digest/binding, pending rejection and forbidden SQL mutations. Installed trace proof is the next substep.

@@ -191,3 +191,11 @@ Planning0.10/public0.5 adds interpretation-only trace/ref roots and pure immutab
 Archived MBT checkpoint references (original relative evidence links retained relative to this directory):
 
 | 2026-10-03 20:03:23 | BP-06.05 closed100%; parent83.33%,20/24; BP-06.06 audit next | [Closeout](../Audits/BP-06.05_Representation_Retrieval_Closeout.md);649 installed+4 binding cases,11-wheel independent build |
+
+## 2026-10-04 04:16:09 - BP-07.02/B1.03b durable extraction journal
+
+planning_0006 adds own immutable task and observed-attempt trace tables with source/target-bound prior lineage. Exact byte/time replay, request/task uniqueness, actor/grants, pending rejection, competing writers and replacement connections verified.272 owner/contract/dev cases33.47s; final10 PostgreSQL cases5.13s,102 statements8 branches100%. Explicit original-type guard rejects forged bool ordinals before Pydantic serialization can normalize them. Planning0.11/public0.5;500 schemas unchanged. Child16.67%,Build22.22%,parent23.33%; B1.03c corpus/independent proof next.
+
+Archived MBT checkpoints:
+
+| 2026-10-03 20:26:20 | BP-06.06 activated; B1.01 complete,child5%,parent84.17%; B1.02a active | [Scenario protocol](../Audits/Evidence/BP-06-Feedback/Scenario_Manifest.json);30 pure/18 dev,123statements16branches100% |

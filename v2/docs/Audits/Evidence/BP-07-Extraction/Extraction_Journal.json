@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-10-04 04:16:09",
+  "milestone": "BP-07.02/B1.03b",
+  "regression_tests": 272,
+  "regression_seconds": 33.47,
+  "final_pg_tests": 10,
+  "final_pg_seconds": 5.13,
+  "statements": 102,
+  "branches": 8,
+  "coverage_percent": 100,
+  "migration": "planning_0006",
+  "owner_version": "0.11.0",
+  "limits": [
+    "installed trace proof next",
+    "no peer rights/publication or scientific acceptance"
+  ]
+}
