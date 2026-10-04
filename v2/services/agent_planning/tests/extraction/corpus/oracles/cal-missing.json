@@ -1,0 +1,24 @@
+{
+  "case_id": "cal-missing",
+  "category": "missing_context",
+  "expected_meaning": [
+    "J improves survival: attributed report with missing applicability"
+  ],
+  "context_to_preserve": [
+    "species unknown",
+    "dose unknown",
+    "route unknown",
+    "duration unknown",
+    "method unknown"
+  ],
+  "permitted_alternatives": [
+    "Retain an unresolved report and distinct context evidence needs"
+  ],
+  "hard_rejections": [
+    "Default to humans",
+    "Invent a dose or validation method",
+    "Label the result proven"
+  ],
+  "citation_requirement": "Exact spans from this case source; no fabricated accepted citations",
+  "acceptance_authority": "none"
+}

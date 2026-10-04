@@ -1,0 +1,23 @@
+{
+  "case_id": "cal-contradiction",
+  "category": "contradiction",
+  "expected_meaning": [
+    "A activates B: affirmed in report one",
+    "A activates B: negated in report two",
+    "Conflict unresolved"
+  ],
+  "context_to_preserve": [
+    "assay C",
+    "separate report attribution"
+  ],
+  "permitted_alternatives": [
+    "Keep both attributed claims with a contradiction diagnostic"
+  ],
+  "hard_rejections": [
+    "Drop one report without authority",
+    "Average the statements into verified activation",
+    "Invent a supersession"
+  ],
+  "citation_requirement": "Exact spans from this case source; no fabricated accepted citations",
+  "acceptance_authority": "none"
+}

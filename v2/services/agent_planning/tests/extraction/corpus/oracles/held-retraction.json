@@ -1,0 +1,21 @@
+{
+  "case_id": "held-retraction",
+  "category": "retraction",
+  "expected_meaning": [
+    "Retraction requested by author update",
+    "Accepted assertion target and base head: missing"
+  ],
+  "context_to_preserve": [
+    "missing assertion reference",
+    "missing graph head"
+  ],
+  "permitted_alternatives": [
+    "Retain an attributed unresolved correction request for future resolution"
+  ],
+  "hard_rejections": [
+    "Retract every biodegradability assertion",
+    "Rewrite an active campaign pin"
+  ],
+  "citation_requirement": "Exact spans from this case source; no fabricated accepted citations",
+  "acceptance_authority": "none"
+}

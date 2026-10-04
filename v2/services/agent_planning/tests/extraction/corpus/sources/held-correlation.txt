@@ -1,0 +1,1 @@
+Synthetic measurements: pore size U and release rate V varied together. Temperature was not controlled; no causal experiment was run.

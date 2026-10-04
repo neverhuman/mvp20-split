@@ -1,6 +1,6 @@
 # Planning persistence boundary
 
-- Reviewed implementation: Agent Planning0.11; BP-07.02/B1.03b.
+- Reviewed implementation: Agent Planning0.11; BP-07.02/B1.03.
 - State: private planning schema, forward migrations planning_0001 through planning_0006.
 - Responsibility: immutable request, attempt, observation, policy, reservation, settlement, issuance and late-evidence records. The orchestration module composes these objects; Runtime alone owns campaign decisions.
 
@@ -41,3 +41,5 @@ planning_0005 conditionally extends encoded observations and late observations t
 ExtractionJournal registers one immutable ExtractionSnapshot per engagement, bound to the already registered actor/request digest; task identities cannot move between requests. record accepts task/observed-attempt identity and optional prior trace reference, then derives all provenance from stored facts. Pending/unknown attempts cannot be traced. The task row is not dispatch authorization. Existing exact traces replay original bytes/digest/database timestamp; changed trace identity/content or parent conflicts. planning_0006 adds own extraction_tasks and extraction_traces with task/request/observed-attempt FKs, unique physical-attempt trace, exact parent digest FK, size bounds256KiB/1MiB and SELECT/INSERT-only role grants.
 
 Readback verifies task/request bytes, trace digest, database identity columns and complete parent chain, then reconstructs the projection from immutable observations. Parent records must exist, share source/target/scope and original actor, and have bounded acyclic depth<=16. Repairs preserve failed traces; lineage grants no call or new budget. No peer calls occur under request-key SQL locks. Trace publication, current Data rights and Knowledge acceptance remain later workflow gates. Own actual PostgreSQL tests cover exact retry/time, replacement connections, failed/repaired lineage, unique task and competing trace writers, grants/actor/digest/binding, pending rejection and forbidden SQL mutations. Installed trace proof is the next substep.
+
+Verified2026-10-04 04:24:20:274 source/contract/dev cases;256 cases in two independent installations plus17 readback processes including failed/repaired extraction trace continuity and retained v1 history. Eighteen synthetic corpus cases are software oracles only; B3 owns semantic scoring. Trace authority remains interpretation-only.

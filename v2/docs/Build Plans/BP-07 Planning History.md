@@ -199,3 +199,11 @@ planning_0006 adds own immutable task and observed-attempt trace tables with sou
 Archived MBT checkpoints:
 
 | 2026-10-03 20:26:20 | BP-06.06 activated; B1.01 complete,child5%,parent84.17%; B1.02a active | [Scenario protocol](../Audits/Evidence/BP-06-Feedback/Scenario_Manifest.json);30 pure/18 dev,123statements16branches100% |
+
+## 2026-10-04 04:24:20 - BP-07.02/B1.03 complete
+
+Eighteen agent-reviewed synthetic passages and distinct expected-meaning/alternative/rejection oracles cover9 categories in calibration/held-out splits. Integrity checks pin source and oracle bytes, no adapter-output-derived labels.274 source/contract/dev46.68s;256 installed17 processes/two installations incl failed/repaired/replay trace history and retained Planning0.7 v1 readback.1194/1195 statements173/174 branches, migrationCLI separately executed. Child18.75%,Build25%,parent23.75%; B1.04a explicit processing-content read is next. Current Data content checks read, not process; rights owner already supports process internally. Additive public processing-content route is a bounded prerequisite within planned current-rights integration; closed BP-06 stays closed.
+
+Archived MBT checkpoints:
+
+| 2026-10-03 20:57:09 | B1.02a verified; child7.50%,parent84.58%; B1.02b active | [Projection proof](../Audits/Evidence/BP-06-Feedback/Knowledge_Projection.json);25 pure/174 installed,452 schemas |

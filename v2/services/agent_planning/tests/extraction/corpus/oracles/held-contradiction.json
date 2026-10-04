@@ -1,0 +1,22 @@
+{
+  "case_id": "held-contradiction",
+  "category": "contradiction",
+  "expected_meaning": [
+    "G soluble_in H: affirmed in L",
+    "G soluble_in H: negated in M",
+    "Conflict unresolved"
+  ],
+  "context_to_preserve": [
+    "20 C",
+    "L and M as distinct reports"
+  ],
+  "permitted_alternatives": [
+    "Retain both claims and target solvent-test replication"
+  ],
+  "hard_rejections": [
+    "Declare consensus",
+    "Retract either note without accepted correction authority"
+  ],
+  "citation_requirement": "Exact spans from this case source; no fabricated accepted citations",
+  "acceptance_authority": "none"
+}

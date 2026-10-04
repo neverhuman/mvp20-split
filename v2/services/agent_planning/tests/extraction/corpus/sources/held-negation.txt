@@ -1,0 +1,1 @@
+Synthetic observation: polymer M did not release cargo N during the first 2 hours at pH 6. Release after 2 hours was not measured.

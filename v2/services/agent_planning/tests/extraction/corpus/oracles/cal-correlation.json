@@ -1,0 +1,20 @@
+{
+  "case_id": "cal-correlation",
+  "category": "correlation",
+  "expected_meaning": [
+    "E correlates_with F: reported",
+    "Causation: not established"
+  ],
+  "context_to_preserve": [
+    "observational cohort"
+  ],
+  "permitted_alternatives": [
+    "Keep correlation and a causation evidence need"
+  ],
+  "hard_rejections": [
+    "E causes F as established",
+    "Correlation proves intervention effect"
+  ],
+  "citation_requirement": "Exact spans from this case source; no fabricated accepted citations",
+  "acceptance_authority": "none"
+}

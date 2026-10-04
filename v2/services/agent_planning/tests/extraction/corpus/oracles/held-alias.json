@@ -1,0 +1,21 @@
+{
+  "case_id": "held-alias",
+  "category": "alias_collision",
+  "expected_meaning": [
+    "X7 identity for degradation: ambiguous"
+  ],
+  "context_to_preserve": [
+    "catalog red",
+    "catalog blue",
+    "assay Y"
+  ],
+  "permitted_alternatives": [
+    "Preserve separate candidate identities and an identity evidence need"
+  ],
+  "hard_rejections": [
+    "Merge the catalogs",
+    "Assign degradation to both compounds as measured"
+  ],
+  "citation_requirement": "Exact spans from this case source; no fabricated accepted citations",
+  "acceptance_authority": "none"
+}

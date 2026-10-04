@@ -1,0 +1,21 @@
+{
+  "case_id": "cal-negation",
+  "category": "negation",
+  "expected_meaning": [
+    "A inhibits B: negated within the stated assay context"
+  ],
+  "context_to_preserve": [
+    "5 micromolar",
+    "cell-free assay"
+  ],
+  "permitted_alternatives": [
+    "Retain a negated reported claim",
+    "Retain an unresolved claim with negation intact"
+  ],
+  "hard_rejections": [
+    "Positive inhibition",
+    "No inhibition under every possible condition"
+  ],
+  "citation_requirement": "Exact spans from this case source; no fabricated accepted citations",
+  "acceptance_authority": "none"
+}

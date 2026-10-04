@@ -60,6 +60,7 @@ def verify(output, legacy_manifest=None):
         assert any(name.endswith("r0003_settlements.sql") for name in archive.namelist())
         assert any(name.endswith("r0004_dispatch.sql") for name in archive.namelist())
         assert any(name.endswith("r0005_task_output.sql") for name in archive.namelist())
+        assert any(name.endswith("r0006_extraction.sql") for name in archive.namelist())
         assert any(name.endswith("prompts/domain-decomposition-v1.txt") for name in archive.namelist())
         assert not any("/tests/" in name for name in archive.namelist())
     external = ["pydantic", "pydantic-core", "annotated-types", "typing-extensions", "typing-inspection",
@@ -146,6 +147,17 @@ def verify(output, legacy_manifest=None):
     assert {k: v for k, v in typed["write"].items() if k not in {"pid", "calls"}} == {
         k: v for k, v in typed["replay"].items() if k not in {"pid", "calls"}}
     assert typed["write"]["calls"] == [1] and typed["replay"]["calls"] == []
+    extraction = {}
+    for stage, label in (("failed", "initial"), ("repair", "replacement"), ("replay", "replacement")):
+        extraction[stage] = run([interpreters[label], "-I", output / "tests/service/acceptance/extraction_probe.py",
+                                stage, project], env=probe_env, capture=True)
+    assert len({record["pid"] for record in extraction.values()}) == 3
+    assert len({record["task_sha256"] for record in extraction.values()}) == 1
+    assert len({record["registered_at"] for record in extraction.values()}) == 1
+    assert extraction["failed"]["traces"] == extraction["repair"]["traces"][:1]
+    assert extraction["repair"]["traces"] == extraction["replay"]["traces"]
+    assert [row["status"] for row in extraction["replay"]["traces"]] == ["invalid", "proposed"]
+    assert extraction["replay"]["charges"] == [40, 40]
     legacy = None
     if legacy_manifest is not None:
         legacy_path = legacy_manifest.absolute()
@@ -156,12 +168,13 @@ def verify(output, legacy_manifest=None):
         assert legacy["request_sha256"] == previous["stages"]["replay"]["request_sha256"]
     manifest = {"verified_at": datetime.now(ZoneInfo("America/Chicago")).strftime("%Y-%m-%d %H:%M:%S"),
         "status": "passed", "tests": tests, "project": project, "stages": stages,
-        "reservation_stages": reservations, "settlement_stages": settlements, "dispatch_stages": dispatches, "typed_stages": typed, "legacy_replay": legacy,
+        "reservation_stages": reservations, "settlement_stages": settlements, "dispatch_stages": dispatches,
+        "typed_stages": typed, "extraction_stages": extraction, "legacy_replay": legacy,
         "wheels": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(wheels.glob("*.whl"))},
         "limits": ["Own PostgreSQL journal only; no live provider/domain acceptance", "Deterministic bounded dispatch only; no actual remote transport",
                    "Two independent installs from one source-built wheel closure; no new implementation rewrite"]}
     (output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({"status": "passed", "tests": tests, "processes": 13 + (legacy is not None), "installations": 2}))
+    print(json.dumps({"status": "passed", "tests": tests, "processes": 16 + (legacy is not None), "installations": 2}))
 
 
 if __name__ == "__main__":

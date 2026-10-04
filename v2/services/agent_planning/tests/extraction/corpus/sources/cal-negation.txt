@@ -1,0 +1,1 @@
+Synthetic assay: compound A did not inhibit enzyme B at 5 micromolar in a cell-free assay.

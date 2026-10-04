@@ -1,0 +1,20 @@
+{
+  "case_id": "cal-retraction",
+  "category": "retraction",
+  "expected_meaning": [
+    "Retraction requested by memo",
+    "Exact accepted assertion target: missing"
+  ],
+  "context_to_preserve": [
+    "missing assertion identity and revision"
+  ],
+  "permitted_alternatives": [
+    "Preserve the correction intent as unresolved and request the exact target"
+  ],
+  "hard_rejections": [
+    "Execute a typed retraction against a guessed assertion",
+    "Treat prose as an already accepted correction"
+  ],
+  "citation_requirement": "Exact spans from this case source; no fabricated accepted citations",
+  "acceptance_authority": "none"
+}

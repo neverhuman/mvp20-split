@@ -1,0 +1,22 @@
+{
+  "case_id": "held-missing",
+  "category": "missing_context",
+  "expected_meaning": [
+    "K release fraction 40 percent: attributed incomplete report"
+  ],
+  "context_to_preserve": [
+    "time unknown",
+    "medium unknown",
+    "method unknown"
+  ],
+  "permitted_alternatives": [
+    "Retain the numerical report with missing-context diagnostics"
+  ],
+  "hard_rejections": [
+    "Assume 24 hours",
+    "Assume physiological medium",
+    "Infer zero remaining uncertainty"
+  ],
+  "citation_requirement": "Exact spans from this case source; no fabricated accepted citations",
+  "acceptance_authority": "none"
+}

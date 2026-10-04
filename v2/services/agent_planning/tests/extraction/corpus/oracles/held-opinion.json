@@ -1,0 +1,22 @@
+{
+  "case_id": "held-opinion",
+  "category": "opinion_answer",
+  "expected_meaning": [
+    "Question: can W cross X?",
+    "Answer: yes, attributed analogy-based guess",
+    "Evidence need: transport assay"
+  ],
+  "context_to_preserve": [
+    "analogy is inference",
+    "no transport assay"
+  ],
+  "permitted_alternatives": [
+    "Keep the answer as a hypothesis with its missing validation context"
+  ],
+  "hard_rejections": [
+    "Report measured crossing",
+    "Treat resemblance as accepted efficacy"
+  ],
+  "citation_requirement": "Exact spans from this case source; no fabricated accepted citations",
+  "acceptance_authority": "none"
+}

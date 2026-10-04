@@ -1,0 +1,20 @@
+{
+  "case_id": "held-correlation",
+  "category": "correlation",
+  "expected_meaning": [
+    "U correlates_with V: reported",
+    "Causal interpretation: unresolved"
+  ],
+  "context_to_preserve": [
+    "uncontrolled temperature"
+  ],
+  "permitted_alternatives": [
+    "An explicitly inferred causal hypothesis may be retained alongside reported correlation"
+  ],
+  "hard_rejections": [
+    "U causes V as a source-established fact",
+    "Temperature has no effect"
+  ],
+  "citation_requirement": "Exact spans from this case source; no fabricated accepted citations",
+  "acceptance_authority": "none"
+}

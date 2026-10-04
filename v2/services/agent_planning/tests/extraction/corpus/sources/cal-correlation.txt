@@ -1,0 +1,1 @@
+Synthetic cohort: exposure E correlated with marker F. The study did not establish that E causes F.

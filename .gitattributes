@@ -25,3 +25,6 @@
 /v1/amphora-source-ledger/evidence/phase0/repairs/T-14/work/citation_extracts/text_pigment_barytes_density.txt -text
 /v1/amphora-source-ledger/evidence/phase0/repairs/T-14/work/citation_extracts/text_pigment_talc_density.txt -text
 /v1/benchkit/tests/fixtures/openpoly/final_polymer_properties_fromliterature.csv -text
+
+# Corpus source hashes must survive platform checkout.
+v2/services/agent_planning/tests/extraction/corpus/** text eol=lf

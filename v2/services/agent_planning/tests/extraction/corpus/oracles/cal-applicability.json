@@ -1,0 +1,24 @@
+{
+  "case_id": "cal-applicability",
+  "category": "applicability",
+  "expected_meaning": [
+    "C reduces D: reported in mice under the described conditions"
+  ],
+  "context_to_preserve": [
+    "mouse",
+    "oral",
+    "2 mg/kg",
+    "24 hours",
+    "method Q"
+  ],
+  "permitted_alternatives": [
+    "Separate an attributed result from the unmeasured human question"
+  ],
+  "hard_rejections": [
+    "Human efficacy",
+    "Safe human dose",
+    "Species-free universal effectiveness"
+  ],
+  "citation_requirement": "Exact spans from this case source; no fabricated accepted citations",
+  "acceptance_authority": "none"
+}

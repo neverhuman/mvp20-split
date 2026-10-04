@@ -1,0 +1,21 @@
+{
+  "case_id": "held-negation",
+  "category": "negation",
+  "expected_meaning": [
+    "M releases N: negated only for the observed first 2 hours",
+    "Later release: unknown"
+  ],
+  "context_to_preserve": [
+    "first 2 hours",
+    "pH 6"
+  ],
+  "permitted_alternatives": [
+    "Separate the bounded negative observation and later evidence need"
+  ],
+  "hard_rejections": [
+    "Never releases N",
+    "Later release is zero"
+  ],
+  "citation_requirement": "Exact spans from this case source; no fabricated accepted citations",
+  "acceptance_authority": "none"
+}

@@ -1,0 +1,1 @@
+Synthetic report one says A activates receptor B in assay C. Synthetic report two says A does not activate receptor B in the same assay C. Neither report supersedes the other.

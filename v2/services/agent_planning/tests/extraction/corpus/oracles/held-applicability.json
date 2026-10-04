@@ -1,0 +1,24 @@
+{
+  "case_id": "held-applicability",
+  "category": "applicability",
+  "expected_meaning": [
+    "R increases S: reported in rabbits for the stated route and method"
+  ],
+  "context_to_preserve": [
+    "rabbit",
+    "subcutaneous",
+    "0.4 mg/kg",
+    "day 3",
+    "method T"
+  ],
+  "permitted_alternatives": [
+    "Preserve the route-specific result and an intravenous evidence gap"
+  ],
+  "hard_rejections": [
+    "Intravenous efficacy",
+    "Mouse results",
+    "Dose unit conversion without a declared transform"
+  ],
+  "citation_requirement": "Exact spans from this case source; no fabricated accepted citations",
+  "acceptance_authority": "none"
+}

@@ -1,0 +1,327 @@
+{
+  "verified_at": "2026-10-04 04:21:26",
+  "status": "passed",
+  "tests": 256,
+  "project": "da523e1ea91042beb3cecc2648cc7812",
+  "stages": {
+    "prepare": {
+      "pid": 17864,
+      "request_sha256": "132d9e0a8d88056d9ae08b45bfc9dae158519aeee6d663e421f28cefc5d8db30",
+      "attempts": [
+        {
+          "ordinal": 1,
+          "status": "pending"
+        },
+        null
+      ]
+    },
+    "interrupted": {
+      "pid": 15448,
+      "request_sha256": "132d9e0a8d88056d9ae08b45bfc9dae158519aeee6d663e421f28cefc5d8db30",
+      "attempts": [
+        {
+          "ordinal": 1,
+          "status": "unknown",
+          "record_sha256": "ccde7cf32f05685048c9b312914ece027d437cdc999c4782b8783bfff9123bf9",
+          "capture_sha256": "c0cc5a4ffaffaa209c0244ef5b7427ec0d2aa1c7a46ff5c922d81a10502b4cb7",
+          "usage": {
+            "input_tokens": null,
+            "output_tokens": null,
+            "accounting_units": null,
+            "certainty": "unknown"
+          }
+        },
+        {
+          "ordinal": 2,
+          "status": "pending"
+        }
+      ]
+    },
+    "finish": {
+      "pid": 16104,
+      "request_sha256": "132d9e0a8d88056d9ae08b45bfc9dae158519aeee6d663e421f28cefc5d8db30",
+      "attempts": [
+        {
+          "ordinal": 1,
+          "status": "unknown",
+          "record_sha256": "ccde7cf32f05685048c9b312914ece027d437cdc999c4782b8783bfff9123bf9",
+          "capture_sha256": "c0cc5a4ffaffaa209c0244ef5b7427ec0d2aa1c7a46ff5c922d81a10502b4cb7",
+          "usage": {
+            "input_tokens": null,
+            "output_tokens": null,
+            "accounting_units": null,
+            "certainty": "unknown"
+          }
+        },
+        {
+          "ordinal": 2,
+          "status": "proposed",
+          "record_sha256": "0f2be1043c61d86ce8781524beb317ccc4dce88e73c009f9b9645e3742a8ed61",
+          "capture_sha256": "6a8a2d6e80fed79084bd953ec049ae4f79c2d767ea328cc9acdff518134e3d77",
+          "usage": {
+            "input_tokens": 10,
+            "output_tokens": 10,
+            "accounting_units": 1,
+            "certainty": "reported"
+          }
+        }
+      ]
+    },
+    "replay": {
+      "pid": 25932,
+      "request_sha256": "132d9e0a8d88056d9ae08b45bfc9dae158519aeee6d663e421f28cefc5d8db30",
+      "attempts": [
+        {
+          "ordinal": 1,
+          "status": "unknown",
+          "record_sha256": "ccde7cf32f05685048c9b312914ece027d437cdc999c4782b8783bfff9123bf9",
+          "capture_sha256": "c0cc5a4ffaffaa209c0244ef5b7427ec0d2aa1c7a46ff5c922d81a10502b4cb7",
+          "usage": {
+            "input_tokens": null,
+            "output_tokens": null,
+            "accounting_units": null,
+            "certainty": "unknown"
+          }
+        },
+        {
+          "ordinal": 2,
+          "status": "proposed",
+          "record_sha256": "0f2be1043c61d86ce8781524beb317ccc4dce88e73c009f9b9645e3742a8ed61",
+          "capture_sha256": "6a8a2d6e80fed79084bd953ec049ae4f79c2d767ea328cc9acdff518134e3d77",
+          "usage": {
+            "input_tokens": 10,
+            "output_tokens": 10,
+            "accounting_units": 1,
+            "certainty": "reported"
+          }
+        }
+      ]
+    }
+  },
+  "reservation_stages": {
+    "budget_prepare": {
+      "pid": 8256,
+      "request_sha256": "5850e35766917bc0404bacaa522343bc5771a1c492c16315e8bd83fa2a0d561f",
+      "policy_sha256": "ef44653638156196bbc04ad80e5b3fcefcfece468e25f6940763b608cb3be2dc",
+      "tokens": 2048,
+      "units": 60,
+      "registered_at": "2026-10-04T09:20:59.921799+00:00"
+    },
+    "budget_replay": {
+      "pid": 10620,
+      "request_sha256": "5850e35766917bc0404bacaa522343bc5771a1c492c16315e8bd83fa2a0d561f",
+      "policy_sha256": "ef44653638156196bbc04ad80e5b3fcefcfece468e25f6940763b608cb3be2dc",
+      "tokens": 2048,
+      "units": 60,
+      "registered_at": "2026-10-04T09:20:59.921799+00:00"
+    }
+  },
+  "settlement_stages": {
+    "budget_settle": {
+      "pid": 5864,
+      "request_sha256": "5850e35766917bc0404bacaa522343bc5771a1c492c16315e8bd83fa2a0d561f",
+      "observation_sha256": "25566b014abe5603f3bf38a3fc942c7090e36642d526f190c95cb02334c60306",
+      "tokens": 2048,
+      "units": 60,
+      "overage": false,
+      "registered_at": "2026-10-04T09:21:03.927380+00:00"
+    },
+    "budget_settle_replay": {
+      "pid": 26316,
+      "request_sha256": "5850e35766917bc0404bacaa522343bc5771a1c492c16315e8bd83fa2a0d561f",
+      "observation_sha256": "25566b014abe5603f3bf38a3fc942c7090e36642d526f190c95cb02334c60306",
+      "tokens": 2048,
+      "units": 60,
+      "overage": false,
+      "registered_at": "2026-10-04T09:21:03.927380+00:00"
+    }
+  },
+  "dispatch_stages": {
+    "dispatch_prepare": {
+      "pid": 17496,
+      "request_sha256": "9a09ee8f7603581258bc82e243549c10dfbfee88bd789767ad1881693998cb8a",
+      "deadline": "2026-10-04T09:21:09.020296+00:00",
+      "status": "pending"
+    },
+    "dispatch_run": {
+      "pid": 25224,
+      "request_sha256": "9a09ee8f7603581258bc82e243549c10dfbfee88bd789767ad1881693998cb8a",
+      "calls": [
+        2
+      ],
+      "records": [
+        "85345607db5ebc11d458c72065282434ba070b2182738beb4603417265d43aa8",
+        "b18b845b4efb8a0edbc3f776e23526c044ba5c159c61805b8344d0ad5d4f4c3b"
+      ],
+      "charges": [
+        40,
+        40
+      ],
+      "stop": "abstained"
+    },
+    "dispatch_replay": {
+      "pid": 6592,
+      "request_sha256": "9a09ee8f7603581258bc82e243549c10dfbfee88bd789767ad1881693998cb8a",
+      "calls": [],
+      "records": [
+        "85345607db5ebc11d458c72065282434ba070b2182738beb4603417265d43aa8",
+        "b18b845b4efb8a0edbc3f776e23526c044ba5c159c61805b8344d0ad5d4f4c3b"
+      ],
+      "charges": [
+        40,
+        40
+      ],
+      "stop": "abstained"
+    }
+  },
+  "typed_stages": {
+    "write": {
+      "pid": 8164,
+      "request_sha256": "219aca9da49ffcfb1ddeb55e41c6a30fa689bf4fd21d3961387d8155aacd00c6",
+      "output_sha256": "26d43c0924521d3ac3615becfae26c254a0e152ebb77de369cd9241d2f99f37f",
+      "observation_sha256": "316947f409ffe3234a409d169d1ab0487a28fe83d4d0b4272410a529f6abe0df",
+      "payload_sha256": "963cf4b5ebed00156d22ae2d1a869749aa6dc9dda0c3a00eb772cc4e9c9cb371",
+      "captured_bytes": 57776,
+      "encoded_bytes": 114798,
+      "units": 40,
+      "calls": [
+        1
+      ]
+    },
+    "replay": {
+      "pid": 25760,
+      "request_sha256": "219aca9da49ffcfb1ddeb55e41c6a30fa689bf4fd21d3961387d8155aacd00c6",
+      "output_sha256": "26d43c0924521d3ac3615becfae26c254a0e152ebb77de369cd9241d2f99f37f",
+      "observation_sha256": "316947f409ffe3234a409d169d1ab0487a28fe83d4d0b4272410a529f6abe0df",
+      "payload_sha256": "963cf4b5ebed00156d22ae2d1a869749aa6dc9dda0c3a00eb772cc4e9c9cb371",
+      "captured_bytes": 57776,
+      "encoded_bytes": 114798,
+      "units": 40,
+      "calls": []
+    }
+  },
+  "extraction_stages": {
+    "failed": {
+      "pid": 31384,
+      "calls": [
+        1
+      ],
+      "task_sha256": "a5824424b0c7f540f81d50c1dedae4dd055d415722824159e203b03dd19ed547",
+      "registered_at": "2026-10-04T09:21:19.723644+00:00",
+      "charges": [
+        40
+      ],
+      "traces": [
+        {
+          "sha256": "9727570938605b1e5f0c5ec5fe17904f62787d57acdc26ef70208c9436a6e2e7",
+          "recorded_at": "2026-10-04T09:21:19.804279+00:00",
+          "status": "invalid"
+        }
+      ]
+    },
+    "repair": {
+      "pid": 17516,
+      "calls": [
+        2
+      ],
+      "task_sha256": "a5824424b0c7f540f81d50c1dedae4dd055d415722824159e203b03dd19ed547",
+      "registered_at": "2026-10-04T09:21:19.723644+00:00",
+      "charges": [
+        40,
+        40
+      ],
+      "traces": [
+        {
+          "sha256": "9727570938605b1e5f0c5ec5fe17904f62787d57acdc26ef70208c9436a6e2e7",
+          "recorded_at": "2026-10-04T09:21:19.804279+00:00",
+          "status": "invalid"
+        },
+        {
+          "sha256": "d7689f1f58f8456b8a56daf1321ce4efd072acda41378a43441f5dfa7ad6697f",
+          "recorded_at": "2026-10-04T09:21:22.091762+00:00",
+          "status": "proposed"
+        }
+      ]
+    },
+    "replay": {
+      "pid": 31396,
+      "calls": [],
+      "task_sha256": "a5824424b0c7f540f81d50c1dedae4dd055d415722824159e203b03dd19ed547",
+      "registered_at": "2026-10-04T09:21:19.723644+00:00",
+      "charges": [
+        40,
+        40
+      ],
+      "traces": [
+        {
+          "sha256": "9727570938605b1e5f0c5ec5fe17904f62787d57acdc26ef70208c9436a6e2e7",
+          "recorded_at": "2026-10-04T09:21:19.804279+00:00",
+          "status": "invalid"
+        },
+        {
+          "sha256": "d7689f1f58f8456b8a56daf1321ce4efd072acda41378a43441f5dfa7ad6697f",
+          "recorded_at": "2026-10-04T09:21:22.091762+00:00",
+          "status": "proposed"
+        }
+      ]
+    }
+  },
+  "legacy_replay": {
+    "pid": 29092,
+    "request_sha256": "abd47936f675888040be77981aba4af0dcb5424c402c7853edff71955d002e2f",
+    "attempts": [
+      {
+        "ordinal": 1,
+        "status": "unknown",
+        "record_sha256": "91d4c550f27b2f4468c6e26d213e5db7876659aca134468942fd38b593cdb72b",
+        "capture_sha256": "c0cc5a4ffaffaa209c0244ef5b7427ec0d2aa1c7a46ff5c922d81a10502b4cb7",
+        "usage": {
+          "input_tokens": null,
+          "output_tokens": null,
+          "accounting_units": null,
+          "certainty": "unknown"
+        }
+      },
+      {
+        "ordinal": 2,
+        "status": "proposed",
+        "record_sha256": "8e84ea1026e90354a5f759f281e42290424f9f9b81771710de8fb14b3984959c",
+        "capture_sha256": "2d0eaf78555d59367a108293e3109ceed8578de1419fb944040383df126f9153",
+        "usage": {
+          "input_tokens": 10,
+          "output_tokens": 10,
+          "accounting_units": 1,
+          "certainty": "reported"
+        }
+      }
+    ]
+  },
+  "wheels": {
+    "amphora_agent_planning-0.11.0-py3-none-any.whl": "c0249d2d5f4f65743ee7f41b5ff8c722deeabf6d12a4a72b9f8f7b20af08778c",
+    "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+    "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+    "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+    "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+    "amphora_contracts_planning-0.5.0-py3-none-any.whl": "cdb2f7b02eb93735137c6a31b41fd42a942059fea143003ef2a9fe65d1d043fb",
+    "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee"
+  },
+  "limits": [
+    "Own PostgreSQL journal only; no live provider/domain acceptance",
+    "Deterministic bounded dispatch only; no actual remote transport",
+    "Two independent installs from one source-built wheel closure; no new implementation rewrite"
+  ],
+  "source_tests": 274,
+  "source_seconds": 46.68,
+  "covered_statements": 1194,
+  "total_statements": 1195,
+  "covered_branches": 173,
+  "total_branches": 174,
+  "uncovered": "Explicit migration CLI entry; independently executed",
+  "corpus_cases": 18,
+  "corpus_categories": 9
+}

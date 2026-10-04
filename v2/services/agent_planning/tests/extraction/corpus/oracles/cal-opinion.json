@@ -1,0 +1,23 @@
+{
+  "case_id": "cal-opinion",
+  "category": "opinion_answer",
+  "expected_meaning": [
+    "Question: is L bioavailable?",
+    "Answer: probably, attributed opinion",
+    "Evidence need: empirical validation"
+  ],
+  "context_to_preserve": [
+    "opinion provenance",
+    "no cited experiment",
+    "method unknown"
+  ],
+  "permitted_alternatives": [
+    "Keep a question, candidate answer and evidence need as separate proposals"
+  ],
+  "hard_rejections": [
+    "Convert probably into proven bioavailability",
+    "Invent a laboratory observation"
+  ],
+  "citation_requirement": "Exact spans from this case source; no fabricated accepted citations",
+  "acceptance_authority": "none"
+}

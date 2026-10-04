@@ -1,0 +1,21 @@
+{
+  "case_id": "cal-alias",
+  "category": "alias_collision",
+  "expected_meaning": [
+    "AP identity in the binding statement: ambiguous"
+  ],
+  "context_to_preserve": [
+    "protein Alpha",
+    "polymer Alpha"
+  ],
+  "permitted_alternatives": [
+    "Retain the binding statement unresolved and ask which AP",
+    "Abstain from an identity-specific assertion"
+  ],
+  "hard_rejections": [
+    "Merge protein and polymer",
+    "Pick either identity as certain"
+  ],
+  "citation_requirement": "Exact spans from this case source; no fabricated accepted citations",
+  "acceptance_authority": "none"
+}
