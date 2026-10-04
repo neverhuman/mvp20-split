@@ -143,6 +143,13 @@ def create_app(uploads, storage, credentials, outcomes=None, *, acquisition=None
         return Response(body, media_type=stored.reference.media_type,
                         headers={"X-Content-Type-Options": "nosniff", "Cache-Control": "no-store"})
 
+    @app.get("/v1/artifacts/{artifact_id}/processing-content")
+    async def read_processing_content(artifact_id: Identifier, request: Request):
+        principal = credentials.authenticate(request.headers.get("authorization"))
+        stored, body = await asyncio.to_thread(reads.processing_content, principal, artifact_id)
+        return Response(body, media_type=stored.reference.media_type,
+                        headers={"X-Content-Type-Options": "nosniff", "Cache-Control": "no-store"})
+
     @app.post("/v1/uploads", response_model=UploadReceipt)
     async def begin(request: Request):
         principal = credentials.authenticate(request.headers.get("authorization"))

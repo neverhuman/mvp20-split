@@ -1,0 +1,89 @@
+{
+  "timestamp": "2026-10-04 04:29:16",
+  "status": "passed",
+  "source": {
+    "scope": {
+      "tenant_id": "processing-content-http",
+      "project_id": "d7987d7fd1ce40c48c9f2a2690998521"
+    },
+    "source_id": "source",
+    "revision_id": "r1",
+    "raw": {
+      "artifact_id": "442c5c922d714e679429a753094c877b",
+      "scope": {
+        "tenant_id": "processing-content-http",
+        "project_id": "d7987d7fd1ce40c48c9f2a2690998521"
+      },
+      "sha256": "d83276edf2beca0ef920bc332a63cb2ab211d9fe018175ced9fd238c178d1bb2",
+      "media_type": "application/octet-stream",
+      "schema_ref": {
+        "schema_id": "fixture.bytes",
+        "version": "1",
+        "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+      },
+      "size_bytes": 37
+    }
+  },
+  "rights": [
+    "process_allowed",
+    "read_only",
+    "process_allowed"
+  ],
+  "processes": [
+    15700,
+    8900
+  ],
+  "source_history_unchanged": true,
+  "limitations": [
+    "Current read fence is not continuing permission or provider egress authority"
+  ],
+  "regression_tests": 176,
+  "regression_seconds": 99.95,
+  "focused_and_http_tests": 7,
+  "focused_and_http_seconds": 31.55,
+  "final_read_tests": 7,
+  "final_read_seconds": 4.02,
+  "read_statements": 37,
+  "read_branches": 4,
+  "read_coverage_percent": 100,
+  "dev_tests": 18,
+  "dev_seconds": 15.66,
+  "owner_installation": {
+    "timestamp_local": "2026-10-04 04:28:04",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-data-artifacts",
+    "forbidden_implementations": [
+      "amphora_agent_planning",
+      "amphora_knowledge",
+      "amphora_research",
+      "amphora_campaign_runtime"
+    ],
+    "packages": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.13",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-representations": "0.3.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-data-artifacts": "0.29.0"
+    },
+    "wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_representations-0.3.0-py3-none-any.whl": "523feb10556ea0fdc07e39f2a874309fa65782b3e9035f072dffddf9a98ae18d",
+      "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_data_artifacts-0.29.0-py3-none-any.whl": "a96fd0cd75f612cba6cd059aabcaca7266ad2a00cd319a928cfb53cf8f552c62"
+    }
+  }
+}

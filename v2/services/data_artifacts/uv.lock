@@ -190,7 +190,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-data-artifacts"
-version = "0.28.0"
+version = "0.29.0"
 source = { editable = "." }
 dependencies = [
     { name = "alembic" },

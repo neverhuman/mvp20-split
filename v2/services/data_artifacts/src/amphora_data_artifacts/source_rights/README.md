@@ -2,7 +2,7 @@
 
 - Status: BP-06.01 accepted/closed; DER-01 adds bounded derivation ancestry with D1-D4 accepted/closed.
 - Owner: Data/Artifacts; design [Acquisition](../../../../../docs/Architecture/Data/Acquisition.md).
-- Public contract: evidence0.5.0 SourceRightsRevision; Data/Artifacts0.11.0; artifact_0006 rights and artifact_0007 derived lineage.
+- Public contract: evidence0.5.13 SourceRightsRevision; Data/Artifacts0.29.0; artifact_0006 rights and artifact_0007 derived lineage.
 
 ## Responsibility and Authority
 
@@ -41,3 +41,9 @@ DER-01 requires Data/Artifacts0.11.0 with artifact_0007 for derived lineage read
 Legacy identity-conversion traces whose raw/output artifact IDs are equal contribute no ancestry edge; their artifact still retains all source rights. This preserves the existing identity-converter contract. Derived outputs always have a new artifact ID; self-derived edges are prohibited. Cycles between distinct artifacts remain denied.
 
 DER-01 D4 accepted: actual public boundaries, independent Data installations and scoped audit pass. Production Knowledge orchestration remains BP-06.03/B1.
+
+## Public process-purpose reads
+
+BP-07.02/B1.04a adds GET /v1/artifacts/{id}/processing-content backed by ArtifactReads.processing_content. Existing read principal scope/action is mandatory; current process ancestry is captured before storage verification and rechecked afterward. Read-only, expired, revoked, unknown or changed-head source policies prevent response. This route is active even without acquisition APIs. Ordinary content remains a read-purpose operation; historical metadata is not processing permission. Unassociated artifacts retain existing no-inferred-lineage semantics. No source bytes are returned by an error; no-store/nosniff headers and existing byte limits apply. This authorization point is not a continuing lease, remote-provider egress permission or scientific acceptance.
+
+Verified2026-10-04 04:31:33:176 rights/acquisition/derivation regressions, actual independently installed HTTP/process replacement and7 final read cases (37 statements4 branches100%). Tests/source_rights/test_processing_content.py owns role/identity/expiry/revocation/ancestry/mid-read rights and size checks; test_processing_http.py owns actual CLI route/rights/replacement proof. No schema or migration changed; artifact0012 stays latest.

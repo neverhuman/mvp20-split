@@ -38,10 +38,17 @@ class ArtifactReads:
             schema_ref=row["schema_ref"]), row["storage_key"])
 
     def content(self, principal, artifact_id):
+        return self._content(principal, artifact_id, "read")
+
+    def processing_content(self, principal, artifact_id):
+        """Fresh process-purpose ancestry check, not a continuing rights lease."""
+        return self._content(principal, artifact_id, "process")
+
+    def _content(self, principal, artifact_id, use):
         stored = self.get(principal, artifact_id)
         if stored.reference.size_bytes > self.max_bytes:
             raise UploadError("artifact_read_limit")
-        snapshot = self.rights.capture(principal, (artifact_id,))
+        snapshot = self.rights.capture(principal, (artifact_id,), use=use)
         content = self.storage.verify(stored.storage_key, stored.content)
         self.rights.recheck(principal, snapshot)
         return stored, content

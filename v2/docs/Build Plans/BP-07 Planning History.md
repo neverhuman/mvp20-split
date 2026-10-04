@@ -207,3 +207,11 @@ Eighteen agent-reviewed synthetic passages and distinct expected-meaning/alterna
 Archived MBT checkpoints:
 
 | 2026-10-03 20:57:09 | B1.02a verified; child7.50%,parent84.58%; B1.02b active | [Projection proof](../Audits/Evidence/BP-06-Feedback/Knowledge_Projection.json);25 pure/174 installed,452 schemas |
+
+## 2026-10-04 04:31:33 - BP-07.02/B1.04a processing-content prerequisite
+
+Data0.29 exposes GET /v1/artifacts/{id}/processing-content with existing scoped read action and current source process ancestry captured/rechecked around storage I/O. Ordinary /content keeps read semantics; historical source/rights remain unchanged, no continuing lease or provider egress permission.176 regression99.95s,actual installed HTTP/replacement+focused7 cases31.55s,final7 read cases4.02s (37 statements4 branches100%),18 dev15.66s. Independent package closure excludes peer implementations. artifact0012 and500 public schemas unchanged. Child20.31%,Build27.08%,parent24.06%; B1.04b current.
+
+Archived MBT checkpoints:
+
+| 2026-10-03 21:07:50 | B1.02 complete; child10%,parent85%; B1.03a active | [Knowledge HTTP](../Audits/Evidence/BP-06-Feedback/Knowledge_Projection_HTTP.json);56 source/205 installed,actual process replacement |
