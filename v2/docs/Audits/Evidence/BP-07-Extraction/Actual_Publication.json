@@ -1,0 +1,161 @@
+{
+  "verified_at": "2026-10-04 05:38:25",
+  "task": "BP-07.02/B1.04d",
+  "status": "passed",
+  "planning": "0.15.0",
+  "data": "0.29.0",
+  "installed_tests": 403,
+  "installed_readback_processes": 17,
+  "planning_publication_processes": [
+    6220,
+    31912,
+    31888,
+    26532,
+    14508,
+    16400,
+    12100,
+    10208,
+    23740,
+    32804,
+    24872,
+    3404,
+    31768,
+    18464,
+    12920,
+    9248,
+    11044,
+    24564,
+    28800,
+    11244
+  ],
+  "data_processes": [
+    18176,
+    25860
+  ],
+  "scope": {
+    "tenant_id": "planning-publication-actual",
+    "project_id": "d6df967365fd416a92ac0e99488a555e"
+  },
+  "trace_sha256": "57af8de4245e48d01ca1dbe308d30c7cd19703751727c7b85feff7aede194671",
+  "input_artifacts": [
+    "f18551abddf4408494a23bad02059f54",
+    "d626684f953f4947a16bc6afd5f61d19",
+    "c108c528535a493dbb1585e6a413b1e9",
+    "99c85a9be651482c8ba4478ec7451eb6",
+    "3140278eb31f40dc955f321545afbaf3",
+    "664ec75488be4e8c944513d0cdae66f9"
+  ],
+  "cases": {
+    "baseline": {
+      "stage": "finalized",
+      "ordinal": 1,
+      "rejection": null
+    },
+    "prepared-interrupted": {
+      "stage": "prepared",
+      "ordinal": 1,
+      "rejection": null
+    },
+    "prepared-resumed": {
+      "stage": "finalized",
+      "ordinal": 1,
+      "rejection": null
+    },
+    "streaming-interrupted": {
+      "stage": "streaming",
+      "ordinal": 1,
+      "rejection": null
+    },
+    "streaming-resumed": {
+      "stage": "finalized",
+      "ordinal": 2,
+      "rejection": null
+    },
+    "streamed-interrupted": {
+      "stage": "streamed",
+      "ordinal": 1,
+      "rejection": null
+    },
+    "streamed-resumed": {
+      "stage": "finalized",
+      "ordinal": 1,
+      "rejection": null
+    },
+    "remote-finalize-interrupted": {
+      "stage": "finalizing",
+      "ordinal": 1,
+      "rejection": null
+    },
+    "remote-finalize-resumed": {
+      "stage": "finalized",
+      "ordinal": 1,
+      "rejection": null
+    },
+    "replacement-replay": {
+      "stage": "finalized",
+      "ordinal": 1,
+      "rejection": null
+    },
+    "rights-begin-prepared": {
+      "stage": "prepared",
+      "ordinal": 1,
+      "rejection": null
+    },
+    "rights-begin-denied": {
+      "stage": "prepared",
+      "ordinal": 1,
+      "rejection": null
+    },
+    "rights-begin-baseline": {
+      "stage": "finalized",
+      "ordinal": 1,
+      "rejection": null
+    },
+    "rights-begin-reauthorized": {
+      "stage": "rejected",
+      "ordinal": 1,
+      "rejection": "rights_use_denied"
+    },
+    "rights-begin-future": {
+      "stage": "finalized",
+      "ordinal": 1,
+      "rejection": null
+    },
+    "rights-finalize-prepared": {
+      "stage": "streamed",
+      "ordinal": 1,
+      "rejection": null
+    },
+    "rights-finalize-denied": {
+      "stage": "finalizing",
+      "ordinal": 1,
+      "rejection": null
+    },
+    "rights-finalize-baseline": {
+      "stage": "finalized",
+      "ordinal": 1,
+      "rejection": null
+    },
+    "rights-finalize-reauthorized": {
+      "stage": "rejected",
+      "ordinal": 1,
+      "rejection": "rights_use_denied"
+    },
+    "rights-finalize-future": {
+      "stage": "finalized",
+      "ordinal": 1,
+      "rejection": null
+    }
+  },
+  "full_manifest_sha256": "2f8326e8cc69dee9bdb5f59ccdd013071c3fb000295686ca3e01532c6ccec048",
+  "full_manifest_path": "v2/.test-results/planning-publication-actual-receipts-20261004/manifest.json",
+  "dev_tests": {
+    "passed": 18,
+    "seconds": 16.14
+  },
+  "limits": [
+    "Synthetic source and deterministic provider; no real model or scientific validity",
+    "Abrupt process exits, not machine power-loss durability",
+    "No Knowledge acceptance authority"
+  ]
+}

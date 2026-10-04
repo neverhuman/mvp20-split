@@ -1,6 +1,6 @@
 # Planning trace publication boundary
 
-Planning0.15, BP-07.02/B1.04c.iii. Pure identities/payloads/transitions, the owned PostgreSQL journal and public SDK workflow are implemented. Actual installed Data integration is the next gate; a prepared payload does not prove an Artifact exists.
+Planning0.15, BP-07.02/B1 complete. Pure identities/payloads/transitions, the owned PostgreSQL journal and public SDK workflow are implemented. Actual installed Data integration is verified; only exact finalized receipt/derivation readback proves publication. A prepared payload alone does not prove an Artifact exists.
 
 PublicationIdentity binds a record_attempts principal, scoped exact trace
 reference, publication ID and trusted publisher configuration identity. Its
@@ -62,3 +62,9 @@ PublicationTransport implements the public SDK transport protocol for a closed G
 Owned tests/publication/test_workflow.py uses the actual Planning PostgreSQL journal and public SDK with scripted Data records; test_transport.py uses actual loopback HTTP with scripted responses. They prove lost replies, uncertain PUT, exact command resume, derivation mismatch, terminal rejection, lease loss, interrupted local transitions, finite attempts, strict routes/JSON and trickle bounds. B1.04d must still prove actual independently installed Data publication, inherited rights denial and replacement after process termination. Scientific meaning, Knowledge acceptance and live provider behavior are not this module's authority.
 
 Verified2026-10-04 05:23:21:421 owner/contract/dev cases109.26s;92 publication cases;602/608 statements58/62 branches covered. Residuals: closed-socket shutdown catch and explicit timer-expiry fallback branches; unexpected release-error propagation and defensive workflow exhaustion. Actual SQL/SDK behavior is verified, actual installed Data acceptance remains d.
+
+## Actual-owner replacement acceptance
+
+Verified2026-10-04 05:38:25:403 owned tests in two independent Planning installations plus17 retained-history processes; actual Data0.29/Planning0.15 publication20 Planning processes and2 Data processes. Public upload/source rights/prepare/retain routes create six real input Artifacts and conversion provenance. Actual SourceReviewer and SDK produce matching content/ancestry under the trusted trace schema. Abrupt os._exit73 after prepared, streaming intent, streamed and remote-finalize boundaries preserves prior bytes/timestamps. Only uncertain stream intent selects a new upload; remote-finalize recovery returns the original Artifact. Data restart preserves source/conversion history. Test-only8-second leases expire naturally; production default remains120 seconds.
+
+Current process-rights denial is an operational authorization gate. HTTP403 alone does not identify whether Data committed a rejection. Planning retains uncertainty until exact receipt observation; an observed terminal rejection stays rejected after regrant. A separately identified future publication can proceed after reauthorization. Previously finalized history remains byte-exact throughout. dev/verify_planning_publication.py is the repeatable installed proof; full source/manifest identities are referenced by docs/Audits/Evidence/BP-07-Extraction/Actual_Publication.json. These are synthetic software acceptance cases, not real-provider quality, machine power-loss testing or Knowledge change acceptance.

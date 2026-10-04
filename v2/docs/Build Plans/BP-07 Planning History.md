@@ -247,3 +247,15 @@ MBT archive 2026-10-04 05:23:21:
 ## 2026-10-04 05:23:21 - B1.04c.iii public SDK workflow
 
 Planning0.15/public0.5/SDK0.2;421 owner/contract/dev cases109.26s;92 publication cases.602/608 statements58/62 branches covered; residuals explicitly documented in module README. Actual SQL plus public SDK scripted Data peer and loopback transport verify finite receipt-first command recovery, no repeated uncertain PUT, stable finalize identities, derivation binding, durable rejection, interruption at each local transition and stale lease denial. Dependency boundaries and Ruff pass. Child23.44%,Build31.25%,parent24.69%; d actual installed Data/Planning proof remains required before B1 closes.
+
+MBT archive 2026-10-04 05:38:25:
+
+| 2026-10-03 22:35:26 | B1 complete; child25.00%,parent87.50%; B2.01 active | [Actual integration](../Audits/Evidence/BP-06-Feedback/Integrated_Baseline.json);four installed owners,Qdrant,Runtime replacement,Studio readback |
+
+## 2026-10-04 05:38:25 - B1 actual publication accepted
+
+Planning0.15/public0.5/SDK0.2 and Data0.29 actual installed integration passed20 Planning processes/2 Data processes. Independent Planning closure403 tests17 process readbacks/two installations also passed;18 dev cases16.14s. Six actual public input Artifacts, source revision/conversion trace and exact published interpretation bytes/ancestry verified. Four abrupt os._exit boundaries preserve committed history, allocate a new upload only for uncertain stream intent and reconcile an already remotely finalized Artifact under its original command. Data process replacement preserves source/conversion/catalog history.
+
+Two exploratory acceptance runs exposed incorrect test assumptions about HTTP403, not a production workflow defect. Rights denial can return command_request_denied while Data already retains a terminal rights_use_denied receipt. Planning truthfully stays prepared/finalizing until observing that receipt; retry then retains rejection. Final acceptance explicitly reads the original Data receipt, verifies terminal rejection survives regrant, and uses separately identified future publications after rights restore. No fabricated failure/success or rewrite of previously finalized history. Actual scope is synthetic software behavior, not live model quality or Knowledge acceptance.
+
+B1=100%,child25%,Build33.33%,parent25%,closed1/4 and5/20. B2.01a active; three substeps scoped in Graph proposal validation companion without added parent weight. Exact v1 task/draft/schema/trace bytes remain compatibility requirements.

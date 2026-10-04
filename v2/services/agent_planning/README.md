@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-Version0.15.0, BP-07.02/B1.04c.iii. This isolated owner implements pure context/request validation, physical-attempt binding and a deterministic adversarial provider/capture boundary. It now has a private PostgreSQL request/attempt/observation journal; no server, live provider, actual-peer acceptance or Runtime acceptance implementation yet. [Design](../../docs/Architecture/Agents/Planning.md) describes the larger target; [build plan](../../docs/Build%20Plans/BP-07/BP-07.02%20Reliable%20text%20decomposition.md) owns current progress.
+Version0.15.0, BP-07.02/B1 complete; B2.01a active. This isolated owner implements pure context/request validation, physical-attempt binding and a deterministic adversarial provider/capture boundary. It now has a private PostgreSQL request/attempt/observation journal; no server, live provider or Runtime acceptance implementation yet. [Design](../../docs/Architecture/Agents/Planning.md) describes the larger target; [build plan](../../docs/Build%20Plans/BP-07/BP-07.02%20Reliable%20text%20decomposition.md) owns current progress.
 
 Public dependencies are planning/core contracts; SQLAlchemy/psycopg/Alembic are private persistence dependencies. Private modules group behavior with its data; transport DTOs do not own policy. Context owns scoped immutable input snapshots. Providers owns bounded deterministic call parsing; persistence owns immutable request/attempt/observation history. Runtime alone accepts execution decisions; Knowledge and Research retain domain authority. No peer private imports, shared ORM or peer-table reads.
 
@@ -12,7 +12,7 @@ The extraction module adds immutable task/request binding, selected raw UTF-8 so
 
 ExtractionTrace/ExtractionTraceRef retain interpretation-only provenance and profile-only validation. Model-claimed source attribution, inference and missing values remain distinct; no trace grants scientific acceptance. A prior trace is bounded lineage, not dispatch permission or a fresh budget.
 
-ExtractionJournal persists one task per engagement and one immutable interpretation trace per observed physical attempt through planning_0006, reconstructing provenance and bounded prior chains on readback. Tests remain scoped to extraction and persistence; Bounded Data processing reads and the private publication journal are implemented; Public SDK publication/recovery is implemented; actual-peer integration and semantic validation remain subsequent gates.
+ExtractionJournal persists one task per engagement and one immutable interpretation trace per observed physical attempt through planning_0006, reconstructing provenance and bounded prior chains on readback. Tests remain scoped to extraction and persistence; Bounded Data processing reads and the private publication journal are implemented; Public SDK publication/recovery is implemented; actual Data integration is verified; Knowledge candidate/identity/context validation remains B2.
 
 Verified2026-10-04 04:24:20:274 source/contract/dev cases;256 cases in two independent installations plus17 readback processes including failed/repaired extraction trace continuity and retained v1 history. Eighteen synthetic corpus cases are software oracles only; B3 owns semantic scoring. Trace authority remains interpretation-only.
 
@@ -21,3 +21,5 @@ Verified2026-10-04 04:24:20:274 source/contract/dev cases;256 cases in two indep
 [publication](src/amphora_agent_planning/publication/README.md) adds exact trace payload/content schema,complete source-reviewed ancestry,stable command identities and bounded pure upload transitions. Durable storage and external workflow remain subsequent gates. Public Artifacts0.2/Commands0.2 are direct dependencies; public Planning0.5 remains unchanged.
 
 Publication journal checkpoint2026-10-04 05:11:45:375 regression cases65.55s,469 publication statements28 branches100%; planning_0007 applied. See [publication rebuild boundary](src/amphora_agent_planning/publication/README.md).
+
+Actual publication verified2026-10-04 05:38:25:403 independent cases17 readback processes;20 actual Planning publication processes/2 Data processes, including abrupt exits and rights-denial receipts. See publication README for precise scope; deterministic provider fixtures do not establish live model reliability.
