@@ -1,0 +1,40 @@
+import { useCallback, useEffect, useState, useSyncExternalStore } from "react";
+import type { ExploreModel } from "../../page_models/explore/model.js";
+import { DomainView } from "./domain.js";
+import { ExploreInspection } from "./inspection.js";
+import { LaboratoryView } from "./laboratory.js";
+import "../style.css";
+import "./style.css";
+
+export function ExploreWorkspace({ model, synthetic = false }: { model: ExploreModel; synthetic?: boolean }) {
+  const subscribe = useCallback((notify: () => void) => model.subscribe(notify), [model]);
+  const view = useSyncExternalStore(subscribe, () => model.snapshot);
+  const [mode, setMode] = useState<"domain" | "specimens" | "properties">("domain");
+  const context = view.context;
+  useEffect(() => {
+    const check = () => model.visibility(document.visibilityState === "visible");
+    document.addEventListener("visibilitychange", check); check();
+    return () => { document.removeEventListener("visibilitychange", check); model.visibility(false); };
+  }, [model]);
+  const refresh = useCallback(() => {
+    if (!context) return;
+    if (mode === "domain" && context.graph) void model.search({ wire_version: "1", revision: context.graph, limit: 20 });
+    if (mode === "specimens" && context.experiment) void model.specimens({ wire_version: "1", experiment: context.experiment });
+    if (mode === "properties" && context.experiment) void model.properties({ wire_version: "1", experiment: context.experiment, observations: context.observations });
+  }, [model, context, mode]);
+  useEffect(() => {
+    model.suspend(mode === "domain" ? ["specimens", "properties", "series"] : mode === "specimens" ? ["search", "neighborhood", "properties", "series"] : ["search", "neighborhood", "specimens"]);
+    if (view.visible) refresh();
+  }, [model, mode, refresh, view.visible]);
+  useEffect(() => { if (context && !context.graph && mode === "domain") setMode("specimens"); }, [context, mode]);
+  return <div className="workspace explore-workspace">
+    <header><span className="brand">AMPHORA<span>research studio</span></span><div className="mode">Explore</div><span className="fixture">{synthetic ? "Synthetic research fixture" : "Pinned research context"}</span></header>
+    <main><div className="context"><div><p className="eyebrow">Knowledge / laboratory evidence</p><h1>Follow the evidence</h1></div><p>Read-only / improvements belong to the next campaign</p></div>
+      {!context ? <p role="status">Choose a graph or experiment from your research context to begin.</p> : <>
+        <div className="explore-context"><span>{context.graph ? `Domain graph revision ${context.graph.revision}` : "No domain graph selected"}</span><span>{context.experiment ? `Experiment ${context.experiment.experiment_id} / revision ${context.experiment.revision}` : "No experiment selected"}</span></div>
+        <nav className="explore-tabs" aria-label="Research views"><button aria-pressed={mode === "domain"} disabled={!context.graph} onClick={() => setMode("domain")}>Knowledge graph</button><button aria-pressed={mode === "specimens"} disabled={!context.experiment} onClick={() => setMode("specimens")}>Specimens</button><button aria-pressed={mode === "properties"} disabled={!context.experiment} onClick={() => setMode("properties")}>Properties</button><button onClick={refresh}>Refresh selected view</button></nav>
+        <div className="explore-area">{mode === "domain" ? <DomainView model={model} view={view} /> : <LaboratoryView model={model} view={view} mode={mode} />}<ExploreInspection model={model} view={view} /></div>
+      </>}
+    </main>
+  </div>;
+}

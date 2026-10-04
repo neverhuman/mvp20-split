@@ -1,6 +1,6 @@
 /** Presentation window only. Coordinates never change executable topology. */
 export type SceneNode = Readonly<{ id: string; label: string; status: string; x: number; y: number }>;
-export type SceneEdge = Readonly<{ id: string; source: string; target: string }>;
+export type SceneEdge = Readonly<{ id: string; source: string; target: string; label?: string }>;
 export type ScenePage = Readonly<{ nodes: readonly SceneNode[]; edges: readonly SceneEdge[]; total: number; offset: number }>;
 export type Viewport = Readonly<{ x: number; y: number; zoom: number }>;
 export function checkedViewport(value: Viewport): Viewport {

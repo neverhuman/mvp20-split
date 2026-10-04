@@ -41,9 +41,13 @@ model.bind({ graph: records.head.snapshot, experiment: records.specimens['experi
   observations: records.research_views.properties.request.observations });
 await Promise.all([model.search(records.knowledge_views.entities.request), model.specimens(records.research_views.specimens.request),
   model.properties(records.research_views.properties.request), model.source(records.span)]);
+await Promise.all([model.trace(records.trace), model.artifact(records.publication.outcome.derivation.artifact),
+  model.derivation(records.publication.outcome.derivation.artifact)]);
 assert.deepEqual(model.snapshot.regions.search.value, records.knowledge_views.entities);
 assert.deepEqual(model.snapshot.regions.properties.value, records.research_views.properties);
 assert.equal(model.snapshot.regions.source.value.text, text.text);
+assert.equal(model.snapshot.regions.trace.value.trace_id, records.trace.trace_id);
+assert.deepEqual(model.snapshot.regions.derivation.value, records.publication.outcome.derivation);
 model.visibility(false);
 assert.ok(Object.values(model.snapshot.regions).every(region => region.phase === 'stale' && region.value === null));
 model.dispose();

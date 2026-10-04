@@ -1,5 +1,7 @@
 # Studio Monitor presentation
 
+Scientific views now have a separate [Explore workspace](explore/README.md), owned by BP-06.06. Monitor's Runtime capability catalog remains truthful to its own owner; Explore consumes separately pinned Knowledge/Research/Data projections.
+
 Design: [Studio](../../../docs/Architecture/Experience/Studio.md) and [canvas decision](../../../docs/Architecture/Experience/Studio_Canvas_Decision.md). Implemented: BP-05.02 B1-B3; final-source V1 replacement/audit accepted. User: internal researcher inspecting execution and retained evidence. BP-05.03 adds optional separate emergency-command presentation; scientific acceptance, owner credentials and component-local network reads remain outside this module.
 
 MonitorWorkspace accepts host-owned MonitorModel plus optional NavigationModel, NamedViewsModel and EvidenceModel. The host constructs/disposes network models. React external-store subscriptions render their DTOs; workspace coordinates document visibility and hidden navigation. Its internally owned InspectionHistory has no transport or persistence. Scope/graph/detail/evidence/navigation denial clears affected captured history.

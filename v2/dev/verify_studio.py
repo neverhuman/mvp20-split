@@ -1,5 +1,6 @@
 """Rebuild the Studio consumer with its locked dependencies outside the checkout."""
 
+import argparse
 import hashlib
 import json
 import os
@@ -42,6 +43,9 @@ def stage_source(workspace):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--explore-browser", action="store_true", help="Run the owned Explore browser acceptance in the isolated source install")
+    args = parser.parse_args()
     node, npm = shutil.which("node"), shutil.which("npm.cmd" if os.name == "nt" else "npm")
     if not node or not npm:
         raise SystemExit("Studio verification requires Node24 and npm")
@@ -53,18 +57,33 @@ def main():
         workspace = Path(directory).resolve()
         assert workspace.is_relative_to(Path(tempfile.gettempdir()).resolve())
         staged, copied, manifest = stage_source(workspace)
-        for label, command in (("install", [npm, "ci", "--ignore-scripts", "--no-audit", "--no-fund"]),
-                               ("verify", [node, "scripts/verify.mjs", "--coverage"])):
+        commands = [("install", [npm, "ci", "--ignore-scripts", "--no-audit", "--no-fund"]),
+                    ("verify", [node, "scripts/verify.mjs", "--coverage"])]
+        if args.explore_browser:
+            commands.append(("explore-browser", [node, "tests/browser/explore.mjs"]))
+        test_output = ""
+        for label, command in commands:
             result = subprocess.run(command, cwd=staged, env=env, capture_output=True, text=True,
                 encoding="utf-8", timeout=180, creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0)
             (output / (label + ".log")).write_text(result.stdout + result.stderr, encoding="utf-8")
             if result.returncode:
                 raise SystemExit(f"Isolated Studio {label} failed: " + result.stdout[-1800:] + result.stderr[-1800:])
-        count = re.search(r"(?:tests|pass)\s+(\d+)", result.stdout)
+            if label == "verify":
+                test_output = result.stdout
+        count = re.search(r"(?:tests|pass)\s+(\d+)", test_output)
         evidence = {"verified_at": datetime.now(ZoneInfo("America/Chicago")).strftime("%Y-%m-%d %H:%M:%S"),
             "status": "passed", "scope": "isolated Node dependency install, schema regeneration check, TypeScript build and owned tests",
             "tests": int(count.group(1)) if count else None, "source_sha256": copied, "public_schema_pins": manifest,
             "limits": ["No checkout imports or Python/service source copied", "No browser/live backend acceptance claim"]}
+        if args.explore_browser:
+            browser_root = workspace / ".test-results/studio-explore-browser"
+            assert browser_root.is_relative_to(workspace)
+            shutil.copytree(browser_root, output / "explore-browser")
+            manifests = list((output / "explore-browser").glob("*/manifest.json"))
+            assert len(manifests) == 1
+            evidence["explore_browser"] = json.loads(manifests[0].read_text(encoding="utf-8"))
+            evidence["limits"] = ["No checkout imports or Python/service source copied",
+                                  "Scripted public HTTP browser fixture; actual-owner integration is separate"]
         (output / "manifest.json").write_text(json.dumps(evidence, indent=2) + "\n", encoding="utf-8")
         print("Isolated Studio build passed; evidence " + str(output / "manifest.json"))
 

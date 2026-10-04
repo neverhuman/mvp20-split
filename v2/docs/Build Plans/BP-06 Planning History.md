@@ -1,5 +1,9 @@
 # BP-06 Planning History
 
+## B2.02 Visible Explore - 2026-10-03 23:17:26
+
+Studio0.5 adds bounded domain graph/list, qualified assertion/source/trace/Artifact inspectors and specimen/property/series views. Shared GraphCanvas receives explicit predicate labels; local pan is not topology. Model adds provenance lanes, hidden-view suspension and replaced-selection clearing.186 source/independent,18dev15.39s,9 independent browser cases with1440/390 Axe/overflow and reviewed screenshots; actual four-owner model65.80s. Layout spacing/count wording/missing-value wording repaired; fixture identity/reason errors corrected. No actual browser-owner or scientific validity claim. B2=50%,Build50%,child37.50%,parent89.58%;gates1/4and21/24. B2.03 future feedback active.
+
 ## B2.01 Explore page model - 2026-10-03 22:49:16
 
 Studio0.4 implements graph-only/lab-only/combined pinned contexts, immutable projections and seven independent lanes. Protected data clears on context/denial/conflict/hide; late responses cannot overwrite newer selections.14 owned tests,182 source/independent; actual four-owner/Qdrant compiled-model proof60.99s. All module lines100%, coordinatorbranches85.54%, context/projection100%. Fixture shared-mutation and assumed-pagination test errors repaired; no browser claim. B2=25%,Build41.67%,child31.25%,parent88.54%;21/24 and1/4 gates unchanged. B2.02 visible views active.
@@ -885,3 +889,5 @@ Actualexpirywithoutpolicyrevisiondiscardsobservedscore8;intentremains/noresult;s
 | 2026-10-03 16:16:12 | B2.01a complete; child26.56%, parent71.09%; b active | [Generation models](../Audits/Evidence/BP-06-Representations/Generation_Models.json);179 source/179 installed,14 dev |
 
 | 2026-10-03 16:23:38 | B2.01b complete; child28.13%, parent71.35%; c active | [Generation contracts](../Audits/Evidence/BP-06-Representations/Generation_Contracts.json);57 source/200 installed,14 dev |
+
+| 2026-10-03 16:41:32 | B2.01c complete; child29.69%, parent71.61%; d active | [Generation state](../Audits/Evidence/BP-06-Representations/Generation_State.json);27 source/488 installed,14 dev;0010 retained history |

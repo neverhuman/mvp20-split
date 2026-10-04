@@ -1,0 +1,21 @@
+import type { ExploreModel } from "../../page_models/explore/model.js";
+import type { ExploreState } from "../../page_models/explore/projection.js";
+import { measurementText } from "../../page_models/explore/measurement.js";
+import { RegionStatus } from "./status.js";
+
+export function LaboratoryView({ model, view, mode }: { model: ExploreModel; view: ExploreState; mode: "specimens" | "properties" }) {
+  const specimens = view.regions.specimens.value, properties = view.regions.properties.value, series = view.regions.series.value;
+  return <section className="explore-lab" aria-label={mode === "specimens" ? "Prepared specimens" : "Measured properties"}>
+    <h2>{mode === "specimens" ? "Prepared specimens" : "Measured properties"}</h2>
+    <p>{mode === "specimens" ? "Each prepared sample retains its own identity and processing context." : "Reported values keep their original units, precision and uncertainty. Matching a declared context is not scientific acceptance."}</p>
+    <RegionStatus region={view.regions[mode]} label={mode} />
+    {mode === "specimens" && specimens && <><p>{specimens.rows.length} of {specimens.total} samples in this window</p><div className="explore-table"><table><caption>Samples in the pinned experiment</caption><thead><tr><th>Sample</th><th>Candidate</th><th>Prepared state</th><th>Context</th></tr></thead><tbody>{specimens.rows.map(row => <tr key={row.sample.reference.sample_id}>
+      <th scope="row">{row.sample.reference.sample_id}<small>revision {row.sample.reference.revision}</small></th><td>{row.sample.candidate.candidate_id}</td><td>{row.material ? <>{row.material.reference.material_state_id}<small>{row.material.preparation_count} preparation steps / revision {row.material.reference.revision}</small></> : "No prepared state declared"}</td><td><button onClick={() => void model.artifact(row.sample.identity_evidence, true)}>Inspect specimen evidence</button></td>
+    </tr>)}</tbody></table></div>{specimens.next_position && <button onClick={() => void model.specimens({ ...specimens.request, position: specimens.next_position })}>Next specimens</button>}</>}
+    {mode === "properties" && properties && <><p>{properties.rows.length} of {properties.total} selected observations in this window</p><div className="explore-table"><table><caption>Observations under the pinned method</caption><thead><tr><th>Observation</th><th>Reported result</th><th>Context and quality</th><th>Evidence</th></tr></thead><tbody>{properties.rows.map(row => <tr key={row.reference.observation_id + row.reference.revision}>
+      <th scope="row">{row.reference.observation_id}<small>revision {row.reference.revision}</small></th><td>{measurementText(row.value)}{row.value.kind === "series" && <button onClick={() => void model.series({ wire_version: "1", observation: row.reference })}>View measured series</button>}</td>
+      <td>{row.context_link.replaceAll("_", " ")}<small>Controls: {row.quality.controls}</small>{row.quality.flags.length > 0 && <small>Flags: {row.quality.flags.join(", ")}</small>}</td><td><button onClick={() => void model.artifact(row.source, true)}>Inspect result evidence</button></td>
+    </tr>)}</tbody></table></div>{properties.next_position && <button onClick={() => void model.properties({ ...properties.request, position: properties.next_position })}>Next observations</button>}</>}
+    {mode === "properties" && <><RegionStatus region={view.regions.series} label="measured series" />{series && <section aria-label="Measured series"><h3>Measured series</h3><p>{series.points.length} of {series.total} points. Original ordering and repeated coordinates are preserved.</p><div className="explore-table"><table><caption>Reported sequence</caption><thead><tr><th>Position</th><th>{series.x_unit}</th><th>{series.y_unit}</th></tr></thead><tbody>{series.points.map((point, index) => <tr key={index}><th scope="row">{(series.request.position?.offset ?? 0) + index + 1}</th><td>{point.x.value}</td><td>{measurementText(point.y)}</td></tr>)}</tbody></table></div>{series.next_position && <button onClick={() => void model.series({ ...series.request, position: series.next_position })}>Next series window</button>}</section>}</>}
+  </section>;
+}

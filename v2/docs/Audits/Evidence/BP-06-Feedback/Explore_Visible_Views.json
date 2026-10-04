@@ -1,0 +1,123 @@
+{
+  "timestamp_local": "2026-10-03 23:17:26",
+  "task": "BP-06.06/B2.02",
+  "status": "verified",
+  "studio_version": "0.5.0",
+  "source_tests": 186,
+  "installed_tests": 186,
+  "dev_tests": 18,
+  "dev_seconds": 15.39,
+  "actual_tests": 1,
+  "actual_seconds": 65.8,
+  "actual_evidence": "v2\\.test-results\\feedback-explore-provenance-model.json",
+  "actual_sha256": "0597932cb5fee65448dfc7b7871762ae77d548e2da57971d34ceb90a42bb3a6d",
+  "independent_manifest": "v2\\.test-results\\studio-isolated\\4aad01e2cd5c4cfa9f4cb6737dfb59ee\\manifest.json",
+  "independent_manifest_sha256": "a3f1d6b6e72c10e94c65a4f473c25d2ae701e279598ca901def4d44a35d0731e",
+  "browser": {
+    "status": "passed",
+    "browser": "153.0.8010.12",
+    "scenarios": [
+      "keyboard concept -> bounded graph -> qualified claim -> verified inert source -> conversion",
+      "distinct specimen context -> lossless properties -> original repeated-coordinate series",
+      "current content denial clears every protected region",
+      "altered source bytes never become a verified passage",
+      "empty state remains explicit and bounded",
+      "offline state remains explicit and bounded",
+      "paged state remains explicit and bounded",
+      "long state remains explicit and bounded",
+      "hidden domain request cannot repopulate an inactive view"
+    ],
+    "limits": [
+      "Scripted public scientific HTTP; actual-owner model proof is separate",
+      "No scientific validity or screen-reader conformance claim"
+    ]
+  },
+  "browser_artifacts": {
+    "knowledge-1440.png": "a9723eb36be063311cc248c552d78a5e409f0e91ce47c02b0cae25b03dc528c7",
+    "knowledge-390.png": "33ff1f5e8a902436674d1085369f877a52ea8ebd374118f51e05592ccd6ff877",
+    "long-label-390.png": "89460105e343c775c8f7aae21c78a9254aa7bb55dea2c9ddcce3e816705a77b9",
+    "manifest.json": "ba088bca67f2b9664fed5bd9600454031215fc2b9fa032b4f74f04d74ba6e4f4",
+    "properties-1440.png": "924bcde24730a19c6a0583e850c4f68532b6588761872b94b9cc352b25646dff",
+    "properties-390.png": "66abdb1e463fc2e838c29aa0b7c849a450837ec71efd7f43f3b0b4e3be4236a9"
+  },
+  "source_hashes": {
+    "studio/src/page_models/scene.ts": "612e861666d26c3e75240a45049e4bfaf358191f8e19c8fca159a75bb9fde71d",
+    "studio/src/page_models/explore/context.ts": "09907f5d6917174453dac6bf33f31a1efd3fd91d42d15b1b445cfb03cef6dac6",
+    "studio/src/page_models/explore/measurement.ts": "c70ed09a302beda216b7e77954611d94131335be57ce0f2e18295bec52ae827f",
+    "studio/src/page_models/explore/model.ts": "0a9e99d1a49b86b8ae9c1349e17fca6f674b5dc0b5d8521d9700a1b73b1a5016",
+    "studio/src/page_models/explore/projection.ts": "9a2a897830fe6f19f37b7986996acb2ee01c64241332034d770337f5b3ca884b",
+    "studio/src/page_models/explore/README.md": "aa96eb11a02756fa0a6023ff5c6740b1d4ae6707ffbb89410f17ed83965bd12a",
+    "studio/src/page_models/explore/scene.ts": "f8cee269ad083e890efa7c386f6484e0dbbd0e9fe89bf95051135301f074178a",
+    "studio/src/presentation/explore/domain.tsx": "712ac2f1b3b8807df8fb524ab461ac4f2348333259046b31e74ca20f775702e7",
+    "studio/src/presentation/explore/inspection.tsx": "833465290d31d495e038bb0a53afc5ca122f8712d50dee96472c9b87024a15e4",
+    "studio/src/presentation/explore/laboratory.tsx": "7460c5de213c45db3e7b1ba33c6b6a6778d601f0de1088fc22d9a4ffc2f2532f",
+    "studio/src/presentation/explore/README.md": "89c0e0e23c70b6f0ca2e69110b8421dabc14297221679253398fbf496c8c25a2",
+    "studio/src/presentation/explore/status.tsx": "3fc5021931862e876b07c28dc97f3319147390d2cb54db858bdcb0c0db1c3de7",
+    "studio/src/presentation/explore/style.css": "ee5080bd71eecd6f2c8191e17e9f2b094b2966f07093dc0988057e85fea72cea",
+    "studio/src/presentation/explore/workspace.tsx": "b6159792c8ca1c6d46d314b690bb71fa4d660be2f198953db8b6c752f1154bf1",
+    "studio/tests/browser/explore.mjs": "d3691fa8d04bae6cef8acd486c5184911b10fb7a3673896a664a21f3b995ca22",
+    "studio/tests/browser/explore_entry.tsx": "9e01d4468e5da1f0b7882c95de3d8205326c92926278ac6b5aa0a3ba9e700d41",
+    "studio/tests/browser/explore_host.mjs": "116b6ccbef526a4dff325064088f28013adc3a4402e0765beb5a489675d6dc8c",
+    "studio/tests/page_models/explore.test.ts": "1151a2d2ea0484db575fcd6183b9eb14845306b56fcf40bb33199f7b37d123d3",
+    "studio/tests/page_models/explore_projection.test.ts": "fe0938737cff82f6eb1ed636364d2e75bf45401bb3815e355b3193132b8948ab",
+    "studio/tests/fixtures/scientific/explore.json": "a5245b86b9175545ce9643737acadf685331a904b5f41b2611be68ce196662b5",
+    "studio/scripts/probe-scientific.mjs": "671425be05acd4809141f89fa9c7032421772211ce42703f028d55434f33f00b"
+  },
+  "visual_review": {
+    "viewports": [
+      1440,
+      390
+    ],
+    "reviewed": [
+      "knowledge graph and qualified claim",
+      "verified source/trace",
+      "properties and series",
+      "long labels",
+      "independent final properties desktop"
+    ],
+    "repairs": [
+      "Widened graph node spacing to keep relationship labels readable",
+      "Counts now name loaded graph window, not viewport",
+      "Different result selection clears prior claim evidence",
+      "Missing values retain explicit reason rather than claiming never measured"
+    ],
+    "accessibility": "Four desktop/narrow Axe A/AA scans, keyboard primary flow and document overflow passed"
+  },
+  "coverage": {
+    "context": [
+      100,
+      100
+    ],
+    "projection": [
+      100,
+      100
+    ],
+    "scene": [
+      100,
+      100
+    ],
+    "measurement": [
+      100,
+      81.25
+    ],
+    "model": [
+      100,
+      87.37
+    ]
+  },
+  "coverage_units": [
+    "lines_percent",
+    "branches_percent"
+  ],
+  "limits": [
+    "Browser HTTP fixtures are synthetic; actual-owner model proof is a separate tier",
+    "No instrumented React coverage/full assistive-technology conformance",
+    "No global app picker/deployed gateway/scientific validity claim",
+    "Actual browser-to-owner traversal remains B3.01",
+    "Question/need/future feedback and distinct specimen comparison remain B2.03/.04"
+  ],
+  "fixture_repairs": [
+    "Combined browser scalar/series examples had the same observation identity; assigned a distinct series fixture identity",
+    "Missing-point oracle corrected to the fixture not_reported reason"
+  ]
+}

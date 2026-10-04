@@ -22,7 +22,8 @@ const researchPins = () => ({ graph: null, experiment: property().experiment, ob
 const peers = (): ExploreSources => ({
   knowledge: { search: async () => page(), neighborhood: async () => decodeKnowledge("neighborhood_page", knowledge.neighborhood_page), detail: async () => decodeKnowledge("object_detail", knowledge.object_detail) },
   research: { specimens: async () => decodeResearch("specimen_page", research.specimen_page), properties: async () => decodeResearch("property_page", research.property_page), series: async () => decodeResearch("series_page", research.series_page) },
-  data: { span: async span => ({ span, text: "synthetic", artifact_sha256: span.source.raw.sha256, span_sha256: span.sha256 }) },
+  data: { span: async span => ({ span, text: "synthetic", artifact_sha256: span.source.raw.sha256, span_sha256: span.sha256 }),
+    artifact: async reference => reference, trace: async () => { throw new ScientificReadFailure("unavailable"); }, derivation: async () => { throw new ScientificReadFailure("unavailable"); } },
 });
 
 test("Explore supports graph-only and laboratory-only pins and rejects cross-scope or duplicate context", () => {
@@ -161,4 +162,26 @@ test("loading receives copied selection and clearing context prevents further wo
   assert.deepEqual(received, old); model.bind(null); held.resolve(page()); await pending;
   assert.equal(model.snapshot.regions.search.value, null);
   await model.search(search()); assert.equal(model.snapshot.regions.search.phase, "idle");
+});
+
+test("suspending hidden regions cancels their late reads without clearing a visible region", async () => {
+  const source = peers(), model = new ExploreModel(source); model.bind(graphPins());
+  await model.detail(decodeKnowledge("object_request", knowledge.object_request));
+  const held = deferred<ReturnType<typeof page>>(); source.knowledge.search = () => held.promise;
+  const pending = model.search(search()); model.suspend(["search"]); held.resolve(page()); await pending;
+  assert.equal(model.snapshot.regions.search.phase, "stale"); assert.equal(model.snapshot.regions.detail.phase, "ready");
+  model.dispose(); model.suspend(["search"]); assert.equal(model.snapshot.context, null);
+});
+
+test("selecting an unrelated artifact clears old claim provenance and fences scope", async () => {
+  const source = peers(), model = new ExploreModel(source); model.bind(graphPins());
+  await model.detail(decodeKnowledge("object_request", knowledge.object_request));
+  const ref = decodeProvenance("artifact", structuredClone(trace.trace.source.raw)); ref.scope = graphPins().graph.graph.scope;
+  await model.artifact(ref, true);
+  assert.equal(model.snapshot.regions.detail.value, null); assert.deepEqual(model.snapshot.regions.artifact.value, ref);
+  await model.derivation(ref); assert.equal(model.snapshot.regions.derivation.phase, "unavailable");
+  const traceRef = decodeProvenance("trace_ref", structuredClone(trace.reference)); traceRef.scope = ref.scope;
+  await model.trace(traceRef); assert.equal(model.snapshot.regions.trace.phase, "unavailable");
+  traceRef.scope = { tenant_id: "foreign", project_id: "foreign" }; await model.trace(traceRef);
+  assert.equal(model.snapshot.regions.trace.error?.kind, "invalid_request");
 });
