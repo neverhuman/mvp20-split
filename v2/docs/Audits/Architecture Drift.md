@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-03 19:47:01` (America/Chicago).
+- Last refreshed: `2026-10-03 20:03:23` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.05/V1a independent package and whole-owner regression; child75%, parent79.17%,19/24 closed gates.
-- Next gate: independent closeout and scoped audit. QD-01 bounded owner recovery aligned; evidence preserved in drift history. Scientific-quality UI remains SQ-01.
+- Active focus: BP-06.06 pre-activation coherence review; BP-06.05 closed100%, parent83.33%,20/24 closed gates.
+- Next gate: reconcile feedback integration and Studio public owner projections; scientific-quality UI remains SQ-01.
 
 ## Active Findings
 

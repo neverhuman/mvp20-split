@@ -1,6 +1,6 @@
 # Representation contracts
 
-Version 0.3.0; wire version 1. [Architecture](../../docs/Architecture/Data/Representations.md), [owning plan](../../docs/Build%20Plans/BP-06/BP-06.05%20Representation%20reuse%20and%20retrieval.md).
+Version 0.3.0; wire version 1. [Architecture](../../docs/Architecture/Data/Representations.md), [owning plan](../../docs/Build%20Plans/BP-06/Completed/BP-06.05%20Representation%20reuse%20and%20retrieval.md).
 
 This independently packaged public boundary serializes complete encoding profiles, scoped profile references, exact source-span encoding requests, retained vector documents, attributable source bindings and pending/published status. It depends only on Pydantic and public Core/Evidence contracts. Import the package root; private source modules are not a consumer API.
 

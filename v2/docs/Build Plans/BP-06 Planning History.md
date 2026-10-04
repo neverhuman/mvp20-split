@@ -1,5 +1,17 @@
 # BP-06 Planning History
 
+## BP-06.05 accepted and archived - 2026-10-03 20:03:23
+
+V1b scope audit aligned; predecessor gap reconciliation verified, architecture/module status and scientific-quality wording corrected, canonical child archived with inbound/outbound links repaired. B1/B2/B3/V1100%;child4/4,parent20/24 (83.33%). BP-06.06 pre-activation coherence review is next; no scientific/provider/deployment claim inferred. Independent_Closeout.json and scoped audit preserve fresh build,649+4 installed cases and coverage gaps.
+
+| 2026-10-03 13:32:03 | BP-06.05/B1.02 complete; child8.33%, parent68.06%; B1.03 active | [Public contracts](../Audits/Evidence/BP-06-Representations/Public_Contracts.json);103 source/103 installed;420 schemas preserve406 |
+
+
+## BP-06.05/V1a independent closeout verified - 2026-10-03 20:00:31
+
+Fresh11-wheel Data0.28 closure built from locks; private peers absent. Whole installed Data/representation contracts649pass507.73s, zero skips; four additional binding acceptance cases source4pass4.42s/installed4pass8.14s. These close predecessor claim-race/lost-rejection/writer-construction gaps, explicitly discovered during closeout and not claimed from retrieval B3. Combined owner coverage4628/4782 statements852/950 branches; representations1259/1260 and129/130 (only impossible retained-stage guard missing), retrieval1248/1260 and145/152. V1a100%,b0%;V150%,child87.50%,parent81.25%;gates3/4,19/24 unchanged. V1b audit/archive active.
+
+
 ## BP-06.05/B3 closure - 2026-10-03 19:47:01
 
 Installed retrieval158pass303.24s; new source uncertainty2pass3.75s; dev18pass14.00s. Actual effects plus injected response uncertainty preserve no false proof/head and retain orphan across fresh fenced recovery. Actual backend create race and process proofs remain distinct tiers. Failure matrix reconciles all obligations. Retrieval coverage1248/1260 statements145/152 branches; declared defensive backend/transport gaps remain, no100% claim. Initial new-test evidence serialization errors were corrected without product changes. Lint/boundaries/schemas/links pass. QD-01 bounded recovery aligned, no backend defect-fix claim. B1/B2/B3100%;Build100%,child75%,parent79.17%,3/4 and19/24 gates. V1a independent rebuild/full owner suite and V1b audit/archive each0%,a active.

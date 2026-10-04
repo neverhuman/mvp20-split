@@ -1,8 +1,8 @@
 # Embedding and Retrieval Contracts
 
-- Design status: profile/source bindings, index/query authority and optional APIs implemented; installed HTTP migration/replacement and scientific acceptance remain scoped gates
+- Design status: profile/source bindings, index/query authority, optional APIs and installed HTTP/process recovery verified; independent closeout verified; scientific acceptance remains separately scoped
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
-- Last reviewed: `2026-10-03 18:46:24` (America/Chicago)
+- Last reviewed: `2026-10-03 19:49:51` (America/Chicago)
 - Parent: [Domain overview](Data_Architecture.md)
 - Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#embedding-and-representation-layer)
 
@@ -34,7 +34,7 @@ Profile identity includes task-role instructions and preprocessing, not just mod
 
 ## Index Publication and Retrieval
 
-Build a candidate index against a pinned corpus manifest. Evaluate quality, verify profile compatibility, reconcile source/rights updates and atomically switch the published index reference. Existing runs may retain the old snapshot for reproducibility, but current access revocation still applies. A retrieval response returns vector/source identities, ranking configuration, scores, omissions and exact index/profile versions.
+Build a candidate index against a pinned corpus manifest. Verify exact content/profile compatibility and current rights, then atomically publish against the expected prior head. Record scientific quality and applicability separately; weak or unknown evidence does not by itself veto valid exploratory retrieval. Profile relevance evaluation governs later scientific use claims, not a requirement that one campaign be scientifically complete. Existing runs may retain the old snapshot for reproducibility, but current access revocation still applies. A retrieval response returns vector/source identities, ranking configuration, scores and exact index/profile versions. Unauthorized omissions expose no identities or counts; the initial bounded response has no omission-count field.
 
 Use coarse eligibility filters before search where supported and authoritative authorization before exposing results or fetching content. Backend limitations cannot justify leaking unauthorized snippets, counts or identifiers. Multi-space fusion must not compare raw similarity scores as though calibrated equally.
 
@@ -44,8 +44,8 @@ A provider changes an embedding model behind an unchanged alias. New generation 
 
 ## Design Basis and Open Decisions
 
-The embedding section of Product Requirements is the authority. Remaining decisions: encoder families, index backend, quality fixtures, chunking strategy and migration thresholds. No single vector space or similarity threshold is selected by this architecture.
+The embedding section of Product Requirements is the authority. Remaining scientific/deployment decisions: encoder families, relevance fixtures, chunking strategy, migration thresholds and production backend deployment. The bounded software implementation uses an explicitly configured local Qdrant1.19.1 fixture and a synthetic byte-histogram encoder. No single vector space or similarity threshold is selected by this architecture.
 
-User-provided reference (`2026-09-22 20:46:34`): JARVIS uses Qdrant and can supply an implementation reference when vector integration is planned. Qdrant is a candidate derived retrieval backend, not a selected dependency or replacement for authoritative PostgreSQL state. Review that integration when scoped and authorized; preserve the profile, rights, publication and replay contracts above.
+User-provided reference (`2026-09-22 20:46:34`): JARVIS uses Qdrant and can supply an implementation reference when vector integration is planned. The subsequent BP-06.05 implementation selects pinned Qdrant for the local software proof; PostgreSQL retains authoritative publication/history. This is not a production deployment decision. No further external JARVIS access is required or implied.
 
-Implementation boundary: [Data module](../../../services/data_artifacts/src/amphora_data_artifacts/representations/README.md) and [canonical plan](../../Build%20Plans/BP-06/BP-06.05%20Representation%20reuse%20and%20retrieval.md) distinguish verified synthetic representation reuse/source rights/public HTTP from pending index/retrieval and scientific validation. The scoped B2.02 adapter target is an isolated local Qdrant fixture, not a deployed production index.
+Implementation boundary: [Data module](../../../services/data_artifacts/src/amphora_data_artifacts/representations/README.md) and [canonical plan](../../Build%20Plans/BP-06/Completed/BP-06.05%20Representation%20reuse%20and%20retrieval.md) distinguish verified synthetic reuse, source rights, actual index/retrieval and public HTTP/process recovery from pending scientific validation. The scoped B2.02 adapter target is an isolated local Qdrant fixture, not a deployed production index.
