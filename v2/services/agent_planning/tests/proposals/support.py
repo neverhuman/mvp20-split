@@ -36,8 +36,8 @@ def digest(value):
 
 
 class Case:
-    def __init__(self, *, history=False):
-        task, self.data = inputs()
+    def __init__(self, *, history=False, scope=None):
+        task, self.data = inputs(scope=scope)
         self.request = task.request.document().model_dump(mode='json')
         self.task = task.document().model_dump(mode='json')
         self.draft = copy.deepcopy(self.data.draft)

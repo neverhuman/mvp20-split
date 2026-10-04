@@ -1,0 +1,214 @@
+{
+  "verified_at": "2026-10-04 09:19:31",
+  "task": "BP-07.02/B2.02c.ii",
+  "status": "passed",
+  "planning": "0.23.0",
+  "contracts": "0.7.0",
+  "source_regression": {
+    "tests": 626,
+    "seconds": 151.89,
+    "scope": "Before additive publication profile and three final guard cases; final wheel suite below covers the final code"
+  },
+  "installed_final": {
+    "tests": 630,
+    "seconds": 163.34,
+    "processes": 28,
+    "installations": 2,
+    "manifest": ".test-results/planning-repair-workflow-final-independent-20261004/manifest.json"
+  },
+  "focused": {
+    "tests": 125,
+    "seconds": 96.23,
+    "later_runner_tests": 8,
+    "later_runner_seconds": 21.29,
+    "new_runner_guard_cases": 3,
+    "development_tests": 14,
+    "development_seconds": 17.63
+  },
+  "coverage": {
+    "statements": 789,
+    "branches": 80,
+    "percent": 98.15880322209436,
+    "missing_lines": 8,
+    "missing_branches": 8,
+    "scope": "repair, persistence.preparation, source_access; measured before three additional test-only membership/abstention cases",
+    "limits": "Defensive chain/unexpected-exception branches and closed-socket shutdown suppression are not fully instrumented; see retained coverage JSON"
+  },
+  "actual_data": {
+    "planning_processes": 7,
+    "data_processes": 2,
+    "data_version": "0.29.0",
+    "manifest": ".test-results/planning-repair-data-final-actual-20261004/manifest.json",
+    "stages": {
+      "publish": {
+        "calls": [
+          "decision-1"
+        ],
+        "mode": "publish",
+        "pid": 17976,
+        "processing_reads": [
+          "8c955d6adda340219fc6ccecde7029e2",
+          "9fa9ec401d17499c928945ecf399c070",
+          "26ea45db3ea744b8a0fbeab7fe17d010",
+          "3d566dd1ecf74c0390fe949e2ceae64b",
+          "3d0ad1165296431698e0344042774364",
+          "8128043c9f474c2a9752c1fd8b2d3a8b"
+        ],
+        "published": {
+          "feedback": {
+            "artifact_id": "93c2188e02834f728afc28a41bc1bbce",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "planning.repair-feedback-publication-content",
+              "sha256": "6908f1a2c9d058891fe37389a48a355d3911205e0d2165366095c11605e227ab",
+              "version": "1"
+            },
+            "scope": {
+              "project_id": "6b0fa052a076491fa742049b82e210f3",
+              "tenant_id": "planning-repair-actual"
+            },
+            "sha256": "5cf17c0b5c6c427f8617024f8f29ca3d5c0a275ccf5e3196070021eb7c250234",
+            "size_bytes": 911
+          },
+          "interpretation": {
+            "artifact_id": "4e02d88d853f4fe6ba8b29f9f32f4d00",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "planning.extraction-trace-content",
+              "sha256": "a0a7cf3a0ed4a5acd15732a8bd5c7136c3ab373bfe078d3742e0a6e98efcce38",
+              "version": "1"
+            },
+            "scope": {
+              "project_id": "6b0fa052a076491fa742049b82e210f3",
+              "tenant_id": "planning-repair-actual"
+            },
+            "sha256": "df89afbda595bc089da2588f4c3b82867f861c8a96d231884049da9c510c7d95",
+            "size_bytes": 4139
+          },
+          "parent": {
+            "scope": {
+              "project_id": "6b0fa052a076491fa742049b82e210f3",
+              "tenant_id": "planning-repair-actual"
+            },
+            "sha256": "df89afbda595bc089da2588f4c3b82867f861c8a96d231884049da9c510c7d95",
+            "trace_id": "parent"
+          }
+        }
+      },
+      "missing": {
+        "calls": [],
+        "mode": "missing",
+        "pid": 29604,
+        "processing_reads": [],
+        "reason": "source_reference_unavailable"
+      },
+      "wrong-bytes": {
+        "calls": [],
+        "mode": "wrong-bytes",
+        "pid": 10276,
+        "processing_reads": [
+          "93c2188e02834f728afc28a41bc1bbce"
+        ],
+        "reason": "source_artifact_bytes"
+      },
+      "prepared": {
+        "calls": [],
+        "manifest": "f43bc7a01eb2cf959157248c904a59b1c78f1a1403bfdafb3b3d9a04265ca062",
+        "mode": "prepare",
+        "pid": 29248,
+        "processing_reads": [
+          "93c2188e02834f728afc28a41bc1bbce",
+          "4e02d88d853f4fe6ba8b29f9f32f4d00",
+          "8c955d6adda340219fc6ccecde7029e2",
+          "9fa9ec401d17499c928945ecf399c070",
+          "26ea45db3ea744b8a0fbeab7fe17d010",
+          "3d566dd1ecf74c0390fe949e2ceae64b",
+          "3d0ad1165296431698e0344042774364",
+          "4e02d88d853f4fe6ba8b29f9f32f4d00",
+          "93c2188e02834f728afc28a41bc1bbce",
+          "8128043c9f474c2a9752c1fd8b2d3a8b"
+        ],
+        "registered_at": "2026-10-04T14:16:57.465160+00:00"
+      },
+      "denied-before-issuance": {
+        "calls": [],
+        "mode": "denied",
+        "pid": 19060,
+        "processing_reads": [
+          "93c2188e02834f728afc28a41bc1bbce"
+        ],
+        "reason": "source_access_denied"
+      },
+      "run": {
+        "calls": [
+          "repair-05208e63f46c076c77e8b0456181e638e397489e4cb229f9d27f65e5ffe07232"
+        ],
+        "manifest": "f43bc7a01eb2cf959157248c904a59b1c78f1a1403bfdafb3b3d9a04265ca062",
+        "mode": "run",
+        "pid": 25904,
+        "processing_reads": [
+          "93c2188e02834f728afc28a41bc1bbce",
+          "4e02d88d853f4fe6ba8b29f9f32f4d00",
+          "8c955d6adda340219fc6ccecde7029e2",
+          "9fa9ec401d17499c928945ecf399c070",
+          "26ea45db3ea744b8a0fbeab7fe17d010",
+          "3d566dd1ecf74c0390fe949e2ceae64b",
+          "3d0ad1165296431698e0344042774364",
+          "4e02d88d853f4fe6ba8b29f9f32f4d00",
+          "93c2188e02834f728afc28a41bc1bbce",
+          "8128043c9f474c2a9752c1fd8b2d3a8b"
+        ],
+        "registered_at": "2026-10-04T14:16:57.465160+00:00",
+        "trace": "bbf0a1a2bb9ab55bf42269a03d479cd1777fed9f6804c62fa1b282f1347cc1cb"
+      },
+      "replacement-replay": {
+        "calls": [],
+        "manifest": "f43bc7a01eb2cf959157248c904a59b1c78f1a1403bfdafb3b3d9a04265ca062",
+        "mode": "replay",
+        "pid": 27472,
+        "processing_reads": [],
+        "registered_at": "2026-10-04T14:16:57.465160+00:00",
+        "trace": "bbf0a1a2bb9ab55bf42269a03d479cd1777fed9f6804c62fa1b282f1347cc1cb"
+      }
+    }
+  },
+  "migration": "planning0009 immutable preparation journal; planning0001..0008 unchanged; no old migrators",
+  "public_schemas": 506,
+  "legacy_feedback_schema_sha256": "e4cda60bdfb4da8b841d983d9764d374f4972eaa7cab52b823589c50d7acc3e9",
+  "publication_feedback_schema_sha256": "6908f1a2c9d058891fe37389a48a355d3911205e0d2165366095c11605e227ab",
+  "wheels": {
+    "amphora_agent_planning-0.23.0-py3-none-any.whl": "48882325ea9f48979ce89c950ec2ee02d21090fdb0ebc22ecad4ff0887dfc069",
+    "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+    "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+    "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+    "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+    "amphora_contracts_planning-0.7.0-py3-none-any.whl": "0f09c0f8bb69e5b0f33929ed1eb4623d768aae1373b651b9c4bb07f5537da9f1",
+    "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+    "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+  },
+  "proven": [
+    "Exact owned root/parent/observation and fresh complete input review before a new call",
+    "Immutable packet/input preparation before issuance; concurrent exact replay and retrospective registration rejection",
+    "Concrete diagnostic packet delivered to configured provider; one child/one physical attempt with original aggregate ceilings",
+    "Pending/unknown recovery and completed replay without fresh processing; unissued reservations still require fresh inputs",
+    "Bounded membership reconciliation, abstention, family exhaustion and retained earlier steps on later unavailable input",
+    "Actual public Data derived feedback/interpretation publication and source rights; denial before issuance, later grant, then denied-rights historical replay across owner restart",
+    "Additive Data-compatible content profile preserves legacy schema/digest and feedback bytes",
+    "Two isolated installations preserve exact preparation, packet, reservations, settlements, traces and predecessor history"
+  ],
+  "limits": [
+    "Actual Data0.29 public publication/processing rights; Planning0.23 own SQL only",
+    "Graph profile is scripted; actual Knowledge read compatibility is a separate proof",
+    "Synthetic diagnostic producer and provider; no automatic production publisher or scientific validity",
+    "Wrong bytes are deliberate local response tampering after an actual Data read",
+    "Process replacement uses normal exits, not abrupt crash or power-loss proof",
+    "No complete live adapter/tokenizer/context-window-fit or provider-authorization claim",
+    "Automatic diagnostic producer and authoritative Research/Knowledge handoff remain B2.03",
+    "Manifest fingerprints record input observations, not durable processing permission"
+  ]
+}

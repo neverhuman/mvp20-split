@@ -49,3 +49,9 @@ an already-closed socket is uncovered. Actual Data service compatibility and
 publication recovery are B1.04d, separately from these client-boundary tests.
 Replacement must preserve limits, exact original references, full consumed
 ancestry, explicit evidence posture and the read/process distinction.
+
+ArtifactReview in artifacts.py owns the shared exact metadata/body, scope,
+identity, byte-count and SHA guards. SourceReviewer and repair preparation reuse
+it with per-operation caches only. ReadBudget.remaining_total exposes the whole
+deadline so sequential Data, Knowledge and Research reads cannot each restart
+an elapsed-time allowance; remaining still caps socket inactivity at5s.

@@ -11,7 +11,8 @@ from ..proposals.context import canonical
 
 GAP_CODES = frozenset({'research_reference_unavailable', 'research_access_denied', 'research_peer_unavailable',
     'research_peer_protocol', 'research_peer_media', 'research_response_limit', 'research_read_expired',
-    'research_read_byte_limit', 'research_read_call_limit', 'research_question_binding', 'research_question_invalid'})
+    'research_read_byte_limit', 'research_read_call_limit', 'research_question_binding', 'research_question_invalid',
+    'research_reader_unconfigured'})
 
 
 @dataclass(frozen=True)

@@ -322,3 +322,13 @@ Archived program checkpoint from MBT:
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
 | 2026-10-04 01:18:09 | B3.04a complete; child 71.88%, parent 95.31%; B3.04b active | [Independent reconstruction](../Audits/Evidence/BP-06-Feedback/Independent_Reconstruction.json); 164.81s; 222 clean Studio tests and actual browser |
+
+## 2026-10-04 09:19:31 - Bounded repair execution verified
+
+B2.02c.ii verified 2026-10-04 09:19:31:Planning0.23/public0.7;630 final installed tests163.34s,28 process stages/two installs;125 focused cases96.23s plus8 final runner cases21.29s,14 dev checks17.63s. Repair/preparation/source coverage789 statements80 branches98.16%; final three guard cases separately tested. Actual Data0.29:7 Planning workers/2 Data hosts verify derived feedback publication, current processing denial, missing input, tampered response and historical replay after replacement. planning0009 stores immutable input/packet preparation; legacy feedback schema preserved and separate publication profile resolves Data root-$id incompatibility. No raw-source replica, fresh root budget, scientific-quality veto or production diagnostics publisher. B2.02=100%,B2=66.67%;child41.67%,Build55.56%,parent28.33%,closed1/4 and5/20. Current B2.03 owner handoff and accepted replay. [Evidence](../Audits/Evidence/BP-07-Extraction/Repair_Workflow.json).
+
+Archived program checkpoint from MBT:
+
+| Timestamp | Checkpoint | Evidence |
+|---|---|---|
+| 2026-10-04 01:25:10 | B3 complete; child 75%, parent 95.83%; V1.01 active; gates 3/4 and23/24 | [Failure recovery](../Audits/Evidence/BP-06-Feedback/Failure_Recovery.json); 203.38s, 222 clean Studio tests, actual timeout/late/query recovery |

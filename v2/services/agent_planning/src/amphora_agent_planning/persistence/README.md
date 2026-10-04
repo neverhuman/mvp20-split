@@ -1,8 +1,12 @@
 # Planning persistence boundary
 
-- Reviewed implementation: Agent Planning0.21; BP-07.02/B2.02b verified.
-- State: private planning schema, forward migrations planning_0001 through planning_0008.
+- Reviewed implementation: Agent Planning0.23; BP-07.02/B2.02c.ii preparation journal verified.
+- State: private planning schema, forward migrations planning_0001 through planning_0009.
 - Responsibility: immutable request, attempt, observation, policy, reservation, settlement, issuance and late-evidence records. The orchestration module composes these objects; Runtime alone owns campaign decisions.
+
+## Repair preparation journal
+
+planning_0009 adds SELECT/INSERT-only repair_preparations, keyed by scoped child engagement and linked to exact family, member, task, request and parent trace. PreparationJournal re-renders/revalidates outside SQL, then locks family before request and binds the manifest to owned membership/task facts. First registration after dispatch issuance or observation is rejected; an unissued reservation is allowed. Exact replay preserves canonical bytes and database timestamp; changed packet/input availability conflicts. Readback verifies all duplicate identities and fingerprints. Store only bounded input references/hashes/gaps and packet digest/size, never another raw-source repository. Planning<=0.22 migrators/writers must not touch the new preparation workflow. Earlier migrations/history remain immutable.
 
 ## Authority and immutable journal
 
@@ -63,3 +67,5 @@ Cutover must replace all Planning admission writers before enabling families. Pl
 Unsettled recorded replies also count as known exposure. A crash between observation commit and settlement must not let a sibling spend through reported overage. Family totals reconcile those bounded stored observations with the existing BudgetCharge domain policy, without inserting settlement or rewriting history. Direct observation writes share the family lock so the committed ordering against admission is explicit.
 
 Verified 2026-10-04 08:01:56:588 source tests,570 independently installed tests25 process stages/two builds. Changed persistence/repair/orchestration coverage799 statements118 branches99.78%; only migration CLI outside instrumentation. Family modules217 statements32 branches100%. Installed proof preserves pending reservations and known unsettled overage across fresh processes.
+
+Preparation verified 2026-10-04 09:21:08:owned PostgreSQL cases cover concurrent exact writes, replacement, changed availability conflicts, missing membership, retrospective registration denial, reserved-but-unissued preparation, actor/scope/grants and SQL mutation denial. All66 preparation journal statements/4 branches covered; isolated three-stage workflow preserves exact preparation time/bytes, request, packet, reservation, settlement and trace.

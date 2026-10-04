@@ -4,6 +4,7 @@ import hashlib
 from dataclasses import dataclass
 
 from amphora_contracts_core import ArtifactRef
+from amphora_contracts_planning import ExtractionTraceRef
 
 from ..context import RequestSnapshot
 from ..context.policy import require
@@ -15,6 +16,13 @@ from .feedback import RepairFeedback
 
 def artifact(reference):
     return ArtifactRef.model_validate_json(reference.model_dump_json(warnings=False))
+
+
+def step_identity(parent, feedback_reference, interpretation_reference):
+    parent = ExtractionTraceRef.model_validate_json(parent.model_dump_json(warnings=False))
+    feedback, interpretation = artifact(feedback_reference), artifact(interpretation_reference)
+    return hashlib.sha256(encoded({"profile": "planning-repair-request.v1", "parent": parent.model_dump(mode="json"),
+        "feedback": feedback.model_dump(mode="json"), "interpretation": interpretation.model_dump(mode="json")})).hexdigest()
 
 
 @dataclass(frozen=True)
@@ -45,8 +53,7 @@ class RepairRequestPlan:
                 interpretation.schema_ref == content_schema() and 0 < interpretation.size_bytes <= 1048576,
                 "repair_interpretation_artifact")
         require(feedback_ref.artifact_id != interpretation.artifact_id, "repair_input_identity")
-        identity = hashlib.sha256(encoded({"profile": "planning-repair-request.v1", "parent": record.parent.model_dump(mode="json"),
-            "feedback": feedback_ref.model_dump(mode="json"), "interpretation": interpretation.model_dump(mode="json")})).hexdigest()
+        identity = step_identity(record.parent, feedback_ref, interpretation)
         request = parent_task.request.document().model_dump(mode="json")
         request["reference"]["engagement_id"] = "repair-" + identity
         entries = request["context"]["entries"]

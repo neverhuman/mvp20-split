@@ -5,7 +5,7 @@ import pytest
 from amphora_agent_planning.extraction import TraceProjection
 from amphora_agent_planning.repair.binding import encoded
 from amphora_agent_planning.repair.feedback import FeedbackRecord, RepairFeedback
-from amphora_contracts_core import Finding
+from amphora_contracts_core import ArtifactRef, Finding
 
 from .support import case
 
@@ -32,6 +32,21 @@ def test_feedback_schema_is_packaged_and_exact():
     schema.update({"$schema": "https://json-schema.org/draft/2020-12/schema",
                    "$id": "urn:amphora:planning.repair-feedback-content:1:validation"})
     assert files("amphora_agent_planning.repair").joinpath("feedback-v1.schema.json").read_bytes() == encoded(schema) + b"\n"
+
+
+def test_publication_profile_preserves_existing_feedback_bytes_and_descriptor():
+    value = case()
+    schema = FeedbackRecord.model_json_schema(mode="validation")
+    schema["$schema"] = "https://json-schema.org/draft/2020-12/schema"
+    assert files("amphora_agent_planning.repair").joinpath("feedback-publication-v1.schema.json").read_bytes() == encoded(schema) + b"\n"
+    old, published = value.feedback.descriptor(), value.feedback.publication_descriptor()
+    assert old.sha256 == published.sha256 == value.feedback.sha256
+    assert old.size_bytes == published.size_bytes and old.schema_ref != published.schema_ref
+    for descriptor in (old, published):
+        ref = ArtifactRef(artifact_id="feedback", scope=value.task.document().scope, **descriptor.model_dump(mode="python"))
+        assert value.feedback.bind_reference(ref) == ref
+    with pytest.raises(ValueError, match="repair_feedback_artifact"):
+        value.feedback.bind_reference(ref.model_copy(update={"schema_ref": published.schema_ref.model_copy(update={"sha256": "0" * 64})}))
 
 
 @pytest.mark.parametrize("change,reason", [

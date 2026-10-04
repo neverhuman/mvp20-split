@@ -37,6 +37,11 @@ def feedback_schema():
     return SchemaRef(schema_id="planning.repair-feedback-content", version="1", sha256=hashlib.sha256(raw).hexdigest())
 
 
+def feedback_publication_schema():
+    raw = files("amphora_agent_planning.repair").joinpath("feedback-publication-v1.schema.json").read_bytes()
+    return SchemaRef(schema_id="planning.repair-feedback-publication-content", version="1", sha256=hashlib.sha256(raw).hexdigest())
+
+
 @dataclass(frozen=True)
 class RepairFeedback:
     canonical: bytes
@@ -88,10 +93,13 @@ class RepairFeedback:
 
     def bind_reference(self, reference):
         reference = ArtifactRef.model_validate_json(reference.model_dump_json(warnings=False))
-        descriptor = self.descriptor()
+        descriptor = self.publication_descriptor() if reference.schema_ref == feedback_publication_schema() else self.descriptor()
         require((reference.sha256, reference.size_bytes, reference.media_type, reference.schema_ref) ==
                 (descriptor.sha256, descriptor.size_bytes, descriptor.media_type, descriptor.schema_ref), "repair_feedback_artifact")
         return reference
+
+    def publication_descriptor(self):
+        return self.descriptor().model_copy(update={"schema_ref": feedback_publication_schema()})
 
     def verify_history(self, task, projection, observation, prior=None):
         record = self.document()

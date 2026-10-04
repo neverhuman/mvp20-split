@@ -28,10 +28,13 @@ class ReadBudget:
         self.deadline = time.monotonic() + self.seconds
 
     def remaining(self):
+        return min(self.remaining_total(), 5)
+
+    def remaining_total(self):
         value = self.deadline - time.monotonic()
         if value <= 0:
             raise SourceUnavailable("source_review_deadline")
-        return min(value, 5)
+        return value
 
     def start(self):
         self.remaining()
