@@ -43,7 +43,7 @@ def verify(output):
     run([python, "-I", "-c", "import sys, importlib.util; from pathlib import Path; import amphora_agent_planning; "
          "assert Path(amphora_agent_planning.__file__).absolute().is_relative_to(Path(sys.prefix).absolute()); "
          "assert all(importlib.util.find_spec(n) is None for n in "
-         "('amphora_campaign_runtime','amphora_research','amphora_knowledge','amphora_data_artifacts','fastapi'))"])
+         "('amphora_campaign_runtime','amphora_research','amphora_knowledge','amphora_data_artifacts','amphora_capability_registry','fastapi'))"])
     for source, destination in (
         (ROOT / "contracts/planning/tests", output / "tests/contracts"),
         # Retain support modules used by relative test imports; collect only the
@@ -52,7 +52,7 @@ def verify(output):
     ):
         shutil.copytree(source, destination, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
     areas = [output / "tests/contracts", *(output / "tests/service" / area for area in
-        ("context", "campaign_context", "campaign_research_access", "research_view_access", "knowledge_access/test_transport.py",
+        ("context", "campaign_context", "campaign_research_access", "research_view_access", "registry_access", "metadata_reads", "knowledge_access/test_transport.py",
          "research_access/test_transport.py"))]
     run([python, "-I", "-m", "pytest", *areas, "--import-mode=importlib", "--tb=short", "-q",
          "--junitxml=" + str(output / "tests.xml")])

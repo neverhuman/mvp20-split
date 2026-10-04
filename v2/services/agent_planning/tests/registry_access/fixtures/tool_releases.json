@@ -1,0 +1,224 @@
+[
+  {
+    "name": "numeric-affine",
+    "descriptor": {
+      "schema_version": "1",
+      "tool": {
+        "schema_version": "1",
+        "binding": {
+          "capability_id": "synthetic.numeric-affine",
+          "release": "0.1.0",
+          "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "contract_version": "1"
+        },
+        "purpose": "Apply an affine transform to synthetic numbers",
+        "applicability": [
+          "synthetic-tests"
+        ],
+        "inputs": [
+          {
+            "name": "value",
+            "schema_ref": {
+              "schema_id": "fixture.numeric-affine",
+              "version": "1",
+              "sha256": "8346f3230d345fd72b3360ac8d15e80c298c9c2b3cfa29449f905262b8b590da"
+            },
+            "representation": "numeric-vector",
+            "unit": "1",
+            "required": true
+          }
+        ],
+        "outputs": [
+          {
+            "name": "result",
+            "schema_ref": {
+              "schema_id": "fixture.numeric-affine",
+              "version": "1",
+              "sha256": "8346f3230d345fd72b3360ac8d15e80c298c9c2b3cfa29449f905262b8b590da"
+            },
+            "representation": "numeric-vector",
+            "unit": "1",
+            "required": true
+          }
+        ],
+        "side_effects": "pure",
+        "checkpoint_schema": null
+      },
+      "resources": {
+        "architectures": [
+          "x86_64",
+          "aarch64"
+        ],
+        "operating_systems": [
+          "linux",
+          "windows"
+        ],
+        "cpu_millicores": 1000,
+        "memory_mib": 64,
+        "gpu_count": 0,
+        "timeout_seconds": 30,
+        "max_parallel_invocations": 2,
+        "max_batch_size": 32
+      },
+      "egress": {
+        "mode": "deny"
+      },
+      "checkpoint": {
+        "mode": "none",
+        "readable_schema_sha256": []
+      },
+      "reproducibility": "deterministic",
+      "authority_ceiling": "synthetic_only",
+      "examples": [
+        "Apply an affine transform to synthetic numbers"
+      ],
+      "anti_examples": [
+        "Not a validated chemical, biological or clinical method"
+      ]
+    },
+    "canonical_utf8": "{\"descriptor\":{\"anti_examples\":[\"Not a validated chemical, biological or clinical method\"],\"authority_ceiling\":\"synthetic_only\",\"checkpoint\":{\"mode\":\"none\",\"readable_schema_sha256\":[]},\"egress\":{\"mode\":\"deny\"},\"examples\":[\"Apply an affine transform to synthetic numbers\"],\"reproducibility\":\"deterministic\",\"resources\":{\"architectures\":[\"x86_64\",\"aarch64\"],\"cpu_millicores\":1000,\"gpu_count\":0,\"max_batch_size\":32,\"max_parallel_invocations\":2,\"memory_mib\":64,\"operating_systems\":[\"linux\",\"windows\"],\"timeout_seconds\":30},\"schema_version\":\"1\",\"tool\":{\"applicability\":[\"synthetic-tests\"],\"binding\":{\"capability_id\":\"synthetic.numeric-affine\",\"contract_version\":\"1\",\"image_sha256\":\"cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\",\"release\":\"0.1.0\"},\"checkpoint_schema\":null,\"inputs\":[{\"name\":\"value\",\"representation\":\"numeric-vector\",\"required\":true,\"schema_ref\":{\"schema_id\":\"fixture.numeric-affine\",\"sha256\":\"8346f3230d345fd72b3360ac8d15e80c298c9c2b3cfa29449f905262b8b590da\",\"version\":\"1\"},\"unit\":\"1\"}],\"outputs\":[{\"name\":\"result\",\"representation\":\"numeric-vector\",\"required\":true,\"schema_ref\":{\"schema_id\":\"fixture.numeric-affine\",\"sha256\":\"8346f3230d345fd72b3360ac8d15e80c298c9c2b3cfa29449f905262b8b590da\",\"version\":\"1\"},\"unit\":\"1\"}],\"purpose\":\"Apply an affine transform to synthetic numbers\",\"schema_version\":\"1\",\"side_effects\":\"pure\"}},\"profile\":\"amphora-tool-release-v1\"}",
+    "sha256": "9ef763885d494b7a995916a41b0a6c8041d6621ce696e88f0fe4441fd4db04cd",
+    "lock": {
+      "schema_version": "1",
+      "tool": {
+        "capability_id": "synthetic.numeric-affine",
+        "release": "0.1.0",
+        "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "contract_version": "1"
+      },
+      "descriptor_sha256": "9ef763885d494b7a995916a41b0a6c8041d6621ce696e88f0fe4441fd4db04cd",
+      "input_schemas": [
+        {
+          "port": "value",
+          "schema_ref": {
+            "schema_id": "fixture.numeric-affine",
+            "version": "1",
+            "sha256": "8346f3230d345fd72b3360ac8d15e80c298c9c2b3cfa29449f905262b8b590da"
+          }
+        }
+      ],
+      "output_schemas": [
+        {
+          "port": "result",
+          "schema_ref": {
+            "schema_id": "fixture.numeric-affine",
+            "version": "1",
+            "sha256": "8346f3230d345fd72b3360ac8d15e80c298c9c2b3cfa29449f905262b8b590da"
+          }
+        }
+      ],
+      "checkpoint_schema": null
+    }
+  },
+  {
+    "name": "sequence-statistics",
+    "descriptor": {
+      "schema_version": "1",
+      "tool": {
+        "schema_version": "1",
+        "binding": {
+          "capability_id": "synthetic.sequence-statistics",
+          "release": "0.1.0",
+          "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "contract_version": "1"
+        },
+        "purpose": "Count symbols in an explicitly synthetic sequence",
+        "applicability": [
+          "synthetic-tests"
+        ],
+        "inputs": [
+          {
+            "name": "value",
+            "schema_ref": {
+              "schema_id": "fixture.sequence-statistics",
+              "version": "1",
+              "sha256": "95675e497ccf0215dcbc873b297a125debe6e9dc49aaa4cf51ece3090f0c9646"
+            },
+            "representation": "synthetic-sequence",
+            "unit": "1",
+            "required": true
+          }
+        ],
+        "outputs": [
+          {
+            "name": "result",
+            "schema_ref": {
+              "schema_id": "fixture.sequence-statistics",
+              "version": "1",
+              "sha256": "95675e497ccf0215dcbc873b297a125debe6e9dc49aaa4cf51ece3090f0c9646"
+            },
+            "representation": "synthetic-sequence",
+            "unit": "1",
+            "required": true
+          }
+        ],
+        "side_effects": "pure",
+        "checkpoint_schema": null
+      },
+      "resources": {
+        "architectures": [
+          "x86_64",
+          "aarch64"
+        ],
+        "operating_systems": [
+          "linux",
+          "windows"
+        ],
+        "cpu_millicores": 1000,
+        "memory_mib": 64,
+        "gpu_count": 0,
+        "timeout_seconds": 30,
+        "max_parallel_invocations": 2,
+        "max_batch_size": 32
+      },
+      "egress": {
+        "mode": "deny"
+      },
+      "checkpoint": {
+        "mode": "none",
+        "readable_schema_sha256": []
+      },
+      "reproducibility": "deterministic",
+      "authority_ceiling": "synthetic_only",
+      "examples": [
+        "Count symbols in an explicitly synthetic sequence"
+      ],
+      "anti_examples": [
+        "Not a validated chemical, biological or clinical method"
+      ]
+    },
+    "canonical_utf8": "{\"descriptor\":{\"anti_examples\":[\"Not a validated chemical, biological or clinical method\"],\"authority_ceiling\":\"synthetic_only\",\"checkpoint\":{\"mode\":\"none\",\"readable_schema_sha256\":[]},\"egress\":{\"mode\":\"deny\"},\"examples\":[\"Count symbols in an explicitly synthetic sequence\"],\"reproducibility\":\"deterministic\",\"resources\":{\"architectures\":[\"x86_64\",\"aarch64\"],\"cpu_millicores\":1000,\"gpu_count\":0,\"max_batch_size\":32,\"max_parallel_invocations\":2,\"memory_mib\":64,\"operating_systems\":[\"linux\",\"windows\"],\"timeout_seconds\":30},\"schema_version\":\"1\",\"tool\":{\"applicability\":[\"synthetic-tests\"],\"binding\":{\"capability_id\":\"synthetic.sequence-statistics\",\"contract_version\":\"1\",\"image_sha256\":\"cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\",\"release\":\"0.1.0\"},\"checkpoint_schema\":null,\"inputs\":[{\"name\":\"value\",\"representation\":\"synthetic-sequence\",\"required\":true,\"schema_ref\":{\"schema_id\":\"fixture.sequence-statistics\",\"sha256\":\"95675e497ccf0215dcbc873b297a125debe6e9dc49aaa4cf51ece3090f0c9646\",\"version\":\"1\"},\"unit\":\"1\"}],\"outputs\":[{\"name\":\"result\",\"representation\":\"synthetic-sequence\",\"required\":true,\"schema_ref\":{\"schema_id\":\"fixture.sequence-statistics\",\"sha256\":\"95675e497ccf0215dcbc873b297a125debe6e9dc49aaa4cf51ece3090f0c9646\",\"version\":\"1\"},\"unit\":\"1\"}],\"purpose\":\"Count symbols in an explicitly synthetic sequence\",\"schema_version\":\"1\",\"side_effects\":\"pure\"}},\"profile\":\"amphora-tool-release-v1\"}",
+    "sha256": "f803b855d8f6d2f535635141025774aad5d4ad9dda047c0e305df1111674bbad",
+    "lock": {
+      "schema_version": "1",
+      "tool": {
+        "capability_id": "synthetic.sequence-statistics",
+        "release": "0.1.0",
+        "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "contract_version": "1"
+      },
+      "descriptor_sha256": "f803b855d8f6d2f535635141025774aad5d4ad9dda047c0e305df1111674bbad",
+      "input_schemas": [
+        {
+          "port": "value",
+          "schema_ref": {
+            "schema_id": "fixture.sequence-statistics",
+            "version": "1",
+            "sha256": "95675e497ccf0215dcbc873b297a125debe6e9dc49aaa4cf51ece3090f0c9646"
+          }
+        }
+      ],
+      "output_schemas": [
+        {
+          "port": "result",
+          "schema_ref": {
+            "schema_id": "fixture.sequence-statistics",
+            "version": "1",
+            "sha256": "95675e497ccf0215dcbc873b297a125debe6e9dc49aaa4cf51ece3090f0c9646"
+          }
+        }
+      ],
+      "checkpoint_schema": null
+    }
+  }
+]

@@ -1,0 +1,11 @@
+# Bounded metadata GET transport
+
+Owner: Planning, BP-07.03/B1.02b. This module owns HTTP framing and resource limits for compiled Registry/Runtime metadata reads. Public Tools and Graph Runtime DTOs are direct dependencies. No peer implementation, database or command writer belongs here. Existing Research/Knowledge POST readers retain their own unchanged profiles.
+
+`MetadataTransport(owner, endpoint, token).read(path, window)` allows only Registry release inventory/exact digest and Runtime definition universe/exact schema routes. Query keys, duplicates, identifiers, versions and digests are validated before I/O; arbitrary paths, authorities, fragments and control characters reject. Origin is configured authenticated127.0.0.1 HTTP with explicit port. No proxy, redirect, retry, model-selected host or automatic continuation exists.
+
+`MetadataWindow` binds one owner, at most30 seconds and16MiB aggregate response bytes. Registry permits8 calls; Runtime permits257 (one universe plus at most256 selected schemas). Each response is bounded4MiB. A socket shutdown timer bounds slow headers/body; parsing and subsequent identity checks must finish before deadline. Limits are metadata ceilings, not model token budgets or permission to process source Artifacts.
+
+Responses use strict JSON parsing, rejecting duplicate keys, nonfinite values, malformed UTF-8 and invalid public DTOs. Safe metadata errors distinguish denial, missing identity, unavailable peer, media/protocol and budget exhaustion without returning peer bodies or credentials. A transport success proves shape only; the owning registry_access or Runtime metadata reader must bind scope, identities, hashes and scientific/compilation authority.
+
+Tests live under tests/metadata_reads, with loopback HTTP, trickling-body deadlines, closed routes, response/aggregate/call bounds and explicit failure outcomes. Replacement retains exact GET/auth behavior and resource gates. Current Registry client proof does not complete Runtime semantic binding or actual-owner integration; those remain subsequent gates. Defensive closed-socket timer cleanup and alternate empty-read paths are reported coverage gaps.

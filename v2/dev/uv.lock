@@ -18,7 +18,7 @@ wheels = [
 
 [[package]]
 name = "amphora-agent-planning"
-version = "0.34.0"
+version = "0.35.0"
 source = { editable = "../services/agent_planning" }
 dependencies = [
     { name = "alembic" },
@@ -26,10 +26,12 @@ dependencies = [
     { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-evidence" },
+    { name = "amphora-contracts-graph-runtime" },
     { name = "amphora-contracts-knowledge" },
     { name = "amphora-contracts-planning" },
     { name = "amphora-contracts-research" },
     { name = "amphora-contracts-research-views" },
+    { name = "amphora-contracts-tools" },
     { name = "amphora-tool-protocol" },
     { name = "psycopg", extra = ["binary"] },
     { name = "pydantic" },
@@ -43,10 +45,12 @@ requires-dist = [
     { name = "amphora-contracts-commands", editable = "../contracts/commands" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
     { name = "amphora-contracts-evidence", editable = "../contracts/evidence" },
+    { name = "amphora-contracts-graph-runtime", editable = "../contracts/graph_runtime" },
     { name = "amphora-contracts-knowledge", editable = "../contracts/knowledge" },
     { name = "amphora-contracts-planning", editable = "../contracts/planning" },
     { name = "amphora-contracts-research", editable = "../contracts/research" },
     { name = "amphora-contracts-research-views", editable = "../contracts/research_views" },
+    { name = "amphora-contracts-tools", editable = "../contracts/tools" },
     { name = "amphora-tool-protocol", editable = "../sdk/tool_protocol" },
     { name = "psycopg", extras = ["binary"], specifier = ">=3,<4" },
     { name = "pydantic", specifier = ">=2.12,<3" },

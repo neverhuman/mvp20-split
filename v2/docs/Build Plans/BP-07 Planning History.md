@@ -525,3 +525,12 @@ B1.02a.iii verified 2026-10-04 18:00:02:Planning0.34 reads actual Research0.34 t
 Archived MBT rows:
 
 | 2026-10-04 05:57:15 | BP-07.02/B2.01a verified; child27.78%,parent25.56%; b active | [Edit profile](../Audits/Evidence/BP-07-Extraction/Edit_Profile.json);447 source,429 installed20 processes,500 predecessor schemas unchanged |
+
+
+## Registry discovery 2026-10-04 18:07:08
+
+B1.02b.i verified 2026-10-04 18:07:08:Planning0.35 bounded Registry discovery/exact full-lock reads and separate compiled metadata GET transport.62 focused tests1.47s;290 independently installed tests12.562s. Registry policy100%;250 statements32 branches98.23%, defensive transport cleanup/EOF gaps explicit.508 schemas/planning0011 unchanged. B1.02b50%,B1.02=37.5%,B1=34.375%,child8.59%,Build11.46%,parent41.72%;closed0/4 and8/20. Current b.ii Runtime metadata. [Evidence](../Audits/Evidence/BP-07-Campaigns/Registry_Discovery.json).
+
+Archived MBT rows:
+
+| 2026-10-04 06:28:33 | BP-07.02/B2.01b verified; child30.56%,parent26.11%; c active | [Proposal validation](../Audits/Evidence/BP-07-Extraction/Proposal_Validation.json);483 source,465 installed20 processes,36 pure cases |
