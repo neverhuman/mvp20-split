@@ -4,7 +4,7 @@ version = "0.1.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
     "amphora-contracts-planning==0.2.0",
-    "amphora-agent-planning==0.6.0",
+    "amphora-agent-planning==0.7.0",
     "amphora-contracts-research-views==0.1.0",
     "amphora-contracts-representations==0.3.0",
     "amphora-knowledge==0.17.0",

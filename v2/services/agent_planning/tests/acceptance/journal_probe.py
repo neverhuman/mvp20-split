@@ -9,6 +9,7 @@ from pathlib import Path
 from amphora_agent_planning.access import Principal
 from amphora_agent_planning.budget import BudgetPolicy
 from amphora_agent_planning.context import AttemptBinding, RequestSnapshot
+from amphora_agent_planning.orchestration import PlanningRunner
 from amphora_agent_planning.persistence.budget import BudgetLedger
 from amphora_agent_planning.persistence.journal import PlanningJournal
 from amphora_agent_planning.persistence.settlement import SettlementJournal
@@ -34,6 +35,8 @@ def main():
     rescope(raw)
     if stage.startswith("budget_"):
         raw["reference"]["engagement_id"] = "budget-decision"
+    if stage.startswith("dispatch_"):
+        raw["reference"]["engagement_id"] = "dispatch-decision"
     raw["context"]["output_schema"] = reference_proposal_schema().model_dump(mode="json")
     request = RequestSnapshot.from_bytes(json.dumps(raw).encode(), actor_id="fixture", scope=scope)
     principal = Principal("fixture", scope, frozenset({"record_requests", "record_attempts", "read_attempts"}))
@@ -42,6 +45,39 @@ def main():
                            connect_args={"options": "-c statement_timeout=5000"})
     journal = PlanningJournal(engine)
     try:
+        if stage.startswith("dispatch_"):
+            context = request.document().context.model_dump(mode="json")
+            fixture_policy = {key: context[key] for key in
+                ("model", "prompt", "policy", "output_schema", "allowed_actions", "limits")}
+            fixture_policy.update(format="planning-budget-policy.v1", per_attempt_accounting_units=40)
+            policy = BudgetPolicy.from_bytes(json.dumps(fixture_policy).encode())
+            calls = []
+            class Counted:
+                def supports(self, model):
+                    return True
+                def reply(self, binding):
+                    calls.append(binding.ordinal)
+                    return FixtureProvider("abstain").reply(binding)
+            runner = PlanningRunner(engine, Counted(), timeout_seconds=30)
+            if stage == "dispatch_prepare":
+                journal.register(principal, request)
+                runner.ledger.reserve(principal, first, policy)
+                ticket = runner.dispatch.issue(principal, first, 1)
+                assert ticket is not None
+                print(json.dumps({"pid": os.getpid(), "request_sha256": request.sha256,
+                    "deadline": ticket.deadline.isoformat(), "status": "pending"}))
+                return
+            outcome = runner.run(principal, request, policy)
+            assert outcome.stop_reason == "abstained"
+            assert [a.observation.document().status for a in outcome.attempts] == ["unknown", "abstained"]
+            assert calls == ([2] if stage == "dispatch_run" else [])
+            settlements = [runner.settlements.read(principal, b.reference()) for b in (first, second)]
+            assert sum(r.charge.accounting_units for r in settlements) == 80
+            print(json.dumps({"pid": os.getpid(), "request_sha256": request.sha256,
+                "calls": calls, "records": [hashlib.sha256(a.observation.canonical).hexdigest()
+                                           for a in outcome.attempts],
+                "charges": [r.charge.accounting_units for r in settlements], "stop": outcome.stop_reason}))
+            return
         if stage.startswith("budget_"):
             context = request.document().context.model_dump(mode="json")
             fixture_policy = {key: context[key] for key in

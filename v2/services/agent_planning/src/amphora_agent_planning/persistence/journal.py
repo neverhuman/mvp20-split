@@ -94,16 +94,20 @@ class PlanningJournal:
             self._lock(connection, key)
             snapshot = self._request(connection, key, principal)
             require(snapshot is not None and snapshot.sha256 == reference.request_sha256, "request_conflict")
-            existing = self._attempt(connection, key, snapshot)
-            require(existing is not None, "attempt_unknown")
-            if existing.observation is not None:
-                require(existing.observation == observation, "observation_conflict")
-                return existing
-            connection.execute(text("INSERT INTO planning.observations "
-                "(tenant_id,project_id,engagement_id,ordinal,canonical_bytes,capture_bytes) "
-                "VALUES (:tenant,:project,:engagement,:ordinal,:content,:capture)"),
-                {**key, "content": observation.canonical, "capture": observation.capture.content})
-            return self._attempt(connection, key, snapshot)
+            return self._record(connection, key, snapshot, binding, observation)
+
+    def _record(self, connection, key, snapshot, binding, observation):
+        observation = verified_observation(binding, observation)
+        existing = self._attempt(connection, key, snapshot)
+        require(existing is not None, "attempt_unknown")
+        if existing.observation is not None:
+            require(existing.observation == observation, "observation_conflict")
+            return existing
+        connection.execute(text("INSERT INTO planning.observations "
+            "(tenant_id,project_id,engagement_id,ordinal,canonical_bytes,capture_bytes) "
+            "VALUES (:tenant,:project,:engagement,:ordinal,:content,:capture)"),
+            {**key, "content": observation.canonical, "capture": observation.capture.content})
+        return self._attempt(connection, key, snapshot)
 
     def read_attempt(self, principal, reference):
         principal.require("read_attempts", reference.engagement.scope)

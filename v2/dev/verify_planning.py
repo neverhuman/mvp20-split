@@ -6,6 +6,7 @@ import json
 import os
 import shutil
 import subprocess
+import time
 import uuid
 import xml.etree.ElementTree as ET
 import zipfile
@@ -57,6 +58,7 @@ def verify(output):
         assert any(name.endswith("r0001_initial.sql") for name in archive.namelist())
         assert any(name.endswith("r0002_reservations.sql") for name in archive.namelist())
         assert any(name.endswith("r0003_settlements.sql") for name in archive.namelist())
+        assert any(name.endswith("r0004_dispatch.sql") for name in archive.namelist())
         assert not any("/tests/" in name for name in archive.namelist())
     external = ["pydantic", "pydantic-core", "annotated-types", "typing-extensions", "typing-inspection",
         "sqlalchemy", "psycopg", "psycopg-binary", "alembic", "Mako", "MarkupSafe",
@@ -122,14 +124,26 @@ def verify(output):
     assert settlements["budget_settle_replay"]["tokens"] == 2048
     assert settlements["budget_settle_replay"]["units"] == 60
     assert settlements["budget_settle_replay"]["overage"] is False
+    dispatches = {}
+    for stage, label in (("dispatch_prepare", "initial"), ("dispatch_run", "replacement"),
+                         ("dispatch_replay", "replacement")):
+        dispatches[stage] = run([interpreters[label], "-I", output / "tests/service/acceptance/journal_probe.py",
+                                stage, project], env=probe_env, capture=True)
+        if stage == "dispatch_prepare":
+            time.sleep(1.1)
+    assert len({r["pid"] for r in dispatches.values()}) == 3
+    assert dispatches["dispatch_prepare"]["status"] == "pending"
+    assert dispatches["dispatch_run"]["records"] == dispatches["dispatch_replay"]["records"]
+    assert dispatches["dispatch_run"]["calls"] == [2] and dispatches["dispatch_replay"]["calls"] == []
+    assert dispatches["dispatch_run"]["charges"] == [40, 40]
     manifest = {"verified_at": datetime.now(ZoneInfo("America/Chicago")).strftime("%Y-%m-%d %H:%M:%S"),
         "status": "passed", "tests": tests, "project": project, "stages": stages,
-        "reservation_stages": reservations, "settlement_stages": settlements,
+        "reservation_stages": reservations, "settlement_stages": settlements, "dispatch_stages": dispatches,
         "wheels": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(wheels.glob("*.whl"))},
-        "limits": ["Own PostgreSQL journal only; no live provider/domain acceptance", "No durable budget dispatch yet",
+        "limits": ["Own PostgreSQL journal only; no live provider/domain acceptance", "Deterministic bounded dispatch only; no actual remote transport",
                    "Two independent installs from one source-built wheel closure; no new implementation rewrite"]}
     (output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({"status": "passed", "tests": tests, "processes": 8, "installations": 2}))
+    print(json.dumps({"status": "passed", "tests": tests, "processes": 11, "installations": 2}))
 
 
 if __name__ == "__main__":

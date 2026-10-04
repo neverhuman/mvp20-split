@@ -83,11 +83,12 @@ class BudgetLedger:
                     " AND ordinal=:ordinal"), {**key, "ordinal": latest}).first()
                 require(settled is not None, "attempt_unsettled")
             held = connection.execute(text("SELECT "
-                "COALESCE(SUM(COALESCE(s.input_tokens,r.input_tokens)+"
-                "COALESCE(s.output_tokens,r.output_tokens)),0) AS tokens, "
-                "COALESCE(SUM(COALESCE(s.accounting_units,r.accounting_units)),0) AS units, "
-                "COALESCE(bool_or(s.overage),false) AS overage "
+                "COALESCE(SUM(GREATEST(s.input_tokens,r.input_tokens,l.input_tokens)+"
+                "GREATEST(s.output_tokens,r.output_tokens,l.output_tokens)),0) AS tokens, "
+                "COALESCE(SUM(GREATEST(s.accounting_units,r.accounting_units,l.accounting_units)),0) AS units, "
+                "COALESCE(bool_or(s.overage OR l.overage),false) AS overage "
                 "FROM planning.reservations r LEFT JOIN planning.settlements s "
+                "USING(tenant_id,project_id,engagement_id,ordinal) LEFT JOIN planning.late_observations l "
                 "USING(tenant_id,project_id,engagement_id,ordinal) WHERE " + KEY),
                 key).mappings().one()
             require(not held["overage"], "provider_usage_overage")

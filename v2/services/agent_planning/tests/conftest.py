@@ -40,7 +40,7 @@ def planning_database():
 
 @pytest.fixture
 def stored(planning_database):
-    raw = json.loads((Path(__file__).parents[1] / "context/fixtures/request.json").read_bytes())
+    raw = json.loads((Path(__file__).parent / "context/fixtures/request.json").read_bytes())
     scope = Scope(tenant_id="planning-storage", project_id=uuid.uuid4().hex)
     def rescope(value):
         if isinstance(value, dict):

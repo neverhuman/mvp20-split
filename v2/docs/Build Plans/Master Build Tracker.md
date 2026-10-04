@@ -9,12 +9,12 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 closed100%; BP-07 primary active; BP-08/09 queued.
-- Last refreshed: `2026-10-04 02:43:09` (America/Chicago).
+- Last refreshed: `2026-10-04 02:54:55` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P6 / BP-07 - Autonomous LLM Campaign Supervision.
-- Primary active task: BP-07.01/Build/B2.03 policy-preserving bounded outcomes and dispatch fencing.
-- Next task: BP-07.01/B3.01 adversarial boundary proof.
-- Implementation completion: BP-07=8.33%,1/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
+- Primary active task: BP-07.01/Build/B3.01 adversarial boundary proof.
+- Next task: BP-07.01/B3.02 late/duplicate/concurrent barriers.
+- Implementation completion: BP-07=10%,2/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
 - Active focus: public model/context/provider contracts and Runtime engagement authority.
 - Blockers: no owner decision blocks deterministic preparation. Live provider/model, egress and spend require explicit choices before real calls.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
@@ -32,15 +32,15 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-07.01 is primary active; child41.67%,Build55.56%,Acceptance0%.
+BP-07.01 is primary active; child50%,Build66.67%,Acceptance0%.
 
 | Parent | Overall | P1 | P2 | P3 | P4 | P5 |
 |---|---:|---:|---:|---:|---:|---:|
-| BP-07 | 8.33% | 41.67% | 0% | 0% | 0% | 0% |
+| BP-07 | 10% | 50% | 0% | 0% | 0% | 0% |
 
 | Active child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-07.01](BP-07/BP-07.01%20Model%20and%20engagement%20contracts.md) | 41.67% | 55.56% | 0% | B2.03 |
+| [BP-07.01](BP-07/BP-07.01%20Model%20and%20engagement%20contracts.md) | 50% | 66.67% | 0% | B3.01 |
 
  BP-06 is [closed100%](Completed/BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md); completed parents are in the [archive](Completed/README.md).
 
@@ -48,7 +48,7 @@ BP-07.01 is primary active; child41.67%,Build55.56%,Acceptance0%.
 
 | Canonical plan | Status | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-07 Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | Active | 8.33% | 41.67% | 0% | 0% | 0% | 0% | N/A |
+| [BP-07 Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | Active | 10% | 50% | 0% | 0% | 0% | 0% | N/A |
 | [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 | [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 
