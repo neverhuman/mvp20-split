@@ -1,10 +1,10 @@
 # Architecture Drift
 
-- Status: BP-06 closed/audited; BP-07.01/B2.01 active.
-- Last refreshed: `2026-10-04 02:17:10` (America/Chicago).
+- Status: BP-06 closed/audited; BP-07.01/B2.01b active.
+- Last refreshed: `2026-10-04 02:25:10` (America/Chicago).
 - Scope: unresolved v2 design/implementation alignment and scoped successor boundaries.
 - Active focus: model/engagement predecessor reconciliation; no unresolved blocking BP-06 finding.
-- Next gate: durable pre-dispatch reservations; actual model gates remain subsequent.
+- Next gate: atomic PostgreSQL reservations; actual model gates remain subsequent.
 
 ## Active Findings
 

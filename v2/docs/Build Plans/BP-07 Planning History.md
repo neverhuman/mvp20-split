@@ -139,3 +139,7 @@ Agent Planning0.3, planning_0001 applied idempotently with separate migrator/ser
 ## 2026-10-04 02:17:10 - B1 boundary complete
 
 B1.04 reusable installed verifier:8-wheel closure,2 independent installs,86 owned tests5.87s and4 process stages. Original unknown usage/capture preserved across successor proposal and replay; CLI migration explicit. No bytecode copied or private peers installed.18 dev13.87s;488 schemas unchanged. Initial tooling pin for absent optional greenlet corrected, then source-only staging verified. B1=100%,child25%,parent5%,Build33.33%,gates1/4 and1/20. B2.01 durable reservations next; no budget/dispatch or live provider claim.
+
+## 2026-10-04 02:25:10 - B2.01a policy and tracker reconciliation
+
+Agent Planning0.4 private reviewed budget policy/demand:22 source,40 with dev,108 independent cases/four processes;65 statements/2 branches100%. No actual reservation or dispatch claim. Child29.17%,parent5.83%,Build38.89%,gates1/4 and1/20. MBT child/build rows had drifted through substring numeric replacement while canonical child/parent trackers stayed correct; rewrote full rows and asserted readback against canonical values. All future updates use exact rows/fields, never unbounded percentage replacement.

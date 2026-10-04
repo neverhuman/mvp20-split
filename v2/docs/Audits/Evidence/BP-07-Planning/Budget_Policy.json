@@ -1,0 +1,138 @@
+{
+  "verified_at": "2026-10-04 02:24:01",
+  "status": "passed",
+  "tests": 108,
+  "project": "6725c904d9a549b5a17d72f3ec3fed9d",
+  "stages": {
+    "prepare": {
+      "pid": 10840,
+      "request_sha256": "4771698bae28285bcf7c3cd9177365084e2be017a260837f87ee7ccee1921d3d",
+      "attempts": [
+        {
+          "ordinal": 1,
+          "status": "pending"
+        },
+        null
+      ]
+    },
+    "interrupted": {
+      "pid": 25164,
+      "request_sha256": "4771698bae28285bcf7c3cd9177365084e2be017a260837f87ee7ccee1921d3d",
+      "attempts": [
+        {
+          "ordinal": 1,
+          "status": "unknown",
+          "record_sha256": "a57e41510e8d066ff7adcad834c944f7143da45b777c0b2d29ff30983198f26d",
+          "capture_sha256": "c0cc5a4ffaffaa209c0244ef5b7427ec0d2aa1c7a46ff5c922d81a10502b4cb7",
+          "usage": {
+            "input_tokens": null,
+            "output_tokens": null,
+            "accounting_units": null,
+            "certainty": "unknown"
+          }
+        },
+        {
+          "ordinal": 2,
+          "status": "pending"
+        }
+      ]
+    },
+    "finish": {
+      "pid": 5116,
+      "request_sha256": "4771698bae28285bcf7c3cd9177365084e2be017a260837f87ee7ccee1921d3d",
+      "attempts": [
+        {
+          "ordinal": 1,
+          "status": "unknown",
+          "record_sha256": "a57e41510e8d066ff7adcad834c944f7143da45b777c0b2d29ff30983198f26d",
+          "capture_sha256": "c0cc5a4ffaffaa209c0244ef5b7427ec0d2aa1c7a46ff5c922d81a10502b4cb7",
+          "usage": {
+            "input_tokens": null,
+            "output_tokens": null,
+            "accounting_units": null,
+            "certainty": "unknown"
+          }
+        },
+        {
+          "ordinal": 2,
+          "status": "proposed",
+          "record_sha256": "0839d93ad3d428cfd80e2d3ad1aa1a879f489b681bee9a9550c65aebe3e3f61c",
+          "capture_sha256": "922e8ab9788216a1fd3b164bcb7f305be31f6fb01069b8c34806d3417a1363bb",
+          "usage": {
+            "input_tokens": 10,
+            "output_tokens": 10,
+            "accounting_units": 1,
+            "certainty": "reported"
+          }
+        }
+      ]
+    },
+    "replay": {
+      "pid": 10260,
+      "request_sha256": "4771698bae28285bcf7c3cd9177365084e2be017a260837f87ee7ccee1921d3d",
+      "attempts": [
+        {
+          "ordinal": 1,
+          "status": "unknown",
+          "record_sha256": "a57e41510e8d066ff7adcad834c944f7143da45b777c0b2d29ff30983198f26d",
+          "capture_sha256": "c0cc5a4ffaffaa209c0244ef5b7427ec0d2aa1c7a46ff5c922d81a10502b4cb7",
+          "usage": {
+            "input_tokens": null,
+            "output_tokens": null,
+            "accounting_units": null,
+            "certainty": "unknown"
+          }
+        },
+        {
+          "ordinal": 2,
+          "status": "proposed",
+          "record_sha256": "0839d93ad3d428cfd80e2d3ad1aa1a879f489b681bee9a9550c65aebe3e3f61c",
+          "capture_sha256": "922e8ab9788216a1fd3b164bcb7f305be31f6fb01069b8c34806d3417a1363bb",
+          "usage": {
+            "input_tokens": 10,
+            "output_tokens": 10,
+            "accounting_units": 1,
+            "certainty": "reported"
+          }
+        }
+      ]
+    }
+  },
+  "wheels": {
+    "amphora_agent_planning-0.4.0-py3-none-any.whl": "8d4ff3fd597d4eda1cef0f4ae3e6d5694bd14570abfe13ef4f496e0ac8802509",
+    "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+    "amphora_contracts_planning-0.2.0-py3-none-any.whl": "c0e1ce8cd2d87ae2bbb443536e46ac2c1d9f9875dcac8d9498d0ef061291aa56",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee"
+  },
+  "limits": [
+    "Pure demand is not an atomic reservation or dispatch grant",
+    "No live provider or financial unit selection",
+    "Existing PostgreSQL histories remain compatible"
+  ],
+  "scope": "BP-07.01 B2.01a reviewed budget policy and pure reservation demand",
+  "source_tests": 22,
+  "source_seconds": 1.94,
+  "source_dev_tests": 40,
+  "source_dev_seconds": 20.19,
+  "policy_coverage": {
+    "covered_lines": 65,
+    "num_statements": 65,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100",
+    "num_branches": 2,
+    "num_partial_branches": 0,
+    "covered_branches": 2,
+    "missing_branches": 0,
+    "percent_branches_covered": 100.0,
+    "percent_branches_covered_display": "100"
+  },
+  "schemas_unchanged": 488
+}

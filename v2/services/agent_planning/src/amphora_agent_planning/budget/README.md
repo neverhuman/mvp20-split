@@ -1,0 +1,11 @@
+# Reviewed budget policy and reservation demand
+
+BP-07.01/B2.01a, Agent Planning0.4. BudgetPolicy.from_bytes loads at most16KiB strict owner-configured JSON. Private format planning-budget-policy.v1 pins exact ModelBinding, prompt/policy Artifact identities, output schema, allowed proposal actions, CallLimits and per-attempt accounting ceiling. This input comes from trusted owner configuration, never a model request or response. Shape validation does not prove referenced Data Artifacts were loaded or grant actual provider egress.
+
+The policy rejects inconsistent scopes, duplicate actions, impossible per-call token/window totals and accounting ceilings beyond the configured total. Canonical compact sorted UTF-8 bytes own its identity. document() returns a fresh private transport record; sha256 identifies exact reviewed configuration. CallLimits remains a DTO; policy owns cross-field behavior.
+
+Demand validation requires exact model/config/prompt/policy/schema binding and named accounting unit. A request may narrow action, attempt, token and accounting ceilings; it cannot widen them. One attempt reserves its requested maximum input plus output tokens and the reviewed per-attempt accounting cap, with exact request/attempt/policy identity. No provider-reported usage appears in admission. ReservationDemand is a pure value object, not proof that a budget was reserved or a provider call authorized.
+
+No I/O, database mutation, clock, provider call, charging/refund, Runtime budget or actual tokenization belongs here. B2.01b owns atomic persistence and balances; B2.02 owns conservative settlement. Configuration/reference equality is not a scientific or live-provider guarantee. Private canonical-format changes require deliberate version/replay treatment.
+
+Owned tests: tests/budget/test_policy.py, selected with dev/run_tests.py --module agent-planning --area budget --coverage. They cover narrower requests, ceiling escalation, binding substitution, actions/units, impossible configuration, strict input bounds and immutable identity. Replacement preserves canonical policy/demand semantics independently of the persistence implementation.

@@ -2,18 +2,19 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-07.01/Build/B2.01.
-- Last refreshed: `2026-10-04 02:17:10` (America/Chicago).
+- Status: primary_active; BP-07.01/Build/B2.01b.
+- Last refreshed: `2026-10-04 02:25:10` (America/Chicago).
 - Owner/scope: Agent Planning plus runtime-owned engagement and decision modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-03 discovery, BP-04 runner, BP-05 UI and BP-06 source/knowledge receipts.
-- Implementation: **5.00%**, 1/20 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
+- Implementation: **5.83%** scoped;1/20 closed deliveries. BP-07.01 includes fractional B2 work; each child is counted once.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-07.01/B2.01 durable pre-dispatch reservations; B1 independent journal/process gate passed.
+- Current implementation task: BP-07.01/B2.01b atomic reservations; owner policy/demand verified.
 - Demonstrated behavior: B1.01 immutable context/attempt identity and strict DTOs independently installed; deterministic bounded provider outcomes also verified; private journal persistence verified; live model authority not claimed.
 - Blockers: none for deterministic implementation. Live provider/model, data egress and spend choices block only actual calls.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
+
 
 ## Outcome and Boundaries
 
@@ -29,7 +30,7 @@ Primary services retain private state, dependencies, migrations and module READM
 
 | Parent phase / child | Overall | Build | Acceptance | Prerequisite |
 |---|---:|---:|---:|---|
-| P1 / [BP-07.01 Model and engagement contracts](BP-07/BP-07.01%20Model%20and%20engagement%20contracts.md) | 25.00% | 33.33% | 0% | Parent predecessor gates |
+| P1 / [BP-07.01 Model and engagement contracts](BP-07/BP-07.01%20Model%20and%20engagement%20contracts.md) | 29.17% | 38.89% | 0% | Parent predecessor gates |
 | P2 / [BP-07.02 Reliable text decomposition](BP-07/BP-07.02%20Reliable%20text%20decomposition.md) | 0% | 0% | 0% | BP-07.01 acceptance |
 | P3 / [BP-07.03 Campaign proposals and context](BP-07/BP-07.03%20Campaign%20proposals%20and%20context.md) | 0% | 0% | 0% | BP-07.02 acceptance |
 | P4 / [BP-07.04 Durable supervisor and races](BP-07/BP-07.04%20Durable%20supervisor%20and%20races.md) | 0% | 0% | 0% | BP-07.03 acceptance |

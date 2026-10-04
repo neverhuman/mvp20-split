@@ -939,3 +939,5 @@ Archived MBT checkpoints:
 | 2026-10-03 19:15:58 | B3.01 complete; child58.33%, parent76.39%; B3.02a active | [Adversaries](../../Audits/Evidence/BP-06-Representations/Adversarial_Boundaries.json);59 source/59 installed,actual expiry/corruption/publisher oracles |
 
 | 2026-10-03 19:31:45 | B3.02a complete; child62.50%, parent77.08%; B3.02b active | [Process replay](../../Audits/Evidence/BP-06-Representations/Process_Death_Replay.json);8 source/8 installed, actual PostgreSQL/Qdrant |
+
+| 2026-10-03 19:36:53 | B3.02 complete; child66.67%, parent77.78%; B3.03 active | [Live authority](../../Audits/Evidence/BP-06-Representations/Live_Authority_Barriers.json);5 source/5 installed actual process races |
