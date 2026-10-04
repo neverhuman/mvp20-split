@@ -65,6 +65,7 @@ def verify(output, legacy_manifest=None):
         assert any(name.endswith("r0007_trace_publication.sql") for name in archive.namelist())
         assert any(name.endswith("r0008_repair_families.sql") for name in archive.namelist())
         assert any(name.endswith("r0009_repair_preparation.sql") for name in archive.namelist())
+        assert any(name.endswith("r0010_result_publication.sql") for name in archive.namelist())
         assert any(name.endswith("result_publication/candidate-answer-v1.schema.json") for name in archive.namelist())
         assert any(name.endswith("repair/feedback-v1.schema.json") for name in archive.namelist())
         assert any(name.endswith("repair/feedback-publication-v1.schema.json") for name in archive.namelist())
@@ -210,6 +211,21 @@ def verify(output, legacy_manifest=None):
         assert len({record[field] for record in workflow.values()}) == 1
     assert workflow["run"]["trace"] == workflow["replay"]["trace"]
     assert workflow["run"]["settlement"] == workflow["replay"]["settlement"]
+    results = {}
+    for stage, label in (("prepare", "initial"), ("stream", "initial"), ("recover", "replacement"), ("replay", "replacement")):
+        result_path = output / ("result-storage-" + stage + ".json")
+        result_env = {**probe_env, "AMPHORA_RESULT_STAGE": stage, "AMPHORA_RESULT_PROJECT": project,
+            "AMPHORA_RESULT_ORIGIN": str(output / "result-storage-prepare.json"), "AMPHORA_RESULT_OUTPUT": str(result_path)}
+        run([interpreters[label], "-I", "-m", "pytest", output / "tests/service/acceptance/result_storage_probe.py",
+             "--import-mode=importlib", "--tb=short", "-q"], env=result_env)
+        results[stage] = json.loads(result_path.read_bytes())
+        if stage == "stream":
+            time.sleep(1.1)  # Deliberately abandoned one-second lease; no fixture reset.
+    assert len({record["pid"] for record in results.values()}) == 4
+    assert len({(record["identity"], record["payload"], record["prepared_at"]) for record in results.values()}) == 1
+    assert results["stream"]["outcome"] == "streaming" and results["recover"]["upload_ordinal"] == 2
+    assert {k: v for k, v in results["recover"].items() if k not in {"pid", "stage"}} == {
+        k: v for k, v in results["replay"].items() if k not in {"pid", "stage"}}
     legacy = None
     if legacy_manifest is not None:
         legacy_path = legacy_manifest.absolute()
@@ -222,12 +238,12 @@ def verify(output, legacy_manifest=None):
         "status": "passed", "tests": tests, "project": project, "stages": stages,
         "reservation_stages": reservations, "settlement_stages": settlements, "dispatch_stages": dispatches,
         "typed_stages": typed, "extraction_stages": extraction, "edit_stages": edits, "family_stages": families,
-        "unsettled_exposure_stages": exposure, "repair_workflow_stages": workflow, "legacy_replay": legacy,
+        "unsettled_exposure_stages": exposure, "repair_workflow_stages": workflow, "result_storage_stages": results, "legacy_replay": legacy,
         "wheels": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(wheels.glob("*.whl"))},
         "limits": ["Own PostgreSQL journal only; no live provider/domain acceptance", "Deterministic bounded dispatch only; no actual remote transport",
                    "Two independent installs from one source-built wheel closure; no new implementation rewrite"]}
     (output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({"status": "passed", "tests": tests, "processes": 27 + (legacy is not None), "installations": 2}))
+    print(json.dumps({"status": "passed", "tests": tests, "processes": 31 + (legacy is not None), "installations": 2}))
 
 
 if __name__ == "__main__":

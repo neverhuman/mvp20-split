@@ -1,12 +1,12 @@
 # Planning result publication
 
 - Status: BP-07.02/B2.03b.i verified 2026-10-04 10:22:31;24 focused cases134 statements/6 branches100%,654 installed tests and28 process/replay stages across two installs.
-- Package: Planning0.24; public Planning0.7 and planning0001..0009 unchanged.
+- Package: Planning0.25; public Planning0.7 unchanged. Applied planning0010 adds result selection/preparation/events/control. Never run <=0.24 migrators afterward; prior0001..0009 unchanged.
 - Design: [owner handoff](../../../../../docs/Build%20Plans/BP-07/BP-07.02%20Owner%20handoff%20and%20accepted%20replay.md).
 
 ## Responsibility and authority
 
-This module prepares exact diagnostic-feedback and candidate-answer Artifact values. It owns their deterministic result slot and content/configuration binding. Trace publication stays in publication; extraction/repair owns observations and diagnostics, research_proposals owns answer validation, Data owns bytes/rights and Research/Knowledge own acceptance. Current pure objects have no SQL, network, provider calls or durable publication effect.
+This module prepares exact diagnostic-feedback and candidate-answer Artifact values and owns their separate SQL selection/preparation/event history. It owns their deterministic result slot and content/configuration binding. Trace publication stays in publication; extraction/repair owns observations and diagnostics, research_proposals owns answer validation, Data owns bytes/rights and Research/Knowledge own acceptance. Payload and identity values have no I/O. The store/journal use only Planning-owned SQL; no result network workflow or provider call is implemented yet.
 
 ResultArtifact.feedback revalidates RepairFeedback against the exact task/observation/prior trace and finalized interpretation. Its body is unchanged diagnostic_only feedback, using the separately pinned publication-compatible feedback schema. ResultArtifact.answer reconstructs PublishedCandidate, reruns ResearchProposalValidator against the exact selected QuestionContext and selects one surviving local answer. Missing, duplicate or withheld answers cannot be invented. AnswerRecord retains proposal_only and quotation_and_structure_only, exact question/method/context, model attribution, grounding, task/candidate hashes and interpretation reference. It does not prove scientific truth, sufficiency or a registered question.
 
@@ -24,6 +24,13 @@ Read-only restore checks exact actor/scope, canonical encoding, content/profile 
 
 ## Remaining implementation and replacement gates
 
-Pure preparation does not prove the history came from owned storage, source processing permission remains current, or a remote Artifact exists. b.ii must supply owner-local intent/payload/event storage, leases/fences, fresh public rights reads and bounded upload/recovery before this becomes a production publisher. b.iii adds durable owner submissions and receipt binding. c proves combined actual-owner behavior. The configured repair producer remains unimplemented until b.ii.
+Pure preparation does not prove the history came from owned storage, source processing permission remains current, or a remote Artifact exists. b.ii.a storage, lease/fence and preparation reconstruction are verified. b.ii.b/c must still supply fresh public rights reads, bounded upload/recovery and the concrete diagnostic producer before this becomes a production publisher. b.iii adds durable owner submissions and receipt binding. c proves combined actual-owner behavior. The configured repair producer remains unimplemented until b.ii.
 
 Tests are owned by tests/result_publication. They cover exact feedback preservation, attributed answer/schema, complete ancestry, slot/config/content conflict, permission and scope, noncanonical stored identities, unavailable answers, forged receipts/observations and unchanged upload transition semantics. Scripted finalized receipts are value-level proof only. dev/verify_planning.py checks schema packaging and reruns the isolated owner/contract and existing process-replacement suite.
+
+
+## Verified b.ii.a storage
+
+selection/history load original actor-owned task/observation/trace and exact finalized interpretation before result registration. store/journal own result-specific selection, preparation and event history with separate DB-clock control. prepared stores bounded historical review/question witnesses alongside exact payload/manifest and verifies their digests, original owned facts and complete ancestry during read-only replay. events uses a distinct planning-result-publication-event.v1 encoding with the existing pure upload transition semantics. This storage passes54 focused tests531 statements36 branches100%,684 installed cases and32 process/replay stages across two installations; a remote result upload workflow and concrete diagnostic producer are still absent. No b.ii completion credit yet.
+
+Storage checkpoint evidence: [Result_Storage.json](../../../../../docs/Audits/Evidence/BP-07-Extraction/Result_Storage.json). Four result-specific stages use scripted receipts; actual Data publication remains b.ii.c.

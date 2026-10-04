@@ -8,8 +8,8 @@ from ..proposals.support import Case, encode
 
 
 class ResearchCase(Case):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, *, scope=None):
+        super().__init__(scope=scope)
         self.method = {'schema_id': 'fixture.assay', 'version': '1', 'sha256': 'c' * 64}
         self.draft.update(entities=[], assertions=[], edits=[], action='request_evidence')
         self.request['context']['allowed_actions'].append('request_evidence')

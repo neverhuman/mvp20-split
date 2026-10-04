@@ -362,3 +362,13 @@ Archived MBT checkpoint:
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
 | 2026-10-04 09:19:31 | BP-07.02/B2.02 complete; child41.67%,parent28.33%; B2.03 active | [Repair workflow](../Audits/Evidence/BP-07-Extraction/Repair_Workflow.json);630 installed28 processes; actual Data7 workers/2 hosts |
+
+## 2026-10-04 10:52:48 ? Durable result selection/preparation history
+
+B2.03b.ii.a complete. Planning0.25/0010 owns separate result selections/preparation/events and DB-clock fencing while preserving existing trace bytes. Source54 cases121.15s cover531 statements36 branches100%;684 installed cases221.26s and32 process/replay stages pass across two builds. Four result stages verify recorded streaming-intent replacement and read-only replay, with scripted Data receipts. No actual result upload, abrupt kill or automatic producer claim. b.ii33.33%,b44.44%,B2.03=48.15%,B2=82.72%;child45.68%,Build60.91%,parent29.14%;closed1/4 and5/20. Next b.ii.b Data workflow/recovery. No old <=0.24 migrators after0010.
+
+Archived MBT checkpoint:
+
+| Timestamp | Checkpoint | Evidence |
+|---|---|---|
+| 2026-10-04 08:27:00 | BP-07.02/B2.02c.i complete; child40.28%,parent28.06%; c.ii active | [Repair feedback](../Audits/Evidence/BP-07-Extraction/Repair_Feedback.json);617 source,599 installed25 processes; pure tentative requests |
