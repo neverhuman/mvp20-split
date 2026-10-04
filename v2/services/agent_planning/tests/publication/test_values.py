@@ -1,7 +1,6 @@
 import hashlib
 import json
 from dataclasses import replace
-from pathlib import Path
 
 import pytest
 from amphora_agent_planning.access import Principal
@@ -32,15 +31,14 @@ from amphora_contracts_planning import ExtractionTrace
 from ..source_access.test_review import inputs
 
 
-def prepared():
-    task, data = inputs()
+def prepared(scope=None):
+    task, data = inputs(scope=scope)
     review = SourceReviewer(data).review(task)
-    raw = json.loads((Path(__file__).parents[1] / "extraction/fixtures/extraction.json").read_bytes())
     class Provider:
         def supports(self, model):
             return True
         def reply(self, binding):
-            return ProviderReply((json.dumps(raw["draft"]).encode(),), unknown_usage())
+            return ProviderReply((json.dumps(data.draft).encode(),), unknown_usage())
     observed = observe(AttemptBinding(task.request, 1), Provider())
     assert observed.document().status == "proposed"
     projection = TraceProjection.derive("trace", task, observed)

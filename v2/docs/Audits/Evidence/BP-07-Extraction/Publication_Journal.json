@@ -1,0 +1,23 @@
+{
+  "verified_at": "2026-10-04 05:11:45",
+  "timezone": "America/Chicago",
+  "task": "BP-07.02/B1.04c.ii",
+  "planning_version": "0.14.0",
+  "migration": "planning_0007",
+  "regression": {
+    "passed": 375,
+    "seconds": 65.55
+  },
+  "publication": {
+    "cases": 46,
+    "actual_postgresql_cases": 8,
+    "statements": 469,
+    "branches": 28,
+    "coverage_percent": 100
+  },
+  "limits": [
+    "Scripted Data receipts; actual Data publication remains B1.04d",
+    "SDK workflow and abrupt publication recovery remain c.iii/d",
+    "No live model or scientific validity claim"
+  ]
+}

@@ -61,6 +61,8 @@ def verify(output, legacy_manifest=None):
         assert any(name.endswith("r0004_dispatch.sql") for name in archive.namelist())
         assert any(name.endswith("r0005_task_output.sql") for name in archive.namelist())
         assert any(name.endswith("r0006_extraction.sql") for name in archive.namelist())
+        assert any(name.endswith("r0007_trace_publication.sql") for name in archive.namelist())
+        assert any(name.endswith("publication/extraction-trace-v1.schema.json") for name in archive.namelist())
         assert any(name.endswith("prompts/domain-decomposition-v1.txt") for name in archive.namelist())
         assert not any("/tests/" in name for name in archive.namelist())
     external = ["pydantic", "pydantic-core", "annotated-types", "typing-extensions", "typing-inspection",

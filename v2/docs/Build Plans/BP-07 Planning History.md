@@ -231,3 +231,11 @@ B1.04c.i verified:351 tests51.04s,22 pure publication cases,158 statements2 bran
 Archived MBT checkpoints:
 
 | 2026-10-03 21:34:15 | B1.03 complete; child15%,parent85.83%; B1.04a active | [Research HTTP](../Audits/Evidence/BP-06-Feedback/Research_Views_HTTP.json);35 source/275 installed,actual replacement |
+
+MBT checkpoint archive 2026-10-04 05:11:45:
+
+| 2026-10-03 21:51:08 | B1.04a verified; child17.50%,parent86.25%; B1.04b active | [Studio transport](../Audits/Evidence/BP-06-Feedback/Studio_Scientific_Transport.json);154 source/154 independent,14 scientific roots |
+
+## 2026-10-04 05:11:45 - B1.04c.ii publication journal
+
+Planning0.14 adds planning_0007 immutable intents, payloads and transition history with separately mutable lease/control columns. Original actor, exact trace/task, configured publisher/schema and historical metadata are reconstructed on every read. Lease expiry is checked at the actual position write; inserted events/payload roll back together on expiry or failure. No peer I/O or fresh authorization is claimed by historical readback.375 regression cases65.55s;469 publication statements28 branches100%. Child22.92%,Build30.56%,parent24.58%; c.iii SDK workflow/recovery next, d actual installed peers remains required.

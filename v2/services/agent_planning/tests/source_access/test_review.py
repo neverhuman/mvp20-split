@@ -36,8 +36,19 @@ class Data:
         return self.conversion
 
 
-def inputs(*, trace_change=None, entries=0):
+def inputs(*, trace_change=None, entries=0, scope=None):
     raw = json.loads((Path(__file__).parents[1] / "extraction/fixtures/extraction.json").read_bytes())
+    def rescope(value):
+        if isinstance(value, dict):
+            if set(value) == {"tenant_id", "project_id"}:
+                value.update(scope.model_dump())
+            for item in value.values():
+                rescope(item)
+        elif isinstance(value, list):
+            for item in value:
+                rescope(item)
+    if scope is not None:
+        rescope(raw)
     context = raw["request"]["context"]
     payloads = {key: (key + " fixture").encode() for key in ("objective", "policy", "configuration")}
     payloads["prompt"] = files("amphora_agent_planning.extraction").joinpath("prompts/domain-decomposition-v1.txt").read_bytes()
@@ -85,7 +96,9 @@ def inputs(*, trace_change=None, entries=0):
         "connector_version": "1", "configuration_sha256": "a" * 64, "format": "utf8_document"},
         "rights": {"scope": raw["task"]["scope"], "rights_id": "fixture", "revision": 1},
         "supersedes": None, "completeness": "partial"}))
-    return task, Data(artifacts, payloads, revision, trace)
+    data = Data(artifacts, payloads, revision, trace)
+    data.draft = raw["draft"]
+    return task, data
 
 
 def test_full_consumed_inputs_prompt_bytes_and_partial_source_are_preserved():
