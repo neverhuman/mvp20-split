@@ -1,0 +1,174 @@
+{
+  "verified_at": "2026-10-04 06:45:26",
+  "task": "BP-07.02/B2.01c",
+  "status": "passed",
+  "planning": "0.18.0",
+  "contracts": "0.6.0",
+  "source_regression_tests": 513,
+  "source_seconds": 96.81,
+  "additional_focused_cases": 2,
+  "focused_total": 32,
+  "installed_tests": 497,
+  "installed_processes": 20,
+  "installations": 2,
+  "coverage": {
+    "statements": 176,
+    "missing_statements": 4,
+    "branches": 28,
+    "partial_branches": 4,
+    "percent_rounded": 96,
+    "remaining": "Defensive timer shutdown/expiry, empty body-read exit, reused alias target and no-timer cleanup branches"
+  },
+  "schema_check": "Computed Knowledge proposal profile matches published knowledge.proposal.validation.json",
+  "migration": "none; planning0001..0007 unchanged",
+  "actual_owner": {
+    "verified_at": "2026-10-04 06:42:54",
+    "status": "passed",
+    "planning": "0.18.0",
+    "knowledge": "0.17.0",
+    "knowledge_contracts": "0.8.0",
+    "knowledge_host_pids": [
+      32872,
+      22172
+    ],
+    "knowledge_fixture_pids": [
+      22904,
+      1900
+    ],
+    "planning_processes": {
+      "original": {
+        "pid": 29484,
+        "status": "read",
+        "task_sha256": "a32879ceb71eabe8ead45013099ede284df911a2f72389d5d05bc1ab5555a226",
+        "snapshot": {
+          "graph": {
+            "scope": {
+              "tenant_id": "planning-knowledge-read",
+              "project_id": "fa41bd67e04741839834555521ba6bab"
+            },
+            "graph_id": "domain"
+          },
+          "revision": 1,
+          "sha256": "5a1b50384909185b6809c6e697f1129bff2eaecaa125ecece12865141b926c44"
+        },
+        "profile_sha256": "44de56b5032e68123aa4e61794833d52a05f74e9216412a49229c403ef062e1e",
+        "snapshot_sha256": "0f2e5eb665044691316bcf57affb6001d02ae8f21295df817515333566e73838",
+        "calls": 3,
+        "bytes": 14185
+      },
+      "genesis": {
+        "pid": 32756,
+        "status": "read",
+        "task_sha256": "066288abcf67fcfc41018a1ce486506a09a563478d68697d48e2aee873781b8c",
+        "snapshot": null,
+        "profile_sha256": "29e7631d5e145375004aca91e50110efffeafbedadeb49081c2d24b7ea8c5f81",
+        "snapshot_sha256": null,
+        "calls": 1,
+        "bytes": 1481
+      },
+      "after-new-head": {
+        "pid": 13960,
+        "status": "read",
+        "task_sha256": "a32879ceb71eabe8ead45013099ede284df911a2f72389d5d05bc1ab5555a226",
+        "snapshot": {
+          "graph": {
+            "scope": {
+              "tenant_id": "planning-knowledge-read",
+              "project_id": "fa41bd67e04741839834555521ba6bab"
+            },
+            "graph_id": "domain"
+          },
+          "revision": 1,
+          "sha256": "5a1b50384909185b6809c6e697f1129bff2eaecaa125ecece12865141b926c44"
+        },
+        "profile_sha256": "44de56b5032e68123aa4e61794833d52a05f74e9216412a49229c403ef062e1e",
+        "snapshot_sha256": "0f2e5eb665044691316bcf57affb6001d02ae8f21295df817515333566e73838",
+        "calls": 3,
+        "bytes": 14185
+      },
+      "after-owner-restart": {
+        "pid": 18956,
+        "status": "read",
+        "task_sha256": "a32879ceb71eabe8ead45013099ede284df911a2f72389d5d05bc1ab5555a226",
+        "snapshot": {
+          "graph": {
+            "scope": {
+              "tenant_id": "planning-knowledge-read",
+              "project_id": "fa41bd67e04741839834555521ba6bab"
+            },
+            "graph_id": "domain"
+          },
+          "revision": 1,
+          "sha256": "5a1b50384909185b6809c6e697f1129bff2eaecaa125ecece12865141b926c44"
+        },
+        "profile_sha256": "44de56b5032e68123aa4e61794833d52a05f74e9216412a49229c403ef062e1e",
+        "snapshot_sha256": "0f2e5eb665044691316bcf57affb6001d02ae8f21295df817515333566e73838",
+        "calls": 3,
+        "bytes": 14185
+      },
+      "future-campaign": {
+        "pid": 30648,
+        "status": "read",
+        "task_sha256": "2cbd535d1eb4056338467db1d4a49c1b1418fbaca2228ca1674a7ec575d17e4a",
+        "snapshot": {
+          "graph": {
+            "scope": {
+              "tenant_id": "planning-knowledge-read",
+              "project_id": "fa41bd67e04741839834555521ba6bab"
+            },
+            "graph_id": "domain"
+          },
+          "revision": 2,
+          "sha256": "29ccc8301ced6b93f82301ca5e33c33c9d248fc3ca802e58eb4f69a41536a352"
+        },
+        "profile_sha256": "44de56b5032e68123aa4e61794833d52a05f74e9216412a49229c403ef062e1e",
+        "snapshot_sha256": "c05fe21ce54e83cf195c11f69e8e3cc9066ccdb8d7192ec6432eb177cb37acbf",
+        "calls": 3,
+        "bytes": 10670
+      },
+      "read-grant-denied": {
+        "pid": 27152,
+        "status": "knowledge_access_denied",
+        "task_sha256": "a32879ceb71eabe8ead45013099ede284df911a2f72389d5d05bc1ab5555a226",
+        "calls": 1
+      },
+      "foreign-scope": {
+        "pid": 17728,
+        "status": "knowledge_access_denied",
+        "task_sha256": "a36ae0c8398cb247c1d3b99fe08d340b93181260bd915f01fa6c10c2e5f75934",
+        "calls": 1
+      },
+      "missing-exact-revision": {
+        "pid": 18284,
+        "status": "knowledge_reference_unavailable",
+        "task_sha256": "1e592a0a288eb0ace3e4705c654d54999d2f252fff36af8bef3efd3a3b2b4b62",
+        "calls": 2
+      }
+    },
+    "limits": [
+      "Synthetic owner-local accepted input fixture; no real source rights or Planning proposal acceptance",
+      "Actual public authenticated reads, owner PostgreSQL and two host processes; Data/Research offline",
+      "No live model or scientific validity claim; accepted Planning proposal replay remains B2.03"
+    ]
+  },
+  "wheels": {
+    "amphora_agent_planning-0.18.0-py3-none-any.whl": "bab1443711e8c293dc60788f776b5ae0daecf2abbeb5568c65f0ace49d3b6b53",
+    "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+    "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+    "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+    "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+    "amphora_contracts_planning-0.6.0-py3-none-any.whl": "133bd38799cb19cbc556fc2c61f39148835399f40717e8fcc24403d35bd88548",
+    "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+    "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+  },
+  "limits": [
+    "Read-only origin proof uses synthetic Knowledge-local accepted fixtures, with Data and Research offline",
+    "No acceptance of Planning-generated changes or scientific validity",
+    "Graph packet is bounded preparation; full context-body assembly/tokenizer/provider fit remains later live adapter work"
+  ]
+}

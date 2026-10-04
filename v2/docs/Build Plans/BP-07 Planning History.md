@@ -279,3 +279,13 @@ Planning0.16/public0.6 introduces task/v2 selected assertion revisions, explicit
 ## 2026-10-04 06:28:33 - BP-07.02/B2.01b verified
 
 Planning0.17 adds decomposed deterministic graph proposal validation and direct public Knowledge dependency.483 source tests,465 independent tests20 process stages,36 pure validation cases;409 statements116 branches at98%. Child30.56%,Build40.74%,parent26.11%; c public owner reads next. Canonical closed counts remain1/4 and5/20. See [evidence](../Audits/Evidence/BP-07-Extraction/Proposal_Validation.json). No Knowledge contact/acceptance or scientific validity claim. Source-adjacent README consolidated to current behavior; granular Planning selectors now include source_access/publication/proposals.
+
+## Archived MBT checkpoint 2026-10-04 06:45:26
+
+| Timestamp | Checkpoint | Evidence |
+|---|---|---|
+| 2026-10-04 00:46:37 | B2 complete; child50%,parent91.67%; B3.01 active; gates2/4 and22/24 | [Owner reuse](../Audits/Evidence/BP-06-Feedback/Scientific_Reuse_Actual.json);actual1test93.51s, exact context and optional quality |
+
+## 2026-10-04 06:45:26 - BP-07.02/B2.01c verified
+
+Planning0.18 public Knowledge reads and graph packet preparation verified.513 regression plus2 additional focused cases;497 independently installed cases20 process stages; actual public reads8 Planning workers/2 Knowledge hosts, with2 synthetic Knowledge-local fixture processes. Old pins survive future retraction and owner restart; new tasks see the new revision; denials/missing exact records are explicit. Child33.33%,Build44.44%,parent26.67%,closed1/4 and5/20. [Evidence](../Audits/Evidence/BP-07-Extraction/Knowledge_Read_Binding.json). B2.02 starts with explicit aggregate repair admission design; no credit for design.

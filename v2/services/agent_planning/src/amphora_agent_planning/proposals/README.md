@@ -1,8 +1,8 @@
 # Planning graph proposal validation
 
-- Status: BP-07.02/B2.01b verified; B2.01c public owner reads next.
+- Status: BP-07.02/B2.01b verified; B2.01c public owner reads now verified in sibling knowledge_access.
 - Owner: Agent Planning; Knowledge alone accepts edits and owns graph history.
-- Implemented: immutable pinned Knowledge context, source/identity/context candidate validation and bounded proposal construction. Actual public owner reads are B2.01c; submission/replay is B2.03.
+- Implemented: immutable pinned Knowledge context, source/identity/context candidate validation and bounded proposal construction. Actual public owner reads are implemented by sibling knowledge_access; submission/replay is B2.03.
 
 KnowledgeContext binds the task's exact graph/head/vocabulary/policy/schema references to validated public GraphAuthoringProfile and DomainGraphSnapshot records. It independently verifies canonical snapshot/vocabulary hashes and basic record/alias consistency. Byte-owned records prevent a caller from mutating a retained context through DTO containers. GraphFacts is a fresh per-validation lookup projection, never a shared state repository. It distinguishes historical identity, latest revision, aliases and tombstones. Labels preserve case; scientific identifiers such as Co and CO must not be collapsed by generic case folding.
 
