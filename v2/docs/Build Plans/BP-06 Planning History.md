@@ -1,5 +1,7 @@
 # BP-06 Planning History
 
+2026-10-04 01:18:09 B3.04a verified: 164.81s actual integration, 222 clean Studio tests and live browser. Three snapshots preserved; rebuild succeeds with Data offline; second Qdrant generation reconstructs exact matches. Existing B3.04 scope now has two equal substeps, a reconstruction/replacement and b pending-query/timeout/late-response recovery. B3.04=50%, B3=87.50%, Build=95.83%, child=71.88%, parent=95.31%.
+
 2026-10-04 01:09:35 B3.03 verified: 1 actual integration test passed in 129.50s. Conflicting specimen claims and omitted rows remain unresolved; Research retains unknown eligibility with explicit mismatch reasons. Earlier valid records unchanged. Desktop/narrow comparison screenshots reviewed. B3=75%, Build=91.67%, child=68.75%, parent=94.79%; B3.04 active.
 
 2026-10-04 01:03:42 B3.02 correction races verified1test123.50s: Knowledge accepted/conflict and Research200/409; notice/new receipt rejected by open original wait, original and explicit future campaign retained/replayed. Fixed fixture command IDs to respect issuer-scope uniqueness across chains. B3=50%,Build83.33%,child62.50%,parent93.75%; B3.03 active.

@@ -1,0 +1,81 @@
+{
+  "verified_at": "2026-10-04 01:18:09",
+  "status": "passed",
+  "scope": "BP-06.06 B3.04a reconstruction and replacement",
+  "tests": 1,
+  "seconds": 164.81,
+  "actual_records": ".test-results/feedback-replacement-20261004.json",
+  "sha256": "c5b38a0939d7b8fc0eb4795d825a7979442db2e7662c1818d6cea2bf418f8d5d",
+  "project": "a6626665260947fbb3cc2b3e7c92559d",
+  "consumer_tests": 222,
+  "consumer_manifest_sha256": "f65a13f756253298f9565c92accaac9c7f766ebb714009cc1bfa56c637bf4ba2",
+  "snapshots_preserved": [
+    {
+      "graph": {
+        "scope": {
+          "tenant_id": "feedback-fixture",
+          "project_id": "a6626665260947fbb3cc2b3e7c92559d"
+        },
+        "graph_id": "domain"
+      },
+      "revision": 1,
+      "sha256": "901a3ba93a0430804face2e0599f01bcb431db8d1d70b3502dfcf3c224eea502"
+    },
+    {
+      "graph": {
+        "scope": {
+          "tenant_id": "feedback-fixture",
+          "project_id": "a6626665260947fbb3cc2b3e7c92559d"
+        },
+        "graph_id": "domain"
+      },
+      "revision": 2,
+      "sha256": "f2a4c7a37ad5e40474ae2de0a0cf9cb33af0ca644ff016841ff9f16534b6f4a1"
+    },
+    {
+      "graph": {
+        "scope": {
+          "tenant_id": "feedback-fixture",
+          "project_id": "a6626665260947fbb3cc2b3e7c92559d"
+        },
+        "graph_id": "domain"
+      },
+      "revision": 3,
+      "sha256": "eb8424f4e830123f9cc16f032436f32176d6fd4cc230893504d02552600e3e46"
+    }
+  ],
+  "processes": {
+    "knowledge": {
+      "previous_pid": 25192,
+      "replacement_pid": 15328
+    },
+    "research": {
+      "previous_pid": 31784,
+      "replacement_pid": 31836
+    },
+    "data": {
+      "previous_pid": 16208,
+      "replacement_pid": 29056
+    }
+  },
+  "missing_physical_index": {
+    "status": 503,
+    "response": {
+      "detail": "qdrant_http_404"
+    }
+  },
+  "checks": [
+    "Knowledge public rebuild succeeds with Data stopped",
+    "Three exact semantic snapshots survive rebuild and fresh Knowledge process",
+    "Fresh Research and Data processes retain public records",
+    "Separate owned Qdrant lacks old projection and returns explicit503; pending read409",
+    "New explicit generation reconstructs identical ranked matches from retained binding/profile",
+    "Independent clean Studio install passes222 tests and the full actual browser journey"
+  ],
+  "limits": [
+    "New explicitly pinned retrieval generation, not same-ID physical rematerialization",
+    "Fresh processes of independently installed owners; separate clean Studio installation",
+    "No power-loss, production gateway, semantic-vector quality or scientific-validity claim",
+    "Same-query recovery and browser timeout/late-response checks remain B3.04b"
+  ]
+}

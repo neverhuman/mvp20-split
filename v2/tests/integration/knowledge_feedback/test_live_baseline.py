@@ -2,7 +2,6 @@
 import json
 import os
 import secrets
-import subprocess
 import uuid
 from pathlib import Path
 
@@ -70,23 +69,14 @@ def test_actual_source_graph_baseline(tmp_path):
             from .live.adversaries import prove as prove_adversaries
             result['adversaries'] = prove_adversaries(scenario, result)
         root = Path(__file__).absolute().parents[3]
-        owners = {name: {'endpoint': owner.endpoint, 'token': owner.token} for name, owner in
-            [('data', scenario.data), ('research', scenario.research), ('knowledge', scenario.knowledge)]}
-        probe = subprocess.run(['node', str(root / 'studio/scripts/probe-scientific.mjs')],
-            input=json.dumps({'owners': owners, 'records': result}), env=base_environment(),
-            capture_output=True, text=True, encoding='utf-8', timeout=45,
-            creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
-        assert probe.returncode == 0, 'Compiled Studio actual-owner probe failed: ' + probe.stderr[-1200:]
-        result['studio'] = json.loads(probe.stdout)
-        if os.environ.get('AMPHORA_TEST_FEEDBACK_BROWSER') == '1':
-            browser_owners = {name: {'endpoint': owner.endpoint, 'token': environments[key]['BROWSER_TOKEN']}
-                for name, key, owner in [('data', 'data_artifacts', scenario.data), ('research', 'research', scenario.research), ('knowledge', 'knowledge', scenario.knowledge)]}
-            output = root / '.test-results' / 'feedback-browser' / scope['project_id']
-            browser = subprocess.run(['node', 'tests/integration/explore_live.mjs'], cwd=root / 'studio',
-                input=json.dumps({'owners': browser_owners, 'records': result, 'output': str(output)}), env=base_environment(),
-                capture_output=True, text=True, encoding='utf-8', timeout=120, creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
-            assert browser.returncode == 0, 'Actual Explore browser failed: ' + browser.stderr[-2000:]
-            result['browser'] = json.loads(browser.stdout)
+        from .live.consumer import verify as verify_consumer
+        result.update(verify_consumer(scenario, result, root / 'studio',
+            root / '.test-results' / 'feedback-browser' / scope['project_id'],
+            browser=os.environ.get('AMPHORA_TEST_FEEDBACK_BROWSER') == '1'))
+        if os.environ.get('AMPHORA_TEST_FEEDBACK_REPLACEMENT') == '1':
+            from .live.replacement import prove as prove_replacement
+            result['replacement'] = prove_replacement(scenario, result,
+                root / '.test-results' / 'feedback-replacement' / scope['project_id'])
         path = os.environ.get('AMPHORA_TEST_FEEDBACK_EVIDENCE')
         if path:
             Path(path).write_text(json.dumps({'scope': scope, 'status': 'integrated_baseline_verified',

@@ -47,6 +47,21 @@ class SourceGraphScenario:
         for owner in reversed(self.owners):
             owner.close()
 
+    def replace(self, name, *, config=None):
+        attribute = {'data_artifacts': 'data', 'research': 'research', 'knowledge': 'knowledge'}[name]
+        previous = getattr(self, attribute)
+        port = int(previous.endpoint.rsplit(':', 1)[1])
+        previous.close()
+        path = self.directory / (name + '.json')
+        if config is not None:
+            path.write_text(json.dumps(config), encoding='utf-8')
+        replacement = Owner(self.interpreters[name], 'amphora_' + name, path,
+            self.environments[name], self.environments[name]['OWNER_TOKEN'], port=port)
+        self.owners.append(replacement)
+        setattr(self, attribute, replacement)
+        assert replacement.process.pid != previous.process.pid
+        return {'previous_pid': previous.process.pid, 'replacement_pid': replacement.process.pid}
+
     def run(self):
         scope = self.scope
         document = b'Synthetic claims are not scientifically accepted.'
