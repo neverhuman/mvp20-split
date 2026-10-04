@@ -1,0 +1,11 @@
+# Campaign Knowledge context
+
+Owner: Agent Planning. Architecture: [Planning](../../../../../docs/Architecture/Agents/Planning.md). Reads use public Knowledge contracts and knowledge_access transport; graph_context owns shared record policy. Knowledge alone accepts graph changes and owns graph state.
+
+CampaignGraphSelection binds the original campaign_proposal/supervision RequestSnapshot to exact graph/head/vocabulary/policy pins and at most256 selected entity and256 assertion revisions. Its compact sorted UTF-8 selection is capped at256KiB, and its versioned fingerprint includes the original request digest. Scope, duplicates, forged DTO values and genesis-with-existing-records fail before I/O. Different historical revisions may be selected deliberately; selection order participates in identity.
+
+CampaignKnowledgeReader reads only the pinned profile, optional historical snapshot and accepted change. One15-second,3-call KnowledgeReadWindow enforces the existing256KiB/16MiB/1MiB response caps. The accepted-change digest and resulting head, snapshot digest/index and selected-record existence must all validate before success; final deadline includes validation. Technical failures return an explicit stable code and no partial graph. Unknown implementation exceptions propagate. Other independent context lanes can still contribute useful information.
+
+Historical, aliased and retracted selections remain visible. This is not scientific acceptance, an edit authorization, a mutable-head lookup or automatic rebase. Human corrections change future campaign selections only. No ExtractionTask is fabricated. No writes, retries, provider call, cross-owner SQL, durable state or migration occurs here. B1.03 owns selected-record projection with endpoint/alias dependencies, required/optional context fitting and durable packet reconstruction; retaining the bounded owner snapshot here does not mean placing the whole graph in a prompt.
+
+Tests live under tests/campaign_knowledge_access; shared graph predecessor compatibility is under tests/graph_context, with existing extraction/proposal/Knowledge regressions retained. Actual combined-owner acceptance remains B1.02d. Replacement must preserve immutable original selection, exact read identities, bounded transport, explicit unavailable outcomes and observation-versus-edit separation.

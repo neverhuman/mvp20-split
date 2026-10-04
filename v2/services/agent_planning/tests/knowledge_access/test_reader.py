@@ -22,8 +22,8 @@ class Peer:
         return self.records[path]
 
 
-def inputs(history=True):
-    bound = Case(history=history).bind()
+def inputs(history=True, scope=None):
+    bound = Case(history=history, scope=scope).bind()
     task = bound.task
     records = {'/v1/graph-profiles/read': bound.knowledge.profile()}
     if history:

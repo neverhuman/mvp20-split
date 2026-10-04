@@ -1,0 +1,29 @@
+{
+  "producer": "Planning0.38 unchanged extraction context/prompt, before graph-context extraction",
+  "cases": [
+    {
+      "history": false,
+      "legacy": false,
+      "task_sha256": "0282fec06500b61cd33449790e8692fa231acae76d63564ac06093771af267d4",
+      "profile_sha256": "726b8120302aa54b8f0450ecf2c475d8365ee127dc279f1f8839b3b5c09a0d35",
+      "snapshot_sha256": null,
+      "prompt_sha256": "f7fd0fd645271825cda90fa5516eba9ebbb3f20a97a8a7ee25e728249d4779cf"
+    },
+    {
+      "history": true,
+      "legacy": false,
+      "task_sha256": "08971b6d8f2f768bac4d32552d7cceb9c1170eb77bb48b021bb2061c086b5571",
+      "profile_sha256": "9ac110d2036d9f11c45bc8b936f4588341c2fd2cbf210883f709a1b8eb5f05c6",
+      "snapshot_sha256": "ff472e9441c857bfbddc0568b159d6fefddd38d3b22fb5bca38ee7e4360db176",
+      "prompt_sha256": "64180ccc0547518520d667f2c99a1007e400ec6410ce3c1a47209252f4c34e8f"
+    },
+    {
+      "history": false,
+      "legacy": true,
+      "task_sha256": "79e0b35fdea7c1d7b25ada8a65c00744df9745f920096fc52fd8d29197bda1b7",
+      "profile_sha256": "726b8120302aa54b8f0450ecf2c475d8365ee127dc279f1f8839b3b5c09a0d35",
+      "snapshot_sha256": null,
+      "prompt_sha256": "205ec89b2b2fc96334417a82eb34d9f48874d83ca0a0db255b5ce8c874d3f409"
+    }
+  ]
+}

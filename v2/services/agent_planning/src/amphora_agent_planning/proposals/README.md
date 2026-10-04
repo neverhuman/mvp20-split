@@ -21,3 +21,5 @@ Existing matches can reuse their owner context; new entities and assertions requ
 Tests live under tests/proposals with independent operation/findings expectations, scripted public records and publication receipts. Actual Knowledge origin proof is not claimed by those fixtures. This module performs no I/O and stores no durable state.
 
 Verified 2026-10-04 06:28:33:36 pure cases;483 source/contract/dev,465 independently installed cases and20 process stages. Pure module coverage409 statements116 branches at98%; remaining defensive error/selection and alternate history branches. No peer implementation is present in the independent Planning installation.
+
+BP-07.03 shared policy extraction: sibling graph_context now owns pure profile/snapshot/index and accepted-change verification. Extraction adapters retain task/schema rules and existing APIs; fixed predecessor task/context/prompt hash vectors guard compatibility. Campaign reading uses a separate campaign_knowledge_access adapter, never a fabricated extraction task.

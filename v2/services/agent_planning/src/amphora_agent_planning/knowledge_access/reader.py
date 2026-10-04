@@ -1,10 +1,10 @@
 """Bind public owner reads to an immutable task without reading a newer head."""
 
-import hashlib
-
 from ..context.policy import require
 from ..extraction import ExtractionSnapshot
-from ..proposals.context import KnowledgeContext, canonical
+from ..graph_context import GraphPins
+from ..graph_context.origin import verify_change
+from ..proposals.context import KnowledgeContext
 from .transport import KnowledgeReadWindow
 
 
@@ -21,15 +21,7 @@ class KnowledgeReader:
         if target.base is not None:
             snapshot = self.transport.read('/v1/graph-snapshots/read', target.base.snapshot, window)
             change = self.transport.read('/v1/graph-changes/read', target.base.change, window)
-            content = change.content
-            require(change.reference == target.base.change and
-                    hashlib.sha256(canonical(content)).hexdigest() == change.reference.sha256,
-                    'knowledge_change_digest')
-            require(content.resulting_snapshot == target.base.snapshot and
-                    content.position == target.base.change.position and content.policy == target.policy and
-                    content.proposal.graph == target.graph and content.proposal.change_id == change.reference.change_id and
-                    content.proposal.policy == target.policy and content.proposal.vocabulary == target.vocabulary,
-                    'knowledge_change_binding')
+            verify_change(GraphPins(target.graph, target.base, target.vocabulary, target.policy), change)
         result = KnowledgeContext.bind(task, profile, snapshot)
         facts = result.index()
         require(all(ref in facts.entities for ref in task.document().existing_entities), 'knowledge_selected_entity_missing')

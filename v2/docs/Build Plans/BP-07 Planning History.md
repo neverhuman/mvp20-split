@@ -561,3 +561,9 @@ B1.02c.ii verified 2026-10-04 18:27:12:Planning0.38 exact retained Data retrieva
 Archived MBT rows:
 
 | 2026-10-04 07:31:11 | BP-07.02/B2.02a.ii | Actual Research/Knowledge reads verified;560 source,542 installed tests. Child36.11%,parent27.22%; B2.02b active. |
+
+B1.02c.iii verified 2026-10-04 18:44:12:Planning0.39/public0.8 original campaign-bound Knowledge selection, exact historical profile/snapshot/change, explicit unavailable results and shared pure graph record policy.241 focused/regression tests60.66s;642 independently installed tests41.35s.223 statements34 branches99.61%, alternate label iteration branch remains; campaign policy100%. Three fixed predecessor task/context/prompt byte vectors unchanged.508 schemas/planning0011 unchanged. c100%,B1.02=75%,B1=43.75%,child10.94%,Build14.58%,parent42.19%;closed0/4 and8/20. Current B1.02d combined-owner integration.
+
+MBT checkpoint overflow:
+
+| 2026-10-04 08:01:56 | BP-07.02/B2.02b complete; child38.89%,parent27.78%; c.i active | [Repair admission](../Audits/Evidence/BP-07-Extraction/Repair_Admission.json);588 source,570 installed25 processes; unsettled overage fenced |
