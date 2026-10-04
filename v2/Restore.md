@@ -2,12 +2,12 @@
 
 ## Resume here
 
-- Refreshed 2026-10-04 16:48:19 (America/Chicago). **Read this first after every compression**, explicitly requested by the owner.
+- Refreshed 2026-10-04 17:03:06 (America/Chicago). **Read this first after every compression**, explicitly requested by the owner.
 - Continue across milestones, commits/pushes and compaction until genuinely blocked. No subagents, JARVIS access or v1 edits. No milestone-only final pause.
-- **Current BP-07.02/Acceptance/V1.01: independent integration/replacement acceptance.** B3.03 passed; checkpoint commit/push next, then full independent build/install/test/replay. Latest pushed820b1d85 (semantic corpus); previous36ca7e95 traces and22712feb combined owners.
-- **No tests or peer hosts running.** Final crash session47358 passed19 Planning workers/6 owner processes. Pure session90244 passed14 tests4.48s; SQL39686 passed25 tests93.02s. Evidence Process_Failure_Oracles.json; retained planning-owner-crashes-final-20261004/manifest.json.
-- Canonical child75.00%,Build100%,Acceptance0%,3/4 closed; B1/B2/B3=100%,V1=0%. Parent35.00%,7/20; P1=100%,P2=75%,others0%. Child/parent/MBT/history/design/module READMEs synchronized; MBT25 rows.
-- Planning/dev0.30/publicPlanning0.7; planning0011 unchanged. Never run Planning<=0.28 migrators. Research0013/Data artifact0012 unchanged; no Research<=0.33 or Data<=0.25 migrators. No reset/downgrade/deletion of retained fixtures.
+- **BP-07.02 closed100%,4/4; parent40%,8/20. Current: BP-07.03 activation coherence audit, then earliest B1 task.** Closeout docs ready for diff/link checks, commit/push. Latest pushed e2cfcba7; no owner decision blocks deterministic work.
+- **No tests/peer hosts running.** Independent session83142 passed930 tests494.233s,39 process stages,two fresh0.30 installations; exact legacy replay. Evidence Final_Installation.json; retained planning-extraction-closeout-independent-20261004. Runtime payloads identical to prior actual-owner wheels; reuse explicit. Boundaries/506 schemas pass.
+- Archived tracker docs/Build Plans/BP-07/Completed/BP-07.02 Reliable text decomposition.md; scoped audit docs/Audits/BP-07.02_Text_Decomposition_Closeout.md. Child/parent/MBT/history/index/drift/modules/inventory synchronized; MBT25 rows. Documentation stale claims fixed, no production/schema/migration change.
+- Planning0.30/publicPlanning0.7; planning0011 immutable. No Planning<=0.28, Research<=0.33 or Data<=0.25 migrators. Do not reset/downgrade/delete retained fixtures.
 
 ## Latest verification and limits
 
@@ -21,15 +21,15 @@
 
 ## Next authorized work
 
-1. Review B3.03 docs/diff, commit/push significant checkpoint. No owner decision blocks deterministic work.
-2. V1.01: run dev/verify_planning.py with fresh output and compatible retained legacy manifest. Expected930 tests and39 stages;600s per subprocess. No source/test/dev edits while running; PostgreSQL suites serial. Current production0.30 unchanged, so recent actual-owner/crash/corpus acceptance can be explicitly reused.
-3. V1.02: component-scoped architecture audit against Planning architecture, module contracts/source/schema inventories/evidence; resolve blocking drift, assign nonblocking successors, archive child tracker and repair links. Read Development_Process and Plan Audit Template. Master architecture footer has stale Studio/knowledge pending claim to reconcile.
-4. Continue BP-07.03 after bounded activation audit. Provider/model/egress/spend choices block only actual calls; no approval needed for deterministic work.
-5. Keep handoff current before compaction and reread after. Update parent/MBT percentages from child milestone basis; preserve historical percentages.
+1. Finish link/diff review and commit/push BP-07.02 closeout. Then perform BP-07.03 bounded activation audit; no milestone pause.
+2. Read BP-07.03 Campaign proposals and context.md, reconcile actual public Research/Registry/Data/Runtime boundaries, and write focused physical milestones before implementation. Existing proposals module owns Knowledge extraction, so campaign compilation/context needs distinct behavioral ownership.
+3. BP-07.03 includes300 representative descriptor metadata/planning acceptance, typed question/evidence/assessment revisions, exact relevant read-set, current rights, explicit omissions and successor improvement proposals. Live model/scientific efficacy is not implied. Runtime remains sole compiler/execution acceptance owner; no private peer imports.
+4. BP-07.04 owns durable Runtime engagement/races; BP-07.05 live evaluation. Provider/model/egress/spend choices block only real calls, not deterministic work.
+5. Keep Restore current before compaction and reread afterward. No test/source/dev edits during verification; SQL suites serial.
 
 ## Canonical navigation and prior evidence
 
-- Child docs/Build Plans/BP-07/BP-07.02 Reliable text decomposition.md; parent docs/Build Plans/BP-07 Autonomous LLM Campaign Supervision.md; history docs/Build Plans/BP-07 Planning History.md; MBT docs/Build Plans/Master Build Tracker.md.
+- Closed child docs/Build Plans/BP-07/Completed/BP-07.02 Reliable text decomposition.md; parent docs/Build Plans/BP-07 Autonomous LLM Campaign Supervision.md; history docs/Build Plans/BP-07 Planning History.md; MBT docs/Build Plans/Master Build Tracker.md.
 - Owner submission.md is now scoped construction100%; outerB2.03c is now100%. Do not confuse its completed c unit with the outer acceptance c.
 - Replace only current header/basis before child B1.01 verified and MBT Recent Checkpoints; keep historical percentages. MBT25 newest descending checkpoints, archive older rows in history. Percent replacements must be simultaneous: build62.96% and olderB2.03 percentages can overlap.
 - Prior storage evidence Owner_Handoff_Storage.json:Planning0.29/planning0011,95 focused237.69s,808 installed405.569s39 stages. New state/preparation/event/origin code100%; transport cleanup gaps. Shared publication/origin.py preserves ResultHistory errors/bytes. Need preparation/dispatch requires exact acknowledged original local question. Histories immutable; separate DB-clock controls; no peer I/O in SQL.

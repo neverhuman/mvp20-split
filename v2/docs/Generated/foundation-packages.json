@@ -73,7 +73,7 @@
   },
   {
     "package": "amphora-contracts-planning",
-    "version": "0.4.0",
+    "version": "0.7.0",
     "path": "contracts/planning",
     "module": "amphora_contracts_planning",
     "public_dependencies": [
@@ -145,10 +145,16 @@
   },
   {
     "package": "amphora-agent-planning",
-    "version": "0.9.0",
+    "version": "0.30.0",
     "path": "services/agent_planning",
     "module": "amphora_agent_planning",
     "public_dependencies": [
+      "amphora-contracts-research",
+      "amphora-contracts-knowledge",
+      "amphora-tool-protocol",
+      "amphora-contracts-artifacts",
+      "amphora-contracts-commands",
+      "amphora-contracts-evidence",
       "amphora-contracts-core",
       "amphora-contracts-planning"
     ]
@@ -181,7 +187,7 @@
   },
   {
     "package": "amphora-data-artifacts",
-    "version": "0.28.0",
+    "version": "0.29.0",
     "path": "services/data_artifacts",
     "module": "amphora_data_artifacts",
     "public_dependencies": [
@@ -195,7 +201,7 @@
   },
   {
     "package": "amphora-knowledge",
-    "version": "0.17.0",
+    "version": "0.18.0",
     "path": "services/knowledge",
     "module": "amphora_knowledge",
     "public_dependencies": [
@@ -211,7 +217,7 @@
   },
   {
     "package": "amphora-research",
-    "version": "0.33.0",
+    "version": "0.34.0",
     "path": "services/research",
     "module": "amphora_research",
     "public_dependencies": [

@@ -1,0 +1,140 @@
+{
+  "verified_at": "2026-10-04 17:01:03",
+  "status": "passed",
+  "gate": "BP-07.02/V1.01",
+  "planning": "0.30.0",
+  "public_planning": "0.7.0",
+  "tests": 930,
+  "seconds": 494.233,
+  "installations": 2,
+  "process_stages": 39,
+  "legacy_replay": {
+    "pid": 11844,
+    "request_sha256": "c6b5a024a7b6b44d013241c816bc53c92a7b59871f4ccf67ecb85a91aba36968",
+    "attempts": [
+      {
+        "ordinal": 1,
+        "status": "unknown",
+        "record_sha256": "b298fa1af4a4302d7901bcc2d1b45c07f77397b57081ad8ee5043ad6f5c8b27d",
+        "capture_sha256": "c0cc5a4ffaffaa209c0244ef5b7427ec0d2aa1c7a46ff5c922d81a10502b4cb7",
+        "usage": {
+          "input_tokens": null,
+          "output_tokens": null,
+          "accounting_units": null,
+          "certainty": "unknown"
+        }
+      },
+      {
+        "ordinal": 2,
+        "status": "proposed",
+        "record_sha256": "a8ca3e33f393f2870de1bbf836d9a986430d9291aa410d87f9e3b868dc053566",
+        "capture_sha256": "3719fe16be0f34bc94eec0d0a997bf05a49d4f5a06429f09525c8ec9b1337a44",
+        "usage": {
+          "input_tokens": 10,
+          "output_tokens": 10,
+          "accounting_units": 1,
+          "certainty": "reported"
+        }
+      }
+    ]
+  },
+  "retained_manifest": ".test-results/planning-extraction-closeout-independent-20261004/manifest.json",
+  "manifest_sha256": "b2de90a0c330bf24f6d54fa2ee5265df63a3c33f2c80c6bb7716782bcaeb9c47",
+  "wheels": {
+    "amphora_agent_planning-0.30.0-py3-none-any.whl": "e5a60bf353a3defa31591b45ea6994214028c1a09fd24f77829d0ef1d2db83c6",
+    "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+    "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+    "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+    "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+    "amphora_contracts_planning-0.7.0-py3-none-any.whl": "0f09c0f8bb69e5b0f33929ed1eb4623d768aae1373b651b9c4bb07f5537da9f1",
+    "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+    "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+  },
+  "runtime_payload_comparison": [
+    {
+      "wheel": "amphora_agent_planning-0.30.0-py3-none-any.whl",
+      "runtime_files": 137,
+      "unchanged": true
+    },
+    {
+      "wheel": "amphora_contracts_artifacts-0.2.0-py3-none-any.whl",
+      "runtime_files": 3,
+      "unchanged": true
+    },
+    {
+      "wheel": "amphora_contracts_campaigns-0.4.1-py3-none-any.whl",
+      "runtime_files": 9,
+      "unchanged": true
+    },
+    {
+      "wheel": "amphora_contracts_commands-0.2.0-py3-none-any.whl",
+      "runtime_files": 3,
+      "unchanged": true
+    },
+    {
+      "wheel": "amphora_contracts_core-0.1.0-py3-none-any.whl",
+      "runtime_files": 2,
+      "unchanged": true
+    },
+    {
+      "wheel": "amphora_contracts_evidence-0.5.13-py3-none-any.whl",
+      "runtime_files": 8,
+      "unchanged": true
+    },
+    {
+      "wheel": "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl",
+      "runtime_files": 13,
+      "unchanged": true
+    },
+    {
+      "wheel": "amphora_contracts_knowledge-0.8.0-py3-none-any.whl",
+      "runtime_files": 12,
+      "unchanged": true
+    },
+    {
+      "wheel": "amphora_contracts_planning-0.7.0-py3-none-any.whl",
+      "runtime_files": 9,
+      "unchanged": true
+    },
+    {
+      "wheel": "amphora_contracts_research-0.14.0-py3-none-any.whl",
+      "runtime_files": 22,
+      "unchanged": true
+    },
+    {
+      "wheel": "amphora_contracts_runtime-0.1.0-py3-none-any.whl",
+      "runtime_files": 5,
+      "unchanged": true
+    },
+    {
+      "wheel": "amphora_contracts_tools-0.1.0-py3-none-any.whl",
+      "runtime_files": 4,
+      "unchanged": true
+    },
+    {
+      "wheel": "amphora_tool_protocol-0.2.0-py3-none-any.whl",
+      "runtime_files": 7,
+      "unchanged": true
+    }
+  ],
+  "reused_actual_peer_evidence": [
+    "Combined_Owner_Acceptance.json",
+    "Process_Failure_Oracles.json",
+    "Semantic_Corpus.json"
+  ],
+  "reuse_basis": "Runtime wheel payloads match prior verified Planning0.30 closure; documentation and test tooling only changed since. Metadata and README bytes excluded from runtime comparison.",
+  "boundary_check": "passed",
+  "published_schemas": 506,
+  "schema_byte_check": "passed",
+  "coverage": "Fresh full-suite compatibility run without coverage instrumentation. Scoped line/branch evidence and gaps retained in module-specific evidence; no new aggregate claim.",
+  "limits": [
+    "Deterministic synthetic provider; no actual model call or scientific quality claim",
+    "No running Runtime campaign, target-host, physical network cancellation or power-loss claim",
+    "Two installs of one source-built implementation, not an independent rewrite"
+  ]
+}

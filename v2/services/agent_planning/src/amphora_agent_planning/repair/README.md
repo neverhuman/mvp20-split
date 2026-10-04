@@ -1,13 +1,13 @@
 # Planning repair authority
 
-- Status: BP-07.02/B2.02b verified; c.i diagnostic construction verified; c.ii execution verified; B2.03b.ii concrete diagnostic publication verified; b.iii owner handoff next.
+- Status: BP-07.02/B2.02b verified; c.i diagnostic construction verified; c.ii execution verified; B2.03b.ii concrete diagnostic publication verified; owner_handoff now supplies verified owner reconciliation.
 - Owner: Planning only. Root authority is explicit owner configuration, never model-generated permission.
 
 RepairRoot rebinds the original extraction task, request and reviewed BudgetPolicy. It derives immutable root/member bytes from exact identities. Children preserve actor, objective, decision scope, runtime cut, model/configuration, prompt, output profile, policy, sources, target and selected scientific records. Actions and limits may narrow. Original context entries and omissions remain pinned; additional entries may only be result context for diagnostics. These records do not prove that new result bodies were read or published; orchestration must establish that separately.
 
 The persistence RepairJournal enrolls a root or child before child attempts. Family totals include the conservative maximum of each reservation, settlement and late report. Root max_attempts, total_tokens and total_accounting_units cover all members. Enrollment is not dispatch, scientific acceptance or permission for new tools. The pure binding.py layer performs no provider or peer I/O; the coordinator delegates those calls to explicit ports. A separately authorized campaign/root is distinct from repair; this module does not claim a program-wide budget cap.
 
-Tests are split between tests/repair for pure preparation and tests/persistence for actual owned PostgreSQL, races and common-runner enforcement. Independent process replacement must preserve exact root/member/request/attempt/trace/charge bytes before release. B2.02c owns repair request composition and bounded orchestration; an automatic publication/owner acceptance loop remains B2.03.
+Tests are split between tests/repair for pure preparation and tests/persistence for actual owned PostgreSQL, races and common-runner enforcement. Independent process replacement must preserve exact root/member/request/attempt/trace/charge bytes before release. B2.02c implemented repair request composition and bounded orchestration; sibling result_publication and owner_handoff supply verified publication and owner reconciliation.
 
 Verified 2026-10-04 08:01:56:588 source tests,570 independently installed tests25 process stages/two builds. Changed persistence/repair/orchestration coverage799 statements118 branches99.78%; only migration CLI outside instrumentation. Family modules217 statements32 branches100%. Installed proof preserves pending reservations and known unsettled overage across fresh processes.
 

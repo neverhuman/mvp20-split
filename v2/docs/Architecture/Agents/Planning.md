@@ -1,8 +1,8 @@
 # LLM Planning and Context
 
-- Design status: scoped immutable context, deterministic provider boundary, conservative budgets and durable bounded orchestration implemented; task extraction/campaign profiles, Runtime engagement acceptance and live model evaluation remain successor scope
+- Design status: immutable context, deterministic provider boundary, conservative budgets, attributed text extraction, bounded repair and durable owner handoff implemented; campaign proposals, Runtime engagement acceptance and live model evaluation remain successor scope
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
-- Last reviewed: `2026-10-04 03:12:46` (America/Chicago)
+- Last reviewed: `2026-10-04 16:51:15` (America/Chicago)
 - Parent: [Domain overview](Agent_Architecture.md)
 - Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#llm-prompt-integration)
 
@@ -50,4 +50,6 @@ Prompt integration and human-decomposition requirements define authority boundar
 
 ## Implemented boundary checkpoint
 
-Agent Planning0.7 and public Planning contracts0.2 implement immutable request/attempt identity, explicit context omissions, bounded reference-only proposals, owned PostgreSQL history, conservative reservation/settlement, once-only local issuance and separate late evidence. [Component audit](../../Audits/BP-07.01_Model_Engagement_Closeout.md) records scoped tests and installed process recovery. This internal package has no public server or live adapter; Knowledge/Research/Runtime keep their acceptance authority. Scientific quality never becomes an implicit global veto. Task-specific extraction and graph proposals deliberately remain subsequent work.
+Agent Planning0.30 and public Planning contracts0.7 preserve the [initial model boundary](../../Audits/BP-07.01_Model_Engagement_Closeout.md) and add versioned attributed text extraction, exact source-byte quotations, immutable failed/repaired traces, aggregate repair budgets and derived Artifact publication. Separate source, Knowledge and Research readers use bounded public interfaces. Owner handoff persists original request bytes before effects and reconciles exact owner records after replacement; it never changes a task's pinned graph head. Knowledge accepts structural changes, Research registers declarations and Data controls processing rights. Candidate answers and model interpretations retain proposal authority.
+
+The [Planning module contract](../../../services/agent_planning/README.md) owns implementation detail and replacement instructions. Actual Data/Research/Knowledge process evidence covers rights withdrawal, lost replies, abrupt Planning exits, exact receipt recovery and future-task correction selection. Reviewed synthetic corpus scoring is software evidence, not scientific entailment or real-model accuracy. This internal package still has no public server or live adapter. Campaign execution proposals and Runtime engagement acceptance are separate successors; no extraction acknowledgment advances a running campaign or makes scientific quality a global veto.

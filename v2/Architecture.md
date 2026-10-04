@@ -1,7 +1,7 @@
 # Amphora Master Architecture
 
 - Design status: v2 bounded synthetic software foundations, durable graph execution, Studio inspection and evidence integration implemented; autonomous model supervision, evolutionary integration and target-host deployment remain successor scope
-- Last reviewed: `2026-10-04 01:40:15` (America/Chicago)
+- Last reviewed: `2026-10-04 16:51:15` (America/Chicago)
 - Scope: system principles, construction boundary and functional responsibility domains
 - Requirement authority: Product_Requirements.md in docs/Architecture/Requirements
 
@@ -56,4 +56,4 @@ These domains are responsibility boundaries, not a mandate for eight deployed se
 
 This master links only to its nine immediate architectural children: system construction and eight functional domains. Each child explains its boundary and links to immediate focused contracts. Read deeper only for the responsibility being changed. Detailed schemas, algorithms, vendor choices, phase trackers and acceptance evidence belong below this level or in their owning delivery records, not in this master.
 
-Implementation is partial: typed contracts, durable invocation/Artifact protocols, isolated tools and deterministic graph execution/observation are implemented and audited. Studio, scientific services and knowledge/LLM reasoning remain pending. Detailed product acceptance remains binding even where a summary omits it; decomposition narrows context, not product scope.
+Implementation is partial: typed contracts, durable invocation/Artifact protocols, isolated tools, deterministic graph execution, Studio inspection and bounded evidence integration are implemented. Attributed text extraction and owner handoff have deterministic software evidence; autonomous campaign supervision, real-model evaluation, scientifically validated capabilities and target-host deployment remain successor work. Detailed product acceptance remains binding even where a summary omits it; decomposition narrows context, not product scope.

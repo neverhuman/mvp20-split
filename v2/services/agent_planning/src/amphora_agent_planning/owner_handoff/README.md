@@ -1,6 +1,6 @@
 # Planning owner handoff
 
-- Status: BP-07.02/B2.03b.iii.a request/receipt values and bounded transport verified; owned storage verified in Planning0.29; coordinator and actual Research recovery verified in Planning0.30; outerB2.03c is current.
+- Status: BP-07.02/B2.03b.iii.a request/receipt values and bounded transport verified; owned storage verified in Planning0.29; coordinator and actual Research recovery verified in Planning0.30; combined actual-owner and abrupt-exit recovery verified; BP-07.02 closeout accepted.
 - Design: [owner submission](../../../../../docs/Build%20Plans/BP-07/BP-07.02%20Owner%20submission.md).
 - Owner: Planning intent/provenance and reconciliation only. Research owns declarations/sufficiency; Knowledge owns structural graph acceptance; Data owns processing rights.
 

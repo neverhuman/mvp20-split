@@ -453,3 +453,21 @@ B3.03 verified 2026-10-04 16:44:01:19 Planning workers/six actual owners prove a
 Archived MBT checkpoint:
 
 | 2026-10-04 04:16:09 | BP-07.02/B1.03b verified; child16.67%,parent23.33%; B1.03c active | Extraction_Journal.json;272 regression plus10 final PG cases;102 statements8 branches100% |
+
+
+## Independent acceptance 2026-10-04 17:01:03
+
+V1.01 verified 2026-10-04 17:01:03:930 independently installed tests494.233s,39 process/replay stages,two fresh0.30 installs and exact retained predecessor history. Runtime payloads match prior actual-owner proof; reuse is explicit. Boundaries/506 schemas pass. Child87.50%,Build100%,Acceptance50%;parent37.50%,7/20. Current V1.02 scoped audit/archive. [Evidence](../Audits/Evidence/BP-07-Extraction/Final_Installation.json).
+
+Archived MBT checkpoint:
+
+| 2026-10-04 04:24:20 | BP-07.02/B1.03 complete; child18.75%,parent23.75%; B1.04a active | [Trace installation](../Audits/Evidence/BP-07-Extraction/Trace_Installation.json);274 source/dev,256 installed17 processes,18 corpus cases |
+
+
+## Text decomposition closeout 2026-10-04 17:03:06
+
+BP-07.02 accepted100%,4/4; parent40%,8/20. Final930 installed tests494.233s,39 process stages and explicit unchanged-runtime reuse of actual-peer/crash/corpus evidence. Scoped audit reconciles stale architecture/module/inventory claims; no blocking drift. Tracker archived, links repaired; BP-07.03 activation next. [Audit](../Audits/BP-07.02_Text_Decomposition_Closeout.md).
+
+Archived MBT checkpoint:
+
+| 2026-10-04 04:31:33 | BP-07.02/B1.04a complete; child20.31%,parent24.06%; B1.04b active | [Processing content](../Audits/Evidence/BP-07-Extraction/Processing_Content.json);176 regression,installed HTTP replacement,read module100% |

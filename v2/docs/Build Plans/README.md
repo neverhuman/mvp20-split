@@ -2,7 +2,7 @@
 
 [Master Build Tracker](Master%20Build%20Tracker.md) selects the primary plan and mirrors its canonical overall/per-phase completion. Owning plans define task position, tests and phase gates.
 
-BP-07.01 is closed; BP-07.02 is active; its canonical tracker identifies the task. Use the canonical tracker/MBT for numeric current phase and percentages. BP-01 through BP-06 are [completed](Completed/README.md); BP-08/09 remain queued. Drafting does not earn implementation credit.
+BP-07.01/.02 are closed; BP-07.03 activation review is next; its canonical tracker identifies implementation readiness. Use the canonical tracker/MBT for numeric current phase and percentages. BP-01 through BP-06 are [completed](Completed/README.md); BP-08/09 remain queued. Drafting does not earn implementation credit.
 
 - [BP-02 Durable Runtime and Artifact Foundation](Completed/BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md).
 - [BP-03 Tool Index and Standalone Execution](Completed/BP-03%20Tool%20Index%20and%20Standalone%20Execution.md).

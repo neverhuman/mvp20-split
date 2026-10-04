@@ -1,10 +1,10 @@
 # Architecture Drift
 
-- Status: BP-06 and BP-07.01 closed/audited; BP-07.02/B1-B3 verified; V1 acceptance active.
-- Last refreshed: `2026-10-04 16:44:01` (America/Chicago).
+- Status: BP-06 and BP-07.01/.02 closed/audited; BP-07.03 activation review next.
+- Last refreshed: `2026-10-04 17:03:06` (America/Chicago).
 - Scope: unresolved v2 design/implementation alignment and scoped successor boundaries.
-- Active focus: text-decomposition proposal/source ownership; no unresolved blocking predecessor finding.
-- Next gate: BP-07.02/V1 independent installation and scoped closeout audit; actual model gates remain subsequent.
+- Active focus: campaign context/proposal boundary; no unresolved blocking predecessor finding.
+- Next gate: BP-07.03 bounded activation audit; actual model gates remain subsequent.
 
 ## Active Findings
 
@@ -14,6 +14,6 @@
 | Starlette/httpx test-client deprecation | Dev tooling, dependency maintenance | Nonblocking; test-client warning is not a production failure |
 | Frozen baseline manifest reports added v1/LICENSE from99d219c while recorded content hashes match | Repository baseline metadata; explicit owner-authorized baseline maintenance | No v1 edits made; not an active implementation blocker |
 
-[BP-06 parent audit](BP-06_Knowledge_Evidence_Closeout.md) reconciles six accepted children. Protocol fixtures, receipt/correction integration, independent reconstruction and scoped views are implemented; old partial notes remain in [drift history](Architecture%20Drift%20History.md). Model extraction, scientific efficacy and deployed operations retain separate gates.
+[BP-06 parent audit](BP-06_Knowledge_Evidence_Closeout.md) reconciles six accepted children. Protocol fixtures, receipt/correction integration, independent reconstruction and scoped views are implemented; old partial notes remain in [drift history](Architecture%20Drift%20History.md). Live-model quality, scientific efficacy and deployed operations retain separate gates.
 
 Use [Development Process](../Development_Process.md) and the [audit template](../Templates/Plan%20Audit%20Template.md). Each discrepancy names evidence, boundary, blocking classification, owner and disposition. Aligned records with no follow-up belong in history.
