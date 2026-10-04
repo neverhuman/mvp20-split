@@ -5,3 +5,7 @@ from .snapshot import ExtractionSnapshot
 from .sources import SourceBundle, SourceText
 
 __all__ = ["ExtractionSnapshot", "PromptTemplate", "SourceBundle", "SourceText"]
+
+from .trace import TraceProjection
+
+__all__ += ["TraceProjection"]

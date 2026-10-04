@@ -9,12 +9,12 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 closed100%; BP-07 primary active; BP-08/09 queued.
-- Last refreshed: `2026-10-04 03:54:55` (America/Chicago).
+- Last refreshed: `2026-10-04 04:07:44` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P6 / BP-07 - Autonomous LLM Campaign Supervision.
-- Primary active task: BP-07.02/Build/B1.03 durable extraction traces and synthetic corpus.
+- Primary active task: BP-07.02/Build/B1.03b PostgreSQL task/trace journal.
 - Next task: BP-07.02/B1.04 actual source/trace/Artifact binding and publication.
-- Implementation completion: BP-07=22.50%,4/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
+- Implementation completion: BP-07=22.92%,4/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
 - Active focus: text-decomposition proposal/source-span contracts; Knowledge owns change acceptance.
 - Blockers: no owner decision blocks deterministic preparation. Live provider/model, egress and spend require explicit choices before real calls.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
@@ -32,15 +32,15 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-07.01 is closed100%. BP-07.02 is primary active; child12.50%,Build16.67%,Acceptance0%.
+BP-07.01 is closed100%. BP-07.02 is primary active; child14.58%,Build19.44%,Acceptance0%.
 
 | Parent | Overall | P1 | P2 | P3 | P4 | P5 |
 |---|---:|---:|---:|---:|---:|---:|
-| BP-07 | 22.50% | 100% | 12.50% | 0% | 0% | 0% |
+| BP-07 | 22.92% | 100% | 14.58% | 0% | 0% | 0% |
 
 | Active child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-07.02](BP-07/BP-07.02%20Reliable%20text%20decomposition.md) | 12.50% | 16.67% | 0% | B1.03 |
+| [BP-07.02](BP-07/BP-07.02%20Reliable%20text%20decomposition.md) | 14.58% | 19.44% | 0% | B1.03b |
 
  BP-06 is [closed100%](Completed/BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md); completed parents are in the [archive](Completed/README.md).
 
@@ -48,7 +48,7 @@ BP-07.01 is closed100%. BP-07.02 is primary active; child12.50%,Build16.67%,Acce
 
 | Canonical plan | Status | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-07 Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | Active | 22.50% | 100% | 12.50% | 0% | 0% | 0% | N/A |
+| [BP-07 Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | Active | 22.92% | 100% | 14.58% | 0% | 0% | 0% | N/A |
 | [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 | [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 
@@ -67,7 +67,7 @@ BP-07.02/B1.03 is current; use the canonical phase mirror above for percentages.
 
 | Order / ID | Completion | Proposed plan | Required predecessor gates | Bounded outcome / exit | Architecture owner |
 |---|---|---|---|---|---|
-| P6 / BP-07 | 22.50% | [Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | BP-03 tool discovery; BP-04 runner; BP-05 UI; BP-06 grounded context/receipts | Model-generated campaign proposals and text-to-graph extraction through validated contracts; durable scoped engagements, stale-proposal/fallback races, bounded repair and truthful terminal blockers; no routine human waits | [Planning](../Architecture/Agents/Planning.md), [Graph Runner](../Architecture/System/Graph_Runner.md) |
+| P6 / BP-07 | 22.92% | [Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | BP-03 tool discovery; BP-04 runner; BP-05 UI; BP-06 grounded context/receipts | Model-generated campaign proposals and text-to-graph extraction through validated contracts; durable scoped engagements, stale-proposal/fallback races, bounded repair and truthful terminal blockers; no routine human waits | [Planning](../Architecture/Agents/Planning.md), [Graph Runner](../Architecture/System/Graph_Runner.md) |
 | P7 / BP-08 | 0% | [Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | BP-04 iteration/checkpoints; BP-06 applicability/evidence; BP-07 for LLM-guided topology | Adapt reusable numerical kernels to explicit generation/checkpoint history, separate representation fixtures and evidence-bound selection; parameter search precedes bounded topology proposals under successor-campaign rules | [Search](../Architecture/Campaigns/Search.md), [reuse baseline](../Architecture/Evolutionary_Code_Reuse_Baseline.md) |
 | P8 / BP-09 | 0% | [Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Selected host/model policy; BP-05/06/07 plus BP-08 for evolutionary demo claims | Reproducible target-host deployment, model/tool eligibility, restore/reconciliation, end-to-end autonomous demo and one independently rebuilt/replaced tool; prove replicated workloads if K3s is selected | [Topology](../Architecture/System/Runtime_Topology.md), [tool services](../Architecture/Capabilities/Tool_Services.md) |
 
@@ -124,6 +124,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-04 04:07:44 | BP-07.02/B1.03a verified; child14.58%,parent22.92%; B1.03b active | Trace_Domain.json;263 tests,64 statements14 branches100%,500 schemas |
 | 2026-10-04 03:14:24 | BP-07.01 closed100%,4/4; parent20%,4/20; BP-07.02 activation next | [Closeout](../Audits/BP-07.01_Model_Engagement_Closeout.md);173 source/installed,11 readback+15 abrupt-recovery processes |
 | 2026-10-04 02:25:10 | B2.01a complete; child29.17%,parent5.83%; B2.01b active; MBT mirror corrected | [Budget policy](../Audits/Evidence/BP-07-Planning/Budget_Policy.json);40 source/dev,108 installed |
 | 2026-10-04 02:17:10 | B1complete; child25%,parent5%; B2.01 active; gates1/4 and1/20 | [Installed journal](../Audits/Evidence/BP-07-Planning/Installed_Journal.json);86 installed,4 processes,2 installs |
@@ -148,6 +149,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-03 21:07:50 | B1.02 complete; child10%,parent85%; B1.03a active | [Knowledge HTTP](../Audits/Evidence/BP-06-Feedback/Knowledge_Projection_HTTP.json);56 source/205 installed,actual process replacement |
 | 2026-10-03 20:57:09 | B1.02a verified; child7.50%,parent84.58%; B1.02b active | [Projection proof](../Audits/Evidence/BP-06-Feedback/Knowledge_Projection.json);25 pure/174 installed,452 schemas |
 | 2026-10-03 20:26:20 | BP-06.06 activated; B1.01 complete,child5%,parent84.17%; B1.02a active | [Scenario protocol](../Audits/Evidence/BP-06-Feedback/Scenario_Manifest.json);30 pure/18 dev,123statements16branches100% |
-| 2026-10-03 20:03:23 | BP-06.05 closed100%; parent83.33%,20/24; BP-06.06 audit next | [Closeout](../Audits/BP-06.05_Representation_Retrieval_Closeout.md);649 installed+4 binding cases,11-wheel independent build |
 
 Keep at most 25 checkpoint rows. [Completed plans](Completed/README.md) remain outside active tables. Update the owning plan first, then this summary and Restore when their state changes.

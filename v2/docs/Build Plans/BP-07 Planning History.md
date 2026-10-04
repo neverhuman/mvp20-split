@@ -183,3 +183,11 @@ Planning0.8/public Planning0.3 add immutable task/source/head/reference binding,
 ## 2026-10-04 03:54:55 ? BP-07.02/B1.02 typed output compatibility
 
 Planning0.9/public Planning0.4 add closed profile catalog, TypedProposal/v1 and observation/v2 while retaining legacy v1 bytes. Conditional planning_0005 allows256KiB encoded v2 overhead only; raw capture/canonical payload remain64KiB.233 source23.52s,233 installed/14 processes/two installs incl retained0.7 readback,18 dev14.82s. Golden0.8 canonical v1 bytes unchanged.496 schemas preserve492 predecessors; profiles53 statements14 branches100%, decoder17 statements100%; service1026/1027 statements151/152 branches (CLI separately executed). Child12.50%,Build16.67%,parent22.50%; B1.03 active. [Evidence](../Audits/Evidence/BP-07-Extraction/Task_Output.json).
+
+## 2026-10-04 04:07:44 - BP-07.02/B1.03a trace projection
+
+Planning0.10/public0.5 adds interpretation-only trace/ref roots and pure immutable projection. Failed/repaired output digests, exact source/target/model/prompt/policy pins, source-claimed/inferred/missing origins retained. Transform steps claim only verified local transformations.263 source/contract/dev tests32.37s;64 statements14 branches100%;500 schemas preserve496 predecessor bytes. Child14.58%,Build19.44%,parent22.92%; B1.03b next. No Data publication or scientific acceptance claim.
+
+Archived MBT checkpoint references (original relative evidence links retained relative to this directory):
+
+| 2026-10-03 20:03:23 | BP-06.05 closed100%; parent83.33%,20/24; BP-06.06 audit next | [Closeout](../Audits/BP-06.05_Representation_Retrieval_Closeout.md);649 installed+4 binding cases,11-wheel independent build |

@@ -19,6 +19,7 @@ from .extraction import (
 )
 from .proposals import ProviderObservation, ReferenceProposal, reference_proposal_schema
 from .task_output import TaskProviderObservation, TypedProposal
+from .trace import ExtractionTrace, ExtractionTraceRef, InterpretationOrigin, InterpretationOutcome
 
 __all__ = [
     "CallLimits", "ContextEntry", "ContextManifest", "ContextOmission", "EngagementRef",
@@ -33,3 +34,4 @@ __all__ += ["AnswerDraft", "EvidenceNeedDraft", "ExtractionAssertion", "Extracti
 
 
 __all__ += ["TaskProviderObservation", "TypedProposal"]
+__all__ += ["ExtractionTrace", "ExtractionTraceRef", "InterpretationOrigin", "InterpretationOutcome"]
