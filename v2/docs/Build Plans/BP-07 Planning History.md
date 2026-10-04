@@ -352,3 +352,13 @@ Archived MBT checkpoint:
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
 | 2026-10-04 09:44:02 | BP-07.02/B2.03a.i complete; child43.06%,parent28.61%; a.ii active | [Knowledge processing](../Audits/Evidence/BP-07-Extraction/Knowledge_Processing.json);325 installed owner cases, actual three-owner rights/replay and9 interruption stages |
+
+## 2026-10-04 10:22:31 ? Result payload and identity values
+
+B2.03b.i complete:Planning0.24 prepares exact diagnostic/answer payloads, complete ancestry and stable effect slots without changing trace publication or public schemas.24 focused cases19.44s cover134 statements6 branches100%;654 installed cases172.00s plus28 process/replay stages pass across two installs. Data0.29 owner-local closed-schema validation accepts the new answer profile. No durable result upload or automatic producer claim; b.ii remains current0%. b33.33%;B2.03=44.44%,B2=81.48%;child45.37%,Build60.49%,parent29.07%;closed1/4 and5/20.
+
+Archived MBT checkpoint:
+
+| Timestamp | Checkpoint | Evidence |
+|---|---|---|
+| 2026-10-04 09:19:31 | BP-07.02/B2.02 complete; child41.67%,parent28.33%; B2.03 active | [Repair workflow](../Audits/Evidence/BP-07-Extraction/Repair_Workflow.json);630 installed28 processes; actual Data7 workers/2 hosts |

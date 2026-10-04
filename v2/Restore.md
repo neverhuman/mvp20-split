@@ -2,11 +2,19 @@
 
 ## Resume here
 
-- Refreshed 2026-10-04 10:06:27 (America/Chicago). **Read this file first after every compression**, explicitly requested by the owner. It was read on the latest compression.
+- Refreshed 2026-10-04 10:22:31 (America/Chicago). **Read this file first after every compression**, as requested by the owner. Done at the latest compression.
 - Continue authorized work across milestones, commits/pushes and compaction. No subagents, JARVIS access or v1 edits. Do not stop simply to report a checkpoint.
-- **Current BP-07.02/B2.03b: Planning durable publication and owner handoff.** Owner prerequisites a.i Knowledge processing and a.ii Research registration are verified complete. Next c actual owner acceptance and accepted typed-correction replay.
-- Latest pushed Knowledge checkpoint **dbb3b258**. Research0.34 checkpoint is verified and ready for final consistency review/commit/push. If already committed, inspect git log before repeating. No b implementation exists yet.
-- Canonical child44.44%, Build59.26%, Acceptance0%,1/4 closed; B1=100%,B2=77.78%,B3/V1=0%. B2 .01/.02=100%,.03=33.33% (a100%,b/c0%). Parent28.89%,5/20 closed; P1=100%,P2=44.44%,others0%. MBT mirrors these values and has25 recent rows.
+- **Current BP-07.02/B2.03b.ii: Durable result publication.** Next b.iii owner submission and receipt binding; c actual combined owner acceptance/rebuild follows b.
+- Latest pushed Research checkpoint **defc00de**, earlier Knowledge dbb3b258. Planning0.24/b.i is now verified and ready for final review/commit/push. Check git log before repeating a commit.
+- Child45.37%,Build60.49%,Acceptance0%,1/4 closed; B1=100%,B2=81.48%,B3/V1=0%. B2 .01/.02=100%,.03=44.44% (a100%,b33.33%,c0%; b i100%,ii/iii0%). Parent29.07%,5/20 closed; P1=100%,P2=45.37%,others0%. MBT mirrors these numbers and has25 recent rows.
+
+## Latest result-payload checkpoint
+
+- Planning/dev0.24; publicPlanning0.7 and planning0001..0009 unchanged. New result_publication values prepare exact feedback and candidate-answer bytes from observed task/trace/source/finalized-interpretation facts. Complete ancestry includes all interpretation inputs plus the interpretation Artifact; no truncation above128 inputs or256KiB body.
+- AnswerRecord is proposal_only/quotation_and_structure_only. Feedback body/profile remains diagnostic_only. New LF-pinned candidate-answer-v1.schema.json has distinct planning.candidate-answer-content/v1 identity; installed Data0.29 JsonSchemaRule accepted it. All506 public schema exports unchanged.
+- ResultIdentity stable slot hashes actor/trace/kind/local key; changing payload or publisher configuration changes immutable identity but retains slot, requiring later journal conflict. Read-only restore does not require a write grant. Existing pure PublicationAttempt checks work with the compatible interface; trace bytes/commands/events unchanged.
+-24 focused tests19.44s,134 statements6 branches100%. Full independent .test-results/planning-result-payloads-independent-20261004/manifest.json passes654 tests172.00s and28 process/replay stages across two installs. Sessions94015 and52284 finished; no active tests/hosts remain. Evidence Result_Payloads.json.
+- Pure values do not prove owned origin/current rights or implement durable upload/automatic diagnostics. b.ii is still0%, no source code for it yet. Module README states this boundary. dev/verify_planning.py now checks the new packaged schema and installs jsonschema only as test tooling.
 
 ## Latest Research registration checkpoint
 
@@ -21,13 +29,13 @@
 
 ## Next authorized work
 
-1. Finish final diff/tracker review and commit/push Research registration if not yet committed, then continue.
-2. Read `docs/Build Plans/BP-07/BP-07.02 Owner handoff and accepted replay.md`, b section; a is complete. Refine b into bounded publication and owner-handoff substeps before coding, preserving its existing weight. Update canonical task mirrors with each verified gate; no design credit.
-3. Planning0.23 already has trace publication, immutable source/proposal binding, repair feedback values, preparation and bounded repair-chain execution. Its configured producer must still supply published diagnostics: production automatic diagnostics/candidate-answer publication and owner submissions are absent. Do not relabel fixture/manual publication as implemented orchestration.
-4. Existing publication module is trace-specific with exact immutable IDs, body/ancestry and fenced events. Read its module README and targeted payload/journal/workflow before deciding narrow reuse. Preserve all old trace bytes/commands. Feedback publication profile is separately pinned; do not change the legacy schema to satisfy Data.
-5. b must load exact stored task/attempt/trace/proposal facts, publish diagnostics/candidate-answer bytes through Data derived uploads with complete ancestry, declare questions before needs, submit graph changes to Knowledge, and durably bind exact owner responses. Stable identities precede external effects; no SQL spans network. Lost replies reconcile original identity, not a fresh submission. Earlier useful items survive unrelated failure.
-6. c later exercises actual Data/Research/Knowledge acceptance, receipt binding and accepted typed-correction rebuild without another model call. Active campaigns never repin; scientific corrections apply to future campaigns only. Weak/contradictory/unknown points remain useful; no global quality veto or human wait.
-7. Closed BP-06 plans stay closed. Update MBT/child/parent/history/Restore before significant commits. Absolute local timestamps with seconds; MBT max25 rows. Live provider/model/egress/spend choices block only real calls; no owner choice blocks deterministic work.
+1. Final consistency review and commit/push Planning0.24/b.i if not already done, then continue.
+2. Read `docs/Build Plans/BP-07/BP-07.02 Result publication.md` for bounded b.ii storage/workflow design; parent owner-handoff doc defines three equal b substeps. No b.ii implementation exists yet.
+3. New result persistence must select an exact owned trace/interpretation and load original actor/task/observation/prior facts. Fresh public source/interpretation processing and selected Research reads occur outside SQL. Store immutable prepared bytes and review witness; replay checks exact historical facts without rereading source payloads or rerunning scientific validation. Do not accept arbitrary caller payloads/acceptance.
+4. Forward Planning0010 is expected for immutable result selection/preparation/events plus separate lease/fence/position controls; applied0001..0009 stay unchanged. Add before applying; never use older migrators after that head advances. Result-specific event formats remain distinct from trace-publication events. Only compatible pure upload-attempt mechanics/public SDK may be reused directly.
+5. Complete real PostgreSQL storage/fencing/replay cases, bounded Data workflow and concrete repair diagnostic producer; actual Data processing/replacement proof belongs to b.ii, combined owner handoff to c. No peer I/O under SQL, no retrying uncertain PUT, no abandoning uncertain finalize, no changed payload creating a fresh effect slot. Keep useful independent outputs.
+6. b.iii later persists Research declaration/Knowledge submissions and exact receipt binding. Owner-handoff diagnostics must come from its stored outcomes. Active campaigns never repin; corrections are future-campaign inputs. Weak/unknown/contradictory points remain useful; no global scientific-quality veto or human wait.
+7. Keep canonical trackers/history/MBT/Restore updated before significant commits. No owner decision blocks deterministic work; live provider/model/egress/spend remain unset and block only real calls. Closed BP-06 plans stay closed.
 
 ## Prior verified foundations
 
@@ -45,7 +53,7 @@
 - Tests use importlib mode, no __init__.py in behavioral folders. Use .absolute(), not .resolve(), on mapped drive. rg --files first; no Windows wildcard operands. Give large parametrized payload cases explicit short ids to avoid Windows temp-path failure/log blowup.
 - **Research0.34:** .test-results/research-declarations-final-independent-20261004/{initial,replacement}/Scripts/python.exe. Previous research-views-http-20261003 is0.33 and must not run migrations again.
 - Knowledge0.18: .test-results/knowledge-processing-independent-20261004/{initial,replacement}/Scripts/python.exe.
-- Planning0.23: .test-results/planning-repair-workflow-final-independent-20261004/{initial,replacement}/Scripts/python.exe.
+- Latest Planning0.24: .test-results/planning-result-payloads-independent-20261004/{initial,replacement}/Scripts/python.exe. Prior0.23 final repair installs remain retained.
 - Data0.29: .test-results/data-processing-content-independent-20261004/environment/Scripts/python.exe.
 - Runtime0.20.2: .test-results/runtime-domain-receipt-peer-20261002/environment/Scripts/python.exe.
 - Old verify_planning_knowledge/research helpers pinPlanning0.20; verify_planning_publication pins0.15. Update before reuse. verify_knowledge_processing.py pinsResearch0.33; its acceptance helper runs Research migrations, so update to0.34 before rerunning on0013. Keep old evidence historically accurate.

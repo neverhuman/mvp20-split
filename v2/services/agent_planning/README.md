@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-- Version:0.23.0; public Planning0.7.0. BP-07.02/B2.02 complete; B2.03 owner handoff active.
+- Version:0.24.0; public Planning0.7.0. BP-07.02/B2.02 complete; B2.03b.i result payloads verified; b.ii durable result publication active.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Canonical progress: [BP-07.02](../../docs/Build%20Plans/BP-07/BP-07.02%20Reliable%20text%20decomposition.md).
 
@@ -27,3 +27,5 @@ Replacement must preserve canonical hashes/bytes, explicit omission semantics, a
 Evidence lives in [BP-07 extraction evidence](../../docs/Audits/Evidence/BP-07-Extraction/); the owning tracker holds current numeric progress. Synthetic cases establish software behavior only. Real provider/model, egress and spend policy remain owner choices before actual calls. The graph-aware packet includes exact schemas and pinned selected owner records; full context-body assembly and tokenizer/context-window fit remain later live adapter/evaluation gates.
 
 Verified 2026-10-04 09:21:08:630 final installed tests,28 process stages/two installations;7 Planning workers/2 actual Data0.29 hosts. Preparation survives replacement, unissued calls recheck processing rights, completed replay makes no new input reads/calls. A separately identified publication feedback schema corrects Data compatibility without rewriting the legacy schema. Detailed [evidence](../../docs/Audits/Evidence/BP-07-Extraction/Repair_Workflow.json) separates scripted graph/model fixtures from actual owner proof.
+
+[result_publication](src/amphora_agent_planning/result_publication/README.md) prepares exact diagnostic and candidate-answer payloads with complete derived ancestry and stable effect slots. Its pure values do not yet implement durable result uploads or owner handoff; those remain B2.03b.ii/.iii. Existing trace publication and public schemas remain unchanged.

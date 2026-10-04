@@ -1,0 +1,61 @@
+{
+  "verified_at": "2026-10-04 10:22:31",
+  "gate": "BP-07.02/B2.03b.i",
+  "status": "passed",
+  "planning": "0.24.0",
+  "public_planning": "0.7.0 unchanged",
+  "installed": {
+    "tests": 654,
+    "seconds": 172.0,
+    "process_stages": 28,
+    "installations": 2,
+    "manifest": ".test-results/planning-result-payloads-independent-20261004/manifest.json"
+  },
+  "focused": {
+    "tests": 24,
+    "seconds": 19.44,
+    "coverage": {
+      "covered_lines": 134,
+      "num_statements": 134,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100",
+      "num_branches": 6,
+      "num_partial_branches": 0,
+      "covered_branches": 6,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    }
+  },
+  "wheels": {
+    "amphora_agent_planning-0.24.0-py3-none-any.whl": "ecfca13f2d26b64e24fea7ab32e345fc1e17724e6f21081e291837725e7ca9ca",
+    "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+    "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+    "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+    "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+    "amphora_contracts_planning-0.7.0-py3-none-any.whl": "0f09c0f8bb69e5b0f33929ed1eb4623d768aae1373b651b9c4bb07f5537da9f1",
+    "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+    "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+  },
+  "schema_compatibility": {
+    "public_schema_count": 506,
+    "unchanged": true,
+    "new_private_profile": "planning.candidate-answer-content/v1",
+    "data_0_29_closed_schema_validation": "passed; installed owner-local JsonSchemaRule"
+  },
+  "limits": [
+    "Pure result preparation and identity, not durable result upload or automatic diagnostics producer",
+    "Scripted result receipts; actual combined owner handoff remains c",
+    "Existing trace publication bytes and planning0001..0009 unchanged",
+    "No scientific acceptance or live model claim"
+  ]
+}

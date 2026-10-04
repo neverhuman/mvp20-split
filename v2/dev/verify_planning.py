@@ -15,10 +15,11 @@ from importlib.metadata import version
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from sqlalchemy import URL
+
 from build_tool_images import closure
 from check_boundaries import ROOT, project_specs
 from postgres_fixture import owned_state, planning_owner
-from sqlalchemy import URL
 
 
 def verify(output, legacy_manifest=None):
@@ -64,6 +65,7 @@ def verify(output, legacy_manifest=None):
         assert any(name.endswith("r0007_trace_publication.sql") for name in archive.namelist())
         assert any(name.endswith("r0008_repair_families.sql") for name in archive.namelist())
         assert any(name.endswith("r0009_repair_preparation.sql") for name in archive.namelist())
+        assert any(name.endswith("result_publication/candidate-answer-v1.schema.json") for name in archive.namelist())
         assert any(name.endswith("repair/feedback-v1.schema.json") for name in archive.namelist())
         assert any(name.endswith("repair/feedback-publication-v1.schema.json") for name in archive.namelist())
         assert any(name.endswith("publication/extraction-trace-v1.schema.json") for name in archive.namelist())
@@ -72,7 +74,8 @@ def verify(output, legacy_manifest=None):
         assert not any("/tests/" in name for name in archive.namelist())
     external = ["pydantic", "pydantic-core", "annotated-types", "typing-extensions", "typing-inspection",
         "sqlalchemy", "psycopg", "psycopg-binary", "alembic", "Mako", "MarkupSafe",
-        "pytest", "pluggy", "packaging", "iniconfig", "colorama", "pygments"]
+        "pytest", "pluggy", "packaging", "iniconfig", "colorama", "pygments",
+        "jsonschema", "jsonschema-specifications", "referencing", "rpds-py", "attrs"]
     constraints = output / "constraints.txt"
     constraints.write_text("\n".join(name + "==" + version(name) for name in external) + "\n", encoding="utf-8")
     interpreters = {}
@@ -81,7 +84,7 @@ def verify(output, legacy_manifest=None):
         run([uv, "venv", "--python", "3.12", installation])
         python = installation / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
         run([uv, "pip", "install", "--python", python, "--constraint", constraints,
-             *sorted(wheels.glob("*.whl")), "pytest"])
+             *sorted(wheels.glob("*.whl")), "pytest", "jsonschema"])
         run([python, "-I", "-c", "import importlib.util,sys; from pathlib import Path; import amphora_agent_planning; "
             "assert Path(amphora_agent_planning.__file__).absolute().is_relative_to(Path(sys.prefix).absolute()); "
             "assert all(importlib.util.find_spec(n) is None for n in "
