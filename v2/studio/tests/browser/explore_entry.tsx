@@ -1,3 +1,8 @@
+import { FeedbackClient } from "../../src/transport/feedback/client.js";
+import { ResearchRecordClient } from "../../src/transport/provenance/research.js";
+import { FeedbackModel } from "../../src/page_models/feedback/model.js";
+import { FeedbackContext } from "../../src/page_models/feedback/context.js";
+import feedbackFixture from "../fixtures/scientific/feedback-browser.json" with { type: "json" };
 import { createRoot } from "react-dom/client";
 import { KnowledgeClient } from "../../src/transport/scientific/knowledge.js";
 import { ResearchClient } from "../../src/transport/scientific/research.js";
@@ -11,7 +16,10 @@ const graph = decodeKnowledge("search_request", { wire_version: "1", revision: f
 const science = decodeResearch("property_request", fixture.research.property_request);
 const model = new ExploreModel({ knowledge: new KnowledgeClient(), research: new ResearchClient(), data: new DataProvenanceClient() });
 model.bind({ graph, experiment: science.experiment, observations: science.observations });
-declare global { interface Window { exploreHarness: { model: ExploreModel } } }
-window.exploreHarness = { model };
-createRoot(document.getElementById("root")!).render(<ExploreWorkspace model={model} synthetic />);
-window.addEventListener("pagehide", () => model.dispose());
+const feedback = new FeedbackModel({ research: new ResearchRecordClient(), feedback: new FeedbackClient() });
+const pins = new FeedbackContext(feedbackFixture.pins as Parameters<typeof feedback.bind>[0] & {}).pins;
+feedback.bind(pins);
+declare global { interface Window { exploreHarness: { model: ExploreModel; feedback: FeedbackModel; feedbackPins: typeof pins } } }
+window.exploreHarness = { model, feedback, feedbackPins: pins };
+createRoot(document.getElementById("root")!).render(<ExploreWorkspace model={model} feedback={feedback} synthetic />);
+window.addEventListener("pagehide", () => { model.dispose(); feedback.dispose(); });

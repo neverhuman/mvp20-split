@@ -17,6 +17,12 @@ const summary = entity => ({ reference: entity.reference, entity_type: entity.en
 export async function startExploreHost() {
   await build({ entryPoints: ['tests/browser/explore_entry.tsx'], bundle: true, outdir: 'dist/explore-browser', format: 'esm', jsx: 'automatic', sourcemap: true });
   const fixture = JSON.parse(await readFile('tests/fixtures/scientific/explore.json', 'utf8'));
+  const feedback = JSON.parse(await readFile('tests/fixtures/scientific/feedback-browser.json', 'utf8'));
+  const many = structuredClone(feedback);
+  many.question.objective = 'A deliberately long research question about measurement context, processing history, confidence and independently repeatable evidence across prepared candidate materials';
+  many.question.criteria = Array.from({ length: 32 }, (_, i) => ({ criterion_id: 'c' + i, description: 'Independent synthetic criterion ' + i }));
+  many.need.criterion_ids = many.question.criteria.map(c => c.criterion_id);
+  many.assessment.outcome.assessment.needs = many.question.criteria.map(c => ({ ...structuredClone(feedback.assessment.outcome.assessment.needs[0]), criterion_id: c.criterion_id, gap: { ...feedback.assessment.outcome.assessment.needs[0].gap, criterion_id: c.criterion_id } }));
   const state = { mode: 'ready', held: null, requests: [] };
   const artifacts = new Map();
   function collect(value) {
@@ -25,7 +31,7 @@ export async function startExploreHost() {
       for (const child of Object.values(value)) collect(child);
     }
   }
-  collect(fixture);
+  collect(fixture); collect(feedback);
   const server = createServer(async (req, res) => {
     const path = new URL(req.url, 'http://localhost').pathname;
     const reply = (status, value) => { res.writeHead(status, { 'content-type': 'application/json', 'cache-control': 'no-store' }); res.end(JSON.stringify(value)); };
@@ -63,6 +69,13 @@ export async function startExploreHost() {
         if (path.endsWith('/content')) { res.writeHead(200, { 'content-type': 'text/plain; charset=utf-8' }); res.end(state.mode === 'corrupt' ? 'X' + fixture.source_text.slice(1) : fixture.source_text); return; }
         if (path.endsWith('/derivation')) { reply(404, {}); return; }
         if (path.includes('/artifacts/')) { const record = artifacts.get(decodeURIComponent(path.split('/').at(-1))); reply(record ? 200 : 404, record ?? {}); return; }
+        if (path.endsWith('/questions/read')) { reply(200, state.mode === 'feedback-long' ? many.question : feedback.question); return; }
+        if (path.endsWith('/evidence-needs/read')) { reply(state.mode === 'feedback-denied' ? 403 : 200, state.mode === 'feedback-long' ? many.need : feedback.need); return; }
+        if (path.endsWith('/assessments/read')) { reply(200, state.mode === 'feedback-pending' ? { ...feedback.assessment, outcome: { status: 'pending' } } : state.mode === 'feedback-long' ? many.assessment : feedback.assessment); return; }
+        if (path.endsWith('/assessment-publications/read')) { reply(200, feedback.publication); return; }
+        if (path.endsWith('/assessment-receipts/select')) { reply(200, query.revision.ordinal === 1 ? feedback.root : feedback.next); return; }
+        if (path.includes('/proposals/')) { reply(200, feedback.proposal); return; }
+        if (path.endsWith('/graph-changes/read')) { reply(200, feedback.change); return; }
         const research = fixture.research;
         if (path.endsWith('/specimens')) {
           reply(200, { ...research.specimen_page, request: query, query_sha256: digest('research.view-query.v1', 'specimens', query), next_position: null }); return;

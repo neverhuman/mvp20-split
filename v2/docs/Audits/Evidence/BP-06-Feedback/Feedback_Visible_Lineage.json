@@ -1,0 +1,39 @@
+{
+  "verified_at": "2026-10-03 23:55:34",
+  "status": "passed",
+  "scope": "BP-06.06 B2.03c visible feedback",
+  "studio_version": "0.6.0",
+  "independent_tests": 210,
+  "browser_scenarios": [
+    "keyboard concept -> bounded graph -> qualified claim -> verified inert source -> conversion",
+    "distinct specimen context -> lossless properties -> original repeated-coordinate series",
+    "keyboard question -> declared method -> qualified contradicted answer -> historical correction -> future proposal -> verified source",
+    "feedback denial clears qualified owner records",
+    "pending assessment remains inspectable without a publication",
+    "long question and 32 need decisions remain bounded at 20 rows with explicit paging",
+    "current content denial clears every protected region",
+    "altered source bytes never become a verified passage",
+    "empty state remains explicit and bounded",
+    "offline state remains explicit and bounded",
+    "paged state remains explicit and bounded",
+    "long state remains explicit and bounded",
+    "hidden domain request cannot repopulate an inactive view"
+  ],
+  "independent_manifest": ".test-results/studio-isolated/13b6837d483c45af8e7ee9c148e23a1e/manifest.json",
+  "visual_review": [
+    "1440 desktop future correction and source",
+    "390 narrow future correction and source",
+    "390 long question and32 criteria"
+  ],
+  "source_browser_artifacts": ".test-results/studio-explore-browser/2026-10-04T04-52-40-333Z",
+  "repairs": [
+    "Removed misleading stale statuses for unselected inspector regions",
+    "Feedback refresh/denial clears linked inspector",
+    "One refresh action per selected view"
+  ],
+  "limits": [
+    "Scripted public HTTP browser fixture",
+    "Actual-owner successor progression remains B2.03d",
+    "No scientific validity or full screen-reader conformance claim"
+  ]
+}

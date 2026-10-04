@@ -1,0 +1,15 @@
+# Question-to-feedback view
+
+User/task: an internal researcher or demo viewer follows a selected question through its declared need, scoped assessment and next-campaign feedback. Primary actions are inspecting evidence and changing the displayed step. No execution or scientific mutation is exposed.
+
+`FeedbackPanel` renders a host-supplied `FeedbackModel` inside Explore's optional Question & feedback tab. `records.tsx` renders assessment and future-proposal details; `style.css` uses the existing workspace tokens. The model owns owner reads, identity checks and status. Presentation owns only the selected step and 20-row decision page. It calls explicit inspector callbacks for Artifact, source span and conversion details; these remain owned by `ExploreModel` and the existing provenance clients.
+
+The four-step navigation has accessible button names and text-selected state. One growing detail region shows the question criteria, declared method, need decisions, publication outcome or future correction/proposal. Decisions page at20; source/conversion links disclose an8-link window; per-decision evidence links disclose a4-link window. Transport bounds total records. Long questions wrap; desktop shares a source inspector, narrow layout stacks it. Scientific qualification is text, not color alone.
+
+Loading, missing context, stale, unavailable, denied and failed states replace owner details. Pending/failed assessments remain visibly distinct from request failures. Leaving the view or hiding the document cancels its reads. Feedback refresh/denial clears the linked inspector so an old source cannot appear to explain a newly selected or inaccessible record. `ExploreModel.clearInspection` cancels old inspector lanes and resets unselected regions to idle.
+
+Structural proposal acceptance is labeled explicitly. Synthetic sufficiency never becomes scientific establishment. Historical and corrected receipt outcomes remain separate, with future applicability and no automatic campaign adoption. Missing assessments/publications/proposals do not manufacture success or require human approval. Measured-result association must follow owner provenance; this view does not infer an experiment from a declared method.
+
+Verification: the owned Explore browser suite traverses question -> need -> qualified answer -> old/new correction -> proposed next graph -> verified inert source; it exercises denial, pending publication-free inspection and32 decisions with20-row paging. Desktop1440/narrow390 accessibility/overflow scans and rendered screenshots accompany scripted public HTTP fixtures. Actual-owner progression is the next B2.03 gate. No live-owner browser, full screen-reader or scientific validation claim is made here.
+
+Replacement must preserve the model/presentation split, explicit pinned context, qualified outcomes, protected-data clearing, bounded decisions, keyboard navigation and source verification. Host owns compatible project context and activation/disposal; Studio does not provide a deployed gateway or global campaign picker.

@@ -42,6 +42,14 @@ export class ExploreModel {
     for (const region of regions) { this.lanes[region].cancel(); next = next.region(region, "stale"); }
     this.publish(next);
   }
+  clearInspection() {
+    if (this.disposed) return;
+    let next = this.projection;
+    for (const region of ["detail", "source", "artifact", "trace", "derivation"] as const) {
+      this.lanes[region].cancel(); next = next.region(region, "idle");
+    }
+    this.publish(next);
+  }
   dispose() { this.disposed = true; this.cancel(); this.listeners.clear(); this.context = null; this.projection = ExploreProjection.empty(null, false); }
 
   search(request: GraphEntitySearchRequest) {

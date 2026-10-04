@@ -54,6 +54,49 @@ try {
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
     await page.screenshot({ path: resolve(output, `properties-${width}.png`), fullPage: true });
   }
+  await page.getByRole('button', { name: 'Question & feedback', exact: true }).click();
+  await page.getByRole('region', { name: 'Selected research question', exact: true }).waitFor();
+  await page.getByRole('button', { name: '02 Evidence need', exact: true }).focus(); await page.keyboard.press('Enter');
+  await page.getByRole('region', { name: 'Predeclared evidence need', exact: true }).waitFor();
+  await page.getByRole('button', { name: '03 Scoped answer', exact: true }).click();
+  await page.getByRole('table', { name: 'Evidence need decisions' }).waitFor();
+  assert.match(await page.getByRole('region', { name: 'Scoped evidence assessment' }).textContent(), /answer contradicted/);
+  await page.getByRole('button', { name: '04 Next campaign', exact: true }).click();
+  await page.getByRole('table', { name: 'Historical and corrected receipts' }).waitFor();
+  assert.match(await page.getByRole('region', { name: 'Future campaign feedback' }).textContent(), /Current campaign pins and committed history stay unchanged/);
+  await page.getByRole('button', { name: 'Read feedback source 1', exact: true }).click();
+  await source.waitFor();
+  for (const width of [1440, 390]) {
+    await page.setViewportSize({ width, height: width === 1440 ? 1000 : 844 });
+    const scan = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
+    assert.deepEqual(scan.violations.map(item => ({ id: item.id, nodes: item.nodes.map(node => node.target) })), []);
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+    await page.screenshot({ path: resolve(output, `feedback-${width}.png`), fullPage: true });
+  }
+  evidence.scenarios.push('keyboard question -> declared method -> qualified contradicted answer -> historical correction -> future proposal -> verified source');
+  host.state.mode = 'feedback-denied'; await page.getByRole('button', { name: 'Refresh feedback', exact: true }).click();
+  await page.getByText('Access denied. Evidence details have been cleared.', { exact: true }).waitFor();
+  assert.equal(await page.getByRole('table', { name: 'Historical and corrected receipts' }).count(), 0);
+  assert.equal(await source.count(), 0);
+  evidence.scenarios.push('feedback denial clears qualified owner records');
+  host.state.mode = 'feedback-pending';
+  await page.evaluate(() => { const h = window.exploreHarness; h.feedback.bind({ ...h.feedbackPins, publication: null, corrections: null }); });
+  await page.getByRole('button', { name: 'Refresh feedback', exact: true }).click();
+  await page.getByRole('button', { name: '03 Scoped answer', exact: true }).click();
+  await page.getByText('Assessment pending. No completed answer is being claimed.', { exact: true }).waitFor();
+  evidence.scenarios.push('pending assessment remains inspectable without a publication');
+  host.state.mode = 'feedback-long'; await page.getByRole('button', { name: 'Refresh feedback', exact: true }).click();
+  await page.getByRole('table', { name: 'Evidence need decisions' }).waitFor();
+  assert.equal(await page.getByRole('table', { name: 'Evidence need decisions' }).locator('tbody tr').count(), 20);
+  await page.getByRole('button', { name: 'Next decisions', exact: true }).click();
+  assert.equal(await page.getByRole('table', { name: 'Evidence need decisions' }).locator('tbody tr').count(), 12);
+  await page.getByRole('button', { name: '01 Question', exact: true }).click();
+  await page.getByText('A deliberately long research question about measurement context, processing history, confidence and independently repeatable evidence across prepared candidate materials', { exact: true }).waitFor();
+  assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+  await page.screenshot({ path: resolve(output, 'feedback-long-390.png'), fullPage: true });
+  evidence.scenarios.push('long question and 32 need decisions remain bounded at 20 rows with explicit paging');
+
+  host.state.mode = 'ready';
   await page.getByRole('button', { name: 'Knowledge graph', exact: true }).click();
   await candidate.click(); await page.getByRole('button', { name: 'Candidate material correlates with Target property', exact: true }).click();
   host.state.mode = 'denied'; await page.getByRole('button', { name: 'Read source passage 1', exact: true }).click();
