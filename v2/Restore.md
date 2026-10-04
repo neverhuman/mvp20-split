@@ -2,15 +2,14 @@
 
 ## Resume here
 
-- Refreshed 2026-10-04 17:18:21 (America/Chicago). **Read first after every compression**.
+- Refreshed 2026-10-04 17:28:41 (America/Chicago). **Read first after every compression**.
 - Continue across milestones/commits/pushes/compaction until genuinely blocked. No subagents, JARVIS access or v1 edits. No milestone-only final pause.
-- **Current BP-07.03/Build/B1.01b: selected Research record/read-set projection.** B1.01a verified; child3.13%,Build4.17%,Acceptance0%,0/4. Parent40.63%,8/20. B1.01a/b equal; a100%,b0%;B1 four equal milestones .01=50%,others0%;B1=12.50%. Use exact unrounded weights.
-- Latest pushed f209a350 closes BP-07.02. New activation/selection checkpoint needs final diff/link review and commit/push, then continue B1.01b. No owner decision blocks deterministic work.
-- **No tests/hosts running.** Pure111 source tests1.04s,111 independently installed tests3.663s; new module67 statements8 branches100%. Independent session77044 passed; output planning-campaign-selection-independent-20261004. Research_Selection.json owns evidence. Production boundaries/Ruff pass;508 schemas preserve all506 predecessor bytes.
-- Planning0.31/public0.8, planning0011 unchanged. New CampaignResearchSelection/CampaignAssessmentSelection DTOs and campaign_context.ResearchSelection factory. Pure immutable scope/purpose/request/duplicate/dependency/Artifact binding only. No status digest verification, owner contact or rights grant yet. Exact explicit historical revisions and selection order preserved; empty selections allowed.
-- B1.01b should bind selected actual ResearchQuestion/EvidenceNeed/completed EvidenceAssessmentStatus records into immutable projections and read sets, verify selected hashes/criteria/dependencies, preserve explicit unavailable/denied inputs and weak/contradictory science. Domain objects own rules; DTOs only transport. Read physical design first.
-- dev/verify_planning_context.py is the scoped pure installer (contracts + context + campaign_context) with no AMPHORA configuration, SQL or migrator. Prior full extraction930/39 and actual peers remain separate0.30 evidence. No test/dev/source edits while verification runs; SQL suites serial.
-- No Planning<=0.28, Research<=0.33 or Data<=0.25 migrators. No fixture reset/deletion. Set PYTHONUTF8=1 for scripts. One normal Ruff broad contract-src run exposed old import formatting; only touched imports fixed.
+- **Current BP-07.03/Build/B1.02: bounded public context/discovery clients.** B1.01a/b verified100%; B1=25%,child6.25%,Build8.33%,Acceptance0%,0/4. Parent41.25%,8/20. Refine owner substeps before implementation; Research selected-record/view client first.
+- Latest pushed990b3cc0 (B1.01a); B1.01b source/tests/docs/evidence ready for diff review then commit/push. BP-07.02 closeout f209a350 remains complete100%.
+- **No tests/hosts running.** Independent62067 passed143 tests4.146s; scoped64 tests1.18s,269 statements44 branches100%. Evidence Research_Context_Records.json; output planning-campaign-records-independent-20261004. Boundaries/Ruff pass;508 schemas unchanged.
+- Planning0.32/public0.8, planning0011 unchanged. campaign_context now has selection, records, record_policy, projection and read_set. ResearchContext.bind accepts only selected immutable records, complete assessment digest/request/actor, explicit missing/denied/pending/failed gaps and scoped dependency findings. Weak/contradictory science retained.1MiB record/4MiB aggregate+packet. ReadSet compares original selected identities and ignores unrelated additions; no latest lookup, active invalidation, SQL, rights or actual-owner claim.
+- Tests under services/agent_planning/tests/campaign_context; pure installation dev/verify_planning_context.py (contracts/context/campaign_context, no AMPHORA env/SQL/migrator). Existing peer_reads offers closed owner profiles; inspect before extending. Research public read routes questions/read, evidence-needs/read and assessments/read (full original request required); typed views use research_views contracts.
+- No Planning<=0.28, Research<=0.33 or Data<=0.25 migrators. No fixture resets/deletion. PYTHONUTF8=1; SQL suites serial; no source/test/dev edits during verification.
 
 ## Latest verification and limits
 
@@ -24,9 +23,9 @@
 
 ## Next authorized work
 
-1. Commit/push verified B1.01a checkpoint after diff/link checks. Continue B1.01b actual selected-record/read-set values and pure verification. B1.02 public owner clients follows; no milestone pause.
-2. Next record boundary must distinguish valid selected immutable records, unavailable/pending inputs, explicit contradictions and identity/hash conflicts. It must not claim owner contact or invent scientific acceptance. Same-question historical revisions remain explicit; no latest substitution.
-3. Keep canonical milestone percentages synchronized before each implementation commit. Live provider/model/egress/spend choices block only actual calls. Continue deterministic work.
+1. Finish B1.01b diff/link checks, commit/push verified checkpoint, then continue B1.02. Refine four owner substeps: Research selected records/views, Registry+Runtime metadata, Data retrieval+Knowledge, actual-owner integration. Fix exact interfaces/limits and pure versus actual-peer gates before coding.
+2. Existing Runtime exposes definition-universe/schema and draft save/read/validate/receipt APIs. Do not import its compiler privately. Registry pages max100; Runtime reviewed universe max64.300-descriptor metadata acceptance remains B3, not300 scientific tools.
+3. Preserve current-campaign pins; later context/read-set checks do not establish active receipt invalidation. Missing/weak science stays visible. Provider/model/egress/spend choices block only real calls; continue deterministic work.
 
 ## Canonical navigation and prior evidence
 

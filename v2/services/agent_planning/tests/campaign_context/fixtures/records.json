@@ -1,0 +1,290 @@
+{
+  "question": {
+    "wire_version": "1",
+    "reference": {
+      "scope": {
+        "tenant_id": "planning-fixture",
+        "project_id": "context"
+      },
+      "question_id": "question-1",
+      "revision": 1
+    },
+    "objective": "Which synthetic observation would reduce this uncertainty?",
+    "applicability": {
+      "scope": {
+        "tenant_id": "planning-fixture",
+        "project_id": "context"
+      },
+      "artifact_id": "source",
+      "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "media_type": "text/plain",
+      "schema_ref": {
+        "schema_id": "fixture.text",
+        "version": "1",
+        "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+      },
+      "size_bytes": 12
+    },
+    "criteria": [
+      {
+        "criterion_id": "criterion-1",
+        "description": "A matching observation with explicit context."
+      }
+    ],
+    "supersedes": null
+  },
+  "need": {
+    "wire_version": "1",
+    "reference": {
+      "scope": {
+        "tenant_id": "planning-fixture",
+        "project_id": "context"
+      },
+      "need_id": "need-1",
+      "revision": 1
+    },
+    "question": {
+      "scope": {
+        "tenant_id": "planning-fixture",
+        "project_id": "context"
+      },
+      "question_id": "question-1",
+      "revision": 1
+    },
+    "criterion_ids": [
+      "criterion-1"
+    ],
+    "method": {
+      "schema_id": "fixture.measurement",
+      "version": "1",
+      "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    },
+    "required_context": {
+      "scope": {
+        "tenant_id": "planning-fixture",
+        "project_id": "context"
+      },
+      "artifact_id": "source",
+      "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "media_type": "text/plain",
+      "schema_ref": {
+        "schema_id": "fixture.text",
+        "version": "1",
+        "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+      },
+      "size_bytes": 12
+    },
+    "supersedes": null
+  },
+  "assessment": {
+    "wire_version": "1",
+    "request": {
+      "wire_version": "1",
+      "assessment_id": "assessment-1",
+      "profile": {
+        "scope": {
+          "tenant_id": "planning-fixture",
+          "project_id": "context"
+        },
+        "profile_id": "fixture-assessment",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "question": {
+        "scope": {
+          "tenant_id": "planning-fixture",
+          "project_id": "context"
+        },
+        "question_id": "question-1",
+        "revision": 1
+      },
+      "answers": [
+        {
+          "criterion_id": "criterion-1",
+          "artifact": {
+            "scope": {
+              "tenant_id": "planning-fixture",
+              "project_id": "context"
+            },
+            "artifact_id": "source",
+            "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+            "media_type": "text/plain",
+            "schema_ref": {
+              "schema_id": "fixture.text",
+              "version": "1",
+              "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+            },
+            "size_bytes": 12
+          }
+        }
+      ],
+      "receipts": [
+        {
+          "scope": {
+            "tenant_id": "planning-fixture",
+            "project_id": "context"
+          },
+          "artifact_id": "source",
+          "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+          "media_type": "text/plain",
+          "schema_ref": {
+            "schema_id": "fixture.text",
+            "version": "1",
+            "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+          },
+          "size_bytes": 12
+        }
+      ]
+    },
+    "actor_id": "fixture",
+    "outcome": {
+      "status": "assessed",
+      "assessment": {
+        "wire_version": "1",
+        "authority": "synthetic",
+        "request": {
+          "wire_version": "1",
+          "assessment_id": "assessment-1",
+          "profile": {
+            "scope": {
+              "tenant_id": "planning-fixture",
+              "project_id": "context"
+            },
+            "profile_id": "fixture-assessment",
+            "version": "1",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "question": {
+            "scope": {
+              "tenant_id": "planning-fixture",
+              "project_id": "context"
+            },
+            "question_id": "question-1",
+            "revision": 1
+          },
+          "answers": [
+            {
+              "criterion_id": "criterion-1",
+              "artifact": {
+                "scope": {
+                  "tenant_id": "planning-fixture",
+                  "project_id": "context"
+                },
+                "artifact_id": "source",
+                "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+                "media_type": "text/plain",
+                "schema_ref": {
+                  "schema_id": "fixture.text",
+                  "version": "1",
+                  "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+                },
+                "size_bytes": 12
+              }
+            }
+          ],
+          "receipts": [
+            {
+              "scope": {
+                "tenant_id": "planning-fixture",
+                "project_id": "context"
+              },
+              "artifact_id": "source",
+              "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+              "media_type": "text/plain",
+              "schema_ref": {
+                "schema_id": "fixture.text",
+                "version": "1",
+                "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+              },
+              "size_bytes": 12
+            }
+          ]
+        },
+        "actor_id": "fixture",
+        "purpose": "fixture_assessment",
+        "subject": {
+          "scope": {
+            "tenant_id": "planning-fixture",
+            "project_id": "context"
+          },
+          "artifact_id": "source",
+          "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+          "media_type": "text/plain",
+          "schema_ref": {
+            "schema_id": "fixture.text",
+            "version": "1",
+            "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+          },
+          "size_bytes": 12
+        },
+        "answered": true,
+        "disposition": "contradicted",
+        "sufficient": false,
+        "scientifically_established": false,
+        "needs": [
+          {
+            "criterion_id": "criterion-1",
+            "need": {
+              "scope": {
+                "tenant_id": "planning-fixture",
+                "project_id": "context"
+              },
+              "need_id": "need-1",
+              "revision": 1
+            },
+            "supporting": [],
+            "contradicting": [
+              {
+                "scope": {
+                  "tenant_id": "planning-fixture",
+                  "project_id": "context"
+                },
+                "artifact_id": "source",
+                "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+                "media_type": "text/plain",
+                "schema_ref": {
+                  "schema_id": "fixture.text",
+                  "version": "1",
+                  "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+                },
+                "size_bytes": 12
+              }
+            ],
+            "gap": {
+              "criterion_id": "criterion-1",
+              "need": {
+                "scope": {
+                  "tenant_id": "planning-fixture",
+                  "project_id": "context"
+                },
+                "need_id": "need-1",
+                "revision": 1
+              },
+              "reason": "evidence_contradicted"
+            }
+          }
+        ],
+        "reviews": [
+          {
+            "receipt": {
+              "scope": {
+                "tenant_id": "planning-fixture",
+                "project_id": "context"
+              },
+              "artifact_id": "source",
+              "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+              "media_type": "text/plain",
+              "schema_ref": {
+                "schema_id": "fixture.text",
+                "version": "1",
+                "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+              },
+              "size_bytes": 12
+            },
+            "reason": "contradicting"
+          }
+        ]
+      }
+    }
+  }
+}

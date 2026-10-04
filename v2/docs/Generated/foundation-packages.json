@@ -145,7 +145,7 @@
   },
   {
     "package": "amphora-agent-planning",
-    "version": "0.31.0",
+    "version": "0.32.0",
     "path": "services/agent_planning",
     "module": "amphora_agent_planning",
     "public_dependencies": [

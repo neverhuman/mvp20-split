@@ -1,6 +1,6 @@
 # Campaign Research context selection
 
-- Status: BP-07.03/B1.01a verified; Planning0.31/public Planning0.8.
+- Status: BP-07.03/B1.01a verified; B1.01b selected-record projection verified. Planning0.32/public Planning0.8.
 - Owner: Planning immutable selection and request binding. Research owns records/assessment; Runtime owns campaign validation/execution.
 - Design: [campaign context](../../../../../docs/Build%20Plans/BP-07/BP-07.03%20Physical%20design.md).
 
@@ -13,3 +13,16 @@ Limits:64 questions,64 needs,32 assessments and256KiB total canonical selection.
 Tests are owned by tests/campaign_context; public wire tests by contracts/planning/tests/test_campaign_context.py. The fixture request is adapted from the existing local context fixture with campaign purpose/actions. Its exact request/selection digests establish canonical compatibility, not real-owner contact. Replacement preserves byte format, scoped identities, deliberate revision/order distinctions and explicit missing authority. No migration or historical schema change accompanies this additive selection root.
 
 Verified 2026-10-04 17:18:21:111 source/111 independently installed cases;67 statements8 branches100%. [Evidence](../../../../../docs/Audits/Evidence/BP-07-Campaigns/Research_Selection.json). No persisted record/owner-contact claim.
+
+
+## Selected records and relevance
+
+ResearchIdentity binds a closed question/need/assessment identity from existing public DTOs. ResearchRecord stores revalidated immutable body bytes and digest. ResearchContext.bind revalidates its original selection, admits only selected records once, orders retained records by authored selection, and adds explicit gaps for every missing input. Supplied denied/unavailable gaps cannot alias a supplied record or unselected identity. Pending/failed assessment responses become gaps; completed statuses must match the expected digest and original request/actor relationships.
+
+ResearchRecordPolicy validates public scope, predecessor and criterion/need relationships without recomputing scientific evaluation. Missing selected questions/needs produce explicit dependency findings while other records survive. Unselected dependency references stay visible; they do not silently become selected context. Contradicted/unknown/supported, answered/sufficient and scientific authority are retained exactly. Assessment evidence references must bind its original receipt selection. Pure factories do not prove Research contact or current source rights.
+
+The private packet format is planning-campaign-research-context.v1 with selected_metadata_only authority. Each record is at most1MiB; total input record bytes and final packet are at most4MiB. Question/need/assessment counts remain64/64/32. Oversized records fail explicitly; nothing is silently truncated. ResearchGap owns finite unavailable reasons. Returned records and canonical projections retain no caller-mutable DTOs. Use the validated factories at boundaries; direct dataclass construction is internal, not proof of provenance.
+
+ResearchReadSet binds each selected available record digest or explicit absence. changes(observed) reports changed/missing original identities and ignores extra unrelated records. It performs no latest lookup, repinning, source read, active-campaign invalidation or execution acceptance. Later proposal policy chooses the relevant selected dependencies; this object only compares supplied observations. Tests retain weak evidence, exercise appearance/disappearance and show unrelated selected records cannot invalidate an existing read set. No scientific sufficiency is inferred from a zero-change comparison.
+
+Verified 2026-10-04 17:28:41:64 focused/143 independently installed cases;269 statements44 branches100% across this module. [Record evidence](../../../../../docs/Audits/Evidence/BP-07-Campaigns/Research_Context_Records.json). Actual owner contact remains the next boundary.

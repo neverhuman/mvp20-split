@@ -489,3 +489,12 @@ B1.01a verified 2026-10-04 17:18:21:Planning0.31/public0.8 pure CampaignResearch
 Archived MBT checkpoint:
 
 | 2026-10-04 04:54:02 | BP-07.02/c.i complete; child22.40%,parent24.48%; c.ii active | [Publication values](../Audits/Evidence/BP-07-Extraction/Publication_Values.json);351 tests,158 statements2 branches100% |
+
+
+## Research context records 2026-10-04 17:28:41
+
+B1.01b verified 2026-10-04 17:28:41:Planning0.32/public0.8 selected records, explicit unavailable inputs, exact assessment binding and relevant read-set comparison.64 focused tests1.18s,269 statements44 branches100%;143 installed tests4.146s.508 schemas/planning0011 unchanged; no actual owner/source/scientific authority claim. B1.01 complete;child6.25%,Build8.33%,parent41.25%,closed0/4 and8/20. Current B1.02. [Evidence](../Audits/Evidence/BP-07-Campaigns/Research_Context_Records.json).
+
+Archived MBT checkpoint:
+
+| 2026-10-04 05:11:45 | BP-07.02/c.ii complete; child22.92%,parent24.58%; c.iii active | [Publication journal](../Audits/Evidence/BP-07-Extraction/Publication_Journal.json);375 tests,469 statements28 branches100% |
