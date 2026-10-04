@@ -1,0 +1,357 @@
+{
+  "search_request": {
+    "wire_version": "1",
+    "revision": {
+      "graph": {
+        "scope": {
+          "tenant_id": "synthetic",
+          "project_id": "knowledge"
+        },
+        "graph_id": "domain"
+      },
+      "revision": 1,
+      "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+    },
+    "text": "",
+    "entity_type": null,
+    "history": "current",
+    "limit": 50,
+    "position": null
+  },
+  "search_page": {
+    "wire_version": "1",
+    "request": {
+      "wire_version": "1",
+      "revision": {
+        "graph": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "knowledge"
+          },
+          "graph_id": "domain"
+        },
+        "revision": 1,
+        "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+      },
+      "text": "",
+      "entity_type": null,
+      "history": "current",
+      "limit": 50,
+      "position": null
+    },
+    "query_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "total": 1,
+    "entities": [
+      {
+        "reference": {
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "knowledge"
+            },
+            "graph_id": "domain"
+          },
+          "entity_id": "A",
+          "revision": 1
+        },
+        "entity_type": "concept",
+        "label": "A",
+        "is_latest": true,
+        "alias_target": null
+      }
+    ],
+    "next_position": null
+  },
+  "neighborhood_request": {
+    "wire_version": "1",
+    "revision": {
+      "graph": {
+        "scope": {
+          "tenant_id": "synthetic",
+          "project_id": "knowledge"
+        },
+        "graph_id": "domain"
+      },
+      "revision": 1,
+      "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+    },
+    "focus": {
+      "graph": {
+        "scope": {
+          "tenant_id": "synthetic",
+          "project_id": "knowledge"
+        },
+        "graph_id": "domain"
+      },
+      "entity_id": "A",
+      "revision": 1
+    },
+    "radius": 1,
+    "history": "current",
+    "entity_limit": 64,
+    "assertion_limit": 128,
+    "position": null
+  },
+  "neighborhood_page": {
+    "wire_version": "1",
+    "request": {
+      "wire_version": "1",
+      "revision": {
+        "graph": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "knowledge"
+          },
+          "graph_id": "domain"
+        },
+        "revision": 1,
+        "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+      },
+      "focus": {
+        "graph": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "knowledge"
+          },
+          "graph_id": "domain"
+        },
+        "entity_id": "A",
+        "revision": 1
+      },
+      "radius": 1,
+      "history": "current",
+      "entity_limit": 64,
+      "assertion_limit": 128,
+      "position": null
+    },
+    "query_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "entity_total": 2,
+    "assertion_total": 1,
+    "entities": [
+      {
+        "reference": {
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "knowledge"
+            },
+            "graph_id": "domain"
+          },
+          "entity_id": "A",
+          "revision": 1
+        },
+        "entity_type": "concept",
+        "label": "A",
+        "is_latest": true,
+        "alias_target": null
+      }
+    ],
+    "assertions": [
+      {
+        "reference": {
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "knowledge"
+            },
+            "graph_id": "domain"
+          },
+          "assertion_id": "claim",
+          "revision": 1
+        },
+        "subject": {
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "knowledge"
+            },
+            "graph_id": "domain"
+          },
+          "entity_id": "A",
+          "revision": 1
+        },
+        "predicate": "correlates_with",
+        "object": {
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "knowledge"
+            },
+            "graph_id": "domain"
+          },
+          "entity_id": "B",
+          "revision": 1
+        },
+        "polarity": "affirmed",
+        "posture": "hypothesis",
+        "is_latest": true,
+        "retracted": false
+      }
+    ],
+    "unresolved_entities": [
+      {
+        "graph": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "knowledge"
+          },
+          "graph_id": "domain"
+        },
+        "entity_id": "B",
+        "revision": 1
+      }
+    ],
+    "next_position": {
+      "query_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "entity_offset": 1,
+      "assertion_offset": 1
+    }
+  },
+  "object_request": {
+    "wire_version": "1",
+    "revision": {
+      "graph": {
+        "scope": {
+          "tenant_id": "synthetic",
+          "project_id": "knowledge"
+        },
+        "graph_id": "domain"
+      },
+      "revision": 1,
+      "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+    },
+    "selection": {
+      "kind": "entity",
+      "reference": {
+        "graph": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "knowledge"
+          },
+          "graph_id": "domain"
+        },
+        "entity_id": "A",
+        "revision": 1
+      }
+    }
+  },
+  "object_detail": {
+    "wire_version": "1",
+    "request": {
+      "wire_version": "1",
+      "revision": {
+        "graph": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "knowledge"
+          },
+          "graph_id": "domain"
+        },
+        "revision": 1,
+        "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+      },
+      "selection": {
+        "kind": "entity",
+        "reference": {
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "knowledge"
+            },
+            "graph_id": "domain"
+          },
+          "entity_id": "A",
+          "revision": 1
+        }
+      }
+    },
+    "detail": {
+      "kind": "entity",
+      "record": {
+        "reference": {
+          "graph": {
+            "scope": {
+              "tenant_id": "synthetic",
+              "project_id": "knowledge"
+            },
+            "graph_id": "domain"
+          },
+          "entity_id": "A",
+          "revision": 1
+        },
+        "entity_type": "concept",
+        "label": "A",
+        "context": {
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "knowledge"
+          },
+          "artifact_id": "context",
+          "sha256": "25a5a709c010d1b37b62b58abc5944713d6e742bd634b04bf4da746772db95d8",
+          "size_bytes": 47,
+          "media_type": "text/plain",
+          "schema_ref": {
+            "schema_id": "fixture.context",
+            "version": "1",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        "supersedes": null
+      },
+      "is_latest": true,
+      "alias_target": null
+    }
+  },
+  "catalog": {
+    "wire_version": "1",
+    "owner": "knowledge",
+    "revision": {
+      "graph": {
+        "scope": {
+          "tenant_id": "synthetic",
+          "project_id": "knowledge"
+        },
+        "graph_id": "domain"
+      },
+      "revision": 1,
+      "sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+    },
+    "views": [
+      {
+        "view_id": "entity_search",
+        "version": "1",
+        "result_schema": {
+          "schema_id": "knowledge.entity-search-page",
+          "version": "1",
+          "sha256": "b8242e0a174460ea260da1e2acdce718066a720cc168af79eba593a77a146b0b"
+        }
+      },
+      {
+        "view_id": "neighborhood",
+        "version": "1",
+        "result_schema": {
+          "schema_id": "knowledge.neighborhood-page",
+          "version": "1",
+          "sha256": "643a4a591788af1b1cadbc23c2917cb20eb16b46568016621e63b8447ac3c86a"
+        }
+      },
+      {
+        "view_id": "object_detail",
+        "version": "1",
+        "result_schema": {
+          "schema_id": "knowledge.object-detail",
+          "version": "1",
+          "sha256": "49e0e757373fa7c8cf55b96db04493ae83c9676b2a5bdb41a44386e91cecfcb1"
+        }
+      }
+    ],
+    "limits": {
+      "search_page": 50,
+      "entity_page": 64,
+      "assertion_page": 128,
+      "radius": 2,
+      "response_bytes": 1048576,
+      "source_fetch": "separate_data_authority"
+    }
+  }
+}

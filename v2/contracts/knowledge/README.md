@@ -1,8 +1,10 @@
 # Knowledge Wire Contracts
 
+Current package0.8.0 adds bounded exact-revision entity search, neighborhood, object detail and capability catalog DTOs. Seven new roots publish14 schema files; existing schemas remain unchanged. Positions bind the full query, but only the owner authenticates scope and exact snapshot membership. Projection/history policy lives in Knowledge exploration, not these DTOs.
+
 Version0.7.0 adds CorrectReasoningReceipt and SelectReasoningReceipt for reference-only source correction and explicit selection. Shared ReceiptCorrectionView returns the exact reference plus record. Existing publication and reasoning schemas remain unchanged; owner policy and persistence are outside DTOs.
 
-- Package: amphora-contracts-knowledge0.7.2; BP-06.02/B1 contract boundary implemented.
+- Package: amphora-contracts-knowledge0.8.0; BP-06.02/B1 contract boundary implemented.
 - Design: [Knowledge authoring](../../docs/Architecture/Knowledge/Authoring.md); [activation decisions](../../docs/Audits/BP-06.02_Activation.md).
 
 Public imports describe scoped graph/entity/assertion identities, a pinned predicate vocabulary, source grounding, exact Research question/need links, discriminated typed edits, proposals, structural acceptance decisions and immutable snapshots. Dependencies are public Core0.1.0, Evidence0.5.7 and Research0.8.0 plus Pydantic. No service implementation, database, I/O, agent or scientific policy belongs here.

@@ -41,3 +41,5 @@ Optional science hosting is documented in the scientific API module. config.scie
 Explicit directed conversion catalogs preserve original decimal values, units, censoring, uncertainty and series order. Unknown conversions remain unresolved. Durable interpretation pins the entire reviewed profile, actor and exact input revisions before fresh Data access; completed results replay offline.
 
 Weak and contradictory evidence remains visible for exploratory use and next-campaign focus. Only explicit prerequisites block a named action. Correction views and known dependent indexes preserve original pending pins and committed history; no global consumer discovery or scientific truth is inferred. The separately granted interpretation API exposes normalization, observation-use and impact/correction reads.
+
+BP-06.06/B1.02 compatibility0.31.1 changes only the exact public Knowledge contract dependency to0.8.0. No Research behavior, schema or migration change.

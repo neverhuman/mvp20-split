@@ -1,5 +1,11 @@
 # BP-06 Planning History
 
+## B1.02a projection boundary verified - 2026-10-03 20:57:09
+
+Knowledge0.8/owner0.16 and dependency-only Research0.31.1;452 schemas preserve438 old bytes.25 pure tests,208 statements/30 branches100%;174 final isolated tests without peer implementations;149 source compatibility/dev tests. Alias/context/history retained exactly, literal bounded search and induced neighborhoods. No actual HTTP claim yet. B1=30%,Build10%,child7.50%,parent84.58%; b owner/API active. Final wheel rebuild followed import-format repair.
+
+| 2026-10-03 14:15:48 | B1.04a complete; child13.54%, parent68.92%; B1.04b active | [Binding models](../Audits/Evidence/BP-06-Representations/Binding_Models.json);121 source/121 installed; no schema/migration change |
+
 ## BP-06.06 activation and scenario protocol - 2026-10-03 20:26:20
 
 Activation corrected_ready against actual owner APIs; no private joins or Runtime scientific-catalog expansion. B1 five/B2 four/B3 four/V1 two equal internal milestones preserve parent24-unit basis. B1.01 pure manifest and capability map implemented;30tests2.634s,123statements16branches100%;18dev15.87s. Bounded strict JSON, nested scope checks, exact source/graph pins, distinct specimens and immutable fingerprints; declared fixture only, no actual-owner claim. Repaired documented Data granular selectors; collection succeeds. Initial test-name length/coverage-path harness errors corrected and rerun. B1=20%,Build6.67%,child5%,parent84.17%;0/4 child/20/24 parent closed gates. B1.02a contracts/pure Knowledge projection active; b owner/API later, equal halves.

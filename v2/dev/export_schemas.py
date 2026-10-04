@@ -93,6 +93,13 @@ for name, model in {
 
 
 for name, model in {
+    "entity-search-request": knowledge_contracts.GraphEntitySearchRequest,
+    "entity-search-page": knowledge_contracts.GraphEntitySearchPage,
+    "neighborhood-request": knowledge_contracts.GraphNeighborhoodRequest,
+    "neighborhood-page": knowledge_contracts.GraphNeighborhoodPage,
+    "object-request": knowledge_contracts.GraphObjectRequest,
+    "object-detail": knowledge_contracts.GraphObjectDetail,
+    "explore-catalog": knowledge_contracts.GraphExploreCatalog,
     "vocabulary": knowledge_contracts.DomainVocabulary,
     "proposal": knowledge_contracts.GraphChangeProposal,
     "proposal-status": knowledge_contracts.GraphProposalStatus,

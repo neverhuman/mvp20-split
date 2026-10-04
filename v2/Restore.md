@@ -2,12 +2,11 @@
 
 ## Current checkpoint
 
-- Last refreshed: 2026-10-03 20:26:20 (America/Chicago).
-- BP-06.05 closed/pushed1758c99; BP-06.06 active B1.02a bounded Knowledge projection contracts/policy. B1.01 complete; B1=20%,Build6.67%,child5%,parent84.17%=(20+1/5)/24. Closed gates0/4 child,20/24 parent. Continue without routine pauses.
-- Current uncommitted checkpoint: activation audit/physical design, pure scenario protocol and Data CLI selector repair.30tests2.634s,123statements16branches100%,18dev15.87s;lint/import boundary/selector collection pass. Evidence docs/Audits/Evidence/BP-06-Feedback/Scenario_Manifest.json. No tests running. Commit/push then continue B1.02a.
-- Protocol source tests/integration/knowledge_feedback/protocol (wire DTOs plus immutable ScenarioManifest/ScopeBoundary/SpecimenSet); tests at owning root, registered knowledge-feedback-integration. Pure declared fixtures only, no actual owner evidence or production schema change. Initial huge pytest parameter ids and file coverage targets corrected; rerun passed.
-- B1.02 two equal substeps: a additive query/projection contracts and pure bounded Knowledge policy; b actual owner/API proof. Both0%,a active. Read activation/physical design before code. Need public contract version evolution preserving predecessor schemas; focused service projection domain objects and module README. Source bounds search50/entities64/assertions128/1MiB, exact immutable revision/query scope, radius0..2, no browser universe download. Actual full snapshot content can4096entities/8192assertions.
-- Independent prior Data0.28 closure11wheels,649installed+4binding tests. No private peers. Whole coverage4628/4782statements852/950branches; representations1259/1260,129/130;retrieval1248/1260,145/152. Prior audit/evidence archived; do not reopen.
+- Last refreshed: 2026-10-03 20:57:09 (America/Chicago).
+- BP-06.05 closed1758c99; BP-06.06 B1.02a verified, pending commit/push. B1=30%,Build10%,child7.50%,parent84.58%;0/4 child,20/24 parent closed gates. Active B1.02b actual Knowledge owner/API, then B1.03 Research views. Continue without milestone pauses.
+- Projection source exploration/index.py/query.py/projection.py;25 pure tests,208 statements/30 branches100%.174 final independent Knowledge authoring/replay/exploration/contracts,149 dev/contract/Research identity tests. Boundaries/schema checks and changed-file lint pass. No tests running.
+- Source publicKnowledge0.8/Knowledge0.16/Research0.31.1 dependency-only;452 schemas preserve438 old files. Locks synced. Final isolated Knowledge .test-results/knowledge-exploration-final-20261003/environment/Scripts/python.exe; manifest/wheel hashes beside it. No HTTP projection routes yet.
+- Read focused BP-06.06 Knowledge exploration design.md and module README. B1.02b adds authenticated exact-ledger reads with read_graph; existing ledger.snapshot checks grants/scope/hash and immutable publications. Route tests under owning exploration folder; real PG plus actual installed HTTP/replacement. No schema/migration change expected. Existing transport/api.py invoke supports safe status mapping; stored corruption must503, bad query409, denied403, absent404. No source bytes or implicit head-following.
 
 ## Next activation scope
 
@@ -22,10 +21,10 @@ Knowledge has exact graph profile/head/snapshot/change/rebuild/reasoning/correct
 
 ## Retained installations and fixtures
 
-- Source/dev Data0.28.0, public representations0.3.0,438schemas, artifact_0012. Data<=0.25 migrators must never touch0012. No reset/downgrade.
+- Source/dev Data0.28.0, public representations0.3.0,452schemas (438 unchanged predecessors), artifact_0012. Data<=0.25 migrators must never touch0012. No reset/downgrade.
 - Latest independent Data: .test-results/data-retrieval-closeout-20261003/environment/Scripts/python.exe. Manifest/constraints/build.log/results.xml/binding-gaps.xml/coverage-final.json alongside. pytest/httpx/pytest-cov installed.
 - Actual suites: AMPHORA_TEST_POSTGRES=1, AMPHORA_TEST_QDRANT=1. Set AMPHORA_TEST_DATA_REPLACEMENT_PYTHON, AMPHORA_TEST_REPRESENTATION_PYTHON, AMPHORA_TEST_QDRANT_PYTHON, AMPHORA_TEST_QUERY_PYTHON, AMPHORA_TEST_RETRIEVAL_HTTP_PYTHON, AMPHORA_TEST_RETRIEVAL_PROCESS_PYTHON to latest isolated Data.
-- Research child .test-results/research-laboratory-closeout-20261003/environment/Scripts/python.exe, Research0.31/research0012; set AMPHORA_TEST_RESEARCH_PYTHON and AMPHORA_TEST_RESEARCH_REPLACEMENT_PYTHON. Knowledge source0.15.8; find latest independent install from owning closeout evidence before reuse.
+- Research child .test-results/research-laboratory-closeout-20261003/environment/Scripts/python.exe, Research0.31/research0012; set AMPHORA_TEST_RESEARCH_PYTHON and AMPHORA_TEST_RESEARCH_REPLACEMENT_PYTHON. Knowledge source0.16.0; find latest independent install from owning closeout evidence before reuse.
 - Previous independent Data0.28 .test-results/data-profile-migration-20261003 remains. Older0.27 used only for legacy descriptor comparison; do not use incompatible old migrators.
 - Actual Qdrant1.19.1 primary/replacement running, separately owned retained volumes. .test-results/qdrant-fixture.json and qdrant-replacement-fixture.json contain keys: never dump. Read selected safe endpoint/container fields, never assume old ports. dev/qdrant_fixture.py validates labels/image/auth; no deletion/reset.
 - Pinned image qdrant/qdrant@sha256:12364fe851b9f17356fc88189fc06d1b521262e04659ec7345975b00c9246a10. Backend SHA bbd62cf269057b3280ef7e29e8ca06dbdbf6e81f42bb69652e63fb1973327f83 endpoint/key independent. OpenAPI .test-results/qdrant-v1.19.1-openapi.json SHA eb3e5d71ba74e1d99124ca1a77d563bbfa47084f04a13ef9b197e339f5a4ce0a,520632bytes.
