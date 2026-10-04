@@ -1,6 +1,6 @@
 # Planning Readiness and Cross-Plan Handoffs
 
-- Last reviewed: `2026-09-28 13:45:17` (America/Chicago).
+- Last reviewed: `2026-10-04 01:46:10` (America/Chicago).
 - Design status: roadmap decomposed through immediate execution children; implementation evidence remains in canonical trackers.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md) selects implementation priority. This reference owns planning gaps and cross-plan dependencies, not duplicate implementation percentages.
 
@@ -11,10 +11,10 @@ All open plans now name accountable modules, owned objects/contracts, state/algo
 | Parent | Child depth | Current design posture | Evidence still required |
 |---|---|---|---|
 | BP-02 | 6 closed/audited children | Durable synthetic invocation foundation complete | [Actual acceptance and successor boundaries](../Audits/BP-02_Foundation_Closeout.md) |
-| BP-03 | 4 canonical children | Exact identity, independent tools, registry and replacement specified | Registry store, SDK/tools, real replicas and independent builds |
-| BP-04 | 5 canonical children | Compiler, frontier, joins/waits and v1 trace oracles specified | Real scheduling, recovery and public inspection APIs |
-| BP-05 | 4 canonical children | Task/data ownership, progressive graph access and command UX specified | Frontend spike selection, actual browser and backend workflows |
-| BP-06 | 6 canonical children | Source/evidence ownership, replay/CAS, rules, lab and vector profiles specified | Actual owner stores, correction races, retrieval and evidence traversal |
+| BP-03 | 4 closed/audited children | Standalone synthetic tools, registry, actual replicas and replacement accepted | [Bounded closeout](../Audits/BP-03_Tool_Execution_Closeout.md) |
+| BP-04 | 6 closed/audited children | Durable graph execution and inspection accepted | [Bounded closeout](../Audits/BP-04_Graph_Runner_Closeout.md) |
+| BP-05 | 4 closed/audited children | Studio inspection/authoring/browser workflows accepted | [Bounded closeout](../Audits/BP-05_Studio_Closeout.md) |
+| BP-06 | 6 closed/audited children | Source/knowledge/lab/retrieval and future-only feedback integration accepted | [Bounded closeout](../Audits/BP-06_Knowledge_Evidence_Closeout.md) |
 | BP-07 | 5 canonical children | Provider/proposal boundaries, extraction oracles and supervisor races specified | Deterministic implementation followed by selected live model evaluation |
 | BP-08 | 5 canonical children | Kernel provenance, explicit generations, representation isolation and benchmarks specified | Kernel choice/proof, seeded recovery and topology evaluation |
 | BP-09 | 5 canonical children | Preflight/install/demo/restore/replacement acceptance specified | Owner-selected host/profile, actual installation and measured recovery |

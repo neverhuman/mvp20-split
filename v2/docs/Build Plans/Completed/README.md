@@ -2,6 +2,7 @@
 
 | Plan | Completion | Closeout |
 |---|---|---|
+| [BP-06 Knowledge Evidence and Source Loop](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) | 100%;24/24 deliveries, six children audited | [Parent audit](../../Audits/BP-06_Knowledge_Evidence_Closeout.md) |
 | [BP-05 Graph Studio First Vertical Slice](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md) | 100%;16/16 deliveries, four children audited | [Parent audit](../../Audits/BP-05_Studio_Closeout.md) |
 | [BP-04 Deterministic Graph Runner](BP-04%20Deterministic%20Graph%20Runner.md) | 100%;24/24 deliveries, six children audited | [Parent audit](../../Audits/BP-04_Graph_Runner_Closeout.md) |
 | [BP-03 Tool Index and Standalone Execution](BP-03%20Tool%20Index%20and%20Standalone%20Execution.md) | 100%; 16/16 deliveries, four children audited | [Parent audit](../../Audits/BP-03_Tool_Execution_Closeout.md) |
@@ -12,6 +13,6 @@
 | [Architecture Detail](Architecture%20Detail%20Plan.md) | 100%; all three documentation phases complete | [Scoped audit](../../Audits/Architecture_Detail_Closeout.md) |
 | [Architecture Decomposition](Architecture%20Decomposition%20Plan.md) | 100%; all three documentation phases complete | [Scoped audit](../../Audits/Architecture_Decomposition_Closeout.md) |
 
-BP-01 completes the contract and validation foundation only. BP-02 completes the durable prepared-invocation foundation; general graph interpretation and scientific acceptance remain pending.
+BP-01 completes the contract and validation foundation only. BP-02 completes the durable prepared-invocation foundation; BP-04 graph interpretation is also accepted; scientific validity remains separately scoped.
 
 After required gates and a recorded closeout drift audit pass, move the plan and its history here, preserve final percentages/evidence and repair inbound links. Maintain a compact completed-plan index here as entries arrive. Future regressions or scope get successor plans; closed plans stay closed.

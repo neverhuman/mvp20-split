@@ -2,17 +2,18 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-06.01 through BP-06.05 closed; BP-06.06/Acceptance/V1.02 active.
-- Last refreshed: `2026-10-04 01:42:10` (America/Chicago).
+- Status: closed; six children accepted and archived.
+- Last refreshed: `2026-10-04 01:45:10` (America/Chicago).
 - Owner/scope: Knowledge, Research and focused Data/Artifacts modules.
-- Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness](Planning_Readiness.md).
+- Authority: [Master Build Tracker](../Master%20Build%20Tracker.md); [planning readiness](../Planning_Readiness.md).
 - Prerequisites: completed BP-04 receipt/wait seams, BP-05 inspection and BP-01/02/03 boundaries.
-- Scoped implementation/verification completion: **97.92%** = 23.5/24; 23/24 closed delivery gates. P1-P5 are 100%; P6 is 87.50%.
-- Current task: BP-06.06/V1.02 scoped audit/archive; Integrated baseline verified.
+- Scoped implementation/verification completion: **100%** = 24/24;24/24 closed delivery gates. P1-P6 each100%.
+- Current task: none. [Parent closeout audit](../../Audits/BP-06_Knowledge_Evidence_Closeout.md) aligned.
 - Demonstrated behavior: bounded reasoning, authenticated sufficiency, immutable future-only corrections, actual Runtime receipt/retention, exploratory partial output, acknowledgement-loss recovery and independent owner replacement. Both publication owners have actual process-death evidence.
 - Blockers: none requiring owner direction. Scientific sources, assay/route engines and target-host choices remain scoped future decisions.
 - Human acceptance: no routine pause for authorized engineering; experimental validity is not inferred from software verification.
-- Next gate: BP-06.06/V1.02 scoped audit/archive.
+- Next gate: BP-07 activation coherence review; no remaining gate in this parent.
+
 
 ## Outcome and Boundaries
 
@@ -28,12 +29,12 @@ Primary services retain private state, dependencies, migrations and module READM
 
 | Parent phase / child | Overall | Build | Acceptance | Prerequisite |
 |---|---:|---:|---:|---|
-| P1 / [BP-06.01 Source and evidence contracts](BP-06/Completed/BP-06.01%20Source%20and%20evidence%20contracts.md) | 100% | 100% | 100% | Parent predecessor gates |
-| P2 / [BP-06.02 Typed graph authoring and replay](BP-06/Completed/BP-06.02%20Typed%20graph%20authoring%20and%20replay.md) | 100% | 100% | 100% | BP-06.01 acceptance |
-| P3 / [BP-06.03 Reasoning and domain receipts](BP-06/Completed/BP-06.03%20Reasoning%20and%20domain%20receipts.md) | 100% | 100% | 100% | BP-06.02 acceptance |
-| P4 / [BP-06.04 Laboratory returns and candidate eligibility](BP-06/Completed/BP-06.04%20Laboratory%20returns%20and%20candidate%20eligibility.md) | 100% | 100% | 100% | BP-06.03 acceptance |
-| P5 / [BP-06.05 Representation reuse and retrieval](BP-06/Completed/BP-06.05%20Representation%20reuse%20and%20retrieval.md) | 100% | 100% | 100% | BP-06.04 acceptance |
-| P6 / [BP-06.06 Feedback integration and closeout](BP-06/BP-06.06%20Feedback%20integration%20and%20closeout.md) | 87.50% | 100% | 50% | BP-06.05 acceptance |
+| P1 / [BP-06.01 Source and evidence contracts](../BP-06/Completed/BP-06.01%20Source%20and%20evidence%20contracts.md) | 100% | 100% | 100% | Parent predecessor gates |
+| P2 / [BP-06.02 Typed graph authoring and replay](../BP-06/Completed/BP-06.02%20Typed%20graph%20authoring%20and%20replay.md) | 100% | 100% | 100% | BP-06.01 acceptance |
+| P3 / [BP-06.03 Reasoning and domain receipts](../BP-06/Completed/BP-06.03%20Reasoning%20and%20domain%20receipts.md) | 100% | 100% | 100% | BP-06.02 acceptance |
+| P4 / [BP-06.04 Laboratory returns and candidate eligibility](../BP-06/Completed/BP-06.04%20Laboratory%20returns%20and%20candidate%20eligibility.md) | 100% | 100% | 100% | BP-06.03 acceptance |
+| P5 / [BP-06.05 Representation reuse and retrieval](../BP-06/Completed/BP-06.05%20Representation%20reuse%20and%20retrieval.md) | 100% | 100% | 100% | BP-06.04 acceptance |
+| P6 / [BP-06.06 Feedback integration and closeout](../BP-06/Completed/BP-06.06%20Feedback%20integration%20and%20closeout.md) | 100% | 100% | 100% | BP-06.05 acceptance |
 
 Each linked child is the execution tracker for its scope. Build tasks name concrete implementation; acceptance requires independent evidence and a scoped drift audit. BP-06.06 owns fractional progress through its canonical milestone basis once activated; parent weights remain24 delivery units. Closed-gate counts are separate from scoped completion. Do not repeat the historical task pairs as a second work list. No dependent child starts before its predecessor acceptance gate; independent design review does not activate implementation.
 
@@ -55,15 +56,15 @@ Keep scenario evidence with absolute timestamps, implementation revision, fixtur
 
 ## UI Reference Refinement
 
-`2026-09-24 12:10:07`: Use the [interaction reference map](../Architecture/Experience/Interaction_References.md) for P6 evidence/knowledge traversal: search-first bounded exploration and source details, without requiring manual predicate authoring. Implementation and all phase percentages remain 0%; this refines existing tasks.
+`2026-09-24 12:10:07`: Use the [interaction reference map](../../Architecture/Experience/Interaction_References.md) for P6 evidence/knowledge traversal: search-first bounded exploration and source details, without requiring manual predicate authoring. Implementation and all phase percentages remain 0%; this refines existing tasks.
 
 ## Reference Refinement
 
-`2026-09-25 13:54:17`: BP-06.01/.02/.03/.04/.06 now include Research-owned questions/evidence needs, conversion traces, accepted claim/answer links, purpose-bound evidence sufficiency, processing-sensitive tested-material identity and real-view integration. Research, Knowledge and Data retain separate write authority. See [reference assessment](References/Amphora_Lab_Insights.md). Added requirements refine existing child B1-B3 deliveries; each child V1 gate includes them. No task is complete, implementation remains 0%, and the denominator is unchanged.
+`2026-09-25 13:54:17`: BP-06.01/.02/.03/.04/.06 now include Research-owned questions/evidence needs, conversion traces, accepted claim/answer links, purpose-bound evidence sufficiency, processing-sensitive tested-material identity and real-view integration. Research, Knowledge and Data retain separate write authority. See [reference assessment](../References/Amphora_Lab_Insights.md). Added requirements refine existing child B1-B3 deliveries; each child V1 gate includes them. No task is complete, implementation remains 0%, and the denominator is unchanged.
 
 ## Decisions and Handoff
 
-Child decisions and the [cross-plan handoff register](Planning_Readiness.md) identify the exact producer, consumer and required proof. Engineering defaults are planning baselines; validate them against real predecessor contracts before coding. External choices are not inferred from examples. Do not weaken a live model, browser, database or target-host gate to a fixture when that environment is unavailable.
+Child decisions and the [cross-plan handoff register](../Planning_Readiness.md) identify the exact producer, consumer and required proof. Engineering defaults are planning baselines; validate them against real predecessor contracts before coding. External choices are not inferred from examples. Do not weaken a live model, browser, database or target-host gate to a fixture when that environment is unavailable.
 
 ## Accounting and Closeout
 
