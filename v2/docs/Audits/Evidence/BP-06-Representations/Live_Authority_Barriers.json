@@ -1,0 +1,374 @@
+{
+  "timestamp_local": "2026-10-03 19:36:53",
+  "task": "BP-06.05/B3.02b",
+  "status": "verified",
+  "source": {
+    "passed": 5,
+    "seconds": 40.78
+  },
+  "installed": {
+    "passed": 5,
+    "seconds": 38.04
+  },
+  "production_changes": false,
+  "cases": {
+    "competing_publishers": {
+      "timestamp_local": "2026-10-03 19:35:34",
+      "scope": {
+        "tenant_id": "upload-tests",
+        "project_id": "04e759223d244649a4935fdb52ba26c3"
+      },
+      "pids": [
+        26656,
+        26144
+      ],
+      "barriers": [
+        {
+          "stage": "verification_committed",
+          "proof": {
+            "format": "data.index-verification.v1",
+            "generation": {
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "04e759223d244649a4935fdb52ba26c3"
+              },
+              "corpus_id": "corpus",
+              "generation_id": "g1",
+              "sha256": "70ff4b9c74e155c4886b1e48816c76ab2790ff5f1ccc8daaf66d7efc8bbe0d16"
+            },
+            "token": "e9ce2ece30344af19074d2acffcc8285",
+            "fence": 1,
+            "namespace": "amphora_e98f004f760e2c0cc2381ae0b3d49f3e302fb448242081a22346c22abbf5b462",
+            "manifest_sha256": "85065b5d615a7fa970db6d03db20bf308315d11ebe32b2e0fb42210b41719c81",
+            "projection_sha256": "8dde3f3f809de5997d986079fd6980382c980c17653973e1f7fb7aa21a03393f",
+            "point_count": 1
+          }
+        },
+        {
+          "stage": "verification_committed",
+          "proof": {
+            "format": "data.index-verification.v1",
+            "generation": {
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "04e759223d244649a4935fdb52ba26c3"
+              },
+              "corpus_id": "corpus",
+              "generation_id": "g2",
+              "sha256": "42f0dd2d16b13be775cce2ddea5283b2bf2d04cf15650d65f49d59b1c7233c3b"
+            },
+            "token": "760eb490159b41838686a290ce78c0f1",
+            "fence": 1,
+            "namespace": "amphora_6bdbd03231e77340399bdfc7a214faf445edf1cbb8fda8a8c2db2d795498f3d5",
+            "manifest_sha256": "85065b5d615a7fa970db6d03db20bf308315d11ebe32b2e0fb42210b41719c81",
+            "projection_sha256": "8dde3f3f809de5997d986079fd6980382c980c17653973e1f7fb7aa21a03393f",
+            "point_count": 1
+          }
+        }
+      ],
+      "results": [
+        {
+          "status": 200,
+          "body": {
+            "wire_version": "1",
+            "generation": {
+              "wire_version": "1",
+              "reference": {
+                "scope": {
+                  "tenant_id": "upload-tests",
+                  "project_id": "04e759223d244649a4935fdb52ba26c3"
+                },
+                "corpus_id": "corpus",
+                "generation_id": "g1",
+                "sha256": "70ff4b9c74e155c4886b1e48816c76ab2790ff5f1ccc8daaf66d7efc8bbe0d16"
+              },
+              "actor_id": "worker",
+              "manifest": {
+                "wire_version": "1",
+                "scope": {
+                  "tenant_id": "upload-tests",
+                  "project_id": "04e759223d244649a4935fdb52ba26c3"
+                },
+                "profile": {
+                  "scope": {
+                    "tenant_id": "upload-tests",
+                    "project_id": "04e759223d244649a4935fdb52ba26c3"
+                  },
+                  "profile_id": "fixture.utf8-histogram",
+                  "version": "1",
+                  "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+                },
+                "bindings": [
+                  {
+                    "wire_version": "1",
+                    "reference": {
+                      "scope": {
+                        "tenant_id": "upload-tests",
+                        "project_id": "04e759223d244649a4935fdb52ba26c3"
+                      },
+                      "binding_id": "binding.08a275f6acc4edae39e87915622f3df3e968d098910f7cf4298fe1f0f2139719",
+                      "sha256": "229eb0caf6b8ce6727affdfa3edb263525deb525c0c70bcf3a36a29be3a18142"
+                    },
+                    "profile": {
+                      "scope": {
+                        "tenant_id": "upload-tests",
+                        "project_id": "04e759223d244649a4935fdb52ba26c3"
+                      },
+                      "profile_id": "fixture.utf8-histogram",
+                      "version": "1",
+                      "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+                    },
+                    "source": {
+                      "source": {
+                        "scope": {
+                          "tenant_id": "upload-tests",
+                          "project_id": "04e759223d244649a4935fdb52ba26c3"
+                        },
+                        "source_id": "source",
+                        "revision_id": "r1",
+                        "raw": {
+                          "artifact_id": "6e16c62227374f0d812aa1edf896e72f",
+                          "scope": {
+                            "tenant_id": "upload-tests",
+                            "project_id": "04e759223d244649a4935fdb52ba26c3"
+                          },
+                          "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+                          "media_type": "application/octet-stream",
+                          "schema_ref": {
+                            "schema_id": "fixture.bytes",
+                            "version": "1",
+                            "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                          },
+                          "size_bytes": 4
+                        }
+                      },
+                      "unit": "byte",
+                      "start": 0,
+                      "end": 4,
+                      "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+                    },
+                    "vector": {
+                      "artifact_id": "3b5b4836dd494f0f98dc8689f59d1105",
+                      "scope": {
+                        "tenant_id": "upload-tests",
+                        "project_id": "04e759223d244649a4935fdb52ba26c3"
+                      },
+                      "sha256": "984291cdb7d66b1c8a286e4b3520410e1fcd30ca0664b66e17171ad61348342b",
+                      "media_type": "application/json",
+                      "schema_ref": {
+                        "schema_id": "representations.vector",
+                        "version": "1",
+                        "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+                      },
+                      "size_bytes": 615
+                    }
+                  }
+                ],
+                "watermark": "85065b5d615a7fa970db6d03db20bf308315d11ebe32b2e0fb42210b41719c81"
+              },
+              "expected_head": null,
+              "backend_profile": {
+                "schema_id": "data.qdrant-projection",
+                "version": "1",
+                "sha256": "bbd62cf269057b3280ef7e29e8ca06dbdbf6e81f42bb69652e63fb1973327f83"
+              }
+            },
+            "state": "published"
+          }
+        },
+        {
+          "status": 409,
+          "body": {
+            "detail": "retrieval_head_conflict"
+          }
+        }
+      ]
+    },
+    "projection_written": {
+      "timestamp_local": "2026-10-03 19:35:03",
+      "scope": {
+        "tenant_id": "upload-tests",
+        "project_id": "c0e3a03fe1a34052be2fe550d7c93f26"
+      },
+      "pid": 27552,
+      "barrier": {
+        "stage": "projection_written"
+      },
+      "status": 403,
+      "response": {
+        "detail": "rights_revoked"
+      }
+    },
+    "query_observed": {
+      "timestamp_local": "2026-10-03 19:35:14",
+      "scope": {
+        "tenant_id": "upload-tests",
+        "project_id": "13c69b0fa38744bf8c3940270a99dd83"
+      },
+      "pid": 29460,
+      "barrier": {
+        "stage": "query_observed",
+        "scores": [
+          8.0
+        ]
+      },
+      "status": 403,
+      "response": {
+        "detail": "rights_revoked"
+      }
+    },
+    "stale_lease": {
+      "timestamp_local": "2026-10-03 19:35:24",
+      "scope": {
+        "tenant_id": "upload-tests",
+        "project_id": "26fc9923113243348190d3b42dd38e30"
+      },
+      "old_pid": 14964,
+      "new_pid": 27216,
+      "stale_status": 409,
+      "published": {
+        "wire_version": "1",
+        "generation": {
+          "wire_version": "1",
+          "reference": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "26fc9923113243348190d3b42dd38e30"
+            },
+            "corpus_id": "corpus",
+            "generation_id": "g1",
+            "sha256": "094288fa1259eb980431fb95e46cea3aad5718c640767462d619d4f8dcb3a8e8"
+          },
+          "actor_id": "worker",
+          "manifest": {
+            "wire_version": "1",
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "26fc9923113243348190d3b42dd38e30"
+            },
+            "profile": {
+              "scope": {
+                "tenant_id": "upload-tests",
+                "project_id": "26fc9923113243348190d3b42dd38e30"
+              },
+              "profile_id": "fixture.utf8-histogram",
+              "version": "1",
+              "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+            },
+            "bindings": [
+              {
+                "wire_version": "1",
+                "reference": {
+                  "scope": {
+                    "tenant_id": "upload-tests",
+                    "project_id": "26fc9923113243348190d3b42dd38e30"
+                  },
+                  "binding_id": "binding.577556031983357b3821b9a0f38e7f38cd0cae2a7ce710d3adf223dfc38bfd02",
+                  "sha256": "83d2c1db7fea490ec2af0f953c3e88b2c780c1ff6d6919650b314d28aa30f34e"
+                },
+                "profile": {
+                  "scope": {
+                    "tenant_id": "upload-tests",
+                    "project_id": "26fc9923113243348190d3b42dd38e30"
+                  },
+                  "profile_id": "fixture.utf8-histogram",
+                  "version": "1",
+                  "sha256": "faf44fcfa7b1a780f5ac01a6972d6138aa3600a5a85ac4724c3f42a30175bc1b"
+                },
+                "source": {
+                  "source": {
+                    "scope": {
+                      "tenant_id": "upload-tests",
+                      "project_id": "26fc9923113243348190d3b42dd38e30"
+                    },
+                    "source_id": "source",
+                    "revision_id": "r1",
+                    "raw": {
+                      "artifact_id": "0ed02b33e92647b39b4fe55597dbc3a1",
+                      "scope": {
+                        "tenant_id": "upload-tests",
+                        "project_id": "26fc9923113243348190d3b42dd38e30"
+                      },
+                      "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa",
+                      "media_type": "application/octet-stream",
+                      "schema_ref": {
+                        "schema_id": "fixture.bytes",
+                        "version": "1",
+                        "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+                      },
+                      "size_bytes": 4
+                    }
+                  },
+                  "unit": "byte",
+                  "start": 0,
+                  "end": 4,
+                  "sha256": "b398f71af6865ec31e16f3c9565fea232346c3378a70423854ba75f13a7e55fa"
+                },
+                "vector": {
+                  "artifact_id": "6246730936974a36a571d51509ad34a2",
+                  "scope": {
+                    "tenant_id": "upload-tests",
+                    "project_id": "26fc9923113243348190d3b42dd38e30"
+                  },
+                  "sha256": "05e727df45f2fe676198cdfde5c3e951e8058f7e097213402420575c1e4c7388",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "schema_id": "representations.vector",
+                    "version": "1",
+                    "sha256": "a209fc6b1d8ca63404d3ec476393de51b0e104a8de4bf555b51a900187fc9e8e"
+                  },
+                  "size_bytes": 615
+                }
+              }
+            ],
+            "watermark": "8528f4526bd0802ba3430c202591e661a3accf3be184ba102d48699b8aba534c"
+          },
+          "expected_head": null,
+          "backend_profile": {
+            "schema_id": "data.qdrant-projection",
+            "version": "1",
+            "sha256": "bbd62cf269057b3280ef7e29e8ca06dbdbf6e81f42bb69652e63fb1973327f83"
+          }
+        },
+        "state": "published"
+      }
+    },
+    "verification_committed": {
+      "timestamp_local": "2026-10-03 19:35:09",
+      "scope": {
+        "tenant_id": "upload-tests",
+        "project_id": "4d6165ae343d4988b634cca685e27c8e"
+      },
+      "pid": 26068,
+      "barrier": {
+        "stage": "verification_committed",
+        "proof": {
+          "format": "data.index-verification.v1",
+          "generation": {
+            "scope": {
+              "tenant_id": "upload-tests",
+              "project_id": "4d6165ae343d4988b634cca685e27c8e"
+            },
+            "corpus_id": "corpus",
+            "generation_id": "g1",
+            "sha256": "e7c98c419c865796e58e210b47703ac5cd8eefce919eee3ecafcfe7770dd8423"
+          },
+          "token": "73755991cc9b41e4b1e0171d90170d57",
+          "fence": 1,
+          "namespace": "amphora_eeed1c85c2adee9b2d175089839d06ee1fd3745227359a6508ab5775e01e1c4e",
+          "manifest_sha256": "f7c9db8333c39fca3f4b9eb6b2c5925e2d791f726cb0e29d2c255997045f3b31",
+          "projection_sha256": "b5885fcb85b54b7a2e351ee8313b4bca540be2c1a668c5ec2c92d0cb3ba4e586",
+          "point_count": 1
+        }
+      },
+      "status": 403,
+      "response": {
+        "detail": "rights_revoked"
+      }
+    }
+  },
+  "limits": [
+    "Actual PostgreSQL/Qdrant and installed HTTP workers; synthetic vectors",
+    "Current rights are operational authority; scientific corrections remain future-campaign only"
+  ]
+}

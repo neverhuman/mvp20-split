@@ -1,5 +1,12 @@
 # BP-06 Planning History
 
+## BP-06.05/B3.02b live authority complete - 2026-10-03 19:36:53
+
+Five source cases passed40.78s; five installed cases passed38.04s. Actual HTTP workers lose authority after revocation at projection, verified-proof and observed-query barriers. An expired worker cannot overwrite its newly published replacement. Two verified processes race one expected head; exactly one publishes. No production change; lint passed. B3.02a/b100%,B3.02100%,B366.67%;Build88.89%,child66.67%,parent77.78%;closed gates unchanged. B3.03 reconciles recovery/orphan/backend uncertainty next.
+
+| 2026-10-03 12:46:50 | BP-06.05 activated0%; B1.01 active; parent66.67% unchanged | [Activation audit](../Audits/BP-06.05_Activation.md);independent source rights, future-only scientific corrections, bounded fixture and index design |
+
+
 ## BP-06.05/B3.02a process interruption complete - 2026-10-03 19:31:45
 
 Eight source tests passed82.59s; eight independent installed tests passed84.89s against actual retained PostgreSQL/Qdrant. Forced death covers intent, projection, verification, publication, query intent/observation/precommit/postcommit. Recovery proves fresh fenced namespaces, explicit replacement after verified lease expiry, and exact committed replay. No production/package/schema change. Ruff and dependency boundaries pass. B3.02a100%,b0%;B3.0250%,B350%;Build83.33%,child62.50%,parent77.08%;closed gates remain2/4 and18/24. Live authority barriers are next. Process death does not prove target-host power-loss durability.

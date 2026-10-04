@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 active; BP-05 closed/audited.
-- Last refreshed: `2026-10-03 19:15:58` (America/Chicago).
+- Last refreshed: `2026-10-03 19:36:53` (America/Chicago).
 - Scope: v2 design/implementation alignment.
-- Active focus: BP-06.05/B3.02a forced-death/replay barriers; child58.33%, parent76.39%,18/24 closed gates.
-- Next gate: forced process-death matrix. B3.01 actual expiry, selected-vector corruption/fresh repair and competing publishers verified alongside inherited adversaries. Scientific-quality UI remains SQ-01.
+- Active focus: BP-06.05/B3.03 reconstruction/failure closure; child66.67%, parent77.78%,18/24 closed gates.
+- Next gate: QD-01/failure matrix closure; eight forced-death and five live authority cases pass in source and installed runs. B3.01 actual expiry, selected-vector corruption/fresh repair and competing publishers verified alongside inherited adversaries. Scientific-quality UI remains SQ-01.
 
 ## Active Findings
 
