@@ -1,0 +1,118 @@
+{
+  "producer": "Runtime0.20.2 installed ValidationUniverse; synthetic fixture, no execution/scientific claim",
+  "universe": {
+    "schema_version": "1",
+    "scope": {
+      "tenant_id": "planning-fixture",
+      "project_id": "context"
+    },
+    "universe_sha256": "29bb4caf3131059b7bd6cf57af526ced9033b22df8cc76494dc729c7a85a23eb",
+    "authority": "compiler_configuration",
+    "reviewed_tools": [
+      {
+        "schema_version": "1",
+        "tool": {
+          "capability_id": "synthetic.numeric-affine",
+          "release": "0.1.0",
+          "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "contract_version": "1"
+        },
+        "descriptor_sha256": "9ef763885d494b7a995916a41b0a6c8041d6621ce696e88f0fe4441fd4db04cd",
+        "input_schemas": [
+          {
+            "port": "value",
+            "schema_ref": {
+              "schema_id": "fixture.numeric-affine",
+              "version": "1",
+              "sha256": "8346f3230d345fd72b3360ac8d15e80c298c9c2b3cfa29449f905262b8b590da"
+            }
+          }
+        ],
+        "output_schemas": [
+          {
+            "port": "result",
+            "schema_ref": {
+              "schema_id": "fixture.numeric-affine",
+              "version": "1",
+              "sha256": "8346f3230d345fd72b3360ac8d15e80c298c9c2b3cfa29449f905262b8b590da"
+            }
+          }
+        ],
+        "checkpoint_schema": null
+      },
+      {
+        "schema_version": "1",
+        "tool": {
+          "capability_id": "synthetic.sequence-statistics",
+          "release": "0.1.0",
+          "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "contract_version": "1"
+        },
+        "descriptor_sha256": "f803b855d8f6d2f535635141025774aad5d4ad9dda047c0e305df1111674bbad",
+        "input_schemas": [
+          {
+            "port": "value",
+            "schema_ref": {
+              "schema_id": "fixture.sequence-statistics",
+              "version": "1",
+              "sha256": "95675e497ccf0215dcbc873b297a125debe6e9dc49aaa4cf51ece3090f0c9646"
+            }
+          }
+        ],
+        "output_schemas": [
+          {
+            "port": "result",
+            "schema_ref": {
+              "schema_id": "fixture.sequence-statistics",
+              "version": "1",
+              "sha256": "95675e497ccf0215dcbc873b297a125debe6e9dc49aaa4cf51ece3090f0c9646"
+            }
+          }
+        ],
+        "checkpoint_schema": null
+      }
+    ],
+    "schemas": [
+      {
+        "schema_id": "fixture.schema-0",
+        "version": "1",
+        "sha256": "448e61623437c2dc1015aa6a56ebf189622633866294c48a575c545f37c76fa2"
+      },
+      {
+        "schema_id": "fixture.schema-1",
+        "version": "1",
+        "sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+      }
+    ]
+  },
+  "schemas": [
+    {
+      "schema_version": "1",
+      "scope": {
+        "tenant_id": "planning-fixture",
+        "project_id": "context"
+      },
+      "universe_sha256": "29bb4caf3131059b7bd6cf57af526ced9033b22df8cc76494dc729c7a85a23eb",
+      "reference": {
+        "schema_id": "fixture.schema-0",
+        "version": "1",
+        "sha256": "448e61623437c2dc1015aa6a56ebf189622633866294c48a575c545f37c76fa2"
+      },
+      "schema_bytes_base64": "eyAidHlwZSI6ICJudW1iZXIiIH0K"
+    },
+    {
+      "schema_version": "1",
+      "scope": {
+        "tenant_id": "planning-fixture",
+        "project_id": "context"
+      },
+      "universe_sha256": "29bb4caf3131059b7bd6cf57af526ced9033b22df8cc76494dc729c7a85a23eb",
+      "reference": {
+        "schema_id": "fixture.schema-1",
+        "version": "1",
+        "sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+      },
+      "schema_bytes_base64": "dHJ1ZQ=="
+    }
+  ]
+}

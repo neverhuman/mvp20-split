@@ -534,3 +534,12 @@ B1.02b.i verified 2026-10-04 18:07:08:Planning0.35 bounded Registry discovery/ex
 Archived MBT rows:
 
 | 2026-10-04 06:28:33 | BP-07.02/B2.01b verified; child30.56%,parent26.11%; c active | [Proposal validation](../Audits/Evidence/BP-07-Extraction/Proposal_Validation.json);483 source,465 installed20 processes,36 pure cases |
+
+
+## Runtime metadata 2026-10-04 18:12:22
+
+B1.02b.ii verified 2026-10-04 18:12:22:Planning0.36 exact reviewed Runtime universe and selected schema bytes, original pins and partial failures.62 focused tests1.55s,139 statements14 branches100%;319 independently installed tests12.962s. Installed Runtime0.20.2 produced literal universe vector; HTTP fixture proof is not actual combined-owner acceptance.508 schemas/planning0011 unchanged. B1.02b100%,B1.02=50%,B1=37.5%,child9.38%,Build12.5%,parent41.88%;closed0/4 and8/20. Current c Data/Knowledge context. [Evidence](../Audits/Evidence/BP-07-Campaigns/Runtime_Metadata.json).
+
+Archived MBT rows:
+
+| 2026-10-04 06:45:26 | BP-07.02/B2.01 complete; child33.33%,parent26.67%; B2.02 active | [Knowledge reads](../Audits/Evidence/BP-07-Extraction/Knowledge_Read_Binding.json);497 installed20 processes,8 actual Planning/2 Knowledge hosts |
