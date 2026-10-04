@@ -1,0 +1,35 @@
+{
+  "verified_at": "2026-10-04 02:08:10",
+  "status": "passed",
+  "scope": "BP-07.01 B1.03 actual PostgreSQL request/attempt/observation journal",
+  "tests": 104,
+  "seconds": 25.45,
+  "persistence_cases": 17,
+  "actual_database_cases": 11,
+  "coverage": {
+    "covered_lines": 398,
+    "num_statements": 399,
+    "percent_covered": 99.56803455723542,
+    "percent_covered_display": "99",
+    "missing_lines": 1,
+    "excluded_lines": 4,
+    "percent_statements_covered": 99.74937343358395,
+    "percent_statements_covered_display": "99",
+    "num_branches": 64,
+    "num_partial_branches": 1,
+    "covered_branches": 63,
+    "missing_branches": 1,
+    "percent_branches_covered": 98.4375,
+    "percent_branches_covered_display": "98"
+  },
+  "coverage_gap": "Explicit migration CLI entry not included; API upgrade and idempotence exercised. DDL evidence is actual PostgreSQL, not Python coverage.",
+  "migration": "planning_0001",
+  "migration_sha256": "066d6710912ed1edf9614620213422dcf4e3481679d6273567d61c031d808866",
+  "schemas_unchanged": 488,
+  "history": "Initial uncommitted migration FK target omitted explicit unique columns; transaction rolled back. Corrected before successful application; final migration now immutable.",
+  "limits": [
+    "Fresh-engine reconstruction is not independent process replacement",
+    "No durable provider dispatch or cost/token reservations yet",
+    "No private peer reads or production HTTP surface"
+  ]
+}

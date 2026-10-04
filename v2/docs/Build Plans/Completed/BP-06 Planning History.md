@@ -935,3 +935,5 @@ Archived MBT checkpoints:
 | 2026-10-03 18:56:17 | B2.04b complete; child47.92%, parent74.65%; c active | [Profile migration](../../Audits/Evidence/BP-06-Representations/Profile_Migration.json);83 source/83 installed,18 dev;legacy v1 descriptors unchanged |
 
 | 2026-10-03 19:04:12 | B2 complete; child50%, parent75%; B3.01 active; gates2/4 and18/24 | [Installed retrieval HTTP](../../Audits/Evidence/BP-06-Representations/Retrieval_HTTP_Replacement.json);source/installed public-only3process reconstruction and authority |
+
+| 2026-10-03 19:15:58 | B3.01 complete; child58.33%, parent76.39%; B3.02a active | [Adversaries](../../Audits/Evidence/BP-06-Representations/Adversarial_Boundaries.json);59 source/59 installed,actual expiry/corruption/publisher oracles |

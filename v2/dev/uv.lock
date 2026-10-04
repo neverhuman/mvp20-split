@@ -18,19 +18,25 @@ wheels = [
 
 [[package]]
 name = "amphora-agent-planning"
-version = "0.2.0"
+version = "0.3.0"
 source = { editable = "../services/agent_planning" }
 dependencies = [
+    { name = "alembic" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-planning" },
+    { name = "psycopg", extra = ["binary"] },
     { name = "pydantic" },
+    { name = "sqlalchemy" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "alembic", specifier = ">=1.16,<2" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
     { name = "amphora-contracts-planning", editable = "../contracts/planning" },
+    { name = "psycopg", extras = ["binary"], specifier = ">=3,<4" },
     { name = "pydantic", specifier = ">=2.12,<3" },
+    { name = "sqlalchemy", specifier = ">=2,<3" },
 ]
 
 [[package]]

@@ -131,3 +131,7 @@ BP-06 closed90cda1c; corrected-ready activation preserves Runtime/domain authori
 ## 2026-10-04 02:00:10 - B1.02 deterministic provider
 
 Additive planning0.2/Agent Planning0.2, bounded64KiB/256-chunk capture and distinct policy/invalid/unavailable/unknown/abstain/proposed outcomes. Reference-only profile cannot invent or substitute selected Artifact identity; actual task payload generation remains later profiles.69 source/69 independent tests,87 with dev;233 statements/42 branches100%;488 schemas preserve484 old bytes. Child12.50%,parent2.50%,Build16.67%; B1.03 persistence active.
+
+## 2026-10-04 02:08:10 - B1.03 private journal
+
+Agent Planning0.3, planning_0001 applied idempotently with separate migrator/service roles. Immutable request, attempt intent and observation/capture records; no public dispatch/budget permission.104 tests25.45s,11 actual PostgreSQL plus6 record-boundary cases;398/399 statements63/64 branches, migration CLI uncovered. Initial FK declaration failed and rolled back; fixed before migration acceptance, no retained peer state reset. Child18.75%,parent3.75%,Build25%; B1.04 independent process/install remains.

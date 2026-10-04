@@ -67,6 +67,16 @@ def knowledge_owner(state):
         "GRANT USAGE ON SCHEMA knowledge TO knowledge_service;")
 
 
+def planning_owner(state):
+    """Add Planning roles/schema only; preserve every retained peer owner."""
+    for role in ("planning_migrator", "planning_service"):
+        if sql(state, f"SELECT 1 FROM pg_roles WHERE rolname='{role}';").stdout.strip() != "1":
+            sql(state, f"CREATE ROLE {role} LOGIN PASSWORD '{state['password']}';")
+    sql(state, "GRANT CONNECT ON DATABASE amphora_bp02_test TO planning_migrator,planning_service; "
+        "CREATE SCHEMA IF NOT EXISTS planning AUTHORIZATION planning_migrator; "
+        "GRANT USAGE ON SCHEMA planning TO planning_service;")
+
+
 def ready(state):
     deadline = time.monotonic() + 45
     while time.monotonic() < deadline:
