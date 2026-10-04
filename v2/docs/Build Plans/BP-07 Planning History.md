@@ -381,3 +381,12 @@ B2.03b.ii.b verified 2026-10-04 11:19:18:Planning0.26 shared SDK driver and resu
 Archived MBT checkpoint:
 
 | 2026-10-04 01:46:10 | BP-06 closed100%,24/24; BP-07 activation review next | [Parent audit](../Audits/BP-06_Knowledge_Evidence_Closeout.md);six accepted children, actual source/independent consumer proof |
+
+
+B2.03b.ii.c verified 2026-10-04 13:39:20:Planning0.27 adds current-rights result preparation and structural DiagnosticPolicy/DiagnosticProducer. 24 focused cases14.73s cover110 statements24 branches98.51%; preparation/producer100%, one terminal policy guard uninstrumented. 720 isolated cases317.56s/35 process stages plus9 installed guard cases5.71s. Actual Data7 Planning workers/2 hosts prove denial/regrant, lost committed PUT reply/distinct upload recovery, no-read replay under withdrawal, bounded repair producer and proposal-only answer publication. Synthetic provider/graph; no abrupt-kill/scientific acceptance claim. Public0.7/506 schemas/planning0010 unchanged. b.ii100%,b66.67%,B2.03=55.56%,B2=85.19%;child46.30%,Build61.73%,parent29.26%;closed1/4 and5/20. Current b.iii owner submission and receipt binding. [Evidence](../Audits/Evidence/BP-07-Extraction/Result_Producer.json).
+
+Archived MBT checkpoint:
+
+| Timestamp | Checkpoint | Evidence |
+|---|---|---|
+| 2026-10-04 01:53:10 | BP-07.01/B1.01 complete; child6.25%, parent1.25%; B1.02 active | [Context contracts](../Audits/Evidence/BP-07-Planning/Context_Contracts.json);60 source/dev,42 independent;484 schemas |
