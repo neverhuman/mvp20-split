@@ -1,0 +1,30 @@
+{
+  "search_request": {
+    "source": "contracts/schemas/v1/knowledge.entity-search-request.serialization.json",
+    "sha256": "7a970eb793583c28282f84d58315b16119a93e008e2be9efe2474511726c7ca8"
+  },
+  "search_page": {
+    "source": "contracts/schemas/v1/knowledge.entity-search-page.serialization.json",
+    "sha256": "b8242e0a174460ea260da1e2acdce718066a720cc168af79eba593a77a146b0b"
+  },
+  "neighborhood_request": {
+    "source": "contracts/schemas/v1/knowledge.neighborhood-request.serialization.json",
+    "sha256": "66d11d1eee55b8082199d856b374dba1a68364cfc6ddbb82fbb1b62f42f53554"
+  },
+  "neighborhood_page": {
+    "source": "contracts/schemas/v1/knowledge.neighborhood-page.serialization.json",
+    "sha256": "643a4a591788af1b1cadbc23c2917cb20eb16b46568016621e63b8447ac3c86a"
+  },
+  "object_request": {
+    "source": "contracts/schemas/v1/knowledge.object-request.serialization.json",
+    "sha256": "8af12d75d0080d4c02d63651122b48c387ab3ebd3a31f61b6f88cac20d3d9bf7"
+  },
+  "object_detail": {
+    "source": "contracts/schemas/v1/knowledge.object-detail.serialization.json",
+    "sha256": "49e0e757373fa7c8cf55b96db04493ae83c9676b2a5bdb41a44386e91cecfcb1"
+  },
+  "catalog": {
+    "source": "contracts/schemas/v1/knowledge.explore-catalog.serialization.json",
+    "sha256": "420c3be0e95975de9b81f2eea6a40f49777f9653633e8d06a026aa07dcd286e6"
+  }
+}

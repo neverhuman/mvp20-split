@@ -1,5 +1,11 @@
 # BP-06 Planning History
 
+## B1.04a Studio scientific transport - 2026-10-03 21:51:08
+
+Studio0.2 adds14 owner-published derivatives, strict scientific decoders and separate Knowledge/Research fixed-route clients.154 source/154 independent tests,18dev; exact golden query hashes, scoped identity, page/schema guards, native HTTP and streaming deadlines. Scoped coverage/gaps retained in evidence; no source-byte or actual-owner/browser claim. B1=70%,Build23.33%,child17.50%,parent86.25%; B1.04b provenance active. Existing Runtime/authoring derivatives unchanged.
+
+| 2026-10-03 15:44:22 | B1.05 complete; child20.83%, parent70.14%; B1.06 active | [API/hosting](../Audits/Evidence/BP-06-Representations/API_Hosting.json);185 source/452 installed;126 new statements/14 branches covered |
+
 ## B1.03b Research owner views - 2026-10-03 21:34:15
 
 Research0.33 read-only science hosting; bounded whole-selection metadata existence before loading page records.35 source/275 installed tests,182 statements24 branches100%;18dev11.03s. Actual retained PostgreSQL and independently installed HTTP/replacement preserve exact pages under correction and deny revoked grants.466 schemas unchanged; no migration. B1=60%,Build20%,child15%,parent85.83%; B1.04a Studio scientific contracts/transport active, b provenance next. Both equal halves within existing milestone.

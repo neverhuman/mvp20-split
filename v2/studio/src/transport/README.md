@@ -25,3 +25,5 @@ Approved numeric correction: Submission selects explicit amphora-command-v2 for 
 V2 save/admit producers require Runtime0.19.0. Old unmarked callers remain supported by the new owner. A rejected v2 request must not silently fall back to v1 or acquire a fresh identity; reconcile the original command. UI numeric text parsing must also detect overflow/nonzero underflow before converting text to a JavaScript number; the transport cannot recover a spelling already rounded away by a caller.
 
 POST409 classifies command_conflict: the identity may already bind different bytes, so consumers must block adoption of that identity's receipt. GET409 remains stale metadata. A terminal200 rejected receipt is distinct; ordinary network loss still requires original receipt reconciliation. No client computes Runtime canonical request hashes or silently retries under fresh identity.
+
+BP-06.06 scientific/ owns distinct Knowledge/Research same-origin clients with exact query/ref/schema checks and1MiB output bounds. These are metadata inspection reads, not an expansion of Runtime authority. Source bytes are the separate B1.04b boundary.

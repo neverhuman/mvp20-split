@@ -1,0 +1,11 @@
+# Scientific owner reads
+
+BP-06.06/B1.04a: [design](../../../../docs/Build%20Plans/BP-06/BP-06.06%20Studio%20scientific%20transport%20design.md). KnowledgeClient and ResearchClient consume their separately generated public scientific contracts. Runtime transport/catalog remains unchanged. No server gateway is deployed by these clients.
+
+`ScientificHTTP` allows only eight fixed owner routes under /api/knowledge and /api/research, posts <=256KiB JSON with same-origin session credentials and refuses redirects. It owns a deadline, caller cancellation and1MiB streamed UTF-8/schema validation. Errors are sanitized ScientificReadFailure states; backend bodies/credentials are never shown. Clients carry no owner tokens, persistent cache, source fetch, scientific rules or campaign mutations.
+
+`identity.ts` canonicalizes complete documented queries, excluding position, and reproduces owner SHA-256 profiles using WebCrypto. Defaults fill only omitted query fields. Inputs are copied before asynchronous work. Continuations must match the query; returned echoes, digests, exact references, authoritative scope and deterministic window counts are checked. Catalogs must advertise exactly the reviewed view/schema pins, not arbitrary browser routes. Scientific correctness is never inferred from those checks.
+
+Research property queries describe explicitly selected observation revisions. Reported bindings may themselves claim foreign/mismatched context; those claims are preserved as data without following or authorizing them. Authoritative row/source/protocol scopes remain checked. Numeric/censor/missing/uncertainty records and series ordering pass through unchanged. Page models later own loading/selection/race state and visible limitations.
+
+Tests/transport/scientific.test.ts covers actual local HTTP without owner credentials, every route, golden owner fingerprints, schema/ref/scope/page mismatches, invalid input/positions, sanitized status failures, byte/UTF-8 bounds and actual streamed-body timeout. This proves the client boundary with fixture responses. Actual owner gateway/browser integration remains B1.05/B2/B3, source provenance B1.04b. A replacement preserves these bounds/identities/failure states and passes independent Studio generation/build/tests before cutover.

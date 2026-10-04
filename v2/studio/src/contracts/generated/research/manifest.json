@@ -1,0 +1,30 @@
+{
+  "specimen_request": {
+    "source": "contracts/schemas/v1/research-views.specimen-view-request.serialization.json",
+    "sha256": "2a6d442973b174855d6a9cd06686178e4792f19d3c23d5a2bd78ac893f20f040"
+  },
+  "specimen_page": {
+    "source": "contracts/schemas/v1/research-views.specimen-view-page.serialization.json",
+    "sha256": "9e46b1b960ef87a55c023d6d7954a012faf048b497f1323b34263b1c673be2c6"
+  },
+  "property_request": {
+    "source": "contracts/schemas/v1/research-views.property-view-request.serialization.json",
+    "sha256": "411e68d99b3628f763346311c709448c84b3eb777cbefeaef53f7bb7d32d4f14"
+  },
+  "property_page": {
+    "source": "contracts/schemas/v1/research-views.property-view-page.serialization.json",
+    "sha256": "8313e0184396d9eaedc35573e7191347d8444e9301f491eac16bf670497c99d2"
+  },
+  "series_request": {
+    "source": "contracts/schemas/v1/research-views.observation-series-request.serialization.json",
+    "sha256": "e249711b27d36601e1a4f12d251aa0bbe4fac87bdfe5617fe414558a6ceb4fc7"
+  },
+  "series_page": {
+    "source": "contracts/schemas/v1/research-views.observation-series-page.serialization.json",
+    "sha256": "e106337186559f1b4262ff514e43308336a247d10b7823d631c6f80908cde257"
+  },
+  "catalog": {
+    "source": "contracts/schemas/v1/research-views.catalog.serialization.json",
+    "sha256": "05420edb61b0f626621b76cd7847b853711e59b5986fbaa91766fc06a4f441eb"
+  }
+}

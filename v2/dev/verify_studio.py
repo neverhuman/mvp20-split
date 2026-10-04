@@ -29,8 +29,9 @@ def stage_source(workspace):
         shutil.copyfile(path, target)
         copied[path.relative_to(ROOT).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
     manifest = json.loads((source / "src/contracts/generated/manifest.json").read_text(encoding="utf-8"))
-    authoring = json.loads((source / "src/contracts/generated/authoring/manifest.json").read_text(encoding="utf-8"))
-    manifest.update({"authoring." + key: entry for key, entry in authoring.items()})
+    for group in ("authoring", "knowledge", "research"):
+        entries = json.loads((source / "src/contracts/generated" / group / "manifest.json").read_text(encoding="utf-8"))
+        manifest.update({group + "." + key: entry for key, entry in entries.items()})
     for entry in manifest.values():
         path = (ROOT / entry["source"]).resolve()
         assert path.is_relative_to((ROOT / "contracts/schemas").resolve())

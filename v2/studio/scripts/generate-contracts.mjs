@@ -36,6 +36,24 @@ const authoringRoots = {
   execution_receipt: ["runtime.receipt", "CommandReceipt"],
   identity: ["commands.identity", "CommandIdentity"],
 };
+const knowledgeRoots = {
+  search_request: ["knowledge.entity-search-request", "GraphEntitySearchRequest"],
+  search_page: ["knowledge.entity-search-page", "GraphEntitySearchPage"],
+  neighborhood_request: ["knowledge.neighborhood-request", "GraphNeighborhoodRequest"],
+  neighborhood_page: ["knowledge.neighborhood-page", "GraphNeighborhoodPage"],
+  object_request: ["knowledge.object-request", "GraphObjectRequest"],
+  object_detail: ["knowledge.object-detail", "GraphObjectDetail"],
+  catalog: ["knowledge.explore-catalog", "GraphExploreCatalog"],
+};
+const researchRoots = {
+  specimen_request: ["research-views.specimen-view-request", "SpecimenViewRequest"],
+  specimen_page: ["research-views.specimen-view-page", "SpecimenViewPage"],
+  property_request: ["research-views.property-view-request", "PropertyViewRequest"],
+  property_page: ["research-views.property-view-page", "PropertyViewPage"],
+  series_request: ["research-views.observation-series-request", "ObservationSeriesRequest"],
+  series_page: ["research-views.observation-series-page", "ObservationSeriesPage"],
+  catalog: ["research-views.catalog", "ResearchViewCatalog"],
+};
 const check = process.argv.includes("--check");
 async function generate(roots, target) {
   const manifest = {};
@@ -70,3 +88,6 @@ async function generate(roots, target) {
 
 await generate(roots, target);
 await generate(authoringRoots, resolve(target, "authoring"));
+
+await generate(knowledgeRoots, resolve(target, "knowledge"));
+await generate(researchRoots, resolve(target, "research"));

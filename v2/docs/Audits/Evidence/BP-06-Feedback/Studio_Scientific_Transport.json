@@ -1,0 +1,118 @@
+{
+  "timestamp_local": "2026-10-03 21:51:08",
+  "task": "BP-06.06/B1.04a",
+  "status": "verified",
+  "studio_version": "0.2.0",
+  "source_tests": 154,
+  "installed_tests": 154,
+  "installed_at": "2026-10-03 21:48:30",
+  "independent_manifest_sha256": "5e81e0ae318c1d941d2e034e969f89cceeac9039181f113b88dc149a7c0f7e1a",
+  "independent_manifest": "v2\\.test-results\\studio-isolated\\c28854ca90304b6aa4ebc6121a35c695\\manifest.json",
+  "scientific_source_hashes": {
+    "studio/package.json": "25ec6a7562e331e01246dad1224db107572457dcdaf95e515c4cc6c7ffc97f45",
+    "studio/package-lock.json": "1878634dca0abf16368bfde2b2f29e0e6d1c68d1ac65cde1ea40c00a6b516acd",
+    "studio/src/contracts/scientific/knowledge.ts": "ad45a9ed1cb1978ed9a12bd16ee8f8756334fa3c9b5d0c7ea25b08aae4777366",
+    "studio/src/contracts/scientific/README.md": "9360b60d3498e9ab99c60c4e5418a4d0feebd2622747aeb66810c94a2231829f",
+    "studio/src/contracts/scientific/research.ts": "8e5fbb96a56ce51809c9a7da025082a214ab0781f5fb4c9f5d31f8d592568c6e",
+    "studio/src/contracts/scientific/validation.ts": "86220d44fca690dd382b944dbf04a39cba93fcba45d522ff789730acab9aed66",
+    "studio/src/transport/scientific/failure.ts": "7646484e11b4358d971228e8652123f454ac22102d02ee0dd754c4ecb9370b42",
+    "studio/src/transport/scientific/http.ts": "0b1653b0c1446ee7db9f339eccaf9a25abe27090bb1d6baabd1a5302ff25828d",
+    "studio/src/transport/scientific/identity.ts": "3dc159c650b8f3c62e377f71506ae7eed417b8d1da7819876c8026cd105190ab",
+    "studio/src/transport/scientific/knowledge.ts": "3dc976bfa7805840390e55b4e124400722e9fd032b1fbadde9fe427ff4bbd259",
+    "studio/src/transport/scientific/README.md": "dc37db4a35f5d1149ac7301ffb79231ab194227c0945a9b1af909e3f3e76bd3f",
+    "studio/src/transport/scientific/research.ts": "8e84e83d4ae68b1d608ea2545a77684e38f3dfc8d33ec95d5bad087175bbd4e3",
+    "studio/tests/contracts/scientific.test.ts": "5f1102161a4d3ee4635502a38eae592584bbd8a2b07f4cf27fcc4953e7c13f1b",
+    "studio/tests/transport/scientific.test.ts": "ec4d276a4f95789487953a8f56d60e3a6a519faf8978513e011b562aaa8437fd",
+    "studio/tests/fixtures/scientific/knowledge.json": "fd1b3daca264900057ffe80982f9b074729bf38fdbc7b886e025220bb730b1a8",
+    "studio/tests/fixtures/scientific/research.json": "4d689877953f33a5379f035deeb308ee5a4a835b0d3333722e016c23aa790444",
+    "studio/scripts/generate-contracts.mjs": "3e9649fff4bdd696cc3053aee5cda003c47a0026aed12805023635a76be3e28f"
+  },
+  "scientific_schema_pins": {
+    "knowledge.search_request": {
+      "source": "contracts/schemas/v1/knowledge.entity-search-request.serialization.json",
+      "sha256": "7a970eb793583c28282f84d58315b16119a93e008e2be9efe2474511726c7ca8"
+    },
+    "knowledge.search_page": {
+      "source": "contracts/schemas/v1/knowledge.entity-search-page.serialization.json",
+      "sha256": "b8242e0a174460ea260da1e2acdce718066a720cc168af79eba593a77a146b0b"
+    },
+    "knowledge.neighborhood_request": {
+      "source": "contracts/schemas/v1/knowledge.neighborhood-request.serialization.json",
+      "sha256": "66d11d1eee55b8082199d856b374dba1a68364cfc6ddbb82fbb1b62f42f53554"
+    },
+    "knowledge.neighborhood_page": {
+      "source": "contracts/schemas/v1/knowledge.neighborhood-page.serialization.json",
+      "sha256": "643a4a591788af1b1cadbc23c2917cb20eb16b46568016621e63b8447ac3c86a"
+    },
+    "knowledge.object_request": {
+      "source": "contracts/schemas/v1/knowledge.object-request.serialization.json",
+      "sha256": "8af12d75d0080d4c02d63651122b48c387ab3ebd3a31f61b6f88cac20d3d9bf7"
+    },
+    "knowledge.object_detail": {
+      "source": "contracts/schemas/v1/knowledge.object-detail.serialization.json",
+      "sha256": "49e0e757373fa7c8cf55b96db04493ae83c9676b2a5bdb41a44386e91cecfcb1"
+    },
+    "knowledge.catalog": {
+      "source": "contracts/schemas/v1/knowledge.explore-catalog.serialization.json",
+      "sha256": "420c3be0e95975de9b81f2eea6a40f49777f9653633e8d06a026aa07dcd286e6"
+    },
+    "research.specimen_request": {
+      "source": "contracts/schemas/v1/research-views.specimen-view-request.serialization.json",
+      "sha256": "2a6d442973b174855d6a9cd06686178e4792f19d3c23d5a2bd78ac893f20f040"
+    },
+    "research.specimen_page": {
+      "source": "contracts/schemas/v1/research-views.specimen-view-page.serialization.json",
+      "sha256": "9e46b1b960ef87a55c023d6d7954a012faf048b497f1323b34263b1c673be2c6"
+    },
+    "research.property_request": {
+      "source": "contracts/schemas/v1/research-views.property-view-request.serialization.json",
+      "sha256": "411e68d99b3628f763346311c709448c84b3eb777cbefeaef53f7bb7d32d4f14"
+    },
+    "research.property_page": {
+      "source": "contracts/schemas/v1/research-views.property-view-page.serialization.json",
+      "sha256": "8313e0184396d9eaedc35573e7191347d8444e9301f491eac16bf670497c99d2"
+    },
+    "research.series_request": {
+      "source": "contracts/schemas/v1/research-views.observation-series-request.serialization.json",
+      "sha256": "e249711b27d36601e1a4f12d251aa0bbe4fac87bdfe5617fe414558a6ceb4fc7"
+    },
+    "research.series_page": {
+      "source": "contracts/schemas/v1/research-views.observation-series-page.serialization.json",
+      "sha256": "e106337186559f1b4262ff514e43308336a247d10b7823d631c6f80908cde257"
+    },
+    "research.catalog": {
+      "source": "contracts/schemas/v1/research-views.catalog.serialization.json",
+      "sha256": "05420edb61b0f626621b76cd7847b853711e59b5986fbaa91766fc06a4f441eb"
+    }
+  },
+  "dev": {
+    "tests": 18,
+    "seconds": 14.96
+  },
+  "coverage": {
+    "scientific_contracts": "100% lines/branches/functions",
+    "http": {
+      "lines": 94.2,
+      "branches": 86.67
+    },
+    "identity": {
+      "lines": 94.55,
+      "branches": 94.29
+    },
+    "knowledge": {
+      "lines": 100,
+      "branches": 74.36
+    },
+    "research": {
+      "lines": 100,
+      "branches": 81.25
+    },
+    "gaps": "Defensive stringify/network/WebCrypto guards and combinations of reference/window/optional branch guards; not every malformed response combination tested"
+  },
+  "limits": [
+    "Local HTTP fixture proves transport, not actual scientific owner/browser integration",
+    "Source bytes/provenance remains B1.04b",
+    "No deployed gateway or visible Explore claim",
+    "Existing24 Runtime/authoring schema derivatives unchanged"
+  ]
+}
