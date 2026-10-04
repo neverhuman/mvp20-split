@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-- Version:0.30.0 verified; public Planning0.7.0. BP-07.02/B2.02 complete; B2.03b.i result payloads verified; b.ii.a storage verified; b.ii.b Data workflow verified; b.ii.c diagnostic producer/actual Data verified; b.iii.a owner values/transport verified; b.iii.b owned handoff storage verified; b.iii.c coordinator/actual Research recovery verified; outerB2.03c combined-owner acceptance verified; B3.01 trace oracles verified; B3.02 semantic-category corpus active.
+- Version:0.30.0 verified; public Planning0.7.0. BP-07.02/B2.02 complete; B2.03b.i result payloads verified; b.ii.a storage verified; b.ii.b Data workflow verified; b.ii.c diagnostic producer/actual Data verified; b.iii.a owner values/transport verified; b.iii.b owned handoff storage verified; b.iii.c coordinator/actual Research recovery verified; outerB2.03c combined-owner acceptance verified; B3.01 trace oracles verified; B3.02 synthetic corpus verified; B3.03 failure oracles active.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Canonical progress: [BP-07.02](../../docs/Build%20Plans/BP-07/BP-07.02%20Reliable%20text%20decomposition.md).
 

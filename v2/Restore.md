@@ -2,13 +2,13 @@
 
 ## Resume here
 
-- Refreshed 2026-10-04 15:56:11 (America/Chicago). **Read this first after every compression**, explicitly requested by the owner.
+- Refreshed 2026-10-04 16:15:15 (America/Chicago). **Read this first after every compression**, explicitly requested by the owner.
 - Continue across milestones, commits/pushes and compaction until genuinely blocked. No subagents, JARVIS access or v1 edits. No milestone-only final pause.
-- **Current BP-07.02/B3.02: synthetic semantic-category corpus.** B3.01 passed136 cases53.24s; docs checkpoint pending commit/push. Latest pushed **22712feb** combined owner acceptance, Planning0.30. Prior storage c54950e6.
-- **No tests/hosts running.** Session51361 passed combined r3,9 Planning workers/6 owners; cleanup completed. Manifest `v2/.test-results/planning-combined-owners-r3-20261004/manifest.json`. R1/r2 failed fixture setup cases retained; no reset.
+- **Current BP-07.02/B3.03: peer/head/retry/process failure oracles.** B3.02 passed and trackers updated; pending final review/commit/push. Latest pushed **36ca7e95** trace oracles; prior22712feb combined acceptance. Planning0.30 unchanged.
+- **No tests/hosts running.** Session53887 passed86 scoped cases10.90s; session97289 passed88 each on both installed0.30 environments9.164/9.229s. Final manifest v2/.test-results/planning-semantic-corpus-reviewed-20261004/manifest.json. Earlier corpus runs are superseded by this final test snapshot, not deleted.
 - Planning/dev0.30/publicPlanning0.7; planning0011 unchanged. Never run Planning<=0.28 migrators. Research0013/Data artifact0012 unchanged; no Research<=0.33 or Data<=0.25 migrators. No reset/downgrade/deletion of retained fixtures.
-- Canonical child58.33%,Build77.78%,Acceptance0%,2/4 closed. B1/B2=100%,B3=33.33%,V1=0%; B2 all milestones/substeps100%. Parent31.67%,6/20; P1=100%,P2=58.33%,others0%.
-- Child/parent/MBT/history/design/module READMEs updated; MBT25 rows. Evidence Trace_Oracles.json and BP-07.02 Trace oracles.md. No tests running; session20841 passed136 cases. Review/commit/push docs then B3.02.
+- Canonical child66.67%,Build88.89%,Acceptance0%,2/4 closed. B1/B2=100%,B3=66.67%,V1=0%; B2 all milestones/substeps100%. Parent33.33%,6/20; P1=100%,P2=66.67%,others0%.
+- Child/parent/MBT/history/design/module READMEs updated; MBT25 rows. Evidence Semantic_Corpus.json; native helper100%, review helper95.68% incl branches, four defensive guard lines missing. Ruff/boundaries passed; final whitespace/tracker check then commit/push.
 
 ## Verified Planning0.30 coordinator
 
@@ -25,12 +25,12 @@
 
 ## Next authorized work
 
-1. Commit/push verified B3.01 checkpoint, then B3.02 synthetic semantic-category corpus. No owner decision blocks deterministic work.
-2. Physical design: B3 equal .01 source-stated/inferred/failed/repaired trace oracles; .02 synthetic semantic-category corpus; .03 peer/head/retry/process failures. V1 equal independent acceptance and scoped audit/archive. Preserve order.
-3. B3.01 verification complete: tests/extraction/test_trace.py already has pure source/inferred/missing-context/failed-and-repaired invariants. Oracle map links EXT-TRACE-01/02/03 and QEV-08 to136 passing focused cases and explicitly reused same0.30 independent replacement evidence. No new production or duplicate tests needed.
-4. Corpus has eighteen pinned manually authored source/oracle pairs under tests/extraction/corpus, calibration/held_out across nine categories. Existing test_corpus.py checks hashes/split/completeness only, not semantic evaluation. Meaning oracles are prose, reviewed by coding agent, not human/domain gold. Do not modify pinned corpus or invent live model results.
-5. Combined gate uses real Data0.29/Research0.34/Knowledge0.18, independent scoped credentials and both verified Planning0.30 installs. Nine workers/six owners pass. Only tests/dev files changed; no source-package version/migration changes. Two accepted corrections rebuild after full source rights withdrawal; original campaign stable, explicit future pin. Pending case configures unavailable loopback Data endpoint; no actual Data death claim.
-6. Live provider/model/egress/spend choices block only actual calls. Continue through authorized deterministic work and keep this handoff current.
+1. Commit/push verified B3.02 checkpoint then B3.03 peer/head/retry/process failure oracles. No owner decision blocks deterministic work.
+2. B3.02 new test-owned semantic_review.py, semantic_boundary.py, test_semantic_review.py and semantic_fixtures/{responses.json,manifest.json,README.md}; acceptance/semantic_report_probe.py; dev/verify_planning_semantics.py.54 authored responses/18 unchanged corpus cases; faithful/incorrect/abstained retained. Scorer requires complete annotations for assertions/questions/answers/needs/diagnostics/edits, binds source/oracle/output, prevents duplicates and split leakage, separates abstention/failure. Labels outside provider packets; no auto-entailment, human/expert gold or live model claim. Generic entity/predicate scaffolding is not a domain graph benchmark. Native0.30 task/prompt/output/quote/trace boundaries only; no peers/SQL in this gate. Diagnostic-only responses explicitly have no_quoted_candidates.
+3. Final scoped evidence:86 tests10.90s; semantic_boundary57 statements16 branches100%; semantic_review129 statements56 branches95.6757%, missing lines72/79/82/123 (record shape/identity/review shape/nonnumeric list path). Final independently installed88 each with identical complete reports9.164/9.229s. Source packages/migrations/public schemas unchanged. Semantic_Corpus.json records all category/split metrics. Deliberately wrong fixtures score0 but may have correct quote geometry; faithful1.0 measures fixture accounting only.
+4. B3.03 inspection not started in code. Map remaining peer/head/retry/process failures against existing actual combined proof and focused handoff/publication/repair suites. Potential missing proof is abrupt Planning owner-handoff death after durable dispatch/before remote POST or after actual owner commit/before local receipt. Earlier coordinator/combined evidence explicitly uses synthetic lost reply and normal replacement, not abrupt process death. Investigate precise gap, create bounded new probe if required; do not claim old scripted storage proves actual peers.
+5. Physical design: B3 .01/.02=100%, .03=0%; V1 .01 independent acceptance and .02 scoped audit/archive remain0%. Keep order. No full-plan closeout yet.
+6. Live provider/model/egress/spend choices block only actual calls. Continue through deterministic work; no user approval needed. Update handoff before compaction and reread it after.
 
 ## Canonical navigation and prior evidence
 

@@ -435,3 +435,12 @@ B3.01 verified 2026-10-04 15:56:11:136 scoped cases53.24s cover EXT-TRACE-01/02/
 Archived MBT checkpoint:
 
 | 2026-10-04 03:14:24 | BP-07.01 closed100%,4/4; parent20%,4/20; BP-07.02 activation next | [Closeout](../Audits/BP-07.01_Model_Engagement_Closeout.md);173 source/installed,11 readback+15 abrupt-recovery processes |
+
+
+## Synthetic corpus verification 2026-10-04 16:15:15
+
+B3.02 verified 2026-10-04 16:15:15:54 explicitly reviewed synthetic responses/18 unchanged corpus cases, with faithful/incorrect/abstaining variants retained.86 focused tests10.90s; both isolated0.30 installs pass88 tests with identical category/split reports. Native input/output/quotation/trace boundaries remain interpretation-only. Boundary helper100%, review helper95.68% coverage; no production/schema/migration changes, remote acceptance or live semantic quality claim. B3=66.67%;child66.67%,Build88.89%,parent33.33%;closed2/4 and6/20. Current B3.03. [Design](BP-07/BP-07.02%20Corpus%20verification.md), [evidence](../Audits/Evidence/BP-07-Extraction/Semantic_Corpus.json).
+
+Archived MBT checkpoint:
+
+| 2026-10-04 04:07:44 | BP-07.02/B1.03a verified; child14.58%,parent22.92%; B1.03b active | Trace_Domain.json;263 tests,64 statements14 branches100%,500 schemas |

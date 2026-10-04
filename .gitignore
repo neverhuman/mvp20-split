@@ -188,3 +188,4 @@ id_rsa
 
 /v2/.test-results/
 /.test-results/
+/.coverage

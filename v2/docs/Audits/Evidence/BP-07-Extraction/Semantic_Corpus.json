@@ -1,0 +1,892 @@
+{
+  "verified_at": "2026-10-04 16:15:15",
+  "status": "passed",
+  "gate": "BP-07.02/B3.02",
+  "planning": "0.30.0",
+  "scope": "Test-owned reviewed synthetic semantic scoring; no production package/schema/migration change",
+  "focused": {
+    "tests": 86,
+    "seconds": 10.9,
+    "coverage": {
+      "semantic_boundary.py": {
+        "summary": {
+          "covered_lines": 57,
+          "num_statements": 57,
+          "percent_covered": 100.0,
+          "percent_covered_display": "100",
+          "missing_lines": 0,
+          "excluded_lines": 0,
+          "percent_statements_covered": 100.0,
+          "percent_statements_covered_display": "100",
+          "num_branches": 16,
+          "num_partial_branches": 0,
+          "covered_branches": 16,
+          "missing_branches": 0,
+          "percent_branches_covered": 100.0,
+          "percent_branches_covered_display": "100"
+        },
+        "missing_lines": [],
+        "missing_branches": []
+      },
+      "semantic_review.py": {
+        "summary": {
+          "covered_lines": 125,
+          "num_statements": 129,
+          "percent_covered": 95.67567567567568,
+          "percent_covered_display": "96",
+          "missing_lines": 4,
+          "excluded_lines": 0,
+          "percent_statements_covered": 96.89922480620154,
+          "percent_statements_covered_display": "97",
+          "num_branches": 56,
+          "num_partial_branches": 4,
+          "covered_branches": 52,
+          "missing_branches": 4,
+          "percent_branches_covered": 92.85714285714286,
+          "percent_branches_covered_display": "93"
+        },
+        "missing_lines": [
+          72,
+          79,
+          82,
+          123
+        ],
+        "missing_branches": [
+          [
+            71,
+            72
+          ],
+          [
+            78,
+            79
+          ],
+          [
+            81,
+            82
+          ],
+          [
+            122,
+            123
+          ]
+        ]
+      }
+    }
+  },
+  "installed": {
+    "initial": {
+      "tests": 88,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "seconds": 9.164
+    },
+    "replacement": {
+      "tests": 88,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "seconds": 9.229
+    }
+  },
+  "retained_manifest": ".test-results/planning-semantic-corpus-reviewed-20261004/manifest.json",
+  "manifest_sha256": "2fab9bedd364f32d98238201c5fe4137ffdc0119ced83f08a35df2ce3d92c618",
+  "fixture_sha256": "9adc33aab45498d90b012da44f55bde323185e88d648f3a57955ff02c607bb00",
+  "corpus_sha256": "f1677f3cbe44d792ea891f7d1aecdd85929175470662349aa2746af3311150d0",
+  "cases": 18,
+  "responses": 54,
+  "splits": [
+    "calibration",
+    "held_out"
+  ],
+  "category_metrics": [
+    {
+      "split": "calibration",
+      "category": "alias_collision",
+      "variants": {
+        "faithful": {
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "context_present": 2,
+          "context_total": 2,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 0
+        },
+        "incorrect": {
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 2,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 1
+        },
+        "abstained": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 1,
+          "precision": null,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 2,
+          "abstained": 1,
+          "provider_failed": 0,
+          "forbidden": 0
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "category": "applicability",
+      "variants": {
+        "faithful": {
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "context_present": 5,
+          "context_total": 5,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 0
+        },
+        "incorrect": {
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 5,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 1
+        },
+        "abstained": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 1,
+          "precision": null,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 5,
+          "abstained": 1,
+          "provider_failed": 0,
+          "forbidden": 0
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "category": "contradiction",
+      "variants": {
+        "faithful": {
+          "true_positive": 3,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "context_present": 2,
+          "context_total": 2,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 0
+        },
+        "incorrect": {
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 2,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 1
+        },
+        "abstained": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 3,
+          "precision": null,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 2,
+          "abstained": 1,
+          "provider_failed": 0,
+          "forbidden": 0
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "category": "correlation",
+      "variants": {
+        "faithful": {
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "context_present": 1,
+          "context_total": 1,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 0
+        },
+        "incorrect": {
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 1,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 1
+        },
+        "abstained": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 2,
+          "precision": null,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 1,
+          "abstained": 1,
+          "provider_failed": 0,
+          "forbidden": 0
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "category": "hostile_instructions",
+      "variants": {
+        "faithful": {
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "context_present": 1,
+          "context_total": 1,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 0
+        },
+        "incorrect": {
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 1,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 1
+        },
+        "abstained": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 2,
+          "precision": null,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 1,
+          "abstained": 1,
+          "provider_failed": 0,
+          "forbidden": 0
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "category": "missing_context",
+      "variants": {
+        "faithful": {
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "context_present": 5,
+          "context_total": 5,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 0
+        },
+        "incorrect": {
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 5,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 1
+        },
+        "abstained": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 1,
+          "precision": null,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 5,
+          "abstained": 1,
+          "provider_failed": 0,
+          "forbidden": 0
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "category": "negation",
+      "variants": {
+        "faithful": {
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "context_present": 2,
+          "context_total": 2,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 0
+        },
+        "incorrect": {
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 2,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 1
+        },
+        "abstained": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 1,
+          "precision": null,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 2,
+          "abstained": 1,
+          "provider_failed": 0,
+          "forbidden": 0
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "category": "opinion_answer",
+      "variants": {
+        "faithful": {
+          "true_positive": 3,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "context_present": 3,
+          "context_total": 3,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 0
+        },
+        "incorrect": {
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 3,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 1
+        },
+        "abstained": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 3,
+          "precision": null,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 3,
+          "abstained": 1,
+          "provider_failed": 0,
+          "forbidden": 0
+        }
+      }
+    },
+    {
+      "split": "calibration",
+      "category": "retraction",
+      "variants": {
+        "faithful": {
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "context_present": 1,
+          "context_total": 1,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 0
+        },
+        "incorrect": {
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 1,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 1
+        },
+        "abstained": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 2,
+          "precision": null,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 1,
+          "abstained": 1,
+          "provider_failed": 0,
+          "forbidden": 0
+        }
+      }
+    },
+    {
+      "split": "held_out",
+      "category": "alias_collision",
+      "variants": {
+        "faithful": {
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "context_present": 3,
+          "context_total": 3,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 0
+        },
+        "incorrect": {
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 3,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 1
+        },
+        "abstained": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 1,
+          "precision": null,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 3,
+          "abstained": 1,
+          "provider_failed": 0,
+          "forbidden": 0
+        }
+      }
+    },
+    {
+      "split": "held_out",
+      "category": "applicability",
+      "variants": {
+        "faithful": {
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "context_present": 5,
+          "context_total": 5,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 0
+        },
+        "incorrect": {
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 5,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 1
+        },
+        "abstained": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 1,
+          "precision": null,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 5,
+          "abstained": 1,
+          "provider_failed": 0,
+          "forbidden": 0
+        }
+      }
+    },
+    {
+      "split": "held_out",
+      "category": "contradiction",
+      "variants": {
+        "faithful": {
+          "true_positive": 3,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "context_present": 2,
+          "context_total": 2,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 0
+        },
+        "incorrect": {
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 2,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 1
+        },
+        "abstained": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 3,
+          "precision": null,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 2,
+          "abstained": 1,
+          "provider_failed": 0,
+          "forbidden": 0
+        }
+      }
+    },
+    {
+      "split": "held_out",
+      "category": "correlation",
+      "variants": {
+        "faithful": {
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "context_present": 1,
+          "context_total": 1,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 0
+        },
+        "incorrect": {
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 1,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 1
+        },
+        "abstained": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 2,
+          "precision": null,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 1,
+          "abstained": 1,
+          "provider_failed": 0,
+          "forbidden": 0
+        }
+      }
+    },
+    {
+      "split": "held_out",
+      "category": "hostile_instructions",
+      "variants": {
+        "faithful": {
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "context_present": 1,
+          "context_total": 1,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 0
+        },
+        "incorrect": {
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 1,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 1
+        },
+        "abstained": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 2,
+          "precision": null,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 1,
+          "abstained": 1,
+          "provider_failed": 0,
+          "forbidden": 0
+        }
+      }
+    },
+    {
+      "split": "held_out",
+      "category": "missing_context",
+      "variants": {
+        "faithful": {
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "context_present": 3,
+          "context_total": 3,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 0
+        },
+        "incorrect": {
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 3,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 1
+        },
+        "abstained": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 1,
+          "precision": null,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 3,
+          "abstained": 1,
+          "provider_failed": 0,
+          "forbidden": 0
+        }
+      }
+    },
+    {
+      "split": "held_out",
+      "category": "negation",
+      "variants": {
+        "faithful": {
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "context_present": 2,
+          "context_total": 2,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 0
+        },
+        "incorrect": {
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 2,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 1
+        },
+        "abstained": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 2,
+          "precision": null,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 2,
+          "abstained": 1,
+          "provider_failed": 0,
+          "forbidden": 0
+        }
+      }
+    },
+    {
+      "split": "held_out",
+      "category": "opinion_answer",
+      "variants": {
+        "faithful": {
+          "true_positive": 3,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "context_present": 2,
+          "context_total": 2,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 0
+        },
+        "incorrect": {
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 2,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 1
+        },
+        "abstained": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 3,
+          "precision": null,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 2,
+          "abstained": 1,
+          "provider_failed": 0,
+          "forbidden": 0
+        }
+      }
+    },
+    {
+      "split": "held_out",
+      "category": "retraction",
+      "variants": {
+        "faithful": {
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "context_present": 2,
+          "context_total": 2,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 0
+        },
+        "incorrect": {
+          "true_positive": 0,
+          "false_positive": 1,
+          "false_negative": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 2,
+          "abstained": 0,
+          "provider_failed": 0,
+          "forbidden": 1
+        },
+        "abstained": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 2,
+          "precision": null,
+          "recall": 0.0,
+          "context_present": 0,
+          "context_total": 2,
+          "abstained": 1,
+          "provider_failed": 0,
+          "forbidden": 0
+        }
+      }
+    }
+  ],
+  "boundaries": {
+    "verified_geometry_only": 32,
+    "no_quoted_candidates": 22,
+    "not_proposed": 0,
+    "invalid": 0
+  },
+  "remote_acceptance_exercised": false,
+  "negative_controls": [
+    "Response/source/oracle hashes; changed corpus bytes; unknown split and post-review split migration",
+    "Missing case review, unknown meaning, duplicate identity/path, unreviewed claim/edit, invalid context/rejection index",
+    "Duplicate meaning matches counted as false positives; omitted meanings retained as false negatives",
+    "Provider failure and abstention distinct; fabricated abstention cannot hide emitted claims",
+    "False claim with true quotation remains semantically false; favorable annotation cannot repair fabricated quotation",
+    "Hostile tool action, acceptance authority and network descriptor fail the closed native output profile",
+    "Unknown opinion methods remain missing; inferred answers retain origin; labels/oracles remain outside packets"
+  ],
+  "checks": [
+    "Ruff passed",
+    "Production dependency boundaries passed",
+    "Original corpus bytes unchanged"
+  ],
+  "limits": [
+    "Explicit coding-agent synthetic semantic review, not automatic entailment or domain-expert labels",
+    "Generic fixture entity/predicate scaffolding; no domain-vocabulary, identity-resolution or accepted graph benchmark",
+    "No Data/Knowledge/Research peer calls or acceptance; no scientific or live model quality claim",
+    "All54 responses retained, including18 deliberately incorrect and18 abstentions",
+    "Existing independently verified0.30 wheels reused; tests snapshotted from current source",
+    "No PostgreSQL, peer process, migration or full-owner-suite claim in this gate",
+    "Test helper coverage only; semantic_boundary100%, semantic_review95.6757% incl branches",
+    "Uncovered review guards at72/79/82/123: record shape, empty identity, review shape, nonnumeric list path",
+    "Generic fixture predicate/entities are scaffolding; actual domain normalization/identity and remote authority are not scored here",
+    "Faithful1.0 and intentionally incorrect0.0 measure reviewed fixture accounting, never live model quality"
+  ]
+}

@@ -26,3 +26,6 @@ Verified447 source owner/contract/dev136.96s;429 independent cases20 process sta
 
 
 B3.01 trace oracle verification:136 scoped tests53.24s cover source/inferred/missing fields, pending/tampered inputs, durable failed/repaired traces and attributed answers. [Oracle map](../../../../../docs/Build%20Plans/BP-07/BP-07.02%20Trace%20oracles.md) and [evidence](../../../../../docs/Audits/Evidence/BP-07-Extraction/Trace_Oracles.json) distinguish fresh tests from reused independent0.30 process proof. No production changes or live semantic/scientific claim. B3.02 owns category scoring; corpus hash checks alone do not measure meaning.
+
+
+B3.02 verified 2026-10-04 16:15:15: the test-owned semantic_review/semantic_boundary helpers bind54 reviewed responses to18 unchanged corpus cases.86 focused and88 per isolated installation pass; helper coverage100%/95.68%. [Evidence](../../../../../docs/Audits/Evidence/BP-07-Extraction/Semantic_Corpus.json) reports explicit review metrics by split/category. False claims can pass quotation geometry; missing methods remain missing. Native authority stays interpretation-only. Generic fixture entities/predicates do not benchmark graph identity or remote acceptance; production semantic/live evaluation remains BP-07.05.
