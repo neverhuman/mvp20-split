@@ -269,3 +269,13 @@ MBT archive 2026-10-04 05:57:15:
 Planning0.16/public0.6 introduces task/v2 selected assertion revisions, explicit entity context and attributed correction/retraction/merge/context-revision candidates. The closed provider catalog binds exact schema, keeps selected/scope/action guards and retains typed edits in immutable trace paths. Core SchemaRef only permits version1; a separate planning.extraction-edit-draft/v1 profile carries schema_version2 payload without changing shared schemas. An initial attempted version2 reference failed strict validation, resolved before verification by the separate identity. All500 predecessor validation/serialization hashes unchanged,504 total. No SQL migration or raw output bound increase; a separate LF-pinned v2 prompt leaves v1 bytes intact.
 
 447 source owner/contract/dev cases136.96s,299 extraction/profile statements62 branches100%;429 owned cases in two independent installs plus20 processes including failed/repaired v2 traces and retained0.7 history. This is typed shape/provenance compatibility, not semantic edit acceptance. B2.01a100%,b/c0%;B2.01=33.33%,B2=11.11%,child27.78%,Build37.04%,parent25.56%. B2.01b deterministic validation is current; actual owner read binding is c.
+
+## Archived MBT checkpoint 2026-10-04 06:28:33
+
+| Timestamp | Checkpoint | Evidence |
+|---|---|---|
+| 2026-10-03 23:17:26 | B2.02 complete; child37.50%,parent89.58%; B2.03 active | [Visible Explore](../Audits/Evidence/BP-06-Feedback/Explore_Visible_Views.json);186 independent,9 browser,actual model,reviewed screenshots |
+
+## 2026-10-04 06:28:33 - BP-07.02/B2.01b verified
+
+Planning0.17 adds decomposed deterministic graph proposal validation and direct public Knowledge dependency.483 source tests,465 independent tests20 process stages,36 pure validation cases;409 statements116 branches at98%. Child30.56%,Build40.74%,parent26.11%; c public owner reads next. Canonical closed counts remain1/4 and5/20. See [evidence](../Audits/Evidence/BP-07-Extraction/Proposal_Validation.json). No Knowledge contact/acceptance or scientific validity claim. Source-adjacent README consolidated to current behavior; granular Planning selectors now include source_access/publication/proposals.
