@@ -60,7 +60,7 @@
   },
   {
     "package": "amphora-contracts-knowledge",
-    "version": "0.7.8",
+    "version": "0.8.0",
     "path": "contracts/knowledge",
     "module": "amphora_contracts_knowledge",
     "public_dependencies": [
@@ -72,8 +72,18 @@
     ]
   },
   {
-    "package": "amphora-contracts-representations",
+    "package": "amphora-contracts-planning",
     "version": "0.2.0",
+    "path": "contracts/planning",
+    "module": "amphora_contracts_planning",
+    "public_dependencies": [
+      "amphora-contracts-core",
+      "amphora-contracts-graph-runtime"
+    ]
+  },
+  {
+    "package": "amphora-contracts-representations",
+    "version": "0.3.0",
     "path": "contracts/representations",
     "module": "amphora_contracts_representations",
     "public_dependencies": [
@@ -90,6 +100,16 @@
       "amphora-contracts-artifacts",
       "amphora-contracts-graph-runtime",
       "amphora-contracts-core"
+    ]
+  },
+  {
+    "package": "amphora-contracts-research-views",
+    "version": "0.1.0",
+    "path": "contracts/research_views",
+    "module": "amphora_contracts_research_views",
+    "public_dependencies": [
+      "amphora-contracts-core",
+      "amphora-contracts-research"
     ]
   },
   {
@@ -121,6 +141,16 @@
     ]
   },
   {
+    "package": "amphora-agent-planning",
+    "version": "0.3.0",
+    "path": "services/agent_planning",
+    "module": "amphora_agent_planning",
+    "public_dependencies": [
+      "amphora-contracts-core",
+      "amphora-contracts-planning"
+    ]
+  },
+  {
     "package": "amphora-campaign-runtime",
     "version": "0.20.2",
     "path": "services/campaign_runtime",
@@ -148,7 +178,7 @@
   },
   {
     "package": "amphora-data-artifacts",
-    "version": "0.24.0",
+    "version": "0.28.0",
     "path": "services/data_artifacts",
     "module": "amphora_data_artifacts",
     "public_dependencies": [
@@ -162,7 +192,7 @@
   },
   {
     "package": "amphora-knowledge",
-    "version": "0.15.8",
+    "version": "0.17.0",
     "path": "services/knowledge",
     "module": "amphora_knowledge",
     "public_dependencies": [
@@ -178,10 +208,11 @@
   },
   {
     "package": "amphora-research",
-    "version": "0.31.0",
+    "version": "0.33.0",
     "path": "services/research",
     "module": "amphora_research",
     "public_dependencies": [
+      "amphora-contracts-research-views",
       "amphora-contracts-graph-runtime",
       "amphora-tool-protocol",
       "amphora-contracts-knowledge",

@@ -135,3 +135,7 @@ Additive planning0.2/Agent Planning0.2, bounded64KiB/256-chunk capture and disti
 ## 2026-10-04 02:08:10 - B1.03 private journal
 
 Agent Planning0.3, planning_0001 applied idempotently with separate migrator/service roles. Immutable request, attempt intent and observation/capture records; no public dispatch/budget permission.104 tests25.45s,11 actual PostgreSQL plus6 record-boundary cases;398/399 statements63/64 branches, migration CLI uncovered. Initial FK declaration failed and rolled back; fixed before migration acceptance, no retained peer state reset. Child18.75%,parent3.75%,Build25%; B1.04 independent process/install remains.
+
+## 2026-10-04 02:17:10 - B1 boundary complete
+
+B1.04 reusable installed verifier:8-wheel closure,2 independent installs,86 owned tests5.87s and4 process stages. Original unknown usage/capture preserved across successor proposal and replay; CLI migration explicit. No bytecode copied or private peers installed.18 dev13.87s;488 schemas unchanged. Initial tooling pin for absent optional greenlet corrected, then source-only staging verified. B1=100%,child25%,parent5%,Build33.33%,gates1/4 and1/20. B2.01 durable reservations next; no budget/dispatch or live provider claim.

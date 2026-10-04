@@ -110,3 +110,7 @@ BP-06.03 replacement tooling: install_owner_peer.py builds an explicitly selecte
 
 
 The Qdrant generation replacement probe retains a second labeled fixture under ignored `.test-results/qdrant-replacement-fixture.json`. It temporarily selects that file only within the test helper context; primary state remains unchanged. Both named volumes are preserved. Source-harness runs set `AMPHORA_TEST_QDRANT_PYTHON` to an independently installed Data interpreter; the fresh probe runs with `-I`, checks forbidden peers are absent, receives only owner credentials via environment, and emits public identities/scores. Installed-harness runs may use their own isolated interpreter. This verifies owner-module reconstruction and actual backend effects, not generation HTTP (B2.04).
+
+## Planning owner verification
+
+`verify_planning.py --output <new-evidence-directory>` requires explicit `AMPHORA_TEST_POSTGRES=1`. It builds the Planning public dependency closure, installs two isolated owners without private peers, copies tests without bytecode, runs explicit migration/owned suites and four fresh journal processes. Only Planning migrator/service URLs enter isolated fixture environments; process probes receive service credentials only. Evidence retains wheels, constraints, test XML, exact request/observation hashes and scoped limits. No reset, live provider call or budget-dispatch authority is implied.

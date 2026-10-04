@@ -12,12 +12,20 @@ from amphora_agent_planning.persistence.migrate import upgrade
 from amphora_contracts_core import Scope
 from amphora_contracts_planning import reference_proposal_schema
 from sqlalchemy import URL, create_engine
+from sqlalchemy.engine import make_url
 
 
 @pytest.fixture(scope="session")
 def planning_database():
     if os.environ.get("AMPHORA_TEST_POSTGRES") != "1":
         pytest.skip("Explicit PostgreSQL fixture opt-in required")
+    migrator = os.environ.get("AMPHORA_TEST_PLANNING_MIGRATOR_URL")
+    service = os.environ.get("AMPHORA_TEST_PLANNING_SERVICE_URL")
+    if migrator or service:
+        assert migrator and service, "Both independently scoped Planning URLs are required"
+        upgrade(migrator)
+        upgrade(migrator)
+        return make_url(service)
     from postgres_fixture import owned_state, planning_owner
 
     state = owned_state()
