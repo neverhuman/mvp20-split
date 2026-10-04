@@ -12,3 +12,5 @@ Public owner records still need semantic identity/scope binding in their owning 
 Verified 2026-10-04 07:31:11:70 focused cases,212 shared/read statements28 branches98%;560 regression and542 independent tests. Actual public read proofs passed with8 isolated Planning workers and2 owner hosts per owner. Remaining coverage gaps are defensive socket cleanup and alternate empty-read paths. No migration or scientific acceptance claim.
 
 BP-07.03/B1.02a.i extends only compiled profile configuration; the original Knowledge and extraction Research routes/deadlines/call counts remain unchanged. No persisted format or public DTO changes. Tests for the new profile live under campaign_research_access alongside the legacy caller transport suites.
+
+BP-07.03/B1.02a.ii permits four compiled Research-only named exploration paths; the separate32-call view profile leaves legacy route tables unchanged. See research_view_access for exact page/scope/schema binding and explicit continuation.

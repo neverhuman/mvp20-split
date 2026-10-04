@@ -507,3 +507,12 @@ B1.02a.i verified 2026-10-04 17:41:49:Planning0.33/public0.8 exact question/need
 Archived MBT checkpoint:
 
 | 2026-10-04 05:23:21 | BP-07.02/c.iii complete; child23.44%,parent24.69%; d active | [Publication workflow](../Audits/Evidence/BP-07-Extraction/Publication_Workflow.json);421 tests, public SDK recovery |
+
+
+## Named Research views 2026-10-04 17:54:48
+
+B1.02a.ii verified 2026-10-04 17:54:48:Planning0.34/public0.8 campaign-bound named Research pages, exact query/page/schema/scope checks and explicit pagination.85 focused tests18.70s;228 independent tests12.088s. New client100%; shared+new291 statements38 branches98.48%, inherited socket cleanup/EOF gaps explicit.508 schemas/planning0011 unchanged. Child7.29%,Build9.72%,parent41.46%,closed0/4 and8/20. Current a.iii actual Research compatibility. [Evidence](../Audits/Evidence/BP-07-Campaigns/Research_View_Reads.json).
+
+Archived MBT rows:
+
+| 2026-10-04 05:38:25 | BP-07.02/B1 complete; child25%,parent25%; B2.01a active | [Actual publication](../Audits/Evidence/BP-07-Extraction/Actual_Publication.json);403 installed,17 readback,20 Planning/2 Data processes |

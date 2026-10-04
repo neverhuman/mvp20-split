@@ -1,8 +1,8 @@
 [project]
 name = "amphora-agent-planning"
-version = "0.33.0"
+version = "0.34.0"
 requires-python = ">=3.12,<3.13"
-dependencies = ["amphora-contracts-research==0.14.0", "amphora-contracts-knowledge==0.8.0", "amphora-tool-protocol==0.2.0", "amphora-contracts-artifacts==0.2.0", "amphora-contracts-commands==0.2.0", "amphora-contracts-evidence==0.5.13", "sqlalchemy>=2,<3", "psycopg[binary]>=3,<4", "alembic>=1.16,<2","pydantic>=2.12,<3", "amphora-contracts-core==0.1.0", "amphora-contracts-planning==0.8.0"]
+dependencies = ["amphora-contracts-research-views==0.1.0", "amphora-contracts-research==0.14.0", "amphora-contracts-knowledge==0.8.0", "amphora-tool-protocol==0.2.0", "amphora-contracts-artifacts==0.2.0", "amphora-contracts-commands==0.2.0", "amphora-contracts-evidence==0.5.13", "sqlalchemy>=2,<3", "psycopg[binary]>=3,<4", "alembic>=1.16,<2","pydantic>=2.12,<3", "amphora-contracts-core==0.1.0", "amphora-contracts-planning==0.8.0"]
 
 [build-system]
 requires = ["hatchling>=1.27,<2"]
@@ -12,6 +12,7 @@ build-backend = "hatchling.build"
 packages = ["src/amphora_agent_planning"]
 
 [tool.uv.sources]
+amphora-contracts-research-views = { path = "../../contracts/research_views", editable = true }
 amphora-contracts-research = { path = "../../contracts/research", editable = true }
 amphora-contracts-knowledge = { path = "../../contracts/knowledge", editable = true }
 amphora-tool-protocol = { path = "../../sdk/tool_protocol", editable = true }
@@ -22,4 +23,4 @@ amphora-contracts-core = { path = "../../contracts/core", editable = true }
 amphora-contracts-planning = { path = "../../contracts/planning", editable = true }
 
 [tool.amphora]
-public-imports = ["amphora-contracts-research", "amphora-contracts-knowledge", "amphora-tool-protocol", "amphora-contracts-artifacts", "amphora-contracts-commands", "amphora-contracts-evidence", "amphora-contracts-core", "amphora-contracts-planning"]
+public-imports = ["amphora-contracts-research-views", "amphora-contracts-research", "amphora-contracts-knowledge", "amphora-tool-protocol", "amphora-contracts-artifacts", "amphora-contracts-commands", "amphora-contracts-evidence", "amphora-contracts-core", "amphora-contracts-planning"]

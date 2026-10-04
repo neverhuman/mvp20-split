@@ -30,7 +30,10 @@ class ReadProfile:
                 type(self.request_bytes) is int and 1 <= self.request_bytes <= 262144, 'peer_read_limits')
         require(type(self.routes) is dict and 1 <= len(self.routes) <= 8, 'peer_read_routes')
         for path, (_, _, limit) in self.routes.items():
-            require(type(path) is str and re.fullmatch(r'/v1/[a-z-]+/read', path) is not None and
+            named_view = self.owner == 'research' and path in {
+                '/v1/research-explore/catalog', '/v1/research-explore/specimens',
+                '/v1/research-explore/properties', '/v1/research-explore/observation-series'}
+            require(type(path) is str and (re.fullmatch(r'/v1/[a-z-]+/read', path) is not None or named_view) and
                     type(limit) is int and 1 <= limit <= 16777216, 'peer_read_route')
         object.__setattr__(self, 'routes', MappingProxyType(dict(self.routes)))
 

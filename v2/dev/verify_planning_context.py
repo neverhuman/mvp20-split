@@ -52,7 +52,7 @@ def verify(output):
     ):
         shutil.copytree(source, destination, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
     areas = [output / "tests/contracts", *(output / "tests/service" / area for area in
-        ("context", "campaign_context", "campaign_research_access", "knowledge_access/test_transport.py",
+        ("context", "campaign_context", "campaign_research_access", "research_view_access", "knowledge_access/test_transport.py",
          "research_access/test_transport.py"))]
     run([python, "-I", "-m", "pytest", *areas, "--import-mode=importlib", "--tb=short", "-q",
          "--junitxml=" + str(output / "tests.xml")])
@@ -65,7 +65,7 @@ def verify(output):
         "contracts": specs["amphora-contracts-planning"][1]["project"]["version"],
         "installations": 1,
         "wheels": {path.name: hashlib.sha256(path.read_bytes()).hexdigest() for path in sorted(wheels.glob("*.whl"))},
-        "limits": ["Pure context/contract boundary only; no migration, SQL, peers, provider or scientific claim",
+        "limits": ["Pure context/contract boundary only; loopback HTTP only; no migration, SQL, actual owner service, provider or scientific claim",
                    "Independent installation from current source, not a fresh implementation rewrite"]}
     (output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"status": "passed", "tests": tests, "installations": 1}))
