@@ -187,3 +187,4 @@ id_rsa
 /v2/Slide*.PNG
 
 /v2/.test-results/
+/.test-results/

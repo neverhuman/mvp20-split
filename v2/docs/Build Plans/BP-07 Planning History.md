@@ -408,3 +408,12 @@ Archived MBT checkpoint:
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
 | 2026-10-04 02:08:10 | B1.03 complete; child18.75%,parent3.75%; B1.04 active | [Attempt journal](../Audits/Evidence/BP-07-Planning/Attempt_Journal.json);104 tests incl11 actual PostgreSQL cases |
+
+
+B2.03b.iii.c verified 2026-10-04 15:27:08:Planning0.30 read-first owner coordinator, fresh processing authorization and bounded dependency scheduling.36 focused176.43s,314 statements94 branches94.61%, preparation/policy100%;844 installed488.320s/39 replay stages/two installs. Actual Research0.34 six workers/two hosts preserve declaration through synthetic lost reply, denial/restart/recovery and dependent need registration; terminal replay has zero calls. Source/Data fixtures scripted; no actual Knowledge/scientific or abrupt-kill claim. Public0.7/506 schemas/planning0011 unchanged. b.iii100%,b100%,B2.03=66.67%,B2=88.89%;child47.22%,Build62.96%,parent29.44%;closed1/4 and5/20. Current outerB2.03c. [Evidence](../Audits/Evidence/BP-07-Extraction/Owner_Handoff_Coordinator.json).
+
+Archived MBT checkpoint:
+
+| Timestamp | Checkpoint | Evidence |
+|---|---|---|
+| 2026-10-04 02:17:10 | B1complete; child25%,parent5%; B2.01 active; gates1/4 and1/20 | [Installed journal](../Audits/Evidence/BP-07-Planning/Installed_Journal.json);86 installed,4 processes,2 installs |

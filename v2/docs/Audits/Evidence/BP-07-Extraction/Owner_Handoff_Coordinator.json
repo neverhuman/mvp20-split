@@ -1,0 +1,216 @@
+{
+  "verified_at": "2026-10-04 15:27:08",
+  "status": "passed",
+  "gate": "BP-07.02/B2.03b.iii.c",
+  "planning": "0.30.0",
+  "public_planning": "0.7.0",
+  "migration": "planning0011 unchanged",
+  "focused": {
+    "tests": 36,
+    "seconds": 176.43,
+    "coverage": {
+      "covered_lines": 303,
+      "num_statements": 314,
+      "percent_covered": 94.6078431372549,
+      "percent_covered_display": "95",
+      "missing_lines": 11,
+      "excluded_lines": 0,
+      "percent_statements_covered": 96.4968152866242,
+      "percent_statements_covered_display": "96",
+      "num_branches": 94,
+      "num_partial_branches": 9,
+      "covered_branches": 83,
+      "missing_branches": 11,
+      "percent_branches_covered": 88.29787234042553,
+      "percent_branches_covered_display": "88"
+    },
+    "missing_lines": {
+      "coordinator.py": [
+        32,
+        48,
+        69,
+        73
+      ],
+      "exchange.py": [
+        41,
+        42,
+        47,
+        83,
+        84
+      ],
+      "workflow.py": [
+        23,
+        79
+      ]
+    }
+  },
+  "installed": {
+    "tests": 844,
+    "seconds": 488.32,
+    "process_stages": 39,
+    "installations": 2
+  },
+  "wheels": {
+    "amphora_agent_planning-0.30.0-py3-none-any.whl": "71445c7065579b05fc8049c1754a22f500fdb359462a8677596d05ece3c68c74",
+    "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+    "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+    "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+    "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+    "amphora_contracts_planning-0.7.0-py3-none-any.whl": "0f09c0f8bb69e5b0f33929ed1eb4623d768aae1373b651b9c4bb07f5537da9f1",
+    "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+    "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+  },
+  "actual_research": {
+    "status": "passed",
+    "verified_at": "2026-10-04 15:24:39",
+    "planning": "0.30.0",
+    "research": "0.34.0",
+    "project": "9e7a3a8a88b04ea4bf023f7a91d84062",
+    "research_pids": [
+      9368,
+      11624
+    ],
+    "stages": {
+      "uncertain": {
+        "stage": "uncertain",
+        "pid": 28524,
+        "request": "b5e60bed6b0a25f275ffdd96d7bb4b4851c11c53f5e4300135412f78b284be41",
+        "payload": "07668f2b8f2123e734e88b68544f7872607ae3b122607ec4445b09779ecd9aff",
+        "prepared_at": "2026-10-04T20:23:46.464660+00:00",
+        "position": 3,
+        "outcome": "uncertain",
+        "reason": "owner_unavailable",
+        "reads": 1,
+        "writes": 1,
+        "events": [
+          "5bea8e868c5529067c22c0c18b3271aadf232a53e5a8edc4367254f54e125043",
+          "4a70b42659ec8be9a891e5b6ddc69b790c0166dff7627da3d8a976665e38acd8",
+          "2f0cd6941defdfcf90cfd94f81e466d3888952c407fca861c54efb78b6c5451b"
+        ],
+        "selection_sha256": "54ce74debc4582f0475327f5f7cb53517aa55fc81c88b203bd6a027c2bf5d628"
+      },
+      "denied": {
+        "stage": "denied",
+        "pid": 23732,
+        "request": "b5e60bed6b0a25f275ffdd96d7bb4b4851c11c53f5e4300135412f78b284be41",
+        "payload": "07668f2b8f2123e734e88b68544f7872607ae3b122607ec4445b09779ecd9aff",
+        "prepared_at": "2026-10-04T20:23:46.464660+00:00",
+        "position": 4,
+        "outcome": "blocked",
+        "reason": "owner_access_denied",
+        "reads": 1,
+        "writes": 0,
+        "events": [
+          "5bea8e868c5529067c22c0c18b3271aadf232a53e5a8edc4367254f54e125043",
+          "4a70b42659ec8be9a891e5b6ddc69b790c0166dff7627da3d8a976665e38acd8",
+          "2f0cd6941defdfcf90cfd94f81e466d3888952c407fca861c54efb78b6c5451b",
+          "0a31c92d2d6d5523f73469b43634d0192fd4bff951a46524c515606d7eb71a95"
+        ],
+        "selection_sha256": "54ce74debc4582f0475327f5f7cb53517aa55fc81c88b203bd6a027c2bf5d628"
+      },
+      "recover": {
+        "stage": "recover",
+        "pid": 19044,
+        "request": "b5e60bed6b0a25f275ffdd96d7bb4b4851c11c53f5e4300135412f78b284be41",
+        "payload": "07668f2b8f2123e734e88b68544f7872607ae3b122607ec4445b09779ecd9aff",
+        "prepared_at": "2026-10-04T20:23:46.464660+00:00",
+        "position": 5,
+        "outcome": "acknowledged",
+        "reason": null,
+        "reads": 1,
+        "writes": 0,
+        "events": [
+          "5bea8e868c5529067c22c0c18b3271aadf232a53e5a8edc4367254f54e125043",
+          "4a70b42659ec8be9a891e5b6ddc69b790c0166dff7627da3d8a976665e38acd8",
+          "2f0cd6941defdfcf90cfd94f81e466d3888952c407fca861c54efb78b6c5451b",
+          "0a31c92d2d6d5523f73469b43634d0192fd4bff951a46524c515606d7eb71a95",
+          "4152a881714a3391a0459d9fa1a675556fea6110995f4008abefb89a13406499"
+        ],
+        "selection_sha256": "54ce74debc4582f0475327f5f7cb53517aa55fc81c88b203bd6a027c2bf5d628"
+      },
+      "replay": {
+        "stage": "replay",
+        "pid": 17276,
+        "request": "b5e60bed6b0a25f275ffdd96d7bb4b4851c11c53f5e4300135412f78b284be41",
+        "payload": "07668f2b8f2123e734e88b68544f7872607ae3b122607ec4445b09779ecd9aff",
+        "prepared_at": "2026-10-04T20:23:46.464660+00:00",
+        "position": 5,
+        "outcome": "acknowledged",
+        "reason": null,
+        "reads": 0,
+        "writes": 0,
+        "events": [
+          "5bea8e868c5529067c22c0c18b3271aadf232a53e5a8edc4367254f54e125043",
+          "4a70b42659ec8be9a891e5b6ddc69b790c0166dff7627da3d8a976665e38acd8",
+          "2f0cd6941defdfcf90cfd94f81e466d3888952c407fca861c54efb78b6c5451b",
+          "0a31c92d2d6d5523f73469b43634d0192fd4bff951a46524c515606d7eb71a95",
+          "4152a881714a3391a0459d9fa1a675556fea6110995f4008abefb89a13406499"
+        ],
+        "selection_sha256": "54ce74debc4582f0475327f5f7cb53517aa55fc81c88b203bd6a027c2bf5d628"
+      },
+      "need": {
+        "stage": "need",
+        "pid": 23900,
+        "request": "1d0ccaebe1ef2610ca5b653f4bc71a56d60171cb34b69daa192ed819416833ac",
+        "payload": "4a38d0d57393f05da21cffc5303fa647a03a1a21b49f3344beabb1dd4590a1bd",
+        "prepared_at": "2026-10-04T20:24:31.138802+00:00",
+        "position": 3,
+        "outcome": "acknowledged",
+        "reason": null,
+        "reads": 1,
+        "writes": 1,
+        "events": [
+          "304e94291f8894a70fe2cd3396e1bc6eb3112c90e261d0a3887a8a4a9ca8ff3a",
+          "5eb708d9938c3014a8f0b5fdcbb4ca595bedf4a7a8fe9289a129f73d8c07db44",
+          "be8bb0696730f2181d47dff4794266d57a6ee03b2a4cea9c4f20a0a1bcfad75d"
+        ],
+        "selection_sha256": "d19e4408f5988b7fe27839f5b219d7fbb0bbd03108efcf224a0a66b97746a679"
+      },
+      "need-replay": {
+        "stage": "need-replay",
+        "pid": 32364,
+        "request": "1d0ccaebe1ef2610ca5b653f4bc71a56d60171cb34b69daa192ed819416833ac",
+        "payload": "4a38d0d57393f05da21cffc5303fa647a03a1a21b49f3344beabb1dd4590a1bd",
+        "prepared_at": "2026-10-04T20:24:31.138802+00:00",
+        "position": 3,
+        "outcome": "acknowledged",
+        "reason": null,
+        "reads": 0,
+        "writes": 0,
+        "events": [
+          "304e94291f8894a70fe2cd3396e1bc6eb3112c90e261d0a3887a8a4a9ca8ff3a",
+          "5eb708d9938c3014a8f0b5fdcbb4ca595bedf4a7a8fe9289a129f73d8c07db44",
+          "be8bb0696730f2181d47dff4794266d57a6ee03b2a4cea9c4f20a0a1bcfad75d"
+        ],
+        "selection_sha256": "d19e4408f5988b7fe27839f5b219d7fbb0bbd03108efcf224a0a66b97746a679"
+      }
+    },
+    "limits": [
+      "Actual Research HTTP and owner restart; synthetic lost reply after committed success, not abrupt process death",
+      "Scripted public Data/source fixtures; no actual Data processing-rights or Knowledge acceptance claim",
+      "Two isolated Planning and Research installations from their existing verified wheel closures",
+      "Historical terminal replay under denied credentials performs zero owner calls; no scientific adequacy claim",
+      "Planning0011/Research0013 unchanged; no fixture reset or old migrator"
+    ]
+  },
+  "oracles": [
+    "Original-identity read before every new submission; denied/ambiguous reads do not write",
+    "Fresh source and interpretation processing before new POST, with historical recovery requiring no new processing",
+    "Factory-bound graph status and accepted-change readback; typed rejected/conflict outcomes remain terminal",
+    "Sticky request/identity rejection and terminal-slot reservation survive temporary failures",
+    "Question-before-need/answer ordering; exact selected external questions, independent failures and terminal replay",
+    "Lease loss after authorization prevents dispatch; completion between read and acquire avoids new effects",
+    "Actual Research declaration survives synthetic lost reply, denied read and owner restart; dependent need registered; terminal replay makes no owner calls"
+  ],
+  "limits": [
+    "Scripted source/Data inputs in actual Research proof; actual Knowledge acceptance and combined Data rights remain outerB2.03c",
+    "Lost reply after actual HTTP success is synthetic; no abrupt-kill or power-loss claim",
+    "No live provider, scientific truth, confidence threshold, new public schema or active repinning",
+    "Uncovered branches: coordinator empty/abstained and publication-loss reports; exchange defensive late uncertainty/lease paths and absent status after POST; workflow corruption/release-error propagation"
+  ]
+}
