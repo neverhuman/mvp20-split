@@ -1,0 +1,267 @@
+{
+  "verified_at": "2026-10-04 03:10:57",
+  "status": "passed",
+  "scenarios": {
+    "reservation": {
+      "exit_code": 71,
+      "stages": {
+        "crash": {
+          "pid": 9036,
+          "request_sha256": "85bdca3b6e465a68ffe3773a0dfa6f6a7cf9878f3b093545ad3f950034025031"
+        },
+        "recover": {
+          "pid": 10464,
+          "request_sha256": "85bdca3b6e465a68ffe3773a0dfa6f6a7cf9878f3b093545ad3f950034025031",
+          "statuses": [
+            "abstained"
+          ],
+          "records": [
+            "22fedc80464028abd2235e675bf9e7b122f0f491189e80385375f19a95fb0048"
+          ],
+          "charges": [
+            40
+          ],
+          "calls": [
+            1
+          ],
+          "stop": "abstained"
+        },
+        "replay": {
+          "pid": 18932,
+          "request_sha256": "85bdca3b6e465a68ffe3773a0dfa6f6a7cf9878f3b093545ad3f950034025031",
+          "statuses": [
+            "abstained"
+          ],
+          "records": [
+            "22fedc80464028abd2235e675bf9e7b122f0f491189e80385375f19a95fb0048"
+          ],
+          "charges": [
+            40
+          ],
+          "calls": [],
+          "stop": "abstained"
+        }
+      },
+      "synthetic_call_markers": [
+        {
+          "pid": 10464,
+          "ordinal": 1,
+          "request_sha256": "85bdca3b6e465a68ffe3773a0dfa6f6a7cf9878f3b093545ad3f950034025031"
+        }
+      ]
+    },
+    "issuance": {
+      "exit_code": 72,
+      "stages": {
+        "crash": {
+          "pid": 27216,
+          "request_sha256": "89ab5d78037fe753464aa47a9f7c87d79bd518da1d9535e8b654080ca4483505"
+        },
+        "recover": {
+          "pid": 30296,
+          "request_sha256": "89ab5d78037fe753464aa47a9f7c87d79bd518da1d9535e8b654080ca4483505",
+          "statuses": [
+            "unknown",
+            "abstained"
+          ],
+          "records": [
+            "e107f09920abd1ce4b1eb706d2d67e199e72ab56049405ea1d47f318cbab8b50",
+            "dc36d9eadfdb24f9326abcdc43fdeefd676d97d1aa3a74d92eca61e83e2e0214"
+          ],
+          "charges": [
+            40,
+            40
+          ],
+          "calls": [
+            2
+          ],
+          "stop": "abstained"
+        },
+        "replay": {
+          "pid": 1740,
+          "request_sha256": "89ab5d78037fe753464aa47a9f7c87d79bd518da1d9535e8b654080ca4483505",
+          "statuses": [
+            "unknown",
+            "abstained"
+          ],
+          "records": [
+            "e107f09920abd1ce4b1eb706d2d67e199e72ab56049405ea1d47f318cbab8b50",
+            "dc36d9eadfdb24f9326abcdc43fdeefd676d97d1aa3a74d92eca61e83e2e0214"
+          ],
+          "charges": [
+            40,
+            40
+          ],
+          "calls": [],
+          "stop": "abstained"
+        }
+      },
+      "synthetic_call_markers": [
+        {
+          "pid": 30296,
+          "ordinal": 2,
+          "request_sha256": "89ab5d78037fe753464aa47a9f7c87d79bd518da1d9535e8b654080ca4483505"
+        }
+      ]
+    },
+    "provider_return": {
+      "exit_code": 73,
+      "stages": {
+        "crash": {
+          "pid": 11844,
+          "request_sha256": "e04bf1b604991dca1cdd2da7617cd29a96502bbc62e85df977d9398647a40007"
+        },
+        "recover": {
+          "pid": 31756,
+          "request_sha256": "e04bf1b604991dca1cdd2da7617cd29a96502bbc62e85df977d9398647a40007",
+          "statuses": [
+            "unknown",
+            "abstained"
+          ],
+          "records": [
+            "2df3217b5822757049f24b9adedde33584c0bb4143e0a849f1091d6300dc27c5",
+            "a0fc7df237e7c1e2ae8dac5b2464c6174681b6e8480868e86a4de4f6b181c9d6"
+          ],
+          "charges": [
+            40,
+            40
+          ],
+          "calls": [
+            2
+          ],
+          "stop": "abstained"
+        },
+        "replay": {
+          "pid": 33744,
+          "request_sha256": "e04bf1b604991dca1cdd2da7617cd29a96502bbc62e85df977d9398647a40007",
+          "statuses": [
+            "unknown",
+            "abstained"
+          ],
+          "records": [
+            "2df3217b5822757049f24b9adedde33584c0bb4143e0a849f1091d6300dc27c5",
+            "a0fc7df237e7c1e2ae8dac5b2464c6174681b6e8480868e86a4de4f6b181c9d6"
+          ],
+          "charges": [
+            40,
+            40
+          ],
+          "calls": [],
+          "stop": "abstained"
+        }
+      },
+      "synthetic_call_markers": [
+        {
+          "pid": 11844,
+          "ordinal": 1,
+          "request_sha256": "e04bf1b604991dca1cdd2da7617cd29a96502bbc62e85df977d9398647a40007"
+        },
+        {
+          "pid": 31756,
+          "ordinal": 2,
+          "request_sha256": "e04bf1b604991dca1cdd2da7617cd29a96502bbc62e85df977d9398647a40007"
+        }
+      ]
+    },
+    "observation": {
+      "exit_code": 74,
+      "stages": {
+        "crash": {
+          "pid": 27196,
+          "request_sha256": "8e64460cb42ba4ce64c72a78ee68f88e98424209c344179a249c4c149227eea1"
+        },
+        "recover": {
+          "pid": 24608,
+          "request_sha256": "8e64460cb42ba4ce64c72a78ee68f88e98424209c344179a249c4c149227eea1",
+          "statuses": [
+            "abstained"
+          ],
+          "records": [
+            "0afa6930f0876e87a124bcdf6eda1acf29a021491e0cfc327f48e862640e514e"
+          ],
+          "charges": [
+            40
+          ],
+          "calls": [],
+          "stop": "abstained"
+        },
+        "replay": {
+          "pid": 28492,
+          "request_sha256": "8e64460cb42ba4ce64c72a78ee68f88e98424209c344179a249c4c149227eea1",
+          "statuses": [
+            "abstained"
+          ],
+          "records": [
+            "0afa6930f0876e87a124bcdf6eda1acf29a021491e0cfc327f48e862640e514e"
+          ],
+          "charges": [
+            40
+          ],
+          "calls": [],
+          "stop": "abstained"
+        }
+      },
+      "synthetic_call_markers": [
+        {
+          "pid": 27196,
+          "ordinal": 1,
+          "request_sha256": "8e64460cb42ba4ce64c72a78ee68f88e98424209c344179a249c4c149227eea1"
+        }
+      ]
+    },
+    "settlement": {
+      "exit_code": 75,
+      "stages": {
+        "crash": {
+          "pid": 18612,
+          "request_sha256": "67fc6dfe33026a7674246cc747ff29671b99baa3a54da83be4dac431ddac2f6c"
+        },
+        "recover": {
+          "pid": 29492,
+          "request_sha256": "67fc6dfe33026a7674246cc747ff29671b99baa3a54da83be4dac431ddac2f6c",
+          "statuses": [
+            "abstained"
+          ],
+          "records": [
+            "93559d024b318eb2ebdfae1d9cebd3de1f184112c55908c600f7dceb11998caf"
+          ],
+          "charges": [
+            40
+          ],
+          "calls": [],
+          "stop": "abstained"
+        },
+        "replay": {
+          "pid": 2072,
+          "request_sha256": "67fc6dfe33026a7674246cc747ff29671b99baa3a54da83be4dac431ddac2f6c",
+          "statuses": [
+            "abstained"
+          ],
+          "records": [
+            "93559d024b318eb2ebdfae1d9cebd3de1f184112c55908c600f7dceb11998caf"
+          ],
+          "charges": [
+            40
+          ],
+          "calls": [],
+          "stop": "abstained"
+        }
+      },
+      "synthetic_call_markers": [
+        {
+          "pid": 18612,
+          "ordinal": 1,
+          "request_sha256": "67fc6dfe33026a7674246cc747ff29671b99baa3a54da83be4dac431ddac2f6c"
+        }
+      ]
+    }
+  },
+  "processes": 15,
+  "initial_python": "Z:\\mvp20-split\\v2\\.test-results\\planning-final-independent-20261004\\initial\\Scripts\\python.exe",
+  "replacement_python": "Z:\\mvp20-split\\v2\\.test-results\\planning-final-independent-20261004\\replacement\\Scripts\\python.exe",
+  "limits": [
+    "Abrupt os._exit at committed boundaries; not power-loss durability",
+    "Actual retained PostgreSQL; synthetic provider markers, not remote effects",
+    "Existing independent installations; no new wheel build in this harness"
+  ]
+}

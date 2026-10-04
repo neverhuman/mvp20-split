@@ -4,7 +4,7 @@ Archived first draft at `2026-09-25 13:35:12`. Historical task pairs/percentages
 
 # BP-07 Autonomous LLM Campaign Supervision
 
-## Canonical Execution Tracker
+## Archived draft tracker (non-canonical)
 
 - Status: **proposed / first draft for user review**; implementation not activated.
 - Last refreshed: `2026-09-24 12:01:26` (America/Chicago).
@@ -163,3 +163,11 @@ Planning0.7/planning_0004 adds once-only issuance, database-clock deadlines, imm
 ## 2026-10-04 03:01:54 ? B3.02 barrier proof
 
 15 actual PostgreSQL cases9.89s pass, including independent engagement progress while three contenders observe pending, and recovery-first/return-first/simultaneous expiry races. Immutable original outcome, separate late evidence and single charge preserved. Child66.67%,Build88.89%,parent13.33%; next B3.03 abrupt process exit.
+
+## 2026-10-04 03:06:50 ? B3.03 abrupt process-exit proof
+
+Five committed boundaries across15 installed processes passed: reservation, issuance, provider return, observation, settlement. Same-attempt exclusive synthetic call markers never duplicate; fresh replacement preserves pending uncertainty/charges/output hashes and final replay calls nothing. Actual PostgreSQL, no remote/power-loss claim. Child75%,Build100%,parent15%,closed3/4 and3/20; V1.01 active. [Evidence](../Audits/Evidence/BP-07-Planning/Crash_Recovery.json).
+
+## 2026-10-04 03:14:24 ? V1 acceptance and BP-07.01 closeout
+
+V1.01 verified173 source/installed cases,18 dev,11 replay processes and15 abrupt-exit processes on final installations; V1.02 scoped audit aligned after consolidating stale persistence README. Child100%,Build100%,Acceptance100%; parent20%,4/20. Archive child and rebase links; BP-07.02 activation audit next. [Audit](../Audits/BP-07.01_Model_Engagement_Closeout.md). MBT redundant queue had stale5.83%; corrected to20% and removed numeric duplication from navigation prose. Future tracker refresh must include all active phase/queue mirrors, not historical checkpoint rows.

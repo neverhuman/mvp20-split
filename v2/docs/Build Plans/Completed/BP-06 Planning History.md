@@ -941,3 +941,7 @@ Archived MBT checkpoints:
 | 2026-10-03 19:31:45 | B3.02a complete; child62.50%, parent77.08%; B3.02b active | [Process replay](../../Audits/Evidence/BP-06-Representations/Process_Death_Replay.json);8 source/8 installed, actual PostgreSQL/Qdrant |
 
 | 2026-10-03 19:36:53 | B3.02 complete; child66.67%, parent77.78%; B3.03 active | [Live authority](../../Audits/Evidence/BP-06-Representations/Live_Authority_Barriers.json);5 source/5 installed actual process races |
+
+Archived MBT overflow:
+
+| 2026-10-03 19:47:01 | B3 complete; child75%, parent79.17%; V1a active; gates3/4 and19/24 | [Failure closure](../../Audits/Evidence/BP-06-Representations/Failure_Closure.json);158 installed retrieval,18 dev; QD-01 bounded recovery closed |

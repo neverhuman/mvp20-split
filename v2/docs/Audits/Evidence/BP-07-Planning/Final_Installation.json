@@ -1,0 +1,215 @@
+{
+  "verified_at": "2026-10-04 03:09:12",
+  "status": "passed",
+  "tests": 173,
+  "project": "dee81d56687347aa86ee5a000012c0b9",
+  "stages": {
+    "prepare": {
+      "pid": 33556,
+      "request_sha256": "abd47936f675888040be77981aba4af0dcb5424c402c7853edff71955d002e2f",
+      "attempts": [
+        {
+          "ordinal": 1,
+          "status": "pending"
+        },
+        null
+      ]
+    },
+    "interrupted": {
+      "pid": 20768,
+      "request_sha256": "abd47936f675888040be77981aba4af0dcb5424c402c7853edff71955d002e2f",
+      "attempts": [
+        {
+          "ordinal": 1,
+          "status": "unknown",
+          "record_sha256": "91d4c550f27b2f4468c6e26d213e5db7876659aca134468942fd38b593cdb72b",
+          "capture_sha256": "c0cc5a4ffaffaa209c0244ef5b7427ec0d2aa1c7a46ff5c922d81a10502b4cb7",
+          "usage": {
+            "input_tokens": null,
+            "output_tokens": null,
+            "accounting_units": null,
+            "certainty": "unknown"
+          }
+        },
+        {
+          "ordinal": 2,
+          "status": "pending"
+        }
+      ]
+    },
+    "finish": {
+      "pid": 31184,
+      "request_sha256": "abd47936f675888040be77981aba4af0dcb5424c402c7853edff71955d002e2f",
+      "attempts": [
+        {
+          "ordinal": 1,
+          "status": "unknown",
+          "record_sha256": "91d4c550f27b2f4468c6e26d213e5db7876659aca134468942fd38b593cdb72b",
+          "capture_sha256": "c0cc5a4ffaffaa209c0244ef5b7427ec0d2aa1c7a46ff5c922d81a10502b4cb7",
+          "usage": {
+            "input_tokens": null,
+            "output_tokens": null,
+            "accounting_units": null,
+            "certainty": "unknown"
+          }
+        },
+        {
+          "ordinal": 2,
+          "status": "proposed",
+          "record_sha256": "8e84ea1026e90354a5f759f281e42290424f9f9b81771710de8fb14b3984959c",
+          "capture_sha256": "2d0eaf78555d59367a108293e3109ceed8578de1419fb944040383df126f9153",
+          "usage": {
+            "input_tokens": 10,
+            "output_tokens": 10,
+            "accounting_units": 1,
+            "certainty": "reported"
+          }
+        }
+      ]
+    },
+    "replay": {
+      "pid": 26452,
+      "request_sha256": "abd47936f675888040be77981aba4af0dcb5424c402c7853edff71955d002e2f",
+      "attempts": [
+        {
+          "ordinal": 1,
+          "status": "unknown",
+          "record_sha256": "91d4c550f27b2f4468c6e26d213e5db7876659aca134468942fd38b593cdb72b",
+          "capture_sha256": "c0cc5a4ffaffaa209c0244ef5b7427ec0d2aa1c7a46ff5c922d81a10502b4cb7",
+          "usage": {
+            "input_tokens": null,
+            "output_tokens": null,
+            "accounting_units": null,
+            "certainty": "unknown"
+          }
+        },
+        {
+          "ordinal": 2,
+          "status": "proposed",
+          "record_sha256": "8e84ea1026e90354a5f759f281e42290424f9f9b81771710de8fb14b3984959c",
+          "capture_sha256": "2d0eaf78555d59367a108293e3109ceed8578de1419fb944040383df126f9153",
+          "usage": {
+            "input_tokens": 10,
+            "output_tokens": 10,
+            "accounting_units": 1,
+            "certainty": "reported"
+          }
+        }
+      ]
+    }
+  },
+  "reservation_stages": {
+    "budget_prepare": {
+      "pid": 2528,
+      "request_sha256": "dd5d965b80fba28eb20f6d2847c3baba4499da9338d4ce80e79d6611d8b27281",
+      "policy_sha256": "1b54ca3de905b4c2de23f9a64506f865d61b98fdd2a2b778d32ca1cae38f2e7a",
+      "tokens": 2048,
+      "units": 60,
+      "registered_at": "2026-10-04T08:08:59.423055+00:00"
+    },
+    "budget_replay": {
+      "pid": 28352,
+      "request_sha256": "dd5d965b80fba28eb20f6d2847c3baba4499da9338d4ce80e79d6611d8b27281",
+      "policy_sha256": "1b54ca3de905b4c2de23f9a64506f865d61b98fdd2a2b778d32ca1cae38f2e7a",
+      "tokens": 2048,
+      "units": 60,
+      "registered_at": "2026-10-04T08:08:59.423055+00:00"
+    }
+  },
+  "settlement_stages": {
+    "budget_settle": {
+      "pid": 17748,
+      "request_sha256": "dd5d965b80fba28eb20f6d2847c3baba4499da9338d4ce80e79d6611d8b27281",
+      "observation_sha256": "0db657b08579814daff0829b98833fbeb31eda881d399b154f0da59617d1ffcb",
+      "tokens": 2048,
+      "units": 60,
+      "overage": false,
+      "registered_at": "2026-10-04T08:09:03.916335+00:00"
+    },
+    "budget_settle_replay": {
+      "pid": 12000,
+      "request_sha256": "dd5d965b80fba28eb20f6d2847c3baba4499da9338d4ce80e79d6611d8b27281",
+      "observation_sha256": "0db657b08579814daff0829b98833fbeb31eda881d399b154f0da59617d1ffcb",
+      "tokens": 2048,
+      "units": 60,
+      "overage": false,
+      "registered_at": "2026-10-04T08:09:03.916335+00:00"
+    }
+  },
+  "dispatch_stages": {
+    "dispatch_prepare": {
+      "pid": 30880,
+      "request_sha256": "6ce3f858369a744d00f48d36b5db35640bda46843ca64fe77f2b7ec22e99a700",
+      "deadline": "2026-10-04T08:09:08.466086+00:00",
+      "status": "pending"
+    },
+    "dispatch_run": {
+      "pid": 25880,
+      "request_sha256": "6ce3f858369a744d00f48d36b5db35640bda46843ca64fe77f2b7ec22e99a700",
+      "calls": [
+        2
+      ],
+      "records": [
+        "c52304e7ea33850212aaeb3d2421c066b6497d29374b23e9fcfd8c3320030901",
+        "9c403e0079b410fd0606bdad0f4aeeb34db982cecce28bbbe9e2211b22028828"
+      ],
+      "charges": [
+        40,
+        40
+      ],
+      "stop": "abstained"
+    },
+    "dispatch_replay": {
+      "pid": 20508,
+      "request_sha256": "6ce3f858369a744d00f48d36b5db35640bda46843ca64fe77f2b7ec22e99a700",
+      "calls": [],
+      "records": [
+        "c52304e7ea33850212aaeb3d2421c066b6497d29374b23e9fcfd8c3320030901",
+        "9c403e0079b410fd0606bdad0f4aeeb34db982cecce28bbbe9e2211b22028828"
+      ],
+      "charges": [
+        40,
+        40
+      ],
+      "stop": "abstained"
+    }
+  },
+  "wheels": {
+    "amphora_agent_planning-0.7.0-py3-none-any.whl": "2b10a954f10a714b172e2ad420dcdaeb8d66a9d946716e59c6097af6c29d4be3",
+    "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+    "amphora_contracts_planning-0.2.0-py3-none-any.whl": "c0e1ce8cd2d87ae2bbb443536e46ac2c1d9f9875dcac8d9498d0ef061291aa56",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee"
+  },
+  "limits": [
+    "Own PostgreSQL journal only; no live provider/domain acceptance",
+    "Deterministic bounded dispatch only; no actual remote transport",
+    "Two independent installs from one source-built wheel closure; no new implementation rewrite"
+  ],
+  "scope": "BP-07.01 V1.01 final isolated acceptance",
+  "source_tests": 173,
+  "source_seconds": 16.63,
+  "dev_tests": 18,
+  "dev_seconds": 18.34,
+  "coverage": {
+    "covered_lines": 802,
+    "num_statements": 803,
+    "percent_covered": 99.7828447339848,
+    "percent_covered_display": "99",
+    "missing_lines": 1,
+    "excluded_lines": 4,
+    "percent_statements_covered": 99.87546699875467,
+    "percent_statements_covered_display": "99",
+    "num_branches": 118,
+    "num_partial_branches": 1,
+    "covered_branches": 117,
+    "missing_branches": 1,
+    "percent_branches_covered": 99.15254237288136,
+    "percent_branches_covered_display": "99"
+  },
+  "schemas_unchanged": 488,
+  "baseline": "Known added v1/LICENSE only; recorded hashes match; no v1 changes"
+}
