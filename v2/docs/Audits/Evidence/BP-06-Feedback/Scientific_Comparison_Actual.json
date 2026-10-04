@@ -1,0 +1,83 @@
+{
+  "verified_at": "2026-10-04 00:35:18",
+  "status": "passed",
+  "scope": "BP-06.06 B2.04c actual prepared specimens",
+  "tests": 1,
+  "seconds": 92.52,
+  "actual_records": ".test-results/feedback-two-specimens-20261004.json",
+  "sha256": "c51257445ed757042d3f3347419309f86d55f112fee4cb53de0d5eed6f53223a",
+  "observed_states": [
+    {
+      "scope": {
+        "tenant_id": "feedback-fixture",
+        "project_id": "ae750d6ae17041a6a31891c44425f72b"
+      },
+      "material_state_id": "state",
+      "revision": 1
+    },
+    {
+      "scope": {
+        "tenant_id": "feedback-fixture",
+        "project_id": "ae750d6ae17041a6a31891c44425f72b"
+      },
+      "material_state_id": "state-hot",
+      "revision": 1
+    }
+  ],
+  "observed_conditions": [
+    {
+      "method": {
+        "schema_id": "fixture.preparation",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "conditions": [
+        {
+          "name": "temperature",
+          "quantity": {
+            "value": "80.0",
+            "unit": "degC"
+          }
+        }
+      ],
+      "duration": {
+        "value": "30",
+        "unit": "min"
+      },
+      "atmosphere": "air"
+    },
+    {
+      "method": {
+        "schema_id": "fixture.preparation",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "conditions": [
+        {
+          "name": "temperature",
+          "quantity": {
+            "value": "120.0",
+            "unit": "degC"
+          }
+        }
+      ],
+      "duration": {
+        "value": "60",
+        "unit": "min"
+      },
+      "atmosphere": "air"
+    }
+  ],
+  "checks": [
+    "Same nominal candidate and distinct prepared-state/sample/observation references",
+    "Exact material/property owner readback",
+    "Compiled ScientificComparison reports same candidate/different state with owner policy required",
+    "Compiled ExploreModel reads both exact material revisions",
+    "Full earlier source/Qdrant/two-campaign correction progression still passes"
+  ],
+  "limits": [
+    "Synthetic owner fixture installation; no physical-lab claim",
+    "Owner reuse acceptance remains B2.04d",
+    "Actual-owner browser and adverse races remain B3"
+  ]
+}

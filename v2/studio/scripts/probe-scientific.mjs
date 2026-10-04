@@ -7,6 +7,7 @@ import { ResearchClient } from '../dist/src/transport/scientific/research.js';
 import { ExploreModel } from '../dist/src/page_models/explore/model.js';
 import { FeedbackClient } from '../dist/src/transport/feedback/client.js';
 import { FeedbackModel } from '../dist/src/page_models/feedback/model.js';
+import { ScientificComparison } from '../dist/src/page_models/explore/comparison.js';
 
 let raw = '';
 for await (const chunk of process.stdin) {
@@ -53,6 +54,21 @@ assert.deepEqual(model.snapshot.regions.derivation.value, records.publication.ou
 model.visibility(false);
 assert.ok(Object.values(model.snapshot.regions).every(region => region.phase === 'stale' && region.value === null));
 model.dispose();
+if (records.comparison) {
+  const comparison = new ScientificComparison(records.comparison.specimens, records.comparison.properties);
+  const pair = comparison.pair(comparison.rows[0].identity, comparison.rows[1].identity);
+  assert.equal(pair.contextIdentity, 'different');
+  assert.equal(pair.differences.find(item => item.field === 'candidate').relationship, 'same');
+  assert.equal(pair.differences.find(item => item.field === 'prepared_state').relationship, 'different');
+  assert.equal(pair.reuseAuthority, 'owner_policy_required');
+  const inspection = new ExploreModel({ knowledge, research: views, records: research, data });
+  inspection.bind({ graph: null, experiment: records.comparison.properties.request.experiment, observations: records.comparison.properties.request.observations });
+  for (const material of records.comparison.materials) {
+    await inspection.material(material.reference);
+    assert.deepEqual(inspection.snapshot.regions.material.value, material);
+  }
+  inspection.dispose();
+}
 if (records.feedback) {
   const feedback = new FeedbackModel({ research, feedback: new FeedbackClient(fetcher) });
   feedback.bind({ ...records.feedback.pins, assessment: records.feedback.unmet.request, publication: null, proposal: null, corrections: null });

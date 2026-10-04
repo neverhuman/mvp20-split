@@ -51,6 +51,8 @@ def test_actual_source_graph_baseline(tmp_path):
         {'endpoint': qdrant['endpoint'], 'token_env': 'QDRANT_TOKEN'})
     try:
         result = scenario.run()
+        from .live.specimens import compare_views
+        result['comparison'] = compare_views(scenario.research, result['specimens'])
         result['representation'] = publish_representation(scenario.data, result['span'])
         result['runtime'] = runtime.consume(scenario.data, result['publication']['outcome']['receipt'])
         result['manifest'] = observed_manifest(scope, result)
