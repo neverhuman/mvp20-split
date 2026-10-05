@@ -1,5 +1,6 @@
 """Actual owned SQL with scripted peers; real HTTP acceptance is a separate gate."""
 
+import json
 from datetime import UTC, datetime, timedelta
 
 from amphora_agent_planning.campaign_authoring import AuthoringOutcome
@@ -66,6 +67,7 @@ class Registry:
     def __init__(self, journal, principal, lease):
         self.journal, self.principal, self.lease = journal, principal, lease
         self.sent, self.lose_reply = [], False
+        self.rejected = self.expired = False
 
     def resolve(self, owner_id, command, window, *, guard):
         guard()
@@ -73,15 +75,20 @@ class Registry:
         if self.lose_reply:
             raise ExchangeUnavailable('fixture Registry reply lost')
         operations = self.journal.context(self.principal, self.lease.selection)
-        request = next(request for _, request in operations.batch('check-1') if request.command == command)
+        lock = json.loads(command.canonical_bytes)['payload']['release']
+        request = next(request for _, request in operations.batch('fixture-response-shape')
+                       if request.selected.document().lock.model_dump(mode='json') == lock)
         now = datetime.now(UTC)
         def fresh(value):
-            value['decision'].update(assessed_at=now.isoformat(), capacity_valid_until=(now + timedelta(seconds=30)).isoformat())
+            if not self.expired:
+                value['decision'].update(assessed_at=now.isoformat(), capacity_valid_until=(now + timedelta(seconds=30)).isoformat())
+            if self.rejected:
+                value.update(status='rejected', reason_code='no_capacity')
         return response(request, change=fresh)
 
 
-def fixture(stored, *, tools=False):
-    store, journal, lease, authoring = setup(stored, tools=tools)
+def fixture(stored, *, tools=False, maximum_age_seconds=5):
+    store, journal, lease, authoring = setup(stored, tools=tools, maximum_age_seconds=maximum_age_seconds)
     refresh = Refresh()
     runtime, registry = Runtime(stored, journal, lease, authoring), Registry(journal, stored.principal, lease)
     dispatcher = CompilerDispatcher(journal, refresh, runtime, registry)

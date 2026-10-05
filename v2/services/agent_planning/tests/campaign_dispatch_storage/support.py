@@ -32,10 +32,11 @@ def metadata(selected):
     return selected.with_runtime(RuntimeMetadataReader(Scripted()).schemas(observed, ()))
 
 
-def setup(stored, *, tools=False):
+def setup(stored, *, tools=False, maximum_age_seconds=5):
     review, budget = seeded(stored, tools=tools, metadata_builder=metadata if tools else None)
     authoring = AuthoringPlan.bind(review, budget, owner_id='runtime', actor_id='planning-agent')
-    config = EligibilityConfiguration.bind(owner_id='registry-fixture', actor_id='planning-agent', policy_sha256='e' * 64)
+    config = EligibilityConfiguration.bind(owner_id='registry-fixture', actor_id='planning-agent', policy_sha256='e' * 64,
+                                          maximum_age_seconds=maximum_age_seconds)
     selection = CompilerSelection.bind(stored.principal, authoring, config)
     store = CompilerStore(stored.engine, 'runtime', 'planning-agent', config)
     store.register(stored.principal, selection)

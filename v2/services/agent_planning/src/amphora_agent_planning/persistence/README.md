@@ -1,6 +1,6 @@
 # Planning persistence boundary
 
-- Reviewed implementation: Agent Planning0.68; compiler selection/lease and operation/event SQL verified; v1 original-history regression preserved.
+- Reviewed implementation: Agent Planning0.69; compiler selection/lease and operation/event SQL verified; v1 original-history regression preserved.
 - State: private planning schema, forward migrations planning_0001 through planning_0014. Never run Planning<=0.65 migrators on0014.
 - Responsibility: immutable request, attempt, observation, policy, reservation, settlement, issuance and late-evidence records. The orchestration module composes these objects; Runtime alone owns campaign decisions.
 

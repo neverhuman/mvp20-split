@@ -8,6 +8,7 @@ from .effect import CompilerEffect
 from .history import CompilerHistory
 from .operations import EFFECT_KEY, CompilerOperations
 from .rounds import CompilerRounds
+from .store import KEY
 
 
 class CompilerJournal:
@@ -52,6 +53,16 @@ class CompilerJournal:
         with self.store.engine.begin() as connection:
             self.store.lock(connection, key)
             return CompilerRounds(operations).read(connection, key, check_id)
+
+    def latest_round(self, principal, selection_id):
+        """Latest observed immutable header; no claim of a distributed snapshot."""
+        if self.selected(principal, selection_id) is None:
+            return None
+        key = self.store.key(principal, selection_id)
+        with self.store.engine.connect() as connection:
+            check_id = connection.execute(text('SELECT check_id FROM planning.compiler_rounds WHERE ' + KEY +
+                ' ORDER BY ordinal DESC LIMIT 1'), key).scalar_one_or_none()
+        return None if check_id is None else self.read_round(principal, selection_id, check_id)
 
     def prepare_save(self, principal, lease):
         operations = self.context(principal, lease.selection)

@@ -1,6 +1,6 @@
 # Campaign compiler journal and dispatch
 
-- Owner: Planning BP-07.03/B2.03a/b/c.i, implemented in Planning0.68; c.ii progression, c.iii SQL/HTTP integration and d installed actual-owner/crash proof remain pending.
+- Owner: Planning BP-07.03/B2.03a/b/c.i/ii, implemented in Planning0.69; c.iii SQL/HTTP integration and d installed actual-owner/crash proof remain pending.
 - Design: [compiler handoff](../../../../../docs/Build%20Plans/BP-07/BP-07.03%20Compiler%20handoff.md).
 - Tests: `tests/campaign_dispatch` pure values; `tests/campaign_dispatch_storage` owned persistence; `tests/campaign_dispatch_coordinator` owned SQL with scripted peers. These are separate from actual-owner acceptance.
 
@@ -37,3 +37,14 @@ CompilerPrerequisites constructs CampaignOriginReader/CompilerPreparer internall
 ## Replacement evidence and limits
 
 Planning0.68:23 owned SQL/scripted-peer cases cover155 statements/50branches in dispatcher/prerequisites,100%;23 isolated SQL cases and198 isolated pure/contract dispatch cases pass. Earlier storage and actual primitive-owner evidence remains in BP-07-Campaigns. These proofs cover original recovery under processing denial, current checks before new writes, Registry uncertainty, pending/negative/malformed outcomes, last-moment expiry and final event capacity. They do not establish actual combined HTTP/process crash recovery, remote fencing, scientific capacity, execution admission or live model quality. A replacement must preserve exact bytes, ownership, bounded histories and these failure oracles.
+
+
+## Bounded progression
+
+CompilerProgression.advance acquires a300s selection lease and releases it after one invocation. It prepares/replays save and, after exact saved history, validation; CompilerDispatcher reconciles Runtime first. Only when those new-use prerequisites need checks does progression select the next unresolved operation of the latest observed round. Latest-round reads preserve original actor/scope/configuration/read grants. CompilerRound.next_operation owns pending selection; no second check identity is allocated for an unresolved round.
+
+An expired terminal round can start the next deterministic planning-check-N identity, at most16 rounds. Rejected rounds remain explicit unless the caller supplies the Boolean retry_rejected policy; no human approval is required. Busy ownership, lost fences, event exhaustion and round exhaustion return explicit pauses. Unexpected failures propagate while cleanup releases owned authority; an already lost lease is not released again as if it were current. There is no hidden retry loop, campaign activation or silent extension of candidate expiry.
+
+CompilerAdvance retains stage, exact dispatch/round and pause reason. Terminal means a rejected save or a terminal validation effect; a saved draft or individual Registry candidate is not a completed compilation. Repeated terminal reads preserve original history without further peer writes. One invocation performs at most one effectful POST. This bounds work but does not guarantee all selected tools fit a short freshness window; incomplete results stay visible for a subsequent bounded invocation or future proposal.
+
+Planning0.69 progression proof:13 scoped SQL cases,67/68 progression statements and18/18 branches; the unexpected ValueError rethrow during lease release is unexecuted, so statement coverage is99%, not100%.36 installed coordinator SQL cases and198 isolated dispatch cases pass. Timing-independent progression fixtures explicitly use the existing60s maximum-age option with30s capacity observations; separate expiry tests verify rejection. Default5s configuration is unchanged. Real HTTP failure and actual-owner/crash acceptance remain c.iii/d.

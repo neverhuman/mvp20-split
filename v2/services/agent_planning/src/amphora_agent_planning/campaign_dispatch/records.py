@@ -38,3 +38,7 @@ class CompilerRound:
     @property
     def terminal(self):
         return bool(self.operations) and all(item.terminal for item in self.operations)
+
+    @property
+    def next_operation(self):
+        return next((item for item in self.operations if not item.terminal), None)
