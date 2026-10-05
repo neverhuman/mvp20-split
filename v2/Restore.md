@@ -1,16 +1,18 @@
 # Restore
 
-Refreshed `2026-10-05 14:55:17` (America/Chicago). **Read first after compression.**
+Refreshed `2026-10-05 15:06:59` (America/Chicago). **Read first after compression.**
 
 ## Resume
 
-B1.03a pushed0fdd811a. B1.03b VERIFIED `2026-10-05 14:55:17` but not yet committed. Runtime/dev0.25, DB runtime0018 now applied to retained fixture. NEVER run Runtime<=0.24 migrators on it.53 journal/migration cases9.96s (33pure,14journalSQL,6legacy),236 statements/28 branches100%. All SQL verification finished; adjacent boundary/scope/request/response suite101passed11.85s. All verification finished. No owned hosts.
+Latest pushed06fd08b0 (B1.03b). B1.03c VERIFIED `2026-10-05 15:06:59` but not committed. Runtime/dev0.26, DB runtime0019 applied. NEVER run Runtime<=0.25 migrators.65 journal/migration cases20.50s (33pure,26journalSQL,6legacy),486 statements/60branches99% (one reserved64th-event fallback unexecuted; normal16claim exhaustion verified). SQL tests all finished; boundary suite12passed8.54s,Ruffpassed. Allverificationfinished. No owned hosts.
 
-Canonical child15.63%,Build20.83%,Acceptance0%,0/4;parent63.13%,12/20. B1 .01/.02=100%,.03=50%,.04=0%;B1=62.5%. B1.03a/b100%,c/d0%. NEXT diff/links, commit/push b; then B1.03c leases and immutable delivery/response events. Do not end at checkpoint.
+Canonical child17.19%,Build22.92%,Acceptance0%,0/4;parent63.44%,12/20. B1 .01/.02=100%,.03=75%,.04=0%;B1=68.75%. B1.03a/b/c100%,d0%. NEXT diff/links, commit/push c, then B1.03d actual competing processes and independently installed retained SQL recovery. Do not end at checkpoint.
 
-New current.py rederives actual retained plan/node/path/kind/scope, all active ancestors and issued parent/scatter-membership/loop-iteration, absence of activation, selected read equality and DB deadlines under run lock. storage.RequestJournal configured Runtime-to-Planning actor mapping; requires supervise_prepare/read; exact existing replay before fresh state checks, atomic original frames/outgoing command; no dispatch/effects. Runtime0018 immutable SELECT/INSERT request/outbox tables with scopedFKs/unique identities. Source README full boundaries. First fixture was already materialized; revised valid branch graph. Nested test found missing ActivationPath.schema_version, fixed. SQL JSON literal test corrected to bound value.14realSQL cases include nested loops/scatters and rollback/grants.
+C modules: delivery.py/delivery_values.py own DB-clock1..300s capped original deadline, same claimID returns original expiry/fence, newID reacquires, expired holder cannot append.16claims/64events; receipt operation/readback exact;unknown retained same outgoing command. ResponseJournal responses.py binds original request/actor/attempt/capture,64immutable responses/request, commands.register then atomic response+recorded receipt under runlock; exact retry after terminalrun,read history without fresh permission. No graph acceptance or provider dispatch.0019 adds lazy control + immutable events/responses, scopedFKs/narrowgrants. Initial closure reason local error fixed.65tests allpass. Current production README truthful99%gap.
 
-## Next implementation boundaries
+D design not yet coded: use new dev helper to build isolated Runtime/public closure, own copied testroot preserving services/campaign_runtime/tests and contracts fixtures. Existing verify_runtime_scope builds currentclosure and compares162old Runtime0.20.2 productionfiles, tests111scope/publicGraphRuntime, noSQL/migrators. Reuse builds for two current0.26 independent installs. Need actual SQL barriers/process death around lease/append/response commit and exact retained frame/command/receipt/timestamps recovery, oldmigration34+0018 unchanged. Secrets env-only, noURL/token logs. No oldRuntimepeer migrator! Rootpostgrestest fixture imports dev/postgres_fixture and compiler fixture references root/contracts/fixtures; carefully isolate testroot support. Can author standalone worker using envSQL and current installed package/public contracts with persisted metadata input; actual independently installed process steps, not mocked service clients.
+
+## Next implementation boundaries (b complete; c design refinement in journal doc)
 
 Read BP-07.04 Supervisor journal.md, physical/exchange designs and supervision_journal/README.md. Pure RequestFrame stores original request, Runtime preparer and canonical observation bytes/base64; reconstructs exact footprint/request. RequestSeries1..16 validates lineage/root/parent, unique engagements, same actors/decision/checkpoint/footprint/context bindings, monotonic cuts and narrowing actions/limits/deadlines. Required entries retained except prior declaration constraint; B2 still validates admitted policy. Hashes are not auth.
 

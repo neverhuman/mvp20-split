@@ -1,6 +1,6 @@
 # Runtime Persistence Boundary
 
-- Implemented: forward migrations through `runtime_0018` and owner-private command transactions.
+- Implemented: forward migrations through `runtime_0019` and owner-private command transactions.
 - Design: [Physical records](../../../../../docs/Architecture/System/Persistence_Record_Design.md), [runtime protocol](../../../../../docs/Architecture/System/Runtime_Command_Protocol.md).
 
 `migrate.upgrade(url)` runs packaged SQL/Alembic migrations as `runtime_migrator`. The explicit CLI is `python -m amphora_campaign_runtime.persistence.migrate`, using privately supplied `AMPHORA_RUNTIME_MIGRATION_URL`. No API startup migration occurs. `runtime.alembic_version` is private to this owner. Downgrade refuses destructive rollback; changes require forward migration.
@@ -45,3 +45,6 @@ BP-05.03 numeric compatibility: CommandStore persists `command.profile` derived 
 
 
 runtime_0018 adds immutable supervisor request frames and original outgoing intents with scoped run/plan, root/parent and request foreign keys. Only SELECT/INSERT is granted. [Supervisor journal](../supervision_journal/README.md) owns atomically validated preparation/readback; no dispatch lease or decision authority is introduced. Runtime0.25 requires this head; do not run older migrators.
+
+
+runtime_0019 adds lazy supervisor delivery control with bounded claims/events and column-limited holder/fence/expiry/status updates. Delivery events and exact response/capture history remain SELECT/INSERT only, scoped to original requests and inbound command operations. Runtime0.26 requires this head; leases/recorded responses do not confer graph or provider authority.

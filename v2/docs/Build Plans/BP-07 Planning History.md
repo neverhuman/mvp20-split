@@ -777,3 +777,8 @@ Runtime0.24 adds immutable request frames and bounded repair series. 122 combine
 ## 2026-10-05 14:55:17 ? BP-07.04/B1.03b
 
 Runtime0.25/runtime0018 retains original request and outgoing command atomically under the run lock.53 journal/migration cases9.96s,14 actual journal SQL;236 statements/28 branches100%. Actual plan/node/ancestor/materialization checks preserve useful unrelated progress. Parent-path schema version omission found/fixed; initial one-tool fixture was already issued, replaced by valid branch-before-tool graph; test SQL literal replaced with bound JSON. Child15.63%,Build20.83%,parent63.13%;next c leases/events. Independent race/process proof and graph acceptance still pending.
+
+
+## 2026-10-05 15:06:59 ? BP-07.04/B1.03c
+
+Runtime0.26/runtime0019: original command delivery leases, bounded immutable events and exact captured responses.65 journal/migration cases20.50s;486 statements/60 branches99% (reserved64th-event fallback unexecuted; tighter16claim limit verified). Late diagnostics and unknown usage retained without graph effects. Initial closure-variable defect repaired. Child17.19%,Build22.92%,parent63.44%; next independent installed SQL races/process recovery.

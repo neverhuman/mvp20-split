@@ -1,0 +1,24 @@
+{
+  "checkpoint": "2026-10-05 15:06:59",
+  "task": "BP-07.04/B1.03c",
+  "runtime": "0.26.0",
+  "migration": "runtime_0019",
+  "tests": 65,
+  "actual_journal_sql_tests": 26,
+  "legacy_migration_tests": 6,
+  "seconds": 20.5,
+  "coverage": {
+    "statements": 486,
+    "missed_statements": 1,
+    "branches": 60,
+    "partial_branches": 1
+  },
+  "coverage_gap": "Reserved64th-event fallback not reached in normal16-claim delivery cycles;16-claim exhaustion verified",
+  "limits": [
+    "No competing process or independent installed SQL proof yet",
+    "No actual HTTP/provider call, graph pause or accepted decision"
+  ],
+  "correction": "Initial observe closure assigned reason locally; corrected final_reason before passing rerun",
+  "boundary_tests": 12,
+  "boundary_seconds": 8.54
+}

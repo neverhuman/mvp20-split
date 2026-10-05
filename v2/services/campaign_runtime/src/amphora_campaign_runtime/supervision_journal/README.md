@@ -1,6 +1,6 @@
 # Supervisor journal
 
-Implementation: Runtime0.25/runtime0018; immutable frames/series and atomic request/outbox storage under BP-07.04/B1.03a?b. Leases, delivery history, transports and decision acceptance remain later gates.
+Implementation: Runtime0.26/runtime0019; immutable frames/series and atomic request/outbox storage under BP-07.04/B1.03a?c, plus fenced delivery history and immutable response recording. Independent process replacement, transports and decision acceptance remain later gates.
 
 `RequestFrame.capture` binds the public supervisor request to original byte-owned Runtime observations and the configured Planning actor. It records the separate preparing Runtime actor. `from_bytes` revalidates the private `runtime-supervision-request-frame.v1` profile, canonical JSON/base64 and all existing request/observation hashes. Limits: 16 MiB per frame, existing 256 KiB request, 256 observations, 1 MiB per observation and 8 MiB combined state/output. Returned documents are fresh projections; bytes own retained state.
 
@@ -20,6 +20,18 @@ Dependencies are public supervision contracts and local scope/request objects. T
 
 ## Migration and acceptance
 
-Runtime0.25 requires forward runtime0018; prior migration bytes are untouched. Explicit migration only, no startup DDL. Never run a Runtime<=0.24 migrator against the new head. Preserve retained original request/outgoing bytes during replacement; do not backfill old campaigns with inferred supervisor history. Leases/events remain B1.03c, independent SQL/process proof d, HTTP B1.04 and winner/effects B2.
+Runtime0.26 requires forward runtime0019; prior migration bytes are untouched. Explicit migration only, no startup DDL. Never run a Runtime<=0.25 migrator against the new head. Preserve retained original request/outgoing bytes during replacement; do not backfill old campaigns with inferred supervisor history. Independent SQL/process proof remains B1.03d, HTTP B1.04 and winner/effects B2.
 
 Verified: 53 journal/migration tests9.96s (33 pure,14 actual journal SQL,6 prior migration cases),236 statements/28 branches100%. Tests include nested scatter/loop origins, stale membership/ancestors, materialization despite reopened status, rollback, exact replay after termination, read-scope/actor enforcement, immutable grants and FK/identity collisions. No concurrency, independent-install, provider-call or accepted graph-effect claim from this gate.
+
+## Delivery and response history
+
+`DeliveryJournal.claim` requires original Runtime holder/scope and `supervise_dispatch`. The database clock grants 1?300 seconds, capped by the original request deadline. Original claim event-ID retries retain exact expiry/fence; a new claim ID is required to reacquire. `observe` validates current holder/fence/expiry before append, except exact existing event retries that return immutable original evidence. Pending, ambiguous and awaiting-readback results release the lease for reconciliation; recorded/rejected outcomes terminate delivery only. A lease never authorizes a paid call, graph effect or a new command identity.
+
+Delivery has 16 claims and an absolute 64-event guard with a reserved terminal event. Normal claim/result cycles hit the tighter 16-claim ceiling first. Each immutable event stores a canonical private evidence profile, submission fingerprint, fence, original receipt operation and verified readback when available. The same outgoing command remains in the immutable outbox. Control rows are created lazily for existing requests; migration fabricates no past delivery. `history` requires scoped read access.
+
+`ResponseJournal.record` accepts only numeric-v2 `runtime.supervision.respond`, the configured original Planning actor and `supervise_respond`. It rebinds exact request/attempt/candidate/capture, registers the original command and atomically inserts the response plus terminal command receipt under the run lock. The private command status is accepted for completed storage; the public receipt is **recorded**, never an accepted graph effect. There are at most64 distinct response records per request; changed response identities/new commands and overflow receive explicit rejection receipts. Late diagnostic responses after run termination remain useful immutable evidence. `response` and `receipt` provide scoped history with read permission even when fresh-response permission is absent. Unknown usage is never converted to zero or refunded here.
+
+runtime0019 adds narrow mutable delivery controls and SELECT/INSERT-only delivery events/responses, with scoped request/outbox/command foreign keys. Responses retain exact capture bytes (up to64KiB), immutable canonical response and original operation ID. No cancellation winner, checkpoint pause, provider-call integration or public HTTP handler is implemented by these classes.
+
+B1.03c proof:65 journal/migration cases20.50s, including26 actual journal SQL cases.486 statements,1 unexecuted;60 branches,1 partial (99% combined). The reserved 64th-event fallback is not reached by normal16-claim cycles; bounded16-claim exhaustion is verified. Initial event closure-variable error was found and fixed; all reruns pass. Lease expiry/fence loss, original operation/readback, response limits, unknown usage, late capture/read permission and atomic response/receipt rollback are verified. Competing processes and independent retained-state replacement remain B1.03d.
