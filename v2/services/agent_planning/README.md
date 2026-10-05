@@ -1,13 +1,13 @@
 # Agent Planning service boundary
 
-- Version: Planning0.70.0; public Planning0.9.0 and supervision0.2.0; owned migration head0015.
-- Reviewed: `2026-10-05 15:30:37` (America/Chicago). BP-07.01/.02/.03 accepted within deterministic/synthetic scope.
+- Version: Planning0.71.0; public Planning0.9.0 and supervision0.2.0; owned migration head0015.
+- Reviewed: `2026-10-05 15:46:25` (America/Chicago). BP-07.01/.02/.03 accepted within deterministic/synthetic scope.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Campaign acceptance: [BP-07.03](../../docs/Build%20Plans/BP-07/Completed/BP-07.03%20Campaign%20proposals%20and%20context.md); next [BP-07.04](../../docs/Build%20Plans/BP-07/BP-07.04%20Durable%20supervisor%20and%20races.md).
 
 ## Responsibilities and exclusions
 
-Planning binds immutable context, deterministic provider attempts, conservative budgets, attributed text decomposition and bounded campaign proposals. It persists its own intent and exact outputs before publishing derived Artifacts or submitting proposals through public owner interfaces. Campaign compilation saves and validates a draft; it never admits or executes that draft. This package has no public server or live model adapter. It cannot register scientific truth, grant source rights, accept Runtime engagement decisions or mutate peer tables.
+Planning binds immutable context, deterministic provider attempts, conservative budgets, attributed text decomposition and bounded campaign proposals. It persists its own intent and exact outputs before publishing derived Artifacts or submitting proposals through public owner interfaces. Campaign compilation saves and validates a draft; it never admits or executes that draft. The focused supervisor intake server records requests and reads history; no live model adapter is configured. It cannot register scientific truth, grant source rights, accept Runtime engagement decisions or mutate peer tables.
 
 This independently built wheel depends on public contracts and the Tool Protocol SDK. SQLAlchemy/psycopg/Alembic are private persistence dependencies; private peer imports, shared ORM models and peer SQL are forbidden. Each module below owns a focused rebuild contract. Scientific uncertainty, contradiction and missing evidence remain explicit; they do not impose a global campaign veto.
 
@@ -15,7 +15,8 @@ This independently built wheel depends on public contracts and the Tool Protocol
 
 | Module | Boundary |
 |---|---|
-| [supervision_intake](src/amphora_agent_planning/supervision_intake/README.md) | Atomic original supervisor wrapper, legacy-compatible Planning request and recorded command receipt; no provider grant or HTTP yet |
+| [supervision_api](src/amphora_agent_planning/supervision_api/README.md) | Bounded authenticated intake/receipt/readback HTTP and configured CLI; no automatic provider dispatch |
+| [supervision_intake](src/amphora_agent_planning/supervision_intake/README.md) | Atomic original supervisor wrapper, legacy-compatible Planning request and recorded command receipt; no provider grant |
 | [context](src/amphora_agent_planning/context/README.md), [providers](src/amphora_agent_planning/providers/README.md) | Immutable scoped requests, explicit omissions, physical attempts, bounded capture and closed output-profile catalog |
 | [budget](src/amphora_agent_planning/budget/README.md), [persistence](src/amphora_agent_planning/persistence/README.md), [orchestration](src/amphora_agent_planning/orchestration/README.md) | Conservative reservations/settlements, owned journals and once-only local dispatch; truthful deadline uncertainty and late evidence |
 | [extraction](src/amphora_agent_planning/extraction/README.md) | Versioned task/source/prompt binding, UTF-8 quotation geometry and interpretation-only failed/repaired traces |

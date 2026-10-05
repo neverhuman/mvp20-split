@@ -1,0 +1,25 @@
+{
+  "reviewed_at": "2026-10-05 15:46:25",
+  "unit": "BP-07.04/B1.04b.i",
+  "planning_version": "0.71.0",
+  "migration_head": "0015 unchanged",
+  "tests": {
+    "api_and_intake": 39,
+    "seconds": 19.56,
+    "boundary": 12,
+    "boundary_seconds": 8.59
+  },
+  "coverage": {
+    "statements": 191,
+    "branches": 50,
+    "percent": 86,
+    "limits": "CLI subprocess not coverage-instrumented; persistence503, generic binding422 and second receive delegation not reached"
+  },
+  "actual_host": "Configured CLI separate process; real HTTP request and exact original receipt recovery; owned process terminated",
+  "claims_excluded": [
+    "provider calls",
+    "execution decisions",
+    "independent package multi-owner replacement"
+  ],
+  "next": "B1.04b.ii Runtime capture and cancellation records"
+}

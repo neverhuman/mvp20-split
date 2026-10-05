@@ -1,18 +1,16 @@
 # Restore
 
-Refreshed `2026-10-05 15:32:07` (America/Chicago). **Read first after compression.**
+Refreshed `2026-10-05 15:46:25` (America/Chicago). **Read first after compression.**
 
-## Resume
+## Immediate resume
 
-B1.04a VERIFIED, not yet committed. Latest pushedbf8a47b9 (journal d); earlier d4cb7dec(c),06fd08b0(b),0fdd811a(a). Planning0.70/dev installed, planning0015 applied; NEVER run Planning<=0.69 migrators. Runtime0.26/runtime0019 unchanged; NEVER Runtime<=0.25 migrators. Public supervision0.2,Planning0.9,GraphRuntime0.13,528schemas unchanged. No running verification/hosts.
+B1.04b.i Planning HTTP verified, ready to commit/push. Planning0.71 installed; planning0015 unchanged.39 combined API/intake tests19.56s,12 boundary8.59s;Ruffpassed. Actual separate CLI host request/receipt recovery passed, terminated. No verification/hosts running. In-process coverage86%; CLI tested separately, not instrumented. Public528schemas unchanged.
 
-17 Planning intake cases3.08s,155 statements/20branches100%;58 adjacent boundary/legacy journal/context cases13.61s;Ruffpassed. Source/testmoduleREADMEs and public transport design added, serviceREADME/persistenceheadupdated. Need finaldiff/links,commit/push a,then B1.04b owner HTTP/capture/cancellation records. Do not end atcheckpoint.
+Current B1.04b.ii Runtime Data /processing-content capture reader + immutable cancellation records; then b.iii Runtime HTTP integration. B1.04a100%,b33.33%(i100%,ii/iii0%),c/d0%;B1.04=33.33%,B1=83.33%,Build27.78%,child20.83%,parent64.17%;Acceptance0%,12/20closed parent. Trackers/history synchronized. Commit/push this checkpoint then continue; no owner decision blocks.
 
-Canonical child20.31%,Build27.08%,Acceptance0%,0/4;parent64.06%,12/20. B1 .01/.02/.03=100%,.04=25%;B1=81.25%. B1.04equal a100%,b/c/d0%;B2/B3/V1 remain0%. BP07.03closedarchived.
+New supervision_api module/readme/tests: configured bearer principals, POST requests, POST receipts/query original command read-only, GET request readback; bound262KiB/10s/depth64; redactederrors; defaulthealthonly;CLI env database/credentials,noauto migration/providerattempt. Planning0.71 FastAPI/Uvicorn dependencies and CLI script; dev test area registered. Ruff Depends default corrected to Annotated. Huge pytest param ID fixed; allrerunpass.
 
-New Planning supervision_intake snapshots bind original RequestSnapshot/ContextPolicy pluswrapperhash/run/cut/policy/readset/lineageshape. Runtimehashesopaqueownerclaims,noRuntimeprivateimports/SQL. Storage originalPlanning.requests+wrapper+publicrecordedreceipt atomic undercommand-key->decisionslot->requestkeylocks. exactcmdreplay; unchangedwrapperalternatecmdack; conflicts recordedrejection;noattempts,budget,familyenrollmentorHTTP. Usesexistingrecord_requests/read_attempts grants. Tests actualSQLrace,rollbackall3records,legacyRequestJournal interoperability,read-onlyreplay,insert-onlygrants. planning0015 two newimmutabletables;28prior migrationfilesuntouched.
-
-B1.04b next: PlanningnewHTTPserver/bearercredentials usingexistingPrincipal3grants; RuntimeAPIextendfocusednewroutes; Data /processing-content rawcapture metadata/hash/size verificationoutsideSQL/historyfirst; separatecancelrecord(notwinner),Runtimeforwardmigration0020. Read Public transports.md. No liveproviderchoiceblocks deterministicwork.
+## Prior retained handoff (superseded version/progress above)
 
 ## Current module boundary
 

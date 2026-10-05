@@ -1,0 +1,5 @@
+# Supervisor API test ownership
+
+Owned by Planning supervision_api; no E2E or peer-private dependency. Run python -m pytest -c dev/pyproject.toml services/agent_planning/tests/supervision_api from v2 with AMPHORA_TEST_POSTGRES=1 and PYTHONUTF8=1. Uses retained scoped SQL fixture; never resets state. Credentials/bounds cases are pure; HTTP cases exercise actual Planning SQL; host cases spawn the configured CLI and always terminate the owned process. Synthetic credentials and requests carry no scientific claim.
+
+Oracles cover exact replay/read-only receipt, original scope and actor, changed command conflict, typed logical rejection, zero attempts, no unconfigured routes, redacted invalid input/configuration, whole-body limits, chunking/disconnect and real HTTP recording/readback. The host test does not substitute for later independent installation/restart and actual peer integration. TestClient currently emits a dependency deprecation warning; behavior passes. Coverage limitations are recorded in the source module README.

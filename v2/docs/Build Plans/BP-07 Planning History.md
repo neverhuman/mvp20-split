@@ -792,3 +792,8 @@ Two isolatedRuntime0.26 installations;111initialscope/public cases and33journal 
 ## 2026-10-05 15:32:07 ? BP-07.04/B1.04a
 
 Planning0.70/planning0015 records exact supervisor wrapper, original Planning request and public recorded receipt in one transaction.17 cases3.08s,155 statements/20 branches100%;58 adjacent legacy/context/boundary cases13.61s. Command/slot/request locks resolve exact retries and conflicting ordinal occupants; no attempts or provider budget created.28 predecessor migrationfiles unchanged. Child20.31%,Build27.08%,parent64.06%;next owner HTTP/capture/cancellation surfaces.
+
+
+## 2026-10-05 15:46:25 ? BP-07.04/B1.04b.i
+
+Planning0.71 adds focused authenticated bounded supervisor HTTP and configured CLI with no provider grant.39 combined tests19.56s,12 boundary8.59s; actual separately running CLI recovers exact receipt. Ruff passed. Oversized pytest parameter IDs initially caused setup failures; short semantic IDs corrected and all rerun cases pass. SQLAlchemy configuration errors are redacted. In-process coverage86%; CLI subprocess independently exercised, no aggregate100% claim. Child20.83%,Build27.78%,parent64.17%; next Runtime capture/cancellation.
