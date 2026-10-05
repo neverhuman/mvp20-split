@@ -581,3 +581,7 @@ B1.03a.i verified 2026-10-04 19:03:06:Planning0.40 selected graph dependency pro
 B1.03a.ii verified 2026-10-04 19:11:14:Planning0.41 mandatory-first Artifact context for4roots+128entries, merged exact roles, shared bounded batches, explicit required/optional failures and immutable observed bytes.91 focused/regression cases7.19s,145 statements24 branches100%;664 independently installed tests44.012s. No migration/schema/authority widening. Child13.28%,Build17.71%,parent42.66%;B1.03a50%,B1.03=12.5%,B1=53.125%;closed0/4 and8/20. Current a.iii Research/views projection.
 
 | 2026-10-04 10:52:48 | BP-07.02/B2.03b.ii.a complete; child45.68%,parent29.14%; b.ii.b active | [Result storage](../Audits/Evidence/BP-07-Extraction/Result_Storage.json);54 scoped100% coverage,684 installed cases/32 process stages |
+
+B1.03a.iii verified 2026-10-04 19:17:20:Planning0.42 recomputed selected Research findings and exact named-page projection, explicit pending/failed/unavailable observations, relevant comparison and8MiB aggregate rejection using valid large inputs.112 focused/regression cases11.56s,75 statements4 branches100%;677 independently installed tests45.567s. No migration/schema change. Child13.67%,Build18.23%,parent42.73%;B1.03a75%,B1.03=18.75%,B1=54.6875%;closed0/4 and8/20. Current a.iv tool/retrieval projection.
+
+| 2026-10-04 11:19:18 | BP-07.02/B2.03b.ii.b complete; child45.99%,parent29.20%; b.ii.c active | [Result workflow](../Audits/Evidence/BP-07-Extraction/Result_Workflow.json);705 installed cases/35 process stages |
