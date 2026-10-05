@@ -15,6 +15,7 @@ import amphora_contracts_research as research_contracts
 import amphora_contracts_research_views as research_view_contracts
 import amphora_contracts_runtime as runtime_contracts
 import amphora_contracts_solver_fixture as solver_fixture_contracts
+import amphora_contracts_supervision as supervision_contracts
 import amphora_contracts_tools as tool_contracts
 from amphora_contracts_campaigns import (
     ActivationPath,
@@ -38,6 +39,11 @@ from amphora_contracts_tools import Completion, Invocation, ToolBinding, ToolDes
 
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
+    "supervision.reference": supervision_contracts.SupervisionRef,
+    "supervision.node-read": supervision_contracts.SupervisionNodeRead,
+    "supervision.snapshot": supervision_contracts.SupervisionSnapshot,
+    "supervision.lineage": supervision_contracts.SupervisionLineage,
+    "supervision.request": supervision_contracts.SupervisionRequest,
     "planning.campaign-research-selection": planning_contracts.CampaignResearchSelection,
     "planning.campaign-draft": planning_contracts.CampaignDraft,
     "planning.extraction-edit-draft": planning_contracts.ExtractionDraftV2,

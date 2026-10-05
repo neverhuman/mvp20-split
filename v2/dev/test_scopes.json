@@ -202,5 +202,11 @@
     "coverage_sources": [
       "services/agent_planning/src/amphora_agent_planning"
     ]
+  },
+  "supervision": {
+    "tests": "contracts/supervision/tests",
+    "coverage_sources": [
+      "contracts/supervision/src/amphora_contracts_supervision"
+    ]
   }
 }

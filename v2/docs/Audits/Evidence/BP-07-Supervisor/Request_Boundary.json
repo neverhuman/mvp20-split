@@ -1,0 +1,43 @@
+{
+  "verified_at": "2026-10-05 14:02:22",
+  "task": "BP-07.04/B1.02a",
+  "status": "passed",
+  "runtime": "0.22.0",
+  "supervision_contracts": "0.1.0",
+  "focused": {
+    "tests": 62,
+    "seconds": 8.74,
+    "coverage": {
+      "covered_lines": 54,
+      "num_statements": 54,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100",
+      "num_branches": 4,
+      "num_partial_branches": 0,
+      "covered_branches": 4,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    }
+  },
+  "legacy_and_boundaries": {
+    "tests": 54,
+    "seconds": 9.42
+  },
+  "schema_files": 520,
+  "unchanged_predecessor_schemas": 510,
+  "fixture": {
+    "planning_request_bytes": 3396,
+    "supervision_request_bytes": 5047,
+    "baseline": "975da46e"
+  },
+  "limits": [
+    "Pure request projection and cross-record binding, not authenticated policy/lineage/budget or acceptance",
+    "No HTTP host/SQL/command or response profiles in this subunit",
+    "Combined independent public package proof remains B1.02c"
+  ]
+}

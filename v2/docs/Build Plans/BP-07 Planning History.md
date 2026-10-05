@@ -752,3 +752,8 @@ Scoped audit BP-07.03_Campaign_Closeout.md aligned after current module/architec
 ## 2026-10-05 13:49:47 - BP-07.04 activation and scope boundary
 
 Activation corrected_ready at45e9e761; physical design separates Runtime footprint from Planning declaration identity, avoids public dependency cycle and requires checkpoint-before-materialization integration. Runtime0.21 adds pure supervision_scope;26 scoped cases cover119statements/16branches100%;111 independently installed cases pass,162 predecessor implementation/migration files unchanged.12boundaries17.38s;510schemas unchanged. First test probe used list for strict tuple; fixed fixture only. Owned test area registered. Corrected prior Planning root README example to existing scoped pytest command. B1.01complete,B1=25%,child6.25%,Build8.33%,Acceptance0%,0/4;parent61.25%,12/20. Next B1.02 public supervisor contracts. No storage/acceptance/concurrency claim.
+
+
+## 2026-10-05 14:02:22 - BP-07.04/B1.02a request boundary
+
+Independent public supervision0.1 package avoids dependency cycles; Runtime0.22 projects exact owned footprints and binds original Planning request/actor/policy/cut/hash and lineage shape.62 scoped/wire/publication tests8.74s,54 newstatements4branches100%;54 legacy/boundary tests9.42s.520 schemas preserve510 predecessor bytes. Literal original Planning0.69 request bytes retained. No auth/actual ancestry/budget/current grants/acceptance or transport claim. B1.02a100%,b/c0%;B1.02=one-third;child8.33%,Build11.11%,Acceptance0%,0/4;parent61.67%,12/20. Combined independent install is B1.02c.

@@ -63,7 +63,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-campaign-runtime"
-version = "0.21.0"
+version = "0.22.0"
 source = { editable = "../services/campaign_runtime" }
 dependencies = [
     { name = "alembic" },
@@ -73,6 +73,7 @@ dependencies = [
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-graph-runtime" },
     { name = "amphora-contracts-runtime" },
+    { name = "amphora-contracts-supervision" },
     { name = "amphora-contracts-tools" },
     { name = "fastapi" },
     { name = "jsonschema", extra = ["format"] },
@@ -91,6 +92,7 @@ requires-dist = [
     { name = "amphora-contracts-core", editable = "../contracts/core" },
     { name = "amphora-contracts-graph-runtime", editable = "../contracts/graph_runtime" },
     { name = "amphora-contracts-runtime", editable = "../contracts/runtime" },
+    { name = "amphora-contracts-supervision", editable = "../contracts/supervision" },
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },
     { name = "fastapi", specifier = ">=0.115,<1" },
     { name = "jsonschema", extras = ["format"], specifier = ">=4.23,<5" },
@@ -361,6 +363,25 @@ dependencies = [
 requires-dist = [{ name = "pydantic", specifier = ">=2.12,<3" }]
 
 [[package]]
+name = "amphora-contracts-supervision"
+version = "0.1.0"
+source = { editable = "../contracts/supervision" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-graph-runtime" },
+    { name = "amphora-contracts-planning" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-graph-runtime", editable = "../contracts/graph_runtime" },
+    { name = "amphora-contracts-planning", editable = "../contracts/planning" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-tools"
 version = "0.1.0"
 source = { editable = "../contracts/tools" }
@@ -435,6 +456,7 @@ dependencies = [
     { name = "amphora-contracts-research-views" },
     { name = "amphora-contracts-runtime" },
     { name = "amphora-contracts-solver-fixture" },
+    { name = "amphora-contracts-supervision" },
     { name = "amphora-contracts-tools" },
     { name = "amphora-data-artifacts" },
     { name = "amphora-knowledge" },
@@ -472,6 +494,7 @@ requires-dist = [
     { name = "amphora-contracts-research-views", editable = "../contracts/research_views" },
     { name = "amphora-contracts-runtime", editable = "../contracts/runtime" },
     { name = "amphora-contracts-solver-fixture", editable = "../contracts/solver_fixture" },
+    { name = "amphora-contracts-supervision", editable = "../contracts/supervision" },
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },
     { name = "amphora-data-artifacts", editable = "../services/data_artifacts" },
     { name = "amphora-knowledge", editable = "../services/knowledge" },
