@@ -2,16 +2,16 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-07.03/Build/B2.03b.iii.
-- Last refreshed: `2026-10-05 00:15:06` (America/Chicago).
+- Status: blocked_on_owner; BP-07.03/B2.03c declaration publication prerequisite.
+- Last refreshed: `2026-10-05 00:23:06` (America/Chicago).
 - Owner/scope: Agent Planning plus runtime-owned engagement and decision modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-03 discovery, BP-04 runner, BP-05 UI and BP-06 source/knowledge receipts.
-- Implementation: **49.03%** scoped;9/20 closed deliveries. BP-07.01/.02 complete; BP-07.03=45.14%; BP-07.04/.05 remain0%. Each child is counted once.
+- Implementation: **49.17%** scoped;9/20 closed deliveries. BP-07.01/.02 complete; BP-07.03=45.83%; BP-07.04/.05 remain0%. Each child is counted once.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-07.03/B2.03b.iii SQL ownership/races/replacement.
+- Current implementation task: BP-07.03/B2.03c declaration publication compatibility decision.
 - Demonstrated behavior: BP-07.01/.02 accepted immutable context/provider/budget and attributed text-decomposition boundaries, current-rights publication, bounded repair and actual Research/Knowledge handoff with replacement recovery. Campaign supervision and live model quality remain subsequent.
-- Blockers: none for deterministic implementation. Live provider/model, data egress and spend choices block only actual calls.
+- Blockers: private decision declaration v1 embeds its own Artifact ID, which Data allocates after upload. Owner decision on BP-07.03 Declaration publication decision.md required before coordinator activation. Live provider/model, egress and spend remain separately unselected.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
 
@@ -32,7 +32,7 @@ Primary services retain private state, dependencies, migrations and module READM
 |---|---:|---:|---:|---|
 | P1 / [BP-07.01 Model and engagement contracts](BP-07/Completed/BP-07.01%20Model%20and%20engagement%20contracts.md) | 100% | 100% | 100% | Parent predecessor gates |
 | P2 / [BP-07.02 Reliable text decomposition](BP-07/Completed/BP-07.02%20Reliable%20text%20decomposition.md) | 100% | 100% | 100% | BP-07.01 acceptance |
-| P3 / [BP-07.03 Campaign proposals and context](BP-07/BP-07.03%20Campaign%20proposals%20and%20context.md) | 45.14% | 60.19% | 0% | BP-07.02 acceptance |
+| P3 / [BP-07.03 Campaign proposals and context](BP-07/BP-07.03%20Campaign%20proposals%20and%20context.md) | 45.83% | 61.11% | 0% | BP-07.02 acceptance |
 | P4 / [BP-07.04 Durable supervisor and races](BP-07/BP-07.04%20Durable%20supervisor%20and%20races.md) | 0% | 0% | 0% | BP-07.03 acceptance |
 | P5 / [BP-07.05 Live evaluation and closeout](BP-07/BP-07.05%20Live%20evaluation%20and%20closeout.md) | 0% | 0% | 0% | BP-07.04 acceptance |
 

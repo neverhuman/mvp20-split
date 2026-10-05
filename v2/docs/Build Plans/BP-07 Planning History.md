@@ -710,3 +710,6 @@ B2.03b.i verified 2026-10-04 23:41:51: Planning0.65/planning0013 original histor
 
 
 B2.03b.ii verified 2026-10-05 00:15:06: Planning0.66/planning0014 immutable operation/event journal, saved-readback dependency, complete bounded rounds and final DB lease fencing.24 scoped SQL cases183.24s plus2 coverage-gap cases;399 storage statements40branches100% across scoped runs;12 boundary8.45s;198 isolated dispatch53.405s;36 installed SQL cases123.748s. No peer dispatch/admission claim. B2.03b=66.6667%,B2.03=41.6667%,B2=80.5556%,child45.14%,Build60.19%,parent49.03%;1/4 and9/20 closed. Current B2.03b.iii SQL ownership/races/replacement.
+
+
+B2.03b.iii verified 2026-10-05 00:23:06:5 scoped SQL race/authority/projection cases27.65s;198 independently installed dispatch cases53.457s;41 installed SQL cases152.668s across4 serial workers. Exact/different concurrent appends preserve one event; old holders cannot mutate after replacement; foreign actor/scope/read-only writes reject; corrupt position fails closed without rewriting events. No production change; Planning0.66/planning0014. B2.03b=100%,B2.03=50%,B2=83.3333%,child45.83%,Build61.11%,parent49.17%;1/4 and9/20 closed. Next B2.03c requires declaration publication compatibility decision; no abrupt process-kill or actual peer effect claim.

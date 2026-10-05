@@ -1,0 +1,59 @@
+{
+  "verified_at": "2026-10-05 00:23:06",
+  "scoped": {
+    "tests": 5,
+    "seconds": 27.65
+  },
+  "independent": {
+    "verified_at": "2026-10-05 00:18:31",
+    "status": "passed",
+    "tests": 198,
+    "seconds": 53.457,
+    "planning": "0.66.0",
+    "scope": "dispatch",
+    "contracts": "0.9.0",
+    "installations": 1,
+    "wheels": {
+      "amphora_agent_planning-0.66.0-py3-none-any.whl": "ad0e33f7d40eb30696024fb3b688bdfaf965a3d359eedf200aa2c13de289f398",
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+      "amphora_contracts_planning-0.9.0-py3-none-any.whl": "b96bc800b38dce4364cf91d3507dd707f239bf49425c2c8d2ea623f518d219ec",
+      "amphora_contracts_representations-0.3.0-py3-none-any.whl": "523feb10556ea0fdc07e39f2a874309fa65782b3e9035f072dffddf9a98ae18d",
+      "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+      "amphora_contracts_research_views-0.1.0-py3-none-any.whl": "50f010979f0868e61533f312639a1dfa9fc8a41795b2961817c3da45b33b67e8",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+    },
+    "limits": [
+      "Pure context/contract boundary only; loopback HTTP only; no migration, SQL, actual owner service, provider or scientific claim",
+      "Independent installation from current source, not a fresh implementation rewrite"
+    ]
+  },
+  "installed_sql": {
+    "verified_at": "2026-10-05 00:21:44",
+    "status": "passed",
+    "planning": "0.66.0",
+    "area": "selection",
+    "tests": 41,
+    "processes": 4,
+    "seconds": 152.668,
+    "installation_manifest": "Z:\\mvp20-split\\v2\\.test-results\\planning-compiler-races-independent-20261005\\manifest.json",
+    "limits": [
+      "Actual retained Planning PostgreSQL; current package migrations only, no reset",
+      "Existing fresh wheel installation; origin read replacement uses another engine, not a process-kill proof",
+      "No actual Runtime/Registry acceptance, provider or scientific claim"
+    ]
+  },
+  "production_version": "0.66.0",
+  "limits": [
+    "No production code, schema or migration change in this milestone",
+    "Actual retained SQL race/authority/projection and replacement-engine proof; abrupt process death and peer effects remain B2.03d",
+    "Decision v1 normal Data publication incompatibility blocks next coordinator activation pending owner direction"
+  ]
+}
