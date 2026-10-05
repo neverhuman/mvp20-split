@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-- Version: Planning0.58.0; public Planning0.9.0. BP-07.02 complete and audited;930 installed tests,39 process/replay stages and actual-owner recovery verified.
+- Version: Planning0.59.0; public Planning0.9.0. BP-07.02 complete and audited;930 installed tests,39 process/replay stages and actual-owner recovery verified.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Canonical progress: [BP-07.02](../../docs/Build%20Plans/BP-07/Completed/BP-07.02%20Reliable%20text%20decomposition.md).
 
@@ -91,3 +91,5 @@ Output compatibility acceptance: two fresh Planning0.52/public0.9 installations 
 [Campaign authoring](src/amphora_agent_planning/campaign_authoring/README.md) binds exact Runtime draft commands and receipts/readback. Pure value verification does not dispatch, admit or authorize execution; bounded transport and durable orchestration remain subsequent gates.
 
 [Campaign exchanges](src/amphora_agent_planning/campaign_exchanges/README.md) provides bounded guarded Runtime authoring and Registry resolve primitives. No production coordinator bypasses the pending durable submission gate.
+
+[Campaign eligibility](src/amphora_agent_planning/campaign_eligibility/README.md) derives exact selected Registry requests and verifies finite candidate observations. Capacity is not reserved and Runtime admission remains separate.

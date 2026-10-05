@@ -666,3 +666,10 @@ B2.02a verified 2026-10-04 22:08:25: Planning0.57/public0.9 exact Runtime save/v
 B2.02b verified 2026-10-04 22:20:11: Planning0.58/public0.9 bounded configured Runtime/Registry exchange primitives.41 focused tests7.41s;12 boundary cases8.47s;389 isolated cases74.984s. Compiled routes, exact Runtime outcomes, two guard checks, finite windows, trickled headers/body and explicit failures/no retries verified. B2.02=50%,B2=50%,child37.50%,Build50%,parent47.50%;1/4 and9/20 closed. Current B2.02c.i exact eligibility observations. [Evidence](../Audits/Evidence/BP-07-Campaigns/Compiler_Exchanges.json).
 
 | 2026-10-04 18:27:12 | BP-07.03/B1.02c.ii verified; child10.42%,parent42.08%; c.iii active | Retrieval_Context.json;116 focused/422 installed, full binding/query/result pins |
+
+
+## Eligibility policy checkpoint 2026-10-04 22:32:16
+
+B2.02c.i verified 2026-10-04 22:32:16: Planning0.59/public0.9 exact selected Registry commands and expiring eligibility observations.29 focused tests4.11s;12 boundary8.28s;418 isolated cases77.888s. Per-tool deduplication, stable named checks, exact lock/policy/lifecycle/status and finite expiry verified; rejection retained. B2.02c=33.3333%,B2.02=58.3333%,B2=52.7778%,child38.19%,Build50.93%,parent47.64%;1/4 and9/20 closed. Current B2.02c.ii current processing/relevant-input refresh. [Evidence](../Audits/Evidence/BP-07-Campaigns/Eligibility_Policy.json).
+
+| 2026-10-04 18:44:12 | BP-07.03/B1.02c.iii | Planning0.39 pinned campaign Knowledge/shared graph compatibility;241 focused/642 installed; child10.94%,Build14.58%,parent42.19%. Next combined-owner proof. |
