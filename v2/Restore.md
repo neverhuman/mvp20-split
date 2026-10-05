@@ -1,16 +1,18 @@
 # Restore
 
-Refreshed `2026-10-05 15:53:34` (America/Chicago). **Read first after compression.**
+Refreshed `2026-10-05 15:59:09` (America/Chicago). **Read first after compression.**
 
 ## Resume
 
-B1.04b.ii verified, ready to commit/push. Lastpushf37c3a67 PlanningHTTP. Runtime0.27 installed/runtime0020 applied; NEVER Runtime<=0.26 migrators. Planning0.71/planning0015; NEVER Planning<=0.69 migrators. Public528schemas unchanged.96 capture/journal/persistence cases24.31s,12 boundary11.38s;Ruffpassed;coverage reader93%,cancellation100%,combined96%. No tests/hosts running.
+B1.04b.iii verified, ready to commit/push. Lastpush3b127838(capture/cancel);priorf37c3a67(PlanningHTTP). Runtime0.28 installed/runtime0020 unchanged;NEVER Runtime<=0.26 migrators. Planning0.71/planning0015;NEVER Planning<=0.69 migrators.528publicschemas unchanged.21 scoped API/response/cancel/legacy cases15.77s,12 boundary10.41s,Ruffpassed;116statements8branches99%(only no-capture Hostconfigbranchmissing). No verification/hosts running.
 
-Current B1.04b.iii Runtime HTTP integration. Child21.35%,Build28.47%,Acceptance0%;parent64.27%,12/20. B1=85.42%;B1.04=41.67%,a100%,b66.67%(i/ii100%,iii0%),c/d0%. Trackers/history/READMEs/evidence synced. Commit/push then continue; no owner decision needed.
+Current B1.04c bounded owner clients; next d actual installed multi-owner/restart proof. Child21.88%,Build29.17%,Acceptance0%;parent64.38%,12/20. B1=87.50%;B1.04=50%,a/b100%,c/d0%;b.i/ii/iii100%. Trackers/history/READMEs/evidence synced. Commit/push then continue. No liveproviderchoiceblocks deterministicwork.
 
-New supervision_capture CaptureReader exact metadata+/processing-content, configuredloopback2calls/327680bytes/10s, tokenenv,no redirects/retries. None diagnostic nofetch. New supervision_journal CancellationJournal immutable16records/request;supervise_cancel + originalpreparingRuntime/originalPlanningactor;exactrequest;atomicreceipt;readhistory;noexecutionwinner. Migration0020 immutableSELECT/INSERT+FKs. Tests realHTTPprotocolpeers andactualSQL. b.iii must recoveroriginalstoredreceipt before newDatafetch, validateactor/scope/originalrequest beforefetch, integratefocusedroutes into existing api.py and explicit Host configuration. Host in hosting.py; newoptional supervision config can configureDataReader;RequestJournal(engine,{}) sufficient forrecord/readonly routes, requestproducerconfigB2. Noauto modelcalls.
+New Runtime supervision_api SupervisorRecording + focusedhttp/configuration. Existing api.create_app optionalsupervision;Host configoptional supervision:{capture_data:{endpoint,token_env}} (emptydiagnosticonly),grants supervise_respond/supervise_cancel+read. POST /v1/supervision/responses and /cancellations; append/receipts/query forreadonlyoriginalcommand; GET /responses/{id},/cancellations/{id};supervision/ready. Original receipt checked before freshDatafetch; pendingcommandhash/bytes nowcheckedbeforeNone. Originalrequest/actor/attempt/scopecheckedbeforefetch. NoSQLspansnetwork, no modelcall/executionwinner. RequestJournal(engine,{}) records/reads only;productionactormappingB2.
 
-Planning supervision_api HTTP verified39cases19.56s +12boundary;separateCLIactualHTTP host passed. LatestPlanning0.71;publicsupervision0.2. Source/testREADME captures APIboundaries.
+B1.04c should provide Runtime-owned Planningclient and Planning-owned Runtimeclient, publiccontracts only, bounded configuredendpoint/token, exact originalcommandfamilies, no redirects/proxies/hiddenwrite retries; receipt/readback verification originaloperation/hash/identity, explicit unknown/awaitingreadback. Do not share private implementation acrossowners. Reuse own primitives when suitable. Read Public transports.md then modules. d actual separatelyinstalled Planning/Runtime/Data, persistedrequestoutbox and response/cancel/readback/lostreply/restart; no paidprovider needed.
+
+CaptureReader Runtime0.27 b.ii exactmetadata+/processing-content2calls/327680bytes/10s, no redirects/retries; CancellationJournal16immutable records/request, originalRuntime/Planningactor, noexecutioneffect.96 scopedcases24.31s +12boundary11.38s;reader93%,cancel100%. Forward0020immutablehistory;oldmigrationsunchanged. PlanningHTTP0.71 b.i39cases19.56s+12boundary8.59s, realCLIhostpassed.
 
 ## Prior journal evidence (versions above supersede older ones)
 

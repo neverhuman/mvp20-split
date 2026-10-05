@@ -802,3 +802,8 @@ Planning0.71 adds focused authenticated bounded supervisor HTTP and configured C
 ## 2026-10-05 15:53:34 ? BP-07.04/B1.04b.ii
 
 Runtime0.27/runtime0020 bounded exact capture reader and immutable cancellation journal verified:96 cases24.31s,12 boundary11.38s;Ruffpassed. Reader93%,cancellation100%,combined96% scopedcoverage.22 protocol peer tests and4 cancellation SQL cases; no graph effects or provider claims. Prior migrations untouched. Child21.35%,Build28.47%,parent64.27%; next Runtime HTTP integration.
+
+
+## 2026-10-05 15:59:09 ? BP-07.04/B1.04b.iii
+
+Runtime0.28 opt-in authenticated supervisor HTTP/Host configuration verified21 scoped cases15.77s,12 boundary10.41s;116 statements8branches99%. Original receipt recovery bypasses fresh capture rights recheck; fresh submissions remain denied on withdrawal. Pending commands now validate original bytes before returning no receipt, preventing changed retries from triggering capture reads. Existing migration0020/public schemas untouched. Child21.88%,Build29.17%,parent64.38%;b complete; next bounded owner clients c.

@@ -45,9 +45,11 @@ class Host:
     graphs: tuple | None = None
     authoring: bool = False
     universes: object = None
+    supervision: object = None
 
     def app(self):
-        return create_app(self.admission, self.credentials, self.completion, self.history, self.graphs, self.authoring, self.universes)
+        return create_app(self.admission, self.credentials, self.completion, self.history, self.graphs, self.authoring,
+                          self.universes, self.supervision)
 
     def close(self):
         self.admission.commands.engine.dispose()
@@ -56,14 +58,14 @@ class Host:
     def load(cls, path):
         raw = json.loads(Path(path).read_text(encoding="utf-8"))
         if not {"database_url_env", "principals", "fixtures"} <= set(raw) or set(raw) - {
-            "database_url_env", "principals", "fixtures", "tools", "artifacts", "delivery", "inspection", "graphs", "projections", "bindings", "authoring", "draft_registry"}:
+            "database_url_env", "principals", "fixtures", "tools", "artifacts", "delivery", "inspection", "graphs", "projections", "bindings", "authoring", "draft_registry", "supervision"}:
             raise ValueError("Explicit database, principals and fixture allowlist required")
         entries, principals = [], []
         for item in raw["principals"]:
             if set(item) != {"token_env", "actor_id", "scope", "actions"}:
                 raise ValueError("Invalid principal configuration")
             actions = frozenset(item["actions"])
-            if not actions or actions - {"admit", "claim", "renew", "cancel", "revoke", "maintain", "read", "complete", "outcome", "deliver", "inspect_receipts", "submit_receipt", "author", "validate"}:
+            if not actions or actions - {"admit", "claim", "renew", "cancel", "revoke", "maintain", "read", "complete", "outcome", "deliver", "inspect_receipts", "submit_receipt", "author", "validate", "supervise_respond", "supervise_cancel"}:
                 raise ValueError("Invalid configured action")
             if not isinstance(item["actor_id"], str) or not item["actor_id"]:
                 raise ValueError("Explicit actor required")
@@ -155,11 +157,15 @@ class Host:
                     conn.execute(text("SELECT validation_id FROM runtime.definition_admissions LIMIT 0"))
             bindings = None if publisher is None else BindingCoordinator(engine, PublishedPlanCatalog(engine, graph_catalog), artifacts, publisher)
             drafts = DraftAdmissionGuard(engine, universes, eligibility) if authoring else None
+            supervision = None
+            if "supervision" in raw:
+                from .supervision_api.configuration import configured
+                supervision = configured(engine, raw["supervision"])
             return cls(FixtureAdmission(engine, catalog), credentials, tuple(principals), completion,
                        DeliveryWorker(DeliveryStore(engine, policy), targets),
                        None if cursors is None else RuntimeHistory(engine, cursors),
                        None if graph_catalog is None else (GraphAdmission(engine, graph_catalog, bindings_enabled=bindings is not None, drafts=drafts),
-                                                           GraphAdvancer(engine, projections, bindings)), authoring, universes)
+                                                           GraphAdvancer(engine, projections, bindings)), authoring, universes, supervision)
         except BaseException:
             engine.dispose()
             raise

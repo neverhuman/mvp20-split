@@ -134,8 +134,8 @@ class ResponseJournal:
         with self.requests.engine.connect() as conn:
             row = conn.execute(text('SELECT profile,request_sha256,canonical_bytes,status,receipt FROM runtime.commands '
                 'WHERE ' + WHERE), _bindings(command)).mappings().one_or_none()
-        if row is None or row['status'] == 'pending':
+        if row is None:
             return None
         require(row['profile'] == command.profile and row['request_sha256'] == command.sha256 and
                 bytes(row['canonical_bytes']) == command.canonical_bytes, 'response_command_mismatch')
-        return SupervisionCommandReceipt.model_validate_json(json.dumps(row['receipt']))
+        return None if row['status'] == 'pending' else SupervisionCommandReceipt.model_validate_json(json.dumps(row['receipt']))

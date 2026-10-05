@@ -1,0 +1,26 @@
+{
+  "reviewed_at": "2026-10-05 15:59:09",
+  "unit": "BP-07.04/B1.04b.iii",
+  "runtime_version": "0.28.0",
+  "migration_head": "0020 unchanged",
+  "tests": {
+    "scoped": 21,
+    "seconds": 15.77,
+    "boundary": 12,
+    "boundary_seconds": 10.41
+  },
+  "coverage": {
+    "statements": 116,
+    "branches": 8,
+    "percent": 99,
+    "gap": "Host configuration without capture_data not directly exercised"
+  },
+  "verified": [
+    "original receipt before fresh capture read",
+    "withdrawal denies fresh response",
+    "changed pending bytes reject before fetch",
+    "configured Host and no default routes",
+    "cancellation is recording only"
+  ],
+  "next": "B1.04c bounded owner clients"
+}
