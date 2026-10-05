@@ -644,3 +644,11 @@ B2.01b verified 2026-10-04 21:12:49: Planning0.54/public0.9 consumed Research re
 
 B2.01c verified 2026-10-04 21:30:08: Planning0.55/public0.9 authored addresses and exact consumed Registry/Runtime tool locks;64 proposal cases52.43s plus22 latest composition cases21.19s (tools98statements20branches100%);268 independently installed focused cases36.295s. Nested graph ceilings, lifecycle precedence, ports/timeouts/checkpoints/literal inputs and selected-only Runtime changes verified. Adjustments retain explicit Runtime pending findings. B2.01=75%,B2=25%,child31.25%,Build41.67%,parent46.25%;1/4 and9/20 closed. Current B2.01d reviewed decision policy. [Evidence](../../Audits/Evidence/BP-07-Campaigns/Composition_Policy.json).
 | 2026-10-04 18:07:08 | BP-07.03/B1.02b.i verified; child8.59%,parent41.72%; b.ii active | Registry_Discovery.json;62 focused/290 installed, partial scans/full locks/closed GET |
+
+
+## Decision policy checkpoint 2026-10-04 21:57:33
+
+B2.01d verified 2026-10-04 21:57:33: Planning0.56/public0.9 reviewed canonical decision declaration bound to original required constraint bytes.50 focused tests19.96s;318 isolated cases55.86s;15 boundary/schema checks passed in earlier44-case combined run31.27s. Future identity/context/graph/tool bounds, exact adjustment targets/scalars, original budget ceilings and uncertain science verified. B2.01=100%,B2=33.3333%,child33.33%,Build44.44%,parent46.67%;1/4 and9/20 closed. Current B2.02a command/readback binding. [Evidence](../Audits/Evidence/BP-07-Campaigns/Decision_Policy.json).
+
+MBT secondary parent mirror corrected from stale45% to46.67%; canonical current task and all phase mirrors synchronized.
+| 2026-10-04 18:12:22 | BP-07.03/B1.02b complete; child9.38%,parent41.88%; c active | Runtime_Metadata.json;62 focused/319 installed,139 statements14 branches100% |

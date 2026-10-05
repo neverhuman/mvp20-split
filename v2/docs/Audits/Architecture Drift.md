@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 and BP-07.01/.02 closed/audited; BP-07.03/B2 proposal policy active.
-- Last refreshed: `2026-10-04 21:30:08` (America/Chicago).
+- Last refreshed: `2026-10-04 21:57:33` (America/Chicago).
 - Scope: unresolved v2 design/implementation alignment and scoped successor boundaries.
 - Active focus: campaign context/proposal boundary; no unresolved blocking predecessor finding.
-- Next gate: BP-07.03/B2.01d reviewed decision policy; exact tool locks and authored addresses verified. Semantic and Runtime execution authority remain separate.
+- Next gate: BP-07.03/B2.02a compiler command/readback binding; combined declaration/evidence/tool/budget policy verified. Semantic and Runtime execution authority remain separate.
 
 ## Active Findings
 

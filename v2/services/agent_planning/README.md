@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-- Version: Planning0.55.0; public Planning0.9.0. BP-07.02 complete and audited;930 installed tests,39 process/replay stages and actual-owner recovery verified.
+- Version: Planning0.56.0; public Planning0.9.0. BP-07.02 complete and audited;930 installed tests,39 process/replay stages and actual-owner recovery verified.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Canonical progress: [BP-07.02](../../docs/Build%20Plans/BP-07/Completed/BP-07.02%20Reliable%20text%20decomposition.md).
 
@@ -85,3 +85,5 @@ Campaign output interpretation is owned by [campaign_output](src/amphora_agent_p
 Output compatibility acceptance: two fresh Planning0.52/public0.9 installations pass252 pure/contract/legacy-command cases and13 SQL cases, followed by six process stages for seven retained campaign/reference/extraction outputs. A process exits after committed writes; recovery/replacement preserve raw captures, typed proposals, observation hashes and settlement timestamps/charges without repeated provider calls. See dev/verify_planning_campaign_output.py; this is replacement of the same implementation, not a rewrite.
 
 [Campaign proposal policy](src/amphora_agent_planning/campaign_proposals/README.md) owns pure prepared-output identity and relevant observation selection/comparison. It preserves original inputs and distinguishes changed relevant metadata from unrelated context; semantic evidence/tool/declaration checks remain subsequent units.
+
+[Campaign decisions](src/amphora_agent_planning/campaign_decisions/README.md) owns reviewed declaration pinning and future/adjustment bounds, combined with existing budget demand and proposal policy. It introduces no Runtime acceptance or new public schema.

@@ -22,9 +22,10 @@ from ..providers.test_task_output import Response
 from .test_prepared import record, source
 
 
-def inputs(*, omitted=(), posture='unknown', other_question=False, additional_question=False):
-    selected = source(extras=(('science', b'synthetic Research context', True),))
-    artifact = selected.request.document().context.entries[0].artifact.model_dump(mode='json')
+def inputs(*, omitted=(), posture='unknown', other_question=False, additional_question=False, selected=None):
+    selected = source(extras=(('science', b'synthetic Research context', True),)) if selected is None else selected
+    artifact = next(entry.artifact for entry in selected.request.document().context.entries
+                    if entry.artifact.artifact_id == 'science').model_dump(mode='json')
     data = values()
 
     def rebind_artifacts(value):
