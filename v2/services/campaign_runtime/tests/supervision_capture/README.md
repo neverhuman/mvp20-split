@@ -1,0 +1,3 @@
+# Capture reader tests
+
+Runtime owns this module's tests. Run python -m pytest -c dev/pyproject.toml services/campaign_runtime/tests/supervision_capture from v2. Real loopback HTTP fixture, synthetic public capture; no PostgreSQL or paid model required. Peer threads/sockets are shut down after each case. Tests cover exact authenticated processing-content, no diagnostic fetch, rights/missing/redirect/server failures without retry, metadata identity/duplicates/type, encoding, byte/hash/length mismatch and trickled-body deadline. Configuration rejects external/model-selected endpoints and invalid limits. This proves the client protocol boundary; actual Data owner/replacement is B1.04d.

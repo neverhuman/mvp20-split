@@ -1,0 +1,26 @@
+{
+  "reviewed_at": "2026-10-05 15:53:34",
+  "unit": "BP-07.04/B1.04b.ii",
+  "runtime_version": "0.27.0",
+  "migration_head": "0020",
+  "tests": {
+    "combined": 96,
+    "seconds": 24.31,
+    "boundary": 12,
+    "boundary_seconds": 11.38
+  },
+  "coverage": {
+    "reader_percent": 93,
+    "cancellation_percent": 100,
+    "combined_percent": 96,
+    "statements": 206,
+    "branches": 30,
+    "limits": "Reader deadline/cleanup/metadata-nonfinite paths not all reached"
+  },
+  "claims_excluded": [
+    "actual Data owner installation",
+    "cancellation winner",
+    "provider calls"
+  ],
+  "next": "B1.04b.iii Runtime HTTP integration"
+}

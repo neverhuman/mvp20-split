@@ -1,16 +1,18 @@
 # Restore
 
-Refreshed `2026-10-05 15:46:25` (America/Chicago). **Read first after compression.**
+Refreshed `2026-10-05 15:53:34` (America/Chicago). **Read first after compression.**
 
-## Immediate resume
+## Resume
 
-B1.04b.i Planning HTTP verified, ready to commit/push. Planning0.71 installed; planning0015 unchanged.39 combined API/intake tests19.56s,12 boundary8.59s;Ruffpassed. Actual separate CLI host request/receipt recovery passed, terminated. No verification/hosts running. In-process coverage86%; CLI tested separately, not instrumented. Public528schemas unchanged.
+B1.04b.ii verified, ready to commit/push. Lastpushf37c3a67 PlanningHTTP. Runtime0.27 installed/runtime0020 applied; NEVER Runtime<=0.26 migrators. Planning0.71/planning0015; NEVER Planning<=0.69 migrators. Public528schemas unchanged.96 capture/journal/persistence cases24.31s,12 boundary11.38s;Ruffpassed;coverage reader93%,cancellation100%,combined96%. No tests/hosts running.
 
-Current B1.04b.ii Runtime Data /processing-content capture reader + immutable cancellation records; then b.iii Runtime HTTP integration. B1.04a100%,b33.33%(i100%,ii/iii0%),c/d0%;B1.04=33.33%,B1=83.33%,Build27.78%,child20.83%,parent64.17%;Acceptance0%,12/20closed parent. Trackers/history synchronized. Commit/push this checkpoint then continue; no owner decision blocks.
+Current B1.04b.iii Runtime HTTP integration. Child21.35%,Build28.47%,Acceptance0%;parent64.27%,12/20. B1=85.42%;B1.04=41.67%,a100%,b66.67%(i/ii100%,iii0%),c/d0%. Trackers/history/READMEs/evidence synced. Commit/push then continue; no owner decision needed.
 
-New supervision_api module/readme/tests: configured bearer principals, POST requests, POST receipts/query original command read-only, GET request readback; bound262KiB/10s/depth64; redactederrors; defaulthealthonly;CLI env database/credentials,noauto migration/providerattempt. Planning0.71 FastAPI/Uvicorn dependencies and CLI script; dev test area registered. Ruff Depends default corrected to Annotated. Huge pytest param ID fixed; allrerunpass.
+New supervision_capture CaptureReader exact metadata+/processing-content, configuredloopback2calls/327680bytes/10s, tokenenv,no redirects/retries. None diagnostic nofetch. New supervision_journal CancellationJournal immutable16records/request;supervise_cancel + originalpreparingRuntime/originalPlanningactor;exactrequest;atomicreceipt;readhistory;noexecutionwinner. Migration0020 immutableSELECT/INSERT+FKs. Tests realHTTPprotocolpeers andactualSQL. b.iii must recoveroriginalstoredreceipt before newDatafetch, validateactor/scope/originalrequest beforefetch, integratefocusedroutes into existing api.py and explicit Host configuration. Host in hosting.py; newoptional supervision config can configureDataReader;RequestJournal(engine,{}) sufficient forrecord/readonly routes, requestproducerconfigB2. Noauto modelcalls.
 
-## Prior retained handoff (superseded version/progress above)
+Planning supervision_api HTTP verified39cases19.56s +12boundary;separateCLIactualHTTP host passed. LatestPlanning0.71;publicsupervision0.2. Source/testREADME captures APIboundaries.
+
+## Prior journal evidence (versions above supersede older ones)
 
 ## Current module boundary
 

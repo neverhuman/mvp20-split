@@ -797,3 +797,8 @@ Planning0.70/planning0015 records exact supervisor wrapper, original Planning re
 ## 2026-10-05 15:46:25 ? BP-07.04/B1.04b.i
 
 Planning0.71 adds focused authenticated bounded supervisor HTTP and configured CLI with no provider grant.39 combined tests19.56s,12 boundary8.59s; actual separately running CLI recovers exact receipt. Ruff passed. Oversized pytest parameter IDs initially caused setup failures; short semantic IDs corrected and all rerun cases pass. SQLAlchemy configuration errors are redacted. In-process coverage86%; CLI subprocess independently exercised, no aggregate100% claim. Child20.83%,Build27.78%,parent64.17%; next Runtime capture/cancellation.
+
+
+## 2026-10-05 15:53:34 ? BP-07.04/B1.04b.ii
+
+Runtime0.27/runtime0020 bounded exact capture reader and immutable cancellation journal verified:96 cases24.31s,12 boundary11.38s;Ruffpassed. Reader93%,cancellation100%,combined96% scopedcoverage.22 protocol peer tests and4 cancellation SQL cases; no graph effects or provider claims. Prior migrations untouched. Child21.35%,Build28.47%,parent64.27%; next Runtime HTTP integration.
