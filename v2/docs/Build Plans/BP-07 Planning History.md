@@ -787,3 +787,8 @@ Runtime0.26/runtime0019: original command delivery leases, bounded immutable eve
 ## 2026-10-05 15:17:01 ? BP-07.04/B1.03d / journal complete
 
 Two isolatedRuntime0.26 installations;111initialscope/public cases and33journal cases perinstall;162 predecessor productionfiles unchanged.17 actualSQL processes,4abruptterminations,3paired races verify original frames/commands/receipts/capture/timestamps and rollback/fences. Scopedcleanup, noreset/privatepeers. OutgoingPlanningreceipt remains deterministic fixture. Child18.75%,Build25%,parent63.75%;next B1.04 transports. Stale design-document0%labels replaced with canonical-tracker references.
+
+
+## 2026-10-05 15:32:07 ? BP-07.04/B1.04a
+
+Planning0.70/planning0015 records exact supervisor wrapper, original Planning request and public recorded receipt in one transaction.17 cases3.08s,155 statements/20 branches100%;58 adjacent legacy/context/boundary cases13.61s. Command/slot/request locks resolve exact retries and conflicting ordinal occupants; no attempts or provider budget created.28 predecessor migrationfiles unchanged. Child20.31%,Build27.08%,parent64.06%;next owner HTTP/capture/cancellation surfaces.

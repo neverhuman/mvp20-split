@@ -1,7 +1,7 @@
 # Agent Planning service boundary
 
-- Version: Planning0.69.0; public Planning0.9.0; owned migration head0014.
-- Reviewed: `2026-10-05 13:34:17` (America/Chicago). BP-07.01/.02/.03 accepted within deterministic/synthetic scope.
+- Version: Planning0.70.0; public Planning0.9.0 and supervision0.2.0; owned migration head0015.
+- Reviewed: `2026-10-05 15:30:37` (America/Chicago). BP-07.01/.02/.03 accepted within deterministic/synthetic scope.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Campaign acceptance: [BP-07.03](../../docs/Build%20Plans/BP-07/Completed/BP-07.03%20Campaign%20proposals%20and%20context.md); next [BP-07.04](../../docs/Build%20Plans/BP-07/BP-07.04%20Durable%20supervisor%20and%20races.md).
 
@@ -15,6 +15,7 @@ This independently built wheel depends on public contracts and the Tool Protocol
 
 | Module | Boundary |
 |---|---|
+| [supervision_intake](src/amphora_agent_planning/supervision_intake/README.md) | Atomic original supervisor wrapper, legacy-compatible Planning request and recorded command receipt; no provider grant or HTTP yet |
 | [context](src/amphora_agent_planning/context/README.md), [providers](src/amphora_agent_planning/providers/README.md) | Immutable scoped requests, explicit omissions, physical attempts, bounded capture and closed output-profile catalog |
 | [budget](src/amphora_agent_planning/budget/README.md), [persistence](src/amphora_agent_planning/persistence/README.md), [orchestration](src/amphora_agent_planning/orchestration/README.md) | Conservative reservations/settlements, owned journals and once-only local dispatch; truthful deadline uncertainty and late evidence |
 | [extraction](src/amphora_agent_planning/extraction/README.md) | Versioned task/source/prompt binding, UTF-8 quotation geometry and interpretation-only failed/repaired traces |
@@ -39,7 +40,7 @@ This independently built wheel depends on public contracts and the Tool Protocol
 
 ## State, effects and recovery
 
-Planning owns planning_0001 through0014. Histories, prepared bytes and compiler selections are immutable; separate control rows carry database-clock leases/fences. Normal imports never migrate. No SQL transaction spans provider or peer I/O. Publication and compiler operations persist exact intent before effects. Uncertain replies preserve original identities; an accepted receipt requires exact owner readback. Historical receipt recovery does not grant fresh processing rights. Process loss leaves leases until expiry; stale holders cannot append accepted local history.
+Planning owns planning_0001 through0015. Histories, prepared bytes and compiler selections are immutable; separate control rows carry database-clock leases/fences. Normal imports never migrate. No SQL transaction spans provider or peer I/O. Publication and compiler operations persist exact intent before effects. Uncertain replies preserve original identities; an accepted receipt requires exact owner readback. Historical receipt recovery does not grant fresh processing rights. Process loss leaves leases until expiry; stale holders cannot append accepted local history.
 
 Compiler selection binds original preparation, output, accounting and reviewed configuration. One save and validation use at most16 complete Registry-check rounds over1..64 original tools, with64 events per effect and the last slot reserved for terminal outcomes. Each progression invocation performs at most one effectful POST and releases its300s lease. Runtime original receipts/readbacks are reconciled before fresh-use checks; Registry resolve replay remains effectful and needs current checks. Expired observations require a new bounded check, never an expiry extension. No network exactly-once guarantee is claimed.
 
@@ -56,3 +57,6 @@ A replacement must preserve canonical bytes/hashes, original actors/scopes, sour
 ## Remaining boundaries
 
 Runtime engagement acceptance, overlapping decision scopes, fallback/cancellation races and autonomous orchestration belong to BP-07.04. Actual provider/model selection, egress permissions, spending and live evaluation belong to BP-07.05 and its named owner decisions. Fixture UTF-8 byte-token fitting does not prove a real model's tokenizer/window, injection resistance or scientific efficacy. Campaigns remain exploratory; future iterations can target selected weaknesses without resolving every scientific gap first.
+
+
+BP-07.04/B1.04a:17 supervisor-intake cases3.08s,155 statements/20 branches100%. Forward0015 and public supervision dependency are additive; actual public transport and provider supervision remain subsequent units.

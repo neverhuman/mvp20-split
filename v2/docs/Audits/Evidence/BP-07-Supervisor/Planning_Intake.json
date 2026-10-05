@@ -1,0 +1,25 @@
+{
+  "checkpoint": "2026-10-05 15:32:07",
+  "task": "BP-07.04/B1.04a",
+  "planning": "0.70.0",
+  "migration": "planning_0015",
+  "tests": 17,
+  "seconds": 3.08,
+  "adjacent_tests": 58,
+  "adjacent_seconds": 13.61,
+  "coverage": {
+    "statements": 155,
+    "missed_statements": 0,
+    "branches": 20,
+    "partial_branches": 0
+  },
+  "claims": [
+    "Atomic exact original request, wrapper and recording receipt",
+    "Actual PostgreSQL concurrent exact commands and conflicting slot occupants",
+    "Original PlanningJournal interoperability and zero new attempts"
+  ],
+  "limits": [
+    "No HTTP server/provider call/budget reservation",
+    "Runtime snapshot remains an owner claim; Planning does not prove Runtime state"
+  ]
+}

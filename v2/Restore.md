@@ -1,12 +1,18 @@
 # Restore
 
-Refreshed `2026-10-05 15:18:04` (America/Chicago). **Read first after compression.**
+Refreshed `2026-10-05 15:32:07` (America/Chicago). **Read first after compression.**
 
 ## Resume
 
-BP-07.04/B1.03d VERIFIED but not yet committed. Latest pushed d4cb7dec (c); prior06fd08b0(b),0fdd811a(a). Runtime/dev0.26.0, public supervision0.2.0, GraphRuntime0.13, DB runtime0019;528 public schemas. NEVER run Runtime<=0.25 migrators on this fixture. No running verification or hosts. Independent session71479 completed successfully: two installs,111 initial scope/public cases,33pure journal cases per install,162 unchanged predecessor Runtime productionfiles,17actualSQL processes,4abruptkills,3pairedraces,scopedcleanup. Evidence Journal_Recovery.json generated. Need final diff/links/check and commit/push d, then B1.04 public owner transports. Do not end at checkpoint.
+B1.04a VERIFIED, not yet committed. Latest pushedbf8a47b9 (journal d); earlier d4cb7dec(c),06fd08b0(b),0fdd811a(a). Planning0.70/dev installed, planning0015 applied; NEVER run Planning<=0.69 migrators. Runtime0.26/runtime0019 unchanged; NEVER Runtime<=0.25 migrators. Public supervision0.2,Planning0.9,GraphRuntime0.13,528schemas unchanged. No running verification/hosts.
 
-Canonical child18.75%,Build25%,Acceptance0%,0/4;parent63.75%,12/20. B1 .01/.02/.03=100%,.04=0%;B1=75%. B1.03a/b/c/d100%. B2/B3/V1 still0%. B1.04 has not been decomposed/implemented. Closed BP07.03 remains archived100%.
+17 Planning intake cases3.08s,155 statements/20branches100%;58 adjacent boundary/legacy journal/context cases13.61s;Ruffpassed. Source/testmoduleREADMEs and public transport design added, serviceREADME/persistenceheadupdated. Need finaldiff/links,commit/push a,then B1.04b owner HTTP/capture/cancellation records. Do not end atcheckpoint.
+
+Canonical child20.31%,Build27.08%,Acceptance0%,0/4;parent64.06%,12/20. B1 .01/.02/.03=100%,.04=25%;B1=81.25%. B1.04equal a100%,b/c/d0%;B2/B3/V1 remain0%. BP07.03closedarchived.
+
+New Planning supervision_intake snapshots bind original RequestSnapshot/ContextPolicy pluswrapperhash/run/cut/policy/readset/lineageshape. Runtimehashesopaqueownerclaims,noRuntimeprivateimports/SQL. Storage originalPlanning.requests+wrapper+publicrecordedreceipt atomic undercommand-key->decisionslot->requestkeylocks. exactcmdreplay; unchangedwrapperalternatecmdack; conflicts recordedrejection;noattempts,budget,familyenrollmentorHTTP. Usesexistingrecord_requests/read_attempts grants. Tests actualSQLrace,rollbackall3records,legacyRequestJournal interoperability,read-onlyreplay,insert-onlygrants. planning0015 two newimmutabletables;28prior migrationfilesuntouched.
+
+B1.04b next: PlanningnewHTTPserver/bearercredentials usingexistingPrincipal3grants; RuntimeAPIextendfocusednewroutes; Data /processing-content rawcapture metadata/hash/size verificationoutsideSQL/historyfirst; separatecancelrecord(notwinner),Runtimeforwardmigration0020. Read Public transports.md. No liveproviderchoiceblocks deterministicwork.
 
 ## Current module boundary
 
@@ -34,4 +40,7 @@ Continue milestones/commits/pushes/compaction until concreteblocker. No subagent
 
 Workspace Z:/mvp20-split;activev2,PowerShell,America/Chicago. Python v2/dev/.venv/Scripts/python.exe;uv v2/.venv/Scripts/uv.exe. PYTHONUTF8=1 EACH shellPythoncall. Windows absolute(),notresolve(). NormalRuff. Secretsenvonly;neverprintURLs/tokens. Git -c safe.directory=//DesktopNAS/Code/mvp20-split;main;commitpushauthorized. Primarydocs docs/Build Plans/BP-07/BP-07.04 Durable supervisor and races.md;parent BP-07 Autonomous LLM Campaign Supervision.md;MBTmax25rows;BP-07 Planning History.md. Stablephysical/exchange designs hadstale0%labels corrected tocanonicaltrackerreference,notextraimplementationcredit.
 
-Planning0.69/public0.9/DB0014(never<=0.65migrators),Research0.34/public0.14/DB0013(never<=0.33),Data0.29/DB0012(never<=0.25),Knowledge0.18/public0.8,Registry0.1. No activegoals/skills/subagents/hosts. v1/LICENSE metadata debtuntouched. BP07.03Final_Installation.json1262initial/49replacement; actualowner/crash/rights/compiler/semantic/catalogevidence retainedunderBP-07-Campaigns. New supervisorproofunderBP-07-Supervisor. Olderhelperversionsmaymigrate;inspectbeforeuse.
+Planning0.70/public0.9/DB0015(never<=0.69migrators),Research0.34/public0.14/DB0013(never<=0.33),Data0.29/DB0012(never<=0.25),Knowledge0.18/public0.8,Registry0.1. No activegoals/skills/subagents/hosts. v1/LICENSE metadata debtuntouched. BP07.03Final_Installation.json1262initial/49replacement; actualowner/crash/rights/compiler/semantic/catalogevidence retainedunderBP-07-Campaigns. New supervisorproofunderBP-07-Supervisor. Olderhelperversionsmaymigrate;inspectbeforeuse.
+
+
+B1.04a design: new Planning supervision_intake, publicsupervision dependency, RequestSnapshot/ContextPolicy existingactor/context rules. PlanningPrincipal already onlyrecord_requests/record_attempts/read_attempts; use first+last grants,no arbitrarynewgrant. Intake originalsupervisorwrapper+canonicalcommand+Planning.requests registration+publicrecordedreceipt atomic undercommand-key thenexistingPlanningJournal._lock; onlyownSQL. Runtime snapshot hashes opaque ownerclaims,shapechecked nofakeactualRuntimeproof. Out-of-order/late wrappers mayberecorded butnotcalled/enrolled. NewPlanning0.70/planning0015,keepallpriorbytes; noHTTPuntilb. See Public transports.md. Runtimeexisting ArtifactProjections.fetch uses /content andparsedJSON, unsuitablefornewcapture; mustuseData /processing-content raw exact bytes outsideSQL. Planning hasprivate DataReader /processing-content, cannotimportacrossservice; buildRuntime-ownedboundedreader orreviewSDKcapability. No sourcewrites/verification running.
