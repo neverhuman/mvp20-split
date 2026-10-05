@@ -652,3 +652,10 @@ B2.01d verified 2026-10-04 21:57:33: Planning0.56/public0.9 reviewed canonical d
 
 MBT secondary parent mirror corrected from stale45% to46.67%; canonical current task and all phase mirrors synchronized.
 | 2026-10-04 18:12:22 | BP-07.03/B1.02b complete; child9.38%,parent41.88%; c active | Runtime_Metadata.json;62 focused/319 installed,139 statements14 branches100% |
+
+
+## Authoring values checkpoint 2026-10-04 22:08:25
+
+B2.02a verified 2026-10-04 22:08:25: Planning0.57/public0.9 exact Runtime save/validate command values and receipt/readback binding.30 focused tests14.50s;12 boundary cases8.60s;348 isolated cases69.726s. Stable attempt/configuration identities, versioned numeric constants, pending/rejected/readback states and accepted-invalid compilation verified. B2.02=25%,B2=41.6667%,child35.42%,Build47.22%,parent47.08%;1/4 and9/20 closed. Current B2.02b bounded Runtime/Registry transport. [Evidence](../Audits/Evidence/BP-07-Campaigns/Authoring_Values.json).
+
+| 2026-10-04 18:17:02 | BP-07.03/B1.02c.i verified; child9.90%,parent41.98%; c.ii active | Campaign_Artifact_Reads.json;78 focused/397 installed,109 statements12 branches100% |

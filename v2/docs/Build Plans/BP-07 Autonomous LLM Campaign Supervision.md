@@ -2,14 +2,14 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-07.03/Build/B2.02a.
-- Last refreshed: `2026-10-04 21:57:33` (America/Chicago).
+- Status: primary_active; BP-07.03/Build/B2.02b.
+- Last refreshed: `2026-10-04 22:08:25` (America/Chicago).
 - Owner/scope: Agent Planning plus runtime-owned engagement and decision modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-03 discovery, BP-04 runner, BP-05 UI and BP-06 source/knowledge receipts.
-- Implementation: **46.67%** scoped;9/20 closed deliveries. BP-07.01/.02 complete; BP-07.03=33.33%; BP-07.04/.05 remain0%. Each child is counted once.
+- Implementation: **47.08%** scoped;9/20 closed deliveries. BP-07.01/.02 complete; BP-07.03=35.42%; BP-07.04/.05 remain0%. Each child is counted once.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-07.03/B2.02a command/readback binding.
+- Current implementation task: BP-07.03/B2.02b bounded Runtime/Registry transport.
 - Demonstrated behavior: BP-07.01/.02 accepted immutable context/provider/budget and attributed text-decomposition boundaries, current-rights publication, bounded repair and actual Research/Knowledge handoff with replacement recovery. Campaign supervision and live model quality remain subsequent.
 - Blockers: none for deterministic implementation. Live provider/model, data egress and spend choices block only actual calls.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
