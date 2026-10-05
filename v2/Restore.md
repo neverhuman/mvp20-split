@@ -1,14 +1,14 @@
 # Restore
 
-Refreshed `2026-10-05 13:04:28` (America/Chicago). **Read first after compression.**
+Refreshed `2026-10-05 13:11:39` (America/Chicago). **Read first after compression.**
 
 ## Resume
 
-B3.01 VERIFIED; commit/push next, then **BP-07.03/B3.02 rights/staleness/hostile/recovery cases**.7 scoped7.13s and405 independent semantic cases155.209s passed (sessions45352/32601). No running verification or owned hosts. No owner decision blocks deterministic work.
+B3.02 VERIFIED; commit/push pending, then **BP-07.03/B3.03 catalog-scale acceptance**. Actual rights83387 passed10 worker stages/6 hosts; scoped installed failures59745 passed116 cases27.571s. No running verification or owned hosts. Evidence Rights_And_Failures.json. No owner decision blocks deterministic work.
 
 Planning/dev0.69, public Planning0.9;510 public schemas unchanged; no production change in c.iii/d. Previous pushed608e504a (SQL/HTTP recovery),70826542 (bounded progression). Earlier68e7621f dispatcher andea357a69 approved declarationv2 correction.
 
-Canonical BP-07.03 **58.33%**, Build77.78%, Acceptance0%,2/4 closed; parentBP-07 **51.67%**,10/20 closed. B1/B2=100%; B2.03a/b/c/d100%. B3=33.3333% (.01=100%,.02/.03=0%);V1=0%. B3 three equal milestones .01/.02/.03; V1 two equal milestones .01/.02. Use unrounded fractions, round display only.
+Canonical BP-07.03 **66.67%**, Build88.89%, Acceptance0%,2/4 closed; parentBP-07 **53.33%**,10/20 closed. B1/B2=100%; B2.03a/b/c/d100%. B3=66.6667% (.01/.02=100%,.03=0%);V1=0%. B3 three equal milestones .01/.02/.03; V1 two equal milestones .01/.02. Use unrounded fractions, round display only.
 
 ## Latest proof
 
@@ -24,9 +24,9 @@ Prior c.iii Compiler_HTTP_Recovery.json:8 scoped68.34s,8 installed SQL/HTTP73.84
 
 ## Next bounded task
 
-Completed B3.01 independent semantic verification; dev/verify_planning_context.py now supports semantic scope (compiler areas+campaign_proposals+campaign_semantic). Source README updated ownership and explicit method/schema non-equivalence. Ruff passed. Sync/commit/push pending. B3.01 earned child58.33%,Build77.78%,parent51.67%; B3=33.3333%, .02/.03 remain0%,closedcounts2/4 and10/20 unchanged.
+Completed/pushed B3.01 independent semantic verification; dev/verify_planning_context.py now supports semantic scope (compiler areas+campaign_proposals+campaign_semantic). Source README updated ownership and explicit method/schema non-equivalence. Ruff passed. B3.01 earned child58.33%,Build77.78%,parent51.67%; B3=33.3333%, .02/.03 remain0%,closedcounts2/4 and10/20 unchanged.
 
-Next B3.02: existing granular hostile/missing/overflow/staleness/SQLHTTP recovery tests have evidence. New actual-owner source-rights revocation after original consumption is a distinct missing integration oracle: extend owned dispatch fixture with bounded revocation scenario using public Data /v1/acquisition/rights for packet-roots revision2 revoked/allowed_uses[], supersedes1; assert new operation input_unavailable and dispatches0, Runtime receipt absent, original selection/history unchanged; revision3 granted restores future use without repinning. SourceRightsRevision is contracts/evidence/rights.py. Existing d fixture only denies credentials, explicitly not real source revocation. Keep crash scenario evidence intact and granular.
+Current B3.02: existing granular hostile/missing/overflow/staleness/SQLHTTP recovery tests have evidence. New actual-owner source-rights revocation after original consumption is a distinct missing integration oracle: extend owned dispatch fixture with bounded revocation scenario using public Data /v1/acquisition/rights for packet-roots revision2 revoked/allowed_uses[], supersedes1; assert new operation input_unavailable and dispatches0, Runtime receipt absent, original selection/history unchanged; revision3 granted restores future use without repinning. SourceRightsRevision is contracts/evidence/rights.py. Existing d fixture only denies credentials, explicitly not real source revocation. Keep crash scenario evidence intact and granular.
 
 B3.01: physical design defines QEV-09 compatible bounded tool proposal tied to missing measurement/selected need/expected evidence; QEV-10 irrelevant or scientifically ineligible tool rejected despite similar text; QEV-11 selected changed criteria detected, unrelated changes ignored. Preserve selected unresolved weaknesses for future campaigns; no model self-certifies scientific satisfaction. Read owning child and Physical design/B3 section, then source READMEs. Existing tests cover much of this separately; build named combined scenarios with explicit expected results, do not duplicate trivial implementation tests.
 
@@ -49,3 +49,5 @@ Git main `git -c safe.directory=//DesktopNAS/Code/mvp20-split`; commit/push auth
 Child `docs/Build Plans/BP-07/BP-07.03 Campaign proposals and context.md`: current prefix before B1.01a verified; preserve historical percentages. Parent phase table mirrors child. MBT max25rows; history BP-07 Planning History.md. Plan/detailed compiler handoff docs have latest checkpoints; keep scopes/denominators intact.
 
 Actual peer installs under `.test-results`: Data data-processing-content-independent-20261004/environment0.29; Runtime runtime-domain-receipt-peer-20261002/environment0.20.2; Registry registry-campaign-context-independent-20261004/environment0.1; Knowledge knowledge-processing-independent-20261004/initial0.18; Research research-declarations-final-independent-20261004/initial0.34. Append Scripts/python.exe. Old helpers may pin/migrate oldPlanning; inspect first. No active skills/goals/subagents.
+
+B3.02 rights passed; scoped failures59745 running. Remaining after that: use scoped existing installed failure tests (campaign_packet assembly/replay, campaign_preparations records, campaign_output, campaign_proposals/prepared/composition/authored, campaign_refresh) and prior SQL/HTTP/crash evidence; do not rerun unrelated E2E. Could add focused reusable dev failure verifier against passed current unchanged wheel, checking copied test hashes vs source before run. Source-injection text is untrusted data (packet test); runtime/compiler owns actual route/type checks. Preserve evidence-tier distinctions. Then tracker B3.02 completion: B3=66.6667%,Build88.89%,child66.67%,parent53.33%,counts2/4,10/20 unchanged. Next B3.03 scales300descriptors; budgets must be declared before run.

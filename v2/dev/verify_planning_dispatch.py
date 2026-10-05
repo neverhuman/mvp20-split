@@ -20,6 +20,7 @@ from campaign_context_fixture import configuration
 from campaign_context_fixture.data import command
 from campaign_context_fixture.support import Owner, environment
 from campaign_packet_fixture.sources import roots, text_profile
+from planning_dispatch_rights import verify_rights
 from postgres_fixture import owned_state, planning_owner
 
 ROOT = Path(__file__).absolute().parents[1]
@@ -48,7 +49,7 @@ def verify(args):
     output.mkdir(parents=True, exist_ok=False)
     proof = json.loads((installation / 'manifest.json').read_bytes())
     current = tomllib.loads((ROOT / 'services/agent_planning/pyproject.toml').read_text())['project']['version']
-    assert proof['status'] == 'passed' and proof['planning'] == current and proof['scope'] in {'dispatch', 'compiler'}
+    assert proof['status'] == 'passed' and proof['planning'] == current and proof['scope'] in {'dispatch', 'compiler', 'semantic'}
     pythons = {'planning': installation / 'environment/Scripts/python.exe',
         'data': args.data_python.absolute(), 'runtime': args.runtime_python.absolute(), 'registry': args.registry_python.absolute()}
     versions = {'planning': ('amphora-agent-planning', current), 'data': ('amphora-data-artifacts', '0.29.0'),
@@ -161,28 +162,31 @@ def verify(args):
         heartbeat()
         case['roots'] = roots(owners['data'], scope)
         case.update(worker('seed'))
-        assert worker('eligibility')['state'] == 'candidate'
-        for stage in ('crash-before-post', 'crash-after-commit'):
-            for _ in range(3):
+        if args.scenario == 'rights':
+            recovered, compiled = verify_rights(worker, heartbeat, owners['data'], scope)
+        else:
+            assert worker('eligibility')['state'] == 'candidate'
+            for stage in ('crash-before-post', 'crash-after-commit'):
+                for _ in range(3):
+                    heartbeat()
+                    result = worker(stage, crash=True)
+                    if result is None:
+                        break
+                    assert result['state'] == 'candidate', 'Expected bounded freshness renewal before crash point'
+                else:
+                    raise AssertionError('Crash boundary was not reached')
+                if stage == 'crash-before-post':
+                    assert worker('assert-absent')['state'] == 'absent'
+            recovered = worker('recover-save', denied=True)
+            assert recovered['state'] == 'saved'
+            denied = worker('deny-new-validation', denied=True)
+            assert denied['pause_reason'] == 'input_unavailable' and not denied['terminal']
+            for _ in range(4):
                 heartbeat()
-                result = worker(stage, crash=True)
-                if result is None:
+                compiled = worker('compile')
+                if compiled['terminal']:
                     break
-                assert result['state'] == 'candidate', 'Expected bounded freshness renewal before crash point'
-            else:
-                raise AssertionError('Crash boundary was not reached')
-            if stage == 'crash-before-post':
-                assert worker('assert-absent')['state'] == 'absent'
-        recovered = worker('recover-save', denied=True)
-        assert recovered['state'] == 'saved'
-        denied = worker('deny-new-validation', denied=True)
-        assert denied['pause_reason'] == 'input_unavailable' and not denied['terminal']
-        for _ in range(4):
-            heartbeat()
-            compiled = worker('compile')
-            if compiled['terminal']:
-                break
-            assert compiled['state'] == 'candidate'
+                assert compiled['state'] == 'candidate'
         assert compiled['state'] == 'compiled', compiled.get('pause_reason')
         for name in configs:
             owners[name].close()
@@ -195,11 +199,11 @@ def verify(args):
         for owner in owners.values():
             owner.close()
     configuration.write(output / 'manifest.json', {'verified_at': datetime.now(ZoneInfo('America/Chicago')).strftime('%Y-%m-%d %H:%M:%S'),
-        'status': 'passed', 'versions': versions, 'scope': scope, 'owner_processes': pids, 'worker_results': results,
+        'status': 'passed', 'scenario': args.scenario, 'versions': versions, 'scope': scope, 'owner_processes': pids, 'worker_results': results,
         'crashes': crashes, 'test_sha256': test_hashes, 'installation_manifest': str(installation / 'manifest.json'),
-        'limits': ['Actual installed public Data/Registry/Runtime, Planning-owned SQL, two owned worker kills and lease expiry',
+        'limits': ['Actual installed public Data/Registry/Runtime and Planning-owned SQL; scenario identifies rights or crash proof',
             'Synthetic proposal and declared Linux tool capacity; no scientific tool execution or admission',
-            'No provider, actual source revocation, Research latest-head or target-host qualification claim',
+            'No provider, Research latest-head or target-host qualification claim; rights scenario changes actual source rights only',
             'Current Planning migration only; retained peer fixtures, no reset or cross-owner SQL']})
     print(json.dumps({'status': 'passed', 'workers': len(results), 'crashes': len(crashes)}))
 
@@ -208,4 +212,5 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ('installation', 'output', 'data-python', 'runtime-python', 'registry-python'):
         parser.add_argument('--' + name, type=Path, required=True)
+    parser.add_argument('--scenario', choices=['crash', 'rights'], default='crash')
     verify(parser.parse_args())

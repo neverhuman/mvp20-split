@@ -58,11 +58,18 @@ def test_installed_worker(monkeypatch):
                 dispatcher.runtime.receipt(authoring.save(), CompilerWindow('runtime'))
             write(os.environ['DISPATCH_RESULT'], {'state': 'absent'})
             return
-        if case['stage'] == 'peer-history':
-            authoring = journal.context(principal, selected.selection).history.authoring
+        if case['stage'] in {'peer-history', 'saved-history'}:
+            operations = journal.context(principal, selected.selection)
+            authoring = operations.history.authoring
             runtime_client = dispatcher.runtime
             saved = runtime_client.readback(runtime_client.receipt(authoring.save(), CompilerWindow('runtime')),
                                             CompilerWindow('runtime'))
+            if case['stage'] == 'saved-history':
+                effect, _ = operations.save()
+                stored = journal.read(principal, selected.selection.effect_id, effect.effect_id)
+                assert stored.progress.observation.outcome == saved
+                write(os.environ['DISPATCH_RESULT'], {'state': 'saved_history_exact'})
+                return
             compiled = runtime_client.readback(runtime_client.receipt(authoring.validate(saved), CompilerWindow('runtime')),
                                                CompilerWindow('runtime'))
             for outcome, expected in ((saved, case['saved_observation']), (compiled, case['compiled_observation'])):
@@ -98,6 +105,7 @@ def test_installed_worker(monkeypatch):
         write(os.environ['DISPATCH_RESULT'], {'stage': result.stage, 'terminal': result.terminal,
             'pause_reason': result.pause_reason, 'state': None if operation is None else operation.progress.state,
             'effect_id': None if operation is None else operation.effect.effect_id,
+            'dispatches': None if operation is None else operation.progress.dispatches,
             'command_sha256': None if operation is None else operation.effect.command().sha256,
             'observation': None if operation is None or operation.progress.observation is None else
                 json.loads(operation.progress.observation.canonical),

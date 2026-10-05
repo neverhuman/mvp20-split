@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 and BP-07.01/.02 closed/audited; BP-07.03/B3 semantic acceptance active.
-- Last refreshed: `2026-10-05 13:04:28` (America/Chicago).
+- Last refreshed: `2026-10-05 13:11:39` (America/Chicago).
 - Scope: unresolved v2 design/implementation alignment and scoped successor boundaries.
 - Active focus: campaign context/proposal boundary; approved declaration publication mismatch corrected and verified.
-- Next gate: BP-07.03/B3.02 rights/failure acceptance; combined actual-owner compilation and worker crash recovery verified. Semantic and Runtime execution authority remain separate.
+- Next gate: BP-07.03/B3.03 catalog-scale acceptance; combined actual-owner compilation and worker crash recovery verified. Semantic and Runtime execution authority remain separate.
 
 ## Active Findings
 

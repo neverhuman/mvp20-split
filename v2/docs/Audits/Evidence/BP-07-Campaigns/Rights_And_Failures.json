@@ -1,0 +1,173 @@
+{
+  "verified_at": "2026-10-05 13:08:46",
+  "status": "passed",
+  "scenario": "rights",
+  "versions": {
+    "planning": [
+      "amphora-agent-planning",
+      "0.69.0"
+    ],
+    "data": [
+      "amphora-data-artifacts",
+      "0.29.0"
+    ],
+    "runtime": [
+      "amphora-campaign-runtime",
+      "0.20.2"
+    ],
+    "registry": [
+      "amphora-capability-registry",
+      "0.1.0"
+    ]
+  },
+  "scope": {
+    "tenant_id": "compiler-dispatch",
+    "project_id": "1076899ee2134a1d8772d3784e6a0c12"
+  },
+  "owner_processes": {
+    "registry": [
+      29648,
+      17788
+    ],
+    "runtime": [
+      27964,
+      8252
+    ],
+    "data": [
+      11248,
+      1440
+    ]
+  },
+  "crashes": [],
+  "test_sha256": {
+    "original.py": "9112cb39fbc7e14ba3df18a40a00363a75ac2b3804437f77b7caf77e4ca94523",
+    "support.py": "92de252f31b9e9ee6651dcb0b18076851de5374cd8bbeb9d151ba694111b8822",
+    "test_worker.py": "39d2d9c98d5bb948a1b993a51ebfe56226c8e7143860445e9d49580553c61ce0"
+  },
+  "limits": [
+    "Actual installed public Data/Registry/Runtime and Planning-owned SQL; scenario identifies rights or crash proof",
+    "Synthetic proposal and declared Linux tool capacity; no scientific tool execution or admission",
+    "No provider, Research latest-head or target-host qualification claim; rights scenario changes actual source rights only",
+    "Current Planning migration only; retained peer fixtures, no reset or cross-owner SQL"
+  ],
+  "workers": {
+    "0-seed": {
+      "selection_id": "compiler-4b0a160c7298dbcd5c9bacfb1571a2f1491f1f52bf40e0dc447779dafa49fac5",
+      "selection_sha256": "0696ee2322ebf2a5c8b74cfa93181b9e0ba4e0ade919be1a7386a4b287efada2",
+      "request_sha256": "cb2cf4672ce9ac22e7e9fc20937ad8fffe39ccc9a3d31f96df2dbda09fb7a28f",
+      "declaration_sha256": "3302930a1b33c1ee345895ee3f3559932cebc36d068ae23314dad9d47d2547e0"
+    },
+    "1-rights-revoked": {
+      "stage": "eligibility",
+      "terminal": false,
+      "pause_reason": "input_unavailable",
+      "state": "blocked",
+      "effect_id": "compiler-op-32fc9e0e8f71719c8a35aff515d775c6a0899c46c064669807095cde744c8dbf",
+      "dispatches": 0,
+      "command_sha256": "d78abfa73edc4c3737c8268735df85cf35df6941272cb5d4114d36692485e1bc",
+      "round": "planning-check-1"
+    },
+    "2-assert-absent": {
+      "state": "absent"
+    },
+    "3-rights-restored-save": {
+      "stage": "eligibility",
+      "terminal": false,
+      "pause_reason": null,
+      "state": "candidate",
+      "effect_id": "compiler-op-32fc9e0e8f71719c8a35aff515d775c6a0899c46c064669807095cde744c8dbf",
+      "dispatches": 1,
+      "command_sha256": "d78abfa73edc4c3737c8268735df85cf35df6941272cb5d4114d36692485e1bc",
+      "round": "planning-check-1"
+    },
+    "4-rights-restored-save": {
+      "stage": "save",
+      "terminal": false,
+      "pause_reason": null,
+      "state": "saved",
+      "effect_id": "compiler-op-0c5a6a3f64d01f8b486068b2fc1c3e0f9860f7e30fe757b653c325de1163d7d3",
+      "dispatches": 1,
+      "command_sha256": "ae5b62c284bd77b11d0320110e6d430936ceaab7d73b0fbad81123ef923d111a",
+      "round": "planning-check-1"
+    },
+    "5-rights-revoked-validation": {
+      "stage": "validation",
+      "terminal": false,
+      "pause_reason": "input_unavailable",
+      "state": "blocked",
+      "effect_id": "compiler-op-e7fec8564de53695afdda1857d2c64fb43662acbfb15795fbc1537553383d704",
+      "dispatches": 0,
+      "command_sha256": "96751341b678ff69a31f371d3b2bba35b38e350b9016522558b7c9321634608a",
+      "round": "planning-check-1"
+    },
+    "6-saved-history": {
+      "state": "saved_history_exact"
+    },
+    "7-rights-restored-validation": {
+      "stage": "validation",
+      "terminal": true,
+      "pause_reason": null,
+      "state": "compiled",
+      "effect_id": "compiler-op-e7fec8564de53695afdda1857d2c64fb43662acbfb15795fbc1537553383d704",
+      "dispatches": 1,
+      "command_sha256": "96751341b678ff69a31f371d3b2bba35b38e350b9016522558b7c9321634608a",
+      "round": "planning-check-1"
+    },
+    "8-peer-history": {
+      "state": "peer_history_exact"
+    },
+    "9-replay": {
+      "stage": "validation",
+      "terminal": true,
+      "pause_reason": null,
+      "state": "compiled",
+      "effect_id": "compiler-op-e7fec8564de53695afdda1857d2c64fb43662acbfb15795fbc1537553383d704",
+      "dispatches": 1,
+      "command_sha256": "96751341b678ff69a31f371d3b2bba35b38e350b9016522558b7c9321634608a",
+      "round": "planning-check-1"
+    }
+  },
+  "installed_failures": {
+    "verified_at": "2026-10-05 13:09:57",
+    "status": "passed",
+    "planning": "0.69.0",
+    "tests": 116,
+    "seconds": 27.571,
+    "files": [
+      "campaign_packet\\test_assembly.py",
+      "campaign_packet\\test_replay.py",
+      "campaign_preparations\\test_records.py",
+      "campaign_output\\test_observation.py",
+      "campaign_output\\test_output.py",
+      "campaign_output\\test_predecessor.py"
+    ],
+    "test_sha256": {
+      "campaign_packet\\replay_probe.py": "cf0a279703bd74f055e9deba6522547f4bd5ed01db23b5e14b3fb7c51a6146d3",
+      "campaign_packet\\test_assembly.py": "519854c3ed36f1aed264ea735cc3757e0bd3b02403ef7389719c0449f007c2e2",
+      "campaign_packet\\test_replay.py": "a8a49af848275f157dfab5a65272ab4d0ca95bbeb86df32c94155c37fe5c56de",
+      "campaign_packet\\fixtures\\predecessor-v1.json": "1628784c8d7fcadcd4de934218eebc609601e22ecf0a8bdb26160af7c872ec36",
+      "campaign_preparations\\test_records.py": "163f6af6a57f79659438078122d018336335fa53d879ab74cd774cc16472a0eb",
+      "campaign_output\\test_observation.py": "e91f9a18261b1732125da8f60f9778ab2c408d8ffe9870344b603e656eda6d98",
+      "campaign_output\\test_output.py": "14f959a7b4684c70f0e639fd04103c35b840892ee1773b631aba047f01bed202",
+      "campaign_output\\test_predecessor.py": "74e14c29c6facce4e071cddea6f401d794b9920d58e6f25463f403d6dc6d5094",
+      "campaign_output\\fixtures\\abstain.json": "5b668d9bb58c2f3fc2181153392804c3f3671dc941ddc8b91c7f3ff30087983c",
+      "campaign_output\\fixtures\\adjustment.json": "83866c930d28f5f5d6c99ce32c1b08ee692e52ef8ca66c0002f9fae092a3952c",
+      "campaign_output\\fixtures\\evidence.json": "44e9d5b6a8aea7ac0f399bf2dac5ca4c82feb6d0243f4135372fe50bc51059da",
+      "campaign_output\\fixtures\\future.json": "bceab780860c100e00a24d92eba648a7b31afeedf9060c822667e517b6806140",
+      "campaign_output\\fixtures\\predecessor-extraction.json": "e0fc29aee087b11c22dff495eff647952cb6815e1af959c9bb615bf625ccfd1f"
+    },
+    "installation_manifest": "Z:\\mvp20-split\\v2\\.test-results\\planning-semantic-independent-20261005\\manifest.json",
+    "limits": [
+      "Current unchanged independently installed implementation; copied test/fixture hashes match source",
+      "Packet/preparation/output failures and fixed predecessor process replay only; rights/SQL/HTTP evidence separate"
+    ]
+  },
+  "supporting_evidence": [
+    "Semantic_Questions.json",
+    "Compiler_HTTP_Recovery.json",
+    "Compiler_Owner_Recovery.json",
+    "Dispatch_Races.json"
+  ],
+  "retained_manifest": ".test-results/planning-dispatch-rights-20261005/manifest.json",
+  "interpretation": "Rights revisions2/4 revoke current processing;3/5 restore future use. Original selection and packets retain identity. No active campaign repinning or receipt correction."
+}
