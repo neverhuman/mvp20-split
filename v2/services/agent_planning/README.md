@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-- Version: Planning0.40.0; public Planning0.8.0. BP-07.02 complete and audited;930 installed tests,39 process/replay stages and actual-owner recovery verified.
+- Version: Planning0.41.0; public Planning0.8.0. BP-07.02 complete and audited;930 installed tests,39 process/replay stages and actual-owner recovery verified.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Canonical progress: [BP-07.02](../../docs/Build%20Plans/BP-07/Completed/BP-07.02%20Reliable%20text%20decomposition.md).
 
@@ -59,3 +59,5 @@ Real provider/model, egress and spend remain owner choices before actual calls. 
 Actual combined-owner context verified 2026-10-04 18:55:41:10 isolated Planning workers,9 Registry/Runtime/Data/Knowledge hosts, retained PostgreSQL/Qdrant and original/future graph selections. Exact reads, partial/denied/foreign outcomes, restarts and fresh processing permission changes passed; Research unchanged-client proof reused explicitly. See docs/Audits/Evidence/BP-07-Campaigns/Combined_Owner_Context.json. Context assembly/token fitting and live provider quality remain later gates.
 
 [campaign_graph_context](src/amphora_agent_planning/campaign_graph_context/README.md) projects exact selected graph records and endpoint/alias/retraction dependencies, with bounded bytes and relevant positive/absent observations. Whole-graph origin is preserved without making unrelated changes a blanket invalidation.
+
+[campaign_artifact_context](src/amphora_agent_planning/campaign_artifact_context/README.md) plans all four required roots plus128 entries, merges roles and performs mandatory-first bounded processing reads under one shared budget. Raw bodies remain data, with explicit unavailable items and no continuing rights grant.

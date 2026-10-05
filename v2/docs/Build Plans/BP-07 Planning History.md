@@ -577,3 +577,7 @@ MBT checkpoint overflow:
 B1.03a.i verified 2026-10-04 19:03:06:Planning0.40 selected graph dependency projection, actual alias source revisions, explicit retractions and positive/absent relevant observations.41 focused cases20.54s,92 statements16 branches100%;651 independently installed tests42.987s. Unrelated graph changes alter provenance without blanket invalidation;1MiB limit yields explicit unavailable, no truncation. Child12.89%,Build17.19%,parent42.58%;B1.03a25%,B1.03=6.25%,B1=51.5625%;closed0/4 and8/20. Current B1.03a.ii Artifact context.
 
 | 2026-10-04 10:22:31 | BP-07.02/B2.03b.i complete; child45.37%,parent29.07%; b.ii active | [Result payloads](../Audits/Evidence/BP-07-Extraction/Result_Payloads.json);24 focused100% coverage,654 installed cases/28 process stages |
+
+B1.03a.ii verified 2026-10-04 19:11:14:Planning0.41 mandatory-first Artifact context for4roots+128entries, merged exact roles, shared bounded batches, explicit required/optional failures and immutable observed bytes.91 focused/regression cases7.19s,145 statements24 branches100%;664 independently installed tests44.012s. No migration/schema/authority widening. Child13.28%,Build17.71%,parent42.66%;B1.03a50%,B1.03=12.5%,B1=53.125%;closed0/4 and8/20. Current a.iii Research/views projection.
+
+| 2026-10-04 10:52:48 | BP-07.02/B2.03b.ii.a complete; child45.68%,parent29.14%; b.ii.b active | [Result storage](../Audits/Evidence/BP-07-Extraction/Result_Storage.json);54 scoped100% coverage,684 installed cases/32 process stages |
