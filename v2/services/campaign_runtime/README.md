@@ -1,6 +1,6 @@
 # Campaign Runtime
 
-Current package0.26.0 adds [fenced supervisor delivery and response history](src/amphora_campaign_runtime/supervision_journal/README.md), forward runtime0019.65 journal/migration cases pass, including26 actual SQL cases;486 statements/60 branches at99% combined coverage. Exact retry identities, unknown usage and late diagnostic history are retained; independent process proof, HTTP and decision effects remain later gates.
+Current package0.26.0 adds [fenced supervisor delivery and response history](src/amphora_campaign_runtime/supervision_journal/README.md), forward runtime0019.65 journal/migration cases pass, including26 actual SQL cases;486 statements/60 branches at99% combined coverage. Exact retry identities, unknown usage and late diagnostic history are retained; independent process proof now passes17 workers/two installations/four abrupt exits; HTTP and decision effects remain later gates.
 
 Predecessor0.25.0 adds atomic [supervisor journal storage](src/amphora_campaign_runtime/supervision_journal/README.md), forward runtime0018, actual retained-plan/node/ancestor checks and exact request/outgoing-command replay.53 journal/migration cases pass with236 statements/28 branches100%; dispatch, independent persisted-history replacement and graph decision effects remain subsequent gates.
 

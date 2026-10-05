@@ -1,0 +1,247 @@
+{
+  "checkpoint": "2026-10-05 15:17:01",
+  "task": "BP-07.04/B1.03d",
+  "runtime": "0.26.0",
+  "migration": "runtime_0019",
+  "installations": 2,
+  "scope_tests": 111,
+  "pure_journal": [
+    {
+      "installation": "initial",
+      "tests": 33
+    },
+    {
+      "installation": "replacement",
+      "tests": 33
+    }
+  ],
+  "unchanged_predecessor_files": 162,
+  "processes": 17,
+  "abrupt_exits": 4,
+  "process_records": [
+    {
+      "mode": "initialize",
+      "installation": "initial",
+      "exit_code": 0,
+      "result": {
+        "stage": "initialize",
+        "run_id": "5d7d704551b44aea8d3c110ffef0ae8c",
+        "frame_sha256": "f1e62a008c91b3312802eacefb006bd99988b9ddee4c91090c7c5ef128b70c20"
+      }
+    },
+    {
+      "mode": "kill_prepare_before_commit",
+      "installation": "initial",
+      "exit_code": 91,
+      "result": {
+        "stage": "kill_prepare_before_commit",
+        "barrier": "both_inserts_before_commit"
+      }
+    },
+    {
+      "mode": "inspect_empty",
+      "installation": "replacement",
+      "exit_code": 0,
+      "result": {
+        "stage": "inspect_empty",
+        "rollback": true
+      }
+    },
+    {
+      "mode": "prepare",
+      "workers": 2,
+      "barrier": "both_ready_before_release",
+      "results": [
+        {
+          "frame_sha256": "f1e62a008c91b3312802eacefb006bd99988b9ddee4c91090c7c5ef128b70c20",
+          "request_sha256": "5021e86b378fe56876fc81b029a42c5088d8aa74d76b4b4b30a7db3b6a82c397",
+          "command_sha256": "a55b35de73f7357dd1cb6b7bb571f6cbca0630ebb623d7f0f6b2eb146012619d",
+          "created_at": "2026-10-05T20:14:32.044670+00:00",
+          "intent_created_at": "2026-10-05T20:14:32.045799+00:00"
+        },
+        {
+          "frame_sha256": "f1e62a008c91b3312802eacefb006bd99988b9ddee4c91090c7c5ef128b70c20",
+          "request_sha256": "5021e86b378fe56876fc81b029a42c5088d8aa74d76b4b4b30a7db3b6a82c397",
+          "command_sha256": "a55b35de73f7357dd1cb6b7bb571f6cbca0630ebb623d7f0f6b2eb146012619d",
+          "created_at": "2026-10-05T20:14:32.044670+00:00",
+          "intent_created_at": "2026-10-05T20:14:32.045799+00:00"
+        }
+      ]
+    },
+    {
+      "mode": "changed_retry",
+      "installation": "replacement",
+      "exit_code": 0,
+      "result": {
+        "stage": "changed_retry",
+        "changed_retry_rejected": true
+      }
+    },
+    {
+      "mode": "successor_race",
+      "workers": 2,
+      "barrier": "both_ready_before_release",
+      "results": [
+        {
+          "stage": "successor_race",
+          "outcome": "recorded",
+          "frame_sha256": "af4bf7da2bb7495579b0da196de3863b6ed0f9bacdd14053cda4893e62510e73",
+          "request_sha256": "08d3817b50b2f853cdc5476a961621ce44f0ff8451582cc1a6d41603a8212423",
+          "command_sha256": "af6ed608690b59a6538a3e5ff615eb9312e0893f974077e339aa6006e78b7e48",
+          "created_at": "2026-10-05T20:14:43.838188+00:00",
+          "intent_created_at": "2026-10-05T20:14:43.839708+00:00"
+        },
+        {
+          "stage": "successor_race",
+          "outcome": "conflict"
+        }
+      ]
+    },
+    {
+      "mode": "claim",
+      "workers": 2,
+      "barrier": "both_ready_before_release",
+      "results": [
+        {
+          "stage": "claim",
+          "lease": {
+            "reference": {
+              "scope": {
+                "tenant_id": "supervision-process-proof",
+                "project_id": "82f9397933b942ae8ee1095c86c3429b"
+              },
+              "run_id": "5d7d704551b44aea8d3c110ffef0ae8c",
+              "decision_id": "decision-1"
+            },
+            "request_sha256": "5021e86b378fe56876fc81b029a42c5088d8aa74d76b4b4b30a7db3b6a82c397",
+            "holder": "worker-1",
+            "fence": 1,
+            "expires_at": "2026-10-05T20:14:54.811909+00:00"
+          }
+        },
+        {
+          "stage": "claim",
+          "lease": null
+        }
+      ]
+    },
+    {
+      "mode": "kill_after_claim",
+      "installation": "initial",
+      "exit_code": 93,
+      "result": {
+        "stage": "kill_after_claim",
+        "barrier": "lease_committed",
+        "fence": 2
+      }
+    },
+    {
+      "mode": "recover_delivery",
+      "installation": "replacement",
+      "exit_code": 0,
+      "result": {
+        "stage": "recover_delivery",
+        "fence": 3,
+        "event": "original-reconciled",
+        "delivery_created_at": "2026-10-05T20:15:00.835585+00:00",
+        "frame_sha256": "f1e62a008c91b3312802eacefb006bd99988b9ddee4c91090c7c5ef128b70c20",
+        "request_sha256": "5021e86b378fe56876fc81b029a42c5088d8aa74d76b4b4b30a7db3b6a82c397",
+        "command_sha256": "a55b35de73f7357dd1cb6b7bb571f6cbca0630ebb623d7f0f6b2eb146012619d",
+        "created_at": "2026-10-05T20:14:32.044670+00:00",
+        "intent_created_at": "2026-10-05T20:14:32.045799+00:00"
+      }
+    },
+    {
+      "mode": "kill_response_before_commit",
+      "installation": "initial",
+      "exit_code": 94,
+      "result": {
+        "stage": "kill_response_before_commit",
+        "barrier": "response_inserted_before_receipt_commit"
+      }
+    },
+    {
+      "mode": "inspect_response_pending",
+      "installation": "replacement",
+      "exit_code": 0,
+      "result": {
+        "stage": "inspect_response_pending",
+        "rolled_back_response": true
+      }
+    },
+    {
+      "mode": "kill_response_after_commit",
+      "installation": "initial",
+      "exit_code": 95,
+      "result": {
+        "stage": "kill_response_after_commit",
+        "barrier": "response_and_receipt_committed"
+      }
+    },
+    {
+      "mode": "recover_response",
+      "installation": "replacement",
+      "exit_code": 0,
+      "result": {
+        "stage": "recover_response",
+        "receipt": {
+          "schema_version": "1",
+          "outcome": {
+            "status": "recorded",
+            "binding": {
+              "identity": {
+                "schema_version": "1",
+                "command_family": "runtime.supervision.respond",
+                "command_id": "response-1",
+                "scope": {
+                  "tenant_id": "supervision-process-proof",
+                  "project_id": "82f9397933b942ae8ee1095c86c3429b"
+                },
+                "actor_id": "fixture"
+              },
+              "request_sha256": "2e5d0aa0526a737bb06c49ca05b400b6f82d2ad71143563b1cee20acdbd555c3",
+              "operation_id": "57f0a41591c34214a9b5989d94bdf65e"
+            },
+            "committed": {
+              "kind": "response",
+              "object_id": "response-1",
+              "revision": 1,
+              "content_sha256": "54759ddac580e8805b89181ac9616d610ad2b4201b4d3bb3464cb28c2c7f14db"
+            }
+          }
+        },
+        "created_at": "2026-10-05T20:15:20.308854+00:00",
+        "response_sha256": "54759ddac580e8805b89181ac9616d610ad2b4201b4d3bb3464cb28c2c7f14db",
+        "capture_sha256": "d23146cbf6e95f33d6e3120949af4301a4c57bc5a45597d8b8347a980dd0f814"
+      }
+    },
+    {
+      "mode": "cleanup",
+      "installation": "replacement",
+      "exit_code": 0,
+      "result": {
+        "stage": "cleanup",
+        "scoped_cleanup": true
+      }
+    }
+  ],
+  "wheels": {
+    "amphora_campaign_runtime-0.26.0-py3-none-any.whl": "316c7480e1ff10353024cad45a8cd0c1d25d6949ffac315a0aa035c75cec474e",
+    "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+    "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+    "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+    "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+    "amphora_contracts_planning-0.9.0-py3-none-any.whl": "b96bc800b38dce4364cf91d3507dd707f239bf49425c2c8d2ea623f518d219ec",
+    "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+    "amphora_contracts_supervision-0.2.0-py3-none-any.whl": "76acde2e39134b52053ef6aec629c86b2d2d29cbf42826f260b8c3f586c4147a",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee"
+  },
+  "limits": [
+    "Actual installed Runtime/PostgreSQL only; outgoing Planning receipt is a deterministic public fixture",
+    "No HTTP peer, paid provider call, accepted graph decision or independently authored replacement"
+  ]
+}

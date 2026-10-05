@@ -1,6 +1,6 @@
 # Supervisor journal
 
-Implementation: Runtime0.26/runtime0019; immutable frames/series and atomic request/outbox storage under BP-07.04/B1.03a?c, plus fenced delivery history and immutable response recording. Independent process replacement, transports and decision acceptance remain later gates.
+Implementation: Runtime0.26/runtime0019; immutable frames/series and atomic request/outbox storage under BP-07.04/B1.03a?d, plus fenced delivery history and immutable response recording. Independent installed-process recovery is verified; transports and decision acceptance remain later gates.
 
 `RequestFrame.capture` binds the public supervisor request to original byte-owned Runtime observations and the configured Planning actor. It records the separate preparing Runtime actor. `from_bytes` revalidates the private `runtime-supervision-request-frame.v1` profile, canonical JSON/base64 and all existing request/observation hashes. Limits: 16 MiB per frame, existing 256 KiB request, 256 observations, 1 MiB per observation and 8 MiB combined state/output. Returned documents are fresh projections; bytes own retained state.
 
@@ -20,7 +20,7 @@ Dependencies are public supervision contracts and local scope/request objects. T
 
 ## Migration and acceptance
 
-Runtime0.26 requires forward runtime0019; prior migration bytes are untouched. Explicit migration only, no startup DDL. Never run a Runtime<=0.25 migrator against the new head. Preserve retained original request/outgoing bytes during replacement; do not backfill old campaigns with inferred supervisor history. Independent SQL/process proof remains B1.03d, HTTP B1.04 and winner/effects B2.
+Runtime0.26 requires forward runtime0019; prior migration bytes are untouched. Explicit migration only, no startup DDL. Never run a Runtime<=0.25 migrator against the new head. Preserve retained original request/outgoing bytes during replacement; do not backfill old campaigns with inferred supervisor history. HTTP remains B1.04 and winner/effects B2.
 
 Verified: 53 journal/migration tests9.96s (33 pure,14 actual journal SQL,6 prior migration cases),236 statements/28 branches100%. Tests include nested scatter/loop origins, stale membership/ancestors, materialization despite reopened status, rollback, exact replay after termination, read-scope/actor enforcement, immutable grants and FK/identity collisions. No concurrency, independent-install, provider-call or accepted graph-effect claim from this gate.
 
@@ -34,4 +34,12 @@ Delivery has 16 claims and an absolute 64-event guard with a reserved terminal e
 
 runtime0019 adds narrow mutable delivery controls and SELECT/INSERT-only delivery events/responses, with scoped request/outbox/command foreign keys. Responses retain exact capture bytes (up to64KiB), immutable canonical response and original operation ID. No cancellation winner, checkpoint pause, provider-call integration or public HTTP handler is implemented by these classes.
 
-B1.03c proof:65 journal/migration cases20.50s, including26 actual journal SQL cases.486 statements,1 unexecuted;60 branches,1 partial (99% combined). The reserved 64th-event fallback is not reached by normal16-claim cycles; bounded16-claim exhaustion is verified. Initial event closure-variable error was found and fixed; all reruns pass. Lease expiry/fence loss, original operation/readback, response limits, unknown usage, late capture/read permission and atomic response/receipt rollback are verified. Competing processes and independent retained-state replacement remain B1.03d.
+B1.03c proof:65 journal/migration cases20.50s, including26 actual journal SQL cases.486 statements,1 unexecuted;60 branches,1 partial (99% combined). The reserved 64th-event fallback is not reached by normal16-claim cycles; bounded16-claim exhaustion is verified. Initial event closure-variable error was found and fixed; all reruns pass. Lease expiry/fence loss, original operation/readback, response limits, unknown usage, late capture/read permission and atomic response/receipt rollback are verified. Competing processes and independent retained-state replacement are verified below.
+
+## Installed replacement and process evidence
+
+`dev/verify_supervision_journal.py` builds only Runtime's public dependency closure, verifies162 unchanged predecessor production files and111 scope/public-contract cases, and runs33 journal reconstruction cases in each of two isolated installations. `tests/supervision_journal/process_worker.py` is an explicit probe, not part of ordinary pure test collection; SQL credentials are environment-only and cleanup cancels only its unique owned fixture scope.
+
+Seventeen actual processes verify four abrupt exits: after request/outbox inserts before commit; after a lease commits; after a response insert before receipt commit; and after response/receipt commit before the caller retains success. Replacement proves rollback, exact original bytes/hashes/timestamps, current fences and immutable receipts/captures. File barriers release both contenders together: exact root retries converge; conflicting successor commands yield one winner/one conflict; only one live delivery lease wins. History is retained; the database is never reset. No private peer package is installed.
+
+The Planning receipt used by this probe is a deterministic public fixture. This evidence covers actual Runtime/PostgreSQL and process replacement, not Planning HTTP, paid calls, independently authored replacement code, power loss or graph decision acceptance. Those claims retain their owning successor gates.

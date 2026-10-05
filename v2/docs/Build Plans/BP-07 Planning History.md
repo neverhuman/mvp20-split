@@ -782,3 +782,8 @@ Runtime0.25/runtime0018 retains original request and outgoing command atomically
 ## 2026-10-05 15:06:59 ? BP-07.04/B1.03c
 
 Runtime0.26/runtime0019: original command delivery leases, bounded immutable events and exact captured responses.65 journal/migration cases20.50s;486 statements/60 branches99% (reserved64th-event fallback unexecuted; tighter16claim limit verified). Late diagnostics and unknown usage retained without graph effects. Initial closure-variable defect repaired. Child17.19%,Build22.92%,parent63.44%; next independent installed SQL races/process recovery.
+
+
+## 2026-10-05 15:17:01 ? BP-07.04/B1.03d / journal complete
+
+Two isolatedRuntime0.26 installations;111initialscope/public cases and33journal cases perinstall;162 predecessor productionfiles unchanged.17 actualSQL processes,4abruptterminations,3paired races verify original frames/commands/receipts/capture/timestamps and rollback/fences. Scopedcleanup, noreset/privatepeers. OutgoingPlanningreceipt remains deterministic fixture. Child18.75%,Build25%,parent63.75%;next B1.04 transports. Stale design-document0%labels replaced with canonical-tracker references.
