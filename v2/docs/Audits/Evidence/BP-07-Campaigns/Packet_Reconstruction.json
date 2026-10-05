@@ -1,0 +1,57 @@
+{
+  "verified_at": "2026-10-04 19:45:29",
+  "status": "passed",
+  "task": "BP-07.03/B1.03b.iv",
+  "planning": "0.47.0",
+  "focused": {
+    "tests": 52,
+    "seconds": 12.1
+  },
+  "coverage": {
+    "statements": 98,
+    "branches": 24,
+    "percent": 100
+  },
+  "installed": {
+    "verified_at": "2026-10-04 19:44:09",
+    "status": "passed",
+    "tests": 759,
+    "seconds": 53.727,
+    "planning": "0.47.0",
+    "contracts": "0.8.0",
+    "installations": 1,
+    "wheels": {
+      "amphora_agent_planning-0.47.0-py3-none-any.whl": "12515c034aeb12d004bc10590b5f86460ce0623ae2255a132e409b6d4408f7a6",
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+      "amphora_contracts_planning-0.8.0-py3-none-any.whl": "a71fc4fce4e21964fe0dee2534249b1a20d379b95d86a330a4e7f2d961b3ce65",
+      "amphora_contracts_representations-0.3.0-py3-none-any.whl": "523feb10556ea0fdc07e39f2a874309fa65782b3e9035f072dffddf9a98ae18d",
+      "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+      "amphora_contracts_research_views-0.1.0-py3-none-any.whl": "50f010979f0868e61533f312639a1dfa9fc8a41795b2961817c3da45b33b67e8",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+    },
+    "limits": [
+      "Pure context/contract boundary only; loopback HTTP only; no migration, SQL, actual owner service, provider or scientific claim",
+      "Independent installation from current source, not a fresh implementation rewrite"
+    ]
+  },
+  "predecessor": {
+    "planning": "0.46.0",
+    "packet_sha256": "f137c66a058fa7e53a019534b804438c10f27be6b1bc0ca22ef8a3826b3c96b2",
+    "plan_sha256": "3a917e2593f7303e114b03e47b3ce93b8fabe674ecf83facc95856489292ede3",
+    "packet_bytes": 13108,
+    "output_reserve": 16
+  },
+  "limits": [
+    "Historical deterministic byte reconstruction only, no fresh source rights or provider call",
+    "Fresh process of same implementation, not implementation rewrite",
+    "SQL journal and actual owner assembly remain subsequent gates"
+  ]
+}

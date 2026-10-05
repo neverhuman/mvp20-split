@@ -1,0 +1,5 @@
+# Fixed packet predecessor
+
+`predecessor-v1.json` was captured from the independently installed Planning0.46.0 wheel before adding reconstruction. It contains synthetic original request/Artifact bytes, explicit missing Runtime universe, one omitted large optional Artifact and one included hostile-text Artifact. Packet SHA is `f137c66a058fa7e53a019534b804438c10f27be6b1bc0ca22ef8a3826b3c96b2`; plan SHA is `3a917e2593f7303e114b03e47b3ce93b8fabe674ecf83facc95856489292ede3`. Exact packet length and synthetic input count are13108, with output reserve16.
+
+Tests never regenerate expected values. Preserve these bytes through replacement; new profiles require additional fixtures instead of rewriting this predecessor. `replay_probe.py` rebuilds the original validated plan and verifies exact bytes, fit and inclusion in a fresh isolated Python process using only Planning/public contracts. This is deterministic historical reconstruction, not actual owner contact, renewed source processing permission, live-model quality, SQL recovery or fresh implementation replacement.

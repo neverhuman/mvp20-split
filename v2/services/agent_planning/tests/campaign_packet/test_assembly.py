@@ -113,7 +113,7 @@ def test_arbitrary_hash_matching_prompt_never_enters_trusted_instructions():
         prepare(plan(prompt=b'Caller selected instructions'))
 
 
-@pytest.mark.parametrize('fault', ['coverage', 'required', 'payload', 'missing', 'order'])
+@pytest.mark.parametrize('fault', ['coverage', 'required', 'payload', 'observation', 'missing', 'order'])
 def test_mutated_root_or_priority_cannot_bypass_rebinding(fault):
     source = plan(extras=(('optional', b'data', False),))
     if fault == 'coverage':
@@ -126,6 +126,8 @@ def test_mutated_root_or_priority_cannot_bypass_rebinding(fault):
         source = replace(source, slices=(replace(source.slices[0], payload=json.dumps(payload).encode()), *source.slices[1:]))
     elif fault == 'missing':
         source = replace(source, missing_required=('invented',))
+    elif fault == 'observation':
+        source = replace(source, slices=(replace(source.slices[0], observations=b'[]'), *source.slices[1:]))
     else:
         source = replace(source, slices=tuple(reversed(source.slices)))
     with pytest.raises(ValueError, match='campaign_packet_'):
