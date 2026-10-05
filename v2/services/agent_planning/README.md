@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-- Version: Planning0.49.0; public Planning0.8.0. BP-07.02 complete and audited;930 installed tests,39 process/replay stages and actual-owner recovery verified.
+- Version: Planning0.51.0; public Planning0.9.0. BP-07.02 complete and audited;930 installed tests,39 process/replay stages and actual-owner recovery verified.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Canonical progress: [BP-07.02](../../docs/Build%20Plans/BP-07/Completed/BP-07.02%20Reliable%20text%20decomposition.md).
 
@@ -79,3 +79,5 @@ Campaign packet reconstruction preserves the literal Planning0.46 predecessor pa
 Campaign preparation storage adds forward planning_0012 and an immutable scoped journal with exact replay, original actor/request binding and no late first registration. Two opt-in PostgreSQL smoke cases verify retained readback and SELECT/INSERT-only privileges; broader authority/race and independent replacement gates remain pending. Planning<=0.48 migrators must not run on0012.
 
 BP-07.03/B1.03 integrated proof consumes five actual peer owners through10 Planning workers and15 host runs into a63003-byte fixture packet and durable preparation. Real root uploads/processing rights, unknown/pending scientific metadata, partial/denied inputs, future-only correction, owner restart, offline historical readback and Planning replacement pass. Typed campaign output/dispatch remains subsequent; no live-model/scientific claim.
+
+Campaign output interpretation is owned by [campaign_output](src/amphora_agent_planning/campaign_output/README.md). It binds pure typed proposals to original request/profile/action/digest/scope/cut; provider integration and semantic eligibility remain later gates.

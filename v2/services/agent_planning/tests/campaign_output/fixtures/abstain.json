@@ -1,0 +1,33 @@
+{
+  "schema_version": "1",
+  "authority": "proposal_only",
+  "scientific_authority": "not_established",
+  "action": "abstain",
+  "rationale": "Retain uncertainty for the next campaign.",
+  "decision_scope": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+  "candidate": null,
+  "evidence_requests": [],
+  "alternatives": [],
+  "unresolved": [
+    {
+      "question": {
+        "scope": {
+          "tenant_id": "planning-fixture",
+          "project_id": "context"
+        },
+        "question_id": "question-1",
+        "revision": 1
+      },
+      "need": {
+        "scope": {
+          "tenant_id": "planning-fixture",
+          "project_id": "context"
+        },
+        "need_id": "need-1",
+        "revision": 1
+      },
+      "posture": "unknown",
+      "description": "The synthetic source does not establish this claim."
+    }
+  ]
+}

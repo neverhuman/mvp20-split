@@ -2,19 +2,19 @@
 
 ## Resume here
 
-- Refreshed 2026-10-04 20:33:17 (America/Chicago). Read FIRST after compression. Continue across commits/plan gates; no subagents, JARVIS or v1 edits.
-- Current BP-07.03/B1.04b pure request-bound campaign parser. B1.04a verified, ready to commit/push. Latest pushed8308016a. No tests or owner hosts running.
-- Planning0.50/public0.9;510 schemas preserve508 predecessors.101 source contract/dev cases23.05s;823 independently installed cases56.765s. Manifest .test-results/planning-campaign-output-independent-20261004/manifest.json. New public campaign_output.py and tests/campaign_output plus508 hash pins. Evidence Campaign_Output_Schema.json.
-- Child20.31%,Build27.08%,Acceptance0%,parent44.06%;closed0/4 and8/20. B1.04 a100%,b/c/d0%;B1.04=25%,B1=81.25%. Earlier B1.01/.02/.03=100%.
+- Refreshed 2026-10-04 20:40:53 (America/Chicago). Read FIRST after compression. Continue across gates/commits; no subagents, JARVIS or v1 edits.
+- Current BP-07.03/B1.04c provider/durable integration. b verified ready to commit/push. Latest pushed05fb6508. No tests/hosts running.
+- Planning0.51/public0.9;510 schemas unchanged. Parser73 focused4.17s,97 statements16 branches100%;867 isolated tests59.075s. Manifest .test-results/planning-campaign-parser-independent-20261004/manifest.json. Evidence Campaign_Output_Parser.json.
+- Child21.88%,Build29.17%,Acceptance0%,parent44.38%;0/4 and8/20 closed. B1.04 a/b100%,c/d0%;B1.04=50%,B1=87.5%.
 - RetainedPG planning0012; NEVER Planning<=0.48 migrators. Research0013/Data0012; neverResearch<=0.33/Data<=0.25 migrators. No reset/history rewrite.
 
 ## Immediate next actions
 
-1. Commit/push a; proceed b. Read docs/Build Plans/BP-07/BP-07.03 Campaign output profile.md. CampaignDecisionScope/CampaignCandidate/CampaignOutput domain objects own original request/profile/action/digest/scope/cut and duplicate-change binding; strict65536-byte JSON and canonical payload. No provider wiring until b verification gate. c integrates profiles/observations/durable readback; d independent compatibility. B2 owns semantic eligibility/tool/evidence/target-range/compiler/handoff.
-2. Existing context.RequestSnapshot and AttemptBinding; context.snapshot._object/_constant strict JSON; providers/profiles.py has reference/extraction catalog only. New profile planning.campaign-draft/v1 uses existing TypedProposal and TaskProviderObservation later, preserving their bytes. Runtime SaveDraft/ValidateDraft exists but no adjustment-write API. Original decision_scope is opaque digest; echo does not authorize changes. Preserve missing/weak/unknown/contradictory science; corrections future campaigns only.
-3. tests/context/test_snapshot.py bind helper and fixtures/request.json reusable. Public new output fixtures in contracts/planning/tests/campaign_output/fixtures (copy to service-owned fixture folder when needed). Add module README/test scope and independent harness area. No source/test/dev edits while tests run. Changed-file Ruff clean; existing unrelated import-layout debt left untouched.
-4. Current owner-packet/journal-replacement harnesses pinnedPlanning0.49; inspect before reuse. Actual owner packet manifest .test-results/planning-campaign-packet-owners-20261004/manifest.json:10 workers15hosts4fixtures,original63003/future56799bytes. Allhostsclosed. No migrations for pure parser work.
-5. Update child/parent/MBT/history/Restore before significant commit/push; MBT25 checkpoints. No decision blocks deterministic work. Live provider/model/egress/spend choices block only actual calls.
+1. Commit/push b; c integrate exact campaign_draft_schema into providers/profiles.py supported/observation_model/parse, delegating CampaignOutput.parse(raw,attempt.request).proposal(). Keep draft_model/attributed_items extraction-only. Existing capture.py maps policy errors using small legacy set; add named campaign purpose/profile/digest/scope/cut policy cases without changing old behavior. Closed exact profile; TaskProviderObservation v2/TypedProposal v1 unchanged.
+2. providers/wire.py already decodes observation v1/v2; persistence/records.py verified_observation reconstructs raw through OutputProfiles.parse before equality, so no SQL migration needed. Add pure tests plus scoped SQL runner/readback/late/replay proof, retain raw bytes, preserve unknown charging and failure statuses. Existing tests/providers/test_task_output.py Response and tests/persistence/test_task_output.py patterns; SQL stored fixture in tests/conftest.py uses current migration0012, opt in AMPHORA_TEST_POSTGRES=1.
+3. Do NOT change FixtureProvider reference behavior. New deterministic campaign response fixture can be test-owned; actual adapter/live provider later. No scientific or execution claim. Campaign preparation before dispatch integration belongs B2/BP07.04; this step is typed output through existing capture/journal only.
+4. New module campaign_output exports CampaignDecisionScope/CampaignCandidate/CampaignOutput; service tests/campaign_output/test_output.py provides output()/request() helpers and copied reviewed fixtures. Module-owned scope already covered by agent-planning in dev/test_scopes.json. verify_planning_context.py includes campaign_output pure tests. No source/test/dev edits during verification.
+5. d independent installation/legacy exact compatibility next; then B2.01 semantic policy. Existing journal/ownerpacket harnesses pinnedPlanning0.49: inspect before reuse. Root docs and previous evidence remain intact; old migrators forbidden. Update trackers/history/Restore before commit/push. Live provider choices block only actual calls; corrections future campaigns, weak science preserved.
 
 ## Latest acceptance details
 

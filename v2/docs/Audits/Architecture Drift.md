@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 and BP-07.01/.02 closed/audited; BP-07.03/B1 context construction active.
-- Last refreshed: `2026-10-04 20:33:17` (America/Chicago).
+- Last refreshed: `2026-10-04 20:40:53` (America/Chicago).
 - Scope: unresolved v2 design/implementation alignment and scoped successor boundaries.
 - Active focus: campaign context/proposal boundary; no unresolved blocking predecessor finding.
-- Next gate: BP-07.03/B1.04b request-bound parser; additive510 schemas preserve508 predecessors. Provider integration and semantic acceptance remain subsequent.
+- Next gate: BP-07.03/B1.04c provider/durable integration; request-bound parser verified. Semantic eligibility/compiler acceptance remain subsequent.
 
 ## Active Findings
 

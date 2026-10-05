@@ -620,3 +620,7 @@ B1.03d verified 2026-10-04 20:18:16: installed Planning0.49 consumes five actual
 
 B1.04a verified 2026-10-04 20:33:17: Planning0.50/public0.9 additive campaign draft schema;101 source contract/dev tests23.05s and823 independent tests56.765s. All508 predecessor schemas unchanged,510 total. Future/adjustment/evidence/abstention fixtures preserve proposal-only and unresolved science. B1.04=25%,B1=81.25%,child20.31%,Build27.08%,parent44.06%. Current B1.04b pure parser. [Evidence](../../Audits/Evidence/BP-07-Campaigns/Campaign_Output_Schema.json).
 | 2026-10-04 17:08:34 | BP-07.03 activated0%; parent40%; B1.01a active | [Coherence audit](../Audits/BP-07.03_Activation.md); actual public predecessors, ordered physical milestones |
+
+
+B1.04b verified 2026-10-04 20:40:53: Planning0.51/public0.9 pure CampaignDecisionScope/CampaignCandidate/CampaignOutput;73 focused tests4.17s,97 statements16 branches100%;867 installed tests59.075s. Strict raw/canonical65536 bytes, exact request/profile/action/digest/scope/cut, duplicate adjustments, immutable output and uncertainty retention. Child21.88%,Build29.17%,parent44.38%;B1.04=50%,B1=87.5%. Current B1.04c provider/durable integration. [Evidence](../../Audits/Evidence/BP-07-Campaigns/Campaign_Output_Parser.json).
+| 2026-10-04 17:18:21 | BP-07.03/B1.01a verified; child3.13%,parent40.63%; B1.01b active | Research_Selection.json;111 source/installed,67 statements8 branches100%;508 schemas |

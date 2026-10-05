@@ -1,0 +1,219 @@
+{
+  "schema_version": "1",
+  "authority": "proposal_only",
+  "scientific_authority": "not_established",
+  "action": "propose_campaign",
+  "rationale": "Retain uncertainty for the next campaign.",
+  "decision_scope": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+  "candidate": {
+    "kind": "future_campaign",
+    "title": "Synthetic follow-up",
+    "definition": {
+      "body": {
+        "edges": [
+          {
+            "route": "next",
+            "source": "convert",
+            "target": "finish"
+          }
+        ],
+        "inputs": [
+          {
+            "name": "parameters",
+            "value_type": {
+              "kind": "artifact",
+              "media_type": "application/json",
+              "representation": "synthetic-bindings",
+              "schema_ref": {
+                "schema_id": "fixture.bindings.numbers",
+                "sha256": "847d34e9c9d089c4e07d59c111fba9a8e42772f67f6dcdf8d8c2b378946f1923",
+                "version": "1"
+              },
+              "unit": "1"
+            }
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "artifact_project",
+            "limits": {
+              "max_artifacts": 4,
+              "max_bytes": 4096,
+              "max_items": 3,
+              "timeout_seconds": 30
+            },
+            "mode": "values",
+            "node_id": "convert",
+            "output": {
+              "name": "result",
+              "value_type": {
+                "kind": "scalar",
+                "scalar": "integer",
+                "unit": "1"
+              }
+            },
+            "path": [
+              "count"
+            ],
+            "source": {
+              "kind": "input",
+              "name": "parameters"
+            }
+          },
+          {
+            "kind": "finish",
+            "node_id": "finish",
+            "outputs": [
+              {
+                "port": "result",
+                "source": {
+                  "kind": "output",
+                  "node_id": "convert",
+                  "port": "result"
+                }
+              }
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "name": "result",
+            "value_type": {
+              "kind": "scalar",
+              "scalar": "integer",
+              "unit": "1"
+            }
+          }
+        ]
+      },
+      "campaign_id": "scalar",
+      "context": [],
+      "profile": "deterministic-v3",
+      "revision": 1,
+      "schema_version": "4",
+      "scope": {
+        "tenant_id": "planning-fixture",
+        "project_id": "context"
+      }
+    },
+    "expected_evidence": [
+      {
+        "question": {
+          "scope": {
+            "tenant_id": "planning-fixture",
+            "project_id": "context"
+          },
+          "question_id": "question-1",
+          "revision": 1
+        },
+        "needs": [
+          {
+            "scope": {
+              "tenant_id": "planning-fixture",
+              "project_id": "context"
+            },
+            "need_id": "need-1",
+            "revision": 1
+          }
+        ],
+        "assessments": [
+          {
+            "request": {
+              "wire_version": "1",
+              "assessment_id": "assessment-1",
+              "profile": {
+                "scope": {
+                  "tenant_id": "planning-fixture",
+                  "project_id": "context"
+                },
+                "profile_id": "fixture-assessment",
+                "version": "1",
+                "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+              },
+              "question": {
+                "scope": {
+                  "tenant_id": "planning-fixture",
+                  "project_id": "context"
+                },
+                "question_id": "question-1",
+                "revision": 1
+              },
+              "answers": [
+                {
+                  "criterion_id": "criterion-1",
+                  "artifact": {
+                    "scope": {
+                      "tenant_id": "planning-fixture",
+                      "project_id": "context"
+                    },
+                    "artifact_id": "source",
+                    "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+                    "media_type": "text/plain",
+                    "schema_ref": {
+                      "schema_id": "fixture.text",
+                      "version": "1",
+                      "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+                    },
+                    "size_bytes": 12
+                  }
+                }
+              ],
+              "receipts": [
+                {
+                  "scope": {
+                    "tenant_id": "planning-fixture",
+                    "project_id": "context"
+                  },
+                  "artifact_id": "source",
+                  "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+                  "media_type": "text/plain",
+                  "schema_ref": {
+                    "schema_id": "fixture.text",
+                    "version": "1",
+                    "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+                  },
+                  "size_bytes": 12
+                }
+              ]
+            },
+            "status_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        ],
+        "producer": null,
+        "expected_evidence": "A synthetic observation addressing the declared gap.",
+        "uncertainty": "No scientific validity has been established."
+      }
+    ]
+  },
+  "evidence_requests": [],
+  "alternatives": [
+    {
+      "candidate_id": "defer",
+      "descriptor_sha256": null,
+      "description": "Wait for a measurement.",
+      "reason": "Retained as an alternative, not a required quality gate."
+    }
+  ],
+  "unresolved": [
+    {
+      "question": {
+        "scope": {
+          "tenant_id": "planning-fixture",
+          "project_id": "context"
+        },
+        "question_id": "question-1",
+        "revision": 1
+      },
+      "need": {
+        "scope": {
+          "tenant_id": "planning-fixture",
+          "project_id": "context"
+        },
+        "need_id": "need-1",
+        "revision": 1
+      },
+      "posture": "unknown",
+      "description": "The synthetic source does not establish this claim."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "verified_at": "2026-10-04 20:40:53",
+  "status": "passed",
+  "gate": "BP-07.03/B1.04b",
+  "planning": "0.51.0",
+  "contracts": "0.9.0",
+  "focused_tests": 73,
+  "focused_seconds": 4.17,
+  "statements": 97,
+  "branches": 16,
+  "coverage_percent": 100,
+  "installed_tests": 867,
+  "installed_seconds": 59.075,
+  "manifest": ".test-results/planning-campaign-parser-independent-20261004/manifest.json",
+  "limits": [
+    "Pure request/profile/action/digest/scope/cut and duplicate-change binding only",
+    "No dispatch, semantic eligibility, scientific acceptance or Runtime adjustment authority"
+  ]
+}
