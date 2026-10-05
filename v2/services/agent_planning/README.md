@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-- Version: Planning0.61.0; public Planning0.9.0. BP-07.02 complete and audited;930 installed tests,39 process/replay stages and actual-owner recovery verified.
+- Version: Planning0.62.0; public Planning0.9.0. BP-07.02 complete and audited;930 installed tests,39 process/replay stages and actual-owner recovery verified.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Canonical progress: [BP-07.02](../../docs/Build%20Plans/BP-07/Completed/BP-07.02%20Reliable%20text%20decomposition.md).
 
@@ -97,3 +97,5 @@ Output compatibility acceptance: two fresh Planning0.52/public0.9 installations 
 [Campaign refresh](src/amphora_agent_planning/campaign_refresh/README.md) rechecks consumed Artifact processing and relevant pinned Research/Registry/Runtime inputs. Exact reads do not establish latest Research heads or a distributed permission lease.
 
 [Campaign handoff preparation](src/amphora_agent_planning/campaign_handoff/README.md) reads exact stored origin/accounting and combines current prerequisites. Its positive state is ready_to_journal; outgoing dispatch remains a separate durable gate.
+
+[Campaign dispatch](src/amphora_agent_planning/campaign_dispatch/README.md) binds one immutable handoff selection per original attempt and Planning actor. Configuration changes retain that slot identity; persistence and dispatch are subsequent gates.

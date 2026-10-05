@@ -1,0 +1,9 @@
+# Campaign dispatch
+
+Owner: Planning BP-07.03/B2.03a.i, verified in Planning0.62:18 focused/285 isolated compiler cases,81 statements100%;12 boundary checks. [Design](../../../../../docs/Build%20Plans/BP-07/BP-07.03%20Compiler%20handoff.md). This module currently owns pure canonical selection values only. No SQL, peer I/O, dispatch, lease, provider call or execution admission exists here.
+
+CompilerSelection binds the original Planning actor and provider attempt, preparation/proposal hashes, Runtime owner/actor and exact reviewed declaration/budget/Registry eligibility configuration. It rebinds AuthoringPlan and requires read/write grants for new selection. The stable effect ID excludes configuration and generated content: the future journal must reject changed contents at the same slot rather than creating duplicate effects. Existing authoring command identities remain unchanged.
+
+The witness retains bounded canonical policy bytes, not packet bodies. Restoration requires original read authority and exact actor/scope/canonical encoding but does not require write authority or contact peers. Restoration verifies shape and scoped witnesses; verify_origin compares a reconstructed original proposal and policy. Neither method proves persisted provenance. The subsequent journal must load original owned preparation/attempt/reservation/settlement before registration or historical reconstruction.
+
+Tests belong under tests/campaign_dispatch. Rebuild acceptance preserves slot identity across configuration/output changes while detecting immutable-content conflict, wrong actor/scope, altered witness/origin and noncanonical bytes. Pending scope: effect payload values/events, PostgreSQL origin/fences, guarded coordinator and independent recovery. No existing extraction handoff format or public schema is changed.
