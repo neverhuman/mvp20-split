@@ -1,14 +1,15 @@
 # Agent Planning service boundary
 
-- Version: Planning0.69.0; public Planning0.9.0. BP-07.02 complete and audited;930 installed tests,39 process/replay stages and actual-owner recovery verified.
+- Version: Planning0.69.0; public Planning0.9.0; owned migration head0014.
+- Reviewed: `2026-10-05 13:34:17` (America/Chicago). BP-07.01/.02/.03 accepted within deterministic/synthetic scope.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
-- Design: [Planning](../../docs/Architecture/Agents/Planning.md). Canonical progress: [BP-07.02](../../docs/Build%20Plans/BP-07/Completed/BP-07.02%20Reliable%20text%20decomposition.md).
+- Design: [Planning](../../docs/Architecture/Agents/Planning.md). Campaign acceptance: [BP-07.03](../../docs/Build%20Plans/BP-07/Completed/BP-07.03%20Campaign%20proposals%20and%20context.md); next [BP-07.04](../../docs/Build%20Plans/BP-07/BP-07.04%20Durable%20supervisor%20and%20races.md).
 
 ## Responsibilities and exclusions
 
-Planning binds immutable context, deterministic provider attempts, conservative budgets and attributed text-decomposition proposals. It persists its own intent and exact outputs before publishing derived Artifacts or handing proposals to their accepting owners. It has no public server or live model adapter and cannot execute a campaign, register scientific truth, grant source rights or mutate a peer's tables.
+Planning binds immutable context, deterministic provider attempts, conservative budgets, attributed text decomposition and bounded campaign proposals. It persists its own intent and exact outputs before publishing derived Artifacts or submitting proposals through public owner interfaces. Campaign compilation saves and validates a draft; it never admits or executes that draft. This package has no public server or live model adapter. It cannot register scientific truth, grant source rights, accept Runtime engagement decisions or mutate peer tables.
 
-This service is an independent wheel. Public contracts and the Tool Protocol SDK are peer dependencies; SQLAlchemy/psycopg/Alembic are private persistence dependencies. Private peer imports, shared ORM models and peer SQL are forbidden. Scientific uncertainty, contradiction and missing evidence remain explicit; they do not impose a global campaign veto.
+This independently built wheel depends on public contracts and the Tool Protocol SDK. SQLAlchemy/psycopg/Alembic are private persistence dependencies; private peer imports, shared ORM models and peer SQL are forbidden. Each module below owns a focused rebuild contract. Scientific uncertainty, contradiction and missing evidence remain explicit; they do not impose a global campaign veto.
 
 ## Owned modules
 
@@ -24,78 +25,34 @@ This service is an independent wheel. Public contracts and the Tool Protocol SDK
 | [repair](src/amphora_agent_planning/repair/README.md) | Immutable root/member authority, aggregate attempt/exposure ceilings, retained diagnostics and bounded child execution |
 | [result_publication](src/amphora_agent_planning/result_publication/README.md) | Exact diagnostic/candidate-answer Artifacts, current-rights preparation and separate durable publication slots |
 | [owner_handoff](src/amphora_agent_planning/owner_handoff/README.md) | Immutable owner requests/dependencies, read-first reconciliation and bounded question/need/answer/graph coordination |
+| [campaign_context](src/amphora_agent_planning/campaign_context/README.md), [graph_context](src/amphora_agent_planning/graph_context/README.md) | Exact Research/request selections and shared immutable graph-record invariants; no implicit latest-head selection |
+| [campaign_research_access](src/amphora_agent_planning/campaign_research_access/README.md), [research_view_access](src/amphora_agent_planning/research_view_access/README.md) | Exact Research records and explicitly selected specimen/property/series pages; no generic query or scientific acceptance |
+| [metadata_reads](src/amphora_agent_planning/metadata_reads/README.md), [registry_access](src/amphora_agent_planning/registry_access/README.md), [runtime_metadata](src/amphora_agent_planning/runtime_metadata/README.md) | Bounded Registry inventory/full locks and reviewed Runtime universe/schema reads; metadata never grants execution |
+| [campaign_data_access](src/amphora_agent_planning/campaign_data_access/README.md), [retrieval_access](src/amphora_agent_planning/retrieval_access/README.md), [campaign_knowledge_access](src/amphora_agent_planning/campaign_knowledge_access/README.md) | Current Data processing-authorized bodies, exact retained retrieval selections and pinned Knowledge context |
+| [campaign_graph_context](src/amphora_agent_planning/campaign_graph_context/README.md), [campaign_artifact_context](src/amphora_agent_planning/campaign_artifact_context/README.md), [campaign_research_context](src/amphora_agent_planning/campaign_research_context/README.md), [campaign_tool_context](src/amphora_agent_planning/campaign_tool_context/README.md), [campaign_retrieval_context](src/amphora_agent_planning/campaign_retrieval_context/README.md) | Lane-specific bounded context projections, explicit partial/unavailable inputs and relevant observations |
+| [campaign_packet_profiles](src/amphora_agent_planning/campaign_packet_profiles/README.md), [campaign_slice_plan](src/amphora_agent_planning/campaign_slice_plan/README.md), [campaign_packet](src/amphora_agent_planning/campaign_packet/README.md) | Reviewed fixture-tokenizer profiles, required-before-optional slices and complete measured packet fitting with explicit omissions |
+| [campaign_preparations](src/amphora_agent_planning/campaign_preparations/README.md) | Immutable byte-bound packet journal, original request/actor binding, first-registration-before-dispatch and exact replay |
+| [campaign_output](src/amphora_agent_planning/campaign_output/README.md), [campaign_proposals](src/amphora_agent_planning/campaign_proposals/README.md), [campaign_decisions](src/amphora_agent_planning/campaign_decisions/README.md) | Typed output, evidence-purpose/composition policy, relevant read sets and reviewed versioned declaration bounds; unresolved science remains visible |
+| [campaign_authoring](src/amphora_agent_planning/campaign_authoring/README.md), [campaign_exchanges](src/amphora_agent_planning/campaign_exchanges/README.md), [campaign_eligibility](src/amphora_agent_planning/campaign_eligibility/README.md) | Exact Runtime authoring commands/readbacks, guarded public transports and finite Registry candidate observations |
+| [campaign_refresh](src/amphora_agent_planning/campaign_refresh/README.md), [campaign_handoff](src/amphora_agent_planning/campaign_handoff/README.md) | Fresh input/processing/eligibility checks and original stored request/attempt/reservation/settlement provenance |
+| [campaign_dispatch](src/amphora_agent_planning/campaign_dispatch/README.md) | Immutable compiler selection, bounded rounds/effects/events, database-clock fences and one-POST progression with original-receipt recovery |
 
 ## State, effects and recovery
 
-Planning owns planning_0001 through0011. Histories and prepared bytes are immutable; separate controls carry database-clock leases/fences. Normal imports never apply migrations. No SQL lock spans provider or peer I/O. Publication commits intent before PUT; uncertain streams use bounded successor uploads and uncertain finalization recovers the original receipt. Handoff reads the original owner identity before any new POST, checks fresh processing rights for new effects and requires exact accepted readback. Terminal replay does not read peers. A process exit does not release its lease; recovery waits for real expiry.
+Planning owns planning_0001 through0014. Histories, prepared bytes and compiler selections are immutable; separate control rows carry database-clock leases/fences. Normal imports never migrate. No SQL transaction spans provider or peer I/O. Publication and compiler operations persist exact intent before effects. Uncertain replies preserve original identities; an accepted receipt requires exact owner readback. Historical receipt recovery does not grant fresh processing rights. Process loss leaves leases until expiry; stale holders cannot append accepted local history.
 
-Local Research dependencies require the exact acknowledged question. Independent effects continue when another lane is unavailable. Knowledge conflicts never rebase a task automatically. Accepted typed corrections inform explicitly selected future tasks; original campaign/task pins and history remain unchanged. Quote geometry and structural acceptance are not semantic entailment or scientific sufficiency.
+Compiler selection binds original preparation, output, accounting and reviewed configuration. One save and validation use at most16 complete Registry-check rounds over1..64 original tools, with64 events per effect and the last slot reserved for terminal outcomes. Each progression invocation performs at most one effectful POST and releases its300s lease. Runtime original receipts/readbacks are reconciled before fresh-use checks; Registry resolve replay remains effectful and needs current checks. Expired observations require a new bounded check, never an expiry extension. No network exactly-once guarantee is claimed.
+
+Research handoff requires the exact acknowledged question; independent effects can progress when another lane is unavailable. Knowledge conflicts never automatically rebase a task. Corrections inform explicitly selected future tasks; original campaign pins and history remain unchanged. Current Data source-rights withdrawal blocks new processing/submission while committed Runtime history remains recoverable. Quote geometry, compatible ports, successful compilation and structural graph acceptance do not establish scientific sufficiency.
 
 ## Replacement and verification
 
-Tests belong under this owner's tests/ behavioral folders; dev/test_scopes.json registers granular runs. Example: dev/run_tests.py --module agent-planning --area proposals. dev/verify_planning.py builds two independent wheel installations, excludes private peer implementations and checks owned SQL history across replacement. Actual-owner, semantic-corpus and abrupt-exit harnesses are separately documented in [acceptance](tests/acceptance/README.md). [Evidence](../../docs/Audits/Evidence/BP-07-Extraction/) records scoped line/branch gaps, process identities and synthetic limits; the tracker owns current percentages.
+Tests live under this owner's behavioral tests/ folders; dev/test_scopes.json registers granular runs. For example, dev/run_tests.py --module agent-planning --area campaign_proposals. Pure, SQL, HTTP-protocol, actual-owner and process-failure tiers remain separate. [Final campaign evidence](../../docs/Audits/Evidence/BP-07-Campaigns/Final_Installation.json) records1262 cases across39 isolated test processes,49 vectors in a second installation,15 equal current package payloads,510 schemas and22 unchanged baseline migration files. [Extraction evidence](../../docs/Audits/Evidence/BP-07-Extraction/) preserves the earlier accepted boundary; scoped line/branch coverage and known gaps remain with each owning evidence file, not an invented aggregate100%.
 
-Replacement must preserve canonical bytes/hashes, actors/scopes, source identities, omissions, budgets, attempts, pinned revisions, historical output profiles and immutable migration history. Never run Planning<=0.28 migrators on0011. Replace old admission writers before enabling repair families: Planning<=0.20 does not enforce aggregate family ceilings, and Planning<=0.22 lacks prepared repair workflow handling. Read the persistence/repair contracts before cutover; retained state is not disposable test setup.
+The campaign final helper is dev/verify_planning_campaign_closeout.py. Current actual-owner/SQL proofs are reused against unchanged production payloads: compiler crashes before POST and after owner commit, actual source-rights revocation/regrant, lease fencing, uncertain HTTP and retained history after replacement. dev/verify_planning_dispatch.py separates crash and rights scenarios. Catalog acceptance uses300 distinct descriptors under declared byte/time budgets; identity matching is not natural-language relevance quality. Source-adjacent test READMEs and [closeout audit](../../docs/Audits/BP-07.03_Campaign_Closeout.md) bound each claim.
 
-Real provider/model, egress and spend remain owner choices before actual calls. Full context-body assembly, actual tokenizer/window fit, campaign proposal compilation, Runtime engagement acceptance and live scientific evaluation remain successor gates. The reviewed synthetic corpus measures explicit software-oracle accounting, not human expert agreement, real-model accuracy or scientific validity.
+A replacement must preserve canonical bytes/hashes, original actors/scopes, source identities, omissions, budget exposure/settlements, attempts, pinned revisions, old output/declaration profiles and immutable migration history. Private declarationv2 permits Artifact publication before request binding; v1 literal identity rules remain readable. Never run Planning<=0.65 migrators against0014. Replace legacy admission writers before enabling repair families; read the persistence/repair contracts before cutover. Retained state is not disposable setup. Independent installation proves package/process replacement of this implementation, not an independently authored rewrite.
 
+## Remaining boundaries
 
-[campaign_context](src/amphora_agent_planning/campaign_context/README.md) adds pure exact Research selection/request binding and selected-record/relevance projections under BP-07.03/B1.01. Context assembly and campaign proposal compilation remain later gates; the closed extraction boundary is unchanged.
-
-[campaign_research_access](src/amphora_agent_planning/campaign_research_access/README.md) supplies bounded exact Research record reads and per-record safe failure reports. Actual Research compatibility is verified under the scoped BP-07.03/B1.02a.iii gate.
-
-[research_view_access](src/amphora_agent_planning/research_view_access/README.md) binds explicitly selected specimen/property/series pages and reviewed catalog schemas to the original campaign request. No hidden pagination or scientific acceptance.
-
-[registry_access](src/amphora_agent_planning/registry_access/README.md) owns bounded current inventory/exact full-lock observations through [metadata_reads](src/amphora_agent_planning/metadata_reads/README.md), a separate closed Registry/Runtime GET boundary. Discovery preserves lifecycle and partial results; it does not confer eligibility or compiler review.
-
-[runtime_metadata](src/amphora_agent_planning/runtime_metadata/README.md) verifies the reviewed compiler universe and selected exact schema bytes, preserving partial failures and original pins. Actual compilation/admission stays Runtime-owned.
-
-[campaign_data_access](src/amphora_agent_planning/campaign_data_access/README.md) selects exact campaign Artifact references and captures fresh processing-authorized bytes, preserving per-reference failures without retaining an access lease.
-
-[retrieval_access](src/amphora_agent_planning/retrieval_access/README.md) verifies exact retained Data query/result and source-binding identities; retrieval history does not grant fresh processing access or scientific confidence.
-
-[campaign_knowledge_access](src/amphora_agent_planning/campaign_knowledge_access/README.md) reads exact pinned campaign graph context through public Knowledge endpoints. [graph_context](src/amphora_agent_planning/graph_context/README.md) owns shared pure record invariants; extraction retains its original adapter and byte identities.
-
-Actual combined-owner context verified 2026-10-04 18:55:41:10 isolated Planning workers,9 Registry/Runtime/Data/Knowledge hosts, retained PostgreSQL/Qdrant and original/future graph selections. Exact reads, partial/denied/foreign outcomes, restarts and fresh processing permission changes passed; Research unchanged-client proof reused explicitly. See docs/Audits/Evidence/BP-07-Campaigns/Combined_Owner_Context.json. Context assembly/token fitting and live provider quality remain later gates.
-
-[campaign_graph_context](src/amphora_agent_planning/campaign_graph_context/README.md) projects exact selected graph records and endpoint/alias/retraction dependencies, with bounded bytes and relevant positive/absent observations. Whole-graph origin is preserved without making unrelated changes a blanket invalidation.
-
-[campaign_artifact_context](src/amphora_agent_planning/campaign_artifact_context/README.md) plans all four required roots plus128 entries, merges roles and performs mandatory-first bounded processing reads under one shared budget. Raw bodies remain data, with explicit unavailable items and no continuing rights grant.
-
-[campaign_research_context](src/amphora_agent_planning/campaign_research_context/README.md) recomputes selected Research findings and projects exact named pages, explicit gaps and relevant observations without pagination, quality filtering or a source-processing grant.
-
-[campaign_tool_context](src/amphora_agent_planning/campaign_tool_context/README.md) preserves distinct Registry observations and complete selected Runtime schema outcomes. [campaign_retrieval_context](src/amphora_agent_planning/campaign_retrieval_context/README.md) retains original query/result provenance or explicit unavailability. Both remain data for later budgeted assembly, not tool or scientific authority.
-
-[campaign_packet_profiles](src/amphora_agent_planning/campaign_packet_profiles/README.md) owns reviewed campaign instructions, exact fixture tokenizer identity and measured packet ceilings preserving the original output reserve. Synthetic byte counts do not establish live-model fit or authorize dispatch.
-
-[Campaign slice plan](src/amphora_agent_planning/campaign_slice_plan/README.md) composes revalidated owner inputs as required-before-optional byte-owned data, preserving original omissions and per-slice observations. Individual inventory releases can be budgeted independently; full packet fitting and journal remain subsequent.
-
-[Campaign packet](src/amphora_agent_planning/campaign_packet/README.md) renders reviewed instructions separately from observed data and measures the entire required/optional envelope, omissions and consumed observations under the original fixture budget. No provider or journal authority.
-
-Campaign packet reconstruction preserves the literal Planning0.46 predecessor packet in a fresh isolated process. Exact-byte/plan binding and132-Artifact/exact-budget cases are covered; this is historical replay without renewed processing authority.
-
-[Campaign preparations](src/amphora_agent_planning/campaign_preparations/README.md) owns private byte-bound packet and candidate metadata records with strict readback; SQL journal/issuance integration is pending. Research slices retain the full original selection alongside its digest before persistence.
-
-Campaign preparation storage adds forward planning_0012 and an immutable scoped journal with exact replay, original actor/request binding and no late first registration. Two opt-in PostgreSQL smoke cases verify retained readback and SELECT/INSERT-only privileges; broader authority/race and independent replacement gates remain pending. Planning<=0.48 migrators must not run on0012.
-
-BP-07.03/B1.03 integrated proof consumes five actual peer owners through10 Planning workers and15 host runs into a63003-byte fixture packet and durable preparation. Real root uploads/processing rights, unknown/pending scientific metadata, partial/denied inputs, future-only correction, owner restart, offline historical readback and Planning replacement pass. Typed campaign output/dispatch remains subsequent; no live-model/scientific claim.
-
-Campaign output interpretation is owned by [campaign_output](src/amphora_agent_planning/campaign_output/README.md). It binds pure typed proposals to original request/profile/action/digest/scope/cut; provider capture/journal integration is verified; semantic eligibility remains a later gate.
-
-Output compatibility acceptance: two fresh Planning0.52/public0.9 installations pass252 pure/contract/legacy-command cases and13 SQL cases, followed by six process stages for seven retained campaign/reference/extraction outputs. A process exits after committed writes; recovery/replacement preserve raw captures, typed proposals, observation hashes and settlement timestamps/charges without repeated provider calls. See dev/verify_planning_campaign_output.py; this is replacement of the same implementation, not a rewrite.
-
-[Campaign proposal policy](src/amphora_agent_planning/campaign_proposals/README.md) owns pure prepared-output identity and relevant observation selection/comparison. It preserves original inputs and distinguishes changed relevant metadata from unrelated context; semantic evidence/tool/declaration checks remain subsequent units.
-
-[Campaign decisions](src/amphora_agent_planning/campaign_decisions/README.md) owns reviewed declaration pinning and future/adjustment bounds, combined with existing budget demand and proposal policy. It introduces no Runtime acceptance or new public schema.
-
-[Campaign authoring](src/amphora_agent_planning/campaign_authoring/README.md) binds exact Runtime draft commands and receipts/readback. Pure value verification does not dispatch, admit or authorize execution; bounded transport and durable orchestration remain subsequent gates.
-
-[Campaign exchanges](src/amphora_agent_planning/campaign_exchanges/README.md) provides bounded guarded Runtime authoring and Registry resolve primitives. No production coordinator bypasses the pending durable submission gate.
-
-[Campaign eligibility](src/amphora_agent_planning/campaign_eligibility/README.md) derives exact selected Registry requests and verifies finite candidate observations. Capacity is not reserved and Runtime admission remains separate.
-
-[Campaign refresh](src/amphora_agent_planning/campaign_refresh/README.md) rechecks consumed Artifact processing and relevant pinned Research/Registry/Runtime inputs. Exact reads do not establish latest Research heads or a distributed permission lease.
-
-[Campaign handoff preparation](src/amphora_agent_planning/campaign_handoff/README.md) reads exact stored origin/accounting and combines current prerequisites. Its positive state is ready_to_journal; outgoing dispatch remains a separate durable gate.
-
-[Campaign dispatch](src/amphora_agent_planning/campaign_dispatch/README.md) binds one immutable handoff selection per original attempt and Planning actor. Configuration changes retain that slot identity; persistence and dispatch are subsequent gates.
+Runtime engagement acceptance, overlapping decision scopes, fallback/cancellation races and autonomous orchestration belong to BP-07.04. Actual provider/model selection, egress permissions, spending and live evaluation belong to BP-07.05 and its named owner decisions. Fixture UTF-8 byte-token fitting does not prove a real model's tokenizer/window, injection resistance or scientific efficacy. Campaigns remain exploratory; future iterations can target selected weaknesses without resolving every scientific gap first.

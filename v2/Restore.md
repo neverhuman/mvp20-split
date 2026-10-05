@@ -1,14 +1,14 @@
 # Restore
 
-Refreshed `2026-10-05 13:32:31` (America/Chicago). **Read first after compression.**
+Refreshed `2026-10-05 13:36:19` (America/Chicago). **Read first after compression.**
 
 ## Resume
 
-BP-07.03/V1.01 VERIFIED `2026-10-05 13:32:31`; commit/push pending, then V1.02 scoped architecture audit/documentation reconciliation/archive. No running verification/owned hosts.1262 initial tests/39processes,49 replacement vectors;session13583 passed.12boundaries9.37s;510schemas;22unchanged baseline migrationfiles;15currentpackagepayloads equal semantic0.69. Final_Installation.json records reuse scope. Older0.49 preparation wheel210/212files unchanged;changed provider capture/profiles have explicit compatibility proof.
+BP-07.03 CLOSED100% `2026-10-05 13:36:19`; scoped audit/archive commit/push pending. Latest pushed439867c7 (final replacement proof). No running verification or owned hosts. Child archived docs/Build Plans/BP-07/Completed/BP-07.03 Campaign proposals and context.md. Child100%,Build100%,Acceptance100%,4/4;parent60%,12/20. Root/module README summaries and architecture reconciled, inbound/relative archive links repaired; validate changed links before commit.
 
-Child87.5%,Build100%,Acceptance50%,3/4;parent57.5%,11/20. B1/B2/B3 andV1.01complete. V1.02 scoped audit/archive next; then child100%,parent60%,12/20 and bounded BP07.04 activationaudit. Latest pushed3af96aa3. Uncommitted:finalverificationhelpers/evidence/canonicaltrackers/history/Restore. Corrected stale MBTqueue45%/B1.04 to current57.5%/V1.02.
+NEXT: BP-07.04 bounded activation coherence audit, then earliest B1 prerequisite. Read owning child + Runtime README + Graph_Runner/Supervisor architecture + public contracts before choosing concrete schema/modules. BP04 has Runtime engagement/outbox/decision authority and Planning call execution; fake provider proves orchestration only. No owner decision blocks deterministic work. Do not ask about live provider until dependent gate.
 
-Audit findings to reconcile after commit: root agent_planning README has stale pending context/compiler and migration0011 statements; Architecture/Agents/Planning.md has pending semanticcompiler language; campaign_dispatch README top pendingc.iii/d stale; campaign_preparations intro pending issuance stale; campaign_handoff successor wording stale. Preserve historical evidence percentages; supersede summaries with actual current ownership and successor gates. Do not run old migrators or unrelated E2Es.
+Final_Installation.json:1262 fresh cases39processes/257.994s;49 second-installation vectors14.988s;12boundaries9.37s;510schemas;22baseline migrations;15currentpayloadsequal.210/212predecessor0.49filesunchanged,onlyprovider capture/profiles changed with versioned compatibilityproof. Sessions13583/48121finished. Source/doc edits during audit occurred after tests finished; production/testsource unchanged.
 
 ## Current evidence
 

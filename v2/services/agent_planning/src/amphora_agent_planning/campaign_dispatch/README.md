@@ -1,6 +1,6 @@
 # Campaign compiler journal and dispatch
 
-- Owner: Planning BP-07.03/B2.03a/b/c.i/ii, implemented in Planning0.69; c.iii SQL/HTTP integration and d installed actual-owner/crash proof remain pending.
+- Owner: Planning BP-07.03/B2.03, implemented in Planning0.69; SQL/HTTP, installed actual-owner/crash and source-rights proofs passed. Runtime decision acceptance remains BP-07.04.
 - Design: [compiler handoff](../../../../../docs/Build%20Plans/BP-07/BP-07.03%20Compiler%20handoff.md).
 - Tests: `tests/campaign_dispatch` pure values; `tests/campaign_dispatch_storage` owned persistence; `tests/campaign_dispatch_coordinator` owned SQL with scripted peers. `tests/campaign_dispatch_transport` SQL+HTTP stubs; `tests/campaign_dispatch_acceptance` independently installed actual owners and worker crashes.
 
