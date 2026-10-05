@@ -757,3 +757,8 @@ Activation corrected_ready at45e9e761; physical design separates Runtime footpri
 ## 2026-10-05 14:02:22 - BP-07.04/B1.02a request boundary
 
 Independent public supervision0.1 package avoids dependency cycles; Runtime0.22 projects exact owned footprints and binds original Planning request/actor/policy/cut/hash and lineage shape.62 scoped/wire/publication tests8.74s,54 newstatements4branches100%;54 legacy/boundary tests9.42s.520 schemas preserve510 predecessor bytes. Literal original Planning0.69 request bytes retained. No auth/actual ancestry/budget/current grants/acceptance or transport claim. B1.02a100%,b/c0%;B1.02=one-third;child8.33%,Build11.11%,Acceptance0%,0/4;parent61.67%,12/20. Combined independent install is B1.02c.
+
+
+## 2026-10-05 14:21:10 - BP-07.04/B1.02b response and receipt profiles
+
+Runtime0.23/public supervision0.2 separates captured Planning observations, recorded command receipts and owner decision readbacks.129 combined cases11.81s cover139 response statements30branches100%;42 public cases3s cover136statements6branches100%;78 boundary/legacy cases10.66s.528schemafiles preserve520predecessors. Literal Planning0.69 outputs and shared-encoder command vectors retained. New parser guard rejects implicit legacy fallback; same recorded receipt preserves/revalidates prior readback; direct public Planning dependency explicitly declared. No SQL/HTTP/accepted decision effect claim. B1.02a/b100%,c0%;child10.42%,Build13.89%,Acceptance0%,parent62.08%,12/20. Next independent combined boundary proof.

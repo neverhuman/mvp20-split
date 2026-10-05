@@ -39,6 +39,10 @@ from amphora_contracts_tools import Completion, Invocation, ToolBinding, ToolDes
 
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
+    "supervision.response": supervision_contracts.SupervisionResponse,
+    "supervision.cancel": supervision_contracts.CancelSupervision,
+    "supervision.decision": supervision_contracts.SupervisionDecision,
+    "supervision.command-receipt": supervision_contracts.SupervisionCommandReceipt,
     "supervision.reference": supervision_contracts.SupervisionRef,
     "supervision.node-read": supervision_contracts.SupervisionNodeRead,
     "supervision.snapshot": supervision_contracts.SupervisionSnapshot,

@@ -1,0 +1,40 @@
+{
+  "schema_version": "1",
+  "response_id": "response-unknown",
+  "reference": {
+    "scope": {
+      "tenant_id": "planning-fixture",
+      "project_id": "context"
+    },
+    "run_id": "supervision-run",
+    "decision_id": "decision-1"
+  },
+  "request_sha256": "054d3be0bd716858188434ce62a24dc4895e9a5ac6b080f834ceef88678ca5c8",
+  "observation": {
+    "schema_version": "2",
+    "attempt": {
+      "engagement": {
+        "scope": {
+          "tenant_id": "planning-fixture",
+          "project_id": "context"
+        },
+        "engagement_id": "decision-1"
+      },
+      "request_sha256": "ad8dd9f4427cd58c1ced751009c5a98d73d8111bdf2dcd6c559c04c0f8a7b9d4",
+      "ordinal": 1
+    },
+    "status": "unknown",
+    "reason_code": "dispatch_outcome_unknown",
+    "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "captured_bytes": 0,
+    "output_complete": false,
+    "usage": {
+      "input_tokens": null,
+      "output_tokens": null,
+      "accounting_units": null,
+      "certainty": "unknown"
+    },
+    "proposal": null
+  },
+  "capture": null
+}

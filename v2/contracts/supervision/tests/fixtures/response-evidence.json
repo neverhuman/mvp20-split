@@ -1,0 +1,65 @@
+{
+  "schema_version": "1",
+  "response_id": "response-evidence",
+  "reference": {
+    "scope": {
+      "tenant_id": "planning-fixture",
+      "project_id": "context"
+    },
+    "run_id": "supervision-run",
+    "decision_id": "decision-1"
+  },
+  "request_sha256": "054d3be0bd716858188434ce62a24dc4895e9a5ac6b080f834ceef88678ca5c8",
+  "observation": {
+    "schema_version": "2",
+    "attempt": {
+      "engagement": {
+        "scope": {
+          "tenant_id": "planning-fixture",
+          "project_id": "context"
+        },
+        "engagement_id": "decision-1"
+      },
+      "request_sha256": "ad8dd9f4427cd58c1ced751009c5a98d73d8111bdf2dcd6c559c04c0f8a7b9d4",
+      "ordinal": 1
+    },
+    "status": "proposed",
+    "reason_code": null,
+    "output_sha256": "74507a5ef9285d549889b8d3fe5f20414e6a81c90717304c94f2a969425448c0",
+    "captured_bytes": 3738,
+    "output_complete": true,
+    "usage": {
+      "input_tokens": 40,
+      "output_tokens": 20,
+      "accounting_units": 1,
+      "certainty": "reported"
+    },
+    "proposal": {
+      "schema_version": "1",
+      "output_schema": {
+        "schema_id": "planning.campaign-draft",
+        "version": "1",
+        "sha256": "8c4f460877e5de108a3eb8e9fb11eb3962f16e5a7756f3583ba519ce78eda2be"
+      },
+      "action": "request_evidence",
+      "rationale": "Retain uncertainty for the next campaign.",
+      "payload_json": "{\"action\":\"request_evidence\",\"alternatives\":[],\"authority\":\"proposal_only\",\"candidate\":null,\"decision_scope\":\"dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\",\"evidence_requests\":[{\"assessments\":[{\"request\":{\"answers\":[{\"artifact\":{\"artifact_id\":\"source\",\"media_type\":\"text/plain\",\"schema_ref\":{\"schema_id\":\"fixture.text\",\"sha256\":\"1111111111111111111111111111111111111111111111111111111111111111\",\"version\":\"1\"},\"scope\":{\"project_id\":\"context\",\"tenant_id\":\"planning-fixture\"},\"sha256\":\"2222222222222222222222222222222222222222222222222222222222222222\",\"size_bytes\":12},\"criterion_id\":\"criterion-1\"}],\"assessment_id\":\"assessment-1\",\"profile\":{\"profile_id\":\"fixture-assessment\",\"scope\":{\"project_id\":\"context\",\"tenant_id\":\"planning-fixture\"},\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"version\":\"1\"},\"question\":{\"question_id\":\"question-1\",\"revision\":1,\"scope\":{\"project_id\":\"context\",\"tenant_id\":\"planning-fixture\"}},\"receipts\":[{\"artifact_id\":\"source\",\"media_type\":\"text/plain\",\"schema_ref\":{\"schema_id\":\"fixture.text\",\"sha256\":\"1111111111111111111111111111111111111111111111111111111111111111\",\"version\":\"1\"},\"scope\":{\"project_id\":\"context\",\"tenant_id\":\"planning-fixture\"},\"sha256\":\"2222222222222222222222222222222222222222222222222222222222222222\",\"size_bytes\":12}],\"wire_version\":\"1\"},\"status_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\"}],\"expected_evidence\":\"A synthetic observation addressing the declared gap.\",\"needs\":[{\"need_id\":\"need-1\",\"revision\":1,\"scope\":{\"project_id\":\"context\",\"tenant_id\":\"planning-fixture\"}}],\"producer\":null,\"question\":{\"question_id\":\"question-1\",\"revision\":1,\"scope\":{\"project_id\":\"context\",\"tenant_id\":\"planning-fixture\"}},\"uncertainty\":\"No scientific validity has been established.\"}],\"rationale\":\"Retain uncertainty for the next campaign.\",\"schema_version\":\"1\",\"scientific_authority\":\"not_established\",\"unresolved\":[{\"description\":\"The synthetic source does not establish this claim.\",\"need\":{\"need_id\":\"need-1\",\"revision\":1,\"scope\":{\"project_id\":\"context\",\"tenant_id\":\"planning-fixture\"}},\"posture\":\"unknown\",\"question\":{\"question_id\":\"question-1\",\"revision\":1,\"scope\":{\"project_id\":\"context\",\"tenant_id\":\"planning-fixture\"}}}]}",
+      "payload_sha256": "c980c67344c907e13073de75e4527445435f36498acc278e7386ea8400ea13c7"
+    }
+  },
+  "capture": {
+    "artifact_id": "capture-evidence",
+    "scope": {
+      "tenant_id": "planning-fixture",
+      "project_id": "context"
+    },
+    "sha256": "74507a5ef9285d549889b8d3fe5f20414e6a81c90717304c94f2a969425448c0",
+    "media_type": "application/json",
+    "schema_ref": {
+      "schema_id": "fixture.text",
+      "version": "1",
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    "size_bytes": 3738
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "verified_at": "2026-10-05 14:21:10",
+  "task": "BP-07.04/B1.02b",
+  "status": "passed",
+  "runtime": "0.23.0",
+  "contracts": "0.2.0",
+  "combined": {
+    "tests": 129,
+    "seconds": 11.81,
+    "response_coverage": {
+      "covered_lines": 139,
+      "num_statements": 139,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100",
+      "num_branches": 30,
+      "num_partial_branches": 0,
+      "covered_branches": 30,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    }
+  },
+  "public_wire": {
+    "tests": 42,
+    "seconds": 3.0,
+    "coverage": {
+      "covered_lines": 136,
+      "num_statements": 136,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100",
+      "num_branches": 6,
+      "num_partial_branches": 0,
+      "covered_branches": 6,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    }
+  },
+  "boundary_and_legacy_commands": {
+    "tests": 78,
+    "seconds": 10.66
+  },
+  "schemas": {
+    "total": 528,
+    "unchanged_predecessors": 520
+  },
+  "corrections": [
+    "New supervisor parser explicitly requires v2 after shared parser preserves legacy fallback; shared encoding unchanged",
+    "Same terminal receipt retains and revalidates original verified readback without a new read",
+    "Runtime declares direct dependency on public Planning contracts used in capture interpretation"
+  ],
+  "limits": [
+    "Pure schema/capture/original-binding/receipt checks, not owner authentication or stored decision authority",
+    "Decision effect readbacks describe future B2 transactions; no accepted scalar change or HTTP/SQL effect implemented",
+    "Independent combined boundary remains B1.02c"
+  ]
+}

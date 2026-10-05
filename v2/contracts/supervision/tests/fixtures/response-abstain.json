@@ -1,0 +1,65 @@
+{
+  "schema_version": "1",
+  "response_id": "response-abstain",
+  "reference": {
+    "scope": {
+      "tenant_id": "planning-fixture",
+      "project_id": "context"
+    },
+    "run_id": "supervision-run",
+    "decision_id": "decision-1"
+  },
+  "request_sha256": "054d3be0bd716858188434ce62a24dc4895e9a5ac6b080f834ceef88678ca5c8",
+  "observation": {
+    "schema_version": "2",
+    "attempt": {
+      "engagement": {
+        "scope": {
+          "tenant_id": "planning-fixture",
+          "project_id": "context"
+        },
+        "engagement_id": "decision-1"
+      },
+      "request_sha256": "ad8dd9f4427cd58c1ced751009c5a98d73d8111bdf2dcd6c559c04c0f8a7b9d4",
+      "ordinal": 1
+    },
+    "status": "abstained",
+    "reason_code": null,
+    "output_sha256": "fe41bde0072f6b461a1380d1d9fbca6bd3f347022281bca0f674003fc5d66d79",
+    "captured_bytes": 862,
+    "output_complete": true,
+    "usage": {
+      "input_tokens": 40,
+      "output_tokens": 20,
+      "accounting_units": 1,
+      "certainty": "reported"
+    },
+    "proposal": {
+      "schema_version": "1",
+      "output_schema": {
+        "schema_id": "planning.campaign-draft",
+        "version": "1",
+        "sha256": "8c4f460877e5de108a3eb8e9fb11eb3962f16e5a7756f3583ba519ce78eda2be"
+      },
+      "action": "abstain",
+      "rationale": "Retain uncertainty for the next campaign.",
+      "payload_json": "{\"action\":\"abstain\",\"alternatives\":[],\"authority\":\"proposal_only\",\"candidate\":null,\"decision_scope\":\"dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\",\"evidence_requests\":[],\"rationale\":\"Retain uncertainty for the next campaign.\",\"schema_version\":\"1\",\"scientific_authority\":\"not_established\",\"unresolved\":[{\"description\":\"The synthetic source does not establish this claim.\",\"need\":{\"need_id\":\"need-1\",\"revision\":1,\"scope\":{\"project_id\":\"context\",\"tenant_id\":\"planning-fixture\"}},\"posture\":\"unknown\",\"question\":{\"question_id\":\"question-1\",\"revision\":1,\"scope\":{\"project_id\":\"context\",\"tenant_id\":\"planning-fixture\"}}}]}",
+      "payload_sha256": "9eae7dba4ca3ece5fabf262e61a6f874653f54d7898bd4b596f1ffc99fbe2832"
+    }
+  },
+  "capture": {
+    "artifact_id": "capture-abstain",
+    "scope": {
+      "tenant_id": "planning-fixture",
+      "project_id": "context"
+    },
+    "sha256": "fe41bde0072f6b461a1380d1d9fbca6bd3f347022281bca0f674003fc5d66d79",
+    "media_type": "application/json",
+    "schema_ref": {
+      "schema_id": "fixture.text",
+      "version": "1",
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    "size_bytes": 862
+  }
+}

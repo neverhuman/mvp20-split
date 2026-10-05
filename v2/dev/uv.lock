@@ -63,7 +63,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-campaign-runtime"
-version = "0.22.0"
+version = "0.23.0"
 source = { editable = "../services/campaign_runtime" }
 dependencies = [
     { name = "alembic" },
@@ -72,6 +72,7 @@ dependencies = [
     { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-graph-runtime" },
+    { name = "amphora-contracts-planning" },
     { name = "amphora-contracts-runtime" },
     { name = "amphora-contracts-supervision" },
     { name = "amphora-contracts-tools" },
@@ -91,6 +92,7 @@ requires-dist = [
     { name = "amphora-contracts-commands", editable = "../contracts/commands" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
     { name = "amphora-contracts-graph-runtime", editable = "../contracts/graph_runtime" },
+    { name = "amphora-contracts-planning", editable = "../contracts/planning" },
     { name = "amphora-contracts-runtime", editable = "../contracts/runtime" },
     { name = "amphora-contracts-supervision", editable = "../contracts/supervision" },
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },
@@ -364,9 +366,11 @@ requires-dist = [{ name = "pydantic", specifier = ">=2.12,<3" }]
 
 [[package]]
 name = "amphora-contracts-supervision"
-version = "0.1.0"
+version = "0.2.0"
 source = { editable = "../contracts/supervision" }
 dependencies = [
+    { name = "amphora-contracts-campaigns" },
+    { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-graph-runtime" },
     { name = "amphora-contracts-planning" },
@@ -375,6 +379,8 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "amphora-contracts-campaigns", editable = "../contracts/campaigns" },
+    { name = "amphora-contracts-commands", editable = "../contracts/commands" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
     { name = "amphora-contracts-graph-runtime", editable = "../contracts/graph_runtime" },
     { name = "amphora-contracts-planning", editable = "../contracts/planning" },
