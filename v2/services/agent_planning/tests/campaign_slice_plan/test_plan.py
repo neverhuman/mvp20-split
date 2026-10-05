@@ -51,7 +51,9 @@ def test_all_owner_lanes_keep_required_before_optional_and_do_not_overwrite_scie
             .with_registry(scan(), (exact,)).with_runtime(runtime(True)).with_graph(graph).with_retrieval(retrieval()))
     rows = [row.document() for row in plan.slices]
     assert [row['required'] for row in rows] == sorted((row['required'] for row in rows), reverse=True)
-    assert next(row for row in rows if row['lane'] == 'research')['payload']['findings']
+    research = next(row for row in rows if row['lane'] == 'research')['payload']
+    assert research['context']['findings']
+    assert research['selection'] == json.loads(context(omitted=('question',)).selection.canonical)
     assert next(row for row in rows if row['lane'] == 'registry_inventory')['payload']['status'] == 'registered'
     assert next(row for row in rows if row['lane'] == 'registry_exact')['payload']['status'] == 'revoked'
     assert next(row for row in rows if row['lane'] == 'runtime_schema')['payload']['status'] == 'unavailable'

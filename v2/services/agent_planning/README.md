@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-- Version: Planning0.47.0; public Planning0.8.0. BP-07.02 complete and audited;930 installed tests,39 process/replay stages and actual-owner recovery verified.
+- Version: Planning0.48.0; public Planning0.8.0. BP-07.02 complete and audited;930 installed tests,39 process/replay stages and actual-owner recovery verified.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Canonical progress: [BP-07.02](../../docs/Build%20Plans/BP-07/Completed/BP-07.02%20Reliable%20text%20decomposition.md).
 
@@ -73,3 +73,5 @@ Actual combined-owner context verified 2026-10-04 18:55:41:10 isolated Planning 
 [Campaign packet](src/amphora_agent_planning/campaign_packet/README.md) renders reviewed instructions separately from observed data and measures the entire required/optional envelope, omissions and consumed observations under the original fixture budget. No provider or journal authority.
 
 Campaign packet reconstruction preserves the literal Planning0.46 predecessor packet in a fresh isolated process. Exact-byte/plan binding and132-Artifact/exact-budget cases are covered; this is historical replay without renewed processing authority.
+
+[Campaign preparations](src/amphora_agent_planning/campaign_preparations/README.md) owns private byte-bound packet and candidate metadata records with strict readback; SQL journal/issuance integration is pending. Research slices retain the full original selection alongside its digest before persistence.

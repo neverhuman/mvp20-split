@@ -52,7 +52,7 @@ def verify(output):
     ):
         shutil.copytree(source, destination, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
     areas = [output / "tests/contracts", *(output / "tests/service" / area for area in
-        ("context", "campaign_context", "campaign_research_access", "research_view_access", "registry_access", "metadata_reads", "runtime_metadata", "campaign_data_access", "retrieval_access", "campaign_knowledge_access", "campaign_graph_context", "campaign_artifact_context", "campaign_research_context", "campaign_tool_context", "campaign_retrieval_context", "campaign_packet_profiles", "campaign_slice_plan", "campaign_packet", "graph_context", "proposals", "extraction", "source_access", "knowledge_access",
+        ("context", "campaign_context", "campaign_research_access", "research_view_access", "registry_access", "metadata_reads", "runtime_metadata", "campaign_data_access", "retrieval_access", "campaign_knowledge_access", "campaign_graph_context", "campaign_artifact_context", "campaign_research_context", "campaign_tool_context", "campaign_retrieval_context", "campaign_packet_profiles", "campaign_slice_plan", "campaign_packet", "campaign_preparations", "graph_context", "proposals", "extraction", "source_access", "knowledge_access",
          "research_access/test_transport.py"))]
     run([python, "-I", "-m", "pytest", *areas, "--import-mode=importlib", "--tb=short", "-q",
          "--junitxml=" + str(output / "tests.xml")])

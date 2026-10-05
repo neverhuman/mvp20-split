@@ -46,7 +46,8 @@ class CampaignSlicePlan:
         projection = CampaignResearchProjection.bind(context, views)
         value = json.loads(projection.canonical)
         rows = [ContextSlice._capture('research', {'selection': projection.context.selection.sha256},
-            value['research'], True, tuple(row for row in value['observations'] if row['kind'] == 'record'))]
+            {'format': 'planning-campaign-research-slice.v1', 'selection': json.loads(projection.context.selection.canonical),
+             'context': value['research']}, True, tuple(row for row in value['observations'] if row['kind'] == 'record'))]
         for page in projection.views:
             rows.append(ContextSlice._capture('research_view', json.loads(page.identity), json.loads(page.canonical), False,
                 ({'kind': 'view', 'identity': json.loads(page.identity), 'sha256': page.observation_sha256},)))
