@@ -1,0 +1,612 @@
+{
+  "task": "BP-07.03/B1.03d",
+  "status": "passed",
+  "verified_at": "2026-10-04 20:16:14",
+  "planning": "0.49.0",
+  "migration": "planning0012",
+  "scope": {
+    "tenant_id": "campaign-packet",
+    "project_id": "3c302fa721794ff8beabab0490f3b811"
+  },
+  "peer_versions": {
+    "registry": [
+      "amphora-capability-registry",
+      "0.1.0"
+    ],
+    "runtime": [
+      "amphora-campaign-runtime",
+      "0.20.2"
+    ],
+    "data": [
+      "amphora-data-artifacts",
+      "0.29.0"
+    ],
+    "knowledge": [
+      "amphora-knowledge",
+      "0.18.0"
+    ],
+    "research": [
+      "amphora-research",
+      "0.34.0"
+    ]
+  },
+  "owner_processes": {
+    "registry": [
+      32112,
+      28800,
+      30676
+    ],
+    "runtime": [
+      6260,
+      32632,
+      22300
+    ],
+    "data": [
+      6556,
+      860,
+      32196
+    ],
+    "knowledge": [
+      24780,
+      3916,
+      24444
+    ],
+    "research": [
+      13940,
+      30172,
+      29672
+    ]
+  },
+  "seed_processes": [
+    27264,
+    12000,
+    20704,
+    28024
+  ],
+  "results": {
+    "original": {
+      "pid": 29800,
+      "request_sha256": "bd0d46858e67f4d656f79acf240e341deb7258d18a064b1b76b044818065903d",
+      "artifact_failures": [],
+      "root_hashes": [
+        "ae54b1b9f85a52c249aceb4f7d0f2180c14872534091d00a581ab3db4ce977db",
+        "02e920810d918d00305028baa01dbc1c387b5b34cdc1f7c137b7c1af4423242a",
+        "b19fa425cfcf34b2be6e772189ba6f602ca1110da90b9a9883dc6fec4ff7890e",
+        "d2a914af1674e1f4274b612d4b829a256f33ffbd84f9f94051a267ba08d4bde9"
+      ],
+      "registry_count": 1,
+      "runtime_schemas": 2,
+      "runtime_failures": 0,
+      "graph_failure": null,
+      "graph_retracted": [],
+      "research_records": 3,
+      "research_gaps": [
+        "pending"
+      ],
+      "assessment_dispositions": [
+        "unknown"
+      ],
+      "view_failures": [
+        null,
+        null,
+        null
+      ],
+      "properties_value": {
+        "kind": "numeric",
+        "quantity": {
+          "value": "1.25",
+          "unit": "mg/L"
+        },
+        "uncertainty": null
+      },
+      "retrieval_failure": null,
+      "preparation_failure": null,
+      "missing_required": [],
+      "packet_sha256": "af4bf5651289db0253234d37dc9c7a29629fc910f4969e0c31ab809ba787aab4",
+      "packet_bytes": 63003,
+      "input_tokens": 63003,
+      "output_reserve": 1024,
+      "included_lanes": [
+        "artifact",
+        "graph",
+        "registry_exact",
+        "registry_inventory",
+        "registry_scan",
+        "research",
+        "research_view",
+        "retrieval",
+        "runtime",
+        "runtime_schema"
+      ],
+      "omissions": 0,
+      "consumed": 26,
+      "stored": {
+        "manifest_sha256": "d86a9340c8e71aaac00f7fe7c8d2c9e638bc17393ee9e32ae05d11cd1340294a",
+        "packet_sha256": "af4bf5651289db0253234d37dc9c7a29629fc910f4969e0c31ab809ba787aab4",
+        "registered_at": "2026-10-05T01:14:24.712392+00:00",
+        "plan_sha256": "86052a2bde061e108032e406ffd230abf21feaabc3f450f99c2688bd319ff3f0"
+      }
+    },
+    "partial": {
+      "pid": 10964,
+      "request_sha256": "1b754fb7cf46c19673bc5b609aef4c1338118f589b49e9ea8c5dcf34c96d5dd8",
+      "artifact_failures": [
+        "source_reference_unavailable"
+      ],
+      "root_hashes": [
+        "ae54b1b9f85a52c249aceb4f7d0f2180c14872534091d00a581ab3db4ce977db",
+        "02e920810d918d00305028baa01dbc1c387b5b34cdc1f7c137b7c1af4423242a",
+        "b19fa425cfcf34b2be6e772189ba6f602ca1110da90b9a9883dc6fec4ff7890e",
+        "d2a914af1674e1f4274b612d4b829a256f33ffbd84f9f94051a267ba08d4bde9"
+      ],
+      "registry_count": 1,
+      "runtime_schemas": 2,
+      "runtime_failures": 0,
+      "graph_failure": "knowledge_reference_unavailable",
+      "graph_retracted": [],
+      "research_records": 3,
+      "research_gaps": [
+        "pending"
+      ],
+      "assessment_dispositions": [
+        "unknown"
+      ],
+      "view_failures": [
+        null,
+        null,
+        null
+      ],
+      "properties_value": {
+        "kind": "numeric",
+        "quantity": {
+          "value": "1.25",
+          "unit": "mg/L"
+        },
+        "uncertainty": null
+      },
+      "retrieval_failure": null,
+      "preparation_failure": null,
+      "missing_required": [],
+      "packet_sha256": "1abab806bd604a7d4e0383ff89bd344e0100dc5b79388c3729aec2b25a936e66",
+      "packet_bytes": 54439,
+      "input_tokens": 54439,
+      "output_reserve": 1024,
+      "included_lanes": [
+        "artifact",
+        "graph",
+        "registry_exact",
+        "registry_inventory",
+        "registry_scan",
+        "research",
+        "research_view",
+        "retrieval",
+        "runtime",
+        "runtime_schema"
+      ],
+      "omissions": 0,
+      "consumed": 20,
+      "stored": {
+        "manifest_sha256": "96e508b6272859ea5891ffd65099e7260f68c006bf7dcb46db3cea44ec536c42",
+        "packet_sha256": "1abab806bd604a7d4e0383ff89bd344e0100dc5b79388c3729aec2b25a936e66",
+        "registered_at": "2026-10-05T01:14:27.691782+00:00",
+        "plan_sha256": "adcfdc1e8b96776160f4e936657ac4382f99cec7804d5ec073d285f2945fe60c"
+      }
+    },
+    "research-denied": {
+      "pid": 27800,
+      "request_sha256": "b952a2faeb1cddd1e5c40aad197be8e5d469ffc5fbe2ccbbc48e2d88327db854",
+      "artifact_failures": [],
+      "root_hashes": [
+        "ae54b1b9f85a52c249aceb4f7d0f2180c14872534091d00a581ab3db4ce977db",
+        "02e920810d918d00305028baa01dbc1c387b5b34cdc1f7c137b7c1af4423242a",
+        "b19fa425cfcf34b2be6e772189ba6f602ca1110da90b9a9883dc6fec4ff7890e",
+        "d2a914af1674e1f4274b612d4b829a256f33ffbd84f9f94051a267ba08d4bde9"
+      ],
+      "registry_count": 1,
+      "runtime_schemas": 2,
+      "runtime_failures": 0,
+      "graph_failure": null,
+      "graph_retracted": [],
+      "research_records": 0,
+      "research_gaps": [
+        "denied",
+        "denied",
+        "denied",
+        "denied"
+      ],
+      "assessment_dispositions": [],
+      "view_failures": [
+        "research_access_denied",
+        "research_access_denied",
+        "research_access_denied"
+      ],
+      "properties_value": null,
+      "retrieval_failure": null,
+      "preparation_failure": null,
+      "missing_required": [],
+      "packet_sha256": "cac080a826abce3bba6c70d6580c1fe56dd7ff665b163713c18dd7c13942f303",
+      "packet_bytes": 52150,
+      "input_tokens": 52150,
+      "output_reserve": 1024,
+      "included_lanes": [
+        "artifact",
+        "graph",
+        "registry_exact",
+        "registry_inventory",
+        "registry_scan",
+        "research",
+        "research_view",
+        "retrieval",
+        "runtime",
+        "runtime_schema"
+      ],
+      "omissions": 0,
+      "consumed": 26,
+      "stored": {
+        "manifest_sha256": "5582a20b1548284f351ff0b7e024bd1e508ed391dbffb3de259b8fa2027b0ba9",
+        "packet_sha256": "cac080a826abce3bba6c70d6580c1fe56dd7ff665b163713c18dd7c13942f303",
+        "registered_at": "2026-10-05T01:14:30.696293+00:00",
+        "plan_sha256": "32b811991e2ddefd8209bbee2b23abca1a8a9578a8497145cd4a3a2ddef9ade2"
+      }
+    },
+    "original-after-correction": {
+      "pid": 28456,
+      "request_sha256": "bd0d46858e67f4d656f79acf240e341deb7258d18a064b1b76b044818065903d",
+      "artifact_failures": [],
+      "root_hashes": [
+        "ae54b1b9f85a52c249aceb4f7d0f2180c14872534091d00a581ab3db4ce977db",
+        "02e920810d918d00305028baa01dbc1c387b5b34cdc1f7c137b7c1af4423242a",
+        "b19fa425cfcf34b2be6e772189ba6f602ca1110da90b9a9883dc6fec4ff7890e",
+        "d2a914af1674e1f4274b612d4b829a256f33ffbd84f9f94051a267ba08d4bde9"
+      ],
+      "registry_count": 1,
+      "runtime_schemas": 2,
+      "runtime_failures": 0,
+      "graph_failure": null,
+      "graph_retracted": [],
+      "research_records": 3,
+      "research_gaps": [
+        "pending"
+      ],
+      "assessment_dispositions": [
+        "unknown"
+      ],
+      "view_failures": [
+        null,
+        null,
+        null
+      ],
+      "properties_value": {
+        "kind": "numeric",
+        "quantity": {
+          "value": "1.25",
+          "unit": "mg/L"
+        },
+        "uncertainty": null
+      },
+      "retrieval_failure": null,
+      "preparation_failure": null,
+      "missing_required": [],
+      "packet_sha256": "af4bf5651289db0253234d37dc9c7a29629fc910f4969e0c31ab809ba787aab4",
+      "packet_bytes": 63003,
+      "input_tokens": 63003,
+      "output_reserve": 1024,
+      "included_lanes": [
+        "artifact",
+        "graph",
+        "registry_exact",
+        "registry_inventory",
+        "registry_scan",
+        "research",
+        "research_view",
+        "retrieval",
+        "runtime",
+        "runtime_schema"
+      ],
+      "omissions": 0,
+      "consumed": 26,
+      "stored": {
+        "manifest_sha256": "d86a9340c8e71aaac00f7fe7c8d2c9e638bc17393ee9e32ae05d11cd1340294a",
+        "packet_sha256": "af4bf5651289db0253234d37dc9c7a29629fc910f4969e0c31ab809ba787aab4",
+        "registered_at": "2026-10-05T01:14:24.712392+00:00",
+        "plan_sha256": "86052a2bde061e108032e406ffd230abf21feaabc3f450f99c2688bd319ff3f0"
+      }
+    },
+    "future": {
+      "pid": 27252,
+      "request_sha256": "a00f4d8db524d6447e2bfe3277ae5b5429a186442895c5c91cd9e4fb97d55c9e",
+      "artifact_failures": [],
+      "root_hashes": [
+        "ae54b1b9f85a52c249aceb4f7d0f2180c14872534091d00a581ab3db4ce977db",
+        "02e920810d918d00305028baa01dbc1c387b5b34cdc1f7c137b7c1af4423242a",
+        "b19fa425cfcf34b2be6e772189ba6f602ca1110da90b9a9883dc6fec4ff7890e",
+        "d2a914af1674e1f4274b612d4b829a256f33ffbd84f9f94051a267ba08d4bde9"
+      ],
+      "registry_count": 1,
+      "runtime_schemas": 2,
+      "runtime_failures": 0,
+      "graph_failure": null,
+      "graph_retracted": [
+        "claim"
+      ],
+      "research_records": 1,
+      "research_gaps": [],
+      "assessment_dispositions": [],
+      "view_failures": [
+        null,
+        null,
+        null
+      ],
+      "properties_value": {
+        "kind": "missing",
+        "reason": "report_corrected"
+      },
+      "retrieval_failure": null,
+      "preparation_failure": null,
+      "missing_required": [],
+      "packet_sha256": "d006a0f60265e505741c09edea8be24c07ed6708d9d4791d7aaeb39332053dba",
+      "packet_bytes": 56799,
+      "input_tokens": 56799,
+      "output_reserve": 1024,
+      "included_lanes": [
+        "artifact",
+        "graph",
+        "registry_exact",
+        "registry_inventory",
+        "registry_scan",
+        "research",
+        "research_view",
+        "retrieval",
+        "runtime",
+        "runtime_schema"
+      ],
+      "omissions": 0,
+      "consumed": 23,
+      "stored": {
+        "manifest_sha256": "94a97216efa5a59cd3cd81e1a2c84028064e5b87756c85259d5eff36f5cfd8b6",
+        "packet_sha256": "d006a0f60265e505741c09edea8be24c07ed6708d9d4791d7aaeb39332053dba",
+        "registered_at": "2026-10-05T01:14:44.297716+00:00",
+        "plan_sha256": "b660ec0ace5e622fe7858636d5fadb96c3256fef39005734f777639f93bc2240"
+      }
+    },
+    "owners-restarted": {
+      "pid": 17980,
+      "request_sha256": "bd0d46858e67f4d656f79acf240e341deb7258d18a064b1b76b044818065903d",
+      "artifact_failures": [],
+      "root_hashes": [
+        "ae54b1b9f85a52c249aceb4f7d0f2180c14872534091d00a581ab3db4ce977db",
+        "02e920810d918d00305028baa01dbc1c387b5b34cdc1f7c137b7c1af4423242a",
+        "b19fa425cfcf34b2be6e772189ba6f602ca1110da90b9a9883dc6fec4ff7890e",
+        "d2a914af1674e1f4274b612d4b829a256f33ffbd84f9f94051a267ba08d4bde9"
+      ],
+      "registry_count": 1,
+      "runtime_schemas": 2,
+      "runtime_failures": 0,
+      "graph_failure": null,
+      "graph_retracted": [],
+      "research_records": 3,
+      "research_gaps": [
+        "pending"
+      ],
+      "assessment_dispositions": [
+        "unknown"
+      ],
+      "view_failures": [
+        null,
+        null,
+        null
+      ],
+      "properties_value": {
+        "kind": "numeric",
+        "quantity": {
+          "value": "1.25",
+          "unit": "mg/L"
+        },
+        "uncertainty": null
+      },
+      "retrieval_failure": null,
+      "preparation_failure": null,
+      "missing_required": [],
+      "packet_sha256": "af4bf5651289db0253234d37dc9c7a29629fc910f4969e0c31ab809ba787aab4",
+      "packet_bytes": 63003,
+      "input_tokens": 63003,
+      "output_reserve": 1024,
+      "included_lanes": [
+        "artifact",
+        "graph",
+        "registry_exact",
+        "registry_inventory",
+        "registry_scan",
+        "research",
+        "research_view",
+        "retrieval",
+        "runtime",
+        "runtime_schema"
+      ],
+      "omissions": 0,
+      "consumed": 26,
+      "stored": {
+        "manifest_sha256": "d86a9340c8e71aaac00f7fe7c8d2c9e638bc17393ee9e32ae05d11cd1340294a",
+        "packet_sha256": "af4bf5651289db0253234d37dc9c7a29629fc910f4969e0c31ab809ba787aab4",
+        "registered_at": "2026-10-05T01:14:24.712392+00:00",
+        "plan_sha256": "86052a2bde061e108032e406ffd230abf21feaabc3f450f99c2688bd319ff3f0"
+      }
+    },
+    "processing-denied": {
+      "pid": 33576,
+      "request_sha256": "bd0d46858e67f4d656f79acf240e341deb7258d18a064b1b76b044818065903d",
+      "artifact_failures": [
+        "source_access_denied"
+      ],
+      "root_hashes": [
+        "ae54b1b9f85a52c249aceb4f7d0f2180c14872534091d00a581ab3db4ce977db",
+        "02e920810d918d00305028baa01dbc1c387b5b34cdc1f7c137b7c1af4423242a",
+        "b19fa425cfcf34b2be6e772189ba6f602ca1110da90b9a9883dc6fec4ff7890e",
+        "d2a914af1674e1f4274b612d4b829a256f33ffbd84f9f94051a267ba08d4bde9"
+      ],
+      "registry_count": 1,
+      "runtime_schemas": 2,
+      "runtime_failures": 0,
+      "graph_failure": null,
+      "graph_retracted": [],
+      "research_records": 3,
+      "research_gaps": [
+        "pending"
+      ],
+      "assessment_dispositions": [
+        "unknown"
+      ],
+      "view_failures": [
+        null,
+        null,
+        null
+      ],
+      "properties_value": {
+        "kind": "numeric",
+        "quantity": {
+          "value": "1.25",
+          "unit": "mg/L"
+        },
+        "uncertainty": null
+      },
+      "retrieval_failure": null,
+      "preparation_failure": "required_artifact_unavailable",
+      "missing_required": [
+        "ca40a4563f9e4b7199fe52725fb4a91b"
+      ],
+      "stored": {
+        "manifest_sha256": "d86a9340c8e71aaac00f7fe7c8d2c9e638bc17393ee9e32ae05d11cd1340294a",
+        "packet_sha256": "af4bf5651289db0253234d37dc9c7a29629fc910f4969e0c31ab809ba787aab4",
+        "registered_at": "2026-10-05T01:14:24.712392+00:00",
+        "plan_sha256": "86052a2bde061e108032e406ffd230abf21feaabc3f450f99c2688bd319ff3f0"
+      }
+    },
+    "historical-offline": {
+      "pid": 32192,
+      "stored": {
+        "manifest_sha256": "d86a9340c8e71aaac00f7fe7c8d2c9e638bc17393ee9e32ae05d11cd1340294a",
+        "packet_sha256": "af4bf5651289db0253234d37dc9c7a29629fc910f4969e0c31ab809ba787aab4",
+        "registered_at": "2026-10-05T01:14:24.712392+00:00",
+        "plan_sha256": "86052a2bde061e108032e406ffd230abf21feaabc3f450f99c2688bd319ff3f0"
+      }
+    },
+    "denial-after-restart": {
+      "pid": 13940,
+      "request_sha256": "bd0d46858e67f4d656f79acf240e341deb7258d18a064b1b76b044818065903d",
+      "artifact_failures": [
+        "source_access_denied"
+      ],
+      "root_hashes": [
+        "ae54b1b9f85a52c249aceb4f7d0f2180c14872534091d00a581ab3db4ce977db",
+        "02e920810d918d00305028baa01dbc1c387b5b34cdc1f7c137b7c1af4423242a",
+        "b19fa425cfcf34b2be6e772189ba6f602ca1110da90b9a9883dc6fec4ff7890e",
+        "d2a914af1674e1f4274b612d4b829a256f33ffbd84f9f94051a267ba08d4bde9"
+      ],
+      "registry_count": 1,
+      "runtime_schemas": 2,
+      "runtime_failures": 0,
+      "graph_failure": null,
+      "graph_retracted": [],
+      "research_records": 3,
+      "research_gaps": [
+        "pending"
+      ],
+      "assessment_dispositions": [
+        "unknown"
+      ],
+      "view_failures": [
+        null,
+        null,
+        null
+      ],
+      "properties_value": {
+        "kind": "numeric",
+        "quantity": {
+          "value": "1.25",
+          "unit": "mg/L"
+        },
+        "uncertainty": null
+      },
+      "retrieval_failure": null,
+      "preparation_failure": "required_artifact_unavailable",
+      "missing_required": [
+        "ca40a4563f9e4b7199fe52725fb4a91b"
+      ],
+      "stored": {
+        "manifest_sha256": "d86a9340c8e71aaac00f7fe7c8d2c9e638bc17393ee9e32ae05d11cd1340294a",
+        "packet_sha256": "af4bf5651289db0253234d37dc9c7a29629fc910f4969e0c31ab809ba787aab4",
+        "registered_at": "2026-10-05T01:14:24.712392+00:00",
+        "plan_sha256": "86052a2bde061e108032e406ffd230abf21feaabc3f450f99c2688bd319ff3f0"
+      }
+    },
+    "processing-restored": {
+      "pid": 33608,
+      "request_sha256": "bd0d46858e67f4d656f79acf240e341deb7258d18a064b1b76b044818065903d",
+      "artifact_failures": [],
+      "root_hashes": [
+        "ae54b1b9f85a52c249aceb4f7d0f2180c14872534091d00a581ab3db4ce977db",
+        "02e920810d918d00305028baa01dbc1c387b5b34cdc1f7c137b7c1af4423242a",
+        "b19fa425cfcf34b2be6e772189ba6f602ca1110da90b9a9883dc6fec4ff7890e",
+        "d2a914af1674e1f4274b612d4b829a256f33ffbd84f9f94051a267ba08d4bde9"
+      ],
+      "registry_count": 1,
+      "runtime_schemas": 2,
+      "runtime_failures": 0,
+      "graph_failure": null,
+      "graph_retracted": [],
+      "research_records": 3,
+      "research_gaps": [
+        "pending"
+      ],
+      "assessment_dispositions": [
+        "unknown"
+      ],
+      "view_failures": [
+        null,
+        null,
+        null
+      ],
+      "properties_value": {
+        "kind": "numeric",
+        "quantity": {
+          "value": "1.25",
+          "unit": "mg/L"
+        },
+        "uncertainty": null
+      },
+      "retrieval_failure": null,
+      "preparation_failure": null,
+      "missing_required": [],
+      "packet_sha256": "af4bf5651289db0253234d37dc9c7a29629fc910f4969e0c31ab809ba787aab4",
+      "packet_bytes": 63003,
+      "input_tokens": 63003,
+      "output_reserve": 1024,
+      "included_lanes": [
+        "artifact",
+        "graph",
+        "registry_exact",
+        "registry_inventory",
+        "registry_scan",
+        "research",
+        "research_view",
+        "retrieval",
+        "runtime",
+        "runtime_schema"
+      ],
+      "omissions": 0,
+      "consumed": 26,
+      "stored": {
+        "manifest_sha256": "d86a9340c8e71aaac00f7fe7c8d2c9e638bc17393ee9e32ae05d11cd1340294a",
+        "packet_sha256": "af4bf5651289db0253234d37dc9c7a29629fc910f4969e0c31ab809ba787aab4",
+        "registered_at": "2026-10-05T01:14:24.712392+00:00",
+        "plan_sha256": "86052a2bde061e108032e406ffd230abf21feaabc3f450f99c2688bd319ff3f0"
+      }
+    }
+  },
+  "limits": [
+    "Actual public peer reads and Data/Registry setup; isolated synthetic Research/Knowledge fixture seeding",
+    "Exact required roots, fixture tokenizer and owned journal; no live model, scientific validity or Runtime activation",
+    "Retained PostgreSQL/Qdrant; no migrations/reset/history rewrite; historical replay is not fresh processing permission",
+    "Two Planning installations of the same implementation, not a rewritten implementation"
+  ]
+}

@@ -17,7 +17,7 @@ def environment():
 
 class Owner:
     def __init__(self, python, module, config, env, token, output):
-        assert module in {'amphora_capability_registry', 'amphora_campaign_runtime', 'amphora_data_artifacts', 'amphora_knowledge'}
+        assert module in {'amphora_capability_registry', 'amphora_campaign_runtime', 'amphora_data_artifacts', 'amphora_knowledge', 'amphora_research'}
         with socket.socket() as sock:
             sock.bind(('127.0.0.1', 0))
             port = sock.getsockname()[1]
@@ -30,7 +30,7 @@ class Owner:
             while time.monotonic() < deadline:
                 assert self.process.poll() is None, module + ' exited; inspect owner log'
                 try:
-                    self.call('GET', '/health' if module == 'amphora_knowledge' else '/ready' if module == 'amphora_data_artifacts' else '/openapi.json')
+                    self.call('GET', '/health' if module in {'amphora_knowledge', 'amphora_research'} else '/ready' if module == 'amphora_data_artifacts' else '/openapi.json')
                     return
                 except (URLError, TimeoutError):
                     time.sleep(0.05)
