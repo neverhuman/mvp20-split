@@ -20,7 +20,7 @@ ROOT = Path(__file__).absolute().parents[1]
 
 
 def verify(installation, output, area='origin'):
-    areas = {'origin': ('campaign_handoff_storage',),
+    areas = {'origin': ('campaign_handoff_storage',), 'coordinator': ('campaign_dispatch_coordinator',),
              'selection': ('campaign_handoff_storage', 'campaign_dispatch_storage')}
     if area not in areas:
         raise ValueError('Unknown compiler SQL area')
@@ -79,6 +79,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--installation', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
-    parser.add_argument('--area', choices=['origin', 'selection'], default='origin')
+    parser.add_argument('--area', choices=['origin', 'selection', 'coordinator'], default='origin')
     options = parser.parse_args()
     verify(options.installation, options.output, options.area)
