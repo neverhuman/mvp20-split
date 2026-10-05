@@ -1,0 +1,258 @@
+{
+  "reviewed_at": "2026-10-05 16:32:49",
+  "unit": "BP-07.04/B1.04d.ii",
+  "manifest_sha256": "679569f90be1407049f3fc8b4de428a049f5ba86a2e8a97206d94cf9d27d2e53",
+  "output": ".test-results\\supervision-actual-owners-20261005-recovery",
+  "owner_versions": {
+    "runtime": "0.29.0",
+    "planning": "0.72.0",
+    "data": "0.29.0"
+  },
+  "process_stages": 11,
+  "owner_processes": {
+    "data": 2,
+    "planning": 2,
+    "runtime": 2
+  },
+  "post_commit_reply_losses": 2,
+  "boundary_tests": 12,
+  "boundary_seconds": 10.61,
+  "stages": {
+    "runtime-initial-bootstrap": {
+      "run_id": "c6ce765be7494309add180d45c7d8fbf",
+      "request_sha256": "a6eba33b0cd7c5b3d0cc09e2fb8de0344fa5b44720c69ee681016dbc5ef50f8b"
+    },
+    "runtime-initial-send_request": {
+      "delivery": "unknown"
+    },
+    "runtime-replacement-recover_request": {
+      "delivery": "recorded",
+      "receipt": {
+        "schema_version": "1",
+        "outcome": {
+          "status": "recorded",
+          "binding": {
+            "identity": {
+              "schema_version": "1",
+              "command_family": "planning.supervision.request",
+              "command_id": "request-1",
+              "scope": {
+                "tenant_id": "supervisor-owner-proof",
+                "project_id": "aa89c84cffcc4489b9519bf4a12bba81"
+              },
+              "actor_id": "fixture"
+            },
+            "request_sha256": "99e40d106dc5aef13cab9c4c57a354aa06d3e40eb852d84d5e503b9110102a48",
+            "operation_id": "2a54c2c12adc4dd8aa936e442bfe7eb7"
+          },
+          "committed": {
+            "kind": "request",
+            "object_id": "decision-1",
+            "revision": 1,
+            "content_sha256": "a6eba33b0cd7c5b3d0cc09e2fb8de0344fa5b44720c69ee681016dbc5ef50f8b"
+          }
+        }
+      }
+    },
+    "planning-initial-send_response": {
+      "response": "uncertain"
+    },
+    "planning-replacement-recover_response": {
+      "response_receipt": {
+        "schema_version": "1",
+        "outcome": {
+          "status": "recorded",
+          "binding": {
+            "identity": {
+              "schema_version": "1",
+              "command_family": "runtime.supervision.respond",
+              "command_id": "response-1",
+              "scope": {
+                "tenant_id": "supervisor-owner-proof",
+                "project_id": "aa89c84cffcc4489b9519bf4a12bba81"
+              },
+              "actor_id": "fixture"
+            },
+            "request_sha256": "ea6384de9a47963d1c3447be41b8a294f02090c8d246839d21b8349841c0b207",
+            "operation_id": "7caa2ea2688b4aab92ce265d4b6b733d"
+          },
+          "committed": {
+            "kind": "response",
+            "object_id": "response-1",
+            "revision": 1,
+            "content_sha256": "5e4e47276af3cb969139f0a252137b7ef899a88dfc7a059116d72e9373a2e6b2"
+          }
+        }
+      },
+      "cancellation_receipt": {
+        "schema_version": "1",
+        "outcome": {
+          "status": "recorded",
+          "binding": {
+            "identity": {
+              "schema_version": "1",
+              "command_family": "runtime.supervision.cancel",
+              "command_id": "cancel-1",
+              "scope": {
+                "tenant_id": "supervisor-owner-proof",
+                "project_id": "aa89c84cffcc4489b9519bf4a12bba81"
+              },
+              "actor_id": "fixture"
+            },
+            "request_sha256": "de96d87fa2350b8ce0ca991b8dd7bd036faab9f952dd020c6ca8659f8db61b03",
+            "operation_id": "aa7649cadfd94c049e0d72ea72c703af"
+          },
+          "committed": {
+            "kind": "cancellation",
+            "object_id": "cancel-1",
+            "revision": 1,
+            "content_sha256": "a2dd32f5614153f6d2af4ff1661c81a38877abc2a7ceeac50e823ebecb3ea3b1"
+          }
+        }
+      },
+      "request_recorded_at": "2026-10-05T21:28:42.100600+00:00",
+      "attempts": 0
+    },
+    "runtime-initial-inspect": {
+      "request_created": "2026-10-05T21:28:13.533591+00:00",
+      "intent_created": "2026-10-05T21:28:13.534537+00:00",
+      "response_created": "2026-10-05T21:28:54.487140+00:00",
+      "cancel_created": "2026-10-05T21:28:59.581391+00:00",
+      "response_digest": "5e4e47276af3cb969139f0a252137b7ef899a88dfc7a059116d72e9373a2e6b2",
+      "capture_digest": "25e73989a2a7e38da20c2351d42832c77c641cfa84bd00f22e593da0bd8b29ce",
+      "delivery_receipt": {
+        "schema_version": "1",
+        "outcome": {
+          "status": "recorded",
+          "binding": {
+            "identity": {
+              "schema_version": "1",
+              "command_family": "planning.supervision.request",
+              "command_id": "request-1",
+              "scope": {
+                "tenant_id": "supervisor-owner-proof",
+                "project_id": "aa89c84cffcc4489b9519bf4a12bba81"
+              },
+              "actor_id": "fixture"
+            },
+            "request_sha256": "99e40d106dc5aef13cab9c4c57a354aa06d3e40eb852d84d5e503b9110102a48",
+            "operation_id": "2a54c2c12adc4dd8aa936e442bfe7eb7"
+          },
+          "committed": {
+            "kind": "request",
+            "object_id": "decision-1",
+            "revision": 1,
+            "content_sha256": "a6eba33b0cd7c5b3d0cc09e2fb8de0344fa5b44720c69ee681016dbc5ef50f8b"
+          }
+        }
+      },
+      "run_status": "running"
+    },
+    "runtime-replacement-inspect": {
+      "request_created": "2026-10-05T21:28:13.533591+00:00",
+      "intent_created": "2026-10-05T21:28:13.534537+00:00",
+      "response_created": "2026-10-05T21:28:54.487140+00:00",
+      "cancel_created": "2026-10-05T21:28:59.581391+00:00",
+      "response_digest": "5e4e47276af3cb969139f0a252137b7ef899a88dfc7a059116d72e9373a2e6b2",
+      "capture_digest": "25e73989a2a7e38da20c2351d42832c77c641cfa84bd00f22e593da0bd8b29ce",
+      "delivery_receipt": {
+        "schema_version": "1",
+        "outcome": {
+          "status": "recorded",
+          "binding": {
+            "identity": {
+              "schema_version": "1",
+              "command_family": "planning.supervision.request",
+              "command_id": "request-1",
+              "scope": {
+                "tenant_id": "supervisor-owner-proof",
+                "project_id": "aa89c84cffcc4489b9519bf4a12bba81"
+              },
+              "actor_id": "fixture"
+            },
+            "request_sha256": "99e40d106dc5aef13cab9c4c57a354aa06d3e40eb852d84d5e503b9110102a48",
+            "operation_id": "2a54c2c12adc4dd8aa936e442bfe7eb7"
+          },
+          "committed": {
+            "kind": "request",
+            "object_id": "decision-1",
+            "revision": 1,
+            "content_sha256": "a6eba33b0cd7c5b3d0cc09e2fb8de0344fa5b44720c69ee681016dbc5ef50f8b"
+          }
+        }
+      },
+      "run_status": "running"
+    },
+    "planning-replacement-replay": {
+      "response_receipt": {
+        "schema_version": "1",
+        "outcome": {
+          "status": "recorded",
+          "binding": {
+            "identity": {
+              "schema_version": "1",
+              "command_family": "runtime.supervision.respond",
+              "command_id": "response-1",
+              "scope": {
+                "tenant_id": "supervisor-owner-proof",
+                "project_id": "aa89c84cffcc4489b9519bf4a12bba81"
+              },
+              "actor_id": "fixture"
+            },
+            "request_sha256": "ea6384de9a47963d1c3447be41b8a294f02090c8d246839d21b8349841c0b207",
+            "operation_id": "7caa2ea2688b4aab92ce265d4b6b733d"
+          },
+          "committed": {
+            "kind": "response",
+            "object_id": "response-1",
+            "revision": 1,
+            "content_sha256": "5e4e47276af3cb969139f0a252137b7ef899a88dfc7a059116d72e9373a2e6b2"
+          }
+        }
+      },
+      "cancellation_receipt": {
+        "schema_version": "1",
+        "outcome": {
+          "status": "recorded",
+          "binding": {
+            "identity": {
+              "schema_version": "1",
+              "command_family": "runtime.supervision.cancel",
+              "command_id": "cancel-1",
+              "scope": {
+                "tenant_id": "supervisor-owner-proof",
+                "project_id": "aa89c84cffcc4489b9519bf4a12bba81"
+              },
+              "actor_id": "fixture"
+            },
+            "request_sha256": "de96d87fa2350b8ce0ca991b8dd7bd036faab9f952dd020c6ca8659f8db61b03",
+            "operation_id": "aa7649cadfd94c049e0d72ea72c703af"
+          },
+          "committed": {
+            "kind": "cancellation",
+            "object_id": "cancel-1",
+            "revision": 1,
+            "content_sha256": "a2dd32f5614153f6d2af4ff1661c81a38877abc2a7ceeac50e823ebecb3ea3b1"
+          }
+        }
+      },
+      "request_recorded_at": "2026-10-05T21:28:42.100600+00:00",
+      "attempts": 0
+    },
+    "planning-replacement-fresh_denied": {
+      "fresh_response": "denied"
+    },
+    "planning-replacement-fresh_regranted": {
+      "fresh_response": "recorded"
+    },
+    "runtime-replacement-cleanup": {
+      "scoped_cleanup": true
+    }
+  },
+  "limits": [
+    "Synthetic capture and test-owned dispatch; no provider call or B2 execution winner",
+    "Actual installed owner HTTP and retained SQL; no reset or migration",
+    "Replacement of this implementation, not an independently authored rewrite"
+  ],
+  "next": "B2.01 admitted checkpoint policy"
+}

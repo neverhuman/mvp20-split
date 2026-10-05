@@ -1,5 +1,7 @@
 # Planning supervisor HTTP boundary
 
+- Current integration: B1.04d actual installed owner/restart proof passed; autonomous orchestration and decision effects remain B2.
+
 - Version: Planning0.71.0; public supervision0.2.0; SQL head0015.
 - Reviewed: `2026-10-05 15:46:25` (America/Chicago).
 - Owner: Agent Planning; implementation unit BP-07.04/B1.04b.i.
@@ -20,4 +22,7 @@ Whole-body middleware bounds cumulative bytes262144, total receive time10s and J
 
 Run amphora-planning (or python -m amphora_agent_planning.supervision_api), default127.0.0.1:8007; --host and --port are operator choices. AMPHORA_PLANNING_DATABASE_URL and AMPHORA_PLANNING_SUPERVISION_CREDENTIALS are environment-only configuration. Startup never migrates; install current0015 first and never run Planning<=0.69 migrators against it. Invalid startup configuration is redacted. Engine disposal occurs when the server returns; durable state is owned by supervision_intake, not this HTTP module. FastAPI/Uvicorn are declared private runtime dependencies; no private peer imports.
 
-Replacement must preserve original command bytes/profile/identity, bearer-to-principal selection, redacted bounded errors, read-only recovery and the absence of provider/execution effects. tests/supervision_api owns ASGI, actualSQL and separate CLI-host probes.39 combined API/intake cases pass (22 API,17 intake), including real HTTP request/receipt recovery;12 boundary checks pass. In-process coverage191 statements/50 branches86%; CLI subprocess lines are not included in that coverage and are tested separately. Untaken ASGI branches: persistence503, generic binding422 and second receive delegation. Actual separately installed multi-owner restart proof remains B1.04d; autonomous orchestration remains B2.
+Replacement must preserve original command bytes/profile/identity, bearer-to-principal selection, redacted bounded errors, read-only recovery and the absence of provider/execution effects. tests/supervision_api owns ASGI, actualSQL and separate CLI-host probes.39 combined API/intake cases pass (22 API,17 intake), including real HTTP request/receipt recovery;12 boundary checks pass. In-process coverage191 statements/50 branches86%; CLI subprocess lines are not included in that coverage and are tested separately. Untaken ASGI branches: persistence503, generic binding422 and second receive delegation. B1.04d separately installed multi-owner restart proof is verified below; autonomous orchestration remains B2.
+
+
+B1.04d actual-owner proof verified 2026-10-05 16:32:49: independently installed Runtime0.29/Planning0.72/Data0.29;11 process stages,6 owner hosts,2 commit-before-reply-drop losses. Exact original receipts/readbacks and Runtime capture/commit timestamps survive replacement; current Data process withdrawal blocks fresh response while original receipt replay remains available; explicit regrant permits new submission. Cancellation remains history and Planning attempts remain zero. Probe cleanup closes hosts/proxies and cancels only its unique run. Evidence: docs/Audits/Evidence/BP-07-Supervisor/Actual_Owners.json. Autonomous delivery/decision winners remain B2.

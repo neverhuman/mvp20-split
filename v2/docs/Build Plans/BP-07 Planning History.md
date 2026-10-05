@@ -822,3 +822,8 @@ Planning0.72 Runtime response/cancellation client verified22 owned +12 boundary 
 ## 2026-10-05 16:20:12 ? BP-07.04/B1.04d.i
 
 Four isolated Runtime0.29/Planning0.72 installations verified472 cases total, peer-private imports absent;38 Runtime +28 Planning historical migration files byte-identical.528schemas and520predecessor pins checked. First attempt alltests passed but schema rootglob failed; recursive relativepath enumeration fixed, fullnew-output rerun passed. No SQL/migration/actualownerhost claim. d twoequalunits i100%,ii0%;child24.22%,Build32.29%,parent64.84%. Next actual three-owner/restart recovery.
+
+
+## 2026-10-05 16:32:49 ? BP-07.04/B1 complete
+
+Actual three-owner proof passed11 stages,6 installed service processes and2 post-commit reply drops. Original request/response/cancellation receipts, Data capture and ownertimestamps survive replacement; source processing withdrawal denies fresh use while original replay stays readable; regrant allows newcommand. No providerattempt or graphdecision effect. FirstDatafixture placeholderhash corrected toregisteredobjectprofile; Planningprobe created_at correctedtorecorded_at; finalfreshscope proofpasses, allrunscopedcleanupverified.12 boundary10.61s,Ruffpassed. B1.04/B1 complete100%;child25%,Build33.33%,parent65%,13/20. Next B2.01 admission-pinned checkpoint policy, preserving legacyunsupervisedbehavior.

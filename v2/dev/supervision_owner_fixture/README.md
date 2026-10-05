@@ -1,0 +1,9 @@
+# Supervisor owner fault fixture
+
+- Test-only dev ownership; verified `2026-10-05 16:32:49` (America/Chicago), BP-07.04/B1.04d.ii.
+
+Owner starts only explicit installed local service interpreters, supplies credentials through environment, probes readiness and kills only its owned process on cleanup. Planning uses its supervisor CLI; Runtime/Data use their configured host CLI. Logs are local and never contain intentional credential dumps. No migration/reset or production owner imports in the orchestrator.
+
+LostReplyProxy forwards one bounded original HTTP request to the actual owner. It drops a selected reply only after a200 public recorded receipt arrives, retaining that exact receipt in test memory for comparison. Receipt queries/readbacks forward normally. It never fabricates success, retries or changes command bytes. Replacement changes the configured local target endpoint; original request identities remain unchanged. Sockets/threads close after the proof.
+
+verify_supervision_owners.py uses copied owner-local probes and isolated installations.11 process stages and6 actual owner hosts verify original request/outbox, actual Planning recorded receipt in Runtime delivery history, actual Data upload/capture, response/cancel receipts, two commit-before-drop losses, replacement timestamps/bytes, processing-rights withdrawal/history replay/fresh denial/regrant and scoped cleanup. Runtime probes receive only Runtime SQL; Planning probes only Planning SQL. Synthetic capture and test-owned guards are not an autonomous provider coordinator or execution winner. Runtime0.29/Planning0.72/Data0.29; current schemas already applied. First fixtures required correcting a placeholder schema hash to Data's registered JSON-object profile and a probe column to Planning recorded_at; no production validation was weakened.

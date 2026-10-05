@@ -1,5 +1,7 @@
 # Runtime supervisor recording API
 
+- Current integration: B1.04d actual installed owner/restart proof passed; autonomous orchestration and decision effects remain B2.
+
 - Implemented: Runtime0.28.0, SQL runtime0020; reviewed `2026-10-05 15:59:09` (America/Chicago).
 - Owner: Campaign Runtime; BP-07.04/B1.04b.iii. No accepted execution winner.
 
@@ -19,4 +21,7 @@ Host JSON opts in with supervision:{} for diagnostics/cancellations, or supervis
 
 ## Replacement and verification
 
-Keep routes, original command profiles/identities, receipt-before-fetch order, actor/scope checks, redaction, opt-in activation and no execution effects. Existing legacy Runtime API/host tests remain applicable. tests/supervision_api owns actualSQL/API tests with deterministic capture-failure probes; exact Data wire protocol is independently tested in supervision_capture.21 scoped API/response/cancellation/legacy host/body cases15.77s;12 boundary checks10.41s.116 statements8 branches99%, only capture-less Host configuration branch not directly exercised. Actual installed multi-owner restart/lost-reply evidence remains B1.04d; live model calls remain separately gated.
+Keep routes, original command profiles/identities, receipt-before-fetch order, actor/scope checks, redaction, opt-in activation and no execution effects. Existing legacy Runtime API/host tests remain applicable. tests/supervision_api owns actualSQL/API tests with deterministic capture-failure probes; exact Data wire protocol is independently tested in supervision_capture.21 scoped API/response/cancellation/legacy host/body cases15.77s;12 boundary checks10.41s.116 statements8 branches99%, only capture-less Host configuration branch not directly exercised. B1.04d installed multi-owner restart/lost-reply evidence is verified below; live model calls remain separately gated.
+
+
+B1.04d actual-owner proof verified 2026-10-05 16:32:49: independently installed Runtime0.29/Planning0.72/Data0.29;11 process stages,6 owner hosts,2 commit-before-reply-drop losses. Exact original receipts/readbacks and Runtime capture/commit timestamps survive replacement; current Data process withdrawal blocks fresh response while original receipt replay remains available; explicit regrant permits new submission. Cancellation remains history and Planning attempts remain zero. Probe cleanup closes hosts/proxies and cancels only its unique run. Evidence: docs/Audits/Evidence/BP-07-Supervisor/Actual_Owners.json. Autonomous delivery/decision winners remain B2.

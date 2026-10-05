@@ -1,3 +1,6 @@
 # Planning supervisor client tests
 
 Owner: supervision_client. Run python -m pytest -c dev/pyproject.toml services/agent_planning/tests/supervision_client. Real loopback HTTP peers and public literal response/cancel fixtures only; no Runtime-private import, SQL or paid model. Fixture sockets/threads terminate after probes. Independent expected receipt construction verifies wire identities, hashes, commits and readbacks. Covers both closed families, pending/recorded/rejected history, terminal immutability, exact replay recovery after lost replies, no retries/redirects, status distinctions, guards at both send stages and bounded response failures. Actual installed owners are B1.04d. Source README records coverage limits.
+
+
+owner_worker.py is an explicit installed-process acceptance probe, not ordinary test collection. dev/verify_supervision_owners.py copies and invokes it with --confcutdir and own-service SQL/environment only. Current proof11 stages/6 actual service processes verifies original HTTP recording, two post-commit lost replies, replacement history, current processing-rights denial/regrant and scoped cleanup. Runtime checks byte/timestamp/run-status invariants; Planning checks original intake and zero provider attempts. No migrations/reset or peer-private imports.

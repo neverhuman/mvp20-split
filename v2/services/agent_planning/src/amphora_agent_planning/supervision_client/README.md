@@ -1,5 +1,7 @@
 # Planning-owned Runtime supervisor client
 
+- Current integration: B1.04d actual installed owner/restart proof passed; autonomous orchestration and decision effects remain B2.
+
 - Version: Planning0.72.0; reviewed `2026-10-05 16:09:00` (America/Chicago). BP-07.04/B1.04c.ii.
 
 RuntimeClient(actor_id,scope,endpoint,token) accepts only original numeric-v2 runtime.supervision.respond and runtime.supervision.cancel commands matching configured actor/scope. submit(command,window,guard=...) performs exactly one effectful POST. receipt(command,window,previous=...) performs a read-only original-command POST. readback(command,observation,window) fetches the exact response or cancellation. Calls remain separate and explicit; no retry, automatic resubmission, model call, execution decision or accounting refund.
@@ -10,4 +12,7 @@ Every write requires a guard before connection and immediately before send, foll
 
 RecordingObservation owns exact receipt binding: full original identity/request hash, stable operation, typed commit kind/id/revision/content hash and original response/cancellation readback. A recorded receipt is awaiting_readback until the exact public record is verified; verified history survives another identical receipt without a fresh read. Previous terminal receipts cannot change. These observations prove recording only, never a Runtime winner or scientific validity.
 
-Replacement must preserve exact bytes/failures/bounds, method separation and lack of hidden retries.22 owned real-HTTP protocol cases plus12 boundary cases pass11.39s.202 statements40 branches96%; receipt/client/window100%,transport92% with socket-expiry cleanup, write404 and empty-read paths not all reached. Tests include both command families, lost reply/original receipt recovery, changed operation/readback, terminal immutability, no readback for rejection, preconnect guard and lease loss after connection before send. Actual installed Runtime/Data owner and restart evidence remains B1.04d; autonomous orchestration B2.
+Replacement must preserve exact bytes/failures/bounds, method separation and lack of hidden retries.22 owned real-HTTP protocol cases plus12 boundary cases pass11.39s.202 statements40 branches96%; receipt/client/window100%,transport92% with socket-expiry cleanup, write404 and empty-read paths not all reached. Tests include both command families, lost reply/original receipt recovery, changed operation/readback, terminal immutability, no readback for rejection, preconnect guard and lease loss after connection before send. B1.04d actual Runtime/Data owner and restart evidence is verified below; autonomous orchestration B2.
+
+
+B1.04d actual-owner proof verified 2026-10-05 16:32:49: independently installed Runtime0.29/Planning0.72/Data0.29;11 process stages,6 owner hosts,2 commit-before-reply-drop losses. Exact original receipts/readbacks and Runtime capture/commit timestamps survive replacement; current Data process withdrawal blocks fresh response while original receipt replay remains available; explicit regrant permits new submission. Cancellation remains history and Planning attempts remain zero. Probe cleanup closes hosts/proxies and cancels only its unique run. Evidence: docs/Audits/Evidence/BP-07-Supervisor/Actual_Owners.json. Autonomous delivery/decision winners remain B2.

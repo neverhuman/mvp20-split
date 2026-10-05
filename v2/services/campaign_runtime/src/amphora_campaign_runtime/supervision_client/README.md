@@ -1,5 +1,7 @@
 # Runtime-owned Planning client
 
+- Current integration: B1.04d actual installed owner/restart proof passed; autonomous orchestration and decision effects remain B2.
+
 - Version: Runtime0.29.0; reviewed `2026-10-05 16:04:54` (America/Chicago); BP-07.04/B1.04c.i.
 
 PlanningClient(actor_id,scope,endpoint,token) accepts only exact numeric-v2 planning.supervision.request commands with the configured actor/scope. submit(command,window,guard=...) performs one effectful POST. receipt(command,window,previous=...) performs a read-only POST with the complete original command. readback(command,observation,window) performs one exact request GET. No method automatically calls another, retries, changes command identity, issues a provider call or accepts a graph decision.
@@ -10,4 +12,7 @@ Writes require a callable guard before connect and immediately before send. Call
 
 SupervisionReceiptObservation validates original full command identity/hash, stable owner operation, exact typed commit and original readback. Recorded receipts remain awaiting_readback until exact owner data is verified. Previous terminal receipts cannot change. No scientific or execution authority follows from recording success.
 
-Tests/supervision_client uses actual loopback HTTP peers for exact wire/auth/routes, lost replies without resend, malformed/altered receipts, changed operations/readbacks, guards, read-status distinctions, byte/deadline limits and invalid configuration.64 client/receipt cases5.61s;12 boundary8.44s.146 statements30 branches94%; socket-expiry cleanup, write404, empty read and already-expired-window branches not all directly reached. Actual installed Planning owner and durable delivery orchestration remain B1.04d/B2. Replacement must preserve method separation, exact bytes, bounds, failure distinctions and no automatic retry.
+Tests/supervision_client uses actual loopback HTTP peers for exact wire/auth/routes, lost replies without resend, malformed/altered receipts, changed operations/readbacks, guards, read-status distinctions, byte/deadline limits and invalid configuration.64 client/receipt cases5.61s;12 boundary8.44s.146 statements30 branches94%; socket-expiry cleanup, write404, empty read and already-expired-window branches not all directly reached. Actual installed Planning owner is verified under B1.04d; durable autonomous orchestration remains B2. Replacement must preserve method separation, exact bytes, bounds, failure distinctions and no automatic retry.
+
+
+B1.04d actual-owner proof verified 2026-10-05 16:32:49: independently installed Runtime0.29/Planning0.72/Data0.29;11 process stages,6 owner hosts,2 commit-before-reply-drop losses. Exact original receipts/readbacks and Runtime capture/commit timestamps survive replacement; current Data process withdrawal blocks fresh response while original receipt replay remains available; explicit regrant permits new submission. Cancellation remains history and Planning attempts remain zero. Probe cleanup closes hosts/proxies and cancels only its unique run. Evidence: docs/Audits/Evidence/BP-07-Supervisor/Actual_Owners.json. Autonomous delivery/decision winners remain B2.

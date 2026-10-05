@@ -1,5 +1,7 @@
 # Runtime supervisor capture reader
 
+- Current integration: B1.04d actual installed owner/restart proof passed; autonomous orchestration and decision effects remain B2.
+
 - Implemented: Runtime0.27.0; reviewed `2026-10-05 15:53:34` (America/Chicago).
 - Owner: Campaign Runtime; BP-07.04/B1.04b.ii.
 
@@ -9,4 +11,4 @@ Only explicitly configured http://127.0.0.1:port endpoints, no credentials/path/
 
 No SQL, request authorization, provider call, graph decision or retained cache. The HTTP recording adapter must validate the original request/actor/scope and recover stored receipts before calling this fresh-processing reader. B1.04b.iii owns that ordering. Exact returned bytes are retained by ResponseJournal; future history recovery does not refetch Data.
 
-Replacement must preserve these bounds, byte equality and owner authorization. tests/supervision_capture uses a real local HTTP peer for success, status failures, altered metadata/content, size limits and slow bodies.22 cases; combined reader/cancellation/journal/persistence96 cases24.31s;12 boundary cases11.38s. Capture reader117 statements20 branches93%; untaken timing/error cleanup branches, explicit already-expired-window and nonfinite-metadata branch remain gaps. Cancellation module87 statements10 branches100%. No actual Data installation or independent replacement claim here; B1.04d supplies actual-owner integration.
+Replacement must preserve these bounds, byte equality and owner authorization. tests/supervision_capture uses a real local HTTP peer for success, status failures, altered metadata/content, size limits and slow bodies.22 cases; combined reader/cancellation/journal/persistence96 cases24.31s;12 boundary cases11.38s. Capture reader117 statements20 branches93%; untaken timing/error cleanup branches, explicit already-expired-window and nonfinite-metadata branch remain gaps. Cancellation module87 statements10 branches100%. B1.04d now verifies actual Data integration and owner replacement; scoped client coverage figures above remain unchanged.
