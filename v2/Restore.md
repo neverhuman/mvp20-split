@@ -1,14 +1,14 @@
 # Restore
 
-Refreshed `2026-10-05 12:54:52` (America/Chicago). **Read first after compression.**
+Refreshed `2026-10-05 13:04:28` (America/Chicago). **Read first after compression.**
 
 ## Resume
 
-B2.03d is VERIFIED. Commit/push the pending owner/crash acceptance milestone, then immediately start **BP-07.03/B3.01 QEV-09/10/11 and partial-evidence policy**. No running verification or owned hosts. No owner decision blocks deterministic work.
+B3.01 VERIFIED; commit/push next, then **BP-07.03/B3.02 rights/staleness/hostile/recovery cases**.7 scoped7.13s and405 independent semantic cases155.209s passed (sessions45352/32601). No running verification or owned hosts. No owner decision blocks deterministic work.
 
-Planning/dev0.69, public Planning0.9;510 public schemas unchanged; no production change in c.iii/d. Latest pushed608e504a (SQL/HTTP recovery),70826542 (bounded progression). Earlier68e7621f dispatcher andea357a69 approved declarationv2 correction.
+Planning/dev0.69, public Planning0.9;510 public schemas unchanged; no production change in c.iii/d. Previous pushed608e504a (SQL/HTTP recovery),70826542 (bounded progression). Earlier68e7621f dispatcher andea357a69 approved declarationv2 correction.
 
-Canonical BP-07.03 **50%**, Build66.67%, Acceptance0%,2/4 closed; parentBP-07 **50%**,10/20 closed. B1/B2=100%; B2.03a/b/c/d100%. B3/V1=0%. B3 three equal milestones .01/.02/.03; V1 two equal milestones .01/.02. Use unrounded fractions, round display only.
+Canonical BP-07.03 **58.33%**, Build77.78%, Acceptance0%,2/4 closed; parentBP-07 **51.67%**,10/20 closed. B1/B2=100%; B2.03a/b/c/d100%. B3=33.3333% (.01=100%,.02/.03=0%);V1=0%. B3 three equal milestones .01/.02/.03; V1 two equal milestones .01/.02. Use unrounded fractions, round display only.
 
 ## Latest proof
 
@@ -23,6 +23,10 @@ First owner harness66983 failed solely on strict launcher/worker PID assertion; 
 Prior c.iii Compiler_HTTP_Recovery.json:8 scoped68.34s,8 installed SQL/HTTP73.846s,198 isolated57.786s,12 boundaries16.84s. Installation `.test-results/planning-http-independent-20261005/environment/Scripts/python.exe`; SQL `.test-results/planning-http-installed-20261005`. Actual clients+SQL with protocol stubs, distinct from d actual owners. c.ii progression67/68 statements,18/18branches; later cleanup oracle executes missing path but no remeasured100% claim.
 
 ## Next bounded task
+
+Completed B3.01 independent semantic verification; dev/verify_planning_context.py now supports semantic scope (compiler areas+campaign_proposals+campaign_semantic). Source README updated ownership and explicit method/schema non-equivalence. Ruff passed. Sync/commit/push pending. B3.01 earned child58.33%,Build77.78%,parent51.67%; B3=33.3333%, .02/.03 remain0%,closedcounts2/4 and10/20 unchanged.
+
+Next B3.02: existing granular hostile/missing/overflow/staleness/SQLHTTP recovery tests have evidence. New actual-owner source-rights revocation after original consumption is a distinct missing integration oracle: extend owned dispatch fixture with bounded revocation scenario using public Data /v1/acquisition/rights for packet-roots revision2 revoked/allowed_uses[], supersedes1; assert new operation input_unavailable and dispatches0, Runtime receipt absent, original selection/history unchanged; revision3 granted restores future use without repinning. SourceRightsRevision is contracts/evidence/rights.py. Existing d fixture only denies credentials, explicitly not real source revocation. Keep crash scenario evidence intact and granular.
 
 B3.01: physical design defines QEV-09 compatible bounded tool proposal tied to missing measurement/selected need/expected evidence; QEV-10 irrelevant or scientifically ineligible tool rejected despite similar text; QEV-11 selected changed criteria detected, unrelated changes ignored. Preserve selected unresolved weaknesses for future campaigns; no model self-certifies scientific satisfaction. Read owning child and Physical design/B3 section, then source READMEs. Existing tests cover much of this separately; build named combined scenarios with explicit expected results, do not duplicate trivial implementation tests.
 

@@ -57,9 +57,11 @@ def verify(output, scope='context'):
     if scope == 'proposals':
         areas = [output / 'tests/contracts', *(output / 'tests/service' / area for area in
                  ('campaign_dispatch', 'campaign_handoff', 'campaign_refresh', 'campaign_eligibility', 'campaign_exchanges', 'campaign_authoring', 'campaign_decisions', 'campaign_proposals', 'campaign_output', 'providers', 'persistence/test_records.py'))]
-    if scope == 'compiler':
+    if scope in {'compiler', 'semantic'}:
         areas = [output / 'tests/contracts', *(output / 'tests/service' / area for area in
                  ('campaign_decisions', 'campaign_authoring', 'campaign_exchanges', 'campaign_eligibility', 'campaign_refresh', 'campaign_handoff', 'campaign_dispatch'))]
+        if scope == 'semantic':
+            areas.extend(output / 'tests/service' / area for area in ('campaign_proposals', 'campaign_semantic'))
     if scope == 'dispatch':
         areas = [output / 'tests/contracts', *(output / 'tests/service' / area for area in
                  ('campaign_dispatch', 'campaign_authoring', 'campaign_eligibility'))]
@@ -89,6 +91,6 @@ def verify(output, scope='context'):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument('--scope', choices=['context', 'proposals', 'compiler', 'dispatch'], default='context')
+    parser.add_argument('--scope', choices=['context', 'proposals', 'compiler', 'dispatch', 'semantic'], default='context')
     args = parser.parse_args()
     verify(args.output, args.scope)
