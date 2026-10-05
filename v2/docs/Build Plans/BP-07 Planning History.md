@@ -762,3 +762,8 @@ Independent public supervision0.1 package avoids dependency cycles; Runtime0.22 
 ## 2026-10-05 14:21:10 - BP-07.04/B1.02b response and receipt profiles
 
 Runtime0.23/public supervision0.2 separates captured Planning observations, recorded command receipts and owner decision readbacks.129 combined cases11.81s cover139 response statements30branches100%;42 public cases3s cover136statements6branches100%;78 boundary/legacy cases10.66s.528schemafiles preserve520predecessors. Literal Planning0.69 outputs and shared-encoder command vectors retained. New parser guard rejects implicit legacy fallback; same recorded receipt preserves/revalidates prior readback; direct public Planning dependency explicitly declared. No SQL/HTTP/accepted decision effect claim. B1.02a/b100%,c0%;child10.42%,Build13.89%,Acceptance0%,parent62.08%,12/20. Next independent combined boundary proof.
+
+
+## 2026-10-05 14:28:23 - BP-07.04/B1.02 independent compatibility
+
+Two isolated current Runtime/public-supervision wheel installations pass265 initial and105 replacement tests. No private peer implementation is installed.162 prior Runtime production/migration files and520 predecessor schema bytes remain unchanged. Seven literal request/command/capture fixtures verified through Git checkout filters with core.autocrlf=true; added narrowly scoped LF attributes after review caught fresh-Windows-checkout risk. No v1 edits. Helper import ordering corrected after run; behavior unchanged. No SQL/migration/owner-host/accepted-effect claim. B1.02a/b/c100%;B1=50%,child12.5%,Build16.67%,Acceptance0%,parent62.5%,12/20. Next B1.03 durable journal/outbox.

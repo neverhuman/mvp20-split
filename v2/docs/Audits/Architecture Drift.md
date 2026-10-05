@@ -1,10 +1,10 @@
 # Architecture Drift
 
-- Status: BP-06 and BP-07.01/.02/.03 closed/audited; BP-07.04/B1.02 active.
-- Last refreshed: `2026-10-05 13:49:47` (America/Chicago).
+- Status: BP-06 and BP-07.01/.02/.03 closed/audited; BP-07.04/B1.03 active.
+- Last refreshed: `2026-10-05 14:28:23` (America/Chicago).
 - Scope: unresolved v2 design/implementation alignment and scoped successor boundaries.
 - Active focus: Runtime-owned durable supervisor and decision authority; completed campaign compiler scope remains closed.
-- Next gate: BP-07.04/B1.02 additive public supervisor contracts; pure scope/read-set boundary verified.
+- Next gate: BP-07.04/B1.03 durable supervisor records/outbox; public exchange and replacement verified.
 
 ## Active Findings
 

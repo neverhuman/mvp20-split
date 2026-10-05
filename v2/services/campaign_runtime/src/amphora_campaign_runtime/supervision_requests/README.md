@@ -1,6 +1,6 @@
 # Runtime supervisor request binding
 
-- Owner: Runtime BP-07.04/B1.02a; Runtime0.22;62 scoped/wire/predecessor/publication cases pass;54 statements/4 branches100%. Independent combined exchange proof remains B1.02c.
+- Owner: Runtime BP-07.04/B1.02a; Runtime0.22;62 scoped/wire/predecessor/publication cases pass;54 statements/4 branches100%. Independent combined exchange proof passed B1.02c:265 initial/105 replacement cases,162 unchanged predecessor Runtime files; no SQL or accepted-effect claim.
 - Architecture: [Graph Runner](../../../../../docs/Architecture/System/Graph_Runner.md).
 - Public transport: contracts/supervision; [exchange design](../../../../../docs/Build%20Plans/BP-07/BP-07.04%20Supervisor%20exchange%20contracts.md).
 
