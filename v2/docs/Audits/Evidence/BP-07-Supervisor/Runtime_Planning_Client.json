@@ -1,0 +1,19 @@
+{
+  "reviewed_at": "2026-10-05 16:04:54",
+  "unit": "BP-07.04/B1.04c.i",
+  "runtime_version": "0.29.0",
+  "tests": {
+    "client_and_receipts": 64,
+    "seconds": 5.61,
+    "boundary": 12,
+    "boundary_seconds": 8.44
+  },
+  "coverage": {
+    "statements": 146,
+    "branches": 30,
+    "percent": 94,
+    "gaps": "socket cleanup, write404, empty-read and already-expired-window paths"
+  },
+  "next": "B1.04c.ii Planning Runtime client",
+  "excluded": "Actual installed owner and autonomous dispatch; no model calls"
+}

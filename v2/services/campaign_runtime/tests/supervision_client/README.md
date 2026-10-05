@@ -1,0 +1,3 @@
+# Runtime supervisor client tests
+
+Owner: supervision_client. Run python -m pytest -c dev/pyproject.toml services/campaign_runtime/tests/supervision_client. Real loopback HTTP peer, public synthetic requests/receipts, no SQL or model calls. Sockets/threads shut down after each probe. Covers original command bytes and configured credentials, separate submit/receipt/readback, lost reply with no repost, status distinctions/no redirects, altered receipt/commit/operation/readback, guarded send and response time/bytes. Existing supervision_responses suite supplies pure receipt-binding coverage. Actual separately installed Planning owner is B1.04d, not this peer fixture.

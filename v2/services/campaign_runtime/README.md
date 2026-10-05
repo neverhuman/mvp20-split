@@ -1,6 +1,8 @@
 # Campaign Runtime
 
-Current package0.28.0 adds opt-in [supervisor recording HTTP](src/amphora_campaign_runtime/supervision_api/README.md) and configured host activation. Stored original receipts are recovered before fresh Data processing; changed pending commands reject before fetch.21 scoped and12 boundary cases pass;116 statements8 branches99%. Runtime0020 unchanged. No decision effects or provider calls; bounded peer clients are next.
+Current package0.29.0 adds [bounded Planning request client](src/amphora_campaign_runtime/supervision_client/README.md). Separate guarded submission, original receipt lookup and exact readback preserve uncertain-write semantics with no automatic retry.64 client/receipt and12 boundary cases pass;146 statements30 branches94%. No migration/schema change or autonomous dispatch claim.
+
+Predecessor0.28.0 adds opt-in [supervisor recording HTTP](src/amphora_campaign_runtime/supervision_api/README.md) and configured host activation. Stored original receipts are recovered before fresh Data processing; changed pending commands reject before fetch.21 scoped and12 boundary cases pass;116 statements8 branches99%. Runtime0020 unchanged. No decision effects or provider calls; bounded peer clients are next.
 
 Predecessor0.27.0 adds [exact authorized capture reads](src/amphora_campaign_runtime/supervision_capture/README.md) and immutable cancellation history in supervision_journal, forward runtime0020.96 scoped capture/journal/persistence cases and12 boundary checks pass. Cancellation recording does not alter execution. HTTP integration is the next bounded task.
 

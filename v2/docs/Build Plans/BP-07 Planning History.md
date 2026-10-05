@@ -807,3 +807,8 @@ Runtime0.27/runtime0020 bounded exact capture reader and immutable cancellation 
 ## 2026-10-05 15:59:09 ? BP-07.04/B1.04b.iii
 
 Runtime0.28 opt-in authenticated supervisor HTTP/Host configuration verified21 scoped cases15.77s,12 boundary10.41s;116 statements8branches99%. Original receipt recovery bypasses fresh capture rights recheck; fresh submissions remain denied on withdrawal. Pending commands now validate original bytes before returning no receipt, preventing changed retries from triggering capture reads. Existing migration0020/public schemas untouched. Child21.88%,Build29.17%,parent64.38%;b complete; next bounded owner clients c.
+
+
+## 2026-10-05 16:04:54 ? BP-07.04/B1.04c.i
+
+Runtime0.29 bounded Planning client verified64 client/receipt cases5.61s +12 boundary8.44s;146 statements30branches94%. Separate guarded submit/original receipt/exact readback, lost reply no retry, strict command/operation/commit binding and bounded peer failures. c refinedtwoequalownerclients;i100%,ii0%;child22.66%,Build30.21%,parent64.53%. No migrations or public schema changes.
