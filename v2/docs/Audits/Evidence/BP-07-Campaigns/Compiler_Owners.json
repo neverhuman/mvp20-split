@@ -1,0 +1,45 @@
+{
+  "verified_at": "2026-10-04 23:14:14",
+  "status": "passed",
+  "versions": {
+    "planning": [
+      "amphora-agent-planning",
+      "0.61.0"
+    ],
+    "runtime": [
+      "amphora-campaign-runtime",
+      "0.20.2"
+    ],
+    "registry": [
+      "amphora-capability-registry",
+      "0.1.0"
+    ]
+  },
+  "scope": {
+    "tenant_id": "compiler-owners",
+    "project_id": "a39839d74a904b7eb13fff658203611d"
+  },
+  "stages": [
+    "original",
+    "restarted",
+    "drained"
+  ],
+  "owner_processes": {
+    "registry": [
+      19316,
+      16256
+    ],
+    "runtime": [
+      18268,
+      8636
+    ]
+  },
+  "limits": [
+    "Synthetic test-owned primitive dispatch; no durable production coordinator or provider call",
+    "Scalar campaign authoring and separate exact tool eligibility; no combined tool campaign execution",
+    "No Data/Research/Knowledge revalidation claim; prior owner proofs remain separate",
+    "Restart of installed owners, not an independent implementation rewrite; no migrations or resets"
+  ],
+  "installation_manifest": ".test-results/planning-compiler-preparation-independent-20261004/manifest.json",
+  "owner_manifest": ".test-results/planning-compiler-owners-v3-20261004/manifest.json"
+}

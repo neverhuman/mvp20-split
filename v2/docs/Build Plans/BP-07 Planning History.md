@@ -686,3 +686,8 @@ B2.02c.iii verified 2026-10-04 23:08:46: Planning0.61/public0.9 stored origin an
 
 Tracker reconciliation: corrected stale parent P3 phase mirror (31.25%/41.67%) to canonical child39.58%/Build52.78%; no additional implementation credit.
 | 2026-10-04 19:03:06 | BP-07.03/B1.03a.i | Planning0.40 graph projection;41 focused/651 installed,100% module coverage; child12.89%,parent42.58%. |
+
+
+B2.02d verified 2026-10-04 23:14:22: installed Planning0.61 with actual Runtime0.20.2/Registry0.1;three worker stages/four owner processes. Numeric1.25 save/compile and missing-schema structural_invalid retained; exact command/receipt/readback replay survives owner restart; drained tool rejects a new eligibility check without rewriting historical candidate receipt. No admission, actual worker capacity, combined tool campaign, provider or science claim. B2.02=100%,B2=66.6667%,child41.67%,Build55.56%,parent48.33%;1/4 and9/20 closed. Current B2.03a durable selection/request/event values. [Evidence](../../Audits/Evidence/BP-07-Campaigns/Compiler_Owners.json).
+Fixture refinement: initial projection required an unconfigured schema; retained as negative oracle. Runtime numeric descriptor targets Linux; synthetic Registry deployment metadata now matches it. No tool worker launch or Linux execution claim. Failed output directories retained.
+| 2026-10-04 19:11:14 | BP-07.03/B1.03a.ii | Planning0.41 Artifact context;91 focused/664 installed,100% module coverage; child13.28%,parent42.66%. |
