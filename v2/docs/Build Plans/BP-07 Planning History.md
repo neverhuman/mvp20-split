@@ -827,3 +827,8 @@ Four isolated Runtime0.29/Planning0.72 installations verified472 cases total, pe
 ## 2026-10-05 16:32:49 ? BP-07.04/B1 complete
 
 Actual three-owner proof passed11 stages,6 installed service processes and2 post-commit reply drops. Original request/response/cancellation receipts, Data capture and ownertimestamps survive replacement; source processing withdrawal denies fresh use while original replay stays readable; regrant allows newcommand. No providerattempt or graphdecision effect. FirstDatafixture placeholderhash corrected toregisteredobjectprofile; Planningprobe created_at correctedtorecorded_at; finalfreshscope proofpasses, allrunscopedcleanupverified.12 boundary10.61s,Ruffpassed. B1.04/B1 complete100%;child25%,Build33.33%,parent65%,13/20. Next B2.01 admission-pinned checkpoint policy, preserving legacyunsupervisedbehavior.
+
+
+## 2026-10-05 16:40:12 ? B2 target-contract discrepancy
+
+B1 committed/pushed270eb7a1. B2.01 source review confirmed Invoke inputs are Artifact-only while the physical design calls for scalar Invoke adjustments. Prepared a [versioned materialization checkpoint recommendation](BP-07/BP-07.04%20Scalar%20checkpoint%20decision.md); owner direction pending. No production change or implementation credit; child25%,Build33.33%,Acceptance0%,parent65%,13/20. Completed B1 remains100%.

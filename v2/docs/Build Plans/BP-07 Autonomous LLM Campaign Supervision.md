@@ -2,16 +2,16 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-07.04/B2.01 admitted checkpoint policy.
-- Last refreshed: `2026-10-05 16:32:49` (America/Chicago).
+- Status: decision_blocked; BP-07.04/B2.01 target contract.
+- Last refreshed: `2026-10-05 16:40:12` (America/Chicago).
 - Owner/scope: Agent Planning plus runtime-owned engagement and decision modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-03 discovery, BP-04 runner, BP-05 UI and BP-06 source/knowledge receipts.
 - Implementation: **65%** scoped;13/20 closed deliveries. BP-07.01/.02/.03 complete; BP-07.04=25%; BP-07.05 remains0%. Each child is counted once.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-07.04/B2.01 admitted checkpoint policy.
+- Current implementation task: BP-07.04/B2.01 target-contract direction, then admitted checkpoint policy.
 - Demonstrated behavior: BP-07.01/.02 accepted immutable context/provider/budget and attributed text-decomposition boundaries, current-rights publication, bounded repair and actual Research/Knowledge handoff with replacement recovery. BP-07.03 adds bounded campaign context, semantic proposal policy and durable compiler handoff with actual-owner crash/rights and replacement proof. Runtime supervision and live model quality remain subsequent.
-- Blockers: none for deterministic implementation. Approved declaration publication correction verified; live provider/model, egress and spend choices still govern real calls.
+- Blockers: B2.01 target-contract decision pending: scalar adjustments must reconcile Artifact-only Invoke inputs; see [scalar checkpoint decision](BP-07/BP-07.04%20Scalar%20checkpoint%20decision.md). Live provider/model, egress and spend choices separately govern real calls.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
 

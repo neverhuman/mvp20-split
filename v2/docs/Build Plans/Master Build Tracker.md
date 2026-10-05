@@ -8,15 +8,15 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-06 closed100%; BP-07 active supervisor storage; BP-08/09 queued.
-- Last refreshed: `2026-10-05 16:32:49` (America/Chicago).
+- Status: BP-06 closed100%; BP-07 awaiting B2 target-contract direction; BP-08/09 queued.
+- Last refreshed: `2026-10-05 16:40:12` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P6 / BP-07 - Autonomous LLM Campaign Supervision.
-- Primary active task: BP-07.04/B2.01 admitted checkpoint policy.
+- Primary active task: BP-07.04/B2.01 target-contract decision; admission policy follows.
 - Next task: BP-07.04/B2.02 conditional winner/effects.
 - Implementation completion: BP-07=65%,13/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
-- Active focus: B1 supervisor boundaries, persistence and actual-owner recovery verified; admitted checkpoint policy next.
-- Blockers: none for deterministic implementation. Approved declaration publication correction verified; live provider/model, egress and spend choices still govern real calls.
+- Active focus: B1 verified and pushed; B2 scalar target correction prepared for owner review.
+- Blockers: B2.01 target-contract decision pending: scalar adjustments must reconcile Artifact-only Invoke inputs; see [scalar checkpoint decision](BP-07/BP-07.04%20Scalar%20checkpoint%20decision.md). Live provider/model, egress and spend choices separately govern real calls.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
 - Active exception: none.
 
@@ -48,7 +48,7 @@ BP-07.01/.02/.03 are closed100%. BP-07.04 is primary active at B2.01; implementa
 
 | Canonical plan | Status | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-07 Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | Active | 65% | 100% | 100% | 100% | 25% | 0% | N/A |
+| [BP-07 Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | Decision blocked | 65% | 100% | 100% | 100% | 25% | 0% | N/A |
 | [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 | [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 

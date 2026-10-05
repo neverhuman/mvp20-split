@@ -1,12 +1,12 @@
 # Restore
 
-Refreshed `2026-10-05 16:32:49` (America/Chicago). **Read first after compression.**
+Refreshed `2026-10-05 16:40:12` (America/Chicago). **Read first after compression.**
 
 ## Resume
 
-B1.04d.ii actualownerproof passed; B1complete. Readycommit/push. Latestpush5655a2d1(installations);prior92fd5209(Planningclient),bd110e74(Runtimeclient),50613481(RuntimeHTTP),3b127838(capture/cancel),f37c3a67(PlanningHTTP). No verification/hosts/proxiesrunning; scopedprobe runscancelled,historyretained. Productionunchanged Runtime0.29/runtime0020,Planning0.72/planning0015,Data0.29/artifacts0012.
+B1 complete, verified and pushed as `270eb7a1`. No running verification, hosts or proxies. Current B2.01 is blocked on a material target-contract decision, documented in `docs/Build Plans/BP-07/BP-07.04 Scalar checkpoint decision.md`. Invoke accepts only Artifact references; existing supervision footprint targets only Invoke; physical design assumes scalar adjustments there. Recommendation: versioned checkpoints on named inline scalar fields of artifact_materialize before any binding intent opens, retain Invoke review checkpoints and old profiles. Binding opening AND source-cut reconstruction must share immutable effective-value resolution. No production edits or decision implemented. Ask owner for target choice; approval is not implied by elapsed time.
 
-Current B2.01 admission-pinned checkpointpolicy/scopeblocking/relevantrefresh. Child25%,Build33.33%,Acceptance0%,1/4;parent65%,13/20;B1 .01/.02/.03/.04=100%,B1=100%;B2/B3/V1=0%. Trackers/history/evidence/READMEs synced. Commit/pushthencontinue. Need boundedB2.01implementationdesign beforecode (notnewwholeprojectaudit);existingphysicaldesign specifiespolicybeforeinitialreadyInvoke materialization, target-onlypause, futurehumaneditsonly. No liveproviderdecisionblocksdeterministicimplementation.
+Child25%, Build33.33%, Acceptance0%,1/4; parent65%,13/20; B1=100%, B2/B3/V1=0%. Trackers and decision synchronized. After approval: bounded versioned target/profile audit then B2.01 admission/checkpoint implementation, B2.02 winner/effects, B2.03 autonomous loop. Read decision before old resume notes below. No live provider choice blocks deterministic work. Current versions unchanged.
 
 ## Latest evidence
 
