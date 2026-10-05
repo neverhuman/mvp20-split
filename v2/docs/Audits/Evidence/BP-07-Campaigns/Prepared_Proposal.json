@@ -1,0 +1,22 @@
+{
+  "verified_at": "2026-10-04 21:02:39",
+  "status": "passed",
+  "gate": "BP-07.03/B2.01a",
+  "planning": "0.53.0",
+  "contracts": "0.9.0",
+  "focused_tests": 13,
+  "focused_seconds": 9.42,
+  "prior_combined_tests": 103,
+  "prior_combined_seconds": 19.84,
+  "statements": 101,
+  "branches": 6,
+  "coverage_percent": 100,
+  "installed_tests": 899,
+  "installed_seconds": 84.925,
+  "manifest": ".test-results/planning-prepared-proposal-independent-20261004/manifest.json",
+  "limits": [
+    "Pure historical input/output and policy-selected observation binding",
+    "No assertion of provider packet consumption, fresh owner reads or source rights",
+    "Evidence/tool/declaration semantics and Runtime acceptance remain later gates"
+  ]
+}
