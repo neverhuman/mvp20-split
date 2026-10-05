@@ -1,0 +1,20 @@
+{
+  "verified_at": "2026-10-04 21:12:49",
+  "status": "passed",
+  "gate": "BP-07.03/B2.01b",
+  "planning": "0.54.0",
+  "contracts": "0.9.0",
+  "focused_tests": 38,
+  "focused_seconds": 33.81,
+  "statements": 224,
+  "branches": 34,
+  "coverage_percent": 100,
+  "installed_tests": 924,
+  "installed_seconds": 95.435,
+  "manifest": ".test-results/planning-evidence-purpose-independent-20261004/manifest.json",
+  "limits": [
+    "Exact Research selection/context and evidence-purpose consistency only",
+    "Scientific posture retained, never promoted or a global veto",
+    "Producer address resolution explicitly pending composition policy; actual compiler/eligibility later"
+  ]
+}
