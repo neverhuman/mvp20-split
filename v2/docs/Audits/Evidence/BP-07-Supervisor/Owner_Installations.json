@@ -1,0 +1,32 @@
+{
+  "reviewed_at": "2026-10-05 16:20:12",
+  "unit": "BP-07.04/B1.04d.i",
+  "manifest_sha256": "617fd2196955602147ac92df4c30bc2ddfdbd1ecdd52c3e24b40eb8c22addd22",
+  "output": ".test-results\\supervision-owners-installed-20261005-verified",
+  "owners": {
+    "runtime": {
+      "version": "0.29.0",
+      "unchanged_migrations": 38,
+      "tests": [
+        161,
+        161
+      ]
+    },
+    "planning": {
+      "version": "0.72.0",
+      "unchanged_migrations": 28,
+      "tests": [
+        75,
+        75
+      ]
+    }
+  },
+  "schemas": 528,
+  "unchanged_predecessor_schemas": 520,
+  "limits": [
+    "No SQL migration/reset or actual owner host in this installation gate",
+    "Peer-private packages absent; copied tests only, production runs from wheels",
+    "Current service HTTP files intentionally changed; only historical migrations asserted byte-identical"
+  ],
+  "next": "B1.04d.ii actual owner exchange/recovery"
+}

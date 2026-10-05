@@ -817,3 +817,8 @@ Runtime0.29 bounded Planning client verified64 client/receipt cases5.61s +12 bou
 ## 2026-10-05 16:09:00 ? BP-07.04/B1.04c.ii
 
 Planning0.72 Runtime response/cancellation client verified22 owned +12 boundary cases11.39s;202 statements40branches96%. Both families, exact operation/hash/commit/readback, immutable terminal receipts, lossyreply recovery/no automatic retry and lease loss after connect before send. No private Runtime imports or schema/migration changes. B1.04c complete;child23.44%,Build31.25%,parent64.69%;next independently installed actual owner/restart proofd.
+
+
+## 2026-10-05 16:20:12 ? BP-07.04/B1.04d.i
+
+Four isolated Runtime0.29/Planning0.72 installations verified472 cases total, peer-private imports absent;38 Runtime +28 Planning historical migration files byte-identical.528schemas and520predecessor pins checked. First attempt alltests passed but schema rootglob failed; recursive relativepath enumeration fixed, fullnew-output rerun passed. No SQL/migration/actualownerhost claim. d twoequalunits i100%,ii0%;child24.22%,Build32.29%,parent64.84%. Next actual three-owner/restart recovery.
