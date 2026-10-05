@@ -2,7 +2,7 @@
 
 - Owner: Planning BP-07.03/B2.03a/b/c.i/ii, implemented in Planning0.69; c.iii SQL/HTTP integration and d installed actual-owner/crash proof remain pending.
 - Design: [compiler handoff](../../../../../docs/Build%20Plans/BP-07/BP-07.03%20Compiler%20handoff.md).
-- Tests: `tests/campaign_dispatch` pure values; `tests/campaign_dispatch_storage` owned persistence; `tests/campaign_dispatch_coordinator` owned SQL with scripted peers. These are separate from actual-owner acceptance.
+- Tests: `tests/campaign_dispatch` pure values; `tests/campaign_dispatch_storage` owned persistence; `tests/campaign_dispatch_coordinator` owned SQL with scripted peers. `tests/campaign_dispatch_transport` SQL+HTTP stubs; `tests/campaign_dispatch_acceptance` independently installed actual owners and worker crashes.
 
 ## Original identities and authority
 
@@ -53,3 +53,8 @@ Planning0.69 progression proof:13 scoped SQL cases,67/68 progression statements 
 ## SQL and HTTP recovery evidence
 
 Planning0.69 c.iii verifies8 module-owned campaign_dispatch_transport cases against actual Planning SQL and owned loopback protocol stubs using the production HTTP clients. Separate-connection journal reads in POST handlers prove stored dispatch intent and no retained Planning advisory lock across I/O. Lost or malformed committed replies preserve uncertainty; original Runtime GET recovery works after current processing denial. Denied receipts do not prove absence. Registry replay rechecks current use permission and preserves the original receipt/timestamps. A replacement holder after peer commit prevents stale final append while retaining successor recovery. Unexpected lease-cleanup errors propagate without repeating a saved command.8 independently installed cases pass; actual owner and process-kill acceptance remains d. No additional coverage percentage is claimed.
+
+
+## Actual owners and process replacement
+
+Planning0.69 B2.03d: dev/verify_planning_dispatch.py proves actual Data declaration publication/current processing, Registry discovery/eligibility and Runtime reviewed schemas plus saved/compiled tool graph.10 completed independent worker stages and2 abrupt owned worker kills preserve original SQL journal/accounting. A stored pre-POST intent has no Runtime receipt; after peer commit a successor recovers exact saved history even under denied Data credentials, while new validation is blocked. Expired candidates remain unchanged and require a new bounded check.6 owner hosts verify exact saved/validation receipts and readbacks after restart, plus terminal local replay. Test-only20s leases bound crash probes; production300s lease unchanged. Windows launcher/worker ancestry is checked before terminating only the owned process tree. No tool execution, real source-rights revocation, scientific admission or live provider is claimed. Current overlay hashes identify acceptance code against the unchanged independently installed wheel.

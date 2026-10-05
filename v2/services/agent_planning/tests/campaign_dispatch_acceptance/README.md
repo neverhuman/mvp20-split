@@ -1,0 +1,9 @@
+# Compiler owner and crash acceptance
+
+Owned by Agent Planning campaign_dispatch; executed only by dev/verify_planning_dispatch.py in a verified independent Planning installation. No peer implementation imports. Public Data publication/processing, Registry discovery/eligibility and Runtime universe/schema/save/validate APIs supply the actual boundaries. Planning alone writes its request, preparation, attempt, accounting and compiler tables.
+
+original.py publishes a private v2 declaration before original request binding, consumes actual source bodies and metadata, and constructs deterministic synthetic provider output. support.py wires real readers and compiler clients. test_worker.py seeds exact owned history or performs one bounded progression invocation. Test-only hooks pause after stored save dispatch and after actual peer commit before final journal append. The parent harness verifies worker ancestry, kills only its owned process tree, and waits for its existing20s test lease to expire; production300s behavior is unchanged.
+
+Oracles distinguish an unissued command from a lost committed outcome, recover original saved history despite denied Data credentials, block new validation under that denial, refresh expired eligibility without renewing old observations, and compare exact public receipts/readbacks after owner replacement. No tool execution, capacity reservation, source-rights revocation, live provider, scientific validity or target-host qualification is claimed. Linux capacity is synthetic Registry metadata; no Linux worker is launched.
+
+Credentials remain environment-only. Current test overlay hashes are recorded against the verified wheel installation. Each run uses a fresh output directory and scoped project; retained databases are never reset. The helper validates installed versions before running only the current Planning migrator; peer migrations are not run.

@@ -8,14 +8,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-06 closed100%; BP-07 active compiler coordination; BP-08/09 queued.
-- Last refreshed: `2026-10-05 12:38:41` (America/Chicago).
+- Status: BP-06 closed100%; BP-07 active semantic acceptance; BP-08/09 queued.
+- Last refreshed: `2026-10-05 12:54:52` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P6 / BP-07 - Autonomous LLM Campaign Supervision.
-- Primary active task: BP-07.03/B2.03d installed actual-owner/crash acceptance.
-- Next task: BP-07.03/B3 semantic compiler failure oracles.
-- Implementation completion: BP-07=49.58%,9/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
-- Active focus: campaign context selection and immutable binding; completed extraction remains owner-authority bounded.
+- Primary active task: BP-07.03/B3.01 QEV-09/10/11 and partial-evidence policy.
+- Next task: BP-07.03/B3.02 rights/staleness/hostile/recovery cases.
+- Implementation completion: BP-07=50%,10/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
+- Active focus: campaign semantic and partial-evidence acceptance; durable compiler recovery verified.
 - Blockers: none for deterministic implementation. Approved declaration publication correction verified; live provider/model, egress and spend choices still govern real calls.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
 - Active exception: none.
@@ -32,15 +32,15 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-07.01/.02 are closed100%. BP-07.03 is primary active; implementation47.92%,Build63.89%,Acceptance0%.
+BP-07.01/.02 are closed100%. BP-07.03 is primary active; implementation50%,Build66.67%,Acceptance0%.
 
 | Parent | Overall | P1 | P2 | P3 | P4 | P5 |
 |---|---:|---:|---:|---:|---:|---:|
-| BP-07 | 49.58% | 100% | 100% | 47.92% | 0% | 0% |
+| BP-07 | 50% | 100% | 100% | 50% | 0% | 0% |
 
 | Active child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-07.03](BP-07/BP-07.03%20Campaign%20proposals%20and%20context.md) | 47.92% | 63.89% | 0% | B2.03d |
+| [BP-07.03](BP-07/BP-07.03%20Campaign%20proposals%20and%20context.md) | 50% | 66.67% | 0% | B3.01 |
 
  BP-06 is [closed100%](Completed/BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md); completed parents are in the [archive](Completed/README.md).
 
@@ -48,7 +48,7 @@ BP-07.01/.02 are closed100%. BP-07.03 is primary active; implementation47.92%,Bu
 
 | Canonical plan | Status | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-07 Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | Active | 49.58% | 100% | 100% | 47.92% | 0% | 0% | N/A |
+| [BP-07 Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | Active | 50% | 100% | 100% | 50% | 0% | 0% | N/A |
 | [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 | [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 
@@ -126,6 +126,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-05 12:54:52 | BP-07.03/B2 complete | Actual tool compilation;2 worker kills and exact peer restart history. Child50%,parent50%;next B3.01. |
 | 2026-10-05 12:38:41 | BP-07.03/B2.03c.iii verified |8 scoped/8 installed SQL+HTTP;child47.92%,parent49.58%. Next actual owners/crash. |
 | 2026-10-05 12:23:42 | BP-07.03/B2.03c.ii verified | Bounded progression;36 installed SQL;child47.22%,parent49.44%. Next SQL/HTTP failures. |
 | 2026-10-05 12:02:44 | BP-07.03/B2.03c.i verified | Guarded dispatch;23 scoped/23 installed SQL;child46.53%,parent49.31%. Next progression. |
@@ -150,6 +151,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-04 20:44:50 | BP-07.03/B1.04c verified | Campaign capture/journal;115 pure+13 SQL cases, no migration. Child23.44%,parent44.69%;next independent compatibility. |
 | 2026-10-04 20:40:53 | BP-07.03/B1.04b verified | Request-bound parser;73 focused/867 installed,97 statements16 branches100%. Child21.88%,parent44.38%;next provider integration. |
 | 2026-10-04 20:33:17 | BP-07.03/B1.04a verified | Additive campaign schema;101 source/823 installed;508 old schemas unchanged. Child20.31%,parent44.06%;next pure parser. |
-| 2026-10-04 20:18:16 | BP-07.03/B1.03 complete | Actual five-peer packet/journal,10workers15hosts;child18.75%,parent43.75%. Next typed campaign output. |
 
 Keep at most25 checkpoint rows. Update the owning plan, this mirror and Restore before commits.

@@ -1,0 +1,163 @@
+{
+  "verified_at": "2026-10-05 12:52:59",
+  "status": "passed",
+  "versions": {
+    "planning": [
+      "amphora-agent-planning",
+      "0.69.0"
+    ],
+    "data": [
+      "amphora-data-artifacts",
+      "0.29.0"
+    ],
+    "runtime": [
+      "amphora-campaign-runtime",
+      "0.20.2"
+    ],
+    "registry": [
+      "amphora-capability-registry",
+      "0.1.0"
+    ]
+  },
+  "scope": {
+    "tenant_id": "compiler-dispatch",
+    "project_id": "6de4aa4a41bf43b5ba59cb5e80bc270e"
+  },
+  "owner_processes": {
+    "registry": [
+      3964,
+      25508
+    ],
+    "runtime": [
+      2748,
+      31476
+    ],
+    "data": [
+      24488,
+      31140
+    ]
+  },
+  "crashes": [
+    {
+      "pid": 15984,
+      "parent_pid": 25412,
+      "effect_id": "compiler-op-3b3f2af5d5983b44f036f271433b593d22acdc7e2c1f5e4be327d3dfe9be8530",
+      "fence": 2,
+      "expires_at": "2026-10-05T17:50:48.144151+00:00",
+      "stage": "crash-before-post",
+      "returncode": 1,
+      "name": "2-crash-before-post"
+    },
+    {
+      "pid": 6564,
+      "parent_pid": 31472,
+      "effect_id": "compiler-op-3b3f2af5d5983b44f036f271433b593d22acdc7e2c1f5e4be327d3dfe9be8530",
+      "fence": 4,
+      "expires_at": "2026-10-05T17:51:30.600079+00:00",
+      "stage": "crash-after-commit",
+      "returncode": 1,
+      "name": "5-crash-after-commit"
+    }
+  ],
+  "test_sha256": {
+    "original.py": "9112cb39fbc7e14ba3df18a40a00363a75ac2b3804437f77b7caf77e4ca94523",
+    "support.py": "92de252f31b9e9ee6651dcb0b18076851de5374cd8bbeb9d151ba694111b8822",
+    "test_worker.py": "87c302a6b9d613dce156c9d8826a7c3070d428e263dcab58d3e307514486b2ac"
+  },
+  "installation_manifest": "Z:\\mvp20-split\\v2\\.test-results\\planning-http-independent-20261005\\manifest.json",
+  "limits": [
+    "Actual installed public Data/Registry/Runtime, Planning-owned SQL, two owned worker kills and lease expiry",
+    "Synthetic proposal and declared Linux tool capacity; no scientific tool execution or admission",
+    "No provider, actual source revocation, Research latest-head or target-host qualification claim",
+    "Current Planning migration only; retained peer fixtures, no reset or cross-owner SQL"
+  ],
+  "workers": {
+    "0-seed": {
+      "selection_id": "compiler-5e17f2f2d65afcda74dd6dcc69771af64b4d1e99be3b9379d80cb6f8fdd45c7c",
+      "selection_sha256": "c3333ed70ea3f5fa60cf60d9a980cb2e074c4564712b60f7c74f78553756afda",
+      "request_sha256": "52ff56b983fd65dc94a53064f5117e80089c3986bccafcc062394d229324780f",
+      "declaration_sha256": "44bdc61280df1f0546a59549b15d9f6f1e90160f45bcd6c9f8e7358a3baead99"
+    },
+    "1-eligibility": {
+      "stage": "eligibility",
+      "terminal": false,
+      "pause_reason": null,
+      "state": "candidate",
+      "effect_id": "compiler-op-a63adba3726a948139f9cda43548168d575bf516555b338c04dc491ae9270f64",
+      "command_sha256": "0181a34f2bce986cb36202f84fcc598867648142192efd424250cd6e2cbacaa9",
+      "round": "planning-check-1",
+      "observation_sha256": "0bd157db7de35bd441ec7dbfad66976a5c93b7dfe745bfab79408e634b80f1af"
+    },
+    "3-assert-absent": {
+      "state": "absent"
+    },
+    "4-crash-after-commit": {
+      "stage": "eligibility",
+      "terminal": false,
+      "pause_reason": null,
+      "state": "candidate",
+      "effect_id": "compiler-op-940780f7880465bd3f21fa79836936529ffac79ef827608b0738405d183f3776",
+      "command_sha256": "a1401e4f7164cafbc358b41f36fade99b46f1efecb97651262445391ffbd8369",
+      "round": "planning-check-2",
+      "observation_sha256": "72a57daf9e9e8f294209fba834e25de4b91988be5a2ad8666a742e1620f6b6b4"
+    },
+    "6-recover-save": {
+      "stage": "save",
+      "terminal": false,
+      "pause_reason": null,
+      "state": "saved",
+      "effect_id": "compiler-op-3b3f2af5d5983b44f036f271433b593d22acdc7e2c1f5e4be327d3dfe9be8530",
+      "command_sha256": "3684652687d093ca0a2a994056c35e0f4aab40311d018c13dcc364b49be5cadf",
+      "round": "planning-check-2",
+      "observation_sha256": "d4f6cf786d097a6dcd701ba34f5d001eba2256aec562f0a89e5dfbbe55a6319d"
+    },
+    "7-deny-new-validation": {
+      "stage": "validation",
+      "terminal": false,
+      "pause_reason": "input_unavailable",
+      "state": "blocked",
+      "effect_id": "compiler-op-5d37c6a2b60b255f7fbcf6489dc0f9a219f67c755c27aaf0d9afb6d68898cae1",
+      "command_sha256": "4c45a7005d245b707f2077a8a68dab8fb380fa133ed578fd7aba371d2ccf9c30",
+      "round": "planning-check-2"
+    },
+    "8-compile": {
+      "stage": "eligibility",
+      "terminal": false,
+      "pause_reason": null,
+      "state": "candidate",
+      "effect_id": "compiler-op-2a533f65c0b457e391a9225efb3d3c63a87543bee618102f43491b1bfdad8e36",
+      "command_sha256": "8832a4efc7a73fbce6bcecc3c70f50b47f44d5a43bb4f032b943e098cded23c8",
+      "round": "planning-check-3",
+      "observation_sha256": "be13d2b7ced39b2f35de32f24cd5e05956a7ae4ca03f06f9f2ccc3eeb1ba6ed9"
+    },
+    "9-compile": {
+      "stage": "validation",
+      "terminal": true,
+      "pause_reason": null,
+      "state": "compiled",
+      "effect_id": "compiler-op-5d37c6a2b60b255f7fbcf6489dc0f9a219f67c755c27aaf0d9afb6d68898cae1",
+      "command_sha256": "4c45a7005d245b707f2077a8a68dab8fb380fa133ed578fd7aba371d2ccf9c30",
+      "round": "planning-check-3",
+      "observation_sha256": "7d5d7cdd7877a7b1477a1feee4beca3f452c1be636ce9c13484e8fc160ccde28"
+    },
+    "10-peer-history": {
+      "state": "peer_history_exact"
+    },
+    "11-replay": {
+      "stage": "validation",
+      "terminal": true,
+      "pause_reason": null,
+      "state": "compiled",
+      "effect_id": "compiler-op-5d37c6a2b60b255f7fbcf6489dc0f9a219f67c755c27aaf0d9afb6d68898cae1",
+      "command_sha256": "4c45a7005d245b707f2077a8a68dab8fb380fa133ed578fd7aba371d2ccf9c30",
+      "round": "planning-check-3",
+      "observation_sha256": "7d5d7cdd7877a7b1477a1feee4beca3f452c1be636ce9c13484e8fc160ccde28"
+    }
+  },
+  "boundaries": {
+    "tests": 12,
+    "seconds": 9.34
+  },
+  "prior_http_evidence": "Compiler_HTTP_Recovery.json",
+  "retained_manifest": ".test-results/planning-dispatch-owners-final-20261005/manifest.json"
+}
