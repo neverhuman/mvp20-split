@@ -1,0 +1,19 @@
+{
+  "checkpoint": "2026-10-05 14:44:23",
+  "task": "BP-07.04/B1.03a",
+  "runtime": "0.24.0",
+  "combined_tests": 122,
+  "owned_tests": 33,
+  "seconds": 5.22,
+  "coverage": {
+    "statements": 105,
+    "missed_statements": 0,
+    "branches": 12,
+    "partial_branches": 0
+  },
+  "limits": [
+    "Pure reconstruction and series only",
+    "No SQL, current authorization, provider call or graph effect"
+  ],
+  "fixture_correction": "Explicit original declaration added to new series test; unchanged public fixture preserved"
+}

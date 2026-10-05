@@ -767,3 +767,8 @@ Runtime0.23/public supervision0.2 separates captured Planning observations, reco
 ## 2026-10-05 14:28:23 - BP-07.04/B1.02 independent compatibility
 
 Two isolated current Runtime/public-supervision wheel installations pass265 initial and105 replacement tests. No private peer implementation is installed.162 prior Runtime production/migration files and520 predecessor schema bytes remain unchanged. Seven literal request/command/capture fixtures verified through Git checkout filters with core.autocrlf=true; added narrowly scoped LF attributes after review caught fresh-Windows-checkout risk. No v1 edits. Helper import ordering corrected after run; behavior unchanged. No SQL/migration/owner-host/accepted-effect claim. B1.02a/b/c100%;B1=50%,child12.5%,Build16.67%,Acceptance0%,parent62.5%,12/20. Next B1.03 durable journal/outbox.
+
+
+## 2026-10-05 14:44:23 ? BP-07.04/B1.03a
+
+Runtime0.24 adds immutable request frames and bounded repair series. 122 combined tests5.22s;105 new statements/12 branches100%. Source-adjacent boundary documents separate exact origin recovery from stored membership, source authorization, budget accounting and decision effects. Child14.06%, Build18.75%, parent62.81%; next B1.03b SQL. No SQL or provider claims.
