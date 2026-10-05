@@ -63,7 +63,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-campaign-runtime"
-version = "0.24.0"
+version = "0.25.0"
 source = { editable = "../services/campaign_runtime" }
 dependencies = [
     { name = "alembic" },

@@ -1,6 +1,6 @@
 # Runtime Persistence Boundary
 
-- Implemented: forward migrations through `runtime_0017` and owner-private command transactions.
+- Implemented: forward migrations through `runtime_0018` and owner-private command transactions.
 - Design: [Physical records](../../../../../docs/Architecture/System/Persistence_Record_Design.md), [runtime protocol](../../../../../docs/Architecture/System/Runtime_Command_Protocol.md).
 
 `migrate.upgrade(url)` runs packaged SQL/Alembic migrations as `runtime_migrator`. The explicit CLI is `python -m amphora_campaign_runtime.persistence.migrate`, using privately supplied `AMPHORA_RUNTIME_MIGRATION_URL`. No API startup migration occurs. `runtime.alembic_version` is private to this owner. Downgrade refuses destructive rollback; changes require forward migration.
@@ -42,3 +42,6 @@ runtime_0016 retains scoped compiler universes once per content digest and immut
 runtime_0017 adds immutable definition_admissions linking each explicitly admitted draft validation to its scoped graph run/plan and original command. Publication commits inside the existing GraphAdmission transaction and grants no future admission authority. Scoped foreign keys and SELECT/INSERT-only privileges preserve lineage.
 
 BP-05.03 numeric compatibility: CommandStore persists `command.profile` derived from immutable bytes and verifies it together with digest/bytes at registration and finish. Existing profile varchar/bytea columns already accommodate v2; no migration or historical-row rewrite. Default v1 rows retain their original profile and digest; switching profile under one identity is a conflict. Owned definitions numeric tests cover both profiles across an actual host kill/restart.
+
+
+runtime_0018 adds immutable supervisor request frames and original outgoing intents with scoped run/plan, root/parent and request foreign keys. Only SELECT/INSERT is granted. [Supervisor journal](../supervision_journal/README.md) owns atomically validated preparation/readback; no dispatch lease or decision authority is introduced. Runtime0.25 requires this head; do not run older migrators.

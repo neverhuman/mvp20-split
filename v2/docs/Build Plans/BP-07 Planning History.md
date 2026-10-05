@@ -772,3 +772,8 @@ Two isolated current Runtime/public-supervision wheel installations pass265 init
 ## 2026-10-05 14:44:23 ? BP-07.04/B1.03a
 
 Runtime0.24 adds immutable request frames and bounded repair series. 122 combined tests5.22s;105 new statements/12 branches100%. Source-adjacent boundary documents separate exact origin recovery from stored membership, source authorization, budget accounting and decision effects. Child14.06%, Build18.75%, parent62.81%; next B1.03b SQL. No SQL or provider claims.
+
+
+## 2026-10-05 14:55:17 ? BP-07.04/B1.03b
+
+Runtime0.25/runtime0018 retains original request and outgoing command atomically under the run lock.53 journal/migration cases9.96s,14 actual journal SQL;236 statements/28 branches100%. Actual plan/node/ancestor/materialization checks preserve useful unrelated progress. Parent-path schema version omission found/fixed; initial one-tool fixture was already issued, replaced by valid branch-before-tool graph; test SQL literal replaced with bound JSON. Child15.63%,Build20.83%,parent63.13%;next c leases/events. Independent race/process proof and graph acceptance still pending.

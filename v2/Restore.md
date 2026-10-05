@@ -1,12 +1,14 @@
 # Restore
 
-Refreshed `2026-10-05 14:44:23` (America/Chicago). **Read first after compression.**
+Refreshed `2026-10-05 14:55:17` (America/Chicago). **Read first after compression.**
 
 ## Resume
 
-BP-07.04/B1.03a verified, not yet committed. Last pushed d42818c3. Runtime/dev0.24.0, public supervision0.2, GraphRuntime0.13, DB runtime0017 unchanged;528 public schemas. New pure supervision_journal frames/series:122 combined tests5.22s,33 owned tests,105 statements/12 branches100%. New declaration test initially failed because the legacy request fixture has no declaration constraint; explicit private-series fixture added, rerun passed. Boundary suite12passed9.17s;Ruff passed. All verification finished. No hosts or SQL work started.
+B1.03a pushed0fdd811a. B1.03b VERIFIED `2026-10-05 14:55:17` but not yet committed. Runtime/dev0.25, DB runtime0018 now applied to retained fixture. NEVER run Runtime<=0.24 migrators on it.53 journal/migration cases9.96s (33pure,14journalSQL,6legacy),236 statements/28 branches100%. All SQL verification finished; adjacent boundary/scope/request/response suite101passed11.85s. All verification finished. No owned hosts.
 
-Canonical progress: child14.06%, Build18.75%, Acceptance0%,0/4;parent62.81%,12/20. B1 .01/.02=100%,.03=25%,.04=0%;B1=56.25%. B1.03 equal a100%,b/c/d0%. NEXT B1.03b request/origin/outbox SQL; then c leases/events,d SQL races/independent replacement. First finish boundary result, diff/link checks, commit/push this bounded unit. Do not end at checkpoint.
+Canonical child15.63%,Build20.83%,Acceptance0%,0/4;parent63.13%,12/20. B1 .01/.02=100%,.03=50%,.04=0%;B1=62.5%. B1.03a/b100%,c/d0%. NEXT diff/links, commit/push b; then B1.03c leases and immutable delivery/response events. Do not end at checkpoint.
+
+New current.py rederives actual retained plan/node/path/kind/scope, all active ancestors and issued parent/scatter-membership/loop-iteration, absence of activation, selected read equality and DB deadlines under run lock. storage.RequestJournal configured Runtime-to-Planning actor mapping; requires supervise_prepare/read; exact existing replay before fresh state checks, atomic original frames/outgoing command; no dispatch/effects. Runtime0018 immutable SELECT/INSERT request/outbox tables with scopedFKs/unique identities. Source README full boundaries. First fixture was already materialized; revised valid branch graph. Nested test found missing ActivationPath.schema_version, fixed. SQL JSON literal test corrected to bound value.14realSQL cases include nested loops/scatters and rollback/grants.
 
 ## Next implementation boundaries
 

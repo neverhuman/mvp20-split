@@ -1,0 +1,28 @@
+{
+  "checkpoint": "2026-10-05 14:55:17",
+  "task": "BP-07.04/B1.03b",
+  "runtime": "0.25.0",
+  "migration": "runtime_0018",
+  "tests": 53,
+  "actual_journal_sql_tests": 14,
+  "legacy_migration_tests": 6,
+  "seconds": 9.96,
+  "coverage": {
+    "statements": 236,
+    "missed_statements": 0,
+    "branches": 28,
+    "partial_branches": 0
+  },
+  "claims": [
+    "Actual retained PostgreSQL; serial, no reset",
+    "Atomic original request and outgoing command",
+    "Real nested scatter and loop membership",
+    "Exact replay, immutable grants, FK/collision rollback"
+  ],
+  "limits": [
+    "No lease, peer call, concurrency or process replacement proof yet",
+    "No accepted graph decision or checkpoint pause"
+  ],
+  "adjacent_tests": 101,
+  "adjacent_seconds": 11.85
+}
