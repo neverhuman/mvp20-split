@@ -680,3 +680,9 @@ B2.02c.i verified 2026-10-04 22:32:16: Planning0.59/public0.9 exact selected Reg
 B2.02c.ii verified 2026-10-04 22:49:32: Planning0.60/public0.9 current consumed-Artifact processing and relevant pinned-input refresh.17 focused tests14.77s;12 boundary8.19s;435 isolated cases90.763s.132 Artifacts share264 calls across two batches; revocation/invalid bytes, omitted exclusion, selected-only Research/Runtime changes and retained missing science verified. Exact reads explicitly do not verify latest heads. B2.02c=66.6667%,B2.02=66.6667%,B2=55.5556%,child38.89%,Build51.85%,parent47.78%;1/4 and9/20 closed. Current B2.02c.iii retained accounting/combined preparation. [Evidence](../Audits/Evidence/BP-07-Campaigns/Input_Refresh.json).
 
 | 2026-10-04 18:55:41 | BP-07.03/B1.02d | Actual combined-owner context passed10workers/9hosts; child12.5%,Build16.67%,parent42.5%. Next context preparation. |
+
+
+B2.02c.iii verified 2026-10-04 23:08:46: Planning0.61/public0.9 stored origin and combined compiler preparation;26 focused cases41.35s,12 boundary cases8.51s,267 isolated compiler cases83.087s and12 installed PostgreSQL cases23.286s. Exact preparation/observation/reservation/settlement binding, unchanged charges, current-input refresh and post-refresh eligibility expiry verified. No outgoing dispatch or admission claim. B2.02c=100%,B2.02=75%,B2=58.3333%,child39.58%,Build52.78%,parent47.92%;1/4 and9/20 closed. Current B2.02d actual-owner compatibility. [Evidence](../../Audits/Evidence/BP-07-Campaigns/Compiler_Preparation.json).
+
+Tracker reconciliation: corrected stale parent P3 phase mirror (31.25%/41.67%) to canonical child39.58%/Build52.78%; no additional implementation credit.
+| 2026-10-04 19:03:06 | BP-07.03/B1.03a.i | Planning0.40 graph projection;41 focused/651 installed,100% module coverage; child12.89%,parent42.58%. |

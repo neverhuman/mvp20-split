@@ -17,6 +17,7 @@ from amphora_agent_planning.campaign_decisions import (
     DecisionDeclaration,
 )
 from amphora_agent_planning.campaign_slice_plan import CampaignSlicePlan
+from amphora_agent_planning.context import RequestSnapshot
 
 from ..campaign_context.test_selection import request
 from ..campaign_output.test_output import output
@@ -29,10 +30,24 @@ from ..persistence.test_reservations import policy
 
 
 def fixture(*, name='future', limits=None, change=None, declaration_change=None, entry_change=None, tools=False, research=None,
-            extras=(), maximum=200000):
+            extras=(), maximum=200000, scope=None, include_plan=False):
     sources = (('science', b'synthetic Research context', True),) if research is not None else ()
     original = source(name, extras=(*sources, *extras), maximum=maximum)
     raw = original.request.document().model_dump(mode='json')
+    def rescope(value):
+        if isinstance(value, dict):
+            if set(value) == {'tenant_id', 'project_id'}:
+                value.update(scope.model_dump(mode='json'))
+            for child in value.values():
+                rescope(child)
+        elif isinstance(value, list):
+            for child in value:
+                rescope(child)
+    if scope is not None:
+        # SQL origin fixtures use Artifact-only graphs; owner-specific helper
+        # metadata must be rebuilt separately before exercising another scope.
+        assert not tools and research is None
+        rescope(raw)
     context = raw['context']
     pins = [{'kind': kind, 'identity': context[key]['artifact_id'], 'revision': '1', 'sha256': context[key]['sha256']}
             for kind, key in [('source', 'objective'), ('policy', 'policy')]]
@@ -60,7 +75,8 @@ def fixture(*, name='future', limits=None, change=None, declaration_change=None,
     if entry_change:
         entry_change(entry)
     context['entries'].append(entry)
-    plan = ArtifactContextPlan.bind(request(raw))
+    snapshot = request(raw) if scope is None else RequestSnapshot.from_bytes(json.dumps(raw).encode(), actor_id='fixture', scope=scope)
+    plan = ArtifactContextPlan.bind(snapshot)
     bodies = {row.document()['identity']['artifact_id']: base64.b64decode(row.document()['payload']['body_base64'])
               for row in original.slices}
     bodies['decision'] = declaration.canonical
@@ -69,6 +85,8 @@ def fixture(*, name='future', limits=None, change=None, declaration_change=None,
     if tools:
         selected = metadata(selected)
     value = output(name)
+    if scope is not None:
+        rescope(value)
     value['decision_scope'] = declaration.sha256
     if name == 'future':
         value['candidate']['definition']['context'] = pins
@@ -82,7 +100,8 @@ def fixture(*, name='future', limits=None, change=None, declaration_change=None,
     if change:
         change(value)
     proposal = prepared(selected, value)
-    return proposal, declaration, policy(proposal.attempt.request)
+    result = proposal, declaration, policy(proposal.attempt.request)
+    return (*result, selected) if include_plan else result
 
 
 def test_original_visible_declaration_permits_only_a_proposal():
