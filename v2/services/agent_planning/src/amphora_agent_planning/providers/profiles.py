@@ -9,12 +9,14 @@ from amphora_contracts_planning import (
     ProviderObservation,
     TaskProviderObservation,
     TypedProposal,
+    campaign_draft_schema,
     extraction_draft_schema,
     extraction_edit_schema,
     reference_proposal_schema,
 )
 from pydantic import ValidationError
 
+from ..campaign_output import CampaignOutput
 from ..context.policy import require
 from ..context.snapshot import _constant, _object
 from .proposal import ProposalPolicy
@@ -40,11 +42,12 @@ class OutputProfiles:
     @staticmethod
     def supported(attempt):
         return attempt.request.document().context.output_schema in (reference_proposal_schema(),
-                                                                     extraction_draft_schema(), extraction_edit_schema())
+            extraction_draft_schema(), extraction_edit_schema(), campaign_draft_schema())
 
     @staticmethod
     def observation_model(attempt):
-        if attempt.request.document().context.output_schema in (extraction_draft_schema(), extraction_edit_schema()):
+        if attempt.request.document().context.output_schema in (extraction_draft_schema(), extraction_edit_schema(),
+                                                                 campaign_draft_schema()):
             return TaskProviderObservation
         return ProviderObservation
 
@@ -53,6 +56,8 @@ class OutputProfiles:
         profile = attempt.request.document().context.output_schema
         if profile == reference_proposal_schema():
             return ProposalPolicy.parse(raw, attempt)
+        if profile == campaign_draft_schema():
+            return CampaignOutput.parse(raw, attempt.request).proposal()
         model = cls.draft_model(profile)
         require(type(raw) is bytes and 0 < len(raw) <= 65536, "typed_output_size")
         try:

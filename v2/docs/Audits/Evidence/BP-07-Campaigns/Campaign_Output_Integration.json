@@ -1,0 +1,17 @@
+{
+  "verified_at": "2026-10-04 20:44:50",
+  "status": "passed",
+  "gate": "BP-07.03/B1.04c",
+  "planning": "0.52.0",
+  "contracts": "0.9.0",
+  "pure_regression_tests": 115,
+  "pure_seconds": 8.03,
+  "sql_tests": 13,
+  "sql_seconds": 11.61,
+  "migration": "planning0012 unchanged",
+  "limits": [
+    "Deterministic provider replies; no live model or scientific claim",
+    "Independent replacement compatibility is next gate",
+    "No preparation/semantic eligibility/Runtime activation authority added"
+  ]
+}

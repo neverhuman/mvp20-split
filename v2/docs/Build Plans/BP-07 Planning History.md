@@ -624,3 +624,7 @@ B1.04a verified 2026-10-04 20:33:17: Planning0.50/public0.9 additive campaign dr
 
 B1.04b verified 2026-10-04 20:40:53: Planning0.51/public0.9 pure CampaignDecisionScope/CampaignCandidate/CampaignOutput;73 focused tests4.17s,97 statements16 branches100%;867 installed tests59.075s. Strict raw/canonical65536 bytes, exact request/profile/action/digest/scope/cut, duplicate adjustments, immutable output and uncertainty retention. Child21.88%,Build29.17%,parent44.38%;B1.04=50%,B1=87.5%. Current B1.04c provider/durable integration. [Evidence](../../Audits/Evidence/BP-07-Campaigns/Campaign_Output_Parser.json).
 | 2026-10-04 17:18:21 | BP-07.03/B1.01a verified; child3.13%,parent40.63%; B1.01b active | Research_Selection.json;111 source/installed,67 statements8 branches100%;508 schemas |
+
+
+B1.04c verified 2026-10-04 20:44:50: Planning0.52/public0.9 exact campaign profile in provider capture and existing typed observation reconstruction;115 pure/regression tests8.03s and13 actual SQL cases11.61s. Four shapes, raw-capture equality, rejection, conservative charging, runner replay and late-result retention passed; old reference/extraction behavior preserved. planning0012 unchanged. Child23.44%,Build31.25%,parent44.69%;B1.04=75%,B1=93.75%. Current B1.04d independent compatibility. [Evidence](../../Audits/Evidence/BP-07-Campaigns/Campaign_Output_Integration.json).
+| 2026-10-04 17:28:41 | BP-07.03/B1.01 complete; child6.25%,parent41.25%; B1.02 active | Research_Context_Records.json;64 focused/143 installed,269 statements44 branches100% |

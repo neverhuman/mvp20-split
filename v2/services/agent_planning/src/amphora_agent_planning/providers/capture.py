@@ -53,7 +53,7 @@ def observe(attempt: AttemptBinding, provider: ProviderPort) -> Observation:
         reply = provider.reply(attempt)
     except ProviderUnavailable:
         return Observation.record(attempt, empty, "unavailable", "provider_unavailable", unknown_usage())
-    except Exception:
+    except Exception:  # noqa: BLE001 - unknown adapter failures must retain a bounded outcome
         return Observation.record(attempt, empty, "unknown", "dispatch_outcome_unknown", unknown_usage())
     # Revalidate even constructed/copied DTOs before using them as observations.
     try:
@@ -73,7 +73,7 @@ def observe(attempt: AttemptBinding, provider: ProviderPort) -> Observation:
             if len(chunk) > remaining:
                 return Observation.record(attempt, CapturedOutput(bytes(captured), False),
                     "invalid", "output_size", usage)
-    except Exception:
+    except Exception:  # noqa: BLE001 - arbitrary iterator failures preserve partial capture
         return Observation.record(attempt, CapturedOutput(bytes(captured), False),
             "unknown", "response_interrupted", usage)
     capture = CapturedOutput(bytes(captured), True)
@@ -81,7 +81,9 @@ def observe(attempt: AttemptBinding, provider: ProviderPort) -> Observation:
         proposal = OutputProfiles.parse(capture.content, attempt)
     except ValueError as exc:
         code = str(exc)
-        policy = code in {"action_not_allowed", "proposal_scope_mismatch", "unselected_payload"}
+        policy = code in {"action_not_allowed", "proposal_scope_mismatch", "unselected_payload",
+                         "campaign_output_purpose", "campaign_output_profile", "campaign_decision_scope",
+                         "campaign_output_scope", "campaign_adjustment_purpose", "campaign_adjustment_cut"}
         return Observation.record(attempt, capture, "policy_rejected" if policy else "invalid", code, usage)
     return Observation.record(attempt, capture, "abstained" if proposal.action == "abstain" else "proposed",
                               None, usage, proposal)
