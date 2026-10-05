@@ -1,0 +1,29 @@
+{
+  "verified_at": "2026-10-04 20:53:19",
+  "gate": "BP-07.03/B1.04d",
+  "status": "passed",
+  "manifest": ".test-results/planning-campaign-output-replacement-20261004/manifest.json",
+  "planning": "0.52.0",
+  "contracts": "0.9.0",
+  "installations": 2,
+  "tests": {
+    "pure": {
+      "tests": 252,
+      "seconds": 9.958
+    },
+    "sql": {
+      "tests": 13,
+      "seconds": 12.298
+    }
+  },
+  "worker_stages": 6,
+  "retained_cases": 7,
+  "boundary_schema_tests": 15,
+  "boundary_schema_seconds": 20.56,
+  "predecessor_schema_files_preserved": 508,
+  "limits": [
+    "Two installations of same implementation; no rewrite or real-provider/scientific claim",
+    "Current forward migration only, no reset/history mutation; credentials environment-only",
+    "Literal reference and extraction predecessor vectors plus unchanged numeric command vectors"
+  ]
+}

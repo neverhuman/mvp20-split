@@ -1,0 +1,318 @@
+{
+  "producer": "independently installed Planning0.51.0",
+  "installation": ".test-results/planning-campaign-parser-independent-20261004/environment",
+  "cases": [
+    {
+      "name": "extraction.json",
+      "request": {
+        "schema_version": "1",
+        "reference": {
+          "scope": {
+            "tenant_id": "planning-fixture",
+            "project_id": "context"
+          },
+          "engagement_id": "decision-1"
+        },
+        "actor_id": "fixture",
+        "purpose": "knowledge_decomposition",
+        "decision_scope": "3333333333333333333333333333333333333333333333333333333333333333",
+        "runtime_cut": null,
+        "context": {
+          "schema_version": "1",
+          "scope": {
+            "tenant_id": "planning-fixture",
+            "project_id": "context"
+          },
+          "objective": {
+            "scope": {
+              "tenant_id": "planning-fixture",
+              "project_id": "context"
+            },
+            "artifact_id": "objective",
+            "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+            "media_type": "text/plain",
+            "schema_ref": {
+              "schema_id": "fixture.text",
+              "version": "1",
+              "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+            },
+            "size_bytes": 12
+          },
+          "prompt": {
+            "scope": {
+              "tenant_id": "planning-fixture",
+              "project_id": "context"
+            },
+            "artifact_id": "prompt",
+            "sha256": "10aa7a25b06cce1239c5fa93c0898ab3e897698e38d539a0e3966f6205e262ef",
+            "media_type": "text/plain",
+            "schema_ref": {
+              "schema_id": "fixture.text",
+              "version": "1",
+              "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+            },
+            "size_bytes": 1300
+          },
+          "policy": {
+            "scope": {
+              "tenant_id": "planning-fixture",
+              "project_id": "context"
+            },
+            "artifact_id": "policy",
+            "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+            "media_type": "text/plain",
+            "schema_ref": {
+              "schema_id": "fixture.text",
+              "version": "1",
+              "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+            },
+            "size_bytes": 12
+          },
+          "model": {
+            "provider_id": "deterministic",
+            "model_id": "adversarial-fixture",
+            "model_revision": "1",
+            "configuration": {
+              "scope": {
+                "tenant_id": "planning-fixture",
+                "project_id": "context"
+              },
+              "artifact_id": "configuration",
+              "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+              "media_type": "text/plain",
+              "schema_ref": {
+                "schema_id": "fixture.text",
+                "version": "1",
+                "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+              },
+              "size_bytes": 12
+            },
+            "tokenizer": {
+              "schema_id": "fixture.text",
+              "version": "1",
+              "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+            },
+            "context_window_tokens": 4096
+          },
+          "entries": [
+            {
+              "artifact": {
+                "scope": {
+                  "tenant_id": "planning-fixture",
+                  "project_id": "context"
+                },
+                "artifact_id": "source-utf8",
+                "sha256": "a0c04f8ee2d96f826d05f0c6566891d8f7442544b13eeea5e613261a2b2fbb38",
+                "media_type": "text/plain",
+                "schema_ref": {
+                  "schema_id": "fixture.text",
+                  "version": "1",
+                  "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+                },
+                "size_bytes": 89
+              },
+              "role": "source",
+              "required": true
+            }
+          ],
+          "omissions": [
+            {
+              "artifact": {
+                "scope": {
+                  "tenant_id": "planning-fixture",
+                  "project_id": "context"
+                },
+                "artifact_id": "extra",
+                "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+                "media_type": "text/plain",
+                "schema_ref": {
+                  "schema_id": "fixture.text",
+                  "version": "1",
+                  "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+                },
+                "size_bytes": 12
+              },
+              "reason": "budget"
+            }
+          ],
+          "allowed_actions": [
+            "propose_knowledge_change",
+            "abstain"
+          ],
+          "output_schema": {
+            "schema_id": "planning.extraction-draft",
+            "version": "1",
+            "sha256": "3d7db9f8b46b37a61284b3cd642291afbbaf34310ed25fd974284b4a2ca69fdd"
+          },
+          "limits": {
+            "max_input_tokens": 1024,
+            "max_output_tokens": 1024,
+            "max_attempts": 2,
+            "total_tokens": 4096,
+            "total_accounting_units": 100,
+            "accounting_unit": "fixture-unit"
+          }
+        }
+      },
+      "capture_utf8": "{\"schema_version\": \"1\", \"action\": \"propose_knowledge_change\", \"rationale\": \"Synthetic quotation geometry, not semantic acceptance.\", \"entities\": [{\"local_id\": \"a\", \"label\": \"\\u03b1\", \"entity_type\": \"fixture\", \"matches\": [], \"attribution\": {\"origin\": \"source_stated\", \"confidence\": \"unknown\", \"quotations\": [{\"span\": {\"source\": {\"scope\": {\"tenant_id\": \"planning-fixture\", \"project_id\": \"context\"}, \"source_id\": \"document\", \"revision_id\": \"r1\", \"raw\": {\"scope\": {\"tenant_id\": \"planning-fixture\", \"project_id\": \"context\"}, \"artifact_id\": \"source-utf8\", \"sha256\": \"a0c04f8ee2d96f826d05f0c6566891d8f7442544b13eeea5e613261a2b2fbb38\", \"media_type\": \"text/plain\", \"schema_ref\": {\"schema_id\": \"fixture.text\", \"version\": \"1\", \"sha256\": \"1111111111111111111111111111111111111111111111111111111111111111\"}, \"size_bytes\": 89}}, \"unit\": \"byte\", \"start\": 0, \"end\": 21, \"sha256\": \"b2b3b342619117b3d49666870b5d7a2434855c4d16c1ceaa0b4ef9e489a09610\"}, \"text\": \"\\u03b1 correlates with \\u03b2\"}]}}], \"assertions\": [], \"questions\": [], \"answers\": [], \"evidence_needs\": [], \"diagnostics\": []}",
+      "observation_json": "{\"schema_version\":\"2\",\"attempt\":{\"engagement\":{\"scope\":{\"tenant_id\":\"planning-fixture\",\"project_id\":\"context\"},\"engagement_id\":\"decision-1\"},\"request_sha256\":\"d9bef8ede5f3186070d46eb8181df180f41554f44e4a8909c8d7eb7ab365fd06\",\"ordinal\":1},\"status\":\"proposed\",\"reason_code\":null,\"output_sha256\":\"1d7f9fbcc1b58cf330c31e81c6c3e2c0d594d892486c72d95291a8367980bddc\",\"captured_bytes\":1069,\"output_complete\":true,\"usage\":{\"input_tokens\":10,\"output_tokens\":10,\"accounting_units\":1,\"certainty\":\"reported\"},\"proposal\":{\"schema_version\":\"1\",\"output_schema\":{\"schema_id\":\"planning.extraction-draft\",\"version\":\"1\",\"sha256\":\"3d7db9f8b46b37a61284b3cd642291afbbaf34310ed25fd974284b4a2ca69fdd\"},\"action\":\"propose_knowledge_change\",\"rationale\":\"Synthetic quotation geometry, not semantic acceptance.\",\"payload_json\":\"{\\\"action\\\":\\\"propose_knowledge_change\\\",\\\"answers\\\":[],\\\"assertions\\\":[],\\\"diagnostics\\\":[],\\\"entities\\\":[{\\\"attribution\\\":{\\\"confidence\\\":\\\"unknown\\\",\\\"origin\\\":\\\"source_stated\\\",\\\"quotations\\\":[{\\\"span\\\":{\\\"end\\\":21,\\\"sha256\\\":\\\"b2b3b342619117b3d49666870b5d7a2434855c4d16c1ceaa0b4ef9e489a09610\\\",\\\"source\\\":{\\\"raw\\\":{\\\"artifact_id\\\":\\\"source-utf8\\\",\\\"media_type\\\":\\\"text/plain\\\",\\\"schema_ref\\\":{\\\"schema_id\\\":\\\"fixture.text\\\",\\\"sha256\\\":\\\"1111111111111111111111111111111111111111111111111111111111111111\\\",\\\"version\\\":\\\"1\\\"},\\\"scope\\\":{\\\"project_id\\\":\\\"context\\\",\\\"tenant_id\\\":\\\"planning-fixture\\\"},\\\"sha256\\\":\\\"a0c04f8ee2d96f826d05f0c6566891d8f7442544b13eeea5e613261a2b2fbb38\\\",\\\"size_bytes\\\":89},\\\"revision_id\\\":\\\"r1\\\",\\\"scope\\\":{\\\"project_id\\\":\\\"context\\\",\\\"tenant_id\\\":\\\"planning-fixture\\\"},\\\"source_id\\\":\\\"document\\\"},\\\"start\\\":0,\\\"unit\\\":\\\"byte\\\"},\\\"text\\\":\\\"\u03b1 correlates with \u03b2\\\"}]},\\\"entity_type\\\":\\\"fixture\\\",\\\"label\\\":\\\"\u03b1\\\",\\\"local_id\\\":\\\"a\\\",\\\"matches\\\":[]}],\\\"evidence_needs\\\":[],\\\"questions\\\":[],\\\"rationale\\\":\\\"Synthetic quotation geometry, not semantic acceptance.\\\",\\\"schema_version\\\":\\\"1\\\"}\",\"payload_sha256\":\"f3c64f1e2dcd523dd4f3340d8a9d51f082ed516abaad7d1e5396f3452878aeb4\"}}",
+      "observation_sha256": "1810a7aabde28f7d57e6e133f8dccbadfcaf3fff2b642d6d6e27e03fb18a67da"
+    },
+    {
+      "name": "extraction-edits.json",
+      "request": {
+        "schema_version": "1",
+        "reference": {
+          "scope": {
+            "tenant_id": "planning-fixture",
+            "project_id": "context"
+          },
+          "engagement_id": "decision-1"
+        },
+        "actor_id": "fixture",
+        "purpose": "knowledge_decomposition",
+        "decision_scope": "3333333333333333333333333333333333333333333333333333333333333333",
+        "runtime_cut": null,
+        "context": {
+          "schema_version": "1",
+          "scope": {
+            "tenant_id": "planning-fixture",
+            "project_id": "context"
+          },
+          "objective": {
+            "scope": {
+              "tenant_id": "planning-fixture",
+              "project_id": "context"
+            },
+            "artifact_id": "objective",
+            "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+            "media_type": "text/plain",
+            "schema_ref": {
+              "schema_id": "fixture.text",
+              "version": "1",
+              "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+            },
+            "size_bytes": 12
+          },
+          "prompt": {
+            "scope": {
+              "tenant_id": "planning-fixture",
+              "project_id": "context"
+            },
+            "artifact_id": "prompt-v2",
+            "sha256": "30941acae69bb81005857f144ffdc7423c7ebff76fb6d18b3df3a550eae087f1",
+            "media_type": "text/plain",
+            "schema_ref": {
+              "schema_id": "fixture.text",
+              "version": "1",
+              "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+            },
+            "size_bytes": 2487
+          },
+          "policy": {
+            "scope": {
+              "tenant_id": "planning-fixture",
+              "project_id": "context"
+            },
+            "artifact_id": "policy",
+            "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+            "media_type": "text/plain",
+            "schema_ref": {
+              "schema_id": "fixture.text",
+              "version": "1",
+              "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+            },
+            "size_bytes": 12
+          },
+          "model": {
+            "provider_id": "deterministic",
+            "model_id": "adversarial-fixture",
+            "model_revision": "1",
+            "configuration": {
+              "scope": {
+                "tenant_id": "planning-fixture",
+                "project_id": "context"
+              },
+              "artifact_id": "configuration",
+              "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+              "media_type": "text/plain",
+              "schema_ref": {
+                "schema_id": "fixture.text",
+                "version": "1",
+                "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+              },
+              "size_bytes": 12
+            },
+            "tokenizer": {
+              "schema_id": "fixture.text",
+              "version": "1",
+              "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+            },
+            "context_window_tokens": 4096
+          },
+          "entries": [
+            {
+              "artifact": {
+                "scope": {
+                  "tenant_id": "planning-fixture",
+                  "project_id": "context"
+                },
+                "artifact_id": "source-utf8",
+                "sha256": "a0c04f8ee2d96f826d05f0c6566891d8f7442544b13eeea5e613261a2b2fbb38",
+                "media_type": "text/plain",
+                "schema_ref": {
+                  "schema_id": "fixture.text",
+                  "version": "1",
+                  "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+                },
+                "size_bytes": 89
+              },
+              "role": "source",
+              "required": true
+            }
+          ],
+          "omissions": [
+            {
+              "artifact": {
+                "scope": {
+                  "tenant_id": "planning-fixture",
+                  "project_id": "context"
+                },
+                "artifact_id": "extra",
+                "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+                "media_type": "text/plain",
+                "schema_ref": {
+                  "schema_id": "fixture.text",
+                  "version": "1",
+                  "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+                },
+                "size_bytes": 12
+              },
+              "reason": "budget"
+            }
+          ],
+          "allowed_actions": [
+            "propose_knowledge_change",
+            "abstain"
+          ],
+          "output_schema": {
+            "schema_id": "planning.extraction-edit-draft",
+            "version": "1",
+            "sha256": "b2d23e7e358243896a333c8b6cdaecaabcc540c7f5792c89904e97ca04b47f3d"
+          },
+          "limits": {
+            "max_input_tokens": 1024,
+            "max_output_tokens": 1024,
+            "max_attempts": 2,
+            "total_tokens": 4096,
+            "total_accounting_units": 100,
+            "accounting_unit": "fixture-unit"
+          }
+        }
+      },
+      "capture_utf8": "{\"schema_version\": \"2\", \"action\": \"propose_knowledge_change\", \"rationale\": \"Synthetic quotation geometry, not semantic acceptance.\", \"entities\": [{\"local_id\": \"a\", \"label\": \"\\u03b1\", \"entity_type\": \"fixture\", \"matches\": [], \"attribution\": {\"origin\": \"source_stated\", \"confidence\": \"unknown\", \"quotations\": [{\"span\": {\"source\": {\"scope\": {\"tenant_id\": \"planning-fixture\", \"project_id\": \"context\"}, \"source_id\": \"document\", \"revision_id\": \"r1\", \"raw\": {\"scope\": {\"tenant_id\": \"planning-fixture\", \"project_id\": \"context\"}, \"artifact_id\": \"source-utf8\", \"sha256\": \"a0c04f8ee2d96f826d05f0c6566891d8f7442544b13eeea5e613261a2b2fbb38\", \"media_type\": \"text/plain\", \"schema_ref\": {\"schema_id\": \"fixture.text\", \"version\": \"1\", \"sha256\": \"1111111111111111111111111111111111111111111111111111111111111111\"}, \"size_bytes\": 89}}, \"unit\": \"byte\", \"start\": 0, \"end\": 21, \"sha256\": \"b2b3b342619117b3d49666870b5d7a2434855c4d16c1ceaa0b4ef9e489a09610\"}, \"text\": \"\\u03b1 correlates with \\u03b2\"}]}, \"context\": null}], \"assertions\": [{\"local_id\": \"replacement-claim\", \"subject\": \"a\", \"predicate\": \"correlates_with\", \"object\": \"a\", \"statement\": \"Synthetic replacement; not accepted science.\", \"polarity\": \"negated\", \"posture\": \"unresolved\", \"applicability\": null, \"attribution\": {\"origin\": \"source_stated\", \"confidence\": \"unknown\", \"quotations\": [{\"span\": {\"source\": {\"scope\": {\"tenant_id\": \"planning-fixture\", \"project_id\": \"context\"}, \"source_id\": \"document\", \"revision_id\": \"r1\", \"raw\": {\"scope\": {\"tenant_id\": \"planning-fixture\", \"project_id\": \"context\"}, \"artifact_id\": \"source-utf8\", \"sha256\": \"a0c04f8ee2d96f826d05f0c6566891d8f7442544b13eeea5e613261a2b2fbb38\", \"media_type\": \"text/plain\", \"schema_ref\": {\"schema_id\": \"fixture.text\", \"version\": \"1\", \"sha256\": \"1111111111111111111111111111111111111111111111111111111111111111\"}, \"size_bytes\": 89}}, \"unit\": \"byte\", \"start\": 0, \"end\": 21, \"sha256\": \"b2b3b342619117b3d49666870b5d7a2434855c4d16c1ceaa0b4ef9e489a09610\"}, \"text\": \"\\u03b1 correlates with \\u03b2\"}]}}], \"questions\": [], \"answers\": [], \"evidence_needs\": [], \"diagnostics\": [], \"edits\": [{\"local_id\": \"correction\", \"operation\": \"correct_assertion\", \"prior\": {\"graph\": {\"scope\": {\"tenant_id\": \"planning-fixture\", \"project_id\": \"context\"}, \"graph_id\": \"domain\"}, \"assertion_id\": \"prior-correction\", \"revision\": 1}, \"replacement_local_id\": \"replacement-claim\", \"attribution\": {\"origin\": \"inferred\", \"confidence\": \"unknown\", \"quotations\": [{\"span\": {\"source\": {\"scope\": {\"tenant_id\": \"planning-fixture\", \"project_id\": \"context\"}, \"source_id\": \"document\", \"revision_id\": \"r1\", \"raw\": {\"scope\": {\"tenant_id\": \"planning-fixture\", \"project_id\": \"context\"}, \"artifact_id\": \"source-utf8\", \"sha256\": \"a0c04f8ee2d96f826d05f0c6566891d8f7442544b13eeea5e613261a2b2fbb38\", \"media_type\": \"text/plain\", \"schema_ref\": {\"schema_id\": \"fixture.text\", \"version\": \"1\", \"sha256\": \"1111111111111111111111111111111111111111111111111111111111111111\"}, \"size_bytes\": 89}}, \"unit\": \"byte\", \"start\": 0, \"end\": 21, \"sha256\": \"b2b3b342619117b3d49666870b5d7a2434855c4d16c1ceaa0b4ef9e489a09610\"}, \"text\": \"\\u03b1 correlates with \\u03b2\"}]}}, {\"local_id\": \"retraction\", \"operation\": \"retract_assertion\", \"assertion\": {\"graph\": {\"scope\": {\"tenant_id\": \"planning-fixture\", \"project_id\": \"context\"}, \"graph_id\": \"domain\"}, \"assertion_id\": \"prior-retraction\", \"revision\": 1}, \"attribution\": {\"origin\": \"source_stated\", \"confidence\": \"unknown\", \"quotations\": [{\"span\": {\"source\": {\"scope\": {\"tenant_id\": \"planning-fixture\", \"project_id\": \"context\"}, \"source_id\": \"document\", \"revision_id\": \"r1\", \"raw\": {\"scope\": {\"tenant_id\": \"planning-fixture\", \"project_id\": \"context\"}, \"artifact_id\": \"source-utf8\", \"sha256\": \"a0c04f8ee2d96f826d05f0c6566891d8f7442544b13eeea5e613261a2b2fbb38\", \"media_type\": \"text/plain\", \"schema_ref\": {\"schema_id\": \"fixture.text\", \"version\": \"1\", \"sha256\": \"1111111111111111111111111111111111111111111111111111111111111111\"}, \"size_bytes\": 89}}, \"unit\": \"byte\", \"start\": 0, \"end\": 21, \"sha256\": \"b2b3b342619117b3d49666870b5d7a2434855c4d16c1ceaa0b4ef9e489a09610\"}, \"text\": \"\\u03b1 correlates with \\u03b2\"}]}}, {\"local_id\": \"merge\", \"operation\": \"merge_entities\", \"source\": {\"graph\": {\"scope\": {\"tenant_id\": \"planning-fixture\", \"project_id\": \"context\"}, \"graph_id\": \"domain\"}, \"entity_id\": \"alias\", \"revision\": 1}, \"target\": {\"graph\": {\"scope\": {\"tenant_id\": \"planning-fixture\", \"project_id\": \"context\"}, \"graph_id\": \"domain\"}, \"entity_id\": \"canonical\", \"revision\": 1}, \"attribution\": {\"origin\": \"source_stated\", \"confidence\": \"unknown\", \"quotations\": [{\"span\": {\"source\": {\"scope\": {\"tenant_id\": \"planning-fixture\", \"project_id\": \"context\"}, \"source_id\": \"document\", \"revision_id\": \"r1\", \"raw\": {\"scope\": {\"tenant_id\": \"planning-fixture\", \"project_id\": \"context\"}, \"artifact_id\": \"source-utf8\", \"sha256\": \"a0c04f8ee2d96f826d05f0c6566891d8f7442544b13eeea5e613261a2b2fbb38\", \"media_type\": \"text/plain\", \"schema_ref\": {\"schema_id\": \"fixture.text\", \"version\": \"1\", \"sha256\": \"1111111111111111111111111111111111111111111111111111111111111111\"}, \"size_bytes\": 89}}, \"unit\": \"byte\", \"start\": 0, \"end\": 21, \"sha256\": \"b2b3b342619117b3d49666870b5d7a2434855c4d16c1ceaa0b4ef9e489a09610\"}, \"text\": \"\\u03b1 correlates with \\u03b2\"}]}}, {\"local_id\": \"revise-context\", \"operation\": \"revise_entity_context\", \"prior\": {\"graph\": {\"scope\": {\"tenant_id\": \"planning-fixture\", \"project_id\": \"context\"}, \"graph_id\": \"domain\"}, \"entity_id\": \"prior-context\", \"revision\": 1}, \"replacement_local_id\": \"a\", \"attribution\": {\"origin\": \"source_stated\", \"confidence\": \"unknown\", \"quotations\": [{\"span\": {\"source\": {\"scope\": {\"tenant_id\": \"planning-fixture\", \"project_id\": \"context\"}, \"source_id\": \"document\", \"revision_id\": \"r1\", \"raw\": {\"scope\": {\"tenant_id\": \"planning-fixture\", \"project_id\": \"context\"}, \"artifact_id\": \"source-utf8\", \"sha256\": \"a0c04f8ee2d96f826d05f0c6566891d8f7442544b13eeea5e613261a2b2fbb38\", \"media_type\": \"text/plain\", \"schema_ref\": {\"schema_id\": \"fixture.text\", \"version\": \"1\", \"sha256\": \"1111111111111111111111111111111111111111111111111111111111111111\"}, \"size_bytes\": 89}}, \"unit\": \"byte\", \"start\": 0, \"end\": 21, \"sha256\": \"b2b3b342619117b3d49666870b5d7a2434855c4d16c1ceaa0b4ef9e489a09610\"}, \"text\": \"\\u03b1 correlates with \\u03b2\"}]}}]}",
+      "observation_json": "{\"schema_version\":\"2\",\"attempt\":{\"engagement\":{\"scope\":{\"tenant_id\":\"planning-fixture\",\"project_id\":\"context\"},\"engagement_id\":\"decision-1\"},\"request_sha256\":\"1a8517753864466cf1bb7393e39a73dcd0ba1a762dbe8af7249c2f8427d2b9e8\",\"ordinal\":1},\"status\":\"proposed\",\"reason_code\":null,\"output_sha256\":\"c42c68091c810920c9bc3cdcd29276ce9632b16035dcfe5fb3b6f79b2e955a74\",\"captured_bytes\":6203,\"output_complete\":true,\"usage\":{\"input_tokens\":10,\"output_tokens\":10,\"accounting_units\":1,\"certainty\":\"reported\"},\"proposal\":{\"schema_version\":\"1\",\"output_schema\":{\"schema_id\":\"planning.extraction-edit-draft\",\"version\":\"1\",\"sha256\":\"b2d23e7e358243896a333c8b6cdaecaabcc540c7f5792c89904e97ca04b47f3d\"},\"action\":\"propose_knowledge_change\",\"rationale\":\"Synthetic quotation geometry, not semantic acceptance.\",\"payload_json\":\"{\\\"action\\\":\\\"propose_knowledge_change\\\",\\\"answers\\\":[],\\\"assertions\\\":[{\\\"applicability\\\":null,\\\"attribution\\\":{\\\"confidence\\\":\\\"unknown\\\",\\\"origin\\\":\\\"source_stated\\\",\\\"quotations\\\":[{\\\"span\\\":{\\\"end\\\":21,\\\"sha256\\\":\\\"b2b3b342619117b3d49666870b5d7a2434855c4d16c1ceaa0b4ef9e489a09610\\\",\\\"source\\\":{\\\"raw\\\":{\\\"artifact_id\\\":\\\"source-utf8\\\",\\\"media_type\\\":\\\"text/plain\\\",\\\"schema_ref\\\":{\\\"schema_id\\\":\\\"fixture.text\\\",\\\"sha256\\\":\\\"1111111111111111111111111111111111111111111111111111111111111111\\\",\\\"version\\\":\\\"1\\\"},\\\"scope\\\":{\\\"project_id\\\":\\\"context\\\",\\\"tenant_id\\\":\\\"planning-fixture\\\"},\\\"sha256\\\":\\\"a0c04f8ee2d96f826d05f0c6566891d8f7442544b13eeea5e613261a2b2fbb38\\\",\\\"size_bytes\\\":89},\\\"revision_id\\\":\\\"r1\\\",\\\"scope\\\":{\\\"project_id\\\":\\\"context\\\",\\\"tenant_id\\\":\\\"planning-fixture\\\"},\\\"source_id\\\":\\\"document\\\"},\\\"start\\\":0,\\\"unit\\\":\\\"byte\\\"},\\\"text\\\":\\\"\u03b1 correlates with \u03b2\\\"}]},\\\"local_id\\\":\\\"replacement-claim\\\",\\\"object\\\":\\\"a\\\",\\\"polarity\\\":\\\"negated\\\",\\\"posture\\\":\\\"unresolved\\\",\\\"predicate\\\":\\\"correlates_with\\\",\\\"statement\\\":\\\"Synthetic replacement; not accepted science.\\\",\\\"subject\\\":\\\"a\\\"}],\\\"diagnostics\\\":[],\\\"edits\\\":[{\\\"attribution\\\":{\\\"confidence\\\":\\\"unknown\\\",\\\"origin\\\":\\\"inferred\\\",\\\"quotations\\\":[{\\\"span\\\":{\\\"end\\\":21,\\\"sha256\\\":\\\"b2b3b342619117b3d49666870b5d7a2434855c4d16c1ceaa0b4ef9e489a09610\\\",\\\"source\\\":{\\\"raw\\\":{\\\"artifact_id\\\":\\\"source-utf8\\\",\\\"media_type\\\":\\\"text/plain\\\",\\\"schema_ref\\\":{\\\"schema_id\\\":\\\"fixture.text\\\",\\\"sha256\\\":\\\"1111111111111111111111111111111111111111111111111111111111111111\\\",\\\"version\\\":\\\"1\\\"},\\\"scope\\\":{\\\"project_id\\\":\\\"context\\\",\\\"tenant_id\\\":\\\"planning-fixture\\\"},\\\"sha256\\\":\\\"a0c04f8ee2d96f826d05f0c6566891d8f7442544b13eeea5e613261a2b2fbb38\\\",\\\"size_bytes\\\":89},\\\"revision_id\\\":\\\"r1\\\",\\\"scope\\\":{\\\"project_id\\\":\\\"context\\\",\\\"tenant_id\\\":\\\"planning-fixture\\\"},\\\"source_id\\\":\\\"document\\\"},\\\"start\\\":0,\\\"unit\\\":\\\"byte\\\"},\\\"text\\\":\\\"\u03b1 correlates with \u03b2\\\"}]},\\\"local_id\\\":\\\"correction\\\",\\\"operation\\\":\\\"correct_assertion\\\",\\\"prior\\\":{\\\"assertion_id\\\":\\\"prior-correction\\\",\\\"graph\\\":{\\\"graph_id\\\":\\\"domain\\\",\\\"scope\\\":{\\\"project_id\\\":\\\"context\\\",\\\"tenant_id\\\":\\\"planning-fixture\\\"}},\\\"revision\\\":1},\\\"replacement_local_id\\\":\\\"replacement-claim\\\"},{\\\"assertion\\\":{\\\"assertion_id\\\":\\\"prior-retraction\\\",\\\"graph\\\":{\\\"graph_id\\\":\\\"domain\\\",\\\"scope\\\":{\\\"project_id\\\":\\\"context\\\",\\\"tenant_id\\\":\\\"planning-fixture\\\"}},\\\"revision\\\":1},\\\"attribution\\\":{\\\"confidence\\\":\\\"unknown\\\",\\\"origin\\\":\\\"source_stated\\\",\\\"quotations\\\":[{\\\"span\\\":{\\\"end\\\":21,\\\"sha256\\\":\\\"b2b3b342619117b3d49666870b5d7a2434855c4d16c1ceaa0b4ef9e489a09610\\\",\\\"source\\\":{\\\"raw\\\":{\\\"artifact_id\\\":\\\"source-utf8\\\",\\\"media_type\\\":\\\"text/plain\\\",\\\"schema_ref\\\":{\\\"schema_id\\\":\\\"fixture.text\\\",\\\"sha256\\\":\\\"1111111111111111111111111111111111111111111111111111111111111111\\\",\\\"version\\\":\\\"1\\\"},\\\"scope\\\":{\\\"project_id\\\":\\\"context\\\",\\\"tenant_id\\\":\\\"planning-fixture\\\"},\\\"sha256\\\":\\\"a0c04f8ee2d96f826d05f0c6566891d8f7442544b13eeea5e613261a2b2fbb38\\\",\\\"size_bytes\\\":89},\\\"revision_id\\\":\\\"r1\\\",\\\"scope\\\":{\\\"project_id\\\":\\\"context\\\",\\\"tenant_id\\\":\\\"planning-fixture\\\"},\\\"source_id\\\":\\\"document\\\"},\\\"start\\\":0,\\\"unit\\\":\\\"byte\\\"},\\\"text\\\":\\\"\u03b1 correlates with \u03b2\\\"}]},\\\"local_id\\\":\\\"retraction\\\",\\\"operation\\\":\\\"retract_assertion\\\"},{\\\"attribution\\\":{\\\"confidence\\\":\\\"unknown\\\",\\\"origin\\\":\\\"source_stated\\\",\\\"quotations\\\":[{\\\"span\\\":{\\\"end\\\":21,\\\"sha256\\\":\\\"b2b3b342619117b3d49666870b5d7a2434855c4d16c1ceaa0b4ef9e489a09610\\\",\\\"source\\\":{\\\"raw\\\":{\\\"artifact_id\\\":\\\"source-utf8\\\",\\\"media_type\\\":\\\"text/plain\\\",\\\"schema_ref\\\":{\\\"schema_id\\\":\\\"fixture.text\\\",\\\"sha256\\\":\\\"1111111111111111111111111111111111111111111111111111111111111111\\\",\\\"version\\\":\\\"1\\\"},\\\"scope\\\":{\\\"project_id\\\":\\\"context\\\",\\\"tenant_id\\\":\\\"planning-fixture\\\"},\\\"sha256\\\":\\\"a0c04f8ee2d96f826d05f0c6566891d8f7442544b13eeea5e613261a2b2fbb38\\\",\\\"size_bytes\\\":89},\\\"revision_id\\\":\\\"r1\\\",\\\"scope\\\":{\\\"project_id\\\":\\\"context\\\",\\\"tenant_id\\\":\\\"planning-fixture\\\"},\\\"source_id\\\":\\\"document\\\"},\\\"start\\\":0,\\\"unit\\\":\\\"byte\\\"},\\\"text\\\":\\\"\u03b1 correlates with \u03b2\\\"}]},\\\"local_id\\\":\\\"merge\\\",\\\"operation\\\":\\\"merge_entities\\\",\\\"source\\\":{\\\"entity_id\\\":\\\"alias\\\",\\\"graph\\\":{\\\"graph_id\\\":\\\"domain\\\",\\\"scope\\\":{\\\"project_id\\\":\\\"context\\\",\\\"tenant_id\\\":\\\"planning-fixture\\\"}},\\\"revision\\\":1},\\\"target\\\":{\\\"entity_id\\\":\\\"canonical\\\",\\\"graph\\\":{\\\"graph_id\\\":\\\"domain\\\",\\\"scope\\\":{\\\"project_id\\\":\\\"context\\\",\\\"tenant_id\\\":\\\"planning-fixture\\\"}},\\\"revision\\\":1}},{\\\"attribution\\\":{\\\"confidence\\\":\\\"unknown\\\",\\\"origin\\\":\\\"source_stated\\\",\\\"quotations\\\":[{\\\"span\\\":{\\\"end\\\":21,\\\"sha256\\\":\\\"b2b3b342619117b3d49666870b5d7a2434855c4d16c1ceaa0b4ef9e489a09610\\\",\\\"source\\\":{\\\"raw\\\":{\\\"artifact_id\\\":\\\"source-utf8\\\",\\\"media_type\\\":\\\"text/plain\\\",\\\"schema_ref\\\":{\\\"schema_id\\\":\\\"fixture.text\\\",\\\"sha256\\\":\\\"1111111111111111111111111111111111111111111111111111111111111111\\\",\\\"version\\\":\\\"1\\\"},\\\"scope\\\":{\\\"project_id\\\":\\\"context\\\",\\\"tenant_id\\\":\\\"planning-fixture\\\"},\\\"sha256\\\":\\\"a0c04f8ee2d96f826d05f0c6566891d8f7442544b13eeea5e613261a2b2fbb38\\\",\\\"size_bytes\\\":89},\\\"revision_id\\\":\\\"r1\\\",\\\"scope\\\":{\\\"project_id\\\":\\\"context\\\",\\\"tenant_id\\\":\\\"planning-fixture\\\"},\\\"source_id\\\":\\\"document\\\"},\\\"start\\\":0,\\\"unit\\\":\\\"byte\\\"},\\\"text\\\":\\\"\u03b1 correlates with \u03b2\\\"}]},\\\"local_id\\\":\\\"revise-context\\\",\\\"operation\\\":\\\"revise_entity_context\\\",\\\"prior\\\":{\\\"entity_id\\\":\\\"prior-context\\\",\\\"graph\\\":{\\\"graph_id\\\":\\\"domain\\\",\\\"scope\\\":{\\\"project_id\\\":\\\"context\\\",\\\"tenant_id\\\":\\\"planning-fixture\\\"}},\\\"revision\\\":1},\\\"replacement_local_id\\\":\\\"a\\\"}],\\\"entities\\\":[{\\\"attribution\\\":{\\\"confidence\\\":\\\"unknown\\\",\\\"origin\\\":\\\"source_stated\\\",\\\"quotations\\\":[{\\\"span\\\":{\\\"end\\\":21,\\\"sha256\\\":\\\"b2b3b342619117b3d49666870b5d7a2434855c4d16c1ceaa0b4ef9e489a09610\\\",\\\"source\\\":{\\\"raw\\\":{\\\"artifact_id\\\":\\\"source-utf8\\\",\\\"media_type\\\":\\\"text/plain\\\",\\\"schema_ref\\\":{\\\"schema_id\\\":\\\"fixture.text\\\",\\\"sha256\\\":\\\"1111111111111111111111111111111111111111111111111111111111111111\\\",\\\"version\\\":\\\"1\\\"},\\\"scope\\\":{\\\"project_id\\\":\\\"context\\\",\\\"tenant_id\\\":\\\"planning-fixture\\\"},\\\"sha256\\\":\\\"a0c04f8ee2d96f826d05f0c6566891d8f7442544b13eeea5e613261a2b2fbb38\\\",\\\"size_bytes\\\":89},\\\"revision_id\\\":\\\"r1\\\",\\\"scope\\\":{\\\"project_id\\\":\\\"context\\\",\\\"tenant_id\\\":\\\"planning-fixture\\\"},\\\"source_id\\\":\\\"document\\\"},\\\"start\\\":0,\\\"unit\\\":\\\"byte\\\"},\\\"text\\\":\\\"\u03b1 correlates with \u03b2\\\"}]},\\\"context\\\":null,\\\"entity_type\\\":\\\"fixture\\\",\\\"label\\\":\\\"\u03b1\\\",\\\"local_id\\\":\\\"a\\\",\\\"matches\\\":[]}],\\\"evidence_needs\\\":[],\\\"questions\\\":[],\\\"rationale\\\":\\\"Synthetic quotation geometry, not semantic acceptance.\\\",\\\"schema_version\\\":\\\"2\\\"}\",\"payload_sha256\":\"0d4df52c0bcfc89f23bb4ddd1c5d5193840551d293139fe2f47fa1a6e64f02d9\"}}",
+      "observation_sha256": "dc5f506a126b2c6608bfa519d383f4556f57e74a6adc72f4aff5e4125b50a7f9"
+    }
+  ]
+}
