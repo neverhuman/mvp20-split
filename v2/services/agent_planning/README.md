@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-- Version: Planning0.63.0; public Planning0.9.0. BP-07.02 complete and audited;930 installed tests,39 process/replay stages and actual-owner recovery verified.
+- Version: Planning0.64.0; public Planning0.9.0. BP-07.02 complete and audited;930 installed tests,39 process/replay stages and actual-owner recovery verified.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Canonical progress: [BP-07.02](../../docs/Build%20Plans/BP-07/Completed/BP-07.02%20Reliable%20text%20decomposition.md).
 
