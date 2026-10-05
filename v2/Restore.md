@@ -1,14 +1,16 @@
 # Restore
 
-Refreshed `2026-10-05 13:36:19` (America/Chicago). **Read first after compression.**
+Refreshed `2026-10-05 13:49:47` (America/Chicago). **Read first after compression.**
 
 ## Resume
 
-BP-07.03 CLOSED100% `2026-10-05 13:36:19`; scoped audit/archive commit/push pending. Latest pushed439867c7 (final replacement proof). No running verification or owned hosts. Child archived docs/Build Plans/BP-07/Completed/BP-07.03 Campaign proposals and context.md. Child100%,Build100%,Acceptance100%,4/4;parent60%,12/20. Root/module README summaries and architecture reconciled, inbound/relative archive links repaired; validate changed links before commit.
+BP-07.04/B1.01 VERIFIED `2026-10-05 13:49:47`; commit/push pending. Latest pushed45e9e761. No running verification/owned hosts. Runtime/dev0.21.0,publicGraphRuntime0.13,migrationhead0017 unchanged.26 scoped cases2.25s,119statements16branches100%;111 isolatedscope/contractcases;162predecessorPython/SQL/JSONfilesunchanged.12boundaries17.38s;510schemaspass. Sessions44133/52789finished. Scope_Boundary.json recordsproof. First15761probe failedfixturelist-vs-tuple;fixed. Ruffpassed;uvsyncupdateddevlock.
 
-NEXT: BP-07.04 bounded activation coherence audit, then earliest B1 prerequisite. Read owning child + Runtime README + Graph_Runner/Supervisor architecture + public contracts before choosing concrete schema/modules. BP04 has Runtime engagement/outbox/decision authority and Planning call execution; fake provider proves orchestration only. No owner decision blocks deterministic work. Do not ask about live provider until dependent gate.
+Child6.25%,Build8.33%,Acceptance0%,0/4;parent61.25%,12/20. B1fourequalmilestones.01=100%,.02/.03/.04=0%;B1=25%. B2/B3threeeach;V1two,all0. BP07.03closedarchived100%. Source/tests in Runtime supervision_scope;run_tests --module runtime --area supervision_scope registered. Root/moduleREADMEs capture limits. PlanningREADME examplecorrected to actualscopedpytest instead of unsupportedarea.
 
-Final_Installation.json:1262 fresh cases39processes/257.994s;49 second-installation vectors14.988s;12boundaries9.37s;510schemas;22baseline migrations;15currentpayloadsequal.210/212predecessor0.49filesunchanged,onlyprovider capture/profiles changed with versioned compatibilityproof. Sessions13583/48121finished. Source/doc edits during audit occurred after tests finished; production/testsource unchanged.
+NEXT B1.02 additive public supervisor request/proposal/receipt and command profiles, preserving old510schemas/migrations/bytes. Read BP07.04 Physical design +activationaudit. Runtime owns acceptance, Planning owns requests/attempt/accounting. New contracts/supervision package planned because graph_runtime cannot depend on planning (reversecycle). Keep Planningdecision_scopedeclarationdigest separate Runtimefootprint/readsetdigests. B1.02 requires domainbinders,notwideDTOlogic, versionedexactbytes/negativefixtures/schema-preservation+independentproof before journalB1.03.
+
+Pure scope done:NodeObservation canonicalstate/output1MiB,concreteActivationAddress;DecisionFootprint1..64waiting/readyInvoke targets<=256reads/8MiB,originalcutprovenance,sortedstableidentity,relevantfingerprint excludesglobalrevision. Read/writeoverlapsharedreadaloneindependent;missing/changedselectedobservationsstale;older/wrongcutsreject. It cannotprove storedplanmembership/absencequeuedinvocation. B2must pin graph-specificsupervisionpolicyatadmission,checkpointbeforematerialization,atomicwinner/effective-inputrecords; no currentexecutionauthority. Future-onlyreceiptcorrections unchanged.
 
 ## Current evidence
 

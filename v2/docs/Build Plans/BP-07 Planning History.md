@@ -747,3 +747,8 @@ B3.03 verified 2026-10-05 13:19:41: predeclared300-descriptor protocol/catalog a
 ## 2026-10-05 13:36:19 - BP-07.03 closeout
 
 Scoped audit BP-07.03_Campaign_Closeout.md aligned after current module/architecture summary reconciliation. Service README now maps implemented context, policy and compiler boundaries; migration head0014 and replacement limits explicit. Archived child and repaired relative/inbound links. No production change after final acceptance. Child100%,Build100%,Acceptance100%,4/4;parent60%,12/20. BP-07.04 bounded activation audit next; live-provider decisions remain limited to real calls.
+
+
+## 2026-10-05 13:49:47 - BP-07.04 activation and scope boundary
+
+Activation corrected_ready at45e9e761; physical design separates Runtime footprint from Planning declaration identity, avoids public dependency cycle and requires checkpoint-before-materialization integration. Runtime0.21 adds pure supervision_scope;26 scoped cases cover119statements/16branches100%;111 independently installed cases pass,162 predecessor implementation/migration files unchanged.12boundaries17.38s;510schemas unchanged. First test probe used list for strict tuple; fixed fixture only. Owned test area registered. Corrected prior Planning root README example to existing scoped pytest command. B1.01complete,B1=25%,child6.25%,Build8.33%,Acceptance0%,0/4;parent61.25%,12/20. Next B1.02 public supervisor contracts. No storage/acceptance/concurrency claim.
