@@ -1,6 +1,18 @@
 """Public planning DTOs only; ownership and acceptance remain in named services."""
 
 from .campaign_context import CampaignAssessmentSelection, CampaignResearchSelection
+from .campaign_output import (
+    CampaignAdjustmentDraft,
+    CampaignAlternative,
+    CampaignCandidateDraft,
+    CampaignDraft,
+    CampaignEvidenceIntent,
+    CampaignInputAdjustment,
+    CampaignNodeAddress,
+    CampaignUnresolvedPoint,
+    FutureCampaignDraft,
+    campaign_draft_schema,
+)
 from .context import (
     CallLimits,
     ContextEntry,
@@ -85,3 +97,6 @@ __all__ += ["AssertionCorrectionDraft", "AssertionRetractionDraft", "EntityConte
 
 __all__ += ["AnswerProposal", "NeedProposal", "QuestionProposal", "ResearchProposalSet"]
 __all__ += ["CampaignAssessmentSelection", "CampaignResearchSelection"]
+__all__ += ["CampaignAdjustmentDraft", "CampaignAlternative", "CampaignCandidateDraft", "CampaignDraft",
+            "CampaignEvidenceIntent", "CampaignInputAdjustment", "CampaignNodeAddress", "CampaignUnresolvedPoint",
+            "FutureCampaignDraft", "campaign_draft_schema"]

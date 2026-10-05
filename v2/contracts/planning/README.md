@@ -1,6 +1,6 @@
 # Planning public contracts
 
-Version0.7.0, BP-07.02/B2.02a.i verified 2026-10-04 07:07:14. These DTOs describe scoped context, reviewed model/configuration pins, logical requests, physical attempt identity and observed usage. Dependencies are public Core, Graph Runtime, Knowledge, Evidence and Research contracts plus Pydantic. No provider SDK, persistence, credential, endpoint, domain policy or execution acceptance belongs here.
+Version0.9.0; campaign draft output and exact Research selections are additive to the preserved extraction/reference profiles. These DTOs describe scoped context, reviewed model/configuration pins, logical requests, physical attempt identity and observed usage. Dependencies are public Core, Campaigns, Graph Runtime, Knowledge, Evidence and Research contracts plus Pydantic. No provider SDK, persistence, credential, endpoint, domain policy or execution acceptance belongs here.
 
 Request collections are bounded immutable tuples; strict scalar validation and forbidden extras apply; each versioned root fixes its schema_version. Usage fields may be null: unknown is not zero. JSON Schema publication uses dev/export_schemas.py; additive planning roots preserve predecessor bytes. Context relationships and immutable fingerprints belong to Agent Planning's context domain. A DTO does not authorize source reads, provider egress, spend, acceptance or real science.
 
@@ -20,3 +20,7 @@ The additive planning.research-proposal-set/v1 exposes distinct proposed questio
 
 
 Planning0.8 adds CampaignResearchSelection and CampaignAssessmentSelection for exact campaign-context inputs. Questions/needs retain explicit revisions; assessments carry the complete original public request plus expected status digest. Wire validation grants no read, scientific or execution authority; Planning campaign_context owns cross-record binding. The selection root adds two published schemas while preserving all506 predecessors.
+
+Planning0.9 adds the distinct planning.campaign-draft/v1 profile, pinned by campaign_draft_schema. CampaignDraft groups future ExecutableCampaignV4 definitions or declared scalar adjustment proposals, evidence intents, alternatives and unresolved points. All remain proposal_only with scientific_authority not_established. Closed types exclude arbitrary handlers, accepted answers and commands. Original-request/action/scope/cut binding and duplicate-change policy belong to the Planning parser; selected evidence/tool eligibility and compilation belong to later policy and Runtime. A structurally valid DTO alone authorizes no action. Runtime currently has no adjustment write API.
+
+Owned campaign-output fixtures/tests live in tests/campaign_output; publication compatibility in dev/tests/schema_publication/test_campaign_output.py verifies all508 predecessor hashes. The new profile adds two schema files (510 total). Rebuild acceptance includes four output shapes, strict finite scalar reuse, immutable bounded collections, forbidden authority/handler fields and exact schema pinning. Provider integration and semantic candidate validation are separate gates.

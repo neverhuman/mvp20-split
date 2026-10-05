@@ -1,0 +1,19 @@
+{
+  "verified_at": "2026-10-04 20:33:17",
+  "status": "passed",
+  "gate": "BP-07.03/B1.04a",
+  "planning": "0.50.0",
+  "contracts": "0.9.0",
+  "source_tests": 101,
+  "source_seconds": 23.05,
+  "installed_tests": 823,
+  "installed_seconds": 56.765,
+  "published_schemas": 510,
+  "predecessor_schemas_unchanged": 508,
+  "independent_manifest": ".test-results/planning-campaign-output-independent-20261004/manifest.json",
+  "limits": [
+    "Wire shape only; pure original-request parser and provider integration pending",
+    "No Runtime adjustment write API; proposals confer no execution or scientific authority",
+    "No migration, live provider or actual scientific evaluation"
+  ]
+}
