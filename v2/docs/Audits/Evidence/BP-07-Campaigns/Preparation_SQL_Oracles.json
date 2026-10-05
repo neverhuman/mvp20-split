@@ -1,0 +1,27 @@
+{
+  "verified_at": "2026-10-04 20:01:32",
+  "status": "passed",
+  "task": "BP-07.03/B1.03c.iii",
+  "planning": "0.49.0",
+  "migration": "planning0012",
+  "sql": {
+    "tests": 23,
+    "seconds": 4.32,
+    "statements": 57,
+    "branches": 4,
+    "coverage_percent": 100
+  },
+  "oracles": [
+    "scope/grant/actor and exact original request",
+    "same/different competing preparations",
+    "registration versus dispatch; late first write refusal",
+    "unissued reservation; exact replay after issue without new dispatch",
+    "copied row identity/digest corruption; original DB row unchanged",
+    "rollback after inserted row; actual service UPDATE/DELETE denial"
+  ],
+  "limits": [
+    "Fresh synthetic identities in retained PostgreSQL; no reset/history modification",
+    "Prior787 independently installed pure cases explicitly reused: implementation unchanged",
+    "Fresh installation SQL/restart/replacement proof remains c.iv; campaign dispatch integration remains B2"
+  ]
+}
