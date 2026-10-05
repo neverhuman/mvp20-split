@@ -1,14 +1,16 @@
 # Restore
 
-Refreshed `2026-10-05 12:23:42` (America/Chicago). Read FIRST after each compression. Continue until genuinely needed across commits/compactions; no subagents/JARVIS/v1 edits.
+Refreshed `2026-10-05 12:38:41` (America/Chicago). Read FIRST after each compression. Continue until genuinely needed across commits/compactions; no subagents/JARVIS/v1 edits.
 
 ## Resume here
 
-B2.03c.ii VERIFIED; commit/push this milestone next, then **B2.03c.iii owned SQL/HTTP failure proof**. Current Planning/dev0.69,public0.9,510schemas unchanged; no migration. Prior pushed68e7621f(c.i),ea357a69(approved declarationv2),5a598165(storage races),c6f720ee(journal). No running verification or owned hosts.
+B2.03c.iii VERIFIED; commit/push next, then **B2.03d installed actual-owner/crash acceptance**. Planning0.69/public0.9,510schemas unchanged. Previous pushed70826542(c.ii). No running verification/owned hosts.
 
-Canonical child BP-07.03 **47.22%**,Build62.96%,Acceptance0%;parentBP-07 **49.44%**,1/4 and9/20 closed. B1=100%;B2.01/.02=100%,B2.03=66.6667%,B2=88.8889%. B2.03a/b100%,c66.6667%,d0%;c.i/ii100%,iii0%. B3/V1=0%. Approved declaration compatibility repair adds no weighted delivery. No owner decision blocks deterministic work.
+Child47.92%,Build63.89%,Acceptance0%,parent49.58%;1/4 and9/20 closed. B1=100%;B2.01/.02=100%,B2.03=75%,B2=91.6667%;a/b/c100%,d0%.B3/V1=0%. No owner decision blocks deterministic work.
 
 ## Latest evidence
+
+Compiler_HTTP_Recovery.json:8 scoped68.34s,8 installed SQL/HTTP73.846s,198 isolated57.786s,12 boundaries16.84s. Actual clients+SQL/protocol stubs; no actual-owner/crash claim. Install .test-results/planning-http-independent-20261005;SQL .test-results/planning-http-installed-20261005. All sessions31499/47120/35525/67026 passed. No source production changes.
 
 Compiler_Progression.json:13 scopedSQL/scripted-peer cases191.37s;progression.py67/68statements,18/18branches;unexpected ValueError rethrow inlease cleanup unexecuted,so99% statementcoverage.12boundaries9.64s;198isolated dispatch57.361s;36installedSQL262.14s in7module files. Sessions72112/34266/32132/13744 allpassed.
 
@@ -29,6 +31,10 @@ Progression.advance owns300slease andfinallyrelease,atmostonePOST/invocation. Re
 Owner explicitly approved private declarationv2. Implemented/verified0.67:omitselfArtifactID,binduniqueoriginalrequiredconstraint bySHA/size/textmedia thenexactconsumedArtifactRef/body. Publication precedesoriginalrequest. Literalv1bytes/IDrule preserved. ActualData0.29/twoownerprocesses/twoPlanningworkers provedpublication/processing/originalpacket/reviewafterrestart. Evidence Declaration_Publication.json;install .test-results/planning-declaration-modules-independent-20261005;actualData .test-results/planning-declaration-data-final-20261005. Do not ask again or repinactivecampaigns.
 
 ## Next bounded work
+
+d actual combined Data/Registry/Runtime publicHTTP plus PlanningSQL first; then kill/replacement workers. Use new test-owned modules, current Planning0.69 installation. Old verify_planning_compiler_owners.py pins0.61; do not run unchanged. Existing declaration publication fixture shows publish-before-binding original request; needs selected actual Registry metadata/Runtime universe, actual current refresh, durable origin/selection. Test numeric tool invocation graph (no execution). Separate test hook after journal dispatch and after actual peer commit before final append, marker then kill owned worker; bounded short test lease via public acquire, successor after DB-clock expiry. Preserve same effect/receipt; no direct peer SQL. Decompose helpers/source/publication/runner for context.
+
+Completed c.iii reference (not remaining):
 
 c.iii usesactual RuntimeAuthoringClient/RegistryEligibilityClient withowned ThreadingHTTPServer stubs/publicDTOs plusactualPlanningSQL. OnPOST handlerread samejournal advisorylock toproveintentexists/no SQLtransaction acrossnetwork. Cacheexactreceipts/readbacks;simulatecommitthenTCPdisconnect,malformedreply,deniedGET,Registryfresh-rights checks/stableunknownretry,replacementleaseafterpeercommitbeforeappend withsuccessorGETrecoveryevenprocessingdenied. StubisnotactualRuntime/Registry;realindependentowners/crash remain d. Newtests campaign_dispatch_transport,split support/runtime/registry;ownedthreadcleanup,boundedHTTPtimeouts. Add SQLhelper --area transport. Productioncode changes onlyif probesexposedefect;test-onlyworkcanstay0.69.
 

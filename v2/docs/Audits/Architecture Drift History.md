@@ -220,3 +220,6 @@ Source access and publication remain isolated Planning modules with public Data/
 
 
 2026-10-05 11:33:10: Approved declaration v2 publication correction aligned.63 focused/333 isolated compiler/12 installed origin SQL cases;actual Data0.29 fixed-byte publication, processing reads and original request/packet/review remain exact after restart. V1 literal bytes preserved;no public schema/migration change. Guarded coordination remains next.
+
+
+B2.03c.iii verified 2026-10-05 12:38:41: Planning0.69 actual SQL plus real HTTP clients against owned protocol stubs.8 scoped cases68.34s;8 installed SQL/HTTP73.846s;198 isolated dispatch57.786s;12 boundaries16.84s. Intent-before-POST/lock release, lost/malformed commit recovery under denied current processing, denied receipt, exact Registry replay and stable timestamps, post-commit fence replacement, unexpected cleanup error all verified. No production change or actual owner/process-kill claim. c100%,B2.03=75%,B2=91.6667%,Build63.89%,child47.92%,parent49.58%;1/4 and9/20 closed. Next d installed actual-owner/crash acceptance. Aligned bounded coordinator transport scope; actual combined-owner/crash gate remains d.

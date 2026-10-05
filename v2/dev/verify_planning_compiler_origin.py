@@ -21,6 +21,7 @@ ROOT = Path(__file__).absolute().parents[1]
 
 def verify(installation, output, area='origin'):
     areas = {'origin': ('campaign_handoff_storage',), 'coordinator': ('campaign_dispatch_coordinator',),
+             'transport': ('campaign_dispatch_transport',),
              'selection': ('campaign_handoff_storage', 'campaign_dispatch_storage')}
     if area not in areas:
         raise ValueError('Unknown compiler SQL area')
@@ -69,7 +70,7 @@ def verify(installation, output, area='origin'):
         'seconds': sum(float(suite.attrib['time']) for suite in suites),
         'installation_manifest': str(installation / 'manifest.json'),
         'limits': ['Actual retained Planning PostgreSQL; current package migrations only, no reset',
-                   'Existing fresh wheel installation; origin read replacement uses another engine, not a process-kill proof',
+                   'Verified current wheel installation; SQL and protocol probes do not establish process-kill recovery',
                    'No actual Runtime/Registry acceptance, provider or scientific claim']}
     (output / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({'status': 'passed', 'tests': count, 'planning': current}))
@@ -79,6 +80,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--installation', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
-    parser.add_argument('--area', choices=['origin', 'selection', 'coordinator'], default='origin')
+    parser.add_argument('--area', choices=['origin', 'selection', 'coordinator', 'transport'], default='origin')
     options = parser.parse_args()
     verify(options.installation, options.output, options.area)

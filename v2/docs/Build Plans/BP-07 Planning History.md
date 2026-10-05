@@ -722,3 +722,6 @@ B2.03c.i verified 2026-10-05 12:02:44: Planning0.68 guarded one-operation dispat
 
 
 B2.03c.ii verified 2026-10-05 12:23:42: Planning0.69 lease-owned bounded round/save/validate progression.13 scoped SQL/scripted-peer cases191.37s;67/68 statements,18/18branches (unexpected cleanup rethrow unexecuted);12 boundaries9.64s;198 isolated dispatch57.361s;36 installed SQL262.14s. Original unknown rounds retained;expiry/new check identity,explicit rejected retry,actual16-round ceiling,terminal save rejection,scoped history,busy/fence loss andcleanup verified. No real HTTP/owner/crash/admission claim. c66.6667%,B2.03=66.6667%,B2=88.8889%,Build62.96%,child47.22%,parent49.44%;1/4 and9/20 closed. Next c.iii SQL/HTTP failure proof.
+
+
+B2.03c.iii verified 2026-10-05 12:38:41: Planning0.69 actual SQL plus real HTTP clients against owned protocol stubs.8 scoped cases68.34s;8 installed SQL/HTTP73.846s;198 isolated dispatch57.786s;12 boundaries16.84s. Intent-before-POST/lock release, lost/malformed commit recovery under denied current processing, denied receipt, exact Registry replay and stable timestamps, post-commit fence replacement, unexpected cleanup error all verified. No production change or actual owner/process-kill claim. c100%,B2.03=75%,B2=91.6667%,Build63.89%,child47.92%,parent49.58%;1/4 and9/20 closed. Next d installed actual-owner/crash acceptance.
