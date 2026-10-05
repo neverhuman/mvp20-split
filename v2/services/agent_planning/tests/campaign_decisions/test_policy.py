@@ -30,7 +30,7 @@ from ..persistence.test_reservations import policy
 
 
 def fixture(*, name='future', limits=None, change=None, declaration_change=None, entry_change=None, tools=False, research=None,
-            extras=(), maximum=200000, scope=None, include_plan=False):
+            extras=(), maximum=200000, scope=None, include_plan=False, metadata_builder=None):
     sources = (('science', b'synthetic Research context', True),) if research is not None else ()
     original = source(name, extras=(*sources, *extras), maximum=maximum)
     raw = original.request.document().model_dump(mode='json')
@@ -44,9 +44,9 @@ def fixture(*, name='future', limits=None, change=None, declaration_change=None,
             for child in value:
                 rescope(child)
     if scope is not None:
-        # SQL origin fixtures use Artifact-only graphs; owner-specific helper
-        # metadata must be rebuilt separately before exercising another scope.
-        assert not tools and research is None
+        # Scoped tool metadata must be rebuilt against the final request, never
+        # re-scoped after original packet/selection hashes have been bound.
+        assert research is None and (not tools or metadata_builder is not None)
         rescope(raw)
     context = raw['context']
     pins = [{'kind': kind, 'identity': context[key]['artifact_id'], 'revision': '1', 'sha256': context[key]['sha256']}
@@ -83,7 +83,7 @@ def fixture(*, name='future', limits=None, change=None, declaration_change=None,
     items = tuple(ArtifactContextItem.available(row, bodies[row.reference.artifact_id]) for row in plan.items)
     selected = CampaignSlicePlan.from_artifacts(ArtifactContextProjection.bind(plan, items))
     if tools:
-        selected = metadata(selected)
+        selected = (metadata if metadata_builder is None else metadata_builder)(selected)
     value = output(name)
     if scope is not None:
         rescope(value)

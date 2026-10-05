@@ -1,7 +1,7 @@
 # Planning persistence boundary
 
-- Reviewed implementation: Agent Planning0.65; BP-07.03/B2.03b.i compiler selection/lease SQL and independent installed compatibility verified.
-- State: private planning schema, forward migrations planning_0001 through planning_0013. Never run Planning<=0.64 migrators on0013.
+- Reviewed implementation: Agent Planning0.66; selection/lease SQL independently verified; compiler operation/event journal under verification.
+- State: private planning schema, forward migrations planning_0001 through planning_0014. Never run Planning<=0.65 migrators on0014.
 - Responsibility: immutable request, attempt, observation, policy, reservation, settlement, issuance and late-evidence records. The orchestration module composes these objects; Runtime alone owns campaign decisions.
 
 ## Repair preparation journal
@@ -81,3 +81,5 @@ Owner handoff storage is implemented in the owner_handoff module under planning0
 planning_0012 adds only SELECT/INSERT campaign_preparations, scoped by engagement and exact immutable request SHA. The focused [campaign_preparations boundary](../campaign_preparations/README.md) owns pure readback and journal behavior. Historical repair/extraction tables remain unchanged. Pure record rendering happens before SQL; family-before-request locking rejects extraction membership, preserves exact retry bytes/time and rejects first registration after any dispatch/observation. Readback verifies original actor and all duplicate identities/digests. No existing dispatch path gains an implicit preparation or processing grant. New campaign dispatch integration belongs to B2.
 
 Compiler selection storage (planning0013) is owned by campaign_dispatch/history.py and store.py. It reconstructs immutable original campaign preparation, observation and accounting, then retains one scoped original-attempt selection. Only separate holder/fence/expiry control columns are mutable. Compiler effect/event writes remain B2.03b.ii; no outgoing command is dispatched by this storage.
+
+planning0014 stores complete bounded compiler rounds, exact effect payloads and immutable events. UPDATE is limited to per-effect position control, in addition to the existing selection lease fields. There is no peer SQL, request dispatch or activation authority. Current migrations must be used for tests against the retained0014 database.

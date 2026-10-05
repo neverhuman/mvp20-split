@@ -31,8 +31,9 @@ from ..persistence.test_reservations import policy
 pytestmark = pytest.mark.postgres
 
 
-def seeded(stored, *, omit=None, change=None):
-    proposal, declaration, budget, selected = fixture(scope=stored.principal.scope, include_plan=True, change=change)
+def seeded(stored, *, omit=None, change=None, tools=False, metadata_builder=None):
+    proposal, declaration, budget, selected = fixture(scope=stored.principal.scope, include_plan=True, change=change,
+                                                      tools=tools, metadata_builder=metadata_builder)
     review = CampaignDecisionReview.bind(proposal, declaration, budget)
     if omit == 'request':
         return review, budget

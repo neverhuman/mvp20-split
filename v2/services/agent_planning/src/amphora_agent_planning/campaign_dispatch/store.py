@@ -148,3 +148,9 @@ class CompilerStore:
             self.lock(connection, key)
             changed = connection.execute(text('UPDATE planning.compiler_control SET holder=NULL,expires_at=NULL WHERE ' + LEASE), key)
             require(changed.rowcount == 1, 'compiler_lease_lost')
+
+    def fence_write(self, connection, principal, lease):
+        """Final linearization check inside the caller's locked transaction."""
+        key = self.lease_key(connection, principal, lease)
+        changed = connection.execute(text('UPDATE planning.compiler_control SET fence=fence WHERE ' + LEASE), key)
+        require(changed.rowcount == 1, 'compiler_lease_lost')

@@ -52,13 +52,20 @@ def verify(installation, output, area='origin'):
             raise RuntimeError('Installed compiler SQL verification failed; inspect retained tests.log')
 
     run([python, '-I', '-c', "import importlib.metadata as m; assert m.version('amphora-agent-planning') == " + repr(current)])
-    run([python, '-I', '-m', 'pytest', *(installation / 'tests/service' / name for name in areas[area]),
-         '--import-mode=importlib', '--tb=short', '-q', '--junitxml=' + str(output / 'tests.xml')])
-    suites = ET.parse(output / 'tests.xml').getroot().findall('testsuite')
+    files = [path for name in areas[area] for path in sorted((installation / 'tests/service' / name).rglob('test_*.py'))]
+    assert files, 'Require copied module-owned SQL tests'
+    suites = []
+    for index, path in enumerate(files):
+        report = output / f'tests-{index}.xml'
+        run([python, '-I', '-m', 'pytest', path, '--import-mode=importlib', '--tb=short', '-q', '--junitxml=' + str(report)])
+        suites.extend(ET.parse(report).getroot().findall('testsuite'))
+    aggregate = ET.Element('testsuites')
+    aggregate.extend(suites)
+    ET.ElementTree(aggregate).write(output / 'tests.xml', encoding='utf-8', xml_declaration=True)
     count = sum(int(suite.attrib['tests']) for suite in suites)
     assert count > 0 and all(int(suite.attrib[key]) == 0 for suite in suites for key in ('errors', 'failures', 'skipped'))
     manifest = {'verified_at': datetime.now(ZoneInfo('America/Chicago')).strftime('%Y-%m-%d %H:%M:%S'),
-        'status': 'passed', 'planning': current, 'area': area, 'tests': count,
+        'status': 'passed', 'planning': current, 'area': area, 'tests': count, 'processes': len(files),
         'seconds': sum(float(suite.attrib['time']) for suite in suites),
         'installation_manifest': str(installation / 'manifest.json'),
         'limits': ['Actual retained Planning PostgreSQL; current package migrations only, no reset',
