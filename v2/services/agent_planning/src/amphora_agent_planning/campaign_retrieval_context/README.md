@@ -1,0 +1,7 @@
+# Campaign retained retrieval projection
+
+Owner: Agent Planning. Architecture: [Planning](../../../../../docs/Architecture/Agents/Planning.md). RetrievalSelection/Observation own retained Data identity/provenance policy; this pure adapter owns a bounded context representation. No query creation, ranking, backend access, source conversion, source-rights lease or scientific confidence follows.
+
+RetrievalContext binds the same original request as the supplied read result and requires exactly one record or allowed technical failure. Successful records are revalidated against the original query, result digest and expanded source/vector bindings. It retains the exact query, result pin, reported scores/provenance and explicit status. Missing/denied reads become unavailable context rather than an empty match list. Mixed requests, inconsistent internal selections and arbitrary error text reject.
+
+Canonical sorted UTF-8 projection capped at8MiB; overflow rejects without truncation or automatic reranking. Packet policy later selects relevant metadata and checks fresh source processing before including any raw body. Retained retrieval history is not continuing permission. Tests under tests/campaign_retrieval_context cover full provenance, negative scores, unavailable outcomes and malformed/mixed bindings; underlying retrieval tests retain fingerprint and owner protocol coverage. No durable state, provider call or public contract change.

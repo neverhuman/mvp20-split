@@ -585,3 +585,7 @@ B1.03a.ii verified 2026-10-04 19:11:14:Planning0.41 mandatory-first Artifact con
 B1.03a.iii verified 2026-10-04 19:17:20:Planning0.42 recomputed selected Research findings and exact named-page projection, explicit pending/failed/unavailable observations, relevant comparison and8MiB aggregate rejection using valid large inputs.112 focused/regression cases11.56s,75 statements4 branches100%;677 independently installed tests45.567s. No migration/schema change. Child13.67%,Build18.23%,parent42.73%;B1.03a75%,B1.03=18.75%,B1=54.6875%;closed0/4 and8/20. Current a.iv tool/retrieval projection.
 
 | 2026-10-04 11:19:18 | BP-07.02/B2.03b.ii.b complete; child45.99%,parent29.20%; b.ii.c active | [Result workflow](../Audits/Evidence/BP-07-Extraction/Result_Workflow.json);705 installed cases/35 process stages |
+
+B1.03a.iv verified 2026-10-04 19:22:43:Planning0.43 distinct Registry inventory/exact lifecycle observations, complete selected Runtime schema outcomes and original retained retrieval provenance/unavailability.113 focused/regression cases2.29s,119 statements10 branches100%;707 independently installed tests45.647s. No migration/schema/authority change. All projection adapters complete;child14.06%,Build18.75%,parent42.81%;B1.03a100%,B1.03=25%,B1=56.25%;closed0/4 and8/20. Current B1.03b.i tokenizer/budget/instruction profiles.
+
+| 2026-10-04 13:39:20 | BP-07.02/B2.03b.ii complete; child46.30%,parent29.26%; b.iii active | [Result producer](../Audits/Evidence/BP-07-Extraction/Result_Producer.json);720 installed+9 guards,7 actual workers/2 Data hosts |

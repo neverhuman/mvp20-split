@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 and BP-07.01/.02 closed/audited; BP-07.03/B1 context construction active.
-- Last refreshed: `2026-10-04 19:17:20` (America/Chicago).
+- Last refreshed: `2026-10-04 19:22:43` (America/Chicago).
 - Scope: unresolved v2 design/implementation alignment and scoped successor boundaries.
 - Active focus: campaign context/proposal boundary; no unresolved blocking predecessor finding.
-- Next gate: BP-07.03/B1.03a.iv tool/retrieval projection; Research/Artifact/graph preparation verified, live model gates subsequent.
+- Next gate: BP-07.03/B1.03b.i tokenizer/budget/instruction profiles; all owner projections verified, live model gates subsequent.
 
 ## Active Findings
 
