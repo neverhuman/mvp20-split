@@ -573,3 +573,7 @@ B1.02d verified 2026-10-04 18:55:41:Planning0.39 reads actual Registry0.1/Runtim
 MBT checkpoint overflow:
 
 | 2026-10-04 10:04:40 | BP-07.02/B2.03a.ii complete; child44.44%,parent28.89%; b active | [Research declarations](../Audits/Evidence/BP-07-Extraction/Research_Declarations.json);382 installed cases,2 actual process interruption/replacement stages |
+
+B1.03a.i verified 2026-10-04 19:03:06:Planning0.40 selected graph dependency projection, actual alias source revisions, explicit retractions and positive/absent relevant observations.41 focused cases20.54s,92 statements16 branches100%;651 independently installed tests42.987s. Unrelated graph changes alter provenance without blanket invalidation;1MiB limit yields explicit unavailable, no truncation. Child12.89%,Build17.19%,parent42.58%;B1.03a25%,B1.03=6.25%,B1=51.5625%;closed0/4 and8/20. Current B1.03a.ii Artifact context.
+
+| 2026-10-04 10:22:31 | BP-07.02/B2.03b.i complete; child45.37%,parent29.07%; b.ii active | [Result payloads](../Audits/Evidence/BP-07-Extraction/Result_Payloads.json);24 focused100% coverage,654 installed cases/28 process stages |
