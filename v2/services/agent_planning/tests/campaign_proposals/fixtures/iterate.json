@@ -1,0 +1,129 @@
+{
+  "schema_version": "4",
+  "profile": "deterministic-v3",
+  "campaign_id": "bounded-loop",
+  "revision": 1,
+  "scope": {
+    "tenant_id": "synthetic",
+    "project_id": "compiler"
+  },
+  "context": [],
+  "body": {
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "counter",
+        "value_type": {
+          "kind": "scalar",
+          "scalar": "integer",
+          "unit": "1"
+        }
+      }
+    ],
+    "nodes": [
+      {
+        "kind": "iterate",
+        "node_id": "loop",
+        "state": [
+          {
+            "name": "counter",
+            "value_type": {
+              "kind": "scalar",
+              "scalar": "integer",
+              "unit": "1"
+            },
+            "initial": {
+              "kind": "integer",
+              "value": 0,
+              "unit": "1"
+            },
+            "feedback_port": "counter"
+          }
+        ],
+        "captures": [],
+        "body": {
+          "inputs": [
+            {
+              "name": "counter",
+              "value_type": {
+                "kind": "scalar",
+                "scalar": "integer",
+                "unit": "1"
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "name": "counter",
+              "value_type": {
+                "kind": "scalar",
+                "scalar": "integer",
+                "unit": "1"
+              }
+            }
+          ],
+          "nodes": [
+            {
+              "kind": "finish",
+              "node_id": "finish",
+              "outputs": [
+                {
+                  "port": "counter",
+                  "source": {
+                    "kind": "input",
+                    "name": "counter"
+                  }
+                }
+              ]
+            }
+          ],
+          "edges": []
+        },
+        "until": {
+          "kind": "compare",
+          "left": {
+            "source": {
+              "kind": "result",
+              "name": "counter"
+            },
+            "path": [],
+            "value_type": {
+              "kind": "scalar",
+              "scalar": "integer",
+              "unit": "1"
+            }
+          },
+          "operator": "ge",
+          "right": {
+            "kind": "integer",
+            "value": 2,
+            "unit": "1"
+          }
+        },
+        "max_iterations": 2,
+        "on_limit": "finish"
+      },
+      {
+        "kind": "finish",
+        "node_id": "finish",
+        "outputs": [
+          {
+            "port": "counter",
+            "source": {
+              "kind": "output",
+              "node_id": "loop",
+              "port": "counter"
+            }
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "source": "loop",
+        "target": "finish",
+        "route": "next"
+      }
+    ]
+  }
+}

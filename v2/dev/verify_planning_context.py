@@ -16,7 +16,7 @@ from build_tool_images import closure
 from check_boundaries import ROOT, project_specs
 
 
-def verify(output):
+def verify(output, scope='context'):
     output = output.absolute()
     output.mkdir(parents=True, exist_ok=False)
     wheels = output / "wheels"
@@ -54,6 +54,9 @@ def verify(output):
     areas = [output / "tests/contracts", *(output / "tests/service" / area for area in
         ("context", "campaign_context", "campaign_research_access", "research_view_access", "registry_access", "metadata_reads", "runtime_metadata", "campaign_data_access", "retrieval_access", "campaign_knowledge_access", "campaign_graph_context", "campaign_artifact_context", "campaign_research_context", "campaign_tool_context", "campaign_retrieval_context", "campaign_packet_profiles", "campaign_slice_plan", "campaign_packet", "campaign_preparations", "campaign_output", "campaign_proposals", "graph_context", "proposals", "extraction", "source_access", "knowledge_access",
          "research_access/test_transport.py"))]
+    if scope == 'proposals':
+        areas = [output / 'tests/contracts', *(output / 'tests/service' / area for area in
+                 ('campaign_proposals', 'campaign_output', 'providers', 'persistence/test_records.py'))]
     run([python, "-I", "-m", "pytest", *areas, "--import-mode=importlib", "--tb=short", "-q",
          "--junitxml=" + str(output / "tests.xml")])
     suites = ET.parse(output / "tests.xml").getroot().findall("testsuite")
@@ -61,7 +64,7 @@ def verify(output):
     assert tests > 0 and all(int(suite.attrib[key]) == 0 for suite in suites for key in ("errors", "failures", "skipped"))
     manifest = {"verified_at": datetime.now(ZoneInfo("America/Chicago")).strftime("%Y-%m-%d %H:%M:%S"),
         "status": "passed", "tests": tests, "seconds": sum(float(suite.attrib["time"]) for suite in suites),
-        "planning": specs["amphora-agent-planning"][1]["project"]["version"],
+        "planning": specs["amphora-agent-planning"][1]["project"]["version"], "scope": scope,
         "contracts": specs["amphora-contracts-planning"][1]["project"]["version"],
         "installations": 1,
         "wheels": {path.name: hashlib.sha256(path.read_bytes()).hexdigest() for path in sorted(wheels.glob("*.whl"))},
@@ -74,4 +77,6 @@ def verify(output):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
-    verify(parser.parse_args().output)
+    parser.add_argument('--scope', choices=['context', 'proposals'], default='context')
+    args = parser.parse_args()
+    verify(args.output, args.scope)

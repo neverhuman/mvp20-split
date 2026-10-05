@@ -1,0 +1,23 @@
+{
+  "verified_at": "2026-10-04 21:30:08",
+  "status": "passed",
+  "gate": "BP-07.03/B2.01c",
+  "planning": "0.55.0",
+  "contracts": "0.9.0",
+  "prior_proposal_suite_tests": 64,
+  "prior_seconds": 52.43,
+  "latest_composition_tests": 22,
+  "latest_seconds": 21.19,
+  "latest_tools_statements": 98,
+  "latest_tools_branches": 20,
+  "latest_tools_coverage_percent": 100,
+  "installed_tests": 268,
+  "installed_seconds": 36.295,
+  "scope": "proposals",
+  "manifest": ".test-results/planning-composition-independent-20261004/manifest.json",
+  "limits": [
+    "Metadata/composition only; fresh eligibility/source rights and Runtime compiler acceptance later",
+    "Adjustment topology/application remains explicit pending Runtime work",
+    "Runtime selected-lock comparison ignores unrelated universe changes; no scientific claim"
+  ]
+}

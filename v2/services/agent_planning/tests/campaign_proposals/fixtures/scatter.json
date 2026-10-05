@@ -1,0 +1,192 @@
+{
+  "schema_version": "4",
+  "profile": "deterministic-v3",
+  "campaign_id": "bounded-scatter",
+  "revision": 1,
+  "scope": {
+    "tenant_id": "synthetic",
+    "project_id": "compiler"
+  },
+  "context": [],
+  "body": {
+    "inputs": [
+      {
+        "name": "items",
+        "value_type": {
+          "kind": "collection",
+          "item": {
+            "kind": "artifact",
+            "schema_ref": {
+              "schema_id": "synthetic.numeric-affine.input",
+              "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+              "version": "1"
+            },
+            "representation": "numeric-vector",
+            "unit": "1",
+            "media_type": "application/json"
+          },
+          "max_items": 3,
+          "missing_slots": false
+        }
+      }
+    ],
+    "outputs": [
+      {
+        "name": "results",
+        "value_type": {
+          "kind": "collection",
+          "item": {
+            "kind": "artifact",
+            "schema_ref": {
+              "schema_id": "synthetic.numeric-affine.output",
+              "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+              "version": "1"
+            },
+            "representation": "numeric-vector",
+            "unit": "1",
+            "media_type": "application/json"
+          },
+          "max_items": 3,
+          "missing_slots": false
+        }
+      }
+    ],
+    "nodes": [
+      {
+        "kind": "scatter",
+        "node_id": "batch",
+        "collection": {
+          "kind": "input",
+          "name": "items"
+        },
+        "item_input": "item",
+        "captures": [],
+        "max_members": 3,
+        "max_parallel": 2,
+        "body": {
+          "inputs": [
+            {
+              "name": "item",
+              "value_type": {
+                "kind": "artifact",
+                "schema_ref": {
+                  "schema_id": "synthetic.numeric-affine.input",
+                  "sha256": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+                  "version": "1"
+                },
+                "representation": "numeric-vector",
+                "unit": "1",
+                "media_type": "application/json"
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "name": "result",
+              "value_type": {
+                "kind": "artifact",
+                "schema_ref": {
+                  "schema_id": "synthetic.numeric-affine.output",
+                  "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                  "version": "1"
+                },
+                "representation": "numeric-vector",
+                "unit": "1",
+                "media_type": "application/json"
+              }
+            }
+          ],
+          "nodes": [
+            {
+              "kind": "invoke",
+              "node_id": "map",
+              "tool": {
+                "capability_id": "synthetic.numeric-affine",
+                "contract_version": "1",
+                "image_sha256": "4f5f4b74eec523c55668b0493123cfd3f9e5ba77fc49f51594a536452244dc83",
+                "release": "0.2.0"
+              },
+              "inputs": [
+                {
+                  "port": "parameters",
+                  "source": {
+                    "kind": "input",
+                    "name": "item"
+                  }
+                }
+              ],
+              "timeout_seconds": 30,
+              "checkpoint": null
+            },
+            {
+              "kind": "finish",
+              "node_id": "finish",
+              "outputs": [
+                {
+                  "port": "result",
+                  "source": {
+                    "kind": "output",
+                    "node_id": "map",
+                    "port": "result"
+                  }
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "source": "map",
+              "target": "finish",
+              "route": "next"
+            }
+          ]
+        },
+        "result_port": "result",
+        "output": {
+          "name": "results",
+          "value_type": {
+            "kind": "collection",
+            "item": {
+              "kind": "artifact",
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-affine.output",
+                "sha256": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd",
+                "version": "1"
+              },
+              "representation": "numeric-vector",
+              "unit": "1",
+              "media_type": "application/json"
+            },
+            "max_items": 3,
+            "missing_slots": false
+          }
+        },
+        "policy": {
+          "kind": "all",
+          "skipped": "exclude"
+        }
+      },
+      {
+        "kind": "finish",
+        "node_id": "finish",
+        "outputs": [
+          {
+            "port": "results",
+            "source": {
+              "kind": "output",
+              "node_id": "batch",
+              "port": "results"
+            }
+          }
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "source": "batch",
+        "target": "finish",
+        "route": "next"
+      }
+    ]
+  }
+}
