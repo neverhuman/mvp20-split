@@ -1,0 +1,3 @@
+# Planning supervisor client tests
+
+Owner: supervision_client. Run python -m pytest -c dev/pyproject.toml services/agent_planning/tests/supervision_client. Real loopback HTTP peers and public literal response/cancel fixtures only; no Runtime-private import, SQL or paid model. Fixture sockets/threads terminate after probes. Independent expected receipt construction verifies wire identities, hashes, commits and readbacks. Covers both closed families, pending/recorded/rejected history, terminal immutability, exact replay recovery after lost replies, no retries/redirects, status distinctions, guards at both send stages and bounded response failures. Actual installed owners are B1.04d. Source README records coverage limits.

@@ -1,0 +1,18 @@
+{
+  "reviewed_at": "2026-10-05 16:09:00",
+  "unit": "BP-07.04/B1.04c.ii",
+  "planning_version": "0.72.0",
+  "tests": {
+    "owned": 22,
+    "boundary": 12,
+    "seconds_combined": 11.39
+  },
+  "coverage": {
+    "statements": 202,
+    "branches": 40,
+    "percent": 96,
+    "gaps": "transport socket cleanup/write404/empty-read paths"
+  },
+  "next": "B1.04d actual installed owners",
+  "excluded": "Actual Runtime/Data integration and autonomous calls"
+}

@@ -1,7 +1,7 @@
 # Agent Planning service boundary
 
-- Version: Planning0.71.0; public Planning0.9.0 and supervision0.2.0; owned migration head0015.
-- Reviewed: `2026-10-05 15:46:25` (America/Chicago). BP-07.01/.02/.03 accepted within deterministic/synthetic scope.
+- Version: Planning0.72.0; public Planning0.9.0 and supervision0.2.0; owned migration head0015.
+- Reviewed: `2026-10-05 16:09:00` (America/Chicago). BP-07.01/.02/.03 accepted within deterministic/synthetic scope.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Campaign acceptance: [BP-07.03](../../docs/Build%20Plans/BP-07/Completed/BP-07.03%20Campaign%20proposals%20and%20context.md); next [BP-07.04](../../docs/Build%20Plans/BP-07/BP-07.04%20Durable%20supervisor%20and%20races.md).
 
@@ -15,6 +15,7 @@ This independently built wheel depends on public contracts and the Tool Protocol
 
 | Module | Boundary |
 |---|---|
+| [supervision_client](src/amphora_agent_planning/supervision_client/README.md) | Bounded guarded Runtime response/cancellation submission, original receipt recovery and exact readback; no hidden retry or decision authority |
 | [supervision_api](src/amphora_agent_planning/supervision_api/README.md) | Bounded authenticated intake/receipt/readback HTTP and configured CLI; no automatic provider dispatch |
 | [supervision_intake](src/amphora_agent_planning/supervision_intake/README.md) | Atomic original supervisor wrapper, legacy-compatible Planning request and recorded command receipt; no provider grant |
 | [context](src/amphora_agent_planning/context/README.md), [providers](src/amphora_agent_planning/providers/README.md) | Immutable scoped requests, explicit omissions, physical attempts, bounded capture and closed output-profile catalog |

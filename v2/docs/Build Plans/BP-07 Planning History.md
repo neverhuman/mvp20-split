@@ -812,3 +812,8 @@ Runtime0.28 opt-in authenticated supervisor HTTP/Host configuration verified21 s
 ## 2026-10-05 16:04:54 ? BP-07.04/B1.04c.i
 
 Runtime0.29 bounded Planning client verified64 client/receipt cases5.61s +12 boundary8.44s;146 statements30branches94%. Separate guarded submit/original receipt/exact readback, lost reply no retry, strict command/operation/commit binding and bounded peer failures. c refinedtwoequalownerclients;i100%,ii0%;child22.66%,Build30.21%,parent64.53%. No migrations or public schema changes.
+
+
+## 2026-10-05 16:09:00 ? BP-07.04/B1.04c.ii
+
+Planning0.72 Runtime response/cancellation client verified22 owned +12 boundary cases11.39s;202 statements40branches96%. Both families, exact operation/hash/commit/readback, immutable terminal receipts, lossyreply recovery/no automatic retry and lease loss after connect before send. No private Runtime imports or schema/migration changes. B1.04c complete;child23.44%,Build31.25%,parent64.69%;next independently installed actual owner/restart proofd.

@@ -27,7 +27,7 @@ from .credentials import AuthenticationError
 def create_app(intake=None, credentials=None):
     if (intake is None) != (credentials is None):
         raise ValueError('complete_supervision_configuration_required')
-    app = FastAPI(title='Amphora Planning supervisor intake', version='0.71.0')
+    app = FastAPI(title='Amphora Planning supervisor intake', version='0.72.0')
     app.add_middleware(RequestBounds)
 
     @app.exception_handler(AuthenticationError)
