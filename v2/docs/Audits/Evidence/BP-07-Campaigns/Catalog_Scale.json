@@ -1,0 +1,53 @@
+{
+  "verified_at": "2026-10-05 13:19:41",
+  "protocol": "BP-07.03 Catalog acceptance protocol.md",
+  "scoped": {
+    "scale_tests": 2,
+    "seconds": 14.05,
+    "compiler_limit_tests": 1,
+    "compiler_limit_seconds": 1.53
+  },
+  "boundaries": {
+    "tests": 12,
+    "seconds": 9.93
+  },
+  "installed": {
+    "verified_at": "2026-10-05 13:17:34",
+    "status": "passed",
+    "planning": "0.69.0",
+    "tests": 3,
+    "seconds": 14.173,
+    "metrics": {
+      "test_300_descriptor_complete_scan_exact_target_and_budgeted_packet": {
+        "descriptors": "300",
+        "matching_identities": "1",
+        "false_identity_matches": "0",
+        "included_inventory": "85",
+        "omitted_inventory": "215",
+        "packet_bytes": "498352",
+        "scan_bytes": "636880",
+        "discovery_seconds": "0.06299999984912574",
+        "prepare_seconds": "3.047000000020489"
+      },
+      "test_300_descriptor_partial_scan_and_required_metadata_overflow": {
+        "verified_partial_descriptors": "200",
+        "unread_descriptors": "100"
+      },
+      "test_large_inventory_does_not_expand_reviewed_compiler_tool_limit": {}
+    },
+    "test_sha256": {
+      "support.py": "5b4c1d43516aa7c99c0881ae96ff2f782c8f44d02cd39b7eab9015ffd4f09fe4",
+      "test_scale.py": "2a7f32799f5419e6209f246e9b017b51c9ad6d1b9375001c8bab72ad260e3d0e"
+    },
+    "installation_manifest": "Z:\\mvp20-split\\v2\\.test-results\\planning-semantic-independent-20261005\\manifest.json",
+    "limits": [
+      "Verified unchanged implementation with current hash-recorded test overlay",
+      "Actual bounded client against a protocol catalog stub; no actual Registry deployment or natural-language quality claim"
+    ]
+  },
+  "limits": [
+    "Identity false-match metrics, not natural-language ranking or scientific matching quality",
+    "Fixture UTF8-byte tokenizer, not production model tokens",
+    "Production code/schema/migration unchanged; protocol stub, not actual Registry capacity"
+  ]
+}

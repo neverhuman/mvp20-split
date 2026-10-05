@@ -1,14 +1,14 @@
 # Restore
 
-Refreshed `2026-10-05 13:11:39` (America/Chicago). **Read first after compression.**
+Refreshed `2026-10-05 13:19:41` (America/Chicago). **Read first after compression.**
 
 ## Resume
 
-B3.02 VERIFIED; commit/push pending, then **BP-07.03/B3.03 catalog-scale acceptance**. Actual rights83387 passed10 worker stages/6 hosts; scoped installed failures59745 passed116 cases27.571s. No running verification or owned hosts. Evidence Rights_And_Failures.json. No owner decision blocks deterministic work.
+B3.03 VERIFIED; commit/push pending, then **BP-07.03/V1.01 independent compatibility closeout**.3 installed catalog cases passed (session70570);12boundaries9.93s (4439). No running verification or owned hosts. Evidence Catalog_Scale.json; declared protocol and new campaign_catalog tests/helper. No production changes.
 
 Planning/dev0.69, public Planning0.9;510 public schemas unchanged; no production change in c.iii/d. Previous pushed608e504a (SQL/HTTP recovery),70826542 (bounded progression). Earlier68e7621f dispatcher andea357a69 approved declarationv2 correction.
 
-Canonical BP-07.03 **66.67%**, Build88.89%, Acceptance0%,2/4 closed; parentBP-07 **53.33%**,10/20 closed. B1/B2=100%; B2.03a/b/c/d100%. B3=66.6667% (.01/.02=100%,.03=0%);V1=0%. B3 three equal milestones .01/.02/.03; V1 two equal milestones .01/.02. Use unrounded fractions, round display only.
+Canonical BP-07.03 **75%**, Build100%, Acceptance0%,3/4 closed; parentBP-07 **55%**,11/20 closed. B1/B2=100%; B2.03a/b/c/d100%. B3=100%;V1=0%. B3 three equal milestones .01/.02/.03; V1 two equal milestones .01/.02. Use unrounded fractions, round display only.
 
 ## Latest proof
 
@@ -51,3 +51,5 @@ Child `docs/Build Plans/BP-07/BP-07.03 Campaign proposals and context.md`: curre
 Actual peer installs under `.test-results`: Data data-processing-content-independent-20261004/environment0.29; Runtime runtime-domain-receipt-peer-20261002/environment0.20.2; Registry registry-campaign-context-independent-20261004/environment0.1; Knowledge knowledge-processing-independent-20261004/initial0.18; Research research-declarations-final-independent-20261004/initial0.34. Append Scripts/python.exe. Old helpers may pin/migrate oldPlanning; inspect first. No active skills/goals/subagents.
 
 B3.02 rights passed; scoped failures59745 running. Remaining after that: use scoped existing installed failure tests (campaign_packet assembly/replay, campaign_preparations records, campaign_output, campaign_proposals/prepared/composition/authored, campaign_refresh) and prior SQL/HTTP/crash evidence; do not rerun unrelated E2E. Could add focused reusable dev failure verifier against passed current unchanged wheel, checking copied test hashes vs source before run. Source-injection text is untrusted data (packet test); runtime/compiler owns actual route/type checks. Preserve evidence-tier distinctions. Then tracker B3.02 completion: B3=66.6667%,Build88.89%,child66.67%,parent53.33%,counts2/4,10/20 unchanged. Next B3.03 scales300descriptors; budgets must be declared before run.
+
+Latest checkpoints:82025b0e pushed B3.02 actual source revocation+116installed failures; a237c2c4 pushed B3.01 405semantic; d8678c95 actual owner/crash. Catalog metrics:300validdescriptors,3pages/1exact,636880scanbytes,85included/215omitted,498352packetbytes,3.047sprepare,0falseidentitymatches. Scope explicitly excludes natural-language matching quality. Existing semantic install current0.69 can supply prior public peer/migration evidence. V1 requires final independent compatibility and scoped audit, then childarchive. Read prior closeout template/audits and verifier before choosing exact final suite; do not blindly run old pinned migrators. Final source/public schemas510 and preserved migrations/history must be checked; broad E2E only where gate demands.
