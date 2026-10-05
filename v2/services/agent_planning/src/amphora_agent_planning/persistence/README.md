@@ -1,7 +1,7 @@
 # Planning persistence boundary
 
-- Reviewed implementation: Agent Planning0.29; BP-07.02/B2.03b.iii.b owner handoff storage verified.
-- State: private planning schema, forward migrations planning_0001 through planning_0011. Never run Planning<=0.28 migrators on0011.
+- Reviewed implementation: Agent Planning0.49; BP-07.03/B1.03c.ii campaign journal implementation and bounded SQL smoke.
+- State: private planning schema, forward migrations planning_0001 through planning_0012. Never run Planning<=0.48 migrators on0012.
 - Responsibility: immutable request, attempt, observation, policy, reservation, settlement, issuance and late-evidence records. The orchestration module composes these objects; Runtime alone owns campaign decisions.
 
 ## Repair preparation journal
@@ -75,3 +75,7 @@ Planning0.25 adds forward planning_0010 for the [result publication](../result_p
 
 
 Owner handoff storage is implemented in the owner_handoff module under planning0011. It separates immutable selections/preparations/events from mutable DB-clock controls. Result publication uses its existing separate planning0010 tables. See each module README for payload limits, authority, recovery and replacement verification; earlier migration bytes are immutable.
+
+## Campaign preparation journal
+
+planning_0012 adds only SELECT/INSERT campaign_preparations, scoped by engagement and exact immutable request SHA. The focused [campaign_preparations boundary](../campaign_preparations/README.md) owns pure readback and journal behavior. Historical repair/extraction tables remain unchanged. Pure record rendering happens before SQL; family-before-request locking rejects extraction membership, preserves exact retry bytes/time and rejects first registration after any dispatch/observation. Readback verifies original actor and all duplicate identities/digests. No existing dispatch path gains an implicit preparation or processing grant. New campaign dispatch integration belongs to B2.
