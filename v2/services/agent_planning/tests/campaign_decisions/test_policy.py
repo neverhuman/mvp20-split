@@ -28,8 +28,10 @@ from ..campaign_proposals.test_prepared import source
 from ..persistence.test_reservations import policy
 
 
-def fixture(*, name='future', limits=None, change=None, declaration_change=None, entry_change=None, tools=False, research=None):
-    original = source(name, extras=(('science', b'synthetic Research context', True),) if research is not None else ())
+def fixture(*, name='future', limits=None, change=None, declaration_change=None, entry_change=None, tools=False, research=None,
+            extras=(), maximum=200000):
+    sources = (('science', b'synthetic Research context', True),) if research is not None else ()
+    original = source(name, extras=(*sources, *extras), maximum=maximum)
     raw = original.request.document().model_dump(mode='json')
     context = raw['context']
     pins = [{'kind': kind, 'identity': context[key]['artifact_id'], 'revision': '1', 'sha256': context[key]['sha256']}

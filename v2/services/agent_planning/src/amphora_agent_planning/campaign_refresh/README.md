@@ -1,0 +1,11 @@
+# Campaign input refresh
+
+Owner: Planning BP-07.03/B2.02c.ii; Planning0.60 verified with17 focused tests,12 boundary checks and435 isolated cases. [Design](../../../../../docs/Build%20Plans/BP-07/BP-07.03%20Compiler%20handoff.md). No command dispatch, SQL or admission authority.
+
+RefreshPlan reconstructs combined decision policy and budget. Processing inputs comprise all available Artifact slices consumed by the original packet, at most132 unique identities; omitted and originally unavailable bodies are excluded. Semantic dependencies remain the narrower reviewed read-set. RefreshCollector performs fresh CampaignArtifactReader reads in at-most128-reference batches sharing one20s/512-call/32MiB Data budget. Complete identity coverage and exact body hash/size are checked. Permission observations are not renewable leases or transitive grants for arbitrary owner sources.
+
+The existing bounded Research reader rereads original exact revisions. Referenced available record hashes/presence are compared; unrelated records do not cause staleness. Still-missing scientific data retains fresh gap diagnostics without treating changed technical wording as a new scientific fact. No exact-revision read establishes the latest head; latest_research_head_verified is explicitly false. Prospective selection of newer criteria is a separate caller responsibility. Original active campaign pins are never changed.
+
+Registry refresh reads at most64 selected locks under one20s/16MiB exact-release window, preserving original observation lanes. The eight-page inventory default is unchanged. Runtime refresh uses one bounded universe read and compares selected tool locks only. A changed unrelated universe entry cannot invalidate the proposal. Actual compilation remains Runtime-owned.
+
+RefreshResult separates current processing/owner failures, semantic changes and scientific gaps. ready_for_preparation is not execution readiness or proof of durable origin. Owner reads are sequential observations, not one transactionally consistent snapshot, a latest-selection guarantee or an atomic right against later revocation. Unexpected programming errors propagate; known owner failures remain explicit. B2.02c.iii combines stored accounting and provenance; B2.03 owns durable preparation and fenced dispatch. Tests belong in tests/campaign_refresh.

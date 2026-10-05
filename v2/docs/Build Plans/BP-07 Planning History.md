@@ -673,3 +673,10 @@ B2.02b verified 2026-10-04 22:20:11: Planning0.58/public0.9 bounded configured R
 B2.02c.i verified 2026-10-04 22:32:16: Planning0.59/public0.9 exact selected Registry commands and expiring eligibility observations.29 focused tests4.11s;12 boundary8.28s;418 isolated cases77.888s. Per-tool deduplication, stable named checks, exact lock/policy/lifecycle/status and finite expiry verified; rejection retained. B2.02c=33.3333%,B2.02=58.3333%,B2=52.7778%,child38.19%,Build50.93%,parent47.64%;1/4 and9/20 closed. Current B2.02c.ii current processing/relevant-input refresh. [Evidence](../Audits/Evidence/BP-07-Campaigns/Eligibility_Policy.json).
 
 | 2026-10-04 18:44:12 | BP-07.03/B1.02c.iii | Planning0.39 pinned campaign Knowledge/shared graph compatibility;241 focused/642 installed; child10.94%,Build14.58%,parent42.19%. Next combined-owner proof. |
+
+
+## Input refresh checkpoint 2026-10-04 22:49:32
+
+B2.02c.ii verified 2026-10-04 22:49:32: Planning0.60/public0.9 current consumed-Artifact processing and relevant pinned-input refresh.17 focused tests14.77s;12 boundary8.19s;435 isolated cases90.763s.132 Artifacts share264 calls across two batches; revocation/invalid bytes, omitted exclusion, selected-only Research/Runtime changes and retained missing science verified. Exact reads explicitly do not verify latest heads. B2.02c=66.6667%,B2.02=66.6667%,B2=55.5556%,child38.89%,Build51.85%,parent47.78%;1/4 and9/20 closed. Current B2.02c.iii retained accounting/combined preparation. [Evidence](../Audits/Evidence/BP-07-Campaigns/Input_Refresh.json).
+
+| 2026-10-04 18:55:41 | BP-07.03/B1.02d | Actual combined-owner context passed10workers/9hosts; child12.5%,Build16.67%,parent42.5%. Next context preparation. |
