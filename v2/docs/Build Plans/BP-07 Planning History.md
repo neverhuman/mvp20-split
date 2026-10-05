@@ -737,3 +737,8 @@ B3.02 verified 2026-10-05 13:11:39: actual Data source-rights revisions2/4 revok
 
 
 B3.03 verified 2026-10-05 13:19:41: predeclared300-descriptor protocol/catalog and500000 synthetic input-byte/16output reserve budgets.300 releases share purpose text but distinct identities,3scanGETs+1exact;636880scanbytes,0.063s discovery,3.047s packet construction in installed run.85 inventory slices retained/215 explicitly omitted,required exact target preserved,498352packetbytes,zero identity false matches.2-page limited scan retains200 withcontinuation;10000input mandatoryoverflow explicit.64 reviewed compiler tools accepted/65 rejected.3 installed cases14.173s;2 scopedscale14.05s+1limit1.53s;12boundaries9.93s. No natural-language/scientific matching or realRegistrycapacity claim; no production change. B3/Build100%,child75%,parent55%,3/4 and11/20 closed. Next V1.01 independent compatibility closeout.
+
+
+## 2026-10-05 13:32:31 - BP-07.03/V1.01 independent compatibility
+
+1262 cases across39 isolated test processes plus49 vectors in a second fresh installation pass.15 package payloads match current semantic acceptance;22 activation-baseline migration files unchanged and510 schema publication check passes.12 service-boundary tests pass. Exact wheel equality binds reused current SQL/HTTP/actual-owner/crash/rights evidence;210/212 predecessor0.49 production files remain unchanged, with the two provider-profile additions covered by retained output/replacement vectors. No live provider/scientific or aggregate coverage claim. Child87.5%,Build100%,Acceptance50%,3/4;parent57.5%,11/20. Next scoped audit/archive.

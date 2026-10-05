@@ -65,12 +65,17 @@ def verify(output, scope='context'):
     if scope == 'dispatch':
         areas = [output / 'tests/contracts', *(output / 'tests/service' / area for area in
                  ('campaign_dispatch', 'campaign_authoring', 'campaign_eligibility'))]
+    if scope == 'campaign_closeout':
+        areas.extend(output / 'tests/service' / area for area in
+                     ('campaign_semantic', 'campaign_catalog', 'providers', 'persistence/test_records.py'))
     suites = []
     for index, area in enumerate(areas):
         report = output / f'tests-{index}.xml'
         run([python, "-I", "-m", "pytest", area, "--import-mode=importlib", "--tb=short", "-q",
              "--junitxml=" + str(report)])
         suites.extend(ET.parse(report).getroot().findall("testsuite"))
+        if scope == 'campaign_closeout':
+            print(json.dumps({'verified_area': str(area.relative_to(output / 'tests'))}), flush=True)
     aggregate = ET.Element('testsuites')
     aggregate.extend(suites)
     ET.ElementTree(aggregate).write(output / 'tests.xml', encoding='utf-8', xml_declaration=True)
@@ -91,6 +96,6 @@ def verify(output, scope='context'):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument('--scope', choices=['context', 'proposals', 'compiler', 'dispatch', 'semantic'], default='context')
+    parser.add_argument('--scope', choices=['context', 'proposals', 'compiler', 'dispatch', 'semantic', 'campaign_closeout'], default='context')
     args = parser.parse_args()
     verify(args.output, args.scope)

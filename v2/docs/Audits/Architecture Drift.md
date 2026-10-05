@@ -1,10 +1,10 @@
 # Architecture Drift
 
 - Status: BP-06 and BP-07.01/.02 closed/audited; BP-07.03/V1 closeout active.
-- Last refreshed: `2026-10-05 13:19:41` (America/Chicago).
+- Last refreshed: `2026-10-05 13:32:31` (America/Chicago).
 - Scope: unresolved v2 design/implementation alignment and scoped successor boundaries.
 - Active focus: campaign context/proposal boundary; approved declaration publication mismatch corrected and verified.
-- Next gate: BP-07.03/V1.01 independent compatibility closeout; combined actual-owner compilation and worker crash recovery verified. Semantic and Runtime execution authority remain separate.
+- Next gate: BP-07.03/V1.02 scoped audit/archive; final independent replacement and compatibility passed.
 
 ## Active Findings
 
