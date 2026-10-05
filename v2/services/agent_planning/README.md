@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-- Version: Planning0.44.0; public Planning0.8.0. BP-07.02 complete and audited;930 installed tests,39 process/replay stages and actual-owner recovery verified.
+- Version: Planning0.45.0; public Planning0.8.0. BP-07.02 complete and audited;930 installed tests,39 process/replay stages and actual-owner recovery verified.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Canonical progress: [BP-07.02](../../docs/Build%20Plans/BP-07/Completed/BP-07.02%20Reliable%20text%20decomposition.md).
 
@@ -67,3 +67,5 @@ Actual combined-owner context verified 2026-10-04 18:55:41:10 isolated Planning 
 [campaign_tool_context](src/amphora_agent_planning/campaign_tool_context/README.md) preserves distinct Registry observations and complete selected Runtime schema outcomes. [campaign_retrieval_context](src/amphora_agent_planning/campaign_retrieval_context/README.md) retains original query/result provenance or explicit unavailability. Both remain data for later budgeted assembly, not tool or scientific authority.
 
 [campaign_packet_profiles](src/amphora_agent_planning/campaign_packet_profiles/README.md) owns reviewed campaign instructions, exact fixture tokenizer identity and measured packet ceilings preserving the original output reserve. Synthetic byte counts do not establish live-model fit or authorize dispatch.
+
+[Campaign slice plan](src/amphora_agent_planning/campaign_slice_plan/README.md) composes revalidated owner inputs as required-before-optional byte-owned data, preserving original omissions and per-slice observations. Individual inventory releases can be budgeted independently; full packet fitting and journal remain subsequent.
