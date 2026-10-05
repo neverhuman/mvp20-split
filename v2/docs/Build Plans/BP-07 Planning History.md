@@ -659,3 +659,10 @@ MBT secondary parent mirror corrected from stale45% to46.67%; canonical current 
 B2.02a verified 2026-10-04 22:08:25: Planning0.57/public0.9 exact Runtime save/validate command values and receipt/readback binding.30 focused tests14.50s;12 boundary cases8.60s;348 isolated cases69.726s. Stable attempt/configuration identities, versioned numeric constants, pending/rejected/readback states and accepted-invalid compilation verified. B2.02=25%,B2=41.6667%,child35.42%,Build47.22%,parent47.08%;1/4 and9/20 closed. Current B2.02b bounded Runtime/Registry transport. [Evidence](../Audits/Evidence/BP-07-Campaigns/Authoring_Values.json).
 
 | 2026-10-04 18:17:02 | BP-07.03/B1.02c.i verified; child9.90%,parent41.98%; c.ii active | Campaign_Artifact_Reads.json;78 focused/397 installed,109 statements12 branches100% |
+
+
+## Compiler exchanges checkpoint 2026-10-04 22:20:11
+
+B2.02b verified 2026-10-04 22:20:11: Planning0.58/public0.9 bounded configured Runtime/Registry exchange primitives.41 focused tests7.41s;12 boundary cases8.47s;389 isolated cases74.984s. Compiled routes, exact Runtime outcomes, two guard checks, finite windows, trickled headers/body and explicit failures/no retries verified. B2.02=50%,B2=50%,child37.50%,Build50%,parent47.50%;1/4 and9/20 closed. Current B2.02c.i exact eligibility observations. [Evidence](../Audits/Evidence/BP-07-Campaigns/Compiler_Exchanges.json).
+
+| 2026-10-04 18:27:12 | BP-07.03/B1.02c.ii verified; child10.42%,parent42.08%; c.iii active | Retrieval_Context.json;116 focused/422 installed, full binding/query/result pins |
