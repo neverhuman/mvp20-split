@@ -1,4 +1,4 @@
-"""Run scoped origin SQL tests in an already verified fresh Planning wheel installation."""
+"""Run scoped compiler SQL tests in an already verified current Planning installation."""
 
 from __future__ import annotations
 
@@ -19,13 +19,17 @@ from postgres_fixture import owned_state, planning_owner
 ROOT = Path(__file__).absolute().parents[1]
 
 
-def verify(installation, output):
+def verify(installation, output, area='origin'):
+    areas = {'origin': ('campaign_handoff_storage',),
+             'selection': ('campaign_handoff_storage', 'campaign_dispatch_storage')}
+    if area not in areas:
+        raise ValueError('Unknown compiler SQL area')
     installation, output = installation.absolute(), output.absolute()
     if output.exists():
         raise ValueError('Use a fresh SQL evidence directory')
     source = json.loads((installation / 'manifest.json').read_text(encoding='utf-8'))
     current = tomllib.loads((ROOT / 'services/agent_planning/pyproject.toml').read_text(encoding='utf-8'))['project']['version']
-    if source['status'] != 'passed' or source['planning'] != current or source['scope'] != 'compiler':
+    if source['status'] != 'passed' or source['planning'] != current or source['scope'] not in {'compiler', 'dispatch'}:
         raise ValueError('Require a passed current compiler wheel verification; never run an old migrator')
     python = installation / ('environment/Scripts/python.exe' if os.name == 'nt' else 'environment/bin/python')
     output.mkdir(parents=True)
@@ -45,16 +49,16 @@ def verify(installation, output):
         with (output / 'tests.log').open('a', encoding='utf-8') as stream:
             stream.write(result.stdout)
         if result.returncode:
-            raise RuntimeError('Installed origin verification failed; inspect retained tests.log')
+            raise RuntimeError('Installed compiler SQL verification failed; inspect retained tests.log')
 
     run([python, '-I', '-c', "import importlib.metadata as m; assert m.version('amphora-agent-planning') == " + repr(current)])
-    run([python, '-I', '-m', 'pytest', installation / 'tests/service/campaign_handoff_storage',
+    run([python, '-I', '-m', 'pytest', *(installation / 'tests/service' / name for name in areas[area]),
          '--import-mode=importlib', '--tb=short', '-q', '--junitxml=' + str(output / 'tests.xml')])
     suites = ET.parse(output / 'tests.xml').getroot().findall('testsuite')
     count = sum(int(suite.attrib['tests']) for suite in suites)
     assert count > 0 and all(int(suite.attrib[key]) == 0 for suite in suites for key in ('errors', 'failures', 'skipped'))
     manifest = {'verified_at': datetime.now(ZoneInfo('America/Chicago')).strftime('%Y-%m-%d %H:%M:%S'),
-        'status': 'passed', 'planning': current, 'tests': count,
+        'status': 'passed', 'planning': current, 'area': area, 'tests': count,
         'seconds': sum(float(suite.attrib['time']) for suite in suites),
         'installation_manifest': str(installation / 'manifest.json'),
         'limits': ['Actual retained Planning PostgreSQL; current package migrations only, no reset',
@@ -68,5 +72,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--installation', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--area', choices=['origin', 'selection'], default='origin')
     options = parser.parse_args()
-    verify(options.installation, options.output)
+    verify(options.installation, options.output, options.area)

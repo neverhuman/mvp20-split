@@ -1,7 +1,7 @@
 # Planning persistence boundary
 
-- Reviewed implementation: Agent Planning0.49; BP-07.03/B1.03c.ii campaign journal implementation and bounded SQL smoke.
-- State: private planning schema, forward migrations planning_0001 through planning_0012. Never run Planning<=0.48 migrators on0012.
+- Reviewed implementation: Agent Planning0.65; BP-07.03/B2.03b.i compiler selection/lease SQL and independent installed compatibility verified.
+- State: private planning schema, forward migrations planning_0001 through planning_0013. Never run Planning<=0.64 migrators on0013.
 - Responsibility: immutable request, attempt, observation, policy, reservation, settlement, issuance and late-evidence records. The orchestration module composes these objects; Runtime alone owns campaign decisions.
 
 ## Repair preparation journal
@@ -79,3 +79,5 @@ Owner handoff storage is implemented in the owner_handoff module under planning0
 ## Campaign preparation journal
 
 planning_0012 adds only SELECT/INSERT campaign_preparations, scoped by engagement and exact immutable request SHA. The focused [campaign_preparations boundary](../campaign_preparations/README.md) owns pure readback and journal behavior. Historical repair/extraction tables remain unchanged. Pure record rendering happens before SQL; family-before-request locking rejects extraction membership, preserves exact retry bytes/time and rejects first registration after any dispatch/observation. Readback verifies original actor and all duplicate identities/digests. No existing dispatch path gains an implicit preparation or processing grant. New campaign dispatch integration belongs to B2.
+
+Compiler selection storage (planning0013) is owned by campaign_dispatch/history.py and store.py. It reconstructs immutable original campaign preparation, observation and accounting, then retains one scoped original-attempt selection. Only separate holder/fence/expiry control columns are mutable. Compiler effect/event writes remain B2.03b.ii; no outgoing command is dispatched by this storage.
