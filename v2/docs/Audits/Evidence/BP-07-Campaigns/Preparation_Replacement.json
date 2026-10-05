@@ -1,0 +1,84 @@
+{
+  "verified_at": "2026-10-04 20:04:24",
+  "task": "BP-07.03/B1.03c.iv",
+  "status": "passed",
+  "planning": "0.49.0",
+  "migration": "planning0012",
+  "installations": 2,
+  "sql_tests": 23,
+  "sql_seconds": 4.435,
+  "stages": [
+    {
+      "installation": "initial",
+      "stage": "absent",
+      "exit_code": 0
+    },
+    {
+      "installation": "initial",
+      "stage": "commit-crash",
+      "exit_code": 91
+    },
+    {
+      "installation": "initial",
+      "stage": "recover",
+      "exit_code": 0
+    },
+    {
+      "installation": "replacement",
+      "stage": "read",
+      "exit_code": 0
+    },
+    {
+      "installation": "replacement",
+      "stage": "replay",
+      "exit_code": 0
+    },
+    {
+      "installation": "replacement",
+      "stage": "conflict",
+      "exit_code": 0
+    },
+    {
+      "installation": "initial",
+      "stage": "read",
+      "exit_code": 0
+    }
+  ],
+  "retained": {
+    "engagement": {
+      "scope": {
+        "tenant_id": "planning-campaign-replacement",
+        "project_id": "fa8368f7cb8e40069e3678fb1f53e97f"
+      },
+      "engagement_id": "decision-1"
+    },
+    "request_sha256": "1d20134d08dc3af6afe4aa125b67303990b99e857262ca75b6da0460f6c22719",
+    "manifest_sha256": "e8572967e30dc2521f12edc518eb3c4a7da63302333dfc8c810439f666c2b913",
+    "packet_sha256": "23e30446f40de0a34c325523f8e1cdfeefbee72f98f078ec77c0865d8646060d",
+    "plan_sha256": "e2631af8c544372fb5834617554b925e2099058f815bacf1b394318e2a7f0de5",
+    "registered_at": "2026-10-05T01:04:00.564243+00:00",
+    "packet_bytes": 14134
+  },
+  "wheels": {
+    "amphora_agent_planning-0.49.0-py3-none-any.whl": "9cff74bb864393dcf96616a013fb5c9d51cb164ad233a8a49b1dea615988ba12",
+    "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+    "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+    "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+    "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+    "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+    "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+    "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+    "amphora_contracts_planning-0.8.0-py3-none-any.whl": "a71fc4fce4e21964fe0dee2534249b1a20d379b95d86a330a4e7f2d961b3ce65",
+    "amphora_contracts_representations-0.3.0-py3-none-any.whl": "523feb10556ea0fdc07e39f2a874309fa65782b3e9035f072dffddf9a98ae18d",
+    "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+    "amphora_contracts_research_views-0.1.0-py3-none-any.whl": "50f010979f0868e61533f312639a1dfa9fc8a41795b2961817c3da45b33b67e8",
+    "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+    "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+    "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+  },
+  "limits": [
+    "Same implementation in two installations, not a fresh rewrite",
+    "Synthetic retained SQL scope only; no source rights, actual peer owners, provider or science claim",
+    "No reset/history rewrite; current forward migrator only; credentials environment-only"
+  ]
+}
