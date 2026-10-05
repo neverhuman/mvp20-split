@@ -60,6 +60,9 @@ def verify(output, scope='context'):
     if scope == 'compiler':
         areas = [output / 'tests/contracts', *(output / 'tests/service' / area for area in
                  ('campaign_decisions', 'campaign_authoring', 'campaign_exchanges', 'campaign_eligibility', 'campaign_refresh', 'campaign_handoff', 'campaign_dispatch'))]
+    if scope == 'dispatch':
+        areas = [output / 'tests/contracts', *(output / 'tests/service' / area for area in
+                 ('campaign_dispatch', 'campaign_authoring', 'campaign_eligibility'))]
     run([python, "-I", "-m", "pytest", *areas, "--import-mode=importlib", "--tb=short", "-q",
          "--junitxml=" + str(output / "tests.xml")])
     suites = ET.parse(output / "tests.xml").getroot().findall("testsuite")
@@ -80,6 +83,6 @@ def verify(output, scope='context'):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument('--scope', choices=['context', 'proposals', 'compiler'], default='context')
+    parser.add_argument('--scope', choices=['context', 'proposals', 'compiler', 'dispatch'], default='context')
     args = parser.parse_args()
     verify(args.output, args.scope)
