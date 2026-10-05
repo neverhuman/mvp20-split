@@ -8,15 +8,15 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-06 closed100%; BP-07 awaiting bounded owner decision; BP-08/09 queued.
-- Last refreshed: `2026-10-05 00:23:06` (America/Chicago).
+- Status: BP-06 closed100%; BP-07 awaiting bounded approved compatibility correction; BP-08/09 queued.
+- Last refreshed: `2026-10-05 11:33:10` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P6 / BP-07 - Autonomous LLM Campaign Supervision.
-- Primary active task: BP-07.03/B2.03c declaration publication compatibility decision.
-- Next task: approved publication compatibility correction, then B2.03c guarded coordination.
+- Primary active task: BP-07.03/B2.03c.i guarded single-operation dispatch/reconciliation.
+- Next task: BP-07.03/B2.03c.ii round/save/validate progression.
 - Implementation completion: BP-07=49.17%,9/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
 - Active focus: campaign context selection and immutable binding; completed extraction remains owner-authority bounded.
-- Blockers: private decision declaration v1 embeds its own Artifact ID, which Data allocates after upload. Owner decision on BP-07.03 Declaration publication decision.md required before coordinator activation. Live provider/model, egress and spend remain separately unselected.
+- Blockers: none for deterministic implementation. Approved declaration publication correction verified; live provider/model, egress and spend choices still govern real calls.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
 - Active exception: none.
 
@@ -32,7 +32,7 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-07.01/.02 are closed100%. BP-07.03 awaits its bounded prerequisite decision; implementation45.83%,Build61.11%,Acceptance0%.
+BP-07.01/.02 are closed100%. BP-07.03 is primary active; implementation45.83%,Build61.11%,Acceptance0%.
 
 | Parent | Overall | P1 | P2 | P3 | P4 | P5 |
 |---|---:|---:|---:|---:|---:|---:|
@@ -40,7 +40,7 @@ BP-07.01/.02 are closed100%. BP-07.03 awaits its bounded prerequisite decision; 
 
 | Active child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-07.03](BP-07/BP-07.03%20Campaign%20proposals%20and%20context.md) | 45.83% | 61.11% | 0% | B2.03c prerequisite decision |
+| [BP-07.03](BP-07/BP-07.03%20Campaign%20proposals%20and%20context.md) | 45.83% | 61.11% | 0% | B2.03c.i |
 
  BP-06 is [closed100%](Completed/BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md); completed parents are in the [archive](Completed/README.md).
 
@@ -120,10 +120,13 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 [Completed plan index](Completed/README.md) owns the three closed architecture-documentation plans and their audits. They remain complete for their historical scope and do not contribute runtime implementation credit. BP-01/BP-01A/BP-02 are completed implementation foundations; durable graph execution is accepted; scientific readiness remains separately scoped.
 
 
+
+
 ## Recent Checkpoints
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-05 11:33:10 | BP-07.03 compatibility verified | Approved v2 declaration;63 focused/333 isolated/12 SQL;actual Data publication and restart. Next c.i guarded dispatch. |
 | 2026-10-05 00:23:06 | BP-07.03/B2.03b.iii verified |41 installed SQL cases;child45.83%,parent49.17%. Next declaration compatibility decision before coordinator. |
 | 2026-10-05 00:15:06 | BP-07.03/B2.03b.ii verified | Operation/event journal;36 installed SQL cases. Child45.14%,parent49.03%;next SQL races/replacement. |
 | 2026-10-04 23:41:51 | BP-07.03/B2.03b.i verified | Stored origin/selections/leases;14 SQL/26 installed SQL. Child44.44%,parent48.89%;next operation/event journal. |
@@ -148,6 +151,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-04 20:07:19 | BP-07.03/B1.03c complete | Two installs/23SQL/7stages including lostack;child17.19%,parent43.44%. Next actual-owner packet integration. |
 | 2026-10-04 20:01:32 | BP-07.03/B1.03c.iii | 23 SQL oracles,57 statements4 branches100%;child16.80%,parent43.36%. Next independent replacement. |
 | 2026-10-04 19:57:27 | BP-07.03/B1.03c.ii | Planning0.49/planning0012 journal;31 SQL/787 installed;child16.41%,parent43.28%. Next SQL oracles. |
-| 2026-10-04 19:52:24 | BP-07.03/B1.03c.i | Planning0.48 preparation record;80 focused/787 installed;child16.02%,parent43.20%. Next migration/journal. |
 
 Keep at most25 checkpoint rows. Update the owning plan, this mirror and Restore before commits.

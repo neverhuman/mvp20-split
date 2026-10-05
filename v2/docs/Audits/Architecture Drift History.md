@@ -217,3 +217,6 @@ Source access and publication remain isolated Planning modules with public Data/
 ## 2026-10-04 17:03:06 - BP-07.02 aligned closeout
 
 [Audit](BP-07.02_Text_Decomposition_Closeout.md) reconciles Planning0.30/public0.7 with attributed extraction, exact source processing/publication, aggregate repair authority and durable Research/Knowledge reconciliation.930 installed cases,39 replacement stages and reused same-runtime actual peers/abrupt exits; no blocking drift. Stale module/architecture/inventory summaries corrected. Follow-up:none within this child; campaign context, Runtime engagement and live science remain named successors.
+
+
+2026-10-05 11:33:10: Approved declaration v2 publication correction aligned.63 focused/333 isolated compiler/12 installed origin SQL cases;actual Data0.29 fixed-byte publication, processing reads and original request/packet/review remain exact after restart. V1 literal bytes preserved;no public schema/migration change. Guarded coordination remains next.

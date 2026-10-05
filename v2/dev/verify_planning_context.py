@@ -63,16 +63,22 @@ def verify(output, scope='context'):
     if scope == 'dispatch':
         areas = [output / 'tests/contracts', *(output / 'tests/service' / area for area in
                  ('campaign_dispatch', 'campaign_authoring', 'campaign_eligibility'))]
-    run([python, "-I", "-m", "pytest", *areas, "--import-mode=importlib", "--tb=short", "-q",
-         "--junitxml=" + str(output / "tests.xml")])
-    suites = ET.parse(output / "tests.xml").getroot().findall("testsuite")
+    suites = []
+    for index, area in enumerate(areas):
+        report = output / f'tests-{index}.xml'
+        run([python, "-I", "-m", "pytest", area, "--import-mode=importlib", "--tb=short", "-q",
+             "--junitxml=" + str(report)])
+        suites.extend(ET.parse(report).getroot().findall("testsuite"))
+    aggregate = ET.Element('testsuites')
+    aggregate.extend(suites)
+    ET.ElementTree(aggregate).write(output / 'tests.xml', encoding='utf-8', xml_declaration=True)
     tests = sum(int(suite.attrib["tests"]) for suite in suites)
     assert tests > 0 and all(int(suite.attrib[key]) == 0 for suite in suites for key in ("errors", "failures", "skipped"))
     manifest = {"verified_at": datetime.now(ZoneInfo("America/Chicago")).strftime("%Y-%m-%d %H:%M:%S"),
         "status": "passed", "tests": tests, "seconds": sum(float(suite.attrib["time"]) for suite in suites),
         "planning": specs["amphora-agent-planning"][1]["project"]["version"], "scope": scope,
         "contracts": specs["amphora-contracts-planning"][1]["project"]["version"],
-        "installations": 1,
+        "installations": 1, "test_processes": len(areas),
         "wheels": {path.name: hashlib.sha256(path.read_bytes()).hexdigest() for path in sorted(wheels.glob("*.whl"))},
         "limits": ["Pure context/contract boundary only; loopback HTTP only; no migration, SQL, actual owner service, provider or scientific claim",
                    "Independent installation from current source, not a fresh implementation rewrite"]}

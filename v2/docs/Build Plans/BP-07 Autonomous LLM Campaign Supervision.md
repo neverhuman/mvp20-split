@@ -2,16 +2,16 @@
 
 ## Canonical Parent Tracker
 
-- Status: blocked_on_owner; BP-07.03/B2.03c declaration publication prerequisite.
-- Last refreshed: `2026-10-05 00:23:06` (America/Chicago).
+- Status: primary_active; BP-07.03/B2.03c.i guarded dispatch.
+- Last refreshed: `2026-10-05 11:33:10` (America/Chicago).
 - Owner/scope: Agent Planning plus runtime-owned engagement and decision modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-03 discovery, BP-04 runner, BP-05 UI and BP-06 source/knowledge receipts.
 - Implementation: **49.17%** scoped;9/20 closed deliveries. BP-07.01/.02 complete; BP-07.03=45.83%; BP-07.04/.05 remain0%. Each child is counted once.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-07.03/B2.03c declaration publication compatibility decision.
+- Current implementation task: BP-07.03/B2.03c.i guarded single-operation dispatch/reconciliation.
 - Demonstrated behavior: BP-07.01/.02 accepted immutable context/provider/budget and attributed text-decomposition boundaries, current-rights publication, bounded repair and actual Research/Knowledge handoff with replacement recovery. Campaign supervision and live model quality remain subsequent.
-- Blockers: private decision declaration v1 embeds its own Artifact ID, which Data allocates after upload. Owner decision on BP-07.03 Declaration publication decision.md required before coordinator activation. Live provider/model, egress and spend remain separately unselected.
+- Blockers: none for deterministic implementation. Approved declaration publication correction verified; live provider/model, egress and spend choices still govern real calls.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
 

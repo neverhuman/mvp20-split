@@ -12,7 +12,7 @@ from amphora_contracts_core import (
 )
 from amphora_contracts_graph_runtime import GraphReadCut
 from amphora_contracts_planning import CampaignNodeAddress, EngagementRef
-from pydantic import Field
+from pydantic import Field, TypeAdapter
 
 Action = Literal['abstain', 'request_evidence', 'propose_campaign']
 SideEffect = Literal['pure', 'idempotent', 'external']
@@ -62,3 +62,19 @@ class DecisionDeclarationRecord(WireModel):
     eligibility_context: Identifier
     future: FutureBoundaryRecord | None
     adjustments: Annotated[tuple[AdjustmentPermitRecord, ...], Field(max_length=64)]
+
+
+class PublishedDecisionDeclarationRecord(WireModel):
+    format: Literal['planning-campaign-decision.v2']
+    engagement: EngagementRef
+    objective: ArtifactRef
+    policy: ArtifactRef
+    runtime_cut: GraphReadCut | None
+    allowed_actions: Annotated[tuple[Action, ...], Field(min_length=1, max_length=3)]
+    eligibility_context: Identifier
+    future: FutureBoundaryRecord | None
+    adjustments: Annotated[tuple[AdjustmentPermitRecord, ...], Field(max_length=64)]
+
+
+DECLARATION = TypeAdapter(Annotated[
+    DecisionDeclarationRecord | PublishedDecisionDeclarationRecord, Field(discriminator='format')])

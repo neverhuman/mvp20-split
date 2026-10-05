@@ -12,7 +12,7 @@ from ..campaign_proposals.observations import ObservationKey
 from ..context.policy import require
 from ..context.snapshot import _constant, _object
 from .adjustments import AdjustmentPermissions
-from .wire import DecisionDeclarationRecord
+from .wire import DECLARATION, DecisionDeclarationRecord
 
 
 @dataclass(frozen=True)
@@ -24,7 +24,7 @@ class DecisionDeclaration:
         require(type(raw) is bytes and 0 < len(raw) <= 65536, 'decision_declaration_size')
         try:
             value = json.loads(raw.decode('utf-8'), object_pairs_hook=_object, parse_constant=_constant)
-            document = DecisionDeclarationRecord.model_validate_json(json.dumps(value, allow_nan=False))
+            document = DECLARATION.validate_json(json.dumps(value, allow_nan=False))
             encoded = canonical(document.model_dump(mode='json'))
         except (UnicodeError, json.JSONDecodeError, ValidationError, RecursionError) as exc:
             raise ValueError('invalid_decision_declaration') from exc
@@ -47,7 +47,7 @@ class DecisionDeclaration:
         return cls(encoded)
 
     def document(self):
-        return DecisionDeclarationRecord.model_validate_json(self.canonical)
+        return DECLARATION.validate_json(self.canonical)
 
     @property
     def sha256(self):
@@ -64,7 +64,7 @@ class DecisionDeclaration:
         require(value.runtime_cut == original.runtime_cut, 'decision_declaration_cut')
         require(not value.adjustments or original.purpose == 'supervision', 'decision_declaration_adjustment_purpose')
         require(set(value.allowed_actions) <= set(original.context.allowed_actions), 'decision_declaration_action_scope')
-        entry = next((entry for entry in original.context.entries if entry.artifact.artifact_id == value.declaration_artifact_id), None)
+        entry = self.original_entry(original, value)
         require(entry is not None and entry.role == 'constraint' and entry.required, 'decision_declaration_entry')
         require(entry.artifact.sha256 == self.sha256 and entry.artifact.size_bytes == len(self.canonical) and
                 entry.artifact.media_type == 'text/plain', 'decision_declaration_artifact')
@@ -74,3 +74,14 @@ class DecisionDeclaration:
         require(row is not None and row['payload']['status'] == 'available', 'decision_declaration_unconsumed')
         require(base64.b64decode(row['payload']['body_base64'], validate=True) == self.canonical, 'decision_declaration_body')
         return ObservationKey('artifact', 'artifact', identity)
+
+    def original_entry(self, original, value):
+        """Resolve only original required input; no post-publication repinning."""
+        if isinstance(value, DecisionDeclarationRecord):
+            return next((entry for entry in original.context.entries
+                         if entry.artifact.artifact_id == value.declaration_artifact_id), None)
+        matches = [entry for entry in original.context.entries
+                   if entry.role == 'constraint' and entry.required and entry.artifact.sha256 == self.sha256
+                   and entry.artifact.size_bytes == len(self.canonical) and entry.artifact.media_type == 'text/plain']
+        require(len(matches) == 1, 'decision_declaration_unique_entry')
+        return matches[0]
