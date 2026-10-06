@@ -1,0 +1,19 @@
+[project]
+name = "amphora-numeric-space"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = ["amphora-contracts-candidate-spaces==0.1.0", "amphora-contracts-core==0.1.0"]
+
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/amphora_numeric_space"]
+
+[tool.amphora]
+public-imports = ["amphora-contracts-candidate-spaces", "amphora-contracts-core"]
+
+[tool.uv.sources]
+amphora-contracts-candidate-spaces = { path = "../../contracts/candidate_spaces", editable = true }
+amphora-contracts-core = { path = "../../contracts/core", editable = true }

@@ -244,5 +244,23 @@
     "coverage_sources": [
       "contracts/candidate_spaces/src/amphora_contracts_candidate_spaces"
     ]
+  },
+  "numeric-space": {
+    "tests": "tools/numeric_space/tests",
+    "coverage_sources": [
+      "tools/numeric_space/src/amphora_numeric_space"
+    ]
+  },
+  "polymer-space": {
+    "tests": "tools/polymer_space/tests",
+    "coverage_sources": [
+      "tools/polymer_space/src/amphora_polymer_space"
+    ]
+  },
+  "sequence-space": {
+    "tests": "tools/sequence_space/tests",
+    "coverage_sources": [
+      "tools/sequence_space/src/amphora_sequence_space"
+    ]
   }
 }

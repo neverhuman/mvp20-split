@@ -552,7 +552,10 @@ dependencies = [
     { name = "amphora-knowledge" },
     { name = "amphora-multi-input-worker" },
     { name = "amphora-numeric-affine" },
+    { name = "amphora-numeric-space" },
+    { name = "amphora-polymer-space" },
     { name = "amphora-research" },
+    { name = "amphora-sequence-space" },
     { name = "amphora-sequence-statistics" },
     { name = "amphora-solver-mutate" },
     { name = "amphora-solver-retain" },
@@ -596,7 +599,10 @@ requires-dist = [
     { name = "amphora-knowledge", editable = "../services/knowledge" },
     { name = "amphora-multi-input-worker", editable = "../sdk/multi_input_worker" },
     { name = "amphora-numeric-affine", editable = "../tools/numeric_affine" },
+    { name = "amphora-numeric-space", editable = "../tools/numeric_space" },
+    { name = "amphora-polymer-space", editable = "../tools/polymer_space" },
     { name = "amphora-research", editable = "../services/research" },
+    { name = "amphora-sequence-space", editable = "../tools/sequence_space" },
     { name = "amphora-sequence-statistics", editable = "../tools/sequence_statistics" },
     { name = "amphora-solver-mutate", editable = "../tools/solver_mutate" },
     { name = "amphora-solver-retain", editable = "../tools/solver_retain" },
@@ -692,6 +698,36 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-numeric-space"
+version = "0.1.0"
+source = { editable = "../tools/numeric_space" }
+dependencies = [
+    { name = "amphora-contracts-candidate-spaces" },
+    { name = "amphora-contracts-core" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-candidate-spaces", editable = "../contracts/candidate_spaces" },
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+]
+
+[[package]]
+name = "amphora-polymer-space"
+version = "0.1.0"
+source = { editable = "../tools/polymer_space" }
+dependencies = [
+    { name = "amphora-contracts-candidate-spaces" },
+    { name = "amphora-contracts-core" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-candidate-spaces", editable = "../contracts/candidate_spaces" },
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+]
+
+[[package]]
 name = "amphora-research"
 version = "0.34.0"
 source = { editable = "../services/research" }
@@ -726,6 +762,21 @@ requires-dist = [
     { name = "pydantic", specifier = ">=2.12,<3" },
     { name = "sqlalchemy", specifier = ">=2,<3" },
     { name = "uvicorn", specifier = ">=0.34,<1" },
+]
+
+[[package]]
+name = "amphora-sequence-space"
+version = "0.1.0"
+source = { editable = "../tools/sequence_space" }
+dependencies = [
+    { name = "amphora-contracts-candidate-spaces" },
+    { name = "amphora-contracts-core" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-candidate-spaces", editable = "../contracts/candidate_spaces" },
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
 ]
 
 [[package]]
