@@ -43,7 +43,7 @@ def test_independent_branch_and_late_or_future_proposal(graph_env, tmp_path, mod
         engagement = original.frame.request.planning_request.reference.engagement_id
         probe = Path(__file__).parents[4] / 'agent_planning/tests/supervision_execution/owner_probe.py'
         with (tmp_path / 'provider.log').open('w', encoding='utf-8') as log:
-            process = subprocess.Popen([str(owners.python), '-I', str(probe.absolute()), str(owners.planning_worker),
+            process = subprocess.Popen([str(owners.python_for('amphora_agent_planning')), '-I', str(probe.absolute()), str(owners.planning_worker),
                 engagement, mode, str(tmp_path)], env=owners.env, cwd=tmp_path, stdout=log, stderr=log,
                 creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
             end = time.monotonic() + 30
@@ -51,6 +51,8 @@ def test_independent_branch_and_late_or_future_proposal(graph_env, tmp_path, mod
                 assert process.poll() is None, 'Planning fixture failed before its barrier; inspect provider.log'
                 assert time.monotonic() < end, 'Planning fixture did not reach its barrier'
                 time.sleep(0.1)
+            if owners.installations is not None:
+                owners.replace_hosts()
             for _ in range(4):
                 assert owners.graph_round()['status'] == 'running'
                 if node(graph_env, owners.run, 'independent')['status'] == 'succeeded':
@@ -95,7 +97,11 @@ def test_independent_branch_and_late_or_future_proposal(graph_env, tmp_path, mod
                                     {'run': owners.run}).scalar_one() == owners.compiled.sha256
             (tmp_path / 'evidence.json').write_text(json.dumps({'mode': mode, 'run': owners.run,
                 'winner': winner.document().model_dump(mode='json'), 'independent_branch_completed_before_release': True,
-                'expected_output_sha256': expected, 'original_request_sha256': original.frame.request_sha256}), encoding='utf-8')
+                'expected_output_sha256': expected, 'original_request_sha256': original.frame.request_sha256,
+                'tier': 'isolated installed replacement' if owners.installations else 'editable owners',
+                'hosts': owners.host_processes,
+                'installation_manifest_sha256': None if owners.installations is None else owners.installations.supervisor_manifest_sha256,
+                'data_manifest_sha256': None if owners.installations is None else owners.installations.data_manifest_sha256}), encoding='utf-8')
     finally:
         if process is not None and process.poll() is None:
             process.terminate()

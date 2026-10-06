@@ -1,0 +1,168 @@
+{
+  "reviewed_at": "2026-10-06 02:59:17",
+  "verification": "Scalar1passed206.00s;late/future2passed425.94s;boundaries12passed11.95s;ruffpassed",
+  "scenarios": [
+    {
+      "mode": "adjust",
+      "run": "e112486db6ef4d33addbf190e565cf1d",
+      "hosts": [
+        {
+          "module": "amphora_data_artifacts",
+          "pid": 9920,
+          "python": "Z:\\mvp20-split\\v2\\.test-results\\checkpoint-data-installed-20261006\\environment\\Scripts\\python.exe",
+          "label": "initial",
+          "endpoint": "http://127.0.0.1:50989"
+        },
+        {
+          "module": "amphora_agent_planning.supervision_api",
+          "pid": 30200,
+          "python": "Z:\\mvp20-split\\v2\\.test-results\\checkpoint-autonomous-installed-locked-20261006\\planning\\initial\\Scripts\\python.exe",
+          "label": "initial",
+          "endpoint": "http://127.0.0.1:59893"
+        },
+        {
+          "module": "amphora_campaign_runtime",
+          "pid": 27888,
+          "python": "Z:\\mvp20-split\\v2\\.test-results\\checkpoint-autonomous-installed-locked-20261006\\runtime\\initial\\Scripts\\python.exe",
+          "label": "initial",
+          "endpoint": "http://127.0.0.1:50988"
+        },
+        {
+          "module": "amphora_data_artifacts",
+          "pid": 14748,
+          "python": "Z:\\mvp20-split\\v2\\.test-results\\checkpoint-data-installed-20261006\\environment\\Scripts\\python.exe",
+          "label": "replacement",
+          "endpoint": "http://127.0.0.1:50989"
+        },
+        {
+          "module": "amphora_agent_planning.supervision_api",
+          "pid": 23972,
+          "python": "Z:\\mvp20-split\\v2\\.test-results\\checkpoint-autonomous-installed-locked-20261006\\planning\\replacement\\Scripts\\python.exe",
+          "label": "replacement",
+          "endpoint": "http://127.0.0.1:59893"
+        },
+        {
+          "module": "amphora_campaign_runtime",
+          "pid": 30172,
+          "python": "Z:\\mvp20-split\\v2\\.test-results\\checkpoint-autonomous-installed-locked-20261006\\runtime\\replacement\\Scripts\\python.exe",
+          "label": "replacement",
+          "endpoint": "http://127.0.0.1:50988"
+        }
+      ],
+      "evidence_sha256": "b3b04a5d6e2fdf7771e68b0f730f73c643daaa9fe6ba09eff31336e1b0e653f1",
+      "installation_manifest_sha256": "cec5af19a15bd9156711dc4da506fcc250ced7b39eb0ebef0b437d7ed595e655",
+      "data_manifest_sha256": "7baa89e6fa01682a70600289554ee1c8e17ca1c3a3fe9da53b2d7b94f67e81ee"
+    },
+    {
+      "mode": "late",
+      "run": "d38b402b54e9459e927c86077a5e0d1c",
+      "hosts": [
+        {
+          "module": "amphora_data_artifacts",
+          "pid": 24864,
+          "python": "Z:\\mvp20-split\\v2\\.test-results\\checkpoint-data-installed-20261006\\environment\\Scripts\\python.exe",
+          "label": "initial",
+          "endpoint": "http://127.0.0.1:49451"
+        },
+        {
+          "module": "amphora_agent_planning.supervision_api",
+          "pid": 9520,
+          "python": "Z:\\mvp20-split\\v2\\.test-results\\checkpoint-autonomous-installed-locked-20261006\\planning\\initial\\Scripts\\python.exe",
+          "label": "initial",
+          "endpoint": "http://127.0.0.1:49472"
+        },
+        {
+          "module": "amphora_campaign_runtime",
+          "pid": 30560,
+          "python": "Z:\\mvp20-split\\v2\\.test-results\\checkpoint-autonomous-installed-locked-20261006\\runtime\\initial\\Scripts\\python.exe",
+          "label": "initial",
+          "endpoint": "http://127.0.0.1:49450"
+        },
+        {
+          "module": "amphora_data_artifacts",
+          "pid": 17760,
+          "python": "Z:\\mvp20-split\\v2\\.test-results\\checkpoint-data-installed-20261006\\environment\\Scripts\\python.exe",
+          "label": "replacement",
+          "endpoint": "http://127.0.0.1:49451"
+        },
+        {
+          "module": "amphora_agent_planning.supervision_api",
+          "pid": 19544,
+          "python": "Z:\\mvp20-split\\v2\\.test-results\\checkpoint-autonomous-installed-locked-20261006\\planning\\replacement\\Scripts\\python.exe",
+          "label": "replacement",
+          "endpoint": "http://127.0.0.1:49472"
+        },
+        {
+          "module": "amphora_campaign_runtime",
+          "pid": 10592,
+          "python": "Z:\\mvp20-split\\v2\\.test-results\\checkpoint-autonomous-installed-locked-20261006\\runtime\\replacement\\Scripts\\python.exe",
+          "label": "replacement",
+          "endpoint": "http://127.0.0.1:49450"
+        }
+      ],
+      "evidence_sha256": "4270aa85833b75127adff8a1ce401bf3b3cb3a4ad3830e31f2d756138624f2c1",
+      "installation_manifest_sha256": "cec5af19a15bd9156711dc4da506fcc250ced7b39eb0ebef0b437d7ed595e655",
+      "data_manifest_sha256": "7baa89e6fa01682a70600289554ee1c8e17ca1c3a3fe9da53b2d7b94f67e81ee"
+    },
+    {
+      "mode": "future",
+      "run": "b6fabd5d28f04f77943eeb13d0c5eb38",
+      "hosts": [
+        {
+          "module": "amphora_data_artifacts",
+          "pid": 7284,
+          "python": "Z:\\mvp20-split\\v2\\.test-results\\checkpoint-data-installed-20261006\\environment\\Scripts\\python.exe",
+          "label": "initial",
+          "endpoint": "http://127.0.0.1:63457"
+        },
+        {
+          "module": "amphora_agent_planning.supervision_api",
+          "pid": 5864,
+          "python": "Z:\\mvp20-split\\v2\\.test-results\\checkpoint-autonomous-installed-locked-20261006\\planning\\initial\\Scripts\\python.exe",
+          "label": "initial",
+          "endpoint": "http://127.0.0.1:63479"
+        },
+        {
+          "module": "amphora_campaign_runtime",
+          "pid": 5668,
+          "python": "Z:\\mvp20-split\\v2\\.test-results\\checkpoint-autonomous-installed-locked-20261006\\runtime\\initial\\Scripts\\python.exe",
+          "label": "initial",
+          "endpoint": "http://127.0.0.1:63456"
+        },
+        {
+          "module": "amphora_data_artifacts",
+          "pid": 5788,
+          "python": "Z:\\mvp20-split\\v2\\.test-results\\checkpoint-data-installed-20261006\\environment\\Scripts\\python.exe",
+          "label": "replacement",
+          "endpoint": "http://127.0.0.1:63457"
+        },
+        {
+          "module": "amphora_agent_planning.supervision_api",
+          "pid": 27220,
+          "python": "Z:\\mvp20-split\\v2\\.test-results\\checkpoint-autonomous-installed-locked-20261006\\planning\\replacement\\Scripts\\python.exe",
+          "label": "replacement",
+          "endpoint": "http://127.0.0.1:63479"
+        },
+        {
+          "module": "amphora_campaign_runtime",
+          "pid": 33448,
+          "python": "Z:\\mvp20-split\\v2\\.test-results\\checkpoint-autonomous-installed-locked-20261006\\runtime\\replacement\\Scripts\\python.exe",
+          "label": "replacement",
+          "endpoint": "http://127.0.0.1:63456"
+        }
+      ],
+      "evidence_sha256": "c040a1d4732a48240ff21bad9cd3a6b8ee5a66135a679648ec60feb4e3766668",
+      "installation_manifest_sha256": "cec5af19a15bd9156711dc4da506fcc250ced7b39eb0ebef0b437d7ed595e655",
+      "data_manifest_sha256": "7baa89e6fa01682a70600289554ee1c8e17ca1c3a3fe9da53b2d7b94f67e81ee"
+    }
+  ],
+  "oracles": [
+    "All production hosts and CLI workers from isolated wheels; peer private packages absent",
+    "Same endpoint/config/history across host replacement while initial issued provider waits",
+    "Original scalar acceptance, late diagnostic after fallback, changed future graph retention preserve plan/report/request/output"
+  ],
+  "limits": [
+    "Deterministic provider fixtures; no live/model/scientific/target-host claim",
+    "Dev Runtime test harness inspects only own Runtime SQL; production hosts/worker code is installed"
+  ]
+}

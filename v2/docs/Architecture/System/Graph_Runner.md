@@ -1,7 +1,7 @@
 # Graph Runner and Campaign Supervision
 
 - Design status: accepted architectural direction; implementation and schemas pending
-- Last reviewed: `2026-09-23 09:48:47` (America/Chicago)
+- Last reviewed: `2026-10-06 02:49:59` (America/Chicago)
 - Parent: [System Architecture](System_Architecture.md)
 - Scope: concurrent execution coordination, outcome aggregation, failure handling and durable LLM engagement
 
@@ -71,7 +71,7 @@ An engagement is a durable runtime-owned decision request, not a chat transcript
 
 The request binds run/plan revision, decision identity and scope, observed frontier/aggregation receipt, relevant input/result/knowledge versions, unresolved question, permitted action types, capability versions, grants, budget/deadline and requested output schema. It includes bounded authorized context references and explicit omissions rather than copying the entire graph into a prompt.
 
-Persist request plus outbox intent before invoking Agent Planning outside the database transaction. Agent Planning records prompt/model configuration, context/retrieval provenance, call attempts and actual output; the runtime retains the returned artifact references and proposal binding. Logical engagement identity is distinct from provider-call attempt identity. Duplicate delivery does not create another accepted decision. Lost provider acknowledgements use reconciliation where available; an unavoidable repeated model call consumes budget and is recorded rather than described as exactly-once.
+Persist request plus outbox intent before invoking Agent Planning outside the database transaction. Agent Planning records prompt/model configuration, context/retrieval provenance, call attempts and actual output; the runtime retains the returned artifact references and proposal binding. Logical engagement identity is distinct from provider-call attempt identity. Duplicate delivery replays the original intake and issuance. A separately authorized retry consumes its own original allowance; uncertain issued usage retains its conservative charge. Runtime accepts a decision at most once.
 
 Lifecycle is `requested -> in flight -> proposed -> accepted / rejected / stale / expired / failed / cancelled`. A bounded repair or refreshed context creates an attributable successor attempt/request. Recovery reconciles outstanding requests and accepts at most one decision for a decision scope/revision. Duplicate or late responses remain diagnostic evidence without restarting closed work.
 
@@ -81,7 +81,7 @@ LLM responses are based on a historical frontier. At acceptance, validate schema
 
 Initially permit one active engagement per overlapping decision scope. Independent scopes may reason concurrently, but shared budget and state changes still commit conditionally. Reserve a decision identity when engaging; atomically mark it accepted with the resulting runtime transitions and audit/outbox events. Deterministic fallback and model response compete through the same precondition, so only one can win.
 
-If a relevant result arrives while the model reasons, mark or re-evaluate the stale proposal. Never apply it by silently substituting new inputs. Repair/re-engagement must preserve lineage, respect total limits and release expired reservations. Proposed changes to shared objects require their owning service's versioned acceptance receipt; a model proposal itself is not that receipt.
+If a relevant result arrives while the model reasons, mark or re-evaluate the stale proposal. Never apply it by silently substituting new inputs. Repair/re-engagement preserves lineage, the original absolute deadline and total limits. Expiring a scheduling lease does not refund reserved possible model calls or uncertain usage; any resource-capacity release follows its separate owning policy. Proposed changes to shared objects require their owning service's versioned acceptance receipt; a model proposal itself is not that receipt.
 
 ## Autonomy and Graph Changes
 

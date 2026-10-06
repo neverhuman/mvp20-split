@@ -8,6 +8,7 @@ import sys
 from contextlib import ExitStack
 from dataclasses import replace
 from pathlib import Path
+from urllib.parse import urlsplit
 
 from amphora_contracts_supervision import parse_supervised_admission
 from campaign_context_fixture.support import environment
@@ -15,6 +16,7 @@ from postgres_fixture import owned_state, planning_owner
 from sqlalchemy import URL
 from supervision_owner_fixture.hosts import Owner
 
+from .installations import Installations
 from .materials import materials, profiles, write
 
 
@@ -23,6 +25,8 @@ class Owners:
         self.resources, self.graph, self.root = ExitStack(), graph, root
         self.python = Path(sys.executable).absolute()
         self.records = []
+        self.installations = Installations.configured()
+        self.label, self.host_specs, self.host_processes = 'initial', {}, []
         try:
             self._start(variant, independent=independent)
         except BaseException:
@@ -30,12 +34,31 @@ class Owners:
             raise
 
     def _owner(self, module, config, token, *, port=None):
-        owner = Owner(self.python, module, config, self.env, token, self.root, port=port)
+        python = self.python_for(module)
+        owner = Owner(python, module, config, self.env, token, self.root, port=port)
+        self.host_specs[module] = (config, token, urlsplit(owner.endpoint).port)
+        self.host_processes.append({'module': module, 'pid': owner.process.pid, 'python': str(python),
+                                    'label': self.label, 'endpoint': owner.endpoint})
         self.resources.callback(owner.close)
         return owner
 
+    def python_for(self, module):
+        return self.python if self.installations is None else self.installations.python(module, self.label)
+
+    def replace_hosts(self):
+        assert self.installations is not None and self.label == 'initial'
+        hosts = [('data', 'amphora_data_artifacts'), ('planning', 'amphora_agent_planning.supervision_api'),
+                 ('runtime', 'amphora_campaign_runtime')]
+        for name, _ in hosts:
+            getattr(self, name).close()
+        self.label = 'replacement'
+        for name, module in hosts:
+            config, token, port = self.host_specs[module]
+            setattr(self, name, self._owner(module, config, token, port=port))
+
     def _command(self, args, *, timeout=60):
-        result = subprocess.run([str(self.python), '-I', *args], env=self.env, cwd=self.root,
+        assert args[0] == '-m'
+        result = subprocess.run([str(self.python_for(args[1])), '-I', *args], env=self.env, cwd=self.root,
             capture_output=True, text=True, encoding='utf-8', timeout=timeout, check=False,
             creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
         with (self.root / 'workers.log').open('a', encoding='utf-8') as log:
