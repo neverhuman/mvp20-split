@@ -86,8 +86,11 @@ from .context import (
     CheckpointContext,
     CheckpointFieldContext,
     CheckpointRange,
+    checkpoint_context_content_schema,
+    checkpoint_context_content_schema_bytes,
     checkpoint_context_schema,
 )
 
 __all__ += ['CheckpointAllowance', 'CheckpointChoices', 'CheckpointContext', 'CheckpointFieldContext',
-            'CheckpointRange', 'checkpoint_context_schema']
+            'CheckpointRange', 'checkpoint_context_content_schema', 'checkpoint_context_content_schema_bytes',
+            'checkpoint_context_schema']

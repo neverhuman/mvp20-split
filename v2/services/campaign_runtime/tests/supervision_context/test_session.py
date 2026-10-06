@@ -14,7 +14,7 @@ from amphora_campaign_runtime.supervision_preparation import (
     RequestCharge,
 )
 from amphora_contracts_core import ArtifactRef
-from amphora_contracts_supervision import checkpoint_context_schema
+from amphora_contracts_supervision import checkpoint_context_content_schema
 
 from ..supervision_effects.test_selection import original
 from ..supervision_preparation.test_recipe import bind, document
@@ -44,7 +44,7 @@ def reference(session, raw, *, policy=False):
     data.update(artifact_id='policy' if policy else 'declaration', sha256=hashlib.sha256(raw).hexdigest(),
                 media_type='application/json', size_bytes=len(raw))
     if not policy:
-        data['schema_ref'] = checkpoint_context_schema().model_dump(mode='json')
+        data['schema_ref'] = checkpoint_context_content_schema().model_dump(mode='json')
     return ArtifactRef.model_validate_json(json.dumps(data))
 
 

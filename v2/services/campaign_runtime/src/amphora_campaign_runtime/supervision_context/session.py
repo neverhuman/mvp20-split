@@ -16,7 +16,7 @@ from amphora_contracts_supervision import (
     CheckpointFieldContext,
     CheckpointRequest,
     SupervisionLineage,
-    checkpoint_context_schema,
+    checkpoint_context_content_schema,
 )
 from pydantic import TypeAdapter
 
@@ -113,7 +113,7 @@ class ContextSession:
         declaration = ArtifactRef.model_validate_json(declaration.model_dump_json())
         require(declaration.scope == self.basis.reference.scope and declaration.sha256 == hashlib.sha256(raw).hexdigest() and
                 declaration.size_bytes == len(raw) and declaration.media_type == 'application/json' and
-                declaration.schema_ref == checkpoint_context_schema(), 'context_published_declaration')
+                declaration.schema_ref == checkpoint_context_content_schema(), 'context_published_declaration')
         recipe = self.basis.recipe.document()
         context = ContextManifest(scope=recipe.scope, objective=recipe.objective, prompt=recipe.prompt, policy=policy,
             model=recipe.model, entries=(*recipe.entries, ContextEntry(artifact=declaration, role='constraint', required=True)),

@@ -5,7 +5,12 @@ import json
 from pathlib import Path
 
 import pytest
-from amphora_contracts_supervision import CheckpointContext, checkpoint_context_schema
+from amphora_contracts_supervision import (
+    CheckpointContext,
+    checkpoint_context_content_schema,
+    checkpoint_context_content_schema_bytes,
+    checkpoint_context_schema,
+)
 
 ROOT = Path(__file__).absolute().parents[3]
 
@@ -47,3 +52,12 @@ def test_all_542_predecessor_schemas_unchanged():
     assert len(pins['schemas']) == 542
     for name, digest in pins['schemas'].items():
         assert hashlib.sha256((ROOT / 'contracts/schemas' / name).read_bytes()).hexdigest() == digest
+
+
+def test_data_content_profile_is_explicit_and_does_not_change_published_schema():
+    raw = checkpoint_context_content_schema_bytes()
+    record = json.loads(raw)
+    assert '$id' not in record and len(raw) <= 65536
+    assert record == CheckpointContext.model_json_schema(mode='validation')
+    assert checkpoint_context_content_schema().sha256 == hashlib.sha256(raw).hexdigest()
+    assert checkpoint_context_content_schema().schema_id != checkpoint_context_schema().schema_id

@@ -67,3 +67,14 @@ def checkpoint_context_schema() -> SchemaRef:
     schema['$id'] = 'urn:amphora:supervision.checkpoint-context:1:validation'
     raw = (json.dumps(schema, sort_keys=True, separators=(',', ':'), ensure_ascii=False, allow_nan=False) + '\n').encode('utf-8')
     return SchemaRef(schema_id='supervision.checkpoint-context', version='1', sha256=hashlib.sha256(raw).hexdigest())
+
+
+def checkpoint_context_content_schema_bytes() -> bytes:
+    """Local-pointer-only Data validator profile, distinct from schema publication metadata."""
+    schema = CheckpointContext.model_json_schema(mode='validation')
+    return (json.dumps(schema, sort_keys=True, separators=(',', ':'), ensure_ascii=False, allow_nan=False) + '\n').encode('utf-8')
+
+
+def checkpoint_context_content_schema() -> SchemaRef:
+    return SchemaRef(schema_id='supervision.checkpoint-context-content', version='1',
+                     sha256=hashlib.sha256(checkpoint_context_content_schema_bytes()).hexdigest())

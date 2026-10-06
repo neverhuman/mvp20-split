@@ -1,0 +1,33 @@
+{
+  "run_id": "3ad3859312594102aaa9a311905793a3",
+  "decision_id": "2359590feb920f6ea444396b92379675fa05aec13ebd5a33d392d46622883406",
+  "request_sha256": "f5e39420fcad6deef2daa890a5dccdd11e55c64600cafa31c67ef8203dcedcfc",
+  "processing_reads": 7,
+  "data_pids": [
+    18048,
+    30528
+  ],
+  "limitation": "Data publication/read proof; no Planning packet or paid-call validation",
+  "timestamp": "2026-10-05 22:47:15",
+  "runtime": "0.50.0",
+  "planning": "0.79.0",
+  "public_supervision": "0.7.0",
+  "data": "0.29.0",
+  "schema_count": 544,
+  "schemas_unchanged": true,
+  "tests": {
+    "scoped": 94,
+    "seconds": 59.07,
+    "refined_guard": 11,
+    "refined_seconds": 15.73
+  },
+  "coverage": {
+    "context_statements": 228,
+    "context_branches": 20,
+    "percent": 99,
+    "preparation_statements": 81,
+    "preparation_branches": 16,
+    "preparation_percent": 100
+  },
+  "processes_exited": true
+}
