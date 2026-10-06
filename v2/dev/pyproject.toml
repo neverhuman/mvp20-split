@@ -3,6 +3,7 @@ name = "amphora-foundation-verification"
 version = "0.1.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
+    "amphora-contracts-topology-search==0.1.0",
     "amphora-contracts-evaluation-reuse==0.1.0",
     "amphora-synthetic-digest==0.1.0", "amphora-contracts-synthetic-evaluation==0.1.0",
     "amphora-contracts-execution-proofs==0.1.0",
@@ -56,6 +57,7 @@ package = false
 link-mode = "copy"
 
 [tool.uv.sources]
+amphora-contracts-topology-search = { path = "../contracts/topology_search", editable = true }
 amphora-contracts-evaluation-reuse = { path = "../contracts/evaluation_reuse", editable = true }
 amphora-synthetic-digest = { path = "../tools/synthetic_digest", editable = true }
 amphora-contracts-synthetic-evaluation = { path = "../contracts/synthetic_evaluation", editable = true }

@@ -304,5 +304,11 @@
     "coverage_sources": [
       "contracts/evaluation_reuse/src/amphora_contracts_evaluation_reuse"
     ]
+  },
+  "topology-search": {
+    "tests": "contracts/topology_search/tests",
+    "coverage_sources": [
+      "contracts/topology_search/src/amphora_contracts_topology_search"
+    ]
   }
 }

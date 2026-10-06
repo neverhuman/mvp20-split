@@ -578,6 +578,27 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-contracts-topology-search"
+version = "0.1.0"
+source = { editable = "../contracts/topology_search" }
+dependencies = [
+    { name = "amphora-contracts-campaigns" },
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-graph-runtime" },
+    { name = "amphora-contracts-tools" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-campaigns", editable = "../contracts/campaigns" },
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-graph-runtime", editable = "../contracts/graph_runtime" },
+    { name = "amphora-contracts-tools", editable = "../contracts/tools" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-data-artifacts"
 version = "0.30.0"
 source = { editable = "../services/data_artifacts" }
@@ -669,6 +690,7 @@ dependencies = [
     { name = "amphora-contracts-supervision" },
     { name = "amphora-contracts-synthetic-evaluation" },
     { name = "amphora-contracts-tools" },
+    { name = "amphora-contracts-topology-search" },
     { name = "amphora-data-artifacts" },
     { name = "amphora-evolution-search" },
     { name = "amphora-knowledge" },
@@ -723,6 +745,7 @@ requires-dist = [
     { name = "amphora-contracts-supervision", editable = "../contracts/supervision" },
     { name = "amphora-contracts-synthetic-evaluation", editable = "../contracts/synthetic_evaluation" },
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },
+    { name = "amphora-contracts-topology-search", editable = "../contracts/topology_search" },
     { name = "amphora-data-artifacts", editable = "../services/data_artifacts" },
     { name = "amphora-evolution-search", editable = "../tools/evolution_search" },
     { name = "amphora-knowledge", editable = "../services/knowledge" },

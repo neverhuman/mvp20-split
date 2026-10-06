@@ -5,6 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 
+import amphora_contracts_topology_search as topology_search
 import amphora_contracts_evaluation_reuse as evaluation_reuse
 from amphora_contracts_synthetic_evaluation import SyntheticEvaluationReceipt
 from amphora_contracts_execution_proofs import AcceptedToolExecution
@@ -48,6 +49,10 @@ from amphora_contracts_tools import Completion, Invocation, ToolBinding, ToolDes
 
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
+    "topology-search.policy": topology_search.TopologyPolicy,
+    "topology-search.request": topology_search.TopologyRequest,
+    "topology-search.reference": topology_search.TopologyRef,
+    "topology-search.projection": topology_search.TopologyProjection,
     "evaluation-reuse.profile": evaluation_reuse.ReuseProfile,
     "evaluation-reuse.profile-ref": evaluation_reuse.ReuseProfileRef,
     "evaluation-reuse.request": evaluation_reuse.ReuseRequest,
