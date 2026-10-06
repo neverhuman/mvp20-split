@@ -1,6 +1,6 @@
 # Numeric evolutionary search boundary
 
-- Owner: BP-08.01/B2.01 verified; checkpoint consistency mapper next.
+- Owner: BP-08.01/B2.02 verified; initial seeded state next.
 - Scope: finite continuous numerical search primitives; independent Python implementation, not a verified v1 port.
 - Design: [Search](../../docs/Architecture/Campaigns/Search.md); [activation](../../docs/Audits/BP-08.01_Activation.md).
 
@@ -25,3 +25,13 @@ CounterRandom is immutable. sha256-counter-u53-v1 hashes ASCII `amphora.search/s
 Dependencies are the public search contract closure plus the Python standard library. Algorithm golden vectors were calculated independently using Windows .NET SHA256/UInt64. Tests live in tests/randomness and tests/specification; synthetic specification pins are fixture labels, not scientific authority. Full checkpoint/ancestry validation and cross-installation replay remain subsequent gates.
 
 Verified 2026-10-06 10:04:32: 69 owned/boundary checks in 12.57s; 182/185 statements and 35/36 branches covered (98% combined). Random stream 100%; remaining gaps are ranking empty-front guard and original-spec resume delegate, to be exercised through checkpoint mapping.
+
+## Checkpoint mapping
+
+CheckpointSnapshot validates intrinsic state against a separately supplied OriginalSearch: canonical attempt identities, seed replay, RNG intervals, generation/slot/population membership, duplicate ancestry, exact proposed-to-pending/terminal correspondence, request digests, evaluator/objective/unit/constraint/evidence scope, progress and phase/stop consistency. Selection receipts are recomputed from the frozen evaluated membership; unavailable fitness cannot enter ranking. Stable evaluation IDs are ev- plus the candidate digest. Candidate IDs hash compact JSON [numeric-attempt-v1, original-spec digest, generation, ordinal, operator, float.hex genes, parent IDs, draw start, draw end]; outcome disposition is retained separately. Selection membership hashes the sorted candidate-ID list as compact JSON.
+
+encode/decode are pure transport mapping. They do not prove that evidence or predecessor Artifacts exist, have authorized access, or that a prior Runtime commit accepted a transition. Data/Runtime and BP-08.02 own those checks, predecessor-chain verification, generation transitions and actual tool dispatch. A snapshot with internally consistent pins does not authorize execution. Full variation replay is not implemented yet.
+
+Tests/checkpoint independently constructs a zero-seed candidate, pending request and single-candidate rank, then mutates identities, scope, units, evaluator, budgets and receipts. Initial-state, duplicate/rejection and generation-transition failure branches remain subsequent scoped gates.
+
+Verified 2026-10-06 10:10:34: 99 checks passed in11.90s; 342/367 statements,74/86 branches covered (90% combined). Remaining branches: variation/ancestry/duplicate/rejection, some stop/predecessor paths and ranking empty-front guard; no full-generation recovery claim.

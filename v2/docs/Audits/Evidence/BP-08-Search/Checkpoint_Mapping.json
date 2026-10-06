@@ -1,0 +1,23 @@
+{
+  "verified_at": "2026-10-06 10:10:34",
+  "scope": "BP-08.01/B2.02",
+  "tests": 99,
+  "seconds": 11.9,
+  "coverage": {
+    "statements": 367,
+    "covered_statements": 342,
+    "branches": 86,
+    "covered_branches": 74
+  },
+  "claims": [
+    "Intrinsic checkpoint consistency",
+    "Independent pending and selection fixture",
+    "Original specification and evidence binding"
+  ],
+  "not_claimed": [
+    "Artifact authority or availability",
+    "Runtime acceptance",
+    "Full variation replay"
+  ],
+  "next": "B2.03 initial seeded numeric state"
+}
