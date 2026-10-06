@@ -128,6 +128,25 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-contracts-fitness"
+version = "0.1.0"
+source = { editable = "../../contracts/fitness" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-evaluation-identity" },
+    { name = "amphora-contracts-research" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-evaluation-identity", editable = "../../contracts/evaluation_identity" },
+    { name = "amphora-contracts-research", editable = "../../contracts/research" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-graph-runtime"
 version = "0.13.0"
 source = { editable = "../../contracts/graph_runtime" }
@@ -247,7 +266,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-research"
-version = "0.37.0"
+version = "0.38.0"
 source = { editable = "." }
 dependencies = [
     { name = "alembic" },
@@ -255,6 +274,7 @@ dependencies = [
     { name = "amphora-contracts-candidate-spaces" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-evaluation-identity" },
+    { name = "amphora-contracts-fitness" },
     { name = "amphora-contracts-graph-runtime" },
     { name = "amphora-contracts-knowledge" },
     { name = "amphora-contracts-research" },
@@ -274,6 +294,7 @@ requires-dist = [
     { name = "amphora-contracts-candidate-spaces", editable = "../../contracts/candidate_spaces" },
     { name = "amphora-contracts-core", editable = "../../contracts/core" },
     { name = "amphora-contracts-evaluation-identity", editable = "../../contracts/evaluation_identity" },
+    { name = "amphora-contracts-fitness", editable = "../../contracts/fitness" },
     { name = "amphora-contracts-graph-runtime", editable = "../../contracts/graph_runtime" },
     { name = "amphora-contracts-knowledge", editable = "../../contracts/knowledge" },
     { name = "amphora-contracts-research", editable = "../../contracts/research" },

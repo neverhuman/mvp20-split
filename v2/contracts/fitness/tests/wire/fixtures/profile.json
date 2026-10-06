@@ -1,0 +1,76 @@
+{
+  "wire_version": "1",
+  "authority": "synthetic",
+  "scope": {
+    "tenant_id": "fixture",
+    "project_id": "materials"
+  },
+  "evaluation": {
+    "wire_version": "1",
+    "reference": {
+      "schema_id": "research.fitness-consensus",
+      "version": "1",
+      "sha256": "9c6da2d46951ed851e611fedbe9a2b5b9e1a86f20ac5df39b7ee8adf8cde662e"
+    },
+    "purpose": "fixture.screening",
+    "representation": {
+      "kind": "polymer",
+      "semantic_profile": {
+        "schema_id": "polymer-test",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "equivalence_profile": {
+        "schema_id": "polymer-equivalence",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    },
+    "method": {
+      "evaluator": {
+        "capability_id": "synthetic-evaluator",
+        "release": "0.1.0",
+        "image_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "contract_version": "1"
+      },
+      "method": {
+        "schema_id": "fixture.method",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "applicability": {
+        "schema_id": "fixture.method",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    },
+    "synthesis_policy": {
+      "schema_id": "fixture.method",
+      "version": "1",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "objectives": [
+      {
+        "objective_id": "concentration",
+        "unit": "mg/L",
+        "direction": "minimize",
+        "uncertainty_policy": {
+          "schema_id": "research.fitness-central-value",
+          "version": "1",
+          "sha256": "1c4d4d655ca21fe6c077da6f0b2ee25940b34f31e66ceea79c92e160b9a3cd02"
+        }
+      }
+    ],
+    "required_context": [
+      "conditions",
+      "experiment-applicability"
+    ],
+    "material_state_required": true
+  },
+  "observation_use": {
+    "schema_id": "research.observation-use",
+    "version": "1",
+    "sha256": "71ce1a9349174e5519a602c14b820b804f0cd0c4a1c0f4a558936514bc948d40"
+  },
+  "synthesis_required": false
+}

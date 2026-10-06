@@ -44,3 +44,5 @@ Optional science composition is owned by [scientific_api](../scientific_api/READ
 ## Optional question and need writes
 
 Research0.34 adds explicit `declarations: true` composition and separate declare_question/declare_evidence_need grants. The [declarations module](../declarations/README.md) owns registration policy/storage/routes; transport owns authentication, bounded request parsing and startup composition. Defaults stay read-only. Registration DTOs and existing read responses are unchanged; success grants no scientific acceptance. Declaration policy errors have safe403/404/409/422 mappings; existing read corruption continues to return503. Host startup requires research_0013 registration storage when writes are enabled, never runs a migration, and does not permit registration grants without enablement.
+
+Research0.38/research_0015 adds the optional [fitness projection boundary](../fitness/README.md): reference-only assembly and separately granted historical reads. Existing identity/science/declaration APIs retain their contracts. Fitness configuration, owner read grants and declared-versus-authoritative limits are owned by that focused module.

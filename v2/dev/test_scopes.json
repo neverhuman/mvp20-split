@@ -268,5 +268,11 @@
     "coverage_sources": [
       "contracts/evaluation_identity/src/amphora_contracts_evaluation_identity"
     ]
+  },
+  "contracts-fitness": {
+    "tests": "contracts/fitness/tests",
+    "coverage_sources": [
+      "contracts/fitness/src/amphora_contracts_fitness"
+    ]
   }
 }

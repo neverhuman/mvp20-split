@@ -24,6 +24,11 @@ from fastapi.responses import JSONResponse
 from pydantic import ValidationError
 from sqlalchemy.exc import SQLAlchemyError
 
+from ..fitness.policy import FitnessError
+from ..fitness.reuse import EvaluationIdentityError
+from ..fitness.routes import install_routes as install_fitness_routes
+from ..observations.identity import ObservationError
+from ..persistence.decision_document import DecisionStoreError
 from ..assessment.policy import AssessmentError
 from ..assessment.reader import AssessmentPeerUnavailable
 from ..candidate_registration.profiles import CandidateRegistrationError
@@ -63,9 +68,10 @@ async def _body(request, limit=16384):
     return b"".join(parts)
 
 
-def create_app(resolver, credentials, assessments=None, science=None, registrar=None, candidates=None):
+def create_app(resolver, credentials, assessments=None, science=None, registrar=None, candidates=None, fitness=None):
     app = FastAPI(title="Amphora Research", docs_url=None, redoc_url=None)
     app.state.declarations_enabled = registrar is not None
+    app.state.fitness_enabled = fitness is not None
     app.state.candidates_enabled = candidates is not None
     app.state.assessment_enabled = assessments is not None
     app.state.science_enabled = science is not None
@@ -105,6 +111,11 @@ def create_app(resolver, credentials, assessments=None, science=None, registrar=
                       409 if "conflict" in code or code in {"publication_assessment_pending", "correction_publication_pending"} else
                       404 if code in {"assessment_profile_unavailable", "publication_assessment_missing"} else 422)
             return JSONResponse(status_code=status, content={"code": code}, headers={"Cache-Control": "no-store"})
+        except (FitnessError, EvaluationIdentityError, ObservationError, DecisionStoreError) as error:
+            code = str(error)
+            status = (403 if "scope_mismatch" in code or "actor_mismatch" in code else
+                      409 if "conflict" in code else 404 if code.endswith("_unavailable") else 422)
+            return JSONResponse(status_code=status, content={"code":code}, headers={"Cache-Control":"no-store"})
         except CandidateRegistrationError as error:
             code = str(error)
             status = (403 if "scope_mismatch" in code or code == "peer_access_denied" else
@@ -168,4 +179,5 @@ def create_app(resolver, credentials, assessments=None, science=None, registrar=
         from ..declarations.routes import install_routes
         install_routes(app, invoke, registrar)
 
+    install_fitness_routes(app, invoke, fitness)
     return app

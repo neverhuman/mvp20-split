@@ -5,6 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 
+import amphora_contracts_fitness as fitness
 import amphora_contracts_evaluation_identity as evaluation_identity
 import amphora_contracts_candidate_spaces as candidate_spaces
 import amphora_contracts_artifacts as artifact_contracts
@@ -43,6 +44,12 @@ from amphora_contracts_tools import Completion, Invocation, ToolBinding, ToolDes
 
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
+    "fitness.profile": fitness.FitnessProfile,
+    "fitness.profile-ref": fitness.FitnessProfileRef,
+    "fitness.request": fitness.FitnessRequest,
+    "fitness.selection": fitness.FitnessSelection,
+    "fitness.reference": fitness.FitnessRef,
+    "fitness.projection": fitness.FitnessProjection,
     "evaluation-identity.policy": evaluation_identity.EvaluationReusePolicy,
     "evaluation-identity.input": evaluation_identity.EvaluationIdentityInput,
     "evaluation-identity.identity": evaluation_identity.EvaluationIdentity,

@@ -1,7 +1,7 @@
 # Candidate representation and fitness boundaries
 
-- Design status: synthetic operators and candidate declaration ingress implemented; representation canonicalization and declared evaluation identity implemented; authoritative reuse and fitness assembly remain B2.
-- Last reviewed: 2026-10-06 13:46:49 (America/Chicago).
+- Design status: synthetic operators and candidate declaration ingress implemented; representation canonicalization and declared evaluation identity implemented; owner fitness projection implemented; actual peer integration and authoritative reuse remain B2.03.
+- Last reviewed: 2026-10-06 14:05:50 (America/Chicago).
 - Parent: [Search](Search.md).
 
 Three independently packaged tools own synthetic bounded numeric coordinates, labeled polymer-chain blueprints and DNA strings. They depend on a new public candidate_spaces DTO package, never each other's implementations. Existing contracts/representations continues to own vector-space encodings; existing numerical search/checkpoint contracts remain stable. These fixtures exercise domain separation, not molecular validity or biological function.
@@ -31,3 +31,5 @@ A Research-owned synthetic consensus policy composes existing immutable observat
 Required eligibility failure excludes before ranking; unknown prerequisites remain unavailable. Synthesis decisions retain all alternatives and their unknown state; only an explicitly required synthesis action gates fitness. Optional gaps become next-campaign focus. Ready vectors compare exact decimal central values under the same policy and named context, respecting objective direction. Such Pareto comparison is an explicitly synthetic central-value policy, not statistical confidence or scientific superiority. Material states and candidate identities can differ when comparison context agrees; reuse identity continues to require the exact state.
 
 Pure assembly validates internal coherence but does not authenticate records. The service boundary must resolve exact committed owner records and current source rights, persist the result before returning success, and retain original history across replacement. Matching declared evaluation keys never replace those checks.
+
+Fitness projection implementation uses a reference-only request, current bounded public Data reads outside SQL, exact committed owner resolution and append-only research_0015. Full provenance and synthetic_owner_projection/reuse_authority=none remain explicit. Independent actual peers and producer-backed reuse are a separate gate from these owner SQL/API checks.

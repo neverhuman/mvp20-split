@@ -1,0 +1,65 @@
+{
+  "wire_version": "1",
+  "fitness_id": "fitness-1",
+  "profile": {
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "materials"
+    },
+    "policy": {
+      "schema_id": "research.fitness-consensus",
+      "version": "1",
+      "sha256": "9c6da2d46951ed851e611fedbe9a2b5b9e1a86f20ac5df39b7ee8adf8cde662e"
+    }
+  },
+  "candidate": {
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "materials"
+    },
+    "candidate_id": "nominal-design",
+    "revision": 1
+  },
+  "interpretation": {
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "materials"
+    },
+    "kind": "observation-use",
+    "interpretation_id": "fitness-use",
+    "sha256": "9d4a4f3d5f4889e1276cc2c21ddf2305fde183dc19dc027d13848c275d5ef4c7"
+  },
+  "eligibility": {
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "materials"
+    },
+    "kind": "eligibility",
+    "decision_id": "fitness-eligibility",
+    "sha256": "2c30eb1ea92112dd6064eeec0cf13ba9a77c9bf6b16636a401b40e0f4491a0a7"
+  },
+  "synthesis": {
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "materials"
+    },
+    "kind": "synthesis",
+    "decision_id": "fitness-synthesis",
+    "sha256": "e80bcb8c852150eb467dc2796f2f2cf3ca8606e357c16127cd4d154c9f78956c"
+  },
+  "declared_identity": {
+    "artifact_id": "declared-key",
+    "scope": {
+      "tenant_id": "fixture",
+      "project_id": "materials"
+    },
+    "sha256": "c040ee95bf9d92ed26a529f6285133f30ca5e71c056c2e48588dd57c80e2fb47",
+    "media_type": "application/json",
+    "schema_ref": {
+      "schema_id": "evaluation-identity.input",
+      "version": "1",
+      "sha256": "87d1a5c592c35ea69bb9b2cc84c304b715f83c8d3febc1c9d868d93a880c6773"
+    },
+    "size_bytes": 3271
+  }
+}

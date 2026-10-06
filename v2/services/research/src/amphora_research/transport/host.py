@@ -7,6 +7,8 @@ from amphora_contracts_core import Scope
 from sqlalchemy import create_engine, text
 from sqlalchemy.engine import make_url
 
+from ..fitness.host import configured as configured_fitness
+from ..fitness.operations import ACTIONS as FITNESS_ACTIONS
 from ..candidate_registration.host import configured as configured_candidates
 from ..candidate_registration.registration import ACTIONS as CANDIDATE_ACTIONS
 from ..declarations.registration import ACTIONS as DECLARATION_ACTIONS
@@ -41,7 +43,7 @@ class ResearchHost:
 
     @classmethod
     def configured(cls, config):
-        optional = tuple(key for key in ("assessment","science","declarations","candidates") if isinstance(config,dict) and key in config)
+        optional = tuple(key for key in ("assessment","science","declarations","candidates","fitness") if isinstance(config,dict) and key in config)
         _keys(config, ("database_url_env", "principals", *optional))
         if "declarations" in optional and type(config["declarations"]) is not bool:
             raise ValueError("invalid_declarations_configuration")
@@ -59,12 +61,12 @@ class ResearchHost:
                     or any(action not in ("resolve_identity", "read_declarations", "assess", "read_assessment",
                                           "publish_assessment", "read_assessment_publication",
                                           "correct_assessment_receipt", "select_assessment_receipt")
-                           and action not in SCIENTIFIC_ACTIONS and action not in DECLARATION_ACTIONS and action not in CANDIDATE_ACTIONS for action in actions)
+                           and action not in SCIENTIFIC_ACTIONS and action not in DECLARATION_ACTIONS and action not in CANDIDATE_ACTIONS and action not in FITNESS_ACTIONS for action in actions)
                     or len(set(actions)) != len(actions)):
                 raise ValueError("invalid_actions")
             scope = Scope.model_validate(entry["scope"])
             grants.append((_secret(entry["token_env"]), Principal(entry["actor_id"], scope, frozenset(entry["actions"]))))
-        if "assessment" not in optional and any(principal.actions - {"resolve_identity", "read_declarations"} - SCIENTIFIC_ACTIONS - DECLARATION_ACTIONS - CANDIDATE_ACTIONS for _, principal in grants):
+        if "assessment" not in optional and any(principal.actions - {"resolve_identity", "read_declarations"} - SCIENTIFIC_ACTIONS - DECLARATION_ACTIONS - CANDIDATE_ACTIONS - FITNESS_ACTIONS for _, principal in grants):
             raise ValueError("assessment_configuration_required")
         if "science" not in optional and any(principal.actions & SCIENTIFIC_ACTIONS for _, principal in grants):
             raise ValueError("science_configuration_required")
@@ -72,6 +74,8 @@ class ResearchHost:
             raise ValueError("declarations_configuration_required")
         if "candidates" not in optional and any("declare_candidate" in principal.actions for _, principal in grants):
             raise ValueError("candidate_configuration_required")
+        if "fitness" not in optional and any(principal.actions & FITNESS_ACTIONS for _, principal in grants):
+            raise ValueError("fitness_configuration_required")
         credentials = Credentials(grants)
         url = make_url(_secret(config["database_url_env"]))
         if url.drivername != "postgresql+psycopg" or url.username != "research_service":
@@ -104,7 +108,8 @@ class ResearchHost:
                 with engine.connect() as connection:
                     connection.execute(text("SELECT record_sha256 FROM research.declaration_registrations LIMIT 1"))
             candidates = configured_candidates(ledger, config["candidates"], _keys, _secret) if "candidates" in optional else None
-            return cls(engine, create_app(IdentityResolver(ledger), credentials, assessments, science, registrar, candidates))
+            fitness = configured_fitness(ledger, config["fitness"], _keys, _secret) if "fitness" in optional else None
+            return cls(engine, create_app(IdentityResolver(ledger), credentials, assessments, science, registrar, candidates, fitness))
         except Exception:
             engine.dispose()
             raise
