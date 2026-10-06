@@ -1,0 +1,48 @@
+{
+  "checkpoint": "2026-10-06 12:46:43",
+  "scope": "BP-08.02/V1.04",
+  "status": "passed",
+  "source": "v2/.test-results/numeric-http-20261006-v2/http/evidence.json",
+  "source_sha256": "3a2ba4bf14c2d1cbb17fd812b261c053fac87d2dda8a6a7ab107f28fe8c77c10",
+  "profile": "independent Windows wheels matching verified Linux/amd64 images; Registry registration/activation, no cluster deployment",
+  "campaign_scope": {
+    "tenant_id": "numeric-http",
+    "project_id": "0dfd9b5bb5d347d48fbcdbb5664734b3"
+  },
+  "registered_active_profiles": 5,
+  "replacement": {
+    "retained_completions": 15,
+    "original_admission_replay": true,
+    "wheel_closures_equal": true
+  },
+  "runs": [
+    {
+      "run_id": "bae1e6297df04809a34dcc13aac152c4",
+      "accepted_invocations": 15,
+      "retained_reservations_observed": 54,
+      "spent_attempts": 15,
+      "final_generation": 2,
+      "final_rng_counter": 26,
+      "evaluations_issued": 6
+    },
+    {
+      "run_id": "a364a23c74e345c1bc4aa5815eb17563",
+      "accepted_invocations": 15,
+      "retained_reservations_observed": 108,
+      "spent_attempts": 16,
+      "final_generation": 2,
+      "final_rng_counter": 26,
+      "evaluations_issued": 6
+    }
+  ],
+  "recovery": {
+    "killed_fence": 1,
+    "replacement_fence": 2,
+    "canonical_varied_bytes_equal": true,
+    "late_reason": "stale_attempt"
+  },
+  "limitations": [
+    "Synthetic numeric software proof, not scientific validity",
+    "Windows HTTP workers match local wheel hashes recorded by separately verified Linux images; no target-host or cluster deployment"
+  ]
+}

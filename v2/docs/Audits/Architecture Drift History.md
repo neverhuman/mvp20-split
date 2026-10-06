@@ -252,3 +252,7 @@ B3.03 verified 2026-10-05 13:19:41: predeclared300-descriptor protocol/catalog a
 ## 2026-10-06 10:22:13 - BP-08.01 aligned
 
 [Scoped audit](BP-08.01_Search_Contracts_Closeout.md): numeric contracts, seeding and intrinsic replay verified; two installations133 tests each. Source provenance and no-science boundary preserved. Future generation/Artifact/Runtime integration remains BP-08.02. Follow-up for closed scope: none.
+
+## 2026-10-06 12:48:45 - BP-08.02 aligned
+
+[Scoped audit](BP-08.02_Numeric_Graph_Closeout.md): explicit numeric graph steps, current tool images/Registry releases and actual-owner replacement/recovery verified. Missing synthetic-tests marker corrected in immutable numeric0.5.0/evaluator0.2.0; guard unchanged, old evidence retained. Stale module/architecture summaries reconciled. Follow-up: none within this closed scope; representation/topology/scientific/deployment gates retain their successor owners.

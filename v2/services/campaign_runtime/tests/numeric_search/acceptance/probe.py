@@ -20,6 +20,7 @@ def main():
     environment = load("numeric_http_environment", Path(__file__).with_name("environment.py"))
     execution = load("numeric_http_execution", Path(__file__).with_name("execution.py"))
     failure = load("numeric_http_failure", Path(__file__).with_name("failure.py"))
+    replacement = load("numeric_http_replacement", Path(__file__).with_name("replacement.py"))
     config = json.loads(Path(sys.argv[1]).read_bytes())
     root = Path(config["evidence"])
     root.mkdir()
@@ -28,6 +29,7 @@ def main():
         e.setup()
         e.admit()
         result = execution.execute(e, environment.HTTP)
+        replaced = replacement.replace(e, result, environment.HTTP) if config.get("replacements") else None
         recovery = None
         if config.get("recovery"):
             e.admit(reuse=True)
@@ -37,8 +39,10 @@ def main():
             comparable = lambda state: {key: value for key, value in state.items() if key != "previous"}
             assert comparable(result["final"]["result"]) == comparable(recovery["final"]["result"])
         evidence = {"timestamp_local": datetime.now().astimezone().strftime("%Y-%m-%d %H:%M:%S"), "status": "passed",
-            "scope": e.scope, "packages": config["packages"], "profile": "independent Windows wheels; declared fixture image pins only",
-            "result": result, "recovery": recovery}
+            "scope": e.scope, "packages": config["packages"], "profile": ("independent Windows wheels matching verified Linux/amd64 images; Registry registration/activation, no cluster deployment"
+                        if config.get("images") else "independent Windows wheels; declared fixture image pins only"),
+            "result": result, "recovery": recovery, "replacement": replaced,
+            "registry": e.image_catalog.registrations}
         (root / "evidence.json").write_text(json.dumps(evidence, indent=2) + "\n", encoding="utf-8")
         print("Numeric HTTP acceptance passed: " + str(root / "evidence.json"), flush=True)
     finally:

@@ -1,8 +1,8 @@
 # Numeric search graph acceptance
 
-Status: B2 Runtime transactions and real Artifact/worker HTTP passed; worker interruption/Runtime restart recovery also verified; V1 image/rebuild/audit acceptance remains.
+Status: B2 Runtime transactions and real Artifact/worker HTTP passed; worker interruption/Runtime restart recovery also verified; V1 current-release image/Registry/independent replacement checks passed; scoped closeout audit is aligned.
 
-This Runtime-owned fixture composes public numeric and synthetic evaluator CLI descriptors/schemas. No production Runtime dependency on a scientific tool is introduced. Catalog image pins are declared test identities, not built-image evidence.
+This Runtime-owned fixture composes public numeric and synthetic evaluator CLI descriptors/schemas. No production Runtime dependency on a scientific tool is introduced. Compiler-only catalog defaults are declared test identities; acceptance can require a verified image manifest and exact matching wheel closures.
 
 `definition.py` authors wire-v4 seed, context materialization, pending-request expansion, explicit array-to-Artifact projection, bounded scatter, all-terminal collection, selection and successor iteration. The specification and actual policy Artifact are explicit campaign inputs and loop captures. The policy is a second evaluator input; it is never looked up implicitly. Checkpoint content and its exact source Artifact reference travel together. Scalar stop predicates inspect the collected checkpoint phase. No hidden tool loop exists.
 

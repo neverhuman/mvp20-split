@@ -7,7 +7,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 
 def worker_command(e, stage, actor, http, lease_seconds=90):
-    config = {"actor_id": actor, "scope": e.scope, "run_id": e.active_run, "image_sha256": "c" * 64,
+    config = {"actor_id": actor, "scope": e.scope, "run_id": e.active_run, "image_sha256": e.image(stage),
         "runtime": {"endpoint": e.runtime_relay.endpoint, "token_env": "WORKER_TOKEN"},
         "artifacts": {"endpoint": e.artifact_relay.endpoint, "token_env": "WORKER_TOKEN"}, "lease_seconds": lease_seconds}
     path = e.root / (stage + "-" + actor + "-worker.json")

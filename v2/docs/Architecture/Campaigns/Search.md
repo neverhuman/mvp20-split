@@ -1,8 +1,8 @@
 # Evolutionary Search and Experience
 
-- Design status: bounded numeric contracts, selection, seeding and portable checkpoint mapping implemented; graph-step integration and scientific acceptance pending
+- Design status: bounded numeric graph steps, accepted generations and worker/Runtime recovery implemented; independent replacement accepted; representation/topology and scientific acceptance remain successors
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
-- Last reviewed: `2026-10-06 10:22:13` (America/Chicago)
+- Last reviewed: `2026-10-06 12:45:05` (America/Chicago)
 - Parent: [Domain overview](Campaign_Architecture.md)
 - Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#campaign-evolution-and-cross-project-discovery)
 
@@ -50,4 +50,10 @@ If all candidates violate hard constraints, retain the failure distribution and 
 
 BP-08.01 implements public search/checkpoint DTOs and the isolated numeric module: finite continuous boxes, constrained Pareto/crowding selection, original-spec pin binding, portable counter RNG, retained initial attempts and intrinsic checkpoint consistency. Two clean wheel installations preserve checkpoint bytes, pending identities and the next draw. This independent implementation does not claim v1 Rust bit parity or scientific validity.
 
-BP-08.02 remains responsible for one-step variation/evaluation/selection integration, exact predecessor Artifact verification, accepted Runtime state transitions, out-of-order results and worker replacement across generations. A valid snapshot alone neither authorizes execution nor proves its referenced evidence exists. Registry/tool descriptors must pin the actual deployed implementation; a specification fingerprint alone does not verify running code.
+BP-08.02 implements explicit seed, request expansion, evaluation, collection and variation steps. Runtime owns graph iteration, scatter membership, accepted transitions and attempts; Data owns immutable bytes and retention. Original specification and the actual evaluator policy Artifact are explicit graph inputs and loop captures. Checkpoints bind canonical bytes and predecessor Artifact identity; a valid snapshot alone neither authorizes execution nor proves evidence exists.
+
+Actual independently installed workers and owner APIs demonstrate generations 0/1/2, retained evaluation provenance, interruption after Artifact finalization, Runtime restart, byte-identical retry under a new fence and rejection of a stale completion. Pure compiler tests, scripted Artifact transaction tests, actual HTTP, Linux image arithmetic and independent installation proofs retain separate scopes. Current-release Registry/replacement acceptance passed in BP-08.02; target-host/container orchestration is not established by image builds.
+
+Numerical search freezes pending membership before collection. Failed or unavailable required numeric fitness stops diagnostically without fabricated zero; weak but present evidence does not veto exploration solely for its quality label. Stopped transitions are bounded no-ops. Collection and byte budgets remain explicit, and an exhausted graph limit without a search stop blocks instead of reporting success.
+
+BP-08.03 owns distinct representation operators and evidence/fitness applicability; BP-08.04 owns successor topology proposals. Neither follows automatically from numeric generation execution. Scientific validation and target-host deployment require their own evidence.

@@ -1,16 +1,15 @@
 # Architecture Drift
 
-- Status: BP-07 and BP-08.01 closed/audited; BP-08.02 activation next.
-- Last refreshed: `2026-10-06 12:34:38` (America/Chicago).
+- Status: BP-07 and BP-08.01/.02 closed/audited; BP-08.03 activation next.
+- Last refreshed: `2026-10-06 12:48:45` (America/Chicago).
 - Scope: unresolved v2 design/implementation alignment and scoped successor boundaries.
 - Active focus: evolutionary search activation and named later integration limits.
-- Next gate: BP-08.02 graph integration; BP-09.03 separately wires selected model into deployed scheduling.
+- Next gate: BP-08.03 representation and fitness; BP-09.03 separately wires selected model into deployed scheduling.
 
 ## Active Findings
 
 | Finding | Owner / trigger | Disposition |
 |---|---|---|
-| Numeric/evaluator descriptor synthetic eligibility mismatch | BP-08.02/V1.03-V1.04 | Registry correctly denied old missing-tag descriptors. New numeric0.5.0/evaluator0.2.0 pass199 checks; images/installations and actualRegistry replacement requalification pending. Acceptance-blocking until verified. |
 | Selected live model not yet wired into configured campaign scheduling | BP-09.03/B1 integrated demonstration | Explicit queued integration: evaluation adapter passes,worker configuration remains disabled/fixture. No deployed-model E2E claim. |
 | Scientific and target-host claims exceed developer fixture proof | BP-07 model evaluation, BP-08 scientific search, BP-09 selected deployment; SQ-01 quality views | Named future gates; synthetic receipts/vectors and completed campaigns do not establish science; deployment/K3s remains proposed |
 | Starlette/httpx test-client deprecation | Dev tooling, dependency maintenance | Nonblocking; test-client warning is not a production failure |

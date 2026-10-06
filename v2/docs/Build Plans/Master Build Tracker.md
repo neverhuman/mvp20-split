@@ -8,15 +8,15 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-07 closed100%; BP-08.02/V1 active; BP-09 queued.
-- Last refreshed: `2026-10-06 12:38:17` (America/Chicago).
+- Status: BP-07 closed100%; BP-08.02 closed100%; BP-08.03 activation next; BP-09 queued.
+- Last refreshed: `2026-10-06 12:48:45` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P7 / BP-08 - Evolutionary Search Integration.
-- Primary active task: BP-08.02/V1.04 actual-image Registry/HTTP replacement on requalified releases.
-- Next task: BP-08.03 activation after BP-08.02 acceptance.
-- Implementation completion: BP-07 closed100%,20/20; BP-08=38%,7/20 plus3/5;BP-09=0%.
+- Primary active task: BP-08.03 bounded activation audit.
+- Next task: BP-08.03/B1 after its activation audit.
+- Implementation completion: BP-07 closed100%,20/20; BP-08=40%,8/20;BP-09=0%.
 - Active focus: graph-driven numeric execution; preserve closed BP-07 evaluation history and scoped handoffs.
-- Blockers: none for BP-08.02/V1. Selected host and integrated live deployment remain BP-09 decisions/gates.
+- Blockers: none for BP-08.03 activation. Selected host and integrated live deployment remain BP-09 decisions/gates.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
 - Active exception: none.
 
@@ -32,13 +32,13 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-08.01 closed100%,4/4; parent38%,7/20 plus3/5. BP-08.02/V1.04 active, child90%, Build100%, Acceptance60%.
+BP-08.01/.02 closed100%, four deliveries each; parent40%,8/20. BP-08.03 activation next, child0%, Build0%, Acceptance0%.
 
 ## Queued Plans and Phase Mirrors
 
 | Canonical plan | Status | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Active | 38% | 100% | 90% | 0% | 0% | 0% | N/A |
+| [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Active | 40% | 100% | 100% | 0% | 0% | 0% | N/A |
 | [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 
 Scoped milestone fractions measure verified work within their existing delivery weight; closed-gate counts remain separate. BP-06 is archived24/24. Do not treat milestone counts as effort estimates.
@@ -115,11 +115,12 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
-| 2026-10-06 11:34:01 | BP-08.02/B1 complete; child25%,Build33.33%,parent25%,5/20. |149 compiler+14 graph+12 boundary checks; Runtime0.63 exact-root-URN compatibility; B2 next. |
-| 2026-10-06 11:42:43 | BP-08.02/B2.01 complete;child37.5%,Build50%,parent27.5%. |Five Runtime transaction scenarios;79 publication/boundary checks; Data0.30 exact-root-URN repair. |
-| 2026-10-06 11:52:51 | BP-08.02/B2 complete;child50%,Build66.67%,parent30%,6/20. |Actual independent workers/Runtime/Data;15 invocations,6evaluations,54confirmed retention reservations. |
-| 2026-10-06 12:10:23 | BP-08.02/B3 complete;child75%,Build100%,parent35%,7/20. |Actual killed worker/Runtime restart; identical replay, stale attempt rejected,108confirmedreservationsacrosspair. |
+| 2026-10-06 12:48:45 | BP-08.02 closed100%,4/4; parent40%,8/20. | Five active Registry profiles, independent Runtime/tool replacements, two recovered campaigns; scoped audit aligned. |
 | 2026-10-06 12:17:13 | BP-08.02/V1.01 verified;child81.25%,Acceptance25%,parent36.25%. |Two actual Linuxamd64images,5capabilityprofiles,offlinegolden/isolation/schemahashes. |
+| 2026-10-06 12:10:23 | BP-08.02/B3 complete;child75%,Build100%,parent35%,7/20. |Actual killed worker/Runtime restart; identical replay, stale attempt rejected,108confirmedreservationsacrosspair. |
+| 2026-10-06 11:52:51 | BP-08.02/B2 complete;child50%,Build66.67%,parent30%,6/20. |Actual independent workers/Runtime/Data;15 invocations,6evaluations,54confirmed retention reservations. |
+| 2026-10-06 11:42:43 | BP-08.02/B2.01 complete;child37.5%,Build50%,parent27.5%. |Five Runtime transaction scenarios;79 publication/boundary checks; Data0.30 exact-root-URN repair. |
+| 2026-10-06 11:34:01 | BP-08.02/B1 complete; child25%,Build33.33%,parent25%,5/20. |149 compiler+14 graph+12 boundary checks; Runtime0.63 exact-root-URN compatibility; B2 next. |
 | 2026-10-06 11:20:45 | BP-08.02/B1.02 complete; child16.67%,Build22.22%,parent23.33%. |169 numeric-adapter checks;144 evaluator/multi-input/legacy-SDK checks; graph/compiler next. |
 | 2026-10-06 10:22:13 | BP-08.01 closed100%,4/4;parent20%,4/20. |Two installations133 tests each; retained numeric state/replay; scoped audit aligned. |
 | 2026-10-06 10:14:08 | BP-08.01/B2 complete;child50%,Build66.67%,parent10%,2/20. |107checks;two-process128-member replay;duplicates and budget-limited attempts retained. |
@@ -139,9 +140,3 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-06 02:59:17 | V1.01 installed replacement complete; child87.5%,Acceptance50%,parent77.5%. | 3scenarios/18hostprocesses; exact history preserved; V1.02 audit active. |
 | 2026-10-06 02:39:47 | V1.01a isolated installations verified; child81.25%,Acceptance25%,parent76.25%. | Runtime394checks each; Planning240each;548schemas/546predecessors. Actualreplacement remains. |
 | 2026-10-06 02:29:57 | B3 complete; child75%,Build100%,parent75%,15/20closed. V1.01 active. | Actualowner branch/late/future3passed501.70s; boundaries12passed10.28s. |
-| 2026-10-06 02:06:01 | B3.02 process barriers verified; child66.67%,Build88.89%,parent73.33%. | Planning8passed21.90s; Runtime2passed28.95s; boundaries12passed9.83s. B3.03 active. |
-| 2026-10-06 01:58:40 | B3.01 SQL races verified; child58.33%,Build77.78%,parent71.67%. | 4 new contention cases; 11 final scoped checks passed; B3.02 active. |
-| 2026-10-06 01:54:28 | BP-07.04 B2 complete; child50%,Build66.67%,parent70%,14/20. B3.01 active. | Actual-owner abstention and repair/fallback, retained output confirmation; Checkpoint_Autonomous_Owners.json. |
-| 2026-10-06 01:27:11 | BP-07.04/B2.03c.ii complete | Runtime0.59/Planning0.89 configured workers, role/secret-safe startup, process replay and HTTP admission;29+43tests. |
-| 2026-10-06 01:16:38 | BP-07.04/B2.03c.ii.4b complete | Planning0.88 own-state execution/capture scheduling;24tests135.33s;100% new-module coverage. |
-| 2026-10-06 01:08:42 | BP-07.04/B2.03c.ii.4a complete | Runtime0.58 scoped fair discovery;20tests18.12s;next Planning scheduling. |

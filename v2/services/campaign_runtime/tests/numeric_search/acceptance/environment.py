@@ -20,7 +20,7 @@ RELAY = load("numeric_artifact_relay", ROOT / "services/campaign_runtime/tests/b
 DEFINITION = load("numeric_definition", Path(__file__).parents[1] / "definition.py")
 SPECIFICATION = load("numeric_specification", Path(__file__).parents[1] / "specification.py")
 HTTP = GRAPH.HTTP
-IMAGE = "c" * 64  # Declared test identity; image builds remain a separate acceptance tier.
+IMAGES = load("numeric_image_catalog", Path(__file__).with_name("images.py"))
 
 
 class NumericEnvironment(GRAPH.GraphEnvironment):
@@ -33,16 +33,22 @@ class NumericEnvironment(GRAPH.GraphEnvironment):
         assert process.returncode == 0, process.stderr.decode()[-1500:]
         return process.stdout
 
+    def image(self, stage):
+        return self.image_catalog.digest(stage)
+
     def setup(self):
+        self.image_catalog = IMAGES.ImageCatalog(self.config)
         self.scope["tenant_id"] = "numeric-http"
         releases, schemas, profiles = [], {}, []
-        self.releases = {}
+        self.releases, self.release_locks = {}, {}
         for stage in ("seed", "requests", "collect", "vary", "evaluate"):
-            release = json.loads(self.tool_cli(stage, "describe", "--image-sha256", IMAGE))
+            release = json.loads(self.tool_cli(stage, "describe", "--image-sha256", self.image(stage)))
+            self.image_catalog.verify(stage, release, self.config["packages"])
             self.releases[stage] = release
+            self.release_locks[stage] = GRAPH.BASE.WIRE.release_lock(release)
             filename = stage + "-descriptor.json"
             (self.root / filename).write_text(json.dumps(release), encoding="utf-8")
-            releases.append({"descriptor": filename, "lock": GRAPH.BASE.WIRE.release_lock(release)})
+            releases.append({"descriptor": filename, "lock": self.release_locks[stage]})
             for kind in (("input", "output", "policy") if stage == "evaluate" else ("input", "output")):
                 body = self.tool_cli(stage, "schema", "--kind" if stage == "evaluate" else "--direction", kind)
                 ports = release["tool"]["outputs" if kind == "output" else "inputs"]
@@ -57,6 +63,7 @@ class NumericEnvironment(GRAPH.GraphEnvironment):
                 (self.root / filename).write_bytes(body)
                 schemas[key] = {"schema_ref": reference, "path": filename}
                 profiles.append({**reference, "media_type": "application/json", "schema_path": filename})
+        self.image_catalog.register(self)
         self.definition = DEFINITION.campaign(self.scope, self.releases, 2)
         (self.root / "graph.json").write_text(json.dumps(self.definition), encoding="utf-8")
         graph = {"definition": "graph.json", "releases": releases, "schemas": list(schemas.values())}
@@ -122,13 +129,13 @@ class NumericEnvironment(GRAPH.GraphEnvironment):
             "representation": port["value_type"]["representation"], "unit": port["value_type"]["unit"]}}
             for port in self.definition["body"]["inputs"]]
 
-    def restart_runtime(self):
+    def restart_runtime(self, python=None):
         old = self.runtime
         before = self.graph()
         old.close()
-        self.runtime = HTTP.Service(old.python, "amphora_campaign_runtime", old.config, old.env, self.root, old.port)
+        self.runtime = HTTP.Service(python or old.python, "amphora_campaign_runtime", old.config, old.env, self.root, old.port)
         self.resources.append(self.runtime)
         self.runtime.ready(self.tokens["admin"])
         assert self.graph() == before
-        assert self.compile(old.python) == self.plans
+        assert self.compile(python or old.python) == self.plans
         return before
