@@ -1,0 +1,19 @@
+{
+  "timestamp_local": "2026-10-06 08:38:46",
+  "status": "passed",
+  "scope": "B2.02 frozen synthetic corpus and actualSQL offline live-binding gate",
+  "tests": 49,
+  "seconds": 40.15,
+  "paid_calls": 0,
+  "planned_calls": 12,
+  "reserved_usd": "0.36864",
+  "ceiling_usd": "1.00",
+  "maximum_packet_bytes": 9277,
+  "protocol_sha256": "52adf8aaa572b253a31b39a72bdc146f15d38a36114f27726c8fdbba95047546",
+  "replay": "Original offline test scope retains first attempt across runner replacement; actual paid namespace untouched",
+  "limits": [
+    "Fake transport for SQL binding tests; no live result yet",
+    "Quote geometry supplied; no scientific source discovery claim",
+    "Campaign corpus tests evidence requests,not complex topology generation"
+  ]
+}

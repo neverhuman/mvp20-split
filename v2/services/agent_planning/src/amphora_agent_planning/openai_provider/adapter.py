@@ -19,6 +19,9 @@ class OpenAIProvider:
         return (model.provider_id,model.model_id,model.model_revision)==("openai",MODEL,MODEL) and model.tokenizer==tokenizer_reference()
     def reply(self, attempt):
         prepared=PreparedInput.bind(attempt,self.content)
+        return self.reply_prepared(prepared)
+
+    def reply_prepared(self, prepared):
         raw=self.transport.send(prepared.body)
         require(type(raw) is bytes and 0<len(raw)<=1048576,"openai_response_limit")
         value=json.loads(raw.decode("utf-8"),object_pairs_hook=_object,parse_constant=_constant)

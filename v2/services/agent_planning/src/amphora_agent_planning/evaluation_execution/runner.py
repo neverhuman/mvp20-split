@@ -67,7 +67,10 @@ class EvaluationRunner:
         principal.require('record_requests', principal.scope)
         principal.require('record_attempts', principal.scope)
         protocol, batch = self._suite(principal, suite_id)
-        require(protocol.manifest.mode == 'fixture', 'evaluation_live_adapter_unconfigured')
+        if protocol.manifest.mode == 'live':
+            from ..openai_provider.evaluation import FrozenOpenAIEvaluation
+            require(type(self.runner.provider) is FrozenOpenAIEvaluation, 'evaluation_live_adapter_unconfigured')
+            self.runner.provider.validate(protocol, batch)
         require(protocol.manifest.adapter_revision == self.adapter_revision, 'evaluation_adapter_revision')
         attempts = self._attempts(principal, batch)
         pending = None

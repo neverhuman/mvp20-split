@@ -1,0 +1,9 @@
+# Frozen initial OpenAI engineering corpus
+
+Owner: BP-07.05/B2.02. Synthetic invented entities and capabilities; no research,lab or baseline source content. Six cases,two repetitions each. Independent labels require directed/negated/uncertain relation facts and original citation,ignore injected source instructions,and preserve missing/contradictory campaign evidence without inventing tools. All category thresholds100%,no allowed abstention; hard cases include injection and both campaign cases.
+
+prepare_openai_evaluation.py creates exact original bytes and refuses changed overwrite. manifest.json/corpus.json/inputs.json/bodies.json/freeze.json are the pinned input package. Labels remain local and are not sent as model inputs. Prompt describes output shape,not case-specific answers. Prompt/schema conformity alone earns no semantic credit. Quote geometry is supplied as input; this suite does not independently prove automated source-span discovery or real scientific validity. Campaign cases request evidence rather than exercise a complex live topology proposal; those broader behaviors need additional held-out scope.
+
+Twelve requests reserve$0.36864 at conservative uncached rates,with16384input/4096output ceilings per call; initial overall ceiling$1. Packet UTF8 allowance is conservative,not measured tokenizer output. Original failures remain in SQL; no renamed suite or convenient rerun resets costs/results. Credentials come only from environment or explicit external.env lookup in dev runner,never these files.
+
+run_openai_evaluation.py defaults to read-only reporting; --execute uses original durable issuance. Scope and suite are fixed in the bundle. Unknown usage/unavailable transport/overage stop fresh calls; re-entry does not duplicate settled attempts. Native retries/tools/background/storage are disabled. The owner ledger conservatively charges at least reservation; report distinguishes this from lower observed token cost.

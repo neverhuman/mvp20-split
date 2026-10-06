@@ -15,5 +15,5 @@ class OpenAIPrice:
         return input_tokens * self.input_rate + output_tokens * self.output_rate
     def reservation(self, limits):
         require(limits.accounting_unit == UNIT, "openai_accounting_unit")
-        require(limits.max_input_tokens <= 8192 and limits.max_output_tokens <= 2048, "openai_initial_request_limit")
+        require(limits.max_input_tokens <= 16384 and limits.max_output_tokens <= 4096, "openai_initial_request_limit")
         return self.estimate(limits.max_input_tokens, limits.max_output_tokens)

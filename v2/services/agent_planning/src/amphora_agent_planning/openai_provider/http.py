@@ -13,7 +13,7 @@ class OpenAIHTTP:
         require(type(timeout_seconds) is int and 1 <= timeout_seconds <= 60, "openai_timeout")
         self._key,self.timeout,self.factory = api_key,timeout_seconds,connection_factory
     def send(self, body):
-        require(type(body) is bytes and 0 < len(body) <= 8192, "openai_http_body")
+        require(type(body) is bytes and 0 < len(body) <= 16384, "openai_http_body")
         deadline=time.monotonic()+self.timeout
         connection=self.factory("api.openai.com",timeout=self.timeout)
         try:
