@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-10-05 22:56:16",
+  "planning": "0.80.0",
+  "migration": "planning_0016",
+  "tests": 72,
+  "seconds": 17.11,
+  "coverage": {
+    "statements": 131,
+    "branches": 4,
+    "percent": 100
+  },
+  "compatibility": [
+    "exact unchanged BudgetPolicy v1 canonical bytes and ReservationDemand",
+    "existing charge regressions",
+    "no budget ledger or issuance change"
+  ],
+  "limits": [
+    "pure template/context only",
+    "no provider call or SQL execution claim"
+  ]
+}
