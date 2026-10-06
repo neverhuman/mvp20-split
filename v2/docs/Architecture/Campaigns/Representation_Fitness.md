@@ -1,7 +1,7 @@
 # Candidate representation and fitness boundaries
 
-- Design status: synthetic operators and candidate declaration ingress implemented; equivalence/cache and fitness policy remain B2.
-- Last reviewed: 2026-10-06 12:54:00 (America/Chicago).
+- Design status: synthetic operators and candidate declaration ingress implemented; representation canonicalization and declared evaluation identity implemented; authoritative reuse and fitness assembly remain B2.
+- Last reviewed: 2026-10-06 13:46:49 (America/Chicago).
 - Parent: [Search](Search.md).
 
 Three independently packaged tools own synthetic bounded numeric coordinates, labeled polymer-chain blueprints and DNA strings. They depend on a new public candidate_spaces DTO package, never each other's implementations. Existing contracts/representations continues to own vector-space encodings; existing numerical search/checkpoint contracts remain stable. These fixtures exercise domain separation, not molecular validity or biological function.
@@ -17,3 +17,9 @@ A reusable evaluation identity binds canonical representation and equivalence re
 Research owns fitness assembly from authenticated/pinned evidence and eligibility/synthesis decisions. Required hard failures exclude before numeric ranking. Missing, censored or contradictory values remain explicit unavailable outcomes; they never become zero or best rank. Unknown synthesis remains unknown and follows the pinned exploratory versus required-action policy. Optional weakness creates follow-up focus rather than an in-campaign veto. Existing future-campaign-only correction policy remains unchanged.
 
 Test ownership follows each tool and Research fitness module. POL-01 preserves unknown/specified metadata; POL-02 rejects domain-illegal moves; POL-03 blocks cache reuse across context/distribution changes; POL-04 permits declared syntactic equivalence only under identical full evaluation context. Actual public Artifact/Research/Runtime and independent replacement evidence remain required integration gates. No new SQL state is justified until an owner persistence requirement is identified.
+
+## Declared evaluation identity
+
+B2.01b introduces public evaluation_identity transport and a focused Research fitness/reuse policy object. Representation claims bind scope, source Artifact, canonical digest and exact semantic/equivalence policy. Reviewed evaluation policy binds that representation policy, purpose, ordered objective IDs/units/directions/uncertainty policies, evaluator release/image, method/applicability/synthesis policies, required named context and explicit material-state requirement. Context supplies exact named Artifacts and an optional state revision. Missing required inputs reject rather than becoming a reusable unknown default.
+
+Research validates metadata coherence and produces an identity_only fingerprint of the complete normalized declaration. Named contexts and requirement sets normalize by name; objective order remains significant. Original representation Artifact identity is retained in provenance but excluded from the equivalence key, allowing two explicitly canonical-equivalent encodings to match. Scope, semantic/equivalence policy, canonical representation and every evaluation/context pin remain in the key. No values, source access, canonicalization proof or scientific verdict are supplied by a matching key. B2.03 must resolve reviewed owner/producer evidence and current rights before actual evaluation reuse; this pure object cannot authorize a cache hit.

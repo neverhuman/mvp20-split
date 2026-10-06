@@ -92,6 +92,25 @@ dependencies = [
 requires-dist = [{ name = "pydantic", specifier = ">=2.12,<3" }]
 
 [[package]]
+name = "amphora-contracts-evaluation-identity"
+version = "0.1.0"
+source = { editable = "../../contracts/evaluation_identity" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-research" },
+    { name = "amphora-contracts-tools" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-research", editable = "../../contracts/research" },
+    { name = "amphora-contracts-tools", editable = "../../contracts/tools" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-evidence"
 version = "0.5.13"
 source = { editable = "../../contracts/evidence" }
@@ -228,13 +247,14 @@ requires-dist = [
 
 [[package]]
 name = "amphora-research"
-version = "0.35.0"
+version = "0.36.0"
 source = { editable = "." }
 dependencies = [
     { name = "alembic" },
     { name = "amphora-contracts-artifacts" },
     { name = "amphora-contracts-candidate-spaces" },
     { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-evaluation-identity" },
     { name = "amphora-contracts-graph-runtime" },
     { name = "amphora-contracts-knowledge" },
     { name = "amphora-contracts-research" },
@@ -253,6 +273,7 @@ requires-dist = [
     { name = "amphora-contracts-artifacts", editable = "../../contracts/artifacts" },
     { name = "amphora-contracts-candidate-spaces", editable = "../../contracts/candidate_spaces" },
     { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-evaluation-identity", editable = "../../contracts/evaluation_identity" },
     { name = "amphora-contracts-graph-runtime", editable = "../../contracts/graph_runtime" },
     { name = "amphora-contracts-knowledge", editable = "../../contracts/knowledge" },
     { name = "amphora-contracts-research", editable = "../../contracts/research" },

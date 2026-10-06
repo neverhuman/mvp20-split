@@ -262,5 +262,11 @@
     "coverage_sources": [
       "tools/sequence_space/src/amphora_sequence_space"
     ]
+  },
+  "contracts-evaluation-identity": {
+    "tests": "contracts/evaluation_identity/tests",
+    "coverage_sources": [
+      "contracts/evaluation_identity/src/amphora_contracts_evaluation_identity"
+    ]
   }
 }

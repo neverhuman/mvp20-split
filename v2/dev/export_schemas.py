@@ -5,6 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 
+import amphora_contracts_evaluation_identity as evaluation_identity
 import amphora_contracts_candidate_spaces as candidate_spaces
 import amphora_contracts_artifacts as artifact_contracts
 import amphora_contracts_evidence as evidence_contracts
@@ -42,6 +43,9 @@ from amphora_contracts_tools import Completion, Invocation, ToolBinding, ToolDes
 
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
+    "evaluation-identity.policy": evaluation_identity.EvaluationReusePolicy,
+    "evaluation-identity.input": evaluation_identity.EvaluationIdentityInput,
+    "evaluation-identity.identity": evaluation_identity.EvaluationIdentity,
     "candidate-space.numeric": candidate_spaces.NumericDesign,
     "candidate-space.polymer": candidate_spaces.PolymerDesign,
     "candidate-space.sequence": candidate_spaces.SequenceDesign,

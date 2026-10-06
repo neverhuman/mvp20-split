@@ -1,0 +1,152 @@
+{
+  "wire_version": "1",
+  "representation": {
+    "scope": {
+      "tenant_id": "synthetic",
+      "project_id": "identity"
+    },
+    "policy": {
+      "kind": "polymer",
+      "semantic_profile": {
+        "schema_id": "polymer-test",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "equivalence_profile": {
+        "schema_id": "polymer-equivalence",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    },
+    "canonical_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "source": {
+      "artifact_id": "original",
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "identity"
+      },
+      "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "size_bytes": 100,
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "candidate-space.polymer",
+        "version": "1",
+        "sha256": "027807938ef5c9ab0fa7d0064dd0e3116a9abd8e23e37edaf25088273747e90c"
+      }
+    }
+  },
+  "policy": {
+    "wire_version": "1",
+    "reference": {
+      "schema_id": "evaluation-policy",
+      "version": "1",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "purpose": "synthetic-ranking",
+    "representation": {
+      "kind": "polymer",
+      "semantic_profile": {
+        "schema_id": "polymer-test",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "equivalence_profile": {
+        "schema_id": "polymer-equivalence",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    },
+    "method": {
+      "evaluator": {
+        "capability_id": "synthetic-evaluator",
+        "release": "0.1.0",
+        "image_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "contract_version": "1"
+      },
+      "method": {
+        "schema_id": "synthetic-method",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "applicability": {
+        "schema_id": "synthetic-only",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    },
+    "synthesis_policy": {
+      "schema_id": "unknown-retained",
+      "version": "1",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "objectives": [
+      {
+        "objective_id": "fitness",
+        "unit": "dimensionless",
+        "direction": "minimize",
+        "uncertainty_policy": {
+          "schema_id": "retain-uncertainty",
+          "version": "1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      }
+    ],
+    "required_context": [
+      "preparation",
+      "distribution"
+    ],
+    "material_state_required": true
+  },
+  "context": {
+    "scope": {
+      "tenant_id": "synthetic",
+      "project_id": "identity"
+    },
+    "material_state": {
+      "scope": {
+        "tenant_id": "synthetic",
+        "project_id": "identity"
+      },
+      "material_state_id": "material",
+      "revision": 1
+    },
+    "inputs": [
+      {
+        "name": "preparation",
+        "artifact": {
+          "artifact_id": "preparation",
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "identity"
+          },
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "size_bytes": 100,
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "candidate-space.polymer",
+            "version": "1",
+            "sha256": "027807938ef5c9ab0fa7d0064dd0e3116a9abd8e23e37edaf25088273747e90c"
+          }
+        }
+      },
+      {
+        "name": "distribution",
+        "artifact": {
+          "artifact_id": "distribution",
+          "scope": {
+            "tenant_id": "synthetic",
+            "project_id": "identity"
+          },
+          "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "size_bytes": 100,
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "candidate-space.polymer",
+            "version": "1",
+            "sha256": "027807938ef5c9ab0fa7d0064dd0e3116a9abd8e23e37edaf25088273747e90c"
+          }
+        }
+      }
+    ]
+  }
+}
