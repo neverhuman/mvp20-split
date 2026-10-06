@@ -1,6 +1,6 @@
 # Numeric search graph acceptance
 
-Status: B2.01 Runtime transaction proof passed; real Artifact/worker HTTP and recovery pending B2.02/B3.
+Status: B2 Runtime transactions and real Artifact/worker HTTP passed; recovery is B3.
 
 This Runtime-owned fixture composes public numeric and synthetic evaluator CLI descriptors/schemas. No production Runtime dependency on a scientific tool is introduced. Catalog image pins are declared test identities, not built-image evidence.
 
@@ -13,3 +13,5 @@ Collections cap at128, parallel members8, conversion bytes262144. Large otherwis
 `test_compilation.py` checks0/1/2/10000 bounds, exact repeat plan identity, policy captures/port incompatibility, missing slots and declared bounds. It is pure compiler evidence only: no SQL, actual Artifact authorization, deployed workers, durable generations, process recovery or scientific validity is claimed. Run through dev pytest with --import-mode=importlib.
 
 `test_transactions.py` uses actual PostgreSQL Runtime transactions, numeric/evaluator CLI subprocesses and an explicitly scripted Artifact peer. Five cases cover zero-generation/one-member, two generations with reverse evaluator completion order, zero evaluation budget, fixed duplicates and a failed evaluator. Independent assertions cover draw counts, exact quadratic arithmetic, minimum-fitness selection, final state, evidence binding and zero extra evaluations. This tier does not establish actual Artifact protection or SDK worker HTTP.
+
+Actual independent wheel/API execution is now demonstrated by [acceptance](acceptance/README.md):15 invocations,6evaluations,54confirmed reservations. Scripted transaction tests retain their narrower role.
