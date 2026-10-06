@@ -1,8 +1,8 @@
 # Evolutionary Search and Experience
 
-- Design status: detailed proposed contract; implementation and scientific acceptance pending
+- Design status: bounded numeric contracts, selection, seeding and portable checkpoint mapping implemented; graph-step integration and scientific acceptance pending
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
-- Last reviewed: `2026-09-22 18:56:40` (America/Chicago)
+- Last reviewed: `2026-10-06 10:22:13` (America/Chicago)
 - Parent: [Domain overview](Campaign_Architecture.md)
 - Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#campaign-evolution-and-cross-project-discovery)
 
@@ -45,3 +45,9 @@ If all candidates violate hard constraints, retain the failure distribution and 
 ## Design Basis and Open Decisions
 
 [Reuse Baseline](../Evolutionary_Code_Reuse_Baseline.md) identifies actual NSGA-II/simplex/feature-GA mechanics and missing step/checkpoint integration. Remaining choices: mixed-variable operators, batch-completion policy, fairness across expensive evaluations and topology fitness benchmarks. Search strategy is pluggable; no scientific winner is assumed.
+
+## Implemented Boundary and Successor
+
+BP-08.01 implements public search/checkpoint DTOs and the isolated numeric module: finite continuous boxes, constrained Pareto/crowding selection, original-spec pin binding, portable counter RNG, retained initial attempts and intrinsic checkpoint consistency. Two clean wheel installations preserve checkpoint bytes, pending identities and the next draw. This independent implementation does not claim v1 Rust bit parity or scientific validity.
+
+BP-08.02 remains responsible for one-step variation/evaluation/selection integration, exact predecessor Artifact verification, accepted Runtime state transitions, out-of-order results and worker replacement across generations. A valid snapshot alone neither authorizes execution nor proves its referenced evidence exists. Registry/tool descriptors must pin the actual deployed implementation; a specification fingerprint alone does not verify running code.

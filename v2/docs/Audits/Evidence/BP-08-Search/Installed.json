@@ -1,0 +1,84 @@
+{
+  "verified_at": "2026-10-06 10:19:35",
+  "status": "passed",
+  "installations": [
+    {
+      "label": "initial",
+      "tests": 133,
+      "replay_sha256": "f4a8c39aae069629fed17c27a514a88002a39333861d41a5d63c450aa70f9382",
+      "installation": {
+        "timestamp_local": "2026-10-06 10:19:04",
+        "status": "installed",
+        "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+        "owner": "amphora-evolution-search",
+        "forbidden_implementations": [
+          "amphora_campaign_runtime",
+          "amphora_agent_planning",
+          "amphora_research",
+          "amphora_knowledge",
+          "amphora_data_artifacts"
+        ],
+        "packages": {
+          "amphora-contracts-commands": "0.2.0",
+          "amphora-contracts-core": "0.1.0",
+          "amphora-contracts-search": "0.1.0",
+          "amphora-contracts-tools": "0.1.0",
+          "amphora-evolution-search": "0.1.0"
+        },
+        "wheels": {
+          "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+          "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+          "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+          "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+          "amphora_evolution_search-0.1.0-py3-none-any.whl": "9cef4f3ced87d7c288067e8776f6f2f783664a291aec905152132d7d1ff84e95"
+        }
+      }
+    },
+    {
+      "label": "replacement",
+      "tests": 133,
+      "replay_sha256": "f4a8c39aae069629fed17c27a514a88002a39333861d41a5d63c450aa70f9382",
+      "installation": {
+        "timestamp_local": "2026-10-06 10:19:24",
+        "status": "installed",
+        "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+        "owner": "amphora-evolution-search",
+        "forbidden_implementations": [
+          "amphora_campaign_runtime",
+          "amphora_agent_planning",
+          "amphora_research",
+          "amphora_knowledge",
+          "amphora_data_artifacts"
+        ],
+        "packages": {
+          "amphora-contracts-commands": "0.2.0",
+          "amphora-contracts-core": "0.1.0",
+          "amphora-contracts-search": "0.1.0",
+          "amphora-contracts-tools": "0.1.0",
+          "amphora-evolution-search": "0.1.0"
+        },
+        "wheels": {
+          "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+          "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+          "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+          "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+          "amphora_evolution_search-0.1.0-py3-none-any.whl": "9cef4f3ced87d7c288067e8776f6f2f783664a291aec905152132d7d1ff84e95"
+        }
+      }
+    }
+  ],
+  "replay": {
+    "attempts": 128,
+    "checkpoint_sha256": "d4cdb1c08540552b1c3398852019f8a90550efe90319a7660d4ae40b79413d24",
+    "next_counter": 129,
+    "next_draw_hex": "0x1.11b7232ac8976p-1",
+    "specification_sha256": "54c0f7c04734ecbaa7458e6b22a0f14f1c1f37817b5c0e488d0b87c5136da362",
+    "pending_count": 128
+  },
+  "limits": [
+    "No SQL, provider calls or private service implementations",
+    "Identical source rebuilt twice; not a different-version compatibility claim",
+    "Workspace source audit excluded from copied tests; separate retained source-pin proof",
+    "Pending identities are serialized requests, not accepted Runtime invocations"
+  ]
+}

@@ -14,7 +14,7 @@
 | Conversion/interpretation trace | Original input, transform chain, missing fields and inference hints become immutable scoped trace artifacts; separate from database schema migration | BP-06.01 and [BP-07.02](../BP-07/Completed/BP-07.02%20Reliable%20text%20decomposition.md) |
 | Named scientific graph views | Lineage, material/property history and experiment/model views seed bounded public projections; queries need scope/revision/pagination controls | [BP-05.02](../BP-05/Completed/BP-05.02%20Graph%20inspection%20and%20navigation.md), [BP-06.06](../BP-06/Completed/BP-06.06%20Feedback%20integration%20and%20closeout.md) |
 | Polymer-specific vocabulary | Sequence rules, tacticity, branching/end groups and distribution fields inform optional adapters; unknowns must not silently inherit defaults | BP-08.03; biological/numeric contracts stay independent |
-| Extraction provenance and readiness | Select schemas/fixtures only after exact-source/dependency/license review; no new executable optimizer established | [BP-08.01](../BP-08/BP-08.01%20Reuse%20and%20search%20contracts.md) |
+| Extraction provenance and readiness | Select schemas/fixtures only after exact-source/dependency/license review; no new executable optimizer established | [BP-08.01](../BP-08/Completed/BP-08.01%20Reuse%20and%20search%20contracts.md) |
 
 These are refinements to existing queued B1/B2/B3 deliveries, not a parallel implementation plan. V1 acceptance in each touched child includes the added required cases. All touched children remain 0%; existing delivery denominators stay unchanged. BP-02.03/A2 remains the implementation return point.
 

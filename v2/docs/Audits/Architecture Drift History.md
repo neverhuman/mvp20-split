@@ -248,3 +248,7 @@ B3.03 verified 2026-10-05 13:19:41: predeclared300-descriptor protocol/catalog a
 ## 2026-10-06 09:22:33 - BP-07 accepted scoped boundaries
 
 [Evaluation closeout](BP-07.05_Evaluation_Closeout.md) and [parent audit](BP-07_Autonomous_Planning_Closeout.md) close20/20deliveries. Infeasiblecampaignfixture repaired,providerstructuredextraction+postureclarification verified12/12,twoindependent130-testinstallationsreproducealloriginalSQLresults. No unresolvedacceptance-blockingdrift; modeldeploymentintegrationBP-09.03 andscience remainexplicitfuturegates.
+
+## 2026-10-06 10:22:13 - BP-08.01 aligned
+
+[Scoped audit](BP-08.01_Search_Contracts_Closeout.md): numeric contracts, seeding and intrinsic replay verified; two installations133 tests each. Source provenance and no-science boundary preserved. Future generation/Artifact/Runtime integration remains BP-08.02. Follow-up for closed scope: none.

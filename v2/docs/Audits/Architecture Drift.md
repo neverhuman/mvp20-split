@@ -1,10 +1,10 @@
 # Architecture Drift
 
-- Status: BP-07 closed/audited; BP-08 activation next.
-- Last refreshed: `2026-10-06 09:22:33` (America/Chicago).
+- Status: BP-07 and BP-08.01 closed/audited; BP-08.02 activation next.
+- Last refreshed: `2026-10-06 10:22:13` (America/Chicago).
 - Scope: unresolved v2 design/implementation alignment and scoped successor boundaries.
 - Active focus: evolutionary search activation and named later integration limits.
-- Next gate: BP-08.01 activation; BP-09.03 separately wires selected model into deployed scheduling.
+- Next gate: BP-08.02 graph integration; BP-09.03 separately wires selected model into deployed scheduling.
 
 ## Active Findings
 
