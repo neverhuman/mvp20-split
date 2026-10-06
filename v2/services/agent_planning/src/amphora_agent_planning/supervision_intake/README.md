@@ -1,5 +1,7 @@
 # Supervisor request intake
 
+Planning0.74/planning0016 supports explicit planning.supervision.request.v2 alongside original commands. CheckpointIntakeSnapshot validates declared target/read correspondence and field uniqueness; it does not prove Runtime plan membership. Original IntakeSnapshot parser remains closed. Retained snapshot dispatch and family-specific receipt lookup preserve original bytes; default receipt family remains v1. Same command ID across families cannot reinterpret an existing wrapper. Forward0016 extends the family whitelist only. Owned intake180 statements22 branches100% in the145-case combined SQL suite. No attempts/provider grants are created. HTTP/client v2 integration follows.
+
 - Implemented: Planning0.70/planning0015, BP-07.04/B1.04a; reviewed `2026-10-05 15:30:37` (America/Chicago).
 - Architecture: [Planning](../../../../../docs/Architecture/Agents/Planning.md).
 - Tests: service-owned tests/supervision_intake;17 pure/actualSQL cases,155 statements/20 branches100%.

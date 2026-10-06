@@ -1,5 +1,6 @@
 """Explicit v2 retained frames, separate from the original v1 parser."""
 
+import json
 from typing import Literal
 
 from amphora_contracts_supervision import CheckpointRequest
@@ -32,3 +33,13 @@ class CheckpointFrame(RequestFrame):
         require(tuple(item.identity for item in result.observations) ==
                 tuple(item.node.activation_id for item in record.observations), 'observation_order')
         return result
+
+
+def read_frame(raw):
+    require(type(raw) is bytes and 0 < len(raw) <= 16777216, 'frame_size')
+    record = json.loads(raw)
+    require(type(record) is dict, 'frame_profile')
+    model = {'runtime-supervision-request-frame.v1': RequestFrame,
+             'runtime-supervision-request-frame.v2': CheckpointFrame}.get(record.get('profile'))
+    require(model is not None, 'frame_profile')
+    return model.from_bytes(raw)

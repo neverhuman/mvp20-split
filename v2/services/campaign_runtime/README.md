@@ -1,6 +1,8 @@
 # Campaign Runtime
 
-Current package0.31.0 adds versioned public checkpoint exchange and private frame reconstruction (not journal/HTTP integration yet).
+Current package0.32.0 supports versioned checkpoint journal recovery and forward runtime0021; HTTP/client integration follows.
+
+Package0.31.0 adds versioned public checkpoint exchange and private frame reconstruction (not journal/HTTP integration yet).
 
 Package0.30.0 adds versioned pure materialization checkpoint footprints; no admission/execution effect yet. See [scope boundary](src/amphora_campaign_runtime/supervision_scope/README.md).
 

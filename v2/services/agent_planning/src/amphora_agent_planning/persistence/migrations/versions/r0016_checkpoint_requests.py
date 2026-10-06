@@ -1,0 +1,18 @@
+"""Add explicit checkpoint request family without rewriting retained commands."""
+
+from pathlib import Path
+
+from alembic import op
+
+revision = 'planning_0016'
+down_revision = 'planning_0015'
+branch_labels = None
+depends_on = None
+
+
+def upgrade():
+    op.execute(Path(__file__).with_suffix('.sql').read_text(encoding='utf-8'))
+
+
+def downgrade():
+    raise RuntimeError('Evidence-bearing schema requires an explicit forward migration')

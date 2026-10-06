@@ -1,12 +1,14 @@
 """Private delivery evidence and lease identity, separate from dispatch authority."""
 
 import hashlib
+import json
 from dataclasses import dataclass
 from datetime import datetime
 from typing import Annotated, Literal
 
 from amphora_contracts_core import Digest, Identifier, WireModel
 from amphora_contracts_supervision import (
+    CheckpointRequest,
     SupervisionCommandReceipt,
     SupervisionRef,
     SupervisionRequest,
@@ -30,6 +32,15 @@ class DeliveryEvidence(WireModel):
     reason: Identifier | None = None
     receipt: SupervisionCommandReceipt | None = None
     readback: SupervisionRequest | None = None
+
+
+class CheckpointDeliveryEvidence(DeliveryEvidence):
+    profile: Literal['runtime-supervision-delivery.v2'] = 'runtime-supervision-delivery.v2'
+    readback: CheckpointRequest | None = None
+
+
+def evidence_type(request):
+    return CheckpointDeliveryEvidence if request.schema_version == '2' else DeliveryEvidence
 
 
 @dataclass(frozen=True)
@@ -57,7 +68,12 @@ class DeliveryEvent:
     @classmethod
     def from_row(cls, row):
         raw = bytes(row['evidence'])
-        evidence = DeliveryEvidence.model_validate_json(raw)
+        document = json.loads(raw)
+        require(type(document) is dict, 'delivery_evidence_profile')
+        model = {'runtime-supervision-delivery.v1': DeliveryEvidence,
+                 'runtime-supervision-delivery.v2': CheckpointDeliveryEvidence}.get(document.get('profile'))
+        require(model is not None, 'delivery_evidence_profile')
+        evidence = model.model_validate_json(raw)
         require(encoded(evidence) == raw and evidence.fence == row['fence'], 'delivery_evidence_mismatch')
         return cls(row['event_id'], row['sequence'], row['kind'], evidence, row['created_at'])
 

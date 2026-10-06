@@ -8,7 +8,7 @@ from sqlalchemy import text
 from ..context.policy import require
 from ..persistence.journal import KEY, PlanningJournal
 from .commands import IncomingRequest, stored_receipt
-from .snapshot import IntakeSnapshot, encoded
+from .snapshot import encoded, read_snapshot
 
 COMMAND_KEY = 'tenant_id=:tenant AND project_id=:project AND actor_id=:actor AND family=:family AND command_id=:command'
 
@@ -23,7 +23,7 @@ class SupervisionIntake:
         row = conn.execute(text('SELECT * FROM planning.supervision_requests WHERE ' + KEY), key).mappings().one_or_none()
         if row is None:
             return None
-        snapshot = IntakeSnapshot.from_bytes(bytes(row['canonical_request']), principal)
+        snapshot = read_snapshot(bytes(row['canonical_request']), principal)
         request = snapshot.document()
         require(row['actor_id'] == principal.actor_id and row['request_sha256'] == snapshot.sha256 and
                 row['planning_request_sha256'] == snapshot.planning.sha256 and
@@ -98,10 +98,12 @@ class SupervisionIntake:
         with self.engine.connect() as conn:
             return self._wrapper(conn, key, principal)
 
-    def receipt(self, principal, command_id):
+    def receipt(self, principal, command_id, *, family='planning.supervision.request'):
         principal.require('read_attempts', principal.scope)
+        require(family in {'planning.supervision.request', 'planning.supervision.request.v2'},
+                'supervision_request_family')
         key = {'tenant': principal.scope.tenant_id, 'project': principal.scope.project_id, 'actor': principal.actor_id,
-               'family': 'planning.supervision.request', 'command': command_id}
+               'family': family, 'command': command_id}
         with self.engine.connect() as conn:
             row = conn.execute(text('SELECT * FROM planning.supervision_commands WHERE ' + COMMAND_KEY), key).mappings().one_or_none()
         return None if row is None else stored_receipt(row, principal)[1]

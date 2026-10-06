@@ -3,8 +3,9 @@
 import hashlib
 import json
 from dataclasses import dataclass
+from typing import ClassVar
 
-from amphora_contracts_supervision import SupervisionRequest
+from amphora_contracts_supervision import CheckpointRequest, SupervisionRequest
 
 from ..context import RequestSnapshot
 from ..context.policy import require
@@ -19,10 +20,15 @@ def encoded(model):
 class IntakeSnapshot:
     canonical: bytes
     planning: RequestSnapshot
+    record_type: ClassVar = SupervisionRequest
+
+    @staticmethod
+    def targets(request):
+        return request.snapshot.targets
 
     @classmethod
     def bind(cls, request, principal):
-        request = SupervisionRequest.model_validate_json(request.model_dump_json())
+        request = cls.record_type.model_validate_json(request.model_dump_json())
         original = RequestSnapshot.bind(request.planning_request, actor_id=principal.actor_id, scope=principal.scope)
         require(request.planning_request.purpose == 'supervision', 'supervision_purpose_mismatch')
         require(original.sha256 == request.planning_request_sha256, 'planning_request_digest_mismatch')
@@ -31,7 +37,7 @@ class IntakeSnapshot:
         require(request.reference.run_id == request.snapshot.cut.run_id and
                 request.snapshot.cut == request.planning_request.runtime_cut, 'supervision_cut_mismatch')
         require(request.policy == request.planning_request.context.policy, 'supervision_policy_mismatch')
-        reads, targets = request.snapshot.reads, request.snapshot.targets
+        reads, targets = request.snapshot.reads, cls.targets(request)
         ids = tuple(item.node.activation_id for item in reads)
         require(len(set(ids)) == len(ids) and len(set(targets)) == len(targets) and set(targets) <= set(ids),
                 'supervision_read_set_mismatch')
@@ -51,13 +57,35 @@ class IntakeSnapshot:
     @classmethod
     def from_bytes(cls, raw, principal):
         require(type(raw) is bytes and 0 < len(raw) <= 262144, 'supervision_request_size')
-        result = cls.bind(SupervisionRequest.model_validate_json(raw), principal)
+        result = cls.bind(cls.record_type.model_validate_json(raw), principal)
         require(result.canonical == raw, 'noncanonical_supervision_request')
         return result
 
     def document(self):
-        return SupervisionRequest.model_validate_json(self.canonical)
+        return self.record_type.model_validate_json(self.canonical)
 
     @property
     def sha256(self):
         return hashlib.sha256(self.canonical).hexdigest()
+
+
+class CheckpointIntakeSnapshot(IntakeSnapshot):
+    record_type = CheckpointRequest
+
+    @staticmethod
+    def targets(request):
+        reads = {item.node.activation_id: item.node for item in request.snapshot.reads}
+        for item in request.snapshot.checkpoints:
+            require(len(set(item.fields)) == len(item.fields), 'supervision_duplicate_field')
+            require(item.activation_id in reads and reads[item.activation_id].kind == item.kind,
+                    'supervision_target_kind_mismatch')
+        return tuple(item.activation_id for item in request.snapshot.checkpoints)
+
+
+def read_snapshot(raw, principal):
+    require(type(raw) is bytes and 0 < len(raw) <= 262144, 'supervision_request_size')
+    document = json.loads(raw)
+    require(type(document) is dict, 'supervision_request_profile')
+    model = {'1': IntakeSnapshot, '2': CheckpointIntakeSnapshot}.get(document.get('schema_version'))
+    require(model is not None, 'supervision_request_profile')
+    return model.from_bytes(raw, principal)

@@ -1,0 +1,24 @@
+{
+  "reviewed_at": "2026-10-05 19:44:38",
+  "milestone": "B2.01b.ii",
+  "versions": {
+    "runtime": "0.32.0/runtime0021",
+    "planning": "0.74.0/planning0016"
+  },
+  "tests": {
+    "sql_legacy": 145,
+    "targets_boundaries": 18
+  },
+  "coverage": {
+    "statements": 824,
+    "branches": 98,
+    "percent": 99,
+    "planning_intake_percent": 100
+  },
+  "repair": "Hardcoded old outbox family rejected original reconstruction; insert now records exact parsed family. Initial transaction rolled back.",
+  "limitations": [
+    "no HTTP/client v2 integration yet",
+    "no admission/effect winner",
+    "delivery reserved final-event fallback not directly exercised"
+  ]
+}

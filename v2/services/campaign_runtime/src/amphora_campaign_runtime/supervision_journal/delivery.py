@@ -2,14 +2,13 @@
 
 from datetime import timedelta
 
-from amphora_contracts_supervision import SupervisionRequest, parse_supervision_command
 from sqlalchemy import text
 
 from ..supervision_requests.binding import encoded
 from ..supervision_responses import SupervisionReceiptObservation
 from ..supervision_scope.observations import digest, require
-from .delivery_values import DeliveryEvent, DeliveryEvidence, fingerprint, identifier
-from .storage import SELECT, RequestJournal, StoredRequest
+from .delivery_values import DeliveryEvent, evidence_type, fingerprint, identifier
+from .storage import SELECT, RequestJournal, StoredRequest, outgoing
 
 KEY = 'tenant_id=:tenant AND project_id=:project AND run_id=:run AND decision_id=:decision AND request_sha256=:request'
 TERMINAL = {'recorded', 'rejected', 'failed', 'expired'}
@@ -75,14 +74,14 @@ class DeliveryJournal:
             expired = now.timestamp() >= deadline
             exhausted = control['claims'] >= 16 or control['events'] >= 63 or control['fence'] >= 9007199254740991
             if expired or exhausted:
-                evidence = DeliveryEvidence(submission_sha256=submission, holder=principal.actor_id,
+                evidence = evidence_type(original.frame.request)(submission_sha256=submission, holder=principal.actor_id,
                     fence=control['fence'], expires_at=None,
                     reason='request_deadline' if expired else 'delivery_limit')
                 self._append(conn, params, control, event_id, 'expired' if expired else 'failed', evidence,
                              claims=control['claims'])
                 return None
             expiry = min(now + timedelta(seconds=seconds), now.fromtimestamp(deadline, tz=now.tzinfo))
-            evidence = DeliveryEvidence(submission_sha256=submission, holder=principal.actor_id,
+            evidence = evidence_type(original.frame.request)(submission_sha256=submission, holder=principal.actor_id,
                 fence=control['fence'] + 1, expires_at=expiry)
             result = self._append(conn, params, control, event_id, 'claim', evidence, claims=control['claims'] + 1)
             return result.lease(reference, request_sha256)
@@ -109,17 +108,17 @@ class DeliveryJournal:
             observed = None
             if receipt is not None:
                 previous = self._previous(conn, params)
-                command = parse_supervision_command('planning.supervision.request', original.canonical_command)
+                command = outgoing(original.frame, original.canonical_command)
                 observed = SupervisionReceiptObservation.observe(command, receipt, readback=readback, previous=previous)
             kind = 'unknown' if observed is None else observed.status
             final_reason = reason
             if control['events'] >= 63 and kind not in TERMINAL:
                 kind, final_reason = 'failed', 'delivery_event_limit'
-            evidence = DeliveryEvidence(submission_sha256=submission, holder=lease.holder, fence=lease.fence,
+            evidence = evidence_type(original.frame.request)(submission_sha256=submission, holder=lease.holder, fence=lease.fence,
                 expires_at=lease.expires_at, reason=final_reason,
                 receipt=None if observed is None else observed.document(),
                 readback=None if observed is None or observed.readback_canonical is None else
-                    SupervisionRequest.model_validate_json(observed.readback_canonical))
+                    type(original.frame.request).model_validate_json(observed.readback_canonical))
             return self._append(conn, params, control, event_id, kind, evidence, claims=control['claims'])
         return self.requests.leases.commands.transact(transaction)
 

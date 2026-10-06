@@ -5,11 +5,19 @@ from dataclasses import dataclass
 
 from amphora_contracts_supervision import (
     SupervisionCommandReceipt,
+    parse_checkpoint_command,
     parse_supervision_command,
 )
 
 from ..context.policy import require
-from .snapshot import IntakeSnapshot, encoded
+from .snapshot import CheckpointIntakeSnapshot, IntakeSnapshot, encoded
+
+
+def request_command(family, raw):
+    require(family in {'planning.supervision.request', 'planning.supervision.request.v2'},
+            'supervision_request_family')
+    return (parse_checkpoint_command(raw) if family.endswith('.v2')
+            else parse_supervision_command(family, raw))
 
 
 @dataclass(frozen=True)
@@ -19,13 +27,13 @@ class IncomingRequest:
 
     @classmethod
     def bind(cls, principal, command):
-        checked = parse_supervision_command('planning.supervision.request', command.canonical_bytes)
+        checked = request_command(command.identity.command_family, command.canonical_bytes)
         require(checked == command, 'supervision_command_binding_mismatch')
         require(command.identity.actor_id == principal.actor_id and command.identity.scope == principal.scope,
                 'supervision_actor_mismatch')
-        from amphora_contracts_supervision import SupervisionRequest
-        request = SupervisionRequest.model_validate_json(json.dumps(json.loads(command.canonical_bytes)['payload']))
-        return cls(command, IntakeSnapshot.bind(request, principal))
+        model = CheckpointIntakeSnapshot if command.identity.command_family.endswith('.v2') else IntakeSnapshot
+        request = model.record_type.model_validate_json(json.dumps(json.loads(command.canonical_bytes)['payload']))
+        return cls(command, model.bind(request, principal))
 
     @property
     def params(self):
@@ -47,7 +55,7 @@ class IncomingRequest:
 
 
 def stored_receipt(row, principal):
-    command = parse_supervision_command('planning.supervision.request', bytes(row['canonical_command']))
+    command = request_command(row['family'], bytes(row['canonical_command']))
     incoming = IncomingRequest.bind(principal, command)
     require(command.profile == row['profile'] and command.sha256 == row['command_sha256'] and
             command.canonical_bytes == bytes(row['canonical_command']) and

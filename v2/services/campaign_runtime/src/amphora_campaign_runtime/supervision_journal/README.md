@@ -1,5 +1,7 @@
 # Supervisor journal
 
+Runtime0.32/runtime0021 supports explicit v1/v2 journal dispatch. read_frame chooses only known profiles and original RequestFrame stays closed. RequestSeries rejects profile changes within a decision. New v2 delivery evidence preserves original v1 readbacks; responses/cancellations reconstruct the original profile. Runtime rederives target field membership, inline/scalar eligibility and absence of a binding intent; policy bounds remain B2.01c. Forward0021 extends only the outbox family whitelist.145 actual SQL/legacy cases passed;18 target/boundary cases also pass, including v2 Invoke review. Aggregate journal/intake824 statements98 branches99%; delivery event-limit fallback remains a documented gap. No admission or execution winner yet.
+
 Runtime0.31 adds separate CheckpointFrame with private frame.v2 and explicit CheckpointRequest. Original RequestFrame.from_bytes stays v1-only. Pure v2 reconstruction binds named fields, all observation bytes and original Planning context; tampering and profile reinterpretation reject. Journal SQL and delivery still need explicit version dispatch before these frames can be stored. No admission/checkpoint/effect claim.
 
 

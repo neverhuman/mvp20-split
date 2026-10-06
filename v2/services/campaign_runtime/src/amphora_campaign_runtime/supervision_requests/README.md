@@ -1,5 +1,7 @@
 # Runtime supervisor request binding
 
+Runtime0.32 adds an explicit owner profile dispatcher used by journal/readback paths; unknown versions/families reject. Published old parsers remain closed. HTTP/client integration follows separately.
+
 Runtime0.31 adds CheckpointExport and CheckpointRequestBinding for footprint/request v2. Original ScopeExport/SupervisionRequestBinding remain v1-only. Shared context/scope/actor/lineage checks preserve original byte semantics; cross-profile export is rejected. New records are not an execution grant.
 
 

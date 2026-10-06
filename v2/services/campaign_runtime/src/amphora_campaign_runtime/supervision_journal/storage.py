@@ -5,12 +5,13 @@ from dataclasses import dataclass
 from datetime import datetime
 from types import MappingProxyType
 
-from amphora_contracts_supervision import parse_supervision_command
 from sqlalchemy import text
 
 from ..lifecycle.claims import RuntimeLeases
 from ..supervision_requests.binding import encoded
+from ..supervision_requests.profiles import request_command
 from ..supervision_scope.observations import require
+from .checkpoint_frames import read_frame
 from .current import verify_current
 from .frames import RequestFrame
 from .series import RequestSeries
@@ -22,7 +23,8 @@ SELECT = '''SELECT r.*,o.canonical_command,o.command_sha256,o.created_at AS inte
 
 
 def outgoing(frame, canonical):
-    command = parse_supervision_command('planning.supervision.request', canonical)
+    family = 'planning.supervision.request' + ('.v2' if frame.request.schema_version == '2' else '')
+    command = request_command(family, canonical)
     require(command.canonical_bytes == canonical, 'noncanonical_outgoing_command')
     require(len(canonical) <= 524288, 'outgoing_command_size')
     require(encoded(frame.request) == encoded(type(frame.request).model_validate_json(
@@ -39,7 +41,7 @@ class StoredRequest:
 
     @classmethod
     def from_row(cls, row):
-        frame = RequestFrame.from_bytes(bytes(row['canonical_frame']))
+        frame = read_frame(bytes(row['canonical_frame']))
         request = frame.request
         command = outgoing(frame, bytes(row['canonical_command']))
         expected = {'tenant_id': request.reference.scope.tenant_id,
@@ -81,7 +83,7 @@ class RequestJournal:
 
     def prepare(self, principal, frame, canonical_command):
         principal.require('supervise_prepare')
-        frame = RequestFrame.from_bytes(frame.canonical)
+        frame = read_frame(frame.canonical)
         request = frame.request
         require(request.reference.scope == principal.scope and
                 frame.document().prepared_by == principal.actor_id, 'preparer_scope_mismatch')
@@ -108,7 +110,7 @@ class RequestJournal:
                 'checkpoint': request.checkpoint_id, 'request': frame.request_sha256,
                 'frame_hash': frame.sha256, 'root': request.lineage.root_request_sha256,
                 'parent': request.lineage.parent_request_sha256, 'frame': frame.canonical,
-                'command': command.identity.command_id, 'profile': command.profile,
+                'command': command.identity.command_id, 'profile': command.profile, 'family': command.identity.command_family,
                 'command_hash': command.sha256, 'bytes': command.canonical_bytes}
             conn.execute(text('''INSERT INTO runtime.supervision_requests
                 (tenant_id,project_id,run_id,decision_id,ordinal,plan_sha256,prepared_by,planning_actor,
@@ -119,7 +121,7 @@ class RequestJournal:
             conn.execute(text('''INSERT INTO runtime.supervision_outbox
                 (tenant_id,project_id,run_id,decision_id,request_sha256,actor_id,family,command_id,
                  profile,command_sha256,canonical_command) VALUES
-                (:tenant,:project,:run,:decision,:request,:actor,'planning.supervision.request',:command,
+                (:tenant,:project,:run,:decision,:request,:actor,:family,:command,
                  :profile,:command_hash,:bytes)'''), values)
             row = conn.execute(text(SELECT + ' AND r.ordinal=:ordinal'), values).mappings().one()
             return StoredRequest.from_row(row)

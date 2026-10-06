@@ -12,10 +12,10 @@ from amphora_contracts_supervision import (
 from sqlalchemy import text
 
 from ..persistence.commands import WHERE, TerminalDisposition, _bindings
-from ..supervision_requests import SupervisionRequestBinding
+from ..supervision_requests.profiles import request_binding
 from ..supervision_responses import SupervisionResponseBinding
 from ..supervision_scope.observations import require
-from .frames import RequestFrame
+from .checkpoint_frames import read_frame
 from .storage import RequestJournal
 
 RESPONSES = '''SELECT s.*,r.canonical_frame FROM runtime.supervision_responses s
@@ -25,7 +25,7 @@ RESPONSES = '''SELECT s.*,r.canonical_frame FROM runtime.supervision_responses s
 
 def bind_response(frame, response, capture):
     request = frame.request
-    origin = SupervisionRequestBinding.bind(request, frame.footprint(), actor_id=request.planning_request.actor_id)
+    origin = request_binding(request).bind(request, frame.footprint(), actor_id=request.planning_request.actor_id)
     return SupervisionResponseBinding.bind(origin, frame.footprint(), response,
         actor_id=request.planning_request.actor_id, capture_bytes=capture)
 
@@ -40,7 +40,7 @@ class StoredResponse:
 
     @classmethod
     def from_row(cls, row):
-        frame = RequestFrame.from_bytes(bytes(row['canonical_frame']))
+        frame = read_frame(bytes(row['canonical_frame']))
         response = SupervisionResponse.model_validate_json(bytes(row['canonical_response']))
         capture = None if row['capture_bytes'] is None else bytes(row['capture_bytes'])
         bound = bind_response(frame, response, capture)
@@ -118,7 +118,7 @@ class ResponseJournal:
         row = conn.execute(text('SELECT canonical_frame FROM runtime.supervision_requests WHERE tenant_id=:tenant '
             'AND project_id=:project AND run_id=:run AND decision_id=:decision AND request_sha256=:request'), params).first()
         require(row is not None, 'supervision_request_unavailable')
-        return RequestFrame.from_bytes(bytes(row[0]))
+        return read_frame(bytes(row[0]))
 
     def response(self, principal, response_id):
         principal.require('read')

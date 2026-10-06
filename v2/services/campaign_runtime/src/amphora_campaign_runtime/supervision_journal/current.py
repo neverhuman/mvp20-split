@@ -8,6 +8,7 @@ from sqlalchemy import text
 
 from ..compiler.addresses import ActivationAddress
 from ..coordinator.frontier import ScopeAddress
+from ..coordinator.state import ScopeState
 from ..coordinator.storage import GraphStorage
 from ..graph_inspection.policy import node_view
 from ..lifecycle.claims import RUN
@@ -72,6 +73,19 @@ def verify_current(conn, params, run, frame):
             materialized = conn.execute(text('SELECT 1 FROM runtime.activations WHERE ' + RUN +
                 ' AND activation_id=:activation'), {**params, 'activation': row['activation_id']}).first()
             require(materialized is None, 'target_already_materialized')
+            if frame.request.schema_version == '2':
+                target = next(item for item in original.checkpoints if item.activation_id == row['activation_id'])
+                if target.kind == 'artifact_materialize':
+                    opened = conn.execute(text('SELECT 1 FROM runtime.binding_intents WHERE ' + RUN +
+                        ' AND activation_id=:activation'), {**params, 'activation': row['activation_id']}).first()
+                    require(opened is None, 'target_conversion_already_opened')
+                    fields = {item.name: item for item in definition.fields}
+                    require(set(target.fields) <= fields.keys(), 'checkpoint_field_missing')
+                    state = ScopeState.load(conn, params, plan, row['scope_key'])
+                    for name in target.fields:
+                        require(fields[name].mode == 'inline', 'checkpoint_field_not_inline')
+                        value = state.environment.source(fields[name].source)
+                        require(value.kind in {'boolean', 'integer', 'number', 'string'}, 'checkpoint_field_not_scalar')
         observations.append(NodeObservation.capture(plan.sha256, view, state=row['state'], outputs=row['outputs']))
     cut = GraphReadCut(scope=frame.request.reference.scope, run_id=params['run'], plan_sha256=plan.sha256,
                        revision=run['revision'], frontier_revision=graph['frontier_revision'])

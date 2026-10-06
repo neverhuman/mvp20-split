@@ -5,8 +5,8 @@ from dataclasses import dataclass
 
 from amphora_contracts_supervision import SupervisionResponse
 
-from ..supervision_requests import SupervisionRequestBinding
 from ..supervision_requests.binding import encoded
+from ..supervision_requests.profiles import request_binding
 from ..supervision_scope.observations import require
 from .capture import proposal_from_capture
 
@@ -18,7 +18,7 @@ class SupervisionResponseBinding:
     @classmethod
     def bind(cls, origin, footprint, response, *, actor_id, capture_bytes):
         request = origin.document()
-        checked = SupervisionRequestBinding.bind(request, footprint, actor_id=actor_id)
+        checked = request_binding(request).bind(request, footprint, actor_id=actor_id)
         require(checked == origin, 'original_supervision_bytes_mismatch')
         record = SupervisionResponse.model_validate_json(response.model_dump_json())
         require(record.reference == request.reference and record.request_sha256 == origin.sha256,

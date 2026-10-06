@@ -6,6 +6,7 @@ from dataclasses import dataclass
 
 from amphora_contracts_supervision import (
     CancelSupervision,
+    CheckpointRequest,
     SupervisionCommandReceipt,
     SupervisionRequest,
     SupervisionResponse,
@@ -13,6 +14,7 @@ from amphora_contracts_supervision import (
 )
 
 from ..supervision_requests.binding import encoded
+from ..supervision_requests.profiles import request_command
 from ..supervision_scope.observations import require
 
 
@@ -24,7 +26,8 @@ class SupervisionReceiptObservation:
     @classmethod
     def observe(cls, command, receipt, *, readback=None, previous=None):
         family = command.identity.command_family
-        checked = parse_supervision_command(family, command.canonical_bytes)
+        checked = (request_command(family, command.canonical_bytes) if family == 'planning.supervision.request.v2'
+                   else parse_supervision_command(family, command.canonical_bytes))
         require(checked == command, 'command_binding_mismatch')
         record = SupervisionCommandReceipt.model_validate_json(receipt.model_dump_json())
         binding = record.outcome.binding
@@ -41,6 +44,7 @@ class SupervisionReceiptObservation:
         if record.outcome.status == 'recorded':
             model, kind, identity_field = {
                 'planning.supervision.request': (SupervisionRequest, 'request', None),
+                'planning.supervision.request.v2': (CheckpointRequest, 'request', None),
                 'runtime.supervision.respond': (SupervisionResponse, 'response', 'response_id'),
                 'runtime.supervision.cancel': (CancelSupervision, 'cancellation', 'cancellation_id'),
             }[family]

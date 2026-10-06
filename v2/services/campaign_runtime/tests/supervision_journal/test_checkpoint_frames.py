@@ -7,8 +7,10 @@ from pathlib import Path
 import pytest
 from amphora_campaign_runtime.supervision_journal.checkpoint_frames import (
     CheckpointFrame,
+    read_frame,
 )
 from amphora_campaign_runtime.supervision_journal.frames import RequestFrame
+from amphora_campaign_runtime.supervision_journal.series import RequestSeries
 from amphora_campaign_runtime.supervision_requests.binding import (
     CheckpointRequestBinding,
 )
@@ -34,6 +36,8 @@ def test_exact_frame_rebuild_and_owned_bytes():
     assert bound.document() == request
     assert CheckpointExport(original.footprint()).document() == request.snapshot
     assert original.document().profile == 'runtime-supervision-request-frame.v2'
+    assert read_frame(original.canonical) == original
+    assert RequestSeries((original,)).frames == (original,)
     with pytest.raises(ValidationError):
         RequestFrame.from_bytes(original.canonical)
 
@@ -71,3 +75,9 @@ def test_noncanonical_bytes_and_legacy_export_reject():
     wrong = CheckpointRequest.model_validate({**original.request.model_dump(), 'planning_request_sha256': 'f' * 64})
     with pytest.raises(ValueError, match='planning_request_digest_mismatch'):
         CheckpointRequestBinding.bind(wrong, original.footprint(), actor_id='fixture')
+
+
+@pytest.mark.parametrize('raw', [b'[]', b'{"profile":"unknown"}', b''])
+def test_frame_dispatch_rejects_unknown_or_empty_profile(raw):
+    with pytest.raises(ValueError, match='frame_profile|frame_size'):
+        read_frame(raw)

@@ -3,11 +3,13 @@
 from dataclasses import dataclass
 
 from ..supervision_scope.observations import require
+from .checkpoint_frames import read_frame
 from .frames import RequestFrame
 
 
 def successor(previous, current):
     old, new = previous.request, current.request
+    require(old.schema_version == new.schema_version, 'request_profile_changed')
     require(old.reference == new.reference and old.checkpoint_id == new.checkpoint_id,
             'decision_mismatch')
     require(previous.document().prepared_by == current.document().prepared_by, 'preparer_mismatch')
@@ -34,7 +36,7 @@ class RequestSeries:
 
     def __post_init__(self):
         require(type(self.frames) is tuple and 1 <= len(self.frames) <= 16, 'series_size')
-        frames = tuple(RequestFrame.from_bytes(item.canonical) for item in self.frames)
+        frames = tuple(read_frame(item.canonical) for item in self.frames)
         engagements = set()
         for index, frame in enumerate(frames):
             request = frame.request

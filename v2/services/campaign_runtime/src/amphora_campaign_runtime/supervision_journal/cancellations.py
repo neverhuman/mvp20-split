@@ -15,7 +15,7 @@ from sqlalchemy import text
 from ..persistence.commands import WHERE, TerminalDisposition, _bindings
 from ..supervision_requests.binding import encoded
 from ..supervision_scope.observations import require
-from .frames import RequestFrame
+from .checkpoint_frames import read_frame
 from .responses import ResponseJournal
 
 
@@ -114,7 +114,7 @@ class CancellationJournal:
                  'cancellation': cancellation_id}).mappings().one_or_none()
         if row is None:
             return None
-        frame = RequestFrame.from_bytes(bytes(row['canonical_frame']))
+        frame = read_frame(bytes(row['canonical_frame']))
         bound = Cancellation.bind(frame, CancelSupervision.model_validate_json(bytes(row['canonical_cancellation'])), row['actor_id'])
         value = bound.document()
         require(bound.canonical == bytes(row['canonical_cancellation']) and bound.sha256 == row['cancellation_sha256'] and

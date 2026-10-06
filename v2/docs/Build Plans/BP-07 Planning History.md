@@ -842,3 +842,8 @@ Owner approved parameter materialization checkpoints. Runtime0.30 pure v2 target
 ## 2026-10-05 19:34:36 ? B2.01b.i versioned exchange verified
 
 Public supervision0.3/Runtime0.31/Planning0.73;144 contract/frame/schema cases and31 focused/boundary cases pass.536 schemas preserve528 predecessors. B2.01b.i100%,ii/iii/iv0%;b25%,B2.01=31.25%,B2=10.42%;child27.60%,Build36.81%,Acceptance0%;parent65.52%,13/20. Extracted detailed child history to its same-directory companion to keep the canonical tracker concise. Next journal dispatch/forward migrations.
+
+
+## 2026-10-05 19:44:38 ? B2.01b.ii journals verified
+
+Runtime0.32/runtime0021 andPlanning0.74/planning0016 preserve original frames/receipts while accepting explicit v2 requests.145 combined cases26.76s,18 target/boundary18.26s;824 statements98 branches99%,Planningintake100%. Initial143pass/1fail exposed hardcoded v1 outbox family; corrected with atomic rollback preserved. b.i/ii100%,iii/iv0% =>b50%;B2.01=37.5%,B2=12.5%;child28.13%,Build37.5%,Acceptance0%;parent65.63%,13/20. Next explicit HTTP/client integration. No old migrations rewritten.
