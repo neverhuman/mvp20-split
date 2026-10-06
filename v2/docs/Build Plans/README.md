@@ -2,7 +2,7 @@
 
 [Master Build Tracker](Master%20Build%20Tracker.md) selects the primary plan and mirrors its canonical overall/per-phase completion. Owning plans define task position, tests and phase gates.
 
-BP-01 through BP-07 are [completed](Completed/README.md). BP-08 is next for bounded activation; BP-09 remains queued. MBT selects the primary task. Drafting does not earn implementation credit.
+BP-01 through BP-07 are [completed](Completed/README.md). BP-08 is active, with children01-03 closed and child04 next for bounded activation; BP-09 remains queued. MBT selects the primary task. Drafting does not earn implementation credit.
 
 - [BP-02 Durable Runtime and Artifact Foundation](Completed/BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md).
 - [BP-03 Tool Index and Standalone Execution](Completed/BP-03%20Tool%20Index%20and%20Standalone%20Execution.md).

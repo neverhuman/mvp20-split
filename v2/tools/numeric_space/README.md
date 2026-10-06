@@ -1,11 +1,11 @@
 # Synthetic numeric space
 
-- Owner: BP-08.03/B1.02; release0.4.0 adds pure canonical identity; prior0.2.0 worker/ingress evidence remains its historical scope. Canonicalization verified.
+- Owner: BP-08.03; release0.4.0. Current acceptance: pure/worker/image/Registry/fresh replacement verified 2026-10-06 15:45:26. Historical evidence below names its original versions.
 - Design: [Representation and fitness](../../docs/Architecture/Campaigns/Representation_Fitness.md).
 
 This independent package owns legality and one proposed move for the synthetic numeric encoding. Domain objects validate complete inputs, preserve scope/profile and retain a hash of the exact canonical source. Public DTOs serialize results; no SQL, I/O, service/private sibling imports, global RNG, scheduler, scientific eligibility or hidden loop belongs here. Pure domain dependencies are public candidate_spaces/Core; adapters additionally use public Tools and Tool Protocol0.2. No source copied from v1.
 
-Profile and operator pins hash deterministic owned semantic documents. Canonical bytes use sorted compact UTF-8 JSON, no trailing newline; array order is preserved here. Exact profiles and operators must match; schema shape alone cannot establish legality. No chemical, biological, synthesis or measured-property claim follows from synthetic validity. Representation equivalence/cache policy is B2; standalone adapters/actual owner ingress is B1.03; image/independent replacement is V1.
+Profile and operator pins hash deterministic owned semantic documents. Canonical bytes use sorted compact UTF-8 JSON, no trailing newline; array order is preserved here. Exact profiles and operators must match; schema shape alone cannot establish legality. No chemical, biological, synthesis or measured-property claim follows from synthetic validity. Owned equivalence is implemented; authenticated cache permission belongs to Research. The verified image and replacement evidence below covers current0.4.0.
 
 Tests belong in tests/legality. Replacement must retain profile digests, exact source/result attribution, failure distinctions and legal moves, or version the changed boundary. Validity never authorizes registration or promotion.
 
@@ -16,7 +16,7 @@ Verified 2026-10-06 13:06:00:59 combined owner/boundary checks12.07s;172 stateme
 
 The configured adapter requires a descriptor/image binding before compute and rejects rebinding. `python -m amphora_numeric_space` exposes compute/describe (explicit --image-sha256), schema (--direction input/output), profiles (exact semantic pins), and worker (--config). One worker process handles one claimed invocation. PureToolWorker supplies existing public Runtime/Data clients, claim/lease fences, immutable publication and completion. Output is the exact canonical proposed-change JSON with no newline; neither CLI image arguments nor profile pins prove an image was deployed.
 
-Input/output cap262144 bytes. Invalid payloads return a closed safe code without values. Dockerfile is an offline-wheel nonroot recipe, not yet image evidence. tests/capability checks schema bytes, descriptors, immutable binding, capacity, safe errors and public CLI parity. Actual worker HTTP/Research ingress passed; image replacement retains its V1 gate.
+Input/output cap262144 bytes. Invalid payloads return a closed safe code without values. Dockerfile is the offline-wheel nonroot recipe used by the verified Linux images below. tests/capability checks schema bytes, descriptors, immutable binding, capacity, safe errors and public CLI parity. Actual worker HTTP, Research ingress and image-matched replacement passed within the named synthetic scope.
 
 Verified 2026-10-06 13:10:07:80 combined operator/capability/boundary checks24.46s. Capability schemas100% measured coverage; adapters94% with defensive output-capacity branch unexercised. Pure domain remains100%. CLI subprocess compute/profiles/error paths pass but are not attributed to parent coverage; aggregate451statements/120branches69%. Configured worker HTTP and Research ingress subsequently passed; image/replacement remains V1.
 
@@ -36,4 +36,8 @@ Tests/canonicalization owns exact byte provenance, declared encoding equivalence
 
 Combined three-tool verification137checks46.41s. New canonicalization modules69statements/18branches100%; domain/equivalence100%; adapter95% and capability96% retain defensive output-size/invalid-direction gaps. CLI subprocess passes are not attributed to parent coverage (aggregate77%).604publishedschemas preserve602predecessors. No actual Runtime canonicalization or image qualification is claimed here.
 
-Image qualification 2026-10-06 15:29:16: [Representation images](../../docs/Audits/Evidence/BP-08-Search/Representation_Images.json) records actualLinuxamd64 digest,offlineCLI golden/schema/nonroot/peer-isolation checks. This does not claim target-host or scientific qualification; actual Registry/image-matched replacement remains V1.02.
+Image qualification 2026-10-06 15:29:16: [Representation images](../../docs/Audits/Evidence/BP-08-Search/Representation_Images.json) records actualLinuxamd64 digest,offlineCLI golden/schema/nonroot/peer-isolation checks. This does not claim target-host or scientific qualification; actual Registry/image-matched replacement subsequently passed V1.02.
+
+## Current rebuild acceptance
+
+[Replacement evidence](../../docs/Audits/Evidence/BP-08-Search/Representation_Replacement.json), verified2026-10-06 15:43:22, matches current wheels/descriptors to independently tested Linux images and resolves all seven capability profiles through real Registry APIs. Fresh Runtime/Research and all four tools preserve nine producer proofs/three reuse decisions, then complete nine new invocations. Windows HTTP workers and synthetic Registry capacity observations do not prove Linux/K3s deployment or scientific validity. Preserve legal-move and canonicalization profiles separately, exact schemas/source hashes, current source authorization and original accepted history. Rebuild changes to public semantics require new profile/release identities and requalification.

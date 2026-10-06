@@ -1,8 +1,8 @@
 # Evolutionary Search and Experience
 
-- Design status: bounded numeric graph steps, accepted generations and worker/Runtime recovery implemented; independent replacement accepted; representation/topology and scientific acceptance remain successors
+- Design status: bounded numeric graph steps, accepted generations and worker/Runtime recovery implemented; independent replacement accepted; synthetic representation/fitness and authenticated reuse accepted; topology and scientific acceptance remain successors
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
-- Last reviewed: `2026-10-06 12:45:05` (America/Chicago)
+- Last reviewed: `2026-10-06 15:45:26` (America/Chicago)
 - Parent: [Domain overview](Campaign_Architecture.md)
 - Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#campaign-evolution-and-cross-project-discovery)
 
