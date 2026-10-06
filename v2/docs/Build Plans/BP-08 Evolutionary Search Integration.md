@@ -2,15 +2,15 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-08.03/B3 policy, failure and recovery oracles.
-- Last refreshed: `2026-10-06 15:17:37` (America/Chicago).
+- Status: primary_active; BP-08.03/V1.01 independent images/profiles.
+- Last refreshed: `2026-10-06 15:21:45` (America/Chicago).
 - Owner/scope: Search domain modules and independently packaged scientific operators.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 iteration/checkpoint and BP-06 evidence; BP-07 before LLM-guided topology acceptance.
-- Implementation: **50%**, 10/20 closed child deliveries; each parent phase mirrors its child.
+- Implementation: **55%**, 11/20 closed child deliveries; each parent phase mirrors its child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-08.03/B3 policy, failure and recovery oracles; BP-08.01/.02 closed.
-- Latest checkpoint: B2 complete: actual reuse handoff passed2026-10-06 15:16:24,8fresh isolated closures,9accepted graph invocations acrossnumeric/polymer/DNA.3permitted original-result decisions,3contextmisses,3wrongproducer rejections;Researchrestart exactreplay,Dataaccessdenial403/history200. Evidence Evaluation_Reuse_Handoff.json, scope22face144422453d99cf24a6370cb9a6.12boundarychecks10.18s. No images/Registry/targethost/scientific claim.
+- Current implementation task: BP-08.03/V1.01 independent images/profiles; BP-08.01/.02 closed.
+- Latest checkpoint: B3 complete:217checks20.89s, explicit POL-01..04/comparison/action-gate/recovery matrix. Representation kernels/equivalence233statements46branches100%; reuse409statements48branches100%; fitness440lines100%,79/80branches. Actual peer/restart/denial evidence retained fromB2; no new deployment/scientific claim.
 - Demonstrated behavior: numeric generation graphs, actual Runtime/Data/Registry APIs, pinned tool images, independent package replacement and worker/Runtime recovery. Representation/topology, scientific and target-host evidence remain successors.
 - Blockers: direct v1 extraction unverified (license labels/toolchain); authorized independent numeric implementation proceeds. No owner decision blocks current scope.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
@@ -32,7 +32,7 @@ Primary services retain private state, dependencies, migrations and module READM
 |---|---:|---:|---:|---|
 | P1 / [BP-08.01 Reuse and search contracts](BP-08/Completed/BP-08.01%20Reuse%20and%20search%20contracts.md) | 100% | 100% | 100% | Closed / audited |
 | P2 / [BP-08.02 Graph-driven numeric evolution](BP-08/Completed/BP-08.02%20Graph-driven%20numeric%20evolution.md) | 100% | 100% | 100% | Closed / audited |
-| P3 / [BP-08.03 Representation and fitness boundaries](BP-08/BP-08.03%20Representation%20and%20fitness%20boundaries.md) | 50% | 66.67% | 0% | BP-08.02 acceptance |
+| P3 / [BP-08.03 Representation and fitness boundaries](BP-08/BP-08.03%20Representation%20and%20fitness%20boundaries.md) | 75% | 100% | 0% | BP-08.02 acceptance |
 | P4 / [BP-08.04 Topology successors and comparison](BP-08/BP-08.04%20Topology%20successors%20and%20comparison.md) | 0% | 0% | 0% | BP-08.03 acceptance |
 | P5 / [BP-08.05 Recovery and closeout](BP-08/BP-08.05%20Recovery%20and%20closeout.md) | 0% | 0% | 0% | BP-08.04 acceptance |
 

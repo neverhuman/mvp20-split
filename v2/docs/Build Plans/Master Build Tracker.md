@@ -8,13 +8,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-07 closed100%; BP-08.02 closed100%; BP-08.03/B3 active; BP-09 queued.
-- Last refreshed: `2026-10-06 15:17:37` (America/Chicago).
+- Status: BP-07 closed100%; BP-08.02 closed100%; BP-08.03/V1 active; BP-09 queued.
+- Last refreshed: `2026-10-06 15:21:45` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P7 / BP-08 - Evolutionary Search Integration.
-- Primary active task: BP-08.03/B3 policy, failure and recovery oracles.
-- Next task: BP-08.03/V1 independent image/Registry replacement and audit after B3.
-- Implementation completion: BP-07 closed100%,20/20; BP-08=50%,10/20;BP-09=0%.
+- Primary active task: BP-08.03/V1.01 independent images/profiles.
+- Next task: BP-08.03/V1.02 Registry and fresh-owner replacement after image qualification.
+- Implementation completion: BP-07 closed100%,20/20; BP-08=55%,11/20;BP-09=0%.
 - Active focus: graph-driven numeric execution; preserve closed BP-07 evaluation history and scoped handoffs.
 - Blockers: none for BP-08.03 activation. Selected host and integrated live deployment remain BP-09 decisions/gates.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
@@ -32,7 +32,7 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-08.01/.02 closed100%, four deliveries each; parent50%,10/20. BP-08.03/B3 active, child50%, Build66.67%, Acceptance0%.
+BP-08.01/.02 closed100%, four deliveries each; parent55%,11/20. BP-08.03/V1 active, child75%, Build100%, Acceptance0%.
 
 ## Queued Plans and Phase Mirrors
 
@@ -52,11 +52,11 @@ The owning plan tracker is canonical for overall and per-phase percentages. Refr
 
 ## Prioritized Build Queue
 
-BP-08.03/B3 is current; use the canonical phase mirror above for percentages. Remaining children retain their own prerequisite and acceptance gates.
+BP-08.03/V1 is current; use the canonical phase mirror above for percentages. Remaining children retain their own prerequisite and acceptance gates.
 
 | Order / ID | Completion | Proposed plan | Required predecessor gates | Bounded outcome / exit | Architecture owner |
 |---|---|---|---|---|---|
-| P7 / BP-08 | 50% | [Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | BP-04 iteration/checkpoints; BP-06 applicability/evidence; BP-07 for LLM-guided topology | Adapt reusable numerical kernels to explicit generation/checkpoint history, separate representation fixtures and evidence-bound selection; parameter search precedes bounded topology proposals under successor-campaign rules | [Search](../Architecture/Campaigns/Search.md), [reuse baseline](../Architecture/Evolutionary_Code_Reuse_Baseline.md) |
+| P7 / BP-08 | 55% | [Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | BP-04 iteration/checkpoints; BP-06 applicability/evidence; BP-07 for LLM-guided topology | Adapt reusable numerical kernels to explicit generation/checkpoint history, separate representation fixtures and evidence-bound selection; parameter search precedes bounded topology proposals under successor-campaign rules | [Search](../Architecture/Campaigns/Search.md), [reuse baseline](../Architecture/Evolutionary_Code_Reuse_Baseline.md) |
 | P8 / BP-09 | 0% | [Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Selected host/model policy; BP-05/06/07 plus BP-08 for evolutionary demo claims | Reproducible target-host deployment, model/tool eligibility, restore/reconciliation, end-to-end autonomous demo and one independently rebuilt/replaced tool; prove replicated workloads if K3s is selected | [Topology](../Architecture/System/Runtime_Topology.md), [tool services](../Architecture/Capabilities/Tool_Services.md) |
 
 This is the default sequencing, not nine permanent file-ownership buckets. Each plan owns a delivery step; later plans may refine earlier contracts with explicit compatibility evidence. BP-01 records packaging constraints early; BP-03 tests tool images/protocols locally. BP-09 integrates target-host operation rather than postponing all deployment design to the end. Synthetic fixtures/receipts stand in for unavailable scientific services until BP-06 and are labeled as such.
@@ -114,6 +114,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-06 15:21:45 | BP-08.03/B3 complete;child75%,Build100%,parent55%,11/20. | 217checks;POL01..04/comparison/gates/recovery matrix; image/Registry/audit next. |
 | 2026-10-06 15:17:37 | BP-08.03/B2 complete;child50%,Build66.67%,parent50%,10/20. | Actual8closures/9invocations;3reusepermits/misses/forgeryrejects;restart/currentdenial/history. |
 | 2026-10-06 15:04:54 | BP-08.03/B2.03b.ii complete;child48.61%,Build64.81%,parent49.72%. | 188checks; immutable reuse Research0.40/0016;622schemas/608 preserved; actual peers next. |
 | 2026-10-06 14:50:42 | BP-08.03/B2.03b.ii Research producer/evidence primitives verified; percentages unchanged. | 38checks;119statements8branches100%; scripted peers; no reuse permission yet. |
@@ -138,4 +139,3 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-06 09:56:31 | BP-08.01/B1 complete;child25%,Build33.33%,parent5%,1/20. | Numeric selection30checks;contracts40+20checks;564schemas/556unchanged. |
 | 2026-10-06 09:22:33 | BP-07 closed100%,20/20; BP-08 activation next. | v5live12/12pass;twoisolated130-testinstalls;allpriorfailures/costsretained;scoped/parentaudits. |
 | 2026-10-06 08:54:13 | BP-07.05 B2 complete; child50%,Build66.67%,parent90%,18/20. B3 active. | v2 live12settled,4pass; original failures retained; v3 correction frozen, all reservations$0.995328/$1. |
-| 2026-10-06 08:49:02 | BP-07.05/B2.02 complete;child37.5%,Build50%,parent87.5%. |49offline SQL/boundary checks;12-call corpus frozen;$0.36864 reservation,$1 ceiling. |

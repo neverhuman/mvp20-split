@@ -39,6 +39,7 @@ def changed(value, path, replacement):
     (('policy','objectives',0,'uncertainty_policy','sha256'), 'e'*64),
     (('context','material_state','revision'), 2),
     (('context','inputs',0,'artifact','sha256'), 'e'*64),
+    (('context','inputs',1,'artifact','sha256'), 'e'*64),
 ])
 def test_context_and_method_changes_never_share_identity(path, value):
     original = fixture()
