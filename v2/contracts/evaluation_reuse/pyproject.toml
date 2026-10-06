@@ -1,0 +1,24 @@
+[project]
+name = "amphora-contracts-evaluation-reuse"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = ["pydantic>=2.12,<3", "amphora-contracts-core==0.1.0", "amphora-contracts-research==0.14.0", "amphora-contracts-evaluation-identity==0.1.0", "amphora-contracts-execution-proofs==0.1.0", "amphora-contracts-candidate-canonicalization==0.1.0", "amphora-contracts-synthetic-evaluation==0.1.0", "amphora-contracts-tools==0.1.0"]
+
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/amphora_contracts_evaluation_reuse"]
+
+[tool.uv.sources]
+amphora-contracts-core = { path = "../core", editable = true }
+amphora-contracts-research = { path = "../research", editable = true }
+amphora-contracts-evaluation-identity = { path = "../evaluation_identity", editable = true }
+amphora-contracts-execution-proofs = { path = "../execution_proofs", editable = true }
+amphora-contracts-candidate-canonicalization = { path = "../candidate_canonicalization", editable = true }
+amphora-contracts-synthetic-evaluation = { path = "../synthetic_evaluation", editable = true }
+amphora-contracts-tools = { path = "../tools", editable = true }
+
+[tool.amphora]
+public-imports = ["amphora-contracts-core", "amphora-contracts-research", "amphora-contracts-evaluation-identity", "amphora-contracts-execution-proofs", "amphora-contracts-candidate-canonicalization", "amphora-contracts-synthetic-evaluation", "amphora-contracts-tools"]

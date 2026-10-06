@@ -298,5 +298,11 @@
     "coverage_sources": [
       "contracts/synthetic_evaluation/src/amphora_contracts_synthetic_evaluation"
     ]
+  },
+  "contracts-evaluation-reuse": {
+    "tests": "contracts/evaluation_reuse/tests",
+    "coverage_sources": [
+      "contracts/evaluation_reuse/src/amphora_contracts_evaluation_reuse"
+    ]
   }
 }

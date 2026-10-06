@@ -24,6 +24,8 @@ from fastapi.responses import JSONResponse
 from pydantic import ValidationError
 from sqlalchemy.exc import SQLAlchemyError
 
+from ..evaluation_reuse.errors import ReuseError, ReusePeerUnavailable
+from ..evaluation_reuse.routes import install_routes as install_reuse_routes
 from ..fitness.policy import FitnessError
 from ..fitness.reuse import EvaluationIdentityError
 from ..fitness.routes import install_routes as install_fitness_routes
@@ -68,9 +70,10 @@ async def _body(request, limit=16384):
     return b"".join(parts)
 
 
-def create_app(resolver, credentials, assessments=None, science=None, registrar=None, candidates=None, fitness=None):
+def create_app(resolver, credentials, assessments=None, science=None, registrar=None, candidates=None, fitness=None, reuse=None):
     app = FastAPI(title="Amphora Research", docs_url=None, redoc_url=None)
     app.state.declarations_enabled = registrar is not None
+    app.state.reuse_enabled = reuse is not None
     app.state.fitness_enabled = fitness is not None
     app.state.candidates_enabled = candidates is not None
     app.state.assessment_enabled = assessments is not None
@@ -103,6 +106,8 @@ def create_app(resolver, credentials, assessments=None, science=None, registrar=
             return JSONResponse(status_code=status, content={"code": str(error)})
         except InvalidRequest as error:
             return JSONResponse(status_code=413 if str(error) == "request_limit" else 422, content={"code": str(error)})
+        except ReusePeerUnavailable:
+            return JSONResponse(status_code=503,content={"code":"reuse_peer_unavailable"},headers={"Cache-Control":"no-store"})
         except (AssessmentPeerUnavailable, ProtocolError):
             return JSONResponse(status_code=503, content={"code": "assessment_peer_unavailable"})
         except AssessmentError as error:
@@ -111,7 +116,7 @@ def create_app(resolver, credentials, assessments=None, science=None, registrar=
                       409 if "conflict" in code or code in {"publication_assessment_pending", "correction_publication_pending"} else
                       404 if code in {"assessment_profile_unavailable", "publication_assessment_missing"} else 422)
             return JSONResponse(status_code=status, content={"code": code}, headers={"Cache-Control": "no-store"})
-        except (FitnessError, EvaluationIdentityError, ObservationError, DecisionStoreError) as error:
+        except (ReuseError, FitnessError, EvaluationIdentityError, ObservationError, DecisionStoreError) as error:
             code = str(error)
             status = (403 if "scope_mismatch" in code or "actor_mismatch" in code else
                       409 if "conflict" in code else 404 if code.endswith("_unavailable") else 422)
@@ -180,4 +185,5 @@ def create_app(resolver, credentials, assessments=None, science=None, registrar=
         install_routes(app, invoke, registrar)
 
     install_fitness_routes(app, invoke, fitness)
+    install_reuse_routes(app, invoke, reuse)
     return app

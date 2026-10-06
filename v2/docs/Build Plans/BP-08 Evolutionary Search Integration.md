@@ -2,15 +2,15 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-08.03/B2.03b.ii synthetic evaluation and producer-proof reuse.
-- Last refreshed: `2026-10-06 14:50:42` (America/Chicago).
+- Status: primary_active; BP-08.03/B2.03b.iii actual producer-backed reuse handoff.
+- Last refreshed: `2026-10-06 15:04:54` (America/Chicago).
 - Owner/scope: Search domain modules and independently packaged scientific operators.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 iteration/checkpoint and BP-06 evidence; BP-07 before LLM-guided topology acceptance.
-- Implementation: **49.44%**, 9/20 closed child deliveries plus eight ninths of B2; each parent phase mirrors its child.
+- Implementation: **49.72%**, 9/20 closed child deliveries plus seventeen eighteenths of B2; each parent phase mirrors its child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-08.03/B2.03b.ii synthetic evaluation and producer-proof reuse; BP-08.01/.02 closed.
-- Latest checkpoint: Research0.39 producer/evidence primitives verified: 38 checks in12.96s,119statements8branches100%. Scripted Runtime/Data peers prove exact scoped canonical-success/tool/input/output/schema/hash binding and distinct denial/missing/unavailable errors; no real-peer or reuse authorization claim. No migration/API. Reuse owner policy/store/route still required in B2.03b.ii; percentages unchanged.
+- Current implementation task: BP-08.03/B2.03b.iii actual producer-backed reuse handoff; BP-08.01/.02 closed.
+- Latest checkpoint: B2.03b.ii complete: Research0.40/research_0016 immutable reuse decisions, public reference-only API and current Runtime/Data/owner resolution. 188 checks38.58s;409statements48branches100%. RealSQL/TestClient with scripted peers;622schemas preserve608. Initial fixture ID collision rejected correctly and repaired; long focus IDs retained. Source rights checked even for context dependencies; exact concurrent retry/rollback/conflict/history-only config proven. No actual multi-process reuse/image/science claim yet.
 - Demonstrated behavior: numeric generation graphs, actual Runtime/Data/Registry APIs, pinned tool images, independent package replacement and worker/Runtime recovery. Representation/topology, scientific and target-host evidence remain successors.
 - Blockers: direct v1 extraction unverified (license labels/toolchain); authorized independent numeric implementation proceeds. No owner decision blocks current scope.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
@@ -32,7 +32,7 @@ Primary services retain private state, dependencies, migrations and module READM
 |---|---:|---:|---:|---|
 | P1 / [BP-08.01 Reuse and search contracts](BP-08/Completed/BP-08.01%20Reuse%20and%20search%20contracts.md) | 100% | 100% | 100% | Closed / audited |
 | P2 / [BP-08.02 Graph-driven numeric evolution](BP-08/Completed/BP-08.02%20Graph-driven%20numeric%20evolution.md) | 100% | 100% | 100% | Closed / audited |
-| P3 / [BP-08.03 Representation and fitness boundaries](BP-08/BP-08.03%20Representation%20and%20fitness%20boundaries.md) | 47.22% | 62.96% | 0% | BP-08.02 acceptance |
+| P3 / [BP-08.03 Representation and fitness boundaries](BP-08/BP-08.03%20Representation%20and%20fitness%20boundaries.md) | 48.61% | 64.81% | 0% | BP-08.02 acceptance |
 | P4 / [BP-08.04 Topology successors and comparison](BP-08/BP-08.04%20Topology%20successors%20and%20comparison.md) | 0% | 0% | 0% | BP-08.03 acceptance |
 | P5 / [BP-08.05 Recovery and closeout](BP-08/BP-08.05%20Recovery%20and%20closeout.md) | 0% | 0% | 0% | BP-08.04 acceptance |
 

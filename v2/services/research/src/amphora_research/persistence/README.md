@@ -44,3 +44,5 @@ material_impact.py owns MaterialDecisionIndex. Exact scoped state revision selec
 ## Atomic public declaration provenance
 
 Research0.34/research_0013 adds SELECT/INSERT-only declaration_registrations with exact identity-record foreign keys. The [registration boundary](../declarations/README.md) composes ledger publication and first-public-registration metadata in one transaction. publish_prepared returns whether it created the identity record and retains the same scoped lock until the caller commits; ordinary publish preserves its prior behavior. No network I/O is permitted inside this composition. Applied0001..0012 remain unchanged. Use only Research0.34+ migrators after this forward migration.
+
+research_0016 adds append-only evaluation_reuse decisions with original producer/target owner evidence, scoped actor/id, canonical bytes<=8MiB and digest. Service role SELECT/INSERT only; current-source resolution happens before publication, while separate historical reads do not require renewed source access. See [reuse boundary](../evaluation_reuse/README.md).

@@ -5,6 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 
+import amphora_contracts_evaluation_reuse as evaluation_reuse
 from amphora_contracts_synthetic_evaluation import SyntheticEvaluationReceipt
 from amphora_contracts_execution_proofs import AcceptedToolExecution
 from amphora_contracts_candidate_canonicalization import CanonicalCandidate
@@ -47,6 +48,13 @@ from amphora_contracts_tools import Completion, Invocation, ToolBinding, ToolDes
 
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
+    "evaluation-reuse.profile": evaluation_reuse.ReuseProfile,
+    "evaluation-reuse.profile-ref": evaluation_reuse.ReuseProfileRef,
+    "evaluation-reuse.request": evaluation_reuse.ReuseRequest,
+    "evaluation-reuse.selection": evaluation_reuse.ReuseSelection,
+    "evaluation-reuse.reference": evaluation_reuse.ReuseRef,
+    "evaluation-reuse.projection": evaluation_reuse.ReuseProjection,
+    "evaluation-reuse.producer-reference": evaluation_reuse.ProducerRef,
     "synthetic-evaluation.receipt": SyntheticEvaluationReceipt,
     "execution-proofs.accepted-tool": AcceptedToolExecution,
     "candidate-canonicalization.receipt": CanonicalCandidate,

@@ -3,6 +3,7 @@ name = "amphora-foundation-verification"
 version = "0.1.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
+    "amphora-contracts-evaluation-reuse==0.1.0",
     "amphora-synthetic-digest==0.1.0", "amphora-contracts-synthetic-evaluation==0.1.0",
     "amphora-contracts-execution-proofs==0.1.0",
     "amphora-sequence-space==0.4.0",
@@ -24,7 +25,7 @@ dependencies = [
     "amphora-contracts-core==0.1.0",
     "amphora-contracts-evidence==0.5.13",
     "amphora-contracts-research==0.14.0",
-    "amphora-research==0.39.0",
+    "amphora-research==0.40.0",
     "amphora-contracts-tools==0.1.0",
     "amphora-contracts-campaigns==0.4.1",
     "amphora-campaign-runtime==0.64.0",
@@ -55,6 +56,7 @@ package = false
 link-mode = "copy"
 
 [tool.uv.sources]
+amphora-contracts-evaluation-reuse = { path = "../contracts/evaluation_reuse", editable = true }
 amphora-synthetic-digest = { path = "../tools/synthetic_digest", editable = true }
 amphora-contracts-synthetic-evaluation = { path = "../contracts/synthetic_evaluation", editable = true }
 amphora-contracts-execution-proofs = { path = "../contracts/execution_proofs", editable = true }

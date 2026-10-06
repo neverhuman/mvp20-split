@@ -126,6 +126,33 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-contracts-evaluation-reuse"
+version = "0.1.0"
+source = { editable = "../../contracts/evaluation_reuse" }
+dependencies = [
+    { name = "amphora-contracts-candidate-canonicalization" },
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-evaluation-identity" },
+    { name = "amphora-contracts-execution-proofs" },
+    { name = "amphora-contracts-research" },
+    { name = "amphora-contracts-synthetic-evaluation" },
+    { name = "amphora-contracts-tools" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-candidate-canonicalization", editable = "../../contracts/candidate_canonicalization" },
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-evaluation-identity", editable = "../../contracts/evaluation_identity" },
+    { name = "amphora-contracts-execution-proofs", editable = "../../contracts/execution_proofs" },
+    { name = "amphora-contracts-research", editable = "../../contracts/research" },
+    { name = "amphora-contracts-synthetic-evaluation", editable = "../../contracts/synthetic_evaluation" },
+    { name = "amphora-contracts-tools", editable = "../../contracts/tools" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-evidence"
 version = "0.5.13"
 source = { editable = "../../contracts/evidence" }
@@ -315,7 +342,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-research"
-version = "0.39.0"
+version = "0.40.0"
 source = { editable = "." }
 dependencies = [
     { name = "alembic" },
@@ -324,6 +351,7 @@ dependencies = [
     { name = "amphora-contracts-candidate-spaces" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-evaluation-identity" },
+    { name = "amphora-contracts-evaluation-reuse" },
     { name = "amphora-contracts-execution-proofs" },
     { name = "amphora-contracts-fitness" },
     { name = "amphora-contracts-graph-runtime" },
@@ -348,6 +376,7 @@ requires-dist = [
     { name = "amphora-contracts-candidate-spaces", editable = "../../contracts/candidate_spaces" },
     { name = "amphora-contracts-core", editable = "../../contracts/core" },
     { name = "amphora-contracts-evaluation-identity", editable = "../../contracts/evaluation_identity" },
+    { name = "amphora-contracts-evaluation-reuse", editable = "../../contracts/evaluation_reuse" },
     { name = "amphora-contracts-execution-proofs", editable = "../../contracts/execution_proofs" },
     { name = "amphora-contracts-fitness", editable = "../../contracts/fitness" },
     { name = "amphora-contracts-graph-runtime", editable = "../../contracts/graph_runtime" },
