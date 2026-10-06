@@ -68,7 +68,7 @@ class EvaluationScorer:
                 raise ValueError('evaluation_observation_binding')
             if key in observed:
                 raise ValueError('evaluation_duplicate_observation')
-            if item.status != 'proposed' and item.payload_json is not None:
+            if item.status not in {'proposed', 'rejected'} and item.payload_json is not None:
                 raise ValueError('evaluation_unexpected_payload')
             observed[key] = item
         results = tuple(self._case(case, ordinal, observed.get((case.case_id, ordinal)))
@@ -97,7 +97,7 @@ class EvaluationScorer:
         points = 0
         if status == 'scientific_abstention' and case.allow_abstention:
             points = 10000
-        elif status == 'proposed':
+        elif status in {'proposed', 'rejected'}:
             try:
                 if item.payload_json is None:
                     raise ValueError('missing_payload')

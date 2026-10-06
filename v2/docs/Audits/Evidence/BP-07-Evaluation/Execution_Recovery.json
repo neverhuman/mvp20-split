@@ -1,0 +1,35 @@
+{
+  "timestamp_local": "2026-10-06 03:54:34",
+  "package": "Planning0.92/planning0019",
+  "verification": "97 tests passed61.02s: evaluation protocol/batch/execution, original orchestration and boundaries; includes actualSQL and separate abrupt-death/replacement processes",
+  "coverage": {
+    "covered_lines": 93,
+    "num_statements": 94,
+    "percent_covered": 97.36842105263158,
+    "percent_covered_display": "97",
+    "missing_lines": 1,
+    "excluded_lines": 0,
+    "percent_statements_covered": 98.93617021276596,
+    "percent_statements_covered_display": "99",
+    "num_branches": 20,
+    "num_partial_branches": 2,
+    "covered_branches": 18,
+    "missing_branches": 2,
+    "percent_branches_covered": 90.0,
+    "percent_branches_covered_display": "90"
+  },
+  "evidence": [
+    "One original ordinal1 per frozen repetition; no hidden retry or late success substitution",
+    "Concurrent step returns pending with one actual provider call",
+    "Observed primary/late overage blocks unissued work; issued work recovers unknown without fresh ticket",
+    "Actual child exits73 after durable issuance; replacement retains unknown and reservation floor; subsequent repetition distinct",
+    "Owner policy rejection is independently scorable, distinct from proposed/provider error",
+    "Fixture-only mode rejects live issuance"
+  ],
+  "limitations": [
+    "Deterministic providers only; no live efficacy or scientific acceptance",
+    "Defensive unexpected recovery exception and impossible no-observation recovery branch not covered",
+    "Same-code process replacement in development environment; isolated harness replacement remains V1",
+    "Overage check does not cancel calls already authorized before a later provider report"
+  ]
+}

@@ -8,14 +8,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-06 closed100%; BP-07.04 closed100%; BP-07.05/B1.02 active; BP-08/09 queued.
-- Last refreshed: `2026-10-06 03:43:09` (America/Chicago).
+- Status: BP-06 closed100%; BP-07.04 closed100%; BP-07.05/B1.03 active; BP-08/09 queued.
+- Last refreshed: `2026-10-06 03:54:34` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P6 / BP-07 - Autonomous LLM Campaign Supervision.
-- Primary active task: BP-07.05/B1.02c durable evaluation runner composition.
-- Next task: BP-07.05/B1.03 owner inspection projections.
-- Implementation completion: BP-07=81.875%,16/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
-- Active focus: supervisor scoped audit aligned; evaluation/inspection successor.
+- Primary active task: BP-07.05/B1.03 bounded owner inspection.
+- Next task: BP-07.05/B1.04 Studio inspection.
+- Implementation completion: BP-07=82.5%,16/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
+- Active focus: verified deterministic evaluation runner; bounded owner inspection next.
 - Blockers: none for deterministic implementation. Approved B2.01 correction: scalar adjustments must reconcile Artifact-only Invoke inputs; see [scalar checkpoint decision](BP-07/BP-07.04%20Scalar%20checkpoint%20decision.md). Live provider/model, egress and spend choices separately govern real calls.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
 - Active exception: none.
@@ -32,15 +32,15 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-07.01/.02/.03/.04 are closed100%. BP-07.05/B1.02 is active; implementation9.375%,Build12.5%,Acceptance0%.
+BP-07.01/.02/.03/.04 are closed100%. BP-07.05/B1.03 is active; implementation12.5%,Build16.67%,Acceptance0%.
 
 | Parent | Overall | P1 | P2 | P3 | P4 | P5 |
 |---|---:|---:|---:|---:|---:|---:|
-| BP-07 | 81.875% | 100% | 100% | 100% | 100% | 9.375% |
+| BP-07 | 82.5% | 100% | 100% | 100% | 100% | 12.5% |
 
 | Active child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-07.05](BP-07/BP-07.05%20Live%20evaluation%20and%20closeout.md) | 9.375% | 12.5% | 0% | B1.02c |
+| [BP-07.05](BP-07/BP-07.05%20Live%20evaluation%20and%20closeout.md) | 12.5% | 16.67% | 0% | B1.03 |
 
  BP-06 is [closed100%](Completed/BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md); completed parents are in the [archive](Completed/README.md).
 
@@ -126,6 +126,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-06 03:54:34 | BP-07.05/B1.02 complete | Planning0.92;97tests61.02s;process unknown/recovery and late overage;child12.5%,parent82.5%. |
 | 2026-10-06 03:43:09 | BP-07.05/B1.02a/b verified | Planning0.91/0019;42tests+12boundaries;child9.375%,parent81.875%;physical runner next. |
 | 2026-10-06 03:34:04 | BP-07.05/B1.01 verified | Planning0.90;29pure/12boundary tests;210statements58branches100%;child6.25%,parent81.25%. |
 | 2026-10-06 03:24:26 | BP-07.04 closed100% | Scoped audit aligned; public decision read40tests/4isolatedreads; captureworkflow13tests; parent80%,16/20. |
@@ -150,4 +151,3 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-05 23:31:16 | BP-07.04 capture domain verified | Planning0.82 exact primary/late bytes, ancestry and response;7cases104statements2branches100%;18expiry/boundary checks. |
 | 2026-10-05 23:06:40 | BP-07.04/B2.03b.ii complete | Planning0.81 original packet, fresh rights, absolute deadline and history-first recovery;126 scoped+12 boundary tests. |
 | 2026-10-05 22:56:16 | BP-07.04/B2.03b.i verified | Planning0.80 acyclic template/exact context;72tests131statements4branches100%;original ledger policy bytes unchanged. |
-| 2026-10-05 22:47:15 | BP-07.04/B2.03a complete | Actual Data publication,7processing reads,restart;94scoped+11commit-race checks;next Planning execution. |

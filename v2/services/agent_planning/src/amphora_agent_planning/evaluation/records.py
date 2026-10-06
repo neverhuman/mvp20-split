@@ -55,5 +55,5 @@ class ObservationRecord(WireModel):
     protocol_sha256: Digest
     case_id: Identifier
     repetition: Annotated[int, Field(ge=1, le=16)]
-    status: Literal['proposed', 'scientific_abstention', 'provider_error', 'invalid', 'unknown', 'authority_violation']
+    status: Literal['proposed', 'rejected', 'scientific_abstention', 'provider_error', 'invalid', 'unknown', 'authority_violation']
     payload_json: Annotated[str, Field(max_length=65536)] | None
