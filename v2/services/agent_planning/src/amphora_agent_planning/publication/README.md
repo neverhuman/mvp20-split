@@ -44,3 +44,5 @@ Tests/publication separates pure values/records, actual PostgreSQL journal/fence
 This proves synthetic software ownership/recovery, not provider quality, machine power loss or Knowledge acceptance. dev/verify_planning_publication.py records the earlier actual-owner proof, but its old version pins must be updated before reuse; do not run incompatible retained migrators. Result publication's actual Data integration is a distinct later gate and cannot inherit this trace-only evidence.
 
 PublishedHistory in origin.py owns the same-owner exact task/trace/observation/prior/finalized-interpretation loader shared by result and owner-handoff histories. Each wrapper restores its own selection and supplies its error-code prefix. This refactoring changes no trace/result bytes or source processing behavior; historical loads do not contact peers.
+
+Planning0.82: the pure upload transition machine uses identity.scope; existing trace/result identity getters return their unchanged original trace scope. Canonical identity, command bytes, hashes and transition rules are unchanged. Capture publication can use this machine without inventing an extraction trace.

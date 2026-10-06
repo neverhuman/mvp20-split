@@ -36,7 +36,7 @@ class AttemptIdentity:
         require(family in {"artifacts.begin_derived_upload", "artifacts.finalize"}, "publication_command_family")
         key = self.begin_id if family == "artifacts.begin_derived_upload" else self.finalize_id
         command = CommandIdentity(command_family=family, command_id=key, actor_id=identity.actor_id,
-                                   scope=identity.trace().scope)
+                                   scope=identity.scope)
         return CanonicalCommand.for_family(json.dumps({"identity": command.model_dump(mode="json"),
             "payload": payload.model_dump(mode="json")}), family, type(payload))
 
@@ -64,7 +64,7 @@ class PublicationAttempt:
     def begun(self, identity, artifact, receipt):
         self._at("prepared")
         receipt = DerivedUploadReceipt.model_validate_json(receipt.model_dump_json(warnings=False))
-        require(receipt.upload.scope == identity.trace().scope and receipt.upload.content == artifact.content and
+        require(receipt.upload.scope == identity.scope and receipt.upload.content == artifact.content and
                 receipt.declaration == artifact.declaration, "publication_upload_binding")
         return replace(self, stage="begun", upload=receipt)
 
@@ -102,7 +102,7 @@ class PublicationAttempt:
         ref, expected = receipt.artifact, artifact.content
         begin = self.begin_command(identity, artifact)
         require(self.upload.upload.content == expected and self.upload.declaration == artifact.declaration and
-                receipt.upload_id == self.upload.upload.upload_id and ref.scope == identity.trace().scope and
+                receipt.upload_id == self.upload.upload.upload_id and ref.scope == identity.scope and
                 ref.sha256 == expected.sha256 and ref.size_bytes == expected.size_bytes and
                 ref.media_type == expected.media_type and ref.schema_ref == expected.schema_ref and
                 derivation.artifact == ref and derivation.upload_id == receipt.upload_id and

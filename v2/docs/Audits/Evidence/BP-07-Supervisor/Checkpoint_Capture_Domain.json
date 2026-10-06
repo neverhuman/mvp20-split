@@ -1,0 +1,26 @@
+{
+  "reviewed_at": "2026-10-05 23:31:16",
+  "package": "Planning0.82",
+  "database": "planning0016 unchanged",
+  "domain_tests": 7,
+  "seconds": 24.72,
+  "coverage": {
+    "statements": 104,
+    "branches": 2,
+    "percent": 100
+  },
+  "compatibility": {
+    "passed": 141,
+    "failed_setup_expiry": 1,
+    "seconds": 983.2,
+    "resolution": "Begin intentional one-second lease after preparation; production checks unchanged",
+    "focused_expiry_and_boundaries_passed": 18,
+    "focused_seconds": 45.22
+  },
+  "limits": [
+    "Actual Planning SQL, scripted provider/Data references",
+    "No capture journal/upload or Runtime submission yet",
+    "128 derived parents maximum; overflow explicit",
+    "No live model/scientific acceptance"
+  ]
+}

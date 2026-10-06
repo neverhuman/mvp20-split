@@ -71,3 +71,7 @@ class ResultIdentity:
 
     def trace(self):
         return ExtractionTraceRef.model_validate_json(json.dumps(self.document()["trace"]))
+
+    @property
+    def scope(self):
+        return self.trace().scope

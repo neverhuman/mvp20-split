@@ -54,7 +54,7 @@ class Provider:
         return ProviderReply([b'bad' if self.variant == 'invalid' else json.dumps(value).encode()], unknown_usage())
 
 
-def setup(s, *, maximum=200000, variant='abstain'):
+def setup(s, *, maximum=200000, variant='abstain', extra_count=0):
     data, provider = Data(), Provider(variant)
     def configure(original):
         context = original['context']
@@ -68,6 +68,10 @@ def setup(s, *, maximum=200000, variant='abstain'):
             body = reviewed_instructions() if name == 'prompt' else name.encode()
             ref.update(sha256=hashlib.sha256(body).hexdigest(), size_bytes=len(body))
             data.bodies[ref['artifact_id']] = body
+        for index in range(extra_count):
+            ref = dict(context['objective'], artifact_id=f'extra-{index}')
+            context['entries'].append({'artifact': ref, 'role': 'source', 'required': True})
+            data.bodies[ref['artifact_id']] = b'objective'
     with s.engine.connect() as conn:
         deadline = conn.execute(text('SELECT floor(extract(epoch FROM clock_timestamp())*1000)::bigint+60000')).scalar_one()
     actor, intake, ref, raw, templates = prepared(actor=s.principal, configure=configure, deadline=deadline)

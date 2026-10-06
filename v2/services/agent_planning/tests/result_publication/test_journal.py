@@ -108,8 +108,11 @@ def test_two_lease_holders_and_stream_intents_have_one_winner(stored):
 
 def test_expired_fence_cannot_write_or_release_successor(stored):
     store, journal, selected, review, feedback = setup_result(stored)
-    stale = store.acquire(stored.principal, selected.publication_id, seconds=1)
+    stale = store.acquire(stored.principal, selected.publication_id)
     first = journal.prepare(stored.principal, stale, review, feedback=feedback)
+    # Begin the deliberate expiry window after preparation; instrumentation
+    # must not turn setup speed into the stale-fence oracle.
+    stale = store.renew(stored.principal, stale, seconds=1)
     time.sleep(1.1)
     current = store.acquire(stored.principal, selected.publication_id)
     assert current.fence == stale.fence + 1

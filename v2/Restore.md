@@ -1,20 +1,26 @@
 # Restore
 
-Read FIRST after compression. Refreshed 2026-10-05 23:06:40 (America/Chicago).
+Read FIRST after compression. Refreshed 2026-10-05 23:31:16 (America/Chicago).
 
 ## Resume
 
-Owner says continue until needed across milestones/commits/pushes/compaction. Latest pusheddab3ea79; b.ii execution checkpoint is next commit. No tests/hosts/workers running. Current BP-07.04/B2.03b.iii captured response publication. No owner decision needed for deterministic fixtures. Do not end at commits.
+Owner says continue until needed across milestones/commits/pushes/compaction. Latest pusheddc28f258; b.ii complete/pushed. No tests/hosts/workers running.  Current BP-07.04/B2.03b.iii.ii capture publication journal. No owner decision needed for deterministic fixtures. Do not end at commits.
 
-Runtime0.50/runtime0026 APPLIED; NEVER Runtime<=0.47 migrators. Planning0.81/planning0016;never<=0.73migrators. Data0.29/artifacts0012 (never<=0.25),Research0.34/research0013 (never<=0.33),Knowledge0.18,Registry0.1. PublicSupervision0.7,Planning0.10,graph-runtime0.13;544 publishedschemas unchanged,542predecessorpins. Liveprovider/model/egress/spend TBA blocks realcalls only.
+Runtime0.50/runtime0026 APPLIED; NEVER Runtime<=0.47 migrators. Planning0.82/planning0016;never<=0.73migrators. Data0.29/artifacts0012 (never<=0.25),Research0.34/research0013 (never<=0.33),Knowledge0.18,Registry0.1. PublicSupervision0.7,Planning0.10,graph-runtime0.13;544 publishedschemas unchanged,542predecessorpins. Liveprovider/model/egress/spend TBA blocks realcalls only.
 
 ## Canonical position
 
-Parent69.26%,13/20;child46.30%,Build61.73%,Acceptance0%,1/4. B1=100%;B2=85.19%(.01/.02=100%,.03=55.56%);B3/V1=0%. B2.03 a100%,b66.67%,c0%. b.i/b.ii100%,b.iii0%. Current b.iii response publication,next c autonomous Runtime delivery/repair/fallback.
+Parent69.32%,13/20;child46.60%,Build62.14%,Acceptance0%,1/4. B1=100%;B2=86.42%(.01/.02=100%,.03=59.26%);B3/V1=0%. B2.03 a100%,b77.78%,c0%. b.i/b.ii100%,b.iii33.33% (i domain100%,ii journal0%,iii workflow0%). Current b.iii.ii journal,then iii workflow,then c autonomousRuntime driver. Pure capture checkpoint ready tocommit.
 
 Latest b.ii: supervision_execution/worker.py CheckpointWorker original intake -> CampaignPreparation retained packet -> fresh included Artifact rights -> PlanningRunner issuance/capture/settlement. packet.py binds original declaration from retained packet; adapter reply(binding,exactpacket,deadline_unix_ms=earlier durableticket/originaldeadline). Persistence/supervision_deadline reads immutable v2 wrapper under dispatch request lock; capped SQL INSERT refuses expired checkpoint. Original tickets replay first, old profiles unchanged. History-first recovery without Data/templates/provider for issued/observed attempts. Missing context/overflow/rights/deadline explicit RunOutcome stops.126 scoped SQL cases45.74s+12 boundary9.14s;271stmts26branches99% (two unexpected error propagation paths). Actual PlanningSQL/scripted Data/provider; no process/multi-owner claim. Ruff passes. No tests running. B3 canonical table incorrectly showed inherited .03 percentage under zero B3; corrected to all0%.
 
 Next: response capture publication and RuntimeClient exchange. Read supervision_client/README (receipt/submit/readback separate, original numeric-v2 response commands), public contracts/supervision/responses.py and Runtime supervision_responses README. Existing Planning publication driver is extraction-specific durable journal/derived-upload; do not claim reusable complete capture publication without checking. Capture needs its own bounded stable identity/original owned observation proof; malformed/partial bytes must remain diagnostic bytes. No Runtime-private import. Existing Runtime ArtifactPublisher is owner-private (reference only), not reusable import.
+
+## b.iii domain complete; journal next
+
+Planning0.82 supervision_publication capture.py/identity.py verified7cases24.72s104stmt2branches100%. Exactopaque bytes +derived ancestry, stable slot includes primary/late kind, oldpublic response/command. Emptyfailedcapture noArtifact.128parents accepted/129reject explicitly; no ancestrytruncation. CaptureIdentity revalidates wholeorigin. PublicationAttempt uses identity.scope; PublicationIdentity/ResultIdentity originalscope getters preservecanonicalbytes. Sharedregression141passed/1testsetup leaseexpired undercoverage983.20s. Fixed ONLY test_result_publication/test_journal stale-fence setup toprepareunder30s thenrenew1s;18focused/expiry/boundary45.22spass. Productionleasechecksunchanged. Initial highparentfixture max200k hitinputlimit; test-only1m toreach128parentboundary. Ruff passes. No testsrunning. TestsareSQLownedorigin/scriptedData/provider,notactualupload.
+
+Read BP-07.04 Capture publication.md fornextboundedjournal. No newmigrationyet. NextnewPlanning0017 ifneeded,thennever<=0.82migrators. Need immutablecaptureidentity linkedtoownedintake/preparation/physicalattempt; actualorigin loader selectsprimary observations orlate_observations bykind, validatesnotcallerassertion. Originalcapturebytes alreadyowned; avoidcopies. ReusePublicationAttempt andpublication.records.advance puretransitions; separatecaptureeventprofile. StoreDBclocklease/fence/position andappend-onlyevents. Emptycapture no upload, canoriginalresponse directly. Responsecommands andRuntimeClient receipt/readback need durableoriginalstate. Publication/lateexchange canoutlivecalldeadline; capturedoesnotselectRuntimewinner. NoRuntimeprivateimports/SQL. Existing publication driver genericexpectsjournal.store/guard/advance andstate.payload.artifact/attempt/position; purecaptureidentity exposes scope/sha256/actor, no fakeextractiontrace. Max8uploadattempts/64events existingbehavior. Captureconfiguredopaque profile mustexplicitlyadmit inData; rawschemahashhelper retained.
 
 ## Latest Planning boundary (b.i)
 
