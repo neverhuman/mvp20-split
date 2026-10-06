@@ -1,6 +1,8 @@
 # Campaign Runtime
 
-Current package0.32.0 supports versioned checkpoint journal recovery and forward runtime0021; HTTP/client integration follows.
+Current package0.33.0 adds explicit CheckpointPlanningClient for /v2 exchange; no automatic version fallback.
+
+Package0.32.0 supports versioned checkpoint journal recovery and forward runtime0021; HTTP/client integration follows.
 
 Package0.31.0 adds versioned public checkpoint exchange and private frame reconstruction (not journal/HTTP integration yet).
 

@@ -1,5 +1,7 @@
 # Runtime-owned Planning client
 
+Runtime0.33 adds CheckpointPlanningClient with the explicit v2 command family, CheckpointRequest model and /v2 routes. Original PlanningClient stays v1-only and rejects new commands before network I/O. Both share the existing bounded transport; no automatic repost, version fallback or provider call. Owned socket tests prove exact three-call submit/receipt/readback and lost-v2-reply recovery; client34 statements100%. Full API/client gate45 cases passed. Actual installed v2 owner exchange remains B2.01b.iv.
+
 - Current integration: B1.04d actual installed owner/restart proof passed; autonomous orchestration and decision effects remain B2.
 
 - Version: Runtime0.29.0; reviewed `2026-10-05 16:04:54` (America/Chicago); BP-07.04/B1.04c.i.

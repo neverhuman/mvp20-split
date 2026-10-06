@@ -1,5 +1,7 @@
 # Planning supervisor HTTP boundary
 
+Planning0.75 adds explicit POST /v2/supervision/requests, POST /v2/supervision/receipts/query and GET /v2/supervision/requests/{engagement_id} using CheckpointRequest and its distinct command family. Existing /v1 routes remain closed; reading a retained record through the wrong profile returns409. Both versions share bounded authenticated transport and existing grants. Readiness requires the planning0016 family constraint, not only table existence.45 combined API/host/client cases passed;24 owned API cases pass with path-based coverage: app96%, entire API87% (CLI subprocess is not instrumented). Unexecuted app lines: DBAPI error handler, one access classification and incompatible-schema readiness; these remain explicit gaps. No model attempt or execution authority.
+
 - Current integration: B1.04d actual installed owner/restart proof passed; autonomous orchestration and decision effects remain B2.
 
 - Version: Planning0.71.0; public supervision0.2.0; SQL head0015.

@@ -1,6 +1,8 @@
 # Agent Planning service boundary
 
-Current package0.74/planning0016 supports versioned checkpoint journal intake and original receipt replay; no provider attempt side effect.
+Current package0.75 exposes explicit v2 checkpoint HTTP with profile-isolated readback.
+
+Package0.74/planning0016 supports versioned checkpoint journal intake and original receipt replay; no provider attempt side effect.
 
 Package0.73 pins public supervision0.3 for the upcoming explicit checkpoint request intake. At this checkpoint existing intake/HTTP remains v1-only; no new provider or graph authority.
 

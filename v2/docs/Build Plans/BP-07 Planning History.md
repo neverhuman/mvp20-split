@@ -847,3 +847,8 @@ Public supervision0.3/Runtime0.31/Planning0.73;144 contract/frame/schema cases a
 ## 2026-10-05 19:44:38 ? B2.01b.ii journals verified
 
 Runtime0.32/runtime0021 andPlanning0.74/planning0016 preserve original frames/receipts while accepting explicit v2 requests.145 combined cases26.76s,18 target/boundary18.26s;824 statements98 branches99%,Planningintake100%. Initial143pass/1fail exposed hardcoded v1 outbox family; corrected with atomic rollback preserved. b.i/ii100%,iii/iv0% =>b50%;B2.01=37.5%,B2=12.5%;child28.13%,Build37.5%,Acceptance0%;parent65.63%,13/20. Next explicit HTTP/client integration. No old migrations rewritten.
+
+
+## 2026-10-05 19:53:26 ? B2.01b.iii transport verified
+
+Runtime0.33/Planning0.75 explicit v2 client/HTTP preserves original routes and receipt-first recovery.45 combined cases21.59s;24 owned API cases19.20s with filesystem coverage(app96%,module87%);client34 statements100%. Dotted-leaf coverage twice failed inside SQLAlchemy initialization; identical tests passed without coverage and with filesystem source selection. No production/dependency workaround. b.i/ii/iii100%,iv0% =>b75%;B2.01=43.75%,B2=14.58%;child28.65%,Build38.19%,Acceptance0%;parent65.73%,13/20. Next installed v2 original/replacement exchange.

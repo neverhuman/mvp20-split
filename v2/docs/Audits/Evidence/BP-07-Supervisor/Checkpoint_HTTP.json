@@ -1,0 +1,24 @@
+{
+  "reviewed_at": "2026-10-05 19:53:26",
+  "milestone": "B2.01b.iii",
+  "versions": {
+    "runtime": "0.33.0",
+    "planning": "0.75.0"
+  },
+  "tests": {
+    "combined_api_host_client": 45,
+    "owned_api_path_coverage": 24
+  },
+  "coverage": {
+    "runtime_client_statements": 34,
+    "runtime_client_percent": 100,
+    "planning_app_percent": 96,
+    "planning_api_percent": 87
+  },
+  "instrumentation": "Dotted-leaf coverage failed SQLAlchemy initialization twice; identical tests pass without coverage and with filesystem source selection.",
+  "limitations": [
+    "installed v2 owner integration remains b.iv",
+    "CLI subprocess coverage separate",
+    "no admission/winner/provider call"
+  ]
+}

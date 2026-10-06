@@ -1,4 +1,4 @@
-from .client import PlanningClient
+from .client import CheckpointPlanningClient, PlanningClient
 from .window import (
     ExchangeAbsent,
     ExchangeConflict,
@@ -9,6 +9,7 @@ from .window import (
 )
 
 __all__ = [
+    'CheckpointPlanningClient',
     'ExchangeAbsent',
     'ExchangeConflict',
     'ExchangeDenied',
