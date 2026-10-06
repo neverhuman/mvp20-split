@@ -128,7 +128,10 @@ class CheckpointSnapshot:
         require(0 <= progress.evaluations_terminal <= progress.evaluations_issued <= budget.max_evaluations, "evaluation_progress")
         require(progress.evaluations_issued - progress.evaluations_terminal == len(record.pending), "pending_progress")
         require(progress.evaluations_terminal >= len(record.observations), "terminal_progress")
-        require(progress.generations_completed == record.generation, "generation_progress")
+        completed = record.generation
+        if record.phase in {"awaiting_evaluations", "ready_to_select"}:
+            completed = max(0, completed - 1)
+        require(progress.generations_completed == completed, "generation_progress")
         require(progress.unchanged_front_generations <= progress.generations_completed, "stagnation_progress")
         if record.generation == 0:
             require(progress.evaluations_issued == len(record.pending) + len(record.observations), "seed_progress")

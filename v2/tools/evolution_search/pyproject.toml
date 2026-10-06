@@ -1,8 +1,8 @@
 [project]
 name = "amphora-evolution-search"
-version = "0.2.0"
+version = "0.3.0"
 requires-python = ">=3.12,<3.13"
-dependencies = ["amphora-contracts-core==0.1.0", "amphora-contracts-search-steps==0.1.0", "amphora-contracts-search==0.1.0"]
+dependencies = ["amphora-contracts-graph-runtime==0.13.0", "amphora-contracts-core==0.1.0", "amphora-contracts-search-steps==0.1.0", "amphora-contracts-search==0.1.0"]
 
 [build-system]
 requires = ["hatchling>=1.27,<2"]
@@ -12,7 +12,7 @@ build-backend = "hatchling.build"
 packages = ["src/amphora_evolution_search"]
 
 [tool.amphora]
-public-imports = ["amphora-contracts-core", "amphora-contracts-search-steps", "amphora-contracts-search"]
+public-imports = ["amphora-contracts-graph-runtime", "amphora-contracts-core", "amphora-contracts-search-steps", "amphora-contracts-search"]
 
 [tool.uv.sources]
 amphora-contracts-search-steps = { path = "../../contracts/search_steps", editable = true }

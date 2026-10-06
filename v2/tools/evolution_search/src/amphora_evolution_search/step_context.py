@@ -34,7 +34,7 @@ class BoundCheckpoint:
 
     def request_batch(self) -> EvaluationRequestBatch:
         state = self.snapshot.record
-        require(state.phase in {"awaiting_evaluations", "stopped"}, "request_expansion_phase")
+        require(state.phase in {"awaiting_evaluations", "ready_to_select", "stopped"}, "request_expansion_phase")
         attempts = {a.candidate_id: a for a in state.attempts}
         requests = tuple(evaluation_request(self.snapshot.original, attempts[p.candidate_id]) for p in state.pending)
         return EvaluationRequestBatch(schema_version="1", scope=self.reference.scope,

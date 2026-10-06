@@ -1,6 +1,6 @@
 # Numeric evolutionary search boundary
 
-- Owner: BP-08.02/B1.01 verified; package0.2.0. Standalone capability adapters/evaluator are B1.02. BP-08.01 remains closed for its0.1.0 boundary.
+- Owner: BP-08.02/B1.02a verified; package0.3.0. CLI/worker adapters and evaluator remain B1.02b/c. BP-08.01 remains closed for its0.1.0 boundary.
 - Scope: finite continuous numerical search primitives; independent Python implementation, not a verified v1 port.
 - Design: [Search](../../docs/Architecture/Campaigns/Search.md); [activation](../../docs/Audits/BP-08.01_Activation.md).
 
@@ -51,3 +51,13 @@ BoundCheckpoint binds an intrinsic snapshot to its exact canonical search.checkp
 BoxVariation performs one finite-box attempt using the original operator/seed pins and an explicitly ordered parent pool. Draw schedule: two uniform parent-index draws, one crossover decision, then blend, mutation decision and offset per axis. All3+3*d draws are consumed even when crossover/mutation is disabled or bounds are fixed. Blend is alpha*a+(1-alpha)*b; mutation adds (2*u-1)*fraction*(upper-lower), then clamps to the original bounds. Repeated chosen parent IDs collapse to one lineage entry. No selection, scheduling, implicit retry or generation loop is hidden in this operation.
 
 Verified 2026-10-06 10:38:13:146 numeric/boundary checks16.32s; new binding/variation modules100% measured line/branch coverage, complete numeric module96%. Independent .NET draw values pin crossover and mutation/clamping cases. Public step publication40 checks19.23s;570 schemas, all564 predecessor bytes unchanged. Standalone adapters, generation state transitions and actual-owner recovery remain open; earlier133-test isolated proof applies to release0.1.0.
+
+## Pure generation transitions
+
+SuccessorPopulation opens exactly one successor from selected feasible parents; it retains parent observations, fixed-draw offspring ancestry, duplicate links and budget-limited rejections. GenerationReducer accepts the complete frozen pending set; duplicate/missing identities reject, returned observations are canonically ordered, and failed graph slots remain explicit unavailable outcomes. MissingValue.member_id must match the original scatter position. Late results cannot be applied to a selected/stopped generation. Stopped-state calls with no new results are no-ops.
+
+Each changed checkpoint points to its bound source Artifact. These are pure proposed transitions; only Runtime may accept them. generations_completed counts resolved successor generations: an open/ready generation g reports max(0,g-1), while selected/stopped reports g. Generation zero does not count as a successor. This corrects the generation-zero-only prototype rule before integrated generation persistence exists; wire bytes/schema remain unchanged.
+
+Stop order is no feasible survivors, generation budget, evaluation budget, then unchanged survivor-front objective vectors. Unavailable numeric fitness yields an explicit unavailable_fitness stop with every result retained; weak-but-present numeric evidence is not rejected merely for its provenance label. Frozen evaluator/objective/constraint pins still apply. Duplicate-only generations can select cached parent fitness without new evaluations and count toward the unchanged-front limit. No loop, network dispatch or database acceptance occurs in these domain objects.
+
+Verified 2026-10-06 10:45:54:155 scoped checks17.21s;617/618 statements,133/134 branches covered (99% combined). Remaining gap: defensive empty-membership front helper. Actual owner/process recovery remains B2/B3; no deployed worker claim.

@@ -1,0 +1,18 @@
+{
+  "verified_at": "2026-10-06 10:45:54",
+  "scope": "BP-08.02/B1.02a",
+  "package": "amphora-evolution-search0.3.0",
+  "tests": 155,
+  "seconds": 17.21,
+  "coverage": {
+    "statements": 618,
+    "covered_statements": 617,
+    "branches": 134,
+    "covered_branches": 133
+  },
+  "not_claimed": [
+    "Runtime accepted transitions",
+    "Worker process deployment"
+  ],
+  "next": "B1.02b CLI/descriptors/worker adapters"
+}
