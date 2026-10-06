@@ -1,0 +1,34 @@
+{
+  "reviewed_at": "2026-10-05 23:57:53",
+  "package": "Planning0.84",
+  "database": "planning0017 unchanged",
+  "initial_workflow_tests": 9,
+  "initial_seconds": 107.71,
+  "final_tests": 46,
+  "final_seconds": 271.5,
+  "coverage": {
+    "statements": 454,
+    "branches": 38,
+    "percent": 98,
+    "workflow_statements": 58,
+    "workflow_branches": 14,
+    "workflow_percent": 97,
+    "gap": "second terminal check after lease acquisition; independent concurrent recovery belongsB3"
+  },
+  "peers": "Actual Planning SQL; public SDK with scripted Data transport; actual loopback HTTP/scripted Runtime; all HTTP hosts cleaned up",
+  "scenarios": [
+    "begin/stream/finalize loss and exact receipt recovery",
+    "bounded successor after uncertain streaming",
+    "rejected derived publication retains localcapture",
+    "lost response write/readback without secondwrite",
+    "terminal replay without peers",
+    "knownpendingreceipt disappearance cannot rePOST",
+    "foreignconfiguredactor no effects",
+    "only expiredleasecleanup suppressed"
+  ],
+  "remaining": [
+    "autonomous owner scheduling/repair/fallback",
+    "B3 and V1 independentprocess/installedactualownerproof",
+    "liveprovider/model/egresschoice"
+  ]
+}

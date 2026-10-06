@@ -49,10 +49,10 @@ def prepared(scope=None):
 
 
 def receipts(identity, artifact, attempt):
-    upload = DerivedUploadReceipt(upload=UploadReceipt(upload_id="upload", scope=identity.trace().scope,
+    upload = DerivedUploadReceipt(upload=UploadReceipt(upload_id="upload", scope=identity.scope,
                                                        content=artifact.content), declaration=artifact.declaration)
     stream = UploadContentReceipt(upload_id="upload", attempt_id="stream", generation=1)
-    ref = ArtifactRef(artifact_id="output", scope=identity.trace().scope, **artifact.content.model_dump())
+    ref = ArtifactRef(artifact_id="output", scope=identity.scope, **artifact.content.model_dump())
     final = FinalizedReceipt(upload_id="upload", artifact=ref)
     command = attempt.begin_command(identity, artifact)
     derivation = DerivationReceipt(origin=command.identity, request_sha256=command.sha256, upload_id="upload",
