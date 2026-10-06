@@ -1,0 +1,13 @@
+{
+  "reviewed_at": "2026-10-06 02:06:01",
+  "tier": "current editable owners; actual PostgreSQL and abrupt subprocess exits; scripted Data/provider/Planning where stated",
+  "planning": "8 passed21.90s; physical issuance then exit73; fresh process recovers unknown primary; reserved input/output/accounting floor retained; one dispatch; immutable completion replay",
+  "runtime": "2 passed28.95s; request-before-send and response-before-accept; fresh owner process restores original command/reservation or accepts scalar selection once",
+  "tooling": "12 boundary/ownership checks passed9.83s",
+  "fixture_correction": "Initial request probe omitted cancellation of its owned run; subsequent admission correctly rejected active_run_exists. Cancelled only recorded probe run and added exact-run teardown. No SQL reset/history removal.",
+  "limits": [
+    "No installed replacement claim",
+    "No live model/scientific claim",
+    "Cross-owner branch/late integration remains B3.03"
+  ]
+}

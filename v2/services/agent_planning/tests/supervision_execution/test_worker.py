@@ -54,7 +54,7 @@ class Provider:
         return ProviderReply([b'bad' if self.variant == 'invalid' else json.dumps(value).encode()], unknown_usage())
 
 
-def setup(s, *, maximum=200000, variant='abstain', extra_count=0):
+def setup(s, *, maximum=200000, variant='abstain', extra_count=0, attempts=2):
     data, provider = Data(), Provider(variant)
     def configure(original):
         context = original['context']
@@ -62,7 +62,7 @@ def setup(s, *, maximum=200000, variant='abstain', extra_count=0):
         context['model']['tokenizer'] = fixture_tokenizer_reference().model_dump(mode='json')
         context['model']['context_window_tokens'] = maximum + 4096
         context['limits'].update(max_input_tokens=maximum, max_output_tokens=4096,
-            total_tokens=2 * (maximum + 4096), total_accounting_units=120)
+            total_tokens=2 * (maximum + 4096), total_accounting_units=120, max_attempts=attempts)
         for name, ref in [('objective', context['objective']), ('policy', context['policy']),
                          ('model', context['model']['configuration']), ('prompt', context['prompt'])]:
             body = reviewed_instructions() if name == 'prompt' else name.encode()

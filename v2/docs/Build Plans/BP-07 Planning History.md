@@ -960,3 +960,7 @@ B2.03c.iii complete: actual Data/Runtime/Planning HTTP processes plus replacemen
 ## 2026-10-06 01:58:40 - B3.01 SQL contention and authority
 
 Four new recipe-admitted winner races cover two responses, cancellation contention, original deadline fallback and withdrawn acceptance authority. One winner/effect/audit/outbox and original reservation are asserted. Initial52existing cases passed; four new cases required correcting only an audit-query column. Final11cases passed17.76s including checkpoint issuance/membership and independent branch checks. No production change. B3.01=100%,B3=33.33%,child58.33%,Build77.78%,parent71.67%,14/20 closed. Current B3.02. Failure proof.md maps bounded oracles.
+
+## 2026-10-06 02:06:01 - B3.02 process barriers verified
+
+Planning physical issuance crash/replacement preserves unknown primary, full reserved charge, one physical dispatch and immutable completion. Runtime request-before-send and response-before-accept processes recover exact commands/reservation and one winner. Planning8passed21.90s;Runtime2passed28.95s;devboundaries12passed9.83s. Initial Runtime fixture cleanup defect corrected via exact owned-run cancellation; no production changes. Evidence Checkpoint_Process_Barriers.json. B3.02=100%,B3=66.67%,child66.67%,Build88.89%,parent73.33%,14/20closed. Current B3.03; V1 installed replacement remains.

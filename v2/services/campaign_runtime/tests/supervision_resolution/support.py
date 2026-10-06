@@ -49,7 +49,9 @@ def setup(graph, *, calls=2, prepare=True, timeout=300):
     reviewed = ReviewedPolicy.bind(compiled, RecipePolicyRecord.model_validate_json(json.dumps(data)))
     admission = GraphAdmission(graph.env.engine, PlanCatalog([graph.entry]), bindings_enabled=True,
         policies=PolicyCatalog([reviewed]), recipes=RecipeCatalog([recipe]))
-    run = admission.admit_supervised(actor, command(graph, reviewed)).outcome.committed.object_id
+    outcome = admission.admit_supervised(actor, command(graph, reviewed)).outcome
+    assert outcome.status == 'accepted', outcome
+    run = outcome.committed.object_id
     slot = slots(graph, run, reviewed)[0]
     ref = SupervisionRef(scope=actor.scope, run_id=run, decision_id=slot.seed.decision_id)
     artifacts = Publications(graph, ref)
