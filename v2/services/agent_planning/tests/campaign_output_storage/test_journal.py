@@ -8,6 +8,7 @@ from amphora_agent_planning.context import AttemptBinding, RequestSnapshot
 from amphora_agent_planning.orchestration import PlanningRunner
 from amphora_agent_planning.providers import observe
 
+from ..campaign_output.test_checkpoint import checkpoint_output, checkpoint_request
 from ..campaign_output.test_output import output, request
 from ..persistence.test_reservations import policy
 from ..persistence.test_task_output import Response
@@ -16,8 +17,8 @@ pytestmark = pytest.mark.postgres
 
 
 def fixture(stored, name='future'):
-    raw = request(name).document().model_dump(mode='json')
-    draft = output(name)
+    raw = (checkpoint_request() if name == 'checkpoint' else request(name)).document().model_dump(mode='json')
+    draft = checkpoint_output() if name == 'checkpoint' else output(name)
 
     def rescope(value):
         if isinstance(value, dict):
@@ -36,7 +37,7 @@ def fixture(stored, name='future'):
     return snapshot, json.dumps(draft, indent=2).encode()
 
 
-@pytest.mark.parametrize('name', ['future', 'adjustment', 'evidence', 'abstain'])
+@pytest.mark.parametrize('name', ['future', 'adjustment', 'evidence', 'abstain', 'checkpoint'])
 def test_durable_campaign_output_replay_never_calls_provider_twice(stored, name):
     snapshot, raw = fixture(stored, name)
     provider = Response(raw)

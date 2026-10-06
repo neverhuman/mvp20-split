@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "verified_at": "2026-10-05 21:32:22",
+  "public_contracts": {
+    "planning": "0.10.0",
+    "supervision": "0.5.0",
+    "schemas": 542,
+    "unchanged_predecessors": 538
+  },
+  "owner_tests": {
+    "tests": 336,
+    "seconds": 103.3,
+    "selected_coverage": {
+      "statements": 631,
+      "branches": 82,
+      "percent": 100
+    }
+  },
+  "sql_checkpoint": {
+    "tests": 37,
+    "seconds": 16.65
+  },
+  "installed": {
+    "runtime": {
+      "version": "0.42.0",
+      "unchanged_migrations": 46,
+      "installations": [
+        {
+          "label": "initial",
+          "tests": 335,
+          "seconds": 32.846000000000004
+        },
+        {
+          "label": "replacement",
+          "tests": 335,
+          "seconds": 31.739
+        }
+      ]
+    },
+    "planning": {
+      "version": "0.77.0",
+      "unchanged_migrations": 32,
+      "installations": [
+        {
+          "label": "initial",
+          "tests": 193,
+          "seconds": 27.08
+        },
+        {
+          "label": "replacement",
+          "tests": 193,
+          "seconds": 26.233
+        }
+      ]
+    }
+  },
+  "limits": [
+    "No SQL winner or effective conversion application",
+    "Installed compatibility gate does not migrate SQL or run provider calls",
+    "Legacy CampaignPrepared remains a closed old-profile composition entry point"
+  ],
+  "fixture_repair": "Synthetic SQL capture had foreign expected-evidence fixture references; removed irrelevant fixture intents without changing production scope validation"
+}

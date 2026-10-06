@@ -1,20 +1,22 @@
 # Restore
 
-Read first after compression. Refreshed 2026-10-05 21:11:53 (America/Chicago).
+Read first after compression. Refreshed 2026-10-05 21:32:22 (America/Chicago).
 
 ## Resume
 
-Owner says continue until needed. Latest pushed628b2fe1; B2.02a verified and ready commit/push. No tests/hosts/workers running. Current BP-07.04/B2.02b versioned exchange. Do not stop at a checkpoint.
+Owner says continue until needed. Latest pushed128a88e4; B2.02b complete ready commit/push. No tests/hosts/workers running. Current BP-07.04/B2.02c.i atomic winner transaction, then c.ii coordinator release. Do not stop at checkpoint.
 
-Read child tracker and Physical design; approved Scalar checkpoint decision permits explicit versioned materialization fields while preserving old profiles. Next: bounded B2.02 implementation design, pure proposal/effect validation, atomic winner SQL, shared effective field resolver at conversion opening/revalidation, scoped proof. B2.03 owns autonomous request/repair/accounting loop. No live provider needed now.
+Read Winner and effects.md. PublicPlanning0.10 CheckpointDraft (planning.checkpoint-draft/v1,payload2), publicSupervision0.5 CheckpointDecision. Explicit owner parsers and Runtime select_fields implemented. Legacy profiles unchanged; CampaignPrepared stays an old-profile composition entry point.336 scoped cases103.30s/631statements82branches100%;37SQL16.65s;1056 isolated initial/replacement cases. Evidence Checkpoint_Effects_Exchange.json. .test-results/checkpoint-effects-installed-20261005 PASSED. All processes completed. No SQL winner or conversion integration exists yet.
+
+c design: new forward migration after runtime0023, immutable winner/selection bound original slot/request/response; reuse runtime.audit_events/outbox and existing run lock. RuntimeLeases._changed increments revision and commits audit/outbox (requires RunBudget). Replays return original winner before current run/deadline checks. Cancellation/terminal run wins against new acceptance. Fallback derives deadline/eligibility from slot/DB clock, not arbitrary caller reason. Provider/repair exhaustion belongs B2.03 retained evidence. Model effects require actual response journal capture and exact request/policy/slot lineage; select_fields validates seed/cut/prior/occurrence. Refresh seed can reconstruct retained request footprint plus original scalar fields, preserve slot identity/deadline/ceilings and retain selection seed bytes. Current membership/issued checks from supervision_journal.current.verify_footprint. Scalar conversion opening/revalidation will share resolver in d. No source edits during verification.
 
 ## Canonical progress
 
-Parent67.08%,13/20 closed;child35.42%,Build47.22%,Acceptance0%,1/4. B1=100%;B2=41.67%(.01=100%,.02=25%,.03=0%);B3/V1=0%. B2.01 complete, d.c evidence Checkpoint_Fences.json:10SQL6.18s,4 cases each isolated initial/replacement,12boundary8.38s,Ruff. Selected changes stale; unrelated claim remains fresh; explicit refresh preserves original slot; queued issuance/forged occurrence/inactive ancestor reject. No automatic refresh or winner authority.
+Parent67.50%,13/20;child37.50%,Build50%,Acceptance0%,1/4. B1=100%;B2=50%(.01=100%,.02=50%,.03=0%);B3/V1=0%. B2.02 a/b100%,c/d0%;c.i/ii equal0%. Current c.i,next c.ii then d conversion. No new owner decision.
 
 ## Current boundaries
 
-Runtime0.41/runtime0023;Planning0.76/planning0016;publicSupervision0.4;graph-runtime0.13;publicPlanning0.9;538 schemas preserve536 predecessors. Actual retained DB Runtime0023/Planning0016. **NEVER run Runtime<=0.38 or Planning<=0.73 migrators.** Data0.29/artifacts0012 (never<=0.25),Research0.34/research0013 (never<=0.33),Knowledge0.18,Registry0.1.
+Runtime0.42/runtime0023;Planning0.77/planning0016;publicSupervision0.5;graph-runtime0.13;publicPlanning0.10;542 schemas preserve538 predecessors. Actual retained DB Runtime0023/Planning0016. **NEVER run Runtime<=0.38 or Planning<=0.73 migrators.** Data0.29/artifacts0012 (never<=0.25),Research0.34/research0013 (never<=0.33),Knowledge0.18,Registry0.1.
 
 - Public CheckpointRequest/Snapshot2 use explicit planning.supervision.request.v2; old request parsers/bytes closed. Runtime/Planning journals, separate v2 HTTP/client paths and exact receipts implemented. No provider call grant follows from recording.
 - graph.admit_supervised numeric-v2 command pins exact policy hash. PolicyCatalog requires exact scope/plan/policy, no latest fallback. GraphAdmission.admit_supervised pins before frontier/initial issuance; original receipt replay precedes catalog lookup.
@@ -40,5 +42,3 @@ No subagents, external JARVIS, v1 edits, SQL resets, old migrators or external m
 Use PYTHONUTF8=1 for every Python invocation. Python v2/dev/.venv/Scripts/python.exe; uv v2/.venv/Scripts/uv.exe. Pytest -c v2/dev/pyproject.toml --tb=short; actual SQL AMPHORA_TEST_POSTGRES=1. Filesystem coverage paths only: dotted Planning API leaf caused SQLAlchemy Cython initialization failure; no production workaround. Normal Ruff, no overrides. Use rg --files before paths; avoid guessed filenames and PowerShell directory/*.py globs. Stop shell sequences on nonzero exit. Windows Path.absolute(), never resolve(). Background windows hidden. Communicate at least every60s.
 
 Git main: git -c safe.directory=//DesktopNAS/Code/mvp20-split. Remote https://github.com/neverhumanbot/mvp20-split.git. Commit/push verified significant work after canonical tracker/history/Restore sync, then immediately continue. Existing v1/LICENSE metadata debt remains untouched.
-
-B2.02a verified70 cases10.99s;supervision_effects71statements4branches100%. FieldChange/ScalarSelection private canonical profile validates exact prior/type/unit/bounds/concrete path against ValueCheckpointSeed v2; resolve overlays only after all original supervised fields match. No winner authority. B2.02 bounded units in Winner and effects.md: a100%, b public versioned exchange0%, c atomic winner/release0%, d conversion integration/SQL0%. Existing CampaignDraft float/static-address semantics and request-required SupervisionDecision stay closed. Next explicit profile for exact scalar changes and pre-request fallback. No tests running.

@@ -67,3 +67,15 @@ __all__ = [
     'parse_supervised_admission',
     'parse_supervision_command',
 ]
+
+from .checkpoint_decisions import (
+    AppliedFields,
+    CheckpointCancelled,
+    CheckpointDecision,
+    CheckpointFallback,
+    CheckpointModelAccepted,
+    CheckpointPending,
+    EffectiveFieldChange,
+)
+
+__all__ += ["AppliedFields", "CheckpointCancelled", "CheckpointDecision", "CheckpointFallback", "CheckpointModelAccepted", "CheckpointPending", "EffectiveFieldChange"]

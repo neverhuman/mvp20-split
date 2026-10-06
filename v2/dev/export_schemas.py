@@ -39,6 +39,8 @@ from amphora_contracts_tools import Completion, Invocation, ToolBinding, ToolDes
 
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
+    "planning.checkpoint-draft": planning_contracts.CheckpointDraft,
+    "supervision.checkpoint-decision": supervision_contracts.CheckpointDecision,
     "supervision.admit-graph": supervision_contracts.AdmitSupervisedGraph,
     "supervision.checkpoint-request": supervision_contracts.CheckpointRequest,
     "supervision.checkpoint-snapshot": supervision_contracts.CheckpointSnapshot,

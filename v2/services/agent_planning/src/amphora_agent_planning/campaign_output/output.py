@@ -3,6 +3,7 @@
 import hashlib
 import json
 from dataclasses import dataclass
+from typing import ClassVar
 
 from amphora_contracts_planning import (
     CampaignDraft,
@@ -23,25 +24,29 @@ MAX_OUTPUT_BYTES = 65536
 class CampaignOutput:
     decision: CampaignDecisionScope
     canonical: bytes
+    decision_type: ClassVar = CampaignDecisionScope
+    record_type: ClassVar = CampaignDraft
+    candidate_type: ClassVar = CampaignCandidate
+    profile: ClassVar = staticmethod(campaign_draft_schema)
 
     @classmethod
     def parse(cls, raw, request):
-        decision = CampaignDecisionScope.bind(request)
+        decision = cls.decision_type.bind(request)
         require(type(raw) is bytes and 0 < len(raw) <= MAX_OUTPUT_BYTES, 'typed_output_size')
         try:
             value = json.loads(raw.decode('utf-8'), object_pairs_hook=_object, parse_constant=_constant)
-            draft = CampaignDraft.model_validate_json(json.dumps(value, allow_nan=False))
+            draft = cls.record_type.model_validate_json(json.dumps(value, allow_nan=False))
             canonical = json.dumps(draft.model_dump(mode='json'), sort_keys=True, separators=(',', ':'),
                                    ensure_ascii=False, allow_nan=False).encode('utf-8')
         except (UnicodeError, json.JSONDecodeError, ValidationError, RecursionError) as exc:
             raise ValueError('invalid_output') from exc
         require(len(canonical) <= MAX_OUTPUT_BYTES, 'typed_output_size')
         decision.validate(draft)
-        CampaignCandidate.bind(draft, decision)
+        cls.candidate_type.bind(draft, decision)
         return cls(decision, canonical)
 
     def document(self):
-        return CampaignDraft.model_validate_json(self.canonical)
+        return self.record_type.model_validate_json(self.canonical)
 
     @property
     def sha256(self):
@@ -52,6 +57,6 @@ class CampaignOutput:
         checked = self.parse(self.canonical, self.decision.request)
         require(checked == self, 'campaign_output_binding')
         draft = checked.document()
-        return TypedProposal(output_schema=campaign_draft_schema(), action=draft.action,
+        return TypedProposal(output_schema=self.profile(), action=draft.action,
                              rationale=draft.rationale, payload_json=checked.canonical.decode('utf-8'),
                              payload_sha256=checked.sha256)

@@ -16,3 +16,6 @@ SupervisionRequestBinding.bind requires exact snapshot equality with that origin
 This factory does not authenticate the caller, read current SQL/rights, prove stored-plan membership or absence of worker materialization, validate admitted policy contents, execute Planning ContextPolicy, establish an actual ancestry chain, check wall-clock expiry, reserve/settle spend or accept a decision. Those checks remain explicit prerequisites in owning journal/transport/acceptance phases. Constructing the dataclass directly or reparsing a record is not fresh validation authority.
 
 Tests belong under tests/supervision_requests; public wire tests belong to contracts/supervision/tests. Literal Planning request bytes must remain compatible, and public snapshot digests must match the existing Runtime domain. Changed identity, actor/cut, hash, policy and lineage cases reject. Response/receipt/command profiles remain B1.02b; no HTTP host or model adapter exists here.
+
+
+The planning.checkpoint-draft output schema requires CheckpointRequest; it cannot be carried as legacy Invoke-only request authority.

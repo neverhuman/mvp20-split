@@ -23,3 +23,6 @@ parse_supervision_command recognizes only planning.supervision.request, runtime.
 
 
 B1.02b publishes four additional roots/eight files:528 schema files preserve all520 predecessors. New command parsers explicitly require numericv2 even though the shared encoder preserves legacy fallback. Three literal command byte/hash vectors and four unchanged Planning0.69 observation vectors bind compatibility. Independent combined package acceptance passed B1.02c; seven byte-sensitive fixture vectors remain exact under Git checkout filters with core.autocrlf=true, enforced by .gitattributes. No provider/SQL/decision effect is claimed.
+
+
+Supervision0.5 adds checkpoint-decision/v1. Pending checkpoints, model-accepted outcomes, deterministic fallback and run cancellation are distinct records. Model effects require request/response digests; pre-request fallback does not fabricate them. Materialization fields use exact graph ScalarValue and selection identity. Existing decision/request/response records remain unchanged. Runtime owner construction and acceptance remain separate gates.

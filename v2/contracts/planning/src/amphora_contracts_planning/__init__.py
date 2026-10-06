@@ -100,3 +100,12 @@ __all__ += ["CampaignAssessmentSelection", "CampaignResearchSelection"]
 __all__ += ["CampaignAdjustmentDraft", "CampaignAlternative", "CampaignCandidateDraft", "CampaignDraft",
             "CampaignEvidenceIntent", "CampaignInputAdjustment", "CampaignNodeAddress", "CampaignUnresolvedPoint",
             "FutureCampaignDraft", "campaign_draft_schema"]
+
+from .checkpoint_output import (
+    CheckpointDraft,
+    MaterializationAdjustmentDraft,
+    MaterializationFieldProposal,
+    checkpoint_draft_schema,
+)
+
+__all__ += ["CheckpointDraft", "MaterializationAdjustmentDraft", "MaterializationFieldProposal", "checkpoint_draft_schema"]

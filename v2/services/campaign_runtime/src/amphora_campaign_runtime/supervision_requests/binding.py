@@ -5,6 +5,7 @@ import json
 from dataclasses import dataclass
 from typing import ClassVar
 
+from amphora_contracts_planning import checkpoint_draft_schema
 from amphora_contracts_supervision import CheckpointRequest, SupervisionRequest
 
 from ..supervision_scope.observations import require
@@ -26,6 +27,8 @@ class SupervisionRequestBinding:
     def bind(cls, request, footprint, *, actor_id):
         record = cls.record_type.model_validate_json(request.model_dump_json())
         original, context, cut = record.planning_request, record.planning_request.context, footprint.cut
+        require(context.output_schema != checkpoint_draft_schema() or isinstance(record, CheckpointRequest),
+                'checkpoint_output_requires_checkpoint_request')
         require(record.snapshot == cls.export_type(footprint).document(), 'scope_snapshot_mismatch')
         require(record.reference.scope == cut.scope and record.reference.run_id == cut.run_id,
                 'decision_reference_mismatch')

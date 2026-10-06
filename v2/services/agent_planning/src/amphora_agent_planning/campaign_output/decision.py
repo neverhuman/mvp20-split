@@ -1,6 +1,7 @@
 """Original request identity bounds interpretation, never adjustment permission."""
 
 from dataclasses import dataclass
+from typing import ClassVar
 
 from amphora_contracts_core import Scope, WireModel
 from amphora_contracts_planning import campaign_draft_schema
@@ -12,13 +13,14 @@ from ..context.policy import require
 @dataclass(frozen=True)
 class CampaignDecisionScope:
     request: RequestSnapshot
+    profile: ClassVar = staticmethod(campaign_draft_schema)
 
     @classmethod
     def bind(cls, request):
         original = request.document()
         checked = RequestSnapshot.bind(original, actor_id=original.actor_id, scope=original.reference.scope)
         require(original.purpose in {'campaign_proposal', 'supervision'}, 'campaign_output_purpose')
-        require(original.context.output_schema == campaign_draft_schema(), 'campaign_output_profile')
+        require(original.context.output_schema == cls.profile(), 'campaign_output_profile')
         return cls(checked)
 
     def validate(self, draft):

@@ -1,5 +1,6 @@
 """Versioned intake preserves original receipts without provider work."""
 
+import hashlib
 import json
 from dataclasses import replace
 
@@ -11,6 +12,7 @@ from amphora_agent_planning.supervision_intake.snapshot import (
     IntakeSnapshot,
     read_snapshot,
 )
+from amphora_contracts_planning import checkpoint_draft_schema
 from amphora_contracts_supervision import CheckpointRequest, parse_checkpoint_command
 from pydantic import ValidationError
 from sqlalchemy import text
@@ -18,6 +20,22 @@ from sqlalchemy import text
 from .support import FIXTURES, principal
 from .support import command as old_command
 from .support import request as old_request
+
+
+def test_new_output_profile_requires_explicit_checkpoint_request():
+    actor = principal()
+    value = request(actor)
+    data = value.model_dump(mode='json')
+    data['planning_request']['context']['output_schema'] = checkpoint_draft_schema().model_dump(mode='json')
+    changed = CheckpointRequest.model_validate_json(json.dumps(data))
+    from amphora_agent_planning.supervision_intake.snapshot import encoded
+    data['planning_request_sha256'] = hashlib.sha256(encoded(changed.planning_request)).hexdigest()
+    accepted = CheckpointIntakeSnapshot.bind(CheckpointRequest.model_validate_json(json.dumps(data)), actor)
+    assert accepted.planning.document().context.output_schema == checkpoint_draft_schema()
+    legacy = old_request(actor).model_dump(mode='json')
+    legacy.update(planning_request=data['planning_request'], planning_request_sha256=data['planning_request_sha256'])
+    with pytest.raises(ValueError, match='checkpoint_output_requires_checkpoint_request'):
+        IntakeSnapshot.from_bytes(json.dumps(legacy).encode(), actor)
 
 
 def request(actor):

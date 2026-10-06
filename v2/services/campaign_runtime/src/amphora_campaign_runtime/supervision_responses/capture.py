@@ -4,7 +4,12 @@ import hashlib
 import json
 
 from amphora_contracts_core import Scope, WireModel
-from amphora_contracts_planning import CampaignDraft, campaign_draft_schema
+from amphora_contracts_planning import (
+    CampaignDraft,
+    CheckpointDraft,
+    campaign_draft_schema,
+    checkpoint_draft_schema,
+)
 
 from ..supervision_requests.binding import encoded
 from ..supervision_scope.observations import require
@@ -26,11 +31,15 @@ def proposal_from_capture(original, observation, raw):
     proposal = observation.proposal
     require(raw and observation.output_complete and proposal is not None and observation.reason_code is None,
             'successful_capture_incomplete')
-    require(original.context.output_schema == campaign_draft_schema() and
+    profile = original.context.output_schema
+    require(profile in (campaign_draft_schema(), checkpoint_draft_schema()) and
             proposal.output_schema == original.context.output_schema, 'output_profile_mismatch')
+    model = CheckpointDraft if profile == checkpoint_draft_schema() else CampaignDraft
+    if model is CheckpointDraft:
+        require(original.purpose == 'supervision' and original.runtime_cut is not None, 'checkpoint_output_purpose')
     try:
         document = json.loads(raw.decode('utf-8'), object_pairs_hook=unique, parse_constant=finite)
-        draft = CampaignDraft.model_validate_json(json.dumps(document, allow_nan=False))
+        draft = model.model_validate_json(json.dumps(document, allow_nan=False))
         payload = encoded(draft)
     except (ValueError, UnicodeError, RecursionError) as error:
         raise ValueError('invalid_campaign_capture') from error
@@ -51,6 +60,10 @@ def proposal_from_capture(original, observation, raw):
         require(draft.candidate.cut == original.runtime_cut, 'adjustment_cut_mismatch')
         identities = [(tuple(change.target.scope_path), change.target.node_id, change.input_name)
                       for change in draft.candidate.changes]
+        require(len(set(identities)) == len(identities), 'duplicate_adjustment')
+    if draft.candidate is not None and draft.candidate.kind == 'materialization_adjustment':
+        require(draft.candidate.cut == original.runtime_cut, 'adjustment_cut_mismatch')
+        identities = [(change.target.model_dump_json(), change.field_name) for change in draft.candidate.changes]
         require(len(set(identities)) == len(identities), 'duplicate_adjustment')
     pending = [draft]
     while pending:

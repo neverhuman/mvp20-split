@@ -23,3 +23,6 @@ Early/out-of-order or late wrappers may be recorded as original evidence. This d
 ## Replacement gate
 
 Preserve exact canonical command/wrapper/original request bytes, command operation IDs, receipts and timestamps. Keep actor/scope checks and command/slot/request lock order. Tests prove atomic rollback, same-command concurrency, conflicting decision-slot concurrency, legacy request interoperability, insert-only grants and zero provider-attempt side effects. B1.04b adds configured HTTP; d proves actual-owner installed exchange. Scientific and live-model claims remain separately gated.
+
+
+The checkpoint output schema requires the explicit CheckpointRequest wrapper; legacy supervision intake rejects that combination before provider work. Existing checkpoint requests with older output profiles remain readable.

@@ -40,7 +40,8 @@ def verify(output, runtime_predecessor, planning_predecessor):
         run([uv, 'build', '--project', specs[name][0], '--wheel', '--out-dir', wheels])
         print(json.dumps({'built': name}), flush=True)
     copied = output / 'root'
-    for rel in ('services/campaign_runtime/tests', 'services/agent_planning/tests', 'contracts/supervision/tests'):
+    for rel in ('services/campaign_runtime/tests', 'services/agent_planning/tests', 'contracts/supervision/tests',
+                'contracts/planning/tests/checkpoint_output', 'contracts/schemas'):
         shutil.copytree(ROOT / rel, copied / rel, ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
     for rel in ('contracts/fixtures/v2/executable_cases.json',):
         (copied / rel).parent.mkdir(parents=True, exist_ok=True)
@@ -68,18 +69,21 @@ def verify(output, runtime_predecessor, planning_predecessor):
             run([python, '-I', '-c', 'import importlib.util,sys; from pathlib import Path; '
                 f'import {module}; assert Path({module}.__file__).absolute().is_relative_to(Path(sys.prefix).absolute()); '
                 f'assert all(importlib.util.find_spec(name) is None for name in {excluded!r})'])
-            areas = [('contracts/supervision/tests', None)]
+            areas = [('contracts/supervision/tests', None), ('contracts/planning/tests/checkpoint_output', None)]
             if owner == 'runtime':
                 areas.extend(('services/campaign_runtime/tests/' + area, None)
                              for area in ('supervision_scope', 'supervision_client', 'supervision_responses', 'supervision_capture'))
                 areas.append(('services/campaign_runtime/tests/supervision_journal', ['test_frames.py', 'test_series.py', 'test_checkpoint_frames.py']))
                 areas.append(('services/campaign_runtime/tests/supervision_policy', ['test_policy.py', 'test_scalars.py', 'test_catalog.py']))
                 areas.append(('services/campaign_runtime/tests/supervision_checkpoints', ['test_seed.py', 'test_values.py']))
+                areas.append(('services/campaign_runtime/tests/supervision_effects', None))
             else:
+                areas.append(('services/agent_planning/tests/campaign_output', None))
                 areas.extend([('services/agent_planning/tests/supervision_client', None),
                               ('services/agent_planning/tests/supervision_api', ['test_credentials.py', 'test_bounds.py']),
                               ('services/agent_planning/tests/supervision_intake', ['test_snapshot.py',
                                'test_checkpoints.py::test_pure_v2_intake_and_closed_v1_parser',
+                               'test_checkpoints.py::test_new_output_profile_requires_explicit_checkpoint_request',
                                'test_checkpoints.py::test_target_shape_checks_do_not_grant_runtime_authority'])])
             suites = []
             for index, (relative, files) in enumerate(areas):
@@ -98,8 +102,8 @@ def verify(output, runtime_predecessor, planning_predecessor):
     schemas = ROOT / 'contracts/schemas'
     schema_pins = {p.relative_to(schemas).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
                    for p in schemas.rglob('*.json') if p.name != 'manifest.json'}
-    assert len(schema_pins) == 538
-    previous = json.loads((ROOT / 'contracts/supervision/tests/fixtures/admission_predecessor_schema_pins.json').read_bytes())['schemas']
+    assert len(schema_pins) == 542
+    previous = json.loads((ROOT / 'contracts/supervision/tests/fixtures/effects_predecessor_schema_pins.json').read_bytes())['schemas']
     assert all(schema_pins[name] == digest for name, digest in previous.items())
     manifest = {'status': 'passed', 'verified_at': datetime.now(ZoneInfo('America/Chicago')).strftime('%Y-%m-%d %H:%M:%S'),
                 'owners': records, 'schema_pins': schema_pins, 'unchanged_predecessor_schemas': len(previous),
