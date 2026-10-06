@@ -1,0 +1,7 @@
+# Actual owner integration
+
+Select this folder explicitly with both AMPHORA_TEST_POSTGRES=1 and AMPHORA_TEST_OWNER_PROCESSES=1. The owner_processes marker and separate opt-in keep these slower combined scenarios out of routine module SQL runs. They use actual Data, Runtime and Planning HTTP services plus configured worker, graph coordinator and retention delivery processes. The current environment is editable; independent installed acceptance remains V1.
+
+Scenarios: accepted abstention and invalid output followed by bounded repair/fallback; each finishes the scalar materialization graph, preserves original call reservations/deadline, verifies exact public execution reports and immutable replay, and confirms the output Artifact retention through Data's authenticated Runtime callback. Unconfigured notification destinations are outside this proof. Fixture outputs are synthetic and do not establish scientific validity.
+
+Preserve basetemp output directories: Data's retained fixture history refers to their byte stores. Never reuse or delete a previous explicit basetemp on rerun. Owner processes close in ExitStack/finally. Credentials exist only in the subprocess environment; JSON configs carry environment-variable names. Helpers do not import Planning/Data internals or query their business tables; migration is an explicit current Planning owner subprocess, never an older binary or reset.

@@ -13,9 +13,9 @@ from urllib.request import ProxyHandler, Request, build_opener
 
 
 class Owner:
-    def __init__(self, python, module, config, env, token, output):
+    def __init__(self, python, module, config, env, token, output, *, port=None):
         with socket.socket() as reservation:
-            reservation.bind(('127.0.0.1', 0))
+            reservation.bind(('127.0.0.1', 0 if port is None else port))
             port = reservation.getsockname()[1]
         self.endpoint, self.token = f'http://127.0.0.1:{port}', token
         self.log = (output / (module + '.log')).open('ab')

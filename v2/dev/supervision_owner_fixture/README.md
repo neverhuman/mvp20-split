@@ -13,3 +13,5 @@ B2.01b.iv successor verification targets Runtime0.33/Planning0.75 and explicit c
 
 
 Verified 2026-10-05 20:04:57: B2.01b.iv current Runtime0.33/Planning0.75 actual materialization-target exchange passed11 process stages,6 hosts,2 lost replies and original/replacement recovery. Four isolated installs668 cases;40/30 old migration files unchanged. No provider call, SQL reset or execution-winner claim. All owned processes closed. Evidence: docs/Audits/Evidence/BP-07-Supervisor/Checkpoint_Owners.json (relative to v2).
+
+Owner accepts an optional explicit loopback port for mutually configured Data retention callbacks and Runtime hosting. The caller can reserve it until startup; default ephemeral-port behavior remains unchanged. This is test process wiring, not a production listener allocation or readiness guarantee.

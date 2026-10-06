@@ -1,0 +1,31 @@
+{
+  "reviewed_at": "2026-10-06 01:54:28",
+  "tier": "actual Data/Runtime/Planning HTTP and worker subprocesses; editable environment",
+  "scenarios": [
+    {
+      "run": "d9467a725bff497baaaa4d3f67f6ff5f",
+      "variant": "fixture_abstain",
+      "requests": 1,
+      "outcome": "model_accepted",
+      "assertions": "graph completed; exact public reports; original deadline/reservations; replacement replay; all artifact_confirm acknowledged"
+    },
+    {
+      "run": "ddf7612f70a34024addb647d117c5849",
+      "variant": "fixture_invalid",
+      "requests": 2,
+      "outcome": "fallback",
+      "assertions": "graph completed; exact public reports; original deadline/reservations; replacement replay; all artifact_confirm acknowledged"
+    }
+  ],
+  "verification": "Both evidence files are written only after every scenario assertion. Original pytest terminal session unavailable after compaction; no elapsed-time/exit-code claim. Dev boundaries: 12 passed in 13.37s.",
+  "limits": [
+    "Deterministic provider only",
+    "Independent installed replacement remains V1",
+    "Unconfigured notification deliveries intentionally outside retention proof"
+  ],
+  "versions": {
+    "runtime": "0.59",
+    "planning": "0.89",
+    "data": "0.29"
+  }
+}

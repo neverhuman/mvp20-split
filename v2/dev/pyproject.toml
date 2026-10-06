@@ -80,7 +80,7 @@ amphora-solver-score = { path = "../tools/solver_score", editable = true }
 amphora-solver-retain = { path = "../tools/solver_retain", editable = true }
 
 [tool.pytest.ini_options]
-markers = ["postgres: requires explicit local PostgreSQL fixture opt-in"]
+markers = ["postgres: requires explicit local PostgreSQL fixture opt-in", "owner_processes: separately opted-in actual owner process integration"]
 testpaths = ["../services/data_artifacts/tests", "../contracts/runtime/tests", "../contracts/artifacts/tests", "../contracts/commands/tests", "../contracts/core/tests", "../contracts/tools/tests", "../contracts/campaigns/tests", "../services/campaign_runtime/tests", "tests"]
 addopts = "--import-mode=importlib"
 pythonpath = ["."]
