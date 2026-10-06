@@ -1,24 +1,24 @@
 # Restore
 
-Read first after compression. Refreshed 2026-10-05 21:47:39 (America/Chicago).
+Read first after compression. Refreshed 2026-10-05 21:55:23 (America/Chicago).
 
 ## Resume
 
-Owner says continue until needed. Latest pushedfef32f99; c.ii/c complete ready commit/push. No tests/hosts/workers running. Current BP-07.04/B2.02d effective conversion integration; next B2.03 autonomous loop. Do not stop at checkpoint.
+Owner says continue until needed. Latest pushed2ab7e9a3; B2.02 complete ready commit/push. No tests/hosts/workers running. Current BP-07.04/B2.03 bounded autonomous loop; next B3 failure/process proof. Keep working after commit.
 
-Runtime0.44/runtime0024 APPLIED; NEVER Runtime<=0.42 migrators. Planning0.77/planning0016. WinnerStore persists one model/fallback/cancel outcome with selection/audit/outbox under run lock; current selected facts and original policy/ceilings are checked; old winner replay survives terminal state. CheckpointGate now releases committed review/unchanged winners and blocks pinned block fallback. It explicitly holds adjusted winners until d; remove that hold only after both conversion boundaries share immutable effective input resolution.
+Runtime0.45/runtime0024 APPLIED; NEVER Runtime<=0.42 migrators. Planning0.77/planning0016. WinnerStore accepts one model/fallback/cancel outcome with immutable selection/audit/outbox; GraphPass gate releases committed outcomes. artifact_bindings/effective.py resolve_effective now feeds both BindingExecution.step and BindingCoordinator.context. Same selected fields and semantic digest; original plan stays unchanged. Temporary scalar hold removed. Pending/blocked conversion rejected; selected original mismatch raises TransitionError. Tests actual Runtime SQL/scripted MemoryArtifacts, not actual installed Data/tool.
 
-Next d: add focused effective resolver for BindingInput, used by artifact_bindings/storage.py BindingExecution.step and artifact_bindings/coordinator.py BindingCoordinator.context. Preserve node/plan/original Artifact; replace only allowed resolved scalar bindings using winner.selection.resolve, producing matching semantic digest for opening/revalidation. Checkpoint resolver must reject pending/cancelled/blocked outcome if conversion is invoked directly. Unsupervised/project nodes retain ordinary BindingInput. Then remove scalar hold in CheckpointGate and replace staging test with actual selected-value conversion test. Tests can use existing Runtime-owned scripted MemoryArtifacts (tests/bindings/support.py) for B2; actual installed Data/tool remain V1. New winner fixture graph.entry.schemas is None; supply exact fixture SchemaCatalog (support.plan schema is integer field a) for conversion tests. Denied publication/replacement/replay must preserve accepted selection separately from execution outcome.
+Latest86 scoped cases92.54s;effective26statements6branches100%,winner217statements24branches100%;broad86% retains old HTTP/expiry/cache gaps.18 moved binding/boundary21.02s. test_supervision.py now belongs tests/bindings; importing fixture graph.entry.schemas requires exact SchemaCatalog as shown there. Evidence Checkpoint_Conversion.json. Public exchange verified336 scoped+1056isolated;542schemas preserve538. Current installed runtime predecessors only0.42 (do not migrate them).
 
-Latest c.ii25SQL31.61s/219statements26branches100%;16release/boundary16.12s. c.i164cases99.16s. Evidence Checkpoint_Release.json/Checkpoint_Winner.json. Public exchange already336scoped+1056isolated;542 schemas preserve538. No source edits while verification runs.
+Next B2.03 requires bounded design/decomposition before coding: durable context preparation of pending slots, Runtime request/outbox plus per-slot/campaign request/call ceilings in same run transaction, Planning autonomous execution of admitted requests with original BudgetPolicy/issuance, response/capture exchange, Runtime acceptance or bounded repair/fallback. Existing RequestJournal.prepare owns transaction; extract caller-transaction path before atomic slot accounting. Existing PlanningRunner handles own request/attempt/budget/issuance/unknown settlement but is not wired to supervision intake. Public supervision APIs are intake/readback only; no provider authority. Context/prompt/model/policy Artifact references must be prepared, not fabricated. Reuse Planning campaign_preparations and existing publication/context boundaries; inspect READMEs first. Live model/provider/egress/spend TBA blocks real calls only. Deterministic configured providers prove orchestration. No external JARVIS or subagents.
 
 ## Canonical progress
 
-Parent67.92%,13/20;child39.58%,Build52.78%,Acceptance0%,1/4. B1=100%;B2=58.33%(.01=100%,.02=75%,.03=0%);B3/V1=0%. B2.02 a/b/c100%,d0%. Current d,next B2.03. No owner decision needed.
+Parent68.33%,13/20;child41.67%,Build55.56%,Acceptance0%,1/4. B1=100%;B2=66.67%(.01/.02=100%,.03=0%);B3/V1=0%. Current B2.03,next B3. No owner decision needed for deterministic implementation.
 
 ## Current boundaries
 
-Runtime0.44/runtime0024;Planning0.77/planning0016;publicSupervision0.5;graph-runtime0.13;publicPlanning0.10;542 schemas preserve538 predecessors. Actual retained DB Runtime0024/Planning0016. **NEVER run Runtime<=0.42 or Planning<=0.73 migrators.** Data0.29/artifacts0012 (never<=0.25),Research0.34/research0013 (never<=0.33),Knowledge0.18,Registry0.1.
+Runtime0.45/runtime0024;Planning0.77/planning0016;publicSupervision0.5;graph-runtime0.13;publicPlanning0.10;542 schemas preserve538 predecessors. Actual retained DB Runtime0024/Planning0016. **NEVER run Runtime<=0.42 or Planning<=0.73 migrators.** Data0.29/artifacts0012 (never<=0.25),Research0.34/research0013 (never<=0.33),Knowledge0.18,Registry0.1.
 
 - Public CheckpointRequest/Snapshot2 use explicit planning.supervision.request.v2; old request parsers/bytes closed. Runtime/Planning journals, separate v2 HTTP/client paths and exact receipts implemented. No provider call grant follows from recording.
 - graph.admit_supervised numeric-v2 command pins exact policy hash. PolicyCatalog requires exact scope/plan/policy, no latest fallback. GraphAdmission.admit_supervised pins before frontier/initial issuance; original receipt replay precedes catalog lookup.

@@ -8,7 +8,8 @@ from sqlalchemy import text
 from ..compiler.catalog import canonical
 from ..coordinator.state import persist_node
 from ..lifecycle.claims import RUN, SCOPE
-from .model import BindingAddress, BindingInput
+from .effective import resolve_effective
+from .model import BindingAddress
 
 
 def load(conn, params):
@@ -52,7 +53,7 @@ class BindingExecution:
         address = BindingAddress(self.plan.document.definition.scope, self.params["run"], row["activation_id"], self.plan.sha256)
         params = {**self.params, "intent": address.identity}
         if row["status"] == "ready":
-            binding = BindingInput.resolve(node, scope.environment)
+            binding = resolve_effective(self.conn, self.params, row['activation_id'], node, scope.environment)
             self.conn.execute(text("INSERT INTO runtime.binding_intents (tenant_id,project_id,run_id,activation_id,intent_id,"
                 "plan_sha256,semantic_sha256,node,inputs,deadline,opened_revision,status) VALUES "
                 "(:tenant,:project,:run,:activation,:intent,:plan,:sha,CAST(:node AS jsonb),CAST(:inputs AS jsonb),"

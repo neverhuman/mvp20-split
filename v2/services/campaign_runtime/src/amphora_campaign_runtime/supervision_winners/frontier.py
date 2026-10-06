@@ -22,8 +22,4 @@ class CheckpointGate:
         outcome = winner.document().outcome
         if outcome.kind == 'cancelled' or (outcome.kind == 'fallback' and outcome.action == 'block_target'):
             return cls(False, True, outcome.reason_code)
-        # B2.02d connects the same selected fields at conversion opening and revalidation.
-        # Until then never issue original scalar values after accepting a different selection.
-        if winner.selection is not None:
-            return cls(False)
         return cls(True)

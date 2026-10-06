@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "verified_at": "2026-10-05 21:55:23",
+  "runtime": "0.45.0",
+  "migration": "runtime_0024",
+  "tests": {
+    "scoped": 86,
+    "seconds": 92.54,
+    "relocated_binding_and_boundaries": 18,
+    "relocated_seconds": 21.02
+  },
+  "coverage": {
+    "effective": {
+      "statements": 26,
+      "branches": 6,
+      "percent": 100
+    },
+    "winners": {
+      "statements": 217,
+      "branches": 24,
+      "percent": 100
+    },
+    "broad_percent": 86,
+    "unexecuted": "Unchanged HTTP publication and prior binding expiry/cache paths"
+  },
+  "limits": [
+    "Actual Runtime SQL with scripted MemoryArtifacts peer; installed Data/tool still V1",
+    "No autonomous request/call/repair loop yet"
+  ],
+  "warning": "Existing Starlette TestClient/httpx deprecation warning; no dependency change"
+}

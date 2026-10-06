@@ -14,6 +14,7 @@ from ..coordinator.values import ensure
 from ..lifecycle.claims import RUN, SCOPE, RuntimeLeases
 from ..lifecycle.model import RunBudget, TransitionError
 from .conversion import Conversion
+from .effective import resolve_effective
 from .model import BindingAddress, BindingInput
 from .storage import close, load
 
@@ -74,7 +75,7 @@ class BindingCoordinator:
             " AND activation_id=:activation"), {**params, "activation": row["activation_id"]}).scalar_one()
         state = ScopeState.load(conn, params, entry.plan, key)
         node_row = next(item for item in state.nodes.values() if item["activation_id"] == row["activation_id"])
-        binding = BindingInput.resolve(state.definition(node_row), state.environment)
+        binding = resolve_effective(conn, params, row['activation_id'], state.definition(node_row), state.environment)
         ensure(binding.sha256 == row["semantic_sha256"] and binding.values.record() == row["inputs"], "binding_source_cut_changed")
         ensure(node_row["status"] == "issued", "binding_node_not_issued")
         return entry, binding, node_row

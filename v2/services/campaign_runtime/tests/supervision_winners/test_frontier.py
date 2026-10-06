@@ -40,19 +40,6 @@ def test_pinned_block_fallback_never_issues_tool(graph_env):
         assert row.status == 'blocked' and row.reason_code == 'checkpoint_deadline_exhausted'
 
 
-def test_adjusted_winner_does_not_issue_original_values_before_conversion_integration(graph_env):
-    store, actor, ref, slot = setup(graph_env)
-    response = prepare(graph_env, actor, ref, slot)
-    winner = store.resolve(actor, ref, response_id=response)
-    assert winner.selection is not None
-    assert advance(graph_env, ref).outcome.status == 'accepted'
-    with graph_env.env.engine.connect() as conn:
-        assert conn.execute(text('SELECT count(*) FROM runtime.binding_intents WHERE run_id=:run'),
-            {'run': ref.run_id}).scalar_one() == 0
-        assert conn.execute(text("SELECT status FROM runtime.graph_nodes WHERE run_id=:run AND node_id='pack'"),
-            {'run': ref.run_id}).scalar_one() == 'ready'
-
-
 def test_committed_review_outcome_releases_invoke_without_scalar_input_change(graph_env):
     store, actor, ref, slot = setup(graph_env, invoke=True)
     response = prepare(graph_env, actor, ref, slot,

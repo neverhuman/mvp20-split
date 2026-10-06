@@ -87,4 +87,6 @@ The package-root GraphAdvancer export resolves its explicit import on demand so 
 
 Successor admission reuses the ordinary admission transaction and original-receipt check. The focused [successor module](../successors/README.md) resolves the terminal parent cut and carried values under the predecessor lock after the global guard. The new frontier, ancestry, audit/outbox and receipt commit together; ordinary admission behavior and old schemas remain unchanged.
 
-Admitted supervision checkpoints gate only selected ready targets. GraphPass consults the immutable checkpoint winner before normal issuance: pending holds; pinned block fallback persists its reason; review/unchanged outcomes release normal behavior. Adjusted scalar winners remain held until the shared conversion resolver is connected in BP-07.04/B2.02d. Response recording alone cannot release work.
+Admitted supervision checkpoints gate only selected ready targets. GraphPass consults the immutable checkpoint winner before normal issuance: pending holds; pinned block fallback persists its reason; review/unchanged outcomes release normal behavior. Adjusted scalar winners release through the shared artifact-binding effective resolver at opening and source-cut revalidation. Response recording alone cannot release work.
+
+B2.02d integration now connects committed scalar winners through artifact_bindings.resolve_effective at both opening and source-cut revalidation. The temporary scalar hold is removed; winner acceptance still does not claim publication or tool success. Verification is in progress.

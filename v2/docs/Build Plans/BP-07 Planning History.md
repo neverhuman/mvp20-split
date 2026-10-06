@@ -899,3 +899,6 @@ Four current installed owners668 cases(233 Runtime each,101 Planning each),40/30
 
 
 2026-10-05 21:47:39: c.ii and c COMPLETE. Runtime0.44/runtime0024;25SQL/winner/coordinator31.61s,219statements26branches100%;16release/boundary16.12s. CheckpointGate releases only committed review/unchanged winners or applies pinned block reason; single Invoke issuance proved. Scalar winners deliberately held until d effective conversion resolver. B2.02=75%,B2=58.33%,Build52.78%,child39.58%,parent67.92%;current d.
+
+
+2026-10-05 21:55:23: B2.02d and B2.02 COMPLETE. Runtime0.45/runtime0024. Shared artifact_bindings.resolve_effective used at intent opening and every source-cut revalidation;CheckpointGate scalar hold removed. Selected2 publishes while original plan source1 remains unchanged; replacement/lost publication/denial/unchanged fallback/pending/block/original-value mismatch checked.86 scoped cases92.54s;effective26statements6branches100%,winner217statements24branches100%;broad86% old HTTP/expiry/cache gaps.18 moved binding-module/boundary21.02s. Scripted Artifact peer, not actual Data/tool installation. B2.02=100%,B2=66.67%,Build55.56%,child41.67%,parent68.33%;current B2.03.
