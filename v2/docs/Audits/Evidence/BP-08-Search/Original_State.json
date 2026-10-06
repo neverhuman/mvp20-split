@@ -1,0 +1,15 @@
+{
+  "verified_at": "2026-10-06 10:04:32",
+  "scope": "BP-08.01/B2.01",
+  "tests": 69,
+  "seconds": 12.57,
+  "coverage": {
+    "statements": 185,
+    "covered_statements": 182,
+    "branches": 36,
+    "covered_branches": 35
+  },
+  "independent_oracle": "Windows .NET SHA256 and UInt64; seed zero; counters 0,1,2,2^53-2",
+  "pending": "Checkpoint semantic mapper, initial candidate state, isolated installation replay",
+  "paid_calls": 0
+}

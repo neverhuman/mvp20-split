@@ -468,6 +468,12 @@ requires-dist = [
 name = "amphora-evolution-search"
 version = "0.1.0"
 source = { editable = "../tools/evolution_search" }
+dependencies = [
+    { name = "amphora-contracts-search" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "amphora-contracts-search", editable = "../contracts/search" }]
 
 [[package]]
 name = "amphora-foundation-verification"
