@@ -1,0 +1,9 @@
+# Autonomous checkpoint preparation
+
+Runtime owns this pure boundary under BP-07.04 B2.03a.i. `ReviewedRecipe` owns canonical immutable configuration bytes, scoped Artifact identity consistency, context limits and declared actions. Its private versioned record pins objective, trusted prompt reference, model configuration, static context and Planning budget-policy reference. It deliberately excludes the supervision policy Artifact and dynamic declaration to avoid a hash cycle. At most 127 static entries leave one manifest position for the checkpoint declaration. Ordered context is preserved in the digest. Validation does not prove Artifact availability, rights, reviewed prompt bytes or budget authorization; their owners still enforce those boundaries.
+
+`CallReservations` owns conservative potential-call accounting for one run. Each unique request reserves its full physical-attempt allowance against both slot and campaign ceilings. Exact replay returns the original history without consuming again; conflicting replay and duplicate history are rejected. There is no refund path. Unused attempts and unknown paid-call outcomes remain reserved. Planning separately owns actual token/cost accounting.
+
+The caller must supply the original pinned rule/ceilings and exact run-scoped reservation history under Runtime's run lock. These pure objects perform no SQL, publication, provider dispatch or acceptance. Admission recipe pinning and atomic request/outbox/reservation integration remain B2.03a.ii; context preparation remains a.iii. Existing private policy v1 and all public request profiles are unchanged.
+
+Replacement verification lives in `tests/supervision_preparation`: immutable recipe reconstruction, identity conflicts, strict limits and all four reservation ceilings plus exact/conflicting replay. This pure proof does not claim concurrency safety; actual SQL atomicity and races belong to the subsequent integration gate.

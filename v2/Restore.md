@@ -4,9 +4,9 @@ Read first after compression. Refreshed 2026-10-05 21:55:23 (America/Chicago).
 
 ## Resume
 
-Owner says continue until needed. Latest pushed2ab7e9a3; B2.02 complete ready commit/push. No tests/hosts/workers running. Current BP-07.04/B2.03 bounded autonomous loop; next B3 failure/process proof. Keep working after commit.
+Owner says continue until needed. Latest pushed4f07785a; pending commit for B2.03a.i; B2.02 complete and pushed. No tests/hosts/workers running. Current BP-07.04/B2.03a.ii recipe admission and reservations; next B3 failure/process proof. Keep working after commit.
 
-Runtime0.45/runtime0024 APPLIED; NEVER Runtime<=0.42 migrators. Planning0.77/planning0016. WinnerStore accepts one model/fallback/cancel outcome with immutable selection/audit/outbox; GraphPass gate releases committed outcomes. artifact_bindings/effective.py resolve_effective now feeds both BindingExecution.step and BindingCoordinator.context. Same selected fields and semantic digest; original plan stays unchanged. Temporary scalar hold removed. Pending/blocked conversion rejected; selected original mismatch raises TransitionError. Tests actual Runtime SQL/scripted MemoryArtifacts, not actual installed Data/tool.
+Runtime0.46/runtime0024 APPLIED; NEVER Runtime<=0.42 migrators. Planning0.77/planning0016. WinnerStore accepts one model/fallback/cancel outcome with immutable selection/audit/outbox; GraphPass gate releases committed outcomes. artifact_bindings/effective.py resolve_effective now feeds both BindingExecution.step and BindingCoordinator.context. Same selected fields and semantic digest; original plan stays unchanged. Temporary scalar hold removed. Pending/blocked conversion rejected; selected original mismatch raises TransitionError. Tests actual Runtime SQL/scripted MemoryArtifacts, not actual installed Data/tool.
 
 Latest86 scoped cases92.54s;effective26statements6branches100%,winner217statements24branches100%;broad86% retains old HTTP/expiry/cache gaps.18 moved binding/boundary21.02s. test_supervision.py now belongs tests/bindings; importing fixture graph.entry.schemas requires exact SchemaCatalog as shown there. Evidence Checkpoint_Conversion.json. Public exchange verified336 scoped+1056isolated;542schemas preserve538. Current installed runtime predecessors only0.42 (do not migrate them).
 
@@ -14,11 +14,11 @@ Next B2.03 requires bounded design/decomposition before coding: durable context 
 
 ## Canonical progress
 
-Parent68.33%,13/20;child41.67%,Build55.56%,Acceptance0%,1/4. B1=100%;B2=66.67%(.01/.02=100%,.03=0%);B3/V1=0%. Current B2.03,next B3. No owner decision needed for deterministic implementation.
+Parent68.52%,13/20;child42.59%,Build56.79%,Acceptance0%,1/4. B1=100%;B2=70.37%(.01/.02=100%,.03=11.11%);B3/V1=0%. B2.03 a33.33%,b/c0%;a.i100%,a.ii/a.iii0%. Current B2.03a.ii versioned recipe admission and atomic SQL reservations. No owner decision needed for deterministic implementation.
 
 ## Current boundaries
 
-Runtime0.45/runtime0024;Planning0.77/planning0016;publicSupervision0.5;graph-runtime0.13;publicPlanning0.10;542 schemas preserve538 predecessors. Actual retained DB Runtime0024/Planning0016. **NEVER run Runtime<=0.42 or Planning<=0.73 migrators.** Data0.29/artifacts0012 (never<=0.25),Research0.34/research0013 (never<=0.33),Knowledge0.18,Registry0.1.
+Runtime0.46/runtime0024;Planning0.77/planning0016;publicSupervision0.5;graph-runtime0.13;publicPlanning0.10;542 schemas preserve538 predecessors. Actual retained DB Runtime0024/Planning0016. **NEVER run Runtime<=0.42 or Planning<=0.73 migrators.** Data0.29/artifacts0012 (never<=0.25),Research0.34/research0013 (never<=0.33),Knowledge0.18,Registry0.1.
 
 - Public CheckpointRequest/Snapshot2 use explicit planning.supervision.request.v2; old request parsers/bytes closed. Runtime/Planning journals, separate v2 HTTP/client paths and exact receipts implemented. No provider call grant follows from recording.
 - graph.admit_supervised numeric-v2 command pins exact policy hash. PolicyCatalog requires exact scope/plan/policy, no latest fallback. GraphAdmission.admit_supervised pins before frontier/initial issuance; original receipt replay precedes catalog lookup.
@@ -44,3 +44,9 @@ No subagents, external JARVIS, v1 edits, SQL resets, old migrators or external m
 Use PYTHONUTF8=1 for every Python invocation. Python v2/dev/.venv/Scripts/python.exe; uv v2/.venv/Scripts/uv.exe. Pytest -c v2/dev/pyproject.toml --tb=short; actual SQL AMPHORA_TEST_POSTGRES=1. Filesystem coverage paths only: dotted Planning API leaf caused SQLAlchemy Cython initialization failure; no production workaround. Normal Ruff, no overrides. Use rg --files before paths; avoid guessed filenames and PowerShell directory/*.py globs. Stop shell sequences on nonzero exit. Windows Path.absolute(), never resolve(). Background windows hidden. Communicate at least every60s.
 
 Git main: git -c safe.directory=//DesktopNAS/Code/mvp20-split. Remote https://github.com/neverhumanbot/mvp20-split.git. Commit/push verified significant work after canonical tracker/history/Restore sync, then immediately continue. Existing v1/LICENSE metadata debt remains untouched.
+
+B2.03 design now in BP-07.04 Autonomous loop.md: three equal a/b/c units; a has recipe/reservation domain, policy/SQL binding, preparation bridge. All0%;current a.i. Key finding: current scalar policy does not bind future model/context recipe. Add explicit new private policy profile carrying exact recipe SHA (preserve old profile). Recipe excludes policy Artifact/dynamic declaration to avoid circular hash; pins objective/prompt/model/staticcontext/actions/limits/Planning budget ref. Existing campaign-v1 prompt already schema-generic; reuse original trusted bytes and preparation machinery. Model/provider selection remains fixture-only until real-call owner choice.
+
+2026-10-05 22:08:16: B2.03a.i complete: private supervision_preparation ReviewedRecipe/CallReservations;27 pure tests3.35s,84stmts4branches100%. Current a.ii recipe-bound policy profile and atomic SQL. Progress parent68.52%,child42.59%,Build56.79%,B2=70.37%,B2.03=11.11%,a33.33%. No recipe publication/admission yet. Runtime0.46,DB0024 unchanged. New tests use no __init__.py; explicit short IDs required for oversized bytes fixtures on Windows.
+
+Boundary/private-import correction verified:39 preparation+boundary cases14.15s;Ruff passed. No tools/processes running.

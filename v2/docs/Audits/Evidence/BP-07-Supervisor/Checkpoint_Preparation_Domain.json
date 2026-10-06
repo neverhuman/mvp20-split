@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-10-05 22:08:16",
+  "gate": "B2.03a.i",
+  "runtime": "0.46.0",
+  "migration": "runtime_0024",
+  "tests": 27,
+  "seconds": 3.35,
+  "coverage": {
+    "statements": 84,
+    "branches": 4,
+    "percent": 100
+  },
+  "limits": [
+    "pure domain only",
+    "no SQL admission/reservation",
+    "no Artifact publication or model grant"
+  ],
+  "boundary_and_domain": {
+    "tests": 39,
+    "seconds": 14.15,
+    "ruff": "passed"
+  }
+}
