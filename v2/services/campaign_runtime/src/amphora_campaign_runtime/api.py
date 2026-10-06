@@ -2,6 +2,7 @@
 
 import asyncio
 import json
+from importlib.metadata import version
 from typing import Annotated
 
 from amphora_contracts_campaigns import CampaignDefinition
@@ -87,7 +88,7 @@ class RequestBounds:
 
 def create_app(admission=None, credentials=None, completion=None, history=None, graphs=None, authoring=False, universes=None,
                supervision=None) -> FastAPI:
-    app = FastAPI(title="Amphora runtime foundation", version="0.1.0")
+    app = FastAPI(title="Amphora runtime foundation", version=version("amphora-campaign-runtime"))
     app.add_middleware(RequestBounds)
     if (admission is None) != (credentials is None):
         raise ValueError("Admission and credentials must be configured together")

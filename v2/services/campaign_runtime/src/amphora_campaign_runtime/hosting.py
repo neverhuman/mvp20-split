@@ -58,7 +58,7 @@ class Host:
     def load(cls, path):
         raw = json.loads(Path(path).read_text(encoding="utf-8"))
         if not {"database_url_env", "principals", "fixtures"} <= set(raw) or set(raw) - {
-            "database_url_env", "principals", "fixtures", "tools", "artifacts", "delivery", "inspection", "graphs", "projections", "bindings", "authoring", "draft_registry", "supervision"}:
+            "database_url_env", "principals", "fixtures", "tools", "artifacts", "delivery", "inspection", "graphs", "projections", "bindings", "authoring", "draft_registry", "supervision", "supervision_admission"}:
             raise ValueError("Explicit database, principals and fixture allowlist required")
         entries, principals = [], []
         for item in raw["principals"]:
@@ -158,13 +158,18 @@ class Host:
             bindings = None if publisher is None else BindingCoordinator(engine, PublishedPlanCatalog(engine, graph_catalog), artifacts, publisher)
             drafts = DraftAdmissionGuard(engine, universes, eligibility) if authoring else None
             supervision = None
+            policies = recipes = None
+            if "supervision_admission" in raw:
+                from .supervision_preparation.configuration import admission_catalogs
+                policies, recipes = admission_catalogs(raw["supervision_admission"], Path(path).parent, graph_catalog)
             if "supervision" in raw:
                 from .supervision_api.configuration import configured
                 supervision = configured(engine, raw["supervision"])
             return cls(FixtureAdmission(engine, catalog), credentials, tuple(principals), completion,
                        DeliveryWorker(DeliveryStore(engine, policy), targets),
                        None if cursors is None else RuntimeHistory(engine, cursors),
-                       None if graph_catalog is None else (GraphAdmission(engine, graph_catalog, bindings_enabled=bindings is not None, drafts=drafts),
+                       None if graph_catalog is None else (GraphAdmission(engine, graph_catalog, bindings_enabled=bindings is not None, drafts=drafts,
+                                                                         policies=policies, recipes=recipes),
                                                            GraphAdvancer(engine, projections, bindings)), authoring, universes, supervision)
         except BaseException:
             engine.dispose()

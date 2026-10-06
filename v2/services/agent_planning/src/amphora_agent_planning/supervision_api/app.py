@@ -1,6 +1,7 @@
 """A focused public intake/readback surface, not an execution or provider endpoint."""
 
 import asyncio
+from importlib.metadata import version
 from typing import Annotated
 
 from amphora_contracts_commands import CommandEncodingError
@@ -31,7 +32,7 @@ from .credentials import AuthenticationError
 def create_app(intake=None, credentials=None):
     if (intake is None) != (credentials is None):
         raise ValueError('complete_supervision_configuration_required')
-    app = FastAPI(title='Amphora Planning supervisor intake', version='0.86.0')
+    app = FastAPI(title='Amphora Planning supervisor intake', version=version("amphora-agent-planning"))
     app.add_middleware(RequestBounds)
 
     @app.exception_handler(AuthenticationError)

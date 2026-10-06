@@ -1,0 +1,32 @@
+{
+  "checkpoint": "2026-10-06 01:27:11",
+  "task": "BP-07.04/B2.03c.ii.4c",
+  "versions": [
+    "Runtime0.59",
+    "Planning0.89"
+  ],
+  "tests": [
+    {
+      "owner": "Runtime",
+      "passed": 29,
+      "seconds": 49.95
+    },
+    {
+      "owner": "Planning",
+      "passed": 43,
+      "seconds": 58.16
+    }
+  ],
+  "coverage": {
+    "runtime_configuration": 95,
+    "planning_configuration": 96,
+    "admission_config_http": 100,
+    "deterministic_fixture": 100,
+    "note": "CLI subprocess paths execute outside parent coverage; unrelated modules excluded from claim"
+  },
+  "limits": [
+    "own databases and actual subprocesses; fixture peer endpoints remain disconnected for zero-call proof",
+    "combined actual Data/Runtime/Planning exchange and independent installed proof remain pending",
+    "no schema/migration/live-provider change"
+  ]
+}

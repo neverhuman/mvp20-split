@@ -27,6 +27,10 @@ def install_graphs(app, admission, advancer, credentials, artifacts=None):
     waits = WaitReads(admission.commands.engine)
     successors = SuccessorReads(admission.commands.engine)
 
+    if admission.policies is not None and admission.recipes is not None:
+        from ..supervision_preparation.http import install_admission
+        install_admission(app, admission, credentials)
+
     if admission.drafts is not None:
         @app.post("/v1/graph-runs/drafts", response_model=CommandReceipt)
         async def admit_draft(request: Request):
