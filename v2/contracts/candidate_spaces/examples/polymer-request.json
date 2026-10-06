@@ -1,0 +1,63 @@
+{
+  "wire_version": "1",
+  "source": {
+    "wire_version": "1",
+    "scope": {
+      "tenant_id": "synthetic",
+      "project_id": "candidate-spaces"
+    },
+    "authority": "synthetic",
+    "kind": "polymer",
+    "profile": {
+      "schema_id": "synthetic-labeled-polymer",
+      "version": "1",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "repeat_units": [
+      {
+        "unit_id": "A",
+        "label": "toy-A"
+      },
+      {
+        "unit_id": "B",
+        "label": "toy-B"
+      }
+    ],
+    "composition": null,
+    "sites": [
+      {
+        "site_id": "s0",
+        "unit_id": "A"
+      },
+      {
+        "site_id": "s1",
+        "unit_id": "B"
+      }
+    ],
+    "bonds": [
+      {
+        "left": "s0",
+        "right": "s1"
+      }
+    ],
+    "metadata": {
+      "sequence_arrangement": null,
+      "tacticity": null,
+      "degree_of_polymerization": null,
+      "distribution": null,
+      "branching": null,
+      "end_groups": null,
+      "bigsmiles": null
+    }
+  },
+  "operator": {
+    "schema_id": "synthetic-polymer-move",
+    "version": "1",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "move": {
+    "kind": "replace_unit",
+    "site_id": "s1",
+    "unit_id": "A"
+  }
+}

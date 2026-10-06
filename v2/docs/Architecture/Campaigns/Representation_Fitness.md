@@ -1,0 +1,19 @@
+# Candidate representation and fitness boundaries
+
+- Design status: BP-08.03 activated; implementation0%.
+- Last reviewed: 2026-10-06 12:54:00 (America/Chicago).
+- Parent: [Search](Search.md).
+
+Three independently packaged tools own synthetic bounded numeric coordinates, labeled polymer-chain blueprints and DNA strings. They depend on a new public candidate_spaces DTO package, never each other's implementations. Existing contracts/representations continues to own vector-space encodings; existing numerical search/checkpoint contracts remain stable. These fixtures exercise domain separation, not molecular validity or biological function.
+
+Each design binds scope, exact profile and literal synthetic authority. Numeric coordinates retain identifier, unit, bounds and value. Polymer blueprints retain repeat-unit labels, composition, labeled sites/connectivity, explicitly nullable sequence arrangement, tacticity, degree/distribution descriptors, branching and end-group information, plus optional BigSMILES text. A labeled blueprint is not an atom graph, synthesized chain or measured distribution. Material preparation/morphology remains a separate Research material-state identity. DNA fixtures declare their alphabet and sequence; polymer fields cannot appear there.
+
+Operator requests carry an exact source design and a typed proposed move: set one bounded numeric coordinate, replace one declared polymer site label, or substitute one DNA position. The tool validates its own complete source before a move, rejects foreign profiles/operators, preserves scope/profile and immutable source identity, and emits an attributable proposed result. No silent repair, default random/atactic polymer interpretation or chemical inference is permitted. Runtime alone accepts tool completion; Research alone declares candidate revisions. A representation profile digest is not scientific authority.
+
+Canonicalization is profile-owned. Numeric coordinate order and DNA order remain meaningful. Polymer canonicalization may sort unordered declaration/site/edge lists under an explicit versioned policy, but cannot infer chemical graph isomorphism, collapse unknown into specified values or ignore distribution/end-group fields. Every attempt remains attributable even when its declared canonical identity matches an earlier one.
+
+A reusable evaluation identity binds canonical representation and equivalence revision, purpose, ordered objective names/units/directions, exact evaluator/method, applicability policy, synthesis policy and relevant material-state/context revisions. Equality is necessary for reuse, not authorization: Research/Data must still resolve immutable source decisions and current access. A matching string or vector is insufficient. No implicit unit conversion or comparison across evaluator versions is allowed.
+
+Research owns fitness assembly from authenticated/pinned evidence and eligibility/synthesis decisions. Required hard failures exclude before numeric ranking. Missing, censored or contradictory values remain explicit unavailable outcomes; they never become zero or best rank. Unknown synthesis remains unknown and follows the pinned exploratory versus required-action policy. Optional weakness creates follow-up focus rather than an in-campaign veto. Existing future-campaign-only correction policy remains unchanged.
+
+Test ownership follows each tool and Research fitness module. POL-01 preserves unknown/specified metadata; POL-02 rejects domain-illegal moves; POL-03 blocks cache reuse across context/distribution changes; POL-04 permits declared syntactic equivalence only under identical full evaluation context. Actual public Artifact/Research/Runtime and independent replacement evidence remain required integration gates. No new SQL state is justified until an owner persistence requirement is identified.

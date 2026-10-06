@@ -5,6 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 
+import amphora_contracts_candidate_spaces as candidate_spaces
 import amphora_contracts_artifacts as artifact_contracts
 import amphora_contracts_evidence as evidence_contracts
 import amphora_contracts_graph_runtime as graph_runtime_contracts
@@ -41,6 +42,14 @@ from amphora_contracts_tools import Completion, Invocation, ToolBinding, ToolDes
 
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
+    "candidate-space.numeric": candidate_spaces.NumericDesign,
+    "candidate-space.polymer": candidate_spaces.PolymerDesign,
+    "candidate-space.sequence": candidate_spaces.SequenceDesign,
+    "candidate-space.numeric-move": candidate_spaces.NumericMoveRequest,
+    "candidate-space.polymer-move": candidate_spaces.PolymerMoveRequest,
+    "candidate-space.sequence-move": candidate_spaces.SequenceMoveRequest,
+    "candidate-space.change": candidate_spaces.ProposedDesignChange,
+
     "search-step.context": search_steps.SearchStepContext,
     "search-step.requests": search_steps.EvaluationRequestBatch,
     "search-step.collected": search_steps.CollectedEvaluations,

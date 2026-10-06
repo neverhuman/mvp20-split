@@ -238,5 +238,11 @@
     "coverage_sources": [
       "sdk/multi_input_worker/src/amphora_multi_input_worker"
     ]
+  },
+  "contracts-candidate-spaces": {
+    "tests": "contracts/candidate_spaces/tests",
+    "coverage_sources": [
+      "contracts/candidate_spaces/src/amphora_contracts_candidate_spaces"
+    ]
   }
 }

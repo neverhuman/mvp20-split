@@ -1,0 +1,23 @@
+{
+  "wire_version": "1",
+  "scope": {
+    "tenant_id": "synthetic",
+    "project_id": "candidate-spaces"
+  },
+  "authority": "synthetic",
+  "kind": "numeric",
+  "profile": {
+    "schema_id": "synthetic-bounded-vector",
+    "version": "1",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "coordinates": [
+    {
+      "coordinate_id": "x",
+      "unit": "1",
+      "lower": -2.0,
+      "upper": 2.0,
+      "value": 1.0
+    }
+  ]
+}

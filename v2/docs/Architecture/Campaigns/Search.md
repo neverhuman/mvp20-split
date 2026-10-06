@@ -57,3 +57,5 @@ Actual independently installed workers and owner APIs demonstrate generations 0/
 Numerical search freezes pending membership before collection. Failed or unavailable required numeric fitness stops diagnostically without fabricated zero; weak but present evidence does not veto exploration solely for its quality label. Stopped transitions are bounded no-ops. Collection and byte budgets remain explicit, and an exhausted graph limit without a search stop blocks instead of reporting success.
 
 BP-08.03 owns distinct representation operators and evidence/fitness applicability; BP-08.04 owns successor topology proposals. Neither follows automatically from numeric generation execution. Scientific validation and target-host deployment require their own evidence.
+
+[Representation and fitness boundary](Representation_Fitness.md) decomposes the activated BP-08.03 design into distinct synthetic operator profiles and Research-owned comparison policy.
