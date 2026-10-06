@@ -1,0 +1,21 @@
+{
+  "checkpoint": "2026-10-06 01:04:10",
+  "task": "BP-07.04/B2.03c.ii.3c guarded bridge",
+  "version": "Runtime0.57",
+  "tests": {
+    "passed": 62,
+    "seconds": 94.36
+  },
+  "coverage": {
+    "statements": 121,
+    "branches": 36,
+    "percent": 99,
+    "remaining": "actual changed-field fallback branch; B3"
+  },
+  "migration": "runtime0028 unchanged",
+  "limits": [
+    "actual RuntimeSQL; scripted public Planning/Data peers",
+    "no scheduler or installed multi-owner proof yet",
+    "no live model or scientific validity claim"
+  ]
+}

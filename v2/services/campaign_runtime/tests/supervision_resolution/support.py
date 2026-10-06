@@ -35,7 +35,7 @@ from ..supervision_preparation.test_policy_pins import configuration
 from ..supervision_responses.support import response
 
 
-def setup(graph, *, calls=2):
+def setup(graph, *, calls=2, prepare=True):
     actor = replace(graph.env.principal, actions=graph.env.principal.actions |
         {'supervise_prepare', 'supervise_accept', 'supervise_dispatch'})
     graph.env.principal = actor
@@ -55,7 +55,7 @@ def setup(graph, *, calls=2):
     artifacts = Publications(graph, ref)
     preparer = ContextPreparer(graph.env.engine,
         {(actor.scope.tenant_id, actor.scope.project_id, actor.actor_id): 'fixture'}, artifacts)
-    original = preparer.prepare(actor, ref)
+    original = preparer.prepare(actor, ref) if prepare else None
     reports = ReportJournal(preparer.journal)
     return actor, ref, slot, preparer, original, OutcomeResolver(reports)
 

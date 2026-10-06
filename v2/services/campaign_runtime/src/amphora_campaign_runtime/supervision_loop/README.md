@@ -1,0 +1,9 @@
+# Checkpoint driver
+
+Owns one bounded Runtime checkpoint step: original winner/deadline resolution, context preparation, request delivery, execution-report collection, exact response acceptance, and attributable repair or pinned fallback. Composes Runtime-owned modules; never imports Planning internals, schedules a process, performs a model call, or grants scientific authority.
+
+`CheckpointLoop.tick(principal, reference)` returns a small `LoopStep` projection. A terminal step carries the immutable Runtime winner. Preparation, each delivery exchange and report collection are separate ticks. Missing/uncertain report transport and context publication stay pending until the original deadline. Known preparation rejection/configuration/quota failures use `PinnedFallback`; unexpected integrity failures propagate. Existing components own authorization, SQL and peer deadlines. No SQL transaction spans peer I/O.
+
+Fallback rechecks original winner, running state, current latest request, actual allowance/configuration/fields and repair evidence under the run lock. A concurrent successor beats its predecessor's failure. Terminal delivery fallback derives its reason from owned immutable delivery events. It creates no fabricated report, response, model call or refund. Winner/audit/outbox persistence remains owned by `supervision_winners`; no new tables or public schema.
+
+Replacement acceptance: module-scoped SQL tests cover one-stage ticks, original replay, uncertainty, rejection, cancellation, concurrent repair and stale failure. Installed multi-owner execution, scheduler discovery, process restart and broad race proof remain BP-07.04 gates. Scripted peers establish no live-provider readiness. Architecture ownership: `docs/Architecture/System` and BP-07.04 Execution reports/Autonomous loop designs.
