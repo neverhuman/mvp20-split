@@ -1,13 +1,14 @@
 # Research Service
 
 - Status: BP-06.01/.03 are closed. BP-06.04 scientific storage, authenticated intake, exact normalization, per-action interpretation, immutable corrections/impacts and Artifact publication are implemented and verified. Independent rebuild/replacement and process recovery pass; scoped closeout is recorded in the BP-06.04 audit.
-- Package: `amphora-research` 0.34.0; Research contracts0.14.0 and migration research_0013. Exact dependencies belong to pyproject.toml, uv.lock and the generated package inventory.
+- Package: `amphora-research` 0.35.0; Research contracts0.14.0 and migration research_0014. Exact dependencies belong to pyproject.toml, uv.lock and the generated package inventory.
 - Design: [Research architecture](../../docs/Architecture/Research/Research_Architecture.md).
 
 Research owns candidate/sample/question/evidence-need identities and purpose-bound evidence sufficiency. It does not own Artifact bytes, Knowledge assertions, model execution or campaign acceptance. Dependencies are public contracts and the tool-protocol SDK plus Pydantic/FastAPI/Uvicorn and SQLAlchemy/psycopg/Alembic. No peer implementation imports, peer SQL or shared ORM.
 
 | Module | Replacement boundary |
 |---|---|
+| [Candidate registration](src/amphora_research/candidate_registration/README.md) | Explicit synthetic candidate declaration, current Artifact access and atomic first-public-origin history; actual peer handoff pending |
 | [Identity](src/amphora_research/identity/README.md) | Scoped candidate/sample/question/need invariants and corrections |
 | [Persistence](src/amphora_research/persistence/README.md) | Immutable identity revisions, local links, exact replay and declaration reads |
 | [Synthesis](src/amphora_research/synthesis/README.md) | Route/step evidence and independent project-execution gates; synthetic authority |

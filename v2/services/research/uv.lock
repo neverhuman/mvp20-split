@@ -51,6 +51,21 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-contracts-candidate-spaces"
+version = "0.1.0"
+source = { editable = "../../contracts/candidate_spaces" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-commands"
 version = "0.2.0"
 source = { editable = "../../contracts/commands" }
@@ -213,11 +228,12 @@ requires-dist = [
 
 [[package]]
 name = "amphora-research"
-version = "0.34.0"
+version = "0.35.0"
 source = { editable = "." }
 dependencies = [
     { name = "alembic" },
     { name = "amphora-contracts-artifacts" },
+    { name = "amphora-contracts-candidate-spaces" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-graph-runtime" },
     { name = "amphora-contracts-knowledge" },
@@ -235,6 +251,7 @@ dependencies = [
 requires-dist = [
     { name = "alembic", specifier = ">=1.16,<2" },
     { name = "amphora-contracts-artifacts", editable = "../../contracts/artifacts" },
+    { name = "amphora-contracts-candidate-spaces", editable = "../../contracts/candidate_spaces" },
     { name = "amphora-contracts-core", editable = "../../contracts/core" },
     { name = "amphora-contracts-graph-runtime", editable = "../../contracts/graph_runtime" },
     { name = "amphora-contracts-knowledge", editable = "../../contracts/knowledge" },

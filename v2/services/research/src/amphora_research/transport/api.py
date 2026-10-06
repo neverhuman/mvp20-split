@@ -26,6 +26,9 @@ from sqlalchemy.exc import SQLAlchemyError
 
 from ..assessment.policy import AssessmentError
 from ..assessment.reader import AssessmentPeerUnavailable
+from ..candidate_registration.profiles import CandidateRegistrationError
+from ..candidate_registration.registration import CandidateReader
+from ..candidate_registration.routes import install_routes as install_candidate_routes
 from ..declarations.registration import DeclarationError
 from ..identity.questions import ResearchIdentityError
 from .access import AccessDenied
@@ -60,9 +63,10 @@ async def _body(request, limit=16384):
     return b"".join(parts)
 
 
-def create_app(resolver, credentials, assessments=None, science=None, registrar=None):
+def create_app(resolver, credentials, assessments=None, science=None, registrar=None, candidates=None):
     app = FastAPI(title="Amphora Research", docs_url=None, redoc_url=None)
     app.state.declarations_enabled = registrar is not None
+    app.state.candidates_enabled = candidates is not None
     app.state.assessment_enabled = assessments is not None
     app.state.science_enabled = science is not None
     app.state.authority = "synthetic_science" if science is not None else ("identity_only" if assessments is None else "synthetic_assessment")
@@ -101,6 +105,12 @@ def create_app(resolver, credentials, assessments=None, science=None, registrar=
                       409 if "conflict" in code or code in {"publication_assessment_pending", "correction_publication_pending"} else
                       404 if code in {"assessment_profile_unavailable", "publication_assessment_missing"} else 422)
             return JSONResponse(status_code=status, content={"code": code}, headers={"Cache-Control": "no-store"})
+        except CandidateRegistrationError as error:
+            code = str(error)
+            status = (403 if "scope_mismatch" in code or code == "peer_access_denied" else
+                      409 if code in {"immutable_revision_conflict", "revision_head_conflict"} else
+                      404 if code == "reference_unavailable" else 422)
+            return JSONResponse(status_code=status, content={"code": code}, headers={"Cache-Control": "no-store"})
         except DeclarationError as error:
             code = str(error)
             status = (403 if "scope_mismatch" in code else
@@ -118,6 +128,7 @@ def create_app(resolver, credentials, assessments=None, science=None, registrar=
     async def resolve(request: Request):
         return await invoke(request, ResolveIdentity, resolver.resolve)
 
+    install_candidate_routes(app, invoke, CandidateReader(resolver.ledger), candidates)
     declarations = DeclarationReader(resolver.ledger)
 
     @app.post("/v1/questions/read", response_model=ResearchQuestion)

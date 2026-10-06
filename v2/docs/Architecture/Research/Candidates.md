@@ -46,3 +46,9 @@ A route can be literature-supported but blocked because the required equipment o
 ## Design Basis and Open Decisions
 
 [Reuse Baseline](../Evolutionary_Code_Reuse_Baseline.md) separates numeric/identity reuse from domain-specific generation. Remaining decisions: representation schemas and equivalence for each initial domain, route-provider adapters, validated feasibility policies and package templates. These are independent of the reusable graph runtime.
+
+## Synthetic candidate declaration ingress
+
+BP-08.03 adds a focused Research registration boundary. Authorized callers submit the existing CandidateRevision, with an exact representation Artifact. Reviewed host profiles pin the representation schema, kind and synthetic semantic profile. Research resolves current Data access and exact bytes before entering its identity transaction; it validates scope/encoding but does not import operator implementations or infer chemical legality. Registration declares a proposed candidate only. Tool execution acceptance, evaluation fitness and scientific eligibility remain separate evidence.
+
+Identity and first-public-registration provenance commit atomically. Exact retries retain the original actor/history and recheck source access; changed immutable bytes or stale succession conflict. Authorized historical identity reads do not fetch source bytes or erase records when rights later change. The read authorization observed before commit is not a distributed transaction guarantee or a new retention lease. Public registration is explicitly configured and separately granted from questions/needs and scientific decisions.

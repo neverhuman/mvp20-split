@@ -1,0 +1,16 @@
+{
+  "wire_version": "1",
+  "scope": {
+    "tenant_id": "synthetic",
+    "project_id": "candidate-spaces"
+  },
+  "authority": "synthetic",
+  "kind": "sequence",
+  "profile": {
+    "schema_id": "synthetic-dna",
+    "version": "1",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "alphabet": "DNA-ACGT-v1",
+  "sequence": "ACGT"
+}
