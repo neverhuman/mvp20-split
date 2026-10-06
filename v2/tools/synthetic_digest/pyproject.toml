@@ -1,0 +1,22 @@
+[project]
+name = "amphora-synthetic-digest"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = ["amphora-contracts-synthetic-evaluation==0.1.0", "amphora-contracts-tools==0.1.0", "amphora-tool-protocol==0.2.0", "amphora-contracts-evaluation-identity==0.1.0", "amphora-contracts-core==0.1.0"]
+
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/amphora_synthetic_digest"]
+
+[tool.amphora]
+public-imports = ["amphora-contracts-synthetic-evaluation", "amphora-contracts-tools", "amphora-tool-protocol", "amphora-contracts-evaluation-identity", "amphora-contracts-core"]
+
+[tool.uv.sources]
+amphora-contracts-synthetic-evaluation = { path = "../../contracts/synthetic_evaluation", editable = true }
+amphora-contracts-tools = { path = "../../contracts/tools", editable = true }
+amphora-tool-protocol = { path = "../../sdk/tool_protocol", editable = true }
+amphora-contracts-evaluation-identity = { path = "../../contracts/evaluation_identity", editable = true }
+amphora-contracts-core = { path = "../../contracts/core", editable = true }

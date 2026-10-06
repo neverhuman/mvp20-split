@@ -286,5 +286,17 @@
     "coverage_sources": [
       "contracts/execution_proofs/src/amphora_contracts_execution_proofs"
     ]
+  },
+  "synthetic-digest": {
+    "tests": "tools/synthetic_digest/tests",
+    "coverage_sources": [
+      "tools/synthetic_digest/src/amphora_synthetic_digest"
+    ]
+  },
+  "contracts-synthetic-evaluation": {
+    "tests": "contracts/synthetic_evaluation/tests",
+    "coverage_sources": [
+      "contracts/synthetic_evaluation/src/amphora_contracts_synthetic_evaluation"
+    ]
   }
 }

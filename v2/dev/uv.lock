@@ -517,6 +517,23 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-contracts-synthetic-evaluation"
+version = "0.1.0"
+source = { editable = "../contracts/synthetic_evaluation" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-evaluation-identity" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-evaluation-identity", editable = "../contracts/evaluation_identity" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-tools"
 version = "0.1.0"
 source = { editable = "../contracts/tools" }
@@ -622,6 +639,7 @@ dependencies = [
     { name = "amphora-contracts-search-steps" },
     { name = "amphora-contracts-solver-fixture" },
     { name = "amphora-contracts-supervision" },
+    { name = "amphora-contracts-synthetic-evaluation" },
     { name = "amphora-contracts-tools" },
     { name = "amphora-data-artifacts" },
     { name = "amphora-evolution-search" },
@@ -638,6 +656,7 @@ dependencies = [
     { name = "amphora-solver-score" },
     { name = "amphora-solver-seed" },
     { name = "amphora-solver-select" },
+    { name = "amphora-synthetic-digest" },
     { name = "amphora-synthetic-objectives" },
     { name = "amphora-tool-protocol" },
     { name = "httpx" },
@@ -673,6 +692,7 @@ requires-dist = [
     { name = "amphora-contracts-search-steps", editable = "../contracts/search_steps" },
     { name = "amphora-contracts-solver-fixture", editable = "../contracts/solver_fixture" },
     { name = "amphora-contracts-supervision", editable = "../contracts/supervision" },
+    { name = "amphora-contracts-synthetic-evaluation", editable = "../contracts/synthetic_evaluation" },
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },
     { name = "amphora-data-artifacts", editable = "../services/data_artifacts" },
     { name = "amphora-evolution-search", editable = "../tools/evolution_search" },
@@ -689,6 +709,7 @@ requires-dist = [
     { name = "amphora-solver-score", editable = "../tools/solver_score" },
     { name = "amphora-solver-seed", editable = "../tools/solver_seed" },
     { name = "amphora-solver-select", editable = "../tools/solver_select" },
+    { name = "amphora-synthetic-digest", editable = "../tools/synthetic_digest" },
     { name = "amphora-synthetic-objectives", editable = "../tools/synthetic_objectives" },
     { name = "amphora-tool-protocol", editable = "../sdk/tool_protocol" },
     { name = "httpx", specifier = ">=0.28,<1" },
@@ -1005,6 +1026,27 @@ requires-dist = [
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },
     { name = "amphora-tool-protocol", editable = "../sdk/tool_protocol" },
     { name = "pydantic", specifier = ">=2.11,<3" },
+]
+
+[[package]]
+name = "amphora-synthetic-digest"
+version = "0.1.0"
+source = { editable = "../tools/synthetic_digest" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-evaluation-identity" },
+    { name = "amphora-contracts-synthetic-evaluation" },
+    { name = "amphora-contracts-tools" },
+    { name = "amphora-tool-protocol" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-evaluation-identity", editable = "../contracts/evaluation_identity" },
+    { name = "amphora-contracts-synthetic-evaluation", editable = "../contracts/synthetic_evaluation" },
+    { name = "amphora-contracts-tools", editable = "../contracts/tools" },
+    { name = "amphora-tool-protocol", editable = "../sdk/tool_protocol" },
 ]
 
 [[package]]
