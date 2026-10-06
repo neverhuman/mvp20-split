@@ -1,0 +1,73 @@
+{
+  "schema_version": "1",
+  "snapshot": {
+    "cut": {
+      "frontier_revision": 2,
+      "plan_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "revision": 3,
+      "run_id": "supervision-run",
+      "scope": {
+        "project_id": "context",
+        "tenant_id": "planning-fixture"
+      }
+    },
+    "epoch": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "snapshot_token": "literal-signed-token"
+  },
+  "reference": {
+    "decision_id": "decision-1",
+    "run_id": "supervision-run",
+    "scope": {
+      "project_id": "context",
+      "tenant_id": "planning-fixture"
+    }
+  },
+  "request_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "total": 2,
+  "items": [
+    {
+      "kind": "included",
+      "entry": {
+        "artifact": {
+          "artifact_id": "source",
+          "media_type": "text/plain",
+          "schema_ref": {
+            "schema_id": "fixture.text",
+            "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+            "version": "1"
+          },
+          "scope": {
+            "project_id": "context",
+            "tenant_id": "planning-fixture"
+          },
+          "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+          "size_bytes": 12
+        },
+        "required": true,
+        "role": "source"
+      }
+    },
+    {
+      "kind": "omitted",
+      "omission": {
+        "artifact": {
+          "artifact_id": "omitted-source",
+          "media_type": "text/plain",
+          "schema_ref": {
+            "schema_id": "fixture.text",
+            "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+            "version": "1"
+          },
+          "scope": {
+            "project_id": "context",
+            "tenant_id": "planning-fixture"
+          },
+          "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+          "size_bytes": 12
+        },
+        "reason": "budget"
+      }
+    }
+  ],
+  "next_cursor": null
+}

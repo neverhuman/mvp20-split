@@ -1,7 +1,9 @@
 # Campaign Runtime
 
-- Current: Runtime0.60/runtime0028; reviewed `2026-10-06 03:26:07` (America/Chicago). BP-07.04 bounded autonomous supervisor accepted, including original context/allowances, durable delivery, winner/effects, configured scheduling, owner replacement and authenticated authoritative decision reads.
+- Current: Runtime0.61/runtime0028; reviewed `2026-10-06 03:26:07` (America/Chicago). BP-07.04 bounded autonomous supervisor accepted, including original context/allowances, durable delivery, winner/effects, configured scheduling, owner replacement and authenticated authoritative decision reads.
 - Module rebuild contracts: [loop](src/amphora_campaign_runtime/supervision_loop/README.md), [winners](src/amphora_campaign_runtime/supervision_winners/README.md), [inspection/recording API](src/amphora_campaign_runtime/supervision_api/README.md). Live quality and full engagement inspection remain BP-07.05.
+
+Public supervision0.10 inspection DTO dependency is installed; bounded paged inspection routes are not implemented yet (BP-07.05/B1.03). Existing exact decision route remains unchanged.
 
 ## Historical package checkpoints
 

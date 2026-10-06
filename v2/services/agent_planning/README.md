@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-- Version: Planning0.92.0; public Planning0.10 and supervision0.9; owned migration head0019.
+- Version: Planning0.93.0; public Planning0.10 and supervision0.10; owned migration head0019.
 - Reviewed: `2026-10-06 03:26:07` (America/Chicago); BP-07.01-.04 accepted within deterministic software scope.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Campaign acceptance: [BP-07.03](../../docs/Build%20Plans/BP-07/Completed/BP-07.03%20Campaign%20proposals%20and%20context.md); supervisor acceptance [BP-07.04](../../docs/Build%20Plans/BP-07/Completed/BP-07.04%20Durable%20supervisor%20and%20races.md).

@@ -1,0 +1,8 @@
+{
+  "timestamp_local": "2026-10-06 04:04:54",
+  "package": "public supervision0.10; Runtime0.61/Planning0.93 dependency updates only",
+  "tests": "124 public supervision/boundary checks passed20.40s; ruff and schema publication check passed",
+  "schemas": 556,
+  "predecessor_schemas_byte_identical": 548,
+  "scope": "Four bounded metadata page roots, explicit retained/winning distinction, report and omission metadata; SQL/HTTP/UI remain subsequent units"
+}
