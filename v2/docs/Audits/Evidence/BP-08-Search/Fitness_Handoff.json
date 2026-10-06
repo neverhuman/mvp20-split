@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "timestamp_local": "2026-10-06 14:13:04",
+  "scope": {
+    "tenant_id": "fitness-http",
+    "project_id": "b923ba844fbb49d3ac4be5b6347f0e3f"
+  },
+  "fitness": {
+    "scope": {
+      "tenant_id": "fitness-http",
+      "project_id": "b923ba844fbb49d3ac4be5b6347f0e3f"
+    },
+    "fitness_id": "fitness-http",
+    "sha256": "d622030535c74a8bd5f628d6cd49c745e13080057a5befb87c9c4da4fb0a1e1f"
+  },
+  "source_count": 14,
+  "replay_after_research_restart": true,
+  "current_denial": 403,
+  "historical_read_after_denial": 200,
+  "limits": "Actual Data/Research HTTP with Research-owned synthetic bootstrap; declared identity only, no producer-backed reuse, science, image or target-host claim",
+  "package_versions": {
+    "artifact": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.13",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-representations": "0.3.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-data-artifacts": "0.30.0"
+    },
+    "research": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-candidate-spaces": "0.1.0",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evaluation-identity": "0.1.0",
+      "amphora-contracts-evidence": "0.5.13",
+      "amphora-contracts-fitness": "0.1.0",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-knowledge": "0.8.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-research-views": "0.1.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-research": "0.38.0",
+      "amphora-tool-protocol": "0.2.0"
+    },
+    "controller": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-tool-protocol": "0.2.0"
+    }
+  },
+  "full_evidence": ".test-results/fitness-handoff-20261006a/http/evidence.json"
+}
