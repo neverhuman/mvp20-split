@@ -1,6 +1,6 @@
 [project]
 name = "amphora-campaign-runtime"
-version = "0.50.0"
+version = "0.51.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
     "amphora-contracts-planning==0.10.0",

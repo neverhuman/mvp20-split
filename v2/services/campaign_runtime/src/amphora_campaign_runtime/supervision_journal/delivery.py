@@ -7,6 +7,7 @@ from sqlalchemy import text
 from ..supervision_requests.binding import encoded
 from ..supervision_responses import SupervisionReceiptObservation
 from ..supervision_scope.observations import digest, require
+from .current import verify_current
 from .delivery_values import DeliveryEvent, evidence_type, fingerprint, identifier
 from .storage import SELECT, RequestJournal, StoredRequest, outgoing
 
@@ -17,6 +18,26 @@ TERMINAL = {'recorded', 'rejected', 'failed', 'expired'}
 class DeliveryJournal:
     def __init__(self, requests: RequestJournal):
         self.requests = requests
+
+    def guard(self, principal, lease):
+        """Recheck authority immediately before a peer write; never hold SQL over HTTP."""
+        def transaction(conn):
+            params, original, control = self._open(conn, principal, lease.reference, lease.request_sha256)
+            self._live(conn, principal, lease, control)
+            run = self.requests.leases._run(conn, params)
+            verify_current(conn, params, run, original.frame)
+            winner = conn.execute(text('SELECT 1 FROM runtime.supervision_winners WHERE '
+                'tenant_id=:tenant AND project_id=:project AND run_id=:run AND decision_id=:decision'),
+                params).first()
+            require(winner is None, 'delivery_winner_committed')
+        return self.requests.leases.commands.transact(transaction)
+
+    @staticmethod
+    def _live(conn, principal, lease, control):
+        now = conn.execute(text('SELECT clock_timestamp()')).scalar_one()
+        require(control['status'] == 'leased' and control['holder'] == lease.holder == principal.actor_id and
+                control['fence'] == lease.fence and control['expires_at'] == lease.expires_at and
+                now < lease.expires_at, 'delivery_lease_lost')
 
     def _open(self, conn, principal, reference, request_sha256):
         principal.require('supervise_dispatch')
@@ -101,10 +122,7 @@ class DeliveryJournal:
             old = self._existing(conn, params, event_id, submission)
             if old is not None:
                 return old
-            now = conn.execute(text('SELECT clock_timestamp()')).scalar_one()
-            require(control['status'] == 'leased' and control['holder'] == lease.holder == principal.actor_id and
-                    control['fence'] == lease.fence and control['expires_at'] == lease.expires_at and
-                    now < lease.expires_at, 'delivery_lease_lost')
+            self._live(conn, principal, lease, control)
             observed = None
             if receipt is not None:
                 previous = self._previous(conn, params)

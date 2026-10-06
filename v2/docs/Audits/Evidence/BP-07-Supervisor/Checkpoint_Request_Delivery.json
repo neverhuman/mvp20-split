@@ -1,0 +1,30 @@
+{
+  "checkpoint": "2026-10-06 00:11:21",
+  "task": "BP-07.04/B2.03c.i",
+  "runtime": "0.51.0",
+  "migration": "runtime0026 unchanged",
+  "schemas": "544 unchanged",
+  "verification": {
+    "initial": "10 passed in 10.95s",
+    "regression": "39 passed, one fixture failure in 33.69s",
+    "final": "24 passed in 30.05s",
+    "coverage": {
+      "statements": 67,
+      "branches": 12,
+      "percent": 100
+    }
+  },
+  "fixture_repair": "SQLAlchemy interpreted inline JSON colon as parameter; parameterized JSON value, production unchanged",
+  "authority": [
+    "actual Runtime SQL",
+    "scripted Planning socket peer",
+    "committed model winner guard",
+    "selected-state and cancellation guard",
+    "terminal read-only replay"
+  ],
+  "limits": [
+    "no installed Planning owner or model execution",
+    "process death proof B3",
+    "integration proof V1"
+  ]
+}

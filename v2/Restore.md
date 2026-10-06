@@ -1,14 +1,14 @@
 # Restore
 
-Read FIRST after compression. Refreshed 2026-10-05 23:57:53 (America/Chicago).
+Read FIRST after compression. Refreshed 2026-10-06 00:11:21 (America/Chicago).
 
 ## Resume
 
-Owner authorization: continue across milestones/commits/pushes/compaction until a concrete owner need. Latest pushed48918543; the B2.03b completion/workflow checkpoint is ready tocommit now. No tests, HTTP hosts or worker sessions running. Current BP-07.04/B2.03c autonomous owner delivery, repair/fallback and integration. No owner decision needed for deterministic work. Live model/provider/egress/spend unselected blocks actual paid/live calls only.
+Owner authorization: continue across milestones/commits/pushes/compaction until a concrete owner need. Latest pushed16ae64cd; c.i verified and ready to commit/push. Current c.ii owner scheduling/reporting/repair/fallback; no tests or hosts running. No tests, HTTP hosts or worker sessions running. Current BP-07.04/B2.03c autonomous owner delivery, repair/fallback and integration. No owner decision needed for deterministic work. Live model/provider/egress/spend unselected blocks actual paid/live calls only.
 
-Runtime0.50/runtime0026 APPLIED; NEVER Runtime<=0.47 migrators. Planning0.84/planning0017 APPLIED; NEVER Planning<=0.82 migrators. Data0.29/artifacts0012 (never<=0.25),Research0.34/research0013 (never<=0.33),Knowledge0.18,Registry0.1. PublicSupervision0.7,Planning0.10,graph-runtime0.13;544publishedschemas unchanged,542predecessorpins. Preserve all fixture history and previous migration bytes.
+Runtime0.51/runtime0026 APPLIED; NEVER Runtime<=0.47 migrators. Planning0.84/planning0017 APPLIED; NEVER Planning<=0.82 migrators. Data0.29/artifacts0012 (never<=0.25),Research0.34/research0013 (never<=0.33),Knowledge0.18,Registry0.1. PublicSupervision0.7,Planning0.10,graph-runtime0.13;544publishedschemas unchanged,542predecessorpins. Preserve all fixture history and previous migration bytes.
 
-Parent69.44%,13/20;child47.22%,Build62.96%,Acceptance0%,1/4. B1=100%;B2=88.89%(.01/.02=100%,.03=66.67%);B3/V1=0%. B2.03 a100%,b100%,c0%. All b subunits complete. Canonical tracker BP-07/BP-07.04 Durable supervisor and races.md; designs Autonomous loop.md, Capture publication.md, Winner and effects.md. Currentc,nextB3 failure/process proof thenV1 installed integration. Do not reopencompletedgates or count fixtures as live science.
+Parent69.63%,13/20;child48.15%,Build64.20%,Acceptance0%,1/4. B1=100%;B2=92.59%(.01/.02=100%,.03=77.78%);B3/V1=0%. B2.03 a100%,b100%,c33.33%. All b subunits complete. Canonical tracker BP-07/BP-07.04 Durable supervisor and races.md; designs Autonomous loop.md, Capture publication.md, Winner and effects.md. Currentc,nextB3 failure/process proof thenV1 installed integration. Do not reopencompletedgates or count fixtures as live science.
 
 ## Latest Planning implementation (b COMPLETE)
 
@@ -38,7 +38,7 @@ WinnerStore runtime0024 oneimmutablemodel/fallback/cancel winner+audit/outbox/se
 
 ## Next lookup / work
 
-Read activec design beforecoding; explicitlydecompose boundedremainingunits withcanonicalpercentbasis. Existing Runtime APIs tocompose: supervision_context/preparation.py; supervision_journal/delivery.py +storage.py (outbox/lease/exactoriginalframe); supervision_client/client.py (requestreceipt/submit/readback); supervision_winners/storage.py resolve; responses.py ownsimmutableincomingcaptures. SourceREADME olderhistoricalheadlines canbestale; usefocusedlatestdesign/source, notbroadrewalk.
+c.i delivery COMPLETE: Runtime supervision_delivery worker/progress + DeliveryJournal.guard. 24 final SQL/socket/boundary cases30.05s,67statements12branches100%. Receipt lookup first; persist receipt before later GET; closed peer errors; original winner/selected/cancel/lease checks before POST; guard errors propagate and lease expires. ScriptedPlanning only, no actualmodel. c has equal i/ii/iii, i100%,ii/iii0%. Current c.ii: explicit pre-call failure reporting (no fabricated attempts/charges), owner scheduling, response consumption/repair/fallback; next combinedfixture c.iii. Need design refined before new contract/state. Existing Runtime APIs tocompose: supervision_context/preparation.py; supervision_journal/delivery.py +storage.py (outbox/lease/exactoriginalframe); supervision_client/client.py (requestreceipt/submit/readback); supervision_winners/storage.py resolve; responses.py ownsimmutableincomingcaptures. SourceREADME olderhistoricalheadlines canbestale; usefocusedlatestdesign/source, notbroadrewalk.
 
 Runtime c must integrateinitial/latercheckpoint preparation, automaticoutboxdelivery, receivedresponse->winner, boundedinvalid/stale repair, deadline/quota/provider/context failure->pinnedfallback, andindependentbranchprogress. Planning'sHTTPAPI currentlyintake/readbackONLY; newworker functions are NOT automaticallyscheduled. Needboundedownerworker/schedulingintegration. Pre-call Planning failures return RunOutcome withzeroattempts: DO NOT inventProviderObservation/paidcall tocommunicatefailure. Decidebounded publicownerstatus/readback versus originaldeadline fallback when designingc; notcurrentlyanownerdecisionblocker. Weakscience staysvisible; noqualityveto/human-in-campaign gates. Actualmulti-ownerfixturethenB3/V1 independentproofremain.
 
