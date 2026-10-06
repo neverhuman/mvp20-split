@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "verified_at": "2026-10-05 21:47:39",
+  "runtime": "0.44.0",
+  "migration": "runtime_0024",
+  "sql_tests": {
+    "tests": 25,
+    "seconds": 31.61
+  },
+  "release_boundaries": {
+    "tests": 16,
+    "seconds": 16.12
+  },
+  "coverage": {
+    "statements": 219,
+    "branches": 26,
+    "percent": 100
+  },
+  "limits": [
+    "Adjusted scalar selections intentionally held until shared conversion resolver is connected",
+    "No automatic supervisor delivery or live model call"
+  ]
+}

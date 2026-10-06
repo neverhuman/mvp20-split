@@ -11,3 +11,5 @@ Forward migration runtime0024 adds SELECT/INSERT-only supervision_winners. One p
 Provider/repair exhaustion and aggregate call reservations remain B2.03. Current fallback triggers are original slot eligibility and elapsed deadline. Coordinator/Artifact conversion do not yet consume these winners. Tests live in tests/supervision_winners and require actual PostgreSQL for atomicity/permissions/replay; process contention and independently installed application remain later gates.
 
 Verified164 winner/checkpoint/journal/effect/boundary cases99.16s;198 statements20branches100%. Runtime0.43/runtime0024. Tests include request-policy/attempt-ceiling mismatch, retained future graph, expired model fallback and unchanged current plan. Process contention and downstream application remain explicitly unproven.
+
+CheckpointGate now connects ready GraphPass nodes to committed review/unchanged winners and pinned block fallback. A pending request/response cannot release work. Adjusted selections deliberately remain held until B2.02d implements shared conversion resolution; they cannot accidentally issue original scalar values. Coordinator release verification is in progress.

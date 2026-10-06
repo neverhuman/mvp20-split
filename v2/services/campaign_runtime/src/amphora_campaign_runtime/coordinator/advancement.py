@@ -86,8 +86,12 @@ class GraphPass:
         if row['status'] == 'ready' and self.supervision_policy is not None:
             path = ActivationPath.model_validate_json(json.dumps(row['path']))
             if self.supervision_policy.rule_for(path) is not None:
-                from ..supervision_checkpoints.storage import CheckpointStore
-                return CheckpointStore.ensure(self.conn, self.params, path).created
+                from ..supervision_winners.frontier import CheckpointGate
+                gate = CheckpointGate.read(self.conn, self.params, path)
+                if not gate.released:
+                    if gate.block_reason is not None:
+                        persist_node(self.conn, self.params, row, 'blocked', reason=gate.block_reason)
+                    return gate.changed
         if node.kind == "invoke":
             return self.invoke(scope, row, node)
         if node.kind == "await":
