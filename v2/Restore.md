@@ -4,9 +4,9 @@ Read FIRST after compression. Refreshed 2026-10-06 01:54:28 (America/Chicago).
 
 ## Resume
 
-Continue-until-needed authorization persists across commits and compaction. Latest pushed a2104b0a; combined actual-owner integration now verified and ready for commit/push. No tests running. No owner decision blocks deterministic work.
+Continue-until-needed authorization persists across commits and compaction. Latest pushed f5e1c0f6; B3.01 SQL races now verified and ready for commit/push. No tests running. No owner decision blocks deterministic work.
 
-Canonical task: BP-07.04/B3.01 SQL races and authority. B1/B2=100%,B3/V1=0%; child50%,Build66.67%,Acceptance0%,2/4; parent70%,14/20. Next B3.02 process barriers, B3.03 branch/late-result integration, then V1 replacement/audit.
+Canonical task: BP-07.04/B3.02 process barriers/uncertainty. B1/B2=100%,B3=33.33%,V1=0%; child58.33%,Build77.78%,Acceptance0%,2/4; parent71.67%,14/20. Next B3.02 process barriers, B3.03 branch/late-result integration, then V1 replacement/audit.
 
 Runtime0.59/runtime0028 and Planning0.89/planning0018 APPLIED. Never Runtime<=0.54 or Planning<=0.85 migrators. Data0.29/artifacts0012; never Data<=0.25. Public548schemas/546 predecessor pins unchanged.
 
@@ -25,3 +25,5 @@ PYTHONUTF8=1 every Python. Python v2/dev/.venv/Scripts/python.exe; uv v2/.venv/S
 Current dev/run_tests.py areas include Runtime supervision_delivery and Planning supervision_execution/supervision_publication/supervision_completion; owning service test_scopes umbrella applies. V1 verifiers still need adaptation: verify_supervision_installations.py old542/538 schemas and binaries; verify_supervision_owners.py Runtime0.33/Planning0.75. NEVER verify_supervision_journal.py oldRuntime0.26 migrator. .test-results/checkpoint-effects-installed-20261005 binaries Runtime0.42/Planning0.77 are predecessors, NEVER current migrators. Avoid whole old result_publication coverage absent relevant changes (previous run983s); focused lease expiry fixture was fixed to separate ordinary preparation from1s intentional expiry.
 
 Git main; prefix git -c safe.directory=//DesktopNAS/Code/mvp20-split. Remote https://github.com/neverhumanbot/mvp20-split.git; identity/auth configured. Update canonical trackers/history/evidence/Restore, commit/push significant verified work, then CONTINUE. Existing v1/LICENSE metadata debt untouched.
+
+B3.01 VERIFIED: test_races.py4new cases; final11passed17.76s plus52existingpassed. Initial failures testauditcolumnonly corrected. No production changes. Next Planning checkpoint worker subprocess exits after durable physical issuance inside provider.reply; replacement recovers unknown primary and conservative charge without another physical call. Owner-local helper only, no production loader. Tests/supervision_execution/test_worker.setup creates data/templates; extend optional maxattempts1 for bounded crash proof. Database credentials subprocess env only.

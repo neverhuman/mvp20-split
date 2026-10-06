@@ -956,3 +956,7 @@ Runtime0.59/Planning0.89 explicit check/run CLIs validate own service role/schem
 ## 2026-10-06 01:54:28 - Combined autonomous owner integration
 
 B2.03c.iii complete: actual Data/Runtime/Planning HTTP processes plus replacement bounded workers complete abstention and invalid-output repair/fallback campaigns. Final assertions verify exact reports, original ceilings/deadline, immutable replay and acknowledged output retention. Dev boundaries12passed13.37s. Evidence: Checkpoint_Autonomous_Owners.json. Independent installed replacement and crash barriers remain B3/V1; no live/scientific claim. B2=100%,B3/V1=0%,child50%,Build66.67%,parent70%,14/20 closed. Next B3.01 SQL races/authority.
+
+## 2026-10-06 01:58:40 - B3.01 SQL contention and authority
+
+Four new recipe-admitted winner races cover two responses, cancellation contention, original deadline fallback and withdrawn acceptance authority. One winner/effect/audit/outbox and original reservation are asserted. Initial52existing cases passed; four new cases required correcting only an audit-query column. Final11cases passed17.76s including checkpoint issuance/membership and independent branch checks. No production change. B3.01=100%,B3=33.33%,child58.33%,Build77.78%,parent71.67%,14/20 closed. Current B3.02. Failure proof.md maps bounded oracles.

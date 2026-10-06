@@ -35,7 +35,7 @@ from ..supervision_preparation.test_policy_pins import configuration
 from ..supervision_responses.support import response
 
 
-def setup(graph, *, calls=2, prepare=True):
+def setup(graph, *, calls=2, prepare=True, timeout=300):
     actor = replace(graph.env.principal, actions=graph.env.principal.actions |
         {'supervise_prepare', 'supervise_accept', 'supervise_dispatch'})
     graph.env.principal = actor
@@ -45,7 +45,7 @@ def setup(graph, *, calls=2, prepare=True):
     graph.payload = {'plan_sha256': compiled.sha256, 'inputs': [], 'budget': {'limit': 2}}
     data = policy(compiled).model_dump(mode='json')
     data.update(profile='runtime-supervision-policy.v2', context_recipe_sha256=recipe.sha256)
-    data['checkpoints'][0].update(max_model_calls=calls, timeout_seconds=300)
+    data['checkpoints'][0].update(max_model_calls=calls, timeout_seconds=timeout)
     reviewed = ReviewedPolicy.bind(compiled, RecipePolicyRecord.model_validate_json(json.dumps(data)))
     admission = GraphAdmission(graph.env.engine, PlanCatalog([graph.entry]), bindings_enabled=True,
         policies=PolicyCatalog([reviewed]), recipes=RecipeCatalog([recipe]))

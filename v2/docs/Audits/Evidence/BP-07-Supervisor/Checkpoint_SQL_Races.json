@@ -1,0 +1,17 @@
+{
+  "reviewed_at": "2026-10-06 01:58:40",
+  "tier": "actual Runtime PostgreSQL; synthetic public captures; no provider/peer process claim",
+  "new_cases": 4,
+  "verification": [
+    "52 existing checks passed in initial run; new4 failed only incorrect audit-query column",
+    "11 final focused checks passed in17.76s after test-query correction"
+  ],
+  "production_changes": false,
+  "oracles": [
+    "one winner, scalar selection iff accepted, one audit/outbox",
+    "original reservation unchanged",
+    "cancellation ordering preserves immutable winner",
+    "original deadline rejects late scalar effect",
+    "withdrawn acceptance privilege cannot decide"
+  ]
+}
