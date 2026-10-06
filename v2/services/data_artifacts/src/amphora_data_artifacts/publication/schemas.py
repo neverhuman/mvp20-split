@@ -61,7 +61,12 @@ class JsonSchemaRule:
                 if id(item) in seen:
                     continue
                 seen.add(id(item))
-                if any(key in item for key in ("$id", "$dynamicRef", "$dynamicAnchor", "$anchor", "$recursiveRef")):
+                # Canonical root URN labels the exact pinned document; it cannot
+                # introduce nested resources or authorize external resolution.
+                if "$id" in item and (item is not schema or
+                    item["$id"] != f"urn:amphora:{self.identity[1]}:{self.identity[2]}:validation"):
+                    raise ValueError("Schema reference profile unsupported")
+                if any(key in item for key in ("$dynamicRef", "$dynamicAnchor", "$anchor", "$recursiveRef")):
                     raise ValueError("Schema reference profile unsupported")
                 if "$ref" in item and (not isinstance(item["$ref"], str)
                     or not item["$ref"].startswith("#/")):

@@ -6,7 +6,10 @@ import json
 import pytest
 from amphora_contracts_artifacts import ContentDescriptor
 from amphora_data_artifacts.publication.model import ContentPolicy, UploadError
-from amphora_data_artifacts.publication.schemas import JsonSchemaRule, configured_profiles
+from amphora_data_artifacts.publication.schemas import (
+    JsonSchemaRule,
+    configured_profiles,
+)
 from jsonschema.exceptions import SchemaError
 
 
@@ -107,3 +110,29 @@ def test_actual_publication_uses_configured_schema(upload_env):
         assert final.status_code == (200 if index == 0 else 409)
         if index:
             assert final.json()["reason_code"] == "content_schema_mismatch"
+
+
+def test_exact_canonical_root_identity_uses_original_bytes_and_local_references():
+    schema = {"$id": "urn:amphora:example.output:1:validation", "type": "object",
+              "properties": {"value": {"$ref": "#/$defs/n"}}, "required": ["value"],
+              "$defs": {"n": {"type": "integer", "minimum": 0}}}
+    policy = profile(schema)
+    assert policy.rules[0].document == json.dumps(schema).encode()
+    payload = b'{"value":2}'
+    policy.validate(descriptor(policy, payload), payload)
+    invalid = b'{"value":-1}'
+    with pytest.raises(UploadError, match="content_schema_mismatch"):
+        policy.validate(descriptor(policy, invalid), invalid)
+
+
+@pytest.mark.parametrize("schema", [
+    {"$id": "urn:amphora:wrong:1:validation"},
+    {"$id": "urn:amphora:example.output:2:validation"},
+    {"$id": "urn:amphora:example.output:1:serialization"},
+    {"type": "object", "properties": {"n": {"$id": "urn:amphora:example.output:1:validation"}}},
+    {"$id": "urn:amphora:example.output:1:validation", "$ref": "https://example.invalid/schema"},
+    {"$id": "urn:amphora:example.output:1:validation", "$anchor": "local"},
+])
+def test_canonical_root_does_not_enable_other_resources(schema):
+    with pytest.raises(ValueError):
+        profile(schema)

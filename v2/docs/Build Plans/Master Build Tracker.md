@@ -9,12 +9,12 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-07 closed100%; BP-08.02/B2 active; BP-09 queued.
-- Last refreshed: `2026-10-06 11:34:01` (America/Chicago).
+- Last refreshed: `2026-10-06 11:42:43` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P7 / BP-08 - Evolutionary Search Integration.
-- Primary active task: BP-08.02/B2 accepted generation and pending transitions.
+- Primary active task: BP-08.02/B2.02 actual worker/Artifact HTTP.
 - Next task: B3 failure/recovery proof after accepted B2 transitions.
-- Implementation completion: BP-07 closed100%,20/20; BP-08=25%,5/20;BP-09=0%.
+- Implementation completion: BP-07 closed100%,20/20; BP-08=27.5%,5/20 plushalf;BP-09=0%.
 - Active focus: graph-driven numeric execution; preserve closed BP-07 evaluation history and scoped handoffs.
 - Blockers: none for BP-08.02/B2. Selected host and integrated live deployment remain BP-09 decisions/gates.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
@@ -32,13 +32,13 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-08.01 closed100%,4/4; parent25%,5/20. BP-08.02/B2 active, child25%, Build33.33%, Acceptance0%.
+BP-08.01 closed100%,4/4; parent27.5%,5/20 plushalf. BP-08.02/B2.02 active, child37.5%, Build50%, Acceptance0%.
 
 ## Queued Plans and Phase Mirrors
 
 | Canonical plan | Status | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Active | 25% | 100% | 25% | 0% | 0% | 0% | N/A |
+| [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Active | 27.5% | 100% | 37.5% | 0% | 0% | 0% | N/A |
 | [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 
 Scoped milestone fractions measure verified work within their existing delivery weight; closed-gate counts remain separate. BP-06 is archived24/24. Do not treat milestone counts as effort estimates.
@@ -116,6 +116,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
 | 2026-10-06 11:34:01 | BP-08.02/B1 complete; child25%,Build33.33%,parent25%,5/20. |149 compiler+14 graph+12 boundary checks; Runtime0.63 exact-root-URN compatibility; B2 next. |
+| 2026-10-06 11:42:43 | BP-08.02/B2.01 complete;child37.5%,Build50%,parent27.5%. |Five Runtime transaction scenarios;79 publication/boundary checks; Data0.30 exact-root-URN repair. |
 | 2026-10-06 11:20:45 | BP-08.02/B1.02 complete; child16.67%,Build22.22%,parent23.33%. |169 numeric-adapter checks;144 evaluator/multi-input/legacy-SDK checks; graph/compiler next. |
 | 2026-10-06 10:22:13 | BP-08.01 closed100%,4/4;parent20%,4/20. |Two installations133 tests each; retained numeric state/replay; scoped audit aligned. |
 | 2026-10-06 10:14:08 | BP-08.01/B2 complete;child50%,Build66.67%,parent10%,2/20. |107checks;two-process128-member replay;duplicates and budget-limited attempts retained. |
