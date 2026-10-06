@@ -1,11 +1,11 @@
 # Agent Planning service boundary
 
-- Version: Planning0.93.0; public Planning0.10 and supervision0.10; owned migration head0019.
-- Reviewed: `2026-10-06 03:26:07` (America/Chicago); BP-07.01-.04 accepted within deterministic software scope.
+- Version: Planning0.95.0; public Planning0.10 and supervision0.10; owned migration head0019.
+- Reviewed: `2026-10-06 09:21:10` (America/Chicago); BP-07 accepted within stated engineering/evaluation limits.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Campaign acceptance: [BP-07.03](../../docs/Build%20Plans/BP-07/Completed/BP-07.03%20Campaign%20proposals%20and%20context.md); supervisor acceptance [BP-07.04](../../docs/Build%20Plans/BP-07/Completed/BP-07.04%20Durable%20supervisor%20and%20races.md).
 
-Current successor: [evaluation](src/amphora_agent_planning/evaluation/README.md) implements frozen protocol and independent scoring; [batch registration](src/amphora_agent_planning/evaluation_batch/README.md) retains original experiment inputs in planning0019; [measured runner](src/amphora_agent_planning/evaluation_execution/README.md) now composes existing durable issuance and preserves failed/late/unknown results; live evaluation remains pending.
+Current successor: [evaluation](src/amphora_agent_planning/evaluation/README.md) implements frozen protocol and independent scoring; [batch registration](src/amphora_agent_planning/evaluation_batch/README.md) retains original experiment inputs in planning0019; [measured runner](src/amphora_agent_planning/evaluation_execution/README.md) now composes existing durable issuance and preserves failed/late/unknown results; live synthetic evaluation and independent replay are verified. [OpenAI boundary](src/amphora_agent_planning/openai_provider/README.md) owns pinned transport/schema/rates. Configured campaign workers remain disabled/fixture-only until BP-09.03 selected-model deployment wiring.
 
 ## Responsibilities and exclusions
 

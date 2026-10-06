@@ -15,7 +15,7 @@ All open plans now name accountable modules, owned objects/contracts, state/algo
 | BP-04 | 6 closed/audited children | Durable graph execution and inspection accepted | [Bounded closeout](../Audits/BP-04_Graph_Runner_Closeout.md) |
 | BP-05 | 4 closed/audited children | Studio inspection/authoring/browser workflows accepted | [Bounded closeout](../Audits/BP-05_Studio_Closeout.md) |
 | BP-06 | 6 closed/audited children | Source/knowledge/lab/retrieval and future-only feedback integration accepted | [Bounded closeout](../Audits/BP-06_Knowledge_Evidence_Closeout.md) |
-| BP-07 | 5 canonical children | Provider/proposal boundaries, extraction oracles and supervisor races specified | Deterministic implementation followed by selected live model evaluation |
+| BP-07 | Closed100%;5accepted children | Provider/proposal,races,inspection,live synthetic evaluation and replacement verified | BP-09.03 deployed selected-model integration; broader scientific evaluation remains separate |
 | BP-08 | 5 canonical children | Kernel provenance, explicit generations, representation isolation and benchmarks specified | Kernel choice/proof, seeded recovery and topology evaluation |
 | BP-09 | 5 canonical children | Preflight/install/demo/restore/replacement acceptance specified | Owner-selected host/profile, actual installation and measured recovery |
 
@@ -64,7 +64,7 @@ Default execution is sequential, with one active implementation child. This revi
 
 | Decision | First dependent gate | Safe preparation before answer |
 |---|---|---|
-| Model/provider, allowed data/egress and spend limits | BP-07.05 live calls (and provider configuration before any earlier optional real call) | Fake provider, contracts, prompts, held-out synthetic corpus and race harness |
+| Initial model/cost/egress resolved under delegated authority | BP-07.05 closed: pinned GPT-5.4 mini,synthetic-only,allreservations$1.65888 under$1.70 | Future production corpus/egress/host limits remain BP-09 activation choices |
 | Actual host/access, exposure and optional cluster profile | BP-09.01 provisioning | Manifest schema, local composition, preflight/runbook and compatibility checklist |
 | Recovery objectives and selected demo claims/resource budget | Before BP-09.03/.04 acceptance runs | Draft scenario/backup manifest and isolated failure tests |
 | Licensed scientific sources, assay context and validated domain methods | First real source/tool adoption | Synthetic contracts, provenance, applicability and unknown-result behavior |

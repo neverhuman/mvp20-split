@@ -10,4 +10,5 @@ Navigation only. Closed child plans remain immutable in scope; follow-on work be
 
 - [BP-07.04 Durable supervisor and races](BP-07.04%20Durable%20supervisor%20and%20races.md): accepted100%,4/4; [scoped audit](../../../Audits/BP-07.04_Supervisor_Closeout.md).
 
-- [BP-07.04 Durable supervisor and races](BP-07.04%20Durable%20supervisor%20and%20races.md): accepted100%,4/4; [scoped audit](../../../Audits/BP-07.04_Supervisor_Closeout.md).
+
+- [BP-07.05 Live evaluation and closeout](BP-07.05%20Live%20evaluation%20and%20closeout.md): accepted100%,4/4; [scoped audit](../../../Audits/BP-07.05_Evaluation_Closeout.md).
