@@ -1,0 +1,5 @@
+# Supervisor inspection tests
+
+Owner: Runtime supervision_inspection. Actual retained PostgreSQL through module-scoped graph fixtures. Run python -m pytest -c dev/pyproject.toml services/campaign_runtime/tests/supervision_inspection with AMPHORA_TEST_POSTGRES=1; current Runtime migrator only. No reset or peer SQL.
+
+Cases compare original retained request/report/response/winner data, read grants/scope, bounded response pagination, same-key reader replacement, provider status versus Runtime disposition, empty/unobserved history, HMAC expiry/tampering and new response epoch invalidation without run revision change. Public DTO tests separately cover omission metadata. HTTP checks cover scoped grants, stale409, strict query bounds, opt-in routes and sanitized integrity/oversize503.33 combined SQL/API/boundary checks passed;217statements12branches100%. dev/verify_supervision_inspection.py separately proves four isolated-host read passes and original continuation across replacement using retained actual-owner histories.

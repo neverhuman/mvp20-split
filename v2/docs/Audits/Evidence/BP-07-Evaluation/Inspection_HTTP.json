@@ -1,0 +1,23 @@
+{
+  "timestamp_local": "2026-10-06 04:25:13",
+  "status": "passed",
+  "scope": "Runtime inspection authenticated bounded HTTP, realSQL reads, existing supervision API and service boundaries",
+  "tests": 33,
+  "seconds": 45.3,
+  "coverage": {
+    "statements": 217,
+    "branches": 12,
+    "percent": 100
+  },
+  "checks": [
+    "read grants retain403; missing authentication401",
+    "stale snapshot409",
+    "unknown and duplicate query names422",
+    "sanitized integrity and oversized response503",
+    "default routes remain opt-in"
+  ],
+  "limits": [
+    "No installed replacement or browser credit"
+  ],
+  "raw_evidence": "v2/.test-results/supervisor-inspection-http-final-coverage.json"
+}

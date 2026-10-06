@@ -9,12 +9,12 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 closed100%; BP-07.04 closed100%; BP-07.05/B1.03 active; BP-08/09 queued.
-- Last refreshed: `2026-10-06 04:04:54` (America/Chicago).
+- Last refreshed: `2026-10-06 04:15:35` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P6 / BP-07 - Autonomous LLM Campaign Supervision.
-- Primary active task: BP-07.05/B1.03b owned inspection projection.
+- Primary active task: BP-07.05/B1.04 Studio inspection.
 - Next task: BP-07.05/B1.04 Studio inspection.
-- Implementation completion: BP-07=82.8125%,16/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
+- Implementation completion: BP-07=83.75%,16/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
 - Active focus: verified deterministic evaluation runner; bounded owner inspection next.
 - Blockers: none for deterministic implementation. Approved B2.01 correction: scalar adjustments must reconcile Artifact-only Invoke inputs; see [scalar checkpoint decision](BP-07/BP-07.04%20Scalar%20checkpoint%20decision.md). Live provider/model, egress and spend choices separately govern real calls.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
@@ -32,15 +32,15 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-07.01/.02/.03/.04 are closed100%. BP-07.05/B1.03 is active; implementation14.0625%,Build18.75%,Acceptance0%.
+BP-07.01/.02/.03/.04 are closed100%. BP-07.05/B1.03 is active; implementation18.75%,Build25%,Acceptance0%.
 
 | Parent | Overall | P1 | P2 | P3 | P4 | P5 |
 |---|---:|---:|---:|---:|---:|---:|
-| BP-07 | 82.8125% | 100% | 100% | 100% | 100% | 14.0625% |
+| BP-07 | 83.75% | 100% | 100% | 100% | 100% | 18.75% |
 
 | Active child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-07.05](BP-07/BP-07.05%20Live%20evaluation%20and%20closeout.md) | 14.0625% | 18.75% | 0% | B1.03b |
+| [BP-07.05](BP-07/BP-07.05%20Live%20evaluation%20and%20closeout.md) | 18.75% | 25% | 0% | B1.04 |
 
  BP-06 is [closed100%](Completed/BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md); completed parents are in the [archive](Completed/README.md).
 
@@ -126,6 +126,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-06 04:26:08 | BP-07.05/B1.03 complete; child18.75%,parent83.75%. |33SQL/API/boundary tests;217statements12branches100%;4installed process passes and retained continuation. |
 | 2026-10-06 04:04:54 | BP-07.05/B1.03a verified | Public supervision0.10;124tests;556schemas/548unchanged;child14.0625%,parent82.8125%. |
 | 2026-10-06 03:54:34 | BP-07.05/B1.02 complete | Planning0.92;97tests61.02s;process unknown/recovery and late overage;child12.5%,parent82.5%. |
 | 2026-10-06 03:43:09 | BP-07.05/B1.02a/b verified | Planning0.91/0019;42tests+12boundaries;child9.375%,parent81.875%;physical runner next. |
@@ -150,4 +151,3 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-05 23:57:53 | BP-07.04/B2.03b complete | Planning0.84 SDK/capture/response recovery;9initial+46final cases;workflow97%;next autonomous Runtime loop. |
 | 2026-10-05 23:44:42 | BP-07.04 capture journal complete | Planning0.83/0017 immutable upload/response, fences/rollback/replay;7SQL396statements24branches100%+75regression. |
 | 2026-10-05 23:31:16 | BP-07.04 capture domain verified | Planning0.82 exact primary/late bytes, ancestry and response;7cases104statements2branches100%;18expiry/boundary checks. |
-| 2026-10-05 23:06:40 | BP-07.04/B2.03b.ii complete | Planning0.81 original packet, fresh rights, absolute deadline and history-first recovery;126 scoped+12 boundary tests. |

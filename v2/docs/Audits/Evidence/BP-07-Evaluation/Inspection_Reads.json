@@ -1,0 +1,24 @@
+{
+  "timestamp_local": "2026-10-06 04:15:35",
+  "package": "Runtime0.62; runtime0028 unchanged",
+  "verification": "19 actualSQL/boundary tests passed26.84s",
+  "coverage": {
+    "covered_lines": 174,
+    "num_statements": 174,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100",
+    "num_branches": 8,
+    "num_partial_branches": 0,
+    "covered_branches": 8,
+    "missing_branches": 0,
+    "percent_branches_covered": 100.0,
+    "percent_branches_covered_display": "100"
+  },
+  "scope": "Scoped metadata, winning/retained response, omission pagination, repair/fallback, same-key reader replacement, epoch changes without run revision changes",
+  "initial_corrections": "Epoch initially passed a dict to model encoder; corrected to canonical cut plus counts. Test fixture contains two included entries and one omission; oracle corrected to assert all three. Final tests pass.",
+  "remaining": "HTTP composition and actual isolated process inspection proof"
+}
