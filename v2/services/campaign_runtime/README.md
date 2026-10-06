@@ -1,6 +1,8 @@
 # Campaign Runtime
 
-Current package0.37 integrates explicit supervised admission and immutable policy pins before initial dispatch. Selected ready targets remain unissued across coordinator replacement; checkpoint creation/terminal decisions follow in BP-07.04. No new HTTP route.
+Current package0.38 adds pure immutable checkpoint seeds, with per-occurrence decision identity and exact selected observation bytes. SQL slot creation and request preparation follow; runtime0022 unchanged.
+
+Package0.37 integrates explicit supervised admission and immutable policy pins before initial dispatch. Selected ready targets remain unissued across coordinator replacement; checkpoint creation/terminal decisions follow in BP-07.04. No new HTTP route.
 
 Package0.36 adds append-only admitted policy storage and forward runtime0022. Admission integration follows. Never run a Runtime<=0.35 migrator against this schema.
 

@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-10-05 20:36:30",
+  "tests": 84,
+  "seconds": 12.16,
+  "pure_tests": 6,
+  "pure_seconds": 3.49,
+  "statements": 68,
+  "branches": 0,
+  "coverage": 100,
+  "limits": "Pure seeds only; no slot SQL, context or request"
+}

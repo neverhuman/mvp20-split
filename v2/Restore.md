@@ -1,20 +1,22 @@
 # Restore
 
-Read this first after compression. Refreshed 2026-10-05 20:32:40 (America/Chicago).
+Read this first after compression. Refreshed 2026-10-05 20:36:30 (America/Chicago).
 
 ## Resume
 
-Continue until needed. c.ii.b pushedf22b0f0c. c.ii.c COMPLETE verified, ready commit/push; current **c.iii concrete checkpoint creation**, next d SQL fencing/recovery. Runtime0.37/runtime0022;Planning0.76/planning0016;publicSupervision0.4. NEVER run Runtime<=0.35 or Planning<=0.73 migrators.80 policy/scheduling/boundary cases55.08s plus22 draft/successor/admission9.84s. Policy100%,admission82%,advancement94%;broad coordinator75% includes unexercised HTTP/config/polling. No tests running.
+Continue until needed. c.ii pusheddc36f53e. c.iii.a seed COMPLETE verified, ready commit/push. Current **c.iii.b transaction-local checkpoint slots**, next iii.c coordinator integration. Runtime0.38/runtime0022;Planning0.76/planning0016;publicSupervision0.4. NEVER Runtime<=0.35 or Planning<=0.73 migrators.6 seed cases3.49s/68statements100%;84 scope/request/boundary12.16s. No tests running.
 
-GraphAdmission.admit_supervised pins exact policy before create_scope/initial issuance. Replay before catalog access. GraphPass loads immutable PolicyPins and returns False for ready selected targets, preserving no Invoke or conversion intent. No slot/request/winner/effective input yet. c.iii must replace interim guard with durable concrete occurrence checkpoint creation, bounded ceilings/deadlines, exact observations and target-only hold. Request creation needs Planning context; keep Planning preparation separate and shared run transaction when request/outbox eventually prepared. B2.02 owns winner/terminal fallback/effective fields; B2.03 owns autonomous delivery. Document bounded c.iii design before code.
+Read admitted checkpoint policy doc's Concrete checkpoint creation section. New supervision_checkpoints.CheckpointSeed owns canonical observations and stable decision_id over scope/run/plan/policy/rule/concrete activation. No SQL yet. b needs append-only slots with actual selected observations, policy ceiling eligibility (extra slots fallback_required), original deadline bounded by run, exact original replay before checking newer state. c wires initial ready targets after full frontier creation and before initial Invoke; GraphPass replaces interim hold with ensure-once. No changes to ready target state (avoid self-staleness). B2.02 terminal winners/effects; B2.03 bridges pending checkpoint work to Planning context and request journal.
+
+Potential shared helper: extract supervision_journal.current.verify_footprint from verify_current to reuse actual run/plan/node/ancestor/membership/absence of issued intent checks. Keep deadline check in verify_current; new slot computes its own bound. Existing v1/v2 SQL tests must regress. Watch coordinator/storage import cycles; use lazy boundary imports if needed rather than broad package changes.
 
 ## Canonical progress
 
-Parent66.11%,13/20;child30.56%,Build40.74%,Acceptance0%,1/4. B1=100%;B2=22.22%(.01=66.67%,.02/.03=0%);B3/V1=0%. B2.01 a/b100%,c66.67%,d0%;c.i/ii100%,iii0%. Current iii,next d.
+Parent66.16%,13/20;child30.79%,Build41.05%,Acceptance0%,1/4. B1=100%;B2=23.15%(.01=69.44%,.02/.03=0%);B3/V1=0%. B2.01 a/b100%,c77.78%,d0%;c.i/ii100%,iii33.33%;iii.a100%,b/c0%. Current iii.b.
 
 ## Active boundaries and versions
 
-Runtime0.37/runtime0022; Planning0.76/planning0016; public supervision0.4; graph-runtime0.13; public Planning0.9;536 schema files. Actual DB heads are0021/0016. **NEVER run Runtime<=0.35 or Planning<=0.73 migrators.** Data0.29/artifacts0012 (never<=0.25 migrators), Research0.34/research0013 (never<=0.33), Knowledge0.18, Registry0.1.
+Runtime0.38/runtime0022; Planning0.76/planning0016; public supervision0.4; graph-runtime0.13; public Planning0.9;536 schema files. Actual DB heads are0021/0016. **NEVER run Runtime<=0.35 or Planning<=0.73 migrators.** Data0.29/artifacts0012 (never<=0.25 migrators), Research0.34/research0013 (never<=0.33), Knowledge0.18, Registry0.1.
 
 Invoke inputs remain Artifact-only. Owner approved scalar checkpoints on named inline fields of `artifact_materialize` before any conversion intent, reservation or publication. Keep original plans/Artifacts/issued inputs immutable. Future admission policy must bind types/units/bounds and concrete occurrences; effective field resolution must be shared by conversion opening and source-cut revalidation. Pure scope/frame support is not admission or execution acceptance.
 
