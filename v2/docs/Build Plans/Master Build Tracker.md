@@ -16,7 +16,7 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 - Next task: BP-08.04/B2.02 actual compiled successor/carry handoff and comparison evidence.
 - Implementation completion: BP-07 closed100%,20/20; BP-08=65%,13/20;BP-09=0%.
 - Active focus: bounded topology successors and fair comparison; preserve accepted search/representation and BP-07 evaluation history.
-- Blockers: none for BP-08.04 activation. Selected host and integrated live deployment remain BP-09 decisions/gates.
+- Blockers: B2.02 public draft-successor correction awaits owner direction; B2.01 comparison proceeds. Selected host and integrated live deployment remain BP-09 decisions/gates.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
 - Active exception: none.
 
@@ -114,7 +114,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
-| 2026-10-06 16:29:56 | BP-08.04/B1 complete;child25%,parent65%,13/20. | Planning0.98 topologyAPI/host;153checks;438statements30branches100%; faircomparison next. |
+| 2026-10-06 16:22:40 | BP-08.04/B1 complete;child25%,parent65%,13/20. | Planning0.98 topologyAPI/host;153checks;438statements30branches100%; faircomparison next. |
 | 2026-10-06 16:15:33 | BP-08.04/B1.03i complete;child20.83%,parent64.17%. | Planning0.97/0020;128regressions+71focused;immutable record/current readers; API/host next. |
 | 2026-10-06 16:01:13 | BP-08.04/B1.02 complete;child16.67%,parent63.33%. | 88checks; pure bounded topology policy163statements/eightbranches100%; owner persistence next. |
 | 2026-10-06 15:53:23 | BP-08.04/B1.01 complete;child8.33%,parent61.67%. | 29wire/schema/boundary checks;630schemas preserve622; pure policy next. |

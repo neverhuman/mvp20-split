@@ -12,7 +12,7 @@
 - Current implementation task: BP-08.04/B2.01 fair numeric comparison; BP-08.01/.02/.03 closed.
 - Latest checkpoint: BP-08.04/B1 complete; Planning0.98/0020 topology API/host verified153tests64.96s;438statements30branches100%; fair comparison next.
 - Demonstrated behavior: numeric generation graphs, actual Runtime/Data/Registry APIs, pinned tool images, independent package replacement and worker/Runtime recovery. Synthetic representation/fitness/reuse accepted; topology, scientific and target-host evidence remain successors.
-- Blockers: direct v1 extraction unverified (license labels/toolchain); authorized independent numeric implementation proceeds. No owner decision blocks current scope.
+- Blockers: direct v1 extraction unverified (license labels/toolchain); authorized independent numeric implementation proceeds. B2.01 proceeds; B2.02 new draft-successor command awaits owner direction in the child decision record.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
 
