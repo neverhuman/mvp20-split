@@ -1,6 +1,6 @@
 # Numeric evolutionary search boundary
 
-- Owner: BP-08.02/B1.02a verified; package0.3.0. CLI/worker adapters and evaluator remain B1.02b/c. BP-08.01 remains closed for its0.1.0 boundary.
+- Owner: BP-08.02/B1.02b verified; package0.4.0. Separate synthetic evaluator is B1.02c. BP-08.01 remains closed for its0.1.0 boundary.
 - Scope: finite continuous numerical search primitives; independent Python implementation, not a verified v1 port.
 - Design: [Search](../../docs/Architecture/Campaigns/Search.md); [activation](../../docs/Audits/BP-08.01_Activation.md).
 
@@ -8,7 +8,7 @@ CandidateScore owns finite objective/constraint values and an explicit eligibili
 
 Input bounds: 1..256 uniquely identified candidates, 1..16 objective dimensions, finite float64 values, nonnegative finite violation, closed minimize/maximize directions. Lower violation dominates higher violation; equally infeasible candidates do not dominate one another through attractive objectives. Feasible Pareto comparison respects each direction. Crowding normalizes each nonconstant axis, uses an explicit boundary flag instead of JSON-incompatible infinity, scales differences to avoid overflow, and breaks ties by candidate ID. Constant axes add no crowding or arbitrary boundary preference. Input order cannot select a different tied candidate.
 
-The module reads no files, SQL, environment, network or global RNG. It owns no graph scheduling, model/source authority, molecular representation, evaluator, tool worker or registry descriptor yet. Public search/checkpoint DTOs, intrinsic consistency checks and seeded candidate state are implemented; graph-step/standalone worker integration belongs to BP-08.02. Existing synthetic solver tools remain unchanged.
+The numerical domain objects perform no I/O or global RNG access. The CLI and configured worker adapter use the public Tool Protocol SDK for Runtime/Artifact infrastructure only; they own no SQL, graph scheduling, model/source authority, molecular representation or evaluator. Public search/checkpoint DTOs, intrinsic consistency checks and seeded candidate state are implemented; graph-step/standalone worker integration belongs to BP-08.02. Existing synthetic solver tools remain unchanged.
 
 Mathematical reference: [Deb et al., NSGA-II](https://ieeexplore.ieee.org/document/996017). No v1 or external source copied. Exact v1 pins/license observations and Lab placeholder disposition are in [reuse disposition](../../docs/Build%20Plans/BP-08/BP-08.01%20Reuse%20disposition.json). This is constrained Pareto/crowding selection with an explicit feasible-only policy, not a claim to reproduce the v1 SBX/mutation/RNG implementation or scientific benchmarks.
 
@@ -61,3 +61,15 @@ Each changed checkpoint points to its bound source Artifact. These are pure prop
 Stop order is no feasible survivors, generation budget, evaluation budget, then unchanged survivor-front objective vectors. Unavailable numeric fitness yields an explicit unavailable_fitness stop with every result retained; weak-but-present numeric evidence is not rejected merely for its provenance label. Frozen evaluator/objective/constraint pins still apply. Duplicate-only generations can select cached parent fitness without new evaluations and count toward the unchanged-front limit. No loop, network dispatch or database acceptance occurs in these domain objects.
 
 Verified 2026-10-06 10:45:54:155 scoped checks17.21s;617/618 statements,133/134 branches covered (99% combined). Remaining gap: defensive empty-membership front helper. Actual owner/process recovery remains B2/B3; no deployed worker claim.
+
+## Standalone capability modes
+
+The package exposes four separately described operations: numeric.search-seed (SearchSpec to SearchCheckpoint), numeric.search-requests (SearchStepContext to EvaluationRequestBatch), numeric.search-collect (CollectedEvaluations to SearchCheckpoint), and numeric.search-vary (SearchStepContext to SearchCheckpoint). Each worker process is configured for exactly one operation and can be replicated independently. No sibling-tool implementation imports or hidden operation discovery are used.
+
+`python -m amphora_evolution_search compute --operation seed --image-sha256 <pin>` consumes bounded JSON; describe emits the operation descriptor; schema emits its exact published validation schema; worker --operation <mode> --config <path> runs one Runtime-issued invocation via the existing SDK. Numerical checkpoints are ordinary immutable output Artifacts, not worker-attempt checkpoints; descriptors explicitly use pure/no-egress/synthetic-only and SDK checkpoint mode none.
+
+The original specification must include ImplementationPin(name=numeric-search, version=current package release, sha256=configured image identity). Adapter execution is unavailable until descriptor binding supplies that identity, and an adapter cannot rebind to another image. CLI image arguments declare a fixture/deployment pin; they do not prove that an image was built. Actual registry/deployment/Runtime binding remains required.
+
+Inputs and outputs are capped at262144 bytes; schema cardinalities alone do not guarantee fit. Invalid data yields a closed safe failure code without echoing payloads. Compute emits exact canonical checkpoint bytes, with no trailing newline, so redirected bytes retain their Artifact identity. Dockerfile is an offline-wheel recipe; no image build or target-host claim exists yet.
+
+Verified 2026-10-06 10:54:14:169 checks24.87s; adapter/capability modules100% measured coverage. Full package94% because CLI subprocess lines are not attributed to the parent (37 CLI statements/14 branches); independent CLI seed/describe/schema and safe-error cases pass. Actual worker HTTP/owner recovery remains B2/B3.

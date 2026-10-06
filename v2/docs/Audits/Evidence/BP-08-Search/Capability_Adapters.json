@@ -1,0 +1,18 @@
+{
+  "verified_at": "2026-10-06 10:54:14",
+  "scope": "BP-08.02/B1.02b",
+  "package": "amphora-evolution-search0.4.0",
+  "tests": 169,
+  "seconds": 24.87,
+  "coverage": {
+    "statements": 735,
+    "covered_statements": 697,
+    "branches": 158,
+    "covered_branches": 143,
+    "new_adapters": "100%",
+    "limits": "CLI subprocess execution not included in parent coverage"
+  },
+  "actual_image_built": false,
+  "actual_worker_http": false,
+  "next": "B1.02c separate synthetic evaluator"
+}
