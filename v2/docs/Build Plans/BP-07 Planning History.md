@@ -832,3 +832,8 @@ Actual three-owner proof passed11 stages,6 installed service processes and2 post
 ## 2026-10-05 16:40:12 ? B2 target-contract discrepancy
 
 B1 committed/pushed270eb7a1. B2.01 source review confirmed Invoke inputs are Artifact-only while the physical design calls for scalar Invoke adjustments. Prepared a [versioned materialization checkpoint recommendation](BP-07/BP-07.04%20Scalar%20checkpoint%20decision.md); owner direction pending. No production change or implementation credit; child25%,Build33.33%,Acceptance0%,parent65%,13/20. Completed B1 remains100%.
+
+
+## 2026-10-05 19:24:23 ? Approved checkpoint correction / B2.01a
+
+Owner approved parameter materialization checkpoints. Runtime0.30 pure v2 targets/footprints verified with66 scope/request cases and34 target/boundary cases;197 statements22 branches100%,Ruff passed after import formatting repair. B2.01a100%,b/c/d0%; B2.01=25%,B2=8.33%;child27.08%,Build36.11%,Acceptance0%;parent65.42%,13/20. Existing command/schema/migration profiles unchanged. Next B2.01b public request/frame profiles and compatibility.

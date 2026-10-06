@@ -4,9 +4,9 @@ Refreshed `2026-10-05 16:40:12` (America/Chicago). **Read first after compressio
 
 ## Resume
 
-B1 complete, verified and pushed as `270eb7a1`. No running verification, hosts or proxies. Current B2.01 is blocked on a material target-contract decision, documented in `docs/Build Plans/BP-07/BP-07.04 Scalar checkpoint decision.md`. Invoke accepts only Artifact references; existing supervision footprint targets only Invoke; physical design assumes scalar adjustments there. Recommendation: versioned checkpoints on named inline scalar fields of artifact_materialize before any binding intent opens, retain Invoke review checkpoints and old profiles. Binding opening AND source-cut reconstruction must share immutable effective-value resolution. No production edits or decision implemented. Ask owner for target choice; approval is not implied by elapsed time.
+Owner approved scalar materialization checkpoint correction. B2.01a verified, ready commit/push then continue B2.01b public request/frame profiles and compatibility. Runtime0.30 pure CheckpointFootprint/CheckpointTarget v2; old DecisionFootprint unchanged, legacy ScopeExport rejects v2. No SQL/migration/public contract changes.66 scope/request tests4.06s,scope197 statements22 branches100%;34 target/boundary tests12.37s,Ruff passed. No running verification/hosts. Runtime0.30/runtime0020,Planning0.72/planning0015.
 
-Child25%, Build33.33%, Acceptance0%,1/4; parent65%,13/20; B1=100%, B2/B3/V1=0%. Trackers and decision synchronized. After approval: bounded versioned target/profile audit then B2.01 admission/checkpoint implementation, B2.02 winner/effects, B2.03 autonomous loop. Read decision before old resume notes below. No live provider choice blocks deterministic work. Current versions unchanged.
+B2.01 four equal units:a100%,b/c/d0% =>25%;B2 .01=25%,.02/.03=0% =>8.33%;child27.08%,Build36.11%,Acceptance0%,1/4;parent65.42%,13/20. Current b; next c admission policy/checkpoints then d SQL verification. B1 complete100%. Latest pushed003a097c; prior270eb7a1 B1 proof. Do not ask again for target approval. Boundaries: new inline scalar fields before binding intents; opening and source-cut revalidation share immutable effective-value resolution; existing Invoke Artifact contract preserved. New profile transport must not silently reinterpret v1.
 
 ## Latest evidence
 

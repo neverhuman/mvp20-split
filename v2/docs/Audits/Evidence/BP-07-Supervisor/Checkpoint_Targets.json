@@ -1,0 +1,21 @@
+{
+  "reviewed_at": "2026-10-05 19:24:23",
+  "package": "amphora-campaign-runtime==0.30.0",
+  "milestone": "B2.01a",
+  "tests": {
+    "scope_and_requests": 66,
+    "targets_and_boundaries": 34
+  },
+  "scope_coverage": {
+    "statements": 197,
+    "branches": 22,
+    "percent": 100
+  },
+  "ruff": "passed after test import formatting correction",
+  "limitations": [
+    "pure boundary only",
+    "no admission or execution effect",
+    "no new public profiles or migrations",
+    "field/type/plan/issued-intent checks remain B2.01c/d"
+  ]
+}

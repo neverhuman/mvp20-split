@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from amphora_contracts_supervision import SupervisionNodeRead, SupervisionSnapshot
 
 from ..supervision_scope import DecisionFootprint
+from ..supervision_scope.observations import require
 
 
 @dataclass(frozen=True)
@@ -13,6 +14,7 @@ class ScopeExport:
     footprint: DecisionFootprint
 
     def document(self):
+        require(type(self.footprint) is DecisionFootprint, 'scope_profile_mismatch')
         reads = tuple(SupervisionNodeRead(node=item.view,
             state_sha256=hashlib.sha256(item.state_json).hexdigest(),
             outputs_sha256=hashlib.sha256(item.outputs_json).hexdigest())
