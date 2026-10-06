@@ -27,7 +27,7 @@ KINDS = ("numeric", "polymer", "sequence", "digest")
 
 
 class ReuseEnvironment(GRAPH.GraphEnvironment):
-    def cli(self, kind, action, *arguments, body=None):
+    def cli(self, kind, action, *arguments, body=None, operation="canonicalize"):
         result = subprocess.run(
             [
                 self.config[kind],
@@ -36,7 +36,7 @@ class ReuseEnvironment(GRAPH.GraphEnvironment):
                 ("amphora_synthetic_digest" if kind == "digest" else "amphora_" + kind + "_space"),
                 action,
                 *arguments,
-                *([] if kind == "digest" else ["--operation", "canonicalize"]),
+                *([] if kind == "digest" else ["--operation", operation]),
             ],
             input=body,
             cwd=self.root,
@@ -51,12 +51,15 @@ class ReuseEnvironment(GRAPH.GraphEnvironment):
     def setup(self):
         self.scope["tenant_id"] = "reuse-handoff"
         self.tokens["research"] = uuid.uuid4().hex
+        self.images = load("reuse_image_catalog", Path(__file__).with_name("images.py")).ImageCatalog(self.config)
+        self.images.register(self)
         self.descriptors, self.semantic, self.inputs = {}, {}, {}
         releases, schemas, profiles = [], {}, []
         for kind in KINDS:
             descriptor = json.loads(
-                self.cli(kind, "describe", "--image-sha256", "c" * 64)
+                self.cli(kind, "describe", "--image-sha256", self.images.digest(kind))
             )
+            self.images.verify(kind, descriptor, self.config["packages"])
             self.descriptors[kind] = descriptor
             self.semantic[kind] = json.loads(self.cli(kind, "profiles"))
             filename = kind + "-descriptor.json"
@@ -202,6 +205,7 @@ class ReuseEnvironment(GRAPH.GraphEnvironment):
             self.command('artifacts.finalize',{'upload_id':upload['upload_id'],'content':content},'worker1'))['artifact']
 
     def run_tool(self, kind, reference):
+        self.images.select(self, kind)
         port = self.descriptors[kind]['tool']['inputs'][0]
         receipt = HTTP.decoded(self.runtime.endpoint,'/v1/graph-runs',self.tokens['admin'],self.command('graph.admit',{
             'plan_sha256':self.plans['reuse-'+kind]['sha256'],
@@ -210,7 +214,7 @@ class ReuseEnvironment(GRAPH.GraphEnvironment):
         assert receipt['outcome']['status'] == 'accepted'
         self.active_run = receipt['outcome']['committed']['object_id']
         self.advance()
-        worker = {'actor_id':'worker1','scope':self.scope,'run_id':self.active_run,'image_sha256':'c'*64,
+        worker = {'actor_id':'worker1','scope':self.scope,'run_id':self.active_run,'image_sha256':self.images.digest(kind),
             'runtime':{'endpoint':self.runtime.endpoint,'token_env':'WORKER_TOKEN'},
             'artifacts':{'endpoint':self.artifact.endpoint,'token_env':'WORKER_TOKEN'},'lease_seconds':90}
         path = self.root / (kind+'-worker.json');path.write_text(json.dumps(worker),encoding='utf-8')

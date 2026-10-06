@@ -1,0 +1,343 @@
+{
+  "status": "passed",
+  "timestamp_local": "2026-10-06 15:43:22",
+  "scope": {
+    "tenant_id": "reuse-handoff",
+    "project_id": "cced596d39ea477598d71126cae00cd5"
+  },
+  "accepted_invocations": 18,
+  "decisions": {
+    "numeric": {
+      "scope": {
+        "tenant_id": "reuse-handoff",
+        "project_id": "cced596d39ea477598d71126cae00cd5"
+      },
+      "reuse_id": "numeric-reuse",
+      "sha256": "4e9330a1b3e92d40bf8b9b6623ce20c4fc73ccbb9c40c328df301b8beeffeda9"
+    },
+    "polymer": {
+      "scope": {
+        "tenant_id": "reuse-handoff",
+        "project_id": "cced596d39ea477598d71126cae00cd5"
+      },
+      "reuse_id": "polymer-reuse",
+      "sha256": "e1b22349d7b91809f25984287ba04b982078d673411e0073bf16179b1f22aca0"
+    },
+    "sequence": {
+      "scope": {
+        "tenant_id": "reuse-handoff",
+        "project_id": "cced596d39ea477598d71126cae00cd5"
+      },
+      "reuse_id": "sequence-reuse",
+      "sha256": "cf7466efb798a36237441df6bd7a34c837fcbdc0402996dec94b6ff23b07b45e"
+    }
+  },
+  "context_misses": 3,
+  "wrong_producer_rejections": 3,
+  "research_restart_replay": true,
+  "current_data_denial": 403,
+  "historical_read_after_denial": 200,
+  "limits": "Actual Windows installed-owner HTTP/graph workers with explicit synthetic owner bootstrap; Linux image/closure and actual Registry API evidence only when image_manifest is present; no lab/scientific validity or target-host/cluster claim",
+  "evidence_path": ".test-results/evaluation-reuse-images-20261006a/http/evidence.json",
+  "evidence_sha256": "5ae042df13e34da67380e156fd1a289a58debf2237c444d1d4416f13a2156715",
+  "image_manifest": "Z:\\mvp20-split\\.test-results\\representation-images-20261006a\\manifest.json",
+  "registry_profiles": [
+    {
+      "kind": "numeric",
+      "operation": "canonicalize",
+      "lock": {
+        "schema_version": "1",
+        "tool": {
+          "capability_id": "synthetic.numeric-canonicalize",
+          "release": "0.4.0",
+          "image_sha256": "6501b99f52dfd084780c7f53071cdd8d34ac139758b6e95c541b4cd2ab7c570c",
+          "contract_version": "1"
+        },
+        "descriptor_sha256": "bf88855a9403b8feedb88ed68804fff9a26dcc81047808985b632189ced424f3",
+        "input_schemas": [
+          {
+            "port": "parameters",
+            "schema_ref": {
+              "schema_id": "candidate-space.numeric",
+              "version": "1",
+              "sha256": "a73fb8ecfdad1828ef079f6e56f9eff820d4e2afdc4cf6ae9ac50f92a5f86664"
+            }
+          }
+        ],
+        "output_schemas": [
+          {
+            "port": "result",
+            "schema_ref": {
+              "schema_id": "candidate-canonicalization.receipt",
+              "version": "1",
+              "sha256": "426ca57d626c639c5fe7e43a2708258f7e2ac14e2b4c229e6241092346ec691a"
+            }
+          }
+        ],
+        "checkpoint_schema": null
+      }
+    },
+    {
+      "kind": "numeric",
+      "operation": "move",
+      "lock": {
+        "schema_version": "1",
+        "tool": {
+          "capability_id": "synthetic.numeric-move",
+          "release": "0.4.0",
+          "image_sha256": "6501b99f52dfd084780c7f53071cdd8d34ac139758b6e95c541b4cd2ab7c570c",
+          "contract_version": "1"
+        },
+        "descriptor_sha256": "e21feb1e998f24aee5eb69bf64f9ea6368460648757e3b6823caa59e61d3675d",
+        "input_schemas": [
+          {
+            "port": "parameters",
+            "schema_ref": {
+              "schema_id": "candidate-space.numeric-move",
+              "version": "1",
+              "sha256": "e307f140e06faf6d101fd6169aa089781a07587b35e0ea2a0e73bb20d8ff0ada"
+            }
+          }
+        ],
+        "output_schemas": [
+          {
+            "port": "result",
+            "schema_ref": {
+              "schema_id": "candidate-space.change",
+              "version": "1",
+              "sha256": "6d49d528a0cba0f2cf799e69faeb253c01ea1e5af7bb43487ab4f5d218d036ed"
+            }
+          }
+        ],
+        "checkpoint_schema": null
+      }
+    },
+    {
+      "kind": "polymer",
+      "operation": "canonicalize",
+      "lock": {
+        "schema_version": "1",
+        "tool": {
+          "capability_id": "synthetic.polymer-canonicalize",
+          "release": "0.4.0",
+          "image_sha256": "1ac66b08460608ccbe38993a222973f6c64bc9ab6ede957d1442db6e9f2d6ef8",
+          "contract_version": "1"
+        },
+        "descriptor_sha256": "4578bd4ca4c61af20540f169f4681f0bb121c766033a9871705b86de963cb362",
+        "input_schemas": [
+          {
+            "port": "parameters",
+            "schema_ref": {
+              "schema_id": "candidate-space.polymer",
+              "version": "1",
+              "sha256": "027807938ef5c9ab0fa7d0064dd0e3116a9abd8e23e37edaf25088273747e90c"
+            }
+          }
+        ],
+        "output_schemas": [
+          {
+            "port": "result",
+            "schema_ref": {
+              "schema_id": "candidate-canonicalization.receipt",
+              "version": "1",
+              "sha256": "426ca57d626c639c5fe7e43a2708258f7e2ac14e2b4c229e6241092346ec691a"
+            }
+          }
+        ],
+        "checkpoint_schema": null
+      }
+    },
+    {
+      "kind": "polymer",
+      "operation": "move",
+      "lock": {
+        "schema_version": "1",
+        "tool": {
+          "capability_id": "synthetic.polymer-move",
+          "release": "0.4.0",
+          "image_sha256": "1ac66b08460608ccbe38993a222973f6c64bc9ab6ede957d1442db6e9f2d6ef8",
+          "contract_version": "1"
+        },
+        "descriptor_sha256": "d247d36b99aae02024f00948b1c23316300b9ca0465d1464c3d242768146f63f",
+        "input_schemas": [
+          {
+            "port": "parameters",
+            "schema_ref": {
+              "schema_id": "candidate-space.polymer-move",
+              "version": "1",
+              "sha256": "6a28b7c92161e3a854f699f865402ee2f76a64d26b2e931310f8787667981e52"
+            }
+          }
+        ],
+        "output_schemas": [
+          {
+            "port": "result",
+            "schema_ref": {
+              "schema_id": "candidate-space.change",
+              "version": "1",
+              "sha256": "6d49d528a0cba0f2cf799e69faeb253c01ea1e5af7bb43487ab4f5d218d036ed"
+            }
+          }
+        ],
+        "checkpoint_schema": null
+      }
+    },
+    {
+      "kind": "sequence",
+      "operation": "canonicalize",
+      "lock": {
+        "schema_version": "1",
+        "tool": {
+          "capability_id": "synthetic.sequence-canonicalize",
+          "release": "0.4.0",
+          "image_sha256": "1e69fa6aa3706d0dae403911a03f0593c2f0576d9c1a95729617c7fcee928a1b",
+          "contract_version": "1"
+        },
+        "descriptor_sha256": "6d4f3563969be2e30c022e82496750691b1f566d8e8eb8b28a57e73df4b76b4b",
+        "input_schemas": [
+          {
+            "port": "parameters",
+            "schema_ref": {
+              "schema_id": "candidate-space.sequence",
+              "version": "1",
+              "sha256": "24aeca0d7da72bbc7c07aa979eabc430989568450b020325d6b75f1bc9ecb1bc"
+            }
+          }
+        ],
+        "output_schemas": [
+          {
+            "port": "result",
+            "schema_ref": {
+              "schema_id": "candidate-canonicalization.receipt",
+              "version": "1",
+              "sha256": "426ca57d626c639c5fe7e43a2708258f7e2ac14e2b4c229e6241092346ec691a"
+            }
+          }
+        ],
+        "checkpoint_schema": null
+      }
+    },
+    {
+      "kind": "sequence",
+      "operation": "move",
+      "lock": {
+        "schema_version": "1",
+        "tool": {
+          "capability_id": "synthetic.sequence-move",
+          "release": "0.4.0",
+          "image_sha256": "1e69fa6aa3706d0dae403911a03f0593c2f0576d9c1a95729617c7fcee928a1b",
+          "contract_version": "1"
+        },
+        "descriptor_sha256": "1eadd2a96504c5faf9b47555a118185c2603ec9a75cc44a3ff0a99c4d50e2d88",
+        "input_schemas": [
+          {
+            "port": "parameters",
+            "schema_ref": {
+              "schema_id": "candidate-space.sequence-move",
+              "version": "1",
+              "sha256": "92038de3279f80550f233ff4d669d443265998a169b48b85cff3c9cf30a7743b"
+            }
+          }
+        ],
+        "output_schemas": [
+          {
+            "port": "result",
+            "schema_ref": {
+              "schema_id": "candidate-space.change",
+              "version": "1",
+              "sha256": "6d49d528a0cba0f2cf799e69faeb253c01ea1e5af7bb43487ab4f5d218d036ed"
+            }
+          }
+        ],
+        "checkpoint_schema": null
+      }
+    },
+    {
+      "kind": "digest",
+      "operation": "evaluate",
+      "lock": {
+        "schema_version": "1",
+        "tool": {
+          "capability_id": "synthetic.digest-score",
+          "release": "0.1.0",
+          "image_sha256": "164c3f7f5ef7b5cdb288c00f4738ee6995c90aff83ccaa044fd5d29277888835",
+          "contract_version": "1"
+        },
+        "descriptor_sha256": "283edbb9312bae4153bceb9426e5116cdb01f3e6cbc0b951f9b2a4e2314711df",
+        "input_schemas": [
+          {
+            "port": "parameters",
+            "schema_ref": {
+              "schema_id": "evaluation-identity.input",
+              "version": "1",
+              "sha256": "87d1a5c592c35ea69bb9b2cc84c304b715f83c8d3febc1c9d868d93a880c6773"
+            }
+          }
+        ],
+        "output_schemas": [
+          {
+            "port": "result",
+            "schema_ref": {
+              "schema_id": "synthetic-evaluation.receipt",
+              "version": "1",
+              "sha256": "58dc5f412a7b7bd6bd4bc2b043cc85a535c35ed76c1b185f9ca2c55f490301a9"
+            }
+          }
+        ],
+        "checkpoint_schema": null
+      }
+    }
+  ],
+  "registry_resolutions": 25,
+  "capacity_authority": "Synthetic fixture observations, not deployed Linux workers or execution grants",
+  "replacement": {
+    "retained_producer_proofs": 9,
+    "retained_reuse_decisions": 3,
+    "replacement_invocations": 9,
+    "replacement_decisions": {
+      "numeric": {
+        "scope": {
+          "tenant_id": "reuse-handoff",
+          "project_id": "cced596d39ea477598d71126cae00cd5"
+        },
+        "reuse_id": "numeric-reuse-replacement",
+        "sha256": "a21320c521142ab7105827b047e6225d29b2930aaef92024f060de0013bc57ba"
+      },
+      "polymer": {
+        "scope": {
+          "tenant_id": "reuse-handoff",
+          "project_id": "cced596d39ea477598d71126cae00cd5"
+        },
+        "reuse_id": "polymer-reuse-replacement",
+        "sha256": "44a36eb39671e9e10511aff10dff9329dd380d34da28cf29f66371d035bf1c3d"
+      },
+      "sequence": {
+        "scope": {
+          "tenant_id": "reuse-handoff",
+          "project_id": "cced596d39ea477598d71126cae00cd5"
+        },
+        "reuse_id": "sequence-reuse-replacement",
+        "sha256": "a6a928d050607cb1a2b8a726c2e1a0c92ad3b35006711dda69fb9bc6c50a3655"
+      }
+    },
+    "wheel_closures_equal": true
+  },
+  "installed_closures": 15,
+  "wheel_manifests": {
+    "runtime": "e5be884b5319ec7b2fff459017b37f19b80a27f0a8ec9e4f0f460dcf033b8218",
+    "artifact": "e676f3e89d0fd102c9b1dc24cc3dbfc48f4e101a96b8ae1b0c926042921fddc9",
+    "research": "5891d91f4c72fbf19e433936323997160887760c37d8d087674140d60947a91e",
+    "numeric": "07670024f66fab1129607a4b4faea142fe221b298ff658b71dafcd2b44f4b718",
+    "polymer": "c6172db6eb621157a5bb6cd3b6e2bb7138534f87aa8881e3068a6ac7fccd07db",
+    "sequence": "d2a262c0e17f85aa5b0b64a8fec0688cf8e3c1576805ab26c84a89e6b8e69a91",
+    "digest": "6e298e100108f7a6569ca9d61f41a33ad7c1efd589974209053dcc2de14e0768",
+    "controller": "a808186b662a7ad95b82a87cada9ceb4fc5d34b71c00d455a3844e787cf8eee2",
+    "registry": "9c8f34be319cae1184af87ba8b6f053481604cd2f0a73ba2f868c5d74332b709",
+    "runtime-replacement": "e5be884b5319ec7b2fff459017b37f19b80a27f0a8ec9e4f0f460dcf033b8218",
+    "research-replacement": "5891d91f4c72fbf19e433936323997160887760c37d8d087674140d60947a91e",
+    "numeric-replacement": "07670024f66fab1129607a4b4faea142fe221b298ff658b71dafcd2b44f4b718",
+    "polymer-replacement": "c6172db6eb621157a5bb6cd3b6e2bb7138534f87aa8881e3068a6ac7fccd07db",
+    "sequence-replacement": "d2a262c0e17f85aa5b0b64a8fec0688cf8e3c1576805ab26c84a89e6b8e69a91",
+    "digest-replacement": "6e298e100108f7a6569ca9d61f41a33ad7c1efd589974209053dcc2de14e0768"
+  }
+}

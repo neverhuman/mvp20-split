@@ -104,6 +104,10 @@ def main(config):
         port=research.port;research.close();research=e.research_host(research_config,port)
         for kind,request in requests.items():
             assert HTTP.decoded(research.endpoint,'/v1/evaluation-reuse',e.tokens['admin'],request)==accepted[kind]
+        replacement = None
+        if config.get('replacements'):
+            replacement_module = module.load('reuse_replacement', Path(__file__).with_name('replacement.py'))
+            research, replacement = replacement_module.replace(e, research, research_config, prepared, reports, requests, accepted, HTTP)
         original=copy.deepcopy(e.artifact_config)
         e.artifact_config['principals']=[p for p in e.artifact_config['principals'] if p['actor_id']!='research']
         port=e.artifact.port;e.artifact.close()
@@ -113,12 +117,15 @@ def main(config):
             selection={'scope':e.scope,'reuse_id':request['reuse_id']}
             assert HTTP.decoded(research.endpoint,'/v1/evaluation-reuse/read',e.tokens['admin'],selection)==accepted[kind]
         evidence={'status':'passed','timestamp_local':datetime.now().strftime('%Y-%m-%d %H:%M:%S'),'scope':e.scope,
-            'packages':config['packages'],'accepted_invocations':9,'cases':reports,
+            'packages':config['packages'],'accepted_invocations':18 if replacement else 9,'cases':reports,
             'decisions':{kind:value['reference'] for kind,value in accepted.items()},'context_misses':3,
             'wrong_producer_rejections':3,'research_restart_replay':True,'current_data_denial':403,'historical_read_after_denial':200,
-            'limits':'Actual Windows installed-owner HTTP/graph workers with explicit synthetic owner bootstrap; no lab/scientific validity, Linux image/Registry or target-host claim'}
+            'replacement':replacement,'registry':{'registrations':e.images.registrations,'selections':e.images.selections,
+                'capacity_authority':'Synthetic fixture observations, not deployed Linux workers or execution grants'},
+            'image_manifest':config.get('images'),
+            'limits':'Actual Windows installed-owner HTTP/graph workers with explicit synthetic owner bootstrap; Linux image/closure and actual Registry API evidence only when image_manifest is present; no lab/scientific validity or target-host/cluster claim'}
         (root/'evidence.json').write_text(json.dumps(evidence,indent=2)+'\n',encoding='utf-8')
-        print(json.dumps({k:v for k,v in evidence.items() if k not in {'packages','cases'}}))
+        print(json.dumps({k:v for k,v in evidence.items() if k not in {'packages','cases','registry','replacement'}}))
     finally:e.close()
 
 
