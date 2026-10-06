@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "timestamp_local": "2026-10-06 16:15:33",
+  "owner": "Planning0.97/planning0020/BP-08.04/B1.03i",
+  "regression_tests": 128,
+  "regression_seconds": 49.01,
+  "final_focused_tests": 71,
+  "final_focused_seconds": 18.9,
+  "coverage": {
+    "covered_lines": 350,
+    "num_statements": 350,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100",
+    "num_branches": 30,
+    "num_partial_branches": 0,
+    "covered_branches": 30,
+    "missing_branches": 0,
+    "percent_branches_covered": 100.0,
+    "percent_branches_covered_display": "100"
+  },
+  "coverage_path": ".test-results/topology-owner-coverage-20261006.json",
+  "coverage_sha256": "9b377a35de50bd085ee43815aa769df6b3b1a60f09bde0aa3feee10a0cf11155",
+  "scope": "Real PostgreSQL owner history, scripted current readers and production HTTP clients against loopback stubs",
+  "checks": [
+    "immutable original observation/proposal reconstruction",
+    "concurrent exact retry",
+    "changed request conflict",
+    "rollback",
+    "SQL UPDATE/DELETE denied",
+    "current parent or late Registry denial blocks qualification",
+    "independent history after denial/zero active profiles",
+    "separate actor/grants",
+    "strict bounded closed owner paths"
+  ],
+  "limits": [
+    "No actual Runtime/Registry integration or compiler/admission claim",
+    "Public topology routes and configured host remain B1.03ii",
+    "No scientific/provider claim"
+  ],
+  "repair": "SDK0.2 rejects /v3/query paths by design; Runtime reader now uses Planning MetadataTransport exact /v3 graph route limit1. SDK unchanged."
+}

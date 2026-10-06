@@ -3,7 +3,7 @@
 import re
 from urllib.parse import parse_qsl, urlsplit
 
-from amphora_contracts_graph_runtime import DefinitionSchema, DefinitionUniverse
+from amphora_contracts_graph_runtime import DefinitionSchema, DefinitionUniverse, GraphRunPageV3
 from amphora_contracts_representations import RetrievalRecord
 from amphora_contracts_tools import ReleasePage, ReleaseSnapshot
 
@@ -34,6 +34,9 @@ def target(owner, path):
     if owner == "registry" and matches(r"/v1/releases/" + DIGEST, parsed.path):
         require(not query and not parsed.query, "metadata_query")
         return ReleaseSnapshot
+    if owner == "runtime" and matches(r"/v3/graph-runs/" + IDENTIFIER, parsed.path):
+        require(query == {"limit": "1"}, "metadata_query")
+        return GraphRunPageV3
     if owner == "runtime" and parsed.path == "/v1/definition-universe":
         require(not query and not parsed.query, "metadata_query")
         return DefinitionUniverse
