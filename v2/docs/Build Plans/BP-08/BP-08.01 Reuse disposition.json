@@ -18,5 +18,20 @@
     "published Pydantic/core/tools/search DTOs"
   ],
   "reference": "https://ieeexplore.ieee.org/document/996017",
-  "lab_disposition": "Recorded Lab optimizer/validation/benchmark placeholders are not executable kernels. No external Lab code copied; future domain schemas remain BP-08.03 synthetic examples."
+  "lab_disposition": "Recorded Lab optimizer/validation/benchmark placeholders are not executable kernels. No external Lab code copied; future domain schemas remain BP-08.03 synthetic examples.",
+  "copied_sources": [],
+  "scientific_claims": [],
+  "implemented_now": [
+    "constrained Pareto/crowding selection",
+    "portable counter RNG",
+    "original-spec binding",
+    "intrinsic checkpoint mapping",
+    "initial numeric population"
+  ],
+  "not_implemented": [
+    "box variation (BP-08.02)",
+    "molecular or biological operators",
+    "Rust execution or bit parity",
+    "Lab placeholder optimizers"
+  ]
 }

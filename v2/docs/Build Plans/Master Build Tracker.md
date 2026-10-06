@@ -8,13 +8,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-07 closed100%; BP-08.01/B3 active; BP-09 queued.
-- Last refreshed: `2026-10-06 10:14:08` (America/Chicago).
+- Status: BP-07 closed100%; BP-08.01/V1.01 active; BP-09 queued.
+- Last refreshed: `2026-10-06 10:17:52` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P7 / BP-08 - Evolutionary Search Integration.
-- Primary active task: BP-08.01/B3 malformed state and reuse-disposition proof.
-- Next task: checkpoint consistency mapper and malformed state and reuse-disposition proof.
-- Implementation completion: BP-07 closed100%,20/20; BP-08=10%,2/20;BP-09=0%.
+- Primary active task: BP-08.01/V1.01 isolated installation and replay.
+- Next task: V1.02 scoped drift audit and child closeout.
+- Implementation completion: BP-07 closed100%,20/20; BP-08=15%,3/20;BP-09=0%.
 - Active focus: BP-08 activation; preserve closed BP-07 evaluation history and scoped handoffs.
 - Blockers: none for BP-08 activation. Selected host and integrated live deployment remain BP-09 decisions/gates.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
@@ -32,13 +32,13 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-08.01/B3 is active after bounded activation; child50%,Build66.67%,Acceptance0%;parent10%,2/20. BP-07 closed100%,20/20; [parent audit](../Audits/BP-07_Autonomous_Planning_Closeout.md) and [archive](Completed/README.md) own final evidence.
+BP-08.01/V1.01 is active after bounded activation; child75%,Build100%,Acceptance0%;parent15%,3/20. BP-07 closed100%,20/20; [parent audit](../Audits/BP-07_Autonomous_Planning_Closeout.md) and [archive](Completed/README.md) own final evidence.
 
 ## Queued Plans and Phase Mirrors
 
 | Canonical plan | Status | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Active | 10% | 50% | 0% | 0% | 0% | 0% | N/A |
+| [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Active | 15% | 75% | 0% | 0% | 0% | 0% | N/A |
 | [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 
 Scoped milestone fractions measure verified work within their existing delivery weight; closed-gate counts remain separate. BP-06 is archived24/24. Do not treat milestone counts as effort estimates.
@@ -52,7 +52,7 @@ The owning plan tracker is canonical for overall and per-phase percentages. Refr
 
 ## Prioritized Build Queue
 
-BP-08.01/B3 is current; use the canonical phase mirror above for percentages. Remaining children retain their own prerequisite and acceptance gates.
+BP-08.01/V1.01 is current; use the canonical phase mirror above for percentages. Remaining children retain their own prerequisite and acceptance gates.
 
 | Order / ID | Completion | Proposed plan | Required predecessor gates | Bounded outcome / exit | Architecture owner |
 |---|---|---|---|---|---|

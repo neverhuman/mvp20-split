@@ -1,0 +1,16 @@
+{
+  "verified_at": "2026-10-06 10:17:52",
+  "scope": "BP-08.01/B3",
+  "tests": 129,
+  "seconds": 14.1,
+  "coverage": {
+    "statements": 438,
+    "covered_statements": 426,
+    "branches": 98,
+    "covered_branches": 92
+  },
+  "source_pins": 7,
+  "copied_sources": [],
+  "scientific_claims": [],
+  "next": "V1 isolated installation and scoped audit"
+}

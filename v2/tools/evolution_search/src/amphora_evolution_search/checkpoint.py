@@ -68,6 +68,8 @@ class CheckpointSnapshot:
                 require((earlier.generation, earlier.ordinal) < (attempt.generation, attempt.ordinal), "duplicate_order")
                 require(earlier.genes == attempt.genes and earlier.disposition == "proposed", "duplicate_target")
         current = sorted((a for a in record.attempts if a.generation == record.generation), key=lambda a: a.ordinal)
+        ordered = sorted(record.attempts, key=lambda a: (a.generation, a.ordinal))
+        require(all(a.draws.end <= b.draws.start for a, b in itertools.pairwise(ordered)), "rng_overlap")
         require(bool(current) and len(current) <= budget.population_size, "generation_membership")
         require([a.ordinal for a in current] == list(range(len(current))), "generation_ordinals")
         require(all(a.draws.end == b.draws.start for a, b in itertools.pairwise(current)), "rng_gap")
@@ -114,9 +116,11 @@ class CheckpointSnapshot:
             require(record.selection is not None and record.generation == self.original.record.budget.max_generations, "false_generation_stop")
         elif record.stop_reason == "evaluation_budget":
             require(record.progress.evaluations_issued == self.original.record.budget.max_evaluations, "false_evaluation_stop")
+            require(record.progress.evaluations_issued == 0 or record.selection is not None, "unselected_budget_stop")
         elif record.stop_reason == "unchanged_front":
             limit = self.original.record.budget.unchanged_front_limit
-            require(limit is not None and record.progress.unchanged_front_generations >= limit, "false_stagnation_stop")
+            require(record.selection is not None and limit is not None
+                    and record.progress.unchanged_front_generations >= limit, "false_stagnation_stop")
 
     def _validate_progress(self):
         record, budget = self.record, self.original.record.budget

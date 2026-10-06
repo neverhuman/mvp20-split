@@ -1,6 +1,6 @@
 # Numeric evolutionary search boundary
 
-- Owner: BP-08.01/B2 complete; B3 failure/recovery proof next.
+- Owner: BP-08.01/B1-B3 complete; V1 isolated installation and scoped audit next.
 - Scope: finite continuous numerical search primitives; independent Python implementation, not a verified v1 port.
 - Design: [Search](../../docs/Architecture/Campaigns/Search.md); [activation](../../docs/Audits/BP-08.01_Activation.md).
 
@@ -43,3 +43,5 @@ InitialPopulation.generate performs one bounded seeding step. It retains exactly
 The returned request set is validated against all proposed attempts before exposure. Checkpoint mapping independently verifies initial-population completeness and duplicate/budget dispositions. Two separate Python processes reproduce identical canonical bytes for a 128-member fixture. This is process replay, not yet isolated installation or Runtime recovery.
 
 Verified 2026-10-06 10:14:08:107 checks14.38s;418/435 statements,88/98 branches covered (94% combined). Seeding100%. B3 owns remaining malformed state/source-disposition proof; BP-08.02 owns generation transition and accepted Artifact history.
+
+B3 verified 2026-10-06 10:17:52:129 checks14.10s;426/438 statements and92/98 branches covered (96% combined). Malformed RNG/version/operator/pending identities, false stop reasons, forged ranks, missing attempts and duplicate targets reject. Seven frozen v1 source hashes match; no v1/Rust/Lab source copying or scientific claim. Remaining uncovered paths are future-generation ancestry/predecessor handling and the defensive ranking empty-front guard; generation transition/replay belongs to BP-08.02. Source audit tests/reuse requires the read-only workspace; installed algorithm tests exclude only that source audit.
