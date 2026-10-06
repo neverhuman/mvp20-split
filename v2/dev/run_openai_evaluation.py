@@ -1,4 +1,4 @@
-"""Execute/resume the one frozen initial suite; every call uses durable Planning issuance."""
+"""Execute frozen engineering revisions under one bounded cumulative reservation cap."""
 import argparse
 import json
 import os
@@ -13,6 +13,8 @@ from sqlalchemy import URL, create_engine
 
 from openai_evaluation_bundle import ROOT, load_bundle
 from postgres_fixture import owned_state
+
+GROUP_CEILING = 1300000000
 
 
 def credential(path):
@@ -48,7 +50,7 @@ def report(runner, principal, protocol, batch):
     return {'timestamp_local': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
             'suite_id': protocol.manifest.suite_id, 'protocol_sha256': protocol.sha256,
             'batch_sha256': batch.sha256, 'status': run.status, 'passed': run.passed,
-            'initial_ceiling_usd_nanodollars': 1000000000, 'reserved_usd_nanodollars': batch.accounting_units,
+            'initial_ceiling_usd_nanodollars': GROUP_CEILING, 'reserved_usd_nanodollars': batch.accounting_units,
             'reported_estimated_usd_nanodollars': reported,
             'unknown_usage': sum(row['usage'] is not None and row['usage']['certainty'] != 'reported' for row in rows),
             'score': asdict(run.score), 'attempts': rows,
@@ -61,10 +63,10 @@ def execute(output, key_file, *, read_only=False, maximum_steps=12, resume_after
     # Read-only report needs no secret and cannot send requests.
     transport = None if read_only else OpenAIHTTP(credential(key_file))
     # Both immutable versions share the SAME initial budget; neither refunds the other.
-    bundles = [ROOT.with_name("openai-engineering-" + name) for name in ("v1", "v2", "v3")
+    bundles = [ROOT.with_name("openai-engineering-" + name) for name in ("v1", "v2", "v3", "v4")
                if ROOT.with_name("openai-engineering-" + name).exists()]
     frozen = [load_bundle(None, root) for root in bundles]
-    if sum(item[2].accounting_units for item in frozen) > 1000000000:
+    if sum(item[2].accounting_units for item in frozen) > GROUP_CEILING:
         raise ValueError("initial_evaluation_group_budget")
     principal, protocol, batch, provider = load_bundle(transport, ROOT.with_name("openai-engineering-" + profile))
     state = owned_state()
@@ -111,6 +113,6 @@ if __name__ == '__main__':
     parser.add_argument('--execute', action='store_true')
     parser.add_argument('--maximum-steps', type=int, choices=range(1, 13), default=12)
     parser.add_argument('--resume-after-unavailable', action='store_true')
-    parser.add_argument("--profile", choices=["v1", "v2", "v3"], default="v1")
+    parser.add_argument("--profile", choices=["v1", "v2", "v3", "v4"], default="v1")
     args = parser.parse_args()
     execute(args.output.absolute(), args.key_file, read_only=not args.execute, maximum_steps=args.maximum_steps, resume_after_unavailable=args.resume_after_unavailable, profile=args.profile)

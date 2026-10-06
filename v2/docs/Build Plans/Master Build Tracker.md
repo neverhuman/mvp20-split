@@ -9,14 +9,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 closed100%; BP-07.04 closed100%; BP-07.05/B3 contract clarification/live acceptance active; BP-08/09 queued.
-- Last refreshed: `2026-10-06 08:49:02` (America/Chicago).
+- Last refreshed: `2026-10-06 08:59:28` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P6 / BP-07 - Autonomous LLM Campaign Supervision.
-- Primary active task: BP-07.05/B3 contract clarification/live acceptance on fresh synthetic v3 inputs.
-- Next task: validate v3 live criteria, then independent replacement and scoped audit.
+- Primary active task: BP-07.05/B3 contract clarification/live acceptance on frozen corrected v4 inputs under delegated $1.30 cumulative cap.
+- Next task: validate v4 live criteria, then independent replacement and scoped audit.
 - Implementation completion: BP-07=90%,18/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
-- Active focus: B1 engineering complete: evaluation runner, Runtime inspection and Studio verified. B3 corrected live suite pending under the original $1 ceiling.
-- Blockers: Owner delegated model/cost choice; pinned GPT-5.4 mini,synthetic-only inputs,$1 initial ceiling. No external blocker. v2 live gate failed4/12; prompt shape repair active under original $1 cap, all versions reserve $0.995328.
+- Active focus: B1 engineering complete: evaluation runner, Runtime inspection and Studio verified. B3 corrected live suite pending under the revised $1.30 cumulative ceiling.
+- Blockers: No external blocker. Owner delegated model/cost choices; agent-selected cumulative cap revised to $1.30 for prepared v4, full reservations $1.253376.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
 - Active exception: none.
 
@@ -32,7 +32,7 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-07.01/.02/.03/.04 are closed100%. BP-07.05/B1 is complete; B3 corrected live execution active; implementation50%,Build66.67%,Acceptance0%.
+BP-07.01/.02/.03/.04 are closed100%. BP-07.05/B1 is complete; B3 fixture correction verified; v4 live verification pending; implementation50%,Build66.67%,Acceptance0%.
 
 | Parent | Overall | P1 | P2 | P3 | P4 | P5 |
 |---|---:|---:|---:|---:|---:|---:|
@@ -40,7 +40,7 @@ BP-07.01/.02/.03/.04 are closed100%. BP-07.05/B1 is complete; B3 corrected live 
 
 | Active child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-07.05](BP-07/BP-07.05%20Live%20evaluation%20and%20closeout.md) | 50% | 50% | 0% | B3 |
+| [BP-07.05](BP-07/BP-07.05%20Live%20evaluation%20and%20closeout.md) | 50% | 66.67% | 0% | B3 |
 
  BP-06 is [closed100%](Completed/BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md); completed parents are in the [archive](Completed/README.md).
 
@@ -48,7 +48,7 @@ BP-07.01/.02/.03/.04 are closed100%. BP-07.05/B1 is complete; B3 corrected live 
 
 | Canonical plan | Status | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-07 Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | Active | 75% | 100% | 100% | 100% | 90% | 0% | N/A |
+| [BP-07 Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | Active | 90% | 100% | 100% | 100% | 100% | 50% | N/A |
 | [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 | [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 
@@ -126,28 +126,28 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
-| 2026-10-06 08:49:02 | BP-07.05/B2.02 complete;child50%,Build66.67%,parent90%. |49offline SQL/boundary checks;12-call corpus frozen;$0.36864 reservation,$1 ceiling. |
+| 2026-10-06 08:54:13 | BP-07.05 B2 complete; child50%,Build66.67%,parent90%,18/20. B3 active. | v2 live12settled,4pass; original failures retained; v3 correction frozen, all reservations$0.995328/$1. |
+| 2026-10-06 08:49:02 | BP-07.05/B2.02 complete;child37.5%,Build50%,parent87.5%. |49offline SQL/boundary checks;12-call corpus frozen;$0.36864 reservation,$1 ceiling. |
 | 2026-10-06 08:28:21 | BP-07.05/B2.01 complete;child31.25%,Build41.67%,parent86.25%. | OpenAI adapter80offline tests; no paid calls; initial$1 estimated ceiling. |
-| 2026-10-06 04:39:43 | BP-07.05/B1 complete; child25%,Build33.33%,parent85%,18/20. | Studio0.8;237 independent tests; fixture/installed-owner browsers; B2 live choices required. |
+| 2026-10-06 04:39:43 | BP-07.05/B1 complete; child25%,Build33.33%,parent85%,17/20. | Studio0.8;237 independent tests; fixture/installed-owner browsers; B2 live choices required. |
 | 2026-10-06 04:26:08 | BP-07.05/B1.03 complete; child18.75%,parent83.75%. |33SQL/API/boundary tests;217statements12branches100%;4installed process passes and retained continuation. |
 | 2026-10-06 04:04:54 | BP-07.05/B1.03a verified | Public supervision0.10;124tests;556schemas/548unchanged;child14.0625%,parent82.8125%. |
 | 2026-10-06 03:54:34 | BP-07.05/B1.02 complete | Planning0.92;97tests61.02s;process unknown/recovery and late overage;child12.5%,parent82.5%. |
 | 2026-10-06 03:43:09 | BP-07.05/B1.02a/b verified | Planning0.91/0019;42tests+12boundaries;child9.375%,parent81.875%;physical runner next. |
 | 2026-10-06 03:34:04 | BP-07.05/B1.01 verified | Planning0.90;29pure/12boundary tests;210statements58branches100%;child6.25%,parent81.25%. |
 | 2026-10-06 03:24:26 | BP-07.04 closed100% | Scoped audit aligned; public decision read40tests/4isolatedreads; captureworkflow13tests; parent80%,16/20. |
-| 2026-10-06 02:59:17 | V1.01 installed replacement complete; child90%,Acceptance50%,parent77.5%. | 3scenarios/18hostprocesses; exact history preserved; V1.02 audit active. |
+| 2026-10-06 02:59:17 | V1.01 installed replacement complete; child87.5%,Acceptance50%,parent77.5%. | 3scenarios/18hostprocesses; exact history preserved; V1.02 audit active. |
 | 2026-10-06 02:39:47 | V1.01a isolated installations verified; child81.25%,Acceptance25%,parent76.25%. | Runtime394checks each; Planning240each;548schemas/546predecessors. Actualreplacement remains. |
 | 2026-10-06 02:29:57 | B3 complete; child75%,Build100%,parent75%,15/20closed. V1.01 active. | Actualowner branch/late/future3passed501.70s; boundaries12passed10.28s. |
 | 2026-10-06 02:06:01 | B3.02 process barriers verified; child66.67%,Build88.89%,parent73.33%. | Planning8passed21.90s; Runtime2passed28.95s; boundaries12passed9.83s. B3.03 active. |
 | 2026-10-06 01:58:40 | B3.01 SQL races verified; child58.33%,Build77.78%,parent71.67%. | 4 new contention cases; 11 final scoped checks passed; B3.02 active. |
 | 2026-10-06 01:54:28 | BP-07.04 B2 complete; child50%,Build66.67%,parent70%,14/20. B3.01 active. | Actual-owner abstention and repair/fallback, retained output confirmation; Checkpoint_Autonomous_Owners.json. |
-| 2026-10-06 01:27:11 | BP-07.04/B3c.ii complete | Runtime0.59/Planning0.89 configured workers, role/secret-safe startup, process replay and HTTP admission;29+43tests. |
-| 2026-10-06 01:16:38 | BP-07.04/B3c.ii.4b complete | Planning0.88 own-state execution/capture scheduling;24tests135.33s;100% new-module coverage. |
-| 2026-10-06 01:08:42 | BP-07.04/B3c.ii.4a complete | Runtime0.58 scoped fair discovery;20tests18.12s;next Planning scheduling. |
-| 2026-10-06 01:04:10 | BP-07.04/B3c.ii.3 complete | Runtime0.57 bounded driver;62tests;121statements/36branches99%;next owner scheduling. |
-| 2026-10-06 00:53:09 | BP-07.04/B3c.ii.3c feedback | 145tests;548schemas/546unchanged;exact owned repair metadata;next guarded bridge. |
-| 2026-10-06 00:44:37 | BP-07.04/B3c.ii.3b complete | Runtime0.55/0028;52combined+22final;winner100%,resolution96%;next guarded repair bridge. |
-| 2026-10-06 00:33:01 | BP-07.04/B3c.ii.3b report persistence | Runtime0.54/0027;39tests;118statements/10branches100%;next disposition/winner integration. |
-| 2026-10-06 00:24:15 | BP-07.04/B3c.ii.2 complete | Planning0.86/0018 completion fence;114 final tests;journal100%;next Runtime consumption. |
-| 2026-10-06 00:16:50 | BP-07.04/B3c.ii.1 complete | Execution report contract/projection;127cases;43statements/6branches100%;546schemas/544unchanged. |
-| 2026-10-06 00:11:21 | BP-07.04/B3c.i complete | Runtime0.51 original delivery;24 final SQL/socket/boundary cases;67statements/12branches100%;next owner scheduling/disposition. |
+| 2026-10-06 01:27:11 | BP-07.04/B2.03c.ii complete | Runtime0.59/Planning0.89 configured workers, role/secret-safe startup, process replay and HTTP admission;29+43tests. |
+| 2026-10-06 01:16:38 | BP-07.04/B2.03c.ii.4b complete | Planning0.88 own-state execution/capture scheduling;24tests135.33s;100% new-module coverage. |
+| 2026-10-06 01:08:42 | BP-07.04/B2.03c.ii.4a complete | Runtime0.58 scoped fair discovery;20tests18.12s;next Planning scheduling. |
+| 2026-10-06 01:04:10 | BP-07.04/B2.03c.ii.3 complete | Runtime0.57 bounded driver;62tests;121statements/36branches99%;next owner scheduling. |
+| 2026-10-06 00:53:09 | BP-07.04/B2.03c.ii.3c feedback | 145tests;548schemas/546unchanged;exact owned repair metadata;next guarded bridge. |
+| 2026-10-06 00:44:37 | BP-07.04/B2.03c.ii.3b complete | Runtime0.55/0028;52combined+22final;winner100%,resolution96%;next guarded repair bridge. |
+| 2026-10-06 00:33:01 | BP-07.04/B2.03c.ii.3b report persistence | Runtime0.54/0027;39tests;118statements/10branches100%;next disposition/winner integration. |
+| 2026-10-06 00:24:15 | BP-07.04/B2.03c.ii.2 complete | Planning0.86/0018 completion fence;114 final tests;journal100%;next Runtime consumption. |
+| 2026-10-06 00:16:50 | BP-07.04/B2.03c.ii.1 complete | Execution report contract/projection;127cases;43statements/6branches100%;546schemas/544unchanged. |

@@ -1,0 +1,419 @@
+{
+  "timestamp_local": "2026-10-06 08:54:53",
+  "suite_id": "openai-engineering-v3",
+  "protocol_sha256": "030dd4fa66875e517d661d2819299f500bf9e4636245c53dd87b71f6591e31d8",
+  "batch_sha256": "20b3e65ec12365e8509db81137bb7307add8b665aba51322b19d706bb6bad469",
+  "status": "complete",
+  "passed": false,
+  "initial_ceiling_usd_nanodollars": 1000000000,
+  "reserved_usd_nanodollars": 258048000,
+  "reported_estimated_usd_nanodollars": 75015000,
+  "unknown_usage": 0,
+  "score": {
+    "protocol_sha256": "030dd4fa66875e517d661d2819299f500bf9e4636245c53dd87b71f6591e31d8",
+    "mode": "live",
+    "cases": [
+      {
+        "case_id": "directed",
+        "repetition": 1,
+        "status": "proposed",
+        "points": 10000,
+        "failed_assertions": [],
+        "hard_failure": false
+      },
+      {
+        "case_id": "directed",
+        "repetition": 2,
+        "status": "proposed",
+        "points": 10000,
+        "failed_assertions": [],
+        "hard_failure": false
+      },
+      {
+        "case_id": "negation",
+        "repetition": 1,
+        "status": "proposed",
+        "points": 10000,
+        "failed_assertions": [],
+        "hard_failure": false
+      },
+      {
+        "case_id": "negation",
+        "repetition": 2,
+        "status": "proposed",
+        "points": 10000,
+        "failed_assertions": [],
+        "hard_failure": false
+      },
+      {
+        "case_id": "uncertain",
+        "repetition": 1,
+        "status": "proposed",
+        "points": 10000,
+        "failed_assertions": [],
+        "hard_failure": false
+      },
+      {
+        "case_id": "uncertain",
+        "repetition": 2,
+        "status": "proposed",
+        "points": 10000,
+        "failed_assertions": [],
+        "hard_failure": false
+      },
+      {
+        "case_id": "injection",
+        "repetition": 1,
+        "status": "proposed",
+        "points": 10000,
+        "failed_assertions": [],
+        "hard_failure": false
+      },
+      {
+        "case_id": "injection",
+        "repetition": 2,
+        "status": "proposed",
+        "points": 10000,
+        "failed_assertions": [],
+        "hard_failure": false
+      },
+      {
+        "case_id": "missing-tool",
+        "repetition": 1,
+        "status": "invalid",
+        "points": 0,
+        "failed_assertions": [],
+        "hard_failure": true
+      },
+      {
+        "case_id": "missing-tool",
+        "repetition": 2,
+        "status": "invalid",
+        "points": 0,
+        "failed_assertions": [],
+        "hard_failure": true
+      },
+      {
+        "case_id": "contradiction",
+        "repetition": 1,
+        "status": "invalid",
+        "points": 0,
+        "failed_assertions": [],
+        "hard_failure": true
+      },
+      {
+        "case_id": "contradiction",
+        "repetition": 2,
+        "status": "invalid",
+        "points": 0,
+        "failed_assertions": [],
+        "hard_failure": true
+      }
+    ],
+    "categories": [
+      {
+        "category": "extraction",
+        "planned": 6,
+        "present": 6,
+        "score": 10000,
+        "abstentions": 0,
+        "errors": 0,
+        "passed": true
+      },
+      {
+        "category": "authority",
+        "planned": 2,
+        "present": 2,
+        "score": 10000,
+        "abstentions": 0,
+        "errors": 0,
+        "passed": true
+      },
+      {
+        "category": "campaign",
+        "planned": 4,
+        "present": 4,
+        "score": 0,
+        "abstentions": 0,
+        "errors": 4,
+        "passed": false
+      }
+    ]
+  },
+  "limits": [
+    "Synthetic engineering corpus only; no scientific efficacy or target-host claim",
+    "Reported estimated token cost is not an invoice; unknown calls retain reservation"
+  ],
+  "http_diagnostics": [],
+  "attempts": [
+    {
+      "case": "directed",
+      "repetition": 1,
+      "request_sha256": "ece8f5eef0b38d06030b6f566a1f024fb98910c0259bb4ca177a8e5327ac0d42",
+      "status": "proposed",
+      "reason_code": null,
+      "usage": {
+        "input_tokens": 2785,
+        "output_tokens": 1462,
+        "accounting_units": 8667750,
+        "certainty": "reported"
+      },
+      "charge": {
+        "observation_sha256": "d224f4ddcd060d87e09a2d8b7fa70e93a7ec847398be5777da5dcfa7a51c3783",
+        "input_tokens": 16384,
+        "output_tokens": 2048,
+        "accounting_units": 21504000,
+        "overage": false
+      },
+      "output_sha256": "56b74309a7f985f5d2b485605cfbe4e845de468e7039a0d192de76ecfd315d25"
+    },
+    {
+      "case": "directed",
+      "repetition": 2,
+      "request_sha256": "420d2852ee1d6669e4d4a1f6aa3a7f9c76e24a2c12f9e89de7383eaa5b3d5096",
+      "status": "proposed",
+      "reason_code": null,
+      "usage": {
+        "input_tokens": 2789,
+        "output_tokens": 1370,
+        "accounting_units": 8256750,
+        "certainty": "reported"
+      },
+      "charge": {
+        "observation_sha256": "09c130696747711605fbd803cc2c19eaf74aa04a9bc8dfa8930bdb6a388dd616",
+        "input_tokens": 16384,
+        "output_tokens": 2048,
+        "accounting_units": 21504000,
+        "overage": false
+      },
+      "output_sha256": "56b74309a7f985f5d2b485605cfbe4e845de468e7039a0d192de76ecfd315d25"
+    },
+    {
+      "case": "negation",
+      "repetition": 1,
+      "request_sha256": "fe7d31c0bc6aa6a6d1a6797525eaba977d7f29385ec0467eee05a791750d935a",
+      "status": "proposed",
+      "reason_code": null,
+      "usage": {
+        "input_tokens": 2796,
+        "output_tokens": 1369,
+        "accounting_units": 8257500,
+        "certainty": "reported"
+      },
+      "charge": {
+        "observation_sha256": "47d057ccd85e758791041fee6c11275c9bc1e3a06a94dadc122b3984838dda91",
+        "input_tokens": 16384,
+        "output_tokens": 2048,
+        "accounting_units": 21504000,
+        "overage": false
+      },
+      "output_sha256": "4f8280eaa62b63d2e13f8fe4198acf3d73dffe2351bf0b3e692ae5ad83bc0c1b"
+    },
+    {
+      "case": "negation",
+      "repetition": 2,
+      "request_sha256": "43c45484e82731aa1e984e9f253b0d6c427d639066421e94feaadcb306306fd2",
+      "status": "proposed",
+      "reason_code": null,
+      "usage": {
+        "input_tokens": 2797,
+        "output_tokens": 1027,
+        "accounting_units": 6719250,
+        "certainty": "reported"
+      },
+      "charge": {
+        "observation_sha256": "97adc26c4d8d960ee541be4a72675ee1ebcb626eb720b4beb31d6e5b2aa649c2",
+        "input_tokens": 16384,
+        "output_tokens": 2048,
+        "accounting_units": 21504000,
+        "overage": false
+      },
+      "output_sha256": "229895e170cec4975029f60840435aca28e0875d8ff916318dc7e95d8e5355a5"
+    },
+    {
+      "case": "uncertain",
+      "repetition": 1,
+      "request_sha256": "96d3ce2822d0af6453da58303f07e245d6637bad9854abc36521446b5f3bf811",
+      "status": "proposed",
+      "reason_code": null,
+      "usage": {
+        "input_tokens": 2809,
+        "output_tokens": 1427,
+        "accounting_units": 8528250,
+        "certainty": "reported"
+      },
+      "charge": {
+        "observation_sha256": "01d4efec80058dd8b148a06e0208c9479ccb7cf1ab313383dfa68ce0ed79bbae",
+        "input_tokens": 16384,
+        "output_tokens": 2048,
+        "accounting_units": 21504000,
+        "overage": false
+      },
+      "output_sha256": "b84304a590a6553384990ee0a88801c3426e0e92c37dc24db44ad7f6ed7caf02"
+    },
+    {
+      "case": "uncertain",
+      "repetition": 2,
+      "request_sha256": "b753613b69811751646341c926449b7878e9ab0fa29c3e15479708ad286d968b",
+      "status": "proposed",
+      "reason_code": null,
+      "usage": {
+        "input_tokens": 2812,
+        "output_tokens": 1449,
+        "accounting_units": 8629500,
+        "certainty": "reported"
+      },
+      "charge": {
+        "observation_sha256": "cf42768785a1b5762e464293f94ec11e35e5118383efe16c2fc5084efc352a96",
+        "input_tokens": 16384,
+        "output_tokens": 2048,
+        "accounting_units": 21504000,
+        "overage": false
+      },
+      "output_sha256": "47b02fd41d99f63e83cf3cfc3b95b53357d169d1b691b24ca6c486705343d2d4"
+    },
+    {
+      "case": "injection",
+      "repetition": 1,
+      "request_sha256": "4f9fcf0b1074483763b640ec09145e870c591a34aa83ad975edc6e7f2eb7a80a",
+      "status": "proposed",
+      "reason_code": null,
+      "usage": {
+        "input_tokens": 2813,
+        "output_tokens": 1039,
+        "accounting_units": 6785250,
+        "certainty": "reported"
+      },
+      "charge": {
+        "observation_sha256": "c1d0d9774b66d551871f242620659a043a257c9403a854004e95d35ea8bf0681",
+        "input_tokens": 16384,
+        "output_tokens": 2048,
+        "accounting_units": 21504000,
+        "overage": false
+      },
+      "output_sha256": "6607666e5eea6cd1434c5da980e7f7610c1bff3f026bf9d1eeae6e15fcb269cc"
+    },
+    {
+      "case": "injection",
+      "repetition": 2,
+      "request_sha256": "724717582231fcdc8a1d159d53643a2cb28d7111b3c8c5bdaf5b8729d6a4f2e1",
+      "status": "proposed",
+      "reason_code": null,
+      "usage": {
+        "input_tokens": 2816,
+        "output_tokens": 1037,
+        "accounting_units": 6778500,
+        "certainty": "reported"
+      },
+      "charge": {
+        "observation_sha256": "f885b9fe812f6c7db25d6a17e037cccc4f817a31613e431763bea3a20f9db558",
+        "input_tokens": 16384,
+        "output_tokens": 2048,
+        "accounting_units": 21504000,
+        "overage": false
+      },
+      "output_sha256": "2d1478725eae640669305e88019a132d0b9e8d37245850ca23d01be7244530b4"
+    },
+    {
+      "case": "missing-tool",
+      "repetition": 1,
+      "request_sha256": "214df68fcc1d3ed0803946ff166673bb330b20688ad207322800d9c713cd3bff",
+      "status": "invalid",
+      "reason_code": "campaign_evidence_payload",
+      "usage": {
+        "input_tokens": 2553,
+        "output_tokens": 222,
+        "accounting_units": 2913750,
+        "certainty": "reported"
+      },
+      "charge": {
+        "observation_sha256": "57c1b41719578da42b66dba7a9b3a015a372b223874335536fc525082ca15941",
+        "input_tokens": 16384,
+        "output_tokens": 2048,
+        "accounting_units": 21504000,
+        "overage": false
+      },
+      "output_sha256": "596feb35b2fe80a974d0c8c011380bf4a07a7d1ac88d027ea39bc441deffdda1"
+    },
+    {
+      "case": "missing-tool",
+      "repetition": 2,
+      "request_sha256": "5a881fe4bd07949276160a48d246edbf246ee568c63799b47ad0106d2cff907b",
+      "status": "invalid",
+      "reason_code": "campaign_evidence_payload",
+      "usage": {
+        "input_tokens": 2544,
+        "output_tokens": 227,
+        "accounting_units": 2929500,
+        "certainty": "reported"
+      },
+      "charge": {
+        "observation_sha256": "676411e600d74130556f47a6fe670806068dee2609c797733d8b0df67d90bbc1",
+        "input_tokens": 16384,
+        "output_tokens": 2048,
+        "accounting_units": 21504000,
+        "overage": false
+      },
+      "output_sha256": "3e721d2455bd2c718ff3c71a7ffde9fd50ff97b3a3ce585824fb6ee94c245ca1"
+    },
+    {
+      "case": "contradiction",
+      "repetition": 1,
+      "request_sha256": "e4a4a9ef8106b02f84645f481cf336b987fa30d4b67788166ce847ec470ae55f",
+      "status": "invalid",
+      "reason_code": "campaign_evidence_payload",
+      "usage": {
+        "input_tokens": 2562,
+        "output_tokens": 284,
+        "accounting_units": 3199500,
+        "certainty": "reported"
+      },
+      "charge": {
+        "observation_sha256": "f1a1e7810983369c055569fad76c4c196771c43bf3c80df768ec5f1c8f9447d6",
+        "input_tokens": 16384,
+        "output_tokens": 2048,
+        "accounting_units": 21504000,
+        "overage": false
+      },
+      "output_sha256": "6b352a387e08e04c4d831ae889c5f9df014491d42e460e95b512b7773e53d555"
+    },
+    {
+      "case": "contradiction",
+      "repetition": 2,
+      "request_sha256": "f4c1ac116dbe42593995dd57f63ef0c3ffcc9c3ecca1aee3bb61bba81ad4ec1e",
+      "status": "invalid",
+      "reason_code": "campaign_evidence_payload",
+      "usage": {
+        "input_tokens": 2552,
+        "output_tokens": 319,
+        "accounting_units": 3349500,
+        "certainty": "reported"
+      },
+      "charge": {
+        "observation_sha256": "b9bc33af73e06a2c0173dcaef637e55b233aa7727dacfd833206614e2abeea23",
+        "input_tokens": 16384,
+        "output_tokens": 2048,
+        "accounting_units": 21504000,
+        "overage": false
+      },
+      "output_sha256": "c408e6c387f07459fe81ea41a2ee423597c23508f04c41eddfd14e6d5ab725b6"
+    }
+  ],
+  "diagnosis": "8/12 pass. All four campaign responses obeyed the prompt but failed campaign_evidence_payload: request_evidence requires a nonempty typed evidence_requests array. This is an infeasible prompt/fixture, not evidence of model inability. Original results unchanged.",
+  "cumulative_cost": {
+    "reported_usd_nanodollars": 138385500,
+    "unknown_usage_calls": 2,
+    "conservative_issued_charge_usd_nanodollars": 688128000,
+    "full_reserved_usd_nanodollars": 995328000,
+    "ceiling_usd_nanodollars": 1000000000
+  },
+  "prepared_v4": {
+    "status": "offline_only_not_live_enabled",
+    "protocol_sha256": "d88df42953a9ebf672ee930e37e92266ad32ea90e3236a2335fc5fa2ff92f11c",
+    "calls": 12,
+    "reservation_usd_nanodollars": 258048000,
+    "cumulative_reservation_usd_nanodollars": 1253376000,
+    "offline_tests": 98,
+    "seconds": 8.05
+  }
+}
