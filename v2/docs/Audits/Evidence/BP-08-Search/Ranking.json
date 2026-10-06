@@ -1,0 +1,22 @@
+{
+  "timestamp_local": "2026-10-06 09:37:53",
+  "tests": 30,
+  "seconds": 13.44,
+  "coverage": {
+    "covered_lines": 98,
+    "num_statements": 100,
+    "percent_covered": 97.6923076923077,
+    "percent_covered_display": "98",
+    "missing_lines": 2,
+    "excluded_lines": 0,
+    "percent_statements_covered": 98.0,
+    "percent_statements_covered_display": "98",
+    "num_branches": 30,
+    "num_partial_branches": 1,
+    "covered_branches": 29,
+    "missing_branches": 1,
+    "percent_branches_covered": 96.66666666666667,
+    "percent_branches_covered_display": "97"
+  },
+  "scope": "18independent numeric selection cases plus12boundary checks; source inspection only,noRustexecution/scientificclaim"
+}

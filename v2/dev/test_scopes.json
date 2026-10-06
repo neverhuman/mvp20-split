@@ -208,5 +208,11 @@
     "coverage_sources": [
       "contracts/supervision/src/amphora_contracts_supervision"
     ]
+  },
+  "evolution-search": {
+    "tests": "tools/evolution_search/tests",
+    "coverage_sources": [
+      "tools/evolution_search/src/amphora_evolution_search"
+    ]
   }
 }

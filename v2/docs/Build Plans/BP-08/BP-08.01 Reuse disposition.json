@@ -1,0 +1,22 @@
+{
+  "reviewed_at": "2026-10-06 09:31:53",
+  "scope": "Read-only source inspection; no Rust execution or extraction claimed",
+  "sources": {
+    "v1/Cargo.toml": "f7076c33fb53ce2177371c2a93286502139ba93fea5d8d65e425319be1741f3b",
+    "v1/LICENSE": "85aab6b9968b7cc7b8ae28edcf6b0390d08a58ad722477bfc7db4ae0eb78ad25",
+    "v1/amphora-solver-lab/Cargo.toml": "891f39f7e9ba889c5ac9d1d4b1ca3f8aec5cade468194dad5a7673a43e5f6801",
+    "v1/amphora-solver-lab/src/nsga2.rs": "e1ff6f615d8422931de76b0312a875c751153f3ed889275a9d1c751449e8f8a8",
+    "v1/amphora-solver-lab/src/simplex.rs": "a6102b0659b50761028910f4f6d3f6b98ab8b56c0071b02c73ca70a0e71129f2",
+    "v1/amphora-solver-lab/src/doe.rs": "8d03a48b2236d7d5645cd0bc197b4b90fc2aa4e46f6d0accf1e06c674925e05b",
+    "v1/amphora-solver-lab/tests/nsga2_determinism.rs": "e2980973ff9e2a82bd562bbf7ca56edbe5bfb916335a537bfe7d80818f2680ec"
+  },
+  "toolchain": "cargo/rustc not on PATH; C:/Users/alb_p/.cargo/bin/rustc.exe absent",
+  "license_observation": "Cargo workspace declares MIT; v1/LICENSE says proprietary/all rights reserved. No license reclassification or source copying in this plan.",
+  "selection": "Independent Python bounded continuous Pareto selection/box variation, versioned SHA256-counter RNG; mathematical comparison only, not a verified v1 port.",
+  "dependencies": [
+    "Python3.12stdlib",
+    "published Pydantic/core/tools/search DTOs"
+  ],
+  "reference": "https://ieeexplore.ieee.org/document/996017",
+  "lab_disposition": "Recorded Lab optimizer/validation/benchmark placeholders are not executable kernels. No external Lab code copied; future domain schemas remain BP-08.03 synthetic examples."
+}

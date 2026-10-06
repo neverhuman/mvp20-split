@@ -2,16 +2,16 @@
 
 ## Canonical Parent Tracker
 
-- Status: design_specified / implementation queued; not activated.
-- Last refreshed: `2026-09-25 13:54:17` (America/Chicago).
+- Status: primary_active; BP-08.01/B1.02 source/kernel proof.
+- Last refreshed: `2026-10-06 09:37:53` (America/Chicago).
 - Owner/scope: Search domain modules and independently packaged scientific operators.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 iteration/checkpoint and BP-06 evidence; BP-07 before LLM-guided topology acceptance.
-- Implementation: **0%**, 0/20 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
+- Implementation: **1.67%**, 0/20 verified child deliveries. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: none. Next: BP-08.01/B1 after predecessor gates and bounded activation audit.
+- Current implementation task: BP-08.01/B1.02; source/kernel unit verified; contract boundary next.
 - Demonstrated behavior: none within this parent. Required database/process/browser/model/host evidence remains pending.
-- Blockers: predecessor gates; external choices only where named in child trackers and the readiness register.
+- Blockers: direct v1 extraction unverified (license labels/toolchain); authorized independent numeric implementation proceeds. No owner decision blocks current scope.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
 
@@ -29,7 +29,7 @@ Primary services retain private state, dependencies, migrations and module READM
 
 | Parent phase / child | Overall | Build | Acceptance | Prerequisite |
 |---|---:|---:|---:|---|
-| P1 / [BP-08.01 Reuse and search contracts](BP-08/BP-08.01%20Reuse%20and%20search%20contracts.md) | 0% | 0% | 0% | Parent predecessor gates |
+| P1 / [BP-08.01 Reuse and search contracts](BP-08/BP-08.01%20Reuse%20and%20search%20contracts.md) | 8.33% | 11.11% | 0% | Parent predecessor gates |
 | P2 / [BP-08.02 Graph-driven numeric evolution](BP-08/BP-08.02%20Graph-driven%20numeric%20evolution.md) | 0% | 0% | 0% | BP-08.01 acceptance |
 | P3 / [BP-08.03 Representation and fitness boundaries](BP-08/BP-08.03%20Representation%20and%20fitness%20boundaries.md) | 0% | 0% | 0% | BP-08.02 acceptance |
 | P4 / [BP-08.04 Topology successors and comparison](BP-08/BP-08.04%20Topology%20successors%20and%20comparison.md) | 0% | 0% | 0% | BP-08.03 acceptance |

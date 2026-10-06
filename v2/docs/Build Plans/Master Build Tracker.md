@@ -8,13 +8,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-07 closed100%; BP-08 next for bounded activation; BP-09 queued.
-- Last refreshed: `2026-10-06 09:22:33` (America/Chicago).
+- Status: BP-07 closed100%; BP-08.01/B1.02 active; BP-09 queued.
+- Last refreshed: `2026-10-06 09:37:53` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P7 / BP-08 - Evolutionary Search Integration.
-- Primary active task: BP-08 bounded activation audit, then BP-08.01/B1.
+- Primary active task: BP-08.01/B1.02 independent numeric selection proof.
 - Next task: choose numeric kernel using read-only reuse evidence and publish search/checkpoint contracts.
-- Implementation completion: BP-07 closed100%,20/20; BP-08/09=0%.
+- Implementation completion: BP-07 closed100%,20/20; BP-08=1.67%,0/20;BP-09=0%.
 - Active focus: BP-08 activation; preserve closed BP-07 evaluation history and scoped handoffs.
 - Blockers: none for BP-08 activation. Selected host and integrated live deployment remain BP-09 decisions/gates.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
@@ -32,13 +32,13 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-No implementation phase is active while BP-08 activation is reviewed. BP-07 closed100%,20/20; [parent audit](../Audits/BP-07_Autonomous_Planning_Closeout.md) and [archive](Completed/README.md) own final evidence.
+BP-08.01/B1.02 is active after bounded activation; child8.33%,Build11.11%,Acceptance0%;parent1.67%,0/20. BP-07 closed100%,20/20; [parent audit](../Audits/BP-07_Autonomous_Planning_Closeout.md) and [archive](Completed/README.md) own final evidence.
 
 ## Queued Plans and Phase Mirrors
 
 | Canonical plan | Status | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
+| [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Active | 1.67% | 8.33% | 0% | 0% | 0% | 0% | N/A |
 | [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 
 Scoped milestone fractions measure verified work within their existing delivery weight; closed-gate counts remain separate. BP-06 is archived24/24. Do not treat milestone counts as effort estimates.
