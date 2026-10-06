@@ -9,9 +9,9 @@
 - Prerequisites: Completed BP-03 discovery, BP-04 runner, BP-05 UI and BP-06 source/knowledge receipts.
 - Implementation: **90%** scoped;18/20 closed deliveries. BP-07.01/.02/.03/.04 complete; BP-07.04=100%; BP-07.05=50%. Each child is counted once.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-07.05/B3 contract clarification/live acceptance on frozen corrected v4 inputs under delegated $1.30 cumulative cap.
+- Current implementation task: BP-07.05/B3 contract clarification/live acceptance on frozen corrected v5 inputs under delegated $1.70 cumulative cap.
 - Demonstrated behavior: BP-07.01/.02 accepted immutable context/provider/budget and attributed text-decomposition boundaries, current-rights publication, bounded repair and actual Research/Knowledge handoff with replacement recovery. BP-07.03 adds bounded campaign context, semantic proposal policy and durable compiler handoff with actual-owner crash/rights and replacement proof. BP-07.04 adds bounded autonomous Runtime supervision, actual owner replacement and authoritative outcome reads. Live model quality remains subsequent.
-- Blockers: No external blocker. Owner delegated model/cost choices; agent-selected cumulative cap revised to $1.30 for prepared v4, full reservations $1.253376.
+- Blockers: No external blocker. Owner delegated model/cost choices; agent-selected cumulative cap revised to $1.70 for prepared v5, full reservations $1.65888.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
 

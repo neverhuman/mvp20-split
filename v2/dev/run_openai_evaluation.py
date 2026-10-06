@@ -14,7 +14,7 @@ from sqlalchemy import URL, create_engine
 from openai_evaluation_bundle import ROOT, load_bundle
 from postgres_fixture import owned_state
 
-GROUP_CEILING = 1300000000
+GROUP_CEILING = 1700000000
 
 
 def credential(path):
@@ -61,9 +61,9 @@ def report(runner, principal, protocol, batch):
 def execute(output, key_file, *, read_only=False, maximum_steps=12, resume_after_unavailable=False, profile="v1"):
     output.mkdir(parents=True, exist_ok=False)
     # Read-only report needs no secret and cannot send requests.
-    transport = None if read_only else OpenAIHTTP(credential(key_file))
+    transport = None if read_only else OpenAIHTTP(credential(key_file), maximum_body_bytes=32768 if profile == "v5" else 16384)
     # Both immutable versions share the SAME initial budget; neither refunds the other.
-    bundles = [ROOT.with_name("openai-engineering-" + name) for name in ("v1", "v2", "v3", "v4")
+    bundles = [ROOT.with_name("openai-engineering-" + name) for name in ("v1", "v2", "v3", "v4", "v5")
                if ROOT.with_name("openai-engineering-" + name).exists()]
     frozen = [load_bundle(None, root) for root in bundles]
     if sum(item[2].accounting_units for item in frozen) > GROUP_CEILING:
@@ -113,6 +113,6 @@ if __name__ == '__main__':
     parser.add_argument('--execute', action='store_true')
     parser.add_argument('--maximum-steps', type=int, choices=range(1, 13), default=12)
     parser.add_argument('--resume-after-unavailable', action='store_true')
-    parser.add_argument("--profile", choices=["v1", "v2", "v3", "v4"], default="v1")
+    parser.add_argument("--profile", choices=["v1", "v2", "v3", "v4", "v5"], default="v1")
     args = parser.parse_args()
     execute(args.output.absolute(), args.key_file, read_only=not args.execute, maximum_steps=args.maximum_steps, resume_after_unavailable=args.resume_after_unavailable, profile=args.profile)

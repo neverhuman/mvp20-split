@@ -1,0 +1,3 @@
+# Structured extraction and evidence-posture validation
+
+Frozen before live execution. Adapter revisionv3 uses provider strict JSON schema for ExtractionDraft; campaign JSON output stays under the unchanged local validator. Prompt defines evidence posture independently of the next evidence request. New invented entity pairs/campaign statements use the original independent rubric; template-level validation only,not broad scientific evidence.12calls,32768input/2048output caps,reservation$0.405504. Allfive full reservations$1.65888 within delegated$1.70 cumulative cap. No history/refunds reset.58provider/SQL/boundary checks passed42.27s before final prompt clarification; final packet check separately recorded.

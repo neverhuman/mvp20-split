@@ -13,7 +13,8 @@ class OpenAIPrice:
     def estimate(self, input_tokens, output_tokens):
         require(all(type(x) is int and 0 <= x <= 100000000 for x in (input_tokens, output_tokens)), "openai_usage_invalid")
         return input_tokens * self.input_rate + output_tokens * self.output_rate
-    def reservation(self, limits):
+    def reservation(self, limits, *, input_limit=16384):
+        require(type(input_limit) is int and input_limit in {16384,32768}, "openai_input_profile")
         require(limits.accounting_unit == UNIT, "openai_accounting_unit")
-        require(limits.max_input_tokens <= 16384 and limits.max_output_tokens <= 4096, "openai_initial_request_limit")
+        require(limits.max_input_tokens <= input_limit and limits.max_output_tokens <= 4096, "openai_initial_request_limit")
         return self.estimate(limits.max_input_tokens, limits.max_output_tokens)

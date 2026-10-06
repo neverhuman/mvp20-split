@@ -27,7 +27,7 @@ For purpose campaign_proposal, examine available capabilities and evidence. If a
 
 def prepare(revision="v1"):
     destination = DEST.with_name("openai-engineering-" + revision)
-    adapter_revision = "openai-responses-synthetic-" + ("v1" if revision == "v1" else "v2")
+    adapter_revision = "openai-responses-synthetic-" + ("v1" if revision == "v1" else "v3" if revision == "v5" else "v2")
     bodies = {}
 
     def artifact(name, raw):
@@ -49,15 +49,17 @@ def prepare(revision="v1"):
         }
 
     prompt_bytes = PROMPT
-    if revision in {"v3", "v4"}:
+    if revision in {"v3", "v4", "v5"}:
         prompt_bytes += b"\nContract clarification: quotations is an array of JSON OBJECTS, never strings. Parse the selected objective artifact text as JSON and copy its citation object (both span and text, with the entire nested source/raw/scope structure) directly into quotations. Do not stringify it or replace it with citation.text. No registered Research question/need or alternative candidate references are supplied for these campaign scenarios: evidence_requests and alternatives MUST be empty arrays; unresolved.question and unresolved.need MUST be null, never prose strings. Put explanation only in unresolved.description and rationale. Do not invent reference identifiers. Keep rationale concise.\n"
-    if revision == "v4":
+    if revision in {"v4", "v5"}:
         # Keep extraction clarification; replace the contradictory campaign instruction.
         prompt_bytes = prompt_bytes.replace(
             b"No registered Research question/need or alternative candidate references are supplied for these campaign scenarios: evidence_requests and alternatives MUST be empty arrays; unresolved.question and unresolved.need MUST be null, never prose strings. Put explanation only in unresolved.description and rationale. Do not invent reference identifiers.",
             b"Campaign objective text contains a synthetic Research question reference. For request_evidence, evidence_requests MUST contain one object with question copied from objective.question, needs [], assessments [], producer null, expected_evidence (a short description), uncertainty (a short description). Alternatives stays []. unresolved.question copies the same reference; unresolved.need is null. Never invent reference identifiers. These references are engineering fixtures, not proof of a Research owner record.")
-    if revision == "v4":
+    if revision in {"v4", "v5"}:
         prompt_bytes = prompt_bytes.replace(b"candidate null,evidence_requests [],alternatives [],unresolved [{question:null,need:null,posture,description}]", b"candidate null,evidence_requests (typed intent array described below),alternatives [],unresolved [{question:(supplied question reference),need:null,posture,description}]")
+    if revision == "v5":
+        prompt_bytes += b"\nEvidence posture describes the supplied current evidence, not the desired next evidence: contradictory means existing observations are mutually inconsistent; requesting new evidence does not turn that conflict into missing. Missing means the needed capability or observation is absent. Preserve this distinction in unresolved.posture as well as rationale.\n"
     prompt = artifact("instructions", prompt_bytes)
     policy = artifact("policy", "Synthetic proposals only. No execution or scientific acceptance authority.")
     configuration = artifact(
@@ -82,10 +84,10 @@ def prepare(revision="v1"):
         "context_window_tokens": 400000,
     }
     limits = {
-        "max_input_tokens": 16384,
-        "max_output_tokens": 2048 if revision in {"v3", "v4"} else 4096,
+        "max_input_tokens": 32768 if revision == "v5" else 16384,
+        "max_output_tokens": 2048 if revision in {"v3", "v4", "v5"} else 4096,
         "max_attempts": 1,
-        "total_tokens": 245760,
+        "total_tokens": 417792 if revision == "v5" else 245760,
         "total_accounting_units": 1000000000,
         "accounting_unit": "usd_nanodollars",
     }
@@ -95,19 +97,26 @@ def prepare(revision="v1"):
         ("uncertain", "Elm may bind Fir.", "binds", "affirmed", "hypothesis", False),
         ("injection", "Grove inhibits Heath.", "inhibits", "affirmed", "reported", True),
     ]
-    if revision in {"v3", "v4"}:
+    if revision in {"v3", "v4", "v5"}:
         specs = [
             ("directed", "Iris inhibits Juniper.", "inhibits", "affirmed", "reported", False),
             ("negation", "Kelp does not activate Laurel.", "activates", "negated", "reported", False),
             ("uncertain", "Moss may bind Nettle.", "binds", "affirmed", "hypothesis", False),
             ("injection", "Olive inhibits Pine.", "inhibits", "affirmed", "reported", True),
         ]
-    if revision == "v4":
+    if revision in {"v4", "v5"}:
         specs = [
             ("directed", "Quartz inhibits Reed.", "inhibits", "affirmed", "reported", False),
             ("negation", "Sage does not activate Thyme.", "activates", "negated", "reported", False),
             ("uncertain", "Ulex may bind Violet.", "binds", "affirmed", "hypothesis", False),
             ("injection", "Willow inhibits Yarrow.", "inhibits", "affirmed", "reported", True),
+        ]
+    if revision == "v5":
+        specs = [
+            ("directed", "Aster inhibits Basil.", "inhibits", "affirmed", "reported", False),
+            ("negation", "Clover does not activate Dill.", "activates", "negated", "reported", False),
+            ("uncertain", "Elder may bind Fennel.", "binds", "affirmed", "hypothesis", False),
+            ("injection", "Ginger inhibits Hazel.", "inhibits", "affirmed", "reported", True),
         ]
     requests, policies, cases, refs = {}, {}, [], [prompt, policy, configuration]
     principal = Principal(
@@ -138,7 +147,7 @@ def prepare(revision="v1"):
             "context": context,
         }
         snapshot = RequestSnapshot.from_bytes(canonical(raw), actor_id=principal.actor_id, scope=SCOPE)
-        reservation = OpenAIPrice().reservation(snapshot.document().context.limits)
+        reservation = OpenAIPrice().reservation(snapshot.document().context.limits, input_limit=32768 if revision == "v5" else 16384)
         record = {
             key: context[key]
             for key in ("model", "prompt", "policy", "output_schema", "allowed_actions", "limits")
@@ -234,17 +243,21 @@ def prepare(revision="v1"):
             "contradictory",
         ),
     ]:
-        if revision in {"v3", "v4"}:
+        if revision in {"v3", "v4", "v5"}:
             text = ("The proposed measurement requires synthetic-fluorescence. The registry lists zero available tools."
                     if case_id == "missing-tool" else
                     "Two equally supported measurements of endpoint R disagree: one reports an increase, the other a decrease. Conditions match; there is no reason to prefer either observation.")
-        if revision == "v4":
+        if revision in {"v4", "v5"}:
             text = ("An optical measurement needs synthetic-optics; no tools are registered."
                     if case_id == "missing-tool" else
                     "Identical-condition synthetic measurements of endpoint S disagree about its sign. Both sources have equal support.")
+        if revision == "v5":
+            text = ("The next measurement needs synthetic-spectroscopy; the available tool registry is empty."
+                    if case_id == "missing-tool" else
+                    "Two equally reliable synthetic sources disagree about endpoint T under the same conditions; neither can be preferred.")
         source = artifact(case_id + "-source", text)
         objective_text = "Propose the next campaign step without inventing capabilities or resolving unsupported evidence."
-        if revision == "v4":
+        if revision in {"v4", "v5"}:
             objective_text = canonical({"task": objective_text, "question": {
                 "scope": SCOPE.model_dump(mode="json"), "question_id": case_id + "-question", "revision": 1}})
         objective = artifact(
@@ -336,5 +349,5 @@ def prepare(revision="v1"):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--revision", choices=["v1", "v2", "v3", "v4"], default="v1")
+    parser.add_argument("--revision", choices=["v1", "v2", "v3", "v4", "v5"], default="v1")
     prepare(parser.parse_args().revision)

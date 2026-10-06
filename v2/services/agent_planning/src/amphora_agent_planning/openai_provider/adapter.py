@@ -14,7 +14,7 @@ from .pricing import MODEL, OpenAIPrice
 class OpenAIProvider:
     revision = "openai-responses-synthetic-v1"
     def __init__(self, transport, content, *, revision="openai-responses-synthetic-v1"):
-        require(revision in {"openai-responses-synthetic-v1", "openai-responses-synthetic-v2"}, "openai_transport_revision")
+        require(revision in {"openai-responses-synthetic-v1", "openai-responses-synthetic-v2", "openai-responses-synthetic-v3"}, "openai_transport_revision")
         self.transport,self.content,self.revision = transport,content,revision
     def supports(self, model):
         return (model.provider_id,model.model_id,model.model_revision)==("openai",MODEL,MODEL) and model.tokenizer==tokenizer_reference()

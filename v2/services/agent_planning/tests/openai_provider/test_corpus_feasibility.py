@@ -46,4 +46,4 @@ def test_followup_fits_revised_cumulative_cap_without_refunding_history():
     assert sum(b[2].accounting_units for b in bundles) == 1253376000
     assert bundles[3][2].accounting_units == 258048000
 
-    assert 1253376000 <= GROUP_CEILING == 1300000000
+    assert 1253376000 <= GROUP_CEILING == 1700000000

@@ -12,11 +12,11 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 - Last refreshed: `2026-10-06 08:59:28` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P6 / BP-07 - Autonomous LLM Campaign Supervision.
-- Primary active task: BP-07.05/B3 contract clarification/live acceptance on frozen corrected v4 inputs under delegated $1.30 cumulative cap.
-- Next task: validate v4 live criteria, then independent replacement and scoped audit.
+- Primary active task: BP-07.05/B3 contract clarification/live acceptance on frozen corrected v5 inputs under delegated $1.70 cumulative cap.
+- Next task: validate v5 live criteria, then independent replacement and scoped audit.
 - Implementation completion: BP-07=90%,18/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
-- Active focus: B1 engineering complete: evaluation runner, Runtime inspection and Studio verified. B3 corrected live suite pending under the revised $1.30 cumulative ceiling.
-- Blockers: No external blocker. Owner delegated model/cost choices; agent-selected cumulative cap revised to $1.30 for prepared v4, full reservations $1.253376.
+- Active focus: B1 engineering complete: evaluation runner, Runtime inspection and Studio verified. B3 corrected live suite pending under the revised $1.70 cumulative ceiling.
+- Blockers: No external blocker. Owner delegated model/cost choices; agent-selected cumulative cap revised to $1.70 for prepared v5, full reservations $1.65888.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
 - Active exception: none.
 
@@ -32,7 +32,7 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-07.01/.02/.03/.04 are closed100%. BP-07.05/B1 is complete; B3 fixture correction verified; v4 live verification pending; implementation50%,Build66.67%,Acceptance0%.
+BP-07.01/.02/.03/.04 are closed100%. BP-07.05/B1 is complete; B3 fixture correction verified; v5 live verification pending; implementation50%,Build66.67%,Acceptance0%.
 
 | Parent | Overall | P1 | P2 | P3 | P4 | P5 |
 |---|---:|---:|---:|---:|---:|---:|
