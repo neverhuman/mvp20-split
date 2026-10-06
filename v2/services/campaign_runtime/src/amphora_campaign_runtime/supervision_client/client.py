@@ -4,6 +4,7 @@ import json
 from urllib.parse import quote
 
 from amphora_contracts_supervision import (
+    CheckpointExecutionReport,
     CheckpointRequest,
     SupervisionCommandReceipt,
     SupervisionRequest,
@@ -53,3 +54,12 @@ class CheckpointPlanningClient(PlanningClient):
     family = 'planning.supervision.request.v2'
     prefix = '/v2/supervision'
     request_type = CheckpointRequest
+
+    def execution(self, command, window):
+        from ..supervision_outcomes import ReportedExecution
+
+        checked = self._command(command)
+        request = CheckpointRequest.model_validate_json(json.dumps(json.loads(checked.canonical_bytes)['payload']))
+        report = self._exchange('GET', self.prefix + '/execution/' +
+            quote(request.planning_request.reference.engagement_id, safe=''), None, CheckpointExecutionReport, window)
+        return ReportedExecution.bind(request, report)

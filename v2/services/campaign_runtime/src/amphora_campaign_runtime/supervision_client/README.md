@@ -21,3 +21,5 @@ B1.04d actual-owner proof verified 2026-10-05 16:32:49: independently installed 
 
 
 B2.01b.iv installed verification: both profiles remain compatible in four isolated owners668 cases; actual v2 materialization request, two commit-before-reply losses, six owner hosts and replacement/rights replay passed. Checkpoint_Owners.json owns evidence. No automatic graph checkpoint or winner yet.
+
+Runtime0.53 CheckpointPlanningClient.execution performs authenticated GET /v2/supervision/execution/{engagement_id} for the exact original command, then binds the report through supervision_outcomes.ReportedExecution. Missing404 stays unresolved, never zero-call success. No submit fallback or new call is permitted by this read.46 domain/socket/boundary tests passed; original command/receipt profiles unchanged.

@@ -1,0 +1,13 @@
+{
+  "checkpoint": "2026-10-06 00:29:07",
+  "task": "BP-07.04/B2.03c.ii.3a",
+  "runtime": "0.53",
+  "tests": "46 passed16.47s",
+  "coverage": {
+    "statements": 44,
+    "branches": 6,
+    "percent": 100
+  },
+  "scope": "pure original binding plus socket/scriptedPlanning readback",
+  "limitations": "No durable report, winner or installed peer proof"
+}

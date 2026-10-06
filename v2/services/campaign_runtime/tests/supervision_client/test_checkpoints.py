@@ -1,6 +1,7 @@
 """Actual socket protocol with exact v2 command recovery and no silent fallback."""
 
 import hashlib
+import json
 from pathlib import Path
 
 import pytest
@@ -16,6 +17,7 @@ from amphora_contracts_supervision import (
     parse_checkpoint_command,
 )
 
+from ..supervision_outcomes.test_reported import report
 from .test_client import TOKEN, peer
 
 __all__ = ['peer']
@@ -60,3 +62,18 @@ def test_lost_v2_reply_recovers_without_reposting_or_switching_family(peer):
     assert client.readback(peer.command, receipt, ExchangeWindow()).status == 'recorded'
     assert sum(item[1] == '/v2/supervision/requests' for item in peer.records) == 1
     assert len(peer.records) == 3
+
+
+def test_execution_report_is_exact_read_only_owner_evidence(peer):
+    client = checkpoint(peer)
+    data = report(peer.payload)
+    peer.override = json.dumps(data).encode()
+    result = client.execution(peer.command, ExchangeWindow())
+    assert result.document().stop_reason == 'provider_unconfigured'
+    assert peer.records[0][:3] == ('GET', '/v2/supervision/execution/' +
+        peer.payload.planning_request.reference.engagement_id, None)
+    data['request_sha256'] = 'f' * 64
+    peer.override = json.dumps(data).encode()
+    with pytest.raises(ValueError, match='execution_report_request'):
+        client.execution(peer.command, ExchangeWindow())
+    assert all(item[0] == 'GET' for item in peer.records)

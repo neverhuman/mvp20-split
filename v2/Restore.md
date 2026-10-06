@@ -1,14 +1,14 @@
 # Restore
 
-Read FIRST after compression. Refreshed 2026-10-06 00:24:15 (America/Chicago).
+Read FIRST after compression. Refreshed 2026-10-06 00:29:07 (America/Chicago).
 
 ## Resume
 
-Owner authorization persists: continue across milestones, commits, pushes and compaction until a concrete owner need. Latest pushed `27aca0e6`; c.ii.2 is verified and ready to commit/push, then continue immediately. No test sessions, HTTP hosts, workers or agents running. Current task **BP-07.04/B2.03c.ii.3 Runtime report consumption, repair and fallback**. No owner decision blocks deterministic work. Live provider/model/egress/spend remain unselected; this blocks actual paid/live calls only.
+Owner authorization persists: continue across milestones, commits, pushes and compaction until a concrete owner need. Latest pushed `5085d6dd`; c.ii.3a verified and ready to commit/push, then continue. No test sessions, HTTP hosts, workers or agents running. Current task **BP-07.04/B2.03c.ii.3 Runtime report consumption, repair and fallback**. No owner decision blocks deterministic work. Live provider/model/egress/spend remain unselected; this blocks actual paid/live calls only.
 
-Versions: Runtime0.52/runtime0026; Planning0.86/planning0018 APPLIED. NEVER run Planning<=0.85 or Runtime<=0.47 migrators against this fixture. Data0.29/artifacts0012 (never<=0.25); Research0.34/research0013 (never<=0.33); Knowledge0.18; Registry0.1. PublicSupervision0.8, Planning contracts0.10, graph-runtime0.13.546 published schemas preserve544 predecessor bytes in execution_predecessor_schema_pins.json. Preserve all fixture history and prior migration bytes.
+Versions: Runtime0.53/runtime0026; Planning0.86/planning0018 APPLIED. NEVER run Planning<=0.85 or Runtime<=0.47 migrators against this fixture. Data0.29/artifacts0012 (never<=0.25); Research0.34/research0013 (never<=0.33); Knowledge0.18; Registry0.1. PublicSupervision0.8, Planning contracts0.10, graph-runtime0.13.546 published schemas preserve544 predecessor bytes in execution_predecessor_schema_pins.json. Preserve all fixture history and prior migration bytes.
 
-Canonical tracker: docs/Build Plans/BP-07/BP-07.04 Durable supervisor and races.md. Parent69.72%,13/20 closed; child48.61%,Build64.81%,Acceptance0%,1/4. B1=100%; B2=94.44% (.01/.02=100%, .03=83.33%); B3/V1=0%. B2.03 a/b100%,c50%. c equal i/ii/iii: i100%,ii50%,iii0%. c.ii equal four units:1 execution report contract100%,2 Planning persistence/worker/HTTP100%,3 Runtime consumption/repair/fallback0%,4 owner scheduling0%. Current ii.3; next ii.4, then c.iii combined autonomous integration, B3 process/failure proof, V1 installed integration. Completed gates remain closed.
+Canonical tracker: docs/Build Plans/BP-07/BP-07.04 Durable supervisor and races.md. Parent69.74%,13/20 closed; child48.69%,Build64.92%,Acceptance0%,1/4. B1=100%; B2=94.75% (.01/.02=100%, .03=84.26%); B3/V1=0%. B2.03 a/b100%,c52.78%. c equal i/ii/iii: i100%,ii58.33%,iii0%. c.ii equal four units:1 execution report contract100%,2 Planning persistence/worker/HTTP100%,3 Runtime consumption/repair/fallback33.33%,4 owner scheduling0%. Current ii.3; next ii.4, then c.iii combined autonomous integration, B3 process/failure proof, V1 installed integration. Completed gates remain closed.
 
 ## Recent implementation
 
@@ -22,7 +22,7 @@ c.ii.2 proof:36 completion/worker/API tests36.26s;114 final completion/execution
 
 ## Next work: Runtime consumption and bounded disposition
 
-No ii.3 code/design refinement yet. Read the focused loop/report designs before coding. Existing Runtime modules to compose:
+ii.3 has equal a/b/c: a report binding/client100%; b persistence/disposition0%; c preparation/repair/fallback bridge0%. b has two equal parts: report journal, disposition/winner integration. Current b. Runtime0.53 supervision_outcomes/ReportedExecution and CheckpointPlanningClient.execution implemented.46cases16.47s44statements6branches100%;546schemasunchanged. Test peer uses actual socket/scriptedPlanning, not actualPlanning report HTTP. Report domain matches exact response observation hash; no acceptance/storage claim yet. Read the focused loop/report designs before coding. Existing Runtime modules to compose:
 - supervision_context/preparation.py ContextPreparer.prepare(principal,ref,parent_request_sha256=None): actual pinned recipe/context publication and atomic request reservation. Original initial/child replay first; immutable roots/deadline/ceilings. Fresh selected facts allowed, original scalar fields fixed.
 - supervision_journal/storage.py RequestJournal.series; delivery.py and supervision_delivery worker; responses.py RESPONSES/StoredResponse retain exact captures. Public PlanningClient now needs an execution-report GET and strict original-binding validation.
 - supervision_winners/storage.py WinnerStore.resolve: original winner first, terminal run cancels, original slot eligibility/deadline chooses pinned fallback, otherwise response_id binds ModelWinner/current actual facts. No provider/context/quota exhaustion disposition yet. current_seed checks actual ready concrete target/unissued work.
