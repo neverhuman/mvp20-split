@@ -35,3 +35,5 @@ canonicalization.py rejects ambiguous duplicate keys, nonfinite JSON, invalid en
 Tests/canonicalization owns exact byte provenance, declared encoding equivalence, malformed input, schema and CLI checks. Existing legality/equivalence/worker regressions remain required. Updated Dockerfile is a recipe; image/independent Runtime proof remains separate.
 
 Combined three-tool verification137checks46.41s. New canonicalization modules69statements/18branches100%; domain/equivalence100%; adapter95% and capability96% retain defensive output-size/invalid-direction gaps. CLI subprocess passes are not attributed to parent coverage (aggregate77%).604publishedschemas preserve602predecessors. No actual Runtime canonicalization or image qualification is claimed here.
+
+Image qualification 2026-10-06 15:29:16: [Representation images](../../docs/Audits/Evidence/BP-08-Search/Representation_Images.json) records actualLinuxamd64 digest,offlineCLI golden/schema/nonroot/peer-isolation checks. This does not claim target-host or scientific qualification; actual Registry/image-matched replacement remains V1.02.

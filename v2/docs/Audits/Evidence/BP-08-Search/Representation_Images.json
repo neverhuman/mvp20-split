@@ -1,0 +1,89 @@
+{
+  "status": "passed",
+  "timestamp_local": "2026-10-06 15:29:16",
+  "source": ".test-results/representation-images-20261006a/manifest.json",
+  "source_sha256": "f5662d955ee453b6b6a790fde54cb93ac22c9938984636508eda4561b43c9a02",
+  "base": "python@sha256:f77ac9e44ae96ef2c90b8053ea08c31f8be030f824196b0ae4db6d462c84e51f",
+  "platform": "linux/amd64",
+  "profile_count": 7,
+  "tools": [
+    {
+      "package": "amphora-numeric-space",
+      "module": "amphora_numeric_space",
+      "image_manifest_digest": "sha256:6501b99f52dfd084780c7f53071cdd8d34ac139758b6e95c541b4cd2ab7c570c",
+      "profiles": {
+        "canonicalize": {
+          "capability_id": "synthetic.numeric-canonicalize",
+          "contract_version": "1",
+          "image_sha256": "6501b99f52dfd084780c7f53071cdd8d34ac139758b6e95c541b4cd2ab7c570c",
+          "release": "0.4.0"
+        },
+        "move": {
+          "capability_id": "synthetic.numeric-move",
+          "contract_version": "1",
+          "image_sha256": "6501b99f52dfd084780c7f53071cdd8d34ac139758b6e95c541b4cd2ab7c570c",
+          "release": "0.4.0"
+        }
+      },
+      "isolation": "passed"
+    },
+    {
+      "package": "amphora-polymer-space",
+      "module": "amphora_polymer_space",
+      "image_manifest_digest": "sha256:1ac66b08460608ccbe38993a222973f6c64bc9ab6ede957d1442db6e9f2d6ef8",
+      "profiles": {
+        "canonicalize": {
+          "capability_id": "synthetic.polymer-canonicalize",
+          "contract_version": "1",
+          "image_sha256": "1ac66b08460608ccbe38993a222973f6c64bc9ab6ede957d1442db6e9f2d6ef8",
+          "release": "0.4.0"
+        },
+        "move": {
+          "capability_id": "synthetic.polymer-move",
+          "contract_version": "1",
+          "image_sha256": "1ac66b08460608ccbe38993a222973f6c64bc9ab6ede957d1442db6e9f2d6ef8",
+          "release": "0.4.0"
+        }
+      },
+      "isolation": "passed"
+    },
+    {
+      "package": "amphora-sequence-space",
+      "module": "amphora_sequence_space",
+      "image_manifest_digest": "sha256:1e69fa6aa3706d0dae403911a03f0593c2f0576d9c1a95729617c7fcee928a1b",
+      "profiles": {
+        "canonicalize": {
+          "capability_id": "synthetic.sequence-canonicalize",
+          "contract_version": "1",
+          "image_sha256": "1e69fa6aa3706d0dae403911a03f0593c2f0576d9c1a95729617c7fcee928a1b",
+          "release": "0.4.0"
+        },
+        "move": {
+          "capability_id": "synthetic.sequence-move",
+          "contract_version": "1",
+          "image_sha256": "1e69fa6aa3706d0dae403911a03f0593c2f0576d9c1a95729617c7fcee928a1b",
+          "release": "0.4.0"
+        }
+      },
+      "isolation": "passed"
+    },
+    {
+      "package": "amphora-synthetic-digest",
+      "module": "amphora_synthetic_digest",
+      "image_manifest_digest": "sha256:164c3f7f5ef7b5cdb288c00f4738ee6995c90aff83ccaa044fd5d29277888835",
+      "profiles": {
+        "evaluate": {
+          "capability_id": "synthetic.digest-score",
+          "contract_version": "1",
+          "image_sha256": "164c3f7f5ef7b5cdb288c00f4738ee6995c90aff83ccaa044fd5d29277888835",
+          "release": "0.1.0"
+        }
+      },
+      "isolation": "passed"
+    }
+  ],
+  "golden_profile": "representation-fixtures-and-hex123456-v1",
+  "network": "none for all image probes",
+  "uid": 65532,
+  "limits": "Offline Linuxamd64 image/CLI proof. Actual HTTP workers previously ran Windows with fixture image pins; Registry/image-matched replacement is the next gate. No targethost or scientific qualification."
+}
