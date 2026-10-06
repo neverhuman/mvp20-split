@@ -893,3 +893,6 @@ Four current installed owners668 cases(233 Runtime each,101 Planning each),40/30
 
 
 2026-10-05 21:32:22: B2.02b COMPLETE (public profiles, owner parsers/binding, compatibility). Runtime0.42/runtime0023;Planning0.77/planning0016;publicPlanning0.10/Supervision0.5.336 scoped tests103.30s;631 statements82branches100%;37SQL16.65s.1056 isolated tests (Runtime335each,Planning193each),46/32 predecessor migrations unchanged,542 schemas preserve538. B2.02=50%,B2=50%,Build50%,child37.50%,parent67.50%;current c.i atomic winner transaction, then c.ii coordinator release. No accepted effect yet.
+
+
+2026-10-05 21:43:41: c.i atomic winner COMPLETE. Runtime0.43/runtime0024,SELECT/INSERT-only winner table;198statements20branches100%,164 scoped SQL/effects/checkpoint/journal/boundary cases99.16s. Model/cancel/deadline/eligibility outcomes, original replay, bound request policy/ceilings, stale/bad scalar rejection and rollback of winner/revision/audit/outbox. Initial cancellation fixture omitted required reason_code; repaired. No coordinator release or conversion application. c50%,B2.02=62.50%,B2=54.17%,Build51.39%,child38.54%,parent67.71%;current c.ii.

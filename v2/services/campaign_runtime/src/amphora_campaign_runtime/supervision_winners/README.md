@@ -1,0 +1,13 @@
+# Checkpoint winner owner
+
+Owner: BP-07.04/B2.02c.i. Winner transaction verified; coordinator release remains c.ii and conversion integration remains d.
+
+`WinnerStore.resolve(principal, SupervisionRef, response_id=None)` requires `supervise_accept` and exact principal scope. It acquires the existing run lock, reconstructs the original admitted checkpoint/policy, and returns a stored winner before checking later state. A terminal run records cancellation; a database-clock deadline or original eligibility exhaustion selects the pinned fallback. Otherwise no response returns pending (`None`); a response must already exist in Runtime's immutable response journal. No model callback, peer SQL or provider/Data network call occurs here.
+
+ModelWinner reconstructs captured public CheckpointDraft, exact request/policy/slot/response linkage, actual membership, readiness, unissued work, selected observations, scalar prior values, original deadline and per-slot request/attempt ceilings. A refreshed retained request reconstructs a new scalar seed without overwriting the first slot. ScalarSelection owns the bounded effect; other permitted drafts retain capture provenance. This is software acceptance, not scientific confidence or Artifact publication. Rejected proposals leave the slot available; their immutable response remains diagnostic.
+
+Forward migration runtime0024 adds SELECT/INSERT-only supervision_winners. One primary key per scoped decision elects the winner under the run lock. The same transaction advances run revision, appends existing audit/outbox evidence and retains canonical decision/selection bytes with original and refreshed seed identities. No original plan/input/Artifact changes. Winner reconstruction validates canonical hashes, scope, original slot, effect/selection agreement and pinned fallback. `read` requires `read` scope. Existing history remains replayable after cancellation and service replacement.
+
+Provider/repair exhaustion and aggregate call reservations remain B2.03. Current fallback triggers are original slot eligibility and elapsed deadline. Coordinator/Artifact conversion do not yet consume these winners. Tests live in tests/supervision_winners and require actual PostgreSQL for atomicity/permissions/replay; process contention and independently installed application remain later gates.
+
+Verified164 winner/checkpoint/journal/effect/boundary cases99.16s;198 statements20branches100%. Runtime0.43/runtime0024. Tests include request-policy/attempt-ceiling mismatch, retained future graph, expired model fallback and unchanged current plan. Process contention and downstream application remain explicitly unproven.

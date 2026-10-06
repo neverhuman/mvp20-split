@@ -1,22 +1,24 @@
 # Restore
 
-Read first after compression. Refreshed 2026-10-05 21:32:22 (America/Chicago).
+Read first after compression. Refreshed 2026-10-05 21:43:41 (America/Chicago).
 
 ## Resume
 
-Owner says continue until needed. Latest pushed128a88e4; B2.02b complete ready commit/push. No tests/hosts/workers running. Current BP-07.04/B2.02c.i atomic winner transaction, then c.ii coordinator release. Do not stop at checkpoint.
+Owner says continue until needed. Latest pushedf09cd98d; c.i atomic winner verified ready commit/push. No tests/hosts/workers running. Current BP-07.04/B2.02c.ii coordinator review/fallback release, then d effective conversion integration. Keep working after commit.
 
-Read Winner and effects.md. PublicPlanning0.10 CheckpointDraft (planning.checkpoint-draft/v1,payload2), publicSupervision0.5 CheckpointDecision. Explicit owner parsers and Runtime select_fields implemented. Legacy profiles unchanged; CampaignPrepared stays an old-profile composition entry point.336 scoped cases103.30s/631statements82branches100%;37SQL16.65s;1056 isolated initial/replacement cases. Evidence Checkpoint_Effects_Exchange.json. .test-results/checkpoint-effects-installed-20261005 PASSED. All processes completed. No SQL winner or conversion integration exists yet.
+Runtime0.43/runtime0024 migration APPLIED. NEVER run Runtime<=0.42 migrators, including installed effect/policy predecessors. Planning0.77/planning0016 unchanged. New supervision_winners module: WinnerStore.resolve requires supervise_accept/exact scope, run lock, original slot/policy; prior winner replays first. CurrentSeed verifies actual ready membership/no issuance. ModelWinner binds actual retained request/response/capture, policy hash, original deadline/ceilings, selected freshness and scalar priors. Explicit refreshed footprint can reconstruct selection seed without changing original slot. Deadline/eligibility fallback needs no request; terminal run records cancellation. Atomic INSERT-only winner/selection plus existing run revision/audit/outbox. read validates stored decision/selection and response identity. No graph release/application yet.
 
-c design: new forward migration after runtime0023, immutable winner/selection bound original slot/request/response; reuse runtime.audit_events/outbox and existing run lock. RuntimeLeases._changed increments revision and commits audit/outbox (requires RunBudget). Replays return original winner before current run/deadline checks. Cancellation/terminal run wins against new acceptance. Fallback derives deadline/eligibility from slot/DB clock, not arbitrary caller reason. Provider/repair exhaustion belongs B2.03 retained evidence. Model effects require actual response journal capture and exact request/policy/slot lineage; select_fields validates seed/cut/prior/occurrence. Refresh seed can reconstruct retained request footprint plus original scalar fields, preserve slot identity/deadline/ceilings and retain selection seed bytes. Current membership/issued checks from supervision_journal.current.verify_footprint. Scalar conversion opening/revalidation will share resolver in d. No source edits during verification.
+164 scoped SQL/checkpoint/journal/effect/boundary cases99.16s;198statements20branches100%,Ruff. Initial test CancelRun omitted required reason_code; fixed fixture. Evidence Checkpoint_Winner.json. Latest public exchange f09cd98d already verified336 scoped and1056 isolated cases,542 schemas preserve538; no old profile reinterpretation.
+
+c.ii plan: GraphPass ready checkpoint hook loads committed WinnerStore. Pending remains held; pinned block fallback blocks only target; review/unchanged winner falls through to normal node execution. **Keep adjusted scalar winners held until d shares effective resolver at both BindingExecution.step and BindingCoordinator.context.** This staging is documented in Winner and effects.md. Test actual Invoke single issuance and block behavior; no new model invocation. d removes temporary scalar hold only when conversion source-cut uses same immutable effective inputs.
 
 ## Canonical progress
 
-Parent67.50%,13/20;child37.50%,Build50%,Acceptance0%,1/4. B1=100%;B2=50%(.01=100%,.02=50%,.03=0%);B3/V1=0%. B2.02 a/b100%,c/d0%;c.i/ii equal0%. Current c.i,next c.ii then d conversion. No new owner decision.
+Parent67.71%,13/20;child38.54%,Build51.39%,Acceptance0%,1/4. B1=100%;B2=54.17%(.01=100%,.02=62.50%,.03=0%);B3/V1=0%. B2.02 a/b100%,c50%,d0%;c.i100%,ii0%. Current c.ii,next d. No owner decision needed.
 
 ## Current boundaries
 
-Runtime0.42/runtime0023;Planning0.77/planning0016;publicSupervision0.5;graph-runtime0.13;publicPlanning0.10;542 schemas preserve538 predecessors. Actual retained DB Runtime0023/Planning0016. **NEVER run Runtime<=0.38 or Planning<=0.73 migrators.** Data0.29/artifacts0012 (never<=0.25),Research0.34/research0013 (never<=0.33),Knowledge0.18,Registry0.1.
+Runtime0.43/runtime0024;Planning0.77/planning0016;publicSupervision0.5;graph-runtime0.13;publicPlanning0.10;542 schemas preserve538 predecessors. Actual retained DB Runtime0024/Planning0016. **NEVER run Runtime<=0.42 or Planning<=0.73 migrators.** Data0.29/artifacts0012 (never<=0.25),Research0.34/research0013 (never<=0.33),Knowledge0.18,Registry0.1.
 
 - Public CheckpointRequest/Snapshot2 use explicit planning.supervision.request.v2; old request parsers/bytes closed. Runtime/Planning journals, separate v2 HTTP/client paths and exact receipts implemented. No provider call grant follows from recording.
 - graph.admit_supervised numeric-v2 command pins exact policy hash. PolicyCatalog requires exact scope/plan/policy, no latest fallback. GraphAdmission.admit_supervised pins before frontier/initial issuance; original receipt replay precedes catalog lookup.

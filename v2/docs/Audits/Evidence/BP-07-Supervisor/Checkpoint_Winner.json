@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "verified_at": "2026-10-05 21:43:41",
+  "runtime": "0.43.0",
+  "migration": "runtime_0024",
+  "tests": 164,
+  "seconds": 99.16,
+  "coverage": {
+    "statements": 198,
+    "branches": 20,
+    "percent": 100
+  },
+  "ruff": "passed",
+  "limits": [
+    "Winner transaction only; coordinator release and conversion pending",
+    "No independent process contention or actual published Artifact/tool effect yet"
+  ],
+  "fixture_repair": "Required CancelRun.reason_code added to test cancellation command"
+}
