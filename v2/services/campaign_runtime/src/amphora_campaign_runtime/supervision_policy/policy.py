@@ -8,7 +8,7 @@ from amphora_contracts_campaigns import ActivationPath, parse_execution_plan
 from ..compiler.addresses import ActivationAddress
 from ..compiler.catalog import canonical
 from ..supervision_scope.observations import require
-from .records import PolicyRecord
+from .records import read_policy
 from .scalars import ScalarRule
 
 
@@ -89,7 +89,7 @@ class ReviewedPolicy:
 
     @classmethod
     def bind(cls, plan, record):
-        record = PolicyRecord.model_validate_json(record.model_dump_json())
+        record = read_policy(record.model_dump_json())
         return cls(normalized(record), plan)
 
     @classmethod
@@ -97,7 +97,7 @@ class ReviewedPolicy:
         return cls(raw, plan)
 
     def document(self):
-        return PolicyRecord.model_validate_json(self.canonical)
+        return read_policy(self.canonical)
 
     @property
     def sha256(self):

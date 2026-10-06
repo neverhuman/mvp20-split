@@ -25,11 +25,12 @@ from .values import BoundValues, ensure
 
 
 class GraphAdmission:
-    def __init__(self, engine, catalog, *, bindings_enabled=False, drafts=None, policies=None):
+    def __init__(self, engine, catalog, *, bindings_enabled=False, drafts=None, policies=None, recipes=None):
         self.commands, self.catalog = CommandStore(engine), catalog
         self.bindings_enabled = bindings_enabled
         self.drafts = drafts
         self.policies = policies
+        self.recipes = recipes
 
     def admit(self, principal, command):
         return self._admit(principal, command, successor=False)
@@ -79,10 +80,13 @@ class GraphAdmission:
                     entry = self.drafts.check(conn, principal.scope, request, prepared)
                 else:
                     entry = self.catalog.require(principal.scope, request.plan_sha256)
-                policy = None
+                policy, recipe = None, None
                 if supervised:
                     ensure(self.policies is not None, "supervised_admission_not_enabled")
                     policy = self.policies.require(principal.scope, entry.plan.sha256, policy_digest)
+                    if policy.document().profile == 'runtime-supervision-policy.v2':
+                        ensure(self.recipes is not None, 'supervision_recipe_unavailable')
+                        recipe = self.recipes.require(policy)
                 ensure(entry.plan.schema_version != "4" or self.bindings_enabled, "graph_binding_profile_not_enabled")
                 from ..successors.transfer import CarryTransfer
                 transfer = CarryTransfer.resolve(conn, principal.scope, request) if successor else None
@@ -111,7 +115,7 @@ class GraphAdmission:
             conn.execute(text("INSERT INTO runtime.graph_runs (tenant_id,project_id,run_id,plan_sha256,inputs,max_activations,deadline) "
                 "VALUES (:tenant,:project,:run,:digest,CAST(:inputs AS jsonb),:maximum,:deadline)"), binding)
             if policy is not None:
-                PolicyPins.pin(conn, run_id, command, policy)
+                PolicyPins.pin(conn, run_id, command, policy, recipe)
             GraphStorage.create_scope(conn, binding, address, values, intents)
             nodes = {node.node_id: node for node in entry.plan.document.definition.body.nodes}
             environment = ValueEnvironment(values, {})

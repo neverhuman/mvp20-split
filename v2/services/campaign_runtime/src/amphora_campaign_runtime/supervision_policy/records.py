@@ -6,7 +6,7 @@ from amphora_contracts_campaigns import ScalarType
 from amphora_contracts_core import Digest, Identifier, Scope, WireModel
 from amphora_contracts_graph_runtime import NumberValue, ScalarValue
 from amphora_contracts_planning import CampaignNodeAddress
-from pydantic import Field
+from pydantic import Field, TypeAdapter
 
 
 class NumericBounds(WireModel):
@@ -50,3 +50,15 @@ class PolicyRecord(WireModel):
     plan_sha256: Digest
     checkpoints: Annotated[tuple[CheckpointRuleRecord, ...], Field(min_length=1, max_length=64)]
     ceilings: SupervisionCeilings
+
+
+class RecipePolicyRecord(PolicyRecord):
+    profile: Literal['runtime-supervision-policy.v2'] = 'runtime-supervision-policy.v2'
+    context_recipe_sha256: Digest
+
+
+POLICY_RECORD = TypeAdapter(Annotated[PolicyRecord | RecipePolicyRecord, Field(discriminator='profile')])
+
+
+def read_policy(raw):
+    return POLICY_RECORD.validate_json(raw)

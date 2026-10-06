@@ -11,3 +11,5 @@ Records are private DTOs, not public transport. PolicyPins owns append-only SQL 
 Replacement acceptance: module-owned tests must preserve exact range edges, type/unit rejection, plan identity, canonical reconstruction, duplicate rejection and occurrence selection. Run `dev/run_tests.py --module runtime --area supervision_policy` using the development environment; tests live in `tests/supervision_policy`. Public predecessor contracts remain unchanged.
 
 `PolicyCatalog` selects only an exact scope/plan/policy identity, owns reconstructed immutable entries and rejects duplicate policies. Missing selections fail closed; configuration changes do not supply an implicit latest-policy fallback.
+
+Runtime0.47 adds explicit private runtime-supervision-policy.v2 with context_recipe_sha256. Original PolicyRecord v1 remains closed; read_policy dispatches only the two named profiles. New admissions resolve RecipeCatalog before run creation and atomically pin canonical recipe bytes with policy before frontier creation. PolicyPins.load requires matching retained recipe for v2. Existing public admission command bytes and v1 admission behavior remain unchanged.

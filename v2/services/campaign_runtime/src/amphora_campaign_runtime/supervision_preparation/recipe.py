@@ -64,6 +64,14 @@ class ReviewedRecipe:
     def document(self):
         return RecipeRecord.model_validate_json(self.canonical)
 
+    def require_policy(self, policy):
+        record = policy.document()
+        require(record.profile == 'runtime-supervision-policy.v2', 'recipe_policy_profile')
+        require(record.scope == self.document().scope and record.context_recipe_sha256 == self.sha256,
+                'recipe_policy_binding')
+        require(all(self.document().limits.max_attempts <= rule.max_model_calls for rule in record.checkpoints),
+                'recipe_policy_attempts')
+
     @property
     def sha256(self):
         return hashlib.sha256(self.canonical).hexdigest()

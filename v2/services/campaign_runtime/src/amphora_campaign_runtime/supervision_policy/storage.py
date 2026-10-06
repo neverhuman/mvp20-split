@@ -22,7 +22,7 @@ def ensure(condition, code):
 
 class PolicyPins:
     @staticmethod
-    def pin(conn, run_id, command, policy):
+    def pin(conn, run_id, command, policy, recipe=None):
         command = parse_supervised_admission(command.canonical_bytes)
         request = AdmitSupervisedGraph.model_validate_json(json.dumps(json.loads(command.canonical_bytes)['payload']))
         record = policy.document()
@@ -40,10 +40,18 @@ class PolicyPins:
             'USING (tenant_id,project_id,plan_sha256) WHERE g.tenant_id=:tenant AND g.project_id=:project AND g.run_id=:run'),
             params).scalar_one()
         reviewed = ReviewedPolicy.from_bytes(parse_execution_plan(json.dumps(document)), policy.canonical)
+        if record.profile == 'runtime-supervision-policy.v2':
+            ensure(recipe is not None, 'supervision_recipe_unavailable')
+            recipe.require_policy(reviewed)
+        else:
+            ensure(recipe is None, 'unexpected_supervision_recipe')
         conn.execute(text('INSERT INTO runtime.supervision_policies '
             '(tenant_id,project_id,run_id,plan_sha256,policy_sha256,canonical_policy,actor_id,family,command_id) '
             'VALUES (:tenant,:project,:run,:plan,:policy,:canonical,:actor,:family,:command)'),
             {**params, 'plan': record.plan_sha256, 'policy': reviewed.sha256, 'canonical': reviewed.canonical})
+        if recipe is not None:
+            from ..supervision_preparation.storage import RecipePins
+            RecipePins.pin(conn, params, reviewed, recipe)
 
     @staticmethod
     def load(conn, params, plan):
@@ -57,4 +65,7 @@ class PolicyPins:
         scope = policy.document().scope
         ensure(scope.tenant_id == params['tenant'] and scope.project_id == params['project'],
                'stored_supervision_policy_scope')
+        if policy.document().profile == 'runtime-supervision-policy.v2':
+            from ..supervision_preparation.storage import RecipePins
+            RecipePins.load(conn, params, policy)
         return policy

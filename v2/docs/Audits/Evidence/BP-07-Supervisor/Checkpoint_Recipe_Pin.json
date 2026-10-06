@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-10-05 22:14:05",
+  "runtime": "0.47.0",
+  "migration": "runtime_0025",
+  "scoped_tests": 120,
+  "seconds": 25.96,
+  "focused_pin_tests": 8,
+  "focused_seconds": 4.97,
+  "preparation_coverage": {
+    "tests": 35,
+    "seconds": 5.14,
+    "statements": 133,
+    "branches": 14,
+    "percent": 100
+  },
+  "limits": [
+    "no durable request/call reservations yet",
+    "no Artifact publication/provider authority"
+  ]
+}
