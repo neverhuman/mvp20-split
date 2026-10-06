@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-10-05 20:19:49",
+  "task": "BP-07.04/B2.01c.i",
+  "runtime": "0.34.0",
+  "tests": 111,
+  "seconds": 13.85,
+  "statements": 171,
+  "branches": 26,
+  "coverage_percent": 100,
+  "ruff": "passed",
+  "limits": [
+    "Pure eligibility only",
+    "No admission pinning or execution effect",
+    "No provider or scientific validity claim"
+  ],
+  "initial_failures": "Strict tuple test fixtures corrected; original contracts preserved"
+}

@@ -1,22 +1,20 @@
 # Restore
 
-Read this first after compression. Refreshed 2026-10-05 19:57:20 (America/Chicago).
+Read this first after compression. Refreshed 2026-10-05 20:19:49 (America/Chicago).
 
 ## Resume
 
-Owner approved scalar materialization checkpoints; continue until needed. B2.01b is COMPLETE and verified, ready commit/push then continue **B2.01c.i bounded policy/eligibility contract**. Latest pushed452a3566; prior0f0de954,787cc254,80aafa37. Current changes are test helpers/probes/README/evidence, not production behavior. Runtime0.33/Planning0.75 remain current.
+Owner approved scalar materialization checkpoints; continue until needed. B2.01b committed/pushed ac5f290c. B2.01c.i COMPLETE verified, ready commit/push; next **B2.01c.ii atomic admission pinning**, then c.iii checkpoint creation/target-only holds. Runtime0.34/runtime0021, Planning0.75/planning0016. New pure supervision_policy owns canonical policy identity, exact type/unit bounds and authored/concrete occurrence selection.111 focused/legacy/boundary cases13.85s;171 statements26 branches100%;Ruff passed. Initial fixture tuple errors fixed. No tests/hosts running. Evidence Checkpoint_Policy.json.
 
-Independent proof passed: `.test-results/checkpoint-owners-installed-20261005/manifest.json`:668 cases,Runtime233 each/Planning101 each,40/30 historical migration files unchanged,536schemas/528predecessors. `.test-results/checkpoint-actual-owners-20261005/manifest.json`:11 actual owner process stages,6 HTTP hosts,2 lost commit replies; materialization target, original request/outbox, receipts, captured response/cancellation, rights withdrawal/regrant and replacement recovery. Scoped run cancelled; all12 tracked launcher/server PIDs gone.12 boundary cases9.94s,Ruff passed. No tests/hosts/proxies running. Evidence Checkpoint_Owners.json. Helpers/probes updated to explicit v2; historical B1 evidence remains closed.
-
-Next c has three equal units: i bounded policy/eligibility contract; ii atomic admission pinning; iii coordinator checkpoint creation and target-only holds. All0%. Existing admission directly materializes initial ready Invoke nodes; interception must happen before that. Scalar targets hold before binding_intents insertion in BindingExecution.step. Policy must be pinned for later loop/scatter occurrences and preserve unrelated branches. Store immutable effective fields later in B2.02; conversion opening and revalidation must use same resolver. Need bounded c implementation design before source, not a whole-project audit. Public graph-runtime cannot import supervision (dependency cycle); use additive supervision command/profile if needed. Old unsupervised admission stays unchanged. No live provider choice blocks deterministic work.
+Read BP-07.04 Admitted checkpoint policy.md before integration. Existing admission immediately issues ready Invoke; pin before issuance. Coordinator must hold only targets before invocation or binding_intents, including nested occurrences, without second run-lock transaction. B2.02 owns effective fields/winners; conversion opening and revalidation must share resolver. No live provider needed for deterministic work.
 
 ## Canonical progress
 
-Parent BP-07=65.83%,13/20 closed. Child BP-07.04=29.17%,Build38.89%,Acceptance0%,1/4. B1=100%;B2=16.67%(.01=50%,.02/.03=0%);B3/V1=0%. B2.01 a/b100%,c/d0%; c.i/ii/iii0%. Current c.i,next c.ii;d owns actual SQL fencing/recovery acceptance. B2.02 atomic winner/effects, B2.03 autonomous delivery/repair/fallback. Canonical child now concise tables plus BP-07.04 History.md; parent/MBT/history synchronized. Completed plans/B1 stay closed.
+Parent65.97%,13/20 closed;child29.86%,Build39.81%,Acceptance0%,1/4. B1=100%;B2=19.44%(.01=58.33%,.02/.03=0%);B3/V1=0%. B2.01 a/b100%,c33.33%,d0%;c.i100%,ii/iii0%. Current c.ii,next c.iii. Trackers/history synchronized.
 
 ## Active boundaries and versions
 
-Runtime0.33/runtime0021; Planning0.75/planning0016; public supervision0.3; graph-runtime0.13; public Planning0.9;536 schema files. Actual DB heads are0021/0016. **NEVER run Runtime<=0.31 or Planning<=0.73 migrators.** Data0.29/artifacts0012 (never<=0.25 migrators), Research0.34/research0013 (never<=0.33), Knowledge0.18, Registry0.1.
+Runtime0.34/runtime0021; Planning0.75/planning0016; public supervision0.3; graph-runtime0.13; public Planning0.9;536 schema files. Actual DB heads are0021/0016. **NEVER run Runtime<=0.31 or Planning<=0.73 migrators.** Data0.29/artifacts0012 (never<=0.25 migrators), Research0.34/research0013 (never<=0.33), Knowledge0.18, Registry0.1.
 
 Invoke inputs remain Artifact-only. Owner approved scalar checkpoints on named inline fields of `artifact_materialize` before any conversion intent, reservation or publication. Keep original plans/Artifacts/issued inputs immutable. Future admission policy must bind types/units/bounds and concrete occurrences; effective field resolution must be shared by conversion opening and source-cut revalidation. Pure scope/frame support is not admission or execution acceptance.
 

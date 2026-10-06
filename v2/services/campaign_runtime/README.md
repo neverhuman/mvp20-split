@@ -1,6 +1,8 @@
 # Campaign Runtime
 
-Current package0.33.0 adds explicit CheckpointPlanningClient for /v2 exchange; no automatic version fallback.
+Current package0.34.0 adds the pure [reviewed policy boundary](src/amphora_campaign_runtime/supervision_policy/README.md). Admission pinning and execution effects remain subsequent gates; runtime0021 and public contracts are unchanged.
+
+Package0.33.0 adds explicit CheckpointPlanningClient for /v2 exchange; no automatic version fallback.
 
 Package0.32.0 supports versioned checkpoint journal recovery and forward runtime0021; HTTP/client integration follows.
 

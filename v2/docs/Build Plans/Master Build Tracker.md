@@ -9,12 +9,12 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 closed100%; BP-07 implementing approved B2 checkpoint correction; BP-08/09 queued.
-- Last refreshed: `2026-10-05 20:04:57` (America/Chicago).
+- Last refreshed: `2026-10-05 20:19:49` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P6 / BP-07 - Autonomous LLM Campaign Supervision.
-- Primary active task: BP-07.04/B2.01 admission-pinned policy/checkpoints; admission policy follows.
-- Next task: BP-07.04/B2.02 conditional winner/effects.
-- Implementation completion: BP-07=65.83%,13/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
+- Primary active task: BP-07.04/B2.01c.ii atomic admission pinning; c.i complete.
+- Next task: BP-07.04/B2.01c.iii checkpoint creation and target-only holds.
+- Implementation completion: BP-07=65.97%,13/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
 - Active focus: B1 verified and pushed; approved scalar target correction in implementation.
 - Blockers: none for deterministic implementation. Approved B2.01 correction: scalar adjustments must reconcile Artifact-only Invoke inputs; see [scalar checkpoint decision](BP-07/BP-07.04%20Scalar%20checkpoint%20decision.md). Live provider/model, egress and spend choices separately govern real calls.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
@@ -32,15 +32,15 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-07.01/.02/.03 are closed100%. BP-07.04 is primary active at B2.01; implementation29.17%,Build38.89%,Acceptance0%.
+BP-07.01/.02/.03 are closed100%. BP-07.04 is primary active at B2.01; implementation29.86%,Build39.81%,Acceptance0%.
 
 | Parent | Overall | P1 | P2 | P3 | P4 | P5 |
 |---|---:|---:|---:|---:|---:|---:|
-| BP-07 | 65.83% | 100% | 100% | 100% | 29.17% | 0% |
+| BP-07 | 65.97% | 100% | 100% | 100% | 29.86% | 0% |
 
 | Active child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-07.04](BP-07/BP-07.04%20Durable%20supervisor%20and%20races.md) | 29.17% | 38.89% | 0% | B2.01 |
+| [BP-07.04](BP-07/BP-07.04%20Durable%20supervisor%20and%20races.md) | 29.86% | 39.81% | 0% | B2.01 |
 
  BP-06 is [closed100%](Completed/BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md); completed parents are in the [archive](Completed/README.md).
 
@@ -48,7 +48,7 @@ BP-07.01/.02/.03 are closed100%. BP-07.04 is primary active at B2.01; implementa
 
 | Canonical plan | Status | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-07 Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | Active | 65.83% | 100% | 100% | 100% | 29.17% | 0% | N/A |
+| [BP-07 Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | Active | 65.97% | 100% | 100% | 100% | 29.86% | 0% | N/A |
 | [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 | [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 
@@ -67,7 +67,7 @@ BP-07.04/B2.01 is current; use the canonical phase mirror above for percentages.
 
 | Order / ID | Completion | Proposed plan | Required predecessor gates | Bounded outcome / exit | Architecture owner |
 |---|---|---|---|---|---|
-| P6 / BP-07 | 65.83% | [Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | BP-03 tool discovery; BP-04 runner; BP-05 UI; BP-06 grounded context/receipts | Model-generated campaign proposals and text-to-graph extraction through validated contracts; durable scoped engagements, stale-proposal/fallback races, bounded repair and truthful terminal blockers; no routine human waits | [Planning](../Architecture/Agents/Planning.md), [Graph Runner](../Architecture/System/Graph_Runner.md) |
+| P6 / BP-07 | 65.97% | [Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | BP-03 tool discovery; BP-04 runner; BP-05 UI; BP-06 grounded context/receipts | Model-generated campaign proposals and text-to-graph extraction through validated contracts; durable scoped engagements, stale-proposal/fallback races, bounded repair and truthful terminal blockers; no routine human waits | [Planning](../Architecture/Agents/Planning.md), [Graph Runner](../Architecture/System/Graph_Runner.md) |
 | P7 / BP-08 | 0% | [Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | BP-04 iteration/checkpoints; BP-06 applicability/evidence; BP-07 for LLM-guided topology | Adapt reusable numerical kernels to explicit generation/checkpoint history, separate representation fixtures and evidence-bound selection; parameter search precedes bounded topology proposals under successor-campaign rules | [Search](../Architecture/Campaigns/Search.md), [reuse baseline](../Architecture/Evolutionary_Code_Reuse_Baseline.md) |
 | P8 / BP-09 | 0% | [Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Selected host/model policy; BP-05/06/07 plus BP-08 for evolutionary demo claims | Reproducible target-host deployment, model/tool eligibility, restore/reconciliation, end-to-end autonomous demo and one independently rebuilt/replaced tool; prove replicated workloads if K3s is selected | [Topology](../Architecture/System/Runtime_Topology.md), [tool services](../Architecture/Capabilities/Tool_Services.md) |
 
@@ -126,6 +126,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-05 20:19:49 | BP-07.04/B2.01c.i verified |111 cases;171 statements26 branches100%;child29.86%,parent65.97%;next atomic pinning. |
 | 2026-10-05 20:04:57 | BP-07.04/B2.01b complete |668 installed cases;11 actual-owner stages/6 hosts/2 lost replies;child29.17%,parent65.83%;next admission pinning. |
 | 2026-10-05 19:24:50 | BP-07.04/B2.01a verified | Approved correction;66 scope/request and34 target/boundary cases;child27.08%,parent65.42%;next versioned exchange. |
 | 2026-10-05 16:32:49 | BP-07.04/B1 complete |11 stages/6 owner hosts/2 reply losses;child25%,parent65%,13/20;next admitted checkpoints. |
@@ -150,6 +151,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-05 13:11:39 | BP-07.03/B3.02 verified |10 actual rights stages/116 installed failure cases;child66.67%,parent53.33%;next catalog scale. |
 | 2026-10-05 13:04:28 | BP-07.03/B3.01 verified |7 QEV/405 isolated cases;child58.33%,parent51.67%;next source rights/failure acceptance. |
 | 2026-10-05 12:54:52 | BP-07.03/B2 complete | Actual tool compilation;2 worker kills and exact peer restart history. Child50%,parent50%;next B3.01. |
-| 2026-10-05 12:38:41 | BP-07.03/B2.03c.iii verified |8 scoped/8 installed SQL+HTTP;child47.92%,parent49.58%. Next actual owners/crash. |
 
 Keep at most25 checkpoint rows. Update the owning plan, this mirror and Restore before commits.
