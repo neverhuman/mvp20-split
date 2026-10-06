@@ -32,7 +32,7 @@ class Owner:
                 try:
                     self.call('GET', '/ready')
                     break
-                except (URLError, TimeoutError):
+                except (URLError, TimeoutError, http.client.HTTPException):
                     assert time.monotonic() < deadline, 'Owner readiness deadline'
                     time.sleep(.05)
         except BaseException:

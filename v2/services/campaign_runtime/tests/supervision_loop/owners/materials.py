@@ -62,8 +62,8 @@ def publish(owner, scope, key, body, profile):
         {'upload_id': upload['upload_id'], 'content': content}))['artifact']
 
 
-def materials(owner, scope, root, admitted_profiles):
-    compiled = plan(scope=scope)
+def materials(owner, scope, root, admitted_profiles, *, independent=False):
+    compiled = plan(scope=scope, independent=independent)
     data = document()
     data['scope'] = scope
     text = next(item for item in admitted_profiles if item['media_type'] == 'text/plain')
@@ -86,6 +86,8 @@ def materials(owner, scope, root, admitted_profiles):
     record = policy(compiled).model_dump(mode='json')
     record.update(profile='runtime-supervision-policy.v2', context_recipe_sha256=recipe.sha256)
     record['checkpoints'][0].update(timeout_seconds=300, max_requests=2, max_model_calls=2)
+    if independent:
+        record['checkpoints'][0].update(max_requests=1, max_model_calls=1)
     reviewed = ReviewedPolicy.bind(compiled, RecipePolicyRecord.model_validate_json(json.dumps(record)))
     (root / 'template.json').write_bytes(template_bytes)
     (root / 'policy.json').write_bytes(reviewed.canonical)

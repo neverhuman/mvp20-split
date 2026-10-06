@@ -19,12 +19,12 @@ from .materials import materials, profiles, write
 
 
 class Owners:
-    def __init__(self, graph, root, variant):
+    def __init__(self, graph, root, variant, *, independent=False):
         self.resources, self.graph, self.root = ExitStack(), graph, root
         self.python = Path(sys.executable).absolute()
         self.records = []
         try:
-            self._start(variant)
+            self._start(variant, independent=independent)
         except BaseException:
             self.close()
             raise
@@ -43,7 +43,7 @@ class Owners:
         assert result.returncode == 0, 'Current owner process failed; inspect fixture workers.log'
         return result.stdout
 
-    def _start(self, variant):
+    def _start(self, variant, *, independent=False):
         graph, root = self.graph, self.root
         graph.env.principal = replace(graph.env.principal, actor_id='runtime-worker')
         self.scope = graph.env.principal.scope.model_dump(mode='json')
@@ -74,7 +74,7 @@ class Owners:
             'principals': [{'token_env': 'CHECKPOINT_DATA_TOKEN', 'actor_id': 'fixture', 'scope': self.scope,
                             'actions': ['upload', 'finalize', 'read', 'retention']}]})
         self.data = self._owner('amphora_data_artifacts', data_config, self.tokens['data'])
-        compiled, recipe, policy, definition = materials(self.data, self.scope, root, admitted_profiles)
+        compiled, recipe, policy, definition = materials(self.data, self.scope, root, admitted_profiles, independent=independent)
         self.compiled, self.recipe, self.policy = compiled, recipe, policy
         self.env['AMPHORA_PLANNING_SUPERVISION_CREDENTIALS'] = json.dumps([{'token': self.tokens['planning'],
             'actor_id': 'fixture', 'scope': self.scope, 'actions': ['record_requests', 'read_attempts']}])
@@ -114,6 +114,9 @@ class Owners:
                                ('amphora_agent_planning.supervision_scheduling', self.planning_worker)]:
             result = self._command(['-m', module, 'run', '--config', str(config), '--seconds', '0.2', '--interval', '0.05'])
             self.records.append({'owner': module, 'stages': json.loads(result)})
+        return self.graph_round()
+
+    def graph_round(self):
         self._command(['-m', 'amphora_campaign_runtime', 'coordinate', '--config', str(self.runtime_config),
             '--actor', 'runtime-worker', '--tenant', self.scope['tenant_id'], '--project', self.scope['project_id'],
             '--time-budget', '0.2', '--poll-interval', '0.05'])

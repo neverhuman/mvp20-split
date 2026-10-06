@@ -18,7 +18,7 @@ from amphora_contracts_core import SchemaRef
 SCOPE = {'tenant_id': 'policy-test', 'project_id': 'isolated'}
 
 
-def plan(*, nested=False, sibling=False, scope=None):
+def plan(*, nested=False, sibling=False, scope=None, independent=False):
     schema = b'{"additionalProperties":false,"properties":{"a":{"type":"integer"}},"required":["a"],"type":"object"}'
     reference = SchemaRef(schema_id='fixture.policy', version='1', sha256=hashlib.sha256(schema).hexdigest())
     shape = {'kind': 'artifact', 'schema_ref': reference.model_dump(mode='json'),
@@ -30,6 +30,12 @@ def plan(*, nested=False, sibling=False, scope=None):
         {'kind': 'finish', 'node_id': 'finish', 'outputs': [{'port': 'result',
             'source': {'kind': 'output', 'node_id': 'pack', 'port': 'result'}}]}],
         'edges': [{'source': 'pack', 'target': 'finish'}]}
+    if independent:
+        other = copy.deepcopy(pack)
+        other['node_id'] = 'independent'
+        other['fields'][0]['source']['value'] = 9
+        body['nodes'].insert(1, other)
+        body['edges'].append({'source': 'independent', 'target': 'finish'})
     if nested:
         scalar = {'kind': 'scalar', 'scalar': 'integer', 'unit': '1'}
         body['inputs'] = body['outputs'] = [{'name': 'n', 'value_type': scalar}]

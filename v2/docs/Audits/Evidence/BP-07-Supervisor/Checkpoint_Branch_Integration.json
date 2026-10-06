@@ -1,0 +1,44 @@
+{
+  "reviewed_at": "2026-10-06 02:29:57",
+  "tier": "actual current Data/Runtime/Planning owner processes; editable environment",
+  "verification": "3 passed501.70s;12 boundary checks10.28s;ruff passed",
+  "scenarios": [
+    {
+      "mode": "adjust",
+      "run": "b0a8395e634246e88e83daa18b3a0291",
+      "evidence_sha256": "96e1efb04049ad3c8d757050734a594a70e789311d706a196ff83dcb8981040a",
+      "outcome": "model_accepted",
+      "output_sha256": "7e8059f495589fcd981232cc11d00b00da3802c01d688fa1cf1f6bed6e5bb33c"
+    },
+    {
+      "mode": "late",
+      "run": "e74ad130ecca432aa0eae569e452307b",
+      "evidence_sha256": "10d0ec59c4b562efa23822e16fdc3e64d8c6bbb2cc58867a297d88c0cc509372",
+      "outcome": "fallback",
+      "output_sha256": "015abd7f5cc57a2dd94b7590f04ad8084273905ee33ec5cebeae62276a97f862"
+    },
+    {
+      "mode": "future",
+      "run": "3041e4a65ca646dda5704f08f0037b61",
+      "evidence_sha256": "58138c3a23d5061b873073c3a9e45e586d879991cb69faa75173903c581ff01f",
+      "outcome": "model_accepted",
+      "output_sha256": "015abd7f5cc57a2dd94b7590f04ad8084273905ee33ec5cebeae62276a97f862"
+    }
+  ],
+  "oracles": [
+    "Independent materialization succeeds while provider is held and target has no winner",
+    "Accepted scalar changes exact output bytes from1to2",
+    "Unknown primary/fallback precedes late proposed capture; winner/report/request/output remain immutable",
+    "Future revision2 with proposed scalar5 retained; currentplan/output1 unchanged"
+  ],
+  "limits": [
+    "Deterministic fixtures; no scientific or live-model claim",
+    "Isolated installation/replacement remains V1",
+    "Unconfigured notification destinations outside bounded retention proof"
+  ],
+  "fixture_repairs": [
+    "Strict JSON parsing for fixture tuple fields",
+    "Node terminal status succeeded differs from graph-run completed",
+    "Bounded readiness GET retries transient HTTP protocol failures"
+  ]
+}
