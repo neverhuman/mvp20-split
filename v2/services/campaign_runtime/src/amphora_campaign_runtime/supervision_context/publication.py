@@ -5,10 +5,7 @@ import uuid
 from dataclasses import dataclass
 
 from amphora_contracts_core import SchemaRef
-from amphora_contracts_supervision import (
-    SupervisionRef,
-    checkpoint_context_content_schema,
-)
+from amphora_contracts_supervision import SupervisionRef
 
 from ..compiler.catalog import canonical
 from ..supervision_scope.observations import digest
@@ -46,6 +43,6 @@ class ContextPublisher:
             'policy', policy.canonical, schema_ref, guard)
         body = session.declaration_bytes(policy_ref)
         declaration = self.artifacts.publish(ContextPublicationAddress(session.basis.reference, hashlib.sha256(body).hexdigest()),
-            'declaration', body, checkpoint_context_content_schema(), guard)
+            'declaration', body, session.content_schema, guard)
         guard()
         return session.frame(policy_ref, declaration, prepared_by=prepared_by)

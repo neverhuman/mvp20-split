@@ -27,7 +27,17 @@ from .decisions import (
     SupervisionDecision,
     TerminalDecision,
 )
-from .execution import CheckpointAttemptResult, CheckpointExecutionReport, CheckpointStopReason
+from .execution import (
+    CheckpointAttemptResult,
+    CheckpointExecutionReport,
+    CheckpointStopReason,
+)
+from .repair_context import (
+    CheckpointRepairContext,
+    CheckpointRepairFeedback,
+    checkpoint_repair_context_content_schema,
+    checkpoint_repair_context_content_schema_bytes,
+)
 from .requests import (
     SupervisionLineage,
     SupervisionNodeRead,
@@ -38,15 +48,17 @@ from .requests import (
 from .responses import CancelSupervision, SupervisionResponse
 
 __all__ = [
-    'CheckpointAttemptResult',
-    'CheckpointExecutionReport',
-    'CheckpointStopReason',
     'AcceptedDecision',
     'AdmitSupervisedGraph',
     'AppliedInputs',
     'CancelSupervision',
+    'CheckpointAttemptResult',
+    'CheckpointExecutionReport',
+    'CheckpointRepairContext',
+    'CheckpointRepairFeedback',
     'CheckpointRequest',
     'CheckpointSnapshot',
+    'CheckpointStopReason',
     'ContinuedUnchanged',
     'EffectiveInputChange',
     'InvokeCheckpoint',
@@ -67,6 +79,8 @@ __all__ = [
     'SupervisionResponse',
     'SupervisionSnapshot',
     'TerminalDecision',
+    'checkpoint_repair_context_content_schema',
+    'checkpoint_repair_context_content_schema_bytes',
     'parse_checkpoint_command',
     'parse_supervised_admission',
     'parse_supervision_command',

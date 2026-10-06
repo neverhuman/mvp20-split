@@ -14,9 +14,11 @@ from amphora_contracts_planning import (
 from amphora_contracts_supervision import (
     CheckpointContext,
     CheckpointFieldContext,
+    CheckpointRepairContext,
     CheckpointRequest,
     SupervisionLineage,
     checkpoint_context_content_schema,
+    checkpoint_repair_context_content_schema,
 )
 from pydantic import TypeAdapter
 
@@ -27,6 +29,7 @@ from ..supervision_journal.series import RequestSeries
 from ..supervision_requests.binding import encoded
 from ..supervision_scope.observations import require
 from .basis import ContextBasis
+from .repair import RepairEvidence
 
 
 @dataclass(frozen=True)
@@ -34,6 +37,7 @@ class ContextSession:
     basis: ContextBasis
     previous: tuple
     planning_actor: str
+    feedback: RepairEvidence | None = None
 
     def __post_init__(self):
         TypeAdapter(Identifier).validate_python(self.planning_actor)
@@ -54,6 +58,8 @@ class ContextSession:
         require(min(remaining.slot_requests, remaining.campaign_requests, remaining.slot_model_calls,
                     remaining.campaign_model_calls) > 0, 'context_allowance_exhausted')
         object.__setattr__(self, 'previous', previous)
+        if self.feedback is not None:
+            self.feedback.require_parent(previous)
 
     @property
     def lineage(self):
@@ -65,6 +71,8 @@ class ContextSession:
     def engagement(self):
         identity = {'seed': self.basis.seed.sha256, 'recipe': self.basis.recipe.sha256,
                     'actor': self.planning_actor, 'lineage': self.lineage.model_dump(mode='json')}
+        if self.feedback is not None:
+            identity['repair_feedback_sha256'] = self.feedback.sha256
         return EngagementRef(scope=self.basis.reference.scope,
                              engagement_id=hashlib.sha256(canonical(identity)).hexdigest())
 
@@ -97,11 +105,20 @@ class ContextSession:
         permissions = tuple(CheckpointFieldContext.model_validate_json(encoded_field(field, fields[field.name]))
                             for field in self.basis.rule.fields)
         target = next(item.view.path for item in seed.footprint().observations if item.identity == seed.footprint().targets[0])
-        return CheckpointContext(reference=self.basis.reference, engagement=self.engagement, lineage=self.lineage,
+        result = CheckpointContext(reference=self.basis.reference, engagement=self.engagement, lineage=self.lineage,
             checkpoint_id=self.basis.rule.checkpoint_id, checkpoint_seed_sha256=seed.sha256, recipe_sha256=self.basis.recipe.sha256,
             objective=recipe.objective, policy=policy, budget_policy=recipe.budget_policy, snapshot=seed.document().snapshot,
             target=target, fields=permissions, remaining=self.basis.remaining(), deadline_unix_ms=self.deadline,
             allowed_actions=self.actions)
+        if self.feedback is None:
+            return result
+        return CheckpointRepairContext.model_validate_json(canonical({**result.model_dump(mode='json'),
+            'profile': 'supervision-checkpoint-repair-context.v1', 'repair': self.feedback.document().model_dump(mode='json')}))
+
+    @property
+    def content_schema(self):
+        return (checkpoint_context_content_schema() if self.feedback is None else
+                checkpoint_repair_context_content_schema())
 
     def declaration_bytes(self, policy):
         raw = encoded(self.declaration(policy))
@@ -113,7 +130,7 @@ class ContextSession:
         declaration = ArtifactRef.model_validate_json(declaration.model_dump_json())
         require(declaration.scope == self.basis.reference.scope and declaration.sha256 == hashlib.sha256(raw).hexdigest() and
                 declaration.size_bytes == len(raw) and declaration.media_type == 'application/json' and
-                declaration.schema_ref == checkpoint_context_content_schema(), 'context_published_declaration')
+                declaration.schema_ref == self.content_schema, 'context_published_declaration')
         recipe = self.basis.recipe.document()
         context = ContextManifest(scope=recipe.scope, objective=recipe.objective, prompt=recipe.prompt, policy=policy,
             model=recipe.model, entries=(*recipe.entries, ContextEntry(artifact=declaration, role='constraint', required=True)),

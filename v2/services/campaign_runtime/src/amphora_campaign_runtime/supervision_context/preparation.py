@@ -16,6 +16,7 @@ from ..supervision_winners.current import current_seed
 from ..supervision_winners.storage import slot_for
 from .basis import ContextBasis
 from .publication import ContextPublisher
+from .repair import RepairEvidence
 from .session import ContextSession
 
 
@@ -77,8 +78,11 @@ class ContextPreparer:
                 params).mappings().all()
             history = CallReservations(tuple(RequestCharge(row['decision_id'], row['request_sha256'], row['max_attempts'])
                                              for row in charges))
-            return ContextSession(ContextBasis(current, recipe, history, int(slot.deadline.timestamp() * 1000)),
-                                  tuple(item.frame for item in previous), actor)
+            session = ContextSession(ContextBasis(current, recipe, history, int(slot.deadline.timestamp() * 1000)),
+                tuple(item.frame for item in previous), actor, RepairEvidence.load(conn, params, parent_request_sha256))
+            if expected is not None:
+                require(session.feedback == expected.feedback, 'context_repair_evidence_changed')
+            return session
 
         selected = self.journal.leases.commands.transact(select)
         if isinstance(selected, StoredRequest):

@@ -1,0 +1,22 @@
+{
+  "checkpoint": "2026-10-06 00:53:09",
+  "task": "BP-07.04/B2.03c.ii.3c feedback half",
+  "versions": [
+    "Supervision0.9",
+    "Runtime0.56",
+    "Planning0.87"
+  ],
+  "tests": "145passed70.52s",
+  "schemas": 548,
+  "unchanged_predecessors": 546,
+  "coverage": {
+    "affected_statements": 269,
+    "affected_branches": 38,
+    "percent": 100
+  },
+  "limits": [
+    "scriptedArtifact peer",
+    "purePlanningbinding",
+    "newData schema admission and installedintegration pending"
+  ]
+}
