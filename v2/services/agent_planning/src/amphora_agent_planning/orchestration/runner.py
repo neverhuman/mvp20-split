@@ -54,7 +54,7 @@ class PlanningRunner:
         # No database transaction is open here. A crash leaves issuance for deadline recovery.
         try:
             observed = observe(binding, self.provider)
-        except Exception:
+        except Exception:  # noqa: BLE001 - adapter failures are redacted durable outcomes
             # Adapter preflight/property failures are bounded, redacted unknown outcomes too.
             observed = Observation.record(binding, CapturedOutput(b"", False), "unknown", "adapter_failure",
                                           unknown_usage())
@@ -69,7 +69,7 @@ class PlanningRunner:
             try:
                 current = self.execute(principal, binding, reviewed_policy)
             except ValueError as exc:
-                if str(exc) not in BUDGET_STOPS:
+                if str(exc) not in BUDGET_STOPS | {"checkpoint_deadline"}:
                     raise
                 return RunOutcome(tuple(attempts), str(exc))
             attempts.append(current)

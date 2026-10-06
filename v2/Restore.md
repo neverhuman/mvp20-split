@@ -1,16 +1,20 @@
 # Restore
 
-Read FIRST after compression. Refreshed 2026-10-05 22:56:16 (America/Chicago).
+Read FIRST after compression. Refreshed 2026-10-05 23:06:40 (America/Chicago).
 
 ## Resume
 
-Owner says continue until needed across milestones/commits/pushes/compaction. Latest pushed8d1851de; b.i template/context checkpoint is next commit. No tests/hosts/workers running. Current BP-07.04/B2.03b.ii Planning packet/preparation and owned provider execution. No owner decision needed for deterministic fixtures. Do not end at commits.
+Owner says continue until needed across milestones/commits/pushes/compaction. Latest pusheddab3ea79; b.ii execution checkpoint is next commit. No tests/hosts/workers running. Current BP-07.04/B2.03b.iii captured response publication. No owner decision needed for deterministic fixtures. Do not end at commits.
 
-Runtime0.50/runtime0026 APPLIED; NEVER Runtime<=0.47 migrators. Planning0.80/planning0016;never<=0.73migrators. Data0.29/artifacts0012 (never<=0.25),Research0.34/research0013 (never<=0.33),Knowledge0.18,Registry0.1. PublicSupervision0.7,Planning0.10,graph-runtime0.13;544 publishedschemas unchanged,542predecessorpins. Liveprovider/model/egress/spend TBA blocks realcalls only.
+Runtime0.50/runtime0026 APPLIED; NEVER Runtime<=0.47 migrators. Planning0.81/planning0016;never<=0.73migrators. Data0.29/artifacts0012 (never<=0.25),Research0.34/research0013 (never<=0.33),Knowledge0.18,Registry0.1. PublicSupervision0.7,Planning0.10,graph-runtime0.13;544 publishedschemas unchanged,542predecessorpins. Liveprovider/model/egress/spend TBA blocks realcalls only.
 
 ## Canonical position
 
-Parent69.07%,13/20;child45.37%,Build60.49%,Acceptance0%,1/4. B1=100%;B2=81.48%(.01/.02=100%,.03=44.44%);B3/V1=0%. B2.03 a100%,b33.33%,c0%. b.i100%,b.ii0%,b.iii0%. Current b.ii packet/owned execution, next b.iii capture response publication, then c autonomous Runtime delivery/repair/fallback. See BP-07.04 Autonomous loop.md and canonical tracker.
+Parent69.26%,13/20;child46.30%,Build61.73%,Acceptance0%,1/4. B1=100%;B2=85.19%(.01/.02=100%,.03=55.56%);B3/V1=0%. B2.03 a100%,b66.67%,c0%. b.i/b.ii100%,b.iii0%. Current b.iii response publication,next c autonomous Runtime delivery/repair/fallback.
+
+Latest b.ii: supervision_execution/worker.py CheckpointWorker original intake -> CampaignPreparation retained packet -> fresh included Artifact rights -> PlanningRunner issuance/capture/settlement. packet.py binds original declaration from retained packet; adapter reply(binding,exactpacket,deadline_unix_ms=earlier durableticket/originaldeadline). Persistence/supervision_deadline reads immutable v2 wrapper under dispatch request lock; capped SQL INSERT refuses expired checkpoint. Original tickets replay first, old profiles unchanged. History-first recovery without Data/templates/provider for issued/observed attempts. Missing context/overflow/rights/deadline explicit RunOutcome stops.126 scoped SQL cases45.74s+12 boundary9.14s;271stmts26branches99% (two unexpected error propagation paths). Actual PlanningSQL/scripted Data/provider; no process/multi-owner claim. Ruff passes. No tests running. B3 canonical table incorrectly showed inherited .03 percentage under zero B3; corrected to all0%.
+
+Next: response capture publication and RuntimeClient exchange. Read supervision_client/README (receipt/submit/readback separate, original numeric-v2 response commands), public contracts/supervision/responses.py and Runtime supervision_responses README. Existing Planning publication driver is extraction-specific durable journal/derived-upload; do not claim reusable complete capture publication without checking. Capture needs its own bounded stable identity/original owned observation proof; malformed/partial bytes must remain diagnostic bytes. No Runtime-private import. Existing Runtime ArtifactPublisher is owner-private (reference only), not reusable import.
 
 ## Latest Planning boundary (b.i)
 
@@ -18,7 +22,7 @@ services/agent_planning/src/amphora_agent_planning/supervision_execution: Review
 
 CheckpointContextBinding.bind(intake,principal,reference,raw) revalidates original authenticated CheckpointIntakeSnapshot, required constraintArtifact/content schema/bodyhash, exact reference/engagement/lineage/checkpoint/roots/snapshot/deadline/actions/target/field names, scalar ASCII-JSON fingerprints and remainingrequest/call allowance. Runtime database membership remains Runtimeauthority. budget_policy(catalog) selects exact template and deriveslegacy policy. No IO/SQL/providercall in this gate. Tests under Planning tests/supervision_execution;72context/template/legacybudget/boundary17.11s,131statements4branches100%. Initialduplicateactionfixtureoverflow repaired. Evidence Checkpoint_Planning_Binding.json.
 
-## Next b.ii facts
+## Prior b.ii lookup facts
 
 SupervisionIntake.request(principal,engagement_id) returns original wrapper; requiresread_attempts. receive already registered original Planning request; no attempt/grant. PlanningRunner.run/execute handles register,reserve,once-onlyissuance,provider outsideSQL,capture,settlement. Existing budget/charge code untouched. Need explicit owner worker boundary to prepare exact original CampaignPacket through fresh Data reads and journal it, then run configured provider under original wrapper deadline/limits/template. No Runtimeprivateimports/tables.
 

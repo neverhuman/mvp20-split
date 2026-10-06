@@ -15,6 +15,7 @@ from .budget import BudgetLedger
 from .family_state import lock_request, totals
 from .journal import KEY
 from .records import verified_observation
+from .supervision_deadline import checkpoint_deadline
 
 
 @dataclass(frozen=True)
@@ -63,11 +64,17 @@ class DispatchJournal:
             require(self.journal._attempt(connection, key, bound.request).observation is None,
                     "attempt_already_observed")
             token = str(uuid.uuid4())
-            connection.execute(text("INSERT INTO planning.dispatches "
+            absolute_deadline = checkpoint_deadline(connection, key, principal)
+            inserted = connection.execute(text("INSERT INTO planning.dispatches "
                 "(tenant_id,project_id,engagement_id,ordinal,token,registered_at,deadline) "
                 "SELECT :tenant,:project,:engagement,:ordinal,:token,now,"
-                "now+make_interval(secs => :seconds) FROM (SELECT clock_timestamp() AS now) clock"),
-                {**key, "token": token, "seconds": timeout_seconds})
+                "LEAST(now+make_interval(secs => :seconds),CAST(:absolute_deadline AS timestamptz)) "
+                "FROM (SELECT clock_timestamp() AS now) clock "
+                "WHERE CAST(:absolute_deadline AS timestamptz) IS NULL OR now < :absolute_deadline "
+                "RETURNING token"),
+                {**key, "token": token, "seconds": timeout_seconds,
+                 "absolute_deadline": absolute_deadline}).scalar_one_or_none()
+            require(inserted is not None, "checkpoint_deadline")
             return DispatchTicket(token, self._issued(connection, key)["deadline"])
 
     def _expire(self, connection, key, bound):

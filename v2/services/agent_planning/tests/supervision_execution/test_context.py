@@ -25,12 +25,19 @@ def encoded(data):
     return json.dumps(data, sort_keys=True, separators=(',', ':'), ensure_ascii=False).encode()
 
 
-def prepared(*, change=None, unicode_value=False):
-    actor = principal()
-    original, template_data = documents()
+def prepared(*, change=None, unicode_value=False, actor=None, configure=None, deadline=None):
+    actor = principal() if actor is None else actor
+    original, template_data = documents(actor)
+    if configure:
+        configure(original)
+        for key in ('model', 'prompt', 'output_schema', 'allowed_actions', 'limits'):
+            template_data[key] = original['context'][key]
     template = reviewed(template_data)
     budget = reference(template, original)
     wrapper = request(actor).model_dump(mode='json')
+    if deadline is not None:
+        wrapper['deadline_unix_ms'] = deadline
+    wrapper['policy'] = original['context']['policy']
     wrapper['planning_request'] = original
     checkpoint = wrapper['snapshot']['checkpoints'][0]
     target = next(item['node']['path'] for item in wrapper['snapshot']['reads']

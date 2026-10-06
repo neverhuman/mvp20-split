@@ -1,0 +1,35 @@
+{
+  "reviewed_at": "2026-10-05 23:06:40",
+  "checkpoint": "BP-07.04/B2.03b.ii",
+  "package": "Planning0.81",
+  "database": "planning0016 unchanged",
+  "tests": {
+    "scoped": 126,
+    "seconds": 45.74,
+    "boundaries": 12,
+    "boundary_seconds": 9.14
+  },
+  "coverage": {
+    "module": "supervision_execution",
+    "statements": 271,
+    "branches": 26,
+    "percent": 99,
+    "uncovered": "worker unexpected recovery and preparation error propagation"
+  },
+  "peers": "Actual Planning SQL; scripted Data and deterministic packet-aware provider",
+  "limits": [
+    "No live model/tokenizer/egress selection",
+    "B3 process-death and V1 installed multi-owner proof pending",
+    "Response publication and autonomous Runtime driver pending"
+  ],
+  "compatibility": "No applied migration, public schema, original packet profile, stored policy or observation format changes",
+  "scenarios": [
+    "absolute deadline atomic cap and expired issuance refusal",
+    "exact packet passed to provider",
+    "pending and terminal replay without fresh reads or another call",
+    "rights withdrawal before and after issuance",
+    "required gaps and overflow",
+    "bounded invalid retries and conservative settlement",
+    "late diagnostic retention"
+  ]
+}

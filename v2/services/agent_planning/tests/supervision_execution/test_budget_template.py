@@ -18,8 +18,8 @@ from ..supervision_intake.support import principal
 from ..supervision_intake.test_checkpoints import request
 
 
-def documents():
-    original = request(principal()).planning_request.model_dump(mode='json')
+def documents(actor=None):
+    original = request(principal() if actor is None else actor).planning_request.model_dump(mode='json')
     original['context']['output_schema'] = checkpoint_draft_schema().model_dump(mode='json')
     context = original['context']
     record = {name: copy.deepcopy(context[name]) for name in
