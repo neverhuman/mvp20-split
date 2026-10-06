@@ -866,3 +866,6 @@ Four current installed owners668 cases(233 Runtime each,101 Planning each),40/30
 
 
 2026-10-05 20:27:27: c.ii.b complete;63 cases18.81s,224 statements34 branches100%,Ruff passed. Runtime0.36/runtime0022;never run Runtime<=0.35 migrators now. Immutable pins/command binding/rollback/connection replacement/retrofit rejection proven. c.ii66.67%,c55.56%,B2.01=63.89%,B2=21.30%,Build40.43%,child30.32%,parent66.06%;next c.ii.c admission integration.
+
+
+2026-10-05 20:32:40: c.ii complete. Runtime0.37/runtime0022;80 scoped SQL/scheduling/boundary55.08s and22 draft/successor/admission9.84s. Policy227 statements36branches100%;admission82%,advancement94%,broad coordinator75% (HTTP/config/polling not exercised). Original receipts precede lookup; pins precede frontier; Invoke/conversion remain unissued across replacement; rollback preserves no partial pin/run. c66.67%,B2.01=66.67%,B2=22.22%,Build40.74%,child30.56%,parent66.11%;next c.iii slots.

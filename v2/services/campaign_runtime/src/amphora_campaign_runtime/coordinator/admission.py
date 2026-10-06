@@ -6,12 +6,17 @@ from datetime import timedelta
 
 from amphora_contracts_graph_runtime import AdmitDraft, AdmitGraphRun, SuccessorProposal
 from amphora_contracts_runtime import CommandReceipt
+from amphora_contracts_supervision import (
+    AdmitSupervisedGraph,
+    parse_supervised_admission,
+)
 from sqlalchemy import text
 
 from ..lifecycle.model import RunBudget, TransitionError
 from ..lifecycle.pins import PinnedTools
 from ..lifecycle.receipts import RuntimeReply
 from ..persistence.commands import WHERE, CommandStore, TerminalDisposition, _bindings
+from ..supervision_policy.storage import PolicyPins
 from .bindings import InvocationIntent, ValueEnvironment
 from .frontier import FrontierPlanner, ScopeAddress
 from .materialization import InvocationMaterializer
@@ -20,10 +25,11 @@ from .values import BoundValues, ensure
 
 
 class GraphAdmission:
-    def __init__(self, engine, catalog, *, bindings_enabled=False, drafts=None):
+    def __init__(self, engine, catalog, *, bindings_enabled=False, drafts=None, policies=None):
         self.commands, self.catalog = CommandStore(engine), catalog
         self.bindings_enabled = bindings_enabled
         self.drafts = drafts
+        self.policies = policies
 
     def admit(self, principal, command):
         return self._admit(principal, command, successor=False)
@@ -34,12 +40,17 @@ class GraphAdmission:
     def admit_draft(self, principal, command):
         return self._admit(principal, command, successor=False, draft=True)
 
-    def _admit(self, principal, command, *, successor, draft=False):
+    def admit_supervised(self, principal, command):
+        return self._admit(principal, parse_supervised_admission(command.canonical_bytes), successor=False, supervised=True)
+
+    def _admit(self, principal, command, *, successor, draft=False, supervised=False):
         principal.require("admit", command.identity)
-        family = "graph.admit_draft" if draft else "graph.admit_successor" if successor else "graph.admit"
+        family = "graph.admit_supervised" if supervised else "graph.admit_draft" if draft else "graph.admit_successor" if successor else "graph.admit"
         ensure(command.identity.command_family == family, "wrong_command_family")
-        model = AdmitDraft if draft else SuccessorProposal if successor else AdmitGraphRun
+        model = AdmitSupervisedGraph if supervised else AdmitDraft if draft else SuccessorProposal if successor else AdmitGraphRun
         request = model.model_validate_json(json.dumps(json.loads(command.canonical_bytes)["payload"]))
+        policy_digest = request.policy_sha256 if supervised else None
+        request = request.admission if supervised else request
         registered = self.commands.register(command)
         reply = RuntimeReply(command, registered.operation_id)
         params = _bindings(command)
@@ -68,6 +79,10 @@ class GraphAdmission:
                     entry = self.drafts.check(conn, principal.scope, request, prepared)
                 else:
                     entry = self.catalog.require(principal.scope, request.plan_sha256)
+                policy = None
+                if supervised:
+                    ensure(self.policies is not None, "supervised_admission_not_enabled")
+                    policy = self.policies.require(principal.scope, entry.plan.sha256, policy_digest)
                 ensure(entry.plan.schema_version != "4" or self.bindings_enabled, "graph_binding_profile_not_enabled")
                 from ..successors.transfer import CarryTransfer
                 transfer = CarryTransfer.resolve(conn, principal.scope, request) if successor else None
@@ -95,12 +110,16 @@ class GraphAdmission:
                 "CAST(:snapshot AS jsonb),'running',:limit,CAST(:tools AS jsonb),'graph')"), binding)
             conn.execute(text("INSERT INTO runtime.graph_runs (tenant_id,project_id,run_id,plan_sha256,inputs,max_activations,deadline) "
                 "VALUES (:tenant,:project,:run,:digest,CAST(:inputs AS jsonb),:maximum,:deadline)"), binding)
+            if policy is not None:
+                PolicyPins.pin(conn, run_id, command, policy)
             GraphStorage.create_scope(conn, binding, address, values, intents)
             nodes = {node.node_id: node for node in entry.plan.document.definition.body.nodes}
             environment = ValueEnvironment(values, {})
             issued = 0
             for intent in intents:
                 if intent.kind == "invoke" and intent.status == "ready":
+                    if policy is not None and policy.rule_for(intent.address.path) is not None:
+                        continue
                     InvocationMaterializer.apply(conn, binding,
                         InvocationIntent(intent.address, nodes[intent.address.path.node_id], environment), issued, deadline)
                     issued += 1

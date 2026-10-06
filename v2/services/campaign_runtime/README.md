@@ -1,6 +1,8 @@
 # Campaign Runtime
 
-Current package0.36 adds append-only admitted policy storage and forward runtime0022. Admission integration follows. Never run a Runtime<=0.35 migrator against this schema.
+Current package0.37 integrates explicit supervised admission and immutable policy pins before initial dispatch. Selected ready targets remain unissued across coordinator replacement; checkpoint creation/terminal decisions follow in BP-07.04. No new HTTP route.
+
+Package0.36 adds append-only admitted policy storage and forward runtime0022. Admission integration follows. Never run a Runtime<=0.35 migrator against this schema.
 
 Package0.35 adds an immutable exact policy catalog and pins public supervision0.4. Atomic admission integration remains pending.
 

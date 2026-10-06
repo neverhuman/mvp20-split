@@ -10,6 +10,7 @@ from sqlalchemy import text
 from ..compiler import ActivationAddress
 from ..lifecycle.claims import RUN
 from ..lifecycle.model import TransitionError
+from ..supervision_policy.storage import PolicyPins
 from .aggregation import GraphAggregation
 from .bindings import InvocationIntent
 from .expansion import ScopeExpansion
@@ -25,6 +26,7 @@ class GraphPass:
         self.order = graph["next_dispatch_order"]
         self.waits = waits
         self.bindings = bindings
+        self.supervision_policy = PolicyPins.load(conn, params, plan)
         self.aggregation = GraphAggregation(conn, params, plan, graph)
         self.expansion = ScopeExpansion(conn, params, plan, graph, artifacts, self.aggregation)
 
@@ -81,6 +83,10 @@ class GraphPass:
             if node.kind == "finish" and status in {"blocked", "skipped"}:
                 persist_scope(self.conn, self.params, scope.address.key, status)
             return True
+        if row['status'] == 'ready' and self.supervision_policy is not None:
+            path = ActivationPath.model_validate_json(json.dumps(row['path']))
+            if self.supervision_policy.rule_for(path) is not None:
+                return False
         if node.kind == "invoke":
             return self.invoke(scope, row, node)
         if node.kind == "await":

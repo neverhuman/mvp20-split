@@ -9,10 +9,15 @@ from amphora_contracts_supervision import (
 )
 from sqlalchemy import text
 
-from ..coordinator.values import ensure
 from ..lifecycle.claims import RUN
+from ..lifecycle.model import TransitionError
 from ..persistence.commands import WHERE, _bindings
 from .policy import ReviewedPolicy
+
+
+def ensure(condition, code):
+    if not condition:
+        raise TransitionError(code)
 
 
 class PolicyPins:

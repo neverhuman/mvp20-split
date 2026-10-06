@@ -1,5 +1,7 @@
 # Durable graph coordinator
 
+BP-07.04/B2.01c.ii: Runtime0.37 adds GraphAdmission.admit_supervised with an explicit PolicyCatalog. The numeric-v2 command pins the exact reviewed policy before frontier creation/initial issuance in the admission transaction. Original receipts replay before catalog lookup. GraphPass reloads that immutable pin and keeps selected ready Invoke/materialization nodes unissued; unrelated scheduling is unchanged. This interim guard has no checkpoint request, winner or scalar effect. No HTTP activation is introduced. Module-owned acceptance is in tests/supervision_policy; legacy scheduling/draft/successor suites cover predecessor behavior.
+
 Accepted checkpoint `2026-09-29 17:57:39`: BP-04.04 closed/audited. Five real solver images and independent tool/SDK/owner installs passed initial-population -> successor generations 1/2, concurrent scoring and Runtime replacement; 17 invocations, all 44 reservations confirmed. Source/lineage/receipt/artifact history preserved. Scientific validity and target-host execution remain excluded. Earlier B1-B3 statements below describe their historical verification tiers; no gate in this child remains open.
 
 - Status: BP-04.02 closed/audited; current changes belong to [BP-04.04/B2](../../../../../docs/Build%20Plans/BP-04/Completed/BP-04.04%20V1%20baseline%20and%20successor%20graphs.md). Child trackers own gates and percentages.

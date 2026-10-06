@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-10-05 20:32:40",
+  "runtime": "0.37",
+  "scoped_tests": 80,
+  "scoped_seconds": 55.08,
+  "compatibility_tests": 22,
+  "compatibility_seconds": 9.84,
+  "policy_coverage": 100,
+  "admission_coverage": 82,
+  "advancement_coverage": 94,
+  "broader_coverage": 75,
+  "limits": [
+    "Checkpoint creation pending",
+    "No request/winner/effective-field effect",
+    "HTTP/config/polling/projections not fully covered by focused run"
+  ],
+  "warning": "Starlette httpx TestClient deprecation"
+}

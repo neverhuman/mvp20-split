@@ -1,20 +1,20 @@
 # Restore
 
-Read this first after compression. Refreshed 2026-10-05 20:19:49 (America/Chicago).
+Read this first after compression. Refreshed 2026-10-05 20:32:40 (America/Chicago).
 
 ## Resume
 
-Continue until needed. c.ii.a pushed356f1b09. c.ii.b storage COMPLETE, ready commit/push; current **c.ii.c admission integration/SQL proof**, next c.iii checkpoint creation/holds. Runtime0.36/runtime0022,Planning0.76/planning0016,publicSupervision0.4. Actual retained DB now runtime0022; NEVER run Runtime<=0.35 migrators.63 SQL/policy/persistence/boundary cases18.81s,224 statements34 branches100%,Ruff passed. No tests/hosts running.
+Continue until needed. c.ii.b pushedf22b0f0c. c.ii.c COMPLETE verified, ready commit/push; current **c.iii concrete checkpoint creation**, next d SQL fencing/recovery. Runtime0.37/runtime0022;Planning0.76/planning0016;publicSupervision0.4. NEVER run Runtime<=0.35 or Planning<=0.73 migrators.80 policy/scheduling/boundary cases55.08s plus22 draft/successor/admission9.84s. Policy100%,admission82%,advancement94%;broad coordinator75% includes unexercised HTTP/config/polling. No tests running.
 
-PolicyPins.pin uses caller transaction, exact pending registered command, retained plan and no existing frontier; call AFTER graph_runs INSERT and BEFORE create_scope. Append-only grants. PolicyPins.load reconstructs immutable original bytes. Need GraphAdmission.admit_supervised, explicit optional PolicyCatalog, replay before lookup; skip targeted ready Invoke, GraphPass guard ready targets so repeated advance cannot issue them pending c.iii. Original unsupervised behavior unchanged. Actual SQL tests belong supervision_policy; reuse scheduling graph_env fixture. Design in admitted checkpoint policy doc.
+GraphAdmission.admit_supervised pins exact policy before create_scope/initial issuance. Replay before catalog access. GraphPass loads immutable PolicyPins and returns False for ready selected targets, preserving no Invoke or conversion intent. No slot/request/winner/effective input yet. c.iii must replace interim guard with durable concrete occurrence checkpoint creation, bounded ceilings/deadlines, exact observations and target-only hold. Request creation needs Planning context; keep Planning preparation separate and shared run transaction when request/outbox eventually prepared. B2.02 owns winner/terminal fallback/effective fields; B2.03 owns autonomous delivery. Document bounded c.iii design before code.
 
 ## Canonical progress
 
-Parent66.06%,13/20;child30.32%,Build40.43%,Acceptance0%,1/4. B1=100%;B2=21.30%(.01=63.89%,.02/.03=0%);B3/V1=0%. B2.01 a/b100%,c55.56%,d0%;c.i100%,ii66.67%,iii0%;ii.a/b100%,c0%. Current ii.c.
+Parent66.11%,13/20;child30.56%,Build40.74%,Acceptance0%,1/4. B1=100%;B2=22.22%(.01=66.67%,.02/.03=0%);B3/V1=0%. B2.01 a/b100%,c66.67%,d0%;c.i/ii100%,iii0%. Current iii,next d.
 
 ## Active boundaries and versions
 
-Runtime0.36/runtime0022; Planning0.76/planning0016; public supervision0.4; graph-runtime0.13; public Planning0.9;536 schema files. Actual DB heads are0021/0016. **NEVER run Runtime<=0.35 or Planning<=0.73 migrators.** Data0.29/artifacts0012 (never<=0.25 migrators), Research0.34/research0013 (never<=0.33), Knowledge0.18, Registry0.1.
+Runtime0.37/runtime0022; Planning0.76/planning0016; public supervision0.4; graph-runtime0.13; public Planning0.9;536 schema files. Actual DB heads are0021/0016. **NEVER run Runtime<=0.35 or Planning<=0.73 migrators.** Data0.29/artifacts0012 (never<=0.25 migrators), Research0.34/research0013 (never<=0.33), Knowledge0.18, Registry0.1.
 
 Invoke inputs remain Artifact-only. Owner approved scalar checkpoints on named inline fields of `artifact_materialize` before any conversion intent, reservation or publication. Keep original plans/Artifacts/issued inputs immutable. Future admission policy must bind types/units/bounds and concrete occurrences; effective field resolution must be shared by conversion opening and source-cut revalidation. Pure scope/frame support is not admission or execution acceptance.
 
