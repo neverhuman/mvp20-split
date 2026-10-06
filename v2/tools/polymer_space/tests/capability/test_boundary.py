@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 
 import pytest
-from amphora_polymer_space import OPERATOR, PROFILE
+from amphora_polymer_space import OPERATOR, PROFILE, EQUIVALENCE
 from amphora_polymer_space.adapter import SpaceWorkerAdapter
 from amphora_polymer_space.capability import SpaceCapability
 from amphora_tool_protocol import ToolInputRejected
@@ -25,7 +25,7 @@ def payload():
 def test_descriptor_and_schema_bytes_match_publication():
     capability = SpaceCapability()
     descriptor = capability.descriptor("c" * 64)
-    assert descriptor.tool.binding.release == "0.3.0"
+    assert descriptor.tool.binding.release == "0.4.0"
     assert descriptor.tool.binding.capability_id == "synthetic.polymer-move"
     assert "synthetic-tests" in descriptor.tool.applicability
     assert descriptor.authority_ceiling == "synthetic_only"
@@ -88,6 +88,7 @@ def test_public_cli_compute_profiles_and_safe_error():
     assert json.loads(profiles.stdout) == {
         "profile": PROFILE.model_dump(mode="json"),
         "operator": OPERATOR.model_dump(mode="json"),
+        "equivalence": EQUIVALENCE.model_dump(mode="json"),
     }
     computed = cli("compute", "--image-sha256", "c" * 64, body=payload())
     assert (

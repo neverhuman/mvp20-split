@@ -20,6 +20,21 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-contracts-candidate-canonicalization"
+version = "0.1.0"
+source = { editable = "../../contracts/candidate_canonicalization" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-candidate-spaces"
 version = "0.1.0"
 source = { editable = "../../contracts/candidate_spaces" }
@@ -98,9 +113,10 @@ requires-dist = [
 
 [[package]]
 name = "amphora-numeric-space"
-version = "0.3.0"
+version = "0.4.0"
 source = { editable = "." }
 dependencies = [
+    { name = "amphora-contracts-candidate-canonicalization" },
     { name = "amphora-contracts-candidate-spaces" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-tools" },
@@ -109,6 +125,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "amphora-contracts-candidate-canonicalization", editable = "../../contracts/candidate_canonicalization" },
     { name = "amphora-contracts-candidate-spaces", editable = "../../contracts/candidate_spaces" },
     { name = "amphora-contracts-core", editable = "../../contracts/core" },
     { name = "amphora-contracts-tools", editable = "../../contracts/tools" },

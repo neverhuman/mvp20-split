@@ -4,21 +4,33 @@ import hashlib
 import json
 from importlib.metadata import version
 
-from amphora_contracts_candidate_spaces import NumericMoveRequest, ProposedDesignChange
+from amphora_contracts_candidate_spaces import NumericDesign, NumericMoveRequest, ProposedDesignChange
+from amphora_contracts_candidate_canonicalization import CanonicalCandidate
 from amphora_contracts_core import SchemaRef
 from amphora_contracts_tools import ReleaseDescriptor
 
 
 class SpaceCapability:
+    def __init__(self, operation="move"):
+        if operation not in {"move", "canonicalize"}:
+            raise ValueError("unknown_space_operation")
+        self.operation = operation
+
+    def schema_name(self, direction):
+        if direction not in {"input", "output"}:
+            raise ValueError("unknown_payload_direction")
+        if self.operation == "canonicalize":
+            return "candidate-space.numeric" if direction == "input" else "candidate-canonicalization.receipt"
+        return "candidate-space.numeric-move" if direction == "input" else "candidate-space.change"
+
     def schema_bytes(self, direction):
         if direction not in {"input", "output"}:
             raise ValueError("unknown_payload_direction")
-        model = NumericMoveRequest if direction == "input" else ProposedDesignChange
-        name = (
-            "candidate-space.numeric-move"
-            if direction == "input"
-            else "candidate-space.change"
-        )
+        if self.operation == "canonicalize":
+            model = NumericDesign if direction == "input" else CanonicalCandidate
+        else:
+            model = NumericMoveRequest if direction == "input" else ProposedDesignChange
+        name = self.schema_name(direction)
         schema = model.model_json_schema(mode="validation")
         schema.update(
             {
@@ -39,11 +51,7 @@ class SpaceCapability:
 
     def schema_ref(self, direction):
         raw = self.schema_bytes(direction)
-        name = (
-            "candidate-space.numeric-move"
-            if direction == "input"
-            else "candidate-space.change"
-        )
+        name = self.schema_name(direction)
         return SchemaRef(
             schema_id=name, version="1", sha256=hashlib.sha256(raw).hexdigest()
         )
@@ -64,12 +72,12 @@ class SpaceCapability:
             "tool": {
                 "schema_version": "1",
                 "binding": {
-                    "capability_id": "synthetic.numeric-move",
+                    "capability_id": "synthetic.numeric-" + self.operation,
                     "release": version("amphora-numeric-space"),
                     "image_sha256": image_sha256,
                     "contract_version": "1",
                 },
-                "purpose": "Propose one legal synthetic numeric representation move.",
+                "purpose": ("Canonicalize one synthetic numeric design with source-byte provenance." if self.operation == "canonicalize" else "Propose one legal synthetic numeric representation move."),
                 "applicability": ["synthetic-tests", "synthetic-numeric-space"],
                 "inputs": [port("parameters", "input")],
                 "outputs": [port("result", "output")],
@@ -91,7 +99,7 @@ class SpaceCapability:
             "reproducibility": "deterministic",
             "authority_ceiling": "synthetic_only",
             "examples": [
-                "One pinned representation move; source and unknown metadata retained."
+                "One pinned representation operation; source and unknown metadata retained."
             ],
             "anti_examples": [
                 "No scientific validity, synthesis decision, registration or hidden loop."

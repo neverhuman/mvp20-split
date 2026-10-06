@@ -3,10 +3,10 @@ name = "amphora-foundation-verification"
 version = "0.1.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
-    "amphora-sequence-space==0.3.0",
-    "amphora-polymer-space==0.3.0",
-    "amphora-numeric-space==0.3.0",
-    "amphora-contracts-fitness==0.1.0", "amphora-contracts-evaluation-identity==0.1.0", "amphora-contracts-candidate-spaces==0.1.0",
+    "amphora-sequence-space==0.4.0",
+    "amphora-polymer-space==0.4.0",
+    "amphora-numeric-space==0.4.0",
+    "amphora-contracts-candidate-canonicalization==0.1.0", "amphora-contracts-fitness==0.1.0", "amphora-contracts-evaluation-identity==0.1.0", "amphora-contracts-candidate-spaces==0.1.0",
     "amphora-multi-input-worker==0.1.0",
     "amphora-synthetic-objectives==0.2.0",
     "amphora-contracts-search-steps==0.1.0",
@@ -53,6 +53,7 @@ package = false
 link-mode = "copy"
 
 [tool.uv.sources]
+amphora-contracts-candidate-canonicalization = { path = "../contracts/candidate_canonicalization", editable = true }
 amphora-contracts-fitness = { path = "../contracts/fitness", editable = true }
 amphora-contracts-evaluation-identity = { path = "../contracts/evaluation_identity", editable = true }
 amphora-sequence-space = { path = "../tools/sequence_space", editable = true }

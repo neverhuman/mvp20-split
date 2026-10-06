@@ -1,6 +1,6 @@
 # Synthetic polymer space
 
-- Owner: BP-08.03/B1.02; release0.3.0 adds pure canonical identity; prior0.2.0 worker/ingress evidence remains its historical scope. Canonicalization verified.
+- Owner: BP-08.03/B1.02; release0.4.0 adds pure canonical identity; prior0.2.0 worker/ingress evidence remains its historical scope. Canonicalization verified.
 - Design: [Representation and fitness](../../docs/Architecture/Campaigns/Representation_Fitness.md).
 
 This independent package owns legality and one proposed move for the synthetic polymer encoding. Domain objects validate complete inputs, preserve scope/profile and retain a hash of the exact canonical source. Public DTOs serialize results; no SQL, I/O, service/private sibling imports, global RNG, scheduler, scientific eligibility or hidden loop belongs here. Pure domain dependencies are public candidate_spaces/Core; adapters additionally use public Tools and Tool Protocol0.2. No source copied from v1.
@@ -24,4 +24,14 @@ Verified 2026-10-06 13:10:07:80 combined operator/capability/boundary checks24.4
 
 B2.01a: PolymerCanonical reconstructs the owned valid design and derives exact bytes/hash under EQUIVALENCE. sort unit declarations by unit_id, sites/end groups by site_id, composition by unit_id, undirected bond endpoints then pairs; retain every other field including scope and explicit unknowns; no site renaming or chemical isomorphism. This policy is independently pinned from legal-move semantics. Equal identity does not grant cache use or imply scientific equivalence; evaluation context, source access and Research policy remain separate gates. Tests/equivalence owns normalization and non-equivalence cases.
 
-Verified 2026-10-06 13:37:08:98 owner/adapter/boundary checks24.51s;18 focused equivalence cases1.96s with valid directory-based coverage. New equivalence modules70statements/4branches100%. Initial file-path coverage selector collected no data; no percentage inferred from that run. Prior actual HTTP evidence remains release0.2.0; current0.3.0 process qualification belongs to later integration/replacement.
+Verified 2026-10-06 13:37:08:98 owner/adapter/boundary checks24.51s;18 focused equivalence cases1.96s with valid directory-based coverage. New equivalence modules70statements/4branches100%. Initial file-path coverage selector collected no data; no percentage inferred from that run. Prior actual HTTP evidence remains release0.2.0; current0.4.0 process qualification belongs to later integration/replacement.
+
+## Canonicalization capability (B2.03b.i, verified 2026-10-06 14:24:11)
+
+The additional canonicalize operation accepts the direct candidate design schema and produces candidate-canonicalization.receipt. CLI compute/describe/schema/worker accepts --operation canonicalize; the default move operation retains its existing schemas and semantics. profiles now also reports the equivalence pin. Separate capability IDs permit separate graph nodes/replicas while sharing only this representation owner's implementation/package.
+
+canonicalization.py rejects ambiguous duplicate keys, nonfinite JSON, invalid encoding and sources over262144bytes, then invokes the owned domain/equivalence policy. The receipt binds exact source bytes and preserves scope/kind/semantic/equivalence pins and canonical digest with synthetic_encoding authority. Different whitespace may share a canonical digest but never loses original source hash. There is no Data/Runtime lookup, scientific equivalence, registration or cache permission in the pure adapter. Runtime accepted invocation/completion and current Data bytes must establish producer provenance separately. Proposed-change wrappers are not direct designs; project the desired result explicitly before this capability.
+
+Tests/canonicalization owns exact byte provenance, declared encoding equivalence, malformed input, schema and CLI checks. Existing legality/equivalence/worker regressions remain required. Updated Dockerfile is a recipe; image/independent Runtime proof remains separate.
+
+Combined three-tool verification137checks46.41s. New canonicalization modules69statements/18branches100%; domain/equivalence100%; adapter95% and capability96% retain defensive output-size/invalid-direction gaps. CLI subprocess passes are not attributed to parent coverage (aggregate77%).604publishedschemas preserve602predecessors. No actual Runtime canonicalization or image qualification is claimed here.

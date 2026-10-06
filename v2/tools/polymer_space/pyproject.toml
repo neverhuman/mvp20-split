@@ -1,8 +1,8 @@
 [project]
 name = "amphora-polymer-space"
-version = "0.3.0"
+version = "0.4.0"
 requires-python = ">=3.12,<3.13"
-dependencies = ["amphora-contracts-tools==0.1.0", "amphora-tool-protocol==0.2.0", "amphora-contracts-candidate-spaces==0.1.0", "amphora-contracts-core==0.1.0"]
+dependencies = ["amphora-contracts-candidate-canonicalization==0.1.0", "amphora-contracts-tools==0.1.0", "amphora-tool-protocol==0.2.0", "amphora-contracts-candidate-spaces==0.1.0", "amphora-contracts-core==0.1.0"]
 
 [build-system]
 requires = ["hatchling>=1.27,<2"]
@@ -12,9 +12,10 @@ build-backend = "hatchling.build"
 packages = ["src/amphora_polymer_space"]
 
 [tool.amphora]
-public-imports = ["amphora-contracts-tools", "amphora-tool-protocol", "amphora-contracts-candidate-spaces", "amphora-contracts-core"]
+public-imports = ["amphora-contracts-candidate-canonicalization", "amphora-contracts-tools", "amphora-tool-protocol", "amphora-contracts-candidate-spaces", "amphora-contracts-core"]
 
 [tool.uv.sources]
+amphora-contracts-candidate-canonicalization = { path = "../../contracts/candidate_canonicalization", editable = true }
 amphora-contracts-tools = { path = "../../contracts/tools", editable = true }
 amphora-tool-protocol = { path = "../../sdk/tool_protocol", editable = true }
 amphora-contracts-candidate-spaces = { path = "../../contracts/candidate_spaces", editable = true }

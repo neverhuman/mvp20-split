@@ -174,6 +174,21 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-contracts-candidate-canonicalization"
+version = "0.1.0"
+source = { editable = "../contracts/candidate_canonicalization" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-candidate-spaces"
 version = "0.1.0"
 source = { editable = "../contracts/candidate_spaces" }
@@ -569,6 +584,7 @@ dependencies = [
     { name = "amphora-capability-registry" },
     { name = "amphora-contracts-artifacts" },
     { name = "amphora-contracts-campaigns" },
+    { name = "amphora-contracts-candidate-canonicalization" },
     { name = "amphora-contracts-candidate-spaces" },
     { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
@@ -618,6 +634,7 @@ requires-dist = [
     { name = "amphora-capability-registry", editable = "../services/capability_registry" },
     { name = "amphora-contracts-artifacts", editable = "../contracts/artifacts" },
     { name = "amphora-contracts-campaigns", editable = "../contracts/campaigns" },
+    { name = "amphora-contracts-candidate-canonicalization", editable = "../contracts/candidate_canonicalization" },
     { name = "amphora-contracts-candidate-spaces", editable = "../contracts/candidate_spaces" },
     { name = "amphora-contracts-commands", editable = "../contracts/commands" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
@@ -741,9 +758,10 @@ requires-dist = [
 
 [[package]]
 name = "amphora-numeric-space"
-version = "0.3.0"
+version = "0.4.0"
 source = { editable = "../tools/numeric_space" }
 dependencies = [
+    { name = "amphora-contracts-candidate-canonicalization" },
     { name = "amphora-contracts-candidate-spaces" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-tools" },
@@ -752,6 +770,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "amphora-contracts-candidate-canonicalization", editable = "../contracts/candidate_canonicalization" },
     { name = "amphora-contracts-candidate-spaces", editable = "../contracts/candidate_spaces" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },
@@ -760,9 +779,10 @@ requires-dist = [
 
 [[package]]
 name = "amphora-polymer-space"
-version = "0.3.0"
+version = "0.4.0"
 source = { editable = "../tools/polymer_space" }
 dependencies = [
+    { name = "amphora-contracts-candidate-canonicalization" },
     { name = "amphora-contracts-candidate-spaces" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-tools" },
@@ -771,6 +791,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "amphora-contracts-candidate-canonicalization", editable = "../contracts/candidate_canonicalization" },
     { name = "amphora-contracts-candidate-spaces", editable = "../contracts/candidate_spaces" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },
@@ -822,9 +843,10 @@ requires-dist = [
 
 [[package]]
 name = "amphora-sequence-space"
-version = "0.3.0"
+version = "0.4.0"
 source = { editable = "../tools/sequence_space" }
 dependencies = [
+    { name = "amphora-contracts-candidate-canonicalization" },
     { name = "amphora-contracts-candidate-spaces" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-tools" },
@@ -833,6 +855,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "amphora-contracts-candidate-canonicalization", editable = "../contracts/candidate_canonicalization" },
     { name = "amphora-contracts-candidate-spaces", editable = "../contracts/candidate_spaces" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },

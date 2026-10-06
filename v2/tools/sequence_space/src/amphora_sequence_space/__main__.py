@@ -9,6 +9,7 @@ from amphora_tool_protocol import ProtocolError, run_worker
 from .adapter import MAX_PAYLOAD, SpaceWorkerAdapter
 from .capability import SpaceCapability
 from .profile import OPERATOR, PROFILE
+from .equivalence import EQUIVALENCE
 
 
 def main():
@@ -16,6 +17,7 @@ def main():
     commands = parser.add_subparsers(dest="command", required=True)
     for name in ("compute", "describe", "schema", "profiles", "worker"):
         command = commands.add_parser(name)
+        command.add_argument("--operation", choices=("move", "canonicalize"), default="move")
         if name in {"compute", "describe"}:
             command.add_argument("--image-sha256", required=True)
         elif name == "schema":
@@ -26,17 +28,18 @@ def main():
             command.add_argument("--config", required=True)
     args = parser.parse_args()
     try:
-        adapter = SpaceWorkerAdapter()
+        adapter = SpaceWorkerAdapter(args.operation)
         if args.command == "describe":
             print(adapter.descriptor(args.image_sha256).model_dump_json())
         elif args.command == "schema":
-            sys.stdout.buffer.write(SpaceCapability().schema_bytes(args.direction))
+            sys.stdout.buffer.write(SpaceCapability(args.operation).schema_bytes(args.direction))
         elif args.command == "profiles":
             print(
                 json.dumps(
                     {
                         "profile": PROFILE.model_dump(mode="json"),
                         "operator": OPERATOR.model_dump(mode="json"),
+                        "equivalence": EQUIVALENCE.model_dump(mode="json"),
                     }
                 )
             )

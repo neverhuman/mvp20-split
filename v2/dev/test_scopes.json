@@ -274,5 +274,11 @@
     "coverage_sources": [
       "contracts/fitness/src/amphora_contracts_fitness"
     ]
+  },
+  "contracts-candidate-canonicalization": {
+    "tests": "contracts/candidate_canonicalization/tests",
+    "coverage_sources": [
+      "contracts/candidate_canonicalization/src/amphora_contracts_candidate_canonicalization"
+    ]
   }
 }
