@@ -1,6 +1,6 @@
 # Numeric search graph acceptance
 
-Status: B2 Runtime transactions and real Artifact/worker HTTP passed; recovery is B3.
+Status: B2 Runtime transactions and real Artifact/worker HTTP passed; worker interruption/Runtime restart recovery also verified; V1 image/rebuild/audit acceptance remains.
 
 This Runtime-owned fixture composes public numeric and synthetic evaluator CLI descriptors/schemas. No production Runtime dependency on a scientific tool is introduced. Catalog image pins are declared test identities, not built-image evidence.
 

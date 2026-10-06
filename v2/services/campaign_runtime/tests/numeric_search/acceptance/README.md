@@ -1,6 +1,6 @@
 # Numeric graph public-owner acceptance
 
-Status: B2.02 passed 2026-10-06 11:51:04 (America/Chicago); B3 interruption/replacement next.
+Status: B2.02 passed 2026-10-06 11:51:04 (America/Chicago); B3 interruption/recovery also passed; V1 actual images and independent rebuild replacement next.
 
 Run `dev/verify_numeric_graph.py --output <new-retained-directory>` with explicit owned PostgreSQL opt-in. It installs Runtime, Artifact, numeric tool, synthetic evaluator and SDK controller independently from each locked public closure. Controller has no Runtime/Artifact/tool implementation or SQL imports. Public host/HTTP helpers are reused; old acceptance fixtures are not changed.
 
@@ -9,3 +9,8 @@ The graph uses declared test image identities; this proves Windows wheel process
 Evidence checks accepted generation0/1/2, exact final RNG counter, policy provenance, final carried-value digest, completion count/budget settlement, original admission replay and confirmed retention reservations. Real bytes are re-read through the Artifact API. Numeric math/failure oracles remain the focused transaction and tool suites. Process interruption/replacement remains B3. Services close after a run; history and Artifact storage are preserved in the output directory.
 
 Observed run a9599726324f445c964173fa08c7b1c4:15 accepted tool invocations,6 evaluations,54 confirmed reservations, generations0/1/2, finalcounter26. Exact admission replay and final carried-value hash passed. Retained local evidence `.test-results/numeric-http-20261006a/http/evidence.json`; compact committed evidence under docs/Audits/Evidence/BP-08-Search/Actual_HTTP.json.
+
+
+B3 verified recovery probe: `--recovery` runs an uninterrupted campaign, reuses its exact specification/policy input artifacts in a second campaign, then kills the owned vary worker at the real Artifact finalization response barrier. Runtime restarts from committed state; a fresh worker retries after lease expiry. Assertions cover identical interrupted/retried variation bytes, successive claim fences and one expired attempt, rejection of the old completion, and equality of final numerical checkpoint fields excluding cross-run previous-Artifact references. No history is deleted or rewritten. The controller now uses issued invoke observations to avoid launching known-idle workers; only Runtime claims grant work.
+
+Recovery verified 2026-10-06 12:07:02: newfence2 replaceskilledfence1; byte-identical variation replay; stale_attempt late rejection; final numerical state equals uninterrupted run excluding cross-run previousArtifact reference.15accepted invocations each, recoveryspent16;108confirmed reservations acrossboth. Controller now launches15eligible workers/run instead of138polling workers. Evidence `.test-results/numeric-http-20261006c/http/evidence.json`; reused unchanged b installations after a test-oracle correction.

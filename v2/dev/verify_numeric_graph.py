@@ -13,7 +13,7 @@ from install_owner_peer import install
 from postgres_fixture import owned_state
 
 
-def verify(output):
+def verify(output, *, recovery=False):
     if os.environ.get("AMPHORA_TEST_POSTGRES") != "1":
         raise ValueError("Explicit PostgreSQL fixture opt-in required")
     state = owned_state()
@@ -28,7 +28,7 @@ def verify(output):
         forbidden = tuple(module for name, module in modules.items() if name != key)
         interpreters[key] = str(install(output / key, package, forbidden))
         evidence[key] = json.loads((output / key / "manifest.json").read_bytes())
-    config = {**interpreters, "packages": evidence, "evidence": str(output / "http")}
+    config = {**interpreters, "recovery": recovery, "packages": evidence, "evidence": str(output / "http")}
     path = output / "acceptance.json"
     path.write_text(json.dumps(config), encoding="utf-8")
     host, port = state["endpoint"].split(":")
@@ -49,4 +49,6 @@ def verify(output):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", required=True, type=Path)
-    verify(parser.parse_args().output)
+    parser.add_argument("--recovery", action="store_true")
+    args = parser.parse_args()
+    verify(args.output, recovery=args.recovery)

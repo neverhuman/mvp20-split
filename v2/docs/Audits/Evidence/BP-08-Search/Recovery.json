@@ -1,0 +1,537 @@
+{
+  "checkpoint": "2026-10-06 12:10:23",
+  "scope": "BP-08.02/B3",
+  "source": "v2/.test-results/numeric-http-20261006c/http/evidence.json",
+  "source_sha256": "5c292e2fae581339b699fe8b7af24528c8abaf4656fa39114f8166d713264166",
+  "observed_at": "2026-10-06 12:07:02",
+  "tenant_scope": {
+    "tenant_id": "numeric-http",
+    "project_id": "1f1cc83a81f24c58be6874837e2a05e7"
+  },
+  "uninterrupted_run": "c5bde98560944deca4588b7cbc3c7d01",
+  "recovered_run": "580a6eb57ea44f4d92741386aac1dc64",
+  "accepted_invocations_each": 15,
+  "recovered_spent": 16,
+  "confirmed_reservations_across_both_runs": 108,
+  "interruption": {
+    "killed_attempt": {
+      "schema_version": "1",
+      "scope": {
+        "tenant_id": "numeric-http",
+        "project_id": "1f1cc83a81f24c58be6874837e2a05e7"
+      },
+      "run_id": "580a6eb57ea44f4d92741386aac1dc64",
+      "node_id": "vary",
+      "activation_id": "f10d4812ae6c46b599f641446d5d9ce370d3f1dbc0a2b5990b6bdacbec3e791d",
+      "invocation_id": "f10d4812ae6c46b599f641446d5d9ce370d3f1dbc0a2b5990b6bdacbec3e791d",
+      "attempt_id": "86ebf2d4b7f64c318a28474e7deffd52",
+      "fence": 1,
+      "tool": {
+        "capability_id": "numeric.search-vary",
+        "release": "0.4.0",
+        "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "contract_version": "1"
+      },
+      "inputs": [
+        {
+          "port": "parameters",
+          "artifact": {
+            "artifact_id": "1c5d49bc2aaa4b31b40eecc2240641c3",
+            "scope": {
+              "tenant_id": "numeric-http",
+              "project_id": "1f1cc83a81f24c58be6874837e2a05e7"
+            },
+            "sha256": "7e39d5a543d3e38038eb35c85ea53c395a4f3cb0b1f801bb9d55e8c89f02c844",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "search-step.context",
+              "version": "1",
+              "sha256": "856d8ddda364e4fc9160673506ae46d84dd31f4300d41d3729780df532f39485"
+            },
+            "size_bytes": 8362
+          }
+        }
+      ],
+      "checkpoint": null,
+      "timeout_seconds": 60,
+      "grant_id": "86ebf2d4b7f64c318a28474e7deffd52"
+    },
+    "finalized_unaccepted_artifact": {
+      "artifact_id": "5fe7a3ff71bb4f74b5fb9f1b2afc34d9",
+      "scope": {
+        "tenant_id": "numeric-http",
+        "project_id": "1f1cc83a81f24c58be6874837e2a05e7"
+      },
+      "sha256": "29639a89e816dba53a56a5f823d1dad1b39d8be78042eae96a98b40ab421fcc7",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "search.checkpoint",
+        "version": "1",
+        "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+      },
+      "size_bytes": 6978
+    },
+    "runtime_restart_snapshot": {
+      "schema_version": "3",
+      "scope": {
+        "tenant_id": "numeric-http",
+        "project_id": "1f1cc83a81f24c58be6874837e2a05e7"
+      },
+      "run_id": "580a6eb57ea44f4d92741386aac1dc64",
+      "plan_sha256": "1c64654c5d4c1ab5a2d92b653e9c69f63b983db3002224d62805989baae08009",
+      "status": "running",
+      "revision": 59,
+      "node_count": 22,
+      "budget_limit": 256,
+      "reserved": 1,
+      "spent": 5,
+      "stop_reason": null,
+      "nodes": [
+        {
+          "activation_id": "12c735019dda8751794e6393ad6de46b817c20ab9b5d130100e5f0d66b19a17e",
+          "path": {
+            "schema_version": "2",
+            "node_id": "seed",
+            "occurrences": []
+          },
+          "kind": "invoke",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "1deb03155254ba37180b9e7d2cc535700b56156ea525df89b51d57f607927371",
+          "path": {
+            "schema_version": "2",
+            "node_id": "request_context",
+            "occurrences": []
+          },
+          "kind": "artifact_materialize",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "3a226f7948877519eabe19a8fe363d373514abedc275764e3ee0ca78a862e1d7",
+          "path": {
+            "schema_version": "2",
+            "node_id": "evaluate",
+            "occurrences": [
+              {
+                "kind": "scatter",
+                "node_id": "evaluate_batch",
+                "index": 1,
+                "membership_sha256": "254688197380f691efe4d4eed1c5f3a26ef7e76ca1a02d3f92e75c183229a891"
+              }
+            ]
+          },
+          "kind": "invoke",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "4c5edee6a40cc07f898719a703127ae459db2d13b81fbabdecba7b247b1c7891",
+          "path": {
+            "schema_version": "2",
+            "node_id": "collection",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 0
+              }
+            ]
+          },
+          "kind": "artifact_materialize",
+          "status": "waiting",
+          "reason_code": null
+        },
+        {
+          "activation_id": "59698aee8f9f566a8fba80e824a1c7ed293dee3cfe167a1834089625d22b67eb",
+          "path": {
+            "schema_version": "2",
+            "node_id": "generations",
+            "occurrences": []
+          },
+          "kind": "iterate",
+          "status": "issued",
+          "reason_code": null
+        },
+        {
+          "activation_id": "5f9fc534e98975bad8e86849d9587d5400a2504b69d48c1a669badced95e4c27",
+          "path": {
+            "schema_version": "2",
+            "node_id": "evaluate_batch",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 0
+              }
+            ]
+          },
+          "kind": "scatter",
+          "status": "waiting",
+          "reason_code": null
+        },
+        {
+          "activation_id": "6031a79bde97481125fdad42fd6dfba630e7a8b4088e14d16b67380b4742d4ab",
+          "path": {
+            "schema_version": "2",
+            "node_id": "expand",
+            "occurrences": []
+          },
+          "kind": "invoke",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "7aeac6507830903e49d2cd84ed33f5e3739316a49d5a17378cc2e96ec30cf00a",
+          "path": {
+            "schema_version": "2",
+            "node_id": "requests",
+            "occurrences": []
+          },
+          "kind": "artifact_project",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "80a0124f4283e2fcf1e690bf7ed40582791cff71548ab0c34d1af56ccdaeb14d",
+          "path": {
+            "schema_version": "2",
+            "node_id": "request_context",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 0
+              }
+            ]
+          },
+          "kind": "artifact_materialize",
+          "status": "waiting",
+          "reason_code": null
+        },
+        {
+          "activation_id": "8688bb0960eb23654490759784047e26dd7ec4a0df09fdef73f46137cd6bd618",
+          "path": {
+            "schema_version": "2",
+            "node_id": "evaluate_batch",
+            "occurrences": []
+          },
+          "kind": "scatter",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "86a425dbd09d1a09e015d0cffa2a6f4e36a76813ed2ef690a5361edfcb6ba270",
+          "path": {
+            "schema_version": "2",
+            "node_id": "finish",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 0
+              }
+            ]
+          },
+          "kind": "finish",
+          "status": "waiting",
+          "reason_code": null
+        },
+        {
+          "activation_id": "8b989c02394d3123fbcdc954c5916e18031397d3271e781d9e9f1ce18b47365d",
+          "path": {
+            "schema_version": "2",
+            "node_id": "collect",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 0
+              }
+            ]
+          },
+          "kind": "invoke",
+          "status": "waiting",
+          "reason_code": null
+        },
+        {
+          "activation_id": "952b1db44b1a9139f34f46cd224b48e05c1733620ab5d282507f22fe16c32088",
+          "path": {
+            "schema_version": "2",
+            "node_id": "expand",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 0
+              }
+            ]
+          },
+          "kind": "invoke",
+          "status": "waiting",
+          "reason_code": null
+        },
+        {
+          "activation_id": "a7af8b39368c2f46474b3e63796f81cd146525d699dfb7eaa0d5fa724caac243",
+          "path": {
+            "schema_version": "2",
+            "node_id": "collection",
+            "occurrences": []
+          },
+          "kind": "artifact_materialize",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "bf5e16459d267f4d90ed747e546c776583ffcb1a07f7d94a0415072f1f77e0f0",
+          "path": {
+            "schema_version": "2",
+            "node_id": "finish",
+            "occurrences": []
+          },
+          "kind": "finish",
+          "status": "waiting",
+          "reason_code": null
+        },
+        {
+          "activation_id": "cabaa63ed720648d9f26744a2fa47b7dce3c305c8f102e45fa40a7bba36b8d39",
+          "path": {
+            "schema_version": "2",
+            "node_id": "finish",
+            "occurrences": [
+              {
+                "kind": "scatter",
+                "node_id": "evaluate_batch",
+                "index": 1,
+                "membership_sha256": "254688197380f691efe4d4eed1c5f3a26ef7e76ca1a02d3f92e75c183229a891"
+              }
+            ]
+          },
+          "kind": "finish",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "d1372eb7b08ecefc8e6ca40acd5a4d4fa0608cdf165c543bfa510208c05844cf",
+          "path": {
+            "schema_version": "2",
+            "node_id": "collect",
+            "occurrences": []
+          },
+          "kind": "invoke",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "db2086ee8db9f844badfe668768a324e2da3c6cd8f94d8b5285510ed42d7f974",
+          "path": {
+            "schema_version": "2",
+            "node_id": "finish",
+            "occurrences": [
+              {
+                "kind": "scatter",
+                "node_id": "evaluate_batch",
+                "index": 0,
+                "membership_sha256": "254688197380f691efe4d4eed1c5f3a26ef7e76ca1a02d3f92e75c183229a891"
+              }
+            ]
+          },
+          "kind": "finish",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "e035a7072a32627ac57ead45f298836364f08084074dde0f77932c8f4e361b17",
+          "path": {
+            "schema_version": "2",
+            "node_id": "evaluate",
+            "occurrences": [
+              {
+                "kind": "scatter",
+                "node_id": "evaluate_batch",
+                "index": 0,
+                "membership_sha256": "254688197380f691efe4d4eed1c5f3a26ef7e76ca1a02d3f92e75c183229a891"
+              }
+            ]
+          },
+          "kind": "invoke",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "ea2db0e4c0d45a02f6d0dd89e88dce602f915d009827992fe922255aeb6be476",
+          "path": {
+            "schema_version": "2",
+            "node_id": "variation_context",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 0
+              }
+            ]
+          },
+          "kind": "artifact_materialize",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "f10d4812ae6c46b599f641446d5d9ce370d3f1dbc0a2b5990b6bdacbec3e791d",
+          "path": {
+            "schema_version": "2",
+            "node_id": "vary",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 0
+              }
+            ]
+          },
+          "kind": "invoke",
+          "status": "issued",
+          "reason_code": null
+        },
+        {
+          "activation_id": "ffbe54db7bd4c0371d27b73571c64393bfebdf999fe35b74048950f239aa078a",
+          "path": {
+            "schema_version": "2",
+            "node_id": "requests",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 0
+              }
+            ]
+          },
+          "kind": "artifact_project",
+          "status": "waiting",
+          "reason_code": null
+        }
+      ],
+      "next_after": null
+    },
+    "expiry_wait_seconds": 9.449303,
+    "replacement_claim": {
+      "schema_version": "1",
+      "outcome": {
+        "status": "claimed",
+        "receipt": {
+          "status": "accepted",
+          "binding": {
+            "identity": {
+              "schema_version": "1",
+              "command_family": "runtime.claim",
+              "command_id": "claim-d7880986b4564e43a6669729dfcb0a4e",
+              "scope": {
+                "tenant_id": "numeric-http",
+                "project_id": "1f1cc83a81f24c58be6874837e2a05e7"
+              },
+              "actor_id": "worker1"
+            },
+            "request_sha256": "d1e88f9939a117d47a28bc3098b97991926cc1cf60b510b2a9cc5695ea9d7503",
+            "operation_id": "28708171dafd41249c5d3e14a4b6bb8d"
+          },
+          "committed": {
+            "kind": "attempt",
+            "object_id": "dcb094b1714a46a6994052832098fd22",
+            "revision": 60
+          }
+        },
+        "invocation": {
+          "schema_version": "1",
+          "scope": {
+            "tenant_id": "numeric-http",
+            "project_id": "1f1cc83a81f24c58be6874837e2a05e7"
+          },
+          "run_id": "580a6eb57ea44f4d92741386aac1dc64",
+          "node_id": "vary",
+          "activation_id": "f10d4812ae6c46b599f641446d5d9ce370d3f1dbc0a2b5990b6bdacbec3e791d",
+          "invocation_id": "f10d4812ae6c46b599f641446d5d9ce370d3f1dbc0a2b5990b6bdacbec3e791d",
+          "attempt_id": "dcb094b1714a46a6994052832098fd22",
+          "fence": 2,
+          "tool": {
+            "capability_id": "numeric.search-vary",
+            "release": "0.4.0",
+            "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+            "contract_version": "1"
+          },
+          "inputs": [
+            {
+              "port": "parameters",
+              "artifact": {
+                "artifact_id": "1c5d49bc2aaa4b31b40eecc2240641c3",
+                "scope": {
+                  "tenant_id": "numeric-http",
+                  "project_id": "1f1cc83a81f24c58be6874837e2a05e7"
+                },
+                "sha256": "7e39d5a543d3e38038eb35c85ea53c395a4f3cb0b1f801bb9d55e8c89f02c844",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "search-step.context",
+                  "version": "1",
+                  "sha256": "856d8ddda364e4fc9160673506ae46d84dd31f4300d41d3729780df532f39485"
+                },
+                "size_bytes": 8362
+              }
+            }
+          ],
+          "checkpoint": null,
+          "timeout_seconds": 60,
+          "grant_id": "dcb094b1714a46a6994052832098fd22"
+        },
+        "lease_expires_at": "2026-10-06T17:05:45.129032Z"
+      }
+    },
+    "accepted_artifact": {
+      "artifact_id": "41b32c8419e142d780c5c018047ed8f4",
+      "scope": {
+        "tenant_id": "numeric-http",
+        "project_id": "1f1cc83a81f24c58be6874837e2a05e7"
+      },
+      "sha256": "29639a89e816dba53a56a5f823d1dad1b39d8be78042eae96a98b40ab421fcc7",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "search.checkpoint",
+        "version": "1",
+        "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+      },
+      "size_bytes": 6978
+    },
+    "late_receipt": {
+      "schema_version": "1",
+      "outcome": {
+        "status": "rejected",
+        "binding": {
+          "identity": {
+            "schema_version": "1",
+            "command_family": "runtime.complete",
+            "command_id": "b8219ca642ab4904b2474877504195ec",
+            "scope": {
+              "tenant_id": "numeric-http",
+              "project_id": "1f1cc83a81f24c58be6874837e2a05e7"
+            },
+            "actor_id": "worker1"
+          },
+          "request_sha256": "c314d3390d67d9f87d1db2715a689a7fd737970cd337b4d276aacf7be42bd728",
+          "operation_id": "2bdcdc69df9147c6a5c125837d1a2eae"
+        },
+        "reason_code": "stale_attempt"
+      }
+    },
+    "canonical_varied_bytes_equal": true
+  },
+  "final_state_equal_excluding_cross_run_previous_artifact": true,
+  "retained_installations": "v2/.test-results/numeric-http-20261006b (unchanged independent application wheels; fixture-only retry)",
+  "prior_attempt": "b failed because the fixture searched completed activations in the intentionally active-only RunSnapshot; histories preserved, assertion repaired to use retained receipts",
+  "boundary_tests": 12,
+  "boundary_seconds": 11.13,
+  "not_proven": [
+    "Independent fresh rebuild replacement after this checkpoint",
+    "Linux images/Registry registration",
+    "Scientific validity"
+  ]
+}

@@ -103,17 +103,32 @@ class NumericEnvironment(GRAPH.GraphEnvironment):
     def graph(self):
         return HTTP.decoded(self.runtime.endpoint, "/v3/graph-runs/" + self.active_run, self.tokens["admin"])
 
-    def admit(self):
+    def admit(self, *, reuse=False):
+        if not reuse:
+            self.prepare_inputs()
+        self.admission_command = self.command("graph.admit", {"plan_sha256": self.plans["numeric-search-fixture"]["sha256"],
+            "inputs": self.inputs, "budget": {"limit": 256, "max_attempts_per_activation": 2}})
+        self.admission = HTTP.decoded(self.runtime.endpoint, "/v1/graph-runs", self.tokens["admin"], self.admission_command)
+        assert self.admission["outcome"]["status"] == "accepted"
+        self.active_run = self.admission["outcome"]["committed"]["object_id"]
+
+    def prepare_inputs(self):
         self.policy = self.publish_bytes(self.tool_cli("evaluate", "policy"), self.releases["evaluate"]["tool"]["inputs"][1]["schema_ref"])
         self.specification = SPECIFICATION.specification(self.scope, self.releases, self.policy)
         spec = self.publish_bytes(json.dumps(self.specification, sort_keys=True, separators=(",", ":")).encode(),
                                   self.releases["seed"]["tool"]["inputs"][0]["schema_ref"])
         refs = {"specification": spec, "policy": self.policy}
-        inputs = [{"port": port["name"], "value": {"kind": "artifact", "artifact": refs[port["name"]],
+        self.inputs = [{"port": port["name"], "value": {"kind": "artifact", "artifact": refs[port["name"]],
             "representation": port["value_type"]["representation"], "unit": port["value_type"]["unit"]}}
             for port in self.definition["body"]["inputs"]]
-        self.admission_command = self.command("graph.admit", {"plan_sha256": self.plans["numeric-search-fixture"]["sha256"],
-            "inputs": inputs, "budget": {"limit": 256, "max_attempts_per_activation": 2}})
-        self.admission = HTTP.decoded(self.runtime.endpoint, "/v1/graph-runs", self.tokens["admin"], self.admission_command)
-        assert self.admission["outcome"]["status"] == "accepted"
-        self.active_run = self.admission["outcome"]["committed"]["object_id"]
+
+    def restart_runtime(self):
+        old = self.runtime
+        before = self.graph()
+        old.close()
+        self.runtime = HTTP.Service(old.python, "amphora_campaign_runtime", old.config, old.env, self.root, old.port)
+        self.resources.append(self.runtime)
+        self.runtime.ready(self.tokens["admin"])
+        assert self.graph() == before
+        assert self.compile(old.python) == self.plans
+        return before
