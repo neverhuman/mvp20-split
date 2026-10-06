@@ -1,6 +1,8 @@
 # Campaign Runtime
 
-Current package0.39 adds run-locked, append-only concrete checkpoint storage with forward runtime0023. Exact original replay, policy ceiling eligibility and run-bounded deadlines are retained; coordinator creation follows. Never run Runtime<=0.38 migrators against this schema.
+Current package0.40 creates concrete checkpoint slots atomically during supervised admission and later graph advancement. Targets remain ready/unissued while unrelated work proceeds; scatter/loop occurrences use the admitted policy and campaign-wide checkpoint ceiling. New private seed v2 captures exact original scalar fields/digest before conversion; v1 stays readable. No winner, scalar effect or provider call is implemented by this change.
+
+Package0.39 adds run-locked, append-only concrete checkpoint storage with forward runtime0023. Exact original replay, policy ceiling eligibility and run-bounded deadlines are retained; coordinator creation follows. Never run Runtime<=0.38 migrators against this schema.
 
 Package0.38 adds pure immutable checkpoint seeds, with per-occurrence decision identity and exact selected observation bytes. SQL slot creation and request preparation follow; runtime0022 unchanged.
 

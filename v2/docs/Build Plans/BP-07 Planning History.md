@@ -875,3 +875,6 @@ Four current installed owners668 cases(233 Runtime each,101 Planning each),40/30
 
 
 2026-10-05 20:41:28: c.iii.b complete;146 SQL/checkpoint/policy/journal cases33.54s,143checkpoint statements2branches100%,shared current checks72statements18branches100%;aggregate99% retains old final-delivery-event gap.12boundary9.03s,Ruff passed. Initial expiry fixture violated immutable deadline grants; repaired to use real expiry. Runtime0.39/runtime0023;NEVER Runtime<=0.38 migrators. c.iii66.67%,c88.89%,B2.01=72.22%,B2=24.07%,Build41.36%,child31.02%,parent66.20%;current iii.c.
+
+
+2026-10-05 20:49:33: c.iii.c and c COMPLETE. Runtime0.40/runtime0023 integrates concrete slots during admission/advancement.111 SQL/coordinator/legacy65.88s (admission100%,advancement95%,broad79%); review found missing original scalar capture, repaired with explicit private seed v2 while preserving closed v1.70 checkpoint/policy10.78s,191checkpoint statements6branches100%;18 legacy SQL/boundary13.80s. No winner/model/effect claim. c100%,B2.01=75%,B2=25%,Build41.67%,child31.25%,parent66.25%;next d independent verification (a installed compatibility,b process barriers,c freshness/fences),all0%.

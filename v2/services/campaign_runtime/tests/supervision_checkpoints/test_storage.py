@@ -3,17 +3,27 @@
 import copy
 import json
 import time
+import uuid
+from datetime import timedelta
 
 import pytest
 from amphora_campaign_runtime.coordinator import ReviewedPlan
+from amphora_campaign_runtime.coordinator.frontier import FrontierPlanner, ScopeAddress
+from amphora_campaign_runtime.coordinator.storage import GraphStorage
+from amphora_campaign_runtime.coordinator.values import BoundValues
+from amphora_campaign_runtime.persistence.commands import CommandStore
+from amphora_campaign_runtime.supervision_checkpoints.seed import CheckpointSeed
 from amphora_campaign_runtime.supervision_checkpoints.storage import CheckpointStore
+from amphora_campaign_runtime.supervision_checkpoints.values import ValueCheckpointSeed
 from amphora_campaign_runtime.supervision_policy import PolicyRecord, ReviewedPolicy
+from amphora_campaign_runtime.supervision_policy.storage import PolicyPins
 from amphora_contracts_campaigns import ActivationPath
+from amphora_contracts_graph_runtime import AdmitGraphRun
 from sqlalchemy import text
 from sqlalchemy.exc import DBAPIError
 
 from ..compiler.conftest import definition
-from ..supervision_policy.test_admission import command, reviewed, service
+from ..supervision_policy.test_admission import command, reviewed
 
 
 def admitted(graph, *, two=False, limit=5):
@@ -35,9 +45,25 @@ def admitted(graph, *, two=False, limit=5):
         second['target']['node_id'] = 'other'
         data['checkpoints'].append(second)
     policy = ReviewedPolicy.bind(graph.entry.plan, PolicyRecord.model_validate_json(json.dumps(data)))
-    receipt = service(graph, policy).admit_supervised(graph.env.principal, command(graph, policy))
+    # Storage fixture explicitly seeds the pre-dispatch transaction boundary; separate
+    # integration tests exercise GraphAdmission's automatic checkpoint creation.
+    original = command(graph, policy)
+    CommandStore(graph.env.engine).register(original)
     params = {'tenant': graph.env.principal.scope.tenant_id, 'project': graph.env.principal.scope.project_id,
-              'run': receipt.outcome.committed.object_id}
+              'run': uuid.uuid4().hex, 'digest': graph.entry.plan.sha256}
+    admission = AdmitGraphRun.model_validate_json(json.dumps(graph.payload))
+    with graph.env.engine.begin() as conn:
+        GraphStorage.retain_plan(conn, params, graph.entry)
+        conn.execute(text("INSERT INTO runtime.runs (tenant_id,project_id,run_id,fixture_id,plan_sha256,"
+            "input_snapshot,status,budget_limit,execution_mode) VALUES (:tenant,:project,:run,'fixture',:digest,"
+            "'{}','running',2,'graph')"), params)
+        deadline = conn.execute(text('SELECT clock_timestamp()')).scalar_one() + timedelta(seconds=admission.limits.deadline_seconds)
+        conn.execute(text('INSERT INTO runtime.graph_runs (tenant_id,project_id,run_id,plan_sha256,inputs,'
+            'max_activations,deadline) VALUES (:tenant,:project,:run,:digest,CAST(:inputs AS jsonb),100,:deadline)'),
+            {**params, 'inputs': json.dumps([value.model_dump(mode='json') for value in admission.inputs]), 'deadline': deadline})
+        PolicyPins.pin(conn, params['run'], original, policy)
+        address = ScopeAddress(graph.entry.plan.sha256)
+        GraphStorage.create_scope(conn, params, address, BoundValues(admission.inputs), FrontierPlanner().scope(graph.entry.plan, address))
     paths = [ActivationPath(schema_version='2', node_id=rule.target.node_id, occurrences=())
              for rule in policy.document().checkpoints]
     return params, paths
@@ -99,3 +125,18 @@ def test_slot_creation_rollback_and_unready_target_reject(graph_env):
         conn.execute(text("UPDATE runtime.graph_nodes SET status='issued' WHERE run_id=:run AND kind='invoke'"), params)
         with pytest.raises(ValueError, match='checkpoint_target_not_ready'):
             CheckpointStore.ensure(conn, params, paths[0])
+
+
+def test_committed_legacy_slot_replays_without_rewriting_as_scalar_profile(graph_env, monkeypatch):
+    graph = graph_env
+    params, paths = admitted(graph)
+    with monkeypatch.context() as legacy:
+        legacy.setattr(ValueCheckpointSeed, 'capture',
+            lambda policy, footprint, values: CheckpointSeed.capture(policy, footprint))
+        with graph.env.engine.begin() as conn:
+            original = CheckpointStore.ensure(conn, params, paths[0]).checkpoint
+    assert original.seed.document().profile == 'runtime-supervision-checkpoint.v1'
+    with graph.env.engine.begin() as conn:
+        replay = CheckpointStore.ensure(conn, params, paths[0])
+        assert not replay.created and replay.checkpoint == original
+        assert not hasattr(replay.checkpoint.seed, 'original_fields_sha256')

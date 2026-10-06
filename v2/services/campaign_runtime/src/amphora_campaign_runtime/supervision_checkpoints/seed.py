@@ -3,7 +3,7 @@
 import base64
 import hashlib
 from dataclasses import dataclass
-from typing import Annotated, Literal
+from typing import Annotated, ClassVar, Literal
 
 from amphora_contracts_core import Digest, Identifier, WireModel
 from amphora_contracts_supervision import CheckpointSnapshot
@@ -32,6 +32,7 @@ class SeedRecord(WireModel):
 class CheckpointSeed:
     canonical: bytes
     policy: ReviewedPolicy
+    record_type: ClassVar = SeedRecord
 
     def __post_init__(self):
         require(type(self.canonical) is bytes and 0 < len(self.canonical) <= 16777216, 'checkpoint_seed_size')
@@ -64,7 +65,7 @@ class CheckpointSeed:
             snapshot=CheckpointExport(footprint).document(), observations=observations)), policy)
 
     def document(self):
-        return SeedRecord.model_validate_json(self.canonical)
+        return self.record_type.model_validate_json(self.canonical)
 
     def footprint(self):
         record = self.document()

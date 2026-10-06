@@ -117,9 +117,11 @@ class GraphAdmission:
             environment = ValueEnvironment(values, {})
             issued = 0
             for intent in intents:
+                if intent.status == 'ready' and policy is not None and policy.rule_for(intent.address.path) is not None:
+                    from ..supervision_checkpoints.storage import CheckpointStore
+                    CheckpointStore.ensure(conn, binding, intent.address.path)
+                    continue
                 if intent.kind == "invoke" and intent.status == "ready":
-                    if policy is not None and policy.rule_for(intent.address.path) is not None:
-                        continue
                     InvocationMaterializer.apply(conn, binding,
                         InvocationIntent(intent.address, nodes[intent.address.path.node_id], environment), issued, deadline)
                     issued += 1

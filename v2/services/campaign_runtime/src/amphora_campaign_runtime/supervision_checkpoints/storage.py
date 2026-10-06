@@ -5,10 +5,11 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta
 
 from amphora_contracts_campaigns import parse_execution_plan
-from amphora_contracts_graph_runtime import GraphReadCut
+from amphora_contracts_graph_runtime import GraphBinding, GraphReadCut
 from sqlalchemy import text
 
 from ..compiler.addresses import ActivationAddress
+from ..coordinator.state import ScopeState
 from ..coordinator.storage import GraphStorage
 from ..graph_inspection.policy import node_view
 from ..lifecycle.claims import RUN
@@ -18,6 +19,7 @@ from ..supervision_scope import NodeObservation
 from ..supervision_scope.checkpoints import CheckpointFootprint, CheckpointTarget
 from ..supervision_scope.observations import require
 from .seed import CheckpointSeed
+from .values import ValueCheckpointSeed, read_seed
 
 
 @dataclass(frozen=True)
@@ -31,7 +33,7 @@ class StoredCheckpoint:
 
     @classmethod
     def from_row(cls, row, policy):
-        seed = CheckpointSeed(bytes(row['canonical_seed']), policy)
+        seed = read_seed(bytes(row['canonical_seed']), policy)
         record = seed.document()
         cut = record.snapshot.cut
         expected = {'tenant_id': cut.scope.tenant_id, 'project_id': cut.scope.project_id,
@@ -86,8 +88,16 @@ class CheckpointStore:
                            revision=run['revision'], frontier_revision=graph['frontier_revision'])
         footprint = CheckpointFootprint(cut, (CheckpointTarget(activation, rule.kind,
             tuple(field.name for field in rule.fields)),), observations)
-        seed = CheckpointSeed.capture(policy, footprint)
         verify_footprint(conn, params, run, footprint)
+        values = ()
+        if rule.kind == 'artifact_materialize':
+            target_row = next(row for row in rows if row['activation_id'] == activation)
+            scope = ScopeState.load(conn, params, plan, target_row['scope_key'])
+            definition = scope.definition(target_row)
+            fields = {field.name: field for field in definition.fields}
+            values = tuple(GraphBinding(port=field.name, value=scope.environment.source(fields[field.name].source))
+                           for field in rule.fields)
+        seed = ValueCheckpointSeed.capture(policy, footprint, values)
         ordinal = conn.execute(text('SELECT count(*)+1 FROM runtime.supervision_checkpoints WHERE ' + RUN), params).scalar_one()
         require(ordinal <= graph['max_activations'], 'checkpoint_activation_limit')
         created = conn.execute(text('SELECT clock_timestamp()')).scalar_one()

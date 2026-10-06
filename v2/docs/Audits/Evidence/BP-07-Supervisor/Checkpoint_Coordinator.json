@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-10-05 20:49:33",
+  "runtime": "0.40",
+  "migration": "runtime0023",
+  "coordinator_tests": 111,
+  "coordinator_seconds": 65.88,
+  "scalar_tests": 70,
+  "scalar_seconds": 10.78,
+  "legacy_boundary_tests": 18,
+  "legacy_boundary_seconds": 13.8,
+  "checkpoint_statements": 191,
+  "checkpoint_branches": 6,
+  "checkpoint_coverage": 100,
+  "admission_coverage": 100,
+  "advancement_coverage": 95,
+  "broad_coverage": 79,
+  "correction": "Integration review added original scalar fields in explicit private seed v2; legacy v1 remains readable",
+  "limits": "No winner/effective fields, model context/request or provider call"
+}

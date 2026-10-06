@@ -1,22 +1,22 @@
 # Restore
 
-Read this first after compression. Refreshed 2026-10-05 20:41:28 (America/Chicago).
+Read this first after compression. Refreshed 2026-10-05 20:49:33 (America/Chicago).
 
 ## Resume
 
-Continue until needed. c.iii.a pushed743004a3. c.iii.b storage COMPLETE verified, ready commit/push; current **c.iii.c coordinator checkpoint creation**, next d SQL fencing/recovery. Runtime0.39/runtime0023;Planning0.76/planning0016;publicSupervision0.4. Actual retained DB runtime0023. NEVER Runtime<=0.38 or Planning<=0.73 migrators.146 SQL/checkpoint/policy/journal33.54s;143checkpoint statements2branches100%,shared current membership100%;12boundary9.03s,Ruff passed. Initial expiry fixture protected deadline UPDATE failed; changed to real one-second admission expiry. No tests running.
+Continue until needed. c.iii.b pushed19bf1b6f. c.iii.c/c COMPLETE verified, ready commit/push. Current **B2.01d.a installed compatibility**, then d.b process barriers and d.c relevant observations/issuance/membership fences; all0%. Runtime0.40/runtime0023;Planning0.76/planning0016;publicSupervision0.4;538 schemas. NEVER Runtime<=0.38 or Planning<=0.73 migrators.111 SQL/coordinator/legacy65.88s;review then added missing original scalar capture via explicit private seed v2;70 checkpoint/policy10.78s/191statements6branches100%;18 legacy SQL/boundary13.80s. No tests/hosts running.
 
-CheckpointStore.ensure(conn,params,path) acquires existing run lock, loads actual retained plan/admitted policy, replays original slot before fresh state/deadline checks, snapshots selected observations and verifies actual membership via shared current.verify_footprint. Append-only runtime.supervision_checkpoints; ordinal beyond max_checkpoints or expired deadline records fallback_required, no execution effect. Pending context work, NOT Planning request. Existing verify_current now delegates membership helper plus original request deadline check; old/new journals regressed.
+Admission creates initial ready slots after frontier creation, before Invoke; GraphPass ensures later ready slots once, returning created as a transition. Independent tools proceed; scatter/loop occurrences distinct; held nodes stay ready/unissued. Storage tests now manually seed the pre-dispatch boundary; coordinator tests use actual admission. ValueCheckpointSeed v2 captures actual named scalar originals from ScopeState.environment and original_fields_sha256. v1 parser remains closed; read_seed dispatch preserves old SQL seed bytes. Original outside adjustment range is valid unchanged input. B2.02 must require scalar-bearing v2 before adjustments. No winner/terminalrelease/provider effect yet.
 
-Next: admission after full root frontier create, iterate ALL ready policy targets and ensure slots before Invoke issuance. GraphPass interim guard becomes ensure; return created=True to count a transition once, False on subsequent hold. Use lazy imports for checkpoint storage to avoid coordinator package import cycles. Existing storage tests currently create slots explicitly AFTER admitted run; integration will mean initial slots already exist, so revise fixture to defer target readiness or assert original already-created slots. Preserve store-specific failure tests and real expiry. B2.02 terminal winner/fallback/effects; B2.03 context/request bridge. No live provider needed.
+Next d.a adapt dev/verify_supervision_installations.py to538 schemas/pin536, add policy/checkpoint pure test selections (excludeSQL). Use predecessors .test-results/checkpoint-owners-installed-20261005/runtime/initial (Runtime0.33) and planning/initial(0.75) read-only, NEVER migrate old installs. Existing helper uses project versions dynamically, copies owner tests/public fixtures, installs4 owners without private peers. Then d.b/d.c need independent current installed process probes for admission/slot run-lock races, killed transaction rollback, retained original history, concrete membership/no-issued-work/relevant staleness vs unrelated progress. Do not claim model/effect acceptance; B2.02/B2.03/B3/V1 remain. Full child tracker compacted; details in History.
 
 ## Canonical progress
 
-Parent66.20%,13/20;child31.02%,Build41.36%,Acceptance0%,1/4. B1=100%;B2=24.07%(.01=72.22%,.02/.03=0%);B3/V1=0%. B2.01 a/b100%,c88.89%,d0%;c.i/ii100%,iii66.67%;iii.a/b100%,c0%. Current iii.c.
+Parent66.25%,13/20;child31.25%,Build41.67%,Acceptance0%,1/4. B1=100%;B2=25%(.01=75%,.02/.03=0%);B3/V1=0%. B2.01 a/b/c100%,d0%;d.a/b/c0%. Current d.a.
 
 ## Active boundaries and versions
 
-Runtime0.39/runtime0023; Planning0.76/planning0016; public supervision0.4; graph-runtime0.13; public Planning0.9;536 schema files. Actual DB heads are0021/0016. **NEVER run Runtime<=0.35 or Planning<=0.73 migrators.** Data0.29/artifacts0012 (never<=0.25 migrators), Research0.34/research0013 (never<=0.33), Knowledge0.18, Registry0.1.
+Runtime0.40/runtime0023; Planning0.76/planning0016; public supervision0.4; graph-runtime0.13; public Planning0.9;536 schema files. Actual DB heads are0021/0016. **NEVER run Runtime<=0.35 or Planning<=0.73 migrators.** Data0.29/artifacts0012 (never<=0.25 migrators), Research0.34/research0013 (never<=0.33), Knowledge0.18, Registry0.1.
 
 Invoke inputs remain Artifact-only. Owner approved scalar checkpoints on named inline fields of `artifact_materialize` before any conversion intent, reservation or publication. Keep original plans/Artifacts/issued inputs immutable. Future admission policy must bind types/units/bounds and concrete occurrences; effective field resolution must be shared by conversion opening and source-cut revalidation. Pure scope/frame support is not admission or execution acceptance.
 
