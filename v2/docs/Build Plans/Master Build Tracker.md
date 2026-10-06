@@ -8,13 +8,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-07 closed100%; BP-08.01/B2.03 active; BP-09 queued.
-- Last refreshed: `2026-10-06 10:10:34` (America/Chicago).
+- Status: BP-07 closed100%; BP-08.01/B3 active; BP-09 queued.
+- Last refreshed: `2026-10-06 10:14:08` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P7 / BP-08 - Evolutionary Search Integration.
-- Primary active task: BP-08.01/B2.03 initial seeded numeric state.
-- Next task: checkpoint consistency mapper and initial seeded numeric state.
-- Implementation completion: BP-07 closed100%,20/20; BP-08=8.33%,1/20 plus2/3;BP-09=0%.
+- Primary active task: BP-08.01/B3 malformed state and reuse-disposition proof.
+- Next task: checkpoint consistency mapper and malformed state and reuse-disposition proof.
+- Implementation completion: BP-07 closed100%,20/20; BP-08=10%,2/20;BP-09=0%.
 - Active focus: BP-08 activation; preserve closed BP-07 evaluation history and scoped handoffs.
 - Blockers: none for BP-08 activation. Selected host and integrated live deployment remain BP-09 decisions/gates.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
@@ -32,13 +32,13 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-08.01/B2.03 is active after bounded activation; child41.67%,Build55.56%,Acceptance0%;parent8.33%,1/20 plus2/3. BP-07 closed100%,20/20; [parent audit](../Audits/BP-07_Autonomous_Planning_Closeout.md) and [archive](Completed/README.md) own final evidence.
+BP-08.01/B3 is active after bounded activation; child50%,Build66.67%,Acceptance0%;parent10%,2/20. BP-07 closed100%,20/20; [parent audit](../Audits/BP-07_Autonomous_Planning_Closeout.md) and [archive](Completed/README.md) own final evidence.
 
 ## Queued Plans and Phase Mirrors
 
 | Canonical plan | Status | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Active | 8.33% | 41.67% | 0% | 0% | 0% | 0% | N/A |
+| [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Active | 10% | 50% | 0% | 0% | 0% | 0% | N/A |
 | [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 
 Scoped milestone fractions measure verified work within their existing delivery weight; closed-gate counts remain separate. BP-06 is archived24/24. Do not treat milestone counts as effort estimates.
@@ -52,7 +52,7 @@ The owning plan tracker is canonical for overall and per-phase percentages. Refr
 
 ## Prioritized Build Queue
 
-BP-08.01/B2.03 is current; use the canonical phase mirror above for percentages. Remaining children retain their own prerequisite and acceptance gates.
+BP-08.01/B3 is current; use the canonical phase mirror above for percentages. Remaining children retain their own prerequisite and acceptance gates.
 
 | Order / ID | Completion | Proposed plan | Required predecessor gates | Bounded outcome / exit | Architecture owner |
 |---|---|---|---|---|---|
@@ -115,6 +115,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-06 10:14:08 | BP-08.01/B2 complete;child50%,Build66.67%,parent10%,2/20. |107checks;two-process128-member replay;duplicates and budget-limited attempts retained. |
 | 2026-10-06 10:04:32 | BP-08.01/B2.01 verified; child33.33%, Build44.44%, parent6.67%. | 69 checks; original-spec pins and independently calculated RNG vectors. |
 | 2026-10-06 09:56:31 | BP-08.01/B1 complete;child25%,Build33.33%,parent5%,1/20. | Numeric selection30checks;contracts40+20checks;564schemas/556unchanged. |
 | 2026-10-06 09:22:33 | BP-07 closed100%,20/20; BP-08 activation next. | v5live12/12pass;twoisolated130-testinstalls;allpriorfailures/costsretained;scoped/parentaudits. |
@@ -139,4 +140,3 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-06 01:08:42 | BP-07.04/B2.03c.ii.4a complete | Runtime0.58 scoped fair discovery;20tests18.12s;next Planning scheduling. |
 | 2026-10-06 01:04:10 | BP-07.04/B2.03c.ii.3 complete | Runtime0.57 bounded driver;62tests;121statements/36branches99%;next owner scheduling. |
 | 2026-10-06 00:53:09 | BP-07.04/B2.03c.ii.3c feedback | 145tests;548schemas/546unchanged;exact owned repair metadata;next guarded bridge. |
-| 2026-10-06 00:44:37 | BP-07.04/B2.03c.ii.3b complete | Runtime0.55/0028;52combined+22final;winner100%,resolution96%;next guarded repair bridge. |

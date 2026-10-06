@@ -1,0 +1,14 @@
+{
+  "verified_at": "2026-10-06 10:14:08",
+  "scope": "BP-08.01/B2.03",
+  "tests": 107,
+  "seconds": 14.38,
+  "coverage": {
+    "statements": 435,
+    "covered_statements": 418,
+    "branches": 98,
+    "covered_branches": 88
+  },
+  "process_replay": "two fresh Python processes; 128 attempts; exact canonical bytes",
+  "paid_calls": 0
+}

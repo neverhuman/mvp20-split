@@ -1,6 +1,6 @@
 # Numeric evolutionary search boundary
 
-- Owner: BP-08.01/B2.02 verified; initial seeded state next.
+- Owner: BP-08.01/B2 complete; B3 failure/recovery proof next.
 - Scope: finite continuous numerical search primitives; independent Python implementation, not a verified v1 port.
 - Design: [Search](../../docs/Architecture/Campaigns/Search.md); [activation](../../docs/Audits/BP-08.01_Activation.md).
 
@@ -35,3 +35,11 @@ encode/decode are pure transport mapping. They do not prove that evidence or pre
 Tests/checkpoint independently constructs a zero-seed candidate, pending request and single-candidate rank, then mutates identities, scope, units, evaluator, budgets and receipts. Initial-state, duplicate/rejection and generation-transition failure branches remain subsequent scoped gates.
 
 Verified 2026-10-06 10:10:34: 99 checks passed in11.90s; 342/367 statements,74/86 branches covered (90% combined). Remaining branches: variation/ancestry/duplicate/rejection, some stop/predecessor paths and ranking empty-front guard; no full-generation recovery claim.
+
+## Initial numeric population
+
+InitialPopulation.generate performs one bounded seeding step. It retains exactly population_size attempted samples and one RNG draw per axis per attempt. Unique samples become requests up to the evaluation budget; repeated genes refer to their earlier proposed attempt; budget-limited samples are retained as rejected/evaluation_budget. No request is sent. A zero evaluation budget produces a stopped checkpoint with every rejected attempt preserved. max_generations=0 still permits generation zero; no offspring generation is authorized by that value.
+
+The returned request set is validated against all proposed attempts before exposure. Checkpoint mapping independently verifies initial-population completeness and duplicate/budget dispositions. Two separate Python processes reproduce identical canonical bytes for a 128-member fixture. This is process replay, not yet isolated installation or Runtime recovery.
+
+Verified 2026-10-06 10:14:08:107 checks14.38s;418/435 statements,88/98 branches covered (94% combined). Seeding100%. B3 owns remaining malformed state/source-disposition proof; BP-08.02 owns generation transition and accepted Artifact history.

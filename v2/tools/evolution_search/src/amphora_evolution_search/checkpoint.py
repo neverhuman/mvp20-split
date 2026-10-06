@@ -9,7 +9,7 @@ from amphora_contracts_search import (
     search_checkpoint_schema,
 )
 
-from .attempts import validate_attempt
+from .attempts import validate_attempt, validate_seed_batch
 from .evaluations import recompute_selection, validate_evaluations
 from .ranking import require
 from .specification import OriginalSearch, canonical_bytes
@@ -74,6 +74,7 @@ class CheckpointSnapshot:
         require(current[-1].draws.end == record.rng.counter, "rng_tail")
         if record.generation == 0:
             require(current[0].draws.start == 0, "seed_rng_start")
+            validate_seed_batch(self.original, current)
         if record.previous is None:
             require(record.generation == 0, "missing_predecessor")
         else:

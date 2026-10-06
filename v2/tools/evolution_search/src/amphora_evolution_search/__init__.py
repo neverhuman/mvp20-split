@@ -3,6 +3,7 @@
 from .checkpoint import CheckpointSnapshot
 from .randomness import CounterRandom
 from .ranking import CandidateScore, ObjectiveSpace, Selection
+from .seeding import InitialPopulation
 from .specification import NumericBox, OriginalSearch
 
-__all__ = ["CandidateScore", "CheckpointSnapshot", "CounterRandom", "NumericBox", "ObjectiveSpace", "OriginalSearch", "Selection"]
+__all__ = ["CandidateScore", "CheckpointSnapshot", "CounterRandom", "InitialPopulation", "NumericBox", "ObjectiveSpace", "OriginalSearch", "Selection"]

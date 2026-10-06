@@ -2,21 +2,43 @@
 
 import json
 import math
+from dataclasses import dataclass
 from hashlib import sha256
 
-from amphora_contracts_search import CandidateAttempt, EvaluationRequest
+from amphora_contracts_search import CandidateAttempt, EvaluationRequest, RngInterval
 
 from .randomness import CounterRandom
 from .ranking import require
 from .specification import OriginalSearch, canonical_bytes
 
 
+@dataclass(frozen=True)
+class AttemptIdentity:
+    generation: int
+    ordinal: int
+    operator: str
+    genes: tuple[float, ...]
+    parents: tuple[str, ...]
+    draws: RngInterval
+
+    @classmethod
+    def from_record(cls, attempt: CandidateAttempt):
+        return cls(attempt.generation, attempt.ordinal, attempt.operator, attempt.genes, attempt.parents, attempt.draws)
+
+    def digest(self, original: OriginalSearch) -> str:
+        # Outcome labels are excluded: marking a duplicate/rejection preserves identity.
+        parts = ["numeric-attempt-v1", original.digest, self.generation, self.ordinal,
+                 self.operator, [v.hex() for v in self.genes], list(self.parents), self.draws.start, self.draws.end]
+        return sha256(json.dumps(parts, separators=(",", ":"), ensure_ascii=False).encode()).hexdigest()
+
+    def to_record(self, original, *, disposition, reason_code=None, duplicate_of=None):
+        return CandidateAttempt(candidate_id=self.digest(original), generation=self.generation,
+                                ordinal=self.ordinal, operator=self.operator, genes=self.genes, parents=self.parents,
+                                draws=self.draws, disposition=disposition, reason_code=reason_code, duplicate_of=duplicate_of)
+
+
 def attempt_digest(original: OriginalSearch, attempt: CandidateAttempt) -> str:
-    # Outcome labels are excluded: marking a duplicate/rejection preserves attempt identity.
-    parts = ["numeric-attempt-v1", original.digest, attempt.generation, attempt.ordinal,
-             attempt.operator, [v.hex() for v in attempt.genes], list(attempt.parents),
-             attempt.draws.start, attempt.draws.end]
-    return sha256(json.dumps(parts, separators=(",", ":"), ensure_ascii=False).encode()).hexdigest()
+    return AttemptIdentity.from_record(attempt).digest(original)
 
 
 def validate_attempt(original: OriginalSearch, attempt: CandidateAttempt) -> None:
@@ -53,3 +75,16 @@ def evaluation_request(original: OriginalSearch, attempt: CandidateAttempt) -> E
 
 def request_digest(original: OriginalSearch, attempt: CandidateAttempt) -> str:
     return sha256(canonical_bytes(evaluation_request(original, attempt))).hexdigest()
+
+
+def validate_seed_batch(original, attempts):
+    require(len(attempts) == original.record.budget.population_size, "seed_population_size")
+    proposed = {}
+    for attempt in attempts:
+        if attempt.genes in proposed:
+            require(attempt.disposition == "duplicate" and attempt.duplicate_of == proposed[attempt.genes], "seed_disposition")
+        elif len(proposed) >= original.record.budget.max_evaluations:
+            require(attempt.disposition == "rejected" and attempt.reason_code == "evaluation_budget", "seed_disposition")
+        else:
+            require(attempt.disposition == "proposed", "seed_disposition")
+            proposed[attempt.genes] = attempt.candidate_id
