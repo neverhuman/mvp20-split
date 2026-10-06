@@ -878,3 +878,6 @@ Four current installed owners668 cases(233 Runtime each,101 Planning each),40/30
 
 
 2026-10-05 20:49:33: c.iii.c and c COMPLETE. Runtime0.40/runtime0023 integrates concrete slots during admission/advancement.111 SQL/coordinator/legacy65.88s (admission100%,advancement95%,broad79%); review found missing original scalar capture, repaired with explicit private seed v2 while preserving closed v1.70 checkpoint/policy10.78s,191checkpoint statements6branches100%;18 legacy SQL/boundary13.80s. No winner/model/effect claim. c100%,B2.01=75%,B2=25%,Build41.67%,child31.25%,parent66.25%;next d independent verification (a installed compatibility,b process barriers,c freshness/fences),all0%.
+
+
+2026-10-05 20:55:37: d.a installed compatibility complete. Runtime0.40/Planning0.76 initial/replacement:292/292 and109/109,802 total.42/32 predecessor migration files unchanged,538 schemas preserve536. Output .test-results/checkpoint-policy-installed-20261005 passed;no SQL/migrations. d33.33%,B2.01=83.33%,B2=27.78%,Build42.59%,child31.94%,parent66.39%;next d.b actual process barriers.
