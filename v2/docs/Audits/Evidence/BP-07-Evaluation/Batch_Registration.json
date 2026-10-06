@@ -1,0 +1,23 @@
+{
+  "timestamp_local": "2026-10-06 03:43:09",
+  "package": "Planning0.91/planning0019",
+  "verification": "42 pure/SQL protocol/batch tests passed3.41s;12 boundary checks passed9.73s",
+  "coverage": {
+    "covered_lines": 137,
+    "num_statements": 137,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100",
+    "num_branches": 14,
+    "num_partial_branches": 0,
+    "covered_branches": 14,
+    "missing_branches": 0,
+    "percent_branches_covered": 100.0,
+    "percent_branches_covered_display": "100"
+  },
+  "scope": "Exact original corpus/request/policy, deterministic one-call repetition IDs, full-suite conservative budgets; actual SQL replay/contention/grants/append-only service privileges/replacement; no physical issuance",
+  "limits": "Runner and live provider evidence remain pending. No prior migrations modified."
+}

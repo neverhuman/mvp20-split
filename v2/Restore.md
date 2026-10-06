@@ -4,11 +4,15 @@ Read FIRST after compression. Refreshed 2026-10-06 03:25:12 (America/Chicago).
 
 ## Current task
 
-Refreshed 2026-10-06 03:34:04. Latest pushed76ce0a0b BP-07.04closed. BP-07.05/B1.01 protocol/scorer now verified; changes uncommitted. Child6.25%,Build8.33%,Acceptance0%;parent81.25%,16/20closed.29 pure evaluation tests+12boundary passed12.73s;210statements58branches100%. Planning0.90 private evaluation files, no public schema/DDL change. Evidence docs/Audits/Evidence/BP-07-Evaluation/Protocol_Scoring.json.
+Latest pushed380b7523: BP-07.05/B1.01 complete. Active B1.02a/b executable batch and immutable suite journal, uncommitted. Planning0.91 introduces planning0019 evaluation_suites; NEVER run Planning<=0.90 migrators now. Runtime0.60/runtime0028,Data0.29/artifacts0012 unchanged. Canonical trackers still child6.25%,Build8.33%,parent81.25% pending this verification.
 
-No tests running. Next finish lint/diff then commit/push this bounded B1.01 checkpoint and immediately continue B1.02 durable evaluation runner. Read BP-07.05 Physical design/canonical tracker. EvaluationProtocol and EvaluationScorer in Planning evaluation module are pure; B1.02 must use PlanningRunner/owned journal for physical calls, not a new unaccounted provider caller. Need design exact durable suite/attempt history and conservative shared budget before code; current Planning0018, no migration yet. Core labels are independent JSON-pointer exact assertions over validated structured output, not general scientific entailment. Model inputs expose only original case/input digest, no labels.
+No tests running. Batch verification42passed3.41s;137statements14branches100%;12boundaries9.73s. B1.02a/b verified; canonical child9.375%,Build12.5%,Acceptance0%,parent81.875%,16/20. Commit/push this bounded checkpoint then immediately continue B1.02c actual existing PlanningRunner.execute composition and d failure tests.
 
-Runtime0.60/runtime0028,Planning0.90/planning0018,Data0.29/artifacts0012.548publicschemas/546predecessorpins. Continue-until-needed across milestones/compaction. B1.03 owner inspection and B1.04 Studio remain authorized before owner live B2 choices. No subagents/JARVIS/v1 edits/old migrators.
+Journal persists one immutable original suite row; individual task bindings deterministically reconstruct from exact corpus/request/policy bytes; attempts remain existing ledger, no redundant mutable task table. Read uses pure _bind domain reconstruction after read_attempts permission, never synthetic grants. Source tables planning.evaluation_suites new0019. No source/test edits during verification.
+
+Next runner: one ordinal1 call per repetition using existing PlanningRunner.execute, not run (avoids silent retries). Retain failed/missing/unknown primary observations; do not select late successful result. Need owner status-to-score projection and suite overage guard (settlements and late_observations have overage). Pure scorer currently status proposed/abstention/provider_error/invalid/unknown/authority_violation; add distinct rejected category for authoritative policy_rejected output so hard adversarial cases may expect a valid owner rejection (not false execution acceptance). No remote live calls. Persist runner report or derive read-only exact bound observations from owned journal; preserve all original identities. No SQL transaction across provider I/O. B1.02d actual SQL contention/recovery/overage proof and later process replacement needed.
+
+B1.03 owner inspection/B1.04 Studio independent work remains before live B2 owner choices. Continue across commits/milestones until genuine need, no subagents/external JARVIS/v1 edits/SQL reset. Tests SQL serial. Preserve retained fixture files.
 
 ## Verified closeout
 

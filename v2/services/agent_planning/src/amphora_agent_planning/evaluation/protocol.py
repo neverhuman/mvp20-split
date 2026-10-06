@@ -60,6 +60,7 @@ def pointer_parts(pointer):
 class EvaluationProtocol:
     manifest: ManifestRecord
     corpus: CorpusRecord
+    corpus_bytes: bytes
     sha256: str
 
     @classmethod
@@ -84,7 +85,7 @@ class EvaluationProtocol:
                 pointer_parts(assertion.pointer)
                 document(assertion.expected_json, limit=8192)
         identity = canonical(manifest.model_dump(mode='json'))
-        return cls(manifest, corpus, hashlib.sha256(identity).hexdigest())
+        return cls(manifest, corpus, bytes(corpus_bytes), hashlib.sha256(identity).hexdigest())
 
     @property
     def planned_observations(self):
