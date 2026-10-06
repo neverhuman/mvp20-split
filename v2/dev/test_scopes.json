@@ -28,7 +28,8 @@
     "coverage_sources": [
       "check_boundaries",
       "export_schemas",
-      "run_tests"
+      "run_tests",
+      "numeric_comparison"
     ]
   },
   "commands": {

@@ -1,0 +1,287 @@
+{
+  "status": "passed",
+  "timestamp_local": "2026-10-06 16:44:02",
+  "owner": "dev/numeric_comparison; BP-08.04/B2.01",
+  "implementation_commit": "d2e75465",
+  "predeclared_protocol_commit": "d5e2a8d0",
+  "protocol_sha256": "755fe974837774777979f7dffe9bda96bb43866852b7230423ff3125d5abb00a",
+  "tests": 44,
+  "seconds": 14.1,
+  "coverage": {
+    "covered_lines": 182,
+    "num_statements": 184,
+    "percent_covered": 98.13084112149532,
+    "percent_covered_display": "98",
+    "missing_lines": 2,
+    "excluded_lines": 0,
+    "percent_statements_covered": 98.91304347826087,
+    "percent_statements_covered_display": "99",
+    "num_branches": 30,
+    "num_partial_branches": 2,
+    "covered_branches": 28,
+    "missing_branches": 2,
+    "percent_branches_covered": 93.33333333333333,
+    "percent_branches_covered_display": "93"
+  },
+  "coverage_evidence": {
+    "path": ".test-results/numeric-comparison-coverage-20261006.json",
+    "sha256": "e81c54ad4e799e43e34a66338f982de811145282c34b2691fe4b3864fe42879e"
+  },
+  "report": {
+    "path": ".test-results/numeric-comparison-20261006a/report.json",
+    "sha256": "4392576ec111a6e7623a3b85ecc0ff369d903ac93b91cd0799e310b21c4c4a01"
+  },
+  "retained_file_manifest": {
+    "path": ".test-results/numeric-comparison-20261006a/files.json",
+    "sha256": "298bafe79fb549fccc4b42847e0304bb85720f605965d8f8a62fe4fc3e5a2fa3"
+  },
+  "retained_files": 925,
+  "pairs": [
+    {
+      "dimension": 1,
+      "seed": 0,
+      "evolution": {
+        "attempts": 16,
+        "failures": 0,
+        "best_successful_cost": 1.7610559411490762e-05,
+        "mean_prefix_best_cost": 0.002707205006775654,
+        "stop_reason": "evaluation_budget"
+      },
+      "baseline": {
+        "attempts": 16,
+        "failures": 0,
+        "best_successful_cost": 0.00390625,
+        "mean_prefix_best_cost": 0.16796875,
+        "stop_reason": "evaluation_budget"
+      },
+      "comparison": {
+        "baseline_minus_evolution": 0.0038886394405885094,
+        "outcome": "gain",
+        "status": "complete"
+      }
+    },
+    {
+      "dimension": 1,
+      "seed": 1,
+      "evolution": {
+        "attempts": 16,
+        "failures": 0,
+        "best_successful_cost": 6.318393128510349e-05,
+        "mean_prefix_best_cost": 0.035275935076800935,
+        "stop_reason": "evaluation_budget"
+      },
+      "baseline": {
+        "attempts": 16,
+        "failures": 0,
+        "best_successful_cost": 0.00390625,
+        "mean_prefix_best_cost": 0.16796875,
+        "stop_reason": "evaluation_budget"
+      },
+      "comparison": {
+        "baseline_minus_evolution": 0.0038430660687148966,
+        "outcome": "gain",
+        "status": "complete"
+      }
+    },
+    {
+      "dimension": 1,
+      "seed": 17,
+      "evolution": {
+        "attempts": 16,
+        "failures": 0,
+        "best_successful_cost": 0.0015308082396879715,
+        "mean_prefix_best_cost": 0.1171979904331116,
+        "stop_reason": "evaluation_budget"
+      },
+      "baseline": {
+        "attempts": 16,
+        "failures": 0,
+        "best_successful_cost": 0.00390625,
+        "mean_prefix_best_cost": 0.16796875,
+        "stop_reason": "evaluation_budget"
+      },
+      "comparison": {
+        "baseline_minus_evolution": 0.0023754417603120285,
+        "outcome": "gain",
+        "status": "complete"
+      }
+    },
+    {
+      "dimension": 1,
+      "seed": 42,
+      "evolution": {
+        "attempts": 16,
+        "failures": 0,
+        "best_successful_cost": 0.0006673817628631627,
+        "mean_prefix_best_cost": 0.03073240549992649,
+        "stop_reason": "evaluation_budget"
+      },
+      "baseline": {
+        "attempts": 16,
+        "failures": 0,
+        "best_successful_cost": 0.00390625,
+        "mean_prefix_best_cost": 0.16796875,
+        "stop_reason": "evaluation_budget"
+      },
+      "comparison": {
+        "baseline_minus_evolution": 0.0032388682371368373,
+        "outcome": "gain",
+        "status": "complete"
+      }
+    },
+    {
+      "dimension": 1,
+      "seed": 1234,
+      "evolution": {
+        "attempts": 16,
+        "failures": 0,
+        "best_successful_cost": 7.092557513808338e-06,
+        "mean_prefix_best_cost": 0.0029374019631292383,
+        "stop_reason": "evaluation_budget"
+      },
+      "baseline": {
+        "attempts": 16,
+        "failures": 0,
+        "best_successful_cost": 0.00390625,
+        "mean_prefix_best_cost": 0.16796875,
+        "stop_reason": "evaluation_budget"
+      },
+      "comparison": {
+        "baseline_minus_evolution": 0.0038991574424861917,
+        "outcome": "gain",
+        "status": "complete"
+      }
+    },
+    {
+      "dimension": 2,
+      "seed": 0,
+      "evolution": {
+        "attempts": 16,
+        "failures": 0,
+        "best_successful_cost": 0.03809796562880398,
+        "mean_prefix_best_cost": 0.03809796562880398,
+        "stop_reason": "evaluation_budget"
+      },
+      "baseline": {
+        "attempts": 16,
+        "failures": 0,
+        "best_successful_cost": 0.125,
+        "mean_prefix_best_cost": 0.3125,
+        "stop_reason": "evaluation_budget"
+      },
+      "comparison": {
+        "baseline_minus_evolution": 0.08690203437119602,
+        "outcome": "gain",
+        "status": "complete"
+      }
+    },
+    {
+      "dimension": 2,
+      "seed": 1,
+      "evolution": {
+        "attempts": 16,
+        "failures": 0,
+        "best_successful_cost": 0.10889698357955138,
+        "mean_prefix_best_cost": 0.15618484823322207,
+        "stop_reason": "evaluation_budget"
+      },
+      "baseline": {
+        "attempts": 16,
+        "failures": 0,
+        "best_successful_cost": 0.125,
+        "mean_prefix_best_cost": 0.3125,
+        "stop_reason": "evaluation_budget"
+      },
+      "comparison": {
+        "baseline_minus_evolution": 0.016103016420448618,
+        "outcome": "gain",
+        "status": "complete"
+      }
+    },
+    {
+      "dimension": 2,
+      "seed": 17,
+      "evolution": {
+        "attempts": 16,
+        "failures": 0,
+        "best_successful_cost": 0.028404551044194412,
+        "mean_prefix_best_cost": 0.13481502799840483,
+        "stop_reason": "evaluation_budget"
+      },
+      "baseline": {
+        "attempts": 16,
+        "failures": 0,
+        "best_successful_cost": 0.125,
+        "mean_prefix_best_cost": 0.3125,
+        "stop_reason": "evaluation_budget"
+      },
+      "comparison": {
+        "baseline_minus_evolution": 0.09659544895580559,
+        "outcome": "gain",
+        "status": "complete"
+      }
+    },
+    {
+      "dimension": 2,
+      "seed": 42,
+      "evolution": {
+        "attempts": 16,
+        "failures": 0,
+        "best_successful_cost": 0.006491100670912807,
+        "mean_prefix_best_cost": 0.08012832575715047,
+        "stop_reason": "evaluation_budget"
+      },
+      "baseline": {
+        "attempts": 16,
+        "failures": 0,
+        "best_successful_cost": 0.125,
+        "mean_prefix_best_cost": 0.3125,
+        "stop_reason": "evaluation_budget"
+      },
+      "comparison": {
+        "baseline_minus_evolution": 0.11850889932908719,
+        "outcome": "gain",
+        "status": "complete"
+      }
+    },
+    {
+      "dimension": 2,
+      "seed": 1234,
+      "evolution": {
+        "attempts": 16,
+        "failures": 0,
+        "best_successful_cost": 0.010294097126789992,
+        "mean_prefix_best_cost": 0.01983090490915767,
+        "stop_reason": "evaluation_budget"
+      },
+      "baseline": {
+        "attempts": 16,
+        "failures": 0,
+        "best_successful_cost": 0.125,
+        "mean_prefix_best_cost": 0.3125,
+        "stop_reason": "evaluation_budget"
+      },
+      "comparison": {
+        "baseline_minus_evolution": 0.11470590287321,
+        "outcome": "gain",
+        "status": "complete"
+      }
+    }
+  ],
+  "counts": {
+    "gain": 10,
+    "incomplete": 0,
+    "loss": 0,
+    "tie": 0
+  },
+  "evaluator_attempts": 320,
+  "failures": 0,
+  "paid_calls": 0,
+  "verification": "All320 costs independently recomputed from retained request genes; request/observation hashes, journal pending-before-terminal, every prefix metric and analytic grid minima checked.",
+  "limits": [
+    "Offline public CLI processes in development environment; declared image/Artifact fixture pins only.",
+    "No Runtime graph execution, successor admission, authenticated Data/Registry, independent-installation or deployment claim.",
+    "Fixed sphere and midpoint-grid baseline only; no scientific or statistical superiority.",
+    "Coverage excludes tool child processes; harness defensive transition ceiling and release-mismatch rejection remain unexercised."
+  ]
+}

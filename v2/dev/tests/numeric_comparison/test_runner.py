@@ -100,6 +100,34 @@ def test_existing_output_is_never_overwritten(tmp_path):
         runner.run(tmp_path)
 
 
+@pytest.mark.parametrize("failure", ["transport", "malformed", "missing_requests"])
+def test_search_failures_remain_incomplete_with_original_attempt_count(tmp_path, failure):
+    class BrokenSearch:
+        def search(self, operation, data):
+            if failure == "transport":
+                raise runner.ToolFailure("unavailable")
+            return b"not-json" if failure == "malformed" else b"{}"
+    req = request()
+    spec = specification(PROTOCOL, 1, 0, req["evaluator"]["constraints"], req["evaluator"]["tool"])
+    arm = runner.Arm(tmp_path / "arm", PROTOCOL, BrokenSearch(), tmp_path / "policy")
+    result = arm.evolution(spec)
+    assert result["stop_reason"] == "search_failed"
+    assert result["transport_error"] == "search_transport_or_protocol_failure"
+    assert result["attempts"] == 0 and result["best_successful_cost"] is None
+
+
+def test_setup_failure_leaves_declaration_and_never_claims_completed_report(tmp_path):
+    class WrongPolicy:
+        def call(self, *args):
+            return b'{"profile":"changed"}'
+    output = tmp_path / "run"
+    with pytest.raises(ValueError, match="policy_changed"):
+        runner.run(output, cli=WrongPolicy())
+    assert json.loads((output / "declaration.json").read_bytes())["status"] == "started"
+    assert (output / "protocol.json").is_file()
+    assert not (output / "report.json").exists()
+
+
 @pytest.mark.parametrize("mode", ["timeout", "exit", "oversize", "oserror"])
 def test_cli_failures_are_bounded_and_not_retried(monkeypatch, mode):
     calls = []

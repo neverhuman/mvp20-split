@@ -39,3 +39,19 @@ Run from the repository root with the dev interpreter:
 `v2/dev/.venv/Scripts/python.exe -m numeric_comparison --output <new-directory>`
 and `PYTHONPATH=Z:/mvp20-split/v2/dev`. Tests are owned by
 `dev/tests/numeric_comparison`; no paid calls or credentials are needed.
+
+The baseline uses the public evaluator request transport with its own
+`midpoint-grid-v1` candidate identities. Its seed-labeled wire records do not
+claim the numeric tool's RNG/checkpoint ancestry and never enter that tool's
+collector. Only search-produced requests enter search checkpoint transitions.
+
+## Verified checkpoint 2026-10-06 16:44:02
+
+44 focused harness/boundary tests passed in14.10s. All10 declared pairs completed
+with16 actual evaluator calls per arm:320 total, zero failures, zero paid calls.
+Search found lower costs than the declared grid in all10 pairs; all outcomes and
+seeds are retained in [evidence](../../docs/Audits/Evidence/BP-08-Search/Numeric_Comparison.json).
+Independent arithmetic and journal/hash/prefix checks passed for all320 outcomes.
+Combined unit/actual CLI driver coverage is182/184 statements and28/30 branches;
+accounting is32/32 statements and12/12 branches. Defensive transition-ceiling and
+release-mismatch rejection remain unexercised. Tool subprocess coverage is separate.
