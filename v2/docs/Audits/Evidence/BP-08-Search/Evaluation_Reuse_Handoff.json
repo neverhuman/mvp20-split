@@ -1,0 +1,151 @@
+{
+  "status": "passed",
+  "timestamp_local": "2026-10-06 15:16:24",
+  "scope": {
+    "tenant_id": "reuse-handoff",
+    "project_id": "22face144422453d99cf24a6370cb9a6"
+  },
+  "accepted_invocations": 9,
+  "decisions": {
+    "numeric": {
+      "scope": {
+        "tenant_id": "reuse-handoff",
+        "project_id": "22face144422453d99cf24a6370cb9a6"
+      },
+      "reuse_id": "numeric-reuse",
+      "sha256": "9c396760093d4aac8e772099a7b93c064cfcc146be1a7b080f9b9b3d377192bd"
+    },
+    "polymer": {
+      "scope": {
+        "tenant_id": "reuse-handoff",
+        "project_id": "22face144422453d99cf24a6370cb9a6"
+      },
+      "reuse_id": "polymer-reuse",
+      "sha256": "0148683eb94db487b75da42b326c33be18911748c0163c00ca289e012e61219b"
+    },
+    "sequence": {
+      "scope": {
+        "tenant_id": "reuse-handoff",
+        "project_id": "22face144422453d99cf24a6370cb9a6"
+      },
+      "reuse_id": "sequence-reuse",
+      "sha256": "46378dc32c16f6544c42e1005c4c3e675050c92a9edc4b64d9fbe81ccbaf4d71"
+    }
+  },
+  "context_misses": 3,
+  "wrong_producer_rejections": 3,
+  "research_restart_replay": true,
+  "current_data_denial": 403,
+  "historical_read_after_denial": 200,
+  "limits": "Actual Windows installed-owner HTTP/graph workers with explicit synthetic owner bootstrap; no lab/scientific validity, Linux image/Registry or target-host claim",
+  "evidence_path": ".test-results/evaluation-reuse-20261006a/http/evidence.json",
+  "evidence_sha256": "489b415bf27a31b8e487aa4a5b499ea58d10743e2a13ee4535ed5abe6d27b590",
+  "packages": {
+    "runtime": {
+      "amphora-campaign-runtime": "0.64.0",
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.13",
+      "amphora-contracts-execution-proofs": "0.1.0",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-knowledge": "0.8.0",
+      "amphora-contracts-planning": "0.10.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-supervision": "0.10.0",
+      "amphora-contracts-tools": "0.1.0"
+    },
+    "artifact": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.13",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-representations": "0.3.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-data-artifacts": "0.30.0"
+    },
+    "research": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-candidate-canonicalization": "0.1.0",
+      "amphora-contracts-candidate-spaces": "0.1.0",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evaluation-identity": "0.1.0",
+      "amphora-contracts-evaluation-reuse": "0.1.0",
+      "amphora-contracts-evidence": "0.5.13",
+      "amphora-contracts-execution-proofs": "0.1.0",
+      "amphora-contracts-fitness": "0.1.0",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-knowledge": "0.8.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-research-views": "0.1.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-synthetic-evaluation": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-research": "0.40.0",
+      "amphora-tool-protocol": "0.2.0"
+    },
+    "numeric": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-candidate-canonicalization": "0.1.0",
+      "amphora-contracts-candidate-spaces": "0.1.0",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-numeric-space": "0.4.0",
+      "amphora-tool-protocol": "0.2.0"
+    },
+    "polymer": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-candidate-canonicalization": "0.1.0",
+      "amphora-contracts-candidate-spaces": "0.1.0",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-polymer-space": "0.4.0",
+      "amphora-tool-protocol": "0.2.0"
+    },
+    "sequence": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-candidate-canonicalization": "0.1.0",
+      "amphora-contracts-candidate-spaces": "0.1.0",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-sequence-space": "0.4.0",
+      "amphora-tool-protocol": "0.2.0"
+    },
+    "digest": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evaluation-identity": "0.1.0",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-synthetic-evaluation": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-synthetic-digest": "0.1.0",
+      "amphora-tool-protocol": "0.2.0"
+    },
+    "controller": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-tool-protocol": "0.2.0"
+    }
+  }
+}

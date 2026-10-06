@@ -51,4 +51,4 @@ BP-06.06 Research0.32 adds pure bounded [exploration](src/amphora_research/explo
 
 Research0.33 exposes authenticated research-explore catalog/specimens/properties/observation-series routes through optional scientific hosting. No schema/migration/new-grant change; complete selected-set existence is checked before bounded record loads. See exploration module for read and replacement contracts.
 
-[Evaluation reuse evidence](src/amphora_research/evaluation_reuse/README.md) owns authenticated Runtime producer inspection and exact Data evidence binding. It now also owns configured synthetic reuse qualification, immutable decisions and separate public qualify/read routes; actual multi-process acceptance remains pending.
+[Evaluation reuse evidence](src/amphora_research/evaluation_reuse/README.md) owns authenticated Runtime producer inspection and exact Data evidence binding. It now also owns configured synthetic reuse qualification, immutable decisions and separate public qualify/read routes; actual multi-process reuse handoff passed2026-10-06 15:16:24; image/Registry/scientific qualification remains separate.
