@@ -25,7 +25,7 @@ def payload():
 def test_descriptor_and_schema_bytes_match_publication():
     capability = SpaceCapability()
     descriptor = capability.descriptor("c" * 64)
-    assert descriptor.tool.binding.release == "0.2.0"
+    assert descriptor.tool.binding.release == "0.3.0"
     assert descriptor.tool.binding.capability_id == "synthetic.polymer-move"
     assert "synthetic-tests" in descriptor.tool.applicability
     assert descriptor.authority_ceiling == "synthetic_only"

@@ -699,7 +699,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-numeric-space"
-version = "0.2.0"
+version = "0.3.0"
 source = { editable = "../tools/numeric_space" }
 dependencies = [
     { name = "amphora-contracts-candidate-spaces" },
@@ -718,7 +718,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-polymer-space"
-version = "0.2.0"
+version = "0.3.0"
 source = { editable = "../tools/polymer_space" }
 dependencies = [
     { name = "amphora-contracts-candidate-spaces" },
@@ -776,7 +776,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-sequence-space"
-version = "0.2.0"
+version = "0.3.0"
 source = { editable = "../tools/sequence_space" }
 dependencies = [
     { name = "amphora-contracts-candidate-spaces" },

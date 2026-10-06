@@ -1,10 +1,8 @@
 # Restore
 
-Read FIRST after compression. Refreshed 2026-10-06 13:29:20 (America/Chicago).
+Read FIRST after compression. Refreshed 2026-10-06 13:37:08 (America/Chicago).
 
-Current task **BP-08.03/B2.01 representation-owned canonicalization and evaluation identity**. B1complete,child25%,Build33.33%,Acceptance0%;parent45%,9/20. No activeverificationprocess;80080actualhandoffpassed13:27:08,12boundarychecks11.52s. Latestpushed82bcc679; actualhandoffharness/evidence/docs/trackers readycommit/push. No ownerdecision;continueuntilneeded.
-
-Currentproof .test-results/candidate-handoff-20261006a/http/evidence.json, three independently installed operatorworkers/graphs,actualData/Researchregistration/replay,ResearchrestartthenDataprincipalremovalwrites403/history200.7isolatedinstallations. Summary docs/Audits/Evidence/BP-08-Search/Candidate_Handoff.json. Eachgraph1acceptedinvocation/1confirmedoutputreservation. Fixtureimagepins only; V1images/Registry/replacementpending. Allsourceverified; preparecommitthenB2.01.
+Current task **BP08.03/B2.01b context-complete declared evaluation identity**. B2.01a canonicalization passed98checks24.51s and18focused1.96s; newequivalence modules70statements4branches100%. Currentoperatorpackages numeric_space/polymer_space/sequence_space0.3.0, no publicschema changes. Child29.17%,Build38.89%,Acceptance0%;parent45.83%,9/20 plus1/6. No activeprocess. Latestpushedc8bfafde; canonicalizationimplementation/docs/trackers verifiedreadycommit/push. Continueuntilneeded.
 
 Currentversions Runtime0.63/runtime0028; Data0.30/0012; Research0.35/research_0014; Planning0.95/0019; Studio0.8. Publiccandidate_spaces0.1 added14schemas, total584; all570predecessorbytesunchanged. Existingsearch/search_steps0.1 andResearchcontracts0.14unchanged. Newtools numeric_space/polymer_space/sequence_space0.2.0 (distinctfrom evolution_search0.5.0 andsynthetic_objectives0.2.0). LegacySDK0.2unchanged,multi_input_worker0.1. Own/devlocks synced. **NeverrunResearch<=0.34migrators onupgradedfixture**.
 
@@ -26,3 +24,6 @@ EnvironmentZ:/mvp20-split activev2 PowerShell. Pythonv2/dev/.venv/Scripts/python
 
 
 B2 exploration: existing Research ObservationUseProjection (contracts/research/interpretation.py) already retains exact experiment, original observations, raw/effective matches, normalized numeric/censored/missing values, usability, blockers/gaps/focus and sourceArtifacts. Newfitness should compose that owner policy/provenance, not invent caller-trusted scalar verdicts. ExistingInterpretationStore has read(scope,actor,kind,id), complete results with immutable sources. Need narrow B2design andpublicDTO reviewbeforecode. Unit conversion/missing/censored semantics alreadyowned; reuse. Cacheidentity pureequality alone cannotgrantreuse. No B2implementationbegun.
+
+
+B2.01a implemented equivalence.py ineachtool, exportedNumericCanonical/PolymerCanonical/SequenceCanonical +EQUIVALENCE semanticpin. SourcefullyrevalidatedthroughownedSpace. Numeric/DNAexactcanonicalJSONpreserveorder. Polymer sortsunits/sites/composition/endgroups andundirectededgepairs; allremainingdata/unknowns/scopesretained. No renaming/graphisomorphism/chemistry. Identity equality is not source authorization. B2.01b needs groupedpublic evaluationcontext contracts plusResearch-owned validation/key policy; retain all method/evaluator/applicability/synthesis/uncertainty and orderedobjectiveunit/direction pins, materialstate andnamedcontextrefs. Missingrequiredcontextmustreject/no key; noneallowedonlyexplicitpolicy. KeyexcludesoriginalsourceArtifactidentity onlyfor declaredcanonical-equivalentrepresentations, butretainsoriginalsourceprovenance separately andscope inidentity. Metadataequalitydoesnotauthorizeactualcacheuse. Need actualowner/evidence resolution inB2.03 andB3; do not weaken those gates. NoB2.01bcodeyet.

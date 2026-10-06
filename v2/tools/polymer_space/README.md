@@ -1,6 +1,6 @@
 # Synthetic polymer space
 
-- Owner: BP-08.03/B1.02; release0.2.0 adds public adapters; pure0.1.0 behavior unchanged, adapter/CLI verification passed.
+- Owner: BP-08.03/B1.02; release0.3.0 adds pure canonical identity; prior0.2.0 worker/ingress evidence remains its historical scope. Canonicalization verified.
 - Design: [Representation and fitness](../../docs/Architecture/Campaigns/Representation_Fitness.md).
 
 This independent package owns legality and one proposed move for the synthetic polymer encoding. Domain objects validate complete inputs, preserve scope/profile and retain a hash of the exact canonical source. Public DTOs serialize results; no SQL, I/O, service/private sibling imports, global RNG, scheduler, scientific eligibility or hidden loop belongs here. Pure domain dependencies are public candidate_spaces/Core; adapters additionally use public Tools and Tool Protocol0.2. No source copied from v1.
@@ -21,3 +21,7 @@ Input/output cap262144 bytes. Invalid payloads return a closed safe code without
 Verified 2026-10-06 13:10:07:80 combined operator/capability/boundary checks24.46s. Capability schemas100% measured coverage; adapters94% with defensive output-capacity branch unexercised. Pure domain remains100%. CLI subprocess compute/profiles/error paths pass but are not attributed to parent coverage; aggregate451statements/120branches69%. Configured worker HTTP and Research ingress subsequently passed; image/replacement remains V1.
 
 [Actual handoff](../../docs/Audits/Evidence/BP-08-Search/Candidate_Handoff.json), 2026-10-06 13:27:08: independently installed worker, real Runtime/Data completion/retention and Research declaration/replay. After Research restart and Data read-principal removal, write retry403 and exact history read200. This is fixture-image Windows process evidence; no Registry/image/deployment or science claim.
+
+B2.01a: PolymerCanonical reconstructs the owned valid design and derives exact bytes/hash under EQUIVALENCE. sort unit declarations by unit_id, sites/end groups by site_id, composition by unit_id, undirected bond endpoints then pairs; retain every other field including scope and explicit unknowns; no site renaming or chemical isomorphism. This policy is independently pinned from legal-move semantics. Equal identity does not grant cache use or imply scientific equivalence; evaluation context, source access and Research policy remain separate gates. Tests/equivalence owns normalization and non-equivalence cases.
+
+Verified 2026-10-06 13:37:08:98 owner/adapter/boundary checks24.51s;18 focused equivalence cases1.96s with valid directory-based coverage. New equivalence modules70statements/4branches100%. Initial file-path coverage selector collected no data; no percentage inferred from that run. Prior actual HTTP evidence remains release0.2.0; current0.3.0 process qualification belongs to later integration/replacement.

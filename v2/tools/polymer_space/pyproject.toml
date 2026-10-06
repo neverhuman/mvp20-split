@@ -1,6 +1,6 @@
 [project]
 name = "amphora-polymer-space"
-version = "0.2.0"
+version = "0.3.0"
 requires-python = ">=3.12,<3.13"
 dependencies = ["amphora-contracts-tools==0.1.0", "amphora-tool-protocol==0.2.0", "amphora-contracts-candidate-spaces==0.1.0", "amphora-contracts-core==0.1.0"]
 
