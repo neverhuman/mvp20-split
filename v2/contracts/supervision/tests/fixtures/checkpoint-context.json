@@ -1,0 +1,152 @@
+{
+  "allowed_actions": [
+    "abstain",
+    "propose_campaign"
+  ],
+  "budget_policy": {
+    "artifact_id": "policy",
+    "media_type": "text/plain",
+    "schema_ref": {
+      "schema_id": "fixture.text",
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "version": "1"
+    },
+    "scope": {
+      "project_id": "context",
+      "tenant_id": "planning-fixture"
+    },
+    "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+    "size_bytes": 12
+  },
+  "checkpoint_id": "before-evaluate",
+  "checkpoint_seed_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "deadline_unix_ms": 1791226800000,
+  "engagement": {
+    "engagement_id": "decision-1",
+    "scope": {
+      "project_id": "context",
+      "tenant_id": "planning-fixture"
+    }
+  },
+  "fields": [
+    {
+      "constraint": {
+        "kind": "range",
+        "maximum": {
+          "kind": "number",
+          "value": "1"
+        },
+        "minimum": {
+          "kind": "number",
+          "value": "0"
+        }
+      },
+      "name": "temperature",
+      "original_value": {
+        "kind": "number",
+        "value": "0.1234567890123456789"
+      },
+      "original_value_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "value_type": {
+        "kind": "scalar",
+        "scalar": "number"
+      }
+    }
+  ],
+  "lineage": {
+    "ordinal": 1,
+    "parent_request_sha256": null,
+    "root_request_sha256": null
+  },
+  "objective": {
+    "artifact_id": "objective",
+    "media_type": "text/plain",
+    "schema_ref": {
+      "schema_id": "fixture.text",
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "version": "1"
+    },
+    "scope": {
+      "project_id": "context",
+      "tenant_id": "planning-fixture"
+    },
+    "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+    "size_bytes": 12
+  },
+  "policy": {
+    "artifact_id": "policy",
+    "media_type": "text/plain",
+    "schema_ref": {
+      "schema_id": "fixture.text",
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "version": "1"
+    },
+    "scope": {
+      "project_id": "context",
+      "tenant_id": "planning-fixture"
+    },
+    "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+    "size_bytes": 12
+  },
+  "recipe_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "reference": {
+    "decision_id": "decision-1",
+    "run_id": "supervision-run",
+    "scope": {
+      "project_id": "context",
+      "tenant_id": "planning-fixture"
+    }
+  },
+  "remaining": {
+    "campaign_model_calls": 4,
+    "campaign_requests": 3,
+    "slot_model_calls": 2,
+    "slot_requests": 1
+  },
+  "snapshot": {
+    "checkpoints": [
+      {
+        "activation_id": "bb119ce2bca7cb3fd402e12353c2b4b03901fda9b24b797b2f900ef7a5fad485",
+        "fields": [
+          "temperature"
+        ],
+        "kind": "artifact_materialize"
+      }
+    ],
+    "cut": {
+      "frontier_revision": 2,
+      "plan_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "revision": 3,
+      "run_id": "supervision-run",
+      "scope": {
+        "project_id": "context",
+        "tenant_id": "planning-fixture"
+      }
+    },
+    "footprint_sha256": "991457110d0e608ce39c42dedc1b69c319243b9543a1b7b8e4fe693741c04ef5",
+    "reads": [
+      {
+        "node": {
+          "activation_id": "bb119ce2bca7cb3fd402e12353c2b4b03901fda9b24b797b2f900ef7a5fad485",
+          "kind": "artifact_materialize",
+          "path": {
+            "node_id": "evaluate",
+            "occurrences": [],
+            "schema_version": "2"
+          },
+          "reason_code": null,
+          "status": "ready"
+        },
+        "outputs_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "state_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+      }
+    ],
+    "relevant_sha256": "afbc67badac6fe3b1c0235591b9a793be4d3373ceb6e3ee992aabea5cd7b7276",
+    "schema_version": "2"
+  },
+  "target": {
+    "node_id": "evaluate",
+    "occurrences": [],
+    "schema_version": "2"
+  }
+}

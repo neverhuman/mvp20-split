@@ -1,0 +1,9 @@
+# Checkpoint context construction
+
+BP-07.04 B2.03a.iii. Runtime owns immutable context facts and original request construction. `ContextBasis` binds a scalar-bearing checkpoint seed, admitted recipe, run-scoped potential-call history and original deadline. Its allowance projection counts full reservations without refunds. SQL callers must supply actual original run history; a pure object cannot attest database provenance.
+
+`ContextSession` validates the exact predecessor request series against slot reservation hashes and derives one deterministic Planning engagement from seed, recipe, actor and lineage. Repairs preserve narrowed actions, call limits and deadline. `declaration` projects a public `CheckpointContext` with concrete occurrence, exact scalar values/digests/permissions, selected read hashes, original budget-policy reference and remaining allowances. Future graph proposals are explicitly retained drafts. No scientific result is inferred.
+
+`frame` requires exact published policy/declaration identities and constructs the original Planning request plus Runtime CheckpointFrame. Declaration bytes are capped256KiB and enter as a required constraint beneath the reviewed prompt, never as trusted instructions. Artifact identity validation here does not prove publication or processing rights. The forthcoming publication/SQL bridge must obtain references from Data, recheck current facts, then use RequestJournal's atomic reservation gate. No I/O, provider grant, graph effect or current-head selection occurs in this module yet.
+
+Owned tests belong in tests/supervision_context. Replacement must preserve deterministic identities, exact decimal fields, original predecessor bytes, narrowing, scope/reference checks and bounded context size. Public transport lives in contracts/supervision; no private Planning DTO or algorithm is imported.

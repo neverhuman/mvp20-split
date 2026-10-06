@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-10-05 22:32:48",
+  "runtime": "0.49.0",
+  "planning": "0.78.0",
+  "public_supervision": "0.6.0",
+  "tests": 109,
+  "seconds": 48.52,
+  "coverage": {
+    "statements": 115,
+    "branches": 4,
+    "percent": 100
+  },
+  "schemas": 544,
+  "unchanged_predecessors": 542,
+  "limits": [
+    "pure projection and synthetic ArtifactRefs only",
+    "no actual Data publication or paid-call authority"
+  ]
+}

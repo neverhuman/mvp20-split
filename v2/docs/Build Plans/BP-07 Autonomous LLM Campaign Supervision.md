@@ -2,14 +2,14 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-07.04/B2.03a.iii versioned admission and atomic reservations.
-- Last refreshed: `2026-10-05 22:22:33` (America/Chicago).
+- Status: primary_active; BP-07.04/B2.03a.iii publication and SQL preparation bridge.
+- Last refreshed: `2026-10-05 22:32:48` (America/Chicago).
 - Owner/scope: Agent Planning plus runtime-owned engagement and decision modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-03 discovery, BP-04 runner, BP-05 UI and BP-06 source/knowledge receipts.
-- Implementation: **68.70%** scoped;13/20 closed deliveries. BP-07.01/.02/.03 complete; BP-07.04=43.52%; BP-07.05 remains0%. Each child is counted once.
+- Implementation: **68.80%** scoped;13/20 closed deliveries. BP-07.01/.02/.03 complete; BP-07.04=43.98%; BP-07.05 remains0%. Each child is counted once.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-07.04/B2.03a.iii versioned admission and atomic reservations; B2.01 verified complete.
+- Current implementation task: BP-07.04/B2.03a.iii publication and SQL preparation bridge; B2.01 verified complete.
 - Demonstrated behavior: BP-07.01/.02 accepted immutable context/provider/budget and attributed text-decomposition boundaries, current-rights publication, bounded repair and actual Research/Knowledge handoff with replacement recovery. BP-07.03 adds bounded campaign context, semantic proposal policy and durable compiler handoff with actual-owner crash/rights and replacement proof. Runtime supervision and live model quality remain subsequent.
 - Blockers: none for deterministic implementation. Approved B2.01 correction: scalar adjustments must reconcile Artifact-only Invoke inputs; see [scalar checkpoint decision](BP-07/BP-07.04%20Scalar%20checkpoint%20decision.md). Live provider/model, egress and spend choices separately govern real calls.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
@@ -33,7 +33,7 @@ Primary services retain private state, dependencies, migrations and module READM
 | P1 / [BP-07.01 Model and engagement contracts](BP-07/Completed/BP-07.01%20Model%20and%20engagement%20contracts.md) | 100% | 100% | 100% | Parent predecessor gates |
 | P2 / [BP-07.02 Reliable text decomposition](BP-07/Completed/BP-07.02%20Reliable%20text%20decomposition.md) | 100% | 100% | 100% | BP-07.01 acceptance |
 | P3 / [BP-07.03 Campaign proposals and context](BP-07/Completed/BP-07.03%20Campaign%20proposals%20and%20context.md) | 100% | 100% | 100% | BP-07.02 acceptance |
-| P4 / [BP-07.04 Durable supervisor and races](BP-07/BP-07.04%20Durable%20supervisor%20and%20races.md) | 43.52% | 58.02% | 0% | BP-07.03 acceptance |
+| P4 / [BP-07.04 Durable supervisor and races](BP-07/BP-07.04%20Durable%20supervisor%20and%20races.md) | 43.98% | 58.64% | 0% | BP-07.03 acceptance |
 | P5 / [BP-07.05 Live evaluation and closeout](BP-07/BP-07.05%20Live%20evaluation%20and%20closeout.md) | 0% | 0% | 0% | BP-07.04 acceptance |
 
 Each linked child is the execution tracker for its scope. Build tasks name concrete implementation; acceptance requires independent evidence and a scoped drift audit. Do not repeat the historical task pairs as a second work list. No dependent child starts before its predecessor acceptance gate; independent design review does not activate implementation.

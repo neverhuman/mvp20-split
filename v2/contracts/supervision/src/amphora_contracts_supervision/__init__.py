@@ -79,3 +79,15 @@ from .checkpoint_decisions import (
 )
 
 __all__ += ["AppliedFields", "CheckpointCancelled", "CheckpointDecision", "CheckpointFallback", "CheckpointModelAccepted", "CheckpointPending", "EffectiveFieldChange"]
+
+from .context import (
+    CheckpointAllowance,
+    CheckpointChoices,
+    CheckpointContext,
+    CheckpointFieldContext,
+    CheckpointRange,
+    checkpoint_context_schema,
+)
+
+__all__ += ['CheckpointAllowance', 'CheckpointChoices', 'CheckpointContext', 'CheckpointFieldContext',
+            'CheckpointRange', 'checkpoint_context_schema']

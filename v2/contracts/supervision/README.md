@@ -26,3 +26,5 @@ B1.02b publishes four additional roots/eight files:528 schema files preserve all
 
 
 Supervision0.5 adds checkpoint-decision/v1. Pending checkpoints, model-accepted outcomes, deterministic fallback and run cancellation are distinct records. Model effects require request/response digests; pre-request fallback does not fabricate them. Materialization fields use exact graph ScalarValue and selection identity. Existing decision/request/response records remain unchanged. Runtime owner construction and acceptance remain separate gates.
+
+Version0.6 adds CheckpointContext, an explicitly versioned published context Artifact profile with concrete occurrence, exact scalar values/digests/permissions, recipe/policy/budget references and potential-call allowances. It is data, never a call grant or accepted result. Future proposals are retained_only. Runtime domain objects bind original state; Planning processing rights and prompt trust remain separate.544 schema files preserve all542 predecessors (context_predecessor_schema_pins.json).
