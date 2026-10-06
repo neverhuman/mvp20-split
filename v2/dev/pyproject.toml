@@ -3,6 +3,8 @@ name = "amphora-foundation-verification"
 version = "0.1.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
+    "amphora-multi-input-worker==0.1.0",
+    "amphora-synthetic-objectives==0.1.0",
     "amphora-contracts-search-steps==0.1.0",
     "amphora-contracts-search==0.1.0",
     "amphora-evolution-search==0.4.0",
@@ -47,6 +49,8 @@ package = false
 link-mode = "copy"
 
 [tool.uv.sources]
+amphora-multi-input-worker = { path = "../sdk/multi_input_worker", editable = true }
+amphora-synthetic-objectives = { path = "../tools/synthetic_objectives", editable = true }
 amphora-contracts-search-steps = { path = "../contracts/search_steps", editable = true }
 amphora-contracts-search = { path = "../contracts/search", editable = true }
 amphora-evolution-search = { path = "../tools/evolution_search", editable = true }

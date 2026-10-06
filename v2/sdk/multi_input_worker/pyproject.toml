@@ -1,0 +1,23 @@
+[project]
+name = "amphora-multi-input-worker"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = ["amphora-tool-protocol==0.2.0", "amphora-contracts-core==0.1.0", "amphora-contracts-tools==0.1.0", "amphora-contracts-runtime==0.1.0", "amphora-contracts-artifacts==0.2.0"]
+
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/amphora_multi_input_worker"]
+
+[tool.amphora]
+public-client = true
+public-imports = ["amphora-tool-protocol", "amphora-contracts-core", "amphora-contracts-tools", "amphora-contracts-runtime", "amphora-contracts-artifacts"]
+
+[tool.uv.sources]
+amphora-tool-protocol = { path = "../tool_protocol", editable = true }
+amphora-contracts-core = { path = "../../contracts/core", editable = true }
+amphora-contracts-tools = { path = "../../contracts/tools", editable = true }
+amphora-contracts-runtime = { path = "../../contracts/runtime", editable = true }
+amphora-contracts-artifacts = { path = "../../contracts/artifacts", editable = true }

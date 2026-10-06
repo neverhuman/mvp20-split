@@ -226,5 +226,17 @@
     "coverage_sources": [
       "contracts/search_steps/src/amphora_contracts_search_steps"
     ]
+  },
+  "synthetic-objectives": {
+    "tests": "tools/synthetic_objectives/tests",
+    "coverage_sources": [
+      "tools/synthetic_objectives/src/amphora_synthetic_objectives"
+    ]
+  },
+  "multi-input-worker": {
+    "tests": "sdk/multi_input_worker/tests",
+    "coverage_sources": [
+      "sdk/multi_input_worker/src/amphora_multi_input_worker"
+    ]
   }
 }

@@ -1,0 +1,25 @@
+[project]
+name = "amphora-synthetic-objectives"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = ["amphora-multi-input-worker==0.1.0", "amphora-contracts-core==0.1.0", "amphora-contracts-tools==0.1.0", "amphora-contracts-search==0.1.0", "amphora-tool-protocol==0.2.0"]
+
+[project.scripts]
+amphora-synthetic-objectives = "amphora_synthetic_objectives.__main__:main"
+
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/amphora_synthetic_objectives"]
+
+[tool.amphora]
+public-imports = ["amphora-multi-input-worker", "amphora-contracts-core", "amphora-contracts-tools", "amphora-contracts-search", "amphora-tool-protocol"]
+
+[tool.uv.sources]
+amphora-multi-input-worker = { path = "../../sdk/multi_input_worker", editable = true }
+amphora-contracts-core = { path = "../../contracts/core", editable = true }
+amphora-contracts-tools = { path = "../../contracts/tools", editable = true }
+amphora-contracts-search = { path = "../../contracts/search", editable = true }
+amphora-tool-protocol = { path = "../../sdk/tool_protocol", editable = true }

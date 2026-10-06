@@ -1,0 +1,14 @@
+# Explicit multi-input pure worker
+
+- Owner: BP-08.02/B1.02c prerequisite; release0.1.0, scoped lifecycle/compatibility verification passed.
+- Design: [Tool Services](../../docs/Architecture/Capabilities/Tool_Services.md); [activation clarification](../../docs/Audits/BP-08.02_Activation.md).
+
+This opt-in SDK companion implements the existing ToolDescriptor/Invocation multi-port contract using only public Tool Protocol0.2 clients and attempt context. It has no private SDK hooks, service implementation imports, SQL, admission rights or scientific behavior. The existing single-input SDK profile and service dependency pins remain unchanged.
+
+MultiInputToolWorker accepts2..16 uniquely named required JSON Artifact inputs, one required JSON output, pure/no-egress/synthetic-only descriptors and no worker checkpoint. It validates the complete port/schema/scope/tool set and aggregate declared size before reading anything. Every input is read through the configured Artifact client with lease checks before and after, then bound to immutable metadata/bytes in ResolvedInput and InputBundle. Aggregate input/output cap262144 bytes; byte hashes/sizes are checked independently. Compute receives named inputs, never a credential or private owner handle.
+
+Runtime owns the claim, fence, lease, retries and accepted completion. The worker reuses original attempt-derived publication/completion identities, refreshes authority around every external boundary and never reports a contradictory failure after an ambiguous completion. Uncertain/lost authority prevents publication and failure reporting. Typed input rejection is terminal; transport ambiguity is retryable where authority survives; protocol violations are terminal. No blind retry or hidden worker loop is implemented.
+
+run_multi_input_worker reads the same explicit WorkerConfig profile and performs one invocation. Existing endpoint/token configuration and safe transport rules remain in the public SDK. Module tests own declared-input mismatch, content corruption, capacity, lease loss, completion ambiguity and legacy-profile compatibility. Actual Runtime/Data process acceptance remains BP-08.02 B2/B3/V1. Rebuilds must preserve these authority and identity boundaries and pass independently retained history/replacement checks before deployment claims.
+
+Verified 2026-10-06 11:20:45:144 combined checks20.18s including legacy SDK suite; old sdk/tool_protocol source unchanged. New worker module95% measured coverage; named input bundle100%. Gaps: configured run helper and defensive callback ProtocolError branch; real owner HTTP/process cases remain B2/B3/V1. Tests cover pre-read mismatch, corruption, revocation between reads, exact publication/completion IDs, ambiguous completion, capacity/rights failure classification, mixed clients and invalid outputs.
