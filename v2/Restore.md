@@ -1,16 +1,16 @@
 # Restore
 
-Read FIRST after compression. Refreshed 2026-10-05 23:31:16 (America/Chicago).
+Read FIRST after compression. Refreshed 2026-10-05 23:44:42 (America/Chicago).
 
 ## Resume
 
-Owner says continue until needed across milestones/commits/pushes/compaction. Latest pusheddc28f258; b.ii complete/pushed. No tests/hosts/workers running.  Current BP-07.04/B2.03b.iii.ii capture publication journal. No owner decision needed for deterministic fixtures. Do not end at commits.
+Owner says continue until needed across milestones/commits/pushes/compaction. Latest pushed589c423d; b.iii.i domain complete/pushed. Capture journal verified; ready to commit. No tests/hosts/workers running.  Current BP-07.04/B2.03b.iii.iii capture network workflow. No owner decision needed for deterministic fixtures. Do not end at commits.
 
-Runtime0.50/runtime0026 APPLIED; NEVER Runtime<=0.47 migrators. Planning0.82/planning0016;never<=0.73migrators. Data0.29/artifacts0012 (never<=0.25),Research0.34/research0013 (never<=0.33),Knowledge0.18,Registry0.1. PublicSupervision0.7,Planning0.10,graph-runtime0.13;544 publishedschemas unchanged,542predecessorpins. Liveprovider/model/egress/spend TBA blocks realcalls only.
+Runtime0.50/runtime0026 APPLIED; NEVER Runtime<=0.47 migrators. Planning0.83/planning0017 APPLIED; NEVER<=0.82 migrators;never<=0.73migrators. Data0.29/artifacts0012 (never<=0.25),Research0.34/research0013 (never<=0.33),Knowledge0.18,Registry0.1. PublicSupervision0.7,Planning0.10,graph-runtime0.13;544 publishedschemas unchanged,542predecessorpins. Liveprovider/model/egress/spend TBA blocks realcalls only.
 
 ## Canonical position
 
-Parent69.32%,13/20;child46.60%,Build62.14%,Acceptance0%,1/4. B1=100%;B2=86.42%(.01/.02=100%,.03=59.26%);B3/V1=0%. B2.03 a100%,b77.78%,c0%. b.i/b.ii100%,b.iii33.33% (i domain100%,ii journal0%,iii workflow0%). Current b.iii.ii journal,then iii workflow,then c autonomousRuntime driver. Pure capture checkpoint ready tocommit.
+Parent69.38%,13/20;child46.91%,Build62.55%,Acceptance0%,1/4. B1=100%;B2=87.65%(.01/.02=100%,.03=62.96%);B3/V1=0%. B2.03 a100%,b88.89%,c0%. b.i/b.ii100%,b.iii66.67%(i domain100%,ii journal100%,iii workflow0%). Current iii workflow,then c autonomous Runtime driver. Journal checkpoint ready tocommit.
 
 Latest b.ii: supervision_execution/worker.py CheckpointWorker original intake -> CampaignPreparation retained packet -> fresh included Artifact rights -> PlanningRunner issuance/capture/settlement. packet.py binds original declaration from retained packet; adapter reply(binding,exactpacket,deadline_unix_ms=earlier durableticket/originaldeadline). Persistence/supervision_deadline reads immutable v2 wrapper under dispatch request lock; capped SQL INSERT refuses expired checkpoint. Original tickets replay first, old profiles unchanged. History-first recovery without Data/templates/provider for issued/observed attempts. Missing context/overflow/rights/deadline explicit RunOutcome stops.126 scoped SQL cases45.74s+12 boundary9.14s;271stmts26branches99% (two unexpected error propagation paths). Actual PlanningSQL/scripted Data/provider; no process/multi-owner claim. Ruff passes. No tests running. B3 canonical table incorrectly showed inherited .03 percentage under zero B3; corrected to all0%.
 
@@ -57,3 +57,14 @@ No subagents/externalJARVIS/v1edits/SQLresets/oldmigrators/externalmessages. No 
 PYTHONUTF8=1 everyPython;v2/dev/.venv/Scripts/python.exe;uvv2/.venv/Scripts/uv.exe;pytest -c v2/dev/pyproject.toml --tb=short. Coverage DIRECTORYfilesystempaths,notfile.py/dottedleaf. rg --files beforeunfamiliarpaths;doNOTguessfilenames/globs (severalwastedreads). Windowsabsolute(),neverresolve(). No giganticone-lineJSONfixture/testIDdumps. NormalRuff,fixonlytouchedfiles. Commentary<=60s. Gitdiffcheckbeforecommit,onenewlineEOF.
 
 Gitmain: git -c safe.directory=//DesktopNAS/Code/mvp20-split;remotehttps://github.com/neverhumanbot/mvp20-split.git;identity/authset. Commit/pushverifiedsignificantwork,thenCONTINUE. Existingv1/LICENSEdebtuntouched.
+
+
+## Latest journal / next network workflow
+
+Planning0.83/planning0017 APPLIED. NEVER<=0.82migrators. New supervision_publication history.py loads exact intake/CampaignPreparation/primary orlateobservation andrequiresoriginalsettlement inoneSQLconnection. DispatchJournal._late extractedunchanged latechargevalidation forreuse. CaptureIdentity.restore supportsread-onlyhistory;bindrequiresrecord. CaptureJournal immutableidentity/events, DB-clockleases/monotonicfences/positions, exactreconstruction. CaptureResponseJournal separate immutableoriginalcommand +append-onlyreceipt/readback. Primaryemptycapture hasno upload;latehasdistinctslot. NoSQLtransaction spanspeerI/O.7SQLcases80.07s396statements24branches100%;75finalcapture/execution/dispatch/boundary83.48spass. Initial1scontentionfixturetimingfailure fixedtestonly. Additionalactualexpiryafterevent/command insert rollback andcopiedevent rejectionpass. No testsrunning. SourceREADME/docs/evidence canonicalupdated.
+
+NEXT iii.iii: composeCaptureJournal with existing publication.driver.drive_upload and actualSDK ArtifactClient(Planning PublicationTransport), thenCaptureResponseJournal with supervision_client.RuntimeClient. Guard everyeffectwithlease;release finally,ignoreonlycapture_lease_lost. State.payload.artifact/attempt/position/store API alreadymatchesdriver. Returnoriginalfinalized/rejected histories withoutrepublication. Emptydiagnostic skipsupload. Data derivedbegin/finalize owns freshparentprocessingrights. Deploymentexplicitlyadmits capture_schema opaqueprofile. No actualData publicationclaimedbycurrentfixtures.
+
+Runtime exchange: persist originalcommand beforecalls; receipt lookupfirst; onlyabsentwithnopriorreceipt mayPOSToriginal; knownreceipt-disappearance staysuncertain. Persistownerreceipt beforeexactreadback. Awaiting_readback mayresumeGETdirectly; recorded/rejectedreplay makesnocalls. ExchangeWindow10s/3calls; no hiddenretryloops. Failedwrites mayhavecommitted, recoveroriginalreceipt nextinvocation. Publication/diagnostics mayoutlivecall deadline; Runtimealonewinner. Actualnetwork/scriptedpeerproof belongsiii;independentprocessandinstalledactualowner proofremainB3/V1.
+
+Tests/publication/test_workflow.DataPeer implementsSDKscriptedData withreceiptloss,streamloss,finalize/derivation outages. Its helper test_values.receipts usesidentity.trace().scope; can changeTESThelper toidentity.scope (productionPublicationIdentity/ResultIdentity alreadyexposeit) toreuseforCaptureIdentity withoutfakeExtractionTrace. Do not rerunoldwhole result suite(983sundercoverage) unlessnewsharedproductionbehaviorchanges. tests/supervision_client/test_client.py hasactualHTTPfixture; dynamicnewrequest/receipt/dropserver canfollowitsboundedcleanup pattern. No subagentsoractualpaidcalls.

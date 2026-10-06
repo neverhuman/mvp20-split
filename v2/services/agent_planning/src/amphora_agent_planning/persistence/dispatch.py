@@ -91,18 +91,22 @@ class DispatchJournal:
         key = {**self.journal._key(reference.engagement), "ordinal": reference.ordinal}
         with self.engine.connect() as connection:
             bound, reservation = self._bound(connection, key, principal, binding)
-            row = connection.execute(text("SELECT * FROM planning.late_observations WHERE " + KEY +
-                " AND ordinal=:ordinal"), key).mappings().first()
-            if row is None:
-                return None
-            wire = observation_document(bytes(row["canonical_bytes"]))
-            observed = verified_observation(bound, Observation(
-                CapturedOutput(bytes(row["capture_bytes"]), wire.output_complete), bytes(row["canonical_bytes"])))
-            charge = BudgetCharge.reconcile(reservation.demand, observed.canonical)
-            require((row["input_tokens"], row["output_tokens"], row["accounting_units"], row["overage"]) ==
-                    (charge.input_tokens, charge.output_tokens, charge.accounting_units, charge.overage),
-                    "stored_late_charge_corrupt")
-            return observed
+            return self._late(connection, key, bound, reservation)
+
+    @staticmethod
+    def _late(connection, key, bound, reservation):
+        row = connection.execute(text("SELECT * FROM planning.late_observations WHERE " + KEY +
+            " AND ordinal=:ordinal"), key).mappings().first()
+        if row is None:
+            return None
+        wire = observation_document(bytes(row["canonical_bytes"]))
+        observed = verified_observation(bound, Observation(
+            CapturedOutput(bytes(row["capture_bytes"]), wire.output_complete), bytes(row["canonical_bytes"])))
+        charge = BudgetCharge.reconcile(reservation.demand, observed.canonical)
+        require((row["input_tokens"], row["output_tokens"], row["accounting_units"], row["overage"]) ==
+                (charge.input_tokens, charge.output_tokens, charge.accounting_units, charge.overage),
+                "stored_late_charge_corrupt")
+        return observed
 
     def recover(self, principal, binding):
         reference = binding.reference()

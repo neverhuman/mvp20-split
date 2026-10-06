@@ -1,0 +1,21 @@
+{
+  "reviewed_at": "2026-10-05 23:44:42",
+  "package": "Planning0.83",
+  "migration": "planning0017 APPLIED; predecessor files unchanged",
+  "journal_tests": 7,
+  "journal_seconds": 80.07,
+  "coverage": {
+    "statements": 396,
+    "branches": 24,
+    "percent": 100
+  },
+  "regression_tests": 75,
+  "regression_seconds": 83.48,
+  "test_repair": "Contention tested under ordinary lease, deliberate expiry under separate1s lease; production fences unchanged",
+  "peers": "Actual Planning SQL; scripted Data/Runtime receipt values",
+  "remaining": [
+    "SDK/client publication workflow",
+    "B3 process-death and V1 installed multi-owner proof",
+    "Live provider/model/egress choice"
+  ]
+}

@@ -19,10 +19,14 @@ class CaptureIdentity:
 
     @classmethod
     def bind(cls, principal, origin, publisher_id):
+        principal.require('record_attempts', origin.scope)
+        return cls.restore(principal, origin, publisher_id)
+
+    @classmethod
+    def restore(cls, principal, origin, publisher_id):
         require(origin == CaptureOrigin.bind(origin.packet.context.snapshot, principal,
             origin.packet.preparation, origin.observation, kind=origin.kind), 'capture_origin')
         principal.require('read_attempts', origin.scope)
-        principal.require('record_attempts', origin.scope)
         TypeAdapter(Identifier).validate_python(publisher_id, strict=True)
         intake = origin.packet.context.snapshot
         require(principal.actor_id == intake.planning.document().actor_id, 'capture_actor')
@@ -53,7 +57,7 @@ class CaptureIdentity:
         return 'capture-' + hashlib.sha256(json.dumps(slot, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
 
     def response(self, principal, origin, reference=None):
-        require(self == self.bind(principal, origin, json.loads(self.canonical)['publisher_id']), 'capture_identity')
+        require(self == self.restore(principal, origin, json.loads(self.canonical)['publisher_id']), 'capture_identity')
         raw = origin.observation.capture.content
         if raw:
             require(reference is not None, 'capture_reference_required')
