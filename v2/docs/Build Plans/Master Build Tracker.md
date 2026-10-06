@@ -9,12 +9,12 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-07 closed100%; BP-08.02 closed100%; BP-08.03 closed100%; BP-08.04/B1 active; BP-09 queued.
-- Last refreshed: `2026-10-06 15:53:23` (America/Chicago).
+- Last refreshed: `2026-10-06 16:01:13` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P7 / BP-08 - Evolutionary Search Integration.
-- Primary active task: BP-08.04/B1.02 bounded topology policy.
-- Next task: BP-08.04/B1.03 owner persistence/public resolution after pure policy verification.
-- Implementation completion: BP-07 closed100%,20/20; BP-08=61.67%,12/20 plus1/3B1;BP-09=0%.
+- Primary active task: BP-08.04/B1.03 topology owner persistence.
+- Next task: BP-08.04/B2 fair comparison and actual successor handoff after B1 closure.
+- Implementation completion: BP-07 closed100%,20/20; BP-08=63.33%,12/20 plus2/3B1;BP-09=0%.
 - Active focus: bounded topology successors and fair comparison; preserve accepted search/representation and BP-07 evaluation history.
 - Blockers: none for BP-08.04 activation. Selected host and integrated live deployment remain BP-09 decisions/gates.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
@@ -32,13 +32,13 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-08.01/.02/.03 are closed100%, four deliveries each; parent61.67%,12/20 plus1/3B1. BP-08.04 is active at8.33%, Build11.11%, Acceptance0%.
+BP-08.01/.02/.03 are closed100%, four deliveries each; parent63.33%,12/20 plus2/3B1. BP-08.04 is active at16.67%, Build22.22%, Acceptance0%.
 
 ## Queued Plans and Phase Mirrors
 
 | Canonical plan | Status | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Active | 61.67% | 100% | 100% | 100% | 8.33% | 0% | N/A |
+| [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Active | 63.33% | 100% | 100% | 100% | 16.67% | 0% | N/A |
 | [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 
 Scoped milestone fractions measure verified work within their existing delivery weight; closed-gate counts remain separate. BP-06 is archived24/24. Do not treat milestone counts as effort estimates.
@@ -56,7 +56,7 @@ BP-08.04 activation review is current; use the canonical phase mirror above for 
 
 | Order / ID | Completion | Proposed plan | Required predecessor gates | Bounded outcome / exit | Architecture owner |
 |---|---|---|---|---|---|
-| P7 / BP-08 | 61.67% | [Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | BP-04 iteration/checkpoints; BP-06 applicability/evidence; BP-07 for LLM-guided topology | Adapt reusable numerical kernels to explicit generation/checkpoint history, separate representation fixtures and evidence-bound selection; parameter search precedes bounded topology proposals under successor-campaign rules | [Search](../Architecture/Campaigns/Search.md), [reuse baseline](../Architecture/Evolutionary_Code_Reuse_Baseline.md) |
+| P7 / BP-08 | 63.33% | [Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | BP-04 iteration/checkpoints; BP-06 applicability/evidence; BP-07 for LLM-guided topology | Adapt reusable numerical kernels to explicit generation/checkpoint history, separate representation fixtures and evidence-bound selection; parameter search precedes bounded topology proposals under successor-campaign rules | [Search](../Architecture/Campaigns/Search.md), [reuse baseline](../Architecture/Evolutionary_Code_Reuse_Baseline.md) |
 | P8 / BP-09 | 0% | [Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Selected host/model policy; BP-05/06/07 plus BP-08 for evolutionary demo claims | Reproducible target-host deployment, model/tool eligibility, restore/reconciliation, end-to-end autonomous demo and one independently rebuilt/replaced tool; prove replicated workloads if K3s is selected | [Topology](../Architecture/System/Runtime_Topology.md), [tool services](../Architecture/Capabilities/Tool_Services.md) |
 
 This is the default sequencing, not nine permanent file-ownership buckets. Each plan owns a delivery step; later plans may refine earlier contracts with explicit compatibility evidence. BP-01 records packaging constraints early; BP-03 tests tool images/protocols locally. BP-09 integrates target-host operation rather than postponing all deployment design to the end. Synthetic fixtures/receipts stand in for unavailable scientific services until BP-06 and are labeled as such.
@@ -114,6 +114,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-06 16:01:13 | BP-08.04/B1.02 complete;child16.67%,parent63.33%. | 88checks; pure bounded topology policy163statements/eightbranches100%; owner persistence next. |
 | 2026-10-06 15:53:23 | BP-08.04/B1.01 complete;child8.33%,parent61.67%. | 29wire/schema/boundary checks;630schemas preserve622; pure policy next. |
 | 2026-10-06 15:46:56 | BP-08.03 closed100%;parent60%,12/20. | Scoped audit aligned; image/Registry/replacement/history accepted; BP-08.04/B1 active. |
 | 2026-10-06 15:44:05 | BP-08.03/V1.02 complete;child91.67%,parent58.33%. | 7Registryprofiles,15closures,18invocations;retainedhistory/replacement/currentdenial passed. |
@@ -138,4 +139,3 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-06 11:34:01 | BP-08.02/B1 complete; child25%,Build33.33%,parent25%,5/20. |149 compiler+14 graph+12 boundary checks; Runtime0.63 exact-root-URN compatibility; B2 next. |
 | 2026-10-06 11:20:45 | BP-08.02/B1.02 complete; child16.67%,Build22.22%,parent23.33%. |169 numeric-adapter checks;144 evaluator/multi-input/legacy-SDK checks; graph/compiler next. |
 | 2026-10-06 10:22:13 | BP-08.01 closed100%,4/4;parent20%,4/20. |Two installations133 tests each; retained numeric state/replay; scoped audit aligned. |
-| 2026-10-06 10:14:08 | BP-08.01/B2 complete;child50%,Build66.67%,parent10%,2/20. |107checks;two-process128-member replay;duplicates and budget-limited attempts retained. |

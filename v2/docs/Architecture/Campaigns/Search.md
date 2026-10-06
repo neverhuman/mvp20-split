@@ -59,3 +59,5 @@ Numerical search freezes pending membership before collection. Failed or unavail
 BP-08.03 owns distinct representation operators and evidence/fitness applicability; BP-08.04 owns successor topology proposals. Neither follows automatically from numeric generation execution. Scientific validation and target-host deployment require their own evidence.
 
 [Representation and fitness boundary](Representation_Fitness.md) decomposes the activated BP-08.03 design into distinct synthetic operator profiles and Research-owned comparison policy.
+
+[Bounded topology successors](Topology_Search.md) owns permitted edits, original-plan/release binding and fair-comparison boundaries. Pure Planning proposal policy is implemented; authenticated persistence and actual compiler/adoption remain BP-08.04.

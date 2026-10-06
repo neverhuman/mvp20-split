@@ -2,15 +2,15 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-08.04/B1.02 bounded topology policy.
-- Last refreshed: `2026-10-06 15:53:23` (America/Chicago).
+- Status: primary_active; BP-08.04/B1.03 topology owner persistence.
+- Last refreshed: `2026-10-06 16:01:13` (America/Chicago).
 - Owner/scope: Search domain modules and independently packaged scientific operators.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 iteration/checkpoint and BP-06 evidence; BP-07 before LLM-guided topology acceptance.
-- Implementation: **61.67%**, 12/20 closed child deliveries plus one third of B1; each parent phase mirrors its child.
+- Implementation: **63.33%**, 12/20 closed child deliveries plus two thirds of B1; each parent phase mirrors its child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-08.04/B1.02 bounded topology policy; BP-08.01/.02/.03 closed.
-- Latest checkpoint: BP-08.04/B1.01 additive topology transport verified29checks17.89s;630schemas preserve622; pure policy next.
+- Current implementation task: BP-08.04/B1.03 topology owner persistence; BP-08.01/.02/.03 closed.
+- Latest checkpoint: BP-08.04/B1.02 pure topology policy verified88checks21.49s;163statements/eightbranches100%; authenticated owner persistence next.
 - Demonstrated behavior: numeric generation graphs, actual Runtime/Data/Registry APIs, pinned tool images, independent package replacement and worker/Runtime recovery. Synthetic representation/fitness/reuse accepted; topology, scientific and target-host evidence remain successors.
 - Blockers: direct v1 extraction unverified (license labels/toolchain); authorized independent numeric implementation proceeds. No owner decision blocks current scope.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
@@ -33,7 +33,7 @@ Primary services retain private state, dependencies, migrations and module READM
 | P1 / [BP-08.01 Reuse and search contracts](BP-08/Completed/BP-08.01%20Reuse%20and%20search%20contracts.md) | 100% | 100% | 100% | Closed / audited |
 | P2 / [BP-08.02 Graph-driven numeric evolution](BP-08/Completed/BP-08.02%20Graph-driven%20numeric%20evolution.md) | 100% | 100% | 100% | Closed / audited |
 | P3 / [BP-08.03 Representation and fitness boundaries](BP-08/Completed/BP-08.03%20Representation%20and%20fitness%20boundaries.md) | 100% | 100% | 100% | BP-08.02 acceptance |
-| P4 / [BP-08.04 Topology successors and comparison](BP-08/BP-08.04%20Topology%20successors%20and%20comparison.md) | 8.33% | 11.11% | 0% | BP-08.03 acceptance |
+| P4 / [BP-08.04 Topology successors and comparison](BP-08/BP-08.04%20Topology%20successors%20and%20comparison.md) | 16.67% | 22.22% | 0% | BP-08.03 acceptance |
 | P5 / [BP-08.05 Recovery and closeout](BP-08/BP-08.05%20Recovery%20and%20closeout.md) | 0% | 0% | 0% | BP-08.04 acceptance |
 
 Each linked child is the execution tracker for its scope. Build tasks name concrete implementation; acceptance requires independent evidence and a scoped drift audit. Do not repeat the historical task pairs as a second work list. No dependent child starts before its predecessor acceptance gate; independent design review does not activate implementation.

@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "timestamp_local": "2026-10-06 16:01:13",
+  "owner": "Planning0.96.0/BP-08.04/B1.02",
+  "tests": 88,
+  "seconds": 21.49,
+  "coverage": {
+    "covered_lines": 163,
+    "num_statements": 163,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100",
+    "num_branches": 8,
+    "num_partial_branches": 0,
+    "covered_branches": 8,
+    "missing_branches": 0,
+    "percent_branches_covered": 100.0,
+    "percent_branches_covered_display": "100"
+  },
+  "coverage_path": ".test-results/topology-policy-coverage-20261006.json",
+  "coverage_sha256": "3bc5bd881ed8ce35d2b995adb2cd99488844d86ffdc6cd7b2ef03d96cb2ca936",
+  "scope": "Pure policy plus existing Registry client, wire/schema and module boundary regression; declared metadata only, no SQL/actual owner/admission/provider claim",
+  "limits": [
+    "Pure digest validation is not owner authentication",
+    "Runtime compilation and successor admission remain separate",
+    "No scientific equivalence or benchmark gain",
+    "Initial fixture lacked required descriptor examples; fixed and reran all cases"
+  ]
+}
