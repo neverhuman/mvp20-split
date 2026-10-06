@@ -1,5 +1,8 @@
 # Agent Planning service boundary
 
+Package0.73 pins public supervision0.3 for the upcoming explicit checkpoint request intake. At this checkpoint existing intake/HTTP remains v1-only; no new provider or graph authority.
+
+
 - Version: Planning0.72.0; public Planning0.9.0 and supervision0.2.0; owned migration head0015.
 - Reviewed: `2026-10-05 16:09:00` (America/Chicago). BP-07.01/.02/.03 accepted within deterministic/synthetic scope.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.

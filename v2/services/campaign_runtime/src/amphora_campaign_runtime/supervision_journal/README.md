@@ -1,5 +1,8 @@
 # Supervisor journal
 
+Runtime0.31 adds separate CheckpointFrame with private frame.v2 and explicit CheckpointRequest. Original RequestFrame.from_bytes stays v1-only. Pure v2 reconstruction binds named fields, all observation bytes and original Planning context; tampering and profile reinterpretation reject. Journal SQL and delivery still need explicit version dispatch before these frames can be stored. No admission/checkpoint/effect claim.
+
+
 Implementation: Runtime0.28/runtime0020; immutable frames/series and atomic request/outbox storage under BP-07.04/B1.03a?d, plus fenced delivery history and immutable response recording. Independent installed-process recovery is verified; transports and decision acceptance remain later gates.
 
 `RequestFrame.capture` binds the public supervisor request to original byte-owned Runtime observations and the configured Planning actor. It records the separate preparing Runtime actor. `from_bytes` revalidates the private `runtime-supervision-request-frame.v1` profile, canonical JSON/base64 and all existing request/observation hashes. Limits: 16 MiB per frame, existing 256 KiB request, 256 observations, 1 MiB per observation and 8 MiB combined state/output. Returned documents are fresh projections; bytes own retained state.

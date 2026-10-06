@@ -1,5 +1,12 @@
 """Supervisor transport records; Runtime alone grants decision authority."""
 
+from .checkpoints import (
+    CheckpointRequest,
+    CheckpointSnapshot,
+    InvokeCheckpoint,
+    MaterializationCheckpoint,
+    parse_checkpoint_command,
+)
 from .commands import (
     SupervisionCommandReceipt,
     SupervisionCommit,
@@ -32,8 +39,12 @@ __all__ = [
     'AcceptedDecision',
     'AppliedInputs',
     'CancelSupervision',
+    'CheckpointRequest',
+    'CheckpointSnapshot',
     'ContinuedUnchanged',
     'EffectiveInputChange',
+    'InvokeCheckpoint',
+    'MaterializationCheckpoint',
     'PendingDecision',
     'RetainedProposal',
     'SupervisionCommandReceipt',
@@ -50,5 +61,6 @@ __all__ = [
     'SupervisionResponse',
     'SupervisionSnapshot',
     'TerminalDecision',
+    'parse_checkpoint_command',
     'parse_supervision_command',
 ]

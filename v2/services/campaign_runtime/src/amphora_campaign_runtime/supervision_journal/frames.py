@@ -3,7 +3,7 @@
 import base64
 import hashlib
 from dataclasses import dataclass
-from typing import Annotated, Literal
+from typing import Annotated, ClassVar, Literal
 
 from amphora_contracts_core import Identifier, WireModel
 from amphora_contracts_graph_runtime import GraphNodeViewV3
@@ -38,23 +38,25 @@ def decode(value):
 @dataclass(frozen=True)
 class RequestFrame:
     canonical: bytes
+    record_type: ClassVar = FrameRecord
+    binding_type: ClassVar = SupervisionRequestBinding
+    profile: ClassVar = 'runtime-supervision-request-frame.v1'
 
     def __post_init__(self):
         require(type(self.canonical) is bytes and len(self.canonical) <= 16777216, 'frame_size')
-        record = FrameRecord.model_validate_json(self.canonical)
+        record = self.record_type.model_validate_json(self.canonical)
         # Exact reserialization also rejects duplicates, whitespace and alternate numeric spellings.
         require(encoded(record) == self.canonical, 'noncanonical_frame')
         footprint = self.footprint()
-        SupervisionRequestBinding.bind(record.request, footprint,
-                                      actor_id=record.request.planning_request.actor_id)
+        self.binding_type.bind(record.request, footprint, actor_id=record.request.planning_request.actor_id)
 
     @classmethod
     def capture(cls, request, footprint, *, prepared_by, planning_actor):
-        bound = SupervisionRequestBinding.bind(request, footprint, actor_id=planning_actor)
+        bound = cls.binding_type.bind(request, footprint, actor_id=planning_actor)
         observations = tuple(StoredObservation(node=item.view,
             state=base64.b64encode(item.state_json).decode('ascii'),
             outputs=base64.b64encode(item.outputs_json).decode('ascii')) for item in footprint.observations)
-        return cls(encoded(FrameRecord(profile='runtime-supervision-request-frame.v1',
+        return cls(encoded(cls.record_type(profile=cls.profile,
             prepared_by=prepared_by, request=bound.document(), observations=observations)))
 
     @classmethod
@@ -62,7 +64,7 @@ class RequestFrame:
         return cls(raw)
 
     def document(self):
-        return FrameRecord.model_validate_json(self.canonical)
+        return self.record_type.model_validate_json(self.canonical)
 
     def footprint(self):
         record = self.document()

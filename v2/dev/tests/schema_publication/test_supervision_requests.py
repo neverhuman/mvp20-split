@@ -20,3 +20,10 @@ def test_response_roots_preserve_all_520_request_predecessors():
     assert pins['baseline'] == '268a5f06' and len(pins['schemas']) == 520
     for name, digest in pins['schemas'].items():
         assert hashlib.sha256((ROOT / 'contracts/schemas' / name).read_bytes()).hexdigest() == digest
+
+
+def test_checkpoint_roots_preserve_all_528_predecessors():
+    pins = json.loads((ROOT / 'contracts/supervision/tests/fixtures/checkpoint_predecessor_schema_pins.json').read_bytes())
+    assert pins['baseline'] == '80aafa37' and len(pins['schemas']) == 528
+    for name, digest in pins['schemas'].items():
+        assert hashlib.sha256((ROOT / 'contracts/schemas' / name).read_bytes()).hexdigest() == digest

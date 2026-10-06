@@ -1,5 +1,8 @@
 # Supervisor public contracts
 
+Version0.3 adds explicit CheckpointRequest/Snapshot (schema_version2), InvokeCheckpoint and MaterializationCheckpoint. planning.supervision.request.v2 has its own parse_checkpoint_command; the original parser remains closed. Wire shape declares fields; Runtime alone verifies retained plan, scalar eligibility and acceptance.536 published schemas preserve528 predecessor bytes. tests/test_checkpoints.py pins exact request/command fixtures; journal frames remain private Runtime fixtures.
+
+
 Version0.2.0. Runtime owns decision authority; Planning owns context/provider attempts and accounting. This independent package composes existing public Core, Graph Runtime and Planning records without a reverse dependency from Graph Runtime to Planning. No provider SDK, persistence, domain algorithm, credential or endpoint belongs here.
 
 SupervisionSnapshot transports original cut, bounded concrete targets, selected node views/state/output hashes and separate footprint/read-set digests. SupervisionRequest groups Runtime decision/checkpoint/policy identity, that snapshot, original Planning request/digest, absolute Unix-millisecond deadline and bounded lineage. DTO validation does not verify hashes, stored membership, current scope/grants, admitted policy or budgets. Runtime supervision_requests owns projection and cross-record binding; the accepting owner must rederive current state.

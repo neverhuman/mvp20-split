@@ -1,5 +1,8 @@
 # Runtime supervisor request binding
 
+Runtime0.31 adds CheckpointExport and CheckpointRequestBinding for footprint/request v2. Original ScopeExport/SupervisionRequestBinding remain v1-only. Shared context/scope/actor/lineage checks preserve original byte semantics; cross-profile export is rejected. New records are not an execution grant.
+
+
 - Owner: Runtime BP-07.04/B1.02a; Runtime0.22;62 scoped/wire/predecessor/publication cases pass;54 statements/4 branches100%. Independent combined exchange proof passed B1.02c:265 initial/105 replacement cases,162 unchanged predecessor Runtime files; no SQL or accepted-effect claim.
 - Architecture: [Graph Runner](../../../../../docs/Architecture/System/Graph_Runner.md).
 - Public transport: contracts/supervision; [exchange design](../../../../../docs/Build%20Plans/BP-07/BP-07.04%20Supervisor%20exchange%20contracts.md).

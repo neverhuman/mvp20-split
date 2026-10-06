@@ -3,11 +3,12 @@
 import hashlib
 import json
 from dataclasses import dataclass
+from typing import ClassVar
 
-from amphora_contracts_supervision import SupervisionRequest
+from amphora_contracts_supervision import CheckpointRequest, SupervisionRequest
 
 from ..supervision_scope.observations import require
-from .projection import ScopeExport
+from .projection import CheckpointExport, ScopeExport
 
 
 def encoded(model):
@@ -18,12 +19,14 @@ def encoded(model):
 @dataclass(frozen=True)
 class SupervisionRequestBinding:
     canonical: bytes
+    record_type: ClassVar = SupervisionRequest
+    export_type: ClassVar = ScopeExport
 
     @classmethod
     def bind(cls, request, footprint, *, actor_id):
-        record = SupervisionRequest.model_validate_json(request.model_dump_json())
+        record = cls.record_type.model_validate_json(request.model_dump_json())
         original, context, cut = record.planning_request, record.planning_request.context, footprint.cut
-        require(record.snapshot == ScopeExport(footprint).document(), 'scope_snapshot_mismatch')
+        require(record.snapshot == cls.export_type(footprint).document(), 'scope_snapshot_mismatch')
         require(record.reference.scope == cut.scope and record.reference.run_id == cut.run_id,
                 'decision_reference_mismatch')
         require(original.actor_id == actor_id, 'planning_actor_mismatch')
@@ -55,4 +58,9 @@ class SupervisionRequestBinding:
         return hashlib.sha256(self.canonical).hexdigest()
 
     def document(self):
-        return SupervisionRequest.model_validate_json(self.canonical)
+        return self.record_type.model_validate_json(self.canonical)
+
+
+class CheckpointRequestBinding(SupervisionRequestBinding):
+    record_type = CheckpointRequest
+    export_type = CheckpointExport

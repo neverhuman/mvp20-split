@@ -837,3 +837,8 @@ B1 committed/pushed270eb7a1. B2.01 source review confirmed Invoke inputs are Art
 ## 2026-10-05 19:24:23 ? Approved checkpoint correction / B2.01a
 
 Owner approved parameter materialization checkpoints. Runtime0.30 pure v2 targets/footprints verified with66 scope/request cases and34 target/boundary cases;197 statements22 branches100%,Ruff passed after import formatting repair. B2.01a100%,b/c/d0%; B2.01=25%,B2=8.33%;child27.08%,Build36.11%,Acceptance0%;parent65.42%,13/20. Existing command/schema/migration profiles unchanged. Next B2.01b public request/frame profiles and compatibility.
+
+
+## 2026-10-05 19:34:36 ? B2.01b.i versioned exchange verified
+
+Public supervision0.3/Runtime0.31/Planning0.73;144 contract/frame/schema cases and31 focused/boundary cases pass.536 schemas preserve528 predecessors. B2.01b.i100%,ii/iii/iv0%;b25%,B2.01=31.25%,B2=10.42%;child27.60%,Build36.81%,Acceptance0%;parent65.52%,13/20. Extracted detailed child history to its same-directory companion to keep the canonical tracker concise. Next journal dispatch/forward migrations.

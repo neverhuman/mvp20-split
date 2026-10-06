@@ -1,6 +1,8 @@
 # Campaign Runtime
 
-Current package0.30.0 adds versioned pure materialization checkpoint footprints; no admission/execution effect yet. See [scope boundary](src/amphora_campaign_runtime/supervision_scope/README.md).
+Current package0.31.0 adds versioned public checkpoint exchange and private frame reconstruction (not journal/HTTP integration yet).
+
+Package0.30.0 adds versioned pure materialization checkpoint footprints; no admission/execution effect yet. See [scope boundary](src/amphora_campaign_runtime/supervision_scope/README.md).
 
 Package0.29.0 adds [bounded Planning request client](src/amphora_campaign_runtime/supervision_client/README.md). Separate guarded submission, original receipt lookup and exact readback preserve uncertain-write semantics with no automatic retry.64 client/receipt and12 boundary cases pass;146 statements30 branches94%. No migration/schema change or autonomous dispatch claim.
 
