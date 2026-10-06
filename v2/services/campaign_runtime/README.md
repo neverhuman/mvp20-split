@@ -1,5 +1,7 @@
 # Campaign Runtime
 
+Package0.35 adds an immutable exact policy catalog and pins public supervision0.4. Atomic admission integration remains pending.
+
 Current package0.34.0 adds the pure [reviewed policy boundary](src/amphora_campaign_runtime/supervision_policy/README.md). Admission pinning and execution effects remain subsequent gates; runtime0021 and public contracts are unchanged.
 
 Package0.33.0 adds explicit CheckpointPlanningClient for /v2 exchange; no automatic version fallback.

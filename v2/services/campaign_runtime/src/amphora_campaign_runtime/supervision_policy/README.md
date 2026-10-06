@@ -9,3 +9,5 @@ Runtime-private pure eligibility boundary for BP-07.04 B2.01c.i. Design: [admitt
 Records are private DTOs, not public transport. No SQL, network, credentials, provider selection, admission, active-run mutation or execution acceptance occurs here. Admission pinning, runtime membership checks, atomic checkpoint creation and ceiling consumption are subsequent integration gates. Canonical bytes do not confer authority to run a model or accept its result.
 
 Replacement acceptance: module-owned tests must preserve exact range edges, type/unit rejection, plan identity, canonical reconstruction, duplicate rejection and occurrence selection. Run `dev/run_tests.py --module runtime --area supervision_policy` using the development environment; tests live in `tests/supervision_policy`. Public predecessor contracts remain unchanged.
+
+`PolicyCatalog` selects only an exact scope/plan/policy identity, owns reconstructed immutable entries and rejects duplicate policies. Missing selections fail closed; configuration changes do not supply an implicit latest-policy fallback.

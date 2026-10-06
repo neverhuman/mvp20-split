@@ -1,5 +1,7 @@
 # Agent Planning service boundary
 
+Package0.76 updates the compatible public supervision dependency to0.4; no Planning behavior or migration change.
+
 Current package0.75 exposes explicit v2 checkpoint HTTP with profile-isolated readback.
 
 Package0.74/planning0016 supports versioned checkpoint journal intake and original receipt replay; no provider attempt side effect.

@@ -4,17 +4,17 @@ Read this first after compression. Refreshed 2026-10-05 20:19:49 (America/Chicag
 
 ## Resume
 
-Owner approved scalar materialization checkpoints; continue until needed. B2.01b committed/pushed ac5f290c. B2.01c.i COMPLETE verified, ready commit/push; next **B2.01c.ii atomic admission pinning**, then c.iii checkpoint creation/target-only holds. Runtime0.34/runtime0021, Planning0.75/planning0016. New pure supervision_policy owns canonical policy identity, exact type/unit bounds and authored/concrete occurrence selection.111 focused/legacy/boundary cases13.85s;171 statements26 branches100%;Ruff passed. Initial fixture tuple errors fixed. No tests/hosts running. Evidence Checkpoint_Policy.json.
+Continue until needed. c.i pushed8df2cb5c. c.ii.a exact supervised admission contract/catalog COMPLETE, ready commit/push. Current **c.ii.b atomic policy pin storage**, next c.ii.c admission integration/SQL proof, then c.iii checkpoint slots/holds. Read admitted checkpoint policy design.132 cases39.62s,new38 statements12 branches100%,aggregate99%;538 schemas preserve536. No tests running. Runtime0.35/runtime0021;Planning0.76/planning0016;publicSupervision0.4. Planning change dependency-only.
 
-Read BP-07.04 Admitted checkpoint policy.md before integration. Existing admission immediately issues ready Invoke; pin before issuance. Coordinator must hold only targets before invocation or binding_intents, including nested occurrences, without second run-lock transaction. B2.02 owns effective fields/winners; conversion opening and revalidation must share resolver. No live provider needed for deterministic work.
+New graph.admit_supervised command numeric-v2 carries existing AdmitGraphRun plus exact policy_sha256. Original parser unchanged. PolicyCatalog exact scope/plan/policy, no latest fallback. Need append-only run policy table, shared transaction storage, original replay before catalog; pin before initial issuance and guard selected targets until checkpoint processing integrated. No public route/live provider needed yet.
 
 ## Canonical progress
 
-Parent65.97%,13/20 closed;child29.86%,Build39.81%,Acceptance0%,1/4. B1=100%;B2=19.44%(.01=58.33%,.02/.03=0%);B3/V1=0%. B2.01 a/b100%,c33.33%,d0%;c.i100%,ii/iii0%. Current c.ii,next c.iii. Trackers/history synchronized.
+Parent66.02%,13/20;child30.09%,Build40.12%,Acceptance0%,1/4. B1=100%;B2=20.37%(.01=61.11%,.02/.03=0%);B3/V1=0%. B2.01 a/b100%,c44.44%,d0%;c.i100%,ii33.33%,iii0%;ii.a100%,b/c0%. Current ii.b. Canonical histories/evidence synchronized.
 
 ## Active boundaries and versions
 
-Runtime0.34/runtime0021; Planning0.75/planning0016; public supervision0.3; graph-runtime0.13; public Planning0.9;536 schema files. Actual DB heads are0021/0016. **NEVER run Runtime<=0.31 or Planning<=0.73 migrators.** Data0.29/artifacts0012 (never<=0.25 migrators), Research0.34/research0013 (never<=0.33), Knowledge0.18, Registry0.1.
+Runtime0.35/runtime0021; Planning0.76/planning0016; public supervision0.4; graph-runtime0.13; public Planning0.9;536 schema files. Actual DB heads are0021/0016. **NEVER run Runtime<=0.31 or Planning<=0.73 migrators.** Data0.29/artifacts0012 (never<=0.25 migrators), Research0.34/research0013 (never<=0.33), Knowledge0.18, Registry0.1.
 
 Invoke inputs remain Artifact-only. Owner approved scalar checkpoints on named inline fields of `artifact_materialize` before any conversion intent, reservation or publication. Keep original plans/Artifacts/issued inputs immutable. Future admission policy must bind types/units/bounds and concrete occurrences; effective field resolution must be shared by conversion opening and source-cut revalidation. Pure scope/frame support is not admission or execution acceptance.
 

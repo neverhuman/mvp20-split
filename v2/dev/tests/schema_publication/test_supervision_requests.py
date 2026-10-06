@@ -27,3 +27,10 @@ def test_checkpoint_roots_preserve_all_528_predecessors():
     assert pins['baseline'] == '80aafa37' and len(pins['schemas']) == 528
     for name, digest in pins['schemas'].items():
         assert hashlib.sha256((ROOT / 'contracts/schemas' / name).read_bytes()).hexdigest() == digest
+
+
+def test_admission_root_preserves_all_536_predecessors():
+    pins = json.loads((ROOT / 'contracts/supervision/tests/fixtures/admission_predecessor_schema_pins.json').read_bytes())
+    assert pins['baseline'] == '8df2cb5c' and len(pins['schemas']) == 536
+    for name, digest in pins['schemas'].items():
+        assert hashlib.sha256((ROOT / 'contracts/schemas' / name).read_bytes()).hexdigest() == digest

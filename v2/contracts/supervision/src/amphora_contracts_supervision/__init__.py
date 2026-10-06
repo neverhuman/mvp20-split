@@ -1,5 +1,6 @@
 """Supervisor transport records; Runtime alone grants decision authority."""
 
+from .admission import AdmitSupervisedGraph, parse_supervised_admission
 from .checkpoints import (
     CheckpointRequest,
     CheckpointSnapshot,
@@ -37,6 +38,7 @@ from .responses import CancelSupervision, SupervisionResponse
 
 __all__ = [
     'AcceptedDecision',
+    'AdmitSupervisedGraph',
     'AppliedInputs',
     'CancelSupervision',
     'CheckpointRequest',
@@ -62,5 +64,6 @@ __all__ = [
     'SupervisionSnapshot',
     'TerminalDecision',
     'parse_checkpoint_command',
+    'parse_supervised_admission',
     'parse_supervision_command',
 ]

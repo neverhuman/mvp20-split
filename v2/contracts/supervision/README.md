@@ -1,5 +1,7 @@
 # Supervisor public contracts
 
+Package0.4 adds AdmitSupervisedGraph and explicit numeric-v2 graph.admit_supervised parser. The command pins an exact policy digest; original graph admission parsers remain closed. No admission execution is granted by this DTO.
+
 Version0.3 adds explicit CheckpointRequest/Snapshot (schema_version2), InvokeCheckpoint and MaterializationCheckpoint. planning.supervision.request.v2 has its own parse_checkpoint_command; the original parser remains closed. Wire shape declares fields; Runtime alone verifies retained plan, scalar eligibility and acceptance.536 published schemas preserve528 predecessor bytes. tests/test_checkpoints.py pins exact request/command fixtures; journal frames remain private Runtime fixtures.
 
 

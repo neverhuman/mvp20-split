@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-10-05 20:23:57",
+  "task": "B2.01c.ii.a",
+  "tests": 132,
+  "seconds": 39.62,
+  "new_statements": 38,
+  "new_branches": 12,
+  "new_coverage": 100,
+  "combined_coverage": 99,
+  "schemas": 538,
+  "unchanged_predecessors": 536,
+  "limits": "No admission integration or policy SQL yet; remaining aggregate gap is predecessor checkpoint encoding rejection."
+}
