@@ -1,0 +1,12 @@
+# Evaluation reuse evidence
+
+- Owner: BP-08.03/B2.03b.ii; Research0.39/research_0015; verified 2026-10-06 14:50:42;38checks,119statements8branches100%.
+- Design: [Representation and fitness](../../../../../docs/Architecture/Campaigns/Representation_Fitness.md#producer-backed-synthetic-reuse).
+
+ProducerReader authenticates the public Runtime accepted-producer endpoint through SDK transport. It accepts exact scoped run/completion selections, enforces three reads per fresh resolution (five-second transport timeouts), no redirects/proxies/retries/cross-request cache, and parses strict bounded JSON. A scoped canonical successful completion must bind the original activation/invocation. Runtime denies remain access denial; missing producer is invalid evidence; transient/protocol failures remain unavailable. Never dispatch, claim, renew or read Runtime tables.
+
+ProducedArtifact enforces expected exact tool binding, single parameters/result ports, exact source Artifact, no checkpoints and coherent scopes. CanonicalEvidence reads current Data bytes, verifies exact public direct-representation/output schemas and receipt scope, semantic/equivalence pins, source-byte and canonical digests. EvaluationEvidence binds the actual identity input and synthetic receipt to the configured evaluation policy and original tool/input. These are private evidence objects, not caller-supplied authorization or a reuse grant. Shape-valid DTOs alone cannot authenticate a producer; production callers must use ProducerReader and a fresh AssessmentDataReader. No scientific inference or policy defaults are introduced.
+
+Current scope is evidence primitives only. Configured reuse policy, owner candidate/target eligibility and synthesis resolution, current reads of all context dependencies, immutable decision persistence and public reuse API remain required before a cache hit is possible. Existing fitness projections continue to expose reuse_authority=none. There is no new migration or route in this checkpoint. Later historical decision reads must survive current-source denial, while new attempts recheck current rights.
+
+Tests/evaluation_reuse owns scripted Runtime/Data peers, proof forgery/cross-binding failures and narrow golden evidence. These tests cannot establish actual peer operation; B2.03b.iii must exercise installed Runtime/tool/Data/Research processes. Replacement preserves public input/output pins and explicit unavailable/denied distinctions. Source content and credentials must not appear in error messages.

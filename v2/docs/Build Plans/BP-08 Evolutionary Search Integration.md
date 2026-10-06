@@ -3,14 +3,14 @@
 ## Canonical Parent Tracker
 
 - Status: primary_active; BP-08.03/B2.03b.ii synthetic evaluation and producer-proof reuse.
-- Last refreshed: `2026-10-06 14:45:50` (America/Chicago).
+- Last refreshed: `2026-10-06 14:50:42` (America/Chicago).
 - Owner/scope: Search domain modules and independently packaged scientific operators.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 iteration/checkpoint and BP-06 evidence; BP-07 before LLM-guided topology acceptance.
 - Implementation: **49.44%**, 9/20 closed child deliveries plus eight ninths of B2; each parent phase mirrors its child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
 - Current implementation task: BP-08.03/B2.03b.ii synthetic evaluation and producer-proof reuse; BP-08.01/.02 closed.
-- Latest checkpoint: Synthetic digest evaluator0.1 and public receipt0.1 verified: 54 checks in30.53s; kernel/profile/adapter/capability103statements22branches100%; CLI subprocess checks passed but parent coverage excludes subprocess (aggregate69%). 608schemas preserve606 predecessors. Initial compatibility fixture omitted34 versioned schemas; corrected full baseline, no production schema change. Actual Runtime/Data/Research reuse and image qualification remain unproven. B2.03b.ii continues with Research proof consumer/reuse; percentages unchanged.
+- Latest checkpoint: Research0.39 producer/evidence primitives verified: 38 checks in12.96s,119statements8branches100%. Scripted Runtime/Data peers prove exact scoped canonical-success/tool/input/output/schema/hash binding and distinct denial/missing/unavailable errors; no real-peer or reuse authorization claim. No migration/API. Reuse owner policy/store/route still required in B2.03b.ii; percentages unchanged.
 - Demonstrated behavior: numeric generation graphs, actual Runtime/Data/Registry APIs, pinned tool images, independent package replacement and worker/Runtime recovery. Representation/topology, scientific and target-host evidence remain successors.
 - Blockers: direct v1 extraction unverified (license labels/toolchain); authorized independent numeric implementation proceeds. No owner decision blocks current scope.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.

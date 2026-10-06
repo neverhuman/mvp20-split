@@ -1,8 +1,8 @@
 [project]
 name = "amphora-research"
-version = "0.38.0"
+version = "0.39.0"
 requires-python = ">=3.12,<3.13"
-dependencies = ["amphora-contracts-fitness==0.1.0", "amphora-contracts-evaluation-identity==0.1.0", "amphora-contracts-candidate-spaces==0.1.0", "amphora-contracts-research-views==0.1.0", "amphora-contracts-graph-runtime==0.13.0", "amphora-tool-protocol==0.2.0", "amphora-contracts-knowledge==0.8.0", "uvicorn>=0.34,<1", "fastapi>=0.115,<1", "pydantic>=2.12,<3", "sqlalchemy>=2,<3", "psycopg[binary]>=3,<4", "alembic>=1.16,<2", "amphora-contracts-artifacts==0.2.0", "amphora-contracts-core==0.1.0", "amphora-contracts-research==0.14.0"]
+dependencies = ["amphora-contracts-execution-proofs==0.1.0", "amphora-contracts-candidate-canonicalization==0.1.0", "amphora-contracts-synthetic-evaluation==0.1.0", "amphora-contracts-tools==0.1.0", "amphora-contracts-fitness==0.1.0", "amphora-contracts-evaluation-identity==0.1.0", "amphora-contracts-candidate-spaces==0.1.0", "amphora-contracts-research-views==0.1.0", "amphora-contracts-graph-runtime==0.13.0", "amphora-tool-protocol==0.2.0", "amphora-contracts-knowledge==0.8.0", "uvicorn>=0.34,<1", "fastapi>=0.115,<1", "pydantic>=2.12,<3", "sqlalchemy>=2,<3", "psycopg[binary]>=3,<4", "alembic>=1.16,<2", "amphora-contracts-artifacts==0.2.0", "amphora-contracts-core==0.1.0", "amphora-contracts-research==0.14.0"]
 
 [project.scripts]
 amphora-research = "amphora_research.__main__:main"
@@ -15,6 +15,10 @@ build-backend = "hatchling.build"
 packages = ["src/amphora_research"]
 
 [tool.uv.sources]
+amphora-contracts-execution-proofs = { path = "../../contracts/execution_proofs", editable = true }
+amphora-contracts-candidate-canonicalization = { path = "../../contracts/candidate_canonicalization", editable = true }
+amphora-contracts-synthetic-evaluation = { path = "../../contracts/synthetic_evaluation", editable = true }
+amphora-contracts-tools = { path = "../../contracts/tools", editable = true }
 amphora-contracts-fitness = { path = "../../contracts/fitness", editable = true }
 amphora-contracts-evaluation-identity = { path = "../../contracts/evaluation_identity", editable = true }
 amphora-contracts-candidate-spaces = { path = "../../contracts/candidate_spaces", editable = true }
@@ -27,4 +31,4 @@ amphora-contracts-core = { path = "../../contracts/core", editable = true }
 amphora-contracts-research = { path = "../../contracts/research", editable = true }
 
 [tool.amphora]
-public-imports = ["amphora-contracts-fitness", "amphora-contracts-evaluation-identity", "amphora-contracts-candidate-spaces", "amphora-contracts-research-views", "amphora-contracts-graph-runtime", "amphora-tool-protocol", "amphora-contracts-knowledge", "amphora-contracts-artifacts", "amphora-contracts-core", "amphora-contracts-research"]
+public-imports = ["amphora-contracts-execution-proofs", "amphora-contracts-candidate-canonicalization", "amphora-contracts-synthetic-evaluation", "amphora-contracts-tools", "amphora-contracts-fitness", "amphora-contracts-evaluation-identity", "amphora-contracts-candidate-spaces", "amphora-contracts-research-views", "amphora-contracts-graph-runtime", "amphora-tool-protocol", "amphora-contracts-knowledge", "amphora-contracts-artifacts", "amphora-contracts-core", "amphora-contracts-research"]

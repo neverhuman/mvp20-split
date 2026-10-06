@@ -51,6 +51,21 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-contracts-candidate-canonicalization"
+version = "0.1.0"
+source = { editable = "../../contracts/candidate_canonicalization" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-candidate-spaces"
 version = "0.1.0"
 source = { editable = "../../contracts/candidate_spaces" }
@@ -124,6 +139,23 @@ dependencies = [
 requires-dist = [
     { name = "amphora-contracts-core", editable = "../../contracts/core" },
     { name = "amphora-contracts-research", editable = "../../contracts/research" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
+name = "amphora-contracts-execution-proofs"
+version = "0.1.0"
+source = { editable = "../../contracts/execution_proofs" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-runtime" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-runtime", editable = "../../contracts/runtime" },
     { name = "pydantic", specifier = ">=2.12,<3" },
 ]
 
@@ -248,6 +280,23 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-contracts-synthetic-evaluation"
+version = "0.1.0"
+source = { editable = "../../contracts/synthetic_evaluation" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-evaluation-identity" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-evaluation-identity", editable = "../../contracts/evaluation_identity" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-tools"
 version = "0.1.0"
 source = { editable = "../../contracts/tools" }
@@ -266,19 +315,23 @@ requires-dist = [
 
 [[package]]
 name = "amphora-research"
-version = "0.38.0"
+version = "0.39.0"
 source = { editable = "." }
 dependencies = [
     { name = "alembic" },
     { name = "amphora-contracts-artifacts" },
+    { name = "amphora-contracts-candidate-canonicalization" },
     { name = "amphora-contracts-candidate-spaces" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-evaluation-identity" },
+    { name = "amphora-contracts-execution-proofs" },
     { name = "amphora-contracts-fitness" },
     { name = "amphora-contracts-graph-runtime" },
     { name = "amphora-contracts-knowledge" },
     { name = "amphora-contracts-research" },
     { name = "amphora-contracts-research-views" },
+    { name = "amphora-contracts-synthetic-evaluation" },
+    { name = "amphora-contracts-tools" },
     { name = "amphora-tool-protocol" },
     { name = "fastapi" },
     { name = "psycopg", extra = ["binary"] },
@@ -291,14 +344,18 @@ dependencies = [
 requires-dist = [
     { name = "alembic", specifier = ">=1.16,<2" },
     { name = "amphora-contracts-artifacts", editable = "../../contracts/artifacts" },
+    { name = "amphora-contracts-candidate-canonicalization", editable = "../../contracts/candidate_canonicalization" },
     { name = "amphora-contracts-candidate-spaces", editable = "../../contracts/candidate_spaces" },
     { name = "amphora-contracts-core", editable = "../../contracts/core" },
     { name = "amphora-contracts-evaluation-identity", editable = "../../contracts/evaluation_identity" },
+    { name = "amphora-contracts-execution-proofs", editable = "../../contracts/execution_proofs" },
     { name = "amphora-contracts-fitness", editable = "../../contracts/fitness" },
     { name = "amphora-contracts-graph-runtime", editable = "../../contracts/graph_runtime" },
     { name = "amphora-contracts-knowledge", editable = "../../contracts/knowledge" },
     { name = "amphora-contracts-research", editable = "../../contracts/research" },
     { name = "amphora-contracts-research-views", editable = "../../contracts/research_views" },
+    { name = "amphora-contracts-synthetic-evaluation", editable = "../../contracts/synthetic_evaluation" },
+    { name = "amphora-contracts-tools", editable = "../../contracts/tools" },
     { name = "amphora-tool-protocol", editable = "../../sdk/tool_protocol" },
     { name = "fastapi", specifier = ">=0.115,<1" },
     { name = "psycopg", extras = ["binary"], specifier = ">=3,<4" },
