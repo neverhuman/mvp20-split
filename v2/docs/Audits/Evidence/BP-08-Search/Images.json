@@ -1,0 +1,810 @@
+{
+  "checkpoint": "2026-10-06 12:17:13",
+  "scope": "BP-08.02/V1.01",
+  "source": "v2/.test-results/numeric-images-20261006a/manifest.json",
+  "source_sha256": "9ba571ef04aadca0a3812e51eacf9a4ebf4b2ae0568ee83f45091a46cf8e053b",
+  "base": "python@sha256:f77ac9e44ae96ef2c90b8053ea08c31f8be030f824196b0ae4db6d462c84e51f",
+  "platform": "linux/amd64",
+  "tools": [
+    {
+      "package": "amphora-evolution-search",
+      "module": "amphora_evolution_search",
+      "image_manifest_digest": "sha256:f012f3a0b1b96031edc024952d084f0a16ee48fc8b2f1bd629db652d0d19ae99",
+      "image_config_digest": "sha256:fa871059d72d7935c1a49511ee48213e0a1699ebc342b9c29d2aa80f0ea8fcde",
+      "local_wheels": {
+        "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+        "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+        "amphora_contracts_search_steps-0.1.0-py3-none-any.whl": "f94ad77e69708f0fc51a7a3e0660779a15cf972afe8c1b0dcb6cd24cc190d083",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+        "amphora_evolution_search-0.4.0-py3-none-any.whl": "09e069aa5a2e72b1af7bf55b19b343169005c17b5822308384491fdefa95ab00",
+        "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+      },
+      "offline_wheels": {
+        "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+        "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+        "amphora_contracts_search_steps-0.1.0-py3-none-any.whl": "f94ad77e69708f0fc51a7a3e0660779a15cf972afe8c1b0dcb6cd24cc190d083",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+        "amphora_evolution_search-0.4.0-py3-none-any.whl": "09e069aa5a2e72b1af7bf55b19b343169005c17b5822308384491fdefa95ab00",
+        "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5",
+        "annotated_types-0.8.0-py3-none-any.whl": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0",
+        "pydantic-2.13.5-py3-none-any.whl": "346a034f080da3755d8e9cb5e00e8b07de1d39e4f6e2c87d8ab7cafa0b269a73",
+        "pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl": "0fc5be0abd4a407e200d844b404e33639a554e7bd0d448e7b9ae181be4789ac2",
+        "typing_extensions-4.16.0-py3-none-any.whl": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+        "typing_inspection-0.4.4-py3-none-any.whl": "65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147"
+      },
+      "descriptors": {
+        "collect": {
+          "anti_examples": [
+            "No hidden generation loop, scientific validation or Runtime acceptance."
+          ],
+          "authority_ceiling": "synthetic_only",
+          "checkpoint": {
+            "mode": "none",
+            "readable_schema_sha256": []
+          },
+          "egress": {
+            "mode": "deny"
+          },
+          "examples": [
+            "One explicit graph step with pinned synthetic numerical inputs."
+          ],
+          "reproducibility": "deterministic",
+          "resources": {
+            "architectures": [
+              "x86_64"
+            ],
+            "cpu_millicores": 1000,
+            "gpu_count": 0,
+            "max_batch_size": 1,
+            "max_parallel_invocations": 1,
+            "memory_mib": 256,
+            "operating_systems": [
+              "linux"
+            ],
+            "timeout_seconds": 60
+          },
+          "schema_version": "1",
+          "tool": {
+            "applicability": [
+              "synthetic-continuous-numeric-search"
+            ],
+            "binding": {
+              "capability_id": "numeric.search-collect",
+              "contract_version": "1",
+              "image_sha256": "f012f3a0b1b96031edc024952d084f0a16ee48fc8b2f1bd629db652d0d19ae99",
+              "release": "0.4.0"
+            },
+            "checkpoint_schema": null,
+            "inputs": [
+              {
+                "name": "parameters",
+                "representation": "search-step.collected",
+                "required": true,
+                "schema_ref": {
+                  "schema_id": "search-step.collected",
+                  "sha256": "4863a08e040f46f35fbbd5b308ec2709238fb9e8802a8b434a6fefd2e5b90369",
+                  "version": "1"
+                },
+                "unit": "1"
+              }
+            ],
+            "outputs": [
+              {
+                "name": "result",
+                "representation": "search.checkpoint",
+                "required": true,
+                "schema_ref": {
+                  "schema_id": "search.checkpoint",
+                  "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184",
+                  "version": "1"
+                },
+                "unit": "1"
+              }
+            ],
+            "purpose": "Reduce the complete frozen result set and select survivors.",
+            "schema_version": "1",
+            "side_effects": "pure"
+          }
+        },
+        "requests": {
+          "anti_examples": [
+            "No hidden generation loop, scientific validation or Runtime acceptance."
+          ],
+          "authority_ceiling": "synthetic_only",
+          "checkpoint": {
+            "mode": "none",
+            "readable_schema_sha256": []
+          },
+          "egress": {
+            "mode": "deny"
+          },
+          "examples": [
+            "One explicit graph step with pinned synthetic numerical inputs."
+          ],
+          "reproducibility": "deterministic",
+          "resources": {
+            "architectures": [
+              "x86_64"
+            ],
+            "cpu_millicores": 1000,
+            "gpu_count": 0,
+            "max_batch_size": 1,
+            "max_parallel_invocations": 1,
+            "memory_mib": 256,
+            "operating_systems": [
+              "linux"
+            ],
+            "timeout_seconds": 60
+          },
+          "schema_version": "1",
+          "tool": {
+            "applicability": [
+              "synthetic-continuous-numeric-search"
+            ],
+            "binding": {
+              "capability_id": "numeric.search-requests",
+              "contract_version": "1",
+              "image_sha256": "f012f3a0b1b96031edc024952d084f0a16ee48fc8b2f1bd629db652d0d19ae99",
+              "release": "0.4.0"
+            },
+            "checkpoint_schema": null,
+            "inputs": [
+              {
+                "name": "parameters",
+                "representation": "search-step.context",
+                "required": true,
+                "schema_ref": {
+                  "schema_id": "search-step.context",
+                  "sha256": "856d8ddda364e4fc9160673506ae46d84dd31f4300d41d3729780df532f39485",
+                  "version": "1"
+                },
+                "unit": "1"
+              }
+            ],
+            "outputs": [
+              {
+                "name": "result",
+                "representation": "search-step.requests",
+                "required": true,
+                "schema_ref": {
+                  "schema_id": "search-step.requests",
+                  "sha256": "86da9c5a26becef427ede41a2bd15dd78598fbbb1e0f210d4e648406d9fdbc43",
+                  "version": "1"
+                },
+                "unit": "1"
+              }
+            ],
+            "purpose": "Expand frozen pending identities into evaluator requests.",
+            "schema_version": "1",
+            "side_effects": "pure"
+          }
+        },
+        "seed": {
+          "anti_examples": [
+            "No hidden generation loop, scientific validation or Runtime acceptance."
+          ],
+          "authority_ceiling": "synthetic_only",
+          "checkpoint": {
+            "mode": "none",
+            "readable_schema_sha256": []
+          },
+          "egress": {
+            "mode": "deny"
+          },
+          "examples": [
+            "One explicit graph step with pinned synthetic numerical inputs."
+          ],
+          "reproducibility": "deterministic",
+          "resources": {
+            "architectures": [
+              "x86_64"
+            ],
+            "cpu_millicores": 1000,
+            "gpu_count": 0,
+            "max_batch_size": 1,
+            "max_parallel_invocations": 1,
+            "memory_mib": 256,
+            "operating_systems": [
+              "linux"
+            ],
+            "timeout_seconds": 60
+          },
+          "schema_version": "1",
+          "tool": {
+            "applicability": [
+              "synthetic-continuous-numeric-search"
+            ],
+            "binding": {
+              "capability_id": "numeric.search-seed",
+              "contract_version": "1",
+              "image_sha256": "f012f3a0b1b96031edc024952d084f0a16ee48fc8b2f1bd629db652d0d19ae99",
+              "release": "0.4.0"
+            },
+            "checkpoint_schema": null,
+            "inputs": [
+              {
+                "name": "parameters",
+                "representation": "search.specification",
+                "required": true,
+                "schema_ref": {
+                  "schema_id": "search.specification",
+                  "sha256": "e829b92d2145b0916847b06cb6e73c4a5aea17addea8bbdd1e9706dbd1cc79a7",
+                  "version": "1"
+                },
+                "unit": "1"
+              }
+            ],
+            "outputs": [
+              {
+                "name": "result",
+                "representation": "search.checkpoint",
+                "required": true,
+                "schema_ref": {
+                  "schema_id": "search.checkpoint",
+                  "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184",
+                  "version": "1"
+                },
+                "unit": "1"
+              }
+            ],
+            "purpose": "Generate one bounded numeric initial population.",
+            "schema_version": "1",
+            "side_effects": "pure"
+          }
+        },
+        "vary": {
+          "anti_examples": [
+            "No hidden generation loop, scientific validation or Runtime acceptance."
+          ],
+          "authority_ceiling": "synthetic_only",
+          "checkpoint": {
+            "mode": "none",
+            "readable_schema_sha256": []
+          },
+          "egress": {
+            "mode": "deny"
+          },
+          "examples": [
+            "One explicit graph step with pinned synthetic numerical inputs."
+          ],
+          "reproducibility": "deterministic",
+          "resources": {
+            "architectures": [
+              "x86_64"
+            ],
+            "cpu_millicores": 1000,
+            "gpu_count": 0,
+            "max_batch_size": 1,
+            "max_parallel_invocations": 1,
+            "memory_mib": 256,
+            "operating_systems": [
+              "linux"
+            ],
+            "timeout_seconds": 60
+          },
+          "schema_version": "1",
+          "tool": {
+            "applicability": [
+              "synthetic-continuous-numeric-search"
+            ],
+            "binding": {
+              "capability_id": "numeric.search-vary",
+              "contract_version": "1",
+              "image_sha256": "f012f3a0b1b96031edc024952d084f0a16ee48fc8b2f1bd629db652d0d19ae99",
+              "release": "0.4.0"
+            },
+            "checkpoint_schema": null,
+            "inputs": [
+              {
+                "name": "parameters",
+                "representation": "search-step.context",
+                "required": true,
+                "schema_ref": {
+                  "schema_id": "search-step.context",
+                  "sha256": "856d8ddda364e4fc9160673506ae46d84dd31f4300d41d3729780df532f39485",
+                  "version": "1"
+                },
+                "unit": "1"
+              }
+            ],
+            "outputs": [
+              {
+                "name": "result",
+                "representation": "search.checkpoint",
+                "required": true,
+                "schema_ref": {
+                  "schema_id": "search.checkpoint",
+                  "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184",
+                  "version": "1"
+                },
+                "unit": "1"
+              }
+            ],
+            "purpose": "Generate one bounded numeric successor population.",
+            "schema_version": "1",
+            "side_effects": "pure"
+          }
+        }
+      },
+      "isolated_nonroot_probe": "passed"
+    },
+    {
+      "package": "amphora-synthetic-objectives",
+      "module": "amphora_synthetic_objectives",
+      "image_manifest_digest": "sha256:17dba22d2b39866fbf605a98368815d14c4cffda9c43d3bc1ead4539d497afc1",
+      "image_config_digest": "sha256:bd1dcfac62b388c2e0efb2b0ef454d9820987138048edf0d9467e23b63267aa9",
+      "local_wheels": {
+        "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+        "amphora_multi_input_worker-0.1.0-py3-none-any.whl": "2097adff2fdb7db3bc43bb49b98a97d7b6a34739a4455444c6e1951c85341904",
+        "amphora_synthetic_objectives-0.1.0-py3-none-any.whl": "544bf93ae3670f4255dcbce5ef1e8f413ffdcd61ffffe801a239ec90f89151d5",
+        "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+      },
+      "offline_wheels": {
+        "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+        "amphora_multi_input_worker-0.1.0-py3-none-any.whl": "2097adff2fdb7db3bc43bb49b98a97d7b6a34739a4455444c6e1951c85341904",
+        "amphora_synthetic_objectives-0.1.0-py3-none-any.whl": "544bf93ae3670f4255dcbce5ef1e8f413ffdcd61ffffe801a239ec90f89151d5",
+        "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5",
+        "annotated_types-0.8.0-py3-none-any.whl": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0",
+        "pydantic-2.13.5-py3-none-any.whl": "346a034f080da3755d8e9cb5e00e8b07de1d39e4f6e2c87d8ab7cafa0b269a73",
+        "pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl": "0fc5be0abd4a407e200d844b404e33639a554e7bd0d448e7b9ae181be4789ac2",
+        "typing_extensions-4.16.0-py3-none-any.whl": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+        "typing_inspection-0.4.4-py3-none-any.whl": "65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147"
+      },
+      "descriptors": {
+        "evaluate": {
+          "anti_examples": [
+            "No chemistry, biology, synthesis, laboratory, model or scientific-validity claim."
+          ],
+          "authority_ceiling": "synthetic_only",
+          "checkpoint": {
+            "mode": "none",
+            "readable_schema_sha256": []
+          },
+          "egress": {
+            "mode": "deny"
+          },
+          "examples": [
+            "cost=sum(x_i^2); distance=sum((x_i-1)^2); no hard constraints."
+          ],
+          "reproducibility": "deterministic",
+          "resources": {
+            "architectures": [
+              "x86_64"
+            ],
+            "cpu_millicores": 1000,
+            "gpu_count": 0,
+            "max_batch_size": 1,
+            "max_parallel_invocations": 1,
+            "memory_mib": 128,
+            "operating_systems": [
+              "linux"
+            ],
+            "timeout_seconds": 60
+          },
+          "schema_version": "1",
+          "tool": {
+            "applicability": [
+              "synthetic-quadratic-v1",
+              "dimensionless-finite-vectors"
+            ],
+            "binding": {
+              "capability_id": "synthetic.numeric-objectives",
+              "contract_version": "1",
+              "image_sha256": "17dba22d2b39866fbf605a98368815d14c4cffda9c43d3bc1ead4539d497afc1",
+              "release": "0.1.0"
+            },
+            "checkpoint_schema": null,
+            "inputs": [
+              {
+                "name": "parameters",
+                "representation": "search.evaluation-request",
+                "required": true,
+                "schema_ref": {
+                  "schema_id": "search.evaluation-request",
+                  "sha256": "44c7375364971f923302f83d0d6100bd2d01b8c6085d25f7195e465ccb9fbe58",
+                  "version": "1"
+                },
+                "unit": "1"
+              },
+              {
+                "name": "policy",
+                "representation": "synthetic.numeric-policy",
+                "required": true,
+                "schema_ref": {
+                  "schema_id": "synthetic.numeric-policy",
+                  "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a",
+                  "version": "1"
+                },
+                "unit": "1"
+              }
+            ],
+            "outputs": [
+              {
+                "name": "result",
+                "representation": "search.evaluation-observation",
+                "required": true,
+                "schema_ref": {
+                  "schema_id": "search.evaluation-observation",
+                  "sha256": "28b7765aa253bc93d2e050c06e4a38be09ffa1b8a8b45762ee93eaaffe37add2",
+                  "version": "1"
+                },
+                "unit": "1"
+              }
+            ],
+            "purpose": "Evaluate fixed synthetic quadratic objectives for numerical graph tests.",
+            "schema_version": "1",
+            "side_effects": "pure"
+          }
+        }
+      },
+      "isolated_nonroot_probe": "passed"
+    }
+  ],
+  "golden": {
+    "claim": "Offline image arithmetic/CLI only; Artifact references are declared fixture metadata.",
+    "final": {
+      "attempts": [
+        {
+          "candidate_id": "13b646433d29868a1860d86a4d0888655004c80ed3e0b39a7fec2505c7777c67",
+          "disposition": "proposed",
+          "draws": {
+            "end": 1,
+            "start": 0
+          },
+          "duplicate_of": null,
+          "generation": 0,
+          "genes": [
+            0.0
+          ],
+          "operator": "seed",
+          "ordinal": 0,
+          "parents": [],
+          "reason_code": null
+        },
+        {
+          "candidate_id": "f3eed4c788121a83c0325b3dfae6bbaf077d0142ecab3de9ee92eebf73f11bb4",
+          "disposition": "duplicate",
+          "draws": {
+            "end": 7,
+            "start": 1
+          },
+          "duplicate_of": "13b646433d29868a1860d86a4d0888655004c80ed3e0b39a7fec2505c7777c67",
+          "generation": 1,
+          "genes": [
+            0.0
+          ],
+          "operator": "variation",
+          "ordinal": 0,
+          "parents": [
+            "13b646433d29868a1860d86a4d0888655004c80ed3e0b39a7fec2505c7777c67"
+          ],
+          "reason_code": "duplicate_genes"
+        }
+      ],
+      "generation": 1,
+      "observations": [
+        {
+          "candidate_id": "13b646433d29868a1860d86a4d0888655004c80ed3e0b39a7fec2505c7777c67",
+          "evaluation_id": "ev-13b646433d29868a1860d86a4d0888655004c80ed3e0b39a7fec2505c7777c67",
+          "outcome": {
+            "constraint_violation": 0.0,
+            "constraints_sha256": "b9946661cfefa2bf2d6eabb8779659bb0d9987020214d16fc73e196a4e2ed62e",
+            "evaluator": {
+              "capability_id": "synthetic.numeric-objectives",
+              "contract_version": "1",
+              "image_sha256": "17dba22d2b39866fbf605a98368815d14c4cffda9c43d3bc1ead4539d497afc1",
+              "release": "0.1.0"
+            },
+            "evidence": [
+              {
+                "artifact_id": "image-policy",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "synthetic.numeric-policy",
+                  "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a",
+                  "version": "1"
+                },
+                "scope": {
+                  "project_id": "fixed-box",
+                  "tenant_id": "image-golden"
+                },
+                "sha256": "b9946661cfefa2bf2d6eabb8779659bb0d9987020214d16fc73e196a4e2ed62e",
+                "size_bytes": 36
+              }
+            ],
+            "objectives": [
+              {
+                "objective_id": "cost",
+                "unit": "dimensionless",
+                "value": 0.0
+              }
+            ],
+            "quality": "synthetic",
+            "status": "evaluated"
+          },
+          "request_sha256": "eed142b721a5dd6dd529bfdfa4dda1b20e9f547cdba925d9653fb544a4c8c62b",
+          "schema_version": "1",
+          "scope": {
+            "project_id": "fixed-box",
+            "tenant_id": "image-golden"
+          }
+        }
+      ],
+      "pending": [],
+      "phase": "stopped",
+      "population": [
+        "13b646433d29868a1860d86a4d0888655004c80ed3e0b39a7fec2505c7777c67"
+      ],
+      "previous": {
+        "artifact_id": "image-checkpoint-19bb4637b7bced1af2e722cecefa84ca9a6bb06fcc5c6c2c8107d23a07c161a6",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "search.checkpoint",
+          "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184",
+          "version": "1"
+        },
+        "scope": {
+          "project_id": "fixed-box",
+          "tenant_id": "image-golden"
+        },
+        "sha256": "19bb4637b7bced1af2e722cecefa84ca9a6bb06fcc5c6c2c8107d23a07c161a6",
+        "size_bytes": 4372
+      },
+      "progress": {
+        "evaluations_issued": 1,
+        "evaluations_terminal": 1,
+        "generations_completed": 1,
+        "unchanged_front_generations": 1
+      },
+      "rng": {
+        "algorithm": "sha256-counter-u53-v1",
+        "counter": 7,
+        "seed": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "schema_version": "1",
+      "selection": {
+        "disposition": "selected",
+        "membership_sha256": "6ddd005709dc987c714927101ce917e0c4092cc156af0cbab50ad2d7938bf902",
+        "policy": "constrained-pareto-feasible-v1",
+        "ranks": [
+          {
+            "boundary": false,
+            "candidate_id": "13b646433d29868a1860d86a4d0888655004c80ed3e0b39a7fec2505c7777c67",
+            "distance": 0.0,
+            "feasible": true,
+            "front": 0
+          }
+        ],
+        "requested": 1,
+        "selected": [
+          "13b646433d29868a1860d86a4d0888655004c80ed3e0b39a7fec2505c7777c67"
+        ]
+      },
+      "specification": {
+        "budget": {
+          "max_evaluations": 20,
+          "max_generations": 1,
+          "population_size": 1,
+          "unchanged_front_limit": null
+        },
+        "evaluator": {
+          "completion": "all_frozen_members_terminal",
+          "constraints": {
+            "artifact_id": "image-policy",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "synthetic.numeric-policy",
+              "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a",
+              "version": "1"
+            },
+            "scope": {
+              "project_id": "fixed-box",
+              "tenant_id": "image-golden"
+            },
+            "sha256": "b9946661cfefa2bf2d6eabb8779659bb0d9987020214d16fc73e196a4e2ed62e",
+            "size_bytes": 36
+          },
+          "context": [],
+          "tool": {
+            "capability_id": "synthetic.numeric-objectives",
+            "contract_version": "1",
+            "image_sha256": "17dba22d2b39866fbf605a98368815d14c4cffda9c43d3bc1ead4539d497afc1",
+            "release": "0.1.0"
+          }
+        },
+        "implementations": [
+          {
+            "name": "numeric-search",
+            "sha256": "f012f3a0b1b96031edc024952d084f0a16ee48fc8b2f1bd629db652d0d19ae99",
+            "version": "0.4.0"
+          }
+        ],
+        "objectives": [
+          {
+            "direction": "minimize",
+            "objective_id": "cost",
+            "unit": "dimensionless"
+          }
+        ],
+        "operators": {
+          "crossover_probability": 1.0,
+          "mutation_fraction": 0.1,
+          "mutation_probability": 1.0,
+          "rng": "sha256-counter-u53-v1",
+          "selection": "constrained-pareto-feasible-v1",
+          "variation": "box-convex-uniform-v1"
+        },
+        "representation": {
+          "schema_id": "search.numeric-vector",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "version": "1"
+        },
+        "schema_version": "1",
+        "scope": {
+          "project_id": "fixed-box",
+          "tenant_id": "image-golden"
+        },
+        "search_id": "graph-numeric-fixture",
+        "seed": "0000000000000000000000000000000000000000000000000000000000000000",
+        "variables": [
+          {
+            "lower": 0.0,
+            "unit": "dimensionless",
+            "upper": 0.0,
+            "variable_id": "x"
+          }
+        ]
+      },
+      "specification_sha256": "b87485b5b1354c9634fbe21b41dabf740f65ed73a546b0156585ab0316ac3012",
+      "stop_reason": "generation_budget"
+    },
+    "observation": {
+      "candidate_id": "13b646433d29868a1860d86a4d0888655004c80ed3e0b39a7fec2505c7777c67",
+      "evaluation_id": "ev-13b646433d29868a1860d86a4d0888655004c80ed3e0b39a7fec2505c7777c67",
+      "outcome": {
+        "constraint_violation": 0.0,
+        "constraints_sha256": "b9946661cfefa2bf2d6eabb8779659bb0d9987020214d16fc73e196a4e2ed62e",
+        "evaluator": {
+          "capability_id": "synthetic.numeric-objectives",
+          "contract_version": "1",
+          "image_sha256": "17dba22d2b39866fbf605a98368815d14c4cffda9c43d3bc1ead4539d497afc1",
+          "release": "0.1.0"
+        },
+        "evidence": [
+          {
+            "artifact_id": "image-policy",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "synthetic.numeric-policy",
+              "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a",
+              "version": "1"
+            },
+            "scope": {
+              "project_id": "fixed-box",
+              "tenant_id": "image-golden"
+            },
+            "sha256": "b9946661cfefa2bf2d6eabb8779659bb0d9987020214d16fc73e196a4e2ed62e",
+            "size_bytes": 36
+          }
+        ],
+        "objectives": [
+          {
+            "objective_id": "cost",
+            "unit": "dimensionless",
+            "value": 0.0
+          }
+        ],
+        "quality": "synthetic",
+        "status": "evaluated"
+      },
+      "request_sha256": "eed142b721a5dd6dd529bfdfa4dda1b20e9f547cdba925d9653fb544a4c8c62b",
+      "schema_version": "1",
+      "scope": {
+        "project_id": "fixed-box",
+        "tenant_id": "image-golden"
+      }
+    },
+    "profile": "fixed-zero-box-v1",
+    "seed_candidate_id": "13b646433d29868a1860d86a4d0888655004c80ed3e0b39a7fec2505c7777c67",
+    "specification": {
+      "budget": {
+        "max_evaluations": 20,
+        "max_generations": 1,
+        "population_size": 1,
+        "unchanged_front_limit": null
+      },
+      "evaluator": {
+        "completion": "all_frozen_members_terminal",
+        "constraints": {
+          "artifact_id": "image-policy",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "synthetic.numeric-policy",
+            "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a",
+            "version": "1"
+          },
+          "scope": {
+            "project_id": "fixed-box",
+            "tenant_id": "image-golden"
+          },
+          "sha256": "b9946661cfefa2bf2d6eabb8779659bb0d9987020214d16fc73e196a4e2ed62e",
+          "size_bytes": 36
+        },
+        "context": [],
+        "tool": {
+          "capability_id": "synthetic.numeric-objectives",
+          "contract_version": "1",
+          "image_sha256": "17dba22d2b39866fbf605a98368815d14c4cffda9c43d3bc1ead4539d497afc1",
+          "release": "0.1.0"
+        }
+      },
+      "implementations": [
+        {
+          "name": "numeric-search",
+          "sha256": "f012f3a0b1b96031edc024952d084f0a16ee48fc8b2f1bd629db652d0d19ae99",
+          "version": "0.4.0"
+        }
+      ],
+      "objectives": [
+        {
+          "direction": "minimize",
+          "objective_id": "cost",
+          "unit": "dimensionless"
+        }
+      ],
+      "operators": {
+        "crossover_probability": 1.0,
+        "mutation_fraction": 0.1,
+        "mutation_probability": 1.0,
+        "rng": "sha256-counter-u53-v1",
+        "selection": "constrained-pareto-feasible-v1",
+        "variation": "box-convex-uniform-v1"
+      },
+      "representation": {
+        "schema_id": "search.numeric-vector",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "version": "1"
+      },
+      "schema_version": "1",
+      "scope": {
+        "project_id": "fixed-box",
+        "tenant_id": "image-golden"
+      },
+      "search_id": "graph-numeric-fixture",
+      "seed": "0000000000000000000000000000000000000000000000000000000000000000",
+      "variables": [
+        {
+          "lower": 0.0,
+          "unit": "dimensionless",
+          "upper": 0.0,
+          "variable_id": "x"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Offline Linux/amd64 image proof; not target-host deployment",
+    "Fixture Artifact metadata is not authorization/retention proof",
+    "Actual-image-pinned Registry/HTTP/rebuild still pending"
+  ]
+}
