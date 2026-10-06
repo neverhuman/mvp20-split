@@ -1,0 +1,13 @@
+{
+  "checkpoint": "2026-10-06 00:33:01",
+  "task": "BP-07.04/B2.03c.ii.3b report journal half",
+  "runtime": "0.54/runtime0027",
+  "tests": "39passed33.23s",
+  "coverage": {
+    "statements": 118,
+    "branches": 10,
+    "percent": 100
+  },
+  "authority": "actualRuntimeSQL + socket/scriptedPlanning",
+  "remaining": "disposition/winner transaction, repair bridge, scheduler, installedowner proof"
+}
