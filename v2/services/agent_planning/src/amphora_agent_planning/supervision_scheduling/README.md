@@ -1,0 +1,9 @@
+# Checkpoint work scheduling
+
+`PlanningCheckpointPoller` discovers scoped authenticated v2 checkpoint requests and alternates bounded execution and capture-publication turns. `WorkDiscovery` queries only Planning tables, excludes immutable completion reports and terminal capture outcomes, and uses disposable per-principal/lane keyset cursors with wraparound. Restart replays owned history. Discovery is a hint; the existing worker and journals revalidate original intake, packet, observations, settlement, leases and receipt identity before effects.
+
+Execution delegates to `CheckpointWorker`; it cannot supply another call grant or change the packet. Publication delegates primary and late captures separately to `CapturePublisher`/`CaptureResponder`, including empty failed captures without fabricated Artifacts. A model completion does not imply response delivery. Scoped receipt status/readback and upload rejection facts filter completed work; no peer database is queried. SQL is closed before worker/peer operations.
+
+Typed transport uncertainty and known lease/attempt/event limits return pending diagnostics. Unexpected owner-integrity/configuration errors propagate. Fair lane rotation prevents an unavailable publication from blocking execution discovery. Bounded sweep duration stops starting new turns; it does not interrupt a bounded in-flight operation. No schema/migration, background thread, live provider, service startup or Runtime winner authority is introduced here. Explicit worker-process configuration is the next scheduling unit.
+
+Rebuild verification belongs to tests/supervision_scheduling: actual Planning SQL, deterministic providers, public SDK scripted Data and socket Runtime fixtures. BP-07.04 Autonomous loop/Execution reports designs own sequencing; installed multi-owner/process-death gates remain separate. Scientific validity is not established.
