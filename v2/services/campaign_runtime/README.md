@@ -1,6 +1,8 @@
 # Campaign Runtime
 
-Current package0.38 adds pure immutable checkpoint seeds, with per-occurrence decision identity and exact selected observation bytes. SQL slot creation and request preparation follow; runtime0022 unchanged.
+Current package0.39 adds run-locked, append-only concrete checkpoint storage with forward runtime0023. Exact original replay, policy ceiling eligibility and run-bounded deadlines are retained; coordinator creation follows. Never run Runtime<=0.38 migrators against this schema.
+
+Package0.38 adds pure immutable checkpoint seeds, with per-occurrence decision identity and exact selected observation bytes. SQL slot creation and request preparation follow; runtime0022 unchanged.
 
 Package0.37 integrates explicit supervised admission and immutable policy pins before initial dispatch. Selected ready targets remain unissued across coordinator replacement; checkpoint creation/terminal decisions follow in BP-07.04. No new HTTP route.
 

@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-10-05 20:41:28",
+  "runtime": "0.39",
+  "migration": "runtime0023",
+  "tests": 146,
+  "seconds": 33.54,
+  "boundary_tests": 12,
+  "boundary_seconds": 9.03,
+  "checkpoint_statements": 143,
+  "checkpoint_branches": 2,
+  "checkpoint_coverage": 100,
+  "current_membership_coverage": 100,
+  "aggregate_coverage": 99,
+  "initial_failure": "Deadline fixture attempted protected UPDATE; corrected to actual admission expiry",
+  "limits": "No coordinator creation or accepted execution effect yet"
+}

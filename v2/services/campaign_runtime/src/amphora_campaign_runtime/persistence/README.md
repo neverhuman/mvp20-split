@@ -53,3 +53,5 @@ runtime_0019 adds lazy supervisor delivery control with bounded claims/events an
 runtime_0020 adds SELECT/INSERT-only supervision_cancellations, scoped original-request and command foreign keys,16-record per-request sequence bound and original actor/digest/bytes/timestamp. Cancellation recording and terminal command receipt commit together; no decision effect. Runtime0.27 requires this head; never run<=0.26 migrators against retained0020.
 
 Forward runtime0022 adds append-only supervision_policies linked to the exact graph run and admission command. Existing migrations and prior run records remain unchanged; runtime_service receives SELECT/INSERT only.
+
+Forward runtime0023 adds append-only supervision_checkpoints bound to the admitted policy and concrete graph node. Eligibility/deadline/identity checks preserve original context-preparation work; this table does not grant requests or model calls. Never apply an older Runtime migrator to a database at this head.

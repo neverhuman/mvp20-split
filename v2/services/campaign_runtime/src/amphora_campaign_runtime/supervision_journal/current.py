@@ -13,6 +13,7 @@ from ..coordinator.storage import GraphStorage
 from ..graph_inspection.policy import node_view
 from ..lifecycle.claims import RUN
 from ..supervision_scope import NodeObservation
+from ..supervision_scope.checkpoints import CheckpointFootprint
 from ..supervision_scope.observations import require
 
 
@@ -46,14 +47,13 @@ def active_scope(conn, params, plan, path):
             require(scope['parent_activation_id'] is None, 'stored_scope_parent_mismatch')
 
 
-def verify_current(conn, params, run, frame):
+def verify_footprint(conn, params, run, original):
     require(run['status'] == 'running' and run['execution_mode'] == 'graph', 'run_not_running')
     graph = GraphStorage.graph(conn, params)
     document = conn.execute(text('SELECT document FROM runtime.graph_plans WHERE tenant_id=:tenant '
         'AND project_id=:project AND plan_sha256=:plan'), {**params, 'plan': graph['plan_sha256']}).scalar_one()
     plan = parse_execution_plan(json.dumps(document))
     require(plan.sha256 == graph['plan_sha256'], 'stored_plan_mismatch')
-    original = frame.footprint()
     rows = conn.execute(text('SELECT * FROM runtime.graph_nodes WHERE ' + RUN +
         ' AND activation_id=ANY(:ids)'), {**params, 'ids': [item.identity for item in original.observations]}).mappings().all()
     observations = []
@@ -73,7 +73,7 @@ def verify_current(conn, params, run, frame):
             materialized = conn.execute(text('SELECT 1 FROM runtime.activations WHERE ' + RUN +
                 ' AND activation_id=:activation'), {**params, 'activation': row['activation_id']}).first()
             require(materialized is None, 'target_already_materialized')
-            if frame.request.schema_version == '2':
+            if isinstance(original, CheckpointFootprint):
                 target = next(item for item in original.checkpoints if item.activation_id == row['activation_id'])
                 if target.kind == 'artifact_materialize':
                     opened = conn.execute(text('SELECT 1 FROM runtime.binding_intents WHERE ' + RUN +
@@ -87,9 +87,14 @@ def verify_current(conn, params, run, frame):
                         value = state.environment.source(fields[name].source)
                         require(value.kind in {'boolean', 'integer', 'number', 'string'}, 'checkpoint_field_not_scalar')
         observations.append(NodeObservation.capture(plan.sha256, view, state=row['state'], outputs=row['outputs']))
-    cut = GraphReadCut(scope=frame.request.reference.scope, run_id=params['run'], plan_sha256=plan.sha256,
+    cut = GraphReadCut(scope=original.cut.scope, run_id=params['run'], plan_sha256=plan.sha256,
                        revision=run['revision'], frontier_revision=graph['frontier_revision'])
     require(not original.compare(cut, tuple(observations)).stale, 'selected_observation_changed')
+    return graph
+
+
+def verify_current(conn, params, run, frame):
+    graph = verify_footprint(conn, params, run, frame.footprint())
     deadline = frame.request.deadline_unix_ms
     valid = conn.execute(text('SELECT clock_timestamp() < to_timestamp(:deadline / 1000.0) '
         'AND to_timestamp(:deadline / 1000.0) <= :graph_deadline'),

@@ -1,22 +1,22 @@
 # Restore
 
-Read this first after compression. Refreshed 2026-10-05 20:36:30 (America/Chicago).
+Read this first after compression. Refreshed 2026-10-05 20:41:28 (America/Chicago).
 
 ## Resume
 
-Continue until needed. c.ii pusheddc36f53e. c.iii.a seed COMPLETE verified, ready commit/push. Current **c.iii.b transaction-local checkpoint slots**, next iii.c coordinator integration. Runtime0.38/runtime0022;Planning0.76/planning0016;publicSupervision0.4. NEVER Runtime<=0.35 or Planning<=0.73 migrators.6 seed cases3.49s/68statements100%;84 scope/request/boundary12.16s. No tests running.
+Continue until needed. c.iii.a pushed743004a3. c.iii.b storage COMPLETE verified, ready commit/push; current **c.iii.c coordinator checkpoint creation**, next d SQL fencing/recovery. Runtime0.39/runtime0023;Planning0.76/planning0016;publicSupervision0.4. Actual retained DB runtime0023. NEVER Runtime<=0.38 or Planning<=0.73 migrators.146 SQL/checkpoint/policy/journal33.54s;143checkpoint statements2branches100%,shared current membership100%;12boundary9.03s,Ruff passed. Initial expiry fixture protected deadline UPDATE failed; changed to real one-second admission expiry. No tests running.
 
-Read admitted checkpoint policy doc's Concrete checkpoint creation section. New supervision_checkpoints.CheckpointSeed owns canonical observations and stable decision_id over scope/run/plan/policy/rule/concrete activation. No SQL yet. b needs append-only slots with actual selected observations, policy ceiling eligibility (extra slots fallback_required), original deadline bounded by run, exact original replay before checking newer state. c wires initial ready targets after full frontier creation and before initial Invoke; GraphPass replaces interim hold with ensure-once. No changes to ready target state (avoid self-staleness). B2.02 terminal winners/effects; B2.03 bridges pending checkpoint work to Planning context and request journal.
+CheckpointStore.ensure(conn,params,path) acquires existing run lock, loads actual retained plan/admitted policy, replays original slot before fresh state/deadline checks, snapshots selected observations and verifies actual membership via shared current.verify_footprint. Append-only runtime.supervision_checkpoints; ordinal beyond max_checkpoints or expired deadline records fallback_required, no execution effect. Pending context work, NOT Planning request. Existing verify_current now delegates membership helper plus original request deadline check; old/new journals regressed.
 
-Potential shared helper: extract supervision_journal.current.verify_footprint from verify_current to reuse actual run/plan/node/ancestor/membership/absence of issued intent checks. Keep deadline check in verify_current; new slot computes its own bound. Existing v1/v2 SQL tests must regress. Watch coordinator/storage import cycles; use lazy boundary imports if needed rather than broad package changes.
+Next: admission after full root frontier create, iterate ALL ready policy targets and ensure slots before Invoke issuance. GraphPass interim guard becomes ensure; return created=True to count a transition once, False on subsequent hold. Use lazy imports for checkpoint storage to avoid coordinator package import cycles. Existing storage tests currently create slots explicitly AFTER admitted run; integration will mean initial slots already exist, so revise fixture to defer target readiness or assert original already-created slots. Preserve store-specific failure tests and real expiry. B2.02 terminal winner/fallback/effects; B2.03 context/request bridge. No live provider needed.
 
 ## Canonical progress
 
-Parent66.16%,13/20;child30.79%,Build41.05%,Acceptance0%,1/4. B1=100%;B2=23.15%(.01=69.44%,.02/.03=0%);B3/V1=0%. B2.01 a/b100%,c77.78%,d0%;c.i/ii100%,iii33.33%;iii.a100%,b/c0%. Current iii.b.
+Parent66.20%,13/20;child31.02%,Build41.36%,Acceptance0%,1/4. B1=100%;B2=24.07%(.01=72.22%,.02/.03=0%);B3/V1=0%. B2.01 a/b100%,c88.89%,d0%;c.i/ii100%,iii66.67%;iii.a/b100%,c0%. Current iii.c.
 
 ## Active boundaries and versions
 
-Runtime0.38/runtime0022; Planning0.76/planning0016; public supervision0.4; graph-runtime0.13; public Planning0.9;536 schema files. Actual DB heads are0021/0016. **NEVER run Runtime<=0.35 or Planning<=0.73 migrators.** Data0.29/artifacts0012 (never<=0.25 migrators), Research0.34/research0013 (never<=0.33), Knowledge0.18, Registry0.1.
+Runtime0.39/runtime0023; Planning0.76/planning0016; public supervision0.4; graph-runtime0.13; public Planning0.9;536 schema files. Actual DB heads are0021/0016. **NEVER run Runtime<=0.35 or Planning<=0.73 migrators.** Data0.29/artifacts0012 (never<=0.25 migrators), Research0.34/research0013 (never<=0.33), Knowledge0.18, Registry0.1.
 
 Invoke inputs remain Artifact-only. Owner approved scalar checkpoints on named inline fields of `artifact_materialize` before any conversion intent, reservation or publication. Keep original plans/Artifacts/issued inputs immutable. Future admission policy must bind types/units/bounds and concrete occurrences; effective field resolution must be shared by conversion opening and source-cut revalidation. Pure scope/frame support is not admission or execution acceptance.
 
