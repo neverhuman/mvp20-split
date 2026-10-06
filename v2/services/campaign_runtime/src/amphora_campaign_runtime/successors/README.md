@@ -21,3 +21,28 @@ Tests belong to `services/campaign_runtime/tests/successors/`; the source-derive
 B2 focused verification `2026-09-29 17:19:51`: 72 contract/successor/source-baseline cases passed. Successor module coverage 102/104 statements and 6/6 measured branches, parent process only. Malformed persisted source decoding (two exception-handler statements) remains unexercised; process-death/concurrency and installed-peer tiers remain B3/V1. Full foundation/build gate passed 1169 tests and nineteen independent installs.
 
 B3 verified `2026-09-29 17:45:46`: 116 scoped cases, including four real successor admission contention/kill cases and a killed source controller replaced after six accepted scores. Prior accepted records remain byte-for-byte identical and independent generation/seed/membership traces match. Invalid retained checkpoint/source hash/result association and malformed stored graph values reject. Successor module 104/104 statements and 6/6 branches; retain kernel 49/49 and 26/26, parent-process coverage only. No production fixes. Actual installed new-tool/Artifact/Runtime and replacement acceptance remains V1.
+
+## Draft successor admission (BP-08.04)
+
+Runtime0.65 exposes POST `/v1/graph-runs/draft-successors` only when draft
+admission is configured. Public draft_successor0.1 supplies AdmitDraftSuccessor
+and the distinct graph.admit_draft_successor command; graph-runtime0.13 and
+existing command profiles remain unchanged. Explicit numeric envelopes use the
+existing numeric encoding; graph NumberValue still uses decimal strings.
+
+GraphAdmission enables the existing draft and successor guards together. Exact
+terminal replay precedes fresh configuration/peer checks. Draft material and
+Registry eligibility resolve outside SQL; under the global admission guard,
+current draft head/universe/freshness and locked predecessor terminal/cut/settled
+state are checked. Compatible carried plus fresh inputs feed the compiled plan.
+New run, draft publication, lineage, audit/outbox and receipt commit atomically.
+No migration, catalogue promotion, new scheduler or active-run rewrite occurs.
+
+Owned tests in tests/definitions/test_draft_successor.py cover actual PostgreSQL
+carry, changed head/cut/hash/selection/universe, active predecessor, concurrent
+successors, rollback after both records, replay without current configuration,
+ASGI auth/explicit hosting and current Registry guards through scripted peers.
+205 contract/definition/successor/schema/boundary regressions passed. This does
+not establish actual remote Registry, Planning topology handoff or target-host
+execution; B2.02ii/V1 retain those gates. Replacement preserves both immutable
+owner records and all original command receipts.

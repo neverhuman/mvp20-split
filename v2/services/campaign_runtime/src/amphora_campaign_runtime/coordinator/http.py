@@ -1,6 +1,7 @@
 """Scoped graph admission, bounded advancement and paginated observations."""
 
 import asyncio
+from amphora_contracts_draft_successor import parse_draft_successor
 
 from amphora_contracts_graph_runtime import (
     CarrySources,
@@ -32,6 +33,12 @@ def install_graphs(app, admission, advancer, credentials, artifacts=None):
         install_admission(app, admission, credentials)
 
     if admission.drafts is not None:
+        @app.post("/v1/graph-runs/draft-successors", response_model=CommandReceipt)
+        async def admit_draft_successor(request: Request):
+            principal = credentials.authenticate(request.headers.get("authorization"))
+            command = parse_draft_successor(await request.body())
+            return await asyncio.to_thread(admission.admit_draft_successor, principal, command)
+
         @app.post("/v1/graph-runs/drafts", response_model=CommandReceipt)
         async def admit_draft(request: Request):
             principal = credentials.authenticate(request.headers.get("authorization"))

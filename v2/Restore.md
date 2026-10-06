@@ -1,16 +1,32 @@
+# Current checkpoint 2026-10-06 18:36:16
+
+**B2.02i approved correction COMPLETE; B2.02ii actual topology handoff NEXT. No approval blocker.** Child43.75%, Build58.33%, Acceptance0%;parent68.75%,13closed deliveries plus three quarters. No active processes:38196 contract installation passed14tests1.10s;60878 Runtime installation exited0. Both manifests under ROOT.test-results/draft-successor-{install,runtime}-20261006a.205regressions88.86s and38coveragechecks24.80s passed. Newcontract18stmts6branches100%, draftguard42stmts4branches100%.632schemas preserve630. Runtime0.65/runtime0028; draft_successor0.1; all other versions unchanged. No migration or paid call. Current checkpoint needs commit/push, then immediately continue B2.02ii. This top block supersedes older running-session/current-task notes below.
+
+The current direct tests use actualSQL/ASGI, scriptedRegistry. New routeonlyinstalledwhen draftsconfigured; disabledPOST405 becausegenericGETmatchespath, OpenAPI confirmsabsence. Newcontract parser optionalexplicitnumericprofile; graphNumberValue decimalstrings unchanged. Coverage module-name preload caused SQLAlchemy CythonInternalTraversal TypeError; use --cov sourceDIRECTORY and JSONonly. NoDBreset. Source-adjacentREADME updated before independentRuntimebuild, so wheelmatchescurrentcode/docs.
+
+B2.02ii remains original scope: actual Planning topology proposal -> Runtime compile/admit successor with compatible carried data and persisted comparison handoff. Existing model campaign_dispatch is boundtoactualpreparedmodelattempts; do notfabricatethose. Need focused Planning handoff record/orchestration and realpublicpeer proof, with existingRuntimeauthoring+newadmission. B1proposalrecord immutability/APIexists. Baselinecomparison remainsofflineengineeringonly; evaluatorswap nevermakesoldfitnesscomparable. Actualtool/Registry/deployment/science evidence tiersmustremainhonest. No current externaldecisionblocker.
+
+## Active approval update 2026-10-06 18:24:32
+
+Owner approved the additive correction. B2.02i contract/API/combined SQL guards are being implemented; B2.02ii actual proposal compile/carry/persisted comparison remains next. Old pending-approval text below is superseded. Runtime0.65, new draft_successor0.1; graph-runtime0.13 unchanged. No migration.630 predecessor schema pins frozen64a6db5c;632 schemas published pending verification.
+
 # Restore
 
 Read FIRST after compression. Refreshed 2026-10-06 16:45:04 (America/Chicago).
 
 ## Exact resume gate
 
-**BP-08.04/B2.01 COMPLETE. B2.02 awaits owner direction on the additive draft-successor admission correction.**
+**BP-08.04/B2.01 COMPLETE. B2.02i approved additive correction is implemented; independent installation verification is active.**
 
-Read `docs/Build Plans/BP-08/BP-08.04 Draft successor admission decision.md` and the latest user response before implementation. An asynchronous approval question was sent; no response has been received as of this handoff. Do not infer approval from elapsed time. Existing user authorization to continue persists, but the requested material public execution-contract correction remains pending. No other independent task remains before this ordered gate.
+Owner explicitly approved the correction. No approval blocker remains. Current code: contracts/draft_successor0.1 exposes AdmitDraftSuccessor and parse_draft_successor; Runtime0.65 new configured-only POST/v1/graph-runs/draft-successors combines existing draft and predecessor guards. No migration. All630 prior schema hashes unchanged;632 schemas published. New SQL/ASGI tests19passed12.64s; broad205passed88.86s. Focused coverage38passed24.80s: newcontract18statements6branches100%, draftguard42statements4branches100%. Coordinator109/121,19/26; carry67/72,5/6; reads30/32. Legacy/supervisor/node-output branches not all covered by focused run, full regression passes.
+
+IMPORTANT coverage issue: dotted --cov=amphora_campaign_runtime.coordinator.admission triggers SQLAlchemy Cython InternalTraversal TypeError during Alembic fixture setup. First broad coverage run33744 was stopped (exit1), NOT passed. Reproduced stop-first70094. Using source DIRECTORY --cov=v2/services/campaign_runtime/src avoids import/preload issue;12160 passed38. No DB reset or production change. Use --cov-report= plus JSON, not whole-runtime terminal table (huge).
+
+Active verification38196 independently builds/install newcontract closure, excludes private services, then runs14contracttests using isolated interpreter. Do NOT edit source/tests/dev/moduleREADMEs until actual exit. Next build/install Runtime0.65 independently if contract passes; collect evidence, update approved decision/child/parent/MBT/Restore, commit/push. Then B2.02ii actual topology proposal compilation/carry and persisted comparison handoff remains authorized. Current code/docs are uncommitted after64a6db5c.
 
 Child37.5%, Build50%, Acceptance0%. Parent67.5%:13/20 closed deliveries plus half of B2. BP-08.01/.02/.03 remain closed and archived. B2 has two equal units:01 fair numeric comparison (done),02 actual compiled topology successor/carry and persisted comparison handoff (remaining). B3 failure/recovery and V1 independent actual-owner/replacement/audit follow. Never reopen completed predecessors.
 
-**No active processes.** Actual benchmark session20994 exited0; final test session36181 exited0. Latest pushed implementation d2e75465; protocol predeclared/pushed d5e2a8d0. This handoff accompanies the final B2.01 evidence/tracker/README/test-scope commit; verify Git HEAD/upstream when resuming. B1 API/host d1c4023f is pushed.
+Historical benchmark processes: Actual benchmark session20994 exited0; final test session36181 exited0. Latest pushed implementation d2e75465; protocol predeclared/pushed d5e2a8d0. This handoff accompanies the final B2.01 evidence/tracker/README/test-scope commit; verify Git HEAD/upstream when resuming. B1 API/host d1c4023f is pushed.
 
 ## B2.01 evidence
 

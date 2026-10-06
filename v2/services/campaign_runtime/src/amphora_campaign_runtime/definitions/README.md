@@ -63,3 +63,28 @@ The compiler_configuration authority marker distinguishes this projection from R
 Numeric command correction: definition.save and graph.admit_draft accept explicit amphora-command-v2 envelopes from Commands0.2.0; existing unmarked commands remain v1. Authored NumberConstant values are floats; graph input NumberValue remains a decimal string. No implicit conversion between these contracts. Owner tests exercise integral/decimal/exponent constants through save/validate/admit/finish, scoped profile persistence and original replay; a separate actual-host process kill verifies old/new saved receipts and cross-profile conflicts. Other command families remain v1.
 
 B2 eligibility checkpoint:114 definitions/scheduling tests pass, including actual PostgreSQL admission guards with scripted Registry responses. EligibilityObservation verifies exact scoped pins/status and expiry; peer calls stay outside owner transactions. Freshness is checked with database time under the admission guard; accepted observations persist in immutable audit_events with the run/publication/receipt. Original terminal replay never refreshes eligibility. Registry candidates are not reservations; no cross-service atomic revocation guarantee or scientific acceptance is claimed. See the focused adapter README for configuration and limits. Actual installed Registry/Studio activation proof passed; full compatibility gates passed.
+
+## Draft successor admission (BP-08.04)
+
+Runtime0.65 exposes POST `/v1/graph-runs/draft-successors` only when draft
+admission is configured. Public draft_successor0.1 supplies AdmitDraftSuccessor
+and the distinct graph.admit_draft_successor command; graph-runtime0.13 and
+existing command profiles remain unchanged. Explicit numeric envelopes use the
+existing numeric encoding; graph NumberValue still uses decimal strings.
+
+GraphAdmission enables the existing draft and successor guards together. Exact
+terminal replay precedes fresh configuration/peer checks. Draft material and
+Registry eligibility resolve outside SQL; under the global admission guard,
+current draft head/universe/freshness and locked predecessor terminal/cut/settled
+state are checked. Compatible carried plus fresh inputs feed the compiled plan.
+New run, draft publication, lineage, audit/outbox and receipt commit atomically.
+No migration, catalogue promotion, new scheduler or active-run rewrite occurs.
+
+Owned tests in tests/definitions/test_draft_successor.py cover actual PostgreSQL
+carry, changed head/cut/hash/selection/universe, active predecessor, concurrent
+successors, rollback after both records, replay without current configuration,
+ASGI auth/explicit hosting and current Registry guards through scripted peers.
+205 contract/definition/successor/schema/boundary regressions passed. This does
+not establish actual remote Registry, Planning topology handoff or target-host
+execution; B2.02ii/V1 retain those gates. Replacement preserves both immutable
+owner records and all original command receipts.

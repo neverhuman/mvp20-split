@@ -18,7 +18,7 @@ wheels = [
 
 [[package]]
 name = "amphora-campaign-runtime"
-version = "0.64.0"
+version = "0.65.0"
 source = { editable = "." }
 dependencies = [
     { name = "alembic" },
@@ -26,6 +26,7 @@ dependencies = [
     { name = "amphora-contracts-campaigns" },
     { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-draft-successor" },
     { name = "amphora-contracts-execution-proofs" },
     { name = "amphora-contracts-graph-runtime" },
     { name = "amphora-contracts-planning" },
@@ -47,6 +48,7 @@ requires-dist = [
     { name = "amphora-contracts-campaigns", editable = "../../contracts/campaigns" },
     { name = "amphora-contracts-commands", editable = "../../contracts/commands" },
     { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-draft-successor", editable = "../../contracts/draft_successor" },
     { name = "amphora-contracts-execution-proofs", editable = "../../contracts/execution_proofs" },
     { name = "amphora-contracts-graph-runtime", editable = "../../contracts/graph_runtime" },
     { name = "amphora-contracts-planning", editable = "../../contracts/planning" },
@@ -120,6 +122,21 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [{ name = "pydantic", specifier = ">=2.12,<3" }]
+
+[[package]]
+name = "amphora-contracts-draft-successor"
+version = "0.1.0"
+source = { editable = "../../contracts/draft_successor" }
+dependencies = [
+    { name = "amphora-contracts-commands" },
+    { name = "amphora-contracts-graph-runtime" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-commands", editable = "../../contracts/commands" },
+    { name = "amphora-contracts-graph-runtime", editable = "../../contracts/graph_runtime" },
+]
 
 [[package]]
 name = "amphora-contracts-evidence"

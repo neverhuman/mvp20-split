@@ -5,6 +5,7 @@ import uuid
 from datetime import timedelta
 
 from amphora_contracts_graph_runtime import AdmitDraft, AdmitGraphRun, SuccessorProposal
+from amphora_contracts_draft_successor import AdmitDraftSuccessor, parse_draft_successor
 from amphora_contracts_runtime import CommandReceipt
 from amphora_contracts_supervision import (
     AdmitSupervisedGraph,
@@ -41,14 +42,17 @@ class GraphAdmission:
     def admit_draft(self, principal, command):
         return self._admit(principal, command, successor=False, draft=True)
 
+    def admit_draft_successor(self, principal, command):
+        return self._admit(principal, parse_draft_successor(command.canonical_bytes), successor=True, draft=True)
+
     def admit_supervised(self, principal, command):
         return self._admit(principal, parse_supervised_admission(command.canonical_bytes), successor=False, supervised=True)
 
     def _admit(self, principal, command, *, successor, draft=False, supervised=False):
         principal.require("admit", command.identity)
-        family = "graph.admit_supervised" if supervised else "graph.admit_draft" if draft else "graph.admit_successor" if successor else "graph.admit"
+        family = "graph.admit_draft_successor" if draft and successor else "graph.admit_supervised" if supervised else "graph.admit_draft" if draft else "graph.admit_successor" if successor else "graph.admit"
         ensure(command.identity.command_family == family, "wrong_command_family")
-        model = AdmitSupervisedGraph if supervised else AdmitDraft if draft else SuccessorProposal if successor else AdmitGraphRun
+        model = AdmitDraftSuccessor if draft and successor else AdmitSupervisedGraph if supervised else AdmitDraft if draft else SuccessorProposal if successor else AdmitGraphRun
         request = model.model_validate_json(json.dumps(json.loads(command.canonical_bytes)["payload"]))
         policy_digest = request.policy_sha256 if supervised else None
         request = request.admission if supervised else request

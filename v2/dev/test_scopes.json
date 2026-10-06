@@ -311,5 +311,11 @@
     "coverage_sources": [
       "contracts/topology_search/src/amphora_contracts_topology_search"
     ]
+  },
+  "draft-successor": {
+    "tests": "contracts/draft_successor/tests",
+    "coverage_sources": [
+      "contracts/draft_successor/src/amphora_contracts_draft_successor"
+    ]
   }
 }

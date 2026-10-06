@@ -1,5 +1,9 @@
 # Campaign Runtime
 
+- Current: Runtime0.65/runtime0028. Approved additive draft-successor admission combines exact draft/Registry guards and immutable predecessor transfer in one transaction.205 scoped regressions passed; actual Planning topology handoff remains BP-08.04/B2.02ii. See [coordinator boundary](src/amphora_campaign_runtime/coordinator/README.md).
+
+## Earlier supervisor checkpoint
+
 - Current: Runtime0.61/runtime0028; reviewed `2026-10-06 03:26:07` (America/Chicago). BP-07.04 bounded autonomous supervisor accepted, including original context/allowances, durable delivery, winner/effects, configured scheduling, owner replacement and authenticated authoritative decision reads.
 - Module rebuild contracts: [loop](src/amphora_campaign_runtime/supervision_loop/README.md), [winners](src/amphora_campaign_runtime/supervision_winners/README.md), [inspection/recording API](src/amphora_campaign_runtime/supervision_api/README.md). Live quality and full engagement inspection remain BP-07.05.
 

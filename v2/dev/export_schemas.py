@@ -1,5 +1,7 @@
 """Publish/check deterministic Draft 2020-12 input and output schema artifacts."""
 
+from amphora_contracts_draft_successor import AdmitDraftSuccessor
+
 import argparse
 import hashlib
 import json
@@ -318,6 +320,7 @@ for name, model in {
     "draft-page": graph_runtime_contracts.DraftPage,
     "draft-validation": graph_runtime_contracts.DraftValidation,
     "draft-admission": graph_runtime_contracts.AdmitDraft,
+    "draft-successor-admission": AdmitDraftSuccessor,
     "definition-universe": graph_runtime_contracts.DefinitionUniverse,
     "definition-schema": graph_runtime_contracts.DefinitionSchema,
     "successor-proposal": graph_runtime_contracts.SuccessorProposal,

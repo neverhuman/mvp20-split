@@ -92,3 +92,28 @@ Admitted supervision checkpoints gate only selected ready targets. GraphPass con
 B2.02d integration now connects committed scalar winners through artifact_bindings.resolve_effective at both opening and source-cut revalidation. The temporary scalar hold is removed; winner acceptance still does not claim publication or tool success. Verification is in progress.
 
 BP-07.04 configured hosting optionally supplies exact policy/recipe catalogs to GraphAdmission and installs the focused supervision_preparation HTTP admission route. Supervisor scheduling remains a separate supervision_loop process; GraphPoller continues independent graph progress. API startup does not launch either poller. Existing graph admission/default hosting behavior is unchanged without supervision_admission configuration.
+
+## Draft successor admission (BP-08.04)
+
+Runtime0.65 exposes POST `/v1/graph-runs/draft-successors` only when draft
+admission is configured. Public draft_successor0.1 supplies AdmitDraftSuccessor
+and the distinct graph.admit_draft_successor command; graph-runtime0.13 and
+existing command profiles remain unchanged. Explicit numeric envelopes use the
+existing numeric encoding; graph NumberValue still uses decimal strings.
+
+GraphAdmission enables the existing draft and successor guards together. Exact
+terminal replay precedes fresh configuration/peer checks. Draft material and
+Registry eligibility resolve outside SQL; under the global admission guard,
+current draft head/universe/freshness and locked predecessor terminal/cut/settled
+state are checked. Compatible carried plus fresh inputs feed the compiled plan.
+New run, draft publication, lineage, audit/outbox and receipt commit atomically.
+No migration, catalogue promotion, new scheduler or active-run rewrite occurs.
+
+Owned tests in tests/definitions/test_draft_successor.py cover actual PostgreSQL
+carry, changed head/cut/hash/selection/universe, active predecessor, concurrent
+successors, rollback after both records, replay without current configuration,
+ASGI auth/explicit hosting and current Registry guards through scripted peers.
+205 contract/definition/successor/schema/boundary regressions passed. This does
+not establish actual remote Registry, Planning topology handoff or target-host
+execution; B2.02ii/V1 retain those gates. Replacement preserves both immutable
+owner records and all original command receipts.
