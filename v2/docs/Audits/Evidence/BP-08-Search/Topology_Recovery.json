@@ -1,0 +1,149 @@
+{
+  "timestamp_local": "2026-10-06 18:58:33",
+  "status": "passed",
+  "scope": "BP-08.04/B3",
+  "regressions": {
+    "passed": 155,
+    "run_seconds": 86.07,
+    "note": "Initial run also had two new process-fixture failures, subsequently repaired"
+  },
+  "repaired_focused": {
+    "passed": 14,
+    "seconds": 30.71,
+    "scope": "Two real process kills/replay plus twelve boundary checks"
+  },
+  "process_records": [
+    {
+      "timestamp_local": "2026-10-06 18:57:25",
+      "boundary": "before_commit",
+      "real_process_killed": true,
+      "fresh_process_replay": true,
+      "counts": {
+        "runs": 2,
+        "definition_admissions": 2,
+        "graph_successors": 1
+      },
+      "receipt": {
+        "schema_version": "1",
+        "outcome": {
+          "status": "accepted",
+          "binding": {
+            "identity": {
+              "schema_version": "1",
+              "command_family": "graph.admit_draft_successor",
+              "command_id": "successor",
+              "scope": {
+                "tenant_id": "admission-tests",
+                "project_id": "3ce3fdebfe1041c0b323ae2f4ac19b39"
+              },
+              "actor_id": "worker-1"
+            },
+            "request_sha256": "6d3207b4e4d4757103e8788cc38c1b4399847f7daf36483b6fe141c859226c4b",
+            "operation_id": "3c9a9f7f85484167a6a648687fc7ac54"
+          },
+          "committed": {
+            "kind": "run",
+            "object_id": "50a83cd694a64147ab9cf019621ad796",
+            "revision": 0
+          }
+        }
+      },
+      "lineage": {
+        "schema_version": "1",
+        "scope": {
+          "tenant_id": "admission-tests",
+          "project_id": "3ce3fdebfe1041c0b323ae2f4ac19b39"
+        },
+        "run_id": "50a83cd694a64147ab9cf019621ad796",
+        "plan_sha256": "9103a1fa5cc5c67192d1e1638f421116caf0367e139fcb7aa6cbfb1320595981",
+        "predecessor": {
+          "run_id": "f6dcbf6d3bce4e0b92b80a4db2462856",
+          "plan_sha256": "76efe36fbfd49f8c196b3aecced73b79e7486828137da9413d6bc0e3f00cf092",
+          "revision": 1
+        },
+        "carried": [
+          {
+            "target_port": "value",
+            "source": {
+              "kind": "run_output",
+              "port": "value"
+            },
+            "expected_value_sha256": "a2435f330c84ee4905b8f5fac861c868136e9eb00226930ff382ca6af9389e4a"
+          }
+        ],
+        "transfer_sha256": "599548f3fbd0d99dbc2ee900e657f82c9ec37440932021a7e4397e6cb2f24f60"
+      },
+      "limit": "Actual Runtime owner/PostgreSQL, scalar fixture; no peer/network claim"
+    },
+    {
+      "timestamp_local": "2026-10-06 18:57:32",
+      "boundary": "after_commit",
+      "real_process_killed": true,
+      "fresh_process_replay": true,
+      "counts": {
+        "runs": 2,
+        "definition_admissions": 2,
+        "graph_successors": 1
+      },
+      "receipt": {
+        "schema_version": "1",
+        "outcome": {
+          "status": "accepted",
+          "binding": {
+            "identity": {
+              "schema_version": "1",
+              "command_family": "graph.admit_draft_successor",
+              "command_id": "successor",
+              "scope": {
+                "tenant_id": "admission-tests",
+                "project_id": "71a3b043399746828014baeefbbe2eac"
+              },
+              "actor_id": "worker-1"
+            },
+            "request_sha256": "e0238a4750648c2e35225b8e1df5021bf6a28f0ed5afac2157017f5264966afa",
+            "operation_id": "da8dd878417441a9b208f306e5508c00"
+          },
+          "committed": {
+            "kind": "run",
+            "object_id": "c4b3662ef3a94c689f2ec332515b5ec3",
+            "revision": 0
+          }
+        }
+      },
+      "lineage": {
+        "schema_version": "1",
+        "scope": {
+          "tenant_id": "admission-tests",
+          "project_id": "71a3b043399746828014baeefbbe2eac"
+        },
+        "run_id": "c4b3662ef3a94c689f2ec332515b5ec3",
+        "plan_sha256": "56a876f021ec0a9bc316a0e30a0f77b0b9efb26f2651507e31cf03e309ea4ab9",
+        "predecessor": {
+          "run_id": "511c85e9c9854d7f87f697337e3df826",
+          "plan_sha256": "9071db99cefbbd7cf2d3fb3eb5a012513689e8051bfb1584cbef78a8528330c7",
+          "revision": 1
+        },
+        "carried": [
+          {
+            "target_port": "value",
+            "source": {
+              "kind": "run_output",
+              "port": "value"
+            },
+            "expected_value_sha256": "a2435f330c84ee4905b8f5fac861c868136e9eb00226930ff382ca6af9389e4a"
+          }
+        ],
+        "transfer_sha256": "39c6dac99be26250dd72e49d11454c8e0625d71ae364d280527e71c4d19aceb2"
+      },
+      "limit": "Actual Runtime owner/PostgreSQL, scalar fixture; no peer/network claim"
+    }
+  ],
+  "raw_files": {
+    "v2/.test-results/draft-successor-process/3ce3fdebfe1041c0b323ae2f4ac19b39/evidence.json": "537cc900f5776391a850deb40550fb22252ed6cb5bbe14e0dd487393514fe351",
+    "v2/.test-results/draft-successor-process/71a3b043399746828014baeefbbe2eac/evidence.json": "7d998b640e481382a940036517790f3839ab4fe6c8e54a89689ad5515576d319"
+  },
+  "public_owner_evidence": "Topology_Handoff.json",
+  "coverage": "No production change; prior topology438statements/30branches100% and draftguard42/4 all covered remain applicable; child process coverage not inferred",
+  "failure": "Process fixture omitted bindings_enabled; durable graph_binding_profile_not_enabled rejection, no production defect; repaired and rerun",
+  "paid_calls": 0
+}

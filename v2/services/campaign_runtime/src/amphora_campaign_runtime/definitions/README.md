@@ -88,3 +88,5 @@ ASGI auth/explicit hosting and current Registry guards through scripted peers.
 not establish actual remote Registry, Planning topology handoff or target-host
 execution; B2.02ii/V1 retain those gates. Replacement preserves both immutable
 owner records and all original command receipts.
+
+BP-08.04/B3 verified 2026-10-06 18:58:33: test-only draft_successor_process.py interrupts combined admission after draft publication and lineage writes before commit, or after commit before reply. Actual process death followed by fresh owner process preserves rollback/original replay and exactly one child with both records; parent remains unchanged.14process/boundary checks30.71s plus155 scoped regressions; no new production hooks. Source coverage is separate from child-process scenario evidence.

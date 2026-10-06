@@ -1,16 +1,14 @@
 # Restore
 
-Refreshed 2026-10-06 18:53:43 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-06 18:58:33 (America/Chicago). Read FIRST after compression.
 
 ## Exact checkpoint
 
-BP-08.04/B2 complete; B3 failure/recovery NEXT. Child50%, Build66.67%, Acceptance0%; parent70%,14/20. Approved additive correction pushed50018014; B2 handoff checkpoint ready to commit/push. No approval blocker. No active processes:28099 actual proof exited0;21154 passed28tests20.34s;82504 numeric-new independent install exited0. No paid calls.
+B2 public handoff pushed848c5b15. B3 COMPLETE, ready to commit/push; V1 NEXT. Child75%,Build100%,Acceptance0%;parent75%,15/20. No active processes:28375 exited1 with155passed/two new fixture failures;29474 repaired run14passed30.71s exited0. Both new process kills before/after combined commit verified. Child fixture initially omitted bindings_enabled=True and correctly received graph_binding_profile_not_enabled; repaired fixture only. Evidence Topology_Recovery.json, raw v2/.test-results/draft-successor-process two scope directories. No production change or paid calls.
 
-Actual proof ROOT.test-results/topology-handoff-20261006b/http/evidence.json; committed compact Topology_Handoff.json. Planning0.98 proposal -> Runtime0.65 public save/validate/admit_draft_successor -> exact parameter Artifact carry -> standalone numeric-affine0.3 completion. Original0.2 parent retained. Premature rejected receipt remains rejected; later distinct command accepted. Both arithmetic[5,3,1], accepted tool pins and confirmed output retention verified. Original proposal/lineage/admission/producer/Artifact bytes survive Planning/Runtime/Data restart. Data retains benchmark and handoff. Independent benchmark is NOT evidence of improvement from changed evaluator. Fixture image pins/synthetic capacity, not image deployment. First attempt a failed test-only deliver CLI missing actor/scope; repaired and reran b. Preserve both.
+V1 three equal units:01 actual tool image qualification;02 freshly rebuilt owner replacement/public history;03 scoped architecture drift/archive. Prior old numeric0.2 image exists under v2/.test-results/tool-images/bp0503-standard-20260930 but its SDK/artifact closure is older than preserved0.2 installation. Do not claim exact wheel matching. Build old0.2 image from preserved topology-handoff-installs numeric-old wheels using current matching external deps; new0.3 image from current source. Base python@sha256:f77ac9e44ae96ef2c90b8053ea08c31f8be030f824196b0ae4db6d462c84e51f. Proposed build helper can reuse build_tool_images with narrow affine profile then build old image from preserved wheels. Need actual immutable digest/golden/nonroot/schema/isolation proof, not cluster deployment. Fresh replacements for Planning/Runtime/numeric-new should reread all immutable histories, exact public bytes. Update module READMEs before builds. Do not edit source/tests/dev while build/verification active.
 
-## Next work
-
-B3: reconcile existing Planning invalid edit/type/unit/checkpoint tests and Runtime successor rejection/process recovery with new public handoff, add only missing required oracles. Then V1 fresh independently rebuilt owner replacement, actual image qualification as scoped, module READMEs and architecture drift audit before archiving child. BP08.05 queued until04 accepted. Persistent continue-until-needed authorization survives commits/compaction. Update canonical child/parent/MBT/Restore before significant commits, push then continue.
+B2 actual proof ROOT.test-results/topology-handoff-20261006b/http/evidence.json and Topology_Handoff.json. Planning0.98 -> Runtime0.65 save/validate/draft-successor -> exact parameterArtifact carry -> new0.3 worker. Parent0.2 retained, both arithmetic[5,3,1], accepted producer pins, confirmed retention. Data persists benchmark/handoff and all history replays after owner restarts. Declared fixture images only in B2. Failed attempt a had test CLI omitted actor/scope, retained.28tool/boundary tests20.34s passed. No production scheduler/model attempt fabricated.
 
 ## Active artifacts and versions
 
