@@ -699,32 +699,40 @@ requires-dist = [
 
 [[package]]
 name = "amphora-numeric-space"
-version = "0.1.0"
+version = "0.2.0"
 source = { editable = "../tools/numeric_space" }
 dependencies = [
     { name = "amphora-contracts-candidate-spaces" },
     { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-tools" },
+    { name = "amphora-tool-protocol" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "amphora-contracts-candidate-spaces", editable = "../contracts/candidate_spaces" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-tools", editable = "../contracts/tools" },
+    { name = "amphora-tool-protocol", editable = "../sdk/tool_protocol" },
 ]
 
 [[package]]
 name = "amphora-polymer-space"
-version = "0.1.0"
+version = "0.2.0"
 source = { editable = "../tools/polymer_space" }
 dependencies = [
     { name = "amphora-contracts-candidate-spaces" },
     { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-tools" },
+    { name = "amphora-tool-protocol" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "amphora-contracts-candidate-spaces", editable = "../contracts/candidate_spaces" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-tools", editable = "../contracts/tools" },
+    { name = "amphora-tool-protocol", editable = "../sdk/tool_protocol" },
 ]
 
 [[package]]
@@ -766,17 +774,21 @@ requires-dist = [
 
 [[package]]
 name = "amphora-sequence-space"
-version = "0.1.0"
+version = "0.2.0"
 source = { editable = "../tools/sequence_space" }
 dependencies = [
     { name = "amphora-contracts-candidate-spaces" },
     { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-tools" },
+    { name = "amphora-tool-protocol" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "amphora-contracts-candidate-spaces", editable = "../contracts/candidate_spaces" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-tools", editable = "../contracts/tools" },
+    { name = "amphora-tool-protocol", editable = "../sdk/tool_protocol" },
 ]
 
 [[package]]

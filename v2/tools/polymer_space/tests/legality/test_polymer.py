@@ -191,6 +191,8 @@ def test_connected_cycle_is_not_a_tree():
 def test_known_averages_do_not_invent_unknown_dispersity():
     data = payload()["source"]
     data["metadata"]["distribution"] = {
-        "number_average_dp": 10.0, "weight_average_dp": 20.0, "dispersity": None,
+        "number_average_dp": 10.0,
+        "weight_average_dp": 20.0,
+        "dispersity": None,
     }
     assert space(data).record.metadata.distribution.dispersity is None

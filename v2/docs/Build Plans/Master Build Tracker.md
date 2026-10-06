@@ -9,12 +9,12 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-07 closed100%; BP-08.02 closed100%; BP-08.03/B1.03 active; BP-09 queued.
-- Last refreshed: `2026-10-06 13:06:00` (America/Chicago).
+- Last refreshed: `2026-10-06 13:10:07` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P7 / BP-08 - Evolutionary Search Integration.
-- Primary active task: BP-08.03/B1.03 public adapters and Research candidate ingress.
+- Primary active task: BP-08.03/B1.03b candidate ingress and actual worker HTTP.
 - Next task: BP-08.03/B1.03 Artifact-backed Research candidate ingress.
-- Implementation completion: BP-07 closed100%,20/20; BP-08=43.33%,8/20 plus2/3;BP-09=0%.
+- Implementation completion: BP-07 closed100%,20/20; BP-08=44.17%,8/20 plus5/6;BP-09=0%.
 - Active focus: graph-driven numeric execution; preserve closed BP-07 evaluation history and scoped handoffs.
 - Blockers: none for BP-08.03 activation. Selected host and integrated live deployment remain BP-09 decisions/gates.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
@@ -32,13 +32,13 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-08.01/.02 closed100%, four deliveries each; parent43.33%,8/20 plus2/3. BP-08.03/B1.03 active, child16.67%, Build22.22%, Acceptance0%.
+BP-08.01/.02 closed100%, four deliveries each; parent44.17%,8/20 plus5/6. BP-08.03/B1.03 active, child20.83%, Build27.78%, Acceptance0%.
 
 ## Queued Plans and Phase Mirrors
 
 | Canonical plan | Status | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Active | 43.33% | 100% | 100% | 16.67% | 0% | 0% | N/A |
+| [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Active | 44.17% | 100% | 100% | 20.83% | 0% | 0% | N/A |
 | [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 
 Scoped milestone fractions measure verified work within their existing delivery weight; closed-gate counts remain separate. BP-06 is archived24/24. Do not treat milestone counts as effort estimates.
@@ -115,7 +115,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
-| 2026-10-06 12:48:45 | BP-08.02 closed100%,4/4; parent43.33%,8/20 plus2/3. | Five active Registry profiles, independent Runtime/tool replacements, two recovered campaigns; scoped audit aligned. |
+| 2026-10-06 12:48:45 | BP-08.02 closed100%,4/4; parent44.17%,8/20 plus5/6. | Five active Registry profiles, independent Runtime/tool replacements, two recovered campaigns; scoped audit aligned. |
 | 2026-10-06 12:17:13 | BP-08.02/V1.01 verified;child81.25%,Acceptance25%,parent36.25%. |Two actual Linuxamd64images,5capabilityprofiles,offlinegolden/isolation/schemahashes. |
 | 2026-10-06 12:10:23 | BP-08.02/B3 complete;child75%,Build100%,parent35%,7/20. |Actual killed worker/Runtime restart; identical replay, stale attempt rejected,108confirmedreservationsacrosspair. |
 | 2026-10-06 11:52:51 | BP-08.02/B2 complete;child50%,Build66.67%,parent30%,6/20. |Actual independent workers/Runtime/Data;15 invocations,6evaluations,54confirmed retention reservations. |
