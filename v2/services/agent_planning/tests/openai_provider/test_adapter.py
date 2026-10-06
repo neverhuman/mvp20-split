@@ -104,7 +104,8 @@ def test_http_one_request_no_redirect_or_retry(status):
     c=Connection(status,b"secret error body")
     client=OpenAIHTTP("test-key",connection_factory=lambda host,timeout:c)
     with pytest.raises(ProviderUnavailable):client.send(b"{}")
-    assert len(c.calls)==1 and c.closed and c.body==b"secret error body"
+    assert len(c.calls)==1 and c.closed
+    assert client.last_failure["http_status"]==status and client.last_failure["code"]=="unclassified"
     assert c.calls[0][0][:2]==("POST","/v1/responses")
 
 
@@ -130,3 +131,11 @@ def test_http_expired_request_and_interrupted_body_close_without_retry(monkeypat
     c=Interrupted()
     with pytest.raises(TimeoutError):OpenAIHTTP("test-key",connection_factory=lambda host,timeout:c).send(b"{}")
     assert c.closed and len(c.calls)==1
+
+
+def test_error_diagnostic_is_closed_metadata_never_provider_message():
+    c=Connection(429,json.dumps({'error':{'code':'insufficient_quota','message':'secret-key-value','param':'secret-key-value'}}).encode())
+    client=OpenAIHTTP('test-key',connection_factory=lambda host,timeout:c)
+    with pytest.raises(ProviderUnavailable):client.send(b'{}')
+    assert client.last_failure['code']=='insufficient_quota'
+    assert client.last_failure['parameter'] is None and 'secret' not in json.dumps(client.last_failure)

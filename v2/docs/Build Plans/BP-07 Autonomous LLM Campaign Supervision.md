@@ -3,7 +3,7 @@
 ## Canonical Parent Tracker
 
 - Status: primary_active; BP-07.04 complete; BP-07.05/B2.03 original measured live adapter active.
-- Last refreshed: `2026-10-06 08:38:46` (America/Chicago).
+- Last refreshed: `2026-10-06 08:49:02` (America/Chicago).
 - Owner/scope: Agent Planning plus runtime-owned engagement and decision modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-03 discovery, BP-04 runner, BP-05 UI and BP-06 source/knowledge receipts.
@@ -11,7 +11,7 @@
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
 - Current implementation task: BP-07.05/B2.03 original measured live transport/input/accounting.
 - Demonstrated behavior: BP-07.01/.02 accepted immutable context/provider/budget and attributed text-decomposition boundaries, current-rights publication, bounded repair and actual Research/Knowledge handoff with replacement recovery. BP-07.03 adds bounded campaign context, semantic proposal policy and durable compiler handoff with actual-owner crash/rights and replacement proof. BP-07.04 adds bounded autonomous Runtime supervision, actual owner replacement and authoritative outcome reads. Live model quality remains subsequent.
-- Blockers: Owner delegated model/cost choice; pinned GPT-5.4 mini,synthetic-only inputs,$1 initial ceiling. No paid calls yet; implement bounded live transport before execution.
+- Blockers: Owner delegated model/cost choice; pinned GPT-5.4 mini,synthetic-only inputs,$1 initial ceiling. Two original calls unavailable; HTTP400/input on diagnostic. Versioned JSON framing verified; corrected suite pending, combined reservation $0.73728/$1.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
 

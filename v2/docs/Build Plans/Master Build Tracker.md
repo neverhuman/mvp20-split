@@ -9,14 +9,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 closed100%; BP-07.04 closed100%; BP-07.05/B2.03 original measured live adapter active; BP-08/09 queued.
-- Last refreshed: `2026-10-06 08:38:46` (America/Chicago).
+- Last refreshed: `2026-10-06 08:49:02` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P6 / BP-07 - Autonomous LLM Campaign Supervision.
 - Primary active task: BP-07.05/B2.03 original measured live transport/input/accounting.
-- Next task: implement the chosen live adapter and freeze the held-out evaluation manifest.
+- Next task: execute corrected frozen suite, then score both versions without erasing original failures.
 - Implementation completion: BP-07=87.5%,17/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
-- Active focus: B1 engineering complete: evaluation runner, Runtime inspection and Studio verified. B2 live configuration is required.
-- Blockers: Owner delegated model/cost choice; pinned GPT-5.4 mini,synthetic-only inputs,$1 initial ceiling. No paid calls yet; implement bounded live transport before execution.
+- Active focus: B1 engineering complete: evaluation runner, Runtime inspection and Studio verified. B2.03 corrected live suite pending under the original $1 ceiling.
+- Blockers: Owner delegated model/cost choice; pinned GPT-5.4 mini,synthetic-only inputs,$1 initial ceiling. Two original calls unavailable; HTTP400/input on diagnostic. Versioned JSON framing verified; corrected suite pending, combined reservation $0.73728/$1.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
 - Active exception: none.
 
@@ -32,7 +32,7 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-07.01/.02/.03/.04 are closed100%. BP-07.05/B1 is complete; B2 awaits owner configuration; implementation37.5%,Build50%,Acceptance0%.
+BP-07.01/.02/.03/.04 are closed100%. BP-07.05/B1 is complete; B2.03 corrected live execution active; implementation37.5%,Build50%,Acceptance0%.
 
 | Parent | Overall | P1 | P2 | P3 | P4 | P5 |
 |---|---:|---:|---:|---:|---:|---:|
@@ -126,7 +126,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
-| 2026-10-06 08:38:46 | BP-07.05/B2.02 complete;child37.5%,Build50%,parent87.5%. |49offline SQL/boundary checks;12-call corpus frozen;$0.36864 reservation,$1 ceiling. |
+| 2026-10-06 08:49:02 | BP-07.05/B2.02 complete;child37.5%,Build50%,parent87.5%. |49offline SQL/boundary checks;12-call corpus frozen;$0.36864 reservation,$1 ceiling. |
 | 2026-10-06 08:28:21 | BP-07.05/B2.01 complete;child31.25%,Build41.67%,parent86.25%. | OpenAI adapter80offline tests; no paid calls; initial$1 estimated ceiling. |
 | 2026-10-06 04:39:43 | BP-07.05/B1 complete; child25%,Build33.33%,parent85%,17/20. | Studio0.8;237 independent tests; fixture/installed-owner browsers; B2 live choices required. |
 | 2026-10-06 04:26:08 | BP-07.05/B1.03 complete; child18.75%,parent83.75%. |33SQL/API/boundary tests;217statements12branches100%;4installed process passes and retained continuation. |

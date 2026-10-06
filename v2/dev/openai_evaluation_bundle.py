@@ -13,8 +13,8 @@ from amphora_contracts_core import Scope
 ROOT = Path(__file__).absolute().parents[1] / "dev/evaluation_corpora/openai-engineering-v1"
 
 
-def load_bundle(transport):
-    inputs = json.loads((ROOT / "inputs.json").read_bytes())
+def load_bundle(transport, root=ROOT):
+    inputs = json.loads((root / "inputs.json").read_bytes())
     original = next(iter(inputs.values()))["request"]
     principal = Principal(
         original["actor_id"],
@@ -23,14 +23,14 @@ def load_bundle(transport):
     )
     protocol, batch = EvaluationJournal._decode(
         principal,
-        (ROOT / "manifest.json").read_bytes(),
-        (ROOT / "corpus.json").read_bytes(),
-        (ROOT / "inputs.json").read_bytes(),
+        (root / "manifest.json").read_bytes(),
+        (root / "corpus.json").read_bytes(),
+        (root / "inputs.json").read_bytes(),
     )
-    bodies = json.loads((ROOT / "bodies.json").read_bytes())
-    provider = OpenAIProvider(transport, lambda ref: bodies[ref.sha256].encode("utf-8"))
+    bodies = json.loads((root / "bodies.json").read_bytes())
+    provider = OpenAIProvider(transport, lambda ref: bodies[ref.sha256].encode("utf-8"), revision=protocol.manifest.adapter_revision)
     frozen = FrozenOpenAIEvaluation(protocol, batch, provider)
-    expected = json.loads((ROOT / "freeze.json").read_bytes())
+    expected = json.loads((root / "freeze.json").read_bytes())
     assert expected["protocol_sha256"] == protocol.sha256 and expected["batch_sha256"] == batch.sha256
     assert expected["packets"] == {
         key: hashlib.sha256(value.body).hexdigest() for key, value in frozen.prepared.items()

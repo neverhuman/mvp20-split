@@ -11,7 +11,7 @@ from amphora_agent_planning.evaluation_execution import EvaluationRunner
 from amphora_agent_planning.openai_provider.http import OpenAIHTTP
 from sqlalchemy import URL, create_engine
 
-from openai_evaluation_bundle import load_bundle
+from openai_evaluation_bundle import ROOT, load_bundle
 from postgres_fixture import owned_state
 
 
@@ -56,11 +56,19 @@ def report(runner, principal, protocol, batch):
                        'Reported estimated token cost is not an invoice; unknown calls retain reservation']}
 
 
-def execute(output, key_file, *, read_only=False):
+def execute(output, key_file, *, read_only=False, maximum_steps=12, resume_after_unavailable=False, profile="v1"):
     output.mkdir(parents=True, exist_ok=False)
     # Read-only report needs no secret and cannot send requests.
     transport = None if read_only else OpenAIHTTP(credential(key_file))
-    principal, protocol, batch, provider = load_bundle(transport)
+    # Both immutable versions share the SAME initial budget; neither refunds the other.
+    bundles = [ROOT]
+    corrected = ROOT.with_name("openai-engineering-v2")
+    if corrected.exists():
+        bundles.append(corrected)
+    frozen = [load_bundle(None, root) for root in bundles]
+    if sum(item[2].accounting_units for item in frozen) > 1000000000:
+        raise ValueError("initial_evaluation_group_budget")
+    principal, protocol, batch, provider = load_bundle(transport, ROOT if profile == "v1" else corrected)
     state = owned_state()
     host, port = state['endpoint'].split(':')
     url = URL.create('postgresql+psycopg', username='planning_service', password=state['password'],
@@ -71,20 +79,25 @@ def execute(output, key_file, *, read_only=False):
         if not read_only:
             EvaluationJournal(engine).register(principal, protocol, batch)
         current = report(runner, principal, protocol, batch)
-        for index in range(len(batch.tasks)):
+        diagnostics = []
+        for index in range(min(maximum_steps, len(batch.tasks))):
             (output / f'checkpoint-{index:02d}.json').write_text(json.dumps(current, indent=2) + '\n', encoding='utf-8')
-            if read_only or current['status'] != 'pending' or current['unknown_usage']:
+            prior_unavailable = all(row['usage'] is None or row['usage']['certainty'] == 'reported' or row['status'] == 'unavailable' for row in current['attempts'])
+            if read_only or current['status'] != 'pending' or (current['unknown_usage'] and not (resume_after_unavailable and prior_unavailable)):
                 break
-            if any(row['status'] in {'unknown', 'unavailable'} for row in current['attempts']):
+            if any(row['status'] == 'unknown' or (row['status'] == 'unavailable' and not resume_after_unavailable) for row in current['attempts']):
                 break
             before = sum(row['status'] != 'not_observed' for row in current['attempts'])
             runner.step(principal, protocol.manifest.suite_id)
             current = report(runner, principal, protocol, batch)
+            if transport.last_failure is not None:
+                diagnostics.append(transport.last_failure)
+            current['http_diagnostics'] = diagnostics
             after = sum(row['status'] != 'not_observed' for row in current['attempts'])
             print(json.dumps({'completed': after, 'planned': len(batch.tasks),
                               'reported_estimated_usd': current['reported_estimated_usd_nanodollars'] / 1000000000,
                               'status': current['status']}), flush=True)
-            if after == before:
+            if transport.last_failure is not None or after == before:
                 break  # Another issued worker or unknown outcome; never busy retry.
         (output / 'evidence.json').write_text(json.dumps(current, indent=2) + '\n', encoding='utf-8')
         print(json.dumps({'passed': current['passed'], 'status': current['status'],
@@ -98,5 +111,8 @@ if __name__ == '__main__':
     parser.add_argument('--output', required=True, type=Path)
     parser.add_argument('--key-file', type=Path, default=Path('Z:/ssos/.env'))
     parser.add_argument('--execute', action='store_true')
+    parser.add_argument('--maximum-steps', type=int, choices=range(1, 13), default=12)
+    parser.add_argument('--resume-after-unavailable', action='store_true')
+    parser.add_argument("--profile", choices=["v1", "v2"], default="v1")
     args = parser.parse_args()
-    execute(args.output.absolute(), args.key_file, read_only=not args.execute)
+    execute(args.output.absolute(), args.key_file, read_only=not args.execute, maximum_steps=args.maximum_steps, resume_after_unavailable=args.resume_after_unavailable, profile=args.profile)

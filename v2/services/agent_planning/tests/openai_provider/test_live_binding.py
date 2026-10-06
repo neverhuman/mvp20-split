@@ -72,3 +72,14 @@ def test_live_bound_runner_uses_original_durable_issuance_and_replay(stored):
     second=replacement.step(stored.principal,protocol.manifest.suite_id)
     assert len(second.observations)==2 and transport.calls==2
     assert second.observations[0]==first.observations[0]
+
+
+def test_versioned_json_framing_preserves_original_frozen_packets():
+    from openai_evaluation_bundle import ROOT
+    _, original, old_batch, old = load_bundle(None)
+    _, corrected, new_batch, new = load_bundle(None, ROOT.with_name("openai-engineering-v2"))
+    assert original.sha256 == "52adf8aaa572b253a31b39a72bdc146f15d38a36114f27726c8fdbba95047546"
+    assert corrected.sha256 != original.sha256
+    assert old_batch.accounting_units + new_batch.accounting_units == 737280000
+    assert all(json.loads(p.body)["input"][0]["content"].startswith("Return JSON only.\n") for p in new.prepared.values())
+    assert all(not json.loads(p.body)["input"][0]["content"].startswith("Return JSON only.") for p in old.prepared.values())

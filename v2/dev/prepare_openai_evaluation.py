@@ -1,5 +1,6 @@
 """Freeze synthetic engineering inputs and independent labels without any network call."""
 
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -10,7 +11,7 @@ from amphora_agent_planning.context import RequestSnapshot
 from amphora_agent_planning.evaluation import EvaluationProtocol
 from amphora_agent_planning.evaluation.protocol import canonical
 from amphora_agent_planning.evaluation_batch import EvaluationBatch
-from amphora_agent_planning.openai_provider import MODEL, OpenAIPrice, OpenAIProvider
+from amphora_agent_planning.openai_provider import MODEL, OpenAIPrice
 from amphora_agent_planning.openai_provider.input import PreparedInput, tokenizer_reference
 from amphora_contracts_core import Scope
 from amphora_contracts_planning import campaign_draft_schema, extraction_draft_schema
@@ -24,7 +25,9 @@ For purpose campaign_proposal, examine available capabilities and evidence. If a
 """.encode()
 
 
-def prepare():
+def prepare(revision="v1"):
+    destination = DEST if revision == "v1" else DEST.with_name("openai-engineering-v2")
+    adapter_revision = "openai-responses-synthetic-" + revision
     bodies = {}
 
     def artifact(name, raw):
@@ -233,9 +236,9 @@ def prepare():
     corpus = canonical({"schema_version": "1", "cases": cases})
     manifest = {
         "schema_version": "1",
-        "suite_id": "openai-engineering-v1",
+        "suite_id": "openai-engineering-" + revision,
         "mode": "live",
-        "adapter_revision": OpenAIProvider.revision,
+        "adapter_revision": adapter_revision,
         "model": model,
         "prompt_sha256": prompt["sha256"],
         "corpus_sha256": hashlib.sha256(corpus).hexdigest(),
@@ -253,7 +256,7 @@ def prepare():
     def reader(ref):
         return bodies[ref.sha256].encode()
 
-    packets = [PreparedInput.bind(task.binding, reader) for task in batch.tasks]
+    packets = [PreparedInput.bind(task.binding, reader, revision=adapter_revision) for task in batch.tasks]
     documents = {
         "manifest.json": canonical(manifest),
         "corpus.json": corpus,
@@ -274,9 +277,9 @@ def prepare():
             }
         ),
     }
-    DEST.mkdir(parents=True, exist_ok=True)
+    destination.mkdir(parents=True, exist_ok=True)
     for name, raw in documents.items():
-        path = DEST / name
+        path = destination / name
         if path.exists():
             if path.read_bytes() != raw:
                 raise ValueError("Refusing to replace frozen corpus: " + name)
@@ -296,4 +299,6 @@ def prepare():
 
 
 if __name__ == "__main__":
-    prepare()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--revision", choices=["v1", "v2"], default="v1")
+    prepare(parser.parse_args().revision)

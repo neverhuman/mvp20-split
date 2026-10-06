@@ -19,7 +19,8 @@ class PreparedInput:
     body: bytes
     reservation: int
     @classmethod
-    def bind(cls, attempt, content):
+    def bind(cls, attempt, content, *, revision="openai-responses-synthetic-v1"):
+        require(revision in {"openai-responses-synthetic-v1", "openai-responses-synthetic-v2"}, "openai_transport_revision")
         request = attempt.request.document()
         context = request.context
         require((context.model.provider_id,context.model.model_id,context.model.model_revision)==("openai",MODEL,MODEL), "openai_model_binding")
@@ -35,7 +36,7 @@ class PreparedInput:
         envelope = {"request":request.model_dump(mode="json"),"selected_artifacts":selected}
         value = {"model":MODEL,"store":False,"stream":False,"service_tier":"default",
                  "reasoning":{"effort":"low"},"max_output_tokens":context.limits.max_output_tokens,
-                 "instructions":instructions,"input":[{"role":"user","content":json.dumps(envelope,ensure_ascii=False)}],
+                 "instructions":instructions,"input":[{"role":"user","content":("Return JSON only.\n" if revision == "openai-responses-synthetic-v2" else "") + json.dumps(envelope,ensure_ascii=False)}],
                  "text":{"format":{"type":"json_object"}}}
         raw=json.dumps(value,ensure_ascii=False,separators=(",",":")).encode("utf-8")
         require(len(raw)+1024 <= context.limits.max_input_tokens, "openai_input_reservation_exceeded")
