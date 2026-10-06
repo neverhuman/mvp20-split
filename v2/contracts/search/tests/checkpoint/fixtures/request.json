@@ -1,0 +1,58 @@
+{
+  "schema_version": "1",
+  "scope": {
+    "tenant_id": "search-fixture",
+    "project_id": "numeric"
+  },
+  "evaluation_id": "evaluate-initial",
+  "specification_sha256": "5f124d2335e0af9eb65636fb148eb3c271d8ce85870f498315b5199284384e5d",
+  "candidate": {
+    "candidate_id": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "generation": 0,
+    "ordinal": 0,
+    "operator": "seed",
+    "genes": [
+      0.25
+    ],
+    "parents": [],
+    "draws": {
+      "start": 0,
+      "end": 1
+    },
+    "disposition": "proposed",
+    "reason_code": null,
+    "duplicate_of": null
+  },
+  "objectives": [
+    {
+      "objective_id": "cost",
+      "unit": "dimensionless",
+      "direction": "minimize"
+    }
+  ],
+  "evaluator": {
+    "tool": {
+      "capability_id": "synthetic-objectives",
+      "release": "0.1.0",
+      "image_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      "contract_version": "1"
+    },
+    "constraints": {
+      "artifact_id": "no-hard-constraints",
+      "scope": {
+        "tenant_id": "search-fixture",
+        "project_id": "numeric"
+      },
+      "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "search.synthetic-policy",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "size_bytes": 2
+    },
+    "context": [],
+    "completion": "all_frozen_members_terminal"
+  }
+}

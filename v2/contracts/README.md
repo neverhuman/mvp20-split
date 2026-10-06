@@ -26,3 +26,5 @@ BP-06.01 adds [acquisition evidence contracts](evidence/README.md): source revis
 [Research identity contracts](research/README.md) distinguish candidate, sample, material-state references and versioned questions/evidence needs. They provide no scientific acceptance or owner state.
 
 [Knowledge contracts](knowledge/README.md) expose scoped typed graph edits, grounding/Research links and structural-only decisions/snapshots. They grant no scientific or persistence authority; the owner implementation remains BP-06.02 work.
+
+[Search/checkpoint contracts](search/README.md): finite numeric specification,portablecheckpoint and scoped evaluation request/observation roots. Eight additive schemas preserve556predecessor bytes; domain acceptance belongs to the search tool.

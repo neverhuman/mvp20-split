@@ -1,6 +1,6 @@
 # Numeric evolutionary search boundary
 
-- Owner: BP-08.01/B1.01; numeric selection proof verified; public checkpoint contracts next.
+- Owner: BP-08.01/B1.01; numeric selection proof verified; public checkpoint contracts verified; original-spec/RNG/domain mapper next.
 - Scope: finite continuous numerical search primitives; independent Python implementation, not a verified v1 port.
 - Design: [Search](../../docs/Architecture/Campaigns/Search.md); [activation](../../docs/Audits/BP-08.01_Activation.md).
 

@@ -3,9 +3,11 @@ name = "amphora-foundation-verification"
 version = "0.1.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
+    "amphora-contracts-search==0.1.0",
+    "amphora-evolution-search==0.1.0",
     "amphora-contracts-supervision==0.10.0",
     "amphora-contracts-planning==0.10.0",
-    "amphora-agent-planning==0.89.0",
+    "amphora-agent-planning==0.95.0",
     "amphora-contracts-research-views==0.1.0",
     "amphora-contracts-representations==0.3.0",
     "amphora-knowledge==0.18.0",
@@ -16,7 +18,7 @@ dependencies = [
     "amphora-research==0.34.0",
     "amphora-contracts-tools==0.1.0",
     "amphora-contracts-campaigns==0.4.1",
-    "amphora-campaign-runtime==0.59.0",
+    "amphora-campaign-runtime==0.62.0",
     "pytest>=8,<9",
     "jsonschema[format-nongpl]>=4.23,<5",
     "httpx>=0.28,<1",
@@ -44,6 +46,8 @@ package = false
 link-mode = "copy"
 
 [tool.uv.sources]
+amphora-contracts-search = { path = "../contracts/search", editable = true }
+amphora-evolution-search = { path = "../tools/evolution_search", editable = true }
 amphora-contracts-supervision = { path = "../contracts/supervision", editable = true }
 amphora-contracts-planning = { path = "../contracts/planning", editable = true }
 amphora-agent-planning = { path = "../services/agent_planning", editable = true }

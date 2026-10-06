@@ -1,0 +1,46 @@
+{
+  "schema_version": "1",
+  "scope": {
+    "tenant_id": "search-fixture",
+    "project_id": "numeric"
+  },
+  "evaluation_id": "evaluate-initial",
+  "candidate_id": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "request_sha256": "a7e019c2cf230c7adcd9a617f42d0812c1d49d993934f15be879048840d41f18",
+  "outcome": {
+    "status": "evaluated",
+    "evaluator": {
+      "capability_id": "synthetic-objectives",
+      "release": "0.1.0",
+      "image_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      "contract_version": "1"
+    },
+    "objectives": [
+      {
+        "objective_id": "cost",
+        "unit": "dimensionless",
+        "value": 0.0625
+      }
+    ],
+    "constraint_violation": 0.0,
+    "constraints_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "quality": "synthetic",
+    "evidence": [
+      {
+        "artifact_id": "synthetic-measurement",
+        "scope": {
+          "tenant_id": "search-fixture",
+          "project_id": "numeric"
+        },
+        "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "search.synthetic-policy",
+          "version": "1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "size_bytes": 2
+      }
+    ]
+  }
+}

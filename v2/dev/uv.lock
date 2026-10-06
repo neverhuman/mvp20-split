@@ -360,6 +360,23 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-contracts-search"
+version = "0.1.0"
+source = { editable = "../contracts/search" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-tools" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-tools", editable = "../contracts/tools" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-solver-fixture"
 version = "0.1.0"
 source = { editable = "../contracts/solver_fixture" }
@@ -448,6 +465,11 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-evolution-search"
+version = "0.1.0"
+source = { editable = "../tools/evolution_search" }
+
+[[package]]
 name = "amphora-foundation-verification"
 version = "0.1.0"
 source = { virtual = "." }
@@ -467,10 +489,12 @@ dependencies = [
     { name = "amphora-contracts-research" },
     { name = "amphora-contracts-research-views" },
     { name = "amphora-contracts-runtime" },
+    { name = "amphora-contracts-search" },
     { name = "amphora-contracts-solver-fixture" },
     { name = "amphora-contracts-supervision" },
     { name = "amphora-contracts-tools" },
     { name = "amphora-data-artifacts" },
+    { name = "amphora-evolution-search" },
     { name = "amphora-knowledge" },
     { name = "amphora-numeric-affine" },
     { name = "amphora-research" },
@@ -505,10 +529,12 @@ requires-dist = [
     { name = "amphora-contracts-research", editable = "../contracts/research" },
     { name = "amphora-contracts-research-views", editable = "../contracts/research_views" },
     { name = "amphora-contracts-runtime", editable = "../contracts/runtime" },
+    { name = "amphora-contracts-search", editable = "../contracts/search" },
     { name = "amphora-contracts-solver-fixture", editable = "../contracts/solver_fixture" },
     { name = "amphora-contracts-supervision", editable = "../contracts/supervision" },
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },
     { name = "amphora-data-artifacts", editable = "../services/data_artifacts" },
+    { name = "amphora-evolution-search", editable = "../tools/evolution_search" },
     { name = "amphora-knowledge", editable = "../services/knowledge" },
     { name = "amphora-numeric-affine", editable = "../tools/numeric_affine" },
     { name = "amphora-research", editable = "../services/research" },

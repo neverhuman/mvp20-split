@@ -1,0 +1,19 @@
+{
+  "timestamp_local": "2026-10-06 09:56:31",
+  "status": "passed",
+  "tests": {
+    "contract_publication_boundaries": 40,
+    "seconds": 31.0,
+    "final_seed_binding_wire_checks": 20,
+    "final_seconds": 6.29,
+    "managed_module_checks": 19,
+    "managed_seconds": 2.29
+  },
+  "schemas": {
+    "total": 564,
+    "new": 8,
+    "unchanged_predecessors": 556
+  },
+  "scope": "Public spec/checkpoint/evaluation-request/observation shapes; domain consistency is B2,not inferred from schema validity",
+  "development_environment": "uv locked/synced with new contract/tool; stale dev pins reconciled to Planning0.95/Runtime0.62 without production behavior changes"
+}

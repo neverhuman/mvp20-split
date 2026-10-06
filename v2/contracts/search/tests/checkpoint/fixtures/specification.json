@@ -1,0 +1,75 @@
+{
+  "schema_version": "1",
+  "scope": {
+    "tenant_id": "search-fixture",
+    "project_id": "numeric"
+  },
+  "search_id": "numeric-search",
+  "representation": {
+    "schema_id": "search.numeric-vector",
+    "version": "1",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "variables": [
+    {
+      "variable_id": "x",
+      "unit": "dimensionless",
+      "lower": 0.0,
+      "upper": 1.0
+    }
+  ],
+  "objectives": [
+    {
+      "objective_id": "cost",
+      "unit": "dimensionless",
+      "direction": "minimize"
+    }
+  ],
+  "evaluator": {
+    "tool": {
+      "capability_id": "synthetic-objectives",
+      "release": "0.1.0",
+      "image_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      "contract_version": "1"
+    },
+    "constraints": {
+      "artifact_id": "no-hard-constraints",
+      "scope": {
+        "tenant_id": "search-fixture",
+        "project_id": "numeric"
+      },
+      "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "search.synthetic-policy",
+        "version": "1",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "size_bytes": 2
+    },
+    "context": [],
+    "completion": "all_frozen_members_terminal"
+  },
+  "operators": {
+    "selection": "constrained-pareto-feasible-v1",
+    "variation": "box-convex-uniform-v1",
+    "rng": "sha256-counter-u53-v1",
+    "crossover_probability": 0.8,
+    "mutation_probability": 0.2,
+    "mutation_fraction": 0.1
+  },
+  "budget": {
+    "population_size": 1,
+    "max_generations": 3,
+    "max_evaluations": 4,
+    "unchanged_front_limit": null
+  },
+  "implementations": [
+    {
+      "name": "numeric-kernel-fixture",
+      "version": "0.1.0",
+      "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    }
+  ],
+  "seed": "0000000000000000000000000000000000000000000000000000000000000000"
+}

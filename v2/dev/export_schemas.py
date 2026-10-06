@@ -14,6 +14,7 @@ import amphora_contracts_representations as representation_contracts
 import amphora_contracts_research as research_contracts
 import amphora_contracts_research_views as research_view_contracts
 import amphora_contracts_runtime as runtime_contracts
+import amphora_contracts_search as search_contracts
 import amphora_contracts_solver_fixture as solver_fixture_contracts
 import amphora_contracts_supervision as supervision_contracts
 import amphora_contracts_tools as tool_contracts
@@ -39,6 +40,10 @@ from amphora_contracts_tools import Completion, Invocation, ToolBinding, ToolDes
 
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
+    "search.specification": search_contracts.SearchSpec,
+    "search.checkpoint": search_contracts.SearchCheckpoint,
+    "search.evaluation-request": search_contracts.EvaluationRequest,
+    "search.evaluation-observation": search_contracts.EvaluationObservation,
     "supervision.checkpoint-inspection-page": supervision_contracts.CheckpointInspectionPage,
     "supervision.checkpoint-request-page": supervision_contracts.CheckpointRequestPage,
     "supervision.checkpoint-context-page": supervision_contracts.CheckpointContextPage,
