@@ -1,0 +1,309 @@
+{
+  "status": "passed",
+  "verified_at": "2026-10-05 21:00:08",
+  "runtime": "0.40.0",
+  "migration": "runtime_0023",
+  "installations": 2,
+  "abrupt_exits": 2,
+  "processes": 14,
+  "checked_exited_pids": [
+    228,
+    1832,
+    1844,
+    5844,
+    6260,
+    7476,
+    8080,
+    8328,
+    9520,
+    11668,
+    13064,
+    14312,
+    15520,
+    16224,
+    17544,
+    23852,
+    25132,
+    27188,
+    27472,
+    28176,
+    29208,
+    30780,
+    32436,
+    33032,
+    33128,
+    33220,
+    33600,
+    33764
+  ],
+  "records": [
+    {
+      "mode": "initialize",
+      "installation": "initial",
+      "exit_code": 0,
+      "result": {
+        "mode": "initialize",
+        "plan_sha256": "2588ef41966d1af297aa26431e499a64348057febf37f914498751b49d26ddb2",
+        "policy_sha256": "973e8758fb8ebbf4a870aece48b1a8b642f45f8a26f9884f0045bed018e9128d",
+        "command_sha256": "5b3a27862ef126c2844061746406c41ddbe36e9a77914f3a066964ee1c8020eb"
+      }
+    },
+    {
+      "mode": "kill_admission",
+      "installation": "initial",
+      "exit_code": 91,
+      "result": {
+        "mode": "kill_admission",
+        "barrier": "policy_and_frontier_before_commit"
+      }
+    },
+    {
+      "mode": "inspect_admission_rollback",
+      "installation": "replacement",
+      "exit_code": 0,
+      "result": {
+        "mode": "inspect_admission_rollback",
+        "pending_command": true,
+        "no_partial_admission": true
+      }
+    },
+    {
+      "mode": "admit",
+      "workers": 2,
+      "barrier": "both_ready_before_release",
+      "result": {
+        "run": "6e86ff645be74d368d461654fd34b341",
+        "receipt": {
+          "schema_version": "1",
+          "outcome": {
+            "status": "accepted",
+            "binding": {
+              "identity": {
+                "schema_version": "1",
+                "command_family": "graph.admit_supervised",
+                "command_id": "admit-checkpoint",
+                "scope": {
+                  "tenant_id": "checkpoint-process-proof",
+                  "project_id": "769e59c1bba642bfbcc13909ee6d6235"
+                },
+                "actor_id": "checkpoint-owner"
+              },
+              "request_sha256": "5b3a27862ef126c2844061746406c41ddbe36e9a77914f3a066964ee1c8020eb",
+              "operation_id": "52671ebcd5fc4368a55b495a6d3dc3ea"
+            },
+            "committed": {
+              "kind": "run",
+              "object_id": "6e86ff645be74d368d461654fd34b341",
+              "revision": 0
+            }
+          }
+        },
+        "receipt_sha256": "2a6ff10c77f62842b938fbeb1b3b229ec544a4169c35cc9c49750c4daeb9ccb1"
+      }
+    },
+    {
+      "mode": "replay_admission",
+      "installation": "replacement",
+      "exit_code": 0,
+      "result": {
+        "run": "6e86ff645be74d368d461654fd34b341",
+        "receipt": {
+          "schema_version": "1",
+          "outcome": {
+            "status": "accepted",
+            "binding": {
+              "identity": {
+                "schema_version": "1",
+                "command_family": "graph.admit_supervised",
+                "command_id": "admit-checkpoint",
+                "scope": {
+                  "tenant_id": "checkpoint-process-proof",
+                  "project_id": "769e59c1bba642bfbcc13909ee6d6235"
+                },
+                "actor_id": "checkpoint-owner"
+              },
+              "request_sha256": "5b3a27862ef126c2844061746406c41ddbe36e9a77914f3a066964ee1c8020eb",
+              "operation_id": "52671ebcd5fc4368a55b495a6d3dc3ea"
+            },
+            "committed": {
+              "kind": "run",
+              "object_id": "6e86ff645be74d368d461654fd34b341",
+              "revision": 0
+            }
+          }
+        },
+        "receipt_sha256": "2a6ff10c77f62842b938fbeb1b3b229ec544a4169c35cc9c49750c4daeb9ccb1"
+      }
+    },
+    {
+      "mode": "kill_advance",
+      "installation": "initial",
+      "exit_code": 92,
+      "result": {
+        "mode": "kill_advance",
+        "barrier": "checkpoint_before_advance_commit",
+        "uncommitted_seed": "277ac21a144533e58fef229215120a07465f3b0eac08200d0166ee8ab44c4255"
+      }
+    },
+    {
+      "mode": "inspect_advance_rollback",
+      "installation": "replacement",
+      "exit_code": 0,
+      "result": {
+        "mode": "inspect_advance_rollback",
+        "no_partial_expansion_or_slot": true,
+        "pending_command": true
+      }
+    },
+    {
+      "mode": "advance",
+      "workers": 2,
+      "barrier": "both_ready_before_release",
+      "result": {
+        "receipt": {
+          "schema_version": "1",
+          "outcome": {
+            "status": "accepted",
+            "binding": {
+              "identity": {
+                "schema_version": "1",
+                "command_family": "graph.advance",
+                "command_id": "advance-checkpoint",
+                "scope": {
+                  "tenant_id": "checkpoint-process-proof",
+                  "project_id": "769e59c1bba642bfbcc13909ee6d6235"
+                },
+                "actor_id": "checkpoint-owner"
+              },
+              "request_sha256": "8949a759731151b8c617f5acd3b6f916fab57ba8fc059abf686fa7fb9b66e569",
+              "operation_id": "492a8aafe5d44406a7cfdbae937c558d"
+            },
+            "committed": {
+              "kind": "run",
+              "object_id": "6e86ff645be74d368d461654fd34b341",
+              "revision": 1
+            }
+          }
+        },
+        "checkpoint": {
+          "decision_id": "3ce99231adafd2d1e3ae21408a9b1f86e01ada77147515adccaff62ed0341b89",
+          "seed_sha256": "277ac21a144533e58fef229215120a07465f3b0eac08200d0166ee8ab44c4255",
+          "original_fields_sha256": "436b87d656c4bd69184248c1de169573019b9110e5f0eef2840e751347b6526c",
+          "created_at": "2026-10-06T01:59:49.805504+00:00",
+          "deadline": "2026-10-06T02:00:19.805504+00:00",
+          "ordinal": 1,
+          "eligibility": "requestable"
+        }
+      }
+    },
+    {
+      "mode": "fresh_advance",
+      "installation": "replacement",
+      "exit_code": 0,
+      "result": {
+        "receipt": {
+          "schema_version": "1",
+          "outcome": {
+            "status": "accepted",
+            "binding": {
+              "identity": {
+                "schema_version": "1",
+                "command_family": "graph.advance",
+                "command_id": "advance-fresh",
+                "scope": {
+                  "tenant_id": "checkpoint-process-proof",
+                  "project_id": "769e59c1bba642bfbcc13909ee6d6235"
+                },
+                "actor_id": "checkpoint-owner"
+              },
+              "request_sha256": "8fc8297855f7aa44610183fed02e3b23464b71cb588dab333ec43dae86f10b56",
+              "operation_id": "f6a4443dff7d4716a1723028049a26dc"
+            },
+            "committed": {
+              "kind": "run",
+              "object_id": "6e86ff645be74d368d461654fd34b341",
+              "revision": 1
+            }
+          }
+        },
+        "checkpoint": {
+          "decision_id": "3ce99231adafd2d1e3ae21408a9b1f86e01ada77147515adccaff62ed0341b89",
+          "seed_sha256": "277ac21a144533e58fef229215120a07465f3b0eac08200d0166ee8ab44c4255",
+          "original_fields_sha256": "436b87d656c4bd69184248c1de169573019b9110e5f0eef2840e751347b6526c",
+          "created_at": "2026-10-06T01:59:49.805504+00:00",
+          "deadline": "2026-10-06T02:00:19.805504+00:00",
+          "ordinal": 1,
+          "eligibility": "requestable"
+        }
+      }
+    },
+    {
+      "mode": "cancel",
+      "installation": "replacement",
+      "exit_code": 0,
+      "result": {
+        "mode": "cancel",
+        "run_cancelled": true
+      }
+    },
+    {
+      "mode": "terminal_replay",
+      "installation": "replacement",
+      "exit_code": 0,
+      "result": {
+        "receipt": {
+          "schema_version": "1",
+          "outcome": {
+            "status": "accepted",
+            "binding": {
+              "identity": {
+                "schema_version": "1",
+                "command_family": "graph.advance",
+                "command_id": "advance-checkpoint",
+                "scope": {
+                  "tenant_id": "checkpoint-process-proof",
+                  "project_id": "769e59c1bba642bfbcc13909ee6d6235"
+                },
+                "actor_id": "checkpoint-owner"
+              },
+              "request_sha256": "8949a759731151b8c617f5acd3b6f916fab57ba8fc059abf686fa7fb9b66e569",
+              "operation_id": "492a8aafe5d44406a7cfdbae937c558d"
+            },
+            "committed": {
+              "kind": "run",
+              "object_id": "6e86ff645be74d368d461654fd34b341",
+              "revision": 1
+            }
+          }
+        },
+        "checkpoint": {
+          "decision_id": "3ce99231adafd2d1e3ae21408a9b1f86e01ada77147515adccaff62ed0341b89",
+          "seed_sha256": "277ac21a144533e58fef229215120a07465f3b0eac08200d0166ee8ab44c4255",
+          "original_fields_sha256": "436b87d656c4bd69184248c1de169573019b9110e5f0eef2840e751347b6526c",
+          "created_at": "2026-10-06T01:59:49.805504+00:00",
+          "deadline": "2026-10-06T02:00:19.805504+00:00",
+          "ordinal": 1,
+          "eligibility": "requestable"
+        }
+      }
+    },
+    {
+      "mode": "cleanup",
+      "installation": "replacement",
+      "exit_code": 0,
+      "result": {
+        "mode": "cleanup",
+        "scoped_cleanup": true,
+        "cancelled_runs": 0
+      }
+    }
+  ],
+  "limits": [
+    "Actual installed Runtime and PostgreSQL only; no SQL migration/reset",
+    "No provider, Planning request, accepted scalar effect or tool execution",
+    "Existing historical receipts, policy and checkpoint bytes retained after cancellation"
+  ],
+  "implementation_commit": "6d167632",
+  "boundary_tests": 12,
+  "boundary_seconds": 10.33
+}

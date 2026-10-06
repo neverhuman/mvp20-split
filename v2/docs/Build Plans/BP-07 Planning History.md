@@ -881,3 +881,6 @@ Four current installed owners668 cases(233 Runtime each,101 Planning each),40/30
 
 
 2026-10-05 20:55:37: d.a installed compatibility complete. Runtime0.40/Planning0.76 initial/replacement:292/292 and109/109,802 total.42/32 predecessor migration files unchanged,538 schemas preserve536. Output .test-results/checkpoint-policy-installed-20261005 passed;no SQL/migrations. d33.33%,B2.01=83.33%,B2=27.78%,Build42.59%,child31.94%,parent66.39%;next d.b actual process barriers.
+
+
+2026-10-05 21:02:34: d.b process barriers complete. .test-results/checkpoint-recovery-20261005 passed14 installed Runtime process runs,2 abrupt exits,2 admission/advance same-command races;original receipts and scalar-bearing slots survive rollback/replacement/cancellation.28 launcher/worker PIDs exited;scoped cleanup complete.12 boundary10.33s,Ruff passed. No SQL migration/reset/provider/effect. d66.67%,B2.01=91.67%,B2=30.56%,Build43.52%,child32.64%,parent66.53%;next d.c relevant observations/issuance/membership fences.
