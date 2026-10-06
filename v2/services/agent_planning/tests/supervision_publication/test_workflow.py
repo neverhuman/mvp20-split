@@ -110,6 +110,32 @@ def test_empty_capture_skips_data_and_disappeared_known_receipt_never_reposts(st
         assert sum(path == '/v1/supervision/responses' for _, path, _ in runtime.calls) == 1
 
 
+def test_response_committed_between_initial_read_and_lease_replays_without_transport(stored, capture, monkeypatch):
+    pub, _ = publisher(stored, capture)
+    state = pub.publish(stored.principal, capture)
+    identity = state.identity.publication_id
+    with RuntimePeer(stored.principal) as runtime:
+        responses = CaptureResponseJournal(pub.journal)
+        sender = CaptureResponder(responses, runtime.client)
+        replacement = CaptureResponder(CaptureResponseJournal(CaptureJournal(stored.engine, 'data-owner')), runtime.client)
+        acquire = pub.journal.acquire
+        completed, calls = [], []
+
+        def interleave(principal, publication_id):
+            assert not completed
+            # Another owner commits after this sender's nonterminal read, before its lease.
+            completed.append(replacement.send(principal, publication_id))
+            calls.extend(runtime.calls)
+            return acquire(principal, publication_id)
+
+        monkeypatch.setattr(pub.journal, 'acquire', interleave)
+        result = sender.send(stored.principal, identity)
+        assert result == completed[0] and result.observation.status == 'recorded'
+        assert runtime.calls == calls
+        assert sum(path == '/v1/supervision/responses' for _, path, _ in runtime.calls) == 1
+        assert responses.read(stored.principal, identity) == result
+
+
 @pytest.mark.parametrize('reason', ['capture_lease_lost', 'unexpected_storage_failure'])
 def test_release_never_hides_unrelated_storage_failure(reason):
     class Journal:

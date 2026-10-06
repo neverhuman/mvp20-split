@@ -240,3 +240,5 @@ B3.03 verified 2026-10-05 13:19:41: predeclared300-descriptor protocol/catalog a
 ## 2026-10-05 13:36:19 - BP-07.03 aligned closeout
 
 [Scoped audit](BP-07.03_Campaign_Closeout.md) reconciles context/packet/output, semantic policy and durable compiler handoff against actual owner, SQL, process-failure and replacement proof. Stale root-module/migration/architecture and MBT summaries corrected.510 schemas and22 baseline migration files unchanged; two fresh installs pass1262/49 cases. No unresolved finding in this child; Runtime engagement acceptance/live evaluation remain named successors. Follow-up:none within closed scope.
+
+- `2026-10-06 03:25:12`: BP-07.04 closed100%, aligned; [scoped audit](BP-07.04_Supervisor_Closeout.md). Publication terminal race verified and authoritative decision read gap repaired; no unresolved in-scope follow-up. Live evaluation/lineage UI remains BP-07.05.

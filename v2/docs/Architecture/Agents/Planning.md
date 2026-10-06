@@ -1,8 +1,8 @@
 # LLM Planning and Context
 
-- Design status: immutable context, deterministic provider boundary, conservative budgets, attributed text extraction, bounded repair, durable owner handoff and campaign context preparation, typed proposal outputs, semantic campaign policy and durable compiler handoff implemented; Runtime engagement acceptance and live model evaluation remain successor scope
+- Design status: immutable context, deterministic provider boundary, conservative budgets, attributed text extraction, bounded repair, durable owner handoff and campaign context preparation, typed proposal outputs, semantic campaign policy and durable compiler handoff implemented; Runtime-owned bounded checkpoint acceptance, durable owner scheduling and isolated replacement implemented; live model evaluation remains successor scope
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
-- Last reviewed: `2026-10-05 13:34:17` (America/Chicago)
+- Last reviewed: `2026-10-06 03:08:04` (America/Chicago)
 - Parent: [Domain overview](Agent_Architecture.md)
 - Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#llm-prompt-integration)
 

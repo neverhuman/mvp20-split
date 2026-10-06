@@ -121,6 +121,8 @@ class WinnerStore:
         principal.require('read')
         params = self.params(principal, reference)
         with self.leases.commands.engine.connect() as conn:
+            if conn.execute(text(WINNER), params).first() is None:
+                return None
             return self.load(conn, params, slot_for(conn, params))
 
     def resolve(self, principal, reference, *, response_id=None):

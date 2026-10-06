@@ -6,6 +6,7 @@ from typing import Annotated
 from amphora_contracts_core import Identifier
 from amphora_contracts_supervision import (
     CancelSupervision,
+    CheckpointDecision,
     SupervisionCommandReceipt,
     SupervisionResponse,
 )
@@ -47,6 +48,11 @@ def install(app, recording, credentials):
     @app.get('/v1/supervision/ready')
     def ready():
         return recording.ready()
+
+    @app.get('/v1/supervision/decisions/{run_id}/{decision_id}', response_model=CheckpointDecision)
+    async def decision(run_id: Identifier, decision_id: Identifier,
+                       principal: Annotated[RuntimePrincipal, Depends(authorized)]):
+        return await perform(recording.decision, principal, run_id, decision_id)
 
     @app.post('/v1/supervision/responses', response_model=SupervisionCommandReceipt)
     async def respond(request: Request, principal: Annotated[RuntimePrincipal, Depends(authorized)]):

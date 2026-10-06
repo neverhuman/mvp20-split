@@ -976,3 +976,11 @@ Runtimeinitial/replacement394checks each;Planning240each;548publicschemas/546pre
 ## 2026-10-06 02:59:17 - V1.01 installed replacement complete
 
 Initial/replacement Runtime andPlanning wheel environments plusisolatedData passed three actualowner scenarios:scalar1case206.00s,late/future2cases425.94s. Everyhost replacedonsameendpoint/config/history whileissuedprovidercallheld; newworkers preserveexactrequest/report/winner/output.18hostprocesses across3scenarios;manifesthashes retained. Boundaries12passed11.95s,ruffpassed. Evidence Checkpoint_Installed_Replacement.json. V1.01=100%,V1=50%,child87.5%,Acceptance50%,parent77.5%,15/20closed. V1.02audit explicitlyfills priorCaptureResponderpost-lease terminalfast-path testgap beforearchival; B3 remainsclosed.
+
+## 2026-10-06 03:24:26 - BP-07.04 closed
+
+Durable supervisor scoped audit aligned; child100%,Build100%,Acceptance100%,4/4. Parent80%,16/20; BP-07.05B1 next after activation. [Audit](../Audits/BP-07.04_Supervisor_Closeout.md).
+
+## 2026-10-06 03:25:12 - BP-07.04 closed
+
+Durable supervisor scoped audit aligned; child100%,Build100%,Acceptance100%,4/4. Parent80%,16/20; BP-07.05B1 next after activation. [Audit](../Audits/BP-07.04_Supervisor_Closeout.md).

@@ -6,3 +6,5 @@ Six cases cover receipt replay after fresh processing withdrawal, read-only reco
 
 
 owner_worker.py is an explicit installed-process acceptance probe, not ordinary test collection. dev/verify_supervision_owners.py copies and invokes it with --confcutdir and own-service SQL/environment only. Current proof11 stages/6 actual service processes verifies original HTTP recording, two post-commit lost replies, replacement history, current processing-rights denial/regrant and scoped cleanup. Runtime checks byte/timestamp/run-status invariants; Planning checks original intake and zero provider attempts. No migrations/reset or peer-private imports.
+
+Decision inspection: test_decisions.py adds three actual SQL scenarios for accepted/fallback/cancelled outcomes, pending/proposal-only unavailability, authentication/read grant/scope/query denial, unknown identities and replacement readback. dev/verify_checkpoint_decision_read.py separately proves isolated installed Runtime HTTP reads of retained accepted/fallback winners; it never migrates or mutates the fixture.

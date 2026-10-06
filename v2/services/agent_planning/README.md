@@ -1,22 +1,13 @@
 # Agent Planning service boundary
 
-Package0.76 updates the compatible public supervision dependency to0.4; no Planning behavior or migration change.
-
-Current package0.75 exposes explicit v2 checkpoint HTTP with profile-isolated readback.
-
-Package0.74/planning0016 supports versioned checkpoint journal intake and original receipt replay; no provider attempt side effect.
-
-Package0.73 pins public supervision0.3 for the upcoming explicit checkpoint request intake. At this checkpoint existing intake/HTTP remains v1-only; no new provider or graph authority.
-
-
-- Version: Planning0.72.0; public Planning0.9.0 and supervision0.2.0; owned migration head0015.
-- Reviewed: `2026-10-05 16:09:00` (America/Chicago). BP-07.01/.02/.03 accepted within deterministic/synthetic scope.
+- Version: Planning0.89.0; public Planning0.10 and supervision0.9; owned migration head0018.
+- Reviewed: `2026-10-06 03:26:07` (America/Chicago); BP-07.01-.04 accepted within deterministic software scope.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
-- Design: [Planning](../../docs/Architecture/Agents/Planning.md). Campaign acceptance: [BP-07.03](../../docs/Build%20Plans/BP-07/Completed/BP-07.03%20Campaign%20proposals%20and%20context.md); next [BP-07.04](../../docs/Build%20Plans/BP-07/BP-07.04%20Durable%20supervisor%20and%20races.md).
+- Design: [Planning](../../docs/Architecture/Agents/Planning.md). Campaign acceptance: [BP-07.03](../../docs/Build%20Plans/BP-07/Completed/BP-07.03%20Campaign%20proposals%20and%20context.md); supervisor acceptance [BP-07.04](../../docs/Build%20Plans/BP-07/Completed/BP-07.04%20Durable%20supervisor%20and%20races.md).
 
 ## Responsibilities and exclusions
 
-Planning binds immutable context, deterministic provider attempts, conservative budgets, attributed text decomposition and bounded campaign proposals. It persists its own intent and exact outputs before publishing derived Artifacts or submitting proposals through public owner interfaces. Campaign compilation saves and validates a draft; it never admits or executes that draft. The focused supervisor intake server records requests and reads history; no live model adapter is configured. It cannot register scientific truth, grant source rights, accept Runtime engagement decisions or mutate peer tables.
+Planning binds immutable context, deterministic provider attempts, conservative budgets, attributed text decomposition and bounded campaign proposals. It persists its own intent and exact outputs before publishing derived Artifacts or submitting proposals through public owner interfaces. Campaign compilation saves and validates a draft; it never admits or executes that draft. The focused supervisor intake server records requests and reads history. Separate configured scheduling/execution workers bind retained context, conservative attempt/completion accounting and capture publication; the supported deterministic adapter proves orchestration, not live model quality. It cannot register scientific truth, grant source rights, accept Runtime engagement decisions or mutate peer tables.
 
 This independently built wheel depends on public contracts and the Tool Protocol SDK. SQLAlchemy/psycopg/Alembic are private persistence dependencies; private peer imports, shared ORM models and peer SQL are forbidden. Each module below owns a focused rebuild contract. Scientific uncertainty, contradiction and missing evidence remain explicit; they do not impose a global campaign veto.
 

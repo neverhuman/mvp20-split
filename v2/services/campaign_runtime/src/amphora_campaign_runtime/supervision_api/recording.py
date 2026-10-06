@@ -2,13 +2,18 @@
 
 import json
 
-from amphora_contracts_supervision import SupervisionResponse, parse_supervision_command
+from amphora_contracts_supervision import (
+    SupervisionRef,
+    SupervisionResponse,
+    parse_supervision_command,
+)
 from sqlalchemy import text
 
 from ..supervision_capture import CaptureUnavailable
 from ..supervision_journal.cancellations import CancellationJournal
 from ..supervision_journal.responses import ResponseJournal
 from ..supervision_scope.observations import require
+from ..supervision_winners.storage import WinnerStore
 
 
 class SupervisorRecording:
@@ -61,3 +66,8 @@ class SupervisorRecording:
     def cancellation(self, principal, cancellation_id):
         result = self.cancellations.cancellation(principal, cancellation_id)
         return None if result is None else result.bound.document()
+
+    def decision(self, principal, run_id, decision_id):
+        reference = SupervisionRef(scope=principal.scope, run_id=run_id, decision_id=decision_id)
+        result = WinnerStore(self.requests.engine).read(principal, reference)
+        return None if result is None else result.document()

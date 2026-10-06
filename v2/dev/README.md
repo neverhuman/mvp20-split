@@ -172,3 +172,5 @@ Coverage checkpoint (BP-07.04/B2.01b.iii): use filesystem source directories, as
 
 
 verify_supervision_installations.py now verifies the explicit checkpoint effect profiles:542 schemas preserve538 predecessors. It copies public schemas and owner tests only, adds pure scalar selections and Planning checkpoint capture tests, and checks historical migrations from explicitly supplied prior installations. No SQL or migration occurs in this helper.
+
+`verify_checkpoint_decision_read.py --output <new-directory> --retained <actual-owner-proof-directory> ...` installs current isolated Runtime with locked dependencies and reads the retained evidence's exact winners through fresh read-only HTTP hosts and replacement processes. Uses existing owned Runtime SQL via environment-only credentials; no migrations, provider calls or peer-private imports. Replacement uses fresh loopback ports; original history/config remains fixed. It is a focused additive-read verification, not a replacement for the earlier execution integration tier.

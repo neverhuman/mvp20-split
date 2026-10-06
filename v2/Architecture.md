@@ -1,7 +1,7 @@
 # Amphora Master Architecture
 
-- Design status: v2 bounded synthetic software foundations, durable graph execution, Studio inspection, evidence integration and bounded campaign proposal/compiler handoff implemented; autonomous model supervision, evolutionary integration and target-host deployment remain successor scope
-- Last reviewed: `2026-10-05 13:34:17` (America/Chicago)
+- Design status: v2 bounded synthetic software foundations, durable graph execution, Studio inspection, evidence integration and bounded campaign proposal/compiler handoff implemented; bounded autonomous checkpoint supervision implemented; live model quality, evolutionary integration and target-host deployment remain successor scope
+- Last reviewed: `2026-10-06 03:08:04` (America/Chicago)
 - Scope: system principles, construction boundary and functional responsibility domains
 - Requirement authority: Product_Requirements.md in docs/Architecture/Requirements
 
