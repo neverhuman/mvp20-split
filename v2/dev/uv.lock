@@ -854,7 +854,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-numeric-affine"
-version = "0.2.0"
+version = "0.3.0"
 source = { editable = "../tools/numeric_affine" }
 dependencies = [
     { name = "amphora-contracts-core" },

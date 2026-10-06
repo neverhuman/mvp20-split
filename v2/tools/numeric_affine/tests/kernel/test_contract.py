@@ -16,7 +16,7 @@ def test_published_payload_schemas_match_tool_boundary():
         expected = (json.dumps(model.model_json_schema(mode="validation"), sort_keys=True, indent=2, ensure_ascii=True) + "\n").encode()
         assert schema_bytes(kind) == expected
     release = descriptor("c" * 64)  # Explicit test-only image identity, never deployment evidence.
-    assert release.tool.binding.release == "0.2.0"
+    assert release.tool.binding.release == "0.3.0"
     assert release.tool.inputs[0].schema_ref.sha256 == hashlib.sha256(schema_bytes("input")).hexdigest()
     assert release.tool.outputs[0].schema_ref.sha256 == hashlib.sha256(schema_bytes("output")).hexdigest()
     assert release.authority_ceiling == "synthetic_only" and release.tool.side_effects == "pure"

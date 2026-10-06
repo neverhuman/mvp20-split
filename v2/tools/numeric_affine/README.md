@@ -1,7 +1,7 @@
 # Numeric Affine Tool
 
 - Status: BP-03 bounded tool/index/protocol scope complete; actual independent replica recovery and immutable release cutover verified. General graph interpretation remains BP-04.
-- Package/release: `amphora-numeric-affine` 0.2.0; wire payload version 1.
+- Package/release: `amphora-numeric-affine` 0.3.0; wire payload version 1.
 - Architecture: [tool services](../../docs/Architecture/Capabilities/Tool_Services.md).
 
 Computes `a*x+b` for each of up to 1024 numeric values, preserving input order. Coefficients and inputs are finite and bounded to magnitude 1e100; outputs must be finite. Empty vectors are valid. Negative and zero coefficients have explicit golden tests. Malformed, nonfinite, boolean, string-coerced or out-of-bound parameters report `invalid_numeric_parameters` through the worker adapter.
@@ -31,3 +31,7 @@ B2 coverage checkpoint: 16 module tests; 82% combined line/branch over 86 statem
 Terminal schema/configuration failures do not retry; bounded transport/capacity failures may retry only under runtime authority. An incomplete worker execution exits 3 with a safe message; invalid input/configuration exits 2. The worker adapter preserves the tool-specific failure vocabulary above.
 
 [Integrated replica acceptance](../../docs/Audits/BP-03.04_Replica_Closeout.md) records exact registry selection, actual peer/worker processes, stale fences, release cutover and preserved history. The fixture controller remains test-only; no production graph scheduler or deployment supervisor is implied.
+
+## BP-08.04 replacement fixture
+
+Release0.3 preserves0.2 arithmetic, exact payload schemas and all port/resource/checkpoint declarations. Only its immutable package/release identity changes for the bounded topology successor proof. The old0.2 wheel closure was built and retained before this update under ROOT.test-results/topology-handoff-installs-20261006a/numeric-old. This is a replacement qualification, not a numerical improvement. Original0.2 images, registered releases and history remain unchanged. New actual-image qualification remains BP-08.04/V1; initial process evidence uses explicitly declared fixture image pins.

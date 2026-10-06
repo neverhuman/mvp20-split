@@ -1,0 +1,191 @@
+{
+  "timestamp_local": "2026-10-06 18:53:43",
+  "status": "passed",
+  "scope": "BP-08.04/B2.02ii actual public topology handoff",
+  "raw_evidence": ".test-results/topology-handoff-20261006b/http/evidence.json",
+  "raw_sha256": "c6ef5cf75948a6f03b726bb78eadd143910dab94b54764a42ff0644726175f5a",
+  "result": {
+    "benchmark": {
+      "artifact_id": "451382fd1b8c4eaa81ead7c00a969c7f",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "fixture.topology-benchmark",
+        "sha256": "a0a9800e159c3018353d90f047b92c9051192f2f75531ee4a50dfa113a2bf5a3",
+        "version": "1"
+      },
+      "scope": {
+        "project_id": "1d322f47cf4e4647b239a68e044fe9a3",
+        "tenant_id": "topology-handoff"
+      },
+      "sha256": "4392576ec111a6e7623a3b85ecc0ff369d903ac93b91cd0799e310b21c4c4a01",
+      "size_bytes": 55080
+    },
+    "handoff": {
+      "artifact_id": "e11d7e7063f94463984483552d778b52",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "fixture.topology-handoff",
+        "sha256": "6b6a762b4b877a962c86d315dfb2fad24291cd8676f12bb5ad19c86d67432249",
+        "version": "1"
+      },
+      "scope": {
+        "project_id": "1d322f47cf4e4647b239a68e044fe9a3",
+        "tenant_id": "topology-handoff"
+      },
+      "sha256": "1799bf23585a9ef90bd5f2f4cb1fa492b74aee2c0db08da3ee3cd4f10884113d",
+      "size_bytes": 28237
+    },
+    "lineage": {
+      "carried": [
+        {
+          "expected_value_sha256": "b4885e9a00886f60895d8a35f11e7338f8080b07a1c51f52bab75b03198282fe",
+          "source": {
+            "kind": "run_output",
+            "port": "parameters"
+          },
+          "target_port": "parameters"
+        }
+      ],
+      "plan_sha256": "ba820444689f113aca29c00fea836c21872f627f51f80faaa0f3910afbaddf94",
+      "predecessor": {
+        "plan_sha256": "4b6154cc2b5fc694e9846c2ce51358fa9d8384114c949297db9c29c81034869e",
+        "revision": 9,
+        "run_id": "e6d2b9cbad6a4516951c219036d90ab3"
+      },
+      "run_id": "24fe7be6184a4e7d8a5175eb33d1af52",
+      "schema_version": "1",
+      "scope": {
+        "project_id": "1d322f47cf4e4647b239a68e044fe9a3",
+        "tenant_id": "topology-handoff"
+      },
+      "transfer_sha256": "c195b317248a5e81c36446f902312da36783157026e9b489feab626c0c0577fa"
+    },
+    "paid_calls": 0,
+    "parent_run": "e6d2b9cbad6a4516951c219036d90ab3",
+    "premature_reason": "predecessor_not_terminal",
+    "proposal": {
+      "proposal_id": "after-terminal",
+      "scope": {
+        "project_id": "1d322f47cf4e4647b239a68e044fe9a3",
+        "tenant_id": "topology-handoff"
+      },
+      "sha256": "4b869abfb62da8bb1e6faf5be72076d78ff500c13657806905ca028109dda8f0"
+    },
+    "restarted_owners": [
+      "planning",
+      "runtime",
+      "artifact"
+    ],
+    "successor_run": "24fe7be6184a4e7d8a5175eb33d1af52"
+  },
+  "packages": {
+    "artifact": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.13",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-representations": "0.3.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-data-artifacts": "0.30.0"
+    },
+    "controller": {
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-contracts-topology-search": "0.1.0"
+    },
+    "numeric-new": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-numeric-affine": "0.3.0",
+      "amphora-tool-protocol": "0.2.0"
+    },
+    "numeric-old": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-numeric-affine": "0.2.0",
+      "amphora-tool-protocol": "0.2.0"
+    },
+    "planning": {
+      "amphora-agent-planning": "0.98.0",
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.13",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-knowledge": "0.8.0",
+      "amphora-contracts-planning": "0.10.0",
+      "amphora-contracts-representations": "0.3.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-research-views": "0.1.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-supervision": "0.10.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-contracts-topology-search": "0.1.0",
+      "amphora-tool-protocol": "0.2.0"
+    },
+    "registry": {
+      "amphora-capability-registry": "0.1.0",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-tools": "0.1.0"
+    },
+    "runtime": {
+      "amphora-campaign-runtime": "0.65.0",
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-draft-successor": "0.1.0",
+      "amphora-contracts-evidence": "0.5.13",
+      "amphora-contracts-execution-proofs": "0.1.0",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-knowledge": "0.8.0",
+      "amphora-contracts-planning": "0.10.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-supervision": "0.10.0",
+      "amphora-contracts-tools": "0.1.0"
+    }
+  },
+  "checks": [
+    "Actual Planning proposal and exact retry",
+    "Actual Runtime save/validate/draft-successor admission",
+    "Premature predecessor rejection remains replayable after completion",
+    "Parent0.2 and successor0.3 accepted producer pins and arithmetic [5,3,1]",
+    "Exact carried parameter Artifact fingerprint and immutable lineage",
+    "Confirmed output retention through actual Data/Runtime",
+    "Data retains original benchmark and handoff bytes",
+    "Planning/Runtime/Data restart and original receipt/proposal/producer/artifact replay"
+  ],
+  "regressions": {
+    "passed": 28,
+    "seconds": 20.34,
+    "scope": "numeric-affine plus development boundaries"
+  },
+  "limits": [
+    "Declared image fixture pins; Windows processes, not image deployment",
+    "Registry capacity is synthetic fixture metadata",
+    "No scientific or model-quality claim",
+    "Test controller orchestration; no production scheduler or model attempt",
+    "Independent numeric benchmark is not evaluator-swap improvement evidence"
+  ],
+  "failed_attempts": {
+    "topology-handoff-20261006a": "Test deliver CLI omitted actor/scope; repaired controller only; history retained"
+  },
+  "paid_calls": 0
+}

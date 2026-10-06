@@ -4,7 +4,7 @@
     "schema_version": "1",
     "binding": {
       "capability_id": "synthetic.numeric-affine",
-      "release": "0.2.0",
+      "release": "0.3.0",
       "contract_version": "1"
     },
     "purpose": "Apply a*x+b independently to bounded synthetic numeric values.",

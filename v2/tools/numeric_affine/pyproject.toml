@@ -1,6 +1,6 @@
 [project]
 name = "amphora-numeric-affine"
-version = "0.2.0"
+version = "0.3.0"
 requires-python = ">=3.12,<3.13"
 dependencies = ["pydantic>=2.11,<3", "amphora-contracts-core", "amphora-contracts-tools", "amphora-tool-protocol"]
 
