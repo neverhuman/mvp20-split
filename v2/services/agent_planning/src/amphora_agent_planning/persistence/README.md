@@ -86,3 +86,5 @@ planning0014 stores complete bounded compiler rounds, exact effect payloads and 
 
 
 planning0015 adds original supervisor wrappers and immutable recording commands/receipts. The [supervision intake](../supervision_intake/README.md) module registers a legacy-compatible planning.requests row atomically with its wrapper/receipt, using command-key then decision-slot then existing request-key locks. No provider attempt, family enrollment, budget or dispatch is granted. Prior migrations remain unchanged.
+
+Planning0018 adds immutable checkpoint_execution_reports. execution_state.require_execution_open is called under the existing request lock before new budget reservations, attempt intents, dispatch and primary observations; exact original replay precedes closure checks. Late observations remain diagnostic and prior migrations are unchanged. Never use Planning<=0.85 migrators against this head.

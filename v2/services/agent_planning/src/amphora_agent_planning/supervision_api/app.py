@@ -6,6 +6,7 @@ from typing import Annotated
 from amphora_contracts_commands import CommandEncodingError
 from amphora_contracts_core import Identifier
 from amphora_contracts_supervision import (
+    CheckpointExecutionReport,
     CheckpointRequest,
     SupervisionCommandReceipt,
     SupervisionRequest,
@@ -21,6 +22,7 @@ from sqlalchemy import text
 from sqlalchemy.exc import DBAPIError
 
 from ..access import Principal
+from ..supervision_completion import CompletionJournal
 from ..supervision_intake.commands import IncomingRequest
 from .bounds import RequestBounds
 from .credentials import AuthenticationError
@@ -29,7 +31,7 @@ from .credentials import AuthenticationError
 def create_app(intake=None, credentials=None):
     if (intake is None) != (credentials is None):
         raise ValueError('complete_supervision_configuration_required')
-    app = FastAPI(title='Amphora Planning supervisor intake', version='0.75.0')
+    app = FastAPI(title='Amphora Planning supervisor intake', version='0.86.0')
     app.add_middleware(RequestBounds)
 
     @app.exception_handler(AuthenticationError)
@@ -69,6 +71,7 @@ def create_app(intake=None, credentials=None):
         if intake is None:
             return JSONResponse({'status': 'not_configured'}, status_code=503)
         with intake.engine.connect() as conn:
+            conn.execute(text('SELECT canonical_bytes FROM planning.checkpoint_execution_reports LIMIT 0'))
             conn.execute(text('SELECT canonical_request FROM planning.supervision_requests LIMIT 0'))
             conn.execute(text('SELECT canonical_receipt FROM planning.supervision_commands LIMIT 0'))
             compatible = conn.execute(text("SELECT EXISTS (SELECT 1 FROM pg_constraint WHERE "
@@ -137,5 +140,12 @@ def create_app(intake=None, credentials=None):
         if result.document().schema_version != '2':
             raise ValueError('supervision_request_profile_mismatch')
         return result.document()
+
+    @app.get('/v2/supervision/execution/{engagement_id}', response_model=CheckpointExecutionReport)
+    async def execution_report(engagement_id: Identifier, principal: Annotated[Principal, Depends(authorized)]):
+        result = await asyncio.to_thread(CompletionJournal(intake.engine).read, principal, engagement_id)
+        if result is None:
+            return JSONResponse({'reason_code': 'checkpoint_execution_unresolved'}, status_code=404)
+        return result.report.document()
 
     return app

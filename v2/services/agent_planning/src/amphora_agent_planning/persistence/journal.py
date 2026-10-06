@@ -6,6 +6,7 @@ from sqlalchemy import text
 
 from ..context import RequestSnapshot
 from ..context.policy import require
+from .execution_state import require_execution_open
 from .family_state import lock_request
 from .records import AttemptJournal, request_from_row, verified_observation
 
@@ -75,6 +76,7 @@ class PlanningJournal:
             existing = self._attempt(connection, key, snapshot)
             if existing:
                 return existing
+            require_execution_open(connection, key)
             require(membership is None, "repair_requires_budget_admission")
             latest = connection.execute(text("SELECT COALESCE(MAX(ordinal),0) FROM planning.attempts WHERE " + KEY),
                                          key).scalar_one()
@@ -105,6 +107,7 @@ class PlanningJournal:
         if existing.observation is not None:
             require(existing.observation == observation, "observation_conflict")
             return existing
+        require_execution_open(connection, key)
         connection.execute(text("INSERT INTO planning.observations "
             "(tenant_id,project_id,engagement_id,ordinal,canonical_bytes,capture_bytes) "
             "VALUES (:tenant,:project,:engagement,:ordinal,:content,:capture)"),

@@ -1,0 +1,31 @@
+{
+  "checkpoint": "2026-10-06 00:24:15",
+  "task": "BP-07.04/B2.03c.ii.2",
+  "version": "Planning0.86/planning0018",
+  "verification": [
+    "36 passed36.26s",
+    "114 passed82.10s"
+  ],
+  "coverage": {
+    "journal_statements": 75,
+    "journal_branches": 8,
+    "journal_percent": 100,
+    "combined_percent": 95,
+    "worker_percent": 86
+  },
+  "proof": [
+    "actualSQL",
+    "scriptedData/provider",
+    "ASGIHTTP",
+    "immutable grants",
+    "concurrentfinalization",
+    "inflight fence",
+    "unissuedreservation retained",
+    "lateprimaryreport unchanged"
+  ],
+  "remaining": [
+    "worker race/error branches B3",
+    "installedowners V1",
+    "Runtime consume and scheduler c.ii.3/4"
+  ]
+}

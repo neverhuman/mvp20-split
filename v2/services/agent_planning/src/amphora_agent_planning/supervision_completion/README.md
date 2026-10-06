@@ -1,0 +1,9 @@
+# Checkpoint completion journal
+
+Planning owns one immutable execution report per authenticated original checkpoint request. `CompletionJournal.finish(principal, engagement_id, stop_reason=...)` takes the existing family-before-request lock, reloads original intake and every actual issued attempt, verifies captures and original conservative settlements, and constructs the report through ExecutionCompletion. Caller-supplied history is not accepted. A pending issued attempt or missing settlement prevents finalization. Original report replay precedes changed caller configuration/reason.
+
+Planning0018 grants only SELECT/INSERT on checkpoint_execution_reports. Report bytes, hash, actor and request binding reconstruct on every read; wrong actor/scope and corrupt history cannot become completion. Unissued reservations remain conservatively held without an invented observation or refund. A shared persistence fence prevents new budget reservations, new attempt intents, first dispatch and new primary observations after completion; exact existing reservation/ticket/observation replay survives. Late diagnostic captures remain separate.
+
+CheckpointWorker now finalizes terminal outcomes and replays completed requests before context/config/provider work. An unresolved concurrent worker remains pending for the next bounded tick. HTTP GET `/v2/supervision/execution/{engagement_id}` exposes exact original report to authorized readers; 404 means unresolved. The API itself still does not schedule calls. No SQL spans provider or peer I/O.
+
+No graph winner, Runtime repair/fallback, capture publication completion, refund or scientific claim belongs here. Module tests use actual Planning SQL with scripted Data/provider and FastAPI transport. B3 retains separate process-death/race acceptance; installed multi-owner integration remains V1. Replacement must preserve report bytes, request lock order, conservative accounting, original replay and issuance closure.

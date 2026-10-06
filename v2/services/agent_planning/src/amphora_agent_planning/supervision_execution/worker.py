@@ -16,12 +16,14 @@ from ..orchestration.runner import BUDGET_STOPS
 from ..persistence.dispatch import DispatchJournal
 from ..persistence.journal import KEY, PlanningJournal
 from ..persistence.settlement import SettlementJournal
+from ..supervision_completion import CompletionJournal
 from ..supervision_intake import SupervisionIntake
 from ..supervision_intake.snapshot import CheckpointIntakeSnapshot
 from .packet import CheckpointPacket, CheckpointProvider
 
 STOPS = BUDGET_STOPS | {'checkpoint_deadline', 'execution_processing_unavailable',
-    'required_artifact_unavailable', 'required_packet_size', 'required_input_limit'}
+    'required_artifact_unavailable', 'required_packet_size', 'required_input_limit',
+    'budget_template_unavailable', 'provider_unconfigured'}
 
 
 class CheckpointWorker:
@@ -34,6 +36,7 @@ class CheckpointWorker:
         self.journal = PlanningJournal(engine)
         self.dispatch = DispatchJournal(engine)
         self.settlements = SettlementJournal(engine)
+        self.completions = CompletionJournal(engine)
 
     def _deadline(self, intake):
         with self.engine.connect() as conn:
@@ -91,6 +94,30 @@ class CheckpointWorker:
 
     def run(self, principal, engagement_id):
         principal.require('record_attempts', principal.scope)
+        previous = self.completions.read(principal, engagement_id)
+        if previous is not None:
+            return previous.outcome
+        try:
+            outcome = self._run(principal, engagement_id)
+        except ValueError as error:
+            if str(error) != 'checkpoint_execution_completed':
+                raise
+            previous = self.completions.read(principal, engagement_id)
+            require(previous is not None, 'completion_fence_without_report')
+            return previous.outcome
+        if outcome.stop_reason == 'attempt_pending':
+            return outcome
+        try:
+            return self.completions.finish(principal, engagement_id, stop_reason=outcome.stop_reason).outcome
+        except ValueError as error:
+            if str(error) not in {'completion_attempt_pending', 'completion_settlement_missing',
+                                  'completion_status_mismatch', 'completion_not_exhausted'}:
+                raise
+            # Another worker advanced history while this worker prepared its outcome.
+            # No report exists yet; the next bounded tick reloads actual owned history.
+            return RunOutcome(outcome.attempts, 'attempt_pending')
+
+    def _run(self, principal, engagement_id):
         intake = self.intake.request(principal, engagement_id)
         require(isinstance(intake, CheckpointIntakeSnapshot), 'execution_checkpoint_intake')
         attempts = []
@@ -100,6 +127,8 @@ class CheckpointWorker:
             if current is None:
                 try:
                     self._deadline(intake)
+                    require(self.provider is not None, 'provider_unconfigured')
+                    require(self.templates is not None, 'budget_template_unavailable')
                     packet = self._packet(principal, intake)
                     policy = packet.context.budget_policy(self.templates)
                     packet.authorize(self.data)

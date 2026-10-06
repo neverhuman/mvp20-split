@@ -12,6 +12,7 @@ from ..context.policy import require
 from ..providers.capture import CapturedOutput, Observation, unknown_usage
 from ..providers.wire import observation_document
 from .budget import BudgetLedger
+from .execution_state import require_execution_open
 from .family_state import lock_request, totals
 from .journal import KEY
 from .records import verified_observation
@@ -55,6 +56,7 @@ class DispatchJournal:
             bound, _ = self._bound(connection, key, principal, binding)
             if self._issued(connection, key) is not None:
                 return None
+            require_execution_open(connection, key)
             if membership is not None:
                 require(not totals(connection, key, membership["root_engagement_id"])["overage"], "provider_usage_overage")
             overage = connection.execute(text("SELECT EXISTS (SELECT 1 FROM planning.settlements WHERE " + KEY +

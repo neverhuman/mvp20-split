@@ -5,7 +5,7 @@ requires-python = ">=3.12,<3.13"
 dependencies = [
     "amphora-contracts-supervision==0.8.0",
     "amphora-contracts-planning==0.10.0",
-    "amphora-agent-planning==0.85.0",
+    "amphora-agent-planning==0.86.0",
     "amphora-contracts-research-views==0.1.0",
     "amphora-contracts-representations==0.3.0",
     "amphora-knowledge==0.18.0",

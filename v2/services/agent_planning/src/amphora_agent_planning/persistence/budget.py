@@ -9,6 +9,7 @@ from ..budget import BudgetPolicy, ReservationDemand
 from ..context import AttemptBinding
 from ..context.policy import require
 from . import family_state
+from .execution_state import require_execution_open
 from .journal import KEY, PlanningJournal
 
 
@@ -62,6 +63,7 @@ class BudgetLedger:
             existing = self._reservation(connection, key, binding, stored_policy)
             if existing is not None:
                 return existing
+            require_execution_open(connection, key)
             family_state.require_budget(connection, key, membership, self.journal, principal, reviewed_policy, demand)
             # Never retroactively authorize a journal intent created outside budget admission.
             unbudgeted = connection.execute(text("SELECT count(*) FROM planning.attempts a WHERE "
