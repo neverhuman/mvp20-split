@@ -1,16 +1,16 @@
 # Restore
 
-Read first after compression. Refreshed 2026-10-05 21:02:34 (America/Chicago).
+Read first after compression. Refreshed 2026-10-05 21:11:53 (America/Chicago).
 
 ## Resume
 
-Owner says continue until needed; authorization persists across gates/commits/pushes/compaction. Current **BP-07.04/B2.01d.c relevant observations and issuance/membership fences**. d.b process proof COMPLETE, ready commit/push. Latest pushed4f200d3e; production6d167632. No tests, hosts or process workers running. Do not stop at a clean milestone.
+Owner says continue until needed. Latest pushed dc9da1b6; B2.01d.c complete and ready commit/push. No tests/hosts/workers running. Current BP-07.04/B2.02 conditional winner/effects. Do not stop at a checkpoint.
 
-Read the child tracker, BP-07.04 Admitted checkpoint policy.md and BP-07.04 Checkpoint acceptance.md. d.a/b complete; c remains complete. d.c must prove actual membership/issued-work fences and relevant changes versus unrelated progress, with explicit refreshed candidate preserving original slot/ceiling/deadline. B2.02 owns winners/effective scalar fields; B2.03 owns Planning context/request preparation and autonomous delivery. No live provider needed for deterministic work.
+Read child tracker and Physical design; approved Scalar checkpoint decision permits explicit versioned materialization fields while preserving old profiles. Next: bounded B2.02 implementation design, pure proposal/effect validation, atomic winner SQL, shared effective field resolver at conversion opening/revalidation, scoped proof. B2.03 owns autonomous request/repair/accounting loop. No live provider needed now.
 
 ## Canonical progress
 
-Parent BP-07=66.53%,13/20 closed;child BP-07.04=32.64%,Build43.52%,Acceptance0%,1/4. B1=100%;B2=30.56%(.01=91.67%,.02/.03=0%);B3/V1=0%. B2.01 a/b/c100%,d66.67%;d.a/b100%,c0%. Current d.c,next B2.02. Child tracker is concise; detailed checkpoints live in BP-07.04 History.md and parent Planning History. MBT capped25 rows.
+Parent66.67%,13/20 closed;child33.33%,Build44.44%,Acceptance0%,1/4. B1=100%;B2=33.33%(.01=100%,.02/.03=0%);B3/V1=0%. B2.01 complete, d.c evidence Checkpoint_Fences.json:10SQL6.18s,4 cases each isolated initial/replacement,12boundary8.38s,Ruff. Selected changes stale; unrelated claim remains fresh; explicit refresh preserves original slot; queued issuance/forged occurrence/inactive ancestor reject. No automatic refresh or winner authority.
 
 ## Current boundaries
 

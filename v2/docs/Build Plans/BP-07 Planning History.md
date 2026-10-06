@@ -884,3 +884,6 @@ Four current installed owners668 cases(233 Runtime each,101 Planning each),40/30
 
 
 2026-10-05 21:02:34: d.b process barriers complete. .test-results/checkpoint-recovery-20261005 passed14 installed Runtime process runs,2 abrupt exits,2 admission/advance same-command races;original receipts and scalar-bearing slots survive rollback/replacement/cancellation.28 launcher/worker PIDs exited;scoped cleanup complete.12 boundary10.33s,Ruff passed. No SQL migration/reset/provider/effect. d66.67%,B2.01=91.67%,B2=30.56%,Build43.52%,child32.64%,parent66.53%;next d.c relevant observations/issuance/membership fences.
+
+
+2026-10-05 21:11:53: B2.01d.c and B2.01 COMPLETE.10 actualSQL cases6.18s; new freshness/issuance/membership cases4 each on isolated Runtime0.40 initial/replacement (7.194s/6.947s). Selected progress rejects original footprint; explicit refresh preserves slot identity/deadline/ceilings. Unrelated worker claim remains fresh; queued issuance, forged loop occurrence and inactive ancestor reject.12 boundary8.38s,Ruff passed. No winner/request grant. B2=33.33%,Build44.44%,child33.33%,parent66.67%;next B2.02. Evidence Checkpoint_Fences.json.

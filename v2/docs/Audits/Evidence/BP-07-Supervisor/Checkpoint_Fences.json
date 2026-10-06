@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "verified_at": "2026-10-05 21:06:26",
+  "runtime": "0.40.0",
+  "migration": "runtime_0023",
+  "installations": [
+    {
+      "installation": "initial",
+      "tests": 4,
+      "seconds": 7.194
+    },
+    {
+      "installation": "replacement",
+      "tests": 4,
+      "seconds": 6.947
+    }
+  ],
+  "limits": [
+    "Runtime production imports only from isolated wheels; test configuration exposes dev fixture helpers only",
+    "Actual retained PostgreSQL, current migration-to-head is idempotent; no reset or old migrator",
+    "Refresh candidate is explicit validation, not automatic request creation or execution acceptance"
+  ],
+  "local_sql": {
+    "tests": 10,
+    "seconds": 6.18
+  },
+  "boundaries": {
+    "tests": 12,
+    "seconds": 8.38
+  },
+  "scenarios": [
+    "selected observation change rejects old footprint; explicit refresh preserves original slot",
+    "unselected worker claim does not stale relevant footprint",
+    "queued activation rejected despite ready node projection",
+    "future loop occurrence and inactive ancestor rejected"
+  ],
+  "ruff": "passed"
+}
