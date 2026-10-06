@@ -1,6 +1,6 @@
 # Numeric evolutionary search boundary
 
-- Owner: BP-08.02/B1.02b verified; package0.4.0. Separate synthetic evaluator is B1.02c. BP-08.01 remains closed for its0.1.0 boundary.
+- Owner: BP-08.02/V1; package0.5.0 adds the Registry-required synthetic-tests applicability tag. Requalification pending;0.4.0 evidence remains historical.
 - Scope: finite continuous numerical search primitives; independent Python implementation, not a verified v1 port.
 - Design: [Search](../../docs/Architecture/Campaigns/Search.md); [activation](../../docs/Audits/BP-08.01_Activation.md).
 

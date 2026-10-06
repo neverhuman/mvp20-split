@@ -61,7 +61,7 @@ class NumericCapability:
             "schema_version": "1",
             "tool": {"schema_version": "1", "binding": {"capability_id": "numeric.search-" + self.operation,
                      "release": self.release, "image_sha256": image_sha256, "contract_version": "1"},
-                     "purpose": PROFILES[self.operation][4], "applicability": ["synthetic-continuous-numeric-search"],
+                     "purpose": PROFILES[self.operation][4], "applicability": ["synthetic-tests", "synthetic-continuous-numeric-search"],
                      "inputs": [port("parameters", "input")], "outputs": [port("result", "output")],
                      "side_effects": "pure", "checkpoint_schema": None},
             "resources": {"architectures": ["x86_64"], "operating_systems": ["linux"], "cpu_millicores": 1000,

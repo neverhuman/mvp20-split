@@ -47,7 +47,7 @@ def descriptor(image_sha256):
         "schema_version": "1",
         "tool": {"schema_version": "1", "binding": tool_binding(image_sha256).model_dump(mode="json"),
                  "purpose": "Evaluate fixed synthetic quadratic objectives for numerical graph tests.",
-                 "applicability": ["synthetic-quadratic-v1", "dimensionless-finite-vectors"],
+                 "applicability": ["synthetic-tests", "synthetic-quadratic-v1", "dimensionless-finite-vectors"],
                  "inputs": [port("parameters", "input"), port("policy", "policy")], "outputs": [port("result", "output")],
                  "side_effects": "pure", "checkpoint_schema": None},
         "resources": {"architectures": ["x86_64"], "operating_systems": ["linux"], "cpu_millicores": 1000,

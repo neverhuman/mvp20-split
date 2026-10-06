@@ -485,7 +485,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-evolution-search"
-version = "0.4.0"
+version = "0.5.0"
 source = { editable = "../tools/evolution_search" }
 dependencies = [
     { name = "amphora-contracts-core" },
@@ -837,7 +837,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-synthetic-objectives"
-version = "0.1.0"
+version = "0.2.0"
 source = { editable = "../tools/synthetic_objectives" }
 dependencies = [
     { name = "amphora-contracts-core" },

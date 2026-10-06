@@ -9,12 +9,12 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-07 closed100%; BP-08.02/V1 active; BP-09 queued.
-- Last refreshed: `2026-10-06 12:20:38` (America/Chicago).
+- Last refreshed: `2026-10-06 12:38:17` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P7 / BP-08 - Evolutionary Search Integration.
-- Primary active task: BP-08.02/V1.03 actual-image Registry/HTTP replacement.
+- Primary active task: BP-08.02/V1.04 actual-image Registry/HTTP replacement on requalified releases.
 - Next task: BP-08.03 activation after BP-08.02 acceptance.
-- Implementation completion: BP-07 closed100%,20/20; BP-08=37.5%,7/20 plushalf;BP-09=0%.
+- Implementation completion: BP-07 closed100%,20/20; BP-08=38%,7/20 plus3/5;BP-09=0%.
 - Active focus: graph-driven numeric execution; preserve closed BP-07 evaluation history and scoped handoffs.
 - Blockers: none for BP-08.02/V1. Selected host and integrated live deployment remain BP-09 decisions/gates.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
@@ -32,13 +32,13 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-08.01 closed100%,4/4; parent37.5%,7/20 plushalf. BP-08.02/V1.03 active, child87.5%, Build100%, Acceptance50%.
+BP-08.01 closed100%,4/4; parent38%,7/20 plus3/5. BP-08.02/V1.04 active, child90%, Build100%, Acceptance60%.
 
 ## Queued Plans and Phase Mirrors
 
 | Canonical plan | Status | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Active | 37.5% | 100% | 87.5% | 0% | 0% | 0% | N/A |
+| [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Active | 38% | 100% | 90% | 0% | 0% | 0% | N/A |
 | [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 
 Scoped milestone fractions measure verified work within their existing delivery weight; closed-gate counts remain separate. BP-06 is archived24/24. Do not treat milestone counts as effort estimates.

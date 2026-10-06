@@ -1,0 +1,1670 @@
+{
+  "checkpoint": "2026-10-06 12:38:17",
+  "scope": "BP-08.02/V1.03",
+  "correction": "Add existing synthetic-tests applicability marker in new immutable releases; Registry policy unchanged",
+  "versions": {
+    "numeric": "0.5.0",
+    "evaluator": "0.2.0"
+  },
+  "focused_tests": 199,
+  "focused_seconds": 50.35,
+  "images_source": "v2/.test-results/numeric-images-20261006b/manifest.json",
+  "images_sha256": "ea96d5105dfd40617a9040f0aa0af4a74d2d82adc86bce57abd94dfc5ed5c06b",
+  "images": {
+    "base": "python@sha256:f77ac9e44ae96ef2c90b8053ea08c31f8be030f824196b0ae4db6d462c84e51f",
+    "created_at": "2026-10-06 12:33:24",
+    "golden": {
+      "claim": "Offline image arithmetic/CLI only; Artifact references are declared fixture metadata.",
+      "final": {
+        "attempts": [
+          {
+            "candidate_id": "eb36eaff090eb41fd623ebc53809a186aac5945c01016038a2d61da0885cc9f0",
+            "disposition": "proposed",
+            "draws": {
+              "end": 1,
+              "start": 0
+            },
+            "duplicate_of": null,
+            "generation": 0,
+            "genes": [
+              0.0
+            ],
+            "operator": "seed",
+            "ordinal": 0,
+            "parents": [],
+            "reason_code": null
+          },
+          {
+            "candidate_id": "28b7a4256c6d0e9ca49ac6f84026cac0edd79945ee586c9884d62cfc99943be2",
+            "disposition": "duplicate",
+            "draws": {
+              "end": 7,
+              "start": 1
+            },
+            "duplicate_of": "eb36eaff090eb41fd623ebc53809a186aac5945c01016038a2d61da0885cc9f0",
+            "generation": 1,
+            "genes": [
+              0.0
+            ],
+            "operator": "variation",
+            "ordinal": 0,
+            "parents": [
+              "eb36eaff090eb41fd623ebc53809a186aac5945c01016038a2d61da0885cc9f0"
+            ],
+            "reason_code": "duplicate_genes"
+          }
+        ],
+        "generation": 1,
+        "observations": [
+          {
+            "candidate_id": "eb36eaff090eb41fd623ebc53809a186aac5945c01016038a2d61da0885cc9f0",
+            "evaluation_id": "ev-eb36eaff090eb41fd623ebc53809a186aac5945c01016038a2d61da0885cc9f0",
+            "outcome": {
+              "constraint_violation": 0.0,
+              "constraints_sha256": "b9946661cfefa2bf2d6eabb8779659bb0d9987020214d16fc73e196a4e2ed62e",
+              "evaluator": {
+                "capability_id": "synthetic.numeric-objectives",
+                "contract_version": "1",
+                "image_sha256": "8d12576b44c093e102f11e462fc629c4f08c4ab409bd1dad521747b7e7847781",
+                "release": "0.2.0"
+              },
+              "evidence": [
+                {
+                  "artifact_id": "image-policy",
+                  "media_type": "application/json",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-policy",
+                    "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a",
+                    "version": "1"
+                  },
+                  "scope": {
+                    "project_id": "fixed-box",
+                    "tenant_id": "image-golden"
+                  },
+                  "sha256": "b9946661cfefa2bf2d6eabb8779659bb0d9987020214d16fc73e196a4e2ed62e",
+                  "size_bytes": 36
+                }
+              ],
+              "objectives": [
+                {
+                  "objective_id": "cost",
+                  "unit": "dimensionless",
+                  "value": 0.0
+                }
+              ],
+              "quality": "synthetic",
+              "status": "evaluated"
+            },
+            "request_sha256": "7cb9b5ef87bf07413457a9873c4cb32089e2359d071d4a0c6dd56ba21027475a",
+            "schema_version": "1",
+            "scope": {
+              "project_id": "fixed-box",
+              "tenant_id": "image-golden"
+            }
+          }
+        ],
+        "pending": [],
+        "phase": "stopped",
+        "population": [
+          "eb36eaff090eb41fd623ebc53809a186aac5945c01016038a2d61da0885cc9f0"
+        ],
+        "previous": {
+          "artifact_id": "image-checkpoint-0757ea1ced05a72b4678a5f11e0cc086ceb413fc66c85f76d147141f05af066b",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "search.checkpoint",
+            "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184",
+            "version": "1"
+          },
+          "scope": {
+            "project_id": "fixed-box",
+            "tenant_id": "image-golden"
+          },
+          "sha256": "0757ea1ced05a72b4678a5f11e0cc086ceb413fc66c85f76d147141f05af066b",
+          "size_bytes": 4372
+        },
+        "progress": {
+          "evaluations_issued": 1,
+          "evaluations_terminal": 1,
+          "generations_completed": 1,
+          "unchanged_front_generations": 1
+        },
+        "rng": {
+          "algorithm": "sha256-counter-u53-v1",
+          "counter": 7,
+          "seed": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "schema_version": "1",
+        "selection": {
+          "disposition": "selected",
+          "membership_sha256": "155b8be6ad69d9a09966519b9139f7a2529fd055a2540b45bb828f0ebf04db5f",
+          "policy": "constrained-pareto-feasible-v1",
+          "ranks": [
+            {
+              "boundary": false,
+              "candidate_id": "eb36eaff090eb41fd623ebc53809a186aac5945c01016038a2d61da0885cc9f0",
+              "distance": 0.0,
+              "feasible": true,
+              "front": 0
+            }
+          ],
+          "requested": 1,
+          "selected": [
+            "eb36eaff090eb41fd623ebc53809a186aac5945c01016038a2d61da0885cc9f0"
+          ]
+        },
+        "specification": {
+          "budget": {
+            "max_evaluations": 20,
+            "max_generations": 1,
+            "population_size": 1,
+            "unchanged_front_limit": null
+          },
+          "evaluator": {
+            "completion": "all_frozen_members_terminal",
+            "constraints": {
+              "artifact_id": "image-policy",
+              "media_type": "application/json",
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-policy",
+                "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a",
+                "version": "1"
+              },
+              "scope": {
+                "project_id": "fixed-box",
+                "tenant_id": "image-golden"
+              },
+              "sha256": "b9946661cfefa2bf2d6eabb8779659bb0d9987020214d16fc73e196a4e2ed62e",
+              "size_bytes": 36
+            },
+            "context": [],
+            "tool": {
+              "capability_id": "synthetic.numeric-objectives",
+              "contract_version": "1",
+              "image_sha256": "8d12576b44c093e102f11e462fc629c4f08c4ab409bd1dad521747b7e7847781",
+              "release": "0.2.0"
+            }
+          },
+          "implementations": [
+            {
+              "name": "numeric-search",
+              "sha256": "7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+              "version": "0.5.0"
+            }
+          ],
+          "objectives": [
+            {
+              "direction": "minimize",
+              "objective_id": "cost",
+              "unit": "dimensionless"
+            }
+          ],
+          "operators": {
+            "crossover_probability": 1.0,
+            "mutation_fraction": 0.1,
+            "mutation_probability": 1.0,
+            "rng": "sha256-counter-u53-v1",
+            "selection": "constrained-pareto-feasible-v1",
+            "variation": "box-convex-uniform-v1"
+          },
+          "representation": {
+            "schema_id": "search.numeric-vector",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "version": "1"
+          },
+          "schema_version": "1",
+          "scope": {
+            "project_id": "fixed-box",
+            "tenant_id": "image-golden"
+          },
+          "search_id": "graph-numeric-fixture",
+          "seed": "0000000000000000000000000000000000000000000000000000000000000000",
+          "variables": [
+            {
+              "lower": 0.0,
+              "unit": "dimensionless",
+              "upper": 0.0,
+              "variable_id": "x"
+            }
+          ]
+        },
+        "specification_sha256": "4999b156f49a377f8c42aad88ddb02e9482e4b694e17d1e76efec670a2eb65a6",
+        "stop_reason": "generation_budget"
+      },
+      "observation": {
+        "candidate_id": "eb36eaff090eb41fd623ebc53809a186aac5945c01016038a2d61da0885cc9f0",
+        "evaluation_id": "ev-eb36eaff090eb41fd623ebc53809a186aac5945c01016038a2d61da0885cc9f0",
+        "outcome": {
+          "constraint_violation": 0.0,
+          "constraints_sha256": "b9946661cfefa2bf2d6eabb8779659bb0d9987020214d16fc73e196a4e2ed62e",
+          "evaluator": {
+            "capability_id": "synthetic.numeric-objectives",
+            "contract_version": "1",
+            "image_sha256": "8d12576b44c093e102f11e462fc629c4f08c4ab409bd1dad521747b7e7847781",
+            "release": "0.2.0"
+          },
+          "evidence": [
+            {
+              "artifact_id": "image-policy",
+              "media_type": "application/json",
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-policy",
+                "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a",
+                "version": "1"
+              },
+              "scope": {
+                "project_id": "fixed-box",
+                "tenant_id": "image-golden"
+              },
+              "sha256": "b9946661cfefa2bf2d6eabb8779659bb0d9987020214d16fc73e196a4e2ed62e",
+              "size_bytes": 36
+            }
+          ],
+          "objectives": [
+            {
+              "objective_id": "cost",
+              "unit": "dimensionless",
+              "value": 0.0
+            }
+          ],
+          "quality": "synthetic",
+          "status": "evaluated"
+        },
+        "request_sha256": "7cb9b5ef87bf07413457a9873c4cb32089e2359d071d4a0c6dd56ba21027475a",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "fixed-box",
+          "tenant_id": "image-golden"
+        }
+      },
+      "profile": "fixed-zero-box-v1",
+      "seed_candidate_id": "eb36eaff090eb41fd623ebc53809a186aac5945c01016038a2d61da0885cc9f0",
+      "specification": {
+        "budget": {
+          "max_evaluations": 20,
+          "max_generations": 1,
+          "population_size": 1,
+          "unchanged_front_limit": null
+        },
+        "evaluator": {
+          "completion": "all_frozen_members_terminal",
+          "constraints": {
+            "artifact_id": "image-policy",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "synthetic.numeric-policy",
+              "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a",
+              "version": "1"
+            },
+            "scope": {
+              "project_id": "fixed-box",
+              "tenant_id": "image-golden"
+            },
+            "sha256": "b9946661cfefa2bf2d6eabb8779659bb0d9987020214d16fc73e196a4e2ed62e",
+            "size_bytes": 36
+          },
+          "context": [],
+          "tool": {
+            "capability_id": "synthetic.numeric-objectives",
+            "contract_version": "1",
+            "image_sha256": "8d12576b44c093e102f11e462fc629c4f08c4ab409bd1dad521747b7e7847781",
+            "release": "0.2.0"
+          }
+        },
+        "implementations": [
+          {
+            "name": "numeric-search",
+            "sha256": "7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+            "version": "0.5.0"
+          }
+        ],
+        "objectives": [
+          {
+            "direction": "minimize",
+            "objective_id": "cost",
+            "unit": "dimensionless"
+          }
+        ],
+        "operators": {
+          "crossover_probability": 1.0,
+          "mutation_fraction": 0.1,
+          "mutation_probability": 1.0,
+          "rng": "sha256-counter-u53-v1",
+          "selection": "constrained-pareto-feasible-v1",
+          "variation": "box-convex-uniform-v1"
+        },
+        "representation": {
+          "schema_id": "search.numeric-vector",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "version": "1"
+        },
+        "schema_version": "1",
+        "scope": {
+          "project_id": "fixed-box",
+          "tenant_id": "image-golden"
+        },
+        "search_id": "graph-numeric-fixture",
+        "seed": "0000000000000000000000000000000000000000000000000000000000000000",
+        "variables": [
+          {
+            "lower": 0.0,
+            "unit": "dimensionless",
+            "upper": 0.0,
+            "variable_id": "x"
+          }
+        ]
+      }
+    },
+    "platform": "linux/amd64",
+    "profile": "numeric-search-images-v1",
+    "tools": [
+      {
+        "descriptors": {
+          "collect": {
+            "anti_examples": [
+              "No hidden generation loop, scientific validation or Runtime acceptance."
+            ],
+            "authority_ceiling": "synthetic_only",
+            "checkpoint": {
+              "mode": "none",
+              "readable_schema_sha256": []
+            },
+            "egress": {
+              "mode": "deny"
+            },
+            "examples": [
+              "One explicit graph step with pinned synthetic numerical inputs."
+            ],
+            "reproducibility": "deterministic",
+            "resources": {
+              "architectures": [
+                "x86_64"
+              ],
+              "cpu_millicores": 1000,
+              "gpu_count": 0,
+              "max_batch_size": 1,
+              "max_parallel_invocations": 1,
+              "memory_mib": 256,
+              "operating_systems": [
+                "linux"
+              ],
+              "timeout_seconds": 60
+            },
+            "schema_version": "1",
+            "tool": {
+              "applicability": [
+                "synthetic-tests",
+                "synthetic-continuous-numeric-search"
+              ],
+              "binding": {
+                "capability_id": "numeric.search-collect",
+                "contract_version": "1",
+                "image_sha256": "7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+                "release": "0.5.0"
+              },
+              "checkpoint_schema": null,
+              "inputs": [
+                {
+                  "name": "parameters",
+                  "representation": "search-step.collected",
+                  "required": true,
+                  "schema_ref": {
+                    "schema_id": "search-step.collected",
+                    "sha256": "4863a08e040f46f35fbbd5b308ec2709238fb9e8802a8b434a6fefd2e5b90369",
+                    "version": "1"
+                  },
+                  "unit": "1"
+                }
+              ],
+              "outputs": [
+                {
+                  "name": "result",
+                  "representation": "search.checkpoint",
+                  "required": true,
+                  "schema_ref": {
+                    "schema_id": "search.checkpoint",
+                    "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184",
+                    "version": "1"
+                  },
+                  "unit": "1"
+                }
+              ],
+              "purpose": "Reduce the complete frozen result set and select survivors.",
+              "schema_version": "1",
+              "side_effects": "pure"
+            }
+          },
+          "requests": {
+            "anti_examples": [
+              "No hidden generation loop, scientific validation or Runtime acceptance."
+            ],
+            "authority_ceiling": "synthetic_only",
+            "checkpoint": {
+              "mode": "none",
+              "readable_schema_sha256": []
+            },
+            "egress": {
+              "mode": "deny"
+            },
+            "examples": [
+              "One explicit graph step with pinned synthetic numerical inputs."
+            ],
+            "reproducibility": "deterministic",
+            "resources": {
+              "architectures": [
+                "x86_64"
+              ],
+              "cpu_millicores": 1000,
+              "gpu_count": 0,
+              "max_batch_size": 1,
+              "max_parallel_invocations": 1,
+              "memory_mib": 256,
+              "operating_systems": [
+                "linux"
+              ],
+              "timeout_seconds": 60
+            },
+            "schema_version": "1",
+            "tool": {
+              "applicability": [
+                "synthetic-tests",
+                "synthetic-continuous-numeric-search"
+              ],
+              "binding": {
+                "capability_id": "numeric.search-requests",
+                "contract_version": "1",
+                "image_sha256": "7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+                "release": "0.5.0"
+              },
+              "checkpoint_schema": null,
+              "inputs": [
+                {
+                  "name": "parameters",
+                  "representation": "search-step.context",
+                  "required": true,
+                  "schema_ref": {
+                    "schema_id": "search-step.context",
+                    "sha256": "856d8ddda364e4fc9160673506ae46d84dd31f4300d41d3729780df532f39485",
+                    "version": "1"
+                  },
+                  "unit": "1"
+                }
+              ],
+              "outputs": [
+                {
+                  "name": "result",
+                  "representation": "search-step.requests",
+                  "required": true,
+                  "schema_ref": {
+                    "schema_id": "search-step.requests",
+                    "sha256": "86da9c5a26becef427ede41a2bd15dd78598fbbb1e0f210d4e648406d9fdbc43",
+                    "version": "1"
+                  },
+                  "unit": "1"
+                }
+              ],
+              "purpose": "Expand frozen pending identities into evaluator requests.",
+              "schema_version": "1",
+              "side_effects": "pure"
+            }
+          },
+          "seed": {
+            "anti_examples": [
+              "No hidden generation loop, scientific validation or Runtime acceptance."
+            ],
+            "authority_ceiling": "synthetic_only",
+            "checkpoint": {
+              "mode": "none",
+              "readable_schema_sha256": []
+            },
+            "egress": {
+              "mode": "deny"
+            },
+            "examples": [
+              "One explicit graph step with pinned synthetic numerical inputs."
+            ],
+            "reproducibility": "deterministic",
+            "resources": {
+              "architectures": [
+                "x86_64"
+              ],
+              "cpu_millicores": 1000,
+              "gpu_count": 0,
+              "max_batch_size": 1,
+              "max_parallel_invocations": 1,
+              "memory_mib": 256,
+              "operating_systems": [
+                "linux"
+              ],
+              "timeout_seconds": 60
+            },
+            "schema_version": "1",
+            "tool": {
+              "applicability": [
+                "synthetic-tests",
+                "synthetic-continuous-numeric-search"
+              ],
+              "binding": {
+                "capability_id": "numeric.search-seed",
+                "contract_version": "1",
+                "image_sha256": "7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+                "release": "0.5.0"
+              },
+              "checkpoint_schema": null,
+              "inputs": [
+                {
+                  "name": "parameters",
+                  "representation": "search.specification",
+                  "required": true,
+                  "schema_ref": {
+                    "schema_id": "search.specification",
+                    "sha256": "e829b92d2145b0916847b06cb6e73c4a5aea17addea8bbdd1e9706dbd1cc79a7",
+                    "version": "1"
+                  },
+                  "unit": "1"
+                }
+              ],
+              "outputs": [
+                {
+                  "name": "result",
+                  "representation": "search.checkpoint",
+                  "required": true,
+                  "schema_ref": {
+                    "schema_id": "search.checkpoint",
+                    "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184",
+                    "version": "1"
+                  },
+                  "unit": "1"
+                }
+              ],
+              "purpose": "Generate one bounded numeric initial population.",
+              "schema_version": "1",
+              "side_effects": "pure"
+            }
+          },
+          "vary": {
+            "anti_examples": [
+              "No hidden generation loop, scientific validation or Runtime acceptance."
+            ],
+            "authority_ceiling": "synthetic_only",
+            "checkpoint": {
+              "mode": "none",
+              "readable_schema_sha256": []
+            },
+            "egress": {
+              "mode": "deny"
+            },
+            "examples": [
+              "One explicit graph step with pinned synthetic numerical inputs."
+            ],
+            "reproducibility": "deterministic",
+            "resources": {
+              "architectures": [
+                "x86_64"
+              ],
+              "cpu_millicores": 1000,
+              "gpu_count": 0,
+              "max_batch_size": 1,
+              "max_parallel_invocations": 1,
+              "memory_mib": 256,
+              "operating_systems": [
+                "linux"
+              ],
+              "timeout_seconds": 60
+            },
+            "schema_version": "1",
+            "tool": {
+              "applicability": [
+                "synthetic-tests",
+                "synthetic-continuous-numeric-search"
+              ],
+              "binding": {
+                "capability_id": "numeric.search-vary",
+                "contract_version": "1",
+                "image_sha256": "7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+                "release": "0.5.0"
+              },
+              "checkpoint_schema": null,
+              "inputs": [
+                {
+                  "name": "parameters",
+                  "representation": "search-step.context",
+                  "required": true,
+                  "schema_ref": {
+                    "schema_id": "search-step.context",
+                    "sha256": "856d8ddda364e4fc9160673506ae46d84dd31f4300d41d3729780df532f39485",
+                    "version": "1"
+                  },
+                  "unit": "1"
+                }
+              ],
+              "outputs": [
+                {
+                  "name": "result",
+                  "representation": "search.checkpoint",
+                  "required": true,
+                  "schema_ref": {
+                    "schema_id": "search.checkpoint",
+                    "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184",
+                    "version": "1"
+                  },
+                  "unit": "1"
+                }
+              ],
+              "purpose": "Generate one bounded numeric successor population.",
+              "schema_version": "1",
+              "side_effects": "pure"
+            }
+          }
+        },
+        "image_config_digest": "sha256:3775babd4198ffbc692400ba0a232923935675d206a71cb8a0812994f3a87710",
+        "image_manifest_digest": "sha256:7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+        "isolated_nonroot_probe": "passed",
+        "local_wheels": {
+          "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+          "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+          "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+          "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+          "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+          "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+          "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+          "amphora_contracts_search_steps-0.1.0-py3-none-any.whl": "f94ad77e69708f0fc51a7a3e0660779a15cf972afe8c1b0dcb6cd24cc190d083",
+          "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+          "amphora_evolution_search-0.5.0-py3-none-any.whl": "2fdbfdbb6ba5a47d8a5ed9f7927f9efd7043e2b9d8152e1b872a628aff5edb74",
+          "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+        },
+        "module": "amphora_evolution_search",
+        "offline_wheels": {
+          "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+          "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+          "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+          "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+          "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+          "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+          "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+          "amphora_contracts_search_steps-0.1.0-py3-none-any.whl": "f94ad77e69708f0fc51a7a3e0660779a15cf972afe8c1b0dcb6cd24cc190d083",
+          "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+          "amphora_evolution_search-0.5.0-py3-none-any.whl": "2fdbfdbb6ba5a47d8a5ed9f7927f9efd7043e2b9d8152e1b872a628aff5edb74",
+          "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5",
+          "annotated_types-0.8.0-py3-none-any.whl": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0",
+          "pydantic-2.13.5-py3-none-any.whl": "346a034f080da3755d8e9cb5e00e8b07de1d39e4f6e2c87d8ab7cafa0b269a73",
+          "pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl": "0fc5be0abd4a407e200d844b404e33639a554e7bd0d448e7b9ae181be4789ac2",
+          "typing_extensions-4.16.0-py3-none-any.whl": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+          "typing_inspection-0.4.4-py3-none-any.whl": "65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147"
+        },
+        "package": "amphora-evolution-search",
+        "schemas": {
+          "collect.input": {
+            "file": "Z:\\mvp20-split\\v2\\.test-results\\numeric-images-20261006b\\amphora-evolution-search\\collect-input.json",
+            "schema_ref": {
+              "schema_id": "search-step.collected",
+              "sha256": "4863a08e040f46f35fbbd5b308ec2709238fb9e8802a8b434a6fefd2e5b90369",
+              "version": "1"
+            }
+          },
+          "collect.output": {
+            "file": "Z:\\mvp20-split\\v2\\.test-results\\numeric-images-20261006b\\amphora-evolution-search\\collect-output.json",
+            "schema_ref": {
+              "schema_id": "search.checkpoint",
+              "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184",
+              "version": "1"
+            }
+          },
+          "requests.input": {
+            "file": "Z:\\mvp20-split\\v2\\.test-results\\numeric-images-20261006b\\amphora-evolution-search\\requests-input.json",
+            "schema_ref": {
+              "schema_id": "search-step.context",
+              "sha256": "856d8ddda364e4fc9160673506ae46d84dd31f4300d41d3729780df532f39485",
+              "version": "1"
+            }
+          },
+          "requests.output": {
+            "file": "Z:\\mvp20-split\\v2\\.test-results\\numeric-images-20261006b\\amphora-evolution-search\\requests-output.json",
+            "schema_ref": {
+              "schema_id": "search-step.requests",
+              "sha256": "86da9c5a26becef427ede41a2bd15dd78598fbbb1e0f210d4e648406d9fdbc43",
+              "version": "1"
+            }
+          },
+          "seed.input": {
+            "file": "Z:\\mvp20-split\\v2\\.test-results\\numeric-images-20261006b\\amphora-evolution-search\\seed-input.json",
+            "schema_ref": {
+              "schema_id": "search.specification",
+              "sha256": "e829b92d2145b0916847b06cb6e73c4a5aea17addea8bbdd1e9706dbd1cc79a7",
+              "version": "1"
+            }
+          },
+          "seed.output": {
+            "file": "Z:\\mvp20-split\\v2\\.test-results\\numeric-images-20261006b\\amphora-evolution-search\\seed-output.json",
+            "schema_ref": {
+              "schema_id": "search.checkpoint",
+              "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184",
+              "version": "1"
+            }
+          },
+          "vary.input": {
+            "file": "Z:\\mvp20-split\\v2\\.test-results\\numeric-images-20261006b\\amphora-evolution-search\\vary-input.json",
+            "schema_ref": {
+              "schema_id": "search-step.context",
+              "sha256": "856d8ddda364e4fc9160673506ae46d84dd31f4300d41d3729780df532f39485",
+              "version": "1"
+            }
+          },
+          "vary.output": {
+            "file": "Z:\\mvp20-split\\v2\\.test-results\\numeric-images-20261006b\\amphora-evolution-search\\vary-output.json",
+            "schema_ref": {
+              "schema_id": "search.checkpoint",
+              "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184",
+              "version": "1"
+            }
+          }
+        },
+        "tag": "amphora/evolution-search:bp08-d36794eaa092"
+      },
+      {
+        "descriptors": {
+          "evaluate": {
+            "anti_examples": [
+              "No chemistry, biology, synthesis, laboratory, model or scientific-validity claim."
+            ],
+            "authority_ceiling": "synthetic_only",
+            "checkpoint": {
+              "mode": "none",
+              "readable_schema_sha256": []
+            },
+            "egress": {
+              "mode": "deny"
+            },
+            "examples": [
+              "cost=sum(x_i^2); distance=sum((x_i-1)^2); no hard constraints."
+            ],
+            "reproducibility": "deterministic",
+            "resources": {
+              "architectures": [
+                "x86_64"
+              ],
+              "cpu_millicores": 1000,
+              "gpu_count": 0,
+              "max_batch_size": 1,
+              "max_parallel_invocations": 1,
+              "memory_mib": 128,
+              "operating_systems": [
+                "linux"
+              ],
+              "timeout_seconds": 60
+            },
+            "schema_version": "1",
+            "tool": {
+              "applicability": [
+                "synthetic-tests",
+                "synthetic-quadratic-v1",
+                "dimensionless-finite-vectors"
+              ],
+              "binding": {
+                "capability_id": "synthetic.numeric-objectives",
+                "contract_version": "1",
+                "image_sha256": "8d12576b44c093e102f11e462fc629c4f08c4ab409bd1dad521747b7e7847781",
+                "release": "0.2.0"
+              },
+              "checkpoint_schema": null,
+              "inputs": [
+                {
+                  "name": "parameters",
+                  "representation": "search.evaluation-request",
+                  "required": true,
+                  "schema_ref": {
+                    "schema_id": "search.evaluation-request",
+                    "sha256": "44c7375364971f923302f83d0d6100bd2d01b8c6085d25f7195e465ccb9fbe58",
+                    "version": "1"
+                  },
+                  "unit": "1"
+                },
+                {
+                  "name": "policy",
+                  "representation": "synthetic.numeric-policy",
+                  "required": true,
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-policy",
+                    "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a",
+                    "version": "1"
+                  },
+                  "unit": "1"
+                }
+              ],
+              "outputs": [
+                {
+                  "name": "result",
+                  "representation": "search.evaluation-observation",
+                  "required": true,
+                  "schema_ref": {
+                    "schema_id": "search.evaluation-observation",
+                    "sha256": "28b7765aa253bc93d2e050c06e4a38be09ffa1b8a8b45762ee93eaaffe37add2",
+                    "version": "1"
+                  },
+                  "unit": "1"
+                }
+              ],
+              "purpose": "Evaluate fixed synthetic quadratic objectives for numerical graph tests.",
+              "schema_version": "1",
+              "side_effects": "pure"
+            }
+          }
+        },
+        "image_config_digest": "sha256:83b94e39438007e2c6e4b0809363bd215a2726573af10230d43bbd8660f12951",
+        "image_manifest_digest": "sha256:8d12576b44c093e102f11e462fc629c4f08c4ab409bd1dad521747b7e7847781",
+        "isolated_nonroot_probe": "passed",
+        "local_wheels": {
+          "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+          "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+          "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+          "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+          "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+          "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+          "amphora_multi_input_worker-0.1.0-py3-none-any.whl": "2097adff2fdb7db3bc43bb49b98a97d7b6a34739a4455444c6e1951c85341904",
+          "amphora_synthetic_objectives-0.2.0-py3-none-any.whl": "7c605761b63d978ad56442a0e8e8063dae28c1a23fd80c1cb73af95396f12d2c",
+          "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+        },
+        "module": "amphora_synthetic_objectives",
+        "offline_wheels": {
+          "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+          "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+          "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+          "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+          "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+          "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+          "amphora_multi_input_worker-0.1.0-py3-none-any.whl": "2097adff2fdb7db3bc43bb49b98a97d7b6a34739a4455444c6e1951c85341904",
+          "amphora_synthetic_objectives-0.2.0-py3-none-any.whl": "7c605761b63d978ad56442a0e8e8063dae28c1a23fd80c1cb73af95396f12d2c",
+          "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5",
+          "annotated_types-0.8.0-py3-none-any.whl": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0",
+          "pydantic-2.13.5-py3-none-any.whl": "346a034f080da3755d8e9cb5e00e8b07de1d39e4f6e2c87d8ab7cafa0b269a73",
+          "pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl": "0fc5be0abd4a407e200d844b404e33639a554e7bd0d448e7b9ae181be4789ac2",
+          "typing_extensions-4.16.0-py3-none-any.whl": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+          "typing_inspection-0.4.4-py3-none-any.whl": "65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147"
+        },
+        "package": "amphora-synthetic-objectives",
+        "schemas": {
+          "evaluate.input": {
+            "file": "Z:\\mvp20-split\\v2\\.test-results\\numeric-images-20261006b\\amphora-synthetic-objectives\\evaluate-input.json",
+            "schema_ref": {
+              "schema_id": "search.evaluation-request",
+              "sha256": "44c7375364971f923302f83d0d6100bd2d01b8c6085d25f7195e465ccb9fbe58",
+              "version": "1"
+            }
+          },
+          "evaluate.output": {
+            "file": "Z:\\mvp20-split\\v2\\.test-results\\numeric-images-20261006b\\amphora-synthetic-objectives\\evaluate-output.json",
+            "schema_ref": {
+              "schema_id": "search.evaluation-observation",
+              "sha256": "28b7765aa253bc93d2e050c06e4a38be09ffa1b8a8b45762ee93eaaffe37add2",
+              "version": "1"
+            }
+          },
+          "evaluate.policy": {
+            "file": "Z:\\mvp20-split\\v2\\.test-results\\numeric-images-20261006b\\amphora-synthetic-objectives\\evaluate-policy.json",
+            "schema_ref": {
+              "schema_id": "synthetic.numeric-policy",
+              "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a",
+              "version": "1"
+            }
+          }
+        },
+        "tag": "amphora/synthetic-objectives:bp08-a581d5367323"
+      }
+    ]
+  },
+  "installed_source": "v2/.test-results/search-installed-20261006-v05/evidence.json",
+  "installed_sha256": "ca91022054d33234693e40db24e1a1a3c5bab3018756e0ea1b9fe2ef2ff6338b",
+  "installed": {
+    "verified_at": "2026-10-06 12:34:21",
+    "status": "passed",
+    "installations": [
+      {
+        "label": "initial",
+        "tests": 173,
+        "replay_sha256": "f4a8c39aae069629fed17c27a514a88002a39333861d41a5d63c450aa70f9382",
+        "installation": {
+          "timestamp_local": "2026-10-06 12:33:27",
+          "status": "installed",
+          "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+          "owner": "amphora-evolution-search",
+          "forbidden_implementations": [
+            "amphora_campaign_runtime",
+            "amphora_agent_planning",
+            "amphora_research",
+            "amphora_knowledge",
+            "amphora_data_artifacts"
+          ],
+          "packages": {
+            "amphora-contracts-artifacts": "0.2.0",
+            "amphora-contracts-campaigns": "0.4.1",
+            "amphora-contracts-commands": "0.2.0",
+            "amphora-contracts-core": "0.1.0",
+            "amphora-contracts-graph-runtime": "0.13.0",
+            "amphora-contracts-runtime": "0.1.0",
+            "amphora-contracts-search": "0.1.0",
+            "amphora-contracts-search-steps": "0.1.0",
+            "amphora-contracts-tools": "0.1.0",
+            "amphora-evolution-search": "0.5.0",
+            "amphora-tool-protocol": "0.2.0"
+          },
+          "wheels": {
+            "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+            "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+            "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+            "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+            "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+            "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+            "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+            "amphora_contracts_search_steps-0.1.0-py3-none-any.whl": "f94ad77e69708f0fc51a7a3e0660779a15cf972afe8c1b0dcb6cd24cc190d083",
+            "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+            "amphora_evolution_search-0.5.0-py3-none-any.whl": "2fdbfdbb6ba5a47d8a5ed9f7927f9efd7043e2b9d8152e1b872a628aff5edb74",
+            "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+          }
+        }
+      },
+      {
+        "label": "replacement",
+        "tests": 173,
+        "replay_sha256": "f4a8c39aae069629fed17c27a514a88002a39333861d41a5d63c450aa70f9382",
+        "installation": {
+          "timestamp_local": "2026-10-06 12:34:04",
+          "status": "installed",
+          "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+          "owner": "amphora-evolution-search",
+          "forbidden_implementations": [
+            "amphora_campaign_runtime",
+            "amphora_agent_planning",
+            "amphora_research",
+            "amphora_knowledge",
+            "amphora_data_artifacts"
+          ],
+          "packages": {
+            "amphora-contracts-artifacts": "0.2.0",
+            "amphora-contracts-campaigns": "0.4.1",
+            "amphora-contracts-commands": "0.2.0",
+            "amphora-contracts-core": "0.1.0",
+            "amphora-contracts-graph-runtime": "0.13.0",
+            "amphora-contracts-runtime": "0.1.0",
+            "amphora-contracts-search": "0.1.0",
+            "amphora-contracts-search-steps": "0.1.0",
+            "amphora-contracts-tools": "0.1.0",
+            "amphora-evolution-search": "0.5.0",
+            "amphora-tool-protocol": "0.2.0"
+          },
+          "wheels": {
+            "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+            "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+            "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+            "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+            "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+            "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+            "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+            "amphora_contracts_search_steps-0.1.0-py3-none-any.whl": "f94ad77e69708f0fc51a7a3e0660779a15cf972afe8c1b0dcb6cd24cc190d083",
+            "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+            "amphora_evolution_search-0.5.0-py3-none-any.whl": "2fdbfdbb6ba5a47d8a5ed9f7927f9efd7043e2b9d8152e1b872a628aff5edb74",
+            "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+          }
+        }
+      }
+    ],
+    "replay": {
+      "attempts": 128,
+      "checkpoint_sha256": "d4cdb1c08540552b1c3398852019f8a90550efe90319a7660d4ae40b79413d24",
+      "next_counter": 129,
+      "next_draw_hex": "0x1.11b7232ac8976p-1",
+      "pending": [
+        {
+          "candidate_id": "b0804ad65c95cf36ddd85d44086112ab8e46678156ab2e5b91cd2f859e679141",
+          "evaluation_id": "ev-b0804ad65c95cf36ddd85d44086112ab8e46678156ab2e5b91cd2f859e679141",
+          "request_sha256": "60870c42fa3f254356040188d6995a930d6d35b22dc5ef17348b4051bb6c40bc"
+        },
+        {
+          "candidate_id": "3c1d8b05f58e1d3021dceda1e55df438971f9fa521f0b14b838299e82ada9a09",
+          "evaluation_id": "ev-3c1d8b05f58e1d3021dceda1e55df438971f9fa521f0b14b838299e82ada9a09",
+          "request_sha256": "49f3afc2cf327bde3593826eb72524a8cb7ec8506302aa5983ad1630b1cfa2e1"
+        },
+        {
+          "candidate_id": "7c05e94896e810e621f03df682a926207a62743515558db4cd26bde1fc6ac5c6",
+          "evaluation_id": "ev-7c05e94896e810e621f03df682a926207a62743515558db4cd26bde1fc6ac5c6",
+          "request_sha256": "d77d1bb79fef12ee8a804fb7a2beec3ac8bad64caa231d6ccc338bf3b00989a4"
+        },
+        {
+          "candidate_id": "13d631605307875de0a2c3f9e75cc7e0b712ddfa9d8c658c92936b2e89b6ca59",
+          "evaluation_id": "ev-13d631605307875de0a2c3f9e75cc7e0b712ddfa9d8c658c92936b2e89b6ca59",
+          "request_sha256": "2c66dc373eb4c428a4c93fe346d50f15d421a0bee1b7db7401784aeab7b5c405"
+        },
+        {
+          "candidate_id": "b784b433075b080aeeb51e2cc03542cf82ec60a91f5381baa31f27cb52a36179",
+          "evaluation_id": "ev-b784b433075b080aeeb51e2cc03542cf82ec60a91f5381baa31f27cb52a36179",
+          "request_sha256": "9e4169ab9e859c954394d41c6f53e72c205417395f9c3c5a8ec86ebc43ad1988"
+        },
+        {
+          "candidate_id": "efa12a8c0e6953bfbc558578337712968f11d13b5f80e431db253e03b9e8e121",
+          "evaluation_id": "ev-efa12a8c0e6953bfbc558578337712968f11d13b5f80e431db253e03b9e8e121",
+          "request_sha256": "464a8d3c05914293c89d11291f9c68ced3cdf9c73518ae46f130e5ebbf3864bd"
+        },
+        {
+          "candidate_id": "cf38d9a1db838688f6f6211f5e5716de924010b7bd55dfb508c7116164232055",
+          "evaluation_id": "ev-cf38d9a1db838688f6f6211f5e5716de924010b7bd55dfb508c7116164232055",
+          "request_sha256": "1f1b7d0b13771cf3d5e6df4461a396430d96865c3d0de0a93da30ad9af11426f"
+        },
+        {
+          "candidate_id": "705d030356f9d8b88587763626b90c4b78ac095050daeb3e41a9c948312bbbb1",
+          "evaluation_id": "ev-705d030356f9d8b88587763626b90c4b78ac095050daeb3e41a9c948312bbbb1",
+          "request_sha256": "ed0897756ad019edd05117eedb2ce985b721b7fdcb24eb0b6b2351b90e7f22f5"
+        },
+        {
+          "candidate_id": "2804a7d8591b53d655bc1a0f40c17fce35c36545f47fc92bbdc4f3a19b5e5642",
+          "evaluation_id": "ev-2804a7d8591b53d655bc1a0f40c17fce35c36545f47fc92bbdc4f3a19b5e5642",
+          "request_sha256": "2a6ad38a75eefb858f29b6f5bee69d608f7b4ee7bebb582ac5023f34025b9945"
+        },
+        {
+          "candidate_id": "4580d92c25a16ec5afd5f13c4b41afb003712d02b59bc1fd200a29c26ee2bcd3",
+          "evaluation_id": "ev-4580d92c25a16ec5afd5f13c4b41afb003712d02b59bc1fd200a29c26ee2bcd3",
+          "request_sha256": "56c010e7c75e71054f90ada8272f4ec0ab55cd91f3a6190fb49e317d58ce335c"
+        },
+        {
+          "candidate_id": "d4e54bbed31eb7ea16a74b93dce5c30e7ee08ea9f4b3cbc2250d6c576a9571d6",
+          "evaluation_id": "ev-d4e54bbed31eb7ea16a74b93dce5c30e7ee08ea9f4b3cbc2250d6c576a9571d6",
+          "request_sha256": "a4138fcc58868f3257bf5885c7eef5ff67d99cb6bae9a10a977ba665db86b454"
+        },
+        {
+          "candidate_id": "9b813dc90f9bd38e343b1bbbfb8ea40cddd94eae08e5e082a4e27be536d77a53",
+          "evaluation_id": "ev-9b813dc90f9bd38e343b1bbbfb8ea40cddd94eae08e5e082a4e27be536d77a53",
+          "request_sha256": "7864532134809493cdccd504dc03801af8125da7ada362113b4d83f067f24dfd"
+        },
+        {
+          "candidate_id": "dea6d48c9881dac2d97008f12f4dc7862a04c5816e96d03744c20cbc7f85d1dd",
+          "evaluation_id": "ev-dea6d48c9881dac2d97008f12f4dc7862a04c5816e96d03744c20cbc7f85d1dd",
+          "request_sha256": "317d57d0f93298e372c8e4922e878af6e3b8bda51a418f8bc52dc59e0bd2358d"
+        },
+        {
+          "candidate_id": "5351bbc76342e136a17b1c37ba0d7b974f8e097c5386691c2cd23f37380279d4",
+          "evaluation_id": "ev-5351bbc76342e136a17b1c37ba0d7b974f8e097c5386691c2cd23f37380279d4",
+          "request_sha256": "97e9dc57cdb0c0dd2f82807c4f943086979e6595c7eb36bde4771d547ccd1d24"
+        },
+        {
+          "candidate_id": "67d113f8e43205732ae30170942718618828fbdd71adf58abf84da07fe435486",
+          "evaluation_id": "ev-67d113f8e43205732ae30170942718618828fbdd71adf58abf84da07fe435486",
+          "request_sha256": "fc8a78bbbf0221fb2d52d1d2e23de2feec038bf3bb6889032ddeb189e0021c64"
+        },
+        {
+          "candidate_id": "134bc6d5bd163dfa6836bcb8fcf1dcaee72052a0057de992e34191cc9d2e5462",
+          "evaluation_id": "ev-134bc6d5bd163dfa6836bcb8fcf1dcaee72052a0057de992e34191cc9d2e5462",
+          "request_sha256": "13de3d0151201b29e4bfeab63768c61f343ecbbb3b509b1ca124e9dfd2c1cf67"
+        },
+        {
+          "candidate_id": "7d86ae1f5de68bfd6a39ac7a653f72526a524ff4175c86486a078e1ba56d5d5a",
+          "evaluation_id": "ev-7d86ae1f5de68bfd6a39ac7a653f72526a524ff4175c86486a078e1ba56d5d5a",
+          "request_sha256": "7adaddc429b2058dd886ff7f69f1f8568deaa432c6a21ca2bace74653b9f3b69"
+        },
+        {
+          "candidate_id": "093586a37cc218a92016ee43a199703841304a3d7a33398bd9601e556b9d2413",
+          "evaluation_id": "ev-093586a37cc218a92016ee43a199703841304a3d7a33398bd9601e556b9d2413",
+          "request_sha256": "5ef6ca0c1c6918ea87131974b345e4eacf63eb77d65f08ea79d2ec2ab5be069b"
+        },
+        {
+          "candidate_id": "4286ac5376503b12f8e54dbd8318c74b26778b99546efe26fc5ec252488e1b0b",
+          "evaluation_id": "ev-4286ac5376503b12f8e54dbd8318c74b26778b99546efe26fc5ec252488e1b0b",
+          "request_sha256": "ca2303c296af8db5ce25fb52602da2363d12d403efdc0e5cdfc77a698db51c29"
+        },
+        {
+          "candidate_id": "8b75336f5b436b8422de322bd1590ed863c3196f6732a72fed7670898e42d50a",
+          "evaluation_id": "ev-8b75336f5b436b8422de322bd1590ed863c3196f6732a72fed7670898e42d50a",
+          "request_sha256": "66258be1aa924031ad2096d3487f98ac346d4f5f9c64047d32e4c2d07696ac15"
+        },
+        {
+          "candidate_id": "6968fe7d3597dbe87e3a42a69e923d66efcf47fe23c5c728b32975e48ad5ab66",
+          "evaluation_id": "ev-6968fe7d3597dbe87e3a42a69e923d66efcf47fe23c5c728b32975e48ad5ab66",
+          "request_sha256": "cae23fa38dea881b18cd99e687a98f5a846f3e7b61fe23ca7be7ef4ca247254d"
+        },
+        {
+          "candidate_id": "8ff1b9929dca51cd7023295db65bae1e7d525c70d262dcfbda5384de23fb4bfb",
+          "evaluation_id": "ev-8ff1b9929dca51cd7023295db65bae1e7d525c70d262dcfbda5384de23fb4bfb",
+          "request_sha256": "df17351c856e7f68fc08fc663833c788985cccaa8c7f52c5b87da118cb8a16df"
+        },
+        {
+          "candidate_id": "6d8fded06141e249d0f182fdda8ad9be7c45ec1a8c283a8a509823674fa11e0a",
+          "evaluation_id": "ev-6d8fded06141e249d0f182fdda8ad9be7c45ec1a8c283a8a509823674fa11e0a",
+          "request_sha256": "096687fca6bede43c9e02c240bbae36bcbe204a131b4f99bcc8f4b00424659f6"
+        },
+        {
+          "candidate_id": "2ee0534f705bc9d539ff8b62f7764d7d326bb95750aa9a98a99f94cdcd021df8",
+          "evaluation_id": "ev-2ee0534f705bc9d539ff8b62f7764d7d326bb95750aa9a98a99f94cdcd021df8",
+          "request_sha256": "4f98801db78869702dc98840262660eb066b7ea2d024100bbeaf507baf19390b"
+        },
+        {
+          "candidate_id": "d318c5f7ea0a7bc7c993d8191296c3d5cfcef9220b6b3b660f6a2ec316fd1f62",
+          "evaluation_id": "ev-d318c5f7ea0a7bc7c993d8191296c3d5cfcef9220b6b3b660f6a2ec316fd1f62",
+          "request_sha256": "111e3f0b8a163d43099a40cdc8185d8f01cca8edb94d1090fcb994642ab04edd"
+        },
+        {
+          "candidate_id": "1fdef67f1c17c1648dc142afacda03993a9afb9c348c3833d88d1470b9ad689b",
+          "evaluation_id": "ev-1fdef67f1c17c1648dc142afacda03993a9afb9c348c3833d88d1470b9ad689b",
+          "request_sha256": "43153b62417f1babb46d0e51d64c00181df9a3436ede21450c55a0ecdf597a6b"
+        },
+        {
+          "candidate_id": "c89799b2c6b7f434c91ffc762c09063d482eb069a64a1e9385b8ea20748e6bb1",
+          "evaluation_id": "ev-c89799b2c6b7f434c91ffc762c09063d482eb069a64a1e9385b8ea20748e6bb1",
+          "request_sha256": "b0c94d7b2260d20190517d652556b50df1af8ddb6759af52782fde88b2b87a0d"
+        },
+        {
+          "candidate_id": "7d1b855c2ac526e7d92cdbf438b391f83d726d7b73010bf9795c298ca49427ea",
+          "evaluation_id": "ev-7d1b855c2ac526e7d92cdbf438b391f83d726d7b73010bf9795c298ca49427ea",
+          "request_sha256": "db647653228f8ad536468d883baebbf0c70c5dfd5a2c8bb1b8683a14152517b1"
+        },
+        {
+          "candidate_id": "38713809acf8f7507d9293a38b5c7feb0af9d4e026e52cf546d35727396dd223",
+          "evaluation_id": "ev-38713809acf8f7507d9293a38b5c7feb0af9d4e026e52cf546d35727396dd223",
+          "request_sha256": "84f2a7546e306b6a7beebe97151540a641dc46c6832fae62ec1f7c15663a6d59"
+        },
+        {
+          "candidate_id": "82fc4c08cef5b29bef53b1caa6f426e5dfe299dc5d1446757584b8ee24f75675",
+          "evaluation_id": "ev-82fc4c08cef5b29bef53b1caa6f426e5dfe299dc5d1446757584b8ee24f75675",
+          "request_sha256": "8c92475515c91e1352b7215d7ae04672d0302a5a9ce9d265244e17e133af6759"
+        },
+        {
+          "candidate_id": "dd75ca868d8122ab483f907b261d873a673e3be8e725ca98abe8dd246c09da9c",
+          "evaluation_id": "ev-dd75ca868d8122ab483f907b261d873a673e3be8e725ca98abe8dd246c09da9c",
+          "request_sha256": "891637937609e9e58d109584cc4e20e9d917080f41cc223ea35718e736353e13"
+        },
+        {
+          "candidate_id": "510b005571878d085f114250d14dd2602ec27b83f61ad7709231c3a875b0695e",
+          "evaluation_id": "ev-510b005571878d085f114250d14dd2602ec27b83f61ad7709231c3a875b0695e",
+          "request_sha256": "e725e2375caa34537c482c3a81d7f0483f5a8c3d211b2f2fe3e99923f202cf60"
+        },
+        {
+          "candidate_id": "9087dab6cfe265bce953f45283c5e7083c379dfbdf0e873c82f068a2afab337f",
+          "evaluation_id": "ev-9087dab6cfe265bce953f45283c5e7083c379dfbdf0e873c82f068a2afab337f",
+          "request_sha256": "2b372cef118748785da3302f3912a55c8ec24b8e0037e8e5d0bb9cce6a2604d5"
+        },
+        {
+          "candidate_id": "5453df846bcf512469ddcfe58f9174275f34ec8972e4d8b73b57889a14757687",
+          "evaluation_id": "ev-5453df846bcf512469ddcfe58f9174275f34ec8972e4d8b73b57889a14757687",
+          "request_sha256": "c841614cfafe6f870da75843535501ebd895051c26eb435de788c61961a6ffea"
+        },
+        {
+          "candidate_id": "f2b17c9b070f6cc4366bc15ed1fe5b4abd4917fbebdcce8d6be5e3d55e11e799",
+          "evaluation_id": "ev-f2b17c9b070f6cc4366bc15ed1fe5b4abd4917fbebdcce8d6be5e3d55e11e799",
+          "request_sha256": "82d5462afce7e95b565a4e63561a84ccd1e24403454c77219489def0fa972182"
+        },
+        {
+          "candidate_id": "59840fb5218e864a39378921f274d7710c3cd18be62feb829490d17dff34bcf4",
+          "evaluation_id": "ev-59840fb5218e864a39378921f274d7710c3cd18be62feb829490d17dff34bcf4",
+          "request_sha256": "85de98bdb6ef4028ca8f13d7fbc500874c4a89c52b89847a0c1df095e4c16817"
+        },
+        {
+          "candidate_id": "4be6a99b2a15ebccaa9e7e71a5df1505927ec4f31e6bb4f47f6386dd631895af",
+          "evaluation_id": "ev-4be6a99b2a15ebccaa9e7e71a5df1505927ec4f31e6bb4f47f6386dd631895af",
+          "request_sha256": "396bae8ada525c47f8849db24c0bd1a2a5c79bcb68473c169dadeebe9c88672d"
+        },
+        {
+          "candidate_id": "7d7648e1716917d5d7e522b5a1db6eb12b3d316473331dedad4bca6b5fe87e72",
+          "evaluation_id": "ev-7d7648e1716917d5d7e522b5a1db6eb12b3d316473331dedad4bca6b5fe87e72",
+          "request_sha256": "a75f080a3407e1c1d534646d9548b36a0ec80468867c4a4a4ac8ec545989a2c0"
+        },
+        {
+          "candidate_id": "7e135271e48c75054d080530866c24162548e72a1f9b3b5d1d0d8c9798a7d7fa",
+          "evaluation_id": "ev-7e135271e48c75054d080530866c24162548e72a1f9b3b5d1d0d8c9798a7d7fa",
+          "request_sha256": "30264670bfce92c45e219bd52e8dac847b5f3b035a5a519d657ffd216efb42c0"
+        },
+        {
+          "candidate_id": "ad85150bbb8e0a1d6012512b069d783ba011dc837d1e90f52fb21a2aeaa6e80c",
+          "evaluation_id": "ev-ad85150bbb8e0a1d6012512b069d783ba011dc837d1e90f52fb21a2aeaa6e80c",
+          "request_sha256": "f20ce78c44cd2626ef160a36ed82e49b45e15ac25a963ce56ea952e3ffa9940e"
+        },
+        {
+          "candidate_id": "6a483d75714c10cd1b74e25875f4ae2339707972efba5bc31d1190883a0df0c6",
+          "evaluation_id": "ev-6a483d75714c10cd1b74e25875f4ae2339707972efba5bc31d1190883a0df0c6",
+          "request_sha256": "e43c1787cb781a93d2477fa01865073ee6f695ed1fca84ba28f56612325a8060"
+        },
+        {
+          "candidate_id": "34e302e23f584f05e70c0a9174e901b37d69b4b33624d2014ca9d2c8cc077d7e",
+          "evaluation_id": "ev-34e302e23f584f05e70c0a9174e901b37d69b4b33624d2014ca9d2c8cc077d7e",
+          "request_sha256": "269b05bf314de2127b16b2745a315501c6dc69ce9a2c689c820efeafec25e9e6"
+        },
+        {
+          "candidate_id": "799e31d36f9132b306693e0e82f47adb7e3f35ae2788db4651fa4f0faf4f4a1d",
+          "evaluation_id": "ev-799e31d36f9132b306693e0e82f47adb7e3f35ae2788db4651fa4f0faf4f4a1d",
+          "request_sha256": "f92f1927c9754adc85aeb7907b9368f331e66ff48163cbfe9b50451d7175b8eb"
+        },
+        {
+          "candidate_id": "2b1418df26bdd50b12e9ddfe4e49864bc4108596737076952877a80782a0d4c4",
+          "evaluation_id": "ev-2b1418df26bdd50b12e9ddfe4e49864bc4108596737076952877a80782a0d4c4",
+          "request_sha256": "673afbe3f2328b477fe06d9495e43047ea8321f319875454ca28ba305a1545cb"
+        },
+        {
+          "candidate_id": "6d83686a49203e9a7fccfc3516b0629e03770f64274dfe2f870cde6bf960bb18",
+          "evaluation_id": "ev-6d83686a49203e9a7fccfc3516b0629e03770f64274dfe2f870cde6bf960bb18",
+          "request_sha256": "1b6fed2f78a1e622f463f1f3587e62c4a3545e1fd567f47c2805ec9a3d981e3e"
+        },
+        {
+          "candidate_id": "16cb89e12f597dcb9830f00ad7f1b39eb535d837c341e1ebfe4221d5e6253d1b",
+          "evaluation_id": "ev-16cb89e12f597dcb9830f00ad7f1b39eb535d837c341e1ebfe4221d5e6253d1b",
+          "request_sha256": "3c9dd08729c0192c9bce93a77fc65c5ffaa2c37ec587c6b03e7d9b9009834e8e"
+        },
+        {
+          "candidate_id": "5d4cab64217b0b7548d73d96e5eabab50a3ccf0dfecccfdf419791daf7c41cd9",
+          "evaluation_id": "ev-5d4cab64217b0b7548d73d96e5eabab50a3ccf0dfecccfdf419791daf7c41cd9",
+          "request_sha256": "d15213401e088efc0ad190fc6c29ef773e6eaddf1fcbd21886816a79e5f3d56a"
+        },
+        {
+          "candidate_id": "5cddbc4848f76d2245b575a70ac2d9a5b05d9d5d86c3dbc614ee2e20cd27693a",
+          "evaluation_id": "ev-5cddbc4848f76d2245b575a70ac2d9a5b05d9d5d86c3dbc614ee2e20cd27693a",
+          "request_sha256": "258751d5f13ff4488c6122bcc9bca08c79f29cdf5cb950c5b94f156ededf4cce"
+        },
+        {
+          "candidate_id": "e33d578c5dcf474729d7267fa37dcf0ac207d31d57763c3d130765fd4a889333",
+          "evaluation_id": "ev-e33d578c5dcf474729d7267fa37dcf0ac207d31d57763c3d130765fd4a889333",
+          "request_sha256": "fec959eb958eb4cf5db0a90dc16be467502542490363486407352941e5133920"
+        },
+        {
+          "candidate_id": "4852584cbb165ce13f777ccff8d0cadefa7887830b3a05df78d1613ed360c28e",
+          "evaluation_id": "ev-4852584cbb165ce13f777ccff8d0cadefa7887830b3a05df78d1613ed360c28e",
+          "request_sha256": "4709f0fd73e79f45e5cca627861e4023b665368f4d4d1b800a80590db85d8d61"
+        },
+        {
+          "candidate_id": "461aaa3516a5d9344aff0ecf09a28c57954f335dc85840465a1ef5efb4c6ea0a",
+          "evaluation_id": "ev-461aaa3516a5d9344aff0ecf09a28c57954f335dc85840465a1ef5efb4c6ea0a",
+          "request_sha256": "32e212ebfcc84f32aca5b0f04e25016096115f8c712bd4cb9454b75acf8c4462"
+        },
+        {
+          "candidate_id": "fe8fbf4117e7cfbf25e5373e0039484d3614657f9944c23728941e9703f0b97c",
+          "evaluation_id": "ev-fe8fbf4117e7cfbf25e5373e0039484d3614657f9944c23728941e9703f0b97c",
+          "request_sha256": "34c38ad18f1b5505b7674946e33740cd3dcb10cefc1e3d3fd9def9bc9b38f134"
+        },
+        {
+          "candidate_id": "a3d537ecac71a32247440b3304f72b60b8fb54c964399c797bce4481b1e48d32",
+          "evaluation_id": "ev-a3d537ecac71a32247440b3304f72b60b8fb54c964399c797bce4481b1e48d32",
+          "request_sha256": "17fd712edd808b55fadc720fb77a7f3233a6c041e66fddfe60c9ac61b5042d42"
+        },
+        {
+          "candidate_id": "6509dee6560c09f64f55efe04caeb65588af3852982f3aab793fe64a7715ccbc",
+          "evaluation_id": "ev-6509dee6560c09f64f55efe04caeb65588af3852982f3aab793fe64a7715ccbc",
+          "request_sha256": "bc7ca358fd7b97110e8701b45807d73a039c49372fe53aa9d938707ef0fc9675"
+        },
+        {
+          "candidate_id": "c77082b1a4d5ac2b79cb2fbe36c862da1304492069d3a035d0e799ad2228ff8c",
+          "evaluation_id": "ev-c77082b1a4d5ac2b79cb2fbe36c862da1304492069d3a035d0e799ad2228ff8c",
+          "request_sha256": "31c2e52336cc0773030a4cf9e2bd15be62ea401de25b9ae52248580d7ac9f68e"
+        },
+        {
+          "candidate_id": "a0534344362cda61bfe35139cf8b62ab492e31860c38cc96efb87a979e23609b",
+          "evaluation_id": "ev-a0534344362cda61bfe35139cf8b62ab492e31860c38cc96efb87a979e23609b",
+          "request_sha256": "c236a4e1c66ebb735f8c90c7e9e72c000276a18934be1fb8150c04ffbf90ddae"
+        },
+        {
+          "candidate_id": "8351303cec997bc74cdfa9a45c3e18304c60642fed011855eb20210da304018f",
+          "evaluation_id": "ev-8351303cec997bc74cdfa9a45c3e18304c60642fed011855eb20210da304018f",
+          "request_sha256": "7f6f83ac3ff7d84452f817443e970e8c6c9245c4e760506a58379059e605f734"
+        },
+        {
+          "candidate_id": "a178d0b86b80426af8093efffa1acba8c922c7fe2af37dc7c66b1e71172b344a",
+          "evaluation_id": "ev-a178d0b86b80426af8093efffa1acba8c922c7fe2af37dc7c66b1e71172b344a",
+          "request_sha256": "0864bd5ecd84c27601cd7d6202eaf5fb3b6eafee6214f2108ae4db0a9981a43f"
+        },
+        {
+          "candidate_id": "e03e1afdd357991bc4180654794e7edfaa89df06a123949532cb155e3e4ec63e",
+          "evaluation_id": "ev-e03e1afdd357991bc4180654794e7edfaa89df06a123949532cb155e3e4ec63e",
+          "request_sha256": "5ed36869ad4cf01d5a4fe8d8952323544cb37d63f2b99500452fffda1d7e7e55"
+        },
+        {
+          "candidate_id": "3455d0212dfba0140ba9ca693af2c64d29836251e231b7e0881a27f6deec9b57",
+          "evaluation_id": "ev-3455d0212dfba0140ba9ca693af2c64d29836251e231b7e0881a27f6deec9b57",
+          "request_sha256": "68d123fc2c26e3b0ea3b61a60cecdd7c02584963fb0ec6b1484411eeb7c2b702"
+        },
+        {
+          "candidate_id": "944fce41f6f2afea5141cd37d602e46d7cb23111af550ec9f0f9fa33c82e00b1",
+          "evaluation_id": "ev-944fce41f6f2afea5141cd37d602e46d7cb23111af550ec9f0f9fa33c82e00b1",
+          "request_sha256": "b0eebf64af6794d74386cd9a119d4ce1f9ad26daab0190e424ec0383878b9101"
+        },
+        {
+          "candidate_id": "f8cd81cd723edf3e9719d58b12db1935aebd21ee399162543ac6957eab8ae9ae",
+          "evaluation_id": "ev-f8cd81cd723edf3e9719d58b12db1935aebd21ee399162543ac6957eab8ae9ae",
+          "request_sha256": "46caaa4c805023d2c0d5b55a60270c77e8836609545fb1b8bfbda687c001e19a"
+        },
+        {
+          "candidate_id": "5dbeead802962ec69fac1435a8233d617061f67f3302a3abbc6afd27e9563903",
+          "evaluation_id": "ev-5dbeead802962ec69fac1435a8233d617061f67f3302a3abbc6afd27e9563903",
+          "request_sha256": "d94536bb6f4b3c53a28500879700247191ee2877625b0b1f21bdd10709b6ae98"
+        },
+        {
+          "candidate_id": "a48029db41eb5c6312500eb6ed314b050822e311dadf7c4523d5444eae58522a",
+          "evaluation_id": "ev-a48029db41eb5c6312500eb6ed314b050822e311dadf7c4523d5444eae58522a",
+          "request_sha256": "f75fdfd3abdecfa3b485a7247a689d5a57486a563afed97186a43d16ca5f38c8"
+        },
+        {
+          "candidate_id": "6fb071e77e1e3f6e1d767b3a3f96cb4185017ba6ba8ba050ca885833982bfd48",
+          "evaluation_id": "ev-6fb071e77e1e3f6e1d767b3a3f96cb4185017ba6ba8ba050ca885833982bfd48",
+          "request_sha256": "a38d739d29927e8bfcaf8697f1d6027944b6c33ca3aa736b85417dafa6d97161"
+        },
+        {
+          "candidate_id": "406fc4771681e7691df99884c677c0443422682fb54fa007f8903a067093c968",
+          "evaluation_id": "ev-406fc4771681e7691df99884c677c0443422682fb54fa007f8903a067093c968",
+          "request_sha256": "3d27b4de39247b5fbeb1e6c52cbb75bc2f32a3f108e725ba292ab6edbd0f6f83"
+        },
+        {
+          "candidate_id": "2cc04daeab24fbfec83d935a9a8a373e403d3fd3905759815021bcd7f3b21b80",
+          "evaluation_id": "ev-2cc04daeab24fbfec83d935a9a8a373e403d3fd3905759815021bcd7f3b21b80",
+          "request_sha256": "72c342cf28034a393e80900999f5b86be6528a5deb426e655b60f91f72cf6828"
+        },
+        {
+          "candidate_id": "109d7db06867acd3f5b96c206c22fab7a2941e05d6c1de6ad90453b79a4e7da4",
+          "evaluation_id": "ev-109d7db06867acd3f5b96c206c22fab7a2941e05d6c1de6ad90453b79a4e7da4",
+          "request_sha256": "167e51edf59f019be3c68050dfe15b00befd258c9631236d6938f0d0ecfe1752"
+        },
+        {
+          "candidate_id": "5a3652c664bca554e6ac1ff186e0a361f4d7b0ecbf0a23f7620d995db2c760ef",
+          "evaluation_id": "ev-5a3652c664bca554e6ac1ff186e0a361f4d7b0ecbf0a23f7620d995db2c760ef",
+          "request_sha256": "1051615e4a191d03219d23a64c409bbae45466d8b8db2e14971bda4bfa9b13e8"
+        },
+        {
+          "candidate_id": "5730916d198fbb42703cca85c1a36557ac785b051a95827900b1249b9d5eca74",
+          "evaluation_id": "ev-5730916d198fbb42703cca85c1a36557ac785b051a95827900b1249b9d5eca74",
+          "request_sha256": "833dfe21a93847705625169ae5ba905470666970427f329838c31ba31354ec06"
+        },
+        {
+          "candidate_id": "89f01fb4be981a973baa8c62820ae7b308827a8b15ff28a3b4a22f4bcfb28d83",
+          "evaluation_id": "ev-89f01fb4be981a973baa8c62820ae7b308827a8b15ff28a3b4a22f4bcfb28d83",
+          "request_sha256": "e57a6ba7a5d5ba0c9b5355bee8b1e8f073aa3aa6ce18d72a2cb6ef872649a31f"
+        },
+        {
+          "candidate_id": "3377f4c7afe8601b53aef93b3584ab3148f5ea1df273067bcb30d0aecacedffd",
+          "evaluation_id": "ev-3377f4c7afe8601b53aef93b3584ab3148f5ea1df273067bcb30d0aecacedffd",
+          "request_sha256": "8e3c6d41b411714a4c912ce9e43f0ef1910092851042309dcaf6b57e76e10eed"
+        },
+        {
+          "candidate_id": "bd91fc1a9c7814123b384fb85ebd38614015a69ca7ba28474e553658c990fb5e",
+          "evaluation_id": "ev-bd91fc1a9c7814123b384fb85ebd38614015a69ca7ba28474e553658c990fb5e",
+          "request_sha256": "730bba43f545e49b87f72d25b712df79db35aa7b7e52e3b9ddffb3b2570f62c1"
+        },
+        {
+          "candidate_id": "77037378ca751d82070ece95a344506f76dd623635589dffd3775b73fbeeef2d",
+          "evaluation_id": "ev-77037378ca751d82070ece95a344506f76dd623635589dffd3775b73fbeeef2d",
+          "request_sha256": "90b5643e25f5a601b432e931cfd8a2b692b31745ae57bc1101e290cf35862d76"
+        },
+        {
+          "candidate_id": "f0196f497d47fa5e31b25a12a89315794d909095053a4a6ad05e0ab48ec2216d",
+          "evaluation_id": "ev-f0196f497d47fa5e31b25a12a89315794d909095053a4a6ad05e0ab48ec2216d",
+          "request_sha256": "65ce76cad12c6bf26d213f45878cd2b06303f11dafdc4cfc54668ebd683db50a"
+        },
+        {
+          "candidate_id": "df7b4d6f6e845bc08ed57af151b3819035cb222f4f730163cafeaaf95e9a8ca5",
+          "evaluation_id": "ev-df7b4d6f6e845bc08ed57af151b3819035cb222f4f730163cafeaaf95e9a8ca5",
+          "request_sha256": "9c2cb9984c9aef0e7be179ac28bc0bd0e7ef5f871c22ee630236489952192a31"
+        },
+        {
+          "candidate_id": "11279cb91ac57a81a1d5d07102920c84a4cd057fe0536b1d3db687036b32a4e4",
+          "evaluation_id": "ev-11279cb91ac57a81a1d5d07102920c84a4cd057fe0536b1d3db687036b32a4e4",
+          "request_sha256": "d3b24e3c333cfdd5c494609f61deb28fce9a1504d68c0d704dd3c294cb5d6b0a"
+        },
+        {
+          "candidate_id": "5139f0679f719731db4dab7a8f616b9deaf5acb61643143c6f9d2392b6529a17",
+          "evaluation_id": "ev-5139f0679f719731db4dab7a8f616b9deaf5acb61643143c6f9d2392b6529a17",
+          "request_sha256": "ba9ac658f531855c559e21fc39204930bf77d69fedbe51ca35c5bf2f1737d513"
+        },
+        {
+          "candidate_id": "991e8d768a139b96ee6f786df93c72a9db525b001e15e8f4ee8bb5f74102b3f3",
+          "evaluation_id": "ev-991e8d768a139b96ee6f786df93c72a9db525b001e15e8f4ee8bb5f74102b3f3",
+          "request_sha256": "93782089ebc87da65e4057e9e6591946b9ad4691e574d7e2913e693a256ab9fd"
+        },
+        {
+          "candidate_id": "c24daf1b4080f8ccd237d318a4a093dccca79a058138b5304bc405983c659805",
+          "evaluation_id": "ev-c24daf1b4080f8ccd237d318a4a093dccca79a058138b5304bc405983c659805",
+          "request_sha256": "bb5be59a158fa6e311707db0454329f22f67f5ea3eb362472c438f39d90aec1e"
+        },
+        {
+          "candidate_id": "842afaba9a40cd72fd3bf6596b1cb5992513ceebeb113eabf3fa1563df0ba9f5",
+          "evaluation_id": "ev-842afaba9a40cd72fd3bf6596b1cb5992513ceebeb113eabf3fa1563df0ba9f5",
+          "request_sha256": "17a9d9ae9e915e7c8357566456c24cac2013f59d9fcb5385285d126efbc16e80"
+        },
+        {
+          "candidate_id": "9bbcf4a72fafe487204fe9acd86ca1b558c8166da31b23a481b308afccc55fab",
+          "evaluation_id": "ev-9bbcf4a72fafe487204fe9acd86ca1b558c8166da31b23a481b308afccc55fab",
+          "request_sha256": "7e5b4ed5b4c8de6d4af2c1e8634d2f454277231e9a7fa7783838382cfb988607"
+        },
+        {
+          "candidate_id": "e529432674b3412e9fe9456dff2221fa5ecfaaf8ce7ae41bdf8f8cd45b3c909b",
+          "evaluation_id": "ev-e529432674b3412e9fe9456dff2221fa5ecfaaf8ce7ae41bdf8f8cd45b3c909b",
+          "request_sha256": "44eb23b5e02f1324847277b7f6deaab5041a4ab85d9bee9e1a401e3a86fa83b9"
+        },
+        {
+          "candidate_id": "621e4b84c08beef9804c5d5415cca30b41dcfedbd624b624b72fa716d4ce9832",
+          "evaluation_id": "ev-621e4b84c08beef9804c5d5415cca30b41dcfedbd624b624b72fa716d4ce9832",
+          "request_sha256": "96400cc8be62dbb9332d0bdf524af8258dff481eda319bcf63a11ae8833ab999"
+        },
+        {
+          "candidate_id": "65c683665ce871c41d083d49bccf99109405b0089bf199f8027defc9150437a4",
+          "evaluation_id": "ev-65c683665ce871c41d083d49bccf99109405b0089bf199f8027defc9150437a4",
+          "request_sha256": "faca1a38de663a2aa862dde83f3565b6e6c4336a09cd74bef6c93ef42d1b05d4"
+        },
+        {
+          "candidate_id": "bbcedd2dae3be00cebd871c5635b68d051428461661c7b862603b8a55ba04982",
+          "evaluation_id": "ev-bbcedd2dae3be00cebd871c5635b68d051428461661c7b862603b8a55ba04982",
+          "request_sha256": "973a315389539115d8734907f944af983d10e729e2fac98481c756a404ab96b0"
+        },
+        {
+          "candidate_id": "fd3bb883a381fa31a31d92d049029f6d91f5795a1e6cbc63b5b9fa532e0136ee",
+          "evaluation_id": "ev-fd3bb883a381fa31a31d92d049029f6d91f5795a1e6cbc63b5b9fa532e0136ee",
+          "request_sha256": "b17287c7e494858ac3cfc255693cf2dcb63ee76ad82b3e337b361538dd177378"
+        },
+        {
+          "candidate_id": "15bac4d0230329ce8a9d16394f06326cfc41f4a05306e2f65024527f02c4cc92",
+          "evaluation_id": "ev-15bac4d0230329ce8a9d16394f06326cfc41f4a05306e2f65024527f02c4cc92",
+          "request_sha256": "3afc9c73df11f51c466b9c7df0c1c799209885c5e96da128b1322d662127db9b"
+        },
+        {
+          "candidate_id": "625f840c3cde0a1aa67568ac02be0f0583495c550d733e4e363c4b09eb19a647",
+          "evaluation_id": "ev-625f840c3cde0a1aa67568ac02be0f0583495c550d733e4e363c4b09eb19a647",
+          "request_sha256": "abf14a86365d5160a0838e481d9c26f887a18dd60f20649435d2836270524352"
+        },
+        {
+          "candidate_id": "09b01049c4c819c40e52a9a3b64a6358b8f25e66372cbbf83ee5365d201e45b5",
+          "evaluation_id": "ev-09b01049c4c819c40e52a9a3b64a6358b8f25e66372cbbf83ee5365d201e45b5",
+          "request_sha256": "a083701e3d53187c8f11ddaf4717544ab01b7047fa0ce4776ae1a6032abce755"
+        },
+        {
+          "candidate_id": "220953cc1dca372311c43820babc1782db1e87e87a191e03104080359c877a62",
+          "evaluation_id": "ev-220953cc1dca372311c43820babc1782db1e87e87a191e03104080359c877a62",
+          "request_sha256": "1dba8584b6f942bb0a2e69664ab490fbdd7973c08d9c59e2d4ac0f0fb492f729"
+        },
+        {
+          "candidate_id": "9d98021ac1b32e619446b028c6cbcb0d6ecab79cf9ddf09a7cd8946e5502ab92",
+          "evaluation_id": "ev-9d98021ac1b32e619446b028c6cbcb0d6ecab79cf9ddf09a7cd8946e5502ab92",
+          "request_sha256": "fac8b4348f450d55cedb54691c81b4576a15ede84810a1f33e9f45143bbd7696"
+        },
+        {
+          "candidate_id": "962f743226ce2958122bba5d4214a4dc4cdc59ced51c4d82e54e3d7764edf8d0",
+          "evaluation_id": "ev-962f743226ce2958122bba5d4214a4dc4cdc59ced51c4d82e54e3d7764edf8d0",
+          "request_sha256": "a98e11b9ffd44d4ad62fa43239490a91164f37389d8a5b926f4c6438577e94dc"
+        },
+        {
+          "candidate_id": "cf691bcac614aac93fcebb8facd50d008a308aedf8b456e0ed377317c104b39b",
+          "evaluation_id": "ev-cf691bcac614aac93fcebb8facd50d008a308aedf8b456e0ed377317c104b39b",
+          "request_sha256": "56c7dcc7605d03acbaed54c6a1cf467738e845895ec4d802ab183cd1547c1896"
+        },
+        {
+          "candidate_id": "6ceb2539b515d68e0823bc061240b3178f57deb747a947ca2ace3fc8bea803b5",
+          "evaluation_id": "ev-6ceb2539b515d68e0823bc061240b3178f57deb747a947ca2ace3fc8bea803b5",
+          "request_sha256": "567aab233e0e43e6301b2aec6b3f6ed866a77aef903d0fce205ee010179bd42c"
+        },
+        {
+          "candidate_id": "cd7d431de7599d61eb62705823ec247d5e03c75c4ab280fcb886d68e475b615e",
+          "evaluation_id": "ev-cd7d431de7599d61eb62705823ec247d5e03c75c4ab280fcb886d68e475b615e",
+          "request_sha256": "d58f2f1d0fb83f8a7cf1db4de322ff887a2c1cf1418b480d5d86d1391d09b2af"
+        },
+        {
+          "candidate_id": "8e0fd413e7fa7b770f2eb4e10fe07760cc185e0a62493f399a9c747e970b81b2",
+          "evaluation_id": "ev-8e0fd413e7fa7b770f2eb4e10fe07760cc185e0a62493f399a9c747e970b81b2",
+          "request_sha256": "b2bb8e5f8aad339a2e99c77332f7a7fdcef49230e1b2089fe384154468ce2fb1"
+        },
+        {
+          "candidate_id": "805b4c92c8fa715064df4612dacfc1fc45aa8db35a1303c947335aebc7b421a6",
+          "evaluation_id": "ev-805b4c92c8fa715064df4612dacfc1fc45aa8db35a1303c947335aebc7b421a6",
+          "request_sha256": "6bfca5ce70a56d29d2dbe471795c305d329255b0e863392ae49d74a0284e9ae5"
+        },
+        {
+          "candidate_id": "2bdf05cd3a191878b1838df4f8b8fa784d571c732737ada08d9291ac70656b52",
+          "evaluation_id": "ev-2bdf05cd3a191878b1838df4f8b8fa784d571c732737ada08d9291ac70656b52",
+          "request_sha256": "89af88ab0b58e22b1ad386e91fe1fcb3315c0b42e51694b1a5111e599565a3f5"
+        },
+        {
+          "candidate_id": "195caf549a6ea83c6328ebd95e027abfdf6a3fc68796cc6f15ed929bfd0b5597",
+          "evaluation_id": "ev-195caf549a6ea83c6328ebd95e027abfdf6a3fc68796cc6f15ed929bfd0b5597",
+          "request_sha256": "00006bde564515e7aa905e472437ce02f6ae7cbcb68e4c43a5a4ef72ed02d5b0"
+        },
+        {
+          "candidate_id": "e52caa547f7981ba297e9132c0abc1a88dbeaed19fcc2530d8a5ea81019edc89",
+          "evaluation_id": "ev-e52caa547f7981ba297e9132c0abc1a88dbeaed19fcc2530d8a5ea81019edc89",
+          "request_sha256": "95ac82715d9eec3022c1ae0e35259065b1941adde94a65a12d57c1459261b73a"
+        },
+        {
+          "candidate_id": "8ee35c203c26c31fd6f2180b9b3ed5245d3ea629047f50bb17bf0ae7d300db5a",
+          "evaluation_id": "ev-8ee35c203c26c31fd6f2180b9b3ed5245d3ea629047f50bb17bf0ae7d300db5a",
+          "request_sha256": "5130dd5f6d6baa7056852637f2fe8bacab6c01aedcbc32bc80ecea52c177ae3b"
+        },
+        {
+          "candidate_id": "f7b421ce2d7adb55f96cdaf10a51bc967c2884e370d6499aea8394b084e22067",
+          "evaluation_id": "ev-f7b421ce2d7adb55f96cdaf10a51bc967c2884e370d6499aea8394b084e22067",
+          "request_sha256": "2d4d1f548a84713d8061e519848270218dea89fc5e13ad82359fd330c9b9521d"
+        },
+        {
+          "candidate_id": "a83ee5c9601ebbfc7d01240ba22d075413fbd3830ff29d49dbea74560dc37af3",
+          "evaluation_id": "ev-a83ee5c9601ebbfc7d01240ba22d075413fbd3830ff29d49dbea74560dc37af3",
+          "request_sha256": "612ff382d5cf3cbaa586610714972a5cb33c422a2e017031796b96384c51540f"
+        },
+        {
+          "candidate_id": "4caa1738de460d0c62010fbf3a16019930e27125dffe54a571936579cbeb8a01",
+          "evaluation_id": "ev-4caa1738de460d0c62010fbf3a16019930e27125dffe54a571936579cbeb8a01",
+          "request_sha256": "a1ffc5adbee6610ca30284921345fb07a9e8b36c36253d41b70570708f294eca"
+        },
+        {
+          "candidate_id": "0d84c617bc7f3edb7be64b2f5f0a2f600dc61991ae239d6b99df8f8ffd0a93e7",
+          "evaluation_id": "ev-0d84c617bc7f3edb7be64b2f5f0a2f600dc61991ae239d6b99df8f8ffd0a93e7",
+          "request_sha256": "7c18cb8e53db65176bdbed85b23be88ffc67095ac403acf7068ad4081d2edbc6"
+        },
+        {
+          "candidate_id": "d5de53e880c854409ccc08d6538d7fa4012d4c45cc4b7ebc55e9456bffd07b15",
+          "evaluation_id": "ev-d5de53e880c854409ccc08d6538d7fa4012d4c45cc4b7ebc55e9456bffd07b15",
+          "request_sha256": "db656333b7b7c161f94d6189a431640b0f471be52e284d561a64ade01cc85f3e"
+        },
+        {
+          "candidate_id": "224c71f6186f0ff8993c091d0c45f6b93c9d6a850475c0b99c85e73a66c364e9",
+          "evaluation_id": "ev-224c71f6186f0ff8993c091d0c45f6b93c9d6a850475c0b99c85e73a66c364e9",
+          "request_sha256": "3aa04a37600b4de92d914bc19e11507de9bff0d7229990c1be544dc3af54fafb"
+        },
+        {
+          "candidate_id": "3ee5553389362aa14c21476d94a4abfc10084a9e20831453daeab16fe1cacb09",
+          "evaluation_id": "ev-3ee5553389362aa14c21476d94a4abfc10084a9e20831453daeab16fe1cacb09",
+          "request_sha256": "d381549cd606432a7e18a0fdd41c4e2f8c11aae80f4153e91c911e3b0d5cb241"
+        },
+        {
+          "candidate_id": "c98d8c4749f3e3034e8a3ef8dfebcc641f07569f46019c544cc314f6bd8e7947",
+          "evaluation_id": "ev-c98d8c4749f3e3034e8a3ef8dfebcc641f07569f46019c544cc314f6bd8e7947",
+          "request_sha256": "d1e5583c9463f25cbe798dc500fbe73c4b03374db6695b697e3084dcaabf941a"
+        },
+        {
+          "candidate_id": "06f4319ecd988fc118829c6916860daa2f563e143d86cc3150961137cc9d3d30",
+          "evaluation_id": "ev-06f4319ecd988fc118829c6916860daa2f563e143d86cc3150961137cc9d3d30",
+          "request_sha256": "d776817c1931286f29da7fddfa72063fa18150f5edbd9a64a84ff87da26cfc9b"
+        },
+        {
+          "candidate_id": "37f24c76ec8564eb47e47c9df4a7726b0f042daaa14e48e52afc2c9db73e0203",
+          "evaluation_id": "ev-37f24c76ec8564eb47e47c9df4a7726b0f042daaa14e48e52afc2c9db73e0203",
+          "request_sha256": "449338444ec5e15353f910fda84749afc4730679b1483f7f6ae6606be74f8e11"
+        },
+        {
+          "candidate_id": "577d9d7e5d5b3ee18a36d85080dd9e19cf92ef2fb35fcc65681385ab2f7c8a0d",
+          "evaluation_id": "ev-577d9d7e5d5b3ee18a36d85080dd9e19cf92ef2fb35fcc65681385ab2f7c8a0d",
+          "request_sha256": "b75159a1d0fd6e521b6e553329516855c173611a994460d70c66243a4c35ef7a"
+        },
+        {
+          "candidate_id": "c9d7a9335dd5af797ebae33176cd9d25a6f93c2f35aadd5e72253618d6ecbc07",
+          "evaluation_id": "ev-c9d7a9335dd5af797ebae33176cd9d25a6f93c2f35aadd5e72253618d6ecbc07",
+          "request_sha256": "ff153a378ad9c7db1cbc90ef58306882836d3a4e3643d87973e09692793d4f0a"
+        },
+        {
+          "candidate_id": "be0ca6abc5554ee6e68e9a625ff74842b4b01eb996d9b720b3bfa8c83cea237c",
+          "evaluation_id": "ev-be0ca6abc5554ee6e68e9a625ff74842b4b01eb996d9b720b3bfa8c83cea237c",
+          "request_sha256": "373204251c202c87c600eab3efb728c9c8078ad4ccee4f1acf3f024ed02cbce4"
+        },
+        {
+          "candidate_id": "fb3bf51fff2200005b11852c3966695d0efef45ccff227d4abe284b80baf6ab3",
+          "evaluation_id": "ev-fb3bf51fff2200005b11852c3966695d0efef45ccff227d4abe284b80baf6ab3",
+          "request_sha256": "6df6588fcc5456cfeb65b9ef1ec4649d0bac892e9d1851dc0ab2313b25acf564"
+        },
+        {
+          "candidate_id": "8cff208d5f749adb1410f2bc5944d35554afb34e2213b012973f302a0ae3945b",
+          "evaluation_id": "ev-8cff208d5f749adb1410f2bc5944d35554afb34e2213b012973f302a0ae3945b",
+          "request_sha256": "12af6f10e573926ba4786e6194c4df9a5ddc440aa9517ab78ba46b985c0f2398"
+        },
+        {
+          "candidate_id": "4212532f4d904cb55cfd8b7d52cd8e4329abfc2f3cdb3e35f4f386af306a5d15",
+          "evaluation_id": "ev-4212532f4d904cb55cfd8b7d52cd8e4329abfc2f3cdb3e35f4f386af306a5d15",
+          "request_sha256": "7ea38f51858f3140c204ed9f498700dda540e1865d60e0146d0419b575a27833"
+        },
+        {
+          "candidate_id": "9e22ab5c1b08be9e816b5876b4bcdc48cdbfc2742ba78e878bdfd5a0e999f57c",
+          "evaluation_id": "ev-9e22ab5c1b08be9e816b5876b4bcdc48cdbfc2742ba78e878bdfd5a0e999f57c",
+          "request_sha256": "15e7dc9ee60d82ce5d1a9e8d36b72d8c4db1e3b37c45e1dbbde14cbfffa604c5"
+        },
+        {
+          "candidate_id": "dfeb1cd966826cf84768dcec0242db772cddefcc8cf0fa354e62858b2cce71ca",
+          "evaluation_id": "ev-dfeb1cd966826cf84768dcec0242db772cddefcc8cf0fa354e62858b2cce71ca",
+          "request_sha256": "07648cdff2d1cffacc44b82b3d4f6a201cb38bd01a68b6aef874956a3a356315"
+        },
+        {
+          "candidate_id": "4a48235ef83cf74eea230669a2258854370bd8fb1d7fb1db0eeabe63cfffd7b7",
+          "evaluation_id": "ev-4a48235ef83cf74eea230669a2258854370bd8fb1d7fb1db0eeabe63cfffd7b7",
+          "request_sha256": "e238818527c42aee56d083f60d6fced19745e5d4d715f9e97037f45a3d8b2963"
+        },
+        {
+          "candidate_id": "bf9d711b38a7a80b789c140e92a55ec670d0eb1dff71aea0a5e23a1315a5de11",
+          "evaluation_id": "ev-bf9d711b38a7a80b789c140e92a55ec670d0eb1dff71aea0a5e23a1315a5de11",
+          "request_sha256": "5cd31e6ffb04898c4740cb77994abf05e8b6b3749fecbf3dd0fc9093f3764358"
+        },
+        {
+          "candidate_id": "b2486b0490814f872be877352e467dbd8c55ae92720cbc005062360e96c19a86",
+          "evaluation_id": "ev-b2486b0490814f872be877352e467dbd8c55ae92720cbc005062360e96c19a86",
+          "request_sha256": "e2ca974c3a256fac8cd9e94c4b2250ea3a880d1d7f3117fa65285ec9b55ec7a9"
+        },
+        {
+          "candidate_id": "41858b3d65f18c243fc1047219aea7b0e86851ee3b4dda3306f8c8b6a26bba25",
+          "evaluation_id": "ev-41858b3d65f18c243fc1047219aea7b0e86851ee3b4dda3306f8c8b6a26bba25",
+          "request_sha256": "9c2396d3aaf9d075e686ee4179f6c1e2dad8f6788b3f02d57f14fa648b9d5fac"
+        },
+        {
+          "candidate_id": "8480300733af01032ac0e7692fbda44c1b67f64cdc687a893e28013d4831b6e6",
+          "evaluation_id": "ev-8480300733af01032ac0e7692fbda44c1b67f64cdc687a893e28013d4831b6e6",
+          "request_sha256": "cd6e067576c44716f6c24b84d0fd6d3786c8f65c83c5a44aa6115a137fe51e1c"
+        },
+        {
+          "candidate_id": "cbad5073c2dcf90c104193aee7c04dc70d4b75b3a7c92cf0112b73b603d8a40f",
+          "evaluation_id": "ev-cbad5073c2dcf90c104193aee7c04dc70d4b75b3a7c92cf0112b73b603d8a40f",
+          "request_sha256": "3db5a68d0c708edb56f051937d8e66232ecedab1ff42acbac370f78dea906259"
+        },
+        {
+          "candidate_id": "6308ef0646c471cd1e8d213c7bacb0ffc13c067f86bdf060532ab5518b6c09da",
+          "evaluation_id": "ev-6308ef0646c471cd1e8d213c7bacb0ffc13c067f86bdf060532ab5518b6c09da",
+          "request_sha256": "c2ec319fa2494a86a4ec1f10221c8328228eb08d5c45db1d63dc2163e22501f1"
+        },
+        {
+          "candidate_id": "28fea658472e83ad1ebb93aca8a2af5f1f04e4bdbc81a91a6acbcaf852f205d0",
+          "evaluation_id": "ev-28fea658472e83ad1ebb93aca8a2af5f1f04e4bdbc81a91a6acbcaf852f205d0",
+          "request_sha256": "e045bcebefe2f647723b60c8b115eb6dadf07cf95f624e1875f0697cafca3a91"
+        }
+      ],
+      "specification_sha256": "54c0f7c04734ecbaa7458e6b22a0f14f1c1f37817b5c0e488d0b87c5136da362"
+    },
+    "limits": [
+      "No SQL, provider calls or private service implementations",
+      "Identical source rebuilt twice; not a different-version compatibility claim",
+      "Workspace source audit excluded from copied tests; separate retained source-pin proof",
+      "Pending identities are serialized requests, not accepted Runtime invocations"
+    ]
+  },
+  "limits": [
+    "Registry/HTTP replacement on new releases is the next gate",
+    "Old0.4.0/0.1.0 artifacts remain historical evidence, not current eligibility proof"
+  ]
+}

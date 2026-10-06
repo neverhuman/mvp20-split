@@ -54,6 +54,7 @@ def test_descriptors_fit_actual_sdk_pure_worker_profile(operation):
     assert descriptor.tool.binding.capability_id == "numeric.search-" + operation
     assert descriptor.tool.checkpoint_schema is None
     assert descriptor.authority_ceiling == "synthetic_only"
+    assert "synthetic-tests" in descriptor.tool.applicability
     for direction in ("input", "output"):
         raw = capability.schema_bytes(direction)
         assert sha256(raw).hexdigest() == capability.schema_ref(direction).sha256

@@ -4,10 +4,10 @@ version = "0.1.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
     "amphora-multi-input-worker==0.1.0",
-    "amphora-synthetic-objectives==0.1.0",
+    "amphora-synthetic-objectives==0.2.0",
     "amphora-contracts-search-steps==0.1.0",
     "amphora-contracts-search==0.1.0",
-    "amphora-evolution-search==0.4.0",
+    "amphora-evolution-search==0.5.0",
     "amphora-contracts-supervision==0.10.0",
     "amphora-contracts-planning==0.10.0",
     "amphora-agent-planning==0.95.0",

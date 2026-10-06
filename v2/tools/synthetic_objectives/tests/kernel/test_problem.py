@@ -88,6 +88,7 @@ def test_unbound_or_rebound_adapter_rejects(bundle):
 
 def test_descriptor_matches_published_contracts_and_multi_input_profile():
     release = descriptor("b" * 64)
+    assert "synthetic-tests" in release.tool.applicability
     assert [port.name for port in release.tool.inputs] == ["parameters", "policy"]
     assert schema_ref("input") == evaluation_request_schema()
     assert schema_ref("output") == evaluation_observation_schema()
