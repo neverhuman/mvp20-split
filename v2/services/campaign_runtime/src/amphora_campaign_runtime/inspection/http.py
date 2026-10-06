@@ -12,6 +12,8 @@ from .cursors import InspectionError
 
 
 def install_history(app, history, credentials):
+    from ..execution_proofs.http import install as install_proofs
+    install_proofs(app, history, credentials)
     @app.exception_handler(InspectionError)
     async def error(_request, failure):
         reason = str(failure)

@@ -163,3 +163,5 @@ BP-04.02/B1 advances Runtime to 0.3.0 and campaign contracts to 0.2.1 (public li
 Runtime0.51 adds [original request delivery](src/amphora_campaign_runtime/supervision_delivery/README.md): durable claims, exact receipt recovery and current-state/winner write guards. Runtime0026 and public contracts unchanged. Owner scheduling/repair/fallback integration remains BP-07.04/B2.03c.ii.
 
 BP-07.04 explicit checkpoint worker startup, configuration, role checks and replacement boundaries are documented in [the worker module](src/amphora_campaign_runtime/supervision_loop/README.md). Run worker processes separately from HTTP serving; startup never migrates or silently enables live models.
+
+BP-08.03 supporting boundary: [accepted producer evidence](src/amphora_campaign_runtime/execution_proofs/README.md), Runtime0.64/runtime0028, adds an authenticated read-only provenance projection without peer SQL or execution authority. Its focused README owns implementation/verification status.

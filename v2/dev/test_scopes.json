@@ -280,5 +280,11 @@
     "coverage_sources": [
       "contracts/candidate_canonicalization/src/amphora_contracts_candidate_canonicalization"
     ]
+  },
+  "contracts-execution-proofs": {
+    "tests": "contracts/execution_proofs/tests",
+    "coverage_sources": [
+      "contracts/execution_proofs/src/amphora_contracts_execution_proofs"
+    ]
   }
 }

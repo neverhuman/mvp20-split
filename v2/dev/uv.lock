@@ -69,7 +69,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-campaign-runtime"
-version = "0.63.0"
+version = "0.64.0"
 source = { editable = "../services/campaign_runtime" }
 dependencies = [
     { name = "alembic" },
@@ -77,6 +77,7 @@ dependencies = [
     { name = "amphora-contracts-campaigns" },
     { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-execution-proofs" },
     { name = "amphora-contracts-graph-runtime" },
     { name = "amphora-contracts-planning" },
     { name = "amphora-contracts-runtime" },
@@ -97,6 +98,7 @@ requires-dist = [
     { name = "amphora-contracts-campaigns", editable = "../contracts/campaigns" },
     { name = "amphora-contracts-commands", editable = "../contracts/commands" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-execution-proofs", editable = "../contracts/execution_proofs" },
     { name = "amphora-contracts-graph-runtime", editable = "../contracts/graph_runtime" },
     { name = "amphora-contracts-planning", editable = "../contracts/planning" },
     { name = "amphora-contracts-runtime", editable = "../contracts/runtime" },
@@ -262,6 +264,23 @@ dependencies = [
 requires-dist = [
     { name = "amphora-contracts-core", editable = "../contracts/core" },
     { name = "amphora-contracts-research", editable = "../contracts/research" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
+name = "amphora-contracts-execution-proofs"
+version = "0.1.0"
+source = { editable = "../contracts/execution_proofs" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-runtime" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-runtime", editable = "../contracts/runtime" },
     { name = "pydantic", specifier = ">=2.12,<3" },
 ]
 
@@ -590,6 +609,7 @@ dependencies = [
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-evaluation-identity" },
     { name = "amphora-contracts-evidence" },
+    { name = "amphora-contracts-execution-proofs" },
     { name = "amphora-contracts-fitness" },
     { name = "amphora-contracts-graph-runtime" },
     { name = "amphora-contracts-knowledge" },
@@ -640,6 +660,7 @@ requires-dist = [
     { name = "amphora-contracts-core", editable = "../contracts/core" },
     { name = "amphora-contracts-evaluation-identity", editable = "../contracts/evaluation_identity" },
     { name = "amphora-contracts-evidence", editable = "../contracts/evidence" },
+    { name = "amphora-contracts-execution-proofs", editable = "../contracts/execution_proofs" },
     { name = "amphora-contracts-fitness", editable = "../contracts/fitness" },
     { name = "amphora-contracts-graph-runtime", editable = "../contracts/graph_runtime" },
     { name = "amphora-contracts-knowledge", editable = "../contracts/knowledge" },

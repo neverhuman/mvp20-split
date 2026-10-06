@@ -3,13 +3,14 @@
 ## Canonical Parent Tracker
 
 - Status: primary_active; BP-08.03/B2.03b.ii synthetic evaluation and producer-proof reuse.
-- Last refreshed: `2026-10-06 14:24:11` (America/Chicago).
+- Last refreshed: `2026-10-06 14:40:30` (America/Chicago).
 - Owner/scope: Search domain modules and independently packaged scientific operators.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 iteration/checkpoint and BP-06 evidence; BP-07 before LLM-guided topology acceptance.
 - Implementation: **49.44%**, 9/20 closed child deliveries plus eight ninths of B2; each parent phase mirrors its child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
 - Current implementation task: BP-08.03/B2.03b.ii synthetic evaluation and producer-proof reuse; BP-08.01/.02 closed.
+- Latest checkpoint: Runtime0.64 accepted-producer endpoint verified: 32 checks in 33.46s; 62 statements and 6 branches covered100%. Actual PostgreSQL owner joins, TestClient authorization and injected decode failure; scripted Data reservations. 606 schemas preserve 604 predecessor hashes. No migration or reuse permission; evaluator and Research reuse remain B2.03b.ii. Percentages unchanged.
 - Demonstrated behavior: numeric generation graphs, actual Runtime/Data/Registry APIs, pinned tool images, independent package replacement and worker/Runtime recovery. Representation/topology, scientific and target-host evidence remain successors.
 - Blockers: direct v1 extraction unverified (license labels/toolchain); authorized independent numeric implementation proceeds. No owner decision blocks current scope.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.

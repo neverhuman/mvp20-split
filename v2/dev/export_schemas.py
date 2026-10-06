@@ -5,6 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 
+from amphora_contracts_execution_proofs import AcceptedToolExecution
 from amphora_contracts_candidate_canonicalization import CanonicalCandidate
 import amphora_contracts_fitness as fitness
 import amphora_contracts_evaluation_identity as evaluation_identity
@@ -45,6 +46,7 @@ from amphora_contracts_tools import Completion, Invocation, ToolBinding, ToolDes
 
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
+    "execution-proofs.accepted-tool": AcceptedToolExecution,
     "candidate-canonicalization.receipt": CanonicalCandidate,
     "fitness.profile": fitness.FitnessProfile,
     "fitness.profile-ref": fitness.FitnessProfileRef,
