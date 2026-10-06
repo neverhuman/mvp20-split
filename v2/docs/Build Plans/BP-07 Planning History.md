@@ -887,3 +887,6 @@ Four current installed owners668 cases(233 Runtime each,101 Planning each),40/30
 
 
 2026-10-05 21:11:53: B2.01d.c and B2.01 COMPLETE.10 actualSQL cases6.18s; new freshness/issuance/membership cases4 each on isolated Runtime0.40 initial/replacement (7.194s/6.947s). Selected progress rejects original footprint; explicit refresh preserves slot identity/deadline/ceilings. Unrelated worker claim remains fresh; queued issuance, forged loop occurrence and inactive ancestor reject.12 boundary8.38s,Ruff passed. No winner/request grant. B2=33.33%,Build44.44%,child33.33%,parent66.67%;next B2.02. Evidence Checkpoint_Fences.json.
+
+
+2026-10-05 21:17:04: B2.02a pure scalar selection COMPLETE. Runtime0.41/runtime0023;70 pure/policy/boundary cases10.99s,71statements4branches100%,Ruff passed. Exact decimal/choice values, policy/prior/occurrence binding and original-field overlay. Initial new typed fixture incorrectly assumed compiled node order; corrected selection by node_id. No SQL winner/conversion authority. B2.02=25%,B2=41.67%,Build47.22%,child35.42%,parent67.08%;next b explicit versioned exchange.

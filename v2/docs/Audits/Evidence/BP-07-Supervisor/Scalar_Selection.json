@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "verified_at": "2026-10-05 21:17:04",
+  "runtime": "0.41.0",
+  "tests": 70,
+  "seconds": 10.99,
+  "coverage": {
+    "statements": 71,
+    "branches": 4,
+    "percent": 100
+  },
+  "ruff": "passed",
+  "limits": [
+    "Pure selection only; no SQL winner or production conversion integration",
+    "Private explicit scalar-selection.v1; old public proposal profiles unchanged"
+  ],
+  "fixture_repair": "Select compiled node by ID rather than positional index"
+}
