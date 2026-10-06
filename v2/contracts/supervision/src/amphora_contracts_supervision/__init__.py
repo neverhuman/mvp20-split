@@ -27,6 +27,7 @@ from .decisions import (
     SupervisionDecision,
     TerminalDecision,
 )
+from .execution import CheckpointAttemptResult, CheckpointExecutionReport, CheckpointStopReason
 from .requests import (
     SupervisionLineage,
     SupervisionNodeRead,
@@ -37,6 +38,9 @@ from .requests import (
 from .responses import CancelSupervision, SupervisionResponse
 
 __all__ = [
+    'CheckpointAttemptResult',
+    'CheckpointExecutionReport',
+    'CheckpointStopReason',
     'AcceptedDecision',
     'AdmitSupervisedGraph',
     'AppliedInputs',

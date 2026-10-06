@@ -1,0 +1,14 @@
+{
+  "checkpoint": "2026-10-06 00:16:50",
+  "task": "BP-07.04/B2.03c.ii.1",
+  "verification": "127 passed in52.06s",
+  "coverage": {
+    "completion_statements": 43,
+    "completion_branches": 6,
+    "percent": 100
+  },
+  "schemas": 546,
+  "unchanged_predecessors": 544,
+  "scope": "Public shape and pure Planning owner projection; one actualSQL worker observation",
+  "limits": "No durable completion report, issuance fence or HTTP report yet"
+}
