@@ -1,6 +1,6 @@
 # Numeric evolutionary search boundary
 
-- Owner: BP-08.01 complete; generation-step integration belongs to BP-08.02.
+- Owner: BP-08.02/B1.01 verified; package0.2.0. Standalone capability adapters/evaluator are B1.02. BP-08.01 remains closed for its0.1.0 boundary.
 - Scope: finite continuous numerical search primitives; independent Python implementation, not a verified v1 port.
 - Design: [Search](../../docs/Architecture/Campaigns/Search.md); [activation](../../docs/Audits/BP-08.01_Activation.md).
 
@@ -28,7 +28,7 @@ Dependencies are the public search contract closure plus the Python standard lib
 
 CheckpointSnapshot validates intrinsic state against a separately supplied OriginalSearch: canonical attempt identities, seed replay, RNG intervals, generation/slot/population membership, duplicate ancestry, exact proposed-to-pending/terminal correspondence, request digests, evaluator/objective/unit/constraint/evidence scope, progress and phase/stop consistency. Selection receipts are recomputed from the frozen evaluated membership; unavailable fitness cannot enter ranking. Stable evaluation IDs are ev- plus the candidate digest. Candidate IDs hash compact JSON [numeric-attempt-v1, original-spec digest, generation, ordinal, operator, float.hex genes, parent IDs, draw start, draw end]; outcome disposition is retained separately. Selection membership hashes the sorted candidate-ID list as compact JSON.
 
-encode/decode are pure transport mapping. They do not prove that evidence or predecessor Artifacts exist, have authorized access, or that a prior Runtime commit accepted a transition. Data/Runtime and BP-08.02 own those checks, predecessor-chain verification, generation transitions and actual tool dispatch. A snapshot with internally consistent pins does not authorize execution. Full variation replay is not implemented yet.
+encode/decode are pure transport mapping. They do not prove that evidence or predecessor Artifacts exist, have authorized access, or that a prior Runtime commit accepted a transition. Data/Runtime and BP-08.02 own those checks, predecessor-chain verification, generation transitions and actual tool dispatch. A snapshot with internally consistent pins does not authorize execution. One-attempt box variation is implemented; complete generation transition/replay remains in BP-08.02.
 
 Tests/checkpoint independently constructs a zero-seed candidate, pending request and single-candidate rank, then mutates identities, scope, units, evaluator, budgets and receipts. Initial-state, duplicate/rejection and budget cases are verified; generation-transition failure/recovery belongs to BP-08.02.
 
@@ -43,3 +43,11 @@ The returned request set is validated against all proposed attempts before expos
 B3 verified 2026-10-06 10:17:52:129 checks14.10s;426/438 statements and92/98 branches covered (96% combined). Malformed RNG/version/operator/pending identities, false stop reasons, forged ranks, missing attempts and duplicate targets reject. Seven frozen v1 source hashes match; no v1/Rust/Lab source copying or scientific claim. Remaining uncovered paths are future-generation ancestry/predecessor handling and the defensive ranking empty-front guard; generation transition/replay belongs to BP-08.02. Source audit tests/reuse requires the read-only workspace; installed algorithm tests exclude only that source audit.
 
 Replacement verified 2026-10-06 10:22:13: two separately built wheel closures,133 tests each, identical wheel hashes and saved128-member checkpoint. Public JSON Schema consumer accepted the retained bytes; pending identities and the next RNG draw matched after replacement. No private service package, SQL or provider credential was available. [Installed proof](../../docs/Audits/Evidence/BP-08-Search/Installed.json); dev/verify_search_installations.py reproduces this bounded check. Different-version upgrades, target-host portability and accepted Runtime generation replay are separate gates.
+
+## Graph-step binding and box variation
+
+BoundCheckpoint binds an intrinsic snapshot to its exact canonical search.checkpoint Artifact digest, size, scope and schema. SearchStepContext supplies the separately pinned original specification. Equivalent noncanonical JSON is deliberately rejected rather than falsely verified against another byte stream. This pure check does not fetch or authorize the Artifact; Runtime/Data retain that authority. request_batch expands the frozen pending set into self-contained EvaluationRequests without dispatch. Graph-specific DTOs live in contracts/search_steps, separate from domain-neutral search DTOs.
+
+BoxVariation performs one finite-box attempt using the original operator/seed pins and an explicitly ordered parent pool. Draw schedule: two uniform parent-index draws, one crossover decision, then blend, mutation decision and offset per axis. All3+3*d draws are consumed even when crossover/mutation is disabled or bounds are fixed. Blend is alpha*a+(1-alpha)*b; mutation adds (2*u-1)*fraction*(upper-lower), then clamps to the original bounds. Repeated chosen parent IDs collapse to one lineage entry. No selection, scheduling, implicit retry or generation loop is hidden in this operation.
+
+Verified 2026-10-06 10:38:13:146 numeric/boundary checks16.32s; new binding/variation modules100% measured line/branch coverage, complete numeric module96%. Independent .NET draw values pin crossover and mutation/clamping cases. Public step publication40 checks19.23s;570 schemas, all564 predecessor bytes unchanged. Standalone adapters, generation state transitions and actual-owner recovery remain open; earlier133-test isolated proof applies to release0.1.0.

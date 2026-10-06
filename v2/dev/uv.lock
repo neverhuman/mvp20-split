@@ -377,6 +377,25 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-contracts-search-steps"
+version = "0.1.0"
+source = { editable = "../contracts/search_steps" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-graph-runtime" },
+    { name = "amphora-contracts-search" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-graph-runtime", editable = "../contracts/graph_runtime" },
+    { name = "amphora-contracts-search", editable = "../contracts/search" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-solver-fixture"
 version = "0.1.0"
 source = { editable = "../contracts/solver_fixture" }
@@ -466,14 +485,20 @@ requires-dist = [
 
 [[package]]
 name = "amphora-evolution-search"
-version = "0.1.0"
+version = "0.2.0"
 source = { editable = "../tools/evolution_search" }
 dependencies = [
+    { name = "amphora-contracts-core" },
     { name = "amphora-contracts-search" },
+    { name = "amphora-contracts-search-steps" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "amphora-contracts-search", editable = "../contracts/search" }]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-search", editable = "../contracts/search" },
+    { name = "amphora-contracts-search-steps", editable = "../contracts/search_steps" },
+]
 
 [[package]]
 name = "amphora-foundation-verification"
@@ -496,6 +521,7 @@ dependencies = [
     { name = "amphora-contracts-research-views" },
     { name = "amphora-contracts-runtime" },
     { name = "amphora-contracts-search" },
+    { name = "amphora-contracts-search-steps" },
     { name = "amphora-contracts-solver-fixture" },
     { name = "amphora-contracts-supervision" },
     { name = "amphora-contracts-tools" },
@@ -536,6 +562,7 @@ requires-dist = [
     { name = "amphora-contracts-research-views", editable = "../contracts/research_views" },
     { name = "amphora-contracts-runtime", editable = "../contracts/runtime" },
     { name = "amphora-contracts-search", editable = "../contracts/search" },
+    { name = "amphora-contracts-search-steps", editable = "../contracts/search_steps" },
     { name = "amphora-contracts-solver-fixture", editable = "../contracts/solver_fixture" },
     { name = "amphora-contracts-supervision", editable = "../contracts/supervision" },
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },

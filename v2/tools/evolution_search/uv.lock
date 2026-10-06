@@ -3,6 +3,23 @@ revision = 3
 requires-python = "==3.12.*"
 
 [[package]]
+name = "amphora-contracts-campaigns"
+version = "0.4.1"
+source = { editable = "../../contracts/campaigns" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-tools" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-tools", editable = "../../contracts/tools" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-commands"
 version = "0.2.0"
 source = { editable = "../../contracts/commands" }
@@ -29,6 +46,48 @@ dependencies = [
 requires-dist = [{ name = "pydantic", specifier = ">=2.12,<3" }]
 
 [[package]]
+name = "amphora-contracts-graph-runtime"
+version = "0.13.0"
+source = { editable = "../../contracts/graph_runtime" }
+dependencies = [
+    { name = "amphora-contracts-campaigns" },
+    { name = "amphora-contracts-commands" },
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-runtime" },
+    { name = "amphora-contracts-tools" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-campaigns", editable = "../../contracts/campaigns" },
+    { name = "amphora-contracts-commands", editable = "../../contracts/commands" },
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-runtime", editable = "../../contracts/runtime" },
+    { name = "amphora-contracts-tools", editable = "../../contracts/tools" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
+name = "amphora-contracts-runtime"
+version = "0.1.0"
+source = { editable = "../../contracts/runtime" }
+dependencies = [
+    { name = "amphora-contracts-commands" },
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-tools" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-commands", editable = "../../contracts/commands" },
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-tools", editable = "../../contracts/tools" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-search"
 version = "0.1.0"
 source = { editable = "../../contracts/search" }
@@ -42,6 +101,25 @@ dependencies = [
 requires-dist = [
     { name = "amphora-contracts-core", editable = "../../contracts/core" },
     { name = "amphora-contracts-tools", editable = "../../contracts/tools" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
+name = "amphora-contracts-search-steps"
+version = "0.1.0"
+source = { editable = "../../contracts/search_steps" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-graph-runtime" },
+    { name = "amphora-contracts-search" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-graph-runtime", editable = "../../contracts/graph_runtime" },
+    { name = "amphora-contracts-search", editable = "../../contracts/search" },
     { name = "pydantic", specifier = ">=2.12,<3" },
 ]
 
@@ -64,14 +142,20 @@ requires-dist = [
 
 [[package]]
 name = "amphora-evolution-search"
-version = "0.1.0"
+version = "0.2.0"
 source = { editable = "." }
 dependencies = [
+    { name = "amphora-contracts-core" },
     { name = "amphora-contracts-search" },
+    { name = "amphora-contracts-search-steps" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "amphora-contracts-search", editable = "../../contracts/search" }]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-search", editable = "../../contracts/search" },
+    { name = "amphora-contracts-search-steps", editable = "../../contracts/search_steps" },
+]
 
 [[package]]
 name = "annotated-types"

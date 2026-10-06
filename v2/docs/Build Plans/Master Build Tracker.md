@@ -8,13 +8,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-07 closed100%; BP-08.02 activation next; BP-09 queued.
-- Last refreshed: `2026-10-06 10:22:13` (America/Chicago).
+- Status: BP-07 closed100%; BP-08.02/B1.02 active; BP-09 queued.
+- Last refreshed: `2026-10-06 10:38:13` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P7 / BP-08 - Evolutionary Search Integration.
-- Primary active task: BP-08.02 bounded activation audit.
-- Next task: BP-08.02/B1 graph-driven numeric step boundary.
-- Implementation completion: BP-07 closed100%,20/20; BP-08=20%,4/20;BP-09=0%.
+- Primary active task: BP-08.02/B1.02 standalone numeric adapters and synthetic evaluator.
+- Next task: BP-08.02/B1.03 authored graph/compiler proof.
+- Implementation completion: BP-07 closed100%,20/20; BP-08=21.67%,4/20 plus1/3;BP-09=0%.
 - Active focus: BP-08 activation; preserve closed BP-07 evaluation history and scoped handoffs.
 - Blockers: none for BP-08 activation. Selected host and integrated live deployment remain BP-09 decisions/gates.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
@@ -32,13 +32,13 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-08.01 closed100%,4/4; parent20%,4/20. BP-08.02 activation next, child0%, Build0%, Acceptance0%.
+BP-08.01 closed100%,4/4; parent21.67%,4/20 plus1/3. BP-08.02/B1.02 active, child8.33%, Build11.11%, Acceptance0%.
 
 ## Queued Plans and Phase Mirrors
 
 | Canonical plan | Status | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Active | 20% | 100% | 0% | 0% | 0% | 0% | N/A |
+| [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Active | 21.67% | 100% | 8.33% | 0% | 0% | 0% | N/A |
 | [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 
 Scoped milestone fractions measure verified work within their existing delivery weight; closed-gate counts remain separate. BP-06 is archived24/24. Do not treat milestone counts as effort estimates.
@@ -52,7 +52,7 @@ The owning plan tracker is canonical for overall and per-phase percentages. Refr
 
 ## Prioritized Build Queue
 
-BP-08.02 activation is current; use the canonical phase mirror above for percentages. Remaining children retain their own prerequisite and acceptance gates.
+BP-08.02/B1.02 is current; use the canonical phase mirror above for percentages. Remaining children retain their own prerequisite and acceptance gates.
 
 | Order / ID | Completion | Proposed plan | Required predecessor gates | Bounded outcome / exit | Architecture owner |
 |---|---|---|---|---|---|

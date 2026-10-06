@@ -1,0 +1,125 @@
+{
+  "schema_version": "1",
+  "specification": {
+    "schema_version": "1",
+    "scope": {
+      "tenant_id": "search-fixture",
+      "project_id": "numeric"
+    },
+    "search_id": "numeric-search",
+    "representation": {
+      "schema_id": "search.numeric-vector",
+      "version": "1",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "variables": [
+      {
+        "variable_id": "x",
+        "unit": "dimensionless",
+        "lower": 0.0,
+        "upper": 1.0
+      }
+    ],
+    "objectives": [
+      {
+        "objective_id": "cost",
+        "unit": "dimensionless",
+        "direction": "minimize"
+      }
+    ],
+    "evaluator": {
+      "tool": {
+        "capability_id": "synthetic-objectives",
+        "release": "0.1.0",
+        "image_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "contract_version": "1"
+      },
+      "constraints": {
+        "artifact_id": "no-hard-constraints",
+        "scope": {
+          "tenant_id": "search-fixture",
+          "project_id": "numeric"
+        },
+        "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "search.synthetic-policy",
+          "version": "1",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "size_bytes": 2
+      },
+      "context": [],
+      "completion": "all_frozen_members_terminal"
+    },
+    "operators": {
+      "selection": "constrained-pareto-feasible-v1",
+      "variation": "box-convex-uniform-v1",
+      "rng": "sha256-counter-u53-v1",
+      "crossover_probability": 0.8,
+      "mutation_probability": 0.2,
+      "mutation_fraction": 0.1
+    },
+    "budget": {
+      "population_size": 1,
+      "max_generations": 3,
+      "max_evaluations": 4,
+      "unchanged_front_limit": null
+    },
+    "implementations": [
+      {
+        "name": "numeric-kernel-fixture",
+        "version": "0.1.0",
+        "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+      }
+    ],
+    "seed": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "specification_sha256": "5f124d2335e0af9eb65636fb148eb3c271d8ce85870f498315b5199284384e5d",
+  "previous": null,
+  "generation": 0,
+  "phase": "awaiting_evaluations",
+  "rng": {
+    "algorithm": "sha256-counter-u53-v1",
+    "seed": "0000000000000000000000000000000000000000000000000000000000000000",
+    "counter": 1
+  },
+  "attempts": [
+    {
+      "candidate_id": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "generation": 0,
+      "ordinal": 0,
+      "operator": "seed",
+      "genes": [
+        0.25
+      ],
+      "parents": [],
+      "draws": {
+        "start": 0,
+        "end": 1
+      },
+      "disposition": "proposed",
+      "reason_code": null,
+      "duplicate_of": null
+    }
+  ],
+  "population": [
+    "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  ],
+  "pending": [
+    {
+      "evaluation_id": "evaluate-initial",
+      "candidate_id": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "request_sha256": "a7e019c2cf230c7adcd9a617f42d0812c1d49d993934f15be879048840d41f18"
+    }
+  ],
+  "observations": [],
+  "selection": null,
+  "progress": {
+    "evaluations_issued": 1,
+    "evaluations_terminal": 0,
+    "generations_completed": 0,
+    "unchanged_front_generations": 0
+  },
+  "stop_reason": null
+}

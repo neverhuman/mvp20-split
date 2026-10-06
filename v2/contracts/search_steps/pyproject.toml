@@ -1,0 +1,20 @@
+[project]
+name = "amphora-contracts-search-steps"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = ["pydantic>=2.12,<3", "amphora-contracts-core==0.1.0", "amphora-contracts-search==0.1.0", "amphora-contracts-graph-runtime==0.13.0"]
+
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/amphora_contracts_search_steps"]
+
+[tool.uv.sources]
+amphora-contracts-core = { path = "../core", editable = true }
+amphora-contracts-search = { path = "../search", editable = true }
+amphora-contracts-graph-runtime = { path = "../graph_runtime", editable = true }
+
+[tool.amphora]
+public-imports = ["amphora-contracts-core", "amphora-contracts-search", "amphora-contracts-graph-runtime"]

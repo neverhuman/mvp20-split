@@ -220,5 +220,11 @@
     "coverage_sources": [
       "contracts/search/src/amphora_contracts_search"
     ]
+  },
+  "contracts-search-steps": {
+    "tests": "contracts/search_steps/tests",
+    "coverage_sources": [
+      "contracts/search_steps/src/amphora_contracts_search_steps"
+    ]
   }
 }

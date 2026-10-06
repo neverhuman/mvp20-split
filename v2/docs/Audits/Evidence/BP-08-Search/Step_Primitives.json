@@ -1,0 +1,23 @@
+{
+  "verified_at": "2026-10-06 10:38:13",
+  "scope": "BP-08.02/B1.01",
+  "package": "amphora-evolution-search0.2.0",
+  "numeric_tests": 146,
+  "numeric_seconds": 16.32,
+  "contract_publication_tests": 40,
+  "contract_seconds": 19.23,
+  "schemas": 570,
+  "predecessors_unchanged": 564,
+  "coverage": {
+    "statements": 514,
+    "covered_statements": 502,
+    "branches": 104,
+    "covered_branches": 98,
+    "new_modules": "step_context and variation100%"
+  },
+  "paid_calls": 0,
+  "not_claimed": [
+    "Accepted generation transitions",
+    "Standalone worker or graph dispatch"
+  ]
+}
