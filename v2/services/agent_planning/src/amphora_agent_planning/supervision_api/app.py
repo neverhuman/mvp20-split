@@ -29,9 +29,13 @@ from .bounds import RequestBounds
 from .credentials import AuthenticationError
 
 
-def create_app(intake=None, credentials=None):
+def create_app(intake=None, credentials=None, *, topology=None):
     if (intake is None) != (credentials is None):
         raise ValueError('complete_supervision_configuration_required')
+    if topology is not None and intake is None:
+        raise ValueError('topology_requires_configured_planning')
+    if credentials is not None and topology is None and credentials.has_any_action({'propose_topology','read_topology'}):
+        raise ValueError('topology_configuration_required')
     app = FastAPI(title='Amphora Planning supervisor intake', version=version("amphora-agent-planning"))
     app.add_middleware(RequestBounds)
 
@@ -52,7 +56,7 @@ def create_app(intake=None, credentials=None):
     @app.exception_handler(ValidationError)
     @app.exception_handler(CommandEncodingError)
     async def malformed(_request, _error):
-        return JSONResponse({'reason_code': 'invalid_supervision_command'}, status_code=422)
+        return JSONResponse({'reason_code': 'invalid_topology_request' if _request.url.path.startswith('/v1/topology-proposals') else 'invalid_supervision_command'}, status_code=422)
 
     @app.exception_handler(ValueError)
     async def invalid(_request, error):
@@ -80,10 +84,16 @@ def create_app(intake=None, credentials=None):
                 "AND position('planning.supervision.request.v2' in pg_get_constraintdef(oid)) > 0)")).scalar_one()
             if not compatible:
                 return JSONResponse({'status': 'schema_unavailable'}, status_code=503)
-        return {'status': 'ready', 'mode': 'supervisor_intake_only'}
+        if topology is not None:
+            with topology.journal.engine.connect() as conn:
+                conn.execute(text('SELECT record_bytes FROM planning.topology_proposals LIMIT 0'))
+        return {'status': 'ready', 'mode': 'supervisor_intake_and_topology' if topology is not None else 'supervisor_intake_only'}
 
     if intake is None:
         return app
+    if topology is not None:
+        from ..topology.http import install_topology
+        install_topology(app,topology,credentials)
     bearer = HTTPBearer(auto_error=False)
 
     def authorized(request: Request, _credential: Annotated[HTTPAuthorizationCredentials | None, Depends(bearer)]):

@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "timestamp_local": "2026-10-06 16:22:40",
+  "owner": "Planning0.98/planning0020/BP-08.04/B1.03ii",
+  "tests": 153,
+  "seconds": 64.96,
+  "coverage": {
+    "covered_lines": 438,
+    "num_statements": 438,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100",
+    "num_branches": 30,
+    "num_partial_branches": 0,
+    "covered_branches": 30,
+    "missing_branches": 0,
+    "percent_branches_covered": 100.0,
+    "percent_branches_covered_display": "100"
+  },
+  "coverage_path": ".test-results/topology-api-coverage-20261006.json",
+  "coverage_sha256": "cadfd5ce7f1e3ae4cb7c221eccaa54c09f701285a4080d12d2a82d34bd526cf1",
+  "scope": "Actual PostgreSQL/ASGI plus separately launched configured Planning CLI historical read; scripted/loopback Runtime/Registry peers",
+  "checks": [
+    "POST proposal/replay/rejected result",
+    "GET exact original history",
+    "changed content409",
+    "current denial403/history200",
+    "separate actor/grants",
+    "missing configuration fails startup",
+    "zero active profile history",
+    "strict bounded secret-free config",
+    "redacted corruption/dependency503",
+    "legacy supervisor and metadata regressions"
+  ],
+  "limits": [
+    "No actual Runtime compiler/successor admission proof yet",
+    "No scientific or paid provider claim"
+  ]
+}

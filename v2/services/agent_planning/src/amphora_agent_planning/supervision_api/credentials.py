@@ -37,6 +37,9 @@ class Credentials:
             entries.append((record['token'], principal))
         return cls(entries)
 
+    def has_any_action(self, actions):
+        return any(principal.actions.intersection(actions) for _,principal in self._entries)
+
     def authenticate(self, authorization):
         if type(authorization) is str and authorization.startswith('Bearer ') and len(authorization) <= 519:
             supplied = authorization[7:].encode('utf-8')

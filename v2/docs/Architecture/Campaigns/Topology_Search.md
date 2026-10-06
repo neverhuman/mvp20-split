@@ -1,6 +1,6 @@
 # Bounded topology successors
 
-- Design status: additive transport and pure edit policy implemented; persistence, authenticated resolution, compiler/adoption and fair comparison remain active BP-08.04 scope.
+- Design status: additive transport, pure edit policy and immutable owner publication/current-resolution/API implemented; actual compiler/adoption and fair comparison remain active BP-08.04 scope.
 - Last reviewed: 2026-10-06 16:01:13 (America/Chicago).
 - Parent: [Search](Search.md).
 

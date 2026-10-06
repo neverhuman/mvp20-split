@@ -26,7 +26,16 @@ def main():
     except (KeyError, TypeError, ValueError, SQLAlchemyError):
         raise SystemExit('Valid Planning database and supervisor credentials configuration required') from None
     try:
-        uvicorn.run(create_app(SupervisionIntake(engine), credentials), host=args.host, port=args.port)
+        try:
+            topology=None
+            path=os.environ.get('AMPHORA_PLANNING_TOPOLOGY_CONFIG')
+            if path is not None:
+                from ..topology.hosting import ConfiguredTopology
+                topology=ConfiguredTopology.load(path).operations(engine)
+            app=create_app(SupervisionIntake(engine), credentials,topology=topology)
+        except (OSError,KeyError,TypeError,ValueError,RecursionError):
+            raise SystemExit('Valid Planning topology configuration required') from None
+        uvicorn.run(app, host=args.host, port=args.port)
     finally:
         engine.dispose()
 

@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-Current bounded successor: [topology policy](src/amphora_agent_planning/topology/README.md), Planning0.96, verified 2026-10-06 16:01:13. Pure one-edit graph proposals preserve original context and reject incompatible bindings. Owner persistence/authenticated resolution and actual adoption remain BP-08.04/B1.03/B2; existing model/dispatch profiles unchanged.
+Current bounded successor: [topology policy](src/amphora_agent_planning/topology/README.md), Planning0.98/planning0020, verified 2026-10-06 16:01:13. Pure one-edit graph proposals preserve original context and reject incompatible bindings. Owner persistence/current resolution and public API/host are verified; actual adoption remains BP-08.04/B2; existing model/dispatch profiles unchanged.
 
 - Version: Planning0.95.0; public Planning0.10 and supervision0.10; owned migration head0019.
 - Reviewed: `2026-10-06 09:21:10` (America/Chicago); BP-07 accepted within stated engineering/evaluation limits.

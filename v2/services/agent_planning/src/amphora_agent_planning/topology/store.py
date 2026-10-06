@@ -8,6 +8,10 @@ from .values import encoded, require
 KEY='tenant_id=:tenant AND project_id=:project AND proposal_id=:proposal'
 
 
+class TopologyStoreUnavailable(RuntimeError):
+    pass
+
+
 class TopologyJournal:
     def __init__(self, engine):
         self.engine=engine
@@ -21,10 +25,13 @@ class TopologyJournal:
     def decode(principal,row):
         if row is None:return None
         if row['actor_id']!=principal.actor_id:raise PermissionError('planning_access_denied')
-        record=TopologyDocument.load(bytes(row['record_bytes']))
-        ref=record.projection.reference
-        require(record.sha256==row['record_sha256'] and record.actor_id==row['actor_id'] and
-                ref.scope==principal.scope and ref.proposal_id==row['proposal_id'],'topology_stored_identity')
+        try:
+            record=TopologyDocument.load(bytes(row['record_bytes']))
+            ref=record.projection.reference
+            require(record.sha256==row['record_sha256'] and record.actor_id==row['actor_id'] and
+                    ref.scope==principal.scope and ref.proposal_id==row['proposal_id'],'topology_stored_identity')
+        except (ValueError,TypeError,KeyError,RecursionError) as error:
+            raise TopologyStoreUnavailable('topology_stored_record_invalid') from error
         return record
 
     def read(self, principal, proposal_id):
