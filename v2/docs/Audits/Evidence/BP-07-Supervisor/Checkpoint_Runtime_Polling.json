@@ -1,0 +1,20 @@
+{
+  "checkpoint": "2026-10-06 01:08:42",
+  "task": "BP-07.04/B2.03c.ii.4a",
+  "version": "Runtime0.58",
+  "tests": {
+    "passed": 20,
+    "seconds": 18.12
+  },
+  "coverage": {
+    "module": "supervision_loop/polling.py",
+    "statements": 36,
+    "branches": 10,
+    "percent": 98
+  },
+  "limits": [
+    "Runtime SQL plus scripted Planning/Data peers",
+    "process hosting and Planning scheduler pending",
+    "remaining clock-expiry branch belongs to B3"
+  ]
+}
