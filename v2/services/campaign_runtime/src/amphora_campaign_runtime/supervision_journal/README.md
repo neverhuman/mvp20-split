@@ -58,3 +58,5 @@ Forward runtime0020 grants SELECT/INSERT only on cancellation history with origi
 
 
 Runtime0.28 response receipt recovery verifies stored profile/hash/original bytes even when the command is pending. The new supervisor HTTP adapter uses this read before any fresh Data capture fetch; immutable storage formats and migrations remain unchanged.
+
+Runtime0.48/runtime0026: prepare calls the Runtime-owned RequestReservation gate for recipe-bound policy v2 inside its existing transaction. Every new autonomous request validates original recipe/checkpoint ceilings and appends its full potential-call allowance atomically with request/outbox. Exact historical replay remains before fresh checks; legacy/manual policies unchanged. The gate has no network and does not authorize paid calls. See supervision_preparation README for conservative accounting and missing-history behavior.

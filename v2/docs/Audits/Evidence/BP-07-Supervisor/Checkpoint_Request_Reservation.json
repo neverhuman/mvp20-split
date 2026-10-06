@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-10-05 22:22:33",
+  "runtime": "0.48.0",
+  "migration": "runtime_0026",
+  "regressions": {
+    "tests": 155,
+    "seconds": 110.07,
+    "statements": 818,
+    "branches": 98,
+    "percent": 99,
+    "gap": "older delivery event-limit path"
+  },
+  "refined": {
+    "tests": 61,
+    "seconds": 26.59,
+    "statements": 182,
+    "branches": 22,
+    "percent": 98,
+    "gap": "legacy policy bypass covered in broader run"
+  },
+  "oracles": [
+    "rollback all three rows",
+    "exact replay after cancel",
+    "competing preparers one winner",
+    "full allowance reserved",
+    "successful distinct repair",
+    "ceiling rejection",
+    "missing history fails closed",
+    "declaration identity cannot alias"
+  ],
+  "limits": [
+    "no actual Data publication",
+    "no paid calls",
+    "process races remain B3"
+  ]
+}

@@ -104,6 +104,8 @@ class RequestJournal:
                 return original
             RequestSeries((*tuple(item.frame for item in previous), frame))
             verify_current(conn, params, run, frame)
+            from ..supervision_preparation.request_gate import RequestReservation
+            charge = RequestReservation.prepare(conn, params, frame)
             values = {**params, 'ordinal': ordinal, 'plan': request.snapshot.cut.plan_sha256,
                 'preparer': principal.actor_id, 'actor': request.planning_request.actor_id,
                 'engagement': request.planning_request.reference.engagement_id,
@@ -123,6 +125,7 @@ class RequestJournal:
                  profile,command_sha256,canonical_command) VALUES
                 (:tenant,:project,:run,:decision,:request,:actor,:family,:command,
                  :profile,:command_hash,:bytes)'''), values)
+            RequestReservation.persist(conn, params, charge)
             row = conn.execute(text(SELECT + ' AND r.ordinal=:ordinal'), values).mappings().one()
             return StoredRequest.from_row(row)
 

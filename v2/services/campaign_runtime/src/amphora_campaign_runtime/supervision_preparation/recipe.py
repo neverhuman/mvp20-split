@@ -11,6 +11,7 @@ from amphora_contracts_planning import (
     ContextOmission,
     ModelBinding,
     ProposalAction,
+    checkpoint_draft_schema,
 )
 from pydantic import Field
 
@@ -71,6 +72,25 @@ class ReviewedRecipe:
                 'recipe_policy_binding')
         require(all(self.document().limits.max_attempts <= rule.max_model_calls for rule in record.checkpoints),
                 'recipe_policy_attempts')
+
+    def require_context(self, context, declaration_sha256):
+        record = self.document()
+        for name in ('scope', 'objective', 'prompt', 'model', 'omissions'):
+            require(getattr(context, name) == getattr(record, name), 'recipe_context_binding')
+        require(context.output_schema == checkpoint_draft_schema(), 'recipe_output_profile')
+        require(set(context.allowed_actions) <= set(record.allowed_actions), 'recipe_actions_widened')
+        require(context.limits.accounting_unit == record.limits.accounting_unit, 'recipe_accounting_unit')
+        for name in ('max_input_tokens', 'max_output_tokens', 'max_attempts', 'total_tokens', 'total_accounting_units'):
+            require(getattr(context.limits, name) <= getattr(record.limits, name), 'recipe_limits_widened')
+        require(context.entries[:-1] == record.entries and len(context.entries) == len(record.entries) + 1,
+                'recipe_static_context')
+        declaration = context.entries[-1]
+        require(declaration.role == 'constraint' and declaration.required and
+                declaration.artifact.sha256 == declaration_sha256, 'recipe_declaration_context')
+        static = (record.objective, record.prompt, record.model.configuration, context.policy,
+                  *(entry.artifact for entry in record.entries), *(item.artifact for item in record.omissions))
+        require(declaration.artifact.artifact_id not in {item.artifact_id for item in static},
+                'recipe_declaration_identity')
 
     @property
     def sha256(self):
