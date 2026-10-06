@@ -1,6 +1,6 @@
 {
   "name": "@amphora/studio",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -21,7 +21,8 @@
     "test:drafts": "npm run build && node tests/browser/drafts.mjs",
     "test:performance": "npm run build && node tests/browser/performance.mjs",
     "test:visual-review": "npm run build && node tests/browser/visual_review.mjs",
-    "test:explore": "npm run build && node tests/browser/explore.mjs"
+    "test:explore": "npm run build && node tests/browser/explore.mjs",
+    "test:supervision": "npm run build && node tests/browser/supervision.mjs"
   },
   "dependencies": {
     "@xyflow/react": "12.12.0",

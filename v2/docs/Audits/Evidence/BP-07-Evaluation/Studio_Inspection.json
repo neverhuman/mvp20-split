@@ -1,0 +1,263 @@
+{
+  "timestamp_local": "2026-10-06 04:39:43",
+  "status": "passed",
+  "scope": "BP-07.05/B1.04 Studio0.8 supervisor metadata inspection; B1 engineering evidence only",
+  "independent_studio": {
+    "tests": 237,
+    "manifest": "v2/.test-results/studio-isolated/7983a8904e694755a21041a5f6086b1f/manifest.json",
+    "manifest_sha256": "969c50e0d8051e63bd2528601c49fc86754764a0da93e5a1fac0de7692572054",
+    "schema_roots": 68
+  },
+  "module_coverage": {
+    "contracts_supervision": {
+      "lines": 100,
+      "branches": 100,
+      "functions": 100
+    },
+    "transport_supervision": {
+      "lines": 100,
+      "branches": 93.51,
+      "functions": 92.31
+    },
+    "page_models_supervision": {
+      "lines": 97.46,
+      "branches": 87.14,
+      "functions": 100
+    }
+  },
+  "coverage_limits": [
+    "Defensive refresh-failure branch and some abort/invalid-selection guards are not all directly exercised",
+    "Browser JSX is verified by interactions and screenshots,not assigned Node line coverage"
+  ],
+  "fixture_browser": {
+    "status": "passed",
+    "tier": "scripted public HTTP browser",
+    "scenarios": [
+      "keyboard checkpoint selection -> original request -> response versus committed outcome",
+      "included versus budget-omitted metadata; selection survives refresh",
+      "partial, stale, denied, failed, empty, loading and bounded replacement pagination"
+    ],
+    "screenshots": [
+      "Z:\\mvp20-split\\v2\\.test-results\\studio-supervision-browser\\2026-10-06T09-36-58-250Z\\responses-1440.png",
+      "Z:\\mvp20-split\\v2\\.test-results\\studio-supervision-browser\\2026-10-06T09-36-58-250Z\\responses-390.png"
+    ],
+    "limits": [
+      "No live-model efficacy, production gateway or scientific validity claim"
+    ],
+    "calls": 22
+  },
+  "installed_runtime_browser": {
+    "status": "passed",
+    "tier": "installed-owner browser",
+    "scenarios": [
+      "keyboard checkpoint selection -> original request -> response versus committed outcome"
+    ],
+    "screenshots": [
+      "Z:\\mvp20-split\\v2\\.test-results\\studio-supervision-browser\\2026-10-06T09-35-53-736Z\\responses-1440.png",
+      "Z:\\mvp20-split\\v2\\.test-results\\studio-supervision-browser\\2026-10-06T09-35-53-736Z\\responses-390.png"
+    ],
+    "limits": [
+      "No live-model efficacy, production gateway or scientific validity claim"
+    ],
+    "calls": 12,
+    "runtime_package": "0.62.0",
+    "reference": {
+      "scope": {
+        "tenant_id": "admission-tests",
+        "project_id": "2176e9043ae6488386e4be05b4ee29f1"
+      },
+      "run_id": "ddf7612f70a34024addb647d117c5849",
+      "decision_id": "adaeb2f66d9c2e2f4d5f0c245d6dcf608e63da38b0b159b8543416cea93cca58"
+    },
+    "source_evidence": "Z:\\mvp20-split\\v2\\.test-results\\studio-supervision-browser\\2026-10-06T09-35-53-736Z\\evidence.json"
+  },
+  "monitor_regression": {
+    "verified_at": "2026-10-06 04:37:01",
+    "timezone": "America/Chicago",
+    "status": "passed",
+    "browser": "153.0.8010.12",
+    "scenarios": [
+      {
+        "name": "slow-detail",
+        "status": "passed",
+        "elapsed_ms": 855,
+        "requests": [
+          {
+            "path": "/api/runtime/v1/graph-observations/run-1/nodes",
+            "query": "?frontier_only=false&limit=50",
+            "revision": 1
+          },
+          {
+            "path": "/api/runtime/v1/graph-observations/run-1/nodes/0000000000000000000000000000000000000000000000000000000000000001",
+            "query": "?snapshot_token=snapshot-1&limit=50",
+            "revision": 1
+          },
+          {
+            "path": "/api/runtime/v1/graph-observations/run-1/nodes/0000000000000000000000000000000000000000000000000000000000000002",
+            "query": "?snapshot_token=snapshot-1&limit=50",
+            "revision": 1
+          }
+        ]
+      },
+      {
+        "name": "new-revision",
+        "status": "passed",
+        "elapsed_ms": 780,
+        "requests": [
+          {
+            "path": "/api/runtime/v1/graph-observations/run-1/nodes",
+            "query": "?frontier_only=false&limit=50",
+            "revision": 1
+          },
+          {
+            "path": "/api/runtime/v1/graph-observations/run-1/nodes/0000000000000000000000000000000000000000000000000000000000000001",
+            "query": "?snapshot_token=snapshot-1&limit=50",
+            "revision": 1
+          },
+          {
+            "path": "/api/runtime/v1/graph-observations/run-1/nodes",
+            "query": "?frontier_only=false&limit=50",
+            "revision": 2
+          },
+          {
+            "path": "/api/runtime/v1/graph-observations/run-1/nodes/0000000000000000000000000000000000000000000000000000000000000001",
+            "query": "?snapshot_token=snapshot-2&limit=50",
+            "revision": 2
+          }
+        ]
+      },
+      {
+        "name": "denied",
+        "status": "passed",
+        "elapsed_ms": 741,
+        "requests": [
+          {
+            "path": "/api/runtime/v1/graph-observations/run-1/nodes",
+            "query": "?frontier_only=false&limit=50",
+            "revision": 1
+          },
+          {
+            "path": "/api/runtime/v1/graph-observations/run-1/nodes/0000000000000000000000000000000000000000000000000000000000000001",
+            "query": "?snapshot_token=snapshot-1&limit=50",
+            "revision": 1
+          },
+          {
+            "path": "/api/runtime/v1/graph-observations/run-1/invalidations",
+            "query": "?cursor=events-1&limit=100",
+            "revision": 1
+          }
+        ]
+      },
+      {
+        "name": "detail-denied",
+        "status": "passed",
+        "elapsed_ms": 819,
+        "requests": [
+          {
+            "path": "/api/runtime/v1/graph-observations/run-1/nodes",
+            "query": "?frontier_only=false&limit=50",
+            "revision": 1
+          },
+          {
+            "path": "/api/runtime/v1/graph-observations/run-1/nodes/0000000000000000000000000000000000000000000000000000000000000001",
+            "query": "?snapshot_token=snapshot-1&limit=50",
+            "revision": 1
+          },
+          {
+            "path": "/api/runtime/v1/graph-observations/run-1/nodes/0000000000000000000000000000000000000000000000000000000000000001",
+            "query": "?snapshot_token=snapshot-1&limit=50",
+            "revision": 1
+          }
+        ]
+      },
+      {
+        "name": "empty",
+        "status": "passed",
+        "elapsed_ms": 670,
+        "requests": [
+          {
+            "path": "/api/runtime/v1/graph-observations/run-1/nodes",
+            "query": "?frontier_only=false&limit=50",
+            "revision": 1
+          }
+        ]
+      },
+      {
+        "name": "cursor-expired",
+        "status": "passed",
+        "elapsed_ms": 829,
+        "requests": [
+          {
+            "path": "/api/runtime/v1/graph-observations/run-1/nodes",
+            "query": "?frontier_only=false&limit=50",
+            "revision": 1
+          },
+          {
+            "path": "/api/runtime/v1/graph-observations/run-1/nodes",
+            "query": "?frontier_only=false&cursor=next-window&limit=50",
+            "revision": 1
+          },
+          {
+            "path": "/api/runtime/v1/graph-observations/run-1/nodes",
+            "query": "?frontier_only=false&limit=50",
+            "revision": 2
+          }
+        ]
+      },
+      {
+        "name": "events-expired",
+        "status": "passed",
+        "elapsed_ms": 728,
+        "requests": [
+          {
+            "path": "/api/runtime/v1/graph-observations/run-1/nodes",
+            "query": "?frontier_only=false&limit=50",
+            "revision": 1
+          },
+          {
+            "path": "/api/runtime/v1/graph-observations/run-1/invalidations",
+            "query": "?cursor=events-1&limit=100",
+            "revision": 1
+          },
+          {
+            "path": "/api/runtime/v1/graph-observations/run-1/nodes",
+            "query": "?frontier_only=false&limit=50",
+            "revision": 2
+          }
+        ]
+      }
+    ],
+    "screenshots": [
+      "slow-detail-pending.png",
+      "slow-detail-1440.png",
+      "slow-detail-390.png",
+      "new-revision-1440.png",
+      "new-revision-390.png",
+      "denied-1440.png",
+      "denied-390.png",
+      "detail-denied-1440.png",
+      "detail-denied-390.png",
+      "empty-1440.png",
+      "empty-390.png",
+      "cursor-expired-1440.png",
+      "cursor-expired-390.png",
+      "events-expired-1440.png",
+      "events-expired-390.png"
+    ],
+    "limits": [
+      "Scripted HTTP peer, not live Runtime.",
+      "Local Chromium, no target-host or full screen-reader conformance claim."
+    ]
+  },
+  "visual_review": {
+    "viewports": [
+      1440,
+      390
+    ],
+    "observed": "Keyboard path,readable response versus outcome,separate partial state,no horizontal overflow; automated axe checks passed at both sizes. Corrected corrupted display separators before final proof."
+  },
+  "limits": [
+    "No live provider/model,scientific accuracy,production gateway,target-host performance or screen-reader conformance claim",
+    "B2/B3/V1 remain open; current package builds and installed reads do not close live-evaluation acceptance"
+  ]
+}

@@ -8,15 +8,15 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-06 closed100%; BP-07.04 closed100%; BP-07.05/B1.03 active; BP-08/09 queued.
-- Last refreshed: `2026-10-06 04:15:35` (America/Chicago).
+- Status: BP-06 closed100%; BP-07.04 closed100%; BP-07.05/B2 awaiting owner configuration; BP-08/09 queued.
+- Last refreshed: `2026-10-06 04:39:43` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P6 / BP-07 - Autonomous LLM Campaign Supervision.
-- Primary active task: BP-07.05/B1.04 Studio inspection.
-- Next task: BP-07.05/B1.04 Studio inspection.
-- Implementation completion: BP-07=83.75%,16/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
-- Active focus: verified deterministic evaluation runner; bounded owner inspection next.
-- Blockers: none for deterministic implementation. Approved B2.01 correction: scalar adjustments must reconcile Artifact-only Invoke inputs; see [scalar checkpoint decision](BP-07/BP-07.04%20Scalar%20checkpoint%20decision.md). Live provider/model, egress and spend choices separately govern real calls.
+- Primary active task: BP-07.05/B2 live provider/corpus configuration.
+- Next task: implement the chosen live adapter and freeze the held-out evaluation manifest.
+- Implementation completion: BP-07=85%,17/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
+- Active focus: B1 engineering complete: evaluation runner, Runtime inspection and Studio verified. B2 live configuration is required.
+- Blockers: B2 requires provider/model/endpoint, permitted data and egress, budget, and reviewed held-out corpus/criteria. No live calls authorized/configured yet.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
 - Active exception: none.
 
@@ -32,15 +32,15 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-07.01/.02/.03/.04 are closed100%. BP-07.05/B1.03 is active; implementation18.75%,Build25%,Acceptance0%.
+BP-07.01/.02/.03/.04 are closed100%. BP-07.05/B1 is complete; B2 awaits owner configuration; implementation25%,Build33.33%,Acceptance0%.
 
 | Parent | Overall | P1 | P2 | P3 | P4 | P5 |
 |---|---:|---:|---:|---:|---:|---:|
-| BP-07 | 83.75% | 100% | 100% | 100% | 100% | 18.75% |
+| BP-07 | 85% | 100% | 100% | 100% | 100% | 25% |
 
 | Active child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-07.05](BP-07/BP-07.05%20Live%20evaluation%20and%20closeout.md) | 18.75% | 25% | 0% | B1.04 |
+| [BP-07.05](BP-07/BP-07.05%20Live%20evaluation%20and%20closeout.md) | 25% | 33.33% | 0% | B2 choices |
 
  BP-06 is [closed100%](Completed/BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md); completed parents are in the [archive](Completed/README.md).
 
@@ -126,6 +126,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-06 04:39:43 | BP-07.05/B1 complete; child25%,Build33.33%,parent85%,17/20. | Studio0.8;237 independent tests; fixture/installed-owner browsers; B2 live choices required. |
 | 2026-10-06 04:26:08 | BP-07.05/B1.03 complete; child18.75%,parent83.75%. |33SQL/API/boundary tests;217statements12branches100%;4installed process passes and retained continuation. |
 | 2026-10-06 04:04:54 | BP-07.05/B1.03a verified | Public supervision0.10;124tests;556schemas/548unchanged;child14.0625%,parent82.8125%. |
 | 2026-10-06 03:54:34 | BP-07.05/B1.02 complete | Planning0.92;97tests61.02s;process unknown/recovery and late overage;child12.5%,parent82.5%. |
@@ -150,4 +151,3 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-06 00:11:21 | BP-07.04/B2.03c.i complete | Runtime0.51 original delivery;24 final SQL/socket/boundary cases;67statements/12branches100%;next owner scheduling/disposition. |
 | 2026-10-05 23:57:53 | BP-07.04/B2.03b complete | Planning0.84 SDK/capture/response recovery;9initial+46final cases;workflow97%;next autonomous Runtime loop. |
 | 2026-10-05 23:44:42 | BP-07.04 capture journal complete | Planning0.83/0017 immutable upload/response, fences/rollback/replay;7SQL396statements24branches100%+75regression. |
-| 2026-10-05 23:31:16 | BP-07.04 capture domain verified | Planning0.82 exact primary/late bytes, ancestry and response;7cases104statements2branches100%;18expiry/boundary checks. |

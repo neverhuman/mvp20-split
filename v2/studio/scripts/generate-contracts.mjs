@@ -199,3 +199,11 @@ await generate(researchRoots, resolve(target, "research"));
 await generate(provenanceRoots, resolve(target, "provenance"));
 
 await generate(feedbackRoots, resolve(target, "feedback"));
+
+await generate({
+  checkpoints: ["supervision.checkpoint-inspection-page", "CheckpointInspectionPage"],
+  requests: ["supervision.checkpoint-request-page", "CheckpointRequestPage"],
+  context: ["supervision.checkpoint-context-page", "CheckpointContextPage"],
+  responses: ["supervision.checkpoint-response-page", "CheckpointResponsePage"],
+  decision: ["supervision.checkpoint-decision", "CheckpointDecision"],
+}, resolve(target, "supervision"));

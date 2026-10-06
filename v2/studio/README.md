@@ -26,3 +26,5 @@ Active authoring boundary: [Design models](src/page_models/design/README.md) own
 [Integrated Studio audit](../docs/Audits/BP-05_Studio_Closeout.md) records final137-test independent builds,25 real-owner cases, bounded local performance and focused module replacement. No deployment gateway, scientific applicability, native-zoom/screen-reader conformance or target-host performance claim.
 
 BP-06.06 Studio0.2 adds separate [scientific contracts](src/contracts/scientific/README.md) and [Knowledge/Research transports](src/transport/scientific/README.md). Their exact-query metadata reads are implemented; source provenance and visible Explore are subsequent gates. Existing Monitor/Design and Runtime catalog remain unchanged.
+
+BP-07.05 Studio0.8 adds optional Monitor [checkpoint inspection](src/presentation/supervision/README.md), backed by [owned model](src/page_models/supervision/README.md) and [bounded transport](src/transport/supervision/README.md). This is metadata inspection; no active-campaign human approval or scientific-validity claim.

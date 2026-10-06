@@ -1,3 +1,5 @@
+import type { SupervisionModel } from "../page_models/supervision/model.js";
+import { SupervisionInspector } from "./supervision/inspector.js";
 import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from 'react';
 import type { MonitorModel } from '../page_models/monitor.js';
 import type { RunContext } from '../page_models/graph_window.js';
@@ -15,12 +17,16 @@ import type { EmergencyStop } from '../page_models/design/emergency_stop.js';
 import { EmergencyControl } from './emergency_control.js';
 import './style.css';
 
-export function MonitorWorkspace({ model, context, synthetic = false, navigation, namedViews, evidence, emergency }: { model: MonitorModel; context: RunContext; synthetic?: boolean; navigation?: NavigationModel; namedViews?: NamedViewsModel; evidence?: EvidenceModel; emergency?: EmergencyStop }) {
+export function MonitorWorkspace({ model, context, synthetic = false, navigation, namedViews, evidence, emergency, supervision }: { model: MonitorModel; context: RunContext; synthetic?: boolean; navigation?: NavigationModel; namedViews?: NamedViewsModel; evidence?: EvidenceModel; emergency?: EmergencyStop; supervision?: SupervisionModel }) {
   const subscribe = useCallback((notify: () => void) => model.subscribe(notify), [model]);
   const view = useSyncExternalStore(subscribe, () => model.snapshot);
   const [filter, setFilter] = useState('');
-  const [topology, setTopology] = useState(false);
   const [visible, setVisible] = useState(true);
+  const [topology, setTopology] = useState(false);
+  const [inspectingCheckpoints, setInspectingCheckpoints] = useState(false);
+  useEffect(() => { supervision?.bind(context); setInspectingCheckpoints(false); }, [supervision, context.scope.tenant_id, context.scope.project_id, context.run]);
+  useEffect(() => { if (!visible || !inspectingCheckpoints) supervision?.invalidate(); }, [supervision, visible, inspectingCheckpoints]);
+
   const history = useMemo(() => new InspectionHistory(), []);
   const historySubscribe = useCallback((notify: () => void) => history.subscribe(notify), [history]);
   const historyView = useSyncExternalStore(historySubscribe, () => history.snapshot);
@@ -80,7 +86,8 @@ export function MonitorWorkspace({ model, context, synthetic = false, navigation
         <button aria-pressed={!topology} onClick={() => { history.select(null); setTopology(false); }}>Activation inventory</button>
         <button aria-pressed={topology} onClick={() => { history.select(null); setTopology(true); }}>Authored graph</button>
       </div>}
-      {pin ? <PinnedInspection key={pin.id} pin={pin} /> : topology && navigation ? <NavigationPane navigation={navigation} monitor={model} observation={view} {...(namedViews ? { namedViews } : {})} {...(evidence ? { evidence } : {})} /> : <div className="work-area" data-phase={view.phase}>
+      {supervision && <button aria-pressed={inspectingCheckpoints} onClick={() => { history.select(null); setInspectingCheckpoints(!inspectingCheckpoints); if (!inspectingCheckpoints) void supervision.refresh(); }}>{inspectingCheckpoints ? 'Return to execution graph' : 'Inspect checkpoint reasoning'}</button>}
+      {inspectingCheckpoints && supervision ? <SupervisionInspector model={supervision} /> : pin ? <PinnedInspection key={pin.id} pin={pin} /> : topology && navigation ? <NavigationPane navigation={navigation} monitor={model} observation={view} {...(namedViews ? { namedViews } : {})} {...(evidence ? { evidence } : {})} /> : <div className="work-area" data-phase={view.phase}>
         <GraphCanvas nodes={shown} selection={view.selection} select={select} />
         <aside className={evidence ? 'navigation-inspector' : undefined} aria-label="Node navigator"><MonitorDetail view={view} />
           {evidence && <EvidencePane model={evidence} monitor={model} observation={view} />}

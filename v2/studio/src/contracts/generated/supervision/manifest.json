@@ -1,0 +1,22 @@
+{
+  "checkpoints": {
+    "source": "contracts/schemas/v1/supervision.checkpoint-inspection-page.serialization.json",
+    "sha256": "81b0c0a2a1b6ec205e7802cbb667dce9fc27caa1446cbc13ecb41ecb83ec4538"
+  },
+  "requests": {
+    "source": "contracts/schemas/v1/supervision.checkpoint-request-page.serialization.json",
+    "sha256": "4bb7a300226536352414134f473f933b225a0b817687ac0f748ca0c656dfe90c"
+  },
+  "context": {
+    "source": "contracts/schemas/v1/supervision.checkpoint-context-page.serialization.json",
+    "sha256": "fb8ead7d4b86ba8ddf3af019fe59e0b61e728aeda93b3620333e293a28c899a7"
+  },
+  "responses": {
+    "source": "contracts/schemas/v1/supervision.checkpoint-response-page.serialization.json",
+    "sha256": "46ee9940b321ead92a45e41dbd5dc6608d5ff5d753bf436cd6ff90d8ddf6c127"
+  },
+  "decision": {
+    "source": "contracts/schemas/v1/supervision.checkpoint-decision.serialization.json",
+    "sha256": "44a33b1fb872a95f97010ba764d7e61f2c191707af73aef9b9666fd30d206409"
+  }
+}

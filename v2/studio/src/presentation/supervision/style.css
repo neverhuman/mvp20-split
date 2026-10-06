@@ -1,0 +1,10 @@
+.supervision-inspector { min-width:0; padding:16px; border-top:1px solid var(--line); }
+.supervision-inspector nav { display:flex; flex-wrap:wrap; gap:8px; }
+.supervision-inspector .toolbar { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+.supervision-inspector h2 { margin:0; }
+.supervision-records { min-height:160px; max-height:55vh; overflow:auto; }
+.supervision-records ul { list-style:none; padding:0; }
+.supervision-records li { padding:12px 0; border-bottom:1px solid var(--line); display:flex; flex-direction:column; align-items:flex-start; gap:6px; }
+.supervision-inspector p,.supervision-inspector li,.supervision-inspector button { overflow-wrap:anywhere; max-width:100%; }
+.supervision-outcome { border-left:3px solid var(--accent); padding:12px; margin:12px 0; }
+.supervision-outcome small { display:block; color:var(--muted); margin-top:6px; }

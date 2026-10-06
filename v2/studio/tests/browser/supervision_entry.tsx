@@ -1,0 +1,11 @@
+import { createRoot } from "react-dom/client";
+import { SupervisionClient } from "../../src/transport/supervision/client.js";
+import { SupervisionModel } from "../../src/page_models/supervision/model.js";
+import { SupervisionInspector } from "../../src/presentation/supervision/inspector.js";
+import "../../src/presentation/style.css";
+const config = await fetch("/binding").then(response => response.json());
+const model = new SupervisionModel(new SupervisionClient());
+model.bind(config.binding);
+createRoot(document.getElementById("root")!).render(<main><h1>Campaign reasoning</h1><p>{config.synthetic ? "Synthetic checkpoint fixture" : "Retained actual-owner campaign history"}</p><SupervisionInspector model={model}/></main>);
+void model.refresh();
+window.addEventListener("pagehide", () => model.dispose());

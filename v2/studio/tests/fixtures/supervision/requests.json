@@ -1,0 +1,101 @@
+{
+  "schema_version": "1",
+  "snapshot": {
+    "cut": {
+      "frontier_revision": 2,
+      "plan_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "revision": 3,
+      "run_id": "supervision-run",
+      "scope": {
+        "project_id": "context",
+        "tenant_id": "planning-fixture"
+      }
+    },
+    "epoch": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "snapshot_token": "literal-signed-token"
+  },
+  "reference": {
+    "decision_id": "decision-1",
+    "run_id": "supervision-run",
+    "scope": {
+      "project_id": "context",
+      "tenant_id": "planning-fixture"
+    }
+  },
+  "total": 1,
+  "items": [
+    {
+      "request_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "lineage": {
+        "ordinal": 1,
+        "parent_request_sha256": null,
+        "root_request_sha256": null
+      },
+      "engagement": {
+        "engagement_id": "decision-1",
+        "scope": {
+          "project_id": "context",
+          "tenant_id": "planning-fixture"
+        }
+      },
+      "planning_request_sha256": "ad8dd9f4427cd58c1ced751009c5a98d73d8111bdf2dcd6c559c04c0f8a7b9d4",
+      "model": {
+        "configuration": {
+          "artifact_id": "configuration",
+          "media_type": "text/plain",
+          "schema_ref": {
+            "schema_id": "fixture.text",
+            "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+            "version": "1"
+          },
+          "scope": {
+            "project_id": "context",
+            "tenant_id": "planning-fixture"
+          },
+          "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+          "size_bytes": 12
+        },
+        "context_window_tokens": 4096,
+        "model_id": "adversarial-fixture",
+        "model_revision": "1",
+        "provider_id": "deterministic",
+        "tokenizer": {
+          "schema_id": "fixture.text",
+          "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+          "version": "1"
+        }
+      },
+      "prompt": {
+        "artifact_id": "prompt",
+        "media_type": "text/plain",
+        "schema_ref": {
+          "schema_id": "fixture.text",
+          "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+          "version": "1"
+        },
+        "scope": {
+          "project_id": "context",
+          "tenant_id": "planning-fixture"
+        },
+        "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+        "size_bytes": 12
+      },
+      "limits": {
+        "accounting_unit": "fixture-unit",
+        "max_attempts": 2,
+        "max_input_tokens": 1024,
+        "max_output_tokens": 1024,
+        "total_accounting_units": 100,
+        "total_tokens": 4096
+      },
+      "context_entries": 1,
+      "context_omissions": 1,
+      "report_stop_reason": "provider_unconfigured",
+      "attempts": [],
+      "responses": 0,
+      "disposition": "fallback",
+      "disposition_reason": "checkpoint_provider_unconfigured"
+    }
+  ],
+  "next_cursor": null
+}

@@ -1,0 +1,2246 @@
+{
+  "checkpoints": {
+    "$defs": {
+      "CheckpointInspectionItem": {
+        "additionalProperties": false,
+        "properties": {
+          "checkpoint_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Checkpoint Id",
+            "type": "string"
+          },
+          "eligibility_reason": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Eligibility Reason"
+          },
+          "reference": {
+            "$ref": "#/$defs/SupervisionRef"
+          },
+          "requests": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Requests",
+            "type": "integer"
+          },
+          "targets": {
+            "items": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            "maxItems": 64,
+            "minItems": 1,
+            "title": "Targets",
+            "type": "array"
+          },
+          "winner_kind": {
+            "anyOf": [
+              {
+                "enum": [
+                  "model_accepted",
+                  "fallback",
+                  "cancelled"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Winner Kind"
+          },
+          "winner_reason": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Winner Reason"
+          }
+        },
+        "required": [
+          "reference",
+          "checkpoint_id",
+          "targets",
+          "eligibility_reason",
+          "requests",
+          "winner_kind",
+          "winner_reason"
+        ],
+        "title": "CheckpointInspectionItem",
+        "type": "object"
+      },
+      "GraphReadCut": {
+        "additionalProperties": false,
+        "properties": {
+          "frontier_revision": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Frontier Revision",
+            "type": "integer"
+          },
+          "plan_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Plan Sha256",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "run_id",
+          "plan_sha256",
+          "revision",
+          "frontier_revision"
+        ],
+        "title": "GraphReadCut",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      },
+      "SupervisionInspectionCut": {
+        "additionalProperties": false,
+        "properties": {
+          "cut": {
+            "$ref": "#/$defs/GraphReadCut"
+          },
+          "epoch": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Epoch",
+            "type": "string"
+          },
+          "snapshot_token": {
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Snapshot Token",
+            "type": "string"
+          }
+        },
+        "required": [
+          "cut",
+          "epoch",
+          "snapshot_token"
+        ],
+        "title": "SupervisionInspectionCut",
+        "type": "object"
+      },
+      "SupervisionRef": {
+        "additionalProperties": false,
+        "properties": {
+          "decision_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Decision Id",
+            "type": "string"
+          },
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "run_id",
+          "decision_id"
+        ],
+        "title": "SupervisionRef",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:supervision.checkpoint-inspection-page:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "items": {
+        "items": {
+          "$ref": "#/$defs/CheckpointInspectionItem"
+        },
+        "maxItems": 10,
+        "title": "Items",
+        "type": "array"
+      },
+      "next_cursor": {
+        "anyOf": [
+          {
+            "maxLength": 4096,
+            "minLength": 1,
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Next Cursor"
+      },
+      "schema_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "snapshot": {
+        "$ref": "#/$defs/SupervisionInspectionCut"
+      },
+      "total": {
+        "maximum": 9007199254740991,
+        "minimum": 0,
+        "title": "Total",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "snapshot",
+      "total",
+      "items",
+      "next_cursor"
+    ],
+    "title": "CheckpointInspectionPage",
+    "type": "object"
+  },
+  "requests": {
+    "$defs": {
+      "ArtifactRef": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Artifact Id",
+            "type": "string"
+          },
+          "media_type": {
+            "maxLength": 128,
+            "minLength": 3,
+            "pattern": "^[^\\s/]+/[^\\s/]+$",
+            "title": "Media Type",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "size_bytes": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Size Bytes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "artifact_id",
+          "scope",
+          "sha256",
+          "media_type",
+          "schema_ref",
+          "size_bytes"
+        ],
+        "title": "ArtifactRef",
+        "type": "object"
+      },
+      "CallLimits": {
+        "additionalProperties": false,
+        "properties": {
+          "accounting_unit": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Accounting Unit",
+            "type": "string"
+          },
+          "max_attempts": {
+            "maximum": 16,
+            "minimum": 1,
+            "title": "Max Attempts",
+            "type": "integer"
+          },
+          "max_input_tokens": {
+            "maximum": 16777216,
+            "minimum": 1,
+            "title": "Max Input Tokens",
+            "type": "integer"
+          },
+          "max_output_tokens": {
+            "maximum": 16777216,
+            "minimum": 1,
+            "title": "Max Output Tokens",
+            "type": "integer"
+          },
+          "total_accounting_units": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "title": "Total Accounting Units",
+            "type": "integer"
+          },
+          "total_tokens": {
+            "maximum": 268435456,
+            "minimum": 1,
+            "title": "Total Tokens",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "max_input_tokens",
+          "max_output_tokens",
+          "max_attempts",
+          "total_tokens",
+          "total_accounting_units",
+          "accounting_unit"
+        ],
+        "title": "CallLimits",
+        "type": "object"
+      },
+      "CheckpointInspectionAttempt": {
+        "additionalProperties": false,
+        "properties": {
+          "observation_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Observation Sha256",
+            "type": "string"
+          },
+          "ordinal": {
+            "maximum": 16,
+            "minimum": 1,
+            "title": "Ordinal",
+            "type": "integer"
+          },
+          "status": {
+            "enum": [
+              "proposed",
+              "abstained",
+              "invalid",
+              "unavailable",
+              "policy_rejected",
+              "unknown"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "ordinal",
+          "status",
+          "observation_sha256"
+        ],
+        "title": "CheckpointInspectionAttempt",
+        "type": "object"
+      },
+      "CheckpointRequestItem": {
+        "additionalProperties": false,
+        "properties": {
+          "attempts": {
+            "items": {
+              "$ref": "#/$defs/CheckpointInspectionAttempt"
+            },
+            "maxItems": 16,
+            "title": "Attempts",
+            "type": "array"
+          },
+          "context_entries": {
+            "maximum": 128,
+            "minimum": 0,
+            "title": "Context Entries",
+            "type": "integer"
+          },
+          "context_omissions": {
+            "maximum": 128,
+            "minimum": 0,
+            "title": "Context Omissions",
+            "type": "integer"
+          },
+          "disposition": {
+            "anyOf": [
+              {
+                "enum": [
+                  "repair",
+                  "fallback"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Disposition"
+          },
+          "disposition_reason": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Disposition Reason"
+          },
+          "engagement": {
+            "$ref": "#/$defs/EngagementRef"
+          },
+          "limits": {
+            "$ref": "#/$defs/CallLimits"
+          },
+          "lineage": {
+            "$ref": "#/$defs/SupervisionLineage"
+          },
+          "model": {
+            "$ref": "#/$defs/ModelBinding"
+          },
+          "planning_request_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Planning Request Sha256",
+            "type": "string"
+          },
+          "prompt": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "report_stop_reason": {
+            "anyOf": [
+              {
+                "enum": [
+                  "proposed",
+                  "abstained",
+                  "policy_rejected",
+                  "attempt_limit",
+                  "checkpoint_deadline",
+                  "execution_processing_unavailable",
+                  "required_artifact_unavailable",
+                  "required_packet_size",
+                  "required_input_limit",
+                  "budget_template_unavailable",
+                  "provider_unconfigured",
+                  "token_budget_exhausted",
+                  "accounting_budget_exhausted",
+                  "provider_usage_overage",
+                  "repair_attempt_budget_exhausted",
+                  "repair_token_budget_exhausted",
+                  "repair_accounting_budget_exhausted"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Report Stop Reason"
+          },
+          "request_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Request Sha256",
+            "type": "string"
+          },
+          "responses": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Responses",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "request_sha256",
+          "lineage",
+          "engagement",
+          "planning_request_sha256",
+          "model",
+          "prompt",
+          "limits",
+          "context_entries",
+          "context_omissions",
+          "report_stop_reason",
+          "attempts",
+          "responses",
+          "disposition",
+          "disposition_reason"
+        ],
+        "title": "CheckpointRequestItem",
+        "type": "object"
+      },
+      "EngagementRef": {
+        "additionalProperties": false,
+        "properties": {
+          "engagement_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Engagement Id",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "engagement_id"
+        ],
+        "title": "EngagementRef",
+        "type": "object"
+      },
+      "GraphReadCut": {
+        "additionalProperties": false,
+        "properties": {
+          "frontier_revision": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Frontier Revision",
+            "type": "integer"
+          },
+          "plan_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Plan Sha256",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "run_id",
+          "plan_sha256",
+          "revision",
+          "frontier_revision"
+        ],
+        "title": "GraphReadCut",
+        "type": "object"
+      },
+      "ModelBinding": {
+        "additionalProperties": false,
+        "properties": {
+          "configuration": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "context_window_tokens": {
+            "maximum": 16777216,
+            "minimum": 1,
+            "title": "Context Window Tokens",
+            "type": "integer"
+          },
+          "model_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Model Id",
+            "type": "string"
+          },
+          "model_revision": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Model Revision",
+            "type": "string"
+          },
+          "provider_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Provider Id",
+            "type": "string"
+          },
+          "tokenizer": {
+            "$ref": "#/$defs/SchemaRef"
+          }
+        },
+        "required": [
+          "provider_id",
+          "model_id",
+          "model_revision",
+          "configuration",
+          "tokenizer",
+          "context_window_tokens"
+        ],
+        "title": "ModelBinding",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      },
+      "SupervisionInspectionCut": {
+        "additionalProperties": false,
+        "properties": {
+          "cut": {
+            "$ref": "#/$defs/GraphReadCut"
+          },
+          "epoch": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Epoch",
+            "type": "string"
+          },
+          "snapshot_token": {
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Snapshot Token",
+            "type": "string"
+          }
+        },
+        "required": [
+          "cut",
+          "epoch",
+          "snapshot_token"
+        ],
+        "title": "SupervisionInspectionCut",
+        "type": "object"
+      },
+      "SupervisionLineage": {
+        "additionalProperties": false,
+        "properties": {
+          "ordinal": {
+            "maximum": 16,
+            "minimum": 1,
+            "title": "Ordinal",
+            "type": "integer"
+          },
+          "parent_request_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parent Request Sha256"
+          },
+          "root_request_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Root Request Sha256"
+          }
+        },
+        "required": [
+          "ordinal",
+          "root_request_sha256",
+          "parent_request_sha256"
+        ],
+        "title": "SupervisionLineage",
+        "type": "object"
+      },
+      "SupervisionRef": {
+        "additionalProperties": false,
+        "properties": {
+          "decision_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Decision Id",
+            "type": "string"
+          },
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "run_id",
+          "decision_id"
+        ],
+        "title": "SupervisionRef",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:supervision.checkpoint-request-page:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "items": {
+        "items": {
+          "$ref": "#/$defs/CheckpointRequestItem"
+        },
+        "maxItems": 10,
+        "title": "Items",
+        "type": "array"
+      },
+      "next_cursor": {
+        "anyOf": [
+          {
+            "maxLength": 4096,
+            "minLength": 1,
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Next Cursor"
+      },
+      "reference": {
+        "$ref": "#/$defs/SupervisionRef"
+      },
+      "schema_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "snapshot": {
+        "$ref": "#/$defs/SupervisionInspectionCut"
+      },
+      "total": {
+        "maximum": 9007199254740991,
+        "minimum": 0,
+        "title": "Total",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "snapshot",
+      "reference",
+      "total",
+      "items",
+      "next_cursor"
+    ],
+    "title": "CheckpointRequestPage",
+    "type": "object"
+  },
+  "context": {
+    "$defs": {
+      "ArtifactRef": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Artifact Id",
+            "type": "string"
+          },
+          "media_type": {
+            "maxLength": 128,
+            "minLength": 3,
+            "pattern": "^[^\\s/]+/[^\\s/]+$",
+            "title": "Media Type",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "size_bytes": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Size Bytes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "artifact_id",
+          "scope",
+          "sha256",
+          "media_type",
+          "schema_ref",
+          "size_bytes"
+        ],
+        "title": "ArtifactRef",
+        "type": "object"
+      },
+      "ContextEntry": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "required": {
+            "title": "Required",
+            "type": "boolean"
+          },
+          "role": {
+            "enum": [
+              "constraint",
+              "source",
+              "capability",
+              "knowledge",
+              "result"
+            ],
+            "title": "Role",
+            "type": "string"
+          }
+        },
+        "required": [
+          "artifact",
+          "role",
+          "required"
+        ],
+        "title": "ContextEntry",
+        "type": "object"
+      },
+      "ContextOmission": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact": {
+            "$ref": "#/$defs/ArtifactRef"
+          },
+          "reason": {
+            "enum": [
+              "budget",
+              "not_relevant",
+              "unavailable",
+              "not_authorized"
+            ],
+            "title": "Reason",
+            "type": "string"
+          }
+        },
+        "required": [
+          "artifact",
+          "reason"
+        ],
+        "title": "ContextOmission",
+        "type": "object"
+      },
+      "GraphReadCut": {
+        "additionalProperties": false,
+        "properties": {
+          "frontier_revision": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Frontier Revision",
+            "type": "integer"
+          },
+          "plan_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Plan Sha256",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "run_id",
+          "plan_sha256",
+          "revision",
+          "frontier_revision"
+        ],
+        "title": "GraphReadCut",
+        "type": "object"
+      },
+      "IncludedCheckpointContext": {
+        "additionalProperties": false,
+        "properties": {
+          "entry": {
+            "$ref": "#/$defs/ContextEntry"
+          },
+          "kind": {
+            "const": "included",
+            "title": "Kind",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "entry"
+        ],
+        "title": "IncludedCheckpointContext",
+        "type": "object"
+      },
+      "OmittedCheckpointContext": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "omitted",
+            "title": "Kind",
+            "type": "string"
+          },
+          "omission": {
+            "$ref": "#/$defs/ContextOmission"
+          }
+        },
+        "required": [
+          "kind",
+          "omission"
+        ],
+        "title": "OmittedCheckpointContext",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      },
+      "SupervisionInspectionCut": {
+        "additionalProperties": false,
+        "properties": {
+          "cut": {
+            "$ref": "#/$defs/GraphReadCut"
+          },
+          "epoch": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Epoch",
+            "type": "string"
+          },
+          "snapshot_token": {
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Snapshot Token",
+            "type": "string"
+          }
+        },
+        "required": [
+          "cut",
+          "epoch",
+          "snapshot_token"
+        ],
+        "title": "SupervisionInspectionCut",
+        "type": "object"
+      },
+      "SupervisionRef": {
+        "additionalProperties": false,
+        "properties": {
+          "decision_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Decision Id",
+            "type": "string"
+          },
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "run_id",
+          "decision_id"
+        ],
+        "title": "SupervisionRef",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:supervision.checkpoint-context-page:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "items": {
+        "items": {
+          "discriminator": {
+            "mapping": {
+              "included": "#/$defs/IncludedCheckpointContext",
+              "omitted": "#/$defs/OmittedCheckpointContext"
+            },
+            "propertyName": "kind"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/IncludedCheckpointContext"
+            },
+            {
+              "$ref": "#/$defs/OmittedCheckpointContext"
+            }
+          ]
+        },
+        "maxItems": 10,
+        "title": "Items",
+        "type": "array"
+      },
+      "next_cursor": {
+        "anyOf": [
+          {
+            "maxLength": 4096,
+            "minLength": 1,
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Next Cursor"
+      },
+      "reference": {
+        "$ref": "#/$defs/SupervisionRef"
+      },
+      "request_sha256": {
+        "pattern": "^[0-9a-f]{64}$",
+        "title": "Request Sha256",
+        "type": "string"
+      },
+      "schema_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "snapshot": {
+        "$ref": "#/$defs/SupervisionInspectionCut"
+      },
+      "total": {
+        "maximum": 9007199254740991,
+        "minimum": 0,
+        "title": "Total",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "snapshot",
+      "reference",
+      "request_sha256",
+      "total",
+      "items",
+      "next_cursor"
+    ],
+    "title": "CheckpointContextPage",
+    "type": "object"
+  },
+  "responses": {
+    "$defs": {
+      "ArtifactRef": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Artifact Id",
+            "type": "string"
+          },
+          "media_type": {
+            "maxLength": 128,
+            "minLength": 3,
+            "pattern": "^[^\\s/]+/[^\\s/]+$",
+            "title": "Media Type",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "size_bytes": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Size Bytes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "artifact_id",
+          "scope",
+          "sha256",
+          "media_type",
+          "schema_ref",
+          "size_bytes"
+        ],
+        "title": "ArtifactRef",
+        "type": "object"
+      },
+      "CheckpointResponseItem": {
+        "additionalProperties": false,
+        "properties": {
+          "attempt_ordinal": {
+            "maximum": 16,
+            "minimum": 1,
+            "title": "Attempt Ordinal",
+            "type": "integer"
+          },
+          "capture": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/ArtifactRef"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "captured_bytes": {
+            "maximum": 65536,
+            "minimum": 0,
+            "title": "Captured Bytes",
+            "type": "integer"
+          },
+          "output_complete": {
+            "title": "Output Complete",
+            "type": "boolean"
+          },
+          "output_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Output Sha256",
+            "type": "string"
+          },
+          "reason_code": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason Code"
+          },
+          "response_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Response Id",
+            "type": "string"
+          },
+          "response_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Response Sha256",
+            "type": "string"
+          },
+          "selected_by_winner": {
+            "title": "Selected By Winner",
+            "type": "boolean"
+          },
+          "status": {
+            "enum": [
+              "proposed",
+              "abstained",
+              "invalid",
+              "unavailable",
+              "policy_rejected",
+              "unknown"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "response_id",
+          "response_sha256",
+          "attempt_ordinal",
+          "status",
+          "reason_code",
+          "output_sha256",
+          "captured_bytes",
+          "output_complete",
+          "capture",
+          "selected_by_winner"
+        ],
+        "title": "CheckpointResponseItem",
+        "type": "object"
+      },
+      "GraphReadCut": {
+        "additionalProperties": false,
+        "properties": {
+          "frontier_revision": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Frontier Revision",
+            "type": "integer"
+          },
+          "plan_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Plan Sha256",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "run_id",
+          "plan_sha256",
+          "revision",
+          "frontier_revision"
+        ],
+        "title": "GraphReadCut",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      },
+      "SupervisionInspectionCut": {
+        "additionalProperties": false,
+        "properties": {
+          "cut": {
+            "$ref": "#/$defs/GraphReadCut"
+          },
+          "epoch": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Epoch",
+            "type": "string"
+          },
+          "snapshot_token": {
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Snapshot Token",
+            "type": "string"
+          }
+        },
+        "required": [
+          "cut",
+          "epoch",
+          "snapshot_token"
+        ],
+        "title": "SupervisionInspectionCut",
+        "type": "object"
+      },
+      "SupervisionRef": {
+        "additionalProperties": false,
+        "properties": {
+          "decision_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Decision Id",
+            "type": "string"
+          },
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "run_id",
+          "decision_id"
+        ],
+        "title": "SupervisionRef",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:supervision.checkpoint-response-page:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "items": {
+        "items": {
+          "$ref": "#/$defs/CheckpointResponseItem"
+        },
+        "maxItems": 10,
+        "title": "Items",
+        "type": "array"
+      },
+      "next_cursor": {
+        "anyOf": [
+          {
+            "maxLength": 4096,
+            "minLength": 1,
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "title": "Next Cursor"
+      },
+      "reference": {
+        "$ref": "#/$defs/SupervisionRef"
+      },
+      "request_sha256": {
+        "pattern": "^[0-9a-f]{64}$",
+        "title": "Request Sha256",
+        "type": "string"
+      },
+      "schema_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Schema Version",
+        "type": "string"
+      },
+      "snapshot": {
+        "$ref": "#/$defs/SupervisionInspectionCut"
+      },
+      "total": {
+        "maximum": 9007199254740991,
+        "minimum": 0,
+        "title": "Total",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "snapshot",
+      "reference",
+      "request_sha256",
+      "total",
+      "items",
+      "next_cursor"
+    ],
+    "title": "CheckpointResponsePage",
+    "type": "object"
+  },
+  "decision": {
+    "$defs": {
+      "ActivationPath": {
+        "additionalProperties": false,
+        "properties": {
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          },
+          "occurrences": {
+            "default": [],
+            "items": {
+              "discriminator": {
+                "mapping": {
+                  "loop": "#/$defs/LoopOccurrence",
+                  "scatter": "#/$defs/ScatterOccurrence"
+                },
+                "propertyName": "kind"
+              },
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/LoopOccurrence"
+                },
+                {
+                  "$ref": "#/$defs/ScatterOccurrence"
+                }
+              ]
+            },
+            "maxItems": 16,
+            "title": "Occurrences",
+            "type": "array"
+          },
+          "schema_version": {
+            "const": "2",
+            "title": "Schema Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_version",
+          "node_id"
+        ],
+        "title": "ActivationPath",
+        "type": "object"
+      },
+      "AppliedFields": {
+        "additionalProperties": false,
+        "properties": {
+          "changes": {
+            "items": {
+              "$ref": "#/$defs/EffectiveFieldChange"
+            },
+            "maxItems": 64,
+            "minItems": 1,
+            "title": "Changes",
+            "type": "array"
+          },
+          "kind": {
+            "const": "adjusted_materialization_fields",
+            "title": "Kind",
+            "type": "string"
+          },
+          "selection_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Selection Sha256",
+            "type": "string"
+          },
+          "target": {
+            "$ref": "#/$defs/ActivationPath"
+          }
+        },
+        "required": [
+          "kind",
+          "target",
+          "selection_sha256",
+          "changes"
+        ],
+        "title": "AppliedFields",
+        "type": "object"
+      },
+      "ArtifactRef": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Artifact Id",
+            "type": "string"
+          },
+          "media_type": {
+            "maxLength": 128,
+            "minLength": 3,
+            "pattern": "^[^\\s/]+/[^\\s/]+$",
+            "title": "Media Type",
+            "type": "string"
+          },
+          "schema_ref": {
+            "$ref": "#/$defs/SchemaRef"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "size_bytes": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "title": "Size Bytes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "artifact_id",
+          "scope",
+          "sha256",
+          "media_type",
+          "schema_ref",
+          "size_bytes"
+        ],
+        "title": "ArtifactRef",
+        "type": "object"
+      },
+      "BooleanConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "boolean",
+            "title": "Kind",
+            "type": "string"
+          },
+          "value": {
+            "title": "Value",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "BooleanConstant",
+        "type": "object"
+      },
+      "CheckpointCancelled": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "cancelled",
+            "title": "Kind",
+            "type": "string"
+          },
+          "reason_code": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Reason Code",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "reason_code"
+        ],
+        "title": "CheckpointCancelled",
+        "type": "object"
+      },
+      "CheckpointFallback": {
+        "additionalProperties": false,
+        "properties": {
+          "action": {
+            "enum": [
+              "continue_unchanged",
+              "block_target"
+            ],
+            "title": "Action",
+            "type": "string"
+          },
+          "kind": {
+            "const": "fallback",
+            "title": "Kind",
+            "type": "string"
+          },
+          "reason_code": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Reason Code",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "action",
+          "reason_code"
+        ],
+        "title": "CheckpointFallback",
+        "type": "object"
+      },
+      "CheckpointModelAccepted": {
+        "additionalProperties": false,
+        "properties": {
+          "effect": {
+            "discriminator": {
+              "mapping": {
+                "abstained": "#/$defs/RetainedProposal",
+                "adjusted_materialization_fields": "#/$defs/AppliedFields",
+                "continued": "#/$defs/ContinuedUnchanged",
+                "evidence_request": "#/$defs/RetainedProposal",
+                "future_campaign": "#/$defs/RetainedProposal"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/AppliedFields"
+              },
+              {
+                "$ref": "#/$defs/RetainedProposal"
+              },
+              {
+                "$ref": "#/$defs/ContinuedUnchanged"
+              }
+            ],
+            "title": "Effect"
+          },
+          "kind": {
+            "const": "model_accepted",
+            "title": "Kind",
+            "type": "string"
+          },
+          "request_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Request Sha256",
+            "type": "string"
+          },
+          "response_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Response Sha256",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "request_sha256",
+          "response_sha256",
+          "effect"
+        ],
+        "title": "CheckpointModelAccepted",
+        "type": "object"
+      },
+      "CheckpointPending": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "pending",
+            "title": "Kind",
+            "type": "string"
+          },
+          "request_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Request Sha256"
+          },
+          "stage": {
+            "enum": [
+              "checkpoint",
+              "requested",
+              "dispatched",
+              "proposed"
+            ],
+            "title": "Stage",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "stage",
+          "request_sha256"
+        ],
+        "title": "CheckpointPending",
+        "type": "object"
+      },
+      "ContinuedUnchanged": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "continued",
+            "title": "Kind",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind"
+        ],
+        "title": "ContinuedUnchanged",
+        "type": "object"
+      },
+      "EffectiveFieldChange": {
+        "additionalProperties": false,
+        "properties": {
+          "field_name": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Field Name",
+            "type": "string"
+          },
+          "previous_value_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Previous Value Sha256",
+            "type": "string"
+          },
+          "value": {
+            "discriminator": {
+              "mapping": {
+                "boolean": "#/$defs/BooleanConstant",
+                "integer": "#/$defs/IntegerConstant",
+                "number": "#/$defs/NumberValue",
+                "string": "#/$defs/StringConstant"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/BooleanConstant"
+              },
+              {
+                "$ref": "#/$defs/IntegerConstant"
+              },
+              {
+                "$ref": "#/$defs/NumberValue"
+              },
+              {
+                "$ref": "#/$defs/StringConstant"
+              }
+            ],
+            "title": "Value"
+          }
+        },
+        "required": [
+          "field_name",
+          "previous_value_sha256",
+          "value"
+        ],
+        "title": "EffectiveFieldChange",
+        "type": "object"
+      },
+      "IntegerConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "integer",
+            "title": "Kind",
+            "type": "string"
+          },
+          "unit": {
+            "default": "1",
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          },
+          "value": {
+            "maximum": 9007199254740991,
+            "minimum": -9007199254740991,
+            "title": "Value",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "IntegerConstant",
+        "type": "object"
+      },
+      "LoopOccurrence": {
+        "additionalProperties": false,
+        "properties": {
+          "index": {
+            "maximum": 9999,
+            "minimum": 0,
+            "title": "Index",
+            "type": "integer"
+          },
+          "kind": {
+            "const": "loop",
+            "title": "Kind",
+            "type": "string"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "index"
+        ],
+        "title": "LoopOccurrence",
+        "type": "object"
+      },
+      "NumberValue": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "number",
+            "title": "Kind",
+            "type": "string"
+          },
+          "unit": {
+            "default": "1",
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Unit",
+            "type": "string"
+          },
+          "value": {
+            "maxLength": 427,
+            "pattern": "^-?(?:(?:0|[1-9][0-9]{0,99})(?:\\.[0-9]{1,324})?|10{100})$",
+            "title": "Value",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "NumberValue",
+        "type": "object"
+      },
+      "RetainedProposal": {
+        "additionalProperties": false,
+        "properties": {
+          "content_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Content Sha256",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "future_campaign",
+              "evidence_request",
+              "abstained"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "proposal": {
+            "$ref": "#/$defs/ArtifactRef"
+          }
+        },
+        "required": [
+          "kind",
+          "proposal",
+          "content_sha256"
+        ],
+        "title": "RetainedProposal",
+        "type": "object"
+      },
+      "ScatterOccurrence": {
+        "additionalProperties": false,
+        "properties": {
+          "index": {
+            "maximum": 9999,
+            "minimum": 0,
+            "title": "Index",
+            "type": "integer"
+          },
+          "kind": {
+            "const": "scatter",
+            "title": "Kind",
+            "type": "string"
+          },
+          "membership_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Membership Sha256",
+            "type": "string"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Node Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "node_id",
+          "index",
+          "membership_sha256"
+        ],
+        "title": "ScatterOccurrence",
+        "type": "object"
+      },
+      "SchemaRef": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Schema Id",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "version": {
+            "const": "1",
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_id",
+          "version",
+          "sha256"
+        ],
+        "title": "SchemaRef",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "project_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Project Id",
+            "type": "string"
+          },
+          "tenant_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Tenant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tenant_id",
+          "project_id"
+        ],
+        "title": "Scope",
+        "type": "object"
+      },
+      "StringConstant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "string",
+            "title": "Kind",
+            "type": "string"
+          },
+          "value": {
+            "maxLength": 4096,
+            "title": "Value",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "value"
+        ],
+        "title": "StringConstant",
+        "type": "object"
+      },
+      "SupervisionRef": {
+        "additionalProperties": false,
+        "properties": {
+          "decision_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Decision Id",
+            "type": "string"
+          },
+          "run_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+            "title": "Run Id",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          }
+        },
+        "required": [
+          "scope",
+          "run_id",
+          "decision_id"
+        ],
+        "title": "SupervisionRef",
+        "type": "object"
+      }
+    },
+    "$id": "urn:amphora:supervision.checkpoint-decision:1:serialization",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "checkpoint_seed_sha256": {
+        "pattern": "^[0-9a-f]{64}$",
+        "title": "Checkpoint Seed Sha256",
+        "type": "string"
+      },
+      "outcome": {
+        "discriminator": {
+          "mapping": {
+            "cancelled": "#/$defs/CheckpointCancelled",
+            "fallback": "#/$defs/CheckpointFallback",
+            "model_accepted": "#/$defs/CheckpointModelAccepted",
+            "pending": "#/$defs/CheckpointPending"
+          },
+          "propertyName": "kind"
+        },
+        "oneOf": [
+          {
+            "$ref": "#/$defs/CheckpointPending"
+          },
+          {
+            "$ref": "#/$defs/CheckpointModelAccepted"
+          },
+          {
+            "$ref": "#/$defs/CheckpointFallback"
+          },
+          {
+            "$ref": "#/$defs/CheckpointCancelled"
+          }
+        ],
+        "title": "Outcome"
+      },
+      "profile": {
+        "const": "checkpoint-decision.v1",
+        "default": "checkpoint-decision.v1",
+        "title": "Profile",
+        "type": "string"
+      },
+      "reference": {
+        "$ref": "#/$defs/SupervisionRef"
+      },
+      "revision": {
+        "maximum": 9007199254740991,
+        "minimum": 1,
+        "title": "Revision",
+        "type": "integer"
+      },
+      "schema_version": {
+        "const": "1",
+        "default": "1",
+        "title": "Schema Version",
+        "type": "string"
+      }
+    },
+    "required": [
+      "reference",
+      "revision",
+      "checkpoint_seed_sha256",
+      "outcome"
+    ],
+    "title": "CheckpointDecision",
+    "type": "object"
+  }
+}

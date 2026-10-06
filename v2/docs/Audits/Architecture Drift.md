@@ -1,10 +1,10 @@
 # Architecture Drift
 
-- Status: BP-06 and BP-07.01/.02/.03/.04 closed/audited; BP-07.05/B1.03 active.
-- Last refreshed: `2026-10-06 03:28:23` (America/Chicago).
+- Status: BP-06 and BP-07.01/.02/.03/.04 closed/audited; BP-07.05/B1 complete; B2 live choices pending.
+- Last refreshed: `2026-10-06 04:39:43` (America/Chicago).
 - Scope: unresolved v2 design/implementation alignment and scoped successor boundaries.
-- Active focus: evaluation and engagement inspection successor; bounded supervisor scope aligned.
-- Next gate: BP-07.05/B1.03 bounded inspection after verified evaluation runner.
+- Active focus: live evaluation after verified evaluation runner and engagement inspector.
+- Next gate: BP-07.05/B2 provider/egress/budget/corpus selection.
 
 ## Active Findings
 

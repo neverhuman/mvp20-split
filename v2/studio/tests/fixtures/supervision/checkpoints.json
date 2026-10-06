@@ -1,0 +1,39 @@
+{
+  "schema_version": "1",
+  "snapshot": {
+    "cut": {
+      "frontier_revision": 2,
+      "plan_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "revision": 3,
+      "run_id": "supervision-run",
+      "scope": {
+        "project_id": "context",
+        "tenant_id": "planning-fixture"
+      }
+    },
+    "epoch": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "snapshot_token": "literal-signed-token"
+  },
+  "total": 1,
+  "items": [
+    {
+      "reference": {
+        "decision_id": "decision-1",
+        "run_id": "supervision-run",
+        "scope": {
+          "project_id": "context",
+          "tenant_id": "planning-fixture"
+        }
+      },
+      "checkpoint_id": "before-evaluate",
+      "targets": [
+        "bb119ce2bca7cb3fd402e12353c2b4b03901fda9b24b797b2f900ef7a5fad485"
+      ],
+      "eligibility_reason": null,
+      "requests": 1,
+      "winner_kind": "fallback",
+      "winner_reason": "checkpoint_provider_unconfigured"
+    }
+  ],
+  "next_cursor": null
+}
