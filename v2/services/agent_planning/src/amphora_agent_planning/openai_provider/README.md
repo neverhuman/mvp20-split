@@ -1,0 +1,11 @@
+# OpenAI provider boundary
+
+Owner: Planning,BP-07.05/B2.01. Explicit injection only; no default network activation. Model is pinned gpt-5.4-mini-2026-03-17,standard Responses endpoint,low reasoning,JSON output mode. Existing OutputProfiles independently validates permitted actions,schemas and references; JSON mode is not scientific or execution acceptance.
+
+PreparedInput binds selected Artifact bytes to exact length/hash,request/model/prompt and a separately versioned conservative UTF8 input allowance. The existing fixture tokenizer remains unchanged. The allowance is a reservation bound,not reported tokenization. Input includes only the reviewed prompt plus exact selected synthetic bodies. No source or URL retrieval is owned here. Callers must supply an authorized content reader; no .env file reader exists in service code.
+
+OpenAIHTTP makes one direct TLS request to api.openai.com with no redirects,proxies or retries.45-second default transport deadline,1MiB response envelope,existing64KiB capture limit. Credentials remain constructor-private and are not persisted/logged. Non200 is unavailable with unknown usage; connection/parse/malformed results remain unknown under existing observe. Refusal/incomplete output is not scientific abstention. Usage prices input/output tokens conservatively without cache discounts; reasoning tokens are already included in output and are not counted twice. USD nanodollar rates are750/4500 per token,reviewed2026-10-06. This is estimated cost,not invoice data.
+
+This adapter owns no issuance,ledger or global retry budget. PlanningRunner must issue the original durable ticket; EvaluationBatch must reserve the complete suite before work. Initial max8192 input/2048 output; total initial run ceiling$1 belongs to frozen suite policy. No native tools,background response,conversation continuation or automatic model fallback. Live EvaluationRunner activation and corpus are B2.02; adapter tests alone cannot authorize it.
+
+Owned tests: tests/openai_provider. Replacement preserves versioned model/input/rates,one-request behavior,redacted errors and original usage. Scientific quality,remote cancellation after process death and provider billing ceilings are not established by local transport tests.

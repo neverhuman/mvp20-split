@@ -1,0 +1,19 @@
+{
+  "timestamp_local": "2026-10-06 08:28:21",
+  "status": "passed",
+  "scope": "B2.01 offline OpenAI request/input/cost/capture boundary",
+  "tests": 80,
+  "seconds": 23.35,
+  "statements": 129,
+  "branches": 18,
+  "coverage_percent": 99,
+  "uncovered": "Non-dict usage record branch; missing/invalid fields covered",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "initial_estimated_budget_usd": "1.00",
+  "paid_calls": 0,
+  "limits": [
+    "Injected HTTP failures only; no live model or remote absolute cancellation proof",
+    "Conservative UTF8 reservation is not actual model tokenization"
+  ],
+  "raw_evidence": "v2/.test-results/openai-provider-coverage.json"
+}
