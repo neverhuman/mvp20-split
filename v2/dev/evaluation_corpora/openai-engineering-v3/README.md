@@ -1,0 +1,3 @@
+# Contract clarification validation set
+
+Frozen before v3 live calls. New invented entity pairs and reworded campaign scenarios; same independent rubric and twelve planned repetitions. Prompt explicitly distinguishes quotation objects from strings and absent typed Research references from free prose. This is a fresh template-level validation set after prompt repair, not an independently curated broad held-out corpus. No scientific-validity claim. Adapter v2 retained; output ceiling 2048. All three full reservations sum to $0.995328 under the original $1 cap; original failures remain unchanged.

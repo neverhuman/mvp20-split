@@ -61,14 +61,12 @@ def execute(output, key_file, *, read_only=False, maximum_steps=12, resume_after
     # Read-only report needs no secret and cannot send requests.
     transport = None if read_only else OpenAIHTTP(credential(key_file))
     # Both immutable versions share the SAME initial budget; neither refunds the other.
-    bundles = [ROOT]
-    corrected = ROOT.with_name("openai-engineering-v2")
-    if corrected.exists():
-        bundles.append(corrected)
+    bundles = [ROOT.with_name("openai-engineering-" + name) for name in ("v1", "v2", "v3")
+               if ROOT.with_name("openai-engineering-" + name).exists()]
     frozen = [load_bundle(None, root) for root in bundles]
     if sum(item[2].accounting_units for item in frozen) > 1000000000:
         raise ValueError("initial_evaluation_group_budget")
-    principal, protocol, batch, provider = load_bundle(transport, ROOT if profile == "v1" else corrected)
+    principal, protocol, batch, provider = load_bundle(transport, ROOT.with_name("openai-engineering-" + profile))
     state = owned_state()
     host, port = state['endpoint'].split(':')
     url = URL.create('postgresql+psycopg', username='planning_service', password=state['password'],
@@ -113,6 +111,6 @@ if __name__ == '__main__':
     parser.add_argument('--execute', action='store_true')
     parser.add_argument('--maximum-steps', type=int, choices=range(1, 13), default=12)
     parser.add_argument('--resume-after-unavailable', action='store_true')
-    parser.add_argument("--profile", choices=["v1", "v2"], default="v1")
+    parser.add_argument("--profile", choices=["v1", "v2", "v3"], default="v1")
     args = parser.parse_args()
     execute(args.output.absolute(), args.key_file, read_only=not args.execute, maximum_steps=args.maximum_steps, resume_after_unavailable=args.resume_after_unavailable, profile=args.profile)

@@ -2,16 +2,16 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-07.04 complete; BP-07.05/B2.03 original measured live adapter active.
+- Status: primary_active; BP-07.04 complete; BP-07.05/B3 contract clarification/live acceptance active.
 - Last refreshed: `2026-10-06 08:49:02` (America/Chicago).
 - Owner/scope: Agent Planning plus runtime-owned engagement and decision modules.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-03 discovery, BP-04 runner, BP-05 UI and BP-06 source/knowledge receipts.
-- Implementation: **87.5%** scoped;17/20 closed deliveries. BP-07.01/.02/.03/.04 complete; BP-07.04=100%; BP-07.05=37.5%. Each child is counted once.
+- Implementation: **90%** scoped;18/20 closed deliveries. BP-07.01/.02/.03/.04 complete; BP-07.04=100%; BP-07.05=50%. Each child is counted once.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-07.05/B2.03 original measured live transport/input/accounting.
+- Current implementation task: BP-07.05/B3 contract clarification/live acceptance on fresh synthetic v3 inputs.
 - Demonstrated behavior: BP-07.01/.02 accepted immutable context/provider/budget and attributed text-decomposition boundaries, current-rights publication, bounded repair and actual Research/Knowledge handoff with replacement recovery. BP-07.03 adds bounded campaign context, semantic proposal policy and durable compiler handoff with actual-owner crash/rights and replacement proof. BP-07.04 adds bounded autonomous Runtime supervision, actual owner replacement and authoritative outcome reads. Live model quality remains subsequent.
-- Blockers: Owner delegated model/cost choice; pinned GPT-5.4 mini,synthetic-only inputs,$1 initial ceiling. Two original calls unavailable; HTTP400/input on diagnostic. Versioned JSON framing verified; corrected suite pending, combined reservation $0.73728/$1.
+- Blockers: Owner delegated model/cost choice; pinned GPT-5.4 mini,synthetic-only inputs,$1 initial ceiling. No external blocker. v2 live gate failed4/12; prompt shape repair active under original $1 cap, all versions reserve $0.995328.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
 
@@ -34,7 +34,7 @@ Primary services retain private state, dependencies, migrations and module READM
 | P2 / [BP-07.02 Reliable text decomposition](BP-07/Completed/BP-07.02%20Reliable%20text%20decomposition.md) | 100% | 100% | 100% | BP-07.01 acceptance |
 | P3 / [BP-07.03 Campaign proposals and context](BP-07/Completed/BP-07.03%20Campaign%20proposals%20and%20context.md) | 100% | 100% | 100% | BP-07.02 acceptance |
 | P4 / [BP-07.04 Durable supervisor and races](BP-07/Completed/BP-07.04%20Durable%20supervisor%20and%20races.md) | 100% | 100% | 100% | BP-07.03 acceptance |
-| P5 / [BP-07.05 Live evaluation and closeout](BP-07/BP-07.05%20Live%20evaluation%20and%20closeout.md) | 37.5% | 50% | 0% | BP-07.04 acceptance |
+| P5 / [BP-07.05 Live evaluation and closeout](BP-07/BP-07.05%20Live%20evaluation%20and%20closeout.md) | 50% | 50% | 0% | BP-07.04 acceptance |
 
 Each linked child is the execution tracker for its scope. Build tasks name concrete implementation; acceptance requires independent evidence and a scoped drift audit. Do not repeat the historical task pairs as a second work list. No dependent child starts before its predecessor acceptance gate; independent design review does not activate implementation.
 

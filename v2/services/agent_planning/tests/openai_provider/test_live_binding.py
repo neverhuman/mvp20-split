@@ -83,3 +83,17 @@ def test_versioned_json_framing_preserves_original_frozen_packets():
     assert old_batch.accounting_units + new_batch.accounting_units == 737280000
     assert all(json.loads(p.body)["input"][0]["content"].startswith("Return JSON only.\n") for p in new.prepared.values())
     assert all(not json.loads(p.body)["input"][0]["content"].startswith("Return JSON only.") for p in old.prepared.values())
+
+
+def test_repair_validation_corpus_is_fresh_and_fits_original_group_budget():
+    from openai_evaluation_bundle import ROOT
+    bundles = [load_bundle(None, ROOT.with_name("openai-engineering-" + version)) for version in ("v1", "v2", "v3")]
+    assert sum(bundle[2].accounting_units for bundle in bundles) == 995328000
+    prior, fresh = bundles[1], bundles[2]
+    assert prior[1].sha256 != fresh[1].sha256
+    assert len(fresh[2].tasks) == 12
+    for packet in fresh[3].prepared.values():
+        body = json.loads(packet.body)
+        assert body["max_output_tokens"] == 2048
+        assert "JSON OBJECTS, never strings" in body["instructions"]
+    assert {task.request.sha256 for task in prior[2].tasks}.isdisjoint({task.request.sha256 for task in fresh[2].tasks})
