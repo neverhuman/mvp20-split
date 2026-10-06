@@ -1,0 +1,32 @@
+{
+  "checkpoint": "2026-10-06 00:44:37",
+  "task": "BP-07.04/B2.03c.ii.3b",
+  "runtime": "0.55/runtime0028",
+  "verification": [
+    "22passed2fixturefailures32.12s",
+    "52passed58.69s",
+    "22passed32.90s"
+  ],
+  "fixture_repair": "Use admitted scalar checkpoint, not Invoke, for scalar proposal tests",
+  "coverage": {
+    "winner_statements": 225,
+    "winner_branches": 26,
+    "winner_percent": 100,
+    "resolution_statements": 131,
+    "resolution_branches": 34,
+    "resolution_percent": 96
+  },
+  "proof": [
+    "actualRuntimeSQL",
+    "scriptedArtifact/publicresponse",
+    "atomicdisposition+winner rollback",
+    "late/superseded directwinner fences",
+    "actualreservedquota fallback"
+  ],
+  "remaining": [
+    "guardedrepairbridge",
+    "ownerscheduling",
+    "processproofB3",
+    "installedintegrationV1"
+  ]
+}

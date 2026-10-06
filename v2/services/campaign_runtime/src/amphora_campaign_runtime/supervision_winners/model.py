@@ -9,10 +9,12 @@ from amphora_contracts_supervision import (
     EffectiveFieldChange,
     RetainedProposal,
 )
+from sqlalchemy import text
 
 from ..supervision_checkpoints.values import ValueCheckpointSeed
 from ..supervision_effects.proposal import select_fields
 from ..supervision_journal.current import verify_current
+from ..supervision_outcomes.reports import ReportJournal
 from ..supervision_responses.capture import proposal_from_capture
 from ..supervision_scope.observations import require
 
@@ -33,6 +35,13 @@ class ModelWinner:
                 request.checkpoint_id == rule.checkpoint_id and request.reference.scope == seed.footprint().cut.scope and
                 request.reference.run_id == seed.footprint().cut.run_id, 'winner_request_slot')
         require(request.policy.sha256 == seed.policy.sha256, 'winner_request_policy')
+        latest = conn.execute(text('SELECT max(ordinal) FROM runtime.supervision_requests WHERE '
+            'tenant_id=:tenant AND project_id=:project AND run_id=:run AND decision_id=:decision'), params).scalar_one()
+        require(request.lineage.ordinal == latest, 'winner_request_superseded')
+        report_params = {**params, 'request': frame.request_sha256}
+        stored_report = ReportJournal.load(conn, report_params, ReportJournal.source(conn, report_params))
+        if stored_report is not None:
+            stored_report.report.require_response(response.bound.document())
         require(request.lineage.ordinal <= rule.max_requests and original.context.limits.max_attempts <= rule.max_model_calls,
                 'winner_request_ceiling')
         require(request.deadline_unix_ms <= int(slot.deadline.timestamp() * 1000), 'winner_request_deadline')

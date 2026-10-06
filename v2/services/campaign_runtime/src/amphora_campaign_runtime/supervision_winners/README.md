@@ -1,5 +1,7 @@
 # Checkpoint winner owner
 
+Runtime0.55: resolve_locked composes the same owner transaction for supervision_resolution; public resolve still authorizes scope/action first. ModelWinner additionally rejects superseded request ordinals and checks the exact primary observation hash when Runtime retains a Planning execution report. Original committed winners replay first. Reported stops/repair exhaustion now select pinned fallback through supervision_resolution in the same transaction as immutable disposition evidence.52combined+22final cases;winner225statements26branches100%. Existing public decision profiles remain unchanged.
+
 Owner: BP-07.04/B2.02c.i. Winner transaction and review release verified; effective conversion integration verified.
 
 `WinnerStore.resolve(principal, SupervisionRef, response_id=None)` requires `supervise_accept` and exact principal scope. It acquires the existing run lock, reconstructs the original admitted checkpoint/policy, and returns a stored winner before checking later state. A terminal run records cancellation; a database-clock deadline or original eligibility exhaustion selects the pinned fallback. Otherwise no response returns pending (`None`); a response must already exist in Runtime's immutable response journal. No model callback, peer SQL or provider/Data network call occurs here.

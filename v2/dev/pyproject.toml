@@ -16,7 +16,7 @@ dependencies = [
     "amphora-research==0.34.0",
     "amphora-contracts-tools==0.1.0",
     "amphora-contracts-campaigns==0.4.1",
-    "amphora-campaign-runtime==0.54.0",
+    "amphora-campaign-runtime==0.55.0",
     "pytest>=8,<9",
     "jsonschema[format-nongpl]>=4.23,<5",
     "httpx>=0.28,<1",

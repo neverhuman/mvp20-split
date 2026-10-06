@@ -9,10 +9,10 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-06 closed100%; BP-07 implementing approved B2 checkpoint correction; BP-08/09 queued.
-- Last refreshed: `2026-10-06 00:33:01` (America/Chicago).
+- Last refreshed: `2026-10-06 00:44:37` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P6 / BP-07 - Autonomous LLM Campaign Supervision.
-- Primary active task: BP-07.04/B2.03c.ii.3b Runtime report persistence and disposition.
+- Primary active task: BP-07.04/B2.03c.ii.3c guarded preparation, repair feedback and fallback bridge.
 - Next task: BP-07.04/B2.03c.iii combined autonomous integration.
 - Implementation completion: BP-07=69.75%,13/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
 - Active focus: B1 verified and pushed; approved scalar target correction in implementation.
@@ -32,15 +32,15 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-07.01/.02/.03 are closed100%. BP-07.04 is primary active at B2.03c; implementation48.73%,Build64.97%,Acceptance0%.
+BP-07.01/.02/.03 are closed100%. BP-07.04 is primary active at B2.03c; implementation48.77%,Build65.02%,Acceptance0%.
 
 | Parent | Overall | P1 | P2 | P3 | P4 | P5 |
 |---|---:|---:|---:|---:|---:|---:|
-| BP-07 | 69.75% | 100% | 100% | 100% | 48.73% | 0% |
+| BP-07 | 69.75% | 100% | 100% | 100% | 48.77% | 0% |
 
 | Active child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
-| [BP-07.04](BP-07/BP-07.04%20Durable%20supervisor%20and%20races.md) | 48.73% | 64.97% | 0% | B2.03c |
+| [BP-07.04](BP-07/BP-07.04%20Durable%20supervisor%20and%20races.md) | 48.77% | 65.02% | 0% | B2.03c |
 
  BP-06 is [closed100%](Completed/BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md); completed parents are in the [archive](Completed/README.md).
 
@@ -48,7 +48,7 @@ BP-07.01/.02/.03 are closed100%. BP-07.04 is primary active at B2.03c; implement
 
 | Canonical plan | Status | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-07 Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | Active | 69.75% | 100% | 100% | 100% | 48.73% | 0% | N/A |
+| [BP-07 Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | Active | 69.75% | 100% | 100% | 100% | 48.77% | 0% | N/A |
 | [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 | [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 
@@ -126,6 +126,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-06 00:44:37 | BP-07.04/B2.03c.ii.3b complete | Runtime0.55/0028;52combined+22final;winner100%,resolution96%;next guarded repair bridge. |
 | 2026-10-06 00:33:01 | BP-07.04/B2.03c.ii.3b report persistence | Runtime0.54/0027;39tests;118statements/10branches100%;next disposition/winner integration. |
 | 2026-10-06 00:24:15 | BP-07.04/B2.03c.ii.2 complete | Planning0.86/0018 completion fence;114 final tests;journal100%;next Runtime consumption. |
 | 2026-10-06 00:16:50 | BP-07.04/B2.03c.ii.1 complete | Execution report contract/projection;127cases;43statements/6branches100%;546schemas/544unchanged. |
@@ -150,6 +151,5 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-05 20:49:33 | BP-07.04/B2.01c complete |111 coordinator/70 scalar/18 legacy cases;child31.25%,parent66.25%;next independent verification. |
 | 2026-10-05 20:41:28 | BP-07.04/B2.01c.iii.b verified |146 SQL/12 boundary cases;runtime0023;child31.02%,parent66.20%;next coordinator creation. |
 | 2026-10-05 20:36:30 | BP-07.04/B2.01c.iii.a verified |84 cases;68 new statements100%;child30.79%,parent66.16%;next slot storage. |
-| 2026-10-05 20:32:40 | BP-07.04/B2.01c.ii complete |80 scoped/22 compatibility cases;child30.56%,parent66.11%;next concrete checkpoints. |
 
 Keep at most25 checkpoint rows. Update the owning plan, this mirror and Restore before commits.

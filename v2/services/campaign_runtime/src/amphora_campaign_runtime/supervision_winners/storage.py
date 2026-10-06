@@ -127,37 +127,39 @@ class WinnerStore:
         principal.require('supervise_accept')
         params = self.params(principal, reference)
 
-        def transaction(conn):
-            run = self.leases._run(conn, params)
-            slot = slot_for(conn, params)
-            previous = self.load(conn, params, slot)
-            if previous is not None:
-                return previous
-            selection = None
-            selected_response = None
-            if run['status'] != 'running':
-                outcome = CheckpointCancelled(kind='cancelled', reason_code='run_' + run['status'])
-            else:
-                current = current_seed(conn, params, run, slot)
-                now = conn.execute(text('SELECT clock_timestamp()')).scalar_one()
-                reason = slot.reason_code or ('checkpoint_deadline_exhausted' if now >= slot.deadline else None)
-                if reason:
-                    rule = next(item for item in slot.seed.policy.document().checkpoints
-                                if item.checkpoint_id == slot.seed.document().checkpoint_id)
-                    outcome = CheckpointFallback(kind='fallback', action=rule.fallback, reason_code=reason)
-                elif response_id is None:
-                    return None
-                else:
-                    row = conn.execute(text(RESPONSES + ' AND s.response_id=:response AND s.run_id=:run '
-                        'AND s.decision_id=:decision'), {**params, 'response': response_id}).mappings().one_or_none()
-                    require(row is not None, 'winner_response_missing')
-                    response = StoredResponse.from_row(row)
-                    candidate = ModelWinner.bind(conn, params, run, slot, current,
-                        read_frame(bytes(row['canonical_frame'])), response)
-                    outcome, selection, selected_response = candidate.outcome, candidate.selection, response_id
-            return self._commit(conn, params, run, slot, reference, outcome, selection, selected_response)
+        return self.leases.commands.transact(lambda conn: self.resolve_locked(
+            conn, params, reference, response_id=response_id))
 
-        return self.leases.commands.transact(transaction)
+    def resolve_locked(self, conn, params, reference, *, response_id=None):
+        """Owned transaction composition; caller must authorize the original principal."""
+        run = self.leases._run(conn, params)
+        slot = slot_for(conn, params)
+        previous = self.load(conn, params, slot)
+        if previous is not None:
+            return previous
+        selection = None
+        selected_response = None
+        if run['status'] != 'running':
+            outcome = CheckpointCancelled(kind='cancelled', reason_code='run_' + run['status'])
+        else:
+            current = current_seed(conn, params, run, slot)
+            now = conn.execute(text('SELECT clock_timestamp()')).scalar_one()
+            reason = slot.reason_code or ('checkpoint_deadline_exhausted' if now >= slot.deadline else None)
+            if reason:
+                rule = next(item for item in slot.seed.policy.document().checkpoints
+                            if item.checkpoint_id == slot.seed.document().checkpoint_id)
+                outcome = CheckpointFallback(kind='fallback', action=rule.fallback, reason_code=reason)
+            elif response_id is None:
+                return None
+            else:
+                row = conn.execute(text(RESPONSES + ' AND s.response_id=:response AND s.run_id=:run '
+                    'AND s.decision_id=:decision'), {**params, 'response': response_id}).mappings().one_or_none()
+                require(row is not None, 'winner_response_missing')
+                response = StoredResponse.from_row(row)
+                candidate = ModelWinner.bind(conn, params, run, slot, current,
+                    read_frame(bytes(row['canonical_frame'])), response)
+                outcome, selection, selected_response = candidate.outcome, candidate.selection, response_id
+        return self._commit(conn, params, run, slot, reference, outcome, selection, selected_response)
 
     def _commit(self, conn, params, run, slot, reference, outcome, selection, response_id):
         document = CheckpointDecision(reference=reference, revision=run['revision'] + 1,
