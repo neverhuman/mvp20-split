@@ -8,13 +8,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-06 closed100%; BP-07.04 closed100%; BP-07.05 activation next; BP-08/09 queued.
-- Last refreshed: `2026-10-06 03:24:26` (America/Chicago).
+- Status: BP-06 closed100%; BP-07.04 closed100%; BP-07.05/B1.02 active; BP-08/09 queued.
+- Last refreshed: `2026-10-06 03:34:04` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P6 / BP-07 - Autonomous LLM Campaign Supervision.
-- Primary active task: BP-07.05 activation.
-- Next task: BP-07.05/B1 deterministic evaluation harness and inspection.
-- Implementation completion: BP-07=80%,16/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
+- Primary active task: BP-07.05/B1.02 durable evaluation runner.
+- Next task: BP-07.05/B1.03 owner inspection projections.
+- Implementation completion: BP-07=81.25%,16/20 closed gates; BP-08/09=0%. BP-06 closed24/24.
 - Active focus: supervisor scoped audit aligned; evaluation/inspection successor.
 - Blockers: none for deterministic implementation. Approved B2.01 correction: scalar adjustments must reconcile Artifact-only Invoke inputs; see [scalar checkpoint decision](BP-07/BP-07.04%20Scalar%20checkpoint%20decision.md). Live provider/model, egress and spend choices separately govern real calls.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
@@ -32,14 +32,15 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-07.01/.02/.03/.04 are closed100%. BP-07.05 activation is next; implementation0%,Build0%,Acceptance0%.
+BP-07.01/.02/.03/.04 are closed100%. BP-07.05/B1.02 is active; implementation6.25%,Build8.33%,Acceptance0%.
 
 | Parent | Overall | P1 | P2 | P3 | P4 | P5 |
 |---|---:|---:|---:|---:|---:|---:|
-| BP-07 | 80% | 100% | 100% | 100% | 100% | 0% |
+| BP-07 | 81.25% | 100% | 100% | 100% | 100% | 6.25% |
 
 | Active child | Overall | Build | Acceptance | Current task |
 |---|---:|---:|---:|---|
+| [BP-07.05](BP-07/BP-07.05%20Live%20evaluation%20and%20closeout.md) | 6.25% | 8.33% | 0% | B1.02 |
 
  BP-06 is [closed100%](Completed/BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md); completed parents are in the [archive](Completed/README.md).
 
@@ -125,6 +126,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-06 03:34:04 | BP-07.05/B1.01 verified | Planning0.90;29pure/12boundary tests;210statements58branches100%;child6.25%,parent81.25%. |
 | 2026-10-06 03:24:26 | BP-07.04 closed100% | Scoped audit aligned; public decision read40tests/4isolatedreads; captureworkflow13tests; parent80%,16/20. |
 | 2026-10-06 02:59:17 | V1.01 installed replacement complete; child87.5%,Acceptance50%,parent77.5%. | 3scenarios/18hostprocesses; exact history preserved; V1.02 audit active. |
 | 2026-10-06 02:39:47 | V1.01a isolated installations verified; child81.25%,Acceptance25%,parent76.25%. | Runtime394checks each; Planning240each;548schemas/546predecessors. Actualreplacement remains. |
@@ -149,4 +151,3 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-05 22:56:16 | BP-07.04/B2.03b.i verified | Planning0.80 acyclic template/exact context;72tests131statements4branches100%;original ledger policy bytes unchanged. |
 | 2026-10-05 22:47:15 | BP-07.04/B2.03a complete | Actual Data publication,7processing reads,restart;94scoped+11commit-race checks;next Planning execution. |
 | 2026-10-05 22:32:48 | BP-07.04 context projection verified | 109 contract/context/schema/boundary cases;115 context statements4branches100%;544schemas preserve542;actual publication bridge next. |
-| 2026-10-05 22:22:33 | BP-07.04/B2.03a.ii complete | Runtime0.48/runtime0026 atomic request/outbox/call reservation;155 regression+61 refined checks;next actual context preparation. |

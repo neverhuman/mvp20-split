@@ -4,9 +4,11 @@ Read FIRST after compression. Refreshed 2026-10-06 03:25:12 (America/Chicago).
 
 ## Current task
 
-Continue-until-needed remains authorized across commits/pushes/compaction. BP-07.04 completed100%,Build100%,Acceptance100%,4/4; archived canonical tracker under docs/Build Plans/BP-07/Completed. Parent80%,16/20; BP-07.05 queued0%. Scoped closeout audit docs/Audits/BP-07.04_Supervisor_Closeout.md. Next: finish closeout diff/lint/link review, commit/push, then activate BP-07.05 via bounded coherence audit and implement its deterministic B1 harness/inspection. Do NOT stop at commit or ask provider choice prematurely. Provider/model/egress/spend/corpus only block live B2 execution; independent B1 remains authorized.
+Refreshed 2026-10-06 03:34:04. Latest pushed76ce0a0b BP-07.04closed. BP-07.05/B1.01 protocol/scorer now verified; changes uncommitted. Child6.25%,Build8.33%,Acceptance0%;parent81.25%,16/20closed.29 pure evaluation tests+12boundary passed12.73s;210statements58branches100%. Planning0.90 private evaluation files, no public schema/DDL change. Evidence docs/Audits/Evidence/BP-07-Evaluation/Protocol_Scoring.json.
 
-No tests running. Latest pushed e9362af5; closeout changes uncommitted. Runtime0.60/runtime0028 (new scoped GET /v1/supervision/decisions/{run_id}/{decision_id}),Planning0.89/planning0018,Data0.29/artifacts0012. No public schema or DDL changes:548 published/546 predecessor pins. NEVER older migrators.
+No tests running. Next finish lint/diff then commit/push this bounded B1.01 checkpoint and immediately continue B1.02 durable evaluation runner. Read BP-07.05 Physical design/canonical tracker. EvaluationProtocol and EvaluationScorer in Planning evaluation module are pure; B1.02 must use PlanningRunner/owned journal for physical calls, not a new unaccounted provider caller. Need design exact durable suite/attempt history and conservative shared budget before code; current Planning0018, no migration yet. Core labels are independent JSON-pointer exact assertions over validated structured output, not general scientific entailment. Model inputs expose only original case/input digest, no labels.
+
+Runtime0.60/runtime0028,Planning0.90/planning0018,Data0.29/artifacts0012.548publicschemas/546predecessorpins. Continue-until-needed across milestones/compaction. B1.03 owner inspection and B1.04 Studio remain authorized before owner live B2 choices. No subagents/JARVIS/v1 edits/old migrators.
 
 ## Verified closeout
 

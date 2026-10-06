@@ -1,0 +1,26 @@
+{
+  "timestamp_local": "2026-10-06 03:34:04",
+  "scope": "Planning0.90 private evaluation profile1; pure synthetic rubric, not provider/scientific acceptance",
+  "tests": {
+    "evaluation": 29,
+    "boundaries": 12,
+    "combined_seconds": 12.73
+  },
+  "coverage": {
+    "covered_lines": 210,
+    "num_statements": 210,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100",
+    "num_branches": 58,
+    "num_partial_branches": 0,
+    "covered_branches": 58,
+    "missing_branches": 0,
+    "percent_branches_covered": 100.0,
+    "percent_branches_covered_display": "100"
+  },
+  "remaining": "B1.02 durable runner; B1.03 owner projections; B1.04 Studio; B2/B3 actual provider and corpus choices"
+}
