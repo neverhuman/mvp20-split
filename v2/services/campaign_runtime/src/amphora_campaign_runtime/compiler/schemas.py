@@ -78,7 +78,12 @@ class PinnedSchema:
             seen.add(id(node))
             if "format" in node:
                 formats.add(node["format"])
-            require(not any(key in node for key in ("$id", "$dynamicRef", "$dynamicAnchor", "$anchor")),
+            # Public exports carry an identity-only root URN. Nested resource scopes
+            # and all nonlocal references remain forbidden; exact bytes stay pinned.
+            require("$id" not in node or (node is document and
+                    node["$id"] == f"urn:amphora:{identity.name}:{identity.version}:validation"),
+                    "unsupported_schema_reference", location)
+            require(not any(key in node for key in ("$dynamicRef", "$dynamicAnchor", "$anchor")),
                     "unsupported_schema_reference", location)
             require(node.get("$schema", "https://json-schema.org/draft/2020-12/schema") == "https://json-schema.org/draft/2020-12/schema",
                     "unsupported_schema_dialect", location)

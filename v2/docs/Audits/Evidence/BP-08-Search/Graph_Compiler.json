@@ -1,0 +1,31 @@
+{
+  "checkpoint": "2026-10-06 11:34:01",
+  "scope": "BP-08.02/B1.03",
+  "runtime": "0.63.0",
+  "compiler_tests": 149,
+  "compiler_seconds": 3.8,
+  "graph_compilation_tests": 14,
+  "graph_seconds": 23.41,
+  "boundary_tests": 12,
+  "boundary_seconds": 8.97,
+  "schema_coverage": {
+    "statements": 156,
+    "missed": 4,
+    "branches": 42,
+    "partial": 2,
+    "percent": 97,
+    "uncovered": "format collection and existing validation defensive paths"
+  },
+  "claims": [
+    "Public CLI schemas/descriptors compile without altered bytes",
+    "Exact canonical root URN only; nested IDs and external references rejected",
+    "Explicit policy input and loop captures; all-terminal scatter; phase stop and blocked exhausted graph limit",
+    "Existing compiler identity fixtures unchanged"
+  ],
+  "not_proven": [
+    "Persisted numeric generations",
+    "Actual tool worker HTTP or image execution",
+    "Crash/replacement equivalence",
+    "Scientific applicability"
+  ]
+}

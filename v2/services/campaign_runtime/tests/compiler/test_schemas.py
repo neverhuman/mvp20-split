@@ -5,7 +5,12 @@ import json
 from dataclasses import FrozenInstanceError
 
 import pytest
-from amphora_campaign_runtime.compiler import CompilationError, PinnedSchema, SchemaCatalog, SchemaIdentity
+from amphora_campaign_runtime.compiler import (
+    CompilationError,
+    PinnedSchema,
+    SchemaCatalog,
+    SchemaIdentity,
+)
 from amphora_campaign_runtime.compiler.shapes import ScalarShape
 
 
@@ -78,3 +83,30 @@ def test_deep_annotation_does_not_escape_bounded_schema_errors():
     body = b'{"examples":' + b'[' * 600 + b'0' + b']' * 600 + b'}'
     with pytest.raises(CompilationError, match="schema_complexity_limit|invalid_schema_document"):
         pinned(body)
+
+
+def test_canonical_root_identity_preserves_bytes_and_local_validation():
+    document = {"$id": "urn:amphora:test.schema:1:validation", "type": "object",
+                "properties": {"n": {"$ref": "#/$defs/n"}}, "required": ["n"],
+                "$defs": {"n": {"type": "integer", "minimum": 0}}}
+    body = json.dumps(document).encode()
+    schema = pinned(body)
+    assert schema.source_bytes == body
+    assert schema.project(("n",), "1", "test") == ScalarShape("integer", "1")
+    schema.validate({"n": 2})
+    from amphora_campaign_runtime.lifecycle.model import TransitionError
+    with pytest.raises(TransitionError, match="binding_schema_invalid"):
+        schema.validate({"n": -1})
+
+
+@pytest.mark.parametrize("document", [
+    {"$id": "urn:amphora:another.schema:1:validation"},
+    {"$id": "urn:amphora:test.schema:2:validation"},
+    {"$id": "urn:amphora:test.schema:1:serialization"},
+    {"type": "object", "properties": {"n": {"$id": "urn:amphora:test.schema:1:validation"}}},
+    {"$id": "urn:amphora:test.schema:1:validation", "$ref": "https://example.invalid/schema"},
+    {"$id": "urn:amphora:test.schema:1:validation", "$anchor": "local"},
+])
+def test_root_identity_does_not_enable_resource_scope_or_external_resolution(document):
+    with pytest.raises(CompilationError, match="unsupported_schema_reference|external_schema_reference"):
+        pinned(document)
