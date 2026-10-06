@@ -15,7 +15,10 @@ from amphora_agent_planning.supervision_client import (
     ExchangeWindow,
     RuntimeClient,
 )
-from amphora_contracts_supervision import parse_supervision_command
+from amphora_contracts_supervision import (
+    parse_checkpoint_command,
+    parse_supervision_command,
+)
 from sqlalchemy import create_engine, text
 
 STATE = Path(os.environ['SUPERVISOR_OWNER_STATE'])
@@ -28,7 +31,7 @@ def write(path, value):
 
 
 def test_owner_stage():
-    assert importlib.metadata.version('amphora-agent-planning') == '0.72.0'
+    assert importlib.metadata.version('amphora-agent-planning') == '0.75.0'
     import amphora_agent_planning
     assert Path(amphora_agent_planning.__file__).absolute().is_relative_to(Path(sys.prefix).absolute())
     assert all(importlib.util.find_spec(name) is None for name in
@@ -83,7 +86,7 @@ def test_owner_stage():
             rows = conn.execute(text('SELECT canonical_request,recorded_at FROM planning.supervision_requests '
                 'WHERE tenant_id=:tenant AND project_id=:project'), params).all()
             assert len(rows) == 1
-            original = parse_supervision_command('planning.supervision.request', base64.b64decode(data['outgoing']))
+            original = parse_checkpoint_command(base64.b64decode(data['outgoing']))
             assert json.loads(bytes(rows[0][0])) == json.loads(original.canonical_bytes)['payload']
             created = rows[0][1].isoformat()
     finally:

@@ -32,7 +32,7 @@ def verify(output, installation, data_python):
     output, installation, data_python = output.absolute(), installation.absolute(), data_python.absolute()
     proof = json.loads((installation / 'manifest.json').read_bytes())
     assert proof['status'] == 'passed'
-    assert proof['owners']['runtime']['version'] == '0.29.0' and proof['owners']['planning']['version'] == '0.72.0'
+    assert proof['owners']['runtime']['version'] == '0.33.0' and proof['owners']['planning']['version'] == '0.75.0'
     output.mkdir(parents=True, exist_ok=False)
     tests = output / 'root'
     shutil.copytree(installation / 'root', tests, ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
@@ -151,7 +151,7 @@ def verify(output, installation, data_python):
         write(output / 'runtime.json', runtime_config)
         start('planning')
         start('runtime')
-        proxies['planning'] = LostReplyProxy(owners['planning'].endpoint, '/v1/supervision/requests')
+        proxies['planning'] = LostReplyProxy(owners['planning'].endpoint, '/v2/supervision/requests')
         proxies['runtime'] = LostReplyProxy(owners['runtime'].endpoint, '/v1/supervision/responses')
         stage('runtime', 'send_request', endpoint=proxies['planning'].endpoint)
         request = stage('runtime', 'recover_request', 'replacement', proxies['planning'].endpoint)

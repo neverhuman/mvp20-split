@@ -1,6 +1,6 @@
 # Runtime-owned Planning client
 
-Runtime0.33 adds CheckpointPlanningClient with the explicit v2 command family, CheckpointRequest model and /v2 routes. Original PlanningClient stays v1-only and rejects new commands before network I/O. Both share the existing bounded transport; no automatic repost, version fallback or provider call. Owned socket tests prove exact three-call submit/receipt/readback and lost-v2-reply recovery; client34 statements100%. Full API/client gate45 cases passed. Actual installed v2 owner exchange remains B2.01b.iv.
+Runtime0.33 adds CheckpointPlanningClient with the explicit v2 command family, CheckpointRequest model and /v2 routes. Original PlanningClient stays v1-only and rejects new commands before network I/O. Both share the existing bounded transport; no automatic repost, version fallback or provider call. Owned socket tests prove exact three-call submit/receipt/readback and lost-v2-reply recovery; client34 statements100%. Full API/client gate45 cases passed. Actual installed v2 owner exchange passed B2.01b.iv; evidence below.
 
 - Current integration: B1.04d actual installed owner/restart proof passed; autonomous orchestration and decision effects remain B2.
 
@@ -18,3 +18,6 @@ Tests/supervision_client uses actual loopback HTTP peers for exact wire/auth/rou
 
 
 B1.04d actual-owner proof verified 2026-10-05 16:32:49: independently installed Runtime0.29/Planning0.72/Data0.29;11 process stages,6 owner hosts,2 commit-before-reply-drop losses. Exact original receipts/readbacks and Runtime capture/commit timestamps survive replacement; current Data process withdrawal blocks fresh response while original receipt replay remains available; explicit regrant permits new submission. Cancellation remains history and Planning attempts remain zero. Probe cleanup closes hosts/proxies and cancels only its unique run. Evidence: docs/Audits/Evidence/BP-07-Supervisor/Actual_Owners.json. Autonomous delivery/decision winners remain B2.
+
+
+B2.01b.iv installed verification: both profiles remain compatible in four isolated owners668 cases; actual v2 materialization request, two commit-before-reply losses, six owner hosts and replacement/rights replay passed. Checkpoint_Owners.json owns evidence. No automatic graph checkpoint or winner yet.

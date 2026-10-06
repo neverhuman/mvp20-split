@@ -852,3 +852,8 @@ Runtime0.32/runtime0021 andPlanning0.74/planning0016 preserve original frames/re
 ## 2026-10-05 19:53:26 ? B2.01b.iii transport verified
 
 Runtime0.33/Planning0.75 explicit v2 client/HTTP preserves original routes and receipt-first recovery.45 combined cases21.59s;24 owned API cases19.20s with filesystem coverage(app96%,module87%);client34 statements100%. Dotted-leaf coverage twice failed inside SQLAlchemy initialization; identical tests passed without coverage and with filesystem source selection. No production/dependency workaround. b.i/ii/iii100%,iv0% =>b75%;B2.01=43.75%,B2=14.58%;child28.65%,Build38.19%,Acceptance0%;parent65.73%,13/20. Next installed v2 original/replacement exchange.
+
+
+## 2026-10-05 20:04:57 ? B2.01b complete
+
+Four current installed owners668 cases(233 Runtime each,101 Planning each),40/30 historical migration files unchanged,536 schemas/528 predecessors. Actual v2 materialization request11 stages/6 hosts/2 lost replies; original receipts/captures/cancellation recover across replacement and Data rights withdrawal/regrant. All12 owned launcher/server PIDs gone; scoped run cleanup verified.12 boundary9.94s,Ruff passed. b100%;B2.01=50%,B2=16.67%;child29.17%,Build38.89%,Acceptance0%;parent65.83%,13/20. Next c policy/eligibility,admission pinning,coordinator holds (three equal units),then d SQL fencing. No execution-winner claim.

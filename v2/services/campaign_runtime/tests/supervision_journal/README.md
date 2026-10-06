@@ -7,3 +7,6 @@ Actual SQL cases in `test_storage.py` require `AMPHORA_TEST_POSTGRES=1` and the 
 Delivery and response suites require Runtime0.26/runtime0019. They prove lease expiry/fences, immutable receipt/readback history,64-response bound, late captures and rollback. The reserved64th-event fallback remains uncovered because normal delivery reaches16claims first; process races are verified by the explicit installed-worker helper.
 
 `process_worker.py` requires the dev-owned independent helper and its env-only SQL configuration; do not invoke it as an ordinary test. Seventeen workers/two installs/four abrupt terminations preserve exact state with scoped cleanup and no peer-call claim.
+
+
+Verified 2026-10-05 20:04:57: B2.01b.iv current Runtime0.33/Planning0.75 actual materialization-target exchange passed11 process stages,6 hosts,2 lost replies and original/replacement recovery. Four isolated installs668 cases;40/30 old migration files unchanged. No provider call, SQL reset or execution-winner claim. All owned processes closed. Evidence: docs/Audits/Evidence/BP-07-Supervisor/Checkpoint_Owners.json (relative to v2).

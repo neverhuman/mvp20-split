@@ -13,23 +13,23 @@ from types import SimpleNamespace
 import pytest
 from amphora_campaign_runtime.lifecycle.access import RuntimePrincipal
 from amphora_campaign_runtime.supervision_client import (
+    CheckpointPlanningClient,
     ExchangeUnavailable,
     ExchangeWindow,
-    PlanningClient,
 )
-from amphora_campaign_runtime.supervision_journal import RequestFrame
 from amphora_campaign_runtime.supervision_journal.cancellations import (
     CancellationJournal,
 )
+from amphora_campaign_runtime.supervision_journal.checkpoint_frames import read_frame
 from amphora_campaign_runtime.supervision_journal.delivery import DeliveryJournal
 from amphora_campaign_runtime.supervision_journal.responses import ResponseJournal
 from amphora_campaign_runtime.supervision_journal.storage import RequestJournal
 from amphora_contracts_core import Scope
-from amphora_contracts_supervision import SupervisionRequest, parse_supervision_command
+from amphora_contracts_supervision import CheckpointRequest, parse_checkpoint_command
 from sqlalchemy import create_engine, text
 
 from ..supervision_journal.test_responses import incoming
-from ..supervision_journal.test_storage import command, setup
+from .checkpoint_support import command, setup
 
 STATE = Path(os.environ['SUPERVISOR_OWNER_STATE'])
 OUTPUT = Path(os.environ['SUPERVISOR_OWNER_OUTPUT'])
@@ -42,7 +42,7 @@ def write(path, value):
 
 @pytest.fixture
 def fixture_env():
-    assert importlib.metadata.version('amphora-campaign-runtime') == '0.29.0'
+    assert importlib.metadata.version('amphora-campaign-runtime') == '0.33.0'
     import amphora_campaign_runtime
     assert Path(amphora_campaign_runtime.__file__).absolute().is_relative_to(Path(sys.prefix).absolute())
     assert all(importlib.util.find_spec(name) is None for name in
@@ -81,18 +81,18 @@ def test_owner_stage(graph_env):
         write(OUTPUT, {'run_id': params['run'], 'request_sha256': frame.request_sha256})
         return
     data = json.loads(STATE.read_bytes())
-    frame = RequestFrame.from_bytes(base64.b64decode(data['frame'], validate=True))
+    frame = read_frame(base64.b64decode(data['frame'], validate=True))
     journal = RequestJournal(e.engine, {})
     original = journal.series(e.principal, data['params']['run'], data['params']['decision'])[0]
     assert original.created_at.isoformat() == data['original_created_at']
     assert original.intent_created_at.isoformat() == data['original_intent_at']
     assert original.canonical_command == base64.b64decode(data['outgoing'])
     delivery = DeliveryJournal(journal)
-    outgoing = parse_supervision_command('planning.supervision.request', original.canonical_command)
+    outgoing = parse_checkpoint_command(original.canonical_command)
     if MODE in {'send_request', 'recover_request'}:
         lease = delivery.claim(e.principal, frame.request.reference, frame.request_sha256, event_id=MODE, seconds=60)
         assert lease is not None
-        client = PlanningClient(outgoing.identity.actor_id, outgoing.identity.scope,
+        client = CheckpointPlanningClient(outgoing.identity.actor_id, outgoing.identity.scope,
                                 os.environ['SUPERVISOR_PLANNING_ENDPOINT'], os.environ['SUPERVISOR_PEER_TOKEN'])
         def guard():
             with e.engine.connect() as conn:
@@ -111,7 +111,7 @@ def test_owner_stage(graph_env):
             observed = client.receipt(outgoing, window)
             observed = client.readback(outgoing, observed, window)
             saved = delivery.observe(e.principal, lease, event_id='request-recovered', receipt=observed.document(),
-                                     readback=SupervisionRequest.model_validate_json(observed.readback_canonical))
+                                     readback=CheckpointRequest.model_validate_json(observed.readback_canonical))
             assert saved.kind == 'recorded'
             write(OUTPUT, {'delivery': saved.kind, 'receipt': observed.document().model_dump(mode='json')})
         return
