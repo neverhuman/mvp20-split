@@ -8,13 +8,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-07 closed100%; BP-08.02 closed100%; BP-08.03/B1.03 active; BP-09 queued.
-- Last refreshed: `2026-10-06 13:19:41` (America/Chicago).
+- Status: BP-07 closed100%; BP-08.02 closed100%; BP-08.03/B2.01 active; BP-09 queued.
+- Last refreshed: `2026-10-06 13:29:20` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P7 / BP-08 - Evolutionary Search Integration.
-- Primary active task: BP-08.03/B1.03b.ii actual operator/Data/Research handoff.
-- Next task: BP-08.03/B1.03 Artifact-backed Research candidate ingress.
-- Implementation completion: BP-07 closed100%,20/20; BP-08=44.58%,8/20 plus11/12;BP-09=0%.
+- Primary active task: BP-08.03/B2.01 canonicalization and evaluation identity.
+- Next task: BP-08.03/B1.03 B2.02 Research-owned fitness policy after B2.01.
+- Implementation completion: BP-07 closed100%,20/20; BP-08=45%,9/20;BP-09=0%.
 - Active focus: graph-driven numeric execution; preserve closed BP-07 evaluation history and scoped handoffs.
 - Blockers: none for BP-08.03 activation. Selected host and integrated live deployment remain BP-09 decisions/gates.
 - Acceptance posture: BP-06 software accepted within synthetic scope; scientific and deployment claims remain separately gated.
@@ -32,13 +32,13 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-08.01/.02 closed100%, four deliveries each; parent44.58%,8/20 plus11/12. BP-08.03/B1.03 active, child22.92%, Build30.56%, Acceptance0%.
+BP-08.01/.02 closed100%, four deliveries each; parent45%,9/20. BP-08.03/B2.01 active, child25%, Build33.33%, Acceptance0%.
 
 ## Queued Plans and Phase Mirrors
 
 | Canonical plan | Status | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Active | 44.58% | 100% | 100% | 22.92% | 0% | 0% | N/A |
+| [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | Active | 45% | 100% | 100% | 25% | 0% | 0% | N/A |
 | [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Design specified | 0% | 0% | 0% | 0% | 0% | 0% | N/A |
 
 Scoped milestone fractions measure verified work within their existing delivery weight; closed-gate counts remain separate. BP-06 is archived24/24. Do not treat milestone counts as effort estimates.
@@ -115,7 +115,8 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
-| 2026-10-06 12:48:45 | BP-08.02 closed100%,4/4; parent44.58%,8/20 plus11/12. | Five active Registry profiles, independent Runtime/tool replacements, two recovered campaigns; scoped audit aligned. |
+| 2026-10-06 13:29:20 | BP-08.03/B1 complete;child25%,Build33.33%,parent45%,9/20. | Three isolated operators,70 owner checks,actual Runtime/Data/Research handoff and source denial/history preservation. |
+| 2026-10-06 12:48:45 | BP-08.02 closed100%,4/4; parent45%,9/20. | Five active Registry profiles, independent Runtime/tool replacements, two recovered campaigns; scoped audit aligned. |
 | 2026-10-06 12:17:13 | BP-08.02/V1.01 verified;child81.25%,Acceptance25%,parent36.25%. |Two actual Linuxamd64images,5capabilityprofiles,offlinegolden/isolation/schemahashes. |
 | 2026-10-06 12:10:23 | BP-08.02/B3 complete;child75%,Build100%,parent35%,7/20. |Actual killed worker/Runtime restart; identical replay, stale attempt rejected,108confirmedreservationsacrosspair. |
 | 2026-10-06 11:52:51 | BP-08.02/B2 complete;child50%,Build66.67%,parent30%,6/20. |Actual independent workers/Runtime/Data;15 invocations,6evaluations,54confirmed retention reservations. |
@@ -139,4 +140,3 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-06 03:24:26 | BP-07.04 closed100% | Scoped audit aligned; public decision read40tests/4isolatedreads; captureworkflow13tests; parent80%,16/20. |
 | 2026-10-06 02:59:17 | V1.01 installed replacement complete; child87.5%,Acceptance50%,parent77.5%. | 3scenarios/18hostprocesses; exact history preserved; V1.02 audit active. |
 | 2026-10-06 02:39:47 | V1.01a isolated installations verified; child81.25%,Acceptance25%,parent76.25%. | Runtime394checks each; Planning240each;548schemas/546predecessors. Actualreplacement remains. |
-| 2026-10-06 02:29:57 | B3 complete; child75%,Build100%,parent75%,15/20closed. V1.01 active. | Actualowner branch/late/future3passed501.70s; boundaries12passed10.28s. |

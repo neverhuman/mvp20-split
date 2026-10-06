@@ -8,7 +8,7 @@ Research owns candidate/sample/question/evidence-need identities and purpose-bou
 
 | Module | Replacement boundary |
 |---|---|
-| [Candidate registration](src/amphora_research/candidate_registration/README.md) | Explicit synthetic candidate declaration, current Artifact access and atomic first-public-origin history; actual peer handoff pending |
+| [Candidate registration](src/amphora_research/candidate_registration/README.md) | Explicit synthetic candidate declaration, current Artifact access and atomic first-public-origin history; actual worker/Data/Research handoff verified |
 | [Identity](src/amphora_research/identity/README.md) | Scoped candidate/sample/question/need invariants and corrections |
 | [Persistence](src/amphora_research/persistence/README.md) | Immutable identity revisions, local links, exact replay and declaration reads |
 | [Synthesis](src/amphora_research/synthesis/README.md) | Route/step evidence and independent project-execution gates; synthetic authority |

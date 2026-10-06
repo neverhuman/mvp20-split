@@ -188,3 +188,5 @@ verify_evaluation_installations.py --output <fresh-path> installs two independen
 
 
 The numerical HTTP verifier additionally accepts `--images <numeric-image-manifest> --replacement`. It installs Registry when image pins are supplied and builds fresh Runtime/numeric/evaluator replacements when requested. Image-to-installed local wheel equality and original-to-rebuilt wheel equality are required before execution. Registry registration/activation is distinct from deployment and capacity. Combine with `--recovery` to exercise the replacement tools on a second campaign after original-history checks.
+
+`verify_candidate_handoff.py --output <new-directory>` independently installs Runtime/Data/Research, three synthetic representation operators and an SDK-only controller. It proves actual graph-worker Artifact handoff, candidate declaration/read/retry, retention and Research restart followed by Data-principal removal. Requires owned PostgreSQL opt-in and Research0.35/research_0014 already migrated. No migration/reset, paid model calls, built-image or Registry/deployment claim. Research tests/candidate_registration/acceptance owns cases and retained evidence.

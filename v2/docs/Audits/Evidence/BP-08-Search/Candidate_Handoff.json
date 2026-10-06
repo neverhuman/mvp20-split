@@ -1,0 +1,114 @@
+{
+  "status": "passed",
+  "timestamp_local": "2026-10-06 13:27:08",
+  "scope": {
+    "tenant_id": "candidate-handoff",
+    "project_id": "dfba8fb74ac54ce19942ba594fdb3a79"
+  },
+  "source": "v2/.test-results/candidate-handoff-20261006a/http/evidence.json",
+  "source_sha256": "98a12e73a34c1b4d1107adf5363abc14cd6d0ebfc104cf6df473d9a7d712ab0e",
+  "profile": "Independent Windows workers and actual Runtime/Data/Research APIs; declared image pins, not built images or Registry/deployment proof",
+  "packages": {
+    "runtime": "0.63.0",
+    "artifact": "0.30.0",
+    "research": "0.35.0",
+    "numeric": "0.2.0",
+    "polymer": "0.2.0",
+    "sequence": "0.2.0",
+    "controller": "0.2.0"
+  },
+  "cases": [
+    {
+      "kind": "numeric",
+      "run_id": "c2ef94093a6a47d7b0114df72d9ed616",
+      "spent": 1,
+      "candidate": {
+        "scope": {
+          "tenant_id": "candidate-handoff",
+          "project_id": "dfba8fb74ac54ce19942ba594fdb3a79"
+        },
+        "candidate_id": "numeric",
+        "revision": 1
+      },
+      "artifact": {
+        "artifact_id": "a94eb2a944e74fcf9e361cdb382787ad",
+        "scope": {
+          "tenant_id": "candidate-handoff",
+          "project_id": "dfba8fb74ac54ce19942ba594fdb3a79"
+        },
+        "sha256": "1c283fb52fb87ef5d0e1ea02f4d96c39e49d8dcde9dbc3e0e6fb5eb7c1a6bbd3",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "candidate-space.change",
+          "version": "1",
+          "sha256": "6d49d528a0cba0f2cf799e69faeb253c01ea1e5af7bb43487ab4f5d218d036ed"
+        },
+        "size_bytes": 697
+      },
+      "completion_id": "08748e787c40489faf27fb96df424fde",
+      "confirmed_output_reservations": 1
+    },
+    {
+      "kind": "polymer",
+      "run_id": "d0ca40808fdf4363b28da0663cd06362",
+      "spent": 1,
+      "candidate": {
+        "scope": {
+          "tenant_id": "candidate-handoff",
+          "project_id": "dfba8fb74ac54ce19942ba594fdb3a79"
+        },
+        "candidate_id": "polymer",
+        "revision": 1
+      },
+      "artifact": {
+        "artifact_id": "df6991a615f948f08577d25f67800cd2",
+        "scope": {
+          "tenant_id": "candidate-handoff",
+          "project_id": "dfba8fb74ac54ce19942ba594fdb3a79"
+        },
+        "sha256": "52a4f1e4f9ba95dafce5d1980bb009405b8ec7f11f945046f8cdb4769ec8e833",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "candidate-space.change",
+          "version": "1",
+          "sha256": "6d49d528a0cba0f2cf799e69faeb253c01ea1e5af7bb43487ab4f5d218d036ed"
+        },
+        "size_bytes": 975
+      },
+      "completion_id": "74d1070bf44d41e5bb7550cae64af5cc",
+      "confirmed_output_reservations": 1
+    },
+    {
+      "kind": "sequence",
+      "run_id": "4542b1f2ad3c4b038f54c2765637e103",
+      "spent": 1,
+      "candidate": {
+        "scope": {
+          "tenant_id": "candidate-handoff",
+          "project_id": "dfba8fb74ac54ce19942ba594fdb3a79"
+        },
+        "candidate_id": "sequence",
+        "revision": 1
+      },
+      "artifact": {
+        "artifact_id": "144cd920692b41299cbd41cf8e0667ab",
+        "scope": {
+          "tenant_id": "candidate-handoff",
+          "project_id": "dfba8fb74ac54ce19942ba594fdb3a79"
+        },
+        "sha256": "c339b965a8478964e71e0612bcce01fc6127df39d0009ca1a9e368e5a68ba0f5",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "candidate-space.change",
+          "version": "1",
+          "sha256": "6d49d528a0cba0f2cf799e69faeb253c01ea1e5af7bb43487ab4f5d218d036ed"
+        },
+        "size_bytes": 648
+      },
+      "completion_id": "f1ce9129667f4190880c36ffcc15dab1",
+      "confirmed_output_reservations": 1
+    }
+  ],
+  "rights_denial_preserves_history": true,
+  "research_restart_preserves_history": true
+}

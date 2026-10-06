@@ -1,6 +1,6 @@
 # Candidate representation and fitness boundaries
 
-- Design status: BP-08.03 activated; implementation0%.
+- Design status: synthetic operators and candidate declaration ingress implemented; equivalence/cache and fitness policy remain B2.
 - Last reviewed: 2026-10-06 12:54:00 (America/Chicago).
 - Parent: [Search](Search.md).
 
