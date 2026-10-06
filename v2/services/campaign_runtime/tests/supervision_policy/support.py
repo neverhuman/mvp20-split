@@ -18,7 +18,7 @@ from amphora_contracts_core import SchemaRef
 SCOPE = {'tenant_id': 'policy-test', 'project_id': 'isolated'}
 
 
-def plan(*, nested=False, sibling=False):
+def plan(*, nested=False, sibling=False, scope=None):
     schema = b'{"additionalProperties":false,"properties":{"a":{"type":"integer"}},"required":["a"],"type":"object"}'
     reference = SchemaRef(schema_id='fixture.policy', version='1', sha256=hashlib.sha256(schema).hexdigest())
     shape = {'kind': 'artifact', 'schema_ref': reference.model_dump(mode='json'),
@@ -47,13 +47,13 @@ def plan(*, nested=False, sibling=False):
             body['nodes'].insert(1, other)
             body['edges'] = [{'source': 'loop', 'target': 'other'}, {'source': 'other', 'target': 'finish'}]
     raw = {'schema_version': '4', 'profile': 'deterministic-v3', 'campaign_id': 'policy-fixture',
-           'revision': 1, 'scope': SCOPE, 'body': body}
+           'revision': 1, 'scope': scope or SCOPE, 'body': body}
     return compile_campaign(parse_executable_campaign(json.dumps(raw)), ToolCatalog([]),
         SchemaCatalog([PinnedSchema(SchemaIdentity.from_wire(reference), schema)]))
 
 
 def policy(plan, *, nested=False):
-    return PolicyRecord.model_validate_json(json.dumps({'scope': SCOPE, 'plan_sha256': plan.sha256,
+    return PolicyRecord.model_validate_json(json.dumps({'scope': plan.document.definition.scope.model_dump(mode='json'), 'plan_sha256': plan.sha256,
         'ceilings': {'max_checkpoints': 10, 'max_requests': 20, 'max_model_calls': 30},
         'checkpoints': [{'checkpoint_id': 'before-parameters', 'target': {
             'scope_path': ('loop',) if nested else (), 'node_id': 'pack'}, 'kind': 'artifact_materialize',

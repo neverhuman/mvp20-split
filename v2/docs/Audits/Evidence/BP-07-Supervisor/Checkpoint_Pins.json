@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-10-05 20:27:27",
+  "tests": 63,
+  "seconds": 18.81,
+  "statements": 224,
+  "branches": 34,
+  "coverage": 100,
+  "migration": "runtime0022",
+  "runtime": "0.36",
+  "limits": "No coordinator admission integration yet"
+}
