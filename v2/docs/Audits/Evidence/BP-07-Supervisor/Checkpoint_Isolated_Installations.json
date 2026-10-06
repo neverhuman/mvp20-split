@@ -1,0 +1,47 @@
+{
+  "reviewed_at": "2026-10-06 02:39:47",
+  "manifest_sha256": "cec5af19a15bd9156711dc4da506fcc250ced7b39eb0ebef0b437d7ed595e655",
+  "output": "v2/.test-results/checkpoint-autonomous-installed-locked-20261006",
+  "owner_versions": {
+    "runtime": "0.59.0",
+    "planning": "0.89.0"
+  },
+  "installations": {
+    "runtime": [
+      {
+        "label": "initial",
+        "tests": 394,
+        "python": "Z:\\mvp20-split\\v2\\.test-results\\checkpoint-autonomous-installed-locked-20261006\\runtime\\initial\\Scripts\\python.exe",
+        "seconds": 33.816
+      },
+      {
+        "label": "replacement",
+        "tests": 394,
+        "python": "Z:\\mvp20-split\\v2\\.test-results\\checkpoint-autonomous-installed-locked-20261006\\runtime\\replacement\\Scripts\\python.exe",
+        "seconds": 33.276
+      }
+    ],
+    "planning": [
+      {
+        "label": "initial",
+        "tests": 240,
+        "python": "Z:\\mvp20-split\\v2\\.test-results\\checkpoint-autonomous-installed-locked-20261006\\planning\\initial\\Scripts\\python.exe",
+        "seconds": 28.787
+      },
+      {
+        "label": "replacement",
+        "tests": 240,
+        "python": "Z:\\mvp20-split\\v2\\.test-results\\checkpoint-autonomous-installed-locked-20261006\\planning\\replacement\\Scripts\\python.exe",
+        "seconds": 27.346
+      }
+    ]
+  },
+  "schema_count": 548,
+  "unchanged_predecessor_schemas": 546,
+  "limits": [
+    "No SQL migration/reset or actual owner host in this installation gate",
+    "Peer-private packages absent; copied tests only, production runs from wheels",
+    "Current service HTTP files intentionally changed; only historical migrations asserted byte-identical"
+  ],
+  "lock_repair": "Refreshed stale Runtime/Planning service locks offline; isolated installs consume per-owner locked constraints; dev lock was already current."
+}

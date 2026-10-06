@@ -60,15 +60,23 @@ def verify(output, runtime_predecessor, planning_predecessor):
             for name, digest in prior.items():
                 assert hashlib.sha256(archive.read(module + '/persistence/migrations/versions/' + name)).hexdigest() == digest, name
         item = {'version': specs[package][1]['project']['version'], 'unchanged_migrations': prior, 'installations': []}
+        constraints = output / (owner + '-constraints.txt')
+        run([uv, 'export', '--project', specs[package][0], '--locked', '--no-dev', '--no-emit-local',
+             '--no-hashes', '--output-file', constraints])
+        item['constraints_sha256'] = hashlib.sha256(constraints.read_bytes()).hexdigest()
         for label in ('initial', 'replacement'):
             installation = output / owner / label
             run([uv, 'venv', '--python', sys.executable, installation])
             python = installation / 'Scripts/python.exe'
-            run([uv, 'pip', 'install', '--python', python, *archives, 'pytest>=8,<9', 'httpx>=0.28,<1'])
+            run([uv, 'pip', 'install', '--python', python, '--constraint', constraints,
+                 *archives, 'pytest>=8,<9', 'httpx>=0.28,<1'])
             excluded = tuple(sorted(private - {module}))
             run([python, '-I', '-c', 'import importlib.util,sys; from pathlib import Path; '
                 f'import {module}; assert Path({module}.__file__).absolute().is_relative_to(Path(sys.prefix).absolute()); '
                 f'assert all(importlib.util.find_spec(name) is None for name in {excluded!r})'])
+            configured = (module + '.supervision_loop.configuration' if owner == 'runtime' else
+                          module + '.supervision_scheduling.configuration')
+            run([python, '-I', '-c', 'import importlib; importlib.import_module(' + repr(configured) + ')'])
             areas = [('contracts/supervision/tests', None), ('contracts/planning/tests/checkpoint_output', None)]
             if owner == 'runtime':
                 areas.extend(('services/campaign_runtime/tests/' + area, None)
@@ -77,6 +85,8 @@ def verify(output, runtime_predecessor, planning_predecessor):
                 areas.append(('services/campaign_runtime/tests/supervision_policy', ['test_policy.py', 'test_scalars.py', 'test_catalog.py']))
                 areas.append(('services/campaign_runtime/tests/supervision_checkpoints', ['test_seed.py', 'test_values.py']))
                 areas.append(('services/campaign_runtime/tests/supervision_effects', None))
+                areas.append(('services/campaign_runtime/tests/supervision_preparation', ['test_recipe.py', 'test_reservations.py']))
+                areas.append(('services/campaign_runtime/tests/supervision_context', ['test_session.py']))
             else:
                 areas.append(('services/agent_planning/tests/campaign_output', None))
                 areas.extend([('services/agent_planning/tests/supervision_client', None),
@@ -85,6 +95,8 @@ def verify(output, runtime_predecessor, planning_predecessor):
                                'test_checkpoints.py::test_pure_v2_intake_and_closed_v1_parser',
                                'test_checkpoints.py::test_new_output_profile_requires_explicit_checkpoint_request',
                                'test_checkpoints.py::test_target_shape_checks_do_not_grant_runtime_authority'])])
+                areas.append(('services/agent_planning/tests/supervision_execution',
+                              ['test_budget_template.py', 'test_context.py', 'test_repair_context.py']))
             suites = []
             for index, (relative, files) in enumerate(areas):
                 area = copied / relative
@@ -102,8 +114,9 @@ def verify(output, runtime_predecessor, planning_predecessor):
     schemas = ROOT / 'contracts/schemas'
     schema_pins = {p.relative_to(schemas).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
                    for p in schemas.rglob('*.json') if p.name != 'manifest.json'}
-    assert len(schema_pins) == 542
-    previous = json.loads((ROOT / 'contracts/supervision/tests/fixtures/effects_predecessor_schema_pins.json').read_bytes())['schemas']
+    assert len(schema_pins) == 548
+    previous = json.loads((ROOT / 'contracts/supervision/tests/fixtures/repair_context_predecessor_schema_pins.json').read_bytes())['schemas']
+    assert len(previous) == 546
     assert all(schema_pins[name] == digest for name, digest in previous.items())
     manifest = {'status': 'passed', 'verified_at': datetime.now(ZoneInfo('America/Chicago')).strftime('%Y-%m-%d %H:%M:%S'),
                 'owners': records, 'schema_pins': schema_pins, 'unchanged_predecessor_schemas': len(previous),
