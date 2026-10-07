@@ -13,8 +13,65 @@ verified updates. Local Windows x86_64/Python3.12, browser/owner listeners127.0.
 
 All tests/builds/probes exited. No supervisor/owner/gateway/tool processes remain.
 Dedicated local PostgreSQL/Qdrant and older dev fixtures remain running; never reset.
-Latest pushed checkpoint:11634722 Deployment0.6. Deployment0.7 catalog delivery is
-verified and awaiting commit/push if not yet in git log. Continue managed readiness.
+Latest pushed checkpoint:8e43caa5 Deployment0.7 catalog delivery. Continue managed readiness.
+
+## Latest verified Deployment0.8 (commit/push if not yet in gitlog)
+
+Fresh .test-results/local-capacity-install-20261007a/owner passed276copiedtests26.19s
+and actualfive-executor standby/candidate/withdrawal via installedRuntime/Data/Registry,
+TLS andDockerchecks. Fresh b rebuiltwheel identical. Managed_Capacity.json evidence.
+Final103sourcechecks4.86s,788/850statements111/122branches91%;145affectedchecks passed.
+Monitor/reporterthread-start/selectedcleanup gapsremain; actualRegistrytarget/group
+lifecycle isseparateprocessproof. Allchecks/probesexited, nocontroller/owner/TLS/tool
+processesremain. Acceptedstores/vault/servingmanifest unchanged;newscopedcatalogjournals
+retainedfree_slots0. No campaigns/providercalls. Source/devpins/locks/inventory0.8,
+moduleREADME/childparentMBT/drift/evidence/historyupdated. Finalboundary/lint/diffcheck,
+thencommitpush andcontinue. Percentagesunchanged untilsuccessfulscientificexecution.
+
+Scientific standby offersidlecapacitywithoutcontainerlaunch, quiescebeforeAPIdrain.
+Optional --catalog-manifest local-tool-catalog-v1 scope/worker/eachslot deploymentid,
+replicaid, scientificfingerprint. Reporterunderwriterlease startsaftercontrolbind,
+checks pinnedimage/config/daemonbudget2CPU/1GiBperallslots<=5, activeactualRegistry
+scope/worker/image/capability/Linux/x86_64, pinnedTLS handshakes and exactloopback
+Runtime/health configuredexecution plusData/ready. RuntimehealthnotcontinuousSQL.
+Toolproxyonlyauthenticated /v1UNCHANGED. Observationfresh5secs fromBEGINNING ofallchecks;
+recheckslot/configafterI/O. Backgroundreporter3sec,15secRegistryTTL. Positivepending
+cannotretrywhileunready; explicituncertainty/expiry. No exclusiveresource/reservation
+claim. RegistryreadusesexistingoperatoronlyonfixedGETdeployment; heartbeat-only token
+forreports; nothingextraintoolcontainers. Registrydrain/force-stop return409untilfinal
+reporterwithdrawalattemptstops. Restartresumessamejournal; finalcloseawaitsstopped.
+HTTPtimeouts areinactivitynotabsolute; trickledHTTP/fulloutagesremainB3limits.
+
+Actualsourceproof .test-results/local-executor-capacity-20261007a also passed. Exact
+Linuxgraphmaterials .test-results/local-numeric-materials-20261007a extractedfrom
+existing0.5evolution/0.3objectivesimages; publiclocksvalidatedwithinstalledRegistry.
+No scientifictoolturns yet. NewphysicalNTFS bundles executor-capacity-20261007a and
+capacity-install-20261007a includeprotected30dayTLSidentity and awaiting-admission
+immutableSDKconfigs. Allcontrollerscleanlyexited, originalvaultunchanged.
+
+Devhelpers: prepare_local_numeric_demo.py (fiveactualimagedescriptors/schemas/policy +
+reviewedpublicgraphfixture), local_numeric_configuration.py (separateownerconfigs,
+originalDatastorage preserved; bind_workers createsimmutableSDK/catalogpins),
+local_demo_controller.py (ownedProcessJob/HTTPstart/drain), verify_local_executor_capacity.py,
+verify_capacity_installation.py. Independenthelperrunsfromcopiedoutputdirectory without
+-I tofindsiblings; childcontrolleruses-I; isolatedclosure hasnoownerprivatepackages.
+ModuleREADME tool_catalog ownsfullboundaries. Actualmanagedworknextbelow.
+
+NEXT actualmanagedcampaign: Runtimeassigns randomrun_id atadmission, cannotpredict it.
+AcceptedreadonlybaselinehasNOgraphs; newnumericconfiguration alreadyloadsreviewed
+2generationgraph. Bootstrap explicitly: standbycapacity -> publicinputsupload/admit
+-> quiesce/stopcontroller -> bind returnedrun_id in NEWimmutableworkerfiles/sidecars
+-> restart sameownerconfigs/controller -> nativecoordinate+toolworkers. No mutate
+loadedconfigs, fakeclaims orRuntimecontractchanges. Publicfixture specification.py
+services/campaign_runtime/tests/numeric_search supplies syntheticspec(policyArtifact).
+Existingtestacceptance environment.py documents upload/finalize/admission/read shapes.
+PlanSHA can be obtained with existing owner-owned test-only compile_plans.py executed
+INSIDE installedRuntime withNO SQLcredentials (services/campaign_runtime/tests/scheduling/
+acceptance/compile_plans.py); no publiclistplansAPI found. This istestfixturecompilation,
+notProductionDeploymentimport/privatecrossownerstate. Operatorcommands useexistingkeys
+onlyinmemory; noOpenAIkeys/calls. Need wholepublicRuntime/Artifactsuccessortracebefore
+claimingmanagedexecution. B1.3cResearch/Knowledge then B1.4model/browserstilllater.
+Last updated 2026-10-07 03:13:53.
 
 ## Latest verified Deployment0.7
 

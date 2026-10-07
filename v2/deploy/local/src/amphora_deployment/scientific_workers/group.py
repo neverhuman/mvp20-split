@@ -18,7 +18,7 @@ class ScientificGroup:
         return {name: slot.status() for name, slot in self.slots.items()}
 
     def command(self, name, action):
-        require(name in self.slots and action in {'start', 'quiesce', 'recover'}, 'container_command')
+        require(name in self.slots and action in {'start', 'standby', 'quiesce', 'recover'}, 'container_command')
         return getattr(self.slots[name], action)()
 
     def quiesce(self):

@@ -42,6 +42,9 @@ def test_control_remains_responsive_while_scientific_observation_is_blocked():
             return response.status, json.loads(response.read(65536))
     try:
         assert request('/scientific-workers/evolution-seed/start', 'POST', 'wrong')[0] == 401
+        assert request('/scientific-workers/evolution-seed/standby', 'POST')[1]['state'] == 'standby'
+        assert binding.launches == 0
+        assert request('/owners/runtime/drain', 'POST')[0] == 409
         assert request('/scientific-workers/evolution-seed/start', 'POST')[0] == 200
         assert binding.entered.wait(2)
         started = time.monotonic()

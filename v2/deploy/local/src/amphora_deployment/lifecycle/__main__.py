@@ -17,7 +17,7 @@ from .supervisor import Supervisor
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=["serve", "status", "readiness", "start", "restart", "drain", "force-stop", "shutdown", "quiesce", "recover"])
+    parser.add_argument("action", choices=["serve", "status", "readiness", "start", "standby", "restart", "drain", "force-stop", "shutdown", "quiesce", "recover"])
     parser.add_argument("--root", type=Path, required=True)
     parser.add_argument("--manifest", type=Path)
     parser.add_argument("--owner")
@@ -27,6 +27,7 @@ def main():
     parser.add_argument('--tool-access', choices=['runtime', 'artifact'])
     parser.add_argument('--scientific-manifest', type=Path)
     parser.add_argument('--scientific-worker')
+    parser.add_argument('--catalog-manifest', type=Path)
     args = parser.parse_args()
     try:
         routes = Routes.ensure(args.root) if args.action == "serve" else Routes.load(args.root)
@@ -55,29 +56,35 @@ def main():
                 supervisor = Supervisor(bindings, LifecycleEvents(args.root / "logs"),
                                         workers=workers, access=access, scientific=scientific)
                 try:
+                    from ..tool_catalog.configuration import load_catalog
+                    supervisor.catalog = load_catalog(args.catalog_manifest, state.root, state.identity, routes, supervisor)
                     server = ControlServer(routes.port("supervisor"), supervisor, token)
                     supervisor.scientific.adopt()
+                    supervisor.catalog.start()
                     server.serve()
                 finally:
                     # Unexpected supervisor exit is forced teardown, not graceful drain.
                     supervisor.scientific.quiesce()
                     try:
-                        supervisor.workers.force_stop()
+                        supervisor.catalog.close()
                     finally:
                         try:
-                            supervisor.scientific.detach()
+                            supervisor.workers.force_stop()
                         finally:
                             try:
-                                supervisor.access.close()
+                                supervisor.scientific.detach()
                             finally:
-                                for process in supervisor.processes.values():
-                                    process.force_stop()
+                                try:
+                                    supervisor.access.close()
+                                finally:
+                                    for process in supervisor.processes.values():
+                                        process.force_stop()
             return 0
         if args.action in {"status", "shutdown"}:
             path = "/" + args.action
         elif args.scientific_worker is not None:
             from ..scientific_workers.profiles import PROFILES
-            if args.owner is not None or args.worker is not None or args.tool_access is not None or args.scientific_worker not in PROFILES or args.action not in {'start', 'quiesce', 'recover'}:
+            if args.owner is not None or args.worker is not None or args.tool_access is not None or args.scientific_worker not in PROFILES or args.action not in {'start', 'standby', 'quiesce', 'recover'}:
                 parser.error('invalid scientific worker command')
             path = '/scientific-workers/' + args.scientific_worker + '/' + args.action
         elif args.tool_access is not None:
@@ -90,7 +97,7 @@ def main():
                 parser.error("invalid worker command")
             path = "/workers/" + args.worker + "/" + args.action
         else:
-            if args.action in {"quiesce", "recover"}:
+            if args.action in {"standby", "quiesce", "recover"}:
                 parser.error("worker command requires --worker")
             if args.owner is None:
                 parser.error("owner command requires --owner")

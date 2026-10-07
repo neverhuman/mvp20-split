@@ -73,6 +73,17 @@ class ContainerEngine:
         require(record == {'id': profile.image_id, 'os': 'linux', 'arch': 'amd64',
                            'entrypoint': list(profile.entrypoint), 'user': '65532:65532'}, 'container_image_profile')
 
+    def resources(self):
+        raw = self._run('info', '--format',
+            '{"os":{{json .OSType}},"arch":{{json .Architecture}},"cpus":{{json .NCPU}},"memory":{{json .MemTotal}}}')
+        record = json.loads(raw)
+        require(type(record) is dict and set(record) == {'os', 'arch', 'cpus', 'memory'}
+                and record['os'] == 'linux' and record['arch'] == 'x86_64'
+                and type(record['cpus']) is int and 1 <= record['cpus'] <= 4096
+                and type(record['memory']) is int and 0 < record['memory'] <= 2**53 - 1,
+                'container_engine_resources')
+        return record
+
     def observe(self, record, profile):
         name = name_for(record)
         found = self._run('container', 'ls', '-a', '--no-trunc', '--filter', 'name=^/' + name + '$', '--format', '{{.ID}}')

@@ -1,3 +1,4 @@
+import json
 from types import SimpleNamespace
 
 import pytest
@@ -58,3 +59,15 @@ def test_engine_failure_is_not_missing_container(monkeypatch):
     with pytest.raises(ProfileError, match='container_engine_operation_failed') as error:
         ContainerEngine()._run('container', 'ls')
     assert 'private' not in str(error.value)
+
+
+@pytest.mark.parametrize(('field', 'bad'), [('os', 'windows'), ('arch', 'aarch64'), ('cpus', True),
+    ('cpus', 0), ('memory', False), ('memory', 0)])
+def test_engine_resource_observations_reject_wrong_platform_or_unknown_capacity(monkeypatch, field, bad):
+    engine = ContainerEngine()
+    value = {'os': 'linux', 'arch': 'x86_64', 'cpus': 10, 'memory': 5 * 1024**3}
+    monkeypatch.setattr(engine, '_run', lambda *_: json.dumps(value))
+    assert engine.resources() == value
+    value[field] = bad
+    with pytest.raises(ProfileError, match='engine_resources'):
+        engine.resources()

@@ -6,6 +6,14 @@ Actual local controller/Runtime/Data/TLS/Linux claim-denial and separate monitor
 process-death/adoption probes passed; independent0.6 qualification passed199tests and both integration probes; fresh rebuilt wheel matches.
 No successful scientific execution or tool eligibility claim.
 
+Deployment0.8 adds explicit standby and resource observations for the
+[catalog reporter](../tool_catalog/README.md). Standby starts no container and must
+quiesce before owner drain. offers_capacity is local intent only; actual pinned image,
+daemon, catalog target and dependency checks belong to that reporter. Both running
+work and faulted/pending turns exclude capacity. Docker resources exposes only
+Linux/x86_64 CPU/memory totals, not free/exclusive capacity. Original start-once
+container journal and recovery semantics are unchanged.
+
 Deployment owns the reviewed container's lifetime. Runtime owns claims, eligibility,
 leases, fences, completion and recovery of scientific execution; Artifact owns
 durable output. Deployment must not choose graph nodes, rewrite tool applicability,
@@ -61,7 +69,7 @@ Optional `--scientific-manifest` selects local-scientific-workers-v1, a map from
 closed names to image_id/configuration/certificate. It requires both managed TLS
 routes and the matching public certificate. Existing scoped vault WORKER_RUNTIME_TOKEN
 and WORKER_ARTIFACT_TOKEN grants become the two fixed SDK environment references.
-POST /scientific-workers/{name}/{start,quiesce,recover}, or the same lifecycle CLI
+POST /scientific-workers/{name}/{start,standby,quiesce,recover}, or the same lifecycle CLI
 actions with --scientific-worker, accept no arbitrary commands or payloads. The
 scientific group starts no campaign and grants no eligibility. Initial control does
 not offer ambiguous Docker force-stop/restart semantics.

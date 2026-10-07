@@ -72,6 +72,8 @@ class ControlHandler(BaseHTTPRequestHandler):
             record['tool_access'] = self.server.supervisor.access.status()
         if self.server.supervisor.scientific.slots:
             record['scientific_workers'] = self.server.supervisor.scientific.status()
+        if self.server.supervisor.catalog.reporters:
+            record['tool_catalog'] = self.server.supervisor.catalog.status()
         self._respond(200, record)
 
     def do_POST(self):
@@ -90,7 +92,7 @@ class ControlHandler(BaseHTTPRequestHandler):
                 result = self.server.supervisor.worker_command(parts[2], parts[3])
             elif len(parts) == 4 and parts[:2] == ['', 'tool-access'] and parts[3] in {'start', 'restart', 'drain'}:
                 result = self.server.supervisor.access_command(parts[2], parts[3])
-            elif len(parts) == 4 and parts[:2] == ['', 'scientific-workers'] and parts[3] in {'start', 'quiesce', 'recover'}:
+            elif len(parts) == 4 and parts[:2] == ['', 'scientific-workers'] and parts[3] in {'start', 'standby', 'quiesce', 'recover'}:
                 result = self.server.supervisor.scientific_command(parts[2], parts[3])
             else:
                 self._respond(404, {"error": "control_route_unknown"})

@@ -12,6 +12,7 @@ class ScientificSlot:
         self.stop = threading.Event()
         self.thread = None
         self.enabled = False
+        self.standby_enabled = False
         self.active = self._pending()
         self.faulted = False
         self.closing = False
@@ -42,13 +43,25 @@ class ScientificSlot:
         with self.lock:
             require(not self.closing and not self.faulted, 'container_requires_recovery')
             require(not self.active or self.enabled, 'container_requires_quiescence')
-            self.enabled = True
+            self.enabled, self.standby_enabled = True, False
             self._spawn()
             return self.status()
 
+    def standby(self):
+        with self.lock:
+            require(not self.closing and not self.faulted and not self.active and not self.enabled,
+                    'container_standby_requires_idle')
+            self.standby_enabled = True
+            return self.status()
+
+    def offers_capacity(self):
+        with self.lock:
+            return ((self.standby_enabled or self.enabled) and not self.active
+                    and not self.faulted and not self.closing)
+
     def quiesce(self):
         with self.lock:
-            self.enabled = False
+            self.enabled, self.standby_enabled = False, False
             return self.status()
 
     def recover(self):
@@ -95,17 +108,19 @@ class ScientificSlot:
     def status(self):
         with self.lock:
             return {'state': 'failed' if self.faulted else 'quiescing' if self.active and not self.enabled else
-                    'running' if self.active else 'waiting' if self.enabled else 'quiescent',
+                    'running' if self.active else 'waiting' if self.enabled else
+                    'standby' if self.standby_enabled else 'quiescent',
                     'active_turn': self.active, 'faulted': self.faulted, 'completed_turns': self.completed,
                     'exit_code': self.exit_code, 'execution_readiness': 'not_assessed'}
 
     def require_quiescent(self):
         with self.lock:
-            require(not self.enabled and not self.active and not self.faulted, 'container_requires_quiescence')
+            require(not self.enabled and not self.standby_enabled and not self.active and not self.faulted,
+                    'container_requires_quiescence')
 
     def detach(self):
         with self.lock:
-            self.closing, self.enabled = True, False
+            self.closing, self.enabled, self.standby_enabled = True, False, False
             self.stop.set()
             thread = self.thread
         if thread is not None:

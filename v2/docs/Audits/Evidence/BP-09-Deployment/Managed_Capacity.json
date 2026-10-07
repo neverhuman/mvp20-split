@@ -1,0 +1,1112 @@
+{
+  "timestamp_local": "2026-10-07 03:14:00",
+  "status": "passed",
+  "tests": 276,
+  "installation": {
+    "timestamp_local": "2026-10-07 03:12:56",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-deployment",
+    "forbidden_implementations": [
+      "amphora_campaign_runtime",
+      "amphora_agent_planning",
+      "amphora_data_artifacts",
+      "sqlalchemy",
+      "pydantic"
+    ],
+    "packages": {
+      "amphora-deployment": "0.8.0"
+    },
+    "wheels": {
+      "amphora_deployment-0.8.0-py3-none-any.whl": "3c0e05c3ba2e37228cdddfc31d950ec3d585a5c4aa4908ad8861ef0a1694cd71"
+    }
+  },
+  "capacity": {
+    "timestamp_local": "2026-10-07 03:14:00",
+    "status": "passed",
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "managed-capacity-f0fbf4a7e7314b848c3800cf2221b3c2"
+    },
+    "ready": {
+      "owners": {
+        "artifact": {
+          "owner": "artifact",
+          "pid": 33852,
+          "state": "running",
+          "exit_code": null,
+          "readiness": "not_assessed",
+          "drain": "not_requested"
+        },
+        "registry": {
+          "owner": "registry",
+          "pid": 34224,
+          "state": "running",
+          "exit_code": null,
+          "readiness": "not_assessed",
+          "drain": "not_requested"
+        },
+        "runtime": {
+          "owner": "runtime",
+          "pid": 31724,
+          "state": "running",
+          "exit_code": null,
+          "readiness": "not_assessed",
+          "drain": "not_requested"
+        }
+      },
+      "workers": {
+        "runtime-coordinate": {
+          "state": "quiescent",
+          "exit_code": null,
+          "completed_turns": 0,
+          "faulted": false,
+          "execution_readiness": "not_assessed"
+        }
+      },
+      "tool_access": {
+        "runtime": {
+          "state": "running",
+          "port": 62499,
+          "upstream_readiness": "not_assessed"
+        },
+        "artifact": {
+          "state": "running",
+          "port": 62500,
+          "upstream_readiness": "not_assessed"
+        }
+      },
+      "scientific_workers": {
+        "evolution-seed": {
+          "state": "standby",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 0,
+          "exit_code": null,
+          "execution_readiness": "not_assessed"
+        },
+        "evolution-requests": {
+          "state": "standby",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 0,
+          "exit_code": null,
+          "execution_readiness": "not_assessed"
+        },
+        "evolution-collect": {
+          "state": "standby",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 0,
+          "exit_code": null,
+          "execution_readiness": "not_assessed"
+        },
+        "evolution-vary": {
+          "state": "standby",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 0,
+          "exit_code": null,
+          "execution_readiness": "not_assessed"
+        },
+        "synthetic-objectives": {
+          "state": "standby",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 0,
+          "exit_code": null,
+          "execution_readiness": "not_assessed"
+        }
+      },
+      "tool_catalog": {
+        "evolution-seed": {
+          "state": "observed",
+          "observation": {
+            "revision": 1,
+            "free_slots": 1,
+            "observed_at": "2026-10-07T08:13:55.898808Z",
+            "expires_at": "2026-10-07T08:14:10.898808Z"
+          },
+          "running": true,
+          "stopping": false
+        },
+        "evolution-requests": {
+          "state": "observed",
+          "observation": {
+            "revision": 1,
+            "free_slots": 1,
+            "observed_at": "2026-10-07T08:13:55.935005Z",
+            "expires_at": "2026-10-07T08:14:10.935005Z"
+          },
+          "running": true,
+          "stopping": false
+        },
+        "evolution-collect": {
+          "state": "observed",
+          "observation": {
+            "revision": 1,
+            "free_slots": 1,
+            "observed_at": "2026-10-07T08:13:55.920620Z",
+            "expires_at": "2026-10-07T08:14:10.920620Z"
+          },
+          "running": true,
+          "stopping": false
+        },
+        "evolution-vary": {
+          "state": "observed",
+          "observation": {
+            "revision": 1,
+            "free_slots": 1,
+            "observed_at": "2026-10-07T08:13:55.907430Z",
+            "expires_at": "2026-10-07T08:14:10.907430Z"
+          },
+          "running": true,
+          "stopping": false
+        },
+        "synthetic-objectives": {
+          "state": "observed",
+          "observation": {
+            "revision": 1,
+            "free_slots": 1,
+            "observed_at": "2026-10-07T08:13:55.881056Z",
+            "expires_at": "2026-10-07T08:14:10.881056Z"
+          },
+          "running": true,
+          "stopping": false
+        }
+      }
+    },
+    "selected": {
+      "seed": {
+        "operation_id": "9b8118b94b244c7ba86311b0c10a0e28",
+        "status": "accepted",
+        "reason_code": "candidate",
+        "decision": {
+          "schema_version": "1",
+          "observations": {
+            "schema_version": "1",
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "managed-capacity-f0fbf4a7e7314b848c3800cf2221b3c2"
+            },
+            "release": {
+              "schema_version": "1",
+              "tool": {
+                "capability_id": "numeric.search-seed",
+                "release": "0.5.0",
+                "image_sha256": "7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+                "contract_version": "1"
+              },
+              "descriptor_sha256": "226f73184d3d8d3f6101e55492afb391047842a93d402237b5b1fd3c058b95b2",
+              "input_schemas": [
+                {
+                  "port": "parameters",
+                  "schema_ref": {
+                    "schema_id": "search.specification",
+                    "version": "1",
+                    "sha256": "e829b92d2145b0916847b06cb6e73c4a5aea17addea8bbdd1e9706dbd1cc79a7"
+                  }
+                }
+              ],
+              "output_schemas": [
+                {
+                  "port": "result",
+                  "schema_ref": {
+                    "schema_id": "search.checkpoint",
+                    "version": "1",
+                    "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+                  }
+                }
+              ],
+              "checkpoint_schema": null
+            },
+            "policy_sha256": "3d4b1fb2f9a088c2ab6968f29b790595d6287326036829a9580bdea4d91f1ea9",
+            "structural": {
+              "status": "valid",
+              "findings": []
+            },
+            "scientific": {
+              "status": "eligible",
+              "reason_codes": [
+                "synthetic_fixture_only"
+              ]
+            },
+            "capacity": {
+              "status": "available",
+              "reason_codes": [
+                "healthy_capacity"
+              ]
+            }
+          },
+          "admission": {
+            "status": "allowed",
+            "reason_codes": [
+              "policy_compatible"
+            ]
+          },
+          "status": "candidate",
+          "assessed_at": "2026-10-07T08:13:56.074057Z",
+          "capacity_valid_until": "2026-10-07T08:14:10.898808Z"
+        }
+      },
+      "requests": {
+        "operation_id": "b5111dc22c544ff5ae1ae51d603cc179",
+        "status": "accepted",
+        "reason_code": "candidate",
+        "decision": {
+          "schema_version": "1",
+          "observations": {
+            "schema_version": "1",
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "managed-capacity-f0fbf4a7e7314b848c3800cf2221b3c2"
+            },
+            "release": {
+              "schema_version": "1",
+              "tool": {
+                "capability_id": "numeric.search-requests",
+                "release": "0.5.0",
+                "image_sha256": "7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+                "contract_version": "1"
+              },
+              "descriptor_sha256": "737a4817c7fcc2283e4b0d11c6b523460b3bd4890301a294726fc3fb7eff12fd",
+              "input_schemas": [
+                {
+                  "port": "parameters",
+                  "schema_ref": {
+                    "schema_id": "search-step.context",
+                    "version": "1",
+                    "sha256": "856d8ddda364e4fc9160673506ae46d84dd31f4300d41d3729780df532f39485"
+                  }
+                }
+              ],
+              "output_schemas": [
+                {
+                  "port": "result",
+                  "schema_ref": {
+                    "schema_id": "search-step.requests",
+                    "version": "1",
+                    "sha256": "86da9c5a26becef427ede41a2bd15dd78598fbbb1e0f210d4e648406d9fdbc43"
+                  }
+                }
+              ],
+              "checkpoint_schema": null
+            },
+            "policy_sha256": "3d4b1fb2f9a088c2ab6968f29b790595d6287326036829a9580bdea4d91f1ea9",
+            "structural": {
+              "status": "valid",
+              "findings": []
+            },
+            "scientific": {
+              "status": "eligible",
+              "reason_codes": [
+                "synthetic_fixture_only"
+              ]
+            },
+            "capacity": {
+              "status": "available",
+              "reason_codes": [
+                "healthy_capacity"
+              ]
+            }
+          },
+          "admission": {
+            "status": "allowed",
+            "reason_codes": [
+              "policy_compatible"
+            ]
+          },
+          "status": "candidate",
+          "assessed_at": "2026-10-07T08:13:56.103943Z",
+          "capacity_valid_until": "2026-10-07T08:14:10.935005Z"
+        }
+      },
+      "collect": {
+        "operation_id": "05620e2824a04d829179356cce7c7772",
+        "status": "accepted",
+        "reason_code": "candidate",
+        "decision": {
+          "schema_version": "1",
+          "observations": {
+            "schema_version": "1",
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "managed-capacity-f0fbf4a7e7314b848c3800cf2221b3c2"
+            },
+            "release": {
+              "schema_version": "1",
+              "tool": {
+                "capability_id": "numeric.search-collect",
+                "release": "0.5.0",
+                "image_sha256": "7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+                "contract_version": "1"
+              },
+              "descriptor_sha256": "341ef7722a7dea93f0cca4059c6e947348a6566ffced70ee9fc6d46cd7765d2f",
+              "input_schemas": [
+                {
+                  "port": "parameters",
+                  "schema_ref": {
+                    "schema_id": "search-step.collected",
+                    "version": "1",
+                    "sha256": "4863a08e040f46f35fbbd5b308ec2709238fb9e8802a8b434a6fefd2e5b90369"
+                  }
+                }
+              ],
+              "output_schemas": [
+                {
+                  "port": "result",
+                  "schema_ref": {
+                    "schema_id": "search.checkpoint",
+                    "version": "1",
+                    "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+                  }
+                }
+              ],
+              "checkpoint_schema": null
+            },
+            "policy_sha256": "3d4b1fb2f9a088c2ab6968f29b790595d6287326036829a9580bdea4d91f1ea9",
+            "structural": {
+              "status": "valid",
+              "findings": []
+            },
+            "scientific": {
+              "status": "eligible",
+              "reason_codes": [
+                "synthetic_fixture_only"
+              ]
+            },
+            "capacity": {
+              "status": "available",
+              "reason_codes": [
+                "healthy_capacity"
+              ]
+            }
+          },
+          "admission": {
+            "status": "allowed",
+            "reason_codes": [
+              "policy_compatible"
+            ]
+          },
+          "status": "candidate",
+          "assessed_at": "2026-10-07T08:13:56.133226Z",
+          "capacity_valid_until": "2026-10-07T08:14:10.920620Z"
+        }
+      },
+      "vary": {
+        "operation_id": "a7c8a32e044140399b2851afb5cb6d12",
+        "status": "accepted",
+        "reason_code": "candidate",
+        "decision": {
+          "schema_version": "1",
+          "observations": {
+            "schema_version": "1",
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "managed-capacity-f0fbf4a7e7314b848c3800cf2221b3c2"
+            },
+            "release": {
+              "schema_version": "1",
+              "tool": {
+                "capability_id": "numeric.search-vary",
+                "release": "0.5.0",
+                "image_sha256": "7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+                "contract_version": "1"
+              },
+              "descriptor_sha256": "f9a16256a48b67c81a9573d9cabbe90e095cd222ad7f296f67899aa118fef90a",
+              "input_schemas": [
+                {
+                  "port": "parameters",
+                  "schema_ref": {
+                    "schema_id": "search-step.context",
+                    "version": "1",
+                    "sha256": "856d8ddda364e4fc9160673506ae46d84dd31f4300d41d3729780df532f39485"
+                  }
+                }
+              ],
+              "output_schemas": [
+                {
+                  "port": "result",
+                  "schema_ref": {
+                    "schema_id": "search.checkpoint",
+                    "version": "1",
+                    "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+                  }
+                }
+              ],
+              "checkpoint_schema": null
+            },
+            "policy_sha256": "3d4b1fb2f9a088c2ab6968f29b790595d6287326036829a9580bdea4d91f1ea9",
+            "structural": {
+              "status": "valid",
+              "findings": []
+            },
+            "scientific": {
+              "status": "eligible",
+              "reason_codes": [
+                "synthetic_fixture_only"
+              ]
+            },
+            "capacity": {
+              "status": "available",
+              "reason_codes": [
+                "healthy_capacity"
+              ]
+            }
+          },
+          "admission": {
+            "status": "allowed",
+            "reason_codes": [
+              "policy_compatible"
+            ]
+          },
+          "status": "candidate",
+          "assessed_at": "2026-10-07T08:13:56.164508Z",
+          "capacity_valid_until": "2026-10-07T08:14:10.907430Z"
+        }
+      },
+      "evaluate": {
+        "operation_id": "f32f9e22c1b040319207540885122528",
+        "status": "accepted",
+        "reason_code": "candidate",
+        "decision": {
+          "schema_version": "1",
+          "observations": {
+            "schema_version": "1",
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "managed-capacity-f0fbf4a7e7314b848c3800cf2221b3c2"
+            },
+            "release": {
+              "schema_version": "1",
+              "tool": {
+                "capability_id": "synthetic.numeric-objectives",
+                "release": "0.3.0",
+                "image_sha256": "b6d73b31058d358a5a2a13e44979e8b6e3a6acd06260670226a1b2570f1135e3",
+                "contract_version": "1"
+              },
+              "descriptor_sha256": "8f6b2488bf4c4f443b3f11f2467af516839f2e7e2e4451a5c9a8f4a1dde752e4",
+              "input_schemas": [
+                {
+                  "port": "parameters",
+                  "schema_ref": {
+                    "schema_id": "search.evaluation-request",
+                    "version": "1",
+                    "sha256": "44c7375364971f923302f83d0d6100bd2d01b8c6085d25f7195e465ccb9fbe58"
+                  }
+                },
+                {
+                  "port": "policy",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-policy",
+                    "version": "1",
+                    "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a"
+                  }
+                }
+              ],
+              "output_schemas": [
+                {
+                  "port": "result",
+                  "schema_ref": {
+                    "schema_id": "search.evaluation-observation",
+                    "version": "1",
+                    "sha256": "28b7765aa253bc93d2e050c06e4a38be09ffa1b8a8b45762ee93eaaffe37add2"
+                  }
+                }
+              ],
+              "checkpoint_schema": null
+            },
+            "policy_sha256": "3d4b1fb2f9a088c2ab6968f29b790595d6287326036829a9580bdea4d91f1ea9",
+            "structural": {
+              "status": "valid",
+              "findings": []
+            },
+            "scientific": {
+              "status": "eligible",
+              "reason_codes": [
+                "synthetic_fixture_only"
+              ]
+            },
+            "capacity": {
+              "status": "available",
+              "reason_codes": [
+                "healthy_capacity"
+              ]
+            }
+          },
+          "admission": {
+            "status": "allowed",
+            "reason_codes": [
+              "policy_compatible"
+            ]
+          },
+          "status": "candidate",
+          "assessed_at": "2026-10-07T08:13:56.195020Z",
+          "capacity_valid_until": "2026-10-07T08:14:10.881056Z"
+        }
+      }
+    },
+    "withdrawn": {
+      "seed": {
+        "operation_id": "4b7401c3d76c430b8706475fdb577e59",
+        "status": "rejected",
+        "reason_code": "no_eligible_capacity",
+        "decision": {
+          "schema_version": "1",
+          "observations": {
+            "schema_version": "1",
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "managed-capacity-f0fbf4a7e7314b848c3800cf2221b3c2"
+            },
+            "release": {
+              "schema_version": "1",
+              "tool": {
+                "capability_id": "numeric.search-seed",
+                "release": "0.5.0",
+                "image_sha256": "7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+                "contract_version": "1"
+              },
+              "descriptor_sha256": "226f73184d3d8d3f6101e55492afb391047842a93d402237b5b1fd3c058b95b2",
+              "input_schemas": [
+                {
+                  "port": "parameters",
+                  "schema_ref": {
+                    "schema_id": "search.specification",
+                    "version": "1",
+                    "sha256": "e829b92d2145b0916847b06cb6e73c4a5aea17addea8bbdd1e9706dbd1cc79a7"
+                  }
+                }
+              ],
+              "output_schemas": [
+                {
+                  "port": "result",
+                  "schema_ref": {
+                    "schema_id": "search.checkpoint",
+                    "version": "1",
+                    "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+                  }
+                }
+              ],
+              "checkpoint_schema": null
+            },
+            "policy_sha256": "3d4b1fb2f9a088c2ab6968f29b790595d6287326036829a9580bdea4d91f1ea9",
+            "structural": {
+              "status": "valid",
+              "findings": []
+            },
+            "scientific": {
+              "status": "eligible",
+              "reason_codes": [
+                "synthetic_fixture_only"
+              ]
+            },
+            "capacity": {
+              "status": "unavailable",
+              "reason_codes": [
+                "capacity_busy"
+              ]
+            }
+          },
+          "admission": {
+            "status": "allowed",
+            "reason_codes": [
+              "policy_compatible"
+            ]
+          },
+          "status": "rejected",
+          "assessed_at": "2026-10-07T08:13:58.995401Z",
+          "capacity_valid_until": "2026-10-07T08:14:13.938712Z"
+        }
+      },
+      "requests": {
+        "operation_id": "b254ac29007d42fab0eba999bf0c7f2e",
+        "status": "rejected",
+        "reason_code": "no_eligible_capacity",
+        "decision": {
+          "schema_version": "1",
+          "observations": {
+            "schema_version": "1",
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "managed-capacity-f0fbf4a7e7314b848c3800cf2221b3c2"
+            },
+            "release": {
+              "schema_version": "1",
+              "tool": {
+                "capability_id": "numeric.search-requests",
+                "release": "0.5.0",
+                "image_sha256": "7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+                "contract_version": "1"
+              },
+              "descriptor_sha256": "737a4817c7fcc2283e4b0d11c6b523460b3bd4890301a294726fc3fb7eff12fd",
+              "input_schemas": [
+                {
+                  "port": "parameters",
+                  "schema_ref": {
+                    "schema_id": "search-step.context",
+                    "version": "1",
+                    "sha256": "856d8ddda364e4fc9160673506ae46d84dd31f4300d41d3729780df532f39485"
+                  }
+                }
+              ],
+              "output_schemas": [
+                {
+                  "port": "result",
+                  "schema_ref": {
+                    "schema_id": "search-step.requests",
+                    "version": "1",
+                    "sha256": "86da9c5a26becef427ede41a2bd15dd78598fbbb1e0f210d4e648406d9fdbc43"
+                  }
+                }
+              ],
+              "checkpoint_schema": null
+            },
+            "policy_sha256": "3d4b1fb2f9a088c2ab6968f29b790595d6287326036829a9580bdea4d91f1ea9",
+            "structural": {
+              "status": "valid",
+              "findings": []
+            },
+            "scientific": {
+              "status": "eligible",
+              "reason_codes": [
+                "synthetic_fixture_only"
+              ]
+            },
+            "capacity": {
+              "status": "unavailable",
+              "reason_codes": [
+                "capacity_busy"
+              ]
+            }
+          },
+          "admission": {
+            "status": "allowed",
+            "reason_codes": [
+              "policy_compatible"
+            ]
+          },
+          "status": "rejected",
+          "assessed_at": "2026-10-07T08:13:59.015261Z",
+          "capacity_valid_until": "2026-10-07T08:14:13.966801Z"
+        }
+      },
+      "collect": {
+        "operation_id": "de13577ffc8d4f26babda8e6f0594d90",
+        "status": "rejected",
+        "reason_code": "no_eligible_capacity",
+        "decision": {
+          "schema_version": "1",
+          "observations": {
+            "schema_version": "1",
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "managed-capacity-f0fbf4a7e7314b848c3800cf2221b3c2"
+            },
+            "release": {
+              "schema_version": "1",
+              "tool": {
+                "capability_id": "numeric.search-collect",
+                "release": "0.5.0",
+                "image_sha256": "7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+                "contract_version": "1"
+              },
+              "descriptor_sha256": "341ef7722a7dea93f0cca4059c6e947348a6566ffced70ee9fc6d46cd7765d2f",
+              "input_schemas": [
+                {
+                  "port": "parameters",
+                  "schema_ref": {
+                    "schema_id": "search-step.collected",
+                    "version": "1",
+                    "sha256": "4863a08e040f46f35fbbd5b308ec2709238fb9e8802a8b434a6fefd2e5b90369"
+                  }
+                }
+              ],
+              "output_schemas": [
+                {
+                  "port": "result",
+                  "schema_ref": {
+                    "schema_id": "search.checkpoint",
+                    "version": "1",
+                    "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+                  }
+                }
+              ],
+              "checkpoint_schema": null
+            },
+            "policy_sha256": "3d4b1fb2f9a088c2ab6968f29b790595d6287326036829a9580bdea4d91f1ea9",
+            "structural": {
+              "status": "valid",
+              "findings": []
+            },
+            "scientific": {
+              "status": "eligible",
+              "reason_codes": [
+                "synthetic_fixture_only"
+              ]
+            },
+            "capacity": {
+              "status": "unavailable",
+              "reason_codes": [
+                "capacity_busy"
+              ]
+            }
+          },
+          "admission": {
+            "status": "allowed",
+            "reason_codes": [
+              "policy_compatible"
+            ]
+          },
+          "status": "rejected",
+          "assessed_at": "2026-10-07T08:13:59.046804Z",
+          "capacity_valid_until": "2026-10-07T08:14:13.950926Z"
+        }
+      },
+      "vary": {
+        "operation_id": "717dcd04ebe74d41988fdeded9226ab6",
+        "status": "rejected",
+        "reason_code": "no_eligible_capacity",
+        "decision": {
+          "schema_version": "1",
+          "observations": {
+            "schema_version": "1",
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "managed-capacity-f0fbf4a7e7314b848c3800cf2221b3c2"
+            },
+            "release": {
+              "schema_version": "1",
+              "tool": {
+                "capability_id": "numeric.search-vary",
+                "release": "0.5.0",
+                "image_sha256": "7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+                "contract_version": "1"
+              },
+              "descriptor_sha256": "f9a16256a48b67c81a9573d9cabbe90e095cd222ad7f296f67899aa118fef90a",
+              "input_schemas": [
+                {
+                  "port": "parameters",
+                  "schema_ref": {
+                    "schema_id": "search-step.context",
+                    "version": "1",
+                    "sha256": "856d8ddda364e4fc9160673506ae46d84dd31f4300d41d3729780df532f39485"
+                  }
+                }
+              ],
+              "output_schemas": [
+                {
+                  "port": "result",
+                  "schema_ref": {
+                    "schema_id": "search.checkpoint",
+                    "version": "1",
+                    "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+                  }
+                }
+              ],
+              "checkpoint_schema": null
+            },
+            "policy_sha256": "3d4b1fb2f9a088c2ab6968f29b790595d6287326036829a9580bdea4d91f1ea9",
+            "structural": {
+              "status": "valid",
+              "findings": []
+            },
+            "scientific": {
+              "status": "eligible",
+              "reason_codes": [
+                "synthetic_fixture_only"
+              ]
+            },
+            "capacity": {
+              "status": "unavailable",
+              "reason_codes": [
+                "capacity_busy"
+              ]
+            }
+          },
+          "admission": {
+            "status": "allowed",
+            "reason_codes": [
+              "policy_compatible"
+            ]
+          },
+          "status": "rejected",
+          "assessed_at": "2026-10-07T08:13:59.056213Z",
+          "capacity_valid_until": "2026-10-07T08:14:13.975174Z"
+        }
+      },
+      "evaluate": {
+        "operation_id": "207f23343b3d4b568b6407bec29058fc",
+        "status": "rejected",
+        "reason_code": "no_eligible_capacity",
+        "decision": {
+          "schema_version": "1",
+          "observations": {
+            "schema_version": "1",
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "managed-capacity-f0fbf4a7e7314b848c3800cf2221b3c2"
+            },
+            "release": {
+              "schema_version": "1",
+              "tool": {
+                "capability_id": "synthetic.numeric-objectives",
+                "release": "0.3.0",
+                "image_sha256": "b6d73b31058d358a5a2a13e44979e8b6e3a6acd06260670226a1b2570f1135e3",
+                "contract_version": "1"
+              },
+              "descriptor_sha256": "8f6b2488bf4c4f443b3f11f2467af516839f2e7e2e4451a5c9a8f4a1dde752e4",
+              "input_schemas": [
+                {
+                  "port": "parameters",
+                  "schema_ref": {
+                    "schema_id": "search.evaluation-request",
+                    "version": "1",
+                    "sha256": "44c7375364971f923302f83d0d6100bd2d01b8c6085d25f7195e465ccb9fbe58"
+                  }
+                },
+                {
+                  "port": "policy",
+                  "schema_ref": {
+                    "schema_id": "synthetic.numeric-policy",
+                    "version": "1",
+                    "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a"
+                  }
+                }
+              ],
+              "output_schemas": [
+                {
+                  "port": "result",
+                  "schema_ref": {
+                    "schema_id": "search.evaluation-observation",
+                    "version": "1",
+                    "sha256": "28b7765aa253bc93d2e050c06e4a38be09ffa1b8a8b45762ee93eaaffe37add2"
+                  }
+                }
+              ],
+              "checkpoint_schema": null
+            },
+            "policy_sha256": "3d4b1fb2f9a088c2ab6968f29b790595d6287326036829a9580bdea4d91f1ea9",
+            "structural": {
+              "status": "valid",
+              "findings": []
+            },
+            "scientific": {
+              "status": "eligible",
+              "reason_codes": [
+                "synthetic_fixture_only"
+              ]
+            },
+            "capacity": {
+              "status": "unavailable",
+              "reason_codes": [
+                "capacity_busy"
+              ]
+            }
+          },
+          "admission": {
+            "status": "allowed",
+            "reason_codes": [
+              "policy_compatible"
+            ]
+          },
+          "status": "rejected",
+          "assessed_at": "2026-10-07T08:13:59.076079Z",
+          "capacity_valid_until": "2026-10-07T08:14:13.922993Z"
+        }
+      }
+    },
+    "final": {
+      "owners": {
+        "artifact": {
+          "owner": "artifact",
+          "pid": 33852,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "registry": {
+          "owner": "registry",
+          "pid": 34224,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "runtime": {
+          "owner": "runtime",
+          "pid": 31724,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        }
+      },
+      "workers": {
+        "runtime-coordinate": {
+          "state": "quiescent",
+          "exit_code": null,
+          "completed_turns": 0,
+          "faulted": false,
+          "execution_readiness": "not_assessed"
+        }
+      },
+      "tool_access": {
+        "runtime": {
+          "state": "drained",
+          "port": 62499,
+          "upstream_readiness": "not_assessed"
+        },
+        "artifact": {
+          "state": "drained",
+          "port": 62500,
+          "upstream_readiness": "not_assessed"
+        }
+      },
+      "scientific_workers": {
+        "evolution-seed": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 0,
+          "exit_code": null,
+          "execution_readiness": "not_assessed"
+        },
+        "evolution-requests": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 0,
+          "exit_code": null,
+          "execution_readiness": "not_assessed"
+        },
+        "evolution-collect": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 0,
+          "exit_code": null,
+          "execution_readiness": "not_assessed"
+        },
+        "evolution-vary": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 0,
+          "exit_code": null,
+          "execution_readiness": "not_assessed"
+        },
+        "synthetic-objectives": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 0,
+          "exit_code": null,
+          "execution_readiness": "not_assessed"
+        }
+      },
+      "tool_catalog": {
+        "evolution-seed": {
+          "state": "observed",
+          "observation": {
+            "revision": 3,
+            "free_slots": 0,
+            "observed_at": "2026-10-07T08:13:59.428740Z",
+            "expires_at": "2026-10-07T08:14:14.428740Z"
+          },
+          "running": false,
+          "stopping": true
+        },
+        "evolution-requests": {
+          "state": "observed",
+          "observation": {
+            "revision": 3,
+            "free_slots": 0,
+            "observed_at": "2026-10-07T08:13:59.438599Z",
+            "expires_at": "2026-10-07T08:14:14.438599Z"
+          },
+          "running": false,
+          "stopping": true
+        },
+        "evolution-collect": {
+          "state": "observed",
+          "observation": {
+            "revision": 3,
+            "free_slots": 0,
+            "observed_at": "2026-10-07T08:13:59.414073Z",
+            "expires_at": "2026-10-07T08:14:14.414073Z"
+          },
+          "running": false,
+          "stopping": true
+        },
+        "evolution-vary": {
+          "state": "observed",
+          "observation": {
+            "revision": 3,
+            "free_slots": 0,
+            "observed_at": "2026-10-07T08:13:59.420990Z",
+            "expires_at": "2026-10-07T08:14:14.420990Z"
+          },
+          "running": false,
+          "stopping": true
+        },
+        "synthetic-objectives": {
+          "state": "observed",
+          "observation": {
+            "revision": 3,
+            "free_slots": 0,
+            "observed_at": "2026-10-07T08:13:59.447848Z",
+            "expires_at": "2026-10-07T08:14:14.447848Z"
+          },
+          "running": false,
+          "stopping": true
+        }
+      }
+    },
+    "status_latency_seconds": 0.0,
+    "predeclared_status_limit_seconds": 0.5,
+    "campaigns_admitted": 0,
+    "provider_calls": 0,
+    "original_installation_unchanged": true,
+    "limits": [
+      "Actual installed Runtime/Data/Registry and TLS, Docker image/resource checks, source Deployment controller",
+      "Standby capacity and withdrawal only; no successful scientific invocation or campaign admission",
+      "Runtime health is configured-execution liveness, not continuous SQL readiness",
+      "Capacity is expiring observation, not exclusive physical reservation or dispatch authority"
+    ]
+  },
+  "raw_evidence_sha256": "bf353b1047b317d2572c97b54d205e78964a3bad5fd2afc91a9a3f5826ec2840",
+  "rebuild": {
+    "timestamp_local": "2026-10-07 03:14:34",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-deployment",
+    "forbidden_implementations": [
+      "amphora_campaign_runtime",
+      "amphora_agent_planning",
+      "amphora_data_artifacts",
+      "sqlalchemy",
+      "pydantic"
+    ],
+    "packages": {
+      "amphora-deployment": "0.8.0"
+    },
+    "wheels": {
+      "amphora_deployment-0.8.0-py3-none-any.whl": "3c0e05c3ba2e37228cdddfc31d950ec3d585a5c4aa4908ad8861ef0a1694cd71"
+    }
+  },
+  "focused_coverage": {
+    "tests": 103,
+    "seconds": 4.86,
+    "statements_covered": 788,
+    "statements_total": 850,
+    "branches_covered": 111,
+    "branches_total": 122,
+    "limitations": [
+      "Actual Registry target/group lifecycle are separate process evidence",
+      "Monitor/reporter thread-start and selected aggregate error cleanup paths remain gaps",
+      "No absolute HTTP deadline, daemon outage or successful scientific execution claim"
+    ]
+  }
+}

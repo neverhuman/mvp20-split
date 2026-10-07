@@ -8,6 +8,7 @@ from ..installation import SERVING_HOSTS
 from ..profile import require
 from ..scientific_workers.group import ScientificGroup
 from ..tool_access.managed import AccessGroup
+from ..tool_catalog.group import CatalogGroup
 from ..workers.group import WorkerGroup
 from .processes import OwnerProcess
 
@@ -35,11 +36,12 @@ class Supervisor:
         self.workers = WorkerGroup({} if workers is None else workers)
         self.access = AccessGroup({} if access is None else access)
         self.scientific = ScientificGroup({} if scientific is None else scientific)
+        self.catalog = CatalogGroup()
 
     def scientific_command(self, name, action):
         with self.lock:
             require(not self.closed, 'lifecycle_closed')
-            if action == 'start':
+            if action in {'start', 'standby'}:
                 self.access.require_running()
                 require(all(owner in self.processes and self.processes[owner].status()['state'] == 'running'
                             for owner in self.bindings), 'container_requires_running_owners')
@@ -90,6 +92,8 @@ class Supervisor:
                 return state
             process = self.bindings[owner].launch(self.events)
             self.processes[owner] = process
+            if owner == 'registry':
+                self.catalog.resume()
             return process.status()
 
     def force_stop(self, owner):
@@ -98,6 +102,9 @@ class Supervisor:
             self.workers.require_quiescent()
             self.scientific.require_quiescent()
             self.access.require_stopped()
+            if owner == 'registry':
+                self.catalog.quiesce()
+                self.catalog.require_stopped()
             process = self.processes.get(owner)
             if process is not None:
                 process.force_stop()
@@ -109,6 +116,9 @@ class Supervisor:
             self.workers.require_quiescent()
             self.scientific.require_quiescent()
             self.access.require_stopped()
+            if owner == 'registry':
+                self.catalog.quiesce()
+                self.catalog.require_stopped()
             return self.processes[owner].drain()
 
     def restart(self, owner):
@@ -131,6 +141,8 @@ class Supervisor:
             self.access.require_stopped()
             # Normal control shutdown requires a completed drain/stop before this call.
             require(all(item.status()["state"] == "exited" for item in self.processes.values()), "lifecycle_shutdown_requires_stop")
+            self.catalog.quiesce()
+            self.catalog.require_stopped()
             for process in self.processes.values():
                 process.force_stop()
             self.closed = True

@@ -3,13 +3,13 @@
 ## Canonical Parent Tracker
 
 - Status: primary_active; BP-09.01/.02 closed; BP-09.03 B1.3b active.
-- Last refreshed: `2026-10-07 02:45:50` (America/Chicago).
+- Last refreshed: `2026-10-07 03:16:05` (America/Chicago).
 - Owner/scope: Local deployment/recovery integration with each service retaining ownership.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-05/06/07 and BP-08 for evolutionary demo claims; BP-02/03/04 durability and protocol gates.
 - Implementation: **43.19%**, (8 + 23/36)/20 verified delivery weight; eight delivery gates closed. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-09.03/B1.3b actual catalog/tool eligibility; native and scientific lifecycle/adoption checkpoints verified.
+- Current implementation task: BP-09.03/B1.3b successful managed scientific execution; lifecycle/adoption and standby eligibility verified.
 - Demonstrated behavior: selected-host preflight and independently installed local infrastructure, restricted roles, actual outage/receipt recovery, quota/exposure denial, seven-host replacement/drain and gateway browser compatibility. Full campaign/model integration remains BP-09.03.
 - Blockers: none for local installation engineering; later external gates remain scoped to their child trackers.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
