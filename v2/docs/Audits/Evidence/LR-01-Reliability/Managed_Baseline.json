@@ -1,0 +1,42 @@
+{
+  "timestamp_local": "2026-10-07 16:08:18",
+  "status": "diagnostic_observation",
+  "source": ".test-results/lr01-managed-baseline-20261007a",
+  "trials": [
+    {
+      "trial": 1,
+      "status": "passed",
+      "run_id": "225819ef0fbf42bead390dc49d9ce272",
+      "execution_seconds": 108.3289999999106,
+      "drained": true,
+      "status_scope": "campaign execution, not fault-free worker lifecycle",
+      "worker_faults_at_completion": {
+        "evolution-vary": 3
+      }
+    },
+    {
+      "trial": 2,
+      "status": "passed",
+      "run_id": "9cf6225f2e5d4116a1fe650401e07590",
+      "execution_seconds": 106.92200000002049,
+      "drained": true,
+      "status_scope": "campaign execution, not fault-free worker lifecycle",
+      "worker_faults_at_completion": {}
+    },
+    {
+      "trial": 3,
+      "status": "passed",
+      "run_id": "b491a76411354f74b1ca73bd8ed41133",
+      "execution_seconds": 109.60999999986961,
+      "drained": true,
+      "status_scope": "campaign execution, not fault-free worker lifecycle",
+      "worker_faults_at_completion": {}
+    }
+  ],
+  "provider_calls": 0,
+  "limits": [
+    "Three completed campaigns do not explain earlier active-run failures",
+    "Terminal snapshot worker fault remains diagnostic finding; not a fault-free result",
+    "User requested UI; further worker diagnostics paused while demo serves"
+  ]
+}

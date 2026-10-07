@@ -1,17 +1,33 @@
 # Restore
 
-Refreshed 2026-10-07 15:55:36 America/Chicago. Read FIRST after compression.
+Refreshed 2026-10-07 16:08:18 America/Chicago. Read FIRST after compression.
 
 ## Current handoff
+
+User steering 2026-10-07 16:06:17: wants to view local UI. LR01 fixed3trial series FINISHED, all3campaigns15invocations, drains0.
+UIlaunch session48269, folder ROOT.test-results/demo-20261008/sessions/20261007-160723-32252bd9.
+BrowserOPENrequested, ready.json confirmsREADY; rootHTTP200 verified.
+Leave session48269 running for user; automatic2hour shutdown. To stop gracefully,
+create STOP in that exact sessiondirectory and poll48269 for7ownerdrains.
+Origin http://127.0.0.1:57013. UI owns same restored deployment; do not start worker
+diagnostics while user is viewing. This is an explicit UI-serving interruption;
+resume LR01R2 diagnostic after demo services are stopped. No model calls.
+
 
 Demo2026-10-08 11am CT, internal nontechnical colleagues. DEMO-01 delivered100%;
 presenter acceptance pending. Frozen sourceStudio0.16.1 unchanged. SQ-01 CLOSED100%,
 Build100/Verification100; V1a/V1b/V1c each100. Closed plan/history under
  docs/Build Plans/Completed. Closeout docs/Audits/SQ-01_Quality_Closeout.md.
-NEXT LR-01 activation audit then R1 bounded no-model worker-reproduction specification.
+NEXT LR-01 R2 RuntimeOWN read-only scoped command receipt diagnosis. R1 complete.
+Baseline ROOT.test-results/lr01-managed-baseline-20261007a all3campaignscompleted;
+trial1 completed snapshot evolution-varyexit3. Ledger explicitly differentiates
+campaign success from workerfault. Need receipts before claiming terminalclaimcause.
+Older active-run failures unresolved. R2 no completioncredit.
+LR01=25%, Build33.33%, Acceptance0%. Exactly3trials600executionseconds each;
+stopseries if cleanup fails. Actual installedDeployment0.15 finalb and frozen
+original ownerlocks; rebuiltmaterials. No paidcall/reset/demoassetchange.
 UI-R01 queued separately for original-focus-c unexplained feedback read. No owner
-approval pending, paid calls, owner hosts or test jobs running. Lastpushedcb3986f2;
-nextcommit independent Studio replacement + SQcloseout. Do not stop at commit.
+approval pending or paid calls. DemoUI sevenownerhosts serving; no testjobs running. Lastpushedf81351eb; SQcloseout committed. Do not stop at commit.
 
 V1b .test-results/sq01-followup-replacement-20261007a passed two independent locked
 Studio installs286tests each, schema regeneration and actualownerbrowser1440/390

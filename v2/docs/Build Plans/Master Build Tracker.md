@@ -8,14 +8,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-01 through BP-09 closed; SQ-01 closed; LR-01 activation next.
-- Last refreshed: `2026-10-07 15:55:36` (America/Chicago).
+- Status: BP-01 through BP-09 closed; SQ-01 closed; LR-01 R2 diagnosis active.
+- Last refreshed: `2026-10-07 16:08:18` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: LR-01; DEMO-01 bounded walkthrough delivered for2026-10-08 11:00:00 CT.
-- Primary active task: LR-01 activation audit/R1 specification; frozen demo remains separate.
+- Primary active task: LR-01 R2 receipt diagnosis; paused while owner views frozen demo.
 - Next task: bounded no-model worker diagnosis.
 - Implementation completion: SQ-01 closed100%, Build100%, Verification100%; BP-09 closed100%,20/20.
-- Blockers: none for approved SQ-01.01 implementation; scientific corpus remains TBA for later scientific qualification.
+- Blockers: diagnostic runs share the UI deployment; resume after the owner finishes viewing. Scientific corpus remains TBA.
 - Acceptance posture: bounded local demo/recovery/replacement complete; intermittent worker failures assigned LR-01, no soak claim.
 - Active exception: deadline demo delivery complete; presenter acceptance pending, qualification assets frozen.
 
@@ -29,14 +29,14 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-LR-01 is next at0%; SQ-01 closed100%. Completed plans
+LR-01 is active25%, Build33.33%, Acceptance0%; SQ-01 closed100%. Completed plans
 are in the [completed index](Completed/README.md); their percentages stay closed.
 
 ## Prioritized Successor Queue and Phase Mirrors
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
-| 1 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Queued; activation next | 0% | 0% | 0% | BP-09 accepted; bounded no-model diagnostic specification |
+| 1 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Active R2 | 25% | 33.33% | 0% | BP-09 accepted; bounded no-model diagnostic specification |
 | 2 | [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md) | Queued | 0% | 0% | 0% | LR-01 priority; bounded read diagnostic |
 
 The owning tracker controls exact task/percentages; MBT controls priority and

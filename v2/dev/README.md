@@ -400,3 +400,8 @@ BP-09.04 capture/restore: `capture_local_backup.py` requires stopped owner/contr
 
 
 2026-10-07 15:41:38: SQ-01 actual-owner follow-up acceptance is decomposed under followup_acceptance/README.md; prepare_followup_acceptance.py builds isolated wheels, verify_followup_records.py retains public criteria, verify_followup_exchange.py executes/resumes exact proposal and successor, verify_followup_browser.py verifies actual browser and bytes. Failed evidence is retained; no paid model or frozen-demo changes.
+
+verify_worker_reliability.py owns LR-01's fixed three-trial no-model baseline.
+It invokes the existing managed campaign path with new scopes/configurations,
+preserves every failed history, and stops the series if drain is unverified.
+The trial ledger is diagnostic evidence, not a repair or reliability guarantee.
