@@ -1,0 +1,38 @@
+{
+  "checked_at": "2026-10-06T22:15:42-05:00",
+  "routes": {
+    "profile": "loopback-routes-v1",
+    "host": "127.0.0.1",
+    "ports": {
+      "artifact": 52534,
+      "gateway": 52535,
+      "knowledge": 52536,
+      "planning": 52537,
+      "registry": 52538,
+      "research": 52539,
+      "runtime": 52540,
+      "supervisor": 52541
+    }
+  },
+  "installed_registry_release": "0.1.0",
+  "manifest_sha256": "42bea6ed62b9b5bbad10596e977277ad10aa22f572c9a07d6ef353eba04027b8",
+  "repeat_start_did_not_retry": true,
+  "explicit_restart_used_fresh_process": true,
+  "observed": {
+    "owners": {
+      "registry": {
+        "owner": "registry",
+        "pid": 33416,
+        "state": "exited",
+        "exit_code": 2,
+        "readiness": "not_assessed"
+      }
+    }
+  },
+  "control_shutdown_completed": true,
+  "limits": [
+    "Missing configuration is intentional; this proves process failure handling, not application readiness.",
+    "No owner migrations, provider calls or scientific tool activation.",
+    "Credential was ephemeral for this bounded proof; persistent supervisor wiring remains."
+  ]
+}

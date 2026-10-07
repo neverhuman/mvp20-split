@@ -18,6 +18,18 @@ class LocalState:
         self.record = None
         self._lock = None
 
+    @staticmethod
+    def snapshot(root):
+        # save() replaces the entire file atomically. Readers never need the writer lock.
+        with (Path(root) / "stores.json").open("rb") as stream:
+            raw = stream.read(262145)
+        require(len(raw) <= 262144, "deployment_state_size")
+        record = json.loads(raw)
+        require(type(record) is dict and record.get("schema_version") == "1", "deployment_state_shape")
+        identity = record.get("deployment_id")
+        require(type(identity) is str and len(identity) == 32 and all(c in "0123456789abcdef" for c in identity), "deployment_state_identity")
+        return record
+
     def __enter__(self):
         require(os.name == "nt", "deployment_platform_unsupported")
         import msvcrt
@@ -36,10 +48,7 @@ class LocalState:
             raise ProfileError("deployment_operation_busy") from None
         try:
             if self.path.exists():
-                self.record = json.loads(self.path.read_bytes())
-                require(type(self.record) is dict and self.record.get("schema_version") == "1", "deployment_state_shape")
-                identity = self.record.get("deployment_id")
-                require(type(identity) is str and len(identity) == 32 and all(c in "0123456789abcdef" for c in identity), "deployment_state_identity")
+                self.record = self.snapshot(self.root)
             else:
                 self.record = {"schema_version": "1", "deployment_id": uuid.uuid4().hex, "phase": "declared"}
                 self.save()

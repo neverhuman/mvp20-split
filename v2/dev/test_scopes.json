@@ -320,24 +320,38 @@
   },
   "deployment-credentials": {
     "tests": "deploy/local/tests/credentials",
-    "coverage_sources": ["deploy/local/src/amphora_deployment/credentials"]
+    "coverage_sources": [
+      "deploy/local/src/amphora_deployment/credentials"
+    ]
   },
   "deployment-persistence": {
     "tests": "deploy/local/tests/persistence",
-    "coverage_sources": ["deploy/local/src/amphora_deployment/persistence"]
+    "coverage_sources": [
+      "deploy/local/src/amphora_deployment/persistence"
+    ]
   },
   "deployment-install": {
     "tests": "deploy/local/tests/install",
-    "coverage_sources": ["deploy/local/src/amphora_deployment/installation"]
+    "coverage_sources": [
+      "deploy/local/src/amphora_deployment/installation"
+    ]
   },
   "deployment-preflight": {
     "tests": "deploy/local/tests/preflight",
-    "coverage_sources": ["deploy/local/src/amphora_deployment"]
+    "coverage_sources": [
+      "deploy/local/src/amphora_deployment"
+    ]
   },
   "search-recovery": {
     "tests": "tests/integration/search_recovery",
     "coverage_sources": [
       "tests/integration/search_recovery"
+    ]
+  },
+  "deployment-lifecycle": {
+    "tests": "deploy/local/tests/lifecycle",
+    "coverage_sources": [
+      "deploy/local/src/amphora_deployment/lifecycle"
     ]
   }
 }

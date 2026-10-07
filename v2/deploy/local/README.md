@@ -65,3 +65,5 @@ Verified 2026-10-06 21:39:19: owner selected this local computer and computer-on
 Current BP-09.02 boundary: [installation inventory](src/amphora_deployment/installation/README.md) adds six independently verified owner closures and explicit launch recipes in0.2. The original0.1profile format and qualified installation are preserved. Inventory is not service readiness; new persistence/credential/lifecycle/gateway work remains.
 
 BP-09.02/B1.02 adds [protected credentials](src/amphora_deployment/credentials/README.md) and [dedicated persistence](src/amphora_deployment/persistence/README.md). Actual local role/authentication/resume checks passed via dev/verify_local_stores.py. Owner API lifecycle and gateway remain B1.03/B1.04.
+
+BP-09.02/B1.03 adds [Windows lifecycle and control](src/amphora_deployment/lifecycle/README.md), authenticated loopback commands, fixed owner credential grants and bounded metadata logs. Actual isolated Registry failure/restart and supervisor shutdown passed;92deployment regressions passed. Gateway/Studio and successful six-owner startup remain B1.04/B2.

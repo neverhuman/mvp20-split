@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-10-06T22:19:50-05:00",
+  "status": "passed",
+  "first": {
+    "exit_code": null,
+    "owner": "registry",
+    "pid": 18244,
+    "readiness": "not_assessed",
+    "state": "running"
+  },
+  "repeated": {
+    "exit_code": 2,
+    "owner": "registry",
+    "pid": 18244,
+    "readiness": "not_assessed",
+    "state": "exited"
+  },
+  "restarted": {
+    "exit_code": null,
+    "owner": "registry",
+    "pid": 2000,
+    "readiness": "not_assessed",
+    "state": "running"
+  },
+  "stopped": {
+    "exit_code": 0,
+    "owner": "registry",
+    "pid": 2000,
+    "readiness": "not_assessed",
+    "state": "exited"
+  },
+  "supervisor_exit": 0,
+  "limits": "Registry config intentionally invalid; successful serving/migrations and graceful drain remain B2. No application-ready claim."
+}

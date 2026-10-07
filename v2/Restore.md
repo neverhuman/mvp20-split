@@ -1,14 +1,14 @@
 # Restore
 
-Refreshed 2026-10-06 22:07:00 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-06 22:21:57 (America/Chicago). Read FIRST after compression.
 
 ## Current checkpoint
 
-BP-09.02 B1.02 complete; current task B1.03 local lifecycle/routing/bounded logs.
-Child12.5%, Build16.67%, Acceptance0%; parent22.5%. BP09.01 closed100%; BP08 closed100%.
+BP-09.02 B1.03 complete; current task B1.04 loopback gateway/Studio.
+Child18.75%, Build25%, Acceptance0%; parent23.75%. BP09.01 closed100%; BP08 closed100%.
 Owner chose current Windows computer, local computer access, 127.0.0.1 only.
 Continue until needed, commit/push significant verified changes. No decision blocker.
-No active verification processes. Latest changes ready to commit; previous push8a2b89b4.
+No active verification processes. Persistence committed/pushed478a2bee; completed lifecycle changes ready commit/push.
 
 ## Dedicated persistence
 
@@ -25,10 +25,24 @@ credentials/persistence, actual Docker/SQL proof separate. Evidence docs/Audits/
 BP-09-Deployment/Local_Stores.json. Driver dev/verify_local_stores.py. Restart and failure
 injection NOT proven. No old fixtures reset/reused. Existing deployment kept running.
 
+## B1.03 completed
+
+Lifecycle module now includes Windows jobs, entry gate, inventory checks, bounded
+metadata logs, stable routes, supervisor command manager, authenticated loopback
+control, nonsecret manifest/owner-scoped credential loader and lifecycle CLI.
+Actual isolated Registry invalid-config process2, repeated start, explicit restart,
+force-stop, status and shutdown passed via ROOT.test-results/supervisor-commands-20261006c.
+Two earlier probes a/b reproduced startup/status writer-lock contention; repaired
+readonly routes/control token discovery to use atomic LocalState.snapshot withoutlock.
+Local lifecycle proof ROOT.test-results/local-lifecycle-20261006a. CLI supervisor and
+children stopped; dedicated PG/Qdrant remain running.92tests11.35s, boundary gatepassed.
+Coverage427statements135missed+76branches65%combined; CLI separateprocesses uncounted.
+Protected separate supervisor.dpapi at installationroot; original vault unchanged.
+Lifecycle READMEs/trackers updated. Ready commit/push, previous478a2bee.
+
 ## Next bounded task
 
-Read BP09.02 canonical tracker and activation audit. B1.03 lifecycle/routing/bounded logs,
-then B1.04 gateway/Studio. B2 explicit owner migrations/restricted-role readiness and failure/drain.
+Read BP09.02 canonical tracker and activation audit. B1.04 gateway/Studio. B2 explicit owner migrations/restricted-role readiness and failure/drain.
 Six isolated current owner installations ROOT .test-results/local-owner-inventory-20261006a/owners;
 manifest/profile/inventory/evidence at its parent.79local wheels. Package deployment0.2.
 Planning serves via amphora_agent_planning.supervision_api (no root __main__), env database

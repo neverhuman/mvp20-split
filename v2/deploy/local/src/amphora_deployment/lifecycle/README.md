@@ -1,0 +1,68 @@
+# Local process lifecycle
+
+Owner BP-09.02/B1.03. ProcessJob owns an unnamed, noninherited
+Windows job handle with kill-on-close. Only a live Popen handle can be attached;
+stored process IDs are diagnostic metadata and are never termination authority.
+Closing a job is a forced stop, not a graceful application drain. The
+launcher gates application entry until job attachment succeeds. OwnerProcess
+verifies inventory interpreter/manifest/wheel hashes before starting a reviewed
+owner CLI. Only explicit AMPHORA_ environment entries and minimal Windows system
+variables reach the child. It starts hidden with no shell and discards raw output.
+An EOF at the entry gate exits before importing the owner. A running process is
+not readiness; an exited CLI retains its actual exit code. Normal CLI failure
+and job-forced termination are separate event types. No restart attachment by PID
+is implemented. Supervisor holds fixed owner bindings and serializes commands.
+Repeated start returns existing process state, including failure; it never retries
+silently. Restart requires a stopped owner. Normal supervisor shutdown requires
+every launched process to have exited. Explicit force-stop and supervisor death
+do not claim graceful drain.
+
+LifecycleEvents accepts only fixed event/owner names and numeric process results.
+Raw child output, exception text, credentials and scientific payloads are not
+accepted. One active and one previous JSONL file are retained, each bounded by
+the configured limit. The owning supervisor must serialize writers across
+processes; the class serializes threads. These diagnostic events are not durable
+campaign history. Log failure must be surfaced by the caller, never silently
+treated as successful deployment.
+
+Tests belong to deploy/local/tests/lifecycle. Actual Windows tests verify job
+closure and supervisor death terminate assigned children; application drain and
+durable-work recovery remain B2. This is process ownership, not a sandbox against
+malicious same-user code or administrators.
+
+Windows ABI references: [job assignment](https://learn.microsoft.com/en-us/windows/win32/api/jobapi2/nf-jobapi2-assignprocesstojobobject),
+[extended limits](https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-jobobject_extended_limit_information),
+[job lifetime](https://learn.microsoft.com/en-us/windows/win32/procthread/job-objects).
+
+Routes persists eight distinct loopback endpoints after stores readiness, under the deployment operation lock. Probing reserves them only during allocation; any later port collision must fail startup and must never silently select a new route. Allocation is not service readiness. Read-only control discovery reads atomically replaced state without the writer lock, repairing a reproduced startup/status contention race.
+
+## Commands and authority
+
+`python -I -m amphora_deployment.lifecycle serve --root <installation> --manifest <bindings.json>`
+hosts authenticated control on the persisted supervisor loopback route. It starts
+no owner automatically. Launch this long-lived command hidden on Windows. The
+same module provides `status`, `start --owner`, `restart --owner`, `force-stop --owner`
+and `shutdown`, all with `--root`. Operators use these commands, not raw bearer keys.
+Owner migrations, campaign admission and graceful drain are not implemented here.
+
+The `local-supervisor-v1` manifest names a nonempty subset of reviewed owners. Each
+entry has absolute installation, source_lock and configuration paths plus a list
+of secret_references. Inventory hashes are checked again on launch. Only the
+owner's service database role is assembled; migrator/admin credentials are never
+granted. Additional token grants must name that owner or a peer edge involving it.
+Data may receive Qdrant credentials; Runtime may receive the cursor key. Planning
+configuration converts token_env principals to its existing environment-only
+supervision credentials format. No configuration file contains resolved secrets.
+Missing owners are not evidence of a complete six-service deployment.
+
+Control uses a separate create-once current-user DPAPI sidecar, supervisor.dpapi,
+bound to the installation identity. The original credential vault is unchanged.
+The HTTP API accepts GET /status, POST /owners/{owner}/{start,restart,force-stop}
+and POST /shutdown. Every request requires a bearer credential, accepts no body,
+and cannot supply commands or configuration paths. Raw HTTP diagnostics are muted.
+
+Verification: 29 focused lifecycle tests; actual installed Registry CLI failure,
+repeat-start identity, explicit restart, force-stop and clean control shutdown via
+dev/verify_supervisor_commands.py. Missing Registry configuration is intentional:
+this is lifecycle/failure evidence, not six-owner serving readiness. Successful
+owner startup/migrations and drain belong to B2; full demo remains later children.
