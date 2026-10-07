@@ -1,0 +1,86 @@
+{
+  "timestamp_local": "2026-10-07 02:09:29",
+  "status": "passed",
+  "tests": 199,
+  "installation": {
+    "timestamp_local": "2026-10-07 02:08:38",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-deployment",
+    "forbidden_implementations": [
+      "amphora_campaign_runtime",
+      "amphora_agent_planning",
+      "amphora_data_artifacts",
+      "sqlalchemy",
+      "pydantic"
+    ],
+    "packages": {
+      "amphora-deployment": "0.6.0"
+    },
+    "wheels": {
+      "amphora_deployment-0.6.0-py3-none-any.whl": "8f760b78c0f6068655178416708b8ec54307b16b01af73fedeb7a73db81cd1af"
+    }
+  },
+  "managed": {
+    "timestamp_local": "2026-10-07 02:09:07",
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "scientific-worker-proof-47782c2636d3470f9102d62d833b72c6"
+    },
+    "controller_python": "Z:\\mvp20-split\\.test-results\\local-scientific-controller-20261007a\\owner\\environment\\Scripts\\python.exe",
+    "campaigns_admitted": 0,
+    "provider_calls": 0,
+    "status_latency_seconds": 0.0,
+    "expected_owner_denial": {
+      "state": "failed",
+      "active_turn": false,
+      "faulted": true,
+      "completed_turns": 1,
+      "exit_code": 3,
+      "execution_readiness": "not_assessed"
+    },
+    "status": "passed",
+    "early_api_drain_rejected": true,
+    "all_retained_turns_released": true,
+    "retained_bindings": 2,
+    "limits": [
+      "Actual controller/Runtime/Data/TLS/Linux tool; nonexistent campaign intentionally rejects the claim",
+      "No tool eligibility, successful scientific work, campaign admission or provider call",
+      "Controller-death adoption and actual daemon-outage latency are separate probes"
+    ]
+  },
+  "recovery": {
+    "timestamp_local": "2026-10-07 02:09:29",
+    "status": "passed",
+    "image_id": "sha256:7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+    "container_id": "9ca46d3fa467ea4cd85f494dea1a8af79ceb3494bd80f28e16f93378d19216a6",
+    "turn_id": "8b55c0254194466da427d7e883dcee14",
+    "container_survived_monitor_job_death": true,
+    "startup_adoption_marked_active_before_observation": true,
+    "single_original_upstream_request": true,
+    "journal_released_and_container_removed": true,
+    "migration_guard_blocked_then_passed": true,
+    "status_latency_seconds": 0.0,
+    "limits": [
+      "Actual monitor process death/adoption with TLS fixture kept available in parent",
+      "Synthetic503 owner yields expected tool exit3; no campaign, model or scientific eligibility",
+      "Full controller/TLS death and daemon outage are distinct unproven cases"
+    ]
+  },
+  "rebuild_wheels_identical": true,
+  "rebuild_peer": ".test-results/local-scientific-controller-20261007b/owner",
+  "source_coverage": {
+    "tests": 35,
+    "seconds": 1.88,
+    "statements": 444,
+    "statements_covered": 411,
+    "branches": 66,
+    "branches_covered": 59,
+    "percent_rounded": 91,
+    "gaps": [
+      "Docker successful CLI paths measured separately by actual image probes",
+      "Monitor thread-start failures, selected detach/closing paths and aggregate cleanup failures"
+    ],
+    "timing_note": "Probe latency values are rounded observations; zero is below sampling resolution, not zero elapsed time."
+  }
+}

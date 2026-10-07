@@ -6,6 +6,7 @@ from pathlib import Path
 
 from ..installation import SERVING_HOSTS
 from ..profile import require
+from ..scientific_workers.group import ScientificGroup
 from ..tool_access.managed import AccessGroup
 from ..workers.group import WorkerGroup
 from .processes import OwnerProcess
@@ -25,7 +26,7 @@ class OwnerBinding:
 
 
 class Supervisor:
-    def __init__(self, bindings, events, *, workers=None, access=None):
+    def __init__(self, bindings, events, *, workers=None, access=None, scientific=None):
         require(set(bindings) <= set(SERVING_HOSTS) and bool(bindings), "lifecycle_bindings")
         self.bindings, self.events = dict(bindings), events
         self.processes = {}
@@ -33,6 +34,16 @@ class Supervisor:
         self.closed = False
         self.workers = WorkerGroup({} if workers is None else workers)
         self.access = AccessGroup({} if access is None else access)
+        self.scientific = ScientificGroup({} if scientific is None else scientific)
+
+    def scientific_command(self, name, action):
+        with self.lock:
+            require(not self.closed, 'lifecycle_closed')
+            if action == 'start':
+                self.access.require_running()
+                require(all(owner in self.processes and self.processes[owner].status()['state'] == 'running'
+                            for owner in self.bindings), 'container_requires_running_owners')
+            return self.scientific.command(name, action)
 
     def access_command(self, name, action):
         with self.lock:
@@ -42,6 +53,7 @@ class Supervisor:
                         'tool_tls_requires_running_owner')
             if action != 'start':
                 self.workers.require_quiescent()
+                self.scientific.require_quiescent()
             return getattr(self.access, action)(name)
 
     def worker_command(self, name, action):
@@ -60,6 +72,7 @@ class Supervisor:
             if any(owner not in self.processes or self.processes[owner].status()["state"] != "running"
                    for owner in self.bindings) or any(row['state'] != 'running' for row in self.access.status().values()):
                 self.workers.quiesce()
+                self.scientific.quiesce()
             self.workers.tick()
 
     def status(self):
@@ -83,6 +96,7 @@ class Supervisor:
         with self.lock:
             require(owner in self.bindings, "lifecycle_owner_unavailable")
             self.workers.require_quiescent()
+            self.scientific.require_quiescent()
             self.access.require_stopped()
             process = self.processes.get(owner)
             if process is not None:
@@ -93,6 +107,7 @@ class Supervisor:
         with self.lock:
             require(owner in self.processes, "lifecycle_drain_requires_running")
             self.workers.require_quiescent()
+            self.scientific.require_quiescent()
             self.access.require_stopped()
             return self.processes[owner].drain()
 
@@ -100,6 +115,7 @@ class Supervisor:
         with self.lock:
             require(not self.closed and owner in self.bindings, "lifecycle_owner_unavailable")
             self.workers.require_quiescent()
+            self.scientific.require_quiescent()
             self.access.require_stopped()
             process = self.processes.get(owner)
             require(process is None or process.status()["state"] == "exited", "lifecycle_restart_requires_stop")
@@ -111,6 +127,7 @@ class Supervisor:
     def close(self):
         with self.lock:
             self.workers.require_quiescent()
+            self.scientific.require_quiescent()
             self.access.require_stopped()
             # Normal control shutdown requires a completed drain/stop before this call.
             require(all(item.status()["state"] == "exited" for item in self.processes.values()), "lifecycle_shutdown_requires_stop")

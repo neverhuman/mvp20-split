@@ -3,7 +3,13 @@
 BP-09.03 adds optional [native worker turns](../workers/README.md) under the same
 supervisor writer lease. Worker quiescence gates owner drain/restart/force-stop
 and normal shutdown. Existing manifests without workers preserve their status
-shape. Managed TLS/scientific container recovery remain subsequent work.
+shape. Optional managed TLS and [scientific monitors](../scientific_workers/README.md)
+extend the same lifetime writer lease. Scientific adoption begins only after control
+bind, blocks drain immediately on retained pending state, and performs Docker I/O off
+the control thread. Normal stop order is both worker groups, TLS, then owner APIs.
+Unexpected monitor detach leaves durable container state for recovery; it does not
+claim Windows job closure killed a Linux container. Migration guards retain that
+distinction after controller exit.
 
 Owner BP-09.02/B1.03. ProcessJob owns an unnamed, noninherited
 Windows job handle with kill-on-close. Only a live Popen handle can be attached;

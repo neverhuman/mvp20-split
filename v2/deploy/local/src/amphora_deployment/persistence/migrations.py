@@ -10,6 +10,7 @@ from urllib.parse import quote
 from ..credentials import CredentialVault
 from ..installation import OWNERS, OwnerInstallation
 from ..profile import require
+from ..scientific_workers.ownership import require_released
 from .state import LocalState
 
 
@@ -31,6 +32,7 @@ def migrate_owner(root, owner, directory, source_lock):
     with LocalState(root) as state:
         require(state.record.get("phase") == "stores_ready", "migration_stores_required")
         require_stopped(state.record.get("routes"))
+        require_released(state.root, state.identity)
         receipts = state.record.setdefault("migrations", {})
         prior = receipts.get(owner)
         if prior is not None:
