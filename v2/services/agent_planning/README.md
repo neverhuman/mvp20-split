@@ -1,8 +1,8 @@
 # Agent Planning service boundary
 
-Current release: Planning0.99/planning0020. BP-09.02 corrects host enforcement: only planning_service may serve, and readiness checks the actual database identity. Actual isolated migrator rejection and service readiness passed; all 34 persistence Python files are byte-identical to0.98. The [topology policy](src/amphora_agent_planning/topology/README.md) and existing model/dispatch profiles are unchanged.
+Current release: Planning0.100/planning0020. BP-09.03 adds a separate [checkpoint input profile](src/amphora_agent_planning/checkpoint_input/README.md), measuring the exact live-model envelope before issuance. Fixture and evaluation profiles remain unchanged; configured live transport is the next task. BP-09.02 host-role enforcement remains intact. No persistence migration.
 
-- Version: Planning0.99.0; public Planning0.10 and supervision0.10; owned migration head0020.
+- Version: Planning0.100.0; public Planning0.10 and supervision0.10; owned migration head0020.
 - Reviewed: `2026-10-06 09:21:10` (America/Chicago); BP-07 accepted within stated engineering/evaluation limits.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Campaign acceptance: [BP-07.03](../../docs/Build%20Plans/BP-07/Completed/BP-07.03%20Campaign%20proposals%20and%20context.md); supervisor acceptance [BP-07.04](../../docs/Build%20Plans/BP-07/Completed/BP-07.04%20Durable%20supervisor%20and%20races.md).
@@ -19,6 +19,7 @@ This independently built wheel depends on public contracts and the Tool Protocol
 
 | Module | Boundary |
 |---|---|
+| [checkpoint_input](src/amphora_agent_planning/checkpoint_input/README.md) | Exact versioned supervision Responses envelope and conservative pre-issuance input bound; no provider, budget or source authority |
 | [supervision_client](src/amphora_agent_planning/supervision_client/README.md) | Bounded guarded Runtime response/cancellation submission, original receipt recovery and exact readback; no hidden retry or decision authority |
 | [supervision_api](src/amphora_agent_planning/supervision_api/README.md) | Bounded authenticated intake/receipt/readback HTTP and configured CLI; no automatic provider dispatch |
 | [supervision_intake](src/amphora_agent_planning/supervision_intake/README.md) | Atomic original supervisor wrapper, legacy-compatible Planning request and recorded command receipt; no provider grant |

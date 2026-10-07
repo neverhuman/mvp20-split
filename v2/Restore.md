@@ -1,14 +1,14 @@
 # Restore
 
-Refreshed 2026-10-06 23:32:34 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 00:07:20 (America/Chicago). Read FIRST after compression.
 
 ## Current task
 
-BP-09.03 activation coherence review. BP-09.02 closed100%,Build100%,Acceptance100%,archived.
-BP-09.03 queued0%,Build0%,Acceptance0%; BP-09 parent40%,8/20. BP-09.01 and BP-08 closed.
+BP-09.03/B1.2 configured live adapter. B1.1 verified93tests/179statements4branches100%. Activation audit recorded in docs/Audits/BP-09.03_Activation.md. BP-09.02 closed100%,Build100%,Acceptance100%,archived.
+BP-09.03 active6.25%,Build8.33%,Acceptance0%; BP-09 parent41.25%,8.25/20 weight/eight closed gates. BP-09.01 and BP-08 closed.
 Owner chose this Windows x86_64/Python3.12 computer and local access127.0.0.1 only.
 Continue until genuinely needed; commit/push significant verified work. No current decision blocker.
-B2.01 pushed d15276f1; B2.02 pushed77a2659a; B3 pushed609a541d. V1 closeout ready to commit; all tests/probes exited.
+B2.01 pushed d15276f1; B2.02 pushed77a2659a; B3 pushed609a541d. V1 closeout pushed7d0f7a50; all tests/probes exited.
 No owner/gateway/supervisor processes remain; dedicated PostgreSQL/Qdrant remain running.
 
 ## Latest verified B2 boundary
@@ -68,14 +68,14 @@ one-timeexplicitforwardrepair, not startup. migrate_local_owners.py uses origina
 Six original installs ROOT.test-results/local-owner-inventory-20261006a/owners:
 Runtime0.65,Data0.30,Registry0.1,Research0.40,Knowledge0.18,Planning0.98;79localwheels.
 NewPlanning0.99 directoryabove; gateway0.2 ROOT.test-results/local-gateway-drain-20261006a.
-Older gateway0.1installb preserved. Deployment0.2 currenteditable awaits V1 independentqualification.
+Older gateway0.1installb preserved. Deployment0.2 independently qualified in V1 (install b).
 Studio0.9 dist/local assets, CSPsafe standaloneAJVvalidators, Monitorentry. Design/Explore shell
 assembly remains BP-09.03. Earlier actualbrowser proof v2/.test-results/studio-local-entry/
 2026-10-07T03-44-36-139Z used isolatedgateway0.1 and syntheticRuntimepeer, nofullsystemclaim.
 
 ## Next tasks
 
-Commit/push V1 closeout then BP-09.03 activation audit BEFORE implementation. V1 actual independent
+V1 closeout committed/pushed7d0f7a50. BP-09.03 activation audit complete; B1.1 complete; B1.2 implementation next. V1 actual independent
 controller b started7hosts, replayed originalRegistryreceipt, drainedall and preservedjournal/vault:
 ROOT.test-results/local-controller-replacement-20261006a; copiedController_Replacement.json.
 Gateway0.2 browser PASSED v2/.test-results/studio-local-entry/2026-10-07T04-45-06-672Z, inspected
@@ -108,3 +108,15 @@ no broadNASvenvscan or tests/__init__.py. Never reset oldfixtureDBs/replayoldmig
 Git -c safe.directory=//DesktopNAS/Code/mvp20-split; main. KAPPython18720/2912 are unrelated.
 Update canonical child/parent/MBT percentages and Restore. UIguidelines alreadyread; noUIchanges
 in B2. Existing syntheticOpenAIauthorization remains for later selected-modelgate; no keysneeded.
+
+BP09.03 activation: keep fixture/evaluation profiles unchanged; new checkpoint envelope/input bound,
+then configured adapter, compatible tools/owner records, actual browser/model trace (four B1 units).
+New synthetic demo group cap USD0.50/six issued calls; no keys/calls yet. Actual temporary Linux
+--network host probe to Windows127 listener refused; no global Docker settings changed. SDK denies
+nonloopback HTTP; qualify compatible connection before B1.3 without weakening that guard.
+
+B1.1 Planning0.100 source checkpoint_input owns exact envelope and conservative bound;
+fitv2 privateJSON, oldfixturev1 unchanged. NoSQLmigration/paidcalls. B1.2 must enforcecost
+beforeissuance (template) and request transport; newgroup totalneedsdurable bounded enrollment
+or exact closed campaignallowance, notjust in-memorycounter. Original worker supportsfixtures
+only; CheckpointProvider passes retainedbytes/deadline; noSQLtxn spansprovider.

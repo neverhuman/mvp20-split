@@ -359,5 +359,12 @@
     "coverage_sources": [
       "services/local_gateway/src/amphora_local_gateway"
     ]
+  },
+  "planning-checkpoint-input": {
+    "tests": "services/agent_planning/tests/checkpoint_input",
+    "coverage_sources": [
+      "services/agent_planning/src/amphora_agent_planning/checkpoint_input",
+      "services/agent_planning/src/amphora_agent_planning/campaign_packet_profiles"
+    ]
   }
 }
