@@ -38,3 +38,15 @@ Verified 2026-10-07 10:49:15:35 focused tests pass1.34s; core ledger95/95
 statements42/42 branches. Whole module119/120 statements43/44 branches99%;
 CLI module entry remains outside measured attribution. Actual frozen evidence and
 independent installation remain subsequent gates.
+
+Actual qualification 2026-10-07 10:55:22: frozen twelve-gate evidence verified;
+independently installed Deployment0.15 passed original/corrected/browser/blocked
+retained-history smoke with zero worker/model calls. Raw evidence is root
+.test-results/acceptance-smoke, canonical Acceptance_Smoke.json. No current-health
+claim arises from the offline ledger alone. Independent copied-test qualification is recorded in Acceptance_Qualification.json.
+
+Final parser review 2026-10-07 10:58:57: exponent overflow and
+oversized integer decoding reject safely, including values outside asserted fields.
+37 focused tests pass1.40s;127/128 statements45/46 branches99%; core ledger
+103/103 statements44/44 branches100%. CLI module entry is exercised by independent
+installed verification but remains outside source-coverage attribution.

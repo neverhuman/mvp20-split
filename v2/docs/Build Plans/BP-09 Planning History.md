@@ -1,5 +1,9 @@
 # BP-09 Planning History
 
+Current plan state: closed100%,20/20 at `2026-10-07 11:03:54`; all five children accepted.
+The historical first-draft percentages below are preserved as history only.
+See [closed canonical parent](Completed/BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md).
+
 Archived first draft at `2026-09-25 13:35:12`. Historical task pairs/percentages are not the active execution tracker. The parent and linked children now own progress. Original scope is preserved below for traceability.
 
 # BP-09 Single-Server Integrated Demo and Replacement Proof

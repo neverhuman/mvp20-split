@@ -1,19 +1,27 @@
 # Restore
 
-Refreshed 2026-10-07 10:49:35 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 11:03:54 (America/Chicago). Read FIRST after compression.
 
 ## Current task
 
-BP-09.01-.04 closed100%. BP-09.05 active25%, Build33.33%, Acceptance0%;
-parent85%,17/20. B1 implemented Deployment0.15 offline12gate acceptance checker,
-35tests pass1.34s,119/120stmts43/44branches99%, coreledger100%; boundaries/lint pass.
-New dev/verify_acceptance_smoke.py launches existing independent-owner original,
-browser/successor and blocked readbacks sequentially, no workers/provider calls.
-Operator instructions deploy/local/OPERATIONS.md. Actual smoke remains unrun.
-Next B2 freeze reviewed profile/Acceptance_Ledger.json and name successors, then
-B3 actual installed smoke; V1 independent tests/parent audit. No owner gate.
-Latest pushed5f4a44ee; B1 commit/push next. No running tests/builds/probes.
-No new paid calls. Keep historical intermittent worker failures explicit.
+BP-09 CLOSED100%,20/20, all5children archived/audited. Next SQ-01 activation coherence
+review (queued0%,Build0%,Verification0%); LR-01 workerreliability queued0 after SQ-01.
+Latest pushed e40a8e4a; final BP09closeout commit/push NEXT. No owner gate.
+Final Deployment0.15 independently installed .test-results/acceptance-owner-final-b:
+391copied tests/no skips and real12gate ledger pass (session40504EXIT0). Acceptance
+parser37tests1.40s127/128stmts45/46branches99%,core103/103+44/44=100%. V1 repaired
+exponentoverflow and hugeinteger JSON rejection. Final package differs from actual
+smoke only acceptance parser/README/RECORD; lifecycle and peerclient bytes unchanged.
+Actual smoke .test-results/acceptance-smoke session28610EXIT0 original/browser/blocked,
+zero calls/workers; five/seven/sixownersdrainexit0. Desktop1440/mobile390 inspected.
+Canonical Acceptance_Ledger/Smoke/Qualification.json; audits BP-09.05_Acceptance_Closeout
+and BP-09_Local_Deployment_Closeout. Frozen prior12evidence files untouched.
+Owner/operator commands deploy/local/OPERATIONS.md. Reusable qualification helper
+v2/dev/verify_acceptance_installation.py; smoke verify_acceptance_smoke.py.
+No tests/probes/builds running. No paidcalls. Workerfaults remain unresolved LR-01.
+Beforepush finish changedlink/boundary/lint/whitespace checks; generatedpackageinventory
+structurally refreshed only (not wholefoundationtests). Afterpush immediately SQ-01
+activation per MBT, read UIguidelines and reconcile public owner projections first.
 
 ## Qualified evaluator / accepted B2
 

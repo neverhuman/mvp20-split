@@ -1,0 +1,28 @@
+{
+  "format": "deployment-acceptance.v1",
+  "profile": "bp09-local-synthetic.v1",
+  "baseline": "e40a8e4ababd9048f8f81a67ee7688d976f40420",
+  "host": "Workshop",
+  "evidence": {
+    "host": "15108887b694bed51a6cf7ca118cbdfb606f1ef552c33713fd798cf7b54770b6",
+    "installation": "0c5f2958b3ddaaa7f6a4781108156105994a7478dccc8a3efb6853ebc42c6437",
+    "live_context": "5e8e389b2a405a3114165f9238aac657b7fd16849333804ef9ea7088e48cd730",
+    "successor": "ddf7e41727757e10d652d8ee4047130f4a719c21f8b31c078781911694ed6f9f",
+    "capacity": "da1c322695e37242382ecd4384f79429f777d8be2e4a30656776551e0107dd8c",
+    "browser": "f4be54141bd6e1210cd149b841eecd307d33111740837c778b6dc18a1e950345",
+    "daemon_recovery": "895b598ab7f29f114f8701d1b62fb909c997baef93a3b95e52e47525c1e58258",
+    "backup": "f246802f3d097f56a340cf24527bc4c86efb8ece38c390febf3774471ef43f5d",
+    "restore": "db7d815cd87626d41d1578ba672d25ed933ee2f13dc249b52bf576a3cf818fda",
+    "reconstruction": "7d31d93627f6ba5ab12b0d72e3508226d11368d3cdc31705b769e74885778d91",
+    "recovery_faults": "577338783d1e4c4e6eaa95782ed3d57edb91bd41e2d9129ce6fb78308c27bfee",
+    "recovery_acceptance": "ef4149f88199573f98eaece16e336a5351f287957ea408675a4dd2e054d0a742"
+  },
+  "limitations": [
+    "synthetic_software_evidence_not_scientific_validation",
+    "same_host_user_and_retained_owner_dependencies",
+    "recovery_time_measured_without_hard_limit",
+    "intermittent_worker_failures_unresolved_no_soak_claim",
+    "separate_campaign_scopes_not_one_combined_run",
+    "hash_integrity_not_evidence_authenticity_or_current_health"
+  ]
+}

@@ -8,19 +8,16 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-09.01/.02/.03/.04 closed; BP-09.05 B2 active.
-- Last refreshed: `2026-10-07 10:49:35` (America/Chicago).
+- Status: BP-01 through BP-09 closed; SQ-01 activation next.
+- Last refreshed: `2026-10-07 11:02:03` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
-- Current priority: P8 / BP-09 - Single-Server Integrated Demo and Replacement Proof.
-- Primary active task: BP-09.05/B2 frozen profile and named successors.
-- Next task: BP-09.05/B3 documented cold owner/readback/browser smoke.
-- Implementation completion: BP-09=85%,17/20 verified delivery weight;17 closed gates.
-- Active focus: accepted recovery/replacement; final program acceptance and named successors.
-- Blockers: no owner gate; earlier intermittent worker faults remain unresolved operational finding.
-- Acceptance posture: BP-09.04 recovery/replacement accepted; final acceptance handoff remains.
+- Current priority: SQ-01 Scientific Quality and Iteration Views.
+- Primary active task: SQ-01 activation coherence/contract review; no implementation credit yet.
+- Next task: SQ-01/B1 after its bounded activation audit.
+- Implementation completion: SQ-01=0%, Build0%, Verification0%; BP-09 closed100%,20/20.
+- Blockers: no owner gate for synthetic quality views; scientific corpus remains TBA for scientific successors.
+- Acceptance posture: bounded local demo/recovery/replacement complete; intermittent worker failures assigned LR-01, no soak claim.
 - Active exception: none.
-
-Queued successor: [SQ-01 Scientific Quality and Iteration Views](SQ-01%20Scientific%20Quality%20and%20Iteration%20Views.md), 0%, after BP-06 owner projections and BP-07.03 proposal contracts. Preserves closed BP-05; no change to active BP-06 denominator.
 
 ## Initial Delivery Boundary
 
@@ -32,32 +29,20 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-09.01/.02/.03/.04 closed100%; BP-09.05 active25%,Build33.33%,Acceptance0%; parent85%,17/20 weight,17closed gates. BP-08 closed100%,20/20; see [completed plans](Completed/README.md).
+No implementation plan is active during the next activation audit. Completed plans
+are in the [completed index](Completed/README.md); their percentages stay closed.
 
-## Queued Plans and Phase Mirrors
+## Prioritized Successor Queue and Phase Mirrors
 
-| Canonical plan | Status | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
-|---|---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Active | 85% | 100% | 100% | 100% | 100% | 25% | N/A |
+| Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
+|---|---|---|---:|---:|---:|---|
+| 1 | [SQ-01 Scientific Quality and Iteration Views](SQ-01%20Scientific%20Quality%20and%20Iteration%20Views.md) | Queued, activation next | 0% | 0% | 0% | BP-06/07 public projections/contracts; activation review |
+| 2 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Queued | 0% | 0% | 0% | BP-09 accepted; bounded no-model diagnostic specification |
 
-Scoped milestone fractions measure verified work within their existing delivery weight; closed-gate counts remain separate. BP-06 is archived24/24. Do not treat milestone counts as effort estimates.
-
-Each parent phase now maps to one canonical child with four verified deliveries (three build plus one acceptance). Parent denominators are BP-03: 16, BP-04: 24, BP-05: 16, BP-06: 24, BP-07: 20, BP-08: 20, BP-09: 20; trackers above own current percentages. N/A means unscoped. [Readiness/handoffs](Planning_Readiness.md) records engineering and external gates. Design writing earns no implementation credit.
-
-The owning plan tracker is canonical for overall and per-phase percentages. Refresh this mirror whenever a gate, scope, completion estimate, blocker or checkpoint changes, before handoff/commit. Percentages measure scoped implementation; acceptance and operational readiness are separate. No in-flight plan may appear here without numeric overall and phase completion.
-
-
-[BP-01](Completed/BP-01%20Contract%20and%20Service%20Foundations.md) and BP-01A remain complete and archived. The queue below links canonical parents; ordering does not waive child gates. [Planning readiness](Planning_Readiness.md) owns cross-plan dependencies and scoped external decisions.
-
-## Prioritized Build Queue
-
-BP-09 activation follows accepted BP-08. Completed scope stays archived; remaining child gates remain sequential.
-
-| Order / ID | Completion | Proposed plan | Required predecessor gates | Bounded outcome / exit | Architecture owner |
-|---|---|---|---|---|---|
-| P8 / BP-09 | 85% | [Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Selected host/model policy; BP-05/06/07 plus BP-08 for evolutionary demo claims | Reproducible target-host deployment, model/tool eligibility, restore/reconciliation, end-to-end autonomous demo and one independently rebuilt/replaced tool; prove replicated workloads if K3s is selected | [Topology](../Architecture/System/Runtime_Topology.md), [tool services](../Architecture/Capabilities/Tool_Services.md) |
-
-This is the default sequencing, not nine permanent file-ownership buckets. Each plan owns a delivery step; later plans may refine earlier contracts with explicit compatibility evidence. BP-01 records packaging constraints early; BP-03 tests tool images/protocols locally. BP-09 integrates target-host operation rather than postponing all deployment design to the end. Synthetic fixtures/receipts stand in for unavailable scientific services until BP-06 and are labeled as such.
+The owning tracker controls exact task/percentages; MBT controls priority and
+mirrors current state. Complete each bounded gate before dependent implementation.
+No completed-plan scope is reopened. [Selected profile handoff](../Audits/BP-09_Selected_Profile_Handoff.md)
+names scientific, production and capacity successor triggers that are not activated.
 
 ## Cross-Plan Milestones
 
@@ -65,8 +50,8 @@ This is the default sequencing, not nine permanent file-ownership buckets. Each 
 |---|---|---|---|
 | M1 ? Replaceable typed foundation | BP-01/02/03 | One standalone tool is discovered and invoked through pinned contracts with durable acceptance and recovery | Synthetic software foundation complete: BP-01/02/03 contracts, durable invocation/recovery and standalone tools accepted |
 | M2 ? Inspectable executing graph | BP-04/05 | A user can follow parallel work, joins, failures and evidence in a real running fixture, then author a subsequent campaign | Accepted within synthetic software scope: BP-04 execution/observation and BP-05 Studio closed |
-| M3 ? Autonomous evidence-aware campaign | BP-06/07 | Pinned knowledge informs execution; durable LLM proposals are validated; stale or invalid responses cannot corrupt the run | BP-06 evidence/pins accepted; BP-07 supervision pending |
-| M4 ? Evolution and module replacement | BP-08/09 | Search history/checkpoints are inspectable; target-host demo recovers and a replacement tool preserves its documented boundaries | Not started |
+| M3 ? Autonomous evidence-aware campaign | BP-06/07 | Pinned knowledge informs execution; durable LLM proposals are validated; stale or invalid responses cannot corrupt the run | Accepted: BP-06/07 closed; actual bounded model/context integration verified by BP-09 |
+| M4 ? Evolution and module replacement | BP-08/09 | Search history/checkpoints are inspectable; target-host demo recovers and a replacement tool preserves its documented boundaries | Accepted: BP-08/09 closed; synthetic evolution, selected-host recovery and independent tool rebuild verified |
 
 Milestones are acceptance outcomes, not additional work counted on top of their plans. No calendar dates or capacity promises are inferred.
 
@@ -76,14 +61,14 @@ BIND-01 is resolved by [closed BP-04.04A](BP-04/Completed/BP-04.04A%20Typed%20ar
 
 | Item | Needed before | Disposition / owner |
 |---|---|---|
-| Initial schema/identity/publication policy | BP-01 complete; expand per successor | Initial wire subset and portable publication verified; durable command hashing remains BP-02 |
+| Initial schema/identity/publication policy | BP-01 complete; expand per successor | Initial wire subset/publication and durable command profiles accepted; expansion belongs to successors |
 | API/development stack and initial service build layout | BP-01 complete | Foundation Decisions and independent package manifests now own the selected stack |
 | Artifact reservations, cross-service receipts and revocation semantics | BP-02/06 dependent implementation | System/domain owners; required protocol fixtures |
 | Branch/join/loop, bindings and recovery | BP-04 complete | Scoped child/parent audits and actual installed observation/replacement accepted |
 | Bounded rule formalism and contradiction behavior | BP-06 implementation | Knowledge owner; examples/fixtures before inference code |
 | Real scientific corpus, evaluators and lab provider | Scientific successor acceptance | TBA by owner; does not block synthetic engine proof |
-| Actual host, accelerator availability, model endpoint and permitted data egress | Real-provider use / target deployment | Environment decision; local mocks are not provider validation |
-| K3s choice and workload packaging | BP-09 cluster-specific proof | Proposed, not an installed dependency or a second graph scheduler |
+| Actual host, accelerator availability, model endpoint and permitted data egress | Real-provider use / target deployment | Local host/loopback and bounded synthetic OpenAI use accepted; other hosts/data need selection |
+| K3s choice and workload packaging | Future CP-01 cluster-specific proof | Proposed, not an installed dependency or a second graph scheduler |
 
 ## Deferred and Successor Scope
 
@@ -113,7 +98,8 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
-| 2026-10-07 10:42:02 | BP-09.04 closed100%;parent85%,17/20. BP-09.05 next. | Independent354Deployment/38evaluator tests, actual installed readback,337/337catalog refs and0pending; scoped audit preserves operational follow-ups. |
+| 2026-10-07 11:02:03 | BP-09 closed100%,20/20; SQ-01 activation next. | Frozen12gate ledger,391independent tests, actual original/successor/blocked smoke; LR-01 preserves unresolved worker faults. |
+| 2026-10-07 10:42:02 | BP-09.04 closed100%;parent95%,19/20. BP-09.05 next. | Independent354Deployment/38evaluator tests, actual installed readback,337/337catalog refs and0pending; scoped audit preserves operational follow-ups. |
 | 2026-10-07 10:26:15 | BP-09.04 B3 complete;child75%,Build100%,Acceptance0%;parent75%. | Actual backup-copy faults reject before allocation; wrong pins/policy reject; expired1->accepted2 fence and stale_attempt preserve result. V1 active. |
 | 2026-10-07 10:07:55 | BP-09.04 B2 complete;child50%,Build66.67%,Acceptance0%;parent70%. | Independent evaluator0.4 installed/image proof; actual restored15/6/3cutover, exact old histories/browser. Earlier process faults retained; B3 next. |
 | 2026-10-07 09:21:40 | BP-09.04 B1/B2.1 complete;child37.5%,Build50%,Acceptance0%;parent67.5%. | Cold backup e, separate restore b,237/237references,0pending retentions, exact original/corrected/blocked readbacks; Data0.31 independent audit. |
@@ -123,7 +109,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-07 06:58:35 | BP-09.03 B2 complete; child50%,Build66.67%,Acceptance0%; parent50%,10/20 gates. | Actual future-only corrected interpretation/source/graph/successor, browser1440/390,45 scoped tests; no paid calls. |
 | 2026-10-07 06:44:23 | BP-09.03 B1 complete; child25%,Build33.33%,Acceptance0%; parent45%,9/20 gates. | Studio0.13 actual successor carry/lineage/artifact proof, navigation regression and identical rebuilt assets; zero new model calls. |
 | 2026-10-07 06:23:32 | BP-09.03 successor prerequisite; percentages unchanged. | Deployment0.11 independent294tests, dedicated Registry peer read/resolve/replay/denial, original vault preserved; no campaign admission. |
-| 2026-10-07 06:11:09 | BP-09.03/B1.4c75%;child24.48%,parent44.90%. | Three of four same-weight browser checkpoints verified; actual Design validation and edit retention pass. Predecessor carry/successor remains. |
+| 2026-10-07 06:11:09 | BP-09.03/B1.4c75%;child24.48%,parent44.95%. | Three of four same-weight browser checkpoints verified; actual Design validation and edit retention pass. Predecessor carry/successor remains. |
 | 2026-10-07 05:54:33 | BP-09.03/B1.4c partial; percentages unchanged. | Studio0.11 actual graph/evidence navigation and foreign-link rejection pass; preserve binary-source limitation; Design/successor next. |
 | 2026-10-07 05:40:02 | BP-09.03/B1.4c partial; percentages unchanged. | Actual localhost Studio0.10 execution/reasoning at1440/390 and owner API trace pass; no calls; full navigation remains. |
 | 2026-10-07 05:22:21 | BP-09.03/B1.4b complete;child22.92%,parent44.58%. | Actual owner context/model abstention plus scientific15/6/3/15 and immutable restart; three calls totalUSD0.0520185; browser trace next. |
@@ -137,4 +123,3 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-07 01:22:21 | BP-09.03 native third of B1.3b verified;child15.28%,parent43.06%. | Deployment0.4 independent164tests and actual Runtime/Planning quiescence; no campaigns/model calls. |
 | 2026-10-07 00:58:38 | BP-09.03/B1.3a complete;child14.58%,parent42.92%. | Independent Deployment0.3:126tests, actual evolution0.5/SDK0.2 TLS trust/denial; no global settings changed. |
 | 2026-10-07 00:32:46 | BP-09.03/B1.1-B1.2 complete; child12.5%,parent42.5%,8.5/20 weight. | Planning0.101 exact envelope, configured provider, durable scope costs;220regressions/114independent tests, no paidcalls. |
-| 2026-10-06 22:46:13 | BP-09.02/B1 complete;child25%,parent25%,5/20. | Independent gateway/Studio, actual browser sessions and responsive Monitor fixture;27Python/241Node checks; CSP repaired. |

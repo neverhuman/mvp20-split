@@ -5,7 +5,9 @@ and a separate reviewed rebuilt-evaluator recipe. Original worker profiles remai
 unchanged. Cold restore owner/reference acceptance and rebuilt tool cutover passed.
 Independent Deployment0.14 qualification and operational limitations are tracked in BP-09.04.
 BP-09.05 adds the offline [acceptance ledger](src/amphora_deployment/acceptance/README.md);
-Deployment0.15 independent qualification remains pending.
+Deployment0.15 passed391 independently installed tests and actual frozen evidence;
+[operator smoke](OPERATIONS.md) verifies restored original/corrected/blocked history.
+BP-09 is closed; unresolved worker failures remain LR-01 successor scope.
 
 Historical BP-09.03 checkpoint, package amphora-deployment0.9.0. Native worker lifecycle is qualified; [worker boundary](src/amphora_deployment/workers/README.md). Managed TLS and responsive scientific container monitoring/adoption are independently qualified; [container boundary](src/amphora_deployment/scientific_workers/README.md). BP-09.01/.02 remain complete; full autonomous demo remains active BP-09.03 work.
 The [tool catalog boundary](src/amphora_deployment/tool_catalog/README.md) adds separate heartbeat credentials and durable replay delivery; managed standby/readiness reporting has actual five-executor evidence; successful managed execution evidence belongs to BP-09.03.

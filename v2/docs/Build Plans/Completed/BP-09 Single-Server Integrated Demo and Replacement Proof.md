@@ -2,14 +2,14 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-09.01/.02/.03/.04 closed; BP-09.05 B2 active.
-- Last refreshed: `2026-10-07 10:49:35` (America/Chicago).
+- Status: closed; all five children and parent integration audit accepted.
+- Last refreshed: `2026-10-07 11:02:03` (America/Chicago).
 - Owner/scope: Local deployment/recovery integration with each service retaining ownership.
-- Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
+- Authority: [Master Build Tracker](../Master%20Build%20Tracker.md); [planning readiness and handoffs](../Planning_Readiness.md).
 - Prerequisites: Completed BP-05/06/07 and BP-08 for evolutionary demo claims; BP-02/03/04 durability and protocol gates.
-- Implementation: **85%**, 17/20 verified delivery weight;17 delivery gates closed. Each child owns four deliveries; this parent counts them once.
+- Implementation: **100%**, 20/20 verified delivery weight;20 delivery gates closed. Each child owns four deliveries; this parent counts them once.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-09.05/B2 frozen profile and named successors.
+- Current implementation task: none; closed. SQ-01 activation is next in MBT order.
 - Demonstrated behavior: independent local owners, bounded model/tool/context/browser/corrected-successor composition and approved daemon recovery; exact history preserved.
 - Blockers: No owner gate. Earlier worker faults remain an unresolved operational finding; successful cutover does not close it.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
@@ -29,11 +29,11 @@ Primary services retain private state, dependencies, migrations and module READM
 
 | Parent phase / child | Overall | Build | Acceptance | Prerequisite |
 |---|---:|---:|---:|---|
-| P1 / [BP-09.01 Host and deployment profile](BP-09/Completed/BP-09.01%20Host%20and%20deployment%20profile.md) | 100% | 100% | 100% | Parent predecessor gates |
-| P2 / [BP-09.02 Reproducible installation and boundaries](BP-09/Completed/BP-09.02%20Reproducible%20installation%20and%20boundaries.md) | 100% | 100% | 100% | BP-09.01 acceptance |
-| P3 / [BP-09.03 Integrated autonomous demonstration](BP-09/Completed/BP-09.03%20Integrated%20autonomous%20demonstration.md) | 100% | 100% | 100% | BP-09.02 acceptance |
-| P4 / [BP-09.04 Backup restore and module replacement](BP-09/Completed/BP-09.04%20Backup%20restore%20and%20module%20replacement.md) | 100% | 100% | 100% | BP-09.03 acceptance |
-| P5 / [BP-09.05 Acceptance and successor handoff](BP-09/BP-09.05%20Acceptance%20and%20successor%20handoff.md) | 25% | 33.33% | 0% | BP-09.04 acceptance |
+| P1 / [BP-09.01 Host and deployment profile](../BP-09/Completed/BP-09.01%20Host%20and%20deployment%20profile.md) | 100% | 100% | 100% | Parent predecessor gates |
+| P2 / [BP-09.02 Reproducible installation and boundaries](../BP-09/Completed/BP-09.02%20Reproducible%20installation%20and%20boundaries.md) | 100% | 100% | 100% | BP-09.01 acceptance |
+| P3 / [BP-09.03 Integrated autonomous demonstration](../BP-09/Completed/BP-09.03%20Integrated%20autonomous%20demonstration.md) | 100% | 100% | 100% | BP-09.02 acceptance |
+| P4 / [BP-09.04 Backup restore and module replacement](../BP-09/Completed/BP-09.04%20Backup%20restore%20and%20module%20replacement.md) | 100% | 100% | 100% | BP-09.03 acceptance |
+| P5 / [BP-09.05 Acceptance and successor handoff](../BP-09/Completed/BP-09.05%20Acceptance%20and%20successor%20handoff.md) | 100% | 100% | 100% | BP-09.04 acceptance |
 
 Each linked child is the execution tracker for its scope. Build tasks name concrete implementation; acceptance requires independent evidence and a scoped drift audit. Do not repeat the historical task pairs as a second work list. No dependent child starts before its predecessor acceptance gate; independent design review does not activate implementation.
 
@@ -53,10 +53,17 @@ Keep scenario evidence with absolute timestamps, implementation revision, fixtur
 
 ## Decisions and Handoff
 
-Child decisions and the [cross-plan handoff register](Planning_Readiness.md) identify the exact producer, consumer and required proof. Engineering defaults are planning baselines; validate them against real predecessor contracts before coding. External choices are not inferred from examples. Do not weaken a live model, browser, database or target-host gate to a fixture when that environment is unavailable.
+Child decisions and the [cross-plan handoff register](../Planning_Readiness.md) identify the exact producer, consumer and required proof. Engineering defaults are planning baselines; validate them against real predecessor contracts before coding. External choices are not inferred from examples. Do not weaken a live model, browser, database or target-host gate to a fixture when that environment is unavailable.
 
 ## Accounting and Closeout
 
-On `2026-10-06 19:58:42`, the original two-task-per-phase estimate was decomposed into 20 verified deliveries across 5 children. Implementation stays 0%; no previous implementation credit is lost or added. [Planning history](BP-09%20Planning%20History.md) preserves the original scope and denominator. Pure design review earns no implementation credit.
+On `2026-10-06 19:58:42`, the original two-task-per-phase estimate was decomposed into 20 verified deliveries across 5 children. Implementation stays 0%; no previous implementation credit is lost or added. [Planning history](../BP-09%20Planning%20History.md) preserves the original scope and denominator. Pure design review earns no implementation credit.
 
 Child closeout archives that child with its audit and repairs links; the parent remains active until all child gates and the integrated parent outcome pass. The last child's acceptance checks the parent handoff without repeating unchanged earlier audits. Keep implementation, human acceptance, operational readiness and scientific validation separate. Update child -> parent -> MBT -> Restore at each delivery/scope change.
+
+## Final acceptance
+
+`2026-10-07 11:02:03`: all20deliveries accepted. [Parent closeout](../../Audits/BP-09_Local_Deployment_Closeout.md)
+reconciles the five children and immutable cross-child handoffs. Same-host internal
+synthetic profile only; LR-01 retains operational faults, SQ-01 quality interaction.
+Scientific/production/capacity successor triggers remain separate.

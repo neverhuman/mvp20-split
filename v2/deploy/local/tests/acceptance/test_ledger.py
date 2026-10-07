@@ -12,7 +12,7 @@ def evidence_bundle(tmp_path):
                 'baseline': 'a' * 40, 'host': 'fixture-host', 'evidence': {},
                 'limitations': list(LIMITATIONS)}
     for gate, (filename, status) in GATES.items():
-        record = {'status': status}
+        record = {'status': status, 'elapsed_seconds': 1.5}
         for path, expected in ASSERTIONS.get(gate, ()):
             target = record
             for part in path[:-1]:
@@ -86,6 +86,8 @@ def test_strict_manifest(evidence_bundle, field, value, reason):
 @pytest.mark.parametrize(('raw', 'reason'), [
     (b'{"a":1,"a":2}', 'duplicate_key'),
     (b'{"a":NaN}', 'nonfinite_json'),
+    (b'{"a":1e999}', 'nonfinite_json'),
+    (b'{"a":' + b'9' * 5000 + b'}', 'invalid_json'),
     (b'[]', 'object_required'),
     (b'\xff', 'invalid_json'),
     (b'{} trailing', 'invalid_json'),

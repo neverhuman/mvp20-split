@@ -1,0 +1,107 @@
+{
+  "timestamp_local": "2026-10-07 10:54:35",
+  "status": "passed",
+  "ledger": {
+    "baseline": "e40a8e4ababd9048f8f81a67ee7688d976f40420",
+    "declared_host": "Workshop",
+    "format": "deployment-acceptance-report.v1",
+    "gates": [
+      {
+        "gate": "backup",
+        "status": "verified"
+      },
+      {
+        "gate": "browser",
+        "status": "verified"
+      },
+      {
+        "gate": "capacity",
+        "status": "verified"
+      },
+      {
+        "gate": "daemon_recovery",
+        "status": "verified"
+      },
+      {
+        "gate": "host",
+        "status": "verified"
+      },
+      {
+        "gate": "installation",
+        "status": "verified"
+      },
+      {
+        "gate": "live_context",
+        "status": "verified"
+      },
+      {
+        "gate": "reconstruction",
+        "status": "verified"
+      },
+      {
+        "gate": "recovery_acceptance",
+        "status": "verified"
+      },
+      {
+        "gate": "recovery_faults",
+        "status": "verified"
+      },
+      {
+        "gate": "restore",
+        "status": "verified"
+      },
+      {
+        "gate": "successor",
+        "status": "verified"
+      }
+    ],
+    "limitations": [
+      "synthetic_software_evidence_not_scientific_validation",
+      "same_host_user_and_retained_owner_dependencies",
+      "recovery_time_measured_without_hard_limit",
+      "intermittent_worker_failures_unresolved_no_soak_claim",
+      "separate_campaign_scopes_not_one_combined_run",
+      "hash_integrity_not_evidence_authenticity_or_current_health"
+    ],
+    "profile": "bp09-local-synthetic.v1",
+    "provider_calls": 0,
+    "services_started": false,
+    "status": "verified"
+  },
+  "scenarios": {
+    "original": {
+      "status": "readback_passed",
+      "run_id": "fc257cf8882147cb8cca56c778837e60",
+      "evidence": "Z:\\mvp20-split\\.test-results\\acceptance-smoke\\original\\evidence.json",
+      "sha256": "e619add92a6ef229a9520021d20c326d1744f71ea28a9c4b641b3608cb4a1204"
+    },
+    "browser": {
+      "status": "passed",
+      "run_id": "6c124e88efec483ab6704ee096d6eb0c",
+      "evidence": "Z:\\mvp20-split\\.test-results\\acceptance-smoke\\browser\\evidence.json",
+      "sha256": "08443e38467f3ca49ab8c4b1e3f8e5e151f4004e0ebb92a94ed3005957798029"
+    },
+    "blocked": {
+      "status": "readback_passed",
+      "run_id": "a70d66f029ac46d4b2910542207beb5f",
+      "evidence": "Z:\\mvp20-split\\.test-results\\acceptance-smoke\\blocked\\evidence.json",
+      "sha256": "56dafc624a0ee489778f5c34597fe933d3f8afc02d7e3c8bcfb63ea9fc811565"
+    }
+  },
+  "provider_calls": 0,
+  "workers_started": false,
+  "limits": [
+    "Cold owner processes against already running restored stores; no new store recovery",
+    "Same selected host/user and retained owner installations/assets required"
+  ],
+  "raw_sha256": "b250efe2fb81308841ac820863b5b0213e283845d5b02d2d96dd88db3b5927c0",
+  "screenshots": {
+    "corrected-source-1440.png": "5bff62fc7253786570f73249a24c093c9f042d43c29789094ec4443ed4db0f85",
+    "corrected-source-390.png": "b8716d68df0ca1ea8e2bc96739518a805f9205d42b7cfc24a1e78506357a34f2",
+    "successor-lineage-1440.png": "cfec112fdc78828384542669b92766c5facc2afe807e6b417dd068b06ae0ab5a",
+    "successor-lineage-390.png": "44973c6c683b019ee6b65aa2678f26c40903125b8cc295e01617e6c69da1c50c",
+    "successor-output-1440.png": "cf300ace1216356153b4482aecb2f5153675e72b144521058d95523c365ec962",
+    "successor-output-390.png": "2f68ed20717abd0e80a2116a4b6081966e4864174fad227d0581f4e996792bd3"
+  },
+  "visual_review": "Desktop1440 and mobile390 lineage screenshots inspected; retained predecessor/successor and synthetic-science limits visible."
+}

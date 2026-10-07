@@ -1,0 +1,106 @@
+{
+  "timestamp_local": "2026-10-07 10:59:39",
+  "status": "passed",
+  "installation": {
+    "timestamp_local": "2026-10-07 10:59:03",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-deployment",
+    "forbidden_implementations": [
+      "amphora_campaign_runtime",
+      "amphora_data_artifacts",
+      "amphora_capability_registry",
+      "sqlalchemy",
+      "pydantic"
+    ],
+    "packages": {
+      "amphora-deployment": "0.15.0"
+    },
+    "wheels": {
+      "amphora_deployment-0.15.0-py3-none-any.whl": "64e84fadcd8f3c62831bc9f0fdda9812dd79b11a81c121b8e84a08e497bc26cf"
+    }
+  },
+  "tests": 391,
+  "ledger": {
+    "baseline": "e40a8e4ababd9048f8f81a67ee7688d976f40420",
+    "declared_host": "Workshop",
+    "format": "deployment-acceptance-report.v1",
+    "gates": [
+      {
+        "gate": "backup",
+        "status": "verified"
+      },
+      {
+        "gate": "browser",
+        "status": "verified"
+      },
+      {
+        "gate": "capacity",
+        "status": "verified"
+      },
+      {
+        "gate": "daemon_recovery",
+        "status": "verified"
+      },
+      {
+        "gate": "host",
+        "status": "verified"
+      },
+      {
+        "gate": "installation",
+        "status": "verified"
+      },
+      {
+        "gate": "live_context",
+        "status": "verified"
+      },
+      {
+        "gate": "reconstruction",
+        "status": "verified"
+      },
+      {
+        "gate": "recovery_acceptance",
+        "status": "verified"
+      },
+      {
+        "gate": "recovery_faults",
+        "status": "verified"
+      },
+      {
+        "gate": "restore",
+        "status": "verified"
+      },
+      {
+        "gate": "successor",
+        "status": "verified"
+      }
+    ],
+    "limitations": [
+      "synthetic_software_evidence_not_scientific_validation",
+      "same_host_user_and_retained_owner_dependencies",
+      "recovery_time_measured_without_hard_limit",
+      "intermittent_worker_failures_unresolved_no_soak_claim",
+      "separate_campaign_scopes_not_one_combined_run",
+      "hash_integrity_not_evidence_authenticity_or_current_health"
+    ],
+    "profile": "bp09-local-synthetic.v1",
+    "provider_calls": 0,
+    "services_started": false,
+    "status": "verified"
+  },
+  "provider_calls": 0,
+  "limits": [
+    "Copied owned tests and frozen evidence; actual owner/browser smoke is separate"
+  ],
+  "raw_evidence": ".test-results\\acceptance-owner-final-b\\evidence.json",
+  "raw_sha256": "607e285e33394f4c987f6dd8a06d07c114f1a7e2a7bbd2e2d5760783e3dee902",
+  "smoke_comparison": {
+    "changed_files": [
+      "amphora_deployment-0.15.0.dist-info/RECORD",
+      "amphora_deployment/acceptance/README.md",
+      "amphora_deployment/acceptance/ledger.py"
+    ],
+    "lifecycle_peer_client_bytes_unchanged": true,
+    "parser_change": "Nonfinite exponent and oversized integer rejection; actual frozen ledger reverified in final installation"
+  }
+}

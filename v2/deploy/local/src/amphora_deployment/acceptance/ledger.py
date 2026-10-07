@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+import math
 import re
 from dataclasses import dataclass
 from pathlib import Path
@@ -28,12 +29,21 @@ def _constant(_value):
     raise EvidenceError("nonfinite_json")
 
 
+def _float(value):
+    result = float(value)
+    if not math.isfinite(result):
+        raise EvidenceError("nonfinite_json")
+    return result
+
+
 def _decode(raw):
     if len(raw) > MAX_DOCUMENT:
         raise EvidenceError("document_too_large")
     try:
-        value = json.loads(raw, object_pairs_hook=_object, parse_constant=_constant)
-    except (UnicodeError, json.JSONDecodeError, RecursionError):
+        value = json.loads(raw, object_pairs_hook=_object, parse_constant=_constant, parse_float=_float)
+    except EvidenceError:
+        raise
+    except (UnicodeError, ValueError, RecursionError):
         raise EvidenceError("invalid_json") from None
     if not isinstance(value, dict):
         raise EvidenceError("object_required")

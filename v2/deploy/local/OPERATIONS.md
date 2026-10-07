@@ -1,7 +1,6 @@
 # Selected local demonstration operations
 
-Status: BP-09.05/B1 instructions implemented; final execution/freeze acceptance
-pending. This is the same-host Windows/DPAPI profile, loopback access, one user
+Status: BP-09.05 accepted; instructions executed against the retained local profile. This is the same-host Windows/DPAPI profile, loopback access, one user
 and one campaign. Read the [package boundary](README.md) before changing releases.
 It is a retained engineering demonstration, not a general installer or production
 service. Docker Desktop must already be available. No credential values belong in
@@ -90,7 +89,7 @@ pins must reject before target resources are created.
 
 ## Reproducible retained-history smoke
 
-After B2 freezes `Acceptance_Ledger.json`, use the independently installed package
+With the frozen `Acceptance_Ledger.json`, use the independently installed package
 above. This starts fresh owner processes against the existing isolated restore,
 checks original history, inspects original/corrected browser views at1440/390 and
 checks the blocked history. It performs no worker or model calls. The shared

@@ -288,3 +288,11 @@ B2.02 verified 2026-10-06 23:31:00: point-in-time HTTP/public-owner CLI readines
 ## 2026-10-06 23:47:56 - BP-09.02 closeout aligned
 
 [Audit](BP-09.02_Local_Installation_Closeout.md) compares isolatedservice/deployment boundaries with actualseven-host replacement, retainedreceipt/journal/vault, localstorefailure/recovery, quota/auth/loopback and gatewaybrowser evidence. RuntimeTopology corrected to owner-selectedWindowslocaltarget and gatewayrouting versus ownertransactions. Child100%,parent40%; no blockingdrift. Explicit laterowners: BP09.03fullcampaign/model/science-toolcompatibility/workerquiescence, BP09.04backup. No modelcalls orscientificclaim.
+
+## 2026-10-07 11:03:54 - BP-09 acceptance handoff
+
+[Parent audit](BP-09_Local_Deployment_Closeout.md) and [09.05 audit](BP-09.05_Acceptance_Closeout.md)
+accept the bounded local synthetic demo/recovery/replacement,20/20. Twelve frozen
+evidence gates, final391independent tests and actual owner/browser smoke pass.
+Aligned acceptance-ledger/installation boundaries have no further closeout work;
+LR-01 retains intermittent worker failures in the active dashboard.
