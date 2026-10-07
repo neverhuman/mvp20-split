@@ -35,3 +35,10 @@ unresolved commands prohibit draft replacement. Mounted modes retain editing wor
 mutations are not cancelled merely by changing views. Session replacement disposes
 all owners. Initial hosting selects existing drafts; creating a draft from campaign
 context and predecessor carry remain explicit successor assembly work.
+
+SQ-01 Studio0.15 composes optional FeedbackModel and QualityLinkModel from explicit
+launcher selections. LocalKnowledge creates their existing public clients; question
+reads and bounded Runtime output reads run only while the feedback surface is
+visible. Parent-mode visibility cannot be bypassed by document visibility events.
+Invalid question/output links are isolated from valid Explore/Execution views.
+No credentials, owner mutations or inferred associations enter these components.

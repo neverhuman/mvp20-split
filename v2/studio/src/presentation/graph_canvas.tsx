@@ -3,17 +3,18 @@ import { ReactFlow, Background, Handle, Position, MarkerType, type NodeProps, ty
 import type { SceneNode, SceneEdge, Viewport } from '../page_models/scene.js';
 import '@xyflow/react/dist/style.css';
 
-const TaskNode = memo(({ data }: NodeProps<Node<{ label: string; status: string }>>) => <>
+const TaskNode = memo(({ data }: NodeProps<Node<{ label: string; status: string; annotation?: string }>>) => <>
   <Handle type="target" position={Position.Left} isConnectable={false} />
   <span className="node-status">{data.status}</span><strong>{data.label}</strong>
+  {data.annotation && <span className="node-annotation">{data.annotation}</span>}
   <Handle type="source" position={Position.Right} isConnectable={false} />
 </>);
 const types = { task: TaskNode };
 type Props = { nodes: readonly SceneNode[]; edges?: readonly SceneEdge[]; selection: string | null; select: (id: string) => void;
-  initialViewport?: Viewport; rememberViewport?: (viewport: Viewport) => void; label?: string };
+  initialViewport?: Viewport; rememberViewport?: (viewport: Viewport) => void; label?: string; annotations?: Readonly<Record<string, string>> };
 
 /** Presentation only; links come from explicit authored drafts or owner topology, never inferred layout. */
-export function GraphCanvas({ nodes, edges = [], selection, select, initialViewport, rememberViewport, label = 'Activation workspace' }: Props) {
+export function GraphCanvas({ nodes, edges = [], selection, select, initialViewport, rememberViewport, label = 'Activation workspace', annotations = {} }: Props) {
   const flow = useRef<Pick<ReactFlowInstance, 'setViewport' | 'getViewport'> | null>(null);
   const move = (x: number, y: number, scale = 1) => {
     if (!flow.current) return;
@@ -27,8 +28,8 @@ export function GraphCanvas({ nodes, edges = [], selection, select, initialViewp
     void flow.current.setViewport({ x: 24-node.x*zoom, y: 24-node.y*zoom, zoom });
   };
   return <section className="graph-region" aria-label={label}>
-    <ReactFlow nodes={nodes.map(n => ({ id: n.id, type: 'task', position: { x: n.x, y: n.y }, data: { label: n.label, status: n.status },
-      selected: n.id === selection, ariaLabel: `${n.label}, ${n.status}`, className: `task-node ${n.status}` }))}
+    <ReactFlow nodes={nodes.map(n => ({ id: n.id, type: 'task', position: { x: n.x, y: n.y }, data: { label: n.label, status: n.status, ...(annotations[n.id] ? { annotation: annotations[n.id] } : {}) },
+      selected: n.id === selection, ariaLabel: `${n.label}, ${n.status}${annotations[n.id] ? ', ' + annotations[n.id] : ''}`, className: `task-node ${n.status}` }))}
       edges={edges.map(edge => ({ ...edge, markerEnd: { type: MarkerType.ArrowClosed } }))} nodeTypes={types} onInit={instance => { flow.current = instance; }}
       onNodeClick={(_, node) => select(node.id)} onNodesChange={changes => { for (const change of changes) if (change.type === 'select' && change.selected) select(change.id); }}
       defaultViewport={initialViewport ?? { x: 24, y: 24, zoom: 0.85 }} onMoveEnd={(_, viewport) => rememberViewport?.(viewport)}

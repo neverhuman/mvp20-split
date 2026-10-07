@@ -15,6 +15,8 @@ function digest(format, view, request) {
 const summary = entity => ({ reference: entity.reference, entity_type: entity.entity_type, label: entity.label, is_latest: true, alias_target: null });
 
 export async function startExploreHost() {
+  const { snapshot } = await import('../../dist/tests/fixtures/observations.js');
+  const { evidenceDetail, values } = await import('../../dist/tests/fixtures/evidence.js');
   await build({ entryPoints: ['tests/browser/explore_entry.tsx'], bundle: true, outdir: 'dist/explore-browser', format: 'esm', jsx: 'automatic', sourcemap: true });
   const fixture = JSON.parse(await readFile('tests/fixtures/scientific/explore.json', 'utf8'));
   const feedback = JSON.parse(await readFile('tests/fixtures/scientific/feedback-browser.json', 'utf8'));
@@ -23,6 +25,18 @@ export async function startExploreHost() {
   many.question.criteria = Array.from({ length: 32 }, (_, i) => ({ criterion_id: 'c' + i, description: 'Independent synthetic criterion ' + i }));
   many.need.criterion_ids = many.question.criteria.map(c => c.criterion_id);
   many.assessment.outcome.assessment.needs = many.question.criteria.map(c => ({ ...structuredClone(feedback.assessment.outcome.assessment.needs[0]), criterion_id: c.criterion_id, gap: { ...feedback.assessment.outcome.assessment.needs[0].gap, criterion_id: c.criterion_id } }));
+  const quality = structuredClone(many);
+  const qualityReasons = ['answer_unknown', 'evidence_conflict', 'no_matching_evidence', null];
+  quality.assessment.outcome.assessment.needs.forEach((decision, index) => {
+    const reason = qualityReasons[index % qualityReasons.length];
+    decision.gap = reason ? { criterion_id: decision.criterion_id, need: decision.need, reason } : null;
+  });
+  const runtimeSnapshot = snapshot({ ids: [1] }), runtimeDetail = evidenceDetail(), runtimeValues = values();
+  runtimeSnapshot.snapshot.cut.scope = quality.assessment.outcome.assessment.subject.scope;
+  runtimeDetail.cut = structuredClone(runtimeSnapshot.snapshot.cut); runtimeDetail.node.status = 'succeeded';
+  runtimeDetail.outputs[0].artifact = quality.assessment.outcome.assessment.subject;
+  runtimeValues.cut = structuredClone(runtimeSnapshot.snapshot.cut);
+  runtimeValues.items[0].value.artifact = quality.assessment.outcome.assessment.subject;
   const state = { mode: 'ready', held: null, requests: [] };
   const artifacts = new Map();
   function collect(value) {
@@ -40,6 +54,10 @@ export async function startExploreHost() {
         state.requests.push({ path, method: req.method, ownerAuthorization: !!req.headers.authorization });
         let raw = ''; for await (const chunk of req) { raw += chunk; if (raw.length > 262144) throw new Error('fixture_request_limit'); }
         const query = raw ? JSON.parse(raw) : null;
+        if (path.startsWith('/api/runtime/')) {
+          if (state.mode === 'quality-link-denied') { reply(403, {}); return; }
+          reply(200, path.endsWith('/outputs/result') ? runtimeValues : path.endsWith('/nodes') ? runtimeSnapshot : runtimeDetail); return;
+        }
         if (state.held && path.endsWith('/entities')) { state.held.enter(); await state.held.promise; }
         if (state.mode === 'denied' && path.endsWith('/content')) { reply(403, {}); return; }
         if (state.mode === 'offline' && path.endsWith('/entities')) { reply(503, {}); return; }
@@ -69,9 +87,9 @@ export async function startExploreHost() {
         if (path.endsWith('/content')) { res.writeHead(200, { 'content-type': 'text/plain; charset=utf-8' }); res.end(state.mode === 'corrupt' ? 'X' + fixture.source_text.slice(1) : fixture.source_text); return; }
         if (path.endsWith('/derivation')) { reply(404, {}); return; }
         if (path.includes('/artifacts/')) { const record = artifacts.get(decodeURIComponent(path.split('/').at(-1))); reply(record ? 200 : 404, record ?? {}); return; }
-        if (path.endsWith('/questions/read')) { reply(200, state.mode === 'feedback-long' ? many.question : feedback.question); return; }
-        if (path.endsWith('/evidence-needs/read')) { reply(state.mode === 'feedback-denied' ? 403 : 200, state.mode === 'feedback-long' ? many.need : feedback.need); return; }
-        if (path.endsWith('/assessments/read')) { reply(200, state.mode === 'feedback-pending' ? { ...feedback.assessment, outcome: { status: 'pending' } } : state.mode === 'feedback-long' ? many.assessment : feedback.assessment); return; }
+        if (path.endsWith('/questions/read')) { reply(200, state.mode.startsWith('quality-') ? quality.question : state.mode === 'feedback-long' ? many.question : feedback.question); return; }
+        if (path.endsWith('/evidence-needs/read')) { reply(state.mode === 'feedback-denied' ? 403 : 200, state.mode.startsWith('quality-') ? quality.need : state.mode === 'feedback-long' ? many.need : feedback.need); return; }
+        if (path.endsWith('/assessments/read')) { reply(200, state.mode.startsWith('quality-') ? quality.assessment : state.mode === 'feedback-pending' ? { ...feedback.assessment, outcome: { status: 'pending' } } : state.mode === 'feedback-long' ? many.assessment : feedback.assessment); return; }
         if (path.endsWith('/assessment-publications/read')) { reply(200, feedback.publication); return; }
         if (path.endsWith('/assessment-receipts/select')) { reply(200, query.revision.ordinal === 1 ? feedback.root : feedback.next); return; }
         if (path.includes('/proposals/')) { reply(200, feedback.proposal); return; }

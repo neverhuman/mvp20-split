@@ -13,3 +13,9 @@ Structural proposal acceptance is labeled explicitly. Synthetic sufficiency neve
 Verification: the owned Explore browser suite traverses question -> need -> qualified answer -> old/new correction -> proposed next graph -> verified inert source; it exercises denial, pending publication-free inspection and32 decisions with20-row paging. Desktop1440/narrow390 accessibility/overflow scans and rendered screenshots accompany scripted public HTTP fixtures. Actual-owner progression is the next B2.03 gate. No live-owner browser, full screen-reader or scientific validation claim is made here.
 
 Replacement must preserve the model/presentation split, explicit pinned context, qualified outcomes, protected-data clearing, bounded decisions, keyboard navigation and source verification. Host owns compatible project context and activation/disposal; Studio does not provide a deployed gateway or global campaign picker.
+
+SQ-01 adds a Quality points tab sharing this same FeedbackModel, plus an optional
+bounded Runtime link reader. Parent active state governs visibility; hidden local
+modes cancel both readers. A verified output link opens pinned execution detail,
+not a live edit or re-admission. QualityModel owns the derived projection and its
+selection; the presentation does not fetch a competing assessment.

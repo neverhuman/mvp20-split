@@ -38,6 +38,7 @@ export class QualityProjection {
   readonly demonstratedError = null;
   readonly futureCampaignsOnly = true;
   readonly missingDecisions: number;
+  readonly unresolvedCount: number;
   constructor(lineage: FeedbackLineage, attachment: QualityAttachment | null = null) {
     const { question, need, assessment, corrections } = lineage.records;
     const result = assessment?.outcome.status === "assessed" ? assessment.outcome.assessment : null;
@@ -63,7 +64,8 @@ export class QualityProjection {
         supporting: decision?.supporting ?? [], contradicting: decision?.contradicting ?? [] };
     });
     if (new Set(points.map(point => point.key)).size !== points.length) throw new ScientificReadFailure("invalid_response");
-    this.points = immutable(points); this.missingDecisions = missing; Object.freeze(this);
+    this.points = immutable(points); this.missingDecisions = missing;
+    this.unresolvedCount = points.filter(point => point.category !== "supported").length; Object.freeze(this);
   }
   page(category: QualityCategory | "all" = "all", offset = 0): QualityPage {
     if (!["all", "unassessed", "unknown", "contradictory", "insufficient", "supported"].includes(category) ||

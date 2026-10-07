@@ -24,3 +24,8 @@ Comparison browser acceptance includes same candidate/different80/120degree prep
 Local hosting can pass `active=false` to suspend Explore reads while preserving
 mounted local controls. Effective visibility combines this flag with document
 visibility; returning refreshes the selected owner projection. Default remains active.
+
+SQ-01 optionally passes a host-owned QualityLinkModel into FeedbackPanel. Its reads
+follow feedback visibility; independent Runtime denial removes the output link
+without granting or denying separately authorized scientific records. No inferred
+consumer index or mutation is introduced.

@@ -8,13 +8,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-01 through BP-09 closed; SQ-01 B2 active.
-- Last refreshed: `2026-10-07 11:14:02` (America/Chicago).
+- Status: BP-01 through BP-09 closed; SQ-01 B3 active.
+- Last refreshed: `2026-10-07 11:37:19` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: SQ-01 Scientific Quality and Iteration Views.
-- Primary active task: SQ-01/B2 accessible quality presentation and pinned graph attachment.
-- Next task: SQ-01/B3 next-campaign focus and public proposals after B2.
-- Implementation completion: SQ-01=25%, Build33.33%, Verification0%; BP-09 closed100%,20/20.
+- Primary active task: SQ-01/B3 next-campaign focus and exact public proposals.
+- Next task: SQ-01/V1 actual peers/browser and independent replacement after B3.
+- Implementation completion: SQ-01=50%, Build66.67%, Verification0%; BP-09 closed100%,20/20.
 - Blockers: no owner gate for synthetic quality views; scientific corpus remains TBA for scientific successors.
 - Acceptance posture: bounded local demo/recovery/replacement complete; intermittent worker failures assigned LR-01, no soak claim.
 - Active exception: none.
@@ -29,14 +29,14 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-SQ-01 B2 is active at25%, Build33.33%, Verification0%. Completed plans
+SQ-01 B3 is active at50%, Build66.67%, Verification0%. Completed plans
 are in the [completed index](Completed/README.md); their percentages stay closed.
 
 ## Prioritized Successor Queue and Phase Mirrors
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
-| 1 | [SQ-01 Scientific Quality and Iteration Views](SQ-01%20Scientific%20Quality%20and%20Iteration%20Views.md) | Active B2 | 25% | 33.33% | 0% | BP-06/07 public projections/contracts; activation review |
+| 1 | [SQ-01 Scientific Quality and Iteration Views](SQ-01%20Scientific%20Quality%20and%20Iteration%20Views.md) | Active B3 | 50% | 66.67% | 0% | BP-06/07 public projections/contracts; activation review |
 | 2 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Queued | 0% | 0% | 0% | BP-09 accepted; bounded no-model diagnostic specification |
 
 The owning tracker controls exact task/percentages; MBT controls priority and
@@ -98,7 +98,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
-| 2026-10-07 11:02:03 | BP-09 closed100%,20/20; SQ-01 B2 active. | Frozen12gate ledger,391independent tests, actual original/successor/blocked smoke; LR-01 preserves unresolved worker faults. |
+| 2026-10-07 11:02:03 | BP-09 closed100%,20/20; SQ-01 B3 active. | Frozen12gate ledger,391independent tests, actual original/successor/blocked smoke; LR-01 preserves unresolved worker faults. |
 | 2026-10-07 10:42:02 | BP-09.04 closed100%;parent95%,19/20. BP-09.05 next. | Independent354Deployment/38evaluator tests, actual installed readback,337/337catalog refs and0pending; scoped audit preserves operational follow-ups. |
 | 2026-10-07 10:26:15 | BP-09.04 B3 complete;child75%,Build100%,Acceptance0%;parent75%. | Actual backup-copy faults reject before allocation; wrong pins/policy reject; expired1->accepted2 fence and stale_attempt preserve result. V1 active. |
 | 2026-10-07 10:07:55 | BP-09.04 B2 complete;child50%,Build66.67%,Acceptance0%;parent70%. | Independent evaluator0.4 installed/image proof; actual restored15/6/3cutover, exact old histories/browser. Earlier process faults retained; B3 next. |

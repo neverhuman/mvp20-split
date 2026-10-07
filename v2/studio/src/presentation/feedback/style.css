@@ -1,7 +1,7 @@
 .feedback-panel { min-width:0; }
 .feedback-panel h2 { font-size:1.2rem; margin:0; }
 .feedback-panel h3 { font-size:1.4rem; line-height:1.4; max-width:62ch; }
-.feedback-steps { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); border-block:1px solid var(--line); gap:4px; padding:14px 0; margin-top:24px; }
+.feedback-steps { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); border-block:1px solid var(--line); gap:4px; padding:14px 0; margin-top:24px; }
 .feedback-steps button { text-align:left; display:flex; gap:12px; align-items:center; }
 .feedback-steps button span { font-variant-numeric:tabular-nums; opacity:.8; }
 .feedback-steps button[aria-pressed=true] { background:var(--accent); border-color:var(--accent); color:white; }

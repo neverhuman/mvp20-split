@@ -68,3 +68,8 @@ over existing strict feedback reads. Exact criterion/evidence identity, multiple
 weak points, bounded pages and optional proven Runtime output attachment are
 implemented; no new API or scientific verdict. Visible UI is B2, focus/proposals
 B3, actual owner/browser/independent qualification V1.
+
+SQ-01/B2 Studio0.15 adds [quality presentation](src/presentation/quality/README.md),
+explicit scoped launcher selections and bounded Runtime output proof. Desktop/mobile
+quality, existing Explore and actual gateway-entry browser checks pass; actual-owner
+quality acceptance remains V1. No new backend route/schema or model call is introduced.

@@ -7,6 +7,7 @@ import { immutable } from "../explore/context.js";
 export class QualityAttachment {
   readonly cut: GraphSnapshotPage["snapshot"]["cut"];
   readonly activationId: string;
+  readonly nodeLabel: string;
   readonly operationalState: GraphNodeDetail["node"]["status"];
   readonly port: string;
   readonly complete: boolean;
@@ -23,6 +24,7 @@ export class QualityAttachment {
       for (const item of page.items) if (item.value.kind === "artifact") artifacts.push(item.value.artifact);
     }
     this.cut = immutable(anchor.cut); this.activationId = detail.node.activation_id;
+    this.nodeLabel = detail.node.path.node_id;
     this.operationalState = detail.node.status; this.port = port;
     this.complete = pages[pages.length - 1]!.next_cursor === null;
     this.artifacts = immutable(artifacts); Object.freeze(this);

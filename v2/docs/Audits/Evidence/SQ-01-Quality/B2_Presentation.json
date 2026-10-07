@@ -1,0 +1,39 @@
+{
+  "timestamp_local": "2026-10-07 11:37:19",
+  "status": "passed",
+  "baseline": "7b764883 plus SQ-01/B2 working scope",
+  "studio": "0.15.0",
+  "tests": {
+    "focused": 36,
+    "seconds": 0.575,
+    "selected_lines_percent": 100,
+    "selected_branches_percent": 94.39,
+    "limits": [
+      "Combined quality/selection scope; Runtime stale/disposal and defensive branches not fully exercised"
+    ]
+  },
+  "browser": {
+    "quality": {
+      "raw": "v2\\.test-results\\studio-quality-browser\\2026-10-07T16-35-21-273Z\\evidence.json",
+      "sha256": "a9e1d675fabebe0f0fcafded0f0b2fb8a394615f80cd1d63d9cc50f0c16db69c",
+      "status": "passed"
+    },
+    "explore": {
+      "raw": "v2\\.test-results\\studio-explore-browser\\2026-10-07T16-33-58-887Z\\manifest.json",
+      "sha256": "9d8208a3f5e0e82439df1bad02baf0a9aebbecfeca766a44eb7ec762ca5737f8",
+      "status": "passed"
+    },
+    "gateway": {
+      "raw": "v2\\.test-results\\studio-local-entry\\2026-10-07T16-35-34-275Z\\evidence.json",
+      "sha256": "2aa65b09be326ff6b1bfd52571eb2231f1261a715f1345aed1b437952fc3e332",
+      "status": "passed"
+    }
+  },
+  "provider_calls": 0,
+  "limits": [
+    "Scripted owner HTTP for mixed scientific quality; actual-peer quality journey remains V1",
+    "Local gateway entry regression uses actual gateway with scripted peers",
+    "No calibrated accuracy, demonstrated-error verdict, scientific acceptance or active-run mutation"
+  ],
+  "visual_review": "Desktop1440 and mobile390 reviewed; inspector max-height inherited from generic aside repaired; linked-node crop verified after repair."
+}

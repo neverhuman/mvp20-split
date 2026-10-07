@@ -10,6 +10,8 @@ import { SupervisionClient } from '../../transport/supervision/client.js';
 import { SupervisionModel } from '../../page_models/supervision/model.js';
 import { MonitorWorkspace } from '../monitor_workspace.js';
 import { WorkspaceSelection } from '../../page_models/session/selection.js';
+import { WorkspaceFeedbackSelection } from '../../page_models/session/feedback_selection.js';
+import { WorkspaceQualityOutputSelection } from '../../page_models/session/quality_output_selection.js';
 import { LocalKnowledge } from './knowledge.js';
 import { LocalDesign } from './design.js';
 import { DraftLibrary } from '../../page_models/design/library.js';
@@ -21,6 +23,8 @@ function Campaign({ context, search }: { context: WorkspaceContext & { run_id: s
   const [explored, setExplored] = useState(false);
   const [designed, setDesigned] = useState(false);
   const selection = useMemo(() => new WorkspaceSelection(search, context.scope), [search, context.scope.tenant_id, context.scope.project_id]);
+  const feedbackSelection = useMemo(() => new WorkspaceFeedbackSelection(search, context.scope), [search, context.scope.tenant_id, context.scope.project_id]);
+  const outputSelection = useMemo(() => new WorkspaceQualityOutputSelection(search), [search]);
   const owners = useMemo(() => {
     const client = new ObservationClient();
     return { model:new MonitorModel(client), navigation:new NavigationModel(client), namedViews:new NamedViewsModel(client), evidence:new EvidenceModel(client), supervision:new SupervisionModel(new SupervisionClient()), library:new DraftLibrary(context,new AuthoringClient()) };
@@ -35,7 +39,7 @@ function Campaign({ context, search }: { context: WorkspaceContext & { run_id: s
     </nav>
     <div hidden={mode !== 'execution'}><MonitorWorkspace {...owners} active={mode === 'execution'} context={{ scope:context.scope, run:context.run_id }} synthetic={context.synthetic} /></div>
     {designed && <div hidden={mode !== 'design'}><LocalDesign model={owners.library} synthetic={context.synthetic} /></div>}
-    {explored && <div hidden={mode !== 'knowledge'}><LocalKnowledge selection={selection} active={mode === 'knowledge'} synthetic={context.synthetic} /></div>}
+    {explored && <div hidden={mode !== 'knowledge'}><LocalKnowledge selection={selection} feedbackSelection={feedbackSelection} outputSelection={outputSelection} campaign={{ scope: context.scope, run: context.run_id }} active={mode === 'knowledge'} synthetic={context.synthetic} /></div>}
   </>;
 }
 

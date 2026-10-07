@@ -2,6 +2,8 @@ import { FeedbackClient } from "../../src/transport/feedback/client.js";
 import { ResearchRecordClient } from "../../src/transport/provenance/research.js";
 import { FeedbackModel } from "../../src/page_models/feedback/model.js";
 import { FeedbackContext } from "../../src/page_models/feedback/context.js";
+import { QualityLinkModel } from "../../src/page_models/quality/runtime_link.js";
+import { ObservationClient } from "../../src/transport/observations.js";
 import feedbackFixture from "../fixtures/scientific/feedback-browser.json" with { type: "json" };
 import { createRoot } from "react-dom/client";
 import { KnowledgeClient } from "../../src/transport/scientific/knowledge.js";
@@ -19,7 +21,9 @@ model.bind({ graph, experiment: science.experiment, observations: science.observ
 const feedback = new FeedbackModel({ research: new ResearchRecordClient(), feedback: new FeedbackClient() });
 const pins = new FeedbackContext(feedbackFixture.pins as Parameters<typeof feedback.bind>[0] & {}).pins;
 feedback.bind(pins);
+const qualityLink = new QualityLinkModel(new ObservationClient());
+qualityLink.bind({ scope: pins.question.scope, run: "run-1" }, { activation_id: "1".padStart(64, "0"), port: "result" });
 declare global { interface Window { exploreHarness: { model: ExploreModel; feedback: FeedbackModel; feedbackPins: typeof pins } } }
 window.exploreHarness = { model, feedback, feedbackPins: pins };
-createRoot(document.getElementById("root")!).render(<ExploreWorkspace model={model} feedback={feedback} synthetic />);
-window.addEventListener("pagehide", () => { model.dispose(); feedback.dispose(); });
+createRoot(document.getElementById("root")!).render(<ExploreWorkspace model={model} feedback={feedback} qualityLink={qualityLink} synthetic />);
+window.addEventListener("pagehide", () => { model.dispose(); feedback.dispose(); qualityLink.dispose(); });

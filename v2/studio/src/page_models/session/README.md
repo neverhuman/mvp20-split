@@ -13,3 +13,10 @@ the authenticated session scope. Missing/invalid links expose no pins; no owner
 request, scope grant, persistence or inference from arbitrary artifacts occurs.
 Tests in tests/page_models/workspace_selection.test.ts cover malformed, duplicate,
 oversized and cross-project links and frozen successful selection.
+
+SQ-01 adds optional single `feedback` and `quality_output` fragment values within
+the same8192-character envelope. WorkspaceFeedbackSelection validates exact FeedbackPins
+and session scope; WorkspaceQualityOutputSelection accepts only activation_id/port,
+never another run or arbitrary path. Existing ExplorePins remain required for the
+local research workspace. These selections grant no authority and infer no graph,
+question or consumer. Tests live in page_models/quality selection/runtime_link.

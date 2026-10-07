@@ -1,27 +1,37 @@
 # Restore
 
-Refreshed 2026-10-07 11:14:02 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 11:37:56 (America/Chicago). Read FIRST after compression.
 
 ## Current task
 
-Latest pushed e247276e (BP09closed100%,20/20). SQ-01 B1 complete, ACTIVE25%,
-Build33.33%,Verification0%; B2 next. Commit/push B1 after contractpin/diff checks.
-Studio0.14 new src/page_models/quality/{attachment,projection,model}.ts +README,
-module-owned tests/page_models/quality/projection.test.ts. Reuses strict existing
-FeedbackModel/Lineage, no API/schema/servicechange.28 targetedtests pass0.89s,
-quality100%lines97.41%branches96.30%functions; TSbuildpass. Explicit20row criteria,
-exact need/assessment/profile refs, rawgapreason +evidence; accuracy/demonstratederror
-unsupported null, not inferred. QualityAttachment proves exact assessedsubject in
-pinnedRuntimevaluepages viaEvidenceContext. Multiple weakpoints coexist with
-successful execution. QualityModel subscribes sharedFeedbackModel, no duplicate
-fetch; preserves selection across samecontextrefresh, clears onrebind/denial/hide;
-late/reentrant responses safe. Inputs remain ownerdecoded, no ownerpolicy imported.
-NEXT B2 visible accessible quality panel, filters/details and provennodeattachment;
-reuse existing UI tokens and ExploreQuestion/Feedback hosting. Need reconcile how
-entry supplies explicit feedbackpins; no guessed campaign-to-question joins.
-UIguidelines and InteractionReferences read. B3focus/proposals and V1actualowner/
-browser/independentStudio remain. No ownergate, no paidcalls. LR-01queued afterSQ.
-No runningbuild/test/probe. Package+lock bumped0.14, README/tracker/MBT mirrored.
+Latest pushed7b764883. SQ-01B2 complete50%,Build66.67%,Verification0%; B3next.
+B2commit/push NEXT after checks. Studio0.15, package/lock synced. BP09closed100%.
+No runningtests/builds/probes. No ownergate or paidcalls. LR01queued afterSQ.
+B2: qualitypoint20rowlist/filter/inspector over strictFeedbackModel; exactRuntimeoutput
+link reader(snapshot/detail/firstvaluepage), qualitymarker on sharedGraphCanvas,
+pinnedexecutiondetail navigation. Explicit `feedback` and `quality_output` fragments
+within8192char envelope, session scope only; existing validExplorePins still required.
+LocalKnowledge composesFeedbackModel+QualityLinkModel; onlyfeedbackvisible reads.
+Parentactive=false cannot be overridden bydocumentvisibilityevent. No newAPI/schema.
+Source page_models/quality/{projection,attachment,model,runtime_link}; sessionselectors;
+presentation/quality/{panel,execution,style,README}, Feedback/Explore/entry wiring.
+36focused tests pass0.575s; selectedquality/session100%lines94.39%branches. Lastbuildpass.
+Final scriptedbrowser quality PASS v2/.test-results/studio-quality-browser/
+2026-10-07T16-35-21-273Z;32mixedcriteria/24unresolved+successfulnode, pagination,
+keyboard, filters, separateRuntime/science denials,1440/390axe/overflow. Mobileaside
+maxheightclippedgraph foundvisually; scopedmaxheight:none repair+regression. Linked
+mobilegraph cropreviewed. FullExplorebrowser PASS16-33-58-887Z, actualgatewayentry
+PASSstudio-local-entry/2026-10-07T16-35-34-275Z. Canonical B2_Presentation.json under
+v2/docs/Audits/Evidence/SQ-01-Quality. Earlierharnessfailuresretained (cleanupAPI/axecontext).
+AffectedmoduleREADMEs/tracker/MBT updated. Actual-owner quality journey remainsV1.
+NEXT B3 reconcile applicable public proposal contracts then implementlocal humanfocus
+selection and authorizedAI/publicfollowup presentation with exactpoint lineage,
+intended nextcampaign improvement/expectedinformation gain/unresolved remainder.
+ExistingFeedbackModel reads selected KnowledgeGraphProposalStatus and AcceptedChange;
+requires proposalassertion explicitlylinks question+need. Do NOT infer AI authorship.
+Need inspect contracts/planning/research_proposals.py and relevant ownerreaders before
+choosing B3 shape. No activecampaignmutation/repin or routine humanapprovalqueue.
+UIguidelines+InteractionReferences read; continue until concreteownerneed.
 
 BP09 final391independenttests .test-results/acceptance-owner-final-b;
 actualsmoke .test-results/acceptance-smoke, zero calls/workers,5/7/6drains0.

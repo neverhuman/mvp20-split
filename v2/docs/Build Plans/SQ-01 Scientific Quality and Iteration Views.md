@@ -2,13 +2,13 @@
 
 ## Canonical tracker
 
-- Status: active successor to closed BP-05; B1 complete; B2 visible quality interaction.
-- Last refreshed: `2026-10-07 11:14:02` (America/Chicago).
-- Completion: 25%; Build33.33%, Verification0%; 1/4 scoped gates.
+- Status: active successor to closed BP-05; B1/B2 complete; B3 next-campaign focus and proposals.
+- Last refreshed: `2026-10-07 11:37:19` (America/Chicago).
+- Completion: 50%; Build66.67%, Verification0%; 2/4 scoped gates.
 - Owner: Studio presentation; Research/Knowledge own assessments; Agents owns proposals.
 - Prerequisites: BP-06 owner quality/correction projections and BP-07.03 proposal contracts; activation coherence audit and exact DTO reconciliation before implementation.
-- Current focus: B2 accessible quality panel, filters/drill-down and proven campaign attachments.
-- Next gate: B2 actual visible/browser proof; B3 next-campaign focus follows.
+- Current focus: B3 human focus selection and exact authorized follow-up proposal presentation.
+- Next gate: B3 scoped focus/proposal lineage tests and visible interaction.
 - Blockers: none for B1; unsupported owner verdicts remain visibly unavailable.
 - Requirement: [Campaign progress](../Architecture/Requirements/Product_Requirements.md#campaign-progress-uncertainty-and-subsequent-iteration).
 - Architecture: [Studio](../Architecture/Experience/Studio.md#exploratory-quality-and-next-campaign-focus).
@@ -66,3 +66,14 @@ decisions remain partial.20row paging, transport-denial clearing, late/reentrant
 response safety and same-context selection retention verified. New tests are under
 studio/tests/page_models/quality; existing Studio page_models scope includes them.
 Visible composition/actual peers are subsequent gates, not inferred from unit tests.
+
+## B2 implementation checkpoint
+
+`2026-10-07 11:37:19`: Studio0.15 visible quality list/filter/inspection, pinned
+Runtime graph marker and output navigation pass scripted public-HTTP browser checks
+at1440/390.36 scoped model/selection regressions pass;100%lines94.39%branches.
+Existing Explore and actual gateway-entry regressions pass. Exact launcher pins
+and parent visibility are enforced; no backend schema/route change. Mobile aside
+clipping found visually and repaired with regression. [Evidence](../Audits/Evidence/SQ-01-Quality/B2_Presentation.json)
+records scope/limits; actual-owner quality journey remains V1. Next B3 retains
+focus/lineage and presents existing authorized proposals without active-run mutation.

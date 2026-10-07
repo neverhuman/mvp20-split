@@ -41,3 +41,10 @@ quality module100% lines97.41% branches,96.30% functions. Disposal/subscription 
 defensive invalid-category branches are not all directly exercised. TypeScript
 build passes. Same-context refresh preserves selected point; rebind/denial clears
 it. No visible UI or actual-owner quality journey is claimed at B1.
+
+B2 adds QualityLinkModel: three bounded public Runtime reads (snapshot, exact
+activation detail, first output page), cancellation/generation fencing and explicit
+visible lifetime. It never follows guessed consumer links or scans the whole graph.
+Wrong run/scope/activation/cut rejects; incomplete output membership stays partial.
+One exact ArtifactRef match is necessary for a quality graph marker. The selected
+Runtime node label and unresolved-criterion count belong to their owning projection.
