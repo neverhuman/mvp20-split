@@ -2,16 +2,16 @@
 
 ## Canonical tracker
 
-- Status: primary_active; G1 connected graph verified; N1 research entry next.
-- Last refreshed: 2026-10-07 17:54:00 (America/Chicago).
+- Status: primary_active; G1 and N1 verified; N2 approach/run/results next.
+- Last refreshed: 2026-10-07 18:00:00 (America/Chicago).
 - Baseline: 62ea4966; owner-reported disconnected canvas and navigation review on 2026-10-07.
 - Owner: Studio experience, page models and presentation; service owners retain their contracts and state.
 - Parent: none; priority and mirrors in [Master Build Tracker](Master%20Build%20Tracker.md).
-- Overall implementation: **20%**; Build25%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
+- Overall implementation: **40%**; Build50%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
 - Design readiness: G0 complete; ELK directed layout and bounded topology ownership implemented.
 - Demonstrated behavior: existing UI displays records; owner review exposed unusable graph presentation. Previous passing checks do not establish this plan's usability acceptance.
-- Current phase/task: N1.1 question landing and navigation composition.
-- Next task: N1.2 preserved context, deep links and hidden-view cancellation.
+- Current phase/task: N2.1 approach/run information hierarchy and result contract map.
+- Next task: N2.2 results/evidence comparison and actual-owner journey.
 - Blockers: none for graph review/planning. Missing producer capabilities must be identified before dependent UI work, not represented by fabricated results.
 - Human acceptance: owner feedback is part of visual review; no new routine approval gates for campaign execution.
 - Active exception: owner explicitly reprioritized UI over worker diagnostics; LR-01 remains paused at25%, Build33.33%, Acceptance0%, with R2 receipt diagnosis preserved.
@@ -21,7 +21,7 @@
 |---|---:|---|---|
 | G0 graph review and design | 100% | Owner report and retained campaign | Recorded actual-screen diagnosis, topology/data map, layout design and graph acceptance cases |
 | G1 usable connected graph | 100% | G0 complete | One real retained campaign opens as a readable connected graph; branches, joins and nested work navigable; visual and behavioral proof |
-| N1 research entry and navigation | 0% | G1 complete | Research-question landing and connected workflow navigation with preserved selection/context |
+| N1 research entry and navigation | 100% | G1 complete | Research-question landing and connected workflow navigation with preserved selection/context |
 | N2 approach, execution and results | 0% | N1 complete | Understand approach, follow autonomous work, inspect/compare results and supporting evidence |
 | N3 next-campaign iteration | 0% | N2 complete | Target weak/promising points, inspect proposed changes and follow predecessor/successor history |
 | V1 integrated acceptance and audit | 0% | N3 complete | Actual-owner user journey, independent consumer acceptance, scoped audit and explicit limitations |
@@ -214,3 +214,15 @@ no overlap, automatic fit, nested navigation, selection, refresh, accessibility.
 Browser-d exposed automatic-fit timing failure; retained as failed evidence.
 Candidate assets public-e only; frozen demo remains unchanged pending integrated
 replacement qualification. Header/control density remains N1/N2 scope.
+
+## N1 checkpoint - 2026-10-07 18:00:00
+
+Question-first landing uses exact Research question/need pins; optional assessment
+reads cannot hide the objective. Four connected perspectives group the workflow:
+Question / Approach and run / Results and evidence / Next iteration. Navigation
+retains mounted selections/viewports; allowlisted URL view restores on reload.
+Missing/invalid pins and denied reads stay explicit; launch ticket is erased.
+292 Studio tests pass. Actual-owner workflow browser-a passes real question,
+criteria, graph selection/viewport roundtrip, reload and 1440/390 accessibility.
+Evidence `../../.test-results/ui01-n1/browser-a/evidence.json`; both landing images
+reviewed. N2 still owns inner-view density, result-first hierarchy and comparison.

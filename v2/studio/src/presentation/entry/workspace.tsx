@@ -20,27 +20,39 @@ import { LocalKnowledge } from './knowledge.js';
 import { LocalDesign } from './design.js';
 import { DraftLibrary } from '../../page_models/design/library.js';
 import { AuthoringClient } from '../../transport/authoring.js';
+import { workflowView, workflowLink, type WorkflowView } from '../../page_models/session/workflow.js';
+import { FeedbackModel } from '../../page_models/feedback/model.js';
+import { ResearchRecordClient } from '../../transport/provenance/research.js';
+import { FeedbackClient } from '../../transport/feedback/client.js';
+import { ResearchQuestion } from './question.js';
 import './style.css';
 
 function Campaign({ context, search }: { context: WorkspaceContext & { run_id: string }; search: string }) {
-  const [mode, setMode] = useState<'execution' | 'knowledge' | 'design'>('execution');
-  const [explored, setExplored] = useState(false);
-  const [designed, setDesigned] = useState(false);
+  const [mode, setMode] = useState<WorkflowView>(() => workflowView(search));
+  const [explored, setExplored] = useState(workflowView(search) === 'knowledge');
+  const [designed, setDesigned] = useState(workflowView(search) === 'design');
+  useEffect(() => { const next = workflowView(search); setMode(next); if (next === 'knowledge') setExplored(true); if (next === 'design') setDesigned(true); }, [search]);
+  const navigate = (next: WorkflowView) => {
+    setMode(next); if (next === 'knowledge') setExplored(true); if (next === 'design') setDesigned(true);
+    history.replaceState(null, '', location.pathname + location.search + '#' + workflowLink(search, next));
+  };
   const selection = useMemo(() => new WorkspaceSelection(search, context.scope), [search, context.scope.tenant_id, context.scope.project_id]);
   const feedbackSelection = useMemo(() => new WorkspaceFeedbackSelection(search, context.scope), [search, context.scope.tenant_id, context.scope.project_id]);
   const outputSelection = useMemo(() => new WorkspaceQualityOutputSelection(search), [search]);
   const owners = useMemo(() => {
     const client = new ObservationClient();
-    return { model:new MonitorModel(client), navigation:new NavigationModel(client), namedViews:new NamedViewsModel(client), evidence:new EvidenceModel(client), supervision:new SupervisionModel(new SupervisionClient(), new FollowupModel(new FollowupClient()), new CriterionModel(new CriterionClient())), library:new DraftLibrary(context,new AuthoringClient()) };
+    return { question:new FeedbackModel({ research:new ResearchRecordClient(), feedback:new FeedbackClient() }), model:new MonitorModel(client), navigation:new NavigationModel(client), namedViews:new NamedViewsModel(client), evidence:new EvidenceModel(client), supervision:new SupervisionModel(new SupervisionClient(), new FollowupModel(new FollowupClient()), new CriterionModel(new CriterionClient())), library:new DraftLibrary(context,new AuthoringClient()) };
   }, [context.actor_id, context.scope.tenant_id, context.scope.project_id, context.run_id]);
   useEffect(() => () => { for (const owner of Object.values(owners)) owner.dispose(); }, [owners]);
   return <>
+    <header className="local-workspace-bar"><strong>AMPHORA</strong><span>Research workspace</span><span className="local-access">Local access</span></header>
     <nav className="local-workspace-navigation" aria-label="Research workspace">
-      <button aria-pressed={mode === 'execution'} onClick={() => setMode('execution')}>Execution</button>
-      <button aria-pressed={mode === 'knowledge'} onClick={() => { setExplored(true); setMode('knowledge'); }}>Domain and evidence</button>
-      <button aria-pressed={mode === 'design'} onClick={() => { setDesigned(true); setMode('design'); }}>Next campaign</button>
-      <span className="local-access">Local access</span>
+      <button aria-pressed={mode === 'question'} onClick={() => navigate('question')}>Question</button>
+      <button aria-pressed={mode === 'execution'} onClick={() => navigate('execution')}>Approach and run</button>
+      <button aria-pressed={mode === 'knowledge'} onClick={() => navigate('knowledge')}>Results and evidence</button>
+      <button aria-pressed={mode === 'design'} onClick={() => navigate('design')}>Next iteration</button>
     </nav>
+    <div hidden={mode !== 'question'}><ResearchQuestion model={owners.question} selection={feedbackSelection} active={mode === 'question'} synthetic={context.synthetic} navigate={navigate} /></div>
     <div hidden={mode !== 'execution'}><MonitorWorkspace {...owners} active={mode === 'execution'} context={{ scope:context.scope, run:context.run_id }} synthetic={context.synthetic} /></div>
     {designed && <div hidden={mode !== 'design'}><LocalDesign model={owners.library} synthetic={context.synthetic} /></div>}
     {explored && <div hidden={mode !== 'knowledge'}><LocalKnowledge selection={selection} feedbackSelection={feedbackSelection} outputSelection={outputSelection} campaign={{ scope: context.scope, run: context.run_id }} active={mode === 'knowledge'} synthetic={context.synthetic} /></div>}

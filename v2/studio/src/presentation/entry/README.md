@@ -1,5 +1,18 @@
 # Local workspace entry
 
+UI-01 N1 adds a question-first landing and Question / Approach and run / Results
+and evidence / Next iteration navigation. These compose existing owner views;
+they do not claim a new results aggregation API. Missing question or domain pins
+remain explicit empty states. Overview reads exact question/need records through
+FeedbackModel with optional downstream pins omitted, so an unavailable assessment
+cannot hide the objective. Evidence assessment remains in the evidence view.
+Overview hides/clears and cancels reads when inactive or document-hidden.
+The session workflow helper owns bounded `view` hints and preserves exact selection
+parameters (including duplicates for validators); it never copies launch secrets.
+Reload restores the selected workflow view. Mounted perspectives preserve local
+selection and viewport on navigation; page reload re-reads owner records and does
+not imply persistence of unsaved drafts or local canvas pan in browser storage.
+
 DEMO-01 actual-owner rehearsal found that entry.tsx retained only the explore
 fragment when removing the one-time launch ticket. It now preserves the three
 supported selection keys (explore, feedback, quality_output), including duplicates

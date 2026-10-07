@@ -4,24 +4,23 @@ Refreshed 2026-10-07 17:33:24 America/Chicago. Read FIRST after compression.
 
 ## Current handoff
 
-Refreshed implementation checkpoint 2026-10-07 17:54:00 America/Chicago.
-UI-01 primary20%, Build25%, Verification0%; G0/G1=100, N1/N2/N3/V1=0.
-G1 complete: ELK0.12 dependency layout, routed edges, automatic root/fit,
-secondary inventory list, per-scope viewport, group counts, controls below canvas.
-291 Studio tests pass; navigation/dense/monitor/drafts browser regressions pass.
-Actual-owner browser-e passed initial automatic fit, nested groups, refresh,
-selection, accessibility and 1440/390 screenshots; iteration image reviewed.
-Evidence v2/.test-results/ui01-g1/browser-e; candidate assets public-e.
-Browser-d failed automatic fit; fixed ReactFlow fit lifecycle, retained evidence.
-Frozen demo remains unchanged. No campaign writes or provider calls.
-NEXT N1: question-first landing plus connected navigation, preserve explicit pins
-and authenticated context; no inferred question/run association. Research question
-and need reads exist via ResearchRecordClient; FeedbackModel can supply lineage.
-Current entry workspace.tsx has Execution/Domain and evidence/Next campaign modes.
-LocalKnowledge privately owns FeedbackModel; consider focused overview model using
-question/need only so optional assessment failures cannot hide research purpose.
-Update entry allowlisted fragment navigation without exposing launch credential.
-Keep implementation and test folders module scoped; no source edits during tests.
+Refreshed implementation checkpoint 2026-10-07 18:00:00 America/Chicago.
+UI-01 primary40%, Build50%, Verification0%; G0/G1/N1=100, N2/N3/V1=0.
+G1 committed/pushed b917223e. ELK connected graph actual-owner browser-e pass.
+N1 question landing, exact Research criteria, 4-perspective navigation and safe URL
+view reload implemented; 292 Studio tests pass. Actual-owner workflow-review
+browser-a passes exact question, graph viewport/selection roundtrip, reload,
+1440/390 accessibility. Images reviewed. Root v2/.test-results/ui01-n1.
+Candidate public-a isolated browser only; user-facing frozen demo unchanged.
+NEXT N2: reduce inner-view header/control density; map result comparison contracts.
+Existing Explore has Knowledge graph/Specimens/Properties/Compare specimens/Question
+feedback; actual demo has graph selection but NO experiment/observation pins.
+Do not infer scientific results from execution completion or opaque artifact bytes.
+Current GraphCanvas shared across views. N1 uses FeedbackModel with question/need
+only, explicit optional pins null. Hidden question cancels/clears. URL workflow
+helper preserves exact pins and drops credentials; mounted views retain context.
+No active tests/jobs at checkpoint. Latest demo liveness verified through workflow
+review. Original 2hour session expires ~18:08; check before further API reviews.
 
 LR01 PAUSED25%, Build33.33%, Acceptance0%, R1=100/R2R3V1=0 by ownerdirection.
 Resume R2 RuntimeOWN scoped receipt diagnosis only after UIpriorityreleased, NOT

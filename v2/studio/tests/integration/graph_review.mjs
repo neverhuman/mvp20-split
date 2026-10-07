@@ -33,7 +33,7 @@ try {
   const issued = await context.request.post(input.origin + '/launcher/ticket', { headers: { Authorization: 'Bearer ' + process.env.AMPHORA_BROWSER_LAUNCH_KEY } });
   assert.equal(issued.status(), 200);
   const { ticket } = await issued.json();
-  await page.goto(input.origin + '/#launch=' + encodeURIComponent(ticket));
+  await page.goto(input.origin + '/#view=execution&launch=' + encodeURIComponent(ticket));
   await page.getByRole('heading', { name: 'Follow execution', exact: true }).waitFor();
   // A vertical SVG path has zero bounding-box width, despite its visible stroke.
   // Check attachment here; painted stroke, length, fit and screenshots below own visibility.
