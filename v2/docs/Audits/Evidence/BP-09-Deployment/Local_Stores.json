@@ -1,0 +1,104 @@
+{
+  "checked_at": "2026-10-06T22:04:37-05:00",
+  "state": {
+    "deployment_id": "7be3465bdf1e4fa6b9189637e51e6f96",
+    "phase": "stores_ready",
+    "postgres": {
+      "container": "amphora-local-7be3465bdf1e4fa6b9189637e51e6f96-postgres",
+      "volume": "amphora-local-7be3465bdf1e4fa6b9189637e51e6f96-postgres-data",
+      "image": "postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+      "host": "127.0.0.1",
+      "port": 60687
+    },
+    "qdrant": {
+      "container": "amphora-local-7be3465bdf1e4fa6b9189637e51e6f96-qdrant",
+      "volume": "amphora-local-7be3465bdf1e4fa6b9189637e51e6f96-qdrant-data",
+      "image": "qdrant/qdrant@sha256:12364fe851b9f17356fc88189fc06d1b521262e04659ec7345975b00c9246a10",
+      "host": "127.0.0.1",
+      "port": 60688
+    },
+    "schema_version": "1"
+  },
+  "roles": [
+    {
+      "role": "runtime_migrator",
+      "authenticated": true,
+      "schema_scope": "runtime",
+      "ddl": true
+    },
+    {
+      "role": "runtime_service",
+      "authenticated": true,
+      "schema_scope": "runtime",
+      "ddl": false
+    },
+    {
+      "role": "artifact_migrator",
+      "authenticated": true,
+      "schema_scope": "artifacts",
+      "ddl": true
+    },
+    {
+      "role": "artifact_service",
+      "authenticated": true,
+      "schema_scope": "artifacts",
+      "ddl": false
+    },
+    {
+      "role": "registry_migrator",
+      "authenticated": true,
+      "schema_scope": "registry",
+      "ddl": true
+    },
+    {
+      "role": "registry_service",
+      "authenticated": true,
+      "schema_scope": "registry",
+      "ddl": false
+    },
+    {
+      "role": "research_migrator",
+      "authenticated": true,
+      "schema_scope": "research",
+      "ddl": true
+    },
+    {
+      "role": "research_service",
+      "authenticated": true,
+      "schema_scope": "research",
+      "ddl": false
+    },
+    {
+      "role": "knowledge_migrator",
+      "authenticated": true,
+      "schema_scope": "knowledge",
+      "ddl": true
+    },
+    {
+      "role": "knowledge_service",
+      "authenticated": true,
+      "schema_scope": "knowledge",
+      "ddl": false
+    },
+    {
+      "role": "planning_migrator",
+      "authenticated": true,
+      "schema_scope": "planning",
+      "ddl": true
+    },
+    {
+      "role": "planning_service",
+      "authenticated": true,
+      "schema_scope": "planning",
+      "ddl": false
+    }
+  ],
+  "qdrant_denials": [
+    401,
+    401
+  ],
+  "authenticated_qdrant": true,
+  "resume_preserved_identity_and_ciphertext": true,
+  "vault_ciphertext_sha256": "b73f1490f624622d94e1ce34eb9766cfdde00eec8241dfa6857f31fa3a5a1803",
+  "limitations": "No owner migrations, service startup, container restart, backup or power-loss proof."
+}
