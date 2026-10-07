@@ -354,3 +354,5 @@ before startup. It records actual Docker capacity; it is not a peak-workload ben
 All helpers preserve the original installation/vault, use exact owned process groups,
 retain failed probes, and finish with owners drained. Shared-daemon interruption is a
 separate approval-scoped runbook because older baseline containers share this daemon.
+
+Shared-daemon drill: `verify_shared_daemon_outage.py` requires explicit outage scope authorization and an exact five-container inventory. It preserves IDs/volumes, restores in cleanup, checks actual bound ports and reconciles one retained managed intent. `--resume-from` resumes the original intent without another outage. Synthetic503 is a lifecycle oracle only. Original/corrected/blocked campaign readbacks use the existing separate helpers; no model calls. Initial ephemeral-port harness failure and qualified recovery are retained in Shared_Daemon.json.

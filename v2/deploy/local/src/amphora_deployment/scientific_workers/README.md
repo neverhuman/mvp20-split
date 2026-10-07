@@ -76,7 +76,7 @@ not offer ambiguous Docker force-stop/restart semantics.
 
 Never remove scientific records, data volumes or unrelated containers. Actual controller/API/TLS job death and original-turn adoption are now separately
 qualified in BP-09.03/B3; managed eligible scientific execution is qualified in B1.
-Shared-daemon outage remains an open, separately authorized scenario. Do not infer
+Shared-daemon outage is separately qualified by the owner-approved BP-09.03/B3 drill. Do not infer
 continued campaign success from process recovery: the fault probe preserved a blocked
 run after an unclaimed seed exceeded its original deadline. No automatic deadline
 extension, turn replacement or campaign reset is performed.
@@ -103,3 +103,5 @@ oracle did not pass after that interruption; public readback shows seed tool_fai
 zero attempts/completions/spend. This is process recovery and truthful failure evidence,
 not resumed scientific success. Shared daemon, full-load peak resources and historical
 expiry causality are not established by this probe. See Controller_Recovery.json.
+
+Shared_Daemon.json qualifies actual Docker unavailability, retained intent, same-turn single-container recovery through installed Deployment0.11 and synthetic503 TLS owner, and exact original baseline restoration. Post-outage actual campaign/receipt/artifact and corrected-successor browser reads pass. No active campaign ran during the daemon outage; no resumed-science, HA or power-loss guarantee follows.

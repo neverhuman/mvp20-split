@@ -1,18 +1,26 @@
 # Restore
 
-Refreshed 2026-10-07 07:21:01 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 08:17:34 (America/Chicago). Read FIRST after compression.
 
-## Active task / real owner gate
+## Active task / owner decision
 
-BP-09.03/B3 two of three checkpoints complete. Child66.67%,Build88.89%,Acceptance0%;
-parent53.33%,(10+2/3)/20,ten closed gates. B1/B2 complete. V1 cannot start before B3.
-Awaiting explicit scope approval for actual shared Docker Desktop interruption because
-it affects THREE older baseline containers plus the active local PG/Qdrant. Async
-question sent; no answer received yet. Do not treat elapsed time as approval. Concrete
-runbook docs/Build Plans/BP-09/BP-09.03 Shared daemon interruption.md names fivecontainers,
-stop60s/start120s limits and original-state restoration; no daemon operation executed.
-All independent authorized checks complete. No running tests/probes/owners; Docker
-baseline containers remain up. B2 pushed927c136b; the B3 evidence checkpoint is committed with this handoff.
+BP-09.03 closed100%,Build100%,Acceptance100%; parent60%,12/20 gates.
+BP-09.04 activated0%,B1.1 next: versioned offline backup manifest/inventory policy.
+Read BP-09.04_Activation.md. Owner recovery objective question pending before actual
+drill; contract work independent. Suggested last fully drained backup, measured time
+without hard deadline; do not treat elapsed time as owner answer.
+
+Approved daemon drill COMPLETE. One stop18.828s; all five original containers/volumes
+restored and ready. Initial harness used empty requested ephemeral ports; repaired
+actual-bound-port readiness, resumed original intent WITHOUT another outage.
+Raw local-shared-daemon-20261007a and local-shared-daemon-recovery-20261007a.
+Same intent282c24d96d37459fbc0b8282d30773a0/sequence1 released after synthetic503/exit3.
+Original/corrected/blocked post-daemon reads PASS (local-post-daemon-*-20261007a),
+5/7/6owners drained0; exact failed graph/receipt/completions, no attempts/spend.
+No running probes. No model calls. Shared_Daemon.json and closeout audit are canonical.
+Four BP09.03 docs archived under BP-09/Completed; relative links repaired.
+Lint, production boundaries, changed-document links and whitespace checks PASS.
+Commit/push this closeout, then continue BP09.04/B1.1.
 
 ## Latest qualified work / limitations
 
@@ -41,9 +49,8 @@ Successful corrected successor .test-results/local-corrected-successor-20261007b
 run6c124e88efec483ab6704ee096d6eb0c. Actual browser local-browser-corrected-20261007b.
 Source r2/Knowledge assertion2 unresolved, old history preserved, new exact context pins.
 Evidence Corrected_Successor.json; no scientific improvement or measuredlabcorrection claim.
-If shared-daemon scope approved, build/review bounded execute helper from the runbook,
-refresh exact inventory, preserve volumes/vault/IDs and restore original running state.
-No global Docker actions before that answer. Closed plans stay closed; V1 then BP09.04.
+Shared-daemon drill approved and complete; archived runbook/evidence owns exact history.
+Closed plans stay closed; BP09.04 active.
 
 ## Retained integrated campaign and costs
 
