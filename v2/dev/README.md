@@ -1,5 +1,17 @@
 # Foundation Verification Tooling
 
+`present_local_demo.py` serves the exact separately built assets and owner manifest
+from a passing actual-browser qualification. It verifies asset hashes, selected run,
+scope and local gateway origin before startup. It reuses BrowserController and the
+installed Deployment lifecycle; no peer SQL, scientific workers or model calls.
+Optional `--open` issues a one-time browser ticket in memory; tokens/tickets are
+never logged or saved. Ctrl+C, a session-directory STOP file, or a bounded duration
+drains owned processes. Abrupt parent termination uses the existing process job
+cleanup; it is not a successful graceful-drain claim. Qualified manifests are trusted
+local operator inputs, not authenticated external bundles. Use one presentation at
+a time on the existing restored installation. DEMO-01 owns actual startup/drain and
+browser rehearsal, with retained qualification and screenshots as fallback.
+
 `verify_recovery_installations.py` rebuilds Deployment and the reconstructed evaluator
 from their declared closures, runs copied owned tests, compares evaluator wheels with
 the qualified Linux image closure, then rereads actual restored history using installed

@@ -1,0 +1,49 @@
+{
+  "kind": "retained_actual_owner_screenshots",
+  "live": false,
+  "synthetic_science": true,
+  "slides": [
+    {
+      "title": "Research as a connected process",
+      "caption": "Tools do bounded work; the campaign graph determines how they fit together.",
+      "image": "01.png",
+      "source": ".test-results\\demo-20261008\\original-focus-d\\authored-1440.png",
+      "sha256": "38970bcbc9e7164f9cab808c41173cb7d9becc5efc015d773e1b2f845e8ac181"
+    },
+    {
+      "title": "AI decisions remain inspectable",
+      "caption": "This recorded model abstained. Its context and decision remain available for inspection.",
+      "image": "02.png",
+      "source": ".test-results\\demo-20261008\\original-focus-d\\reasoning-1440.png",
+      "sha256": "1f3f43bb991c6c8f358fdce5581aa9a7f1f7f1da5fd90fb7ed37a2cc7ac6fd1f"
+    },
+    {
+      "title": "Evidence behind a claim",
+      "caption": "Knowledge links retain their source and applicability. A relationship is not automatically a proven fact.",
+      "image": "03.png",
+      "source": ".test-results\\demo-20261008\\original-focus-d\\domain-1440.png",
+      "sha256": "e482d0f9763147859d3fb609d2f5615013aeb6134d4c2eb47f2550599070da50"
+    },
+    {
+      "title": "Choose what to learn next",
+      "caption": "A local human focus draft preserves the research point and intended learning. It has not been submitted or executed.",
+      "image": "04.png",
+      "source": ".test-results\\demo-20261008\\original-focus-d\\quality-focus-1440.png",
+      "sha256": "75e9c9ee96969d2bdff4e7d141a4facb81affadf85baa245e5889baf1e9166a1"
+    },
+    {
+      "title": "Build on previous work",
+      "caption": "The subsequent campaign retains an explicit connection to its predecessor and carried result.",
+      "image": "05.png",
+      "source": ".test-results\\demo-20261008\\successor-b\\successor-lineage-1440.png",
+      "sha256": "cfec112fdc78828384542669b92766c5facc2afe807e6b417dd068b06ae0ab5a"
+    },
+    {
+      "title": "Keep corrections visible",
+      "caption": "New information changes the later interpretation while preserving the original history. Scientific applicability remains unresolved.",
+      "image": "06.png",
+      "source": ".test-results\\demo-20261008\\successor-b\\corrected-source-1440.png",
+      "sha256": "5bff62fc7253786570f73249a24c093c9f042d43c29789094ec4443ed4db0f85"
+    }
+  ]
+}

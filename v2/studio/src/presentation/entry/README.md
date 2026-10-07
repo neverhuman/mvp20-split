@@ -1,5 +1,12 @@
 # Local workspace entry
 
+DEMO-01 actual-owner rehearsal found that entry.tsx retained only the explore
+fragment when removing the one-time launch ticket. It now preserves the three
+supported selection keys (explore, feedback, quality_output), including duplicates
+for the owning selectors to reject. Ticket removal and session authority are
+unchanged. Actual local browser qualification covers question/quality selection
+and focus export against real Research records, not merely direct model fixtures.
+
 Owns the compact application identity/local-access strip and session states.
 WorkspaceSession owns loading, denial and failure. An authenticated session with
 no selected run renders an explicit empty view; it does not fabricate a sample or

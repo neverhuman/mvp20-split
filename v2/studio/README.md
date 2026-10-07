@@ -1,5 +1,15 @@
 # Graph Studio
 
+Current demo release: **0.16.1**, qualified against actual retained owners under
+[DEMO-01](../docs/Audits/DEMO-01_Internal_Walkthrough.md). The local entry exposes
+execution/authored graphs, checkpoint reasoning, domain/evidence, saved draft
+inspection and explicit question/quality focus export. Launch selection pins survive
+one-time ticket removal. Frozen assets and operator steps are in the
+[presenter guide](../docs/Demo/2026-10-08%20Internal%20Demo.md). AI criterion targeting
+and a dependable new-run qualification remain SQ-01/LR-01 work. Earlier release
+checkpoints below retain their historical scope; they do not override this status.
+
+
 Studio0.10 wires the existing checkpoint reasoning inspector into the local Monitor
 entry, with the same owned context/disposal lifecycle. Local builds accept an optional
 destination argument to scripts/build-local.mjs so new assets can be qualified without

@@ -7,7 +7,8 @@ function takeLink() {
   const fragment = new URLSearchParams(location.hash.slice(1));
   const ticket = fragment.get('launch') ?? undefined;
   const selection = new URLSearchParams();
-  for (const value of fragment.getAll('explore')) selection.append('explore', value);
+  for (const key of ['explore', 'feedback', 'quality_output'])
+    for (const value of fragment.getAll(key)) selection.append(key, value);
   // Retain non-secret navigation pins for reload; erase the one-use credential.
   if (location.hash) history.replaceState(null, '', location.pathname + (selection.size ? '#' + selection : ''));
   return { ticket, selection:selection.toString() };

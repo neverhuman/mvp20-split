@@ -1,41 +1,46 @@
 # Restore
 
-Refreshed 2026-10-07 12:20:17 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 12:44:11 America/Chicago. Read FIRST after compression.
 
-## Current task
+## Current handoff
 
-Latest implementation pushed1b293834; handoff7d4aec21. Owner approved SQ-01.01
-on 2026-10-07 12:20:17. No further permission needed for the recorded additive profile.
-SQ-01 re-estimated41.67%, Build50%, Verification0%: prior2.5completed units retained,
-denominator4->6 after C1contract and C2owner-integration gates added (both0%).
-NEXT C1: additive criterion-target output/preparation schemas, exact identity/limits,
-predecessor schema/byte compatibility. Then C2 Planning/Runtime integration, B3 proposal
-inspection, V1 actual-owner subsequent-campaign/browser/independent replacement/audit.
-No new schemas/APIs implemented yet. BP09closed100%; LR01queuednext. No running jobs.
+Owner demo2026-10-08 11am CT, internal nontechnical colleagues. DEMO-01 bounded
+delivery complete100% all three phases; archive/audit/presenter guide prepared.
+Owner rehearsal/acceptance pending, not a dependency for further approved work.
+NEXT SQ-01/C1 approved criterion-target contracts,41.67%,Build50%,Verification0%.
+No new criterion schemas/API implemented. LR01queued. Demo assets stay FROZEN while
+new work proceeds separately. Latest pushedbeforethischange94723c14; demo commit next.
 
-Owner asks distance to internal demo: bounded local synthetic demo already proven
-with actual owners/model checkpoints/recovery/replacement/retained browser views.
-Remaining SQ01 connects quality focus to verified nextcampaign proposals and actual
-subsequentcampaign. LR01 owns intermittent worker faults before dependable unscripted
-live demos. Latest full UI/operator rehearsal remains necessary; no arbitrary time
-or overall-product completion estimate. Scientific qualification is separate.
+Launch `v2/Start-Demo.ps1` (original) or `-Scenario successor`; Ctrl+C drains.
+Uses installedDeploymentPython .test-results/acceptance-owner-final-b and explicit
+physical restorebroot. Does not start workers/models. Guide docs/Demo/2026-10-08
+Internal Demo.md; offline6pagewalkthrough docs/Demo/2026-10-08/index.html with tracked
+real-owner screenshots and manifest. Defaultbrowseropen is operatorstep; rehearsal
+usedNoBrowser. Boundedsessionduration2hours, independentnew sessionfolder eachtime.
 
-Studio0.16 focus.ts immutable domain value, QualityModel lifecycle integration,
-presentation/quality/focus.tsx bounded form and JSON Blob export.32points,max2048char
-intent fields. Exact question/need/assessment/output and all unresolved points retained.
-Unsubmitted local human draft, not owner adoption. Same-context refresh retains;
-hide/denial/failure/rebind/disposal clears. No browser storage/import guarantee.
-38scoped tests PASS0.579s; quality100%lines94.63%branches. Initial new fixture changed
-request without matching outcome and correctly failed; fixed to valid unselected
-assessment. Browser PASS v2/.test-results/studio-quality-browser/2026-10-07T16-47-12-561Z
-export1selected/24unresolved, filters/navigation,1440/390axe/overflow/screenshots reviewed.
-B3_Human_Focus.json canonical. Plan/MBT/moduleREADMEs/Drift updated.
-B2 browser16-35-21-273Z, Explore16-33-58-887Z and actualgatewayentry16-35-34-275Z
-remain prior regression evidence, not rerun for B3. B2 source/protocol details in READMEs.
+Root .test-results/demo-20261008/public-b is frozenStudio0.16.1. Qualification
+original-focus-d and successor-b PASS1440/390; each7ownersdrained0. D includes
+connectedauthoredgraph, reasoningabstention, domain, unassessedfocus/export, draft.
+Latestlauncher session20261007-124044-f7fb84bc PASS49.39s total,7ownersdrained0.
+Tamperedassetdigest rejects beforeoutput/ownerstartup. Offlineall6pages1440/390
+image/axe/overflowpass.20focusedquality/selectiontests pass andTSbuildpass.
+No running jobs. All owners stopped; storecontainersleftunchanged. No modelcharges.
 
-BP09 final391independenttests .test-results/acceptance-owner-final-b; actualsmoke
-.test-results/acceptance-smoke, zero calls/workers,5/7/6drains0. Frozen12gate ledger
-and Smoke/Qualification evidence. Intermittent worker failures remain LR01.
+Fixedentry.tsx stripping feedback/quality_output withone-timelaunchticket; preserve
+onlysupportedpins and erasecredential. Firstoriginal-focus failure retained.
+Separate original-focus-c failedunverifiedfeedbackread AFTERrootgraphcapture; cause
+UNRESOLVED. Addedpayload-free Researchpath/status tracing; dpassed8reads200, which
+doesnotrepairc. Audit/Drift assign SQ01V1readpath qualification. Offlinefallback
+explicit. Original-focus-b/successor and earlierpublicassets retained.
+
+Next approvedSQ01C1: additive profile planning.checkpoint-followup-draft/v1 and
+preparation selection; exactcriterion/need/question/assessmentbindings, immutable
+predecessorschemabytes. ThenC2 Planning/Runtime, remainingB3proposalUI,V1actualowner
+subsequentcampaign/replacement/audit.2.5completedunits/6scope; no approvalneeded.
+ExistingRuntimecapture/Data contentreads available; profileslackcriteriontargets.
+Studiofocuslocal/unsubmitted only. Do notclaimproposaladoption/scientificefficacy.
+
+BP09closed100%,12gateledgerfrozen; acceptedrestore details below.
 
 ## Qualified evaluator / accepted B2
 

@@ -108,3 +108,5 @@ A guided retained-result walkthrough and a dependable fresh autonomous campaign 
 different readiness levels. Final demo rehearsal must verify the latest integrated UI,
 launcher/context selection and operator steps; isolated browser fixtures do not prove
 that complete experience. Scientific qualification remains outside this internal demo.
+
+DEMO-01 checkpoint 2026-10-07 12:44:11: actual-owner unassessed point/focus export verified with Studio0.16.1 entry fragment repair. This is partial evidence only, not full V1 or AI proposal adoption. One prior read failure remains unresolved for V1 qualification. C1 approved contract implementation remains the next task; demo assets are frozen independently.

@@ -1,0 +1,29 @@
+{
+  "timestamp_local": "2026-10-07 12:44:41",
+  "status": "bounded_demo_verified",
+  "studio": "0.16.1",
+  "owner_rehearsal": "pending",
+  "frozen_assets": {
+    "index.html": "0c60b48d2bf03c539e9f7f14f773d3fb7652fade37209178f9a3790c893e45c5",
+    "app.js": "75dab2c30e7f7297854ca0a4ad51ff502eade49de1fce5e06e2816ff57da6ad2",
+    "app.css": "cfc6ad8fe65eb9eda216fe264c99b56224875ed0542cf3d867db3167e2b6a0d1"
+  },
+  "qualifications": [
+    "original-focus-d",
+    "successor-b"
+  ],
+  "launcher": "sessions/20261007-124044-f7fb84bc",
+  "tests": 20,
+  "offline_viewports": [
+    1440,
+    390
+  ],
+  "offline_pages": 6,
+  "provider_calls": 0,
+  "unresolved": [
+    "original-focus-c feedback read failed; subsequent success does not establish repair",
+    "LR-01 worker failures",
+    "SQ-01 exact criterion AI follow-up not implemented"
+  ],
+  "evidence_root": ".test-results\\demo-20261008"
+}

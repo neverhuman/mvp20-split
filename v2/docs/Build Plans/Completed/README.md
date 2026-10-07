@@ -19,3 +19,5 @@
 BP-01 completes the contract and validation foundation only. BP-02 completes the durable prepared-invocation foundation; BP-04 graph interpretation is also accepted; scientific validity remains separately scoped.
 
 After required gates and a recorded closeout drift audit pass, move the plan and its history here, preserve final percentages/evidence and repair inbound links. Maintain a compact completed-plan index here as entries arrive. Future regressions or scope get successor plans; closed plans stay closed.
+
+- [DEMO-01 Internal Walkthrough](DEMO-01%20Internal%20Walkthrough.md): bounded delivery100%; presenter rehearsal pending, offline fallback and unresolved read failure recorded.

@@ -9,15 +9,15 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-01 through BP-09 closed; SQ-01 C1 active.
-- Last refreshed: `2026-10-07 12:20:17` (America/Chicago).
+- Last refreshed: `2026-10-07 12:44:41` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
-- Current priority: SQ-01 Scientific Quality and Iteration Views.
-- Primary active task: SQ-01/C1 approved additive criterion-target contracts.
+- Current priority: SQ-01/C1; DEMO-01 bounded walkthrough delivered for2026-10-08 11:00:00 CT.
+- Primary active task: SQ-01/C1 approved criterion-target contracts; frozen demo remains separate.
 - Next task: SQ-01/C2 owner integration, then remaining B3 proposal UI and V1.
 - Implementation completion: SQ-01=41.67%, Build50%, Verification0%; BP-09 closed100%,20/20.
 - Blockers: none for approved SQ-01.01 implementation; scientific corpus remains TBA for later scientific qualification.
 - Acceptance posture: bounded local demo/recovery/replacement complete; intermittent worker failures assigned LR-01, no soak claim.
-- Active exception: none.
+- Active exception: deadline demo delivery complete; presenter acceptance pending, qualification assets frozen.
 
 ## Initial Delivery Boundary
 
@@ -98,6 +98,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-07 12:44:11 | DEMO-01 closed100%; SQ-01/C1 resumes at41.67%. | Studio0.16.1 actual-owner walkthrough, seven-owner launch/drain, offline fallback; prior feedback read failure retained. |
 | 2026-10-07 12:20:17 | SQ-01.01 approved; C1/C2 added, overall41.67%, Build50%, Verification0%. | 2.5 completed units preserved; denominator4 to6. C1 contracts active; C2 owners, B3 proposals and V1 follow. |
 | 2026-10-07 11:51:00 | SQ-01 human focus complete; overall62.5%, Build83.33%, Verification0%. | 38 scoped tests; desktop/mobile export/browser proof; SQ-01.01 criterion-target profile awaits owner direction. |
 | 2026-10-07 11:02:03 | BP-09 closed100%,20/20; SQ-01 next. | Frozen12gate ledger,391independent tests, actual original/successor/blocked smoke; LR-01 preserves unresolved worker faults. |
@@ -122,4 +123,3 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-07 02:45:50 | BP-09.03 catalog delivery primitive verified; percentages unchanged. | Deployment0.7 independent230tests, actual Registry/SQL lost-response replay and zero-capacity exclusion; managed readiness remains. |
 | 2026-10-07 02:14:53 | BP-09.03 second B1.3b checkpoint complete;child15.97%,parent43.19%. | Deployment0.6 independent199tests, actual owner/TLS/tool denial and monitor-death adoption; successful eligibility next. |
 | 2026-10-07 01:44:31 | BP-09.03 B1.3b TLS/container primitive checkpoint;percentages unchanged. | Deployment0.5 independent189tests and two actual Linux lost-reply cases; responsive adoption/migration integration remains. |
-| 2026-10-07 01:22:21 | BP-09.03 native third of B1.3b verified;child15.28%,parent43.06%. | Deployment0.4 independent164tests and actual Runtime/Planning quiescence; no campaigns/model calls. |

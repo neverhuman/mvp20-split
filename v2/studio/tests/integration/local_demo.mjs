@@ -17,13 +17,20 @@ try {
     try {
       const page = await context.newPage();
       const errors = [];
+      const researchResponses = evidence.research_http ??= [];
+      page.on('response', response => {
+        const path = new URL(response.url()).pathname;
+        if (path.startsWith('/api/research/')) researchResponses.push({width:viewport.width,path,status:response.status()});
+      });
       page.on('pageerror', error => errors.push(error.message));
       await page.goto(input.origin);
       await page.getByRole('heading',{name:'Open a new workspace session'}).waitFor();
       const issued = await context.request.post(input.origin+'/launcher/ticket',{headers:{Authorization:'Bearer '+key}});
       assert.equal(issued.status(),200);
       const {ticket} = await issued.json();
-      const selection = new URLSearchParams({explore:JSON.stringify({graph:input.records.snapshot.reference,experiment:null,observations:[]})});
+      const selection = new URLSearchParams({explore:JSON.stringify({graph:input.records.snapshot.reference,experiment:null,observations:[]}),
+        feedback:JSON.stringify({question:input.records.question.reference,need:input.records.need.reference,
+          assessment:null,publication:null,proposal:null,corrections:null})});
       await page.goto(input.origin+'/#'+selection+'&launch='+ticket);
       await page.getByRole('heading',{name:'Follow execution',exact:true}).waitFor();
       await page.locator('.node-list button').first().waitFor();
@@ -32,6 +39,13 @@ try {
       assert.ok((await context.cookies()).every(cookie=>cookie.httpOnly && cookie.sameSite==='Strict'));
       await page.screenshot({path:resolve(output,'execution-'+viewport.width+'.png'),fullPage:true});
       evidence.screenshots.push('execution-'+viewport.width+'.png');
+      await page.getByRole('button',{name:'Authored graph',exact:true}).click();
+      await page.getByRole('list',{name:'Occurrence groups',exact:true}).getByRole('button').first().click();
+      await page.locator('.react-flow__node').first().waitFor();
+      await page.locator('.react-flow__edge').first().waitFor({state:'attached'});
+      await page.screenshot({path:resolve(output,'authored-'+viewport.width+'.png'),fullPage:true});
+      evidence.screenshots.push('authored-'+viewport.width+'.png');
+      await page.getByRole('button',{name:'Activation inventory',exact:true}).click();
       const reasoning = page.getByRole('button',{name:'Inspect checkpoint reasoning'});
       await reasoning.focus(); await page.keyboard.press('Enter');
       await page.getByRole('button',{name:'review-numeric-seed',exact:true}).click();
@@ -65,6 +79,22 @@ try {
       assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Domain page overflow');
       await page.screenshot({path:resolve(output,'domain-'+viewport.width+'.png'),fullPage:true});
       evidence.screenshots.push('domain-'+viewport.width+'.png');
+      await page.getByRole('button',{name:'Question & feedback',exact:true}).click();
+      await page.getByRole('button',{name:'Quality points',exact:true}).click();
+      const quality=page.getByRole('region',{name:'Scientific quality points',exact:true});
+      await quality.getByRole('list',{name:'Quality point list'}).getByRole('button').first().click();
+      await quality.getByLabel('Intended improvement',{exact:true}).fill('Test whether the observed improvement holds beyond the synthetic example.');
+      await quality.getByLabel('What do you expect to learn?',{exact:true}).fill('Which results remain useful under a changed research context.');
+      await quality.getByRole('button',{name:'Save focus',exact:true}).click();
+      assert.ok((await quality.innerText()).includes('No assessment has been selected'));
+      const downloadEvent=page.waitForEvent('download');
+      await quality.getByRole('button',{name:'Export next-campaign focus',exact:true}).click();
+      const download=await downloadEvent;
+      const focus=JSON.parse(await readFile(await download.path(),'utf8'));
+      assert.equal(focus.authority,'unsubmitted_human_draft');assert.equal(focus.selected.length,1);
+      assert.deepEqual(focus.question,input.records.question.reference);assert.equal(focus.assessment,null);
+      await page.screenshot({path:resolve(output,'quality-focus-'+viewport.width+'.png'),fullPage:true});
+      evidence.screenshots.push('quality-focus-'+viewport.width+'.png');
       await page.getByRole('button',{name:'Execution',exact:true}).click();
       await page.getByRole('heading',{name:'Follow execution',exact:true}).waitFor();
       await page.getByRole('heading',{name:'Checkpoint reasoning',exact:true}).waitFor();
