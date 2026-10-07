@@ -2,13 +2,13 @@
 
 ## Canonical tracker
 
-- Status: active successor to closed BP-05; B1/B2 and B3 human-focus half complete; C1/C2 complete; B3 proposal presentation active.
-- Last refreshed: `2026-10-07 14:49:53` (America/Chicago).
-- Completion: 77.78%; Build93.33%, Verification0%; 4.6667/6 unit-weight gates complete; C2=100%; B3=66.67%.
+- Status: active successor to closed BP-05; B1/B2 and B3 human-focus half complete; C1/C2 complete; B3 complete; V1 acceptance active.
+- Last refreshed: `2026-10-07 15:01:08` (America/Chicago).
+- Completion: 83.33%; Build100%, Verification0%; 5/6 unit-weight gates complete; C2=100%; B3=100%.
 - Owner: Studio presentation; Research/Knowledge own assessments; Agents owns proposals.
 - Prerequisites: BP-06 owner quality/correction projections and BP-07.03 proposal contracts; activation coherence audit and exact DTO reconciliation before implementation.
-- Current focus: B3/P2 visible proposal and exact owner-record integration; P1 complete100%, P2/P3=0%.
-- Next gate: P2 presentation checks, P3 browser proof, then V1 actual-owner journey/replacement/audit.
+- Current focus: V1 actual-owner subsequent-campaign journey; B3/P1/P2/P3 complete100%.
+- Next gate: V1 actual-owner journey, independent replacement and scoped audit.
 - Blockers: no owner decision pending. Missing criterion bindings are approved implementation scope in SQ-01.01.
 - Requirement: [Campaign progress](../Architecture/Requirements/Product_Requirements.md#campaign-progress-uncertainty-and-subsequent-iteration).
 - Architecture: [Studio](../Architecture/Experience/Studio.md#exploratory-quality-and-next-campaign-focus).
@@ -212,3 +212,23 @@ criterion/status-digest drilldown. All285Studio tests pass including16new, gener
 check/build pass. Initial fixture decision_scope used text instead of digest; fixed.
 P2/P3 remain0; B3=66.67%, overall77.78%, Build93.33%, Verification0%. Frozen demo
 unchanged. No new backend route, migration, credential or paid model call.
+
+2026-10-07 14:56:48: P2 complete100%; local entry owns both models through
+SupervisionModel. Response-page selection replaces list with bounded proposal detail;
+exact criterion drilldown, abstention, legacy intent and unverified adoption remain
+distinct. Supervisor lifecycle clears child views. All286Studio tests pass, including
+current-page selection and navigation/disposal fence. P3 browser proof next; overall
+80.56%, Build96.67%, Verification0%, B3=83.33%. Frozen demo remains unchanged.
+
+2026-10-07 15:01:08: B3/P3 complete100%; scripted public HTTP browser passes1440/390,
+keyboard,20-row paging, exact owner drilldown, content denial and delayed-navigation
+fence. Axe/overflow clean; both screenshots visually reviewed. Existing supervision
+browser regression passes. Initial browser harness used browser.newPage, unsupported
+by axe; repaired to explicit context, rerun passed. All286Studio tests pass and
+schema generation/build/diff checks pass. Evidence B3_Proposal_UI.json. B3=100%,
+overall83.33%, Build100%, Verification0%. Demo assets remain frozen separately.
+
+V1 execution units (same existing scope, equal weight within V1): V1a actual-owner
+quality/proposal/subsequent-campaign journey and intermittent read-path qualification;
+V1b independent Studio replacement from public contracts/module READMEs; V1c scoped
+architecture drift audit/closeout. All0%; V1a active. No scientific efficacy claim.

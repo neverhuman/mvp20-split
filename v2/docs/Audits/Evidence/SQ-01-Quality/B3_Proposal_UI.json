@@ -1,0 +1,28 @@
+{
+  "refreshed_local": "2026-10-07 15:01:08",
+  "status": "B3 complete; V1 actual-owner acceptance pending",
+  "release": "Studio0.17.0",
+  "checks": {
+    "studio_tests": 286,
+    "generated_contracts": "pass",
+    "typescript": "pass",
+    "followup_browser": "v2/.test-results/studio-followup-browser/2026-10-07T20-00-05-142Z",
+    "supervision_regression": "v2/.test-results/studio-supervision-browser/2026-10-07T20-00-41-818Z",
+    "screenshots_reviewed": [
+      1440,
+      390
+    ],
+    "axe_violations": 0,
+    "horizontal_overflow": false
+  },
+  "retained_failures": [
+    "Initial fixture used text for SHA decision_scope; corrected fixture",
+    "Initial browser harness used implicit context unsupported by axe; explicit context rerun passed"
+  ],
+  "limits": [
+    "Scripted public HTTP browser, not actual owner journey",
+    "Independent Studio replacement pending",
+    "Frozen demo0.16.1 unchanged",
+    "No scientific efficacy or adoption claim"
+  ]
+}

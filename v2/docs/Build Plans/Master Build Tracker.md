@@ -8,13 +8,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-01 through BP-09 closed; SQ-01 B3 proposal UI active.
-- Last refreshed: `2026-10-07 14:49:53` (America/Chicago).
+- Status: BP-01 through BP-09 closed; SQ-01 V1 acceptance active.
+- Last refreshed: `2026-10-07 15:01:08` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
-- Current priority: SQ-01/B3; DEMO-01 bounded walkthrough delivered for2026-10-08 11:00:00 CT.
-- Primary active task: SQ-01/B3/P2 visible proposal and owner-record integration; frozen demo remains separate.
-- Next task: B3/P2 presentation, P3 browser proof, then V1 actual-owner journey and replacement.
-- Implementation completion: SQ-01=77.78%, Build93.33%, Verification0%; BP-09 closed100%,20/20.
+- Current priority: SQ-01/V1; DEMO-01 bounded walkthrough delivered for2026-10-08 11:00:00 CT.
+- Primary active task: SQ-01/V1a actual-owner subsequent-campaign journey; frozen demo remains separate.
+- Next task: V1a actual-owner journey, V1b independent replacement, V1c audit.
+- Implementation completion: SQ-01=83.33%, Build100%, Verification0%; BP-09 closed100%,20/20.
 - Blockers: none for approved SQ-01.01 implementation; scientific corpus remains TBA for later scientific qualification.
 - Acceptance posture: bounded local demo/recovery/replacement complete; intermittent worker failures assigned LR-01, no soak claim.
 - Active exception: deadline demo delivery complete; presenter acceptance pending, qualification assets frozen.
@@ -29,14 +29,14 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-SQ-01 B3 is active at77.78%, Build93.33%, Verification0%, after approved scope expansion. Completed plans
+SQ-01 V1 is active at83.33%, Build100%, Verification0%, after approved scope expansion. Completed plans
 are in the [completed index](Completed/README.md); their percentages stay closed.
 
 ## Prioritized Successor Queue and Phase Mirrors
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
-| 1 | [SQ-01 Scientific Quality and Iteration Views](SQ-01%20Scientific%20Quality%20and%20Iteration%20Views.md) | Active B3/P2; P1 complete | 77.78% | 93.33% | 0% | BP-06/07 public projections/contracts; activation review |
+| 1 | [SQ-01 Scientific Quality and Iteration Views](SQ-01%20Scientific%20Quality%20and%20Iteration%20Views.md) | Active V1; B3 complete | 83.33% | 100% | 0% | BP-06/07 public projections/contracts; activation review |
 | 2 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Queued | 0% | 0% | 0% | BP-09 accepted; bounded no-model diagnostic specification |
 
 The owning tracker controls exact task/percentages; MBT controls priority and

@@ -2,15 +2,25 @@ import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { build } from "esbuild";
-export async function startSupervisionHost(actual = null) {
+export async function startSupervisionHost(actual = null, followup = null) {
   await build({ entryPoints: ["tests/browser/supervision_entry.tsx"], bundle: true, outdir: "dist/supervision-browser", format: "esm", jsx: "automatic" });
   const fixtures = Object.fromEntries(await Promise.all(["checkpoints","requests","context","responses"].map(async k => [k,JSON.parse(await readFile(`tests/fixtures/supervision/${k}.json`,"utf8"))])));
   const state = { mode: "ready", calls: [], held: null };
+  if (followup) fixtures.responses.items = [followup.selection.response];
   const server = createServer(async (req,res) => {
     const url = new URL(req.url,"http://local"), path=url.pathname;
     const reply = (code,value) => { res.writeHead(code,{"content-type":"application/json","cache-control":"no-store"});res.end(JSON.stringify(value)); };
     try {
       if(path==="/binding") { reply(200,{synthetic:!actual,binding:actual?.binding ?? {run:fixtures.checkpoints.snapshot.cut.run_id,scope:fixtures.checkpoints.snapshot.cut.scope}});return; }
+      if (followup && (path.startsWith("/api/data/") || path.startsWith("/api/research/"))) {
+        state.calls.push({path,method:req.method,ownerAuthorization:!!req.headers.authorization});
+        if (state.mode === "content-denied") { reply(403,{}); return; }
+        if (path.endsWith("/content")) { reply(200, followup.document); return; }
+        if (path.startsWith("/api/data/")) { reply(200,followup.record.capture); return; }
+        if (path.endsWith("/questions/read")) { reply(200,followup.question); return; }
+        if (path.endsWith("/evidence-needs/read")) { reply(200,followup.need); return; }
+        reply(404,{}); return;
+      }
       if(path.startsWith("/api/runtime/v1/supervision/")) {
         state.calls.push({path,method:req.method,ownerAuthorization:!!req.headers.authorization});
         if(req.method!=="GET") {reply(405,{});return;}
@@ -23,6 +33,7 @@ export async function startSupervisionHost(actual = null) {
         if(state.mode==="denied") {reply(403,{});return;}
         if(state.mode==="stale") {reply(409,{});return;}
         if(state.mode==="failed") {reply(503,{});return;}
+        if (followup && path === "/api/runtime/v1/supervision/responses/" + followup.record.response_id) { reply(200,followup.record); return; }
         if(path.includes("/decisions/")) {
           if(state.mode==="partial") {reply(404,{});return;}
           reply(200,{schema_version:"1",profile:"checkpoint-decision.v1",reference:fixtures.requests.reference,revision:1,checkpoint_seed_sha256:"a".repeat(64),outcome:{kind:"fallback",action:"continue_unchanged",reason_code:"checkpoint_provider_unconfigured"}});return;

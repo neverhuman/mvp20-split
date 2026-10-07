@@ -1,30 +1,31 @@
 # Restore
 
-Refreshed 2026-10-07 14:49:53 America/Chicago. Read FIRST after compression.
+Refreshed 2026-10-07 15:01:08 America/Chicago. Read FIRST after compression.
 
 ## Current handoff
 
 Demo2026-10-08 11am CT for internal nontechnical colleagues. DEMO-01 delivered100%;
 presenter acceptance pending. Frozen launch/assets below remain unchanged.
-SQ-01 active77.78%, Build93.33%, Verification0%. C1/C2 complete; B3=66.67%.
-B3 proposal half P1 complete100%; P2 visible integration NEXT, P3 browserproof0%.
-Studio0.17 source adds generated/followup4publicroots with exact validationprofile
-pins; new transport/followup verifies full Runtime response/request/attempt/capture
-SHA, then independent Data metadata/content permission/hash before payload display.
-Exactprofiles support newfollowup and oldcheckpoint/campaign; unknownunsupported.
-CriterionClient verifies question/need membership and exact assessmentstatusSHA;
-changedstatus cannot silentlyrepin. FollowupModel/ProposalProjection20rowpages and
-CriterionModel separate cancellable lane; clear both on navigation/hiding. No UI
-integration yet. All285Studio tests pass incl16new; build/generatedcheckpass.
-Initialfixturefailed decision_scope format; corrected to SHA. No productionfailure.
-NEXT wire models into SupervisionInspector via owned lifecycle, one growing region
-switches response list/detail; use retained-versus-adoption label, exactcriterion
-buttons. No componentfetch. Need verify target/legacy visible rendering and denial,
-hidden/rebind/unmount clears. P2 then P3 browser1440/390/axe/screenshots beforeV1.
-UI Guidelines + Interaction_References read. No new approval, modelcall or services.
-C2c2f0cd5fe remains lastpushed before this P1 checkpoint; nextcommit captures P1.
-Runtime0.66/Planning0.104 contractsunchanged. FrozenDemo0.16.1 untouched.
-V1 actual-owner/subsequent-campaign/replacement/audit thenLR01. No running jobs.
+SQ-01 active83.33%, Build100%, Verification0%. B1/B2/B3/C1/C2 complete100%.
+NEXT V1a actual-owner quality/proposal/subsequent-campaign journey and intermittent
+read-path qualification; V1b independent Studio replacement; V1c scoped drift audit.
+Three equal V1units all0. No new decision/modelcall/services/runningjobs.
+P1 committed/pushedcc6df406; P2/P3 nextcommit. SourceStudio0.17 adds generated/followup
+4publicroots exactvalidationpins, Runtime/Data permissions+captureSHA, immutable
+20row intent projection, CriterionClient exactquestion/need/assessmentstatusSHA.
+SupervisionModel now owns optional FollowupModel/ CriterionModel and clears them on
+allpublish/bind/invalidate/dispose; selection only current readyresponsepage. Local
+entry injects them; FollowupRegion replaces responses with proposedimprovement,
+expectedlearning,unresolved/legacyintent and exactrecorddrilldown. Adoptionunverified.
+All286Studio tests pass, build/generated/diffcheckpass. P3browser1440/390/axe/overflow,
+keyboard,pagination,denial,delayednavigation pass. Screenshots actually viewed.
+Evidence docs/Audits/Evidence/SQ-01-Quality/B3_Proposal_UI.json. Initialaxeharness used
+browser.newPage unsupported; fixed explicitcontext; finalpass. Existing supervisor
+browserregressionpass. FrozenDemo0.16.1 untouched. No backendroutes/migrations.
+V1 needs dedicated actualowners installed from current source, not frozen demo's
+older owners. Reuse dev public acceptance helpers; no private peer imports/SQL.
+Read moduleREADME/index first. Prior actual demo original-focus-c feedbackreadfailure
+remains unresolved; no repeat-read success establishes repair. LR01 queuedafterSQ.
 
 Launch `v2/Start-Demo.ps1` (original) or `-Scenario successor`; Ctrl+C drains.
 Uses installedDeploymentPython .test-results/acceptance-owner-final-b and explicit

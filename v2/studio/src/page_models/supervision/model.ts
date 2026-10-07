@@ -2,6 +2,8 @@ import type { Checkpoint, CheckpointRequest, InspectionSnapshot, SupervisionWire
 import type { InspectionBinding, SupervisionSource } from "../../transport/supervision/client.js";
 import { asReadFailure } from "../../transport/failure.js";
 import { RequestLane } from "../request_lane.js";
+import type { FollowupModel } from "../followup/model.js";
+import type { CriterionModel } from "../followup/criterion.js";
 export type InspectionTab = "checkpoints" | "requests" | "context" | "responses";
 type Page = SupervisionWire[InspectionTab];
 export interface InspectionState {
@@ -20,13 +22,22 @@ export class SupervisionModel {
   private disposed = false;
   private readonly lane = new RequestLane();
   private readonly listeners = new Set<() => void>();
-  constructor(private readonly source: SupervisionSource) {}
+  constructor(private readonly source: SupervisionSource, readonly followup?: FollowupModel, readonly criterion?: CriterionModel) {}
   get snapshot() { return this.state; }
   subscribe(listener: () => void) { this.listeners.add(listener); return () => { this.listeners.delete(listener); }; }
   bind(binding: InspectionBinding) {
     this.lane.cancel(); this.binding = structuredClone(binding); this.window = null; this.cursor = null; this.publish(empty);
   }
-  dispose() { this.lane.cancel(); this.disposed = true; this.listeners.clear(); this.binding = null; this.window = null; this.state = empty; }
+  dispose() { this.lane.cancel(); this.followup?.dispose(); this.criterion?.dispose(); this.disposed = true; this.listeners.clear(); this.binding = null; this.window = null; this.state = empty; }
+  inspectResponse(responseId: string) {
+    const view = this.state;
+    if (view.phase !== "ready" || view.tab !== "responses" || !view.checkpoint || !view.request || !view.page || this.disposed) return;
+    const response = (view.page as SupervisionWire["responses"]).items.find(item => item.response_id === responseId);
+    if (!response) return;
+    this.criterion?.clear();
+    return this.followup?.select({ checkpoint: view.checkpoint.reference, request: view.request, response });
+  }
+  closeProposal() { this.followup?.clear(); this.criterion?.clear(); }
   invalidate() { this.lane.cancel(); this.window = null; this.publish({ ...this.state, phase: "stale", page: null, decision: null }); }
   async refresh() {
     if (!this.binding || this.disposed) return;
@@ -85,5 +96,5 @@ export class SupervisionModel {
       checkpoint: failure.kind === "denied" ? null : this.state.checkpoint,
       phase: failure.kind === "denied" ? "denied" : failure.kind === "resnapshot" || failure.kind === "aborted" ? "stale" : failure.kind === "unavailable" ? "unavailable" : "failed" });
   }
-  private publish(state: InspectionState) { if (this.disposed) return; this.state = Object.freeze(state); for (const listener of this.listeners) listener(); }
+  private publish(state: InspectionState) { if (this.disposed) return; this.closeProposal(); this.state = Object.freeze(state); for (const listener of this.listeners) listener(); }
 }

@@ -8,6 +8,9 @@ import { decodeSupervision } from "../../src/contracts/supervision.js";
 import { SupervisionModel } from "../../src/page_models/supervision/model.js";
 import type { SupervisionSource } from "../../src/transport/supervision/client.js";
 import { ReadFailure } from "../../src/transport/failure.js";
+import { FollowupModel } from "../../src/page_models/followup/model.js";
+import { CriterionModel } from "../../src/page_models/followup/criterion.js";
+import { fixture } from "../fixtures/followup.js";
 const binding = { run: checkpoints.snapshot.cut.run_id, scope: checkpoints.snapshot.cut.scope };
 const checkpoint = decodeSupervision("checkpoints",checkpoints).items[0]!;
 const request = decodeSupervision("requests",requests).items[0]!;
@@ -63,4 +66,19 @@ test("exact outcome and denied outcome are distinct; requests/back, invalidate a
   await model.refresh();s.decision=async()=>{throw new ReadFailure("denied");};await model.selectCheckpoint(checkpoint);
   assert.equal(model.snapshot.phase,"denied");assert.equal(model.snapshot.checkpoint,null);
   unsubscribe();const count=updates;model.dispose();await model.next();assert.equal(updates,count);
+});
+
+test("proposal selection is restricted to current response page and cleared with supervisor lifecycle", async () => {
+  const f = fixture(); let calls = 0;
+  const followup = new FollowupModel({ async load(selection) { calls++; return { selection, record: f.record, document: { kind: "followup", draft: f.document } }; } });
+  const criterion = new CriterionModel({ async load() { throw Error("unused"); } });
+  const model = new SupervisionModel(source(), followup, criterion); model.bind(binding);
+  await model.inspectResponse(f.record.response_id); assert.equal(calls, 0);
+  await model.refresh(); await model.selectCheckpoint(checkpoint); await model.selectRequest(request); await model.tab("responses");
+  await model.inspectResponse("foreign"); assert.equal(calls, 0);
+  await model.inspectResponse(f.record.response_id); assert.equal(followup.snapshot.phase, "ready");
+  await model.tab("context"); assert.equal(followup.snapshot.phase, "idle");
+  await model.tab("responses"); await model.inspectResponse(f.record.response_id);
+  model.invalidate(); assert.equal(followup.snapshot.page, null); assert.equal(criterion.snapshot.records, null);
+  model.dispose(); await followup.select(f.selection); assert.equal(followup.snapshot.phase, "idle");
 });

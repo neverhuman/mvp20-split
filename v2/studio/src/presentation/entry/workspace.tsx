@@ -8,6 +8,10 @@ import { NamedViewsModel } from '../../page_models/named_views.js';
 import { EvidenceModel } from '../../page_models/evidence.js';
 import { SupervisionClient } from '../../transport/supervision/client.js';
 import { SupervisionModel } from '../../page_models/supervision/model.js';
+import { FollowupModel } from '../../page_models/followup/model.js';
+import { CriterionModel } from '../../page_models/followup/criterion.js';
+import { FollowupClient } from '../../transport/followup/client.js';
+import { CriterionClient } from '../../transport/followup/criterion.js';
 import { MonitorWorkspace } from '../monitor_workspace.js';
 import { WorkspaceSelection } from '../../page_models/session/selection.js';
 import { WorkspaceFeedbackSelection } from '../../page_models/session/feedback_selection.js';
@@ -27,7 +31,7 @@ function Campaign({ context, search }: { context: WorkspaceContext & { run_id: s
   const outputSelection = useMemo(() => new WorkspaceQualityOutputSelection(search), [search]);
   const owners = useMemo(() => {
     const client = new ObservationClient();
-    return { model:new MonitorModel(client), navigation:new NavigationModel(client), namedViews:new NamedViewsModel(client), evidence:new EvidenceModel(client), supervision:new SupervisionModel(new SupervisionClient()), library:new DraftLibrary(context,new AuthoringClient()) };
+    return { model:new MonitorModel(client), navigation:new NavigationModel(client), namedViews:new NamedViewsModel(client), evidence:new EvidenceModel(client), supervision:new SupervisionModel(new SupervisionClient(), new FollowupModel(new FollowupClient()), new CriterionModel(new CriterionClient())), library:new DraftLibrary(context,new AuthoringClient()) };
   }, [context.actor_id, context.scope.tenant_id, context.scope.project_id, context.run_id]);
   useEffect(() => () => { for (const owner of Object.values(owners)) owner.dispose(); }, [owners]);
   return <>

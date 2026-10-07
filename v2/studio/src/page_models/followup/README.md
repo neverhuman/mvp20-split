@@ -1,6 +1,6 @@
 # Follow-up proposal inspection
 
-SQ-01/B3/P1 implemented; visible integration and browser proof pending. User: internal researcher. Primary question: what should
+SQ-01/B3 implemented and scripted browser verified; actual-owner journey remains V1. User: internal researcher. Primary question: what should
 improve next campaign, what might we learn, and what remains unresolved? Primary
 action: inspect a recorded proposal, then select a criterion for exact owner evidence.
 Runtime owns retained outcome; Planning owns proposed intent; Research owns records.

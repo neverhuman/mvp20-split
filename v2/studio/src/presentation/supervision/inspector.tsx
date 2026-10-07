@@ -1,12 +1,16 @@
 import { useCallback, useSyncExternalStore } from "react";
 import type { SupervisionModel } from "../../page_models/supervision/model.js";
 import type { SupervisionWire } from "../../contracts/supervision.js";
+import { FollowupRegion } from "./followup.js";
 import "./style.css";
 const label = (value: string) => value.replaceAll("_", " ");
 const status = (value: string) => value === "unavailable" ? "Provider unavailable" : value === "abstained" ? "Scientific abstention" : label(value);
 export function SupervisionInspector({ model }: { model: SupervisionModel }) {
   const subscribe = useCallback((notify: () => void) => model.subscribe(notify), [model]);
   const view = useSyncExternalStore(subscribe, () => model.snapshot);
+  const proposalSubscribe = useCallback((notify: () => void) => model.followup?.subscribe(notify) ?? (() => {}), [model]);
+  const proposalPhase = useSyncExternalStore(proposalSubscribe, () => model.followup?.snapshot.phase ?? "idle");
+  const inspectingProposal = proposalPhase !== "idle" && !!model.followup && !!model.criterion;
   const ready = view.phase === "ready" || view.phase === "empty";
   const outcome = view.decision?.outcome;
   return <section className="supervision-inspector" aria-label="Campaign checkpoint inspection">
@@ -34,12 +38,13 @@ export function SupervisionInspector({ model }: { model: SupervisionModel }) {
       <ul>{view.request.attempts.map(item => <li key={item.ordinal}>Attempt {item.ordinal}: {status(item.status)}</li>)}</ul>
       <p className="identity">Request {view.request.request_sha256}</p><p className="identity">Parent {view.request.lineage.parent_request_sha256 ?? "Original request"}</p>
     </details>}
-    {ready && view.page && <div className="supervision-records">
+    {ready && inspectingProposal && model.followup && model.criterion && <FollowupRegion model={model.followup} criterion={model.criterion} close={() => model.closeProposal()}/>}
+    {ready && view.page && !inspectingProposal && <div className="supervision-records">
       {view.tab === "checkpoints" && <ul>{(view.page as SupervisionWire["checkpoints"]).items.map(item => <li key={item.reference.decision_id}><button onClick={() => void model.selectCheckpoint(item)}>{item.checkpoint_id}</button><span>{item.winner_kind ? label(item.winner_kind) : "Pending"}: {item.requests} requests</span></li>)}</ul>}
       {view.tab === "requests" && <ul>{(view.page as SupervisionWire["requests"]).items.map(item => <li key={item.request_sha256}><button onClick={() => void model.selectRequest(item)}>Inspect request {item.lineage.ordinal}</button><span>{item.report_stop_reason ? label(item.report_stop_reason) : "Report unobserved"}{item.disposition ? ` : ${label(item.disposition)}` : ""}</span></li>)}</ul>}
       {view.tab === "context" && <ul>{(view.page as SupervisionWire["context"]).items.map((item, index) => <li key={index}><strong>{item.kind === "included" ? `Included: ${item.entry.role}` : `Omitted: ${label(item.omission.reason)}`}</strong><details><summary>Artifact metadata {index + 1}</summary><p className="identity">{item.kind === "included" ? item.entry.artifact.artifact_id : item.omission.artifact.artifact_id}</p><p>Source content requires its owning service's permission.</p></details></li>)}</ul>}
-      {view.tab === "responses" && <ul>{(view.page as SupervisionWire["responses"]).items.map(item => <li key={item.response_sha256}><strong>Attempt {item.attempt_ordinal}: {status(item.status)}</strong><p>{item.selected_by_winner ? "Selected by the committed outcome" : "Retained observation; not selected by the committed outcome"}</p><p>{item.reason_code && label(item.reason_code)}</p><details><summary>Response metadata</summary><p className="identity">{item.response_sha256}</p><p>{item.captured_bytes} captured bytes: {item.output_complete ? "complete capture" : "partial capture"}</p></details></li>)}</ul>}
+      {view.tab === "responses" && <ul>{(view.page as SupervisionWire["responses"]).items.map(item => <li key={item.response_sha256}><strong>Attempt {item.attempt_ordinal}: {status(item.status)}</strong><p>{item.selected_by_winner ? "Selected by the committed outcome" : "Retained observation; not selected by the committed outcome"}</p><p>{item.reason_code && label(item.reason_code)}</p>{model.followup && model.criterion && item.output_complete && item.capture && ["proposed", "abstained"].includes(item.status) && <button onClick={() => void model.inspectResponse(item.response_id)}>Inspect recorded proposal</button>}<details><summary>Response metadata</summary><p className="identity">{item.response_sha256}</p><p>{item.captured_bytes} captured bytes: {item.output_complete ? "complete capture" : "partial capture"}</p></details></li>)}</ul>}
     </div>}
-    <button disabled={!ready || !view.page?.next_cursor} onClick={() => void model.next()}>Next {view.tab}</button>
+    {!inspectingProposal && <button disabled={!ready || !view.page?.next_cursor} onClick={() => void model.next()}>Next {view.tab}</button>}
   </section>;
 }
