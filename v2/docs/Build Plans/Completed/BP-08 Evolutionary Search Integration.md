@@ -2,15 +2,15 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-08.05/V1 acceptance and closeout.
-- Last refreshed: `2026-10-06 19:49:35` (America/Chicago).
+- Status: closed; all five children accepted.
+- Last refreshed: `2026-10-06 19:54:31` (America/Chicago).
 - Owner/scope: Search domain modules and independently packaged scientific operators.
-- Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
+- Authority: [Master Build Tracker](../master%20build%20tracker.md); [planning readiness and handoffs](../planning_readiness.md).
 - Prerequisites: Completed BP-04 iteration/checkpoint and BP-06 evidence; BP-07 before LLM-guided topology acceptance.
-- Implementation: **95%**, 19/20 closed child deliveries; each parent phase mirrors its child.
+- Implementation: **100%**, 20/20 closed child deliveries; each parent phase mirrors its child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-08.05/V1 acceptance and closeout; BP-08.01/.02/.03/.04 closed.
-- Latest checkpoint: BP-08.05/B1 complete; reconstructed adapter, exact checkpoint oracles and actual partial-evaluation/fresh Runtime recovery with108unique confirmed reservations.
+- Current implementation task: none; BP-09 activation next.
+- Latest checkpoint: all five child audits aligned; corrected successor, recovery/reconstruction and current images accepted.
 - Demonstrated behavior: numeric generation graphs, actual Runtime/Data/Registry APIs, pinned tool images, independent package replacement and worker/Runtime recovery. Synthetic representation/fitness/reuse and topology successor acceptance complete; scientific and target-host claims remain separately gated.
 - Blockers: direct v1 extraction unverified (license labels/toolchain); authorized independent numeric implementation proceeds. Approved B2.02i correction verified; no owner decision blocks current scope.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
@@ -30,11 +30,11 @@ Primary services retain private state, dependencies, migrations and module READM
 
 | Parent phase / child | Overall | Build | Acceptance | Prerequisite |
 |---|---:|---:|---:|---|
-| P1 / [BP-08.01 Reuse and search contracts](BP-08/Completed/BP-08.01%20Reuse%20and%20search%20contracts.md) | 100% | 100% | 100% | Closed / audited |
-| P2 / [BP-08.02 Graph-driven numeric evolution](BP-08/Completed/BP-08.02%20Graph-driven%20numeric%20evolution.md) | 100% | 100% | 100% | Closed / audited |
-| P3 / [BP-08.03 Representation and fitness boundaries](BP-08/Completed/BP-08.03%20Representation%20and%20fitness%20boundaries.md) | 100% | 100% | 100% | BP-08.02 acceptance |
-| P4 / [BP-08.04 Topology successors and comparison](BP-08/Completed/BP-08.04%20Topology%20successors%20and%20comparison.md) | 100% | 100% | 100% | Closed / audited |
-| P5 / [BP-08.05 Recovery and closeout](BP-08/BP-08.05%20Recovery%20and%20closeout.md) | 75% | 100% | 0% | BP-08.04 acceptance |
+| P1 / [BP-08.01 Reuse and search contracts](../bp-08/completed/bp-08.01%20reuse%20and%20search%20contracts.md) | 100% | 100% | 100% | Closed / audited |
+| P2 / [BP-08.02 Graph-driven numeric evolution](../bp-08/completed/bp-08.02%20graph-driven%20numeric%20evolution.md) | 100% | 100% | 100% | Closed / audited |
+| P3 / [BP-08.03 Representation and fitness boundaries](../bp-08/completed/bp-08.03%20representation%20and%20fitness%20boundaries.md) | 100% | 100% | 100% | BP-08.02 acceptance |
+| P4 / [BP-08.04 Topology successors and comparison](../bp-08/completed/bp-08.04%20topology%20successors%20and%20comparison.md) | 100% | 100% | 100% | Closed / audited |
+| P5 / [BP-08.05 Recovery and closeout](../BP-08/Completed/BP-08.05%20Recovery%20and%20closeout.md) | 100% | 100% | 100% | BP-08.04 acceptance |
 
 Each linked child is the execution tracker for its scope. Build tasks name concrete implementation; acceptance requires independent evidence and a scoped drift audit. Do not repeat the historical task pairs as a second work list. No dependent child starts before its predecessor acceptance gate; independent design review does not activate implementation.
 
@@ -54,18 +54,20 @@ Keep scenario evidence with absolute timestamps, implementation revision, fixtur
 
 ## UI Reference Refinement
 
-`2026-09-24 12:10:07`: Use the [interaction reference map](../Architecture/Experience/Interaction_References.md) for population/fitness inspection: linked tables and multi-objective plots with eligibility, units, evaluator version and generation context. Implementation and all phase percentages remain 0%; this refines existing tasks.
+`2026-09-24 12:10:07`: Use the [interaction reference map](../../architecture/experience/interaction_references.md) for population/fitness inspection: linked tables and multi-objective plots with eligibility, units, evaluator version and generation context. Implementation and all phase percentages remain 0%; this refines existing tasks.
 
 ## Reference Refinement
 
-`2026-09-25 13:54:17`: BP-08.01/.03 now record reference-code limitations and explicit optional polymer fields, unknown-value behavior and material-state-aware equivalence/fitness caching. Numerical and biological adapters remain separate; empty optimizer files establish no reuse capability. See [reference assessment](References/Amphora_Lab_Insights.md). Added requirements refine existing child B1-B3 deliveries; each child V1 gate includes them. No task is complete, implementation remains 0%, and the denominator is unchanged.
+`2026-09-25 13:54:17`: BP-08.01/.03 now record reference-code limitations and explicit optional polymer fields, unknown-value behavior and material-state-aware equivalence/fitness caching. Numerical and biological adapters remain separate; empty optimizer files establish no reuse capability. See [reference assessment](../references/amphora_lab_insights.md). Added requirements refine existing child B1-B3 deliveries; each child V1 gate includes them. No task is complete, implementation remains 0%, and the denominator is unchanged.
 
 ## Decisions and Handoff
 
-Child decisions and the [cross-plan handoff register](Planning_Readiness.md) identify the exact producer, consumer and required proof. Engineering defaults are planning baselines; validate them against real predecessor contracts before coding. External choices are not inferred from examples. Do not weaken a live model, browser, database or target-host gate to a fixture when that environment is unavailable.
+Child decisions and the [cross-plan handoff register](../planning_readiness.md) identify the exact producer, consumer and required proof. Engineering defaults are planning baselines; validate them against real predecessor contracts before coding. External choices are not inferred from examples. Do not weaken a live model, browser, database or target-host gate to a fixture when that environment is unavailable.
 
 ## Accounting and Closeout
 
-On `2026-09-25 13:35:12`, the original two-task-per-phase estimate was decomposed into 20 verified deliveries across 5 children. Implementation stays 0%; no previous implementation credit is lost or added. [Planning history](BP-08%20Planning%20History.md) preserves the original scope and denominator. Pure design review earns no implementation credit.
+On `2026-09-25 13:35:12`, the original two-task-per-phase estimate was decomposed into 20 verified deliveries across 5 children. Implementation stays 0%; no previous implementation credit is lost or added. [Planning history](../bp-08%20planning%20history.md) preserves the original scope and denominator. Pure design review earns no implementation credit.
 
 Child closeout archives that child with its audit and repairs links; the parent remains active until all child gates and the integrated parent outcome pass. The last child's acceptance checks the parent handoff without repeating unchanged earlier audits. Keep implementation, human acceptance, operational readiness and scientific validation separate. Update child -> parent -> MBT -> Restore at each delivery/scope change.
+
+[Parent closeout audit](../../audits/bp-08_evolutionary_search_closeout.md) records engineering evidence and named scientific/deployment successors.

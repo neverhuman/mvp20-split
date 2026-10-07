@@ -61,3 +61,5 @@ BP-08.03 owns distinct representation operators and evidence/fitness applicabili
 [Representation and fitness boundary](Representation_Fitness.md) decomposes the activated BP-08.03 design into distinct synthetic operator profiles and Research-owned comparison policy.
 
 [Bounded topology successors](Topology_Search.md) owns permitted edits, original-plan/release binding and fair-comparison boundaries. Planning policy/publication, actual Runtime compilation/adoption/carry and the predeclared numeric comparison are verified; fresh replacement accepted in closed BP-08.04.
+
+BP-08.05 closes partial-evaluation recovery, exact same-profile checkpoint replay, explicit corrected-evaluator successor revisions and public-boundary adapter reconstruction. Prior ranks/checkpoints remain immutable historical carry. [Parent audit](../../Audits/BP-08_Evolutionary_Search_Closeout.md) bounds all five accepted children; configured-model deployment and selected-host operation remain BP-09 gates.

@@ -2,6 +2,7 @@
 
 | Plan | Completion | Closeout |
 |---|---|---|
+| [BP-08 Evolutionary Search Integration](BP-08%20Evolutionary%20Search%20Integration.md) | 100%;20/20 deliveries,fivechildren audited | [Parent audit](../../Audits/BP-08_Evolutionary_Search_Closeout.md) |
 | [BP-07 Autonomous LLM Campaign Supervision](BP-07%20Autonomous%20LLM%20Campaign%20Supervision.md) | 100%;20/20 deliveries,fivechildren audited | [Parent audit](../../Audits/BP-07_Autonomous_Planning_Closeout.md) |
 | [BP-06 Knowledge Evidence and Source Loop](BP-06%20Knowledge%20Evidence%20and%20Source%20Loop.md) | 100%;24/24 deliveries, six children audited | [Parent audit](../../Audits/BP-06_Knowledge_Evidence_Closeout.md) |
 | [BP-05 Graph Studio First Vertical Slice](BP-05%20Graph%20Studio%20First%20Vertical%20Slice.md) | 100%;16/16 deliveries, four children audited | [Parent audit](../../Audits/BP-05_Studio_Closeout.md) |

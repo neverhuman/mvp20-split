@@ -1,6 +1,6 @@
 # Synthetic numeric objectives
 
-- Owner: original BP-08.02 boundary; release0.3.0 is the BP-08.05 correction-identity fixture, qualification pending. Prior0.2 Registry/replacement acceptance remains historical evidence below.
+- Owner: original BP-08.02 boundary; release0.3.0 is the BP-08.05 correction-identity fixture, qualified for synthetic correction and offline images. Prior0.2 Registry/replacement acceptance remains historical evidence below.
 - Design: [Search](../../docs/Architecture/Campaigns/Search.md); standalone evaluator, separate from the search owner.
 
 This tool declares two required Artifact inputs: parameters (public EvaluationRequest) and policy (the exact synthetic policy). It emits EvaluationObservation. The fixed synthetic-quadratic-v1 problem accepts 1..32 finite dimensionless genes in [-1e6,1e6]. It computes cost=sum(x_i^2) and/or distance=sum((x_i-1)^2), preserving requested objective order. The profile has no hard constraints, so violation is exactly zero; this is a declared synthetic problem, not a fallback for missing constraints. Output quality is always synthetic.
@@ -23,3 +23,5 @@ checkpoints and ranks stay immutable and cannot resume or provide fitness under
 the new identity. The old independent0.2 installation is preserved separately.
 
 [Replacement evidence](../../docs/Audits/Evidence/BP-08-Search/Registry_Replacement.json) verifies matching image/installed local wheel closures, registered/active descriptors, explicit real policy Artifacts, six evaluations per campaign and independent replacement. [Image qualification](../../docs/Audits/Evidence/BP-08-Search/Eligibility_Requalification.json) retains the fixed-box arithmetic golden and schema hashes.
+
+Verified 2026-10-06 19:54:31: Release0.3 acceptance passed actual isolated corrected-successor workers, old history preservation after fresh Runtime, and offline Linuxamd64 image/goldens/schema/nonroot/isolation with exact installed wheel closure. See [correction](../../docs/Audits/Evidence/BP-08-Search/Corrected_Successor.json) and [images](../../docs/Audits/Evidence/BP-08-Search/Recovery_Images.json). Registry0.2 qualification remains historical; no automatic0.3Registry activation or target-host deployment is claimed.

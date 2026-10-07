@@ -1,0 +1,913 @@
+{
+  "timestamp_local": "2026-10-06 19:53:05",
+  "status": "passed",
+  "scope": "BP-08.05/V1",
+  "raw": ".test-results\\recovery-images-20261006b\\manifest.json",
+  "raw_sha256": "15f2b5fc284c38791357b150e5e2c742f912a64367848e7a04caa09b71b45127",
+  "base": "python@sha256:f77ac9e44ae96ef2c90b8053ea08c31f8be030f824196b0ae4db6d462c84e51f",
+  "platform": "linux/amd64",
+  "reconstructed": {
+    "adapter_sha256": "1954836b03cb4c54a847ac44ef5a7bf0d2a970336b027ba32afdca0fd52015a8",
+    "base_image_manifest": "sha256:7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+    "descriptors": {
+      "collect": {
+        "anti_examples": [
+          "No hidden generation loop, scientific validation or Runtime acceptance."
+        ],
+        "authority_ceiling": "synthetic_only",
+        "checkpoint": {
+          "mode": "none",
+          "readable_schema_sha256": []
+        },
+        "egress": {
+          "mode": "deny"
+        },
+        "examples": [
+          "One explicit graph step with pinned synthetic numerical inputs."
+        ],
+        "reproducibility": "deterministic",
+        "resources": {
+          "architectures": [
+            "x86_64"
+          ],
+          "cpu_millicores": 1000,
+          "gpu_count": 0,
+          "max_batch_size": 1,
+          "max_parallel_invocations": 1,
+          "memory_mib": 256,
+          "operating_systems": [
+            "linux"
+          ],
+          "timeout_seconds": 60
+        },
+        "schema_version": "1",
+        "tool": {
+          "applicability": [
+            "synthetic-tests",
+            "synthetic-continuous-numeric-search"
+          ],
+          "binding": {
+            "capability_id": "numeric.search-collect",
+            "contract_version": "1",
+            "image_sha256": "ed7fca44bd8c78cecbce03bac1a0aedeba43e4626027c0f1dea51f8dedf96fed",
+            "release": "0.5.0"
+          },
+          "checkpoint_schema": null,
+          "inputs": [
+            {
+              "name": "parameters",
+              "representation": "search-step.collected",
+              "required": true,
+              "schema_ref": {
+                "schema_id": "search-step.collected",
+                "sha256": "4863a08e040f46f35fbbd5b308ec2709238fb9e8802a8b434a6fefd2e5b90369",
+                "version": "1"
+              },
+              "unit": "1"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "result",
+              "representation": "search.checkpoint",
+              "required": true,
+              "schema_ref": {
+                "schema_id": "search.checkpoint",
+                "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184",
+                "version": "1"
+              },
+              "unit": "1"
+            }
+          ],
+          "purpose": "Reduce the complete frozen result set and select survivors.",
+          "schema_version": "1",
+          "side_effects": "pure"
+        }
+      },
+      "requests": {
+        "anti_examples": [
+          "No hidden generation loop, scientific validation or Runtime acceptance."
+        ],
+        "authority_ceiling": "synthetic_only",
+        "checkpoint": {
+          "mode": "none",
+          "readable_schema_sha256": []
+        },
+        "egress": {
+          "mode": "deny"
+        },
+        "examples": [
+          "One explicit graph step with pinned synthetic numerical inputs."
+        ],
+        "reproducibility": "deterministic",
+        "resources": {
+          "architectures": [
+            "x86_64"
+          ],
+          "cpu_millicores": 1000,
+          "gpu_count": 0,
+          "max_batch_size": 1,
+          "max_parallel_invocations": 1,
+          "memory_mib": 256,
+          "operating_systems": [
+            "linux"
+          ],
+          "timeout_seconds": 60
+        },
+        "schema_version": "1",
+        "tool": {
+          "applicability": [
+            "synthetic-tests",
+            "synthetic-continuous-numeric-search"
+          ],
+          "binding": {
+            "capability_id": "numeric.search-requests",
+            "contract_version": "1",
+            "image_sha256": "ed7fca44bd8c78cecbce03bac1a0aedeba43e4626027c0f1dea51f8dedf96fed",
+            "release": "0.5.0"
+          },
+          "checkpoint_schema": null,
+          "inputs": [
+            {
+              "name": "parameters",
+              "representation": "search-step.context",
+              "required": true,
+              "schema_ref": {
+                "schema_id": "search-step.context",
+                "sha256": "856d8ddda364e4fc9160673506ae46d84dd31f4300d41d3729780df532f39485",
+                "version": "1"
+              },
+              "unit": "1"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "result",
+              "representation": "search-step.requests",
+              "required": true,
+              "schema_ref": {
+                "schema_id": "search-step.requests",
+                "sha256": "86da9c5a26becef427ede41a2bd15dd78598fbbb1e0f210d4e648406d9fdbc43",
+                "version": "1"
+              },
+              "unit": "1"
+            }
+          ],
+          "purpose": "Expand frozen pending identities into evaluator requests.",
+          "schema_version": "1",
+          "side_effects": "pure"
+        }
+      },
+      "seed": {
+        "anti_examples": [
+          "No hidden generation loop, scientific validation or Runtime acceptance."
+        ],
+        "authority_ceiling": "synthetic_only",
+        "checkpoint": {
+          "mode": "none",
+          "readable_schema_sha256": []
+        },
+        "egress": {
+          "mode": "deny"
+        },
+        "examples": [
+          "One explicit graph step with pinned synthetic numerical inputs."
+        ],
+        "reproducibility": "deterministic",
+        "resources": {
+          "architectures": [
+            "x86_64"
+          ],
+          "cpu_millicores": 1000,
+          "gpu_count": 0,
+          "max_batch_size": 1,
+          "max_parallel_invocations": 1,
+          "memory_mib": 256,
+          "operating_systems": [
+            "linux"
+          ],
+          "timeout_seconds": 60
+        },
+        "schema_version": "1",
+        "tool": {
+          "applicability": [
+            "synthetic-tests",
+            "synthetic-continuous-numeric-search"
+          ],
+          "binding": {
+            "capability_id": "numeric.search-seed",
+            "contract_version": "1",
+            "image_sha256": "ed7fca44bd8c78cecbce03bac1a0aedeba43e4626027c0f1dea51f8dedf96fed",
+            "release": "0.5.0"
+          },
+          "checkpoint_schema": null,
+          "inputs": [
+            {
+              "name": "parameters",
+              "representation": "search.specification",
+              "required": true,
+              "schema_ref": {
+                "schema_id": "search.specification",
+                "sha256": "e829b92d2145b0916847b06cb6e73c4a5aea17addea8bbdd1e9706dbd1cc79a7",
+                "version": "1"
+              },
+              "unit": "1"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "result",
+              "representation": "search.checkpoint",
+              "required": true,
+              "schema_ref": {
+                "schema_id": "search.checkpoint",
+                "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184",
+                "version": "1"
+              },
+              "unit": "1"
+            }
+          ],
+          "purpose": "Generate one bounded numeric initial population.",
+          "schema_version": "1",
+          "side_effects": "pure"
+        }
+      },
+      "vary": {
+        "anti_examples": [
+          "No hidden generation loop, scientific validation or Runtime acceptance."
+        ],
+        "authority_ceiling": "synthetic_only",
+        "checkpoint": {
+          "mode": "none",
+          "readable_schema_sha256": []
+        },
+        "egress": {
+          "mode": "deny"
+        },
+        "examples": [
+          "One explicit graph step with pinned synthetic numerical inputs."
+        ],
+        "reproducibility": "deterministic",
+        "resources": {
+          "architectures": [
+            "x86_64"
+          ],
+          "cpu_millicores": 1000,
+          "gpu_count": 0,
+          "max_batch_size": 1,
+          "max_parallel_invocations": 1,
+          "memory_mib": 256,
+          "operating_systems": [
+            "linux"
+          ],
+          "timeout_seconds": 60
+        },
+        "schema_version": "1",
+        "tool": {
+          "applicability": [
+            "synthetic-tests",
+            "synthetic-continuous-numeric-search"
+          ],
+          "binding": {
+            "capability_id": "numeric.search-vary",
+            "contract_version": "1",
+            "image_sha256": "ed7fca44bd8c78cecbce03bac1a0aedeba43e4626027c0f1dea51f8dedf96fed",
+            "release": "0.5.0"
+          },
+          "checkpoint_schema": null,
+          "inputs": [
+            {
+              "name": "parameters",
+              "representation": "search-step.context",
+              "required": true,
+              "schema_ref": {
+                "schema_id": "search-step.context",
+                "sha256": "856d8ddda364e4fc9160673506ae46d84dd31f4300d41d3729780df532f39485",
+                "version": "1"
+              },
+              "unit": "1"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "result",
+              "representation": "search.checkpoint",
+              "required": true,
+              "schema_ref": {
+                "schema_id": "search.checkpoint",
+                "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184",
+                "version": "1"
+              },
+              "unit": "1"
+            }
+          ],
+          "purpose": "Generate one bounded numeric successor population.",
+          "schema_version": "1",
+          "side_effects": "pure"
+        }
+      }
+    },
+    "image_config_digest": "sha256:6df52dbe5380c45cf2acb74e6bf45a9602914a5acea9b4de02e14a6b2e9cf803",
+    "image_manifest_digest": "sha256:ed7fca44bd8c78cecbce03bac1a0aedeba43e4626027c0f1dea51f8dedf96fed",
+    "isolated_nonroot_probe": "passed",
+    "local_wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+      "amphora_contracts_search_steps-0.1.0-py3-none-any.whl": "f94ad77e69708f0fc51a7a3e0660779a15cf972afe8c1b0dcb6cd24cc190d083",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_evolution_search-0.5.0-py3-none-any.whl": "2fdbfdbb6ba5a47d8a5ed9f7927f9efd7043e2b9d8152e1b872a628aff5edb74",
+      "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+    },
+    "module": "amphora_evolution_search",
+    "offline_wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+      "amphora_contracts_search_steps-0.1.0-py3-none-any.whl": "f94ad77e69708f0fc51a7a3e0660779a15cf972afe8c1b0dcb6cd24cc190d083",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_evolution_search-0.5.0-py3-none-any.whl": "2fdbfdbb6ba5a47d8a5ed9f7927f9efd7043e2b9d8152e1b872a628aff5edb74",
+      "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5",
+      "annotated_types-0.8.0-py3-none-any.whl": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0",
+      "pydantic-2.13.5-py3-none-any.whl": "346a034f080da3755d8e9cb5e00e8b07de1d39e4f6e2c87d8ab7cafa0b269a73",
+      "pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl": "0fc5be0abd4a407e200d844b404e33639a554e7bd0d448e7b9ae181be4789ac2",
+      "typing_extensions-4.16.0-py3-none-any.whl": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+      "typing_inspection-0.4.4-py3-none-any.whl": "65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147"
+    },
+    "package": "amphora-evolution-search",
+    "schemas": {
+      "collect.input": {
+        "file": "Z:\\mvp20-split\\.test-results\\recovery-images-20261006b\\amphora-evolution-search\\collect-input.json",
+        "schema_ref": {
+          "schema_id": "search-step.collected",
+          "sha256": "4863a08e040f46f35fbbd5b308ec2709238fb9e8802a8b434a6fefd2e5b90369",
+          "version": "1"
+        }
+      },
+      "collect.output": {
+        "file": "Z:\\mvp20-split\\.test-results\\recovery-images-20261006b\\amphora-evolution-search\\collect-output.json",
+        "schema_ref": {
+          "schema_id": "search.checkpoint",
+          "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184",
+          "version": "1"
+        }
+      },
+      "requests.input": {
+        "file": "Z:\\mvp20-split\\.test-results\\recovery-images-20261006b\\amphora-evolution-search\\requests-input.json",
+        "schema_ref": {
+          "schema_id": "search-step.context",
+          "sha256": "856d8ddda364e4fc9160673506ae46d84dd31f4300d41d3729780df532f39485",
+          "version": "1"
+        }
+      },
+      "requests.output": {
+        "file": "Z:\\mvp20-split\\.test-results\\recovery-images-20261006b\\amphora-evolution-search\\requests-output.json",
+        "schema_ref": {
+          "schema_id": "search-step.requests",
+          "sha256": "86da9c5a26becef427ede41a2bd15dd78598fbbb1e0f210d4e648406d9fdbc43",
+          "version": "1"
+        }
+      },
+      "seed.input": {
+        "file": "Z:\\mvp20-split\\.test-results\\recovery-images-20261006b\\amphora-evolution-search\\seed-input.json",
+        "schema_ref": {
+          "schema_id": "search.specification",
+          "sha256": "e829b92d2145b0916847b06cb6e73c4a5aea17addea8bbdd1e9706dbd1cc79a7",
+          "version": "1"
+        }
+      },
+      "seed.output": {
+        "file": "Z:\\mvp20-split\\.test-results\\recovery-images-20261006b\\amphora-evolution-search\\seed-output.json",
+        "schema_ref": {
+          "schema_id": "search.checkpoint",
+          "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184",
+          "version": "1"
+        }
+      },
+      "vary.input": {
+        "file": "Z:\\mvp20-split\\.test-results\\recovery-images-20261006b\\amphora-evolution-search\\vary-input.json",
+        "schema_ref": {
+          "schema_id": "search-step.context",
+          "sha256": "856d8ddda364e4fc9160673506ae46d84dd31f4300d41d3729780df532f39485",
+          "version": "1"
+        }
+      },
+      "vary.output": {
+        "file": "Z:\\mvp20-split\\.test-results\\recovery-images-20261006b\\amphora-evolution-search\\vary-output.json",
+        "schema_ref": {
+          "schema_id": "search.checkpoint",
+          "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184",
+          "version": "1"
+        }
+      }
+    },
+    "tag": "amphora/search-reconstruction:bp08-9b7f95f4d90e"
+  },
+  "corrected_evaluator": {
+    "descriptors": {
+      "evaluate": {
+        "anti_examples": [
+          "No chemistry, biology, synthesis, laboratory, model or scientific-validity claim."
+        ],
+        "authority_ceiling": "synthetic_only",
+        "checkpoint": {
+          "mode": "none",
+          "readable_schema_sha256": []
+        },
+        "egress": {
+          "mode": "deny"
+        },
+        "examples": [
+          "cost=sum(x_i^2); distance=sum((x_i-1)^2); no hard constraints."
+        ],
+        "reproducibility": "deterministic",
+        "resources": {
+          "architectures": [
+            "x86_64"
+          ],
+          "cpu_millicores": 1000,
+          "gpu_count": 0,
+          "max_batch_size": 1,
+          "max_parallel_invocations": 1,
+          "memory_mib": 128,
+          "operating_systems": [
+            "linux"
+          ],
+          "timeout_seconds": 60
+        },
+        "schema_version": "1",
+        "tool": {
+          "applicability": [
+            "synthetic-tests",
+            "synthetic-quadratic-v1",
+            "dimensionless-finite-vectors"
+          ],
+          "binding": {
+            "capability_id": "synthetic.numeric-objectives",
+            "contract_version": "1",
+            "image_sha256": "b6d73b31058d358a5a2a13e44979e8b6e3a6acd06260670226a1b2570f1135e3",
+            "release": "0.3.0"
+          },
+          "checkpoint_schema": null,
+          "inputs": [
+            {
+              "name": "parameters",
+              "representation": "search.evaluation-request",
+              "required": true,
+              "schema_ref": {
+                "schema_id": "search.evaluation-request",
+                "sha256": "44c7375364971f923302f83d0d6100bd2d01b8c6085d25f7195e465ccb9fbe58",
+                "version": "1"
+              },
+              "unit": "1"
+            },
+            {
+              "name": "policy",
+              "representation": "synthetic.numeric-policy",
+              "required": true,
+              "schema_ref": {
+                "schema_id": "synthetic.numeric-policy",
+                "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a",
+                "version": "1"
+              },
+              "unit": "1"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "result",
+              "representation": "search.evaluation-observation",
+              "required": true,
+              "schema_ref": {
+                "schema_id": "search.evaluation-observation",
+                "sha256": "28b7765aa253bc93d2e050c06e4a38be09ffa1b8a8b45762ee93eaaffe37add2",
+                "version": "1"
+              },
+              "unit": "1"
+            }
+          ],
+          "purpose": "Evaluate fixed synthetic quadratic objectives for numerical graph tests.",
+          "schema_version": "1",
+          "side_effects": "pure"
+        }
+      }
+    },
+    "image_config_digest": "sha256:a2ab8cdcedb45f162875d3bd155045b10ae9ac34a5ae3b942e58f17728bcb852",
+    "image_manifest_digest": "sha256:b6d73b31058d358a5a2a13e44979e8b6e3a6acd06260670226a1b2570f1135e3",
+    "isolated_nonroot_probe": "passed",
+    "local_wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_multi_input_worker-0.1.0-py3-none-any.whl": "2097adff2fdb7db3bc43bb49b98a97d7b6a34739a4455444c6e1951c85341904",
+      "amphora_synthetic_objectives-0.3.0-py3-none-any.whl": "79156457d8ebd0bd2736d9936d45ba913f1962f4e72634336e5dc0a2e211128c",
+      "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+    },
+    "module": "amphora_synthetic_objectives",
+    "offline_wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_multi_input_worker-0.1.0-py3-none-any.whl": "2097adff2fdb7db3bc43bb49b98a97d7b6a34739a4455444c6e1951c85341904",
+      "amphora_synthetic_objectives-0.3.0-py3-none-any.whl": "79156457d8ebd0bd2736d9936d45ba913f1962f4e72634336e5dc0a2e211128c",
+      "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5",
+      "annotated_types-0.8.0-py3-none-any.whl": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0",
+      "pydantic-2.13.5-py3-none-any.whl": "346a034f080da3755d8e9cb5e00e8b07de1d39e4f6e2c87d8ab7cafa0b269a73",
+      "pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl": "0fc5be0abd4a407e200d844b404e33639a554e7bd0d448e7b9ae181be4789ac2",
+      "typing_extensions-4.16.0-py3-none-any.whl": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+      "typing_inspection-0.4.4-py3-none-any.whl": "65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147"
+    },
+    "package": "amphora-synthetic-objectives",
+    "schemas": {
+      "evaluate.input": {
+        "file": "Z:\\mvp20-split\\.test-results\\recovery-images-20261006b\\amphora-synthetic-objectives\\evaluate-input.json",
+        "schema_ref": {
+          "schema_id": "search.evaluation-request",
+          "sha256": "44c7375364971f923302f83d0d6100bd2d01b8c6085d25f7195e465ccb9fbe58",
+          "version": "1"
+        }
+      },
+      "evaluate.output": {
+        "file": "Z:\\mvp20-split\\.test-results\\recovery-images-20261006b\\amphora-synthetic-objectives\\evaluate-output.json",
+        "schema_ref": {
+          "schema_id": "search.evaluation-observation",
+          "sha256": "28b7765aa253bc93d2e050c06e4a38be09ffa1b8a8b45762ee93eaaffe37add2",
+          "version": "1"
+        }
+      },
+      "evaluate.policy": {
+        "file": "Z:\\mvp20-split\\.test-results\\recovery-images-20261006b\\amphora-synthetic-objectives\\evaluate-policy.json",
+        "schema_ref": {
+          "schema_id": "synthetic.numeric-policy",
+          "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a",
+          "version": "1"
+        }
+      }
+    },
+    "tag": "amphora/synthetic-objectives:bp08-3c3e8dd528ce"
+  },
+  "golden": {
+    "claim": "Offline image arithmetic/CLI only; Artifact references are declared fixture metadata.",
+    "final": {
+      "attempts": [
+        {
+          "candidate_id": "9ed12caf38d0a9f685e11d92257ccaf5827cc98e7ad7862a2ec433816ce676cf",
+          "disposition": "proposed",
+          "draws": {
+            "end": 1,
+            "start": 0
+          },
+          "duplicate_of": null,
+          "generation": 0,
+          "genes": [
+            0.0
+          ],
+          "operator": "seed",
+          "ordinal": 0,
+          "parents": [],
+          "reason_code": null
+        },
+        {
+          "candidate_id": "2092b5d3edc3194dfac07b809d654d9cbe31f299fe9cd818cb1238c73d7b4d2b",
+          "disposition": "duplicate",
+          "draws": {
+            "end": 7,
+            "start": 1
+          },
+          "duplicate_of": "9ed12caf38d0a9f685e11d92257ccaf5827cc98e7ad7862a2ec433816ce676cf",
+          "generation": 1,
+          "genes": [
+            0.0
+          ],
+          "operator": "variation",
+          "ordinal": 0,
+          "parents": [
+            "9ed12caf38d0a9f685e11d92257ccaf5827cc98e7ad7862a2ec433816ce676cf"
+          ],
+          "reason_code": "duplicate_genes"
+        }
+      ],
+      "generation": 1,
+      "observations": [
+        {
+          "candidate_id": "9ed12caf38d0a9f685e11d92257ccaf5827cc98e7ad7862a2ec433816ce676cf",
+          "evaluation_id": "ev-9ed12caf38d0a9f685e11d92257ccaf5827cc98e7ad7862a2ec433816ce676cf",
+          "outcome": {
+            "constraint_violation": 0.0,
+            "constraints_sha256": "b9946661cfefa2bf2d6eabb8779659bb0d9987020214d16fc73e196a4e2ed62e",
+            "evaluator": {
+              "capability_id": "synthetic.numeric-objectives",
+              "contract_version": "1",
+              "image_sha256": "b6d73b31058d358a5a2a13e44979e8b6e3a6acd06260670226a1b2570f1135e3",
+              "release": "0.3.0"
+            },
+            "evidence": [
+              {
+                "artifact_id": "image-policy",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "synthetic.numeric-policy",
+                  "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a",
+                  "version": "1"
+                },
+                "scope": {
+                  "project_id": "fixed-box",
+                  "tenant_id": "image-golden"
+                },
+                "sha256": "b9946661cfefa2bf2d6eabb8779659bb0d9987020214d16fc73e196a4e2ed62e",
+                "size_bytes": 36
+              }
+            ],
+            "objectives": [
+              {
+                "objective_id": "cost",
+                "unit": "dimensionless",
+                "value": 0.0
+              }
+            ],
+            "quality": "synthetic",
+            "status": "evaluated"
+          },
+          "request_sha256": "9d9010b84d1913e73160794e47dd46946d7b53b226b0d1b2c1c138c73bdccb71",
+          "schema_version": "1",
+          "scope": {
+            "project_id": "fixed-box",
+            "tenant_id": "image-golden"
+          }
+        }
+      ],
+      "pending": [],
+      "phase": "stopped",
+      "population": [
+        "9ed12caf38d0a9f685e11d92257ccaf5827cc98e7ad7862a2ec433816ce676cf"
+      ],
+      "previous": {
+        "artifact_id": "image-checkpoint-fca465dac19e5c21ddca1435aea922066d7ede307877454d48bf8e9df7350785",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "search.checkpoint",
+          "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184",
+          "version": "1"
+        },
+        "scope": {
+          "project_id": "fixed-box",
+          "tenant_id": "image-golden"
+        },
+        "sha256": "fca465dac19e5c21ddca1435aea922066d7ede307877454d48bf8e9df7350785",
+        "size_bytes": 4372
+      },
+      "progress": {
+        "evaluations_issued": 1,
+        "evaluations_terminal": 1,
+        "generations_completed": 1,
+        "unchanged_front_generations": 1
+      },
+      "rng": {
+        "algorithm": "sha256-counter-u53-v1",
+        "counter": 7,
+        "seed": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "schema_version": "1",
+      "selection": {
+        "disposition": "selected",
+        "membership_sha256": "fafdda7dac301a40f5ee306d15f4a9085d7e9ca2937ddedbc6d77c1b013a8b1e",
+        "policy": "constrained-pareto-feasible-v1",
+        "ranks": [
+          {
+            "boundary": false,
+            "candidate_id": "9ed12caf38d0a9f685e11d92257ccaf5827cc98e7ad7862a2ec433816ce676cf",
+            "distance": 0.0,
+            "feasible": true,
+            "front": 0
+          }
+        ],
+        "requested": 1,
+        "selected": [
+          "9ed12caf38d0a9f685e11d92257ccaf5827cc98e7ad7862a2ec433816ce676cf"
+        ]
+      },
+      "specification": {
+        "budget": {
+          "max_evaluations": 20,
+          "max_generations": 1,
+          "population_size": 1,
+          "unchanged_front_limit": null
+        },
+        "evaluator": {
+          "completion": "all_frozen_members_terminal",
+          "constraints": {
+            "artifact_id": "image-policy",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "synthetic.numeric-policy",
+              "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a",
+              "version": "1"
+            },
+            "scope": {
+              "project_id": "fixed-box",
+              "tenant_id": "image-golden"
+            },
+            "sha256": "b9946661cfefa2bf2d6eabb8779659bb0d9987020214d16fc73e196a4e2ed62e",
+            "size_bytes": 36
+          },
+          "context": [],
+          "tool": {
+            "capability_id": "synthetic.numeric-objectives",
+            "contract_version": "1",
+            "image_sha256": "b6d73b31058d358a5a2a13e44979e8b6e3a6acd06260670226a1b2570f1135e3",
+            "release": "0.3.0"
+          }
+        },
+        "implementations": [
+          {
+            "name": "numeric-search",
+            "sha256": "ed7fca44bd8c78cecbce03bac1a0aedeba43e4626027c0f1dea51f8dedf96fed",
+            "version": "0.5.0"
+          }
+        ],
+        "objectives": [
+          {
+            "direction": "minimize",
+            "objective_id": "cost",
+            "unit": "dimensionless"
+          }
+        ],
+        "operators": {
+          "crossover_probability": 1.0,
+          "mutation_fraction": 0.1,
+          "mutation_probability": 1.0,
+          "rng": "sha256-counter-u53-v1",
+          "selection": "constrained-pareto-feasible-v1",
+          "variation": "box-convex-uniform-v1"
+        },
+        "representation": {
+          "schema_id": "search.numeric-vector",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "version": "1"
+        },
+        "schema_version": "1",
+        "scope": {
+          "project_id": "fixed-box",
+          "tenant_id": "image-golden"
+        },
+        "search_id": "graph-numeric-fixture",
+        "seed": "0000000000000000000000000000000000000000000000000000000000000000",
+        "variables": [
+          {
+            "lower": 0.0,
+            "unit": "dimensionless",
+            "upper": 0.0,
+            "variable_id": "x"
+          }
+        ]
+      },
+      "specification_sha256": "b3fd180197dbfe882528ed32457fbdeae3a0176f8af4b62e2bd135e731606c35",
+      "stop_reason": "generation_budget"
+    },
+    "observation": {
+      "candidate_id": "9ed12caf38d0a9f685e11d92257ccaf5827cc98e7ad7862a2ec433816ce676cf",
+      "evaluation_id": "ev-9ed12caf38d0a9f685e11d92257ccaf5827cc98e7ad7862a2ec433816ce676cf",
+      "outcome": {
+        "constraint_violation": 0.0,
+        "constraints_sha256": "b9946661cfefa2bf2d6eabb8779659bb0d9987020214d16fc73e196a4e2ed62e",
+        "evaluator": {
+          "capability_id": "synthetic.numeric-objectives",
+          "contract_version": "1",
+          "image_sha256": "b6d73b31058d358a5a2a13e44979e8b6e3a6acd06260670226a1b2570f1135e3",
+          "release": "0.3.0"
+        },
+        "evidence": [
+          {
+            "artifact_id": "image-policy",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "synthetic.numeric-policy",
+              "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a",
+              "version": "1"
+            },
+            "scope": {
+              "project_id": "fixed-box",
+              "tenant_id": "image-golden"
+            },
+            "sha256": "b9946661cfefa2bf2d6eabb8779659bb0d9987020214d16fc73e196a4e2ed62e",
+            "size_bytes": 36
+          }
+        ],
+        "objectives": [
+          {
+            "objective_id": "cost",
+            "unit": "dimensionless",
+            "value": 0.0
+          }
+        ],
+        "quality": "synthetic",
+        "status": "evaluated"
+      },
+      "request_sha256": "9d9010b84d1913e73160794e47dd46946d7b53b226b0d1b2c1c138c73bdccb71",
+      "schema_version": "1",
+      "scope": {
+        "project_id": "fixed-box",
+        "tenant_id": "image-golden"
+      }
+    },
+    "profile": "fixed-zero-box-v1",
+    "seed_candidate_id": "9ed12caf38d0a9f685e11d92257ccaf5827cc98e7ad7862a2ec433816ce676cf",
+    "specification": {
+      "budget": {
+        "max_evaluations": 20,
+        "max_generations": 1,
+        "population_size": 1,
+        "unchanged_front_limit": null
+      },
+      "evaluator": {
+        "completion": "all_frozen_members_terminal",
+        "constraints": {
+          "artifact_id": "image-policy",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "synthetic.numeric-policy",
+            "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a",
+            "version": "1"
+          },
+          "scope": {
+            "project_id": "fixed-box",
+            "tenant_id": "image-golden"
+          },
+          "sha256": "b9946661cfefa2bf2d6eabb8779659bb0d9987020214d16fc73e196a4e2ed62e",
+          "size_bytes": 36
+        },
+        "context": [],
+        "tool": {
+          "capability_id": "synthetic.numeric-objectives",
+          "contract_version": "1",
+          "image_sha256": "b6d73b31058d358a5a2a13e44979e8b6e3a6acd06260670226a1b2570f1135e3",
+          "release": "0.3.0"
+        }
+      },
+      "implementations": [
+        {
+          "name": "numeric-search",
+          "sha256": "ed7fca44bd8c78cecbce03bac1a0aedeba43e4626027c0f1dea51f8dedf96fed",
+          "version": "0.5.0"
+        }
+      ],
+      "objectives": [
+        {
+          "direction": "minimize",
+          "objective_id": "cost",
+          "unit": "dimensionless"
+        }
+      ],
+      "operators": {
+        "crossover_probability": 1.0,
+        "mutation_fraction": 0.1,
+        "mutation_probability": 1.0,
+        "rng": "sha256-counter-u53-v1",
+        "selection": "constrained-pareto-feasible-v1",
+        "variation": "box-convex-uniform-v1"
+      },
+      "representation": {
+        "schema_id": "search.numeric-vector",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "version": "1"
+      },
+      "schema_version": "1",
+      "scope": {
+        "project_id": "fixed-box",
+        "tenant_id": "image-golden"
+      },
+      "search_id": "graph-numeric-fixture",
+      "seed": "0000000000000000000000000000000000000000000000000000000000000000",
+      "variables": [
+        {
+          "lower": 0.0,
+          "unit": "dimensionless",
+          "upper": 0.0,
+          "variable_id": "x"
+        }
+      ]
+    }
+  },
+  "exact_source_and_private_import_probe": "passed",
+  "limits": [
+    "Offline Linux/amd64 compute qualification only; actual Windows worker transport is separate evidence",
+    "Reconstruction reuses the public numeric kernel; not an independent algorithm rewrite",
+    "No target-host, cluster, ARM or cross-hardware deterministic-replay claim"
+  ],
+  "failed_attempt": ".test-results/recovery-images-20261006a (DockerNAS bind mount unavailable; configuration copy to stopped test container repaired harness)",
+  "paid_calls": 0
+}

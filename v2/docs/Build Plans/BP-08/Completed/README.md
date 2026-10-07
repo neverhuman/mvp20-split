@@ -9,3 +9,5 @@ Navigation only. Closed plans retain their accepted scope; follow-on behavior be
 - [BP-08.03 Representation and fitness boundaries](BP-08.03%20Representation%20and%20fitness%20boundaries.md):100%,4/4; [scoped audit](../../../Audits/BP-08.03_Representation_Fitness_Closeout.md).
 
 - [BP-08.04 Topology successors and comparison](BP-08.04%20Topology%20successors%20and%20comparison.md):100%,4/4; [scoped audit](../../../Audits/BP-08.04_Topology_Closeout.md).
+
+[BP-08.05 Recovery and closeout](BP-08.05%20Recovery%20and%20closeout.md):100%,four deliveries; [history](BP-08.05%20History.md). All five children closed.
