@@ -26,3 +26,8 @@ Planning0.85 adds ExecutionCompletion.bind, a pure projection of original authen
 Planning0.86 CheckpointWorker journals terminal outcomes through supervision_completion and replays original completion before Data/config/provider work. Concurrent completion/issuance conflicts remain pending for another bounded tick; no new call after closure. Missing configured provider/template becomes a zero-attempt stop. Shared conservative accounting and late history are unchanged.
 
 Planning0.87 context binding accepts the explicitly versioned repair-context content profile alongside the original. It requires successor lineage and exact parent request hash; reasons/hashes remain owner-supplied data below the unchanged reviewed prompt. Budget template and static configuration semantics do not change.145 cross-boundary/schema/context cases pass;context54statements6branches100%.
+
+BP-09.03 configured live adapters may validate the exact reviewed cost policy before
+PlanningRunner reserves or issues. Private checkpoint group cost/call exhaustion maps to
+the existing public accounting_budget_exhausted completion, preserving zero-call history.
+The default fixture path and original completion replay are unchanged.

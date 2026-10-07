@@ -7,10 +7,11 @@ from typing import Annotated, Literal
 
 from amphora_contracts_core import ArtifactRef, Identifier, Scope, WireModel
 from amphora_tool_protocol import ArtifactClient, HttpTransport, WorkerIdentity
-from pydantic import Field
+from pydantic import Field, model_validator
 from sqlalchemy import create_engine, text
 
 from ..access import Principal
+from ..checkpoint_openai.configuration import LiveCheckpointSettings
 from ..context.policy import require
 from ..source_access.transport import DataReader
 from ..supervision_client import RuntimeClient
@@ -42,8 +43,14 @@ class WorkerConfiguration(WireModel):
     data: Peer
     runtime: Peer
     templates: Annotated[tuple[TemplateFile, ...], Field(max_length=64)]
-    provider: Literal['disabled', 'fixture_abstain', 'fixture_invalid'] = 'disabled'
+    provider: Literal['disabled', 'fixture_abstain', 'fixture_invalid', 'openai_checkpoint_v1'] = 'disabled'
+    live: LiveCheckpointSettings | None = None
     timeout_seconds: Annotated[int, Field(ge=1, le=86400)] = 30
+
+    @model_validator(mode='after')
+    def selected_live_settings(self):
+        require((self.provider == 'openai_checkpoint_v1') == (self.live is not None), 'checkpoint_live_configuration')
+        return self
 
 
 def bounded_file(path, maximum):
@@ -74,7 +81,8 @@ class CheckpointHost:
             template = ReviewedBudgetTemplate(bounded_file(path.parent / entry.path, 262144))
             entries.append((entry.reference, template))
         templates = BudgetTemplates(entries)
-        provider = None if config.provider == 'disabled' else CheckpointFixture(config.provider)
+        provider = (config.live.provider(entries) if config.live is not None else
+                    None if config.provider == 'disabled' else CheckpointFixture(config.provider))
         data_token = os.environ[config.data.token_env]
         data = DataReader(config.data.endpoint, data_token)
         publisher_client = ArtifactClient(HttpTransport(config.data.endpoint, data_token),

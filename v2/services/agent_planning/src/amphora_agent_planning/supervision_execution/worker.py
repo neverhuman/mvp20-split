@@ -131,6 +131,8 @@ class CheckpointWorker:
                     require(self.templates is not None, 'budget_template_unavailable')
                     packet = self._packet(principal, intake)
                     policy = packet.context.budget_policy(self.templates)
+                    if hasattr(self.provider, 'validate_policy'):
+                        self.provider.validate_policy(policy)
                     packet.authorize(self.data)
                     self._deadline(intake)
                     provider = CheckpointProvider(self.provider, packet,
@@ -140,7 +142,10 @@ class CheckpointWorker:
                 except ValueError as exc:
                     if str(exc) not in STOPS:
                         raise
-                    return RunOutcome(tuple(attempts), str(exc))
+                    reason = str(exc)
+                    if reason in {'checkpoint_group_calls_exhausted', 'checkpoint_group_cost_exhausted'}:
+                        reason = 'accounting_budget_exhausted'
+                    return RunOutcome(tuple(attempts), reason)
             attempts.append(current)
             if current.observation is None:
                 return RunOutcome(tuple(attempts), 'attempt_pending')

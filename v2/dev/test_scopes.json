@@ -366,5 +366,17 @@
       "services/agent_planning/src/amphora_agent_planning/checkpoint_input",
       "services/agent_planning/src/amphora_agent_planning/campaign_packet_profiles"
     ]
+  },
+  "planning-checkpoint-openai": {
+    "tests": "services/agent_planning/tests/checkpoint_openai",
+    "coverage_sources": [
+      "services/agent_planning/src/amphora_agent_planning/checkpoint_openai"
+    ]
+  },
+  "planning-checkpoint-budget": {
+    "tests": "services/agent_planning/tests/checkpoint_budget",
+    "coverage_sources": [
+      "services/agent_planning/src/amphora_agent_planning/checkpoint_budget"
+    ]
   }
 }

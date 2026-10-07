@@ -25,13 +25,15 @@ def encoded(data):
     return json.dumps(data, sort_keys=True, separators=(',', ':'), ensure_ascii=False).encode()
 
 
-def prepared(*, change=None, unicode_value=False, actor=None, configure=None, deadline=None):
+def prepared(*, change=None, unicode_value=False, actor=None, configure=None, deadline=None, per_attempt_units=None):
     actor = principal() if actor is None else actor
     original, template_data = documents(actor)
     if configure:
         configure(original)
         for key in ('model', 'prompt', 'output_schema', 'allowed_actions', 'limits'):
             template_data[key] = original['context'][key]
+    if per_attempt_units is not None:
+        template_data['per_attempt_accounting_units'] = per_attempt_units
     template = reviewed(template_data)
     budget = reference(template, original)
     wrapper = request(actor).model_dump(mode='json')

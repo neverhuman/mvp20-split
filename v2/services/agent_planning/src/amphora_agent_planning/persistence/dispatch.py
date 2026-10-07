@@ -7,6 +7,7 @@ from datetime import datetime
 from sqlalchemy import text
 
 from ..budget.charge import BudgetCharge
+from ..checkpoint_budget import journal as checkpoint_budget
 from ..context import AttemptBinding
 from ..context.policy import require
 from ..providers.capture import CapturedOutput, Observation, unknown_usage
@@ -52,10 +53,13 @@ class DispatchJournal:
         principal.require("record_attempts", reference.engagement.scope)
         key = {**self.journal._key(reference.engagement), "ordinal": reference.ordinal}
         with self.engine.begin() as connection:
+            live_group = checkpoint_budget.lock(connection, key, binding.request)
             membership = lock_request(connection, key)
             bound, _ = self._bound(connection, key, principal, binding)
             if self._issued(connection, key) is not None:
                 return None
+            if live_group:
+                checkpoint_budget.check(connection, key)
             require_execution_open(connection, key)
             if membership is not None:
                 require(not totals(connection, key, membership["root_engagement_id"])["overage"], "provider_usage_overage")

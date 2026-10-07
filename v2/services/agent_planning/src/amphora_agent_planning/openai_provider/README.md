@@ -13,3 +13,8 @@ Owned tests: tests/openai_provider. Replacement preserves versioned model/input/
 Transport revision v2 adds explicit JSON-mode user framing; v1 packet bytes remain replayable. FrozenOpenAIEvaluation validates all packets before live issuance. The dev runner binds both immutable suites to the same initial $1 group ceiling, retaining both full reservations. HTTP failures expose only status, request hash and closed allowlisted error code/parameter; arbitrary provider messages never enter diagnostics.
 
 Adapter revision v3 projects the published ExtractionDraft schema into provider strict JSON-schema format (closed objects, all fields required, defaults/titles omitted). Campaign output remains JSON mode with independent local action/reference validation. Provider schema does not grant semantic or scientific acceptance. Input reservation/HTTP body limit can explicitly use32768 for this version; predecessor defaults remain16384 and original packets remain unchanged. Structured output source: https://developers.openai.com/api/docs/guides/structured-outputs?api-mode=responses . v5 evaluation uses this adapter, a fresh synthetic set and separate semantic posture instructions. Cumulative group cap$1.70 counts allfive full reservations($1.65888); no automatic refunds or retries.
+
+BP-09.03 checkpoint integration reuses only the bounded decoder/pricing/HTTP transport from
+this module. Its separate checkpoint envelope/profile does not alter evaluation v1/v2/v3.
+HTTP accepts an explicit65536-byte body ceiling for that caller; the original16384 default
+and32768 evaluation profile remain unchanged. See [checkpoint adapter](../checkpoint_openai/README.md).

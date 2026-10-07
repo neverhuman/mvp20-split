@@ -14,7 +14,7 @@ class OpenAIHTTP:
         require(type(api_key) is str and bool(api_key) and "\n" not in api_key and "\r" not in api_key, "openai_credentials_missing")
         require(type(timeout_seconds) is int and 1 <= timeout_seconds <= 60, "openai_timeout")
         self._key,self.timeout,self.factory = api_key,timeout_seconds,connection_factory
-        require(type(maximum_body_bytes) is int and maximum_body_bytes in {16384,32768}, "openai_http_limit")
+        require(type(maximum_body_bytes) is int and maximum_body_bytes in {16384,32768,65536}, "openai_http_limit")
         self.maximum_body_bytes = maximum_body_bytes
         self.last_failure = None
     def send(self, body):

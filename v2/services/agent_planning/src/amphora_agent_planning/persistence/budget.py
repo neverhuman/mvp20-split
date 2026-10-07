@@ -6,6 +6,8 @@ from datetime import datetime
 from sqlalchemy import text
 
 from ..budget import BudgetPolicy, ReservationDemand
+from ..checkpoint_budget import CheckpointAllowance
+from ..checkpoint_budget import journal as checkpoint_budget
 from ..context import AttemptBinding
 from ..context.policy import require
 from . import family_state
@@ -51,8 +53,11 @@ class BudgetLedger:
         principal.require("record_attempts", reference.engagement.scope)
         reviewed_policy = BudgetPolicy.from_bytes(reviewed_policy.canonical)
         demand = reviewed_policy.demand(binding)
+        if CheckpointAllowance.applies(binding.request):
+            CheckpointAllowance.validate_policy(reviewed_policy)
         key = {**self.journal._key(reference.engagement), "ordinal": reference.ordinal}
         with self.engine.begin() as connection:
+            live_group = checkpoint_budget.lock(connection, key, binding.request)
             membership = family_state.lock_request(connection, key)
             snapshot = self.journal._request(connection, key, principal)
             require(snapshot is not None, "request_unknown")
@@ -63,6 +68,8 @@ class BudgetLedger:
             existing = self._reservation(connection, key, binding, stored_policy)
             if existing is not None:
                 return existing
+            if live_group:
+                checkpoint_budget.check(connection, key, demand)
             require_execution_open(connection, key)
             family_state.require_budget(connection, key, membership, self.journal, principal, reviewed_policy, demand)
             # Never retroactively authorize a journal intent created outside budget admission.

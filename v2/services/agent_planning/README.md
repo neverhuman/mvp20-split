@@ -1,13 +1,13 @@
 # Agent Planning service boundary
 
-Current release: Planning0.100/planning0020. BP-09.03 adds a separate [checkpoint input profile](src/amphora_agent_planning/checkpoint_input/README.md), measuring the exact live-model envelope before issuance. Fixture and evaluation profiles remain unchanged; configured live transport is the next task. BP-09.02 host-role enforcement remains intact. No persistence migration.
+Current release: Planning0.101/planning0020. BP-09.03 adds a separate [checkpoint input profile](src/amphora_agent_planning/checkpoint_input/README.md), measuring the exact live-model envelope before issuance. Fixture and evaluation profiles remain unchanged. Explicit live checkpoint configuration now preserves durable scope costs and original deadlines; integrated live deployment remains pending. BP-09.02 host-role enforcement remains intact. No persistence migration.
 
-- Version: Planning0.100.0; public Planning0.10 and supervision0.10; owned migration head0020.
+- Version: Planning0.101.0; public Planning0.10 and supervision0.10; owned migration head0020.
 - Reviewed: `2026-10-06 09:21:10` (America/Chicago); BP-07 accepted within stated engineering/evaluation limits.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Campaign acceptance: [BP-07.03](../../docs/Build%20Plans/BP-07/Completed/BP-07.03%20Campaign%20proposals%20and%20context.md); supervisor acceptance [BP-07.04](../../docs/Build%20Plans/BP-07/Completed/BP-07.04%20Durable%20supervisor%20and%20races.md).
 
-Current successor: [evaluation](src/amphora_agent_planning/evaluation/README.md) implements frozen protocol and independent scoring; [batch registration](src/amphora_agent_planning/evaluation_batch/README.md) retains original experiment inputs in planning0019; [measured runner](src/amphora_agent_planning/evaluation_execution/README.md) now composes existing durable issuance and preserves failed/late/unknown results; live synthetic evaluation and independent replay are verified. [OpenAI boundary](src/amphora_agent_planning/openai_provider/README.md) owns pinned transport/schema/rates. Configured campaign workers remain disabled/fixture-only until BP-09.03 selected-model deployment wiring.
+Current successor: [evaluation](src/amphora_agent_planning/evaluation/README.md) implements frozen protocol and independent scoring; [batch registration](src/amphora_agent_planning/evaluation_batch/README.md) retains original experiment inputs in planning0019; [measured runner](src/amphora_agent_planning/evaluation_execution/README.md) now composes existing durable issuance and preserves failed/late/unknown results; live synthetic evaluation and independent replay are verified. [OpenAI boundary](src/amphora_agent_planning/openai_provider/README.md) owns pinned transport/schema/rates. Configured campaign workers default disabled; the explicit [checkpoint adapter](src/amphora_agent_planning/checkpoint_openai/README.md) and [scope allowance](src/amphora_agent_planning/checkpoint_budget/README.md) support the selected synthetic demo profile. Actual deployed model/owner integration remains BP-09.03.
 
 ## Responsibilities and exclusions
 

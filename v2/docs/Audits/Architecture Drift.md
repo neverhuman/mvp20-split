@@ -1,7 +1,7 @@
 # Architecture Drift
 
-- Status: BP-07 and BP-08 closed/audited; BP-09.01/.02 local infrastructure accepted; BP-09.03 integration next.
-- Last refreshed: `2026-10-06 23:47:56` (America/Chicago).
+- Status: BP-07 and BP-08 closed/audited; BP-09.01/.02 local infrastructure accepted; BP-09.03 integration active.
+- Last refreshed: `2026-10-07 00:32:46` (America/Chicago).
 - Scope: unresolved v2 design/implementation alignment and scoped successor boundaries.
 - Active focus: selected-host integration and named scientific/UI successor limits.
 - Next gate: BP-09.03 activates actual autonomous tool/model/campaign composition.
@@ -10,7 +10,7 @@
 
 | Finding | Owner / trigger | Disposition |
 |---|---|---|
-| Selected live model not yet wired into configured campaign scheduling | BP-09.03/B1 integrated demonstration | Explicit queued integration: evaluation adapter passes,worker configuration remains disabled/fixture. No deployed-model E2E claim. |
+| Selected model adapter wired; deployed autonomous integration remains unproven | BP-09.03/B1 integrated demonstration | Planning0.101 configured checkpoint adapter/allowance independently verified. Default disabled; tool TLS/workers, actual owner records and model/browser trace remain B1.3/B1.4. No deployed-model E2E claim. |
 | Scientific and target-host claims exceed developer fixture proof | BP-07 model evaluation, BP-08 scientific search, BP-09 selected deployment; SQ-01 quality views | Named future gates; synthetic receipts/vectors and completed campaigns do not establish science; full campaign deployment and K3s remain unproven |
 | Starlette/httpx test-client deprecation | Dev tooling, dependency maintenance | Nonblocking; test-client warning is not a production failure |
 | Frozen baseline manifest reports added v1/LICENSE from99d219c while recorded content hashes match | Repository baseline metadata; explicit owner-authorized baseline maintenance | No v1 edits made; not an active implementation blocker |

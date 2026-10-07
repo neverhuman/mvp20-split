@@ -13,6 +13,7 @@ from ..providers import observe
 from ..providers.capture import CapturedOutput, Observation, unknown_usage
 
 BUDGET_STOPS = frozenset({"token_budget_exhausted", "accounting_budget_exhausted", "provider_usage_overage",
+    "checkpoint_group_calls_exhausted", "checkpoint_group_cost_exhausted",
     "repair_attempt_budget_exhausted", "repair_token_budget_exhausted", "repair_accounting_budget_exhausted"})
 
 

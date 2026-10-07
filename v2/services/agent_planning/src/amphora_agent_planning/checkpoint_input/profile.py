@@ -2,6 +2,7 @@
 
 import hashlib
 from dataclasses import dataclass
+from functools import cache
 
 from amphora_contracts_core import SchemaRef
 from amphora_contracts_planning import ModelBinding, checkpoint_draft_schema
@@ -11,6 +12,7 @@ from ..context.policy import require
 from ..openai_provider.pricing import MODEL
 
 
+@cache
 def checkpoint_tokenizer_reference():
     descriptor = canonical({'format': 'planning.checkpoint-openai-input-bound.v1',
         'algorithm': 'serialized_responses_utf8_bytes_plus_1024', 'model': MODEL,
