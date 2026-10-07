@@ -1,0 +1,40 @@
+{
+  "timestamp_local": "2026-10-06 19:12:48",
+  "status": "passed",
+  "scope": "BP-08.05/B1.01",
+  "tests": 84,
+  "seconds": 14.12,
+  "coverage": {
+    "covered_lines": 59,
+    "num_statements": 59,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100",
+    "num_branches": 6,
+    "num_partial_branches": 0,
+    "covered_branches": 6,
+    "missing_branches": 0,
+    "percent_branches_covered": 100.0,
+    "percent_branches_covered_display": "100"
+  },
+  "coverage_source": "tests/integration/search_recovery/manifest.py",
+  "raw_coverage": ".test-results/search-recovery-manifest-coverage-20261006.json",
+  "raw_sha256": "1f139b89b5ba617f0514e439cd46f7fc0a0add04efd9a3817cbfd59b12e4755d",
+  "oracles": [
+    "Artifact content/schema/scope and canonical byte identity",
+    "Exact original specification digest",
+    "Ordered predecessor Artifact chain and no mixed revision",
+    "Exact replay except validated run-specific previous Artifact identity",
+    "Same-profile kernel restore preserves bytes/pending/RNG next draw",
+    "Changed seed/evaluator/operators/implementation reject original_specification"
+  ],
+  "limits": [
+    "Test-only evidence helper, not intrinsic checkpoint or Runtime authority",
+    "No new actual process/SQL/image evidence in this unit"
+  ],
+  "initial_failures": "Five test expectation mistakes: schema version is literal1 and owner reason is original_specification; fixed fixtures/oracles, not production",
+  "paid_calls": 0
+}
