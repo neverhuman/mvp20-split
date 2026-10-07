@@ -17,6 +17,9 @@ def worker_command(e, stage, actor, http, lease_seconds=90):
     arguments = ["--operation", stage] if numeric else []
     command = [e.config["numeric" if numeric else "evaluator"], "-I", "-m", module,
                "worker", *arguments, "--config", str(path)]
+    if numeric and e.config.get("reconstructed_adapter"):
+        command = [e.config["numeric"], "-I", e.config["reconstructed_adapter"], "worker", "--operation", stage,
+                   "--descriptor", str(e.root / (stage + "-descriptor.json")), "--config", str(path)]
     return command, dict(http.isolated_env(), WORKER_TOKEN=e.tokens[actor])
 
 
@@ -45,13 +48,14 @@ def execute(e, http, *, failure=None):
         for stage in ("seed", "requests", "collect", "vary", "evaluate"):
             if stage not in eligible:
                 continue
-            if stage == "vary" and failure is not None and not interrupted:
+            failure_stage = getattr(failure, "stage", "vary")
+            if stage == failure_stage and failure is not None and not interrupted:
                 failure.interrupt(e, http, worker_command)
                 interrupted = True
             actors = ("worker1", "worker2") if stage == "evaluate" else ("worker1",)
             with ThreadPoolExecutor(max_workers=len(actors)) as pool:
                 outcomes.extend(pool.map(lambda actor, stage=stage: run_worker(e, stage, actor, http), actors))
-            if stage == "vary" and failure is not None and interrupted and not failure.verified:
+            if stage == failure_stage and failure is not None and interrupted and not failure.verified:
                 failure.verify_retry(e, http)
     assert page["status"] == "completed", page
     reports, seen = [], set()

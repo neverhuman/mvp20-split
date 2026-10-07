@@ -1,0 +1,906 @@
+{
+  "timestamp_local": "2026-10-06 19:25:18",
+  "status": "passed",
+  "scope": "BP-08.05/B1.03",
+  "raw_evidence": ".test-results/partial-search-recovery-20261006a/http/evidence.json",
+  "raw_sha256": "d0476155bdefbf8ebe66ec1ac8f0799a36660128057e4a2a1b5873b69a674f80",
+  "adapter_sha256": "1954836b03cb4c54a847ac44ef5a7bf0d2a970336b027ba32afdca0fd52015a8",
+  "runs": {
+    "baseline": {
+      "run_id": "befb59bb39354bc5892b05c469e6e0e3",
+      "status": "completed",
+      "spent": 15,
+      "reserved": 0,
+      "accepted_completions": 15,
+      "retention_confirmations_observed": 54,
+      "checkpoint_count": 6
+    },
+    "resumed": {
+      "run_id": "62fa31294fc14e7287ec801ee6ca1136",
+      "status": "completed",
+      "spent": 16,
+      "reserved": 0,
+      "accepted_completions": 15,
+      "retention_confirmations_observed": 108,
+      "checkpoint_count": 6
+    }
+  },
+  "retention_note": "Resumed observation includes54 baseline reservations;108 unique total across both campaigns",
+  "checkpoint_equivalence": {
+    "profile": "search-recovery-evidence-v1",
+    "equivalent": true,
+    "comparison": "all_canonical_checkpoint_fields_except_run_specific_previous_artifact",
+    "baseline": [
+      {
+        "artifact": {
+          "artifact_id": "8d14fd5a657c479c8c44c81c0c52b056",
+          "scope": {
+            "tenant_id": "numeric-http",
+            "project_id": "01717c1116d44a49b5b30c0616842c8c"
+          },
+          "sha256": "3e4aeaa1bf98ae4b08045ca3d288669b0d55f404619b9778841bd4bbc77475e7",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "search.checkpoint",
+            "version": "1",
+            "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+          },
+          "size_bytes": 3209
+        },
+        "specification_sha256": "a0220d5c671b99bb71dc71374e93aee7634e007690324810a1e40b05798c6d85",
+        "generation": 0,
+        "phase": "awaiting_evaluations",
+        "rng": {
+          "algorithm": "sha256-counter-u53-v1",
+          "seed": "0000000000000000000000000000000000000000000000000000000000000000",
+          "counter": 2
+        }
+      },
+      {
+        "artifact": {
+          "artifact_id": "f3b12899c09549c09eeb63cb01a02d6d",
+          "scope": {
+            "tenant_id": "numeric-http",
+            "project_id": "01717c1116d44a49b5b30c0616842c8c"
+          },
+          "sha256": "5131f5a6d8f4cadd225fef460c929ccbb29a1e3fce744ae1520838b441a7cb84",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "search.checkpoint",
+            "version": "1",
+            "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+          },
+          "size_bytes": 6260
+        },
+        "specification_sha256": "a0220d5c671b99bb71dc71374e93aee7634e007690324810a1e40b05798c6d85",
+        "generation": 0,
+        "phase": "selected",
+        "rng": {
+          "algorithm": "sha256-counter-u53-v1",
+          "seed": "0000000000000000000000000000000000000000000000000000000000000000",
+          "counter": 2
+        }
+      },
+      {
+        "artifact": {
+          "artifact_id": "a90f3baee267496e859e799509f7be26",
+          "scope": {
+            "tenant_id": "numeric-http",
+            "project_id": "01717c1116d44a49b5b30c0616842c8c"
+          },
+          "sha256": "1be1b8914a60526c45e5fbbdbe24a684e4bf4e68ac7e11e9cea6de8d00de000c",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "search.checkpoint",
+            "version": "1",
+            "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+          },
+          "size_bytes": 6978
+        },
+        "specification_sha256": "a0220d5c671b99bb71dc71374e93aee7634e007690324810a1e40b05798c6d85",
+        "generation": 1,
+        "phase": "awaiting_evaluations",
+        "rng": {
+          "algorithm": "sha256-counter-u53-v1",
+          "seed": "0000000000000000000000000000000000000000000000000000000000000000",
+          "counter": 14
+        }
+      },
+      {
+        "artifact": {
+          "artifact_id": "08adb21b6fcd4f1e9688f37a59c6028c",
+          "scope": {
+            "tenant_id": "numeric-http",
+            "project_id": "01717c1116d44a49b5b30c0616842c8c"
+          },
+          "sha256": "2c50365b77ffa9d601ad2858502a71bd6835a2680faf151ed9a49cdd4fd7722f",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "search.checkpoint",
+            "version": "1",
+            "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+          },
+          "size_bytes": 9790
+        },
+        "specification_sha256": "a0220d5c671b99bb71dc71374e93aee7634e007690324810a1e40b05798c6d85",
+        "generation": 1,
+        "phase": "selected",
+        "rng": {
+          "algorithm": "sha256-counter-u53-v1",
+          "seed": "0000000000000000000000000000000000000000000000000000000000000000",
+          "counter": 14
+        }
+      },
+      {
+        "artifact": {
+          "artifact_id": "07596583f34d49d3b8f7659983a4987f",
+          "scope": {
+            "tenant_id": "numeric-http",
+            "project_id": "01717c1116d44a49b5b30c0616842c8c"
+          },
+          "sha256": "73c0c8fb5d3dbadbaf7c72e0af5e14d10c7e8e880609a55f5c8361f57179cd3e",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "search.checkpoint",
+            "version": "1",
+            "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+          },
+          "size_bytes": 7056
+        },
+        "specification_sha256": "a0220d5c671b99bb71dc71374e93aee7634e007690324810a1e40b05798c6d85",
+        "generation": 2,
+        "phase": "awaiting_evaluations",
+        "rng": {
+          "algorithm": "sha256-counter-u53-v1",
+          "seed": "0000000000000000000000000000000000000000000000000000000000000000",
+          "counter": 26
+        }
+      },
+      {
+        "artifact": {
+          "artifact_id": "5fc768966a9d4016b75b7c8675326de6",
+          "scope": {
+            "tenant_id": "numeric-http",
+            "project_id": "01717c1116d44a49b5b30c0616842c8c"
+          },
+          "sha256": "1bcbc9562d7d8de28d3b5f81a9787d1acc40940f4f3a7a4be22f64b075a8c676",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "search.checkpoint",
+            "version": "1",
+            "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+          },
+          "size_bytes": 9882
+        },
+        "specification_sha256": "a0220d5c671b99bb71dc71374e93aee7634e007690324810a1e40b05798c6d85",
+        "generation": 2,
+        "phase": "stopped",
+        "rng": {
+          "algorithm": "sha256-counter-u53-v1",
+          "seed": "0000000000000000000000000000000000000000000000000000000000000000",
+          "counter": 26
+        }
+      }
+    ],
+    "resumed": [
+      {
+        "artifact": {
+          "artifact_id": "8e16e46daada4717abb1cff283f0a1ce",
+          "scope": {
+            "tenant_id": "numeric-http",
+            "project_id": "01717c1116d44a49b5b30c0616842c8c"
+          },
+          "sha256": "3e4aeaa1bf98ae4b08045ca3d288669b0d55f404619b9778841bd4bbc77475e7",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "search.checkpoint",
+            "version": "1",
+            "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+          },
+          "size_bytes": 3209
+        },
+        "specification_sha256": "a0220d5c671b99bb71dc71374e93aee7634e007690324810a1e40b05798c6d85",
+        "generation": 0,
+        "phase": "awaiting_evaluations",
+        "rng": {
+          "algorithm": "sha256-counter-u53-v1",
+          "seed": "0000000000000000000000000000000000000000000000000000000000000000",
+          "counter": 2
+        }
+      },
+      {
+        "artifact": {
+          "artifact_id": "e8a7048f8eb44029b1df55c5f027b38b",
+          "scope": {
+            "tenant_id": "numeric-http",
+            "project_id": "01717c1116d44a49b5b30c0616842c8c"
+          },
+          "sha256": "3c3c901165a40763cdf949bf3fe3d75496300eeec18e8e760498d320e5c28081",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "search.checkpoint",
+            "version": "1",
+            "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+          },
+          "size_bytes": 6260
+        },
+        "specification_sha256": "a0220d5c671b99bb71dc71374e93aee7634e007690324810a1e40b05798c6d85",
+        "generation": 0,
+        "phase": "selected",
+        "rng": {
+          "algorithm": "sha256-counter-u53-v1",
+          "seed": "0000000000000000000000000000000000000000000000000000000000000000",
+          "counter": 2
+        }
+      },
+      {
+        "artifact": {
+          "artifact_id": "b5cc5a1ea7e64d529190ae2f3590f878",
+          "scope": {
+            "tenant_id": "numeric-http",
+            "project_id": "01717c1116d44a49b5b30c0616842c8c"
+          },
+          "sha256": "f24fafb13ea2401ccce4d1c2fff47d1a0ae81e73ecb4f4f4adf4e1584f087c90",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "search.checkpoint",
+            "version": "1",
+            "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+          },
+          "size_bytes": 6978
+        },
+        "specification_sha256": "a0220d5c671b99bb71dc71374e93aee7634e007690324810a1e40b05798c6d85",
+        "generation": 1,
+        "phase": "awaiting_evaluations",
+        "rng": {
+          "algorithm": "sha256-counter-u53-v1",
+          "seed": "0000000000000000000000000000000000000000000000000000000000000000",
+          "counter": 14
+        }
+      },
+      {
+        "artifact": {
+          "artifact_id": "afddae7ec6b24d3b991be7562fd68bf1",
+          "scope": {
+            "tenant_id": "numeric-http",
+            "project_id": "01717c1116d44a49b5b30c0616842c8c"
+          },
+          "sha256": "b3847d67a66c64d79cfd7b82fa8b70b93abf198cdef3dd03a6b2945bd2c3c8d8",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "search.checkpoint",
+            "version": "1",
+            "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+          },
+          "size_bytes": 9790
+        },
+        "specification_sha256": "a0220d5c671b99bb71dc71374e93aee7634e007690324810a1e40b05798c6d85",
+        "generation": 1,
+        "phase": "selected",
+        "rng": {
+          "algorithm": "sha256-counter-u53-v1",
+          "seed": "0000000000000000000000000000000000000000000000000000000000000000",
+          "counter": 14
+        }
+      },
+      {
+        "artifact": {
+          "artifact_id": "c0a8cae5ecb442b8a2d504cb966d6bab",
+          "scope": {
+            "tenant_id": "numeric-http",
+            "project_id": "01717c1116d44a49b5b30c0616842c8c"
+          },
+          "sha256": "a4f5de68278a5804d55825eefd6642b39c77dc676dc3a2c5ad292ecf5a97c2eb",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "search.checkpoint",
+            "version": "1",
+            "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+          },
+          "size_bytes": 7056
+        },
+        "specification_sha256": "a0220d5c671b99bb71dc71374e93aee7634e007690324810a1e40b05798c6d85",
+        "generation": 2,
+        "phase": "awaiting_evaluations",
+        "rng": {
+          "algorithm": "sha256-counter-u53-v1",
+          "seed": "0000000000000000000000000000000000000000000000000000000000000000",
+          "counter": 26
+        }
+      },
+      {
+        "artifact": {
+          "artifact_id": "6f68392b61ed436a8a0b995e4018a709",
+          "scope": {
+            "tenant_id": "numeric-http",
+            "project_id": "01717c1116d44a49b5b30c0616842c8c"
+          },
+          "sha256": "f8c06c48d4bc9771984c3897c25f977f17334d75af87834933bc7457d5ff9046",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "search.checkpoint",
+            "version": "1",
+            "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+          },
+          "size_bytes": 9882
+        },
+        "specification_sha256": "a0220d5c671b99bb71dc71374e93aee7634e007690324810a1e40b05798c6d85",
+        "generation": 2,
+        "phase": "stopped",
+        "rng": {
+          "algorithm": "sha256-counter-u53-v1",
+          "seed": "0000000000000000000000000000000000000000000000000000000000000000",
+          "counter": 26
+        }
+      }
+    ],
+    "authority": "synthetic_engineering_evidence_only"
+  },
+  "interruption": {
+    "accepted_before_interruption": {
+      "schema_version": "1",
+      "scope": {
+        "tenant_id": "numeric-http",
+        "project_id": "01717c1116d44a49b5b30c0616842c8c"
+      },
+      "run_id": "62fa31294fc14e7287ec801ee6ca1136",
+      "completion_id": "8a9af13ff571404e936b48a312434fad",
+      "activation_id": "bda67776c2a75cf4fc524ad8cc2f9494ddfddb8d1bcc6c58080f64a1ffa55501",
+      "accepted_run_revision": 31,
+      "canonical_result": true,
+      "retention_reservation_ids": [
+        "e9190a78e1e04a3ebce907e0e1a8b1ae"
+      ],
+      "result": {
+        "schema_version": "1",
+        "invocation_id": "bda67776c2a75cf4fc524ad8cc2f9494ddfddb8d1bcc6c58080f64a1ffa55501",
+        "attempt_id": "81fe13ecb459426697c89d10ab2eea4c",
+        "fence": 1,
+        "outcome": {
+          "status": "succeeded",
+          "outputs": [
+            {
+              "port": "result",
+              "artifact": {
+                "artifact_id": "d48e3def88074ca481a00a30b71a6973",
+                "scope": {
+                  "tenant_id": "numeric-http",
+                  "project_id": "01717c1116d44a49b5b30c0616842c8c"
+                },
+                "sha256": "93f4ce66a670db19a9e1433305d60dd6d52b1e9a26d668e5df74859fefccdf97",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "search.evaluation-observation",
+                  "version": "1",
+                  "sha256": "28b7765aa253bc93d2e050c06e4a38be09ffa1b8a8b45762ee93eaaffe37add2"
+                },
+                "size_bytes": 1217
+              }
+            }
+          ],
+          "checkpoint": null
+        }
+      }
+    },
+    "interrupted_invocation": {
+      "schema_version": "1",
+      "scope": {
+        "tenant_id": "numeric-http",
+        "project_id": "01717c1116d44a49b5b30c0616842c8c"
+      },
+      "run_id": "62fa31294fc14e7287ec801ee6ca1136",
+      "node_id": "evaluate",
+      "activation_id": "eab10eab2252d13eb897511759cd27bc87b91dd20ac1529f74a6960b5e01abc3",
+      "invocation_id": "eab10eab2252d13eb897511759cd27bc87b91dd20ac1529f74a6960b5e01abc3",
+      "attempt_id": "58deb43fed044cc69f97108ba5c00349",
+      "fence": 1,
+      "tool": {
+        "capability_id": "synthetic.numeric-objectives",
+        "release": "0.2.0",
+        "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "contract_version": "1"
+      },
+      "inputs": [
+        {
+          "port": "parameters",
+          "artifact": {
+            "artifact_id": "5fdb46127c5948f081947dd3c963100d",
+            "scope": {
+              "tenant_id": "numeric-http",
+              "project_id": "01717c1116d44a49b5b30c0616842c8c"
+            },
+            "sha256": "ba09dd0ae072e88e78a5804e3c3829e5f930e458a142d983d86d62ab6ee0e378",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "search.evaluation-request",
+              "version": "1",
+              "sha256": "44c7375364971f923302f83d0d6100bd2d01b8c6085d25f7195e465ccb9fbe58"
+            },
+            "size_bytes": 1310
+          }
+        },
+        {
+          "port": "policy",
+          "artifact": {
+            "artifact_id": "e490f8d27d614e53bd34877c6eecbc3d",
+            "scope": {
+              "tenant_id": "numeric-http",
+              "project_id": "01717c1116d44a49b5b30c0616842c8c"
+            },
+            "sha256": "b9946661cfefa2bf2d6eabb8779659bb0d9987020214d16fc73e196a4e2ed62e",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "synthetic.numeric-policy",
+              "version": "1",
+              "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a"
+            },
+            "size_bytes": 36
+          }
+        }
+      ],
+      "checkpoint": null,
+      "timeout_seconds": 60,
+      "grant_id": "58deb43fed044cc69f97108ba5c00349"
+    },
+    "finalized_unaccepted_artifact": {
+      "artifact_id": "96eb4af6006e486ba10586fd878363e8",
+      "scope": {
+        "tenant_id": "numeric-http",
+        "project_id": "01717c1116d44a49b5b30c0616842c8c"
+      },
+      "sha256": "d75145c5d4ee3d5ca86ecf8831ecff7651cbcd0aacc79d0b59cda59f51e3c583",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "search.evaluation-observation",
+        "version": "1",
+        "sha256": "28b7765aa253bc93d2e050c06e4a38be09ffa1b8a8b45762ee93eaaffe37add2"
+      },
+      "size_bytes": 1219
+    },
+    "runtime_restart_view": {
+      "schema_version": "3",
+      "scope": {
+        "tenant_id": "numeric-http",
+        "project_id": "01717c1116d44a49b5b30c0616842c8c"
+      },
+      "run_id": "62fa31294fc14e7287ec801ee6ca1136",
+      "plan_sha256": "9dd4f04881726c5b95a24f3c65a54fbba9244c8bb0c634364f6b77a7addf0dff",
+      "status": "running",
+      "revision": 37,
+      "node_count": 13,
+      "budget_limit": 256,
+      "reserved": 1,
+      "spent": 3,
+      "stop_reason": null,
+      "nodes": [
+        {
+          "activation_id": "1f038d9f3a73af5149cf64eac6dfad80ede691b943fcecefc404138a035e4131",
+          "path": {
+            "schema_version": "2",
+            "node_id": "generations",
+            "occurrences": []
+          },
+          "kind": "iterate",
+          "status": "waiting",
+          "reason_code": null
+        },
+        {
+          "activation_id": "466a69224b8da76e911f3f980509432463cb47d298da8cf64c40a92a2e3774d0",
+          "path": {
+            "schema_version": "2",
+            "node_id": "requests",
+            "occurrences": []
+          },
+          "kind": "artifact_project",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "668ded315bddf3045b217e9c882db111dfe5f56cb2f9c43d0558343c49903c3a",
+          "path": {
+            "schema_version": "2",
+            "node_id": "request_context",
+            "occurrences": []
+          },
+          "kind": "artifact_materialize",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "7960c0f9cec2a515d0e63d2b7a0668dac623eaf2b72eabdec482128b4828559e",
+          "path": {
+            "schema_version": "2",
+            "node_id": "collection",
+            "occurrences": []
+          },
+          "kind": "artifact_materialize",
+          "status": "waiting",
+          "reason_code": null
+        },
+        {
+          "activation_id": "a2e6d8faf600325e85be7803b659898b0f99072f0b115d60446e5598dfb4e8dd",
+          "path": {
+            "schema_version": "2",
+            "node_id": "evaluate_batch",
+            "occurrences": []
+          },
+          "kind": "scatter",
+          "status": "issued",
+          "reason_code": null
+        },
+        {
+          "activation_id": "b19afa8e7f4a4fdefddc3f73068d54560026c7d094fb562d57e6aeed3d901336",
+          "path": {
+            "schema_version": "2",
+            "node_id": "finish",
+            "occurrences": [
+              {
+                "kind": "scatter",
+                "node_id": "evaluate_batch",
+                "index": 1,
+                "membership_sha256": "50178df2f57ac1f7f821f598edc373813437aef407ec921d4bb47a27d88c3022"
+              }
+            ]
+          },
+          "kind": "finish",
+          "status": "waiting",
+          "reason_code": null
+        },
+        {
+          "activation_id": "bda67776c2a75cf4fc524ad8cc2f9494ddfddb8d1bcc6c58080f64a1ffa55501",
+          "path": {
+            "schema_version": "2",
+            "node_id": "evaluate",
+            "occurrences": [
+              {
+                "kind": "scatter",
+                "node_id": "evaluate_batch",
+                "index": 0,
+                "membership_sha256": "50178df2f57ac1f7f821f598edc373813437aef407ec921d4bb47a27d88c3022"
+              }
+            ]
+          },
+          "kind": "invoke",
+          "status": "issued",
+          "reason_code": null
+        },
+        {
+          "activation_id": "be030c22c30f74df84a2b6e3459c4eef758cdca047e76c25713a83e7582b48e0",
+          "path": {
+            "schema_version": "2",
+            "node_id": "collect",
+            "occurrences": []
+          },
+          "kind": "invoke",
+          "status": "waiting",
+          "reason_code": null
+        },
+        {
+          "activation_id": "c355ddc9b0a67b98f15e5f4cbb55b487fc68cba6e86a3c1b2e73dc1786d1d71e",
+          "path": {
+            "schema_version": "2",
+            "node_id": "finish",
+            "occurrences": [
+              {
+                "kind": "scatter",
+                "node_id": "evaluate_batch",
+                "index": 0,
+                "membership_sha256": "50178df2f57ac1f7f821f598edc373813437aef407ec921d4bb47a27d88c3022"
+              }
+            ]
+          },
+          "kind": "finish",
+          "status": "waiting",
+          "reason_code": null
+        },
+        {
+          "activation_id": "cc55000995b169d0132291cd462fe2ec4a329d5446b40f90f2b7ec2301f0d502",
+          "path": {
+            "schema_version": "2",
+            "node_id": "expand",
+            "occurrences": []
+          },
+          "kind": "invoke",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "dd2bc8dc2bb35f426077f5033d7e02333ea029ad939252a6d3362efc825dd4cd",
+          "path": {
+            "schema_version": "2",
+            "node_id": "finish",
+            "occurrences": []
+          },
+          "kind": "finish",
+          "status": "waiting",
+          "reason_code": null
+        },
+        {
+          "activation_id": "eab10eab2252d13eb897511759cd27bc87b91dd20ac1529f74a6960b5e01abc3",
+          "path": {
+            "schema_version": "2",
+            "node_id": "evaluate",
+            "occurrences": [
+              {
+                "kind": "scatter",
+                "node_id": "evaluate_batch",
+                "index": 1,
+                "membership_sha256": "50178df2f57ac1f7f821f598edc373813437aef407ec921d4bb47a27d88c3022"
+              }
+            ]
+          },
+          "kind": "invoke",
+          "status": "issued",
+          "reason_code": null
+        },
+        {
+          "activation_id": "ecb5708ba976f94531c907da8dcdfbe5de8e61e7bb1be920f76fceda8bdc837c",
+          "path": {
+            "schema_version": "2",
+            "node_id": "seed",
+            "occurrences": []
+          },
+          "kind": "invoke",
+          "status": "succeeded",
+          "reason_code": null
+        }
+      ],
+      "next_after": null
+    },
+    "lease_wait_seconds": 9.360377,
+    "retried_completion": {
+      "schema_version": "1",
+      "scope": {
+        "tenant_id": "numeric-http",
+        "project_id": "01717c1116d44a49b5b30c0616842c8c"
+      },
+      "run_id": "62fa31294fc14e7287ec801ee6ca1136",
+      "completion_id": "571222b54e094e998faa5cb9789189a2",
+      "activation_id": "eab10eab2252d13eb897511759cd27bc87b91dd20ac1529f74a6960b5e01abc3",
+      "accepted_run_revision": 46,
+      "canonical_result": true,
+      "retention_reservation_ids": [
+        "0dbbccebec1142c7b8c3889431992224"
+      ],
+      "result": {
+        "schema_version": "1",
+        "invocation_id": "eab10eab2252d13eb897511759cd27bc87b91dd20ac1529f74a6960b5e01abc3",
+        "attempt_id": "915464c8aab14eedb49c0ba36f7aa92b",
+        "fence": 2,
+        "outcome": {
+          "status": "succeeded",
+          "outputs": [
+            {
+              "port": "result",
+              "artifact": {
+                "artifact_id": "4340b16aec714410a52053272fd09900",
+                "scope": {
+                  "tenant_id": "numeric-http",
+                  "project_id": "01717c1116d44a49b5b30c0616842c8c"
+                },
+                "sha256": "d75145c5d4ee3d5ca86ecf8831ecff7651cbcd0aacc79d0b59cda59f51e3c583",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "search.evaluation-observation",
+                  "version": "1",
+                  "sha256": "28b7765aa253bc93d2e050c06e4a38be09ffa1b8a8b45762ee93eaaffe37add2"
+                },
+                "size_bytes": 1219
+              }
+            }
+          ],
+          "checkpoint": null
+        }
+      }
+    },
+    "stale_completion": {
+      "schema_version": "1",
+      "outcome": {
+        "status": "rejected",
+        "binding": {
+          "identity": {
+            "schema_version": "1",
+            "command_family": "runtime.complete",
+            "command_id": "ea62650ef9354db8b596c2822a3213bf",
+            "scope": {
+              "tenant_id": "numeric-http",
+              "project_id": "01717c1116d44a49b5b30c0616842c8c"
+            },
+            "actor_id": "worker2"
+          },
+          "request_sha256": "3ede3979ab1bd86682138924c3be3add28adc7b9c8ff05bec6a08b304514e80d",
+          "operation_id": "2b71cad877d04907b2ddd8b8e89ef02f"
+        },
+        "reason_code": "stale_attempt"
+      }
+    },
+    "original_accepted_history_unchanged": true
+  },
+  "packages": {
+    "runtime": {
+      "owner": "amphora-campaign-runtime",
+      "versions": {
+        "amphora-campaign-runtime": "0.65.0",
+        "amphora-contracts-artifacts": "0.2.0",
+        "amphora-contracts-campaigns": "0.4.1",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-draft-successor": "0.1.0",
+        "amphora-contracts-evidence": "0.5.13",
+        "amphora-contracts-execution-proofs": "0.1.0",
+        "amphora-contracts-graph-runtime": "0.13.0",
+        "amphora-contracts-knowledge": "0.8.0",
+        "amphora-contracts-planning": "0.10.0",
+        "amphora-contracts-research": "0.14.0",
+        "amphora-contracts-runtime": "0.1.0",
+        "amphora-contracts-supervision": "0.10.0",
+        "amphora-contracts-tools": "0.1.0"
+      },
+      "wheels": {
+        "amphora_campaign_runtime-0.65.0-py3-none-any.whl": "c3cc079c2b6433b9ab188716ecb71a021ee2ce0d492c60cd7ed0ee49cd5eec78",
+        "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+        "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_draft_successor-0.1.0-py3-none-any.whl": "8c6c90b1b3b847d7bef5c7c93e6e389085899c277d4e809a3f8a4cdebf393716",
+        "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+        "amphora_contracts_execution_proofs-0.1.0-py3-none-any.whl": "28a5d3f319564fbca4d41bf506de4e6562859345cbd2cf1146f10d902c2f6ee7",
+        "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+        "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+        "amphora_contracts_planning-0.10.0-py3-none-any.whl": "2faf07d284c036c54f5c389e540750ae4ec5ffbb356e1d5f6fb7a935ed92a682",
+        "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_supervision-0.10.0-py3-none-any.whl": "fd181b9c5af4bff660d40f6e46e78365c2806b2c63a2cf1c9d908bb772ec60e2",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee"
+      }
+    },
+    "artifact": {
+      "owner": "amphora-data-artifacts",
+      "versions": {
+        "amphora-contracts-artifacts": "0.2.0",
+        "amphora-contracts-campaigns": "0.4.1",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-evidence": "0.5.13",
+        "amphora-contracts-graph-runtime": "0.13.0",
+        "amphora-contracts-representations": "0.3.0",
+        "amphora-contracts-research": "0.14.0",
+        "amphora-contracts-runtime": "0.1.0",
+        "amphora-contracts-tools": "0.1.0",
+        "amphora-data-artifacts": "0.30.0"
+      },
+      "wheels": {
+        "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+        "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+        "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+        "amphora_contracts_representations-0.3.0-py3-none-any.whl": "523feb10556ea0fdc07e39f2a874309fa65782b3e9035f072dffddf9a98ae18d",
+        "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+        "amphora_data_artifacts-0.30.0-py3-none-any.whl": "31339bd02bd0f9171977c4cce0e5e818d4bc2402fc866cbcf375ef4d7cceae16"
+      }
+    },
+    "numeric": {
+      "owner": "amphora-evolution-search",
+      "versions": {
+        "amphora-contracts-artifacts": "0.2.0",
+        "amphora-contracts-campaigns": "0.4.1",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-graph-runtime": "0.13.0",
+        "amphora-contracts-runtime": "0.1.0",
+        "amphora-contracts-search": "0.1.0",
+        "amphora-contracts-search-steps": "0.1.0",
+        "amphora-contracts-tools": "0.1.0",
+        "amphora-evolution-search": "0.5.0",
+        "amphora-tool-protocol": "0.2.0"
+      },
+      "wheels": {
+        "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+        "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+        "amphora_contracts_search_steps-0.1.0-py3-none-any.whl": "f94ad77e69708f0fc51a7a3e0660779a15cf972afe8c1b0dcb6cd24cc190d083",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+        "amphora_evolution_search-0.5.0-py3-none-any.whl": "2fdbfdbb6ba5a47d8a5ed9f7927f9efd7043e2b9d8152e1b872a628aff5edb74",
+        "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+      }
+    },
+    "replacement_runtime": {
+      "owner": "amphora-campaign-runtime",
+      "versions": {
+        "amphora-campaign-runtime": "0.65.0",
+        "amphora-contracts-artifacts": "0.2.0",
+        "amphora-contracts-campaigns": "0.4.1",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-draft-successor": "0.1.0",
+        "amphora-contracts-evidence": "0.5.13",
+        "amphora-contracts-execution-proofs": "0.1.0",
+        "amphora-contracts-graph-runtime": "0.13.0",
+        "amphora-contracts-knowledge": "0.8.0",
+        "amphora-contracts-planning": "0.10.0",
+        "amphora-contracts-research": "0.14.0",
+        "amphora-contracts-runtime": "0.1.0",
+        "amphora-contracts-supervision": "0.10.0",
+        "amphora-contracts-tools": "0.1.0"
+      },
+      "wheels": {
+        "amphora_campaign_runtime-0.65.0-py3-none-any.whl": "fe4a6f9d55081ec3810c1339f36f3b41d85d49eec6868e5a37642bbbe917a0b7",
+        "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+        "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_draft_successor-0.1.0-py3-none-any.whl": "8c6c90b1b3b847d7bef5c7c93e6e389085899c277d4e809a3f8a4cdebf393716",
+        "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+        "amphora_contracts_execution_proofs-0.1.0-py3-none-any.whl": "28a5d3f319564fbca4d41bf506de4e6562859345cbd2cf1146f10d902c2f6ee7",
+        "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+        "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+        "amphora_contracts_planning-0.10.0-py3-none-any.whl": "2faf07d284c036c54f5c389e540750ae4ec5ffbb356e1d5f6fb7a935ed92a682",
+        "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_supervision-0.10.0-py3-none-any.whl": "fd181b9c5af4bff660d40f6e46e78365c2806b2c63a2cf1c9d908bb772ec60e2",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee"
+      }
+    },
+    "evaluator": {
+      "owner": "amphora-synthetic-objectives",
+      "versions": {
+        "amphora-contracts-artifacts": "0.2.0",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-runtime": "0.1.0",
+        "amphora-contracts-search": "0.1.0",
+        "amphora-contracts-tools": "0.1.0",
+        "amphora-multi-input-worker": "0.1.0",
+        "amphora-synthetic-objectives": "0.2.0",
+        "amphora-tool-protocol": "0.2.0"
+      },
+      "wheels": {
+        "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+        "amphora_multi_input_worker-0.1.0-py3-none-any.whl": "2097adff2fdb7db3bc43bb49b98a97d7b6a34739a4455444c6e1951c85341904",
+        "amphora_synthetic_objectives-0.2.0-py3-none-any.whl": "7c605761b63d978ad56442a0e8e8063dae28c1a23fd80c1cb73af95396f12d2c",
+        "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+      }
+    },
+    "controller": {
+      "owner": "amphora-contracts-search-steps",
+      "versions": {
+        "amphora-contracts-campaigns": "0.4.1",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-graph-runtime": "0.13.0",
+        "amphora-contracts-runtime": "0.1.0",
+        "amphora-contracts-search": "0.1.0",
+        "amphora-contracts-search-steps": "0.1.0",
+        "amphora-contracts-tools": "0.1.0"
+      },
+      "wheels": {
+        "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+        "amphora_contracts_search_steps-0.1.0-py3-none-any.whl": "f94ad77e69708f0fc51a7a3e0660779a15cf972afe8c1b0dcb6cd24cc190d083",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee"
+      }
+    }
+  },
+  "limits": [
+    "Reconstructed test companion uses declared fixture image pins, not prior production image qualification",
+    "Actual Windows worker/Runtime/Data HTTP; no target-host deployment or scientific claim"
+  ],
+  "paid_calls": 0
+}
