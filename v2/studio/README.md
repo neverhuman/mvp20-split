@@ -62,3 +62,9 @@ and exact revisions come from Runtime; dirty/pending work blocks replacement. Re
 local owners prove loading, structural validation and unsaved-edit retention across
 mode changes. The original numeric draft is explicitly engineering-fixture authored.
 Predecessor carry and corrected-successor walkthrough remain separate.
+
+SQ-01/B1 Studio0.14 adds [quality projections and page model](src/page_models/quality/README.md)
+over existing strict feedback reads. Exact criterion/evidence identity, multiple
+weak points, bounded pages and optional proven Runtime output attachment are
+implemented; no new API or scientific verdict. Visible UI is B2, focus/proposals
+B3, actual owner/browser/independent qualification V1.

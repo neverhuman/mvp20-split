@@ -1,27 +1,32 @@
 # Restore
 
-Refreshed 2026-10-07 11:03:54 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 11:14:02 (America/Chicago). Read FIRST after compression.
 
 ## Current task
 
-BP-09 CLOSED100%,20/20, all5children archived/audited. Next SQ-01 activation coherence
-review (queued0%,Build0%,Verification0%); LR-01 workerreliability queued0 after SQ-01.
-Latest pushed e40a8e4a; final BP09closeout commit/push NEXT. No owner gate.
-Final Deployment0.15 independently installed .test-results/acceptance-owner-final-b:
-391copied tests/no skips and real12gate ledger pass (session40504EXIT0). Acceptance
-parser37tests1.40s127/128stmts45/46branches99%,core103/103+44/44=100%. V1 repaired
-exponentoverflow and hugeinteger JSON rejection. Final package differs from actual
-smoke only acceptance parser/README/RECORD; lifecycle and peerclient bytes unchanged.
-Actual smoke .test-results/acceptance-smoke session28610EXIT0 original/browser/blocked,
-zero calls/workers; five/seven/sixownersdrainexit0. Desktop1440/mobile390 inspected.
-Canonical Acceptance_Ledger/Smoke/Qualification.json; audits BP-09.05_Acceptance_Closeout
-and BP-09_Local_Deployment_Closeout. Frozen prior12evidence files untouched.
-Owner/operator commands deploy/local/OPERATIONS.md. Reusable qualification helper
-v2/dev/verify_acceptance_installation.py; smoke verify_acceptance_smoke.py.
-No tests/probes/builds running. No paidcalls. Workerfaults remain unresolved LR-01.
-Beforepush finish changedlink/boundary/lint/whitespace checks; generatedpackageinventory
-structurally refreshed only (not wholefoundationtests). Afterpush immediately SQ-01
-activation per MBT, read UIguidelines and reconcile public owner projections first.
+Latest pushed e247276e (BP09closed100%,20/20). SQ-01 B1 complete, ACTIVE25%,
+Build33.33%,Verification0%; B2 next. Commit/push B1 after contractpin/diff checks.
+Studio0.14 new src/page_models/quality/{attachment,projection,model}.ts +README,
+module-owned tests/page_models/quality/projection.test.ts. Reuses strict existing
+FeedbackModel/Lineage, no API/schema/servicechange.28 targetedtests pass0.89s,
+quality100%lines97.41%branches96.30%functions; TSbuildpass. Explicit20row criteria,
+exact need/assessment/profile refs, rawgapreason +evidence; accuracy/demonstratederror
+unsupported null, not inferred. QualityAttachment proves exact assessedsubject in
+pinnedRuntimevaluepages viaEvidenceContext. Multiple weakpoints coexist with
+successful execution. QualityModel subscribes sharedFeedbackModel, no duplicate
+fetch; preserves selection across samecontextrefresh, clears onrebind/denial/hide;
+late/reentrant responses safe. Inputs remain ownerdecoded, no ownerpolicy imported.
+NEXT B2 visible accessible quality panel, filters/details and provennodeattachment;
+reuse existing UI tokens and ExploreQuestion/Feedback hosting. Need reconcile how
+entry supplies explicit feedbackpins; no guessed campaign-to-question joins.
+UIguidelines and InteractionReferences read. B3focus/proposals and V1actualowner/
+browser/independentStudio remain. No ownergate, no paidcalls. LR-01queued afterSQ.
+No runningbuild/test/probe. Package+lock bumped0.14, README/tracker/MBT mirrored.
+
+BP09 final391independenttests .test-results/acceptance-owner-final-b;
+actualsmoke .test-results/acceptance-smoke, zero calls/workers,5/7/6drains0.
+Frozen Acceptance_Ledger/Smoke/Qualification.json; audits09.05+parent complete.
+Intermittent workerfaults remain LR-01; scientific efficacy/soak not claimed.
 
 ## Qualified evaluator / accepted B2
 
