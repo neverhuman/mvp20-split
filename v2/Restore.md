@@ -4,7 +4,10 @@ Refreshed 2026-10-07 11:51:00 (America/Chicago). Read FIRST after compression.
 
 ## Current task
 
-Latest pushed bfde56b9; next commit contains Studio0.16 human focus and contract decision.
+Latest implementation pushed: 1b293834 (Studio0.16 human focus and contract decision).
+Final schema generation checks, production boundaries, diff whitespace and4doc links pass.
+No running tests/builds/probes. Owner question: approve additive criterion-target profile
+in SQ-01.01, preserving old proposals and future-only effects? No approval received yet.
 SQ-01 is62.5%, Build83.33%, Verification0%. B1/B2 complete; B3 has two equal halves:
 human focus complete, AI proposal lineage pending. New scoped owner work is not credited.
 BP-09 closed100%,20/20. LR-01 remains queued. No tests/builds/probes currently running.
