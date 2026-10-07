@@ -24,6 +24,10 @@ def verify(args):
             install(path, package, ["sqlalchemy", "amphora_campaign_runtime", "amphora_agent_planning", "amphora_data_artifacts", "amphora_evolution_search"])
     locations = {key: getattr(args, key).absolute() for key in ("runtime", "artifact", "numeric", "replacement_runtime")}
     locations.update({key: dependencies / key for key in ("evaluator", "controller")})
+    if args.scenario == "correction":
+        if args.corrected_evaluator is None:
+            raise ValueError("Correction scenario requires a preserved separate evaluator installation")
+        locations["evaluator_corrected"] = args.corrected_evaluator.absolute()
     interpreters, packages = {}, {}
     for key, path in locations.items():
         packages[key] = json.loads((path / "manifest.json").read_bytes())
@@ -43,7 +47,8 @@ def verify(args):
     for owner in ("runtime", "artifact"):
         env["AMPHORA_" + owner.upper() + "_DATABASE_URL"] = URL.create("postgresql+psycopg", username=owner + "_service",
             password=state["password"], host=host, port=int(port), database=state["database"]).render_as_string(hide_password=False)
-    result = subprocess.run([interpreters["controller"], "-I", str(ROOT / "tests/integration/search_recovery/probe.py"), str(path)],
+    probe = "correction_probe.py" if args.scenario == "correction" else "probe.py"
+    result = subprocess.run([interpreters["controller"], "-I", str(ROOT / "tests/integration/search_recovery" / probe), str(path)],
                             cwd=output, env=env, capture_output=True, timeout=900)
     (output / "probe.log").write_bytes(result.stdout + result.stderr)
     assert result.returncode == 0, "Partial search recovery failed; inspect probe.log"
@@ -54,4 +59,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     for option in ("output", "dependencies", "runtime", "artifact", "numeric", "replacement-runtime"):
         parser.add_argument("--" + option, type=Path, required=True)
+    parser.add_argument("--scenario", choices=("partial", "correction"), default="partial")
+    parser.add_argument("--corrected-evaluator", type=Path)
     verify(parser.parse_args())

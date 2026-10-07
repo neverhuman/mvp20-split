@@ -1,0 +1,156 @@
+{
+  "timestamp_local": "2026-10-06 19:47:13",
+  "status": "passed",
+  "scope": "BP-08.05/B2.02",
+  "raw": ".test-results/corrected-search-20261006b/http/evidence.json",
+  "raw_sha256": "6d0f91bfd149572961df35b338ff3eabf2be1dc69a8db1cc5d3d1904aad6ca27",
+  "versions": {
+    "runtime": "0.65.0",
+    "numeric": "0.5.0",
+    "original_evaluator": "0.2.0",
+    "corrected_evaluator": "0.3.0"
+  },
+  "campaigns": {
+    "original": {
+      "run_id": "60172b7f48dc458fb8c81c34b0c196ce",
+      "attempts": 15,
+      "accepted_completions": 15
+    },
+    "corrected": {
+      "run_id": "913b763ddd95483fb3ab1de8d93e83df",
+      "attempts": 15,
+      "accepted_completions": 15
+    }
+  },
+  "unique_confirmed_reservations": 108,
+  "decision": {
+    "profile": "search-correction-evidence-v1",
+    "mode": "new_search_from_declared_seed",
+    "resume": false,
+    "authority": "synthetic_engineering_evidence_only",
+    "prior": {
+      "checkpoint": {
+        "artifact_id": "fa820b1408b84e139ffe3145d1534d06",
+        "scope": {
+          "tenant_id": "numeric-http",
+          "project_id": "f389f0fa9b9044ddbf0336aad13921a2"
+        },
+        "sha256": "496f07d53e0c1b321a6e042d62b9aeaa7bd1ab98dff41061a39f60b8665ead28",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "search.checkpoint",
+          "version": "1",
+          "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+        },
+        "size_bytes": 9882
+      },
+      "specification_sha256": "bd3c670ba21d98712f2cc470c306416ff445115471f0f3bc13970743c53ddfca",
+      "selection_sha256": "554c89a8a84a711d0a375ccab76a0ae4071fda0a0336543a2aee94cffdc5cd6a",
+      "evaluator": {
+        "capability_id": "synthetic.numeric-objectives",
+        "release": "0.2.0",
+        "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "contract_version": "1"
+      }
+    },
+    "next": {
+      "specification": {
+        "artifact_id": "c2861b19c9fe47b5a6c36c6fec829f6d",
+        "scope": {
+          "tenant_id": "numeric-http",
+          "project_id": "f389f0fa9b9044ddbf0336aad13921a2"
+        },
+        "sha256": "031f1ec5d7e25608610a327692867b91858875275b41bba3407c5797261ba914",
+        "media_type": "application/json",
+        "schema_ref": {
+          "schema_id": "search.specification",
+          "version": "1",
+          "sha256": "e829b92d2145b0916847b06cb6e73c4a5aea17addea8bbdd1e9706dbd1cc79a7"
+        },
+        "size_bytes": 1644
+      },
+      "specification_sha256": "031f1ec5d7e25608610a327692867b91858875275b41bba3407c5797261ba914",
+      "evaluator": {
+        "capability_id": "synthetic.numeric-objectives",
+        "release": "0.3.0",
+        "image_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "contract_version": "1"
+      }
+    },
+    "fitness_reuse": "forbidden_evaluator_revision_changed",
+    "scientific_improvement": "not_established"
+  },
+  "intent": {
+    "artifact_id": "027678c31b2043f48f9fb1ff079b628f",
+    "scope": {
+      "tenant_id": "numeric-http",
+      "project_id": "f389f0fa9b9044ddbf0336aad13921a2"
+    },
+    "sha256": "ec678bfc9350c3c870174d844f2d627017616944a42c1cde7981d36b25148fdc",
+    "media_type": "application/json",
+    "schema_ref": {
+      "schema_id": "fixture.search-correction",
+      "version": "1",
+      "sha256": "119ad8ae4abcf766b51af1b6229915ed9c3694a1bada489717e4c14a0e67b29e"
+    },
+    "size_bytes": 1728
+  },
+  "handoff": {
+    "artifact_id": "3cb5e7387eda40298653109a803069a3",
+    "scope": {
+      "tenant_id": "numeric-http",
+      "project_id": "f389f0fa9b9044ddbf0336aad13921a2"
+    },
+    "sha256": "b23c00972ae983edce4b084e7d14b38a0fba0316528a2c17bb1bd3e17231b634",
+    "media_type": "application/json",
+    "schema_ref": {
+      "schema_id": "fixture.search-correction",
+      "version": "1",
+      "sha256": "119ad8ae4abcf766b51af1b6229915ed9c3694a1bada489717e4c14a0e67b29e"
+    },
+    "size_bytes": 1986
+  },
+  "lineage": {
+    "schema_version": "1",
+    "scope": {
+      "tenant_id": "numeric-http",
+      "project_id": "f389f0fa9b9044ddbf0336aad13921a2"
+    },
+    "run_id": "913b763ddd95483fb3ab1de8d93e83df",
+    "plan_sha256": "f482c1b75c8ed238edb6083745043cb48acbdfb7b0523339b61701aa0cd36818",
+    "predecessor": {
+      "run_id": "60172b7f48dc458fb8c81c34b0c196ce",
+      "plan_sha256": "3e2afe0dfc1a90405220145acc0d36dd35af7f3c3a4ce5f7b48050834d2d0889",
+      "revision": 160
+    },
+    "carried": [
+      {
+        "target_port": "prior_checkpoint",
+        "source": {
+          "kind": "run_output",
+          "port": "result"
+        },
+        "expected_value_sha256": "1efa9451928ff3f5389842f5487bcb8ed15ff075651deb6063435a6925ef1e9a"
+      }
+    ],
+    "transfer_sha256": "7e2f95aaf41dc47307646cfa8acb6edfd083af90ae8650a8848b3591f9020023"
+  },
+  "old_checkpoint_sha256": "496f07d53e0c1b321a6e042d62b9aeaa7bd1ab98dff41061a39f60b8665ead28",
+  "oracles": [
+    "New specification/search identity and evaluator release; no old candidate ranks reused",
+    "Prior checkpoint carried as historical input/output with exact fingerprint",
+    "Old completion records and checkpoint bytes unchanged after fresh Runtime restart",
+    "Successor command replay preserved",
+    "Both releases have equal input/output/policy schema and policy bytes"
+  ],
+  "failure_history": [
+    "First proof completed execution but fixed twelve delivery sweeps left three confirmations pending; no notification sink configured",
+    "Bounded drain now allows sixty passes/180 seconds and preserves all-confirmed requirement plus raw diagnostics"
+  ],
+  "limits": [
+    "Release0.3 changes identity, not arithmetic; no scientific correction or gain claimed",
+    "Explicit new search from seed; prior checkpoint is historical carry, never relabeled resume",
+    "Actual Windows peers with declared fixture image pins; no Linux deployment claim"
+  ],
+  "paid_calls": 0
+}

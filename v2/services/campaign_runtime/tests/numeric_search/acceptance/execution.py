@@ -3,6 +3,7 @@
 import hashlib
 import json
 import subprocess
+import time
 from concurrent.futures import ThreadPoolExecutor
 
 
@@ -86,16 +87,27 @@ def execute(e, http, *, failure=None):
     digest = hashlib.sha256(json.dumps({"profile": "amphora-carried-value-v1", "value": value}, sort_keys=True,
                                       separators=(",", ":"), ensure_ascii=True).encode()).hexdigest()
     cut = http.decoded(e.runtime.endpoint, "/v1/graph-runs/" + e.active_run + "/carry-sources", e.tokens["admin"])
-    assert cut["sources"][0]["value_sha256"] == digest
+    exported = next(item for item in cut["sources"] if item["source"] == {"kind": "run_output", "port": "result"})
+    assert exported["value_sha256"] == digest
     reservations = {event["response"]["outcome"]["binding"]["reservation_id"]: event["response"]
         for event in e.artifact_relay.events if event["path"] == "/v1/reservations" and event["status"] == 200}
-    for _ in range(12):
-        e.owner_command("deliver", "--limit", "100", "--time-budget", "10")
-        retained = {key: http.decoded(e.artifact.endpoint, "/v1/reservations/" + key, e.tokens["runtime"]) for key in reservations}
+    retained, deliveries = {}, []
+    deadline = time.monotonic() + 180
+    # Notification retries share the bounded queue with artifact confirmations.
+    # Preserve the confirmation oracle, but allow the larger successor backlog.
+    for _ in range(60):
+        deliveries.append(e.owner_command("deliver", "--limit", "100", "--time-budget", "10"))
+        for key in reservations:
+            if key not in retained or retained[key]["outcome"]["status"] != "confirmed":
+                retained[key] = http.decoded(e.artifact.endpoint, "/v1/reservations/" + key, e.tokens["runtime"])
+        (e.root / (e.active_run + "-retention.json")).write_text(
+            json.dumps({"deliveries": deliveries, "retained": retained}), encoding="utf-8")
         if all(receipt["outcome"]["status"] == "confirmed" for receipt in retained.values()):
             break
+        if time.monotonic() >= deadline:
+            break
     assert reservations and all(receipt["outcome"]["status"] == "confirmed" for receipt in retained.values())
-    assert http.decoded(e.runtime.endpoint, "/v1/graph-runs", e.tokens["admin"], e.admission_command) == e.admission
+    assert http.decoded(e.runtime.endpoint, getattr(e, "admission_path", "/v1/graph-runs"), e.tokens["admin"], e.admission_command) == e.admission
     return {"graph": page, "admission": e.admission, "reports": reports, "final": final, "cut": cut,
             "retained": retained, "workers": outcomes, "runtime_requests": e.runtime_relay.events,
             "artifact_requests": e.artifact_relay.events, "interruption": None if failure is None else failure.evidence}

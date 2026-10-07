@@ -1,6 +1,6 @@
 # Synthetic numeric objectives
 
-- Owner: BP-08.02; release 0.2.0, current-release Registry and replacement acceptance passed 2026-10-06 12:46:43 (America/Chicago).
+- Owner: original BP-08.02 boundary; release0.3.0 is the BP-08.05 correction-identity fixture, qualification pending. Prior0.2 Registry/replacement acceptance remains historical evidence below.
 - Design: [Search](../../docs/Architecture/Campaigns/Search.md); standalone evaluator, separate from the search owner.
 
 This tool declares two required Artifact inputs: parameters (public EvaluationRequest) and policy (the exact synthetic policy). It emits EvaluationObservation. The fixed synthetic-quadratic-v1 problem accepts 1..32 finite dimensionless genes in [-1e6,1e6]. It computes cost=sum(x_i^2) and/or distance=sum((x_i-1)^2), preserving requested objective order. The profile has no hard constraints, so violation is exactly zero; this is a declared synthetic problem, not a fallback for missing constraints. Output quality is always synthetic.
@@ -14,5 +14,12 @@ No search-owner imports, population selection, graph iteration, database, model 
 Verified 2026-10-06 11:20:45:144 evaluator/multi-input/legacy-SDK/boundary checks20.18s. Kernel and metadata100% measured coverage; aggregate parent coverage78% because CLI/offline subprocess paths and configured worker helper are not attributed/exercised here. Arithmetic [1,-2] gives cost5/distance9; policy identity, content, evaluator, units and applicability mismatches reject. Actual Runtime/Data HTTP, image arithmetic and Registry/replacement checks subsequently passed; process coverage is not inferred from those scenarios.
 
 Release0.2.0 adds the existing Registry-required synthetic-tests applicability marker; formulas and payload schemas are unchanged. Requalification and actual-owner replacement passed in BP-08.02/V1. Prior0.1.0 images/descriptors remain immutable historical evidence.
+
+Release0.3.0 creates a distinct immutable evaluator identity for the successor
+correction proof. Arithmetic, policy bytes and payload schemas are unchanged;
+this does not claim a scientific correction or numerical improvement. New
+search specifications/evaluations/selection must pin0.3 explicitly. Original0.2
+checkpoints and ranks stay immutable and cannot resume or provide fitness under
+the new identity. The old independent0.2 installation is preserved separately.
 
 [Replacement evidence](../../docs/Audits/Evidence/BP-08-Search/Registry_Replacement.json) verifies matching image/installed local wheel closures, registered/active descriptors, explicit real policy Artifacts, six evaluations per campaign and independent replacement. [Image qualification](../../docs/Audits/Evidence/BP-08-Search/Eligibility_Requalification.json) retains the fixed-box arithmetic golden and schema hashes.
