@@ -1,31 +1,49 @@
 # Restore
 
-Refreshed 2026-10-07 15:01:08 America/Chicago. Read FIRST after compression.
+Refreshed 2026-10-07 15:13:05 America/Chicago. Read FIRST after compression.
 
 ## Current handoff
 
-Demo2026-10-08 11am CT for internal nontechnical colleagues. DEMO-01 delivered100%;
+Demo2026-10-08 11am CT internal nontechnical colleagues. DEMO-01 delivered100%;
 presenter acceptance pending. Frozen launch/assets below remain unchanged.
 SQ-01 active83.33%, Build100%, Verification0%. B1/B2/B3/C1/C2 complete100%.
 NEXT V1a actual-owner quality/proposal/subsequent-campaign journey and intermittent
 read-path qualification; V1b independent Studio replacement; V1c scoped drift audit.
 Three equal V1units all0. No new decision/modelcall/services/runningjobs.
-P1 committed/pushedcc6df406; P2/P3 nextcommit. SourceStudio0.17 adds generated/followup
-4publicroots exactvalidationpins, Runtime/Data permissions+captureSHA, immutable
-20row intent projection, CriterionClient exactquestion/need/assessmentstatusSHA.
-SupervisionModel now owns optional FollowupModel/ CriterionModel and clears them on
-allpublish/bind/invalidate/dispose; selection only current readyresponsepage. Local
-entry injects them; FollowupRegion replaces responses with proposedimprovement,
-expectedlearning,unresolved/legacyintent and exactrecorddrilldown. Adoptionunverified.
-All286Studio tests pass, build/generated/diffcheckpass. P3browser1440/390/axe/overflow,
-keyboard,pagination,denial,delayednavigation pass. Screenshots actually viewed.
-Evidence docs/Audits/Evidence/SQ-01-Quality/B3_Proposal_UI.json. Initialaxeharness used
-browser.newPage unsupported; fixed explicitcontext; finalpass. Existing supervisor
-browserregressionpass. FrozenDemo0.16.1 untouched. No backendroutes/migrations.
-V1 needs dedicated actualowners installed from current source, not frozen demo's
-older owners. Reuse dev public acceptance helpers; no private peer imports/SQL.
-Read moduleREADME/index first. Prior actual demo original-focus-c feedbackreadfailure
-remains unresolved; no repeat-read success establishes repair. LR01 queuedafterSQ.
+
+P1cc6df406 and P2/P3 2d90dce1 committed/pushed. SourceStudio0.17 adds generated/followup
+4publicroots exactvalidationpins, Runtime/Data permission+captureSHA, immutable20row
+intent projection, CriterionClient exactquestion/need/assessmentstatusSHA.
+SupervisionModel owns optional FollowupModel/ CriterionModel, clears onallpublish/
+bind/invalidate/dispose; onlycurrentreadyresponsepage selects. Localentry injects;
+FollowupRegion replacesresponses with improvement/learning/unresolved/legacyintent
+and exactrecorddrilldown. Adoptionunverified. All286tests/build/generatedcheckpass.
+P3browser1440/390/axe/overflow/keyboard/pagination/denial/delayednavigation pass;
+screenshots viewed. Evidence B3_Proposal_UI.json. Existing supervisorbrowserpass.
+Uncommitted tiny FollowupClient cancellationcheck afterpayloadhash passed10transport
+checks andbuild; doesnotchangefrozendemo.
+
+V1a preparation current checkpoint: dev/prepare_followup_acceptance.py installed4
+currentisolatedowners in ROOT .test-results/sq01-followup-owners-20261007b:
+artifact0.31/research0.40/planning0.104/runtime0.66. Manifestinstalled_only, peer-private
+importsforbidden. Initiala wrongResearchpackagename failed; fixedbpasses. No demoedit.
+dev/verify_followup_records.py currentownedPGfixture proof passed ROOT
+.test-results/sq01-followup-records-20261007b;3exactunassessedcriteria, Dataupload and
+Researchdeclaration/publicreadback,2ownersstopped. Initiala lackedexistingbytesroot;
+fixedrootcreation andselectedOwnerhelperwithResearch/health. No recordswrittenbya.
+Records.json and ownerconfiguration names are public; no credentialfiles. Recreate
+fixtureenv from owned_state only inside orchestrator; never dumpsecretstate/logs.
+README dev/followup_acceptance defines boundary. No migration/reset/newstore/model.
+Installedpackages isolated, actualproposal/subsequentcampaign/browser NOT yet done.
+NEXT compose Runtimefollowuprecipe + Planningfollowupseed with these publiccriteria,
+Datauploadedtemplate/context; use owner-local noSQL compiler and deterministic test
+provider, publicAPI execution/admission. Existing oldownerexport_demo compiles scalar
+pack->finish but onlyoldrecipe; do not mutatefrozendemo. Newtesthelper can reuse owned
+compilerpattern. Planning configuredworker supportsnewseed but onlyabstainfixture;
+for targetedintent use explicit test-only provider port, not newliveprovideractivation.
+Earlier demo original-focus-c unverifiedfeedback remainsunresolved; d8successfulreads
+notrepair. Failurefiles ROOT.test-results/demo-20261008/original-focus-c/{failure.txt,
+browser-evidence.json,browser.log,failure.png} notreadagain yet. LR01queuedafterSQ.
 
 Launch `v2/Start-Demo.ps1` (original) or `-Scenario successor`; Ctrl+C drains.
 Uses installedDeploymentPython .test-results/acceptance-owner-final-b and explicit

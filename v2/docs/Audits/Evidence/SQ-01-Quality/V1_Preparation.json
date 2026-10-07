@@ -1,0 +1,31 @@
+{
+  "timestamp_local": "2026-10-07 15:13:05",
+  "status": "preparation_only",
+  "installation": ".test-results/sq01-followup-owners-20261007b",
+  "records": ".test-results/sq01-followup-records-20261007b",
+  "versions": {
+    "artifact": "0.31.0",
+    "research": "0.40.0",
+    "planning": "0.104.0",
+    "runtime": "0.66.0"
+  },
+  "verified": [
+    "Four isolated wheel closures reject peer implementations",
+    "Actual Data upload/finalization",
+    "Actual Research question/need declarations and exact reads",
+    "Three explicitly unassessed criterion references",
+    "Two owner hosts stopped"
+  ],
+  "retained_failures": [
+    "Installation a: wrong Research package name; corrected b",
+    "Records a: missing existing storage root; corrected b"
+  ],
+  "pending": [
+    "Actual Planning/Runtime proposal exchange",
+    "Subsequent campaign target journey",
+    "Independent Studio replacement",
+    "Prior intermittent feedback read cause"
+  ],
+  "paid_calls": 0,
+  "demo_unchanged": true
+}

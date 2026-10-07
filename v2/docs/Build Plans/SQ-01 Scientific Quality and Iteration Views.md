@@ -3,7 +3,7 @@
 ## Canonical tracker
 
 - Status: active successor to closed BP-05; B1/B2 and B3 human-focus half complete; C1/C2 complete; B3 complete; V1 acceptance active.
-- Last refreshed: `2026-10-07 15:01:08` (America/Chicago).
+- Last refreshed: `2026-10-07 15:13:05` (America/Chicago).
 - Completion: 83.33%; Build100%, Verification0%; 5/6 unit-weight gates complete; C2=100%; B3=100%.
 - Owner: Studio presentation; Research/Knowledge own assessments; Agents owns proposals.
 - Prerequisites: BP-06 owner quality/correction projections and BP-07.03 proposal contracts; activation coherence audit and exact DTO reconciliation before implementation.
@@ -232,3 +232,11 @@ V1 execution units (same existing scope, equal weight within V1): V1a actual-own
 quality/proposal/subsequent-campaign journey and intermittent read-path qualification;
 V1b independent Studio replacement from public contracts/module READMEs; V1c scoped
 architecture drift audit/closeout. All0%; V1a active. No scientific efficacy claim.
+
+2026-10-07 15:13:05: V1a preparation built four isolated current owners (Data0.31,
+Research0.40, Planning0.104, Runtime0.66). Actual Data/Research HTTP retains three
+unassessed criteria and exact readbacks; both hosts stopped. Initial install a used
+wrong Research package name; b passes. First record probe a lacked existing storage
+root; b passes after fixture correction. No demo/store reset, migrations or paid calls.
+This is preparation, not full journey; V1a/V1b/V1c remain0%, overall83.33/Build100/
+Verification0. Evidence V1_Preparation.json. Next actual Planning/Runtime exchange.

@@ -62,6 +62,7 @@ export class FollowupClient implements FollowupSource {
     active(signal);
     const proposal = observation.proposal;
     requireReply(await sha256(new TextEncoder().encode(proposal.payload_json)) === proposal.payload_sha256);
+    active(signal);
     const kind = proposalProfile(proposal.output_schema);
     if (!kind) return { selection, record, document: null };
     let interpreted: ProposalDocument;

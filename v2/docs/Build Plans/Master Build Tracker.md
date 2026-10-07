@@ -9,11 +9,11 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-01 through BP-09 closed; SQ-01 V1 acceptance active.
-- Last refreshed: `2026-10-07 15:01:08` (America/Chicago).
+- Last refreshed: `2026-10-07 15:13:05` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: SQ-01/V1; DEMO-01 bounded walkthrough delivered for2026-10-08 11:00:00 CT.
 - Primary active task: SQ-01/V1a actual-owner subsequent-campaign journey; frozen demo remains separate.
-- Next task: V1a actual-owner journey, V1b independent replacement, V1c audit.
+- Next task: V1a Planning/Runtime exchange over verified Data/Research criteria; V1b independent replacement, V1c audit.
 - Implementation completion: SQ-01=83.33%, Build100%, Verification0%; BP-09 closed100%,20/20.
 - Blockers: none for approved SQ-01.01 implementation; scientific corpus remains TBA for later scientific qualification.
 - Acceptance posture: bounded local demo/recovery/replacement complete; intermittent worker failures assigned LR-01, no soak claim.
