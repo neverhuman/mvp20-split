@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-10-06T23:40:34-05:00",
+  "status": "passed",
+  "original": ".test-results/local-deployment-runtime-20261006a",
+  "replacement": ".test-results\\local-deployment-runtime-20261006b",
+  "byte_identical_wheels": {
+    "amphora_deployment-0.2.0-py3-none-any.whl": "086e7aa2781abd31c8dbb4ac9749a90baa37ef9e75fc464981ceed050219bde2"
+  },
+  "limits": "Independent install/hash reproducibility; retained-data replacement is V1."
+}

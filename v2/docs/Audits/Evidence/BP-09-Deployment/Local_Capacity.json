@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-10-06T23:34:40-05:00",
+  "scope": {
+    "tenant_id": "internal",
+    "project_id": "capacity-bc8880730fc346588c138da3733f306e"
+  },
+  "installation_manifest_sha256": "30ff10626495bfe1437ffd8c3417eb0e6fdf015326ffdac49d44acbd00b59700",
+  "limits": "Eight-byte service-enforced quota on actual local storage; not physical disk exhaustion or power-loss certification.",
+  "status": "passed",
+  "artifact": {
+    "artifact_id": "65fabad92689478286e7e36856e08263",
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "capacity-bc8880730fc346588c138da3733f306e"
+    },
+    "sha256": "04d7f1ca37506143dee3f8a97198098719b4c2452ad59f94c2440633ad301db2",
+    "media_type": "application/octet-stream",
+    "schema_ref": {
+      "schema_id": "fixture.bytes",
+      "version": "1",
+      "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+    },
+    "size_bytes": 8
+  },
+  "quota_rejection": {
+    "reason_code": "capacity_exhausted"
+  },
+  "original_receipt_replayed": true,
+  "original_bytes_preserved": true,
+  "non_loopback_denials": 3,
+  "invalid_token_status": 401
+}

@@ -4,11 +4,11 @@ Refreshed 2026-10-06 23:32:34 (America/Chicago). Read FIRST after compression.
 
 ## Current task
 
-BP-09.02/B3 selected-host failure and recovery matrix. B1/B2 complete.
-Child50%, Build66.67%, Acceptance0%; BP-09 parent30%,6/20. BP-09.01 and BP-08 closed.
+BP-09.02/V1 independent replacement/browser compatibility/scoped drift audit. B1-B3 complete.
+Child75%, Build100%, Acceptance0%; BP-09 parent35%,7/20. BP-09.01 and BP-08 closed.
 Owner chose this Windows x86_64/Python3.12 computer and local access127.0.0.1 only.
 Continue until genuinely needed; commit/push significant verified work. No current decision blocker.
-B2.01 pushed d15276f1. B2.02 ready for commit after diff checks; all tests/probes exited.
+B2.01 pushed d15276f1; B2.02 pushed77a2659a. B3 ready to commit; all tests/probes exited.
 No owner/gateway/supervisor processes remain; dedicated PostgreSQL/Qdrant remain running.
 
 ## Latest verified B2 boundary
@@ -75,15 +75,23 @@ assembly remains BP-09.03. Earlier actualbrowser proof v2/.test-results/studio-l
 
 ## Next tasks
 
-Commit/push B2.02 checkpoint; then B3 bounded failure matrix. Alreadyactual wrong-role rejection,
-loopback/exclusiveprocess/auth, dependencyoutage/receiptpreservation/drain. Still need bounded
-storage exhaustion/deniednetwork/providerdisabled diagnostics and selectedartifactcompatibility
-matrix, plus targeted missingfailure paths. Data Artifact publication.UploadLimits has scope_bytes
-and actualHTTPuploadquota; inspect owningREADME/publicAPI for bounded-storage test. Do NOT fill
-hostdisk. V1 independently rebuilds deployment/gateway and proves replacement with retaineddata,
-then scopeddriftaudit beforechildcloseout. Scientific descriptorsLinux-only; laterBP09.03 must
-qualify compatibletools beforeactivation, not relabeloldreleases. No paidcalls in thischild.
-
+Commit B3 then V1. B3 evidence copied to docs/Audits/Evidence/BP-09-Deployment:
+Local_Capacity (8-byte servicequota notphysicaldiskfull), Wrong_Roles (five correctmigrator
+CLI rejection), Provider_Unavailable (installedPlanningloopback503/refusal,noexternalcall),
+Current_Profile (actualindependentDeploymentCLIvalidate/preflight,current7hostsCPUonly),
+Deployment_Reproduction (two fresh0.2installsidenticalwheelsha).
+FreshDeployment0.2 ROOT.test-results/local-deployment-runtime-20261006{a,b}. Use b for
+actual V1 independentcontroller; verify_local_readonly.py imports only Deployment+stdlib,
+so run with isolated b Python -I scriptpath to make sys.executable the installedcontroller.
+Add replay-evidence option to replay original Registry command/receipt from Local_Outage_Drain
+withoutnewmigration/admission. Retained artifact/bytes from Local_Capacity can be reread using
+its stored scope/capacity configuration if needed. Browser should requalify isolated gateway0.2
+using AMPHORA_GATEWAY_TEST_PYTHON and existing studio/tests/browser/local_entry.mjs.
+Independentcontroller builds passed; V1 execution/replacement/audit remain. No owner blocker.
+Providerprobe source owned by Planning/tests/openai_provider/unavailable_probe.py, noPytest import;
+uses explicit test-only connectionfactory through real installedadapter, preservesunknownusage.
+No production source changed in B3. Boundarycheckpassed. ScientificLinux-onlytools and actual
+model/campaign/Design-Explore shell remain BP09.03 after acceptance. No paidcalls in thischild.
 ## Operating rules
 
 Read v2/AGENTS.md. v1 read-only; noJARVIS/subagents/goals. PYTHONUTF8=1 each exec.

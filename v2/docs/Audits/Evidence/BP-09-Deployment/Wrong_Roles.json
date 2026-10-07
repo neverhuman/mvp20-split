@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-10-06T23:36:46-05:00",
+  "owners": [
+    {
+      "owner": "runtime",
+      "wrong_role": true,
+      "exit_code": 2,
+      "passed": true,
+      "installation_manifest_sha256": "a26699514fb9a4c5d1dfd2f76cc61f1cca299ec13f0a119bd3ab36de32c96935"
+    },
+    {
+      "owner": "artifact",
+      "wrong_role": true,
+      "exit_code": 2,
+      "passed": true,
+      "installation_manifest_sha256": "30ff10626495bfe1437ffd8c3417eb0e6fdf015326ffdac49d44acbd00b59700"
+    },
+    {
+      "owner": "registry",
+      "wrong_role": true,
+      "exit_code": 2,
+      "passed": true,
+      "installation_manifest_sha256": "42bea6ed62b9b5bbad10596e977277ad10aa22f572c9a07d6ef353eba04027b8"
+    },
+    {
+      "owner": "research",
+      "wrong_role": true,
+      "exit_code": 2,
+      "passed": true,
+      "installation_manifest_sha256": "92e2b73029637205cf93eda1b69f83cb2db0588845b05d04d6b8df9c8ce1267d"
+    },
+    {
+      "owner": "knowledge",
+      "wrong_role": true,
+      "exit_code": 2,
+      "passed": true,
+      "installation_manifest_sha256": "c342a6ff08fc8123cd1e9eef5f60c5a869e2a0616fdc56d21579d34bb4c9689d"
+    }
+  ],
+  "status": "passed",
+  "limits": "Public installed startup-check CLIs. Planning wrong-role serving proof is separate."
+}

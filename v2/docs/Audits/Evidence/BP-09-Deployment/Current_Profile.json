@@ -1,0 +1,76 @@
+{
+  "checked_at": "2026-10-06T23:39:58-05:00",
+  "status": "passed",
+  "owners": {
+    "runtime": {
+      "release": "0.65.0",
+      "manifest_sha256": "a26699514fb9a4c5d1dfd2f76cc61f1cca299ec13f0a119bd3ab36de32c96935"
+    },
+    "artifact": {
+      "release": "0.30.0",
+      "manifest_sha256": "30ff10626495bfe1437ffd8c3417eb0e6fdf015326ffdac49d44acbd00b59700"
+    },
+    "registry": {
+      "release": "0.1.0",
+      "manifest_sha256": "42bea6ed62b9b5bbad10596e977277ad10aa22f572c9a07d6ef353eba04027b8"
+    },
+    "research": {
+      "release": "0.40.0",
+      "manifest_sha256": "92e2b73029637205cf93eda1b69f83cb2db0588845b05d04d6b8df9c8ce1267d"
+    },
+    "knowledge": {
+      "release": "0.18.0",
+      "manifest_sha256": "c342a6ff08fc8123cd1e9eef5f60c5a869e2a0616fdc56d21579d34bb4c9689d"
+    },
+    "planning": {
+      "release": "0.99.0",
+      "manifest_sha256": "9749d1addd9c67465cb9d8f899ada52e660fd6eebc9e8b6f5a15b3fd55bcf704"
+    },
+    "gateway": {
+      "release": "0.2.0",
+      "manifest_sha256": "022223a9cfb706e88542d3c4fbee366373943f795529f732a616a85d9cbfb341"
+    }
+  },
+  "reports": {
+    "validate": {
+      "profile_id": "local-current-infrastructure",
+      "readiness_assessed": false,
+      "status": "profile_valid"
+    },
+    "preflight": {
+      "authorizes_installation": false,
+      "blockers": [],
+      "limitations": [
+        "configuration_and_read_only_observations_only",
+        "operator_storage_evidence_not_independently_validated",
+        "filesystem_durability_and_network_exposure_require_target_acceptance",
+        "no_model_request_or_spending_authorized"
+      ],
+      "observation": {
+        "accelerator": {
+          "device_count": null,
+          "status": "not_required"
+        },
+        "architecture": "x86_64",
+        "artifact_directory_exists": true,
+        "cpu_count": 24,
+        "free_bytes": 793653129216,
+        "hostname": "Workshop",
+        "limitations": [
+          "read_only_observation",
+          "durability_not_tested",
+          "network_exposure_not_tested",
+          "provider_not_contacted"
+        ],
+        "memory_bytes": 68553510912,
+        "observed_at": "2026-10-06T23:39:58-05:00",
+        "operating_system": "windows",
+        "profile_sha256": "8609b67a9b1887615215491caca00a54f10e1aad99a9b0be4cdfa2d964391749",
+        "python": "3.12",
+        "storage_semantics": "unverified"
+      },
+      "status": "preflight_passed"
+    }
+  },
+  "limits": "CPU-only native owner/gateway installations; no accelerator workload or Linux-only scientific eligibility. Provider disabled, zero external calls."
+}
