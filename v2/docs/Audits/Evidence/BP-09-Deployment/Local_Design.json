@@ -1,0 +1,172 @@
+{
+  "timestamp_local": "2026-10-07 06:07:49",
+  "status": "passed",
+  "run_id": "fc257cf8882147cb8cca56c778837e60",
+  "scope": {
+    "tenant_id": "internal",
+    "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+  },
+  "browser": {
+    "status": "passed",
+    "run_id": "fc257cf8882147cb8cca56c778837e60",
+    "scenarios": [
+      "1440: actual execution, keyboard reasoning, selected abstention, required knowledge, domain navigation and hypothesis, public owner trace, accessibility",
+      "390: actual execution, keyboard reasoning, selected abstention, required knowledge, domain navigation and hypothesis, public owner trace, accessibility"
+    ],
+    "screenshots": [
+      "execution-1440.png",
+      "reasoning-1440.png",
+      "domain-1440.png",
+      "design-1440.png",
+      "execution-390.png",
+      "reasoning-390.png",
+      "domain-390.png",
+      "design-390.png"
+    ],
+    "reads": [
+      {
+        "width": 1440,
+        "graph_nodes": 39,
+        "question": {
+          "scope": {
+            "tenant_id": "internal",
+            "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+          },
+          "question_id": "question",
+          "revision": 1
+        },
+        "knowledge_snapshot": {
+          "graph": {
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+            },
+            "graph_id": "domain"
+          },
+          "revision": 1,
+          "sha256": "9d24c091b34a72bf865618352d30cb1a428189d17b415d2bde3202901f39fdec"
+        },
+        "context_assertions": 1
+      },
+      {
+        "width": 390,
+        "graph_nodes": 39,
+        "question": {
+          "scope": {
+            "tenant_id": "internal",
+            "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+          },
+          "question_id": "question",
+          "revision": 1
+        },
+        "knowledge_snapshot": {
+          "graph": {
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+            },
+            "graph_id": "domain"
+          },
+          "revision": 1,
+          "sha256": "9d24c091b34a72bf865618352d30cb1a428189d17b415d2bde3202901f39fdec"
+        },
+        "context_assertions": 1
+      }
+    ]
+  },
+  "final": {
+    "owners": {
+      "artifact": {
+        "owner": "artifact",
+        "pid": 26532,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      },
+      "gateway": {
+        "owner": "gateway",
+        "pid": 24420,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      },
+      "knowledge": {
+        "owner": "knowledge",
+        "pid": 2452,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      },
+      "planning": {
+        "owner": "planning",
+        "pid": 6552,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      },
+      "registry": {
+        "owner": "registry",
+        "pid": 24396,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      },
+      "research": {
+        "owner": "research",
+        "pid": 6752,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      },
+      "runtime": {
+        "owner": "runtime",
+        "pid": 14628,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      }
+    }
+  },
+  "assets": {
+    "index.html": "0c60b48d2bf03c539e9f7f14f773d3fb7652fade37209178f9a3790c893e45c5",
+    "app.js": "c58e606c9d0a13ed550c03aead8093aec6a002efa6d3ea7082e0d7233236bcca",
+    "app.css": "91910d1b3a8b1c127a21bb8705987eb2c76eeb98403680405ffb46d68e9e5864"
+  },
+  "provider_calls": 0,
+  "workers_started": false,
+  "limits": [
+    "Actual local gateway and six retained owners; synthetic science only",
+    "Includes real saved-draft validation; no campaign admission, no model-authored topology",
+    "Original graph/source/model history preserved; successor carry/trace remains open"
+  ],
+  "studio": "0.12.0",
+  "draft": {
+    "draft_id": "demo-numeric-666140c686214e8bb4abe81ca43ebe68",
+    "revision": 1,
+    "content_sha256": "c18d85e80fa5c67d97123a629f444aa0e85bccd883f7d4b9642b0e416d5bc327",
+    "title": "Synthetic numeric campaign (engineering fixture)"
+  },
+  "verification": {
+    "draft_library_tests": 8,
+    "library_coverage": {
+      "lines_percent": 100,
+      "branches_percent": 95.16,
+      "functions_percent": 93.33
+    },
+    "uncovered": "Some short-circuit/lifecycle and activation-pending alternatives; existing activation model separately tested",
+    "draft_browser_regressions": "passed",
+    "published_contracts": "unchanged; generator check passed",
+    "assets": "fresh a/b byte-identical",
+    "visual_review": "actual Design1440/390 screenshots inspected",
+    "raw": ".test-results/local-browser-design-20261007a",
+    "preparation": ".test-results/local-authoring-materials-20261007b",
+    "preparation_recovery": "Original save receipt replayed after test comparison failure; public DTO defaults normalized independently; all resumed owners drained0"
+  }
+}

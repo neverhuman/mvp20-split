@@ -11,24 +11,30 @@ import { SupervisionModel } from '../../page_models/supervision/model.js';
 import { MonitorWorkspace } from '../monitor_workspace.js';
 import { WorkspaceSelection } from '../../page_models/session/selection.js';
 import { LocalKnowledge } from './knowledge.js';
+import { LocalDesign } from './design.js';
+import { DraftLibrary } from '../../page_models/design/library.js';
+import { AuthoringClient } from '../../transport/authoring.js';
 import './style.css';
 
 function Campaign({ context, search }: { context: WorkspaceContext & { run_id: string }; search: string }) {
-  const [mode, setMode] = useState<'execution' | 'knowledge'>('execution');
+  const [mode, setMode] = useState<'execution' | 'knowledge' | 'design'>('execution');
   const [explored, setExplored] = useState(false);
+  const [designed, setDesigned] = useState(false);
   const selection = useMemo(() => new WorkspaceSelection(search, context.scope), [search, context.scope.tenant_id, context.scope.project_id]);
   const owners = useMemo(() => {
     const client = new ObservationClient();
-    return { model:new MonitorModel(client), navigation:new NavigationModel(client), namedViews:new NamedViewsModel(client), evidence:new EvidenceModel(client), supervision:new SupervisionModel(new SupervisionClient()) };
-  }, [context.scope.tenant_id, context.scope.project_id, context.run_id]);
+    return { model:new MonitorModel(client), navigation:new NavigationModel(client), namedViews:new NamedViewsModel(client), evidence:new EvidenceModel(client), supervision:new SupervisionModel(new SupervisionClient()), library:new DraftLibrary(context,new AuthoringClient()) };
+  }, [context.actor_id, context.scope.tenant_id, context.scope.project_id, context.run_id]);
   useEffect(() => () => { for (const owner of Object.values(owners)) owner.dispose(); }, [owners]);
   return <>
     <nav className="local-workspace-navigation" aria-label="Research workspace">
       <button aria-pressed={mode === 'execution'} onClick={() => setMode('execution')}>Execution</button>
       <button aria-pressed={mode === 'knowledge'} onClick={() => { setExplored(true); setMode('knowledge'); }}>Domain and evidence</button>
+      <button aria-pressed={mode === 'design'} onClick={() => { setDesigned(true); setMode('design'); }}>Next campaign</button>
       <span className="local-access">Local access</span>
     </nav>
     <div hidden={mode !== 'execution'}><MonitorWorkspace {...owners} active={mode === 'execution'} context={{ scope:context.scope, run:context.run_id }} synthetic={context.synthetic} /></div>
+    {designed && <div hidden={mode !== 'design'}><LocalDesign model={owners.library} synthetic={context.synthetic} /></div>}
     {explored && <div hidden={mode !== 'knowledge'}><LocalKnowledge selection={selection} active={mode === 'knowledge'} synthetic={context.synthetic} /></div>}
   </>;
 }

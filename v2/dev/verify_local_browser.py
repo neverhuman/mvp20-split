@@ -1,4 +1,4 @@
-"""Actual local Studio/gateway against retained owners; no SQL, workers or model calls."""
+"""Local Studio/gateway inspection and optional draft validation; no SQL, workers or model calls."""
 
 import argparse
 import hashlib
@@ -13,11 +13,11 @@ from amphora_deployment.lifecycle.routes import Routes
 from amphora_deployment.persistence.state import LocalState
 
 from check_boundaries import ROOT
+from local_authoring_controller import AuthoringController
 from local_numeric_configuration import write
-from local_records_controller import RecordsController
 
 
-class BrowserController(RecordsController):
+class BrowserController(AuthoringController):
     def start(self):
         super().start()
         self.control('/owners/gateway/start', 'POST')
@@ -38,7 +38,8 @@ def verify(configuration, retained, public, output):
     original = json.loads((retained / 'evidence.json').read_bytes())
     assert original['status'] == 'passed'
     owners = json.loads((configuration / 'owners.json').read_bytes())['owners']
-    owners = {name: value for name, value in owners.items() if name != 'registry'}
+    authoring = (configuration / 'authoring-evidence.json').exists()
+    owners = {name: value for name, value in owners.items() if authoring or name != 'registry'}
     root = Path(os.environ['LOCALAPPDATA']) / 'Amphora/local-v2/installation'
     state, vault = LocalState.snapshot(root), (root / 'credentials.dpapi').read_bytes()
     routes = Routes.load(root)
@@ -55,12 +56,13 @@ def verify(configuration, retained, public, output):
     records = json.loads((configuration / 'owner-readback.json').read_bytes())
     browser_input = write(output / 'browser-input.json', {'origin': routes.endpoint('gateway'),
         'run_id': original['run_id'], 'scope': prepared['scope'], 'objective': prepared['objective'],
-        'context': prepared['context'], 'records': records, 'expected_nodes': len(original['result']['graph']['nodes'])})
-    tokens = CredentialVault(root / 'credentials.dpapi', state['deployment_id']).load().environment(['GATEWAY_SESSION_KEY'])
+        'context': prepared['context'], 'records': records,
+        'draft': json.loads((configuration / 'draft.json').read_bytes()) if authoring else None, 'expected_nodes': len(original['result']['graph']['nodes'])})
+    tokens = CredentialVault(root / 'credentials.dpapi', state['deployment_id']).load().environment(['GATEWAY_SESSION_KEY'] + (['REGISTRY_OPERATOR_TOKEN'] if authoring else []))
     environment = {key: value for key, value in os.environ.items() if key.upper() in {
         'SYSTEMROOT', 'WINDIR', 'PATH', 'TEMP', 'TMP', 'USERPROFILE', 'LOCALAPPDATA', 'APPDATA', 'COMSPEC'}}
     environment.update(PYTHONUTF8='1', AMPHORA_BROWSER_LAUNCH_KEY=tokens['GATEWAY_SESSION_KEY'])
-    controller = BrowserController(root, output, routes)
+    controller = BrowserController(root, output, routes, registry_token=tokens.get('REGISTRY_OPERATOR_TOKEN'))
     try:
         controller.start()
         result = subprocess.run(['node', str(ROOT / 'studio/tests/integration/local_demo.mjs'),
@@ -77,7 +79,7 @@ def verify(configuration, retained, public, output):
             'assets': {name: hashlib.sha256((public / name).read_bytes()).hexdigest() for name in ('index.html', 'app.js', 'app.css')},
             'provider_calls': 0, 'workers_started': False,
             'limits': ['Actual localhost gateway/Studio and five retained owners; synthetic science only',
-                       'Read-only execution/reasoning/context trace; full Design/successor navigation remains separate']})
+                       'Inspection and optional saved-draft validation; successor admission/trace remains separate']})
         print('Actual local browser execution/reasoning/context inspection passed; zero model calls', flush=True)
     finally:
         controller.close()

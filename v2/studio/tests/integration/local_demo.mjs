@@ -92,6 +92,25 @@ try {
       assert.deepEqual(trace.snapshot,input.records.snapshot);
       assert.equal(trace.context.profile,'synthetic-demo-context.v1');
       assert.ok(trace.objective.includes('synthetic numeric seed'));
+      if (input.draft) {
+        await page.getByRole('button',{name:'Next campaign',exact:true}).click();
+        await page.getByRole('button',{name:input.draft.head.title+' / revision '+input.draft.head.revision,exact:true}).click();
+        await page.getByRole('heading',{name:'Compose a campaign',exact:true}).waitFor();
+        assert.equal(await page.getByLabel('Draft title',{exact:true}).inputValue(),input.draft.head.title);
+        await page.getByRole('button',{name:'Validate saved revision',exact:true}).click();
+        await page.getByText(/Validation of revision .* structurally valid/).waitFor();
+        await page.getByLabel('Draft title',{exact:true}).fill('Local unsaved next-campaign idea');
+        await page.getByRole('button',{name:'Execution',exact:true}).click();
+        await page.getByRole('heading',{name:'Follow execution',exact:true}).waitFor();
+        await page.getByRole('button',{name:'Next campaign',exact:true}).click();
+        assert.equal(await page.getByLabel('Draft title',{exact:true}).inputValue(),'Local unsaved next-campaign idea');
+        const designAxe = await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
+        assert.deepEqual(designAxe.violations.filter(row=>['serious','critical'].includes(row.impact)),[]);
+        assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Design page overflow');
+        await page.screenshot({path:resolve(output,'design-'+viewport.width+'.png'),fullPage:true});
+        evidence.screenshots.push('design-'+viewport.width+'.png');
+        await page.getByRole('button',{name:'Execution',exact:true}).click();
+      }
       // A navigation link cannot select another project or initiate owner reads for it.
       let foreignReads = 0;
       page.on('request', request => { if (request.url().includes('/api/knowledge/')) foreignReads++; });

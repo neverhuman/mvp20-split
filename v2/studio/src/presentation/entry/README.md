@@ -27,3 +27,11 @@ Modes remain mounted after first visit to preserve local controls; inactive mode
 cancel reads and reconcile on return. Session identity replacement disposes all models.
 LocalKnowledge only composes existing owner clients and ExploreModel; graph/source/
 artifact authority remains with existing services. Design/successor assembly remains.
+
+Studio0.12 adds Next campaign with a bounded scoped draft library. Users choose titles
+and saved revisions, not opaque ids. Library owns reads and loaded command/catalog
+objects; LocalDesign renders states and existing DraftWorkspace. Local edits and
+unresolved commands prohibit draft replacement. Mounted modes retain editing work;
+mutations are not cancelled merely by changing views. Session replacement disposes
+all owners. Initial hosting selects existing drafts; creating a draft from campaign
+context and predecessor carry remain explicit successor assembly work.

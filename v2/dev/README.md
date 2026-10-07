@@ -293,3 +293,13 @@ key only to the browser harness; owner credentials stay gateway-side. Studio's
 reasoning, keyboard access, accessibility and scoped Research/Knowledge/Data readback.
 Gateway drains before owners. No workers, SQL seeding or model calls. This proves
 Monitor/reasoning and API history; Design/Explore/successor navigation remains separate.
+
+`prepare_local_authoring.py` creates a new immutable Runtime configuration enabling
+existing authoring APIs and Registry discovery, then publishes an explicitly fixture-
+authored draft copied from the retained numeric graph. It compares exact public
+definition/receipt replay, starts no workers/models, and preserves original histories.
+`local_authoring_controller.py` adds optional Registry read lifecycle to retained
+owners; gateway drains before Registry and other owners. Local browser proof detects
+this prepared profile, opens/validates its exact saved draft and checks local-edit
+retention across mode switches. Draft validation is a real owner command, not campaign
+admission, scientific validation or model-authored topology.

@@ -1,26 +1,39 @@
 # Restore
 
-Refreshed 2026-10-07 05:54:33 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 06:11:09 (America/Chicago). Read FIRST after compression.
 
 ## Active task
 
 BP-09.03/B1.4c local browser/API objective-to-successor trace active.
-B1.4a/b COMPLETE; child22.92%, Build30.56%, Acceptance0%; parent44.58%,
-(8+11/12)/20, eight closed gates. Partial c earns no further credit yet.
+B1.4a/b COMPLETE;c75%. Child24.48%,Build32.64%,Acceptance0%;parent44.90%,
+(8+47/48)/20,eight closed gates. Same delivery weights; successor exit remains open.
 No owner decision required. Continue across milestones/commits; local computer only.
-No tests/build/probes running. Actual browser session36387 EXIT0; all six processes
-drained0. Studio0.11 graph/evidence navigation qualified. Latest pushed0f0b0801; second
-checkpoint pending commit. Evidence Local_Domain_Navigation.json; raw
-.test-results/local-browser-domain-20261007d; assets studio-local-domain-20261007c/public
-and d/public identical.24focused tests, final selection2tests100% coverage, Monitor7cases,
-Explore fixture and gateway/entry regression all pass. Generator/build pass; screenshot
-review1440/390 passed. Uncommitted WorkspaceSelection (strict ExplorePins fragment/
-session-scope fence), LocalKnowledge, Execution/Domain navigation, active-mode hooks.
-No gateway changes. Ticket removed; nonsecret explicit pins survive reload.
-Current actual source is octet-stream; text viewer correctly refuses it, metadata
-visible. Preserve original history. Need corrected typed-source successor plus
-Design/successor assembly to finish B1.4c; no model calls required for current UI work.
-Next final lint/boundary/diff and commit/push, then return to that scoped work.
+No tests/build/probes running. Studio0.12 local Design qualified; pending commit.
+Latest pushed634596d8. Source/README/dev changes qualified; final lint/boundary/diff next.
+B1.4c75%: three of four named equal checkpoints complete, successor trace open.
+Child24.48%,Build32.64%,Acceptance0%;parent44.90%,(8+47/48)/20,eight closed gates.
+Actual browser68538EXIT0, output .test-results/local-browser-design-20261007a, all seven
+owners drain0. Configuration .test-results/local-authoring-materials-20261007b.
+Saved fixture draft + real validation/edit retention1440/390, no campaign admission/
+workers/model calls. Eight library tests100%lines95.16%branches93.33%functions;
+draft browser regression43022EXIT0; generator/build pass; a/b assets identical:
+.test-results/studio-local-design-20261007a/public and b/public. Screenshots inspected.
+Evidence Local_Design.json. New DraftLibrary owns scoped list/exact head/loaded editor,
+late/reentrant fencing, dirty/pending work retention. LocalDesign mode keeps edits
+mounted. New prepare_local_authoring.py enables Runtime authoring in new immutable
+configuration; public API saves engineering-fixture graph copy (not model authored).
+Initial a rejected forbidden Registry operator credential; removed that configuration.
+Initial b saved then strict comparator lacked public defaults; --resume95739EXIT0 replays
+same command/id/receipt and independently normalizes ExecutableCampaignV4 through
+installed Runtime public DTO. Original graph/receipt preserved. No duplicate draft.
+New AuthoringController adds optional actual Registry lifecycle; browser includes it
+only when authoring-evidence exists. validate is real mutation, no admission.
+Next: finish commit/push then dedicated Runtime-to-Registry credential + actual successor
+carry/corrected source/full browser trace. Do NOT loosen credential isolation or modify
+original vault. Runtime current authoring has no draft_registry so tool admission must
+remain fail-closed. Existing tool_catalog/credentials.py create-once DPAPI sidecar is
+local reference for a narrow RUNTIME_REGISTRY_TOKEN extension. Inspect tests first.
+
 
 ## Latest qualified work
 
@@ -40,20 +53,22 @@ full graph/evidence/successor navigation. B2 scenarios and B3 recovery follow.
 
 ## Navigation work remaining
 
-Execution/reasoning and explicit scoped Domain/evidence assembly are verified.
-Entry receives ExplorePins in URL fragment, validates published shapes and session
-scope, never infers graph identity from arbitrary artifacts. Gateway/session v1 unchanged.
-Existing Design DraftWorkspace/DraftSession/DraftCommands/EditorCatalog need local hosting.
-Runtime AuthoringClient offers scoped draft listing/read/save/validate/admit. Draft
-activation is existing independent next-campaign admission, NOT predecessor carry.
-Approved graph.admit_draft_successor contract exists in Python/Runtime but is not in
-Studio generated authoring schemas yet. Read the owning contracts and existing
-BP-08 successor acceptance before choosing integration. Use public APIs only.
-Original numeric integrated graph was compiled by test exporter/admitted directly,
-not an LLM-authored draft; do not misrepresent that. B1.4c needs honest full trace,
-B2 success/unsupported/corrected-successor scenarios follow. Current original source
-published application/octet-stream by verify_local_owner_records.py; viewer allows
-text/plain/application/json. Create new typed revision/correction, never mutate old.
+Execution/reasoning, scoped Domain/evidence, and Draft loading/validation are verified.
+Entry uses explicit ExplorePins fragment; gateway/session v1 unchanged. Original run
+was fixture-compiled/directly admitted, never claim model-authored topology. Draft
+library loads a public exact copy for between-campaign editing; current catalog has5tools.
+Existing DraftActivation is independent next-campaign admission, NOT predecessor carry.
+Approved graph.admit_draft_successor exists in Python/Runtime but not Studio generated
+schemas. Public endpoint /v1/graph-runs/draft-successors; read owning contract and tests.
+Need dedicated Runtime/Registry peer credential for tool eligibility (current config
+intentionally has no draft_registry). Deployment allowed_reference correctly rejects
+Registry operator key for Runtime. Existing vault create-once; add narrow immutable
+sidecar rather than rotate or reuse keys. Then successor graph can carry original
+numeric root result (search.checkpoint Artifact); current root inputs specification/
+policy, so a carry destination must be explicitly authored/validated, not forced in.
+Original domain source application/octet-stream refuses text display. Corrected
+source/graph revision should use properly declared text media, preserving old pins.
+B1.4c remaining complete successor trace; B2 scenario matrix and B3 reliability follow.
 
 ## Retained integrated campaign and costs
 

@@ -73,3 +73,8 @@ original records are never relabeled.
 
 The separate gateway/fixture entry regression accepts AMPHORA_STUDIO_PUBLIC to
 qualify immutable fresh assets without replacing an earlier dist/local build.
+
+With an authoring preparation, local_demo also opens the actual fixture-authored
+draft, sends an explicit validation command, checks the structural result and retains
+an unsaved title across Execution/Design mode changes. Registry discovery is real;
+no campaign admission or model call is made.

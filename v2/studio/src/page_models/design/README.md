@@ -41,3 +41,20 @@ DraftActivation owns a separate graph.admit_draft request against the exact save
 Confirmed pending recovery: DraftCommands, DraftActivation and EmergencyStop expose an explicit resume only after a verified owner receipt establishes the original operation/digest as pending. Resume posts the immutable original Submission, never a fresh identity or edited payload. Unknown transport failure alone, terminal receipt, denial or identity collision cannot enable resume. This covers owner registration surviving a crash before the domain transaction; no automatic polling or POST retry is introduced. Three added model cases pass (135 total Node tests); actual-owner pending-crash proof passed in scopeffe3e49ccc90476684fe8477809f75cd.
 
 B3 coverage:104 owned page-model tests pass. DraftSession100% lines/90.91% branches; DraftCommands99.03%/82.35%; DraftActivation97.09%/90%; EmergencyStop97.64%/95.12%. Untested paths include malformed context/commit responses and defensive lifecycle/request fences; browser presentation has scenario evidence, not instrumented coverage. [Recovery evidence](../../../../docs/Audits/Evidence/BP-05-Authoring/Recovery.json) retains actual-owner identities and two135-test isolated builds.
+
+## Local draft library
+
+`library.ts` owns scoped bounded draft discovery and exact saved-revision loading,
+then composes existing DraftSession/DraftCommands/EditorCatalog. It fences late and
+reentrant responses and validates page scope, unique identities and the selected head.
+It never infers drafts from execution graphs. Dirty work, pending save/validation,
+and unresolved activation prevent switching, including edits made during a read.
+Denial clears listing and denies the editing session/catalog; local work remains.
+Disposal cancels loaders and all child owners. Commands retain their original
+identities and outcomes through existing command owners. No automatic save/admission.
+Tests: tests/page_models/design/library.test.ts. Local presentation owns mode selection.
+
+Local-library qualification:8focused tests,100%lines/95.16%branches/93.33%functions.
+Some short-circuit/lifecycle and activation-pending alternatives remain uncovered in
+this selection; existing activation tests own command recovery. Actual localhost
+Runtime/Registry loading/validation and edit retention at1440/390 pass.

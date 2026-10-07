@@ -56,3 +56,9 @@ concepts, hypothesis posture, metadata and source-format limitations. No graph i
 are inferred from arbitrary artifacts. Hidden modes cancel reads and reconcile on
 return; one-use login tickets are removed while non-secret navigation pins survive
 reload. Design/successor navigation remains BP-09.03 work.
+
+Studio0.12 adds the scoped saved-draft library and local Design assembly. Draft titles
+and exact revisions come from Runtime; dirty/pending work blocks replacement. Real
+local owners prove loading, structural validation and unsaved-edit retention across
+mode changes. The original numeric draft is explicitly engineering-fixture authored.
+Predecessor carry and corrected-successor walkthrough remain separate.
