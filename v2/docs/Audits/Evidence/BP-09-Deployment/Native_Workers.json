@@ -1,0 +1,120 @@
+{
+  "timestamp_local": "2026-10-07 01:20:24",
+  "status": "passed",
+  "tests": 164,
+  "installation": {
+    "timestamp_local": "2026-10-07 01:19:45",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-deployment",
+    "forbidden_implementations": [
+      "amphora_campaign_runtime",
+      "amphora_agent_planning",
+      "amphora_data_artifacts",
+      "sqlalchemy",
+      "pydantic"
+    ],
+    "packages": {
+      "amphora-deployment": "0.4.0"
+    },
+    "wheels": {
+      "amphora_deployment-0.4.0-py3-none-any.whl": "a495a89a96f3cf3ac82cba794b703477eceea4b371c413b581a401fe564d0cc6"
+    }
+  },
+  "native_workers": {
+    "timestamp_local": "2026-10-07 01:20:14",
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "worker-proof-daf08a2925c3406992cf07240f7dbb7a"
+    },
+    "controller_python": "Z:\\mvp20-split\\.test-results\\local-native-workers-20261007b\\owner\\environment\\Scripts\\python.exe",
+    "model_calls": 0,
+    "campaigns_admitted": 0,
+    "completed_before_quiesce": {
+      "planning-checkpoint": {
+        "state": "waiting",
+        "exit_code": 0,
+        "completed_turns": 1,
+        "faulted": false,
+        "execution_readiness": "not_assessed"
+      },
+      "runtime-checkpoint": {
+        "state": "waiting",
+        "exit_code": 0,
+        "completed_turns": 1,
+        "faulted": false,
+        "execution_readiness": "not_assessed"
+      }
+    },
+    "quiesce_requested": {
+      "runtime-checkpoint": {
+        "state": "quiescent",
+        "exit_code": 0,
+        "completed_turns": 1,
+        "faulted": false,
+        "execution_readiness": "not_assessed"
+      },
+      "planning-checkpoint": {
+        "state": "quiescent",
+        "exit_code": 0,
+        "completed_turns": 1,
+        "faulted": false,
+        "execution_readiness": "not_assessed"
+      }
+    },
+    "quiescent": {
+      "planning-checkpoint": {
+        "state": "quiescent",
+        "exit_code": 0,
+        "completed_turns": 1,
+        "faulted": false,
+        "execution_readiness": "not_assessed"
+      },
+      "runtime-checkpoint": {
+        "state": "quiescent",
+        "exit_code": 0,
+        "completed_turns": 1,
+        "faulted": false,
+        "execution_readiness": "not_assessed"
+      }
+    },
+    "owners_drained": {
+      "planning": {
+        "owner": "planning",
+        "pid": 34396,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      },
+      "runtime": {
+        "owner": "runtime",
+        "pid": 27744,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      }
+    },
+    "status": "passed",
+    "early_api_drain_rejected": true,
+    "installation_state_unchanged": true,
+    "limits": [
+      "Actual installed Runtime/Planning empty-scope database sweeps and API drain only",
+      "No active campaign, provider call, scientific container or tool eligibility proof"
+    ]
+  },
+  "rebuild_wheels_identical": true,
+  "source_coverage": {
+    "tests": 38,
+    "statements": 292,
+    "statements_covered": 281,
+    "branches": 50,
+    "branches_covered": 44,
+    "percent_rounded": 94,
+    "limits": [
+      "Aggregate forced cleanup, observation failure and some configuration variants not covered by final scoped suite",
+      "Actual native probe exercises disabled-provider and same-installation sidecar paths separately"
+    ]
+  }
+}

@@ -1,5 +1,10 @@
 # Local process lifecycle
 
+BP-09.03 adds optional [native worker turns](../workers/README.md) under the same
+supervisor writer lease. Worker quiescence gates owner drain/restart/force-stop
+and normal shutdown. Existing manifests without workers preserve their status
+shape. Managed TLS/scientific container recovery remain subsequent work.
+
 Owner BP-09.02/B1.03. ProcessJob owns an unnamed, noninherited
 Windows job handle with kill-on-close. Only a live Popen handle can be attached;
 stored process IDs are diagnostic metadata and are never termination authority.

@@ -1,8 +1,8 @@
 """Authenticated loopback control; commands cannot supply executable/configuration data."""
 
 import hmac
-from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
+from http.server import BaseHTTPRequestHandler, HTTPServer
 
 from ..profile import ProfileError, require
 
@@ -24,6 +24,8 @@ class ControlServer(HTTPServer):
         try:
             while not self.stopping:
                 self.handle_request()
+                if not self.stopping:
+                    self.supervisor.tick()
         finally:
             self.server_close()
 
@@ -63,7 +65,10 @@ class ControlHandler(BaseHTTPRequestHandler):
         if self.path != "/status":
             self._respond(404, {"error": "control_route_unknown"})
             return
-        self._respond(200, {"owners": self.server.supervisor.status()})
+        record = {"owners": self.server.supervisor.status()}
+        if self.server.supervisor.workers.slots:
+            record["workers"] = self.server.supervisor.workers.status()
+        self._respond(200, record)
 
     def do_POST(self):
         if not self._authorized():
@@ -77,13 +82,15 @@ class ControlHandler(BaseHTTPRequestHandler):
             elif len(parts) == 4 and parts[:2] == ["", "owners"] and parts[3] in {"start", "restart", "drain", "force-stop"}:
                 operation = getattr(self.server.supervisor, parts[3].replace("-", "_"))
                 result = operation(parts[2])
+            elif len(parts) == 4 and parts[:2] == ["", "workers"] and parts[3] in {"start", "quiesce", "recover", "force-stop"}:
+                result = self.server.supervisor.worker_command(parts[2], parts[3])
             else:
                 self._respond(404, {"error": "control_route_unknown"})
                 return
         except ProfileError as error:
             self._respond(409, {"error": str(error)})
             return
-        except Exception:
+        except Exception:  # noqa: BLE001 - control never exposes private child diagnostics.
             self._respond(503, {"error": "control_operation_failed"})
             return
         self._respond(200, result)

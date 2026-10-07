@@ -2,12 +2,12 @@
 
 import argparse
 import json
-from pathlib import Path
 import urllib.error
 import urllib.request
+from pathlib import Path
 
-from ..profile import ProfileError
 from ..persistence.state import LocalState
+from ..profile import ProfileError
 from .configuration import control_token, load_bindings
 from .control import ControlServer
 from .events import LifecycleEvents
@@ -17,10 +17,12 @@ from .supervisor import Supervisor
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=["serve", "status", "readiness", "start", "restart", "drain", "force-stop", "shutdown"])
+    parser.add_argument("action", choices=["serve", "status", "readiness", "start", "restart", "drain", "force-stop", "shutdown", "quiesce", "recover"])
     parser.add_argument("--root", type=Path, required=True)
     parser.add_argument("--manifest", type=Path)
     parser.add_argument("--owner")
+    parser.add_argument("--workers-manifest", type=Path)
+    parser.add_argument("--worker")
     args = parser.parse_args()
     try:
         routes = Routes.ensure(args.root) if args.action == "serve" else Routes.load(args.root)
@@ -36,7 +38,9 @@ def main():
                 parser.error("serve requires --manifest")
             bindings = load_bindings(args.root, args.manifest, routes)
             token = control_token(args.root, create=True)
-            supervisor = Supervisor(bindings, LifecycleEvents(args.root / "logs"))
+            from ..workers.configuration import load_workers
+            workers = {} if args.workers_manifest is None else load_workers(args.workers_manifest, bindings)
+            supervisor = Supervisor(bindings, LifecycleEvents(args.root / "logs"), workers=workers)
             # Serving holds the operation lease, excluding provisioning/migrations.
             # Control clients read atomic snapshots and never take this writer lease.
             with LocalState(args.root):
@@ -45,12 +49,22 @@ def main():
                     server.serve()
                 finally:
                     # Unexpected supervisor exit is forced teardown, not graceful drain.
-                    for process in supervisor.processes.values():
-                        process.force_stop()
+                    try:
+                        supervisor.workers.force_stop()
+                    finally:
+                        for process in supervisor.processes.values():
+                            process.force_stop()
             return 0
         if args.action in {"status", "shutdown"}:
             path = "/" + args.action
+        elif args.worker is not None:
+            from ..workers.recipes import NATIVE_RECIPES
+            if args.owner is not None or args.worker not in NATIVE_RECIPES or args.action not in {"start", "quiesce", "recover", "force-stop"}:
+                parser.error("invalid worker command")
+            path = "/workers/" + args.worker + "/" + args.action
         else:
+            if args.action in {"quiesce", "recover"}:
+                parser.error("worker command requires --worker")
             if args.owner is None:
                 parser.error("owner command requires --owner")
             from ..installation import SERVING_HOSTS
@@ -68,7 +82,7 @@ def main():
     except ProfileError as error:
         print(json.dumps({"status":"rejected", "reason":str(error)}))
         return 2
-    except Exception:
+    except Exception:  # noqa: BLE001 - HTTP and driver diagnostics can contain credentials.
         # Includes HTTP/driver errors: raw diagnostics must not expose credentials.
         print(json.dumps({"status":"rejected", "reason":"local_supervisor_unavailable"}))
         return 2

@@ -379,6 +379,12 @@
       "services/agent_planning/src/amphora_agent_planning/checkpoint_budget"
     ]
   },
+  "deployment-workers": {
+    "tests": "deploy/local/tests/workers",
+    "coverage_sources": [
+      "deploy/local/src/amphora_deployment/workers"
+    ]
+  },
   "deployment-tool-access": {
     "tests": "deploy/local/tests/tool_access",
     "coverage_sources": [

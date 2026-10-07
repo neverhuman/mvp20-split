@@ -1,11 +1,12 @@
 """Repeatable process commands over fixed owner bindings; no execution authority."""
 
+import threading
 from dataclasses import dataclass, field
 from pathlib import Path
-import threading
 
 from ..installation import SERVING_HOSTS
 from ..profile import require
+from ..workers.group import WorkerGroup
 from .processes import OwnerProcess
 
 
@@ -23,12 +24,30 @@ class OwnerBinding:
 
 
 class Supervisor:
-    def __init__(self, bindings, events):
+    def __init__(self, bindings, events, *, workers=None):
         require(set(bindings) <= set(SERVING_HOSTS) and bool(bindings), "lifecycle_bindings")
         self.bindings, self.events = dict(bindings), events
         self.processes = {}
         self.lock = threading.RLock()
         self.closed = False
+        self.workers = WorkerGroup({} if workers is None else workers)
+
+    def worker_command(self, name, action):
+        with self.lock:
+            require(not self.closed, "lifecycle_closed")
+            if action == "start":
+                require(all(owner in self.processes and self.processes[owner].status()["state"] == "running"
+                            for owner in self.bindings), "worker_requires_running_owners")
+            return self.workers.command(name, action)
+
+    def tick(self):
+        with self.lock:
+            if self.closed:
+                return
+            if any(owner not in self.processes or self.processes[owner].status()["state"] != "running"
+                   for owner in self.bindings):
+                self.workers.quiesce()
+            self.workers.tick()
 
     def status(self):
         with self.lock:
@@ -50,6 +69,7 @@ class Supervisor:
     def force_stop(self, owner):
         with self.lock:
             require(owner in self.bindings, "lifecycle_owner_unavailable")
+            self.workers.require_quiescent()
             process = self.processes.get(owner)
             if process is not None:
                 process.force_stop()
@@ -58,11 +78,13 @@ class Supervisor:
     def drain(self, owner):
         with self.lock:
             require(owner in self.processes, "lifecycle_drain_requires_running")
+            self.workers.require_quiescent()
             return self.processes[owner].drain()
 
     def restart(self, owner):
         with self.lock:
             require(not self.closed and owner in self.bindings, "lifecycle_owner_unavailable")
+            self.workers.require_quiescent()
             process = self.processes.get(owner)
             require(process is None or process.status()["state"] == "exited", "lifecycle_restart_requires_stop")
             if process is not None:
@@ -72,6 +94,7 @@ class Supervisor:
 
     def close(self):
         with self.lock:
+            self.workers.require_quiescent()
             # Normal control shutdown requires a completed drain/stop before this call.
             require(all(item.status()["state"] == "exited" for item in self.processes.values()), "lifecycle_shutdown_requires_stop")
             for process in self.processes.values():

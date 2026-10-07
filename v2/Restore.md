@@ -1,11 +1,11 @@
 # Restore
 
-Refreshed 2026-10-07 00:33:51 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 01:20:30 (America/Chicago). Read FIRST after compression.
 
 ## Active task
 
 BP-09.03/B1.3b: managed TLS/native/tool worker lifecycle and actual peer qualification.
-B1.1/B1.2/B1.3a verified; child14.58%,Build19.44%,Acceptance0%; parent42.92%,(8+7/12)/20
+B1.1/B1.2/B1.3a verified; child15.28%,Build20.37%,Acceptance0%; parent43.06%,(8+11/18)/20
 verified delivery weight/eight closed gates. BP-09.01/.02 and BP-08 remain closed100%.
 No owner decision blocker. Continue until genuinely needed, keep trackers canonical,
 commit/push significant verified work. Local Windows x86_64/Python3.12,127.0.0.1 only.
@@ -56,13 +56,10 @@ Tool SDK0.2 HttpTransport rejects nonloopbackHTTP but acceptsHTTPS using standar
 trust (SSL_CERT_FILE can be container-scoped). Preserve guard. Scientific evolution0.5 and
 objectives0.3 descriptors Linux/x86_64 only; do not relabel them or claim nativeWindows eligibility.
 
-B1.3 not implemented yet. Design TLS fixed Runtime/Data upstreams, Windowsloopback listeners,
-container-specific public cert trust, private key protection, bounded forwarding, denial and
-actual image SDK probes. No arbitrary upstream, global trust change or SDK bypass.
-OpenSSL available C:/Program Files/Git/usr/bin/openssl.exe. Deployment package currentlystdlib
-only; certificate provisioning could use explicit pinned external OpenSSL, encrypted PEM
-key and separate create-once DPAPI password vault. Existing SecretBundle max4096/value,
-CredentialVault current-user DPAPI create-only. This is a proposed implementation, not proof.
+B1.3a TLS is verified/pushed246b9732: Deployment0.3 create-once encrypted TLS identity,
+fixed Runtime/Data loopback forwarding, 30s absolute connection deadline, bearer preserved.
+Actual Linux evolution0.5/SDK0.2 trusted TLS passes; missing trust/plain HTTP denied.
+Independent126tests+3container cases; Tool_TLS.json. No actual owner eligibility claim.
 
 Also B1.3: scientific/Planning worker processes need managed lifecycle/quiescence before API
 shutdown. Existing supervisor local-supervisor-v1 fixed SERVING_HOSTS seven +control routes;
@@ -111,37 +108,26 @@ Unrelated KAP Python18720/2912 must not be touched. UIguidelines alreadyread bef
 openai-docs skill read/applied this turn; official existingmodel snapshot/pricing verified.
 Owner authorized syntheticengineering OpenAI use via Z:/ssos/.env later; keysneverprinted.
 
-## B1.3 TLS work in progress 2026-10-07 00:49:05
-Deployment0.3 tool_access identity/proxy and ownedtests implemented, UNCOMMITTED. TLSIdentity
-uses explicitOpenSSL offline generation, encryptedPEM +separateDPAPIpassword, fixedhostdockerSAN,
-30daycert/create-once/hashes. Proxy fixedRuntime/Data127upstream, bearerpreserved,16MiBbound,
-absoluteconnectiontimer30s (notjustinactivity), 8boundedthreads, acceptedresponse drain.
-Actual evolution0.5 LinuximageSDK0.2 trustedTLS200/untrustedTLSrejected/plainHTTPdenied PASSED:
-ROOT.test-results/local-tool-tls-20261007a/evidence.json; encryptedidentity underphysical
-LOCALAPPDATA/.../Amphora/local-v2/tls-proof-20261007a. No globalDocker/trustchanges.
-SourceDeployment125tests26.17s passed; initialclosedresponse socketbugfixed. Added explicit
-truncatedupstream502 regression afterward; final16testTLS suite RUNNING session74924.
-No source/test/dev/README edits untilactualexit. Then independentDeployment0.3 install+copied
-TLS tests, rerunactualimageprobe forfinalcode, updateevidence/scopes/metadata/trackers andcommit.
-B1.3 boundedsubunits proposed: aTLSboundary, bmanagedTLS/science/Planningworker lifecycle
-and actualpeer toolqualification, cactualResearch/Data/Knowledge records. CreditTLSunitonly
-afterindependentproof (thirdofexistingB1.3weight), notallB1.3. Managedconfig stillnotimplemented.
+## Verified native worker checkpoint
 
-2026-10-07 00:58:38: B1.3a VERIFIED. Independent Deployment0.3 b126tests+actualLinuxSDK3cases passed.
-ROOT.test-results/local-tool-tls-installation-20261007b/owner isqualified; a/bwheelshashesmatch.
-A failed onlybecauseoldtestexpectedRegistryinsideDeployment; test now accepts explicit
-AMPHORA_TEST_REGISTRY_PYTHON pointing originalRegistryinstall. Both remainisolated.
-FinalTLS16tests15.54s after incomplete-response502 fix; allprocessesexited. EvidenceTool_TLS.json.
-No moreTLSverificationrunning; priorRUNNINGnotes stale. B1.3bnext. Latestdriver
-dev/verify_tool_tls_installation.py requires --registry-python separateinstalledpath.
-TLSidentityb underphysicalLOCALAPPDATA/.../Amphora/local-v2/tls-proof-20261007b; encryptedkeyretained.
-Planning0.101 andDeployment0.3 notyetactivated inlocaldemomanifests; servingbaselinesunchanged.
+Deployment0.4 native third of B1.3b verified. Independent a/b each164tests + actual
+Runtime0.65/Planning0.101 empty-scope turns, early API drain409, quiescence then APIexit0.
+Rebuilt wheel hashes match. All processes/checks exited; no keys/modelcalls/campaigns.
+Native_Workers.json retains proof; final38worker tests3.54s,281/292statements44/50branches94%.
+No source/test edits during checks. Accepted demo manifests unchanged; scoped probes retainconfigs.
 
-B1.3b inspection: Runtime CLI coordinate usesGraphPoller.sweep; standalone supervision_loop
-CLI run drivesRuntime checkpoint loop. Planning supervision_scheduling run drivesPlanning.
-All bounded sweeps default20s and do notinterruptinflightoperations. Tool SDK run_worker and
-multi_input_worker each run_once thenexit; canmanage repeated reviewed one-shot turns without
-modifying scientifictools/SDK or losing originallease/receipt semantics. Quiesce stops launching
-newturns and awaitsinflight; neverinterruptHTTPwithgenericSIGINT andcallitgraceful. Native
-processjob supervision and Docker immutableID+deploymentlabels needdistinctownership/recovery.
-Avoid deployment becoming graph scheduler; ownerworkers stillchoose/acceptwork.
+Current task: remaining B1.3b managed TLS/scientific Docker lifecycle and identity-bound
+recovery, then actual owner/tool eligibility. Native worker sidecar is local-native-workers-v1,
+optional --workers-manifest under supervisor's same LocalState writer lease. Fixedfourrecipes,
+scoped serving-owner environment/install, configuration and public graph/template pins;
+no arbitrarycommands. Successful turns repeat; failed/uncertain turns latch; explicitrecover.
+Quiesce stopsnewturns and awaitsactualexit. API drain/restart/force-stop/shutdown guarded.
+Unexpectedcontrollerexit forcesnativejob cleanup, notgracefulsuccess. Still no managedTLS/
+Dockerintegration. Preserve originalTLS0.3 qualified primitive and SDKtransportguard.
+
+Qualified native controller ROOT.test-results/local-native-workers-20261007b/owner, aidentical.
+Drivers dev/verify_native_workers_installation.py and verify_native_workers.py. Sourcepackage0.4,
+devlock/pins/sourceinventory updated. Native evidence is only a third of B1.3b weight;
+child15.28%,Build20.37%,Acceptance0%; parent43.06%,(8+11/18)/20,eightclosedgates.
+Native checkpoint ready for commit/push after scoped lint/boundary checks; resume directly
+with managed TLS/scientific container lifecycle. All tests/builds/probes have exited.

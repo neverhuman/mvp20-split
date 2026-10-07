@@ -1,6 +1,6 @@
 # Local deployment profile and preflight
 
-Owner: BP-09.01, package amphora-deployment0.3.0. B1.01 profile parsing passed33profile/boundary checks13.95s; BP-09.01 local-profile acceptance is complete.
+Owner: BP-09.03, package amphora-deployment0.4.0. Native worker lifecycle is under qualification; [worker boundary](src/amphora_deployment/workers/README.md). BP-09.01/.02 remain complete; integrated demo and scientific worker recovery remain active BP-09.03 work.
 Design: [Runtime topology](../../docs/Architecture/System/Runtime_Topology.md).
 
 This package owns local versioned deployment configuration and subsequent
