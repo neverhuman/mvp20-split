@@ -31,10 +31,12 @@ def output_value(session, run, expected):
     return {'run':run,'artifact':artifact,'value':expected}
 
 
-def verify(installation, records, source, output):
+def verify(installation, records, source, output, studio=None):
     assert os.environ.get('AMPHORA_TEST_POSTGRES') == '1'
     output=output.absolute(); output.mkdir(parents=True, exist_ok=False)
     source=source.absolute()
+    studio=(studio or ROOT/'studio').absolute()
+    assert (studio/'tests/integration/followup_live.mjs').is_file()
     session=Session.retained(installation.absolute(), records.absolute(), source)
     try:
         original=json.loads((source / 'original-run.json').read_bytes())
@@ -49,7 +51,7 @@ def verify(installation, records, source, output):
         payload={'binding':{'run':original['run_id'],'scope':session.scope},'output':str(output),
             'owners':{name:{'endpoint':owner.endpoint,'token':owner.token} for name,owner in
                       [('runtime',session.runtime),('data',session.data),('research',session.research)]}}
-        result=subprocess.run(['node','tests/integration/followup_live.mjs'],cwd=ROOT/'studio',env=environment(),
+        result=subprocess.run(['node','tests/integration/followup_live.mjs'],cwd=studio,env=environment(),
             input=json.dumps(payload).encode(),capture_output=True,timeout=180,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
         (output/'browser.log').write_bytes(result.stdout+result.stderr)
         assert result.returncode==0,'Actual follow-up browser failed; inspect bounded browser log'
@@ -63,4 +65,5 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ['installation','records','source','output']:
         parser.add_argument('--'+name,type=Path,required=True)
-    args=parser.parse_args();verify(args.installation,args.records,args.source,args.output)
+    parser.add_argument('--studio',type=Path,help='Explicit independent Studio installation')
+    args=parser.parse_args();verify(args.installation,args.records,args.source,args.output,args.studio)

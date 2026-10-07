@@ -1,8 +1,8 @@
 # Graph Studio and Interventions
 
-- Design status: BP-05 closed, including next-campaign authoring and replacement acceptance within synthetic software scope. Scientific quality/focus views are queued under successor SQ-01.
+- Design status: BP-05 closed, including next-campaign authoring and replacement acceptance within synthetic software scope. SQ-01 quality/focus/proposal views have bounded actual-owner and independent-install acceptance; see [closeout](../../Audits/SQ-01_Quality_Closeout.md).
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
-- Last reviewed: `2026-09-29 22:04:45` (America/Chicago)
+- Last reviewed: `2026-10-07 15:52:31` (America/Chicago)
 - Parent: [Domain overview](Experience_Architecture.md)
 - Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#human-graph-studio)
 
@@ -75,6 +75,6 @@ Save/validate/activate/stop are separate commands. A lost acknowledgement first 
 
 ## Exploratory quality and next-campaign focus
 
-Required successor capability: show evidence quality independently of execution status. A completed node may still be uncertain, contradicted or unassessed. Use visible labels and accessible markers, scoped filters and evidence drill-down; never equate a green execution status with scientific correctness or invent numerical accuracy. Preserve the pinned view while displaying newer corrections as separately identified annotations. Humans and authorized agents can select weak points and inspect affected consumers, then propose linked next-campaign changes with rationale and expected information gain. The UI must not demand resolution of every warning before valid exploration continues.
+Implemented SQ-01 capability: show evidence quality independently of execution status. A completed node may still be uncertain, contradicted or unassessed. Use visible labels and accessible markers, scoped filters and evidence drill-down; never equate a green execution status with scientific correctness or invent numerical accuracy. Preserve the pinned view while displaying newer corrections as separately identified annotations. Humans and authorized agents can select weak points and inspect affected consumers, then propose linked next-campaign changes with rationale and expected information gain. The UI must not demand resolution of every warning before valid exploration continues.
 
-Verification must include several simultaneous weak points, useful retained outputs, independent execution progress and a traceable successor proposal without active-run mutation. BP-05 remains closed; this scientific-quality presentation is a named successor scope, SQ-01, to be activated after the owner quality projections and proposal contracts exist.
+Verification must include several simultaneous weak points, useful retained outputs, independent execution progress and a traceable successor proposal without active-run mutation. BP-05 remains closed; SQ-01 is complete within synthetic engineering scope. Scientific validity and live-model follow-up quality require separate evidence.

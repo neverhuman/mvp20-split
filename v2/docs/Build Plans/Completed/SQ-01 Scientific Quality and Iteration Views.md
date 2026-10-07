@@ -2,16 +2,16 @@
 
 ## Canonical tracker
 
-- Status: active successor to closed BP-05; B1/B2/B3/C1/C2 complete; V1b independent replacement active.
-- Last refreshed: `2026-10-07 15:41:38` (America/Chicago).
-- Completion: 88.89%; Build100%, Verification33.33%; 5.3333/6 unit-weight gates complete.
+- Status: complete; all six scoped gates and closeout audit accepted.
+- Last refreshed: `2026-10-07 15:52:31` (America/Chicago).
+- Completion: 100%; Build100%, Verification100%; 6/6 unit-weight gates complete.
 - Owner: Studio presentation; Research/Knowledge own assessments; Agents owns proposals.
 - Prerequisites: BP-06 owner quality/correction projections and BP-07.03 proposal contracts; activation coherence audit and exact DTO reconciliation before implementation.
-- Current focus: V1b independent Studio replacement; V1a actual-owner journey complete100%.
-- Next gate: V1b independent replacement, then V1c scoped audit and retained-finding disposition.
+- Current focus: none; bounded delivery complete.
+- Next: LR-01 worker diagnostics; UI-R01 retains feedback-read diagnostic.
 - Blockers: no owner decision pending. Missing criterion bindings are approved implementation scope in SQ-01.01.
-- Requirement: [Campaign progress](../Architecture/Requirements/Product_Requirements.md#campaign-progress-uncertainty-and-subsequent-iteration).
-- Architecture: [Studio](../Architecture/Experience/Studio.md#exploratory-quality-and-next-campaign-focus).
+- Requirement: [Campaign progress](../../Architecture/Requirements/Product_Requirements.md#campaign-progress-uncertainty-and-subsequent-iteration).
+- Architecture: [Studio](../../Architecture/Experience/Studio.md#exploratory-quality-and-next-campaign-focus).
 
 ## Ordered scope and exit gates
 
@@ -34,15 +34,15 @@ confidence. No public schema is authored by Studio; Runtime owns execution accep
 | B3 human focus and proposal presentation | 100% | Complete; P1/P2/P3 complete |
 | C1 public criterion contracts | 100% | Complete |
 | C2 Planning/Runtime integration | 100% | Complete |
-| V1 acceptance | 33.33% | V1a100%; V1b0% active; V1c0% pending |
+| V1 acceptance | 100% | V1a/V1b/V1c each100%; complete |
 
 
 BP-05 remains closed. This plan adds no credit or scope to BP-06 B2; its scheduling follows its named dependencies and does not interrupt the current correction implementation.
 
 
-## Current acceptance checkpoint
+## V1a acceptance checkpoint (historical)
 
-2026-10-07 15:41:38: actual isolated Data0.31/Research0.40/Planning0.104/Runtime0.66
+2026-10-07 15:50:41: actual isolated Data0.31/Research0.40/Planning0.104/Runtime0.66
 retained a deterministic future proposal targeting one exact criterion with all three
 still unresolved. Original aed1956bccf14f29a1bbcc8e6974cfd9 and successor
 7a8b5ace3e4e4bbb9745645d996eb71b completed. Exact published candidate was saved,
@@ -54,7 +54,7 @@ axe/overflow and actual owner credential denial clearing prior evidence. Final i
 match the visually reviewed images byte-for-byte. Both artifact_confirm deliveries
 are acknowledged; nine runtime_notifications are pending because this fixture configures
 no notification destination. All owned hosts stopped; no paid calls or demo changes.
-Evidence: [V1 journey](../Audits/Evidence/SQ-01-Quality/V1_Journey.json).
+Evidence: [V1 journey](../../Audits/Evidence/SQ-01-Quality/V1_Journey.json).
 
 First exchange a remains blocked after fixture identity mismatch; b completed the
 original and retained proposal, then rejected the test controller's wrong validation
@@ -66,12 +66,13 @@ read and denial behavior is qualified; it does not prove repair of that historic
 failure. V1c must retain and assign its diagnostic follow-up explicitly. Frozen demo
 0.16.1 remains separate; source0.17 is not silently substituted for it.
 
-## Next bounded task
+## Closeout
 
-V1b: build an isolated Studio consumer from public contracts/module boundaries,
-verify scoped tests and repeat the same actual-owner browser/readback oracles after
-replacement. Preserve all owner state and historical identity. Then V1c closes the
-scoped architecture audit and assigns unresolved/nonblocking findings.
+2026-10-07 15:52:31: two independent Studio installs each pass286 owned tests, regenerated
+public contracts and actual-owner browser acceptance. Original history and output
+bytes remain unchanged; all owned hosts stopped. No paid calls or demo changes.
+[Scoped audit](../../Audits/SQ-01_Quality_Closeout.md) records nonblocking findings;
+UI-R01 owns the unexplained earlier feedback read and LR-01 owns worker failures.
+Replacement proves reproducible source/dependency installation, not a blind UI rewrite.
 
-[Planning history](SQ-01%20Planning%20History.md) retains activation review, scope
-approval, completed implementation evidence and previous percentages.
+[Planning history](SQ-01%20Planning%20History.md) retains completed checkpoints.

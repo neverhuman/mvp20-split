@@ -19,8 +19,8 @@ separate from paid adapters. Verify several unresolved points, exact target iden
 old/new history, denials and delayed reads in Studio. Retain first failures; repeated
 successful reads alone do not resolve the earlier intermittent demo feedback failure.
 
-Frozen demo packages/assets remain independent. V1b reconstructs the Studio consumer
-from public contracts and module READMEs; V1c owns the final drift audit. This module
+Frozen demo packages/assets remain independent. V1b independently installs the Studio consumer
+with pinned public contracts and owned tests; V1c owns the final drift audit. This module
 does not confer those gates or activate a model provider.
 
 Verified preparation 2026-10-07 15:13:05: four isolated owners installed; public
@@ -41,3 +41,10 @@ browser/credential denial. delivery_readback.py is Runtime-owned SQL-only diagno
 all ordinary orchestration uses public APIs. Both artifact confirmations acknowledged;
 unconfigured notifications remain explicitly outside this fixture. Initial failed
 runs remain recorded. Details/evidence in SQ-01 owning plan and V1_Journey.json.
+
+verify_followup_replacement.py stages two clean Studio source/dependency installs,
+checks every public schema digest (including validation-profile pins), regenerates
+contracts and runs owned tests before actual-owner browser acceptance for each.
+No Python/service implementation is staged. This proves reproducible consumer
+replacement, not a blind UI rewrite. Temporary installs are cleaned; manifests,
+logs and browser evidence persist in the explicit output directory.

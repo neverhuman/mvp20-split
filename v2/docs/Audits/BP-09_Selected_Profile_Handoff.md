@@ -31,7 +31,7 @@ evidence is not rewritten to0.15. Final0.15 qualification passed391 independent 
 ## Named successors and triggers
 
 - [LR-01 Local Worker Reliability](../Build%20Plans/LR-01%20Local%20Worker%20Reliability.md): bounded actual-write diagnosis/repair; queued0%. No unattended reliability claim until qualified.
-- [SQ-01 Scientific Quality and Iteration Views](../Build%20Plans/SQ-01%20Scientific%20Quality%20and%20Iteration%20Views.md): existing queued human/AI review of weak/questionable points between campaigns.
+- [SQ-01 Scientific Quality and Iteration Views](../Build%20Plans/Completed/SQ-01%20Scientific%20Quality%20and%20Iteration%20Views.md): existing queued human/AI review of weak/questionable points between campaigns.
 - SC-01 Scientific Source and Domain Qualification: not activated; requires selected scientific corpus/tool/assay and scientific acceptance criteria. Synthetic success cannot substitute. Source/domain selection remains owner input when this work is selected.
 - PH-01 Production Host Hardening: not activated; trigger is an explicit production or remote-access requirement. Owns authentication/exposure, secret operations, operational recovery objectives and production observability.
 - CP-01 Capacity and Cluster Qualification: not activated; trigger is a selected target/load and deployment profile. K3s replication, multi-campaign capacity and accelerators remain unqualified.

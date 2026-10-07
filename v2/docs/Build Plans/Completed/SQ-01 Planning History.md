@@ -53,7 +53,7 @@ Runtime graph marker and output navigation pass scripted public-HTTP browser che
 at1440/390.36 scoped model/selection regressions pass;100%lines94.39%branches.
 Existing Explore and actual gateway-entry regressions pass. Exact launcher pins
 and parent visibility are enforced; no backend schema/route change. Mobile aside
-clipping found visually and repaired with regression. [Evidence](../Audits/Evidence/SQ-01-Quality/B2_Presentation.json)
+clipping found visually and repaired with regression. [Evidence](../../Audits/Evidence/SQ-01-Quality/B2_Presentation.json)
 records scope/limits; actual-owner quality journey remains V1. Next B3 retains
 focus/lineage and presents existing authorized proposals without active-run mutation.
 
@@ -66,7 +66,7 @@ It is explicitly unsubmitted; no storage, owner mutation, active repin or model 
 Refresh retains the draft; hidden/denied/failed/rebound/disposed views clear it.
 38 scoped tests pass0.579s; quality100%lines94.63%branches. Scripted public-HTTP
 browser verifies download contents and1440/390 accessibility/overflow; both visuals
-inspected. [Evidence](../Audits/Evidence/SQ-01-Quality/B3_Human_Focus.json).
+inspected. [Evidence](../../Audits/Evidence/SQ-01-Quality/B3_Human_Focus.json).
 
 Contract reconciliation found missing criterion targeting in CampaignEvidenceIntent
 and CampaignUnresolvedPoint. Runtime retained capture and Data content reads exist;
@@ -143,7 +143,7 @@ Old profile/preparation formats and frozen demo installations remain unchanged.
 C2b is the second of three equal C2 deliveries: overall(3.5+2/3)/6=69.44%,
 Build(3.5+2/3)/5=83.33%, Verification0%. C2c Runtime acceptance/replay is next.
 No public schema or migration changed; no new live adapter/model call or independent
-installed-owner qualification claim. [Evidence](../Audits/Evidence/SQ-01-Quality/C2b_Planning.json).
+installed-owner qualification claim. [Evidence](../../Audits/Evidence/SQ-01-Quality/C2b_Planning.json).
 
 ## C2c Runtime delivery
 
@@ -156,7 +156,7 @@ SHA/2786 bytes match cf15a0b7. No public schema/migration/command changed. Bound
 and diff checks pass. Planning owns Research membership; Runtime does not infer it.
 C2=100%; overall4.5/6=75%, Build4.5/5=90%, Verification0%. B3 proposal UI is next;
 V1 still requires actual-owner subsequent campaign and independent Studio acceptance.
-[Evidence](../Audits/Evidence/SQ-01-Quality/C2c_Runtime.json).
+[Evidence](../../Audits/Evidence/SQ-01-Quality/C2c_Runtime.json).
 
 ## B3 proposal delivery boundaries
 
@@ -219,3 +219,9 @@ wrong Research package name; b passes. First record probe a lacked existing stor
 root; b passes after fixture correction. No demo/store reset, migrations or paid calls.
 This is preparation, not full journey; V1a/V1b/V1c remain0%, overall83.33/Build100/
 Verification0. Evidence V1_Preparation.json. Next actual Planning/Runtime exchange.
+
+## 2026-10-07 15:52:31 ? V1 closeout
+
+V1b: two independent286-test Studio installs and actual-owner browsers passed;
+V1c: scoped audit complete, nonblocking historical read failure assigned UI-R01.
+All six gates100%; Build100%, Verification100%. No frozen-demo change or model call.

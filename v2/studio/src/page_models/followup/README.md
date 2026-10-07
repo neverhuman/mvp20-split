@@ -1,6 +1,6 @@
 # Follow-up proposal inspection
 
-SQ-01/B3 implemented and scripted browser verified; actual-owner journey remains V1. User: internal researcher. Primary question: what should
+SQ-01/B3 implemented and scripted browser verified; actual-owner journey and independent installation acceptance passed SQ-01/V1. User: internal researcher. Primary question: what should
 improve next campaign, what might we learn, and what remains unresolved? Primary
 action: inspect a recorded proposal, then select a criterion for exact owner evidence.
 Runtime owns retained outcome; Planning owns proposed intent; Research owns records.
@@ -16,4 +16,4 @@ silently become current evidence. Empty and old-profile targeting-unavailable ar
 different states. A retained proposal is not a verified subsequent campaign.
 
 Test owners: tests/transport/followup and tests/page_models/followup. Browser proof is
-B3/P3; actual peers/subsequent campaign and independent Studio replacement remain V1.
+B3/P3; actual peers/subsequent campaign and two independent Studio installs passed V1.

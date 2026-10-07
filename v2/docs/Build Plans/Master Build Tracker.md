@@ -8,13 +8,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-01 through BP-09 closed; SQ-01 V1 acceptance active.
-- Last refreshed: `2026-10-07 15:41:38` (America/Chicago).
+- Status: BP-01 through BP-09 closed; SQ-01 closed; LR-01 activation next.
+- Last refreshed: `2026-10-07 15:55:36` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
-- Current priority: SQ-01/V1; DEMO-01 bounded walkthrough delivered for2026-10-08 11:00:00 CT.
-- Primary active task: SQ-01/V1b independent Studio replacement; frozen demo remains separate.
-- Next task: V1b independent Studio replacement, then V1c scoped audit.
-- Implementation completion: SQ-01=88.89%, Build100%, Verification33.33%; BP-09 closed100%,20/20.
+- Current priority: LR-01; DEMO-01 bounded walkthrough delivered for2026-10-08 11:00:00 CT.
+- Primary active task: LR-01 activation audit/R1 specification; frozen demo remains separate.
+- Next task: bounded no-model worker diagnosis.
+- Implementation completion: SQ-01 closed100%, Build100%, Verification100%; BP-09 closed100%,20/20.
 - Blockers: none for approved SQ-01.01 implementation; scientific corpus remains TBA for later scientific qualification.
 - Acceptance posture: bounded local demo/recovery/replacement complete; intermittent worker failures assigned LR-01, no soak claim.
 - Active exception: deadline demo delivery complete; presenter acceptance pending, qualification assets frozen.
@@ -29,15 +29,15 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-SQ-01 V1 is active at88.89%, Build100%, Verification33.33%, after approved scope expansion. Completed plans
+LR-01 is next at0%; SQ-01 closed100%. Completed plans
 are in the [completed index](Completed/README.md); their percentages stay closed.
 
 ## Prioritized Successor Queue and Phase Mirrors
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
-| 1 | [SQ-01 Scientific Quality and Iteration Views](SQ-01%20Scientific%20Quality%20and%20Iteration%20Views.md) | Active V1b; V1a complete | 88.89% | 100% | 33.33% | BP-06/07 public projections/contracts; activation review |
-| 2 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Queued | 0% | 0% | 0% | BP-09 accepted; bounded no-model diagnostic specification |
+| 1 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Queued; activation next | 0% | 0% | 0% | BP-09 accepted; bounded no-model diagnostic specification |
+| 2 | [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md) | Queued | 0% | 0% | 0% | LR-01 priority; bounded read diagnostic |
 
 The owning tracker controls exact task/percentages; MBT controls priority and
 mirrors current state. Complete each bounded gate before dependent implementation.
@@ -98,13 +98,13 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
-| 2026-10-07 14:49:53 | SQ-01 C2 complete; overall75%, Build90%, Verification33.33%. | Runtime175 tests; retained-only outcomes and old recipe bytes preserved. B3 proposal UI next. |
-| 2026-10-07 14:02:37 | SQ-01 C2b complete; overall69.44%, Build88.89%, Verification33.33%. | 242 compatibility/SQL/recovery tests and5 final checks; C2=66.67%; Runtime next. |
-| 2026-10-07 13:21:09 | SQ-01 C2a complete; overall63.89%, Build76.67%, Verification33.33%. | 153 domain/context/output tests; C2=33.33%, provider integration next. |
-| 2026-10-07 12:59:32 | SQ-01 C1 complete69.44%, Build88.89%, Verification33.33%. | 110 contract/publication and183 consumer tests; all632 predecessor schema bytes unchanged; new profile inactive pendingC2. |
+| 2026-10-07 14:49:53 | SQ-01 C2 complete; overall75%, Build90%, Verification66.67%. | Runtime175 tests; retained-only outcomes and old recipe bytes preserved. B3 proposal UI next. |
+| 2026-10-07 14:02:37 | SQ-01 C2b complete; overall69.44%, Build94.44%, Verification66.67%. | 242 compatibility/SQL/recovery tests and5 final checks; C2=66.67%; Runtime next. |
+| 2026-10-07 13:21:09 | SQ-01 C2a complete; overall63.89%, Build76.67%, Verification66.67%. | 153 domain/context/output tests; C2=33.33%, provider integration next. |
+| 2026-10-07 12:59:32 | SQ-01 C1 complete69.44%, Build94.44%, Verification66.67%. | 110 contract/publication and183 consumer tests; all632 predecessor schema bytes unchanged; new profile inactive pendingC2. |
 | 2026-10-07 12:44:11 | DEMO-01 closed100%; SQ-01/C1 resumes at41.67%. | Studio0.16.1 actual-owner walkthrough, seven-owner launch/drain, offline fallback; prior feedback read failure retained. |
-| 2026-10-07 12:20:17 | SQ-01.01 approved; C1/C2 added, overall41.67%, Build50%, Verification33.33%. | 2.5 completed units preserved; denominator4 to6. C1 contracts active; C2 owners, B3 proposals and V1 follow. |
-| 2026-10-07 11:51:00 | SQ-01 human focus complete; overall62.5%, Build88.89%, Verification33.33%. | 38 scoped tests; desktop/mobile export/browser proof; SQ-01.01 criterion-target profile awaits owner direction. |
+| 2026-10-07 12:20:17 | SQ-01.01 approved; C1/C2 added, overall41.67%, Build50%, Verification66.67%. | 2.5 completed units preserved; denominator4 to6. C1 contracts active; C2 owners, B3 proposals and V1 follow. |
+| 2026-10-07 11:51:00 | SQ-01 human focus complete; overall62.5%, Build94.44%, Verification66.67%. | 38 scoped tests; desktop/mobile export/browser proof; SQ-01.01 criterion-target profile awaits owner direction. |
 | 2026-10-07 11:02:03 | BP-09 closed100%,20/20; SQ-01 next. | Frozen12gate ledger,391independent tests, actual original/successor/blocked smoke; LR-01 preserves unresolved worker faults. |
 | 2026-10-07 10:42:02 | BP-09.04 closed100%;parent95%,19/20. BP-09.05 next. | Independent354Deployment/38evaluator tests, actual installed readback,337/337catalog refs and0pending; scoped audit preserves operational follow-ups. |
 | 2026-10-07 10:26:15 | BP-09.04 B3 complete;child75%,Build100%,Acceptance0%;parent75%. | Actual backup-copy faults reject before allocation; wrong pins/policy reject; expired1->accepted2 fence and stale_attempt preserve result. V1 active. |
@@ -112,7 +112,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-07 09:21:40 | BP-09.04 B1/B2.1 complete;child37.5%,Build50%,Acceptance0%;parent67.5%. | Cold backup e, separate restore b,237/237references,0pending retentions, exact original/corrected/blocked readbacks; Data0.31 independent audit. |
 | 2026-10-07 08:26:45 | BP-09.04 B1.1 complete;child12.5%,Build16.67%,Acceptance0%;parent62.5%. | Deployment0.12 manifest/inventory,98 tests,159statements/14branches100%; owner recovery objective selected. |
 | 2026-10-07 08:17:34 | BP-09.03 closed100%;parent60%,12/20; BP-09.04 B1 active0%. | Approved daemon outage, exact original/corrected/blocked readbacks, installed browser/owner proof and scoped audit; zero calls. |
-| 2026-10-07 07:21:01 | BP-09.03 B3 two of three checkpoints; child66.67%,Build88.89%,Acceptance0%;parent53.33%,(10+2/3)/20,ten closed gates. | Actual job/TLS death and exact-turn recovery48.265s;65 tests; bounded idle process-tree memory; shared-daemon scope approval pending. |
+| 2026-10-07 07:21:01 | BP-09.03 B3 two of three checkpoints; child66.67%,Build94.44%,Acceptance0%;parent53.33%,(10+2/3)/20,ten closed gates. | Actual job/TLS death and exact-turn recovery48.265s;65 tests; bounded idle process-tree memory; shared-daemon scope approval pending. |
 | 2026-10-07 06:58:35 | BP-09.03 B2 complete; child50%,Build66.67%,Acceptance0%; parent50%,10/20 gates. | Actual future-only corrected interpretation/source/graph/successor, browser1440/390,45 scoped tests; no paid calls. |
 | 2026-10-07 06:44:23 | BP-09.03 B1 complete; child25%,Build33.33%,Acceptance0%; parent45%,9/20 gates. | Studio0.13 actual successor carry/lineage/artifact proof, navigation regression and identical rebuilt assets; zero new model calls. |
 | 2026-10-07 06:23:32 | BP-09.03 successor prerequisite; percentages unchanged. | Deployment0.11 independent294tests, dedicated Registry peer read/resolve/replay/denial, original vault preserved; no campaign admission. |

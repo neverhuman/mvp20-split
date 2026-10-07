@@ -30,7 +30,7 @@ HTTP journey verifies32mixedpoints,20row paging, keyboard/filter/empty states,
 exact output graph marker/pinned navigation and independent Runtime/scientific
 denials. Axe/overflow checks pass. Visual review repaired a generic mobile aside
 height cap; explicit no-nested-inspector-clipping regression passes. Existing Explore
-and actual gateway entry regressions pass. Actual-owner quality acceptance remains V1.
+and actual gateway entry regressions pass. Actual-owner quality/follow-up acceptance is recorded in SQ-01/V1 closeout.
 
 SQ-01/B3 human-focus checkpoint, 2026-10-07 11:51:00, Studio0.16: QualityFocus
 owns immutable local drafts of up to32 exact points and two bounded2048character

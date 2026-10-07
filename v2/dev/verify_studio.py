@@ -30,12 +30,20 @@ def stage_source(workspace):
         shutil.copyfile(path, target)
         copied[path.relative_to(ROOT).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
     manifest = json.loads((source / "src/contracts/generated/manifest.json").read_text(encoding="utf-8"))
-    for group in ("authoring", "knowledge", "research", "provenance", "feedback", "supervision"):
+    for group in ("authoring", "knowledge", "research", "provenance", "feedback", "supervision", "followup"):
         entries = json.loads((source / "src/contracts/generated" / group / "manifest.json").read_text(encoding="utf-8"))
         manifest.update({group + "." + key: entry for key, entry in entries.items()})
+    profiles = json.loads((source / "src/contracts/generated/followup/profiles.json").read_text(encoding="utf-8"))
+    for key, pin in profiles.items():
+        manifest["followup.validation." + key] = {
+            "source": manifest["followup." + key]["source"].replace(".serialization.json", ".validation.json"),
+            "sha256": pin["sha256"],
+        }
     for entry in manifest.values():
-        path = (ROOT / entry["source"]).resolve()
-        assert path.is_relative_to((ROOT / "contracts/schemas").resolve())
+        path = (ROOT / entry["source"]).absolute()
+        assert ".." not in Path(entry["source"]).parts
+        assert path.is_relative_to((ROOT / "contracts/schemas").absolute())
+        assert hashlib.sha256(path.read_bytes()).hexdigest() == entry["sha256"], "Published schema drift"
         target = workspace / entry["source"]
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(path, target)

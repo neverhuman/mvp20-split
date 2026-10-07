@@ -3,8 +3,8 @@
 Source release **0.17.0** adds SQ-01/B3/P1 proposal transport, immutable intent
 projection and cancellable proposal/criterion models. The local entry now includes proposal/criterion drilldown. All286 Studio tests pass;
 scripted browser1440/390 accessibility, pagination and race checks pass. Actual-owner
-proposal/successor/byte/browser journey is qualified; independent Studio replacement
-and scoped audit remain V1. This source update
+proposal/successor/byte/browser journey, two independent286-test Studio installs
+and scoped audit are complete under [SQ-01](../docs/Audits/SQ-01_Quality_Closeout.md). This source update
 does not replace the separately frozen demo assets below.
 
 Current demo release: **0.16.1**, qualified against actual retained owners under
@@ -12,8 +12,8 @@ Current demo release: **0.16.1**, qualified against actual retained owners under
 execution/authored graphs, checkpoint reasoning, domain/evidence, saved draft
 inspection and explicit question/quality focus export. Launch selection pins survive
 one-time ticket removal. Frozen assets and operator steps are in the
-[presenter guide](../docs/Demo/2026-10-08%20Internal%20Demo.md). AI criterion targeting
-and a dependable new-run qualification remain SQ-01/LR-01 work. Earlier release
+[presenter guide](../docs/Demo/2026-10-08%20Internal%20Demo.md). AI criterion targeting is qualified in source0.17; dependable new-run qualification
+remains LR-01 work. Earlier release
 checkpoints below retain their historical scope; they do not override this status.
 
 

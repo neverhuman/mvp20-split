@@ -21,3 +21,5 @@ BP-01 completes the contract and validation foundation only. BP-02 completes the
 After required gates and a recorded closeout drift audit pass, move the plan and its history here, preserve final percentages/evidence and repair inbound links. Maintain a compact completed-plan index here as entries arrive. Future regressions or scope get successor plans; closed plans stay closed.
 
 - [DEMO-01 Internal Walkthrough](DEMO-01%20Internal%20Walkthrough.md): bounded delivery100%; presenter rehearsal pending, offline fallback and unresolved read failure recorded.
+
+- [SQ-01 Scientific Quality and Iteration Views](SQ-01%20Scientific%20Quality%20and%20Iteration%20Views.md): complete100%, Build100%, Verification100%; [audit](../../Audits/SQ-01_Quality_Closeout.md).

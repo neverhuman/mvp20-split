@@ -1,95 +1,54 @@
 # Restore
 
-Refreshed 2026-10-07 15:41:38 America/Chicago. Read FIRST after compression.
+Refreshed 2026-10-07 15:55:36 America/Chicago. Read FIRST after compression.
 
 ## Current handoff
 
-Demo2026-10-08 11am CT internal nontechnical colleagues. DEMO-01 delivered100%;
-presenter acceptance pending. Frozen launch/assets below remain unchanged.
-SQ-01 active88.89%, Build100%, Verification33.33%. B1/B2/B3/C1/C2 and V1a complete.
-NEXT V1b independent Studio replacement; V1c scoped audit. V1a100/V1b0/V1c0.
-No owner decision, paid calls, running jobs or owner hosts. Current lastpushedf8163ef3;
-next commit captures V1a proof/helpers/docs. Owning SQplan nowcompact; historical
-checkpoints moved to SQ-01 Planning History.md (activeplanownspercentages).
+Demo2026-10-08 11am CT, internal nontechnical colleagues. DEMO-01 delivered100%;
+presenter acceptance pending. Frozen sourceStudio0.16.1 unchanged. SQ-01 CLOSED100%,
+Build100/Verification100; V1a/V1b/V1c each100. Closed plan/history under
+ docs/Build Plans/Completed. Closeout docs/Audits/SQ-01_Quality_Closeout.md.
+NEXT LR-01 activation audit then R1 bounded no-model worker-reproduction specification.
+UI-R01 queued separately for original-focus-c unexplained feedback read. No owner
+approval pending, paid calls, owner hosts or test jobs running. Lastpushedcb3986f2;
+nextcommit independent Studio replacement + SQcloseout. Do not stop at commit.
 
-Current sourceStudio0.17 includes exact-profile followup transport, independent
-Runtime/Data permissions+SHA, immutable20row intent projection, exactResearch
-criterion/statusSHA drilldown; SupervisionModel owns lifecycle. B3all286tests/pass,
-generated/buildpass, scriptedbrowser1440/390/axe/overflow and actualownerproofbelow.
-FrozenDemo0.16.1 unchanged. No newliveOpenAIprofileactivation: deterministicfixture.
+V1b .test-results/sq01-followup-replacement-20261007a passed two independent locked
+Studio installs286tests each, schema regeneration and actualownerbrowser1440/390
+with exactcriteria, permissiondenial, unchangedhistory/outputbytes; allhostsclosed.
+Images byteidentical to previously reviewed browserc. Stager now copies/checks
+followup serialization+3validationprofilepins. Reproducible install, NOT blindUIrewrite.
+verify_followup_replacement.py is dev-only; owner implementations never staged.
+V1_Replacement.json and V1_Journey.json own compact evidence. Boundaries pass.
 
-V1a isolated current owners ROOT.test-results/sq01-followup-owners-20261007b:
-Data0.31/Research0.40/Planning0.104/Runtime0.66. Records ROOT
-.test-results/sq01-followup-records-20261007c, scope21b6fdc16ee8499886d04918e122d2c1.
-Actualexchange ROOT.test-results/sq01-followup-exchange-20261007b:
-original aed1956bccf14f29a1bbcc8e6974cfd9 completedrevision4; retainedPlanningproposal
-1exacttarget/3unresolved, Runtimewinnerfuture_campaign. SavedDraft
-followup-23969357b7ef4aa69a802c6afd9f5ecd; successor
-7a8b5ace3e4e4bbb9745645d996eb71b COMPLETED fromsameexactcandidate, predecessorcarry
-andoriginalhistoryunchanged. No newprovidercall onresume. Dataactualbytesoriginala1,
-successora2 andSHA verified. Doesnotprove scientificimprovement.
+V1a ROOT.test-results/sq01-followup-owners-20261007b current4owners;
+records ROOT.test-results/sq01-followup-records-20261007c (keepbytefolder);
+exchange ROOT.test-results/sq01-followup-exchange-20261007b. Original
+ aed1956bccf14f29a1bbcc8e6974cfd9 completedrevision4; successor
+ 7a8b5ace3e4e4bbb9745645d996eb71b completed; target1/unresolved3, a1->a2.
+Exact saved/validated candidate/predecessorcarry; NOscientificimprovementclaim.
+2artifact_confirm acknowledged;9notificationspending unconfigureddestination.
+Deterministicprovider only; liveadapter newprofile NOTactivated. Frozen demo separate.
+Actualbrowser ROOT.test-results/sq01-followup-browser-20261007c passed.
+Exchangea blocked fixtureactor mismatch, b first422legacyvalidate mismatch retained;
+correctedresume reused exactdraft/proposal with no newmodelcall or historyrewrite.
+Helpers dev/followup_acceptance + verify_followup_exchange/browser/replacement.
+Session.retained restarts only3readbackowners, no Planning/model.
 
-Finalactualbrowser ROOT.test-results/sq01-followup-browser-20261007c PASS1440/390,
-keyboard/axe/overflow/refreshedexactDataResearchreads/actualcredential401or403clear.
-Snapshotsc byteidenticaltoa imagesactuallyviewed. output-proof.json verifiesa1/a2;
-delivery-proof.json RuntimeOWN SQLread-only confirmsartifact_confirmacknowledged1
-foreachrun. Ninependingruntime_notifications have no configured destination inthis
-fixture; not failedArtifactretention. Actualcallbackandpubliccontentreads verified.
-Evidence docs/Audits/Evidence/SQ-01-Quality/V1_Journey.json. Existing/scriptedbrowser
-regressions20-41-04-856Z and20-41-08-191Z PASS. Allownedhostsclosed.
+Frozen DEMO launch: v2/Start-Demo.ps1 or -Scenario successor. Ctrl+C drains7owners;
+2hour bounded session, no workers/models. InstalledDeploymentPython ROOT
+.test-results/acceptance-owner-final-b/environment/Scripts/python.exe. Physicalroot
+C:/Users/alb_p/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/Local/Amphora/local-v2/restore-20261007b.
+Frozen Studio ROOT.test-results/demo-20261008/public-b; frozen-original and
+frozen-successor manifests carry copied7source-locks; don'trepin/rebuild these.
+Guide docs/Demo/2026-10-08 Internal Demo.md; offline docs/Demo/2026-10-08/index.html.
+Latest launcher20261007-124737-8b02736b PASS7drains0. Original-focus-d/successor-b
+PASS1440/390. d8Researchreads200 does NOTrepair unexplained original-focus-c.
+Originaldemo modelabstained; keep limits and offlinefallback explicit.
 
-Retained failures: ownerinstall a wrongResearchpackagename (fixedb); recordsa missing
-existingbytesroot (fixedb); exchangea Runtimeartifactownerfollowup-proof differed
-fromauthorizedDataactoroperator: run4cc576bb7949498ba6058530e1d4a869 blockedpack
-binding_deadline_expired, modelaccepted. Read-only failure-readback.json retained.
-Exchangeb originalpassed then422wrongdefinition.validateencoding incontroller.
-Correctedlegacyvalidation and resumedSAMEsaveddraft/proposal; newcommands nowpersist
-beforePOST. No productionvalidationweakened/historyreset. Earlierdemo original-focus-c
-feedbackunverified remains unexplained; newactualreadqualification isnotrepair.
-V1c must retain/assignnonblockingdiagnosticfinding explicitly, no blanketreliabilityclaim.
-
-Helpers dev/followup_acceptance/{materials,session}.py plus README;
-prepare_followup_acceptance.py,verify_followup_records.py,verify_followup_exchange.py
-(--resume),inspect_followup_exchange.py,verify_followup_browser.py. Session.retained
-restarts3owners withoriginalcompiledconfigs/ports,newtokens,NOPlanning/provider.
-Runtimeown tests/supervision_followup/export_acceptance.py noSQLcompiler and
- delivery_readback.py ownSQLdiagnostic; Planningown tests/campaign_followup/owner_probe.py
-TESTONLY deterministictargetprovider throughproductionvalidation/publication.
-Browser tests/integration/followup_live.mjs stdincredentials->loopbackadapter reuses
-productionSupervisionInspector. Neverdumppostgres-fixturesecretsorrawownerlogs.
-
-V1b next: inspect existing independentStudio acceptance conventions/moduleREADMEs;
-prepareisolatedconsumer/publicschemas withoutownerstatechanges, runscopedtests and
-sameactualownerbrowser. Need identify exactreplacementboundary; do notclaimwholeUI
-rewrite if onlyindependentinstallation or focusedmodule rebuild. ThenV1c audit.
-LR01queued; unresolvedworkerexit2/3 andpriorreadfailuretruthfulbelow. No newapproval.
-
-Launch `v2/Start-Demo.ps1` (original) or `-Scenario successor`; Ctrl+C drains.
-Uses installedDeploymentPython .test-results/acceptance-owner-final-b and explicit
-physical restorebroot. Does not start workers/models. Guide docs/Demo/2026-10-08
-Internal Demo.md; offline6pagewalkthrough docs/Demo/2026-10-08/index.html with tracked
-real-owner screenshots and manifest. Defaultbrowseropen is operatorstep; rehearsal
-usedNoBrowser. Boundedsessionduration2hours, independentnew sessionfolder eachtime.
-
-Root .test-results/demo-20261008/public-b is frozenStudio0.16.1. Qualification
-original-focus-d and successor-b PASS1440/390; each7ownersdrained0. D includes
-connectedauthoredgraph, reasoningabstention, domain, unassessedfocus/export, draft.
-Wrapper now selects frozen-original/frozen-successor derived manifests with exact
-byte copies of all7 owner source-locks, so later dependency updates cannot repin demo.
-Original qualifications unchanged. Snapshot launcher session20261007-124737-8b02736b
-PASS7ownersdrained0. Prior launcher124044-f7fb84bc PASS49.39s total.
-Tamperedassetdigest rejects beforeoutput/ownerstartup. Offlineall6pages1440/390
-image/axe/overflowpass.20focusedquality/selectiontests pass andTSbuildpass.
-All owners stopped; store containers unchanged. No model charges.
-
-Fixedentry.tsx stripping feedback/quality_output withone-timelaunchticket; preserve
-onlysupportedpins and erasecredential. Firstoriginal-focus failure retained.
-Separate original-focus-c failedunverifiedfeedbackread AFTERrootgraphcapture; cause
-UNRESOLVED. Addedpayload-free Researchpath/status tracing; dpassed8reads200, which
-doesnotrepairc. Audit/Drift assign SQ01V1readpath qualification. Offlinefallback
-explicit. Original-focus-b/successor and earlierpublicassets retained.
-
-BP09closed100%,12gateledgerfrozen; acceptedrestore details below.
+An interrupted documentation scan was stopped at exactownedPID34628 after slow
+NASrglob; reran using rgfilelist and completed targeted archive/linkupdates. No
+runtimeprocess affected. Avoid pathlib.rglob over v2/node_modules/.test-results.
 
 ## Qualified evaluator / accepted B2
 

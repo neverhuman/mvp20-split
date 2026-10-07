@@ -2,7 +2,7 @@
 
 [Master Build Tracker](Master%20Build%20Tracker.md) selects the primary plan and mirrors its canonical overall/per-phase completion. Owning plans define task position, tests and phase gates.
 
-BP-01 through BP-09 are [completed](Completed/README.md). SQ-01 is next for bounded activation. MBT selects the primary task. Drafting does not earn implementation credit.
+BP-01 through BP-09 are [completed](Completed/README.md). SQ-01 is completed; LR-01 is next for bounded activation. MBT selects the primary task. Drafting does not earn implementation credit.
 
 - [BP-02 Durable Runtime and Artifact Foundation](Completed/BP-02%20Durable%20Runtime%20and%20Artifact%20Foundation.md).
 - [BP-03 Tool Index and Standalone Execution](Completed/BP-03%20Tool%20Index%20and%20Standalone%20Execution.md).
@@ -17,6 +17,8 @@ Read the selected plan's tracker first. Complete each phase gate before advancin
 
 [Planning Readiness and Cross-Plan Handoffs](Planning_Readiness.md) summarizes child maturity, producer/consumer contracts, evidence tiers and the exact later gates needing owner decisions. Open the parent first, then its immediate child; history preserves prior scope and is not an execution tracker.
 
-- [SQ-01 Scientific Quality and Iteration Views](SQ-01%20Scientific%20Quality%20and%20Iteration%20Views.md): queued BP-05 successor after BP-06 quality projections and BP-07.03 proposal contracts; 0%.
+- [SQ-01 Scientific Quality and Iteration Views](Completed/SQ-01%20Scientific%20Quality%20and%20Iteration%20Views.md): completed100%; quality/focus/proposal views and bounded independent acceptance.
 
 - [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md): queued0%; preserves unresolved actual worker failures; no soak claim.
+
+- [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md): queued0%; historical feedback read remains unexplained.

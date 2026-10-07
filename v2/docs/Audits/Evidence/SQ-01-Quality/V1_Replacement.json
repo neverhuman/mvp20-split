@@ -1,0 +1,23 @@
+{
+  "timestamp_local": "2026-10-07 15:50:41",
+  "status": "V1b_complete",
+  "raw_evidence": ".test-results/sq01-followup-replacement-20261007a",
+  "manifest_sha256": "759a8ce1968de28ef3c47213585418177cc27ecc0c1e59f8cf4875077de1f837",
+  "tests_per_install": {
+    "original": 286,
+    "replacement": 286
+  },
+  "browser_per_install": [
+    "1440/390",
+    "actual-owner proposal and exact criteria",
+    "actual permission denial clears evidence",
+    "original history unchanged",
+    "original and successor output bytes verified"
+  ],
+  "limits": [
+    "Reproducible consumer replacement, not an independently rewritten UI",
+    "No provider calls, owner migrations, active graph writes, or scientific improvement claim"
+  ],
+  "paid_calls": 0,
+  "hosts_stopped": true
+}
