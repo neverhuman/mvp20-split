@@ -46,7 +46,7 @@ class AccessListener:
         alive = self.thread.is_alive()
         return {'state': 'failed' if self.failed else 'draining' if alive and self.draining else
                 'running' if alive else 'drained', 'port': self.server.server_port,
-                'upstream_readiness': 'not_assessed'}
+                'upstream_readiness': 'not_assessed', 'connections': self.server.load.snapshot()}
 
     def drain(self):
         if self.drain_thread is None and self.thread.is_alive():

@@ -267,3 +267,21 @@ read-only comparison of original graph/admission/response and actual artifact by
 Planning0.102's explicitly selected compact profile retains the original wire profile
 and limits. This scalar checkpoint proves real model acceptance, usage and replay;
 scientific execution and Research/Knowledge context composition are separate gates.
+
+`prepare_local_integrated.py` reads exact public Research/Knowledge records, publishes
+a bounded synthetic context projection and composes immutable six-owner scientific
+and supervision configurations. Runtime's numeric-search test exporter compiles the
+seed invocation checkpoint without SQL or provider access. Scientific inputs remain
+the reviewed fixture's structured artifacts; a model abstention can continue unchanged.
+`verify_local_integrated.py` measures the actual required packet before starting
+Planning. Default mode cancels after this zero-call preflight. `--key-file` permits
+one bounded live attempt; `--science-only` instead runs a separate unsupervised graph
+under the same six-owner configuration without loading a key. Preserve every admitted
+run, including failures. Registry setup reads existing lifecycle state and never
+silently reactivates a drained/revoked release. Fresh scientific worker bindings use
+a graceful stopped-configuration transition and the original admission receipt.
+`inspect_local_integrated.py` reads retained supervised outcomes through five owners
+without workers, confirms original graph/admission/context and inspects model usage,
+actual output bytes and retention. A successful readback does not convert failed
+invocations into scientific success. The integrated oracle still requires15 canonical
+successful invocations,6 evaluations,3 selection checkpoints and confirmed outputs.

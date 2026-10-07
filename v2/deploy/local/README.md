@@ -79,3 +79,8 @@ BP-09.03 adds [tool TLS access](src/amphora_deployment/tool_access/README.md): e
 server identity and bounded fixed-owner forwarding for Linux tool SDK connections. Existing
 profile/supervisor v1 stays unchanged. Managed TLS/worker configuration is the next integration
 unit; transport probes alone do not grant tool eligibility or establish scientific execution.
+
+Deployment0.10 adds bounded TLS admission pressure counters and sets the listener
+default to its existing16-connection ceiling, accommodating five tool workers plus
+five simultaneous readiness probes. See tool_access/README.md for concurrency, privacy
+and replacement semantics. Historical expired tool attempts remain under diagnosis.

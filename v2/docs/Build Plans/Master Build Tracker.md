@@ -9,14 +9,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-08 closed100%; BP-09.01/.02 closed; BP-09.03 B1.4 active.
-- Last refreshed: `2026-10-07 04:24:49` (America/Chicago).
+- Last refreshed: `2026-10-07 05:13:52` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P8 / BP-09 - Single-Server Integrated Demo and Replacement Proof.
-- Primary active task: BP-09.03/B1.4b combine actual owner context, model supervision and the scientific execution graph; B1.4a managed live checkpoint verified.
+- Primary active task: BP-09.03/B1.4b guarded live composition after Deployment0.10 repair and independent scientific controls; full integrated oracle still pending.
 - Next task: BP-09.03/B1.4c repeatable browser/API objective-to-successor trace, then B2 scenarios.
 - Implementation completion: BP-09=44.17%,(8+5/6)/20 verified delivery weight, eight closed gates; completed plans are in the archive.
-- Active focus: connect selected-model supervision and browser/API trace to verified tools and actual owner records.
-- Blockers: none for local installation engineering. Provider/integrated demonstration gates remain scoped to later children.
+- Active focus: repeat integrated scientific/model proof with pressure counters; preserve earlier failed runs and exact model/context evidence.
+- Blockers: no owner decision needed; historical expired attempts remain a B3 reliability finding. Repaired three-/six-owner scientific controls pass; integrated live gate remains pending.
 - Acceptance posture: BP-08 synthetic engineering accepted20/20; BP-09.01/.02 local preflight/infrastructure accepted; full autonomous campaign/model integration pending.
 - Active exception: none.
 

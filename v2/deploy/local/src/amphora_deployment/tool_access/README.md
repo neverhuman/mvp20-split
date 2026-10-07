@@ -22,7 +22,7 @@ original bearer/body/method/path go upstream; cookies and other headers do not. 
 status/body/content-type return. Authentication denial remains the owner's response. Diagnostics
 never echo payloads, headers, credentials or exception tracebacks.
 
-Eight connections by default, at most16, with handshake/read timeouts and30-second forwarding
+Sixteen connections by default and maximum, with handshake/read timeouts and30-second forwarding
 deadline. Bodies/responses are capped16MiB, conflicting lengths/chunked input are rejected.
 One request per connection; accepted threads are non-daemon and server_close waits for them.
 That transport drain is not worker/campaign quiescence. Optional local-tool-access-v1
@@ -45,3 +45,13 @@ Independent Deployment0.3 passes126 tests and actual Linux evolution0.5/SDK0.2 t
 probes through a synthetic upstream. Coverage224/247 statements,36/44 branches (89.35%
 combined). Remaining paths include connection-cap/thread-start failures, some timeout/socket
 errors, alternate response framing/media and Expect handling. No100% or actual-owner claim.
+
+Deployment0.10 increases the default from8 to the existing16 ceiling: five scientific
+workers and five simultaneous catalog TLS probes can exceed8. The actual ten-connection
+regression failed on the previous default. ConnectionLoad owns atomic admission/release
+and lifetime limit/active/peak/admitted/denied counters, surfaced in managed status.
+No paths, headers, payloads, keys, timestamps or raw diagnostics enter these counters.
+They reset on listener replacement and do not establish upstream readiness. Explicit
+smaller limits still reject excess connections without releasing another request slot.
+Two retained campaign failures showed expired attempts, but lacked pressure counters;
+this repair alone does not prove that saturation caused those historical failures.

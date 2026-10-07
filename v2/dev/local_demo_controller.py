@@ -13,11 +13,15 @@ from amphora_deployment.lifecycle.configuration import control_token
 
 
 class Controller:
-    def __init__(self, root, output, routes, label):
+    def __init__(self, root, output, routes, label, *, model_key=None):
         self.routes, self.token = routes, control_token(root)
         self.opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
         environment = {key: value for key, value in os.environ.items() if key.upper() in {
             'SYSTEMROOT', 'WINDIR', 'PATH', 'TEMP', 'TMP', 'USERPROFILE', 'LOCALAPPDATA', 'APPDATA', 'COMSPEC'}}
+        environment['PYTHONUTF8'] = '1'
+        if model_key is not None:
+            assert type(model_key) is str and model_key
+            environment['AMPHORA_OPENAI_API_KEY'] = model_key
         self.job = ProcessJob()
         self.process = None
         try:
@@ -66,12 +70,16 @@ class Controller:
             time.sleep(.2)
 
     def start_owners(self, registry_token):
-        for owner, path, token in [('artifact', '/ready', None), ('runtime', '/health', None),
+        configured = self.control('/status')['owners']
+        for owner, path, token in [('artifact', '/ready', None), ('research', '/health', None),
+                                  ('knowledge', '/health', None), ('planning', '/ready', None), ('runtime', '/health', None),
                                   ('registry', '/v1/releases', registry_token)]:
+            if owner not in configured:
+                continue
             self.control('/owners/' + owner + '/start', 'POST')
             self.wait(lambda owner=owner, path=path, token=token:
                       self.request(self.routes.endpoint(owner), path, token=token)[0] == 200)
-            if owner != 'registry':
+            if owner in ('runtime', 'artifact'):
                 self.control('/tool-access/' + owner + '/start', 'POST')
 
     def drain(self):
@@ -88,7 +96,9 @@ class Controller:
         for owner in ('runtime', 'artifact'):
             self.control('/tool-access/' + owner + '/drain', 'POST')
         self.wait(lambda: all(row['state'] == 'drained' for row in self.control('/status')['tool_access'].values()))
-        for owner in ('runtime', 'artifact', 'registry'):
+        for owner in ('runtime', 'planning', 'knowledge', 'research', 'artifact', 'registry'):
+            if owner not in status['owners']:
+                continue
             def drained(owner=owner):
                 value = self.control('/owners/' + owner + '/drain', 'POST', (200, 409))
                 return 'error' not in value

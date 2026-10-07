@@ -46,7 +46,7 @@ class Campaign:
             self.identity('artifacts.finalize', {'upload_id': upload['upload_id'], 'content': content}))
         return result['artifact']
 
-    def admit(self):
+    def admit(self, *, supervision_policy=None):
         self.policy = self.publish((self.output / 'policy.json').read_bytes(),
                                   self.releases['evaluate']['tool']['inputs'][1]['schema_ref'])
         script = self.fixture_root / 'services/campaign_runtime/tests/numeric_search/specification.py'
@@ -63,7 +63,14 @@ class Campaign:
             for port in definition['body']['inputs']]
         self.admission_command = self.identity('graph.admit', {'plan_sha256': self.plan['sha256'], 'inputs': inputs,
                                                 'budget': {'limit': 256, 'max_attempts_per_activation': 2}})
-        self.admission = self.call('runtime', '/v1/graph-runs', self.admission_command)
+        self.admission_path = '/v1/graph-runs'
+        if supervision_policy is not None:
+            self.admission_command['encoding'] = 'amphora-command-v2'
+            self.admission_command['identity']['command_family'] = 'graph.admit_supervised'
+            self.admission_command['payload'] = {'admission': self.admission_command['payload'],
+                                                 'policy_sha256': supervision_policy}
+            self.admission_path += '/supervised'
+        self.admission = self.call('runtime', self.admission_path, self.admission_command)
         assert self.admission['outcome']['status'] == 'accepted', self.admission['outcome']
         self.run_id = self.admission['outcome']['committed']['object_id']
         return self.run_id
@@ -124,7 +131,7 @@ class Campaign:
                 last.update(statuses)
             return all(value == 'confirmed' for value in statuses.values())
         self.controller.wait(confirmed, timeout=120)
-        assert self.call('runtime', '/v1/graph-runs', self.admission_command) == self.admission
+        assert self.call('runtime', self.admission_path, self.admission_command) == self.admission
         return {'graph': graph, 'admission': self.admission, 'reports': reports, 'retained': retained,
                 'compiler_probe_sha256': self.compiler_probe_sha256}
 

@@ -1,0 +1,160 @@
+{
+  "timestamp_local": "2026-10-07 05:13:07",
+  "status": "capacity_and_no_model_controls_passed_live_integration_pending",
+  "release": "amphora-deployment0.10.0",
+  "installation": {
+    "timestamp_local": "2026-10-07 05:02:20",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-deployment",
+    "forbidden_implementations": [
+      "amphora_campaign_runtime",
+      "amphora_agent_planning",
+      "amphora_data_artifacts",
+      "sqlalchemy",
+      "pydantic"
+    ],
+    "packages": {
+      "amphora-deployment": "0.10.0"
+    },
+    "wheels": {
+      "amphora_deployment-0.10.0-py3-none-any.whl": "c267ddb7d6260b675e18e3812cb6b2ffa68d84f602496466d4d01eb7d1f5ac1a"
+    }
+  },
+  "red_test": {
+    "scenario": "ten concurrent trusted TLS connections against previous default8",
+    "result": "ConnectionAbortedError",
+    "tests_failed": 1,
+    "seconds": 2.25
+  },
+  "source_tests": {
+    "selection": "tool_access + tool_catalog",
+    "passed": 84,
+    "seconds": 20.65
+  },
+  "independent_tests": {
+    "passed": 279,
+    "seconds": 28.12
+  },
+  "managed_regression": {
+    "run_id": "3d4506afb3914570b215f7321f39dc90",
+    "canonical_successful_invocations": 15,
+    "evaluations": 6,
+    "selection_checkpoints": 3,
+    "confirmed_outputs": 15,
+    "execution_seconds": 108.96900000004098,
+    "maximum_control_latency_seconds": 0.06200000015087426,
+    "tls": {
+      "runtime": {
+        "state": "running",
+        "port": 51965,
+        "upstream_readiness": "not_assessed",
+        "connections": {
+          "limit": 16,
+          "active": 0,
+          "peak": 4,
+          "admitted": 460,
+          "denied": 0
+        }
+      },
+      "artifact": {
+        "state": "running",
+        "port": 51966,
+        "upstream_readiness": "not_assessed",
+        "connections": {
+          "limit": 16,
+          "active": 0,
+          "peak": 2,
+          "admitted": 158,
+          "denied": 0
+        }
+      }
+    },
+    "owners_drained_zero": true
+  },
+  "raw": {
+    "path": ".test-results/local-managed-campaign-install-20261007c/evidence.json",
+    "sha256": "d51e369f5661c6ecb9237434c00916b762b92ab6daabbd6c91fb4c631665f1b3"
+  },
+  "limits": [
+    "Default remains within previously allowed16-connection ceiling; explicit smaller limits still reject excess",
+    "Counters expose only limit/active/peak/admitted/denied and reset on listener replacement",
+    "No pressure counters existed for historical expired attempts; capacity defect is not proven historical root cause",
+    "Live six-owner model integration and browser trace remain separate gates; no scientific efficacy claim"
+  ],
+  "fresh_rebuild_wheels_identical": true,
+  "six_owner_control": {
+    "run_id": "d7341c6863984c4ab282d6aba10b1f65",
+    "status": "science_only_passed",
+    "successful_invocations": 15,
+    "evaluations": 6,
+    "selection_checkpoints": 3,
+    "confirmed_outputs": 15,
+    "elapsed_seconds": 133.21899999980815,
+    "maximum_control_latency_seconds": 0.07800000021234155,
+    "tls": {
+      "runtime": {
+        "state": "drained",
+        "port": 59104,
+        "upstream_readiness": "not_assessed",
+        "connections": {
+          "limit": 16,
+          "active": 0,
+          "peak": 3,
+          "admitted": 484,
+          "denied": 0
+        }
+      },
+      "artifact": {
+        "state": "drained",
+        "port": 59105,
+        "upstream_readiness": "not_assessed",
+        "connections": {
+          "limit": 16,
+          "active": 0,
+          "peak": 3,
+          "admitted": 161,
+          "denied": 0
+        }
+      }
+    },
+    "provider_calls": 0,
+    "raw_sha256": "1c2ee6045c00cf7ae86b25ea5886ccb7abd318cda061498e9844beea0d649efb"
+  },
+  "focused_coverage": {
+    "tests": 23,
+    "seconds": 17.99,
+    "totals": {
+      "covered_lines": 355,
+      "num_statements": 386,
+      "percent_covered": 90.26548672566372,
+      "percent_covered_display": "90",
+      "missing_lines": 31,
+      "excluded_lines": 0,
+      "percent_statements_covered": 91.96891191709845,
+      "percent_statements_covered_display": "92",
+      "num_branches": 66,
+      "num_partial_branches": 11,
+      "covered_branches": 53,
+      "missing_branches": 13,
+      "percent_branches_covered": 80.3030303030303,
+      "percent_branches_covered_display": "80"
+    },
+    "load": {
+      "covered_lines": 23,
+      "num_statements": 23,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100",
+      "num_branches": 4,
+      "num_partial_branches": 0,
+      "covered_branches": 4,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    }
+  }
+}

@@ -4,6 +4,14 @@ Status: B2 Runtime transactions and real Artifact/worker HTTP passed; worker int
 
 This Runtime-owned fixture composes public numeric and synthetic evaluator CLI descriptors/schemas. No production Runtime dependency on a scientific tool is introduced. Compiler-only catalog defaults are declared test identities; acceptance can require a verified image manifest and exact matching wheel closures.
 
+`export_supervision.py` compiles the actual reviewed numeric graph and a seed-invoke
+checkpoint against pinned public tool/schema records in an installed Runtime. It
+validates a supplied immutable context recipe without SQL, keys or network access.
+The checkpoint has no scalar adjustment fields; proposals remain retained advice,
+and an abstention may continue the scientific graph unchanged. Dev's local integrated
+probe owns public records, admission and process orchestration. Compilation alone
+does not establish model context consumption, scientific success or transport recovery.
+
 `definition.py` authors wire-v4 seed, context materialization, pending-request expansion, explicit array-to-Artifact projection, bounded scatter, all-terminal collection, selection and successor iteration. The specification and actual policy Artifact are explicit campaign inputs and loop captures. The policy is a second evaluator input; it is never looked up implicitly. Checkpoint content and its exact source Artifact reference travel together. Scalar stop predicates inspect the collected checkpoint phase. No hidden tool loop exists.
 
 A zero-generation graph still evaluates/selects the initial population. For a positive bound, Runtime's post-body iteration predicate can enter once with an already stopped initial checkpoint. Numeric vary/expand/collect are then bounded no-ops: zero evaluator calls and no RNG advancement. An exhausted graph limit with a non-stopped checkpoint blocks instead of silently claiming search completion. Graph/specification limits must agree in the acceptance fixture.

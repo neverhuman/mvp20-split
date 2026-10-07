@@ -1,13 +1,78 @@
 # Restore
 
-Refreshed 2026-10-07 04:29:36 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 05:13:52 (America/Chicago). Read FIRST after compression.
 
 ## Active task and exact execution state
 
-No running tests/builds/probes. BP-09.03/B1.4a COMPLETE; B1.4b NEXT.
+BP-09.03/B1.4a COMPLETE; B1.4b active, NO additional percentage credit.
+No running checks/probes. Latest pushed be6c98a9; verified Deployment0.10 plus
+integrated harness/docs await commit/push. Next: ONE guarded new live campaign using
+independent Deployment0.10 interpreter and same immutable configuration/project.
+Command .test-results/local-managed-campaign-install-20261007c/owner/environment/Scripts/python.exe
+v2/dev/verify_local_integrated.py --configuration .test-results/local-integrated-materials-20261007c
+--output .test-results/local-integrated-live-20261007b --key-file Z:/ssos/.env.
+Then actual readback/restart and explicit scientific15/6/3/15/context/usage verification.
+Do not credit B1.4b until full integrated oracle passes; B1.4c browser trace remains.
+
+Independent managed session58090 EXIT0:279tests28.12s, original three-owner
+run3d4506afb3914570b215f7321f39dc90 passes15/6/3/15retained108.969s, controlmax0.062s.
+Six-owner no-model session64881 EXIT0: rund7341c6863984c4ab282d6aba10b1f65 passes
+15/6/3/15retained133.219s including shutdown, controlmax0.078s. Both zero TLS denials,
+all owners drained0. Six-owner raw .test-results/local-integrated-science-20261007b.
+Installed Deployment0.10 .test-results/local-managed-campaign-install-20261007c/owner.
+Wheel c267ddb7d6260b675e18e3812cb6b2ffa68d84f602496466d4d01eb7d1f5ac1a.
+Fresh rebuild .test-results/local-deployment-capacity-rebuild-20261007a identical.
+Source84TLS/catalogtests20.65s; focused23TLS17.99s coverage
+.test-results/tls-capacity-20261007a.json. TLS_Capacity.json updated.
+TWO model calls totalUSD0.034854; no additional call in these controls.
+Production/module sources unchanged since qualification. Dev/fixture READMEs current.
+
+Confirmed separate TLS capacity defect: new test_capacity.py ten simultaneous
+trusted connections FAILED against default8 (ConnectionAbortedError). Five tool
+workers + five concurrent catalog handshakes can exceed8. Routine bounded repair:
+Deployment0.10 defaults to existing maximum16; ConnectionLoad owns admission/release
+and payload-free limit/active/peak/admitted/denied counters in managed status.
+No paths/headers/payloads/keys/raw logs in counters. Historical expiries did not have
+these counters, so saturation is NOT established as their cause. Do not claim otherwise.
+New load.py, proxy.py/managed.py changes;3capacity tests. Package/dev pins/uvlocks
+0.10 and dev env synced (editable metadata was stale; actual source used before).
+Source-adjacent tool_access/top Deployment READMEs updated BEFORE current tests.
+After tests: independent managed-campaign harness requalification (allDeploymenttests
+plus original three-owner numeric campaign) and six-owner no-model diagnostic;
+check pressure counters, exact15/6/3outputs/retention before another paid campaign.
+
+Latest no-model diagnostic session20694 EXIT1: run837519f6a19340a083773e989ea7a76b
+blocked at11spent; vary in generations[1] tool_failed, downstream blocked. Vary/evaluator
+containers exit3/faulted. All owners drained0. Raw local-integrated-science-20261007a.
+No new paid call. Source helper --science-only is separate unsupervised graph admission
+using same six-owner composition, never starts Planning worker or reads provider key.
+Need inspector extension for unsupervised admission if inspecting this run (currently
+inspector assumes supervised and one checkpoint). Do not rewrite old run or rerun it.
+
+Prior integrated live run0fb98ad04b264586959b6b785165089f: Runtime model_accepted,
+effect abstained, then scientific graph completed8spent with unavailable_fitness due
+expired evaluator attempt a2d82f8efe5b465e8212c52c62195db2, no canonical completion.
+Raw .test-results/local-integrated-live-20261007a. Readback session54108 EXIT0:
+.test-results/local-integrated-readback-20261007a; actual five owners restart without
+workers/key, exact graph/admission/Research/Knowledge/context/proposal/usage retained.
+Two physical model attempts total: scalar USD0.017435250 + integrated USD0.017418750
+= USD0.034854000; two full reservationsUSD0.116736 remain, same six/USD0.50 scope.
+NO additional paid call until no-call scientific work succeeds; preserve both failures.
+
+Preparation .test-results/local-integrated-materials-20261007c passed, actual public
+Research/Knowledge readback/contextArtifact, graph seed invoke checkpoint, noSQL compiler.
+Initial prep a relative-schema path / b strictJSONtuple bugs fixed, preserved.
+Dry preflight .test-results/local-integrated-preflight-20261007b passed:
+run512af7a9f78d4c0c8cce867d5c2999b5 deliberately cancelled, required bound63928/65536.
+New dev prepare_local_integrated.py, verify_local_integrated.py, inspect_local_integrated.py;
+Runtime tests/numeric_search/export_supervision.py. Shared Controller optional key +
+six-owner lifecycle; Campaign optional supervised admission/replay path.
+Need module/dev READMEs, canonical evidence/drift + MBT sync and commit/push once verified.
+Browser B1.4c separate, no efficacy or LLM-authored topology claim.
+Refresh 2026-10-07 05:01:35.
+
 Child20.83%, Build27.78%, Acceptance0%; parent44.17%, (8+5/6)/20, eight closed gates.
-Latest pushed7b8239e9 (owner records). Verified Planning0.102/live checkpoint changes
-await final documentation/diff review, commit and push; then continue B1.4b.
+Planning0.102/live checkpoint committed and pushed as be6c98a9. Continue B1.4b.
 Local computer access only: Windows x86_64/Python3.12, loopback listeners.
 No owner decision is needed. Keep progressing; milestones are not stopping points.
 

@@ -3,7 +3,7 @@
 ## Canonical Parent Tracker
 
 - Status: primary_active; BP-09.01/.02 closed; BP-09.03 B1.4 active.
-- Last refreshed: `2026-10-07 04:24:49` (America/Chicago).
+- Last refreshed: `2026-10-07 05:13:52` (America/Chicago).
 - Owner/scope: Local deployment/recovery integration with each service retaining ownership.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-05/06/07 and BP-08 for evolutionary demo claims; BP-02/03/04 durability and protocol gates.

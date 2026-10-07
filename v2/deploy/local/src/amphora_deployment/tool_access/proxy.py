@@ -10,6 +10,7 @@ from dataclasses import dataclass
 
 from ..profile import require
 from .identity import HOSTNAME
+from .load import ConnectionLoad
 
 MAX_BODY = 16 * 1024 * 1024
 DEADLINE_SECONDS = 30
@@ -33,7 +34,7 @@ class ToolAccessServer(http.server.ThreadingHTTPServer):
     block_on_close = True
     allow_reuse_address = False
 
-    def __init__(self, identity, route, *, port, maximum_connections=8):
+    def __init__(self, identity, route, *, port, maximum_connections=16):
         require(type(port) is int and 0 <= port <= 65535, "tool_tls_port")
         require(isinstance(route, OwnerRoute), "tool_tls_route")
         route = OwnerRoute(route.owner, route.upstream_port)
@@ -42,17 +43,17 @@ class ToolAccessServer(http.server.ThreadingHTTPServer):
             "tool_tls_connections",
         )
         self.context = identity.server_context()
-        self.route, self._slots = route, threading.BoundedSemaphore(maximum_connections)
+        self.route, self.load = route, ConnectionLoad(maximum_connections)
         super().__init__(("127.0.0.1", port), ToolAccessHandler)
 
     def process_request(self, request, client_address):
-        if not self._slots.acquire(blocking=False):
+        if not self.load.acquire():
             self.shutdown_request(request)
             return
         try:
             super().process_request(request, client_address)
         except BaseException:
-            self._slots.release()
+            self.load.release()
             raise
 
     def process_request_thread(self, request, client_address):
@@ -64,7 +65,7 @@ class ToolAccessServer(http.server.ThreadingHTTPServer):
         except (OSError, ssl.SSLError):
             self.shutdown_request(request)
         finally:
-            self._slots.release()
+            self.load.release()
 
     def handle_error(self, request, client_address):
         # Never emit tracebacks containing headers, payloads or credentials.
