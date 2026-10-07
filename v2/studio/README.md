@@ -3,7 +3,8 @@
 Source release **0.17.0** adds SQ-01/B3/P1 proposal transport, immutable intent
 projection and cancellable proposal/criterion models. The local entry now includes proposal/criterion drilldown. All286 Studio tests pass;
 scripted browser1440/390 accessibility, pagination and race checks pass. Actual-owner
-journey and independent Studio replacement remain V1. This source update
+proposal/successor/byte/browser journey is qualified; independent Studio replacement
+and scoped audit remain V1. This source update
 does not replace the separately frozen demo assets below.
 
 Current demo release: **0.16.1**, qualified against actual retained owners under

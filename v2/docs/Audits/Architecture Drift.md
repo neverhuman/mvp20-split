@@ -1,17 +1,17 @@
 # Architecture Drift
 
 - Status: BP-01 through BP-09 closed/audited; named successor findings remain.
-- Last refreshed: `2026-10-07 15:01:08` (America/Chicago).
+- Last refreshed: `2026-10-07 15:41:38` (America/Chicago).
 - Scope: unresolved v2 design/implementation alignment and scoped successor boundaries.
 - Active focus: selected-host integration and named scientific/UI successor limits.
-- Next gate: SQ-01 V1; LR-01 owns unresolved operational failures.
+- Next gate: SQ-01 V1b/V1c; LR-01 owns unresolved operational failures.
 
 ## Active Findings
 
 | Finding | Owner / trigger | Disposition |
 |---|---|---|
 | Intermittent feedback read during demo rehearsal | SQ-01/V1 read-path qualification | original-focus-c reported unverified records; later instrumented d passed8 Research reads200. Cause unresolved. Offline demo fallback provided; no reliability repair claim. See DEMO-01 audit. |
-| Actual-owner criterion-target journey and replacement remain incomplete | [SQ-01.01](../Build%20Plans/SQ-01.01%20Criterion%20follow-up%20contract%20decision.md), Planning/Runtime/Studio | C1/C2/B3 implemented and verified with public-contract/browser fixtures. New exact-profile UI retains criterion identities and checks independent content permission; old profiles remain need-level only. Actual-owner subsequent-campaign linkage and independent Studio replacement remain V1; no historical contract altered. |
+| Independent Studio replacement and final quality audit remain incomplete | [SQ-01.01](../Build%20Plans/SQ-01.01%20Criterion%20follow-up%20contract%20decision.md), Planning/Runtime/Studio | C1/C2/B3 implemented and verified with public-contract/browser fixtures. New exact-profile UI retains criterion identities and checks independent content permission; old profiles remain need-level only. Actual-owner proposal/next-campaign carry and exact output bytes/browser reads qualified in V1a. Independent Studio replacement/final audit remain V1; no historical contract altered. |
 | Intermittent local scientific attempt expiry | [LR-01](../Build%20Plans/LR-01%20Local%20Worker%20Reliability.md), queued after BP-09 handoff | Live and no-model six-owner runs retain expired/failed tool outcomes. Separate ten-connection regression proved default8 insufficient; Deployment0.10 uses existing16 ceiling and pressure counters. Independent279tests, original three-owner and six-owner no-model15/6/3/15 controls pass with zero denials. Historical expiry cause is not established; retain failures; bounded integrated/recovery gates now complete. BP-09.04 first rebuilt-evaluator campaign recurred as worker exit2 with12successful completions and1cancelled attempt, no completion; exact cause remains unproven. Second run failed unchanged collector with remaining lease/deadline time. Third reconstructed-tool campaign and337reference audit pass. New transport counters and750-read control do not establish cause; no kernel rejection or transport cause inferred from exit code alone. BP-09.05 must name a reliability successor; no operational-soak or unattended-reliability claim. Deployment worker owner investigates recurrence. [Evidence](Evidence/BP-09-Deployment/TLS_Capacity.json). |
 | Scientific and target-host claims exceed developer fixture proof | BP-07 model evaluation, BP-08 scientific search, BP-09 selected deployment; SQ-01 quality views | Named future gates; synthetic receipts/vectors and completed campaigns do not establish science; broader scientific deployment and K3s remain unproven |
 | Historical quota root omitted from initial cold snapshot | BP-09.04/B2.1 | Closed by explicit additional storage root capture,30configuration inputs and owner-local Data audit: restored237/237 references,0pending retentions; no source history rewrite. Restore_Verification.json. |

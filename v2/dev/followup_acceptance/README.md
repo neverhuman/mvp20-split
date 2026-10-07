@@ -28,3 +28,16 @@ Data upload and Research declarations/readback retained three unassessed criteri
 verify_followup_records.py owns two temporary processes and closes them in finally.
 The existing labeled fixture is preserved; no reset or migration. Outputs and byte
 roots must remain because durable records refer to them. This is not V1 acceptance.
+
+
+V1a completed 2026-10-07 15:41:38. materials.py prepares public artifacts and invokes
+Runtime-only compile; session.py owns isolated hosts and their scoped credentials.
+Session.retained restarts three hosts using original materials for successor resume
+or browser reads, never Planning/model replay. verify_followup_exchange.py persists
+new command bytes before dispatch; legacy definition.validate differs from numeric
+save/supervised/successor envelopes. A prior saved draft is reused by exact receipt.
+verify_followup_browser.py verifies original/successor bytes and hashes plus real
+browser/credential denial. delivery_readback.py is Runtime-owned SQL-only diagnostics;
+all ordinary orchestration uses public APIs. Both artifact confirmations acknowledged;
+unconfigured notifications remain explicitly outside this fixture. Initial failed
+runs remain recorded. Details/evidence in SQ-01 owning plan and V1_Journey.json.

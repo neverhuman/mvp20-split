@@ -32,3 +32,6 @@ The rebuilt coordinator owns independent catalog/lineage RequestLanes and subscr
 Begin the request generation before publishing loading state: subscribers may synchronously rebind or dispose. Late/uncancellable responses and subscriber-triggered context changes cannot restore older context. Publish stable frozen state only on a real transition; async operations never change authoritative domain state. Replacement must preserve these methods, region semantics, public transport, existing named_views.test.ts byte-for-byte and real-owner capability/lineage inspection. New replacement tests cover synchronous subscriber rebinding during both loading paths.
 
 BP-05.04/B3 replacement verified:106 model tests,10 navigation scenarios,25 actual-owner cases and two137-test independent builds. Coordinator100% lines/93.33% branches; projection100%/80%; direct aborted/resnapshot/catalog-failure and lifecycle branches remain. Source predecessor:db2c9a6. No public schema, dependency or migration change.
+
+
+2026-10-07 15:41:38: SQ-01 followup/ owns immutable bounded proposal projection, cancellation-fenced proposal selection and exact criterion evidence state. Supervision owns their lifecycle; UI components perform no reads. See followup/README.md.

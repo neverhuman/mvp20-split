@@ -27,3 +27,6 @@ V2 save/admit producers require Runtime0.19.0. Old unmarked callers remain suppo
 POST409 classifies command_conflict: the identity may already bind different bytes, so consumers must block adoption of that identity's receipt. GET409 remains stale metadata. A terminal200 rejected receipt is distinct; ordinary network loss still requires original receipt reconciliation. No client computes Runtime canonical request hashes or silently retries under fresh identity.
 
 BP-06.06 scientific/ owns distinct Knowledge/Research same-origin clients with exact query/ref/schema checks and1MiB output bounds. These are metadata inspection reads, not an expansion of Runtime authority. Source bytes are the separate B1.04b boundary.
+
+
+2026-10-07 15:41:38: SQ-01 followup/ reads a full public Runtime response, verifies inspection/request/capture identity and separately checks Data content permission/hash. Criterion reads pin exact Research records and optional assessment-status digest. See followup/README.md.

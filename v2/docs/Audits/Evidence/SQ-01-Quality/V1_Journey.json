@@ -1,0 +1,38 @@
+{
+  "timestamp_local": "2026-10-07 15:41:38",
+  "status": "V1a_complete",
+  "scope": "21b6fdc16ee8499886d04918e122d2c1",
+  "original": "aed1956bccf14f29a1bbcc8e6974cfd9",
+  "successor": "7a8b5ace3e4e4bbb9745645d996eb71b",
+  "exchange": ".test-results/sq01-followup-exchange-20261007b",
+  "browser": ".test-results/sq01-followup-browser-20261007c",
+  "targets": 1,
+  "unresolved": 3,
+  "output_values": {
+    "original": 1,
+    "successor": 2
+  },
+  "artifact_confirmations": 2,
+  "unconfigured_notifications_pending": 9,
+  "checks": [
+    "Exact retained proposal from Planning accepted by Runtime",
+    "Exact candidate saved/validated and admitted with predecessor carry",
+    "Original history unchanged across resume and browser",
+    "Actual Data bytes/digests match both output values",
+    "Browser1440/390 exact criterion reads, refresh, keyboard, axe/overflow",
+    "Actual Research credential rejection clears prior evidence"
+  ],
+  "retained_failures": [
+    "Exchangea blocked binding deadline: fixture reservation owner did not match authorized Data actor",
+    "Exchangeb validation request422: controller used v2 encoding; corrected legacy command resumed original saved draft without model replay"
+  ],
+  "limits": [
+    "Synthetic fixture; no scientific improvement or live-model quality claim",
+    "Historical original-focus-c feedback failure remains unexplained",
+    "Independent Studio replacement and final audit pending",
+    "Frozen demo unchanged"
+  ],
+  "paid_calls": 0,
+  "hosts_stopped": true,
+  "screenshots_match_visually_reviewed": true
+}

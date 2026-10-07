@@ -27,3 +27,6 @@ alongside schemas/types. Public decoder signatures, format checks, no-coercion a
 no-mutation behavior remain unchanged. All241Studio tests pass; independent generation
 also passes. Browser code no longer imports the AJV compiler or requires unsafe-eval.
 See [AJV standalone generation](https://ajv.js.org/standalone).
+
+
+2026-10-07 15:41:38: SQ-01 adds four roots under generated/followup, with exact validation-profile SHA pins for dispatch: new criterion-followup, legacy checkpoint/campaign and full SupervisionResponse. Serialization schemas validate bytes; profiles select meaning. Unknown profiles stay unsupported.

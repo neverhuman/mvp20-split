@@ -91,3 +91,6 @@ opens both original and corrected pinned domain snapshots, checks hypothesis ver
 unresolved posture, and reads the new verified text passage. The original binary
 source stays unavailable to the text viewer. Screenshots include the scrolled source
 region at desktop/narrow widths; no new Studio code or schema is needed.
+
+
+2026-10-07 15:41:38: SQ-01 followup_live.mjs runs the production checkpoint/follow-up inspector against actual isolated Runtime/Data/Research. Credentials enter only stdin and stay in the loopback adapter. It verifies actual proposal/capture/criterion identities, refreshed reads, owner credential rejection,1440/390 keyboard/axe/overflow. The Python controller separately verifies predecessor carry and exact original/successor output bytes. No scientific claim or new model call.

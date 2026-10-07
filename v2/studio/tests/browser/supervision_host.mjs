@@ -2,6 +2,7 @@ import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { build } from "esbuild";
+import { allowedRoute } from "../../dist/src/transport/scientific/routes.js";
 export async function startSupervisionHost(actual = null, followup = null) {
   await build({ entryPoints: ["tests/browser/supervision_entry.tsx"], bundle: true, outdir: "dist/supervision-browser", format: "esm", jsx: "automatic" });
   const fixtures = Object.fromEntries(await Promise.all(["checkpoints","requests","context","responses"].map(async k => [k,JSON.parse(await readFile(`tests/fixtures/supervision/${k}.json`,"utf8"))])));
@@ -12,6 +13,20 @@ export async function startSupervisionHost(actual = null, followup = null) {
     const reply = (code,value) => { res.writeHead(code,{"content-type":"application/json","cache-control":"no-store"});res.end(JSON.stringify(value)); };
     try {
       if(path==="/binding") { reply(200,{synthetic:!actual,binding:actual?.binding ?? {run:fixtures.checkpoints.snapshot.cut.run_id,scope:fixtures.checkpoints.snapshot.cut.scope}});return; }
+      if (actual?.peers && (path.startsWith("/api/data/") || path.startsWith("/api/research/"))) {
+        if (url.search || req.headers.authorization || !allowedRoute(req.method,path)) { reply(403,{}); return; }
+        const name=path.split("/")[2], peer=actual.peers[name], origin=new URL(peer.endpoint);
+        if(origin.protocol!=="http:" || origin.hostname!=="127.0.0.1" || origin.pathname!=="/") throw Error("owner_origin");
+        const chunks=[];let size=0;
+        for await(const chunk of req) {size+=chunk.length;if(size>262144)throw Error("input_limit");chunks.push(chunk);}
+        const upstream=await fetch(peer.endpoint+req.url.slice(("/api/"+name).length),{method:req.method,redirect:"error",
+          headers:{Authorization:"Bearer "+peer.token,"Content-Type":"application/json"},
+          ...(req.method==="POST"?{body:Buffer.concat(chunks)}:{}),signal:AbortSignal.timeout(15000)});
+        const parts=[];size=0;
+        for await(const chunk of upstream.body) {size+=chunk.length;if(size>4194304)throw Error("output_limit");parts.push(chunk);}
+        state.calls.push({path,method:req.method,ownerAuthorization:false,status:upstream.status});
+        res.writeHead(upstream.status,{"content-type":upstream.headers.get("content-type")??"application/json","cache-control":"no-store"});res.end(Buffer.concat(parts));return;
+      }
       if (followup && (path.startsWith("/api/data/") || path.startsWith("/api/research/"))) {
         state.calls.push({path,method:req.method,ownerAuthorization:!!req.headers.authorization});
         if (state.mode === "content-denied") { reply(403,{}); return; }
