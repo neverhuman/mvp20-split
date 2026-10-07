@@ -1,0 +1,138 @@
+{
+  "timestamp_local": "2026-10-06 19:48:26",
+  "status": "passed",
+  "profile": "search-recovery-consolidation-v1",
+  "runs": {
+    "baseline": {
+      "run_id": "befb59bb39354bc5892b05c469e6e0e3",
+      "attempts": 15,
+      "accepted": 15,
+      "evaluations": 6,
+      "evaluator": {
+        "capability_id": "synthetic.numeric-objectives",
+        "contract_version": "1",
+        "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "release": "0.2.0"
+      }
+    },
+    "resumed": {
+      "run_id": "62fa31294fc14e7287ec801ee6ca1136",
+      "attempts": 16,
+      "accepted": 15,
+      "evaluations": 6,
+      "evaluator": {
+        "capability_id": "synthetic.numeric-objectives",
+        "contract_version": "1",
+        "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "release": "0.2.0"
+      }
+    },
+    "original": {
+      "run_id": "60172b7f48dc458fb8c81c34b0c196ce",
+      "attempts": 15,
+      "accepted": 15,
+      "evaluations": 6,
+      "evaluator": {
+        "capability_id": "synthetic.numeric-objectives",
+        "contract_version": "1",
+        "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "release": "0.2.0"
+      }
+    },
+    "corrected": {
+      "run_id": "913b763ddd95483fb3ab1de8d93e83df",
+      "attempts": 15,
+      "accepted": 15,
+      "evaluations": 6,
+      "evaluator": {
+        "capability_id": "synthetic.numeric-objectives",
+        "contract_version": "1",
+        "image_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "release": "0.3.0"
+      }
+    }
+  },
+  "equivalent_checkpoints": 6,
+  "reuse_source_count": 7,
+  "copied_v1_sources": [],
+  "native_profiles": {
+    "numeric": {
+      "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "machine": "AMD64",
+      "native_validation_module": "Z:\\mvp20-split\\.test-results\\search-adapter-rebuild-20261006a\\numeric\\environment\\Lib\\site-packages\\pydantic_core\\_pydantic_core.cp312-win_amd64.pyd",
+      "distributions": {
+        "Pygments": "2.21.0",
+        "amphora-contracts-artifacts": "0.2.0",
+        "amphora-contracts-campaigns": "0.4.1",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-graph-runtime": "0.13.0",
+        "amphora-contracts-runtime": "0.1.0",
+        "amphora-contracts-search": "0.1.0",
+        "amphora-contracts-search-steps": "0.1.0",
+        "amphora-contracts-tools": "0.1.0",
+        "amphora-evolution-search": "0.5.0",
+        "amphora-tool-protocol": "0.2.0",
+        "annotated-types": "0.8.0",
+        "colorama": "0.4.6",
+        "iniconfig": "2.3.1",
+        "packaging": "26.3",
+        "pluggy": "1.6.0",
+        "pydantic": "2.13.5",
+        "pydantic_core": "2.46.5",
+        "pytest": "8.4.2",
+        "typing-inspection": "0.4.4",
+        "typing_extensions": "4.16.0"
+      }
+    },
+    "evaluator": {
+      "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "machine": "AMD64",
+      "native_validation_module": "Z:\\mvp20-split\\.test-results\\corrected-evaluator-20261006a\\environment\\Lib\\site-packages\\pydantic_core\\_pydantic_core.cp312-win_amd64.pyd",
+      "distributions": {
+        "amphora-contracts-artifacts": "0.2.0",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-runtime": "0.1.0",
+        "amphora-contracts-search": "0.1.0",
+        "amphora-contracts-tools": "0.1.0",
+        "amphora-multi-input-worker": "0.1.0",
+        "amphora-synthetic-objectives": "0.3.0",
+        "amphora-tool-protocol": "0.2.0",
+        "annotated-types": "0.8.0",
+        "pydantic": "2.13.5",
+        "pydantic_core": "2.46.5",
+        "typing-inspection": "0.4.4",
+        "typing_extensions": "4.16.0"
+      }
+    }
+  },
+  "inputs": {
+    ".test-results\\partial-search-recovery-20261006a\\http\\evidence.json": "d0476155bdefbf8ebe66ec1ac8f0799a36660128057e4a2a1b5873b69a674f80",
+    ".test-results\\corrected-search-20261006b\\http\\evidence.json": "6d0f91bfd149572961df35b338ff3eabf2be1dc69a8db1cc5d3d1904aad6ca27",
+    "Z:\\mvp20-split\\v2\\docs\\Build Plans\\BP-08\\BP-08.01 Reuse disposition.json": "0d8e3626888e3013505305be030742e28d046c3653448c08fd60682ef6a4c446",
+    "Z:\\mvp20-split\\v2\\tests\\integration\\search_recovery\\rebuilt_adapter.py": "1954836b03cb4c54a847ac44ef5a7bf0d2a970336b027ba32afdca0fd52015a8"
+  },
+  "limits": [
+    "Exact recovery only on the tested Windows CPython profile",
+    "pydantic-core is a native validation dependency; numerical kernel uses standard library",
+    "No v1 Rust execution, source extraction, cross-hardware equality or scientific efficacy claim",
+    "Rebuilt test adapter image qualification is separate"
+  ],
+  "paid_calls": 0,
+  "scope": "BP-08.05/B3",
+  "raw": ".test-results\\search-recovery-consolidation-20261006.json",
+  "raw_sha256": "c9254d1c50504771acc5684e0eb4b7d62c2285ae1fb112284c4fe05eb655dfb4",
+  "tests": {
+    "passed": 52,
+    "seconds": 14.61,
+    "coverage": {
+      "manifest": "59/59 statements;6/6 branches",
+      "correction": "39/39 statements;2/2 branches",
+      "rebuilt_adapter": "52/77 statements;18/24 branches; subprocess not attributed"
+    },
+    "raw_coverage": ".test-results/recovery-consolidated-coverage-20261006.json"
+  }
+}
