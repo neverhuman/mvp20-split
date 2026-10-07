@@ -1,20 +1,19 @@
 # Restore
 
-Refreshed 2026-10-07 12:44:11 America/Chicago. Read FIRST after compression.
+Refreshed 2026-10-07 13:21:09 America/Chicago. Read FIRST after compression.
 
 ## Current handoff
 
-Owner demo2026-10-08 11am CT, internal nontechnical colleagues. DEMO-01 bounded
-delivery complete100% all three phases; archive/audit/presenter guide prepared.
-Owner rehearsal/acceptance pending, not a dependency for further approved work.
-NEXT SQ-01/C2a Planning criterion domain binding;58.33%,Build70%,Verification0%.
-C1 complete: contractsPlanning0.11 followup.py publishes2roots/4schemafiles,632prior
-schemabytes unchanged.110planning/publication tests12.74s41/41stmts100%;183consumer
-tests12.54s;boundariespass. No new API/provider/Runtime profile path yet.
-Source metadata Supervision0.10.1/Runtime0.65.1/Planning0.102.1;4locks/devsynced,
-structuralfoundationinventory refreshed only. C1commitnext. C2a domainbinding,
-bpreparation/provider, cRuntimeacceptance/replay, all0%. LR01queued. Demo assets stay FROZEN while
-new work proceeds separately. Latest pusheda0975ee3 (demo lock snapshots); demodeliveryab7b7008. C1sourcecommitnext.
+Demo2026-10-08 11am CT for internal nontechnical colleagues. DEMO-01 delivered100%;
+presenter acceptance pending. Frozen launch/assets below remain unchanged.
+SQ-01 active63.89%, Build76.67%, Verification0%. C1 and C2a complete; C2=33.33%.
+NEXT C2b preparation/provider integration, then C2c Runtime retained proposal/replay,
+remaining B3 proposal UI and V1. No owner decision pending; continue automatically.
+C1 pushed3b39365f; C2a commit next. Planning0.103 domain binding:153 tests15.64s,
+74 statements/16 branches100%. New profile not dispatched yet. Existing632 schema
+bytes unchanged. No new model costs, source/demo owners separate. No running jobs.
+C2a fixture initially used stale assessment hash; corrected to canonical typed status
+hash. Initial12 fixture failures retained in test output; corrected153 pass.
 
 Launch `v2/Start-Demo.ps1` (original) or `-Scenario successor`; Ctrl+C drains.
 Uses installedDeploymentPython .test-results/acceptance-owner-final-b and explicit
@@ -32,7 +31,7 @@ Original qualifications unchanged. Snapshot launcher session20261007-124737-8b02
 PASS7ownersdrained0. Prior launcher124044-f7fb84bc PASS49.39s total.
 Tamperedassetdigest rejects beforeoutput/ownerstartup. Offlineall6pages1440/390
 image/axe/overflowpass.20focusedquality/selectiontests pass andTSbuildpass.
-No running jobs. C1 schema implementation complete; C2 analysis only. All owners stopped; storecontainersleftunchanged. No modelcharges.
+All owners stopped; store containers unchanged. No model charges.
 
 Fixedentry.tsx stripping feedback/quality_output withone-timelaunchticket; preserve
 onlysupportedpins and erasecredential. Firstoriginal-focus failure retained.
@@ -40,13 +39,6 @@ Separate original-focus-c failedunverifiedfeedbackread AFTERrootgraphcapture; ca
 UNRESOLVED. Addedpayload-free Researchpath/status tracing; dpassed8reads200, which
 doesnotrepairc. Audit/Drift assign SQ01V1readpath qualification. Offlinefallback
 explicit. Original-focus-b/successor and earlierpublicassets retained.
-
-Next approvedSQ01C1: additive profile planning.checkpoint-followup-draft/v1 and
-preparation selection; exactcriterion/need/question/assessmentbindings, immutable
-predecessorschemabytes. ThenC2 Planning/Runtime, remainingB3proposalUI,V1actualowner
-subsequentcampaign/replacement/audit.2.5completedunits/6scope; no approvalneeded.
-ExistingRuntimecapture/Data contentreads available; profileslackcriteriontargets.
-Studiofocuslocal/unsubmitted only. Do notclaimproposaladoption/scientificefficacy.
 
 BP09closed100%,12gateledgerfrozen; acceptedrestore details below.
 

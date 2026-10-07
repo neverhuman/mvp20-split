@@ -1,9 +1,12 @@
 # Agent Planning service boundary
 
-Current release: Planning0.101/planning0020. BP-09.03 adds a separate [checkpoint input profile](src/amphora_agent_planning/checkpoint_input/README.md), measuring the exact live-model envelope before issuance. Fixture and evaluation profiles remain unchanged. Explicit live checkpoint configuration now preserves durable scope costs and original deadlines; integrated live deployment remains pending. BP-09.02 host-role enforcement remains intact. No persistence migration.
+Current release: Planning0.103.0/planning0020. SQ-01/C2a adds exact criterion
+membership and future-intent binding in [campaign_followup](src/amphora_agent_planning/campaign_followup/README.md).
+The new profile is not yet enabled for provider dispatch; C2b owns retained preparation
+and output integration. Installed demo owners remain frozen separately.
 
-- Version: Planning0.101.0; public Planning0.10 and supervision0.10; owned migration head0020.
-- Reviewed: `2026-10-06 09:21:10` (America/Chicago); BP-07 accepted within stated engineering/evaluation limits.
+- Version: Planning0.103.0; public Planning0.11.0 and supervision0.10.1; migration head0020 unchanged.
+- Reviewed: `2026-10-07 13:21:09` (America/Chicago); domain binding verified, integration pending.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Campaign acceptance: [BP-07.03](../../docs/Build%20Plans/BP-07/Completed/BP-07.03%20Campaign%20proposals%20and%20context.md); supervisor acceptance [BP-07.04](../../docs/Build%20Plans/BP-07/Completed/BP-07.04%20Durable%20supervisor%20and%20races.md).
 

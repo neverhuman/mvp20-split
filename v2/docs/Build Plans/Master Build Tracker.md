@@ -9,12 +9,12 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-01 through BP-09 closed; SQ-01 C2 active.
-- Last refreshed: `2026-10-07 13:00:06` (America/Chicago).
+- Last refreshed: `2026-10-07 13:21:09` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: SQ-01/C2; DEMO-01 bounded walkthrough delivered for2026-10-08 11:00:00 CT.
-- Primary active task: SQ-01/C2a criterion binding in Planning domain objects; frozen demo remains separate.
+- Primary active task: SQ-01/C2b retained preparation/provider integration; frozen demo remains separate.
 - Next task: SQ-01/C2 owner integration, then remaining B3 proposal UI and V1.
-- Implementation completion: SQ-01=58.33%, Build70%, Verification0%; BP-09 closed100%,20/20.
+- Implementation completion: SQ-01=63.89%, Build76.67%, Verification0%; BP-09 closed100%,20/20.
 - Blockers: none for approved SQ-01.01 implementation; scientific corpus remains TBA for later scientific qualification.
 - Acceptance posture: bounded local demo/recovery/replacement complete; intermittent worker failures assigned LR-01, no soak claim.
 - Active exception: deadline demo delivery complete; presenter acceptance pending, qualification assets frozen.
@@ -29,14 +29,14 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-SQ-01 C2 is active at58.33%, Build70%, Verification0%, after approved scope expansion. Completed plans
+SQ-01 C2 is active at63.89%, Build76.67%, Verification0%, after approved scope expansion. Completed plans
 are in the [completed index](Completed/README.md); their percentages stay closed.
 
 ## Prioritized Successor Queue and Phase Mirrors
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
-| 1 | [SQ-01 Scientific Quality and Iteration Views](SQ-01%20Scientific%20Quality%20and%20Iteration%20Views.md) | Active C2a | 58.33% | 70% | 0% | BP-06/07 public projections/contracts; activation review |
+| 1 | [SQ-01 Scientific Quality and Iteration Views](SQ-01%20Scientific%20Quality%20and%20Iteration%20Views.md) | Active C2b | 63.89% | 76.67% | 0% | BP-06/07 public projections/contracts; activation review |
 | 2 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Queued | 0% | 0% | 0% | BP-09 accepted; bounded no-model diagnostic specification |
 
 The owning tracker controls exact task/percentages; MBT controls priority and
@@ -98,7 +98,8 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
-| 2026-10-07 12:59:32 | SQ-01 C1 complete58.33%, Build70%, Verification0%. | 110 contract/publication and183 consumer tests; all632 predecessor schema bytes unchanged; new profile inactive pendingC2. |
+| 2026-10-07 13:21:09 | SQ-01 C2a complete; overall63.89%, Build76.67%, Verification0%. | 153 domain/context/output tests; C2=33.33%, provider integration next. |
+| 2026-10-07 12:59:32 | SQ-01 C1 complete63.89%, Build76.67%, Verification0%. | 110 contract/publication and183 consumer tests; all632 predecessor schema bytes unchanged; new profile inactive pendingC2. |
 | 2026-10-07 12:44:11 | DEMO-01 closed100%; SQ-01/C1 resumes at41.67%. | Studio0.16.1 actual-owner walkthrough, seven-owner launch/drain, offline fallback; prior feedback read failure retained. |
 | 2026-10-07 12:20:17 | SQ-01.01 approved; C1/C2 added, overall41.67%, Build50%, Verification0%. | 2.5 completed units preserved; denominator4 to6. C1 contracts active; C2 owners, B3 proposals and V1 follow. |
 | 2026-10-07 11:51:00 | SQ-01 human focus complete; overall62.5%, Build83.33%, Verification0%. | 38 scoped tests; desktop/mobile export/browser proof; SQ-01.01 criterion-target profile awaits owner direction. |
@@ -122,4 +123,3 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-07 03:47:10 | BP-09.03/B1.3b complete;child16.67%,parent43.33%. | Deployment0.9 independent276tests,15 canonical completions/confirmed outputs, identical rebuilt wheel; actual owner records next. |
 | 2026-10-07 03:16:05 | BP-09.03 managed standby eligibility verified; percentages unchanged. | Deployment0.8 independent276tests, actual five-tool candidate/withdrawal, identical rebuilt wheel; successful managed execution next. |
 | 2026-10-07 02:45:50 | BP-09.03 catalog delivery primitive verified; percentages unchanged. | Deployment0.7 independent230tests, actual Registry/SQL lost-response replay and zero-capacity exclusion; managed readiness remains. |
-| 2026-10-07 02:14:53 | BP-09.03 second B1.3b checkpoint complete;child15.97%,parent43.19%. | Deployment0.6 independent199tests, actual owner/TLS/tool denial and monitor-death adoption; successful eligibility next. |

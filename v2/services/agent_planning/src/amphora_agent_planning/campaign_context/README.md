@@ -1,5 +1,13 @@
 # Campaign Research context selection
 
+SQ-01/C2a adds explicit version2 FollowupSelection parsing only with the exact new
+output profile. Existing version1 bytes and Research packet shape stay unchanged.
+The focused campaign_followup module owns selected-criterion uniqueness, exact focus
+Artifact selection and record membership. ResearchContext invokes that binding for
+version2 only; absent target identity/assessment records reject instead of fabricating
+membership. Unassessed targets may omit an assessment; weak/conflicting assessments
+remain usable. Actual target serialization/provider execution integration is C2b.
+
 - Status: BP-07.03/B1.01a verified; B1.01b selected-record projection verified. Planning0.32/public Planning0.8.
 - Owner: Planning immutable selection and request binding. Research owns records/assessment; Runtime owns campaign validation/execution.
 - Design: [campaign context](../../../../../docs/Build%20Plans/BP-07/BP-07.03%20Physical%20design.md).

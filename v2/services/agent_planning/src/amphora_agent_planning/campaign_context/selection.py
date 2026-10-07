@@ -4,12 +4,13 @@ import hashlib
 import json
 from dataclasses import dataclass
 
-from amphora_contracts_planning import CampaignResearchSelection
+from amphora_contracts_planning import CampaignFollowupSelection, CampaignResearchSelection
 from pydantic import ValidationError
 
 from ..context import RequestSnapshot
 from ..context.policy import require
 from ..context.snapshot import _constant, _object
+from ..campaign_followup.policy import FollowupSelectionPolicy
 
 MAX_SELECTION_BYTES = 262144
 
@@ -59,10 +60,13 @@ class ResearchSelection:
         request = RequestSnapshot.bind(original, actor_id=original.actor_id, scope=original.reference.scope)
         try:
             value = json.loads(raw.decode("utf-8"), object_pairs_hook=_object, parse_constant=_constant)
-            selection = CampaignResearchSelection.model_validate_json(json.dumps(value, allow_nan=False))
+            model = CampaignFollowupSelection if isinstance(value, dict) and value.get('schema_version') == '2' else CampaignResearchSelection
+            selection = model.model_validate_json(json.dumps(value, allow_nan=False))
         except (UnicodeDecodeError, json.JSONDecodeError, ValidationError, RecursionError) as error:
             raise ValueError("invalid_campaign_context_selection") from error
         SelectionPolicy.validate(selection, request)
+        if isinstance(selection, CampaignFollowupSelection):
+            FollowupSelectionPolicy.validate(selection, request)
         canonical = json.dumps(selection.model_dump(mode="json"), sort_keys=True, separators=(",", ":"),
                                ensure_ascii=False, allow_nan=False).encode("utf-8")
         require(len(canonical) <= MAX_SELECTION_BYTES, "campaign_context_size")
@@ -77,4 +81,6 @@ class ResearchSelection:
         return hashlib.sha256(self.canonical).hexdigest()
 
     def document(self):
-        return CampaignResearchSelection.model_validate_json(self.canonical)
+        value = json.loads(self.canonical)
+        model = CampaignFollowupSelection if isinstance(value, dict) and value.get('schema_version') == '2' else CampaignResearchSelection
+        return model.model_validate_json(self.canonical)

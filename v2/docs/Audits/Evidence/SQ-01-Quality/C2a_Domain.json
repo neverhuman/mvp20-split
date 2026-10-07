@@ -1,0 +1,20 @@
+{
+  "timestamp_local": "2026-10-07 13:21:09",
+  "status": "domain_verified_integration_pending",
+  "planning_version": "0.103.0",
+  "tests_passed": 153,
+  "seconds": 15.64,
+  "statements": [
+    74,
+    74
+  ],
+  "branches": [
+    16,
+    16
+  ],
+  "limitations": [
+    "No provider activation or Runtime effect",
+    "No scientific validity claim",
+    "Frozen demo unchanged"
+  ]
+}

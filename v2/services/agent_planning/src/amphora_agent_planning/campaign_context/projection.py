@@ -2,6 +2,8 @@
 
 import hashlib
 from dataclasses import dataclass
+from amphora_contracts_planning import CampaignFollowupSelection
+from ..campaign_followup.policy import CriterionBindings
 
 from ..context.policy import require
 from .read_set import ResearchRead, ResearchReadSet
@@ -56,6 +58,11 @@ class ResearchContext:
             if key not in records and key not in gaps:
                 gaps[key] = ResearchGap(key, "not_provided")
         findings = cls._relationships(requested, records, expected)
+        if isinstance(requested, CampaignFollowupSelection):
+            CriterionBindings.bind(requested,
+                questions=tuple(record.document() for key, record in records.items() if key.kind == 'question'),
+                needs=tuple(record.document() for key, record in records.items() if key.kind == 'need'),
+                assessments=tuple(record.document() for key, record in records.items() if key.kind == 'assessment'))
         result = cls(selection, tuple(records[key] for key in keys if key in records),
                      tuple(gaps[key] for key in keys if key in gaps), findings)
         require(len(result.canonical) <= 4194304, "campaign_context_record_bytes")

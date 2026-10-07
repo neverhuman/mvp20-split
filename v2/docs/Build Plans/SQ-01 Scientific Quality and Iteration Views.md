@@ -3,12 +3,12 @@
 ## Canonical tracker
 
 - Status: active successor to closed BP-05; B1/B2 and B3 human-focus half complete; C1 contracts complete; C2 owner integration active.
-- Last refreshed: `2026-10-07 13:00:06` (America/Chicago).
-- Completion: 58.33%; Build70%, Verification0%; 3.5/6 unit-weight gates complete.
+- Last refreshed: `2026-10-07 13:21:09` (America/Chicago).
+- Completion: 63.89%; Build76.67%, Verification0%; (3.5+1/3)/6 unit-weight gates complete; C2=33.33%.
 - Owner: Studio presentation; Research/Knowledge own assessments; Agents owns proposals.
 - Prerequisites: BP-06 owner quality/correction projections and BP-07.03 proposal contracts; activation coherence audit and exact DTO reconciliation before implementation.
-- Current focus: C2a exact criterion membership/assessment/focus binding in Planning domain objects.
-- Next gate: C2a domain tests, C2b preparation/provider integration, C2c Runtime retained-proposal/replay; then remaining B3/V1.
+- Current focus: C2b retained preparation and provider output integration.
+- Next gate: C2b preparation/provider checks, C2c Runtime retained-proposal/replay; then remaining B3/V1.
 - Blockers: no owner decision pending. Missing criterion bindings are approved implementation scope in SQ-01.01.
 - Requirement: [Campaign progress](../Architecture/Requirements/Product_Requirements.md#campaign-progress-uncertainty-and-subsequent-iteration).
 - Architecture: [Studio](../Architecture/Experience/Studio.md#exploratory-quality-and-next-campaign-focus).
@@ -130,3 +130,14 @@ synced. Structural foundation inventory refreshed only; no full-foundation or
 new installed-owner qualification claim. Frozen demo installed owners/lock snapshots
 remain unchanged. C2 consists of three equal subdeliveries: a domain binding,
 b preparation/provider integration, c Runtime acceptance/replay. None completed yet.
+
+## C2a domain delivery
+
+2026-10-07 13:21:09: Planning0.103 validates exact criterion membership against retained
+Research question/need/assessment records, selected assessment digests and included
+human focus identity. Every selected point must remain targeted or unresolved;
+weak/unassessed scientific states remain eligible. Existing selection version1 and
+packet fingerprints stay unchanged. 153 scoped followup/context/output tests pass
+15.64s; new module74 statements/16 branches100%. No provider activation, new owner
+installation, model call or Runtime effect. C2a is one of three equal C2 deliveries:
+overall(3.5+1/3)/6=63.89%, Build(3.5+1/3)/5=76.67%, Verification0%. C2b is next.
