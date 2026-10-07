@@ -16,11 +16,11 @@ from local_numeric_configuration import write
 from verify_local_successor import Requests
 
 
-def inspect(configuration, retained, output):
+def inspect(configuration, retained, output, root=None):
     output.mkdir(parents=True, exist_ok=False)
     admission = json.loads((retained / 'admission.json').read_bytes())
     write(output / 'owners.json', json.loads((configuration / 'owners.json').read_bytes()))
-    root = Path(os.environ['LOCALAPPDATA']) / 'Amphora/local-v2/installation'
+    root = root or Path(os.environ['LOCALAPPDATA']) / 'Amphora/local-v2/installation'
     state, vault = LocalState.snapshot(root), (root / 'credentials.dpapi').read_bytes()
     routes = Routes.load(root)
     tokens = CredentialVault(root / 'credentials.dpapi', state['deployment_id']).load().environment(
@@ -63,5 +63,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ('configuration', 'retained', 'output'):
         parser.add_argument('--' + name, type=Path, required=True)
+    parser.add_argument('--root', type=Path, help='Explicit separately restored installation; default preserves original profile')
     args = parser.parse_args()
-    inspect(*(getattr(args, name).absolute() for name in ('configuration', 'retained', 'output')))
+    inspect(*(getattr(args, name).absolute() for name in ('configuration', 'retained', 'output')), root=args.root.absolute() if args.root else None)

@@ -1,0 +1,23 @@
+{
+  "timestamp_local": "2026-10-07 09:01:19",
+  "status": "cold_backup_verified",
+  "verification": {
+    "backup_id": "9fd2a863a42d48e0ac5bef3b14aff734",
+    "manifest_sha256": "3e4f04713ee918360e019a19c69cc25c2c0f724b32399764e9cd71fb37eaa848",
+    "file_count": 719,
+    "total_bytes": 106867943,
+    "status": "inventory_verified_not_restore_ready"
+  },
+  "source_stores_restored": true,
+  "capture_seconds": 10.202999999979511,
+  "objective": "last fully drained backup; measure recovery time without hard limit",
+  "limits": [
+    "Same-machine protected local backup; no host-loss or online snapshot guarantee",
+    "Cold bytes and release/schema pins verified; restored owner semantics remain B2"
+  ],
+  "reviewed_local": "2026-10-07 09:21:40",
+  "raw_evidence": ".test-results/local-cold-backup-20261007e.json",
+  "required_historical_artifact_root": "capacity-evidence/bc8880730fc346588c138da3733f306e",
+  "configuration_input_count": 30,
+  "restore_status": "accepted_separate_target_b"
+}

@@ -1,100 +1,105 @@
 # Restore
 
-Refreshed 2026-10-07 08:25:20 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 09:26:30 (America/Chicago). Read FIRST after compression.
 
-## Active task
+## Current task
 
-BP09.03 closed100%; pushed8244c28b. BP09.04 B1.1 complete:child12.5%,Build16.67%,
-Acceptance0%;parent62.5%,12.5/20 weight,12closed gates. B1.2 actual capture/isolated
-restore harness and evaluator reconstruction specification next. Owner SELECTED last
-fully drained backup; measure recovery time WITHOUT hard limit. No owner gate.
-Deployment0.12 adds backup_restore manifest/verification;98 combined backup/preflight
-tests pass5.43s,159statements/14branches100%. First tests needed short oversized input
-IDs and unique backup_record/backup_bundle fixtures (NAS importlib fixture collision).
-No probes running. No actual backup yet. Source/dev lockfiles updated/synced.
-Lint, production boundaries and changed Markdown links passed; commit/push then B1.2.
+BP-09.03 closed100%. BP-09.04 B1/B2.1 complete: child37.5%,Build50%,Acceptance0%;
+parent67.5%,13.5/20weight,13closed gates. NEXT B2.2 independent evaluator rebuild and
+between-campaign cutover on restored target b. Read BP-09.04 tracker and Evaluator
+reconstruction specification. No user gate: last fully drained backup; measure time
+WITHOUT hard limit selected. Continue across milestones/commits/compaction until needed.
 
-Approved daemon drill COMPLETE. One stop18.828s; all five original containers/volumes
-restored and ready. Initial harness used empty requested ephemeral ports; repaired
-actual-bound-port readiness, resumed original intent WITHOUT another outage.
-Raw local-shared-daemon-20261007a and local-shared-daemon-recovery-20261007a.
-Same intent282c24d96d37459fbc0b8282d30773a0/sequence1 released after synthetic503/exit3.
-Original/corrected/blocked post-daemon reads PASS (local-post-daemon-*-20261007a),
-5/7/6owners drained0; exact failed graph/receipt/completions, no attempts/spend.
-No running probes. No model calls. Shared_Daemon.json and closeout audit are canonical.
-Four BP09.03 docs archived under BP-09/Completed; relative links repaired.
-Lint, production boundaries, changed-document links and whitespace checks PASS.
-Closeout pushed8244c28b. Deployment0.12/B1.1 changes await lint/boundaries and commit/push.
+Latest pushed c224f472 (Deployment0.12 backup contract); previous8244c28b shared daemon
+and BP09.03 closeout. Significant uncommitted B1/B2.1 capture/restore + Data0.31 audit
+now verified. Lint/boundaries/changed-links/whitespace pass. Commit/push then B2.2.
+NO running test/build/probe. Do not edit source/tests/dev/module READMEs while any runs.
 
-## Latest qualified work / limitations
+## Qualified backup and restore
 
-Controller_Recovery.json records installed Deployment0.11 full owned job/API/TLS death
-and same Linux turn/container/sequence adoption48.265s, migration exclusion and exact
-admission replay. Raw local-controller-fault-20261007b. Normal numeric oracle FAILED:
-run a70d66f029ac46d4b2910542207beb5f blocked seed tool_failed, zero attempts/completions/
-spend. Cancellation rejected run_not_running; blocked history unchanged. Sixownersdrain0.
-Readback local-controller-fault-readback-20261007b confirms exact original history.
-Inference from settlement source/full available budget: queued60s seed deadline expired
-through restart. Not resumed-science success or a cause for historical old expiries.
-Faulta immediate socket assertion failed; replaced with10s bounded child teardown.
-Recoverya exact original turn released and campaigncdc9bc95c2e343debbe524edd0e99b47
-explicitly cancelled, allownersdrain0. Failed evidence remains immutable.
-65 Deployment scientific/TLS tests19.74s pass; lint/boundaries pass. Resourcesb
-local-idle-resources-20261007b samples full process trees (three processes/owner), max
-697.62MiB combined/131.61MiB owner and0.016scontrol; limits4GiB/1GiB/0.5s. Prior a
-launcher-only measurement is excluded. Idle only, not workload peaks. Zero model calls.
+Canonical Cold_Backup.json and Restore_Verification.json under docs/Audits/Evidence/
+BP-09-Deployment. Final physical local-v2/backup-20261007e, raw root .test-results/
+local-cold-backup-20261007e.json. Backup9fd2a863a42d48e0ac5bef3b14aff734,
+manifest3e4f04713ee918360e019a19c69cc25c2c0f724b32399764e9cd71fb37eaa848.
+All source owners/control stopped and journals released; source two stores cold-copied,
+original IDs/volumes restored and ready. Older3baselines untouched. Includes historical
+quota root plus30reviewed absolute JSON configuration dependencies and selected wheels.
+Restore remaps copied inputs/endpoints while preserving unchanged leaf schema bytes.
 
-## Resume navigation
+Qualified target physical local-v2/restore-20261007b, identity19fe8146b54c46dfb934075ab28c6d39.
+PG57006, owner ports57012..57019; details .test-results/local-restore-20261007b/restore.json.
+Infrastructure10.563s ONLY; subsequent engineering verification is not automated RTO.
+Only new target Deployment bootstrap marker rebound; peerdata/source/vault unchanged.
+Protected credentials rewrapped to target identity; same host/user and pinned images/
+installed owner environments required. No host-loss/online/scientific validity claim.
+Target root journal owner_semantics verified; traffic disabled; all APIs/workers drained.
 
-Current dev helpers local_controller_interruption.py, verify_local_integrated.py optional
---science-only --interrupt-once, inspect_local_failure.py, verify_local_idle_resources.py.
-Deployment0.11 installed .test-results/local-registry-access-install-20261007a/owner.
-Successful corrected successor .test-results/local-corrected-successor-20261007b,
-run6c124e88efec483ab6704ee096d6eb0c. Actual browser local-browser-corrected-20261007b.
-Source r2/Knowledge assertion2 unresolved, old history preserved, new exact context pins.
-Evidence Corrected_Successor.json; no scientific improvement or measuredlabcorrection claim.
-Shared-daemon drill approved and complete; archived runbook/evidence owns exact history.
-Closed plans stay closed; BP09.04 active.
+Actual restored b proofs:
+- local-restored-integrated-20261007b exact original graph/admission/context/outcomes;5drains0.
+- local-restored-browser-20261007b original/corrected graphs/lineage/receipts/artifact at1440/390;7drains0.
+- local-restored-failure-20261007b exact original blocked graph/receipt/completions;0attempts/spend;6drains0.
+- local-restored-catalog-20261007c:237/237finalized references,943414bytes,0pending reservations;
+  fingerprint18a4cfd6bee2c14caef706134337c4a8219d19d70599fee9bcaa9bdb78fcecc2.
 
-## Retained integrated campaign and costs
+Root-aware helpers inspect_local_integrated.py / verify_local_browser.py /
+inspect_local_failure.py accept optional --root, original defaults preserved.
+Primary/corrected materials local-restore-materials-20261007b; blocked config
+local-restored-failure-config-20261007b explicitly scopes Runtime principals to failed
+run, no workers. Original/corrected API configuration is local-restore-20261007b/owners.json.
+Source scenario evidence stays .test-results/local-corrected-successor-20261007b;
+original retained live campaign local-integrated-live-20261007b. Studio assets
+studio-local-successor-20261007b/public are unchanged0.13, independently rebuilt.
 
-Run fc257cf8882147cb8cca56c778837e60: actual required Research/Knowledge context,
-model_accepted/abstained;15 invocations/6 evaluations/3 checkpoints/15 retained outputs.
-200.765s including shutdown; max control0.140s; zero TLS denials; all owners drained0.
-Exact immutable restart proof. Evidence Owner_Context_Campaign.json.
-Configuration .test-results/local-integrated-materials-20261007c;
-raw .test-results/local-integrated-live-20261007b and local-integrated-readback-20261007b.
-Three total physical model calls USD0.052018500; full reservations USD0.175104 retained.
-KEEP scope internal/owner-records-7e21ca85bd6044198b1585aa2c41d336, six/USD0.50 ceiling.
-No refunds/reset/blind retry. Synthetic only; no efficacy or model-authored topology claim.
-Keys authorized Z:/ssos/.env OPENAI_API_KEY; never output/copy. Browser work needs none.
+## Data owner audit / failures preserved
 
-## Installed components and preserved failures
+Data0.31 adds recovery CLI module, no HTTP/encoding/schema/migration changes.7tests with
+actual PG pass3.56s;114/115statements,23/26branches97%. Independent current auditor
+.test-results/local-data-recovery-install-20261007b/environment/Scripts/python.exe.
+Use audit_local_catalog.py; Deployment invokes public CLI, never reads Data private SQL.
+Data tests already owned by data-artifacts scope; select area recovery, no duplicate owner.
+Original/restored serving owner binaries remain Data0.30; audit0.31 is separate compatible
+owner-local operation. Locks/dev env synced0.31. New source module README updated before
+final independent install b; do not change package content without requalifying that build.
 
-Deployment0.10 installed .test-results/local-managed-campaign-install-20261007c/owner;
-Planning0.102 .test-results/local-planning-compact-20261007a/owner;
-gateway0.2 .test-results/local-gateway-drain-20261006a. Other original independent owners
-.test-results/local-owner-inventory-20261006a/owners (Runtime0.65/Data0.30/
-Research0.40/Knowledge0.18/Registry0.1). Original configurations/vault/data preserved.
-Local Python state root LOCALAPPDATA/Amphora/local-v2/installation; Windows Store
-physical root differs (see existing prepare helpers). PG60687/Qdrant60688 loopback.
-Deployment279 independent tests pass; rebuilt wheels identical. TLS default8 caused
-real ten-connection regression, fixed to existing16 ceiling with pressure counters.
-This does NOT establish cause of earlier tool expiry; retain B3 investigation.
-Failed integrated run0fb98ad04b264586959b6b785165089f (live a) and no-model
-837519f6a19340a083773e989ea7a76b (science a) remain immutable. Later six-owner science b
-and live b pass15/6/3/15, zero TLS denials. Evidence TLS_Capacity.json.
-Planning compact profile explicitly v2; old profile bytes/history/caps preserved.
-Earlier scalar live runae806232d1514bb6ba48a4b8ffbf39cc adjusted a=7, exact readback.
-Detailed history in BP-09.03 History.md and committed evidence, not this handoff.
+Source/a full catalog audit detected one missing8bytequota artifact65fabad92689478286e7e36856e08263.
+Original bytes intact in retained configured capacity-evidence/bc8880730fc346588c138da3733f306e.
+Capture e adds that root with immutable-key collision checks; no source history rewritten.
+backup a unsealed (.gitignore wheelcache rejection); b/c/d superseded. Restore a failed
+full catalog acceptance despite selected readbacks passing; both a containers STOPPED,
+volumes/journal retained. Original5+qualified b pair running (seven total).
 
-## Working rules
+Initial Data tests stalled because old BP02 fixture cache57543 differed from actual56152
+after Docker restart. Verified container/volume labels, stopped only testchild34532 and
+updated ignored v2/.test-results/postgres-fixture.json endpoint; NO reset. Initial audit
+TimeoutError caught as OSError was fixed to propagate incomplete; tests pass. Earlier
+backup fixtures needed short large-input test IDs and unique backup_record/backup_bundle
+names due NAS importlib fixture collisions. Failed evidence remains retained.
 
-No source/test/dev/module README edits while tests/build/probes run. No v1 changes,
-JARVIS access, subagents, broad process kills, resets or private cross-owner SQL.
-Use PYTHONUTF8=1; dev Python v2/dev/.venv/Scripts/python.exe.
+## Next reconstruction boundary
+
+Original synthetic_objectives README, public schemas/CLI/tests were reviewed; DO NOT copy
+its private kernel/adapter. New separate package/release/image, same formulas/order/policy/
+applicability/rejection/provenance; preserve old source/image/history and no peer private
+edits. Consider new uniquely named owning import/package (e.g.synthetic_objectives_rebuilt)
+to avoid duplicate project/import roots. Deployment scientific_workers/profiles.py closes
+module entrypoints: original synthetic-objectives maps amphora_synthetic_objectives.
+New managed profile may need explicit additive reviewed recipe; inspect catalog mapping.
+No such change/rebuild has been implemented yet. B3 corruption/mismatch and V1 remain.
+
+## Operating facts
+
+Workspace Z:/mvp20-split; v2 active, v1 read-only. No JARVIS, subagents or goals.
+Every shell PYTHONUTF8=1. Dev Python v2/dev/.venv/Scripts/python.exe; uv v2/.venv/Scripts/uv.exe.
+pytest -c v2/dev/pyproject.toml --import-mode=importlib; actual PG needsAMPHORA_TEST_POSTGRES=1.
 Git safe.directory=//DesktopNAS/Code/mvp20-split; core.safecrlf=false for add/diff.
-Main origin https://github.com/neverhumanbot/mvp20-split. Commit/push significant work.
-List files before targeted reads. Use absolute(), not resolve() on NAS paths.
-Studio generator/build must run from v2/studio; root cwd falsely reports contract drift.
-Preserve old studio/dist/local; fresh build-local.mjs accepts an explicit output path.
+List filenames before targeted reads; no guessed paths. absolute(), never resolve() on NAS.
+No broad process kills, resets, recursive deletion, raw env/vault/provider-key diagnostics.
+Snapshot physical base C:/Users/alb_p/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/Local/Amphora/local-v2.
+Source installation identity7be3465bdf1e4fa6b9189637e51e6f96 PG60687/Qdrant60688.
+Installed source owners Runtime0.65/Data0.30/Research0.40/Knowledge0.18/Registry0.1 in
+local-owner-inventory-20261006a/owners; Planning0.102 local-planning-compact-20261007a/owner.
+No new model calls needed. Three total physical calls reportedUSD0.0520185; fullreservations
+USD0.175104 retained in internal/owner-records-7e21ca85bd6044198b1585aa2c41d336, six/USD0.50 cap.
+Keys authorized Z:/ssos/.env only when necessary; never print/copy. Human changes future
+campaigns only; immutable history/weak exploratory science retained. Commit/push significant
+verified work, update canonical percentages and Restore, then immediately continue.

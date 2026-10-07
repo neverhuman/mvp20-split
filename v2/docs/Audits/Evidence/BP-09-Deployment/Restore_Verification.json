@@ -1,0 +1,170 @@
+{
+  "reviewed_local": "2026-10-07 09:21:40",
+  "status": "isolated_restore_accepted",
+  "backup": {
+    "timestamp_local": "2026-10-07 09:01:19",
+    "status": "cold_backup_verified",
+    "verification": {
+      "backup_id": "9fd2a863a42d48e0ac5bef3b14aff734",
+      "manifest_sha256": "3e4f04713ee918360e019a19c69cc25c2c0f724b32399764e9cd71fb37eaa848",
+      "file_count": 719,
+      "total_bytes": 106867943,
+      "status": "inventory_verified_not_restore_ready"
+    },
+    "source_stores_restored": true,
+    "capture_seconds": 10.202999999979511,
+    "objective": "last fully drained backup; measure recovery time without hard limit",
+    "limits": [
+      "Same-machine protected local backup; no host-loss or online snapshot guarantee",
+      "Cold bytes and release/schema pins verified; restored owner semantics remain B2"
+    ]
+  },
+  "restore": {
+    "timestamp_local": "2026-10-07 09:02:21",
+    "status": "stores_restored_owner_acceptance_pending",
+    "target_deployment_id": "19fe8146b54c46dfb934075ab28c6d39",
+    "backup_id": "9fd2a863a42d48e0ac5bef3b14aff734",
+    "manifest_sha256": "3e4f04713ee918360e019a19c69cc25c2c0f724b32399764e9cd71fb37eaa848",
+    "restore_seconds": 10.562999999849126,
+    "routes": {
+      "profile": "loopback-routes-v1",
+      "host": "127.0.0.1",
+      "ports": {
+        "artifact": 57012,
+        "gateway": 57013,
+        "knowledge": 57014,
+        "planning": 57015,
+        "registry": 57016,
+        "research": 57017,
+        "runtime": 57018,
+        "supervisor": 57019
+      }
+    },
+    "resources": {
+      "postgres": {
+        "container": "amphora-local-19fe8146b54c46dfb934075ab28c6d39-postgres",
+        "volume": "amphora-local-19fe8146b54c46dfb934075ab28c6d39-postgres-data",
+        "image": "postgres@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f",
+        "host": "127.0.0.1",
+        "port": 57006
+      },
+      "qdrant": {
+        "container": "amphora-local-19fe8146b54c46dfb934075ab28c6d39-qdrant",
+        "volume": "amphora-local-19fe8146b54c46dfb934075ab28c6d39-qdrant-data",
+        "image": "qdrant/qdrant@sha256:12364fe851b9f17356fc88189fc06d1b521262e04659ec7345975b00c9246a10",
+        "host": "127.0.0.1",
+        "port": 57008
+      }
+    },
+    "traffic_enabled": false,
+    "owner_workers_started": false,
+    "provider_calls": 0,
+    "limits": [
+      "Same host/user DPAPI, preserved pinned images and independently installed owner binaries required",
+      "Infrastructure readiness only; public history/reference/schema acceptance remains required"
+    ]
+  },
+  "catalog": {
+    "authority": "byte_integrity_only_not_scientific_or_restore_acceptance",
+    "catalog_sha256": "18a4cfd6bee2c14caef706134337c4a8219d19d70599fee9bcaa9bdb78fcecc2",
+    "checked": 237,
+    "failures": {},
+    "pending_reservations": 0,
+    "profile": "data-catalog-integrity-v1",
+    "status": "verified",
+    "verified": 237,
+    "verified_bytes": 943414
+  },
+  "readbacks": {
+    "original": {
+      "raw": ".test-results\\local-restored-integrated-20261007b",
+      "status": "readback_passed",
+      "timestamp_local": "2026-10-07 09:06:53",
+      "run_id": "fc257cf8882147cb8cca56c778837e60",
+      "owners_drained": 5
+    },
+    "browser": {
+      "raw": ".test-results\\local-restored-browser-20261007b",
+      "status": "passed",
+      "timestamp_local": "2026-10-07 09:14:12",
+      "run_id": "6c124e88efec483ab6704ee096d6eb0c",
+      "owners_drained": 7
+    },
+    "blocked": {
+      "raw": ".test-results\\local-restored-failure-20261007b",
+      "status": "readback_passed",
+      "timestamp_local": "2026-10-07 09:15:23",
+      "run_id": "a70d66f029ac46d4b2910542207beb5f",
+      "owners_drained": 6
+    }
+  },
+  "source_preserved": true,
+  "provider_calls": 0,
+  "tests": {
+    "count": 7,
+    "seconds": 3.56,
+    "statements_covered": 114,
+    "statements": 115,
+    "branches_covered": 23,
+    "branches": 26
+  },
+  "independent_auditor": {
+    "timestamp_local": "2026-10-07 09:11:34",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-data-artifacts",
+    "forbidden_implementations": [
+      "amphora_campaign_runtime",
+      "amphora_knowledge",
+      "amphora_research",
+      "amphora_agent_planning"
+    ],
+    "packages": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.13",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-representations": "0.3.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-data-artifacts": "0.31.0"
+    },
+    "wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_representations-0.3.0-py3-none-any.whl": "523feb10556ea0fdc07e39f2a874309fa65782b3e9035f072dffddf9a98ae18d",
+      "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_data_artifacts-0.31.0-py3-none-any.whl": "a05995ea0f1fc659ce50ccf9b4a48916d2b41f4107ae171e19f2cf36368250cf"
+    }
+  },
+  "repairs": [
+    "Cold capture explicitly includes retained quota storage; source catalog remains unchanged. Initial source/root-a audits both missed one8byteartifact stored in its historical configured root.",
+    "Reviewed30absolute JSON configuration inputs are backed up and remapped; unchanged schema/descriptor bytes preserve hashes.",
+    "Read-only audit propagates timeout as incomplete instead of misclassifying it as unreadable content."
+  ],
+  "retained_exclusions": [
+    "backup a unsealed after wheel-cache .gitignore path rejection",
+    "backups b/c/d superseded by e",
+    "restore a passed selected readbacks but failed full catalog integrity; its containers stopped, volumes/journal retained"
+  ],
+  "timing_limits": [
+    "10.563s measures infrastructure restoration only.",
+    "Public history/browser/catalog qualification followed separately during engineering work; not an automated end-to-end RTO benchmark.",
+    "Owner selected last fully drained backup, measured recovery time without hard limit."
+  ],
+  "limits": [
+    "Same host/user DPAPI and retained pinned images/owner environments; no host-loss or online backup guarantee",
+    "No source data/volume/vault reset; only target Deployment bootstrap identity rebound",
+    "No science/model improvement or arbitrary graph reconstruction claim",
+    "Target APIs/workers drained; automatic campaign traffic remains disabled"
+  ]
+}

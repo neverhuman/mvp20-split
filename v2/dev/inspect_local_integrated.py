@@ -12,12 +12,13 @@ from urllib.parse import quote
 from amphora_deployment.credentials import CredentialVault
 from amphora_deployment.lifecycle.routes import Routes
 from amphora_deployment.persistence.state import LocalState
+
 from local_numeric_configuration import write
 from local_records_controller import RecordsController
 from verify_local_owner_records import Scenario
 
 
-def inspect(configuration, retained, output):
+def inspect(configuration, retained, output, root=None):
     output.mkdir(parents=True, exist_ok=False)
     prepared = json.loads((configuration / 'prepared.json').read_bytes())
     admission = json.loads((retained / 'admission.json').read_bytes())
@@ -25,7 +26,7 @@ def inspect(configuration, retained, output):
     owners = json.loads((configuration / 'owners.json').read_bytes())['owners']
     write(output / 'owners.json', {'profile': 'local-supervisor-v1', 'owners':
         {name: value for name, value in owners.items() if name != 'registry'}})
-    root = Path(os.environ['LOCALAPPDATA']) / 'Amphora/local-v2/installation'
+    root = root or Path(os.environ['LOCALAPPDATA']) / 'Amphora/local-v2/installation'
     routes = Routes.load(root)
     tokens = CredentialVault(root / 'credentials.dpapi', LocalState.snapshot(root)['deployment_id']).load().environment([
         'RUNTIME_OPERATOR_TOKEN', 'ARTIFACT_OPERATOR_TOKEN', 'RUNTIME_ARTIFACT_TOKEN', 'RUNTIME_PLANNING_TOKEN',
@@ -107,5 +108,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ('configuration', 'retained', 'output'):
         parser.add_argument('--' + name, type=Path, required=True)
+    parser.add_argument('--root', type=Path, help='Explicit separately restored installation; default preserves original profile')
     args = parser.parse_args()
-    inspect(args.configuration.absolute(), args.retained.absolute(), args.output.absolute())
+    inspect(args.configuration.absolute(), args.retained.absolute(), args.output.absolute(), root=args.root.absolute() if args.root else None)

@@ -32,7 +32,7 @@ class BrowserController(AuthoringController):
         return super().drain()
 
 
-def verify(configuration, retained, public, output, successor=None):
+def verify(configuration, retained, public, output, successor=None, root=None):
     output.mkdir(parents=True, exist_ok=False)
     prepared = json.loads((configuration / 'prepared.json').read_bytes())
     original = json.loads((retained / 'evidence.json').read_bytes())
@@ -45,7 +45,7 @@ def verify(configuration, retained, public, output, successor=None):
     owners = json.loads((configuration / 'owners.json').read_bytes())['owners']
     authoring = (configuration / 'authoring-evidence.json').exists()
     owners = {name: value for name, value in owners.items() if authoring or name != 'registry'}
-    root = Path(os.environ['LOCALAPPDATA']) / 'Amphora/local-v2/installation'
+    root = root or Path(os.environ['LOCALAPPDATA']) / 'Amphora/local-v2/installation'
     state, vault = LocalState.snapshot(root), (root / 'credentials.dpapi').read_bytes()
     routes = Routes.load(root)
     config = {'profile': 'local-gateway-v1', 'public_directory': str(public),
@@ -103,6 +103,7 @@ if __name__ == '__main__':
     for name in ('configuration', 'retained', 'public', 'output'):
         parser.add_argument('--' + name, type=Path, required=True)
     parser.add_argument('--successor', type=Path)
+    parser.add_argument('--root', type=Path, help='Explicit separately restored installation; default preserves original profile')
     args = parser.parse_args()
     verify(*(getattr(args, name).absolute() for name in ('configuration', 'retained', 'public', 'output')),
-           successor=args.successor.absolute() if args.successor else None)
+           successor=args.successor.absolute() if args.successor else None, root=args.root.absolute() if args.root else None)
