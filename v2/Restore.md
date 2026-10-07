@@ -1,58 +1,83 @@
 # Restore
 
-Refreshed 2026-10-07 03:57:07 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 04:29:36 (America/Chicago). Read FIRST after compression.
 
 ## Active task and exact execution state
 
-B1.3 COMPLETE. BP-09.03/B1.4 integrated selected-model/browser trace NEXT.
-Child18.75%,Build25%,Acceptance0%; parent43.75%,(8+3/4)/20,eight closed gates.
-No running checks/probes. Latest pushed ffe620a4 (Deployment0.9 managed campaign).
-B1.3c verified dev/docs await commit/push, then continue B1.4 without pause.
-Independent owner-record session96098 EXIT0; source b also passed.
-Evidence docs/Audits/Evidence/BP-09-Deployment/Owner_Records.json.
-Raw .test-results/local-owner-records-install-20261007a/evidence.json.
-Actual installed Data0.30/Research0.40/Knowledge0.18 public-only source rights/upload/
-preparation/conversion, Research question/need registration, grounded Knowledge
-hypothesis, exact accepted-log rebuild. Two entities/one hypothesis, no science claim.
-All three owners restarted; exact declarations/decision/snapshot/rebuild retained.
-Foreign scope403, immutable declaration change409, original unchanged. Both drains0.
-New configs preserve original Data storage root/state/vault. Zero provider calls.
-Source a failed before writes due incorrect schema digest; corrected to supported
-ContentPolicy octetstreamschema bytes. No production boundary/schema changes.
-New dev: local_records_controller.py, verify_local_owner_records.py,
-verify_owner_records_installation.py. Fixture initial.json is adapted to actual
-public references/profile; no private imports, SQL seeding or migrations.
-Independent Deployment interpreter has noSQL/Pydantic/peer implementations.
+No running tests/builds/probes. BP-09.03/B1.4a COMPLETE; B1.4b NEXT.
+Child20.83%, Build27.78%, Acceptance0%; parent44.17%, (8+5/6)/20, eight closed gates.
+Latest pushed7b8239e9 (owner records). Verified Planning0.102/live checkpoint changes
+await final documentation/diff review, commit and push; then continue B1.4b.
+Local computer access only: Windows x86_64/Python3.12, loopback listeners.
+No owner decision is needed. Keep progressing; milestones are not stopping points.
 
-Managed campaign checkpoint ffe620a4: independent276tests26.17s, run
-4abe08f518d547948021c52e1446c2ba15completions/39nodes/6evaluations/3checkpoints,
-15confirmed outputs117.015s/600s; maxcontrol0.078s/0.5s. Original completed source
-run0fc895a594c842b7b04b99b9643ee04c had retention backlog, recovered15/15in25.437s
-with graph unchanged and no reruns. Deployment0.9 deliverybatch10->100 within existing
-CLI ceiling; same2sec cadence and retry/acknowledgement contracts. Fresh independent
-campaign passed original gates. Second wheel identical
-66eeea945ead69d880c38b2f573e1df16db98cdf1daeb2e73160ab6fd30317f6.
-39worker tests3.14s,281/292statements44/50branches94%;recipe100%. Managed_Campaign.json.
-All science/container/owner processes stopped, root PG/Qdrant retained.
+### Latest verified checkpoint
 
-B1.4 next: compose actual owner records and selected-model supervision, then browser/API
-objective-to-proposal/execution/artifact/evidence/successor trace. Checkpoint config
-README paths services/agent_planning/src/amphora_agent_planning/{checkpoint_openai,
-checkpoint_budget,supervision_scheduling}/README.md and Runtime supervision_loop.
-Deployment native worker load_bindings already forwards AMPHORA_OPENAI_API_KEY ONLY
-into planning-checkpoint when live provider/egress configured; controller launcher
-must explicitly pass env key (existing test Controller intentionally filters it).
-Serving Planning pin must match qualified0.101 worker installation. Budget templates
-use exact ArtifactRefs and local relative paths. Runtime checkpoint worker config
-has database_url_env,actor_id,scope,planning/data endpoint/token_env/actor_id.
-Existing dev verify_supervision_owners.py/exchange.py are reference process fixtures;
-read exact scope before reuse (old fixtures may directly seed owner SQL).
-OpenAI Docs skill re-read; official model page fetched and confirms snapshot
-https://developers.openai.com/api/docs/models/gpt-5.4-mini
-and current input0.75/output4.50USD per1M; existing selected snapshot and pinned budget
-unchanged. No credential read or paid calls yet. User authorizes Z:/ssos/.env key,
-synthetic-only scope, costconscious chosenmodel; six reservations/USD0.50 durable ceiling.
-No openai-platform-api-key tool available. No need repeat owner permission.
+Evidence docs/Audits/Evidence/BP-09-Deployment/Live_Checkpoint.json.
+Actual run ae806232d1514bb6ba48a4b8ffbf39cc, Runtime model_accepted,
+adjusted materialization a=7; Data bytes {"a":7} checked by SHA/size.
+Raw .test-results/local-live-checkpoint-20261007b; immutable configurations
+.test-results/local-checkpoint-materials-20261007b. All four native workers and
+three owners drained. Public readback/restart .test-results/local-live-checkpoint-readback-20261007b
+proves exact original graph/admission/response, output bytes and usage; no key/workers.
+One physical attempt, input18723/output754, reported USD0.017435250.
+Conservative USD0.058368 reservation remains; six reservations/USD0.50 scope ceiling.
+KEEP SAME paid scope internal / owner-records-7e21ca85bd6044198b1585aa2c41d336.
+Do not reset history, refund reservations or silently retry old requests.
+
+Initial a run67fcfe0493d9457fba0536491b5812c9 truthfully completed unchanged with
+checkpoint_required_input_limit; zero Planning attempts/paid calls. Read-only measurement:
+packet19833/envelope66362 bytes, conservative bound67386 >65536.
+Retained in .test-results/local-live-checkpoint-20261007a, including measured.json.
+
+Planning0.102 repair explicitly selects compact input profile2; SchemaRef schema_id
+planning.checkpoint-openai-input-bound.v2 but wire version remains1. Drops only
+schema-position title annotations; preserves constraints/descriptions/defaults/examples,
+named title properties and original profile bytes. No public DTO or cap changes.
+Source120tests24.88s, installed120tests, fresh second wheel closure identical.
+Installed .test-results/local-planning-compact-20261007a/owner; repeat b.
+43focused tests10.69s,97% combined coverage; input/schema100%.
+Shared RecordsController regression requalified independently:
+.test-results/local-owner-records-install-20261007b, passed.
+Touched-file lint and dependency boundaries passed before documentation refresh.
+No source/test/module README changed after their qualification.
+
+### Exact next work
+
+B1.4b: combine actual owner-grounded context, managed scientific graph and model
+supervision. B1.4c: actual browser/API objective/proposal/execution/artifact/evidence/
+successor trace. Minimal live checkpoint does NOT yet consume Research/Knowledge or
+run science. Do not claim integrated demo completion.
+
+Useful dev helpers: prepare_local_checkpoint.py, verify_local_live_checkpoint.py,
+inspect_local_checkpoint.py, local_records_controller.py; no private peer imports/SQL.
+Owner-local no-key/no-SQL export_demo.py lives in Planning tests/checkpoint_openai and
+Runtime tests/supervision_loop/owners. Controllers run installed owners; key only in
+memory and Planning worker environment. Existing owner-record prepare is public-only.
+Scientific helpers: local_numeric_configuration.py, local_numeric_campaign.py,
+verify_managed_numeric_campaign.py, verify_managed_campaign_installation.py.
+List actual files before reads. Runtime supervision_policy/records.py permits invoke
+checkpoint fields=[] at DTO level; inspect policy binding before choosing composition.
+A bounded context artifact can pin exact Research/Knowledge public readback, but it
+must really be included in the model packet. Measure compact envelope before paid call.
+Scientific graph inputs are structured artifacts, not arbitrary scalar tool parameters.
+
+### Earlier verified integration
+
+Managed campaign ffe620a4/Deployment0.9: independently installed276tests26.17s;
+.test-results/local-managed-campaign-install-20261007a (fresh b wheel matches).
+run4abe08f518d547948021c52e1446c2ba:15canonical completions/39nodes/6evaluations/
+3checkpoints,15confirmed outputs117.015s/600s, maxcontrol0.078s/0.5s; drained.
+Deliverybatch10->100 within existing owner CLI ceiling. Source completed run
+0fc895a594c842b7b04b99b9643ee04c failed120s retention gate; public backlog recovery
+confirmed15/15 in25.437s, graph unchanged/no science rerun. Unconfigured notifications
+remain honestly unacknowledged. Evidence Managed_Campaign.json.
+
+Owner records7b8239e9: installed Data0.30/Research0.40/Knowledge0.18 public source/
+conversion/question/need/hypothesis/rebuild, exact restart, foreign scope403,
+changed immutable declaration409. Both drains0; zero model calls/SQL seed/migrations.
+Evidence Owner_Records.json; original raw .test-results/local-owner-records-install-20261007a/scenario.
+The live paid project uses this original scope.
 
 ## Qualified Deployment0.8/0.7 boundaries
 
@@ -120,15 +145,15 @@ SDK0.2 requiresTLSforhost.docker.internal. Dockerdefaultbridge toWindows127works
 no globalDocker/trustchanges. OpenSSL C:/Program Files/Git/usr/bin/openssl.exe.
 TLSidentities30days,encryptedPEM+DPAPI,publiccertonlycontainer; no silentrotation.
 
-Planning0.101 qualified .test-results/local-planning-checkpoint-20261007b/owner114tests.
+Planning0.102 qualified .test-results/local-planning-compact-20261007a/owner120tests.
 Exactcheckpointenvelope/fitv2, durableoriginalissuance/budget/singleattempt/deadline;
 originalfixture/evaluationprofilesunchanged. Model gpt-5.4-mini-2026-03-17, checkpoint
 profileSHA3a80e73a4be13c0681f1f87e56c672b7ac0ce623a8456b1b1f92c892b640d9d5.
 Explicitopenai_checkpoint_v1, AMPHORA_OPENAI_API_KEY + synthetic-onlyegress; defaultoff.
 Dedicatedproject<=6reservations/USD0.50, <=65536conservativeinputunits/2048output;
 full6reservation$0.350208. OriginalPlanning0020journal,no refunds/lateoverageguards.
-NO OpenAIkeysread/copied orpaidcalls inthiscontinuation. Userauthorizeskeys from
-Z:/ssos/.env later; neverprintthem. openai-docs skillalreadyread/applied earlier.
+One paid call, reported USD0.017435250; reservation USD0.058368 retained. User authorizes key from
+Z:/ssos/.env; neverprintthem. openai-docs skillalreadyread/applied earlier.
 
 ## Operating rules
 

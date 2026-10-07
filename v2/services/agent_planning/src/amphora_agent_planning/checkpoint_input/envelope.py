@@ -4,13 +4,14 @@ import hashlib
 import json
 from dataclasses import dataclass
 
-from amphora_contracts_planning import CheckpointDraft, checkpoint_draft_schema
+from amphora_contracts_planning import checkpoint_draft_schema
 
 from ..campaign_context.records import canonical
 from ..context import RequestSnapshot
 from ..context.policy import require
 from ..context.snapshot import _constant, _object
 from ..openai_provider.pricing import MODEL
+from .schema import guidance
 
 
 @dataclass(frozen=True)
@@ -27,7 +28,7 @@ class CheckpointEnvelope:
 
         original = request.document()
         request = RequestSnapshot.bind(original, actor_id=original.actor_id, scope=original.reference.scope)
-        CheckpointInputBound.bind(original.context.model)
+        profile = CheckpointInputBound.bind(original.context.model)
         require(original.purpose == 'supervision', 'checkpoint_input_purpose')
         require(original.context.output_schema == checkpoint_draft_schema(), 'checkpoint_input_output_profile')
         require(type(raw) is bytes and 0 < len(raw) <= 8388608, 'checkpoint_input_size')
@@ -53,7 +54,7 @@ class CheckpointEnvelope:
         # JSON mode is deliberate: arbitrary proposal parameter maps are not a closed
         # provider strict-schema subset. Existing local CheckpointDraft validation
         # remains authoritative. Both schema guidance and all framing count in fit.
-        payload = canonical({'output_schema': CheckpointDraft.model_json_schema(mode='validation'),
+        payload = canonical({'output_schema': guidance(profile.envelope_version),
             'packet_sha256': hashlib.sha256(raw).hexdigest(), 'untrusted_context': context}).decode('utf-8')
         body = canonical({'model': MODEL, 'store': False, 'stream': False, 'service_tier': 'default',
             'reasoning': {'effort': 'low'}, 'max_output_tokens': original.context.limits.max_output_tokens,

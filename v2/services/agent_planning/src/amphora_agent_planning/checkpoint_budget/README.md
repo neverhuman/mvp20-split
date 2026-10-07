@@ -44,3 +44,9 @@ with combined new-module coverage114/115 statements,11/12 branches (98.43%). The
 selection omits the legacy bypass, which the earlier broader suite exercised. Independent
 Planning0.101 wheel passes114 copied profile/worker/SQL tests; two wheel sets match.
 No paid calls or deployed scientific claim.
+
+
+Planning0.102 recognizes both original and compact checkpoint input identities under
+this same scope lock and allowance. Both retain65,536 input/2,048 output maxima and
+USD0.058368 full reservation. A profile change cannot reset the shared count/cost
+history. No allowance, currency, price, output reserve or database migration changes.

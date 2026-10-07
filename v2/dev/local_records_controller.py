@@ -11,16 +11,22 @@ from local_demo_controller import Controller
 
 
 class RecordsController(Controller):
-    def __init__(self, root, output, routes):
+    def __init__(self, root, output, routes, *, workers=False, model_key=None):
         self.routes, self.token = routes, control_token(root)
         self.opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
         environment = {key: value for key, value in os.environ.items() if key.upper() in {
             'SYSTEMROOT', 'WINDIR', 'PATH', 'TEMP', 'TMP', 'USERPROFILE', 'LOCALAPPDATA', 'APPDATA', 'COMSPEC'}}
         environment['PYTHONUTF8'] = '1'
+        if model_key is not None:
+            assert workers and type(model_key) is str and model_key
+            environment['AMPHORA_OPENAI_API_KEY'] = model_key
         self.job, self.process = ProcessJob(), None
         try:
-            self.process = subprocess.Popen([sys.executable, '-I', '-m', 'amphora_deployment.lifecycle', 'serve',
-                '--root', str(root), '--manifest', str(output / 'owners.json')], env=environment,
+            command = [sys.executable, '-I', '-m', 'amphora_deployment.lifecycle', 'serve',
+                '--root', str(root), '--manifest', str(output / 'owners.json')]
+            if workers:
+                command += ['--workers-manifest', str(output / 'native.json')]
+            self.process = subprocess.Popen(command, env=environment,
                 stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, creationflags=subprocess.CREATE_NO_WINDOW)
             self.job.attach(self.process)
             self.wait(lambda: self.control('/status'), timeout=60)
@@ -29,9 +35,12 @@ class RecordsController(Controller):
             raise
 
     def start(self):
-        for owner in ('artifact', 'research', 'knowledge'):
+        configured = self.control('/status')['owners']
+        for owner in ('artifact', 'research', 'knowledge', 'planning', 'runtime'):
+            if owner not in configured:
+                continue
             self.control('/owners/' + owner + '/start', 'POST')
-            path = '/ready' if owner == 'artifact' else '/health'
+            path = '/ready' if owner in ('artifact', 'planning') else '/health'
             def ready(owner=owner, path=path):
                 state = self.control('/status')['owners'][owner]
                 assert state['state'] == 'running', 'Owner exited during startup: ' + owner
@@ -39,7 +48,13 @@ class RecordsController(Controller):
             self.wait(ready)
 
     def drain(self):
-        for owner in ('knowledge', 'research', 'artifact'):
+        configured = self.control('/status')
+        for name in configured.get('workers', {}):
+            self.control('/workers/' + name + '/quiesce', 'POST')
+        self.wait(lambda: all(row['state'] == 'quiescent' for row in self.control('/status').get('workers', {}).values()))
+        for owner in ('runtime', 'planning', 'knowledge', 'research', 'artifact'):
+            if owner not in configured['owners']:
+                continue
             self.control('/owners/' + owner + '/drain', 'POST')
         self.wait(lambda: all(row['state'] == 'exited' for row in self.control('/status')['owners'].values()))
         final = self.control('/status')

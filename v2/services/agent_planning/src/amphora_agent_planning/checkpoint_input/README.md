@@ -36,3 +36,16 @@ egress, cost enforcement and independent installed-worker integration belong to 
 
 Verified `2026-10-07 00:07:20`: 93 profile/packet/preparation tests pass; scoped coverage179 statements
 and4 branches100%. This measures the pure profiles only; no SQL, model or deployment coverage.
+
+
+BP-09.03/B1.4 repair, Planning0.102: an actual local owner checkpoint required67,386
+input units and correctly stopped before reservation/issuance under the65,536 limit.
+The additive `planning.checkpoint-openai-input-bound.v2` identity (SchemaRef wire
+version1) selects compact Responses guidance. It removes only JSON Schema `title`
+annotations at schema positions. Named properties, defaults, examples, constraints,
+references and descriptions remain intact. The original profile identity and request
+bytes remain available for exact replay; callers explicitly choose the new identity.
+The complete envelope remains measured with the same1024-unit framing allowance.
+Packet fit formatv2, local output DTO validation, request limits and provider transport
+remain unchanged. Compacting guidance does not omit required owner context or grant
+permission to exceed any input/spending cap. Unknown profile identities fail closed.

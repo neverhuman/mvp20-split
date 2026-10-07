@@ -1,0 +1,233 @@
+{
+  "timestamp_local": "2026-10-07 04:24:49",
+  "status": "passed",
+  "installation": {
+    "timestamp_local": "2026-10-07 04:15:01",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-agent-planning",
+    "forbidden_implementations": [
+      "amphora_campaign_runtime",
+      "amphora_data_artifacts",
+      "amphora_research",
+      "amphora_knowledge"
+    ],
+    "packages": {
+      "amphora-agent-planning": "0.102.0",
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-evidence": "0.5.13",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-knowledge": "0.8.0",
+      "amphora-contracts-planning": "0.10.0",
+      "amphora-contracts-representations": "0.3.0",
+      "amphora-contracts-research": "0.14.0",
+      "amphora-contracts-research-views": "0.1.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-supervision": "0.10.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-contracts-topology-search": "0.1.0",
+      "amphora-tool-protocol": "0.2.0"
+    },
+    "wheels": {
+      "amphora_agent_planning-0.102.0-py3-none-any.whl": "adb7c5772226bfb093cda368f855696218b2218dbb8ae21c8c57d0849f83d248",
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+      "amphora_contracts_planning-0.10.0-py3-none-any.whl": "2faf07d284c036c54f5c389e540750ae4ec5ffbb356e1d5f6fb7a935ed92a682",
+      "amphora_contracts_representations-0.3.0-py3-none-any.whl": "523feb10556ea0fdc07e39f2a874309fa65782b3e9035f072dffddf9a98ae18d",
+      "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+      "amphora_contracts_research_views-0.1.0-py3-none-any.whl": "50f010979f0868e61533f312639a1dfa9fc8a41795b2961817c3da45b33b67e8",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_supervision-0.10.0-py3-none-any.whl": "fd181b9c5af4bff660d40f6e46e78365c2806b2c63a2cf1c9d908bb772ec60e2",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_contracts_topology_search-0.1.0-py3-none-any.whl": "e7f4e9da892895fd95832d5548d631e508930ea18aeba0209a41e1908e6d75e9",
+      "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+    }
+  },
+  "independent_tests": 120,
+  "source_tests": {
+    "passed": 120,
+    "seconds": 24.88
+  },
+  "focused_coverage": {
+    "tests": 43,
+    "seconds": 10.69,
+    "statements": "131/135",
+    "branches": "14/14",
+    "percent": 97,
+    "input_profile_percent": 100,
+    "omitted": "Four unchanged validate_policy lines exercised in actual SQL suite, omitted from focused pure coverage"
+  },
+  "fresh_closure_wheels_identical": true,
+  "live": {
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+    },
+    "run_id": "ae806232d1514bb6ba48a4b8ffbf39cc",
+    "decision": {
+      "schema_version": "1",
+      "profile": "checkpoint-decision.v1",
+      "reference": {
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+        },
+        "run_id": "ae806232d1514bb6ba48a4b8ffbf39cc",
+        "decision_id": "d15aca64931f94a0513a1e5fedddd64fd285fdf8abcc4d244914d205f8af168e"
+      },
+      "revision": 1,
+      "checkpoint_seed_sha256": "72cee777182829ce693e1f1d1245a88d785c2a1c4d395def8b058fd08e0af9ad",
+      "outcome": {
+        "kind": "model_accepted",
+        "request_sha256": "f7396e0a178261eeb650ff2e1f9c6f6870cff07d179d37db0cede008dcc69857",
+        "response_sha256": "2e3952306d002b93f21919cda720f0bdbe49c43fb15e4f9cbbb40b9ca0f90322",
+        "effect": {
+          "kind": "adjusted_materialization_fields",
+          "target": {
+            "schema_version": "2",
+            "node_id": "pack",
+            "occurrences": []
+          },
+          "selection_sha256": "5f52a4406cfc18fab1c99447033fae03adf32696bbc9734e0aa7ba5aa25a93ec",
+          "changes": [
+            {
+              "field_name": "a",
+              "previous_value_sha256": "c6d1a359a1b3a2f98fbbd4f1002185fd99f6df71c7a76c1755dcf96dc8885324",
+              "value": {
+                "kind": "integer",
+                "value": 7,
+                "unit": "1"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "reports": [
+      {
+        "schema_version": "1",
+        "reference": {
+          "scope": {
+            "tenant_id": "internal",
+            "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+          },
+          "run_id": "ae806232d1514bb6ba48a4b8ffbf39cc",
+          "decision_id": "d15aca64931f94a0513a1e5fedddd64fd285fdf8abcc4d244914d205f8af168e"
+        },
+        "request_sha256": "f7396e0a178261eeb650ff2e1f9c6f6870cff07d179d37db0cede008dcc69857",
+        "engagement": {
+          "scope": {
+            "tenant_id": "internal",
+            "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+          },
+          "engagement_id": "673f5c4c21b4b27ea0841834f65c3e2c4f0eaddeab05c9d8b746c2022df8390d"
+        },
+        "planning_request_sha256": "5d4d42a940ed44a40955814765a8d7284713b833bacc38767d08df24c4fd0173",
+        "stop_reason": "proposed",
+        "attempts": [
+          {
+            "attempt": {
+              "engagement": {
+                "scope": {
+                  "tenant_id": "internal",
+                  "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+                },
+                "engagement_id": "673f5c4c21b4b27ea0841834f65c3e2c4f0eaddeab05c9d8b746c2022df8390d"
+              },
+              "request_sha256": "5d4d42a940ed44a40955814765a8d7284713b833bacc38767d08df24c4fd0173",
+              "ordinal": 1
+            },
+            "observation_sha256": "5560ee3711f2489ad2aba48e3e58da1875c8907afbfb6ebd317283f1502a692f",
+            "status": "proposed"
+          }
+        ]
+      }
+    ],
+    "elapsed_seconds": 55.65599999995902,
+    "limit_seconds": 360,
+    "materialized_content": {
+      "a": 7
+    },
+    "artifact": {
+      "artifact_id": "1e514e7175134c89829cd3b18287263f",
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+      },
+      "sha256": "906162c307d04d1b08bacae28759f8c011fd6bdb8d4a1c74e64aae5f2e86139a",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "demo.checkpoint.scalar",
+        "version": "1",
+        "sha256": "df817b794ef788ceb48976fdf15cd678c74bf003c3b45722ce839b85db376e6f"
+      },
+      "size_bytes": 7
+    },
+    "usage": {
+      "input_tokens": 18723,
+      "output_tokens": 754,
+      "accounting_units": 17435250,
+      "certainty": "reported"
+    },
+    "reported_usd": "0.017435250",
+    "conservative_reservation_usd": "0.058368",
+    "physical_attempts": 1,
+    "scope_call_limit": 6,
+    "scope_usd_limit": "0.50",
+    "original_graph_and_admission_replay": true
+  },
+  "prior_failure": {
+    "run_id": "67fcfe0493d9457fba0536491b5812c9",
+    "status": "completed_with_fallback",
+    "reason": "required_input_limit",
+    "physical_attempts": 0,
+    "input_bound": 67386,
+    "input_limit": 65536,
+    "envelope_bytes": 66362,
+    "packet_bytes": 19833
+  },
+  "repair": {
+    "profile": {
+      "schema_id": "planning.checkpoint-openai-input-bound.v2",
+      "version": "1",
+      "sha256": "fc755855508e1e6bcb0ef694ca9ad61eceea7d33c8bc98e45d76ac6c9a54756d"
+    },
+    "change": "Remove only schema-position title annotations in explicitly selected compact guidance; preserve legacy identity/replay and all validation keywords",
+    "limits_unchanged": true,
+    "public_schemas_unchanged": true,
+    "database_migration": false
+  },
+  "owner_records_regression": {
+    "path": ".test-results\\local-owner-records-install-20261007b\\evidence.json",
+    "sha256": "ad42ddc983cb4262376224121a34faab1468e9c8847f7535eb02e9081c797641"
+  },
+  "raw": [
+    {
+      "path": ".test-results\\local-live-checkpoint-20261007b\\evidence.json",
+      "sha256": "33b9241ef00f80559d6eda83cb64b3960b7864bc29d2f145c03c27002150bab8"
+    },
+    {
+      "path": ".test-results\\local-live-checkpoint-readback-20261007b\\evidence.json",
+      "sha256": "5f9abfcac37f7c7a1caee4bcf1c392861edb661f6f7ef558e4103d471f115df3"
+    },
+    {
+      "path": ".test-results\\local-live-checkpoint-20261007a\\measured.json",
+      "sha256": "d25197d116e9dc33911a3388819a6865701eb2ab44464e0040df3551ed98d8a7"
+    }
+  ],
+  "limits": [
+    "Actual selected provider and installed Runtime/Data/Planning under managed native workers; one synthetic scalar checkpoint",
+    "Scientific tool graph, actual Research/Knowledge context consumption and full browser/successor walkthrough remain B1.4b/c",
+    "Provider-reported usage is locally priced; conservative reservation is not refunded",
+    "Original failed engagement retained; new immutable configuration/new run, same project allowance",
+    "No source changes during verification; readback probe a fixed snapshot-token path before successful b, no model retries"
+  ]
+}

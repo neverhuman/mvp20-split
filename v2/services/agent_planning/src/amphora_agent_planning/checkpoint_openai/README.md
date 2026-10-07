@@ -40,3 +40,9 @@ with combined new-module coverage114/115 statements,11/12 branches (98.43%). The
 selection omits the legacy bypass, which the earlier broader suite exercised. Independent
 Planning0.101 wheel passes114 copied profile/worker/SQL tests; two wheel sets match.
 No paid calls or deployed scientific claim.
+
+
+Planning0.102 adds explicitly selected compact checkpoint guidance while keeping the
+same adapter,65,536-byte send ceiling and original profile. The request's pinned input
+identity selects framing; the adapter never silently rewrites an old retained packet.
+Both identities use the existing cost fence and exact transmitted-envelope checks.

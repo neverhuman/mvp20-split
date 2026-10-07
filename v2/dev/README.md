@@ -253,3 +253,17 @@ original byte storage and prior scopes intact. No SQL seed, migration, provider 
 paid call or scientific efficacy claim belongs to this probe. These process acceptance
 oracles are separate from owner-local pytest coverage. Failed outputs and scoped
 records are retained; a fresh output directory never means resetting the database.
+
+`prepare_local_checkpoint.py` publishes synthetic objective/prompt/budget artifacts
+through Data and creates new immutable Runtime/Planning/native worker configurations.
+Owner-local exporters compile inside their installed environments without SQL or keys.
+`verify_local_live_checkpoint.py` runs the actual supervised graph with one request and
+one provider attempt; the previously authorized external key is held only in memory
+and the Planning worker environment. Existing project reservations enforce the shared
+six-call/USD0.50 ceiling. Preserve the original admission and fallback evidence on failure;
+never retry a failed engagement as though it had a different model/input profile.
+`inspect_local_checkpoint.py` restarts owners without workers or credentials for a
+read-only comparison of original graph/admission/response and actual artifact bytes.
+Planning0.102's explicitly selected compact profile retains the original wire profile
+and limits. This scalar checkpoint proves real model acceptance, usage and replay;
+scientific execution and Research/Knowledge context composition are separate gates.

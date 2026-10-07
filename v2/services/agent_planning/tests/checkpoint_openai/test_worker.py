@@ -26,13 +26,13 @@ from ..supervision_scheduling.test_configuration import configuration
 pytestmark = pytest.mark.postgres
 
 
-def worker_configuration(stored, tmp_path, monkeypatch):
+def worker_configuration(stored, tmp_path, monkeypatch, version="1"):
     data = Data()
     def configure(original):
         context = original['context']
         context['entries'], context['omissions'] = [], []
         context['model'].update(provider_id='openai', model_id=MODEL, model_revision=MODEL,
-            tokenizer=checkpoint_tokenizer_reference().model_dump(mode='json'), context_window_tokens=400000)
+            tokenizer=checkpoint_tokenizer_reference(version).model_dump(mode='json'), context_window_tokens=400000)
         context['limits'].update(max_input_tokens=65536, max_output_tokens=2048, total_tokens=67584,
             max_attempts=1, total_accounting_units=500000000, accounting_unit='usd_nanodollars')
         for name, ref in [('objective', context['objective']), ('policy', context['policy']),
@@ -55,9 +55,10 @@ def worker_configuration(stored, tmp_path, monkeypatch):
     return path, intake, data
 
 
+@pytest.mark.parametrize('version', ['1', '2'])
 @pytest.mark.parametrize('exhausted', [False, True])
-def test_configured_worker_retains_exact_input_and_replays_without_new_call(stored, tmp_path, monkeypatch, exhausted):
-    path, intake, data = worker_configuration(stored, tmp_path, monkeypatch)
+def test_configured_worker_retains_exact_input_and_replays_without_new_call(stored, tmp_path, monkeypatch, exhausted, version):
+    path, intake, data = worker_configuration(stored, tmp_path, monkeypatch, version)
     calls = []
     def send(_self, body):
         calls.append(body)

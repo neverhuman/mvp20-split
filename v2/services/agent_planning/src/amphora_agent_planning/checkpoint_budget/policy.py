@@ -17,7 +17,8 @@ class CheckpointAllowance:
     @staticmethod
     def applies(request):
         model = request.document().context.model
-        return model.provider_id == 'openai' and model.tokenizer == checkpoint_tokenizer_reference()
+        return model.provider_id == 'openai' and model.tokenizer in (
+            checkpoint_tokenizer_reference('1'), checkpoint_tokenizer_reference('2'))
 
     @staticmethod
     def cost(model, limits):

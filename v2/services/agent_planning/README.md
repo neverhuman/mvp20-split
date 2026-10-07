@@ -69,3 +69,9 @@ Runtime engagement acceptance, overlapping decision scopes, fallback/cancellatio
 BP-07.04/B1.04a:17 supervisor-intake cases3.08s,155 statements/20 branches100%. Forward0015 and public supervision dependency are additive; actual public transport and provider supervision remain subsequent units.
 
 BP-07.04 explicit checkpoint worker startup, configuration, role checks and replacement boundaries are documented in [the worker module](src/amphora_agent_planning/supervision_scheduling/README.md). Run worker processes separately from HTTP serving; startup never migrates or silently enables live models.
+
+
+BP-09.03/B1.4 Planning0.102 adds compact checkpoint schema guidance as a separate input
+profile; old profile bytes/replay and the six-call/USD0.50 scope allowance remain.
+The correction follows an actual-owner required-input rejection before any model
+attempt. See checkpoint_input and checkpoint_budget boundaries for exact behavior.
