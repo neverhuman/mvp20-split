@@ -1,3 +1,7 @@
+# Current checkpoint
+
+2026-10-06 20:03:49: BP09.01 B1 COMPLETE. Child25%,Build33.33%,Acceptance0%;parent5%. No activejobs.25probe/profile tests0.62s + actual readonlydeveloperWindowsprobe passed (no targetclaim). EvidenceRead_Only_Probes.json. Current B2.01policy next, then B2.02 CLI/drainrestart order, then B3 actualselectedhostgate. Pending userhost/exposurequestions notanswered. Latestpreviouscommita5b06c2a; current B1.02readycommitpush. Need keep readonlyobservations distinct fromstorage/network/targetacceptance.
+
 # Restore
 
 Refreshed 2026-10-06 19:57:27 (America/Chicago). Read FIRST after compaction.

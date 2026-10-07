@@ -30,3 +30,5 @@ deployment policy remain pending; a parsed LAN address or durability claim canno
 authorize provisioning. Actual host identity/access is owner-supplied. Fixtures
 use not-a-selected-host deliberately. Local tests live in tests/preflight and
 must run independently of service databases, GPUs and provider keys.
+
+B1.02 verified 2026-10-06 20:03:49: HostObservation.inspect is read-only and binds profileSHA; detects OS/architecture/Python/CPU/memory, existing artifact directory/free space and optional bounded5second NVIDIA query. It does not infer durability, check exposure or contact providers. Foreign-platform paths are skipped; unavailable observations are null/named statuses, never fabricated zero.25tests0.62s and actual developerWindows observation passed. This is not selected-host acceptance. Coverage and platform gaps are in [probe evidence](../../docs/Audits/Evidence/BP-09-Deployment/Read_Only_Probes.json).

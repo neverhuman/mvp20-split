@@ -1,0 +1,33 @@
+{
+  "timestamp_local": "2026-10-06 20:03:49",
+  "scope": "BP-09.01/B1.02",
+  "status": "passed",
+  "tests": 25,
+  "seconds": 0.62,
+  "coverage": {
+    "covered_lines": 235,
+    "num_statements": 243,
+    "percent_covered": 96.30996309963099,
+    "percent_covered_display": "96",
+    "missing_lines": 8,
+    "excluded_lines": 0,
+    "percent_statements_covered": 96.70781893004116,
+    "percent_statements_covered_display": "97",
+    "num_branches": 28,
+    "num_partial_branches": 2,
+    "covered_branches": 26,
+    "missing_branches": 2,
+    "percent_branches_covered": 92.85714285714286,
+    "percent_branches_covered_display": "93"
+  },
+  "raw_coverage": ".test-results\\deployment-probe-coverage-20261006.json",
+  "raw_sha256": "ba3a8d1fa5fcf4b8ef50300e67a20dbfe59dabd6215720891cb2efc3cb88ded1",
+  "developer_observation": ".test-results/deployment-developer-probe-20261006.json",
+  "developer_observation_sha256": "f7988438d971c8263f3d6c454ba371885cc19cac71f7b3173bb8e9a4e7db02d6",
+  "limits": [
+    "Developer Windows machine only; not selected target acceptance",
+    "No storage writes, provider calls or network exposure test",
+    "Storage semantics always unverified; unavailable probes report unknown",
+    "Windows actual memory observed; Linux sysconf tested by controlled observation only"
+  ]
+}
