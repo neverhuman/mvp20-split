@@ -1,6 +1,6 @@
 # Local deployment profile and preflight
 
-Owner: BP-09.01, package amphora-deployment0.2.0. B1.01 profile parsing passed33profile/boundary checks13.95s; BP-09.01 local-profile acceptance is complete.
+Owner: BP-09.01, package amphora-deployment0.3.0. B1.01 profile parsing passed33profile/boundary checks13.95s; BP-09.01 local-profile acceptance is complete.
 Design: [Runtime topology](../../docs/Architecture/System/Runtime_Topology.md).
 
 This package owns local versioned deployment configuration and subsequent
@@ -73,3 +73,8 @@ BP-09.02/B1.03 adds [Windows lifecycle and control](src/amphora_deployment/lifec
 B2 complete: 138 deployment/gateway checks pass; coverage1283/1689 statements and156/260branches (combined73.83%). Installed CLI/SQL/Docker evidence is separate and not counted as parent-process coverage. Explicit migration/replacement success passed live; rare OS failures, repair interruption and portions of subprocess error reporting remain gaps for B3/V1. Evidence B2_Coverage.json and Local_Outage_Drain.json. Seven cooperative HTTP drains and original accepted receipt replay after PostgreSQL outage passed. Current package is independently requalified at V1; original0.1 qualification remains historical.
 
 B3 selected-host matrix passed: independent Deployment0.2 wheel reproduced byte-for-byte across fresh installs; current seven-owner/host profile validates and passes actual native CPU preflight. Five owner startup CLIs reject correct migrator credentials (Planning0.99 actual serving rejection separately proven). Installed Data enforces an eight-byte local-storage quota, rejects excess, preserves finalized bytes/receipt, denies invalid auth/non-loopback access and drains. Installed Planning adapter handles actual loopback503/refusal without retry or invented zero usage. This uses test-only transport injection and no model calls. Physical disk failure, accelerator workloads and live-provider behavior are not claimed. B2 supplies actual database outage/recovery and retained receipt proof; V1 replacement/audit remain.
+
+BP-09.03 adds [tool TLS access](src/amphora_deployment/tool_access/README.md): encrypted local
+server identity and bounded fixed-owner forwarding for Linux tool SDK connections. Existing
+profile/supervisor v1 stays unchanged. Managed TLS/worker configuration is the next integration
+unit; transport probes alone do not grant tool eligibility or establish scientific execution.

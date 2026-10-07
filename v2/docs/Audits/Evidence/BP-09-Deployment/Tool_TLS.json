@@ -1,0 +1,90 @@
+{
+  "timestamp_local": "2026-10-07 00:53:15",
+  "status": "passed",
+  "tests": 126,
+  "installation": {
+    "timestamp_local": "2026-10-07 00:52:45",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-deployment",
+    "forbidden_implementations": [
+      "amphora_campaign_runtime",
+      "amphora_agent_planning",
+      "amphora_data_artifacts",
+      "sqlalchemy",
+      "pydantic"
+    ],
+    "packages": {
+      "amphora-deployment": "0.3.0"
+    },
+    "wheels": {
+      "amphora_deployment-0.3.0-py3-none-any.whl": "3163fe470903b4b5aef1672d9a9a105e3aa5df37946e5c3bdf0cc23aaf7bb334"
+    }
+  },
+  "peer_registry_python": "Z:\\mvp20-split\\.test-results\\local-owner-inventory-20261006a\\owners\\registry\\environment\\Scripts\\python.exe",
+  "container": {
+    "timestamp_local": "2026-10-07 00:53:15",
+    "status": "passed",
+    "image_id": "sha256:7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+    "certificate_sha256": "c9f824a2001e7eb38439f74c3d7cc850a52f5cd6417e58a72e054d5c627ad690",
+    "payload_sha256": "2c7f82d8b1bad152f2978eba89f0d140d68d0511b03a68ca6cb0197fddd2d14c",
+    "cases": [
+      {
+        "variant": "trusted",
+        "status": 200,
+        "body_matches": true,
+        "sdk_version": "0.2.0",
+        "tool_version": "0.5.0"
+      },
+      {
+        "variant": "untrusted",
+        "rejected": "transport_lost",
+        "sdk_version": "0.2.0",
+        "tool_version": "0.5.0"
+      },
+      {
+        "variant": "plain_http",
+        "rejected": "invalid_service_endpoint",
+        "sdk_version": "0.2.0",
+        "tool_version": "0.5.0"
+      }
+    ],
+    "scope": "Actual Linux image/SDK and host TLS proxy; synthetic upstream, not actual Runtime or scientific execution",
+    "limits": [
+      "No global Docker settings or system trust changed",
+      "Only public certificate mounted in container",
+      "No insecure TLS bypass or SDK change",
+      "Encrypted private key and DPAPI password retained locally"
+    ]
+  },
+  "limits": [
+    "Independent Deployment wheel and actual Linux image SDK; synthetic owner HTTP fixture",
+    "No campaign, live scientific tools, database mutation or provider calls",
+    "Managed TLS/worker configuration and actual owner eligibility remain subsequent gates"
+  ],
+  "reproducible_wheels": true,
+  "source_regression": {
+    "tests": 125,
+    "seconds": 26.17
+  },
+  "final_focused": {
+    "tests": 16,
+    "seconds": 15.54,
+    "coverage": {
+      "covered_lines": 224,
+      "num_statements": 247,
+      "percent_covered": 88.65979381443299,
+      "percent_covered_display": "89",
+      "missing_lines": 23,
+      "excluded_lines": 0,
+      "percent_statements_covered": 90.68825910931174,
+      "percent_statements_covered_display": "91",
+      "num_branches": 44,
+      "num_partial_branches": 8,
+      "covered_branches": 34,
+      "missing_branches": 10,
+      "percent_branches_covered": 77.27272727272727,
+      "percent_branches_covered_display": "77"
+    }
+  }
+}

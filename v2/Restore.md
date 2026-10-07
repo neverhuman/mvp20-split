@@ -4,13 +4,13 @@ Refreshed 2026-10-07 00:33:51 (America/Chicago). Read FIRST after compression.
 
 ## Active task
 
-BP-09.03/B1.3: scoped TLS tool connectivity, worker lifecycle/quiescence and actual owner
-records. B1.1/B1.2 verified; child12.5%,Build16.67%,Acceptance0%; parent42.5%,8.5/20
+BP-09.03/B1.3b: managed TLS/native/tool worker lifecycle and actual peer qualification.
+B1.1/B1.2/B1.3a verified; child14.58%,Build19.44%,Acceptance0%; parent42.92%,(8+7/12)/20
 verified delivery weight/eight closed gates. BP-09.01/.02 and BP-08 remain closed100%.
 No owner decision blocker. Continue until genuinely needed, keep trackers canonical,
 commit/push significant verified work. Local Windows x86_64/Python3.12,127.0.0.1 only.
 
-Latest B1.1 pushed0b78d8c5; B1.2 verified checkpoint described below. Check git status/log.
+B1.1 pushed0b78d8c5; B1.2 pushedbb9177be. Check git status/log.
 All builds/tests/probes exited. No supervisor/owner/gateway/worker processes remain.
 Dedicated local PostgreSQL/Qdrant and older dev fixtures remain running; never reset them.
 
@@ -110,3 +110,38 @@ Use directory + --glob '*.py' with rg; never wildcarddirectorypaths or guessfile
 Unrelated KAP Python18720/2912 must not be touched. UIguidelines alreadyread beforepriorUIwork.
 openai-docs skill read/applied this turn; official existingmodel snapshot/pricing verified.
 Owner authorized syntheticengineering OpenAI use via Z:/ssos/.env later; keysneverprinted.
+
+## B1.3 TLS work in progress 2026-10-07 00:49:05
+Deployment0.3 tool_access identity/proxy and ownedtests implemented, UNCOMMITTED. TLSIdentity
+uses explicitOpenSSL offline generation, encryptedPEM +separateDPAPIpassword, fixedhostdockerSAN,
+30daycert/create-once/hashes. Proxy fixedRuntime/Data127upstream, bearerpreserved,16MiBbound,
+absoluteconnectiontimer30s (notjustinactivity), 8boundedthreads, acceptedresponse drain.
+Actual evolution0.5 LinuximageSDK0.2 trustedTLS200/untrustedTLSrejected/plainHTTPdenied PASSED:
+ROOT.test-results/local-tool-tls-20261007a/evidence.json; encryptedidentity underphysical
+LOCALAPPDATA/.../Amphora/local-v2/tls-proof-20261007a. No globalDocker/trustchanges.
+SourceDeployment125tests26.17s passed; initialclosedresponse socketbugfixed. Added explicit
+truncatedupstream502 regression afterward; final16testTLS suite RUNNING session74924.
+No source/test/dev/README edits untilactualexit. Then independentDeployment0.3 install+copied
+TLS tests, rerunactualimageprobe forfinalcode, updateevidence/scopes/metadata/trackers andcommit.
+B1.3 boundedsubunits proposed: aTLSboundary, bmanagedTLS/science/Planningworker lifecycle
+and actualpeer toolqualification, cactualResearch/Data/Knowledge records. CreditTLSunitonly
+afterindependentproof (thirdofexistingB1.3weight), notallB1.3. Managedconfig stillnotimplemented.
+
+2026-10-07 00:58:38: B1.3a VERIFIED. Independent Deployment0.3 b126tests+actualLinuxSDK3cases passed.
+ROOT.test-results/local-tool-tls-installation-20261007b/owner isqualified; a/bwheelshashesmatch.
+A failed onlybecauseoldtestexpectedRegistryinsideDeployment; test now accepts explicit
+AMPHORA_TEST_REGISTRY_PYTHON pointing originalRegistryinstall. Both remainisolated.
+FinalTLS16tests15.54s after incomplete-response502 fix; allprocessesexited. EvidenceTool_TLS.json.
+No moreTLSverificationrunning; priorRUNNINGnotes stale. B1.3bnext. Latestdriver
+dev/verify_tool_tls_installation.py requires --registry-python separateinstalledpath.
+TLSidentityb underphysicalLOCALAPPDATA/.../Amphora/local-v2/tls-proof-20261007b; encryptedkeyretained.
+Planning0.101 andDeployment0.3 notyetactivated inlocaldemomanifests; servingbaselinesunchanged.
+
+B1.3b inspection: Runtime CLI coordinate usesGraphPoller.sweep; standalone supervision_loop
+CLI run drivesRuntime checkpoint loop. Planning supervision_scheduling run drivesPlanning.
+All bounded sweeps default20s and do notinterruptinflightoperations. Tool SDK run_worker and
+multi_input_worker each run_once thenexit; canmanage repeated reviewed one-shot turns without
+modifying scientifictools/SDK or losing originallease/receipt semantics. Quiesce stops launching
+newturns and awaitsinflight; neverinterruptHTTPwithgenericSIGINT andcallitgraceful. Native
+processjob supervision and Docker immutableID+deploymentlabels needdistinctownership/recovery.
+Avoid deployment becoming graph scheduler; ownerworkers stillchoose/acceptwork.
