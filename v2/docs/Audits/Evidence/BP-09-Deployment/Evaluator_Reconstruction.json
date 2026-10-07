@@ -1,6 +1,6 @@
 {
-  "timestamp_local": "2026-10-07 09:59:06",
-  "status": "offline_qualified_live_cutover_blocked",
+  "timestamp_local": "2026-10-07 10:07:55",
+  "status": "rebuilt_evaluator_cutover_accepted_with_retained_failures",
   "source_tests": {
     "passed": 38,
     "seconds": 9.92,
@@ -227,8 +227,8 @@
   "raw_evidence": "v2/.test-results/local-rebuilt-evaluator-20261007b",
   "scope": "Independent evaluator0.4 reconstruction; public metadata and acceptance fixtures reused; original private kernel/adapter not copied",
   "limits": [
-    "Live cutover acceptance remains blocked by recurrent process faults; failed histories retained",
-    "Read-only750request probe does not prove command exchanges",
+    "Earlier two process faults retained; exact cause remains unresolved, not repaired by successful third run",
+    "Read-only750request probe and live run do not establish operational soak or all-fault recovery",
     "No scientific improvement or paid model calls"
   ],
   "transport_read_probe": {
@@ -574,5 +574,212 @@
       },
       "cause": "unresolved"
     }
-  ]
+  ],
+  "campaign": {
+    "run_id": "3cb8621ad9d54f5086727ef183ec3884",
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "managed-campaign-a78996d831b744d2af614a94c2c4bc13"
+    },
+    "execution_seconds": 106.0460000000894,
+    "invocations": 15,
+    "evaluations": 6,
+    "generation_checkpoints": 3,
+    "confirmed_retentions": 15,
+    "new_release": "0.4.0",
+    "image_sha256": "95725806eb11bece632d22fe58fbeb42c5691a13202c0dffb399593d6921abaa",
+    "final": {
+      "owners": {
+        "artifact": {
+          "owner": "artifact",
+          "pid": 24140,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "registry": {
+          "owner": "registry",
+          "pid": 3164,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "runtime": {
+          "owner": "runtime",
+          "pid": 34580,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        }
+      },
+      "workers": {
+        "runtime-coordinate": {
+          "state": "quiescent",
+          "exit_code": 0,
+          "completed_turns": 13,
+          "faulted": false,
+          "execution_readiness": "not_assessed"
+        },
+        "runtime-deliver": {
+          "state": "quiescent",
+          "exit_code": 0,
+          "completed_turns": 15,
+          "faulted": false,
+          "execution_readiness": "not_assessed"
+        }
+      },
+      "tool_access": {
+        "runtime": {
+          "state": "drained",
+          "port": 57924,
+          "upstream_readiness": "not_assessed",
+          "connections": {
+            "limit": 16,
+            "active": 0,
+            "peak": 4,
+            "admitted": 448,
+            "denied": 0
+          },
+          "transport": {
+            "failures": {
+              "handshake.io": 61
+            },
+            "responses": {
+              "2xx": 382,
+              "4xx": 1
+            }
+          }
+        },
+        "artifact": {
+          "state": "drained",
+          "port": 57925,
+          "upstream_readiness": "not_assessed",
+          "connections": {
+            "limit": 16,
+            "active": 0,
+            "peak": 2,
+            "admitted": 152,
+            "denied": 0
+          },
+          "transport": {
+            "failures": {
+              "handshake.io": 63
+            },
+            "responses": {
+              "2xx": 87
+            }
+          }
+        }
+      },
+      "scientific_workers": {
+        "evolution-seed": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 42,
+          "exit_code": 0,
+          "execution_readiness": "not_assessed"
+        },
+        "evolution-requests": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 41,
+          "exit_code": 0,
+          "execution_readiness": "not_assessed"
+        },
+        "evolution-collect": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 41,
+          "exit_code": 0,
+          "execution_readiness": "not_assessed"
+        },
+        "evolution-vary": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 41,
+          "exit_code": 0,
+          "execution_readiness": "not_assessed"
+        },
+        "synthetic-objectives-rebuilt": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 40,
+          "exit_code": 2,
+          "execution_readiness": "not_assessed"
+        }
+      },
+      "tool_catalog": {
+        "evolution-seed": {
+          "state": "observed",
+          "observation": {
+            "revision": 42,
+            "free_slots": 0,
+            "observed_at": "2026-10-07T15:02:26.576661Z",
+            "expires_at": "2026-10-07T15:02:41.576661Z"
+          },
+          "running": false,
+          "stopping": true
+        },
+        "evolution-requests": {
+          "state": "observed",
+          "observation": {
+            "revision": 39,
+            "free_slots": 0,
+            "observed_at": "2026-10-07T15:02:26.583668Z",
+            "expires_at": "2026-10-07T15:02:41.583668Z"
+          },
+          "running": false,
+          "stopping": true
+        },
+        "evolution-collect": {
+          "state": "observed",
+          "observation": {
+            "revision": 42,
+            "free_slots": 0,
+            "observed_at": "2026-10-07T15:02:26.608234Z",
+            "expires_at": "2026-10-07T15:02:41.608234Z"
+          },
+          "running": false,
+          "stopping": true
+        },
+        "evolution-vary": {
+          "state": "observed",
+          "observation": {
+            "revision": 42,
+            "free_slots": 0,
+            "observed_at": "2026-10-07T15:02:26.591448Z",
+            "expires_at": "2026-10-07T15:02:41.591448Z"
+          },
+          "running": false,
+          "stopping": true
+        },
+        "synthetic-objectives-rebuilt": {
+          "state": "observed",
+          "observation": {
+            "revision": 42,
+            "free_slots": 0,
+            "observed_at": "2026-10-07T15:02:26.598896Z",
+            "expires_at": "2026-10-07T15:02:41.598896Z"
+          },
+          "running": false,
+          "stopping": true
+        }
+      }
+    },
+    "raw_evidence": ".test-results/local-rebuilt-campaign-20261007c"
+  },
+  "history": {
+    "original": ".test-results/local-rebuilt-original-readback-20261007a",
+    "browser_original_and_corrected": ".test-results/local-rebuilt-browser-readback-20261007a",
+    "blocked": ".test-results/local-rebuilt-blocked-readback-20261007a",
+    "blocked_exact_comparison": true
+  }
 }

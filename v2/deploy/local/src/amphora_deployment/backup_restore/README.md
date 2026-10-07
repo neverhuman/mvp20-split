@@ -1,6 +1,6 @@
 # Offline backup inventory boundary
 
-- Owner: Deployment, BP-09.04/B1.1; Deployment0.12 implemented; actual capture/restore remains B1.2/B2.
+- Owner: Deployment, BP-09.04/B1.1; Deployment0.12 boundary retained through0.14; actual capture/restore/B3 fault proofs passed.
 - Architecture: [Runtime topology](../../../../../docs/Architecture/System/Runtime_Topology.md).
 
 `BackupManifest.from_bytes` parses closed local-offline-backup-v1 records into immutable
@@ -28,6 +28,6 @@ directories. Target-resource allocation must additionally reject original volume
 Rebuild boundary: preserve canonical manifest bytes, strict rejection codes, immutable
 identities and read-only verification; never promote inventory validity to service health.
 Owned tests: deploy/local/tests/backup_restore. Coverage and installed evidence are
-recorded after verification; actual snapshot and corruption drills remain later gates.
+recorded after verification; actual snapshot and corruption drills are separately recorded in BP-09.04 evidence.
 
 Verified 2026-10-07 08:25:20:98 backup/preflight tests pass5.43s; backup module159/159 statements and14/14 branches measured (100%). Deep JSON tests permit parser-depth or shape rejection; explicit short test IDs avoid oversized pytest paths, and backup-specific fixture names preserve granular/combined suite isolation. Filesystem link checks use injected link/junction observations; actual capture/restore and concurrent mutation are not covered by these unit cases.

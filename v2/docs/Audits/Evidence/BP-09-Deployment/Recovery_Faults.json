@@ -1,0 +1,727 @@
+{
+  "timestamp_local": "2026-10-07 10:22:26",
+  "status": "passed",
+  "backup": {
+    "timestamp_local": "2026-10-07 10:08:53",
+    "status": "passed",
+    "backup": {
+      "backup_id": "9fd2a863a42d48e0ac5bef3b14aff734",
+      "manifest_sha256": "3e4f04713ee918360e019a19c69cc25c2c0f724b32399764e9cd71fb37eaa848",
+      "file_count": 719,
+      "total_bytes": 106867943,
+      "status": "inventory_verified_not_restore_ready"
+    },
+    "cases": [
+      {
+        "fault": "missing_artifact",
+        "reason": "backup_file_missing_or_size",
+        "target_created": false,
+        "resource_inventory_unchanged": true
+      },
+      {
+        "fault": "corrupt_artifact",
+        "reason": "backup_file_digest",
+        "target_created": false,
+        "resource_inventory_unchanged": true
+      },
+      {
+        "fault": "partial_snapshot",
+        "reason": "backup_file_missing_or_size",
+        "target_created": false,
+        "resource_inventory_unchanged": true
+      },
+      {
+        "fault": "wrong_schema",
+        "reason": "backup_owner_incompatible",
+        "target_created": false,
+        "resource_inventory_unchanged": true
+      }
+    ],
+    "original_backup_unchanged": true,
+    "provider_calls": 0,
+    "limits": [
+      "Pre-allocation cold restore rejection only",
+      "Does not inject corruption into the accepted live restore or original source stores"
+    ]
+  },
+  "fencing": {
+    "timestamp_local": "2026-10-07 10:18:37",
+    "status": "passed",
+    "scenario": "stale_worker",
+    "run_id": "869c9bb526954030904bb7dffe27a6d5",
+    "pins": [
+      {
+        "case": "old_release",
+        "receipt": {
+          "schema_version": "1",
+          "outcome": {
+            "status": "no_eligible_work",
+            "receipt": {
+              "status": "accepted",
+              "binding": {
+                "identity": {
+                  "schema_version": "1",
+                  "command_family": "runtime.claim",
+                  "command_id": "probe-22d4101ceebd413e8fd113a7ef4c3aeb",
+                  "scope": {
+                    "tenant_id": "internal",
+                    "project_id": "replacement-fault-3223db45a3174da28b975ff8262af664"
+                  },
+                  "actor_id": "science-slot"
+                },
+                "request_sha256": "2c44ccd1c0e99a2d4bc4824b3d407b1c0e9c09603a12dc8787f1848d86ac364c",
+                "operation_id": "cc431b3463414e13bc9dec0fb40e00e8"
+              },
+              "committed": {
+                "kind": "run",
+                "object_id": "869c9bb526954030904bb7dffe27a6d5",
+                "revision": 0
+              }
+            }
+          }
+        }
+      },
+      {
+        "case": "wrong_image",
+        "receipt": {
+          "schema_version": "1",
+          "outcome": {
+            "status": "no_eligible_work",
+            "receipt": {
+              "status": "accepted",
+              "binding": {
+                "identity": {
+                  "schema_version": "1",
+                  "command_family": "runtime.claim",
+                  "command_id": "probe-9af9f0fb34694491acedd2b5e778ad4c",
+                  "scope": {
+                    "tenant_id": "internal",
+                    "project_id": "replacement-fault-3223db45a3174da28b975ff8262af664"
+                  },
+                  "actor_id": "science-slot"
+                },
+                "request_sha256": "937bcd3d11e8fa7d36be5255e97d6d29294ad145d361bcb0447d0eb39df0a773",
+                "operation_id": "e4025bfe29d74d3c81ff93d8a546e98c"
+              },
+              "committed": {
+                "kind": "run",
+                "object_id": "869c9bb526954030904bb7dffe27a6d5",
+                "revision": 0
+              }
+            }
+          }
+        }
+      }
+    ],
+    "first_claim": {
+      "schema_version": "1",
+      "outcome": {
+        "status": "claimed",
+        "receipt": {
+          "status": "accepted",
+          "binding": {
+            "identity": {
+              "schema_version": "1",
+              "command_family": "runtime.claim",
+              "command_id": "probe-b5acd8272c814a2992b7ae5ef25294d2",
+              "scope": {
+                "tenant_id": "internal",
+                "project_id": "replacement-fault-3223db45a3174da28b975ff8262af664"
+              },
+              "actor_id": "science-slot"
+            },
+            "request_sha256": "a45e2ac7d981a4c0d839e9bf7e34acea0af353728ad5bdb6d136828cf8afa2f1",
+            "operation_id": "7eba5d8d6e6c43acac856a9a9e5e8452"
+          },
+          "committed": {
+            "kind": "attempt",
+            "object_id": "2880f973371f4f5ab62c561c9037b9fa",
+            "revision": 1
+          }
+        },
+        "invocation": {
+          "schema_version": "1",
+          "scope": {
+            "tenant_id": "internal",
+            "project_id": "replacement-fault-3223db45a3174da28b975ff8262af664"
+          },
+          "run_id": "869c9bb526954030904bb7dffe27a6d5",
+          "node_id": "evaluate",
+          "activation_id": "56e6cb0630908a939f13fa7ab4aeb78f51c060abad8c9b979781ca4318e0c83a",
+          "invocation_id": "56e6cb0630908a939f13fa7ab4aeb78f51c060abad8c9b979781ca4318e0c83a",
+          "attempt_id": "2880f973371f4f5ab62c561c9037b9fa",
+          "fence": 1,
+          "tool": {
+            "capability_id": "synthetic.numeric-objectives",
+            "release": "0.4.0",
+            "image_sha256": "95725806eb11bece632d22fe58fbeb42c5691a13202c0dffb399593d6921abaa",
+            "contract_version": "1"
+          },
+          "inputs": [
+            {
+              "port": "parameters",
+              "artifact": {
+                "artifact_id": "0f4d83bb6ede46f5a339aacbc377382c",
+                "scope": {
+                  "tenant_id": "internal",
+                  "project_id": "replacement-fault-3223db45a3174da28b975ff8262af664"
+                },
+                "sha256": "6d916b810ead41d113d88ab514985f174902bdbd913fe5c7ae5fcb26c19c8f7e",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "search.evaluation-request",
+                  "version": "1",
+                  "sha256": "44c7375364971f923302f83d0d6100bd2d01b8c6085d25f7195e465ccb9fbe58"
+                },
+                "size_bytes": 1402
+              }
+            },
+            {
+              "port": "policy",
+              "artifact": {
+                "artifact_id": "ba79c4dddb114f7faa4b46133d6d94f4",
+                "scope": {
+                  "tenant_id": "internal",
+                  "project_id": "replacement-fault-3223db45a3174da28b975ff8262af664"
+                },
+                "sha256": "b9946661cfefa2bf2d6eabb8779659bb0d9987020214d16fc73e196a4e2ed62e",
+                "media_type": "application/json",
+                "schema_ref": {
+                  "schema_id": "synthetic.numeric-policy",
+                  "version": "1",
+                  "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a"
+                },
+                "size_bytes": 36
+              }
+            }
+          ],
+          "checkpoint": null,
+          "timeout_seconds": 60,
+          "grant_id": "2880f973371f4f5ab62c561c9037b9fa"
+        },
+        "lease_expires_at": "2026-10-07T15:18:26.802578Z"
+      }
+    },
+    "late_rejection": "stale_attempt",
+    "result": {
+      "graph": {
+        "schema_version": "3",
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "replacement-fault-3223db45a3174da28b975ff8262af664"
+        },
+        "run_id": "869c9bb526954030904bb7dffe27a6d5",
+        "plan_sha256": "22543e741c96528742e2a1c8fb5201944aeb9a45237e9e130bc354ca0af5f602",
+        "status": "completed",
+        "revision": 11,
+        "node_count": 2,
+        "budget_limit": 16,
+        "reserved": 0,
+        "spent": 2,
+        "stop_reason": null,
+        "nodes": [
+          {
+            "activation_id": "56e6cb0630908a939f13fa7ab4aeb78f51c060abad8c9b979781ca4318e0c83a",
+            "path": {
+              "schema_version": "2",
+              "node_id": "evaluate",
+              "occurrences": []
+            },
+            "kind": "invoke",
+            "status": "succeeded",
+            "reason_code": null
+          },
+          {
+            "activation_id": "76db2aa35a8c173e47ef07ae6b7bb3062cad37e9b665e7fac3a117cb9e7e39b6",
+            "path": {
+              "schema_version": "2",
+              "node_id": "finish",
+              "occurrences": []
+            },
+            "kind": "finish",
+            "status": "succeeded",
+            "reason_code": null
+          }
+        ],
+        "next_after": null
+      },
+      "attempts": [
+        {
+          "attempt_id": "2880f973371f4f5ab62c561c9037b9fa",
+          "invocation_id": "56e6cb0630908a939f13fa7ab4aeb78f51c060abad8c9b979781ca4318e0c83a",
+          "worker_id": "science-slot",
+          "fence": 1,
+          "status": "expired",
+          "settled": true,
+          "completion_id": null,
+          "canonical_result": false
+        },
+        {
+          "attempt_id": "fbba71484abd4511961e5632f9e05097",
+          "invocation_id": "56e6cb0630908a939f13fa7ab4aeb78f51c060abad8c9b979781ca4318e0c83a",
+          "worker_id": "science-slot",
+          "fence": 2,
+          "status": "succeeded",
+          "settled": true,
+          "completion_id": "2acda54085934465a03cc8bdd0e76053",
+          "canonical_result": true
+        }
+      ],
+      "completions": [
+        {
+          "schema_version": "1",
+          "scope": {
+            "tenant_id": "internal",
+            "project_id": "replacement-fault-3223db45a3174da28b975ff8262af664"
+          },
+          "run_id": "869c9bb526954030904bb7dffe27a6d5",
+          "completion_id": "2acda54085934465a03cc8bdd0e76053",
+          "activation_id": "56e6cb0630908a939f13fa7ab4aeb78f51c060abad8c9b979781ca4318e0c83a",
+          "accepted_run_revision": 10,
+          "canonical_result": true,
+          "retention_reservation_ids": [
+            "158ab5e705c243e9bf6696c09a8fbfe5"
+          ],
+          "result": {
+            "schema_version": "1",
+            "invocation_id": "56e6cb0630908a939f13fa7ab4aeb78f51c060abad8c9b979781ca4318e0c83a",
+            "attempt_id": "fbba71484abd4511961e5632f9e05097",
+            "fence": 2,
+            "outcome": {
+              "status": "succeeded",
+              "outputs": [
+                {
+                  "port": "result",
+                  "artifact": {
+                    "artifact_id": "5048e4d2fd7c4b9b9b9bfe62a0055560",
+                    "scope": {
+                      "tenant_id": "internal",
+                      "project_id": "replacement-fault-3223db45a3174da28b975ff8262af664"
+                    },
+                    "sha256": "f3cdea85913b48c5f21336ee865de9d2dcde4e162dcd95ed8ab73a28b403d99b",
+                    "media_type": "application/json",
+                    "schema_ref": {
+                      "schema_id": "search.evaluation-observation",
+                      "version": "1",
+                      "sha256": "28b7765aa253bc93d2e050c06e4a38be09ffa1b8a8b45762ee93eaaffe37add2"
+                    },
+                    "size_bytes": 1295
+                  }
+                }
+              ],
+              "checkpoint": null
+            }
+          }
+        }
+      ]
+    },
+    "final": {
+      "owners": {
+        "artifact": {
+          "owner": "artifact",
+          "pid": 30880,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "registry": {
+          "owner": "registry",
+          "pid": 8116,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "runtime": {
+          "owner": "runtime",
+          "pid": 3808,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        }
+      },
+      "workers": {
+        "runtime-coordinate": {
+          "state": "quiescent",
+          "exit_code": 0,
+          "completed_turns": 2,
+          "faulted": false,
+          "execution_readiness": "not_assessed"
+        },
+        "runtime-deliver": {
+          "state": "quiescent",
+          "exit_code": 0,
+          "completed_turns": 5,
+          "faulted": false,
+          "execution_readiness": "not_assessed"
+        }
+      },
+      "tool_access": {
+        "runtime": {
+          "state": "drained",
+          "port": 49977,
+          "upstream_readiness": "not_assessed",
+          "connections": {
+            "limit": 16,
+            "active": 0,
+            "peak": 1,
+            "admitted": 14,
+            "denied": 0
+          },
+          "transport": {
+            "failures": {},
+            "responses": {
+              "2xx": 14
+            }
+          }
+        },
+        "artifact": {
+          "state": "drained",
+          "port": 49978,
+          "upstream_readiness": "not_assessed",
+          "connections": {
+            "limit": 16,
+            "active": 0,
+            "peak": 1,
+            "admitted": 7,
+            "denied": 0
+          },
+          "transport": {
+            "failures": {},
+            "responses": {
+              "2xx": 7
+            }
+          }
+        }
+      },
+      "scientific_workers": {
+        "evolution-seed": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 0,
+          "exit_code": null,
+          "execution_readiness": "not_assessed"
+        },
+        "evolution-requests": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 0,
+          "exit_code": null,
+          "execution_readiness": "not_assessed"
+        },
+        "evolution-collect": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 0,
+          "exit_code": null,
+          "execution_readiness": "not_assessed"
+        },
+        "evolution-vary": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 0,
+          "exit_code": null,
+          "execution_readiness": "not_assessed"
+        },
+        "synthetic-objectives-rebuilt": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 1,
+          "exit_code": 0,
+          "execution_readiness": "not_assessed"
+        }
+      },
+      "tool_catalog": {
+        "evolution-seed": {
+          "state": "unavailable",
+          "observation": null,
+          "running": false,
+          "stopping": true
+        },
+        "evolution-requests": {
+          "state": "unavailable",
+          "observation": null,
+          "running": false,
+          "stopping": true
+        },
+        "evolution-collect": {
+          "state": "unavailable",
+          "observation": null,
+          "running": false,
+          "stopping": true
+        },
+        "evolution-vary": {
+          "state": "unavailable",
+          "observation": null,
+          "running": false,
+          "stopping": true
+        },
+        "synthetic-objectives-rebuilt": {
+          "state": "unavailable",
+          "observation": null,
+          "running": false,
+          "stopping": true
+        }
+      }
+    },
+    "provider_calls": 0
+  },
+  "policy": {
+    "timestamp_local": "2026-10-07 10:20:06",
+    "status": "passed",
+    "scenario": "wrong_policy",
+    "run_id": "531e2a6a16724f1083a63af775b7dd21",
+    "pins": [],
+    "first_claim": null,
+    "late_rejection": null,
+    "result": {
+      "graph": {
+        "schema_version": "3",
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "replacement-fault-70e760eb510c45138d523cc3e13fb7e6"
+        },
+        "run_id": "531e2a6a16724f1083a63af775b7dd21",
+        "plan_sha256": "559c378c8833b8f1628f0fae4b3b5d1611113b6395cc3da62d9ab2cc09082689",
+        "status": "blocked",
+        "revision": 7,
+        "node_count": 2,
+        "budget_limit": 16,
+        "reserved": 0,
+        "spent": 1,
+        "stop_reason": "graph_finish_unavailable",
+        "nodes": [
+          {
+            "activation_id": "6632d5458ec3dad29e2c1b8e7356f72e7716fe66aa0864dacbd71856070e28e3",
+            "path": {
+              "schema_version": "2",
+              "node_id": "finish",
+              "occurrences": []
+            },
+            "kind": "finish",
+            "status": "blocked",
+            "reason_code": "graph_dependency_unavailable"
+          },
+          {
+            "activation_id": "e203e7d26fdfbbd88575f42a755dd27d23fa9f630cab9e3e8942a69d0f8c7790",
+            "path": {
+              "schema_version": "2",
+              "node_id": "evaluate",
+              "occurrences": []
+            },
+            "kind": "invoke",
+            "status": "failed",
+            "reason_code": "tool_failed"
+          }
+        ],
+        "next_after": null
+      },
+      "attempts": [
+        {
+          "attempt_id": "afc1a4db58d94aaeb7654525bfbcecdd",
+          "invocation_id": "e203e7d26fdfbbd88575f42a755dd27d23fa9f630cab9e3e8942a69d0f8c7790",
+          "worker_id": "science-slot",
+          "fence": 1,
+          "status": "failed",
+          "settled": true,
+          "completion_id": "6be7bac3f85b490eb3446ae0848e6a09",
+          "canonical_result": true
+        }
+      ],
+      "completions": [
+        {
+          "schema_version": "1",
+          "scope": {
+            "tenant_id": "internal",
+            "project_id": "replacement-fault-70e760eb510c45138d523cc3e13fb7e6"
+          },
+          "run_id": "531e2a6a16724f1083a63af775b7dd21",
+          "completion_id": "6be7bac3f85b490eb3446ae0848e6a09",
+          "activation_id": "e203e7d26fdfbbd88575f42a755dd27d23fa9f630cab9e3e8942a69d0f8c7790",
+          "accepted_run_revision": 6,
+          "canonical_result": true,
+          "retention_reservation_ids": [],
+          "result": {
+            "schema_version": "1",
+            "invocation_id": "e203e7d26fdfbbd88575f42a755dd27d23fa9f630cab9e3e8942a69d0f8c7790",
+            "attempt_id": "afc1a4db58d94aaeb7654525bfbcecdd",
+            "fence": 1,
+            "outcome": {
+              "status": "failed",
+              "reason_code": "invalid_synthetic_objective_input",
+              "retryable": false
+            }
+          }
+        }
+      ]
+    },
+    "final": {
+      "owners": {
+        "artifact": {
+          "owner": "artifact",
+          "pid": 22904,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "registry": {
+          "owner": "registry",
+          "pid": 28896,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "runtime": {
+          "owner": "runtime",
+          "pid": 24332,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        }
+      },
+      "workers": {
+        "runtime-coordinate": {
+          "state": "quiescent",
+          "exit_code": 0,
+          "completed_turns": 1,
+          "faulted": false,
+          "execution_readiness": "not_assessed"
+        },
+        "runtime-deliver": {
+          "state": "quiescent",
+          "exit_code": 0,
+          "completed_turns": 2,
+          "faulted": false,
+          "execution_readiness": "not_assessed"
+        }
+      },
+      "tool_access": {
+        "runtime": {
+          "state": "drained",
+          "port": 57410,
+          "upstream_readiness": "not_assessed",
+          "connections": {
+            "limit": 16,
+            "active": 0,
+            "peak": 1,
+            "admitted": 11,
+            "denied": 0
+          },
+          "transport": {
+            "failures": {},
+            "responses": {
+              "2xx": 11
+            }
+          }
+        },
+        "artifact": {
+          "state": "drained",
+          "port": 57411,
+          "upstream_readiness": "not_assessed",
+          "connections": {
+            "limit": 16,
+            "active": 0,
+            "peak": 1,
+            "admitted": 4,
+            "denied": 0
+          },
+          "transport": {
+            "failures": {},
+            "responses": {
+              "2xx": 4
+            }
+          }
+        }
+      },
+      "scientific_workers": {
+        "evolution-seed": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 0,
+          "exit_code": null,
+          "execution_readiness": "not_assessed"
+        },
+        "evolution-requests": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 0,
+          "exit_code": null,
+          "execution_readiness": "not_assessed"
+        },
+        "evolution-collect": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 0,
+          "exit_code": null,
+          "execution_readiness": "not_assessed"
+        },
+        "evolution-vary": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 0,
+          "exit_code": null,
+          "execution_readiness": "not_assessed"
+        },
+        "synthetic-objectives-rebuilt": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 4,
+          "exit_code": 2,
+          "execution_readiness": "not_assessed"
+        }
+      },
+      "tool_catalog": {
+        "evolution-seed": {
+          "state": "unavailable",
+          "observation": null,
+          "running": false,
+          "stopping": true
+        },
+        "evolution-requests": {
+          "state": "unavailable",
+          "observation": null,
+          "running": false,
+          "stopping": true
+        },
+        "evolution-collect": {
+          "state": "unavailable",
+          "observation": null,
+          "running": false,
+          "stopping": true
+        },
+        "evolution-vary": {
+          "state": "unavailable",
+          "observation": null,
+          "running": false,
+          "stopping": true
+        },
+        "synthetic-objectives-rebuilt": {
+          "state": "unavailable",
+          "observation": null,
+          "running": false,
+          "stopping": true
+        }
+      }
+    },
+    "provider_calls": 0
+  },
+  "limits": [
+    "Earlier full-campaign process faults remain unresolved; these probes prove rejection/authority boundaries",
+    "First two fencing harness attempts retained: terminal-run oracle then live cursor invalidation; no production relaxation"
+  ]
+}

@@ -1,72 +1,108 @@
 # Restore
 
-Refreshed 2026-10-07 09:56:28 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 10:26:15 (America/Chicago). Read FIRST after compression.
 
-## Current task and active probe
+## Current task
 
-BP-09.03 closed100%; BP-09.04 B1/B2.1 complete, B2.2 BLOCKING REPAIR in progress.
-Child37.5%,Build50%,Acceptance0%;parent67.5%,13.5/20weight,13closed gates. No owner gate.
-Last fully drained backup, measured recovery without hard limit approved. Continue.
-Latest pushed3b03aa0e (cold restore/full catalog), priorc224f472. Significant new
-reconstruction work UNCOMMITTED; verify repair, synchronize trackers, commit/push.
+BP-09.03/.04 closed100%. BP-09.04 Build100%,Acceptance100%;parent80%,16/20weight,
+16closed gates. Next BP-09.05 activation audit then B1 acceptanceledger/operatorrunbook.
+No owner gate. Last fully drained backup, measured recovery WITHOUT hard limit approved.
+Latest pushed5cc3d8de; significant acceptedB2/B3/V1 closeout staged next forcommit/push.
+NO running tests/probes/builds. Boundaries/lint/changedlinks/whitespace pass.
 
-FINISHED session11400: dev/probe_local_tool_transport.py read-only five-lane Linux
-SDK/TLS test using failed-a scope,250paired Runtime/Data reads, no claims/science/writes.
-Initial a had redundant-drain error after750reads passed; corrected b session16830 EXIT0,
-ROOT .test-results/local-readonly-transport-20261007b/evidence.json,750reads0failures/denials. Same qualified evaluator
-image, real TLS/owners, payload-free safe error classification. Uses controller then
-drains3owners. No running probes/tests now. Next live campaign c with Deployment0.14 diagnostics; capture
-transport failure counters before any further remedy. Commit verified offline checkpoint first.
+V1 session72906 PASSED: ROOT .test-results/local-recovery-installations-20261007a,
+354Deployment0.14 copiedtests,38evaluator0.4tests, wheelclosure equalsqualifiedimage,
+actualoriginal restoredhistory through independentlyinstalledDeployment. Final Data0.31
+catalog session85397 PASSED: ROOT .test-results/local-rebuilt-catalog-20261007a,
+337/337refs,1362000bytes,0pending,catalog580a81dcc5c04fabf38ea710e9502ad1744320e843cdce7cebf48d7a9ce97f29.
+Recovery_Acceptance.json and BP-09.04_Recovery_Replacement_Closeout.md canonical.
+Three BP09.04 docs MOVED to docs/Build Plans/BP-09/Completed, links repaired. Parent/MBT
+mirrors80%,16/20; nextBP09.05 notyetactivated. MasterArchitecture/RuntimeTopology status
+updated to boundedrecovery/replacement verified; no broaderreliability/science claim.
 
-## Rebuilt tool and current failure
+NEXT: finish closeout commit/push; audit/activate BP09.05 at0/0/0. B1manifest/evidence
+completeness checker+reproduciblesmoke andoperatorrunbook. B2freezeselectedprofile and
+name successors, including unresolvedworkerfault diagnostic/reliability work. B3coldstart/
+restore-readback+browser andlink/hashverification. V1independentpackage+parentaudit.
+No automatic fullfoundation rerun; generatedpackageinventory structuralrefresh only.
+No paidcallsrequired. Continue across milestones without askinganothercontinue.
 
-New tools/synthetic_objectives_rebuilt release0.4.0 independently implements domain,
-adapter,CLI from README/public fixtures; public metadata/tests reused, original private
-kernel/adapter NOT copied.38source tests9.92s,134/135stmts25/26branches99%; only module
-entry unattributed. Independent copied38tests/schema parity/nonroot/private-package
-absence/Windows-Linux golden passed: v2/.test-results/local-rebuilt-evaluator-20261007b.
-Image sha256:95725806eb11bece632d22fe58fbeb42c5691a13202c0dffb399593d6921abaa.
-Original a harness failed policy Docker cp into readonlyroot; b fixed bounded/tmp tmpfs.
-Public source package unchanged since b build. Do not edit itsREADME then claim samebuild.
+## Qualified evaluator / accepted B2
 
-Deployment0.13 additive named synthetic-objectives-rebuilt recipe and catalog mapping;
-old profile preserved.105scoped tests4.05s passed. NOW Deployment0.14 adds fixed-cardinality
-TLS exchange failure-stage and response-class counters in control status, no payload,
-path,credentials,exception text. Diagnostics changes135TLS/scientific/catalog tests pass
-22.87s. Locks/dev env synced. New diagnostics source and tests under tool_access.
-No actual repair claimed: counters identify cause. Independent0.14 install still V1.
+Separate tools/synthetic_objectives_rebuilt0.4 reconstructed domain/adapter/CLI from
+README/publicschemas/fixtures. Publicmetadata/tests reused, NOT originalprivatekernel.
+38source tests9.92s,134/135stmts25/26branches99%; moduleentry unattributed. Qualified
+independent install/Linux image: v2/.test-results/local-rebuilt-evaluator-20261007b.
+Image95725806eb11bece632d22fe58fbeb42c5691a13202c0dffb399593d6921abaa.
+Initial a imageprobe failed copyingpolicy toreadonlyroot; b uses bounded/tmp tmpfs.
+READMEupdated with finalB2/B3 boundary beforecurrentV1build; sourcecodeunchangedsinceb.
 
-Two actual restored campaigns failed with clean cancellation/drain, histories retained:
-- ROOT .test-results/local-rebuilt-campaign-20261007a;run9f850eacae9c44b69251661b07a7a595;
-  scope managed-campaign-3a2ef8085266426d8ea9473e5b8f8db6. Evaluator exit2 after12successful
-  completions; cancellation spent13, one cancelled attemptcc53517506b34dc5a5fe88243410501e
-  no completion. Public readback .test-results/local-rebuilt-failure-readback-20261007a,
-  session90393 passed. Additional v1run after cancel emptyactive; cannot infer timing.
-- ROOT .test-results/local-rebuilt-campaign-20261007b;run ecc044937a4e43e79f7ef1a8513a01d3;
-  scope managed-campaign-3dd2744089274f0798bce3a18778b299. UNCHANGED evolution-collect exit3
-  after14accepted invocations (all6rebuilt evaluations done). Captured public
-  active-attempts.jsonl: fault at09:50:59 while collect attemptd9bbd6a2f51c401bb4a2129a9d528649
-  lease valid until14:51:23Z anddeadline14:51:51Z. Therefore not evidenced deadlineexpiry.
-  No raw containerlogs by approved profile. Exact failure cause UNRESOLVED. All3owners
-  drained0,journalsreleased. Failedb session85637 EXIT1. Stop blindcampaignretry; isolateTLS.
+ROOT .test-results/local-rebuilt-campaign-20261007c PASSED (session10728): run
+3cb8621ad9d54f5086727ef183ec3884,scope managed-campaign-a78996d831b744d2af614a94c2c4bc13.
+15invocations/6evaluations/3checkpoints,15confirmed retentions,106.046s,3ownersdrained0.
+All6results exactnew0.4image. Runtime381/Data87forwarded2xx,0forwardfaults/denials.
+Actual original/corrected/blocked postreplacement readbacks passed:
+.test-results/local-rebuilt-original-readback-20261007a (68732), browser-readback-a
+(29559) and blocked-readback-a (95155); all ROOT .test-results names with local-rebuilt
+prefix. Exact blocked graph/receipt/completions match pre-cutover. Browser1440/390.
+Evaluator_Reconstruction.json is canonical compact evidence.
 
-B2.2 NO gate credit until successful actual newcampaign + oldhistory proof. Drift finding
-updated with recurrence; previous intermittentexpiry history not assumed samecause.
-No model calls. No paid retry/reset/refund. No externaldecision needed yet.
+## Retained intermittent failure / diagnostics
 
-## Helpers / exact resume paths
+First restored campaigns a/b FAILED, not repaired/reclassified by c success:
+a: .test-results/local-rebuilt-campaign-20261007a,run9f850eacae9c44b69251661b07a7a595,
+12successful completions then rebuilt evaluator exit2; harnesscancelledspent13 with1
+cancelled/no-completion attemptcc53517506b34dc5a5fe88243410501e. Publicreadback saved in
+.test-results/local-rebuilt-failure-readback-20261007a (session90393);3drains0.
+b: .test-results/local-rebuilt-campaign-20261007b,runecc044937a4e43e79f7ef1a8513a01d3,
+14accepted/all6rebuildevals then UNCHANGED evolution-collect exit3. active-attempts.jsonl
+shows09:50:59fault, lease14:51:23Z/deadline14:51:51Z, so not evidenced expiry.3drains0.
+No rawcontainerlogs; originalapprovedprofile disables them. Cause UNRESOLVED operational
+finding in ArchitectureDrift, needs named successor atBP09.05; no flawless/soakclaim.
+Do not retry old cancelledgraphs or reset history to hide failures.
 
-prepare_local_numeric_demo.prepare accepts explicit images and evaluator_profile.
-ROOT .test-results/local-rebuilt-materials-20261007a contains new exact descriptors,
-locks,graph,schemas from actual images. local_numeric_configuration.bind_workers uses
-reviewed optional profile; old defaults unchanged. verify_managed_numeric_campaign accepts
---root and now samples public v1lease/deadlines each loop. Sourceowners manifest:
-ROOT .test-results/local-restore-20261007b/owners.json (NOT v2/.test-results).
-Target physical local-v2/restore-20261007b. Physical bundles local-v2/rebuilt-campaign-
-20261007a and b. No NAS mounts. Registrypython ROOT .test-results/local-owner-inventory-
-20261006a/owners/registry/environment/Scripts/python.exe. After repair/newcampaign,
-re-run original/corrected/blocked readbacks with old restored configurations. B3/V1remain.
-Parentstatus corrected B1->B2.2. Evaluator_Reconstruction.json records offline pass only.
+Deployment0.14 adds payload-free fixed transport-stage/response-class counters to TLS
+control status; no path/IDs/tokens/exceptiontext.105recipe/catalog checks4.05s;135combined
+TLS/scientific/catalog22.87s; TLS30tests19.31s393/425stmts59/70branches91%; newdiagnostics
+23stmts4branches100%. Modules/source/devlocks synced0.14. ReadinessTCPcloses cause
+handshake.io counters (not evidence toolfailure). Read-only Linux750requests passed0
+faults/denials,peak5: .test-results/local-readonly-transport-20261007b (16830EXIT0).
+Probea750readspassed but duplicatefinaldrain errored; retained/fixed. Clockoffset sampled
+[-0.081,+0.157]seconds. No actual transportfault reproduced withnewcounters yet.
+
+## B3 accepted failure proofs
+
+Recovery_Faults.json canonical. dev/verify_local_backup_faults.py copied719filebackup
+then missingartifact/corruptartifact/partialPGarchive/wrongschema all rejected BEFORE
+target/resources; originalinventoryunchanged. Output ROOT .test-results/local-backup-
+faults-20261007a; physical local-v2/backup-faults-20261007a, no deletes ofsource/volumes.
+
+Workerfault helper dev/verify_rebuilt_worker_faults.py creates single-evaluator authored
+graph through publiccontracts and isolatedRuntimecompiler (noSQLcredentials). Actual
+restoredRuntime/Data andLinux0.4image. .test-results/local-rebuilt-fencing-20261007c
+(29025EXIT0): run869c9bb526954030904bb7dffe27a6d5, oldrelease/wrongimage noeligible,
+actual10sleaseexpiry -> acceptedfence2,5/9golden,oldfence1stale_attempt whilegraphrunning,
+resultunchanged,coordinatorresumedcompletedspent2,3drains0. Earlya late-oracle asserted
+stale afterterminalrun (reasonnotretained); earlyb pagedlivecursor409. Bothfailedfixtures
+retained. cquiescescoordinatorafterissue andatomicRuntimeactive-snapshotpolling until
+completion; no productionRuntime/toolchanges or weakenedfencetest.
+.test-results/local-rebuilt-policy-20261007a (4388EXIT0): actualsamepolicybytes/different
+Artifactidentity blocked invalid_synthetic_objective_input,spent1,3drains0.
+
+## Next V1 / navigation
+
+dev/verify_recovery_installations.py (runningabove) rebuildsDeployment/evaluator,tests,
+actualinstalledDeploymentreadback. Then audit_local_catalog.py with restoredoriginal
+ownersmanifest and installedData0.31; counts nowinclude newcampaigns/failurefixtures.
+FullqualificationoriginalData0.31 path remains .test-results/local-data-recovery-install-
+20261007b/environment/Scripts/python.exe (ROOT .test-results). If pendingreservations
+remain, reconcile through ownerpublicworkers, neverSQL/reset; originalhistoriesimmutable.
+Plan docs: BP-09.04 Backup restore and module replacement.md; History.md; Evaluator
+reconstruction specification.md. B3complete evidencealreadywritten. MBT mirrors75/100/0,
+parent75. BP09.05 next afterV1 archive; manifestchecker/runbook/frozenprofile/coldsmoke
+andparentcloseout. SQ-01 queued later; do not prematurelyactivate.
+Generated foundation-packages.json refreshed via existing project_specs inventory shape
+only (not claiming entirefoundationtest rerun). New toolscoperegistered.
 
 ## Qualified backup and restore
 
@@ -127,17 +163,6 @@ updated ignored v2/.test-results/postgres-fixture.json endpoint; NO reset. Initi
 TimeoutError caught as OSError was fixed to propagate incomplete; tests pass. Earlier
 backup fixtures needed short large-input test IDs and unique backup_record/backup_bundle
 names due NAS importlib fixture collisions. Failed evidence remains retained.
-
-## Next reconstruction boundary
-
-Original synthetic_objectives README, public schemas/CLI/tests were reviewed; DO NOT copy
-its private kernel/adapter. New separate package/release/image, same formulas/order/policy/
-applicability/rejection/provenance; preserve old source/image/history and no peer private
-edits. Consider new uniquely named owning import/package (e.g.synthetic_objectives_rebuilt)
-to avoid duplicate project/import roots. Deployment scientific_workers/profiles.py closes
-module entrypoints: original synthetic-objectives maps amphora_synthetic_objectives.
-New managed profile may need explicit additive reviewed recipe; inspect catalog mapping.
-No such change/rebuild has been implemented yet. B3 corruption/mismatch and V1 remain.
 
 ## Operating facts
 

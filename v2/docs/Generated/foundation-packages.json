@@ -330,7 +330,7 @@
   },
   {
     "package": "amphora-data-artifacts",
-    "version": "0.30.0",
+    "version": "0.31.0",
     "path": "services/data_artifacts",
     "module": "amphora_data_artifacts",
     "public_dependencies": [
@@ -550,6 +550,19 @@
     ]
   },
   {
+    "package": "amphora-synthetic-objectives-rebuilt",
+    "version": "0.4.0",
+    "path": "tools/synthetic_objectives_rebuilt",
+    "module": "amphora_synthetic_objectives_rebuilt",
+    "public_dependencies": [
+      "amphora-multi-input-worker",
+      "amphora-contracts-core",
+      "amphora-contracts-tools",
+      "amphora-contracts-search",
+      "amphora-tool-protocol"
+    ]
+  },
+  {
     "package": "amphora-multi-input-worker",
     "version": "0.1.0",
     "path": "sdk/multi_input_worker",
@@ -577,7 +590,7 @@
   },
   {
     "package": "amphora-deployment",
-    "version": "0.10.0",
+    "version": "0.14.0",
     "path": "deploy/local",
     "module": "amphora_deployment",
     "public_dependencies": []

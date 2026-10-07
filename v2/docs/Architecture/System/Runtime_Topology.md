@@ -1,6 +1,6 @@
 # Runtime Topology
 
-- Design status: proposed initial physical/logical topology
+- Design status: bounded Windows single-server profile implemented and exercised; broader host/fleet profiles remain proposed
 - Parent: [System Architecture](System_Architecture.md)
 - Scope: executable processes and their trust, latency and failure boundaries
 
@@ -81,4 +81,6 @@ Concrete language/framework, packaging, database version, artifact backend, work
 
 ## Selected local profile
 
-Owner decision 2026-10-06 21:41:09: use the current local computer with computer-only access. BP-09.01 qualifies Windowsx86_64/Python3.12 process compatibility, localNTFS artifact storage and127.0.0.1 routing. Full service installation and integrated demonstration follow in BP-09.02/.03. DGX Spark, partner Threadripper, LAN exposure and K3s remain future selections. Preflight is not powerloss/backup or serviceauthentication proof.
+Owner decision 2026-10-06 21:41:09: use the current local computer with computer-only access. BP-09.01 qualifies Windowsx86_64/Python3.12 process compatibility, localNTFS artifact storage and127.0.0.1 routing. Independent service installation and bounded synthetic integrated demonstration passed BP-09.02/.03. DGX Spark, partner Threadripper, LAN exposure and K3s remain future selections. Preflight is not powerloss/backup or serviceauthentication proof.
+
+Reviewed 2026-10-07 10:34:21: BP-09.04 verifies a drained cold backup and separately named same-host restore, complete artifact-reference integrity, and an independent synthetic evaluator replacement. Recovery excludes host-loss/online backup; elapsed infrastructure restoration is separate from later semantic qualification. Earlier intermittent worker faults remain unresolved operational findings; no unattended reliability or soak claim. See [scoped recovery audit](../../Audits/BP-09.04_Recovery_Replacement_Closeout.md).

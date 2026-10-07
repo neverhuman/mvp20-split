@@ -1,7 +1,7 @@
 # Reconstructed synthetic numeric evaluator
 
-Owner: BP-09.04 B2.2. Release0.4.0; implementation under qualification. No live
-replacement acceptance claimed yet. Design: [Search](../../docs/Architecture/Campaigns/Search.md).
+Owner: BP-09.04. Release0.4.0; B2/B3 live replacement and rejection gates passed.
+Independent rebuild/audit evidence is tracked in the owning plan. Design: [Search](../../docs/Architecture/Campaigns/Search.md).
 
 Source verification2026-10-07:38tests pass9.92s;134/135statements,25/26branches,
 99% aggregate. Kernel/adapter/metadata100%; module-entry line/branch is exercised
@@ -48,3 +48,12 @@ Linux image probes and actual restored Runtime/Data/Registry execution. Cutover
 occurs between campaigns; old observations/receipts/hashes stay unchanged. A new
 release cannot relabel old fitness. Failure and stale-worker proof remains BP-09.04
 B3; independent installation/integration and drift audit remain V1.
+
+Reviewed2026-10-07 10:22:26: actual restored cutover completed15invocations/6evaluations/3checkpoints
+with immutable original/corrected/blocked histories and browser readbacks. Wrong0.3/image
+claims receive no eligible work; actual expired fence1 is superseded by Linux fence2,
+and late completion rejects stale_attempt while the run remains active. Same policy
+bytes under another Artifact identity produce terminal invalid_synthetic_objective_input.
+Evidence: [reconstruction](../../docs/Audits/Evidence/BP-09-Deployment/Evaluator_Reconstruction.json).
+Two earlier process faults remain retained and unresolved; successful cutover does not
+prove operational soak or eliminate intermittent transport/worker failures.

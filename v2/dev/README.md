@@ -1,5 +1,18 @@
 # Foundation Verification Tooling
 
+`verify_recovery_installations.py` rebuilds Deployment and the reconstructed evaluator
+from their declared closures, runs copied owned tests, compares evaluator wheels with
+the qualified Linux image closure, then rereads actual restored history using installed
+Deployment. It does not migrate or reset stores, invoke a provider or claim host-loss recovery.
+
+`verify_local_backup_faults.py` corrupts only separate copies of the accepted cold
+backup and exercises the real restore preflight, proving no target/resource allocation.
+`verify_rebuilt_worker_faults.py` uses a bounded single-evaluator authored graph on the
+explicit restored target: wrong pins, actual lease expiry/fence replacement and wrong
+policy identity. Coordinator quiescence keeps stale-result fencing separate from
+terminal-run rejection. Live polling uses atomic active-attempt snapshots before
+immutable paged inspection. No peer SQL, reset, provider calls or policy relaxation.
+
 `probe_local_tool_transport.py` isolates actual Linux SDK reads through managed TLS,
 retaining only fixed safe error categories and transport counters. It starts no
 workers/claims and drains owners; it never prints tokens, raw server errors or payloads.
