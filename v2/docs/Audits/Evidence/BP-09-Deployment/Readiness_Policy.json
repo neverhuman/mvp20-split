@@ -1,0 +1,32 @@
+{
+  "timestamp_local": "2026-10-06 20:05:33",
+  "status": "passed",
+  "scope": "BP-09.01/B2.01",
+  "tests": 42,
+  "seconds": 0.61,
+  "coverage": {
+    "v2\\deploy\\local\\src\\amphora_deployment\\readiness.py": {
+      "covered_lines": 49,
+      "num_statements": 49,
+      "percent_covered": 100.0,
+      "percent_covered_display": "100",
+      "missing_lines": 0,
+      "excluded_lines": 0,
+      "percent_statements_covered": 100.0,
+      "percent_statements_covered_display": "100",
+      "num_branches": 14,
+      "num_partial_branches": 0,
+      "covered_branches": 14,
+      "missing_branches": 0,
+      "percent_branches_covered": 100.0,
+      "percent_branches_covered_display": "100"
+    }
+  },
+  "raw": ".test-results\\deployment-readiness-coverage-20261006.json",
+  "raw_sha256": "008100f76c781fcdc49e4a4ffb3aeaca07d3890e57cc4e5472c344eb9f1608c6",
+  "limits": [
+    "Preflight policy only; never installation authority",
+    "Selected target and physical storage/network acceptance remain B3",
+    "No provider call or increased spending approval"
+  ]
+}

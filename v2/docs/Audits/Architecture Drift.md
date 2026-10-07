@@ -1,10 +1,10 @@
 # Architecture Drift
 
-- Status: BP-07 and BP-08 closed/audited; BP-09 activation next.
-- Last refreshed: `2026-10-06 19:06:28` (America/Chicago).
+- Status: BP-07 and BP-08 closed/audited; BP-09.01 B1/B2 implemented; actual-host gate pending.
+- Last refreshed: `2026-10-06 20:09:20` (America/Chicago).
 - Scope: unresolved v2 design/implementation alignment and scoped successor boundaries.
 - Active focus: selected-host integration and named scientific/UI successor limits.
-- Next gate: BP-09 profile/preflight; BP-09.03 separately wires selected model into deployed scheduling.
+- Next gate: BP-09.01 actual selected-host preflight; BP-09.03 separately wires selected model into deployed scheduling.
 
 ## Active Findings
 

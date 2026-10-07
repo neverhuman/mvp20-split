@@ -118,7 +118,8 @@ class Provider:
         if v["mode"] == "disabled":
             require(all(v[k] is None for k in ("endpoint", "model", "credential_env")) and v["budget_usd_micros"] == 0 and v["data_policy"] == "deny", "provider_disabled_fields")
         else:
-            require(type(v["endpoint"]) is str and len(v["endpoint"]) <= 2048, "provider_endpoint")
+            require(type(v["endpoint"]) is str and len(v["endpoint"]) <= 2048
+                    and not any(character.isspace() or ord(character) < 32 for character in v["endpoint"]), "provider_endpoint")
             try:
                 url = urlsplit(v["endpoint"])
                 require(url.scheme == "https" and bool(url.hostname) and url.username is None and url.password is None and not url.query and not url.fragment, "provider_endpoint")
@@ -173,7 +174,7 @@ class DeploymentProfile:
             return record
         try:
             value = json.loads(raw, object_pairs_hook=unique)
-        except (ValueError, UnicodeDecodeError) as error:
+        except (ValueError, UnicodeDecodeError, RecursionError) as error:
             if isinstance(error, ProfileError):
                 raise
             raise ProfileError("profile_json") from None

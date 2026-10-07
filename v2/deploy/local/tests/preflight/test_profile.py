@@ -51,7 +51,8 @@ def test_named_rejections(record, owner, key, value, reason):
 
 def test_duplicate_unknown_fields_and_bounds(record):
     for raw, reason in [(b'{"x":1,"x":2}', "profile_duplicate_key"),
-                        (b"{", "profile_json"), (b"x" * 65537, "profile_bytes")]:
+                        (b"{", "profile_json"), (b"\xff", "profile_json"),
+                        (b"[" * 2000 + b"]" * 2000, "profile_(json|fields)"), (b"x" * 65537, "profile_bytes")]:
         with pytest.raises(ProfileError, match=reason):
             DeploymentProfile.from_bytes(raw)
     record["unexpected"] = "hidden authority"
@@ -67,7 +68,7 @@ def test_remote_credentials_are_references_and_endpoint_cannot_hide_secrets(reco
     record["provider"] = {"mode": "remote", "endpoint": "https://example.invalid/v1", "model": "fixture-model",
         "credential_env": "MODEL_KEY", "budget_usd_micros": 100000, "data_policy": "synthetic_only"}
     assert parse(record).credential_names() == ("DEMO_AUTH", "MODEL_KEY")
-    for endpoint in ("http://example.invalid", "https://user:secret@example.invalid", "https://example.invalid?key=secret", "https://example.invalid:invalid"):
+    for endpoint in ("http://example.invalid", "https://user:secret@example.invalid", "https://example.invalid?key=secret", "https://example.invalid:invalid", "https://exam\nple.invalid"):
         record["provider"]["endpoint"] = endpoint
         with pytest.raises(ProfileError, match="^provider_endpoint$") as error:
             parse(record)

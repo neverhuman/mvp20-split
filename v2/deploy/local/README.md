@@ -26,9 +26,35 @@ integer micro-dollar budget and synthetic-only/deny policy. Disabled provider
 configuration contains no endpoint/model/key or allowance. No remote calls occur.
 
 Parsing establishes shape, not permission or readiness. B1.02 observations and B2
-deployment policy remain pending; a parsed LAN address or durability claim cannot
+deployment policy are implemented; a parsed LAN address or durability claim cannot
 authorize provisioning. Actual host identity/access is owner-supplied. Fixtures
 use not-a-selected-host deliberately. Local tests live in tests/preflight and
 must run independently of service databases, GPUs and provider keys.
 
 B1.02 verified 2026-10-06 20:03:49: HostObservation.inspect is read-only and binds profileSHA; detects OS/architecture/Python/CPU/memory, existing artifact directory/free space and optional bounded5second NVIDIA query. It does not infer durability, check exposure or contact providers. Foreign-platform paths are skipped; unavailable observations are null/named statuses, never fabricated zero.25tests0.62s and actual developerWindows observation passed. This is not selected-host acceptance. Coverage and platform gaps are in [probe evidence](../../docs/Audits/Evidence/BP-09-Deployment/Read_Only_Probes.json).
+
+B2.01 verified 2026-10-06 20:05:33: assess returns named blockers for profileSHA/host mismatch, stale ornaive observation time, unknown/insufficient capacity, wrong artifact platform, absent storagepolicy, invalid exposure, missing environmentreferences andremoteallowance/egress denial. It never serializes credentialvalues orauthorizesinstallation.42tests0.61s;storage/network physicalverification remains actualtargetgate.
+
+## CLI and replacement order
+
+Run `python -m amphora_deployment validate --profile profile.json` for shape only,
+or `preflight --profile profile.json` for actual local read-only observations and
+policy. Exit0 means the named validation/preflight passed,2 means rejected input
+or unavailable local probe,3 means blockers. No command installs or invokes a
+provider. The report declares its limits and contains no credential values.
+
+`replacement-order --admissions-paused --active-campaigns 0 --inflight-attempts 0
+--pending-retentions 0` emits a declarative sequence only. Nonzero counts or
+unpaused admission block it. These counts are explicitly operator-supplied, not
+verified Runtime evidence. Stop workers/coordinators, drain owner deliveries,
+then stop APIs and capture consistent backup. Restart storage/schema verification,
+owner APIs, consumers, eligible workers and coordinators; admission comes last.
+Actual automation, migration/backup and Runtime-cut validation belong to later
+BP-09 installation/restore work. No hidden process control is implemented here.
+
+B2 verified 2026-10-06 20:09:20:59profile/probe/policy/CLI/import-boundary checks17.14s,
+then47owned malformed-input regressions4.41s. Profile/readiness/order branches are
+fully covered. Observation75/82statements15/16branches has OS-failure gaps; CLI
+37statements10branches runs in actual isolated subprocesses without parent coverage
+attribution. Independent installation and selected-host acceptance remain B3/V1.
+Storage durability and network exposure have not been physically certified.
