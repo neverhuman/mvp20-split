@@ -71,6 +71,44 @@ try {
       assert.deepEqual(trace.metadata,trace.artifact);
       assert.equal(trace.digest,trace.artifact.sha256);assert.equal(trace.size,trace.artifact.size_bytes);
       assert.equal(await page.evaluate(()=>location.hash),'');assert.equal(await page.evaluate(()=>localStorage.length),0);
+      if(input.successor.correction) {
+        const correction=input.successor.correction;
+        const records=await page.evaluate(async input=>{
+          const response=await fetch('/api/runtime/v1/graph-observations/'+input.run_id+'/nodes?limit=100');
+          const graph=await response.json();
+          const values=await fetch('/api/runtime/v1/graph-observations/'+input.run_id+'/nodes/'+graph.nodes[0].activation_id+'/outputs/interpretation?snapshot_token='+encodeURIComponent(graph.snapshot.snapshot_token));
+          if(!values.ok)throw new Error('corrected_output_'+values.status);
+          return values.json();
+        },input);
+        assert.deepEqual(records.items[0].value.artifact,correction.artifact);
+        for(const [revision,posture] of [[input.records.snapshot.reference,'hypothesis'],[correction.snapshot.reference,'unresolved']]) {
+          await page.evaluate(graph=>{location.hash=new URLSearchParams({explore:JSON.stringify({graph,experiment:null,observations:[]})}).toString();},revision);
+          await page.getByRole('button',{name:'Domain and evidence',exact:true}).click();
+          await page.getByRole('heading',{name:'Follow the evidence',exact:true}).waitFor();
+          await page.locator('.explore-concepts button').first().waitFor();
+          await page.locator('.explore-concepts button').first().click();
+          await page.getByRole('heading',{name:'Connected knowledge',exact:true}).waitFor();
+          const claim=page.locator('.explore-claims li').filter({hasText:posture+' / affirmed'});
+          await claim.getByRole('button').click();
+          await page.getByLabel('Scientific evidence inspector').getByText(posture+' / affirmed',{exact:true}).waitFor();
+          await page.getByRole('button',{name:'Read source passage 1',exact:true}).click();
+          if(posture==='unresolved') {
+            const passage=page.getByRole('region',{name:'Verified source passage',exact:true});
+            await passage.waitFor();
+            assert.ok((await passage.innerText()).includes(correction.proposal.operations[0].replacement.statement));
+            await passage.scrollIntoViewIfNeeded();
+            await page.screenshot({path:resolve(output,'corrected-source-'+viewport.width+'.png'),fullPage:true});
+            evidence.screenshots.push('corrected-source-'+viewport.width+'.png');
+          } else {
+            await page.getByLabel('Scientific evidence inspector').getByText('The selected evidence is unavailable.',{exact:true}).waitFor();
+          }
+          const domainAxe=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
+          assert.deepEqual(domainAxe.violations.filter(row=>['serious','critical'].includes(row.impact)),[]);
+          assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+          await page.getByRole('button',{name:'Execution',exact:true}).click();
+        }
+        evidence.scenarios.push(viewport.width+': original pinned hypothesis remains; corrected unresolved interpretation has verified text passage and exact successor output');
+      }
       assert.deepEqual(errors,[]);
       evidence.reads.push({width:viewport.width,predecessor:trace.lineage.predecessor,carried:trace.lineage.carried,artifact:trace.artifact});
       evidence.scenarios.push(viewport.width+': actual retained result, keyboard inspection, authored successor topology, immutable lineage/receipt, exact artifact bytes, accessibility');

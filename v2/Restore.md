@@ -1,42 +1,44 @@
 # Restore
 
-Refreshed 2026-10-07 06:44:23 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 06:58:35 (America/Chicago). Read FIRST after compression.
 
 ## Active task
 
-BP-09.03/B2 transitions and policy active. B1 complete100%; child25%,Build33.33%,
-Acceptance0%; parent45%,9/20 closed gates. No owner decision needed; continue.
-Current task corrected-result successor using actual public Research/Knowledge/Data
-corrections, future-only pins and unchanged original campaign history. Reuse existing
-successful bounded campaign/model-abstention evidence. B3 recovery then V1 audit.
-No background tests/processes. Commit successor checkpoint then continue B2.
-Latest pushedf3d44063; successor proof currently uncommitted.
+BP-09.03/B3 failure/recovery active; B1/B2 complete. Child50%,Build66.67%,Acceptance0%;
+parent50%,10/20 closed gates. Continue scoped process/TLS interruption recovery then V1.
+No background tests or owner processes. Latest pushed8d2cd801; B2 ready to commit.
+No new provider calls; use zero-model scientific work for faults.
 
-## Latest qualified checkpoint
+## Latest qualified evidence
 
-Studio0.13 successor browser .test-results/local-browser-successor-20261007a passed,
-all seven owners drain0;1440/390 keyboard/axe/lineage/receipt/artifact bytes verified.
-Backend .test-results/local-successor-20261007a passed, six owners drain0, child run
-8405106f6e844b0ea3483b8eac95e577, original fc257cf8882147cb8cca56c778837e60 unchanged.
-One pure finish node carries exact original result; no repeated science/improvement.
-Navigation browser regression passed session62519, contracts/build/lint/boundaries pass.
-Fresh studio-local-successor-20261007a/public and b/public byte-identical.
-Evidence Local_Successor.json. Initial validation422 due numeric profile corrected with
-legacy definition.validate; original invalid command preserved, original draft reused.
-Use Deployment0.11 .test-results/local-registry-access-install-20261007a/owner Python
-with config .test-results/local-registry-access-config-20261007b. Dedicated DPAPI
-Runtime/Registry peer sidecar; original vault unchanged. No new paid calls.
+Source/Knowledge correction .test-results/local-evidence-correction-20261007a passes,
+r2 text, assertion2 unresolved, accepted-log rebuild, old graph/run/declarations unchanged.
+Corrected successor .test-results/local-corrected-successor-20261007b passes, same draft
+as initial a unknown_schema_pin rejection. Fresh Runtime reviewed universe adds exact
+existing demo.text schema; original rejection preserved. Run6c124e88efec483ab6704ee096d6eb0c
+retains original numeric artifact and outputs new interpretation; source/knowledge pins2.
+Actual browser .test-results/local-browser-corrected-20261007b passed, desktop/narrow old/new
+claims + verified passage + exact parent/child restart/receipt/artifact proof. All owners
+drain0. Source screenshot reviewed after bounded inspector scroll. No science claim.
+26Knowledge pure tests0.55s and19Runtime realPG tests13.84s pass; lint/diff pass.
+Evidence Corrected_Successor.json. No package/source/schema change; dev/browser fixtures only.
 
-## B2 starting points
+## B3 starting points
 
-Original public records .test-results/local-owner-records-install-20261007a/scenario/records.json.
-Original source synthetic-objective/r1 declared application/octet-stream, intentionally
-not rendered as text. Publish new properly typed text source and correction change log,
-never relabel old immutable artifacts or repin an existing campaign. Knowledge graph
-id domain, revision1, two entities/one affirmed hypothesis. Read actual correction
-contracts/tests before construction. No implementation started for this scenario.
-Existing dev prepare/verify_local_owner_records helpers and source-adjacent READMEs
-own setup. Enumerate paths before reading; no JARVIS/v1 access or source edits during tests.
+Full controller/TLS death and actual shared-daemon outage remain explicitly scoped.
+Existing dev/verify_scientific_monitor_recovery.py proves monitor job death only with
+actual Linux image/TLS and synthetic held503 owner. Do not relabel it full controller proof.
+Existing local_demo_controller.Controller.close() kills its exact owned Windows job,
+including API/TLS children; Docker containers survive and their journals must be adopted.
+verify_local_integrated.py science-only path provides real six-owner/managed science setup.
+Need predeclare fault barrier/oracles/latency limits before testing. Existing control0.5s,
+campaign600s. Preserve exact turn/container/command IDs, no generic resets or broad kills.
+Docker ps shows active local PG/Qdrant plus THREE older baseline containers. An actual
+shared-daemon interruption would affect those; prepare concrete test and seek explicit
+scope approval only after independent authorized fault work is complete. No globalDocker
+changes silently. Historical failed integrateda/sciencea expiry cause still unknown.
+Installed Deployment0.11 .test-results/local-registry-access-install-20261007a/owner.
+No source/test/dev/module README edits while ANY probe/build/test runs. No subagents.
 
 ## Retained integrated campaign and costs
 

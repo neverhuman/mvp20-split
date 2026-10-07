@@ -326,3 +326,16 @@ with the selected completed successor. Before browser launch it compares exact
 parent/child v3 history after owner restart; the successor browser then checks
 public lineage, original admission receipt and retained Artifact bytes. No replayed
 execution, workers or provider key is needed for this readback.
+
+`verify_local_evidence_correction.py` journals actual source r2 and Knowledge assertion
+revision2 with unresolved synthetic-result interpretation. It verifies accepted-log
+rebuild, original snapshot/campaign preservation and exact Research declarations.
+Uploads and commands retain their original identities. No lab measurement correction,
+scientific assessment or LLM extraction is claimed. A fresh Data configuration enables
+its existing acquisition boundary; original profiles and vault remain immutable.
+`prepare_local_correction_runtime.py` adds the exact already supported text schema to
+a fresh reviewed Runtime universe. Earlier unknown-schema validation stays retained.
+`verify_local_successor.py --correction` revalidates the saved draft, pins new source/
+knowledge revisions and returns the new interpretation beside the carried original
+numeric result. The browser qualifies old/new pinned claims and verified text without
+repinning the original campaign. These scripts are integration fixtures, not services.

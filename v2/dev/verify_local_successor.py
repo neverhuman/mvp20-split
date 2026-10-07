@@ -51,7 +51,7 @@ class Requests:
         return receipt
 
 
-def verify(source, retained, output, resume=False):
+def verify(source, retained, output, resume=False, correction=None):
     if not resume:
         output.mkdir(parents=True, exist_ok=False)
         for path in source.glob('*.json'):
@@ -61,6 +61,9 @@ def verify(source, retained, output, resume=False):
         write(output / 'successor-intent.json', {'predecessor': original['run_id'], 'scope': original['scope'],
               'draft_id': 'retained-result-' + uuid.uuid4().hex})
     intent = json.loads((output / 'successor-intent.json').read_bytes())
+    corrected = json.loads((correction / 'correction-evidence.json').read_bytes()) if correction else None
+    if corrected:
+        assert corrected['status'] == 'passed' and corrected['scope'] == intent['scope']
     root = Path(os.environ['LOCALAPPDATA']) / 'Amphora/local-v2/installation'
     state, vault = LocalState.snapshot(root), (root / 'credentials.dpapi').read_bytes()
     routes = Routes.load(root)
@@ -83,14 +86,33 @@ def verify(source, retained, output, resume=False):
                 'outputs': [{'name': 'result', 'value_type': value_type}], 'edges': [],
                 'nodes': [{'kind': 'finish', 'node_id': 'retain',
                            'outputs': [{'port': 'result', 'source': {'kind': 'input', 'name': 'previous_result'}}]}]}}
+        inputs = []
+        if corrected:
+            artifact, snapshot = corrected['artifact'], corrected['snapshot']['reference']
+            definition['campaign_id'] = 'corrected-interpretation-successor'
+            definition['context'] = [
+                {'kind': 'knowledge', 'identity': snapshot['graph']['graph_id'],
+                 'revision': str(snapshot['revision']), 'sha256': snapshot['sha256']},
+                {'kind': 'source', 'identity': corrected['source']['reference']['source_id'],
+                 'revision': corrected['source']['reference']['revision_id'], 'sha256': artifact['sha256']}]
+            text_type = {'kind': 'artifact', 'media_type': artifact['media_type'],
+                         'schema_ref': artifact['schema_ref'], 'representation': 'synthetic.interpretation', 'unit': '1'}
+            for key in ('inputs', 'outputs'):
+                definition['body'][key].append({'name': 'interpretation', 'value_type': text_type})
+            definition['body']['nodes'][0]['outputs'].append(
+                {'port': 'interpretation', 'source': {'kind': 'input', 'name': 'interpretation'}})
+            inputs = [{'port': 'interpretation', 'value': {'kind': 'artifact', 'artifact': artifact,
+                'representation': 'synthetic.interpretation', 'unit': '1'}}]
         api.command('successor-save', 'definition.save', {'draft_id': intent['draft_id'], 'expected_revision': 0,
             'title': 'Retained-result successor (engineering fixture)', 'definition': definition}, '/v1/definition-drafts/save')
         draft = api.read('/v1/definition-drafts/' + intent['draft_id'] + '?revision=1')
-        validated = api.command('successor-validate-v1', 'definition.validate', {'draft_id': intent['draft_id'],
+        validation_name = 'successor-validate-correction-v1' if corrected else 'successor-validate-v1'
+        validated = api.command(validation_name, 'definition.validate', {'draft_id': intent['draft_id'],
             'revision': 1, 'content_sha256': draft['head']['content_sha256']}, '/v1/definition-drafts/validate')
         validation = api.read('/v1/definition-validations/' + validated['outcome']['committed']['object_id'])
+        write(output / (validation_name + '-record.json'), validation)
         assert validation['structurally_valid'] and validation['scientific_acceptance'] == 'not_established'
-        payload = {'plan_sha256': validation['plan_sha256'], 'inputs': [], 'budget': {'limit': 1},
+        payload = {'plan_sha256': validation['plan_sha256'], 'inputs': inputs, 'budget': {'limit': 1},
             'predecessor': sources['predecessor'], 'carried': [{'target_port': 'previous_result',
                 'source': selected[0]['source'], 'expected_value_sha256': selected[0]['value_sha256']}],
             'draft': {key: validation[key] for key in ('draft_id', 'revision', 'content_sha256', 'validation_id', 'universe_sha256')}}
@@ -101,7 +123,8 @@ def verify(source, retained, output, resume=False):
         child_sources = api.read('/v1/graph-runs/' + run + '/carry-sources')
         lineage = api.read('/v1/graph-runs/' + run + '/lineage')
         assert result['status'] == 'completed' and result['node_count'] == 1 and result['spent'] == 0
-        assert child_sources['sources'] == selected and child_sources['predecessor_ready']
+        assert all(row in child_sources['sources'] for row in selected) and child_sources['predecessor_ready']
+        assert len(child_sources['sources']) == (2 if corrected else 1)
         assert lineage['predecessor'] == sources['predecessor'] and lineage['carried'] == payload['carried']
         assert api.read('/v3/graph-runs/' + intent['predecessor']) == predecessor
         assert api.command('successor-admit', 'graph.admit_draft_successor', payload, '/v1/graph-runs/draft-successors') == receipt
@@ -111,6 +134,7 @@ def verify(source, retained, output, resume=False):
             'status': 'passed', 'scope': intent['scope'], 'run_id': run, 'predecessor': predecessor,
             'sources': sources, 'result': result, 'child_sources': child_sources, 'lineage': lineage,
             'draft': draft, 'validation': validation, 'receipt': receipt, 'final': final,
+            'correction': {key: corrected[key] for key in ('artifact', 'source', 'snapshot', 'proposal')} if corrected else None,
             'provider_calls': 0, 'scientific_invocations': 0,
             'limits': ['Actual existing search checkpoint carried atomically into a validated tool-free successor',
                        'One pure Runtime finish transition; no repeated science or scientific improvement claimed']})
@@ -124,5 +148,7 @@ if __name__ == '__main__':
     for name in ('source', 'retained', 'output'):
         parser.add_argument('--' + name, type=Path, required=True)
     parser.add_argument('--resume', action='store_true')
+    parser.add_argument('--correction', type=Path)
     args = parser.parse_args()
-    verify(args.source.absolute(), args.retained.absolute(), args.output.absolute(), args.resume)
+    verify(args.source.absolute(), args.retained.absolute(), args.output.absolute(), args.resume,
+           args.correction.absolute() if args.correction else None)

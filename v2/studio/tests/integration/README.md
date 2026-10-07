@@ -85,3 +85,9 @@ topology and retained predecessor lineage are checked at1440/390 with accessibil
 and screenshots. Parent/child carry cuts and original admission receipt must match
 pre-restart evidence exactly. The successor only retains an earlier scientific
 result; no new scientific computation or improvement is claimed.
+
+For a corrected successor, the same browser verifies its interpretation output,
+opens both original and corrected pinned domain snapshots, checks hypothesis versus
+unresolved posture, and reads the new verified text passage. The original binary
+source stays unavailable to the text viewer. Screenshots include the scrolled source
+region at desktop/narrow widths; no new Studio code or schema is needed.
