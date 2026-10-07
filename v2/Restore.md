@@ -1,28 +1,24 @@
 # Restore
 
-Refreshed 2026-10-07 11:51:00 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 12:20:17 (America/Chicago). Read FIRST after compression.
 
 ## Current task
 
-Latest implementation pushed: 1b293834 (Studio0.16 human focus and contract decision).
-Final schema generation checks, production boundaries, diff whitespace and4doc links pass.
-No running tests/builds/probes. Owner question: approve additive criterion-target profile
-in SQ-01.01, preserving old proposals and future-only effects? No approval received yet.
-SQ-01 is62.5%, Build83.33%, Verification0%. B1/B2 complete; B3 has two equal halves:
-human focus complete, AI proposal lineage pending. New scoped owner work is not credited.
-BP-09 closed100%,20/20. LR-01 remains queued. No tests/builds/probes currently running.
+Latest implementation pushed1b293834; handoff7d4aec21. Owner approved SQ-01.01
+on 2026-10-07 12:20:17. No further permission needed for the recorded additive profile.
+SQ-01 re-estimated41.67%, Build50%, Verification0%: prior2.5completed units retained,
+denominator4->6 after C1contract and C2owner-integration gates added (both0%).
+NEXT C1: additive criterion-target output/preparation schemas, exact identity/limits,
+predecessor schema/byte compatibility. Then C2 Planning/Runtime integration, B3 proposal
+inspection, V1 actual-owner subsequent-campaign/browser/independent replacement/audit.
+No new schemas/APIs implemented yet. BP09closed100%; LR01queuednext. No running jobs.
 
-NEXT: owner direction on docs/Build Plans/SQ-01.01 Criterion follow-up contract decision.md.
-Current Planning CampaignEvidenceIntent/UnresolvedPoint contain question/need/assessment
-but no criterion target. One need can contain32criteria. Do not present need relevance
-as proof a proposal targets a selected criterion. Existing Runtime retained decision
-ArtifactRef and Data content GET exist; missing read route is NOT the blocker.
-Recommendation is additive planning.checkpoint-followup-draft/v1 with exact criterion
-targets/qualitative learning, preserving predecessor schema bytes and active pins.
-This adds public Planning/Runtime scope and requires owner direction under AGENTS.
-If approved re-estimate explicit new contract tasks, implement focused schemas/parsers,
-then proposal UI and V1 actual-owner/subsequent-campaign/independent Studio qualification.
-No new contract/API has been implemented or generated. No paid calls.
+Owner asks distance to internal demo: bounded local synthetic demo already proven
+with actual owners/model checkpoints/recovery/replacement/retained browser views.
+Remaining SQ01 connects quality focus to verified nextcampaign proposals and actual
+subsequentcampaign. LR01 owns intermittent worker faults before dependable unscripted
+live demos. Latest full UI/operator rehearsal remains necessary; no arbitrary time
+or overall-product completion estimate. Scientific qualification is separate.
 
 Studio0.16 focus.ts immutable domain value, QualityModel lifecycle integration,
 presentation/quality/focus.tsx bounded form and JSON Blob export.32points,max2048char

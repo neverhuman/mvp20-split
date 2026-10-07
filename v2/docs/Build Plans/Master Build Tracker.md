@@ -8,14 +8,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-01 through BP-09 closed; SQ-01 B3 active.
-- Last refreshed: `2026-10-07 11:51:00` (America/Chicago).
+- Status: BP-01 through BP-09 closed; SQ-01 C1 active.
+- Last refreshed: `2026-10-07 12:20:17` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: SQ-01 Scientific Quality and Iteration Views.
-- Primary active task: SQ-01/B3 criterion-target contract decision; local human focus complete.
-- Next task: SQ-01/V1 actual peers/browser and independent replacement after B3.
-- Implementation completion: SQ-01=62.5%, Build83.33%, Verification0%; BP-09 closed100%,20/20.
-- Blockers: [SQ-01.01](SQ-01.01%20Criterion%20follow-up%20contract%20decision.md) needs owner direction for additive criterion-target proposal scope; scientific corpus remains TBA.
+- Primary active task: SQ-01/C1 approved additive criterion-target contracts.
+- Next task: SQ-01/C2 owner integration, then remaining B3 proposal UI and V1.
+- Implementation completion: SQ-01=41.67%, Build50%, Verification0%; BP-09 closed100%,20/20.
+- Blockers: none for approved SQ-01.01 implementation; scientific corpus remains TBA for later scientific qualification.
 - Acceptance posture: bounded local demo/recovery/replacement complete; intermittent worker failures assigned LR-01, no soak claim.
 - Active exception: none.
 
@@ -29,14 +29,14 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-SQ-01 B3 is awaiting criterion-contract direction at62.5%, Build83.33%, Verification0%. Completed plans
+SQ-01 C1 is active at41.67%, Build50%, Verification0%, after approved scope expansion. Completed plans
 are in the [completed index](Completed/README.md); their percentages stay closed.
 
 ## Prioritized Successor Queue and Phase Mirrors
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
-| 1 | [SQ-01 Scientific Quality and Iteration Views](SQ-01%20Scientific%20Quality%20and%20Iteration%20Views.md) | B3 contract decision | 62.5% | 83.33% | 0% | BP-06/07 public projections/contracts; activation review |
+| 1 | [SQ-01 Scientific Quality and Iteration Views](SQ-01%20Scientific%20Quality%20and%20Iteration%20Views.md) | Active C1 | 41.67% | 50% | 0% | BP-06/07 public projections/contracts; activation review |
 | 2 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Queued | 0% | 0% | 0% | BP-09 accepted; bounded no-model diagnostic specification |
 
 The owning tracker controls exact task/percentages; MBT controls priority and
@@ -98,6 +98,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-07 12:20:17 | SQ-01.01 approved; C1/C2 added, overall41.67%, Build50%, Verification0%. | 2.5 completed units preserved; denominator4 to6. C1 contracts active; C2 owners, B3 proposals and V1 follow. |
 | 2026-10-07 11:51:00 | SQ-01 human focus complete; overall62.5%, Build83.33%, Verification0%. | 38 scoped tests; desktop/mobile export/browser proof; SQ-01.01 criterion-target profile awaits owner direction. |
 | 2026-10-07 11:02:03 | BP-09 closed100%,20/20; SQ-01 next. | Frozen12gate ledger,391independent tests, actual original/successor/blocked smoke; LR-01 preserves unresolved worker faults. |
 | 2026-10-07 10:42:02 | BP-09.04 closed100%;parent95%,19/20. BP-09.05 next. | Independent354Deployment/38evaluator tests, actual installed readback,337/337catalog refs and0pending; scoped audit preserves operational follow-ups. |
@@ -122,4 +123,3 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-07 02:14:53 | BP-09.03 second B1.3b checkpoint complete;child15.97%,parent43.19%. | Deployment0.6 independent199tests, actual owner/TLS/tool denial and monitor-death adoption; successful eligibility next. |
 | 2026-10-07 01:44:31 | BP-09.03 B1.3b TLS/container primitive checkpoint;percentages unchanged. | Deployment0.5 independent189tests and two actual Linux lost-reply cases; responsive adoption/migration integration remains. |
 | 2026-10-07 01:22:21 | BP-09.03 native third of B1.3b verified;child15.28%,parent43.06%. | Deployment0.4 independent164tests and actual Runtime/Planning quiescence; no campaigns/model calls. |
-| 2026-10-07 00:58:38 | BP-09.03/B1.3a complete;child14.58%,parent42.92%. | Independent Deployment0.3:126tests, actual evolution0.5/SDK0.2 TLS trust/denial; no global settings changed. |
