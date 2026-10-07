@@ -2,14 +2,14 @@
 
 ## Canonical tracker
 
-- Status: active successor to closed BP-05; B1/B2 complete; B3 next-campaign focus and proposals.
-- Last refreshed: `2026-10-07 11:37:19` (America/Chicago).
-- Completion: 50%; Build66.67%, Verification0%; 2/4 scoped gates.
+- Status: active successor to closed BP-05; B1/B2 and B3 human-focus half complete; proposal half awaits owner contract direction.
+- Last refreshed: `2026-10-07 11:51:00` (America/Chicago).
+- Completion: 62.5%; Build83.33%, Verification0%; B1/B2 complete plus half of B3.
 - Owner: Studio presentation; Research/Knowledge own assessments; Agents owns proposals.
 - Prerequisites: BP-06 owner quality/correction projections and BP-07.03 proposal contracts; activation coherence audit and exact DTO reconciliation before implementation.
-- Current focus: B3 human focus selection and exact authorized follow-up proposal presentation.
-- Next gate: B3 scoped focus/proposal lineage tests and visible interaction.
-- Blockers: none for B1; unsupported owner verdicts remain visibly unavailable.
+- Current focus: B3 exact criterion-to-proposal contract decision; local human focus is verified.
+- Next gate: [SQ-01.01 contract decision](SQ-01.01%20Criterion%20follow-up%20contract%20decision.md), then proposal lineage and V1.
+- Blockers: existing proposal profiles identify needs, not individual criteria. Owner direction needed for additive Planning/Runtime profile scope; see SQ-01.01.
 - Requirement: [Campaign progress](../Architecture/Requirements/Product_Requirements.md#campaign-progress-uncertainty-and-subsequent-iteration).
 - Architecture: [Studio](../Architecture/Experience/Studio.md#exploratory-quality-and-next-campaign-focus).
 
@@ -20,7 +20,7 @@
 3. B3 - Implement human focus selection and presentation of authorized AI follow-up proposals through public owner APIs. Link selected points to intended next-campaign improvements, expected information gain and retained unresolved items. Verify proposal lineage and absence of routine approval queues or active-run repinning.
 4. V1 - Module-scoped tests, browser visual/interaction proof, independent replacement acceptance and scoped drift audit. Show useful retained results despite several weak points and a subsequent campaign targeting selected weaknesses. Scientific calibration and efficacy require separate evidence.
 
-Each gate contributes one quarter of completion. Build is completed B1-B3 /3; Verification is V1. Keep tests under their owning modules; cross-owner fixtures remain a separate integration tier. Before coding, apply the local UI Coding Guidelines. Update replacement READMEs for touched modules. No private peer imports or SQL; Studio cannot create scientific verdicts or execute AI proposals itself.
+Each gate contributes one quarter of completion. B3 is decomposed into two equal existing deliverables: human focus selection/export (complete, 12.5% overall) and verified AI proposal linkage/presentation (remaining, 12.5% overall). This decomposition does not add scope. Proposed owner-contract work has zero credit and requires re-estimation if approved. Build is completed B1-B3 /3; Verification is V1. Keep tests under their owning modules; cross-owner fixtures remain a separate integration tier. Before coding, apply the local UI Coding Guidelines. Update replacement READMEs for touched modules. No private peer imports or SQL; Studio cannot create scientific verdicts or execute AI proposals itself.
 
 BP-05 remains closed. This plan adds no credit or scope to BP-06 B2; its scheduling follows its named dependencies and does not interrupt the current correction implementation.
 
@@ -77,3 +77,20 @@ and parent visibility are enforced; no backend schema/route change. Mobile aside
 clipping found visually and repaired with regression. [Evidence](../Audits/Evidence/SQ-01-Quality/B2_Presentation.json)
 records scope/limits; actual-owner quality journey remains V1. Next B3 retains
 focus/lineage and presents existing authorized proposals without active-run mutation.
+
+## B3 human focus checkpoint
+
+`2026-10-07 11:51:00`: Studio0.16 stores up to32 exact local focus points, each
+with intended improvement and qualitative expected learning. Export preserves exact
+question/need/assessment and optional Runtime cut/output, plus every unresolved point.
+It is explicitly unsubmitted; no storage, owner mutation, active repin or model call.
+Refresh retains the draft; hidden/denied/failed/rebound/disposed views clear it.
+38 scoped tests pass0.579s; quality100%lines94.63%branches. Scripted public-HTTP
+browser verifies download contents and1440/390 accessibility/overflow; both visuals
+inspected. [Evidence](../Audits/Evidence/SQ-01-Quality/B3_Human_Focus.json).
+
+Contract reconciliation found missing criterion targeting in CampaignEvidenceIntent
+and CampaignUnresolvedPoint. Runtime retained capture and Data content reads exist;
+no read-route blocker is claimed. SQ-01.01 proposes the additive target profile and
+explicitly distinguishes broader need relevance from exact criterion lineage.
+B3 proposal half and V1 remain incomplete, pending the material contract decision.

@@ -48,3 +48,17 @@ visible lifetime. It never follows guessed consumer links or scans the whole gra
 Wrong run/scope/activation/cut rejects; incomplete output membership stays partial.
 One exact ArtifactRef match is necessary for a quality graph marker. The selected
 Runtime node label and unresolved-criterion count belong to their owning projection.
+
+SQ-01/B3 human-focus checkpoint, 2026-10-07 11:51:00, Studio0.16: QualityFocus
+owns immutable local drafts of up to32 exact points and two bounded2048character
+intent fields. QualityModel retains them through same-context refresh and filters;
+hide/denial/failure/rebind/disposal clear them. Export is an explicitly unsubmitted
+human JSON document, retaining every unresolved point and optional exact execution
+link. No browser storage, owner write, graph repin or model invocation. The inspector
+provides save/update/remove and explicit download; renderer owns only form edits and
+Blob download cleanup. Export before leaving the view; no reload/import guarantee.
+38 scoped tests pass; quality100%lines94.63%branches. Browser verifies exported
+contents, filter/navigation retention, axe and no overflow at1440/390; both screenshots
+reviewed. Model-result attachment branch covered; defensive/lifecycle branch gaps
+remain. Proposal half is blocked on SQ-01.01 criterion-target contract decision;
+actual-owner subsequent-campaign and independent replacement acceptance remain V1.

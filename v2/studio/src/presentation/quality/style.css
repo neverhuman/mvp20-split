@@ -31,4 +31,8 @@
 .quality-linked-graph .graph-controls { right:8px; left:8px; flex-wrap:wrap; }
 .quality-linked-graph .node-annotation { display:block; font-size:.85rem; margin-top:6px; color:var(--focus); }
 .quality-execution-detail { overflow-wrap:anywhere; }
+.quality-focus { border-top:1px solid var(--line); margin-top:20px; padding-top:12px; }
+.quality-focus label { display:grid; gap:6px; margin-block:12px; }
+.quality-focus textarea { width:100%; box-sizing:border-box; resize:vertical; font:inherit; padding:8px; border:1px solid var(--line); }
+.quality-focus button { margin:0 8px 8px 0; }
 @media(max-width:1050px) { .quality-layout { grid-template-columns:1fr; } .quality-inspector { border-left:0; border-top:1px solid var(--line); } }

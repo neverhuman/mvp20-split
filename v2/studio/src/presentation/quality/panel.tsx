@@ -4,6 +4,7 @@ import type { QualityModel } from "../../page_models/quality/model.js";
 import type { QualityCategory } from "../../page_models/quality/projection.js";
 import type { QualityAttachment } from "../../page_models/quality/attachment.js";
 import { QualityExecutionGraph } from "./execution.js";
+import { FocusEditor, downloadFocus } from "./focus.js";
 import "./style.css";
 
 const labels: Record<QualityCategory, string> = { unassessed: "Not assessed", unknown: "Unknown",
@@ -34,6 +35,8 @@ export function QualityPanel({ model, inspectArtifact, inspectNode }: {
     <div className="quality-heading"><div><p className="eyebrow">Evidence quality / pinned assessment</p><h3>What needs another look?</h3></div>
       <span className="quality-boundary">Progress, not scientific proof</span></div>
     <p className="muted">Several weak points can remain useful. Review their evidence and target improvements in the next campaign.</p>
+    <div className="quality-controls"><span role="status">{view.focus.items.length} points in local focus / {projection.unresolvedCount} unresolved points retained</span>
+      <button disabled={!view.focus.items.length} onClick={() => downloadFocus(model)}>Export next-campaign focus</button></div>
     <div className="quality-controls"><label>Show quality <select value={view.category}
       onChange={event => model.filter(event.target.value as QualityCategory | "all")}>
       <option value="all">All points</option>{Object.entries(labels).map(([value, label]) => <option key={value} value={value}>{label}</option>)}
@@ -44,7 +47,8 @@ export function QualityPanel({ model, inspectArtifact, inspectNode }: {
       {page.items.length === 0 ? <p role="status">No points match this filter.</p> : <ul aria-label="Quality point list" tabIndex={0}>{page.items.map(point =>
         <li key={point.key}><button className="quality-point" aria-pressed={view.selected === point.key}
           onClick={() => model.select(point.key)}><span className="quality-marker" data-kind={point.category}>{labels[point.category]}</span>
-          <span className="quality-point-title">{point.description}</span><span className="quality-point-reason">{reasons[point.reason] ?? point.reason}</span></button></li>)}</ul>}
+          <span className="quality-point-title">{point.description}</span><span className="quality-point-reason">{reasons[point.reason] ?? point.reason}</span>
+          {view.focus.items.some(item => item.point.key === point.key) && <span>Selected for next-campaign focus</span>}</button></li>)}</ul>}
       <nav className="quality-pages" aria-label="Quality point pages"><button disabled={page.offset === 0}
         onClick={() => model.page(Math.max(0, page.offset - 20))}>Previous points</button><button disabled={page.nextOffset === null}
         onClick={() => model.page(page.nextOffset!)}>Next points</button></nav>
@@ -61,6 +65,8 @@ export function QualityPanel({ model, inspectArtifact, inspectNode }: {
           {selected.contradicting.map((reference, index) => <button key={"against-" + index}
             onClick={() => inspectArtifact(reference)}>Contradicting evidence {index + 1}</button>)}</div>
         {selected.supporting.length + selected.contradicting.length === 0 && <p className="muted">No matching evidence references were returned for this point.</p>}
+        <FocusEditor key={selected.key} model={model} point={selected}
+          saved={view.focus.items.find(item => item.point.key === selected.key)} full={view.focus.items.length >= 32} />
       </>}
       {projection.attachment ? <section className="quality-execution" aria-label="Linked execution quality">
         <QualityExecutionGraph projection={projection} {...(inspectNode ? { inspect: inspectNode } : {})} />

@@ -73,3 +73,17 @@ SQ-01/B2 Studio0.15 adds [quality presentation](src/presentation/quality/README.
 explicit scoped launcher selections and bounded Runtime output proof. Desktop/mobile
 quality, existing Explore and actual gateway-entry browser checks pass; actual-owner
 quality acceptance remains V1. No new backend route/schema or model call is introduced.
+
+SQ-01/B3 human-focus checkpoint, 2026-10-07 11:51:00, Studio0.16: QualityFocus
+owns immutable local drafts of up to32 exact points and two bounded2048character
+intent fields. QualityModel retains them through same-context refresh and filters;
+hide/denial/failure/rebind/disposal clear them. Export is an explicitly unsubmitted
+human JSON document, retaining every unresolved point and optional exact execution
+link. No browser storage, owner write, graph repin or model invocation. The inspector
+provides save/update/remove and explicit download; renderer owns only form edits and
+Blob download cleanup. Export before leaving the view; no reload/import guarantee.
+38 scoped tests pass; quality100%lines94.63%branches. Browser verifies exported
+contents, filter/navigation retention, axe and no overflow at1440/390; both screenshots
+reviewed. Model-result attachment branch covered; defensive/lifecycle branch gaps
+remain. Proposal half is blocked on SQ-01.01 criterion-target contract decision;
+actual-owner subsequent-campaign and independent replacement acceptance remain V1.

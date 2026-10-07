@@ -1,0 +1,23 @@
+{
+  "checkpoint": "2026-10-07 11:51:00",
+  "status": "human_focus_verified_proposal_contract_pending",
+  "studio": "0.16.0",
+  "tests": {
+    "passed": 38,
+    "seconds": 0.579,
+    "quality_lines_percent": 100,
+    "quality_branches_percent": 94.63
+  },
+  "browser": "v2/.test-results/studio-quality-browser/2026-10-07T16-47-12-561Z/evidence.json",
+  "visual_review": [
+    1440,
+    390
+  ],
+  "boundaries": [
+    "Unsubmitted human draft only",
+    "Exact selected identities and all unresolved points exported",
+    "No active mutation or provider calls",
+    "Scripted owner HTTP; actual owner acceptance remains V1"
+  ],
+  "blocker": "SQ-01.01 Criterion follow-up contract decision"
+}

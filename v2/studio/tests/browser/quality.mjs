@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { chromium } from 'playwright';
 import AxeBuilder from '@axe-core/playwright';
@@ -28,6 +28,18 @@ try {
   assert.match(await detail.textContent(), /Supporting and contradicting evidence remain in conflict/);
   assert.match(await detail.textContent(), /Calibrated accuracyNot provided/);
   assert.match(await detail.textContent(), /Demonstrated error verdictNot provided/);
+  await detail.getByLabel('Intended improvement', { exact: true }).fill('Resolve the conflicting evidence using a new test.');
+  await detail.getByLabel('What do you expect to learn?', { exact: true }).fill('Which observation applies to the next campaign context.');
+  await detail.getByRole('button', { name: 'Save focus', exact: true }).click();
+  assert.match(await region.textContent(), /1 points in local focus \/ 24 unresolved points retained/);
+  const downloadEvent = page.waitForEvent('download');
+  await region.getByRole('button', { name: 'Export next-campaign focus', exact: true }).click();
+  const download = await downloadEvent;
+  const exported = JSON.parse(await readFile(await download.path(), 'utf8'));
+  assert.equal(exported.authority, 'unsubmitted_human_draft');
+  assert.equal(exported.selected.length, 1); assert.equal(exported.unresolved.length, 24);
+  assert.equal(exported.expected_information_gain.numerical_estimate, null);
+  evidence.scenarios.push('human focus draft export preserves exact selected point and all24 unresolved points without owner mutation');
   await region.getByRole('combobox', { name: 'Show quality' }).selectOption('contradictory');
   assert.match(await region.textContent(), /8 of 8 matching points/);
   await region.getByRole('combobox', { name: 'Show quality' }).selectOption('unassessed');

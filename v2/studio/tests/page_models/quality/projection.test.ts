@@ -12,6 +12,7 @@ import type { FeedbackSources } from "../../../src/page_models/feedback/model.js
 import { QualityProjection } from "../../../src/page_models/quality/projection.js";
 import { QualityAttachment } from "../../../src/page_models/quality/attachment.js";
 import { QualityModel } from "../../../src/page_models/quality/model.js";
+import { QualityFocus } from "../../../src/page_models/quality/focus.js";
 import { ScientificReadFailure } from "../../../src/transport/scientific/failure.js";
 import { artifact, evidenceDetail, values } from "../../fixtures/evidence.js";
 import { snapshot, deferred } from "../../fixtures/observations.js";
@@ -29,6 +30,50 @@ function setup() {
       correction: async () => { throw new Error("unexpected"); } } };
   return { records, pins, sources, lineage: () => new FeedbackLineage(new FeedbackContext(pins), records) };
 }
+
+test("focus export keeps exact pins, qualitative intent and every unresolved point", () => {
+  const f = setup();
+  f.records.question.criteria.push({ criterion_id: "second", description: "Unassessed second criterion" });
+  f.records.need.criterion_ids.push("second");
+  const projection = new QualityProjection(f.lineage()), key = projection.points[0]!.key;
+  const draft = new QualityFocus().set(projection, key, "Resolve disagreement", "Learn which evidence applies");
+  const document = draft.document(projection);
+  assert.equal(document.selected.length, 1); assert.equal(document.unresolved.length, 2);
+  assert.equal(document.authority, "unsubmitted_human_draft");
+  assert.equal(document.expected_information_gain.numerical_estimate, null);
+  assert.deepEqual(document.assessment, f.records.assessment!.request);
+  assert.equal(document.execution, null); assert.equal(Object.isFrozen(document.selected[0]!.point), true);
+  assert.equal(draft.set(projection, key, "Updated", "Another question").items.length, 1);
+  assert.equal(draft.remove(key).items.length, 0); assert.equal(draft.items.length, 1);
+  for (const text of ["", "   ", "x".repeat(2049)]) assert.throws(() => draft.set(projection, key, text, "Learn"));
+  assert.throws(() => draft.set(projection, "foreign", "Improve", "Learn"));
+  assert.throws(() => new QualityFocus([...draft.items, ...draft.items]));
+  assert.throws(() => new QualityFocus(Array.from({ length: 33 }, () => draft.items[0]!)));
+  f.records.assessment = null; f.pins.assessment = null;
+  assert.equal(draft.retain(new QualityProjection(f.lineage())).items.length, 0);
+});
+
+test("focus survives same-context refresh but clears on denial, rebind, hide and disposal", async () => {
+  const f = setup(), feedback = new FeedbackModel(f.sources), model = new QualityModel(feedback);
+  assert.throws(() => model.exportFocus());
+  feedback.bind(f.pins); await feedback.refresh();
+  const key = model.snapshot.projection!.points[0]!.key;
+  model.focusPoint(key, "Improve", "Learn"); model.filter("supported");
+  assert.equal(model.snapshot.focus.items.length, 1);
+  await feedback.refresh(); assert.equal(model.snapshot.focus.items.length, 1);
+  assert.equal(model.exportFocus().selected.length, 1);
+  model.unfocus(key); assert.equal(model.snapshot.focus.items.length, 0);
+  model.focusPoint(key, "Improve", "Learn"); feedback.visibility(false);
+  assert.equal(model.snapshot.focus.items.length, 0); assert.throws(() => model.exportFocus());
+  feedback.visibility(true); await feedback.refresh(); assert.equal(model.snapshot.focus.items.length, 0);
+  model.focusPoint(key, "Improve", "Learn"); feedback.bind(f.pins); await feedback.refresh();
+  assert.equal(model.snapshot.focus.items.length, 0);
+  model.focusPoint(key, "Improve", "Learn");
+  f.sources.feedback.assessment = async () => { throw new ScientificReadFailure("denied"); };
+  await feedback.refresh(); assert.equal(model.snapshot.focus.items.length, 0);
+  model.dispose(); model.focusPoint(key, "Improve", "Learn"); model.unfocus(key);
+  assert.throws(() => model.exportFocus()); feedback.dispose();
+});
 
 test("gap presentation preserves reasons and never manufactures accuracy or demonstrated error", () => {
   for (const [reason, category] of [["missing_answer", "unknown"], ["answer_unknown", "unknown"],
@@ -136,6 +181,9 @@ test("several simultaneous owner verdicts coexist beside successful operational 
   assert.equal(view.attachment!.operationalState, "succeeded");
   assert.equal(view.attachment!.cut.revision, anchor.cut.revision);
   assert.equal(view.scientificEstablishment, false);
+  const focused = new QualityFocus().set(view, view.points[1]!.key, "Reconcile conflicting evidence", "Test applicability").document(view);
+  assert.deepEqual(focused.execution, { cut: anchor.cut, activation_id: detail.node.activation_id, port: "result" });
+  assert.equal(focused.unresolved.length, 3);
   page.items.length = 0; assert.equal(attachment.contains(selected), true);
 });
 

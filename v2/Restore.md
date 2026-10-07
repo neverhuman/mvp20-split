@@ -1,42 +1,42 @@
 # Restore
 
-Refreshed 2026-10-07 11:37:56 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 11:51:00 (America/Chicago). Read FIRST after compression.
 
 ## Current task
 
-Latest pushed7b764883. SQ-01B2 complete50%,Build66.67%,Verification0%; B3next.
-B2commit/push NEXT after checks. Studio0.15, package/lock synced. BP09closed100%.
-No runningtests/builds/probes. No ownergate or paidcalls. LR01queued afterSQ.
-B2: qualitypoint20rowlist/filter/inspector over strictFeedbackModel; exactRuntimeoutput
-link reader(snapshot/detail/firstvaluepage), qualitymarker on sharedGraphCanvas,
-pinnedexecutiondetail navigation. Explicit `feedback` and `quality_output` fragments
-within8192char envelope, session scope only; existing validExplorePins still required.
-LocalKnowledge composesFeedbackModel+QualityLinkModel; onlyfeedbackvisible reads.
-Parentactive=false cannot be overridden bydocumentvisibilityevent. No newAPI/schema.
-Source page_models/quality/{projection,attachment,model,runtime_link}; sessionselectors;
-presentation/quality/{panel,execution,style,README}, Feedback/Explore/entry wiring.
-36focused tests pass0.575s; selectedquality/session100%lines94.39%branches. Lastbuildpass.
-Final scriptedbrowser quality PASS v2/.test-results/studio-quality-browser/
-2026-10-07T16-35-21-273Z;32mixedcriteria/24unresolved+successfulnode, pagination,
-keyboard, filters, separateRuntime/science denials,1440/390axe/overflow. Mobileaside
-maxheightclippedgraph foundvisually; scopedmaxheight:none repair+regression. Linked
-mobilegraph cropreviewed. FullExplorebrowser PASS16-33-58-887Z, actualgatewayentry
-PASSstudio-local-entry/2026-10-07T16-35-34-275Z. Canonical B2_Presentation.json under
-v2/docs/Audits/Evidence/SQ-01-Quality. Earlierharnessfailuresretained (cleanupAPI/axecontext).
-AffectedmoduleREADMEs/tracker/MBT updated. Actual-owner quality journey remainsV1.
-NEXT B3 reconcile applicable public proposal contracts then implementlocal humanfocus
-selection and authorizedAI/publicfollowup presentation with exactpoint lineage,
-intended nextcampaign improvement/expectedinformation gain/unresolved remainder.
-ExistingFeedbackModel reads selected KnowledgeGraphProposalStatus and AcceptedChange;
-requires proposalassertion explicitlylinks question+need. Do NOT infer AI authorship.
-Need inspect contracts/planning/research_proposals.py and relevant ownerreaders before
-choosing B3 shape. No activecampaignmutation/repin or routine humanapprovalqueue.
-UIguidelines+InteractionReferences read; continue until concreteownerneed.
+Latest pushed bfde56b9; next commit contains Studio0.16 human focus and contract decision.
+SQ-01 is62.5%, Build83.33%, Verification0%. B1/B2 complete; B3 has two equal halves:
+human focus complete, AI proposal lineage pending. New scoped owner work is not credited.
+BP-09 closed100%,20/20. LR-01 remains queued. No tests/builds/probes currently running.
 
-BP09 final391independenttests .test-results/acceptance-owner-final-b;
-actualsmoke .test-results/acceptance-smoke, zero calls/workers,5/7/6drains0.
-Frozen Acceptance_Ledger/Smoke/Qualification.json; audits09.05+parent complete.
-Intermittent workerfaults remain LR-01; scientific efficacy/soak not claimed.
+NEXT: owner direction on docs/Build Plans/SQ-01.01 Criterion follow-up contract decision.md.
+Current Planning CampaignEvidenceIntent/UnresolvedPoint contain question/need/assessment
+but no criterion target. One need can contain32criteria. Do not present need relevance
+as proof a proposal targets a selected criterion. Existing Runtime retained decision
+ArtifactRef and Data content GET exist; missing read route is NOT the blocker.
+Recommendation is additive planning.checkpoint-followup-draft/v1 with exact criterion
+targets/qualitative learning, preserving predecessor schema bytes and active pins.
+This adds public Planning/Runtime scope and requires owner direction under AGENTS.
+If approved re-estimate explicit new contract tasks, implement focused schemas/parsers,
+then proposal UI and V1 actual-owner/subsequent-campaign/independent Studio qualification.
+No new contract/API has been implemented or generated. No paid calls.
+
+Studio0.16 focus.ts immutable domain value, QualityModel lifecycle integration,
+presentation/quality/focus.tsx bounded form and JSON Blob export.32points,max2048char
+intent fields. Exact question/need/assessment/output and all unresolved points retained.
+Unsubmitted local human draft, not owner adoption. Same-context refresh retains;
+hide/denial/failure/rebind/disposal clears. No browser storage/import guarantee.
+38scoped tests PASS0.579s; quality100%lines94.63%branches. Initial new fixture changed
+request without matching outcome and correctly failed; fixed to valid unselected
+assessment. Browser PASS v2/.test-results/studio-quality-browser/2026-10-07T16-47-12-561Z
+export1selected/24unresolved, filters/navigation,1440/390axe/overflow/screenshots reviewed.
+B3_Human_Focus.json canonical. Plan/MBT/moduleREADMEs/Drift updated.
+B2 browser16-35-21-273Z, Explore16-33-58-887Z and actualgatewayentry16-35-34-275Z
+remain prior regression evidence, not rerun for B3. B2 source/protocol details in READMEs.
+
+BP09 final391independenttests .test-results/acceptance-owner-final-b; actualsmoke
+.test-results/acceptance-smoke, zero calls/workers,5/7/6drains0. Frozen12gate ledger
+and Smoke/Qualification evidence. Intermittent worker failures remain LR01.
 
 ## Qualified evaluator / accepted B2
 
