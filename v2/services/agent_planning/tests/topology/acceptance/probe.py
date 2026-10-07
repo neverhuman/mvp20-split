@@ -149,6 +149,9 @@ def scenario(e):
     assert e.read_bytes(artifact) == raw
     for service in (e.planning, e.runtime, e.artifact):
         service.close()
+        owner = "planning" if service is e.planning else "runtime" if service is e.runtime else "artifact"
+        if owner in e.config.get("replacements", {}):
+            service.python = e.config[owner] = e.config["replacements"][owner]
         service.start()
         service.ready(e.tokens["admin"])
     assert e.call("planning", "/v1/topology-proposals/after-terminal") == proposal
@@ -159,9 +162,22 @@ def scenario(e):
     assert e.read_bytes(artifact) == raw and e.read_bytes(benchmark_ref) == benchmark_bytes
     for record in (parent, successor):
         assert e.call("runtime", "/v1/runs/" + record["run"] + "/completions/" + record["worker"]["operation_id"] + "/producer") == record["producer"]
+    replacement = None
+    if e.config.get("replacements"):
+        e.config["numeric-new"] = e.config["replacements"]["numeric-new"]
+        e.heartbeat("numeric-new")
+        assert e.call("planning", "/v1/topology-proposals", proposal["request"]) == proposal
+        fresh_command = e.command("graph.admit_draft_successor", command["payload"])
+        fresh = e.call("runtime", "/v1/graph-runs/draft-successors", fresh_command)
+        assert fresh["outcome"]["status"] == "accepted"
+        replacement = run_graph(e, fresh["outcome"]["committed"]["object_id"], "numeric-new")
+        artifact_ref = replacement["completion"]["result"]["outcome"]["outputs"][0]["artifact"]
+        assert json.loads(e.read_bytes(artifact_ref)) == {"schema_version": "1", "values": [5, 3, 1]}
+        assert e.call("runtime", "/v1/graph-runs/" + successor["run"] + "/lineage") == lineage
+        assert e.read_bytes(artifact) == raw
     return {"handoff": artifact, "benchmark": benchmark_ref, "lineage": lineage, "parent_run": parent_run,
             "successor_run": successor["run"], "premature_reason": early_receipt["outcome"]["reason_code"],
-            "proposal": proposal["reference"], "restarted_owners": ["planning", "runtime", "artifact"], "paid_calls": 0}
+            "proposal": proposal["reference"], "restarted_owners": ["planning", "runtime", "artifact"], "replacement": replacement, "paid_calls": 0}
 
 
 def main():
@@ -175,7 +191,8 @@ def main():
         result = scenario(e)
         evidence = {"timestamp_local": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "status": "passed", "scope": e.scope,
             "result": result, "registry": e.registry_records, "packages": config["packages"],
-            "limits": ["Declared image fixture pins; Windows processes, not image deployment", "Registry capacity is synthetic fixture metadata", "No scientific or model-quality claim"]}
+            "images": config.get("images"),
+            "limits": [("Qualified Linux image pins match installed Windows wheel closures; no deployed Linux worker" if config.get("images") else "Declared image fixture pins; Windows processes, not image deployment"), "Registry capacity is synthetic fixture metadata", "No scientific or model-quality claim"]}
         (root / "evidence.json").write_bytes(common.encoded(evidence))
         print("Public topology handoff passed; paid calls0", flush=True)
     finally:

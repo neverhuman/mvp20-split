@@ -1,0 +1,73 @@
+{
+  "timestamp_local": "2026-10-06 19:02:07",
+  "status": "passed",
+  "scope": "BP-08.04/V1.01",
+  "raw_manifest": ".test-results/topology-images-20261006c/manifest.json",
+  "sha256": "357b927cdc3e3220239594b43681d47f7e055138ceb1f469a246d2e6f5c01408",
+  "base": "python@sha256:f77ac9e44ae96ef2c90b8053ea08c31f8be030f824196b0ae4db6d462c84e51f",
+  "platform": "linux/amd64",
+  "tools": [
+    {
+      "release": "0.2.0",
+      "image": "sha256:7e19a32385f900f3eb1bbc77d68efa944bc6c469e6f0ef5587fafac0f3be9a3c",
+      "config": "sha256:d664a73532517138cc4df467d4730cf98fe9b7c42c0607e64dd6267ada838f49",
+      "local_wheels": {
+        "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+        "amphora_numeric_affine-0.2.0-py3-none-any.whl": "ffa8118003334033064e556fdbb24ef58c38950bbbce64be2933a0481692791f",
+        "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+      },
+      "schema_bytes": {
+        "input": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+        "output": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd"
+      },
+      "golden": {
+        "schema_version": "1",
+        "values": [
+          5.0,
+          3.0,
+          1.0
+        ]
+      },
+      "nonroot_isolation": "passed"
+    },
+    {
+      "release": "0.3.0",
+      "image": "sha256:03606692ec5dae1fec1a8438798130ce273fe47e61188e5ee319013b89819a34",
+      "config": "sha256:fcd50ded9ded68ee5dcd70e7c0de8416885089eeb70ed2d01236c76dd84bb32d",
+      "local_wheels": {
+        "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+        "amphora_numeric_affine-0.3.0-py3-none-any.whl": "292534d9c067fc744a38f8f1cd7f26bdb8b0d5fe939041c137cbdcb6bfe98a59",
+        "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+      },
+      "schema_bytes": {
+        "input": "6cbe09631f5e46e4959f945e5ac6a357102033e76dc3cbee0c1ad21f008d0618",
+        "output": "649599985b0e586b3dc25692628ba1092c5dd5e7369c6959e51d28bf89ae63fd"
+      },
+      "golden": {
+        "schema_version": "1",
+        "values": [
+          5.0,
+          3.0,
+          1.0
+        ]
+      },
+      "nonroot_isolation": "passed"
+    }
+  ],
+  "failed_attempts": {
+    "a": "New release Dockerfile still pinned0.2; fixed current image recipe to0.3",
+    "b": "Docker inspect Id uses manifest identity; check config.digest annotation as in existing builder"
+  },
+  "limits": [
+    "Offline Linux/amd64 qualification, no cluster deployment or scientific claim"
+  ],
+  "paid_calls": 0
+}

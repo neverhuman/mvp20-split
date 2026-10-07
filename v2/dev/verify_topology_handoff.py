@@ -12,7 +12,7 @@ from check_boundaries import ROOT
 from postgres_fixture import owned_state
 
 
-def verify(output, installs, runtime, benchmark):
+def verify(output, installs, runtime, benchmark, images=None, replacements=None):
     if os.environ.get("AMPHORA_TEST_POSTGRES") != "1":
         raise ValueError("Explicit owned PostgreSQL fixture opt-in required")
     state = owned_state()
@@ -26,7 +26,16 @@ def verify(output, installs, runtime, benchmark):
         interpreters[owner] = str(location / ("environment/Scripts/python.exe" if os.name == "nt" else "environment/bin/python"))
     assert manifests["runtime"]["packages"]["amphora-campaign-runtime"] == "0.65.0"
     assert manifests["planning"]["packages"]["amphora-agent-planning"] == "0.98.0"
-    config = {**interpreters, "packages": manifests, "benchmark": str(benchmark.absolute()), "evidence": str(output / "http")}
+    replacement_paths = {}
+    if replacements is not None:
+        for owner in ("planning", "runtime", "numeric-new"):
+            location = replacements.absolute() / owner
+            manifest = json.loads((location / "manifest.json").read_bytes())
+            assert manifest["status"] == "installed" and manifest["packages"] == manifests[owner]["packages"]
+            manifests[owner + "-replacement"] = manifest
+            replacement_paths[owner] = str(location / ("environment/Scripts/python.exe" if os.name == "nt" else "environment/bin/python"))
+    config = {**interpreters, "packages": manifests, "benchmark": str(benchmark.absolute()), "evidence": str(output / "http"),
+              "images": None if images is None else str(images.absolute()), "replacements": replacement_paths}
     path = output / "acceptance.json"
     path.write_text(json.dumps(config), encoding="utf-8")
     host, port = state["endpoint"].split(":")
@@ -49,5 +58,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     for option in ("output", "installs", "runtime", "benchmark"):
         parser.add_argument("--" + option, required=True, type=Path)
+    parser.add_argument("--images", type=Path)
+    parser.add_argument("--replacements", type=Path)
     args = parser.parse_args()
-    verify(args.output, args.installs, args.runtime, args.benchmark)
+    verify(args.output, args.installs, args.runtime, args.benchmark, args.images, args.replacements)

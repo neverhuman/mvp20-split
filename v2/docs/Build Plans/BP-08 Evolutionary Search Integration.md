@@ -2,16 +2,16 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-08.04/V1 replacement/image qualification.
-- Last refreshed: `2026-10-06 18:58:33` (America/Chicago).
+- Status: primary_active; BP-08.05 activation coherence review.
+- Last refreshed: `2026-10-06 19:06:28` (America/Chicago).
 - Owner/scope: Search domain modules and independently packaged scientific operators.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-04 iteration/checkpoint and BP-06 evidence; BP-07 before LLM-guided topology acceptance.
-- Implementation: **75%**, 15/20 closed child deliveries; each parent phase mirrors its child.
+- Implementation: **80%**, 16/20 closed child deliveries; each parent phase mirrors its child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-08.04/V1 replacement/image qualification; BP-08.01/.02/.03 closed.
-- Latest checkpoint: B2 complete: actual Planning/Runtime/Registry/Data handoff, exact carry/new tool execution, confirmed output retention and restart/history replay;28 tool/boundary checks passed.
-- Demonstrated behavior: numeric generation graphs, actual Runtime/Data/Registry APIs, pinned tool images, independent package replacement and worker/Runtime recovery. Synthetic representation/fitness/reuse accepted; topology, scientific and target-host evidence remain successors.
+- Current implementation task: BP-08.05 activation coherence review; BP-08.01/.02/.03/.04 closed.
+- Latest checkpoint: BP-08.04 closed/audited; actual public topology handoff, process recovery, two qualified images and fresh owner/worker replacement accepted.
+- Demonstrated behavior: numeric generation graphs, actual Runtime/Data/Registry APIs, pinned tool images, independent package replacement and worker/Runtime recovery. Synthetic representation/fitness/reuse and topology successor acceptance complete; scientific and target-host claims remain separately gated.
 - Blockers: direct v1 extraction unverified (license labels/toolchain); authorized independent numeric implementation proceeds. Approved B2.02i correction verified; no owner decision blocks current scope.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-09-25 13:35:12`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
@@ -33,7 +33,7 @@ Primary services retain private state, dependencies, migrations and module READM
 | P1 / [BP-08.01 Reuse and search contracts](BP-08/Completed/BP-08.01%20Reuse%20and%20search%20contracts.md) | 100% | 100% | 100% | Closed / audited |
 | P2 / [BP-08.02 Graph-driven numeric evolution](BP-08/Completed/BP-08.02%20Graph-driven%20numeric%20evolution.md) | 100% | 100% | 100% | Closed / audited |
 | P3 / [BP-08.03 Representation and fitness boundaries](BP-08/Completed/BP-08.03%20Representation%20and%20fitness%20boundaries.md) | 100% | 100% | 100% | BP-08.02 acceptance |
-| P4 / [BP-08.04 Topology successors and comparison](BP-08/BP-08.04%20Topology%20successors%20and%20comparison.md) | 75% | 100% | 0% | BP-08.03 acceptance |
+| P4 / [BP-08.04 Topology successors and comparison](BP-08/Completed/BP-08.04%20Topology%20successors%20and%20comparison.md) | 100% | 100% | 100% | Closed / audited |
 | P5 / [BP-08.05 Recovery and closeout](BP-08/BP-08.05%20Recovery%20and%20closeout.md) | 0% | 0% | 0% | BP-08.04 acceptance |
 
 Each linked child is the execution tracker for its scope. Build tasks name concrete implementation; acceptance requires independent evidence and a scoped drift audit. Do not repeat the historical task pairs as a second work list. No dependent child starts before its predecessor acceptance gate; independent design review does not activate implementation.

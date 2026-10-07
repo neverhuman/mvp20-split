@@ -1,8 +1,8 @@
 # Evolutionary Search and Experience
 
-- Design status: bounded numeric graph steps, accepted generations and worker/Runtime recovery implemented; independent replacement accepted; synthetic representation/fitness and authenticated reuse accepted; topology and scientific acceptance remain successors
+- Design status: bounded numeric graph steps, generations/recovery, synthetic representation/fitness/reuse and public topology successor handoff implemented; topology replacement accepted; scientific validity remains unproven
 - Naming note: component/record/operation names below are proposed logical design, not implemented APIs or selected deployment technology
-- Last reviewed: `2026-10-06 15:45:26` (America/Chicago)
+- Last reviewed: `2026-10-06 19:03:23` (America/Chicago)
 - Parent: [Domain overview](Campaign_Architecture.md)
 - Requirement source: [Product Requirements](../Requirements/Product_Requirements.md#campaign-evolution-and-cross-project-discovery)
 
@@ -60,4 +60,4 @@ BP-08.03 owns distinct representation operators and evidence/fitness applicabili
 
 [Representation and fitness boundary](Representation_Fitness.md) decomposes the activated BP-08.03 design into distinct synthetic operator profiles and Research-owned comparison policy.
 
-[Bounded topology successors](Topology_Search.md) owns permitted edits, original-plan/release binding and fair-comparison boundaries. Pure Planning proposal policy is implemented; authenticated persistence and actual compiler/adoption remain BP-08.04.
+[Bounded topology successors](Topology_Search.md) owns permitted edits, original-plan/release binding and fair-comparison boundaries. Planning policy/publication, actual Runtime compilation/adoption/carry and the predeclared numeric comparison are verified; fresh replacement accepted in closed BP-08.04.

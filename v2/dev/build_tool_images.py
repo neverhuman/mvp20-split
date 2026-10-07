@@ -39,6 +39,7 @@ def build(base, output, profile="standard"):
     uv = ROOT / ".venv/Scripts/uv.exe"
     specs = {config["project"]["name"]: (path, config, module) for path, config, module in project_specs()}
     tools = {"standard": ("amphora-numeric-affine", "amphora-sequence-statistics"),
+             "affine": ("amphora-numeric-affine",),
              "solver": tuple("amphora-solver-" + stage for stage in ("seed", "select", "mutate", "score", "retain"))}[profile]
     wheels = output / "built-wheels"
     for name in sorted(set.union(*(closure(tool, specs) for tool in tools))):
@@ -116,6 +117,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--base", required=True)
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--profile", choices=("standard", "solver"), default="standard")
+    parser.add_argument("--profile", choices=("standard", "solver", "affine"), default="standard")
     args = parser.parse_args()
     build(args.base, args.output, args.profile)

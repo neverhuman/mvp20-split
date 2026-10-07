@@ -14,10 +14,23 @@ class Environment(common.Peers):
     def setup(self):
         self.descriptors, self.locks = {}, {}
         self.images = {"numeric-old": "c" * 64, "numeric-new": "d" * 64}
+        qualified = {}
+        if self.config.get("images"):
+            manifest = json.loads(Path(self.config["images"]).read_bytes())
+            assert manifest["profile"] == "topology-images-v1"
+            qualified = {image["descriptor"]["tool"]["binding"]["release"]: image for image in manifest["tools"]}
+            for owner, version in (("numeric-old", "0.2.0"), ("numeric-new", "0.3.0")):
+                image = qualified[version]
+                assert image["local_wheels"] == self.config["packages"][owner]["wheels"]
+                if owner + "-replacement" in self.config["packages"]:
+                    assert image["local_wheels"] == self.config["packages"][owner + "-replacement"]["wheels"]
+                self.images[owner] = image["image_manifest_digest"].removeprefix("sha256:")
         schemas, profiles, releases = [], [], []
         for owner in self.images:
             descriptor = json.loads(self.cli(owner, "amphora_numeric_affine", "describe", "--image-sha256", self.images[owner]))
             self.descriptors[owner] = descriptor
+            if qualified:
+                assert descriptor == qualified[descriptor["tool"]["binding"]["release"]]["descriptor"]
             lock = self.locks[owner] = common.WIRE.release_lock(descriptor)
             filename = owner + "-release.json"
             (self.root / filename).write_bytes(common.encoded(descriptor))

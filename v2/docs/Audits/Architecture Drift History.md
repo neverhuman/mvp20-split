@@ -260,3 +260,7 @@ B3.03 verified 2026-10-05 13:19:41: predeclared300-descriptor protocol/catalog a
 ## 2026-10-06 15:47:22 - BP-08.03 aligned
 
 [Scoped closeout](BP-08.03_Representation_Fitness_Closeout.md): independent representation operators/canonicalization, context-bound owner fitness and authenticated synthetic reuse match authority boundaries. Images/actual Registry/fresh replacement retain history; no scientific/deployed-host claim. Stale current-status documentation reconciled. Follow-up:none in closed scope; topology BP-08.04 and deployment BP-09 retain their own gates.
+
+## 2026-10-06 19:06:28 - BP-08.04 aligned
+
+[Topology closeout](BP-08.04_Topology_Closeout.md): bounded Planning/public Runtime draft-successor/comparison, actual carry/recovery, images and fresh replacement accepted. No unresolved blocking drift. Parent80%,16/20; BP-08.05 next. Model scheduling/target host/science remain named successors.

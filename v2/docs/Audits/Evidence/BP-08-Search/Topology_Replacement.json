@@ -1,0 +1,393 @@
+{
+  "timestamp_local": "2026-10-06 19:04:42",
+  "status": "passed",
+  "scope": "BP-08.04/V1.02",
+  "raw_evidence": ".test-results/topology-handoff-20261006v1/http/evidence.json",
+  "raw_sha256": "24223d20f413c87dab50c97e2776aa70dcbf9ba314388441547aebd765ac6d91",
+  "original_history": {
+    "benchmark": {
+      "artifact_id": "0600bee516484fb4b05f62b132a3c636",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "fixture.topology-benchmark",
+        "sha256": "a0a9800e159c3018353d90f047b92c9051192f2f75531ee4a50dfa113a2bf5a3",
+        "version": "1"
+      },
+      "scope": {
+        "project_id": "082d2505e15b4fc4b6b612425635ec51",
+        "tenant_id": "topology-handoff"
+      },
+      "sha256": "4392576ec111a6e7623a3b85ecc0ff369d903ac93b91cd0799e310b21c4c4a01",
+      "size_bytes": 55080
+    },
+    "handoff": {
+      "artifact_id": "275b0f27347e4bada043978b239f27f9",
+      "media_type": "application/json",
+      "schema_ref": {
+        "schema_id": "fixture.topology-handoff",
+        "sha256": "6b6a762b4b877a962c86d315dfb2fad24291cd8676f12bb5ad19c86d67432249",
+        "version": "1"
+      },
+      "scope": {
+        "project_id": "082d2505e15b4fc4b6b612425635ec51",
+        "tenant_id": "topology-handoff"
+      },
+      "sha256": "1722830ec05b2566269b48443bae75691199b2544b613015d661ee906fb0eb95",
+      "size_bytes": 28237
+    },
+    "lineage": {
+      "carried": [
+        {
+          "expected_value_sha256": "85b835c6c483fc75e334c67cc1607abc270868c98afe4731986fa68f0c89028f",
+          "source": {
+            "kind": "run_output",
+            "port": "parameters"
+          },
+          "target_port": "parameters"
+        }
+      ],
+      "plan_sha256": "2a64b3d26fb7bba8c3733393854df687edf73257abd4dec4a627a9f02d282016",
+      "predecessor": {
+        "plan_sha256": "c372b5ea7e16363697806a402fa2e4be281adf5e69b605661b774a8cc89008f7",
+        "revision": 9,
+        "run_id": "18419246d7f34818a9a1bb554afed6a7"
+      },
+      "run_id": "4d925d713edd48cca92ba0796f9a8379",
+      "schema_version": "1",
+      "scope": {
+        "project_id": "082d2505e15b4fc4b6b612425635ec51",
+        "tenant_id": "topology-handoff"
+      },
+      "transfer_sha256": "0f1f114ba4378176bc47d84821eb9c0aef95cb3bab206884c1d70defc3544214"
+    },
+    "paid_calls": 0,
+    "parent_run": "18419246d7f34818a9a1bb554afed6a7",
+    "premature_reason": "predecessor_not_terminal",
+    "proposal": {
+      "proposal_id": "after-terminal",
+      "scope": {
+        "project_id": "082d2505e15b4fc4b6b612425635ec51",
+        "tenant_id": "topology-handoff"
+      },
+      "sha256": "ed51b808e7531c6e0902739ec8ef8992405c74c37286481271fc0d341784fbc8"
+    },
+    "restarted_owners": [
+      "planning",
+      "runtime",
+      "artifact"
+    ],
+    "successor_run": "4d925d713edd48cca92ba0796f9a8379"
+  },
+  "replacement": {
+    "run_id": "0a0e4163de7f470daef9a675215df1f6",
+    "producer_sha256": "7573827b1bb391ea024f60fdde47c66815e5fc8cc1ad33bf33854150822b4a06",
+    "accepted_tool": {
+      "capability_id": "synthetic.numeric-affine",
+      "contract_version": "1",
+      "image_sha256": "03606692ec5dae1fec1a8438798130ce273fe47e61188e5ee319013b89819a34",
+      "release": "0.3.0"
+    },
+    "confirmed_retention": [
+      "3e2dea6654d446178b5eeb3022d3807e"
+    ],
+    "status": "completed"
+  },
+  "packages": {
+    "artifact": {
+      "owner": "amphora-data-artifacts",
+      "versions": {
+        "amphora-contracts-artifacts": "0.2.0",
+        "amphora-contracts-campaigns": "0.4.1",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-evidence": "0.5.13",
+        "amphora-contracts-graph-runtime": "0.13.0",
+        "amphora-contracts-representations": "0.3.0",
+        "amphora-contracts-research": "0.14.0",
+        "amphora-contracts-runtime": "0.1.0",
+        "amphora-contracts-tools": "0.1.0",
+        "amphora-data-artifacts": "0.30.0"
+      },
+      "wheels": {
+        "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+        "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+        "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+        "amphora_contracts_representations-0.3.0-py3-none-any.whl": "523feb10556ea0fdc07e39f2a874309fa65782b3e9035f072dffddf9a98ae18d",
+        "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+        "amphora_data_artifacts-0.30.0-py3-none-any.whl": "31339bd02bd0f9171977c4cce0e5e818d4bc2402fc866cbcf375ef4d7cceae16"
+      }
+    },
+    "controller": {
+      "owner": "amphora-contracts-topology-search",
+      "versions": {
+        "amphora-contracts-campaigns": "0.4.1",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-graph-runtime": "0.13.0",
+        "amphora-contracts-runtime": "0.1.0",
+        "amphora-contracts-tools": "0.1.0",
+        "amphora-contracts-topology-search": "0.1.0"
+      },
+      "wheels": {
+        "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+        "amphora_contracts_topology_search-0.1.0-py3-none-any.whl": "e7f4e9da892895fd95832d5548d631e508930ea18aeba0209a41e1908e6d75e9"
+      }
+    },
+    "numeric-new": {
+      "owner": "amphora-numeric-affine",
+      "versions": {
+        "amphora-contracts-artifacts": "0.2.0",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-runtime": "0.1.0",
+        "amphora-contracts-tools": "0.1.0",
+        "amphora-numeric-affine": "0.3.0",
+        "amphora-tool-protocol": "0.2.0"
+      },
+      "wheels": {
+        "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+        "amphora_numeric_affine-0.3.0-py3-none-any.whl": "292534d9c067fc744a38f8f1cd7f26bdb8b0d5fe939041c137cbdcb6bfe98a59",
+        "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+      }
+    },
+    "numeric-new-replacement": {
+      "owner": "amphora-numeric-affine",
+      "versions": {
+        "amphora-contracts-artifacts": "0.2.0",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-runtime": "0.1.0",
+        "amphora-contracts-tools": "0.1.0",
+        "amphora-numeric-affine": "0.3.0",
+        "amphora-tool-protocol": "0.2.0"
+      },
+      "wheels": {
+        "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+        "amphora_numeric_affine-0.3.0-py3-none-any.whl": "292534d9c067fc744a38f8f1cd7f26bdb8b0d5fe939041c137cbdcb6bfe98a59",
+        "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+      }
+    },
+    "numeric-old": {
+      "owner": "amphora-numeric-affine",
+      "versions": {
+        "amphora-contracts-artifacts": "0.2.0",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-runtime": "0.1.0",
+        "amphora-contracts-tools": "0.1.0",
+        "amphora-numeric-affine": "0.2.0",
+        "amphora-tool-protocol": "0.2.0"
+      },
+      "wheels": {
+        "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+        "amphora_numeric_affine-0.2.0-py3-none-any.whl": "ffa8118003334033064e556fdbb24ef58c38950bbbce64be2933a0481692791f",
+        "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+      }
+    },
+    "planning": {
+      "owner": "amphora-agent-planning",
+      "versions": {
+        "amphora-agent-planning": "0.98.0",
+        "amphora-contracts-artifacts": "0.2.0",
+        "amphora-contracts-campaigns": "0.4.1",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-evidence": "0.5.13",
+        "amphora-contracts-graph-runtime": "0.13.0",
+        "amphora-contracts-knowledge": "0.8.0",
+        "amphora-contracts-planning": "0.10.0",
+        "amphora-contracts-representations": "0.3.0",
+        "amphora-contracts-research": "0.14.0",
+        "amphora-contracts-research-views": "0.1.0",
+        "amphora-contracts-runtime": "0.1.0",
+        "amphora-contracts-supervision": "0.10.0",
+        "amphora-contracts-tools": "0.1.0",
+        "amphora-contracts-topology-search": "0.1.0",
+        "amphora-tool-protocol": "0.2.0"
+      },
+      "wheels": {
+        "amphora_agent_planning-0.98.0-py3-none-any.whl": "4c519599e7c0485cb988e8bef8b55aa430ded4f29cd435109df4a10e0abad054",
+        "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+        "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+        "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+        "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+        "amphora_contracts_planning-0.10.0-py3-none-any.whl": "2faf07d284c036c54f5c389e540750ae4ec5ffbb356e1d5f6fb7a935ed92a682",
+        "amphora_contracts_representations-0.3.0-py3-none-any.whl": "523feb10556ea0fdc07e39f2a874309fa65782b3e9035f072dffddf9a98ae18d",
+        "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+        "amphora_contracts_research_views-0.1.0-py3-none-any.whl": "50f010979f0868e61533f312639a1dfa9fc8a41795b2961817c3da45b33b67e8",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_supervision-0.10.0-py3-none-any.whl": "fd181b9c5af4bff660d40f6e46e78365c2806b2c63a2cf1c9d908bb772ec60e2",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+        "amphora_contracts_topology_search-0.1.0-py3-none-any.whl": "e7f4e9da892895fd95832d5548d631e508930ea18aeba0209a41e1908e6d75e9",
+        "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+      }
+    },
+    "planning-replacement": {
+      "owner": "amphora-agent-planning",
+      "versions": {
+        "amphora-agent-planning": "0.98.0",
+        "amphora-contracts-artifacts": "0.2.0",
+        "amphora-contracts-campaigns": "0.4.1",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-evidence": "0.5.13",
+        "amphora-contracts-graph-runtime": "0.13.0",
+        "amphora-contracts-knowledge": "0.8.0",
+        "amphora-contracts-planning": "0.10.0",
+        "amphora-contracts-representations": "0.3.0",
+        "amphora-contracts-research": "0.14.0",
+        "amphora-contracts-research-views": "0.1.0",
+        "amphora-contracts-runtime": "0.1.0",
+        "amphora-contracts-supervision": "0.10.0",
+        "amphora-contracts-tools": "0.1.0",
+        "amphora-contracts-topology-search": "0.1.0",
+        "amphora-tool-protocol": "0.2.0"
+      },
+      "wheels": {
+        "amphora_agent_planning-0.98.0-py3-none-any.whl": "eabcdbb915618158d00f84c6e4d6a9cf3039f467ca4aea4ddedfebaebe1c8326",
+        "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+        "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+        "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+        "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+        "amphora_contracts_planning-0.10.0-py3-none-any.whl": "2faf07d284c036c54f5c389e540750ae4ec5ffbb356e1d5f6fb7a935ed92a682",
+        "amphora_contracts_representations-0.3.0-py3-none-any.whl": "523feb10556ea0fdc07e39f2a874309fa65782b3e9035f072dffddf9a98ae18d",
+        "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+        "amphora_contracts_research_views-0.1.0-py3-none-any.whl": "50f010979f0868e61533f312639a1dfa9fc8a41795b2961817c3da45b33b67e8",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_supervision-0.10.0-py3-none-any.whl": "fd181b9c5af4bff660d40f6e46e78365c2806b2c63a2cf1c9d908bb772ec60e2",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+        "amphora_contracts_topology_search-0.1.0-py3-none-any.whl": "e7f4e9da892895fd95832d5548d631e508930ea18aeba0209a41e1908e6d75e9",
+        "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+      }
+    },
+    "registry": {
+      "owner": "amphora-capability-registry",
+      "versions": {
+        "amphora-capability-registry": "0.1.0",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-tools": "0.1.0"
+      },
+      "wheels": {
+        "amphora_capability_registry-0.1.0-py3-none-any.whl": "f7c54e1892b8f64ac46fc6d1fa4f5ecfedc214dc4c883cdd53fd205396f3e4e9",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee"
+      }
+    },
+    "runtime": {
+      "owner": "amphora-campaign-runtime",
+      "versions": {
+        "amphora-campaign-runtime": "0.65.0",
+        "amphora-contracts-artifacts": "0.2.0",
+        "amphora-contracts-campaigns": "0.4.1",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-draft-successor": "0.1.0",
+        "amphora-contracts-evidence": "0.5.13",
+        "amphora-contracts-execution-proofs": "0.1.0",
+        "amphora-contracts-graph-runtime": "0.13.0",
+        "amphora-contracts-knowledge": "0.8.0",
+        "amphora-contracts-planning": "0.10.0",
+        "amphora-contracts-research": "0.14.0",
+        "amphora-contracts-runtime": "0.1.0",
+        "amphora-contracts-supervision": "0.10.0",
+        "amphora-contracts-tools": "0.1.0"
+      },
+      "wheels": {
+        "amphora_campaign_runtime-0.65.0-py3-none-any.whl": "c3cc079c2b6433b9ab188716ecb71a021ee2ce0d492c60cd7ed0ee49cd5eec78",
+        "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+        "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_draft_successor-0.1.0-py3-none-any.whl": "8c6c90b1b3b847d7bef5c7c93e6e389085899c277d4e809a3f8a4cdebf393716",
+        "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+        "amphora_contracts_execution_proofs-0.1.0-py3-none-any.whl": "28a5d3f319564fbca4d41bf506de4e6562859345cbd2cf1146f10d902c2f6ee7",
+        "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+        "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+        "amphora_contracts_planning-0.10.0-py3-none-any.whl": "2faf07d284c036c54f5c389e540750ae4ec5ffbb356e1d5f6fb7a935ed92a682",
+        "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_supervision-0.10.0-py3-none-any.whl": "fd181b9c5af4bff660d40f6e46e78365c2806b2c63a2cf1c9d908bb772ec60e2",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee"
+      }
+    },
+    "runtime-replacement": {
+      "owner": "amphora-campaign-runtime",
+      "versions": {
+        "amphora-campaign-runtime": "0.65.0",
+        "amphora-contracts-artifacts": "0.2.0",
+        "amphora-contracts-campaigns": "0.4.1",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-draft-successor": "0.1.0",
+        "amphora-contracts-evidence": "0.5.13",
+        "amphora-contracts-execution-proofs": "0.1.0",
+        "amphora-contracts-graph-runtime": "0.13.0",
+        "amphora-contracts-knowledge": "0.8.0",
+        "amphora-contracts-planning": "0.10.0",
+        "amphora-contracts-research": "0.14.0",
+        "amphora-contracts-runtime": "0.1.0",
+        "amphora-contracts-supervision": "0.10.0",
+        "amphora-contracts-tools": "0.1.0"
+      },
+      "wheels": {
+        "amphora_campaign_runtime-0.65.0-py3-none-any.whl": "fe4a6f9d55081ec3810c1339f36f3b41d85d49eec6868e5a37642bbbe917a0b7",
+        "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+        "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_draft_successor-0.1.0-py3-none-any.whl": "8c6c90b1b3b847d7bef5c7c93e6e389085899c277d4e809a3f8a4cdebf393716",
+        "amphora_contracts_evidence-0.5.13-py3-none-any.whl": "29647b1a5ec28bc657d8a6cf9b205a27bb6331b07c7a0124eea2f012934f4f5f",
+        "amphora_contracts_execution_proofs-0.1.0-py3-none-any.whl": "28a5d3f319564fbca4d41bf506de4e6562859345cbd2cf1146f10d902c2f6ee7",
+        "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+        "amphora_contracts_knowledge-0.8.0-py3-none-any.whl": "0e6a8d007b067628ae1e4205f0683f54422d1dbaea69b748b494d6ee51fb5f57",
+        "amphora_contracts_planning-0.10.0-py3-none-any.whl": "2faf07d284c036c54f5c389e540750ae4ec5ffbb356e1d5f6fb7a935ed92a682",
+        "amphora_contracts_research-0.14.0-py3-none-any.whl": "15509c66d293bdea414eee77aae275ce01e38fbd749fb170edc80d7120417eac",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_supervision-0.10.0-py3-none-any.whl": "fd181b9c5af4bff660d40f6e46e78365c2806b2c63a2cf1c9d908bb772ec60e2",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee"
+      }
+    }
+  },
+  "images": "Topology_Images.json",
+  "regressions": {
+    "passed": 28,
+    "seconds": 19.81,
+    "scope": "numeric-affine and boundaries"
+  },
+  "limits": [
+    "Qualified Linux image pins match installed Windows wheel closures; no deployed Linux worker",
+    "Registry capacity is synthetic fixture metadata",
+    "No scientific or model-quality claim"
+  ],
+  "paid_calls": 0
+}
