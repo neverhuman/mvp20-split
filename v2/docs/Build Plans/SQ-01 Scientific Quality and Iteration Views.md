@@ -110,3 +110,5 @@ launcher/context selection and operator steps; isolated browser fixtures do not 
 that complete experience. Scientific qualification remains outside this internal demo.
 
 DEMO-01 checkpoint 2026-10-07 12:44:11: actual-owner unassessed point/focus export verified with Studio0.16.1 entry fragment repair. This is partial evidence only, not full V1 or AI proposal adoption. One prior read failure remains unresolved for V1 qualification. C1 approved contract implementation remains the next task; demo assets are frozen independently.
+
+C1 preflight 2026-10-07 12:49:15: snapshotted all7 owner source-lock byte streams for each demo scenario before changing dependencies. Wrapper selects frozen-original/frozen-successor derived manifests; original qualification evidence unchanged. Session20261007-124737-8b02736b passes actual startup/seven-owner drain with copied locks. This prerequisite earns no contract implementation credit.

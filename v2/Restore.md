@@ -9,7 +9,7 @@ delivery complete100% all three phases; archive/audit/presenter guide prepared.
 Owner rehearsal/acceptance pending, not a dependency for further approved work.
 NEXT SQ-01/C1 approved criterion-target contracts,41.67%,Build50%,Verification0%.
 No new criterion schemas/API implemented. LR01queued. Demo assets stay FROZEN while
-new work proceeds separately. Latest pushedbeforethischange94723c14; demo commit next.
+new work proceeds separately. Latest demo implementation pushedab7b7008. C1 preflight lock-snapshot follow-up commit next.
 
 Launch `v2/Start-Demo.ps1` (original) or `-Scenario successor`; Ctrl+C drains.
 Uses installedDeploymentPython .test-results/acceptance-owner-final-b and explicit
@@ -21,10 +21,13 @@ usedNoBrowser. Boundedsessionduration2hours, independentnew sessionfolder eachti
 Root .test-results/demo-20261008/public-b is frozenStudio0.16.1. Qualification
 original-focus-d and successor-b PASS1440/390; each7ownersdrained0. D includes
 connectedauthoredgraph, reasoningabstention, domain, unassessedfocus/export, draft.
-Latestlauncher session20261007-124044-f7fb84bc PASS49.39s total,7ownersdrained0.
+Wrapper now selects frozen-original/frozen-successor derived manifests with exact
+byte copies of all7 owner source-locks, so later dependency updates cannot repin demo.
+Original qualifications unchanged. Snapshot launcher session20261007-124737-8b02736b
+PASS7ownersdrained0. Prior launcher124044-f7fb84bc PASS49.39s total.
 Tamperedassetdigest rejects beforeoutput/ownerstartup. Offlineall6pages1440/390
 image/axe/overflowpass.20focusedquality/selectiontests pass andTSbuildpass.
-No running jobs. All owners stopped; storecontainersleftunchanged. No modelcharges.
+No running jobs. C1 schema implementation not yet started. All owners stopped; storecontainersleftunchanged. No modelcharges.
 
 Fixedentry.tsx stripping feedback/quality_output withone-timelaunchticket; preserve
 onlysupportedpins and erasecredential. Firstoriginal-focus failure retained.

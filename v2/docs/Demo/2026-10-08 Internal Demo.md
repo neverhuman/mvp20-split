@@ -10,6 +10,8 @@ Use this Windows computer/user and repository. Docker Desktop must be running wi
 the accepted restored PostgreSQL/Qdrant containers. Keep the NAS drive connected.
 Do not rebuild packages, replace assets or reset databases immediately before presenting.
 The launcher checks the qualified asset hashes and fails if they changed.
+It uses frozen-original/frozen-successor manifests with copies of all seven owner
+lockfiles, so subsequent working-tree dependency updates do not repin the demo.
 
 From PowerShell:
 
