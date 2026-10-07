@@ -1,7 +1,7 @@
 # Local deployment profile and preflight
 
-Owner: BP-09.03, package amphora-deployment0.8.0. Native worker lifecycle is qualified; [worker boundary](src/amphora_deployment/workers/README.md). Managed TLS and responsive scientific container monitoring/adoption are independently qualified; [container boundary](src/amphora_deployment/scientific_workers/README.md). BP-09.01/.02 remain complete; actual tool eligibility and full demo remain active BP-09.03 work.
-The [tool catalog boundary](src/amphora_deployment/tool_catalog/README.md) adds separate heartbeat credentials and durable replay delivery; managed standby/readiness reporting has actual five-executor evidence; successful managed execution remains in progress.
+Owner: BP-09.03, package amphora-deployment0.9.0. Native worker lifecycle is qualified; [worker boundary](src/amphora_deployment/workers/README.md). Managed TLS and responsive scientific container monitoring/adoption are independently qualified; [container boundary](src/amphora_deployment/scientific_workers/README.md). BP-09.01/.02 remain complete; full autonomous demo remains active BP-09.03 work.
+The [tool catalog boundary](src/amphora_deployment/tool_catalog/README.md) adds separate heartbeat credentials and durable replay delivery; managed standby/readiness reporting has actual five-executor evidence; successful managed execution evidence belongs to BP-09.03.
 Design: [Runtime topology](../../docs/Architecture/System/Runtime_Topology.md).
 
 This package owns local versioned deployment configuration and subsequent

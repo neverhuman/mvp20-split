@@ -37,7 +37,7 @@ class NativeRecipe:
             if self.action == "coordinate":
                 command += ("--poll-interval", "1")
             else:
-                command += ("--limit", "10")
+                command += ("--limit", "100")
         else:
             command += ("--seconds", "2", "--interval", "1")
         return command

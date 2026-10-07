@@ -1,0 +1,165 @@
+{
+  "timestamp_local": "2026-10-07 03:47:10",
+  "status": "passed",
+  "deployment": {
+    "timestamp_local": "2026-10-07 03:37:32",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-deployment",
+    "forbidden_implementations": [
+      "amphora_campaign_runtime",
+      "amphora_agent_planning",
+      "amphora_data_artifacts",
+      "sqlalchemy",
+      "pydantic"
+    ],
+    "packages": {
+      "amphora-deployment": "0.9.0"
+    },
+    "wheels": {
+      "amphora_deployment-0.9.0-py3-none-any.whl": "66eeea945ead69d880c38b2f573e1df16db98cdf1daeb2e73160ab6fd30317f6"
+    }
+  },
+  "independent_tests": 276,
+  "fresh_rebuild_wheels_identical": true,
+  "raw_evidence": {
+    "path": ".test-results\\local-managed-campaign-install-20261007a\\evidence.json",
+    "sha256": "a3384f3487122d644b8927bb786277a3bd6cf166c9d0abd80ac49142e95eece2"
+  },
+  "campaign": {
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "managed-campaign-3a3fdf348bb743858ecfbcc81e1c4a41"
+    },
+    "run_id": "4abe08f518d547948021c52e1446c2ba",
+    "status": "completed",
+    "nodes": 39,
+    "spent": 15,
+    "reserved": 0,
+    "canonical_completions": 15,
+    "confirmed_output_reservations": 15,
+    "execution_seconds": 117.01499999989755,
+    "execution_limit_seconds": 600,
+    "maximum_control_latency_seconds": 0.07800000021234155,
+    "control_latency_limit_seconds": 0.5,
+    "retention_confirmation_limit_seconds": 120,
+    "final_owners": {
+      "artifact": {
+        "owner": "artifact",
+        "pid": 19032,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      },
+      "registry": {
+        "owner": "registry",
+        "pid": 32600,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      },
+      "runtime": {
+        "owner": "runtime",
+        "pid": 33540,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      }
+    },
+    "final_workers": {
+      "runtime-coordinate": {
+        "state": "quiescent",
+        "exit_code": 0,
+        "completed_turns": 13,
+        "faulted": false,
+        "execution_readiness": "not_assessed"
+      },
+      "runtime-deliver": {
+        "state": "quiescent",
+        "exit_code": 0,
+        "completed_turns": 16,
+        "faulted": false,
+        "execution_readiness": "not_assessed"
+      }
+    },
+    "final_scientific_workers": {
+      "evolution-seed": {
+        "state": "quiescent",
+        "active_turn": false,
+        "faulted": false,
+        "completed_turns": 46,
+        "exit_code": 3,
+        "execution_readiness": "not_assessed"
+      },
+      "evolution-requests": {
+        "state": "quiescent",
+        "active_turn": false,
+        "faulted": false,
+        "completed_turns": 44,
+        "exit_code": 3,
+        "execution_readiness": "not_assessed"
+      },
+      "evolution-collect": {
+        "state": "quiescent",
+        "active_turn": false,
+        "faulted": false,
+        "completed_turns": 45,
+        "exit_code": 0,
+        "execution_readiness": "not_assessed"
+      },
+      "evolution-vary": {
+        "state": "quiescent",
+        "active_turn": false,
+        "faulted": false,
+        "completed_turns": 46,
+        "exit_code": 3,
+        "execution_readiness": "not_assessed"
+      },
+      "synthetic-objectives": {
+        "state": "quiescent",
+        "active_turn": false,
+        "faulted": false,
+        "completed_turns": 47,
+        "exit_code": 3,
+        "execution_readiness": "not_assessed"
+      }
+    },
+    "original_installation_unchanged": true,
+    "provider_calls": 0
+  },
+  "repair": {
+    "failed_probe": ".test-results/local-managed-campaign-20261007a",
+    "failure": "Graph completed; 120-second output-retention confirmation gate failed",
+    "cause": "10-item native delivery batch could not clear confirmation backlog alongside retries for unavailable runtime_notifications sink",
+    "change": "Existing delivery CLI batch 10 to 100; same two-second cadence, retry/acknowledgement contracts",
+    "recovery": ".test-results/local-retention-recovery-20261007a",
+    "confirmed": 15,
+    "elapsed_seconds": 25.437,
+    "completed_graph_unchanged": true,
+    "scientific_reruns": 0
+  },
+  "focused_tests": {
+    "passed": 39,
+    "seconds": 3.14,
+    "statements": "281/292",
+    "branches": "44/50",
+    "coverage_percent": 94,
+    "recipe_coverage_percent": 100,
+    "gaps": [
+      "aggregate forced cleanup",
+      "observation failures",
+      "selected configuration variants"
+    ]
+  },
+  "limits": [
+    "Independent installed Deployment0.9 and existing qualified Runtime/Data/Registry peers; real retained PostgreSQL and Linux scientific containers",
+    "Deterministic synthetic fixture, not scientific validity or LLM topology",
+    "Explicit graceful post-admission immutable worker binding; full-controller/TLS death remains B3",
+    "Post-terminal claim exits3 explicitly reconciled; invocation success established from canonical completions and artifact bytes",
+    "Research/Knowledge records and model/browser trace remain B1.3c/B1.4",
+    "Dev-only import whitespace normalized after probe; production wheel unchanged"
+  ]
+}

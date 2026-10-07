@@ -1,14 +1,23 @@
 # Managed worker turns
 
-Owner: BP-09.03/B1.3b, Deployment0.4. Native controller/configuration implemented;
-independent native process qualification passed. Docker recovery and managed TLS remain
-unimplemented. No workers are active in the accepted local serving profile.
+Owner: BP-09.03/B1.3b, Deployment0.9. Native controller/configuration independently
+qualified; scientific containers and catalog reporting have separate sibling modules.
+No workers are active in the accepted read-only serving profile.
 
 Deployment owns process lifetime, not graph scheduling. Runtime's coordinator,
 artifact delivery and checkpoint loop, and Planning's checkpoint worker retain
 their existing public CLIs, permissions, database ownership, claim/replay and
 deadline rules. Four closed native recipes request two-second sweeps, with one
 second between polls; an in-flight operation can exceed the sweep window.
+Runtime delivery now permits at most100items within that same two-second sweep,
+the existing owner CLI's supported ceiling. The earlier ten-item batch left artifact
+confirmations waiting behind retries for unconfigured notification targets during
+the actual numeric campaign. Increasing the bounded batch changes neither receipts,
+retry policy nor acknowledgement authority; unavailable notifications remain visible.
+Actual original-backlog recovery confirmed all15 output reservations in25.44seconds
+within the unchanged120second gate, with identical completed graph and no scientific
+reruns. Fresh full-campaign and independent-installation evidence is owned by the
+active BP-09.03 tracker; recovery alone is not whole-campaign acceptance.
 
 WorkerSlot allows one live turn per slot. Explicit start enables repeated turns;
 only exit zero permits repetition after a bounded interval. Nonzero exit or

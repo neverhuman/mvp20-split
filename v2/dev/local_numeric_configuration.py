@@ -15,7 +15,7 @@ def write(path, value):
     return path
 
 
-def prepare(output, bundle, materials, source_manifest, installation_id, routes, *, project=None):
+def prepare(output, bundle, materials, source_manifest, installation_id, routes, *, project=None, delivery=False):
     output.mkdir(parents=True, exist_ok=False)
     bundle.mkdir(parents=True, exist_ok=False)
     material = json.loads((materials / 'manifest.json').read_bytes())
@@ -75,9 +75,10 @@ def prepare(output, bundle, materials, source_manifest, installation_id, routes,
             ports[name] = probe.getsockname()[1]
         assert not set(ports.values()).intersection(dict(routes.ports).values())
     write(output / 'access.json', {'profile': 'local-tool-access-v1', 'identity_directory': str(identity.directory), 'ports': ports})
-    write(output / 'native.json', {'profile': 'local-native-workers-v1', 'workers': {'runtime-coordinate': {
-        'configuration': owners['runtime']['configuration'], 'source_lock': owners['runtime']['source_lock'],
-        'scope': {'actor': 'admin', 'tenant': scope['tenant_id'], 'project': scope['project_id']}}}})
+    native = {name: {'configuration': owners['runtime']['configuration'], 'source_lock': owners['runtime']['source_lock'],
+        'scope': {'actor': 'admin', 'tenant': scope['tenant_id'], 'project': scope['project_id']}}
+        for name in (('runtime-coordinate', 'runtime-deliver') if delivery else ('runtime-coordinate',))}
+    write(output / 'native.json', {'profile': 'local-native-workers-v1', 'workers': native})
     return material, identity, ports
 
 
