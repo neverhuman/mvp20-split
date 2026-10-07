@@ -10,6 +10,7 @@ const postPaths = new Set([
 export function allowedRoute(method: "GET" | "POST", path: string): boolean {
   if (method === "POST") return postPaths.has(path);
   const matched = /^\/api\/knowledge\/v1\/graphs\/([^/]+)\/proposals\/([^/]+)$/.exec(path)
+    ?? /^\/api\/runtime\/v1\/supervision\/responses\/([^/]+)$/.exec(path)
     ?? /^\/api\/data\/v1\/(?:artifacts\/([^/]+)(?:\/(?:content|derivation))?|acquisition\/traces\/([^/]+)|acquisition\/sources\/([^/]+)\/([^/]+))$/.exec(path);
   if (!matched) return false;
   return matched.slice(1).filter(value => value !== undefined).every(encoded => {

@@ -1,0 +1,18 @@
+{
+  "followup": {
+    "source": "contracts/schemas/v1/planning.checkpoint-followup-draft.serialization.json",
+    "sha256": "9355515ecc5b6b874038860f0d1a79ba92f0ac2f2da5c8e9ee83901b9c5f7d64"
+  },
+  "checkpoint": {
+    "source": "contracts/schemas/v1/planning.checkpoint-draft.serialization.json",
+    "sha256": "2b0995d806ee80b7d64df39184034de76773a92065310ff3a5d1940a31d2c1e2"
+  },
+  "campaign": {
+    "source": "contracts/schemas/v1/planning.campaign-draft.serialization.json",
+    "sha256": "6832df22c91f631b0ce11ebe915183b6d78071c8bce85c69a7dc96a919c373ed"
+  },
+  "response": {
+    "source": "contracts/schemas/v1/supervision.response.serialization.json",
+    "sha256": "883d7bb6bdb0f47ccfd20403380ad8d90ee60f217d61afaa0382c2edd520c8e2"
+  }
+}

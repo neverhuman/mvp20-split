@@ -3,12 +3,12 @@
 ## Canonical tracker
 
 - Status: active successor to closed BP-05; B1/B2 and B3 human-focus half complete; C1/C2 complete; B3 proposal presentation active.
-- Last refreshed: `2026-10-07 14:20:46` (America/Chicago).
-- Completion: 75%; Build90%, Verification0%; 4.5/6 unit-weight gates complete; C2=100%.
+- Last refreshed: `2026-10-07 14:49:53` (America/Chicago).
+- Completion: 77.78%; Build93.33%, Verification0%; 4.6667/6 unit-weight gates complete; C2=100%; B3=66.67%.
 - Owner: Studio presentation; Research/Knowledge own assessments; Agents owns proposals.
 - Prerequisites: BP-06 owner quality/correction projections and BP-07.03 proposal contracts; activation coherence audit and exact DTO reconciliation before implementation.
-- Current focus: B3 authorized criterion-proposal presentation in Studio.
-- Next gate: B3 transport/projection/presentation checks, then V1 actual-owner journey/replacement/audit.
+- Current focus: B3/P2 visible proposal and exact owner-record integration; P1 complete100%, P2/P3=0%.
+- Next gate: P2 presentation checks, P3 browser proof, then V1 actual-owner journey/replacement/audit.
 - Blockers: no owner decision pending. Missing criterion bindings are approved implementation scope in SQ-01.01.
 - Requirement: [Campaign progress](../Architecture/Requirements/Product_Requirements.md#campaign-progress-uncertainty-and-subsequent-iteration).
 - Architecture: [Studio](../Architecture/Experience/Studio.md#exploratory-quality-and-next-campaign-focus).
@@ -178,3 +178,37 @@ and diff checks pass. Planning owns Research membership; Runtime does not infer 
 C2=100%; overall4.5/6=75%, Build4.5/5=90%, Verification0%. B3 proposal UI is next;
 V1 still requires actual-owner subsequent campaign and independent Studio acceptance.
 [Evidence](../Audits/Evidence/SQ-01-Quality/C2c_Runtime.json).
+
+## B3 proposal delivery boundaries
+
+2026-10-07 14:26:43: proposal half has three equal implementation units: P1 bounded
+public transport/immutable projection/page model, P2 visible integration and owner
+record drill-down, P3 browser/accessibility/interaction proof. All0%; completed human
+focus half remains100%. Overall stays75%, Build90%, Verification0%. No scope added.
+
+User: internal researcher. Question: what should improve next campaign, why, and what
+remains unresolved? Action: inspect a recorded proposal, select its exact criterion,
+then inspect owner evidence. Reuse checkpoint navigation, workspace tokens, Data
+metadata/content permission and Research public record reads. One growing region
+switches response list/proposal detail; target/unresolved pages are bounded20 rows.
+No graph activation, automatic proposal adoption or routine approval button.
+
+Read the exact Runtime response by response_id and bind its SHA, request/attempt and
+capture to the selected inspection record; then separately authorize/read Data content.
+Validate original output schema pin and captured bytes before interpreting intent.
+The existing full response route supplies TypedProposal.output_schema; no new route is
+needed. Old profiles show need-level intent with criterion targeting unavailable.
+Owner evidence inspection must verify question/need revisions and selected assessment
+status digest; do not silently replace historical assessment content with a fresh read.
+Loading/denied/stale/hidden/rebound/disposed views clear protected content; late reads
+cannot repopulate it. Retained proposal is distinct from verified subsequent adoption.
+Actual-owner next-campaign journey and independent Studio replacement remain V1.
+
+
+2026-10-07 14:49:53: B3/P1 complete100%; Studio0.17 adds exact-profile generated
+DTOs, independent Runtime/Data permission and digest verification, 20-row immutable
+intent projection, cancellation-fenced proposal/criterion models and exact Research
+criterion/status-digest drilldown. All285Studio tests pass including16new, generated
+check/build pass. Initial fixture decision_scope used text instead of digest; fixed.
+P2/P3 remain0; B3=66.67%, overall77.78%, Build93.33%, Verification0%. Frozen demo
+unchanged. No new backend route, migration, credential or paid model call.

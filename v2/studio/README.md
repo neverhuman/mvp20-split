@@ -1,5 +1,10 @@
 # Graph Studio
 
+Source release **0.17.0** adds SQ-01/B3/P1 proposal transport, immutable intent
+projection and cancellable proposal/criterion models. All285 Studio tests pass;
+visible integration and browser qualification remain pending. This source update
+does not replace the separately frozen demo assets below.
+
 Current demo release: **0.16.1**, qualified against actual retained owners under
 [DEMO-01](../docs/Audits/DEMO-01_Internal_Walkthrough.md). The local entry exposes
 execution/authored graphs, checkpoint reasoning, domain/evidence, saved draft

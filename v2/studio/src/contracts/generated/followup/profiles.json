@@ -1,0 +1,17 @@
+{
+  "followup": {
+    "schema_id": "planning.checkpoint-followup-draft",
+    "version": "1",
+    "sha256": "66ce530bce6c53b99aa5ec695488334d9596a032ef1ae272bf2e17f3c229f24e"
+  },
+  "checkpoint": {
+    "schema_id": "planning.checkpoint-draft",
+    "version": "1",
+    "sha256": "62c9bd78026e9be6053be120fa22d977c3321facbe233c74ad5145643a1f2af0"
+  },
+  "campaign": {
+    "schema_id": "planning.campaign-draft",
+    "version": "1",
+    "sha256": "8c4f460877e5de108a3eb8e9fb11eb3962f16e5a7756f3583ba519ce78eda2be"
+  }
+}

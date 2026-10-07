@@ -160,9 +160,10 @@ const feedbackRoots = {
   ]
 };
 const check = process.argv.includes("--check");
-async function generate(roots, target) {
+async function generate(roots, target, profiles = []) {
   const manifest = {};
   const schemas = {};
+  const pins = {};
   await mkdir(target, { recursive: true });
 
   async function output(name, body) {
@@ -180,6 +181,12 @@ async function generate(roots, target) {
     const schema = JSON.parse(bytes);
     schemas[key] = schema;
     manifest[key] = { source: `contracts/schemas/v1/${file}.serialization.json`, sha256: createHash("sha256").update(bytes).digest("hex") };
+    if (profiles.includes(key)) {
+      const validation = await readFile(resolve(source, `${file}.validation.json`));
+      const id = /^urn:amphora:(.+):([0-9]+):validation$/.exec(JSON.parse(validation).$id);
+      if (!id) throw new Error(`Invalid published profile: ${file}`);
+      pins[key] = { schema_id: id[1], version: id[2], sha256: createHash("sha256").update(validation).digest("hex") };
+    }
     const declarations = await compile(schema, title, {
       bannerComment: "/* Generated from the published Python-owned serialization schema. Do not edit. */",
       additionalProperties: false, ignoreMinAndMaxItems: true, unknownAny: true,
@@ -189,6 +196,7 @@ async function generate(roots, target) {
   await output("schemas.json", JSON.stringify(schemas, null, 2) + "\n");
   await output("manifest.json", JSON.stringify(manifest, null, 2) + "\n");
   await output("validators.ts", await standaloneValidators(schemas, root));
+  if (profiles.length) await output("profiles.json", JSON.stringify(pins, null, 2) + "\n");
   console.log(`Studio contracts ${check ? "verified" : "generated"}: ${Object.keys(roots).length} published roots`);
 }
 
@@ -209,3 +217,10 @@ await generate({
   responses: ["supervision.checkpoint-response-page", "CheckpointResponsePage"],
   decision: ["supervision.checkpoint-decision", "CheckpointDecision"],
 }, resolve(target, "supervision"));
+
+await generate({
+  followup: ["planning.checkpoint-followup-draft", "CheckpointFollowupDraft"],
+  checkpoint: ["planning.checkpoint-draft", "CheckpointDraft"],
+  campaign: ["planning.campaign-draft", "CampaignDraft"],
+  response: ["supervision.response", "SupervisionResponse"],
+}, resolve(target, "followup"), ["followup", "checkpoint", "campaign"]);
