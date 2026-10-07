@@ -77,3 +77,7 @@ Scale workers first for independent expensive work. Separate retrieval/index bui
 ## Deployment Decisions Still Required
 
 Concrete language/framework, packaging, database version, artifact backend, worker isolation, observability and initial resource limits need implementation-plan decisions. PostgreSQL is the proposed transactional baseline in the state design; that recommendation does not select every surrounding library. Remote invocation requires authenticated, scoped transport even when local development uses trusted subprocesses.
+
+## Selected local profile
+
+Owner decision 2026-10-06 21:41:09: use the current local computer with computer-only access. BP-09.01 qualifies Windowsx86_64/Python3.12 process compatibility, localNTFS artifact storage and127.0.0.1 routing. Full service installation and integrated demonstration follow in BP-09.02/.03. DGX Spark, partner Threadripper, LAN exposure and K3s remain future selections. Preflight is not powerloss/backup or serviceauthentication proof.

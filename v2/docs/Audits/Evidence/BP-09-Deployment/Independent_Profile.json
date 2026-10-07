@@ -1,0 +1,183 @@
+{
+  "timestamp_local": "2026-10-06 21:38:03",
+  "status": "passed",
+  "installation": {
+    "timestamp_local": "2026-10-06 21:37:54",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-deployment",
+    "forbidden_implementations": [
+      "pydantic",
+      "sqlalchemy",
+      "amphora_campaign_runtime",
+      "amphora_data_artifacts",
+      "amphora_agent_planning"
+    ],
+    "packages": {
+      "amphora-deployment": "0.1.0"
+    },
+    "wheels": {
+      "amphora_deployment-0.1.0-py3-none-any.whl": "abd45d17f27812c7a6b793ca33c45f8c2056e32bca52aa207d154dfcb1a2f9f2"
+    }
+  },
+  "original_profile_sha256": "36dbf66665ef10903d68550867fa9730b467ece69d06a221c1f2b2f8f4cf1bde",
+  "validation_before_after": [
+    {
+      "profile_id": "local-windows-demo",
+      "readiness_assessed": false,
+      "status": "profile_valid"
+    },
+    {
+      "profile_id": "local-windows-demo",
+      "readiness_assessed": false,
+      "status": "profile_valid"
+    }
+  ],
+  "actual_host": {
+    "timestamp_local": "2026-10-06 21:37:56",
+    "status": "passed",
+    "selected_target": "owner_selected_local_computer",
+    "profile": "Z:\\mvp20-split\\.test-results\\deployment-profile-install-20261006a\\actual-host\\profile.json",
+    "profile_sha256": "db528e82a1c34685530359a879aa44cbab591a2a5d6b0de12fd8d715e5fe1afe",
+    "source_installation": "Z:\\mvp20-split\\.test-results\\draft-successor-runtime-20261006a\\manifest.json",
+    "storage": {
+      "status": "passed",
+      "operations": [
+        "exclusive_create",
+        "write",
+        "file_fsync",
+        "same_directory_replace",
+        "fresh_process_hash_read"
+      ],
+      "sha256": "47d380698f7b03f0d77bdae8d9d642a0e26f90d1ae0b6d63bb5d337fc7d717a5",
+      "scope": "normal_operation_only_not_power_loss_or_backup_proof"
+    },
+    "loopback": {
+      "status": "passed",
+      "bind_host": "127.0.0.1",
+      "scope": "temporary_socket_only_not_service_auth_or_firewall_proof"
+    },
+    "preflight": {
+      "authorizes_installation": false,
+      "blockers": [],
+      "limitations": [
+        "configuration_and_read_only_observations_only",
+        "operator_storage_evidence_not_independently_validated",
+        "filesystem_durability_and_network_exposure_require_target_acceptance",
+        "no_model_request_or_spending_authorized"
+      ],
+      "observation": {
+        "accelerator": {
+          "device_count": null,
+          "status": "not_required"
+        },
+        "architecture": "x86_64",
+        "artifact_directory_exists": true,
+        "cpu_count": 24,
+        "free_bytes": 795465928704,
+        "hostname": "Workshop",
+        "limitations": [
+          "read_only_observation",
+          "durability_not_tested",
+          "network_exposure_not_tested",
+          "provider_not_contacted"
+        ],
+        "memory_bytes": 68553510912,
+        "observed_at": "2026-10-06T21:37:55-05:00",
+        "operating_system": "windows",
+        "profile_sha256": "4c370abea0e8e2f6be16e45c6ef1a698e72bff5f74fde3bfc1c04367f42e35a4",
+        "python": "3.12",
+        "storage_semantics": "unverified"
+      },
+      "status": "preflight_passed"
+    },
+    "missing_credential": {
+      "authorizes_installation": false,
+      "blockers": [
+        "missing_environment:AMPHORA_LOCAL_PREFLIGHT_TOKEN"
+      ],
+      "limitations": [
+        "configuration_and_read_only_observations_only",
+        "operator_storage_evidence_not_independently_validated",
+        "filesystem_durability_and_network_exposure_require_target_acceptance",
+        "no_model_request_or_spending_authorized"
+      ],
+      "observation": {
+        "accelerator": {
+          "device_count": null,
+          "status": "not_required"
+        },
+        "architecture": "x86_64",
+        "artifact_directory_exists": true,
+        "cpu_count": 24,
+        "free_bytes": 795465928704,
+        "hostname": "Workshop",
+        "limitations": [
+          "read_only_observation",
+          "durability_not_tested",
+          "network_exposure_not_tested",
+          "provider_not_contacted"
+        ],
+        "memory_bytes": 68553510912,
+        "observed_at": "2026-10-06T21:37:55-05:00",
+        "operating_system": "windows",
+        "profile_sha256": "4c370abea0e8e2f6be16e45c6ef1a698e72bff5f74fde3bfc1c04367f42e35a4",
+        "python": "3.12",
+        "storage_semantics": "unverified"
+      },
+      "status": "blocked"
+    },
+    "wrong_architecture": {
+      "authorizes_installation": false,
+      "blockers": [
+        "artifact_target_incompatible"
+      ],
+      "limitations": [
+        "configuration_and_read_only_observations_only",
+        "operator_storage_evidence_not_independently_validated",
+        "filesystem_durability_and_network_exposure_require_target_acceptance",
+        "no_model_request_or_spending_authorized"
+      ],
+      "observation": {
+        "accelerator": {
+          "device_count": null,
+          "status": "not_required"
+        },
+        "architecture": "x86_64",
+        "artifact_directory_exists": true,
+        "cpu_count": 24,
+        "free_bytes": 795465928704,
+        "hostname": "Workshop",
+        "limitations": [
+          "read_only_observation",
+          "durability_not_tested",
+          "network_exposure_not_tested",
+          "provider_not_contacted"
+        ],
+        "memory_bytes": 68553510912,
+        "observed_at": "2026-10-06T21:37:56-05:00",
+        "operating_system": "windows",
+        "profile_sha256": "5198ad00a2d4f2d19f76a4fe27be1878c5a7249bf7df3a9c528558668ad31bd3",
+        "python": "3.12",
+        "storage_semantics": "unverified"
+      },
+      "status": "blocked"
+    },
+    "limits": [
+      "Native Windows process profile; Linux container images are not substituted for Windows executables",
+      "Pinned Runtime wheel closure only; full demo composition belongs to BP-09.02",
+      "Disposable preflight credential is environment-only; persistent service credentials are not provisioned",
+      "Storage normal-operation check does not establish power-loss durability or backup/restore"
+    ],
+    "paid_calls": 0
+  },
+  "tests_xml_sha256": "39ce4e1711ef6b84b5b5a67fdc680413ce33479d28ea8645d832b62dc57d44f3",
+  "limits": [
+    "No service deployment, migration, backup or paid provider call",
+    "pytest is a test-only installation addition"
+  ],
+  "paid_calls": 0,
+  "scope": "BP-09.01/V1",
+  "raw": ".test-results\\deployment-profile-install-20261006a\\evidence.json",
+  "raw_sha256": "77287fb351bb681486691d5d5050d9da04608e0ba2ccecb17175f3e5c286e9d0"
+}

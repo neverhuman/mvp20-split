@@ -8,23 +8,23 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-08 closed100%; BP-09.01/B3 blocked on selected-host input.
-- Last refreshed: `2026-10-06 20:09:20` (America/Chicago).
+- Status: BP-08 closed100%; BP-09.01 closed; BP-09.02 activation next.
+- Last refreshed: `2026-10-06 21:39:19` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P8 / BP-09 - Single-Server Integrated Demo and Replacement Proof.
-- Primary active task: BP-09.01/B3 actual selected-host preflight.
-- Next task: run read-only preflight on the owner-selected host; V1 follows B3 acceptance.
-- Implementation completion: BP-09=10%,2/20; completed plans are in the archive.
-- Active focus: reconcile selected-host and provider-policy gates before deployment.
-- Blockers: actual target-host identity/access/profile remain owner decisions at their dependent gates; B1/B2 independent profile engineering is complete.
-- Acceptance posture: BP-08 synthetic engineering accepted20/20; no scientific or target-host claim.
+- Primary active task: BP-09.02 reproducible installation activation.
+- Next task: BP-09.02/B1 after bounded activation audit.
+- Implementation completion: BP-09=20%,4/20; completed plans are in the archive.
+- Active focus: reproducible nativeWindows local installation with loopback-only routing.
+- Blockers: none for local installation engineering. Provider/integrated demonstration gates remain scoped to later children.
+- Acceptance posture: BP-08 synthetic engineering accepted20/20; BP-09.01 actual local preflight accepted, full application deployment pending.
 - Active exception: none.
 
 Queued successor: [SQ-01 Scientific Quality and Iteration Views](SQ-01%20Scientific%20Quality%20and%20Iteration%20Views.md), 0%, after BP-06 owner projections and BP-07.03 proposal contracts. Preserves closed BP-05; no change to active BP-06 denominator.
 
 ## Initial Delivery Boundary
 
-Internal use and demos for the first many releases; one user and one active autonomous campaign, with concurrent tool invocations. Single-server target is DGX Spark or partner Threadripper. Keep the scientific engine general; bio-available polymers are a likely application, not a fixed implementation pathway. Human edits and human-initiated replacements apply between campaigns.
+Internal use and demos for the first many releases; one user and one active autonomous campaign, with concurrent tool invocations. Owner selected the current local computer and computer-only access for this stage; DGX Spark/Threadripper remain future targets. Keep the scientific engine general; bio-available polymers are a likely application, not a fixed implementation pathway. Human edits and human-initiated replacements apply between campaigns.
 
 Strictly isolate primary services and independently packaged tools. Use Pydantic/JSON Schema contracts, PostgreSQL-owned state, immutable artifacts, a single Graph Runner execution authority, an indexed tool universe and durable LLM proposals. Module READMEs capture the boundary conditions for independent rebuilds. K3s/Kubernetes tool replication is a proposed deployment profile; cluster selection and installation are not yet authorized implementation work.
 
@@ -32,13 +32,13 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-09.01 blocked at B3:50%,Build66.67%,Acceptance0%; parent10%,2/20. BP-08 closed100%,20/20; see [completed plans](Completed/README.md).
+BP-09.01 closed100%; BP-09.02 queued0%,Build0%,Acceptance0%; parent20%,4/20. BP-08 closed100%,20/20; see [completed plans](Completed/README.md).
 
 ## Queued Plans and Phase Mirrors
 
 | Canonical plan | Status | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Blocked: selected host | 10% | 50% | 0% | 0% | 0% | 0% | N/A |
+| [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Active | 20% | 100% | 0% | 0% | 0% | 0% | N/A |
 
 Scoped milestone fractions measure verified work within their existing delivery weight; closed-gate counts remain separate. BP-06 is archived24/24. Do not treat milestone counts as effort estimates.
 
@@ -55,7 +55,7 @@ BP-09 activation follows accepted BP-08. Completed scope stays archived; remaini
 
 | Order / ID | Completion | Proposed plan | Required predecessor gates | Bounded outcome / exit | Architecture owner |
 |---|---|---|---|---|---|
-| P8 / BP-09 | 10% | [Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Selected host/model policy; BP-05/06/07 plus BP-08 for evolutionary demo claims | Reproducible target-host deployment, model/tool eligibility, restore/reconciliation, end-to-end autonomous demo and one independently rebuilt/replaced tool; prove replicated workloads if K3s is selected | [Topology](../Architecture/System/Runtime_Topology.md), [tool services](../Architecture/Capabilities/Tool_Services.md) |
+| P8 / BP-09 | 20% | [Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Selected host/model policy; BP-05/06/07 plus BP-08 for evolutionary demo claims | Reproducible target-host deployment, model/tool eligibility, restore/reconciliation, end-to-end autonomous demo and one independently rebuilt/replaced tool; prove replicated workloads if K3s is selected | [Topology](../Architecture/System/Runtime_Topology.md), [tool services](../Architecture/Capabilities/Tool_Services.md) |
 
 This is the default sequencing, not nine permanent file-ownership buckets. Each plan owns a delivery step; later plans may refine earlier contracts with explicit compatibility evidence. BP-01 records packaging constraints early; BP-03 tests tool images/protocols locally. BP-09 integrates target-host operation rather than postponing all deployment design to the end. Synthetic fixtures/receipts stand in for unavailable scientific services until BP-06 and are labeled as such.
 
@@ -112,6 +112,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-06 21:41:09 | BP-09.01 closed100%;parent20%,4/20. Local computer/local access selected. | Actual local storage/socket/CLI and clean independent package;47isolated tests1.305s. BP-09.02 next. |
 | 2026-10-06 20:09:20 | BP-09.01 B1/B2 complete; child50%,Build66.67%,parent10%. B3 awaits selected host/access/exposure. | Strict profiles,read-only probes,policy,CLI and nonexecuting drain/restart order;59checks plus47final regressions. |
 | 2026-10-06 19:57:27 | BP-08 closed100%,20/20; BP-09 activation next. | All five audits aligned; corrected successor/recovery and exact-source images;632schemas/import guards;28final checks19.46s; zero paid calls. |
 | 2026-10-06 19:47:13 | BP-08.05/B2.01 complete;child37.5%,parent87.5%. |29correction/manifest checks; explicit new revision, old fitness/resume rejected, original ranks preserved. |
@@ -136,4 +137,3 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-06 15:04:54 | BP-08.03/B2.03b.ii complete;child48.61%,Build64.81%,parent49.72%. | 188checks; immutable reuse Research0.40/0016;622schemas/608 preserved; actual peers next. |
 | 2026-10-06 14:50:42 | BP-08.03/B2.03b.ii Research producer/evidence primitives verified; percentages unchanged. | 38checks;119statements8branches100%; scripted peers; no reuse permission yet. |
 | 2026-10-06 14:45:50 | BP-08.03/B2.03b.ii synthetic evaluator verified; percentages unchanged. | 54checks; isolated deterministic tool;608schemas/606 preserved; no paid calls. |
-| 2026-10-06 14:40:30 | BP-08.03/B2.03b.ii Runtime producer proof verified; percentages unchanged. | 32 checks; read-only canonical-success evidence;606 schemas/604 unchanged. |

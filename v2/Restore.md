@@ -1,83 +1,68 @@
 # Restore
 
-Refreshed 2026-10-06 20:09:20 (America/Chicago). Read FIRST after compaction.
+Refreshed 2026-10-06 21:41:09 (America/Chicago). Read FIRST after compaction.
 
-## Current position
+## Current checkpoint
 
-BP-08 is closed100%,20/20 and pushed as a6e06ced. All five child audits align.
-BP-09.01 B1/B2 are complete: child50%, Build66.67%, Acceptance0%; parent10%,2/20.
-Current B3 is blocked on owner target identity/access and exposure choice. The
-pending questions ask DGX Spark, partner Threadripper or local, hostname/access,
-and loopbackSSH versus authenticated privateLAN. No answer has arrived. Do not
-infer selection from elapsed time or use developer-machine proof as target proof.
-No active processes. B2 implementation is committed and pushed as33b8a370.
-After owner answer, resume B3 actual selected-host preflight. V1 independent
-installation/audit follows B3; do not skip its prerequisite.
+Owner selected CURRENT LOCAL COMPUTER and LOCAL COMPUTER ACCESS. NativeWindowsx86_64,
+Python3.12, 127.0.0.1 only. No LAN/cluster/remotehost actions needed. BP-09.01 CLOSED100%,
+Build100%,Acceptance100%,4deliveries; parent20%,4/20. Child/history archived under
+BP-09/Completed; audit docs/Audits/BP-09.01_Local_Profile_Closeout.md. Current closeout
+readycommitpush; previouspushed68bd5f66. No activeprocesses. Next BP-09.02 activation
+and reproducible localservice installation. Continueuntilneeded; no ownerblocker.
 
-## Implemented deployment boundary
+## Selected-host proof
 
-Package deploy/local, amphora-deployment0.1, standard-library only. Dev dependency,
-lock and granular deployment-preflight selector registered; production import
-guard now includes deploy packages. Dev synthetic-objectives pin repaired0.2->0.3
-at activation; independent old0.2 installation untouched.
+ROOT.test-results/local-host-preflight-20261006a/evidence.json actual selectedhost:
+profilecapacity/credential/architecture checks, exact existingRuntimewheel hashes,
+ownedlocalNTFS write/fsync/rename/freshprocesshash read, loopback socketconnect.
+Artifactroot LOCALAPPDATA/Amphora/local-v2/artifacts. No existinguserdata modified;
+only ownuniquefiles created/deleted. Normaloperation only, not powerloss/backup.
+Disposable preflighttoken env-only, providerdisabled, no paidcalls. Fullservice
+composition/credentials/auth remainBP-09.02, modelintegrationBP-09.03.
 
-profile.py: strict65536byte JSON, duplicate/unknown keys and malformed/oversized
-input reject, focused Target/Storage/Access/Provider/ArtifactCompatibility. Secrets
-are environment names only; bounded HTTPS endpoints cannot embed credentials,
-query, fragment or control characters. Provider budget integer microdollars;
-profiles only allow deny/synthetic-only egress. Canonical profile bytes bind probes.
+ROOT.test-results/deployment-profile-install-20261006a/evidence.json cleanindependent
+amphora-deployment0.1 stdlibonly installation; noPydantic/SQL/privateowners. Original
+profilebytes andCLIvalidation identical afterreplacement; actualhostproof repeated.
+47isolated tests1.305s. Evidence Selected_Local_Host.json / Independent_Profile.json
+under docs/Audits/Evidence/BP-09-Deployment. Newdev scripts verify_local_preflight.py
+andverify_deployment_profile.py. Module/devauditREADME updated. No sourcepackage change
+since prior47ownedtests4.41s; CLI actualsubprocess coverage notattributed. Readiness49/49
+stmts14/14branches,profile159/159+12/12,order17/17+6/6,observations75/82+15/16.
 
-observations.py: read-only OS/architecture/Python/CPU/memory/existing-directory/free
-space and optional5second NVIDIA query. No storage writes or provider calls.
-Foreign-platform paths skipped. Durability stays unverified. Actual developer
-Windows probe (24CPUs, memory/disk observed) is explicitly not selected-host evidence.
-readiness.py: binds profile SHA, observed host identity/freshness/capacity, artifact
-platform, selected storage policy, exposure/auth references and provider allowance.
-Passed preflight explicitly does not authorize installation or certify durability.
-replacement.py: declarative order blocks unpaused admissions, live campaigns,
-inflight attempts or pending retention; counts operator-supplied, not Runtime proof.
-__main__.py: validate/preflight/replacement-order; exits0namedpass,2rejected,3blocked.
-No installer, service control, schema migration, backup or paid request exists here.
+Archive helper now preserves pathcase on GitHub; repaired lostcasing in threeprevious
+BP08 archiveddocs. Use gitfileinventory, notPath.rglob across ignored NASvenvs.
 
-## Verification
+## BP-09.02 next boundary
 
-59profile/probe/policy/CLI/boundary checks17.14s; after final malformedUTF8/deepJSON/
-endpointcontrol handling,47owned regressions4.41s. Profile159/159statements12/12branches;
-readiness49/49+14/14;replacement17/17+6/6. Observation75/82+15/16 has platform/OS-failure
-gaps. CLI37statements10branches actually exercised in isolated subprocess but not
-attributed to parent coverage. Initial deepJSON test wrongly expected decodingfailure;
-valid nestedarray instead failed profile_fields undertestrecursionlimit; both named
-rejections now accepted, never invalidprofile acceptance. Raw failedcoverage retained.
-Evidence docs/Audits/Evidence/BP-09-Deployment/{Profile_Boundary,Read_Only_Probes,
-Readiness_Policy,CLI_Replacement_Order}.json. Latest raw coverage at ROOT.test-results/
-deployment-final-coverage-20261006b.json. No scientific/selected-host/cost claim.
+Read canonical child docs/Build Plans/BP-09/BP-09.02 Reproducible installation and
+boundaries.md. Noimplementation yet,0%. Requires repeatable isolated install/start/
+drain/stop, restrictedroles, owner-only migrations/noreset, readiness/logging,
+actual local freshinstall/dependencyfailure/fullstorage/providerunavailable gates.
+Old plan says developer builds insufficient: selecteddevelopercomputer is nowactual
+ownerchosenhost, but still require persistent fullservice composition, notfixtures.
+Likely create new separatelyowned localdeployment PostgreSQL/Qdrant volumes/config;
+DO NOT repurpose/reset existing acceptancefixture databases or overwriteoldinstalls.
+Services six: campaign_runtime,data_artifacts,capability_registry,research,knowledge,
+agent_planning. Inspect ownREADME/CLI contracts and scopedacceptance helpers before
+composition. No genericbackend/sharedprivateimports. UI pathdiscover via rg (v2/apps
+DOES NOTexist). Profilecurrentlypins Runtimewheelclosureonly, notfullmanifest.
+Providerdisabledpreflight not revocation of earlier authorizedOpenAI synthetic policy;
+no paidcalls until necessaryactualintegratedmodelgate withboundedcost.
 
-## BP-08 retained evidence
+## Stable background
 
-Parent archived docs/Build Plans/Completed/BP-08 Evolutionary Search Integration.md;
-child05/history BP-08/Completed. Audits BP-08_Evolutionary_Search_Closeout.md and
-BP-08.05_Recovery_Closeout.md. Approved additive graph.admit_draft_successor implemented
-and pushed50018014; Runtime0.65,632schemas preserved; no migration.
-
-B1 actual partialevaluation ROOT.test-results/partial-search-recovery-20261006a/http/
-evidence.json:baseline15attempts/15accepted,resumed16/15,six equivalent checkpoints,
-108uniqueconfirmedreservations. Rebuilt adapter uses public numeric kernel/SDK.
-B2 corrected successor ROOT.test-results/corrected-search-20261006b/http/evidence.json:
-30accepted/108uniqueconfirmed,oldhistoryunchanged after freshRuntime,newranks. Evaluator
-0.3 is releaseidentityfixture, same arithmetic/schema/policy. No scientificgain claim.
-Firsta failed twelve-sweep testdrain (105confirmed/3queued), helper now60passes/180s,
-diagnostics/allconfirmedrequirement retained. No productionpolicy changed.
-V1 ROOT.test-results/recovery-images-20261006b/manifest.json qualifies exactreconstructed
-source1954836b03cb4c54a847ac44ef5a7bf0d2a970336b027ba32afdca0fd52015a8 in derivedimage
-ed7fca44bd8c78cecbce03bac1a0aedeba43e4626027c0f1dea51f8dedf96fed; evaluator0.3 image
-b6d73b31058d358a5a2a13e44979e8b6e3a6acd06260670226a1b2570f1135e3. OfflineLinuxamd64
-only; WindowsHTTP transport is separate. NASbindmount unavailable, reviewed descriptors
-copied into stopped networknone testcontainer; previousfailedimageoutput retained.
+BP08closed20/20,pusheda6e06ced; approveddraftsuccessorRuntime0.65 is50018014.632schemas,
+Runtime0028,Planning0020,Data0012,Research0016. Numeric0.5,evaluatorcurrent0.3 (identity
+fixture,samearithmetic),old0.2preserved. Actualpartial/correction/image proofs under
+ROOT.test-results/{partial-search-recovery-20261006a,corrected-search-20261006b,
+recovery-images-20261006b}; source audits in docs/Audits. No scientificgain/Rustparity/
+ARM/fullservice deployment claim. Historical details in closedplans,notthishandoff.
 
 ## Operating rules
 
 WorkspaceZ:/mvp20-split/v2,repo parent;v1read-only. Read v2/AGENTS.md before resuming.
-Continueuntilneeded persists; current real missing input is selectedhost/access/exposure.
+Continueuntilneeded persists; owner selected localcomputer/localaccess; that blocker is resolved.
 No source/test/dev/README edits while any build/test/liveprocess active; poll actualexit.
 Set PYTHONUTF8=1 each exec; devPython v2/dev/.venv/Scripts/python.exe;uv v2/.venv/Scripts/uv.exe.
 PYTHONPATH=Z:/mvp20-split/v2/dev. Pytest -c v2/dev/pyproject.toml --import-mode=importlib.

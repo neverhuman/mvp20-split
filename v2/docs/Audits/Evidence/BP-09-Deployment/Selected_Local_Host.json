@@ -1,0 +1,141 @@
+{
+  "timestamp_local": "2026-10-06 21:36:46",
+  "status": "passed",
+  "selected_target": "owner_selected_local_computer",
+  "profile": "Z:\\mvp20-split\\.test-results\\local-host-preflight-20261006a\\profile.json",
+  "profile_sha256": "36dbf66665ef10903d68550867fa9730b467ece69d06a221c1f2b2f8f4cf1bde",
+  "source_installation": "Z:\\mvp20-split\\.test-results\\draft-successor-runtime-20261006a\\manifest.json",
+  "storage": {
+    "status": "passed",
+    "operations": [
+      "exclusive_create",
+      "write",
+      "file_fsync",
+      "same_directory_replace",
+      "fresh_process_hash_read"
+    ],
+    "sha256": "ffead51cb211376735c33eafd9a80eb53c9bf8f463033dede6253c29d9c22899",
+    "scope": "normal_operation_only_not_power_loss_or_backup_proof"
+  },
+  "loopback": {
+    "status": "passed",
+    "bind_host": "127.0.0.1",
+    "scope": "temporary_socket_only_not_service_auth_or_firewall_proof"
+  },
+  "preflight": {
+    "authorizes_installation": false,
+    "blockers": [],
+    "limitations": [
+      "configuration_and_read_only_observations_only",
+      "operator_storage_evidence_not_independently_validated",
+      "filesystem_durability_and_network_exposure_require_target_acceptance",
+      "no_model_request_or_spending_authorized"
+    ],
+    "observation": {
+      "accelerator": {
+        "device_count": null,
+        "status": "not_required"
+      },
+      "architecture": "x86_64",
+      "artifact_directory_exists": true,
+      "cpu_count": 24,
+      "free_bytes": 795479523328,
+      "hostname": "Workshop",
+      "limitations": [
+        "read_only_observation",
+        "durability_not_tested",
+        "network_exposure_not_tested",
+        "provider_not_contacted"
+      ],
+      "memory_bytes": 68553510912,
+      "observed_at": "2026-10-06T21:36:44-05:00",
+      "operating_system": "windows",
+      "profile_sha256": "b9ab628b43982a4a1192dc57a59623549a38ce2e7f5c0fb8a6c41fcda522176c",
+      "python": "3.12",
+      "storage_semantics": "unverified"
+    },
+    "status": "preflight_passed"
+  },
+  "missing_credential": {
+    "authorizes_installation": false,
+    "blockers": [
+      "missing_environment:AMPHORA_LOCAL_PREFLIGHT_TOKEN"
+    ],
+    "limitations": [
+      "configuration_and_read_only_observations_only",
+      "operator_storage_evidence_not_independently_validated",
+      "filesystem_durability_and_network_exposure_require_target_acceptance",
+      "no_model_request_or_spending_authorized"
+    ],
+    "observation": {
+      "accelerator": {
+        "device_count": null,
+        "status": "not_required"
+      },
+      "architecture": "x86_64",
+      "artifact_directory_exists": true,
+      "cpu_count": 24,
+      "free_bytes": 795479523328,
+      "hostname": "Workshop",
+      "limitations": [
+        "read_only_observation",
+        "durability_not_tested",
+        "network_exposure_not_tested",
+        "provider_not_contacted"
+      ],
+      "memory_bytes": 68553510912,
+      "observed_at": "2026-10-06T21:36:45-05:00",
+      "operating_system": "windows",
+      "profile_sha256": "b9ab628b43982a4a1192dc57a59623549a38ce2e7f5c0fb8a6c41fcda522176c",
+      "python": "3.12",
+      "storage_semantics": "unverified"
+    },
+    "status": "blocked"
+  },
+  "wrong_architecture": {
+    "authorizes_installation": false,
+    "blockers": [
+      "artifact_target_incompatible"
+    ],
+    "limitations": [
+      "configuration_and_read_only_observations_only",
+      "operator_storage_evidence_not_independently_validated",
+      "filesystem_durability_and_network_exposure_require_target_acceptance",
+      "no_model_request_or_spending_authorized"
+    ],
+    "observation": {
+      "accelerator": {
+        "device_count": null,
+        "status": "not_required"
+      },
+      "architecture": "x86_64",
+      "artifact_directory_exists": true,
+      "cpu_count": 24,
+      "free_bytes": 795479523328,
+      "hostname": "Workshop",
+      "limitations": [
+        "read_only_observation",
+        "durability_not_tested",
+        "network_exposure_not_tested",
+        "provider_not_contacted"
+      ],
+      "memory_bytes": 68553510912,
+      "observed_at": "2026-10-06T21:36:46-05:00",
+      "operating_system": "windows",
+      "profile_sha256": "5594d7a0100aeb0d611d7758b0f83867d1bf0c476924dd62982354c3094b1d66",
+      "python": "3.12",
+      "storage_semantics": "unverified"
+    },
+    "status": "blocked"
+  },
+  "limits": [
+    "Native Windows process profile; Linux container images are not substituted for Windows executables",
+    "Pinned Runtime wheel closure only; full demo composition belongs to BP-09.02",
+    "Disposable preflight credential is environment-only; persistent service credentials are not provisioned",
+    "Storage normal-operation check does not establish power-loss durability or backup/restore"
+  ],
+  "paid_calls": 0,
+  "scope": "BP-09.01/B3",
+  "raw": ".test-results\\local-host-preflight-20261006a\\evidence.json",
+  "raw_sha256": "db9a49c34d79679bb1e6cc3ef9f6ea6c8af90cb6ef4c44fd9878114a3049cd9d"
+}
