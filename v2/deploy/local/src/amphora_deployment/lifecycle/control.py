@@ -68,6 +68,8 @@ class ControlHandler(BaseHTTPRequestHandler):
         record = {"owners": self.server.supervisor.status()}
         if self.server.supervisor.workers.slots:
             record["workers"] = self.server.supervisor.workers.status()
+        if self.server.supervisor.access.bindings:
+            record['tool_access'] = self.server.supervisor.access.status()
         self._respond(200, record)
 
     def do_POST(self):
@@ -84,6 +86,8 @@ class ControlHandler(BaseHTTPRequestHandler):
                 result = operation(parts[2])
             elif len(parts) == 4 and parts[:2] == ["", "workers"] and parts[3] in {"start", "quiesce", "recover", "force-stop"}:
                 result = self.server.supervisor.worker_command(parts[2], parts[3])
+            elif len(parts) == 4 and parts[:2] == ['', 'tool-access'] and parts[3] in {'start', 'restart', 'drain'}:
+                result = self.server.supervisor.access_command(parts[2], parts[3])
             else:
                 self._respond(404, {"error": "control_route_unknown"})
                 return

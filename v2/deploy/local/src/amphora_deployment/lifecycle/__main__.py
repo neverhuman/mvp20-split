@@ -23,6 +23,8 @@ def main():
     parser.add_argument("--owner")
     parser.add_argument("--workers-manifest", type=Path)
     parser.add_argument("--worker")
+    parser.add_argument('--tool-access-manifest', type=Path)
+    parser.add_argument('--tool-access', choices=['runtime', 'artifact'])
     args = parser.parse_args()
     try:
         routes = Routes.ensure(args.root) if args.action == "serve" else Routes.load(args.root)
@@ -40,7 +42,10 @@ def main():
             token = control_token(args.root, create=True)
             from ..workers.configuration import load_workers
             workers = {} if args.workers_manifest is None else load_workers(args.workers_manifest, bindings)
-            supervisor = Supervisor(bindings, LifecycleEvents(args.root / "logs"), workers=workers)
+            from ..tool_access.configuration import load_access
+            access = {} if args.tool_access_manifest is None else load_access(args.tool_access_manifest,
+                LocalState.snapshot(args.root)['deployment_id'], routes, bindings)
+            supervisor = Supervisor(bindings, LifecycleEvents(args.root / "logs"), workers=workers, access=access)
             # Serving holds the operation lease, excluding provisioning/migrations.
             # Control clients read atomic snapshots and never take this writer lease.
             with LocalState(args.root):
@@ -52,11 +57,18 @@ def main():
                     try:
                         supervisor.workers.force_stop()
                     finally:
-                        for process in supervisor.processes.values():
-                            process.force_stop()
+                        try:
+                            supervisor.access.close()
+                        finally:
+                            for process in supervisor.processes.values():
+                                process.force_stop()
             return 0
         if args.action in {"status", "shutdown"}:
             path = "/" + args.action
+        elif args.tool_access is not None:
+            if args.owner is not None or args.worker is not None or args.action not in {'start', 'restart', 'drain'}:
+                parser.error('invalid tool access command')
+            path = '/tool-access/' + args.tool_access + '/' + args.action
         elif args.worker is not None:
             from ..workers.recipes import NATIVE_RECIPES
             if args.owner is not None or args.worker not in NATIVE_RECIPES or args.action not in {"start", "quiesce", "recover", "force-stop"}:

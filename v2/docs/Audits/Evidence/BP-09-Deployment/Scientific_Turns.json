@@ -1,0 +1,70 @@
+{
+  "timestamp_local": "2026-10-07 01:46:26",
+  "status": "passed",
+  "tests": 189,
+  "installation": {
+    "timestamp_local": "2026-10-07 01:45:52",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-deployment",
+    "forbidden_implementations": [
+      "amphora_campaign_runtime",
+      "amphora_agent_planning",
+      "amphora_data_artifacts",
+      "sqlalchemy",
+      "pydantic"
+    ],
+    "packages": {
+      "amphora-deployment": "0.5.0"
+    },
+    "wheels": {
+      "amphora_deployment-0.5.0-py3-none-any.whl": "f622a903994a8830baedc1c54ffb60ee1836012973d52a062646f3110f7490e1"
+    }
+  },
+  "container_turns": {
+    "timestamp_local": "2026-10-07 01:46:26",
+    "status": "passed",
+    "image_id": "sha256:7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+    "cases": [
+      {
+        "variant": "lost_create",
+        "container_id": "c818f82d213326776d6812e464ef41080f1359e1ebe70bf9c26e0863d95a4ddf",
+        "tool_exit_code": 3,
+        "single_create_and_start": true,
+        "upstream_requests": 1,
+        "same_turn_recovered": true,
+        "exited_container_removed_without_volumes": true
+      },
+      {
+        "variant": "lost_start",
+        "container_id": "3f9f870d836d929b29f56fdeea5102f875cd330fd844684c0043578a007a3ba7",
+        "tool_exit_code": 3,
+        "single_create_and_start": true,
+        "upstream_requests": 1,
+        "same_turn_recovered": true,
+        "exited_container_removed_without_volumes": true
+      }
+    ],
+    "limits": [
+      "Actual Linux evolution0.5/SDK0.2 through managed TLS; synthetic unavailable upstream",
+      "Controller reply loss injected after real Docker operations; no actual daemon outage",
+      "No owner eligibility, campaign, scientific result or model call",
+      "Responsive controller integration, startup adoption and migration guard remain subsequent work"
+    ]
+  },
+  "rebuild_wheels_identical": true,
+  "rebuild_peer": ".test-results/local-scientific-install-20261007d/owner",
+  "source_coverage": {
+    "tests": 28,
+    "seconds": 2.43,
+    "statements": 360,
+    "statements_covered": 328,
+    "branches": 48,
+    "branches_covered": 43,
+    "percent_rounded": 90,
+    "gaps": [
+      "Docker successful CLI paths exercised separately by actual image proof, outside pure coverage",
+      "TLS thread-start/serve-error cleanup and selected alternate states"
+    ]
+  }
+}

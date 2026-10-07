@@ -100,3 +100,39 @@ def test_forced_worker_stop_is_failure_not_graceful_quiescence():
         host.drain('runtime')
     host.worker_command('runtime-coordinate', 'recover')
     host.drain('runtime')
+
+
+def test_worker_then_transport_then_api_shutdown_order():
+    class Listener:
+        def __init__(self):
+            self.state = 'running'
+        def status(self):
+            return {'state': self.state}
+        def drain(self):
+            self.state = 'drained'
+            return self.status()
+        def require_stopped(self):
+            if self.state != 'drained':
+                raise ProfileError('tool_tls_requires_drain')
+    class Access:
+        def launch(self):
+            return Listener()
+    worker = Worker()
+    host = Supervisor({'runtime': Binding()}, None, workers={'runtime-coordinate': worker},
+                      access={'runtime': Access()})
+    host.start('runtime')
+    with pytest.raises(ProfileError, match='tool_tls_requires_running'):
+        host.worker_command('runtime-coordinate', 'start')
+    host.access_command('runtime', 'start')
+    host.worker_command('runtime-coordinate', 'start')
+    host.tick()
+    with pytest.raises(ProfileError, match='worker_requires_quiescence'):
+        host.access_command('runtime', 'drain')
+    host.worker_command('runtime-coordinate', 'quiesce')
+    worker.turn.code = 0
+    host.tick()
+    with pytest.raises(ProfileError, match='tool_tls_requires_drain'):
+        host.drain('runtime')
+    host.access_command('runtime', 'drain')
+    host.drain('runtime')
+    host.close()

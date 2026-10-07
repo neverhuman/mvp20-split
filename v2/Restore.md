@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed 2026-10-07 01:20:30 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 01:47:52 (America/Chicago). Read FIRST after compression.
 
 ## Active task
 
@@ -131,3 +131,51 @@ devlock/pins/sourceinventory updated. Native evidence is only a third of B1.3b w
 child15.28%,Build20.37%,Acceptance0%; parent43.06%,(8+11/18)/20,eightclosedgates.
 Native checkpoint ready for commit/push after scoped lint/boundary checks; resume directly
 with managed TLS/scientific container lifecycle. All tests/builds/probes have exited.
+
+## Verified managed TLS/container primitives
+
+Deployment0.5 source/lock/inventory updated; independent c189tests and two
+actual Linux evolution0.5/SDK0.2 lostcreate/loststart cases passed. Fresh d rebuilt wheel matches c.
+ROOT.test-results/local-scientific-install-20261007c/owner isqualified, d rebuiltidentical.
+Scientific_Turns.json retainsevidence. All checks/builds/probes exited. No keys,
+modelcalls, campaigns, actualownereligibility oracceptedmanifestchanges. Source96
+TLS/worker/lifecycle tests23.41s;20scientifictests1.00s; final28tests2.43s coverage
+328/360statements43/48branches90%. Dockeractualsuccesspathsoutsidepurecoverage,
+TLSthreadstartup/errorcleanupgaps. B1.3b remains33.33%; no extra deliverycredityet.
+
+Implemented tool_access/managed.py AccessListener/AccessGroup and optional
+local-tool-access-v1 sidecar; workers -> TLS -> API guard; asynclistenerdrainwaits
+acceptedrequests. CLI --tool-access-manifest and --tool-access runtime|artifact.
+scientific_workers profiles.py closedfiveSDKprofiles exactimage/config/certificate;
+engine.py5secDockerCLI withallowlistedmetadataonly andfouridentitylabels; bounded,
+nonroot,read-only,no-restart/no-logscontainers. turn.py/journal.py durableintent,
+created,starting,started,exited,released. Starting persisted BEFOREsoleDockerstart;
+ambiguousstarting neverrestarted. Lostcreate reusesoriginalname, missingoriginal
+blocks. Onlyexactobservedexitedcontainerremovedwithoutvolumes. Publiccertmountonly.
+
+Drivers dev/verify_scientific_container_turns.py and verify_scientific_turn_installation.py.
+ActualprobeusestwoTLSlisteners andsynthetic503upstream, expectedtoolCLIexit3, exactlyone
+create/start/upstreamrequest. Thisiscontainerrecoveryproof, NOTscience/eligibility.
+EachprobehasprivateLocalStateunderphysicalNTFSbundle scientific-install-20261007{a,b};
+acceptedinstallationstate/vaultunchanged. Actualproofcontainersremoved, allthreadsended.
+
+Final TLSaggregatecleanuprepair verified:bothlistenersattemptedevenifonefails.
+Scoped lint/boundary checks passed; latest git commit owns thisverifiedcheckpoint.
+Continue B1.3b responsive containerintegration below. Previousnativecheckpoint3b16e016pushed.
+
+NEXT DESIGN (notimplemented): separate scientific ContainerGroup/Slot with background
+monitor threadperclosedtoolbinding, cachedstatussoDocker5secCLIneverblockscontrolthread.
+AcceptedturnbusyflagsetBEFORElaunch; quiesce disablesnewturns andwaitsoriginalacceptedturn
+(includingcreate/start). Anyuncertainoperationlatchesfault; explicitrecoverresumesoriginal
+journal (startingneverrestarts). Onstartup readjournals andadoptpendingstarting/started/
+exitedBEFOREallowingAPI/TLSshutdown. Preparedintent/created hasnoexecutionyet; subsequent
+startreusesoriginal. Unexpectedcontrollerexit detachesboundedmonitor, Dockercontinues;
+neverclaimforcedWindowsjobclosure killedcontainers. Needmigrationguard scanningactive
+scientific-worker journals: failclosedforunresolvedturnsbeforeownerSQLmigration, evenwhen
+control/APIportsarestopped. Constructor/bindingsmustnotchangeLocalStateauthority.
+Journalpaths caninclude fullbindingSHA under installation/scientific-workers; thisallows
+newbetweencampaignconfigurationwithoutreinterpretingoldturns. Oncompositionloadreject
+unconfiguredpendingoldbindings. Oldreleasedjournalscanremainmetadata; no volumedatachanges.
+NativeWorkerGroup remainsfourrecipes; sciencegroupseparateandallguardedbySupervisor.
+Exposeonlyreviewedstart/quiesce/recoverinitially; do notinventunsafeambiguousDockerforce
+restart/termination semantics. Actualnative/liveprovider/scientificE2Estillfuture.

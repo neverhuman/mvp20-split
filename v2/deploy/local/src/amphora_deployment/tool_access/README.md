@@ -25,8 +25,14 @@ never echo payloads, headers, credentials or exception tracebacks.
 Eight connections by default, at most16, with handshake/read timeouts and30-second forwarding
 deadline. Bodies/responses are capped16MiB, conflicting lengths/chunked input are rejected.
 One request per connection; accepted threads are non-daemon and server_close waits for them.
-That transport drain is not worker/campaign quiescence. Runtime process configuration and
-managed-worker lifecycle integration are the next B1.3 units, not yet implemented here.
+That transport drain is not worker/campaign quiescence. Optional local-tool-access-v1
+configuration binds the original deployment identity and unique TLS ports to persisted
+Runtime/Data loopback routes. Controller-owned AccessListeners start explicitly, drain
+asynchronously and wait for accepted responses. Supervisor enforces workers -> TLS -> APIs
+shutdown order and quiesces workers when a configured TLS listener becomes unavailable.
+Repeated start retains the listener; restart requires its actual exit and rechecks identity.
+The controller keeps its installation writer lease through listener cleanup. No scientific
+container lifecycle is implicitly started by opening these transports.
 
 Container trust must explicitly mount the public certificate and select SSL_CERT_FILE. Never
 disable validation or relax SDK HTTP restrictions. Certificate expiry/replacement needs a new
