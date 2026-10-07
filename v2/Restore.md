@@ -1,33 +1,42 @@
 # Restore
 
-Refreshed 2026-10-07 16:08:18 America/Chicago. Read FIRST after compression.
+Refreshed 2026-10-07 17:33:24 America/Chicago. Read FIRST after compression.
 
 ## Current handoff
 
-User steering 2026-10-07 16:06:17: wants to view local UI. LR01 fixed3trial series FINISHED, all3campaigns15invocations, drains0.
-UIlaunch session48269, folder ROOT.test-results/demo-20261008/sessions/20261007-160723-32252bd9.
-BrowserOPENrequested, ready.json confirmsREADY; rootHTTP200 verified.
-Leave session48269 running for user; automatic2hour shutdown. To stop gracefully,
-create STOP in that exact sessiondirectory and poll48269 for7ownerdrains.
-Origin http://127.0.0.1:57013. UI owns same restored deployment; do not start worker
-diagnostics while user is viewing. This is an explicit UI-serving interruption;
-resume LR01R2 diagnostic after demo services are stopped. No model calls.
+Owner steering 2026-10-07 17:33:24: stop worker work and focus on UI. NEW primary plan
+ docs/Build Plans/UI-01 Research Workspace Overhaul.md. Planning only this checkpoint;
+no UI code changed. UI01=0%, Build0%, Verification0%; G0/G1/N1/N2/N3/V1 all0.
+G0 graph review/design is prerequisite, excluded from implementation denominator;
+G1/N1/N2/N3/V1 are five equal delivery gates. NEXT G0.1 actual-screen graph review,
+then G0.2 layout/data boundary and acceptance spec. Connected graph G1 must precede
+navigation: research question -> approach -> run -> results -> next iteration.
 
+Owner reported disconnected block of nodes. Source/screenshots confirm Monitor
+initialtopology=false, emptyedges, fixed4column positions; NavigationPane also grid.
+Old browser checks assertededgeDOMpresence, not readable topology. Openfinding in
+ArchitectureDrift; prior closedplans retain historical scopedcredit, no UIreadinessclaim.
+Newplan includes real topology layout/branchjoin/nestedgrouping/fit/highlight, secondary
+inventorytable; later coherent question/candidate/claim context and nextcampaign flow.
+Futurefeedback extends explicit scope/denominator; no empty placeholder childplans.
 
-Demo2026-10-08 11am CT, internal nontechnical colleagues. DEMO-01 delivered100%;
-presenter acceptance pending. Frozen sourceStudio0.16.1 unchanged. SQ-01 CLOSED100%,
-Build100/Verification100; V1a/V1b/V1c each100. Closed plan/history under
- docs/Build Plans/Completed. Closeout docs/Audits/SQ-01_Quality_Closeout.md.
-NEXT LR-01 R2 RuntimeOWN read-only scoped command receipt diagnosis. R1 complete.
-Baseline ROOT.test-results/lr01-managed-baseline-20261007a all3campaignscompleted;
-trial1 completed snapshot evolution-varyexit3. Ledger explicitly differentiates
-campaign success from workerfault. Need receipts before claiming terminalclaimcause.
-Older active-run failures unresolved. R2 no completioncredit.
-LR01=25%, Build33.33%, Acceptance0%. Exactly3trials600executionseconds each;
-stopseries if cleanup fails. Actual installedDeployment0.15 finalb and frozen
-original ownerlocks; rebuiltmaterials. No paidcall/reset/demoassetchange.
-UI-R01 queued separately for original-focus-c unexplained feedback read. No owner
-approval pending or paid calls. DemoUI sevenownerhosts serving; no testjobs running. Lastpushedf81351eb; SQcloseout committed. Do not stop at commit.
+LR01 PAUSED25%, Build33.33%, Acceptance0%, R1=100/R2R3V1=0 by ownerdirection.
+Resume R2 RuntimeOWN scoped receipt diagnosis only after UIpriorityreleased, NOT
+when viewingends. Baseline ROOT.test-results/lr01-managed-baseline-20261007a:
+3campaigns completed15invocations, allownersdrained, no paidcalls. Trial1 terminal
+snapshot evolution-varyexit3; campaigncompletion isnotfault-free lifecycle. Earlier
+active-run failures unresolved. UI-R01 feedbackdiagnostic queued; pullforward ifblocksUI01.
+
+Demo session48269 was launched2026-10-07 16:07:23 for2hours; lastverifiedREADY HTTP200
+and browseropen requested. SessionfolderROOT.test-results/demo-20261008/sessions/
+20261007-160723-32252bd9; origin http://127.0.0.1:57013. Do not restart/stop while
+owner views it without coordinating. Gracefulstop: create STOP in exactsessionfolder,
+pollsession for7ownerdrains. Frozenassets unchanged; no worker/modelcalls fromlauncher.
+Do not infer current liveness after the automatic2hour expiry; check first.
+
+Demo2026-10-08 11amCT internalnontechnical. SQ01closed100%, Build100/Verification100,
+V1aV1bV1c100. Plan/history in docs/Build Plans/Completed; auditSQ-01_Quality_Closeout.md.
+Lastpushed62ea4966 beforethisUIplanningcommit. MBT/index/LR01/drift synchronized.
 
 V1b .test-results/sq01-followup-replacement-20261007a passed two independent locked
 Studio installs286tests each, schema regeneration and actualownerbrowser1440/390

@@ -1,15 +1,16 @@
 # Architecture Drift
 
 - Status: BP-01 through BP-09 closed/audited; named successor findings remain.
-- Last refreshed: `2026-10-07 15:41:38` (America/Chicago).
+- Last refreshed: `2026-10-07 17:33:24` (America/Chicago).
 - Scope: unresolved v2 design/implementation alignment and scoped successor boundaries.
 - Active focus: selected-host integration and named scientific/UI successor limits.
-- Next gate: LR-01 worker diagnostics; UI-R01 retains feedback-read follow-up.
+- Next gate: UI-01 graph review; LR-01 paused, UI-R01 retains feedback-read follow-up.
 
 ## Active Findings
 
 | Finding | Owner / trigger | Disposition |
 |---|---|---|
+| Default graph is a disconnected inventory; authored layout ignores dependencies | [UI-01](../Build%20Plans/UI-01%20Research%20Workspace%20Overhaul.md), G0/G1 first | Owner review found a block of unconnected nodes. Source confirms default empty edges and four-column placement; authored view also uses a fixed grid. Existing edge-presence checks did not establish legible topology. Open usability defect; no fix claimed. |
 | Intermittent feedback read during demo rehearsal | [UI-R01](../Build%20Plans/UI-R01%20Feedback%20Read%20Diagnostics.md) | original-focus-c reported unverified records; later instrumented d passed8 Research reads200. Cause unresolved. Offline demo fallback provided; no reliability repair claim. See DEMO-01 audit. |
 | Intermittent local scientific attempt expiry | [LR-01](../Build%20Plans/LR-01%20Local%20Worker%20Reliability.md), queued after BP-09 handoff | Live and no-model six-owner runs retain expired/failed tool outcomes. Separate ten-connection regression proved default8 insufficient; Deployment0.10 uses existing16 ceiling and pressure counters. Independent279tests, original three-owner and six-owner no-model15/6/3/15 controls pass with zero denials. Historical expiry cause is not established; retain failures; bounded integrated/recovery gates now complete. BP-09.04 first rebuilt-evaluator campaign recurred as worker exit2 with12successful completions and1cancelled attempt, no completion; exact cause remains unproven. Second run failed unchanged collector with remaining lease/deadline time. Third reconstructed-tool campaign and337reference audit pass. New transport counters and750-read control do not establish cause; no kernel rejection or transport cause inferred from exit code alone. BP-09.05 must name a reliability successor; no operational-soak or unattended-reliability claim. Deployment worker owner investigates recurrence. [Evidence](Evidence/BP-09-Deployment/TLS_Capacity.json). |
 | Scientific and target-host claims exceed developer fixture proof | BP-07 model evaluation, BP-08 scientific search, BP-09 selected deployment; SQ-01 quality views | Named future gates; synthetic receipts/vectors and completed campaigns do not establish science; broader scientific deployment and K3s remain unproven |

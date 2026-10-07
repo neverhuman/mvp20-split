@@ -8,16 +8,16 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-01 through BP-09 closed; SQ-01 closed; LR-01 R2 diagnosis active.
-- Last refreshed: `2026-10-07 16:08:18` (America/Chicago).
+- Status: UI-01 primary active; LR-01 paused by owner direction; BP-01 through BP-09 and SQ-01 remain closed.
+- Last refreshed: `2026-10-07 17:33:24` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
-- Current priority: LR-01; DEMO-01 bounded walkthrough delivered for2026-10-08 11:00:00 CT.
-- Primary active task: LR-01 R2 receipt diagnosis; paused while owner views frozen demo.
-- Next task: bounded no-model worker diagnosis.
-- Implementation completion: SQ-01 closed100%, Build100%, Verification100%; BP-09 closed100%,20/20.
-- Blockers: diagnostic runs share the UI deployment; resume after the owner finishes viewing. Scientific corpus remains TBA.
-- Acceptance posture: bounded local demo/recovery/replacement complete; intermittent worker failures assigned LR-01, no soak claim.
-- Active exception: deadline demo delivery complete; presenter acceptance pending, qualification assets frozen.
+- Current priority: [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md); graph review first, then research workflow/navigation.
+- Primary active task: UI-01/G0.1 actual default/authored graph review on the retained campaign.
+- Next task: G0.2 graph design and acceptance specification, then G1 connected graph implementation before navigation phases.
+- Implementation completion: UI-01=0%, Build0%, Verification0%; LR-01 paused25%, Build33.33%, Acceptance0%.
+- Blockers: none for UI review. Missing producer contracts must be scoped before dependent UI implementation.
+- Acceptance posture: owner review exposed an unusable default graph and grid layout; previous bounded checks do not establish research-workspace usability.
+- Active exception: owner reprioritized UI on2026-10-07. Preserve LR-01/R2 receipt diagnosis; do not resume it automatically when the demo closes.
 
 ## Initial Delivery Boundary
 
@@ -29,15 +29,19 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-LR-01 is active25%, Build33.33%, Acceptance0%; SQ-01 closed100%. Completed plans
-are in the [completed index](Completed/README.md); their percentages stay closed.
+UI-01 is the primary plan at0%, Build0%, Verification0%. G0 graph review/design
+is a prerequisite and earns no implementation credit. G1/N1/N2/N3/V1 are five equal
+delivery gates. Phase mirror: G0=0%, G1=0%, N1=0%, N2=0%, N3=0%, V1=0%.
+LR-01 is paused at25%, Build33.33%, Acceptance0%; R1=100%, R2/R3/V1=0%.
+Completed plans remain in the [completed index](Completed/README.md).
 
 ## Prioritized Successor Queue and Phase Mirrors
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
-| 1 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Active R2 | 25% | 33.33% | 0% | BP-09 accepted; bounded no-model diagnostic specification |
-| 2 | [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md) | Queued | 0% | 0% | 0% | LR-01 priority; bounded read diagnostic |
+| 1 | [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md) | Primary active G0 review | 0% | 0% | 0% | Owner direction; bounded activation review recorded |
+| 2 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Paused by owner; R2 resume point | 25% | 33.33% | 0% | UI priority released; same-host diagnostic window |
+| 3 | [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md) | Queued; pull forward if it blocks UI-01 | 0% | 0% | 0% | Bounded read diagnostic and activation review |
 
 The owning tracker controls exact task/percentages; MBT controls priority and
 mirrors current state. Complete each bounded gate before dependent implementation.
@@ -98,6 +102,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-07 17:33:24 | UI-01 planned and prioritized0%; graph review first, then research workflow. LR-01 paused25%. | Owner-reported graph failure; [UI-01](UI-01%20Research%20Workspace%20Overhaul.md) owns six ordered phases with G0 design separate from implementation. |
 | 2026-10-07 14:49:53 | SQ-01 C2 complete; overall75%, Build90%, Verification66.67%. | Runtime175 tests; retained-only outcomes and old recipe bytes preserved. B3 proposal UI next. |
 | 2026-10-07 14:02:37 | SQ-01 C2b complete; overall69.44%, Build94.44%, Verification66.67%. | 242 compatibility/SQL/recovery tests and5 final checks; C2=66.67%; Runtime next. |
 | 2026-10-07 13:21:09 | SQ-01 C2a complete; overall63.89%, Build76.67%, Verification66.67%. | 153 domain/context/output tests; C2=33.33%, provider integration next. |
@@ -122,4 +127,3 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-07 05:22:21 | BP-09.03/B1.4b complete;child22.92%,parent44.58%. | Actual owner context/model abstention plus scientific15/6/3/15 and immutable restart; three calls totalUSD0.0520185; browser trace next. |
 | 2026-10-07 04:24:49 | BP-09.03/B1.4a complete;child20.83%,parent44.17%. | Planning0.102 independent120tests; actual model-to-Runtime parameter7, reportedUSD0.01743525; immutable restart readback; scientific/context composition next. |
 | 2026-10-07 03:57:07 | BP-09.03/B1.3c complete;child18.75%,parent43.75%. | Public Data/Research/Knowledge records, immutable snapshot rebuild and restart in isolated install; scope/conflict denials; zero model calls. |
-| 2026-10-07 03:47:10 | BP-09.03/B1.3b complete;child16.67%,parent43.33%. | Deployment0.9 independent276tests,15 canonical completions/confirmed outputs, identical rebuilt wheel; actual owner records next. |

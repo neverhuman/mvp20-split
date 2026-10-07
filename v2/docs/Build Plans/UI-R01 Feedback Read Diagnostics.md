@@ -3,7 +3,7 @@
 ## Canonical tracker
 
 - Refreshed: 2026-10-07 15:52:00 (America/Chicago).
-- Status: queued; activation audit required after LR-01.
+- Status: queued; activation audit required; pull forward if the finding blocks a UI-01 gate.
 - Completion: 0%; Diagnosis0%, Repair0%, Verification0%; three equal deliveries.
 - Owner: Studio feedback transport/page model and local gateway, with Research owning records.
 - Current task: none. Next gate: D1 bounded reproduction specification.

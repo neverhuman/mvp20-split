@@ -2,12 +2,12 @@
 
 ## Canonical tracker
 
-- Last refreshed: `2026-10-07 16:08:18` (America/Chicago).
+- Last refreshed: `2026-10-07 17:33:24` (America/Chicago).
 
-- Status: active R2 diagnostic baseline. Owner: Deployment/SDK transport diagnostics, with Runtime retaining acceptance authority.
+- Status: paused by owner direction for UI-01; R2 diagnostic position preserved. Owner: Deployment/SDK transport diagnostics, with Runtime retaining acceptance authority.
 - Completion: **25%**, 1/4 deliveries; Build33.33%, Acceptance0%.
 - Prerequisite: BP-09 final handoff; activation audit and MBT priority selection.
-- Current task: R2 receipt-level fault isolation; baseline complete. Paused while owner views local UI. Next gate: evidence-supported isolation/repair.
+- Current task: R2 receipt-level fault isolation; baseline complete. Paused for UI-01 overhaul priority. Next gate: evidence-supported isolation/repair.
 - Scope: explain retained intermittent local worker failures and qualify a bounded repair.
 - Blockers: no owner decision for existing local diagnostic scope; paid model calls are unnecessary.
 
@@ -82,4 +82,4 @@ Next: Runtime-owned read-only diagnostic of exact scoped command receipts for th
 three trials and retained earlier failures; distinguish terminal claim rejection
 from active-attempt failure. Do not query Runtime SQL from dev/another service.
 Owner requested local UI; serve the frozen demo after the series drains. This
-resource interruption preserves R2 position; resume when the demo is stopped.
+resource interruption preserves R2 position; resume after UI-01 priority is released, not automatically when the demo stops.
