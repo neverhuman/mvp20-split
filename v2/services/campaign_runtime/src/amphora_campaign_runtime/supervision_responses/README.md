@@ -16,3 +16,11 @@ No SQL, HTTP, provider invocation, live source grant or execution acceptance is 
 
 
 Exact planning.checkpoint-draft captures are parsed as CheckpointDraft only with the new schema pin and explicit checkpoint request. Cut, duplicate concrete field identities, action, declaration digest and typed scopes are checked before immutable recording. No checkpoint seed or field-policy authority is inferred from a capture; supervision_effects.select_fields performs the separate pure selection check, and SQL acceptance remains unimplemented.
+
+SQ-01/C2c parses exact checkpoint-followup-draft captures as future-only intent.
+Runtime validates profile, original declaration/action/capture/scopes, unique criterion
+references per group, agreement across groups, assessment question, nonblank target
+intent and an originally selected focus Artifact. Research membership and coverage of
+Planning's retained selection remain Planning-owned checks; Runtime has no private
+Planning/Research reads and does not claim to recompute that membership. No scientific
+verdict or execution effect is inferred from a retained proposal.

@@ -37,8 +37,8 @@ class Publications(MemoryArtifacts):
         return result
 
 
-def prepared(graph, *, calls=2):
-    actor, slot, data, _ = setup(graph, calls=calls)
+def prepared(graph, *, calls=2, followup=False):
+    actor, slot, data, _ = setup(graph, calls=calls, followup=followup)
     from amphora_contracts_supervision import SupervisionRef
     reference = SupervisionRef.model_validate(data['reference'])
     artifacts = Publications(graph, reference)

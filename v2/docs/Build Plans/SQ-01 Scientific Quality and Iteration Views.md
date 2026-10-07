@@ -2,13 +2,13 @@
 
 ## Canonical tracker
 
-- Status: active successor to closed BP-05; B1/B2 and B3 human-focus half complete; C1 contracts complete; C2 owner integration active.
-- Last refreshed: `2026-10-07 14:02:37` (America/Chicago).
-- Completion: 69.44%; Build83.33%, Verification0%; (3.5+2/3)/6 unit-weight gates complete; C2=66.67%.
+- Status: active successor to closed BP-05; B1/B2 and B3 human-focus half complete; C1/C2 complete; B3 proposal presentation active.
+- Last refreshed: `2026-10-07 14:20:46` (America/Chicago).
+- Completion: 75%; Build90%, Verification0%; 4.5/6 unit-weight gates complete; C2=100%.
 - Owner: Studio presentation; Research/Knowledge own assessments; Agents owns proposals.
 - Prerequisites: BP-06 owner quality/correction projections and BP-07.03 proposal contracts; activation coherence audit and exact DTO reconciliation before implementation.
-- Current focus: C2c Runtime retained-proposal acceptance and replay.
-- Next gate: C2c Runtime acceptance/replay, then remaining B3 proposal UI and V1.
+- Current focus: B3 authorized criterion-proposal presentation in Studio.
+- Next gate: B3 transport/projection/presentation checks, then V1 actual-owner journey/replacement/audit.
 - Blockers: no owner decision pending. Missing criterion bindings are approved implementation scope in SQ-01.01.
 - Requirement: [Campaign progress](../Architecture/Requirements/Product_Requirements.md#campaign-progress-uncertainty-and-subsequent-iteration).
 - Architecture: [Studio](../Architecture/Experience/Studio.md#exploratory-quality-and-next-campaign-focus).
@@ -165,3 +165,16 @@ C2b is the second of three equal C2 deliveries: overall(3.5+2/3)/6=69.44%,
 Build(3.5+2/3)/5=83.33%, Verification0%. C2c Runtime acceptance/replay is next.
 No public schema or migration changed; no new live adapter/model call or independent
 installed-owner qualification claim. [Evidence](../Audits/Evidence/SQ-01-Quality/C2b_Planning.json).
+
+## C2c Runtime delivery
+
+2026-10-07 14:20:46: Runtime0.66 adds explicit private follow-up recipe/profile selection,
+new capture consistency checks and existing retained-only winner path.175 affected
+Runtime tests pass100.48s.11 new tests pass17.46s; focused validator18statements/
+8branches100%. Actual SQL proves all three retained outcomes, zero field-binding
+intents, exact winner/context replay and configured recipe admission. Original recipe
+SHA/2786 bytes match cf15a0b7. No public schema/migration/command changed. Boundaries
+and diff checks pass. Planning owns Research membership; Runtime does not infer it.
+C2=100%; overall4.5/6=75%, Build4.5/5=90%, Verification0%. B3 proposal UI is next;
+V1 still requires actual-owner subsequent campaign and independent Studio acceptance.
+[Evidence](../Audits/Evidence/SQ-01-Quality/C2c_Runtime.json).

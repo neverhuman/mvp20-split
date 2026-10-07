@@ -19,7 +19,7 @@ from ..supervision_policy.test_admission import command, reviewed
 from .test_recipe import bind, document
 
 
-def configuration(graph):
+def configuration(graph, *, followup=False):
     data = document()
     scope = graph.env.principal.scope.model_dump(mode='json')
     data['scope'] = scope
@@ -28,6 +28,11 @@ def configuration(graph):
         ref['scope'] = scope
     data['limits']['max_attempts'] = 1
     recipe = bind(data)
+    if followup:
+        from amphora_campaign_runtime.supervision_preparation import FollowupRecipeRecord, ReviewedRecipe
+        from amphora_contracts_planning import checkpoint_followup_draft_schema
+        recipe = ReviewedRecipe.bind(FollowupRecipeRecord.model_validate_json(json.dumps(dict(data,
+            output_schema=checkpoint_followup_draft_schema().model_dump(mode='json')))))
     original = reviewed(graph)
     record = original.document().model_dump(mode='json')
     record.update(profile='runtime-supervision-policy.v2', context_recipe_sha256=recipe.sha256)

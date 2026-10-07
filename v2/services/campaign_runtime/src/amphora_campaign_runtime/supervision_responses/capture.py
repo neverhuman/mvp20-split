@@ -7,12 +7,15 @@ from amphora_contracts_core import Scope, WireModel
 from amphora_contracts_planning import (
     CampaignDraft,
     CheckpointDraft,
+    CheckpointFollowupDraft,
     campaign_draft_schema,
     checkpoint_draft_schema,
+    checkpoint_followup_draft_schema,
 )
 
 from ..supervision_requests.binding import encoded
 from ..supervision_scope.observations import require
+from .followup import validate_followup
 
 
 def unique(pairs):
@@ -32,10 +35,11 @@ def proposal_from_capture(original, observation, raw):
     require(raw and observation.output_complete and proposal is not None and observation.reason_code is None,
             'successful_capture_incomplete')
     profile = original.context.output_schema
-    require(profile in (campaign_draft_schema(), checkpoint_draft_schema()) and
+    require(profile in (campaign_draft_schema(), checkpoint_draft_schema(), checkpoint_followup_draft_schema()) and
             proposal.output_schema == original.context.output_schema, 'output_profile_mismatch')
-    model = CheckpointDraft if profile == checkpoint_draft_schema() else CampaignDraft
-    if model is CheckpointDraft:
+    model = (CheckpointFollowupDraft if profile == checkpoint_followup_draft_schema() else
+             CheckpointDraft if profile == checkpoint_draft_schema() else CampaignDraft)
+    if model in (CheckpointDraft, CheckpointFollowupDraft):
         require(original.purpose == 'supervision' and original.runtime_cut is not None, 'checkpoint_output_purpose')
     try:
         document = json.loads(raw.decode('utf-8'), object_pairs_hook=unique, parse_constant=finite)
@@ -56,6 +60,8 @@ def proposal_from_capture(original, observation, raw):
         require(draft.candidate is None and bool(draft.evidence_requests), 'evidence_payload_mismatch')
     else:
         require(draft.candidate is not None, 'campaign_candidate_missing')
+    if isinstance(draft, CheckpointFollowupDraft):
+        validate_followup(original, draft)
     if draft.candidate is not None and draft.candidate.kind == 'declared_adjustment':
         require(draft.candidate.cut == original.runtime_cut, 'adjustment_cut_mismatch')
         identities = [(tuple(change.target.scope_path), change.target.node_id, change.input_name)

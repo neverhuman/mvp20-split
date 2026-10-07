@@ -19,3 +19,9 @@ CheckpointGate releases only committed decisions, including scalar selections no
 Current BP-07.04 closeout: recipe-admitted SQL response/cancel/deadline/authority contention, request/response process barriers and independently installed owner replacement are verified. Actual Data materialization changes1to2 only for an accepted selection; late proposed output cannot replace a fallback, and different future graph revisions remain inactive. Historical coverage above names its original suite; installed integration is a separate evidence tier. Live scientific/model quality remains BP-07.05.
 
 Runtime0.60 inspection reads first check for a scoped winner, returning None for pending/unknown/foreign identities without loading an unrelated checkpoint. Existing winners still validate original canonical bytes, bindings and selections. The public read route belongs to supervision_api; read access never invokes resolve.
+
+SQ-01 follow-up winners use the existing RetainedProposal path for abstention,
+evidence requests and future campaigns. The new public DTO excludes adjustment
+candidates. Selection stays None, so no active materialization fields change. Original
+slot/policy/deadline/budget/response and current-state fences still apply. Exact replay
+uses the original capture; no graph admission or scientific acceptance is implied.

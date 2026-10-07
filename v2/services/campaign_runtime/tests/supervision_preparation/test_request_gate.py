@@ -39,10 +39,10 @@ def outgoing(frame):
     return parse_checkpoint_command(json.dumps(raw))
 
 
-def setup(graph, *, calls=1):
+def setup(graph, *, calls=1, followup=False):
     actor = replace(graph.env.principal, actions=graph.env.principal.actions | {'supervise_prepare', 'read'})
     graph.env.principal = actor
-    recipe, policy = configuration(graph)
+    recipe, policy = configuration(graph, followup=followup)
     record = policy.document().model_dump(mode='json')
     record['checkpoints'][0].update(max_requests=2, max_model_calls=calls, timeout_seconds=300)
     policy = ReviewedPolicy.bind(policy.plan, RecipePolicyRecord.model_validate_json(json.dumps(record)))
@@ -72,7 +72,7 @@ def setup(graph, *, calls=1):
     context = recipe.document().model_dump(mode='json')
     context.pop('profile')
     context.pop('budget_policy')
-    context.update(schema_version='1', policy=data['policy'], output_schema=checkpoint_draft_schema().model_dump(mode='json'))
+    context.update(schema_version='1', policy=data['policy'], output_schema=recipe.output_schema.model_dump(mode='json'))
     declaration = dict(data['policy'], artifact_id='declaration', sha256=original['decision_scope'])
     context['entries'].append({'artifact': declaration, 'role': 'constraint', 'required': True})
     original['context'] = context

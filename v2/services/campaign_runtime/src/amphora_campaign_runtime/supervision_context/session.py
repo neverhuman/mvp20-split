@@ -9,7 +9,6 @@ from amphora_contracts_planning import (
     ContextManifest,
     EngagementRef,
     EngagementRequest,
-    checkpoint_draft_schema,
 )
 from amphora_contracts_supervision import (
     CheckpointContext,
@@ -134,7 +133,7 @@ class ContextSession:
         recipe = self.basis.recipe.document()
         context = ContextManifest(scope=recipe.scope, objective=recipe.objective, prompt=recipe.prompt, policy=policy,
             model=recipe.model, entries=(*recipe.entries, ContextEntry(artifact=declaration, role='constraint', required=True)),
-            omissions=recipe.omissions, allowed_actions=self.actions, output_schema=checkpoint_draft_schema(), limits=self.limits)
+            omissions=recipe.omissions, allowed_actions=self.actions, output_schema=self.basis.recipe.output_schema, limits=self.limits)
         self.basis.recipe.require_context(context, declaration.sha256)
         original = EngagementRequest(reference=self.engagement, actor_id=self.planning_actor, purpose='supervision',
             decision_scope=declaration.sha256, runtime_cut=self.basis.seed.footprint().cut, context=context)

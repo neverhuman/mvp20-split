@@ -19,3 +19,7 @@ Tests belong under tests/supervision_requests; public wire tests belong to contr
 
 
 The planning.checkpoint-draft output schema requires CheckpointRequest; it cannot be carried as legacy Invoke-only request authority.
+
+The additive checkpoint-followup-draft profile requires explicit CheckpointRequest,
+just like checkpoint-draft. It does not widen legacy request authority or allow an
+active graph mutation. Original request and scope bytes still bind every response.

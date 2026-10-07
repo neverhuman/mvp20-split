@@ -1,32 +1,35 @@
 # Restore
 
-Refreshed 2026-10-07 14:02:37 America/Chicago. Read FIRST after compression.
+Refreshed 2026-10-07 14:20:46 America/Chicago. Read FIRST after compression.
 
 ## Current handoff
 
 Demo2026-10-08 11am CT for internal nontechnical colleagues. DEMO-01 delivered100%;
 presenter acceptance pending. Frozen launch/assets below remain unchanged.
-SQ-01 active69.44%, Build83.33%, Verification0%. C1/C2a/C2b complete; C2=66.67%.
-NEXT C2c Runtime retained-proposal acceptance/replay. No approval needed.
-Last pushed0e19b628; C2b commit next. Planning0.104/dev pin/two locks synced; structural
-inventory refreshed only.242 affected-boundary tests850.77s,187stmts/26branches100%;
-5 final checks12.89s. Boundaries/diff pass. No running jobs. No new paid model calls.
-C2b: FollowupPreparation/PreparedFollowupProposal bind exact retained records/criteria,
-focus/evidence and capture. Optional reviewed typed seed config keyed by budget template
-creates request-specific selection before public Research reads and immutable packet.
-Incremental reader validates base records before final full criterion binding. Provider
-wrapper validates before successful observation; publication independently rechecks,
-including a forged-success case. Invalid captures remain diagnostics. New fixture
-abstention retains unresolved criteria; live adapter remains old-profile-only.
-New packets permit required Research lane; old packets remain artifact-only. Source
-and installed frozen demo remain separate. No new public schema/migration.
-C2c analysis: Runtime ReviewedRecipe hardcodes checkpoint_draft; add versioned private
-recipe selecting exact new profile (old v1 bytes preserved), session uses recipe's
-profile. Request/response bindings require explicit CheckpointRequest for both. Capture
-parser accepts new public DTO and checks duplicate/scope/action/focus/intent; Research
-membership stays Planning-owned. ModelWinner retains future-only capture, no field
-adjustment possible. Actual SQL winner/replay plus old-profile regressions required.
-Runtime source remains UNMODIFIED. Then B3 UI and V1 actual-owner/replacement; LR01queued.
+SQ-01 active75%, Build90%, Verification0%. C1/C2 complete; B3 proposal UI NEXT.
+Last pushedcf15a0b7; C2c commit next. Runtime0.66/dev pins/two locks synced; structural
+inventory refreshed only.175 affected Runtime tests100.48s;11 new17.46s, validator
+18stmts8branches100%. New pure test initially failed import only; fixed to binding
+module; all checks pass. Boundaries/diff pass. No running jobs or paid calls.
+Runtime explicit private follow-up recipe selects exact new output profile; old
+recipe canonical2786bytes/SHA8e53ac98b6a79bacb9a3107026c591ade9b941a2d08bfb90b8a95212066faa7a
+matchescf15a0b7. Actual SQL retained-only outcomes/no field intents/context replay.
+No public schema/migration/command changed. Planning0.104 owns exact Research
+membership and frozen preparation; Runtime validates captured intent and retains it.
+Planning evidence242 tests850.77s plus5final12.89s. Frozen demo remains unchanged.
+NEXT B3: read local UI guidelines (read at14:~15 already) and Interaction_References
+before UI design. Existing quality/feedback and supervision model/transport READMEs
+read; no Studio edits yet. Supervision inspector shows response metadata/capture refs
+but no content. Requests DTO lacks output_schema, responses DTO has exact capture,
+output_sha256/status/selected_by_winner. Need reconcile safe new-profile recognition
+from retained capture, not infer unsupported authority; existing request/response
+owner routes may expose full original records (inspect actual filenames first).
+DataProvenanceClient already has exact Artifact metadata/hash-checked content patterns;
+ScientificHTTP allows bounded Data content reads. Generate new published followup
+consumer types via studio/scripts/generate-contracts.mjs; don't dump generated files.
+B3 must distinguish proposed vs adopted, retain unresolved points, show exact criterion
+links and clear on denial/stale selection. V1 actual-owner/replacement/audit follows,
+LR01queued. Continue until needed; no owner decision pending.
 
 Launch `v2/Start-Demo.ps1` (original) or `-Scenario successor`; Ctrl+C drains.
 Uses installedDeploymentPython .test-results/acceptance-owner-final-b and explicit

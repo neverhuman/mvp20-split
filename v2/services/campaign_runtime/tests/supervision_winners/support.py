@@ -19,7 +19,7 @@ from amphora_campaign_runtime.supervision_policy.catalog import PolicyCatalog
 from amphora_campaign_runtime.supervision_requests.binding import encoded
 from amphora_campaign_runtime.supervision_requests.projection import CheckpointExport
 from amphora_campaign_runtime.supervision_winners import WinnerStore
-from amphora_contracts_planning import CheckpointDraft, checkpoint_draft_schema
+from amphora_contracts_planning import CheckpointDraft, CheckpointFollowupDraft, checkpoint_draft_schema, checkpoint_followup_draft_schema
 from amphora_contracts_supervision import (
     CheckpointRequest,
     SupervisionRef,
@@ -56,7 +56,7 @@ def setup(graph, *, timeout=300, fallback='continue_unchanged', invoke=False):
     return WinnerStore(graph.env.engine), actor, reference, slot
 
 
-def prepare(graph, actor, reference, slot, *, mutation=None, request_mutation=None):
+def prepare(graph, actor, reference, slot, *, mutation=None, request_mutation=None, followup=False):
     data = literal_frame().request.model_dump(mode='json')
     def rescope(item):
         if isinstance(item, dict):
@@ -72,7 +72,8 @@ def prepare(graph, actor, reference, slot, *, mutation=None, request_mutation=No
         snapshot=CheckpointExport(slot.seed.footprint()).document().model_dump(mode='json'),
         deadline_unix_ms=int(slot.deadline.timestamp() * 1000))
     data['planning_request']['runtime_cut'] = slot.seed.footprint().cut.model_dump(mode='json')
-    data['planning_request']['context']['output_schema'] = checkpoint_draft_schema().model_dump(mode='json')
+    profile = checkpoint_followup_draft_schema() if followup else checkpoint_draft_schema()
+    data['planning_request']['context']['output_schema'] = profile.model_dump(mode='json')
     data['policy']['sha256'] = slot.seed.policy.sha256
     data['planning_request']['context']['policy'] = data['policy']
     if request_mutation is not None:
@@ -87,7 +88,7 @@ def prepare(graph, actor, reference, slot, *, mutation=None, request_mutation=No
     draft['decision_scope'] = value.planning_request.decision_scope
     if mutation is not None:
         mutation(draft)
-    draft = CheckpointDraft.model_validate_json(json.dumps(draft))
+    draft = (CheckpointFollowupDraft if followup else CheckpointDraft).model_validate_json(json.dumps(draft))
     raw = encoded(draft)
     old, _ = response('adjustment')
     data = old.model_dump(mode='json')
@@ -98,7 +99,7 @@ def prepare(graph, actor, reference, slot, *, mutation=None, request_mutation=No
                                   request_sha256=value.planning_request_sha256)
     observation.update(output_sha256=hashlib.sha256(raw).hexdigest(), captured_bytes=len(raw),
                        status='abstained' if draft.action == 'abstain' else 'proposed')
-    observation['proposal'].update(output_schema=checkpoint_draft_schema().model_dump(mode='json'),
+    observation['proposal'].update(output_schema=profile.model_dump(mode='json'),
         payload_json=raw.decode(), payload_sha256=hashlib.sha256(raw).hexdigest(), action=draft.action, rationale=draft.rationale)
     record = SupervisionResponse.model_validate_json(json.dumps(data))
     incoming = parse_supervision_command('runtime.supervision.respond', json.dumps({

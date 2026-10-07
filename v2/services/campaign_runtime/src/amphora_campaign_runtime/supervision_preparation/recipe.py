@@ -1,10 +1,11 @@
 """Immutable Runtime-owned configuration; no publication or model authority."""
 
 import hashlib
+import json
 from dataclasses import dataclass
 from typing import Annotated, Literal
 
-from amphora_contracts_core import ArtifactRef, Scope, WireModel
+from amphora_contracts_core import ArtifactRef, SchemaRef, Scope, WireModel
 from amphora_contracts_planning import (
     CallLimits,
     ContextEntry,
@@ -12,6 +13,7 @@ from amphora_contracts_planning import (
     ModelBinding,
     ProposalAction,
     checkpoint_draft_schema,
+    checkpoint_followup_draft_schema,
 )
 from pydantic import Field
 
@@ -32,6 +34,17 @@ class RecipeRecord(WireModel):
     limits: CallLimits
 
 
+class FollowupRecipeRecord(RecipeRecord):
+    profile: Literal['runtime-supervision-followup-recipe.v1'] = 'runtime-supervision-followup-recipe.v1'
+    output_schema: SchemaRef
+
+
+def recipe_model(raw):
+    value = json.loads(raw)
+    require(type(value) is dict, 'recipe_document')
+    return FollowupRecipeRecord if value.get('profile') == 'runtime-supervision-followup-recipe.v1' else RecipeRecord
+
+
 @dataclass(frozen=True)
 class ReviewedRecipe:
     canonical: bytes
@@ -39,6 +52,8 @@ class ReviewedRecipe:
     def __post_init__(self):
         require(type(self.canonical) is bytes and 0 < len(self.canonical) <= 262144, 'recipe_size')
         record = self.document()
+        if isinstance(record, FollowupRecipeRecord):
+            require(record.output_schema == checkpoint_followup_draft_schema(), 'recipe_followup_profile')
         require(canonical(record.model_dump(mode='json')) == self.canonical, 'noncanonical_recipe')
         bases = (record.objective, record.prompt, record.model.configuration, record.budget_policy)
         included = (*bases, *(item.artifact for item in record.entries))
@@ -59,11 +74,17 @@ class ReviewedRecipe:
 
     @classmethod
     def bind(cls, record):
-        checked = RecipeRecord.model_validate_json(record.model_dump_json())
+        raw = record.model_dump_json()
+        checked = recipe_model(raw).model_validate_json(raw)
         return cls(canonical(checked.model_dump(mode='json')))
 
     def document(self):
-        return RecipeRecord.model_validate_json(self.canonical)
+        return recipe_model(self.canonical).model_validate_json(self.canonical)
+
+    @property
+    def output_schema(self):
+        record = self.document()
+        return record.output_schema if isinstance(record, FollowupRecipeRecord) else checkpoint_draft_schema()
 
     def require_policy(self, policy):
         record = policy.document()
@@ -77,7 +98,7 @@ class ReviewedRecipe:
         record = self.document()
         for name in ('scope', 'objective', 'prompt', 'model', 'omissions'):
             require(getattr(context, name) == getattr(record, name), 'recipe_context_binding')
-        require(context.output_schema == checkpoint_draft_schema(), 'recipe_output_profile')
+        require(context.output_schema == self.output_schema, 'recipe_output_profile')
         require(set(context.allowed_actions) <= set(record.allowed_actions), 'recipe_actions_widened')
         require(context.limits.accounting_unit == record.limits.accounting_unit, 'recipe_accounting_unit')
         for name in ('max_input_tokens', 'max_output_tokens', 'max_attempts', 'total_tokens', 'total_accounting_units'):

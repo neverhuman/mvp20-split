@@ -3,7 +3,7 @@
 import hashlib
 from dataclasses import dataclass
 
-from amphora_contracts_planning import checkpoint_draft_schema
+from amphora_contracts_planning import checkpoint_draft_schema, checkpoint_followup_draft_schema
 from amphora_contracts_supervision import CheckpointRequest, SupervisionResponse
 
 from ..supervision_requests.binding import encoded
@@ -25,7 +25,7 @@ class SupervisionResponseBinding:
         require(record.reference == request.reference and record.request_sha256 == origin.sha256,
                 'response_request_mismatch')
         original, observation = request.planning_request, record.observation
-        require(original.context.output_schema != checkpoint_draft_schema() or isinstance(request, CheckpointRequest),
+        require(original.context.output_schema not in (checkpoint_draft_schema(), checkpoint_followup_draft_schema()) or isinstance(request, CheckpointRequest),
                 'checkpoint_response_requires_checkpoint_request')
         require(observation.attempt.engagement == original.reference and
                 observation.attempt.request_sha256 == request.planning_request_sha256,

@@ -2,7 +2,7 @@
 
 from dataclasses import dataclass
 
-from amphora_contracts_planning import checkpoint_draft_schema
+from amphora_contracts_planning import checkpoint_draft_schema, checkpoint_followup_draft_schema
 from amphora_contracts_supervision import (
     AppliedFields,
     CheckpointModelAccepted,
@@ -45,7 +45,7 @@ class ModelWinner:
         require(request.lineage.ordinal <= rule.max_requests and original.context.limits.max_attempts <= rule.max_model_calls,
                 'winner_request_ceiling')
         require(request.deadline_unix_ms <= int(slot.deadline.timestamp() * 1000), 'winner_request_deadline')
-        require(original.context.output_schema == checkpoint_draft_schema(), 'winner_checkpoint_output_required')
+        require(original.context.output_schema in (checkpoint_draft_schema(), checkpoint_followup_draft_schema()), 'winner_checkpoint_output_required')
         verify_current(conn, params, run, frame)
         require(isinstance(seed, ValueCheckpointSeed), 'winner_requires_scalar_seed')
         candidate_seed = ValueCheckpointSeed.capture(seed.policy, frame.footprint(), seed.document().original_fields)

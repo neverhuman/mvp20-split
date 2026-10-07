@@ -1,0 +1,33 @@
+{
+  "timestamp_local": "2026-10-07 14:20:46",
+  "status": "runtime_verified_ui_journey_pending",
+  "runtime_version": "0.66.0",
+  "tests": {
+    "affected_boundaries": 175,
+    "seconds": 100.48,
+    "new_scope": 11,
+    "new_scope_seconds": 17.46
+  },
+  "new_validator_coverage": {
+    "statements": [
+      18,
+      18
+    ],
+    "branches": [
+      8,
+      8
+    ]
+  },
+  "predecessor_recipe": {
+    "commit": "cf15a0b7",
+    "sha256": "8e53ac98b6a79bacb9a3107026c591ade9b941a2d08bfb90b8a95212066faa7a",
+    "bytes": 2786
+  },
+  "boundaries": "passed",
+  "limitations": [
+    "Planning owns Research membership; Runtime validates retained intent consistency",
+    "No new public schema, migration or execution command",
+    "No scientific validity or new installed-owner qualification",
+    "Frozen demo unchanged"
+  ]
+}

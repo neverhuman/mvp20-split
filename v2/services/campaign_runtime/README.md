@@ -1,6 +1,8 @@
 # Campaign Runtime
 
-- Current: Runtime0.65/runtime0028. Approved additive draft-successor admission combines exact draft/Registry guards and immutable predecessor transfer in one transaction.205 scoped regressions passed; actual Planning topology handoff remains BP-08.04/B2.02ii. See [coordinator boundary](src/amphora_campaign_runtime/coordinator/README.md).
+- Current: Runtime0.66.0/runtime0028, reviewed `2026-10-07 14:20:46`. SQ-01/C2c adds an explicit pinned follow-up recipe and retained-only criterion proposals. Existing request/response/winner authority and original recipe bytes remain unchanged.175 affected-boundary tests pass100.48s;11 new checks include actual SQL and fixed predecessor replay. No new public schema, migration, execution command or scientific authority.
+- Rebuild boundaries: [recipe preparation](src/amphora_campaign_runtime/supervision_preparation/README.md), [capture consistency](src/amphora_campaign_runtime/supervision_responses/README.md), [winner retention](src/amphora_campaign_runtime/supervision_winners/README.md). Planning owns exact Research membership. Runtime retains future intent without applying fields or admitting a successor.
+- BP-08/09 local synthetic admission, inspection and deployment gates are closed. SQ-01 Studio presentation and actual-owner follow-up journey remain pending; frozen demo installations are unchanged.
 
 ## Earlier supervisor checkpoint
 

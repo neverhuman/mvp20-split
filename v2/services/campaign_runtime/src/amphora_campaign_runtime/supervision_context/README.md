@@ -17,3 +17,7 @@ Actual Data0.29 process proof publishes all original roots (including copied rev
 Verified94 scoped cases59.07s;228 statements20branches99%,then11 final-commit/guard cases15.73s with preparation81statements16branches100%. Earlier sole missed rethrow is covered by cancellation-after-final-guard. Installed Runtime replacement/process-death and provider uncertainty remain B3/V1. This is not an autonomous polling worker yet.
 
 Runtime0.56 RepairEvidence loads only owned immutable repair disposition/report/response metadata. ContextSession includes its hash in new engagement identity and publishes separate CheckpointRepairContext via an explicit content schema. Initial/legacy and original child replay stay unchanged; static roots/prompt/model/policy/ceilings/deadline do not widen. Guards reject changed feedback between selection and publication. No prior raw capture is copied. RuntimeSQL and schema tests pass; actual Data admission of the new profile remains installed integration scope.
+
+SQ-01 follow-up recipes select the explicit future-intent output profile when the
+original context frame is built. The pinned recipe, declaration, deadlines and call
+reservations remain authoritative. Old recipes produce the same old profile/bytes.
