@@ -1,6 +1,6 @@
 # Local deployment profile and preflight
 
-Owner: BP-09.01, package amphora-deployment0.1.0. B1.01 profile parsing passed33profile/boundary checks13.95s; BP-09.01 local-profile acceptance is complete.
+Owner: BP-09.01, package amphora-deployment0.2.0. B1.01 profile parsing passed33profile/boundary checks13.95s; BP-09.01 local-profile acceptance is complete.
 Design: [Runtime topology](../../docs/Architecture/System/Runtime_Topology.md).
 
 This package owns local versioned deployment configuration and subsequent
@@ -60,3 +60,5 @@ attribution. Independent installation and selected-host profile acceptance subse
 Storage durability and network exposure have not been physically certified.
 
 Verified 2026-10-06 21:39:19: owner selected this local computer and computer-only access. NativeWindowsx86_64/Python3.12 profile, localNTFS artifactroot, loopback127.0.0.1. Clean independent installation passes originalprofile/CLI parity, actual storage/socket/preflight rejection probes and47owned tests. [Closeout audit](../../docs/Audits/BP-09.01_Local_Profile_Closeout.md). Normal storage operation is not powerloss/backup certification; full service install and authenticated demo remain later children.
+
+Current BP-09.02 boundary: [installation inventory](src/amphora_deployment/installation/README.md) adds six independently verified owner closures and explicit launch recipes in0.2. The original0.1profile format and qualified installation are preserved. Inventory is not service readiness; new persistence/credential/lifecycle/gateway work remains.

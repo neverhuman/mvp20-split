@@ -318,6 +318,10 @@
       "contracts/draft_successor/src/amphora_contracts_draft_successor"
     ]
   },
+  "deployment-install": {
+    "tests": "deploy/local/tests/install",
+    "coverage_sources": ["deploy/local/src/amphora_deployment/installation"]
+  },
   "deployment-preflight": {
     "tests": "deploy/local/tests/preflight",
     "coverage_sources": ["deploy/local/src/amphora_deployment"]

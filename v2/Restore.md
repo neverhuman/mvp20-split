@@ -1,3 +1,15 @@
+# Latest checkpoint
+
+2026-10-06 21:53:59: B1.01COMPLETE. Noactiveprocesses24928and59006 exited0. Sixisolatedowners in ROOT.test-results/local-owner-inventory-20261006a/owners/{runtime,artifact,registry,research,knowledge,planning};inventory/profile/evidence.json exist.79localwheels; allversionscurrent;56regressions4.51s,21finalchecks15.08s. Child6.25%,Build8.33%,Acceptance0%;parent21.25%. B1.02protectedDPAPIcredentials anddedicatednewlocalPG/Qdrant next. Source/README/trackersreadycommitpush. NoDBmutationyet. Neverreuse/reset fixturevolumes. VaultcurrentWindowsuser, envonlyplaintexttochilds, no credentialargs/logs.
+
+# Active verification checkpoint
+
+2026-10-06 21:51:57: ACTIVE24928 builds six isolated owner closures into ROOT.test-results/local-owner-inventory-20261006a via dev/build_local_owner_inventory.py. No source/test/dev/README edits until actualexit. Builds sequential; stdout buffered, check individual verification.log tails if needed. Runtime/artifact/registry/research done; knowledge/planning later. NoDBeffects/migrations. B1.01 stilluncredited, child0%,parent20%. Source deploy/local installation/{inventory,recipes,__init__}.py andREADME; package bumped0.2,devpin/locks synced,old0.1 independentinstallpreserved.56tests4.51s passed before final package-binding guard; need rerunfocusedinstalltests after actualexit. Newbuilder maps6verifiedwheelclosures into new profile.json and inventory.json; exactwheels/interpreter/lock/sourcecommit hashes, service/toolreadinessnotassessed. Sourcecommit2807c42a plus implementationSHA identifies uncommittednewinventory code. Testscope deployment-install. Next verifiedB1.01checkpointcommit/push thenB1.02 dedicatedlocalpersistence/DPAPIcredentialvault; no fixtures reused/reset. Allprototypecomments beforethisblock historical.
+
+# Latest active checkpoint
+
+2026-10-06 21:45:17: BP09.01closeoutpushed2807c42a. BP09.02 ACTIVATED B1.01inventory/ownerrecipes,0%,Build0%,Acceptance0%,parent20%. No activeprocesses. Activationdocs/Audits/BP-09.02_Activation.md. SixnativeWindowsownerprocesses+loopbackgateway/Studio required, newdedicateddemoDB/Qdrant notoldfixtures. ScientificLinux-only descriptorsnotnativeeligible; explicitcompatibilityqualificationBP09.03 beforeactivation. No modelcalls .02. B1fourunitsinventory,persistence/secrets,lifecycle,gateway;B2twounitsroles/readiness,failure/drain;B3actualfailures,V1replacement. Sourceimplementationnotstarted.
+
 # Restore
 
 Refreshed 2026-10-06 21:41:09 (America/Chicago). Read FIRST after compaction.
