@@ -228,3 +228,28 @@ verify_native_workers_installation.py independently installs Deployment, copies 
 verify_scientific_turn_installation.py installs Deployment independently, copies owned tests and runs verify_scientific_container_turns.py using exact evolution0.5 image ID, explicit physical NTFS bundle path and public TLS certificate. Two real-container lost-reply probes use synthetic503 upstream and expected exit3; no actual owner eligibility or model call. Only exact exited probe containers are removed, without volumes.
 
 verify_scientific_controller_installation.py installs Deployment independently, runs its copied tests, then verify_managed_scientific_workers.py (actual local Runtime/Data/TLS/Linux unknown-campaign denial) and verify_scientific_monitor_recovery.py (actual monitor-job death while parent TLS fixture stays available; replacement adopts same container). Credentials remain environment/DPAPI only; no migrations, campaign admission or provider calls. Retained local journals must be released before migration; synthetic denial is not tool eligibility.
+
+
+## Local integrated demonstration probes
+
+`verify_managed_campaign_installation.py` builds an isolated Deployment closure and
+runs copied Deployment tests plus `verify_managed_numeric_campaign.py` against the
+existing qualified local owners and Linux scientific images. The fixture binds the
+Runtime-returned run ID by a graceful restart with new immutable worker configs.
+Its oracle checks canonical completions, output bytes, numeric checkpoints and actual
+Data retention confirmation; worker exit codes alone never establish success.
+`verify_local_retention_recovery.py` drains a named completed campaign backlog without
+rerunning science or altering its graph. Raw scoped evidence stays in `.test-results`;
+reviewed summaries live under docs/Audits/Evidence/BP-09-Deployment.
+
+`verify_owner_records_installation.py --output <fresh-directory> --source-manifest
+<local-owner-manifest>` independently installs Deployment and copies only the public
+fixture and four dev helper scripts. It invokes `verify_local_owner_records.py` to
+create synthetic Data source/conversion records, Research declarations and a grounded
+Knowledge hypothesis, rebuild its accepted log and prove exact three-owner restart
+replay, scope denial and immutable-declaration conflict. RecordsController owns only
+its exact Windows process job; normal shutdown drains each owner. It keeps root stores,
+original byte storage and prior scopes intact. No SQL seed, migration, provider key,
+paid call or scientific efficacy claim belongs to this probe. These process acceptance
+oracles are separate from owner-local pytest coverage. Failed outputs and scoped
+records are retained; a fresh output directory never means resetting the database.

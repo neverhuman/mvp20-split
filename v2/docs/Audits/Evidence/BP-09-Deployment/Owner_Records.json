@@ -1,0 +1,258 @@
+{
+  "timestamp_local": "2026-10-07 03:57:07",
+  "status": "passed",
+  "installation": {
+    "timestamp_local": "2026-10-07 03:54:33",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-deployment",
+    "forbidden_implementations": [
+      "amphora_research",
+      "amphora_knowledge",
+      "amphora_data_artifacts",
+      "sqlalchemy",
+      "pydantic"
+    ],
+    "packages": {
+      "amphora-deployment": "0.9.0"
+    },
+    "wheels": {
+      "amphora_deployment-0.9.0-py3-none-any.whl": "66eeea945ead69d880c38b2f573e1df16db98cdf1daeb2e73160ab6fd30317f6"
+    }
+  },
+  "scripts": {
+    "verify_local_owner_records.py": "88cda52fa8e2942dafd42345d012c2f0fbebf0d6703225a9aca8c692b417c4b2",
+    "local_records_controller.py": "7980d1a598781442761611924aa543656e5142e9be882e059ad2b4fcab333a87",
+    "local_demo_controller.py": "3a10a169df5f86b384bf081f05e3ead5d5494d4017b9218b36a6c275984cd545",
+    "local_numeric_configuration.py": "7f902301ed13c5e87e07d65cdf24c3a584f39130f6abc8f8ebf0b1f1c2ac1575"
+  },
+  "fixture_sha256": "04186e7a15886b35fddbd7e3fc6bbed951cac3f212265f5badfb36e0f8164e45",
+  "raw_evidence": {
+    "path": ".test-results\\local-owner-records-install-20261007a\\evidence.json",
+    "sha256": "bcb7908be9172bd377ea6d8dcd388dac7a349bd327b430ae8f8e97c5b68bd97b"
+  },
+  "scope": {
+    "tenant_id": "internal",
+    "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+  },
+  "artifact": {
+    "artifact_id": "fd01dbc999be4cf6990e44dab18402a4",
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+    },
+    "sha256": "4f3e959f069e6666be03cdec976ee3bb02b167c2de35170b96f830f210c5ac5d",
+    "media_type": "application/octet-stream",
+    "schema_ref": {
+      "schema_id": "demo.synthetic-document",
+      "version": "1",
+      "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+    },
+    "size_bytes": 127
+  },
+  "source": {
+    "wire_version": "1",
+    "reference": {
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+      },
+      "source_id": "synthetic-objective",
+      "revision_id": "r1",
+      "raw": {
+        "artifact_id": "fd01dbc999be4cf6990e44dab18402a4",
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+        },
+        "sha256": "4f3e959f069e6666be03cdec976ee3bb02b167c2de35170b96f830f210c5ac5d",
+        "media_type": "application/octet-stream",
+        "schema_ref": {
+          "schema_id": "demo.synthetic-document",
+          "version": "1",
+          "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+        },
+        "size_bytes": 127
+      }
+    },
+    "delivery": {
+      "issuer_id": "internal-demo",
+      "delivery_id": "first"
+    },
+    "method": {
+      "connector_id": "authored-synthetic",
+      "connector_version": "1",
+      "configuration_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "format": "utf8_document"
+    },
+    "rights": {
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+      },
+      "rights_id": "synthetic-demo",
+      "revision": 1
+    },
+    "supersedes": null,
+    "completeness": "complete"
+  },
+  "conversion_trace": {
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+    },
+    "trace_id": "synthetic-document-conversion",
+    "sha256": "237a3b83303ebc6bc2f95efbfd17aa64de1085c03eea071f54d945966010dd03"
+  },
+  "question": {
+    "wire_version": "1",
+    "reference": {
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+      },
+      "question_id": "question",
+      "revision": 1
+    },
+    "objective": "Explore bounded synthetic numeric optimization; no scientific efficacy claim.",
+    "applicability": {
+      "artifact_id": "fd01dbc999be4cf6990e44dab18402a4",
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+      },
+      "sha256": "4f3e959f069e6666be03cdec976ee3bb02b167c2de35170b96f830f210c5ac5d",
+      "media_type": "application/octet-stream",
+      "schema_ref": {
+        "schema_id": "demo.synthetic-document",
+        "version": "1",
+        "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+      },
+      "size_bytes": 127
+    },
+    "criteria": [
+      {
+        "criterion_id": "declared",
+        "description": "Record repeatable synthetic objective observations under the exact policy."
+      }
+    ],
+    "supersedes": null
+  },
+  "need": {
+    "wire_version": "1",
+    "reference": {
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+      },
+      "need_id": "need",
+      "revision": 1
+    },
+    "question": {
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+      },
+      "question_id": "question",
+      "revision": 1
+    },
+    "criterion_ids": [
+      "declared"
+    ],
+    "method": {
+      "schema_id": "demo.synthetic-document",
+      "version": "1",
+      "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+    },
+    "required_context": {
+      "artifact_id": "fd01dbc999be4cf6990e44dab18402a4",
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+      },
+      "sha256": "4f3e959f069e6666be03cdec976ee3bb02b167c2de35170b96f830f210c5ac5d",
+      "media_type": "application/octet-stream",
+      "schema_ref": {
+        "schema_id": "demo.synthetic-document",
+        "version": "1",
+        "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+      },
+      "size_bytes": 127
+    },
+    "supersedes": null
+  },
+  "knowledge_head": {
+    "snapshot": {
+      "graph": {
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+        },
+        "graph_id": "domain"
+      },
+      "revision": 1,
+      "sha256": "9d24c091b34a72bf865618352d30cb1a428189d17b415d2bde3202901f39fdec"
+    },
+    "change": {
+      "graph": {
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+        },
+        "graph_id": "domain"
+      },
+      "change_id": "first",
+      "position": 1,
+      "sha256": "2d308cd38508ae7216ec7e2f6fdea027d22b175491465dcfe24ace7e6e279908"
+    }
+  },
+  "knowledge_assertion_posture": "hypothesis",
+  "rebuild": {
+    "outcome": "published",
+    "head": {
+      "snapshot": {
+        "graph": {
+          "scope": {
+            "tenant_id": "internal",
+            "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+          },
+          "graph_id": "domain"
+        },
+        "revision": 1,
+        "sha256": "9d24c091b34a72bf865618352d30cb1a428189d17b415d2bde3202901f39fdec"
+      },
+      "change": {
+        "graph": {
+          "scope": {
+            "tenant_id": "internal",
+            "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+          },
+          "graph_id": "domain"
+        },
+        "change_id": "first",
+        "position": 1,
+        "sha256": "2d308cd38508ae7216ec7e2f6fdea027d22b175491465dcfe24ace7e6e279908"
+      }
+    },
+    "attempts": 1
+  },
+  "oracles": [
+    "Public source rights, preparation, finalization and conversion retention",
+    "Public Research question/evidence-need registration and exact reads",
+    "Knowledge structural acceptance with actual Data/Research peers; two entities and one hypothesis",
+    "Change-log rebuild publishes the exact semantic head and unchanged snapshot",
+    "All three owner processes restarted; exact declarations/decisions/snapshot/rebuild retained",
+    "Foreign-project Research read403; changed same-revision declaration409; original unchanged",
+    "All six owner shutdowns exited0; installation state and original credential vault unchanged"
+  ],
+  "source_probe": ".test-results/local-owner-records-20261007b",
+  "initial_failure": "Probe a failed closed before any record write: schema digest did not install a validator. Fixture corrected to actual supported octet-stream schema bytes.",
+  "provider_calls": 0,
+  "limits": [
+    "Public owner APIs only; no migrations or direct SQL fixture seeding",
+    "Authored synthetic hypothesis, not LLM extraction or scientific acceptance",
+    "Actual retained local Data/Research/Knowledge processes; restart retains exact records",
+    "Independent process acceptance harness; no new production source or pytest coverage claim",
+    "Model/browser integration, reasoning publication and campaign linkage remain separately gated"
+  ]
+}

@@ -1,41 +1,58 @@
 # Restore
 
-Refreshed 2026-10-07 03:47:10 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 03:57:07 (America/Chicago). Read FIRST after compression.
 
 ## Active task and exact execution state
 
-BP-09.03/B1.3b COMPLETE; B1.3c actual scoped Research/Data/Knowledge records NEXT.
-Child16.67%, Build22.22%, Acceptance0%; parent43.33%, (8+2/3)/20, eight closed gates.
-No running tests/probes. Latest pushed ba2f7319; Deployment0.9 verified changes await commit/push.
-Independent session55523 EXIT0:276 copied tests26.17s; full managed campaign passed.
-Evidence docs/Audits/Evidence/BP-09-Deployment/Managed_Campaign.json.
-Raw .test-results/local-managed-campaign-install-20261007a/evidence.json.
-Run4abe08f518d547948021c52e1446c2ba:15completions,39nodes,6evaluations,3checkpoints,
-15confirmed outputs;117.015s/600s; maxcontrol0.078s/0.5s. Owners drained0, journals
-released; postterminalclaimsexit3 explicitly reconciled. No paid/model calls.
-Second fresh independent b wheel identical:66eeea945ead69d880c38b2f573e1df16db98cdf1daeb2e73160ab6fd30317f6.
-39worker tests3.14s,281/292statements44/50branches94%; recipe100%. Boundaries pass.
-Full dev lint required two import-whitespace fixes only, after probes finished.
+B1.3 COMPLETE. BP-09.03/B1.4 integrated selected-model/browser trace NEXT.
+Child18.75%,Build25%,Acceptance0%; parent43.75%,(8+3/4)/20,eight closed gates.
+No running checks/probes. Latest pushed ffe620a4 (Deployment0.9 managed campaign).
+B1.3c verified dev/docs await commit/push, then continue B1.4 without pause.
+Independent owner-record session96098 EXIT0; source b also passed.
+Evidence docs/Audits/Evidence/BP-09-Deployment/Owner_Records.json.
+Raw .test-results/local-owner-records-install-20261007a/evidence.json.
+Actual installed Data0.30/Research0.40/Knowledge0.18 public-only source rights/upload/
+preparation/conversion, Research question/need registration, grounded Knowledge
+hypothesis, exact accepted-log rebuild. Two entities/one hypothesis, no science claim.
+All three owners restarted; exact declarations/decision/snapshot/rebuild retained.
+Foreign scope403, immutable declaration change409, original unchanged. Both drains0.
+New configs preserve original Data storage root/state/vault. Zero provider calls.
+Source a failed before writes due incorrect schema digest; corrected to supported
+ContentPolicy octetstreamschema bytes. No production boundary/schema changes.
+New dev: local_records_controller.py, verify_local_owner_records.py,
+verify_owner_records_installation.py. Fixture initial.json is adapted to actual
+public references/profile; no private imports, SQL seeding or migrations.
+Independent Deployment interpreter has noSQL/Pydantic/peer implementations.
 
-Initial source run0fc895a594c842b7b04b99b9643ee04c completed science but failed120s
-retention gate. Native delivery batch10 insufficient amid unavailable notification
-retries. Deployment0.9 batch100, same2sec cadence/owner contracts. Original completed
-run recovered15/15 outputs25.437s, unchanged graph/no reruns; fresh installed campaign
-passed unchanged gates. Both histories retained; no resets/migrations.
+Managed campaign checkpoint ffe620a4: independent276tests26.17s, run
+4abe08f518d547948021c52e1446c2ba15completions/39nodes/6evaluations/3checkpoints,
+15confirmed outputs117.015s/600s; maxcontrol0.078s/0.5s. Original completed source
+run0fc895a594c842b7b04b99b9643ee04c had retention backlog, recovered15/15in25.437s
+with graph unchanged and no reruns. Deployment0.9 deliverybatch10->100 within existing
+CLI ceiling; same2sec cadence and retry/acknowledgement contracts. Fresh independent
+campaign passed original gates. Second wheel identical
+66eeea945ead69d880c38b2f573e1df16db98cdf1daeb2e73160ab6fd30317f6.
+39worker tests3.14s,281/292statements44/50branches94%;recipe100%. Managed_Campaign.json.
+All science/container/owner processes stopped, root PG/Qdrant retained.
 
-New dev harnesses: local_numeric_campaign.py, verify_managed_numeric_campaign.py,
-verify_local_retention_recovery.py, verify_managed_campaign_installation.py.
-Immutable new owner scope/configs; actual public Data uploads/Registry/Runtime admission.
-Runtime-selected runid bound by explicit graceful restart into NEW worker configs;
-original receipt/graph unchanged. Public completion and artifact byte/retention oracles.
-Existing owner-local test compiler computes reviewed planSHA inside installed Runtime
-without SQLcredentials; no private cross-owner production imports. Copied-fixture-root
-supports independent Deployment install (noSQL/Pydantic/peerimplementations).
-All significant docs/trackers updated; finish diff/lint/commit/push then immediately
-continue B1.3c. Look up Research/Knowledge transport module READMEs and existing public
-acceptance fixtures. Previous planning_knowledge_seed.py uses direct owner SQL and is
-NOT the public scenario path. Use original retained Data storage root and immutable new
-scope/configs, no oldfixture resets. B1.4 later integrates actual model/browser flow.
+B1.4 next: compose actual owner records and selected-model supervision, then browser/API
+objective-to-proposal/execution/artifact/evidence/successor trace. Checkpoint config
+README paths services/agent_planning/src/amphora_agent_planning/{checkpoint_openai,
+checkpoint_budget,supervision_scheduling}/README.md and Runtime supervision_loop.
+Deployment native worker load_bindings already forwards AMPHORA_OPENAI_API_KEY ONLY
+into planning-checkpoint when live provider/egress configured; controller launcher
+must explicitly pass env key (existing test Controller intentionally filters it).
+Serving Planning pin must match qualified0.101 worker installation. Budget templates
+use exact ArtifactRefs and local relative paths. Runtime checkpoint worker config
+has database_url_env,actor_id,scope,planning/data endpoint/token_env/actor_id.
+Existing dev verify_supervision_owners.py/exchange.py are reference process fixtures;
+read exact scope before reuse (old fixtures may directly seed owner SQL).
+OpenAI Docs skill re-read; official model page fetched and confirms snapshot
+https://developers.openai.com/api/docs/models/gpt-5.4-mini
+and current input0.75/output4.50USD per1M; existing selected snapshot and pinned budget
+unchanged. No credential read or paid calls yet. User authorizes Z:/ssos/.env key,
+synthetic-only scope, costconscious chosenmodel; six reservations/USD0.50 durable ceiling.
+No openai-platform-api-key tool available. No need repeat owner permission.
 
 ## Qualified Deployment0.8/0.7 boundaries
 
