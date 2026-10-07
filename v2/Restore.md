@@ -1,14 +1,18 @@
 # Restore
 
-Refreshed 2026-10-07 08:17:34 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 08:25:20 (America/Chicago). Read FIRST after compression.
 
-## Active task / owner decision
+## Active task
 
-BP-09.03 closed100%,Build100%,Acceptance100%; parent60%,12/20 gates.
-BP-09.04 activated0%,B1.1 next: versioned offline backup manifest/inventory policy.
-Read BP-09.04_Activation.md. Owner recovery objective question pending before actual
-drill; contract work independent. Suggested last fully drained backup, measured time
-without hard deadline; do not treat elapsed time as owner answer.
+BP09.03 closed100%; pushed8244c28b. BP09.04 B1.1 complete:child12.5%,Build16.67%,
+Acceptance0%;parent62.5%,12.5/20 weight,12closed gates. B1.2 actual capture/isolated
+restore harness and evaluator reconstruction specification next. Owner SELECTED last
+fully drained backup; measure recovery time WITHOUT hard limit. No owner gate.
+Deployment0.12 adds backup_restore manifest/verification;98 combined backup/preflight
+tests pass5.43s,159statements/14branches100%. First tests needed short oversized input
+IDs and unique backup_record/backup_bundle fixtures (NAS importlib fixture collision).
+No probes running. No actual backup yet. Source/dev lockfiles updated/synced.
+Lint, production boundaries and changed Markdown links passed; commit/push then B1.2.
 
 Approved daemon drill COMPLETE. One stop18.828s; all five original containers/volumes
 restored and ready. Initial harness used empty requested ephemeral ports; repaired
@@ -20,7 +24,7 @@ Original/corrected/blocked post-daemon reads PASS (local-post-daemon-*-20261007a
 No running probes. No model calls. Shared_Daemon.json and closeout audit are canonical.
 Four BP09.03 docs archived under BP-09/Completed; relative links repaired.
 Lint, production boundaries, changed-document links and whitespace checks PASS.
-Commit/push this closeout, then continue BP09.04/B1.1.
+Closeout pushed8244c28b. Deployment0.12/B1.1 changes await lint/boundaries and commit/push.
 
 ## Latest qualified work / limitations
 

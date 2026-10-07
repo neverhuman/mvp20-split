@@ -90,3 +90,5 @@ registry_access, enabling independently scoped draft eligibility configuration
 without sharing Registry operator keys or replacing the original vault. Lifecycle
 loads the sidecar only for an explicit reference in Runtime/Registry manifests.
 Existing installations/manifests, package dependencies and state schemas are unchanged.
+
+Deployment0.12 adds read-only [offline backup inventory contracts](src/amphora_deployment/backup_restore/README.md). Exact manifest/file digests, owner release/schema compatibility and separate target identity are verified; this is not restored-service readiness. Existing configuration/state formats unchanged. Actual capture/restore remains BP-09.04/B1.2 onward.

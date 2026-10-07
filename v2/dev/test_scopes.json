@@ -383,5 +383,11 @@
     "coverage_sources": [
       "deploy/local/src/amphora_deployment/tool_access"
     ]
+  },
+  "deployment-backup-restore": {
+    "tests": "deploy/local/tests/backup_restore",
+    "coverage_sources": [
+      "deploy/local/src/amphora_deployment/backup_restore"
+    ]
   }
 }
