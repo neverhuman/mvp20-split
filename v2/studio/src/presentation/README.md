@@ -41,3 +41,7 @@ Command settlement uses useCommandFocus for Design, activation and emergency sta
 BP-05.04/B1 integrated actual-owner keyboard/narrow/reconnect journeys passed (scopeb98515e54b7c4a81aa880b83043fdb88). Monitor labels old observation revisions retained whenever its region is not current; unavailable/loading records cannot claim a live revision. Reconnect restores selection and exact detail before live labeling returns.
 
 BP-05.04/B2 production performance is bounded and measured through the real consumer with a synthetic10000-logical source.200 records maximum render/retain; request timing is separate from model/DOM/two-frame settlement. [Owned benchmark](../../tests/browser/README.md) records local hardware, samples, fixed150/250ms regression ceilings and explicit non-SLO/target-host limits.
+
+Local hosting can pass `active=false` to MonitorWorkspace. Browser visibility and
+host-mode visibility both suspend observation reads; returning reconciles retained
+selection against owner state. Existing callers default to active.

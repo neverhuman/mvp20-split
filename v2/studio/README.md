@@ -48,3 +48,11 @@ AMPHORA_GATEWAY_TEST_PYTHON selects an independently installed gateway interpret
 241owned tests and independent Studio generation/build pass. Actual gateway/browser
 proof covers desktop/narrow, empty/denied/loading/failure and synthetic Monitor states;
 it does not replace six-owner campaign acceptance.
+
+Studio0.11 assembles local Execution/Domain-evidence navigation from an explicit
+scoped ExplorePins fragment. The session grants authority independently; invalid
+or foreign links supply no research pins. Existing owner projections render actual
+concepts, hypothesis posture, metadata and source-format limitations. No graph ids
+are inferred from arbitrary artifacts. Hidden modes cancel reads and reconcile on
+return; one-use login tickets are removed while non-secret navigation pins survive
+reload. Design/successor navigation remains BP-09.03 work.

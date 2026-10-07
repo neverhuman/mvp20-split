@@ -17,7 +17,7 @@ import type { EmergencyStop } from '../page_models/design/emergency_stop.js';
 import { EmergencyControl } from './emergency_control.js';
 import './style.css';
 
-export function MonitorWorkspace({ model, context, synthetic = false, navigation, namedViews, evidence, emergency, supervision }: { model: MonitorModel; context: RunContext; synthetic?: boolean; navigation?: NavigationModel; namedViews?: NamedViewsModel; evidence?: EvidenceModel; emergency?: EmergencyStop; supervision?: SupervisionModel }) {
+export function MonitorWorkspace({ model, context, synthetic = false, active = true, navigation, namedViews, evidence, emergency, supervision }: { model: MonitorModel; context: RunContext; synthetic?: boolean; active?: boolean; navigation?: NavigationModel; namedViews?: NamedViewsModel; evidence?: EvidenceModel; emergency?: EmergencyStop; supervision?: SupervisionModel }) {
   const subscribe = useCallback((notify: () => void) => model.subscribe(notify), [model]);
   const view = useSyncExternalStore(subscribe, () => model.snapshot);
   const [filter, setFilter] = useState('');
@@ -44,10 +44,10 @@ export function MonitorWorkspace({ model, context, synthetic = false, navigation
   }, [history, navigation, namedViews, evidence]);
   useEffect(() => { void model.open(context); }, [model, context.scope.tenant_id, context.scope.project_id, context.run]);
   useEffect(() => {
-    const visibility = () => { const shown = document.visibilityState === 'visible'; setVisible(shown); void model.setVisible(shown); };
+    const visibility = () => { const shown = active && document.visibilityState === 'visible'; setVisible(shown); void model.setVisible(shown); };
     document.addEventListener('visibilitychange', visibility); visibility();
-    return () => document.removeEventListener('visibilitychange', visibility);
-  }, [model]);
+    return () => { document.removeEventListener('visibilitychange', visibility); void model.setVisible(false); };
+  }, [model, active]);
   useEffect(() => {
     const current = view.phase === 'ready' || view.phase === 'empty';
     void navigation?.observe(current ? view.window?.snapshot ?? null : null, visible && topology && !pin, view.phase === 'denied');

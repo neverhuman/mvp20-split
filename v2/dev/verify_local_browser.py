@@ -77,7 +77,7 @@ def verify(configuration, retained, public, output):
             'assets': {name: hashlib.sha256((public / name).read_bytes()).hexdigest() for name in ('index.html', 'app.js', 'app.css')},
             'provider_calls': 0, 'workers_started': False,
             'limits': ['Actual localhost gateway/Studio and five retained owners; synthetic science only',
-                       'Read-only execution/reasoning/context trace; full Design/Explore/successor navigation remains separate']})
+                       'Read-only execution/reasoning/context trace; full Design/successor navigation remains separate']})
         print('Actual local browser execution/reasoning/context inspection passed; zero model calls', flush=True)
     finally:
         controller.close()

@@ -10,17 +10,17 @@ import { LaboratoryView } from "./laboratory.js";
 import "../style.css";
 import "./style.css";
 
-export function ExploreWorkspace({ model, feedback, synthetic = false }: { model: ExploreModel; feedback?: FeedbackModel; synthetic?: boolean }) {
+export function ExploreWorkspace({ model, feedback, synthetic = false, active = true }: { model: ExploreModel; feedback?: FeedbackModel; synthetic?: boolean; active?: boolean }) {
   const subscribe = useCallback((notify: () => void) => model.subscribe(notify), [model]);
   const view = useSyncExternalStore(subscribe, () => model.snapshot);
   const [mode, setMode] = useState<"domain" | "specimens" | "properties" | "feedback" | "comparison">("domain");
   const context = view.context;
   const feedbackInspection = useMemo<FeedbackInspection>(() => ({ clear: () => model.clearInspection(), artifact: ref => { void model.artifact(ref, true); }, source: span => { void model.source(span); }, trace: ref => { void model.trace(ref); } }), [model]);
   useEffect(() => {
-    const check = () => model.visibility(document.visibilityState === "visible");
+    const check = () => model.visibility(active && document.visibilityState === "visible");
     document.addEventListener("visibilitychange", check); check();
     return () => { document.removeEventListener("visibilitychange", check); model.visibility(false); };
-  }, [model]);
+  }, [model, active]);
   const refresh = useCallback(() => {
     if (!context) return;
     if (mode === "feedback") { void feedback?.refresh(); return; }

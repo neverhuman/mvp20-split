@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed 2026-10-07 05:40:02 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 05:54:33 (America/Chicago). Read FIRST after compression.
 
 ## Active task
 
@@ -8,8 +8,19 @@ BP-09.03/B1.4c local browser/API objective-to-successor trace active.
 B1.4a/b COMPLETE; child22.92%, Build30.56%, Acceptance0%; parent44.58%,
 (8+11/12)/20, eight closed gates. Partial c earns no further credit yet.
 No owner decision required. Continue across milestones/commits; local computer only.
-No tests/build/probes running. Prior33868 FINISHED; evidence passed and all six
-processes drained0. Studio0.10 changes pending commit; latest pushed134598bd.
+No tests/build/probes running. Actual browser session36387 EXIT0; all six processes
+drained0. Studio0.11 graph/evidence navigation qualified. Latest pushed0f0b0801; second
+checkpoint pending commit. Evidence Local_Domain_Navigation.json; raw
+.test-results/local-browser-domain-20261007d; assets studio-local-domain-20261007c/public
+and d/public identical.24focused tests, final selection2tests100% coverage, Monitor7cases,
+Explore fixture and gateway/entry regression all pass. Generator/build pass; screenshot
+review1440/390 passed. Uncommitted WorkspaceSelection (strict ExplorePins fragment/
+session-scope fence), LocalKnowledge, Execution/Domain navigation, active-mode hooks.
+No gateway changes. Ticket removed; nonsecret explicit pins survive reload.
+Current actual source is octet-stream; text viewer correctly refuses it, metadata
+visible. Preserve original history. Need corrected typed-source successor plus
+Design/successor assembly to finish B1.4c; no model calls required for current UI work.
+Next final lint/boundary/diff and commit/push, then return to that scoped work.
 
 ## Latest qualified work
 
@@ -29,15 +40,20 @@ full graph/evidence/successor navigation. B2 scenarios and B3 recovery follow.
 
 ## Navigation work remaining
 
-Entry currently Monitor + reasoning. Existing Explore/Draft/Feedback components
-and models are implemented but not composed into local entry. Consult their READMEs
-and existing integration/browser entries before changes. Session context v1 strictly
-actor_id/scope/run_id/synthetic. No Research/Knowledge/draft pins in session config.
-Do not hardcode synthetic domain id or treat arbitrary knowledge artifacts as graphs.
-Current context artifact is fixture-authored synthetic-demo-context.v1, not a general
-workspace selection contract. Choose explicit scoped navigation references through
-existing public APIs; preserve session compatibility. No decision on approach yet.
-Read UI_Coding_Guidelines before coding; actual1440/390 visual/keyboard/axe proof.
+Execution/reasoning and explicit scoped Domain/evidence assembly are verified.
+Entry receives ExplorePins in URL fragment, validates published shapes and session
+scope, never infers graph identity from arbitrary artifacts. Gateway/session v1 unchanged.
+Existing Design DraftWorkspace/DraftSession/DraftCommands/EditorCatalog need local hosting.
+Runtime AuthoringClient offers scoped draft listing/read/save/validate/admit. Draft
+activation is existing independent next-campaign admission, NOT predecessor carry.
+Approved graph.admit_draft_successor contract exists in Python/Runtime but is not in
+Studio generated authoring schemas yet. Read the owning contracts and existing
+BP-08 successor acceptance before choosing integration. Use public APIs only.
+Original numeric integrated graph was compiled by test exporter/admitted directly,
+not an LLM-authored draft; do not misrepresent that. B1.4c needs honest full trace,
+B2 success/unsupported/corrected-successor scenarios follow. Current original source
+published application/octet-stream by verify_local_owner_records.py; viewer allows
+text/plain/application/json. Create new typed revision/correction, never mutate old.
 
 ## Retained integrated campaign and costs
 

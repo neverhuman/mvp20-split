@@ -20,3 +20,7 @@ Optional Question & feedback mode is owned by [feedback presentation](../feedbac
 `material.tsx` shows an exact Research material revision and eight preparation events per window, including reported/proposed attribution, method, duration, atmosphere and expandable condition values. It displays the retained feature count; it does not implement a feature-editing surface. A new material revision resets paging. Current denial clears comparison and inspector through the shared model. Optional record-client absence is explicit unavailable.
 
 Comparison browser acceptance includes same candidate/different80/120degree preparation, preserved quality flags, explicit8-step paging, denial and narrow/desktop accessibility/overflow. The public HTTP fixture is synthetic; actual two-specimen owner progression and reuse rejection passed the separate B2.04c/d gates. Module replacements retain model-owned reads and the existing token/layout system.
+
+Local hosting can pass `active=false` to suspend Explore reads while preserving
+mounted local controls. Effective visibility combines this flag with document
+visibility; returning refreshes the selected owner projection. Default remains active.

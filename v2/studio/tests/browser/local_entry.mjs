@@ -18,7 +18,7 @@ const evidence={checked_at:new Intl.DateTimeFormat('sv-SE',{timeZone:'America/Ch
 try {
   for (const selected of [false,true]) {
     const process=spawn(globalThis.process.env.AMPHORA_GATEWAY_TEST_PYTHON ?? resolve('../dev/.venv/Scripts/python.exe'),[resolve('../services/local_gateway/tests/browser/fixture_host.py'),
-      '--public',resolve('dist/local'),'--fixture',fixture,...(selected?['--selected']:[])],
+      '--public',resolve(globalThis.process.env.AMPHORA_STUDIO_PUBLIC ?? 'dist/local'),'--fixture',fixture,...(selected?['--selected']:[])],
       {env:{...globalThis.process.env,PYTHONUTF8:'1',GATEWAY_FIXTURE_KEY:key},windowsHide:true,stdio:['ignore','pipe','pipe']});
     const exited=once(process,'exit');
     try {

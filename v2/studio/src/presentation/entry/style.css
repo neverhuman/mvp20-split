@@ -6,3 +6,6 @@
 .local-entry p { color:var(--muted); line-height:1.6; }
 .local-entry button { margin-top:12px; }
 @media (max-width:480px) { .local-entry { margin:32px auto; } .local-workspace-bar { padding:12px; } }
+
+.local-workspace-navigation { display:flex; flex-wrap:wrap; gap:8px; align-items:center; padding:8px 12px; border-bottom:1px solid var(--line); background:#fff; }
+.local-workspace-navigation button[aria-pressed="true"] { border-color:var(--accent); box-shadow:inset 0 -2px var(--accent); }

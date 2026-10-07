@@ -64,3 +64,12 @@ journey_pack.json versionamphora-studio-journeys-v1 defines inspect/reconnect, e
 BP-06.06 owns `explore_live_entry.tsx`, `explore_live_host.mjs` and `explore_live.mjs`. The cross-owner knowledge_feedback controller supplies actual immutable pins and separately granted read-only Data/Research/Knowledge principals through stdin. No SQL or owner package is exposed to Node. The entry mounts production ExploreModel/transports/presentation; the loopback host reuses the production read-route allowlist, bounds requests/responses/deadlines, rejects mutations and keeps credentials server-side. Browser checks exact source/trace traversal, real query windows, scope denial and cleared prior detail, with desktop/narrow accessibility/overflow/screenshots. Evidence remains under `.test-results/feedback-browser/<scope>`. Scripted scientific browser fixtures, real-owner browser acceptance and independent consumer replacement are distinct tiers.
 
 The actual Explore adapter also supports server-only bounded response holds. It first reads the real Data response, then signals a controller barrier before browser delivery. The journey checks the production timeout message and cleared source, and releases a later response after a foreign-context denial. Completion is observed before checking protected state. Holds release on cleanup; no owner result is substituted. The same journey runs in the clean replacement Studio installation.
+
+The local demo proof also navigates the actual pinned domain graph (two concepts,
+one hypothesis), follows applicability metadata, and checks truthful refusal to render
+the original octet-stream source as text. A cross-project fragment renders unavailable
+without a Knowledge request. Properly typed source correction is successor work;
+original records are never relabeled.
+
+The separate gateway/fixture entry regression accepts AMPHORA_STUDIO_PUBLIC to
+qualify immutable fresh assets without replacing an earlier dist/local build.
