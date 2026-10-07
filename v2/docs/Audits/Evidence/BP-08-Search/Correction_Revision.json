@@ -1,0 +1,39 @@
+{
+  "timestamp_local": "2026-10-06 19:30:18",
+  "status": "passed",
+  "scope": "BP-08.05/B2.01",
+  "tests": 29,
+  "seconds": 4.27,
+  "coverage": {
+    "covered_lines": 39,
+    "num_statements": 39,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100",
+    "num_branches": 2,
+    "num_partial_branches": 0,
+    "covered_branches": 2,
+    "missing_branches": 0,
+    "percent_branches_covered": 100.0,
+    "percent_branches_covered_display": "100"
+  },
+  "source": "tests/integration/search_recovery/correction.py",
+  "raw_coverage": ".test-results/search-correction-coverage-20261006.json",
+  "raw_sha256": "5904d41a211c7f940ba70647cc466e7a8b677ac39f92d9585f4444ff583ccdfe",
+  "oracles": [
+    "Separate explicit new_search_from_declared_seed revision; resume false",
+    "Changed evaluator requires new search identity and exact spec Artifact",
+    "Other objectives/budget/operators/seed/context frozen in this fixture policy",
+    "New pending candidates/evaluations contain no old rank or fitness",
+    "Old checkpoint resume and old observation collection reject under new spec",
+    "Original checkpoint and rank hash unchanged"
+  ],
+  "limits": [
+    "Test correction evidence, not production admission or scientific authority",
+    "Actual corrected successor remains B2.02"
+  ],
+  "paid_calls": 0
+}

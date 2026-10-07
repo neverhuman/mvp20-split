@@ -1,5 +1,11 @@
 # Restore
 
+Latest 2026-10-06 19:30:18: B1partialproof pushedfcfc50eb. B2.01 COMPLETE, B2.02 actualcorrectedevaluatorsuccessor NEXT. Child37.5%,Build50%,Acceptance0%;parent87.5%,17/20+halfB2. No activeprocesses.29correction/manifest tests4.27s; correction39/39stmts2/2branches. Source tests/integration/search_recovery/correction.py andtest_correction.py. CorrectionRevision.prepare binds oldrankedCheckpointEvidence, exactnewSearchSpecArtifact/bytes, distinctsearch_id andevaluatorbinding, samecapability/contract and allotheroriginalfields unchanged. record mode=new_search_from_declared_seed,resume=false,fitnessreuseforbidden,priorrankhashretained. Tests demonstrate freshcandidateIDs/noobservations/selection, oldcheckpointrestore andoldfitnesscollectreject, originalbytesunchanged. This is TESTevidence, no authoritygrant. EvidenceCorrection_Revision.json. Current checkpointreadycommitpush thenB2.02.
+
+Next action preserve oldevaluator0.2 (already ROOT.test-results/partial-search-installs-20261006a/evaluator), bump current synthetic_objectives to0.3 releaseidentityfixture (metadata derivesinstalledversion; updatepyproject/Dockerfile/README/locks; arithmetic+schemassame). Independentlyinstallnewrelease, compareold/newschemas/policybytes. Extend test NumericEnvironment to include bothreviewedreleasepins andenableauthoring/currentRegistry eligibility or useconfiguredsuccessor graph: existingSuccessorProposal canadmit reviewedconfiguredsuccessor withoutnewdraft becausegraphfixturecreatedbeforehosting. Successor has newevaluatorplan, explicitnewsearchspec andsamepolicy, carriespriorfinalcheckpoint as HISTORICAL input/output (nottoolinput). ExistingGraphEnvironment compilesmultipleconfiguredgraphs. Runold fully, formCorrectionRevision/testintentArtifact, newgraphadmit_successor exactterminalcut+carriedresult; executenew0.3evaluator withnewcandidate/evaluation/selectionrevision, preserveoldcheckpoint/ranks/producerhistory. No newpubliccontract/migrationneeded. Actualold/newimagefixturesexplicit; qualification V1later ifneeded. Do notclaimchangedarithmetic/scientificgain. No paidcalls.
+
+
+
 Refreshed 2026-10-06 19:27:13 (America/Chicago). Read FIRST after compression.
 
 ## Exact checkpoint
