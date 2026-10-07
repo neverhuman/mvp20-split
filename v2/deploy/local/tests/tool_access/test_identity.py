@@ -33,8 +33,10 @@ def exchange(identity, *, trust=True, hostname=HOSTNAME):
                 try:
                     with server.wrap_socket(connection, server_side=True) as secured:
                         secured.sendall(b"local-tool-tls")
-                except ssl.SSLError:
-                    pass  # Expected client rejection is part of these tests.
+                except (ssl.SSLError, ConnectionResetError):
+                    if trust and hostname == HOSTNAME:
+                        raise
+                    # Windows may reset instead of sending an SSL alert after client rejection.
         finally:
             listener.close()
 

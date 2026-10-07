@@ -360,23 +360,10 @@
       "services/local_gateway/src/amphora_local_gateway"
     ]
   },
-  "planning-checkpoint-input": {
-    "tests": "services/agent_planning/tests/checkpoint_input",
+  "deployment-tool-catalog": {
+    "tests": "deploy/local/tests/tool_catalog",
     "coverage_sources": [
-      "services/agent_planning/src/amphora_agent_planning/checkpoint_input",
-      "services/agent_planning/src/amphora_agent_planning/campaign_packet_profiles"
-    ]
-  },
-  "planning-checkpoint-openai": {
-    "tests": "services/agent_planning/tests/checkpoint_openai",
-    "coverage_sources": [
-      "services/agent_planning/src/amphora_agent_planning/checkpoint_openai"
-    ]
-  },
-  "planning-checkpoint-budget": {
-    "tests": "services/agent_planning/tests/checkpoint_budget",
-    "coverage_sources": [
-      "services/agent_planning/src/amphora_agent_planning/checkpoint_budget"
+      "deploy/local/src/amphora_deployment/tool_catalog"
     ]
   },
   "deployment-scientific-workers": {

@@ -67,7 +67,13 @@ def load_bindings(root, manifest, routes):
                     ("installation", "source_lock", "configuration")), "lifecycle_binding_path")
         references = record["secret_references"]
         require(type(references) is list and len(references) <= 64 and all(type(name) is str and allowed_reference(owner, name) for name in references), "lifecycle_credential_scope")
-        environment = {"AMPHORA_" + name:value for name,value in bundle.environment(references).items()}
+        selected = [name for name in references if name != 'WORKER_REGISTRY_TOKEN']
+        values = bundle.environment(selected)
+        if 'WORKER_REGISTRY_TOKEN' in references:
+            from ..tool_catalog.credentials import worker_credential
+            require(owner == 'registry', 'lifecycle_credential_scope')
+            values.update(worker_credential(root, state['deployment_id']).environment(['WORKER_REGISTRY_TOKEN']))
+        environment = {"AMPHORA_" + name:value for name,value in values.items()}
         recipe = SERVING_HOSTS[owner]
         if recipe.schema is not None:
             password = bundle.environment(["PG_" + recipe.service_role.upper() + "_PASSWORD"])["PG_" + recipe.service_role.upper() + "_PASSWORD"]

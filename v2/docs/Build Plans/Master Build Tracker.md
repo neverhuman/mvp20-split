@@ -9,7 +9,7 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-08 closed100%; BP-09.01/.02 closed; BP-09.03 B1.3b active.
-- Last refreshed: `2026-10-07 02:14:53` (America/Chicago).
+- Last refreshed: `2026-10-07 02:45:50` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P8 / BP-09 - Single-Server Integrated Demo and Replacement Proof.
 - Primary active task: BP-09.03/B1.3b actual catalog/tool eligibility and successful managed execution; lifecycle/adoption independently qualified.
@@ -112,6 +112,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-07 02:45:50 | BP-09.03 catalog delivery primitive verified; percentages unchanged. | Deployment0.7 independent230tests, actual Registry/SQL lost-response replay and zero-capacity exclusion; managed readiness remains. |
 | 2026-10-07 02:14:53 | BP-09.03 second B1.3b checkpoint complete;child15.97%,parent43.19%. | Deployment0.6 independent199tests, actual owner/TLS/tool denial and monitor-death adoption; successful eligibility next. |
 | 2026-10-07 01:44:31 | BP-09.03 B1.3b TLS/container primitive checkpoint;percentages unchanged. | Deployment0.5 independent189tests and two actual Linux lost-reply cases; responsive adoption/migration integration remains. |
 | 2026-10-07 01:22:21 | BP-09.03 native third of B1.3b verified;child15.28%,parent43.06%. | Deployment0.4 independent164tests and actual Runtime/Planning quiescence; no campaigns/model calls. |
@@ -136,4 +137,3 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-06 16:22:40 | BP-08.04/B1 complete;child25%,parent65%,13/20. | Planning0.98 topologyAPI/host;153checks;438statements30branches100%; faircomparison next. |
 | 2026-10-06 16:15:33 | BP-08.04/B1.03i complete;child20.83%,parent64.17%. | Planning0.97/0020;128regressions+71focused;immutable record/current readers; API/host next. |
 | 2026-10-06 16:01:13 | BP-08.04/B1.02 complete;child16.67%,parent63.33%. | 88checks; pure bounded topology policy163statements/eightbranches100%; owner persistence next. |
-| 2026-10-06 15:53:23 | BP-08.04/B1.01 complete;child8.33%,parent61.67%. | 29wire/schema/boundary checks;630schemas preserve622; pure policy next. |

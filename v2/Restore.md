@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed 2026-10-07 02:16:27 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 02:45:50 (America/Chicago). Read FIRST after compression.
 
 ## Active task
 
@@ -13,9 +13,40 @@ verified updates. Local Windows x86_64/Python3.12, browser/owner listeners127.0.
 
 All tests/builds/probes exited. No supervisor/owner/gateway/tool processes remain.
 Dedicated local PostgreSQL/Qdrant and older dev fixtures remain running; never reset.
-Latest pushed commits: 3b16e016 native workers;89f09465 TLS/container primitives.
-Deployment0.6 checkpoint is VERIFIED; scoped lint/boundary/diff checks passed.
-Commit/push if not yet in git log, then continue eligibility; do not stop at push.
+Latest pushed checkpoint:11634722 Deployment0.6. Deployment0.7 catalog delivery is
+verified and awaiting commit/push if not yet in git log. Continue managed readiness.
+
+## Latest verified Deployment0.7
+
+Tool catalog module: separate create-once heartbeat credential tool-catalog.dpapi,
+WORKER_REGISTRY_TOKEN explicitly available only to Registry owner. Original vault
+unchanged. Actual installation sidecar IS NOW provisioned. Scoped heartbeat journals
+under installation/tool-catalog/; all settled at revision2/free_slots0. No campaigns.
+HeartbeatJournal local-heartbeat-v1 persists original request before send; original
+revision/command/expiry retained after uncertain delivery. Positive pending request
+cannot replay while unready (returns None/uncertain); pending zero may replay.
+Transport fixed127.0.0.1 Registry route, no redirects/proxies, bounded response and
+2sec SOCKET timeout (not absolute request deadline). No background reporter yet.
+
+Independent .test-results/local-catalog-install-20261007b/owner:230copiedtests plus
+actual installed Registry0.1/SQL replay, zero-capacity exclusion and public-wire
+validation in separate Registry interpreter. Fresh c rebuild identical wheel.
+Catalog_Delivery.json durable evidence. Focused27tests135/135statements12/12branches;
+26credential/TLS checks,25Planninginput checks,four ownership checks. Named test
+runner repaired: removed duplicate nested Planning scopes; use --module agent-planning
+--area checkpoint_input|checkpoint_openai|checkpoint_budget. Deployment included in
+ownership scan. Source/dev pins/locks/generated package inventory0.7 updated.
+Source probe a had wrong /ready route; bpassed via authenticated/v1/releases. Initial
+independent a TLSnegative test warned on Windowsconnectionreset; final bclean after
+fixing expected test-side reset handling. No productionTLS weakening.
+
+Next: explicit managed standby (no run_once before campaign admission), fresh pinned
+image/config/daemon/resource/owner/TLS checks, stable replica reporting under writer
+lease, withdrawal/expiry on quiesce/failure. Registry capacity is observation, NOT
+reservation. Then actual successful eligible execution to close third B1.3b checkpoint.
+Drivers verify_local_catalog_delivery.py, catalog_contract_probe.py (public contracts
+in separate Registry interpreter), verify_catalog_installation.py. All completed,
+no processes remain. Original stores/owner configurations untouched.
 
 ## Latest verified Deployment0.6
 
@@ -73,7 +104,7 @@ Scientific_Turns.json. Deployment0.4 a/b164tests + actual Runtime/Planning empty
 Native_Workers.json. TLS0.3 b126tests + actual Linux SDK trust/untrusted/plain-HTTP cases;
 Tool_TLS.json. Earlier source/regression histories are in BP-09.03 History.md.
 
-## Next eligibility investigation (read-only findings, not implementation)
+## Eligibility boundary findings
 
 Registry0.1 owns exact scoped releases, activation, deployments, worker-authenticated
 replica heartbeat and resolve. Read HOSTING.md and catalog/README.md, then targeted
@@ -82,12 +113,10 @@ environment; actual scientific images are Linux/amd64, not native Windows. Do no
 relabel descriptors or relax SDK HTTPS restrictions. Existing accepted Registry profile
 is Windows/read-only (one dormant fixture); use a new explicit scientific configuration.
 
-Registry heartbeat worker must be in deployment.workers and have heartbeat-only grant.
-Existing installation vault has WORKER_RUNTIME_TOKEN/WORKER_ARTIFACT_TOKEN but NO
-WORKER_REGISTRY_TOKEN. Likely need a separate create-once deployment-bound DPAPI
-sidecar and narrowly scoped loader grant; original vault must remain unchanged. This
-is a proposed routine deployment extension, NOT implemented. Avoid repurposing a
-Planning token or granting broad catalog authority to a heartbeat worker.
+Registry heartbeat worker must be in deployment.workers and heartbeat-only. Separate
+sidecar is now provisioned/qualified above; original vault is preserved. No periodic
+reporter or managed availability grant yet. Explicit synthetic Registry configuration
+used only in proof, baseline read-only serving manifest unchanged.
 
 Replica IDs must be stable logical worker slots, not new Docker IDs every turn:
 Registry caps64 retained replicas/deployment and64 deployments/release. Derive any
@@ -98,7 +127,7 @@ an expiring candidate, not reservation/execution authority. Runtime owns claims.
 Watch bootstrap ordering: starting run_once worker before Runtime admission attempts
 unknown run and correctly exits3. Eligibility needs honest verified standby capacity
 before admission, then start configured workers. Work out this composition explicitly;
-no new scheduling authority in Deployment. No heartbeat/catalog client implemented yet.
+no new scheduling authority in Deployment. Heartbeat delivery primitive implemented; managed readiness/reporting next.
 After B1.3b successful eligible managed work, B1.3c actual Research/Data/Knowledge records;
 then B1.4 live-model/browser/API trace. B2/B3/V1 still required. Studio Monitor default;
 Design/Explore integration and actual trace remain. See child tracker/activation audit.

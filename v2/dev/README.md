@@ -1,5 +1,17 @@
 # Foundation Verification Tooling
 
+Local catalog delivery: `verify_catalog_installation.py` builds an independent
+standard-library-only Deployment closure, runs copied owned tests and exercises
+heartbeat replay against the installed Registry and retained local SQL. It takes
+an explicit source manifest and Registry interpreter; no migrations, reset or
+model calls. Zero-capacity evidence is not worker readiness. `catalog_contract_probe.py`
+runs public wire validation in the separate Registry contract closure.
+
+Checkpoint suites use the existing Planning owner with `--module agent-planning
+--area checkpoint_input|checkpoint_openai|checkpoint_budget`; do not register those
+directories again as overlapping owners. Deployment test folders are included in
+the canonical ownership audit, with `deployment-tool-catalog` independently selectable.
+
 [Numeric comparison harness](numeric_comparison/README.md) owns the predeclared BP-08.04 offline equal-attempt-budget benchmark. No paid calls or production authority.
 
 ## Current supervisor installation verifier
