@@ -1,6 +1,6 @@
 # Local browser gateway
 
-Owner BP-09.02/B1.04. This independent service owns
+Owner BP-09.02; release0.2.0 adds cooperative request drain. This independent service owns
 loopback Studio hosting, browser sessions and bounded public HTTP routing to the
 six service owners. It owns no campaign decisions, SQL/schema, scientific policy,
 provider requests or private service imports. Studio remains a separate package.
@@ -57,3 +57,10 @@ failure branches remain gaps. Live six-owner readiness and graceful application
 drain belong to BP-09.02/B2; campaign/model demonstration belongs to BP-09.03.
 Replacement preserves request limits, public wire bytes, origin/session checks and
 sanitized failures; recreate sessions explicitly after process replacement.
+
+Release0.2 retains accepted request threads during server_close. KeyboardInterrupt
+stops accepting new connections, then joins those requests; the Deployment supervisor
+reports an unresolved drain after45seconds without silently killing the process.
+An actual blocked proxy response test proves close waits for full response completion.
+Socket timeouts bound inactivity, not total wall time against a trickling peer.
+Forced supervisor death remains an interruption requiring normal owner reconciliation.

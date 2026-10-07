@@ -1,106 +1,96 @@
 # Restore
 
-Refreshed 2026-10-06 22:46:13 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-06 23:32:34 (America/Chicago). Read FIRST after compression.
 
 ## Current task
 
-BP-09.02/B2.02: dependency failure and graceful drain.
-B1 and B2.01 complete. Child37.5%, Build50%, Acceptance0%; BP-09 parent27.5% (5.5/20 equivalents).
-BP-09.01 and BP-08 remain closed100%. User chose this Windows computer and local
-computer access: 127.0.0.1 only. Continue until needed; no current decision blocker.
-B1.04 committed/pushed e48b3f6a. B2.01 work below is uncommitted. Dedicated PG/Qdrant remain up.
+BP-09.02/B3 selected-host failure and recovery matrix. B1/B2 complete.
+Child50%, Build66.67%, Acceptance0%; BP-09 parent30%,6/20. BP-09.01 and BP-08 closed.
+Owner chose this Windows x86_64/Python3.12 computer and local access127.0.0.1 only.
+Continue until genuinely needed; commit/push significant verified work. No current decision blocker.
+B2.01 pushed d15276f1. B2.02 ready for commit after diff checks; all tests/probes exited.
+No owner/gateway/supervisor processes remain; dedicated PostgreSQL/Qdrant remain running.
 
-## Latest B2.01 checkpoint - 2026-10-06 23:11:37
+## Latest verified B2 boundary
 
-B2.01 COMPLETE. All6 dedicated migrations and repeat migrations succeeded. Five installed
-owner startup-check CLIs passed. Planning0.99 rejects migrator, service ready;34 persistence
-Pythonfiles byte-identical to0.98. Evidence ROOT.test-results/local-planning-role-20261006a.
-Allsix owners PLUS gateway actual supervisor startup/HTTP/force-stop/shutdown PASSED:
-ROOT.test-results/local-readonly-20261006a. Five static health responses are NOT ongoing
-DB readiness; CLI checks validate owner startupDB access; Data/Planning ready and Registry
-read useactualDB. No admission/science/providercalls. NoAPI processes remain afterprobe.
+Six explicit owner migrations plus repeat migrations succeeded on dedicated schemas only.
+Planning0.99 fixes reproduced0.98 serving with planning_migrator: actual wrong-role rejection,
+service /ready success;34 persistence Pythonfiles byte-identical, schema0020 unchanged.
+New serving install ROOT.test-results/local-planning-role-20261006a; original0.98 preserved.
+Allsix owners plus gateway started over supervisor control, restricted serving roles, no migrations
+on startup. Gateway SERVING_HOSTS has no database authority; OWNERS remains six SQL owners.
 
-Current manifest LOCALAPPDATA/Amphora/local-v2/installation/configurations/
-readonly-20261006a/manifest.json; nonsecret read-only infrastructure profile. Gateway
-SERVING_HOSTS entry has no SQL authority; OWNERS remains6. Original5install dirs plus
-Planning0.99 rolequalifieddir and gatewayinstallb. dev/compose_local_readonly.py,
-check_local_readonly.py and verify_local_readonly.py own composition/qualification.
-53 focuseddeploymentregressions passed6.33s; productionboundarycheckpassed.
-Planning15role/credential/boundstests passed5.97s. Metadata inventory refreshed only.
-Uncommitted checkpoint; update remaining README/evidence asneeded, gitdiff/check thencommit/push.
-Next B2.02 continuous dependencyreadiness and graceful drain. Need actualowner shutdown
-boundary; existing Windows jobs only FORCEstop. No migrations/provider/userblockers.
-All tests/probes EXITED. Sourceedits permitted. Never touch KAPpythonprocesses.
-## Latest verified boundary
+B2.02 actual ROOT.test-results/local-outage-receipt-20261006b PASSED: allsix owners report DB
+unavailable during dedicated PostgreSQL stop/start, recover, accepted dormant synthetic Registry
+registration replays byte-for-byte, journal unchanged, all7 processes cooperatively drain exit0.
+No campaign/scientific activation/provider call. Registration remains dormant, not eligible.
+Earlier outage a recovered but Registry drain hung on unbounded connect; fixed every serving
+DB URL with connect_timeout=5. First outage also exposed Docker dynamic ports changing60687->51130.
+Explicit forward repair fixed both dedicated stores while preserving volumes, credentials, images,
+identity and recorded60687/60688 ports. Old containers renamed -dynamic-baseline, STOPPED.
+NEVER start a stopped baseline alongside replacement on shared volume. No data deletion/reset.
 
-Gateway0.1: services/local_gateway, independent stdlib package. Explicit loopback
-HTTP, server-side owner tokens, host/origin checks, single-use60s launcher tickets,
-HttpOnly Strict8h sessions, bounded body/proxy/static assets, safe MIME/diagnostics.
-Studio0.9: session-aware entry and reused Monitor, empty/denied/loading/failure states.
-Design/Explore top-level shell assembly remains explicit integrated-demo work.
-Real CSP failure fixed by scripts/standalone-validators.mjs and generator: seven
-validators.ts modules (~9MB generated), unchanged Python schemas/decoder behavior.
-No unsafe-eval needed. Existing-tab ticket hashchange fixed. Build app.js800275bytes.
-27gateway tests1.24s; coverage346statements46missed/46branches86%combined.241Studio
-tests1276ms, independent Studio generation/build accepted. Boundary guard passed
-before last MIME hardening; run once more before commit. Package inventory regenerated
-from metadata only; this does not claim a complete foundation test run.
+Deployment lifecycle uses Windows jobs, gated owner startup, one-shot unbuffered controlpipe
+D -> interrupt_main for cooperative HTTP drain. Repeated drain sends no second interrupt.
+45second timeout reports timed_out and leaves process alive; explicit force-stop is separate.
+Original buffered daemon pipe reader caused Windows exit fault, fixed os.read. Gateway0.2
+uses non-daemon accepted requestthreads; actual blocked proxyresponse test waits for completion.
+Current transport drain does not yet quiesce future autonomous workers; BP-09.03 must do so.
 
-Actual installed-gateway browser proof v2/.test-results/studio-local-entry/
-2026-10-07T03-44-36-139Z: empty+synthetic Monitor,1440/390width, no horizontaloverflow,
-no serious/criticalaxe findings, cookie flags/fragmentclear/logout. Screenshots
-inspected from prior equivalent-source pass03-37-59 and slow/failed03-41-27.
-Node browser tests use fixture Runtime HTTP, NOT actual six-owner readiness.
-Gateway wheel ROOT.test-results/local-gateway-install-20261006b (a preserved).
-Independent Studio v2/.test-results/studio-isolated/cad5606c5c7c4db5a1a0422a75039447.
-Evidence copies docs/Audits/Evidence/BP-09-Deployment/{Gateway_Browser,Gateway_Installation,Studio_Independent}.json.
+Readiness CLI takes --root and --manifest; public owner HTTP/checkCLIs only, noforeignSQL.
+Three static health endpoints are liveness only; ownerCLI checks assessDB access. Data/Planning
+ready and Registry catalog read use actualDB. Read-only config/journal snapshots work under
+supervisor lifetime writerlease. Health checks are observations, not scientific eligibility.
 
-## Dedicated local installation
+138 deployment/gateway regressions passed12.20s; coverage rerun138passed12.25s.
+Parent-process coverage1283/1689statements,156/260branches,73.83%combined. Live Docker/SQL/CLI
+proof is separate; rareOS/process errors, explicit repair interruption remain gaps. Production
+boundary check passed. Metadata foundation-packages regenerated only (not fullfoundationtest).
+Evidence docs/Audits/Evidence/BP-09-Deployment/{Local_Outage_Drain,B2_Coverage,Planning_Host_Role}.json.
 
-LOCALAPPDATA/Amphora/local-v2/installation contains stores.json, credentials.dpapi,
-supervisor.dpapi, stable routes and bounded supervisor logs. Identity
-7be3465bdf1e4fa6b9189637e51e6f96. Dedicated labeled PostgreSQL127.0.0.1:60687 and
-Qdrant127.0.0.1:60688; read state for current ports and eight owner/gateway/control routes.
-Current-user DPAPI; create-once credentials, no rotation/reset. Docker admins can
-inspect runtime env; never print raw inspect or credential-bearing exceptions.
-12 distinct migrator/service roles and6owner schemas exist. All6owner migrations and repeats now succeeded.
-Actual auth/schema scope/serving DDL denial/Qdrant absent+wrong-key denial/resume passed.
-Do not touch existing acceptance fixture containers/databases/volumes.
+## Local installation
 
-Six independent owner installs ROOT.test-results/local-owner-inventory-20261006a/owners:
-runtime0.65,artifact0.30,registry0.1,research0.40,knowledge0.18,planning0.98;79local wheels.
-Deployment0.2 lifecycle CLI: python -I -m amphora_deployment.lifecycle serve/status/start/
-restart/force-stop/shutdown --root; serve takes --manifest, owner actions --owner.
-Manifest local-supervisor-v1 grants only scoped serving credentials; Planning credentials
-converted from token_env records into environment-only JSON. Reads use atomic snapshots,
-not writer locks (fixed reproduced startup/status race). Control DPAPI sidecar separate.
-Windows jobs/gated entry/handle-based teardown protect process ownership; force-stop is
-NOT graceful drain. Actual isolated Registry invalid-config2/repeat/restart/stop/shutdown
-passed ROOT.test-results/supervisor-commands-20261006c.92deployment tests11.35s.
+Logical root LOCALAPPDATA/Amphora/local-v2/installation. Windows Store Python redirects it to
+physical LOCALAPPDATA/Packages/PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/Local/
+Amphora/local-v2/installation (verified GetFinalPathNameByHandleW). Use physicalpath fromPowerShell,
+logicalroot fromselectedPython. stores.json, credentials.dpapi/current-userDPAPI, supervisor.dpapi,
+stable routes and boundedlogs. Identity7be3465bdf1e4fa6b9189637e51e6f96. PG127.0.0.1:60687,
+Qdrant127.0.0.1:60688. PostgreSQL databaseamphora_local,12migrator/service roles,sixschemas.
+Read routes for eight API/control ports; never print vaultvalues/rawDockerinspect/errors.
 
-## Next work and boundaries
+Manifests under root/configurations: readonly-20261006a original7hostproof;
+readonly-drain-20261006a gateway0.2; outage-receipt-20261006a grantsRegistryread/registerONLY.
+Noactivation/deploy. Allotherprincipalsread-only. dev/compose_local_readonly.py --registry-evidence
+creates fresh immutable nonsecret configuration; driver verify_local_readonly.py --drain
+--dependency-failure --registry-evidence owns exact outageproof. repair_local_store_ports.py is
+one-timeexplicitforwardrepair, not startup. migrate_local_owners.py uses originalownerreleases.
 
-B2.01: inspect each owner's migration CLI/hosting README; explicitly migrate only the
-new dedicated schemas using its migrator credential, then configure/start six restricted
-APIs plus gateway. Planning root has no __main__; use supervision_api. No migrations on
-service startup. Knowledge/Research require explicit scientific context config; label
-synthetic engineering fixtures, do not imply biology readiness. Runtime requires graphs
-or fixtures and explicit peers; reuse public reviewed artifacts, no privatecrossimports.
-Gateway independent install exists but not yet wired into persistent lifecycle composition.
-Studio static assets v2/studio/dist/local. UI guidelines already read this session.
-B2.02 dependency readiness/drain follows; B3 failures and V1 replacement remain.
-Scientific tool descriptors Linux-only; BP09.03 must qualify compatible tool deployment,
-never relabel old artifacts. No paid model calls in BP08/BP09. Existing synthetic OpenAI
-policy persists for later gate; keys Z:/ssos/.env never print/copy, not needed now.
+Six original installs ROOT.test-results/local-owner-inventory-20261006a/owners:
+Runtime0.65,Data0.30,Registry0.1,Research0.40,Knowledge0.18,Planning0.98;79localwheels.
+NewPlanning0.99 directoryabove; gateway0.2 ROOT.test-results/local-gateway-drain-20261006a.
+Older gateway0.1installb preserved. Deployment0.2 currenteditable awaits V1 independentqualification.
+Studio0.9 dist/local assets, CSPsafe standaloneAJVvalidators, Monitorentry. Design/Explore shell
+assembly remains BP-09.03. Earlier actualbrowser proof v2/.test-results/studio-local-entry/
+2026-10-07T03-44-36-139Z used isolatedgateway0.1 and syntheticRuntimepeer, nofullsystemclaim.
+
+## Next tasks
+
+Commit/push B2.02 checkpoint; then B3 bounded failure matrix. Alreadyactual wrong-role rejection,
+loopback/exclusiveprocess/auth, dependencyoutage/receiptpreservation/drain. Still need bounded
+storage exhaustion/deniednetwork/providerdisabled diagnostics and selectedartifactcompatibility
+matrix, plus targeted missingfailure paths. Data Artifact publication.UploadLimits has scope_bytes
+and actualHTTPuploadquota; inspect owningREADME/publicAPI for bounded-storage test. Do NOT fill
+hostdisk. V1 independently rebuilds deployment/gateway and proves replacement with retaineddata,
+then scopeddriftaudit beforechildcloseout. Scientific descriptorsLinux-only; laterBP09.03 must
+qualify compatibletools beforeactivation, not relabeloldreleases. No paidcalls in thischild.
 
 ## Operating rules
 
-Read v2/AGENTS.md. v1 read-only; no JARVIS/subagents/goals. Keep canonical child/parent/
-MBT percentages and Restore updated, commit/push significant verified changes.
-PYTHONUTF8=1 each exec. Python v2/dev/.venv/Scripts/python.exe; pytest -c
-v2/dev/pyproject.toml --import-mode=importlib. uv v2/.venv/Scripts/uv.exe.
-PYTHONPATH Z:/mvp20-split/v2/dev when needed. No source/test/dev/README edits while any
-verification/build/probe active; wait actual exit. .absolute(), not.resolve(); no
-Path.rglob across NAS venvs; no tests/__init__.py. Existing historical heads Runtime0028,
-Planning0020,Data0012,Research0016; never reset old databases or replay old migrators.
-Git -c safe.directory=//DesktopNAS/Code/mvp20-split; main.
+Read v2/AGENTS.md. v1 read-only; noJARVIS/subagents/goals. PYTHONUTF8=1 each exec.
+Python v2/dev/.venv/Scripts/python.exe; pytest -c v2/dev/pyproject.toml --import-mode=importlib.
+uv v2/.venv/Scripts/uv.exe; PYTHONPATH Z:/mvp20-split/v2/dev fordevimports. No source/test/dev/README
+edits while any verification/build/probe active; wait actualexit. .absolute(), not.resolve();
+no broadNASvenvscan or tests/__init__.py. Never reset oldfixtureDBs/replayoldmigrators.
+Git -c safe.directory=//DesktopNAS/Code/mvp20-split; main. KAPPython18720/2912 are unrelated.
+Update canonical child/parent/MBT percentages and Restore. UIguidelines alreadyread; noUIchanges
+in B2. Existing syntheticOpenAIauthorization remains for later selected-modelgate; no keysneeded.

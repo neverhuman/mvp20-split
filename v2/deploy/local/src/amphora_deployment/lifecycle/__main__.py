@@ -17,13 +17,20 @@ from .supervisor import Supervisor
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=["serve", "status", "start", "restart", "force-stop", "shutdown"])
+    parser.add_argument("action", choices=["serve", "status", "readiness", "start", "restart", "drain", "force-stop", "shutdown"])
     parser.add_argument("--root", type=Path, required=True)
     parser.add_argument("--manifest", type=Path)
     parser.add_argument("--owner")
     args = parser.parse_args()
     try:
         routes = Routes.ensure(args.root) if args.action == "serve" else Routes.load(args.root)
+        if args.action == "readiness":
+            if args.manifest is None:
+                parser.error("readiness requires --manifest")
+            from .health import observe
+            report = observe(load_bindings(args.root, args.manifest, routes))
+            print(json.dumps(report, sort_keys=True))
+            return 0 if report["infrastructure"] == "available" else 3
         if args.action == "serve":
             if args.manifest is None:
                 parser.error("serve requires --manifest")

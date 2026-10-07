@@ -360,7 +360,7 @@
   },
   {
     "package": "amphora-local-gateway",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "path": "services/local_gateway",
     "module": "amphora_local_gateway",
     "public_dependencies": []

@@ -55,6 +55,11 @@ class Supervisor:
                 process.force_stop()
             return self.status()[owner]
 
+    def drain(self, owner):
+        with self.lock:
+            require(owner in self.processes, "lifecycle_drain_requires_running")
+            return self.processes[owner].drain()
+
     def restart(self, owner):
         with self.lock:
             require(not self.closed and owner in self.bindings, "lifecycle_owner_unavailable")

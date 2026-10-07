@@ -112,3 +112,38 @@ def test_launcher_opens_only_a_one_time_fragment_ticket(tmp_path,monkeypatch):
         assert gateway.configuration.launcher_key not in opened[0]
         ticket=opened[0].split('#launch=')[1]
         gateway.sessions.authenticate(gateway.sessions.exchange(ticket))
+
+
+def test_close_waits_for_an_accepted_proxy_request(tmp_path):
+    entered,release,closed=threading.Event(),threading.Event(),threading.Event()
+    class SlowOwner(Owner):
+        def do_GET(self):
+            entered.set()
+            assert release.wait(5)
+            super().do_GET()
+    owner=ThreadingHTTPServer(('127.0.0.1',0),SlowOwner);owner.seen=[]
+    with running(owner):
+        gateway=GatewayServer(configuration(tmp_path,owner.server_port),0)
+        server_thread=threading.Thread(target=lambda:gateway.serve_forever(poll_interval=.05))
+        server_thread.start()
+        cookie,_=login(gateway)
+        result=[]
+        client=threading.Thread(target=lambda:result.append(request(gateway,'/api/runtime/v1/runs',headers={'Cookie':cookie})))
+        client.start()
+        def close():
+            gateway.shutdown()
+            gateway.server_close()
+            closed.set()
+        closer=threading.Thread(target=close)
+        try:
+            assert entered.wait(3)
+            closer.start()
+            assert not closed.wait(.2), 'Accepted response must finish before close returns'
+        finally:
+            release.set()
+            if closer.ident is None: closer.start()
+            for thread in (client,closer,server_thread):
+                thread.join(timeout=5)
+                assert not thread.is_alive()
+        assert closed.is_set() and result[0][0]==200
+        assert result[0][2]==b'{"status":"actual-owner-fixture"}'

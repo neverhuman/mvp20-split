@@ -1,0 +1,420 @@
+{
+  "checked_at": "2026-10-06T23:27:16-05:00",
+  "owners": {
+    "runtime": {
+      "path": "/health",
+      "status": 200,
+      "release": "0.65.0",
+      "installation": "Z:\\mvp20-split\\.test-results\\local-owner-inventory-20261006a\\owners\\runtime",
+      "manifest_sha256": "a26699514fb9a4c5d1dfd2f76cc61f1cca299ec13f0a119bd3ab36de32c96935",
+      "drain": "drained"
+    },
+    "artifact": {
+      "path": "/ready",
+      "status": 200,
+      "release": "0.30.0",
+      "installation": "Z:\\mvp20-split\\.test-results\\local-owner-inventory-20261006a\\owners\\artifact",
+      "manifest_sha256": "30ff10626495bfe1437ffd8c3417eb0e6fdf015326ffdac49d44acbd00b59700",
+      "drain": "drained"
+    },
+    "registry": {
+      "path": "/v1/releases?limit=1",
+      "status": 200,
+      "release": "0.1.0",
+      "installation": "Z:\\mvp20-split\\.test-results\\local-owner-inventory-20261006a\\owners\\registry",
+      "manifest_sha256": "42bea6ed62b9b5bbad10596e977277ad10aa22f572c9a07d6ef353eba04027b8",
+      "drain": "drained"
+    },
+    "research": {
+      "path": "/health",
+      "status": 200,
+      "release": "0.40.0",
+      "installation": "Z:\\mvp20-split\\.test-results\\local-owner-inventory-20261006a\\owners\\research",
+      "manifest_sha256": "92e2b73029637205cf93eda1b69f83cb2db0588845b05d04d6b8df9c8ce1267d",
+      "drain": "drained"
+    },
+    "knowledge": {
+      "path": "/health",
+      "status": 200,
+      "release": "0.18.0",
+      "installation": "Z:\\mvp20-split\\.test-results\\local-owner-inventory-20261006a\\owners\\knowledge",
+      "manifest_sha256": "c342a6ff08fc8123cd1e9eef5f60c5a869e2a0616fdc56d21579d34bb4c9689d",
+      "drain": "drained"
+    },
+    "planning": {
+      "path": "/ready",
+      "status": 200,
+      "release": "0.99.0",
+      "installation": "Z:\\mvp20-split\\.test-results\\local-planning-role-20261006a",
+      "manifest_sha256": "9749d1addd9c67465cb9d8f899ada52e660fd6eebc9e8b6f5a15b3fd55bcf704",
+      "drain": "drained"
+    },
+    "gateway": {
+      "path": "/",
+      "status": 200,
+      "release": "0.2.0",
+      "installation": "Z:\\mvp20-split\\.test-results\\local-gateway-drain-20261006a",
+      "manifest_sha256": "022223a9cfb706e88542d3c4fbee366373943f795529f732a616a85d9cbfb341",
+      "drain": "drained"
+    }
+  },
+  "limits": "Read-only infrastructure only. CLI checks establish startup DB access; static health is liveness, not ongoing DB readiness. No scientific tools, admission or provider calls.",
+  "durable_receipt": {
+    "command": {
+      "identity": {
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "demo"
+        },
+        "actor_id": "operator",
+        "command_id": "outage-795ff4483e3549d588821d975f6b25b4",
+        "command_family": "registry.register"
+      },
+      "payload": {
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "demo"
+        },
+        "descriptor": {
+          "schema_version": "1",
+          "tool": {
+            "schema_version": "1",
+            "binding": {
+              "capability_id": "synthetic.numeric-affine",
+              "release": "0.1.0",
+              "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+              "contract_version": "1"
+            },
+            "purpose": "Apply an affine transform to synthetic numbers",
+            "applicability": [
+              "synthetic-tests"
+            ],
+            "inputs": [
+              {
+                "name": "value",
+                "schema_ref": {
+                  "schema_id": "fixture.numeric-affine",
+                  "version": "1",
+                  "sha256": "8346f3230d345fd72b3360ac8d15e80c298c9c2b3cfa29449f905262b8b590da"
+                },
+                "representation": "numeric-vector",
+                "unit": "1",
+                "required": true
+              }
+            ],
+            "outputs": [
+              {
+                "name": "result",
+                "schema_ref": {
+                  "schema_id": "fixture.numeric-affine",
+                  "version": "1",
+                  "sha256": "8346f3230d345fd72b3360ac8d15e80c298c9c2b3cfa29449f905262b8b590da"
+                },
+                "representation": "numeric-vector",
+                "unit": "1",
+                "required": true
+              }
+            ],
+            "side_effects": "pure",
+            "checkpoint_schema": null
+          },
+          "resources": {
+            "architectures": [
+              "x86_64",
+              "aarch64"
+            ],
+            "operating_systems": [
+              "linux",
+              "windows"
+            ],
+            "cpu_millicores": 1000,
+            "memory_mib": 64,
+            "gpu_count": 0,
+            "timeout_seconds": 30,
+            "max_parallel_invocations": 2,
+            "max_batch_size": 32
+          },
+          "egress": {
+            "mode": "deny"
+          },
+          "checkpoint": {
+            "mode": "none",
+            "readable_schema_sha256": []
+          },
+          "reproducibility": "deterministic",
+          "authority_ceiling": "synthetic_only",
+          "examples": [
+            "Apply an affine transform to synthetic numbers"
+          ],
+          "anti_examples": [
+            "Not a validated chemical, biological or clinical method"
+          ]
+        },
+        "expected_lock": {
+          "schema_version": "1",
+          "tool": {
+            "capability_id": "synthetic.numeric-affine",
+            "release": "0.1.0",
+            "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+            "contract_version": "1"
+          },
+          "descriptor_sha256": "9ef763885d494b7a995916a41b0a6c8041d6621ce696e88f0fe4441fd4db04cd",
+          "input_schemas": [
+            {
+              "port": "value",
+              "schema_ref": {
+                "schema_id": "fixture.numeric-affine",
+                "version": "1",
+                "sha256": "8346f3230d345fd72b3360ac8d15e80c298c9c2b3cfa29449f905262b8b590da"
+              }
+            }
+          ],
+          "output_schemas": [
+            {
+              "port": "result",
+              "schema_ref": {
+                "schema_id": "fixture.numeric-affine",
+                "version": "1",
+                "sha256": "8346f3230d345fd72b3360ac8d15e80c298c9c2b3cfa29449f905262b8b590da"
+              }
+            }
+          ],
+          "checkpoint_schema": null
+        }
+      }
+    },
+    "original": {
+      "schema_version": "1",
+      "operation_id": "11488997d67341fdb871c454ce10e2c8",
+      "status": "accepted",
+      "reason_code": "existing",
+      "release": {
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "demo"
+        },
+        "descriptor": {
+          "schema_version": "1",
+          "tool": {
+            "schema_version": "1",
+            "binding": {
+              "capability_id": "synthetic.numeric-affine",
+              "release": "0.1.0",
+              "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+              "contract_version": "1"
+            },
+            "purpose": "Apply an affine transform to synthetic numbers",
+            "applicability": [
+              "synthetic-tests"
+            ],
+            "inputs": [
+              {
+                "name": "value",
+                "schema_ref": {
+                  "schema_id": "fixture.numeric-affine",
+                  "version": "1",
+                  "sha256": "8346f3230d345fd72b3360ac8d15e80c298c9c2b3cfa29449f905262b8b590da"
+                },
+                "representation": "numeric-vector",
+                "unit": "1",
+                "required": true
+              }
+            ],
+            "outputs": [
+              {
+                "name": "result",
+                "schema_ref": {
+                  "schema_id": "fixture.numeric-affine",
+                  "version": "1",
+                  "sha256": "8346f3230d345fd72b3360ac8d15e80c298c9c2b3cfa29449f905262b8b590da"
+                },
+                "representation": "numeric-vector",
+                "unit": "1",
+                "required": true
+              }
+            ],
+            "side_effects": "pure",
+            "checkpoint_schema": null
+          },
+          "resources": {
+            "architectures": [
+              "x86_64",
+              "aarch64"
+            ],
+            "operating_systems": [
+              "linux",
+              "windows"
+            ],
+            "cpu_millicores": 1000,
+            "memory_mib": 64,
+            "gpu_count": 0,
+            "timeout_seconds": 30,
+            "max_parallel_invocations": 2,
+            "max_batch_size": 32
+          },
+          "egress": {
+            "mode": "deny"
+          },
+          "checkpoint": {
+            "mode": "none",
+            "readable_schema_sha256": []
+          },
+          "reproducibility": "deterministic",
+          "authority_ceiling": "synthetic_only",
+          "examples": [
+            "Apply an affine transform to synthetic numbers"
+          ],
+          "anti_examples": [
+            "Not a validated chemical, biological or clinical method"
+          ]
+        },
+        "lock": {
+          "schema_version": "1",
+          "tool": {
+            "capability_id": "synthetic.numeric-affine",
+            "release": "0.1.0",
+            "image_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+            "contract_version": "1"
+          },
+          "descriptor_sha256": "9ef763885d494b7a995916a41b0a6c8041d6621ce696e88f0fe4441fd4db04cd",
+          "input_schemas": [
+            {
+              "port": "value",
+              "schema_ref": {
+                "schema_id": "fixture.numeric-affine",
+                "version": "1",
+                "sha256": "8346f3230d345fd72b3360ac8d15e80c298c9c2b3cfa29449f905262b8b590da"
+              }
+            }
+          ],
+          "output_schemas": [
+            {
+              "port": "result",
+              "schema_ref": {
+                "schema_id": "fixture.numeric-affine",
+                "version": "1",
+                "sha256": "8346f3230d345fd72b3360ac8d15e80c298c9c2b3cfa29449f905262b8b590da"
+              }
+            }
+          ],
+          "checkpoint_schema": null
+        },
+        "revision": 1,
+        "status": "registered"
+      },
+      "deployment": null,
+      "heartbeat": null,
+      "decision": null
+    },
+    "byte_identical_replay": true
+  },
+  "before_outage": {
+    "observed_at": "2026-10-06T23:28:09-05:00",
+    "infrastructure": "available",
+    "owners": {
+      "runtime": {
+        "http": "available",
+        "database": "available"
+      },
+      "artifact": {
+        "http": "available",
+        "database": "available"
+      },
+      "registry": {
+        "http": "available",
+        "database": "available"
+      },
+      "research": {
+        "http": "available",
+        "database": "available"
+      },
+      "knowledge": {
+        "http": "available",
+        "database": "available"
+      },
+      "planning": {
+        "http": "available",
+        "database": "available"
+      },
+      "gateway": {
+        "http": "available",
+        "database": "not_applicable"
+      }
+    },
+    "scientific_eligibility": "not_assessed",
+    "limits": "Point-in-time owner interface observations; gateway liveness does not imply peer readiness. No campaign or tool authority."
+  },
+  "during_outage": {
+    "observed_at": "2026-10-06T23:28:21-05:00",
+    "infrastructure": "unavailable",
+    "owners": {
+      "runtime": {
+        "http": "available",
+        "database": "unavailable"
+      },
+      "artifact": {
+        "http": "unavailable",
+        "database": "unavailable"
+      },
+      "registry": {
+        "http": "unavailable",
+        "database": "unavailable"
+      },
+      "research": {
+        "http": "available",
+        "database": "unavailable"
+      },
+      "knowledge": {
+        "http": "available",
+        "database": "unavailable"
+      },
+      "planning": {
+        "http": "unavailable",
+        "database": "unavailable"
+      },
+      "gateway": {
+        "http": "available",
+        "database": "not_applicable"
+      }
+    },
+    "scientific_eligibility": "not_assessed",
+    "limits": "Point-in-time owner interface observations; gateway liveness does not imply peer readiness. No campaign or tool authority."
+  },
+  "after_outage": {
+    "observed_at": "2026-10-06T23:28:28-05:00",
+    "infrastructure": "available",
+    "owners": {
+      "runtime": {
+        "http": "available",
+        "database": "available"
+      },
+      "artifact": {
+        "http": "available",
+        "database": "available"
+      },
+      "registry": {
+        "http": "available",
+        "database": "available"
+      },
+      "research": {
+        "http": "available",
+        "database": "available"
+      },
+      "knowledge": {
+        "http": "available",
+        "database": "available"
+      },
+      "planning": {
+        "http": "available",
+        "database": "available"
+      },
+      "gateway": {
+        "http": "available",
+        "database": "not_applicable"
+      }
+    },
+    "scientific_eligibility": "not_assessed",
+    "limits": "Point-in-time owner interface observations; gateway liveness does not imply peer readiness. No campaign or tool authority."
+  },
+  "status": "passed"
+}

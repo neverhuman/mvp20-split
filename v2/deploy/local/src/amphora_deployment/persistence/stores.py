@@ -2,6 +2,7 @@
 
 import json
 import secrets
+import socket
 import time
 import urllib.error
 import urllib.request
@@ -37,6 +38,19 @@ def owned(info, identity, *, container=False):
 
 
 def ensure_store(docker, state, kind, image, container_port, mount_path, environment):
+    allocations = state.record.setdefault("store_ports", {})
+    if kind not in allocations:
+        previous = state.record.get(kind, {}).get("port")
+        if previous is None:
+            with socket.socket() as reserve:
+                reserve.setsockopt(socket.SOL_SOCKET, socket.SO_EXCLUSIVEADDRUSE, 1)
+                reserve.bind(("127.0.0.1", 0))
+                previous = reserve.getsockname()[1]
+        require(type(previous) is int and 1024 <= previous <= 65535, "deployment_store_port")
+        allocations[kind] = previous
+        state.save()
+    host_port = allocations[kind]
+    require(type(host_port) is int and 1024 <= host_port <= 65535, "deployment_store_port")
     volume, container = state.name(kind + "-data"), state.name(kind)
     info = docker.inspect("volume", volume)
     if info is None:
@@ -46,7 +60,7 @@ def ensure_store(docker, state, kind, image, container_port, mount_path, environ
     info = docker.inspect("container", container)
     if info is None:
         args = ["create", "--name", container, "--label", LABEL + "=" + state.identity,
-                "--publish", "127.0.0.1::" + str(container_port), "--mount", "type=volume,source=" + volume + ",target=" + mount_path]
+                "--publish", "127.0.0.1:" + str(host_port) + ":" + str(container_port), "--mount", "type=volume,source=" + volume + ",target=" + mount_path]
         for key in environment:
             args += ["--env", key]
         docker.run(*args, image, secrets=environment)
@@ -57,11 +71,13 @@ def ensure_store(docker, state, kind, image, container_port, mount_path, environ
             and info["Mounts"][0].get("Destination") == mount_path, "deployment_mount_mismatch")
     bindings = info["HostConfig"]["PortBindings"]
     require(set(bindings) == {str(container_port) + "/tcp"} and all(item["HostIp"] == "127.0.0.1" for item in bindings[str(container_port) + "/tcp"]), "deployment_network_scope")
+    require(len(bindings[str(container_port) + "/tcp"]) == 1 and
+            bindings[str(container_port) + "/tcp"][0].get("HostPort") == str(host_port), "deployment_fixed_port_repair_required")
     if not info["State"]["Running"]:
         docker.run("start", container)
     info = docker.inspect("container", container)
     actual = info["NetworkSettings"]["Ports"][str(container_port) + "/tcp"]
-    require(len(actual) == 1 and actual[0]["HostIp"] == "127.0.0.1", "deployment_published_scope")
+    require(len(actual) == 1 and actual[0]["HostIp"] == "127.0.0.1" and int(actual[0]["HostPort"]) == host_port, "deployment_published_scope")
     return {"container": container, "volume": volume, "image": image, "host": "127.0.0.1", "port": int(actual[0]["HostPort"])}
 
 

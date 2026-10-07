@@ -74,7 +74,7 @@ class ControlHandler(BaseHTTPRequestHandler):
                 self.server.supervisor.close()
                 self.server.stopping = True
                 result = {"state": "stopping"}
-            elif len(parts) == 4 and parts[:2] == ["", "owners"] and parts[3] in {"start", "restart", "force-stop"}:
+            elif len(parts) == 4 and parts[:2] == ["", "owners"] and parts[3] in {"start", "restart", "drain", "force-stop"}:
                 operation = getattr(self.server.supervisor, parts[3].replace("-", "_"))
                 result = operation(parts[2])
             else:

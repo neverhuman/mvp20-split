@@ -43,7 +43,22 @@ hosts authenticated control on the persisted supervisor loopback route. It start
 no owner automatically. Launch this long-lived command hidden on Windows. The
 same module provides `status`, `start --owner`, `restart --owner`, `force-stop --owner`
 and `shutdown`, all with `--root`. Operators use these commands, not raw bearer keys.
-Owner migrations, campaign admission and graceful drain are not implemented here.
+Owner migrations belong to persistence/migrations; campaign admission is not owned here.
+`drain --owner` requests cooperative HTTP shutdown through the private child pipe.
+Exactly one interrupt is delivered; repeating drain does not send another. The owner
+server finishes accepted requests and its own cleanup. Status separately reports
+draining, drained, failed or timed_out after45seconds. Timeout leaves the process
+alive; only explicit force-stop or supervisor death forces termination. This is the
+deployed HTTP boundary, not autonomous worker/campaign drain; BP-09.03 must quiesce
+its later workers before closing transports.
+
+`readiness --root ... --manifest ...` makes bounded public HTTP and installed-owner
+check-CLI observations. Static health alone cannot establish database readiness.
+Checks run concurrently with selected serving credentials, suppressed raw output and
+45second child deadlines. Results are point-in-time owner availability, distinct from
+process status and scientific eligibility. Atomic journal snapshots allow reads while
+the supervisor holds its writer lease. Serving URLs include connect_timeout=5,
+including owners whose default engine omitted it.
 
 The `local-supervisor-v1` manifest names a nonempty subset of reviewed owners. Each
 entry has absolute installation, source_lock and configuration paths plus a list

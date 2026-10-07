@@ -16,7 +16,9 @@ COOKIE = "amphora_local_session"
 
 
 class GatewayServer(ThreadingHTTPServer):
-    daemon_threads = True
+    # Cooperative close joins accepted requests. A stalled request is reported by
+    # the external drain deadline; only an explicit force-stop may terminate it.
+    daemon_threads = False
 
     def __init__(self, configuration, port):
         self.configuration = configuration

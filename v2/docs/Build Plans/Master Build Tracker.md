@@ -8,13 +8,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-08 closed100%; BP-09.01 closed; BP-09.02/B2.02 active.
-- Last refreshed: `2026-10-06 23:11:07` (America/Chicago).
+- Status: BP-08 closed100%; BP-09.01 closed; BP-09.02/B3 active.
+- Last refreshed: `2026-10-06 23:31:00` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P8 / BP-09 - Single-Server Integrated Demo and Replacement Proof.
-- Primary active task: BP-09.02/B2.02 dependency failure and graceful drain.
-- Next task: BP-09.02/B3 failure and recovery matrix.
-- Implementation completion: BP-09=27.5%,5.5/20 delivery equivalents; five full deliveries closed; completed plans are in the archive.
+- Primary active task: BP-09.02/B3 selected-host failure and recovery matrix.
+- Next task: BP-09.02/V1 independent replacement and closeout.
+- Implementation completion: BP-09=30%,six completed deliveries/20; completed plans are in the archive.
 - Active focus: reproducible nativeWindows local installation with loopback-only routing.
 - Blockers: none for local installation engineering. Provider/integrated demonstration gates remain scoped to later children.
 - Acceptance posture: BP-08 synthetic engineering accepted20/20; BP-09.01 actual local preflight accepted, full application deployment pending.
@@ -32,13 +32,13 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-09.01 closed100%; BP-09.02 active37.5%,Build50%,Acceptance0%; parent27.5%,5.5/20 delivery equivalents. BP-08 closed100%,20/20; see [completed plans](Completed/README.md).
+BP-09.01 closed100%; BP-09.02 active50%,Build66.67%,Acceptance0%; parent30%,6/20. BP-08 closed100%,20/20; see [completed plans](Completed/README.md).
 
 ## Queued Plans and Phase Mirrors
 
 | Canonical plan | Status | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Active | 27.5% | 100% | 37.5% | 0% | 0% | 0% | N/A |
+| [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Active | 30% | 100% | 50% | 0% | 0% | 0% | N/A |
 
 Scoped milestone fractions measure verified work within their existing delivery weight; closed-gate counts remain separate. BP-06 is archived24/24. Do not treat milestone counts as effort estimates.
 

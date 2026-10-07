@@ -11,7 +11,7 @@ from amphora_deployment.lifecycle.routes import Routes
 from check_boundaries import project_specs
 
 
-def compose(output):
+def compose(output, registry_evidence=False):
     output = output.absolute()
     output.mkdir(parents=True, exist_ok=False)
     root = Path(os.environ['LOCALAPPDATA']) / 'Amphora/local-v2/installation'
@@ -55,6 +55,9 @@ def compose(output):
                     'launcher_key_env':'AMPHORA_GATEWAY_SESSION_KEY'}
     }
     specs = {cfg['project']['name']:path for path,cfg,_ in project_specs()}
+    if registry_evidence:
+        # Only dormant synthetic descriptor registration; never activate/deploy.
+        configs['registry']['principals'][0]['actions'].append('register')
     owners = {}
     for owner, recipe in SERVING_HOSTS.items():
         configuration = configs[owner]
@@ -66,17 +69,19 @@ def compose(output):
         if owner=='gateway': references = ['GATEWAY_SESSION_KEY']+[name.upper()+'_OPERATOR_TOKEN' for name in SERVING_HOSTS if name!='gateway']
         installation = Path('.test-results/local-owner-inventory-20261006a/owners')/owner
         if owner=='planning': installation = Path('.test-results/local-planning-role-20261006a')
-        if owner=='gateway': installation = Path('.test-results/local-gateway-install-20261006b')
+        if owner=='gateway': installation = Path('.test-results/local-gateway-drain-20261006a')
         owners[owner] = {'installation':str(installation.absolute()), 'source_lock':str(specs[recipe.package]/'uv.lock'),
                          'configuration':str(write(owner+'.json',configuration)), 'secret_references':references}
     manifest = write('manifest.json',{'profile':'local-supervisor-v1','owners':owners})
     write('scope.json',{'purpose':'Read-only infrastructure qualification', 'campaign_admission':False,
-                       'scientific_tools_eligible':False,'provider_calls':False,'peer_workflows_configured':False})
+                       'scientific_tools_eligible':False,'provider_calls':False,'peer_workflows_configured':False,
+                       'synthetic_registry_receipt_probe':registry_evidence})
     return manifest
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--registry-evidence',action='store_true')
     args=parser.parse_args()
-    print(compose(args.output))
+    print(compose(args.output,args.registry_evidence))

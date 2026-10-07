@@ -55,10 +55,10 @@ def load_bindings(root, manifest, routes):
             config["profile"] == "local-supervisor-v1", "lifecycle_manifest_shape")
     owners = config["owners"]
     require(type(owners) is dict and bool(owners) and set(owners) <= set(SERVING_HOSTS), "lifecycle_manifest_owners")
-    with LocalState(root) as state:
-        require(state.record.get("phase") == "stores_ready", "lifecycle_stores_required")
-        bundle = CredentialVault(state.root / "credentials.dpapi", state.identity).load()
-        pg = dict(state.record["postgres"])
+    state = LocalState.snapshot(root)
+    require(state.get("phase") == "stores_ready", "lifecycle_stores_required")
+    bundle = CredentialVault(Path(root) / "credentials.dpapi", state["deployment_id"]).load()
+    pg = dict(state["postgres"])
     require(pg["host"] == "127.0.0.1" and type(pg["port"]) is int and 1 <= pg["port"] <= 65535, "lifecycle_database_scope")
     result = {}
     for owner, record in owners.items():
@@ -71,7 +71,7 @@ def load_bindings(root, manifest, routes):
         recipe = SERVING_HOSTS[owner]
         if recipe.schema is not None:
             password = bundle.environment(["PG_" + recipe.service_role.upper() + "_PASSWORD"])["PG_" + recipe.service_role.upper() + "_PASSWORD"]
-            environment[recipe.database_environment] = "postgresql+psycopg://" + recipe.service_role + ":" + quote(password, safe="") + "@127.0.0.1:" + str(pg["port"]) + "/amphora_local"
+            environment[recipe.database_environment] = "postgresql+psycopg://" + recipe.service_role + ":" + quote(password, safe="") + "@127.0.0.1:" + str(pg["port"]) + "/amphora_local?connect_timeout=5"
         configuration = Path(record["configuration"])
         require(configuration.is_file(), "lifecycle_owner_configuration_missing")
         if owner == "planning":

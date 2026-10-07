@@ -3,6 +3,7 @@
 import os
 from pathlib import Path
 import subprocess
+import time
 
 from ..installation import SERVING_HOSTS
 from ..installation.inventory import sha256, WheelIdentity
@@ -11,13 +12,25 @@ from .jobs import ProcessJob
 
 
 # The child cannot enter the owner module before the parent has assigned its job.
-ENTRY_GATE = "import sys,runpy; gate=sys.stdin.buffer.read(1); module=sys.argv.pop(1); sys.argv[0]=module; sys.exit(125) if gate!=b'G' else runpy.run_module(module,run_name='__main__')"
+ENTRY_GATE = """import sys,runpy,threading,_thread,os
+gate=os.read(sys.stdin.fileno(),1)
+if gate!=b'G': sys.exit(125)
+module=sys.argv.pop(1)
+sys.argv[0]=module
+def control():
+    if os.read(sys.stdin.fileno(),1)==b'D': _thread.interrupt_main()
+threading.Thread(target=control,daemon=True).start()
+try: runpy.run_module(module,run_name='__main__')
+except KeyboardInterrupt: sys.exit(0)
+"""
 BASE_ENVIRONMENT = {"SYSTEMROOT", "WINDIR", "PATH", "TEMP", "TMP", "COMSPEC", "USERPROFILE", "LOCALAPPDATA", "APPDATA"}
 
 
 class OwnerProcess:
     def __init__(self, owner, process, job, events):
         self.owner, self.process, self.job, self.events = owner, process, job, events
+        self.drain_started = None
+        self.drain_reported = False
 
     @classmethod
     def start(cls, installation, directory, configuration, port, environment, events):
@@ -51,7 +64,6 @@ class OwnerProcess:
             job.attach(process)
             process.stdin.write(b"G")
             process.stdin.flush()
-            process.stdin.close()
             events.emit(owner, "started", pid=process.pid)
             return cls(owner, process, job, events)
         except Exception:
@@ -66,14 +78,32 @@ class OwnerProcess:
 
     def status(self):
         code = self.process.poll()
+        drain = "not_requested"
+        if self.drain_started is not None:
+            drain = ("drained" if code == 0 else "failed") if code is not None else (
+                "timed_out" if time.monotonic() - self.drain_started >= 45 else "draining")
+            if drain == "drained" and not self.drain_reported:
+                self.events.emit(self.owner, "drained", pid=self.process.pid, exit_code=code)
+                self.drain_reported = True
         return {"owner": self.owner, "pid": self.process.pid,
                 "state": "running" if code is None else "exited", "exit_code": code,
-                "readiness": "not_assessed"}
+                "readiness": "not_assessed", "drain": drain}
+
+    def drain(self):
+        require(self.process.poll() is None or self.drain_started is not None, "lifecycle_drain_requires_running")
+        if self.drain_started is None:
+            self.process.stdin.write(b"D")
+            self.process.stdin.flush()
+            self.drain_started = time.monotonic()
+            self.events.emit(self.owner, "draining", pid=self.process.pid)
+        return self.status()
 
     def force_stop(self):
         running = self.process.poll() is None
         self.job.close()
         code = self.process.wait(timeout=10)
+        if not self.process.stdin.closed:
+            self.process.stdin.close()
         self.events.emit(self.owner, "force_stopped" if running else "exited", pid=self.process.pid, exit_code=code)
 
     def __enter__(self):
