@@ -2,6 +2,10 @@
 
 Refreshed 2026-10-06 19:57:27 (America/Chicago). Read FIRST after compaction.
 
+## Latest BP-09 checkpoint
+
+2026-10-06 20:01:53: BP08closeout pusheda6e06ced. BP09.01 ACTIVE B1.02 read-onlyprobes NEXT. B1.01profile complete33tests13.95s,child12.5%,Build16.67%,Acceptance0%;parent2.5%. No activejobs. Newdeploy/localpackage stdlibonly;devregistration/boundaryscan deploy/testscope added,uvsynced;dev evaluatorpin repaired0.3. Pending host/exposurequestions remain, no useranswer yet. Currentuncommitted B1.01checkpoint readycommitpush thenprobes/policy. Profileparsing is notreadiness; no targetaction/modelcalls. EvidenceProfile_Boundary.json.
+
 ## Exact checkpoint
 
 BP-08 CLOSED100%,20/20. Allfivechildren archived; parent now docs/Build Plans/Completed/BP-08 Evolutionary Search Integration.md. Child05+history in BP-08/Completed. Parent audit docs/Audits/BP-08_Evolutionary_Search_Closeout.md; childaudit BP-08.05_Recovery_Closeout.md. Current verified closeout readycommitpush. No activeprocesses. Lastpushed37b27d8e. Next BP-09 activation audit, then .01/B1 deploymentprofile/preflight engineering. User pendingasync questions: target DGXSpark/Threadripper/local + hostname/access; exposure loopbackSSH orauthenticatedLAN. These block actualtarget actions, not independentprofile engineering. Do notstop while independentauthorizedworkremains.

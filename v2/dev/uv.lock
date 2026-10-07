@@ -655,6 +655,11 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-deployment"
+version = "0.1.0"
+source = { editable = "../deploy/local" }
+
+[[package]]
 name = "amphora-evolution-search"
 version = "0.5.0"
 source = { editable = "../tools/evolution_search" }
@@ -712,6 +717,7 @@ dependencies = [
     { name = "amphora-contracts-tools" },
     { name = "amphora-contracts-topology-search" },
     { name = "amphora-data-artifacts" },
+    { name = "amphora-deployment" },
     { name = "amphora-evolution-search" },
     { name = "amphora-knowledge" },
     { name = "amphora-multi-input-worker" },
@@ -768,6 +774,7 @@ requires-dist = [
     { name = "amphora-contracts-tools", editable = "../contracts/tools" },
     { name = "amphora-contracts-topology-search", editable = "../contracts/topology_search" },
     { name = "amphora-data-artifacts", editable = "../services/data_artifacts" },
+    { name = "amphora-deployment", editable = "../deploy/local" },
     { name = "amphora-evolution-search", editable = "../tools/evolution_search" },
     { name = "amphora-knowledge", editable = "../services/knowledge" },
     { name = "amphora-multi-input-worker", editable = "../sdk/multi_input_worker" },

@@ -1,0 +1,30 @@
+{
+  "timestamp_local": "2026-10-06 20:01:53",
+  "scope": "BP-09.01/B1.01",
+  "status": "passed",
+  "tests": 33,
+  "seconds": 13.95,
+  "coverage": {
+    "covered_lines": 160,
+    "num_statements": 161,
+    "percent_covered": 98.84393063583815,
+    "percent_covered_display": "99",
+    "missing_lines": 1,
+    "excluded_lines": 0,
+    "percent_statements_covered": 99.37888198757764,
+    "percent_statements_covered_display": "99",
+    "num_branches": 12,
+    "num_partial_branches": 1,
+    "covered_branches": 11,
+    "missing_branches": 1,
+    "percent_branches_covered": 91.66666666666667,
+    "percent_branches_covered_display": "92"
+  },
+  "raw_coverage": ".test-results\\deployment-profile-coverage-20261006.json",
+  "raw_sha256": "ea3667ba47f160e4ce4257b0ef26896cbd9d88a15c7680b189f1ae937e908e55",
+  "limits": [
+    "Strict configuration shape only; no readiness or actual host claim",
+    "Credentials are environment references only",
+    "B1.02 observations and B2 policy pending"
+  ]
+}

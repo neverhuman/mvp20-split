@@ -10,7 +10,7 @@ THIRD_PARTY = {"pydantic": "pydantic", "fastapi": "fastapi", "uvicorn": "uvicorn
 
 
 def project_specs(root: Path = ROOT):
-    for parent in (root / "contracts", root / "services", root / "tools", root / "sdk"):
+    for parent in (root / "contracts", root / "services", root / "tools", root / "sdk", root / "deploy"):
         if parent.exists():
             for manifest in sorted(parent.glob("*/pyproject.toml")):
                 config = tomllib.loads(manifest.read_text(encoding="utf-8"))
