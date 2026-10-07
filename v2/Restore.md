@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed 2026-10-07 06:11:09 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 06:23:32 (America/Chicago). Read FIRST after compression.
 
 ## Active task
 
@@ -8,31 +8,31 @@ BP-09.03/B1.4c local browser/API objective-to-successor trace active.
 B1.4a/b COMPLETE;c75%. Child24.48%,Build32.64%,Acceptance0%;parent44.90%,
 (8+47/48)/20,eight closed gates. Same delivery weights; successor exit remains open.
 No owner decision required. Continue across milestones/commits; local computer only.
-No tests/build/probes running. Studio0.12 local Design qualified; pending commit.
-Latest pushed634596d8. Source/README/dev changes qualified; final lint/boundary/diff next.
-B1.4c75%: three of four named equal checkpoints complete, successor trace open.
-Child24.48%,Build32.64%,Acceptance0%;parent44.90%,(8+47/48)/20,eight closed gates.
-Actual browser68538EXIT0, output .test-results/local-browser-design-20261007a, all seven
-owners drain0. Configuration .test-results/local-authoring-materials-20261007b.
-Saved fixture draft + real validation/edit retention1440/390, no campaign admission/
-workers/model calls. Eight library tests100%lines95.16%branches93.33%functions;
-draft browser regression43022EXIT0; generator/build pass; a/b assets identical:
-.test-results/studio-local-design-20261007a/public and b/public. Screenshots inspected.
-Evidence Local_Design.json. New DraftLibrary owns scoped list/exact head/loaded editor,
-late/reentrant fencing, dirty/pending work retention. LocalDesign mode keeps edits
-mounted. New prepare_local_authoring.py enables Runtime authoring in new immutable
-configuration; public API saves engineering-fixture graph copy (not model authored).
-Initial a rejected forbidden Registry operator credential; removed that configuration.
-Initial b saved then strict comparator lacked public defaults; --resume95739EXIT0 replays
-same command/id/receipt and independently normalizes ExecutableCampaignV4 through
-installed Runtime public DTO. Original graph/receipt preserved. No duplicate draft.
-New AuthoringController adds optional actual Registry lifecycle; browser includes it
-only when authoring-evidence exists. validate is real mutation, no admission.
-Next: finish commit/push then dedicated Runtime-to-Registry credential + actual successor
-carry/corrected source/full browser trace. Do NOT loosen credential isolation or modify
-original vault. Runtime current authoring has no draft_registry so tool admission must
-remain fail-closed. Existing tool_catalog/credentials.py create-once DPAPI sidecar is
-local reference for a narrow RUNTIME_REGISTRY_TOKEN extension. Inspect tests first.
+No tests/build/probes running. Latest pushedcb3ff5c3 Studio0.12 local Design qualified.
+UNCOMMITTED Deployment0.11 dedicated Runtime/Registry peer credential checkpoint.
+Source41focused tests pass; registry_access21statements/2branches100%; independent
+294tests29.74s pass. Package rebuiltidentical5c7bd73ea8875fd10dba83db3cf63ec51654abd7131411885248c15ef0e27c86.
+Installed .test-results/local-registry-access-install-20261007a/owner;
+fresh .test-results/local-registry-access-rebuild-20261007a. Dev env/locks synced0.11.
+Actual11708EXIT0, config .test-results/local-registry-access-config-20261007b:
+six owners start, dedicated peer reads/resolve returns honest no_eligible_capacity,
+exact replay, activate403; all drain0, no workers/campaign/model calls.
+Initial installation helper28671 had294tests pass then verifier KeyError on catalog
+scope; corrected to published row scope/revision (no package changes). Old failure
+retained. Evidence Registry_Peer.json. Need final lint/boundary/diff/commit/push.
+New registry_access module is narrow create-once DPAPI sidecar runtime-registry.dpapi
+in original installation root, bound to deployment id + -runtime-registry. Original
+credentials.dpapi/state bytes preserved. Only Runtime/Registry references accepted.
+New immutable Runtime draft_registry config and Registry peer principal runtime-draft
+scope-original/actions read+resolve. No operator-key sharing or broad permission.
+Use installed DEPLOYMENT0.11 for any controller with this new manifest;0.10 cannot
+load the sidecar reference. Source prepare_local_authoring originalb stays unchanged.
+Next actual successor admission/carry and corrected text source/full browser trace.
+Studio0.12 assets .test-results/studio-local-design-20261007a/public (b identical).
+Actual browser .test-results/local-browser-design-20261007a allseven drain0; scope
+fixture draft saved/validated, local edits retained across modes; no run admission.
+8librarytests100%lines95.16%branches93.33%functions; draftbrowser/contractchecks passed.
+No owner decision needed. Parent44.90%,child24.48%,Build32.64%,Acceptance0%;c75%.
 
 
 ## Latest qualified work
@@ -60,10 +60,9 @@ library loads a public exact copy for between-campaign editing; current catalog 
 Existing DraftActivation is independent next-campaign admission, NOT predecessor carry.
 Approved graph.admit_draft_successor exists in Python/Runtime but not Studio generated
 schemas. Public endpoint /v1/graph-runs/draft-successors; read owning contract and tests.
-Need dedicated Runtime/Registry peer credential for tool eligibility (current config
-intentionally has no draft_registry). Deployment allowed_reference correctly rejects
-Registry operator key for Runtime. Existing vault create-once; add narrow immutable
-sidecar rather than rotate or reuse keys. Then successor graph can carry original
+Dedicated Runtime/Registry credential now qualified (new config path above).
+Original authoringb remains without draft_registry; use new peerb plus Deployment0.11
+for successor work. Credential boundary still rejects cross-owner operator keys. Then successor graph can carry original
 numeric root result (search.checkpoint Artifact); current root inputs specification/
 policy, so a carry destination must be explicitly authored/validated, not forced in.
 Original domain source application/octet-stream refuses text display. Corrected

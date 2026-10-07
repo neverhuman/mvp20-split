@@ -9,7 +9,7 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-08 closed100%; BP-09.01/.02 closed; BP-09.03 B1.4 active.
-- Last refreshed: `2026-10-07 06:11:09` (America/Chicago).
+- Last refreshed: `2026-10-07 06:23:32` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P8 / BP-09 - Single-Server Integrated Demo and Replacement Proof.
 - Primary active task: BP-09.03/B1.4c actual local browser/API trace; B1.4b live model/owner-context/scientific composition verified.
@@ -112,6 +112,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-07 06:23:32 | BP-09.03 successor prerequisite; percentages unchanged. | Deployment0.11 independent294tests, dedicated Registry peer read/resolve/replay/denial, original vault preserved; no campaign admission. |
 | 2026-10-07 06:11:09 | BP-09.03/B1.4c75%;child24.48%,parent44.90%. | Three of four same-weight browser checkpoints verified; actual Design validation and edit retention pass. Predecessor carry/successor remains. |
 | 2026-10-07 05:54:33 | BP-09.03/B1.4c partial; percentages unchanged. | Studio0.11 actual graph/evidence navigation and foreign-link rejection pass; preserve binary-source limitation; Design/successor next. |
 | 2026-10-07 05:40:02 | BP-09.03/B1.4c partial; percentages unchanged. | Actual localhost Studio0.10 execution/reasoning at1440/390 and owner API trace pass; no calls; full navigation remains. |
@@ -136,4 +137,3 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-06 19:27:13 | BP-08.05/B1 complete;child25%,parent85%,17/20. | Actual partial evaluation kill/fresh Runtime/rebuilt worker; six equivalent checkpoints,30completions/31attempts,108unique reservations. |
 | 2026-10-06 19:18:08 | BP-08.05/B1.02 complete;child16.67%,parent83.33%. | Reconstructed adapter28workspace/11isolated checks; public kernel/contracts/SDK only; partial-evaluation HTTP next. |
 | 2026-10-06 19:12:48 | BP-08.05/B1.01 complete;child8.33%,parent81.67%. |84checks; manifest59statements6branches100%; byte/chain/revision/restore oracles. |
-| 2026-10-06 19:06:28 | BP-08.04 closed100%;parent80%,16/20. | Image-matched fresh Planning/Runtime/worker replacement, history/new execution,28 regressions and aligned scoped audit. |

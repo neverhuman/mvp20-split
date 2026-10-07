@@ -303,3 +303,12 @@ owners; gateway drains before Registry and other owners. Local browser proof det
 this prepared profile, opens/validates its exact saved draft and checks local-edit
 retention across mode switches. Draft validation is a real owner command, not campaign
 admission, scientific validation or model-authored topology.
+
+`verify_registry_access_installation.py` independently builds Deployment, runs its
+owned tests and starts actual retained owners through `verify_local_registry_access.py`.
+The latter creates a repeatable scoped Runtime/Registry DPAPI sidecar, writes new
+immutable owner configurations, proves read/resolve receipt replay and forbidden
+activation denial. Current lack of capacity remains an honest rejection. It does
+not register/activate tools, start workers or admit campaigns. Original vault and
+state stay unchanged. Runtime uses a distinct read/resolve peer, never Registry's
+operator credential. Scientific successor admission remains a separate proof.

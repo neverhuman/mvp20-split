@@ -1,0 +1,293 @@
+{
+  "timestamp_local": "2026-10-07 06:23:32",
+  "status": "passed",
+  "deployment": "0.11.0",
+  "source_tests": 41,
+  "independent_tests": 294,
+  "coverage": {
+    "statements": 21,
+    "covered_statements": 21,
+    "branches": 2,
+    "covered_branches": 2,
+    "module": "amphora_deployment.registry_access"
+  },
+  "wheels": {
+    "amphora_deployment-0.11.0-py3-none-any.whl": "5c7bd73ea8875fd10dba83db3cf63ec51654abd7131411885248c15ef0e27c86"
+  },
+  "fresh_rebuild_matches": true,
+  "peer": {
+    "timestamp_local": "2026-10-07 06:22:06",
+    "status": "passed",
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+    },
+    "provision": {
+      "status": "ready",
+      "reference": "RUNTIME_REGISTRY_TOKEN",
+      "original_vault_changed": false
+    },
+    "resolve": {
+      "schema_version": "1",
+      "operation_id": "0fed889b4d8943e0b51e6f223af0baa2",
+      "status": "rejected",
+      "reason_code": "no_eligible_capacity",
+      "release": {
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+        },
+        "descriptor": {
+          "schema_version": "1",
+          "tool": {
+            "schema_version": "1",
+            "binding": {
+              "capability_id": "numeric.search-seed",
+              "release": "0.5.0",
+              "image_sha256": "7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+              "contract_version": "1"
+            },
+            "purpose": "Generate one bounded numeric initial population.",
+            "applicability": [
+              "synthetic-tests",
+              "synthetic-continuous-numeric-search"
+            ],
+            "inputs": [
+              {
+                "name": "parameters",
+                "schema_ref": {
+                  "schema_id": "search.specification",
+                  "version": "1",
+                  "sha256": "e829b92d2145b0916847b06cb6e73c4a5aea17addea8bbdd1e9706dbd1cc79a7"
+                },
+                "representation": "search.specification",
+                "unit": "1",
+                "required": true
+              }
+            ],
+            "outputs": [
+              {
+                "name": "result",
+                "schema_ref": {
+                  "schema_id": "search.checkpoint",
+                  "version": "1",
+                  "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+                },
+                "representation": "search.checkpoint",
+                "unit": "1",
+                "required": true
+              }
+            ],
+            "side_effects": "pure",
+            "checkpoint_schema": null
+          },
+          "resources": {
+            "architectures": [
+              "x86_64"
+            ],
+            "operating_systems": [
+              "linux"
+            ],
+            "cpu_millicores": 1000,
+            "memory_mib": 256,
+            "gpu_count": 0,
+            "timeout_seconds": 60,
+            "max_parallel_invocations": 1,
+            "max_batch_size": 1
+          },
+          "egress": {
+            "mode": "deny"
+          },
+          "checkpoint": {
+            "mode": "none",
+            "readable_schema_sha256": []
+          },
+          "reproducibility": "deterministic",
+          "authority_ceiling": "synthetic_only",
+          "examples": [
+            "One explicit graph step with pinned synthetic numerical inputs."
+          ],
+          "anti_examples": [
+            "No hidden generation loop, scientific validation or Runtime acceptance."
+          ]
+        },
+        "lock": {
+          "schema_version": "1",
+          "tool": {
+            "capability_id": "numeric.search-seed",
+            "release": "0.5.0",
+            "image_sha256": "7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+            "contract_version": "1"
+          },
+          "descriptor_sha256": "226f73184d3d8d3f6101e55492afb391047842a93d402237b5b1fd3c058b95b2",
+          "input_schemas": [
+            {
+              "port": "parameters",
+              "schema_ref": {
+                "schema_id": "search.specification",
+                "version": "1",
+                "sha256": "e829b92d2145b0916847b06cb6e73c4a5aea17addea8bbdd1e9706dbd1cc79a7"
+              }
+            }
+          ],
+          "output_schemas": [
+            {
+              "port": "result",
+              "schema_ref": {
+                "schema_id": "search.checkpoint",
+                "version": "1",
+                "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+              }
+            }
+          ],
+          "checkpoint_schema": null
+        },
+        "revision": 2,
+        "status": "active"
+      },
+      "deployment": null,
+      "heartbeat": null,
+      "decision": {
+        "schema_version": "1",
+        "observations": {
+          "schema_version": "1",
+          "scope": {
+            "tenant_id": "internal",
+            "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+          },
+          "release": {
+            "schema_version": "1",
+            "tool": {
+              "capability_id": "numeric.search-seed",
+              "release": "0.5.0",
+              "image_sha256": "7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+              "contract_version": "1"
+            },
+            "descriptor_sha256": "226f73184d3d8d3f6101e55492afb391047842a93d402237b5b1fd3c058b95b2",
+            "input_schemas": [
+              {
+                "port": "parameters",
+                "schema_ref": {
+                  "schema_id": "search.specification",
+                  "version": "1",
+                  "sha256": "e829b92d2145b0916847b06cb6e73c4a5aea17addea8bbdd1e9706dbd1cc79a7"
+                }
+              }
+            ],
+            "output_schemas": [
+              {
+                "port": "result",
+                "schema_ref": {
+                  "schema_id": "search.checkpoint",
+                  "version": "1",
+                  "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+                }
+              }
+            ],
+            "checkpoint_schema": null
+          },
+          "policy_sha256": "2349e5f5206dc9e910280c86ccb889fb50fdfb8a48e9cedae2c04e24f42852e8",
+          "structural": {
+            "status": "valid",
+            "findings": []
+          },
+          "scientific": {
+            "status": "eligible",
+            "reason_codes": [
+              "synthetic_fixture_only"
+            ]
+          },
+          "capacity": {
+            "status": "unavailable",
+            "reason_codes": [
+              "no_healthy_replicas"
+            ]
+          }
+        },
+        "admission": {
+          "status": "allowed",
+          "reason_codes": [
+            "policy_compatible"
+          ]
+        },
+        "status": "rejected",
+        "assessed_at": "2026-10-07T11:22:05.213345Z",
+        "capacity_valid_until": "2026-10-07T11:22:06.213345Z"
+      }
+    },
+    "forbidden_action": {
+      "status": 403,
+      "result": {
+        "reason_code": "action_denied"
+      }
+    },
+    "final": {
+      "owners": {
+        "artifact": {
+          "owner": "artifact",
+          "pid": 25448,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "knowledge": {
+          "owner": "knowledge",
+          "pid": 16976,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "planning": {
+          "owner": "planning",
+          "pid": 14568,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "registry": {
+          "owner": "registry",
+          "pid": 860,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "research": {
+          "owner": "research",
+          "pid": 31584,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "runtime": {
+          "owner": "runtime",
+          "pid": 15276,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        }
+      }
+    },
+    "provider_calls": 0,
+    "workers_started": false,
+    "limits": [
+      "Actual Registry peer reads/resolution; no live capacity or campaign admission",
+      "Runtime configured with separate peer identity; successor admission remains separate"
+    ]
+  },
+  "raw": {
+    "independent": ".test-results\\local-registry-access-install-20261007a",
+    "replacement": ".test-results/local-registry-access-rebuild-20261007a",
+    "actual_peer": ".test-results/local-registry-access-config-20261007b"
+  },
+  "limits": [
+    "Actual peer token read/resolve/replay and forbidden activate403; no capacity/campaign admission",
+    "Runtime loads dedicated credential/config; actual successor admission remains next gate",
+    "Initial peer harness assumed nonexistent catalog scope/lifecycle fields; corrected to public row scope/revision, old failure preserved"
+  ]
+}

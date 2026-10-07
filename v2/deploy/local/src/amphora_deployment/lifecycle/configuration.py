@@ -67,8 +67,12 @@ def load_bindings(root, manifest, routes):
                     ("installation", "source_lock", "configuration")), "lifecycle_binding_path")
         references = record["secret_references"]
         require(type(references) is list and len(references) <= 64 and all(type(name) is str and allowed_reference(owner, name) for name in references), "lifecycle_credential_scope")
-        selected = [name for name in references if name != 'WORKER_REGISTRY_TOKEN']
+        selected = [name for name in references if name not in {'WORKER_REGISTRY_TOKEN', 'RUNTIME_REGISTRY_TOKEN'}]
         values = bundle.environment(selected)
+        if 'RUNTIME_REGISTRY_TOKEN' in references:
+            from ..registry_access import registry_credential
+            require(owner in {'runtime', 'registry'}, 'lifecycle_credential_scope')
+            values.update(registry_credential(root, state['deployment_id']).environment(['RUNTIME_REGISTRY_TOKEN']))
         if 'WORKER_REGISTRY_TOKEN' in references:
             from ..tool_catalog.credentials import worker_credential
             require(owner == 'registry', 'lifecycle_credential_scope')

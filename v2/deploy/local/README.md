@@ -84,3 +84,9 @@ Deployment0.10 adds bounded TLS admission pressure counters and sets the listene
 default to its existing16-connection ceiling, accommodating five tool workers plus
 five simultaneous readiness probes. See tool_access/README.md for concurrency, privacy
 and replacement semantics. Historical expired tool attempts remain under diagnosis.
+
+Deployment0.11 adds optional create-once Runtime-to-Registry credentials under
+registry_access, enabling independently scoped draft eligibility configuration
+without sharing Registry operator keys or replacing the original vault. Lifecycle
+loads the sidecar only for an explicit reference in Runtime/Registry manifests.
+Existing installations/manifests, package dependencies and state schemas are unchanged.

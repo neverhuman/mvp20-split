@@ -94,3 +94,8 @@ this is lifecycle/failure evidence, not six-owner serving readiness. Successful
 owner startup/migrations and drain belong to B2; full demo remains later children.
 
 B2.01 serving holds the deployment operation lease for the supervisor lifetime, excluding simultaneous provisioning/migrations. Read-only control still uses atomic snapshots. Actual supervisor command regression passed with this lease.
+
+Deployment0.11 accepts the optional RUNTIME_REGISTRY_TOKEN reference only for its
+two endpoint owners and resolves it from the deployment-bound registry_access
+sidecar. No arbitrary extra credential file or cross-owner operator key is accepted.
+Manifests lacking that reference never require the new sidecar.
