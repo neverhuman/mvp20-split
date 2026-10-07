@@ -285,3 +285,11 @@ without workers, confirms original graph/admission/context and inspects model us
 actual output bytes and retention. A successful readback does not convert failed
 invocations into scientific success. The integrated oracle still requires15 canonical
 successful invocations,6 evaluations,3 selection checkpoints and confirmed outputs.
+
+`verify_local_browser.py` starts the independently installed gateway and five retained
+owners with fresh immutable asset/configuration paths. It supplies a one-use launcher
+key only to the browser harness; owner credentials stay gateway-side. Studio's
+`tests/integration/local_demo.mjs` verifies desktop/narrow execution and checkpoint
+reasoning, keyboard access, accessibility and scoped Research/Knowledge/Data readback.
+Gateway drains before owners. No workers, SQL seeding or model calls. This proves
+Monitor/reasoning and API history; Design/Explore/successor navigation remains separate.

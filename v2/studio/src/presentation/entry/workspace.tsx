@@ -6,13 +6,15 @@ import { MonitorModel } from '../../page_models/monitor.js';
 import { NavigationModel } from '../../page_models/navigation.js';
 import { NamedViewsModel } from '../../page_models/named_views.js';
 import { EvidenceModel } from '../../page_models/evidence.js';
+import { SupervisionClient } from '../../transport/supervision/client.js';
+import { SupervisionModel } from '../../page_models/supervision/model.js';
 import { MonitorWorkspace } from '../monitor_workspace.js';
 import './style.css';
 
 function Campaign({ context }: { context: WorkspaceContext & { run_id: string } }) {
   const owners = useMemo(() => {
     const client = new ObservationClient();
-    return { model:new MonitorModel(client), navigation:new NavigationModel(client), namedViews:new NamedViewsModel(client), evidence:new EvidenceModel(client) };
+    return { model:new MonitorModel(client), navigation:new NavigationModel(client), namedViews:new NamedViewsModel(client), evidence:new EvidenceModel(client), supervision:new SupervisionModel(new SupervisionClient()) };
   }, [context.scope.tenant_id, context.scope.project_id, context.run_id]);
   useEffect(() => () => { for (const owner of Object.values(owners)) owner.dispose(); }, [owners]);
   return <MonitorWorkspace {...owners} context={{ scope:context.scope, run:context.run_id }} synthetic={context.synthetic} />;

@@ -1,0 +1,146 @@
+{
+  "timestamp_local": "2026-10-07 05:34:55",
+  "status": "passed",
+  "run_id": "fc257cf8882147cb8cca56c778837e60",
+  "scope": {
+    "tenant_id": "internal",
+    "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+  },
+  "browser": {
+    "status": "passed",
+    "run_id": "fc257cf8882147cb8cca56c778837e60",
+    "scenarios": [
+      "1440: actual execution, keyboard reasoning, selected abstention, required knowledge, public owner trace, accessibility",
+      "390: actual execution, keyboard reasoning, selected abstention, required knowledge, public owner trace, accessibility"
+    ],
+    "screenshots": [
+      "execution-1440.png",
+      "reasoning-1440.png",
+      "execution-390.png",
+      "reasoning-390.png"
+    ],
+    "reads": [
+      {
+        "width": 1440,
+        "graph_nodes": 39,
+        "question": {
+          "scope": {
+            "tenant_id": "internal",
+            "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+          },
+          "question_id": "question",
+          "revision": 1
+        },
+        "knowledge_snapshot": {
+          "graph": {
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+            },
+            "graph_id": "domain"
+          },
+          "revision": 1,
+          "sha256": "9d24c091b34a72bf865618352d30cb1a428189d17b415d2bde3202901f39fdec"
+        },
+        "context_assertions": 1
+      },
+      {
+        "width": 390,
+        "graph_nodes": 39,
+        "question": {
+          "scope": {
+            "tenant_id": "internal",
+            "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+          },
+          "question_id": "question",
+          "revision": 1
+        },
+        "knowledge_snapshot": {
+          "graph": {
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+            },
+            "graph_id": "domain"
+          },
+          "revision": 1,
+          "sha256": "9d24c091b34a72bf865618352d30cb1a428189d17b415d2bde3202901f39fdec"
+        },
+        "context_assertions": 1
+      }
+    ]
+  },
+  "final": {
+    "owners": {
+      "artifact": {
+        "owner": "artifact",
+        "pid": 34452,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      },
+      "gateway": {
+        "owner": "gateway",
+        "pid": 34780,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      },
+      "knowledge": {
+        "owner": "knowledge",
+        "pid": 19368,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      },
+      "planning": {
+        "owner": "planning",
+        "pid": 33960,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      },
+      "research": {
+        "owner": "research",
+        "pid": 22116,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      },
+      "runtime": {
+        "owner": "runtime",
+        "pid": 25608,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      }
+    }
+  },
+  "assets": {
+    "index.html": "0c60b48d2bf03c539e9f7f14f773d3fb7652fade37209178f9a3790c893e45c5",
+    "app.js": "7c6522a5414627e75855bef99a7401a686fb4d12a718a0ab535ec70f2a91faf1",
+    "app.css": "a407520d86096cb94fec512090c4ec8f21b3f1947bf92fb785fa56e204cb9224"
+  },
+  "provider_calls": 0,
+  "workers_started": false,
+  "limits": [
+    "Actual localhost gateway/Studio and five retained owners; synthetic science only",
+    "Read-only execution/reasoning/context trace; full Design/Explore/successor navigation remains separate"
+  ],
+  "studio": "0.10.0",
+  "verification": {
+    "typescript_build": "passed",
+    "published_contracts": "unchanged; generator check passed",
+    "focused_session_supervision_tests": 19,
+    "independent_asset_rebuild": "identical index.html/app.js/app.css",
+    "visual_review": "1440 and 390 execution/reasoning screenshots reviewed",
+    "raw_evidence": ".test-results/local-browser-reasoning-20261007c",
+    "coverage": "browser scenarios; no numerical coverage claim"
+  }
+}

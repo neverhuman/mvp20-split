@@ -1,5 +1,12 @@
 # Graph Studio
 
+Studio0.10 wires the existing checkpoint reasoning inspector into the local Monitor
+entry, with the same owned context/disposal lifecycle. Local builds accept an optional
+destination argument to scripts/build-local.mjs so new assets can be qualified without
+overwriting an earlier deployment. Actual localhost owner/browser acceptance is owned
+by tests/integration/local_demo.mjs and dev/verify_local_browser.py; this read-only
+trace does not yet assemble Design/Explore/successor navigation into the entry.
+
 Status: BP-05 closed100%; all four children and integrated parent audited. BP-06 owns scientific knowledge/evidence integration. Architecture: [Studio](../docs/Architecture/Experience/Studio.md), [read-model protocol](../docs/Architecture/Experience/Studio_Read_Model_Protocol.md).
 
 This independently packaged browser consumer owns presentation state and public HTTP transport. It owns no run database, scientific rules, execution authority or backend credentials. Runtime observations are authoritative; notifications request refresh rather than patching graph state. Monitor implements scoped observations, authored topology, occurrence navigation, linked evidence and bounded historical pins. Design implements next-campaign drafts, reviewed tool/schema forms, comparison, explicit rebase, pinned validation and owner-requested activation. Emergency termination is a separate operational control. Scientific Explore/Compare producers remain later owners.

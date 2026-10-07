@@ -1,5 +1,15 @@
 # Actual-owner Studio acceptance
 
+`local_demo.mjs` inspects an actual retained BP-09 campaign through the deployed local
+gateway and five owner APIs. It owns desktop/narrow execution and keyboard checkpoint
+reasoning, selected abstention, required context, exact Research/Knowledge readback,
+accessibility and overflow assertions. `dev/verify_local_browser.py` composes a new
+read-only owner/gateway manifest using previously qualified installs and explicit
+static assets, starts no workers and loads no provider key. The browser receives only
+a one-use gateway ticket/session; owner credentials remain server-side. Evidence and
+screenshots are separate from the synthetic-peer browser suites. Design/Explore and
+successor navigation are not inferred from these initial Monitor/API checks.
+
 Status: BP-05.01/V1 accepted, scopebbdae9f627f047419c5c53283a6c7bd4 at2026-09-29 20:02:11. Owner: [Monitor presentation](../../src/presentation/README.md). Both independent Node builds and actual-owner/replacement checks passed; scripted browser peer tests remain a separate tier.
 
 Run `v2/dev/.venv/Scripts/python.exe v2/dev/verify_studio_integration.py --images <accepted-solver-image-manifest>` from the repository root with `AMPHORA_TEST_POSTGRES=1`. Use the retained owned PostgreSQL fixture and run no competing campaign-admission suite. Node24, npm and the locally installed Playwright Chromium are required.
