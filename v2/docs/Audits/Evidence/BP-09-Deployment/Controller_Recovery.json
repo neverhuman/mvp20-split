@@ -1,0 +1,1448 @@
+{
+  "reviewed_local": "2026-10-07 07:21:01",
+  "status": "scoped_recovery_passed_shared_daemon_pending",
+  "process": {
+    "status": "passed",
+    "original": {
+      "binding_sha256": "e545bbf1bf155229e9a9d42357bb0718c48ca40e9f54e4277f8f374a413d682c",
+      "container_id": "7800a7e2dee6d49c4a3f7d40d0d90dc9223e064acfbed3f4afb48d78ab79f52d",
+      "deployment_id": "7be3465bdf1e4fa6b9189637e51e6f96",
+      "exit_code": null,
+      "phase": "started",
+      "profile": "local-tool-turn-v1",
+      "sequence": 1,
+      "turn_id": "937c09f98d7546a08201e9c09df1f56b",
+      "updated_at": "2026-10-07 07:08:06",
+      "worker": "evolution-seed"
+    },
+    "retained": {
+      "binding_sha256": "e545bbf1bf155229e9a9d42357bb0718c48ca40e9f54e4277f8f374a413d682c",
+      "container_id": "7800a7e2dee6d49c4a3f7d40d0d90dc9223e064acfbed3f4afb48d78ab79f52d",
+      "deployment_id": "7be3465bdf1e4fa6b9189637e51e6f96",
+      "exit_code": null,
+      "phase": "started",
+      "profile": "local-tool-turn-v1",
+      "sequence": 1,
+      "turn_id": "937c09f98d7546a08201e9c09df1f56b",
+      "updated_at": "2026-10-07 07:08:06",
+      "worker": "evolution-seed"
+    },
+    "final": {
+      "binding_sha256": "e545bbf1bf155229e9a9d42357bb0718c48ca40e9f54e4277f8f374a413d682c",
+      "container_id": "7800a7e2dee6d49c4a3f7d40d0d90dc9223e064acfbed3f4afb48d78ab79f52d",
+      "deployment_id": "7be3465bdf1e4fa6b9189637e51e6f96",
+      "exit_code": 3,
+      "phase": "released",
+      "profile": "local-tool-turn-v1",
+      "sequence": 1,
+      "turn_id": "937c09f98d7546a08201e9c09df1f56b",
+      "updated_at": "2026-10-07 07:08:10",
+      "worker": "evolution-seed"
+    },
+    "unavailable_owners": [
+      "supervisor",
+      "runtime",
+      "artifact",
+      "research",
+      "knowledge",
+      "planning",
+      "registry",
+      "tls-runtime",
+      "tls-artifact"
+    ],
+    "tls_unavailable": true,
+    "migration_blocked": true,
+    "exact_admission_replay": true,
+    "same_turn_no_restart": true,
+    "elapsed_seconds": 48.265000000130385,
+    "maximum_control_latency_seconds": 0.0,
+    "provider_calls": 0,
+    "limits": [
+      "Actual job death and Docker turn adoption; shared daemon remains running",
+      "Live process barrier does not establish a scientific invocation had already been accepted"
+    ]
+  },
+  "failed_campaign_readback": {
+    "timestamp_local": "2026-10-07 07:11:20",
+    "status": "readback_passed",
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+    },
+    "run_id": "a70d66f029ac46d4b2910542207beb5f",
+    "graph": {
+      "schema_version": "3",
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+      },
+      "run_id": "a70d66f029ac46d4b2910542207beb5f",
+      "plan_sha256": "5f7bbf11269fb457dc6159bf09049d2b3134ea89906cfc5a52e4cd97e775733d",
+      "status": "blocked",
+      "revision": 1,
+      "node_count": 9,
+      "budget_limit": 256,
+      "reserved": 0,
+      "spent": 0,
+      "stop_reason": "graph_finish_unavailable",
+      "nodes": [
+        {
+          "activation_id": "1a7d04fba9dc4a0cd2ef91029f88d12d98da21e451ed0d3ce8c20f7926c994a1",
+          "path": {
+            "schema_version": "2",
+            "node_id": "expand",
+            "occurrences": []
+          },
+          "kind": "invoke",
+          "status": "blocked",
+          "reason_code": "graph_dependency_unavailable"
+        },
+        {
+          "activation_id": "3b1cb242c31afc0746e2ea0ef11ab25d8dc36da0361d66303afb6500a364b46a",
+          "path": {
+            "schema_version": "2",
+            "node_id": "finish",
+            "occurrences": []
+          },
+          "kind": "finish",
+          "status": "blocked",
+          "reason_code": "graph_dependency_unavailable"
+        },
+        {
+          "activation_id": "47da28afe5e9d4234dabe6bdee4b2da5b93562269907b77a813c77a5da1c30ba",
+          "path": {
+            "schema_version": "2",
+            "node_id": "generations",
+            "occurrences": []
+          },
+          "kind": "iterate",
+          "status": "blocked",
+          "reason_code": "graph_dependency_unavailable"
+        },
+        {
+          "activation_id": "67f665f82103997ea01f3b5e7cb3644b107ced8557c99e1661b803eecc2536a7",
+          "path": {
+            "schema_version": "2",
+            "node_id": "seed",
+            "occurrences": []
+          },
+          "kind": "invoke",
+          "status": "failed",
+          "reason_code": "tool_failed"
+        },
+        {
+          "activation_id": "976c62591530782226d142871c0c09e0fa7c1aef43f92ce8a8d2d5be140e82fd",
+          "path": {
+            "schema_version": "2",
+            "node_id": "collection",
+            "occurrences": []
+          },
+          "kind": "artifact_materialize",
+          "status": "blocked",
+          "reason_code": "graph_dependency_unavailable"
+        },
+        {
+          "activation_id": "ae62e5d6a3b6491a50f6e0b42c294d4bd974f6e37e6747b726005bd2add10684",
+          "path": {
+            "schema_version": "2",
+            "node_id": "evaluate_batch",
+            "occurrences": []
+          },
+          "kind": "scatter",
+          "status": "blocked",
+          "reason_code": "graph_dependency_unavailable"
+        },
+        {
+          "activation_id": "e1d22e1aa2b096c6e0a7d408d25cf005f49b88f6ee1708b339da6cbf223c091d",
+          "path": {
+            "schema_version": "2",
+            "node_id": "requests",
+            "occurrences": []
+          },
+          "kind": "artifact_project",
+          "status": "blocked",
+          "reason_code": "graph_dependency_unavailable"
+        },
+        {
+          "activation_id": "f927d6c9591c9029f457c45e2bd2d2218b90e4b99a302b01fa595a3ec26e5895",
+          "path": {
+            "schema_version": "2",
+            "node_id": "request_context",
+            "occurrences": []
+          },
+          "kind": "artifact_materialize",
+          "status": "blocked",
+          "reason_code": "graph_dependency_unavailable"
+        },
+        {
+          "activation_id": "fb10971e97624eb8184f8a80a3ccfbc91f80ddf706088e520c128c6c6ae6999d",
+          "path": {
+            "schema_version": "2",
+            "node_id": "collect",
+            "occurrences": []
+          },
+          "kind": "invoke",
+          "status": "blocked",
+          "reason_code": "graph_dependency_unavailable"
+        }
+      ],
+      "next_after": null
+    },
+    "details": [
+      {
+        "schema_version": "1",
+        "cut": {
+          "scope": {
+            "tenant_id": "internal",
+            "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+          },
+          "run_id": "a70d66f029ac46d4b2910542207beb5f",
+          "plan_sha256": "5f7bbf11269fb457dc6159bf09049d2b3134ea89906cfc5a52e4cd97e775733d",
+          "revision": 1,
+          "frontier_revision": 1
+        },
+        "node": {
+          "activation_id": "1a7d04fba9dc4a0cd2ef91029f88d12d98da21e451ed0d3ce8c20f7926c994a1",
+          "path": {
+            "schema_version": "2",
+            "node_id": "expand",
+            "occurrences": []
+          },
+          "kind": "invoke",
+          "status": "blocked",
+          "reason_code": "graph_dependency_unavailable"
+        },
+        "scope_key": "a8916822326ca6ccbcabafe4b7bf4a6ca9b569d6d828c10b3dac6711c298073a",
+        "parent_activation_id": null,
+        "outputs": [],
+        "attempts": [],
+        "next_cursor": null
+      },
+      {
+        "schema_version": "1",
+        "cut": {
+          "scope": {
+            "tenant_id": "internal",
+            "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+          },
+          "run_id": "a70d66f029ac46d4b2910542207beb5f",
+          "plan_sha256": "5f7bbf11269fb457dc6159bf09049d2b3134ea89906cfc5a52e4cd97e775733d",
+          "revision": 1,
+          "frontier_revision": 1
+        },
+        "node": {
+          "activation_id": "67f665f82103997ea01f3b5e7cb3644b107ced8557c99e1661b803eecc2536a7",
+          "path": {
+            "schema_version": "2",
+            "node_id": "seed",
+            "occurrences": []
+          },
+          "kind": "invoke",
+          "status": "failed",
+          "reason_code": "tool_failed"
+        },
+        "scope_key": "a8916822326ca6ccbcabafe4b7bf4a6ca9b569d6d828c10b3dac6711c298073a",
+        "parent_activation_id": null,
+        "outputs": [],
+        "attempts": [],
+        "next_cursor": null
+      },
+      {
+        "schema_version": "1",
+        "cut": {
+          "scope": {
+            "tenant_id": "internal",
+            "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+          },
+          "run_id": "a70d66f029ac46d4b2910542207beb5f",
+          "plan_sha256": "5f7bbf11269fb457dc6159bf09049d2b3134ea89906cfc5a52e4cd97e775733d",
+          "revision": 1,
+          "frontier_revision": 1
+        },
+        "node": {
+          "activation_id": "fb10971e97624eb8184f8a80a3ccfbc91f80ddf706088e520c128c6c6ae6999d",
+          "path": {
+            "schema_version": "2",
+            "node_id": "collect",
+            "occurrences": []
+          },
+          "kind": "invoke",
+          "status": "blocked",
+          "reason_code": "graph_dependency_unavailable"
+        },
+        "scope_key": "a8916822326ca6ccbcabafe4b7bf4a6ca9b569d6d828c10b3dac6711c298073a",
+        "parent_activation_id": null,
+        "outputs": [],
+        "attempts": [],
+        "next_cursor": null
+      }
+    ],
+    "completions": [],
+    "receipt": {
+      "schema_version": "1",
+      "outcome": {
+        "status": "accepted",
+        "binding": {
+          "identity": {
+            "schema_version": "1",
+            "command_family": "graph.admit",
+            "command_id": "be6dc3ee4b94496b94c50f4e301755b9",
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+            },
+            "actor_id": "admin"
+          },
+          "request_sha256": "7e53e656d019988df906937ba501644f221fce446ee9a73e4d7409f89aafad6e",
+          "operation_id": "9b2f2530ce934effb8fb7641cad8b658"
+        },
+        "committed": {
+          "kind": "run",
+          "object_id": "a70d66f029ac46d4b2910542207beb5f",
+          "revision": 0
+        }
+      }
+    },
+    "final": {
+      "owners": {
+        "artifact": {
+          "owner": "artifact",
+          "pid": 23712,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "knowledge": {
+          "owner": "knowledge",
+          "pid": 29020,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "planning": {
+          "owner": "planning",
+          "pid": 34640,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "registry": {
+          "owner": "registry",
+          "pid": 27812,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "research": {
+          "owner": "research",
+          "pid": 10932,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "runtime": {
+          "owner": "runtime",
+          "pid": 19668,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        }
+      }
+    },
+    "provider_calls": 0,
+    "workers_started": false
+  },
+  "fault_cleanup": {
+    "error_type": "AssertionError",
+    "run_id": "a70d66f029ac46d4b2910542207beb5f",
+    "cancel": {
+      "schema_version": "1",
+      "outcome": {
+        "status": "rejected",
+        "binding": {
+          "identity": {
+            "schema_version": "1",
+            "command_family": "runtime.cancel",
+            "command_id": "9f0db76656fe4ca9ae92ff245c3b748c",
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+            },
+            "actor_id": "admin"
+          },
+          "request_sha256": "2f42d3cde6e6e2faca7cfb5285596276ba693a6b7715e4369b5ae027a8723ba0",
+          "operation_id": "0f2905c62f5048cfba104736ea1d160f"
+        },
+        "reason_code": "run_not_running"
+      }
+    },
+    "drain": {
+      "owners": {
+        "artifact": {
+          "owner": "artifact",
+          "pid": 34688,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "knowledge": {
+          "owner": "knowledge",
+          "pid": 33732,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "planning": {
+          "owner": "planning",
+          "pid": 28628,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "registry": {
+          "owner": "registry",
+          "pid": 34180,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "research": {
+          "owner": "research",
+          "pid": 29492,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "runtime": {
+          "owner": "runtime",
+          "pid": 34312,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        }
+      },
+      "workers": {
+        "planning-checkpoint": {
+          "state": "quiescent",
+          "exit_code": null,
+          "completed_turns": 0,
+          "faulted": false,
+          "execution_readiness": "not_assessed"
+        },
+        "runtime-checkpoint": {
+          "state": "quiescent",
+          "exit_code": 0,
+          "completed_turns": 2,
+          "faulted": false,
+          "execution_readiness": "not_assessed"
+        },
+        "runtime-coordinate": {
+          "state": "quiescent",
+          "exit_code": 0,
+          "completed_turns": 1,
+          "faulted": false,
+          "execution_readiness": "not_assessed"
+        },
+        "runtime-deliver": {
+          "state": "quiescent",
+          "exit_code": 0,
+          "completed_turns": 1,
+          "faulted": false,
+          "execution_readiness": "not_assessed"
+        }
+      },
+      "tool_access": {
+        "runtime": {
+          "state": "drained",
+          "port": 59104,
+          "upstream_readiness": "not_assessed",
+          "connections": {
+            "limit": 16,
+            "active": 0,
+            "peak": 3,
+            "admitted": 22,
+            "denied": 0
+          }
+        },
+        "artifact": {
+          "state": "drained",
+          "port": 59105,
+          "upstream_readiness": "not_assessed",
+          "connections": {
+            "limit": 16,
+            "active": 0,
+            "peak": 1,
+            "admitted": 1,
+            "denied": 0
+          }
+        }
+      },
+      "scientific_workers": {
+        "evolution-seed": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 5,
+          "exit_code": 3,
+          "execution_readiness": "not_assessed"
+        },
+        "evolution-requests": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 4,
+          "exit_code": 3,
+          "execution_readiness": "not_assessed"
+        },
+        "evolution-collect": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 4,
+          "exit_code": 3,
+          "execution_readiness": "not_assessed"
+        },
+        "evolution-vary": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 4,
+          "exit_code": 3,
+          "execution_readiness": "not_assessed"
+        },
+        "synthetic-objectives": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 5,
+          "exit_code": 3,
+          "execution_readiness": "not_assessed"
+        }
+      },
+      "tool_catalog": {
+        "evolution-seed": {
+          "state": "observed",
+          "observation": {
+            "revision": 265,
+            "free_slots": 0,
+            "observed_at": "2026-10-07T12:09:10.257937Z",
+            "expires_at": "2026-10-07T12:09:25.257937Z"
+          },
+          "running": false,
+          "stopping": true
+        },
+        "evolution-requests": {
+          "state": "observed",
+          "observation": {
+            "revision": 266,
+            "free_slots": 0,
+            "observed_at": "2026-10-07T12:09:10.277194Z",
+            "expires_at": "2026-10-07T12:09:25.277194Z"
+          },
+          "running": false,
+          "stopping": true
+        },
+        "evolution-collect": {
+          "state": "observed",
+          "observation": {
+            "revision": 265,
+            "free_slots": 0,
+            "observed_at": "2026-10-07T12:09:10.246049Z",
+            "expires_at": "2026-10-07T12:09:25.246049Z"
+          },
+          "running": false,
+          "stopping": true
+        },
+        "evolution-vary": {
+          "state": "observed",
+          "observation": {
+            "revision": 266,
+            "free_slots": 0,
+            "observed_at": "2026-10-07T12:09:10.233124Z",
+            "expires_at": "2026-10-07T12:09:25.233124Z"
+          },
+          "running": false,
+          "stopping": true
+        },
+        "synthetic-objectives": {
+          "state": "observed",
+          "observation": {
+            "revision": 263,
+            "free_slots": 0,
+            "observed_at": "2026-10-07T12:09:10.268352Z",
+            "expires_at": "2026-10-07T12:09:25.268352Z"
+          },
+          "running": false,
+          "stopping": true
+        }
+      }
+    }
+  },
+  "resources": {
+    "status": "passed",
+    "thresholds": {
+      "owner_working_set_bytes": 1073741824,
+      "combined_owner_working_set_bytes": 4294967296,
+      "control_seconds": 0.5,
+      "samples": 5,
+      "interval_seconds": 1
+    },
+    "samples": [
+      {
+        "timestamp_local": "2026-10-07 07:18:21",
+        "owners": {
+          "artifact": {
+            "root_pid": 22628,
+            "processes": [
+              {
+                "ProcessId": 22628,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11079680,
+                "PrivatePageCount": 1683456
+              },
+              {
+                "ProcessId": 23764,
+                "ParentProcessId": 22628,
+                "WorkingSetSize": 7864320,
+                "PrivatePageCount": 1200128
+              },
+              {
+                "ProcessId": 28116,
+                "ParentProcessId": 22628,
+                "WorkingSetSize": 119058432,
+                "PrivatePageCount": 92553216
+              }
+            ],
+            "working_set_bytes": 138002432
+          },
+          "knowledge": {
+            "root_pid": 34168,
+            "processes": [
+              {
+                "ProcessId": 8088,
+                "ParentProcessId": 34168,
+                "WorkingSetSize": 7868416,
+                "PrivatePageCount": 1183744
+              },
+              {
+                "ProcessId": 25268,
+                "ParentProcessId": 34168,
+                "WorkingSetSize": 98013184,
+                "PrivatePageCount": 73031680
+              },
+              {
+                "ProcessId": 34168,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11157504,
+                "PrivatePageCount": 1769472
+              }
+            ],
+            "working_set_bytes": 117039104
+          },
+          "planning": {
+            "root_pid": 17840,
+            "processes": [
+              {
+                "ProcessId": 10048,
+                "ParentProcessId": 17840,
+                "WorkingSetSize": 7884800,
+                "PrivatePageCount": 1241088
+              },
+              {
+                "ProcessId": 17840,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11157504,
+                "PrivatePageCount": 1798144
+              },
+              {
+                "ProcessId": 22300,
+                "ParentProcessId": 17840,
+                "WorkingSetSize": 100474880,
+                "PrivatePageCount": 75464704
+              }
+            ],
+            "working_set_bytes": 119517184
+          },
+          "registry": {
+            "root_pid": 28360,
+            "processes": [
+              {
+                "ProcessId": 28360,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11145216,
+                "PrivatePageCount": 1781760
+              },
+              {
+                "ProcessId": 29372,
+                "ParentProcessId": 28360,
+                "WorkingSetSize": 7892992,
+                "PrivatePageCount": 1232896
+              },
+              {
+                "ProcessId": 34000,
+                "ParentProcessId": 28360,
+                "WorkingSetSize": 84180992,
+                "PrivatePageCount": 59117568
+              }
+            ],
+            "working_set_bytes": 103219200
+          },
+          "research": {
+            "root_pid": 3032,
+            "processes": [
+              {
+                "ProcessId": 3032,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11083776,
+                "PrivatePageCount": 1687552
+              },
+              {
+                "ProcessId": 27924,
+                "ParentProcessId": 3032,
+                "WorkingSetSize": 101580800,
+                "PrivatePageCount": 77307904
+              },
+              {
+                "ProcessId": 34516,
+                "ParentProcessId": 3032,
+                "WorkingSetSize": 7868416,
+                "PrivatePageCount": 1187840
+              }
+            ],
+            "working_set_bytes": 120532992
+          },
+          "runtime": {
+            "root_pid": 16232,
+            "processes": [
+              {
+                "ProcessId": 16232,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11169792,
+                "PrivatePageCount": 1802240
+              },
+              {
+                "ProcessId": 20220,
+                "ParentProcessId": 16232,
+                "WorkingSetSize": 114151424,
+                "PrivatePageCount": 87150592
+              },
+              {
+                "ProcessId": 34364,
+                "ParentProcessId": 16232,
+                "WorkingSetSize": 7880704,
+                "PrivatePageCount": 1228800
+              }
+            ],
+            "working_set_bytes": 133201920
+          }
+        },
+        "combined_working_set_bytes": 731512832,
+        "control_seconds": 0.015999999828636646
+      },
+      {
+        "timestamp_local": "2026-10-07 07:18:22",
+        "owners": {
+          "artifact": {
+            "root_pid": 22628,
+            "processes": [
+              {
+                "ProcessId": 22628,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11079680,
+                "PrivatePageCount": 1683456
+              },
+              {
+                "ProcessId": 23764,
+                "ParentProcessId": 22628,
+                "WorkingSetSize": 7864320,
+                "PrivatePageCount": 1200128
+              },
+              {
+                "ProcessId": 28116,
+                "ParentProcessId": 22628,
+                "WorkingSetSize": 119058432,
+                "PrivatePageCount": 92553216
+              }
+            ],
+            "working_set_bytes": 138002432
+          },
+          "knowledge": {
+            "root_pid": 34168,
+            "processes": [
+              {
+                "ProcessId": 8088,
+                "ParentProcessId": 34168,
+                "WorkingSetSize": 7868416,
+                "PrivatePageCount": 1183744
+              },
+              {
+                "ProcessId": 25268,
+                "ParentProcessId": 34168,
+                "WorkingSetSize": 98013184,
+                "PrivatePageCount": 73031680
+              },
+              {
+                "ProcessId": 34168,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11157504,
+                "PrivatePageCount": 1769472
+              }
+            ],
+            "working_set_bytes": 117039104
+          },
+          "planning": {
+            "root_pid": 17840,
+            "processes": [
+              {
+                "ProcessId": 10048,
+                "ParentProcessId": 17840,
+                "WorkingSetSize": 7884800,
+                "PrivatePageCount": 1241088
+              },
+              {
+                "ProcessId": 17840,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11157504,
+                "PrivatePageCount": 1798144
+              },
+              {
+                "ProcessId": 22300,
+                "ParentProcessId": 17840,
+                "WorkingSetSize": 100474880,
+                "PrivatePageCount": 75464704
+              }
+            ],
+            "working_set_bytes": 119517184
+          },
+          "registry": {
+            "root_pid": 28360,
+            "processes": [
+              {
+                "ProcessId": 28360,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11145216,
+                "PrivatePageCount": 1781760
+              },
+              {
+                "ProcessId": 29372,
+                "ParentProcessId": 28360,
+                "WorkingSetSize": 7892992,
+                "PrivatePageCount": 1232896
+              },
+              {
+                "ProcessId": 34000,
+                "ParentProcessId": 28360,
+                "WorkingSetSize": 83488768,
+                "PrivatePageCount": 58224640
+              }
+            ],
+            "working_set_bytes": 102526976
+          },
+          "research": {
+            "root_pid": 3032,
+            "processes": [
+              {
+                "ProcessId": 3032,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11083776,
+                "PrivatePageCount": 1687552
+              },
+              {
+                "ProcessId": 27924,
+                "ParentProcessId": 3032,
+                "WorkingSetSize": 101580800,
+                "PrivatePageCount": 77307904
+              },
+              {
+                "ProcessId": 34516,
+                "ParentProcessId": 3032,
+                "WorkingSetSize": 7868416,
+                "PrivatePageCount": 1187840
+              }
+            ],
+            "working_set_bytes": 120532992
+          },
+          "runtime": {
+            "root_pid": 16232,
+            "processes": [
+              {
+                "ProcessId": 16232,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11169792,
+                "PrivatePageCount": 1802240
+              },
+              {
+                "ProcessId": 20220,
+                "ParentProcessId": 16232,
+                "WorkingSetSize": 114151424,
+                "PrivatePageCount": 87150592
+              },
+              {
+                "ProcessId": 34364,
+                "ParentProcessId": 16232,
+                "WorkingSetSize": 7880704,
+                "PrivatePageCount": 1228800
+              }
+            ],
+            "working_set_bytes": 133201920
+          }
+        },
+        "combined_working_set_bytes": 730820608,
+        "control_seconds": 0.0
+      },
+      {
+        "timestamp_local": "2026-10-07 07:18:23",
+        "owners": {
+          "artifact": {
+            "root_pid": 22628,
+            "processes": [
+              {
+                "ProcessId": 22628,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11079680,
+                "PrivatePageCount": 1683456
+              },
+              {
+                "ProcessId": 23764,
+                "ParentProcessId": 22628,
+                "WorkingSetSize": 7864320,
+                "PrivatePageCount": 1200128
+              },
+              {
+                "ProcessId": 28116,
+                "ParentProcessId": 22628,
+                "WorkingSetSize": 119058432,
+                "PrivatePageCount": 92553216
+              }
+            ],
+            "working_set_bytes": 138002432
+          },
+          "knowledge": {
+            "root_pid": 34168,
+            "processes": [
+              {
+                "ProcessId": 8088,
+                "ParentProcessId": 34168,
+                "WorkingSetSize": 7868416,
+                "PrivatePageCount": 1183744
+              },
+              {
+                "ProcessId": 25268,
+                "ParentProcessId": 34168,
+                "WorkingSetSize": 98013184,
+                "PrivatePageCount": 73031680
+              },
+              {
+                "ProcessId": 34168,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11157504,
+                "PrivatePageCount": 1769472
+              }
+            ],
+            "working_set_bytes": 117039104
+          },
+          "planning": {
+            "root_pid": 17840,
+            "processes": [
+              {
+                "ProcessId": 10048,
+                "ParentProcessId": 17840,
+                "WorkingSetSize": 7884800,
+                "PrivatePageCount": 1241088
+              },
+              {
+                "ProcessId": 17840,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11157504,
+                "PrivatePageCount": 1798144
+              },
+              {
+                "ProcessId": 22300,
+                "ParentProcessId": 17840,
+                "WorkingSetSize": 100474880,
+                "PrivatePageCount": 75464704
+              }
+            ],
+            "working_set_bytes": 119517184
+          },
+          "registry": {
+            "root_pid": 28360,
+            "processes": [
+              {
+                "ProcessId": 28360,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11145216,
+                "PrivatePageCount": 1781760
+              },
+              {
+                "ProcessId": 29372,
+                "ParentProcessId": 28360,
+                "WorkingSetSize": 7892992,
+                "PrivatePageCount": 1232896
+              },
+              {
+                "ProcessId": 34000,
+                "ParentProcessId": 28360,
+                "WorkingSetSize": 83488768,
+                "PrivatePageCount": 58224640
+              }
+            ],
+            "working_set_bytes": 102526976
+          },
+          "research": {
+            "root_pid": 3032,
+            "processes": [
+              {
+                "ProcessId": 3032,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11083776,
+                "PrivatePageCount": 1687552
+              },
+              {
+                "ProcessId": 27924,
+                "ParentProcessId": 3032,
+                "WorkingSetSize": 101580800,
+                "PrivatePageCount": 77307904
+              },
+              {
+                "ProcessId": 34516,
+                "ParentProcessId": 3032,
+                "WorkingSetSize": 7868416,
+                "PrivatePageCount": 1187840
+              }
+            ],
+            "working_set_bytes": 120532992
+          },
+          "runtime": {
+            "root_pid": 16232,
+            "processes": [
+              {
+                "ProcessId": 16232,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11169792,
+                "PrivatePageCount": 1802240
+              },
+              {
+                "ProcessId": 20220,
+                "ParentProcessId": 16232,
+                "WorkingSetSize": 114151424,
+                "PrivatePageCount": 87150592
+              },
+              {
+                "ProcessId": 34364,
+                "ParentProcessId": 16232,
+                "WorkingSetSize": 7880704,
+                "PrivatePageCount": 1228800
+              }
+            ],
+            "working_set_bytes": 133201920
+          }
+        },
+        "combined_working_set_bytes": 730820608,
+        "control_seconds": 0.0
+      },
+      {
+        "timestamp_local": "2026-10-07 07:18:25",
+        "owners": {
+          "artifact": {
+            "root_pid": 22628,
+            "processes": [
+              {
+                "ProcessId": 22628,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11079680,
+                "PrivatePageCount": 1683456
+              },
+              {
+                "ProcessId": 23764,
+                "ParentProcessId": 22628,
+                "WorkingSetSize": 7864320,
+                "PrivatePageCount": 1200128
+              },
+              {
+                "ProcessId": 28116,
+                "ParentProcessId": 22628,
+                "WorkingSetSize": 119058432,
+                "PrivatePageCount": 92553216
+              }
+            ],
+            "working_set_bytes": 138002432
+          },
+          "knowledge": {
+            "root_pid": 34168,
+            "processes": [
+              {
+                "ProcessId": 8088,
+                "ParentProcessId": 34168,
+                "WorkingSetSize": 7868416,
+                "PrivatePageCount": 1183744
+              },
+              {
+                "ProcessId": 25268,
+                "ParentProcessId": 34168,
+                "WorkingSetSize": 98013184,
+                "PrivatePageCount": 73031680
+              },
+              {
+                "ProcessId": 34168,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11157504,
+                "PrivatePageCount": 1769472
+              }
+            ],
+            "working_set_bytes": 117039104
+          },
+          "planning": {
+            "root_pid": 17840,
+            "processes": [
+              {
+                "ProcessId": 10048,
+                "ParentProcessId": 17840,
+                "WorkingSetSize": 7884800,
+                "PrivatePageCount": 1241088
+              },
+              {
+                "ProcessId": 17840,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11157504,
+                "PrivatePageCount": 1798144
+              },
+              {
+                "ProcessId": 22300,
+                "ParentProcessId": 17840,
+                "WorkingSetSize": 100474880,
+                "PrivatePageCount": 75464704
+              }
+            ],
+            "working_set_bytes": 119517184
+          },
+          "registry": {
+            "root_pid": 28360,
+            "processes": [
+              {
+                "ProcessId": 28360,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11145216,
+                "PrivatePageCount": 1781760
+              },
+              {
+                "ProcessId": 29372,
+                "ParentProcessId": 28360,
+                "WorkingSetSize": 7892992,
+                "PrivatePageCount": 1232896
+              },
+              {
+                "ProcessId": 34000,
+                "ParentProcessId": 28360,
+                "WorkingSetSize": 83488768,
+                "PrivatePageCount": 58224640
+              }
+            ],
+            "working_set_bytes": 102526976
+          },
+          "research": {
+            "root_pid": 3032,
+            "processes": [
+              {
+                "ProcessId": 3032,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11083776,
+                "PrivatePageCount": 1687552
+              },
+              {
+                "ProcessId": 27924,
+                "ParentProcessId": 3032,
+                "WorkingSetSize": 101580800,
+                "PrivatePageCount": 77307904
+              },
+              {
+                "ProcessId": 34516,
+                "ParentProcessId": 3032,
+                "WorkingSetSize": 7868416,
+                "PrivatePageCount": 1187840
+              }
+            ],
+            "working_set_bytes": 120532992
+          },
+          "runtime": {
+            "root_pid": 16232,
+            "processes": [
+              {
+                "ProcessId": 16232,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11169792,
+                "PrivatePageCount": 1802240
+              },
+              {
+                "ProcessId": 20220,
+                "ParentProcessId": 16232,
+                "WorkingSetSize": 114151424,
+                "PrivatePageCount": 87150592
+              },
+              {
+                "ProcessId": 34364,
+                "ParentProcessId": 16232,
+                "WorkingSetSize": 7880704,
+                "PrivatePageCount": 1228800
+              }
+            ],
+            "working_set_bytes": 133201920
+          }
+        },
+        "combined_working_set_bytes": 730820608,
+        "control_seconds": 0.0
+      },
+      {
+        "timestamp_local": "2026-10-07 07:18:26",
+        "owners": {
+          "artifact": {
+            "root_pid": 22628,
+            "processes": [
+              {
+                "ProcessId": 22628,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11079680,
+                "PrivatePageCount": 1683456
+              },
+              {
+                "ProcessId": 23764,
+                "ParentProcessId": 22628,
+                "WorkingSetSize": 7864320,
+                "PrivatePageCount": 1200128
+              },
+              {
+                "ProcessId": 28116,
+                "ParentProcessId": 22628,
+                "WorkingSetSize": 119058432,
+                "PrivatePageCount": 92553216
+              }
+            ],
+            "working_set_bytes": 138002432
+          },
+          "knowledge": {
+            "root_pid": 34168,
+            "processes": [
+              {
+                "ProcessId": 8088,
+                "ParentProcessId": 34168,
+                "WorkingSetSize": 7868416,
+                "PrivatePageCount": 1183744
+              },
+              {
+                "ProcessId": 25268,
+                "ParentProcessId": 34168,
+                "WorkingSetSize": 98013184,
+                "PrivatePageCount": 73031680
+              },
+              {
+                "ProcessId": 34168,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11157504,
+                "PrivatePageCount": 1769472
+              }
+            ],
+            "working_set_bytes": 117039104
+          },
+          "planning": {
+            "root_pid": 17840,
+            "processes": [
+              {
+                "ProcessId": 10048,
+                "ParentProcessId": 17840,
+                "WorkingSetSize": 7864320,
+                "PrivatePageCount": 1200128
+              },
+              {
+                "ProcessId": 17840,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11079680,
+                "PrivatePageCount": 1683456
+              },
+              {
+                "ProcessId": 22300,
+                "ParentProcessId": 17840,
+                "WorkingSetSize": 100446208,
+                "PrivatePageCount": 75423744
+              }
+            ],
+            "working_set_bytes": 119390208
+          },
+          "registry": {
+            "root_pid": 28360,
+            "processes": [
+              {
+                "ProcessId": 28360,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11145216,
+                "PrivatePageCount": 1781760
+              },
+              {
+                "ProcessId": 29372,
+                "ParentProcessId": 28360,
+                "WorkingSetSize": 7892992,
+                "PrivatePageCount": 1232896
+              },
+              {
+                "ProcessId": 34000,
+                "ParentProcessId": 28360,
+                "WorkingSetSize": 83488768,
+                "PrivatePageCount": 58224640
+              }
+            ],
+            "working_set_bytes": 102526976
+          },
+          "research": {
+            "root_pid": 3032,
+            "processes": [
+              {
+                "ProcessId": 3032,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11083776,
+                "PrivatePageCount": 1687552
+              },
+              {
+                "ProcessId": 27924,
+                "ParentProcessId": 3032,
+                "WorkingSetSize": 101580800,
+                "PrivatePageCount": 77307904
+              },
+              {
+                "ProcessId": 34516,
+                "ParentProcessId": 3032,
+                "WorkingSetSize": 7868416,
+                "PrivatePageCount": 1187840
+              }
+            ],
+            "working_set_bytes": 120532992
+          },
+          "runtime": {
+            "root_pid": 16232,
+            "processes": [
+              {
+                "ProcessId": 16232,
+                "ParentProcessId": 18236,
+                "WorkingSetSize": 11169792,
+                "PrivatePageCount": 1802240
+              },
+              {
+                "ProcessId": 20220,
+                "ParentProcessId": 16232,
+                "WorkingSetSize": 114151424,
+                "PrivatePageCount": 87150592
+              },
+              {
+                "ProcessId": 34364,
+                "ParentProcessId": 16232,
+                "WorkingSetSize": 7880704,
+                "PrivatePageCount": 1228800
+              }
+            ],
+            "working_set_bytes": 133201920
+          }
+        },
+        "combined_working_set_bytes": 730693632,
+        "control_seconds": 0.0
+      }
+    ],
+    "docker_capacity": {
+      "os": "linux",
+      "arch": "x86_64",
+      "cpus": 24,
+      "memory": 33568755712
+    },
+    "final": {
+      "owners": {
+        "artifact": {
+          "owner": "artifact",
+          "pid": 22628,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "knowledge": {
+          "owner": "knowledge",
+          "pid": 34168,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "planning": {
+          "owner": "planning",
+          "pid": 17840,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "registry": {
+          "owner": "registry",
+          "pid": 28360,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "research": {
+          "owner": "research",
+          "pid": 3032,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "runtime": {
+          "owner": "runtime",
+          "pid": 16232,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        }
+      }
+    },
+    "provider_calls": 0,
+    "limits": [
+      "Five idle API-owner process-tree samples, not full-workload peak RSS/CPU or GPU capacity",
+      "Linux tool profile limits remain2CPU/1GiB/128PIDs; no scientific workers started"
+    ]
+  },
+  "verification": {
+    "deployment_scientific_tls": "65 passed19.74s",
+    "lint": "passed",
+    "boundaries": "passed",
+    "provider_calls": 0,
+    "original_fixture_success_oracle": "failed after interruption; no resumed-science claim",
+    "earlier_probe": "a immediate socket assertion failed; all listeners subsequently gone; original turn reconciled and campaign cancellation accepted",
+    "resource_probe_correction": "a measured launcher only and is superseded by b full owner process-tree sample"
+  },
+  "interpretation": {
+    "observed": "Blocked seed, no claimed attempts or canonical completions, zero spend and full available budget;60second seed timeout configured",
+    "inference": "Queued activation deadline expiry during interruption/restart; owner settlement fails unclaimed queued work on deadline or exhausted available budget, and budget is not exhausted",
+    "limits": [
+      "Not an accepted scientific invocation interruption barrier",
+      "Not a root-cause claim for earlier historical expiries",
+      "No shared-daemon outage or full-workload peak memory/CPU benchmark"
+    ]
+  },
+  "raw": [
+    "local-controller-fault-20261007a",
+    "local-controller-fault-recovery-20261007a",
+    "local-controller-fault-20261007b",
+    "local-controller-fault-readback-20261007b",
+    "local-idle-resources-20261007b"
+  ]
+}

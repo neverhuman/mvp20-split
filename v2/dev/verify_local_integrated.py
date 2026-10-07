@@ -15,6 +15,7 @@ from amphora_deployment.lifecycle.routes import Routes
 from amphora_deployment.persistence.state import LocalState
 from amphora_deployment.scientific_workers.ownership import require_released
 from amphora_deployment.tool_access import TLSIdentity
+
 from check_boundaries import ROOT
 from local_demo_controller import Controller
 from local_numeric_campaign import Campaign
@@ -37,8 +38,9 @@ def measure(configuration, output, routes, tokens, request):
     return json.loads((output / 'measured.json').read_bytes())
 
 
-def verify(configuration, output, *, key_file=None, science_only=False):
+def verify(configuration, output, *, key_file=None, science_only=False, interrupt_once=False):
     assert not (science_only and key_file is not None), 'Scientific diagnostic must not load a provider credential'
+    assert not interrupt_once or science_only, 'Fault probe is zero-model science only'
     output.mkdir(parents=True, exist_ok=False)
     prepared = json.loads((configuration / 'prepared.json').read_bytes())
     material = prepared['material']
@@ -129,6 +131,10 @@ def verify(configuration, output, *, key_file=None, science_only=False):
             return
         if not science_only:
             controller.control('/workers/planning-checkpoint/start', 'POST')
+        if interrupt_once:
+            from local_controller_interruption import interrupt_and_resume
+            controller = interrupt_and_resume(controller, campaign, root, configuration, label, prepared,
+                                              original['deployment_id'], output)
         for name in controller.control('/status')['scientific_workers']:
             controller.control('/scientific-workers/' + name + '/start', 'POST')
         previous, latencies = None, []
@@ -195,5 +201,7 @@ if __name__ == '__main__':
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--key-file', type=Path, help='Explicit live execution; omitted means zero-call preflight')
     parser.add_argument('--science-only', action='store_true', help='Separate unsupervised graph diagnostic; zero model calls')
+    parser.add_argument('--interrupt-once', action='store_true', help='Science-only owned supervisor/TLS death probe')
     args = parser.parse_args()
-    verify(args.configuration.absolute(), args.output.absolute(), key_file=args.key_file, science_only=args.science_only)
+    verify(args.configuration.absolute(), args.output.absolute(), key_file=args.key_file, science_only=args.science_only,
+           interrupt_once=args.interrupt_once)

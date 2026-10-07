@@ -1,44 +1,49 @@
 # Restore
 
-Refreshed 2026-10-07 06:58:35 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 07:21:01 (America/Chicago). Read FIRST after compression.
 
-## Active task
+## Active task / real owner gate
 
-BP-09.03/B3 failure/recovery active; B1/B2 complete. Child50%,Build66.67%,Acceptance0%;
-parent50%,10/20 closed gates. Continue scoped process/TLS interruption recovery then V1.
-No background tests or owner processes. Latest pushed8d2cd801; B2 ready to commit.
-No new provider calls; use zero-model scientific work for faults.
+BP-09.03/B3 two of three checkpoints complete. Child66.67%,Build88.89%,Acceptance0%;
+parent53.33%,(10+2/3)/20,ten closed gates. B1/B2 complete. V1 cannot start before B3.
+Awaiting explicit scope approval for actual shared Docker Desktop interruption because
+it affects THREE older baseline containers plus the active local PG/Qdrant. Async
+question sent; no answer received yet. Do not treat elapsed time as approval. Concrete
+runbook docs/Build Plans/BP-09/BP-09.03 Shared daemon interruption.md names fivecontainers,
+stop60s/start120s limits and original-state restoration; no daemon operation executed.
+All independent authorized checks complete. No running tests/probes/owners; Docker
+baseline containers remain up. B2 pushed927c136b; the B3 evidence checkpoint is committed with this handoff.
 
-## Latest qualified evidence
+## Latest qualified work / limitations
 
-Source/Knowledge correction .test-results/local-evidence-correction-20261007a passes,
-r2 text, assertion2 unresolved, accepted-log rebuild, old graph/run/declarations unchanged.
-Corrected successor .test-results/local-corrected-successor-20261007b passes, same draft
-as initial a unknown_schema_pin rejection. Fresh Runtime reviewed universe adds exact
-existing demo.text schema; original rejection preserved. Run6c124e88efec483ab6704ee096d6eb0c
-retains original numeric artifact and outputs new interpretation; source/knowledge pins2.
-Actual browser .test-results/local-browser-corrected-20261007b passed, desktop/narrow old/new
-claims + verified passage + exact parent/child restart/receipt/artifact proof. All owners
-drain0. Source screenshot reviewed after bounded inspector scroll. No science claim.
-26Knowledge pure tests0.55s and19Runtime realPG tests13.84s pass; lint/diff pass.
-Evidence Corrected_Successor.json. No package/source/schema change; dev/browser fixtures only.
+Controller_Recovery.json records installed Deployment0.11 full owned job/API/TLS death
+and same Linux turn/container/sequence adoption48.265s, migration exclusion and exact
+admission replay. Raw local-controller-fault-20261007b. Normal numeric oracle FAILED:
+run a70d66f029ac46d4b2910542207beb5f blocked seed tool_failed, zero attempts/completions/
+spend. Cancellation rejected run_not_running; blocked history unchanged. Sixownersdrain0.
+Readback local-controller-fault-readback-20261007b confirms exact original history.
+Inference from settlement source/full available budget: queued60s seed deadline expired
+through restart. Not resumed-science success or a cause for historical old expiries.
+Faulta immediate socket assertion failed; replaced with10s bounded child teardown.
+Recoverya exact original turn released and campaigncdc9bc95c2e343debbe524edd0e99b47
+explicitly cancelled, allownersdrain0. Failed evidence remains immutable.
+65 Deployment scientific/TLS tests19.74s pass; lint/boundaries pass. Resourcesb
+local-idle-resources-20261007b samples full process trees (three processes/owner), max
+697.62MiB combined/131.61MiB owner and0.016scontrol; limits4GiB/1GiB/0.5s. Prior a
+launcher-only measurement is excluded. Idle only, not workload peaks. Zero model calls.
 
-## B3 starting points
+## Resume navigation
 
-Full controller/TLS death and actual shared-daemon outage remain explicitly scoped.
-Existing dev/verify_scientific_monitor_recovery.py proves monitor job death only with
-actual Linux image/TLS and synthetic held503 owner. Do not relabel it full controller proof.
-Existing local_demo_controller.Controller.close() kills its exact owned Windows job,
-including API/TLS children; Docker containers survive and their journals must be adopted.
-verify_local_integrated.py science-only path provides real six-owner/managed science setup.
-Need predeclare fault barrier/oracles/latency limits before testing. Existing control0.5s,
-campaign600s. Preserve exact turn/container/command IDs, no generic resets or broad kills.
-Docker ps shows active local PG/Qdrant plus THREE older baseline containers. An actual
-shared-daemon interruption would affect those; prepare concrete test and seek explicit
-scope approval only after independent authorized fault work is complete. No globalDocker
-changes silently. Historical failed integrateda/sciencea expiry cause still unknown.
-Installed Deployment0.11 .test-results/local-registry-access-install-20261007a/owner.
-No source/test/dev/module README edits while ANY probe/build/test runs. No subagents.
+Current dev helpers local_controller_interruption.py, verify_local_integrated.py optional
+--science-only --interrupt-once, inspect_local_failure.py, verify_local_idle_resources.py.
+Deployment0.11 installed .test-results/local-registry-access-install-20261007a/owner.
+Successful corrected successor .test-results/local-corrected-successor-20261007b,
+run6c124e88efec483ab6704ee096d6eb0c. Actual browser local-browser-corrected-20261007b.
+Source r2/Knowledge assertion2 unresolved, old history preserved, new exact context pins.
+Evidence Corrected_Successor.json; no scientific improvement or measuredlabcorrection claim.
+If shared-daemon scope approved, build/review bounded execute helper from the runbook,
+refresh exact inventory, preserve volumes/vault/IDs and restore original running state.
+No global Docker actions before that answer. Closed plans stay closed; V1 then BP09.04.
 
 ## Retained integrated campaign and costs
 

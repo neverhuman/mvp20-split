@@ -74,9 +74,12 @@ actions with --scientific-worker, accept no arbitrary commands or payloads. The
 scientific group starts no campaign and grants no eligibility. Initial control does
 not offer ambiguous Docker force-stop/restart semantics.
 
-Never remove scientific records, data volumes or unrelated containers. Full
-controller/TLS death, actual shared-daemon outage and successful eligible work are
-distinct remaining scenario gates; do not infer them from monitor-death proof.
+Never remove scientific records, data volumes or unrelated containers. Actual controller/API/TLS job death and original-turn adoption are now separately
+qualified in BP-09.03/B3; managed eligible scientific execution is qualified in B1.
+Shared-daemon outage remains an open, separately authorized scenario. Do not infer
+continued campaign success from process recovery: the fault probe preserved a blocked
+run after an unclaimed seed exceeded its original deadline. No automatic deadline
+extension, turn replacement or campaign reset is performed.
 
 Tests are owned by deploy/local/tests/scientific_workers. Journal/profile/transition
 tests are pure checks; dev/verify_scientific_container_turns.py separately uses the
@@ -91,3 +94,12 @@ and some alternate states remain coverage gaps. No full-coverage claim.
 Deployment0.6 scoped coverage:35tests1.88s,411/444statements59/66branches91%.
 Monitor thread-start/selected closing-detach/aggregate-error paths remain gaps;
 actual Docker success and process-death adoption are separate installed evidence.
+
+BP-09.03/B3 verification:65 scoped scientific-worker/TLS tests pass19.74s. Actual
+installed Deployment0.11 supervisor job death removes seven control/owner listeners
+and both TLS listeners; same started Linux turn/container/sequence is adopted and
+released in48.265s, exact original admission receipt retained. The scientific baseline
+oracle did not pass after that interruption; public readback shows seed tool_failed,
+zero attempts/completions/spend. This is process recovery and truthful failure evidence,
+not resumed scientific success. Shared daemon, full-load peak resources and historical
+expiry causality are not established by this probe. See Controller_Recovery.json.

@@ -339,3 +339,18 @@ a fresh reviewed Runtime universe. Earlier unknown-schema validation stays retai
 knowledge revisions and returns the new interpretation beside the carried original
 numeric result. The browser qualifies old/new pinned claims and verified text without
 repinning the original campaign. These scripts are integration fixtures, not services.
+
+`verify_local_integrated.py --science-only --interrupt-once` invokes the separate
+`local_controller_interruption.py` fixture: one live Linux process, exact owned
+supervisor/API/TLS job termination, bounded child-listener teardown, original-turn
+migration exclusion/adoption and exact admission replay. It never stops the daemon.
+A process recovery pass does not promise campaign success: the retained b probe's
+unclaimed seed expired while owners restarted, and the normal15/6/3/15 oracle failed.
+Its truthful blocked result remains retained. `inspect_local_failure.py` reads exact
+public graph/attempt/completion/receipt history after restart without workers or keys.
+`verify_local_idle_resources.py` separately samples five full idle owner process-tree working sets and
+control responses, checking1GiB per owner/4GiB combined and0.5s control bounds written
+before startup. It records actual Docker capacity; it is not a peak-workload benchmark.
+All helpers preserve the original installation/vault, use exact owned process groups,
+retain failed probes, and finish with owners drained. Shared-daemon interruption is a
+separate approval-scoped runbook because older baseline containers share this daemon.
