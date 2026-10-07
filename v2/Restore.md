@@ -1,5 +1,11 @@
 # Restore
 
+Latest 2026-10-06 19:18:08: B1.02 COMPLETE; B1.03 partial-evaluation HTTP NEXT. Child16.67%,Build22.22%,Acceptance0%;parent83.33%,16/20+two thirds B1. Lastpushed502c0f49; current adaptercheckpoint readycommit/push. No activeprocesses:78955 passed28checks11.78s;69651 freshisolatedadapter verifier passed11checks. ROOT.test-results/search-adapter-rebuild-20261006a/numeric/manifest.json is fresh numeric0.5 closure (pytestadded testonly; noSQL/privateowners). EvidenceAdapter_Reconstruction.json. Parentadapter52/77lines18/24branches; CLI subprocessnotattributed; transport/oversizedoutputguardgap remains.
+
+NextB1.03: compose existing Runtime numericacceptance harness to run baseline/resumed with reconstructedtestadapter fromstart, declaredfixtureimagepins (do NOT claim rebuiltadapter matches prior productionLinuximage). Keep same reviewedtestsource acrossprocessreplacement and pin sourceSHA. Add optional reconstructedadapter path to numeric worker_command testhelper; runtime/evaluator originalstandaloneworkers unchanged. Existing execute only interrupts vary; generalize testhook by failure.stage defaultvary, ours stageevaluate. New PartialEvaluationInterruption must firstcomplete one evaluator worker, then holdsecond's actualDatafinalization, killonlyownedworker2, preservefirstacceptedreceipt, restartruntime/freshworker, retryundernewfence, rejectstalecompletion, confirmallretention and comparecheckpointtrace (excludeonlyvalidatedpreviousArtifactIDs). No source edits duringproof. Driver canreuse currentTopologyRuntime0.65/Data0.30 and install evaluator0.2/controllerpublicsearch_steps; SQLserialownedfixture envonly. Need independentlyinstalledcontrollerwithpublicsearch contracts (oldSDK-only lacksmanifestDTOs). ExistingGraphEnvironment and NumericEnvironment are test-only reusable, privateowners remain forbidden. Scientific/targethost claims remainexcluded. Correction B2later distinctnewimmutableevaluatorrelease/newsearchrevision, oldranks preserved. No paidcalls.
+
+
+
 Refreshed 2026-10-06 19:12:48 (America/Chicago). Read FIRST after compression.
 
 ## Exact checkpoint

@@ -1,0 +1,76 @@
+{
+  "timestamp_local": "2026-10-06 19:16:09",
+  "status": "passed",
+  "adapter_sha256": "1954836b03cb4c54a847ac44ef5a7bf0d2a970336b027ba32afdca0fd52015a8",
+  "kernel_installation": {
+    "timestamp_local": "2026-10-06 19:15:56",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-evolution-search",
+    "forbidden_implementations": [
+      "sqlalchemy",
+      "amphora_campaign_runtime",
+      "amphora_agent_planning",
+      "amphora_data_artifacts",
+      "amphora_research"
+    ],
+    "packages": {
+      "amphora-contracts-artifacts": "0.2.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-search": "0.1.0",
+      "amphora-contracts-search-steps": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-evolution-search": "0.5.0",
+      "amphora-tool-protocol": "0.2.0"
+    },
+    "wheels": {
+      "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+      "amphora_contracts_search_steps-0.1.0-py3-none-any.whl": "f94ad77e69708f0fc51a7a3e0660779a15cf972afe8c1b0dcb6cd24cc190d083",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_evolution_search-0.5.0-py3-none-any.whl": "2fdbfdbb6ba5a47d8a5ed9f7927f9efd7043e2b9d8152e1b872a628aff5edb74",
+      "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+    }
+  },
+  "tests_xml_sha256": "dc17e2ec952cd5be3829c778c2168e80cb3c1b28dd676fe48f779b4c1611059f",
+  "limits": [
+    "Reconstructed adapter reuses reviewed public numeric domain exports; not an independent algorithm rewrite",
+    "Fixture descriptors and CLI compute; actual worker transport remains B1.03",
+    "pytest is an additional test-only dependency"
+  ],
+  "paid_calls": 0,
+  "scope": "BP-08.05/B1.02",
+  "tests": {
+    "workspace": 28,
+    "workspace_seconds": 11.78,
+    "isolated": 11,
+    "isolated_seconds": 6.511
+  },
+  "raw_evidence": ".test-results/search-adapter-rebuild-20261006a/evidence.json",
+  "parent_coverage": {
+    "covered_lines": 52,
+    "num_statements": 77,
+    "percent_covered": 69.3069306930693,
+    "percent_covered_display": "69",
+    "missing_lines": 25,
+    "excluded_lines": 0,
+    "percent_statements_covered": 67.53246753246754,
+    "percent_statements_covered_display": "68",
+    "num_branches": 24,
+    "num_partial_branches": 2,
+    "covered_branches": 18,
+    "missing_branches": 6,
+    "percent_branches_covered": 75.0,
+    "percent_branches_covered_display": "75"
+  },
+  "coverage_limits": "CLI subprocess statements not attributed; worker transport and oversized-output guard not exercised in this unit"
+}
