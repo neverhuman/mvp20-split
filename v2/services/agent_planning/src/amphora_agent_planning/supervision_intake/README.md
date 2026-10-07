@@ -26,3 +26,6 @@ Preserve exact canonical command/wrapper/original request bytes, command operati
 
 
 The checkpoint output schema requires the explicit CheckpointRequest wrapper; legacy supervision intake rejects that combination before provider work. Existing checkpoint requests with older output profiles remain readable.
+
+The exact checkpoint-followup-draft output pin requires an explicit CheckpointRequest,
+as does checkpoint-draft. Old intake and canonical record bytes remain unchanged.

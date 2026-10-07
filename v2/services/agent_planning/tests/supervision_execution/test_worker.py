@@ -54,7 +54,7 @@ class Provider:
         return ProviderReply([b'bad' if self.variant == 'invalid' else json.dumps(value).encode()], unknown_usage())
 
 
-def setup(s, *, maximum=200000, variant='abstain', extra_count=0, attempts=2):
+def setup(s, *, maximum=200000, variant='abstain', extra_count=0, attempts=2, configure_request=None):
     data, provider = Data(), Provider(variant)
     def configure(original):
         context = original['context']
@@ -72,6 +72,8 @@ def setup(s, *, maximum=200000, variant='abstain', extra_count=0, attempts=2):
             ref = dict(context['objective'], artifact_id=f'extra-{index}')
             context['entries'].append({'artifact': ref, 'role': 'source', 'required': True})
             data.bodies[ref['artifact_id']] = b'objective'
+        if configure_request is not None:
+            configure_request(original, data)
     with s.engine.connect() as conn:
         deadline = conn.execute(text('SELECT floor(extract(epoch FROM clock_timestamp())*1000)::bigint+60000')).scalar_one()
     actor, intake, ref, raw, templates = prepared(actor=s.principal, configure=configure, deadline=deadline)

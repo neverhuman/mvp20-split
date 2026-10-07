@@ -1,16 +1,21 @@
 # Agent Planning service boundary
 
-Current release: Planning0.103.0/planning0020. SQ-01/C2a adds exact criterion
-membership and future-intent binding in [campaign_followup](src/amphora_agent_planning/campaign_followup/README.md).
-The new profile is not yet enabled for provider dispatch; C2b owns retained preparation
-and output integration. Installed demo owners remain frozen separately.
+Current release: Planning0.104.0/planning0020. SQ-01/C2b integrates
+[campaign_followup](src/amphora_agent_planning/campaign_followup/README.md) with retained
+preparation, configured public Research reads, provider validation and publication.
+Runtime acceptance and Studio proposal presentation remain subsequent SQ-01 gates.
+Installed demo owners remain frozen separately; no new live adapter is enabled.
 
-- Version: Planning0.103.0; public Planning0.11.0 and supervision0.10.1; migration head0020 unchanged.
-- Reviewed: `2026-10-07 13:21:09` (America/Chicago); domain binding verified, integration pending.
+- Version: Planning0.104.0; public Planning0.11.0 and supervision0.10.1; migration head0020 unchanged.
+- Reviewed: `2026-10-07 14:02:37` (America/Chicago);242 affected-boundary tests and5 final checks pass.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Campaign acceptance: [BP-07.03](../../docs/Build%20Plans/BP-07/Completed/BP-07.03%20Campaign%20proposals%20and%20context.md); supervisor acceptance [BP-07.04](../../docs/Build%20Plans/BP-07/Completed/BP-07.04%20Durable%20supervisor%20and%20races.md).
 
-Current successor: [evaluation](src/amphora_agent_planning/evaluation/README.md) implements frozen protocol and independent scoring; [batch registration](src/amphora_agent_planning/evaluation_batch/README.md) retains original experiment inputs in planning0019; [measured runner](src/amphora_agent_planning/evaluation_execution/README.md) now composes existing durable issuance and preserves failed/late/unknown results; live synthetic evaluation and independent replay are verified. [OpenAI boundary](src/amphora_agent_planning/openai_provider/README.md) owns pinned transport/schema/rates. Configured campaign workers default disabled; the explicit [checkpoint adapter](src/amphora_agent_planning/checkpoint_openai/README.md) and [scope allowance](src/amphora_agent_planning/checkpoint_budget/README.md) support the selected synthetic demo profile. Actual deployed model/owner integration remains BP-09.03.
+The selected local synthetic demo is qualified under closed BP-09. SQ-01 adds
+criterion-specific future intent while preserving weak/unassessed evidence and original
+history. Existing model transport, spending ceilings, evaluation and checkpoint profiles
+remain independently owned modules. Synthetic software acceptance does not establish
+scientific efficacy or unattended reliability.
 
 ## Responsibilities and exclusions
 

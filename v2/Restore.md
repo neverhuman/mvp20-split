@@ -1,19 +1,32 @@
 # Restore
 
-Refreshed 2026-10-07 13:21:09 America/Chicago. Read FIRST after compression.
+Refreshed 2026-10-07 14:02:37 America/Chicago. Read FIRST after compression.
 
 ## Current handoff
 
 Demo2026-10-08 11am CT for internal nontechnical colleagues. DEMO-01 delivered100%;
 presenter acceptance pending. Frozen launch/assets below remain unchanged.
-SQ-01 active63.89%, Build76.67%, Verification0%. C1 and C2a complete; C2=33.33%.
-NEXT C2b preparation/provider integration, then C2c Runtime retained proposal/replay,
-remaining B3 proposal UI and V1. No owner decision pending; continue automatically.
-C1 pushed3b39365f; C2a commit next. Planning0.103 domain binding:153 tests15.64s,
-74 statements/16 branches100%. New profile not dispatched yet. Existing632 schema
-bytes unchanged. No new model costs, source/demo owners separate. No running jobs.
-C2a fixture initially used stale assessment hash; corrected to canonical typed status
-hash. Initial12 fixture failures retained in test output; corrected153 pass.
+SQ-01 active69.44%, Build83.33%, Verification0%. C1/C2a/C2b complete; C2=66.67%.
+NEXT C2c Runtime retained-proposal acceptance/replay. No approval needed.
+Last pushed0e19b628; C2b commit next. Planning0.104/dev pin/two locks synced; structural
+inventory refreshed only.242 affected-boundary tests850.77s,187stmts/26branches100%;
+5 final checks12.89s. Boundaries/diff pass. No running jobs. No new paid model calls.
+C2b: FollowupPreparation/PreparedFollowupProposal bind exact retained records/criteria,
+focus/evidence and capture. Optional reviewed typed seed config keyed by budget template
+creates request-specific selection before public Research reads and immutable packet.
+Incremental reader validates base records before final full criterion binding. Provider
+wrapper validates before successful observation; publication independently rechecks,
+including a forged-success case. Invalid captures remain diagnostics. New fixture
+abstention retains unresolved criteria; live adapter remains old-profile-only.
+New packets permit required Research lane; old packets remain artifact-only. Source
+and installed frozen demo remain separate. No new public schema/migration.
+C2c analysis: Runtime ReviewedRecipe hardcodes checkpoint_draft; add versioned private
+recipe selecting exact new profile (old v1 bytes preserved), session uses recipe's
+profile. Request/response bindings require explicit CheckpointRequest for both. Capture
+parser accepts new public DTO and checks duplicate/scope/action/focus/intent; Research
+membership stays Planning-owned. ModelWinner retains future-only capture, no field
+adjustment possible. Actual SQL winner/replay plus old-profile regressions required.
+Runtime source remains UNMODIFIED. Then B3 UI and V1 actual-owner/replacement; LR01queued.
 
 Launch `v2/Start-Demo.ps1` (original) or `-Scenario successor`; Ctrl+C drains.
 Uses installedDeploymentPython .test-results/acceptance-owner-final-b and explicit

@@ -17,6 +17,7 @@ from amphora_contracts_planning import (
     ModelBinding,
     ProposalAction,
     checkpoint_draft_schema,
+    checkpoint_followup_draft_schema,
 )
 from pydantic import Field
 
@@ -56,7 +57,7 @@ class ReviewedBudgetTemplate:
         record = read(self.canonical)
         require(encoded(record) == self.canonical, 'noncanonical_budget_template')
         require(record.scope == record.model.configuration.scope == record.prompt.scope, 'budget_template_scope')
-        require(record.output_schema == checkpoint_draft_schema(), 'budget_template_output_profile')
+        require(record.output_schema in (checkpoint_draft_schema(), checkpoint_followup_draft_schema()), 'budget_template_output_profile')
         require(len(set(record.allowed_actions)) == len(record.allowed_actions), 'budget_template_actions')
         tokens = record.limits.max_input_tokens + record.limits.max_output_tokens
         require(tokens <= record.model.context_window_tokens and tokens <= record.limits.total_tokens,

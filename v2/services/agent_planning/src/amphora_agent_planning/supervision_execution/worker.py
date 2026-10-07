@@ -3,6 +3,9 @@
 from datetime import datetime, timezone
 
 from sqlalchemy import text
+from amphora_contracts_core import ArtifactRef
+from amphora_contracts_planning import checkpoint_followup_draft_schema
+import base64
 
 from ..campaign_artifact_context import CampaignArtifactContextReader
 from ..campaign_packet import prepare
@@ -20,6 +23,7 @@ from ..supervision_completion import CompletionJournal
 from ..supervision_intake import SupervisionIntake
 from ..supervision_intake.snapshot import CheckpointIntakeSnapshot
 from .packet import CheckpointPacket, CheckpointProvider
+from .context import CheckpointContextBinding
 
 STOPS = BUDGET_STOPS | {'checkpoint_deadline', 'execution_processing_unavailable',
     'required_artifact_unavailable', 'required_packet_size', 'required_input_limit',
@@ -27,10 +31,11 @@ STOPS = BUDGET_STOPS | {'checkpoint_deadline', 'execution_processing_unavailable
 
 
 class CheckpointWorker:
-    def __init__(self, engine, data, templates, provider, *, timeout_seconds):
+    def __init__(self, engine, data, templates, provider, *, timeout_seconds, followup=None):
         require(type(timeout_seconds) is int and 1 <= timeout_seconds <= 86400, 'dispatch_timeout')
         self.engine, self.data, self.templates, self.provider = engine, data, templates, provider
         self.timeout_seconds = timeout_seconds
+        self.followup = followup
         self.intake = SupervisionIntake(engine)
         self.preparations = CampaignPreparationJournal(engine)
         self.journal = PlanningJournal(engine)
@@ -83,6 +88,22 @@ class CheckpointWorker:
         if stored is None:
             projection = CampaignArtifactContextReader(self.data).read(intake.planning).projection
             plan = CampaignSlicePlan.from_artifacts(projection)
+            if intake.planning.document().context.output_schema == checkpoint_followup_draft_schema():
+                require(self.followup is not None, 'budget_template_unavailable')
+                declarations = [row.document() for row in plan.slices if row.lane == 'artifact' and
+                    row.document()['identity']['sha256'] == intake.planning.document().decision_scope]
+                require(len(declarations) == 1, 'execution_packet_context')
+                row = declarations[0]
+                require(row['payload']['status'] == 'available', 'required_artifact_unavailable')
+                context = CheckpointContextBinding.bind(intake, principal, ArtifactRef.model_validate(row['identity']),
+                    base64.b64decode(row['payload']['body_base64'], validate=True))
+                context.budget_policy(self.templates)
+                try:
+                    plan = self.followup.extend(plan, context.document().budget_policy)
+                except ValueError as error:
+                    if str(error) in {'followup_criterion_record_unavailable', 'followup_assessment_record_unavailable'}:
+                        raise ValueError('execution_processing_unavailable') from None
+                    raise
             result = prepare(plan)
             require(result.packet is not None, result.failure)
             # Validate checkpoint/configuration before retaining or issuing the packet.

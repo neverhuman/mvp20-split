@@ -1,0 +1,36 @@
+{
+  "timestamp_local": "2026-10-07 14:02:37",
+  "status": "planning_verified_runtime_ui_pending",
+  "planning_version": "0.104.0",
+  "tests": {
+    "affected_boundaries": 242,
+    "seconds": 850.77,
+    "final_scoped_checks": 5,
+    "final_seconds": 12.89
+  },
+  "coverage": {
+    "statements": [
+      187,
+      187
+    ],
+    "branches": [
+      26,
+      26
+    ]
+  },
+  "proofs": [
+    "Exact retained selection/record/focus and output binding",
+    "Actual Planning SQL capture and replacement replay without new reads or model calls",
+    "Foreign criterion invalid before completion",
+    "Missing selected identity stops before issuance",
+    "Forged successful capture rejects before publication",
+    "Existing checkpoint recovery/publication/scheduling compatibility"
+  ],
+  "boundaries": "passed",
+  "limitations": [
+    "No new live adapter enabled or paid calls",
+    "No new installed-owner qualification",
+    "Runtime acceptance and Studio presentation remain",
+    "Frozen demo unchanged"
+  ]
+}

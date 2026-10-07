@@ -31,3 +31,11 @@ BP-09.03 configured live adapters may validate the exact reviewed cost policy be
 PlanningRunner reserves or issues. Private checkpoint group cost/call exhaustion maps to
 the existing public accounting_budget_exhausted completion, preserving zero-call history.
 The default fixture path and original completion replay are unchanged.
+
+SQ-01/C2b adds optional reviewed follow-up selection and public Research reader composition.
+Only the exact new output profile permits a required Research lane; old packets remain
+artifact-only. All Artifact authorization/declaration logic explicitly filters its lane.
+Follow-up criteria and evidence links validate before a successful provider observation.
+Recovery uses the retained packet and never reselects Research records. Missing selected
+records use existing execution_processing_unavailable; missing selection configuration
+uses budget_template_unavailable. No new public stop reason or migration.

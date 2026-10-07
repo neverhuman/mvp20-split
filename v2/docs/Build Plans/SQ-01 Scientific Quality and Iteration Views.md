@@ -3,12 +3,12 @@
 ## Canonical tracker
 
 - Status: active successor to closed BP-05; B1/B2 and B3 human-focus half complete; C1 contracts complete; C2 owner integration active.
-- Last refreshed: `2026-10-07 13:21:09` (America/Chicago).
-- Completion: 63.89%; Build76.67%, Verification0%; (3.5+1/3)/6 unit-weight gates complete; C2=33.33%.
+- Last refreshed: `2026-10-07 14:02:37` (America/Chicago).
+- Completion: 69.44%; Build83.33%, Verification0%; (3.5+2/3)/6 unit-weight gates complete; C2=66.67%.
 - Owner: Studio presentation; Research/Knowledge own assessments; Agents owns proposals.
 - Prerequisites: BP-06 owner quality/correction projections and BP-07.03 proposal contracts; activation coherence audit and exact DTO reconciliation before implementation.
-- Current focus: C2b retained preparation and provider output integration.
-- Next gate: C2b preparation/provider checks, C2c Runtime retained-proposal/replay; then remaining B3/V1.
+- Current focus: C2c Runtime retained-proposal acceptance and replay.
+- Next gate: C2c Runtime acceptance/replay, then remaining B3 proposal UI and V1.
 - Blockers: no owner decision pending. Missing criterion bindings are approved implementation scope in SQ-01.01.
 - Requirement: [Campaign progress](../Architecture/Requirements/Product_Requirements.md#campaign-progress-uncertainty-and-subsequent-iteration).
 - Architecture: [Studio](../Architecture/Experience/Studio.md#exploratory-quality-and-next-campaign-focus).
@@ -141,3 +141,27 @@ packet fingerprints stay unchanged. 153 scoped followup/context/output tests pas
 15.64s; new module74 statements/16 branches100%. No provider activation, new owner
 installation, model call or Runtime effect. C2a is one of three equal C2 deliveries:
 overall(3.5+1/3)/6=63.89%, Build(3.5+1/3)/5=76.67%, Verification0%. C2b is next.
+
+## C2b verification in progress
+
+2026-10-07 13:48:53: Planning0.104 implements retained preparation/output binding, optional
+reviewed selection seeds and public Research reads, checkpoint validation before
+successful observation, and publication revalidation. Three actual Planning SQL
+checks pass13.84s: exact capture/restart without new reads or calls, foreign criterion
+invalid before completion, and denied selected identity stopping before issuance.
+Pure followup32 tests pass21.68s; the broader affected-boundary suite is running.
+C2b remains incomplete pending that suite and documentation audit; parent percentages
+remain63.89%/76.67%/0%. Existing live adapter and frozen demo are unchanged.
+
+## C2b owner delivery
+
+2026-10-07 14:02:37: Planning0.104 completes preparation, public Research reads, configured
+reviewed selection seeds, provider target validation and publication revalidation.
+242 affected-boundary tests pass850.77s; followup187statements/26branches100%.
+Five final scoped checks pass12.89s, including assessed seed equality and forged
+successful capture rejection at publication. Source boundaries and diff checks pass.
+Old profile/preparation formats and frozen demo installations remain unchanged.
+C2b is the second of three equal C2 deliveries: overall(3.5+2/3)/6=69.44%,
+Build(3.5+2/3)/5=83.33%, Verification0%. C2c Runtime acceptance/replay is next.
+No public schema or migration changed; no new live adapter/model call or independent
+installed-owner qualification claim. [Evidence](../Audits/Evidence/SQ-01-Quality/C2b_Planning.json).

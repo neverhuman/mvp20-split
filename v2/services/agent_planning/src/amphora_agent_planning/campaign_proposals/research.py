@@ -23,7 +23,11 @@ class ConsumedResearch:
 
     @classmethod
     def from_proposal(cls, prepared):
-        rows = [row for row in prepared.inputs.preparation.packet.context()['slices'] if row['lane'] == 'research']
+        return cls.from_inputs(prepared.inputs, prepared.attempt.request)
+
+    @classmethod
+    def from_inputs(cls, inputs, request):
+        rows = [row for row in inputs.preparation.packet.context()['slices'] if row['lane'] == 'research']
         if not rows:
             return None
         require(len(rows) == 1, 'campaign_research_slice_count')
@@ -31,7 +35,7 @@ class ConsumedResearch:
         payload = row['payload']
         require(set(payload) == {'format', 'selection', 'context'} and
                 payload['format'] == 'planning-campaign-research-slice.v1', 'campaign_research_slice_profile')
-        selection = ResearchSelection.from_bytes(canonical(payload['selection']), prepared.attempt.request)
+        selection = ResearchSelection.from_bytes(canonical(payload['selection']), request)
         require(row['identity'] == {'selection': selection.sha256}, 'campaign_research_slice_identity')
         value = payload['context']
         fields(value, ('format', 'authority', 'selection_sha256', 'records', 'gaps', 'findings'))
@@ -57,7 +61,7 @@ class ConsumedResearch:
         context = ResearchContext.bind(selection, questions=tuple(groups['question']), needs=tuple(groups['need']),
                                        assessments=tuple(groups['assessment']), unavailable=tuple(gaps))
         require(context.canonical == canonical(value), 'campaign_research_context_reconstruction')
-        actual = {entry.key: entry.sha256 for entry in prepared.inputs.entries if entry.key.lane == 'research'}
+        actual = {entry.key: entry.sha256 for entry in inputs.entries if entry.key.lane == 'research'}
         expected = {cls.key(entry.identity): entry.observation_sha256 for entry in context.read_set().entries}
         require(actual == expected, 'campaign_research_observation_reconstruction')
         return cls(context)

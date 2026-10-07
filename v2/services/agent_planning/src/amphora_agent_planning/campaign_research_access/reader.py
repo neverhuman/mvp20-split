@@ -3,6 +3,7 @@
 from dataclasses import dataclass
 
 from pydantic import ValidationError
+from amphora_contracts_planning import CampaignFollowupSelection
 
 from ..campaign_context import (
     ResearchContext,
@@ -10,7 +11,7 @@ from ..campaign_context import (
     ResearchIdentity,
     ResearchSelection,
 )
-from ..campaign_context.records import ResearchRecord
+from ..campaign_context.records import ResearchRecord, canonical
 from ..context.policy import require
 from .transport import PROFILE, CampaignResearchWindow
 
@@ -60,6 +61,13 @@ class ResearchRecordReader:
         require(window.profile == PROFILE, "research_read_profile_mismatch")
         start_calls, start_bytes = window.calls, window.consumed
         chosen = selection.document()
+        # Incremental public reads validate record shape/relationships before all
+        # criterion records exist. Final binding below uses the full selection.
+        incremental = selection
+        if isinstance(chosen, CampaignFollowupSelection):
+            value = chosen.model_dump(mode='json', exclude={'criteria', 'focus_artifact'})
+            value['schema_version'] = '1'
+            incremental = ResearchSelection.from_bytes(canonical(value), selection.request)
         records = {"questions": (), "needs": (), "assessments": ()}
         unavailable, failures, stopped = [], [], None
         for kind, field, path, references in (
@@ -75,7 +83,7 @@ class ResearchRecordReader:
                         response = self.transport.read(path, reference, window)
                         require(ResearchRecord.bind(kind, response).identity == identity, "campaign_record_not_selected")
                         trial = {**records, field: (*records[field], response)}
-                        ResearchContext.bind(selection, **trial, unavailable=tuple(unavailable))
+                        ResearchContext.bind(incremental, **trial, unavailable=tuple(unavailable))
                         window.remaining()
                     except ValueError as error:
                         reason = failure_code(error)

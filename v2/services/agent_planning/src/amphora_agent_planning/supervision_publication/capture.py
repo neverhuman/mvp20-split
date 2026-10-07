@@ -9,9 +9,11 @@ from amphora_contracts_artifacts import (
     TransformationDescriptor,
 )
 from amphora_contracts_core import ArtifactRef, SchemaRef
+from amphora_contracts_planning import checkpoint_followup_draft_schema
 
 from ..context import AttemptBinding
 from ..context.policy import require
+from ..campaign_followup.prepared import PreparedFollowupProposal
 from ..persistence.records import verified_observation
 from ..providers.capture import Observation
 from ..supervision_execution.packet import CheckpointPacket
@@ -37,6 +39,9 @@ class CaptureOrigin:
         binding = AttemptBinding(packet.context.snapshot.planning, observation.document().attempt.ordinal)
         observed = verified_observation(binding, observation)
         require(observed == observation, 'capture_observation_canonical')
+        if (binding.request.document().context.output_schema == checkpoint_followup_draft_schema() and
+                observed.document().status in {'proposed', 'abstained'}):
+            PreparedFollowupProposal.bind(preparation, binding, observed)
         return cls(packet, observed, kind)
 
     @property
@@ -46,7 +51,7 @@ class CaptureOrigin:
     def inputs(self):
         rows = self.packet.preparation.packet.context()['slices']
         values = tuple(ArtifactRef.model_validate(row['identity']) for row in rows
-            if row['payload']['status'] == 'available')
+            if row['lane'] == 'artifact' and row['payload']['status'] == 'available')
         require(0 < len(values) <= 128, 'capture_derivation_input_limit')
         return tuple(sorted(values, key=lambda ref: ref.artifact_id))
 

@@ -12,6 +12,9 @@ from sqlalchemy import create_engine, text
 
 from ..access import Principal
 from ..checkpoint_openai.configuration import LiveCheckpointSettings
+from ..campaign_followup.source import FollowupResearch, FollowupSeed
+from ..campaign_research_access import ResearchRecordReader
+from ..campaign_research_access.transport import CampaignResearchTransport
 from ..context.policy import require
 from ..source_access.transport import DataReader
 from ..supervision_client import RuntimeClient
@@ -35,6 +38,11 @@ class TemplateFile(WireModel):
     path: str
 
 
+class FollowupConfiguration(WireModel):
+    research: Peer
+    seeds: Annotated[tuple[str, ...], Field(min_length=1, max_length=64)]
+
+
 class WorkerConfiguration(WireModel):
     database_url_env: Identifier
     actor_id: Identifier
@@ -45,6 +53,7 @@ class WorkerConfiguration(WireModel):
     templates: Annotated[tuple[TemplateFile, ...], Field(max_length=64)]
     provider: Literal['disabled', 'fixture_abstain', 'fixture_invalid', 'openai_checkpoint_v1'] = 'disabled'
     live: LiveCheckpointSettings | None = None
+    followup: FollowupConfiguration | None = None
     timeout_seconds: Annotated[int, Field(ge=1, le=86400)] = 30
 
     @model_validator(mode='after')
@@ -81,6 +90,16 @@ class CheckpointHost:
             template = ReviewedBudgetTemplate(bounded_file(path.parent / entry.path, 262144))
             entries.append((entry.reference, template))
         templates = BudgetTemplates(entries)
+        followup = None
+        if config.followup is not None:
+            seeds = tuple(FollowupSeed.model_validate_json(bounded_file(path.parent / name, 262144))
+                          for name in config.followup.seeds)
+            for seed in seeds:
+                require(seed.budget_template.scope == config.scope, 'followup_seed_scope')
+                templates.require(seed.budget_template)
+            peer = config.followup.research
+            followup = FollowupResearch.bind(ResearchRecordReader(
+                CampaignResearchTransport(peer.endpoint, os.environ[peer.token_env])), seeds)
         provider = (config.live.provider(entries) if config.live is not None else
                     None if config.provider == 'disabled' else CheckpointFixture(config.provider))
         data_token = os.environ[config.data.token_env]
@@ -98,7 +117,7 @@ class CheckpointHost:
                 for table in ('supervision_requests', 'checkpoint_execution_reports', 'capture_publications',
                               'capture_response_observations', 'campaign_preparations'):
                     conn.execute(text('SELECT 1 FROM planning.' + table + ' LIMIT 0'))
-            worker = CheckpointWorker(engine, data, templates, provider, timeout_seconds=config.timeout_seconds)
+            worker = CheckpointWorker(engine, data, templates, provider, timeout_seconds=config.timeout_seconds, followup=followup)
             captures = CaptureJournal(engine, config.publisher_id)
             publisher = CapturePublisher(captures, publisher_client)
             responder = CaptureResponder(CaptureResponseJournal(captures), runtime)

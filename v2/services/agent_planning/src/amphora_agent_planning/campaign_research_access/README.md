@@ -17,3 +17,10 @@ Tests belong under tests/campaign_research_access. Scripted responses prove sele
 Verified 2026-10-04 17:41:49:135 focused cases24.87s,193 installed cases8.799s. New reader100%; combined reader/shared transport193 statements30 branches97.76%. Shared transport cleanup lines53/54, alternate EOF79 and two branches remain uninstrumented. [Evidence](../../../../../docs/Audits/Evidence/BP-07-Campaigns/Research_Record_Reads.json).
 
 Actual-owner gate verified 2026-10-04 18:00:02: seven isolated Planning0.34 workers and two Research0.34 hosts, exact public reads, denied/foreign/partial results, retained restart and future-only corrections. See Research_Owner_Reads.json; synthetic owner-local setup does not establish source rights or scientific validity.
+
+SQ-01 follow-up selection version2: incremental reads use the unchanged base
+Research selection for per-record validation, because the full criterion relationship
+cannot exist until all records arrive. The final context uses the original full
+selection and strict criterion binding. Missing selected identity/assessment records
+reject final follow-up preparation; weak scientific outcomes remain valid. No request,
+returned selection, profile, read window or peer permission is substituted.

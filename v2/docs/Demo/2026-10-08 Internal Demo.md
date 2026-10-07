@@ -28,9 +28,9 @@ Wait for **Demo stopped; owners drained successfully** before restarting.
 
 ## Eight-minute walkthrough
 
-1. **Why this exists (one minute).** ?Research usually spreads across scripts,
+1. **Why this exists (one minute).** "Research usually spreads across scripts,
    models, data and notes. We are building a system that makes the steps and their
-   evidence inspectable, so the next experiment can build on what was learned.?
+   evidence inspectable, so the next experiment can build on what was learned."
 2. **Show the research pathway (two minutes).** In Execution choose **Authored graph**.
    Explain tools as steps and the graph as their composition. Click **Root graph** in Occurrence groups to load the connected graph; use those
    groups to inspect repeated work. Activation inventory is an execution list,

@@ -1,9 +1,10 @@
 """Explicit deterministic checkpoint adapter; no model, network or scientific authority."""
 
 import time
+import json
 from dataclasses import dataclass
 
-from amphora_contracts_planning import CheckpointDraft
+from amphora_contracts_planning import CheckpointDraft, CheckpointFollowupDraft, checkpoint_followup_draft_schema
 
 from ..context.policy import require
 from ..providers.capture import unknown_usage
@@ -33,4 +34,15 @@ class CheckpointFixture:
                 decision_scope=binding.request.document().decision_scope, candidate=None,
                 evidence_requests=(), alternatives=(), unresolved=())
             raw = document.model_dump_json().encode('utf-8')
+            if binding.request.document().context.output_schema == checkpoint_followup_draft_schema():
+                require(len(packet) <= 8388608, 'checkpoint_fixture_packet')
+                rows = json.loads(packet)['untrusted_context']['slices']
+                selections = [row['payload']['selection'] for row in rows if row['lane'] == 'research']
+                require(len(selections) == 1, 'followup_research_missing')
+                selected = selections[0]
+                value = document.model_dump(mode='json')
+                value.update(schema_version='3', targets=[], focus_artifact=selected['focus_artifact'],
+                    unresolved=[{'criterion': ref, 'posture': 'unknown',
+                        'description': 'Synthetic abstention; follow-up remains unresolved.'} for ref in selected['criteria']])
+                raw = CheckpointFollowupDraft.model_validate_json(json.dumps(value)).model_dump_json().encode('utf-8')
         return ProviderReply((raw,), unknown_usage())

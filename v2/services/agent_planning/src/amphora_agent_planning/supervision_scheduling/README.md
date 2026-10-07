@@ -11,3 +11,13 @@ Rebuild verification belongs to tests/supervision_scheduling: actual Planning SQ
 Run `python -m amphora_agent_planning.supervision_scheduling check --config worker.json`, then `run --seconds 20 --interval 1`. JSON fields: database_url_env, actor_id, scope, publisher_id, data, runtime, templates; optional provider defaults disabled, timeout_seconds defaults30. Peers have endpoint/token_env. Templates have exact ArtifactRef reference plus a bounded canonical template file path relative to the configuration. Startup admits only planning_service and existing owner tables, never migrates or dispatches. Environment references hold credentials. Planning DataReader currently requires loopback HTTP.
 
 Provider options are closed: disabled, fixture_abstain, fixture_invalid or openai_checkpoint_v1. CheckpointFixture accepts only deterministic/adversarial-fixture/revision1, preserves original decision_scope, consumes its owned packet/deadline and reports unknown usage for conservative fixture accounting. It does not run a model or establish science. There is no dynamic adapter import. The explicit [live checkpoint adapter](../checkpoint_openai/README.md) requires a live block with key_env, egress=approved_synthetic_engineering_only and optional timeout_seconds (default45, maximum60), plus valid reviewed templates. A live block with another provider, or a live provider without that block, fails startup. Its [scope allowance](../checkpoint_budget/README.md) survives restart. Changes apply to later campaigns; original packet/report/publisher identities still reject conflicting replay. CLI errors omit SQL parameters and credentials. Process restart uses the same immutable intake, call issuance, capture and completion history.
+
+SQ-01/C2b optional `followup` configuration contains a Research peer and up to64 seed
+file paths (each bounded262144 bytes). Seeds use private planning-followup-seed.v1,
+with exact configured budget_template ArtifactRef, up to64 public CampaignCriterionRef
+values and optional focus_artifact. Startup requires the template already configured
+in this scope. The original request and seed determine the bounded selection before
+public reads and immutable preparation. Seed text cannot alter model/action/budget or
+source-processing permission. Default provider remains disabled; no paid model is
+activated. The deterministic abstention fixture preserves each selected unresolved
+criterion under the new output profile. Existing live adapter remains old-profile-only.

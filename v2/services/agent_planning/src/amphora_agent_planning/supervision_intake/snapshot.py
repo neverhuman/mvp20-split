@@ -5,7 +5,7 @@ import json
 from dataclasses import dataclass
 from typing import ClassVar
 
-from amphora_contracts_planning import checkpoint_draft_schema
+from amphora_contracts_planning import checkpoint_draft_schema, checkpoint_followup_draft_schema
 from amphora_contracts_supervision import CheckpointRequest, SupervisionRequest
 
 from ..context import RequestSnapshot
@@ -30,7 +30,7 @@ class IntakeSnapshot:
     @classmethod
     def bind(cls, request, principal):
         request = cls.record_type.model_validate_json(request.model_dump_json())
-        require(request.planning_request.context.output_schema != checkpoint_draft_schema() or
+        require(request.planning_request.context.output_schema not in (checkpoint_draft_schema(), checkpoint_followup_draft_schema()) or
                 isinstance(request, CheckpointRequest), 'checkpoint_output_requires_checkpoint_request')
         original = RequestSnapshot.bind(request.planning_request, actor_id=principal.actor_id, scope=principal.scope)
         require(request.planning_request.purpose == 'supervision', 'supervision_purpose_mismatch')

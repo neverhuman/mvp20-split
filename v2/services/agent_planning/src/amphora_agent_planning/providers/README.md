@@ -21,3 +21,9 @@ Tests/providers/test_task_output.py verifies both format bounds, candidate/rejec
 BP-07.02/B2.01a adds the explicitly pinned planning.extraction-edit-draft/v1 output profile with payload schema_version2. OutputProfiles owns closed profile selection and attributed-item enumeration, including edits. It rejects foreign edit/quote scopes, unselected entity context and candidate-bearing abstention before creating TypedProposal; it does not resolve prior graph references or accept scientific meaning. Legacy reference/draft profiles and their canonical observation bytes stay unchanged. Raw capture and canonical typed payload limits remain64KiB, encoded TaskProviderObservation/v2 remains256KiB. The template/schema does not establish real model quality or injection resistance.
 
 Campaign output: the exact planning.campaign-draft/v1 profile delegates to campaign_output, retaining raw capture and deriving TypedProposal in observation v2. Request/digest/scope/cut violations are policy_rejected; malformed or inconsistent candidate payloads are invalid. Existing reference/extraction profiles and observation bytes remain unchanged. The provider port and fixture remain unchanged; deterministic campaign responses are test-owned. No campaign activation or adjustment acceptance is implied.
+
+SQ-01/C2b adds the exact checkpoint-followup-draft profile to structural capture.
+This uses FollowupOutput for bounded action/scope/payload validation. Captured proposed
+status does not establish criterion membership: campaign_followup.PreparedFollowupProposal
+must reconstruct retained Research selection and records before follow-up publication.
+No existing profile bytes or live-provider configuration change.

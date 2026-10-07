@@ -79,6 +79,8 @@ def observe(attempt: AttemptBinding, provider: ProviderPort) -> Observation:
     capture = CapturedOutput(bytes(captured), True)
     try:
         proposal = OutputProfiles.parse(capture.content, attempt)
+        if hasattr(provider, 'validate_output'):
+            provider.validate_output(capture.content)
     except ValueError as exc:
         code = str(exc)
         policy = code in {"action_not_allowed", "proposal_scope_mismatch", "unselected_payload",
