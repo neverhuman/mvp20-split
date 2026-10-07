@@ -1,0 +1,20 @@
+{
+  "timestamp_local": "2026-10-06 22:44:28",
+  "status": "installed",
+  "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+  "owner": "amphora-local-gateway",
+  "forbidden_implementations": [
+    "amphora_campaign_runtime",
+    "amphora_data_artifacts",
+    "amphora_agent_planning",
+    "amphora_deployment",
+    "sqlalchemy",
+    "pydantic"
+  ],
+  "packages": {
+    "amphora-local-gateway": "0.1.0"
+  },
+  "wheels": {
+    "amphora_local_gateway-0.1.0-py3-none-any.whl": "8aac5cc329f3ac1ec5af13745043e09e27728a9b05d4dda0b042dade6770c4d7"
+  }
+}

@@ -1,4 +1,4 @@
-import schemas from "../generated/feedback/schemas.json" with { type: "json" };
+import compiled from "../generated/feedback/validators.js";
 import type { EvidenceAssessmentRequest } from "../generated/feedback/assessment_request.js";
 import type { EvidenceAssessmentStatus } from "../generated/feedback/assessment.js";
 import type { AssessmentPublicationRequest } from "../generated/feedback/publication_request.js";
@@ -22,6 +22,6 @@ export interface FeedbackWire {
   proposal: GraphProposalStatus;
   change: AcceptedGraphChange;
 }
-export const decodeFeedback = decoder<FeedbackWire>(schemas);
-export const decodeAcceptedChangeRef = referenceDecoder<AcceptedGraphChange["reference"]>(schemas.change, "AcceptedChangeRef");
-export const decodeFeedbackGraph = referenceDecoder<GraphProposalStatus["proposal"]["graph"]>(schemas.proposal, "DomainGraphRef");
+export const decodeFeedback = decoder<FeedbackWire>(compiled);
+export const decodeAcceptedChangeRef = referenceDecoder<AcceptedGraphChange["reference"]>(compiled.change__AcceptedChangeRef);
+export const decodeFeedbackGraph = referenceDecoder<GraphProposalStatus["proposal"]["graph"]>(compiled.proposal__DomainGraphRef);

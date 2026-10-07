@@ -353,5 +353,11 @@
     "coverage_sources": [
       "deploy/local/src/amphora_deployment/lifecycle"
     ]
+  },
+  "local-gateway": {
+    "tests": "services/local_gateway/tests",
+    "coverage_sources": [
+      "services/local_gateway/src/amphora_local_gateway"
+    ]
   }
 }

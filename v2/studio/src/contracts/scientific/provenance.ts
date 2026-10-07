@@ -1,4 +1,4 @@
-import schemas from "../generated/provenance/schemas.json" with { type: "json" };
+import compiled from "../generated/provenance/validators.js";
 import type { ArtifactRef } from "../generated/provenance/artifact.js";
 import type { SourceRevision } from "../generated/provenance/source.js";
 import type { SourceSpan } from "../generated/provenance/span.js";
@@ -36,10 +36,10 @@ export interface ProvenanceWire {
   observation_correction: ObservationCorrectionView;
   material_correction: MaterialStateCorrectionView;
 }
-export const decodeProvenance = decoder<ProvenanceWire>(schemas);
-export const decodeSourceRevisionRef = referenceDecoder<SourceRevision["reference"]>(schemas.source, "SourceRevisionRef");
-export const decodeMaterialStateRevisionRef = referenceDecoder<MaterialStateRevision["reference"]>(schemas.material, "MaterialStateRevisionRef");
-export const decodeExperimentRevisionRef = referenceDecoder<ExperimentDefinition["reference"]>(schemas.experiment, "ExperimentRevisionRef");
-export const decodeObservationRevisionRef = referenceDecoder<ObservationRevision["reference"]>(schemas.observation, "ObservationRevisionRef");
-export const decodeResearchQuestionRef = referenceDecoder<ResearchQuestion["reference"]>(schemas.question, "ResearchQuestionRef");
-export const decodeEvidenceNeedRef = referenceDecoder<EvidenceNeed["reference"]>(schemas.need, "EvidenceNeedRef");
+export const decodeProvenance = decoder<ProvenanceWire>(compiled);
+export const decodeSourceRevisionRef = referenceDecoder<SourceRevision["reference"]>(compiled.source__SourceRevisionRef);
+export const decodeMaterialStateRevisionRef = referenceDecoder<MaterialStateRevision["reference"]>(compiled.material__MaterialStateRevisionRef);
+export const decodeExperimentRevisionRef = referenceDecoder<ExperimentDefinition["reference"]>(compiled.experiment__ExperimentRevisionRef);
+export const decodeObservationRevisionRef = referenceDecoder<ObservationRevision["reference"]>(compiled.observation__ObservationRevisionRef);
+export const decodeResearchQuestionRef = referenceDecoder<ResearchQuestion["reference"]>(compiled.question__ResearchQuestionRef);
+export const decodeEvidenceNeedRef = referenceDecoder<EvidenceNeed["reference"]>(compiled.need__EvidenceNeedRef);

@@ -15,7 +15,7 @@ Node24 is the local build/test profile. Exact versions are in `package.json`/`pa
 
 The Python-published serialization schemas remain canonical. Generated files are reviewed build artifacts, not a second schema authority. AJV validates actual received JSON without coercion, defaults or property removal. Local fixtures are explicitly synthetic. B1 HTTP fixtures, B2 measured canvas/list, B3 production-client browser failures and V1 actual installed-owner browser/replacement all pass within their named scope. See [integration evidence](../docs/Audits/Evidence/BP-05-Interaction/V1.json) and [scoped audit](../docs/Audits/BP-05.01_Interaction_Closeout.md).
 
-`/api/runtime` is the declared same-origin gateway adapter prefix, not a claim that a deployed gateway exists. Session/backend credential handling must remain server-side. Components have no local fetches. AuthoringClient carries versioned draft commands and a separate revision-bound runtime.cancel command. Human edits target next-campaign drafts; this package cannot alter a live scientific pathway.
+`/api/runtime` is the same-origin gateway adapter prefix. BP-09.02 now supplies a separately packaged local gateway; successful six-owner deployment remains a later gate. Session/backend credential handling must remain server-side. Components have no local fetches. AuthoringClient carries versioned draft commands and a separate revision-bound runtime.cancel command. Human edits target next-campaign drafts; this package cannot alter a live scientific pathway.
 
 Replacement must preserve generated wire compatibility, bounded reads, cancellation plus generation fencing, truthful stale/denied/partial states and selection scope. Preserve local drafts/layout independently of Runtime revisions and retain exact unresolved command identity during recovery. No persistent browser run store is introduced. [B2 prototype](spikes/interaction/README.md) records the measured React Flow/Cytoscape comparison and actual browser evidence; its synthetic evidence remains distinct from the subsequently accepted B3 production-client browser failures and V1 actual owner integration.
 
@@ -28,3 +28,16 @@ Active authoring boundary: [Design models](src/page_models/design/README.md) own
 BP-06.06 Studio0.2 adds separate [scientific contracts](src/contracts/scientific/README.md) and [Knowledge/Research transports](src/transport/scientific/README.md). Their exact-query metadata reads are implemented; source provenance and visible Explore are subsequent gates. Existing Monitor/Design and Runtime catalog remain unchanged.
 
 BP-07.05 Studio0.8 adds optional Monitor [checkpoint inspection](src/presentation/supervision/README.md), backed by [owned model](src/page_models/supervision/README.md) and [bounded transport](src/transport/supervision/README.md). This is metadata inspection; no active-campaign human approval or scientific-validity claim.
+
+
+BP-09.02 Studio0.9 adds a deployable [workspace entry](src/presentation/entry/README.md),
+[session transport](src/transport/session/README.md) and [session model](src/page_models/session/README.md).
+`npm run build:local` writes dist/local/{index.html,app.js,app.css}. No test fixtures or
+owner credentials enter those assets. The entry reuses Monitor for a configured run;
+Design/Explore top-level assembly remains explicit integrated-demo work. Readiness is
+not inferred from a reachable shell. Standalone schema validators remove runtime eval
+and preserve the gateway CSP. Browser tests: `node tests/browser/local_entry.mjs`;
+AMPHORA_GATEWAY_TEST_PYTHON selects an independently installed gateway interpreter.
+241owned tests and independent Studio generation/build pass. Actual gateway/browser
+proof covers desktop/narrow, empty/denied/loading/failure and synthetic Monitor states;
+it does not replace six-owner campaign acceptance.

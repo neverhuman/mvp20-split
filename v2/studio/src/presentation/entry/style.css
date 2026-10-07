@@ -1,0 +1,8 @@
+.local-workspace-bar { display:flex; align-items:center; flex-wrap:wrap; gap:12px; padding:12px 20px; border-bottom:1px solid var(--line); background:#fff; }
+.local-workspace-bar strong { color:var(--accent); }
+.local-access { margin-left:auto; color:var(--muted); }
+.local-entry { max-width:680px; margin:64px auto; padding:0 24px; }
+.local-entry h1 { font-size:1.65rem; font-weight:600; }
+.local-entry p { color:var(--muted); line-height:1.6; }
+.local-entry button { margin-top:12px; }
+@media (max-width:480px) { .local-entry { margin:32px auto; } .local-workspace-bar { padding:12px; } }

@@ -1,7 +1,5 @@
-import { Ajv2020 } from "ajv/dist/2020.js";
 import type { ValidateFunction } from "ajv";
-import addFormats from "ajv-formats";
-import schemas from "./generated/authoring/schemas.json" with { type: "json" };
+import compiled from "./generated/authoring/validators.js";
 import type { SaveDraft } from "./generated/authoring/save.js";
 import type { ValidateDraft } from "./generated/authoring/validate.js";
 import type { DraftRevision } from "./generated/authoring/draft.js";
@@ -35,25 +33,7 @@ export interface AuthoringWire {
   identity: CommandIdentity;
 }
 
-const ajv = new Ajv2020({ strict: true, allErrors: false, coerceTypes: false, useDefaults: false, removeAdditional: false });
-ajv.addKeyword({ keyword: "discriminator", schemaType: "object", valid: true });
-addFormats.default(ajv);
-const validators = {
-  save: ajv.compile<SaveDraft>(schemas.save),
-  validate: ajv.compile<ValidateDraft>(schemas.validate),
-  draft: ajv.compile<DraftRevision>(schemas.draft),
-  page: ajv.compile<DraftPage>(schemas.page),
-  validation: ajv.compile<DraftValidation>(schemas.validation),
-  receipt: ajv.compile<DraftCommandReceipt>(schemas.receipt),
-  admit: ajv.compile<AdmitDraft>(schemas.admit),
-  universe: ajv.compile<DefinitionUniverse>(schemas.universe),
-  schema: ajv.compile<DefinitionSchema>(schemas.schema),
-  releases: ajv.compile<ReleasePage>(schemas.releases),
-  release: ajv.compile<ReleaseSnapshot>(schemas.release),
-  cancel: ajv.compile<CancelRun>(schemas.cancel),
-  execution_receipt: ajv.compile<CommandReceipt>(schemas.execution_receipt),
-  identity: ajv.compile<CommandIdentity>(schemas.identity),
-};
+const validators = compiled as Record<string, ValidateFunction>;
 
 export function decodeAuthoring<K extends keyof AuthoringWire>(kind: K, value: unknown): AuthoringWire[K] {
   const validate = validators[kind] as ValidateFunction<AuthoringWire[K]>;

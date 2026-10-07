@@ -720,6 +720,7 @@ dependencies = [
     { name = "amphora-deployment" },
     { name = "amphora-evolution-search" },
     { name = "amphora-knowledge" },
+    { name = "amphora-local-gateway" },
     { name = "amphora-multi-input-worker" },
     { name = "amphora-numeric-affine" },
     { name = "amphora-numeric-space" },
@@ -777,6 +778,7 @@ requires-dist = [
     { name = "amphora-deployment", editable = "../deploy/local" },
     { name = "amphora-evolution-search", editable = "../tools/evolution_search" },
     { name = "amphora-knowledge", editable = "../services/knowledge" },
+    { name = "amphora-local-gateway", editable = "../services/local_gateway" },
     { name = "amphora-multi-input-worker", editable = "../sdk/multi_input_worker" },
     { name = "amphora-numeric-affine", editable = "../tools/numeric_affine" },
     { name = "amphora-numeric-space", editable = "../tools/numeric_space" },
@@ -837,6 +839,11 @@ requires-dist = [
     { name = "sqlalchemy", specifier = ">=2,<3" },
     { name = "uvicorn", specifier = ">=0.34,<1" },
 ]
+
+[[package]]
+name = "amphora-local-gateway"
+version = "0.1.0"
+source = { editable = "../services/local_gateway" }
 
 [[package]]
 name = "amphora-multi-input-worker"

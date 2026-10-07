@@ -1,4 +1,4 @@
-import schemas from "../generated/research/schemas.json" with { type: "json" };
+import compiled from "../generated/research/validators.js";
 import type { SpecimenViewRequest } from "../generated/research/specimen_request.js";
 import type { SpecimenViewPage } from "../generated/research/specimen_page.js";
 import type { PropertyViewRequest } from "../generated/research/property_request.js";
@@ -19,4 +19,4 @@ export interface ResearchWire {
   series_page: ObservationSeriesPage;
   catalog: ResearchViewCatalog;
 }
-export const decodeResearch = decoder<ResearchWire>(schemas);
+export const decodeResearch = decoder<ResearchWire>(compiled);

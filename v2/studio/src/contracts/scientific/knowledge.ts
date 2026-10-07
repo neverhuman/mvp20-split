@@ -1,4 +1,4 @@
-import schemas from "../generated/knowledge/schemas.json" with { type: "json" };
+import compiled from "../generated/knowledge/validators.js";
 import type { GraphEntitySearchRequest } from "../generated/knowledge/search_request.js";
 import type { GraphEntitySearchPage } from "../generated/knowledge/search_page.js";
 import type { GraphNeighborhoodRequest } from "../generated/knowledge/neighborhood_request.js";
@@ -19,4 +19,4 @@ export interface KnowledgeWire {
   object_detail: GraphObjectDetail;
   catalog: GraphExploreCatalog;
 }
-export const decodeKnowledge = decoder<KnowledgeWire>(schemas);
+export const decodeKnowledge = decoder<KnowledgeWire>(compiled);

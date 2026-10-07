@@ -1,64 +1,86 @@
 # Restore
 
-Refreshed 2026-10-06 22:21:57 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-06 22:46:13 (America/Chicago). Read FIRST after compression.
 
-## Current checkpoint
+## Current task
 
-BP-09.02 B1.03 complete; current task B1.04 loopback gateway/Studio.
-Child18.75%, Build25%, Acceptance0%; parent23.75%. BP09.01 closed100%; BP08 closed100%.
-Owner chose current Windows computer, local computer access, 127.0.0.1 only.
-Continue until needed, commit/push significant verified changes. No decision blocker.
-No active verification processes. Persistence committed/pushed478a2bee; completed lifecycle changes ready commit/push.
+BP-09.02/B2.01: explicit owner migrations, restricted serving roles and readiness.
+B1 complete. Child25%, Build33.33%, Acceptance0%; BP-09 parent25% (5/20).
+BP-09.01 and BP-08 remain closed100%. User chose this Windows computer and local
+computer access: 127.0.0.1 only. Continue until needed; no current decision blocker.
+B1.04 changes verified and ready commit/push. Previous push145414e2. No active tests,
+builds, browser fixtures or supervisor processes. Only dedicated PG/Qdrant remain up.
 
-## Dedicated persistence
+## Latest verified boundary
 
-LOCALAPPDATA/Amphora/local-v2/installation contains stores.json and encrypted credentials.dpapi.
-Deployment identity7be3465bdf1e4fa6b9189637e51e6f96. Own labeled Docker containers/volumes;
-PostgreSQL127.0.0.1:60687, Qdrant127.0.0.1:60688 (read state for live values).
-Current-user Windows DPAPI, exclusive creation, no implicit key rotation. Values only
-in selected child environment/in-memory SQL; never print raw Docker inspect or exceptions.
-Docker administrators can inspect container environment. No owner migrations performed.
-Twelve distinct restricted migrator/service roles; schemas allocated to owners.
-Actual auth/schema scope/service DDL denial/Qdrant unauthorized denial/resume passed.
-63tests5.41s, dependency gate passed,7focused tests1.79s; partial unit coverage64% across
-credentials/persistence, actual Docker/SQL proof separate. Evidence docs/Audits/Evidence/
-BP-09-Deployment/Local_Stores.json. Driver dev/verify_local_stores.py. Restart and failure
-injection NOT proven. No old fixtures reset/reused. Existing deployment kept running.
+Gateway0.1: services/local_gateway, independent stdlib package. Explicit loopback
+HTTP, server-side owner tokens, host/origin checks, single-use60s launcher tickets,
+HttpOnly Strict8h sessions, bounded body/proxy/static assets, safe MIME/diagnostics.
+Studio0.9: session-aware entry and reused Monitor, empty/denied/loading/failure states.
+Design/Explore top-level shell assembly remains explicit integrated-demo work.
+Real CSP failure fixed by scripts/standalone-validators.mjs and generator: seven
+validators.ts modules (~9MB generated), unchanged Python schemas/decoder behavior.
+No unsafe-eval needed. Existing-tab ticket hashchange fixed. Build app.js800275bytes.
+27gateway tests1.24s; coverage346statements46missed/46branches86%combined.241Studio
+tests1276ms, independent Studio generation/build accepted. Boundary guard passed
+before last MIME hardening; run once more before commit. Package inventory regenerated
+from metadata only; this does not claim a complete foundation test run.
 
-## B1.03 completed
+Actual installed-gateway browser proof v2/.test-results/studio-local-entry/
+2026-10-07T03-44-36-139Z: empty+synthetic Monitor,1440/390width, no horizontaloverflow,
+no serious/criticalaxe findings, cookie flags/fragmentclear/logout. Screenshots
+inspected from prior equivalent-source pass03-37-59 and slow/failed03-41-27.
+Node browser tests use fixture Runtime HTTP, NOT actual six-owner readiness.
+Gateway wheel ROOT.test-results/local-gateway-install-20261006b (a preserved).
+Independent Studio v2/.test-results/studio-isolated/cad5606c5c7c4db5a1a0422a75039447.
+Evidence copies docs/Audits/Evidence/BP-09-Deployment/{Gateway_Browser,Gateway_Installation,Studio_Independent}.json.
 
-Lifecycle module now includes Windows jobs, entry gate, inventory checks, bounded
-metadata logs, stable routes, supervisor command manager, authenticated loopback
-control, nonsecret manifest/owner-scoped credential loader and lifecycle CLI.
-Actual isolated Registry invalid-config process2, repeated start, explicit restart,
-force-stop, status and shutdown passed via ROOT.test-results/supervisor-commands-20261006c.
-Two earlier probes a/b reproduced startup/status writer-lock contention; repaired
-readonly routes/control token discovery to use atomic LocalState.snapshot withoutlock.
-Local lifecycle proof ROOT.test-results/local-lifecycle-20261006a. CLI supervisor and
-children stopped; dedicated PG/Qdrant remain running.92tests11.35s, boundary gatepassed.
-Coverage427statements135missed+76branches65%combined; CLI separateprocesses uncounted.
-Protected separate supervisor.dpapi at installationroot; original vault unchanged.
-Lifecycle READMEs/trackers updated. Ready commit/push, previous478a2bee.
+## Dedicated local installation
 
-## Next bounded task
+LOCALAPPDATA/Amphora/local-v2/installation contains stores.json, credentials.dpapi,
+supervisor.dpapi, stable routes and bounded supervisor logs. Identity
+7be3465bdf1e4fa6b9189637e51e6f96. Dedicated labeled PostgreSQL127.0.0.1:60687 and
+Qdrant127.0.0.1:60688; read state for current ports and eight owner/gateway/control routes.
+Current-user DPAPI; create-once credentials, no rotation/reset. Docker admins can
+inspect runtime env; never print raw inspect or credential-bearing exceptions.
+12 distinct migrator/service roles and6owner schemas exist. NO owner migrations yet.
+Actual auth/schema scope/serving DDL denial/Qdrant absent+wrong-key denial/resume passed.
+Do not touch existing acceptance fixture containers/databases/volumes.
 
-Read BP09.02 canonical tracker and activation audit. B1.04 gateway/Studio. B2 explicit owner migrations/restricted-role readiness and failure/drain.
-Six isolated current owner installations ROOT .test-results/local-owner-inventory-20261006a/owners;
-manifest/profile/inventory/evidence at its parent.79local wheels. Package deployment0.2.
-Planning serves via amphora_agent_planning.supervision_api (no root __main__), env database
-and JSON supervision credentials. Other five use root module serve --config --port.
-Review each own host config/README. No deployed Studio gateway exists. Read UI guidelines
-before UI code. Scientific tool descriptors Linux-only; qualify explicit compatible profile
-in BP09.03 before activation. Six Windows owner installations do not grant science readiness.
+Six independent owner installs ROOT.test-results/local-owner-inventory-20261006a/owners:
+runtime0.65,artifact0.30,registry0.1,research0.40,knowledge0.18,planning0.98;79local wheels.
+Deployment0.2 lifecycle CLI: python -I -m amphora_deployment.lifecycle serve/status/start/
+restart/force-stop/shutdown --root; serve takes --manifest, owner actions --owner.
+Manifest local-supervisor-v1 grants only scoped serving credentials; Planning credentials
+converted from token_env records into environment-only JSON. Reads use atomic snapshots,
+not writer locks (fixed reproduced startup/status race). Control DPAPI sidecar separate.
+Windows jobs/gated entry/handle-based teardown protect process ownership; force-stop is
+NOT graceful drain. Actual isolated Registry invalid-config2/repeat/restart/stop/shutdown
+passed ROOT.test-results/supervisor-commands-20261006c.92deployment tests11.35s.
+
+## Next work and boundaries
+
+B2.01: inspect each owner's migration CLI/hosting README; explicitly migrate only the
+new dedicated schemas using its migrator credential, then configure/start six restricted
+APIs plus gateway. Planning root has no __main__; use supervision_api. No migrations on
+service startup. Knowledge/Research require explicit scientific context config; label
+synthetic engineering fixtures, do not imply biology readiness. Runtime requires graphs
+or fixtures and explicit peers; reuse public reviewed artifacts, no privatecrossimports.
+Gateway independent install exists but not yet wired into persistent lifecycle composition.
+Studio static assets v2/studio/dist/local. UI guidelines already read this session.
+B2.02 dependency readiness/drain follows; B3 failures and V1 replacement remain.
+Scientific tool descriptors Linux-only; BP09.03 must qualify compatible tool deployment,
+never relabel old artifacts. No paid model calls in BP08/BP09. Existing synthetic OpenAI
+policy persists for later gate; keys Z:/ssos/.env never print/copy, not needed now.
 
 ## Operating rules
 
-Read v2/AGENTS.md. v1 read-only. No JARVIS access/subagents/goals. PYTHONUTF8=1 each exec.
-Python v2/dev/.venv/Scripts/python.exe; pytest -c v2/dev/pyproject.toml --import-mode=importlib.
-uv v2/.venv/Scripts/uv.exe. PYTHONPATH Z:/mvp20-split/v2/dev when needed.
-No source/test/dev/README edits while an active verification/build/probe is running.
-Never reset old databases/migrators. Current historical heads Runtime0028 Planning0020 Data0012 Research0016.
-Git -c safe.directory=//DesktopNAS/Code/mvp20-split; main. Avoid Path.rglob over NAS venvs.
-Use .absolute(), not.resolve(). No tests/__init__.py. Update canonical child/parent/MBT percentages.
-No paid model calls in BP08/BP09; existing synthetic OpenAI authorization persists for later gate.
-External keys Z:/ssos/.env never print/copy; not needed for current task.
+Read v2/AGENTS.md. v1 read-only; no JARVIS/subagents/goals. Keep canonical child/parent/
+MBT percentages and Restore updated, commit/push significant verified changes.
+PYTHONUTF8=1 each exec. Python v2/dev/.venv/Scripts/python.exe; pytest -c
+v2/dev/pyproject.toml --import-mode=importlib. uv v2/.venv/Scripts/uv.exe.
+PYTHONPATH Z:/mvp20-split/v2/dev when needed. No source/test/dev/README edits while any
+verification/build/probe active; wait actual exit. .absolute(), not.resolve(); no
+Path.rglob across NAS venvs; no tests/__init__.py. Existing historical heads Runtime0028,
+Planning0020,Data0012,Research0016; never reset old databases or replay old migrators.
+Git -c safe.directory=//DesktopNAS/Code/mvp20-split; main.

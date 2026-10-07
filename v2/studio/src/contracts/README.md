@@ -17,3 +17,13 @@ BP-05.03/B1 adds fourteen separate authoring roots under `generated/authoring`: 
 Authoring contract tests pin all fourteen public schema hashes and reject mismatched identity/digest, malformed/oversize bytes and invalid documents. Independent Studio staging copies both manifests' published schemas. Owner publications remain unchanged; no server canonical-command fingerprint is computed in the browser.
 
 BP-06.06 adds14 separate Knowledge/Research scientific roots under generated/knowledge and generated/research. Scientific validators preserve the existing Runtime groups and reproduce public owner hashes. See scientific/README.md for the bounded inspection contract.
+
+
+BP-09.02 fixes a real deployment CSP failure: runtime schema compilation required
+JavaScript evaluation. `scripts/standalone-validators.mjs` now generates standalone
+AJV validators per schema group, including the eight existing scientific reference
+validators. Generated validators.ts files are build artifacts, checked byte-for-byte
+alongside schemas/types. Public decoder signatures, format checks, no-coercion and
+no-mutation behavior remain unchanged. All241Studio tests pass; independent generation
+also passes. Browser code no longer imports the AJV compiler or requires unsafe-eval.
+See [AJV standalone generation](https://ajv.js.org/standalone).

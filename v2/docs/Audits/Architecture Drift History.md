@@ -272,3 +272,5 @@ B3.03 verified 2026-10-05 13:19:41: predeclared300-descriptor protocol/catalog a
 ## 2026-10-06 21:39:19 - BP-09.01 aligned
 
 [Local profile audit](BP-09.01_Local_Profile_Closeout.md) accepts actual owner-selected localhost and independent profilepackage; normalstorage/loopback checks bounded, fullserviceinstall/backup/models remain later gates.
+
+- `2026-10-06 22:46:13`: BP-09.02 gateway hosting exposed runtime AJV compilation blocked by CSP. Repaired with reproducible standalone validators across all seven consumer groups; unchanged schema pins,241Studio tests and independent build, actual no-unsafe-eval browser proof. Aligned within this boundary; no follow-up. Selected-host startup/status lock race also repaired with lock-free atomic snapshot reads and actual process-command proof.

@@ -4,6 +4,7 @@ import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { resolve, dirname } from "node:path";
 import { compile } from "json-schema-to-typescript";
+import { standaloneValidators } from './standalone-validators.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const source = resolve(root, "../contracts/schemas/v1");
@@ -187,6 +188,7 @@ async function generate(roots, target) {
   }
   await output("schemas.json", JSON.stringify(schemas, null, 2) + "\n");
   await output("manifest.json", JSON.stringify(manifest, null, 2) + "\n");
+  await output("validators.ts", await standaloneValidators(schemas, root));
   console.log(`Studio contracts ${check ? "verified" : "generated"}: ${Object.keys(roots).length} published roots`);
 }
 
