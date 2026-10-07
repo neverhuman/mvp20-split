@@ -4,7 +4,6 @@ import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from 
 import type { MonitorModel } from '../page_models/monitor.js';
 import type { RunContext } from '../page_models/graph_window.js';
 import { SceneWindow } from '../page_models/scene.js';
-import { GraphCanvas } from './graph_canvas.js';
 import { MonitorDetail } from './monitor_detail.js';
 import type { NavigationModel } from '../page_models/navigation.js';
 import type { NamedViewsModel } from '../page_models/named_views.js';
@@ -22,7 +21,7 @@ export function MonitorWorkspace({ model, context, synthetic = false, active = t
   const view = useSyncExternalStore(subscribe, () => model.snapshot);
   const [filter, setFilter] = useState('');
   const [visible, setVisible] = useState(true);
-  const [topology, setTopology] = useState(false);
+  const [topology, setTopology] = useState(!!navigation);
   const [inspectingCheckpoints, setInspectingCheckpoints] = useState(false);
   useEffect(() => { supervision?.bind(context); setInspectingCheckpoints(false); }, [supervision, context.scope.tenant_id, context.scope.project_id, context.run]);
   useEffect(() => { if (!visible || !inspectingCheckpoints) supervision?.invalidate(); }, [supervision, visible, inspectingCheckpoints]);
@@ -50,7 +49,7 @@ export function MonitorWorkspace({ model, context, synthetic = false, active = t
   }, [model, active]);
   useEffect(() => {
     const current = view.phase === 'ready' || view.phase === 'empty';
-    void navigation?.observe(current ? view.window?.snapshot ?? null : null, visible && topology && !pin, view.phase === 'denied');
+    void navigation?.observe(current ? view.window?.snapshot ?? null : null, visible && topology && !pin, view.phase === 'denied', true);
   }, [navigation, view.window?.snapshot, view.phase, visible, topology, pin]);
   const scene = useMemo(() => {
     const result = new SceneWindow();
@@ -88,13 +87,14 @@ export function MonitorWorkspace({ model, context, synthetic = false, active = t
       </div>}
       {supervision && <button aria-pressed={inspectingCheckpoints} onClick={() => { history.select(null); setInspectingCheckpoints(!inspectingCheckpoints); if (!inspectingCheckpoints) void supervision.refresh(); }}>{inspectingCheckpoints ? 'Return to execution graph' : 'Inspect checkpoint reasoning'}</button>}
       {inspectingCheckpoints && supervision ? <SupervisionInspector model={supervision} /> : pin ? <PinnedInspection key={pin.id} pin={pin} /> : topology && navigation ? <NavigationPane navigation={navigation} monitor={model} observation={view} {...(namedViews ? { namedViews } : {})} {...(evidence ? { evidence } : {})} /> : <div className="work-area" data-phase={view.phase}>
-        <GraphCanvas nodes={shown} selection={view.selection} select={select} />
-        <aside className={evidence ? 'navigation-inspector' : undefined} aria-label="Node navigator"><MonitorDetail view={view} />
-          {evidence && <EvidencePane model={evidence} monitor={model} observation={view} />}
+        <section className="activation-inventory" aria-label="Execution inventory">
           <div className="list-heading"><h2>Loaded activations</h2><span>{shown.length}</span></div>
           <ul className="node-list" aria-label="Loaded activation list">{shown.map(node => <li key={node.id}><button data-node-id={node.id} disabled={!current} aria-pressed={view.selection === node.id} onClick={() => select(node.id)}><span>{node.label}</span><small>{node.status}</small></button></li>)}</ul>
           <div className="pages"><button disabled={!current || view.loadingMore || !view.window?.next || scene.nodes.length >= scene.limit} onClick={() => void model.loadMore()}>{view.loadingMore ? 'Loading more…' : 'Load next page'}</button></div>
           {scene.nodes.length >= scene.limit && scene.omitted > 0 && <p className="bounded-note">Scene limit reached. Narrower scope navigation is not yet available.</p>}
+        </section>
+        <aside className="navigation-inspector" aria-label="Node navigator"><MonitorDetail view={view} />
+          {evidence && <EvidencePane model={evidence} monitor={model} observation={view} />}
         </aside>
       </div>}
       {view.window && <details className="named-views" aria-label="Campaign observation">

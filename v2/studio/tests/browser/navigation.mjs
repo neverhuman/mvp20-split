@@ -41,6 +41,7 @@ try {
   assert.equal(await page.locator('.react-flow__edge').count(), 0);
   await page.getByRole('button', { name: 'Load topology page', exact: true }).click();
   await page.waitForFunction(() => window.observationHarness.navigation.snapshot.topology?.visibleEdges.length === 1);
+  await page.waitForFunction(() => document.querySelectorAll('.react-flow__edge').length === 1);
   assert.equal(await page.locator('.react-flow__edge').count(), 1);
   const selected = page.getByRole('list', { name: 'Topology nodes', exact: true }).getByRole('button', { name: 'node-2 issued', exact: true });
   await selected.focus(); await page.keyboard.press('Enter');
@@ -60,8 +61,9 @@ try {
     await page.screenshot({ path: resolve(output, `navigation-${viewport.width}.png`), fullPage: true });
   }
   await page.setViewportSize({ width: 1440, height: 1000 });
+  const beforePan = await page.evaluate(() => window.observationHarness.navigation.snapshot.viewport.x);
   await page.getByRole('button', { name: 'Pan right', exact: true }).click();
-  await page.waitForFunction(() => window.observationHarness.navigation.snapshot.viewport.x !== 24);
+  await page.waitForFunction(x => window.observationHarness.navigation.snapshot.viewport.x === x - 100, beforePan);
   const viewport = await page.evaluate(() => window.observationHarness.navigation.snapshot.viewport);
   await page.getByRole('button', { name: 'Activation inventory', exact: true }).click();
   const navigationReads = () => host.state.requests.filter(item => /scopes|views/.test(item.path)).length;

@@ -2,25 +2,25 @@
 
 ## Canonical tracker
 
-- Status: primary_active; initial scope planned, graph review is the first gate.
-- Last refreshed: 2026-10-07 17:30:53 (America/Chicago).
+- Status: primary_active; G1 connected graph verified; N1 research entry next.
+- Last refreshed: 2026-10-07 17:54:00 (America/Chicago).
 - Baseline: 62ea4966; owner-reported disconnected canvas and navigation review on 2026-10-07.
 - Owner: Studio experience, page models and presentation; service owners retain their contracts and state.
 - Parent: none; priority and mirrors in [Master Build Tracker](Master%20Build%20Tracker.md).
-- Overall implementation: **0%**; Build0%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
-- Design readiness: initial workflow and defect evidence identified; G0 review and bounded graph design remain.
+- Overall implementation: **20%**; Build25%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
+- Design readiness: G0 complete; ELK directed layout and bounded topology ownership implemented.
 - Demonstrated behavior: existing UI displays records; owner review exposed unusable graph presentation. Previous passing checks do not establish this plan's usability acceptance.
-- Current phase/task: G0.1, review the actual default and authored graph paths against one retained campaign.
-- Next task: G0.2, specify graph composition/layout and behavioral acceptance before G1 implementation.
+- Current phase/task: N1.1 question landing and navigation composition.
+- Next task: N1.2 preserved context, deep links and hidden-view cancellation.
 - Blockers: none for graph review/planning. Missing producer capabilities must be identified before dependent UI work, not represented by fabricated results.
 - Human acceptance: owner feedback is part of visual review; no new routine approval gates for campaign execution.
 - Active exception: owner explicitly reprioritized UI over worker diagnostics; LR-01 remains paused at25%, Build33.33%, Acceptance0%, with R2 receipt diagnosis preserved.
-- Pre-activation coherence: 2026-10-07 17:30:53, ready for G0. Existing topology/observation APIs, React Flow canvas and isolated Studio boundaries are available; meaningful layout and workflow acceptance are missing. No new backend contract is assumed approved by this plan.
+- Pre-activation coherence: 2026-10-07 17:54:00, ready for G0. Existing topology/observation APIs, React Flow canvas and isolated Studio boundaries are available; meaningful layout and workflow acceptance are missing. No new backend contract is assumed approved by this plan.
 
 | Phase | Completion | Prerequisite | Bounded outcome / exit gate |
 |---|---:|---|---|
-| G0 graph review and design | 0% | Owner report and retained campaign | Recorded actual-screen diagnosis, topology/data map, layout design and graph acceptance cases |
-| G1 usable connected graph | 0% | G0 complete | One real retained campaign opens as a readable connected graph; branches, joins and nested work navigable; visual and behavioral proof |
+| G0 graph review and design | 100% | Owner report and retained campaign | Recorded actual-screen diagnosis, topology/data map, layout design and graph acceptance cases |
+| G1 usable connected graph | 100% | G0 complete | One real retained campaign opens as a readable connected graph; branches, joins and nested work navigable; visual and behavioral proof |
 | N1 research entry and navigation | 0% | G1 complete | Research-question landing and connected workflow navigation with preserved selection/context |
 | N2 approach, execution and results | 0% | N1 complete | Understand approach, follow autonomous work, inspect/compare results and supporting evidence |
 | N3 next-campaign iteration | 0% | N2 complete | Target weak/promising points, inspect proposed changes and follow predecessor/successor history |
@@ -174,3 +174,43 @@ blocks a UI-01 gate rather than duplicating diagnosis. LR-01 resumes at R2 only
 after the UI priority is released; finishing a UI viewing session no longer resumes
 worker diagnostics automatically. No application code changes are part of this
 initial planning checkpoint.
+
+## G0 review checkpoint
+
+2026-10-07 17:36:30: G0 complete100%; implementation remains0%. Reviewed the actual retained
+original-focus-d/execution-1440.png and authored-1440.png against source: default
+39 activation nodes, no links; two clicks (Authored graph, Root graph) reach9 root
+nodes with links, still list-ordered grid. Same bounded campaign is the replacement
+oracle; source is monitor_workspace/navigation_pane/GraphCanvas plus NavigationModel.
+Runtime scope/topology pages provide exact authored control links and child scope
+counts. They do not publish a universal dataflow graph; do not invent those edges.
+
+Selected ELK layered layout behind a Studio-owned geometry adapter, with explicit
+node dimensions, top-to-bottom ports and orthogonal routed connections. React Flow
+remains renderer. Source: https://github.com/kieler/elkjs. Exact dependency pinned
+in package-lock. Layout is local, bounded to the existing200-node window, deterministic
+input ordering and no graph mutation; asynchronous results must be fenced on scope
+change. Layout failure must be explicit, not silently fall back to a grid. Initial
+fit and saved per-scope viewport are distinct. Expanded occurrences remain separate
+bounded scenes with root navigation and exact iteration labels.
+
+G1 checks: branch/join and disconnected/cyclic geometry, long labels, empty/invalid
+edge endpoints, stale async layout; source-target routing and node intersections;
+automatic root, scope changes and viewport retention; real1440/390 canvas visibility,
+keyboard/list equivalence, zero document overflow, contrast and actual retained
+campaign screenshot comparison. Existing API permissions and omissions remain.
+
+## G1 implementation checkpoint - 2026-10-07 17:54:00
+
+ELK0.12 routes authored links in dependency order; root loads automatically.
+Scope-keyed canvases fit after measurement; scope viewports survive refresh.
+Parallel/iteration counts link to exact occurrence groups; inventory is a list.
+291 Studio tests pass. Navigation, dense navigation, monitor and drafts browser
+regressions pass. A legacy pan assertion assumed fixed-grid x=24; replacement
+waits for the actual 100px movement before testing retained viewport.
+Actual-owner evidence: `../../.test-results/ui01-g1/browser-e/evidence.json` and
+root1440/390, parallel-group and iteration screenshots. Reviewed connected paths,
+no overlap, automatic fit, nested navigation, selection, refresh, accessibility.
+Browser-d exposed automatic-fit timing failure; retained as failed evidence.
+Candidate assets public-e only; frozen demo remains unchanged pending integrated
+replacement qualification. Header/control density remains N1/N2 scope.

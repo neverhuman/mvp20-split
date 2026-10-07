@@ -456,3 +456,20 @@ footer {
   overflow:hidden;
 }
 .bounded-note { padding: 0 12px; font-size: 12px; }
+
+/* UI-01: geometry dimensions match the routed layout contract. */
+.graph-region .task-node { width:208px; height:72px; padding:10px 14px; border-radius:7px; font-size:14px; }
+.graph-region .task-node strong { font-size:14px; line-height:18px; -webkit-line-clamp:2; }
+.graph-region .node-status { font-size:10px; line-height:14px; margin-bottom:3px; }
+.graph-region .react-flow__handle { width:6px; height:6px; background:#42645d; border:1px solid white; }
+.graph-message { position:absolute; top:20px; left:20px; right:20px; z-index:4; background:white; padding:12px; }
+.graph-controls { max-width:calc(100% - 28px); flex-wrap:wrap; }
+.graph-controls .text-control { width:auto; font-size:12px; padding:6px 10px; }
+.activation-inventory { overflow:auto; padding:20px; min-width:0; }
+.activation-inventory .node-list { max-height:none; }
+
+.graph-region { display:grid; grid-template-rows:minmax(0,1fr) auto; }
+.graph-region > .react-flow { grid-row:1; min-height:0; }
+.graph-region .graph-controls { position:static; grid-row:2; max-width:100%; margin:0; padding:8px; border-top:1px solid var(--line); background:#fff; box-shadow:none; }
+.graph-region .node-annotation { display:block; font-size:10px; color:#42645d; margin-top:3px; }
+@media(max-width:760px) { .graph-region { height:660px; } }

@@ -50,3 +50,10 @@ Named execution views now state scientific projection ownership without claiming
 that Knowledge/Research projections are globally unimplemented. Local Explore hosts
 those separately. Successor lineage remains an immutable Runtime observation; no
 scientific validation or improvement is inferred from carried bindings.
+
+UI-01/G1 in progress: Monitor opens the real root topology by default when Navigation
+is supplied. Activation inventory is now a secondary list, not an edge-free canvas.
+GraphCanvas uses bounded asynchronous ELK geometry with fixed dimensions and actual
+routed paths, initial fit, selection emphasis and explicit layout failure. Late
+layouts cannot repopulate another scope. Navigation owns per-scope viewport memory.
+Graph usability is pending actual-browser qualification; frozen demo unchanged.

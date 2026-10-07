@@ -43,17 +43,22 @@ try{
   await page.getByRole('button',{name:'Authored graph',exact:true}).click();
   await page.getByRole('list',{name:'Occurrence groups',exact:true}).getByRole('button').click();
   await page.waitForFunction(()=>window.observationHarness.navigation.snapshot.topology?.page.nodes.length===50);
+  await page.waitForFunction(() => document.querySelectorAll('.react-flow__edge').length === 49);
   assert.equal(await page.locator('.react-flow__edge').count(),49);
   for(const count of [100,150,200,250,256]){
     await page.getByRole('button',{name:'Load topology page',exact:true}).click();
     await page.waitForFunction(count=>window.observationHarness.navigation.snapshot.topology?.page.nodes.length===count,count);
   }
+  await page.waitForFunction(() => document.querySelectorAll('.react-flow__node').length === 200);
   assert.equal(await page.locator('.react-flow__node').count(),200);
+  await page.waitForFunction(() => document.querySelectorAll('.react-flow__edge').length === 199);
   assert.equal(await page.locator('.react-flow__edge').count(),199);
   await page.getByRole('list',{name:'Topology nodes',exact:true}).getByRole('button',{name:'node-200 failed',exact:true}).click();
   await page.getByRole('region',{name:'Selected node',exact:true}).getByRole('heading',{name:'node-200',exact:true}).waitFor();
   await page.getByRole('button',{name:'Next window',exact:true}).click();
+  await page.waitForFunction(() => document.querySelectorAll('.react-flow__node').length === 56);
   assert.equal(await page.locator('.react-flow__node').count(),56);
+  await page.waitForFunction(() => document.querySelectorAll('.react-flow__edge').length === 0);
   assert.equal(await page.locator('.react-flow__edge').count(),0);
   await page.getByText('Selected activation is outside this window.',{exact:true}).waitFor();
   await page.getByRole('button',{name:'First window',exact:true}).click();

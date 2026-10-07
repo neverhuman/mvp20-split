@@ -48,10 +48,12 @@ try {
       await page.getByRole('button', { name: 'Apply scope definition', exact: true }).click();
     } else await page.getByLabel('Draft title', { exact: true }).fill('Local work to retain');
     if (name === 'dense') {
+      await page.waitForFunction(() => document.querySelectorAll('.react-flow__node').length === 200);
       assert.equal(await page.locator('.react-flow__node').count(), 200);
       assert.equal(await page.getByRole('navigation', { name: 'Draft nodes', exact: true }).getByRole('button').count(), 256);
       await page.getByRole('navigation', { name: 'Draft nodes', exact: true }).getByRole('button').last().click();
       await page.getByRole('region', { name: 'Draft node inspector', exact: true }).getByRole('heading', { name: host.state.head.definition.body.nodes[255].node_id, exact: true }).waitFor();
+      await page.waitForFunction(() => document.querySelectorAll('.react-flow__node').length === 56);
       assert.equal(await page.locator('.react-flow__node').count(), 56);
       assert.equal(await page.getByRole('navigation', { name: 'Draft nodes', exact: true }).getByRole('button').last().evaluate(button => button.scrollHeight <= button.clientHeight), true);
     }

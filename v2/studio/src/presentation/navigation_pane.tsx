@@ -35,7 +35,7 @@ export function NavigationPane({ navigation, monitor, observation, namedViews, e
   return <section aria-label="Authored graph navigation">
     {namedViews && <NamedViews model={namedViews} anchor={anchor ?? null} />}
     <div className="toolbar">
-      <button onClick={() => void navigation.scopes()} disabled={!anchor}>Root groups</button>
+      <button onClick={() => void navigation.root()} disabled={!anchor}>Return to root graph</button>
       <span>Revision {page?.cut.revision ?? anchor?.cut.revision ?? 'unavailable'} · Read-only authored connections</span>
     </div>
     {page && <p>Occurrence: {page.graph_scope.occurrences.length ? page.graph_scope.occurrences.map(item => `${item.node_id} [${item.index}]`).join(' / ') : 'root graph'}
@@ -46,8 +46,10 @@ export function NavigationPane({ navigation, monitor, observation, namedViews, e
       `${scene.nodes.length} nodes shown · ${scene.omitted} outside this window · ${view.topology!.unresolvedEdges} links await an unloaded target` :
       'Choose an occurrence group to explore its authored graph.')}</p>
     <div className="work-area">
-      <GraphCanvas nodes={scene.nodes} edges={scene.edges} selection={observation.selection} select={select}
-        initialViewport={view.viewport} rememberViewport={viewport => navigation.setViewport(viewport)} />
+      <GraphCanvas key={page?.graph_scope.scope_key ?? 'unloaded'} nodes={scene.nodes} edges={scene.edges} selection={observation.selection} select={select}
+        annotations={Object.fromEntries((page?.nodes ?? []).filter(node => node.child_scope_count > 0).map(node =>
+          [node.activation.activation_id, `${node.child_scope_count} ${node.activation.kind === 'scatter' ? 'parallel branches' : 'iterations'} available`]))}
+        initialViewport={page ? navigation.viewportFor(page.graph_scope.scope_key) : undefined} rememberViewport={viewport => navigation.setViewport(viewport)} />
       <aside className="navigation-inspector" aria-label="Occurrence navigator">
         <MonitorDetail view={observation} />
         {evidence && <EvidencePane model={evidence} monitor={monitor} observation={observation} />}

@@ -4,21 +4,24 @@ Refreshed 2026-10-07 17:33:24 America/Chicago. Read FIRST after compression.
 
 ## Current handoff
 
-Owner steering 2026-10-07 17:33:24: stop worker work and focus on UI. NEW primary plan
- docs/Build Plans/UI-01 Research Workspace Overhaul.md. Planning only this checkpoint;
-no UI code changed. UI01=0%, Build0%, Verification0%; G0/G1/N1/N2/N3/V1 all0.
-G0 graph review/design is prerequisite, excluded from implementation denominator;
-G1/N1/N2/N3/V1 are five equal delivery gates. NEXT G0.1 actual-screen graph review,
-then G0.2 layout/data boundary and acceptance spec. Connected graph G1 must precede
-navigation: research question -> approach -> run -> results -> next iteration.
-
-Owner reported disconnected block of nodes. Source/screenshots confirm Monitor
-initialtopology=false, emptyedges, fixed4column positions; NavigationPane also grid.
-Old browser checks assertededgeDOMpresence, not readable topology. Openfinding in
-ArchitectureDrift; prior closedplans retain historical scopedcredit, no UIreadinessclaim.
-Newplan includes real topology layout/branchjoin/nestedgrouping/fit/highlight, secondary
-inventorytable; later coherent question/candidate/claim context and nextcampaign flow.
-Futurefeedback extends explicit scope/denominator; no empty placeholder childplans.
+Refreshed implementation checkpoint 2026-10-07 17:54:00 America/Chicago.
+UI-01 primary20%, Build25%, Verification0%; G0/G1=100, N1/N2/N3/V1=0.
+G1 complete: ELK0.12 dependency layout, routed edges, automatic root/fit,
+secondary inventory list, per-scope viewport, group counts, controls below canvas.
+291 Studio tests pass; navigation/dense/monitor/drafts browser regressions pass.
+Actual-owner browser-e passed initial automatic fit, nested groups, refresh,
+selection, accessibility and 1440/390 screenshots; iteration image reviewed.
+Evidence v2/.test-results/ui01-g1/browser-e; candidate assets public-e.
+Browser-d failed automatic fit; fixed ReactFlow fit lifecycle, retained evidence.
+Frozen demo remains unchanged. No campaign writes or provider calls.
+NEXT N1: question-first landing plus connected navigation, preserve explicit pins
+and authenticated context; no inferred question/run association. Research question
+and need reads exist via ResearchRecordClient; FeedbackModel can supply lineage.
+Current entry workspace.tsx has Execution/Domain and evidence/Next campaign modes.
+LocalKnowledge privately owns FeedbackModel; consider focused overview model using
+question/need only so optional assessment failures cannot hide research purpose.
+Update entry allowlisted fragment navigation without exposing launch credential.
+Keep implementation and test folders module scoped; no source edits during tests.
 
 LR01 PAUSED25%, Build33.33%, Acceptance0%, R1=100/R2R3V1=0 by ownerdirection.
 Resume R2 RuntimeOWN scoped receipt diagnosis only after UIpriorityreleased, NOT

@@ -27,6 +27,7 @@ export class NavigationModel {
   private identity: string | null = null;
   private observationEpoch = 0;
   private interactionEpoch = 0;
+  private readonly viewports = new Map<string, Viewport>();
   private bookmark: { parent: string | undefined; scope: string | undefined; query: TopologyQuery } = { parent: undefined, scope: undefined, query: {} };
   private readonly scopeLane = new RequestLane();
   private readonly topologyLane = new RequestLane();
@@ -36,7 +37,13 @@ export class NavigationModel {
 
   constructor(private readonly source: NavigationSource) {}
   get snapshot() { return this.view; }
-  setViewport(viewport: Viewport) { this.patch({ viewport: checkedViewport(viewport) }); }
+  viewportFor(scope: string) { return this.viewports.get(scope); }
+  setViewport(viewport: Viewport) {
+    const value = checkedViewport(viewport);
+    const scope = this.view.topology?.page.graph_scope.scope_key;
+    if (scope) this.viewports.set(scope, value);
+    this.patch({ viewport: value });
+  }
   setOffset(offset: number) {
     if (!Number.isSafeInteger(offset) || offset < 0 || offset % 200 !== 0 || offset > 0 && offset >= (this.view.topology?.page.nodes.length ?? 0))
       throw new ReadFailure("invalid_response");
@@ -57,16 +64,17 @@ export class NavigationModel {
     this.patch({ phase: "idle", scopes: null, topology: null, topologyPhase: "idle", loadingMore: false, error: null });
   }
   /** Root presentation policy calls this even when the navigation pane is hidden. */
-  async observe(anchor: Anchor | null, visible: boolean, denied = false) {
+  async observe(anchor: Anchor | null, visible: boolean, denied = false, autoRoot = false) {
     if (this.disposed) return;
     const epoch = ++this.observationEpoch;
     if (denied) {
+      this.viewports.clear();
       this.identity = null; this.bookmark = { parent: undefined, scope: undefined, query: {} };
       this.fail(new ReadFailure("denied"), false); return;
     }
     if (anchor) {
       const identity = JSON.stringify([anchor.cut.scope.tenant_id, anchor.cut.scope.project_id, anchor.cut.run_id, anchor.cut.plan_sha256]);
-      if (this.identity !== identity) this.bookmark = { parent: undefined, scope: undefined, query: {} };
+      if (this.identity !== identity) { this.bookmark = { parent: undefined, scope: undefined, query: {} }; this.viewports.clear(); }
       this.identity = identity;
     }
     if (!anchor || !visible) {
@@ -80,6 +88,10 @@ export class NavigationModel {
     await this.loadScopes(saved.parent);
     if (epoch !== this.observationEpoch || interaction !== this.interactionEpoch || this.view.phase !== "ready") return;
     if (saved.scope) await this.loadTopology(saved.scope, saved.query);
+    else if (autoRoot && !saved.parent) {
+      const root = this.view.scopes?.scopes.find(scope => scope.occurrences.length === 0);
+      if (root) await this.open(root.scope_key);
+    }
   }
   private fail(raw: unknown, topology: boolean) {
     const error = asReadFailure(raw);
@@ -97,6 +109,13 @@ export class NavigationModel {
     this.patch({ offset: 0 });
     this.bookmark = { parent, scope: undefined, query: {} };
     await this.loadScopes(parent, next);
+  }
+  async root() {
+    const interaction = this.interactionEpoch + 1;
+    await this.scopes();
+    if (this.interactionEpoch !== interaction || this.view.phase !== 'ready') return;
+    const scope = this.view.scopes?.scopes.find(item => item.occurrences.length === 0);
+    if (scope && !this.bookmark.parent) await this.open(scope.scope_key);
   }
   private async loadScopes(parent?: string, next = false) {
     if (!this.anchor || this.disposed) return;
