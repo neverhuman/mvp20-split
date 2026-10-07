@@ -1,31 +1,19 @@
 # Restore
 
-Refreshed 2026-10-07 10:26:15 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 10:49:35 (America/Chicago). Read FIRST after compression.
 
 ## Current task
 
-BP-09.03/.04 closed100%. BP-09.04 Build100%,Acceptance100%;parent80%,16/20weight,
-16closed gates. Next BP-09.05 activation audit then B1 acceptanceledger/operatorrunbook.
-No owner gate. Last fully drained backup, measured recovery WITHOUT hard limit approved.
-Latest pushed5cc3d8de; significant acceptedB2/B3/V1 closeout staged next forcommit/push.
-NO running tests/probes/builds. Boundaries/lint/changedlinks/whitespace pass.
-
-V1 session72906 PASSED: ROOT .test-results/local-recovery-installations-20261007a,
-354Deployment0.14 copiedtests,38evaluator0.4tests, wheelclosure equalsqualifiedimage,
-actualoriginal restoredhistory through independentlyinstalledDeployment. Final Data0.31
-catalog session85397 PASSED: ROOT .test-results/local-rebuilt-catalog-20261007a,
-337/337refs,1362000bytes,0pending,catalog580a81dcc5c04fabf38ea710e9502ad1744320e843cdce7cebf48d7a9ce97f29.
-Recovery_Acceptance.json and BP-09.04_Recovery_Replacement_Closeout.md canonical.
-Three BP09.04 docs MOVED to docs/Build Plans/BP-09/Completed, links repaired. Parent/MBT
-mirrors80%,16/20; nextBP09.05 notyetactivated. MasterArchitecture/RuntimeTopology status
-updated to boundedrecovery/replacement verified; no broaderreliability/science claim.
-
-NEXT: finish closeout commit/push; audit/activate BP09.05 at0/0/0. B1manifest/evidence
-completeness checker+reproduciblesmoke andoperatorrunbook. B2freezeselectedprofile and
-name successors, including unresolvedworkerfault diagnostic/reliability work. B3coldstart/
-restore-readback+browser andlink/hashverification. V1independentpackage+parentaudit.
-No automatic fullfoundation rerun; generatedpackageinventory structuralrefresh only.
-No paidcallsrequired. Continue across milestones without askinganothercontinue.
+BP-09.01-.04 closed100%. BP-09.05 active25%, Build33.33%, Acceptance0%;
+parent85%,17/20. B1 implemented Deployment0.15 offline12gate acceptance checker,
+35tests pass1.34s,119/120stmts43/44branches99%, coreledger100%; boundaries/lint pass.
+New dev/verify_acceptance_smoke.py launches existing independent-owner original,
+browser/successor and blocked readbacks sequentially, no workers/provider calls.
+Operator instructions deploy/local/OPERATIONS.md. Actual smoke remains unrun.
+Next B2 freeze reviewed profile/Acceptance_Ledger.json and name successors, then
+B3 actual installed smoke; V1 independent tests/parent audit. No owner gate.
+Latest pushed5f4a44ee; B1 commit/push next. No running tests/builds/probes.
+No new paid calls. Keep historical intermittent worker failures explicit.
 
 ## Qualified evaluator / accepted B2
 
@@ -88,21 +76,6 @@ retained. cquiescescoordinatorafterissue andatomicRuntimeactive-snapshotpolling 
 completion; no productionRuntime/toolchanges or weakenedfencetest.
 .test-results/local-rebuilt-policy-20261007a (4388EXIT0): actualsamepolicybytes/different
 Artifactidentity blocked invalid_synthetic_objective_input,spent1,3drains0.
-
-## Next V1 / navigation
-
-dev/verify_recovery_installations.py (runningabove) rebuildsDeployment/evaluator,tests,
-actualinstalledDeploymentreadback. Then audit_local_catalog.py with restoredoriginal
-ownersmanifest and installedData0.31; counts nowinclude newcampaigns/failurefixtures.
-FullqualificationoriginalData0.31 path remains .test-results/local-data-recovery-install-
-20261007b/environment/Scripts/python.exe (ROOT .test-results). If pendingreservations
-remain, reconcile through ownerpublicworkers, neverSQL/reset; originalhistoriesimmutable.
-Plan docs: BP-09.04 Backup restore and module replacement.md; History.md; Evaluator
-reconstruction specification.md. B3complete evidencealreadywritten. MBT mirrors75/100/0,
-parent75. BP09.05 next afterV1 archive; manifestchecker/runbook/frozenprofile/coldsmoke
-andparentcloseout. SQ-01 queued later; do not prematurelyactivate.
-Generated foundation-packages.json refreshed via existing project_specs inventory shape
-only (not claiming entirefoundationtest rerun). New toolscoperegistered.
 
 ## Qualified backup and restore
 

@@ -2,14 +2,14 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-09.01/.02/.03/.04 closed; BP-09.05 activation next.
-- Last refreshed: `2026-10-07 10:31:03` (America/Chicago).
+- Status: primary_active; BP-09.01/.02/.03/.04 closed; BP-09.05 B2 active.
+- Last refreshed: `2026-10-07 10:49:35` (America/Chicago).
 - Owner/scope: Local deployment/recovery integration with each service retaining ownership.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-05/06/07 and BP-08 for evolutionary demo claims; BP-02/03/04 durability and protocol gates.
-- Implementation: **80%**, 16/20 verified delivery weight;16 delivery gates closed. Each child owns four deliveries; this parent counts them once.
+- Implementation: **85%**, 17/20 verified delivery weight;17 delivery gates closed. Each child owns four deliveries; this parent counts them once.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-09.05 activation and acceptance ledger.
+- Current implementation task: BP-09.05/B2 frozen profile and named successors.
 - Demonstrated behavior: independent local owners, bounded model/tool/context/browser/corrected-successor composition and approved daemon recovery; exact history preserved.
 - Blockers: No owner gate. Earlier worker faults remain an unresolved operational finding; successful cutover does not close it.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
@@ -33,7 +33,7 @@ Primary services retain private state, dependencies, migrations and module READM
 | P2 / [BP-09.02 Reproducible installation and boundaries](BP-09/Completed/BP-09.02%20Reproducible%20installation%20and%20boundaries.md) | 100% | 100% | 100% | BP-09.01 acceptance |
 | P3 / [BP-09.03 Integrated autonomous demonstration](BP-09/Completed/BP-09.03%20Integrated%20autonomous%20demonstration.md) | 100% | 100% | 100% | BP-09.02 acceptance |
 | P4 / [BP-09.04 Backup restore and module replacement](BP-09/Completed/BP-09.04%20Backup%20restore%20and%20module%20replacement.md) | 100% | 100% | 100% | BP-09.03 acceptance |
-| P5 / [BP-09.05 Acceptance and successor handoff](BP-09/BP-09.05%20Acceptance%20and%20successor%20handoff.md) | 0% | 0% | 0% | BP-09.04 acceptance |
+| P5 / [BP-09.05 Acceptance and successor handoff](BP-09/BP-09.05%20Acceptance%20and%20successor%20handoff.md) | 25% | 33.33% | 0% | BP-09.04 acceptance |
 
 Each linked child is the execution tracker for its scope. Build tasks name concrete implementation; acceptance requires independent evidence and a scoped drift audit. Do not repeat the historical task pairs as a second work list. No dependent child starts before its predecessor acceptance gate; independent design review does not activate implementation.
 

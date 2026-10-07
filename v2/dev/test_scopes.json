@@ -395,5 +395,11 @@
     "coverage_sources": [
       "tools/synthetic_objectives_rebuilt/src/amphora_synthetic_objectives_rebuilt"
     ]
+  },
+  "deployment-acceptance": {
+    "tests": "deploy/local/tests/acceptance",
+    "coverage_sources": [
+      "deploy/local/src/amphora_deployment/acceptance"
+    ]
   }
 }

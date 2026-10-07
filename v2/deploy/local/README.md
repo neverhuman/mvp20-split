@@ -1,11 +1,13 @@
 # Local deployment profile and preflight
 
-Current package0.14.0; BP-09.03 closed. BP-09.04 adds strict offline backup inventory
+Current package0.15.0; BP-09.03 closed. BP-09.04 adds strict offline backup inventory
 and a separate reviewed rebuilt-evaluator recipe. Original worker profiles remain
 unchanged. Cold restore owner/reference acceptance and rebuilt tool cutover passed.
 Independent Deployment0.14 qualification and operational limitations are tracked in BP-09.04.
+BP-09.05 adds the offline [acceptance ledger](src/amphora_deployment/acceptance/README.md);
+Deployment0.15 independent qualification remains pending.
 
-Owner: BP-09.03, package amphora-deployment0.9.0. Native worker lifecycle is qualified; [worker boundary](src/amphora_deployment/workers/README.md). Managed TLS and responsive scientific container monitoring/adoption are independently qualified; [container boundary](src/amphora_deployment/scientific_workers/README.md). BP-09.01/.02 remain complete; full autonomous demo remains active BP-09.03 work.
+Historical BP-09.03 checkpoint, package amphora-deployment0.9.0. Native worker lifecycle is qualified; [worker boundary](src/amphora_deployment/workers/README.md). Managed TLS and responsive scientific container monitoring/adoption are independently qualified; [container boundary](src/amphora_deployment/scientific_workers/README.md). BP-09.01/.02 remain complete; full autonomous demo remains active BP-09.03 work.
 The [tool catalog boundary](src/amphora_deployment/tool_catalog/README.md) adds separate heartbeat credentials and durable replay delivery; managed standby/readiness reporting has actual five-executor evidence; successful managed execution evidence belongs to BP-09.03.
 Design: [Runtime topology](../../docs/Architecture/System/Runtime_Topology.md).
 
