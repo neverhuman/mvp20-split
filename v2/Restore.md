@@ -1,73 +1,42 @@
 # Restore
 
-Refreshed 2026-10-07 06:23:32 (America/Chicago). Read FIRST after compression.
+Refreshed 2026-10-07 06:44:23 (America/Chicago). Read FIRST after compression.
 
 ## Active task
 
-BP-09.03/B1.4c local browser/API objective-to-successor trace active.
-B1.4a/b COMPLETE;c75%. Child24.48%,Build32.64%,Acceptance0%;parent44.90%,
-(8+47/48)/20,eight closed gates. Same delivery weights; successor exit remains open.
-No owner decision required. Continue across milestones/commits; local computer only.
-No tests/build/probes running. Latest pushedcb3ff5c3 Studio0.12 local Design qualified.
-UNCOMMITTED Deployment0.11 dedicated Runtime/Registry peer credential checkpoint.
-Source41focused tests pass; registry_access21statements/2branches100%; independent
-294tests29.74s pass. Package rebuiltidentical5c7bd73ea8875fd10dba83db3cf63ec51654abd7131411885248c15ef0e27c86.
-Installed .test-results/local-registry-access-install-20261007a/owner;
-fresh .test-results/local-registry-access-rebuild-20261007a. Dev env/locks synced0.11.
-Actual11708EXIT0, config .test-results/local-registry-access-config-20261007b:
-six owners start, dedicated peer reads/resolve returns honest no_eligible_capacity,
-exact replay, activate403; all drain0, no workers/campaign/model calls.
-Initial installation helper28671 had294tests pass then verifier KeyError on catalog
-scope; corrected to published row scope/revision (no package changes). Old failure
-retained. Evidence Registry_Peer.json. Need final lint/boundary/diff/commit/push.
-New registry_access module is narrow create-once DPAPI sidecar runtime-registry.dpapi
-in original installation root, bound to deployment id + -runtime-registry. Original
-credentials.dpapi/state bytes preserved. Only Runtime/Registry references accepted.
-New immutable Runtime draft_registry config and Registry peer principal runtime-draft
-scope-original/actions read+resolve. No operator-key sharing or broad permission.
-Use installed DEPLOYMENT0.11 for any controller with this new manifest;0.10 cannot
-load the sidecar reference. Source prepare_local_authoring originalb stays unchanged.
-Next actual successor admission/carry and corrected text source/full browser trace.
-Studio0.12 assets .test-results/studio-local-design-20261007a/public (b identical).
-Actual browser .test-results/local-browser-design-20261007a allseven drain0; scope
-fixture draft saved/validated, local edits retained across modes; no run admission.
-8librarytests100%lines95.16%branches93.33%functions; draftbrowser/contractchecks passed.
-No owner decision needed. Parent44.90%,child24.48%,Build32.64%,Acceptance0%;c75%.
+BP-09.03/B2 transitions and policy active. B1 complete100%; child25%,Build33.33%,
+Acceptance0%; parent45%,9/20 closed gates. No owner decision needed; continue.
+Current task corrected-result successor using actual public Research/Knowledge/Data
+corrections, future-only pins and unchanged original campaign history. Reuse existing
+successful bounded campaign/model-abstention evidence. B3 recovery then V1 audit.
+No background tests/processes. Commit successor checkpoint then continue B2.
+Latest pushedf3d44063; successor proof currently uncommitted.
 
+## Latest qualified checkpoint
 
-## Latest qualified work
+Studio0.13 successor browser .test-results/local-browser-successor-20261007a passed,
+all seven owners drain0;1440/390 keyboard/axe/lineage/receipt/artifact bytes verified.
+Backend .test-results/local-successor-20261007a passed, six owners drain0, child run
+8405106f6e844b0ea3483b8eac95e577, original fc257cf8882147cb8cca56c778837e60 unchanged.
+One pure finish node carries exact original result; no repeated science/improvement.
+Navigation browser regression passed session62519, contracts/build/lint/boundaries pass.
+Fresh studio-local-successor-20261007a/public and b/public byte-identical.
+Evidence Local_Successor.json. Initial validation422 due numeric profile corrected with
+legacy definition.validate; original invalid command preserved, original draft reused.
+Use Deployment0.11 .test-results/local-registry-access-install-20261007a/owner Python
+with config .test-results/local-registry-access-config-20261007b. Dedicated DPAPI
+Runtime/Registry peer sidecar; original vault unchanged. No new paid calls.
 
-Actual localhost gateway0.2 + five retained owners: execution/reasoning1440/390,
-keyboard, accessibility, exact owner API trace. Screenshot review passed,19focused
-session/supervision tests, TypeScript/contracts checks, identical independent assets.
-Evidence docs/Audits/Evidence/BP-09-Deployment/Local_Browser.json.
-Raw .test-results/local-browser-reasoning-20261007c; assets
-.test-results/studio-local-reasoning-20261007a/public and b/public identical.
-No workers/provider calls. Earlier a ambiguous text locator and b wrong gateway
-API aliases were harness errors; corrected c passes. Gateway only proxies v1;
-Data aliases /api/data or /api/artifacts. Runtime observations /v1/graph-observations.
-Uncommitted verify_local_browser.py + studio/tests/integration/local_demo.mjs,
-entry supervision assembly, optional build output path, version0.10 and docs.
-Next: final lint/boundary/diff, commit/push this verified checkpoint, then continue
-full graph/evidence/successor navigation. B2 scenarios and B3 recovery follow.
+## B2 starting points
 
-## Navigation work remaining
-
-Execution/reasoning, scoped Domain/evidence, and Draft loading/validation are verified.
-Entry uses explicit ExplorePins fragment; gateway/session v1 unchanged. Original run
-was fixture-compiled/directly admitted, never claim model-authored topology. Draft
-library loads a public exact copy for between-campaign editing; current catalog has5tools.
-Existing DraftActivation is independent next-campaign admission, NOT predecessor carry.
-Approved graph.admit_draft_successor exists in Python/Runtime but not Studio generated
-schemas. Public endpoint /v1/graph-runs/draft-successors; read owning contract and tests.
-Dedicated Runtime/Registry credential now qualified (new config path above).
-Original authoringb remains without draft_registry; use new peerb plus Deployment0.11
-for successor work. Credential boundary still rejects cross-owner operator keys. Then successor graph can carry original
-numeric root result (search.checkpoint Artifact); current root inputs specification/
-policy, so a carry destination must be explicitly authored/validated, not forced in.
-Original domain source application/octet-stream refuses text display. Corrected
-source/graph revision should use properly declared text media, preserving old pins.
-B1.4c remaining complete successor trace; B2 scenario matrix and B3 reliability follow.
+Original public records .test-results/local-owner-records-install-20261007a/scenario/records.json.
+Original source synthetic-objective/r1 declared application/octet-stream, intentionally
+not rendered as text. Publish new properly typed text source and correction change log,
+never relabel old immutable artifacts or repin an existing campaign. Knowledge graph
+id domain, revision1, two entities/one affirmed hypothesis. Read actual correction
+contracts/tests before construction. No implementation started for this scenario.
+Existing dev prepare/verify_local_owner_records helpers and source-adjacent READMEs
+own setup. Enumerate paths before reading; no JARVIS/v1 access or source edits during tests.
 
 ## Retained integrated campaign and costs
 

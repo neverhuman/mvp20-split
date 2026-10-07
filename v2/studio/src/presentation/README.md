@@ -45,3 +45,8 @@ BP-05.04/B2 production performance is bounded and measured through the real cons
 Local hosting can pass `active=false` to MonitorWorkspace. Browser visibility and
 host-mode visibility both suspend observation reads; returning reconciles retained
 selection against owner state. Existing callers default to active.
+
+Named execution views now state scientific projection ownership without claiming
+that Knowledge/Research projections are globally unimplemented. Local Explore hosts
+those separately. Successor lineage remains an immutable Runtime observation; no
+scientific validation or improvement is inferred from carried bindings.

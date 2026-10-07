@@ -2,16 +2,16 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-09.01/.02 closed; BP-09.03 B1.4 active.
-- Last refreshed: `2026-10-07 06:23:32` (America/Chicago).
+- Status: primary_active; BP-09.01/.02 closed; BP-09.03 B2 active.
+- Last refreshed: `2026-10-07 06:44:23` (America/Chicago).
 - Owner/scope: Local deployment/recovery integration with each service retaining ownership.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-05/06/07 and BP-08 for evolutionary demo claims; BP-02/03/04 durability and protocol gates.
-- Implementation: **44.90%**, (8 + 47/48)/20 verified delivery weight; eight delivery gates closed. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
+- Implementation: **45%**, 9/20 verified delivery weight; nine delivery gates closed. Each child owns four deliveries; this parent counts them once. Parent phase Pn equals child .0n overall completion; child Build/Acceptance phases remain canonical in that child.
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
-- Current implementation task: BP-09.03/B1.4c actual local browser/API trace; B1.4b live owner-context/model/scientific composition verified.
+- Current implementation task: BP-09.03/B2 transitions and policy; B1 actual model/owner/tool/browser/successor trace complete.
 - Demonstrated behavior: selected-host preflight and independently installed local infrastructure, restricted roles, actual outage/receipt recovery, quota/exposure denial, seven-host replacement/drain and gateway browser compatibility. Full campaign/model integration remains BP-09.03.
-- Blockers: none for local installation engineering; later external gates remain scoped to their child trackers.
+- Blockers: none requiring owner direction; prior expired attempts remain B3 reliability work; B2/B3/V1 remain open.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-10-06 19:58:42`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
 
@@ -31,7 +31,7 @@ Primary services retain private state, dependencies, migrations and module READM
 |---|---:|---:|---:|---|
 | P1 / [BP-09.01 Host and deployment profile](BP-09/Completed/BP-09.01%20Host%20and%20deployment%20profile.md) | 100% | 100% | 100% | Parent predecessor gates |
 | P2 / [BP-09.02 Reproducible installation and boundaries](BP-09/Completed/BP-09.02%20Reproducible%20installation%20and%20boundaries.md) | 100% | 100% | 100% | BP-09.01 acceptance |
-| P3 / [BP-09.03 Integrated autonomous demonstration](BP-09/BP-09.03%20Integrated%20autonomous%20demonstration.md) | 24.48% | 32.64% | 0% | BP-09.02 acceptance |
+| P3 / [BP-09.03 Integrated autonomous demonstration](BP-09/BP-09.03%20Integrated%20autonomous%20demonstration.md) | 25% | 33.33% | 0% | BP-09.02 acceptance |
 | P4 / [BP-09.04 Backup restore and module replacement](BP-09/BP-09.04%20Backup%20restore%20and%20module%20replacement.md) | 0% | 0% | 0% | BP-09.03 acceptance |
 | P5 / [BP-09.05 Acceptance and successor handoff](BP-09/BP-09.05%20Acceptance%20and%20successor%20handoff.md) | 0% | 0% | 0% | BP-09.04 acceptance |
 

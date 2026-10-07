@@ -312,3 +312,17 @@ activation denial. Current lack of capacity remains an honest rejection. It does
 not register/activate tools, start workers or admit campaigns. Original vault and
 state stay unchanged. Runtime uses a distinct read/resolve peer, never Registry's
 operator credential. Scientific successor admission remains a separate proof.
+
+`verify_local_successor.py` uses exact public carry-source cuts from the retained
+scientific run, saves/validates an explicitly fixture-authored tool-free graph, and
+invokes the approved graph.admit_draft_successor API. One pure Runtime finish
+transition must preserve the carried value hash and original parent history. The
+command journal is replayed under the same identity on --resume; payload changes
+are rejected instead of retried with a fresh command. This is a lineage/transfer
+proof, not repeated science or a claim of improved results. No workers/model calls.
+
+`verify_local_browser.py --successor <directory>` reuses the same scoped gateway
+with the selected completed successor. Before browser launch it compares exact
+parent/child v3 history after owner restart; the successor browser then checks
+public lineage, original admission receipt and retained Artifact bytes. No replayed
+execution, workers or provider key is needed for this readback.

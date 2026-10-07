@@ -78,3 +78,10 @@ With an authoring preparation, local_demo also opens the actual fixture-authored
 draft, sends an explicit validation command, checks the structural result and retains
 an unsaved title across Execution/Design mode changes. Registry discovery is real;
 no campaign admission or model call is made.
+
+`successor_demo.mjs` reads an actual completed draft successor through the local
+gateway. Keyboard output selection, verified metadata/content SHA/size, authored
+topology and retained predecessor lineage are checked at1440/390 with accessibility
+and screenshots. Parent/child carry cuts and original admission receipt must match
+pre-restart evidence exactly. The successor only retains an earlier scientific
+result; no new scientific computation or improvement is claimed.

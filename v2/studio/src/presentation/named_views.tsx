@@ -12,7 +12,7 @@ export function NamedViews({ model, anchor }: { model: NamedViewsModel; anchor: 
     <p role="status">{view.phase === 'ready' ? `Runtime views verified at revision ${view.catalog!.page.cut.revision}.` : view.error?.message ?? 'Loading available views…'}</p>
     <div className="toolbar"><span>{view.catalog?.available('execution_topology') ? 'Execution graph available' : 'Execution graph capability unavailable'}</span>
       <button disabled={!view.catalog?.available('successor_lineage') || view.lineagePhase === 'loading'} onClick={() => void model.lineage()}>Inspect predecessor lineage</button></div>
-    <ul>{scientificViews.map(item => <li key={item.id}>{item.label} — unavailable; awaiting {item.owner} projection.</li>)}</ul>
+    <ul>{scientificViews.map(item => <li key={item.id}>{item.label} — owned by {item.owner}; not supplied by this execution view.</li>)}</ul>
     {view.lineagePhase === 'loading' && <p role="status">Loading retained lineage…</p>}
     {view.lineagePhase === 'failed' && <p role="status">{view.error?.kind === 'unavailable' ? 'No retained predecessor lineage is available for this run.' : view.error?.message}</p>}
     {view.lineage && <section aria-label="Retained predecessor lineage">

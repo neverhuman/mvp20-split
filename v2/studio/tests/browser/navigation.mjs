@@ -49,8 +49,8 @@ try {
   await page.getByText('Named research views', { exact: true }).click();
   await page.getByRole('button', { name: 'Inspect predecessor lineage', exact: true }).click();
   await page.getByRole('region', { name: 'Retained predecessor lineage', exact: true }).waitFor();
-  await page.getByText('Property history — unavailable; awaiting Research projection.', { exact: true }).waitFor();
-  evidence.scenarios.push('named lineage uses public owner route', 'scientific views explicitly unavailable');
+  await page.getByText('Property history — owned by Research; not supplied by this execution view.', { exact: true }).waitFor();
+  evidence.scenarios.push('named lineage uses public owner route', 'scientific projection ownership is explicit');
   for (const viewport of [{ width: 1440, height: 1000 }, { width: 390, height: 844 }]) {
     await page.setViewportSize(viewport);
     await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));

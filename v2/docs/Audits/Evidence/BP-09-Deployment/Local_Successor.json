@@ -1,0 +1,1141 @@
+{
+  "timestamp_local": "2026-10-07 06:39:00",
+  "status": "passed",
+  "run_id": "8405106f6e844b0ea3483b8eac95e577",
+  "scope": {
+    "tenant_id": "internal",
+    "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+  },
+  "browser": {
+    "status": "passed",
+    "run_id": "8405106f6e844b0ea3483b8eac95e577",
+    "scenarios": [
+      "1440: actual retained result, keyboard inspection, authored successor topology, immutable lineage/receipt, exact artifact bytes, accessibility",
+      "390: actual retained result, keyboard inspection, authored successor topology, immutable lineage/receipt, exact artifact bytes, accessibility"
+    ],
+    "screenshots": [
+      "successor-output-1440.png",
+      "successor-lineage-1440.png",
+      "successor-output-390.png",
+      "successor-lineage-390.png"
+    ],
+    "reads": [
+      {
+        "width": 1440,
+        "predecessor": {
+          "run_id": "fc257cf8882147cb8cca56c778837e60",
+          "plan_sha256": "5f7bbf11269fb457dc6159bf09049d2b3134ea89906cfc5a52e4cd97e775733d",
+          "revision": 162
+        },
+        "carried": [
+          {
+            "target_port": "previous_result",
+            "source": {
+              "kind": "run_output",
+              "port": "result"
+            },
+            "expected_value_sha256": "c45bdecd1fdd9e735125f167e780ad70b2942bfc74c6ff7f78c523e68825fa1a"
+          }
+        ],
+        "artifact": {
+          "artifact_id": "cd5368ddbfcc4d31aabf4cb07c2f20c2",
+          "scope": {
+            "tenant_id": "internal",
+            "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+          },
+          "sha256": "8ba90e762026601a4de8f416e02d793cd51aecdaf08042016ac735b762adc6a9",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "search.checkpoint",
+            "version": "1",
+            "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+          },
+          "size_bytes": 9992
+        }
+      },
+      {
+        "width": 390,
+        "predecessor": {
+          "run_id": "fc257cf8882147cb8cca56c778837e60",
+          "plan_sha256": "5f7bbf11269fb457dc6159bf09049d2b3134ea89906cfc5a52e4cd97e775733d",
+          "revision": 162
+        },
+        "carried": [
+          {
+            "target_port": "previous_result",
+            "source": {
+              "kind": "run_output",
+              "port": "result"
+            },
+            "expected_value_sha256": "c45bdecd1fdd9e735125f167e780ad70b2942bfc74c6ff7f78c523e68825fa1a"
+          }
+        ],
+        "artifact": {
+          "artifact_id": "cd5368ddbfcc4d31aabf4cb07c2f20c2",
+          "scope": {
+            "tenant_id": "internal",
+            "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+          },
+          "sha256": "8ba90e762026601a4de8f416e02d793cd51aecdaf08042016ac735b762adc6a9",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "search.checkpoint",
+            "version": "1",
+            "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+          },
+          "size_bytes": 9992
+        }
+      }
+    ]
+  },
+  "final": {
+    "owners": {
+      "artifact": {
+        "owner": "artifact",
+        "pid": 31600,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      },
+      "gateway": {
+        "owner": "gateway",
+        "pid": 34440,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      },
+      "knowledge": {
+        "owner": "knowledge",
+        "pid": 28524,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      },
+      "planning": {
+        "owner": "planning",
+        "pid": 29820,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      },
+      "registry": {
+        "owner": "registry",
+        "pid": 33652,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      },
+      "research": {
+        "owner": "research",
+        "pid": 33860,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      },
+      "runtime": {
+        "owner": "runtime",
+        "pid": 19628,
+        "state": "exited",
+        "exit_code": 0,
+        "readiness": "not_assessed",
+        "drain": "drained"
+      }
+    }
+  },
+  "assets": {
+    "index.html": "0c60b48d2bf03c539e9f7f14f773d3fb7652fade37209178f9a3790c893e45c5",
+    "app.js": "2e1a0525afce109a5fcf7642f015da518afa52dbdc4bc6009b171c60d00a6892",
+    "app.css": "91910d1b3a8b1c127a21bb8705987eb2c76eeb98403680405ffb46d68e9e5864"
+  },
+  "provider_calls": 0,
+  "workers_started": false,
+  "limits": [
+    "Actual localhost gateway/Studio and retained owners; synthetic science only",
+    "Immutable predecessor/successor readback; no new science or admission"
+  ],
+  "successor_admission": {
+    "timestamp_local": "2026-10-07 06:32:48",
+    "status": "passed",
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+    },
+    "run_id": "8405106f6e844b0ea3483b8eac95e577",
+    "predecessor": {
+      "schema_version": "3",
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+      },
+      "run_id": "fc257cf8882147cb8cca56c778837e60",
+      "plan_sha256": "5f7bbf11269fb457dc6159bf09049d2b3134ea89906cfc5a52e4cd97e775733d",
+      "status": "completed",
+      "revision": 162,
+      "node_count": 39,
+      "budget_limit": 256,
+      "reserved": 0,
+      "spent": 15,
+      "stop_reason": null,
+      "nodes": [
+        {
+          "activation_id": "0021be6258c34c23a91b515eb0fc56346342e29bddea655a7aea750562a59ae7",
+          "path": {
+            "schema_version": "2",
+            "node_id": "collection",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 1
+              }
+            ]
+          },
+          "kind": "artifact_materialize",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "0a538d293d05c0c1660e06750450c4cc51a497a3c9886d5caa940473aea44569",
+          "path": {
+            "schema_version": "2",
+            "node_id": "evaluate",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 1
+              },
+              {
+                "kind": "scatter",
+                "node_id": "evaluate_batch",
+                "index": 1,
+                "membership_sha256": "8ad60b616f8aab7edf7ab80b61937241a66cf023aa4604eeaab695872c9b1cd8"
+              }
+            ]
+          },
+          "kind": "invoke",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "0af43d63a3c3000630a350b5cdc81f77e7ce7a17209afea7ab3a704fc90cea0e",
+          "path": {
+            "schema_version": "2",
+            "node_id": "finish",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 1
+              },
+              {
+                "kind": "scatter",
+                "node_id": "evaluate_batch",
+                "index": 1,
+                "membership_sha256": "8ad60b616f8aab7edf7ab80b61937241a66cf023aa4604eeaab695872c9b1cd8"
+              }
+            ]
+          },
+          "kind": "finish",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "1a7d04fba9dc4a0cd2ef91029f88d12d98da21e451ed0d3ce8c20f7926c994a1",
+          "path": {
+            "schema_version": "2",
+            "node_id": "expand",
+            "occurrences": []
+          },
+          "kind": "invoke",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "1e44088fe1c830c97ca9f08fb702d650fdba36edeb37c50d3db96625ef42f04d",
+          "path": {
+            "schema_version": "2",
+            "node_id": "requests",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 1
+              }
+            ]
+          },
+          "kind": "artifact_project",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "2529f1f48e316935c4aaa693f0bb757b53e19c6b620707da4cf75ab2e5550b10",
+          "path": {
+            "schema_version": "2",
+            "node_id": "evaluate_batch",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 1
+              }
+            ]
+          },
+          "kind": "scatter",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "2747b9e7901cf9dc7f0491e97d1399f9c2757da8b9e7aab116616103e5c17382",
+          "path": {
+            "schema_version": "2",
+            "node_id": "finish",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 1
+              },
+              {
+                "kind": "scatter",
+                "node_id": "evaluate_batch",
+                "index": 0,
+                "membership_sha256": "8ad60b616f8aab7edf7ab80b61937241a66cf023aa4604eeaab695872c9b1cd8"
+              }
+            ]
+          },
+          "kind": "finish",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "2925eaedf56188da2b23ec95120dce8e72c833f8c0520486c875926c6b7ebfbb",
+          "path": {
+            "schema_version": "2",
+            "node_id": "finish",
+            "occurrences": [
+              {
+                "kind": "scatter",
+                "node_id": "evaluate_batch",
+                "index": 0,
+                "membership_sha256": "560b850c5ecf6d562fbf04c40b6f3e5554258c978aeca1e968a2ebe6ffe39dcb"
+              }
+            ]
+          },
+          "kind": "finish",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "2f297278b618c0030bfcef4ed034062a03bb92ebd8f029d5bb6e46492725b2bf",
+          "path": {
+            "schema_version": "2",
+            "node_id": "collection",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 0
+              }
+            ]
+          },
+          "kind": "artifact_materialize",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "35e91a26f08642eeedf2c454c095a00b0e59346b33a9f5c14127e8e5a8e32735",
+          "path": {
+            "schema_version": "2",
+            "node_id": "variation_context",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 1
+              }
+            ]
+          },
+          "kind": "artifact_materialize",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "380afcaf1761bc9a19e523775516a2047cbd3496515c9fadc8b80a6c24c2eaab",
+          "path": {
+            "schema_version": "2",
+            "node_id": "evaluate",
+            "occurrences": [
+              {
+                "kind": "scatter",
+                "node_id": "evaluate_batch",
+                "index": 0,
+                "membership_sha256": "560b850c5ecf6d562fbf04c40b6f3e5554258c978aeca1e968a2ebe6ffe39dcb"
+              }
+            ]
+          },
+          "kind": "invoke",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "3b1cb242c31afc0746e2ea0ef11ab25d8dc36da0361d66303afb6500a364b46a",
+          "path": {
+            "schema_version": "2",
+            "node_id": "finish",
+            "occurrences": []
+          },
+          "kind": "finish",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "47da28afe5e9d4234dabe6bdee4b2da5b93562269907b77a813c77a5da1c30ba",
+          "path": {
+            "schema_version": "2",
+            "node_id": "generations",
+            "occurrences": []
+          },
+          "kind": "iterate",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "48b04838e5f1003e7b3f42b8fc462aca0884b72326c5e59581f536c167e86cde",
+          "path": {
+            "schema_version": "2",
+            "node_id": "evaluate",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 0
+              },
+              {
+                "kind": "scatter",
+                "node_id": "evaluate_batch",
+                "index": 0,
+                "membership_sha256": "0db18a73ddfbde5f0a38efbd53654ae9b46c5408854e16b3353b2f9c2aad6e55"
+              }
+            ]
+          },
+          "kind": "invoke",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "4fc66e772b54568d2f3ba105bf12b86f301fe235bd475203634fac5cb16bc2ce",
+          "path": {
+            "schema_version": "2",
+            "node_id": "finish",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 0
+              },
+              {
+                "kind": "scatter",
+                "node_id": "evaluate_batch",
+                "index": 0,
+                "membership_sha256": "0db18a73ddfbde5f0a38efbd53654ae9b46c5408854e16b3353b2f9c2aad6e55"
+              }
+            ]
+          },
+          "kind": "finish",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "61386d2bab0e550c0962207a2d6075f26836015210d77da8928f6504dada1406",
+          "path": {
+            "schema_version": "2",
+            "node_id": "expand",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 0
+              }
+            ]
+          },
+          "kind": "invoke",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "67f665f82103997ea01f3b5e7cb3644b107ced8557c99e1661b803eecc2536a7",
+          "path": {
+            "schema_version": "2",
+            "node_id": "seed",
+            "occurrences": []
+          },
+          "kind": "invoke",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "7c0e09dc3db0dfbf8dc0fdaace5024191eceb6e124602ec186f0e76b4812802e",
+          "path": {
+            "schema_version": "2",
+            "node_id": "evaluate",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 1
+              },
+              {
+                "kind": "scatter",
+                "node_id": "evaluate_batch",
+                "index": 0,
+                "membership_sha256": "8ad60b616f8aab7edf7ab80b61937241a66cf023aa4604eeaab695872c9b1cd8"
+              }
+            ]
+          },
+          "kind": "invoke",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "7fbf2e637539269eac9ddbd67bbcb0da17e263ea8df4c84841d9efa253e9f987",
+          "path": {
+            "schema_version": "2",
+            "node_id": "finish",
+            "occurrences": [
+              {
+                "kind": "scatter",
+                "node_id": "evaluate_batch",
+                "index": 1,
+                "membership_sha256": "560b850c5ecf6d562fbf04c40b6f3e5554258c978aeca1e968a2ebe6ffe39dcb"
+              }
+            ]
+          },
+          "kind": "finish",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "8f0c822ffb08e6e3262b0856261f30b56349d3e3405ccdbb1fe6c74e6f87e522",
+          "path": {
+            "schema_version": "2",
+            "node_id": "finish",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 0
+              },
+              {
+                "kind": "scatter",
+                "node_id": "evaluate_batch",
+                "index": 1,
+                "membership_sha256": "0db18a73ddfbde5f0a38efbd53654ae9b46c5408854e16b3353b2f9c2aad6e55"
+              }
+            ]
+          },
+          "kind": "finish",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "92820164d3b5c5dc14a90c77a7954fe63bcb6e36bd44c72644bbdb05c9e9dc8d",
+          "path": {
+            "schema_version": "2",
+            "node_id": "requests",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 0
+              }
+            ]
+          },
+          "kind": "artifact_project",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "976c62591530782226d142871c0c09e0fa7c1aef43f92ce8a8d2d5be140e82fd",
+          "path": {
+            "schema_version": "2",
+            "node_id": "collection",
+            "occurrences": []
+          },
+          "kind": "artifact_materialize",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "9add9afe096be271ae5deeee1bb53898e17b476722bea70003973ac72485ef19",
+          "path": {
+            "schema_version": "2",
+            "node_id": "finish",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 0
+              }
+            ]
+          },
+          "kind": "finish",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "a5bf00aa6ff1f5109f20018d9c167427f7d03af773820e2d56bb7f16cfce1ed6",
+          "path": {
+            "schema_version": "2",
+            "node_id": "evaluate_batch",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 0
+              }
+            ]
+          },
+          "kind": "scatter",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "acb65b84380d440118ea0bf277abe98da857449ec25b321fb8044a098e5119f7",
+          "path": {
+            "schema_version": "2",
+            "node_id": "collect",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 0
+              }
+            ]
+          },
+          "kind": "invoke",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "ae62e5d6a3b6491a50f6e0b42c294d4bd974f6e37e6747b726005bd2add10684",
+          "path": {
+            "schema_version": "2",
+            "node_id": "evaluate_batch",
+            "occurrences": []
+          },
+          "kind": "scatter",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "b6f33a817c4357bd49da9c7132aad8031fdb7a0aa7c59c48fe04871932e5d2b0",
+          "path": {
+            "schema_version": "2",
+            "node_id": "variation_context",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 0
+              }
+            ]
+          },
+          "kind": "artifact_materialize",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "ba646f4551aa9078a4957f2114e5bcda815ed76038de49b0d88353be03b857ef",
+          "path": {
+            "schema_version": "2",
+            "node_id": "vary",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 1
+              }
+            ]
+          },
+          "kind": "invoke",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "ba9f45224b0e7ed8985a6dc4e517f129ae1b609541ab65c674a99d8be2a9638a",
+          "path": {
+            "schema_version": "2",
+            "node_id": "vary",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 0
+              }
+            ]
+          },
+          "kind": "invoke",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "c4031deeac314ed118031402b589aa7fca33604a35a9342abebc0e53a9445afe",
+          "path": {
+            "schema_version": "2",
+            "node_id": "evaluate",
+            "occurrences": [
+              {
+                "kind": "scatter",
+                "node_id": "evaluate_batch",
+                "index": 1,
+                "membership_sha256": "560b850c5ecf6d562fbf04c40b6f3e5554258c978aeca1e968a2ebe6ffe39dcb"
+              }
+            ]
+          },
+          "kind": "invoke",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "c694c15f97157baee578e36ef77f09155ed6a6ee0406413fa4e5738be047e69d",
+          "path": {
+            "schema_version": "2",
+            "node_id": "finish",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 1
+              }
+            ]
+          },
+          "kind": "finish",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "ce88e10e16a5cd2e0032a25f598d92cc1d71d6bb1941a8eeda5c2db55250c154",
+          "path": {
+            "schema_version": "2",
+            "node_id": "evaluate",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 0
+              },
+              {
+                "kind": "scatter",
+                "node_id": "evaluate_batch",
+                "index": 1,
+                "membership_sha256": "0db18a73ddfbde5f0a38efbd53654ae9b46c5408854e16b3353b2f9c2aad6e55"
+              }
+            ]
+          },
+          "kind": "invoke",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "cf384e4c7d1726fac558f74e0ac17568583cf139f126fc5cc02c3428c78a074e",
+          "path": {
+            "schema_version": "2",
+            "node_id": "expand",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 1
+              }
+            ]
+          },
+          "kind": "invoke",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "dc760c73ef07e7ca1b6febd9c3f92c7b2e27ee243e80d9567b22e6e1aaf7b482",
+          "path": {
+            "schema_version": "2",
+            "node_id": "request_context",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 0
+              }
+            ]
+          },
+          "kind": "artifact_materialize",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "e09ac89edeb589f9cb3cb40758edc791b4eaa0651eb942b83a92b180d8b628a2",
+          "path": {
+            "schema_version": "2",
+            "node_id": "request_context",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 1
+              }
+            ]
+          },
+          "kind": "artifact_materialize",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "e1d22e1aa2b096c6e0a7d408d25cf005f49b88f6ee1708b339da6cbf223c091d",
+          "path": {
+            "schema_version": "2",
+            "node_id": "requests",
+            "occurrences": []
+          },
+          "kind": "artifact_project",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "ea2342bd21162f4e648a6316fc3bed9c00b4e9ea164297caea736a2445c903b9",
+          "path": {
+            "schema_version": "2",
+            "node_id": "collect",
+            "occurrences": [
+              {
+                "kind": "loop",
+                "node_id": "generations",
+                "index": 1
+              }
+            ]
+          },
+          "kind": "invoke",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "f927d6c9591c9029f457c45e2bd2d2218b90e4b99a302b01fa595a3ec26e5895",
+          "path": {
+            "schema_version": "2",
+            "node_id": "request_context",
+            "occurrences": []
+          },
+          "kind": "artifact_materialize",
+          "status": "succeeded",
+          "reason_code": null
+        },
+        {
+          "activation_id": "fb10971e97624eb8184f8a80a3ccfbc91f80ddf706088e520c128c6c6ae6999d",
+          "path": {
+            "schema_version": "2",
+            "node_id": "collect",
+            "occurrences": []
+          },
+          "kind": "invoke",
+          "status": "succeeded",
+          "reason_code": null
+        }
+      ],
+      "next_after": null
+    },
+    "sources": {
+      "schema_version": "1",
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+      },
+      "predecessor": {
+        "run_id": "fc257cf8882147cb8cca56c778837e60",
+        "plan_sha256": "5f7bbf11269fb457dc6159bf09049d2b3134ea89906cfc5a52e4cd97e775733d",
+        "revision": 162
+      },
+      "predecessor_ready": true,
+      "sources": [
+        {
+          "source": {
+            "kind": "run_output",
+            "port": "result"
+          },
+          "value_sha256": "c45bdecd1fdd9e735125f167e780ad70b2942bfc74c6ff7f78c523e68825fa1a"
+        }
+      ]
+    },
+    "result": {
+      "schema_version": "3",
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+      },
+      "run_id": "8405106f6e844b0ea3483b8eac95e577",
+      "plan_sha256": "137ea115de39c1a8ccbee8cff42dd3727232b9b795e71d25d9360cfb82ecec30",
+      "status": "completed",
+      "revision": 1,
+      "node_count": 1,
+      "budget_limit": 1,
+      "reserved": 0,
+      "spent": 0,
+      "stop_reason": null,
+      "nodes": [
+        {
+          "activation_id": "ecbee50b1d4da87c377abe071ea12d62b0d937ab67131ee9fa0b4469a3cefa51",
+          "path": {
+            "schema_version": "2",
+            "node_id": "retain",
+            "occurrences": []
+          },
+          "kind": "finish",
+          "status": "succeeded",
+          "reason_code": null
+        }
+      ],
+      "next_after": null
+    },
+    "child_sources": {
+      "schema_version": "1",
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+      },
+      "predecessor": {
+        "run_id": "8405106f6e844b0ea3483b8eac95e577",
+        "plan_sha256": "137ea115de39c1a8ccbee8cff42dd3727232b9b795e71d25d9360cfb82ecec30",
+        "revision": 1
+      },
+      "predecessor_ready": true,
+      "sources": [
+        {
+          "source": {
+            "kind": "run_output",
+            "port": "result"
+          },
+          "value_sha256": "c45bdecd1fdd9e735125f167e780ad70b2942bfc74c6ff7f78c523e68825fa1a"
+        }
+      ]
+    },
+    "lineage": {
+      "schema_version": "1",
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+      },
+      "run_id": "8405106f6e844b0ea3483b8eac95e577",
+      "plan_sha256": "137ea115de39c1a8ccbee8cff42dd3727232b9b795e71d25d9360cfb82ecec30",
+      "predecessor": {
+        "run_id": "fc257cf8882147cb8cca56c778837e60",
+        "plan_sha256": "5f7bbf11269fb457dc6159bf09049d2b3134ea89906cfc5a52e4cd97e775733d",
+        "revision": 162
+      },
+      "carried": [
+        {
+          "target_port": "previous_result",
+          "source": {
+            "kind": "run_output",
+            "port": "result"
+          },
+          "expected_value_sha256": "c45bdecd1fdd9e735125f167e780ad70b2942bfc74c6ff7f78c523e68825fa1a"
+        }
+      ],
+      "transfer_sha256": "e1a3c7f73fa7f53c9290a0aeabd68a155bd87049b6c236232340951ed16a3b3d"
+    },
+    "draft": {
+      "schema_version": "1",
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+      },
+      "head": {
+        "draft_id": "retained-result-02b1cb33e1ee4ca19b33d5c51fe2f87a",
+        "revision": 1,
+        "content_sha256": "01aa98b2eff6b8e4e7822cd6d5f31ff0fd85dc2927e29250060db78174b68551",
+        "title": "Retained-result successor (engineering fixture)"
+      },
+      "parent_revision": 0,
+      "definition": {
+        "schema_version": "4",
+        "profile": "deterministic-v3",
+        "campaign_id": "retained-result-successor",
+        "revision": 1,
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+        },
+        "context": [],
+        "body": {
+          "inputs": [
+            {
+              "name": "previous_result",
+              "value_type": {
+                "kind": "artifact",
+                "schema_ref": {
+                  "schema_id": "search.checkpoint",
+                  "version": "1",
+                  "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+                },
+                "representation": "search.checkpoint",
+                "unit": "1",
+                "media_type": "application/json"
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "name": "result",
+              "value_type": {
+                "kind": "artifact",
+                "schema_ref": {
+                  "schema_id": "search.checkpoint",
+                  "version": "1",
+                  "sha256": "2badaa34bf414e5749c0c0c646d7ed6d5fbbcb3d3a5dfa9f2a3c2a8354b28184"
+                },
+                "representation": "search.checkpoint",
+                "unit": "1",
+                "media_type": "application/json"
+              }
+            }
+          ],
+          "nodes": [
+            {
+              "kind": "finish",
+              "node_id": "retain",
+              "outputs": [
+                {
+                  "port": "result",
+                  "source": {
+                    "kind": "input",
+                    "name": "previous_result"
+                  }
+                }
+              ]
+            }
+          ],
+          "edges": []
+        }
+      }
+    },
+    "validation": {
+      "schema_version": "1",
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+      },
+      "validation_id": "7a894ca86d5746b1b196274229286aee",
+      "draft_id": "retained-result-02b1cb33e1ee4ca19b33d5c51fe2f87a",
+      "revision": 1,
+      "content_sha256": "01aa98b2eff6b8e4e7822cd6d5f31ff0fd85dc2927e29250060db78174b68551",
+      "universe_sha256": "50fa3216d7df11628d5429b2407c7cb288e9486d17d52e64fad5876697f94381",
+      "structurally_valid": true,
+      "plan_sha256": "137ea115de39c1a8ccbee8cff42dd3727232b9b795e71d25d9360cfb82ecec30",
+      "findings": [],
+      "pending_checks": [
+        "current_eligibility",
+        "activation",
+        "scientific_applicability"
+      ],
+      "scientific_acceptance": "not_established"
+    },
+    "receipt": {
+      "schema_version": "1",
+      "outcome": {
+        "status": "accepted",
+        "binding": {
+          "identity": {
+            "schema_version": "1",
+            "command_family": "graph.admit_draft_successor",
+            "command_id": "5fc28bdcd8c147878d1132cd390ee4ef",
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+            },
+            "actor_id": "admin"
+          },
+          "request_sha256": "02bf743f80662316250f993f7101a882c8c70b00108dc2f8f403417b719d4eca",
+          "operation_id": "a8119f1e52fe4eb4afb28a93d435da8a"
+        },
+        "committed": {
+          "kind": "run",
+          "object_id": "8405106f6e844b0ea3483b8eac95e577",
+          "revision": 0
+        }
+      }
+    },
+    "final": {
+      "owners": {
+        "artifact": {
+          "owner": "artifact",
+          "pid": 30188,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "knowledge": {
+          "owner": "knowledge",
+          "pid": 33408,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "planning": {
+          "owner": "planning",
+          "pid": 17220,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "registry": {
+          "owner": "registry",
+          "pid": 24492,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "research": {
+          "owner": "research",
+          "pid": 10312,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "runtime": {
+          "owner": "runtime",
+          "pid": 28392,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        }
+      }
+    },
+    "provider_calls": 0,
+    "scientific_invocations": 0,
+    "limits": [
+      "Actual existing search checkpoint carried atomically into a validated tool-free successor",
+      "One pure Runtime finish transition; no repeated science or scientific improvement claimed"
+    ]
+  },
+  "verification": {
+    "reviewed_local": "2026-10-07 06:44:23",
+    "studio": "0.13.0",
+    "navigation_browser": "passed",
+    "contracts": "7 published schema groups verified",
+    "typescript": "passed",
+    "independent_assets": "a/b byte-identical",
+    "visual_review": "desktop output and narrow lineage legible; no horizontal overflow",
+    "raw_browser": ".test-results/local-browser-successor-20261007a",
+    "raw_admission": ".test-results/local-successor-20261007a",
+    "coverage": "Scenario assertions; no source coverage claim for browser harness"
+  }
+}
