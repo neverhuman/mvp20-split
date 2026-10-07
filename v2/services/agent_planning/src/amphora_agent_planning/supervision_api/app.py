@@ -76,6 +76,8 @@ def create_app(intake=None, credentials=None, *, topology=None):
         if intake is None:
             return JSONResponse({'status': 'not_configured'}, status_code=503)
         with intake.engine.connect() as conn:
+            if conn.execute(text('SELECT current_user')).scalar_one() != 'planning_service':
+                return JSONResponse({'status': 'role_unavailable'}, status_code=503)
             conn.execute(text('SELECT canonical_bytes FROM planning.checkpoint_execution_reports LIMIT 0'))
             conn.execute(text('SELECT canonical_request FROM planning.supervision_requests LIMIT 0'))
             conn.execute(text('SELECT canonical_receipt FROM planning.supervision_commands LIMIT 0'))

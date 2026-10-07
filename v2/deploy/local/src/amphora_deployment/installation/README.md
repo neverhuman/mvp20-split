@@ -11,6 +11,7 @@ an exact profile hash and source commit, canonicalizes their identities and repo
 readiness/scientific eligibility as not assessed. No credentials appear in records.
 
 Recipes define owner schema/role names and separate migration/serving entry points.
+SERVING_HOSTS additionally permits the independent gateway; it has no database role or migration command. OWNERS and InstallationInventory still require exactly six SQL owners. The gateway receives only launcher and operator proxy credentials.
 Planning serves through supervision_api and explicitly binds127.0.0.1; the other
 five owner CLIs enforce loopback themselves. Migrator URLs remain environment-only
 and are never startup arguments. Later lifecycle code must supply only the proper

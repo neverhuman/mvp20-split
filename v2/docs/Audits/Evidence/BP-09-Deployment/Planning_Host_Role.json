@@ -1,0 +1,58 @@
+{
+  "checked_at": "2026-10-06T23:01:40-05:00",
+  "old_wheel_sha256": "0eb10c1790f0f712dd543157ac79f2e5aa3f73e7e430ef218e40bdc005455941",
+  "new_wheel_sha256": "e22216678971ecaa8045b7b72c0d20b29f20aee687eac582fa89c114f689189a",
+  "unchanged_persistence_files": 34,
+  "persistence_files": {
+    "amphora_agent_planning/persistence/__init__.py": "b792d6a5389c634f31862785f8bee5c54472200029e8b0eec4c17f2f6a8a2765",
+    "amphora_agent_planning/persistence/budget.py": "45770a687bf6f0dd4ad79ef3caec65099e322761558f59c11111ed8c4c6a20b3",
+    "amphora_agent_planning/persistence/dispatch.py": "07e8d75283b8899fb2bca623f09cbb016dc6d5994cdcb3342a80f42ba0a6f68e",
+    "amphora_agent_planning/persistence/execution_state.py": "45422447e7edfb4bab3b65869dbef4147384770b6794daac79a1e64967af6a1b",
+    "amphora_agent_planning/persistence/extraction.py": "7aedc392aa785ebdfc67bfc941c5e316367bd3c340977f1ce619b92c9c9289bb",
+    "amphora_agent_planning/persistence/family_state.py": "f234a82ac97ea50d71949940c9eeaca806e0e1a1c4c9f0f49f17e470751ed7e0",
+    "amphora_agent_planning/persistence/journal.py": "4aa26f6019c6547edec08251c7dfbc72bfa3b571adbdc9c545d152cc7f8e1bef",
+    "amphora_agent_planning/persistence/migrate.py": "bba66ff9ef1b1a8e1164caf75845745924afd084507d3178e1b13e5ee43da03f",
+    "amphora_agent_planning/persistence/preparation.py": "7839a30e96ec78612e139902913325a19916b86c96fdbb7cfaf15bb883b91ffe",
+    "amphora_agent_planning/persistence/records.py": "092aacc9dcb2a522be9db6f10fe7973fc5564e69600d137f14ae33baa22820df",
+    "amphora_agent_planning/persistence/repair.py": "18dedfbdae4ff59f475110bbefcc241567d1526cbfaf2a51ca934e40bdd17193",
+    "amphora_agent_planning/persistence/settlement.py": "65d172615ea5b22659dab8333127a2b941e20af16653faf3033d378de8b1f90c",
+    "amphora_agent_planning/persistence/supervision_deadline.py": "0742d0cc59624aa4a8e6ee648381b1c7c6a415a68519492855d937af3f410d77",
+    "amphora_agent_planning/persistence/migrations/env.py": "f05fc9ad8fa94553ab0967a476cdd291aab0f8cdc7c273abaa8a7c88fbcf663e",
+    "amphora_agent_planning/persistence/migrations/versions/r0001_initial.py": "0db6813d0db8f42693c4f8bea7957a34b0c612250ee87c4b75b5b6736b2e1a48",
+    "amphora_agent_planning/persistence/migrations/versions/r0002_reservations.py": "00b0fba3cff4168ff237c4bf36b90f4be7c37a5b23d0782b995fc36032402c6f",
+    "amphora_agent_planning/persistence/migrations/versions/r0003_settlements.py": "043532ce79aa516bdf23f850ef7e3a775ee47901caf82f0cfdd02b26796e145e",
+    "amphora_agent_planning/persistence/migrations/versions/r0004_dispatch.py": "5400acd5f2d6959d84a185956f012ff83ad3fe5a7d1c18eb9af59ec495ff1184",
+    "amphora_agent_planning/persistence/migrations/versions/r0005_task_output.py": "ecd498743aaf75bb3f5e8983b19da9aafa05aab5a0647215cde8d0000220b93d",
+    "amphora_agent_planning/persistence/migrations/versions/r0006_extraction.py": "a9039437cec80bb2d78f4920c8a67af784781cf29952c414db5d8441282e19ad",
+    "amphora_agent_planning/persistence/migrations/versions/r0007_trace_publication.py": "7cfd558737e7daa82da9b561b8134c6a58dabe3f07c55f4e34582caae3901c89",
+    "amphora_agent_planning/persistence/migrations/versions/r0008_repair_families.py": "8c2fe1e7e680da569c4fd118d6e7d243a3e14379edd5cdc18a68182da6dade0a",
+    "amphora_agent_planning/persistence/migrations/versions/r0009_repair_preparation.py": "d907a4c6292c0310841b0179d15c7071b109ab3bd26a571b113011d5b5a7ffc0",
+    "amphora_agent_planning/persistence/migrations/versions/r0010_result_publication.py": "d92076826f904f69bb2ce797f993ca7c48993d3946d65ebdfc5753f86b4ea3e6",
+    "amphora_agent_planning/persistence/migrations/versions/r0011_owner_handoff.py": "1f2e61d611c82d5f14c07654a3ceb7cfbc67e0a22b000ef54e484a744e08b494",
+    "amphora_agent_planning/persistence/migrations/versions/r0012_campaign_preparations.py": "8246c5244999723beb4fcce7341da8fcb7ff2e8d531030f444b069ecdd81318f",
+    "amphora_agent_planning/persistence/migrations/versions/r0013_compiler_selection.py": "30754ca1ba8d23349199dcef4d87375abe4ad42972665dcd309fc5be6febc34b",
+    "amphora_agent_planning/persistence/migrations/versions/r0014_compiler_operations.py": "27b46d091e106e3a5742d953fdea8ee4aa2ef7f8220e962163f6f2fd8e7c35a0",
+    "amphora_agent_planning/persistence/migrations/versions/r0015_supervision_intake.py": "50c0e97ec8012b750af1cda0f1e63d0545803ef3f509c75b8393250c2b30f59e",
+    "amphora_agent_planning/persistence/migrations/versions/r0016_checkpoint_requests.py": "a7b255ebc86cf4a42cd49283f03ad2cf7d452de7f5e1799c885ddec89ae3150d",
+    "amphora_agent_planning/persistence/migrations/versions/r0017_capture_publication.py": "e3fcb099d341f25022e323cd77e97509c36373561a5f8619b31ac13933161033",
+    "amphora_agent_planning/persistence/migrations/versions/r0018_execution_reports.py": "d44c01e56e2593ae3c0650132b2a0adb463a0018fd863dba09666f5fa1ef48d5",
+    "amphora_agent_planning/persistence/migrations/versions/r0019_evaluation_suites.py": "f314e3edbaa235a61ed4ceec29bbe1c1ff9199fbc7b3f260f0db69830810e74b",
+    "amphora_agent_planning/persistence/migrations/versions/r0020_topology_proposals.py": "1fb2df7111a4bfadc67cbc81c6491f4c8a60bb310ebd72908eb0932170f5a363"
+  },
+  "observed_role_probes": {
+    "0.98_planning_migrator": {
+      "served_ready": true,
+      "exit_code": null
+    },
+    "0.99_planning_migrator": {
+      "served_ready": false,
+      "exit_code": 1
+    },
+    "0.99_planning_service": {
+      "served_ready": true,
+      "exit_code": null
+    }
+  },
+  "schema_change": false,
+  "scope": "Actual separately installed hosts against dedicated local deployment; probes terminated after observation."
+}

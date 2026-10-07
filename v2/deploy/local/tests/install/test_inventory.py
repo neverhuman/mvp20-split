@@ -8,6 +8,17 @@ import pytest
 
 from amphora_deployment import ProfileError
 from amphora_deployment.installation import OWNERS, InstallationInventory, OwnerInstallation
+from amphora_deployment.installation import SERVING_HOSTS
+
+
+def test_gateway_is_a_separate_host_without_database_authority():
+    gateway = SERVING_HOSTS['gateway']
+    assert gateway.schema is None and 'gateway' not in OWNERS
+    assert gateway.serve_command('python.exe','gateway.json',18100)[3] == 'amphora_local_gateway'
+    with pytest.raises(ProfileError,match='has_no_database'):
+        gateway.migration_command('python.exe')
+    with pytest.raises(ProfileError,match='has_no_database'):
+        _ = gateway.database_environment
 
 
 @pytest.fixture

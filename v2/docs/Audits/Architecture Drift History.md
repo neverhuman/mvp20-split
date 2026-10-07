@@ -274,3 +274,7 @@ B3.03 verified 2026-10-05 13:19:41: predeclared300-descriptor protocol/catalog a
 [Local profile audit](BP-09.01_Local_Profile_Closeout.md) accepts actual owner-selected localhost and independent profilepackage; normalstorage/loopback checks bounded, fullserviceinstall/backup/models remain later gates.
 
 - `2026-10-06 22:46:13`: BP-09.02 gateway hosting exposed runtime AJV compilation blocked by CSP. Repaired with reproducible standalone validators across all seven consumer groups; unchanged schema pins,241Studio tests and independent build, actual no-unsafe-eval browser proof. Aligned within this boundary; no follow-up. Selected-host startup/status lock race also repaired with lock-free atomic snapshot reads and actual process-command proof.
+
+## 2026-10-06 23:11:37 - Planning serving identity aligned
+
+BP-09.02 reproduced Planning0.98 admitting planning_migrator and returning ready. Planning0.99 requires postgresql+psycopg/planning_service before connecting and verifies actual current_user during startup/readiness. Isolated wrong-role rejection and right-role ready passed;34 persistence Python files byte-identical, schema0020 unchanged.15 focused Planning checks and53 deployment regressions passed; actual seven-host loopback composition passed. Evidence BP-09-Deployment/Planning_Host_Role.json and Local_Readonly.json. Follow-up: none for this correction; continuous readiness/drain is the active B2.02 gate.

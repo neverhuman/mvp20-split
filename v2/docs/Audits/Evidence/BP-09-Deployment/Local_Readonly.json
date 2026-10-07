@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-10-06T23:09:20-05:00",
+  "owners": {
+    "runtime": {
+      "path": "/health",
+      "status": 200,
+      "release": "Z:\\mvp20-split\\.test-results\\local-owner-inventory-20261006a\\owners\\runtime"
+    },
+    "artifact": {
+      "path": "/ready",
+      "status": 200,
+      "release": "Z:\\mvp20-split\\.test-results\\local-owner-inventory-20261006a\\owners\\artifact"
+    },
+    "registry": {
+      "path": "/v1/releases?limit=1",
+      "status": 200,
+      "release": "Z:\\mvp20-split\\.test-results\\local-owner-inventory-20261006a\\owners\\registry"
+    },
+    "research": {
+      "path": "/health",
+      "status": 200,
+      "release": "Z:\\mvp20-split\\.test-results\\local-owner-inventory-20261006a\\owners\\research"
+    },
+    "knowledge": {
+      "path": "/health",
+      "status": 200,
+      "release": "Z:\\mvp20-split\\.test-results\\local-owner-inventory-20261006a\\owners\\knowledge"
+    },
+    "planning": {
+      "path": "/ready",
+      "status": 200,
+      "release": "Z:\\mvp20-split\\.test-results\\local-planning-role-20261006a"
+    },
+    "gateway": {
+      "path": "/",
+      "status": 200,
+      "release": "Z:\\mvp20-split\\.test-results\\local-gateway-install-20261006b"
+    }
+  },
+  "limits": "Read-only infrastructure only. CLI checks establish startup DB access; static health is liveness, not ongoing DB readiness. No scientific tools, admission or provider calls.",
+  "status": "passed"
+}

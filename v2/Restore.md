@@ -4,13 +4,33 @@ Refreshed 2026-10-06 22:46:13 (America/Chicago). Read FIRST after compression.
 
 ## Current task
 
-BP-09.02/B2.01: explicit owner migrations, restricted serving roles and readiness.
-B1 complete. Child25%, Build33.33%, Acceptance0%; BP-09 parent25% (5/20).
+BP-09.02/B2.02: dependency failure and graceful drain.
+B1 and B2.01 complete. Child37.5%, Build50%, Acceptance0%; BP-09 parent27.5% (5.5/20 equivalents).
 BP-09.01 and BP-08 remain closed100%. User chose this Windows computer and local
 computer access: 127.0.0.1 only. Continue until needed; no current decision blocker.
-B1.04 changes verified and ready commit/push. Previous push145414e2. No active tests,
-builds, browser fixtures or supervisor processes. Only dedicated PG/Qdrant remain up.
+B1.04 committed/pushed e48b3f6a. B2.01 work below is uncommitted. Dedicated PG/Qdrant remain up.
 
+## Latest B2.01 checkpoint - 2026-10-06 23:11:37
+
+B2.01 COMPLETE. All6 dedicated migrations and repeat migrations succeeded. Five installed
+owner startup-check CLIs passed. Planning0.99 rejects migrator, service ready;34 persistence
+Pythonfiles byte-identical to0.98. Evidence ROOT.test-results/local-planning-role-20261006a.
+Allsix owners PLUS gateway actual supervisor startup/HTTP/force-stop/shutdown PASSED:
+ROOT.test-results/local-readonly-20261006a. Five static health responses are NOT ongoing
+DB readiness; CLI checks validate owner startupDB access; Data/Planning ready and Registry
+read useactualDB. No admission/science/providercalls. NoAPI processes remain afterprobe.
+
+Current manifest LOCALAPPDATA/Amphora/local-v2/installation/configurations/
+readonly-20261006a/manifest.json; nonsecret read-only infrastructure profile. Gateway
+SERVING_HOSTS entry has no SQL authority; OWNERS remains6. Original5install dirs plus
+Planning0.99 rolequalifieddir and gatewayinstallb. dev/compose_local_readonly.py,
+check_local_readonly.py and verify_local_readonly.py own composition/qualification.
+53 focuseddeploymentregressions passed6.33s; productionboundarycheckpassed.
+Planning15role/credential/boundstests passed5.97s. Metadata inventory refreshed only.
+Uncommitted checkpoint; update remaining README/evidence asneeded, gitdiff/check thencommit/push.
+Next B2.02 continuous dependencyreadiness and graceful drain. Need actualowner shutdown
+boundary; existing Windows jobs only FORCEstop. No migrations/provider/userblockers.
+All tests/probes EXITED. Sourceedits permitted. Never touch KAPpythonprocesses.
 ## Latest verified boundary
 
 Gateway0.1: services/local_gateway, independent stdlib package. Explicit loopback
@@ -43,7 +63,7 @@ supervisor.dpapi, stable routes and bounded supervisor logs. Identity
 Qdrant127.0.0.1:60688; read state for current ports and eight owner/gateway/control routes.
 Current-user DPAPI; create-once credentials, no rotation/reset. Docker admins can
 inspect runtime env; never print raw inspect or credential-bearing exceptions.
-12 distinct migrator/service roles and6owner schemas exist. NO owner migrations yet.
+12 distinct migrator/service roles and6owner schemas exist. All6owner migrations and repeats now succeeded.
 Actual auth/schema scope/serving DDL denial/Qdrant absent+wrong-key denial/resume passed.
 Do not touch existing acceptance fixture containers/databases/volumes.
 

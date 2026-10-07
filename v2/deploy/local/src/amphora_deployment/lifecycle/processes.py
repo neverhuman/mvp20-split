@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 import subprocess
 
-from ..installation import OWNERS
+from ..installation import SERVING_HOSTS
 from ..installation.inventory import sha256, WheelIdentity
 from ..profile import require, ProfileError
 from .jobs import ProcessJob
@@ -22,7 +22,7 @@ class OwnerProcess:
     @classmethod
     def start(cls, installation, directory, configuration, port, environment, events):
         owner = installation.owner
-        require(owner in OWNERS, "lifecycle_owner")
+        require(owner in SERVING_HOSTS, "lifecycle_owner")
         root = Path(directory)
         python = root / "environment/Scripts/python.exe"
         require(sha256(python) == installation.interpreter_sha256 and
@@ -30,13 +30,13 @@ class OwnerProcess:
                 "lifecycle_installation_changed")
         for wheel in installation.wheels:
             WheelIdentity.verified(root, wheel.filename, wheel.sha256)
-        return cls._launch(owner, OWNERS[owner].serve_command(python, configuration, port), environment, events)
+        return cls._launch(owner, SERVING_HOSTS[owner].serve_command(python, configuration, port), environment, events)
 
     @classmethod
     def _launch(cls, owner, command, environment, events):
         # Internal primitive: callers use start() to verify the immutable owner inventory.
-        require(owner in OWNERS and tuple(command[1:3]) == ("-I", "-m"), "lifecycle_command")
-        expected = OWNERS[owner].module + (".supervision_api" if owner == "planning" else "")
+        require(owner in SERVING_HOSTS and tuple(command[1:3]) == ("-I", "-m"), "lifecycle_command")
+        expected = SERVING_HOSTS[owner].module + (".supervision_api" if owner == "planning" else "")
         require(command[3] == expected, "lifecycle_command_owner")
         require(type(environment) is dict and all(type(k) is str and k.startswith("AMPHORA_") and
                 type(v) is str and "\x00" not in v for k, v in environment.items()), "lifecycle_environment")

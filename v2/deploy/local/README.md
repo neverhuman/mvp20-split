@@ -6,7 +6,7 @@ Design: [Runtime topology](../../docs/Architecture/System/Runtime_Topology.md).
 This package owns local versioned deployment configuration and subsequent
 read-only host compatibility observations. Profile validation does not install software. Separate installation and persistence
 modules own verified inventories and explicit local data-store provisioning. The package does not access
-private service tables, run owner migrations, provision clusters, spend model credits,
+private service tables, implement owner migration SQL, provision clusters, spend model credits,
 grant tool eligibility or operate campaigns. Module replacement preserves this
 boundary and its named rejection reasons.
 
@@ -63,6 +63,8 @@ Storage durability and network exposure have not been physically certified.
 Verified 2026-10-06 21:39:19: owner selected this local computer and computer-only access. NativeWindowsx86_64/Python3.12 profile, localNTFS artifactroot, loopback127.0.0.1. Clean independent installation passes originalprofile/CLI parity, actual storage/socket/preflight rejection probes and47owned tests. [Closeout audit](../../docs/Audits/BP-09.01_Local_Profile_Closeout.md). Normal storage operation is not powerloss/backup certification; full service install and authenticated demo remain later children.
 
 Current BP-09.02 boundary: [installation inventory](src/amphora_deployment/installation/README.md) adds six independently verified owner closures and explicit launch recipes in0.2. The original0.1profile format and qualified installation are preserved. Inventory is not service readiness; new persistence/credential/lifecycle/gateway work remains.
+
+BP-09.02/B2.01 now invokes explicit installed owner migration CLIs with separate migrator credentials while all hosts are stopped. Six owners and the separate gateway pass actual loopback startup checks with serving credentials. Planning0.99 repairs migrator-role admission without schema changes. The infrastructure profile grants reads only; static health is liveness, not continuous database readiness. Dependency failure and graceful drain remain B2.02.
 
 BP-09.02/B1.02 adds [protected credentials](src/amphora_deployment/credentials/README.md) and [dedicated persistence](src/amphora_deployment/persistence/README.md). Actual local role/authentication/resume checks passed via dev/verify_local_stores.py. Owner API lifecycle and gateway remain B1.03/B1.04.
 

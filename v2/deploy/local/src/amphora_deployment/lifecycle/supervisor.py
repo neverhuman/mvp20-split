@@ -4,7 +4,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import threading
 
-from ..installation import OWNERS
+from ..installation import SERVING_HOSTS
 from ..profile import require
 from .processes import OwnerProcess
 
@@ -24,7 +24,7 @@ class OwnerBinding:
 
 class Supervisor:
     def __init__(self, bindings, events):
-        require(set(bindings) <= set(OWNERS) and bool(bindings), "lifecycle_bindings")
+        require(set(bindings) <= set(SERVING_HOSTS) and bool(bindings), "lifecycle_bindings")
         self.bindings, self.events = dict(bindings), events
         self.processes = {}
         self.lock = threading.RLock()

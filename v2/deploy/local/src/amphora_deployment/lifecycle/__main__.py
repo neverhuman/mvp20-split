@@ -7,6 +7,7 @@ import urllib.error
 import urllib.request
 
 from ..profile import ProfileError
+from ..persistence.state import LocalState
 from .configuration import control_token, load_bindings
 from .control import ControlServer
 from .events import LifecycleEvents
@@ -29,21 +30,24 @@ def main():
             bindings = load_bindings(args.root, args.manifest, routes)
             token = control_token(args.root, create=True)
             supervisor = Supervisor(bindings, LifecycleEvents(args.root / "logs"))
-            server = ControlServer(routes.port("supervisor"), supervisor, token)
-            try:
-                server.serve()
-            finally:
-                # Unexpected supervisor exit is forced teardown, not graceful drain.
-                for process in supervisor.processes.values():
-                    process.force_stop()
+            # Serving holds the operation lease, excluding provisioning/migrations.
+            # Control clients read atomic snapshots and never take this writer lease.
+            with LocalState(args.root):
+                server = ControlServer(routes.port("supervisor"), supervisor, token)
+                try:
+                    server.serve()
+                finally:
+                    # Unexpected supervisor exit is forced teardown, not graceful drain.
+                    for process in supervisor.processes.values():
+                        process.force_stop()
             return 0
         if args.action in {"status", "shutdown"}:
             path = "/" + args.action
         else:
             if args.owner is None:
                 parser.error("owner command requires --owner")
-            from ..installation import OWNERS
-            if args.owner not in OWNERS:
+            from ..installation import SERVING_HOSTS
+            if args.owner not in SERVING_HOSTS:
                 parser.error("unknown owner")
             path = "/owners/" + args.owner + "/" + args.action
         token = control_token(args.root)

@@ -7,7 +7,7 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 
 from ..profile import label, require
-from .recipes import OWNERS
+from .recipes import OWNERS, SERVING_HOSTS
 
 
 def sha256(path):
@@ -45,8 +45,8 @@ class OwnerInstallation:
 
     @classmethod
     def from_directory(cls, owner, directory, source_lock):
-        require(owner in OWNERS, "installation_owner")
-        recipe = OWNERS[owner]
+        require(owner in SERVING_HOSTS, "installation_owner")
+        recipe = SERVING_HOSTS[owner]
         directory, source_lock = Path(directory), Path(source_lock)
         manifest_path = directory / "manifest.json"
         record = json.loads(manifest_path.read_bytes())
@@ -55,7 +55,7 @@ class OwnerInstallation:
         packages = record.get("packages")
         require(type(packages) is dict and recipe.package in packages, "installation_packages")
         # This inventory names owner packages, never a combined backend closure.
-        foreign = {item.package for item in OWNERS.values()} - {recipe.package}
+        foreign = {item.package for item in SERVING_HOSTS.values()} - {recipe.package}
         require(not foreign.intersection(packages), "installation_private_peer")
         release = label(packages[recipe.package], "installation_release")
         wheels = record.get("wheels")

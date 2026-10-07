@@ -66,3 +66,5 @@ repeat-start identity, explicit restart, force-stop and clean control shutdown v
 dev/verify_supervisor_commands.py. Missing Registry configuration is intentional:
 this is lifecycle/failure evidence, not six-owner serving readiness. Successful
 owner startup/migrations and drain belong to B2; full demo remains later children.
+
+B2.01 serving holds the deployment operation lease for the supervisor lifetime, excluding simultaneous provisioning/migrations. Read-only control still uses atomic snapshots. Actual supervisor command regression passed with this lease.

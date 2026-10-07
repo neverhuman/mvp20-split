@@ -7,6 +7,7 @@ from amphora_deployment.lifecycle.configuration import allowed_reference
     ('runtime','PG_RUNTIME_MIGRATOR_PASSWORD'), ('runtime','PG_ADMIN_PASSWORD'),
     ('artifact','GATEWAY_SESSION_KEY'), ('knowledge','PLANNING_OPERATOR_TOKEN'),
     ('planning','CURSOR_KEY'), ('registry','QDRANT_API_KEY'), ('runtime','SUPERVISOR_CONTROL_TOKEN'),
+    ('gateway','PG_RUNTIME_SERVICE_PASSWORD'), ('gateway','PG_ADMIN_PASSWORD'), ('gateway','WORKER_RUNTIME_TOKEN'),
 ])
 def test_owner_cannot_receive_other_authority_credentials(owner, reference):
     assert not allowed_reference(owner, reference)
@@ -16,6 +17,7 @@ def test_owner_cannot_receive_other_authority_credentials(owner, reference):
     ('runtime','RUNTIME_OPERATOR_TOKEN'), ('runtime','WORKER_RUNTIME_TOKEN'),
     ('artifact','KNOWLEDGE_DATA_TOKEN'), ('artifact','ARTIFACT_RUNTIME_TOKEN'),
     ('knowledge','KNOWLEDGE_DATA_TOKEN'), ('artifact','QDRANT_API_KEY'), ('runtime','CURSOR_KEY'),
+    ('gateway','RUNTIME_OPERATOR_TOKEN'), ('gateway','GATEWAY_SESSION_KEY'),
 ])
 def test_explicit_owner_peer_grants(owner, reference):
     assert allowed_reference(owner, reference)

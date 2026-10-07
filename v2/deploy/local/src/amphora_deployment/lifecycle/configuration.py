@@ -6,13 +6,15 @@ import secrets
 from urllib.parse import quote
 
 from ..credentials import CredentialVault, SecretBundle
-from ..installation import OWNERS, OwnerInstallation
+from ..installation import OWNERS, SERVING_HOSTS, OwnerInstallation
 from ..persistence.state import LocalState
 from ..profile import require
 from .supervisor import OwnerBinding
 
 
 def allowed_reference(owner, name):
+    if owner == "gateway":
+        return name == "GATEWAY_SESSION_KEY" or name in {key.upper() + "_OPERATOR_TOKEN" for key in OWNERS}
     if name == owner.upper() + "_OPERATOR_TOKEN":
         return True
     if name == "CURSOR_KEY":
@@ -52,7 +54,7 @@ def load_bindings(root, manifest, routes):
     require(type(config) is dict and set(config) == {"profile", "owners"} and
             config["profile"] == "local-supervisor-v1", "lifecycle_manifest_shape")
     owners = config["owners"]
-    require(type(owners) is dict and bool(owners) and set(owners) <= set(OWNERS), "lifecycle_manifest_owners")
+    require(type(owners) is dict and bool(owners) and set(owners) <= set(SERVING_HOSTS), "lifecycle_manifest_owners")
     with LocalState(root) as state:
         require(state.record.get("phase") == "stores_ready", "lifecycle_stores_required")
         bundle = CredentialVault(state.root / "credentials.dpapi", state.identity).load()
@@ -66,9 +68,10 @@ def load_bindings(root, manifest, routes):
         references = record["secret_references"]
         require(type(references) is list and len(references) <= 64 and all(type(name) is str and allowed_reference(owner, name) for name in references), "lifecycle_credential_scope")
         environment = {"AMPHORA_" + name:value for name,value in bundle.environment(references).items()}
-        recipe = OWNERS[owner]
-        password = bundle.environment(["PG_" + recipe.service_role.upper() + "_PASSWORD"])["PG_" + recipe.service_role.upper() + "_PASSWORD"]
-        environment[recipe.database_environment] = "postgresql+psycopg://" + recipe.service_role + ":" + quote(password, safe="") + "@127.0.0.1:" + str(pg["port"]) + "/amphora_local"
+        recipe = SERVING_HOSTS[owner]
+        if recipe.schema is not None:
+            password = bundle.environment(["PG_" + recipe.service_role.upper() + "_PASSWORD"])["PG_" + recipe.service_role.upper() + "_PASSWORD"]
+            environment[recipe.database_environment] = "postgresql+psycopg://" + recipe.service_role + ":" + quote(password, safe="") + "@127.0.0.1:" + str(pg["port"]) + "/amphora_local"
         configuration = Path(record["configuration"])
         require(configuration.is_file(), "lifecycle_owner_configuration_missing")
         if owner == "planning":

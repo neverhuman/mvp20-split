@@ -1,8 +1,8 @@
 # Agent Planning service boundary
 
-Current bounded successor: [topology policy](src/amphora_agent_planning/topology/README.md), Planning0.98/planning0020, verified 2026-10-06 16:01:13. Pure one-edit graph proposals preserve original context and reject incompatible bindings. Owner persistence/current resolution and public API/host are verified; actual adoption remains BP-08.04/B2; existing model/dispatch profiles unchanged.
+Current release: Planning0.99/planning0020. BP-09.02 corrects host enforcement: only planning_service may serve, and readiness checks the actual database identity. Actual isolated migrator rejection and service readiness passed; all 34 persistence Python files are byte-identical to0.98. The [topology policy](src/amphora_agent_planning/topology/README.md) and existing model/dispatch profiles are unchanged.
 
-- Version: Planning0.95.0; public Planning0.10 and supervision0.10; owned migration head0019.
+- Version: Planning0.99.0; public Planning0.10 and supervision0.10; owned migration head0020.
 - Reviewed: `2026-10-06 09:21:10` (America/Chicago); BP-07 accepted within stated engineering/evaluation limits.
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Campaign acceptance: [BP-07.03](../../docs/Build%20Plans/BP-07/Completed/BP-07.03%20Campaign%20proposals%20and%20context.md); supervisor acceptance [BP-07.04](../../docs/Build%20Plans/BP-07/Completed/BP-07.04%20Durable%20supervisor%20and%20races.md).

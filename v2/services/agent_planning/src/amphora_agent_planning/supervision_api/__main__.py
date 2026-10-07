@@ -4,12 +4,12 @@ import argparse
 import os
 
 import uvicorn
-from sqlalchemy import create_engine
 from sqlalchemy.exc import SQLAlchemyError
 
 from ..supervision_intake import SupervisionIntake
 from .app import create_app
 from .credentials import Credentials
+from .hosting import serving_engine
 
 
 def main():
@@ -21,8 +21,7 @@ def main():
         parser.error('port must be between 1 and 65535')
     try:
         credentials = Credentials.from_json(os.environ['AMPHORA_PLANNING_SUPERVISION_CREDENTIALS'])
-        engine = create_engine(os.environ['AMPHORA_PLANNING_DATABASE_URL'],
-                               connect_args={'options': '-c statement_timeout=5000'})
+        engine = serving_engine(os.environ['AMPHORA_PLANNING_DATABASE_URL'])
     except (KeyError, TypeError, ValueError, SQLAlchemyError):
         raise SystemExit('Valid Planning database and supervisor credentials configuration required') from None
     try:
