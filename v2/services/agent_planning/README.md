@@ -75,3 +75,5 @@ BP-09.03/B1.4 Planning0.102 adds compact checkpoint schema guidance as a separat
 profile; old profile bytes/replay and the six-call/USD0.50 scope allowance remain.
 The correction follows an actual-owner required-input rejection before any model
 attempt. See checkpoint_input and checkpoint_budget boundaries for exact behavior.
+
+SQ-01/C1 source package0.102.1 updates dependency pins for Planning contracts0.11.0. No existing wire schema, owner policy or serving behavior changes in this checkpoint; new criterion-follow-up acceptance remains C2. Frozen demo installations retain their separately qualified older packages and copied lockfile identities.

@@ -1,6 +1,19 @@
 # Planning public contracts
 
-Version0.9.0; campaign draft output and exact Research selections are additive to the preserved extraction/reference profiles. These DTOs describe scoped context, reviewed model/configuration pins, logical requests, physical attempt identity and observed usage. Dependencies are public Core, Campaigns, Graph Runtime, Knowledge, Evidence and Research contracts plus Pydantic. No provider SDK, persistence, credential, endpoint, domain policy or execution acceptance belongs here.
+SQ-01/C1 adds separate `planning.checkpoint-followup-draft/v1` (payload version3)
+and `planning.campaign-followup-selection/v1` (payload version2). Exact criterion
+references group question/need revisions, criterion ID and optional assessment
+selection. Targets carry qualitative improvement/learning; unresolved points retain
+their own exact references. The new output permits future campaigns/evidence
+requests or abstention, not materialization adjustments. Optional focus Artifact
+references denote untrusted human inputs, not owner acceptance or read permission.
+Collections are bounded:32 targets,64 preparation criteria/unresolved points;
+2048-character intent fields. Old profile types and schema bytes remain unchanged.
+Duplicate/membership/scope/assessment binding and raw output size remain Planning
+domain checks in C2. These DTOs do not activate the new provider or Runtime path.
+Owned tests are `tests/followup`; frozen demo assets/installed owners are untouched.
+
+Version0.11.0; campaign draft output and exact Research selections are additive to the preserved extraction/reference profiles. These DTOs describe scoped context, reviewed model/configuration pins, logical requests, physical attempt identity and observed usage. Dependencies are public Core, Campaigns, Graph Runtime, Knowledge, Evidence and Research contracts plus Pydantic. No provider SDK, persistence, credential, endpoint, domain policy or execution acceptance belongs here.
 
 Request collections are bounded immutable tuples; strict scalar validation and forbidden extras apply; each versioned root fixes its schema_version. Usage fields may be null: unknown is not zero. JSON Schema publication uses dev/export_schemas.py; additive planning roots preserve predecessor bytes. Context relationships and immutable fingerprints belong to Agent Planning's context domain. A DTO does not authorize source reads, provider egress, spend, acceptance or real science.
 

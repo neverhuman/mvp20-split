@@ -1,12 +1,12 @@
 [project]
 name = "amphora-campaign-runtime"
-version = "0.65.0"
+version = "0.65.1"
 requires-python = ">=3.12,<3.13"
 dependencies = [
     "amphora-contracts-draft-successor==0.1.0",
     "amphora-contracts-execution-proofs==0.1.0",
-    "amphora-contracts-planning==0.10.0",
-    "amphora-contracts-supervision==0.10.0",
+    "amphora-contracts-planning==0.11.0",
+    "amphora-contracts-supervision==0.10.1",
     "pydantic>=2.12,<3",
     "amphora-contracts-core==0.1.0",
     "amphora-contracts-tools==0.1.0",

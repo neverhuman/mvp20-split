@@ -1,0 +1,20 @@
+{
+  "timestamp_local": "2026-10-07 12:59:32",
+  "status": "contracts_verified_owner_integration_pending",
+  "contract_version": "0.11.0",
+  "predecessor_schemas_unchanged": 632,
+  "new_schema_files": 4,
+  "contract_publication_tests": 110,
+  "consumer_tests": 183,
+  "new_module_statements": [
+    41,
+    41
+  ],
+  "boundaries": "passed",
+  "limitations": [
+    "DTO validation is not record membership or authority",
+    "No new profile activated",
+    "No independent new-owner qualification or full foundation claim",
+    "Frozen demo installations and locks unchanged"
+  ]
+}

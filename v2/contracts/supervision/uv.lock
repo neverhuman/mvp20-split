@@ -127,7 +127,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-contracts-planning"
-version = "0.10.0"
+version = "0.11.0"
 source = { editable = "../planning" }
 dependencies = [
     { name = "amphora-contracts-campaigns" },
@@ -190,7 +190,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-contracts-supervision"
-version = "0.10.0"
+version = "0.10.1"
 source = { editable = "." }
 dependencies = [
     { name = "amphora-contracts-campaigns" },

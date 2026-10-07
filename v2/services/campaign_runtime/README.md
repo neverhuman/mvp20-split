@@ -169,3 +169,5 @@ Runtime0.51 adds [original request delivery](src/amphora_campaign_runtime/superv
 BP-07.04 explicit checkpoint worker startup, configuration, role checks and replacement boundaries are documented in [the worker module](src/amphora_campaign_runtime/supervision_loop/README.md). Run worker processes separately from HTTP serving; startup never migrates or silently enables live models.
 
 BP-08.03 supporting boundary: [accepted producer evidence](src/amphora_campaign_runtime/execution_proofs/README.md), Runtime0.64/runtime0028, adds an authenticated read-only provenance projection without peer SQL or execution authority. Its focused README owns implementation/verification status.
+
+SQ-01/C1 source package0.65.1 updates dependency pins for Planning contracts0.11.0. No existing wire schema, owner policy or serving behavior changes in this checkpoint; new criterion-follow-up acceptance remains C2. Frozen demo installations retain their separately qualified older packages and copied lockfile identities.

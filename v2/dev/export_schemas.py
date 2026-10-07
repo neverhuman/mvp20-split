@@ -97,6 +97,8 @@ MODELS = {
     "supervision.checkpoint-execution-report": supervision_contracts.CheckpointExecutionReport,
     "supervision.checkpoint-context": supervision_contracts.CheckpointContext,
     "planning.checkpoint-draft": planning_contracts.CheckpointDraft,
+    "planning.checkpoint-followup-draft": planning_contracts.CheckpointFollowupDraft,
+    "planning.campaign-followup-selection": planning_contracts.CampaignFollowupSelection,
     "supervision.checkpoint-decision": supervision_contracts.CheckpointDecision,
     "supervision.admit-graph": supervision_contracts.AdmitSupervisedGraph,
     "supervision.checkpoint-request": supervision_contracts.CheckpointRequest,

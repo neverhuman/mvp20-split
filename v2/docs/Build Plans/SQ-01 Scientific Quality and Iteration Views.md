@@ -2,13 +2,13 @@
 
 ## Canonical tracker
 
-- Status: active successor to closed BP-05; B1/B2 and B3 human-focus half complete; additive contract scope approved; C1 active.
-- Last refreshed: `2026-10-07 12:20:17` (America/Chicago).
-- Completion: 41.67%; Build50%, Verification0%; 2.5/6 unit-weight gates complete after approved scope expansion.
+- Status: active successor to closed BP-05; B1/B2 and B3 human-focus half complete; C1 contracts complete; C2 owner integration active.
+- Last refreshed: `2026-10-07 13:00:06` (America/Chicago).
+- Completion: 58.33%; Build70%, Verification0%; 3.5/6 unit-weight gates complete.
 - Owner: Studio presentation; Research/Knowledge own assessments; Agents owns proposals.
 - Prerequisites: BP-06 owner quality/correction projections and BP-07.03 proposal contracts; activation coherence audit and exact DTO reconciliation before implementation.
-- Current focus: C1 additive criterion-target profile and preparation contract; local human focus is verified.
-- Next gate: C1 schema/identity/compatibility tests, then C2 Planning/Runtime integration and remaining B3/V1.
+- Current focus: C2a exact criterion membership/assessment/focus binding in Planning domain objects.
+- Next gate: C2a domain tests, C2b preparation/provider integration, C2c Runtime retained-proposal/replay; then remaining B3/V1.
 - Blockers: no owner decision pending. Missing criterion bindings are approved implementation scope in SQ-01.01.
 - Requirement: [Campaign progress](../Architecture/Requirements/Product_Requirements.md#campaign-progress-uncertainty-and-subsequent-iteration).
 - Architecture: [Studio](../Architecture/Experience/Studio.md#exploratory-quality-and-next-campaign-focus).
@@ -20,7 +20,7 @@
 3. B3 - Implement human focus selection and presentation of authorized AI follow-up proposals through public owner APIs. Link selected points to intended next-campaign improvements, expected information gain and retained unresolved items. Verify proposal lineage and absence of routine approval queues or active-run repinning.
 4. V1 - Module-scoped tests, browser visual/interaction proof, independent replacement acceptance and scoped drift audit. Show useful retained results despite several weak points and a subsequent campaign targeting selected weaknesses. Scientific calibration and efficacy require separate evidence.
 
-Approved scope adds C1 (additive Pydantic output and preparation selection, predecessor schema/byte pins, exact criterion identity/limit tests) and C2 (Planning validation/retention plus Runtime retained-proposal compatibility and replay). Execution order is completed B1/B2/B3-human-focus, then C1, C2, remaining B3 proposals, V1. Each of B1, B2, B3, C1, C2 and V1 has unit weight. B3 retains two equal halves; human focus is complete, proposals remain. Overall completion is2.5/6=41.67%; Build is2.5/5=50%; Verification is0/1=0%. The prior62.5% measured the smaller four-gate scope; no completed credit was removed. Keep tests under their owning modules; cross-owner fixtures remain a separate integration tier. Before coding, apply the local UI Coding Guidelines. Update replacement READMEs for touched modules. No private peer imports or SQL; Studio cannot create scientific verdicts or execute AI proposals itself.
+Approved scope adds C1 (additive Pydantic output and preparation selection, predecessor schema/byte pins, exact criterion identity/limit tests) and C2 (Planning validation/retention plus Runtime retained-proposal compatibility and replay). Execution order is completed B1/B2/B3-human-focus, then C1, C2, remaining B3 proposals, V1. Each of B1, B2, B3, C1, C2 and V1 has unit weight. B3 retains two equal halves; human focus is complete, proposals remain. C1 is complete: overall3.5/6=58.33%; Build3.5/5=70%; Verification0/1=0%. The prior62.5% measured the smaller four-gate scope; no completed credit was removed. Keep tests under their owning modules; cross-owner fixtures remain a separate integration tier. Before coding, apply the local UI Coding Guidelines. Update replacement READMEs for touched modules. No private peer imports or SQL; Studio cannot create scientific verdicts or execute AI proposals itself.
 
 BP-05 remains closed. This plan adds no credit or scope to BP-06 B2; its scheduling follows its named dependencies and does not interrupt the current correction implementation.
 
@@ -112,3 +112,21 @@ that complete experience. Scientific qualification remains outside this internal
 DEMO-01 checkpoint 2026-10-07 12:44:11: actual-owner unassessed point/focus export verified with Studio0.16.1 entry fragment repair. This is partial evidence only, not full V1 or AI proposal adoption. One prior read failure remains unresolved for V1 qualification. C1 approved contract implementation remains the next task; demo assets are frozen independently.
 
 C1 preflight 2026-10-07 12:49:15: snapshotted all7 owner source-lock byte streams for each demo scenario before changing dependencies. Wrapper selects frozen-original/frozen-successor derived manifests; original qualification evidence unchanged. Session20261007-124737-8b02736b passes actual startup/seven-owner drain with copied locks. This prerequisite earns no contract implementation credit.
+
+## C1 contract delivery
+
+2026-10-07 12:59:32: Planning contracts0.11 publish future-only CheckpointFollowupDraft
+(payload3) and CampaignFollowupSelection(payload2), exact criterion reference groups,
+qualitative targets/unresolved points and optional human focus ArtifactRef. All632
+predecessor schema files preserve exact bytes. Four new schemas are published.
+110 planning/publication tests pass12.74s; new module41/41statements100%, no branches.
+183 supervision/Planning-output consumer tests pass12.54s; dependency boundaries pass.
+C2 owns duplicate/scope/membership/read-set/output-size/authorization semantics; DTOs
+explicitly do not resolve owner records or authorize calls.
+
+Dependency-only source package revisions: Supervision0.10.1, Runtime0.65.1,
+Planning0.102.1. Declared pins and four existing locks refreshed; dev environment
+synced. Structural foundation inventory refreshed only; no full-foundation or
+new installed-owner qualification claim. Frozen demo installed owners/lock snapshots
+remain unchanged. C2 consists of three equal subdeliveries: a domain binding,
+b preparation/provider integration, c Runtime acceptance/replay. None completed yet.

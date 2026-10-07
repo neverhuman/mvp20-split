@@ -109,3 +109,17 @@ from .checkpoint_output import (
 )
 
 __all__ += ["CheckpointDraft", "MaterializationAdjustmentDraft", "MaterializationFieldProposal", "checkpoint_draft_schema"]
+
+from .followup import (
+    CampaignCriterionRef,
+    CampaignCriterionTarget,
+    CampaignFollowupSelection,
+    CheckpointFollowupDraft,
+    CriterionUnresolvedPoint,
+    campaign_followup_selection_schema,
+    checkpoint_followup_draft_schema,
+)
+
+__all__ += ["CampaignCriterionRef", "CampaignCriterionTarget", "CampaignFollowupSelection",
+            "CheckpointFollowupDraft", "CriterionUnresolvedPoint", "campaign_followup_selection_schema",
+            "checkpoint_followup_draft_schema"]
