@@ -4,28 +4,47 @@ Refreshed 2026-10-07 05:13:52 (America/Chicago). Read FIRST after compression.
 
 ## Active task and exact execution state
 
-BP-09.03/B1.4a COMPLETE; B1.4b active, NO additional percentage credit.
-No running checks/probes. Latest pushed be6c98a9; verified Deployment0.10 plus
-integrated harness/docs await commit/push. Next: ONE guarded new live campaign using
-independent Deployment0.10 interpreter and same immutable configuration/project.
-Command .test-results/local-managed-campaign-install-20261007c/owner/environment/Scripts/python.exe
-v2/dev/verify_local_integrated.py --configuration .test-results/local-integrated-materials-20261007c
---output .test-results/local-integrated-live-20261007b --key-file Z:/ssos/.env.
-Then actual readback/restart and explicit scientific15/6/3/15/context/usage verification.
-Do not credit B1.4b until full integrated oracle passes; B1.4c browser trace remains.
+B1.4b COMPLETE. Child22.92%,Build30.56%,Acceptance0%; parent44.58%,(8+11/12)/20.
+NO running checks/probes. Latest pushed37d2eabd. Live b session92507 EXIT0;
+independent five-owner readback session26573 EXIT0. Evidence Owner_Context_Campaign.json.
+Current docs/evidence need diff review + commit/push; then immediately B1.4c browser/API.
 
-Independent managed session58090 EXIT0:279tests28.12s, original three-owner
-run3d4506afb3914570b215f7321f39dc90 passes15/6/3/15retained108.969s, controlmax0.062s.
-Six-owner no-model session64881 EXIT0: rund7341c6863984c4ab282d6aba10b1f65 passes
-15/6/3/15retained133.219s including shutdown, controlmax0.078s. Both zero TLS denials,
-all owners drained0. Six-owner raw .test-results/local-integrated-science-20261007b.
-Installed Deployment0.10 .test-results/local-managed-campaign-install-20261007c/owner.
-Wheel c267ddb7d6260b675e18e3812cb6b2ffa68d84f602496466d4d01eb7d1f5ac1a.
-Fresh rebuild .test-results/local-deployment-capacity-rebuild-20261007a identical.
-Source84TLS/catalogtests20.65s; focused23TLS17.99s coverage
-.test-results/tls-capacity-20261007a.json. TLS_Capacity.json updated.
-TWO model calls totalUSD0.034854; no additional call in these controls.
-Production/module sources unchanged since qualification. Dev/fixture READMEs current.
+Runfc257cf8882147cb8cca56c778837e60: required actual Research/Knowledge context,
+Runtime model_accepted/abstained, full scientific15successful/6eval/3checkpoints/
+15confirmed outputs. Elapsed200.765s including shutdown, maxcontrol0.140s, zero TLSdenials.
+Raw .test-results/local-integrated-live-20261007b and local-integrated-readback-20261007b.
+Exact original graph/admission/context/proposal and usage survive restart without
+workers/key/calls. Third call20006input/480output, USD0.017164500.
+THREE physical model calls totalUSD0.052018500, full reservationsUSD0.175104 retained.
+Same scope internal/owner-records-7e21ca85bd6044198b1585aa2c41d336, six/USD0.50 ceiling.
+
+B1.4c next: actual local Studio browser/API objective/proposal/execution/artifact/
+evidence/successor trace. Read UI_Coding_Guidelines.md already consumed again.
+Findings: Studio0.9 entry src/presentation/entry/workspace.tsx creates Monitor,
+Navigation,NamedViews,Evidence models but DOES NOT inject existing SupervisionModel.
+MonitorWorkspace already supports optional supervision prop and Campaign reasoning
+view; inject SupervisionModel(new SupervisionClient()) and include lifecycle dispose.
+Existing Design/Explore models/presentation also remain to assemble; no new public
+owner commands needed for reasoning inspection. Gateway0.2 localhost context only
+actor/scope/run_id/synthetic; fixed peers proxy public owner APIs, no browser keys.
+Existing tests/browser/local_entry.mjs uses real gateway + synthetic Runtime peer:
+keep that limitation, add ACTUAL owner/browser proof. Older dev verify_supervision_browser.py
+uses different SQL-seeded fixture; not current demo proof.
+Build scripts/build-local.mjs writes dist/local; preserve old0.9 assets before rebuild
+and choose fresh copied immutable assets for new gateway config, not loaded config edits.
+Need read exact existing UI/test files before changes, use module-scoped verification
+and actual1440/390screenshots/axe/keyboard. No model calls required for browser readback.
+Partial beforecommit plan fractions/checkpoints should remain truthful; B3 historical
+expired attempts are unresolved reliability evidence, not proof of scientific efficacy.
+
+Independent Deployment0.10 installed .test-results/local-managed-campaign-install-20261007c/owner.
+279tests28.12s and original three-owner regression15/6/3/15 passes.
+Six-owner no-model d7341c6863984c4ab282d6aba10b1f65 also passes15/6/3/15.
+Fresh .test-results/local-deployment-capacity-rebuild-20261007a wheel identical:
+c267ddb7d6260b675e18e3812cb6b2ffa68d84f602496466d4d01eb7d1f5ac1a.
+SourceTLS/catalog84tests20.65s; focused23TLS17.99s; coverage tls-capacity-20261007a.json.
+Production/module sources unchanged since qualification; boundary/lint/diff passed.
+Refresh 2026-10-07 05:22:21.
 
 Confirmed separate TLS capacity defect: new test_capacity.py ten simultaneous
 trusted connections FAILED against default8 (ConnectionAbortedError). Five tool

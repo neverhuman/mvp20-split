@@ -1,0 +1,126 @@
+{
+  "timestamp_local": "2026-10-07 05:22:21",
+  "status": "passed",
+  "scope": {
+    "tenant_id": "internal",
+    "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+  },
+  "run_id": "fc257cf8882147cb8cca56c778837e60",
+  "deployment": "0.10.0",
+  "planning": "0.102.0",
+  "runtime": "0.65.0",
+  "scientific": {
+    "successful_invocations": 15,
+    "evaluations": 6,
+    "selection_checkpoints": 3,
+    "confirmed_outputs": 15
+  },
+  "checkpoint": {
+    "winner": "model_accepted",
+    "effect": "abstained",
+    "attempts": 1,
+    "usage": {
+      "input_tokens": 20006,
+      "output_tokens": 480,
+      "accounting_units": 17164500,
+      "certainty": "reported"
+    },
+    "rationale": "The supplied context indicates this is a synthetic integration checkpoint, not a scientific validation task, and the pinned hypothesis explicitly says there is no claim of scientific efficacy. The available evidence does not justify a bounded campaign change before the synthetic numeric seed tool, so the supported choice is to abstain and leave the campaign unchanged. The hypothesis limits conclusions by framing the objective as structural/synthetic only, so any inference about real-world efficacy or biology would be unsupported.",
+    "required_context": {
+      "artifact_id": "1c8037746bca419c87f7d1ce24759d93",
+      "scope": {
+        "tenant_id": "internal",
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+      },
+      "sha256": "443103bc89af44fb2feaec3949ac87482197778a26b0df14d5b2b41844b4b82f",
+      "media_type": "application/octet-stream",
+      "schema_ref": {
+        "schema_id": "demo.synthetic-document",
+        "version": "1",
+        "sha256": "e4164d01946504ebc9ca83c14651b1889a99cf363073d99d0de6b1c28539e1f0"
+      },
+      "size_bytes": 1094
+    },
+    "fit": {
+      "format": "planning-campaign-packet-fit.v2",
+      "request_sha256": "1c544d9a4b205b066b1688720669dd3545ddc2165f47d8f992648c942f1de04d",
+      "tokenizer": {
+        "schema_id": "planning.checkpoint-openai-input-bound.v2",
+        "version": "1",
+        "sha256": "fc755855508e1e6bcb0ef694ca9ad61eceea7d33c8bc98e45d76ac6c9a54756d"
+      },
+      "unit": "conservative_input_token_bound",
+      "framing": "checkpoint_responses_utf8_bytes_plus_1024",
+      "packet_sha256": "edb5c47daefd78b5afc15ecc67bcec677638f4b00650b3e0b33b2055ee7e6a6c",
+      "packet_bytes": 22717,
+      "input_tokens": 63928,
+      "output_reserve": 2048,
+      "input_limit": 65536,
+      "window_limit": 400000,
+      "original_total_limit": 67584,
+      "fits": true,
+      "reason": null,
+      "authorization": "none",
+      "envelope_sha256": "9471ebc4614eb039c9df998fe297357ab912bb89e739fd142402abbbaa5335ef",
+      "envelope_bytes": 62904
+    }
+  },
+  "restart": {
+    "original_graph_and_admission_unchanged": true,
+    "exact_owner_context_unchanged": true,
+    "additional_model_calls": 0,
+    "owners_drained_zero": true
+  },
+  "execution_seconds": 200.76499999989755,
+  "maximum_control_latency_seconds": 0.14000000013038516,
+  "tls": {
+    "runtime": {
+      "state": "drained",
+      "port": 59104,
+      "upstream_readiness": "not_assessed",
+      "connections": {
+        "limit": 16,
+        "active": 0,
+        "peak": 4,
+        "admitted": 628,
+        "denied": 0
+      }
+    },
+    "artifact": {
+      "state": "drained",
+      "port": 59105,
+      "upstream_readiness": "not_assessed",
+      "connections": {
+        "limit": 16,
+        "active": 0,
+        "peak": 3,
+        "admitted": 201,
+        "denied": 0
+      }
+    }
+  },
+  "cumulative_model_usage": {
+    "physical_attempts": 3,
+    "reported_usd": "0.052018500",
+    "retained_reservation_usd": "0.175104",
+    "scope_attempt_limit": 6,
+    "scope_usd_limit": "0.50"
+  },
+  "raw": [
+    {
+      "path": ".test-results/local-integrated-live-20261007b/evidence.json",
+      "sha256": "af749367de498290f97b58017b1b0b2f22d8c0029ad8f7b18476217c4e195f50"
+    },
+    {
+      "path": ".test-results/local-integrated-readback-20261007b/evidence.json",
+      "sha256": "3bc1cc3c548bd5c1c65420456bab3607789d0431964b034c7a3e460096583dc7"
+    }
+  ],
+  "limits": [
+    "Actual model consumes a required bounded projection of exact public Research/Knowledge records",
+    "Graph is a reviewed synthetic numeric fixture, not LLM-authored topology or scientific efficacy",
+    "Model abstention preserves uncertainty and continues the graph; no scalar or tool-input adjustment claimed",
+    "Earlier expired attempts remain preserved with unresolved cause for B3; no reset or causal attribution to TLS capacity",
+    "Local browser objective-to-successor trace remains B1.4c"
+  ]
+}
