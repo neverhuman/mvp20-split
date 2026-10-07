@@ -87,7 +87,7 @@ def bind_workers(output, bundle, material, identity, ports, run_id, label):
     config_root.mkdir()
     workers, replicas = {}, {}
     for stage in ('seed', 'requests', 'collect', 'vary', 'evaluate'):
-        name = 'synthetic-objectives' if stage == 'evaluate' else 'evolution-' + stage
+        name = material.get('evaluator_profile', 'synthetic-objectives') if stage == 'evaluate' else 'evolution-' + stage
         image = material['images']['evaluate' if stage == 'evaluate' else 'numeric']
         path = write(config_root / (stage + '.json'), {'actor_id': 'science-slot', 'scope': material['scope'],
             'run_id': run_id, 'image_sha256': image[7:],

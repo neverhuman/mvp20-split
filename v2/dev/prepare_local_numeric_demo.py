@@ -13,14 +13,15 @@ IMAGES = {'numeric': 'sha256:7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef
           'evaluate': 'sha256:b6d73b31058d358a5a2a13e44979e8b6e3a6acd06260670226a1b2570f1135e3'}
 
 
-def prepare(output, scope, registry_python):
+def prepare(output, scope, registry_python, *, images=None, evaluator_profile=None):
+    images = dict(IMAGES if images is None else images)
     output.mkdir(parents=True, exist_ok=False)
 
     def write(name, value):
         (output / name).write_text(json.dumps(value, indent=2) + '\n', encoding='utf-8')
 
     def cli(stage, action, *arguments):
-        image = IMAGES['evaluate' if stage == 'evaluate' else 'numeric']
+        image = images['evaluate' if stage == 'evaluate' else 'numeric']
         command = ['docker', 'run', '--rm', '--network', 'none', '--read-only', '--cap-drop', 'ALL',
             '--security-opt', 'no-new-privileges', image, action]
         if stage != 'evaluate':
@@ -37,7 +38,7 @@ def prepare(output, scope, registry_python):
 
     releases, locks, schemas, profiles, materials = {}, {}, {}, [], []
     for stage in ('seed', 'requests', 'collect', 'vary', 'evaluate'):
-        image = IMAGES['evaluate' if stage == 'evaluate' else 'numeric']
+        image = images['evaluate' if stage == 'evaluate' else 'numeric']
         descriptor = json.loads(cli(stage, 'describe', '--image-sha256', image[7:]))
         assert descriptor['tool']['binding']['image_sha256'] == image[7:]
         releases[stage] = descriptor
@@ -66,10 +67,12 @@ def prepare(output, scope, registry_python):
     spec.loader.exec_module(module)
     write('graph.json', module.campaign(scope, releases, 2))
     (output / 'policy.json').write_bytes(cli('evaluate', 'policy'))
-    result = {'profile': 'local-numeric-demo-materials-v1', 'scope': scope, 'images': IMAGES,
+    result = {'profile': 'local-numeric-demo-materials-v1', 'scope': scope, 'images': images,
         'graph': {'definition': 'graph.json', 'releases': materials, 'schemas': list(schemas.values())},
         'profiles': profiles, 'locks': locks, 'definition_generator_sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
         'limits': ['Synthetic numeric fixture only; no graph admission, readiness or scientific claim'], 'provider_calls': 0}
+    if evaluator_profile is not None:
+        result['evaluator_profile'] = evaluator_profile
     write('manifest.json', result)
     print('Exact Linux numeric demo descriptors, schemas and authored graph extracted', flush=True)
     return result

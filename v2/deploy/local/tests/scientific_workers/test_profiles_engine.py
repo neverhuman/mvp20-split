@@ -1,4 +1,5 @@
 import json
+from dataclasses import replace
 from types import SimpleNamespace
 
 import pytest
@@ -9,6 +10,17 @@ from amphora_deployment.scientific_workers.engine import (
     name_for,
 )
 from amphora_deployment.scientific_workers.journal import ContainerJournal
+from amphora_deployment.scientific_workers.profiles import ToolProfile
+
+
+def test_rebuilt_recipe_is_separate_and_preserves_old_recipe(profile):
+    rebuilt = ToolProfile.pin('synthetic-objectives-rebuilt', profile.image_id,
+        profile.configuration, profile.certificate, 23457, 23458)
+    assert rebuilt.entrypoint == ('python', '-m', 'amphora_synthetic_objectives_rebuilt')
+    assert rebuilt.arguments == ('worker', '--config', '/amphora/worker.json')
+    original = replace(rebuilt, name='synthetic-objectives')
+    assert original.entrypoint == ('python', '-m', 'amphora_synthetic_objectives')
+    assert rebuilt.fingerprint != original.fingerprint
 
 
 def test_profile_pins_exact_files_and_closed_entrypoint(profile):

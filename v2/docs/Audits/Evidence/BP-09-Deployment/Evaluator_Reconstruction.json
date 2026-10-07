@@ -1,0 +1,578 @@
+{
+  "timestamp_local": "2026-10-07 09:59:06",
+  "status": "offline_qualified_live_cutover_blocked",
+  "source_tests": {
+    "passed": 38,
+    "seconds": 9.92,
+    "statements": [
+      134,
+      135
+    ],
+    "branches": [
+      25,
+      26
+    ]
+  },
+  "deployment_tests": {
+    "passed": 105,
+    "seconds": 4.05
+  },
+  "offline": {
+    "base": "python@sha256:f77ac9e44ae96ef2c90b8053ea08c31f8be030f824196b0ae4db6d462c84e51f",
+    "descriptor": {
+      "anti_examples": [
+        "No chemistry, biology, synthesis, laboratory, model or scientific-validity claim."
+      ],
+      "authority_ceiling": "synthetic_only",
+      "checkpoint": {
+        "mode": "none",
+        "readable_schema_sha256": []
+      },
+      "egress": {
+        "mode": "deny"
+      },
+      "examples": [
+        "cost=sum(x_i^2); distance=sum((x_i-1)^2); no hard constraints."
+      ],
+      "reproducibility": "deterministic",
+      "resources": {
+        "architectures": [
+          "x86_64"
+        ],
+        "cpu_millicores": 1000,
+        "gpu_count": 0,
+        "max_batch_size": 1,
+        "max_parallel_invocations": 1,
+        "memory_mib": 128,
+        "operating_systems": [
+          "linux"
+        ],
+        "timeout_seconds": 60
+      },
+      "schema_version": "1",
+      "tool": {
+        "applicability": [
+          "synthetic-tests",
+          "synthetic-quadratic-v1",
+          "dimensionless-finite-vectors"
+        ],
+        "binding": {
+          "capability_id": "synthetic.numeric-objectives",
+          "contract_version": "1",
+          "image_sha256": "95725806eb11bece632d22fe58fbeb42c5691a13202c0dffb399593d6921abaa",
+          "release": "0.4.0"
+        },
+        "checkpoint_schema": null,
+        "inputs": [
+          {
+            "name": "parameters",
+            "representation": "search.evaluation-request",
+            "required": true,
+            "schema_ref": {
+              "schema_id": "search.evaluation-request",
+              "sha256": "44c7375364971f923302f83d0d6100bd2d01b8c6085d25f7195e465ccb9fbe58",
+              "version": "1"
+            },
+            "unit": "1"
+          },
+          {
+            "name": "policy",
+            "representation": "synthetic.numeric-policy",
+            "required": true,
+            "schema_ref": {
+              "schema_id": "synthetic.numeric-policy",
+              "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a",
+              "version": "1"
+            },
+            "unit": "1"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "result",
+            "representation": "search.evaluation-observation",
+            "required": true,
+            "schema_ref": {
+              "schema_id": "search.evaluation-observation",
+              "sha256": "28b7765aa253bc93d2e050c06e4a38be09ffa1b8a8b45762ee93eaaffe37add2",
+              "version": "1"
+            },
+            "unit": "1"
+          }
+        ],
+        "purpose": "Evaluate fixed synthetic quadratic objectives for numerical graph tests.",
+        "schema_version": "1",
+        "side_effects": "pure"
+      }
+    },
+    "image_config_digest": "sha256:af79689bc162166ec5535583957b84ea2531af6790c036e24980b61666912f1e",
+    "image_manifest_digest": "sha256:95725806eb11bece632d22fe58fbeb42c5691a13202c0dffb399593d6921abaa",
+    "installation": {
+      "forbidden_implementations": [
+        "amphora_synthetic_objectives",
+        "amphora_evolution_search",
+        "amphora_campaign_runtime",
+        "amphora_data_artifacts",
+        "amphora_agent_planning",
+        "sqlalchemy",
+        "rdkit",
+        "torch"
+      ],
+      "owner": "amphora-synthetic-objectives-rebuilt",
+      "packages": {
+        "amphora-contracts-artifacts": "0.2.0",
+        "amphora-contracts-commands": "0.2.0",
+        "amphora-contracts-core": "0.1.0",
+        "amphora-contracts-runtime": "0.1.0",
+        "amphora-contracts-search": "0.1.0",
+        "amphora-contracts-tools": "0.1.0",
+        "amphora-multi-input-worker": "0.1.0",
+        "amphora-synthetic-objectives-rebuilt": "0.4.0",
+        "amphora-tool-protocol": "0.2.0"
+      },
+      "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+      "status": "installed",
+      "timestamp_local": "2026-10-07 09:40:08",
+      "wheels": {
+        "amphora_contracts_artifacts-0.2.0-py3-none-any.whl": "79ae37b497cf797edb529c6625329d211b81a0fe6c46bd2b151d18de6397b36f",
+        "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+        "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+        "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+        "amphora_contracts_search-0.1.0-py3-none-any.whl": "62a2acbac402f7d59d476af53610ee8ca194fdeb016daf64a2484bd4feb70562",
+        "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+        "amphora_multi_input_worker-0.1.0-py3-none-any.whl": "2097adff2fdb7db3bc43bb49b98a97d7b6a34739a4455444c6e1951c85341904",
+        "amphora_synthetic_objectives_rebuilt-0.4.0-py3-none-any.whl": "35e05f4123fbaa31f037f9767d605261a2e052e459299fc17d05924c55f846a1",
+        "amphora_tool_protocol-0.2.0-py3-none-any.whl": "3954194e0d3c59dc5a0f3437905ccd56a6234cee545b7a76a5b4d69a242d1cd5"
+      }
+    },
+    "limits": [
+      "Offline Linux/amd64 golden and installed tests only",
+      "Actual restored owner execution and between-campaign cutover remain separate gates"
+    ],
+    "observation": {
+      "candidate_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "evaluation_id": "ev-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "outcome": {
+        "constraint_violation": 0.0,
+        "constraints_sha256": "b9946661cfefa2bf2d6eabb8779659bb0d9987020214d16fc73e196a4e2ed62e",
+        "evaluator": {
+          "capability_id": "synthetic.numeric-objectives",
+          "contract_version": "1",
+          "image_sha256": "95725806eb11bece632d22fe58fbeb42c5691a13202c0dffb399593d6921abaa",
+          "release": "0.4.0"
+        },
+        "evidence": [
+          {
+            "artifact_id": "actual-policy-fixture",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "synthetic.numeric-policy",
+              "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a",
+              "version": "1"
+            },
+            "scope": {
+              "project_id": "rebuilt-evaluator",
+              "tenant_id": "fixture"
+            },
+            "sha256": "b9946661cfefa2bf2d6eabb8779659bb0d9987020214d16fc73e196a4e2ed62e",
+            "size_bytes": 36
+          }
+        ],
+        "objectives": [
+          {
+            "objective_id": "cost",
+            "unit": "dimensionless",
+            "value": 5.0
+          },
+          {
+            "objective_id": "distance",
+            "unit": "dimensionless",
+            "value": 9.0
+          }
+        ],
+        "quality": "synthetic",
+        "status": "evaluated"
+      },
+      "request_sha256": "95f44c4484ca6a5f3da2db80924451413345db83f58c5b76c5bda3777bfb1c68",
+      "schema_version": "1",
+      "scope": {
+        "project_id": "rebuilt-evaluator",
+        "tenant_id": "fixture"
+      }
+    },
+    "observation_sha256": "475b76a2c0bf067a6351193ae30131d774a182ff198051cbadb917abd597f76e",
+    "paid_calls": 0,
+    "profile": "rebuilt-evaluator-offline-v1",
+    "schemas": {
+      "input": {
+        "schema_id": "search.evaluation-request",
+        "sha256": "44c7375364971f923302f83d0d6100bd2d01b8c6085d25f7195e465ccb9fbe58",
+        "version": "1"
+      },
+      "output": {
+        "schema_id": "search.evaluation-observation",
+        "sha256": "28b7765aa253bc93d2e050c06e4a38be09ffa1b8a8b45762ee93eaaffe37add2",
+        "version": "1"
+      },
+      "policy": {
+        "schema_id": "synthetic.numeric-policy",
+        "sha256": "a45f19438a90fb178eb53f74f70d7ef4be0ab4be8218a3ccf0eadc90c097b82a",
+        "version": "1"
+      }
+    },
+    "status": "passed",
+    "tag": "amphora/synthetic-objectives-rebuilt:bp09-a5ecaeff1daa",
+    "tests": 38
+  },
+  "raw_evidence": "v2/.test-results/local-rebuilt-evaluator-20261007b",
+  "scope": "Independent evaluator0.4 reconstruction; public metadata and acceptance fixtures reused; original private kernel/adapter not copied",
+  "limits": [
+    "Live cutover acceptance remains blocked by recurrent process faults; failed histories retained",
+    "Read-only750request probe does not prove command exchanges",
+    "No scientific improvement or paid model calls"
+  ],
+  "transport_read_probe": {
+    "status": "observed",
+    "lanes": [
+      {
+        "lane": 0,
+        "completed": 50,
+        "status": "passed",
+        "elapsed": 2.656921769026667
+      },
+      {
+        "lane": 1,
+        "completed": 50,
+        "status": "passed",
+        "elapsed": 2.6001994458492845
+      },
+      {
+        "lane": 2,
+        "completed": 50,
+        "status": "passed",
+        "elapsed": 2.65973615902476
+      },
+      {
+        "lane": 3,
+        "completed": 50,
+        "status": "passed",
+        "elapsed": 2.4633750189095736
+      },
+      {
+        "lane": 4,
+        "completed": 50,
+        "status": "passed",
+        "elapsed": 2.5576693250332028
+      }
+    ],
+    "transport": {
+      "runtime": {
+        "state": "running",
+        "port": 49624,
+        "upstream_readiness": "not_assessed",
+        "connections": {
+          "limit": 16,
+          "active": 0,
+          "peak": 5,
+          "admitted": 250,
+          "denied": 0
+        },
+        "transport": {
+          "failures": {},
+          "responses": {
+            "2xx": 250
+          }
+        }
+      },
+      "artifact": {
+        "state": "running",
+        "port": 49625,
+        "upstream_readiness": "not_assessed",
+        "connections": {
+          "limit": 16,
+          "active": 0,
+          "peak": 5,
+          "admitted": 500,
+          "denied": 0
+        },
+        "transport": {
+          "failures": {},
+          "responses": {
+            "2xx": 500
+          }
+        }
+      }
+    },
+    "final": {
+      "owners": {
+        "artifact": {
+          "owner": "artifact",
+          "pid": 10312,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "registry": {
+          "owner": "registry",
+          "pid": 10592,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "runtime": {
+          "owner": "runtime",
+          "pid": 32464,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        }
+      },
+      "workers": {
+        "runtime-coordinate": {
+          "state": "quiescent",
+          "exit_code": null,
+          "completed_turns": 0,
+          "faulted": false,
+          "execution_readiness": "not_assessed"
+        },
+        "runtime-deliver": {
+          "state": "quiescent",
+          "exit_code": null,
+          "completed_turns": 0,
+          "faulted": false,
+          "execution_readiness": "not_assessed"
+        }
+      },
+      "tool_access": {
+        "runtime": {
+          "state": "drained",
+          "port": 49624,
+          "upstream_readiness": "not_assessed",
+          "connections": {
+            "limit": 16,
+            "active": 0,
+            "peak": 5,
+            "admitted": 250,
+            "denied": 0
+          },
+          "transport": {
+            "failures": {},
+            "responses": {
+              "2xx": 250
+            }
+          }
+        },
+        "artifact": {
+          "state": "drained",
+          "port": 49625,
+          "upstream_readiness": "not_assessed",
+          "connections": {
+            "limit": 16,
+            "active": 0,
+            "peak": 5,
+            "admitted": 500,
+            "denied": 0
+          },
+          "transport": {
+            "failures": {},
+            "responses": {
+              "2xx": 500
+            }
+          }
+        }
+      },
+      "scientific_workers": {
+        "evolution-seed": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 0,
+          "exit_code": null,
+          "execution_readiness": "not_assessed"
+        },
+        "evolution-requests": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 0,
+          "exit_code": null,
+          "execution_readiness": "not_assessed"
+        },
+        "evolution-collect": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 0,
+          "exit_code": null,
+          "execution_readiness": "not_assessed"
+        },
+        "evolution-vary": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 0,
+          "exit_code": null,
+          "execution_readiness": "not_assessed"
+        },
+        "synthetic-objectives-rebuilt": {
+          "state": "quiescent",
+          "active_turn": false,
+          "faulted": false,
+          "completed_turns": 0,
+          "exit_code": null,
+          "execution_readiness": "not_assessed"
+        }
+      },
+      "tool_catalog": {
+        "evolution-seed": {
+          "state": "observed",
+          "observation": {
+            "revision": 42,
+            "free_slots": 0,
+            "observed_at": "2026-10-07T14:57:11.599666Z",
+            "expires_at": "2026-10-07T14:57:26.599666Z"
+          },
+          "running": false,
+          "stopping": true
+        },
+        "evolution-requests": {
+          "state": "observed",
+          "observation": {
+            "revision": 42,
+            "free_slots": 0,
+            "observed_at": "2026-10-07T14:57:11.584605Z",
+            "expires_at": "2026-10-07T14:57:26.584605Z"
+          },
+          "running": false,
+          "stopping": true
+        },
+        "evolution-collect": {
+          "state": "observed",
+          "observation": {
+            "revision": 42,
+            "free_slots": 0,
+            "observed_at": "2026-10-07T14:57:11.606492Z",
+            "expires_at": "2026-10-07T14:57:26.606492Z"
+          },
+          "running": false,
+          "stopping": true
+        },
+        "evolution-vary": {
+          "state": "observed",
+          "observation": {
+            "revision": 42,
+            "free_slots": 0,
+            "observed_at": "2026-10-07T14:57:11.577100Z",
+            "expires_at": "2026-10-07T14:57:26.577100Z"
+          },
+          "running": false,
+          "stopping": true
+        },
+        "synthetic-objectives-rebuilt": {
+          "state": "observed",
+          "observation": {
+            "revision": 42,
+            "free_slots": 0,
+            "observed_at": "2026-10-07T14:57:11.592702Z",
+            "expires_at": "2026-10-07T14:57:26.592702Z"
+          },
+          "running": false,
+          "stopping": true
+        }
+      }
+    },
+    "claims": 0,
+    "provider_calls": 0
+  },
+  "failures": [
+    {
+      "raw_evidence": ".test-results\\local-rebuilt-campaign-20261007a",
+      "run_id": "9f850eacae9c44b69251661b07a7a595",
+      "status": "cancelled_after_process_fault",
+      "successful_spend_before_cancellation": 12,
+      "faulted_workers": {
+        "synthetic-objectives-rebuilt": {
+          "state": "failed",
+          "active_turn": false,
+          "faulted": true,
+          "completed_turns": 38,
+          "exit_code": 2,
+          "execution_readiness": "not_assessed"
+        }
+      },
+      "owner_drain": {
+        "artifact": {
+          "owner": "artifact",
+          "pid": 13956,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "registry": {
+          "owner": "registry",
+          "pid": 33844,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "runtime": {
+          "owner": "runtime",
+          "pid": 12920,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        }
+      },
+      "cause": "unresolved"
+    },
+    {
+      "raw_evidence": ".test-results\\local-rebuilt-campaign-20261007b",
+      "run_id": "ecc044937a4e43e79f7ef1a8513a01d3",
+      "status": "cancelled_after_process_fault",
+      "successful_spend_before_cancellation": 14,
+      "faulted_workers": {
+        "evolution-collect": {
+          "state": "failed",
+          "active_turn": false,
+          "faulted": true,
+          "completed_turns": 41,
+          "exit_code": 3,
+          "execution_readiness": "not_assessed"
+        }
+      },
+      "owner_drain": {
+        "artifact": {
+          "owner": "artifact",
+          "pid": 33676,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "registry": {
+          "owner": "registry",
+          "pid": 9940,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        },
+        "runtime": {
+          "owner": "runtime",
+          "pid": 31892,
+          "state": "exited",
+          "exit_code": 0,
+          "readiness": "not_assessed",
+          "drain": "drained"
+        }
+      },
+      "cause": "unresolved"
+    }
+  ]
+}

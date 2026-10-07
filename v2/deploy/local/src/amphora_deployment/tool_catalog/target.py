@@ -6,7 +6,8 @@ import json
 from ..profile import require
 
 CAPABILITIES = {**{'evolution-' + name: 'numeric.search-' + name for name in ('seed', 'requests', 'collect', 'vary')},
-                'synthetic-objectives': 'synthetic.numeric-objectives'}
+                'synthetic-objectives': 'synthetic.numeric-objectives',
+                'synthetic-objectives-rebuilt': 'synthetic.numeric-objectives'}
 
 
 class CatalogTarget:

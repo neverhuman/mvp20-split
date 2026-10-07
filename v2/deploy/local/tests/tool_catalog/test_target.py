@@ -19,6 +19,15 @@ def snapshot():
                              'contract_version': '1'}}}}
 
 
+def test_rebuilt_catalog_profile_requires_its_exact_image():
+    probe, value = target(), snapshot()
+    probe.profile.name = 'synthetic-objectives-rebuilt'
+    value['deployment']['release']['tool']['capability_id'] = 'synthetic.numeric-objectives'
+    assert probe.matches(value)
+    value['deployment']['release']['tool']['image_sha256'] = 'b' * 64
+    assert not probe.matches(value)
+
+
 @pytest.mark.parametrize(('path', 'bad'), [
     (('scope', 'project_id'), 'other'), (('status',), 'draining'),
     (('deployment', 'deployment_id'), 'other'), (('deployment', 'architecture'), 'aarch64'),

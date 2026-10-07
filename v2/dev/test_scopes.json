@@ -389,5 +389,11 @@
     "coverage_sources": [
       "deploy/local/src/amphora_deployment/backup_restore"
     ]
+  },
+  "synthetic-objectives-rebuilt": {
+    "tests": "tools/synthetic_objectives_rebuilt/tests",
+    "coverage_sources": [
+      "tools/synthetic_objectives_rebuilt/src/amphora_synthetic_objectives_rebuilt"
+    ]
   }
 }

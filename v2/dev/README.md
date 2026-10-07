@@ -1,5 +1,17 @@
 # Foundation Verification Tooling
 
+`probe_local_tool_transport.py` isolates actual Linux SDK reads through managed TLS,
+retaining only fixed safe error categories and transport counters. It starts no
+workers/claims and drains owners; it never prints tokens, raw server errors or payloads.
+
+`verify_rebuilt_evaluator.py` independently installs the BP-09.04 reconstructed
+tool, runs copied owned tests without original evaluator/search packages, and
+builds/qualifies the same wheel closure in a nonroot Linux image. Public policy
+fixture bytes use bounded tmpfs for offline compute with a read-only root.
+`prepare_local_numeric_demo.prepare` accepts explicit image pins and a reviewed
+evaluator profile; defaults preserve prior fixtures. `verify_managed_numeric_campaign`
+accepts an explicit restored `--root`; no migration/reset or provider calls.
+
 Local catalog delivery: `verify_catalog_installation.py` builds an independent
 standard-library-only Deployment closure, runs copied owned tests and exercises
 heartbeat replay against the installed Registry and retained local SQL. It takes

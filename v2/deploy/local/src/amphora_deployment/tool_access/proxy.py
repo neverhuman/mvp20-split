@@ -9,6 +9,7 @@ import time
 from dataclasses import dataclass
 
 from ..profile import require
+from .diagnostics import TransportDiagnostics
 from .identity import HOSTNAME
 from .load import ConnectionLoad
 
@@ -44,6 +45,7 @@ class ToolAccessServer(http.server.ThreadingHTTPServer):
         )
         self.context = identity.server_context()
         self.route, self.load = route, ConnectionLoad(maximum_connections)
+        self.diagnostics = TransportDiagnostics()
         super().__init__(("127.0.0.1", port), ToolAccessHandler)
 
     def process_request(self, request, client_address):
@@ -62,14 +64,15 @@ class ToolAccessServer(http.server.ThreadingHTTPServer):
             request.settimeout(5)
             with self.context.wrap_socket(request, server_side=True) as secured:
                 super().process_request_thread(secured, client_address)
-        except (OSError, ssl.SSLError):
+        except (OSError, ssl.SSLError) as error:
+            self.diagnostics.failure('handshake', 'timeout' if isinstance(error, TimeoutError) else 'io')
             self.shutdown_request(request)
         finally:
             self.load.release()
 
     def handle_error(self, request, client_address):
         # Never emit tracebacks containing headers, payloads or credentials.
-        pass
+        self.diagnostics.failure('handler', 'io')
 
 
 class ToolAccessHandler(http.server.BaseHTTPRequestHandler):
@@ -84,6 +87,7 @@ class ToolAccessHandler(http.server.BaseHTTPRequestHandler):
         self._timer.start()
 
     def _expire(self):
+        self.server.diagnostics.failure('deadline', 'timeout')
         # Inactivity timeouts alone do not bound trickled HTTP headers/bodies.
         for connection in (self.connection, self._upstream_socket):
             if connection is not None:
@@ -103,6 +107,7 @@ class ToolAccessHandler(http.server.BaseHTTPRequestHandler):
         pass
 
     def _reply(self, status, body=b"", media_type="application/json"):
+        self.server.diagnostics.response(status)
         self.close_connection = True
         self.send_response_only(status)
         self.send_header("Content-Type", media_type)
@@ -176,12 +181,15 @@ class ToolAccessHandler(http.server.BaseHTTPRequestHandler):
             timeout=self._remaining(deadline),
         )
         sent = False
+        stage = 'request_body'
         try:
             raw = self._body(length, deadline)
+            stage = 'connect'
             upstream.timeout = self._remaining(deadline)
             upstream.connect()
             self._upstream_socket = upstream.sock
             upstream.sock.settimeout(self._remaining(deadline))
+            stage = 'request'
             upstream.request(
                 self.command,
                 self.path,
@@ -194,12 +202,15 @@ class ToolAccessHandler(http.server.BaseHTTPRequestHandler):
             )
             if upstream.sock is not None:
                 upstream.sock.settimeout(self._remaining(deadline))
+            stage = 'response_headers'
             response = upstream.getresponse()
             expected_length = response.length
             if expected_length is not None and expected_length > MAX_BODY:
+                self.server.diagnostics.failure('response_headers', 'oversized')
                 self._reply(502)
                 return
             body = bytearray()
+            stage = 'response_body'
             while not response.isclosed():
                 remaining = self._remaining(deadline)
                 if self._upstream_socket is not None:
@@ -209,9 +220,11 @@ class ToolAccessHandler(http.server.BaseHTTPRequestHandler):
                     break
                 body.extend(chunk)
                 if len(body) > MAX_BODY:
+                    self.server.diagnostics.failure(stage, 'oversized')
                     self._reply(502)
                     return
             if expected_length is not None and len(body) != expected_length:
+                self.server.diagnostics.failure(stage, 'truncated')
                 self._reply(502)
                 return
             media_type = response.getheader("Content-Type", "application/json")
@@ -219,8 +232,11 @@ class ToolAccessHandler(http.server.BaseHTTPRequestHandler):
                 media_type = "application/octet-stream"
             self.connection.settimeout(self._remaining(deadline))
             sent = True
+            stage = 'client_response'
             self._reply(response.status, bytes(body), media_type)
-        except (OSError, http.client.HTTPException):
+        except (OSError, http.client.HTTPException) as error:
+            kind = 'timeout' if isinstance(error, TimeoutError) else 'io' if isinstance(error, OSError) else 'http'
+            self.server.diagnostics.failure(stage, kind)
             if not sent:
                 self._reply(502)
         finally:

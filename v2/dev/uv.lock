@@ -656,7 +656,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-deployment"
-version = "0.12.0"
+version = "0.14.0"
 source = { editable = "../deploy/local" }
 
 [[package]]
@@ -735,6 +735,7 @@ dependencies = [
     { name = "amphora-solver-select" },
     { name = "amphora-synthetic-digest" },
     { name = "amphora-synthetic-objectives" },
+    { name = "amphora-synthetic-objectives-rebuilt" },
     { name = "amphora-tool-protocol" },
     { name = "httpx" },
     { name = "jsonschema", extra = ["format-nongpl"] },
@@ -793,6 +794,7 @@ requires-dist = [
     { name = "amphora-solver-select", editable = "../tools/solver_select" },
     { name = "amphora-synthetic-digest", editable = "../tools/synthetic_digest" },
     { name = "amphora-synthetic-objectives", editable = "../tools/synthetic_objectives" },
+    { name = "amphora-synthetic-objectives-rebuilt", editable = "../tools/synthetic_objectives_rebuilt" },
     { name = "amphora-tool-protocol", editable = "../sdk/tool_protocol" },
     { name = "httpx", specifier = ">=0.28,<1" },
     { name = "jsonschema", extras = ["format-nongpl"], specifier = ">=4.23,<5" },
@@ -1150,6 +1152,27 @@ requires-dist = [
 name = "amphora-synthetic-objectives"
 version = "0.3.0"
 source = { editable = "../tools/synthetic_objectives" }
+dependencies = [
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-search" },
+    { name = "amphora-contracts-tools" },
+    { name = "amphora-multi-input-worker" },
+    { name = "amphora-tool-protocol" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-search", editable = "../contracts/search" },
+    { name = "amphora-contracts-tools", editable = "../contracts/tools" },
+    { name = "amphora-multi-input-worker", editable = "../sdk/multi_input_worker" },
+    { name = "amphora-tool-protocol", editable = "../sdk/tool_protocol" },
+]
+
+[[package]]
+name = "amphora-synthetic-objectives-rebuilt"
+version = "0.4.0"
+source = { editable = "../tools/synthetic_objectives_rebuilt" }
 dependencies = [
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-search" },

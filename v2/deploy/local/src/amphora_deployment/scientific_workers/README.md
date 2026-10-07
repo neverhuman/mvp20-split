@@ -1,5 +1,10 @@
 # Scientific container lifecycle
 
+Deployment0.13 adds the separately named synthetic-objectives-rebuilt recipe for
+BP-09.04: module amphora_synthetic_objectives_rebuilt, worker --config. The original
+recipe remains unchanged. Each pins its own immutable image/configuration; switching
+requires released journals between campaigns. No shell or arbitrary module entry.
+
 Owner BP-09.03/B1.3b, Deployment0.6. Closed tool profiles, exact Docker observations,
 current-turn intent, background monitoring and restart adoption implemented.
 Actual local controller/Runtime/Data/TLS/Linux claim-denial and separate monitor

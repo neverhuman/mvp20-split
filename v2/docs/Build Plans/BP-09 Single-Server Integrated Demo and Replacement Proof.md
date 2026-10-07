@@ -2,8 +2,8 @@
 
 ## Canonical Parent Tracker
 
-- Status: primary_active; BP-09.01/.02/.03 closed; BP-09.04 B1 active.
-- Last refreshed: `2026-10-07 09:21:40` (America/Chicago).
+- Status: primary_active; BP-09.01/.02/.03 closed; BP-09.04 B2.2 active.
+- Last refreshed: `2026-10-07 09:50:11` (America/Chicago).
 - Owner/scope: Local deployment/recovery integration with each service retaining ownership.
 - Authority: [Master Build Tracker](Master%20Build%20Tracker.md); [planning readiness and handoffs](Planning_Readiness.md).
 - Prerequisites: Completed BP-05/06/07 and BP-08 for evolutionary demo claims; BP-02/03/04 durability and protocol gates.
@@ -11,7 +11,7 @@
 - Design maturity: all immediate children have owned objects, public boundaries, algorithms, failure oracles, replacement gates and named decision limits. Reconcile predecessor versions before activation; this is not implementation evidence.
 - Current implementation task: BP-09.04/B2.2 independent evaluator reconstruction and cutover.
 - Demonstrated behavior: independent local owners, bounded model/tool/context/browser/corrected-successor composition and approved daemon recovery; exact history preserved.
-- Blockers: none; last fully drained backup with measured recovery time/no hard limit selected.
+- Blockers: B2.2 recurrent worker exchange failure under engineering diagnosis; no owner gate. Recovery objective unchanged.
 - Human acceptance: no routine approval pause for authorized engineering work; host/provider/data decisions still govern their dependent actions.
 - Planning review: `2026-10-06 19:58:42`; parent/child scope, evidence tiers and dependencies reconciled. Active BP-02 implementation position remains unchanged by this roadmap review.
 

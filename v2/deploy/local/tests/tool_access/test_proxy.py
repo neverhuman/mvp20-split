@@ -171,6 +171,7 @@ def test_response_limit_returns_uncertainty_instead_of_truncating_success(
         )
         response = client.getresponse()
         assert response.status == 502 and response.read() == b""
+        assert proxy.diagnostics.snapshot()['failures'] == {'response_headers.oversized': 1}
         client.close()
 
 
@@ -192,6 +193,7 @@ def test_partial_upstream_response_is_not_forwarded_as_success(identity):
         )
         response = client.getresponse()
         assert response.status == 502 and response.read() == b""
+        assert proxy.diagnostics.snapshot()['failures'] == {'response_body.truncated': 1}
         client.close()
 
 

@@ -12,13 +12,14 @@ from amphora_deployment.credentials import CredentialVault
 from amphora_deployment.lifecycle.routes import Routes
 from amphora_deployment.persistence.state import LocalState
 from amphora_deployment.scientific_workers.ownership import require_released
+
 from local_demo_controller import Controller
 from local_numeric_campaign import Campaign
 from local_numeric_configuration import bind_workers, prepare, write
 
 
-def verify(output, bundle, materials, source_manifest, *, fixture_root=None):
-    root = Path(os.environ['LOCALAPPDATA']) / 'Amphora/local-v2/installation'
+def verify(output, bundle, materials, source_manifest, *, fixture_root=None, root=None):
+    root = root or Path(os.environ['LOCALAPPDATA']) / 'Amphora/local-v2/installation'
     original = LocalState.snapshot(root)
     vault = (root / 'credentials.dpapi').read_bytes()
     routes = Routes.load(root)
@@ -79,6 +80,12 @@ def verify(output, bundle, materials, source_manifest, *, fixture_root=None):
         latencies = []
         while True:
             graph = campaign.graph()
+            # Public timing metadata makes a later process fault diagnosable without
+            # enabling raw container logs, exposing credentials or reading owner SQL.
+            active = campaign.call('runtime', '/v1/runs/' + run_id)
+            with (output / 'active-attempts.jsonl').open('a', encoding='utf-8') as stream:
+                stream.write(json.dumps({'observed_at': datetime.now().astimezone().isoformat(),
+                                         'run': active}, separators=(',', ':')) + '\n')
             state = (graph['status'], graph['spent'])
             if state != previous:
                 print(json.dumps({'campaign': graph['status'], 'accepted_budget_spend': graph['spent']}), flush=True)
@@ -138,6 +145,8 @@ if __name__ == '__main__':
     for name in ('output', 'bundle-directory', 'materials', 'source-manifest'):
         parser.add_argument('--' + name, required=True, type=Path)
     parser.add_argument('--fixture-root', type=Path)
+    parser.add_argument('--root', type=Path)
     args = parser.parse_args()
     verify(args.output.absolute(), args.bundle_directory.absolute(), args.materials.absolute(), args.source_manifest.absolute(),
-           fixture_root=None if args.fixture_root is None else args.fixture_root.absolute())
+           fixture_root=None if args.fixture_root is None else args.fixture_root.absolute(),
+           root=None if args.root is None else args.root.absolute())

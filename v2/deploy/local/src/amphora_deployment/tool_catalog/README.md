@@ -1,5 +1,9 @@
 # Tool catalog integration
 
+Deployment0.13 also recognizes the explicit synthetic-objectives-rebuilt worker
+recipe for the same public capability. Catalog matching still requires the exact
+configured image and deployment; a replacement cannot claim the old image's capacity.
+
 Owner BP-09.03/B1.3b checkpoint3. Separate heartbeat credentials and durable delivery
 primitives implemented; managed standby/capacity observations now have actual local
 peer proof. Successful eligible execution remains in progress.

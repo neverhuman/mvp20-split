@@ -1,5 +1,10 @@
 # Local tool TLS access
 
+Deployment0.14 adds fixed-cardinality transport failure-stage and response-class counters
+to local control status. No request paths, IDs, bodies, headers, tokens or exception text
+are retained. Counts reset with the listener; they diagnose exchanges and never grant
+worker authority, retry a request or prove whether an upstream mutation committed.
+
 Owner: local Deployment, BP-09.03/B1.3. Architecture: [Runtime topology](../../../../../docs/Architecture/System/Runtime_Topology.md).
 This module provides a TLS identity and forwarding boundary for Linux containers accessing
 Windows loopback owner APIs through host.docker.internal. It owns no campaign/tool execution,
@@ -55,3 +60,5 @@ They reset on listener replacement and do not establish upstream readiness. Expl
 smaller limits still reject excess connections without releasing another request slot.
 Two retained campaign failures showed expired attempts, but lacked pressure counters;
 this repair alone does not prove that saturation caused those historical failures.
+
+Verified2026-10-07 09:59:06:135combined TLS/scientific/catalog checks pass22.87s; scoped TLS30tests19.31s,393/425statements and59/70branches91%. New diagnostic counters23statements/4branches100%. Remaining coverage gaps include thread-start/serve/drain failures and proxy deadline/alternate I/O branches; actual diagnosis does not imply those branches all ran. Five Linux read-only lanes completed750authenticated Runtime/Data requests with0failures/denials, peak5connections. Live mutation failure remains under investigation.

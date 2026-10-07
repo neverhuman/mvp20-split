@@ -9,14 +9,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: BP-09.01/.02/.03 closed; BP-09.04 B2 active.
-- Last refreshed: `2026-10-07 09:21:40` (America/Chicago).
+- Last refreshed: `2026-10-07 09:43:18` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P8 / BP-09 - Single-Server Integrated Demo and Replacement Proof.
-- Primary active task: BP-09.04/B2.2 independent evaluator reconstruction and cutover.
+- Primary active task: BP-09.04/B2.2 worker exchange diagnosis before restored cutover acceptance.
 - Next task: BP-09.04/B3 corruption/mismatch and replacement failure evidence after B2.2.
 - Implementation completion: BP-09=67.5%,13.5/20 verified delivery weight;13 closed gates.
-- Active focus: accepted isolated restore with237verified references; independent evaluator rebuild next.
-- Blockers: none; owner selected last fully drained backup, measured recovery time/no hard limit.
+- Active focus: accepted isolated restore with237verified references; rebuilt evaluator installed/image-qualified; live restored cutover in progress.
+- Blockers: recurrent scientific-worker process fault; engineering repair active, no owner decision needed. Recovery objective unchanged.
 - Acceptance posture: BP-09.03 integrated acceptance complete; backup/rebuild remain.
 - Active exception: none.
 
