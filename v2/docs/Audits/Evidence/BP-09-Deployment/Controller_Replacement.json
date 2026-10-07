@@ -1,0 +1,69 @@
+{
+  "checked_at": "2026-10-06T23:43:36-05:00",
+  "owners": {
+    "runtime": {
+      "path": "/health",
+      "status": 200,
+      "release": "0.65.0",
+      "installation": "Z:\\mvp20-split\\.test-results\\local-owner-inventory-20261006a\\owners\\runtime",
+      "manifest_sha256": "a26699514fb9a4c5d1dfd2f76cc61f1cca299ec13f0a119bd3ab36de32c96935",
+      "drain": "drained"
+    },
+    "artifact": {
+      "path": "/ready",
+      "status": 200,
+      "release": "0.30.0",
+      "installation": "Z:\\mvp20-split\\.test-results\\local-owner-inventory-20261006a\\owners\\artifact",
+      "manifest_sha256": "30ff10626495bfe1437ffd8c3417eb0e6fdf015326ffdac49d44acbd00b59700",
+      "drain": "drained"
+    },
+    "registry": {
+      "path": "/v1/releases?limit=1",
+      "status": 200,
+      "release": "0.1.0",
+      "installation": "Z:\\mvp20-split\\.test-results\\local-owner-inventory-20261006a\\owners\\registry",
+      "manifest_sha256": "42bea6ed62b9b5bbad10596e977277ad10aa22f572c9a07d6ef353eba04027b8",
+      "drain": "drained"
+    },
+    "research": {
+      "path": "/health",
+      "status": 200,
+      "release": "0.40.0",
+      "installation": "Z:\\mvp20-split\\.test-results\\local-owner-inventory-20261006a\\owners\\research",
+      "manifest_sha256": "92e2b73029637205cf93eda1b69f83cb2db0588845b05d04d6b8df9c8ce1267d",
+      "drain": "drained"
+    },
+    "knowledge": {
+      "path": "/health",
+      "status": 200,
+      "release": "0.18.0",
+      "installation": "Z:\\mvp20-split\\.test-results\\local-owner-inventory-20261006a\\owners\\knowledge",
+      "manifest_sha256": "c342a6ff08fc8123cd1e9eef5f60c5a869e2a0616fdc56d21579d34bb4c9689d",
+      "drain": "drained"
+    },
+    "planning": {
+      "path": "/ready",
+      "status": 200,
+      "release": "0.99.0",
+      "installation": "Z:\\mvp20-split\\.test-results\\local-planning-role-20261006a",
+      "manifest_sha256": "9749d1addd9c67465cb9d8f899ada52e660fd6eebc9e8b6f5a15b3fd55bcf704",
+      "drain": "drained"
+    },
+    "gateway": {
+      "path": "/",
+      "status": 200,
+      "release": "0.2.0",
+      "installation": "Z:\\mvp20-split\\.test-results\\local-gateway-drain-20261006a",
+      "manifest_sha256": "022223a9cfb706e88542d3c4fbee366373943f795529f732a616a85d9cbfb341",
+      "drain": "drained"
+    }
+  },
+  "limits": "Read-only infrastructure only. CLI checks establish startup DB access; static health is liveness, not ongoing DB readiness. No scientific tools, admission or provider calls.",
+  "retained_replay": {
+    "command_id": "outage-795ff4483e3549d588821d975f6b25b4",
+    "original_receipt_unchanged": true,
+    "controller_python": "Z:\\mvp20-split\\.test-results\\local-deployment-runtime-20261006b\\environment\\Scripts\\python.exe"
+  },
+  "installation_and_vault_unchanged": true,
+  "status": "passed"
+}

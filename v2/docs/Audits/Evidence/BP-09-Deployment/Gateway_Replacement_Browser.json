@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-10-06 23:45:06",
+  "status": "passed",
+  "scenarios": [
+    "browser-injected slow/unavailable session (presentation only)",
+    "authenticated empty workspace",
+    "authenticated Monitor fixture"
+  ],
+  "screenshots": [
+    "empty-1440.png",
+    "empty-390.png",
+    "loading-390.png",
+    "failed-390.png",
+    "monitor-1440.png",
+    "monitor-390.png"
+  ],
+  "limits": [
+    "Actual gateway and built Studio; synthetic Runtime HTTP peer.",
+    "No six-owner deployment or scientific-validity claim."
+  ]
+}

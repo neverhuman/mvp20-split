@@ -8,16 +8,16 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: BP-08 closed100%; BP-09.01 closed; BP-09.02/V1 active.
-- Last refreshed: `2026-10-06 23:42:42` (America/Chicago).
+- Status: BP-08 closed100%; BP-09.01/.02 closed; BP-09.03 activation next.
+- Last refreshed: `2026-10-06 23:47:56` (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: P8 / BP-09 - Single-Server Integrated Demo and Replacement Proof.
-- Primary active task: BP-09.02/V1 independent replacement and scoped drift audit.
-- Next task: BP-09.03 activation review after BP-09.02 acceptance.
-- Implementation completion: BP-09=35%,seven completed deliveries/20; completed plans are in the archive.
-- Active focus: reproducible nativeWindows local installation with loopback-only routing.
+- Primary active task: BP-09.03 activation review.
+- Next task: BP-09.03/B1 bounded integration after coherence review.
+- Implementation completion: BP-09=40%,eight completed deliveries/20; completed plans are in the archive.
+- Active focus: BP-09.03 integration coherence review against accepted local infrastructure.
 - Blockers: none for local installation engineering. Provider/integrated demonstration gates remain scoped to later children.
-- Acceptance posture: BP-08 synthetic engineering accepted20/20; BP-09.01 actual local preflight accepted, full application deployment pending.
+- Acceptance posture: BP-08 synthetic engineering accepted20/20; BP-09.01/.02 local preflight/infrastructure accepted; full autonomous campaign/model integration pending.
 - Active exception: none.
 
 Queued successor: [SQ-01 Scientific Quality and Iteration Views](SQ-01%20Scientific%20Quality%20and%20Iteration%20Views.md), 0%, after BP-06 owner projections and BP-07.03 proposal contracts. Preserves closed BP-05; no change to active BP-06 denominator.
@@ -32,13 +32,13 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-BP-09.01 closed100%; BP-09.02 active75%,Build100%,Acceptance0%; parent35%,7/20. BP-08 closed100%,20/20; see [completed plans](Completed/README.md).
+BP-09.01/.02 closed100%; BP-09.03 queued0%,Build0%,Acceptance0%; parent40%,8/20. BP-08 closed100%,20/20; see [completed plans](Completed/README.md).
 
 ## Queued Plans and Phase Mirrors
 
 | Canonical plan | Status | Overall | P1 | P2 | P3 | P4 | P5 | P6 |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Active | 35% | 100% | 75% | 0% | 0% | 0% | N/A |
+| [BP-09 Single-Server Integrated Demo and Replacement Proof](BP-09%20Single-Server%20Integrated%20Demo%20and%20Replacement%20Proof.md) | Active | 40% | 100% | 100% | 0% | 0% | 0% | N/A |
 
 Scoped milestone fractions measure verified work within their existing delivery weight; closed-gate counts remain separate. BP-06 is archived24/24. Do not treat milestone counts as effort estimates.
 

@@ -4,11 +4,11 @@ Refreshed 2026-10-06 23:32:34 (America/Chicago). Read FIRST after compression.
 
 ## Current task
 
-BP-09.02/V1 independent replacement/browser compatibility/scoped drift audit. B1-B3 complete.
-Child75%, Build100%, Acceptance0%; BP-09 parent35%,7/20. BP-09.01 and BP-08 closed.
+BP-09.03 activation coherence review. BP-09.02 closed100%,Build100%,Acceptance100%,archived.
+BP-09.03 queued0%,Build0%,Acceptance0%; BP-09 parent40%,8/20. BP-09.01 and BP-08 closed.
 Owner chose this Windows x86_64/Python3.12 computer and local access127.0.0.1 only.
 Continue until genuinely needed; commit/push significant verified work. No current decision blocker.
-B2.01 pushed d15276f1; B2.02 pushed77a2659a. B3 ready to commit; all tests/probes exited.
+B2.01 pushed d15276f1; B2.02 pushed77a2659a; B3 pushed609a541d. V1 closeout ready to commit; all tests/probes exited.
 No owner/gateway/supervisor processes remain; dedicated PostgreSQL/Qdrant remain running.
 
 ## Latest verified B2 boundary
@@ -75,23 +75,29 @@ assembly remains BP-09.03. Earlier actualbrowser proof v2/.test-results/studio-l
 
 ## Next tasks
 
-Commit B3 then V1. B3 evidence copied to docs/Audits/Evidence/BP-09-Deployment:
-Local_Capacity (8-byte servicequota notphysicaldiskfull), Wrong_Roles (five correctmigrator
-CLI rejection), Provider_Unavailable (installedPlanningloopback503/refusal,noexternalcall),
-Current_Profile (actualindependentDeploymentCLIvalidate/preflight,current7hostsCPUonly),
-Deployment_Reproduction (two fresh0.2installsidenticalwheelsha).
-FreshDeployment0.2 ROOT.test-results/local-deployment-runtime-20261006{a,b}. Use b for
-actual V1 independentcontroller; verify_local_readonly.py imports only Deployment+stdlib,
-so run with isolated b Python -I scriptpath to make sys.executable the installedcontroller.
-Add replay-evidence option to replay original Registry command/receipt from Local_Outage_Drain
-withoutnewmigration/admission. Retained artifact/bytes from Local_Capacity can be reread using
-its stored scope/capacity configuration if needed. Browser should requalify isolated gateway0.2
-using AMPHORA_GATEWAY_TEST_PYTHON and existing studio/tests/browser/local_entry.mjs.
-Independentcontroller builds passed; V1 execution/replacement/audit remain. No owner blocker.
-Providerprobe source owned by Planning/tests/openai_provider/unavailable_probe.py, noPytest import;
-uses explicit test-only connectionfactory through real installedadapter, preservesunknownusage.
-No production source changed in B3. Boundarycheckpassed. ScientificLinux-onlytools and actual
-model/campaign/Design-Explore shell remain BP09.03 after acceptance. No paidcalls in thischild.
+Commit/push V1 closeout then BP-09.03 activation audit BEFORE implementation. V1 actual independent
+controller b started7hosts, replayed originalRegistryreceipt, drainedall and preservedjournal/vault:
+ROOT.test-results/local-controller-replacement-20261006a; copiedController_Replacement.json.
+Gateway0.2 browser PASSED v2/.test-results/studio-local-entry/2026-10-07T04-45-06-672Z, inspected
+empty1440/Monitor390 screenshots; copiedGateway_Replacement_Browser.json. SyntheticRuntimepeer,
+notfullcampaignclaim. Closeoutaudit BP-09.02_Local_Installation_Closeout.md, child/history archived
+BP-09/Completed; links/trackers/dashboard updated. RuntimeTopology correctedWindowslocaltarget and
+gatewayrouting versus ownertransactions. Production source unchanged since B2; V1 onlyharness/docs.
+Fresh independentDeployment0.2 ROOT.test-results/local-deployment-runtime-20261006{a,b}; bqualified.
+
+B3 evidence Local_Capacity (8-byte servicequota,notphysicaldiskfull), Wrong_Roles (fivecorrectmigrator
+CLI rejection), Provider_Unavailable (installedPlanningloopback503/refusal,noexternalcall), Current_Profile
+(actualindependentDeploymentCLIvalidate/preflight,current7hostsCPUonly), Deployment_Reproduction
+(twofresh0.2installsidenticalwheelsha). All underdocs/Audits/Evidence/BP-09-Deployment.
+
+BP-09.03 B1 explicitly wires selectedlive model into Planning supervision scheduling (currently
+onlydisabled/fixtureconfiguration), actualResearch/Datarefs, compatible scientifictools and Studio
+walkthrough. Existing Linux-only tool descriptors need compatibleprofile qualification, neverrelabeled.
+DefaultStudioentry currentlyMonitoronly; Design/Explore shell integration expectedinthischild.
+Read childplan and planning scheduling/context/evaluation moduleREADMEs for boundedactivationreview.
+No currentownerblocker; priorpermission syntheticmodelresearch usesZ:/ssos/.env OpenAIkeys (neverprint),
+choosecostconservative bound and preserveoriginalevaluations. No paidcalls occurred in BP09.02.
+Run focusedMarkdownlinkcheck for touchedarchive links and finaldiffcheck beforecommit ifneeded.
 ## Operating rules
 
 Read v2/AGENTS.md. v1 read-only; noJARVIS/subagents/goals. PYTHONUTF8=1 each exec.
