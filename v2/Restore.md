@@ -10,8 +10,8 @@ Current B3 is blocked on owner target identity/access and exposure choice. The
 pending questions ask DGX Spark, partner Threadripper or local, hostname/access,
 and loopbackSSH versus authenticated privateLAN. No answer has arrived. Do not
 infer selection from elapsed time or use developer-machine proof as target proof.
-No active processes. This B2 checkpoint is ready to commit/push; previous push
-7c7f9839. After owner answer, resume B3 actual selected-host preflight. V1 independent
+No active processes. B2 implementation is committed and pushed as33b8a370.
+After owner answer, resume B3 actual selected-host preflight. V1 independent
 installation/audit follows B3; do not skip its prerequisite.
 
 ## Implemented deployment boundary
