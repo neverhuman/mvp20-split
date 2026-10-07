@@ -34,7 +34,7 @@ export function NavigationPane({ navigation, monitor, observation, namedViews, e
   const parent = view.scopes?.parent_activation_id ?? undefined;
   return <section aria-label="Authored graph navigation">
     {namedViews && <NamedViews model={namedViews} anchor={anchor ?? null} />}
-    <div className="toolbar">
+    <div className="scope-summary"><div className="toolbar">
       <button onClick={() => void navigation.root()} disabled={!anchor}>Return to root graph</button>
       <span>Revision {page?.cut.revision ?? anchor?.cut.revision ?? 'unavailable'} · Read-only authored connections</span>
     </div>
@@ -45,6 +45,7 @@ export function NavigationPane({ navigation, monitor, observation, namedViews, e
       view.topologyPhase === 'loading' ? 'Loading authored topology…' : page ?
       `${scene.nodes.length} nodes shown · ${scene.omitted} outside this window · ${view.topology!.unresolvedEdges} links await an unloaded target` :
       'Choose an occurrence group to explore its authored graph.')}</p>
+    </div>
     <div className="work-area">
       <GraphCanvas key={page?.graph_scope.scope_key ?? 'unloaded'} nodes={scene.nodes} edges={scene.edges} selection={observation.selection} select={select}
         annotations={Object.fromEntries((page?.nodes ?? []).filter(node => node.child_scope_count > 0).map(node =>

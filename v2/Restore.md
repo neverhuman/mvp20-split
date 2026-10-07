@@ -1,26 +1,30 @@
 # Restore
 
-Refreshed 2026-10-07 17:33:24 America/Chicago. Read FIRST after compression.
+Refreshed 2026-10-07 18:07:55 America/Chicago. Read FIRST after compression.
 
 ## Current handoff
 
-Refreshed implementation checkpoint 2026-10-07 18:00:00 America/Chicago.
-UI-01 primary40%, Build50%, Verification0%; G0/G1/N1=100, N2/N3/V1=0.
-G1 committed/pushed b917223e. ELK connected graph actual-owner browser-e pass.
-N1 question landing, exact Research criteria, 4-perspective navigation and safe URL
-view reload implemented; 292 Studio tests pass. Actual-owner workflow-review
-browser-a passes exact question, graph viewport/selection roundtrip, reload,
-1440/390 accessibility. Images reviewed. Root v2/.test-results/ui01-n1.
-Candidate public-a isolated browser only; user-facing frozen demo unchanged.
-NEXT N2: reduce inner-view header/control density; map result comparison contracts.
-Existing Explore has Knowledge graph/Specimens/Properties/Compare specimens/Question
-feedback; actual demo has graph selection but NO experiment/observation pins.
-Do not infer scientific results from execution completion or opaque artifact bytes.
-Current GraphCanvas shared across views. N1 uses FeedbackModel with question/need
-only, explicit optional pins null. Hidden question cancels/clears. URL workflow
-helper preserves exact pins and drops credentials; mounted views retain context.
-No active tests/jobs at checkpoint. Latest demo liveness verified through workflow
-review. Original 2hour session expires ~18:08; check before further API reviews.
+Refreshed implementation checkpoint 2026-10-07 18:07:35 America/Chicago.
+UI-01 primary44%, Build55%, Verification0%; G0/G1/N1=100, N2=20, N3/V1=0.
+G1 pushed b917223e; N1 pushed8965da3d. Current N2 compact screen/status/action
+hierarchy implemented. NEXT owner decision UI-01.01 Campaign result discovery:
+recommend additive Runtime read-only retained-output index plus bounded typed
+SearchCheckpoint consumer. Alternative bounded client scan avoids new API but
+has explicit incomplete-discovery limits. New public boundary is material scope;
+do not implement until owner direction; revise N2 denominator upon approval.
+N2 tasks five equal: screen hierarchy100; discovery/capabilities0; typedcomparison0;
+evidence/reasoningjourney0; actualowneracceptance0. Full V1 remains downstream.
+292 Studio tests pass. Actual-owner G1 browser-e and N1 browser-a passed.
+N2 final isolated workflow/graph both PASS; job71807 completed, gateway closed. Evidence v2/.test-results/ui01-n2/*-isolated-b, assets public-b.
+Helper v2/.test-results/ui01-n2/review_isolated.py launches/closes owned separate
+Gateway using installed gateway package and same retained owner APIs; no workers.
+Earlier graph-a/b session-denied: repeated probes exhausted live gateway eight-session
+ceiling. Both browser scripts now logout in finally; separate gateway avoids
+interrupting user. No credentials stored in evidence. Original demo frozen unchanged.
+Do not claim new UI is served at57013; current probes isolated only.
+Original2hour demo session scheduled expiry~18:08; verify liveness/drains before
+new probes. No need to stop original user session prematurely.
+LR01 paused; do not resume worker diagnosis without owner reprioritization.
 
 LR01 PAUSED25%, Build33.33%, Acceptance0%, R1=100/R2R3V1=0 by ownerdirection.
 Resume R2 RuntimeOWN scoped receipt diagnosis only after UIpriorityreleased, NOT

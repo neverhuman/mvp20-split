@@ -1,5 +1,13 @@
 # Studio Monitor presentation
 
+UI-01 hosted Monitor exposes authoritative execution status and scoped step count;
+inspection history is secondary disclosure. Standalone consumers retain their
+expanded controls. The entry shell suppresses duplicate module headers while
+preserving module composition. No percentage of scientific progress is inferred.
+Runtime node output pages still expose scalar values/artifact references; this
+presentation does not deserialize arbitrary scientific artifacts or claim a
+campaign-wide candidate ranking. That missing discovery boundary is UI-01/N2.
+
 Scientific views now have a separate [Explore workspace](explore/README.md), owned by BP-06.06. Monitor's Runtime capability catalog remains truthful to its own owner; Explore consumes separately pinned Knowledge/Research/Data projections.
 
 Design: [Studio](../../../docs/Architecture/Experience/Studio.md) and [canvas decision](../../../docs/Architecture/Experience/Studio_Canvas_Decision.md). Implemented: BP-05.02 B1-B3; final-source V1 replacement/audit accepted. User: internal researcher inspecting execution and retained evidence. BP-05.03 adds optional separate emergency-command presentation; scientific acceptance, owner credentials and component-local network reads remain outside this module.

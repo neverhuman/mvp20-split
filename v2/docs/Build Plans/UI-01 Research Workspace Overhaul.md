@@ -2,17 +2,17 @@
 
 ## Canonical tracker
 
-- Status: primary_active; G1 and N1 verified; N2 approach/run/results next.
-- Last refreshed: 2026-10-07 18:00:00 (America/Chicago).
+- Status: primary_active; G1/N1 complete; N2 partial, result-discovery architecture decision pending.
+- Last refreshed: 2026-10-07 18:07:35 (America/Chicago).
 - Baseline: 62ea4966; owner-reported disconnected canvas and navigation review on 2026-10-07.
 - Owner: Studio experience, page models and presentation; service owners retain their contracts and state.
 - Parent: none; priority and mirrors in [Master Build Tracker](Master%20Build%20Tracker.md).
-- Overall implementation: **40%**; Build50%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
+- Overall implementation: **44%**; Build55%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
 - Design readiness: G0 complete; ELK directed layout and bounded topology ownership implemented.
-- Demonstrated behavior: existing UI displays records; owner review exposed unusable graph presentation. Previous passing checks do not establish this plan's usability acceptance.
-- Current phase/task: N2.1 approach/run information hierarchy and result contract map.
-- Next task: N2.2 results/evidence comparison and actual-owner journey.
-- Blockers: none for graph review/planning. Missing producer capabilities must be identified before dependent UI work, not represented by fabricated results.
+- Demonstrated behavior: connected graphs and question-first navigation verified against retained owner records; result-first comparison and full replacement acceptance remain.
+- Current phase/task: N2.2 result-discovery decision; N2.1 screen hierarchy implemented.
+- Next task: Resolve [UI-01.01](UI-01.01%20Campaign%20result%20discovery%20decision.md), then revise the N2 task denominator before contract work.
+- Blocker: owner direction on additive campaign-result discovery versus bounded consumer-only scanning; see UI-01.01. Existing repairs are implemented; generic result-first comparison remains undelivered.
 - Human acceptance: owner feedback is part of visual review; no new routine approval gates for campaign execution.
 - Active exception: owner explicitly reprioritized UI over worker diagnostics; LR-01 remains paused at25%, Build33.33%, Acceptance0%, with R2 receipt diagnosis preserved.
 - Pre-activation coherence: 2026-10-07 17:54:00, ready for G0. Existing topology/observation APIs, React Flow canvas and isolated Studio boundaries are available; meaningful layout and workflow acceptance are missing. No new backend contract is assumed approved by this plan.
@@ -22,7 +22,7 @@
 | G0 graph review and design | 100% | Owner report and retained campaign | Recorded actual-screen diagnosis, topology/data map, layout design and graph acceptance cases |
 | G1 usable connected graph | 100% | G0 complete | One real retained campaign opens as a readable connected graph; branches, joins and nested work navigable; visual and behavioral proof |
 | N1 research entry and navigation | 100% | G1 complete | Research-question landing and connected workflow navigation with preserved selection/context |
-| N2 approach, execution and results | 0% | N1 complete | Understand approach, follow autonomous work, inspect/compare results and supporting evidence |
+| N2 approach, execution and results | 20% | N1 complete | Understand approach, follow autonomous work, inspect/compare results and supporting evidence |
 | N3 next-campaign iteration | 0% | N2 complete | Target weak/promising points, inspect proposed changes and follow predecessor/successor history |
 | V1 integrated acceptance and audit | 0% | N3 complete | Actual-owner user journey, independent consumer acceptance, scoped audit and explicit limitations |
 
@@ -226,3 +226,30 @@ Missing/invalid pins and denied reads stay explicit; launch ticket is erased.
 criteria, graph selection/viewport roundtrip, reload and 1440/390 accessibility.
 Evidence `../../.test-results/ui01-n1/browser-a/evidence.json`; both landing images
 reviewed. N2 still owns inner-view density, result-first hierarchy and comparison.
+
+## N2 bounded task tracker - 2026-10-07 18:07:35
+
+Five equal tasks define N2 credit. Proposed public-contract additions require an
+explicit scope/denominator update after the owner decision; they earn no credit now.
+
+| Task | Completion | Exit |
+|---|---:|---|
+| N2.1 screen hierarchy | 100% | Single shell, compact execution status/actions, secondary technical controls, truthful absent-result notice |
+| N2.2 participating capabilities and result discovery | 0% | Exact tool/model/input relationships and bounded accepted-result discovery; UI-01.01 pending |
+| N2.3 typed results and comparison | 0% | Candidates/generations shown with pinned context, provenance and unknowns |
+| N2.4 evidence and reasoning traversal | 0% | Coherent result-to-tool/input/model/evidence journey beyond individual existing inspectors |
+| N2.5 actual-owner acceptance | 0% | Complete approach/run/results journey and scoped regressions |
+
+292 Studio checks pass on N2 source. Isolated gateway checks use retained owner
+APIs with candidate assets; no execution/model calls. Final evidence is under
+`../../.test-results/ui01-n2/`. Earlier graph-a/b denied session exchange because
+browser probes exhausted the existing gateway's eight-session ceiling; probes now
+log out, and separate gateway checks avoid affecting the user session. This is
+not an authentication bypass or a repaired scientific-worker reliability claim.
+Frozen demo assets remain unchanged; V1 still owns full replacement qualification.
+
+Final N2.1 evidence: isolated workflow and graph reviews both PASS against retained
+owner APIs, `workflow-isolated-b` and `graph-isolated-b`; gateway closed cleanly.
+Execution screenshot reviewed after compact action/scope layout. Candidate public-b
+remains separate from the frozen demo. Browser session exhaustion evidence is
+retained, and future probes revoke their own sessions on exit.

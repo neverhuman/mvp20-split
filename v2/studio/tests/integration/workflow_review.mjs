@@ -9,9 +9,11 @@ const assets = resolve(process.argv[3]), output = resolve(process.argv[4]);
 await mkdir(output, { recursive:true });
 const browser = await chromium.launch({ headless:true });
 const evidence = { status:'running', errors:[], checks:[] };
+let reviewedPage;
 try {
   const context = await browser.newContext({ viewport:{ width:1440, height:1000 } });
   const page = await context.newPage();
+  reviewedPage = page;
   page.on('pageerror', error => evidence.errors.push(error.message));
   for (const name of ['app.js','app.css']) await page.route(input.origin + '/' + name, route =>
     readFile(resolve(assets,name)).then(body => route.fulfill({ body, contentType:name.endsWith('js') ? 'application/javascript' : 'text/css' })));
@@ -33,6 +35,8 @@ try {
   await page.setViewportSize({width:1440,height:1000});
   await nav.getByRole('button',{name:'Approach and run',exact:true}).click();
   await page.locator('.react-flow__node[aria-label="seed, succeeded"]').click();
+  await page.getByRole('region',{name:'Campaign execution status',exact:true}).waitFor();
+  await page.screenshot({path:resolve(output,'execution-1440.png'),fullPage:true});
   await page.getByRole('button',{name:'Pan right',exact:true}).click();
   await page.waitForTimeout(150);
   const viewport = await page.locator('.react-flow__viewport').getAttribute('style');
@@ -55,6 +59,7 @@ try {
   assert.deepEqual(evidence.errors,[]);
   evidence.status='passed';
 } finally {
+  if (reviewedPage) await reviewedPage.evaluate(() => fetch('/session/logout', { method:'POST' })).catch(() => {});
   await writeFile(resolve(output,'evidence.json'),JSON.stringify(evidence,null,2)+'\n');
   await browser.close();
 }

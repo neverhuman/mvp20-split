@@ -44,7 +44,7 @@ function Campaign({ context, search }: { context: WorkspaceContext & { run_id: s
     return { question:new FeedbackModel({ research:new ResearchRecordClient(), feedback:new FeedbackClient() }), model:new MonitorModel(client), navigation:new NavigationModel(client), namedViews:new NamedViewsModel(client), evidence:new EvidenceModel(client), supervision:new SupervisionModel(new SupervisionClient(), new FollowupModel(new FollowupClient()), new CriterionModel(new CriterionClient())), library:new DraftLibrary(context,new AuthoringClient()) };
   }, [context.actor_id, context.scope.tenant_id, context.scope.project_id, context.run_id]);
   useEffect(() => () => { for (const owner of Object.values(owners)) owner.dispose(); }, [owners]);
-  return <>
+  return <div className="research-shell">
     <header className="local-workspace-bar"><strong>AMPHORA</strong><span>Research workspace</span><span className="local-access">Local access</span></header>
     <nav className="local-workspace-navigation" aria-label="Research workspace">
       <button aria-pressed={mode === 'question'} onClick={() => navigate('question')}>Question</button>
@@ -53,10 +53,10 @@ function Campaign({ context, search }: { context: WorkspaceContext & { run_id: s
       <button aria-pressed={mode === 'design'} onClick={() => navigate('design')}>Next iteration</button>
     </nav>
     <div hidden={mode !== 'question'}><ResearchQuestion model={owners.question} selection={feedbackSelection} active={mode === 'question'} synthetic={context.synthetic} navigate={navigate} /></div>
-    <div hidden={mode !== 'execution'}><MonitorWorkspace {...owners} active={mode === 'execution'} context={{ scope:context.scope, run:context.run_id }} synthetic={context.synthetic} /></div>
+    <div hidden={mode !== 'execution'}><MonitorWorkspace {...owners} compact active={mode === 'execution'} context={{ scope:context.scope, run:context.run_id }} synthetic={context.synthetic} /></div>
     {designed && <div hidden={mode !== 'design'}><LocalDesign model={owners.library} synthetic={context.synthetic} /></div>}
     {explored && <div hidden={mode !== 'knowledge'}><LocalKnowledge selection={selection} feedbackSelection={feedbackSelection} outputSelection={outputSelection} campaign={{ scope: context.scope, run: context.run_id }} active={mode === 'knowledge'} synthetic={context.synthetic} /></div>}
-  </>;
+  </div>;
 }
 
 export function LocalWorkspace({ session, search = '' }: { session: WorkspaceSession; search?: string }) {

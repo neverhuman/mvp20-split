@@ -13,9 +13,11 @@ const evidence = { status: 'running', scenarios: [], views: [], errors: [], limi
   'Candidate static files intercepted only in this isolated browser; live gateway and owner reads unchanged',
   'No scientific workers, provider calls or campaign writes',
 ] };
+let reviewedPage;
 try {
   const context = await browser.newContext({ viewport: { width: 1440, height: 1100 }, reducedMotion: 'reduce' });
   const page = await context.newPage();
+  reviewedPage = page;
   page.on('pageerror', error => evidence.errors.push(error.message));
   const violations = [];
   const fitted = async () => page.waitForFunction(() => {
@@ -99,6 +101,11 @@ try {
   assert.deepEqual(evidence.errors, []);
   evidence.status = 'passed';
 } finally {
+  if (evidence.status !== 'passed' && reviewedPage) {
+    evidence.failureText = await reviewedPage.locator('body').innerText();
+    await reviewedPage.screenshot({ path:resolve(output,'failure.png'),fullPage:true });
+  }
+  if (reviewedPage) await reviewedPage.evaluate(() => fetch('/session/logout', { method:'POST' })).catch(() => {});
   await writeFile(resolve(output, 'evidence.json'), JSON.stringify(evidence, null, 2) + '\n');
   await browser.close();
 }

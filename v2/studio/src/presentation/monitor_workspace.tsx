@@ -16,7 +16,7 @@ import type { EmergencyStop } from '../page_models/design/emergency_stop.js';
 import { EmergencyControl } from './emergency_control.js';
 import './style.css';
 
-export function MonitorWorkspace({ model, context, synthetic = false, active = true, navigation, namedViews, evidence, emergency, supervision }: { model: MonitorModel; context: RunContext; synthetic?: boolean; active?: boolean; navigation?: NavigationModel; namedViews?: NamedViewsModel; evidence?: EvidenceModel; emergency?: EmergencyStop; supervision?: SupervisionModel }) {
+export function MonitorWorkspace({ model, context, synthetic = false, active = true, compact = false, navigation, namedViews, evidence, emergency, supervision }: { model: MonitorModel; context: RunContext; synthetic?: boolean; active?: boolean; compact?: boolean; navigation?: NavigationModel; namedViews?: NamedViewsModel; evidence?: EvidenceModel; emergency?: EmergencyStop; supervision?: SupervisionModel }) {
   const subscribe = useCallback((notify: () => void) => model.subscribe(notify), [model]);
   const view = useSyncExternalStore(subscribe, () => model.snapshot);
   const [filter, setFilter] = useState('');
@@ -64,6 +64,13 @@ export function MonitorWorkspace({ model, context, synthetic = false, active = t
     <header><span className="brand">AMPHORA<span>research studio</span></span><div className="mode">Monitor</div><span className="fixture">{synthetic ? 'Synthetic observation fixture' : 'Campaign observations'}</span></header>
     <main>
       <div className="context"><div><p className="eyebrow">Campaign / execution observations</p><h1>Follow execution</h1></div><p>Read-only · {view.window ? `${current ? 'live' : 'retained'} revision ${view.window.snapshot.cut.revision}` : 'awaiting observation'}</p></div>
+      {compact && view.window && <section className="campaign-summary" aria-label="Campaign execution status">
+        <strong>{view.window.snapshot.status === 'completed' ? 'Execution complete' : view.window.snapshot.status === 'running' ? 'Campaign running autonomously' : `Campaign ${view.window.snapshot.status}`}</strong>
+        <span>{view.window.snapshot.node_count} execution steps recorded</span>
+        <span>{current ? 'Loaded observation' : 'Retained observation; refresh to verify'}</span>
+        <p>Follow the arrows to trace the approach. Open repeated work to inspect a branch or iteration. Select a step to follow its outputs and evidence.</p>
+      </section>}
+      <div className={compact ? "campaign-actions" : undefined}>
       <div className="toolbar">{!topology && !pin && <><label htmlFor="node-filter">Find in loaded nodes</label><input id="node-filter" value={filter} onChange={event => setFilter(event.target.value)} maxLength={120} /></>}
         <button onClick={() => void model.refresh()} disabled={view.phase === 'loading'}>Refresh observation</button>
         <button onClick={() => void model.poll()} disabled={!current}>Check for updates</button>
@@ -72,6 +79,7 @@ export function MonitorWorkspace({ model, context, synthetic = false, active = t
         view.phase === 'denied' ? 'Access denied. Observation data has been cleared.' : view.phase === 'stale' ? 'Observation expired or changed. Refresh to continue.' :
         view.phase === 'failed' ? `Observation unavailable. ${view.error?.message ?? ''}` : view.phase === 'empty' ? 'No activations in this scope.' :
         `${shown.length} shown · ${scene.omitted} outside this window · ${scene.nodes.length - shown.length} filtered from this window`}</p>}
+      <details className="inspection-tools" open={compact ? undefined : true}><summary>Inspection history and technical controls</summary>
       <div className="toolbar" aria-label="Inspection history">
         <button disabled={!current || !!pin || !history.compatible(context.scope)} onClick={() => history.capture({ monitor: view,
           ...(topology && navigation ? { navigation: navigation.snapshot } : {}), ...(evidence ? { evidence: evidence.snapshot } : {}),
@@ -81,11 +89,13 @@ export function MonitorWorkspace({ model, context, synthetic = false, active = t
         </select>{pin && <button onClick={() => history.remove(pin.id)}>Remove pin</button>}
         {historyView.error && <p role="alert">{historyView.error}</p>}
       </div>
+      </details>
       {navigation && <div className="toolbar" aria-label="Observation view">
         <button aria-pressed={!topology} onClick={() => { history.select(null); setTopology(false); }}>Activation inventory</button>
         <button aria-pressed={topology} onClick={() => { history.select(null); setTopology(true); }}>Authored graph</button>
       </div>}
       {supervision && <button aria-pressed={inspectingCheckpoints} onClick={() => { history.select(null); setInspectingCheckpoints(!inspectingCheckpoints); if (!inspectingCheckpoints) void supervision.refresh(); }}>{inspectingCheckpoints ? 'Return to execution graph' : 'Inspect checkpoint reasoning'}</button>}
+      </div>
       {inspectingCheckpoints && supervision ? <SupervisionInspector model={supervision} /> : pin ? <PinnedInspection key={pin.id} pin={pin} /> : topology && navigation ? <NavigationPane navigation={navigation} monitor={model} observation={view} {...(namedViews ? { namedViews } : {})} {...(evidence ? { evidence } : {})} /> : <div className="work-area" data-phase={view.phase}>
         <section className="activation-inventory" aria-label="Execution inventory">
           <div className="list-heading"><h2>Loaded activations</h2><span>{shown.length}</span></div>

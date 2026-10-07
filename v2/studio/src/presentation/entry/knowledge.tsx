@@ -30,7 +30,8 @@ export function LocalKnowledge({ selection, feedbackSelection, outputSelection, 
     <h1>{selection.phase === 'invalid' ? 'Research context unavailable' : 'No research context selected'}</h1>
     <p>{selection.phase === 'invalid' ? 'This link does not contain a valid research selection for your workspace. Execution history remains available.' : 'Open a workspace link with an explicit domain graph or experiment selection to inspect its evidence.'}</p>
   </main>;
-  return <>{feedbackSelection?.phase === 'invalid' && <p role="status">The selected question link is invalid for this workspace. Other research views remain available.</p>}
+  return <>{!selection.pins?.experiment && <p className="selected-results-notice" role="status">No experiment or laboratory results are selected in this workspace link. The domain graph and selected research evidence remain available. Execution outputs can be inspected from their campaign steps.</p>}
+    {feedbackSelection?.phase === 'invalid' && <p role="status">The selected question link is invalid for this workspace. Other research views remain available.</p>}
     {outputSelection.phase === 'invalid' && <p role="status">The selected execution output link is invalid. No affected consumer has been inferred.</p>}
     <ExploreWorkspace model={model} active={active} synthetic={synthetic} qualityLink={qualityLink} {...(feedbackSelection?.phase === 'ready' ? { feedback } : {})} /></>;
 }

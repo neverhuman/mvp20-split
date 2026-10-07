@@ -20,3 +20,9 @@ and session scope; WorkspaceQualityOutputSelection accepts only activation_id/po
 never another run or arbitrary path. Existing ExplorePins remain required for the
 local research workspace. These selections grant no authority and infer no graph,
 question or consumer. Tests live in page_models/quality selection/runtime_link.
+
+UI-01 workflow.ts validates the four workflow view hints and constructs an
+allowlisted fragment preserving exact owner selections, never a launch credential.
+Invalid/duplicate view hints fall back to Question; duplicate owner pins are kept
+for their own validators to reject. It owns no storage, fetch or session authority.
+Tests: tests/page_models/session/workflow.test.ts.
