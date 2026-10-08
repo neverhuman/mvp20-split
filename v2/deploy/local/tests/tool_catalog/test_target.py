@@ -19,6 +19,17 @@ def snapshot():
                              'contract_version': '1'}}}}
 
 
+@pytest.mark.parametrize('name,capability', [('hansen-solvency','materials.hansen-solvency'),
+                                           ('arrhenius-viscosity','materials.arrhenius-viscosity')])
+def test_scientific_catalog_requires_matching_method(name,capability):
+    probe,value=target(),snapshot();probe.profile.name=name
+    assert not probe.matches(value)
+    value['deployment']['release']['tool']['capability_id']=capability
+    assert probe.matches(value)
+    value['deployment']['release']['tool']['image_sha256']='b'*64
+    assert not probe.matches(value)
+
+
 def test_rebuilt_catalog_profile_requires_its_exact_image():
     probe, value = target(), snapshot()
     probe.profile.name = 'synthetic-objectives-rebuilt'

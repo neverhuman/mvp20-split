@@ -401,5 +401,17 @@
     "coverage_sources": [
       "deploy/local/src/amphora_deployment/acceptance"
     ]
+  },
+  "hansen-solvency": {
+    "tests": "tools/hansen_solvency/tests",
+    "coverage_sources": [
+      "tools/hansen_solvency/src/amphora_hansen_solvency"
+    ]
+  },
+  "arrhenius-viscosity": {
+    "tests": "tools/arrhenius_viscosity/tests",
+    "coverage_sources": [
+      "tools/arrhenius_viscosity/src/amphora_arrhenius_viscosity"
+    ]
   }
 }

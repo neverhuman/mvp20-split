@@ -1,0 +1,76 @@
+{
+  "$defs": {
+    "Point": {
+      "additionalProperties": false,
+      "properties": {
+        "dispersion": {
+          "maximum": 1000000.0,
+          "minimum": 0,
+          "title": "Dispersion",
+          "type": "number"
+        },
+        "hydrogen_bond": {
+          "maximum": 1000000.0,
+          "minimum": 0,
+          "title": "Hydrogen Bond",
+          "type": "number"
+        },
+        "polar": {
+          "maximum": 1000000.0,
+          "minimum": 0,
+          "title": "Polar",
+          "type": "number"
+        }
+      },
+      "required": [
+        "dispersion",
+        "polar",
+        "hydrogen_bond"
+      ],
+      "title": "Point",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "candidate_id": {
+      "maxLength": 128,
+      "minLength": 1,
+      "title": "Candidate Id",
+      "type": "string"
+    },
+    "interaction_radius": {
+      "exclusiveMinimum": 0,
+      "maximum": 1000000.0,
+      "title": "Interaction Radius",
+      "type": "number"
+    },
+    "parameter_context": {
+      "maxLength": 2048,
+      "minLength": 1,
+      "title": "Parameter Context",
+      "type": "string"
+    },
+    "polymer": {
+      "$ref": "#/$defs/Point"
+    },
+    "schema_version": {
+      "const": "1",
+      "default": "1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "solvent": {
+      "$ref": "#/$defs/Point"
+    }
+  },
+  "required": [
+    "candidate_id",
+    "parameter_context",
+    "polymer",
+    "solvent",
+    "interaction_radius"
+  ],
+  "title": "SolvencyInput",
+  "type": "object"
+}

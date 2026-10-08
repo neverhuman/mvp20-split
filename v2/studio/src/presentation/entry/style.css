@@ -54,7 +54,7 @@
 .inline-scope-controls { margin:8px 0 12px; padding:10px 14px; background:#fff; border:1px solid var(--line); }
 .inline-scope-controls p { margin:0 0 6px; font-size:.85rem; line-height:1.45; }
 .inline-scope-controls .toolbar { display:flex; flex-wrap:wrap; gap:8px; margin:6px 0 0; }
-.graph-region .task-node:has(.node-annotation) strong { -webkit-line-clamp:1; }
+.graph-region .task-node:has(.node-annotation) strong { -webkit-line-clamp:2; font-size:12px; line-height:14px; }
 .graph-region .task-node.issued { background:#e1f2f8; border:2px solid #176584; }
 .graph-region .task-node.waiting, .graph-region .task-node.blocked { background:#fff1d8; border-color:#956410; }
 .graph-region .task-node.failed { background:#fde9e6; border:2px solid #a5382d; }
@@ -62,3 +62,10 @@
 @media(max-width:760px) { .graph-region .react-flow__minimap { width:110px; height:80px; } }
 
 .graph-region .task-node.scope-boundary-node { border-style:dashed; border-radius:20px; background:#edf3f1; }
+
+.scientific-result { padding:16px; border-bottom:2px solid var(--accent); background:#f0f7f4; overflow-wrap:anywhere; }
+.scientific-result h2 { font-size:1.15rem; }
+.scientific-result dt { font-size:.8rem; color:var(--muted); margin-top:10px; }
+.scientific-result dd { margin:4px 0; }
+.scientific-result li,.scientific-result p { line-height:1.5; }
+.scientific-result ol { padding-left:20px; }

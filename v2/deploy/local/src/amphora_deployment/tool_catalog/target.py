@@ -7,7 +7,9 @@ from ..profile import require
 
 CAPABILITIES = {**{'evolution-' + name: 'numeric.search-' + name for name in ('seed', 'requests', 'collect', 'vary')},
                 'synthetic-objectives': 'synthetic.numeric-objectives',
-                'synthetic-objectives-rebuilt': 'synthetic.numeric-objectives'}
+                'synthetic-objectives-rebuilt': 'synthetic.numeric-objectives',
+                'hansen-solvency': 'materials.hansen-solvency',
+                'arrhenius-viscosity': 'materials.arrhenius-viscosity'}
 
 
 class CatalogTarget:

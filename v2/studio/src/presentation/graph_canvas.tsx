@@ -7,7 +7,7 @@ import '@xyflow/react/dist/style.css';
 
 const TaskNode = memo(({ data }: NodeProps<Node<{ label: string; status: string; annotation?: string }>>) => <>
   <Handle type="target" position={Position.Top} isConnectable={false} />
-  <span className="node-status">{data.status}</span><strong title={data.label}>{data.label}</strong>
+  <span className="node-status">{data.status}</span><strong title={data.label}>{data.label.replaceAll('_',' ')}</strong>
   {data.annotation && <span className="node-annotation">{data.annotation}</span>}
   <Handle type="source" position={Position.Bottom} isConnectable={false} />
 </>);

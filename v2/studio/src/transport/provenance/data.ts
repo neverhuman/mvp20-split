@@ -11,6 +11,17 @@ export class DataProvenanceClient {
   private readonly http: ScientificHTTP;
   constructor(fetcher: typeof fetch = fetch, timeoutMs = 15_000) { this.http = new ScientificHTTP(fetcher, timeoutMs); }
 
+  async jsonArtifact(reference: ArtifactRef, signal: AbortSignal): Promise<unknown> {
+    const expected = normalized(reference, {}, value => decodeProvenance("artifact", value));
+    if (expected.media_type !== 'application/json' || expected.size_bytes > 262144) throw new ScientificReadFailure('limit');
+    await this.artifact(expected, signal);
+    const bytes = await this.http.content(base + 'artifacts/' + encodeURIComponent(expected.artifact_id) + '/content', expected.size_bytes, expected.media_type, signal);
+    requireReply(bytes.byteLength === expected.size_bytes && await sha256(bytes) === expected.sha256);
+    active(signal);
+    try { return JSON.parse(new TextDecoder('utf-8', { fatal:true }).decode(bytes)); }
+    catch { throw new ScientificReadFailure('invalid_response'); }
+  }
+
   async artifact(reference: ArtifactRef, signal: AbortSignal) {
     const expected = normalized(reference, {}, value => decodeProvenance("artifact", value));
     const result = await this.http.get(base + "artifacts/" + encodeURIComponent(expected.artifact_id), value => decodeProvenance("artifact", value), signal);

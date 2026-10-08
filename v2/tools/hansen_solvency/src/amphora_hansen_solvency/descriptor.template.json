@@ -1,0 +1,62 @@
+{
+  "schema_version": "1",
+  "tool": {
+    "schema_version": "1",
+    "binding": {
+      "capability_id": "materials.hansen-solvency",
+      "release": "0.1.0",
+      "contract_version": "1"
+    },
+    "purpose": "Compute Hansen distance and RED for an explicitly parameterized solvent/polymer pair; unvalidated screen.",
+    "applicability": [
+      "synthetic-tests"
+    ],
+    "inputs": [
+      {
+        "name": "parameters",
+        "representation": "hansen-solvency-input",
+        "unit": "1",
+        "required": true
+      }
+    ],
+    "outputs": [
+      {
+        "name": "result",
+        "representation": "hansen-solvency-observation",
+        "unit": "1",
+        "required": true
+      }
+    ],
+    "side_effects": "pure",
+    "checkpoint_schema": null
+  },
+  "resources": {
+    "architectures": [
+      "x86_64"
+    ],
+    "operating_systems": [
+      "linux"
+    ],
+    "cpu_millicores": 1000,
+    "memory_mib": 128,
+    "gpu_count": 0,
+    "timeout_seconds": 60,
+    "max_parallel_invocations": 1,
+    "max_batch_size": 1
+  },
+  "egress": {
+    "mode": "deny"
+  },
+  "checkpoint": {
+    "mode": "none",
+    "readable_schema_sha256": []
+  },
+  "reproducibility": "deterministic",
+  "authority_ceiling": "synthetic_only",
+  "examples": [
+    "Declared fixture parameters with retained inputs and calculated intermediate values."
+  ],
+  "anti_examples": [
+    "Not a generator, experimentally validated prediction, bioavailability model or full v1 module port."
+  ]
+}

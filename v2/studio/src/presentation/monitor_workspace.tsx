@@ -68,7 +68,7 @@ export function MonitorWorkspace({ model, context, synthetic = false, active = t
         <strong>{view.window.snapshot.status === 'completed' ? 'Execution complete' : view.window.snapshot.status === 'running' ? 'Campaign running autonomously' : `Campaign ${view.window.snapshot.status}`}</strong>
         <span>{view.window.snapshot.node_count} execution steps recorded</span>
         <span>{current ? 'Loaded observation' : 'Retained observation; refresh to verify'}</span>
-        <p>Follow the arrows to trace the approach. Open repeated work to inspect a branch or iteration. Select a step to follow its outputs and evidence.</p>
+        <p>{synthetic && 'Synthetic inputs; execution success does not establish scientific validity. '}Select a step to inspect its method, outputs and evidence. Follow the arrows to trace dependencies.</p>
       </section>}
       <div className={compact ? "campaign-actions" : undefined}>
       <div className="toolbar">{!topology && !pin && <><label htmlFor="node-filter">Find in loaded nodes</label><input id="node-filter" value={filter} onChange={event => setFilter(event.target.value)} maxLength={120} /></>}

@@ -4,6 +4,31 @@ Audience: internal nontechnical colleagues. Start: **11:00am Central**.
 Scope: real local application and retained synthetic campaigns; no new live model
 call or scientific worker is needed during the presentation.
 
+## Current scientific execution review
+
+The primary review now serves scientific-live-c at http://127.0.0.1:57013 with
+Studio0.20 public-c assets. Start in **Approach and run**: four named scientific
+steps, Hansen solvency and Arrhenius viscosity for each of two candidate fixtures,
+converge on retained observations. Select a node to inspect its actual result,
+calculation steps, input parameters and limits. Candidate A is inside the declared
+Hansen sphere; B is outside. No measured compatibility is implied. These are actual
+retained tool computations, not animations or renamed numerical evaluations.
+
+**Evaluation design** remains a separate authored proposal with review concerns.
+It is not claimed to have generated this run. Explain the next integration step:
+runtime LLM proposals composing registered methods and incorporating review feedback.
+No scientific validity, molecule generation or synthesis feasibility claim belongs
+in this bounded demonstration. Four parallel-eligible tasks do not prove timestamp overlap.
+
+If restarting after the active session ends, use the same Windows user and the
+physical deployment root named in Restore.md. Run dev/serve_scientific_review.py
+with --run v2/.test-results/scientific-run-c --public v2/.test-results/scientific-ui/public-c,
+a new --output directory, --root pointing to that installation, and --open.
+The dev virtualenv contains the Deployment controller. Never run two launchers
+on the same ports; an exact session-directory STOP file drains the existing one.
+Actual served verification is scientific-browser-d; the older preview below is
+preserved as a fallback, not the primary scientific walkthrough.
+
 ## UI-01 review preview
 
 The updated UI is available as an explicit review preview. Start it with:

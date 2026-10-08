@@ -1,0 +1,57 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "activation_energy_j_mol": {
+      "exclusiveMinimum": 0,
+      "maximum": 1e+100,
+      "title": "Activation Energy J Mol",
+      "type": "number"
+    },
+    "candidate_id": {
+      "maxLength": 128,
+      "minLength": 1,
+      "title": "Candidate Id",
+      "type": "string"
+    },
+    "parameter_context": {
+      "maxLength": 2048,
+      "minLength": 1,
+      "title": "Parameter Context",
+      "type": "string"
+    },
+    "reference_temperature_c": {
+      "maximum": 500,
+      "minimum": -273.14,
+      "title": "Reference Temperature C",
+      "type": "number"
+    },
+    "reference_viscosity_pa_s": {
+      "exclusiveMinimum": 0,
+      "maximum": 1e+100,
+      "title": "Reference Viscosity Pa S",
+      "type": "number"
+    },
+    "schema_version": {
+      "const": "1",
+      "default": "1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "temperature_c": {
+      "maximum": 500,
+      "minimum": -273.14,
+      "title": "Temperature C",
+      "type": "number"
+    }
+  },
+  "required": [
+    "candidate_id",
+    "parameter_context",
+    "reference_viscosity_pa_s",
+    "reference_temperature_c",
+    "temperature_c",
+    "activation_energy_j_mol"
+  ],
+  "title": "ViscosityInput",
+  "type": "object"
+}

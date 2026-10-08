@@ -1,5 +1,12 @@
 # Studio Monitor presentation
 
+Studio0.20 ScientificOutput renders one selected, schema-pinned scientific result.
+A focused page model owns its sole content read, verification and cancellation;
+selection/denial hides stale results. The pane separates actual computation from
+scientific validity and presents retained parameters, quantities, method and limits.
+Two exact public output schemas are supported; arbitrary artifact JSON is not
+interpreted as science. No owner mutation or model call occurs.
+
 UI-01 concurrency review composes InlineScopes with the hosted topology canvas.
 Initial scatter siblings expand together; iteration and nested scatter groups can
 be expanded inline. Dashed edges/rounded dashed completion boundaries explain

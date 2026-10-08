@@ -1,5 +1,10 @@
 # Provenance reads
 
+Studio0.20 adds bounded JSON artifact content reads (256KiB), with exact metadata,
+byte count, whole-content SHA256 and fatal UTF8 checks. Content access is checked
+separately from metadata. The scientific page model validates exact pinned schemas;
+this transport does not infer scientific validity or render arbitrary content.
+
 BP-06.06/B1.04b, Studio0.3. DataProvenanceClient reads exact source revisions, artifact metadata, conversion traces, derivation receipts and selected source text. ResearchRecordClient reads exact scientific records, questions, needs, interpretations and future-campaign correction pairs. Public generated contracts are the only owner dependencies; no database, service-private imports, owner credentials, mutation, head-following or persistent cache belongs here.
 
 Data metadata does not grant content access: selected text requires a separate current-rights content read. The full source is bounded to4MiB, the selected byte range to64KiB. Exact metadata/size and whole SHA-256 precede the selected-range SHA-256 and fatal UTF-8 decoding. Empty spans are valid; byte-order marks are preserved. Only text/plain and application/json are displayed as text. Source URLs are never fetched and source HTML is never executed. No range-read API is assumed. Conversion traces must reproduce the pinned SHA using the owner's compact sorted-key UTF-8 JSON profile, bounded to256KiB.

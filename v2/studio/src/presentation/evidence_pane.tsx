@@ -1,3 +1,4 @@
+import { ScientificOutput } from './scientific_output.js';
 import { useCallback, useEffect, useSyncExternalStore } from 'react';
 import type { EvidenceModel } from '../page_models/evidence.js';
 import type { MonitorModel, MonitorView } from '../page_models/monitor.js';
@@ -12,6 +13,7 @@ export function EvidencePane({ model, monitor, observation }: { model: EvidenceM
   const occurrences = detail?.node.path.occurrences ?? [];
   const blocked = Object.values(view).some(region => region.phase === 'denied' || region.phase === 'stale');
   return <section className="evidence-inspector" aria-label="Linked execution evidence">
+    <ScientificOutput reference={anchor && !blocked ? detail?.outputs.find(o=>o.artifact?.schema_ref.schema_id.startsWith('materials.'))?.artifact ?? null : null} />
     <h2>Execution evidence</h2>
     {!detail ? <p>Select a current activation to inspect its retained evidence.</p> : <>
       <p>Occurrence: {occurrences.length ? occurrences.map(item => `${item.node_id} [${item.index}]`).join(' / ') : 'root graph'}</p>

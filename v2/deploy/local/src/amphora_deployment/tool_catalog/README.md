@@ -1,5 +1,11 @@
 # Tool catalog integration
 
+Deployment0.16 recognizes independent hansen-solvency and arrhenius-viscosity
+recipes and their exact materials.* capabilities. Image/deployment matching and
+observed local capacity remain required; registration alone grants no capacity.
+UI-01.03 verified four actual invocations through these closed mappings. This does
+not qualify arbitrary scientific modules or establish unattended reliability.
+
 Deployment0.13 also recognizes the explicit synthetic-objectives-rebuilt worker
 recipe for the same public capability. Catalog matching still requires the exact
 configured image and deployment; a replacement cannot claim the old image's capacity.

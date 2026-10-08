@@ -1,5 +1,14 @@
 # Graph Studio
 
+Source release **0.20.0** adds verified scientific artifact inspection for the exact
+published Hansen solvency and Arrhenius viscosity schemas. Four real invocations
+for two explicit parameter fixtures are retained under UI-01.03. Studio verifies
+metadata, content bytes and schema identity before showing inputs, procedure and
+quantities. Browser validators are precompiled for the unchanged Content Security
+Policy. This is narrow scientific calculation, not novel structure generation or
+experimental validation. Actual served inspection evidence is tracked by UI-01.03.
+The older source/demo checkpoint notes below remain historical.
+
 Source release **0.17.0** adds SQ-01/B3/P1 proposal transport, immutable intent
 projection and cancellable proposal/criterion models. The local entry now includes proposal/criterion drilldown. All286 Studio tests pass;
 scripted browser1440/390 accessibility, pagination and race checks pass. Actual-owner

@@ -1,5 +1,10 @@
 # Local deployment profile and preflight
 
+Source0.16 adds closed worker and catalog recipes for standalone Hansen solvency
+and Arrhenius viscosity tools. Four actual Linux worker calculations were retained
+by Runtime in UI-01.03, followed by clean owner/worker drains. Existing release
+and immutable image pins remain required; no general arbitrary-process launcher.
+
 Current package0.15.0; BP-09.03 closed. BP-09.04 adds strict offline backup inventory
 and a separate reviewed rebuilt-evaluator recipe. Original worker profiles remain
 unchanged. Cold restore owner/reference acceptance and rebuilt tool cutover passed.

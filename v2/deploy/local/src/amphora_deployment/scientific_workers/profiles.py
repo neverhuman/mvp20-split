@@ -11,7 +11,9 @@ from ..profile import fields, label, require
 PROFILES = {**{'evolution-' + operation: ('amphora_evolution_search', ('worker', '--operation', operation))
                for operation in ('seed', 'requests', 'collect', 'vary')},
             'synthetic-objectives': ('amphora_synthetic_objectives', ('worker',)),
-            'synthetic-objectives-rebuilt': ('amphora_synthetic_objectives_rebuilt', ('worker',))}
+            'synthetic-objectives-rebuilt': ('amphora_synthetic_objectives_rebuilt', ('worker',)),
+            'hansen-solvency': ('amphora_hansen_solvency', ('worker',)),
+            'arrhenius-viscosity': ('amphora_arrhenius_viscosity', ('worker',))}
 
 
 def content(path, maximum):

@@ -13,6 +13,15 @@ from amphora_deployment.scientific_workers.journal import ContainerJournal
 from amphora_deployment.scientific_workers.profiles import ToolProfile
 
 
+def test_scientific_screening_recipes_are_explicit(profile):
+    for name, module in [('hansen-solvency', 'amphora_hansen_solvency'),
+                         ('arrhenius-viscosity', 'amphora_arrhenius_viscosity')]:
+        selected = ToolProfile.pin(name, profile.image_id, profile.configuration,
+                                   profile.certificate, 23457, 23458)
+        assert selected.entrypoint == ('python', '-m', module)
+        assert selected.arguments == ('worker', '--config', '/amphora/worker.json')
+
+
 def test_rebuilt_recipe_is_separate_and_preserves_old_recipe(profile):
     rebuilt = ToolProfile.pin('synthetic-objectives-rebuilt', profile.image_id,
         profile.configuration, profile.certificate, 23457, 23458)

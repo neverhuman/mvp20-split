@@ -1,0 +1,144 @@
+{
+  "$defs": {
+    "Point": {
+      "additionalProperties": false,
+      "properties": {
+        "dispersion": {
+          "maximum": 1000000.0,
+          "minimum": 0,
+          "title": "Dispersion",
+          "type": "number"
+        },
+        "hydrogen_bond": {
+          "maximum": 1000000.0,
+          "minimum": 0,
+          "title": "Hydrogen Bond",
+          "type": "number"
+        },
+        "polar": {
+          "maximum": 1000000.0,
+          "minimum": 0,
+          "title": "Polar",
+          "type": "number"
+        }
+      },
+      "required": [
+        "dispersion",
+        "polar",
+        "hydrogen_bond"
+      ],
+      "title": "Point",
+      "type": "object"
+    },
+    "SolvencyInput": {
+      "additionalProperties": false,
+      "properties": {
+        "candidate_id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "title": "Candidate Id",
+          "type": "string"
+        },
+        "interaction_radius": {
+          "exclusiveMinimum": 0,
+          "maximum": 1000000.0,
+          "title": "Interaction Radius",
+          "type": "number"
+        },
+        "parameter_context": {
+          "maxLength": 2048,
+          "minLength": 1,
+          "title": "Parameter Context",
+          "type": "string"
+        },
+        "polymer": {
+          "$ref": "#/$defs/Point"
+        },
+        "schema_version": {
+          "const": "1",
+          "default": "1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "solvent": {
+          "$ref": "#/$defs/Point"
+        }
+      },
+      "required": [
+        "candidate_id",
+        "parameter_context",
+        "polymer",
+        "solvent",
+        "interaction_radius"
+      ],
+      "title": "SolvencyInput",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "candidate_id": {
+      "title": "Candidate Id",
+      "type": "string"
+    },
+    "distance": {
+      "title": "Distance",
+      "type": "number"
+    },
+    "distance_squared": {
+      "title": "Distance Squared",
+      "type": "number"
+    },
+    "input_parameters": {
+      "$ref": "#/$defs/SolvencyInput"
+    },
+    "limitation": {
+      "title": "Limitation",
+      "type": "string"
+    },
+    "procedure": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Procedure",
+      "type": "array"
+    },
+    "relative_energy_difference": {
+      "title": "Relative Energy Difference",
+      "type": "number"
+    },
+    "schema_version": {
+      "const": "1",
+      "default": "1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "scientific_status": {
+      "const": "unvalidated_screen",
+      "default": "unvalidated_screen",
+      "title": "Scientific Status",
+      "type": "string"
+    },
+    "sphere_position": {
+      "enum": [
+        "inside",
+        "boundary",
+        "outside"
+      ],
+      "title": "Sphere Position",
+      "type": "string"
+    }
+  },
+  "required": [
+    "candidate_id",
+    "input_parameters",
+    "distance_squared",
+    "distance",
+    "relative_energy_difference",
+    "sphere_position",
+    "procedure",
+    "limitation"
+  ],
+  "title": "SolvencyOutput",
+  "type": "object"
+}

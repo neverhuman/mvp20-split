@@ -1,5 +1,14 @@
 # Foundation Verification Tooling
 
+UI-01.03 scientific demonstration helpers: build_scientific_demo_tools.py independently
+installs/tests/builds two tools; scientific_execution/ owns fixture composition;
+run_scientific_demo.py performs actual public-protocol admission/execution and
+records canonical results/drains. serve_scientific_review.py serves a passed run's
+separate immutable assets with no workers or paid calls. Its ready marker is only
+liveness, never browser qualification; probe_scientific_review.py runs the separate
+actual served browser check with an in-memory launcher credential. A session STOP
+file drains owners. Use physical LocalCache TLS bundle paths on Microsoft Store Python.
+
 `present_local_demo.py` serves the exact separately built assets and owner manifest
 from a passing actual-browser qualification. It verifies asset hashes, selected run,
 scope and local gateway origin before startup. It reuses BrowserController and the

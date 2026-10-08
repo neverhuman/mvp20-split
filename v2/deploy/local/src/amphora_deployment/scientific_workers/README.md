@@ -110,3 +110,8 @@ not resumed scientific success. Shared daemon, full-load peak resources and hist
 expiry causality are not established by this probe. See Controller_Recovery.json.
 
 Shared_Daemon.json qualifies actual Docker unavailability, retained intent, same-turn single-container recovery through installed Deployment0.11 and synthetic503 TLS owner, and exact original baseline restoration. Post-outage actual campaign/receipt/artifact and corrected-successor browser reads pass. No active campaign ran during the daemon outage; no resumed-science, HA or power-loss guarantee follows.
+
+Deployment0.16 adds closed hansen-solvency and arrhenius-viscosity worker recipes
+for UI-01.03. These invoke separately qualified scientific kernels over explicit
+fixture parameters; no full module/scientific validity or arbitrary-module grant.
+Existing image/configuration/fence/resource checks remain unchanged.
