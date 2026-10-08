@@ -38,8 +38,9 @@ Remaining: REAL browser new-run admission + managed worker engagement; service-o
 Planning/Research/Knowledge links; LLM feedback ingestion; generation comparison;
 N3 successor execution; V1 replacement qualification. Do not present retained history
 as a fresh browser-started run. These gaps remain uncredited, not invented approvals.
-Fine visual polish deferred by owner. Current implementation ready to commit/push.
-Prior pushed6d5b5713. Demo guide has current five-step walkthrough and honest limits.
+Fine visual polish deferred by owner. Implementation committed/pushed as3cf054d4.
+Demo guide has the current five-step walkthrough and honest limits. Live viewer
+remains running; preserve it while the owner rehearses.
 
 ## Commands / locations
 
