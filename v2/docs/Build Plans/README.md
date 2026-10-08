@@ -1,5 +1,7 @@
 # Build Plans
 
+- [UI-02 Candidate Structure and Recommendation Views](UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md): queued0%; 2D structure/repeat-unit inspection, composition, properties, synthesis evidence and recommendation rationale. 3D modeling is separate follow-on scope.
+
 [Master Build Tracker](Master%20Build%20Tracker.md) selects the primary plan and mirrors its canonical overall/per-phase completion. Owning plans define task position, tests and phase gates.
 
 BP-01 through BP-09 are [completed](Completed/README.md). SQ-01 is completed; UI-01 is the primary plan, beginning with graph review. MBT selects the primary task. Drafting does not earn implementation credit.

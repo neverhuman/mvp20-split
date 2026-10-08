@@ -1,5 +1,11 @@
 # Restore
 
+Future-scope checkpoint2026-10-08 10:31:34: owner requested UI-02 Candidate
+Structure and Recommendation Views in MBT. Queued0%, P1/P2/P3/P4=0%; no
+implementation activation or current-plan percentage changes. Covers typed retained
+structures, 2D polymer repeat units/composition, properties, synthesis evidence and
+explicit selection rationale; 3D conformational modeling is separate follow-on.
+
 LAN priority checkpoint 2026-10-08 10:10:00 America/Chicago: owner authorized
 same-network access and added firewall TCP57013. LAN-01 implementation100%,
 L1/L2/L3=100; remote acceptance pending. UI01 paused at existing percentages.

@@ -9,7 +9,7 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: LAN-01 primary active; UI-01 and LR-01 paused by owner direction; BP-01 through BP-09 and SQ-01 remain closed.
-- Last refreshed: 2026-10-08 10:10:00 (America/Chicago).
+- Last refreshed: 2026-10-08 10:31:34 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: [LAN-01 Local Network Demo Access](LAN-01%20Local%20Network%20Demo%20Access.md); live HTTPS gateway and second-computer handoff.
 - Primary active task: LAN-01 implementation100%, L1/L2/L3=100%; owner confirmed remote HTTPS reachability; authenticated walkthrough/trust pending.
@@ -44,6 +44,7 @@ Completed plans remain in the [completed index](Completed/README.md).
 | 1 | [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md) | Paused for LAN access; connected demo delivered | 55% | 68.75% | 0% | Owner direction; bounded activation review recorded |
 | 2 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Paused by owner; R2 resume point | 25% | 33.33% | 0% | UI priority released; same-host diagnostic window |
 | 3 | [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md) | Queued; pull forward if it blocks UI-01 | 0% | 0% | 0% | Bounded read diagnostic and activation review |
+| 4 | [UI-02 Candidate Structure and Recommendation Views](UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md) | Queued by owner; P1/P2/P3/P4=0% | 0% | 0% | 0% | Typed retained candidate structures and explicit selection evidence; activation audit |
 
 The owning tracker controls exact task/percentages; MBT controls priority and
 mirrors current state. Complete each bounded gate before dependent implementation.
