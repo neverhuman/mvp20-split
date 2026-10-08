@@ -33,7 +33,7 @@ serve_scientific_review.py --root above --run v2/.test-results/scientific-run-c
 --output NEWPATH --public NEWBUILDPATH --open.24h default; exactSTOP drains.
 probe_scientific_review.py --root above --input SESSION/browser-input.json --output NEWPATH.
 
-Keep source/tests/module READMEs immutable while verification runs. Checkpoint: scientific execution implemented and verified, prepared for commit/push.
+Keep source/tests/module READMEs immutable while verification runs. Checkpoint: scientific execution committed and pushed as74e8a8e0; verified live.
 Next: owner review of meaningful scientific steps; follow-up UI-01/N2.2 integration.
-Prior pushed2c9d12a3 was evaluation0.19. Preserve old frozen demo and failure evidence.
+Prior pushed2c9d12a3 was evaluation0.19. No pending implementation edits. Preserve old frozen demo and failure evidence.
 Do not restart old numerical campaign as the scientific demo.
