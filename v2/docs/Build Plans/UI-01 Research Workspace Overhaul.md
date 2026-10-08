@@ -2,15 +2,15 @@
 
 ## Canonical tracker
 
-- Status: primary_active; connected demo flow implemented; remaining N2 integration gates explicit.
-- Last refreshed: 2026-10-08 06:02:00 (America/Chicago).
+- Status: paused_for_owner_LAN_priority; connected demo flow implemented; remaining N2 integration gates explicit.
+- Last refreshed: 2026-10-08 10:10:00 (America/Chicago).
 - Baseline: 62ea4966; owner-reported disconnected canvas and navigation review on 2026-10-07.
 - Owner: Studio experience, page models and presentation; service owners retain their contracts and state.
 - Parent: none; priority and mirrors in [Master Build Tracker](Master%20Build%20Tracker.md).
 - Overall implementation: **55%**; Build68.75%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
 - Design readiness: G0 complete; ELK directed layout and bounded topology ownership implemented.
 - Demonstrated behavior: connected graphs and question-first navigation verified against retained owner records; result-first comparison and full replacement acceptance remain.
-- Current phase/task: UI-01.04 connected retained-campaign walkthrough delivered; final presentation session refresh.
+- Current phase/task: paused for LAN-01; UI-01.04 connected walkthrough remains delivered.
 - Next task: remaining N2.2 service-owned planning provenance and N2.5 browser admission/worker engagement; fine visual polish deferred by owner.
 - Blocker: none for the delivered local SME review. Actual scientific proposal binding remains unfinished; UI-01.01 applies only to later result discovery.
 - Human acceptance: owner feedback is part of visual review; no new routine approval gates for campaign execution.

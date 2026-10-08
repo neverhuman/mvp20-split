@@ -22,7 +22,7 @@ class GatewayServer(ThreadingHTTPServer):
 
     def __init__(self, configuration, port):
         self.configuration = configuration
-        self.sessions = Sessions()
+        self.sessions = Sessions(ticket_lifetime=300 if configuration.listener.secure else 60)
         self.slots = threading.BoundedSemaphore(16)
         self.assets = {}
         for path, name, content_type in (("/", "index.html", "text/html; charset=utf-8"),
@@ -32,11 +32,17 @@ class GatewayServer(ThreadingHTTPServer):
                 raw = stream.read(16777217)
             require(len(raw) <= 16777216, "gateway_asset_bound")
             self.assets[path] = (content_type, raw)
-        super().__init__(("127.0.0.1", port), GatewayHandler)
-        self.origin = "http://127.0.0.1:" + str(self.server_port)
+        tls=configuration.listener.tls()
+        super().__init__((configuration.listener.address, port), GatewayHandler)
+        if tls:
+            self.socket=tls.wrap_socket(self.socket,server_side=True,do_handshake_on_connect=False)
+        self.origin = configuration.listener.origin(self.server_port)
 
     def get_request(self):
         connection, address = super().get_request()
+        if not self.configuration.listener.allows(address[0]):
+            connection.close()
+            raise OSError('gateway_client_scope')
         connection.settimeout(20)
         return connection, address
 
@@ -83,7 +89,7 @@ class GatewayHandler(BaseHTTPRequestHandler):
 
     def boundary(self, *, unsafe):
         hosts = self.headers.get_all("Host", [])
-        require(hosts == ["127.0.0.1:" + str(self.server.server_port)], "gateway_host_denied")
+        require(hosts == [self.server.configuration.listener.address+":"+str(self.server.server_port)], "gateway_host_denied")
         if unsafe:
             require(self.headers.get_all("Origin", []) == [self.server.origin], "gateway_origin_denied")
         require(not self.headers.get_all("Transfer-Encoding"), "gateway_transfer_encoding")
@@ -152,6 +158,7 @@ class GatewayHandler(BaseHTTPRequestHandler):
             launcher = self.path == "/launcher/ticket"
             self.boundary(unsafe=not launcher)
             if launcher:
+                require(self.client_address[0] in ('127.0.0.1',self.server.configuration.listener.address),'gateway_launcher_scope')
                 expected = "Bearer " + self.server.configuration.launcher_key
                 values = self.headers.get_all("Authorization", [])
                 require(len(values) == 1 and hmac.compare_digest(values[0].encode(), expected.encode()), "gateway_launcher_denied")
@@ -162,11 +169,11 @@ class GatewayHandler(BaseHTTPRequestHandler):
                 require(type(record) is dict and set(record) == {"ticket"}, "gateway_ticket_shape")
                 token = self.server.sessions.exchange(record["ticket"])
                 self.json(200, self.server.configuration.context,
-                          cookie=COOKIE + "=" + token + "; Path=/; HttpOnly; SameSite=Strict; Max-Age=28800")
+                          cookie=COOKIE + "=" + token + "; Path=/; HttpOnly; SameSite=Strict; Max-Age=28800" + ('; Secure' if self.server.configuration.listener.secure else ''))
             elif self.path == "/session/logout":
                 require(not self.body(), "gateway_logout_body")
                 self.server.sessions.revoke(self.session())
-                self.json(200, {"status":"signed_out"}, cookie=COOKIE + "=; Path=/; HttpOnly; SameSite=Strict; Max-Age=0")
+                self.json(200, {"status":"signed_out"}, cookie=COOKIE + "=; Path=/; HttpOnly; SameSite=Strict; Max-Age=0" + ('; Secure' if self.server.configuration.listener.secure else ''))
             else:
                 self.session()
                 self.proxy("POST", self.body())

@@ -844,7 +844,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-local-gateway"
-version = "0.2.0"
+version = "0.3.0"
 source = { editable = "../services/local_gateway" }
 
 [[package]]

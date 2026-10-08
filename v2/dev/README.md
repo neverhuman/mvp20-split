@@ -1,5 +1,15 @@
 # Foundation Verification Tooling
 
+LAN-01: serve_lan_review.py starts an independently installed HTTPS gateway beside
+the existing localhost gateway. It reuses only the live public configuration and
+Deployment credential vault; owners/workers are neither started nor stopped.
+The serve action requires explicit baseline, TLS directory and isolated Python.
+The invite action copies a single-use five-minute link to the operator clipboard
+and writes Open Amphora.url in the ignored session directory. Treat that file as
+a temporary access credential. Only public CA files are copied from the private
+TLS directory. A session STOP file or duration expiry requests cooperative gateway
+drain; a45second timeout is a failure, not permission to kill owners. No model calls.
+
 UI-01.03 scientific demonstration helpers: build_scientific_demo_tools.py independently
 installs/tests/builds two tools; scientific_execution/ owns fixture composition;
 run_scientific_demo.py performs actual public-protocol admission/execution and

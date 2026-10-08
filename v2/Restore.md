@@ -1,5 +1,23 @@
 # Restore
 
+LAN priority checkpoint 2026-10-08 10:10:00 America/Chicago: owner authorized
+same-network access and added firewall TCP57013. LAN-01 implementation100%,
+L1/L2/L3=100; remote acceptance pending. UI01 paused at existing percentages.
+LIVE https://192.168.1.70:57013, subnet192.168.1.0/24; independent helper17750,
+gateway launcher PID5668/listener34268, lan-live-20261008a. Localhost untouched.
+Gateway0.3 independently installed at lan-gateway-20261008a;32 owned tests and
+production boundaries pass. Full HTTPS connected flow passes lan-browser-20261008a;
+localhost regression passes lan-localhost-regression-20261008a. Both zero owner writes.
+TLS API checks actual CA; browser pins exact public key. OS trust not installed.
+User second-computer connectivity question pending. Need install public CA there
+and generate invitation using session New Invitation.cmd (clipboard,5min single use).
+Runbook docs/LAN_Demo_Access.md. Private TLS keys are user-only physical LocalCache
+Local/Amphora/lan-demo-20261008; only public CA copied into ignored session folder.
+Certificate7days, sessions8hours. Original owners expire2026-10-09 06:01:36.
+No backend exposure, CORS changes, paid calls or v1 changes. Do not stage the two
+owner-added ocular polymer artifacts. Finish remote handoff then resume UI-01;
+older connected-flow baseline follows.
+
 Refreshed 2026-10-08 06:05:00 America/Chicago. Read FIRST after compression.
 
 ## Latest owner direction

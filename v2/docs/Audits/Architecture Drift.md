@@ -1,7 +1,7 @@
 # Architecture Drift
 
 - Status: BP-01 through BP-09 closed/audited; named successor findings remain.
-- Last refreshed: `2026-10-08 06:05:00` (America/Chicago).
+- Last refreshed: `2026-10-08 10:10:00` (America/Chicago).
 - Scope: unresolved v2 design/implementation alignment and scoped successor boundaries.
 - Active focus: selected-host integration and named scientific/UI successor limits.
 - Next gate: UI-01/N2 SME usefulness and exact scientific proposal integration; LR-01 paused, UI-R01 retains feedback-read follow-up.
@@ -10,6 +10,7 @@
 
 | Finding | Owner / trigger | Disposition |
 |---|---|---|
+| LAN browser access | LAN-01 | Additive HTTPS gateway implemented and locally verified;32 isolated tests and HTTPS/localhost browser walkthroughs pass. Second-computer certificate trust and firewall path acceptance pending. [Scoped audit](LAN-01_Demo_Access.md). |
 | Planning-to-execution continuity and fresh-run control | UI-01/N2.2 and N2.5 | UI-01.04 now retains the full reviewed plan in an actual campaign and connects its methods to verified results across five views;314 tests and actual served walkthrough pass. Real browser admission/worker engagement and runtime Planning/Research provenance remain outstanding. [Scoped audit](UI-01.04_Connected_Demo_Flow.md). |
 | Default graph is a disconnected inventory; authored layout ignores dependencies | [UI-01](../Build%20Plans/UI-01%20Research%20Workspace%20Overhaul.md), G0/G1 first | Source correction verified by UI-01/G1: ELK routes authored links; automatic root/fit, nested scopes, selection and viewport retention pass actual-owner browser review. Candidate assets only; frozen demo unchanged, V1 replacement qualification remains. N1 question-first navigation also verified. |
 | SME evaluation logic absent from executed numerical demo | UI-01/N2.S then N2.2 | Local design-review MVP now exposes criteria, actual solvency procedure, assumptions, evidence gaps and aggregation, with future-only concern export/import.306 tests and served SME browser pass. UI-01.03 now executes two standalone scientific tools with four verified result inspectors; [scoped audit](UI-01.03_Scientific_Execution.md). Runtime Planning generation and automatic feedback consumption remain unimplemented in this view. No complete-engine acceptance. |

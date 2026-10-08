@@ -8,16 +8,16 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: UI-01 primary active; LR-01 paused by owner direction; BP-01 through BP-09 and SQ-01 remain closed.
-- Last refreshed: 2026-10-08 06:02:00 (America/Chicago).
+- Status: LAN-01 primary active; UI-01 and LR-01 paused by owner direction; BP-01 through BP-09 and SQ-01 remain closed.
+- Last refreshed: 2026-10-08 10:10:00 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
-- Current priority: [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md); graph review first, then research workflow/navigation.
-- Primary active task: UI-01.04 connected demo flow delivered; final presentation refresh.
-- Next task: remaining N2.2 owner Planning/Research provenance and N2.5 browser admission/worker engagement; fine visual polish deferred by owner.
-- Implementation completion: UI-01=55%, Build68.75%, Verification0%; LR-01 paused25%, Build33.33%, Acceptance0%.
-- Blockers: scientific execution delivered for two bounded tools; owner review pending. Runtime LLM scientific proposal binding remains unfinished. UI-01.01 is separate result-discovery scope.
+- Current priority: [LAN-01 Local Network Demo Access](LAN-01%20Local%20Network%20Demo%20Access.md); live HTTPS gateway and second-computer handoff.
+- Primary active task: LAN-01 implementation100%, L1/L2/L3=100%; remote trust/connectivity acceptance pending.
+- Next task: owner second-computer access check, then return to UI-01 remaining N2.2/N2.5; fine visual polish deferred.
+- Implementation completion: LAN-01=100%, L1/L2/L3=100%; UI-01 paused55%, Build68.75%, Verification0%; LR-01 paused25%, Build33.33%, Acceptance0%.
+- Blockers: no LAN implementation blocker; remote firewall path and client certificate trust require the other computer. UI scientific proposal binding remains unfinished; UI-01.01 is separate result-discovery scope.
 - Acceptance posture: connected plan/execution/comparison/next-review actual served walkthrough passed; Studio0.21,314 tests. New-run browser action and V1 remain outstanding. Public result-index proposal remains separate.
-- Active exception: owner reprioritized UI on2026-10-07. Preserve LR-01/R2 receipt diagnosis; do not resume it automatically when the demo closes.
+- Active exception: owner reprioritized LAN access on2026-10-08. Preserve UI-01 percentages and LR-01/R2 receipt diagnosis; no automatic worker-diagnostic resumption when the demo closes.
 
 ## Initial Delivery Boundary
 
@@ -29,7 +29,8 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-UI-01 is the primary plan at55%, Build68.75%, Verification0%. G0 graph review/design
+LAN-01 implementation100%, L1/L2/L3=100%; live and awaiting remote acceptance.
+UI-01 is paused at55%, Build68.75%, Verification0%. G0 graph review/design
 is a prerequisite and earns no implementation credit. G1/N1/N2/N3/V1 are five equal
 delivery gates. Phase mirror: G0=100%, G1=100%, N1=100%, N2=75%, N3=0%, V1=0%.
 LR-01 is paused at25%, Build33.33%, Acceptance0%; R1=100%, R2/R3/V1=0%.
@@ -39,7 +40,8 @@ Completed plans remain in the [completed index](Completed/README.md).
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
-| 1 | [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md) | Connected retained-campaign demo delivered | 55% | 68.75% | 0% | Owner direction; bounded activation review recorded |
+| 0 | [LAN-01 Local Network Demo Access](LAN-01%20Local%20Network%20Demo%20Access.md) | Implemented; remote acceptance pending | 100% | 100% | Remote pending | Owner LAN priority/firewall rule |
+| 1 | [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md) | Paused for LAN access; connected demo delivered | 55% | 68.75% | 0% | Owner direction; bounded activation review recorded |
 | 2 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Paused by owner; R2 resume point | 25% | 33.33% | 0% | UI priority released; same-host diagnostic window |
 | 3 | [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md) | Queued; pull forward if it blocks UI-01 | 0% | 0% | 0% | Bounded read diagnostic and activation review |
 

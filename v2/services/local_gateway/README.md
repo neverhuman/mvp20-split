@@ -1,9 +1,23 @@
 # Local browser gateway
 
-Owner BP-09.02; release0.2.0 adds cooperative request drain. This independent service owns
+Owner LAN-01; release0.3.0 adds an explicit HTTPS LAN profile. This independent service owns
 loopback Studio hosting, browser sessions and bounded public HTTP routing to the
 six service owners. It owns no campaign decisions, SQL/schema, scientific policy,
 provider requests or private service imports. Studio remains a separate package.
+
+`lan-gateway-v1` adds a required listener object with address, subnet, certificate
+and private_key. Bind only a specific RFC1918 IPv4 address within its explicit
+/16 to /30 private client subnet; certificates and keys are absolute local files.
+TLS1.2 minimum, exact Host/HTTPS Origin, Secure HttpOnly SameSite cookie, and
+source-subnet filtering apply. Owner peers remain loopback. Only requests from
+the listener's own address may issue tickets, using the existing launcher key.
+LAN tickets expire after300seconds, single use; sessions retain the8hour bound.
+Local profile defaults, localhost launch command and cooperative drain are unchanged.
+This is trusted internal LAN demo access, not internet or multi-user deployment.
+Operators supply certificate trust and firewall configuration; this package does
+not change either. `dev/serve_lan_review.py` owns the local demo operator workflow.
+Optional serve --stop-file watches a local operator marker and stops acceptance,
+then cooperatively joins accepted requests through the existing close behavior.
 
 The initial local user opens the workspace through a local launcher. A single-use,
 60-second ticket travels in the URL fragment and is removed before session exchange;
@@ -51,7 +65,10 @@ logout, empty state and Monitor with an explicitly synthetic public HTTP peer,
 1440/390width layouts and serious/critical accessibility checks. Separate injected
 slow/unavailable-session cases verify presentation states, not backend behavior.
 
-27 owned Python tests pass;346statements/46missed and46branches,86% combined coverage.
+Release0.3:32 independently installed owned Python tests pass, including HTTPS
+session exchange, bounded LAN profile, ticket expiry and cooperative CLI stop.
+Historical0.2 coverage:346statements/46missed and46branches,86% combined coverage;
+that percentage is not a fresh measurement of0.3.
 CLI exceptional startup, thread saturation, socket loss/truncation and some handler
 failure branches remain gaps. Live six-owner readiness and graceful application
 drain belong to BP-09.02/B2; campaign/model demonstration belongs to BP-09.03.

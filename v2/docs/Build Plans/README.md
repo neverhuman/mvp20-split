@@ -23,8 +23,10 @@ Read the selected plan's tracker first. Complete each phase gate before advancin
 
 - [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md): queued0%; historical feedback read remains unexplained.
 
-- [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md): primary; see canonical tracker for percentages. SME evaluation review takes priority over execution-only presentation.
+- [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md): paused for LAN-01; see canonical tracker for percentages. SME evaluation review takes priority over execution-only presentation.
 
 - [SME Evaluation Review MVP](UI-01.02%20SME%20Evaluation%20Review%20MVP.md): bounded local review delivered; actual Planning/scientific integration remains separate.
 
 - [Connected Demo Flow](UI-01.04%20Connected%20Demo%20Flow.md): bounded retained-plan/execution/results/review walkthrough complete; real browser run engagement remains outstanding.
+
+- [LAN-01 Local Network Demo Access](LAN-01%20Local%20Network%20Demo%20Access.md): implementation100%, second-computer acceptance pending; current owner priority.

@@ -1,5 +1,13 @@
 # Runtime Topology
 
+Owner update2026-10-08: LAN-01 adds an opt-in HTTPS browser gateway bound to a
+specific private IPv4 address and explicit private client subnet. Scientific APIs,
+databases and existing local access remain loopback. The gateway owns secure
+browser sessions and exact-origin validation; operators own certificate trust and
+firewall scope. This supersedes the computer-only access restriction below for
+the internal demonstration, without enabling internet or multi-user deployment.
+See [LAN access runbook](../../LAN_Demo_Access.md).
+
 - Design status: bounded Windows single-server profile implemented and exercised; broader host/fleet profiles remain proposed
 - Parent: [System Architecture](System_Architecture.md)
 - Scope: executable processes and their trust, latency and failure boundaries

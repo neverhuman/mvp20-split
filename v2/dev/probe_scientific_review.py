@@ -12,10 +12,12 @@ if __name__=='__main__':
     for name in ('root','input','output'):parser.add_argument('--'+name,type=Path,required=True)
     parser.add_argument('--flow',action='store_true')
     parser.add_argument('--public',type=Path)
+    parser.add_argument('--ca',type=Path,help='Explicit CA trust for the HTTPS API probe')
     args=parser.parse_args();state=LocalState.snapshot(args.root)
     secret=CredentialVault(args.root/'credentials.dpapi',state['deployment_id']).load().environment(['GATEWAY_SESSION_KEY'])
     env={k:v for k,v in os.environ.items() if k.upper() in {'SYSTEMROOT','WINDIR','PATH','TEMP','TMP','USERPROFILE','LOCALAPPDATA','APPDATA','COMSPEC'}}
     env['AMPHORA_BROWSER_LAUNCH_KEY']=secret['GATEWAY_SESSION_KEY']
+    if args.ca:env['NODE_EXTRA_CA_CERTS']=str(args.ca.absolute())
     script='connected_flow.mjs' if args.flow else 'scientific_review.mjs'
     command=['node',str(ROOT/'studio/tests/integration'/script),str(args.input.absolute()),str(args.output.absolute())]
     if args.public:

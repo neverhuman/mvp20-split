@@ -17,7 +17,10 @@ def fingerprint(token):
 
 
 class Sessions:
-    def __init__(self, *, clock=time.monotonic):
+    def __init__(self, *, clock=time.monotonic, ticket_lifetime=60):
+        if type(ticket_lifetime) is not int or not 1<=ticket_lifetime<=300:
+            raise ValueError('ticket_lifetime')
+        self.ticket_lifetime=ticket_lifetime
         self.clock = clock
         self.tickets, self.sessions = {}, {}
         self.lock = threading.Lock()
@@ -33,7 +36,7 @@ class Sessions:
             if len(self.tickets) >= 16:
                 raise SessionDenied("ticket_capacity")
             token = secrets.token_urlsafe(36)
-            self.tickets[fingerprint(token)] = self.clock() + 60
+            self.tickets[fingerprint(token)] = self.clock() + self.ticket_lifetime
             return token
 
     def exchange(self, ticket):

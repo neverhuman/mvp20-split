@@ -5,15 +5,8 @@ import json
 from pathlib import Path
 import re
 from urllib.parse import urlsplit
-
-
-class GatewayError(ValueError):
-    pass
-
-
-def require(value, reason):
-    if not value:
-        raise GatewayError(reason)
+from .errors import GatewayError, require
+from .listener import Listener
 
 
 def unique(pairs):
@@ -52,6 +45,7 @@ class Configuration:
     peers: dict[str, Peer]
     context: dict
     launcher_key: str = field(repr=False)
+    listener: Listener = field(default_factory=Listener)
 
     @classmethod
     def load(cls, path, environment):
@@ -59,8 +53,10 @@ class Configuration:
             raw = stream.read(65537)
         require(len(raw) <= 65536, "gateway_configuration_size")
         value = json.loads(raw, object_pairs_hook=unique)
-        require(type(value) is dict and set(value) == {"profile", "public_directory", "peers", "context", "launcher_key_env"}
-                and value["profile"] == "local-gateway-v1", "gateway_configuration_shape")
+        require(type(value) is dict,'gateway_configuration_shape')
+        lan=value.get('profile')=='lan-gateway-v1'
+        require(set(value)=={'profile','public_directory','peers','context','launcher_key_env'}|({'listener'} if lan else set())
+                and value['profile'] in ('local-gateway-v1','lan-gateway-v1'),'gateway_configuration_shape')
         require(type(value["peers"]) is dict and bool(value["peers"]) and
                 set(value["peers"]) <= {"runtime", "artifact", "registry", "research", "knowledge", "planning"}, "gateway_peer_names")
         context = value["context"]
@@ -73,4 +69,4 @@ class Configuration:
         directory = Path(value["public_directory"])
         require(directory.is_absolute() and directory.is_dir(), "gateway_public_directory")
         return cls(directory, {name:Peer.load(peer, environment) for name,peer in value["peers"].items()},
-                   context, secret(environment, value["launcher_key_env"]))
+                   context, secret(environment, value["launcher_key_env"]),Listener.load(value['listener']) if lan else Listener())

@@ -4,6 +4,7 @@ import argparse
 import http.client
 import json
 import os
+import threading
 from pathlib import Path
 import webbrowser
 
@@ -34,6 +35,7 @@ def main():
     serve = actions.add_parser("serve")
     serve.add_argument("--config", type=Path, required=True)
     serve.add_argument("--port", type=int, required=True)
+    serve.add_argument("--stop-file", type=Path)
     browser = actions.add_parser("launch")
     browser.add_argument("--endpoint", required=True)
     browser.add_argument("--key-env", default="AMPHORA_GATEWAY_SESSION_KEY")
@@ -45,11 +47,20 @@ def main():
             return 0
         require(1024 <= args.port <= 65535, "gateway_port")
         server = GatewayServer(Configuration.load(args.config, os.environ), args.port)
+        stopped = threading.Event()
+        if args.stop_file:
+            def watch_stop():
+                while not stopped.wait(.25):
+                    if args.stop_file.exists():
+                        server.shutdown()
+                        return
+            threading.Thread(target=watch_stop, daemon=True).start()
         try:
             server.serve_forever(poll_interval=.25)
         except KeyboardInterrupt:
             pass
         finally:
+            stopped.set()
             server.server_close()
         return 0
     except GatewayError as error:
