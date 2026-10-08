@@ -27,6 +27,12 @@ class ScientificCampaign(Campaign):
     def admit(self):
         definition=json.loads((self.output/'graph.json').read_bytes());inputs=[]
         for port in definition['body']['inputs']:
+            if port['name']=='campaign_context':
+                artifact=self.publish((self.output/'campaign-context.json').read_bytes(),port['value_type']['schema_ref'])
+                inputs.append({'port':port['name'],'value':{'kind':'artifact','artifact':artifact,
+                    'representation':port['value_type']['representation'],'unit':port['value_type']['unit']}})
+                write(self.output/'context-artifact.json',artifact)
+                continue
             stage='hansen_solvency' if port['name'].endswith('hansen_solvency') else 'arrhenius_viscosity'
             parameters=json.loads((self.output/(stage+'-parameters.json')).read_bytes())
             parameters['candidate_id']='fixture-polymer-B' if port['name'].startswith('candidate_b') else 'fixture-polymer-A'

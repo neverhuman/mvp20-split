@@ -26,6 +26,9 @@ import { ResearchRecordClient } from '../../transport/provenance/research.js';
 import { FeedbackClient } from '../../transport/feedback/client.js';
 import { ResearchQuestion } from './question.js';
 import { EvaluationReviewPanel } from '../evaluation_review/panel.js';
+import { CampaignFlowModel } from '../../page_models/campaign_flow/model.js';
+import { DataProvenanceClient } from '../../transport/provenance/data.js';
+import { ConnectedCampaign } from '../campaign_flow.js';
 import './style.css';
 
 function Campaign({ context, search }: { context: WorkspaceContext & { run_id: string }; search: string }) {
@@ -46,6 +49,12 @@ function Campaign({ context, search }: { context: WorkspaceContext & { run_id: s
     return { question:new FeedbackModel({ research:new ResearchRecordClient(), feedback:new FeedbackClient() }), model:new MonitorModel(client), navigation:new NavigationModel(client), namedViews:new NamedViewsModel(client), evidence:new EvidenceModel(client), supervision:new SupervisionModel(new SupervisionClient(), new FollowupModel(new FollowupClient()), new CriterionModel(new CriterionClient())), library:new DraftLibrary(context,new AuthoringClient()) };
   }, [context.actor_id, context.scope.tenant_id, context.scope.project_id, context.run_id]);
   useEffect(() => () => { for (const owner of Object.values(owners)) owner.dispose(); }, [owners]);
+  const flow=useMemo(()=>new CampaignFlowModel({scope:context.scope,run:context.run_id},new ObservationClient(),new DataProvenanceClient()),[context.scope.tenant_id,context.scope.project_id,context.run_id]);
+  const subscribeFlow=useCallback((listener:()=>void)=>flow.subscribe(listener),[flow]);
+  const flowView=useSyncExternalStore(subscribeFlow,()=>flow.snapshot);
+  useEffect(()=>{void flow.refresh();return()=>flow.dispose();},[flow]);
+  if(flowView.phase==='ready')return <ConnectedCampaign view={flowView} mode={mode} navigate={navigate} refresh={()=>void flow.refresh()} technical={<MonitorWorkspace {...owners} compact active={mode==='execution'} context={{scope:context.scope,run:context.run_id}} synthetic={context.synthetic}/>} />;
+  if(['loading','idle','denied','failed'].includes(flowView.phase))return <main className="local-entry"><h1>{flowView.phase==='loading'||flowView.phase==='idle'?'Opening the retained campaign':'Campaign context unavailable'}</h1><p>{flowView.message??'Checking the plan and scientific evidence.'}</p>{flowView.phase!=='loading'&&flowView.phase!=='idle'&&<button onClick={()=>void flow.refresh()}>Retry campaign read</button>}</main>;
   return <div className="research-shell">
     <header className="local-workspace-bar"><strong>AMPHORA</strong><span>Research workspace</span><span className="local-access">Local access</span></header>
     <nav className="local-workspace-navigation" aria-label="Research workspace">

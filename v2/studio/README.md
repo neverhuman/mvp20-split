@@ -1,5 +1,12 @@
 # Graph Studio
 
+Source release **0.21.0** connects a retained campaign-plan artifact to a five-view
+demonstration: question, evaluation plan, combined plan/execution inspection,
+candidate evidence comparison and future-campaign review export. Planning context
+remains distinct from actual Runtime nodes. See page_models/campaign_flow/README.md
+for bounded discovery, integrity checks and limitations. The browser does not start
+new scientific runs or submit review concerns to an LLM in this release.
+
 Source release **0.20.0** adds verified scientific artifact inspection for the exact
 published Hansen solvency and Arrhenius viscosity schemas. Four real invocations
 for two explicit parameter fixtures are retained under UI-01.03. Studio verifies

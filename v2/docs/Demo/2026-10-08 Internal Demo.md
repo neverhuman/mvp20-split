@@ -4,7 +4,37 @@ Audience: internal nontechnical colleagues. Start: **11:00am Central**.
 Scope: real local application and retained synthetic campaigns; no new live model
 call or scientific worker is needed during the presentation.
 
-## Current scientific execution review
+## Primary connected walkthrough (Studio0.21)
+
+Open http://127.0.0.1:57013 in the browser session opened by the launcher.
+The primary retained run is b90958fec8384eb99eb6578d4c8b3b5d. Its full reviewed
+plan is an immutable campaign input and retained output. No fresh provider call
+is needed to present it.
+
+1. **Question:** show the objective, fixture inputs and missing evidence.
+2. **Evaluation design:** select Hansen screening. Explain the rationale,
+   assumptions and procedure. Save a concern about parameter provenance.
+3. **Approach and run:** follow the same plan into actual executions. Dashed links
+   mean planning context/method bindings; solid links mean Runtime dependencies.
+   Planning context is not an executed node. Select a candidate result, then
+   **Why this method?** to return to its rationale.
+4. **Results and evidence:** compare both candidates. Hansen screens differ;
+   viscosities retain their temperature conditions. Synthesis is unknown. No
+   aggregated winner or experimental readiness is claimed.
+5. **Next iteration:** add a direction, inspect concerns and export the review.
+   The file pins the exact plan, source run and result artifacts. Changes remain
+   future-only and unsubmitted; active history is unchanged.
+
+This is a completed-campaign demonstration. Browser admission/worker engagement
+for a new run, runtime LLM plan generation/feedback ingestion and full molecule
+generation remain unfinished. Fine visual polishing is deferred. Do not describe
+retained history as a newly executed campaign.
+
+Primary assets: v2/.test-results/connected-flow-ui/public-e. Presentation session:
+v2/.test-results/connected-flow-live-c. Start with Question. The earlier walkthroughs
+below describe preserved fallbacks, not the default presentation.
+
+## Earlier scientific execution review
 
 The primary review now serves scientific-live-c at http://127.0.0.1:57013 with
 Studio0.20 public-c assets. Start in **Approach and run**: four named scientific

@@ -1,39 +1,57 @@
 # Restore
 
-Refreshed 2026-10-07 23:14:20 America/Chicago. Read FIRST after compression.
+Refreshed 2026-10-08 06:05:00 America/Chicago. Read FIRST after compression.
 
-## Active work
+## Latest owner direction
 
-User priority: meaningful SCIENTIFIC EXECUTION, not numerical plumbing. Evaluation
-review accepted as starting point. UI-01.03 E1/E2 complete, E3 served inspection complete. Owner review pending.
-UI01=50%, Build62.50%, N2=50%, Verification0. LR01 remains paused.
-Demo 2026-10-08 11am CT internal nontechnical. Continue until needed, commit/push
-significant verified work. No JARVIS or v1 writes; no subagents authorized.
+Prioritize the overall demo flow. Execution must carry planning graph data.
+Defer fine Run-view visual work. Demo is2026-10-08 11am CT internal nontechnical.
+Continue-until-needed and commit/push instructions persist. No subagents/JARVIS;
+v1 read-only. Source/tests/module docs stay unchanged during verification.
 
-Two independently packaged tools reuse narrow v1 Hansen and Arrhenius kernels.
-21 isolated tests + Linux nonroot image calculations pass scientific-tools-c.
-Deployment0.16 closed recipes/catalog mappings;108 scoped tests pass.
-Actual Runtime run 27c9c72c6ed84ab09e89e700f3c9fd96 passed scientific-run-c:
-four successful scientific invokes for two synthetic parameter fixtures, plus finish.
-Canonical results and artifacts retained; workers and owners drained cleanly.
-No paid calls, generated molecules, runtime LLM-authored graph or scientific validation.
+## Current checkpoint
 
-LIVE http://127.0.0.1:57013 launcher93020 scientific-live-c serves public-c.
-Browser passed scientific-browser-d; four verified results, five nodes/four edges,
-1440/390 accessibility/overflow. Screenshots inspected. Prior scientific-live-a/b
-drained. CSP runtime compilation failure repaired by precompiled validators without
-weakening policy.310 Studio tests pass; production boundaries pass.
+UI-01.04 bounded connected flow100%; parentUI01=55%,Build68.75%,N2=75%,V1=0.
+Four older N2 tasks100; N2.2/N2.3/N2.4/N2.5 each50 with explicit remaining groups.
+N3=0, LR01 paused25. No full engine, scientific-readiness or human acceptance claim.
+
+LIVE http://127.0.0.1:57013 launcher66642, connected-flow-live-c/public-e.
+Started2026-10-08 06:01:36; scheduled stop2026-10-09 06:01:36. Opened at Question.
+No scientific workers or paid calls in viewer. Exact session STOP drains owners.
+Earlier scientific-live-c, connected-flow-live-a/b drained successfully.
+
+Actual run b90958fec8384eb99eb6578d4c8b3b5d passed connected-flow-run-a:
+four standalone scientific computations plus finish, five retained finish outputs
+including full reviewed plan. Source hash also pinned in executable context.
+Original campaigns unchanged. Plan is Codex-authored, not runtime Planning output.
+
+Studio0.21 shares verified context across Question/Evaluation/Run/Results/Next.
+Plan links dashed, actual Runtime links solid. Missing synthesis/ranking explicit.
+Method/result/input traversal and candidate comparison; two review concerns survive
+navigation and export exact plan/run/result refs, local and unsubmitted.
+Bounded discovery max32 nodes through existing APIs; larger/partial runs explicit.
+314 Studio tests pass; production boundaries pass; actual served browser-f passes
+five views, output round trip, notes export,1440/390 accessibility/no overflow.
+Final screenshots inspected. Audit/docs and canonical trackers updated.
+
+Remaining: REAL browser new-run admission + managed worker engagement; service-owned
+Planning/Research/Knowledge links; LLM feedback ingestion; generation comparison;
+N3 successor execution; V1 replacement qualification. Do not present retained history
+as a fresh browser-started run. These gaps remain uncredited, not invented approvals.
+Fine visual polish deferred by owner. Current implementation ready to commit/push.
+Prior pushed6d5b5713. Demo guide has current five-step walkthrough and honest limits.
 
 ## Commands / locations
 
-Use v2/dev/.venv/Scripts/python.exe and PYTHONUTF8=1. npm.cmd cwd v2/studio.
-Deployment physical root (TLS requires LocalCache physical path):
+Use v2/dev/.venv/Scripts/python.exe, PYTHONUTF8=1; npm.cmd cwd v2/studio.
+Physical deployment root (TLS needs LocalCache path on Microsoft Store Python):
 C:/Users/alb_p/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/Local/Amphora/local-v2/restore-20261007b
-serve_scientific_review.py --root above --run v2/.test-results/scientific-run-c
---output NEWPATH --public NEWBUILDPATH --open.24h default; exactSTOP drains.
-probe_scientific_review.py --root above --input SESSION/browser-input.json --output NEWPATH.
+serve_scientific_review.py --root above --run v2/.test-results/connected-flow-run-a
+--output NEWPATH --public v2/.test-results/connected-flow-ui/public-e --view question --open.
+probe_scientific_review.py --root above --input SESSION/browser-input.json --output NEWPATH --flow.
+Optional --public overrides assets for a candidate probe only; final proof must omit it.
 
-Keep source/tests/module READMEs immutable while verification runs. Checkpoint: scientific execution committed and pushed as74e8a8e0; verified live.
-Next: owner review of meaningful scientific steps; follow-up UI-01/N2.2 integration.
-Prior pushed2c9d12a3 was evaluation0.19. No pending implementation edits. Preserve old frozen demo and failure evidence.
-Do not restart old numerical campaign as the scientific demo.
+Failures retained: prepare-a schema id unsupported, corrected before admission;
+browser-a selector accessible-name fixed; browser-b case assertion fixed; final
+status CSS class collision and minimap occlusion corrected. Public-d unused duplicate
+because an edit command used wrong cwd; public-e is the final source build.

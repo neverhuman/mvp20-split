@@ -6,7 +6,7 @@ import './style.css';
 
 function download(raw:string,name:string){const url=URL.createObjectURL(new Blob([raw],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 const label=(value:string)=>value.replaceAll('_',' ');
-function Inspector({node,review,changed}:{node:ReviewStep;review:EvaluationReview;changed:()=>void}){
+export function EvaluationStepInspector({node,review,changed}:{node:ReviewStep;review:EvaluationReview;changed:()=>void}){
   const [concern,setConcern]=useState<Concern>('unsupported_assumption'),[change,setChange]=useState(''),[message,setMessage]=useState('');
   const fields:[string,string|readonly string[]][]=[['Why this step?',node.rationale],['Proposed method',node.method],['Evaluation procedure',node.procedure],['Inputs needed',node.inputs],['Expected outputs',node.outputs],['Applicability',node.applicability],['Assumptions to challenge',node.assumptions],['Decision rule',node.rule],['Evidence available',node.evidence],['Implementation status',node.availability],['Alternatives',node.alternatives],['Reference sources',node.sources]];
   return <aside className="evaluation-inspector" aria-label="Evaluation step inspector"><p className="eyebrow">{node.kind} / Design proposal</p><h2>{node.title}</h2>
@@ -42,7 +42,7 @@ export function EvaluationReviewPanel({synthetic}:{synthetic:boolean}){
       <div className="evaluation-layout"><div className="evaluation-canvas"><GraphCanvas key={JSON.stringify(review.design)} {...scene} label="Evaluation design graph" selection={node.id} select={setSelected} minimap />
         <nav aria-label="Evaluation steps">{review.design.nodes.map(n=><button key={n.id} aria-pressed={n.id===node.id} onClick={()=>setSelected(n.id)}>{n.title}</button>)}</nav>
         <details><summary>What the connections mean</summary><ul>{review.design.edges.map((e,i)=><li key={i}>{review.design.nodes.find(n=>n.id===e.source)!.title} → {e.relationship} → {review.design.nodes.find(n=>n.id===e.target)!.title}</li>)}</ul></details>
-      </div><Inspector key={node.id+JSON.stringify(review.design)} node={node} review={review} changed={()=>setRevision(n=>n+1)} /></div>
+      </div><EvaluationStepInspector key={node.id+JSON.stringify(review.design)} node={node} review={review} changed={()=>setRevision(n=>n+1)} /></div>
       <section aria-label="Next campaign review notes" className="evaluation-notes"><h2>Next campaign: {notes.length} concerns</h2><p>Local and unsubmitted. Export before closing or reloading. These notes do not alter the running campaign or automatically reach the LLM.</p>
         {!notes.length?<p>Flag a method, assumption, missing criterion or aggregation rule to begin.</p>:<ul>{notes.map(n=><li key={n.node+n.concern}><button onClick={()=>setSelected(n.node)}>{review.design.nodes.find(s=>s.id===n.node)!.title}</button><strong>{label(n.concern)}</strong><p>{n.change}</p><button onClick={()=>{review.remove(n.node,n.concern);setRevision(n=>n+1);}}>Remove concern</button></li>)}</ul>}
       </section></>}

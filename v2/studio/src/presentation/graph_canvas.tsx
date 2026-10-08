@@ -67,12 +67,12 @@ export function GraphCanvas({ nodes, edges = EMPTY_EDGES, selection, select, ini
       style: { width: NODE_WIDTH, height: NODE_HEIGHT }, data: { label: current.get(n.id)!.label, status: current.get(n.id)!.status,
         ...(annotations[n.id] ? { annotation: annotations[n.id] } : {}) }, selected: n.id === selection,
       ariaLabel: `${current.get(n.id)!.label}, ${current.get(n.id)!.status}${annotations[n.id] ? ', ' + annotations[n.id] : ''}`,
-      className: `task-node ${current.get(n.id)!.status}${n.id.startsWith('@scope-end:')?' scope-boundary-node':''}` }))}
+      className: `task-node ${current.get(n.id)!.status.replace(/[^a-z0-9_-]/gi,'-')}${n.id.startsWith('@scope-end:')?' scope-boundary-node':''}` }))}
       edges={(geometry?.edges ?? []).map(edge => ({ id: edge.id, source: edge.source, target: edge.target, type: 'routed',
         data: { path: edge.path }, markerEnd: { type: MarkerType.ArrowClosed, color: '#42645d', width: 18, height: 18 },
         style: { stroke: selection === edge.source || selection === edge.target ? '#12695e' : '#647b75',
           strokeWidth: selection === edge.source || selection === edge.target ? 3 : 1.8,
-          ...(edge.label === 'scope-boundary' ? {strokeDasharray:'5 4'} : {}),
+          ...(['scope-boundary','planning-context'].includes(edge.label??'') ? {strokeDasharray:'5 4'} : {}),
           opacity: selection && selection !== edge.source && selection !== edge.target ? 0.6 : 1 } }))}
       nodeTypes={types} edgeTypes={edgeTypes} onInit={instance => { flow.current = instance; }}
       onNodeClick={(_, node) => select(node.id)} onNodesChange={changes => { for (const change of changes) if (change.type === 'select' && change.selected) select(change.id); }}

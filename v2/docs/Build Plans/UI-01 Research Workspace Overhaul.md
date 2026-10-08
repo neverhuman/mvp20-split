@@ -2,16 +2,16 @@
 
 ## Canonical tracker
 
-- Status: primary_active; N2.E scientific execution MVP implemented; owner review pending.
-- Last refreshed: 2026-10-07 23:13:55 (America/Chicago).
+- Status: primary_active; connected demo flow implemented; remaining N2 integration gates explicit.
+- Last refreshed: 2026-10-08 06:02:00 (America/Chicago).
 - Baseline: 62ea4966; owner-reported disconnected canvas and navigation review on 2026-10-07.
 - Owner: Studio experience, page models and presentation; service owners retain their contracts and state.
 - Parent: none; priority and mirrors in [Master Build Tracker](Master%20Build%20Tracker.md).
-- Overall implementation: **50%**; Build62.50%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
+- Overall implementation: **55%**; Build68.75%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
 - Design readiness: G0 complete; ELK directed layout and bounded topology ownership implemented.
 - Demonstrated behavior: connected graphs and question-first navigation verified against retained owner records; result-first comparison and full replacement acceptance remain.
-- Current phase/task: N2.E complete; meaningful scientific execution ready for owner review; see UI-01.03.
-- Next task: review SME usefulness, then integrate exact Planning/Research/tool provenance into the evaluation view under N2.2; result-index remains a separate decision.
+- Current phase/task: UI-01.04 connected retained-campaign walkthrough delivered; final presentation session refresh.
+- Next task: remaining N2.2 service-owned planning provenance and N2.5 browser admission/worker engagement; fine visual polish deferred by owner.
 - Blocker: none for the delivered local SME review. Actual scientific proposal binding remains unfinished; UI-01.01 applies only to later result discovery.
 - Human acceptance: owner feedback is part of visual review; no new routine approval gates for campaign execution.
 - Active exception: owner explicitly reprioritized UI over worker diagnostics; LR-01 remains paused at25%, Build33.33%, Acceptance0%, with R2 receipt diagnosis preserved.
@@ -22,7 +22,7 @@
 | G0 graph review and design | 100% | Owner report and retained campaign | Recorded actual-screen diagnosis, topology/data map, layout design and graph acceptance cases |
 | G1 usable connected graph | 100% | G0 complete | One real retained campaign opens as a readable connected graph; branches, joins and nested work navigable; visual and behavioral proof |
 | N1 research entry and navigation | 100% | G1 complete | Research-question landing and connected workflow navigation with preserved selection/context |
-| N2 approach, execution and results | 50% | N1 complete | Understand approach, follow autonomous work, inspect/compare results and supporting evidence |
+| N2 approach, execution and results | 75% | N1 complete | Understand approach, follow autonomous work, inspect/compare results and supporting evidence |
 | N3 next-campaign iteration | 0% | N2 complete | Target weak/promising points, inspect proposed changes and follow predecessor/successor history |
 | V1 integrated acceptance and audit | 0% | N3 complete | Actual-owner user journey, independent consumer acceptance, scoped audit and explicit limitations |
 
@@ -229,7 +229,7 @@ reviewed. N2 still owns inner-view density, result-first hierarchy and compariso
 
 ## N2 bounded task tracker - 2026-10-07 18:07:35
 
-Eight equal tasks now define N2 credit (four completed tasks including N2.E give50%). Proposed public-contract additions require an
+Eight equal tasks define N2 credit: four complete, four half complete give75%. Proposed public-contract additions require an
 explicit scope/denominator update after the owner decision; they earn no credit now.
 
 | Task | Completion | Exit |
@@ -238,10 +238,17 @@ explicit scope/denominator update after the owner decision; they earn no credit 
 | N2.S SME evaluation review | 100% | [MVP task](UI-01.02%20SME%20Evaluation%20Review%20MVP.md); inspect and challenge criteria, methods, assumptions and aggregation before further result work |
 | N2.C visible concurrency | 100% | Inline sibling branches and joins in campaign context; actual-state/omission proof and SME-visible behavior before result work |
 | N2.1 screen hierarchy | 100% | Single shell, compact execution status/actions, secondary technical controls, truthful absent-result notice |
-| N2.2 participating capabilities and result discovery | 0% | Exact tool/model/input relationships and bounded accepted-result discovery; UI-01.01 pending |
-| N2.3 typed results and comparison | 0% | Candidates/generations shown with pinned context, provenance and unknowns |
-| N2.4 evidence and reasoning traversal | 0% | Coherent result-to-tool/input/model/evidence journey beyond individual existing inspectors |
-| N2.5 actual-owner acceptance | 0% | Complete approach/run/results journey and scoped regressions |
+| N2.2 participating capabilities and result discovery | 50% | Retained plan/bounded discovery complete; exact Planning/Research service provenance remains |
+| N2.3 typed results and comparison | 50% | Candidate scientific comparison complete; generational comparison remains |
+| N2.4 evidence and reasoning traversal | 50% | Plan-method-result-input traversal complete; integrated domain/provider reasoning remains |
+| N2.5 actual-owner acceptance | 50% | Retained five-view walkthrough complete; browser admission/worker engagement and full replacement qualification remain |
+
+Each remaining N2 task has two equally scoped delivery groups named in its row.
+[UI-01.04](UI-01.04%20Connected%20Demo%20Flow.md) proves the first group; it does not
+claim full Runtime LLM orchestration, launch controls or generational discovery.
+Next-iteration review export is pulled into this demo by owner direction, without
+crediting N3 successor execution. UI-01.01's new public index remains unapproved;
+the demo uses its bounded existing-API consumer alternative. No closed plan reopened.
 
 292 Studio checks pass on N2 source. Isolated gateway checks use retained owner
 APIs with candidate assets; no execution/model calls. Final evidence is under

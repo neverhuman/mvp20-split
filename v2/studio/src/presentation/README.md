@@ -1,5 +1,13 @@
 # Studio Monitor presentation
 
+Studio0.21 ConnectedCampaign renders a single retained context across the demo.
+Dashed context relationships and planning-only statuses are distinct from Runtime
+links/statuses. Comparison values come only from verified scientific outputs;
+unknown synthesis and missing ranking policy remain explicit. Review concerns
+survive navigation and export exact plan/run/output references; they are local and
+unsubmitted. Reload is disabled with unsaved concerns. The canvas fits the viewport;
+full technical Monitor is secondary disclosure. Fine visual refinement is deferred.
+
 Studio0.20 ScientificOutput renders one selected, schema-pinned scientific result.
 A focused page model owns its sole content read, verification and cancellation;
 selection/denial hides stale results. The pane separates actual computation from

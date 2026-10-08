@@ -37,7 +37,7 @@ def serve(args):
         write(out/'browser-input.json',{'origin':origin,'run_id':evidence['run_id'],'scope':evidence['scope']})
         if args.open_browser:
             code,issued=controller.request(origin,'/launcher/ticket',token=tokens['GATEWAY_SESSION_KEY'],method='POST');assert code==200
-            webbrowser.open(origin+'/#view=execution&launch='+urllib.parse.quote(issued['ticket'],safe=''))
+            webbrowser.open(origin+'/#view='+args.view+'&launch='+urllib.parse.quote(issued['ticket'],safe=''))
         write(out/'ready.json',{'status':'ready','origin':origin,'run_id':evidence['run_id'],'scope':evidence['scope'],
             'assets':{n:hashlib.sha256((public/n).read_bytes()).hexdigest() for n in ('index.html','app.js','app.css')},
             'timestamp_local':datetime.now().strftime('%Y-%m-%d %H:%M:%S'),'scheduled_stop_local':(datetime.now()+timedelta(seconds=args.duration)).strftime('%Y-%m-%d %H:%M:%S'),
@@ -52,4 +52,5 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ('root','run','output','public'):parser.add_argument('--'+name,type=Path,required=True)
     parser.add_argument('--duration',type=int,default=86400);parser.add_argument('--open',dest='open_browser',action='store_true')
+    parser.add_argument('--view',choices=['question','evaluation','execution','knowledge','design'],default='execution')
     args=parser.parse_args();assert 1<=args.duration<=86400;serve(args)

@@ -1,5 +1,12 @@
 # Local workspace entry
 
+Studio0.21 first attempts bounded discovery of an exact retained campaign context.
+A recognized context drives ConnectedCampaign across all five views. No context
+falls back to existing owner-backed perspectives; denial/verification failure hides
+prior data. No association by campaign/node title is allowed. Separate model state
+owns discovery; rendering contains no fetch calls. The completed-demo flow does
+not introduce new execution admission or worker engagement.
+
 UI-01 N1 adds a question-first landing and Question / Approach and run / Results
 and evidence / Next iteration navigation. These compose existing owner views;
 they do not claim a new results aggregation API. Missing question or domain pins
