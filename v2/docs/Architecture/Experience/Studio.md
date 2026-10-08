@@ -16,6 +16,17 @@ Campaign editing exposes typed ports, nested stages, branches, loops, parameters
 
 ## Boundary and Flow
 
+Concurrency is a primary inspection contract. In the same canvas, show a bounded
+fan-out of sibling branches, their named tools and authoritative states, and the
+fan-in/dependency that waits for them. Inline group expansion preserves upstream
+and downstream context; opening one isolated child at a time is supplemental.
+Collapsed groups expose branch totals, loaded/omitted counts and available state
+summaries. Distinguish parallel-capable topology from observed overlapping work;
+do not imply simultaneous execution from layout or completed statuses alone.
+Nested iterations preserve generation/occurrence identity and selected read cut.
+SME acceptance must include explaining what is running, waiting, failed and
+blocking downstream work without reconstructing the graph from separate pages.
+
 Views consume authoritative projections. Edits, pause/resume, approvals and amendments are version-bound commands to owning domains. Preview compatibility, evidence and cost impact before activation. Stale commands expose conflicts. Visual positioning is not execution topology unless committed through validation.
 
 ## Invariants and Verification

@@ -9,13 +9,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: UI-01 primary active; LR-01 paused by owner direction; BP-01 through BP-09 and SQ-01 remain closed.
-- Last refreshed: `2026-10-07 18:07:35` (America/Chicago).
+- Last refreshed: 2026-10-07 19:48:27 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md); graph review first, then research workflow/navigation.
-- Primary active task: UI-01/N2.2 campaign-result discovery decision; N2.1 complete.
-- Next task: Owner decision UI-01.01; revise N2 scope before result-discovery implementation.
-- Implementation completion: UI-01=44%, Build55%, Verification0%; LR-01 paused25%, Build33.33%, Acceptance0%.
-- Blockers: UI-01.01 proposes a new public Runtime result-discovery read boundary; owner direction required before expanding scope.
+- Primary active task: UI-01/N2.C visible sibling concurrency and joins, owner-prioritized.
+- Next task: bounded cross-scope presentation with preserved occurrence/read-cut identity; verify actual branched campaign.
+- Implementation completion: UI-01=43.33%, Build54.17%, Verification0%; LR-01 paused25%, Build33.33%, Acceptance0%.
+- Blockers: no owner decision needed for concurrency work. UI-01.01 pending only for later result-discovery scope.
 - Acceptance posture: latest UI review preview LIVE at127.0.0.1:57013 until2026-10-08 19:41:56CT; served-asset workflow checks pass. UI-01.01 awaits owner review; V1 remains outstanding.
 - Active exception: owner reprioritized UI on2026-10-07. Preserve LR-01/R2 receipt diagnosis; do not resume it automatically when the demo closes.
 
@@ -29,9 +29,9 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-UI-01 is the primary plan at44%, Build55%, Verification0%. G0 graph review/design
+UI-01 is the primary plan at43.33%, Build54.17%, Verification0%. G0 graph review/design
 is a prerequisite and earns no implementation credit. G1/N1/N2/N3/V1 are five equal
-delivery gates. Phase mirror: G0=100%, G1=100%, N1=100%, N2=20%, N3=0%, V1=0%.
+delivery gates. Phase mirror: G0=100%, G1=100%, N1=100%, N2=16.67%, N3=0%, V1=0%.
 LR-01 is paused at25%, Build33.33%, Acceptance0%; R1=100%, R2/R3/V1=0%.
 Completed plans remain in the [completed index](Completed/README.md).
 
@@ -39,7 +39,7 @@ Completed plans remain in the [completed index](Completed/README.md).
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
-| 1 | [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md) | N2 awaiting architecture decision | 44% | 55% | 0% | Owner direction; bounded activation review recorded |
+| 1 | [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md) | N2.C visible concurrency active | 43.33% | 54.17% | 0% | Owner direction; bounded activation review recorded |
 | 2 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Paused by owner; R2 resume point | 25% | 33.33% | 0% | UI priority released; same-host diagnostic window |
 | 3 | [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md) | Queued; pull forward if it blocks UI-01 | 0% | 0% | 0% | Bounded read diagnostic and activation review |
 

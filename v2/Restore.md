@@ -4,7 +4,16 @@ Refreshed 2026-10-07 18:07:55 America/Chicago. Read FIRST after compression.
 
 ## Current handoff
 
-Refreshed 2026-10-07 19:43:04 America/Chicago. UI-01 remains44%, Build55%, Verification0%.
+Owner steering 2026-10-07 19:48:12: concurrency must be visible to SMEs. NEXT UI-01/N2.C
+inline sibling branches/fan-out/join with real states, before result discovery.
+UI-01.01 remains pending but does not block concurrency work. New N2 task expands
+5->6: N2=16.67%, overall43.33%, Build54.17%, Verification0. Historical G1 credit
+was bounded; no claim of accepted SME concurrency visualization. Current numeric
+campaign is not the formulation baseline; solvency absent, never fabricate it.
+Live preview below remains running; no UI deployment changed in this docs checkpoint.
+
+
+Refreshed 2026-10-07 19:43:04 America/Chicago. Historical availability checkpoint; current percentages are above.
 Owner cannot review an offline UI; restored LIVE latest UI preview before requesting
 any architecture decision. No approval of UI-01.01 inferred; decision remains pending.
 LIVE http://127.0.0.1:57013, execution session32760; authenticated user browser opened.
@@ -22,7 +31,7 @@ explicit review assets after baseline verification. No frozen assets overwritten
 Stop only on owner direction or scheduled expiry; STOP file in exact sessionfolder
 triggers graceful7owner drain. Do not restart while owner reviews without reason.
 Preview is for review, NOT full UI-01/V1 replacement acceptance. N2result index still
-pending owner decision; N3/V1 not done. G0/G1/N1=100%, N2=20%, N3/V1=0%.
+pending owner decision; N3/V1 not done. G0/G1/N1=100%, N2=16.67%, N3/V1=0%.
 Latest prior push71f9071c. Current launcher/review availability fix to be committed.
 LR01 paused; do not resume worker diagnosis automatically.
 
