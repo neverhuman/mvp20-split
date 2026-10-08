@@ -96,7 +96,7 @@ export function MonitorWorkspace({ model, context, synthetic = false, active = t
       </div>}
       {supervision && <button aria-pressed={inspectingCheckpoints} onClick={() => { history.select(null); setInspectingCheckpoints(!inspectingCheckpoints); if (!inspectingCheckpoints) void supervision.refresh(); }}>{inspectingCheckpoints ? 'Return to execution graph' : 'Inspect checkpoint reasoning'}</button>}
       </div>
-      {inspectingCheckpoints && supervision ? <SupervisionInspector model={supervision} /> : pin ? <PinnedInspection key={pin.id} pin={pin} /> : topology && navigation ? <NavigationPane navigation={navigation} monitor={model} observation={view} {...(namedViews ? { namedViews } : {})} {...(evidence ? { evidence } : {})} /> : <div className="work-area" data-phase={view.phase}>
+      {inspectingCheckpoints && supervision ? <SupervisionInspector model={supervision} /> : pin ? <PinnedInspection key={pin.id} pin={pin} /> : topology && navigation ? <NavigationPane inline={compact} navigation={navigation} monitor={model} observation={view} {...(namedViews ? { namedViews } : {})} {...(evidence ? { evidence } : {})} /> : <div className="work-area" data-phase={view.phase}>
         <section className="activation-inventory" aria-label="Execution inventory">
           <div className="list-heading"><h2>Loaded activations</h2><span>{shown.length}</span></div>
           <ul className="node-list" aria-label="Loaded activation list">{shown.map(node => <li key={node.id}><button data-node-id={node.id} disabled={!current} aria-pressed={view.selection === node.id} onClick={() => select(node.id)}><span>{node.label}</span><small>{node.status}</small></button></li>)}</ul>

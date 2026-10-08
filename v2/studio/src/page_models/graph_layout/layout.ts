@@ -6,6 +6,15 @@ export const NODE_HEIGHT = 72;
 export interface RoutedEdge extends SceneEdge { readonly path: string; readonly points: readonly Readonly<{ x: number; y: number }>[]; }
 export interface GraphGeometry { readonly nodes: readonly SceneNode[]; readonly edges: readonly RoutedEdge[]; }
 
+export function fitGeometry(geometry:GraphGeometry,width:number,height:number,ids?:readonly string[]) {
+  const selected=ids?.length ? geometry.nodes.filter(n=>ids.includes(n.id)) : geometry.nodes;
+  if(!selected.length || !Number.isFinite(width)||!Number.isFinite(height)||width<=0||height<=0)return null;
+  const left=Math.min(...selected.map(n=>n.x)),top=Math.min(...selected.map(n=>n.y));
+  const w=Math.max(...selected.map(n=>n.x+NODE_WIDTH))-left,h=Math.max(...selected.map(n=>n.y+NODE_HEIGHT))-top;
+  const zoom=Math.max(.05,Math.min(1,width/(w*1.24),height/(h*1.24)));
+  return {x:width/2-(left+w/2)*zoom,y:height/2-(top+h/2)*zoom,zoom};
+}
+
 /** Local geometry only. IDs and topology are immutable owner inputs. */
 export async function layoutGraph(nodes: readonly SceneNode[], edges: readonly SceneEdge[]): Promise<GraphGeometry> {
   const ids = new Set(nodes.map(node => node.id));

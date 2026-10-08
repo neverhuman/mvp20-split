@@ -1,39 +1,39 @@
 # Restore
 
-Refreshed 2026-10-07 18:07:55 America/Chicago. Read FIRST after compression.
+Refreshed 2026-10-07 20:13:27 America/Chicago. Read FIRST after compression.
 
 ## Current handoff
 
-Owner steering 2026-10-07 19:48:12: concurrency must be visible to SMEs. NEXT UI-01/N2.C
-inline sibling branches/fan-out/join with real states, before result discovery.
-UI-01.01 remains pending but does not block concurrency work. New N2 task expands
-5->6: N2=16.67%, overall43.33%, Build54.17%, Verification0. Historical G1 credit
-was bounded; no claim of accepted SME concurrency visualization. Current numeric
-campaign is not the formulation baseline; solvency absent, never fabricate it.
-Live preview below remains running; no UI deployment changed in this docs checkpoint.
+Refreshed 2026-10-07 20:13:27 America/Chicago. User requested graph changes until ready for
+review. DELIVERED Studio0.18 live; hand off for owner visual review, no approval
+of pending result-index inferred. UI01=46.67%, Build58.33%, Verification0;
+G0/G1/N1=100, N2=33.33 (N2.1/N2.C100; other4tasks0), N3/V1=0.
 
+LIVE http://127.0.0.1:57013, launcher70305. Authenticated user browser opened.
+SessionROOT .test-results/demo-20261008/sessions/20261007-200936-1106c8c9.
+Ready2026-10-07 20:10:37; scheduled stop2026-10-08 20:10:37CT. Serves immutable
+session/public copy of v2/.test-results/ui01-concurrency/public-g.
+Previous32760 stopped via exactSTOP and all7owners drained successfully.
+Do not stop new preview while owner reviews. No worker/provider activity.
 
-Refreshed 2026-10-07 19:43:04 America/Chicago. Historical availability checkpoint; current percentages are above.
-Owner cannot review an offline UI; restored LIVE latest UI preview before requesting
-any architecture decision. No approval of UI-01.01 inferred; decision remains pending.
-LIVE http://127.0.0.1:57013, execution session32760; authenticated user browser opened.
-SessionROOT .test-results/demo-20261008/sessions/20261007-194053-57ebf095.
-Ready2026-10-07 19:41:56; scheduled stop2026-10-08 19:41:56 America/Chicago (24h).
-Serves immutable session/public copy of v2/.test-results/ui01-n2/public-b.
-Real HTTP asset SHA256 matches ready.json; --served workflow browser PASS, no asset
-interception: v2/.test-results/ui01-live-review-20261007/evidence.json.
-Question objective, 1440/390 accessibility, graph selection/viewport roundtrip,
-reload and next-iteration navigation pass. Test logs out only its own session.
-No workers/models; original campaign fc257cf8882147cb8cca56c778837e60 retained.
-Old two-hour session drained all7owners cleanly at2026-10-07 18:08:26.
-Launcher now defaults24h; Start-Demo.ps1 -PreviewPublicDirectory <path> snapshots
-explicit review assets after baseline verification. No frozen assets overwritten.
-Stop only on owner direction or scheduled expiry; STOP file in exact sessionfolder
-triggers graceful7owner drain. Do not restart while owner reviews without reason.
-Preview is for review, NOT full UI-01/V1 replacement acceptance. N2result index still
-pending owner decision; N3/V1 not done. G0/G1/N1=100%, N2=16.67%, N3/V1=0%.
-Latest prior push71f9071c. Current launcher/review availability fix to be committed.
-LR01 paused; do not resume worker diagnosis automatically.
+InlineScopes composes same-cut sibling topologies. Root parallel scatter autoopens;
+iterations and nested scatters expand inline with explicit derived group boundaries.
+Four siblings/group, eight expanded groups, depth3,200node cap, explicit omissions.
+Denied/stale reads cleared/fenced. Expansion choices and composition viewports
+survive refresh/hidden views. Focus and minimap retain readable branch inspection.
+Pure fitGeometry fixes renderer queued-fit race exposed by failed browser-e.
+
+301 Studio tests + navigation/dense/drafts browsers PASS. Actual served browser
+concurrency and workflow PASS; evidence v2/.test-results/ui01-concurrency/
+concurrency-g-served and workflow-g-served. HTTP assets match ready.json hashes.
+43node all-generation projection =39real activations+4display boundaries, not new
+executed nodes. Six evaluations across three parallel groups shown together;
+all expansions survive actual refresh. Separate intercepted failure-display fixture
+shows succeeded/failed siblings and blocked join; no owner/user state changed.
+The retained numeric campaign DOES NOT contain solvency; do not imply polymer parity.
+
+This checkpoint contains the verified source/docs for commit and push. User review pending.
+Result-index UI-01.01 remains a separate unresolved architectural proposal.
 
 LR01 PAUSED25%, Build33.33%, Acceptance0%, R1=100/R2R3V1=0 by ownerdirection.
 Resume R2 RuntimeOWN scoped receipt diagnosis only after UIpriorityreleased, NOT
@@ -42,12 +42,10 @@ when viewingends. Baseline ROOT.test-results/lr01-managed-baseline-20261007a:
 snapshot evolution-varyexit3; campaigncompletion isnotfault-free lifecycle. Earlier
 active-run failures unresolved. UI-R01 feedbackdiagnostic queued; pullforward ifblocksUI01.
 
-Demo session48269 was launched2026-10-07 16:07:23 for2hours; lastverifiedREADY HTTP200
-and browseropen requested. SessionfolderROOT.test-results/demo-20261008/sessions/
-20261007-160723-32252bd9; origin http://127.0.0.1:57013. Do not restart/stop while
-owner views it without coordinating. Gracefulstop: create STOP in exactsessionfolder,
-pollsession for7ownerdrains. Frozenassets unchanged; no worker/modelcalls fromlauncher.
-Do not infer current liveness after the automatic2hour expiry; check first.
+## Earlier evidence (superseded operational state)
+
+Older preview sessions are superseded by launcher70305 above. Use only its exact
+session folder for a coordinated stop; earlier session IDs are historical evidence.
 
 Demo2026-10-08 11amCT internalnontechnical. SQ01closed100%, Build100/Verification100,
 V1aV1bV1c100. Plan/history in docs/Build Plans/Completed; auditSQ-01_Quality_Closeout.md.

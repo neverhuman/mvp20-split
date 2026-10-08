@@ -34,7 +34,7 @@ try {
   }
   await page.setViewportSize({width:1440,height:1000});
   await nav.getByRole('button',{name:'Approach and run',exact:true}).click();
-  await page.locator('.react-flow__node[aria-label="seed, succeeded"]').click();
+  await page.locator('.react-flow__node[aria-label^="evaluate, succeeded"]').first().click();
   await page.getByRole('region',{name:'Campaign execution status',exact:true}).waitFor();
   await page.screenshot({path:resolve(output,'execution-1440.png'),fullPage:true});
   await page.getByRole('button',{name:'Pan right',exact:true}).click();

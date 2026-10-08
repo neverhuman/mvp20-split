@@ -9,12 +9,12 @@ call or scientific worker is needed during the presentation.
 The updated UI is available as an explicit review preview. Start it with:
 
 ```powershell
-.\v2\Start-Demo.ps1 -PreviewPublicDirectory Z:\mvp20-split\v2\.test-results\ui01-n2\public-b
+.\v2\Start-Demo.ps1 -PreviewPublicDirectory Z:\mvp20-split\v2\.test-results\ui01-concurrency\public-g
 ```
 
 This opens the question-first landing, connected campaign graph and updated
 navigation. Select **Approach and run** to view the graph; its root opens
-automatically. **Results and evidence** opens the available domain context.
+automatically with its parallel evaluation branches visible together. Use **Expand generations**, then the nested branch controls, to inspect repeated work on the same canvas. **Focus expanded work** restores readable scale; **Fit graph** and the overview map navigate the full loaded projection. **Results and evidence** opens the available domain context.
 Campaign-wide candidate/generation comparison is still pending UI-01.01.
 The preview copies assets into its own session folder; frozen baseline remains
 available by launching without the preview option. Use only one launcher at a time.

@@ -1,5 +1,13 @@
 # Studio Monitor presentation
 
+UI-01 concurrency review composes InlineScopes with the hosted topology canvas.
+Initial scatter siblings expand together; iteration and nested scatter groups can
+be expanded inline. Dashed edges/rounded dashed completion boundaries explain
+scope structure, not additional executable nodes. Parent activation owns selection
+of a completion boundary. Focus expanded work and a pannable minimap complement
+the whole-graph overview; node dimensions are explicit for both renderer and map.
+Standalone narrow topology consumers retain their existing interaction contract.
+
 UI-01 hosted Monitor exposes authoritative execution status and scoped step count;
 inspection history is secondary disclosure. Standalone consumers retain their
 expanded controls. The entry shell suppresses duplicate module headers while

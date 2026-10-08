@@ -6,6 +6,7 @@ import { RequestLane } from "./request_lane.js";
 import { TopologyWindow } from "./topology_window.js";
 import type { RegionPhase } from "./monitor.js";
 import { checkedViewport, type Viewport } from "./scene.js";
+import { InlineScopes } from './inline_scopes/model.js';
 
 type Anchor = GraphSnapshotPage["snapshot"];
 export interface NavigationView {
@@ -35,12 +36,13 @@ export class NavigationModel {
   private view: NavigationView = Object.freeze({ phase: "idle", scopes: null, topology: null,
     topologyPhase: "idle", loadingMore: false, error: null, viewport: { x: 24, y: 24, zoom: 0.85 }, offset: 0 });
 
-  constructor(private readonly source: NavigationSource) {}
+  readonly inline: InlineScopes;
+  constructor(private readonly source: NavigationSource) { this.inline=new InlineScopes(source,error=>this.fail(error,true)); }
   get snapshot() { return this.view; }
   viewportFor(scope: string) { return this.viewports.get(scope); }
-  setViewport(viewport: Viewport) {
+  setViewport(viewport: Viewport, viewKey?:string) {
     const value = checkedViewport(viewport);
-    const scope = this.view.topology?.page.graph_scope.scope_key;
+    const scope = viewKey ?? this.view.topology?.page.graph_scope.scope_key;
     if (scope) this.viewports.set(scope, value);
     this.patch({ viewport: value });
   }
@@ -60,6 +62,7 @@ export class NavigationModel {
     if (anchor && this.anchor && cutKey(anchor.cut) === cutKey(this.anchor.cut) && anchor.snapshot_token === this.anchor.snapshot_token) return;
     this.scopeLane.cancel(); this.topologyLane.cancel();
     this.anchor = anchor ? structuredClone(anchor) : null;
+    this.inline.bind(this.anchor);
     this.loadedScopes = 0;
     this.patch({ phase: "idle", scopes: null, topology: null, topologyPhase: "idle", loadingMore: false, error: null });
   }
@@ -68,6 +71,7 @@ export class NavigationModel {
     if (this.disposed) return;
     const epoch = ++this.observationEpoch;
     if (denied) {
+      this.inline.reset();
       this.viewports.clear();
       this.identity = null; this.bookmark = { parent: undefined, scope: undefined, query: {} };
       this.fail(new ReadFailure("denied"), false); return;
@@ -98,6 +102,7 @@ export class NavigationModel {
     if (error.kind === "aborted") return;
     if (error.kind === "denied" || error.kind === "resnapshot") {
       this.scopeLane.cancel(); this.topologyLane.cancel(); this.anchor = null;
+      this.inline.bind(null);
       if (error.kind === "denied") this.bookmark = { parent: undefined, scope: undefined, query: {} };
       this.patch({ phase: error.kind === "denied" ? "denied" : "stale", scopes: null, topology: null,
         topologyPhase: "idle", loadingMore: false, error });
@@ -177,6 +182,7 @@ export class NavigationModel {
   }
 
   dispose() {
+    this.inline.dispose();
     this.observationEpoch++;
     this.scopeLane.cancel(); this.topologyLane.cancel(); this.listeners.clear(); this.anchor = null; this.disposed = true;
   }

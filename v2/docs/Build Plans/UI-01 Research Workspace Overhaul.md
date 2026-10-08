@@ -2,16 +2,16 @@
 
 ## Canonical tracker
 
-- Status: primary_active; G1/N1 bounded scope complete; N2.C visible concurrency active.
-- Last refreshed: 2026-10-07 19:48:27 (America/Chicago).
+- Status: primary_active; G1/N1/N2.C bounded scope complete; concurrency visual review pending.
+- Last refreshed: 2026-10-07 20:13:27 (America/Chicago).
 - Baseline: 62ea4966; owner-reported disconnected canvas and navigation review on 2026-10-07.
 - Owner: Studio experience, page models and presentation; service owners retain their contracts and state.
 - Parent: none; priority and mirrors in [Master Build Tracker](Master%20Build%20Tracker.md).
-- Overall implementation: **43.33%**; Build54.17%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
+- Overall implementation: **46.67%**; Build58.33%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
 - Design readiness: G0 complete; ELK directed layout and bounded topology ownership implemented.
 - Demonstrated behavior: connected graphs and question-first navigation verified against retained owner records; result-first comparison and full replacement acceptance remain.
-- Current phase/task: N2.C visible concurrency; owner-prioritized ahead of result discovery.
-- Next task: coherent bounded sibling-scope projection and inline fan-out/join rendering with occurrence identity and real state.
+- Current phase/task: N2.C implemented and served for owner review; no broader graph/plan acceptance inferred.
+- Next task: owner reviews the live concurrency presentation; incorporate review before returning to result discovery.
 - Blocker: none for concurrency investigation/presentation. UI-01.01 remains pending only for later result discovery; do not treat it as a blocker to this correction.
 - Human acceptance: owner feedback is part of visual review; no new routine approval gates for campaign execution.
 - Active exception: owner explicitly reprioritized UI over worker diagnostics; LR-01 remains paused at25%, Build33.33%, Acceptance0%, with R2 receipt diagnosis preserved.
@@ -22,7 +22,7 @@
 | G0 graph review and design | 100% | Owner report and retained campaign | Recorded actual-screen diagnosis, topology/data map, layout design and graph acceptance cases |
 | G1 usable connected graph | 100% | G0 complete | One real retained campaign opens as a readable connected graph; branches, joins and nested work navigable; visual and behavioral proof |
 | N1 research entry and navigation | 100% | G1 complete | Research-question landing and connected workflow navigation with preserved selection/context |
-| N2 approach, execution and results | 16.67% | N1 complete | Understand approach, follow autonomous work, inspect/compare results and supporting evidence |
+| N2 approach, execution and results | 33.33% | N1 complete | Understand approach, follow autonomous work, inspect/compare results and supporting evidence |
 | N3 next-campaign iteration | 0% | N2 complete | Target weak/promising points, inspect proposed changes and follow predecessor/successor history |
 | V1 integrated acceptance and audit | 0% | N3 complete | Actual-owner user journey, independent consumer acceptance, scoped audit and explicit limitations |
 
@@ -234,7 +234,7 @@ explicit scope/denominator update after the owner decision; they earn no credit 
 
 | Task | Completion | Exit |
 |---|---:|---|
-| N2.C visible concurrency | 0% | Inline sibling branches and joins in campaign context; actual-state/omission proof and SME-visible behavior before result work |
+| N2.C visible concurrency | 100% | Inline sibling branches and joins in campaign context; actual-state/omission proof and SME-visible behavior before result work |
 | N2.1 screen hierarchy | 100% | Single shell, compact execution status/actions, secondary technical controls, truthful absent-result notice |
 | N2.2 participating capabilities and result discovery | 0% | Exact tool/model/input relationships and bounded accepted-result discovery; UI-01.01 pending |
 | N2.3 typed results and comparison | 0% | Candidates/generations shown with pinned context, provenance and unknowns |
@@ -282,3 +282,33 @@ hiding other branches. The current numeric demo is not the polymer formulation
 baseline. Solvency is absent from that campaign, not hidden by its canvas. A
 representative formulation campaign must distinguish actual tools from planned or
 synthetic replacements. No fabricated solvency execution or scientific result.
+
+## N2.C delivery checkpoint - 2026-10-07 20:13:27
+
+Studio0.18 InlineScopes reads sibling topologies at the parent snapshot token/cut.
+Root scatter expands on opening; siblings and joins remain on the same canvas.
+Iterations expand in sequence and retain nested parallel groups. Real activation
+states and selection are preserved. Dashed scope-entry/completion/continuation
+edges and synthetic rounded completion boundaries are distinct from authored links.
+No additional executable tool, solvency evaluation or observed CPU overlap is claimed.
+
+Bounds: four siblings/group, eight groups, depth3 and200nodes; omissions visible.
+Read cancellation, denial, mismatched cuts/identity and refresh restoration covered.
+Focus expanded work preserves readability; pannable overview map and Fit graph
+retain whole-projection navigation. The all-generations overview requires zoom to
+read labels. Manual focus uses tested geometry instead of a queued renderer fit
+that lost focus during refresh; failed browser-e evidence retained.
+
+301 Studio tests pass. Navigation, dense-navigation and drafts browser regressions
+pass. Actual SERVED concurrency/workflow checks PASS under ui01-concurrency/
+concurrency-g-served and workflow-g-served. Checks include 14node initial fan-out,
+43node expansion of all generations (39 real activations plus4display boundaries),
+restoring all expansions after refresh, real node detail, 1440/390 accessibility,
+and a separately labelled intercepted failed-sibling/blocked-join presentation
+fixture. The failure fixture never changes owner records or the user's browser.
+
+Live preview http://127.0.0.1:57013; session20261007-200936-1106c8c9. Started
+2026-10-07 20:10:37CT, scheduled stop2026-10-08 20:10:37CT. Immutable copy of
+public-g; real HTTP asset hashes match ready.json. Previous preview drained all
+seven owners before startup. No workers/provider calls. Owner review pending;
+N2.C scoped work100, N2=33.33, overall46.67, Build58.33, Verification0.
