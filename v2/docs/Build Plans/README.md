@@ -1,6 +1,6 @@
 # Build Plans
 
-- [UI-02 Candidate Structure and Recommendation Views](UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md): queued0%; 2D structure/repeat-unit inspection, composition, properties, synthesis evidence and recommendation rationale. 3D modeling is separate follow-on scope.
+- [UI-02 Candidate Structure and Recommendation Views](UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md): scheduled next week0%; chemical formula and2D structure/repeat-unit inspection, composition, properties, synthesis evidence and recommendation rationale. 3D modeling is separate follow-on scope.
 
 [Master Build Tracker](Master%20Build%20Tracker.md) selects the primary plan and mirrors its canonical overall/per-phase completion. Owning plans define task position, tests and phase gates.
 
@@ -25,10 +25,12 @@ Read the selected plan's tracker first. Complete each phase gate before advancin
 
 - [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md): queued0%; historical feedback read remains unexplained.
 
-- [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md): paused for LAN-01; see canonical tracker for percentages. SME evaluation review takes priority over execution-only presentation.
+- [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md): scheduled next week; see canonical tracker for percentages. SME evaluation review takes priority over execution-only presentation.
 
 - [SME Evaluation Review MVP](UI-01.02%20SME%20Evaluation%20Review%20MVP.md): bounded local review delivered; actual Planning/scientific integration remains separate.
 
 - [Connected Demo Flow](UI-01.04%20Connected%20Demo%20Flow.md): bounded retained-plan/execution/results/review walkthrough complete; real browser run engagement remains outstanding.
 
-- [LAN-01 Local Network Demo Access](LAN-01%20Local%20Network%20Demo%20Access.md): implementation100%, second-computer acceptance pending; current owner priority.
+- [LAN-01 Local Network Demo Access](LAN-01%20Local%20Network%20Demo%20Access.md): implementation100%, owner reports remote access working; preserve the demo while upcoming integration is scheduled.
+
+- [UI-01.05 Knowledge, Run and LLM Integration](UI-01.05%20Knowledge%20Run%20and%20LLM%20Integration.md): scheduled0%; real domain graph, browser launch/live nodes and knowledge-grounded successor proposals. Dated targets are in MBT.

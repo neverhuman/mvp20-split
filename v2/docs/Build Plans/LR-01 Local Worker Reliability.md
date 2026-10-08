@@ -2,7 +2,7 @@
 
 ## Canonical tracker
 
-- Last refreshed: `2026-10-07 17:33:24` (America/Chicago).
+- Last refreshed: `2026-10-08 18:42:19` (America/Chicago).
 
 - Status: paused by owner direction for UI-01; R2 diagnostic position preserved. Owner: Deployment/SDK transport diagnostics, with Runtime retaining acceptance authority.
 - Completion: **25%**, 1/4 deliveries; Build33.33%, Acceptance0%.
@@ -10,6 +10,14 @@
 - Current task: R2 receipt-level fault isolation; baseline complete. Paused for UI-01 overhaul priority. Next gate: evidence-supported isolation/repair.
 - Scope: explain retained intermittent local worker failures and qualify a bounded repair.
 - Blockers: no owner decision for existing local diagnostic scope; paid model calls are unnecessary.
+
+## Next-week integration dependency
+
+For2026-10-12 through2026-10-16, pull R2 diagnosis forward only if actual UI-01.05/R1
+browser-started campaigns encounter the retained worker failure. Preserve all failed
+trials, exact tool/version/configuration and denominators. Return to the interrupted
+UI gate after bounded repair verification; do not promote a few successful trials
+to a reliability percentage. R1=100%, R2/R3/V1=0%, overall25% remain unchanged.
 
 ## Evidence and boundary
 

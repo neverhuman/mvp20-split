@@ -8,16 +8,16 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 
 ## Program Tracker
 
-- Status: LAN-01 primary active; UI-01 and LR-01 paused by owner direction; BP-01 through BP-09 and SQ-01 remain closed.
-- Last refreshed: 2026-10-08 10:31:34 (America/Chicago).
+- Status: next-week UI-01/UI-02 implementation schedule set; planning only. LAN demo access delivered; LR-01 remains conditional. BP-01 through BP-09 and SQ-01 remain closed.
+- Last refreshed: 2026-10-08 18:42:19 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
-- Current priority: [LAN-01 Local Network Demo Access](LAN-01%20Local%20Network%20Demo%20Access.md); live HTTPS gateway and second-computer handoff.
-- Primary active task: LAN-01 implementation100%, L1/L2/L3=100%; owner confirmed remote HTTPS reachability; authenticated walkthrough/trust pending.
-- Next task: owner second-computer access check, then return to UI-01 remaining N2.2/N2.5; fine visual polish deferred.
-- Implementation completion: LAN-01=100%, L1/L2/L3=100%; UI-01 paused55%, Build68.75%, Verification0%; LR-01 paused25%, Build33.33%, Acceptance0%.
-- Blockers: no LAN implementation blocker; remote firewall path and client certificate trust require the other computer. UI scientific proposal binding remains unfinished; UI-01.01 is separate result-discovery scope.
+- Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
+- Primary active task: planning the four owner targets; next implementation task UI-01.05/K1 actual Knowledge connection, after bounded activation review. LAN-01 remains implementation100%, L1/L2/L3=100; owner reported access working.
+- Next task: UI-01.05/K1 then R1, including remaining N2 gates; I1 follows N2. UI-02 producer/formula handoff follows the dated schedule below.
+- Implementation completion: LAN-01=100%, L1/L2/L3=100%; UI-01 scheduled55%, Build68.75%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
+- Blockers/dependencies: candidate structure producer and selection evidence, actual managed-worker launch, and Knowledge-grounded live LLM integration remain unfinished. No calibrated per-node scientific accuracy benchmark exists for the two demo tools. UI-01.01 remains a separate public-contract proposal.
 - Acceptance posture: connected plan/execution/comparison/next-review actual served walkthrough passed; Studio0.21,314 tests. New-run browser action and V1 remain outstanding. Public result-index proposal remains separate.
-- Active exception: owner reprioritized LAN access on2026-10-08. Preserve UI-01 percentages and LR-01/R2 receipt diagnosis; no automatic worker-diagnostic resumption when the demo closes.
+- Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 
 ## Initial Delivery Boundary
 
@@ -29,8 +29,8 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 
 ## Current In-Flight Work
 
-LAN-01 implementation100%, L1/L2/L3=100%; live and awaiting remote acceptance.
-UI-01 is paused at55%, Build68.75%, Verification0%. G0 graph review/design
+LAN-01 implementation100%, L1/L2/L3=100%; live, owner reported remote access working.
+UI-01 is scheduled to resume at55%, Build68.75%, Verification0%. G0 graph review/design
 is a prerequisite and earns no implementation credit. G1/N1/N2/N3/V1 are five equal
 delivery gates. Phase mirror: G0=100%, G1=100%, N1=100%, N2=75%, N3=0%, V1=0%.
 LR-01 is paused at25%, Build33.33%, Acceptance0%; R1=100%, R2/R3/V1=0%.
@@ -40,16 +40,44 @@ Completed plans remain in the [completed index](Completed/README.md).
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
-| 0 | [LAN-01 Local Network Demo Access](LAN-01%20Local%20Network%20Demo%20Access.md) | Implemented; remote acceptance pending | 100% | 100% | Remote pending | Owner LAN priority/firewall rule |
-| 1 | [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md) | Paused for LAN access; connected demo delivered | 55% | 68.75% | 0% | Owner direction; bounded activation review recorded |
-| 2 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Paused by owner; R2 resume point | 25% | 33.33% | 0% | UI priority released; same-host diagnostic window |
-| 3 | [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md) | Queued; pull forward if it blocks UI-01 | 0% | 0% | 0% | Bounded read diagnostic and activation review |
-| 4 | [UI-02 Candidate Structure and Recommendation Views](UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md) | Queued by owner; P1/P2/P3/P4=0% | 0% | 0% | 0% | Typed retained candidate structures and explicit selection evidence; activation audit |
+| 0 | [LAN-01 Local Network Demo Access](LAN-01%20Local%20Network%20Demo%20Access.md) | Implemented; owner reports access working | 100% | 100% | Remote pending | Owner LAN priority/firewall rule |
+| 1 | [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md) | Scheduled primary; UI-01.05 K1/R1/I1=0% | 55% | 68.75% | 0% | Owner direction; bounded activation review recorded |
+| 2 | [UI-02 Candidate Structure and Recommendation Views](UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md) | Scheduled next week; P1/P2/P3/P4=0% | 0% | 0% | 0% | Typed retained candidate structures and explicit selection evidence; activation audit |
+| 3 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Paused; pull R2 forward for blocking run failure | 25% | 33.33% | 0% | UI priority released or UI-01.05/R1 blocked; same-host diagnostic window |
+| 4 | [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md) | Queued; pull forward if it blocks UI-01 | 0% | 0% | 0% | Bounded read diagnostic and activation review |
 
 The owning tracker controls exact task/percentages; MBT controls priority and
 mirrors current state. Complete each bounded gate before dependent implementation.
 No completed-plan scope is reopened. [Selected profile handoff](../Audits/BP-09_Selected_Profile_Handoff.md)
 names scientific, production and capacity successor triggers that are not activated.
+
+## Owner targets: October 12-16, 2026 (America/Chicago)
+
+Delivery targets for one integrated internal demo, not unconditional completion or
+scientific-validation promises. Work one bounded task at a time; an unmet dependency
+moves its downstream date and must be surfaced, never bypassed for a calendar target.
+Track implementation in owning plans, not as a second percentage in this schedule.
+
+| Target date | Owner / canonical scope | Demonstrable exit |
+|---|---|---|
+| Mon2026-10-12 | UI-01.05/K1 -> UI-01 N2.2/N2.4; then UI-02/P1 producer inventory | Real Knowledge owner available in demo; inspect claims/evidence and traverse campaign/domain links. Identify actual structure/formula producer contracts and missing pieces. |
+| Tue2026-10-13 | UI-01.05/R1 -> N2.5 and remaining N2 comparison gates | Run starts a new campaign through Runtime/managed workers; nodes visibly transition, parallel work/failure/retry and resulting artifacts remain traceable. Resolve blocking LR-01 faults rather than hide them. |
+| Wed2026-10-14 | UI-01.05/I1 -> N3, after N2; UI-02/P1/P2 handoff | Real LLM consumes pinned Knowledge and proposes a validated graph diff for the next campaign. Preserve active/predecessor history. Complete structure/formula producer and explicit selection-or-unranked evidence handoff. |
+| Thu2026-10-15 | UI-02/P3 after P1/P2 | Results opens the exact candidate's chemical formula and2D molecular/repeat-unit view, properties, provenance and recommendation rationale or explicit unranked status. |
+| Fri2026-10-16 | UI-02/P4 and UI-01/V1, after owning gates | Actual browser question -> Knowledge -> LLM graph proposal -> new Run/live nodes -> formula/structure -> next iteration; isolated module tests, scoped audits and localhost/LAN regression. |
+
+UI-01.05 refines existing unfinished N2/N3 scope; UI-02/P1 explicitly owns its
+scientific representation/formula producer dependency. No plan-writing credit,
+reopening of completed phases, or invented ranking.3D conformational modeling stays
+outside this week's bounded target. LLM runs must record concrete budget caps and
+usage/cost; existing provider authorization does not imply unlimited spend.
+
+Per-node publication belongs to UI-01/N2.4 and V1: publish measured execution
+outcomes separately from benchmarked scientific performance. Current synthetic run
+has4/4 accepted scientific invocations (Hansen2/2, Arrhenius2/2), not100% accuracy.
+No experimental accuracy percentage is available. Show Not scientifically
+benchmarked until a relevant versioned dataset, method, sample count and error/
+classification metric support a claim. See UI-01.05 for evidence and metric rules.
 
 ## Cross-Plan Milestones
 

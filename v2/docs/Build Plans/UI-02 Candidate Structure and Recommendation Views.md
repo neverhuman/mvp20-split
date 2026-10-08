@@ -2,8 +2,8 @@
 
 ## Canonical tracker
 
-- Status: queued; owner requested future scope, not implementation activation.
-- Last refreshed: 2026-10-08 10:31:34 (America/Chicago).
+- Status: scheduled for2026-10-12 through2026-10-16; planning only, implementation not started.
+- Last refreshed: 2026-10-08 18:42:19 (America/Chicago).
 - Overall implementation: 0%; Build0%, Verification0%. Four equal delivery phases;
   Build averages P1/P2/P3, Verification is P4. Planning earns no implementation credit.
 - Owner: Studio candidate inspection; scientific tools own candidate representations
@@ -27,6 +27,31 @@ generated polymer structure and no overall winner. A renderer cannot recover a
 chemical structure from those parameters or turn them into a recommendation.
 
 ## Bounded first delivery
+
+Owner's weekly target explicitly includes the **chemical formula and molecule
+visualization**. P1 must include a real candidate-representation producer dependency:
+an independently packaged scientific tool that accepts or generates explicit
+structures, validates them and retains a versioned normalized representation plus
+derived formula. A declared input structure can support the first bounded demo;
+label it as supplied, and do not call it generated or optimized. If demonstrating
+generation, the producing tool and graph node must actually execute. Identify source
+reuse and missing contracts in P1 before choosing that route. Structure and property
+artifacts must share exact candidate identity; do not attach a convenient molecule
+to the existing synthetic scalar fixtures or guess chemistry from those parameters.
+
+Formula semantics must match the representation: full molecular formula for a
+fully specified molecule/finite chain; repeat-unit formula and symbolic degree of
+polymerization/end-group assumptions for an unspecified polymer; component formulas
+and composition for mixtures. Unknown chain length/distribution must not become an
+invented exact molecular formula. The displayed2D structure and formula must derive
+from the same retained representation, with explicit unavailable/invalid states.
+
+Week handoff: UI-01 supplies real run/result navigation; P1 supplies candidate
+contracts/tool output, P2 selection evidence, P3 formula/structure detail, and P4
+the actual browser proof. Show candidates even when unranked; use Recommended only
+when the retained policy/evidence supports it. Thu2026-10-15 is the target for P3,
+Fri2026-10-16 for P4, conditional on P1/P2 completion. These are scheduling targets,
+not permission to bypass producer or selection gates. All phase percentages stay0%.
 
 Show a two-dimensional chemical structure or polymer repeat-unit representation,
 with composition and available architecture details: connectivity/attachment points,

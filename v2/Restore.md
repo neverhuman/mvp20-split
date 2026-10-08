@@ -1,5 +1,15 @@
 # Restore
 
+Schedule checkpoint2026-10-08 18:42:19: owner requested next-week targets, planning
+only. MBT dates2026-10-12 through2026-10-16: Mon Knowledge, Tue Run/live nodes,
+Wed Knowledge-grounded LLM successor graph, Thu formula/2D structure, Fri integrated
+verification. UI-01.05 K1/R1/I1=0% decomposes existing remaining N2/N3; UI-01
+percentages unchanged55/68.75/N2=75. UI-02 P1/P2/P3/P4=0% explicitly includes
+structure/formula producer, then selection evidence and inspector;3D later.
+LR-01 remains25%, pull forward only for blocking live-run failure. Scientific
+accuracy unknown: demo4/4 accepted invocations is execution evidence only.
+Next implementation K1 after activation review; no application code changed here.
+
 Future-scope checkpoint2026-10-08 10:31:34: owner requested UI-02 Candidate
 Structure and Recommendation Views in MBT. Queued0%, P1/P2/P3/P4=0%; no
 implementation activation or current-plan percentage changes. Covers typed retained

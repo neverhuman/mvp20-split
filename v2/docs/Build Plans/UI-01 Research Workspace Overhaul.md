@@ -2,16 +2,16 @@
 
 ## Canonical tracker
 
-- Status: paused_for_owner_LAN_priority; connected demo flow implemented; remaining N2 integration gates explicit.
-- Last refreshed: 2026-10-08 10:10:00 (America/Chicago).
+- Status: scheduled_resume for next-week owner targets; connected demo flow implemented; remaining N2 integration gates explicit.
+- Last refreshed: 2026-10-08 18:42:19 (America/Chicago).
 - Baseline: 62ea4966; owner-reported disconnected canvas and navigation review on 2026-10-07.
 - Owner: Studio experience, page models and presentation; service owners retain their contracts and state.
 - Parent: none; priority and mirrors in [Master Build Tracker](Master%20Build%20Tracker.md).
 - Overall implementation: **55%**; Build68.75%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
 - Design readiness: G0 complete; ELK directed layout and bounded topology ownership implemented.
 - Demonstrated behavior: connected graphs and question-first navigation verified against retained owner records; result-first comparison and full replacement acceptance remain.
-- Current phase/task: paused for LAN-01; UI-01.04 connected walkthrough remains delivered.
-- Next task: remaining N2.2 service-owned planning provenance and N2.5 browser admission/worker engagement; fine visual polish deferred by owner.
+- Current phase/task: planning only; next implementation UI-01.05/K1. UI-01.04 remains delivered.
+- Next task: UI-01.05/K1 Knowledge connection, then R1 launch/live nodes and remaining N2 gates; I1 LLM successor loop after N2.
 - Blocker: none for the delivered local SME review. Actual scientific proposal binding remains unfinished; UI-01.01 applies only to later result discovery.
 - Human acceptance: owner feedback is part of visual review; no new routine approval gates for campaign execution.
 - Active exception: owner explicitly reprioritized UI over worker diagnostics; LR-01 remains paused at25%, Build33.33%, Acceptance0%, with R2 receipt diagnosis preserved.
@@ -31,6 +31,18 @@ implementation. Expand the nearest phase into owned tasks as evidence warrants;
 do not create empty child plans or count plan-writing as delivered functionality.
 
 ## Objective and boundaries
+
+Owner schedule2026-10-08: target the week2026-10-12 through2026-10-16 for actual
+Knowledge UI, browser-started campaigns with live per-node progress, and LLM graph
+revision grounded in Knowledge. [UI-01.05](UI-01.05%20Knowledge%20Run%20and%20LLM%20Integration.md)
+decomposes this existing unfinished N2/N3 scope: K1/R1/I1=0%. N2.2 owns service
+provenance, N2.4 Knowledge/reasoning and honest node-quality evidence, N2.5 admission/
+worker engagement, and N3 the between-campaign LLM/successor loop. Complete all N2
+gates, including remaining comparison, before dependent N3 work. V1 verifies the
+combined journey. No additional parent task weight or implementation credit is
+introduced by this decomposition; existing55%/68.75%/N2=75% remains unchanged.
+Formula/structure production and visualization belong to UI-02, with an explicit
+handoff of retained candidate references rather than duplicated Studio chemistry.
 
 An internal researcher should understand the question, the approach, what happened,
 what the evidence supports, and what to explore next. The graph is the primary
