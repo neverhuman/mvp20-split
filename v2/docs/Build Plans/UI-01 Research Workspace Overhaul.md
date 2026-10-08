@@ -2,17 +2,17 @@
 
 ## Canonical tracker
 
-- Status: primary_active; G1/N1/N2.C bounded scope complete; concurrency visual review pending.
-- Last refreshed: 2026-10-07 20:13:27 (America/Chicago).
+- Status: primary_active; N2.S local SME review MVP implemented; owner usefulness review pending.
+- Last refreshed: 2026-10-07 22:33:10 (America/Chicago).
 - Baseline: 62ea4966; owner-reported disconnected canvas and navigation review on 2026-10-07.
 - Owner: Studio experience, page models and presentation; service owners retain their contracts and state.
 - Parent: none; priority and mirrors in [Master Build Tracker](Master%20Build%20Tracker.md).
-- Overall implementation: **46.67%**; Build58.33%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
+- Overall implementation: **48.57%**; Build60.71%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
 - Design readiness: G0 complete; ELK directed layout and bounded topology ownership implemented.
 - Demonstrated behavior: connected graphs and question-first navigation verified against retained owner records; result-first comparison and full replacement acceptance remain.
-- Current phase/task: N2.C implemented and served for owner review; no broader graph/plan acceptance inferred.
-- Next task: owner reviews the live concurrency presentation; incorporate review before returning to result discovery.
-- Blocker: none for concurrency investigation/presentation. UI-01.01 remains pending only for later result discovery; do not treat it as a blocker to this correction.
+- Current phase/task: N2.S delivered; local design review is available. Runtime Planning/scientific binding remains N2.2, not implied by this MVP.
+- Next task: review SME usefulness, then integrate exact Planning/Research/tool provenance into the evaluation view under N2.2; result-index remains a separate decision.
+- Blocker: none for the delivered local SME review. Actual scientific proposal binding remains unfinished; UI-01.01 applies only to later result discovery.
 - Human acceptance: owner feedback is part of visual review; no new routine approval gates for campaign execution.
 - Active exception: owner explicitly reprioritized UI over worker diagnostics; LR-01 remains paused at25%, Build33.33%, Acceptance0%, with R2 receipt diagnosis preserved.
 - Pre-activation coherence: 2026-10-07 17:54:00, ready for G0. Existing topology/observation APIs, React Flow canvas and isolated Studio boundaries are available; meaningful layout and workflow acceptance are missing. No new backend contract is assumed approved by this plan.
@@ -22,7 +22,7 @@
 | G0 graph review and design | 100% | Owner report and retained campaign | Recorded actual-screen diagnosis, topology/data map, layout design and graph acceptance cases |
 | G1 usable connected graph | 100% | G0 complete | One real retained campaign opens as a readable connected graph; branches, joins and nested work navigable; visual and behavioral proof |
 | N1 research entry and navigation | 100% | G1 complete | Research-question landing and connected workflow navigation with preserved selection/context |
-| N2 approach, execution and results | 33.33% | N1 complete | Understand approach, follow autonomous work, inspect/compare results and supporting evidence |
+| N2 approach, execution and results | 42.86% | N1 complete | Understand approach, follow autonomous work, inspect/compare results and supporting evidence |
 | N3 next-campaign iteration | 0% | N2 complete | Target weak/promising points, inspect proposed changes and follow predecessor/successor history |
 | V1 integrated acceptance and audit | 0% | N3 complete | Actual-owner user journey, independent consumer acceptance, scoped audit and explicit limitations |
 
@@ -229,11 +229,12 @@ reviewed. N2 still owns inner-view density, result-first hierarchy and compariso
 
 ## N2 bounded task tracker - 2026-10-07 18:07:35
 
-Six equal tasks now define N2 credit (owner concurrency correction adds N2.C at0%). Proposed public-contract additions require an
+Seven equal tasks now define N2 credit (owner SME correction adds N2.S at100%; three completed tasks give42.86%). Proposed public-contract additions require an
 explicit scope/denominator update after the owner decision; they earn no credit now.
 
 | Task | Completion | Exit |
 |---|---:|---|
+| N2.S SME evaluation review | 100% | [MVP task](UI-01.02%20SME%20Evaluation%20Review%20MVP.md); inspect and challenge criteria, methods, assumptions and aggregation before further result work |
 | N2.C visible concurrency | 100% | Inline sibling branches and joins in campaign context; actual-state/omission proof and SME-visible behavior before result work |
 | N2.1 screen hierarchy | 100% | Single shell, compact execution status/actions, secondary technical controls, truthful absent-result notice |
 | N2.2 participating capabilities and result discovery | 0% | Exact tool/model/input relationships and bounded accepted-result discovery; UI-01.01 pending |
@@ -312,3 +313,14 @@ Live preview http://127.0.0.1:57013; session20261007-200936-1106c8c9. Started
 public-g; real HTTP asset hashes match ready.json. Previous preview drained all
 seven owners before startup. No workers/provider calls. Owner review pending;
 N2.C scoped work100, N2=33.33, overall46.67, Build58.33, Verification0.
+
+## SME acceptance correction - 2026-10-07 22:33:10
+
+Owner explicitly rejected generic parallel evaluator instances as product delivery.
+Added N2.S as a seventh equal task: denominator reset N2 from33.33 to28.57 before
+implementation; completion of the local review MVP brings N2 to42.86, overall48.57,
+Build60.71. G1/N2.C retain infrastructure credit only. [UI-01.02](UI-01.02%20SME%20Evaluation%20Review%20MVP.md)
+owns bounded scope and evidence. SME inspection of criteria, evaluation procedures,
+assumptions and aggregation is now mandatory product acceptance, independent of
+execution monitoring. Future N2.2 must bind actual retained Planning proposals,
+Research criteria and registered tools; a local authored proposal is not that link.

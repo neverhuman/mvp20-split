@@ -9,8 +9,16 @@ call or scientific worker is needed during the presentation.
 The updated UI is available as an explicit review preview. Start it with:
 
 ```powershell
-.\v2\Start-Demo.ps1 -PreviewPublicDirectory Z:\mvp20-split\v2\.test-results\ui01-concurrency\public-g
+.\v2\Start-Demo.ps1 -PreviewPublicDirectory Z:\mvp20-split\v2\.test-results\ui01-sme\public-d
 ```
+
+Start with **Evaluation design**. This is a Codex-authored, unexecuted polymer
+proposal, separate from the numerical campaign. Select **Solvency: Hansen screening**
+to inspect rationale, input checks, calculation procedure, applicability and gaps.
+Select **Compare evidence, then select** to expose the unspecified aggregation rule.
+Use **Challenge this step** to record concerns; export/import preserves the exact
+design and next-campaign notes. Notes are local/unsubmitted, not automatic LLM input.
+This review interaction is the MVP; do not present it as runtime-generated science.
 
 This opens the question-first landing, connected campaign graph and updated
 navigation. Select **Approach and run** to view the graph; its root opens

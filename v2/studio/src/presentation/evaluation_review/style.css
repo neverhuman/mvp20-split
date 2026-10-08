@@ -1,0 +1,33 @@
+.evaluation-review { padding:20px 24px; max-width:1800px; margin:auto; }
+.evaluation-review > header { display:block; position:static; height:auto; padding:0; background:transparent; border:0; }
+.evaluation-review h1 { font-size:1.7rem; margin:8px 0 12px; }
+.evaluation-review p { line-height:1.5; }
+.evaluation-boundary { border-left:3px solid #946a17; padding:8px 12px; background:#fff5df; }
+.evaluation-actions { display:flex; flex-wrap:wrap; gap:16px; align-items:center; margin-top:12px; }
+.evaluation-actions label { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+.evaluation-actions input { max-width:100%; }
+.evaluation-guide { color:var(--muted); }
+.evaluation-layout { display:grid; grid-template-columns:minmax(0,1fr) 390px; gap:20px; align-items:start; }
+.evaluation-canvas { min-width:0; }
+.evaluation-canvas .graph-region { height:620px; }
+.evaluation-canvas nav { display:flex; flex-wrap:wrap; gap:6px; margin:12px 0; }
+.evaluation-canvas nav button { text-align:left; font-size:.85rem; }
+.evaluation-canvas button[aria-pressed=true] { border-color:var(--accent); background:#e4f1ed; }
+.evaluation-inspector { padding:18px; border:1px solid var(--line); background:#fff; max-height:900px; overflow:auto; overflow-wrap:anywhere; }
+.evaluation-inspector h2 { margin:8px 0 16px; font-size:1.2rem; }
+.evaluation-inspector form { border-top:2px solid var(--accent); border-bottom:1px solid var(--line); padding:10px 0; }
+.evaluation-inspector form h3 { margin:4px 0 12px; }
+.evaluation-inspector label { display:block; margin:8px 0; }
+.evaluation-inspector select,.evaluation-inspector textarea { display:block; width:100%; margin-top:6px; box-sizing:border-box; }
+.evaluation-inspector dt { font-weight:650; margin-top:16px; }
+.evaluation-inspector dd { margin:6px 0; font-size:.9rem; line-height:1.5; }
+.evaluation-inspector ul { padding-left:20px; }
+.evaluation-notes { border-top:1px solid var(--line); margin-top:24px; }
+.evaluation-notes ul { list-style:none; padding:0; }
+.evaluation-notes li { border-bottom:1px solid var(--line); padding:12px 0; overflow-wrap:anywhere; }
+.evaluation-notes strong { margin-left:12px; }
+.evaluation-review .task-node.method { border-color:#12695e; background:#e9f5f0; }
+.evaluation-review .task-node.criterion { border-color:#3b688d; background:#edf4fa; }
+.evaluation-review .task-node.selection { border-color:#956410; background:#fff1d8; }
+@media(max-width:950px) { .evaluation-layout { grid-template-columns:1fr; } .evaluation-inspector { max-height:none; } .evaluation-canvas .graph-region { height:480px; } }
+@media(max-width:480px) { .evaluation-review { padding:16px 12px; } .evaluation-review h1 { font-size:1.35rem; } .evaluation-actions { display:block; } .evaluation-actions button { margin-top:10px; } }

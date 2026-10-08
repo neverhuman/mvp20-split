@@ -1,16 +1,17 @@
 # Architecture Drift
 
 - Status: BP-01 through BP-09 closed/audited; named successor findings remain.
-- Last refreshed: `2026-10-07 18:07:35` (America/Chicago).
+- Last refreshed: `2026-10-07 22:33:10` (America/Chicago).
 - Scope: unresolved v2 design/implementation alignment and scoped successor boundaries.
 - Active focus: selected-host integration and named scientific/UI successor limits.
-- Next gate: UI-01/N2 result-discovery decision; LR-01 paused, UI-R01 retains feedback-read follow-up.
+- Next gate: UI-01/N2 SME usefulness and exact scientific proposal integration; LR-01 paused, UI-R01 retains feedback-read follow-up.
 
 ## Active Findings
 
 | Finding | Owner / trigger | Disposition |
 |---|---|---|
 | Default graph is a disconnected inventory; authored layout ignores dependencies | [UI-01](../Build%20Plans/UI-01%20Research%20Workspace%20Overhaul.md), G0/G1 first | Source correction verified by UI-01/G1: ELK routes authored links; automatic root/fit, nested scopes, selection and viewport retention pass actual-owner browser review. Candidate assets only; frozen demo unchanged, V1 replacement qualification remains. N1 question-first navigation also verified. |
+| SME evaluation logic absent from executed numerical demo | UI-01/N2.S then N2.2 | Local design-review MVP now exposes criteria, actual solvency procedure, assumptions, evidence gaps and aggregation, with future-only concern export/import.306 tests and served SME browser pass. Runtime Planning generation, registered scientific bindings and automatic feedback consumption remain unimplemented in this view. No complete-engine acceptance. |
 | Hidden sibling concurrency in graph presentation | UI-01/N2.C, Studio0.18 | Implemented and served for owner review: same-cut inline fan-out/rejoin, sequential iteration expansion, focus/overview map, explicit bounded omissions.301Studio checks and actual served browser checks pass; failed-state display uses a separately labelled intercepted fixture. This retained numeric campaign is not a formulation/solvency migration. |
 | Campaign-wide candidate/generation discovery is absent | [UI-01.01](../Build%20Plans/UI-01.01%20Campaign%20result%20discovery%20decision.md), N2 | Runtime exposes per-step outputs; Research laboratory projections require separate pins. Proposed additive read index plus typed SearchCheckpoint consumer awaits owner direction. Existing published checkpoint DTOs do not themselves provide campaign result discovery. |
 | Intermittent feedback read during demo rehearsal | [UI-R01](../Build%20Plans/UI-R01%20Feedback%20Read%20Diagnostics.md) | original-focus-c reported unverified records; later instrumented d passed8 Research reads200. Cause unresolved. Offline demo fallback provided; no reliability repair claim. See DEMO-01 audit. |

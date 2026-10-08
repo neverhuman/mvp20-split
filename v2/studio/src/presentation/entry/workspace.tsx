@@ -25,15 +25,17 @@ import { FeedbackModel } from '../../page_models/feedback/model.js';
 import { ResearchRecordClient } from '../../transport/provenance/research.js';
 import { FeedbackClient } from '../../transport/feedback/client.js';
 import { ResearchQuestion } from './question.js';
+import { EvaluationReviewPanel } from '../evaluation_review/panel.js';
 import './style.css';
 
 function Campaign({ context, search }: { context: WorkspaceContext & { run_id: string }; search: string }) {
   const [mode, setMode] = useState<WorkflowView>(() => workflowView(search));
+  const [reviewed,setReviewed]=useState(workflowView(search)==='evaluation');
   const [explored, setExplored] = useState(workflowView(search) === 'knowledge');
   const [designed, setDesigned] = useState(workflowView(search) === 'design');
-  useEffect(() => { const next = workflowView(search); setMode(next); if (next === 'knowledge') setExplored(true); if (next === 'design') setDesigned(true); }, [search]);
+  useEffect(() => { const next = workflowView(search); setMode(next); if(next==='evaluation')setReviewed(true); if (next === 'knowledge') setExplored(true); if (next === 'design') setDesigned(true); }, [search]);
   const navigate = (next: WorkflowView) => {
-    setMode(next); if (next === 'knowledge') setExplored(true); if (next === 'design') setDesigned(true);
+    setMode(next); if(next==='evaluation')setReviewed(true); if (next === 'knowledge') setExplored(true); if (next === 'design') setDesigned(true);
     history.replaceState(null, '', location.pathname + location.search + '#' + workflowLink(search, next));
   };
   const selection = useMemo(() => new WorkspaceSelection(search, context.scope), [search, context.scope.tenant_id, context.scope.project_id]);
@@ -48,11 +50,13 @@ function Campaign({ context, search }: { context: WorkspaceContext & { run_id: s
     <header className="local-workspace-bar"><strong>AMPHORA</strong><span>Research workspace</span><span className="local-access">Local access</span></header>
     <nav className="local-workspace-navigation" aria-label="Research workspace">
       <button aria-pressed={mode === 'question'} onClick={() => navigate('question')}>Question</button>
+      <button aria-pressed={mode === 'evaluation'} onClick={() => navigate('evaluation')}>Evaluation design</button>
       <button aria-pressed={mode === 'execution'} onClick={() => navigate('execution')}>Approach and run</button>
       <button aria-pressed={mode === 'knowledge'} onClick={() => navigate('knowledge')}>Results and evidence</button>
       <button aria-pressed={mode === 'design'} onClick={() => navigate('design')}>Next iteration</button>
     </nav>
     <div hidden={mode !== 'question'}><ResearchQuestion model={owners.question} selection={feedbackSelection} active={mode === 'question'} synthetic={context.synthetic} navigate={navigate} /></div>
+    {reviewed && <div hidden={mode !== 'evaluation'}><EvaluationReviewPanel synthetic={context.synthetic} /></div>}
     <div hidden={mode !== 'execution'}><MonitorWorkspace {...owners} compact active={mode === 'execution'} context={{ scope:context.scope, run:context.run_id }} synthetic={context.synthetic} /></div>
     {designed && <div hidden={mode !== 'design'}><LocalDesign model={owners.library} synthetic={context.synthetic} /></div>}
     {explored && <div hidden={mode !== 'knowledge'}><LocalKnowledge selection={selection} feedbackSelection={feedbackSelection} outputSelection={outputSelection} campaign={{ scope: context.scope, run: context.run_id }} active={mode === 'knowledge'} synthetic={context.synthetic} /></div>}

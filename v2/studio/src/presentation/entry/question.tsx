@@ -32,6 +32,7 @@ export function ResearchQuestion({ model, selection, active, synthetic, navigate
         {selection.phase === 'ready' && view.phase !== 'loading' && <button onClick={() => void model.refresh()}>Retry research question</button>}
       </div>}
     </section>
+    {synthetic && <section className="research-purpose"><h2>Review the evaluation strategy</h2><p>Inspect a separate polymer design proposal: criteria, proposed scientific methods, assumptions and selection rules. Record what an SME would change next campaign.</p><button onClick={() => navigate('evaluation')}>Review evaluation design</button><p className="muted">Codex-authored design proposal; not executed or linked to the numerical history below.</p></section>}
     <div className="research-steps" aria-label="Research workflow">
       <section><span className="step-number">01</span><h2>Understand the approach</h2><p>Follow the connected campaign graph, its tools and repeated work.</p><button onClick={() => navigate('execution')}>Explore approach and run</button></section>
       <section><span className="step-number">02</span><h2>Inspect the evidence</h2><p>Explore the selected domain context, observations and evidence quality.</p><button onClick={() => navigate('knowledge')}>Open results and evidence</button></section>

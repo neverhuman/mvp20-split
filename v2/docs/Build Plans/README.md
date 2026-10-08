@@ -23,4 +23,6 @@ Read the selected plan's tracker first. Complete each phase gate before advancin
 
 - [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md): queued0%; historical feedback read remains unexplained.
 
-- [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md): primary0%; graph review and connected layout first, then research entry, execution/results and next-campaign flow.
+- [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md): primary; see canonical tracker for percentages. SME evaluation review takes priority over execution-only presentation.
+
+- [SME Evaluation Review MVP](UI-01.02%20SME%20Evaluation%20Review%20MVP.md): bounded local review delivered; actual Planning/scientific integration remains separate.

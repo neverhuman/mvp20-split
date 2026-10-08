@@ -1,46 +1,42 @@
 # Restore
 
-Refreshed 2026-10-07 20:13:27 America/Chicago. Read FIRST after compression.
+Refreshed 2026-10-07 22:33:10 America/Chicago. Read FIRST after compression.
 
 ## Current handoff
 
-Refreshed 2026-10-07 20:13:27 America/Chicago. User requested graph changes until ready for
-review. DELIVERED Studio0.18 live; hand off for owner visual review, no approval
-of pending result-index inferred. UI01=46.67%, Build58.33%, Verification0;
-G0/G1/N1=100, N2=33.33 (N2.1/N2.C100; other4tasks0), N3/V1=0.
+Owner rejected numerical concurrency as product acceptance. Primary value is HUMAN
+SME inspection of decomposed evaluation criteria/methods/assumptions/aggregation.
+UI-01.02 documents the bounded near-term MVP and producer audit. Do not treat
+numerical execution plumbing or local design review as the complete engine.
 
-LIVE http://127.0.0.1:57013, launcher70305. Authenticated user browser opened.
-SessionROOT .test-results/demo-20261008/sessions/20261007-200936-1106c8c9.
-Ready2026-10-07 20:10:37; scheduled stop2026-10-08 20:10:37CT. Serves immutable
-session/public copy of v2/.test-results/ui01-concurrency/public-g.
-Previous32760 stopped via exactSTOP and all7owners drained successfully.
-Do not stop new preview while owner reviews. No worker/provider activity.
+Studio0.19 local review MVP delivered: Evaluation design tab; Codex-authored polymer
+proposal (not runtime Planning output), named criteria/methods, actual v1 Hansen
+procedure, applicability/threshold/evidence gaps, aggregation and next-generation
+intent. Generic bounded local file import/export; up to64 review concerns attached
+to exact immutable design. No owner mutation, provider call or scientific result.
+Human usefulness review pending. Next N2.2 needs exact retained Planning/Research/
+Registry bindings; local proposal is NOT that integration. UI-01.01 remains pending
+for later result discovery. No approval inferred.
 
-InlineScopes composes same-cut sibling topologies. Root parallel scatter autoopens;
-iterations and nested scatters expand inline with explicit derived group boundaries.
-Four siblings/group, eight expanded groups, depth3,200node cap, explicit omissions.
-Denied/stale reads cleared/fenced. Expansion choices and composition viewports
-survive refresh/hidden views. Focus and minimap retain readable branch inspection.
-Pure fitGeometry fixes renderer queued-fit race exposed by failed browser-e.
+UI01=48.57%, Build60.71%, Verification0. G0/G1/N1=100; N2=42.86 (N2.S/N2.C/N2.1
+complete; four remaining tasks0); N3/V1=0. N2.S subplan S1/S2/S3=100, human
+acceptance distinct. Owner reprioritized this MVP; LR01 remains PAUSED25%,
+Build33.33%, Acceptance0; do not auto-resume workers.
 
-301 Studio tests + navigation/dense/drafts browsers PASS. Actual served browser
-concurrency and workflow PASS; evidence v2/.test-results/ui01-concurrency/
-concurrency-g-served and workflow-g-served. HTTP assets match ready.json hashes.
-43node all-generation projection =39real activations+4display boundaries, not new
-executed nodes. Six evaluations across three parallel groups shown together;
-all expansions survive actual refresh. Separate intercepted failure-display fixture
-shows succeeded/failed siblings and blocked join; no owner/user state changed.
-The retained numeric campaign DOES NOT contain solvency; do not imply polymer parity.
+LIVE http://127.0.0.1:57013; launcher97588; sessionROOT
+.test-results/demo-20261008/sessions/20261007-223136-2f577eb9.
+Ready2026-10-07 22:32:40CT; expires2026-10-08 22:32:40CT. Authenticated browser
+opened. Immutable session copy of v2/.test-results/ui01-sme/public-d. Do not stop
+while owner reviews. Prior70305 drained successfully via exactSTOP. No workers.
 
-This checkpoint contains the verified source/docs for commit and push. User review pending.
-Result-index UI-01.01 remains a separate unresolved architectural proposal.
+306 Studio tests PASS (ui01-sme-tests-final.log); workflow/concurrency and SME
+browsers pass. Actual served SME evidence v2/.test-results/ui01-sme/
+evaluation-d-served/evidence.json. Three concerns exported/recovered after reload,
+invalid imports preserve work, no owner writes,1440/390 accessibility/overflow pass.
+Screenshots reviewed. Browser-a global header collision fixed; b select accessible
+name fixed. Example intentionally has no candidate measurements or v2 tool bindings.
 
-LR01 PAUSED25%, Build33.33%, Acceptance0%, R1=100/R2R3V1=0 by ownerdirection.
-Resume R2 RuntimeOWN scoped receipt diagnosis only after UIpriorityreleased, NOT
-when viewingends. Baseline ROOT.test-results/lr01-managed-baseline-20261007a:
-3campaigns completed15invocations, allownersdrained, no paidcalls. Trial1 terminal
-snapshot evolution-varyexit3; campaigncompletion isnotfault-free lifecycle. Earlier
-active-run failures unresolved. UI-R01 feedbackdiagnostic queued; pullforward ifblocksUI01.
+This verified checkpoint is to be committed/pushed. Demo tomorrow2026-10-08 11amCT.
 
 ## Earlier evidence (superseded operational state)
 

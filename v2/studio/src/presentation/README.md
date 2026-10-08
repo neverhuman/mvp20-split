@@ -73,3 +73,9 @@ GraphCanvas uses bounded asynchronous ELK geometry with fixed dimensions and act
 routed paths, initial fit, selection emphasis and explicit layout failure. Late
 layouts cannot repopulate another scope. Navigation owns per-scope viewport memory.
 Graph usability is pending actual-browser qualification; frozen demo unchanged.
+
+
+UI-01/N2.S adds [evaluation review](evaluation_review/README.md): a separate local
+design graph, method procedure inspector and revision-pinned SME review export/import.
+It does not replace or rename execution history, attest provider generation or write
+owner state. Synthetic sessions include an explicitly Codex-authored design example.
