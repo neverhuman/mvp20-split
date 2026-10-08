@@ -4,6 +4,22 @@ Audience: internal nontechnical colleagues. Start: **11:00am Central**.
 Scope: real local application and retained synthetic campaigns; no new live model
 call or scientific worker is needed during the presentation.
 
+## UI-01 review preview
+
+The updated UI is available as an explicit review preview. Start it with:
+
+```powershell
+.\v2\Start-Demo.ps1 -PreviewPublicDirectory Z:\mvp20-split\v2\.test-results\ui01-n2\public-b
+```
+
+This opens the question-first landing, connected campaign graph and updated
+navigation. Select **Approach and run** to view the graph; its root opens
+automatically. **Results and evidence** opens the available domain context.
+Campaign-wide candidate/generation comparison is still pending UI-01.01.
+The preview copies assets into its own session folder; frozen baseline remains
+available by launching without the preview option. Use only one launcher at a time.
+The older walkthrough below describes that frozen baseline.
+
 ## Prepare at 10:45am
 
 Use this Windows computer/user and repository. Docker Desktop must be running with
@@ -21,7 +37,7 @@ cd Z:\mvp20-split
 ```
 
 Allow startup time; the browser opens when owners and gateway are ready. Keep the
-terminal open. The default duration is two hours after startup. A plain bookmark
+terminal open. The default duration is 24 hours after startup. A plain bookmark
 does not create a session: rerun the launcher to get a fresh one-time browser ticket.
 Do not run two launchers together. Ctrl+C stops and drains the selected services.
 Wait for **Demo stopped; owners drained successfully** before restarting.

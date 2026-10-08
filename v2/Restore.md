@@ -4,27 +4,27 @@ Refreshed 2026-10-07 18:07:55 America/Chicago. Read FIRST after compression.
 
 ## Current handoff
 
-Refreshed implementation checkpoint 2026-10-07 18:07:35 America/Chicago.
-UI-01 primary44%, Build55%, Verification0%; G0/G1/N1=100, N2=20, N3/V1=0.
-G1 pushed b917223e; N1 pushed8965da3d. Current N2 compact screen/status/action
-hierarchy implemented. NEXT owner decision UI-01.01 Campaign result discovery:
-recommend additive Runtime read-only retained-output index plus bounded typed
-SearchCheckpoint consumer. Alternative bounded client scan avoids new API but
-has explicit incomplete-discovery limits. New public boundary is material scope;
-do not implement until owner direction; revise N2 denominator upon approval.
-N2 tasks five equal: screen hierarchy100; discovery/capabilities0; typedcomparison0;
-evidence/reasoningjourney0; actualowneracceptance0. Full V1 remains downstream.
-292 Studio tests pass. Actual-owner G1 browser-e and N1 browser-a passed.
-N2 final isolated workflow/graph both PASS; job71807 completed, gateway closed. Evidence v2/.test-results/ui01-n2/*-isolated-b, assets public-b.
-Helper v2/.test-results/ui01-n2/review_isolated.py launches/closes owned separate
-Gateway using installed gateway package and same retained owner APIs; no workers.
-Earlier graph-a/b session-denied: repeated probes exhausted live gateway eight-session
-ceiling. Both browser scripts now logout in finally; separate gateway avoids
-interrupting user. No credentials stored in evidence. Original demo frozen unchanged.
-Do not claim new UI is served at57013; current probes isolated only.
-Original2hour demo session scheduled expiry~18:08; verify liveness/drains before
-new probes. No need to stop original user session prematurely.
-LR01 paused; do not resume worker diagnosis without owner reprioritization.
+Refreshed 2026-10-07 19:43:04 America/Chicago. UI-01 remains44%, Build55%, Verification0%.
+Owner cannot review an offline UI; restored LIVE latest UI preview before requesting
+any architecture decision. No approval of UI-01.01 inferred; decision remains pending.
+LIVE http://127.0.0.1:57013, execution session32760; authenticated user browser opened.
+SessionROOT .test-results/demo-20261008/sessions/20261007-194053-57ebf095.
+Ready2026-10-07 19:41:56; scheduled stop2026-10-08 19:41:56 America/Chicago (24h).
+Serves immutable session/public copy of v2/.test-results/ui01-n2/public-b.
+Real HTTP asset SHA256 matches ready.json; --served workflow browser PASS, no asset
+interception: v2/.test-results/ui01-live-review-20261007/evidence.json.
+Question objective, 1440/390 accessibility, graph selection/viewport roundtrip,
+reload and next-iteration navigation pass. Test logs out only its own session.
+No workers/models; original campaign fc257cf8882147cb8cca56c778837e60 retained.
+Old two-hour session drained all7owners cleanly at2026-10-07 18:08:26.
+Launcher now defaults24h; Start-Demo.ps1 -PreviewPublicDirectory <path> snapshots
+explicit review assets after baseline verification. No frozen assets overwritten.
+Stop only on owner direction or scheduled expiry; STOP file in exact sessionfolder
+triggers graceful7owner drain. Do not restart while owner reviews without reason.
+Preview is for review, NOT full UI-01/V1 replacement acceptance. N2result index still
+pending owner decision; N3/V1 not done. G0/G1/N1=100%, N2=20%, N3/V1=0%.
+Latest prior push71f9071c. Current launcher/review availability fix to be committed.
+LR01 paused; do not resume worker diagnosis automatically.
 
 LR01 PAUSED25%, Build33.33%, Acceptance0%, R1=100/R2R3V1=0 by ownerdirection.
 Resume R2 RuntimeOWN scoped receipt diagnosis only after UIpriorityreleased, NOT

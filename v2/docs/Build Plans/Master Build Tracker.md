@@ -16,7 +16,7 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 - Next task: Owner decision UI-01.01; revise N2 scope before result-discovery implementation.
 - Implementation completion: UI-01=44%, Build55%, Verification0%; LR-01 paused25%, Build33.33%, Acceptance0%.
 - Blockers: UI-01.01 proposes a new public Runtime result-discovery read boundary; owner direction required before expanding scope.
-- Acceptance posture: G1/N1 actual-owner UI checks pass; N2 result-discovery decision pending, full V1 replacement acceptance outstanding.
+- Acceptance posture: latest UI review preview LIVE at127.0.0.1:57013 until2026-10-08 19:41:56CT; served-asset workflow checks pass. UI-01.01 awaits owner review; V1 remains outstanding.
 - Active exception: owner reprioritized UI on2026-10-07. Preserve LR-01/R2 receipt diagnosis; do not resume it automatically when the demo closes.
 
 ## Initial Delivery Boundary

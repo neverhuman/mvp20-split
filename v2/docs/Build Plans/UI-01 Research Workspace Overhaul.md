@@ -253,3 +253,13 @@ owner APIs, `workflow-isolated-b` and `graph-isolated-b`; gateway closed cleanly
 Execution screenshot reviewed after compact action/scope layout. Candidate public-b
 remains separate from the frozen demo. Browser session exhaustion evidence is
 retained, and future probes revoke their own sessions on exit.
+
+## Owner review availability correction - 2026-10-07 19:43:04
+
+Owner reported UI unavailable. Previous2hour session ended normally at18:08:26;
+all7owners drained. Latest public-b UI is now served as an explicit review preview
+at http://127.0.0.1:57013. Session20261007-194053-57ebf095 opened19:41:56 and has a
+24hour window through2026-10-08 19:41:56CT. Launcher defaults24h and snapshots
+selected preview assets without overwriting the frozen baseline. Actual HTTP hashes
+and served-asset workflow browser passed; evidence ui01-live-review-20261007.
+This restores owner review; it does not imply approval of UI-01.01 or V1 completion.

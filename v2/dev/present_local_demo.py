@@ -3,10 +3,11 @@
 import argparse
 import hashlib
 import json
+import shutil
 import time
 import urllib.parse
 import webbrowser
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 from amphora_deployment.credentials import CredentialVault
@@ -17,7 +18,7 @@ from local_numeric_configuration import write
 from verify_local_browser import BrowserController
 
 
-def present(qualification, root, output, duration, open_browser):
+def present(qualification, root, output, duration, open_browser, preview_public=None):
     evidence = json.loads((qualification / 'evidence.json').read_bytes())
     assert evidence['status'] == 'passed' and evidence['provider_calls'] == 0
     owners = json.loads((qualification / 'owners.json').read_bytes())
@@ -35,6 +36,20 @@ def present(qualification, root, output, duration, open_browser):
     assert origin == selected['origin']
     assert urllib.parse.urlsplit(origin).hostname in ('127.0.0.1', 'localhost', '::1')
     output.mkdir(parents=True, exist_ok=False)
+    ui_mode = 'qualified_baseline'
+    if preview_public is not None:
+        # Snapshot explicitly selected review assets; never overwrite the qualified baseline.
+        preview = output / 'public'
+        preview.mkdir()
+        for name in ('index.html', 'app.js', 'app.css'):
+            source = preview_public / name
+            assert source.is_file(), 'Preview asset is missing: ' + name
+            shutil.copyfile(source, preview / name)
+        gateway['public_directory'] = str(preview)
+        public = preview
+        ui_mode = 'ui_review_preview'
+    assets = {name: hashlib.sha256((public / name).read_bytes()).hexdigest()
+              for name in ('index.html', 'app.js', 'app.css')}
     write(output / 'gateway.json', gateway)
     owners['owners']['gateway']['configuration'] = str(output / 'gateway.json')
     write(output / 'owners.json', owners)
@@ -60,9 +75,11 @@ def present(qualification, root, output, duration, open_browser):
             # Ticket is one-time browser bootstrap, never written to evidence or terminal.
             assert webbrowser.open(origin + '/#' + fragment + '&launch=' + urllib.parse.quote(issued['ticket'], safe='')), 'Browser could not open'
         write(output / 'ready.json', {'status': 'ready', 'origin': origin, 'run_id': selected['run_id'],
+              'ui_mode': ui_mode, 'assets': assets, 'duration_seconds': duration,
+              'scheduled_stop_local': (datetime.now() + timedelta(seconds=duration)).strftime('%Y-%m-%d %H:%M:%S'),
               'retained_synthetic_campaign': True, 'workers_started': False, 'provider_calls': 0,
               'timestamp_local': datetime.now().strftime('%Y-%m-%d %H:%M:%S')})
-        print('Demo ready: retained synthetic campaign. Close with Ctrl+C or create STOP in the session directory.', flush=True)
+        print('Demo ready: ' + origin + ' (' + ui_mode + '). Close with Ctrl+C or create STOP in the session directory.', flush=True)
         try:
             deadline = time.monotonic() + duration
             while time.monotonic() < deadline and not (output / 'STOP').exists():
@@ -84,9 +101,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ('qualification', 'root', 'output'):
         parser.add_argument('--' + name, type=Path, required=True)
-    parser.add_argument('--duration', type=int, default=7200)
+    parser.add_argument('--duration', type=int, default=86400)
+    parser.add_argument('--preview-public', type=Path)
     parser.add_argument('--open', action='store_true', dest='open_browser')
     args = parser.parse_args()
     if not 1 <= args.duration <= 86400:
         parser.error('duration must be between1 and86400 seconds')
-    present(args.qualification.absolute(), args.root.absolute(), args.output.absolute(), args.duration, args.open_browser)
+    present(args.qualification.absolute(), args.root.absolute(), args.output.absolute(), args.duration, args.open_browser,
+            args.preview_public.absolute() if args.preview_public else None)

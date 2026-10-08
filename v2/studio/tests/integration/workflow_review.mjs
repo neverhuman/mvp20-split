@@ -15,7 +15,7 @@ try {
   const page = await context.newPage();
   reviewedPage = page;
   page.on('pageerror', error => evidence.errors.push(error.message));
-  for (const name of ['app.js','app.css']) await page.route(input.origin + '/' + name, route =>
+  for (const name of process.argv.includes('--served') ? [] : ['app.js','app.css']) await page.route(input.origin + '/' + name, route =>
     readFile(resolve(assets,name)).then(body => route.fulfill({ body, contentType:name.endsWith('js') ? 'application/javascript' : 'text/css' })));
   const issued = await context.request.post(input.origin + '/launcher/ticket', { headers:{ Authorization:'Bearer ' + process.env.AMPHORA_BROWSER_LAUNCH_KEY } });
   assert.equal(issued.status(),200);

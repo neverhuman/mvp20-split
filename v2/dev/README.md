@@ -12,6 +12,15 @@ local operator inputs, not authenticated external bundles. Use one presentation 
 a time on the existing restored installation. DEMO-01 owns actual startup/drain and
 browser rehearsal, with retained qualification and screenshots as fallback.
 
+UI-01 review adds explicit `--preview-public`: after verifying the frozen baseline,
+copy the three selected candidate assets into the new session directory and serve
+that snapshot. `ready.json` records preview mode, hashes and scheduled stop. This
+does not qualify unfinished UI-01 scope or alter frozen baseline assets. The launcher
+defaults to a 24-hour window; `Start-Demo.ps1 -PreviewPublicDirectory <path>` exposes
+the review option. A preview still uses the retained campaign and starts no workers
+or paid model calls. Actual served-asset browser checks use workflow_review.mjs
+with `--served`, and revoke only their own test session afterward.
+
 `verify_recovery_installations.py` rebuilds Deployment and the reconstructed evaluator
 from their declared closures, runs copied owned tests, compares evaluator wheels with
 the qualified Linux image closure, then rereads actual restored history using installed

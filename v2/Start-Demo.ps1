@@ -1,6 +1,7 @@
 param(
     [ValidateSet('original', 'successor')][string]$Scenario = 'original',
-    [ValidateRange(1, 86400)][int]$DurationSeconds = 7200,
+    [ValidateRange(1, 86400)][int]$DurationSeconds = 86400,
+    [string]$PreviewPublicDirectory,
     [switch]$NoBrowser
 )
 $ErrorActionPreference = 'Stop'
@@ -17,6 +18,9 @@ if (!(Test-Path -LiteralPath $demoPython) -or !(Test-Path -LiteralPath (Join-Pat
 $demoArgs = @((Join-Path $PSScriptRoot 'dev/present_local_demo.py'), '--qualification', $demoQualification,
     '--root', $demoRoot, '--output', $demoSession, '--duration', $DurationSeconds)
 if (!$NoBrowser) { $demoArgs += '--open' }
+if ($PreviewPublicDirectory) {
+    $demoArgs += @('--preview-public', (Resolve-Path -LiteralPath $PreviewPublicDirectory).Path)
+}
 Write-Host 'Starting retained synthetic research walkthrough. No model charges or new campaign execution.'
 Write-Host ('Session folder: ' + $demoSession)
 Write-Host 'Keep this terminal open. Press Ctrl+C to stop before switching scenarios.'
