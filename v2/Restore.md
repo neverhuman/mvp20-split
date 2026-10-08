@@ -9,7 +9,11 @@ Gateway0.3 independently installed at lan-gateway-20261008a;32 owned tests and
 production boundaries pass. Full HTTPS connected flow passes lan-browser-20261008a;
 localhost regression passes lan-localhost-regression-20261008a. Both zero owner writes.
 TLS API checks actual CA; browser pins exact public key. OS trust not installed.
-User second-computer connectivity question pending. Need install public CA there
+Owner confirmed remote reachability2026-10-08 10:26:00 after using HTTPS instead
+of HTTP. Existing rule is Private while Ethernet is Public; this mismatch is not
+an established blocker because access succeeded. Attempted narrowly scoped rule
+was denied by Windows; no firewall changes made. Remote authenticated flow/trust
+acceptance still pending. Need install public CA there
 and generate invitation using session New Invitation.cmd (clipboard,5min single use).
 Runbook docs/LAN_Demo_Access.md. Private TLS keys are user-only physical LocalCache
 Local/Amphora/lan-demo-20261008; only public CA copied into ignored session folder.

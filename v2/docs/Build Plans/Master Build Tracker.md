@@ -12,7 +12,7 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 - Last refreshed: 2026-10-08 10:10:00 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: [LAN-01 Local Network Demo Access](LAN-01%20Local%20Network%20Demo%20Access.md); live HTTPS gateway and second-computer handoff.
-- Primary active task: LAN-01 implementation100%, L1/L2/L3=100%; remote trust/connectivity acceptance pending.
+- Primary active task: LAN-01 implementation100%, L1/L2/L3=100%; owner confirmed remote HTTPS reachability; authenticated walkthrough/trust pending.
 - Next task: owner second-computer access check, then return to UI-01 remaining N2.2/N2.5; fine visual polish deferred.
 - Implementation completion: LAN-01=100%, L1/L2/L3=100%; UI-01 paused55%, Build68.75%, Verification0%; LR-01 paused25%, Build33.33%, Acceptance0%.
 - Blockers: no LAN implementation blocker; remote firewall path and client certificate trust require the other computer. UI scientific proposal binding remains unfinished; UI-01.01 is separate result-discovery scope.

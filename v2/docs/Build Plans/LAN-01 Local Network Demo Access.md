@@ -4,7 +4,7 @@
 - Last refreshed: 2026-10-08 10:10:00 America/Chicago.
 - Completion: 100%; L1 gateway boundary100, L2 installed/browser verification100,
   L3 actual listener/operator handoff100. Three equal implementation gates.
-- Acceptance: second-computer browser verification pending, separate from implementation.
+- Acceptance: owner confirmed second-computer reachability2026-10-08 10:26:00 after correcting HTTP to HTTPS; authenticated walkthrough/trust pending, separate from implementation.
 - Current: live https://192.168.1.70:57013; original localhost preserved.
 - Next: owner remote connectivity/trust check, then return to paused UI-01.
 - Owner added firewall rule for TCP57013. Do not replace unrelated firewall rules.
