@@ -8,6 +8,11 @@
 
 ## Owned Contract
 
+[Multistage Process Graphs](Multistage_Process_Graphs.md) defines repeated branching
+and convergence, typed intermediates and the distinction between a control join,
+a scientific combination and population selection. It is an intended contract and
+qualification target, not a claim that the current two-candidate demo exercises it.
+
 Initial-profile specialization: activation/review is automated under configured campaign authority. Human edits are staged for subsequent campaigns. Only one campaign is active; unresolvable authority/evidence gaps produce explicit outcomes rather than mandatory human waits. The general graph language may retain review gates for later operating profiles.
 
 Campaign definitions are immutable revisions containing typed tool bindings, ports, data/control dependencies, conditions, branch/join rules, state declarations, loops, budgets, human gates and termination. CapabilityPlan references that revision and lockfile, never a separate mutable topology. Execution/provenance is derived from runs, not another authored graph.

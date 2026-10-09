@@ -1,7 +1,7 @@
 # POP-01.02 Population Experience
 
 - Status: queued; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
-- Last refreshed: 2026-10-08 20:19:11 (America/Chicago).
+- Last refreshed: 2026-10-08 20:58:22 (America/Chicago).
 - Implementation: 0%; U1/U2/U3/U4=0%, four equal delivery gates.
 - Prerequisite: POP-01.01 complete. Current: none; next U1 authoritative read model.
 - Owners: Runtime generic execution reads; Research population/evidence projections;
@@ -73,6 +73,16 @@ readable joins, generation transitions, keyboard/list equivalent, viewport reten
 and no ordinary page overflow. Follow local UI Coding Guidelines and inspect screenshots.
 
 ## U3: population comparison, chemistry detail and lineage
+
+U1/U2 must expose process-stage/intermediate identity separately from population
+membership. Render repeated fork/merge/fork patterns across a19-stage fixture with
+expandable subgraphs, local focus and bounded overview. Unequal path lengths must
+not imply synchronization across visual columns. A selected combination node shows
+its consumed precursor states and resulting intermediate, not only completed counts.
+U3 supports backward traversal across all material inputs and forward traversal
+through split outputs; keep this separate from genetic parentage and selection.
+No graph width reduction may silently hide a required input or imply chemical merging
+where the graph only waits for independent evaluations.
 
 Population table includes candidate ID/name, generation membership, evaluation
 completeness, feasibility, objective values/units, scientific evidence posture,

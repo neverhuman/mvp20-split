@@ -9,7 +9,7 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: next-week UI-01/UI-02 implementation schedule set; planning only. LAN demo access delivered; LR-01 remains conditional. BP-01 through BP-09 and SQ-01 remain closed.
-- Last refreshed: 2026-10-08 20:19:11 (America/Chicago).
+- Last refreshed: 2026-10-08 20:58:22 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
 - Primary active task: planning the four owner targets; next implementation task UI-01.05/K1 actual Knowledge connection, after bounded activation review. LAN-01 remains implementation100%, L1/L2/L3=100; owner reported access working.
@@ -96,6 +96,14 @@ Qualification0% (POP-01.03 Q1/Q2/Q3/Q4=0%). Twelve equal child gates counted onc
 Existing BP-08 generation/recovery implementation remains closed and reusable;
 legacy population128/retained-attempt256/262144-byte bounds are not evidence of
 1000-candidate scale. New profile and actual scale qualification belong to POP-01.
+
+Owner topology addition2026-10-08 20:58:22: repeated process widening/convergence
+is distinct from candidate scatter/selection. UI-01.05/I1 owns LLM authoring of
+multi-input/output staged graphs; POP-01.01 owns typed intermediates, local joins,
+bounded pairing and recovery; POP-01.02 owns stage/lineage visualization; POP-01.03
+qualifies a19-stage synthetic process with repeated width changes. A control join
+does not chemically combine materials. All affected queued phases remain0%; no
+change to the Knowledge/LLM -> UI-02 -> POP-01 -> ML-01 priority sequence.
 
 ML-01 remains standalone0%, Build0%, Verification0%; M1/M2/M3/M4/V1=0%.
 It recovers inherited ML pipelines, reproduces corrected benchmarks and publishes

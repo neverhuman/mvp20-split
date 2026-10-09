@@ -1,7 +1,7 @@
 # POP-01.03 Population Qualification
 
 - Status: queued; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
-- Last refreshed: 2026-10-08 20:19:11 (America/Chicago).
+- Last refreshed: 2026-10-08 20:58:22 (America/Chicago).
 - Implementation: 0%; Q1/Q2/Q3/Q4=0%, four equal qualification gates.
 - Prerequisite: POP-01.01 and POP-01.02 complete. Current: none; next Q1.
 - Owner: cross-owner acceptance; each failing component retains its own repair/tests.
@@ -35,6 +35,22 @@ Use a separate valid representation fixture through UI-02 to prove formula/struc
 identity. Do not claim numeric evolution optimizes that fixture's molecular shape.
 
 ## Q2: interruption and adverse outcomes
+
+Q1 also includes a19-stage synthetic process graph with at least three distinct
+width changes: independently prepare A/B, combine into a new intermediate, apply a
+process transform, combine with independently prepared C, then branch into downstream
+analyses/routes. Include multi-output and conditional stages, unequal branch times
+and one explicit bounded loop. Preserve named stages; do not fake depth by copying
+the same no-op node19 times. Each synthetic transform has a known input/output oracle.
+
+Q2 must prove a missing required precursor prevents only its dependent transform;
+independent branches continue. Reject cross-candidate/generation joins, invalid units,
+implicit Cartesian products and expansion beyond admitted bounds. Restart after an
+intermediate commit and verify its reuse and exact multi-input lineage. Actual
+chemical reaction, heating equipment or laboratory automation is outside this fixture.
+Q3 repeats the process shape across a bounded subset of the large cohort to prove
+nested occurrence identity and a stable readable graph without implying all1000
+candidates underwent a physical19-step drug-synthesis process.
 
 | Case | Required observation |
 |---|---|

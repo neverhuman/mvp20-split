@@ -1,7 +1,7 @@
 # POP-01.01 Population Execution
 
 - Status: queued; parent [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md).
-- Last refreshed: 2026-10-08 20:19:11 (America/Chicago).
+- Last refreshed: 2026-10-08 20:58:22 (America/Chicago).
 - Implementation: 0%; E1/E2/E3/E4=0%, four equal delivery gates.
 - Prerequisite: parent entry gate. Current task: none; next E1.
 - Owners: public contracts, Search tools, Runtime scheduling/acceptance, Data artifacts,
@@ -48,6 +48,21 @@ Exit: schema/negative/golden tests, compatibility report, transition/write-set
 specification and reviewed contract decision; no generated-schema edits by hand.
 
 ## E2: bounded evaluation dispatch and deterministic collection
+
+E1 must also freeze multi-stage process semantics: multi-input/output ports, typed
+material/intermediate revisions, required versus optional dependencies, explicit
+pairwise/keyed/Cartesian collection policies and output cardinality bounds. Record
+where existing graph constructs suffice versus where a versioned contract is needed.
+Do not overload numeric genetic ancestry (currently at most two parents) as reaction
+lineage. A control join waits; an actual registered scientific tool combines inputs.
+
+E2 execution must support repeated widening/convergence and unequal branch lengths
+inside a candidate process. Dispatch when local dependencies are accepted, without
+a global stage barrier. Pin all precursor states and process inputs; never cross-wire
+different candidates/generations/material batches. Accepted intermediate manifests
+can expand downstream work only within declared cardinality/resource budgets.
+Restart or downstream failure preserves prior accepted intermediates. Real material
+conservation/reaction feasibility remains a domain-tool result, not a Runtime inference.
 
 The authored campaign owns seed -> evaluation subgraph -> collect/select -> variation
 -> next generation. Per-candidate evaluation may branch into named scientific methods

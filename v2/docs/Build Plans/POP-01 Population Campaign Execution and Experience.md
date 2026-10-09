@@ -3,7 +3,7 @@
 ## Canonical tracker
 
 - Status: queued after Knowledge/LLM integration and UI-02; before ML-01.
-- Last refreshed: 2026-10-08 20:19:11 (America/Chicago).
+- Last refreshed: 2026-10-08 20:58:22 (America/Chicago).
 - Scope revision: planning baseline1; no implementation started.
 - Overall implementation: 0%; Execution0%, Experience0%, Qualification0%.
   Three equally weighted children, each with four equal delivery gates. Parent
@@ -61,6 +61,13 @@ what changed and why. Selected candidate details reuse UI-02's formula/structure
 inspector. Deep execution detail is available without flooding the main graph.
 
 ## Four identities that must stay distinct
+
+Owner addition2026-10-08 20:58:22: scientific process topology may repeatedly widen,
+converge and widen again across19 or more stages. This is independent of population
+fan-out and selection. [Multistage process semantics](../Architecture/Campaigns/Multistage_Process_Graphs.md)
+defines multi-input/output tools, typed mixture/intermediate states, many-to-many
+material lineage, local readiness and cardinality bounds. Each child below includes
+the corresponding contract/execution/UI/qualification tasks; all remain0%.
 
 | Concept | Meaning / authority |
 |---|---|

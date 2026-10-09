@@ -1,5 +1,14 @@
 # Restore
 
+Topology checkpoint2026-10-08 20:58:22: owner requires graphs that repeatedly
+widen/converge/widen across long processes, e.g.19 stages. Architecture child
+Campaigns/Multistage_Process_Graphs.md records typed mixtures/intermediates,
+multi-input/output transforms, local readiness and bounded combinations. Control
+joins, physical/scientific combination, and population selection are distinct.
+UI-01.05/I1 authoring and all three POP children now include explicit scope/tests.
+Synthetic19-stage execution proves software behavior, not chemical feasibility.
+Priority and completion percentages unchanged; no application changes.
+
 Latest sequence checkpoint2026-10-08 20:19:11: finish Knowledge/inventory-fed LLM
 campaign iteration and UI-02 first. Then POP-01 population execution/experience
 takes precedence, before ML-01. POP-01 and its three children are queued0%:
