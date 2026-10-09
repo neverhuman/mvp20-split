@@ -302,3 +302,7 @@ LR-01 retains intermittent worker failures in the active dashboard.
 Quality/focus/proposal contracts, public-owner journey, two independent Studio
 installs and scoped audit complete. [Audit](SQ-01_Quality_Closeout.md). Historical
 feedback-read diagnostic remains active under UI-R01; no repair inferred.
+
+LAN-01 aligned2026-10-08 21:01:59: HTTPS LAN profile implemented,32 installed
+tests and dual-origin browser proofs; owner accepted remote access and directed
+archival. [Scoped audit](LAN-01_Demo_Access.md). Follow-up: none in bounded scope.

@@ -23,3 +23,5 @@ After required gates and a recorded closeout drift audit pass, move the plan and
 - [DEMO-01 Internal Walkthrough](DEMO-01%20Internal%20Walkthrough.md): bounded delivery100%; presenter rehearsal pending, offline fallback and unresolved read failure recorded.
 
 - [SQ-01 Scientific Quality and Iteration Views](SQ-01%20Scientific%20Quality%20and%20Iteration%20Views.md): complete100%, Build100%, Verification100%; [audit](../../Audits/SQ-01_Quality_Closeout.md).
+
+- [LAN-01 Local Network Demo Access](LAN-01%20Local%20Network%20Demo%20Access.md): complete100%, L1/L2/L3=100%; owner accepted2026-10-08 21:01:59; [audit](../../Audits/LAN-01_Demo_Access.md).

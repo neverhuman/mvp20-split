@@ -1,6 +1,6 @@
 # LAN-01 scoped architecture audit
 
-Reviewed2026-10-08 10:08:00 America/Chicago. Implementation aligned; remote acceptance pending.
+Reviewed2026-10-08 10:08:00 America/Chicago. Implementation aligned; owner accepted remote access and closed the plan2026-10-08 21:01:59.
 
 Owner reprioritized same-network access and added firewall57013. Explicit HTTPS
 gateway profile preserves the localhost profile and all loopback owner boundaries.
@@ -16,7 +16,7 @@ in `.test-results/lan-localhost-regression-20261008a/evidence.json`. Both passed
 the complete connected flow with zero owner writes. Browser exact SPKI pin and
 CA-verified API are explicit; no OS trust installation success is claimed.
 
-Remote computer trust, route/firewall acceptance remain owner-side verification.
+Owner confirmed working remote access; external acceptance is now complete.
 Firewall inspection was denied to the unprivileged process; owner's reported
 rule was preserved. These are acceptance limits, not missing gateway implementation.
 No internet exposure, multi-user identity or durable deployment automation claim.

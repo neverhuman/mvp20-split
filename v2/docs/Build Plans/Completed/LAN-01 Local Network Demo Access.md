@@ -1,12 +1,12 @@
 # Local network demo access
 
-- Status: implemented; second-computer acceptance pending.
-- Last refreshed: 2026-10-08 10:10:00 America/Chicago.
+- Status: complete; owner accepted and directed archival2026-10-08 21:01:59.
+- Last refreshed: 2026-10-08 21:01:59 America/Chicago.
 - Completion: 100%; L1 gateway boundary100, L2 installed/browser verification100,
   L3 actual listener/operator handoff100. Three equal implementation gates.
-- Acceptance: owner confirmed second-computer reachability2026-10-08 10:26:00 after correcting HTTP to HTTPS; authenticated walkthrough/trust pending, separate from implementation.
-- Current: live https://192.168.1.70:57013; original localhost preserved.
-- Next: owner remote connectivity/trust check, then return to paused UI-01.
+- Acceptance: complete; owner confirmed working remote access and closed LAN-01.
+- Current: no implementation task; deployed demo preserved.
+- Next: UI-01.05/K1; future LAN changes require a successor.
 - Owner added firewall rule for TCP57013. Do not replace unrelated firewall rules.
 
 Use exact192.168.1.70 binding and192.168.1.0/24 client boundary; no backend listener
@@ -35,7 +35,11 @@ L1 exit: additive Gateway0.3 profile and certificate/subnet/origin/session contr
 L2 exit: independent wheel installation,32 owned tests, production boundaries;
 actual HTTPS five-view traversal and localhost regression both pass.
 L3 exit: actual listener live2026-10-08 10:04:28, existing owner process preserved;
-[operator runbook](../LAN_Demo_Access.md) and invitation helper available. Firewall
+[operator runbook](../../LAN_Demo_Access.md) and invitation helper available. Firewall
 inspection denied to this nonadministrator; owner reported the rule installed.
-Remote path validation is explicitly pending, not claimed by host-local probes.
-[Scoped audit](../Audits/LAN-01_Demo_Access.md) records evidence and acceptance limits.
+Remote access subsequently confirmed by owner; closure authorized2026-10-08 21:01:59.
+[Scoped audit](../../Audits/LAN-01_Demo_Access.md) records evidence and acceptance limits.
+
+Closeout: scoped audit refreshed2026-10-08 21:01:59;32 installed tests and actual
+HTTPS/localhost walkthrough evidence preserved. Owner acceptance closes the external
+access gate. No general internet/multi-user qualification claim.

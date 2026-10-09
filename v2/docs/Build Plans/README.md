@@ -35,6 +35,6 @@ Read the selected plan's tracker first. Complete each phase gate before advancin
 
 - [Connected Demo Flow](UI-01.04%20Connected%20Demo%20Flow.md): bounded retained-plan/execution/results/review walkthrough complete; real browser run engagement remains outstanding.
 
-- [LAN-01 Local Network Demo Access](LAN-01%20Local%20Network%20Demo%20Access.md): implementation100%, owner reports remote access working; preserve the demo while upcoming integration is scheduled.
+- [LAN-01 Local Network Demo Access](Completed/LAN-01%20Local%20Network%20Demo%20Access.md): complete100%, owner accepted and archived; deployed demo preserved.
 
 - [UI-01.05 Knowledge, Run and LLM Integration](UI-01.05%20Knowledge%20Run%20and%20LLM%20Integration.md): scheduled0%; real domain graph, browser launch/live nodes and knowledge-grounded successor proposals. Dated targets are in MBT.
