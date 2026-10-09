@@ -1,5 +1,14 @@
 # Local process lifecycle
 
+Deployment0.17/UI-01.06 adds optional --launch-manifest composition under this same
+lifetime writer lease. LaunchInstallation restores original admitted run bindings
+before pending-container validation; operator templates alone cannot omit them.
+The manifest owns scientific/catalog paths and cannot be combined with their older
+CLI flags. LaunchHost runs bounded reconciliation off the control thread; status
+reports only host running/draining/failed. Normal shutdown waits for reconciliation
+to stop; forced teardown closes acceptance before original handle cleanup. No public
+launch listener is enabled by this composition yet; its HTTP/UI gate is separate.
+
 BP-09.03 adds optional [native worker turns](../workers/README.md) under the same
 supervisor writer lease. Worker quiescence gates owner drain/restart/force-stop
 and normal shutdown. Existing manifests without workers preserve their status

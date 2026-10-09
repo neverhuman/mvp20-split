@@ -74,6 +74,10 @@ class ControlHandler(BaseHTTPRequestHandler):
             record['scientific_workers'] = self.server.supervisor.scientific.status()
         if self.server.supervisor.catalog.reporters:
             record['tool_catalog'] = self.server.supervisor.catalog.status()
+        if self.server.supervisor.launch is not None:
+            launch = self.server.supervisor.launch
+            record['campaign_launch'] = {'state': 'failed' if launch.failure else
+                'draining' if launch.stop.is_set() else 'running'}
         self._respond(200, record)
 
     def do_POST(self):

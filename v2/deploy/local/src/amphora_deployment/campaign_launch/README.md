@@ -1,11 +1,23 @@
 # Campaign launch lifecycle
 
-UI-01.06 approved2026-10-09. Contract, journal, coordinator, public preflight, managed
-slot adapter and binding store implemented;121 focused checks pass including scientific
-workers.469 broad Deployment/contract checks passed before two added missing-read tests.
-Next gate: supervisor startup/configuration composition and installed recovery,
-then bounded HTTP/UI. L2 remains50% until integrated gates pass.
-No live Run endpoint or worker binding replacement is available yet.
+UI-01.06 approved2026-10-09. L1/L2 complete; next bounded HTTP/Gateway/Studio delivery.
+Verified2026-10-09 08:40:56:170 focused source checks;468 tests in an independent
+Deployment0.17 wheel installation, plus actual coordinator process-death/receipt
+recovery and three Docker monitor-death/adoption probes (intent/created/started).
+Receipt authority in that probe is an HTTP fixture; actual campaign/browser proof
+remains L4. No live Run endpoint or demo worker replacement enabled yet.
+
+LaunchInstallation composes a closed local-campaign-launch-v1 operator manifest:
+actor_id, launch_profile, scientific_manifest and catalog_manifest (absolute paths).
+It checks profile tool coverage, original template fingerprints, worker scope and
+catalog replicas. Per-request installation pins precede admission; resumed unresolved
+admission requires those original pins. Startup restores generated run bindings before
+checking outstanding scientific journals. Catalog reconstruction changes only worker
+binding fingerprints, preserving logical deployment/replica identity.
+LaunchHost uses the existing owner's operator peers and lifetime lease; local readiness
+checks owner/TLS health, drained journals, native scope/config, images and resources.
+No credentials enter manifests/receipts. This composition is opt-in via supervisor
+--launch-manifest; installed module/fault qualification passed, serving demo unchanged.
 
 LaunchCoordinator performs one bounded step outside journal transactions. Its local
 lock prevents overlapping ticks; the installation lifetime lease excludes competing

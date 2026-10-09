@@ -34,8 +34,18 @@ class ScientificBinding:
 
 
 def load_scientific(path, root, deployment_id, access):
+    bindings = load_scientific_templates(path, root, deployment_id, access)
+    require_configured_pending(root, deployment_id, [binding.profile for binding in bindings.values()])
+    return bindings
+
+
+def load_scientific_templates(path, root, deployment_id, access):
+    """Pin operator templates; caller must validate pending journals against active bindings.
+
+    Launch startup may substitute its durably retained run bindings before that
+    check. Template pins alone do not authorize omitting pending containers.
+    """
     if path is None:
-        require_configured_pending(root, deployment_id, [])
         return {}
     record = fields(json.loads(content(path, 65536)), 'profile workers', 'container_manifest')
     require(record['profile'] == 'local-scientific-workers-v1', 'container_manifest_profile')
@@ -54,5 +64,4 @@ def load_scientific(path, root, deployment_id, access):
         require(all(profile.certificate_sha256 == binding.identity.certificate_sha256 for binding in access.values()),
                 'container_tls_identity_mismatch')
         bindings[name] = ScientificBinding.pin(root, deployment_id, profile, environment)
-    require_configured_pending(root, deployment_id, [binding.profile for binding in bindings.values()])
     return bindings

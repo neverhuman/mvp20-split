@@ -33,6 +33,7 @@ class Supervisor:
         self.processes = {}
         self.lock = threading.RLock()
         self.closed = False
+        self.launch = None
         self.workers = WorkerGroup({} if workers is None else workers)
         self.access = AccessGroup({} if access is None else access)
         self.scientific = ScientificGroup({} if scientific is None else scientific)
@@ -136,6 +137,9 @@ class Supervisor:
 
     def close(self):
         with self.lock:
+            if self.launch is not None:
+                self.launch.quiesce()
+                self.launch.require_stopped()
             self.workers.require_quiescent()
             self.scientific.require_quiescent()
             self.access.require_stopped()

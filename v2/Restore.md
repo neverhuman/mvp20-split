@@ -1,13 +1,13 @@
 # Restore
 
-Refreshed2026-10-09 08:25:03 America/Chicago. Read FIRST after compaction.
+Refreshed2026-10-09 08:44:00 America/Chicago. Read FIRST after compaction.
 Owner says continue until needed; milestones/commits are not stopping points.
 No subagents/JARVIS; v1 read-only. Preserve untracked ocular PDF/DOCX.
 Do not edit source/tests/module READMEs while verification runs.
 
 Current checkpoint:
 - LAN-01 accepted/archived/pushed14df0c8c.
-- UI-01.05 K1 complete100%, child43.33%; R1=30%, I1=0. ParentUI01=55%, N2=75,
+- UI-01.05 K1 complete100%, child46.67%; R1=40%, I1=0. ParentUI01=55%, N2=75,
   Build68.75 unchanged until owning delivery groups close. All mirrors updated.
 - UI01 -> UI02 -> POP01 -> ML01; LR01 remains paused25%overall/33.33%Build.
   Owner queried LR percentage: unchanged since62ea4966 before UI priority.
@@ -20,24 +20,40 @@ Current checkpoint:
  restart, stale CAS rollback, admission binding and workerfailure preservesrun.
  Schema check + productionboundary guard passed; no testsrunning.
 - Coordinator/runtimepeer/runbindingstore pushed87634f4e.
-- Current UNCOMMITTED: ManagedLaunchWorkers + LaunchPreflight publicchecks, coldbackup
- guard/journalindexchecks; scientificmonitoradoptsintent/createdwithoutrepeatedturns.
- 121focusedchecks pass including scientificworkers;469broadregression passed before
- two addedmissingreadchecks. Boundariespass. No testsrunning.
+- Managedadapter/preflight/backup + scientificpreparedturnfix pushedde4b993e.
+- Current UNCOMMITTED: LaunchInstallation/config manifest, LocalLaunchReadiness,
+ LaunchHost andsupervisor --launch-manifest composition; startuprestore+catalogpins
+ BEFOREpendingcontainerguard. Tests170pass incl lifecycle/scientific/launch/contracts.
+ Boundariespass. Newdevinstalled/recoveryqualifiers; preparedintent/created options
+ addedtoexistingverify_scientific_monitor_recovery.py.
+- Verification FINISHED/PASSED: v2/.test-results/launch-installation-20261009b.
+ IsolatedDeployment0.17/publiccontracts/Pydantic;468installedDeploymenttests, actual
+ coordinatorprocessdeath afterfixtureHTTPadmission + 3actualDockeradoptionprobes
+ started/intent/created. Fourprobespassed; originalidentities, singlePOST/request.
+ Audit docs/Audits/UI-01.06_Launch_Recovery.md + Evidence/UI-01.06_Launch_Recovery.json.
+ Physicalbundle C:/Users/alb_p/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/Local/Amphora/launch-qualification-20261009b.
+ Driverlog v2/.test-results/launch-installation-20261009b-driver.txt;
+ owner/verification.log buildlog, verification.log tests/probes. Preservefailedoutput.
+ Attempta preserved:468installedtests+receiptprocessdeath passed, TLScreationfailed
+ becauseWindowsStorePython redirectedlogicalAppDataLocal andOpenSSLcouldn'tseeit.
+ PSverifiedlogicalrequest.cnf absent, physicalPackageLocalCachefilepresent. Retryb
+ usesexplicitphysicalpath; no productionchange needed. Do notuse logicalLocalAppData.
+ UsesactualinstalledRegistryPython fromROOT .test-results/demo-20261008/frozen-original
+ (NOTv2/.test-results!). LocalUIreturned200 at08:33; helpersunchanged.
  Earlier scopedrunner44tests passed, combinedcoverage90% (notnewfilescoverage).
  Productionboundaries pass. Existingregistry_access tests newlyregistered in scopes.
  Use pytest -c v2/dev/pyproject.toml (importlib); defaultmode causes existingtestname
  collisions. Fixedlaunchtestcrossimport; shortparamids avoidWindows oversizednames.
-- UI-01.06 overall30%; L1=100%, L2=50%, L3/L4/L5=0. L2 creditsjournal+coordinator
- (2/4groups); managedintegration/publicpreflight, backup/installedfaultproof remain.
+- UI-01.06 overall40%; L1/L2=100%, L3/L4/L5=0. L3nowactive: narrowauthenticated
+ API/Gateway/Studio. L2allfourgroupscomplete. No publiclaunchlistener/UIyet.
  RunBindingStore retains exactconfig+manifest underROOT/campaign-launches/requestsha;
  no workersstarted. PublicRuntimePeer fixedloopback, exactbytes, receiptbindingchecks.
-- Before nextcommit: stageexactownedfiles (excludeocular), commit/push verified
- adapter/preflightfoundation. Continue supervisorstartup/configcomposition.
+- BeforeL3: commit/push verifiedcomposition exactownedfiles(excludeocular). README,
+ architecture/audit/trackersupdated. MBTrecentcheckpoint added andcapped25rows.
 - Journal is new Deployment-private SQLite local state; include quiesced backup/
  restore and fail-closedcorruption handling beforelive release. It does not query
  peer tables. Same scopedactor/requestid inlaunch and Runtimeadmission.
-- No tests running; live helpers below only. No paid calls in K1.
+- No testsrunning; livehelpers only. No paid calls.
 
 K1 delivery:
 Studio0.22; distinct domain tab; old view=knowledge stays Results. Verified retained
@@ -113,14 +129,19 @@ capture_local_backup.py coldcopiesROOT except.operation.lock/logs, nowcalls
 require_launches_drained andrecordscount. Coldcopyreopen tested; installedrestorepending.
 ScientificSlot nowadoptsintent/created andcallsoriginalturn.launch once; starting/
 started remainpollonly. 2addedtests covergap; recordasR1blockingrepair, noLRprogress.
-Next: factorload_scientific_templates fromload_scientific so restartcanrestoreactive
-runbindings BEFORErequire_configured_pending (originaltemplate fingerprint differs).
-ComposeRunBindingStore frompinnedoperatortemplates, LaunchJournal(ROOT/campaign-launches),
-ManagedLaunchWorkers withcatalogfactory producingnewbindingfingerprints whilekeeping
-replicaidentities. Existingload_catalog requires exactprofilefingerprints inmanifest.
-Nativeworkersmustprojectmatch; localpreflightverifyoldjournalsreleased/resources/images/
-TLS/ownerhealth beforeadmission. ActualRuntime stillrechecksadmission/Registryeligibility.
-Do notstartL3HTTP/Studio beforeL2integratedgatespass. CurrentUIunchanged.
+Compositionnowimplemented: load_scientific_templates separatespinningfrompendingguard;
+LaunchInstallation restores exactactivebindings thenvalidatesconfiguredpending.
+Manifestprofilelocal-campaign-launch-v1 fieldsactor_id,launch_profile,scientific_manifest,
+catalog_manifest(absolute). NoAPIlistener yet. Supervisorargcan'tcombinelegacytoolflags.
+Catalogfactorywritesimmutablegeneratedcatalog.json inrunfolder, preservesreplicapins.
+Privateinstallation.json pinsactor/publicprofile/templatefingerprints/cataloghashbefore
+admission; unresolvedstartuprequiresit. Nativeworkersprojectscope, configpins, local
+images/resources/TLS/ownerhealth verifiedbeforeadmission. launchhost usesexistingowner
+operatorcredentials privately; publicAPI/Gateway willrequireseparate scopedcredential.
+HostcancelEvent stopsnewpeerrequests, failurerawerrorshidden. Normalshutdownwaitsstop;
+forcedteardownmarkssupervisorclosed thencloseshostbeforecleanuporiginalhandles.
+L2installedcoordinatorrecovery usesHTTPfixture, NOTactualRuntimecampaign; L4remainstrue
+publicdraft/browser/workerendtoendgate. Do notclaimcompleteRunflow yet.
 ParentN2 groups still require provider provenance/reasoning, generationalcomparison
 and launch; I1 owns liveLLM/nodeinventory and durable missing-capability requests.
 Check ordering for real dependency cycles; don't silently wave prerequisites.

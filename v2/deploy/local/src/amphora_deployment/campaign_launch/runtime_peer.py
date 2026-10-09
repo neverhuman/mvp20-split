@@ -11,14 +11,17 @@ from .ports import PeerRecordMissing, PeerUnavailable
 
 
 class LoopbackPeer:
-    def __init__(self, port: int, token: str):
+    def __init__(self, port: int, token: str, *, stopped=None):
         if (type(port) is not int or not 1024 <= port <= 65535
                 or type(token) is not str or not 16 <= len(token) <= 4096
                 or not all(32 < ord(char) < 127 for char in token)):
             raise LaunchError('launch_peer_configuration_invalid')
         self.port, self._token = port, token
+        self.stopped = stopped
 
     def request(self, method, path, raw=None):
+        if self.stopped is not None and self.stopped.is_set():
+            raise PeerUnavailable()
         connection = http.client.HTTPConnection('127.0.0.1', self.port, timeout=5)
         try:
             connection.request(method, path, raw, {

@@ -28,6 +28,7 @@ def main():
     parser.add_argument('--scientific-manifest', type=Path)
     parser.add_argument('--scientific-worker')
     parser.add_argument('--catalog-manifest', type=Path)
+    parser.add_argument('--launch-manifest', type=Path)
     args = parser.parse_args()
     try:
         routes = Routes.ensure(args.root) if args.action == "serve" else Routes.load(args.root)
@@ -52,33 +53,56 @@ def main():
             # Control clients read atomic snapshots and never take this writer lease.
             with LocalState(args.root) as state:
                 from ..scientific_workers.configuration import load_scientific
-                scientific = load_scientific(args.scientific_manifest, state.root, state.identity, access)
+                launch_installation = None
+                if args.launch_manifest is not None:
+                    if args.scientific_manifest is not None or args.catalog_manifest is not None:
+                        parser.error('--launch-manifest owns scientific/catalog manifests')
+                    from ..campaign_launch.configuration import LaunchInstallation, LaunchManifest
+                    launch_installation = LaunchInstallation(state.root, state.identity,
+                        LaunchManifest.load(args.launch_manifest), access)
+                    scientific = launch_installation.startup_bindings()
+                else:
+                    scientific = load_scientific(args.scientific_manifest, state.root, state.identity, access)
                 supervisor = Supervisor(bindings, LifecycleEvents(args.root / "logs"),
                                         workers=workers, access=access, scientific=scientific)
                 try:
                     from ..tool_catalog.configuration import load_catalog
-                    supervisor.catalog = load_catalog(args.catalog_manifest, state.root, state.identity, routes, supervisor)
+                    if launch_installation is not None:
+                        supervisor.catalog = launch_installation.catalog(supervisor, scientific, routes)
+                        from ..campaign_launch.host import LaunchHost
+                        supervisor.launch = LaunchHost(launch_installation, supervisor, routes)
+                    else:
+                        supervisor.catalog = load_catalog(args.catalog_manifest, state.root, state.identity, routes, supervisor)
                     server = ControlServer(routes.port("supervisor"), supervisor, token)
                     supervisor.scientific.adopt()
                     supervisor.catalog.start()
+                    if supervisor.launch is not None:
+                        supervisor.launch.start()
                     server.serve()
                 finally:
-                    # Unexpected supervisor exit is forced teardown, not graceful drain.
-                    supervisor.scientific.quiesce()
+                    # Close acceptance first. Even a failed coordinator join must
+                    # not skip cleanup of the original managed owner handles.
+                    with supervisor.lock:
+                        supervisor.closed = True
                     try:
-                        supervisor.catalog.close()
+                        if supervisor.launch is not None:
+                            supervisor.launch.close()
                     finally:
+                        supervisor.scientific.quiesce()
                         try:
-                            supervisor.workers.force_stop()
+                            supervisor.catalog.close()
                         finally:
                             try:
-                                supervisor.scientific.detach()
+                                supervisor.workers.force_stop()
                             finally:
                                 try:
-                                    supervisor.access.close()
+                                    supervisor.scientific.detach()
                                 finally:
-                                    for process in supervisor.processes.values():
-                                        process.force_stop()
+                                    try:
+                                        supervisor.access.close()
+                                    finally:
+                                        for process in supervisor.processes.values():
+                                            process.force_stop()
             return 0
         if args.action in {"status", "shutdown"}:
             path = "/" + args.action

@@ -5,6 +5,10 @@ Their original first start is still authorized by the persisted intent; recovery
 finishes that turn without enabling repetition. Starting/started/exited turns remain
 observation-only, so an ambiguous Docker start is never sent again. This closes the
 campaign launch drain gap when a controller exits before its first container start.
+load_scientific_templates pins operator recipes without treating their old run IDs
+as active bindings. Launch startup must then restore its retained binding set and
+call require_configured_pending before adoption. Existing load_scientific preserves
+the original combined load-and-guard behavior for installations without launches.
 
 Deployment0.13 adds the separately named synthetic-objectives-rebuilt recipe for
 BP-09.04: module amphora_synthetic_objectives_rebuilt, worker --config. The original

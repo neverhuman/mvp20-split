@@ -1,0 +1,116 @@
+{
+  "timestamp_local": "2026-10-09 08:40:56",
+  "status": "passed",
+  "tests": 468,
+  "installation": {
+    "timestamp_local": "2026-10-09 08:40:06",
+    "status": "installed",
+    "scope": "Isolated owner installation only; actual integration/replacement is a separate gate",
+    "owner": "amphora-deployment",
+    "forbidden_implementations": [
+      "amphora_campaign_runtime",
+      "amphora_agent_planning",
+      "amphora_data_artifacts",
+      "amphora_capability_registry",
+      "amphora_knowledge_graph",
+      "sqlalchemy"
+    ],
+    "packages": {
+      "amphora-contracts-campaign-launch": "0.1.0",
+      "amphora-contracts-campaigns": "0.4.1",
+      "amphora-contracts-commands": "0.2.0",
+      "amphora-contracts-core": "0.1.0",
+      "amphora-contracts-graph-runtime": "0.13.0",
+      "amphora-contracts-runtime": "0.1.0",
+      "amphora-contracts-tools": "0.1.0",
+      "amphora-deployment": "0.17.0"
+    },
+    "wheels": {
+      "amphora_contracts_campaigns-0.4.1-py3-none-any.whl": "9b4db455f8510db948a5d509ff38532746e1aab77d3172db0ae72cabea1a6962",
+      "amphora_contracts_campaign_launch-0.1.0-py3-none-any.whl": "93f3bc30acb0efe6b53e208cb5f4d52f82486d9a6d6ed519a2dd381fd44f1454",
+      "amphora_contracts_commands-0.2.0-py3-none-any.whl": "ff4f2f2b1098baaf337288cc7344fe55b9436216badde5e580b4016bd42e256c",
+      "amphora_contracts_core-0.1.0-py3-none-any.whl": "8177015d59bbdd1ac0c52fcf095873bc73a8e875588272cbc4ad378b94420db9",
+      "amphora_contracts_graph_runtime-0.13.0-py3-none-any.whl": "a45c41317bf21e57b84dc6116b02e5034f13a20b93e0526f8b4f5f007a61bbe1",
+      "amphora_contracts_runtime-0.1.0-py3-none-any.whl": "ad90c2af9b805305ef20edb8a868f87cd11bb766a0c197f7081cf5f72e6f3ad1",
+      "amphora_contracts_tools-0.1.0-py3-none-any.whl": "8876f6b8ac9e6fa4abcc1118d6d7dd34f05cf0e4aa5262250f7d0793336b4aee",
+      "amphora_deployment-0.17.0-py3-none-any.whl": "82bdf4158998a219e543979622f35f59efd4c8d5645103ca60f3137913f835b5"
+    }
+  },
+  "receipt_recovery": {
+    "timestamp_local": "2026-10-09 08:40:47",
+    "status": "passed",
+    "process_death_after_owner_commit": true,
+    "same_request_sha256": "c0d5e352d473506a81a861628eb74fd09332610888930ed9be68660d3b904a12",
+    "same_admission_sha256": "34c55cd71e8628ae2401e2c2f0b7d4d5498686009fe16a1d2b5e193260d0477a",
+    "run_id": "fixture-run",
+    "admission_posts": 1,
+    "original_receipt_recovered": true,
+    "limits": [
+      "Public HTTP owner is a deterministic fixture, not actual Runtime execution",
+      "Installed coordinator/process lease/journal/transport exercised; no scientific or model calls"
+    ]
+  },
+  "container_recovery": {
+    "started": {
+      "timestamp_local": "2026-10-09 08:40:50",
+      "status": "passed",
+      "prepared_phase": null,
+      "image_id": "sha256:7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+      "container_id": "f9132063880ecce36efc525377e1e547cbf276060ac54223255ca973ccd2b4da",
+      "turn_id": "12860332e0b24dfd99792c829342b888",
+      "container_survived_monitor_job_death": true,
+      "startup_adoption_marked_active_before_observation": true,
+      "single_original_upstream_request": true,
+      "journal_released_and_container_removed": true,
+      "migration_guard_blocked_then_passed": true,
+      "status_latency_seconds": 0.0,
+      "limits": [
+        "Actual monitor process death/adoption with TLS fixture kept available in parent",
+        "Synthetic503 owner yields expected tool exit3; no campaign, model or scientific eligibility",
+        "Full controller/TLS death and daemon outage are distinct unproven cases"
+      ]
+    },
+    "intent": {
+      "timestamp_local": "2026-10-09 08:40:53",
+      "status": "passed",
+      "prepared_phase": "intent",
+      "image_id": "sha256:7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+      "container_id": "0c112151cdbe96de326af29e526fd96733165438a9e521c4c28718b5226f4e52",
+      "turn_id": "b0b30046871c4bc988907d2113b2f72b",
+      "container_survived_monitor_job_death": true,
+      "startup_adoption_marked_active_before_observation": true,
+      "single_original_upstream_request": true,
+      "journal_released_and_container_removed": true,
+      "migration_guard_blocked_then_passed": true,
+      "status_latency_seconds": 0.0,
+      "limits": [
+        "Actual monitor process death/adoption with TLS fixture kept available in parent",
+        "Synthetic503 owner yields expected tool exit3; no campaign, model or scientific eligibility",
+        "Full controller/TLS death and daemon outage are distinct unproven cases"
+      ]
+    },
+    "created": {
+      "timestamp_local": "2026-10-09 08:40:56",
+      "status": "passed",
+      "prepared_phase": "created",
+      "image_id": "sha256:7538bece7dceb2f6c395890abbc632fe58e188ba5120ef2d6ef070267809e878",
+      "container_id": "4bfc739166ed85c3f92d3ec08267a7eb0dec30daaa92859c18fc59a0ae69baf2",
+      "turn_id": "a470e8af229a49cfb7154ca5cf382c89",
+      "container_survived_monitor_job_death": true,
+      "startup_adoption_marked_active_before_observation": true,
+      "single_original_upstream_request": true,
+      "journal_released_and_container_removed": true,
+      "migration_guard_blocked_then_passed": true,
+      "status_latency_seconds": 0.0,
+      "limits": [
+        "Actual monitor process death/adoption with TLS fixture kept available in parent",
+        "Synthetic503 owner yields expected tool exit3; no campaign, model or scientific eligibility",
+        "Full controller/TLS death and daemon outage are distinct unproven cases"
+      ]
+    }
+  },
+  "limits": [
+    "Receipt authority is an HTTP fixture; actual campaign admission and browser Run remain L4",
+    "Actual isolated process death/container adoption; no active-demo outage or paid model calls"
+  ]
+}

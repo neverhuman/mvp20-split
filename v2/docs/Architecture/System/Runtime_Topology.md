@@ -40,6 +40,15 @@ The gateway routes to isolated owners. The campaign-runtime API and coordinator 
 
 ## Process Responsibilities
 
+UI-01.06 adds a bounded Deployment campaign-launch workflow under the installation's
+existing supervisor lease. Its separate scoped loopback API composes exact Runtime
+draft admission and reviewed managed-worker bindings. A private Deployment journal
+reserves the single campaign slot, preserves unknown admission/worker outcomes and
+releases capacity only after Runtime termination plus worker reconciliation. It does
+not interpret graphs, run scientific code or become Runtime's database. Gateway may
+proxy only this narrow API; operator process control remains private. See the
+[launch decision and delivery gates](../../Build%20Plans/UI-01.06%20Campaign%20launch%20decision.md).
+
 [Graph Runner](Graph_Runner.md) names the execution coordinator, outcome aggregator and campaign supervisor inside Campaign Runtime. Agent Planning remains an isolated service that returns typed LLM proposals through durable engagements. Slow model calls do not hold runtime transactions or block unrelated branches; one conditional runtime commit accepts each supervision decision.
 
 The first operating profile admits one active campaign for one internal user. Parallel nodes do not imply concurrent campaigns. The owner selected the current Windows x86_64 computer and loopback-only access for initial deployment. DGX Spark and a partner Threadripper remain future targets; verify OS, dependencies and accelerator requirements for each profile. BP-09.02 qualifies isolated owner APIs, local persistence and browser transport; BP-09.03 owns autonomous worker/model composition. Synthetic evaluation authorization does not establish scientific efficacy. No enterprise capacity or availability promise is part of this profile.

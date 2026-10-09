@@ -94,7 +94,7 @@ class MonitorProcess:
         self.process.stdout.close()
 
 
-def verify(output, bundle, identity_directory):
+def verify(output, bundle, identity_directory, prepared_phase=None):
     output.mkdir(parents=True, exist_ok=False)
     bundle.mkdir(parents=True, exist_ok=False)
     identity = TLSIdentity.load(identity_directory)
@@ -130,8 +130,14 @@ def verify(output, bundle, identity_directory):
         with LocalState(bundle / 'controller') as state:
             deployment_id = state.identity
         binding = binding_for(bundle, deployment_id)
+        if prepared_phase is not None:
+            assert prepared_phase in {'intent', 'created'}
+            record = binding.journal.intent()
+            if prepared_phase == 'created':
+                container_id = engine.create(record, binding.profile, TOKENS)
+                binding.journal.created(container_id)
         first = MonitorProcess(bundle)
-        first.command('start')
+        first.command('adopt' if prepared_phase is not None else 'start')
         assert entered.wait(10), 'Linux worker did not reach the held TLS fixture'
         original = binding.journal.read()
         observed = engine.observe(original, binding.profile)
@@ -171,6 +177,7 @@ def verify(output, bundle, identity_directory):
         assert replacement.command('exit')['closing']
         assert replacement.process.wait(timeout=10) == 0
         record = {'timestamp_local': datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 'status': 'passed',
+            'prepared_phase': prepared_phase,
             'image_id': IMAGE, 'container_id': original['container_id'], 'turn_id': original['turn_id'],
             'container_survived_monitor_job_death': True, 'startup_adoption_marked_active_before_observation': True,
             'single_original_upstream_request': True, 'journal_released_and_container_removed': True,
@@ -205,8 +212,9 @@ if __name__ == '__main__':
     parser.add_argument('--output', type=Path)
     parser.add_argument('--bundle-directory', type=Path, required=True)
     parser.add_argument('--identity-directory', type=Path)
+    parser.add_argument('--prepared-phase', choices=['intent', 'created'])
     args = parser.parse_args()
     if args.action == 'child':
         child(args.bundle_directory.absolute())
     else:
-        verify(args.output.absolute(), args.bundle_directory.absolute(), args.identity_directory.absolute())
+        verify(args.output.absolute(), args.bundle_directory.absolute(), args.identity_directory.absolute(), args.prepared_phase)
