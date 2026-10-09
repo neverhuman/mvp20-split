@@ -39,6 +39,11 @@ class ManagedLaunchWorkers:
                     raise PeerUnavailable()
                 if self._fingerprints(self.supervisor.scientific) != desired:
                     self.supervisor.workers.require_quiescent()
+                    # Pre-admission standby advertised real idle capacity without
+                    # creating turns. Withdraw it before changing run bindings.
+                    for name, row in self.supervisor.scientific.status().items():
+                        if row['state'] == 'standby':
+                            self.supervisor.scientific.command(name, 'quiesce')
                     self.supervisor.scientific.require_quiescent()
                     # Withdrawal runs in reporters' background threads. Poll the
                     # stopped guard; never join network work in the control lock.

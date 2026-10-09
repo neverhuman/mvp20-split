@@ -1,4 +1,6 @@
 import http.client
+import json
+from types import SimpleNamespace
 import pytest
 
 from amphora_deployment.campaign_launch.intent import LaunchError
@@ -39,6 +41,19 @@ def test_receipt_missing_is_explicit_and_actor_scoped(peer, make_intent):
     connection.status, connection.body = 404, b'{"reason_code":"receipt_unavailable","resnapshot":false}'
     assert client.receipt(make_intent()) is None
     assert connection.calls[0][1] == '/v1/commands/graph.admit_draft/launch-1?actor_id=researcher'
+
+
+def test_authored_run_uses_modern_observation_cut_not_legacy_graph_run_route(peer):
+    client, connection = peer
+    scope = {'tenant_id': 'internal', 'project_id': 'demo'}
+    connection.body = json.dumps({'snapshot': {'cut': {'scope': scope, 'run_id': 'run-1',
+        'plan_sha256': 'a' * 64, 'revision': 0, 'frontier_revision': 0}, 'status': 'running',
+        'budget': {'limit': 8, 'reserved': 0, 'spent': 0}, 'query': {'scope_key': None, 'frontier_only': False},
+        'node_count': 0, 'snapshot_token': 'snapshot', 'event_cursor': 'events'}, 'nodes': [], 'next_cursor': None}).encode()
+    observed = client.run(SimpleNamespace(run_id='run-1'))
+    assert observed.run_id == 'run-1' and observed.plan_sha256 == 'a' * 64 and observed.status == 'running'
+    assert observed.scope.model_dump() == scope
+    assert connection.calls[0][1] == '/v1/graph-observations/run-1/nodes?limit=1'
 
 
 @pytest.mark.parametrize('status,body', [(404, b'{}'), (404, b'{"reason_code":"command_unavailable"}'),

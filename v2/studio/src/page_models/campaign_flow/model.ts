@@ -9,7 +9,7 @@ import type {SceneNode,SceneEdge} from '../scene.js';
 import {same} from '../../transport/scientific/identity.js';
 import type {LaunchPlanningContext} from '../launch/planning_context.js';
 export type BoundResult=Readonly<{binding:MethodBinding;detail:GraphNodeDetail;artifact:ArtifactRef|null;result:ScientificResult|null;problem:string|null}>;
-type View=Readonly<{phase:'idle'|'loading'|'ready'|'absent'|'limited'|'failed'|'denied';context:CampaignContext|null;results:readonly BoundResult[];snapshot:GraphSnapshotPage['snapshot']|null;message:string|null;contextRole?:'launch_plan'|'retained_output';scene?:{nodes:readonly SceneNode[];edges:readonly SceneEdge[]}}>;
+type View=Readonly<{phase:'idle'|'loading'|'ready'|'absent'|'limited'|'failed'|'denied';context:CampaignContext|null;results:readonly BoundResult[];snapshot:GraphSnapshotPage['snapshot']|null;message:string|null;retrySnapshot?:boolean;contextRole?:'launch_plan'|'retained_output';scene?:{nodes:readonly SceneNode[];edges:readonly SceneEdge[]}}>;
 /** Bounded existing-owner read composition; never a result index or scientific authority. */
 export class CampaignFlowModel {
  private lane=new RequestLane();private listeners=new Set<()=>void>();private disposed=false;
@@ -53,7 +53,7 @@ export class CampaignFlowModel {
    edges.push(...results.map(r=>({id:'binding:'+r.binding.node_id,source:'plan:'+r.binding.method_id,target:r.detail.node.activation_id,label:'planning-context'})));
    edges.push(...topology.edges.map((e,i)=>({id:'execution:'+i,source:e.source,target:e.target,label:e.route})));
    if(ticket.current())this.patch({phase:'ready',context,results:Object.freeze(results),snapshot:page.snapshot,message:null,contextRole,scene:{nodes,edges}});
-  }catch(error){if(ticket.current())this.patch({phase:(error as {kind?:string}).kind==='denied'?'denied':'failed',context:null,results:[],snapshot:null,message:'Campaign context could not be verified. Previous results are hidden.'});}
+  }catch(error){if(ticket.current()){const kind=(error as {kind?:string}).kind;const retrySnapshot=kind==='resnapshot';this.patch({phase:kind==='denied'?'denied':'failed',context:null,results:[],snapshot:null,retrySnapshot,message:retrySnapshot?'Execution advanced during the read. Refreshing a consistent view.':'Campaign context could not be verified. Previous results are hidden.'});}}
  }
  dispose(){this.disposed=true;this.lane.cancel();this.listeners.clear();}
 }

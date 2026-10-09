@@ -34,7 +34,8 @@ class LaunchHost:
         require(self.thread is None and self.api is None, 'launch_listener_already_attached')
         self.api = LaunchServer(port, token, self.installation.manifest.actor_id,
             self.installation.policy, self.installation.journal,
-            lambda: not self.stop.is_set() and not self.failure and not self.supervisor.closed, self.api_stop)
+            lambda: not self.stop.is_set() and not self.failure and not self.supervisor.closed, self.api_stop,
+            recover=self.coordinator.request_recovery)
 
     def start(self):
         require(self.thread is None and not self.stop.is_set(), 'launch_host_already_started')

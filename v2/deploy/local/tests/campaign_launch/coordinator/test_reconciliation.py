@@ -97,6 +97,37 @@ def test_missing_receipt_replays_identical_bytes_never_another_command(setup):
     assert len(peers.submissions) == 2 and peers.submissions[0] == peers.submissions[1]
 
 
+def test_restart_rechecks_capacity_before_original_missing_receipt_submission(setup):
+    journal, peers, coordinator = setup
+    coordinator.tick()
+    peers.reject = True
+    result = coordinator.tick()
+    assert result.phase == 'admission_unresolved' and result.reason == 'launch_preflight_changed'
+    assert peers.submissions == [] and journal.active() is not None
+    peers.reject = False
+    assert coordinator.tick().run_id == 'run-1'
+
+
+def test_verified_pending_operation_resumes_original_bytes_only_after_binding_is_durable(setup, admission_receipt):
+    journal, peers, coordinator = setup
+    coordinator.tick()
+    peers.stored = admission_receipt(journal.active().intent, status='pending')
+    assert coordinator.tick().admission.outcome.status == 'pending'
+    assert peers.submissions == []
+    assert coordinator.tick().run_id == 'run-1'
+    assert peers.submissions == [journal.active().intent.admission.canonical_bytes]
+
+
+@pytest.mark.parametrize('changed', ['missing', 'binding'])
+def test_previously_observed_pending_identity_cannot_disappear_or_change(setup, admission_receipt, changed):
+    journal, peers, coordinator = setup
+    coordinator.tick(); intent = journal.active().intent
+    peers.stored = admission_receipt(intent, status='pending'); coordinator.tick()
+    peers.stored = None if changed == 'missing' else admission_receipt(intent, status='pending', operation='different')
+    assert coordinator.tick().phase == 'recovery_required'
+    assert peers.submissions == []
+
+
 def test_peer_outage_does_not_reject_or_release_reserved_slot(setup):
     journal, peers, coordinator = setup
     peers.offline = True
@@ -147,6 +178,30 @@ def test_wrong_run_response_latches_without_starting_workers(setup):
     assert coordinator.tick().phase == 'recovery_required'
     assert coordinator.tick().run_id == 'run-1'
     assert peers.starts == 0
+
+
+def test_explicit_original_replay_recovers_only_the_existing_accepted_run(setup):
+    journal, peers, coordinator = setup
+    coordinator.tick(); coordinator.tick(); peers.wrong_run = True
+    assert coordinator.tick().phase == 'recovery_required'
+    peers.wrong_run = False
+    assert coordinator.tick().phase == 'recovery_required'
+    coordinator.request_recovery(journal.active().intent.key)
+    result = coordinator.tick()
+    assert result.phase == 'admitted_not_engaged' and result.run_id == 'run-1'
+    assert len(peers.submissions) == 1 and peers.starts == 0
+    coordinator.tick(); coordinator.tick()
+    assert journal.active().phase == 'engaged' and len(peers.submissions) == 1
+
+
+def test_recovery_refuses_missing_receipt_and_keeps_original_run(setup):
+    journal, peers, coordinator = setup
+    coordinator.tick(); coordinator.tick(); peers.wrong_run = True; coordinator.tick()
+    peers.wrong_run = False; peers.stored = None
+    coordinator.request_recovery(journal.active().intent.key)
+    result = coordinator.tick()
+    assert result.phase == 'recovery_required' and result.run_id == 'run-1'
+    assert result.reason == 'launch_recovery_receipt_mismatch' and len(peers.submissions) == 1
 
 
 def test_later_worker_failure_keeps_partial_readiness_and_reconciles_same_run(setup):

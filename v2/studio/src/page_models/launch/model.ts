@@ -49,7 +49,8 @@ export class CampaignLaunch {
   }
   /** Explicit retry always reuses retained bytes, including when no receipt was observed. */
   retryOriginal() {
-    if (!this.canReconcile || this.view.phase !== "unresolved") throw new Error("launch_not_retryable");
+    if (!this.canReconcile || !(this.view.phase === "unresolved" || this.view.phase === "ready" &&
+      this.view.receipt?.phase === "recovery_required" && this.view.receipt.run_id)) throw new Error("launch_not_retryable");
     return this.perform(true);
   }
   deny() { this.lane.cancel(); this.patch({ phase: "denied", receipt: null, reason: "denied" }); }

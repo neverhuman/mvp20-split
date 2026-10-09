@@ -1,11 +1,23 @@
 # Campaign launch lifecycle
 
-UI-01.06 approved2026-10-09. L1/L2 complete; next bounded HTTP/Gateway/Studio delivery.
+UI-01.06 approved2026-10-09. L1/L2/L3 complete; L4 actual campaign/restart active.
+Actual browser admission exposed missing idle capacity advertising. Deployment0.18.1
+adds AdmissionCapacity: only healthy idle slots enter standby (no turns/containers),
+existing reporters must acknowledge fresh free capacity, then Runtime independently
+checks Registry eligibility. Rebinding withdraws standby and waits for reporter drain.
+166 launch/catalog tests pass2026-10-09 09:45:44. Actual Runtime admitted one run;
+worker engagement exposed an obsolete legacy run-read route. Deployment0.18.2 uses
+the public graph-observation snapshot metadata for authored graphs. Installed recovery
+of that same run remains pending; no new campaign is substituted.
+Unresolved admission rechecks readiness after restart before original-byte submission.
+A verified pending operation is durably bound before resume; changed/disappearing
+previously observed receipts latch recovery rather than risk another owner operation.
 Verified2026-10-09 08:40:56:170 focused source checks;468 tests in an independent
 Deployment0.17 wheel installation, plus actual coordinator process-death/receipt
 recovery and three Docker monitor-death/adoption probes (intent/created/started).
 Receipt authority in that probe is an HTTP fixture; actual campaign/browser proof
-remains L4. No live Run endpoint or demo worker replacement enabled yet.
+remains L4. Live Run endpoint enabled; first request safely rejected before any run
+because installed slots had not advertised capacity. Its original receipt is retained.
 
 LaunchInstallation composes a closed local-campaign-launch-v1 operator manifest:
 actor_id, launch_profile, scientific_manifest and catalog_manifest (absolute paths).
@@ -26,6 +38,10 @@ resubmitting identical bytes. Public run observations must match scope/run/plan.
 Partial worker failure retains admission and enters original-binding reconciliation.
 Only Runtime terminal plus quiescent workers allows release. Invalid peer identities
 latch recovery_required; unavailable peers preserve the phase and request identity.
+An authenticated identical launch POST can explicitly request recovery of a known
+accepted run. The coordinator requires the original admission receipt and matching
+public scope/run/plan before resuming existing worker-binding checks on a later tick.
+This step performs no admission POST or worker start; mismatches remain latched.
 RuntimePeer uses fixed loopback routes, bounded bodies, no redirects/proxies and no
 raw errors. LaunchPreflight reads exact Runtime draft/validation, Registry deployment/
 release and Data artifact pins; local capacity checks remain installation composition.

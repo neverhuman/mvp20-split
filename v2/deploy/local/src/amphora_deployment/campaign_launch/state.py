@@ -14,7 +14,7 @@ TRANSITIONS = {
     'engaging': {'engaged', 'admitted_not_engaged', 'draining', 'recovery_required'},
     'engaged': {'admitted_not_engaged', 'draining', 'recovery_required'},
     'draining': {'released', 'recovery_required'},
-    'recovery_required': set(), 'rejected': set(), 'released': set(),
+    'recovery_required': {'admitted_not_engaged'}, 'rejected': set(), 'released': set(),
 }
 
 

@@ -21,7 +21,8 @@ def launch_api(tmp_path, make_intent):
     stop, available = threading.Event(), [True]
     token = 'synthetic-launch-token-00000000000000000'
     journal = LaunchJournal(tmp_path)
-    server = LaunchServer(0, token, 'researcher', policy, journal, lambda: available[0], stop)
+    recoveries = []
+    server = LaunchServer(0, token, 'researcher', policy, journal, lambda: available[0], stop, recover=recoveries.append)
     thread = threading.Thread(target=server.serve); thread.start()
     opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
     def request(path, body=None, *, authenticated=True, declared_length=None):
@@ -35,6 +36,7 @@ def launch_api(tmp_path, make_intent):
         with response:
             return response.status, json.loads(response.read())
     intent = make_intent(profile=policy.view.reference.sha256)
+    request.recoveries = recoveries
     try: yield request, intent, journal, available, make_intent
     finally:
         stop.set(); thread.join(5); assert not thread.is_alive()
@@ -80,6 +82,16 @@ def test_stopping_host_rejects_new_launches_but_keeps_receipts_readable(launch_a
     available[0] = False
     assert request('/v1/campaign-launches', intent.request.canonical_bytes)[0] == 503
     assert request('/v1/campaign-launches/launch-1')[0] == 200
+
+
+def test_identical_authenticated_replay_can_request_existing_run_recovery(launch_api, admission_receipt, clock):
+    request, intent, journal, _, _ = launch_api
+    state = journal.submit(intent, lambda intent: None, now=clock)
+    state = journal.change(intent.key, state.revision, lambda value: value.move('admission_unresolved', clock()))
+    state = journal.change(intent.key, state.revision, lambda value: value.observe_admission(admission_receipt(intent), clock()))
+    state = journal.change(intent.key, state.revision, lambda value: value.move('recovery_required', clock()))
+    assert request('/v1/campaign-launches', intent.request.canonical_bytes)[0] == 202
+    assert request.recoveries == [intent.key] and journal.active() == state
 
 
 def test_invalid_payload_and_query_do_not_create_work(launch_api):

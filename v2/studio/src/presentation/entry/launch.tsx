@@ -33,6 +33,8 @@ export function LaunchPanel({ launch, preparation }: { launch: CampaignLaunch; p
       {view.receipt && <span className="launch-readiness">{view.receipt.workers.ready} / {view.receipt.workers.expected} workers ready</span>}</div>
     <p role="status">{view.receipt?.run_id ? "Campaign " + view.receipt.run_id : "A new launch gets its own run. Human changes apply to the next campaign."}</p>
     {view.phase === "unresolved" && <div className="toolbar"><button onClick={() => void launch.reconcile()}>Check original launch</button><button onClick={() => void launch.retryOriginal()}>Retry same request</button></div>}
+    {view.phase === "ready" && view.receipt?.phase === "recovery_required" && view.receipt.run_id &&
+      <button onClick={() => void launch.retryOriginal()}>Reconcile original campaign</button>}
     {launch.canRequest && <div className="launch-preparation">
       <label>Saved campaign<select value={ready.selected ?? ""} disabled={ready.phase !== "ready" || ready.validating}
         onChange={event => { if (event.target.value) void preparation.select(event.target.value); }}>

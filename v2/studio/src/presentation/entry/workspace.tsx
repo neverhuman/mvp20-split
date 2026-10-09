@@ -61,11 +61,11 @@ function Campaign({ context, search, launchControl, planning }: { context: Works
   const campaignSelection=useMemo(()=>flowView.context?.knowledge?WorkspaceSelection.fromPins(flowView.context.knowledge.pins,context.scope):selection,[flowView.context,selection,context.scope.tenant_id,context.scope.project_id]);
   useEffect(()=>{void flow.refresh();return()=>flow.dispose();},[flow]);
   useEffect(()=>{
-    if(mode!=='execution'||flowView.snapshot?.status!=='running')return;
+    if(mode!=='execution'||!(flowView.snapshot?.status==='running'||flowView.retrySnapshot))return;
     let stopped=false;let timer:ReturnType<typeof setTimeout>;
     const tick=async()=>{if(!document.hidden)await flow.refresh(true);if(!stopped)timer=setTimeout(()=>void tick(),2000);};
     timer=setTimeout(()=>void tick(),2000);return()=>{stopped=true;clearTimeout(timer);};
-  },[flow,mode,flowView.snapshot?.status]);
+  },[flow,mode,flowView.snapshot?.status,flowView.retrySnapshot]);
 if(flowView.phase==='ready')return <ConnectedCampaign launchControl={launchControl} view={flowView} mode={mode} navigate={navigate} refresh={()=>void flow.refresh()} knowledge={explored?<LocalKnowledge embedded selection={campaignSelection} feedbackSelection={feedbackSelection} outputSelection={outputSelection} campaign={{scope:context.scope,run:context.run_id}} active={mode==='domain'} synthetic={context.synthetic}/>:null} technical={<MonitorWorkspace {...owners} compact active={mode==='execution'} context={{scope:context.scope,run:context.run_id}} synthetic={context.synthetic}/>} />;
   if(['loading','idle','denied','failed'].includes(flowView.phase))return <main className="local-entry">{launchControl}<h1>{flowView.phase==='loading'||flowView.phase==='idle'?'Opening the retained campaign':'Campaign context unavailable'}</h1><p>{flowView.message??'Checking the plan and scientific evidence.'}</p>{flowView.phase!=='loading'&&flowView.phase!=='idle'&&<button onClick={()=>void flow.refresh()}>Retry campaign read</button>}</main>;
   return <div className="research-shell">

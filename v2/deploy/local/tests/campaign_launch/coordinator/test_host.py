@@ -9,7 +9,7 @@ import pytest
 
 
 def make_host(monkeypatch, tick):
-    monkeypatch.setattr(module, 'LaunchCoordinator', lambda *args: SimpleNamespace(tick=tick))
+    monkeypatch.setattr(module, 'LaunchCoordinator', lambda *args: SimpleNamespace(tick=tick, request_recovery=lambda key: None))
     installation = SimpleNamespace(store=object(), policy=object(), executors=[], journal=object(), catalog=lambda *args: None,
         manifest=SimpleNamespace(actor_id='researcher'))
     supervisor = SimpleNamespace(closed=False, bindings={name: SimpleNamespace(environment={

@@ -129,7 +129,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-deployment"
-version = "0.18.0"
+version = "0.18.2"
 source = { editable = "." }
 dependencies = [
     { name = "amphora-contracts-campaign-launch" },

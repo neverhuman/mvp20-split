@@ -6,12 +6,14 @@ from ..tool_catalog.availability import ExecutorBudget
 from ..tool_catalog.dependencies import ToolDependencies
 from .intent import LaunchError
 from .ports import PeerUnavailable
+from .capacity import AdmissionCapacity
 
 
 class LocalLaunchReadiness:
     def __init__(self, installation, supervisor, stopped, *, engine=None):
         self.installation, self.supervisor, self.stopped = installation, supervisor, stopped
         self.engine = ContainerEngine() if engine is None else engine
+        self.capacity = AdmissionCapacity(supervisor)
 
     def _available(self):
         if self.stopped.is_set():
@@ -28,7 +30,7 @@ class LocalLaunchReadiness:
                     raise PeerUnavailable()
                 self.supervisor.access.require_running()
                 self.supervisor.workers.require_quiescent()
-                self.supervisor.scientific.require_quiescent()
+                self.capacity.require_idle()
             require_released(self.installation.root, self.installation.deployment_id)
             for slot in self.supervisor.workers.slots.values():
                 self._available()
@@ -51,5 +53,7 @@ class LocalLaunchReadiness:
                     access['runtime'].route.upstream_port, access['artifact'].route.upstream_port)
                 if dependencies() is not True:
                     raise PeerUnavailable()
+            self._available()
+            self.capacity.offer()
         except ProfileError:
             raise PeerUnavailable() from None

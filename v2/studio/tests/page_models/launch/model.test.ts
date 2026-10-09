@@ -73,6 +73,17 @@ test("only a live released receipt permits a deliberately new campaign", async (
   assert.equal(journal.load()?.command.request.identity.command_id, "next-campaign");
 });
 
+test("recovery replays the same admitted request and never creates a new campaign identity", async () => {
+  const journal = new LaunchJournal(context, storage()); let calls = 0;
+  const held = receipt(command(), true); held.phase = "recovery_required";
+  journal.save(command(), held);
+  const model = new CampaignLaunch({ receipt: async () => held, submit: async cmd => {
+    calls++; assert.equal(cmd.body, command().body); return { ...receipt(cmd, true), revision: 4 };
+  } }, journal);
+  await model.reconcile(); assert.equal(model.canRequest, false);
+  await model.retryOriginal(); assert.equal(calls, 1); assert.equal(model.snapshot.receipt?.run_id, "actual-run");
+});
+
 test("corrupt or foreign recovery state blocks instead of silently starting over", () => {
   const store = storage(), journal = new LaunchJournal(context, store); journal.save(command());
   const key = [...store.records.keys()][0]!;

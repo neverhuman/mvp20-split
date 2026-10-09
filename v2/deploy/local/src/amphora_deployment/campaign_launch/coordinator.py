@@ -14,6 +14,27 @@ class LaunchCoordinator:
         self.journal, self.preflight = journal, preflight
         self.runtime, self.workers, self.now = runtime, workers, now
         self._lock = threading.Lock()
+        self._recovery_lock = threading.Lock()
+        self._requested_recovery = None
+
+    def request_recovery(self, key):
+        """An authenticated identical launch replay may request one bounded recovery."""
+        with self._recovery_lock:
+            self._requested_recovery = key
+
+    def _recover(self, state):
+        with self._recovery_lock:
+            requested = self._requested_recovery == state.intent.key
+            self._requested_recovery = None
+        if not requested or state.run_id is None:
+            return state
+        receipt = self.runtime.receipt(state.intent)
+        # No admission POST, identity replacement or worker start during recovery.
+        # Rebinding on the next tick still verifies original retained config bytes.
+        if receipt is None or receipt != state.admission:
+            return self._note(state, 'launch_recovery_receipt_mismatch')
+        self._terminal_run(state)
+        return self._move(state, 'admitted_not_engaged', 'launch_original_run_reconciled')
 
     def _change(self, state, transition):
         return self.journal.change(state.intent.key, state.revision, transition)
@@ -39,15 +60,21 @@ class LaunchCoordinator:
             return None
         try:
             state = self.journal.active()
-            if state is None or state.phase == 'recovery_required':
+            if state is None:
                 return state
             try:
+                if state.phase == 'recovery_required':
+                    return self._recover(state)
+                with self._recovery_lock:
+                    self._requested_recovery = None
                 return self._step(state)
             except PeerUnavailable:
                 return self._note(state, 'launch_peer_unavailable')
             except LaunchError as error:
                 if str(error) == 'launch_revision_conflict':
                     return self.journal.get(state.intent.key)
+                if state.phase == 'recovery_required':
+                    return self._note(state, 'launch_reconciliation_required')
                 # Binding/validation failure latches the original identity. Never
                 # call a corrupt response a rejection or silently launch afresh.
                 return self._move(state, 'recovery_required', 'launch_reconciliation_required')
@@ -64,8 +91,21 @@ class LaunchCoordinator:
 
         if state.phase == 'admission_unresolved':
             receipt = self.runtime.receipt(state.intent)
-            if receipt is None:
-                receipt = self.runtime.admit(state.intent)
+            if receipt is not None:
+                # Validate every observation before recovery I/O. Persist the first
+                # pending operation binding on its own tick before any resume.
+                state.observe_admission(receipt, self.now())
+                if receipt.outcome.status != 'pending' or state.admission is None:
+                    return self._change(state, lambda current: current.observe_admission(receipt, self.now()))
+            elif state.admission is not None:
+                raise LaunchError('launch_original_receipt_disappeared')
+            # Restart clears local standby. Re-establish real capacity before
+            # original-byte submission, including a verified pending operation.
+            try:
+                self.preflight.check(state.intent)
+            except PreflightRejected:
+                return self._note(state, 'launch_preflight_changed')
+            receipt = self.runtime.admit(state.intent)
             return self._change(state, lambda current: current.observe_admission(receipt, self.now()))
 
         # Missing/ambiguous run reads cannot imply completion or release capacity.

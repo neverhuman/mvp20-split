@@ -15,7 +15,11 @@ cannot become a score. Cancellation fences all late responses. This module owns
 no execution, ranking, admission, provider call or automatic feedback submission.
 Quiet refresh preserves the mounted graph/review while a fresh coherent observation
 is read; any denied/failed verification hides prior protected context. The entry polls
-only a visible running execution view; Deployment worker readiness is never node status.
+only a visible running execution view, or a Runtime409/410 snapshot-conflict recovery.
+Conflicts clear incomplete context and request a fresh coherent cut at the next poll;
+denial and invalid responses never enable that retry path. Deployment readiness is
+never node status. A built-browser injected409 reproduces the former stopped-poll
+failure and verifies recovery without another admission.
 Future notes reference the exact retained plan and are local/unsubmitted.
 
 UI-01.05 adds a bounded CampaignKnowledge value object for a future retained

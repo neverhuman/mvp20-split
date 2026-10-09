@@ -3,11 +3,11 @@ import http.client
 import json
 from urllib.parse import quote
 
-from amphora_contracts_graph_runtime import GraphRunPage
+from amphora_contracts_graph_runtime import GraphSnapshotPage
 from amphora_contracts_runtime import CommandReceipt
 
 from .intent import LaunchError
-from .ports import PeerRecordMissing, PeerUnavailable
+from .ports import PeerRecordMissing, PeerUnavailable, RunObservation
 
 
 class LoopbackPeer:
@@ -84,5 +84,6 @@ class RuntimePeer(LoopbackPeer):
     def run(self, state):
         if state.run_id is None:
             raise LaunchError('launch_admission_required')
-        status, raw = self.request('GET', '/v1/graph-runs/' + quote(state.run_id, safe='') + '?limit=1')
-        return self._parse(status, raw, GraphRunPage)
+        status, raw = self.request('GET', '/v1/graph-observations/' + quote(state.run_id, safe='') + '/nodes?limit=1')
+        snapshot = self._parse(status, raw, GraphSnapshotPage).snapshot
+        return RunObservation(snapshot.cut.scope, snapshot.cut.run_id, snapshot.cut.plan_sha256, snapshot.status)

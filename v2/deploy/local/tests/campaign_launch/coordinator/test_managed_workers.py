@@ -30,6 +30,8 @@ class Group:
         self.commands.append((name, action))
         if action == 'start': self.rows[name] = {'state': 'waiting', 'faulted': False}
         if action == 'recover': self.rows[name] = {'state': 'quiescent', 'faulted': False}
+        if action == 'standby': self.rows[name] = {'state': 'standby', 'faulted': False}
+        if action == 'quiesce': self.rows[name] = {'state': 'quiescent', 'faulted': False}
     def quiesce(self):
         for row in self.rows.values(): row['state'] = 'quiescent'
     def detach(self): self.detached = True
@@ -89,6 +91,15 @@ def test_engagement_and_restart_use_original_binding_without_duplicate_start(man
     assert supervisor.scientific.adoptions == 2
     restarted.engage(state)
     assert supervisor.scientific.commands == [('science', 'start')]
+
+
+def test_admission_standby_is_withdrawn_before_original_run_rebinding(managed_setup):
+    adapter, supervisor, state = managed_setup
+    original = supervisor.scientific
+    original.command('science', 'standby')
+    assert adapter.prepare(state).quiescent
+    assert original.commands == [('science', 'standby'), ('science', 'quiesce')]
+    assert original.detached and supervisor.scientific.commands == []
 
 
 def test_outstanding_old_journal_blocks_replacement(managed_setup, monkeypatch):

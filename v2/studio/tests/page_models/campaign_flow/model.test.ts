@@ -8,6 +8,7 @@ import {contextSchema} from '../../../src/page_models/campaign_flow/schema_pin.j
 import {knowledgeContextSchema} from '../../../src/page_models/campaign_flow/knowledge_schema_pin.js';
 import {polymerProposal} from '../../../src/page_models/evaluation_review/polymer_proposal.js';
 import {snapshot,detail,context,scope,deferred} from '../../fixtures/observations.js';
+import {topology as topologyFixture} from '../../fixtures/navigation.js';
 import type {ArtifactRef,GraphTopologyPage} from '../../../src/contracts/observations.js';
 const ref:ArtifactRef={scope,artifact_id:'review-plan',schema_ref:contextSchema,sha256:'b'.repeat(64),size_bytes:20,media_type:'application/json'};
 const value={format:'amphora.demo-campaign-context.v1',scope,design:polymerProposal(),bindings:[{method_id:'solvency',node_id:'node-1',candidate_id:'fixture-A',tool:{capability_id:'materials.hansen-solvency',contract_version:'1',release:'0.1.0',image_sha256:'a'.repeat(64)}}],limitations:['Synthetic']};
@@ -22,6 +23,14 @@ test('versioned Knowledge context preserves v1 and rejects schema/body disagreem
  assert.throws(()=>readCampaignContext(next,{...nextRef,schema_ref:{...knowledgeContextSchema,sha256:'0'.repeat(64)}},context));
 });
 function fixture(){const page=snapshot();page.nodes[1]!.kind='finish';const a=detail(1),b=detail(2);b.node=page.nodes[1]!;b.outputs=[{port:'campaign_context',kind:'artifact',item_count:1,missing_count:0,artifact:ref}];return {page,a,b};}
+test('snapshot conflicts request a fresh cut while denial and invalid payloads do not',async()=>{
+ const {page,a,b}=fixture();let failure:string|undefined='resnapshot';
+ const topology={...topologyFixture(),cut:page.snapshot.cut,next_cursor:null,nodes:[a,b].map(d=>({activation:d.node,child_scope_count:0})),edges:[]} as GraphTopologyPage;
+ const model=new CampaignFlowModel(context,{snapshot:async()=>page,detail:async(_r,id)=>{if(failure)throw {kind:failure};return id===a.node.activation_id?a:b;},topology:async()=>topology},{jsonArtifact:async()=>value});
+ await model.refresh();assert.equal(model.snapshot.retrySnapshot,true);assert.equal(model.snapshot.context,null);
+ failure=undefined;await model.refresh(true);assert.equal(model.snapshot.phase,'ready');assert.notEqual(model.snapshot.retrySnapshot,true);
+ for(const kind of ['denied','invalid_response']){failure=kind;await model.refresh(true);assert.equal(model.snapshot.retrySnapshot,false);assert.equal(model.snapshot.context,null);}
+});
 test('launch-bound plan stays visible before finish, then must match retained output',async()=>{
  const {page,a,b}=fixture();b.outputs=[];
  const topology={cut:page.snapshot.cut,next_cursor:null,nodes:[a,b].map(d=>({activation:d.node,child_scope_count:0})),edges:[{source:a.node.activation_id,target:b.node.activation_id,route:'next'}]} as GraphTopologyPage;

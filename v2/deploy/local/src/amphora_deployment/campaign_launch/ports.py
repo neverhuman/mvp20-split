@@ -2,7 +2,7 @@
 from dataclasses import dataclass
 from typing import Protocol
 
-from amphora_contracts_graph_runtime import GraphRunPage
+from amphora_contracts_core import Scope
 from amphora_contracts_runtime import CommandReceipt
 
 from .intent import LaunchError, LaunchIntent
@@ -19,6 +19,15 @@ class PreflightRejected(Exception):
 
 class PeerRecordMissing(Exception):
     """Public owner returned a well-formed, explicit not-found observation."""
+
+
+@dataclass(frozen=True, slots=True)
+class RunObservation:
+    """Only the authoritative graph cut required by launch lifecycle decisions."""
+    scope: Scope
+    run_id: str
+    plan_sha256: str
+    status: str
 
 
 @dataclass(frozen=True, slots=True)
@@ -48,7 +57,7 @@ class RuntimePort(Protocol):
     def admit(self, intent: LaunchIntent) -> CommandReceipt:
         """Submit the original canonical admission bytes without re-encoding."""
 
-    def run(self, state: LaunchState) -> GraphRunPage:
+    def run(self, state: LaunchState) -> RunObservation:
         """Observe the original run through Runtime's public scoped route."""
 
 

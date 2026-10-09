@@ -14,7 +14,12 @@ from amphora_deployment.persistence.state import LocalState
 
 def credentials(root, references):
     state=LocalState.snapshot(root)
-    return CredentialVault(root/'credentials.dpapi',state['deployment_id']).load().environment(references)
+    original=[reference for reference in references if reference!='LAUNCH_GATEWAY_TOKEN']
+    values=CredentialVault(root/'credentials.dpapi',state['deployment_id']).load().environment(original)
+    if 'LAUNCH_GATEWAY_TOKEN' in references:
+        from amphora_deployment.campaign_launch.credentials import launch_credential
+        values.update(launch_credential(root,state['deployment_id']).environment(['LAUNCH_GATEWAY_TOKEN']))
+    return values
 
 
 def invite(root, session):

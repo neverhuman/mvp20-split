@@ -10,6 +10,9 @@ storage is not a lock or an authority grant.
 Restored receipt/run remains hidden until a live original-receipt GET passes exact
 identity checks. Refresh never creates another request. An explicit retry reuses
 the same bytes; conflict blocks reconciliation. Denial/disposal fence late replies.
+For a verified recovery_required receipt with an accepted run, the explicit
+"Reconcile original campaign" action replays those same bytes and identity. It
+requests Deployment reconciliation, never assumes engagement or creates a run.
 A live terminal released/rejected receipt permits a deliberately new campaign.
 An unresolved or admitted-but-not-engaged launch never becomes execution success.
 Runtime observation owns node progress. This model does not select drafts, compile

@@ -96,7 +96,7 @@ class Controller:
         for owner in ('runtime', 'artifact'):
             self.control('/tool-access/' + owner + '/drain', 'POST')
         self.wait(lambda: all(row['state'] == 'drained' for row in self.control('/status')['tool_access'].values()))
-        for owner in ('runtime', 'planning', 'knowledge', 'research', 'artifact', 'registry'):
+        for owner in ('gateway', 'runtime', 'planning', 'knowledge', 'research', 'artifact', 'registry'):
             if owner not in status['owners']:
                 continue
             def drained(owner=owner):

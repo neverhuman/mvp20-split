@@ -3,14 +3,14 @@
 ## Canonical tracker
 
 - Status: primary_active; connected demo flow implemented; remaining N2 integration gates explicit.
-- Last refreshed: 2026-10-09 09:17:45 (America/Chicago).
+- Last refreshed: 2026-10-09 10:02:00 (America/Chicago).
 - Baseline: 62ea4966; owner-reported disconnected canvas and navigation review on 2026-10-07.
 - Owner: Studio experience, page models and presentation; service owners retain their contracts and state.
 - Parent: none; priority and mirrors in [Master Build Tracker](Master%20Build%20Tracker.md).
 - Overall implementation: **55%**; Build68.75%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
 - Design readiness: G0 complete; ELK directed layout and bounded topology ownership implemented.
 - Demonstrated behavior: connected graphs and question-first navigation verified against retained owner records; result-first comparison and full replacement acceptance remain.
-- Current phase/task: UI-01.05/K1 complete100%; approved R1 launch implementation60%, I1=0%. UI-01.06/L4 actual campaign/restart active.
+- Current phase/task: UI-01.05/K1 complete100%; approved R1 launch implementation75%, I1=0%. UI-01.06/L4=75%; actual local/LAN results and drain passed; pending-container interruption remains.
 - Next task: UI-01.05/R1 launch/live nodes and remaining N2 gates; I1 LLM successor loop after N2.
 - Blocker: none requiring owner input for approved UI-01.06 launch implementation. Delivered Knowledge/SME review remains available. UI-01.01 applies only to later result discovery.
 - Human acceptance: owner feedback is part of visual review; no new routine approval gates for campaign execution.
@@ -35,7 +35,7 @@ do not create empty child plans or count plan-writing as delivered functionality
 Owner schedule2026-10-08: target the week2026-10-12 through2026-10-16 for actual
 Knowledge UI, browser-started campaigns with live per-node progress, and LLM graph
 revision grounded in Knowledge. [UI-01.05](UI-01.05%20Knowledge%20Run%20and%20LLM%20Integration.md)
-decomposes this existing unfinished N2/N3 scope: K1=100%, R1=60%, I1=0%. N2.2 owns service
+decomposes this existing unfinished N2/N3 scope: K1=100%, R1=75%, I1=0%. N2.2 owns service
 provenance, N2.4 Knowledge/reasoning and honest node-quality evidence, N2.5 admission/
 worker engagement, and N3 the between-campaign LLM/successor loop. Complete all N2
 gates, including remaining comparison, before dependent N3 work. V1 verifies the

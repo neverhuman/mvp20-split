@@ -17,13 +17,14 @@ ERRORS = {'launch_scope_denied': 403, 'launch_request_conflict': 409, 'launch_sl
 class LaunchServer(HTTPServer):
     allow_reuse_address = False
 
-    def __init__(self, port, token, actor_id, policy, journal, accepting, stop):
+    def __init__(self, port, token, actor_id, policy, journal, accepting, stop, *, recover=None):
         if (type(port) is not int or not 0 <= port <= 65535 or type(token) is not str
                 or not 32 <= len(token) <= 256 or not token.isascii()
                 or not all(32 < ord(c) < 127 for c in token)):
             raise LaunchError('launch_listener_configuration_invalid')
         self._token, self.actor_id, self.policy, self.journal = token, actor_id, policy, journal
         self.accepting, self.stop = accepting, stop
+        self.recover = recover
         super().__init__(('127.0.0.1', port), LaunchHandler)
         self.timeout = .25
 
@@ -115,6 +116,8 @@ class LaunchHandler(BaseHTTPRequestHandler):
                 intent = LaunchIntent.parse(raw)
                 intent.authorize(self.server.actor_id, self.server.policy.view.scope)
                 state = self.server.journal.submit(intent, self.server.policy.check)
+                if state.phase == 'recovery_required' and state.run_id is not None and self.server.recover is not None:
+                    self.server.recover(intent.key)
                 return self._respond(200 if state.terminal else 202, state.receipt().model_dump(mode='json'))
             self._respond(404, {'reason_code': 'launch_route_unknown'})
         except LaunchError as error:
