@@ -12,6 +12,7 @@ from datetime import datetime
 from pathlib import Path
 
 from amphora_deployment.backup_restore import BackupManifest, verify_inventory
+from amphora_deployment.campaign_launch.backup import require_launches_drained
 from amphora_deployment.credentials import CredentialVault
 from amphora_deployment.installation.inventory import OwnerInstallation
 from amphora_deployment.lifecycle.routes import Routes
@@ -65,6 +66,7 @@ def capture(root, artifact_root, configuration, output, readbacks, additional_ar
         routes = Routes.from_record(state.record['routes'])
         require_stopped(routes)
         require_released(root, state.identity)
+        require_launches_drained(root)
         before = json.loads(json.dumps(state.record))
         for kind, expected in (('postgres', POSTGRES), ('qdrant', QDRANT)):
             row = before[kind]
@@ -97,11 +99,13 @@ def capture(root, artifact_root, configuration, output, readbacks, additional_ar
                 assert not docker.inspect('container', identifier)['State']['Running']
             require_stopped(routes)
             require_released(root, state.identity)
+            launch_count = require_launches_drained(root)
             cut = {'timestamp_local': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
                    'mode': 'all_owners_stopped', 'readbacks': evidence, 'containers': snapshots,
                    'owner_control_ports_unavailable': True, 'scientific_journals_released': True,
                    'stores_confirmed_stopped': True, 'owner_schemas': 'reviewed installed release pins; semantic restore checks required'}
             cut['artifact_roots'] = [str(artifact_root), *(str(path) for path in additional_artifact_roots)]
+            cut['launch_journal'] = {'terminal_records': launch_count, 'active_records': 0}
             (output / 'evidence').mkdir()
             write(output / 'evidence' / 'drain.json', cut)
             for kind in ('postgres', 'qdrant'):

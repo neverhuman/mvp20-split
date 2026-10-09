@@ -6,6 +6,8 @@ from pathlib import Path
 from .intent import LaunchError, LaunchIntent
 from .state import LaunchState, utc_now
 
+READ_COLUMNS = 'request, receipt, revision, active, tenant, project, actor, request_id'
+
 
 class LaunchJournal:
     def __init__(self, directory: Path):
@@ -17,6 +19,8 @@ class LaunchJournal:
                 request BLOB NOT NULL, receipt BLOB NOT NULL, revision INTEGER NOT NULL,
                 active INTEGER UNIQUE CHECK(active IS NULL OR active=1),
                 PRIMARY KEY(tenant, project, actor, request_id))''')
+            for row in db.execute('SELECT ' + READ_COLUMNS + ' FROM launches'):
+                self._state(row)
 
     @contextmanager
     def _connection(self):
@@ -31,21 +35,37 @@ class LaunchJournal:
     def _state(row):
         if row is None:
             return None
-        return LaunchState.restore(LaunchIntent.parse(row[0]), row[1])
+        state = LaunchState.restore(LaunchIntent.parse(row[0]), row[1])
+        if (state.revision != row[2] or row[3] != (None if state.terminal else 1)
+                or state.intent.key != tuple(row[4:])):
+            raise LaunchError('launch_journal_corrupt')
+        return state
 
     def get(self, key: tuple[str, str, str, str]):
         with self._connection() as db:
-            return self._state(db.execute('SELECT request, receipt FROM launches WHERE tenant=? AND project=? AND actor=? AND request_id=?', key).fetchone())
+            return self._state(db.execute('SELECT ' + READ_COLUMNS + ' FROM launches WHERE tenant=? AND project=? AND actor=? AND request_id=?', key).fetchone())
 
     def active(self):
         with self._connection() as db:
-            return self._state(db.execute('SELECT request, receipt FROM launches WHERE active=1').fetchone())
+            return self._state(db.execute('SELECT ' + READ_COLUMNS + ' FROM launches WHERE active=1').fetchone())
+
+    def verify_quiescent(self):
+        """Cold capture gate; caller holds the installation lease with owners stopped."""
+        with self._connection() as db:
+            if db.execute('PRAGMA quick_check').fetchall() != [('ok',)]:
+                raise LaunchError('launch_journal_corrupt')
+            count = 0
+            for row in db.execute('SELECT ' + READ_COLUMNS + ' FROM launches'):
+                if not self._state(row).terminal:
+                    raise LaunchError('launch_backup_requires_drain')
+                count += 1
+            return count
 
     def submit(self, intent: LaunchIntent, authorize_profile, *, now=utc_now):
         with self._connection() as db:
             db.execute('BEGIN IMMEDIATE')
             try:
-                existing = self._state(db.execute('SELECT request, receipt FROM launches WHERE tenant=? AND project=? AND actor=? AND request_id=?', intent.key).fetchone())
+                existing = self._state(db.execute('SELECT ' + READ_COLUMNS + ' FROM launches WHERE tenant=? AND project=? AND actor=? AND request_id=?', intent.key).fetchone())
                 if existing:
                     if existing.intent.request.sha256 != intent.request.sha256:
                         raise LaunchError('launch_request_conflict')
@@ -68,7 +88,7 @@ class LaunchJournal:
         with self._connection() as db:
             db.execute('BEGIN IMMEDIATE')
             try:
-                state = self._state(db.execute('SELECT request, receipt FROM launches WHERE tenant=? AND project=? AND actor=? AND request_id=?', key).fetchone())
+                state = self._state(db.execute('SELECT ' + READ_COLUMNS + ' FROM launches WHERE tenant=? AND project=? AND actor=? AND request_id=?', key).fetchone())
                 if state is None or state.revision != expected_revision:
                     raise LaunchError('launch_revision_conflict')
                 updated = transition(state)

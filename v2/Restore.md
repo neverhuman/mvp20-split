@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed2026-10-09 08:15:06 America/Chicago. Read FIRST after compaction.
+Refreshed2026-10-09 08:25:03 America/Chicago. Read FIRST after compaction.
 Owner says continue until needed; milestones/commits are not stopping points.
 No subagents/JARVIS; v1 read-only. Preserve untracked ocular PDF/DOCX.
 Do not edit source/tests/module READMEs while verification runs.
@@ -19,9 +19,12 @@ Current checkpoint:
  25tests passed: canonical replay/identity, profilepins/limits, concurrent single-slot,
  restart, stale CAS rollback, admission binding and workerfailure preservesrun.
  Schema check + productionboundary guard passed; no testsrunning.
-- Current UNCOMMITTED: coordinator/ports/publicRuntimeHTTP + deterministicrunbinding
- store, tests.54 focused tests pass;444 broad Deployment/contract regression passed
- before four added bindingfile checks. Scopedrunner44tests passes, combinedcoverage90%.
+- Coordinator/runtimepeer/runbindingstore pushed87634f4e.
+- Current UNCOMMITTED: ManagedLaunchWorkers + LaunchPreflight publicchecks, coldbackup
+ guard/journalindexchecks; scientificmonitoradoptsintent/createdwithoutrepeatedturns.
+ 121focusedchecks pass including scientificworkers;469broadregression passed before
+ two addedmissingreadchecks. Boundariespass. No testsrunning.
+ Earlier scopedrunner44tests passed, combinedcoverage90% (notnewfilescoverage).
  Productionboundaries pass. Existingregistry_access tests newlyregistered in scopes.
  Use pytest -c v2/dev/pyproject.toml (importlib); defaultmode causes existingtestname
  collisions. Fixedlaunchtestcrossimport; shortparamids avoidWindows oversizednames.
@@ -30,7 +33,7 @@ Current checkpoint:
  RunBindingStore retains exactconfig+manifest underROOT/campaign-launches/requestsha;
  no workersstarted. PublicRuntimePeer fixedloopback, exactbytes, receiptbindingchecks.
 - Before nextcommit: stageexactownedfiles (excludeocular), commit/push verified
- coordinatorfoundation. Continue managedadapter/preflight immediately afterward.
+ adapter/preflightfoundation. Continue supervisorstartup/configcomposition.
 - Journal is new Deployment-private SQLite local state; include quiesced backup/
  restore and fail-closedcorruption handling beforelive release. It does not query
  peer tables. Same scopedactor/requestid inlaunch and Runtimeadmission.
@@ -99,13 +102,25 @@ Request identityactor/scope/id mustmatch both. Wiremodels don'townpolicy.
 LaunchState recovery_required latchesinvalidbindings; transientPeerUnavailable keeps
 phase. Workerfailure returnsadmitted_not_engaged withpartialreadiness andoriginalrun.
 Coordinator verifiesRuntime scope/run/plan andterminal+workerquiescence before release.
-Needs actual preflightandWorkersPortadapter. Ports have targetedfaulttests.
+LaunchPreflight andManagedLaunchWorkers nowimplementedbehindports; needinstallation
+composition. LoopbackPeer inruntime_peer suppliesread forpreflight; explicit404
+PeerRecordMissing maps topreflightrejection, notadmissionrecovery/reset.
 Supervisor scientificslots/catalogreporters fixed; replaceonlywhenoldnative/scientific
 quiescent andcatalogstopped. Startup must loadretainedrunbindings BEFORE checking
 configuredpendingjournals. Never omitoldpendingcontainers. RunBindingStoretemplates
 mustremain samepinnedinputs acrossrestart. Catalog reporterreplicajournals keepidentity.
-capture_local_backup.py alreadycoldcopiesROOT except.operation.lock/logs, so newfiles
-are included physically; add launchjournalquiescence validation and restoreidentityproof.
+capture_local_backup.py coldcopiesROOT except.operation.lock/logs, nowcalls
+require_launches_drained andrecordscount. Coldcopyreopen tested; installedrestorepending.
+ScientificSlot nowadoptsintent/created andcallsoriginalturn.launch once; starting/
+started remainpollonly. 2addedtests covergap; recordasR1blockingrepair, noLRprogress.
+Next: factorload_scientific_templates fromload_scientific so restartcanrestoreactive
+runbindings BEFORErequire_configured_pending (originaltemplate fingerprint differs).
+ComposeRunBindingStore frompinnedoperatortemplates, LaunchJournal(ROOT/campaign-launches),
+ManagedLaunchWorkers withcatalogfactory producingnewbindingfingerprints whilekeeping
+replicaidentities. Existingload_catalog requires exactprofilefingerprints inmanifest.
+Nativeworkersmustprojectmatch; localpreflightverifyoldjournalsreleased/resources/images/
+TLS/ownerhealth beforeadmission. ActualRuntime stillrechecksadmission/Registryeligibility.
+Do notstartL3HTTP/Studio beforeL2integratedgatespass. CurrentUIunchanged.
 ParentN2 groups still require provider provenance/reasoning, generationalcomparison
 and launch; I1 owns liveLLM/nodeinventory and durable missing-capability requests.
 Check ordering for real dependency cycles; don't silently wave prerequisites.

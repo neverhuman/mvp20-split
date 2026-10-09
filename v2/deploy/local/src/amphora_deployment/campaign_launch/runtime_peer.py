@@ -7,10 +7,10 @@ from amphora_contracts_graph_runtime import GraphRunPage
 from amphora_contracts_runtime import CommandReceipt
 
 from .intent import LaunchError
-from .ports import PeerUnavailable
+from .ports import PeerRecordMissing, PeerUnavailable
 
 
-class RuntimePeer:
+class LoopbackPeer:
     def __init__(self, port: int, token: str):
         if (type(port) is not int or not 1024 <= port <= 65535
                 or type(token) is not str or not 16 <= len(token) <= 4096
@@ -46,6 +46,20 @@ class RuntimePeer:
         except ValueError:
             raise LaunchError('launch_peer_response_invalid') from None
 
+    def read(self, path, model):
+        status, raw = self.request('GET', path)
+        if status == 404:
+            try:
+                record = json.loads(raw)
+            except ValueError:
+                raise LaunchError('launch_peer_response_invalid') from None
+            if (type(record) is dict and type(record.get('reason_code')) is str
+                    and record['reason_code'].endswith(('_unavailable', '_not_found'))):
+                raise PeerRecordMissing()
+        return self._parse(status, raw, model)
+
+
+class RuntimePeer(LoopbackPeer):
     def receipt(self, intent):
         identity = intent.admission.identity
         path = '/v1/commands/graph.admit_draft/' + quote(identity.command_id, safe='')

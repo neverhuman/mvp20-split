@@ -21,7 +21,7 @@ class ScientificSlot:
 
     def _pending(self):
         record = self.binding.journal.read()
-        return record is not None and record['phase'] in {'starting', 'started', 'exited'}
+        return record is not None and record['phase'] in {'intent', 'created', 'starting', 'started', 'exited'}
 
     def _spawn(self):
         if self.thread is None or not self.thread.is_alive():
@@ -83,7 +83,10 @@ class ScientificSlot:
                     launch = not self.active
                     self.active = True  # Accepted turn includes its create/start operations.
                 turn = self.binding.turn()
-                if launch:
+                retained = self.binding.journal.read()
+                # A recorded intent/created container authorizes its original
+                # first start. Starting/started replay must only observe it.
+                if launch or (retained is not None and retained['phase'] in {'intent', 'created'}):
                     turn.launch()
                 while not self.stop.is_set():
                     code = turn.poll()

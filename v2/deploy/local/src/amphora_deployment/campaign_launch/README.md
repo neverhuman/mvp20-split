@@ -1,8 +1,10 @@
 # Campaign launch lifecycle
 
-UI-01.06 approved2026-10-09. Contract, journal, reconciliation coordinator and public
-Runtime transport implemented;54 scoped checks pass. Next gate: managed worker
-integration/public preflight, backup and installed recovery, then bounded HTTP/UI.
+UI-01.06 approved2026-10-09. Contract, journal, coordinator, public preflight, managed
+slot adapter and binding store implemented;121 focused checks pass including scientific
+workers.469 broad Deployment/contract checks passed before two added missing-read tests.
+Next gate: supervisor startup/configuration composition and installed recovery,
+then bounded HTTP/UI. L2 remains50% until integrated gates pass.
 No live Run endpoint or worker binding replacement is available yet.
 
 LaunchCoordinator performs one bounded step outside journal transactions. Its local
@@ -13,7 +15,16 @@ Partial worker failure retains admission and enters original-binding reconciliat
 Only Runtime terminal plus quiescent workers allows release. Invalid peer identities
 latch recovery_required; unavailable peers preserve the phase and request identity.
 RuntimePeer uses fixed loopback routes, bounded bodies, no redirects/proxies and no
-raw errors. Preflight/Workers ports still need production integration.
+raw errors. LaunchPreflight reads exact Runtime draft/validation, Registry deployment/
+release and Data artifact pins; local capacity checks remain installation composition.
+Missing records reject preflight; authentication/malformed responses never imply absence.
+
+ManagedLaunchWorkers composes existing Supervisor slots under its lock. Replacement
+waits for native/scientific quiescence, stopped capacity reporters and reconciliation
+of old journals; it never joins reporter network work under the control lock. Restart
+adopts exact bindings; partial failure recovers original slots, and drain also waits for
+catalog withdrawal and retained journal release. The catalog factory and lifetime lease
+are supplied by installation composition; no separate root supervisor is created.
 
 RunBindingStore derives immutable per-run configurations from installed templates,
 preserving actor/scope/image/TLS and recording request/profile/run pins before worker
@@ -26,7 +37,10 @@ directory. BEGIN IMMEDIATE and a unique active-slot constraint serialize competi
 requests; FULL synchronous commits precede external work. Read/transition callbacks
 never perform peer I/O inside the transaction. Canonical request/receipt records
 survive reopening and compare expected revisions. This is not a Runtime database.
-Quiesced backup/restore of this new owned file must be integrated before live release.
+Cold capture now checks every journal record is terminal before copying installation
+state. A copied journal preserves request/receipt identity on reopen. Startup also checks
+SQL index identity/revision/active-slot metadata against canonical receipts. Actual
+installed backup/restore and retained binding configuration composition remain gates.
 
 This module owns one local launch workflow and its private Deployment journal.
 Runtime remains the sole admission/execution authority; Registry owns eligibility,

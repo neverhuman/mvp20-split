@@ -137,6 +137,7 @@ dependencies = [
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-graph-runtime" },
     { name = "amphora-contracts-runtime" },
+    { name = "amphora-contracts-tools" },
 ]
 
 [package.metadata]
@@ -146,6 +147,7 @@ requires-dist = [
     { name = "amphora-contracts-core", editable = "../../contracts/core" },
     { name = "amphora-contracts-graph-runtime", editable = "../../contracts/graph_runtime" },
     { name = "amphora-contracts-runtime", editable = "../../contracts/runtime" },
+    { name = "amphora-contracts-tools", editable = "../../contracts/tools" },
 ]
 
 [[package]]

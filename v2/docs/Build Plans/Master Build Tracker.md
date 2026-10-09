@@ -9,10 +9,10 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: UI-01 primary active; LAN-01 accepted/archived. LR-01 remains conditional; completed plans remain closed.
-- Last refreshed: 2026-10-09 08:15:00 (America/Chicago).
+- Last refreshed: 2026-10-09 08:25:03 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
-- Primary active task: UI-01.05/R1 approved launch implementation, UI-01.06/L2 durable orchestration. Child43.33%, K1=100%, R1=30%, I1=0%; parent credit unchanged pending N2 groups.
+- Primary active task: UI-01.05/R1 approved launch implementation, UI-01.06/L2 supervisor composition and installed recovery. Child43.33%, K1=100%, R1=30%, I1=0%; parent credit unchanged pending N2 groups.
 - Next task: UI-01.05/R1, including remaining N2 gates; I1 includes inventory-fed LLM curation and durable requests for missing capabilities. UI-02 producer/formula handoff follows the schedule; POP-01 follows UI-01/UI-02 acceptance; ML-01 follows POP-01 qualification.
 - Implementation completion: LAN-01=100%, L1/L2/L3=100%; UI-01 active55%, Build68.75%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
 - Blockers/dependencies: candidate structure producer and selection evidence, actual managed-worker launch, and Knowledge-grounded live LLM integration remain unfinished. No calibrated per-node scientific accuracy benchmark exists for the two demo tools. UI-01.01 remains a separate public-contract proposal.

@@ -2,7 +2,7 @@ import http.client
 import pytest
 
 from amphora_deployment.campaign_launch.intent import LaunchError
-from amphora_deployment.campaign_launch.ports import PeerUnavailable
+from amphora_deployment.campaign_launch.ports import PeerRecordMissing, PeerUnavailable
 from amphora_deployment.campaign_launch.runtime_peer import RuntimePeer
 
 
@@ -65,3 +65,11 @@ def test_network_exception_never_leaks_credential_or_request(peer, make_intent):
     connection.getresponse = fail
     with pytest.raises(PeerUnavailable) as error: client.admit(make_intent())
     assert str(error.value) == '' and connection.closed == 1
+
+
+def test_explicit_read_missing_is_distinct_from_auth_failure(peer):
+    client, connection = peer
+    connection.status, connection.body = 404, b'{"reason_code":"draft_unavailable"}'
+    with pytest.raises(PeerRecordMissing): client.read('/v1/definition-drafts/missing', object)
+    connection.status = 403
+    with pytest.raises(LaunchError): client.read('/v1/definition-drafts/missing', object)

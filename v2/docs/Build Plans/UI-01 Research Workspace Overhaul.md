@@ -3,7 +3,7 @@
 ## Canonical tracker
 
 - Status: primary_active; connected demo flow implemented; remaining N2 integration gates explicit.
-- Last refreshed: 2026-10-09 08:15:00 (America/Chicago).
+- Last refreshed: 2026-10-09 08:25:03 (America/Chicago).
 - Baseline: 62ea4966; owner-reported disconnected canvas and navigation review on 2026-10-07.
 - Owner: Studio experience, page models and presentation; service owners retain their contracts and state.
 - Parent: none; priority and mirrors in [Master Build Tracker](Master%20Build%20Tracker.md).

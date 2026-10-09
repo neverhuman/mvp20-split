@@ -83,6 +83,26 @@ def test_startup_adoption_blocks_shutdown_without_starting_original_again():
         slot.detach()
 
 
+@pytest.mark.parametrize('phase', ['intent', 'created'])
+def test_startup_adopts_prepared_original_turn_once_without_enabling_repetition(phase):
+    binding = Binding(phase)
+    slot = ScientificSlot(binding)
+    assert slot.status()['active_turn']
+    try:
+        slot.adopt()
+        assert binding.entered.wait(2)
+        assert binding.launches == 1
+        slot.adopt()
+        assert binding.launches == 1
+        binding.finish.set()
+        wait_for(lambda: slot.status()['state'] == 'quiescent')
+        assert binding.releases == 1
+        slot.require_quiescent()
+    finally:
+        binding.finish.set()
+        slot.detach()
+
+
 def test_uncertain_observation_latches_failure_then_recovery_observes_same_turn():
     binding = Binding()
     binding.fail = True

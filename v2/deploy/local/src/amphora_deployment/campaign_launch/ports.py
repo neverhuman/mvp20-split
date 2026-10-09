@@ -17,6 +17,10 @@ class PreflightRejected(Exception):
     """Definitive local/public preflight denial before admission is attempted."""
 
 
+class PeerRecordMissing(Exception):
+    """Public owner returned a well-formed, explicit not-found observation."""
+
+
 @dataclass(frozen=True, slots=True)
 class WorkerObservation:
     expected: int

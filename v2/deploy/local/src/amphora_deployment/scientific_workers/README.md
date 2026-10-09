@@ -1,5 +1,11 @@
 # Scientific container lifecycle
 
+Deployment0.17/UI-01.06 adds startup adoption of retained intent/created turns.
+Their original first start is still authorized by the persisted intent; recovery
+finishes that turn without enabling repetition. Starting/started/exited turns remain
+observation-only, so an ambiguous Docker start is never sent again. This closes the
+campaign launch drain gap when a controller exits before its first container start.
+
 Deployment0.13 adds the separately named synthetic-objectives-rebuilt recipe for
 BP-09.04: module amphora_synthetic_objectives_rebuilt, worker --config. The original
 recipe remains unchanged. Each pins its own immutable image/configuration; switching
