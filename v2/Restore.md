@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed2026-10-09 10:22:00 America/Chicago. Read FIRST after compaction.
+Refreshed2026-10-09 10:29:00 America/Chicago. Read FIRST after compaction.
 Owner says continue until needed; milestones/commits are not stopping points.
 No subagents/JARVIS; v1 read-only. Preserve untracked ocular PDF/DOCX.
 Do not edit source/tests/module READMEs while verification/installation runs.
@@ -16,10 +16,18 @@ Do not jump to I1 before N2 prerequisites. UI-01.01 public result-index proposal
 remains unapproved; bounded existing-API alternative remains authorized.
 Sequence UI-01 -> UI-02 -> POP-01 -> ML-01; LR-01 paused25%/Build33.33%.
 
-Latest pushed2177adf2 (live launch + coherent observation recovery). Final startup
-ordering correction0.18.3, interruption helper, closeout docs UNCOMMITTED. Review
-git diff/check then commit/push significant verified closeout, continue N2.2.
-No tests currently running. No owner decision required at this checkpoint.
+Latest pushed5e716a9d (startup ordering0.18.3 + launch closeout); prior2177adf2.
+N2.2 discovery: Runtime DraftRevision has no origin; Planning CompilerHistory/
+CompilerJournal retain exact proposal/Research selection/save proof internally,
+but existing HTTP surfaces expose only supervision and topology records. Existing
+FollowupClient verifies selected response captures, not arbitrary draft compiler origin.
+New UI-01.07 Campaign provenance decision.md is concrete proposal,0%implementation:
+Planning-owned GET exact draft/revision/content hash, public origin DTO and private
+indexed/rebuildable lookup linked atomically to accepted compiler save observation.
+Alternatives, permissions, replay/backfill, consumer checks and verification scoped.
+Owner approval QUESTION PENDING via async input, per AGENTS material scope rule.
+Do not implement new public boundary until direction; launch remains usable.
+No tests running. Need commit/push decision/trackers/handoff doc checkpoint.
 
 ## Current live demo
 

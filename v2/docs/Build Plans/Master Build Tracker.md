@@ -9,13 +9,13 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: UI-01 primary active; LAN-01 accepted/archived. LR-01 remains conditional; completed plans remain closed.
-- Last refreshed: 2026-10-09 10:20:00 (America/Chicago).
+- Last refreshed: 2026-10-09 10:29:00 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
-- Primary active task: UI-01/N2.2 exact Planning/Research service provenance. UI-01.06 launch complete100%; UI-01.05 K1/R1=100%, I1=0%, child66.67%. Qualified launch closes N2.5; parent N2=81.25%.
+- Primary active task: UI-01/N2.2 exact Planning/Research provenance; [UI-01.07](UI-01.07%20Campaign%20provenance%20decision.md) awaits owner direction for the missing public read/owned lookup. UI-01.06 launch complete100%; UI-01.05 K1/R1=100%, I1=0%, child66.67%. N2=81.25%; analysis earns no credit.
 - Next task: N2.3 generational comparison/N2.4 provider reasoning, then I1 inventory-fed LLM curation and durable missing-capability requests. UI-02 follows; POP-01 follows UI-01/UI-02 acceptance; ML-01 follows POP-01 qualification.
 - Implementation completion: LAN-01=100%; UI-01 active56.25%, Build70.31%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
-- Blockers/dependencies: Planning/Research provenance, generational comparison/provider reasoning, candidate structure producer and Knowledge-grounded live LLM integration remain unfinished. No calibrated per-node scientific accuracy benchmark exists for the two demo tools. UI-01.01 remains a separate public-contract proposal.
+- Blockers/dependencies: UI-01.07 new Planning-origin read requires owner direction; generational comparison/provider reasoning, candidate structure producer and Knowledge-grounded live LLM integration remain unfinished. No calibrated scientific accuracy benchmark exists for the demo tools. UI-01.01 remains separate.
 - Acceptance posture: actual local/LAN Run, node progress, results and same-run/container recovery pass; Studio0.23.2/337 tests, Deployment0.18.3/502 installed tests. Parent V1 remains outstanding; public result-index proposal remains separate.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 
@@ -40,7 +40,7 @@ Completed plans remain in the [completed index](Completed/README.md).
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
-| 1 | [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md) | Active N2.2; UI-01.05 K1/R1=100%, I1=0% | 56.25% | 70.31% | 0% | Exact Planning/Research provenance before comparison/reasoning and I1 |
+| 1 | [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md) | N2.2 awaiting UI-01.07 decision; K1/R1=100%, I1=0% | 56.25% | 70.31% | 0% | Bounded Planning-origin read/owned lookup approval |
 | 2 | [UI-02 Candidate Structure and Recommendation Views](UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md) | Scheduled next week; P1/P2/P3/P4=0% | 0% | 0% | 0% | Typed retained candidate structures and explicit selection evidence; activation audit |
 | 3 | [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) | Queued; Execution/Experience/Qualification=0% | 0% | 0% | 0% | Knowledge/LLM workflow UI-01/V1 and UI-02/P4 complete |
 | 4 | [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md) | Standalone queued; M1/M2/M3/M4/V1=0% | 0% | 0% | 0% | UI-01/V1 + UI-02/P4, then POP-01 complete; qualified population/tool handoff |
