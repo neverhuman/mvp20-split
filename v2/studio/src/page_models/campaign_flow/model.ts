@@ -6,17 +6,19 @@ import {RequestLane} from '../request_lane.js';
 import {scientificResult,supported,type ScientificResult} from '../scientific_output/model.js';
 import {readCampaignContext,isCampaignContext,type CampaignContext,type MethodBinding} from './context.js';
 import type {SceneNode,SceneEdge} from '../scene.js';
+import {same} from '../../transport/scientific/identity.js';
+import type {LaunchPlanningContext} from '../launch/planning_context.js';
 export type BoundResult=Readonly<{binding:MethodBinding;detail:GraphNodeDetail;artifact:ArtifactRef|null;result:ScientificResult|null;problem:string|null}>;
-type View=Readonly<{phase:'idle'|'loading'|'ready'|'absent'|'limited'|'failed'|'denied';context:CampaignContext|null;results:readonly BoundResult[];snapshot:GraphSnapshotPage['snapshot']|null;message:string|null;scene?:{nodes:readonly SceneNode[];edges:readonly SceneEdge[]}}>; 
+type View=Readonly<{phase:'idle'|'loading'|'ready'|'absent'|'limited'|'failed'|'denied';context:CampaignContext|null;results:readonly BoundResult[];snapshot:GraphSnapshotPage['snapshot']|null;message:string|null;contextRole?:'launch_plan'|'retained_output';scene?:{nodes:readonly SceneNode[];edges:readonly SceneEdge[]}}>;
 /** Bounded existing-owner read composition; never a result index or scientific authority. */
 export class CampaignFlowModel {
  private lane=new RequestLane();private listeners=new Set<()=>void>();private disposed=false;
  private view:View={phase:'idle',context:null,results:[],snapshot:null,message:null};
- constructor(private readonly run:RunContext,private readonly runtime:Pick<ObservationClient,'snapshot'|'detail'|'topology'>,private readonly data:Pick<DataProvenanceClient,'jsonArtifact'>){}
+ constructor(private readonly run:RunContext,private readonly runtime:Pick<ObservationClient,'snapshot'|'detail'|'topology'>,private readonly data:Pick<DataProvenanceClient,'jsonArtifact'>,private readonly planning?:Pick<LaunchPlanningContext,'reference'>){}
  get snapshot(){return this.view;}
  subscribe(listener:()=>void){this.listeners.add(listener);return()=>{this.listeners.delete(listener);};}
  private patch(view:View){if(this.disposed)return;this.view=Object.freeze(view);for(const listener of this.listeners)listener();}
- async refresh(){if(this.disposed)return;const ticket=this.lane.begin();this.patch({phase:'loading',context:null,results:[],snapshot:null,message:null});
+ async refresh(quiet=false){if(this.disposed)return;const ticket=this.lane.begin();if(!quiet||this.view.phase!=='ready')this.patch({phase:'loading',context:null,results:[],snapshot:null,message:null});
   try {
    const page=await this.runtime.snapshot(this.run.run,{},undefined,ticket.signal),window=GraphWindow.open(this.run,{},page);
    if(!ticket.current())return;
@@ -26,9 +28,13 @@ export class CampaignFlowModel {
     if(cutKey(detail.cut)!==cutKey(window.snapshot.cut)||detail.node.activation_id!==node.activation_id)throw Error('Observation changed');details.push(detail);}
    const refs=details.filter(d=>d.node.kind==='finish').flatMap(d=>d.outputs.flatMap(o=>o.artifact&&isCampaignContext(o.artifact)?[o.artifact]:[]));
    if(!ticket.current())return;
-   if(!refs.length){this.patch({phase:'absent',context:null,results:[],snapshot:page.snapshot,message:'No retained planning context is available for this campaign.'});return;}
-   if(refs.length!==1)throw Error('Ambiguous context');
-   const context=readCampaignContext(await this.data.jsonArtifact(refs[0]!,ticket.signal),refs[0]!,this.run),results:BoundResult[]=[];
+   const planned=this.planning?await this.planning.reference(page.snapshot,ticket.signal):null;
+   if(!ticket.current())return;
+   if(refs.length>1||planned&&refs.length&&!same(planned,refs[0]))throw Error('Ambiguous context');
+   const reference=refs[0]??planned;
+   if(!reference){this.patch({phase:'absent',context:null,results:[],snapshot:page.snapshot,message:'No retained planning context is available for this campaign.'});return;}
+   const contextRole=refs.length?'retained_output':'launch_plan';
+   const context=readCampaignContext(await this.data.jsonArtifact(reference,ticket.signal),reference,this.run),results:BoundResult[]=[];
    for(const binding of context.bindings){
     const matches=details.filter(d=>d.node.path.node_id===binding.node_id&&!d.node.path.occurrences?.length);
     if(matches.length!==1||matches[0]!.node.kind!=='invoke')throw Error('Bound execution missing');const detail=matches[0]!;
@@ -46,7 +52,7 @@ export class CampaignFlowModel {
    const edges:SceneEdge[]=context.design.edges.map((e,i)=>({id:'planning:'+i,source:'plan:'+e.source,target:'plan:'+e.target,label:'planning-context'}));
    edges.push(...results.map(r=>({id:'binding:'+r.binding.node_id,source:'plan:'+r.binding.method_id,target:r.detail.node.activation_id,label:'planning-context'})));
    edges.push(...topology.edges.map((e,i)=>({id:'execution:'+i,source:e.source,target:e.target,label:e.route})));
-   if(ticket.current())this.patch({phase:'ready',context,results:Object.freeze(results),snapshot:page.snapshot,message:null,scene:{nodes,edges}});
+   if(ticket.current())this.patch({phase:'ready',context,results:Object.freeze(results),snapshot:page.snapshot,message:null,contextRole,scene:{nodes,edges}});
   }catch(error){if(ticket.current())this.patch({phase:(error as {kind?:string}).kind==='denied'?'denied':'failed',context:null,results:[],snapshot:null,message:'Campaign context could not be verified. Previous results are hidden.'});}
  }
  dispose(){this.disposed=true;this.lane.cancel();this.listeners.clear();}

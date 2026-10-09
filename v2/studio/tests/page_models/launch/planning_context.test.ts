@@ -1,0 +1,19 @@
+import { test } from "node:test";
+import assert from "node:assert/strict";
+import { LaunchPlanningContext } from "../../../src/page_models/launch/planning_context.js";
+import { contextSchema } from "../../../src/page_models/campaign_flow/schema_pin.js";
+import { command, receipt, context } from "../../fixtures/launch.js";
+import { snapshot } from "../../fixtures/observations.js";
+import { revision } from "../../fixtures/authoring.js";
+test("early plan is read from exact admitted draft and checked against Runtime run/plan pins", async () => {
+  const cmd=command(), observed=snapshot().snapshot, draft=revision();
+  draft.scope=context.scope;draft.definition.scope=context.scope;draft.head.content_sha256="b".repeat(64);
+  const artifact={scope:context.scope,artifact_id:"plan",schema_ref:contextSchema,sha256:"f".repeat(64),size_bytes:20,media_type:"application/json"};
+  draft.definition.body.nodes=[{kind:"finish",node_id:"done",outputs:[{port:"campaign_context",source:{kind:"artifact",artifact,representation:"campaign-review-context",unit:"1"}}]}];
+  observed.cut.scope=context.scope;observed.cut.run_id="actual-run";observed.cut.plan_sha256="a".repeat(64);
+  const model=new LaunchPlanningContext(cmd,receipt(cmd,true),{draft:async(id,version)=>{assert.equal(id,"draft");assert.equal(version,1);return draft;}});
+  assert.deepEqual(await model.reference(observed,new AbortController().signal),artifact);
+  await assert.rejects(model.reference({...observed,cut:{...observed.cut,run_id:"foreign"}},new AbortController().signal));
+  draft.head.content_sha256="c".repeat(64);
+  await assert.rejects(model.reference(observed,new AbortController().signal));
+});

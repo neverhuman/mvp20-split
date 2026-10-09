@@ -6,7 +6,7 @@
 .flow-heading h1 { font-size:24px; margin:0 0 6px; }
 .flow-heading p { margin:0; max-width:850px; line-height:1.5; }
 .flow-graph-layout { display:grid; grid-template-columns:minmax(0,1fr) 360px; border:1px solid var(--line); background:white; height:clamp(400px,calc(100dvh - 350px),780px); }
-.flow-canvas { min-width:0; min-height:0; display:grid; grid-template-rows:minmax(0,1fr) auto; }
+.flow-canvas { min-width:0; min-height:0; display:grid; grid-template-columns:minmax(0,1fr); grid-template-rows:minmax(0,1fr) auto; }
 .flow-canvas .graph-region { height:100%; min-height:0; }
 .flow-canvas .task-node.planning-context { background:#f4f6f8; border-style:dashed; }
 .flow-canvas .task-node.evidence-missing { background:#fff4e4; border-color:#956410; }
@@ -15,7 +15,7 @@
 .flow-inspector .evaluation-inspector h2 { font-size:20px; }
 .flow-bound-results,.flow-result { padding:18px; overflow-wrap:anywhere; }
 .flow-bound-results button { display:block; margin:8px 0; }
-.flow-selector { display:flex; align-items:center; gap:12px; padding:10px; border-top:1px solid var(--line); }
+.flow-selector { display:flex; min-width:0; align-items:center; gap:12px; padding:10px; border-top:1px solid var(--line); }
 .flow-selector select { flex:1; min-width:0; }
 .flow-result h2 { font-size:20px; }
 .flow-result dd { margin:4px 0 14px; font-weight:600; }

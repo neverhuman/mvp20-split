@@ -77,3 +77,17 @@ reads and bounded Runtime output reads run only while the feedback surface is
 visible. Parent-mode visibility cannot be bypassed by document visibility events.
 Invalid question/output links are isolated from valid Explore/Execution views.
 No credentials, owner mutations or inferred associations enter these components.
+# Campaign launch integration
+
+UI-01.06 adds a compact Run control on the execution view and a first-campaign
+preparation surface. Page models own public draft/profile reads, validation and
+durable launch recovery. The shell selects the returned run, retains its original
+request across reload and polls receipt GET; it never automatically reposts.
+Explicit retry preserves bytes. Worker readiness and Runtime node progress are
+separate. The graph uses an admitted draft's pinned context before finish output,
+with accurate provenance labels. Existing campaign review stays available.
+
+Built-entry scripted-peer proof: tests/browser/campaign_launch.mjs, desktop1440
+and narrow390, one launch POST across reload, actual browser graph links, running
+to retained-output transition, no horizontal overflow or serious/critical axe
+findings. These are UI fixture results, not live owner/worker qualification.

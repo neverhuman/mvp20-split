@@ -7,7 +7,10 @@ The manifest owns scientific/catalog paths and cannot be combined with their old
 CLI flags. LaunchHost runs bounded reconciliation off the control thread; status
 reports only host running/draining/failed. Normal shutdown waits for reconciliation
 to stop; forced teardown closes acceptance before original handle cleanup. No public
-launch listener is enabled by this composition yet; its HTTP/UI gate is separate.
+launch listener is enabled unless --launch-port is explicitly supplied. That port
+uses a distinct DPAPI launch credential granted only to Gateway, never operator
+control. The listener remains readable after coordinator failure and drains before
+lease release. API/Gateway fixture checks pass; live activation remains L4.
 
 BP-09.03 adds optional [native worker turns](../workers/README.md) under the same
 supervisor writer lease. Worker quiescence gates owner drain/restart/force-stop

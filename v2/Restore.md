@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed2026-10-09 09:07:00 America/Chicago. Read FIRST after compaction.
+Refreshed2026-10-09 09:18:00 America/Chicago. Read FIRST after compaction.
 Owner says continue until needed; milestones/commits are not stopping points.
 No subagents/JARVIS; v1 read-only. Preserve untracked ocular PDF/DOCX.
 Do not edit source/tests/module READMEs while verification runs.
@@ -9,39 +9,47 @@ Current checkpoint:
 - LAN-01 accepted/archived/pushed14df0c8c; K1 pushed e4890ebd.
 - UI01 -> UI02 -> POP01 -> ML01. LR01 remains paused25%overall/33.33%Build.
 - UI01 parent55%, Build68.75%, N2=75 unchanged pending owning delivery groups.
-  UI01.05=51.67%, K1=100%, R1=55%, I1=0. UI01.06=55%, L1/L2=100%,
-  L3=75% (API/Gateway/Studio recovery model complete; integrated RunUI remaining).
+  UI01.05=53.33%, K1=100%, R1=60%, I1=0. UI01.06=60%, L1/L2/L3=100%,
+  L4 actual campaign/restart active0%; L5 installed/local/LAN pending0%.
 - Owner APPROVED bounded Deployment launch API2026-10-09. No new permission needed.
 - Pushed fda9504f contracts/journal;87634f4e coordinator;de4b993e workeradapter;
-  845a6311 supervisor composition/L2 qualification. Current L3 awaiting commit.
+  845a6311 supervisor composition/L2 qualification; f177d1d5 API/recovery pushed.
+  Current Studio Run integration L3 complete, awaiting checkpoint commit.
 - L3 adds Deployment separate loopback launch HTTP/token, --launch-port, Gateway0.4
   explicit whitelist/safeerrors, Studio generated launch DTOs/client/immutable
   LaunchSubmission/localStorage journal/CampaignLaunch recovery model.
-- Verification:123 combined launch/Gateway/integration checks passed before2 added
-  host tests; broader182test run181pass/1existing control socket-reset failure;
-  isolated original control test rerun passes. LaunchAPI oversize probe corrected
-  to send oversized Content-Length without body (server rejects before reading).
-  12 focused Studio launch checks,88 transport checks, TypeScript/generated schemas,
-  production boundaries pass. No testsrunning. No paid calls/livecutover.
-- Next: integrated Run control, draft selection/validation and input selection;
-  active scientific graph context before finish; actual Runtime node polling.
-  Commit this verified checkpoint, then continue L3 UI. L4 actualcampaign/restart,
-  L5 localhost/LANbrowser/installedqualification remain. Do not activate L4 early.
-- Crucial discovery: scientific definition has FIVE graph inputs (4parameter
-  artifacts plus campaign_context), not constants. definition.py finish passes
-  campaign_context from input. Need real input selection, preferably exact prior
-  campaign input refs from public Runtime graph inputs; don't assume inputs=[].
-  DraftFlow must derive early context from original launch admission inputs +
-  verified receipt/run/draft, and label pinned planning input vs retained finish.
-  CampaignFlowModel currently requires finish output and loses context mid-run.
-- LocalWorkspace currently uses gateway-fixed context.run_id; Campaign owns
-  CampaignFlowModel and early-return ConnectedCampaign bypasses LocalDesign.
-  New launch model must sit above Campaign and use returned run; persist through
-  refresh. Do not fabricate Runtime status from Deployment readiness.
-- Studio transport/launch and page_models/launch READMEs/tests own new behavior.
-  Published schema roots request/receipt/profiles. Launch wrapper keeps original
-  Runtime bytes, exact actor/scope/id and profile. Conflict/denial failclosed;
-  restored run hidden until live GET. Deliberate retry onlysamebytes.
+- Verification:335 Studio tests,125 combined Deployment launch/Gateway/integration,
+  schema regeneration/TypeScript pass. Built-browser fixture launch/reload/graph
+  polling/retained output passes1440/390, no serious/critical axe violations:
+  v2/.test-results/launch-browser-20261009e. Narrow nested-grid overflow fixed.
+  Faileda/b/c preserved; dpassed, eaddsready/fit screenshots. FullStudio log:
+  v2/.test-results/launch-ui-20261009.log. No tests running. No live cutover yet.
+- Source versions now Deployment0.18, Studio0.23, Gateway0.4; uv locks synced.
+  Need installed0.18/0.4 for L4. Existing demo stays installedoldGateway/owners.
+- Next L4: prepare bounded launch demo config/new isolated owner installations;
+  extend actual scientific graph as self-contained prepared draft by substituting
+  FIVE existing admission input ArtifactRefs into original graph input references,
+  preserving nodes/edges and scope. Publish via existing public Runtime save/validate.
+  Current knowledge-run-b/runtime.json lacks authoring/draft_registry. Add authoring
+  and admin author/validate, Registry peer narrow token/principal. Existing helpers
+  prepare_local_authoring.py/verify_local_registry_access.py show configuration.
+- Studio LaunchPreparation intentionally disables drafts with unbound inputs; API
+  supports them but first UI only self-contained prepared drafts. No empty-input
+  fallback. LaunchPlanningContext supports constant or original admission input
+  finish context, exact draft pins + Runtime scope/run/plan; labelled launch_plan
+  until exact matching retained finish output. Actual Runtime node polling visible.
+  LocalWorkspace selects returned run above Campaign; localStorage restores original
+  request then GET, never rePOST. Browser fixture proved one POST across refresh.
+- prepare/source: v2/.test-results/knowledge-run-b contains owners/runtime/native/
+  access/admitted-scientific/admitted-catalog/admission.json plus context/artifacts.
+  native.json references runtimeconfig and fixedscopeadmin. Keep all existingpins.
+  v2/dev/serve_scientific_review.py currently owns localhost+backends via BrowserController;
+  serve_lan_review.py separateGateway uses originalvault-only refs, must support new
+  launch-token sidecar before newLANconfig. One lifetimeSupervisor/root: drain own
+  livehelper only after replacementready. Check sourcehelper imports, don'tguesspaths.
+- Audit docs/Audits/UI-01.06_Launch_UI.md; source-adjacent READMEs updated. Existing
+  control HTTP test has intermittent Windows unread-body socket-reset; isolated
+  unchanged test passed. Don't mistake fixture qualification for live campaign proof.
 - Python v2/dev/.venv/Scripts/python.exe; pytest -c v2/dev/pyproject.toml mandatory.
   uv v2/.venv/Scripts/uv.exe; npm.cmd cwdv2/studio. Git safe.directory required.
 - L2 evidence v2/.test-results/launch-installation-20261009b:468 independent

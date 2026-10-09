@@ -29,6 +29,7 @@ export class CampaignLaunch {
   }
   get snapshot() { return this.view; }
   get request() { return this.command?.request; }
+  get submission() { return this.command; }
   get canRequest() { return !this.disposed && (this.view.phase === "idle" || this.view.phase === "ready" &&
     ["released", "rejected"].includes(this.view.receipt?.phase ?? "")); }
   get canReconcile() { return !this.disposed && !!this.command && ["unresolved", "ready"].includes(this.view.phase); }

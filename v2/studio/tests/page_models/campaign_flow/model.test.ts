@@ -22,6 +22,17 @@ test('versioned Knowledge context preserves v1 and rejects schema/body disagreem
  assert.throws(()=>readCampaignContext(next,{...nextRef,schema_ref:{...knowledgeContextSchema,sha256:'0'.repeat(64)}},context));
 });
 function fixture(){const page=snapshot();page.nodes[1]!.kind='finish';const a=detail(1),b=detail(2);b.node=page.nodes[1]!;b.outputs=[{port:'campaign_context',kind:'artifact',item_count:1,missing_count:0,artifact:ref}];return {page,a,b};}
+test('launch-bound plan stays visible before finish, then must match retained output',async()=>{
+ const {page,a,b}=fixture();b.outputs=[];
+ const topology={cut:page.snapshot.cut,next_cursor:null,nodes:[a,b].map(d=>({activation:d.node,child_scope_count:0})),edges:[{source:a.node.activation_id,target:b.node.activation_id,route:'next'}]} as GraphTopologyPage;
+ const model=new CampaignFlowModel(context,{snapshot:async()=>page,detail:async(_r,id)=>id===a.node.activation_id?a:b,topology:async()=>topology},{jsonArtifact:async()=>value},{reference:async()=>ref});
+ await model.refresh();assert.equal(model.snapshot.phase,'ready');assert.equal(model.snapshot.contextRole,'launch_plan');
+ assert.equal(model.snapshot.results[0]!.result,null);assert.equal(model.snapshot.scene!.edges.filter(e=>e.label==='next').length,1);
+ b.outputs=[{port:'campaign_context',kind:'artifact',item_count:1,missing_count:0,artifact:ref}];
+ await model.refresh(true);assert.equal(model.snapshot.contextRole,'retained_output');
+ b.outputs[0]!.artifact={...ref,artifact_id:'different'};
+ await model.refresh(true);assert.equal(model.snapshot.phase,'failed');assert.equal(model.snapshot.context,null);
+});
 test('context publication pin, exact methods, scope and unique bindings are enforced',()=>{
  assert.equal(createHash('sha256').update(readFileSync('src/page_models/campaign_flow/context.schema.json')).digest('hex'),contextSchema.sha256);
  assert.equal(readCampaignContext(value,ref,context).bindings.length,1);

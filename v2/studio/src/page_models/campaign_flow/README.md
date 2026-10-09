@@ -1,8 +1,10 @@
 # Connected campaign flow
 
 Owner UI-01.04. Composes existing Runtime snapshot/detail and protected Data content
-reads for at most32 root activations. A typed context artifact must be retained as
-a finish output. Exact schema/content pins, scope, same observation cut, unambiguous
+reads for at most32 root activations. A typed context artifact is retained as
+a finish output, or supplied by the exact admitted draft through LaunchPlanningContext
+before execution completes. The latter is explicitly launch_plan, not a retained
+output; later finish output must match it exactly. Exact schema/content pins, scope, same observation cut, unambiguous
 method-to-node binding and candidate identity are checked. Larger/paged runs are
 explicitly incomplete; this is not the proposed Runtime-wide result index.
 
@@ -11,6 +13,9 @@ attestation. Planning nodes remain context, never invented Runtime activations.
 Scientific results are independent verified artifacts; uncertainty/absence/denial
 cannot become a score. Cancellation fences all late responses. This module owns
 no execution, ranking, admission, provider call or automatic feedback submission.
+Quiet refresh preserves the mounted graph/review while a fresh coherent observation
+is read; any denied/failed verification hides prior protected context. The entry polls
+only a visible running execution view; Deployment worker readiness is never node status.
 Future notes reference the exact retained plan and are local/unsubmitted.
 
 UI-01.05 adds a bounded CampaignKnowledge value object for a future retained

@@ -9,10 +9,10 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: UI-01 primary active; LAN-01 accepted/archived. LR-01 remains conditional; completed plans remain closed.
-- Last refreshed: 2026-10-09 09:06:00 (America/Chicago).
+- Last refreshed: 2026-10-09 09:17:45 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
-- Primary active task: UI-01.05/R1 approved launch implementation, UI-01.06/L3 bounded API/Gateway/Studio. Child51.67%, K1=100%, R1=55%, I1=0%; parent credit unchanged pending N2 groups.
+- Primary active task: UI-01.05/R1 approved launch implementation, UI-01.06/L4 actual campaign/restart. Child53.33%, K1=100%, R1=60%, I1=0%; parent credit unchanged pending N2 groups.
 - Next task: UI-01.05/R1, including remaining N2 gates; I1 includes inventory-fed LLM curation and durable requests for missing capabilities. UI-02 producer/formula handoff follows the schedule; POP-01 follows UI-01/UI-02 acceptance; ML-01 follows POP-01 qualification.
 - Implementation completion: LAN-01=100%, L1/L2/L3=100%; UI-01 active55%, Build68.75%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
 - Blockers/dependencies: candidate structure producer and selection evidence, actual managed-worker launch, and Knowledge-grounded live LLM integration remain unfinished. No calibrated per-node scientific accuracy benchmark exists for the two demo tools. UI-01.01 remains a separate public-contract proposal.
@@ -40,7 +40,7 @@ Completed plans remain in the [completed index](Completed/README.md).
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
-| 1 | [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md) | Active; UI-01.05 K1=100%, R1=55%, I1=0% | 55% | 68.75% | 0% | Launch API/recovery verified; integrated Run UI active |
+| 1 | [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md) | Active; UI-01.05 K1=100%, R1=60%, I1=0% | 55% | 68.75% | 0% | Run UI fixture verified; actual campaign/restart active |
 | 2 | [UI-02 Candidate Structure and Recommendation Views](UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md) | Scheduled next week; P1/P2/P3/P4=0% | 0% | 0% | 0% | Typed retained candidate structures and explicit selection evidence; activation audit |
 | 3 | [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) | Queued; Execution/Experience/Qualification=0% | 0% | 0% | 0% | Knowledge/LLM workflow UI-01/V1 and UI-02/P4 complete |
 | 4 | [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md) | Standalone queued; M1/M2/M3/M4/V1=0% | 0% | 0% | 0% | UI-01/V1 + UI-02/P4, then POP-01 complete; qualified population/tool handoff |
@@ -171,6 +171,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-09 09:17:45 | UI-01.06=60%, L3 complete100%, L4 active0%; UI-01.05=53.33%, R1=60%. Parent55% unchanged. |335 Studio/125 owner checks; browser launch/reload/pinned plan/node polling at1440/390. [Audit](../Audits/UI-01.06_Launch_UI.md). Actual owners/workers next. |
 | 2026-10-09 09:06:00 | UI-01.06=55%, L3=75%; UI-01.05=51.67%, R1=55%; parent55% unchanged. | API/Gateway and durable Studio recovery model verified; integrated Run UI next.12 focused launch and88 Studio transport checks; actual campaign/browser remain. |
 | 2026-10-09 08:41:18 | UI-01.06 L1/L2 complete;40% overall, L3 active0%. UI-01.05=46.67%, K1=100%, R1=40%, I1=0. Parent55% unchanged. |170 focused source tests;468 independent installed tests; original admission receipt after process death and three Docker adoption variants. [Audit](../Audits/UI-01.06_Launch_Recovery.md). No live Run API/UI yet. |
 | 2026-10-08 21:32:11 | UI-01.05 K1 complete100%; child33.33%, R1/I1=0; parent55% unchanged pending N2 groups. |318 Studio checks; actual source/Knowledge publication, four tool invocations, localhost/LAN traversal and connected-flow regression. [Audit](../Audits/UI-01.05_Knowledge_Integration.md). |
@@ -195,4 +196,3 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-07 06:44:23 | BP-09.03 B1 complete; child25%,Build33.33%,Acceptance0%; parent45%,9/20 gates. | Studio0.13 actual successor carry/lineage/artifact proof, navigation regression and identical rebuilt assets; zero new model calls. |
 | 2026-10-07 06:23:32 | BP-09.03 successor prerequisite; percentages unchanged. | Deployment0.11 independent294tests, dedicated Registry peer read/resolve/replay/denial, original vault preserved; no campaign admission. |
 | 2026-10-07 06:11:09 | BP-09.03/B1.4c75%;child24.48%,parent44.95%. | Three of four same-weight browser checkpoints verified; actual Design validation and edit retention pass. Predecessor carry/successor remains. |
-| 2026-10-07 05:54:33 | BP-09.03/B1.4c partial; percentages unchanged. | Studio0.11 actual graph/evidence navigation and foreign-link rejection pass; preserve binary-source limitation; Design/successor next. |
