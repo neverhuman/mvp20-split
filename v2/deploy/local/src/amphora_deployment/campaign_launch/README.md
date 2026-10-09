@@ -1,9 +1,25 @@
 # Campaign launch lifecycle
 
-UI-01.06 approved2026-10-09. Contract/profile foundation and transactional journal
-implemented;25 scoped contract/domain/journal tests pass. No live Run endpoint or
-worker binding replacement is available yet. Next gate: public-peer coordinator,
-managed local worker adapter and complete fault/recovery matrix, then bounded HTTP.
+UI-01.06 approved2026-10-09. Contract, journal, reconciliation coordinator and public
+Runtime transport implemented;54 scoped checks pass. Next gate: managed worker
+integration/public preflight, backup and installed recovery, then bounded HTTP/UI.
+No live Run endpoint or worker binding replacement is available yet.
+
+LaunchCoordinator performs one bounded step outside journal transactions. Its local
+lock prevents overlapping ticks; the installation lifetime lease excludes competing
+processes. Persist admission intent before HTTP; reconcile the original receipt before
+resubmitting identical bytes. Public run observations must match scope/run/plan.
+Partial worker failure retains admission and enters original-binding reconciliation.
+Only Runtime terminal plus quiescent workers allows release. Invalid peer identities
+latch recovery_required; unavailable peers preserve the phase and request identity.
+RuntimePeer uses fixed loopback routes, bounded bodies, no redirects/proxies and no
+raw errors. Preflight/Workers ports still need production integration.
+
+RunBindingStore derives immutable per-run configurations from installed templates,
+preserving actor/scope/image/TLS and recording request/profile/run pins before worker
+engagement. Reopening verifies exact retained bytes; it never starts containers or
+edits templates. The installation lease owns file writes. Scientific journals remain
+owned by scientific_workers; binding files contain no credentials.
 
 LaunchJournal owns launches.sqlite3 under an operator-selected local Deployment
 directory. BEGIN IMMEDIATE and a unique active-slot constraint serialize competing

@@ -4,8 +4,6 @@ import pytest
 from amphora_deployment.campaign_launch.intent import LaunchError, LaunchIntent
 from amphora_deployment.campaign_launch.profile import LaunchProfilePolicy, profile_digest
 
-from test_intent import body
-
 
 def document():
     value = {'reference': {'profile_id': 'scientific', 'version': '1', 'sha256': '0' * 64},
@@ -17,10 +15,10 @@ def document():
     return value
 
 
-def test_profile_checks_exact_pin_budget_and_tool_image():
+def test_profile_checks_exact_pin_budget_and_tool_image(make_intent):
     value = document()
     policy = LaunchProfilePolicy.from_bytes(json.dumps(value).encode())
-    request = body(); request['payload']['profile'] = value['reference']
+    request = json.loads(make_intent().request.canonical_bytes); request['payload']['profile'] = value['reference']
     policy.check(LaunchIntent.parse(json.dumps(request).encode()))
     assert policy.permits(value['tools'][0])
     assert not policy.permits({**value['tools'][0], 'image_sha256': 'b' * 64})

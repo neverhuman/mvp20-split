@@ -12,7 +12,7 @@ TRANSITIONS = {
     'admission_unresolved': {'admitted_not_engaged', 'rejected', 'recovery_required'},
     'admitted_not_engaged': {'engaging', 'draining', 'recovery_required'},
     'engaging': {'engaged', 'admitted_not_engaged', 'draining', 'recovery_required'},
-    'engaged': {'draining', 'recovery_required'},
+    'engaged': {'admitted_not_engaged', 'draining', 'recovery_required'},
     'draining': {'released', 'recovery_required'},
     'recovery_required': set(), 'rejected': set(), 'released': set(),
 }
@@ -87,6 +87,21 @@ class LaunchState:
         if self.phase not in {'admitted_not_engaged', 'engaging', 'engaged', 'draining'} or type(expected) is not int or type(ready) is not int or not 0 <= ready <= expected <= 64:
             raise LaunchError('launch_readiness_invalid')
         return self._changed(now, expected_workers=expected, ready_workers=ready)
+
+    def note(self, reason: str, now: datetime):
+        if self.terminal:
+            raise LaunchError('launch_transition_invalid')
+        return self if self.reason == reason else self._changed(now, reason=reason)
+
+    def worker_observation(self, observation, now: datetime, *, phase=None, reason=None):
+        """Apply one worker observation as one journal revision, including its phase."""
+        if (observation.expected == self.expected_workers and observation.ready == self.ready_workers
+                and (phase is None or phase == self.phase) and reason == self.reason):
+            return self
+        updated = self.readiness(observation.expected, observation.ready, now)
+        if phase is not None and phase != self.phase:
+            updated = updated.move(phase, now, reason)
+        return replace(updated, revision=self.revision + 1, reason=reason)
 
     def receipt(self) -> LaunchReceipt:
         return LaunchReceipt(identity=self.intent.request.identity, request_sha256=self.intent.request.sha256,

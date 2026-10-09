@@ -1,4 +1,8 @@
 {
+  "deployment-registry-access": {
+    "tests": "deploy/local/tests/registry_access",
+    "coverage_sources": ["deploy/local/src/amphora_deployment/registry_access"]
+  },
   "contracts-campaign-launch": {
     "tests": "contracts/campaign_launch/tests",
     "coverage_sources": ["contracts/campaign_launch/src/amphora_contracts_campaign_launch"]

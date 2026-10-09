@@ -685,6 +685,7 @@ dependencies = [
     { name = "amphora-contracts-campaign-launch" },
     { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-graph-runtime" },
     { name = "amphora-contracts-runtime" },
 ]
 
@@ -693,6 +694,7 @@ requires-dist = [
     { name = "amphora-contracts-campaign-launch", editable = "../contracts/campaign_launch" },
     { name = "amphora-contracts-commands", editable = "../contracts/commands" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
+    { name = "amphora-contracts-graph-runtime", editable = "../contracts/graph_runtime" },
     { name = "amphora-contracts-runtime", editable = "../contracts/runtime" },
 ]
 
