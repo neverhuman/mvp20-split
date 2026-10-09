@@ -9,11 +9,11 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: next-week UI-01/UI-02 implementation schedule set; planning only. LAN demo access delivered; LR-01 remains conditional. BP-01 through BP-09 and SQ-01 remain closed.
-- Last refreshed: 2026-10-08 18:42:19 (America/Chicago).
+- Last refreshed: 2026-10-08 19:07:02 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
 - Primary active task: planning the four owner targets; next implementation task UI-01.05/K1 actual Knowledge connection, after bounded activation review. LAN-01 remains implementation100%, L1/L2/L3=100; owner reported access working.
-- Next task: UI-01.05/K1 then R1, including remaining N2 gates; I1 follows N2. UI-02 producer/formula handoff follows the dated schedule below.
+- Next task: UI-01.05/K1 then R1, including remaining N2 gates; I1 includes inventory-fed LLM curation and durable requests for missing capabilities. UI-02 producer/formula handoff follows the schedule; ML-01 starts only after end-to-end acceptance.
 - Implementation completion: LAN-01=100%, L1/L2/L3=100%; UI-01 scheduled55%, Build68.75%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
 - Blockers/dependencies: candidate structure producer and selection evidence, actual managed-worker launch, and Knowledge-grounded live LLM integration remain unfinished. No calibrated per-node scientific accuracy benchmark exists for the two demo tools. UI-01.01 remains a separate public-contract proposal.
 - Acceptance posture: connected plan/execution/comparison/next-review actual served walkthrough passed; Studio0.21,314 tests. New-run browser action and V1 remain outstanding. Public result-index proposal remains separate.
@@ -43,8 +43,9 @@ Completed plans remain in the [completed index](Completed/README.md).
 | 0 | [LAN-01 Local Network Demo Access](LAN-01%20Local%20Network%20Demo%20Access.md) | Implemented; owner reports access working | 100% | 100% | Remote pending | Owner LAN priority/firewall rule |
 | 1 | [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md) | Scheduled primary; UI-01.05 K1/R1/I1=0% | 55% | 68.75% | 0% | Owner direction; bounded activation review recorded |
 | 2 | [UI-02 Candidate Structure and Recommendation Views](UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md) | Scheduled next week; P1/P2/P3/P4=0% | 0% | 0% | 0% | Typed retained candidate structures and explicit selection evidence; activation audit |
-| 3 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Paused; pull R2 forward for blocking run failure | 25% | 33.33% | 0% | UI priority released or UI-01.05/R1 blocked; same-host diagnostic window |
-| 4 | [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md) | Queued; pull forward if it blocks UI-01 | 0% | 0% | 0% | Bounded read diagnostic and activation review |
+| 3 | [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md) | Standalone queued; M1/M2/M3/M4/V1=0% | 0% | 0% | 0% | UI-01/V1 + UI-02/P4 end-to-end acceptance, including inventory curation/new-capability request |
+| 4 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Paused; pull R2 forward for blocking run failure | 25% | 33.33% | 0% | UI priority released or UI-01.05/R1 blocked; same-host diagnostic window |
+| 5 | [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md) | Queued; pull forward if it blocks UI-01 | 0% | 0% | 0% | Bounded read diagnostic and activation review |
 
 The owning tracker controls exact task/percentages; MBT controls priority and
 mirrors current state. Complete each bounded gate before dependent implementation.
@@ -62,9 +63,9 @@ Track implementation in owning plans, not as a second percentage in this schedul
 |---|---|---|
 | Mon2026-10-12 | UI-01.05/K1 -> UI-01 N2.2/N2.4; then UI-02/P1 producer inventory | Real Knowledge owner available in demo; inspect claims/evidence and traverse campaign/domain links. Identify actual structure/formula producer contracts and missing pieces. |
 | Tue2026-10-13 | UI-01.05/R1 -> N2.5 and remaining N2 comparison gates | Run starts a new campaign through Runtime/managed workers; nodes visibly transition, parallel work/failure/retry and resulting artifacts remain traceable. Resolve blocking LR-01 faults rather than hide them. |
-| Wed2026-10-14 | UI-01.05/I1 -> N3, after N2; UI-02/P1/P2 handoff | Real LLM consumes pinned Knowledge and proposes a validated graph diff for the next campaign. Preserve active/predecessor history. Complete structure/formula producer and explicit selection-or-unranked evidence handoff. |
+| Wed2026-10-14 | UI-01.05/I1 -> N3, after N2; UI-02/P1/P2 handoff | Real LLM consumes pinned Knowledge and eligible node inventory, proposes a validated graph diff, and retains an explicit request for a missing capability. Preserve active/predecessor history. Complete structure/formula producer and explicit selection-or-unranked evidence handoff. |
 | Thu2026-10-15 | UI-02/P3 after P1/P2 | Results opens the exact candidate's chemical formula and2D molecular/repeat-unit view, properties, provenance and recommendation rationale or explicit unranked status. |
-| Fri2026-10-16 | UI-02/P4 and UI-01/V1, after owning gates | Actual browser question -> Knowledge -> LLM graph proposal -> new Run/live nodes -> formula/structure -> next iteration; isolated module tests, scoped audits and localhost/LAN regression. |
+| Fri2026-10-16 | UI-02/P4 and UI-01/V1, after owning gates | Actual browser question -> Knowledge + node inventory -> LLM graph curation/new-capability request -> new Run/live nodes -> formula/structure -> next iteration; isolated module tests, scoped audits and localhost/LAN regression. |
 
 UI-01.05 refines existing unfinished N2/N3 scope; UI-02/P1 explicitly owns its
 scientific representation/formula producer dependency. No plan-writing credit,
@@ -78,6 +79,23 @@ has4/4 accepted scientific invocations (Hansen2/2, Arrhenius2/2), not100% accura
 No experimental accuracy percentage is available. Show Not scientifically
 benchmarked until a relevant versioned dataset, method, sample count and error/
 classification metric support a claim. See UI-01.05 for evidence and metric rules.
+
+## Post-demo scientific implementation priority
+
+[ML-01](ML-01%20Inherited%20Scientific%20Model%20Integration.md) is the standalone
+plan for inherited ML pipeline recovery, corrected benchmark reproduction,
+independent graph-tool packaging and Registry/Planning integration. Overall0%,
+Build0%, Verification0%; M1/M2/M3/M4/V1=0%. It receives focused implementation only
+after UI-01/V1 and UI-02/P4 prove the complete workflow. The gate follows actual
+acceptance, not the date of the demo or a calendar-week boundary.
+
+The generic node-inventory-to-LLM mechanism and durable requests for unavailable
+capabilities belong to UI-01.05/I1 **before** ML-01. Adding an existing tool instance
+and requesting a new capability are separate operations; a request does not publish
+an executable node. ML-01 supplies qualified scientific releases to this established
+path. Keep minimal UI-02 structure/formula support in the demo scope; do not pull
+broad model migration forward. LR-01/UI-R01 may interrupt only for blocking faults,
+with a named return point. Existing completed-plan credit remains unchanged.
 
 ## Cross-Plan Milestones
 

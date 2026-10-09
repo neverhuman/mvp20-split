@@ -1,5 +1,12 @@
 # Restore
 
+Sequence checkpoint2026-10-08 19:07:02: owner wants the full end-to-end demo
+before focusing on inherited ML node implementations. Standalone ML-01 queued0%,
+M1/M2/M3/M4/V1=0%; gated on UI-01/V1 and UI-02/P4. UI-01.05/I1 now explicitly
+requires Registry inventory -> LLM graph curation and a durable missing-capability
+request visible in UI. Existing-tool instances and new-tool requests are distinct;
+requests do not create executable releases. No ML migration or app changes started.
+
 Schedule checkpoint2026-10-08 18:42:19: owner requested next-week targets, planning
 only. MBT dates2026-10-12 through2026-10-16: Mon Knowledge, Tue Run/live nodes,
 Wed Knowledge-grounded LLM successor graph, Thu formula/2D structure, Fri integrated

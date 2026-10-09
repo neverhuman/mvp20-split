@@ -1,5 +1,7 @@
 # Build Plans
 
+- [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md): standalone queued0%; starts after the UI-01/UI-02 end-to-end demo gate, including inventory-fed LLM curation and new-capability requests.
+
 - [UI-02 Candidate Structure and Recommendation Views](UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md): scheduled next week0%; chemical formula and2D structure/repeat-unit inspection, composition, properties, synthesis evidence and recommendation rationale. 3D modeling is separate follow-on scope.
 
 [Master Build Tracker](Master%20Build%20Tracker.md) selects the primary plan and mirrors its canonical overall/per-phase completion. Owning plans define task position, tests and phase gates.
