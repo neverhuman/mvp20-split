@@ -1,5 +1,22 @@
 # Scientific execution demo composition
 
+UI-01.05 adds an optional source-backed Knowledge association before admission.
+build_context_schema.py derives the additive demo.campaign-knowledge-context schema
+from pinned public Knowledge definitions; existing artifact version fields stay1.
+knowledge_records.py publishes authored illustrative text/plain, rights, source and
+conversion trace through Data, then six concepts/five hypotheses through Knowledge.
+The source is an explicit engineering description, not an LLM extraction or measured
+science. knowledge_configuration.py composes public scoped owner configs. No private
+state reads/writes. A new campaign retains exact revision and method/entity links as
+planning_context; tools still consume parameter artifacts. Existing campaigns cannot
+be relabeled with later context. Failed publications/campaign evidence remain retained.
+
+Entry helpers: prepare_scientific_knowledge.py prepares before starting owners and
+publishes only with --publish; run_scientific_demo.py --knowledge-records selects
+that exact scope/context; verify_knowledge_review.py qualifies served traversal.
+Single supervisor ownership requires draining the previous viewer before process
+replacement. Preserve original manifests/assets for rollback and restore LAN access.
+
 UI-01.04 adds an exact reviewed context input and finish output. context.schema.json
 is an internal demonstration artifact publication, not a new Runtime API. The full
 review-design.json and explicit method/candidate/tool bindings are admitted and

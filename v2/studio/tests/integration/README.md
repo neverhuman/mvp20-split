@@ -1,5 +1,11 @@
 # Actual-owner Studio acceptance
 
+UI-01.05 knowledge_review.mjs exercises the served campaign's retained Knowledge
+revision without an explore URL pin: connected neighborhood, qualified claim,
+verified text source and conversion history, return to results, desktop/narrow
+accessibility and overflow. No route mocks or owner mutation commands are used.
+dev/verify_knowledge_review.py supplies only the local launcher key via environment.
+
 `local_demo.mjs` inspects an actual retained BP-09 campaign through the deployed local
 gateway and five owner APIs. It owns desktop/narrow execution and keyboard checkpoint
 reasoning, selected abstention, required context, exact Research/Knowledge readback,

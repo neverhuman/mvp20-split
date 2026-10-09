@@ -34,11 +34,11 @@ import './style.css';
 function Campaign({ context, search }: { context: WorkspaceContext & { run_id: string }; search: string }) {
   const [mode, setMode] = useState<WorkflowView>(() => workflowView(search));
   const [reviewed,setReviewed]=useState(workflowView(search)==='evaluation');
-  const [explored, setExplored] = useState(workflowView(search) === 'knowledge');
+  const [explored, setExplored] = useState(['knowledge','domain'].includes(workflowView(search)));
   const [designed, setDesigned] = useState(workflowView(search) === 'design');
-  useEffect(() => { const next = workflowView(search); setMode(next); if(next==='evaluation')setReviewed(true); if (next === 'knowledge') setExplored(true); if (next === 'design') setDesigned(true); }, [search]);
+  useEffect(() => { const next = workflowView(search); setMode(next); if(next==='evaluation')setReviewed(true); if (next === 'knowledge' || next === 'domain') setExplored(true); if (next === 'design') setDesigned(true); }, [search]);
   const navigate = (next: WorkflowView) => {
-    setMode(next); if(next==='evaluation')setReviewed(true); if (next === 'knowledge') setExplored(true); if (next === 'design') setDesigned(true);
+    setMode(next); if(next==='evaluation')setReviewed(true); if (next === 'knowledge' || next === 'domain') setExplored(true); if (next === 'design') setDesigned(true);
     history.replaceState(null, '', location.pathname + location.search + '#' + workflowLink(search, next));
   };
   const selection = useMemo(() => new WorkspaceSelection(search, context.scope), [search, context.scope.tenant_id, context.scope.project_id]);
@@ -52,8 +52,9 @@ function Campaign({ context, search }: { context: WorkspaceContext & { run_id: s
   const flow=useMemo(()=>new CampaignFlowModel({scope:context.scope,run:context.run_id},new ObservationClient(),new DataProvenanceClient()),[context.scope.tenant_id,context.scope.project_id,context.run_id]);
   const subscribeFlow=useCallback((listener:()=>void)=>flow.subscribe(listener),[flow]);
   const flowView=useSyncExternalStore(subscribeFlow,()=>flow.snapshot);
+  const campaignSelection=useMemo(()=>flowView.context?.knowledge?WorkspaceSelection.fromPins(flowView.context.knowledge.pins,context.scope):selection,[flowView.context,selection,context.scope.tenant_id,context.scope.project_id]);
   useEffect(()=>{void flow.refresh();return()=>flow.dispose();},[flow]);
-  if(flowView.phase==='ready')return <ConnectedCampaign view={flowView} mode={mode} navigate={navigate} refresh={()=>void flow.refresh()} technical={<MonitorWorkspace {...owners} compact active={mode==='execution'} context={{scope:context.scope,run:context.run_id}} synthetic={context.synthetic}/>} />;
+if(flowView.phase==='ready')return <ConnectedCampaign view={flowView} mode={mode} navigate={navigate} refresh={()=>void flow.refresh()} knowledge={explored?<LocalKnowledge embedded selection={campaignSelection} feedbackSelection={feedbackSelection} outputSelection={outputSelection} campaign={{scope:context.scope,run:context.run_id}} active={mode==='domain'} synthetic={context.synthetic}/>:null} technical={<MonitorWorkspace {...owners} compact active={mode==='execution'} context={{scope:context.scope,run:context.run_id}} synthetic={context.synthetic}/>} />;
   if(['loading','idle','denied','failed'].includes(flowView.phase))return <main className="local-entry"><h1>{flowView.phase==='loading'||flowView.phase==='idle'?'Opening the retained campaign':'Campaign context unavailable'}</h1><p>{flowView.message??'Checking the plan and scientific evidence.'}</p>{flowView.phase!=='loading'&&flowView.phase!=='idle'&&<button onClick={()=>void flow.refresh()}>Retry campaign read</button>}</main>;
   return <div className="research-shell">
     <header className="local-workspace-bar"><strong>AMPHORA</strong><span>Research workspace</span><span className="local-access">Local access</span></header>
@@ -68,7 +69,7 @@ function Campaign({ context, search }: { context: WorkspaceContext & { run_id: s
     {reviewed && <div hidden={mode !== 'evaluation'}><EvaluationReviewPanel synthetic={context.synthetic} /></div>}
     <div hidden={mode !== 'execution'}><MonitorWorkspace {...owners} compact active={mode === 'execution'} context={{ scope:context.scope, run:context.run_id }} synthetic={context.synthetic} /></div>
     {designed && <div hidden={mode !== 'design'}><LocalDesign model={owners.library} synthetic={context.synthetic} /></div>}
-    {explored && <div hidden={mode !== 'knowledge'}><LocalKnowledge selection={selection} feedbackSelection={feedbackSelection} outputSelection={outputSelection} campaign={{ scope: context.scope, run: context.run_id }} active={mode === 'knowledge'} synthetic={context.synthetic} /></div>}
+    {explored && <div hidden={mode !== 'knowledge' && mode !== 'domain'}><LocalKnowledge selection={selection} feedbackSelection={feedbackSelection} outputSelection={outputSelection} campaign={{ scope: context.scope, run: context.run_id }} active={mode === 'knowledge' || mode === 'domain'} synthetic={context.synthetic} /></div>}
   </div>;
 }
 

@@ -14,9 +14,9 @@ import type { RunContext } from '../../page_models/graph_window.js';
 import { QualityLinkModel } from '../../page_models/quality/runtime_link.js';
 import { ObservationClient } from '../../transport/observations.js';
 
-export function LocalKnowledge({ selection, feedbackSelection, outputSelection, campaign, active, synthetic }: {
+export function LocalKnowledge({ selection, feedbackSelection, outputSelection, campaign, active, synthetic, embedded=false }: {
   selection: WorkspaceSelection; feedbackSelection?: WorkspaceFeedbackSelection; outputSelection: WorkspaceQualityOutputSelection;
-  campaign: RunContext; active: boolean; synthetic: boolean;
+  campaign: RunContext; active: boolean; synthetic: boolean; embedded?:boolean;
 }) {
   const model = useMemo(() => new ExploreModel({ knowledge:new KnowledgeClient(), research:new ResearchClient(), records:new ResearchRecordClient(), data:new DataProvenanceClient() }), [selection]);
   const feedback = useMemo(() => new FeedbackModel({ research:new ResearchRecordClient(), feedback:new FeedbackClient() }), [feedbackSelection]);
@@ -33,5 +33,5 @@ export function LocalKnowledge({ selection, feedbackSelection, outputSelection, 
   return <>{!selection.pins?.experiment && <p className="selected-results-notice" role="status">No experiment or laboratory results are selected in this workspace link. The domain graph and selected research evidence remain available. Execution outputs can be inspected from their campaign steps.</p>}
     {feedbackSelection?.phase === 'invalid' && <p role="status">The selected question link is invalid for this workspace. Other research views remain available.</p>}
     {outputSelection.phase === 'invalid' && <p role="status">The selected execution output link is invalid. No affected consumer has been inferred.</p>}
-    <ExploreWorkspace model={model} active={active} synthetic={synthetic} qualityLink={qualityLink} {...(feedbackSelection?.phase === 'ready' ? { feedback } : {})} /></>;
+    <ExploreWorkspace model={model} active={active} synthetic={synthetic} embedded={embedded} qualityLink={qualityLink} {...(feedbackSelection?.phase === 'ready' ? { feedback } : {})} /></>;
 }

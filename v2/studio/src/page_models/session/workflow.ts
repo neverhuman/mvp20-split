@@ -1,5 +1,5 @@
-export type WorkflowView = 'question' | 'evaluation' | 'execution' | 'knowledge' | 'design';
-const views: readonly string[] = ['question', 'evaluation', 'execution', 'knowledge', 'design'];
+export type WorkflowView = 'question' | 'evaluation' | 'execution' | 'knowledge' | 'domain' | 'design';
+const views: readonly string[] = ['question', 'evaluation', 'execution', 'knowledge', 'domain', 'design'];
 
 /** Navigation is a bounded hint. It neither selects owner records nor grants access. */
 export function workflowView(search: string): WorkflowView {

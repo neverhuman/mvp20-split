@@ -1,5 +1,13 @@
 # Local workspace entry
 
+UI-01.05/K1 candidate source adds an explicit domain view for the existing
+LocalKnowledge explorer inside ConnectedCampaign. Historical view=knowledge
+remains Results for this retained flow. Verified retained Knowledge pins take
+precedence over exploratory URL selections. Legacy campaigns without an association
+can still explore explicit scoped URL pins, with an exploratory-context notice.
+The retained association is planning_context, not proof of tool consumption.
+Missing pins remain explicit. Actual served Knowledge/browser evidence belongs to K1.
+
 Studio0.21 first attempts bounded discovery of an exact retained campaign context.
 A recognized context drives ConnectedCampaign across all five views. No context
 falls back to existing owner-backed perspectives; denial/verification failure hides

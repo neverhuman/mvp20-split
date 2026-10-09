@@ -1,5 +1,10 @@
 # Scientific Explore workspace
 
+UI-01.05 adds embedded presentation for the connected campaign's distinct Knowledge
+tab. Embedded mode omits the duplicate app header and uses a section beneath the
+owning main landmark; the same ExploreModel remains the sole scientific read owner.
+No alternate source viewer or relaxed integrity/media checks are introduced.
+
 BP-06.06/B2.02-.04, Studio0.7. Internal researcher task: search a pinned domain graph, inspect a qualified claim and follow exact source/conversion evidence; switch to the selected experiment's specimens and reported properties. The host supplies and disposes ExploreModel with explicit pins. No global project picker, deployed gateway, scientific mutation or live campaign intervention is implemented here.
 
 `workspace.tsx` owns visible view choice and document/view lifecycle; hidden region requests are cancelled and cleared. It subscribes to one model snapshot and never fetches. `domain.tsx` uses bounded search/neighborhood pages, a reusable GraphCanvas, keyboard concept lists and explicit assertion links. The pure Explore scene projection draws only owner-declared edges between exact returned entity revisions; panning/layout never changes scientific topology. Counts describe omissions from the loaded graph window, not viewport clipping.

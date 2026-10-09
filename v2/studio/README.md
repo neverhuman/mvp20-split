@@ -1,5 +1,13 @@
 # Graph Studio
 
+Source release **0.22.0** adds a distinct Knowledge view to the connected campaign,
+selected from an exact retained planning association. Historical Results links and
+context artifacts remain compatible. The embedded explorer reads real Knowledge
+and Data owners for connected concepts, qualified claims and verified source and
+conversion evidence. This does not add a scientific-validation claim, live LLM
+extraction, browser campaign launch or automatic ingestion of claims by tools.
+UI-01.05/K1 owns actual served qualification and the additive demo artifact schema.
+
 Source release **0.21.0** connects a retained campaign-plan artifact to a five-view
 demonstration: question, evaluation plan, combined plan/execution inspection,
 candidate evidence comparison and future-campaign review export. Planning context

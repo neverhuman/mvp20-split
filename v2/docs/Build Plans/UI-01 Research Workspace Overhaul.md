@@ -3,15 +3,15 @@
 ## Canonical tracker
 
 - Status: primary_active; connected demo flow implemented; remaining N2 integration gates explicit.
-- Last refreshed: 2026-10-08 20:19:11 (America/Chicago).
+- Last refreshed: 2026-10-08 21:32:11 (America/Chicago).
 - Baseline: 62ea4966; owner-reported disconnected canvas and navigation review on 2026-10-07.
 - Owner: Studio experience, page models and presentation; service owners retain their contracts and state.
 - Parent: none; priority and mirrors in [Master Build Tracker](Master%20Build%20Tracker.md).
 - Overall implementation: **55%**; Build68.75%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
 - Design readiness: G0 complete; ELK directed layout and bounded topology ownership implemented.
 - Demonstrated behavior: connected graphs and question-first navigation verified against retained owner records; result-first comparison and full replacement acceptance remain.
-- Current phase/task: UI-01.05/K1 activation and real Knowledge integration; UI-01.04 remains delivered.
-- Next task: UI-01.05/K1 Knowledge connection, then R1 launch/live nodes and remaining N2 gates; I1 LLM successor loop after N2.
+- Current phase/task: UI-01.05/K1 complete100%; R1 launch/live-node boundary review active. UI-01.04 remains delivered.
+- Next task: UI-01.05/R1 launch/live nodes and remaining N2 gates; I1 LLM successor loop after N2.
 - Blocker: none for the delivered local SME review. Actual scientific proposal binding remains unfinished; UI-01.01 applies only to later result discovery.
 - Human acceptance: owner feedback is part of visual review; no new routine approval gates for campaign execution.
 - Active exception: owner explicitly reprioritized UI over worker diagnostics; LR-01 remains paused at25%, Build33.33%, Acceptance0%, with R2 receipt diagnosis preserved.
@@ -35,7 +35,7 @@ do not create empty child plans or count plan-writing as delivered functionality
 Owner schedule2026-10-08: target the week2026-10-12 through2026-10-16 for actual
 Knowledge UI, browser-started campaigns with live per-node progress, and LLM graph
 revision grounded in Knowledge. [UI-01.05](UI-01.05%20Knowledge%20Run%20and%20LLM%20Integration.md)
-decomposes this existing unfinished N2/N3 scope: K1/R1/I1=0%. N2.2 owns service
+decomposes this existing unfinished N2/N3 scope: K1=100%, R1/I1=0%. N2.2 owns service
 provenance, N2.4 Knowledge/reasoning and honest node-quality evidence, N2.5 admission/
 worker engagement, and N3 the between-campaign LLM/successor loop. Complete all N2
 gates, including remaining comparison, before dependent N3 work. V1 verifies the
@@ -260,7 +260,7 @@ explicit scope/denominator update after the owner decision; they earn no credit 
 | N2.1 screen hierarchy | 100% | Single shell, compact execution status/actions, secondary technical controls, truthful absent-result notice |
 | N2.2 participating capabilities and result discovery | 50% | Retained plan/bounded discovery complete; exact Planning/Research service provenance remains |
 | N2.3 typed results and comparison | 50% | Candidate scientific comparison complete; generational comparison remains |
-| N2.4 evidence and reasoning traversal | 50% | Plan-method-result-input traversal complete; integrated domain/provider reasoning remains |
+| N2.4 evidence and reasoning traversal | 50% | First group complete; second group now has actual domain/source traversal via K1, but provider reasoning remains before group credit |
 | N2.5 actual-owner acceptance | 50% | Retained five-view walkthrough complete; browser admission/worker engagement and full replacement qualification remain |
 
 Each remaining N2 task has two equally scoped delivery groups named in its row.

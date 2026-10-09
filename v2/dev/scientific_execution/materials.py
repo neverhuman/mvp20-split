@@ -7,7 +7,7 @@ from check_boundaries import ROOT
 from local_numeric_configuration import write
 from .definition import definition
 
-def prepare_materials(images,output,scope,registry_python):
+def prepare_materials(images,output,scope,registry_python,knowledge=None):
     evidence=json.loads((images/'evidence.json').read_bytes());assert evidence['status']=='passed'
     output.mkdir(parents=True,exist_ok=False)
     releases={};locks={};schemas=[];profiles=[];entries=[]
@@ -24,9 +24,9 @@ def prepare_materials(images,output,scope,registry_python):
             ref=descriptor['tool']['inputs' if kind=='input' else 'outputs'][0]['schema_ref']
             schemas.append({'schema_ref':ref,'path':path.name});profiles.append({**ref,'media_type':'application/json','schema_path':path.name})
         (output/(stage+'-parameters.json')).write_bytes((origin/'parameters.json').read_bytes())
-    schema=(Path(__file__).parent/'context.schema.json').read_bytes()
+    schema=(Path(__file__).parent/('context.v2.schema.json' if knowledge else 'context.schema.json')).read_bytes()
     schema_path=output/'context.schema.json';schema_path.write_bytes(schema)
-    ref={'schema_id':'demo.campaign-context','version':'1','sha256':hashlib.sha256(schema).hexdigest()}
+    ref={'schema_id':'demo.campaign-knowledge-context' if knowledge else 'demo.campaign-context','version':'1','sha256':hashlib.sha256(schema).hexdigest()}
     schemas.append({'schema_ref':ref,'path':schema_path.name})
     profiles.append({**ref,'media_type':'application/json','schema_path':schema_path.name})
     design=json.loads((Path(__file__).parent/'review-design.json').read_bytes())
@@ -35,6 +35,10 @@ def prepare_materials(images,output,scope,registry_python):
             'node_id':candidate+'_'+stage,'candidate_id':'fixture-polymer-'+letter,'tool':descriptor['tool']['binding']}
             for candidate,letter in [('candidate_a','A'),('candidate_b','B')] for stage,descriptor in releases.items()],
         'limitations':['Synthetic parameter fixtures, not generated molecular structures.','Codex-authored plan, not runtime LLM output.','Synthesis evidence and process targets are missing. No combined ranking is defined.']}
+    if knowledge:
+        assert knowledge['revision']['graph']['scope']==scope
+        context.update(format='amphora.demo-campaign-context.v2',knowledge=knowledge)
+        context['limitations'].append('Knowledge is retained planning context; numerical tools consume explicit parameter artifacts, not domain claims.')
     body=(json.dumps(context,sort_keys=True,separators=(',',':'))+'\n').encode()
     (output/'campaign-context.json').write_bytes(body)
     value_type={'kind':'artifact','media_type':'application/json','schema_ref':ref,'representation':'campaign-review-context','unit':'1'}

@@ -1,0 +1,9 @@
+Synthetic polymer screening demonstration: planning context, not scientific validation.
+
+The Hansen solvency screen requires supplied polymer and solvent Hansen parameters and a polymer interaction radius. The demonstration computes a relative energy distance; it does not establish measured compatibility or bioavailability.
+
+The Arrhenius viscosity adjustment requires a supplied reference viscosity, activation energy, reference temperature and target temperature. The demonstration computes a temperature adjustment; it does not establish process suitability or a polymer-specific fitted model.
+
+Both methods belong to the demonstration's proposed evaluation plan. No synthesis route, laboratory confirmation, calibrated uncertainty, combined ranking or generated molecular structure has been supplied. These are unresolved evidence needs, not successful evaluations.
+
+The graph is manually authored engineering context for these two tools. It is not an LLM extraction or an experimentally supported scientific knowledge base. A campaign that retains it records planning context only; the numerical tools still consume their explicit parameter artifacts.

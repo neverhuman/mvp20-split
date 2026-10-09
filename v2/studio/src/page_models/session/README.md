@@ -1,5 +1,9 @@
 # Workspace session model
 
+Workflow hints distinguish domain (Knowledge graph) from historical knowledge
+(Results in ConnectedCampaign). Switching views retains exact scoped selection
+parameters and removes launch credentials; it never creates scientific provenance.
+
 One owner for entry loading, session context, denied and failed states. Refreshes
 clear prior context, and generation fencing prevents late responses from restoring
 stale authority. This is browser presentation state, not authentication authority.

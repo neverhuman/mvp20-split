@@ -5,11 +5,22 @@ import {readFileSync} from 'node:fs';
 import {CampaignFlowModel} from '../../../src/page_models/campaign_flow/model.js';
 import {readCampaignContext} from '../../../src/page_models/campaign_flow/context.js';
 import {contextSchema} from '../../../src/page_models/campaign_flow/schema_pin.js';
+import {knowledgeContextSchema} from '../../../src/page_models/campaign_flow/knowledge_schema_pin.js';
 import {polymerProposal} from '../../../src/page_models/evaluation_review/polymer_proposal.js';
 import {snapshot,detail,context,scope,deferred} from '../../fixtures/observations.js';
 import type {ArtifactRef,GraphTopologyPage} from '../../../src/contracts/observations.js';
 const ref:ArtifactRef={scope,artifact_id:'review-plan',schema_ref:contextSchema,sha256:'b'.repeat(64),size_bytes:20,media_type:'application/json'};
 const value={format:'amphora.demo-campaign-context.v1',scope,design:polymerProposal(),bindings:[{method_id:'solvency',node_id:'node-1',candidate_id:'fixture-A',tool:{capability_id:'materials.hansen-solvency',contract_version:'1',release:'0.1.0',image_sha256:'a'.repeat(64)}}],limitations:['Synthetic']};
+test('versioned Knowledge context preserves v1 and rejects schema/body disagreement',()=>{
+ assert.equal(readCampaignContext(value,ref,context).knowledge,null);
+ assert.equal(createHash('sha256').update(readFileSync('src/page_models/campaign_flow/context.v2.schema.json')).digest('hex'),knowledgeContextSchema.sha256);
+ const next={...value,format:'amphora.demo-campaign-context.v2',knowledge:{role:'planning_context',revision:{graph:{scope,graph_id:'polymer'},revision:1,sha256:'a'.repeat(64)},methods:[{method_id:'solvency',entity_ids:['hansen']}]}};
+ const nextRef={...ref,schema_ref:knowledgeContextSchema};
+ assert.deepEqual(readCampaignContext(next,nextRef,context).knowledge!.entities('solvency'),['hansen']);
+ assert.throws(()=>readCampaignContext(next,ref,context));
+ assert.throws(()=>readCampaignContext(value,nextRef,context));
+ assert.throws(()=>readCampaignContext(next,{...nextRef,schema_ref:{...knowledgeContextSchema,sha256:'0'.repeat(64)}},context));
+});
 function fixture(){const page=snapshot();page.nodes[1]!.kind='finish';const a=detail(1),b=detail(2);b.node=page.nodes[1]!;b.outputs=[{port:'campaign_context',kind:'artifact',item_count:1,missing_count:0,artifact:ref}];return {page,a,b};}
 test('context publication pin, exact methods, scope and unique bindings are enforced',()=>{
  assert.equal(createHash('sha256').update(readFileSync('src/page_models/campaign_flow/context.schema.json')).digest('hex'),contextSchema.sha256);

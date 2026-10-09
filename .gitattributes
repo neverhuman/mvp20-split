@@ -39,3 +39,5 @@ v2/services/agent_planning/src/amphora_agent_planning/result_publication/*.schem
 v2/studio/src/page_models/scientific_output/schemas/*.json text eol=lf
 v2/dev/scientific_execution/*.json text eol=lf
 v2/studio/src/page_models/campaign_flow/context.schema.json text eol=lf
+v2/studio/src/page_models/campaign_flow/context.v2.schema.json text eol=lf
+v2/dev/scientific_execution/knowledge_source.txt text eol=lf

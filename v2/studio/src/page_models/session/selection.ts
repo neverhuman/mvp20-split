@@ -4,6 +4,9 @@ import type { WorkspaceContext } from '../../transport/session/client.js';
 
 /** A launcher link selects context; only the authenticated session grants scope. */
 export class WorkspaceSelection {
+  static fromPins(pins:ExplorePins,scope:WorkspaceContext['scope']):WorkspaceSelection {
+    return new WorkspaceSelection(new URLSearchParams({explore:JSON.stringify(pins)}).toString(),scope);
+  }
   readonly phase: 'missing' | 'ready' | 'invalid';
   readonly pins: ExplorePins | null;
   constructor(search: string, scope: WorkspaceContext['scope']) {

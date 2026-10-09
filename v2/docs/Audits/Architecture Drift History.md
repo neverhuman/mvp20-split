@@ -303,6 +303,12 @@ Quality/focus/proposal contracts, public-owner journey, two independent Studio
 installs and scoped audit complete. [Audit](SQ-01_Quality_Closeout.md). Historical
 feedback-read diagnostic remains active under UI-R01; no repair inferred.
 
+UI-01.05/K1 aligned2026-10-08 21:32:11: retained campaign Knowledge association,
+actual sourced domain graph and localhost/LAN claim/source/conversion traversal
+qualified.318 Studio tests and connected-flow regression pass. No scientific
+validation or LLM authorship inferred. [Audit](UI-01.05_Knowledge_Integration.md).
+Remaining R1/I1 work stays in the active parent; bounded K1 follow-up:none.
+
 LAN-01 aligned2026-10-08 21:01:59: HTTPS LAN profile implemented,32 installed
 tests and dual-origin browser proofs; owner accepted remote access and directed
 archival. [Scoped audit](LAN-01_Demo_Access.md). Follow-up: none in bounded scope.

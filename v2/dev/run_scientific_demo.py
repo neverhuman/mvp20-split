@@ -18,9 +18,13 @@ def run(args):
     root=args.root.absolute();output=args.output.absolute();original=LocalState.snapshot(root);routes=Routes.load(root)
     source=json.loads(args.source_manifest.read_bytes())['owners']
     registry_python=Path(source['registry']['installation'])/'environment/Scripts/python.exe'
-    scope={'tenant_id':'internal','project_id':'scientific-demo-'+uuid.uuid4().hex}
-    prepare_materials(args.tools.absolute(),output.parent/(output.name+'-materials'),scope,registry_python)
+    knowledge_records=json.loads((args.knowledge_records/'records.json').read_bytes()) if args.knowledge_records else None
+    scope=knowledge_records['scope'] if knowledge_records else {'tenant_id':'internal','project_id':'scientific-demo-'+uuid.uuid4().hex}
+    prepare_materials(args.tools.absolute(),output.parent/(output.name+'-materials'),scope,registry_python,knowledge_records['knowledge'] if knowledge_records else None)
     material,identity,ports=prepare(output,args.bundle.absolute(),output.parent/(output.name+'-materials'),args.source_manifest.absolute(),original['deployment_id'],routes,delivery=True)
+    if knowledge_records:
+        from scientific_execution.knowledge_configuration import connect
+        connect(output,args.knowledge_records)
     bind(output,args.bundle.absolute(),material,identity,ports,'awaiting-admission','standby')
     runtime_python=Path(source['runtime']['installation'])/'environment/Scripts/python.exe'
     secrets=CredentialVault(root/'credentials.dpapi',original['deployment_id']).load().environment(['REGISTRY_OPERATOR_TOKEN','RUNTIME_OPERATOR_TOKEN','ARTIFACT_OPERATOR_TOKEN','RUNTIME_ARTIFACT_TOKEN'])
@@ -74,4 +78,5 @@ def run(args):
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ('root','output','bundle','tools','source-manifest'):parser.add_argument('--'+name,type=Path,required=True)
+    parser.add_argument('--knowledge-records',type=Path)
     parser.add_argument('--prepare-only',action='store_true');run(parser.parse_args())

@@ -1,0 +1,235 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format",
+    "scope",
+    "design",
+    "bindings",
+    "limitations",
+    "knowledge"
+  ],
+  "properties": {
+    "format": {
+      "const": "amphora.demo-campaign-context.v2"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tenant_id",
+        "project_id"
+      ],
+      "properties": {
+        "tenant_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "project_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        }
+      }
+    },
+    "design": {
+      "type": "object"
+    },
+    "bindings": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 32,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "method_id",
+          "node_id",
+          "candidate_id",
+          "tool"
+        ],
+        "properties": {
+          "method_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "node_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "candidate_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "tool": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {
+        "type": "string",
+        "maxLength": 2048
+      }
+    },
+    "knowledge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role",
+        "revision",
+        "methods"
+      ],
+      "properties": {
+        "role": {
+          "const": "planning_context"
+        },
+        "revision": {
+          "$ref": "#/$defs/DomainRevisionRef"
+        },
+        "methods": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 32,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "method_id",
+              "entity_ids"
+            ],
+            "properties": {
+              "method_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "entity_ids": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 32,
+                "uniqueItems": true,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "DomainGraphRef": {
+      "additionalProperties": false,
+      "properties": {
+        "graph_id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+          "title": "Graph Id",
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope"
+        }
+      },
+      "required": [
+        "scope",
+        "graph_id"
+      ],
+      "title": "DomainGraphRef",
+      "type": "object"
+    },
+    "DomainRevisionRef": {
+      "additionalProperties": false,
+      "properties": {
+        "graph": {
+          "$ref": "#/$defs/DomainGraphRef"
+        },
+        "revision": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "title": "Revision",
+          "type": "integer"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "graph",
+        "revision",
+        "sha256"
+      ],
+      "title": "DomainRevisionRef",
+      "type": "object"
+    },
+    "GraphViewPosition": {
+      "additionalProperties": false,
+      "properties": {
+        "assertion_offset": {
+          "maximum": 8192,
+          "minimum": 0,
+          "title": "Assertion Offset",
+          "type": "integer"
+        },
+        "entity_offset": {
+          "maximum": 4096,
+          "minimum": 0,
+          "title": "Entity Offset",
+          "type": "integer"
+        },
+        "query_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Query Sha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "query_sha256",
+        "entity_offset",
+        "assertion_offset"
+      ],
+      "title": "GraphViewPosition",
+      "type": "object"
+    },
+    "Scope": {
+      "additionalProperties": false,
+      "properties": {
+        "project_id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+          "title": "Project Id",
+          "type": "string"
+        },
+        "tenant_id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+          "title": "Tenant Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tenant_id",
+        "project_id"
+      ],
+      "title": "Scope",
+      "type": "object"
+    }
+  }
+}

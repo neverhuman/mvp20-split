@@ -1,72 +1,83 @@
 # Restore
 
-Refreshed2026-10-08 21:13:00 America/Chicago. Read FIRST after compression.
+Refreshed2026-10-08 21:32:11 America/Chicago. Read FIRST after compaction.
+Owner says continue until needed; milestones/commits are not stopping points.
+No subagents/JARVIS; v1 read-only. Preserve untracked ocular PDF/DOCX.
+Do not edit source/tests/module READMEs while verification runs.
 
-Owner accepted LAN-01 and instructed archive then continue until needed.
-No subagents/JARVIS; v1 read-only. Commit/push significant verified changes.
-Do not edit source/tests/module READMEs while verification is running.
+Current checkpoint:
+- LAN-01 accepted/archived/pushed14df0c8c.
+- UI-01.05 K1 complete100%, child33.33%; R1/I1=0. ParentUI01=55%, N2=75,
+  Build68.75 unchanged until owning delivery groups close. All mirrors updated.
+- UI01 -> UI02 -> POP01 -> ML01; LR01 remains paused25%overall/33.33%Build.
+  Owner queried LR percentage: unchanged since62ea4966 before UI priority.
+- Significant K1 source/docs UNCOMMITTED. Finish scoped audit/stage review,
+  commit/push; then immediately R1 existing launch/worker boundary analysis.
+- No tests running; live helpers below only. No paid calls in K1.
 
-Current UNCOMMITTED work:
-- LAN-01 moved to docs/Build Plans/Completed; audit/index/MBT acceptance updated.
-- UI-01 primary active55%, Build68.75%, N2=75; UI-01.05 K1/R1/I1=0.
-- UI-02 -> POP-01 -> ML-01 queued0; LR-01 paused25. Preserve this order.
-- Studio UNTESTED changes: WorkflowView adds domain; ConnectedCampaign adds
-  Knowledge graph tab/render prop; entry/workspace passes existing LocalKnowledge.
-  Historical view=knowledge stays Results. Need tests/readmes/version/audit.
-- No tests running. No paid calls needed. User ocular artifacts untracked, do not stage.
-- Last pushed84d8f78d. Current source/doc edits not yet committed.
+K1 delivery:
+Studio0.22; distinct domain tab; old view=knowledge stays Results. Verified retained
+Knowledge pins override exploratory URL selection. Additive internal artifact
+demo.campaign-knowledge-context version1 / formatv2 preserves old context.
+Public SchemaRef version fixed1, so new schema identity rather than version2.
+Six concepts/five hypotheses describe two tools and missing evidence, authored
+synthetic engineering text, not LLM extraction/scientific validation.
+Actual Data source rights/raw text/conversion and Knowledge records; no privateSQL.
+Retained association is planning_context; numerical tools consume parameter artifacts.
+New run74de1629bdc6444398239de807df325d, projectknowledge-demo-1b1dc25768334153b58973882627b858
+completed4invocations; retentions confirmed and owned workers drained.
 
-Resume K1:
-Existing LocalKnowledge/ExploreModel works via explicit explore JSON in URL;
-WorkspaceSelection validates scoped revision pins. Current context schema has only
-design/bindings/limitations: need honest retained plan/Knowledge linkage, never claim
-the old four tool calls consumed a newly authored domain graph.
-Knowledge public profile/proposal/snapshot/exploration APIs exist; actual claims
-require Data source rights/conversion traces, Research declarations if linked.
-Reuse public dev/verify_local_owner_records.py Scenario.publish/author/configure
-but author polymer-specific source/graph; do not just relabel numeric fixture.
-Only Runtime/Artifact/Registry currently serving. Data acquisition/grants and
-Knowledge/Research configs need integration. No private cross-owner SQL.
-Frozen owners .test-results/demo-20261008/frozen-original/owners.json points to
-.test-results/local-restore-20261007b/knowledge.json and research.json and isolated
-.test-results/local-owner-inventory-20261006a/owners/{knowledge,research}.
-Those records use DIFFERENT scope owner-records-7e21ca85bd6044198b1585aa2c41d336.
-Prepare new scoped configurations/records for current scientific project.
-RecordsController uses sole Deployment supervisor control port: cannot run second
-controller on same root while live controller owns it. Build/verify candidate then
-qualified replacement or explicit independent helper; preserve demo meanwhile.
-UI Coding Guidelines read earlier this turn. Actual served visual/browser proof required.
+Verification:
+318Studio tests, TypeScript/contracts and production dependency guard pass.
+knowledge-context-b actualtextpublication; knowledge-run-b actualcampaign.
+knowledge-browser-c localhost, knowledge-lan-browser-c HTTPS, and
+knowledge-connected-regression-c existing five-view walkthrough pass.
+Actual assets knowledge-ui/public-b. Browser screenshots desktop/narrow reviewed;
+new c screenshots should also be inspected after source-refresh/fit probe refinement.
+First knowledge-context-a/run-a/browser-a preserved binary source; text viewer
+correctly refused it. Fixed publisher to text/plain and fresh scope/campaign,
+never rewrote history or weakened media/hash checks.
+Audit docs/Audits/UI-01.05_Knowledge_Integration.md.
+Need final diff/byte pins and commit; no new full test run without source changes.
 
 Live:
-localhost http://127.0.0.1:57013 launcher66642, v2/.test-results/connected-flow-live-c
-assets connected-flow-ui/public-e, owner configs connected-flow-run-a.
-Started2026-10-08 06:01:36, stops2026-10-09 06:01:36.
-LAN https://192.168.1.70:57013 helper17750, lan-live-20261008a; Gateway0.3 isolated
-lan-gateway-20261008a. LAN session STOP drains only gateway; localhost STOP drains owners.
-serve_lan_review.py invite --root ROOT --session SESSION copies5min one-use link.
-New Invitation.cmd in session. Certificate7days, session8hours. No firewall changes.
-Private TLS only physical LocalCache Local/Amphora/lan-demo-20261008.
-Root C:/Users/alb_p/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/Local/Amphora/local-v2/restore-20261007b
-Actual run b90958fec8384eb99eb6578d4c8b3b5d; scope internal /
-scientific-demo-05648b3123ed432b847b7f5c501aac9c.
-Four Hansen/Arrhenius calls + finish; synthetic parameters, no generated structures.
-Full reviewed plan retained. No workers/model calls in viewer.
+localhost http://127.0.0.1:57013 session31300, v2/.test-results/knowledge-live-c.
+LAN https://192.168.1.70:57013 session87288, knowledge-lan-c.
+Both same newrun. Sessions stop after86400seconds from ready.json.
+STOP file drains exactly owning helper; localhost also owns backend services.
+Separate LAN gateway0.3 isolated lan-gateway-20261008a.
+No firewall changes. CA/public-key TLS pinned browser; CA-verified API.
+Old connected-flow-live-c, lan-live-20261008a, knowledge-live-a/b and LANa/b drained.
+Rollback source run connected-flow-run-a, assets connected-flow-ui/public-e.
+New invitation: dev/serve_lan_review.py invite --root ROOT --session SESSION
+copies5minsingle-useURLclipboard; no secrets in chat/evidence.
+Private TLS physicalLocalCache/Local/Amphora/lan-demo-20261008.
 
-Baseline: Studio0.21/314tests; Gateway0.3/32isolatedtests.
-Actual browser connected-flow-browser-f, lan-browser-20261008a and
-lan-localhost-regression-20261008a pass. TLS browser exact SPKI pin; API CA validation.
-Use v2/dev/.venv/Scripts/python.exe (PYTHONUTF8=1), v2/.venv/Scripts/uv.exe,
-npm.cmd cwd v2/studio. Git -c safe.directory=//DesktopNAS/Code/mvp20-split;
--c core.safecrlf=false for stage/diff. Never print credentials.
+ROOT C:/Users/alb_p/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/Local/Amphora/local-v2/restore-20261007b
+Frozen owner manifests .test-results/demo-20261008/frozen-original/owners.json
+Qualified tools v2/.test-results/scientific-tools-c. Public method helper:
+prepare_scientific_knowledge.py --output --source-manifest --root [--publish],
+run_scientific_demo.py --knowledge-records DIRECTORY (freshcampaign).
+serve_scientific_review.py --root --run --output --public --duration86400.
+verify_knowledge_review.py --root --session --output [--tls DIR] [--suite connected].
+Only one supervisor perroot; never launch competingcontroller.
+Python v2/dev/.venv/Scripts/python.exe withPYTHONUTF8=1; npm.cmd cwdv2/studio.
+Git -c safe.directory=//DesktopNAS/Code/mvp20-split -c core.safecrlf=false.
+Stage exact work, exclude userocularartifacts. Keep schema bytes LF (.gitattributes).
 
-Architecture continuity:
-UI-01.05 K1 Knowledge -> R1 Run -> I1 Knowledge/inventory-grounded LLM future
-campaign curation and missing-capability requests. UI-02 formula/2D; then POP-01.
-BP-08 already implements numeric generation/recovery;128population/256retained/
-262144byte caps. POP versioned1000population/2000selection is proposed, not available.
-Three POP children queued0: execution/recovery; bounded population UI; qualification.
-Repeated19-stage fork/merge/fork processes: control joins, scientific transforms
-and population selection differ. Material lineage differs from two-parent genetics.
-ML-01 follows POP qualification. Inherited ML records/code exist but raw v1 feedback
-data absent. Historical Polyverse R2~.944 source split ->~.453 polymer held out;
-these are inherited benchmark records, not current v2 demo accuracy.
+Next R1:
+Review actual public admission and managed-worker engagement boundaries before
+adding Run. Gateway is scoped proxy, not execution orchestration owner. No shell
+fromStudio. If a new public contract needed, prepare concrete reviewable decision
+as AGENTS requires material-boundary owner direction; finish independent workfirst.
+ParentN2 groups still require provider provenance/reasoning, generationalcomparison
+and launch; I1 owns liveLLM/nodeinventory and durable missing-capability requests.
+Check ordering for real dependency cycles; don't silently wave prerequisites.
+
+Later:
+UI02formula/2D first, then POP01. Existing numericBP08 caps128population/256retained/
+262144byte; proposed1000/2000 not implemented. POP includes repeatedfork/merge/fork,
+19stage typedmaterialprocesses, localreadiness and explicitpairing/cardinality;
+controljoin != materialcombination; materiallineage != geneticancestry.
+ML01afterPOP. Inheritedmodels exist, rawv1feedback absent. HistoricalPolyverse
+R2~.944source split ->~.453polymer-heldout, never currentdemoaccuracy.
