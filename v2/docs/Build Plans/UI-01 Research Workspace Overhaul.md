@@ -3,7 +3,7 @@
 ## Canonical tracker
 
 - Status: scheduled_resume for next-week owner targets; connected demo flow implemented; remaining N2 integration gates explicit.
-- Last refreshed: 2026-10-08 19:07:02 (America/Chicago).
+- Last refreshed: 2026-10-08 20:19:11 (America/Chicago).
 - Baseline: 62ea4966; owner-reported disconnected canvas and navigation review on 2026-10-07.
 - Owner: Studio experience, page models and presentation; service owners retain their contracts and state.
 - Parent: none; priority and mirrors in [Master Build Tracker](Master%20Build%20Tracker.md).
@@ -47,6 +47,10 @@ Owner sequencing clarification2026-10-08 19:07:02: complete the end-to-end gate,
 including inventory-fed LLM curation and durable new-capability requests under
 UI-01.05/I1, before standalone ML-01 inherited-model migration. Preserve current
 phase credit; N3 remains0%. This is a prerequisite sequence, not a calendar shortcut.
+Owner refinement2026-10-08 20:19:11: after this workflow and UI-02, complete
+[POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) population
+execution/experience before ML-01. Do not pull the population-scale tranche into
+the current Knowledge/LLM demonstration or reopen completed graph-layout phases.
 
 An internal researcher should understand the question, the approach, what happened,
 what the evidence supports, and what to explore next. The graph is the primary

@@ -2,8 +2,8 @@
 
 ## Canonical tracker
 
-- Status: queued; standalone post-demo plan, not activated.
-- Last refreshed: 2026-10-08 19:07:02 (America/Chicago).
+- Status: queued; standalone after the demo and POP-01 population qualification, not activated.
+- Last refreshed: 2026-10-08 20:19:11 (America/Chicago).
 - Owner direction: prove the front-to-back research workflow before concentrating
   on the scientific implementations inside execution nodes.
 - Overall implementation: 0%; M1/M2/M3/M4/V1=0%. Five equal delivery gates;
@@ -13,13 +13,21 @@
   owns execution acceptance; Knowledge owns claims; Studio owns presentation.
 - Prerequisite: UI-01/V1 and UI-02/P4 end-to-end evidence, including UI-01.05/I1
   inventory-to-LLM curation and a retained request for an unavailable capability.
+- Additional owner prerequisite: [POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md)
+  complete, including actual multi-generation execution, bounded population UI,
+  restart/scale proof and the qualified tool integration handoff.
 - Current focus: preserve the inherited ML reuse backlog and its evidence limits.
 - Next gate: after the demo acceptance gate, bounded activation audit and M1 inventory.
 - Blockers/dependencies: raw feedback datasets absent from this checkout; complete
   trained-model bundles and reproducibility have not been established. v1 is read-only.
 - Parent: none; priority and percentages mirrored in the Master Build Tracker.
 
-## Entry gate: complete the workflow first
+## Entry gate: complete the workflow and population experience first
+
+Owner sequence2026-10-08 20:19:11: Knowledge/LLM and UI-02 first; POP-01 next;
+this plan follows POP-01. Do not activate model recovery merely because the initial
+single-campaign demo passed. POP-01's cheap deterministic evaluators keep that
+engineering proof independent of inherited datasets and ML model availability.
 
 Demonstrate, through the served UI and actual owners:
 
@@ -50,6 +58,11 @@ structure/formula support needed by UI-02 stays there; broad ML migration stays 
 These are candidates for reuse, not four qualified v2 tools. M1 must produce a
 disposition for every family: selected first tranche, blocked, or explicitly deferred,
 with reasons. Do not silently drop an inherited family or imply all are ready.
+M1 also receives POP-01's representation-specific generation/variation capability
+request. Inventory inherited generators/operators and assign a named tool delivery
+or separate successor with its own contracts; do not assume predictor migration
+alone enables evolution of novel molecular structures. Keep numeric, catalog and
+chemical-generation modes explicit until the domain-specific operator is qualified.
 The public corrosion benchmark's failed qualification is negative evidence to
 preserve, not a performance claim to transfer to a coating candidate.
 

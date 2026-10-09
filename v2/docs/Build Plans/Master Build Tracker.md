@@ -9,11 +9,11 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: next-week UI-01/UI-02 implementation schedule set; planning only. LAN demo access delivered; LR-01 remains conditional. BP-01 through BP-09 and SQ-01 remain closed.
-- Last refreshed: 2026-10-08 19:07:02 (America/Chicago).
+- Last refreshed: 2026-10-08 20:19:11 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
 - Primary active task: planning the four owner targets; next implementation task UI-01.05/K1 actual Knowledge connection, after bounded activation review. LAN-01 remains implementation100%, L1/L2/L3=100; owner reported access working.
-- Next task: UI-01.05/K1 then R1, including remaining N2 gates; I1 includes inventory-fed LLM curation and durable requests for missing capabilities. UI-02 producer/formula handoff follows the schedule; ML-01 starts only after end-to-end acceptance.
+- Next task: UI-01.05/K1 then R1, including remaining N2 gates; I1 includes inventory-fed LLM curation and durable requests for missing capabilities. UI-02 producer/formula handoff follows the schedule; POP-01 follows UI-01/UI-02 acceptance; ML-01 follows POP-01 qualification.
 - Implementation completion: LAN-01=100%, L1/L2/L3=100%; UI-01 scheduled55%, Build68.75%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
 - Blockers/dependencies: candidate structure producer and selection evidence, actual managed-worker launch, and Knowledge-grounded live LLM integration remain unfinished. No calibrated per-node scientific accuracy benchmark exists for the two demo tools. UI-01.01 remains a separate public-contract proposal.
 - Acceptance posture: connected plan/execution/comparison/next-review actual served walkthrough passed; Studio0.21,314 tests. New-run browser action and V1 remain outstanding. Public result-index proposal remains separate.
@@ -43,9 +43,10 @@ Completed plans remain in the [completed index](Completed/README.md).
 | 0 | [LAN-01 Local Network Demo Access](LAN-01%20Local%20Network%20Demo%20Access.md) | Implemented; owner reports access working | 100% | 100% | Remote pending | Owner LAN priority/firewall rule |
 | 1 | [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md) | Scheduled primary; UI-01.05 K1/R1/I1=0% | 55% | 68.75% | 0% | Owner direction; bounded activation review recorded |
 | 2 | [UI-02 Candidate Structure and Recommendation Views](UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md) | Scheduled next week; P1/P2/P3/P4=0% | 0% | 0% | 0% | Typed retained candidate structures and explicit selection evidence; activation audit |
-| 3 | [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md) | Standalone queued; M1/M2/M3/M4/V1=0% | 0% | 0% | 0% | UI-01/V1 + UI-02/P4 end-to-end acceptance, including inventory curation/new-capability request |
-| 4 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Paused; pull R2 forward for blocking run failure | 25% | 33.33% | 0% | UI priority released or UI-01.05/R1 blocked; same-host diagnostic window |
-| 5 | [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md) | Queued; pull forward if it blocks UI-01 | 0% | 0% | 0% | Bounded read diagnostic and activation review |
+| 3 | [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) | Queued; Execution/Experience/Qualification=0% | 0% | 0% | 0% | Knowledge/LLM workflow UI-01/V1 and UI-02/P4 complete |
+| 4 | [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md) | Standalone queued; M1/M2/M3/M4/V1=0% | 0% | 0% | 0% | UI-01/V1 + UI-02/P4, then POP-01 complete; qualified population/tool handoff |
+| 5 | [LR-01 Local Worker Reliability](LR-01%20Local%20Worker%20Reliability.md) | Paused; pull R2 forward for blocking run failure | 25% | 33.33% | 0% | UI priority released or UI-01.05/R1 blocked; same-host diagnostic window |
+| 6 | [UI-R01 Feedback Read Diagnostics](UI-R01%20Feedback%20Read%20Diagnostics.md) | Queued; pull forward if it blocks UI-01 | 0% | 0% | 0% | Bounded read diagnostic and activation review |
 
 The owning tracker controls exact task/percentages; MBT controls priority and
 mirrors current state. Complete each bounded gate before dependent implementation.
@@ -80,22 +81,34 @@ No experimental accuracy percentage is available. Show Not scientifically
 benchmarked until a relevant versioned dataset, method, sample count and error/
 classification metric support a claim. See UI-01.05 for evidence and metric rules.
 
-## Post-demo scientific implementation priority
+## Post-demo sequence: populations before inherited ML nodes
 
-[ML-01](ML-01%20Inherited%20Scientific%20Model%20Integration.md) is the standalone
-plan for inherited ML pipeline recovery, corrected benchmark reproduction,
-independent graph-tool packaging and Registry/Planning integration. Overall0%,
-Build0%, Verification0%; M1/M2/M3/M4/V1=0%. It receives focused implementation only
-after UI-01/V1 and UI-02/P4 prove the complete workflow. The gate follows actual
-acceptance, not the date of the demo or a calendar-week boundary.
+Owner direction2026-10-08 20:19:11: complete Knowledge/LLM campaign interaction and
+UI-02 first, preserving next-week demonstration material. Then give
+[POP-01](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) precedence:
+multiple candidate generations, bounded scheduling/global selection, checkpoint
+recovery and population-oriented visualization. Only after POP-01 qualification
+activate [ML-01](ML-01%20Inherited%20Scientific%20Model%20Integration.md).
+
+POP-01 overall0%, Build0%, Verification0%; phase mirrors:
+Execution0% (POP-01.01 E1/E2/E3/E4=0%), Experience0% (POP-01.02 U1/U2/U3/U4=0%),
+Qualification0% (POP-01.03 Q1/Q2/Q3/Q4=0%). Twelve equal child gates counted once.
+Existing BP-08 generation/recovery implementation remains closed and reusable;
+legacy population128/retained-attempt256/262144-byte bounds are not evidence of
+1000-candidate scale. New profile and actual scale qualification belong to POP-01.
+
+ML-01 remains standalone0%, Build0%, Verification0%; M1/M2/M3/M4/V1=0%.
+It recovers inherited ML pipelines, reproduces corrected benchmarks and publishes
+independent graph tools into the already qualified population workflow. The gate
+follows actual acceptance, not demo date or calendar-week expiry.
 
 The generic node-inventory-to-LLM mechanism and durable requests for unavailable
-capabilities belong to UI-01.05/I1 **before** ML-01. Adding an existing tool instance
-and requesting a new capability are separate operations; a request does not publish
-an executable node. ML-01 supplies qualified scientific releases to this established
-path. Keep minimal UI-02 structure/formula support in the demo scope; do not pull
-broad model migration forward. LR-01/UI-R01 may interrupt only for blocking faults,
-with a named return point. Existing completed-plan credit remains unchanged.
+capabilities stay in UI-01.05/I1 before POP-01. Adding an existing tool instance and
+requesting a new capability are separate operations; a request is not an executable
+release. Minimal UI-02 structure/formula support stays in the demo scope. LR-01/UI-R01
+may interrupt only for blocking faults with a named return point. No closed phase
+is reopened, no app implementation changed by this planning checkpoint, and existing
+implementation percentages are unchanged.
 
 ## Cross-Plan Milestones
 

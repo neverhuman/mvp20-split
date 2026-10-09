@@ -1,0 +1,153 @@
+# POP-01 Population Campaign Execution and Experience
+
+## Canonical tracker
+
+- Status: queued after Knowledge/LLM integration and UI-02; before ML-01.
+- Last refreshed: 2026-10-08 20:19:11 (America/Chicago).
+- Scope revision: planning baseline1; no implementation started.
+- Overall implementation: 0%; Execution0%, Experience0%, Qualification0%.
+  Three equally weighted children, each with four equal delivery gates. Parent
+  counts the twelve child gates once; Build0% is the first two children, Verification0%
+  is the third. Planning/design maturity is separate from implementation.
+- Owner: cross-owner population workflow; responsibilities assigned below.
+- Prerequisite: UI-01/V1 and UI-02/P4 prove actual Knowledge, inventory-grounded
+  LLM graph curation/missing-capability requests, browser Run and candidate detail.
+- Current task: none; queued. Next: POP-01.01/E1 compatibility and contract gate.
+- Design readiness: source-grounded decomposition; proposed additive contracts,
+  selection policies and service routes still require E1 review before coding.
+- Demonstrated behavior: BP-08 numeric evolution/recovery exists; the current
+  two-candidate scientific demo does not demonstrate population-scale integration.
+- Blockers/dependencies: current bounded wire/payload limits; read-model ownership
+  and new version compatibility must be resolved. No scientific dataset needed
+  for deterministic engineering qualification. Actual polymer operators are separate.
+- Acceptance: actual owner/process/browser proof, including restart and scale;
+  no blanket human approval gate between generations.
+- Activation audit: pending at activation; read-only planning review below is not
+  an implementation or deployment qualification. v1 and completed BP plans stay closed.
+
+## Sequence and immediate children
+
+| Child / parent phase | Completion | Prerequisite | Delivery |
+|---|---:|---|---|
+| [POP-01.01 Population Execution](POP-01.01%20Population%20Execution.md) / Execution | 0%; E1-E4=0% | Entry gate above | Explicit population/evaluation identities, bounded dispatch, global selection and durable recovery |
+| [POP-01.02 Population Experience](POP-01.02%20Population%20Experience.md) / Experience | 0%; U1-U4=0% | POP-01.01 complete | Bounded authoritative projections, stable method graph, generation navigation and population comparison |
+| [POP-01.03 Qualification](POP-01.03%20Population%20Qualification.md) / Qualification | 0%; Q1-Q4=0% | POP-01.02 complete | Fresh UI-started evolutionary campaigns, restart/failure/scale proof and ML-01 handoff |
+
+Do not replace the near-term demo work with this plan. After its entry gate, POP-01
+takes precedence over inherited-model migration. ML-01 starts only after POP-01
+qualification; missing ML data cannot block the population engineering proof.
+LR-01/UI-R01 may interrupt only when their failures block the current task, with
+an exact return point. No calendar deadline is assigned to this tranche yet.
+
+## The user experience being built
+
+The main canvas shows the campaign's reusable scientific method, for example:
+
+```text
+Seed population -> evaluate each candidate -> assemble objectives -> select -> vary
+                         | solvency |                            |          |
+                         | viscosity|                            +-- next generation
+                         | ...      |                                  or stop
+```
+
+The drawing is conceptual; rendered edges must come from an admitted authored graph,
+not from this diagram or inferred names. Evaluation methods remain independently
+selectable scientific steps, not one opaque Evaluate box. Multiple candidates share
+that method; individual activation identities remain available underneath it.
+
+A separate generation strip and population workspace answer: which population is
+being evaluated, how many candidates are pending/complete/eligible, what survived,
+what changed and why. Selected candidate details reuse UI-02's formula/structure
+inspector. Deep execution detail is available without flooding the main graph.
+
+## Four identities that must stay distinct
+
+| Concept | Meaning / authority |
+|---|---|
+| Campaign method graph | Versioned authored scientific/control/dataflow structure; Runtime admission authority |
+| Generation | Frozen candidate cohort plus selection/evaluation policy and evidence; Search proposes transitions, Runtime accepts them |
+| Dispatch batch | Operational slice of a generation's evaluation requests; not a generation or independent selection pool |
+| Activation/attempt | Actual node execution and retries for a candidate/method/occurrence; Runtime retains authoritative history |
+
+A generation contains candidate memberships, not copies of a whole authored graph.
+The UI aggregates concrete occurrences, not execution authority. A graph-template
+node, candidate membership and retry attempt each retain separate stable keys.
+Scientific equivalence is not inferred from a similar structure or candidate label.
+
+## Source-grounded reuse and gaps
+
+Reviewed at planning time:
+
+- `tools/evolution_search/README.md`: existing constrained Pareto/crowding selection,
+  deterministic seed/variation, generation reducer, stopped states and predecessor
+  checkpoint validation. This is an independent numeric implementation, not a
+  verified extraction of v1 SBX/mutation. Do not rewrite it without a measured gap.
+- `contracts/search/src/amphora_contracts_search/specification.py`: population cap
+  **128**; checkpoint retains at most **256** current/parent attempts. These are
+  different limits. Selection ranks, pending/observation arrays and byte ceilings
+  must all be audited before increasing either.
+- `contracts/search_steps/README.md`: request batch and full terminal collection;
+  current reducer stops on unavailable fitness. Partial selection is a policy change.
+- Search tool request/output cap **262144 bytes**. Raising population_size alone
+  cannot establish scale. Historical receipts/checkpoints must keep their exact bytes.
+- Runtime already owns scatter/iterate, leases, acceptance and recovery. Its graph
+  navigation uses snapshot-bound pages of at most100 nodes and per-scope topology;
+  it is not a population-wide result index.
+- `studio/src/page_models/campaign_flow/README.md`: current connected demo loads at
+  most32 root activations and has fixed method/candidate bindings. That is a bounded
+  demo consumer, not a scalable population loader.
+- Closed BP-08 and its recovery audit prove earlier bounded numeric evolution.
+  `dev/local_numeric_campaign.py` still uses test/compiler fixtures for setup; the
+  new production UI path must use supported public draft/validation/admission APIs.
+
+## Ownership and exclusions
+
+Search tools own candidate generation, ranking/selection and proposed checkpoints.
+Domain representation tools own legal numeric/formulation/polymer/biological operators;
+no generic mutation of molecular strings. Runtime owns all dispatch, retry/fence,
+budget and accepted graph/checkpoint transitions. Data owns immutable pages/artifacts.
+Research owns semantic evaluation/comparison eligibility and derived population
+projections. Registry owns tool releases. Planning consumes bounded inventory and
+evidence to propose future graphs. Studio owns selection, layout and presentation.
+
+No second population scheduler, generic backend, private cross-owner imports or
+scientific ranking in Studio. No second authoritative run database in Research.
+Read projections may be rebuilt from accepted source records; any materialized
+cache records its source cut and invalidation rule.
+
+Human changes apply between campaigns. Generation progression is autonomous under
+the admitted policy. Ordinary generations do not invoke the LLM per candidate;
+any optional model checkpoint must be explicitly budgeted and separately qualified.
+Changing tool, Knowledge, objective or comparison policy starts an explicit successor
+context, not a silent rewrite of old fitness. Prior scores do not become comparable
+merely because candidate IDs match.
+
+## Scale and success boundary
+
+First preserve/replay the old128-population profile. Then qualify a versioned
+reference-backed profile at **1000 candidate slots per generation**, including
+up to2000 parent-plus-offspring selection members, with configurable bounded batches
+and in-flight work. Historical generations must not accumulate inside one growing
+JSON checkpoint. These are planned engineering limits, not current capability.
+
+Mandatory proof spans multiple generations, independent evaluator branches, varied
+completion order, failures and restart. A large static canvas fixture is only UI
+load evidence. Deterministic objectives can prove selection/orchestration; they
+cannot establish viable polymers, scientific improvement or ML accuracy. A chemical
+representation fixture exercises UI-02 identity/formula links without claiming that
+numeric test mutations generated useful new molecules.
+
+Do not lose the eventual polymer-generation dependency: qualify a representation-
+specific generation/variation tool before claiming evolution of new chemical
+structures. POP-01 records that missing capability through the established LLM
+request mechanism and hands it to ML-01/M1 for a named implementation disposition
+or separately scoped tool plan. Parameter evolution, catalog selection and novel
+molecular generation must remain visibly different modes. A model adapter alone
+does not fulfill a chemistry-generation request.
+
+## Closeout
+
+Each child owns module tests and component drift review; parent Q4 closes the
+cross-owner audit, updates module replacement READMEs/inventories and transfers
+explicit limits to ML-01. Keep a POP-01 History.md when implementation starts to
+record checkpoints and scope decisions; do not expand this tracker into a log.

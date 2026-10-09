@@ -3,7 +3,7 @@
 ## Canonical tracker
 
 - Status: scheduled for2026-10-12 through2026-10-16; planning only, implementation not started.
-- Last refreshed: 2026-10-08 18:42:19 (America/Chicago).
+- Last refreshed: 2026-10-08 20:19:11 (America/Chicago).
 - Overall implementation: 0%; Build0%, Verification0%. Four equal delivery phases;
   Build averages P1/P2/P3, Verification is P4. Planning earns no implementation credit.
 - Owner: Studio candidate inspection; scientific tools own candidate representations
@@ -84,6 +84,12 @@ Keep illustrative, generated, predicted and experimentally supported material di
 | P4 verification and audit | 0% | P3 complete | Module-scoped contract/model/rendering tests and actual retained-artifact browser proof; inspect desktop/mobile/accessibility, wrong candidate/revision, malformed structures and missing evidence. Complete scoped architecture drift audit before closeout. |
 
 ## Integration boundaries and exclusions
+
+Owner sequence2026-10-08 20:19:11: complete this candidate-level inspector and
+the Knowledge/LLM end-to-end workflow before POP-01. Its population experience
+will reuse this inspector for a selected candidate and own generation tables,
+aggregate execution and lineage navigation. Keep that larger tranche separate;
+this plan remains0%, and ML-01 now follows POP-01 qualification.
 
 Reuse existing bounded output reads where sufficient. Coordinate broader discovery
 with [UI-01.01 result discovery](UI-01.01%20Campaign%20result%20discovery%20decision.md);

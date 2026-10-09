@@ -1,6 +1,8 @@
 # Build Plans
 
-- [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md): standalone queued0%; starts after the UI-01/UI-02 end-to-end demo gate, including inventory-fed LLM curation and new-capability requests.
+- [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md): queued0%; three child plans for execution/recovery, bounded population UI and qualification. After UI-01/UI-02, before ML-01. Start at the parent for source-grounded reuse and scope.
+
+- [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md): standalone queued0%; starts after UI-01/UI-02 end-to-end flow and POP-01 population qualification.
 
 - [UI-02 Candidate Structure and Recommendation Views](UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md): scheduled next week0%; chemical formula and2D structure/repeat-unit inspection, composition, properties, synthesis evidence and recommendation rationale. 3D modeling is separate follow-on scope.
 

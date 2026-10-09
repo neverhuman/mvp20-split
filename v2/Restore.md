@@ -1,5 +1,16 @@
 # Restore
 
+Latest sequence checkpoint2026-10-08 20:19:11: finish Knowledge/inventory-fed LLM
+campaign iteration and UI-02 first. Then POP-01 population execution/experience
+takes precedence, before ML-01. POP-01 and its three children are queued0%:
+POP-01.01 E1-E4=0, POP-01.02 U1-U4=0, POP-01.03 Q1-Q4=0. No implementation started.
+Existing BP-08 already provides numeric generations/selection/recovery; do not
+rebuild/reopen it. Actual legacy population cap128, retained attempts256, payload
+262144 bytes; new reference-backed1000-population/2000-selection profile is proposed,
+not available. Plans separate authored method graph, generations, batches and actual
+activations, with exact global selection and bounded read/UI projections. Mandatory
+actual multi-generation/recovery/scale acceptance precedes ML node migration.
+
 Sequence checkpoint2026-10-08 19:07:02: owner wants the full end-to-end demo
 before focusing on inherited ML node implementations. Standalone ML-01 queued0%,
 M1/M2/M3/M4/V1=0%; gated on UI-01/V1 and UI-02/P4. UI-01.05/I1 now explicitly
