@@ -5,6 +5,8 @@ import {readFile,mkdir,writeFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import assert from 'node:assert/strict';
 const input=JSON.parse(await readFile(process.argv[2],'utf8')),output=resolve(process.argv[3]);
+const reviewOnly=process.argv[5]==='--review-only';
+assert.ok(!reviewOnly||process.argv[4],'Read-only recovery requires the original browser record');
 await mkdir(output,{recursive:true});
 if(input.tls_spki)assert.match(input.tls_spki,/^[A-Za-z0-9+/]{43}=$/);
 const browser=await chromium.launch({headless:true,args:input.tls_spki?['--ignore-certificate-errors-spki-list='+input.tls_spki]:[]});let page;
@@ -27,14 +29,15 @@ try{
   await page.waitForFunction(()=>{const b=[...document.querySelectorAll('button')].find(b=>b.textContent==='Run campaign');return b&&!b.disabled;},{},{timeout:30000});
   await page.screenshot({path:resolve(output,'ready-to-run.png'),fullPage:true});
   await page.getByRole('button',{name:'Run campaign',exact:true}).click();
- }else{
+ }else if(!reviewOnly){
   await page.getByRole('button',{name:'Reconcile original campaign',exact:true}).click({timeout:60000});
  }
  await page.waitForFunction(()=>document.querySelector('.campaign-launch')?.textContent.includes('Campaign ')&&
    document.querySelector('.flow-context')?.textContent.toLowerCase().includes('pinned launch plan')||
+   document.querySelector('.flow-context')?.textContent.toLowerCase().includes('retained plan / completed execution')||
    document.querySelector('.campaign-launch')?.textContent.includes('Launch rejected'),{},{timeout:60000});
  assert.ok(!evidence.receipts.some(row=>row.phase==='rejected'),'Actual launch was rejected; retained receipt explains the owner decision');
- assert.equal(evidence.launch_posts.length,1);
+ assert.equal(evidence.launch_posts.length,reviewOnly?0:1);
  await writeFile(resolve(output,'browser-recovery.json'),JSON.stringify(await page.evaluate(()=>Object.entries(localStorage).filter(([key])=>key.startsWith('amphora.launch.v1:'))),null,2));
  await page.screenshot({path:resolve(output,'running.png'),fullPage:true});
  const admitted=evidence.receipts.find(row=>row.run_id);assert.ok(admitted);evidence.run_id=admitted.run_id;evidence.request_id=admitted.identity.command_id;
@@ -51,7 +54,7 @@ try{
   const axe=await new AxeBuilder({page}).analyze();assert.equal(axe.violations.filter(v=>['serious','critical'].includes(v.impact)).length,0);
  }
  assert.ok(evidence.receipts.every(row=>row.run_id===null||row.run_id===evidence.run_id));
- assert.equal(evidence.launch_posts.length,1);assert.equal(evidence.launch_posts[0].identity.command_id,evidence.request_id);assert.deepEqual(evidence.errors,[]);evidence.status='passed';
+ assert.equal(evidence.launch_posts.length,reviewOnly?0:1);if(!reviewOnly)assert.equal(evidence.launch_posts[0].identity.command_id,evidence.request_id);assert.deepEqual(evidence.errors,[]);evidence.status='passed';evidence.review_only=reviewOnly;
 }finally{
  if(evidence.status!=='passed')evidence.status='failed';
  if(page){await writeFile(resolve(output,'browser-recovery.json'),JSON.stringify(await page.evaluate(()=>Object.entries(localStorage).filter(([key])=>key.startsWith('amphora.launch.v1:'))).catch(()=>[]),null,2));

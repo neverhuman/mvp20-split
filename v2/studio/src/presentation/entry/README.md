@@ -91,3 +91,8 @@ Built-entry scripted-peer proof: tests/browser/campaign_launch.mjs, desktop1440
 and narrow390, one launch POST across reload, actual browser graph links, running
 to retained-output transition, no horizontal overflow or serious/critical axe
 findings. These are UI fixture results, not live owner/worker qualification.
+
+UI-01.06 actual local/LAN launch/reload/results and original-run outage recovery
+also pass1440/390; see the launch integration audit. A Runtime409/410 refreshes a
+coherent snapshot automatically in the visible execution view. A transport outage
+can require Retry campaign read or reload; neither creates another campaign.

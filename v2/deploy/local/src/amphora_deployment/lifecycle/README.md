@@ -1,6 +1,6 @@
 # Local process lifecycle
 
-Deployment0.17/UI-01.06 adds optional --launch-manifest composition under this same
+Deployment0.18.3/UI-01.06 provides optional --launch-manifest composition under this same
 lifetime writer lease. LaunchInstallation restores original admitted run bindings
 before pending-container validation; operator templates alone cannot omit them.
 The manifest owns scientific/catalog paths and cannot be combined with their older
@@ -10,13 +10,16 @@ to stop; forced teardown closes acceptance before original handle cleanup. No pu
 launch listener is enabled unless --launch-port is explicitly supplied. That port
 uses a distinct DPAPI launch credential granted only to Gateway, never operator
 control. The listener remains readable after coordinator failure and drains before
-lease release. API/Gateway fixture checks pass; live activation remains L4.
+lease release. Actual local/LAN activation, completed recovery and502 independent
+installed checks pass; see UI-01.06 launch integration audit. Launch-owned pending
+tools wait for Runtime/Artifact/Registry and tool TLS before adoption or catalog
+rebinding. This prevents recovery from racing the startup of its dependencies.
 
 BP-09.03 adds optional [native worker turns](../workers/README.md) under the same
 supervisor writer lease. Worker quiescence gates owner drain/restart/force-stop
 and normal shutdown. Existing manifests without workers preserve their status
 shape. Optional managed TLS and [scientific monitors](../scientific_workers/README.md)
-extend the same lifetime writer lease. Scientific adoption begins only after control
+extend the same lifetime writer lease. Legacy scientific adoption begins after control
 bind, blocks drain immediately on retained pending state, and performs Docker I/O off
 the control thread. Normal stop order is both worker groups, TLS, then owner APIs.
 Unexpected monitor detach leaves durable container state for recovery; it does not

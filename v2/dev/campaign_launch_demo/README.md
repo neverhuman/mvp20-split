@@ -20,3 +20,9 @@ trust and the exact server public-key pin. Only a released previous launch permi
 a deliberately new probe. Original-request recovery uses its retained browser state.
 Shutdown quiesces native/scientific workers, drains TLS, then Gateway and owners;
 the shared demo Controller owns that sequence.
+
+interruption.py is an explicit operator qualification drill. It validates the exact
+installed supervisor PID/manifest, waits for a new browser receipt and its bound
+pending Docker turn, records safe ownership evidence, then terminates only that
+supervisor. It neither stops Docker nor deletes containers/journals. Restart the same
+serving configuration and verify the original launch/run/container before acceptance.

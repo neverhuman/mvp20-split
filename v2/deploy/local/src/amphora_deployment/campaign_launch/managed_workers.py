@@ -32,6 +32,15 @@ class ManagedLaunchWorkers:
 
     def prepare(self, state):
         try:
+            # A restored accepted launch may reconcile while owners are still
+            # booting. Do not adopt/start pending tools or quiesce reporters until
+            # Runtime, Artifact, Registry and tool TLS are available locally.
+            with self.supervisor.lock:
+                if self.supervisor.closed or any(owner not in self.supervisor.processes
+                    or self.supervisor.processes[owner].status()['state'] != 'running'
+                    for owner in ('runtime', 'artifact', 'registry')):
+                    raise PeerUnavailable()
+                self.supervisor.access.require_running()
             bindings = self.store.prepare(state)
             desired = {name: binding.profile.fingerprint for name, binding in bindings.items()}
             with self.supervisor.lock:

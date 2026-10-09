@@ -1,23 +1,19 @@
 # Campaign launch lifecycle
 
-UI-01.06 approved2026-10-09. L1/L2/L3 complete; L4 actual campaign/restart active.
-Actual browser admission exposed missing idle capacity advertising. Deployment0.18.1
-adds AdmissionCapacity: only healthy idle slots enter standby (no turns/containers),
-existing reporters must acknowledge fresh free capacity, then Runtime independently
-checks Registry eligibility. Rebinding withdraws standby and waits for reporter drain.
-166 launch/catalog tests pass2026-10-09 09:45:44. Actual Runtime admitted one run;
-worker engagement exposed an obsolete legacy run-read route. Deployment0.18.2 uses
-the public graph-observation snapshot metadata for authored graphs. Installed recovery
-of that same run remains pending; no new campaign is substituted.
+UI-01.06 approved and qualified2026-10-09 10:19:00. Deployment0.18.3:502 independent
+installed tests, four process/container probes, actual local/LAN browser launches,
+same-request/run/container recovery with completed results and graceful drain pass.
+See docs/Audits/UI-01.06_Launch_Integration.md for exact evidence and failed trials.
+AdmissionCapacity offers healthy idle standby without turns/containers; reporters
+must acknowledge fresh capacity before Runtime independently checks eligibility.
+Rebinding withdraws standby and waits for reporter drain. RuntimePeer consumes
+existing public graph-observation metadata for authored campaigns.
 Unresolved admission rechecks readiness after restart before original-byte submission.
 A verified pending operation is durably bound before resume; changed/disappearing
 previously observed receipts latch recovery rather than risk another owner operation.
-Verified2026-10-09 08:40:56:170 focused source checks;468 tests in an independent
-Deployment0.17 wheel installation, plus actual coordinator process-death/receipt
-recovery and three Docker monitor-death/adoption probes (intent/created/started).
-Receipt authority in that probe is an HTTP fixture; actual campaign/browser proof
-remains L4. Live Run endpoint enabled; first request safely rejected before any run
-because installed slots had not advertised capacity. Its original receipt is retained.
+Installed process-death receipt probes use an HTTP fixture. The separate actual
+campaign drill retains the original admission/container and verifies all five real
+Runtime nodes succeeded after recovery. Synthetic science is not validated accuracy.
 
 LaunchInstallation composes a closed local-campaign-launch-v1 operator manifest:
 actor_id, launch_profile, scientific_manifest and catalog_manifest (absolute paths).
@@ -29,7 +25,7 @@ binding fingerprints, preserving logical deployment/replica identity.
 LaunchHost uses the existing owner's operator peers and lifetime lease; local readiness
 checks owner/TLS health, drained journals, native scope/config, images and resources.
 No credentials enter manifests/receipts. This composition is opt-in via supervisor
---launch-manifest; installed module/fault qualification passed, serving demo unchanged.
+--launch-manifest; --launch-port exposes the separately authenticated bounded API.
 
 LaunchCoordinator performs one bounded step outside journal transactions. Its local
 lock prevents overlapping ticks; the installation lifetime lease excludes competing
@@ -60,6 +56,12 @@ engagement. Reopening verifies exact retained bytes; it never starts containers 
 edits templates. The installation lease owns file writes. Scientific journals remain
 owned by scientific_workers; binding files contain no credentials.
 
+Actual pending-container interruption exposed an owner-start race. Launch-owned
+startup now retains pending turns without adoption; ManagedLaunchWorkers.prepare
+waits for Runtime/Artifact/Registry processes and tool TLS before catalog changes
+or adoption. This prevents recovery from starting tools against closed endpoints
+or interrupting Registry startup with a catalog withdrawal still in flight.
+
 LaunchJournal owns launches.sqlite3 under an operator-selected local Deployment
 directory. BEGIN IMMEDIATE and a unique active-slot constraint serialize competing
 requests; FULL synchronous commits precede external work. Read/transition callbacks
@@ -67,8 +69,10 @@ never perform peer I/O inside the transaction. Canonical request/receipt records
 survive reopening and compare expected revisions. This is not a Runtime database.
 Cold capture now checks every journal record is terminal before copying installation
 state. A copied journal preserves request/receipt identity on reopen. Startup also checks
-SQL index identity/revision/active-slot metadata against canonical receipts. Actual
-installed backup/restore and retained binding configuration composition remain gates.
+SQL index identity/revision/active-slot metadata against canonical receipts. Retained
+binding composition and isolated journal copy/reopen checks pass. Full installation
+backup/restore remains the existing Deployment runbook; this UI integration does not
+claim a new full-root backup drill.
 
 This module owns one local launch workflow and its private Deployment journal.
 Runtime remains the sole admission/execution authority; Registry owns eligibility,
@@ -94,8 +98,9 @@ profile GET, launch POST and original-receipt GET, never operator control. Bodie
 bounded to262144bytes; actor/scope/profile are installation-fixed. Failures expose
 only allowlisted reason codes. Coordinator failure stops new POST acceptance while
 receipt GET remains available; shutdown drains both threads before lease release.
-123 combined launch/Gateway/integration tests passed2026-10-09 08:54:00. Browser Run
-integration and real campaign qualification remain L3/L4; serving demo is unchanged.
+Gateway/launch integration checks and actual browser Run/reload/results are qualified
+on localhost and the configured LAN listener. General input binding, multiple installed
+profile selection and cluster deployment are outside this first UI boundary.
 Profiles admit only installed adapters and immutable
 image/resource pins. UI requests contain no host paths, commands or credentials.
 Tests live under deploy/local/tests/campaign_launch by contracts/domain/journal/

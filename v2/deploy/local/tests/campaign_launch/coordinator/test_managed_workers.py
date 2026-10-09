@@ -51,6 +51,8 @@ def managed_setup(monkeypatch, make_intent, admission_receipt, clock):
     monkeypatch.setattr(module, 'ScientificGroup', Group)
     monkeypatch.setattr(module, 'require_configured_pending', lambda *args: None)
     supervisor = SimpleNamespace(lock=RLock(), closed=False,
+        processes={name: SimpleNamespace(status=lambda: {'state': 'running'}) for name in ('runtime', 'artifact', 'registry')},
+        access=SimpleNamespace(require_running=lambda: None),
         scientific=Group({'science': binding('old')}), workers=Group({'advance': binding('native')}), catalog=Catalog())
     supervisor.scientific_command = lambda name, action: supervisor.scientific.command(name, action)
     supervisor.worker_command = lambda name, action: supervisor.workers.command(name, action)
@@ -78,6 +80,20 @@ def test_rebinding_waits_for_native_scientific_and_catalog_drain(managed_setup):
     assert adapter.prepare(state).quiescent
     assert original.detached and supervisor.scientific is not original
     assert supervisor.scientific.adoptions == 1 and supervisor.catalog.started
+
+
+@pytest.mark.parametrize('dependency', ['runtime', 'artifact', 'registry', 'tls'])
+def test_restored_launch_waits_for_dependencies_without_adoption_or_catalog_drain(managed_setup, dependency):
+    adapter, supervisor, state = managed_setup
+    if dependency == 'tls':
+        def unavailable(): raise ProfileError('tool_tls_not_running')
+        supervisor.access.require_running = unavailable
+    else:
+        supervisor.processes[dependency].status = lambda: {'state': 'not_started'}
+    with pytest.raises(PeerUnavailable): adapter.prepare(state)
+    assert supervisor.scientific.adoptions == 0
+    assert not supervisor.catalog.draining and not supervisor.catalog.started
+    assert not supervisor.scientific.commands and not supervisor.workers.commands
 
 
 def test_engagement_and_restart_use_original_binding_without_duplicate_start(managed_setup):

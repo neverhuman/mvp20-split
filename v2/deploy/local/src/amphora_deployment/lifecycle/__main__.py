@@ -84,7 +84,10 @@ def main():
                     else:
                         supervisor.catalog = load_catalog(args.catalog_manifest, state.root, state.identity, routes, supervisor)
                     server = ControlServer(routes.port("supervisor"), supervisor, token)
-                    supervisor.scientific.adopt()
+                    if supervisor.launch is None:
+                        supervisor.scientific.adopt()
+                    # Launch-owned pending turns are adopted by prepare() only
+                    # after their local owner/TLS dependencies have restarted.
                     supervisor.catalog.start()
                     if supervisor.launch is not None:
                         supervisor.launch.start()

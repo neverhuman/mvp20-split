@@ -1,5 +1,7 @@
 # Architecture Drift History
 
+- `2026-10-09 10:20:00`: UI-01.06 bounded launch complete100%, aligned; [integration audit](UI-01.06_Launch_Integration.md). Deployment0.18.3/502 independent tests/four recovery probes; Studio0.23.2/337 tests; actual local/LAN Run/results and Knowledge traversal; same request/run/container interruption recovery with five succeeded nodes and zero restored-browser launch POSTs. Capacity, authored observation reads, coherent snapshot retry and startup adoption ordering corrected. Failed trials preserved. No unresolved launch-scope drift; parent Planning/Research provenance and broader UI/scientific gates remain active.
+
 - `2026-10-07 08:17:34`: BP-09.03 closed100%; bounded integrated model/tool/context/browser and future-only corrected successor accepted. Approved shared-daemon outage recovered; all original IDs/volumes retained, exact post-outage original/corrected/blocked readbacks pass. [Audit](BP-09.03_Integrated_Demo_Closeout.md). Historical expiry remains a named nonblocking follow-up; backup/rebuild belongs to BP-09.04.
 
 - `2026-10-02 12:04:52`: DER-01 closed4/4 (100%), aligned; [audit](DER-01_Derived_Publication_Closeout.md).712 installed/replacement tests pass, zero failures/errors/skips. No unresolved drift within the Data/SDK prerequisite; production Knowledge orchestration remains active B1 scope.

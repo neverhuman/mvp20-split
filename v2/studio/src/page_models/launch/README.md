@@ -31,6 +31,8 @@ against the Runtime observation. One recognized finish context may be a pinned a
 constant or original admission input. It is labelled planning context until a matching
 finish output exists, never an execution result. Denied or changed pins fail closed.
 
-Module tests: tests/page_models/launch.236 page-model checks pass2026-10-09 09:10:00.
+Module tests: tests/page_models/launch.238 page-model checks pass2026-10-09 10:19:00.
 Built-browser fixture launch/reload/node-poll/retention passed at1440/390 with no
-serious/critical accessibility violations. Actual managed campaign remains L4.
+serious/critical accessibility violations. Actual local/LAN managed launch, reload,
+same-run interruption recovery and scientific results pass; integration audit owns
+exact evidence. Full Studio suite337 checks passes.
