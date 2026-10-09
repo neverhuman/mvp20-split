@@ -37,4 +37,5 @@ Read the selected plan's tracker first. Complete each phase gate before advancin
 
 - [LAN-01 Local Network Demo Access](Completed/LAN-01%20Local%20Network%20Demo%20Access.md): complete100%, owner accepted and archived; deployed demo preserved.
 
-- [UI-01.05 Knowledge, Run and LLM Integration](UI-01.05%20Knowledge%20Run%20and%20LLM%20Integration.md): scheduled0%; real domain graph, browser launch/live nodes and knowledge-grounded successor proposals. Dated targets are in MBT.
+- [UI-01.05 Knowledge, Run and LLM Integration](UI-01.05%20Knowledge%20Run%20and%20LLM%20Integration.md): active33.33%; K1 complete100%, R1/I1=0%. Real Knowledge/source traversal is served; browser launch boundary awaits the decision below.
+- [UI-01.06 Campaign launch decision](UI-01.06%20Campaign%20launch%20decision.md): proposed Deployment-owned launch API/durable worker binding; owner direction pending before implementation. Runtime keeps admission/execution authority.

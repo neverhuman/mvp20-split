@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed2026-10-08 21:32:11 America/Chicago. Read FIRST after compaction.
+Refreshed2026-10-08 21:38:24 America/Chicago. Read FIRST after compaction.
 Owner says continue until needed; milestones/commits are not stopping points.
 No subagents/JARVIS; v1 read-only. Preserve untracked ocular PDF/DOCX.
 Do not edit source/tests/module READMEs while verification runs.
@@ -11,8 +11,10 @@ Current checkpoint:
   Build68.75 unchanged until owning delivery groups close. All mirrors updated.
 - UI01 -> UI02 -> POP01 -> ML01; LR01 remains paused25%overall/33.33%Build.
   Owner queried LR percentage: unchanged since62ea4966 before UI priority.
-- Significant K1 source/docs UNCOMMITTED. Finish scoped audit/stage review,
-  commit/push; then immediately R1 existing launch/worker boundary analysis.
+- K1 committed/pushed e4890ebd. R1 review found material missing launch boundary;
+  UI-01.06 Campaign launch decision.md is concrete and awaiting owner direction.
+  Async approval question asked. Do not implement its newpublicAPI until answered.
+  R1analysis earns0%; allparent/MBTmirrors updated. Current documentation pendingcommit.
 - No tests running; live helpers below only. No paid calls in K1.
 
 K1 delivery:
@@ -33,12 +35,12 @@ knowledge-context-b actualtextpublication; knowledge-run-b actualcampaign.
 knowledge-browser-c localhost, knowledge-lan-browser-c HTTPS, and
 knowledge-connected-regression-c existing five-view walkthrough pass.
 Actual assets knowledge-ui/public-b. Browser screenshots desktop/narrow reviewed;
-new c screenshots should also be inspected after source-refresh/fit probe refinement.
+New c narrow screenshot inspected after source-refresh/fit probe refinement.
 First knowledge-context-a/run-a/browser-a preserved binary source; text viewer
 correctly refused it. Fixed publisher to text/plain and fresh scope/campaign,
 never rewrote history or weakened media/hash checks.
 Audit docs/Audits/UI-01.05_Knowledge_Integration.md.
-Need final diff/byte pins and commit; no new full test run without source changes.
+Both staged schema byte pins and gitdiffcheck passed before K1commit.
 
 Live:
 localhost http://127.0.0.1:57013 session31300, v2/.test-results/knowledge-live-c.

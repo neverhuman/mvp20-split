@@ -3,16 +3,16 @@
 ## Canonical tracker
 
 - Status: primary_active; connected demo flow implemented; remaining N2 integration gates explicit.
-- Last refreshed: 2026-10-08 21:32:11 (America/Chicago).
+- Last refreshed: 2026-10-08 21:38:24 (America/Chicago).
 - Baseline: 62ea4966; owner-reported disconnected canvas and navigation review on 2026-10-07.
 - Owner: Studio experience, page models and presentation; service owners retain their contracts and state.
 - Parent: none; priority and mirrors in [Master Build Tracker](Master%20Build%20Tracker.md).
 - Overall implementation: **55%**; Build68.75%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
 - Design readiness: G0 complete; ELK directed layout and bounded topology ownership implemented.
 - Demonstrated behavior: connected graphs and question-first navigation verified against retained owner records; result-first comparison and full replacement acceptance remain.
-- Current phase/task: UI-01.05/K1 complete100%; R1 launch/live-node boundary review active. UI-01.04 remains delivered.
+- Current phase/task: UI-01.05/K1 complete100%; R1 launch decision prepared, owner direction pending. UI-01.04 remains delivered.
 - Next task: UI-01.05/R1 launch/live nodes and remaining N2 gates; I1 LLM successor loop after N2.
-- Blocker: none for the delivered local SME review. Actual scientific proposal binding remains unfinished; UI-01.01 applies only to later result discovery.
+- Blocker: UI-01.06 proposes the missing bounded launch/worker-binding API for R1; owner direction pending. Delivered Knowledge/SME review remains available. UI-01.01 applies only to later result discovery.
 - Human acceptance: owner feedback is part of visual review; no new routine approval gates for campaign execution.
 - Active exception: owner explicitly reprioritized UI over worker diagnostics; LR-01 remains paused at25%, Build33.33%, Acceptance0%, with R2 receipt diagnosis preserved.
 - Pre-activation coherence: 2026-10-07 17:54:00, ready for G0. Existing topology/observation APIs, React Flow canvas and isolated Studio boundaries are available; meaningful layout and workflow acceptance are missing. No new backend contract is assumed approved by this plan.
