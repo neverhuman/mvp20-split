@@ -1,5 +1,11 @@
 # Local deployment profile and preflight
 
+Source0.17 begins the owner-approved UI-01.06 [campaign launch module](src/amphora_deployment/campaign_launch/README.md).
+Strict public contracts, pinned profile/identity policy and a private transactional
+launch journal are implemented and tested. Runtime retains admission/execution;
+Deployment composes lifecycle only. Public launch HTTP, dynamic managed binding and
+browser Run remain under implementation. No live viewer cutover is claimed here.
+
 Source0.16 adds closed worker and catalog recipes for standalone Hansen solvency
 and Arrhenius viscosity tools. Four actual Linux worker calculations were retained
 by Runtime in UI-01.03, followed by clean owner/worker drains. Existing release

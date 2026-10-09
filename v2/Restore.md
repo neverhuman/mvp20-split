@@ -1,20 +1,31 @@
 # Restore
 
-Refreshed2026-10-08 21:38:24 America/Chicago. Read FIRST after compaction.
+Refreshed2026-10-09 08:05:50 America/Chicago. Read FIRST after compaction.
 Owner says continue until needed; milestones/commits are not stopping points.
 No subagents/JARVIS; v1 read-only. Preserve untracked ocular PDF/DOCX.
 Do not edit source/tests/module READMEs while verification runs.
 
 Current checkpoint:
 - LAN-01 accepted/archived/pushed14df0c8c.
-- UI-01.05 K1 complete100%, child33.33%; R1/I1=0. ParentUI01=55%, N2=75,
+- UI-01.05 K1 complete100%, child41.67%; R1=25%, I1=0. ParentUI01=55%, N2=75,
   Build68.75 unchanged until owning delivery groups close. All mirrors updated.
 - UI01 -> UI02 -> POP01 -> ML01; LR01 remains paused25%overall/33.33%Build.
   Owner queried LR percentage: unchanged since62ea4966 before UI priority.
-- K1 committed/pushed e4890ebd. R1 review found material missing launch boundary;
-  UI-01.06 Campaign launch decision.md is concrete and awaiting owner direction.
-  Async approval question asked. Do not implement its newpublicAPI until answered.
-  R1analysis earns0%; allparent/MBTmirrors updated. Current documentation pendingcommit.
+- K1 pushed e4890ebd; launch decision pushed e32304b6. OWNER APPROVED UI-01.06
+  bounded launch API2026-10-09. Do not ask again. Implement autonomously untilneeded.
+- Current UNCOMMITTED foundation: contracts/campaign_launch0.1 + six additive
+  published schemas; Deployment source0.17 adds campaign_launch intent/profile/state/
+  privateSQLitejournal; dependencies/locks updated. Existing schema bytes unchanged.
+ 25tests pass: canonical replay/identity, profilepins/limits, concurrent single-slot,
+ restart, stale CAS rollback, admission binding and workerfailure preservesrun.
+ Schema check + productionboundary guard passed; no testsrunning.
+- UI-01.06 L1=100%, L2=25%, L3/L4/L5=0. L2 current: public-peer coordinator,
+ managedworker adapter/recovery, fullfailurematrix. No liveLaunchAPI/UI Run yet.
+- Before nextcommit: finishREADME/index/driftmirrors, stageexactownedfiles (exclude
+ ocular artifacts), commit/push foundation. ContinueL2immediately afterward.
+- Journal is new Deployment-private SQLite local state; include quiesced backup/
+ restore and fail-closedcorruption handling beforelive release. It does not query
+ peer tables. Same scopedactor/requestid inlaunch and Runtimeadmission.
 - No tests running; live helpers below only. No paid calls in K1.
 
 K1 delivery:
@@ -68,10 +79,18 @@ Git -c safe.directory=//DesktopNAS/Code/mvp20-split -c core.safecrlf=false.
 Stage exact work, exclude userocularartifacts. Keep schema bytes LF (.gitattributes).
 
 Next R1:
-Review actual public admission and managed-worker engagement boundaries before
-adding Run. Gateway is scoped proxy, not execution orchestration owner. No shell
-fromStudio. If a new public contract needed, prepare concrete reviewable decision
-as AGENTS requires material-boundary owner direction; finish independent workfirst.
+Approved UI-01.06. Implement journal-backed coordinator against public Runtime,
+then managedlocalworker adapter. Never expose operatorcontrol or shelltoStudio.
+ExistingDeploymentSupervisor holds lifetimewriterlease: launchlistener/background
+coordinator should integrate into that owner, not run competingrootcontroller.
+Scientific workerconfig requires run_id. Newbindings only after oldjournalsdrain;
+preserve original admission receipt/run throughlostreply, startfailureandrestart.
+Contractsparser parse_launch returns exactouter+innerCanonicalCommand; outer
+campaign.launch requires numericv2profile, inner graph.admit_draft keepslegacy/numeric.
+Request identityactor/scope/id mustmatch both. Wiremodels don'townpolicy.
+LaunchState currently recovery_required hasnoresumeedges: add explicit
+reconciliation tiedto original state/receipt, notblindreset. Released stillneeds
+verified Runtime terminal + workerquiescence inorchestrator. Testfailurecases.
 ParentN2 groups still require provider provenance/reasoning, generationalcomparison
 and launch; I1 owns liveLLM/nodeinventory and durable missing-capability requests.
 Check ordering for real dependency cycles; don't silently wave prerequisites.

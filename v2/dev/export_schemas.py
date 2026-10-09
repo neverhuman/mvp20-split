@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 
 import amphora_contracts_topology_search as topology_search
+import amphora_contracts_campaign_launch as campaign_launch
 import amphora_contracts_evaluation_reuse as evaluation_reuse
 from amphora_contracts_synthetic_evaluation import SyntheticEvaluationReceipt
 from amphora_contracts_execution_proofs import AcceptedToolExecution
@@ -418,6 +419,12 @@ for name, model in {
 }.items():
     MODELS["artifacts." + name] = model
 
+
+
+for name, model in {'request': campaign_launch.LaunchRequest,
+                    'receipt': campaign_launch.LaunchReceipt,
+                    'profiles': campaign_launch.LaunchProfileCatalog}.items():
+    MODELS['campaign-launch.' + name] = model
 
 
 def encoded(value: object) -> bytes:

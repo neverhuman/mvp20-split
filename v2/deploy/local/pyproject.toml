@@ -1,8 +1,8 @@
 [project]
 name = "amphora-deployment"
-version = "0.16.0"
+version = "0.17.0"
 requires-python = ">=3.12,<3.13"
-dependencies = []
+dependencies = ["amphora-contracts-campaign-launch==0.1.0", "amphora-contracts-commands==0.2.0", "amphora-contracts-core==0.1.0", "amphora-contracts-runtime==0.1.0"]
 
 [build-system]
 requires = ["hatchling>=1.27,<2"]
@@ -12,4 +12,10 @@ build-backend = "hatchling.build"
 packages = ["src/amphora_deployment"]
 
 [tool.amphora]
-public-imports = []
+public-imports = ["amphora-contracts-campaign-launch", "amphora-contracts-commands", "amphora-contracts-core", "amphora-contracts-runtime"]
+
+[tool.uv.sources]
+amphora-contracts-campaign-launch = { path = "../../contracts/campaign_launch", editable = true }
+amphora-contracts-commands = { path = "../../contracts/commands", editable = true }
+amphora-contracts-core = { path = "../../contracts/core", editable = true }
+amphora-contracts-runtime = { path = "../../contracts/runtime", editable = true }

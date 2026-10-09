@@ -3,7 +3,8 @@ name = "amphora-foundation-verification"
 version = "0.1.0"
 requires-python = ">=3.12,<3.13"
 dependencies = [
-    "amphora-deployment==0.16.0",
+    "amphora-deployment==0.17.0",
+    "amphora-contracts-campaign-launch==0.1.0",
     "amphora-local-gateway==0.3.0",
     "amphora-contracts-draft-successor==0.1.0",
     "amphora-contracts-topology-search==0.1.0",
@@ -62,6 +63,7 @@ link-mode = "copy"
 
 [tool.uv.sources]
 amphora-deployment = { path = "../deploy/local", editable = true }
+amphora-contracts-campaign-launch = { path = "../contracts/campaign_launch", editable = true }
 amphora-local-gateway = { path = "../services/local_gateway", editable = true }
 amphora-contracts-draft-successor = { path = "../contracts/draft_successor", editable = true }
 amphora-contracts-topology-search = { path = "../contracts/topology_search", editable = true }

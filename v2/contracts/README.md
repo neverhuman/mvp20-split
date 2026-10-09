@@ -1,5 +1,8 @@
 # Contract Packages
 
+- [Campaign launch](campaign_launch/README.md): bounded Deployment launch request,
+  profile and receipt contracts; exact existing Runtime admission remains authoritative.
+
 Independent Python packages expose public imports, versioned wire schemas and language-neutral fixtures. This directory is navigation, not a shared business-service module.
 
 [Representation contracts](representations/README.md) expose complete encoding profiles, source-specific binding requests, vector Artifact documents and publication status. Data owns interpretation, provenance, rights and storage; these DTOs grant none of those authorities.
