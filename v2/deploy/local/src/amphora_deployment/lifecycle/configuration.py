@@ -14,7 +14,7 @@ from .supervisor import OwnerBinding
 
 def allowed_reference(owner, name):
     if owner == "gateway":
-        return name == "GATEWAY_SESSION_KEY" or name in {key.upper() + "_OPERATOR_TOKEN" for key in OWNERS}
+        return name in {"GATEWAY_SESSION_KEY", "LAUNCH_GATEWAY_TOKEN"} or name in {key.upper() + "_OPERATOR_TOKEN" for key in OWNERS}
     if name == owner.upper() + "_OPERATOR_TOKEN":
         return True
     if name == "CURSOR_KEY":
@@ -67,8 +67,12 @@ def load_bindings(root, manifest, routes):
                     ("installation", "source_lock", "configuration")), "lifecycle_binding_path")
         references = record["secret_references"]
         require(type(references) is list and len(references) <= 64 and all(type(name) is str and allowed_reference(owner, name) for name in references), "lifecycle_credential_scope")
-        selected = [name for name in references if name not in {'WORKER_REGISTRY_TOKEN', 'RUNTIME_REGISTRY_TOKEN'}]
+        selected = [name for name in references if name not in {'WORKER_REGISTRY_TOKEN', 'RUNTIME_REGISTRY_TOKEN', 'LAUNCH_GATEWAY_TOKEN'}]
         values = bundle.environment(selected)
+        if 'LAUNCH_GATEWAY_TOKEN' in references:
+            from ..campaign_launch.credentials import launch_credential
+            require(owner == 'gateway', 'lifecycle_credential_scope')
+            values.update(launch_credential(root, state['deployment_id']).environment(['LAUNCH_GATEWAY_TOKEN']))
         if 'RUNTIME_REGISTRY_TOKEN' in references:
             from ..registry_access import registry_credential
             require(owner in {'runtime', 'registry'}, 'lifecycle_credential_scope')

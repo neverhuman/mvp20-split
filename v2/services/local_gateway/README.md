@@ -1,6 +1,13 @@
 # Local browser gateway
 
-Owner LAN-01; release0.3.0 adds an explicit HTTPS LAN profile. This independent service owns
+Owner LAN-01/UI-01.06; release0.4.0 adds the explicit Deployment launch peer.
+Only /v1/campaign-launch-profiles, /v1/campaign-launches and one receipt identity
+are routed; no query parameters or operator controls. Launch POST is bounded to
+262144bytes. Safe allowlisted launch reason codes survive error sanitization;
+all other upstream details remain private. Cookie/origin/host gates and server-side
+bearer injection still apply. Cross-owner HTTP fixture verifies session, denied origin,
+duplicate request/receipt and active-slot collision; actual UI campaign remains L4.
+Release0.3.0 introduced the explicit HTTPS LAN profile. This independent service owns
 loopback Studio hosting, browser sessions and bounded public HTTP routing to the
 six service owners. It owns no campaign decisions, SQL/schema, scientific policy,
 provider requests or private service imports. Studio remains a separate package.

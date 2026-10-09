@@ -1,59 +1,57 @@
 # Restore
 
-Refreshed2026-10-09 08:44:00 America/Chicago. Read FIRST after compaction.
+Refreshed2026-10-09 09:07:00 America/Chicago. Read FIRST after compaction.
 Owner says continue until needed; milestones/commits are not stopping points.
 No subagents/JARVIS; v1 read-only. Preserve untracked ocular PDF/DOCX.
 Do not edit source/tests/module READMEs while verification runs.
 
 Current checkpoint:
-- LAN-01 accepted/archived/pushed14df0c8c.
-- UI-01.05 K1 complete100%, child46.67%; R1=40%, I1=0. ParentUI01=55%, N2=75,
-  Build68.75 unchanged until owning delivery groups close. All mirrors updated.
-- UI01 -> UI02 -> POP01 -> ML01; LR01 remains paused25%overall/33.33%Build.
-  Owner queried LR percentage: unchanged since62ea4966 before UI priority.
-- K1 pushed e4890ebd; launch decision pushed e32304b6. OWNER APPROVED UI-01.06
-  bounded launch API2026-10-09. Do not ask again. Implement autonomously untilneeded.
-- Foundation pushed fda9504f: contracts/campaign_launch0.1 + six additive
-  published schemas; Deployment source0.17 adds campaign_launch intent/profile/state/
-  privateSQLitejournal; dependencies/locks updated. Existing schema bytes unchanged.
- 25tests passed: canonical replay/identity, profilepins/limits, concurrent single-slot,
- restart, stale CAS rollback, admission binding and workerfailure preservesrun.
- Schema check + productionboundary guard passed; no testsrunning.
-- Coordinator/runtimepeer/runbindingstore pushed87634f4e.
-- Managedadapter/preflight/backup + scientificpreparedturnfix pushedde4b993e.
-- Current UNCOMMITTED: LaunchInstallation/config manifest, LocalLaunchReadiness,
- LaunchHost andsupervisor --launch-manifest composition; startuprestore+catalogpins
- BEFOREpendingcontainerguard. Tests170pass incl lifecycle/scientific/launch/contracts.
- Boundariespass. Newdevinstalled/recoveryqualifiers; preparedintent/created options
- addedtoexistingverify_scientific_monitor_recovery.py.
-- Verification FINISHED/PASSED: v2/.test-results/launch-installation-20261009b.
- IsolatedDeployment0.17/publiccontracts/Pydantic;468installedDeploymenttests, actual
- coordinatorprocessdeath afterfixtureHTTPadmission + 3actualDockeradoptionprobes
- started/intent/created. Fourprobespassed; originalidentities, singlePOST/request.
- Audit docs/Audits/UI-01.06_Launch_Recovery.md + Evidence/UI-01.06_Launch_Recovery.json.
- Physicalbundle C:/Users/alb_p/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/Local/Amphora/launch-qualification-20261009b.
- Driverlog v2/.test-results/launch-installation-20261009b-driver.txt;
- owner/verification.log buildlog, verification.log tests/probes. Preservefailedoutput.
- Attempta preserved:468installedtests+receiptprocessdeath passed, TLScreationfailed
- becauseWindowsStorePython redirectedlogicalAppDataLocal andOpenSSLcouldn'tseeit.
- PSverifiedlogicalrequest.cnf absent, physicalPackageLocalCachefilepresent. Retryb
- usesexplicitphysicalpath; no productionchange needed. Do notuse logicalLocalAppData.
- UsesactualinstalledRegistryPython fromROOT .test-results/demo-20261008/frozen-original
- (NOTv2/.test-results!). LocalUIreturned200 at08:33; helpersunchanged.
- Earlier scopedrunner44tests passed, combinedcoverage90% (notnewfilescoverage).
- Productionboundaries pass. Existingregistry_access tests newlyregistered in scopes.
- Use pytest -c v2/dev/pyproject.toml (importlib); defaultmode causes existingtestname
- collisions. Fixedlaunchtestcrossimport; shortparamids avoidWindows oversizednames.
-- UI-01.06 overall40%; L1/L2=100%, L3/L4/L5=0. L3nowactive: narrowauthenticated
- API/Gateway/Studio. L2allfourgroupscomplete. No publiclaunchlistener/UIyet.
- RunBindingStore retains exactconfig+manifest underROOT/campaign-launches/requestsha;
- no workersstarted. PublicRuntimePeer fixedloopback, exactbytes, receiptbindingchecks.
-- BeforeL3: commit/push verifiedcomposition exactownedfiles(excludeocular). README,
- architecture/audit/trackersupdated. MBTrecentcheckpoint added andcapped25rows.
-- Journal is new Deployment-private SQLite local state; include quiesced backup/
- restore and fail-closedcorruption handling beforelive release. It does not query
- peer tables. Same scopedactor/requestid inlaunch and Runtimeadmission.
-- No testsrunning; livehelpers only. No paid calls.
+- LAN-01 accepted/archived/pushed14df0c8c; K1 pushed e4890ebd.
+- UI01 -> UI02 -> POP01 -> ML01. LR01 remains paused25%overall/33.33%Build.
+- UI01 parent55%, Build68.75%, N2=75 unchanged pending owning delivery groups.
+  UI01.05=51.67%, K1=100%, R1=55%, I1=0. UI01.06=55%, L1/L2=100%,
+  L3=75% (API/Gateway/Studio recovery model complete; integrated RunUI remaining).
+- Owner APPROVED bounded Deployment launch API2026-10-09. No new permission needed.
+- Pushed fda9504f contracts/journal;87634f4e coordinator;de4b993e workeradapter;
+  845a6311 supervisor composition/L2 qualification. Current L3 awaiting commit.
+- L3 adds Deployment separate loopback launch HTTP/token, --launch-port, Gateway0.4
+  explicit whitelist/safeerrors, Studio generated launch DTOs/client/immutable
+  LaunchSubmission/localStorage journal/CampaignLaunch recovery model.
+- Verification:123 combined launch/Gateway/integration checks passed before2 added
+  host tests; broader182test run181pass/1existing control socket-reset failure;
+  isolated original control test rerun passes. LaunchAPI oversize probe corrected
+  to send oversized Content-Length without body (server rejects before reading).
+  12 focused Studio launch checks,88 transport checks, TypeScript/generated schemas,
+  production boundaries pass. No testsrunning. No paid calls/livecutover.
+- Next: integrated Run control, draft selection/validation and input selection;
+  active scientific graph context before finish; actual Runtime node polling.
+  Commit this verified checkpoint, then continue L3 UI. L4 actualcampaign/restart,
+  L5 localhost/LANbrowser/installedqualification remain. Do not activate L4 early.
+- Crucial discovery: scientific definition has FIVE graph inputs (4parameter
+  artifacts plus campaign_context), not constants. definition.py finish passes
+  campaign_context from input. Need real input selection, preferably exact prior
+  campaign input refs from public Runtime graph inputs; don't assume inputs=[].
+  DraftFlow must derive early context from original launch admission inputs +
+  verified receipt/run/draft, and label pinned planning input vs retained finish.
+  CampaignFlowModel currently requires finish output and loses context mid-run.
+- LocalWorkspace currently uses gateway-fixed context.run_id; Campaign owns
+  CampaignFlowModel and early-return ConnectedCampaign bypasses LocalDesign.
+  New launch model must sit above Campaign and use returned run; persist through
+  refresh. Do not fabricate Runtime status from Deployment readiness.
+- Studio transport/launch and page_models/launch READMEs/tests own new behavior.
+  Published schema roots request/receipt/profiles. Launch wrapper keeps original
+  Runtime bytes, exact actor/scope/id and profile. Conflict/denial failclosed;
+  restored run hidden until live GET. Deliberate retry onlysamebytes.
+- Python v2/dev/.venv/Scripts/python.exe; pytest -c v2/dev/pyproject.toml mandatory.
+  uv v2/.venv/Scripts/uv.exe; npm.cmd cwdv2/studio. Git safe.directory required.
+- L2 evidence v2/.test-results/launch-installation-20261009b:468 independent
+  installedDeploymenttests, actualprocessdeath originalreceipt/onePOST,3Docker
+  monitoradoptionprobes(started/intent/created),170focusedsourcechecks. Audit
+  docs/Audits/UI-01.06_Launch_Recovery.md. Fixture owner, not actualRuntimecampaign.
+  Failedattempta retained WindowsStorePython AppData redirection issue; usephysical
+  C:/Users/alb_p/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/Local/Amphora paths.
+- Root .test-results/demo-20261008/frozen-original/owners.json NOTv2/.test-results.
+  Serving demo remains unchanged. One Supervisor lease/root; do not compete.
 
 K1 delivery:
 Studio0.22; distinct domain tab; old view=knowledge stays Results. Verified retained

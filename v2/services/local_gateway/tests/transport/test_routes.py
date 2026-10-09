@@ -21,3 +21,16 @@ def test_alias_and_query_preserve_owner_contract():
 @pytest.mark.parametrize('endpoint',['https://127.0.0.1:99','http://localhost:99','http://remote:99','http://secret@127.0.0.1:99','http://127.0.0.1:99/redirect'])
 def test_peer_must_be_explicit_credential_free_loopback(endpoint):
     with pytest.raises(GatewayError): Peer.load({'endpoint':endpoint,'token_env':'AMPHORA_TOKEN'}, {'AMPHORA_TOKEN':'x'*40})
+
+
+@pytest.mark.parametrize('path', ['/api/deployment/v1/campaign-launches',
+    '/api/deployment/v1/campaign-launch-profiles', '/api/deployment/v1/campaign-launches/request%3A1'])
+def test_only_explicit_campaign_launch_surface_is_routable(path):
+    assert Route.parse(path).owner == 'deployment'
+
+
+@pytest.mark.parametrize('path', ['/api/deployment/v1/owners/runtime/start',
+    '/api/deployment/v1/status', '/api/deployment/v1/campaign-launches/a/start',
+    '/api/deployment/v1/campaign-launches?project=foreign'])
+def test_launch_peer_never_exposes_supervisor_or_query_authority(path):
+    with pytest.raises(GatewayError): Route.parse(path)

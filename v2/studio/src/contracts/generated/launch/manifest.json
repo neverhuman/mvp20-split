@@ -1,0 +1,14 @@
+{
+  "request": {
+    "source": "contracts/schemas/v1/campaign-launch.request.serialization.json",
+    "sha256": "4764f9dc5fd19f1ba892f0078728fddefdf6bde7b7f443d68472dcda641bda91"
+  },
+  "receipt": {
+    "source": "contracts/schemas/v1/campaign-launch.receipt.serialization.json",
+    "sha256": "72b84308d0575a02d00ba14ce5b65ecb972b780941e34fdf513ef2bdd26e516e"
+  },
+  "catalog": {
+    "source": "contracts/schemas/v1/campaign-launch.profiles.serialization.json",
+    "sha256": "8987ca0089594ba37099f25d9782c2610862a42224ec285d57aa4c4da572cc17"
+  }
+}

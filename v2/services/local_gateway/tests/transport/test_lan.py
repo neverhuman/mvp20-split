@@ -14,7 +14,7 @@ from amphora_local_gateway.configuration import Configuration,GatewayError
 from amphora_local_gateway.listener import Listener
 from amphora_local_gateway.server import GatewayServer
 from amphora_local_gateway.sessions import Sessions,SessionDenied
-from test_http import configuration,running
+from .test_http import configuration,running
 
 def test_cli_stop_marker_drains_independent_gateway(tmp_path):
     configuration(tmp_path,18000)

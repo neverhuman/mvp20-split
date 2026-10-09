@@ -10,11 +10,40 @@ import pytest
 
 def make_host(monkeypatch, tick):
     monkeypatch.setattr(module, 'LaunchCoordinator', lambda *args: SimpleNamespace(tick=tick))
-    installation = SimpleNamespace(store=object(), policy=object(), executors=[], journal=object(), catalog=lambda *args: None)
-    supervisor = SimpleNamespace(bindings={name: SimpleNamespace(environment={
+    installation = SimpleNamespace(store=object(), policy=object(), executors=[], journal=object(), catalog=lambda *args: None,
+        manifest=SimpleNamespace(actor_id='researcher'))
+    supervisor = SimpleNamespace(closed=False, bindings={name: SimpleNamespace(environment={
         'AMPHORA_' + name.upper() + '_OPERATOR_TOKEN': 'fixture-private-token'})
         for name in ('runtime', 'artifact', 'registry')})
     return LaunchHost(installation, supervisor, SimpleNamespace(port=lambda name: 57018))
+
+
+def test_api_remains_readable_after_coordinator_failure_then_closes(monkeypatch):
+    from urllib.request import Request, urlopen
+    from urllib.error import HTTPError
+    def fail(): raise OSError('private-detail')
+    host = make_host(monkeypatch, fail)
+    host.attach_api(0, 'x' * 40)
+    port = host.api.server_address[1]
+    host.start()
+    assert host.stop.wait(3)
+    assert not host.api_stop.is_set() and not host.api.accepting()
+    try:
+        # Route remains served, even though coordinator acceptance has stopped.
+        with pytest.raises(HTTPError) as error:
+            urlopen(Request(f'http://127.0.0.1:{port}/v1/unknown', headers={'Authorization': 'Bearer ' + 'x' * 40}), timeout=3)
+        assert error.value.code == 404
+        error.value.close()
+    finally:
+        host.close()
+    assert not host.api_thread.is_alive()
+
+
+def test_unstarted_listener_is_closed_with_host(monkeypatch):
+    host = make_host(monkeypatch, lambda: None)
+    host.attach_api(0, 'x' * 40)
+    host.close()
+    assert host.api.socket.fileno() == -1
 
 
 def test_background_coordinator_stops_before_owner_lease_is_released(monkeypatch):

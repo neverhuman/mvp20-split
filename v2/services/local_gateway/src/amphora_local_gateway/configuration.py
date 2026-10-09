@@ -58,7 +58,7 @@ class Configuration:
         require(set(value)=={'profile','public_directory','peers','context','launcher_key_env'}|({'listener'} if lan else set())
                 and value['profile'] in ('local-gateway-v1','lan-gateway-v1'),'gateway_configuration_shape')
         require(type(value["peers"]) is dict and bool(value["peers"]) and
-                set(value["peers"]) <= {"runtime", "artifact", "registry", "research", "knowledge", "planning"}, "gateway_peer_names")
+                set(value["peers"]) <= {"runtime", "artifact", "registry", "research", "knowledge", "planning", "deployment"}, "gateway_peer_names")
         context = value["context"]
         require(type(context) is dict and set(context) == {"actor_id", "scope", "run_id", "synthetic"}, "gateway_context_shape")
         require(type(context["actor_id"]) is str and bool(re.fullmatch(r"[A-Za-z0-9_.-]{1,128}",context["actor_id"])) and

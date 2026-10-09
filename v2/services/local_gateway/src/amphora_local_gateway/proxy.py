@@ -2,13 +2,15 @@
 
 from dataclasses import dataclass
 import http.client
+import json
+import re
 from urllib.parse import unquote, urlsplit
 
 from .configuration import require, GatewayError
 
 
 ALIASES = {"runtime":"runtime", "artifacts":"artifact", "data":"artifact", "registry":"registry",
-           "knowledge":"knowledge", "research":"research", "planning":"planning"}
+           "knowledge":"knowledge", "research":"research", "planning":"planning", "deployment":"deployment"}
 MAXIMUM_BODY = 1048576
 MAXIMUM_RESPONSE = 8388608
 
@@ -29,11 +31,18 @@ class Route:
         require("%2f" not in parsed.path.lower() and "\\" not in decoded and not any(part in (".", "..", "") for part in decoded.split("/")[1:]) and
                 "%" not in decoded and all(ord(c) >= 32 for c in decoded), "gateway_route_encoding")
         target = "/" + "/".join(parts[3:]) + ("?" + parsed.query if parsed.query else "")
+        if parts[2] == 'deployment':
+            allowed = (len(parts) == 5 and parts[4] in {'campaign-launches', 'campaign-launch-profiles'}
+                or len(parts) == 6 and parts[4] == 'campaign-launches'
+                and re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._:-]{0,127}', unquote(parts[5])))
+            require(bool(allowed) and not parsed.query, 'gateway_launch_route')
         return cls(ALIASES[parts[2]], target)
 
 
 def forward(peer, route, method, body, request_id):
     require(method in {"GET", "POST"} and len(body) <= MAXIMUM_BODY, "gateway_request_bound")
+    if route.owner == 'deployment':
+        require(len(body) <= 262144 and (method == 'GET' or route.target == '/v1/campaign-launches'), 'gateway_launch_request_bound')
     connection = http.client.HTTPConnection("127.0.0.1", peer.port, timeout=15)
     try:
         headers = {"Authorization":"Bearer " + peer.token, "Accept":"application/json, application/octet-stream",
@@ -44,6 +53,17 @@ def forward(peer, route, method, body, request_id):
         response = connection.getresponse()
         require(not 300 <= response.status < 400, "gateway_owner_redirect")
         if response.status >= 400:
+            if route.owner == 'deployment':
+                raw = response.read(4097)
+                try:
+                    error = json.loads(raw) if len(raw) <= 4096 else None
+                except ValueError:
+                    error = None
+                allowed = {'launch_slot_busy', 'launch_request_conflict', 'launch_scope_denied',
+                    'launch_profile_mismatch', 'launch_profile_limit', 'launch_request_invalid',
+                    'launch_unavailable', 'launch_receipt_unavailable'}
+                if type(error) is dict and type(error.get('reason_code')) is str and error['reason_code'] in allowed:
+                    return response.status, 'application/json', json.dumps({'reason_code': error['reason_code']}).encode()
             # Preserve the status used by Studio, never expose private owner diagnostics.
             return response.status, "application/json", b'{"error":"owner_request_rejected"}'
         size = response.getheader("Content-Length")

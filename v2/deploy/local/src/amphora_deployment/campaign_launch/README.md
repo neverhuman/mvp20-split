@@ -72,8 +72,15 @@ through retry/restart. A launch that was admitted keeps its run on worker failur
 Pending old scientific journals block replacement; no force deletion or new campaign
 is allowed as recovery. Only rejected or safely released launches free the slot.
 
-The public launcher will use a separate loopback listener and scoped credential,
-not expose operator control. Profiles admit only installed adapters and immutable
+The public launcher uses --launch-port with --launch-manifest, a separate loopback
+listener and DPAPI-protected LAUNCH_GATEWAY_TOKEN granted only to Gateway. It exposes
+profile GET, launch POST and original-receipt GET, never operator control. Bodies are
+bounded to262144bytes; actor/scope/profile are installation-fixed. Failures expose
+only allowlisted reason codes. Coordinator failure stops new POST acceptance while
+receipt GET remains available; shutdown drains both threads before lease release.
+123 combined launch/Gateway/integration tests passed2026-10-09 08:54:00. Browser Run
+integration and real campaign qualification remain L3/L4; serving demo is unchanged.
+Profiles admit only installed adapters and immutable
 image/resource pins. UI requests contain no host paths, commands or credentials.
 Tests live under deploy/local/tests/campaign_launch by contracts/domain/journal/
 transport/acceptance responsibility. Real browser/worker evidence is a separate gate.

@@ -29,6 +29,7 @@ def main():
     parser.add_argument('--scientific-worker')
     parser.add_argument('--catalog-manifest', type=Path)
     parser.add_argument('--launch-manifest', type=Path)
+    parser.add_argument('--launch-port', type=int)
     args = parser.parse_args()
     try:
         routes = Routes.ensure(args.root) if args.action == "serve" else Routes.load(args.root)
@@ -42,6 +43,11 @@ def main():
         if args.action == "serve":
             if args.manifest is None:
                 parser.error("serve requires --manifest")
+            if args.launch_port is not None:
+                if args.launch_manifest is None or not 1024 <= args.launch_port <= 65535 or args.launch_port in dict(routes.ports).values():
+                    parser.error('--launch-port requires a launch manifest and a distinct unreserved port')
+                from ..campaign_launch.credentials import provision_launch_credential
+                provision_launch_credential(args.root)
             bindings = load_bindings(args.root, args.manifest, routes)
             token = control_token(args.root, create=True)
             from ..workers.configuration import load_workers
@@ -71,6 +77,10 @@ def main():
                         supervisor.catalog = launch_installation.catalog(supervisor, scientific, routes)
                         from ..campaign_launch.host import LaunchHost
                         supervisor.launch = LaunchHost(launch_installation, supervisor, routes)
+                        if args.launch_port is not None:
+                            from ..campaign_launch.credentials import launch_credential
+                            launch_token = launch_credential(state.root, state.identity).environment(['LAUNCH_GATEWAY_TOKEN'])['LAUNCH_GATEWAY_TOKEN']
+                            supervisor.launch.attach_api(args.launch_port, launch_token)
                     else:
                         supervisor.catalog = load_catalog(args.catalog_manifest, state.root, state.identity, routes, supervisor)
                     server = ControlServer(routes.port("supervisor"), supervisor, token)

@@ -202,6 +202,11 @@ async function generate(roots, target, profiles = []) {
 
 await generate(roots, target);
 await generate(authoringRoots, resolve(target, "authoring"));
+await generate({
+  request: ["campaign-launch.request", "LaunchRequest"],
+  receipt: ["campaign-launch.receipt", "LaunchReceipt"],
+  catalog: ["campaign-launch.profiles", "LaunchProfileCatalog"],
+}, resolve(target, "launch"));
 
 await generate(knowledgeRoots, resolve(target, "knowledge"));
 await generate(researchRoots, resolve(target, "research"));

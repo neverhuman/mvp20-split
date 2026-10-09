@@ -15,6 +15,8 @@ class LaunchHost:
         self.stop = threading.Event()
         self.thread = None
         self.failure = False
+        self.api, self.api_thread = None, None
+        self.api_stop = threading.Event()
         peers = {}
         for owner in ('runtime', 'artifact', 'registry'):
             binding = supervisor.bindings[owner]
@@ -27,10 +29,20 @@ class LaunchHost:
             installation.executors, LocalLaunchReadiness(installation, supervisor, self.stop))
         self.coordinator = LaunchCoordinator(installation.journal, preflight, peers['runtime'], workers)
 
+    def attach_api(self, port, token):
+        from .http import LaunchServer
+        require(self.thread is None and self.api is None, 'launch_listener_already_attached')
+        self.api = LaunchServer(port, token, self.installation.manifest.actor_id,
+            self.installation.policy, self.installation.journal,
+            lambda: not self.stop.is_set() and not self.failure and not self.supervisor.closed, self.api_stop)
+
     def start(self):
         require(self.thread is None and not self.stop.is_set(), 'launch_host_already_started')
         self.thread = threading.Thread(target=self._run, name='amphora-campaign-launch')
         self.thread.start()
+        if self.api is not None:
+            self.api_thread = threading.Thread(target=self.api.serve, name='amphora-campaign-launch-api')
+            self.api_thread.start()
 
     def _run(self):
         while not self.stop.is_set():
@@ -44,12 +56,18 @@ class LaunchHost:
 
     def quiesce(self):
         self.stop.set()
+        self.api_stop.set()
 
     def require_stopped(self):
         require(self.thread is None or not self.thread.is_alive(), 'launch_host_requires_drain')
+        require(self.api_thread is None or not self.api_thread.is_alive(), 'launch_listener_requires_drain')
 
     def close(self):
         self.quiesce()
+        if self.api_thread is not None:
+            self.api_thread.join(10)
+        elif self.api is not None:
+            self.api.server_close()
         if self.thread is not None:
             self.thread.join(15)
         self.require_stopped()
