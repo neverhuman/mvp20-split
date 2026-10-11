@@ -1,0 +1,25 @@
+.campaign-origin { margin: 0 0 1rem; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.campaign-origin > summary { cursor: pointer; padding: .8rem 0; font-weight: 650; }
+.campaign-origin > summary span { font-size: .85rem; font-weight: 400; margin-left: .65rem; }
+.campaign-origin-body { max-height: min(36rem, 65vh); overflow-y: auto; overflow-wrap: anywhere; padding: 0 .4rem 1rem 0; }
+.campaign-origin-body h2 { font-size: 1.2rem; margin: .4rem 0; }
+.campaign-origin-body h3 { font-size: 1rem; margin: 1.25rem 0 .5rem; }
+.origin-rationale { white-space: pre-wrap; max-width: 85ch; }
+.origin-attribution { font-size: .85rem; }
+.origin-choice { display: grid; gap: .4rem; max-width: 36rem; }
+.origin-choice select { width: 100%; min-width: 0; padding: .5rem; font: inherit; }
+.origin-criteria { margin-top: .7rem; max-width: 85ch; }
+.origin-criteria h4 { font-size: 1rem; margin: .5rem 0; }
+.origin-criteria li { margin-bottom: .4rem; }
+.campaign-origin-body details { margin: .8rem 0; }
+.campaign-origin-body details summary { cursor: pointer; padding: .35rem 0; }
+.campaign-origin-body dl { display: grid; grid-template-columns: minmax(7rem, 1fr) minmax(0, 3fr); gap: .4rem .7rem; }
+.campaign-origin-body dd { margin: 0; }
+.origin-tools table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.origin-tools th, .origin-tools td { text-align: left; padding: .5rem .35rem; vertical-align: top; border-bottom: 1px solid var(--line); }
+.origin-refresh { margin-top: .5rem; }
+@media (max-width: 600px) {
+  .campaign-origin > summary span { display: block; margin: .3rem 0 0; }
+  .campaign-origin-body dl { grid-template-columns: 1fr; }
+  .campaign-origin-body dd { margin-bottom: .4rem; }
+}

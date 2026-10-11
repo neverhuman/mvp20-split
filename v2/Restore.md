@@ -1,38 +1,39 @@
 # Restore
 
-Refreshed2026-10-11 18:23:21 America/Chicago. Read FIRST after compaction.
-Owner says continue until needed; milestones/commits are not stopping points.
-No subagents/JARVIS; v1 read-only. Preserve untracked ocular PDF/DOCX.
-Do not edit source/tests/module READMEs while verification/installation runs.
+Refreshed2026-10-11 18:51:49 America/Chicago. Read FIRST after compaction.
+Continue until owner needed; checkpoints/commits are not stopping points.
+No subagents/JARVIS; v1 read-only; preserve untracked ocular PDF/DOCX.
+Do not edit source/tests/module READMEs during verification/installation.
 
 ## Current canonical task
 
-UI-01.07 bounded provenance API approved2026-10-11; P1/P2=100%, P3=33.33%, P4=0%, child58.33%.
-P3 active: API/Gateway/Studio. UI-01.06 launch remains closed100%.
-UI-01.05 K1/R1=100%, I1=0%, overall66.67%. N2.5=100%, N2=81.25%;
-UI-01 overall56.25%, Build70.31%, Verification0%. Parent N2.2 remains50% until
-provenance UI qualification; N2.3/N2.4 both50% follow, then N3/I1 LLM curation.
-Sequence UI-01 -> UI-02 -> POP-01 -> ML-01; LR-01 paused25%/Build33.33%.
-UI-01.01 result-index public proposal remains separate/unapproved; existing API
-alternative is authorized. No approval blocker for current provenance work.
+UI-01.07 approved provenance API: P1/P2/P3=100%, P4 active0%, child75%.
+Parent UI01/N2.2 remains50%; N2=81.25%; UI01=56.25%, Build70.31%, Verification0%.
+UI01.05 K1/R1=100%, I1=0%, child66.67%; UI01.06 launch closed100%.
+Next after P4: parent N2.3/N2.4, then N3/I1; UI01 -> UI02 -> POP01 -> ML01.
+LR01 paused25%/Build33.33%. UI01.01 remains separate/unapproved; bounded alternative authorized.
 
-## Latest implementation checkpoint
+## Latest checkpoint
 
-2026-10-11 18:22:51: UI-01.07 P1/P2=100%, P3 active33.33%, P4=0%, child58.33%.
-Parent UI-01/N2.2 remains50%; all parent totals unchanged until UI acceptance.
-P1 pushed49c28ac1; P2 pushedca056004. P3 API/Gateway checkpoint ready to commit. No tests/installations running.
-Planning0.106.0/private migration0021, contractsPlanning0.13.0,
-Supervision0.10.2/Runtime0.66.1 dependency packaging only. Four lockfiles refreshed
-and dev editable environment synced offline. Serving demo unchanged.
-38 PostgreSQL storage/compiler checks PASS (404s), index/reader146/146 statements,
-13/14branches.43 Knowledge/projection/schema checks PASS,124/124 statements,
-18/18branches.236 post-sync contracts+independent reader checks PASS. Boundary guard PASS.
-Knowledge-aware separate schema planning.campaign-origin-knowledge/v1 body2
-preserves initial origin/v1. Scope/graph pins and unavailable legacy slices explicit.
-P3 API/Gateway complete: Planning0.107.0/Gateway0.5,69 transport and29 actual-SQL API
-checks PASS. NEXT Studio transport/page model/Research inspection; then P4 actual-owner/browser1440/390
-and isolated packages. User has approved this scope; do not ask again.
-UI guidelines and Interaction_References.md read. Do not jump to N3/I1.
+P1 pushed49c28ac1; P2 ca056004; P3 API1a43c1ea. Studio0.24 checkpoint ready to commit.
+Planning0.107/Gateway0.5/contractsPlanning0.13; private migration0021.
+69 API/Gateway plus29 actual-SQL API tests pass; prior38 index/compiler and43
+projection/Knowledge/schema tests pass. No live installation upgraded.
+Studio349 tests pass (12 origin); typed build and production build pass.
+Component browser campaign-origin-browser-20261011b:1440/390, no overflow/axe
+violations, inspected screenshots. Full workspace launch/regression/missing-origin
+provenance-launch-regression-20261011b PASS; trial A wrong test nav label retained.
+Coverage gaps recorded in module READMEs/plan. No provider calls.
+
+P4 NEXT: independent installed packages, actual Planning-produced scientific draft
+with actual Research/Knowledge selected context; saved through original compiler,
+then public origin route/Studio/launch and scoped audit. Deterministic provider allowed;
+no N3/live-model credit. Existing install_owner_peer helper can build isolated owners.
+verify_planning_dispatch.py is old (version pins0.20.2 etc), reuse patterns carefully.
+Do not fabricate origins for manually authored drafts. Production peer-private imports forbidden.
+No tests/installations running at checkpoint. No owner blocker.
+
+Live notes below are prior Oct9 state;24h helpers may have expired. Inspect before use.
 
 ## Current live demo
 

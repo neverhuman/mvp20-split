@@ -30,6 +30,7 @@ const server=createServer(async(req,res)=>{
   if(path==='/api/deployment/v1/campaign-launch-profiles')return send({scope,profiles:[{reference:profile,scope,title:'Synthetic installed science',tools:[tool],maximum_invocations:8,maximum_deadline_seconds:300}]});
   if(path==='/api/runtime/v1/definition-drafts')return send({scope,drafts:[draft.head],next_after:null});
   if(path==='/api/runtime/v1/definition-drafts/draft')return send(draft);
+  if(path==='/api/planning/v1/campaign-origins/draft')return send({reason_code:'campaign_origin_not_recorded'},404);
   if(path==='/api/runtime/v1/definition-drafts/validate'){const command=JSON.parse(body);return send(accepted({identity:command.identity},validation));}
   if(path==='/api/runtime/v1/definition-validations/checked')return send(validation);
   if(path==='/api/deployment/v1/campaign-launches'){posts++;const command=LaunchSubmission.restore(body);saved=receipt(command,true);saved.phase='engaged';saved.workers={expected:2,ready:2};return send(saved,202);}
@@ -68,6 +69,11 @@ try{
   const name='running-'+width+'.png';await page.screenshot({path:resolve(output,name),fullPage:true});evidence.screenshots.push(name);
   const axe=await new AxeBuilder({page}).analyze();assert.equal(axe.violations.filter(v=>['serious','critical'].includes(v.impact)).length,0);
  }
+ await page.getByRole('button',{name:'2. Evaluation design',exact:true}).click();
+ await page.getByText('Why this campaign?',{exact:false}).click();
+ await page.getByText('No Planning origin is recorded for this exact draft.',{exact:false}).waitFor();
+ evidence.missing_origin_displayed=true;assert.equal(posts,1);
+ await page.getByRole('button',{name:'3. Approach and run',exact:true}).click();
  await page.reload();await page.getByRole('heading',{name:'Follow the planned work',exact:true}).waitFor();assert.equal(posts,1);assert.ok(reads>0);
  complete=true;changedCut=true;await page.getByText('Retained plan / completed execution',{exact:false}).waitFor({timeout:10000});
  assert.equal(cutConflicts,1);assert.equal(posts,1);assert.deepEqual(errors,[]);evidence.status='passed';evidence.launch_posts=posts;evidence.receipt_reads=reads;evidence.recovered_snapshot_conflicts=cutConflicts;

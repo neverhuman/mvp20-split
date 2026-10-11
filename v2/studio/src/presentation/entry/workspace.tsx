@@ -35,9 +35,16 @@ import { LaunchPreparation } from '../../page_models/launch/preparation.js';
 import { LaunchPlanningContext } from '../../page_models/launch/planning_context.js';
 import { LaunchClient } from '../../transport/launch/client.js';
 import { LaunchPanel } from './launch.js';
+import { CampaignOriginClient } from '../../transport/campaign_origin/client.js';
+import { CampaignOriginModel } from '../../page_models/campaign_origin/model.js';
+import { OriginReader } from '../../page_models/campaign_origin/reader.js';
+import { OriginResearchReader } from '../../page_models/campaign_origin/research.js';
+import { CampaignOriginPanel } from '../campaign_origin/panel.js';
+import type { DomainRevisionRef } from '../../contracts/scientific/knowledge.js';
 import './style.css';
 
 function Campaign({ context, search, launchControl, planning }: { context: WorkspaceContext & { run_id: string }; search: string; launchControl: ReactNode; planning?: LaunchPlanningContext }) {
+  const [originKnowledge, setOriginKnowledge] = useState<DomainRevisionRef | null>(null);
   const [mode, setMode] = useState<WorkflowView>(() => workflowView(search));
   const [reviewed,setReviewed]=useState(workflowView(search)==='evaluation');
   const [explored, setExplored] = useState(['knowledge','domain'].includes(workflowView(search)));
@@ -58,15 +65,19 @@ function Campaign({ context, search, launchControl, planning }: { context: Works
   const flow=useMemo(()=>new CampaignFlowModel({scope:context.scope,run:context.run_id},new ObservationClient(),new DataProvenanceClient(),planning),[context.scope.tenant_id,context.scope.project_id,context.run_id,planning]);
   const subscribeFlow=useCallback((listener:()=>void)=>flow.subscribe(listener),[flow]);
   const flowView=useSyncExternalStore(subscribeFlow,()=>flow.snapshot);
-  const campaignSelection=useMemo(()=>flowView.context?.knowledge?WorkspaceSelection.fromPins(flowView.context.knowledge.pins,context.scope):selection,[flowView.context,selection,context.scope.tenant_id,context.scope.project_id]);
+  const campaignSelection=useMemo(()=>originKnowledge?WorkspaceSelection.fromPins({graph:originKnowledge,experiment:null,observations:[]},context.scope):flowView.context?.knowledge?WorkspaceSelection.fromPins(flowView.context.knowledge.pins,context.scope):selection,[originKnowledge,flowView.context,selection,context.scope.tenant_id,context.scope.project_id]);
   useEffect(()=>{void flow.refresh();return()=>flow.dispose();},[flow]);
+  const originModel=useMemo(()=>new CampaignOriginModel(new OriginReader(new CampaignOriginClient(),new AuthoringClient()),new OriginResearchReader(new ResearchRecordClient())),[context.scope.tenant_id,context.scope.project_id,context.run_id,planning]);
+  useEffect(()=>()=>originModel.dispose(),[originModel]);
+  const originSelection=useMemo(()=>{if(!planning||!flowView.snapshot)return null;try{return planning.selection(flowView.snapshot);}catch{return null;}},[planning,flowView.snapshot]);
+  const provenance=<CampaignOriginPanel model={originModel} selection={originSelection} openKnowledge={revision=>{setOriginKnowledge(revision);navigate('domain');}}/>;
   useEffect(()=>{
     if(mode!=='execution'||!(flowView.snapshot?.status==='running'||flowView.retrySnapshot))return;
     let stopped=false;let timer:ReturnType<typeof setTimeout>;
     const tick=async()=>{if(!document.hidden)await flow.refresh(true);if(!stopped)timer=setTimeout(()=>void tick(),2000);};
     timer=setTimeout(()=>void tick(),2000);return()=>{stopped=true;clearTimeout(timer);};
   },[flow,mode,flowView.snapshot?.status,flowView.retrySnapshot]);
-if(flowView.phase==='ready')return <ConnectedCampaign launchControl={launchControl} view={flowView} mode={mode} navigate={navigate} refresh={()=>void flow.refresh()} knowledge={explored?<LocalKnowledge embedded selection={campaignSelection} feedbackSelection={feedbackSelection} outputSelection={outputSelection} campaign={{scope:context.scope,run:context.run_id}} active={mode==='domain'} synthetic={context.synthetic}/>:null} technical={<MonitorWorkspace {...owners} compact active={mode==='execution'} context={{scope:context.scope,run:context.run_id}} synthetic={context.synthetic}/>} />;
+if(flowView.phase==='ready')return <ConnectedCampaign provenance={provenance} launchControl={launchControl} view={flowView} mode={mode} navigate={navigate} refresh={()=>void flow.refresh()} knowledge={explored?<LocalKnowledge embedded selection={campaignSelection} feedbackSelection={feedbackSelection} outputSelection={outputSelection} campaign={{scope:context.scope,run:context.run_id}} active={mode==='domain'} synthetic={context.synthetic}/>:null} technical={<MonitorWorkspace {...owners} compact active={mode==='execution'} context={{scope:context.scope,run:context.run_id}} synthetic={context.synthetic}/>} />;
   if(['loading','idle','denied','failed'].includes(flowView.phase))return <main className="local-entry">{launchControl}<h1>{flowView.phase==='loading'||flowView.phase==='idle'?'Opening the retained campaign':'Campaign context unavailable'}</h1><p>{flowView.message??'Checking the plan and scientific evidence.'}</p>{flowView.phase!=='loading'&&flowView.phase!=='idle'&&<button onClick={()=>void flow.refresh()}>Retry campaign read</button>}</main>;
   return <div className="research-shell">
     <header className="local-workspace-bar"><strong>AMPHORA</strong><span>Research workspace</span><span className="local-access">Local access</span></header>

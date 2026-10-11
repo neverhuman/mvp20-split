@@ -208,6 +208,8 @@ await generate({
   catalog: ["campaign-launch.profiles", "LaunchProfileCatalog"],
 }, resolve(target, "launch"));
 
+await generate({ origin: ["planning.campaign-origin-knowledge", "CampaignOriginV2"] }, resolve(target, "campaign_origin"));
+
 await generate(knowledgeRoots, resolve(target, "knowledge"));
 await generate(researchRoots, resolve(target, "research"));
 

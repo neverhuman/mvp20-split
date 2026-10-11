@@ -12,6 +12,7 @@ test("early plan is read from exact admitted draft and checked against Runtime r
   draft.definition.body.nodes=[{kind:"finish",node_id:"done",outputs:[{port:"campaign_context",source:{kind:"artifact",artifact,representation:"campaign-review-context",unit:"1"}}]}];
   observed.cut.scope=context.scope;observed.cut.run_id="actual-run";observed.cut.plan_sha256="a".repeat(64);
   const model=new LaunchPlanningContext(cmd,receipt(cmd,true),{draft:async(id,version)=>{assert.equal(id,"draft");assert.equal(version,1);return draft;}});
+  assert.deepEqual(model.selection(observed), {scope:context.scope,draft_id:"draft",revision:1,content_sha256:"b".repeat(64)});
   assert.deepEqual(await model.reference(observed,new AbortController().signal),artifact);
   await assert.rejects(model.reference({...observed,cut:{...observed.cut,run_id:"foreign"}},new AbortController().signal));
   draft.head.content_sha256="c".repeat(64);

@@ -13,10 +13,15 @@ export class LaunchPlanningContext {
     this.receipt = command.verify(receipt);
     if (!this.receipt.run_id) throw Error("admission_required");
   }
-  async reference(snapshot: GraphSnapshotPage["snapshot"], signal: AbortSignal): Promise<ArtifactRef | null> {
-    const request = this.command.request, admission = request.payload.admission.payload, selection = admission.draft;
+  selection(snapshot: GraphSnapshotPage["snapshot"]) {
+    const request = this.command.request, admission = request.payload.admission.payload, draft = admission.draft;
     if (snapshot.cut.run_id !== this.receipt.run_id || !same(snapshot.cut.scope, request.identity.scope) ||
       snapshot.cut.plan_sha256 !== admission.plan_sha256) throw Error("launch_observation_mismatch");
+    return { scope: structuredClone(request.identity.scope), draft_id: draft.draft_id,
+      revision: draft.revision, content_sha256: draft.content_sha256 };
+  }
+  async reference(snapshot: GraphSnapshotPage["snapshot"], signal: AbortSignal): Promise<ArtifactRef | null> {
+    const request = this.command.request, admission = request.payload.admission.payload, selection = this.selection(snapshot);
     const draft = decodeAuthoring("draft", await this.source.draft(selection.draft_id, selection.revision, signal));
     if (!same(draft.scope, request.identity.scope) || draft.head.draft_id !== selection.draft_id ||
       draft.head.revision !== selection.revision || draft.head.content_sha256 !== selection.content_sha256) throw Error("launch_draft_mismatch");
