@@ -1,35 +1,38 @@
 # Restore
 
-Refreshed2026-10-11 18:03:51 America/Chicago. Read FIRST after compaction.
+Refreshed2026-10-11 18:23:21 America/Chicago. Read FIRST after compaction.
 Owner says continue until needed; milestones/commits are not stopping points.
 No subagents/JARVIS; v1 read-only. Preserve untracked ocular PDF/DOCX.
 Do not edit source/tests/module READMEs while verification/installation runs.
 
 ## Current canonical task
 
-UI-01.06 bounded launch API approved2026-10-09, now complete100%, L1-L5=100.
-UI-01.05 K1/R1=100%, I1=0%, overall66.67%. Parent N2.5 now100%; N2=81.25%,
-UI-01 overall56.25%, Build70.31%, Verification0%. All trackers/audits updated.
-NEXT: UI-01/N2.2 exact Planning/Research provenance (currently50%), then N2.3
-generational comparison/N2.4 provider reasoning (both50%), then N3/I1 LLM curation.
-Do not jump to I1 before N2 prerequisites. UI-01.01 public result-index proposal
-remains unapproved; bounded existing-API alternative remains authorized.
+UI-01.07 bounded provenance API approved2026-10-11; P1/P2=100%, P3/P4=0%, child50%.
+P3 active: API/Gateway/Studio. UI-01.06 launch remains closed100%.
+UI-01.05 K1/R1=100%, I1=0%, overall66.67%. N2.5=100%, N2=81.25%;
+UI-01 overall56.25%, Build70.31%, Verification0%. Parent N2.2 remains50% until
+provenance UI qualification; N2.3/N2.4 both50% follow, then N3/I1 LLM curation.
 Sequence UI-01 -> UI-02 -> POP-01 -> ML-01; LR-01 paused25%/Build33.33%.
+UI-01.01 result-index public proposal remains separate/unapproved; existing API
+alternative is authorized. No approval blocker for current provenance work.
 
-Latest pushed5e716a9d (startup ordering0.18.3 + launch closeout); prior2177adf2.
-N2.2 discovery: Runtime DraftRevision has no origin; Planning CompilerHistory/
-CompilerJournal retain exact proposal/Research selection/save proof internally,
-but existing HTTP surfaces expose only supervision and topology records. Existing
-FollowupClient verifies selected response captures, not arbitrary draft compiler origin.
-New UI-01.07 Campaign provenance decision.md is concrete proposal,0%implementation:
-Planning-owned GET exact draft/revision/content hash, public origin DTO and private
-indexed/rebuildable lookup linked atomically to accepted compiler save observation.
-Alternatives, permissions, replay/backfill, consumer checks and verification scoped.
-Owner approved UI-01.07 on2026-10-11. P1 complete100%; P2 active0%, P3/P4=0%, child25%; parent percentages unchanged.
-227 scoped tests and production boundary check pass; projection82/83 statements,9/10branches. No approval blocker.
-Read UI-01.07 canonical phased tracker. NEXT P2 index/storage/replay per approved decision.
-Latest pushed8af46165. No tests running at2026-10-11 18:03:51.
-Live state below is historical fromOct9; helpers had24h duration, inspect before use.
+## Latest implementation checkpoint
+
+2026-10-11 18:22:51: UI-01.07 P1/P2=100%, P3 active0%, P4=0%, child50%.
+Parent UI-01/N2.2 remains50%; all parent totals unchanged until UI acceptance.
+P1 pushed49c28ac1; P2 commit/push next. No tests/installations running.
+Planning0.106.0/private migration0021, contractsPlanning0.13.0,
+Supervision0.10.2/Runtime0.66.1 dependency packaging only. Four lockfiles refreshed
+and dev editable environment synced offline. Serving demo unchanged.
+38 PostgreSQL storage/compiler checks PASS (404s), index/reader146/146 statements,
+13/14branches.43 Knowledge/projection/schema checks PASS,124/124 statements,
+18/18branches.236 post-sync contracts+independent reader checks PASS. Boundary guard PASS.
+Knowledge-aware separate schema planning.campaign-origin-knowledge/v1 body2
+preserves initial origin/v1. Scope/graph pins and unavailable legacy slices explicit.
+NEXT P3: authenticated Planning GET exact query route, narrow Gateway forwarding,
+Studio transport/page model/Research inspection; then P4 actual-owner/browser1440/390
+and isolated packages. User has approved this scope; do not ask again.
+UI guidelines and Interaction_References.md read. Do not jump to N3/I1.
 
 ## Current live demo
 

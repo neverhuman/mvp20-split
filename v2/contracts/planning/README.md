@@ -13,7 +13,7 @@ Duplicate/membership/scope/assessment binding and raw output size remain Plannin
 domain checks in C2. These DTOs do not activate the new provider or Runtime path.
 Owned tests are `tests/followup`; frozen demo assets/installed owners are untouched.
 
-Version0.12.0; campaign draft output and exact Research selections are additive to the preserved extraction/reference profiles. These DTOs describe scoped context, reviewed model/configuration pins, logical requests, physical attempt identity and observed usage. Dependencies are public Core, Campaigns, Graph Runtime, Knowledge, Evidence, Tools and Research contracts plus Pydantic. No provider SDK, persistence, credential, endpoint, domain policy or execution acceptance belongs here.
+Version0.13.0; campaign draft output and exact Research selections are additive to the preserved extraction/reference profiles. These DTOs describe scoped context, reviewed model/configuration pins, logical requests, physical attempt identity and observed usage. Dependencies are public Core, Campaigns, Graph Runtime, Knowledge, Evidence, Tools and Research contracts plus Pydantic. No provider SDK, persistence, credential, endpoint, domain policy or execution acceptance belongs here.
 
 Request collections are bounded immutable tuples; strict scalar validation and forbidden extras apply; each versioned root fixes its schema_version. Usage fields may be null: unknown is not zero. JSON Schema publication uses dev/export_schemas.py; additive planning roots preserve predecessor bytes. Context relationships and immutable fingerprints belong to Agent Planning's context domain. A DTO does not authorize source reads, provider egress, spend, acceptance or real science.
 
@@ -49,3 +49,8 @@ missing capture publication remain explicit. DTOs enforce shape; Planning owns
 identity-chain, digest and256KiB response policy. Tests: tests/campaign_origin.
 The additive root preserves all predecessor schemas; read permission grants no
 write, current eligibility or scientific authority.
+
+UI-01.07/P2 additionally publishes planning.campaign-origin-knowledge/v1, body2,
+with exact consumed graph pins or explicit historical unavailability. The first
+origin/v1 root remains byte-for-byte unchanged. Separate profiles avoid silently
+expanding an existing closed wire shape. Both remain historical provenance only.

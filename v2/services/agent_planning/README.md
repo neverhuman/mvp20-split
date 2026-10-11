@@ -91,3 +91,9 @@ in [campaign_origin](src/amphora_agent_planning/campaign_origin/README.md), usin
 Planning contracts0.12.0.227 scoped checks pass; distinct read_campaign_origin
 grant does not grant attempt access or writes. Indexed storage/API/Studio are
 pending P2-P4; serving installations remain unchanged.
+
+UI-01.07/P2: Planning0.106.0/private schema0021 adds the exact campaign-origin
+lookup, atomic save observation linkage, scoped owner reader and bounded backfill.
+Planning contracts0.13.0 includes separate Knowledge-aware provenance.38 PostgreSQL
+checks plus43 projection checks and236 post-sync checks pass. HTTP/Studio and
+isolated installed/actual-owner qualification remain P3/P4; no live upgrade yet.

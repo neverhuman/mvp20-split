@@ -130,3 +130,6 @@ from .campaign_origin import (CampaignOrigin, CampaignOriginBody, CampaignOrigin
 __all__ += ['CampaignOrigin', 'CampaignOriginBody', 'CampaignOriginDraft',
     'CampaignOriginProposal', 'CampaignOriginSave', 'CampaignOriginResearch',
     'CampaignOriginResearchRecord', 'CampaignOriginTool', 'campaign_origin_schema']
+
+from .campaign_origin_v2 import (CampaignOriginBodyV2, CampaignOriginKnowledge, CampaignOriginV2, campaign_origin_v2_schema)
+__all__ += ['CampaignOriginBodyV2', 'CampaignOriginKnowledge', 'CampaignOriginV2', 'campaign_origin_v2_schema']

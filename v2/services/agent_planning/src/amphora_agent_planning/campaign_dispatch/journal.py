@@ -3,6 +3,7 @@
 from sqlalchemy import text
 
 from ..campaign_authoring import AuthoringRequest
+from ..campaign_origin.index import OriginIndex
 from ..context.policy import require
 from .effect import CompilerEffect
 from .history import CompilerHistory
@@ -113,6 +114,7 @@ class CompilerJournal:
             require(current is not None, 'compiler_effect_unknown')
             if current.progress.position > expected_position:
                 require(current.events[expected_position].event == event, 'compiler_event_conflict')
+                OriginIndex.record(connection, lease.selection, current)
                 self.store.fence_write(connection, principal, lease)
                 return current
             require(current.progress.position == expected_position, 'compiler_event_position')
@@ -124,5 +126,6 @@ class CompilerJournal:
                 EFFECT_KEY + ' AND position=:previous'), params | {'position': position, 'previous': expected_position})
             require(changed.rowcount == 1, 'compiler_event_position')
             result = operations.read(connection, key, effect_id)
+            OriginIndex.record(connection, lease.selection, result)
             self.store.fence_write(connection, principal, lease)
             return result

@@ -52,6 +52,7 @@ from amphora_contracts_tools import Completion, Invocation, ToolBinding, ToolDes
 
 ROOT = Path(__file__).absolute().parents[1]
 MODELS = {
+    "planning.campaign-origin-knowledge": planning_contracts.CampaignOriginV2,
     "planning.campaign-origin": planning_contracts.CampaignOrigin,
     "topology-search.policy": topology_search.TopologyPolicy,
     "topology-search.request": topology_search.TopologyRequest,

@@ -4,7 +4,7 @@ import hashlib
 from dataclasses import dataclass
 
 from amphora_contracts_planning import (
-    CampaignOrigin, CampaignOriginBody, CampaignOriginDraft, CampaignOriginProposal,
+    CampaignOriginV2 as CampaignOrigin, CampaignOriginBodyV2 as CampaignOriginBody, CampaignOriginDraft, CampaignOriginProposal,
     CampaignOriginResearch, CampaignOriginResearchRecord, CampaignOriginSave, CampaignOriginTool,
 )
 
@@ -13,6 +13,7 @@ from ..campaign_dispatch.effect import CompilerEffect
 from ..campaign_dispatch.observation import CompilerObservation
 from ..campaign_proposals.research import ConsumedResearch
 from ..context.policy import require
+from .knowledge import KnowledgeOrigin
 
 MAX_RESPONSE_BYTES = 262144
 
@@ -53,7 +54,7 @@ class OriginProjection:
             selection_sha256=selection.sha256, effect_id=effect.effect_id, effect_sha256=effect.sha256,
             receipt=outcome.receipt, readback_sha256=digest(readback))
         body = CampaignOriginBody(authority='historical_compiler_provenance', draft=draft,
-            proposal=proposal, save=save, research=cls.research(prepared),
+            proposal=proposal, save=save, research=cls.research(prepared), knowledge=KnowledgeOrigin.from_proposal(prepared),
             tools=tuple(CampaignOriginTool(node=use.address, release=use.release.record.document().lock)
                         for use in authoring.review.composition.uses),
             limitations=('historical_only', 'scientific_authority_not_established',
@@ -93,6 +94,24 @@ class OriginProjection:
         scope = expected.scope
         require(body.proposal.attempt.engagement.scope == scope == body.proposal.context.scope,
                 'origin_scope_mismatch')
+        knowledge = body.knowledge
+        if knowledge is not None:
+            require(knowledge.graph.scope == scope, 'origin_knowledge_scope')
+            if knowledge.status == 'available':
+                from ..graph_context import GraphPins
+                require(knowledge.vocabulary is not None and knowledge.policy is not None and
+                        knowledge.context_sha256 is not None and knowledge.unavailable is None,
+                        'origin_knowledge_available')
+                GraphPins(knowledge.graph, knowledge.head, knowledge.vocabulary, knowledge.policy).validated()
+                require(all(ref.graph == knowledge.graph for ref in (*knowledge.entities, *knowledge.assertions)) and
+                        len(set(knowledge.entities)) == len(knowledge.entities) and
+                        len(set(knowledge.assertions)) == len(knowledge.assertions) and
+                        (knowledge.head is not None or not (knowledge.entities or knowledge.assertions)),
+                        'origin_knowledge_selection')
+            else:
+                require(knowledge.head is None and knowledge.vocabulary is None and knowledge.policy is None and
+                        not knowledge.entities and not knowledge.assertions and knowledge.context_sha256 is None and
+                        knowledge.unavailable is not None, 'origin_knowledge_unavailable')
         outcome = body.save.receipt.outcome
         require(outcome.status == 'accepted', 'origin_saved_required')
         require(outcome.binding.identity.scope == scope and

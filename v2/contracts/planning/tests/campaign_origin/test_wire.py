@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 import pytest
-from amphora_contracts_planning import CampaignOrigin, EngagementRequest
+from amphora_contracts_planning import CampaignOrigin, CampaignOriginV2, EngagementRequest
 from pydantic import ValidationError
 
 
@@ -37,6 +37,19 @@ def test_roundtrip_and_unknown_usage():
     value = CampaignOrigin.model_validate_json(json.dumps(document()))
     assert CampaignOrigin.model_validate_json(value.model_dump_json()) == value
     assert value.origin.proposal.usage.accounting_units is None
+
+
+def test_v2_knowledge_is_explicit_and_v1_stays_closed():
+    raw = document()
+    raw['schema_version'] = raw['origin']['schema_version'] = '2'
+    raw['origin']['knowledge'] = None
+    value = CampaignOriginV2.model_validate_json(json.dumps(raw))
+    assert value.origin.knowledge is None
+    with pytest.raises(ValidationError):
+        CampaignOrigin.model_validate_json(json.dumps(raw))
+    del raw['origin']['knowledge']
+    with pytest.raises(ValidationError):
+        CampaignOriginV2.model_validate_json(json.dumps(raw))
 
 
 @pytest.mark.parametrize('path,value', [

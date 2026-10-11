@@ -60,3 +60,11 @@ Planning0.69 c.iii verifies8 module-owned campaign_dispatch_transport cases agai
 Planning0.69 B2.03d: dev/verify_planning_dispatch.py proves actual Data declaration publication/current processing, Registry discovery/eligibility and Runtime reviewed schemas plus saved/compiled tool graph.10 completed independent worker stages and2 abrupt owned worker kills preserve original SQL journal/accounting. A stored pre-POST intent has no Runtime receipt; after peer commit a successor recovers exact saved history even under denied Data credentials, while new validation is blocked. Expired candidates remain unchanged and require a new bounded check.6 owner hosts verify exact saved/validation receipts and readbacks after restart, plus terminal local replay. Test-only20s leases bound crash probes; production300s lease unchanged. Windows launcher/worker ancestry is checked before terminating only the owned process tree. No tool execution, real source-rights revocation, scientific admission or live provider is claimed. Current overlay hashes identify acceptance code against the unchanged independently installed wheel.
 
 B3.02 actual-rights acceptance: the separate rights scenario changes Data packet-root rights revisions through public routes after original context consumption. Revocation blocks unissued work with zero dispatches; committed save history remains readable. Regrant permits future use without changing original selection/packet pins.10 worker stages/6 owner hosts verify restore/compile/exact restart history. This is current processing permission, distinct from future-only receipt correction policy.116 current installed packet/preparation/output failure cases and supporting semantic/SQL/HTTP evidence cover the remaining bounded failure gate.
+
+UI-01.07/Planning0.106.0 requires private migration0021. Accepted save observations
+and identical replays insert/revalidate a bounded campaign-origin pointer in the
+same transaction, before the final lease fence. Index conflict rolls back the local
+observation and never changes the original Runtime command. Other compiler effects
+create no origin. Replacement and public projection are owned by campaign_origin;
+38 scoped PostgreSQL index/compiler/fence/race checks pass. Existing command/event
+bytes remain unchanged; the serving installation must migrate before upgrade.

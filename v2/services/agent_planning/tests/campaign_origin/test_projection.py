@@ -10,7 +10,7 @@ from amphora_agent_planning.campaign_eligibility import EligibilityConfiguration
 from amphora_agent_planning.campaign_origin import OriginProjection
 from amphora_agent_planning.campaign_origin.projection import MAX_RESPONSE_BYTES, digest
 from amphora_agent_planning.campaign_context.records import canonical
-from amphora_contracts_planning import CampaignOrigin
+from amphora_contracts_planning import CampaignOriginV2 as CampaignOrigin
 
 from ..campaign_authoring.test_values import plan, saved, receipt
 
