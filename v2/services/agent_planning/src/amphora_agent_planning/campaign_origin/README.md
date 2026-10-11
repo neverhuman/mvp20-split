@@ -69,3 +69,18 @@ Knowledge/schema checks,124/124 statements and18/18 branches;236 post-sync contr
 and independent SQL-reader checks. Production boundary guard passes. Independent
 installed-package and actual-owner/browser qualification remain P4. Deploy migration
 0021 before running this compiler; serving code never applies DDL.
+
+## Authenticated read (Planning0.107.0)
+
+GET /v1/campaign-origins/{draft_id}?revision=...&content_sha256=... returns the
+Knowledge-aware projection. Scope comes exclusively from the configured principal;
+read_campaign_origin is required before existence lookup. Exactly two unique query
+fields, a positive safe revision, exact digest and no request body are accepted.
+No list/latest/mutation/backfill route exists. Missing association is named404,
+not inferred human authorship; denied403, inconsistent history409 and bounded
+response limitation422 remain distinct. Private diagnostics are sanitized. Success
+is canonical JSON with no-store. Ready checks migration0021; serving applies no DDL.
+
+18 focused HTTP cases and69 API/Gateway transport checks pass.29 actual-SQL origin
+route and existing supervision API checks pass, including foreign-scope404 and
+unchanged compiler history. Browser and isolated host qualification remain P4.

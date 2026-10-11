@@ -37,3 +37,10 @@ B1.04d actual-owner proof verified 2026-10-05 16:32:49: independently installed 
 
 
 B2.01b.iv installed verification: both profiles remain compatible in four isolated owners668 cases; actual v2 materialization request, two commit-before-reply losses, six owner hosts and replacement/rights replay passed. Checkpoint_Owners.json owns evidence. No automatic graph checkpoint or winner yet.
+
+UI-01.07/Planning0.107 adds the bounded campaign-origin GET installed by
+campaign_origin.http. Configured read_campaign_origin principals may inspect exact
+saved-draft provenance under their project scope; they gain no attempt/write grant.
+Readiness requires private migration0021. This is neither compiler dispatch nor
+backfill authority.29 actual-SQL origin/supervision HTTP checks pass;18 focused
+origin route tests cover strict pins, auth, named missing/limit and sanitized failures.

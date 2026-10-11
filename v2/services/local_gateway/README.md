@@ -88,3 +88,11 @@ reports an unresolved drain after45seconds without silently killing the process.
 An actual blocked proxy response test proves close waits for full response completion.
 Socket timeouts bound inactivity, not total wall time against a trickling peer.
 Forced supervisor death remains an interruption requiring normal owner reconciliation.
+
+UI-01.07/Gateway0.5 adds strict forwarding for Planning campaign-origins: exact
+draft/revision/digest, GET with no body, no broad/history paths,256KiB response limit.
+Only named origin failure codes cross the proxy; arbitrary owner details remain
+redacted. Configure a Planning peer token with read_campaign_origin for the viewer's
+scope; no caller-selected credentials or write grants are introduced. Existing peer
+routes remain unchanged.69 combined Gateway/API transport checks pass; live deployment
+and browser qualification remain pending.

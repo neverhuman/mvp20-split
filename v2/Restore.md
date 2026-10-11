@@ -7,7 +7,7 @@ Do not edit source/tests/module READMEs while verification/installation runs.
 
 ## Current canonical task
 
-UI-01.07 bounded provenance API approved2026-10-11; P1/P2=100%, P3/P4=0%, child50%.
+UI-01.07 bounded provenance API approved2026-10-11; P1/P2=100%, P3=33.33%, P4=0%, child58.33%.
 P3 active: API/Gateway/Studio. UI-01.06 launch remains closed100%.
 UI-01.05 K1/R1=100%, I1=0%, overall66.67%. N2.5=100%, N2=81.25%;
 UI-01 overall56.25%, Build70.31%, Verification0%. Parent N2.2 remains50% until
@@ -18,9 +18,9 @@ alternative is authorized. No approval blocker for current provenance work.
 
 ## Latest implementation checkpoint
 
-2026-10-11 18:22:51: UI-01.07 P1/P2=100%, P3 active0%, P4=0%, child50%.
+2026-10-11 18:22:51: UI-01.07 P1/P2=100%, P3 active33.33%, P4=0%, child58.33%.
 Parent UI-01/N2.2 remains50%; all parent totals unchanged until UI acceptance.
-P1 pushed49c28ac1; P2 commit/push next. No tests/installations running.
+P1 pushed49c28ac1; P2 pushedca056004. P3 API/Gateway checkpoint ready to commit. No tests/installations running.
 Planning0.106.0/private migration0021, contractsPlanning0.13.0,
 Supervision0.10.2/Runtime0.66.1 dependency packaging only. Four lockfiles refreshed
 and dev editable environment synced offline. Serving demo unchanged.
@@ -29,8 +29,8 @@ and dev editable environment synced offline. Serving demo unchanged.
 18/18branches.236 post-sync contracts+independent reader checks PASS. Boundary guard PASS.
 Knowledge-aware separate schema planning.campaign-origin-knowledge/v1 body2
 preserves initial origin/v1. Scope/graph pins and unavailable legacy slices explicit.
-NEXT P3: authenticated Planning GET exact query route, narrow Gateway forwarding,
-Studio transport/page model/Research inspection; then P4 actual-owner/browser1440/390
+P3 API/Gateway complete: Planning0.107.0/Gateway0.5,69 transport and29 actual-SQL API
+checks PASS. NEXT Studio transport/page model/Research inspection; then P4 actual-owner/browser1440/390
 and isolated packages. User has approved this scope; do not ask again.
 UI guidelines and Interaction_References.md read. Do not jump to N3/I1.
 

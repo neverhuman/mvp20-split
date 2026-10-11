@@ -29,11 +29,13 @@ from .bounds import RequestBounds
 from .credentials import AuthenticationError
 
 
-def create_app(intake=None, credentials=None, *, topology=None):
+def create_app(intake=None, credentials=None, *, topology=None, campaign_origins=None):
     if (intake is None) != (credentials is None):
         raise ValueError('complete_supervision_configuration_required')
     if topology is not None and intake is None:
         raise ValueError('topology_requires_configured_planning')
+    if campaign_origins is not None and intake is None:
+        raise ValueError('campaign_origins_require_configured_planning')
     if credentials is not None and topology is None and credentials.has_any_action({'propose_topology','read_topology'}):
         raise ValueError('topology_configuration_required')
     app = FastAPI(title='Amphora Planning supervisor intake', version=version("amphora-agent-planning"))
@@ -56,6 +58,8 @@ def create_app(intake=None, credentials=None, *, topology=None):
     @app.exception_handler(ValidationError)
     @app.exception_handler(CommandEncodingError)
     async def malformed(_request, _error):
+        if _request.url.path.startswith('/v1/campaign-origins'):
+            return JSONResponse({'reason_code': 'invalid_campaign_origin_request'}, status_code=422)
         return JSONResponse({'reason_code': 'invalid_topology_request' if _request.url.path.startswith('/v1/topology-proposals') else 'invalid_supervision_command'}, status_code=422)
 
     @app.exception_handler(ValueError)
@@ -81,6 +85,7 @@ def create_app(intake=None, credentials=None, *, topology=None):
             conn.execute(text('SELECT canonical_bytes FROM planning.checkpoint_execution_reports LIMIT 0'))
             conn.execute(text('SELECT canonical_request FROM planning.supervision_requests LIMIT 0'))
             conn.execute(text('SELECT canonical_receipt FROM planning.supervision_commands LIMIT 0'))
+            conn.execute(text('SELECT pointer_bytes FROM planning.campaign_origins LIMIT 0'))
             compatible = conn.execute(text("SELECT EXISTS (SELECT 1 FROM pg_constraint WHERE "
                 "conrelid='planning.supervision_commands'::regclass AND conname='supervision_commands_family_check' "
                 "AND position('planning.supervision.request.v2' in pg_get_constraintdef(oid)) > 0)")).scalar_one()
@@ -93,6 +98,9 @@ def create_app(intake=None, credentials=None, *, topology=None):
 
     if intake is None:
         return app
+    from ..campaign_origin.http import install_campaign_origins
+    from ..campaign_origin.reader import CampaignOriginReader
+    install_campaign_origins(app, campaign_origins if campaign_origins is not None else CampaignOriginReader(intake.engine), credentials)
     if topology is not None:
         from ..topology.http import install_topology
         install_topology(app,topology,credentials)
