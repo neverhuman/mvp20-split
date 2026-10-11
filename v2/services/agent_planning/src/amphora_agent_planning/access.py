@@ -16,7 +16,7 @@ class Principal:
         TypeAdapter(Identifier).validate_python(self.actor_id, strict=True)
         object.__setattr__(self, "scope", Scope.model_validate_json(self.scope.model_dump_json(warnings=False)))
         actions = frozenset(self.actions)
-        if not actions <= {"record_requests", "record_attempts", "read_attempts", "propose_topology", "read_topology"}:
+        if not actions <= {"record_requests", "record_attempts", "read_attempts", "propose_topology", "read_topology", "read_campaign_origin"}:
             raise ValueError("unknown_planning_grant")
         object.__setattr__(self, "actions", actions)
 

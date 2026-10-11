@@ -85,3 +85,9 @@ The correction follows an actual-owner required-input rejection before any model
 attempt. See checkpoint_input and checkpoint_budget boundaries for exact behavior.
 
 SQ-01/C1 source package0.102.1 updates dependency pins for Planning contracts0.11.0. No existing wire schema, owner policy or serving behavior changes in this checkpoint; new criterion-follow-up acceptance remains C2. Frozen demo installations retain their separately qualified older packages and copied lockfile identities.
+
+UI-01.07/P1: Planning0.105.0 provides a pure bounded historical compiler projection
+in [campaign_origin](src/amphora_agent_planning/campaign_origin/README.md), using
+Planning contracts0.12.0.227 scoped checks pass; distinct read_campaign_origin
+grant does not grant attempt access or writes. Indexed storage/API/Studio are
+pending P2-P4; serving installations remain unchanged.

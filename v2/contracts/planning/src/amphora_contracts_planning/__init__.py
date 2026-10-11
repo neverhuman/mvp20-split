@@ -123,3 +123,10 @@ from .followup import (
 __all__ += ["CampaignCriterionRef", "CampaignCriterionTarget", "CampaignFollowupSelection",
             "CheckpointFollowupDraft", "CriterionUnresolvedPoint", "campaign_followup_selection_schema",
             "checkpoint_followup_draft_schema"]
+
+from .campaign_origin import (CampaignOrigin, CampaignOriginBody, CampaignOriginDraft,
+    CampaignOriginProposal, CampaignOriginSave, CampaignOriginResearch,
+    CampaignOriginResearchRecord, CampaignOriginTool, campaign_origin_schema)
+__all__ += ['CampaignOrigin', 'CampaignOriginBody', 'CampaignOriginDraft',
+    'CampaignOriginProposal', 'CampaignOriginSave', 'CampaignOriginResearch',
+    'CampaignOriginResearchRecord', 'CampaignOriginTool', 'campaign_origin_schema']

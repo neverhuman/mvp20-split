@@ -10,9 +10,9 @@
 - Overall implementation: **56.25%**; Build70.31%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
 - Design readiness: G0 complete; ELK directed layout and bounded topology ownership implemented.
 - Demonstrated behavior: connected graphs and question-first navigation verified against retained owner records; result-first comparison and full replacement acceptance remain.
-- Current phase/task: UI-01.05/K1/R1 complete100%; N2.5 actual-owner launch acceptance100%. N2.2 exact Planning/Research provenance awaits [bounded public read decision](UI-01.07%20Campaign%20provenance%20decision.md); no analysis credit.
+- Current phase/task: UI-01.05/K1/R1 complete100%; N2.5 actual-owner launch acceptance100%. N2.2 exact Planning/Research provenance implementing approved [bounded public read decision](UI-01.07%20Campaign%20provenance%20decision.md); no analysis credit.
 - Next task: N2.3 generational comparison and N2.4 provider reasoning, then N3/UI-01.05/I1 LLM successor loop. Preserve closed launch scope.
-- Blocker: owner direction for UI-01.07's new Planning-origin read contract and owned lookup. Existing APIs do not expose exact compiler origin; private peer reads or unrelated proposal links are not acceptable substitutes. Run/Knowledge/SME review remain available. UI-01.01 is separate.
+- Blocker: none requiring owner direction. UI-01.07 approved2026-10-11; P1=100%, P2 active0%, P3/P4=0%, child25%. Existing APIs do not expose exact compiler origin; private peer reads or unrelated proposal links are not acceptable substitutes. Run/Knowledge/SME review remain available. UI-01.01 is separate.
 - Human acceptance: owner feedback is part of visual review; no new routine approval gates for campaign execution.
 - Active exception: owner explicitly reprioritized UI over worker diagnostics; LR-01 remains paused at25%, Build33.33%, Acceptance0%, with R2 receipt diagnosis preserved.
 - Pre-activation coherence: 2026-10-07 17:54:00, ready for G0. Existing topology/observation APIs, React Flow canvas and isolated Studio boundaries are available; meaningful layout and workflow acceptance are missing. No new backend contract is assumed approved by this plan.

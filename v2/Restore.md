@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed2026-10-09 10:29:00 America/Chicago. Read FIRST after compaction.
+Refreshed2026-10-11 18:03:51 America/Chicago. Read FIRST after compaction.
 Owner says continue until needed; milestones/commits are not stopping points.
 No subagents/JARVIS; v1 read-only. Preserve untracked ocular PDF/DOCX.
 Do not edit source/tests/module READMEs while verification/installation runs.
@@ -25,9 +25,11 @@ New UI-01.07 Campaign provenance decision.md is concrete proposal,0%implementati
 Planning-owned GET exact draft/revision/content hash, public origin DTO and private
 indexed/rebuildable lookup linked atomically to accepted compiler save observation.
 Alternatives, permissions, replay/backfill, consumer checks and verification scoped.
-Owner approval QUESTION PENDING via async input, per AGENTS material scope rule.
-Do not implement new public boundary until direction; launch remains usable.
-No tests running. Need commit/push decision/trackers/handoff doc checkpoint.
+Owner approved UI-01.07 on2026-10-11. P1 complete100%; P2 active0%, P3/P4=0%, child25%; parent percentages unchanged.
+227 scoped tests and production boundary check pass; projection82/83 statements,9/10branches. No approval blocker.
+Read UI-01.07 canonical phased tracker. NEXT P2 index/storage/replay per approved decision.
+Latest pushed8af46165. No tests running at2026-10-11 18:03:51.
+Live state below is historical fromOct9; helpers had24h duration, inspect before use.
 
 ## Current live demo
 

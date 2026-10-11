@@ -13,7 +13,7 @@ Duplicate/membership/scope/assessment binding and raw output size remain Plannin
 domain checks in C2. These DTOs do not activate the new provider or Runtime path.
 Owned tests are `tests/followup`; frozen demo assets/installed owners are untouched.
 
-Version0.11.0; campaign draft output and exact Research selections are additive to the preserved extraction/reference profiles. These DTOs describe scoped context, reviewed model/configuration pins, logical requests, physical attempt identity and observed usage. Dependencies are public Core, Campaigns, Graph Runtime, Knowledge, Evidence and Research contracts plus Pydantic. No provider SDK, persistence, credential, endpoint, domain policy or execution acceptance belongs here.
+Version0.12.0; campaign draft output and exact Research selections are additive to the preserved extraction/reference profiles. These DTOs describe scoped context, reviewed model/configuration pins, logical requests, physical attempt identity and observed usage. Dependencies are public Core, Campaigns, Graph Runtime, Knowledge, Evidence, Tools and Research contracts plus Pydantic. No provider SDK, persistence, credential, endpoint, domain policy or execution acceptance belongs here.
 
 Request collections are bounded immutable tuples; strict scalar validation and forbidden extras apply; each versioned root fixes its schema_version. Usage fields may be null: unknown is not zero. JSON Schema publication uses dev/export_schemas.py; additive planning roots preserve predecessor bytes. Context relationships and immutable fingerprints belong to Agent Planning's context domain. A DTO does not authorize source reads, provider egress, spend, acceptance or real science.
 
@@ -40,3 +40,12 @@ Owned campaign-output fixtures/tests live in tests/campaign_output; publication 
 
 
 Planning0.10 adds explicit planning.checkpoint-draft/v1 (payload schema_version2). Materialization adjustments carry a concrete ActivationPath, checkpoint seed digest, exact prior field digest and graph ScalarValue decimal strings. Legacy campaign-draft remains unchanged and excludes this candidate. Shape validation grants no effect authority; owner parser integration remains the next gate.
+
+UI-01.07 adds planning.campaign-origin/v1, a historical exact-draft projection.
+It groups original producer/attempt/context/usage, compiler save receipt, consumed
+Research identities/criteria/gaps and selected node/tool locks. No raw provider
+payload, prompts, credentials or private packets are exported. Unknown usage and
+missing capture publication remain explicit. DTOs enforce shape; Planning owns
+identity-chain, digest and256KiB response policy. Tests: tests/campaign_origin.
+The additive root preserves all predecessor schemas; read permission grants no
+write, current eligibility or scientific authority.

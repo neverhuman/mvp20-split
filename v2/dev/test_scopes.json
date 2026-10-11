@@ -1,4 +1,8 @@
 {
+  "planning-campaign-origin": {
+    "tests": "services/agent_planning/tests/campaign_origin",
+    "coverage_sources": ["services/agent_planning/src/amphora_agent_planning/campaign_origin"]
+  },
   "integration-campaign-launch": {
     "tests": "tests/integration/campaign_launch",
     "coverage_sources": ["deploy/local/src/amphora_deployment/campaign_launch", "services/local_gateway/src/amphora_local_gateway"]
