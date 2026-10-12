@@ -22,7 +22,7 @@ docs/Audits/Evidence/UI-01.08-Isolation/README.md. No supported campaign accepte
 
 ## Next gate
 
-Boundary check passed; commit/push08e after final diff check. Then owner decision for ONE full
+Boundary check passed;08e implementation committed a83b3f75. Next owner decision for ONE full
 supported campaign qualification capped$0.25/8192output on v6. Prior10/$2.55 campaign
 holds exhausted; diagnostic authority does not extend campaign budget. Never reset,
 refund or bypass old holds. No further inference before decision; no serving cutover.
@@ -50,4 +50,4 @@ P5.4 needs Deployment managed-curation recipe beyond current4nativeworkers.
 Demo localhosthttp127.0.0.1:57013 / LANhttps192.168.1.70:57013 remains old
 Planning0.107/schema0021 + Studio0.26; no new journal applied. Helper may expire
 2026-10-12 around20:00. Preservebaseline; no newdemo cutover authorized here.
-Previous pushedf7b39652;08e pendingcommit at thischeckpoint.
+08e implementation commit a83b3f75; inspect git for subsequent handoff/push checkpoint.
