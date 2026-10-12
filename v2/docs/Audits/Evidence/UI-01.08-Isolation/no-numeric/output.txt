@@ -1,0 +1,1 @@
+{"authority":"proposal_only","decision_scope":"0000000000000000000000000000000000000000000000000000000000000000","outcome":{"kind":"abstain","reason_code":"insufficient_context"},"profile":"planning.campaign-curation-draft.v1","rationale":"diagnostic only","schema_version":"1","scientific_authority":"not_established","unresolved":[]}

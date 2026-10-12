@@ -49,17 +49,17 @@ class CurationEnvelope:
                 'curation_input_omissions')
         require(all(type(context[key]) is list for key in ('slices', 'budget_omissions', 'consumed_observations')),
                 'curation_input_context')
-        if profile.envelope_version in {'2', '3', '4', '5'}:
+        if profile.envelope_version in {'2', '3', '4', '5', '6'}:
             from .readable import readable_context
             context = readable_context(context)
         payload = canonical({'output_schema': CampaignCurationDraft.model_json_schema(mode='validation'),
             'packet_sha256': hashlib.sha256(raw).hexdigest(), 'untrusted_context': context}).decode('utf-8')
         output_format = {'type': 'json_object'}
-        if profile.envelope_version in {'3', '4', '5'}:
+        if profile.envelope_version in {'3', '4', '5', '6'}:
             from .structured import GenerationSchema
-            output_format = GenerationSchema.reviewed().format()
+            output_format = (GenerationSchema.provider_compatible() if profile.envelope_version == '6' else GenerationSchema.reviewed()).format()
         body = canonical({'model': MODEL, 'store': False, 'stream': False, 'service_tier': 'default',
-            'reasoning': {'effort': 'none' if profile.envelope_version in {'4', '5'} else 'low'}, 'max_output_tokens': original.context.limits.max_output_tokens,
+            'reasoning': {'effort': 'none' if profile.envelope_version in {'4', '5', '6'} else 'low'}, 'max_output_tokens': original.context.limits.max_output_tokens,
             'instructions': value['trusted_instructions'],
             'input': [{'role': 'user', 'content': 'Return JSON only, conforming to output_schema.\n' + payload}],
             'text': {'format': output_format}})

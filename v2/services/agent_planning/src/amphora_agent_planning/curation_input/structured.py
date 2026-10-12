@@ -53,6 +53,18 @@ class GenerationSchema:
     def reviewed(cls):
         return cls.bind(CampaignCurationDraft.model_json_schema(mode='validation'))
 
+    @classmethod
+    def provider_compatible(cls):
+        # UI-01.08e isolated +/-1e100 bounds as a provider generation failure.
+        # Only the provider projection changes; the public/local DTO retains them.
+        schema = json.loads(cls.reviewed().canonical)
+        value = schema['$defs']['NumberConstant']['properties']['value']
+        require(value.get('type') == 'number' and value.get('minimum') == -1e100
+                and value.get('maximum') == 1e100, 'curation_numeric_projection_drift')
+        del value['minimum']
+        del value['maximum']
+        return cls(canonical(schema))
+
     @property
     def sha256(self):
         return hashlib.sha256(self.canonical).hexdigest()

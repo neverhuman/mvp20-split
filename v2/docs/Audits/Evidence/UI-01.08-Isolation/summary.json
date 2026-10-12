@@ -1,0 +1,86 @@
+{
+  "timestamp_local": "2026-10-12 18:37:06",
+  "provider_calls": 8,
+  "held_usd": 0.24,
+  "ceiling_usd": 0.48,
+  "reported_token_estimate_usd": 0.01262625,
+  "not_invoice": true,
+  "missing_usage_case": "structure HTTP400",
+  "stopped_on_isolation": true,
+  "production_schema_matches_passing_probe": true,
+  "campaign_acceptance": false,
+  "cases": [
+    {
+      "case": "tiny",
+      "valid_output": true,
+      "http_status": 200,
+      "request_id": "req_ca08a80aeb054e7f9dd6b959dac2d8fb",
+      "reported_estimate_units": 163500,
+      "usage_available": true,
+      "classification": "pass"
+    },
+    {
+      "case": "abstain",
+      "valid_output": true,
+      "http_status": 200,
+      "request_id": "req_043ba5741b7d4831877fc16aaac08d92",
+      "reported_estimate_units": 780750,
+      "usage_available": true,
+      "classification": "pass"
+    },
+    {
+      "case": "structure",
+      "valid_output": false,
+      "http_status": 400,
+      "request_id": "req_8c435d412c254434a017cc2caf61028a",
+      "reported_estimate_units": 0,
+      "usage_available": false,
+      "classification": "invalid probe schema"
+    },
+    {
+      "case": "no-patterns",
+      "valid_output": false,
+      "http_status": 200,
+      "request_id": "req_390eab59e0a4451ba20f298d8d705042",
+      "reported_estimate_units": 0,
+      "usage_available": true,
+      "classification": "zero-usage incomplete"
+    },
+    {
+      "case": "structure-v2",
+      "valid_output": true,
+      "http_status": 200,
+      "request_id": "req_e1c14d2dc9d8404295731ccac596d7f3",
+      "reported_estimate_units": 3894000,
+      "usage_available": true,
+      "classification": "pass"
+    },
+    {
+      "case": "no-numeric",
+      "valid_output": true,
+      "http_status": 200,
+      "request_id": "req_7e1b8eaac726414d9a41b5e55dbf0b4d",
+      "reported_estimate_units": 3894000,
+      "usage_available": true,
+      "classification": "pass"
+    },
+    {
+      "case": "no-large-number",
+      "valid_output": true,
+      "http_status": 200,
+      "request_id": "req_c7b0e190ff39426d9301f679d2938ecb",
+      "reported_estimate_units": 3894000,
+      "usage_available": true,
+      "classification": "pass"
+    },
+    {
+      "case": "large-number-tiny",
+      "valid_output": false,
+      "http_status": 200,
+      "request_id": "req_98c3f81d16f8463caeeb61350221d20c",
+      "reported_estimate_units": 0,
+      "usage_available": true,
+      "classification": "zero-usage incomplete"
+    }
+  ]
+}

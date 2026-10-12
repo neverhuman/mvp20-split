@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-Source: Planning0.117.0 / migration0024. UI-01.08 adds original curation intake,
+Source: Planning0.133.0 / migration0024. UI-01.08 adds original curation intake,
 exact campaign input/output, fixed qualification spending guard/direct adapter and
 fenced recoverable progress. Curation context now retains1..8 selected Knowledge
 graph slices and exact untrusted human intent through preparation replay. Public curation/successor-launch contracts0.1.0 are
@@ -114,3 +114,8 @@ UI-01.08/P3.2c: Planning0.127 connects approved fulfillment intake and managed
 verification with fair campaign polling.56 scoped checks and150 independently installed checks pass; P3.2 complete. Serving demo versions remain unchanged.
 
 UI-01.08a/0.128.0: additive curation input v2 makes verified schema documents readable and specifies closed output variants; old input and output contracts stay unchanged. The owner-reviewed exact qualification scope has a six-slot/1.50 USD ceiling; other scopes retain four slots/1 USD. Existing reservations are never reset. No database migration or Runtime changes.
+
+UI-01.08e: additive v6/fit.v8 omits only NumberConstant.value +/-1e100 bounds
+from provider generation after controlled API isolation. Public/local numeric
+validation, old profile bytes and aggregate spending remain unchanged. See
+curation_input/README.md; full campaign qualification and serving cutover pending.

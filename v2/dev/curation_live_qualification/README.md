@@ -63,3 +63,8 @@ review_direct verifies the retained final08c unknown outcome and v2 missing-capa
 UI-01.08d prepare_extended/material_extended freeze v5 after seven byte-exact original replays and nine original holds. One new original/$0.30/16384 output tokens under exact10/$2.55 aggregate authority. The last direct-profile max_output_tokens diagnostic and offline v5 evidence are frozen; no key read during preparation. run.py enforces this separate declaration. Worker export accepts16384 only for the distinct v5 descriptor; production cost policy remains authoritative.
 
 review_extended verifies actual08d retained records/browser and all ten/$2.55 holds with zero remaining, without a provider enabled. The v5 experiment failed with no output items and explicit zero usage; no further paid test is authorized.
+
+UI-01.08e material_compatible exports installed v6 material and verifies all eight
+prior envelope bytes/acceptance outcomes without keys, provider calls or owner
+startup. Schema exactly matches the passing no-large-number probe. No campaign
+budget is added and no campaign is qualified by this helper.

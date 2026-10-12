@@ -90,3 +90,25 @@ def test_v4_direct_generation_preserves_strict_schema_limits_and_old_effort():
             assert packet.fit.document()['format'] == ('planning-campaign-packet-fit.v6' if version == '4' else 'planning-campaign-packet-fit.v7')
             assert packet.fit.measurement.input_tokens == len(envelope.body) + 1024
     assert len(set(references)) == 5
+
+
+def test_v6_removes_only_isolated_provider_bounds_and_keeps_local_rejection():
+    from amphora_contracts_campaigns.executable.values import NumberConstant
+    old = GenerationSchema.reviewed()
+    expected = json.loads(old.canonical)
+    value = expected['$defs']['NumberConstant']['properties']['value']
+    del value['minimum']; del value['maximum']
+    compatible = GenerationSchema.provider_compatible()
+    assert json.loads(compatible.canonical) == expected
+    assert GenerationSchema.reviewed().canonical == old.canonical
+    assert compatible.sha256 != old.sha256
+    for number in (-1e101, 1e101):
+        with pytest.raises(ValueError): NumberConstant.model_validate_json(json.dumps({'kind': 'number', 'value': number}))
+    for number in (-1e100, 0, 1e100):
+        assert NumberConstant.model_validate_json(json.dumps({'kind': 'number', 'value': number})).value == number
+    source = curation_plan(version='6')
+    packet = prepare(source).packet
+    envelope = CurationEnvelope.bind(source.request, packet.canonical)
+    assert json.loads(envelope.body)['text']['format'] == compatible.format()
+    assert packet.fit.document()['format'] == 'planning-campaign-packet-fit.v8'
+    assert CurationEnvelope.bind(source.request, packet.canonical).body == envelope.body

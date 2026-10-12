@@ -26,7 +26,7 @@ def source(version="1", **changes):
     return replace(plan, request=request(value))
 
 
-@pytest.mark.parametrize("version", ["1", "2", "3", "4"])
+@pytest.mark.parametrize("version", ["1", "2", "3", "4", "6"])
 def test_one_exact_send_with_narrowed_deadline_and_closed_scope(version):
     selected = source(version=version)
     packet = prepare(selected).packet

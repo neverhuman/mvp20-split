@@ -9,14 +9,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: UI-01 primary active; LAN-01 accepted/archived. LR-01 remains conditional; completed plans remain closed.
-- Last refreshed: 2026-10-12 13:03:37 (America/Chicago).
+- Last refreshed: 2026-10-12 18:39:10 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
 - Primary active task: UI-01/N3/I1, implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md), P1=100%, P2=100%, P3=100%,P4=100%,P5=50%, child90%. N2=100%; launch/provenance remain closed. UI-01.05 K1/R1=100%, I1=90%, child96.67%.
-- Next task: Account/provider investigation using [retained request IDs and diagnostic brief](../Audits/UI-01.08%20Provider%20investigation%20brief.md).08d bounded experiment complete100%; no further paid request authorized. P5.2 remains0 and P5.4 awaits it.
+- Next task: Review one new supported campaign qualification capped at$0.25/8192 output tokens using verified v6; no allowance reset or serving cutover. P5.2 remains0; P5.4 awaits it.
 - Implementation completion: LAN-01=100%; UI-01 active78%, Build97.5%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
-- Blockers/dependencies: Approved08d 16,384-output original also returned HTTP200 incomplete/max_output_tokens with no output items and explicit zero usage. All10/$2.55 original holds retained, zero remaining. Recovery/browser pass; live supported graph remains unqualified.
-- Latest checkpoint: 2026-10-12 13:03:37:08d original failed with empty output/explicit zero usage despite none/16384. Recovery86972 passed/drained: exact receipt replay, actual browser1440/390 and canonical10/$2.55 holds/zero remaining.153 source checks, installation and seven prior replays pass.08d diagnostic work100%, supported acceptance0; parent90/P5=50 unchanged. Provider investigation needed; existing demo unchanged.
+- Blockers/dependencies: 08e isolated the zero-usage trigger to NumberConstant.value bounds +/-1e100. Planning0.133.0 v6 removes only those provider-facing bounds; local validation and eight prior replays remain unchanged. Full supported campaign qualification pending; prior10/$2.55 campaign holds exhausted. Diagnostic series stopped after8/$0.24 held.
+- Latest checkpoint: 2026-10-12 18:39:10:08e complete100% (probe100/isolation100/repair100).97 focused tests, isolated Planning0.133.0 installation and eight exact prior replays pass. Eight probes; $0.24 held, $0.012626250 token estimate (not invoice). Parent90/P5=50 unchanged; supported campaign qualification pending.
 - Acceptance posture: N3/I1=90%, parent V1=0%; no full-engine acceptance or serving cutover. Eight live attempts cumulatively reported $0.242380500; existing demo preserved.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 
