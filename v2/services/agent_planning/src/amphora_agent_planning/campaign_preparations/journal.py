@@ -45,7 +45,7 @@ class CampaignPreparationJournal:
                 'stored_campaign_preparation_corrupt')
         return StoredCampaignPreparation(record, row['registered_at'])
 
-    def register(self, principal, plan, packet):
+    def register(self, principal, plan, packet, *, guard=None):
         reference = plan.request.document().reference
         principal.require('record_attempts', reference.scope)
         require(plan.request.document().actor_id == principal.actor_id, 'request_actor_mismatch')
@@ -65,6 +65,8 @@ class CampaignPreparationJournal:
             consumed = connection.execute(text('SELECT EXISTS (SELECT 1 FROM planning.dispatches WHERE ' + KEY +
                 ' UNION ALL SELECT 1 FROM planning.observations WHERE ' + KEY + ')'), key).scalar_one()
             require(not consumed, 'campaign_preparation_after_call')
+            if guard is not None:
+                guard(connection)
             connection.execute(text('INSERT INTO planning.campaign_preparations '
                 '(tenant_id,project_id,engagement_id,request_sha256,manifest_sha256,plan_sha256,packet_sha256,canonical_bytes,packet_bytes) '
                 'VALUES (:tenant,:project,:engagement,:request,:manifest,:plan,:packet,:content,:packet_content)'),

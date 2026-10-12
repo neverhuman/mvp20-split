@@ -1,6 +1,6 @@
 # Agent Planning service boundary
 
-Source: Planning0.116.0 / migration0023. UI-01.08 adds original curation intake,
+Source: Planning0.117.0 / migration0024. UI-01.08 adds original curation intake,
 exact campaign input/output, fixed qualification spending guard/direct adapter and
 fenced recoverable progress. Curation context now retains1..8 selected Knowledge
 graph slices and exact untrusted human intent through preparation replay. Public curation/successor-launch contracts0.1.0 are
@@ -8,7 +8,7 @@ additive; existing Planning0.13.0 schemas and original receipt bytes are unchang
 Exact-head Knowledge public reads retain explicit gaps. Provider engagement binds
 the original command hash; decision_scope retains compiler policy authority.
 Exact selected Runtime drafts and terminal predecessor reads now feed required
-untrusted context. Public-owner context assembly is qualified; durable linkage/worker/compiler integration and browser curation remain incomplete.
+untrusted context. Public-owner context assembly is qualified; durable original preparation linkage is qualified. Managed worker/compiler integration and browser curation remain incomplete.
 See [curation intake](src/amphora_agent_planning/curation_intake/README.md) and
 [job state](src/amphora_agent_planning/curation_jobs/README.md).
 

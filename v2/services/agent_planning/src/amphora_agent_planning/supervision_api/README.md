@@ -1,7 +1,7 @@
 # Planning supervisor HTTP boundary
 
 UI-01.08/P2.3b.1: optional curation readiness now checks request, immutable progress
-and lease tables at planning0023. GET projects current retained job state; receipt
+lease and preparation-link tables at planning0024. GET projects current retained job state; receipt
 query retains original acknowledgment. This HTTP process does not claim jobs.
 
 Planning0.109 adds optional [curation intake](../curation_intake/README.md),

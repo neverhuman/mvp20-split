@@ -100,3 +100,10 @@ immutable journals, schema0020 unchanged. Only the new checkpoint profile acquir
 budget lock before family/request locks. Six reserved calls/USD0.50 per dedicated project,
 no refunds, known primary/late overage blocks new issuance. Legacy profiles retain their
 existing behavior. Public checkpoint completion maps group exhaustion to accounting_budget_exhausted.
+
+UI-01.08/P2.3b.2: PlanningJournal.register accepts an optional owner-local SQL guard
+before a NEW original request insert. Curation uses this for job lease/fence checks
+inside the request transaction. Exact existing replay remains read-only; generic
+callers are unchanged. Guard callbacks must not perform peer/provider I/O or start
+nested transactions. Request lock precedes curation job lock; curation recovery
+reads immutable request rows without taking request locks.

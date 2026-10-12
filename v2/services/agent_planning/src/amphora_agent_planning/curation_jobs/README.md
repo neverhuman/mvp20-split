@@ -19,9 +19,10 @@ serialize short job transactions; all peer/provider I/O occurs outside them. SQL
 failure rolls back both initial progress and lease acquisition. Claiming a job does
 not issue a provider request, reserve money, save a graph or admit a campaign.
 
-Current implementation supports claim/reclaim, heartbeat and terminal failure.
+Current implementation supports claim/reclaim, heartbeat, prepared-input progress and terminal failure.
 Failure before preparation is failed; later unfinished side effects require
-indeterminate. Full prepared/proposed/compiled transitions belong to P2.3b.2/c and
+indeterminate. Prepared transition is coordinated atomically by curation_preparation with its
+immutable exact-input link. Proposed/compiled transitions belong to P2.3c and
 must bind original durable records before exposing those states. No running worker,
 public context builder or live-demo readiness is claimed by this module alone.
 

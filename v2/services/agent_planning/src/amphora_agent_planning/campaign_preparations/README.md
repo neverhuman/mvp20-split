@@ -36,3 +36,8 @@ head. Summary/head mismatches reject even if payload hashes were recomputed.
 Curation Runtime replay revalidates exact original draft/content and predecessor
 pins against required intent, including the authored-order public content digest.
 Old profiles cannot acquire this additional required lane.
+
+Curation registration supplies an optional SQL guard before a NEW preparation
+insert, checking the current job fence while holding the request lock. Exact replay
+returns immutable history without a new write. Generic registration is unchanged;
+callbacks must not perform peer/provider I/O or open nested transactions.

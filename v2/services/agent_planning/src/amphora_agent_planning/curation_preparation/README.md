@@ -23,3 +23,30 @@ retain their identities/hashes. Successful preparation is not current dispatch
 permission: later durable linkage and fresh processing checks still gate issue.
 Credential/endpoint configuration, policy/declaration publication, journal recovery
 and managed workers remain separately owned next work. Tests: tests/curation_preparation.
+
+## Durable input linkage (planning0024)
+
+CurationPreparationJournal freezes original request and preparation through existing
+immutable journals, then atomically appends awaiting_provider/context_prepared
+progress and a SELECT/INSERT-only link to exact request/manifest/envelope digests.
+The job lease/fence is required for the new link. Existing identical links replay
+without rewriting progress. Registration before linkage may survive a crash;
+recover derives the provider engagement from original command SHA and reads those
+original records before another peer read. attach finishes that exact retained
+preparation under the replacement lease. No model attempt, reservation or issuance
+is implied by awaiting_provider; provider fields remain absent until later work.
+
+FrozenInput requires all original lanes and exact Research selections. Every
+recovery revalidates original intent, canonical preparation and exact transmitted
+envelope. A missing/changed referenced record fails closed. The immutable link
+and corresponding progress event commit together; failure leaves the original
+assembling state and reusable preparation. No SQL transaction spans peer/model I/O.
+Existing owner journals are coordinated locally; no peer database is accessed.
+Remaining: reviewed policy/declaration publication, managed worker/compiler and
+fresh processing checks immediately before once-only issuance.
+
+New request/preparation inserts also run the active lease/phase guard inside their
+original SQL transaction. Expiry before either write cannot create that record.
+Lock order is request/family then job; linkage/recovery holds job and only reads
+immutable request/preparation rows. Existing identical replay is a read, not a new
+write. This closes expiry races before final linkage without spanning peer I/O.

@@ -1,17 +1,17 @@
 # Restore
 
-Refreshed2026-10-11 22:43:52 America/Chicago. Read FIRST after compaction.
+Refreshed2026-10-11 22:52:39 America/Chicago. Read FIRST after compaction.
 Continue until needed persists across commits/milestones. No subagents/JARVIS.
 v1 read-only; preserve user untracked ocular PDF/DOCX. No source/tests/module README
 edits while tests/installations run. Immutable serving processes are okay.
 
 ## Canonical position
 
-UI-01.08 approved, active P2.3b.2 public context and durable preparation linkage.
-Child32.92%; P1=100%, P2=64.58%, P3/P4/P5=0%. P2.1/P2.2=100%,
-P2.3=58.33% (a100,b75,c0), P2.4=0%. b.1 fenced jobs complete, b.2=50%: public context100%, durable linkage0%.
-UI01 overall66.58%, Build83.23%, Verification0%; G1/N1/N2=100%,N3/I1=32.92%.
-UI01.05=77.64%;K1/R1=100%. UI01.06/07 closed100. Order UI01->UI02->POP01->ML01.
+UI-01.08 approved, active P2.3c managed worker and original compiler integration.
+Child33.33%; P1=100%, P2=66.67%, P3/P4/P5=0%. P2.1/P2.2=100%,
+P2.3=66.67% (a100,b100,c0), P2.4=0%. b.1 fenced jobs complete, b.2=100%: public context and durable linkage complete.
+UI01 overall66.67%, Build83.33%, Verification0%; G1/N1/N2=100%,N3/I1=33.33%.
+UI01.05=77.78%;K1/R1=100%. UI01.06/07 closed100. Order UI01->UI02->POP01->ML01.
 LR01 paused25%/Build33.33%. Universal result index remains separately unapproved.
 
 ## Latest checkpoint and next work
@@ -132,3 +132,22 @@ Provider engagement derived from command SHA permits replacement recovery before
 new peer reads; no model issuance during linkage. Need migration0024 link table.
 All existing command/receipt/preparation bytes remain immutable. Read original
 journals on restart; no repeating provider call. No paid calls this turn.
+
+2d5ceab8 pushed Planning0.116/public assembly. Uncommitted durable linkage:
+curation_preparation/link.py FrozenInput + recover/freeze/attach; migration0024
+immutable curation_preparation_links; job prepared transition and API readiness.
+Recovery serializes linkage snapshot under job lock; no peer/model I/O inside SQL.
+Five SQL recovery/fencing/grants/race tests written; next run linkage and job/API
+regressions. No current tests/installations running before starting that run.
+
+LATEST P2.3b complete: Planning0.117/planning0024,55initial+67final SQL/recovery/
+legacy journal/boundary checks pass. FrozenInput/recover/freeze/attach now qualified.
+All tests done. Sync0.117 locks then commit/push. NEXT P2.3c independent managed
+curation worker plus original compiler handoff: freeze reviewed per-command policy/
+declaration via existing Data APIs, recover prepared input, once-only budget/issue/
+observation, exact compiler save/validate, and durable job progress. No paid calls
+until P5 synthetic qualification. Demo installation remains Planning0.107/0021.
+Important refinement: legacy single-graph OriginProjection runs during provenance
+READ, not save; OriginIndex stores pointers. Compiler save is not itself blocked
+by its one-graph DTO, but multi-graph legacy read needs an explicit truthful approach
+under approved curation/provenance UI before qualification. Do not silently drop.

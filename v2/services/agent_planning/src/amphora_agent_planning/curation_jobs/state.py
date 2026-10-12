@@ -35,6 +35,14 @@ class JobProgress:
                 'stored_curation_progress_mismatch')
         return cls(original, view)
 
+    def prepared(self, at):
+        require(self.view.receipt.phase == 'assembling', 'curation_preparation_phase')
+        receipt = self.view.receipt.model_copy(update={
+            'phase': 'awaiting_provider', 'reason_code': 'context_prepared',
+            'revision': self.view.receipt.revision + 1, 'updated_at': at.astimezone(UTC)})
+        return JobProgress(self.original, CurationView.model_validate_json(
+            self.view.model_copy(update={'receipt': receipt}).model_dump_json()))
+
     def fail(self, reason, at):
         # An unfinished provider/compiler operation cannot be declared effect-free.
         phase = 'failed' if self.view.receipt.phase == 'assembling' else 'indeterminate'

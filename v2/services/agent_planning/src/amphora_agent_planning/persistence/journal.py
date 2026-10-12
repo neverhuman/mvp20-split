@@ -42,7 +42,7 @@ class PlanningJournal:
             " AND ordinal=:ordinal"), key).mappings().first()
         return AttemptJournal.from_rows(snapshot, attempt, observation)
 
-    def register(self, principal, snapshot):
+    def register(self, principal, snapshot, *, guard=None):
         request = snapshot.document()
         principal.require("record_requests", request.reference.scope)
         snapshot = RequestSnapshot.bind(request, actor_id=principal.actor_id, scope=principal.scope)
@@ -53,6 +53,8 @@ class PlanningJournal:
             if existing:
                 require(existing.canonical == snapshot.canonical, "request_conflict")
                 return existing
+            if guard is not None:
+                guard(connection)
             connection.execute(text("INSERT INTO planning.requests "
                 "(tenant_id,project_id,engagement_id,actor_id,request_sha256,canonical_bytes) "
                 "VALUES (:tenant,:project,:engagement,:actor,:digest,:content)"),

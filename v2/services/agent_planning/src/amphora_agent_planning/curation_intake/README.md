@@ -42,8 +42,8 @@ The shared whole-body/depth/deadline middleware applies. Responses are no-store.
 Set AMPHORA_PLANNING_CURATION_POLICIES to a JSON array of at most32 unique policy
 IDs to install routes; empty allows history only. Configured new grants without
 this explicit configuration fail startup. Startup performs no migrations or calls.
-Apply0023 explicitly with a compatible migrator; do not run old migrators afterward.
+Apply0024 explicitly with a compatible migrator; do not run old migrators afterward.
 
 Current GET reads the latest immutable curation_jobs projection when present; the
 receipt query remains the original queued acknowledgment. Readiness checks all
-three curation tables. Neither HTTP reads nor intake issue provider work.
+four curation tables. Neither HTTP reads nor intake issue provider work.
