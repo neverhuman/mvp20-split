@@ -67,6 +67,12 @@ class CampaignSlicePlan:
         row = ContextSlice._capture('curation', verified.identity, json.loads(verified.canonical), True)
         return self._add('curation', verified.request, (row,))
 
+    def with_curation_runtime(self, context):
+        from ..curation_runtime import CurationRuntimeContext
+        verified = CurationRuntimeContext.from_payload(context.intent, json.loads(context.canonical))
+        row = ContextSlice._capture('curation_runtime', verified.intent.identity, json.loads(verified.canonical), True)
+        return self._add('curation_runtime', verified.intent.request, (row,))
+
     def with_curation_knowledge(self, context):
         projections, summary = context.rows()
         require(context.intent.request == self.request, 'campaign_slice_request')

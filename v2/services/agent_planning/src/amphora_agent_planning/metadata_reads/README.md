@@ -13,3 +13,7 @@ Tests live under tests/metadata_reads, with loopback HTTP, trickling-body deadli
 BP-07.03/B1.02c.ii adds only Data GET /v1/retrieval/queries/{id}, with no query parameters or query creation. Data ownership does not widen Registry/Runtime target catalogs or budgets. Retrieval read history and processing-content access remain separate.
 
 BP-08.04 topology qualification adds one closed Runtime metadata target: GET `/v3/graph-runs/{identifier}?limit=1`, returning GraphRunPageV3. The exact page limit is mandatory; duplicate/unknown query keys and other limits reject. Existing read-only timed/byte/JSON/authentication boundaries apply. No tool SDK path restrictions or existing owner grants are widened. Topology uses a five-second window; this client remains localhost-only.
+
+UI-01.08/P2.3b.2 adds Runtime GET /v1/definition-drafts/{id}?revision={revision}
+with one positive safe-integer revision, returning DraftRevision. Latest-head reads
+and other query shapes remain closed. Curation Runtime owns exact content/pin checks.

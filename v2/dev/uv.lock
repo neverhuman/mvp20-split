@@ -18,7 +18,7 @@ wheels = [
 
 [[package]]
 name = "amphora-agent-planning"
-version = "0.114.0"
+version = "0.115.0"
 source = { editable = "../services/agent_planning" }
 dependencies = [
     { name = "alembic" },

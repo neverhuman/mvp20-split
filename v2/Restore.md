@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed2026-10-11 22:33:48 America/Chicago. Read FIRST after compaction.
+Refreshed2026-10-11 22:38:46 America/Chicago. Read FIRST after compaction.
 Continue until needed persists across commits/milestones. No subagents/JARVIS.
 v1 read-only; preserve user untracked ocular PDF/DOCX. No source/tests/module README
 edits while tests/installations run. Immutable serving processes are okay.
@@ -113,3 +113,7 @@ python is environment/Scripts/python.exe (NOT .venv). Deployment0.18.3 at
 launch-live-installation-20261009e. Other independent owners remain Runtime0.65,
 Data0.30/Registry0.1/Research0.40/Knowledge0.18. LAN --baseline is gateway.json.
 
+2ff34e0d pushed: Planning0.114 Knowledge reads/intent correction. Planning0.115 tested:
+curation_runtime exact saved graph/predecessor read + required replay-validated lane;
+closed metadata draft GET added. 96 Runtime/HTTP/replay/boundary tests pass; no tests running or live calls.
+0.115 locks synced; commit/push next; next complete context assembler then durable linkage.

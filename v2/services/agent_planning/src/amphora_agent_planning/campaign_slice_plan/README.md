@@ -33,3 +33,7 @@ with_curation_knowledge assembles exact-head public read results plus a required
 selection/gap/accounting summary. Whole-head-or-gap policy does not silently sample
 large graphs. It occupies the same graph family, so a second graph source rejects.
 The worst-case898 slices remains below900; existing generic graph entries persist.
+
+with_curation_runtime adds the exact original draft and bounded terminal predecessor
+readback as a required untrusted slice; no source-origin or admission claim. Total
+worst-case899 slices remains below900. Distinct request/family guards apply.

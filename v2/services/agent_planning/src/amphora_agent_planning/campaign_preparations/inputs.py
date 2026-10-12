@@ -44,12 +44,13 @@ def validate(request, candidates, context):
         if row.lane != 'artifact':
             require(row.required == (row.lane not in {'research_view', 'registry_inventory', 'retrieval'}),
                     'campaign_preparation_lane_requirement')
-    limits = {'curation_knowledge': 0, 'curation': 0, 'artifact': 132, 'research': 1, 'research_view': 32, 'graph': 1, 'registry_scan': 1,
+    limits = {'curation_runtime': 0, 'curation_knowledge': 0, 'curation': 0, 'artifact': 132, 'research': 1, 'research_view': 32, 'graph': 1, 'registry_scan': 1,
               'registry_inventory': 400, 'registry_exact': 64, 'runtime': 1, 'runtime_schema': 256, 'retrieval': 1}
     if request.document().context.output_schema == campaign_curation_draft_schema():
         limits['graph'] = 8
         limits['curation'] = 1
         limits['curation_knowledge'] = 1
+        limits['curation_runtime'] = 1
     require(all(count <= limits[lane] for lane, count in counts.items()), 'campaign_preparation_lane_count')
     require(not (counts.get('registry_inventory') or counts.get('registry_exact')) or counts.get('registry_scan') == 1,
             'campaign_preparation_registry_scan')
@@ -80,6 +81,8 @@ def validate(request, candidates, context):
         require(hashlib.sha256(canonical(payload)).hexdigest() == candidate.payload_sha256, 'campaign_preparation_payload_digest')
     from ..curation_knowledge.validation import validate_knowledge
     validate_knowledge(request, context["slices"])
+    from ..curation_runtime.context import validate_runtime
+    validate_runtime(request, context["slices"])
     omissions = [{'lane': row.lane, 'identity': row.identity, 'payload_sha256': row.payload_sha256, 'reason': 'budget'}
                  for row in candidates if not row.included]
     require(canonical(context['budget_omissions']) == canonical(omissions), 'campaign_preparation_budget_omissions')

@@ -32,3 +32,7 @@ Existing retained curation fixtures without that later lane remain readable.
 Curation Knowledge summaries require original intent and exact selected-head
 coverage, bounded read accounting and one matching graph projection per available
 head. Summary/head mismatches reject even if payload hashes were recomputed.
+
+Curation Runtime replay revalidates exact original draft/content and predecessor
+pins against required intent, including the authored-order public content digest.
+Old profiles cannot acquire this additional required lane.
