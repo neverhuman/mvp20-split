@@ -41,7 +41,7 @@ class OriginProjection:
         outcome = observation.outcome
         prepared = authoring.review.composition.evidence.proposal
         original = prepared.attempt.request.document()
-        output = prepared.output.document()
+        output = prepared.review_document()
         readback = outcome.readback
         draft = CampaignOriginDraft(scope=readback.scope, draft_id=readback.head.draft_id,
             revision=readback.head.revision, content_sha256=readback.head.content_sha256)

@@ -1,5 +1,11 @@
 # Campaign proposal policy boundary
 
+UI-01.08/P2.2 PreparedCampaignProposal also verifies the exact curation profile
+through CurationOutput. review_document() exposes an explicit internal compiler
+projection while output.document()/proposal()/sha256 retain original curation
+meaning and bytes. The FutureCampaignDraft is copied exactly, never repaired.
+Structured capability gaps remain on the original output for the curation owner.
+
 Owner: Agent Planning. This module is separate from Knowledge extraction proposals. B2.01a/b/c implement prepared-output binding, relevant observation values, evidence-purpose relationships and tool/composition checks; campaign_decisions owns the reviewed decision-declaration policy, and campaign_dispatch owns the durable compiler handoff.
 
 PreparedCampaignProposal.bind reconstructs CampaignPreparation and the original AttemptBinding/verified_observation, then parses the exact successful campaign capture. It retains original preparation, attempt, raw capture, observation and canonical-output identities. It rejects another request, corrupt input history, unavailable output or a forged typed envelope. Its fingerprint rebinds all these values. This proves compatible retained inputs/output identities, not that a provider actually consumed that packet; issuance integration and fresh processing permission remain separate gates.

@@ -39,7 +39,7 @@ Read the selected plan's tracker first. Complete each phase gate before advancin
 
 - [LAN-01 Local Network Demo Access](Completed/LAN-01%20Local%20Network%20Demo%20Access.md): complete100%, owner accepted and archived; deployed demo preserved.
 
-- [UI-01.05 Knowledge, Run and LLM Integration](UI-01.05%20Knowledge%20Run%20and%20LLM%20Integration.md): 75%; K1/R1=100%, I1=25%. N2 complete; UI-01.08/P2 active.
+- [UI-01.05 Knowledge, Run and LLM Integration](UI-01.05%20Knowledge%20Run%20and%20LLM%20Integration.md): 76.67%; K1/R1=100%, I1=30%. N2 complete; UI-01.08/P2 active.
 - [UI-01.06 Campaign launch decision](UI-01.06%20Campaign%20launch%20decision.md): owner approved2026-10-09; qualified100%, all implementation phases complete. Runtime keeps admission/execution authority.
 
-- [UI-01.08 Campaign curation boundary decision](UI-01.08%20Campaign%20curation%20boundary%20decision.md): approved, active25%, P1=100%, P2=25%, P3/P4/P5=0%; new Planning curation/capability-request and separate Deployment successor-launch contracts for N3/I1.
+- [UI-01.08 Campaign curation boundary decision](UI-01.08%20Campaign%20curation%20boundary%20decision.md): approved, active30%, P1=100%, P2=50%, P3/P4/P5=0%; new Planning curation/capability-request and separate Deployment successor-launch contracts for N3/I1.

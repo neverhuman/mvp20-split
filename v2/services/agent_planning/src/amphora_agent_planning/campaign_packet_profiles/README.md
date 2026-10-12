@@ -1,5 +1,10 @@
 # Campaign packet profiles
 
+UI-01.08/P2.2 adds the separately selected curation-v1 packaged prompt and
+curation input-bound descriptor. Exact curation output schema selects the prompt;
+old campaign/supervision instruction bytes remain unchanged. PacketFit.v3 counts
+the complete curation Responses envelope; existing fit.v1/v2 remain unchanged.
+
 Owner: Agent Planning. Architecture: [Planning](../../../../../docs/Architecture/Agents/Planning.md). Closed instruction/tokenizer profiles and original-request packet budget checks. No model call, network, source processing permission, durable accounting reservation or Runtime/domain acceptance.
 
 FixturePacketTokenizer supports only deterministic/adversarial-fixture/1 with the exact SHA-pinned planning.fixture-byte-tokenizer/1 descriptor. It counts strict UTF-8 packet bytes as synthetic_byte_token units, including the complete supplied envelope. Empty, non-byte, invalid UTF-8 or over8MiB input rejects. This is a deterministic fixture, not an estimate or guarantee for any live tokenizer, chat framing or provider. Unknown models or tokenizer pins fail rather than falling back. The separate [checkpoint input profile](../checkpoint_input/README.md) supports one pinned OpenAI supervision envelope and records conservative input-bound fit v2. Existing fixture fit v1 remains byte-compatible; old evaluation profiles are not accepted as checkpoint profiles.

@@ -4,7 +4,9 @@ import hashlib
 from dataclasses import dataclass
 
 from ..campaign_context.records import canonical
+from amphora_contracts_campaign_curation import campaign_curation_draft_schema
 from ..campaign_output import CampaignOutput
+from ..curation_output import CurationOutput
 from ..context import AttemptBinding
 from ..context.policy import require
 from ..persistence.records import verified_observation
@@ -17,7 +19,7 @@ class PreparedCampaignProposal:
     inputs: ObservedInputs
     attempt: AttemptBinding
     observation: Observation
-    output: CampaignOutput
+    output: CampaignOutput | CurationOutput
 
     @classmethod
     def bind(cls, preparation, attempt, observation):
@@ -27,9 +29,13 @@ class PreparedCampaignProposal:
         attempt = AttemptBinding(request, attempt.ordinal)
         observation = verified_observation(attempt, observation)
         require(observation.document().status in {'proposed', 'abstained'}, 'campaign_proposal_not_available')
-        output = CampaignOutput.parse(observation.capture.content, request)
+        parser = CurationOutput if request.document().context.output_schema == campaign_curation_draft_schema() else CampaignOutput
+        output = parser.parse(observation.capture.content, request)
         require(output.proposal() == observation.document().proposal, 'campaign_proposal_output')
         return cls(inputs, attempt, observation, output)
+
+    def review_document(self):
+        return self.output.review_document() if isinstance(self.output, CurationOutput) else self.output.document()
 
     @property
     def sha256(self):

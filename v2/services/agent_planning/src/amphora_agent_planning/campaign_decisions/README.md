@@ -1,5 +1,9 @@
 # Campaign decision boundary
 
+UI-01.08/P2.2 uses PreparedCampaignProposal.review_document() for explicit
+compiler-review projection. Original curation schema/capture/gaps remain retained;
+projection changes neither graph bytes nor admission/scientific authority.
+
 DecisionDeclaration owns discriminated private planning-campaign-decision.v1/v2 profiles. Its SHA must equal the original request's decision_scope. V1 preserves its explicit self Artifact ID and canonical bytes. V2 omits that ID so Data can assign it after upload; it requires exactly one original required constraint matching declaration SHA, byte size and text/plain media type, rejecting absent/ambiguous matches. The original request must include that exact text/plain Artifact as a required constraint and the validated preparation must contain its canonical bytes. Engagement, objective/policy roots, cut, action subset and scope rebind to the original request. No model output can introduce broader authority by supplying new declaration text.
 
 Private DTOs in wire.py serialize bounded reviewed configuration; declaration.py, AdjustmentPermissions and FutureDecisionBoundary own validation behavior. Input/canonical bytes are capped64KiB. The parser rejects duplicate keys, unknown fields, invalid profiles, nonfinite/range errors, duplicate permit identities and missing root context pins. A future boundary fixes campaign identity/revision, exact context-pin set and graph/iteration/timeout/side-effect ceilings. Adjustment permits fix authored target/input, previous-value SHA and typed enumeration or numeric kind/unit/range. Local prior-value hash matching is not an actual Runtime state read.

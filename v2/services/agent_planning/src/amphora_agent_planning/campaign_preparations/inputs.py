@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 from ..campaign_artifact_context import ArtifactContextItem, ArtifactContextPlan
 from ..campaign_context.records import canonical
-from ..campaign_packet_profiles import reviewed_instructions
+from ..campaign_packet_profiles import reviewed_for_request
 from ..context.policy import require
 from .encoding import keys
 from .wire import CandidateRecord
@@ -65,7 +65,7 @@ def validate(request, candidates, context):
         if candidate.lane == 'artifact' and payload.get('roles') == ['prompt']:
             require(payload.pop('body_location', None) == 'trusted_instructions' and 'body_base64' not in payload,
                     'campaign_preparation_prompt_location')
-            payload['body_base64'] = base64.b64encode(reviewed_instructions()).decode('ascii')
+            payload['body_base64'] = base64.b64encode(reviewed_for_request(request)).decode('ascii')
         require(hashlib.sha256(canonical(payload)).hexdigest() == candidate.payload_sha256, 'campaign_preparation_payload_digest')
     omissions = [{'lane': row.lane, 'identity': row.identity, 'payload_sha256': row.payload_sha256, 'reason': 'budget'}
                  for row in candidates if not row.included]
@@ -91,7 +91,7 @@ def validate_artifacts(request, candidates, context):
         payload = dict(payloads[canonical(identity)])
         if payload.get('body_location') == 'trusted_instructions':
             payload.pop('body_location')
-            payload['body_base64'] = base64.b64encode(reviewed_instructions()).decode('ascii')
+            payload['body_base64'] = base64.b64encode(reviewed_for_request(request)).decode('ascii')
         body = payload.get('body_base64')
         if body is None:
             require(not planned.required, 'campaign_preparation_artifact_required')

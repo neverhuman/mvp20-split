@@ -9,12 +9,13 @@ from .tokenizer import FixturePacketTokenizer, PacketMeasurement
 
 if TYPE_CHECKING:
     from ..checkpoint_input.profile import CheckpointInputBound, CheckpointMeasurement
+    from ..curation_input.profile import CurationInputBound, CurationMeasurement
 
 
 @dataclass(frozen=True)
 class PacketBudget:
     request: RequestSnapshot
-    tokenizer: 'FixturePacketTokenizer | CheckpointInputBound'
+    tokenizer: 'FixturePacketTokenizer | CheckpointInputBound | CurationInputBound'
 
     @classmethod
     def bind(cls, request):
@@ -22,6 +23,9 @@ class PacketBudget:
         request = RequestSnapshot.bind(original, actor_id=original.actor_id, scope=original.reference.scope)
         require(original.purpose in {'campaign_proposal', 'supervision'}, 'campaign_packet_purpose')
         if original.context.model.provider_id == 'openai':
+            from ..curation_input import CurationInputBound, curation_tokenizer_reference
+            if original.context.model.tokenizer == curation_tokenizer_reference():
+                return cls(request, CurationInputBound.bind(original.context.model))
             from ..checkpoint_input import CheckpointInputBound
             return cls(request, CheckpointInputBound.bind(original.context.model))
         return cls(request, FixturePacketTokenizer.bind(original.context.model))
@@ -41,7 +45,7 @@ class PacketBudget:
 @dataclass(frozen=True)
 class PacketFit:
     budget: PacketBudget
-    measurement: 'PacketMeasurement | CheckpointMeasurement'
+    measurement: 'PacketMeasurement | CheckpointMeasurement | CurationMeasurement'
     reason: str | None
 
     @property
@@ -61,4 +65,7 @@ class PacketFit:
             value.update(format='planning-campaign-packet-fit.v2', unit='conservative_input_token_bound',
                 framing='checkpoint_responses_utf8_bytes_plus_1024',
                 envelope_sha256=self.measurement.envelope_sha256, envelope_bytes=self.measurement.envelope_bytes)
+            from ..curation_input import CurationInputBound
+            if isinstance(self.budget.tokenizer, CurationInputBound):
+                value.update(format='planning-campaign-packet-fit.v3', framing='curation_responses_utf8_bytes_plus_1024')
         return value

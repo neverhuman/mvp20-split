@@ -66,7 +66,7 @@ class EvidencePurposeReview:
         require(verified == prepared, 'campaign_proposal_binding')
         research = ConsumedResearch.from_proposal(verified)
         links = EvidenceLinks(research)
-        draft = verified.output.document()
+        draft = verified.review_document()
         groups = [('/evidence_requests', draft.evidence_requests)]
         if draft.candidate is not None:
             groups.append(('/candidate/expected_evidence', draft.candidate.expected_evidence))

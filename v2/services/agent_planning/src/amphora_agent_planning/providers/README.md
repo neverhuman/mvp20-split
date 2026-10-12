@@ -1,5 +1,11 @@
 # Provider boundary and diagnostic capture
 
+UI-01.08/P2.2 adds the exact campaign-curation output schema to the closed
+catalog. Raw capture and TaskProviderObservation preserve the full typed outcome.
+For request_capabilities, the generic observation abstains from executable proposal;
+its original payload still contains the distinct capability request outcome.
+No old output enum/schema or stored capture is changed.
+
 BP-07.01, provider boundary introduced in Agent Planning0.2 and retained in0.7. ProviderPort.supports checks the reviewed model identity; reply takes an exact AttemptBinding and returns a byte stream plus observed usage. FixtureProvider supports only deterministic/adversarial-fixture/revision1. It has no network, credentials, tool execution or peer state. A test barrier simulates a delayed reply; this is not a live transport/deadline implementation.
 
 observe checks the selected output schema and adapter support before dispatch. Capture retains at most64KiB/256 chunks; oversized/wrong-type/flooded streams fail with an incomplete prefix digest. Interrupted replies are unknown, never successful; pre-response unavailability and dispatch uncertainty stay distinct. Raw errors are sanitized. Invalid/partial reported usage becomes unknown while valid partial counts remain observations. Absence is never zero. This step does not reserve budget, persist attempts, infer actual tokenization or refund costs; The persistence and orchestration modules own those implemented behaviors.

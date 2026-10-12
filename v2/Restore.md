@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed2026-10-11 21:34:41 America/Chicago. Read FIRST after compaction.
+Refreshed2026-10-11 21:53:16 America/Chicago. Read FIRST after compaction.
 Continue until needed persists across commits/milestones. No subagents/JARVIS.
 v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
 edits while verification/installations run. Immutable serving processes are okay.
@@ -8,22 +8,19 @@ edits while verification/installations run. Immutable serving processes are okay
 ## Canonical position
 
 UI-01/N2 complete100%; N2.2 provenance, N2.3 generation comparison and N2.4
-recorded model inspection all qualified. UI01=65%, Build81.25%, Verification0%.
-NEXT approved UI-01.08/P2.2; P2=25%, child25%, N3/I1=25%; K1/R1=100%, UI01.05=75%.
+recorded model inspection all qualified. UI01=66%, Build82.5%, Verification0%.
+NEXT approved UI-01.08/P2.3a; P2=50%, child30%, N3/I1=30%; UI01.05=76.67%.
 UI01.06/UI01.07 closed100%. Order UI01 -> UI02 -> POP01 -> ML01.
 LR01 paused25%/Build33.33%. UI01.01 universal index remains unapproved;
 bounded existing-API comparison is qualified.
 
 ## Latest checkpoints
 
-P1 contracts pushed cef2c541. P2.1 source Planning0.109/planning0022 complete:
-original intent/receipt, optional HTTP/config, original-byte replay, scoped reads,
-concurrent retries/rollback, actual process replacement and UTC receipt stability.
-72 SQL/API +35 boundary/host +23 final intake checks pass; logs curations-intake
-(actual filenames curation-intake-a/b/c.log). No tests running. No paid calls.
-Local/LAN roots200; serving Planning0.107/Studio0.26/Gateway0.5 unchanged.
-Commit/push P2.1, then P2.2 exact live campaign envelope/output; P2.3 worker,
-P2.4 scripted/replacement. P3 inventory/fulfillment, P4 successor, P5 live review.
+P1 pushed cef2c541; P2.1 pushed601989e1. P2.2 Planning0.110 complete:
+exact campaign envelope/prompt/output and original compiler graph projection.
+92 replay +108 SQL/compiler/provenance +13 boundary checks pass; no tests running.
+Commit/push P2.2 then P2.3a cost allowance/provider adapter. Zero new paid calls.
+Current local/LAN immutable serving owners unchanged (Planning0.107/Studio0.26).
 
 ## Evidence and current serving processes
 
@@ -66,21 +63,10 @@ Data0.30/Registry0.1/Research0.40/Knowledge0.18. LAN --baseline is gateway.json.
 
 ## Next task / approved implementation
 
-UI-01.08 approved; P1=100%, P2=25%, child25%. No reapproval needed.
-P2.2 exact campaign envelope and original output interpretation next.
-Existing checkpoint_input is supervision-only. PacketBudget selects it for all
-OpenAI inputs; add distinctly identified curation profile without changing old bytes.
-Provider OutputProfiles closed catalog must add exact curation output schema.
-New CampaignCurationDraft.outcome distinguishes propose_campaign/request_capabilities/
-abstain. Generic old ProposalAction lacks request_capabilities; design explicit
-non-executable outcome interpretation preserving full raw gaps, never relabel outputs.
-PreparedCampaignProposal currently parses CampaignOutput only; compiler adaptation
-must preserve original proposal/capture and exact proposed definition, not hand-authored
-replacement. Read module READMEs then focused source before changes.
-Approval includes synthetic-only live qualification max$1/four calls/$0.25 reserved
-per call, once-only issuance; none made. Existing pinned model and pricing preserved.
+UI-01.08 approved; P1=100%, P2=50%, child30%. No reapproval needed.
+P2.3a cost bounds/direct adapter next; latest details at end of this handoff.
+P2.2 completed; preserve original new/legacy profile bytes and exact proposed graph.
 Current service0022 migration applied to owned TEST fixture only; demo0021 unchanged.
-New CurationJournal has immutable queued receipt only; worker/job state is next.
 OpenAI Docs skill was already read; consult official docs for new API behavior if needed.
 
 Latest evidence:
@@ -104,3 +90,29 @@ Git -c safe.directory=//DesktopNAS/Code/mvp20-split -c core.safecrlf=false;
 commit additionally -c gc.auto=0. Exact paths only; never stage user ocular files.
 verify_knowledge_review.py --suite generations uses original numeric browser-input.
 --suite launch --browser-recovery original journal --review-only never resubmits.
+
+## Latest P2.2 checkpoint
+
+Planning0.110/dev+service locks aligned. Exact curation_input/profile/envelope,
+curation_output parser, fit.v3 and curation prompt implemented. OutputProfiles
+supports new schema. PreparedCampaignProposal.review_document() explicitly projects
+compiler fields while raw output/capture and exact FutureCampaignDraft stay original.
+Generic observation action=abstain for no executable graph; original typed
+request_capabilities payload retains all gaps. No legacy public enum/schema changes.
+Fixed preparation prompt replay through reviewed_for_request; old prompt hashes stable.
+92 replay +108 SQL/compiler/provenance +13 boundary checks pass. Logs
+curation-envelope-b/c.log and curation-envelope-boundaries.log. All test sessions done.
+P2.2 complete100%; commit/push this milestone then P2.3a. No new paid calls.
+Next: curation_budget fixed qualification-scope allowance ($1/4/$0.25 each),
+curation_openai adapter matching CurationEnvelope. Existing OpenAIHTTP accepts only
+16384/32768/65536 body limits; additive curation transport limit needed (e.g262144)
+without changing old defaults. Suggested maxinput262144/output8192 =>233472000
+nanodollar conservative bound, fixed reservation250000000; maxattempts1. This is
+implementation planning, not a made call. Model fixed gpt-5.4-mini-2026-03-17.
+Budget group must be fixed to one declared qualification scope before live calls;
+no moving scopes to evade cap. Synthetic SQL tests use fresh fixture scopes.
+Reuse existing BudgetLedger/DispatchJournal lock-before-family/request, integer
+price accounting, immutable reservation/primary+late observation reconciliation.
+Do not call provider before fixed group guards pass; no refunds for underuse/unknown.
+Then P2.3b owned job state/lease and public-context assembly; P2.3c compiler/process.
+P2.4 independent replacement, P3 capability workflow/UI, P4 successor, P5 live review.

@@ -36,7 +36,7 @@ class CompositionReview:
     def bind(cls, prepared):
         evidence = EvidencePurposeReview.bind(prepared)
         prepared = evidence.proposal
-        candidate = prepared.output.document().candidate
+        candidate = prepared.review_document().candidate
         authored = AuthoredCampaign.bind(candidate) if isinstance(candidate, FutureCampaignDraft) else None
         tools = ConsumedTools.from_proposal(prepared)
         uses, findings = [], []
@@ -55,7 +55,7 @@ class CompositionReview:
             locks = {lock.tool: lock for lock in runtime.locks}
             require(all(locks[use.release.record.document().lock.tool] == use.release.record.document().lock for use in uses),
                     'campaign_tool_reviewed_lock')
-        draft = prepared.output.document()
+        draft = prepared.review_document()
         groups = [('/evidence_requests', draft.evidence_requests)]
         if candidate is not None:
             groups.append(('/candidate/expected_evidence', candidate.expected_evidence))

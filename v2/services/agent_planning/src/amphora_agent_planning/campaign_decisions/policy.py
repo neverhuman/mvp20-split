@@ -54,7 +54,7 @@ class CampaignDecisionReview:
         prepared = composition.evidence.proposal
         key = declaration.bind(prepared)
         policy = declaration.document()
-        draft = prepared.output.document()
+        draft = prepared.review_document()
         require(draft.action in policy.allowed_actions, 'decision_action_not_permitted')
         budget = BudgetPolicy.from_bytes(reviewed_budget.canonical)
         require(budget == reviewed_budget, 'decision_budget_binding')

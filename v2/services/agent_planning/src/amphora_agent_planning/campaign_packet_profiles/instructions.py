@@ -5,15 +5,24 @@ from dataclasses import dataclass
 from importlib.resources import files
 
 from amphora_contracts_core import ArtifactRef
+from amphora_contracts_campaign_curation import campaign_curation_draft_schema
 
 from ..context import RequestSnapshot
 from ..context.policy import require
 
 
-def reviewed_instructions():
+def reviewed_instructions(profile='campaign'):
     # Canonical LF encoding is part of this owned profile; supplied Artifact bytes
     # are never normalized or repaired to make a different digest pass.
-    return files(__package__).joinpath('prompts/campaign-v1.txt').read_bytes().replace(b'\r\n', b'\n')
+    require(profile in {'campaign', 'curation'}, 'campaign_instruction_profile')
+    return files(__package__).joinpath('prompts/' + profile + '-v1.txt').read_bytes().replace(b'\r\n', b'\n')
+
+
+def reviewed_for_request(request):
+    original = request.document()
+    profile = 'curation' if original.context.output_schema == campaign_curation_draft_schema() else 'campaign'
+    require(profile != 'curation' or original.purpose == 'campaign_proposal', 'curation_instruction_purpose')
+    return reviewed_instructions(profile)
 
 
 @dataclass(frozen=True)
@@ -31,5 +40,5 @@ class CampaignInstructions:
         require(reference == original.context.prompt, 'campaign_instruction_binding')
         require(type(raw) is bytes and 0 < len(raw) <= 65536 and reference.media_type == 'text/plain' and
                 reference.size_bytes == len(raw) and reference.sha256 == hashlib.sha256(raw).hexdigest(), 'campaign_instruction_digest')
-        require(raw == reviewed_instructions(), 'campaign_instruction_profile')
+        require(raw == reviewed_for_request(request), 'campaign_instruction_profile')
         return cls(request, reference, raw)
