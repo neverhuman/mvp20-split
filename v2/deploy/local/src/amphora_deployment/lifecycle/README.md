@@ -94,6 +94,13 @@ granted. Additional token grants must name that owner or a peer edge involving i
 Data may receive Qdrant credentials; Runtime may receive the cursor key. Planning
 configuration converts token_env principals to its existing environment-only
 supervision credentials format. No configuration file contains resolved secrets.
+Optional `curation_policies` is a reviewed list of at most32 unique public
+Identifier values, mapped to `AMPHORA_PLANNING_CURATION_POLICIES`. Omission
+preserves the older host behavior; an explicit empty list enables the boundary
+with no admissible policy. This mapping grants no model key or worker dispatch.
+Planning still validates policy IDs and owns curation intake/serving behavior.
+`tests/lifecycle/test_planning_configuration.py` covers legacy byte compatibility,
+bounded identifiers and actual manifest-to-environment composition.
 Missing owners are not evidence of a complete six-service deployment.
 
 Control uses a separate create-once current-user DPAPI sidecar, supervisor.dpapi,

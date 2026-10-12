@@ -1,6 +1,6 @@
 [project]
 name = "amphora-deployment"
-version = "0.19.0"
+version = "0.19.1"
 requires-python = ">=3.12,<3.13"
 dependencies = ["amphora-contracts-campaign-successor-launch==0.1.0", "amphora-contracts-campaign-launch==0.1.0", "amphora-contracts-commands==0.2.0", "amphora-contracts-core==0.1.0", "amphora-contracts-runtime==0.1.0", "amphora-contracts-graph-runtime==0.13.0", "amphora-contracts-tools==0.1.0"]
 

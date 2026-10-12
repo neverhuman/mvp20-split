@@ -10,6 +10,7 @@ from ..installation import OWNERS, SERVING_HOSTS, OwnerInstallation
 from ..persistence.state import LocalState
 from ..profile import require
 from .supervisor import OwnerBinding
+from .planning_configuration import planning_environment
 
 
 def allowed_reference(owner, name):
@@ -91,15 +92,7 @@ def load_bindings(root, manifest, routes):
         if owner == "planning":
             require(configuration.stat().st_size <= 65536, "lifecycle_planning_config_size")
             settings = json.loads(configuration.read_bytes())
-            require(set(settings) <= {"principals", "topology_configuration"} and "principals" in settings, "lifecycle_planning_config")
-            principals = []
-            for principal in settings["principals"]:
-                require(set(principal) == {"token_env", "actor_id", "scope", "actions"}, "lifecycle_planning_principal")
-                principals.append({key:value for key,value in principal.items() if key != "token_env"} |
-                                  {"token": environment[principal["token_env"]]})
-            environment["AMPHORA_PLANNING_SUPERVISION_CREDENTIALS"] = json.dumps(principals)
-            if "topology_configuration" in settings:
-                environment["AMPHORA_PLANNING_TOPOLOGY_CONFIG"] = settings["topology_configuration"]
+            environment.update(planning_environment(settings, environment))
         installation = OwnerInstallation.from_directory(owner, record["installation"], record["source_lock"])
         result[owner] = OwnerBinding(installation, Path(record["installation"]), configuration, routes.port(owner), environment)
     return result

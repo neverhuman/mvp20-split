@@ -1,13 +1,13 @@
 # Restore
 
-Refreshed 2026-10-12 03:54:00 America/Chicago. Read FIRST after compaction.
+Refreshed 2026-10-12 04:14:24 America/Chicago. Read FIRST after compaction.
 Continue until needed across commits/gates/compaction. No subagents/JARVIS.
 v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
 edits while tests/installations run. Serving demo uses immutable source copies.
 
 ## Canonical position
 
-UI-01.08 approved; P4.3 graph comparison/validation/successor controls ACTIVE.
+UI-01.08 approved; P4.4a actual owner/process integration ACTIVE.
 Child75%;P1/P2/P3=100%,P4=75%,P5=0. P4.1/P4.2=100%,P4.3=100%,P4.4=0.
 ParentUI01=75%/Build93.75%/Verification0;UI01.05=91.67%,I1=75%.
 Order UI01->UI02->POP01->ML01. LR01 paused25/Build33.33. No decision pending.
@@ -35,6 +35,44 @@ No actual Runtime/containers/browser successor claim; P4.4/P5 owns integration.
 Helper verify_campaign_launch_installation.py --launch-only runs scoped fresh wheel
 checks; original full mode still supports container/receipt process probes.
 
+## Immediate checkpoint after compaction
+
+P4.4a isolated fixture prepared. Root C:/Users/alb_p/AppData/Local/Packages/
+PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/Local/Amphora/
+curation-qualification-20261012a. Evidence v2/.test-results/curation-owner-20261012a,
+configs in serving/. Trusted backup-20261007e restored into NEW stores/resources;
+Planning0.127 forward migrated, prior migration hashes unchanged. No owner APIs
+currently running on fixture; stores retained. Actual startup+standby+drain PASS
+curation-owner-start-c.log. Earlier A absolute-reference pin failure repaired by
+byte-identical relative inputs; B Planning lacked Deployment curation policy
+mapping. Source Deployment0.19.1 repairs optional curation_policies -> environment.
+178 lifecycle/launch tests PASS curation-deployment-config-b.log. First aggregate
+-a stopped without summary, no evidence credit. 16 new focused tests pass.
+No test/install sessions running. Independent0.19.1 wheel at
+curation-deployment-installation-20261012a/owner used in passing actual startup.
+Planning capability-installation-20261012a/owner; Gateway
+successor-gateway-installation-20261012a/owner; old Runtime/Data/etc from restored
+owners.json. Source helper dev/campaign_curation_fixture has README, restore,
+forward, preparation, session. No source demo mutation or paid keys/calls.
+
+NEXT: commit/push this verified blocking repair, then construct actual curation
+fixture. P4.4a NOT complete, no new percentage credit. Need public original draft
+save/validate/launch, actual synthetic CurationHost provider adapter inside isolated
+Planning interpreter, unchanged capture through compiler, Deployment successor
+with actual ManagedLaunchWorkers and Runtime lineage/carry. Use existing seed
+numeric tool (actual image/Registry deployment seed, worker science-slot). New
+fixture launch profile curation-integration, one seed tool,2 native workers. Store
+original commands before POST and preserve failure evidence. Session PublicOwners
+supports JSON currently; extend bounded binary PUT publication in next work.
+CurationHost.load(provider disabled) test-only injection of deterministic provider
+is allowed; no production fixture provider option. Real peers all viaHTTP, only
+Planning interpreter can use PlanningSQL. Policy template source
+services/agent_planning/tests/campaign_context/fixtures/request.json; update exact
+published roots, reviewed_instructions('curation'), curation tokenizer/schema,
+fixed allowed model, original reservation250000000; synthetic0cost provider. Data
+roots need public acquisition rights and source prepare as in
+campaign_origin_demo/publication.py. P5 paid scope remains separate and unused.
+
 ## Next task
 
 ef7dfccb pushed Studio0.32 graph review. 7b3a7c3e pushed Studio0.33 P4.3b command/recovery.427 fullchecks successor-studio-full-a.log;15focusedlaunchchecks,
@@ -46,8 +84,8 @@ extracted without authoring behavior change. Unknown-reply identity GET then own
 hash query; no Python canonical hash computed in JS. No automatic POST/retries.
 One original per curation; no cachedreceipt authority.
 
-32154e19 pushed Studio0.34 controls/context/newcycle,438checks. P4.3d complete,
-commit/push docs+browser next. curation-workspace-browser-20261012b production entry
+32154e19 pushed Studio0.34 controls/context/newcycle,438checks. P4.3d complete
+and c164957b pushed production browser/docs. curation-workspace-browser-20261012b production entry
 with scriptedpublicpeers passes1440/390 inspected/WCAG/overflow: originalcomposer
 ->queuedreview->graph->successor->Runtime->predecessorselector->completedchild
 ->missingcapability->newrequestcomposer.2curationPOST,1successorPOST,0freshPOST.
