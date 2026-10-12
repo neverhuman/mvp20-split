@@ -11,6 +11,7 @@ from ..curation_declaration.journal import DeclarationJournal
 from ..curation_jobs.journal import CurationJobs, key_for, current
 from ..curation_jobs.state import JobProgress
 from ..curation_result.journal import CurationResultJournal
+from .rejection import POLICY_CODES, ProposalRejected
 
 
 @dataclass(frozen=True)
@@ -54,7 +55,12 @@ class CurationCompilerJournal:
             require(reviewed.with_artifact(declaration.attempt.result.artifact).request == outcome.attempt.binding.request,
                     'curation_compiler_original_declaration')
             proposal = PreparedCampaignProposal.bind(outcome.frozen.preparation, outcome.attempt.binding, outcome.attempt.observation)
-            review = CampaignDecisionReview.bind(proposal, reviewed.declaration, reviewed.budget)
+            try:
+                review = CampaignDecisionReview.bind(proposal, reviewed.declaration, reviewed.budget)
+            except ValueError as error:
+                if str(error) in POLICY_CODES:
+                    raise ProposalRejected(str(error)) from error
+                raise
             plan = AuthoringPlan.bind(review, reviewed.budget, owner_id=self.store.runtime_owner, actor_id=self.store.runtime_actor)
             selection = CompilerSelection.bind(principal, plan, self.store.eligibility)
             existing = self.store.register(principal, selection, guard=lambda conn: self._guard(principal, lease, conn))

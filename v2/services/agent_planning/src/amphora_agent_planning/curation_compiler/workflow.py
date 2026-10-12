@@ -1,5 +1,6 @@
 """One bounded compiler step using its existing independent lease and commands."""
 from dataclasses import replace
+from .rejection import ProposalRejected
 
 
 class CurationCompiler:
@@ -12,7 +13,10 @@ class CurationCompiler:
         current = self.journal.current(principal, lease.curation_id)
         if current is not None and current.terminal:
             return current
-        selected = self.journal.prepare(principal, lease)
+        try:
+            selected = self.journal.prepare(principal, lease)
+        except ProposalRejected as error:
+            return self.journal._project(principal, lease, 'failed', str(error), None)
         lease = replace(lease, progress=selected.progress)
         # Job selection is delegated to the existing independently fenced compiler;
         # expired job ownership cannot erase a command already issued by that owner.

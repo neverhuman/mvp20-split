@@ -30,3 +30,9 @@ Replacement acceptance: module tests prove duplicate claim contention, lease
 expiry/fencing, rollback, actor/scope/grants, immutable history, unchanged original
 receipts and zero provider attempts. Restore/latest progress is validated against
 the original command pins and canonical digest. No private peer-service dependencies.
+
+Managed curation_worker uses refresh to atomically reload current progress and
+renew the same active fence. This avoids false heartbeat conflicts with concurrent
+phase updates; it never adopts another fence or renews expired/terminal work.
+release changes only the matching coordination lease; stale release is a no-op.
+Neither API changes immutable progress, original receipt, or provider authority.

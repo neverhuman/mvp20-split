@@ -25,7 +25,7 @@ from ..providers.test_task_output import Response
 pytestmark = pytest.mark.postgres
 
 
-def setup(stored, before_freeze=None):
+def setup(stored, before_freeze=None, *, freeze=True):
     assembler, original, *_ = assembly()
     _, _, draft, run = case()
     scope = stored.principal.scope
@@ -64,6 +64,8 @@ def setup(stored, before_freeze=None):
     intake.receive(principal, incoming.command.canonical_bytes)
     jobs = CurationJobs(stored.engine)
     lease = jobs.claim(principal, incoming.curation_id, 'worker', lease_seconds=60)
+    if not freeze:
+        return principal, lease, intent, intake, draft, assembler, run
     if before_freeze is not None:
         intent = before_freeze(assembler, intent, draft, run, principal, lease)
     linked = CurationPreparationJournal(stored.engine).freeze(principal, lease, assembler.read(intent))

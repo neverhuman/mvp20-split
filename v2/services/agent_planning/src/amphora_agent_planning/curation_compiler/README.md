@@ -25,3 +25,7 @@ Tests: tests/curation_compiler; managed process/replacement acceptance remain la
 Verified:7 SQL/scripted-owner workflow cases,48 legacy selection/storage/boundary
 checks and2 final persisted-attempt binding checks. Periodic production heartbeat
 and independently installed owner replacement remain c.3/P2.4.
+
+Managed workflow records named reviewed-policy violations as failed only before
+compiler selection. Original proposal remains visible; integrity/configuration
+errors propagate, and existing selected operations always recover before review.

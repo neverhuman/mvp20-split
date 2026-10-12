@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed 2026-10-12 00:05:20 America/Chicago. Read FIRST after compaction.
+Refreshed 2026-10-12 00:22:45 America/Chicago. Read FIRST after compaction.
 Continue until needed across commits/gates/compaction. No subagents/JARVIS.
 v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
 edits while tests/installations run. Serving demo uses immutable source copies.
@@ -8,9 +8,9 @@ edits while tests/installations run. Serving demo uses immutable source copies.
 ## Canonical position
 
 UI-01.08 approved; active P2.3c.3 managed worker lifecycle/heartbeat/process.
-Child34.44%;P1=100%,P2=72.22%,P3/P4/P5=0. P2.1/2.2=100%,P2.3=88.89%,P2.4=0.
-P2.3a/b=100%;c66.67%(c.1policy/publication100,c.2provider/compiler100,c.3process0).
-ParentUI01=66.89%/Build83.61%/Verification0;UI01.05=78.15%,I1=34.44%.
+Child34.63%;P1=100%,P2=73.15%,P3/P4/P5=0. P2.1/2.2=100%,P2.3=92.59%,P2.4=0.
+P2.3a/b=100%;c77.78%(c.1policy/publication100,c.2provider/compiler100,c.3process33.33).
+ParentUI01=66.93%/Build83.66%/Verification0;UI01.05=78.21%,I1=34.63%.
 UI01.06/07 closed100. Order UI01->UI02->POP01->ML01. LR01 paused25/Build33.33.
 Universal result index remains separately unapproved. No user decision pending.
 
@@ -22,7 +22,7 @@ fd5b7b4c pushed0.119 outcome projection;38checks.
 189affbc pushed0.117 original context/preparation/job linkage;67finalchecks.
 Working0.121 compiler handoff now qualified:7 workflow/recovery tests406.24s,
 48 original selection/storage/boundary tests146.43s,2 final binding tests103.71s.
-ALL TESTS FINISHED. Sync0.121 locks then commit/push. No new compiler migration;
+Compiler checkpoint committed/pushed as fb587a75 (Planning0.121). No new compiler migration;
 latest planning0025 is declaration publication. Serving demo0021 unchanged.
 
 ## Implemented curation path
@@ -45,6 +45,16 @@ CompilerStore/Progression/commands. New selection SQL guard; compiling/ready req
 retained original provider and Runtime validation. No graph substitution/admission.
 Compiler owns its independent lease after delegation; expiry of curation job cannot
 erase a committed owner command. Replacement recovers it before another POST.
+
+## Latest worker checkpoint
+
+2026-10-12 00:22:45: Planning0.122 lifecycle qualified;36checks158.98s, initial16+10pass.
+CurationJobs.refresh/release preserve exact fences across progress changes;
+curation_worker owns heartbeat/discovery/coordinator/bounded polling. Compiler
+rejects explicit model policy violations before selection and retains proposal.
+Managed original save/validate passes. ALL TESTS FINISHED;13 dependency/test-ownership checks also pass. Locks synced; commit next.
+No paid calls/keys or demo changes. c.3=33.33%: lifecycle100/config0/process0.
+Next reviewed private configuration/public clients, then CLI/process recovery.
 
 ## Next concrete work
 

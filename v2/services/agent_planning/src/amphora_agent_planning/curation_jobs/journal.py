@@ -1,5 +1,5 @@
 """Fenced short transactions; callers do all external work after commit."""
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import timedelta
 from uuid import uuid4
 import hashlib
@@ -122,3 +122,35 @@ class CurationJobs:
             result = progress.fail(reason, now)
             self._append(conn, key, result)
             return result.view
+
+
+    def refresh(self, principal, lease, *, lease_seconds=60):
+        """Renew this exact fence against current progress, including concurrent steps."""
+        principal.require('execute_curations', principal.scope)
+        require(type(lease_seconds) is int and 1 <= lease_seconds <= 60, 'curation_lease_bound')
+        key = key_for(principal, lease.curation_id)
+        with self.engine.begin() as conn:
+            self._lock(conn, key)
+            original = self._original(conn, principal, key)
+            require(original is not None, 'curation_lease_unavailable')
+            progress = current(conn, original)
+            require(progress is not None, 'curation_progress_missing')
+            updated = replace(lease, progress=progress)
+            if progress.terminal:
+                return updated  # Read-only final progress; never renew a closed job.
+            _, now = self._owned(conn, principal, updated, key)
+            conn.execute(text('UPDATE planning.curation_leases SET lease_until=:until WHERE ' + KEY),
+                {**key, 'until': now + timedelta(seconds=lease_seconds)})
+            return updated
+
+    def release(self, principal, lease):
+        """Graceful release changes only coordination; a replaced fence is a no-op."""
+        principal.require('execute_curations', principal.scope)
+        key = key_for(principal, lease.curation_id)
+        with self.engine.begin() as conn:
+            self._lock(conn, key)
+            require(self._original(conn, principal, key) is not None, 'curation_lease_unavailable')
+            changed = conn.execute(text('UPDATE planning.curation_leases SET lease_until=clock_timestamp() '
+                'WHERE ' + KEY + ' AND worker_id=:worker AND fence=:fence RETURNING fence'),
+                {**key, 'worker': lease.worker_id, 'fence': lease.fence}).scalar_one_or_none()
+            return changed is not None
