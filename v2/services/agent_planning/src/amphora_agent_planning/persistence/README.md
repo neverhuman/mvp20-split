@@ -107,3 +107,10 @@ inside the request transaction. Exact existing replay remains read-only; generic
 callers are unchanged. Guard callbacks must not perform peer/provider I/O or start
 nested transactions. Request lock precedes curation job lock; curation recovery
 reads immutable request rows without taking request locks.
+
+UI-01.08 curation callers may supply owner-local SQL guard callbacks to reserve
+and issue. Guards apply only to new writes, before admission and before commit;
+exact retained reservations/issuance replay remains unchanged. Callbacks must do
+no peer I/O. Curation job fences follow existing scope/family/request lock ordering.
+Provider observation/settlement retains its original issuance authority even if
+a job lease expires during the remote call; it never authorizes another call.

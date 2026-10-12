@@ -7,12 +7,12 @@ edits while tests/installations run. Serving demo uses immutable copies.
 
 ## Canonical position
 
-UI-01.08 approved; active P2.3c.2 provider/compiler/job-state integration.
-Child33.89%; P1=100%, P2=69.44%, P3/P4/P5=0%. P2.1/P2.2=100%,
-P2.3=77.78% (a100,b100,c33.33), P2.4=0%. c.1 policy/publication100%;
-c.2 provider/compiler/job state0%; c.3 managed process/recovery0%.
-UI01 overall66.78%,Build83.47%,Verification0; UI01.05=77.96%,I1=33.89%.
-UI01.06/07 closed100. Order UI01->UI02->POP01->ML01; LR01 paused25/Build33.33.
+UI-01.08 approved, active c.2 compiler handoff. Child34.26%; P1=100%, P2=71.30%,
+P3/P4/P5=0%. P2.1/2.2=100%, P2.3=85.19%, P2.4=0. P2.3a/b=100%; c55.56%.
+c.1policy/publication100%; c.2provider/compiler66.67%; c.3managedprocess0%.
+c.2outputs: original result100%,once-onlyexecution100%,compiler0%.
+UI01 overall66.85%,Build83.56%,Verification0; UI01.05=78.09%,I1=34.26%.
+Order UI01->UI02->POP01->ML01. LR01 paused25/Build33.33; UI01.06/07 closed100.
 Universal result index remains separately unapproved.
 
 ## Latest verified checkpoint
@@ -113,3 +113,25 @@ active job fence in new reservation/issuance transactions, exact envelope/deadli
 adapter wrapper. Reuse local journals; new guarded inserts only, original replay
 unchanged. Then existing CompilerSelection/Progression plus durable curation
 compiler linkage. No current tests/installations or user decision pending.
+
+2026-10-11 23:42:02 America/Chicago: fd5b7b4c pushed0.119/outcome. Working0.120 executor tested61
+scoped checks; all tests finished. Sync locks then commit/push. CurationExecutor
+recovers original observations/issuance before Data/provider configuration; new
+calls verify retained finalized declaration, fresh processing twice, exact packet
+and durable deadline. BudgetLedger.reserve/DispatchJournal.issue optional SQL guard
+only for new writes, before writes and final commit; legacy replay unchanged.
+Provider crash retains original issuance; replacement never sends again. Late paid
+observation/accounting persists even if job lease expires. ZERO paid calls/keys.
+
+Current percentages supersede earlier header until next trim: UI01.08=34.26%,
+P2=71.30%, P2.3=85.19%, c55.56%(c.1=100,c.2=66.67,c.3=0). c.2 outputs:
+original result100%,once-only executor100%,compiler0. Parent66.85%/Build83.56%,
+UI01.05=78.09%. NEXT compiler handoff. Existing CompilerSelection.effect_id is
+hash of original actor+attempt (independent output/config). Can derive/recover this
+slot and reuse CompilerStore/CompilerProgression; avoid unnecessary new link API.
+Need guarded new selection insert, compiling progress, exact validated DraftSelection
+projection; original commands/replacement preserved. Compiler owns its independent
+lease once delegated; no claim job expiry physically cancels issued work.
+Fixture tests/curation_execution/test_executor.py setup publishes original declaration
+with public SDK scripted Data peer before exact input freeze; unique scopes via
+curation_result.test_journal.setup(before_freeze callback). All scripts are local.

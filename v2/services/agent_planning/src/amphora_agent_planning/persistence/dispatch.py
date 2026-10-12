@@ -48,7 +48,7 @@ class DispatchJournal:
         return connection.execute(text("SELECT *,deadline <= clock_timestamp() AS expired "
             "FROM planning.dispatches WHERE " + KEY + " AND ordinal=:ordinal"), key).mappings().first()
 
-    def issue(self, principal, binding, timeout_seconds):
+    def issue(self, principal, binding, timeout_seconds, *, guard=None):
         require(type(timeout_seconds) is int and 1 <= timeout_seconds <= 86400, "dispatch_timeout")
         reference = binding.reference()
         principal.require("record_attempts", reference.engagement.scope)
@@ -60,6 +60,8 @@ class DispatchJournal:
             bound, _ = self._bound(connection, key, principal, binding)
             if self._issued(connection, key) is not None:
                 return None
+            if guard is not None:
+                guard(connection)
             if live_group:
                 checkpoint_budget.check(connection, key)
             if curation_group:
@@ -85,6 +87,8 @@ class DispatchJournal:
                 {**key, "token": token, "seconds": timeout_seconds,
                  "absolute_deadline": absolute_deadline}).scalar_one_or_none()
             require(inserted is not None, "checkpoint_deadline")
+            if guard is not None:
+                guard(connection)
             return DispatchTicket(token, self._issued(connection, key)["deadline"])
 
     def _expire(self, connection, key, bound):

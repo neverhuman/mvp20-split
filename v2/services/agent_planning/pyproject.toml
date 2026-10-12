@@ -1,6 +1,6 @@
 [project]
 name = "amphora-agent-planning"
-version = "0.119.0"
+version = "0.120.0"
 requires-python = ">=3.12,<3.13"
 dependencies = ["amphora-contracts-campaign-curation==0.1.0", "amphora-contracts-topology-search==0.1.0", "fastapi>=0.115,<1", "uvicorn>=0.34,<1", "amphora-contracts-supervision==0.10.2", "amphora-contracts-campaigns==0.4.1", "amphora-contracts-representations==0.3.0", "amphora-contracts-tools==0.1.0", "amphora-contracts-graph-runtime==0.13.0", "amphora-contracts-research-views==0.1.0", "amphora-contracts-research==0.14.0", "amphora-contracts-knowledge==0.8.0", "amphora-tool-protocol==0.2.0", "amphora-contracts-artifacts==0.2.0", "amphora-contracts-commands==0.2.0", "amphora-contracts-evidence==0.5.13", "sqlalchemy>=2,<3", "psycopg[binary]>=3,<4", "alembic>=1.16,<2","pydantic>=2.12,<3", "amphora-contracts-core==0.1.0", "amphora-contracts-planning==0.13.0"]
 

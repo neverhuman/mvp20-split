@@ -50,7 +50,7 @@ class BudgetLedger:
                 "stored_reservation_corrupt")
         return BudgetReservation(demand, row["registered_at"])
 
-    def reserve(self, principal, binding, reviewed_policy):
+    def reserve(self, principal, binding, reviewed_policy, *, guard=None):
         reference = binding.reference()
         principal.require("record_attempts", reference.engagement.scope)
         reviewed_policy = BudgetPolicy.from_bytes(reviewed_policy.canonical)
@@ -73,6 +73,8 @@ class BudgetLedger:
             existing = self._reservation(connection, key, binding, stored_policy)
             if existing is not None:
                 return existing
+            if guard is not None:
+                guard(connection)
             if live_group:
                 checkpoint_budget.check(connection, key, demand)
             if curation_group:
@@ -122,6 +124,8 @@ class BudgetLedger:
                 "VALUES (:tenant,:project,:engagement,:ordinal,:policy,:input,:output,:units)"),
                 {**key, "policy": demand.policy_sha256, "input": demand.input_tokens,
                  "output": demand.output_tokens, "units": demand.accounting_units})
+            if guard is not None:
+                guard(connection)
             return self._reservation(connection, key, binding, reviewed_policy)
 
     def read(self, principal, reference):
