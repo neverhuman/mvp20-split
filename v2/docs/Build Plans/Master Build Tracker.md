@@ -9,15 +9,15 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: UI-01 primary active; LAN-01 accepted/archived. LR-01 remains conditional; completed plans remain closed.
-- Last refreshed: 2026-10-12 12:56:06 (America/Chicago).
+- Last refreshed: 2026-10-12 13:03:37 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
 - Primary active task: UI-01/N3/I1, implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md), P1=100%, P2=100%, P3=100%,P4=100%,P5=50%, child90%. N2=100%; launch/provenance remain closed. UI-01.05 K1/R1=100%, I1=90%, child96.67%.
-- Next task: Implement approved08d (owner2026-10-12 12:52:13):153 offline checks pass; isolated install, seven exact replays and freeze precede the single original/$0.30/16384output.
+- Next task: Account/provider investigation using [retained request IDs and diagnostic brief](../Audits/UI-01.08%20Provider%20investigation%20brief.md).08d bounded experiment complete100%; no further paid request authorized. P5.2 remains0 and P5.4 awaits it.
 - Implementation completion: LAN-01=100%; UI-01 active78%, Build97.5%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
-- Blockers/dependencies: Supported live graph remains unqualified after two instrumented max_output_tokens responses. Owner approved one bounded08d experiment; no new inference yet. Prior nine/$2.25 reservations retained; current demo unchanged.
-- Latest checkpoint: 2026-10-12 12:58:36: Planning0.132.0 passes153 focused checks, independent installationh, seven byte-exact original replays and actual-owner extended freeze11742; drained. Nine/$2.25 holds retained; one approved16,384-output original/$0.30 remains. No new inference.08d66.67%; parent90/P5=50 unchanged.
-- Acceptance posture: N3/I1=90%, parent V1=0%; no full-engine acceptance or serving cutover. Seven live attempts cumulatively reported $0.242380500; existing demo preserved.
+- Blockers/dependencies: Approved08d 16,384-output original also returned HTTP200 incomplete/max_output_tokens with no output items and explicit zero usage. All10/$2.55 original holds retained, zero remaining. Recovery/browser pass; live supported graph remains unqualified.
+- Latest checkpoint: 2026-10-12 13:03:37:08d original failed with empty output/explicit zero usage despite none/16384. Recovery86972 passed/drained: exact receipt replay, actual browser1440/390 and canonical10/$2.55 holds/zero remaining.153 source checks, installation and seven prior replays pass.08d diagnostic work100%, supported acceptance0; parent90/P5=50 unchanged. Provider investigation needed; existing demo unchanged.
+- Acceptance posture: N3/I1=90%, parent V1=0%; no full-engine acceptance or serving cutover. Eight live attempts cumulatively reported $0.242380500; existing demo preserved.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 
 ## Initial Delivery Boundary

@@ -3,7 +3,7 @@
 ## Canonical tracker
 
 - Status: primary_active; connected demo flow implemented; N2 complete; approved N3 curation implementation active.
-- Last refreshed: 2026-10-12 12:56:06 (America/Chicago).
+- Last refreshed: 2026-10-12 13:03:37 (America/Chicago).
 - Baseline: 62ea4966; owner-reported disconnected canvas and navigation review on 2026-10-07.
 - Owner: Studio experience, page models and presentation; service owners retain their contracts and state.
 - Parent: none; priority and mirrors in [Master Build Tracker](Master%20Build%20Tracker.md).
@@ -11,8 +11,8 @@
 - Design readiness: G0 complete; ELK directed layout and bounded topology ownership implemented.
 - Demonstrated behavior: connected graphs and question-first navigation verified against retained owner records; result-first comparison and full replacement acceptance remain.
 - Current phase/task: N3/UI-01.05/I1; implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md). N2 complete100%; launch/provenance remain closed.
-- Next task: Implement approved08d (owner2026-10-12 12:52:13):153 offline checks pass; isolated install, seven exact replays and freeze precede the single original/$0.30/16384output.
-- Blocker: Supported live graph remains unqualified after two instrumented max_output_tokens responses. Owner approved one bounded08d experiment; no new inference yet. Prior nine/$2.25 reservations retained; current demo unchanged.
+- Next task: Account/provider investigation using [retained request IDs and diagnostic brief](../Audits/UI-01.08%20Provider%20investigation%20brief.md).08d bounded experiment complete100%; no further paid request authorized. P5.2 remains0 and P5.4 awaits it.
+- Blocker: Approved08d 16,384-output original also returned HTTP200 incomplete/max_output_tokens with no output items and explicit zero usage. All10/$2.55 original holds retained, zero remaining. Recovery/browser pass; live supported graph remains unqualified.
 - Human acceptance: owner feedback is part of visual review; no new routine approval gates for campaign execution.
 - Active exception: owner explicitly reprioritized UI over worker diagnostics; LR-01 remains paused at25%, Build33.33%, Acceptance0%, with R2 receipt diagnosis preserved.
 - Pre-activation coherence: 2026-10-07 17:54:00, ready for G0. Existing topology/observation APIs, React Flow canvas and isolated Studio boundaries are available; meaningful layout and workflow acceptance are missing. No new backend contract is assumed approved by this plan.

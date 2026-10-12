@@ -1,0 +1,108 @@
+{
+  "status": "passed",
+  "screenshots": [
+    "missing-capability-1440.png",
+    "missing-capability-390.png",
+    "failed-graph-1440.png",
+    "failed-graph-390.png"
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/planning/v1/campaign-curations/curation-2b6dcf326fc127817c983b2fe5ea59288cf43fd0aa447b34223b9c7a61331429"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes"
+    },
+    {
+      "method": "GET",
+      "path": "/api/deployment/v1/campaign-launches/6603d839d5a443cdad89d41eaaf80350"
+    },
+    {
+      "method": "GET",
+      "path": "/api/planning/v1/capability-requests/capability-2b6dcf326fc127817c983b2fe5ea59288cf43fd0aa447b34223b9c7a61331429-00"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes/59a880f5262d314753d755d22b0ab8c2f2d2cc86dbe8ce34f3cddca121aaebb0"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes/76a131e1035f8e99c3e99f0003ff643928d4fc180da972ee0a95b4ee985544ea"
+    },
+    {
+      "method": "GET",
+      "path": "/api/planning/v1/capability-requests/capability-2b6dcf326fc127817c983b2fe5ea59288cf43fd0aa447b34223b9c7a61331429-00"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/definition-drafts/curation-fixture-curation-owner-20261012a-original"
+    },
+    {
+      "method": "GET",
+      "path": "/api/planning/v1/campaign-curations/curation-2b6dcf326fc127817c983b2fe5ea59288cf43fd0aa447b34223b9c7a61331429"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes"
+    },
+    {
+      "method": "GET",
+      "path": "/api/deployment/v1/campaign-launches/6603d839d5a443cdad89d41eaaf80350"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes"
+    },
+    {
+      "method": "GET",
+      "path": "/api/planning/v1/capability-requests/capability-2b6dcf326fc127817c983b2fe5ea59288cf43fd0aa447b34223b9c7a61331429-00"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes/59a880f5262d314753d755d22b0ab8c2f2d2cc86dbe8ce34f3cddca121aaebb0"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes/76a131e1035f8e99c3e99f0003ff643928d4fc180da972ee0a95b4ee985544ea"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/definition-drafts/curation-fixture-curation-owner-20261012a-original"
+    },
+    {
+      "method": "GET",
+      "path": "/api/planning/v1/campaign-curations/curation-b2913244e107281e4bf3a968e662e18061d3884a63d42b66786c66235d6cf2e9"
+    },
+    {
+      "method": "GET",
+      "path": "/api/planning/v1/campaign-curations/curation-b2913244e107281e4bf3a968e662e18061d3884a63d42b66786c66235d6cf2e9"
+    },
+    {
+      "method": "GET",
+      "path": "/api/planning/v1/campaign-curations/curation-b2913244e107281e4bf3a968e662e18061d3884a63d42b66786c66235d6cf2e9"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes"
+    },
+    {
+      "method": "GET",
+      "path": "/api/deployment/v1/campaign-launches/6603d839d5a443cdad89d41eaaf80350"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes/59a880f5262d314753d755d22b0ab8c2f2d2cc86dbe8ce34f3cddca121aaebb0"
+    }
+  ],
+  "scope": "actual live capability request and failed graph"
+}

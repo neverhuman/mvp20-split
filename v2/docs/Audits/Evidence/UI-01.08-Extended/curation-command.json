@@ -1,0 +1,52 @@
+{
+  "identity": {
+    "scope": {
+      "tenant_id": "internal",
+      "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+    },
+    "actor_id": "admin",
+    "command_id": "7769aa2631ff48968599fd9a2f76f0c6",
+    "command_family": "planning.curate_campaign"
+  },
+  "payload": {
+    "direction": "Create one revised synthetic engineering campaign. Keep the single numeric.search-seed invocation, its exact installed tool binding and existing parameters artifact. Keep the result export. Add a required root input named previous_result with exactly the same value type as the existing result output. Add a root output named previous_result of that type and bind that finish output directly to the root input. The operator will carry the predecessor result into this input through Runtime successor admission. Retain the seed-to-finish control edge. Use the exact future campaign revision/context from the reviewed declaration. This is a data-carry software test only, not chemistry or a scientific improvement. Return the complete revised graph.",
+    "policy_id": "internal-curation-extended-v5",
+    "context": {
+      "predecessor": {
+        "run_id": "f44f4f297b4a4622b54d2dd8399048c6",
+        "plan_sha256": "a40d42aff4b53b0c28e8ca5e6b6736c6484a53fa2c43210a58170f78523a0373",
+        "revision": 9
+      },
+      "draft": {
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+        },
+        "draft_id": "curation-fixture-curation-owner-20261012a-original",
+        "revision": 1,
+        "content_sha256": "9e3b725872892f3e7ff0db393e1341b9c8a359eb05eae48b5e3d24081ca6a7f9"
+      },
+      "knowledge": [],
+      "questions": [],
+      "needs": [],
+      "artifacts": [
+        {
+          "artifact_id": "98228b80754543f3bb7eb666dbbae661",
+          "scope": {
+            "tenant_id": "internal",
+            "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+          },
+          "sha256": "d14234f2432410742138825bf475ab4e32f442315a6c75a3003e1d627b65d0b1",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "search.specification",
+            "version": "1",
+            "sha256": "e829b92d2145b0916847b06cb6e73c4a5aea17addea8bbdd1e9706dbd1cc79a7"
+          },
+          "size_bytes": 1749
+        }
+      ]
+    }
+  },
+  "encoding": "amphora-command-v2"
+}

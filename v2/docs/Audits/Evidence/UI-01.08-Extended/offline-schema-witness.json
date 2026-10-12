@@ -1,0 +1,26 @@
+{
+  "provider_calls": 0,
+  "classification": "offline_schema_satisfiability_only_not_live_acceptance",
+  "valid_abstention_bytes": 384,
+  "schema_sha256": "a12da526411b43ee95c2272e08c8aab95b43225edcdf577a1096f65bcd99fbe6",
+  "definition_count": 57,
+  "request_bytes": 218093,
+  "model": "gpt-5.4-mini-2026-03-17",
+  "output_ceiling": 16384,
+  "reasoning": {
+    "effort": "none"
+  },
+  "witness": {
+    "schema_version": "1",
+    "profile": "planning.campaign-curation-draft.v1",
+    "authority": "proposal_only",
+    "scientific_authority": "not_established",
+    "decision_scope": "f6bb6fe6f90f5c293358862985e56fadbd06cc436a3bbf61aa40cc303df4d188",
+    "rationale": "Offline schema satisfiability witness only; not provider output.",
+    "outcome": {
+      "kind": "abstain",
+      "reason_code": "insufficient_context"
+    },
+    "unresolved": []
+  }
+}

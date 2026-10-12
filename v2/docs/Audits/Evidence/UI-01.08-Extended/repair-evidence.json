@@ -1,0 +1,31 @@
+{
+  "diagnostic": {
+    "error_code": null,
+    "incomplete_reason": "max_output_tokens",
+    "refused": false,
+    "response_bytes": 70609,
+    "response_sha256": "38f61773f833d5e47f6468e3316d58ff12f4ccde847949a282e4953d0c22e5e9",
+    "status": "incomplete"
+  },
+  "transport_exchange": {
+    "endpoint": "https://api.openai.com/v1/responses",
+    "http_status": 200,
+    "method": "POST",
+    "received_at_utc": "2026-10-12T17:18:31.728575+00:00",
+    "request_body_sha256": "b2b206cdcccee7e170ffcc7339fe245421785fb4b82e240df9665b607fb20901",
+    "request_id": "req_87d7755ae18e419f837bc0cb25d26154"
+  },
+  "offline": {
+    "status": "passed",
+    "profile": "curation-v5",
+    "provider_calls": 0,
+    "checks": 153,
+    "timestamp_local": "2026-10-12 12:56:06",
+    "log_sha256": "f7dba7e7631d135897db85f85fd3bd2dee12f04a76ac976d006828813e3c0d2a",
+    "scope": "scoped cost/concurrency/input/adapter/policy/diagnostics; live quality not established"
+  },
+  "profile": "curation-v5",
+  "reasoning_effort": "none",
+  "maximum_output_tokens": 16384,
+  "old_profiles_unchanged": true
+}

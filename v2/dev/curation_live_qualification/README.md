@@ -61,3 +61,5 @@ UI-01.08c conditional stage2 uses prepare_direct/material_direct: require the fi
 review_direct verifies the retained final08c unknown outcome and v2 missing-capability records, exact receipt replay and all nine/$2.25 original holds with zero remaining. Production desktop/narrow browser review uses actual owner APIs; no provider is enabled and no new campaign is launched.
 
 UI-01.08d prepare_extended/material_extended freeze v5 after seven byte-exact original replays and nine original holds. One new original/$0.30/16384 output tokens under exact10/$2.55 aggregate authority. The last direct-profile max_output_tokens diagnostic and offline v5 evidence are frozen; no key read during preparation. run.py enforces this separate declaration. Worker export accepts16384 only for the distinct v5 descriptor; production cost policy remains authoritative.
+
+review_extended verifies actual08d retained records/browser and all ten/$2.55 holds with zero remaining, without a provider enabled. The v5 experiment failed with no output items and explicit zero usage; no further paid test is authorized.
