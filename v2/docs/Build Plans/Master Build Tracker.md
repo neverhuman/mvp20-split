@@ -12,12 +12,12 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 - Last refreshed: 2026-10-11 22:05:19 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
-- Primary active task: UI-01/N3/I1, implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md), P1=100%, P2=62.50%, P3/P4/P5=0%, child32.50%. N2=100%; launch/provenance remain closed. UI-01.05 K1/R1=100%, I1=32.50%, child77.50%.
-- Next task: UI-01.08/P2.3b.2 public context/preparation linkage, then original compiler/process integration. UI-02 -> POP-01 -> ML-01 follow in order.
-- Implementation completion: LAN-01=100%; UI-01 active66.50%, Build83.13%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
+- Primary active task: UI-01/N3/I1, implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md), P1=100%, P2=64.58%, P3/P4/P5=0%, child32.92%. N2=100%; launch/provenance remain closed. UI-01.05 K1/R1=100%, I1=32.92%, child77.64%.
+- Next task: UI-01.08/P2.3b.2 durable preparation/job linkage, then original compiler/process integration. UI-02 -> POP-01 -> ML-01 follow in order.
+- Implementation completion: LAN-01=100%; UI-01 active66.58%, Build83.23%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
 - Blockers/dependencies: none; additive Planning curation and Deployment successor-launch boundaries approved. N3/I1 and candidate-structure producer remain unfinished; no calibrated scientific accuracy benchmark. UI-01.01 remains separate.
 - Latest checkpoint: P2.3a fixed cost group/direct provider adapter complete;55 scoped SQL/legacy dispatch/boundary checks.0paid calls.
-- Acceptance posture: read-only N2 journey qualified; Studio0.26 served locally/LAN. N3/I1=32.50%, parent V1=0%; no full-engine acceptance or new paid provider calls.
+- Acceptance posture: read-only N2 journey qualified; Studio0.26 served locally/LAN. N3/I1=32.92%, parent V1=0%; no full-engine acceptance or new paid provider calls.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 
 ## Initial Delivery Boundary
@@ -31,9 +31,9 @@ The initial program proves software behavior using deterministic/synthetic fixtu
 ## Current In-Flight Work
 
 LAN-01 complete100%, archived in Completed; deployed viewer preserved.
-UI-01 is active at66.50%, Build83.13%, Verification0%. G0 graph review/design
+UI-01 is active at66.58%, Build83.23%, Verification0%. G0 graph review/design
 is a prerequisite and earns no implementation credit. G1/N1/N2/N3/V1 are five equal
-delivery gates. Phase mirror: G0=100%, G1=100%, N1=100%, N2=100%, N3=32.50%, V1=0%.
+delivery gates. Phase mirror: G0=100%, G1=100%, N1=100%, N2=100%, N3=32.92%, V1=0%.
 LR-01 is paused at25%, Build33.33%, Acceptance0%; R1=100%, R2/R3/V1=0%.
 Completed plans remain in the [completed index](Completed/README.md).
 
@@ -41,7 +41,7 @@ Completed plans remain in the [completed index](Completed/README.md).
 
 | Order | Canonical plan | Status | Overall | Build | Verification/Acceptance | Prerequisite |
 |---|---|---|---:|---:|---:|---|
-| 1 | [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md) | N2=100%; N3/I1 approved; UI-01.08/P2.3b.2 active; fenced jobs complete | 66.50% | 83.13% | 0% | Additive curation/capability/successor boundaries |
+| 1 | [UI-01 Research Workspace Overhaul](UI-01%20Research%20Workspace%20Overhaul.md) | N2=100%; N3/I1 approved; UI-01.08/P2.3b.2 active; fenced jobs complete | 66.58% | 83.23% | 0% | Additive curation/capability/successor boundaries |
 | 2 | [UI-02 Candidate Structure and Recommendation Views](UI-02%20Candidate%20Structure%20and%20Recommendation%20Views.md) | Scheduled next week; P1/P2/P3/P4=0% | 0% | 0% | 0% | Typed retained candidate structures and explicit selection evidence; activation audit |
 | 3 | [POP-01 Population Campaign Execution and Experience](POP-01%20Population%20Campaign%20Execution%20and%20Experience.md) | Queued; Execution/Experience/Qualification=0% | 0% | 0% | 0% | Knowledge/LLM workflow UI-01/V1 and UI-02/P4 complete |
 | 4 | [ML-01 Inherited Scientific Model Integration](ML-01%20Inherited%20Scientific%20Model%20Integration.md) | Standalone queued; M1/M2/M3/M4/V1=0% | 0% | 0% | 0% | UI-01/V1 + UI-02/P4, then POP-01 complete; qualified population/tool handoff |
@@ -172,6 +172,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 
 | Timestamp | Checkpoint | Evidence |
 |---|---|---|
+| 2026-10-11 22:43:52 | UI-01.08 public context complete; b.2=50%, P2=64.58%, child32.92%; UI01=66.58%/Build83.23%. |41 combined/4 focused assembly checks; original mixed context and denial retained; durable linkage next;0paid calls. |
 | 2026-10-11 22:38:23 | UI-01.08/P2.3b.2 exact Runtime context checkpoint; percentages unchanged. |96 scoped Runtime/HTTP/replay/boundary checks; complete assembly and durable linkage next;0paid calls. |
 | 2026-10-11 22:33:48 | UI-01.08/P2.3b.2 Knowledge/intent checkpoint; percentages unchanged. |83 Knowledge checks,114 policy regressions and1 exact compiler integration; Runtime/linkage remain;0paid calls. |
 | 2026-10-11 22:24:28 | UI-01.08/P2.3b.2 partial context checkpoint; percentages unchanged. |78 multi-graph/replay and69 intent/context/boundary checks; public reads/linkage remain;0paid calls. |
@@ -196,4 +197,3 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 | 2026-10-07 13:21:09 | SQ-01 C2a complete; overall63.89%, Build76.67%, Verification66.67%. | 153 domain/context/output tests; C2=33.33%, provider integration next. |
 | 2026-10-07 12:59:32 | SQ-01 C1 complete69.44%, Build94.44%, Verification66.67%. | 110 contract/publication and183 consumer tests; all632 predecessor schema bytes unchanged; new profile inactive pendingC2. |
 | 2026-10-07 12:44:11 | DEMO-01 closed100%; SQ-01/C1 resumes at41.67%. | Studio0.16.1 actual-owner walkthrough, seven-owner launch/drain, offline fallback; prior feedback read failure retained. |
-| 2026-10-07 12:20:17 | SQ-01.01 approved; C1/C2 added, overall41.67%, Build50%, Verification66.67%. | 2.5 completed units preserved; denominator4 to6. C1 contracts active; C2 owners, B3 proposals and V1 follow. |

@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed2026-10-11 22:38:46 America/Chicago. Read FIRST after compaction.
+Refreshed2026-10-11 22:43:52 America/Chicago. Read FIRST after compaction.
 Continue until needed persists across commits/milestones. No subagents/JARVIS.
 v1 read-only; preserve user untracked ocular PDF/DOCX. No source/tests/module README
 edits while tests/installations run. Immutable serving processes are okay.
@@ -8,11 +8,10 @@ edits while tests/installations run. Immutable serving processes are okay.
 ## Canonical position
 
 UI-01.08 approved, active P2.3b.2 public context and durable preparation linkage.
-Child32.50%; P1=100%, P2=62.50%, P3/P4/P5=0%. P2.1/P2.2=100%,
-P2.3=50% (a100,b50,c0), P2.4=0%. b.1 fenced jobs complete, b.2=0% until
-public owner context + linkage is complete (partial tested work below).
-UI01 overall66.50%, Build83.13%, Verification0%; G1/N1/N2=100%,N3/I1=32.50%.
-UI01.05=77.50%;K1/R1=100%. UI01.06/07 closed100. Order UI01->UI02->POP01->ML01.
+Child32.92%; P1=100%, P2=64.58%, P3/P4/P5=0%. P2.1/P2.2=100%,
+P2.3=58.33% (a100,b75,c0), P2.4=0%. b.1 fenced jobs complete, b.2=50%: public context100%, durable linkage0%.
+UI01 overall66.58%, Build83.23%, Verification0%; G1/N1/N2=100%,N3/I1=32.92%.
+UI01.05=77.64%;K1/R1=100%. UI01.06/07 closed100. Order UI01->UI02->POP01->ML01.
 LR01 paused25%/Build33.33%. Universal result index remains separately unapproved.
 
 ## Latest checkpoint and next work
@@ -117,3 +116,19 @@ Data0.30/Registry0.1/Research0.40/Knowledge0.18. LAN --baseline is gateway.json.
 curation_runtime exact saved graph/predecessor read + required replay-validated lane;
 closed metadata draft GET added. 96 Runtime/HTTP/replay/boundary tests pass; no tests running or live calls.
 0.115 locks synced; commit/push next; next complete context assembler then durable linkage.
+
+758c1580 pushed: Planning0.115 exact Runtime context qualified96checks. Working
+curation_preparation assembler composes original Runtime, Data processing reads,
+Registry max200 releases/2pages, Runtime schemas, Knowledge heads and Research
+questions/needs.41initial checks pass; mixed Knowledge/Research gap regression
+added, pending final run. No SQL/model calls; next durable preparation/job linkage.
+
+Latest: Planning0.116 complete public-owner assembly,41combined/4focused cases
+pass including mixed Knowledge/Research gap. All tests finished. Sync locks then
+commit/push. Next curation_preparation durable linker: register original request
+and CampaignPreparation via existing immutable journals, then fence and atomically
+link curation to exact request/preparation/envelope + awaiting_provider progress.
+Provider engagement derived from command SHA permits replacement recovery before
+new peer reads; no model issuance during linkage. Need migration0024 link table.
+All existing command/receipt/preparation bytes remain immutable. Read original
+journals on restart; no repeating provider call. No paid calls this turn.
