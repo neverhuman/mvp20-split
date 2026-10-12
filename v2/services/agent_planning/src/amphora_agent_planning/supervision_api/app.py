@@ -101,6 +101,8 @@ def create_app(intake=None, credentials=None, *, topology=None, campaign_origins
         if curations is not None:
             with curations.engine.connect() as conn:
                 conn.execute(text('SELECT receipt_bytes FROM planning.curation_requests LIMIT 0'))
+                conn.execute(text('SELECT view_bytes FROM planning.curation_progress LIMIT 0'))
+                conn.execute(text('SELECT fence FROM planning.curation_leases LIMIT 0'))
         mode = 'supervisor_intake_and_topology' if topology is not None else 'supervisor_intake_only'
         if curations is not None:
             mode = 'supervisor_intake_topology_and_curation' if topology is not None else 'supervisor_intake_and_curation'

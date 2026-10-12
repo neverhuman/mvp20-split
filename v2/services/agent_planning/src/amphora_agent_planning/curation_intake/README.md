@@ -1,7 +1,8 @@
 # Campaign curation intake
 
 UI-01.08/P2.1: Planning0.109/planning0022 adds durable intake and optional HTTP.
-Worker scheduling and live campaign input remain P2.2/P2.3, not implemented.
+Exact campaign input is implemented separately. Curation jobs now provide fenced
+lease/progress readback; public context and managed worker remain P2.3 gaps.
 Architecture: ../../../../../docs/Architecture/Agents/Planning.md.
 
 `CurationCommand.bind` reparses the published command, requires authenticated exact
@@ -41,4 +42,8 @@ The shared whole-body/depth/deadline middleware applies. Responses are no-store.
 Set AMPHORA_PLANNING_CURATION_POLICIES to a JSON array of at most32 unique policy
 IDs to install routes; empty allows history only. Configured new grants without
 this explicit configuration fail startup. Startup performs no migrations or calls.
-Apply0022 explicitly with a compatible migrator; do not run old migrators afterward.
+Apply0023 explicitly with a compatible migrator; do not run old migrators afterward.
+
+Current GET reads the latest immutable curation_jobs projection when present; the
+receipt query remains the original queued acknowledgment. Readiness checks all
+three curation tables. Neither HTTP reads nor intake issue provider work.

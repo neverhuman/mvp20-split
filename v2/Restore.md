@@ -1,6 +1,6 @@
 # Restore
 
-Refreshed2026-10-11 22:05:19 America/Chicago. Read FIRST after compaction.
+Refreshed2026-10-11 22:17:36 America/Chicago. Read FIRST after compaction.
 Continue until needed persists across commits/milestones. No subagents/JARVIS.
 v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
 edits while verification/installations run. Immutable serving processes are okay.
@@ -8,8 +8,8 @@ edits while verification/installations run. Immutable serving processes are okay
 ## Canonical position
 
 UI-01/N2 complete100%; N2.2 provenance, N2.3 generation comparison and N2.4
-recorded model inspection all qualified. UI01=66.33%, Build82.92%, Verification0%.
-NEXT approved UI-01.08/P2.3b; P2=58.33%, child31.67%, N3/I1=31.67%; UI01.05=77.22%.
+recorded model inspection all qualified. UI01=66.50%, Build83.13%, Verification0%.
+NEXT approved UI-01.08/P2.3b.2; P2=62.50%, child32.50%, N3/I1=32.50%; UI01.05=77.50%.
 UI01.06/UI01.07 closed100%. Order UI01 -> UI02 -> POP01 -> ML01.
 LR01 paused25%/Build33.33%. UI01.01 universal index remains unapproved;
 bounded existing-API comparison is qualified.
@@ -20,7 +20,7 @@ P1 cef2c541, P2.1 601989e1, P2.2 daaf2e12 pushed. P2.3a Planning0.111 complete:
 fixed4-call/$1 scope guard, max$0.25 reservation, unknown/unissued holds, primary/late
 overage blocking before issue; exact-scope direct curation adapter with262144 body.
 55 final cost/dispatch/boundary tests pass, no tests running; zero paid calls.
-Commit/push P2.3a then P2.3b recoverable worker/job state and public-context assembly.
+P2.3a e20b4a26 pushed. P2.3b.1 fenced jobs complete; commit/push then b.2 context.
 Immutable demo owners unchanged; source/dev/service locks0.111 aligned.
 
 ## Evidence and current serving processes
@@ -64,7 +64,7 @@ Data0.30/Registry0.1/Research0.40/Knowledge0.18. LAN --baseline is gateway.json.
 
 ## Next task / approved implementation
 
-UI-01.08 approved; P1=100%, P2=58.33%, child31.67%. No reapproval needed.
+UI-01.08 approved; P1=100%, P2=62.50%, child32.50%. No reapproval needed.
 P2.3a cost adapter complete; P2.3b recoverable worker state/public context next.
 P2.3c compiler/process follows; P2.4 independent replacement remains0%.
 Service0022 migration applied to owned TEST fixture only; demo0021 unchanged.
@@ -121,3 +121,11 @@ compiler save/validation and managed process, then P2.4 installed replacement.
 Use existing Planning campaign context/slice/packet/authoring modules, public owners
 only. Curations cannot relabel prior deterministic compiler captures. UI and
 capability fulfillment remain P3/P4; no fabricated new tool or scientific claim.
+
+Latest P2.3b.1 Planning0.112/planning0023 complete: curation_jobs claim/reclaim,
+fence/lease, heartbeat, immutable progress and failure; GET latest, receipt query
+original queued.46 final job/intake/HTTP/boundary tests pass; all processes finished.
+Demo Planning0.107/0021 remains unchanged. Current b.2=0%: exact public-owner
+context and preparation linkage. Existing CampaignSlicePlan allows one graph family,
+while approved command selects up to8 heads; preserve explicit bounded multi-graph
+semantics instead of silently dropping graphs. No paid calls.

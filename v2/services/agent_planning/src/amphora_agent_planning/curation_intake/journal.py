@@ -76,8 +76,10 @@ class CurationJournal:
                 'tenant_id=:tenant AND project_id=:project AND actor_id=:actor AND curation_id=:curation'),
                 {'tenant': principal.scope.tenant_id, 'project': principal.scope.project_id,
                  'actor': principal.actor_id, 'curation': curation_id}).mappings().one_or_none()
-        if row is None:
-            return None
-        original = OriginalCuration.restore(row)
-        original.incoming.require_read(principal)
-        return original.view()
+            if row is None:
+                return None
+            original = OriginalCuration.restore(row)
+            original.incoming.require_read(principal)
+            from ..curation_jobs.journal import current
+            progress = current(conn, original)
+            return progress.view if progress is not None else original.view()

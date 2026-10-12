@@ -2,7 +2,7 @@
 
 UI-01.08: campaign-curation and campaign-successor-launch have independent
 contract test scopes. Planning curation admission and original provenance use
-`run_tests.py --module agent-planning --area curation_intake` or `campaign_origin`.
+`run_tests.py --module agent-planning --area curation_intake` , `curation_jobs` or `campaign_origin`.
 The Planning and Studio roots remain their sole test owners; focused areas/scripts
 do not create overlapping ownership entries. Generation comparison remains runnable
 with `node scripts/verify-generations.mjs` from Studio.

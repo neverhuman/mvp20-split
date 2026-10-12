@@ -1,14 +1,17 @@
 # Agent Planning service boundary
 
-Current release: Planning0.107.0 / migration0021. UI-01.07 adds a scoped,
-read-only exact campaign origin API backed by original compiler history and an
-atomic saved-draft lookup. Public Planning0.13.0 preserves earlier schema bytes.
-Runtime still owns draft acceptance and execution. See
-[campaign_origin](src/amphora_agent_planning/campaign_origin/README.md).
+Source: Planning0.112.0 / migration0023. UI-01.08 adds original curation intake,
+exact campaign input/output, fixed qualification spending guard/direct adapter and
+fenced recoverable progress. Public curation/successor-launch contracts0.1.0 are
+additive; existing Planning0.13.0 schemas and original receipt bytes are unchanged.
+Managed context/worker/compiler integration and browser curation remain incomplete.
+See [curation intake](src/amphora_agent_planning/curation_intake/README.md) and
+[job state](src/amphora_agent_planning/curation_jobs/README.md).
 
-- Version: Planning0.107.0; public Planning0.13.0 and supervision0.10.2.
-- Reviewed: `2026-10-11 19:26:42` (America/Chicago);206 independent Planning tests,
-  actual scientific compiler/origin/Research/Knowledge and local/LAN browser proof.
+Serving demo remains independently installed Planning0.107.0 / migration0021;
+source migration does not upgrade it. Its scoped origin API remains qualified.
+Runtime owns draft acceptance and execution. No new paid model calls.
+
 - Owner: Agent Planning. Runtime accepts execution decisions; Knowledge and Research retain domain authority.
 - Design: [Planning](../../docs/Architecture/Agents/Planning.md). Campaign acceptance: [BP-07.03](../../docs/Build%20Plans/BP-07/Completed/BP-07.03%20Campaign%20proposals%20and%20context.md); supervisor acceptance [BP-07.04](../../docs/Build%20Plans/BP-07/Completed/BP-07.04%20Durable%20supervisor%20and%20races.md).
 
