@@ -26,7 +26,7 @@ def source(version="1", **changes):
     return replace(plan, request=request(value))
 
 
-@pytest.mark.parametrize("version", ["1", "2", "3"])
+@pytest.mark.parametrize("version", ["1", "2", "3", "4"])
 def test_one_exact_send_with_narrowed_deadline_and_closed_scope(version):
     selected = source(version=version)
     packet = prepare(selected).packet
@@ -105,8 +105,9 @@ def test_additive_transport_limit_does_not_widen_existing_profiles():
 
 
 @pytest.mark.parametrize('status,content', [('incomplete', None), ('completed', [{'type': 'refusal', 'refusal': 'no'}])])
-def test_v3_refusal_and_incomplete_never_become_accepted_output(status, content):
-    selected = source(version='3')
+@pytest.mark.parametrize('version', ['3', '4'])
+def test_structured_refusal_and_incomplete_never_become_accepted_output(status, content, version):
+    selected = source(version=version)
     calls = []
     def send(raw):
         calls.append(raw)

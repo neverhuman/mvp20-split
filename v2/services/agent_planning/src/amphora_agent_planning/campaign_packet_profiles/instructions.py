@@ -15,7 +15,7 @@ def reviewed_instructions(profile='campaign', version='1'):
     # Canonical LF encoding is part of this owned profile; supplied Artifact bytes
     # are never normalized or repaired to make a different digest pass.
     require(profile in {'campaign', 'curation'}, 'campaign_instruction_profile')
-    require(version == '1' or (profile == 'curation' and version in {'2', '3'}), 'campaign_instruction_profile')
+    require(version == '1' or (profile == 'curation' and version in {'2', '3', '4'}), 'campaign_instruction_profile')
     return files(__package__).joinpath('prompts/' + profile + '-v' + version + '.txt').read_bytes().replace(b'\r\n', b'\n')
 
 

@@ -1,97 +1,85 @@
 # Restore
 
-Refreshed: 2026-10-12 11:20:06 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-12 12:16:00 America/Chicago. Read FIRST after compaction.
 Continue until a real blocker. No agents/JARVIS; v1 read-only. Preserve untracked
-ocular PDF/DOCX. All qualification/test/install processes FINISHED and drained.
-Existing serving demo unchanged. No source/module edits while verification runs.
+ocular PDF/DOCX. Existing serving demo unchanged. No source/module edits while
+verification, installation or actual-owner qualification runs.
 
-## Current position and owner decision
+## Current task and authorization
 
-UI-01.08=90%;P1-P4=100%,P5=50%;P5.1/P5.3=100%,P5.2/P5.4=0.
-UI01=78/Build97.5/Verification0;N3/I1=90;UI01.05=96.67.
-UI01 -> UI02 -> POP01 -> ML01; LR01 paused25. Launch/provenance closed100.
-08a83.33%,08b66.67%; supported live successor remains unmet, no cutover.
-08b owner approval2026-10-12 11:04:00 has been fully exercised: seventh original
-slot/$0.25 consumed. ALL SEVEN/$1.75 ORIGINAL HOLDS USED before new08c approval.
-Five live attempts cumulatively report$0.242380500; latest reportszero. Actual
-reported spend never releases original reservations or establishes billing.
-UI-01.08c Provider outcome diagnosis allowance.md proposes up to TWO additional
-originals/$0.50, exact same scope9/$2.25 total holds. APPROVED2026-10-12 11:58:32; allowance source implementation active.
-Stop on success; second only after first exposes a specific repair and offline
-checks pass. If still no actionable cause, stop with second unused. No blind retry.
-Ordinary implementation already authorized; only additional allowance needs owner.
+UI-01.08=90%; P1-P4=100%,P5=50%; P5.1/P5.3=100%,P5.2/P5.4=0.
+UI01=78/Build97.5/Verification0; N3/I1=90; UI01.05=96.67.
+Order UI01 -> UI02 -> POP01 -> ML01. LR01paused25/Build33.33.
+UI01.06/07closed100. 08a83.33%,08b66.67%,08c83.33%.
+08c third gate explicitly splits actionable diagnosis100 and conditional repair
+qualification0; first two gates100. No supported live successor or cutover yet.
 
-## Active08c checkpoint2026-10-12 12:01:00
+Owner approved08c2026-10-12 11:58:32: exact scope
+internal/owner-records-7e21ca85bd6044198b1585aa2c41d336 extends7/$1.75 to9/$2.25.
+First request diagnostic unchangedv3; second ONLY after specific repair and offline
+verification. ONE FINAL CONDITIONAL ORIGINAL/$0.25 REMAINS. No blind retry. Stop on
+success or exhausted allowance; preserve all original holds. Same pinned model,
+endpoint,8192 output ceiling,synthetic egress,oneattempt; no fallback.
 
-Owner approved08c2026-10-12 11:58:32. ImplementingPlanning0.130.0 same exactscope9/$2.25.
-No new inference calls. User reports no visible OpenAI dashboard cost; asked asynchronously
-whether zero requests as well or only cost. Owner confirms requests/tokens appear; onlycostabsent. Continue; don't assumebilling.
-Checked no environmentkeyoverride; runner selectsauthorizedZ:/ssos/.env. No project/baseURL
-overrides. TLSverifiedapi.openai.com,GoogleTrustServicesissuer,actualGETmodel HTTP200
-returnedexpectedpinnedmodel, requestide1f501fc-d97c-446b-9b20-674a6180837b at17:00:59UTC.
-GET only, no generation. No org/projectheader returned. Localproofopenai-route-check-20261012.json.
-Added safe HTTPexchangeendpoint/status/requestID/bodyhash/UTC export for nextlivecall,
-no credentials/remoteprose. SharedsourceHTTPallowlist addsinvalid_json_schema/text.format.schema.
-Source92860FINISHED78PASS15.16s:curation-diagnosis-allowance-a.log; install71666FINISHEDPASS:
-curation-planning-installation-20261012f/owner,curation-diagnosis-installation-a.log.
-No source/tests/README edits untilbothfinish. Newprepare_diagnosis.py keepsv3schema;
-firststage requires7priorholds andpermitsonecallonly. run.py supports08c stage1.
-IsolatedPlanningnowf; internal-curation-diagnosis-v3 added. Preparation44884FINISHEDPASS/drained;
-logcuration-diagnosis-preparation-a.log. Five originalreplayspassed. Frozen usinglegacyv1/originalv2/previousv3 into curation-live-diagnosis-20261012a.
-Thencommit/push and firstauthorizeddiagnosticrequest. Secondonlywithactionablecause+
-offlineverifiedrepair. No newfunds/requestsneeded forcurrent firstapproval.
+Owner confirms requests/tokens appear in OpenAI dashboard but cost does not.
+Credential selection is authorized Z:/ssos/.env (no env/project/baseURLoverride).
+Verified direct TLS and GETmodel200. Token-derived estimates are NOT invoice cost.
+Six live attempts report cumulative$0.242380500; latesttwo reportzero. Original
+held budget now$2, not refunded by zero usage or failed outputs.
 
-## Latest implementation and evidence
+## Latest diagnostic and targeted repair
 
-Pushed8c15a52b: Planning0.129.0 v3 prompt/descriptor with generation-schema hash,
-strict Responses schema and fit.v5; exact scope7/$1.75. Oldv1/v2 contracts/envelopes
-unchanged. Source135 checks and final51 input/adapter checks pass; independent
-installationd, four originalreplays, dependency boundary and frozen actual-owner
-preparation82839 pass. Outputcuration-live-v3-20261012a. No source changes duringcall.
+Pushedd082a388 Planning0.130.0 enables approved9slots + closed response/HTTPcorrelation.
+Stage1 live65950 FINISHEDexit1/drained12:06:43. Foldercuration-live-diagnosis-20261012a.
+Curation260cdf80f0ec890f0e3056d5dd2c9dafc4706202575fa48398041a6259f2bcd9;
+command4ca53bffcf004c34a4905177e3114ca2. HTTP200,incomplete/max_output_tokens,
+no refusal,empty capture,0 reported input/output. No proposal/graph/successor.
+RequestIDreq_fb0fe3ba5abe4f1d93f77bccbf308328; response70608bytes,
+sha01b8d3b2959d1507b419d70fd70efee26f4b7b8bb95e3531d3a84a16d12bc99f.
+Original durable evidence docs/Audits/Evidence/UI-01.08-Diagnosis withmanifest.
+Do not infer allocation between reasoning/output from this classification.
+Do not retroactively attribute prior unknown failure to this same cause.
 
-Live session21138 FINISHED/drained11:13:26; curation
-093a8f6249abcb4676357df701d9d11a6ec2919133fbe2318297884030bad181,
-command0fb7bc545ac8441eb63b65329e0cc9c2. INDETERMINATEprovider_outcome_unknown.
-Observationunknown/response_interrupted, EMPTY originaloutputSHAe3b0c442..., reported
-0input/0output/0cost. No graph/successor. Code establishes decoded matching-model
-response, but original decoder discarded whole-response status/error/refusal.
-Do not claim schema rejection/network timeout/refusal as known cause. No retry.
+Planning0.131.0 adds v4 input descriptor/fit.v6: reasoning none rather than low;
+same v3 prompt contents and strict generation schema,8192 ceiling,exact pinned
+modelgpt-5.4-mini-2026-03-17. Official model docs confirm none support. This targets
+output exhaustion; no live quality claim. Oldv1-v3 preserve exact original bytes.
+Source10272 FINISHED85PASS12.12s, logcuration-direct-offline-a.log; offline evidence
+curation-direct-offline-evidence.json. Installation34581 FINISHEDPASS g at
+curation-planning-installation-20261012g/owner. Source/dev locks0.131.0.
+Isolatedowners.json nowg, policyinternal-curation-direct-v4 added (oldpoliciesretained).
 
-Routine diagnostic repair Planning0.129.1 adds immutable bounded response digest,
-size, closed status/error/incomplete/refusal metadata and sanitized HTTPfailure to
-process memory for qualification worker exporter. No remote prose/credentials,
-output repair, public schema, acceptance or profile change. Cannot retroactively
-recover discarded metadata. Source77006FINISHED90PASS14.73s; install41671PASS at
-curation-planning-installation-20261012e/owner. Isolated owners.json now uses e.
-All FIVE originalv1/v2/v3 envelopes and acceptance outcomes replay unchanged;
-proofcuration-v3-diagnostic-replay.json. Onlyv2missing accepted, as before.
+Preparation46893 FINISHEDPASS/drained, logcuration-direct-preparation-a.log. No source edits until
+drained. prepare_direct args legacycuration-live-20261012a, originalcuration-live-v2-20261012a,
+previouscuration-live-v3-20261012a, diagnosiscuration-live-diagnosis-20261012a,
+offlinecuration-direct-offline-evidence.json, outputcuration-live-direct-20261012a.
+material_direct already passes SIX exact old envelope/acceptance replays.
+Preparation validates max_output_tokensdiagnostic+offlineproof+8priorholds before
+freezingstage2repair-evidence, newroots,config,allowance. No keyread duringprep.
+Next inspect/drainprep, synchronizecanonicaltrackers, commit/pushverifiedrepair,
+then run supported scenario on directfolder using existing run.py. This is the
+final approved original; no further approval needed before it if preparationpasses.
+Verified repair ready to commit/push before final original.
 
-Actual installed owner/browser recovery3469FINISHEDPASS11:19:17/drained:
-curation-live-v3-review-20261012a; logcuration-live-v3-review-a.log. Exactoriginal
-queuedreceipt/currentview/P4records and v2missingrequest preserved. Browser1440/390
-shows Outcome unknown and No retained proposal, no new intent on refresh/reload;
-accessibility/overflow pass. Narrow unknown screenshot visually reviewed. Final
-ledger confirms7/$1.75held,0remaining; no provider enabled. Durable evidence
-v2/docs/Audits/Evidence/UI-01.08-Live-v3 retains emptyrawoutput, accounting, observation,
-view, declaration, recovery/browser/finalledger and five-replay proof withmanifest.
-Earlier evidenceUI-01.08-Live and UI-01.08-Live-v2 unchanged. See latest Git commit
-for diagnosticrepair/evidence checkpoint. Next implement approved08c allowance/offline/install/freeze, then first diagnostic request.
+If final original fails: stop paid calls, do actual-owner replay/accounting/browser
+recovery with updated9holds/zero allowance, retain evidence, commit/push, then ask
+for bounded decision. If success: qualify exact supported graph, compiler, successor
+carry/lineage and browser/recovery; then P5.4 cutover, no skip.
+Known P5.4 gap: Deployment workers/recipes has no managed curation recipe (four
+native recipesonly); inspect owningREADME/native/configuration/recipes. Devworker
+is not a deployed daemon. No newmanagedrecipe implemented yet.
 
-V2missingacceptedcuration2b6dcf326fc127817c983b2fe5ea59288cf43fd0aa447b34223b9c7a61331429
-contains one unfulfilled ordered molecular-process capability. It does not invent
-chemistry tools. V2supported8befe5fa056b4c56feb32f1e6beaa3ceb9aeeaa963dd9de9074fc8b0297164cd
-failed expected_evidence/gaps/unresolved nesting. Both remain original records.
+## Prior acceptance evidence
 
-Isolated policiesinternal-curation-v1/v2/v3. owners-pre-v3/planning-pre-v3 retain
-prior configuration. Do not reset/rewrite frozen preparations, scope or ledger.
-Dev material_v3/prepare_v3/run/worker/review_v3 own bounded qualification only.
-No source diagnostic keyread; authorizedlive run reads exactOpenAIkeyZ:/ssos/.env
-into childenv. Never print keys or dump environment. Source does not read .env.
-
-Known later P5.4 implementation question: Deployment workers/recipes.py supports
-four native recipes but no managed curation recipe. Inspect workers/README.md and
-native/configuration/recipes before serving interactive curation; dev targeted
-worker is not a deployed daemon. This is not permission to skip P5.2.
+V2missing accepted2b6dcf326fc127817c983b2fe5ea59288cf43fd0aa447b34223b9c7a61331429:
+one unfulfilled orderedmolecularprocess capability, truthful no chemistrytool.
+V2supported8befe5fa056b4c56feb32f1e6beaa3ceb9aeeaa963dd9de9074fc8b0297164cd failed
+candidatefieldnesting. V3supported093a8f6249abcb4676357df701d9d11a6ec2919133fbe2318297884030bad181
+unknownempty withno retainedresponseclassification. All originals immutable.
+EvidenceUI-01.08-Live,Live-v2,Live-v3. Actualv3unknown+v2missing browser/replaypassed
+11:19:17 with7holds. review_v3.py HARDCODED7holds/no remaining; cannot reuse for
+new08cstatewithout separate bounded reviewhelper. run.pyguard nowstage1initial7
+orstage2initial8+frozenrepairproof. Oldsources untouched. No paidmissingcallneeded.
 
 ## P4 verified baseline / isolated infrastructure
 
@@ -100,7 +88,7 @@ Evidence/config v2/.test-results/curation-owner-20261012a/serving.
 Separate trustedbackup-20261007e stores; PostgreSQL/Qdrant remain up. Owners drained.
 Ports53422Artifact,53423Gateway,53424Knowledge,53425Planning,53426Registry,
 53427Research,53428Runtime,53429Supervisor; launchport inlaunch-prepared.json.
-Independent Planning0.129.1 atcuration-planning-installation-20261012e/owner;
+Independent Planning0.131.0 atcuration-planning-installation-20261012g/owner;
 Deployment0.19.1 atcuration-deployment-installation-20261012a/owner;
 Gateway0.7 atsuccessor-gateway-installation-20261012a/owner;Studio0.34.
 Runtime0.65/Data0.30/Registry0.1/Research0.40/Knowledge0.18. Planning schema0027.
@@ -140,5 +128,5 @@ Use rg--files before paths. Deploymentv2/deploy/local,Studiov2/studio.
 Read UI guidelines before changes. OpenAI Docs skill already read; official model
 page checked earlier this session, snapshot/Responses and$0.75/$4.50 per1Mtexttokens.
 
-2026-10-12 12:04:54: Planning0.130.0 passes78 focused checks, independent install, five exact old replays and actual-owner stage1 freeze. Seven original holds/$1.75 retained; aggregate9/$2.25 approved, this stage permits only one diagnostic original. No new inference yet. UI-01.08c66.67%; parent90/P5=50 unchanged.
-Next commit/push then one stage1 diagnostic call. No pending processes.
+
+2026-10-12 12:16:59: Planning0.131.0 v4 passes85 offline checks, independent installationg, six exact prior replays and actual-owner stage2 freeze46893; drained. Eight/$2 original holds retained; final approved original/$0.25 ready. No live v4 request yet. UI-01.08c83.33%; parent90/P5=50 unchanged.

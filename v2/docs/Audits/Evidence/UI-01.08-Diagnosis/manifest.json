@@ -1,0 +1,11 @@
+{
+  "curation-command.json": "899847bb8938b799617e4ad3108e810fdbd107f1b988178efd720dc9e2c614ba",
+  "current-view.json": "a53c4e79bddce37bd4fe66b42ae660d9429cb9424e8cc29a0039561446f6e65c",
+  "original-observation.json": "5fa3aece98892c9d0a6e9d45ec4ba9b9efd05fc9e4ae9d56c7274f5fa0292b6c",
+  "original-output.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "original-receipt.json": "f59afc03b358795d75d45ea8294be623c1a9cdc996ba3133ec9c4c835d46c255",
+  "provider-accounting.json": "edb7fae81c093ff6d215be7dbec0b06bbd812fa68f0f34b47a3483cbd1692519",
+  "response-diagnostic.json": "75b53c741420296f9af6bbd565fdc3de63da529f4f080684ea3d2e200ae7ae83",
+  "scope-declaration.json": "e73158cacc3c52218fde0c652bfba5f6904759bc142a3740ab6634fd55917fc6",
+  "transport-exchange.json": "1c4afe83b55826b8fc7f35ba5b9f29795417b345a53b522a0115f4848a3a0dfd"
+}

@@ -9,14 +9,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: UI-01 primary active; LAN-01 accepted/archived. LR-01 remains conditional; completed plans remain closed.
-- Last refreshed: 2026-10-12 12:04:54 (America/Chicago).
+- Last refreshed: 2026-10-12 12:16:59 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
 - Primary active task: UI-01/N3/I1, implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md), P1=100%, P2=100%, P3=100%,P4=100%,P5=50%, child90%. N2=100%; launch/provenance remain closed. UI-01.05 K1/R1=100%, I1=90%, child96.67%.
-- Next task: P5.2 requires live provider diagnosis; [UI-01.08c](UI-01.08c%20Provider%20outcome%20diagnosis%20allowance.md) proposes at most two additional original calls/$0.50, approved2026-10-12 11:58:32. First diagnostic request follows offline/install/freeze gates; second requires an identified repair.
+- Next task: P5.2 requires live provider diagnosis; [UI-01.08c](UI-01.08c%20Provider%20outcome%20diagnosis%20allowance.md) proposes at most two additional original calls/$0.50, approved2026-10-12 11:58:32. First diagnostic identifies max_output_tokens; v4 repair passes85 offline checks and installation; next freeze and final original.
 - Implementation completion: LAN-01=100%; UI-01 active78%, Build97.5%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
-- Blockers/dependencies: Seventh original is indeterminate with empty output and reported zero tokens. Seven/$1.75 original holds retained; approved08c extends exact scope to nine/$2.25. Diagnostic repair and actual owner/browser recovery pass; no live supported graph or cutover.
-- Latest checkpoint: 2026-10-12 12:04:54: Planning0.130.0 passes78 focused checks, independent install, five exact old replays and actual-owner stage1 freeze. Seven original holds/$1.75 retained; aggregate9/$2.25 approved, this stage permits only one diagnostic original. No new inference yet. UI-01.08c66.67%; parent90/P5=50 unchanged.
+- Blockers/dependencies: Eighth original is indeterminate/max_output_tokens with empty output and reported zero tokens. Eight/$2 original holds retained; approved08c extends exact scope to nine/$2.25. Diagnostic repair and actual owner/browser recovery pass; no live supported graph or cutover.
+- Latest checkpoint: 2026-10-12 12:16:59: Planning0.131.0 v4 passes85 offline checks, independent installationg, six exact prior replays and actual-owner stage2 freeze46893; drained. Eight/$2 original holds retained; final approved original/$0.25 ready. No live v4 request yet. UI-01.08c83.33%; parent90/P5=50 unchanged.
 - Acceptance posture: N3/I1=90%, parent V1=0%; no full-engine acceptance or serving cutover. Five live attempts cumulatively reported $0.242380500; existing demo preserved.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 
@@ -201,3 +201,7 @@ Deferral changes delivery sequence, not the requirement authority. Each successo
 ## 2026-10-12 09:06:13 live evaluation checkpoint
 
 P5.3 missing-capability original and actual browser1440/390 passed; returned to P5.2 supported graph correction. Six original slots/$1.50 held; zero calls remain. UI-01.08b proposes constrained generation and one additional $0.25 supported call. No serving cutover. Four live calls reported $0.242380500 cumulatively; new calls $0.085049250. Evidence: [retained results](../Audits/Evidence/UI-01.08-Live-v2/README.md). Earlier checkpoints describe historical allowance and status.
+
+2026-10-12 12:14:25: First08c returned HTTP200 incomplete/max_output_tokens, no refusal, empty output and zero reported usage. Eight original holds/$2 retained; one conditional/$0.25 remains. Planning0.131.0 v4 selects reasoning none with same8192 ceiling, schema and prompt. 85 offline checks and independent installation g pass; new freeze pending. UI-01.08c83.33%; supported successor0%, parent90/P5=50; no cutover.
+
+2026-10-12 12:16:59: Planning0.131.0 v4 passes85 offline checks, independent installationg, six exact prior replays and actual-owner stage2 freeze46893; drained. Eight/$2 original holds retained; final approved original/$0.25 ready. No live v4 request yet. UI-01.08c83.33%; parent90/P5=50 unchanged.
