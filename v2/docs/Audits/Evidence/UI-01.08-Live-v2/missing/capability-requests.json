@@ -1,0 +1,84 @@
+[
+  {
+    "curation": {
+      "curation_id": "curation-2b6dcf326fc127817c983b2fe5ea59288cf43fd0aa447b34223b9c7a61331429",
+      "scope": {
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+        "tenant_id": "internal"
+      }
+    },
+    "fulfillment": null,
+    "gap": {
+      "acceptance_criteria": [
+        "The capability accepts at least three typed material/process ports corresponding to two inputs, a thermal action, and a later addition.",
+        "The capability preserves the exact operation order without collapsing steps into a generic numeric model.",
+        "The capability returns a structured sequence or trace that distinguishes intermediate state before and after heating.",
+        "The capability binding is explicitly reviewed and supplied in the registry inventory."
+      ],
+      "applicability": [
+        "Needed when the campaign must express and preserve sequential material operations rather than numeric-only search.",
+        "Needed when later steps depend on the exact order of combination, heating, and addition."
+      ],
+      "evidence_need": "A tool binding or reviewed release that accepts typed molecular/process inputs and emits an ordered process graph or state trace for material operations.",
+      "gap_key": "molecular-mixture-sequencing",
+      "graph_gap": "No installed reviewed primitive can encode the required chemistry/process graph or sequential material transformation; only numeric search primitives are available.",
+      "inputs": [
+        {
+          "description": "First molecular component to be combined.",
+          "name": "component_a",
+          "representation": "molecular.material",
+          "schema_ref": null,
+          "unit": null
+        },
+        {
+          "description": "Second molecular component to be combined.",
+          "name": "component_b",
+          "representation": "molecular.material",
+          "schema_ref": null,
+          "unit": null
+        },
+        {
+          "description": "Heating action applied after the initial combination.",
+          "name": "heat_step",
+          "representation": "process.thermal_action",
+          "schema_ref": null,
+          "unit": "K"
+        },
+        {
+          "description": "Third molecular component added after heating.",
+          "name": "component_c",
+          "representation": "molecular.material",
+          "schema_ref": null,
+          "unit": null
+        }
+      ],
+      "outputs": [
+        {
+          "description": "Structured ordered sequence preserving combine-then-heat-then-add ordering.",
+          "name": "ordered_process_plan",
+          "representation": "process.sequence",
+          "schema_ref": null,
+          "unit": "1"
+        },
+        {
+          "description": "State trace capturing intermediate mixture states across the ordered operations.",
+          "name": "mixture_state_trace",
+          "representation": "process.state_trace",
+          "schema_ref": null,
+          "unit": "1"
+        }
+      ],
+      "purpose": "Represent and validate an ordered wet-lab style process in which two molecular components are combined, the mixture is heated, and a third component is added afterward, while preserving the required operation order."
+    },
+    "proposal_sha256": "c883ea125fb55c2e8d5cb3b2ab8ad1549e151dd9ba23ca9ddfe7e60568c4ea80",
+    "reference": {
+      "request_id": "capability-2b6dcf326fc127817c983b2fe5ea59288cf43fd0aa447b34223b9c7a61331429-00",
+      "scope": {
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+        "tenant_id": "internal"
+      }
+    },
+    "status": "requested",
+    "wire_version": "1"
+  }
+]

@@ -1,0 +1,175 @@
+{
+  "read_only": true,
+  "original_output_sha256": "2039c17a83a5cea16cbb8f6d887b283f40fad3c1a6fb5ad06bcb1f629da341ca",
+  "duplicate_keys": [],
+  "additional_schema_errors_after_lenient_diagnostic_decode": [
+    {
+      "path": [
+        "outcome",
+        "propose_campaign",
+        "unresolved"
+      ],
+      "type": "extra_forbidden",
+      "message": "Extra inputs are not permitted"
+    },
+    {
+      "path": [
+        "outcome",
+        "propose_campaign",
+        "candidate",
+        "gaps"
+      ],
+      "type": "extra_forbidden",
+      "message": "Extra inputs are not permitted"
+    },
+    {
+      "path": [
+        "outcome",
+        "propose_campaign",
+        "candidate",
+        "definition",
+        "expected_evidence"
+      ],
+      "type": "extra_forbidden",
+      "message": "Extra inputs are not permitted"
+    },
+    {
+      "path": [
+        "outcome",
+        "propose_campaign",
+        "candidate",
+        "expected_evidence"
+      ],
+      "type": "missing",
+      "message": "Field required"
+    },
+    {
+      "path": [
+        "outcome",
+        "propose_campaign",
+        "gaps"
+      ],
+      "type": "missing",
+      "message": "Field required"
+    },
+    {
+      "path": [
+        "unresolved"
+      ],
+      "type": "missing",
+      "message": "Field required"
+    }
+  ],
+  "envelope_bytes": 190854,
+  "schema_bytes": 37415,
+  "schema_definitions": 57,
+  "context_bytes": 126460,
+  "slices": [
+    {
+      "lane": "artifact",
+      "bytes": 1030
+    },
+    {
+      "lane": "artifact",
+      "bytes": 968
+    },
+    {
+      "lane": "artifact",
+      "bytes": 1181
+    },
+    {
+      "lane": "artifact",
+      "bytes": 1231
+    },
+    {
+      "lane": "artifact",
+      "bytes": 3139
+    },
+    {
+      "lane": "curation",
+      "bytes": 2382
+    },
+    {
+      "lane": "curation_runtime",
+      "bytes": 3152
+    },
+    {
+      "lane": "registry_scan",
+      "bytes": 397
+    },
+    {
+      "lane": "runtime",
+      "bytes": 5270
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 705
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 16431
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 15805
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 6442
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 15458
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 5450
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 5889
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 7004
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 977
+    },
+    {
+      "lane": "curation_knowledge",
+      "bytes": 654
+    },
+    {
+      "lane": "research",
+      "bytes": 776
+    },
+    {
+      "lane": "artifact",
+      "bytes": 2903
+    },
+    {
+      "lane": "registry_inventory",
+      "bytes": 2929
+    },
+    {
+      "lane": "registry_inventory",
+      "bytes": 2953
+    },
+    {
+      "lane": "registry_inventory",
+      "bytes": 2958
+    },
+    {
+      "lane": "registry_inventory",
+      "bytes": 3632
+    },
+    {
+      "lane": "registry_inventory",
+      "bytes": 2927
+    }
+  ],
+  "accepted_output": false,
+  "provider_calls": 0
+}

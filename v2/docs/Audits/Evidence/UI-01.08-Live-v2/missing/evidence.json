@@ -1,0 +1,192 @@
+{
+  "status": "passed",
+  "scenario": "missing",
+  "timestamp_local": "2026-10-12 08:59:56",
+  "curation": {
+    "capability_requests": [
+      {
+        "request_id": "capability-2b6dcf326fc127817c983b2fe5ea59288cf43fd0aa447b34223b9c7a61331429-00",
+        "scope": {
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+          "tenant_id": "internal"
+        }
+      }
+    ],
+    "proposal": {
+      "authority": "proposal_only",
+      "decision_scope": "f1c91cc2a5edf42bf321c01936432382835e115110b0185c6f7949d18c4ec98f",
+      "outcome": {
+        "gaps": [
+          {
+            "acceptance_criteria": [
+              "The capability accepts at least three typed material/process ports corresponding to two inputs, a thermal action, and a later addition.",
+              "The capability preserves the exact operation order without collapsing steps into a generic numeric model.",
+              "The capability returns a structured sequence or trace that distinguishes intermediate state before and after heating.",
+              "The capability binding is explicitly reviewed and supplied in the registry inventory."
+            ],
+            "applicability": [
+              "Needed when the campaign must express and preserve sequential material operations rather than numeric-only search.",
+              "Needed when later steps depend on the exact order of combination, heating, and addition."
+            ],
+            "evidence_need": "A tool binding or reviewed release that accepts typed molecular/process inputs and emits an ordered process graph or state trace for material operations.",
+            "gap_key": "molecular-mixture-sequencing",
+            "graph_gap": "No installed reviewed primitive can encode the required chemistry/process graph or sequential material transformation; only numeric search primitives are available.",
+            "inputs": [
+              {
+                "description": "First molecular component to be combined.",
+                "name": "component_a",
+                "representation": "molecular.material",
+                "schema_ref": null,
+                "unit": null
+              },
+              {
+                "description": "Second molecular component to be combined.",
+                "name": "component_b",
+                "representation": "molecular.material",
+                "schema_ref": null,
+                "unit": null
+              },
+              {
+                "description": "Heating action applied after the initial combination.",
+                "name": "heat_step",
+                "representation": "process.thermal_action",
+                "schema_ref": null,
+                "unit": "K"
+              },
+              {
+                "description": "Third molecular component added after heating.",
+                "name": "component_c",
+                "representation": "molecular.material",
+                "schema_ref": null,
+                "unit": null
+              }
+            ],
+            "outputs": [
+              {
+                "description": "Structured ordered sequence preserving combine-then-heat-then-add ordering.",
+                "name": "ordered_process_plan",
+                "representation": "process.sequence",
+                "schema_ref": null,
+                "unit": "1"
+              },
+              {
+                "description": "State trace capturing intermediate mixture states across the ordered operations.",
+                "name": "mixture_state_trace",
+                "representation": "process.state_trace",
+                "schema_ref": null,
+                "unit": "1"
+              }
+            ],
+            "purpose": "Represent and validate an ordered wet-lab style process in which two molecular components are combined, the mixture is heated, and a third component is added afterward, while preserving the required operation order."
+          }
+        ],
+        "kind": "request_capabilities"
+      },
+      "profile": "planning.campaign-curation-draft.v1",
+      "rationale": "The supplied reviewed tools only support synthetic numeric search and objective evaluation; they cannot represent, transform, or verify a process that combines two molecular components, applies heating, and then adds a third component. Because the requested process requires ordered material operations and chemistry-aware state transitions that are absent from the installed capabilities, the supportable output is a structured capability request rather than a campaign graph.",
+      "schema_version": "1",
+      "scientific_authority": "not_established",
+      "unresolved": [
+        {
+          "description": "No reviewed tool exists for chemistry-aware ordered material operations; the installed inventory is limited to numeric search/evaluation and cannot fulfill the requested combine-heat-add sequence.",
+          "need": null,
+          "posture": "missing",
+          "question": null
+        }
+      ]
+    },
+    "provider": {
+      "attempt": {
+        "engagement": {
+          "engagement_id": "curation-call-242d726bbf40ff10d6bcf7dce55a758e04728bc523c2b8f1e48072868e3029c1",
+          "scope": {
+            "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+            "tenant_id": "internal"
+          }
+        },
+        "ordinal": 1,
+        "request_sha256": "a5685ed4ca89b6a302ee9b2e95535f5dba435c0d68ad3f9d65980d3e01ea47e0"
+      },
+      "envelope_sha256": "17aefa8332107765190c027b8171e5e2d69ef330e0615efe2d371d01fddd8699",
+      "output_sha256": "b72d973ff3575962e9411d41ccefa002048cbdfec7e054dad8442cefffc74ac5",
+      "reservation_units": 250000000,
+      "usage": {
+        "accounting_units": 41223750,
+        "certainty": "reported",
+        "input_tokens": 50531,
+        "output_tokens": 739
+      }
+    },
+    "receipt": {
+      "created_at": "2026-10-12T13:59:32.444241Z",
+      "identity": {
+        "actor_id": "admin",
+        "command_family": "planning.curate_campaign",
+        "command_id": "6deb08cbe7e44433b76f6cf4b733d81b",
+        "schema_version": "1",
+        "scope": {
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+          "tenant_id": "internal"
+        }
+      },
+      "phase": "proposed",
+      "reason_code": "capabilities_requested",
+      "reference": {
+        "curation_id": "curation-2b6dcf326fc127817c983b2fe5ea59288cf43fd0aa447b34223b9c7a61331429",
+        "scope": {
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+          "tenant_id": "internal"
+        }
+      },
+      "request_sha256": "242d726bbf40ff10d6bcf7dce55a758e04728bc523c2b8f1e48072868e3029c1",
+      "revision": 3,
+      "updated_at": "2026-10-12T13:59:55.064037Z",
+      "wire_version": "1"
+    },
+    "specification": {
+      "context": {
+        "artifacts": [
+          {
+            "artifact_id": "98228b80754543f3bb7eb666dbbae661",
+            "media_type": "application/json",
+            "schema_ref": {
+              "schema_id": "search.specification",
+              "sha256": "e829b92d2145b0916847b06cb6e73c4a5aea17addea8bbdd1e9706dbd1cc79a7",
+              "version": "1"
+            },
+            "scope": {
+              "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+              "tenant_id": "internal"
+            },
+            "sha256": "d14234f2432410742138825bf475ab4e32f442315a6c75a3003e1d627b65d0b1",
+            "size_bytes": 1749
+          }
+        ],
+        "draft": {
+          "content_sha256": "9e3b725872892f3e7ff0db393e1341b9c8a359eb05eae48b5e3d24081ca6a7f9",
+          "draft_id": "curation-fixture-curation-owner-20261012a-original",
+          "revision": 1,
+          "scope": {
+            "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+            "tenant_id": "internal"
+          }
+        },
+        "knowledge": [],
+        "needs": [],
+        "predecessor": {
+          "plan_sha256": "a40d42aff4b53b0c28e8ca5e6b6736c6484a53fa2c43210a58170f78523a0373",
+          "revision": 9,
+          "run_id": "f44f4f297b4a4622b54d2dd8399048c6"
+        },
+        "questions": []
+      },
+      "direction": "Plan a synthetic research process that combines two molecular components, heats the combined mixture, then adds a third component. No actual laboratory operation or chemical protocol is requested. The installed numeric seed/evaluator tools cannot perform these molecular or mixture operations. Identify the missing typed capabilities, their applicability, expected evidence and acceptance criteria. Do not substitute a numeric search tool or invent an installed release. Return structured missing-capability requests when the inventory cannot express this process. Do not claim that a requested tool is fulfilled.",
+      "policy_id": "internal-curation-v2"
+    },
+    "validated_draft": null,
+    "wire_version": "1"
+  },
+  "model_output_sha256": "b72d973ff3575962e9411d41ccefa002048cbdfec7e054dad8442cefffc74ac5",
+  "provider": "actual pinned OpenAI through installed production worker",
+  "scientific_validity": "not_established"
+}

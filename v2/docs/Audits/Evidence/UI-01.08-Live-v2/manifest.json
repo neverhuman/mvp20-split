@@ -1,0 +1,18 @@
+{
+  "browser-evidence.json": "e808fbd76d235201753e7a0714c2be56a322c20a5136c339b9d47c56a1ec0cb8",
+  "final-allowance.json": "9ebf2a18b7654eae5d6b023833f1392ca80571de9c0691a8869a0ab1af13a147",
+  "owner-evidence.json": "55a9193bdbb0f1bc2844aad8423de5bd26db99ce707c02a6092d627266125c1e",
+  "scope-declaration.json": "4853a75e1dbaabf65461b68be872aa9cb1e9f242677de57b9d49b611975f0996",
+  "strict-schema-analysis.json": "dcb922f78a8476413ee613979a99d5bb91a6eee822ac88709115935ceb1dc187",
+  "missing/capability-requests.json": "4f22b0ea25e1a66315a43ee12a71aa94db7823054c275ca41c056e1c302ba2e7",
+  "missing/current-view.json": "48b8c0e23f0842d08feaeba8a8a9f003eb4693f4a55150962e85a06e5e4a723e",
+  "missing/evidence.json": "302908e724491b9bde41f1dc5706b7b93b7d7c345b197513da7dc49c85600f03",
+  "missing/original-observation.json": "43361dd22b91ddaeaabd0f1b2206208985a4e4adfd6f7350144a13e56689e46d",
+  "missing/original-output.json": "b72d973ff3575962e9411d41ccefa002048cbdfec7e054dad8442cefffc74ac5",
+  "missing/provider-accounting.json": "3da4b0bb2f2425de453f0daa206f0cbf7f0975e5cd47e7ff29cbe2547dddacc3",
+  "supported/current-view.json": "14cf9772ecd4bd204632411f50f4f5fe34a8d4cb7ab24af3b50920c6a20af49c",
+  "supported/diagnosis.json": "8d4c1e55816d3c6bc6dd64883f831b52ed61b5c7a7a592b62ccb5d57e79e573f",
+  "supported/original-observation.json": "181aa74e68847c53569b85455df9c02f13bb38c2fdbbb3a5572054a937b053be",
+  "supported/original-output.json": "2039c17a83a5cea16cbb8f6d887b283f40fad3c1a6fb5ad06bcb1f629da341ca",
+  "supported/provider-accounting.json": "f45410f42fdacf627f04d94ec93215832254cc735576c34b91b43300b646ccf9"
+}

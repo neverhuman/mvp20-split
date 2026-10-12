@@ -1,92 +1,50 @@
 # Restore
 
-Refreshed2026-10-12 08:41:16 America/Chicago. Read FIRST after compaction.
-Continue across gates/commits/compaction until needed. No agents/JARVIS; v1 read-only.
-Preserve untracked user ocular PDF/DOCX. No source/tests/module README edits during
-running tests/installations. Preparation84482 and boundary36897 FINISHED PASS; all isolated owners drained. No sessions running.
+Refreshed: 2026-10-12 09:06:13 America/Chicago. Read FIRST after compaction.
+Continue until a real blocker. No agents/JARVIS; v1 read-only. Preserve untracked
+ocular PDF/DOCX. No source/test edits while checks run. All qualification processes
+finished and drained; serving demo remains unchanged.
 
-## Canonical position and concrete blocker
+## Current gate and owner decision
 
-UI-01.08=85%,P1/P2/P3/P4=100,P5=25. P5.1=100; P5.2/P5.3/P5.4=0.
-UI01=77/Build96.25/Verification0,N3/I1=85;UI01.05=95,K1/R1=100.
-UI01 -> UI02 -> POP01 -> ML01; LR01 paused25/Build33.33. UI01.06/07 closed100.
-Active P5.2: two original live outputs failed strict validation. No successor.
-UI-01.08a Live curation qualification correction.md was APPROVED2026-10-12 08:41:16:
-additive readable input/instruction profile, preserve v1 reconstruction/contracts,
-same-scope ceiling6slots/$1.50 (two additional calls/$0.50), default limits unchanged.
-Owner approved input-profile repair and two additional calls/$0.50; offline gates first.
-ACTIVE: implement offline v2/replay/budget tests and independent installation,
-freeze additive authorization/policy roots, then P5.2 live supported ->P5.3 missing
-->P5.4 local/LAN/cutover ->parentV1. Do not reopen completed prerequisite phases.
+UI-01.08=90%, P1-P4=100%, P5=50%; P5.1/P5.3=100%, P5.2/P5.4=0.
+UI01=78/Build97.5/Verification0; N3/I1=90; UI01.05=96.67.
+Correction08a=83.33: offline/install100, live scenarios50. UI01 -> UI02 -> POP01
+-> ML01; LR01 paused25. Current gate P5.2 supported graph remains unmet.
+UI-01.08b Schema-constrained qualification.md is a concrete proposed correction:
+additive v3 strict provider schema, preserve v1/v2/public contracts, then ONE extra
+supported call/$0.25; exact scope ceiling7/$1.75. NOT APPROVED OR IMPLEMENTED.
+All six approved original slots/$1.50 are used. NO MORE PAID CALLS AUTHORIZED.
+Four live calls report $0.242380500 actual cost; original holds never refunded.
 
-## Active correction checkpoint2026-10-12 08:54:22
+## Latest evidence
 
-Planning0.128.0 implements explicit curation input .v2 (Core SchemaRef wireversion1),
-curation-v2 prompt, fit.v4; old default profile/instructions unchanged. Readable
-projection verifies schema and text/plain/application/json artifact hashes/size/
-encoding, preserves originals, exposes reviewed future declaration as data. Scope
-ceiling.py packages exact approved tenant/project6/$1.50; others4/$1. Canonical
-reserve/dispatch/allowance queries use ceiling+1 and count v1/v2 original holds.
-First source runA failed29/118 on mistaken Core SchemaRef version2; fixed using
-existing checkpoint distinct-ID convention. FinalrunB session73583FINISHED:
-124PASS91.07s, logcuration-input-v2-b.log. No paid calls this turn.
-Installation5200FINISHED PASS:curation-planning-installation-20261012c/owner,
-Planning0.128.0; no private peers. Original v1 envelopes both replay byte-exact and
-failed outputs still rejected via installed material.py. Dependency boundary output
-PASS. prepare_v2 session84482 currently running; logcuration-v2-preparation-a.log.
-New outputcuration-live-v2-20261012a. Only isolated servingowners installation and
-allowed policylist extended; originals backed upowners-pre-v2/planning-pre-v2.json.
-Original livev1 frozenfiles remain unchanged. Newdevmaterial.py/prepare_v2.py plus
-run.py scoped6guard/allowance.py dynamicceiling. Preparation complete; source124checks, isolatedoriginalreplay and actualfrozenledger
-PASS. Correction66.67%. Commit/push verifiedrepair, then one original supported request
-under newv2 policy. No keyread
-or new modelcall yet. Serving demo unchanged. Verified repair checkpoint ready; latest Git log identifies commit.
+Pushed c0e59469: Planning0.128.0 readable v2/profile/scoped six-call ceiling,
+124 focused checks, independent install, exact old v1 replay, actual frozen scope.
+Supported v2 original FAILED field nesting: expected_evidence, gaps, unresolved
+one level too deep; no accepted graph/successor. Curation8befe5fa056b4c56feb32f1e6beaa3ceb9aeeaa963dd9de9074fc8b0297164cd.
+Missing v2 original PASSED, one typed unfulfilled process capability. Curation
+2b6dcf326fc127817c983b2fe5ea59288cf43fd0aa447b34223b9c7a61331429.
+run sessions15157/26115 finished. Actual owner/browser review finished PASS09:03:09,
+logcuration-live-v2-review-a.log. Receipt replay/P4 records unchanged, browser1440/390
+accessibility/overflow/refresh passes; zero new intents/provider calls. Desktop
+visually reviewed. All isolated owners drained. Independent P5.3 exception complete;
+returned P5.2. No serving cutover. Durable evidence UI-01.08-Live-v2 with raw-byte
+hash manifest. Original v1 evidence remains UI-01.08-Live.
 
-## Latest work and evidence
+Current framing json_object does not enforce nesting. Offline projection feasibility
+found57defs/58closedobjects/22 disjoint tagged unions. Stronger all-fields-required
+projection rejects older omitted-default valid examples as expected; do not apply it
+retroactively or claim provider compatibility. v3 not implemented. See08b for tests.
+OpenAI official structured-output documentation checked; do not simply switch to
+strict:true with original schema (oneOf/discriminator/defaults need reviewed handling).
 
-Pushed base99df96e3 froze live preparation. This checkpoint contains dev live
-run/worker/diagnose/browser/preview helpers, Studio failure browser probe, evidence,
-canonical trackers and correction decision. See latest Git log for checkpoint ID.
-Do not stage user ocular files. New source only dev/test helpers, no production
-behavior change. run.py reads exact authorized Z:/ssos/.env key only for explicit
-live work; credential travels in child environment, not logs/evidence.
-
-Original single scope internal/owner-records-7e21ca85bd6044198b1585aa2c41d336.
-Frozen preparation v2/.test-results/curation-live-20261012a; do not overwrite
-frozen-files/roots/scope/worker/policy or reset initial allowance. Two P4 synthetic
-holds plus two live holds=4slots/1000000000nanodollars,0remaining. Actual live
-reported spend157331250 ($0.157331250), not a refund of original reservations.
-Pinned gpt-5.4-mini-2026-03-17, direct Responses, synthetic-only,0retries/fallback.
-
-Supported session84448 FINISHED/drained, logcuration-live-supported-a.log:
-curation-73f62b45e4c0b5d964362cc60ac6382d4f7d4604b5a8a2338265ec9e1f8c875f
-commandd05d2cee1b144fdd866380bd18ef5f0d. FAILEDmodel_output_invalid.
-93148input/1523output,reported76714500units,250000000held.
-Outputsha51c9544c6d034380f5acdf88fc9afebf5d3fddc95df20d7ac0fd26e799872f7e.
-Duplicate scientific_authority; malformed schema hash; misplaced expected_evidence,
-gaps,unresolved and matching missing fields. Never edit output into a proposal.
-
-Missing session96341 FINISHED/drained, logcuration-live-missing-a.log:
-curation-063f9188cffa7f1454623c252a9f35b8537c7e7a8d2052ffa6a4f06aa73075dc
-commandef313af572ce4e9b9acb2a8587abe7ad. FAILEDmodel_output_invalid.
-93077input/2402output,reported80616750units,250000000held.
-Outputshabfd48b937e064091f442b7b97e3b3a97023f5cfb11cceaeb8a75fafe013b8d0d.
-Only JSON-mode schema error: forbidden candidate:null in request_capabilities.
-Semantic recognition of missing tools is not a contract-valid retained request.
-Independent P5.3 exception documented; return P5.2, no gate bypass.
-
-Browser session54642 FINISHED PASS05:58:26; logcuration-live-failure-browser-a.log,
-curation-live-failure-browser-20261012a evidence. Actual installed owners/Gateway/
-Studio read both failures and original queued receipts after process replacement.
-1440/390 accessibility/overflow, exact capture digests, no proposal/launch, no new
-intent on refresh/reload. P4 runs unchanged. Final allowance confirms4/$1held.
-Visually inspected supported desktop and missing mobile. No provider key in browser.
-
-Offline previewcuration-live-input-preview-20261012a verifies nine runtime schema
-hashes before base64->readable JSON and adds explicit output-field guide.201440->
-191113envelopebytes; no measured token/quality improvement. NOT a production profile.
-Durable originals/accounting/diagnoses/browser/preview evidence copied byte-exact to
-v2/docs/Audits/Evidence/UI-01.08-Live with manifest. No credentials there.
+Local artifacts: .test-results/curation-live-v2-20261012a and
+curation-live-v2-review-20261012a. New dev review.py and Studio integration
+curation_live_review.mjs verify actual missing/failed views without provider work.
+Independent Planning0.128.0 installationcuration-planning-installation-20261012c/owner;
+isolated owners.json references it; policylist has internal-curation-v1 and v2.
+Do not rerun frozen preparation or reset ledger. No provider credentials in evidence.
 
 ## P4 verified baseline / isolated infrastructure
 
@@ -95,7 +53,7 @@ Evidence/config v2/.test-results/curation-owner-20261012a/serving.
 Separate trustedbackup-20261007e stores; PostgreSQL/Qdrant remain up. Owners drained.
 Ports53422Artifact,53423Gateway,53424Knowledge,53425Planning,53426Registry,
 53427Research,53428Runtime,53429Supervisor; launchport inlaunch-prepared.json.
-Independent Planning0.127.2 atcuration-planning-installation-20261012b/owner;
+Independent Planning0.128.0 atcuration-planning-installation-20261012c/owner;
 Deployment0.19.1 atcuration-deployment-installation-20261012a/owner;
 Gateway0.7 atsuccessor-gateway-installation-20261012a/owner;Studio0.34.
 Runtime0.65/Data0.30/Registry0.1/Research0.40/Knowledge0.18. Planning schema0027.
@@ -134,5 +92,3 @@ uvv2/.venv/Scripts/uv.exe; --offline installs/locks. Git safe.directory=
 Use rg--files before paths. Deploymentv2/deploy/local,Studiov2/studio.
 Read UI guidelines before changes. OpenAI Docs skill already read; official model
 page checked earlier this session, snapshot/Responses and$0.75/$4.50 per1Mtexttokens.
-Two additional calls now authorized after offline/replacement gates. The user must not
-need to reauthorize ordinary implementation after that bounded decision.

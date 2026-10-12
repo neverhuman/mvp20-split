@@ -3,16 +3,16 @@
 ## Canonical tracker
 
 - Status: primary_active; connected demo flow implemented; N2 complete; approved N3 curation implementation active.
-- Last refreshed: 2026-10-12 08:41:16 (America/Chicago).
+- Last refreshed: 2026-10-12 09:06:13 (America/Chicago).
 - Baseline: 62ea4966; owner-reported disconnected canvas and navigation review on 2026-10-07.
 - Owner: Studio experience, page models and presentation; service owners retain their contracts and state.
 - Parent: none; priority and mirrors in [Master Build Tracker](Master%20Build%20Tracker.md).
-- Overall implementation: **77%**; Build96.25%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
+- Overall implementation: **78%**; Build97.5%, Verification0%. Five equal delivery gates: G1, N1, N2, N3, V1. Build averages G1/N1/N2/N3; Verification is V1. G0 is a separate design/review prerequisite and earns no implementation credit.
 - Design readiness: G0 complete; ELK directed layout and bounded topology ownership implemented.
 - Demonstrated behavior: connected graphs and question-first navigation verified against retained owner records; result-first comparison and full replacement acceptance remain.
 - Current phase/task: N3/UI-01.05/I1; implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md). N2 complete100%; launch/provenance remain closed.
-- Next task: implement approved [UI-01.08a](UI-01.08a%20Live%20curation%20qualification%20correction.md), offline correction, then return to P5.2. N3/I1 stays85%; failed live attempts earn no acceptance credit.
-- Blocker: both original live outputs failed strict schema validation; four original slots/$1 fully held. Additive input-profile correction and two-call/$0.50 extension approved2026-10-12 08:41:16; offline gates active. Failure/replay/browser checks pass; serving demo unchanged. UI-01.01 result index remains separate/unapproved.
+- Next task: P5.3 missing-capability original and actual browser1440/390 passed; returned to P5.2 supported graph correction. Six original slots/$1.50 held; zero calls remain. UI-01.08b proposes constrained generation and one additional $0.25 supported call. No serving cutover.
+- Blocker: P5.3 missing-capability original and actual browser1440/390 passed; returned to P5.2 supported graph correction. Six original slots/$1.50 held; zero calls remain. UI-01.08b proposes constrained generation and one additional $0.25 supported call. No serving cutover.
 - Human acceptance: owner feedback is part of visual review; no new routine approval gates for campaign execution.
 - Active exception: owner explicitly reprioritized UI over worker diagnostics; LR-01 remains paused at25%, Build33.33%, Acceptance0%, with R2 receipt diagnosis preserved.
 - Pre-activation coherence: 2026-10-07 17:54:00, ready for G0. Existing topology/observation APIs, React Flow canvas and isolated Studio boundaries are available; meaningful layout and workflow acceptance are missing. No new backend contract is assumed approved by this plan.
@@ -23,7 +23,7 @@
 | G1 usable connected graph | 100% | G0 complete | One real retained campaign opens as a readable connected graph; branches, joins and nested work navigable; visual and behavioral proof |
 | N1 research entry and navigation | 100% | G1 complete | Research-question landing and connected workflow navigation with preserved selection/context |
 | N2 approach, execution and results | 100% | N1 complete | Understand approach, follow autonomous work, inspect/compare results and supporting evidence |
-| N3 next-campaign iteration | 85% | N2 complete | Target weak/promising points, inspect proposed changes and follow predecessor/successor history |
+| N3 next-campaign iteration | 90% | N2 complete | Target weak/promising points, inspect proposed changes and follow predecessor/successor history |
 | V1 integrated acceptance and audit | 0% | N3 complete | Actual-owner user journey, independent consumer acceptance, scoped audit and explicit limitations |
 
 Each phase is a discrete unit of work. Complete its exit gate before dependent
@@ -385,3 +385,7 @@ records actual retained OpenAI request/rationale/outcome,362tests, desktop/narro
 and restored LAN unavailable-history regression. Zero new paid calls. N3/I1
 requires the concrete additive public boundaries in UI-01.08; no code for those
 unapproved boundaries is implemented.
+
+## 2026-10-12 09:06:13 live evaluation checkpoint
+
+P5.3 missing-capability original and actual browser1440/390 passed; returned to P5.2 supported graph correction. Six original slots/$1.50 held; zero calls remain. UI-01.08b proposes constrained generation and one additional $0.25 supported call. No serving cutover. Four live calls reported $0.242380500 cumulatively; new calls $0.085049250. Evidence: [retained results](../Audits/Evidence/UI-01.08-Live-v2/README.md). Earlier checkpoints describe historical allowance and status.

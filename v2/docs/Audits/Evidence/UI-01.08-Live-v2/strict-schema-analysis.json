@@ -1,0 +1,9 @@
+{
+  "converted_disjoint_unions": 22,
+  "closed_objects": 58,
+  "properties": 223,
+  "supported_original_accepted": false,
+  "missing_original_accepted": false,
+  "provider_schema_bytes": 26569,
+  "provider_acceptance": "not tested; offline analysis only"
+}
