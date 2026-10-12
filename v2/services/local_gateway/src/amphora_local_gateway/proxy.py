@@ -7,6 +7,7 @@ import re
 from urllib.parse import parse_qsl, unquote, urlsplit
 
 from .configuration import require, GatewayError
+from .launch_routes import LaunchRoute
 from .curation_routes import CurationRoute, ERRORS as CURATION_ERRORS
 
 
@@ -52,10 +53,7 @@ class Route:
                     int(query['revision']) <= 9007199254740991 and
                     bool(re.fullmatch(r'[0-9a-f]{64}', query['content_sha256'])), 'gateway_campaign_origin_route')
         if parts[2] == 'deployment':
-            allowed = (len(parts) == 5 and parts[4] in {'campaign-launches', 'campaign-launch-profiles'}
-                or len(parts) == 6 and parts[4] == 'campaign-launches'
-                and re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._:-]{0,127}', unquote(parts[5])))
-            require(bool(allowed) and not parsed.query, 'gateway_launch_route')
+            LaunchRoute.parse(target)
         return cls(ALIASES[parts[2]], target)
 
 
@@ -69,7 +67,8 @@ def forward(peer, route, method, body, request_id):
         curation.check(method, body)
         maximum_response = 1048576
     if route.owner == 'deployment':
-        require(len(body) <= 262144 and (method == 'GET' or route.target == '/v1/campaign-launches'), 'gateway_launch_request_bound')
+        LaunchRoute.parse(route.target).check(method, body)
+        maximum_response = 262144
     connection = http.client.HTTPConnection("127.0.0.1", peer.port, timeout=15)
     try:
         headers = {"Authorization":"Bearer " + peer.token, "Accept":"application/json, application/octet-stream",

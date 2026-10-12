@@ -8,6 +8,7 @@ from urllib.parse import unquote, urlsplit
 from amphora_contracts_campaign_launch import LaunchProfileCatalog
 
 from .intent import LaunchError, LaunchIntent
+from ..campaign_successor import http as successor_http
 
 ERRORS = {'launch_scope_denied': 403, 'launch_request_conflict': 409, 'launch_slot_busy': 409,
     'launch_profile_mismatch': 422, 'launch_profile_limit': 422, 'launch_request_invalid': 422,
@@ -69,6 +70,9 @@ class LaunchHandler(BaseHTTPRequestHandler):
         parsed = urlsplit(self.path)
         if parsed.scheme or parsed.netloc or parsed.query or parsed.fragment:
             return None, None
+        successor_route = successor_http.route(parsed.path)
+        if successor_route[0] is not None:
+            return successor_route
         if parsed.path in {'/v1/campaign-launches', '/v1/campaign-launch-profiles'}:
             return parsed.path, None
         parts = parsed.path.split('/')
@@ -101,6 +105,8 @@ class LaunchHandler(BaseHTTPRequestHandler):
         try:
             raw = self._body(post)
             route, request_id = self._route()
+            if route and route.startswith(successor_http.ROOT) and successor_http.handle(self, route, request_id, post, raw):
+                return
             if not post and route == '/v1/campaign-launch-profiles':
                 catalog = LaunchProfileCatalog(scope=self.server.policy.view.scope, profiles=(self.server.policy.view,))
                 return self._respond(200, catalog.model_dump(mode='json'))

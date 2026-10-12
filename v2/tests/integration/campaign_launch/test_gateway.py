@@ -1,6 +1,7 @@
 import http.client
 import json
 import threading
+import pytest
 
 from amphora_deployment.campaign_launch.http import LaunchServer
 from amphora_deployment.campaign_launch.journal import LaunchJournal
@@ -9,7 +10,9 @@ from amphora_local_gateway.configuration import Configuration, Peer
 from amphora_local_gateway.server import GatewayServer
 
 
-def test_browser_session_reaches_only_scoped_idempotent_launch_surface(tmp_path):
+@pytest.mark.parametrize('successor', [False, True], ids=['fresh','successor'])
+def test_browser_session_reaches_only_scoped_idempotent_launch_surface(tmp_path, successor):
+    route = '/api/deployment/v1/' + ('campaign-successor-launches' if successor else 'campaign-launches')
     scope = {'tenant_id': 'internal', 'project_id': 'demo'}
     document = {'reference': {'profile_id': 'scientific', 'version': '1', 'sha256': '0' * 64},
         'scope': scope, 'title': 'Reviewed science', 'tools': [{'capability_id': 'materials.hansen-solvency',
@@ -56,16 +59,28 @@ def test_browser_session_reaches_only_scoped_idempotent_launch_surface(tmp_path)
                     'plan_sha256': 'a' * 64, 'inputs': [], 'budget': {'limit': 8, 'max_attempts_per_activation': 2},
                     'draft': {'draft_id': 'draft', 'revision': 1, 'content_sha256': 'b' * 64,
                         'validation_id': 'validation', 'universe_sha256': 'c' * 64}}}}})
-        assert request('/api/deployment/v1/campaign-launches', 'POST', {**headers, 'Origin': 'https://foreign.invalid'}, body)[0] == 403
+        if successor:
+            value=json.loads(body)
+            value['identity']['command_family']='campaign.launch_successor'
+            inner=value['payload']['admission']; inner['encoding']='amphora-command-v2'
+            inner['identity']['command_family']='graph.admit_draft_successor'
+            inner['payload'].update(predecessor={'run_id':'prior','plan_sha256':'e'*64,'revision':7},carried=[])
+            body=json.dumps(value)
+        assert request(route, 'POST', {**headers, 'Origin': 'https://foreign.invalid'}, body)[0] == 403
         assert journal.active() is None
-        code, _, first = request('/api/deployment/v1/campaign-launches', 'POST', headers, body)
+        code, _, first = request(route, 'POST', headers, body)
         assert code == 202 and first['phase'] == 'preparing'
-        assert request('/api/deployment/v1/campaign-launches', 'POST', headers, body)[2] == first
-        assert request('/api/deployment/v1/campaign-launches/launch-1', headers=headers)[2] == first
+        assert request(route, 'POST', headers, body)[2] == first
+        assert request(route+'/launch-1', headers=headers)[2] == first
+        if successor:
+            query={'identity':first['identity'],'request_sha256':first['request_sha256']}
+            assert request(route+'/receipts/query','POST',headers,json.dumps(query))[2]==first
+            assert first['predecessor']=={'run_id':'prior','plan_sha256':'e'*64,'revision':7}
+
         assert request('/api/deployment/v1/owners/runtime/start', 'POST', headers, b'{}')[0] == 403
         second = json.loads(body)
         second['identity']['command_id'] = second['payload']['admission']['identity']['command_id'] = 'second'
-        assert request('/api/deployment/v1/campaign-launches', 'POST', headers, json.dumps(second))[2] == {'reason_code': 'launch_slot_busy'}
+        assert request(route, 'POST', headers, json.dumps(second))[2] == {'reason_code': 'launch_slot_busy'}
         assert journal.active().intent.request.identity.command_id == 'launch-1'
     finally:
         gateway.shutdown(); gateway.server_close(); gateway_thread.join(5)

@@ -5,8 +5,11 @@ from pathlib import Path
 
 from .intent import LaunchError, LaunchIntent
 from .state import LaunchState, utc_now
+from .journal_schema import initialize, database_key
+from ..campaign_successor.intent import SuccessorIntent
+from ..campaign_successor.state import SuccessorState
 
-READ_COLUMNS = 'request, receipt, revision, active, tenant, project, actor, request_id'
+READ_COLUMNS = 'request, receipt, revision, active, tenant, project, actor, request_id, family'
 
 
 class LaunchJournal:
@@ -14,11 +17,7 @@ class LaunchJournal:
         directory.mkdir(parents=True, exist_ok=True)
         self.path = directory / 'launches.sqlite3'
         with self._connection() as db:
-            db.execute('''CREATE TABLE IF NOT EXISTS launches (
-                tenant TEXT NOT NULL, project TEXT NOT NULL, actor TEXT NOT NULL, request_id TEXT NOT NULL,
-                request BLOB NOT NULL, receipt BLOB NOT NULL, revision INTEGER NOT NULL,
-                active INTEGER UNIQUE CHECK(active IS NULL OR active=1),
-                PRIMARY KEY(tenant, project, actor, request_id))''')
+            initialize(db)
             for row in db.execute('SELECT ' + READ_COLUMNS + ' FROM launches'):
                 self._state(row)
 
@@ -35,15 +34,16 @@ class LaunchJournal:
     def _state(row):
         if row is None:
             return None
-        state = LaunchState.restore(LaunchIntent.parse(row[0]), row[1])
+        intent_type, state_type = (SuccessorIntent, SuccessorState) if row[8] == 'campaign.launch_successor' else (LaunchIntent, LaunchState)
+        state = state_type.restore(intent_type.parse(row[0]), row[1])
         if (state.revision != row[2] or row[3] != (None if state.terminal else 1)
-                or state.intent.key != tuple(row[4:])):
+                or database_key(state.intent.key) != tuple(row[4:])):
             raise LaunchError('launch_journal_corrupt')
         return state
 
     def get(self, key: tuple[str, str, str, str]):
         with self._connection() as db:
-            return self._state(db.execute('SELECT ' + READ_COLUMNS + ' FROM launches WHERE tenant=? AND project=? AND actor=? AND request_id=?', key).fetchone())
+            return self._state(db.execute('SELECT ' + READ_COLUMNS + ' FROM launches WHERE tenant=? AND project=? AND actor=? AND request_id=? AND family=?', database_key(key)).fetchone())
 
     def active(self):
         with self._connection() as db:
@@ -65,7 +65,7 @@ class LaunchJournal:
         with self._connection() as db:
             db.execute('BEGIN IMMEDIATE')
             try:
-                existing = self._state(db.execute('SELECT ' + READ_COLUMNS + ' FROM launches WHERE tenant=? AND project=? AND actor=? AND request_id=?', intent.key).fetchone())
+                existing = self._state(db.execute('SELECT ' + READ_COLUMNS + ' FROM launches WHERE tenant=? AND project=? AND actor=? AND request_id=? AND family=?', database_key(intent.key)).fetchone())
                 if existing:
                     if existing.intent.request.sha256 != intent.request.sha256:
                         raise LaunchError('launch_request_conflict')
@@ -75,9 +75,10 @@ class LaunchJournal:
                     raise LaunchError('launch_slot_busy')
                 # Local pinned policy only: never hold this transaction over peer I/O.
                 authorize_profile(intent)
-                state = LaunchState.initial(intent, now())
-                db.execute('INSERT INTO launches VALUES (?,?,?,?,?,?,?,1)', (*intent.key,
-                    intent.request.canonical_bytes, state.receipt().model_dump_json().encode(), state.revision))
+                state_type = SuccessorState if isinstance(intent, SuccessorIntent) else LaunchState
+                state = state_type.initial(intent, now())
+                db.execute('INSERT INTO launches VALUES (?,?,?,?,?,?,?,1,?)', (*database_key(intent.key)[:4],
+                    intent.request.canonical_bytes, state.receipt().model_dump_json().encode(), state.revision, database_key(intent.key)[4]))
                 db.execute('COMMIT')
                 return state
             except BaseException:
@@ -88,14 +89,14 @@ class LaunchJournal:
         with self._connection() as db:
             db.execute('BEGIN IMMEDIATE')
             try:
-                state = self._state(db.execute('SELECT ' + READ_COLUMNS + ' FROM launches WHERE tenant=? AND project=? AND actor=? AND request_id=?', key).fetchone())
+                state = self._state(db.execute('SELECT ' + READ_COLUMNS + ' FROM launches WHERE tenant=? AND project=? AND actor=? AND request_id=? AND family=?', database_key(key)).fetchone())
                 if state is None or state.revision != expected_revision:
                     raise LaunchError('launch_revision_conflict')
                 updated = transition(state)
                 if updated.intent != state.intent or updated.revision not in {state.revision, state.revision + 1}:
                     raise LaunchError('launch_transition_invalid')
-                db.execute('UPDATE launches SET receipt=?, revision=?, active=? WHERE tenant=? AND project=? AND actor=? AND request_id=?',
-                    (updated.receipt().model_dump_json().encode(), updated.revision, None if updated.terminal else 1, *key))
+                db.execute('UPDATE launches SET receipt=?, revision=?, active=? WHERE tenant=? AND project=? AND actor=? AND request_id=? AND family=?',
+                    (updated.receipt().model_dump_json().encode(), updated.revision, None if updated.terminal else 1, *database_key(key)))
                 db.execute('COMMIT')
                 return updated
             except BaseException:

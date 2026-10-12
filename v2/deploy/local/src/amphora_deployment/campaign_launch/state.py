@@ -20,6 +20,7 @@ TRANSITIONS = {
 
 @dataclass(frozen=True, slots=True)
 class LaunchState:
+    receipt_model = LaunchReceipt
     intent: LaunchIntent
     revision: int
     phase: str
@@ -103,16 +104,19 @@ class LaunchState:
             updated = updated.move(phase, now, reason)
         return replace(updated, revision=self.revision + 1, reason=reason)
 
-    def receipt(self) -> LaunchReceipt:
-        return LaunchReceipt(identity=self.intent.request.identity, request_sha256=self.intent.request.sha256,
+    def receipt_fields(self):
+        return dict(identity=self.intent.request.identity, request_sha256=self.intent.request.sha256,
             profile=self.intent.profile, revision=self.revision, phase=self.phase, reason_code=self.reason,
             created_at=self.created, updated_at=self.updated, admission=self.admission, run_id=self.run_id,
             workers=WorkerReadiness(expected=self.expected_workers, ready=self.ready_workers))
 
+    def receipt(self) -> LaunchReceipt:
+        return LaunchReceipt(**self.receipt_fields())
+
     @classmethod
     def restore(cls, intent: LaunchIntent, raw: bytes):
         try:
-            record = LaunchReceipt.model_validate_json(raw)
+            record = cls.receipt_model.model_validate_json(raw)
             state = cls(intent, record.revision, record.phase, record.reason_code,
                 record.created_at, record.updated_at, record.admission, record.workers.expected, record.workers.ready)
             if state.receipt() != record or state.created > state.updated or state.ready_workers > state.expected_workers:

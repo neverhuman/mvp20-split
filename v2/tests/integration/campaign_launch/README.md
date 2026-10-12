@@ -5,3 +5,6 @@ bounded launch API. Runtime execution is not started by this suite. Assertions c
 cookie/origin authority, fixed private bearer injection, scoped profiles/receipts,
 idempotent submission and denial of supervisor paths. No provider credentials or
 active demo installation are used. Actual browser/campaign proof remains UI-01.06 L4.
+
+The same authenticated HTTP journey covers additive successor launch and exact
+receipt queries, preserving predecessor cuts and excluding fresh-route fallback.

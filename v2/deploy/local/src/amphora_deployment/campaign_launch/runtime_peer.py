@@ -65,7 +65,7 @@ class LoopbackPeer:
 class RuntimePeer(LoopbackPeer):
     def receipt(self, intent):
         identity = intent.admission.identity
-        path = '/v1/commands/graph.admit_draft/' + quote(identity.command_id, safe='')
+        path = '/v1/commands/' + quote(identity.command_family, safe='') + '/' + quote(identity.command_id, safe='')
         path += '?actor_id=' + quote(identity.actor_id, safe='')
         status, raw = self.request('GET', path)
         if status == 404:
@@ -78,7 +78,7 @@ class RuntimePeer(LoopbackPeer):
         return self._parse(status, raw, CommandReceipt)
 
     def admit(self, intent):
-        status, raw = self.request('POST', '/v1/graph-runs/drafts', intent.admission.canonical_bytes)
+        status, raw = self.request('POST', intent.admission_route, intent.admission.canonical_bytes)
         return self._parse(status, raw, CommandReceipt)
 
     def run(self, state):

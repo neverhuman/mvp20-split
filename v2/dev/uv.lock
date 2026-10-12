@@ -735,10 +735,11 @@ requires-dist = [
 
 [[package]]
 name = "amphora-deployment"
-version = "0.18.3"
+version = "0.19.0"
 source = { editable = "../deploy/local" }
 dependencies = [
     { name = "amphora-contracts-campaign-launch" },
+    { name = "amphora-contracts-campaign-successor-launch" },
     { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-graph-runtime" },
@@ -749,6 +750,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "amphora-contracts-campaign-launch", editable = "../contracts/campaign_launch" },
+    { name = "amphora-contracts-campaign-successor-launch", editable = "../contracts/campaign_successor_launch" },
     { name = "amphora-contracts-commands", editable = "../contracts/commands" },
     { name = "amphora-contracts-core", editable = "../contracts/core" },
     { name = "amphora-contracts-graph-runtime", editable = "../contracts/graph_runtime" },
@@ -947,7 +949,7 @@ requires-dist = [
 
 [[package]]
 name = "amphora-local-gateway"
-version = "0.6.0"
+version = "0.7.0"
 source = { editable = "../services/local_gateway" }
 
 [[package]]

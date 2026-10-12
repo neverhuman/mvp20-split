@@ -1,8 +1,8 @@
 [project]
 name = "amphora-deployment"
-version = "0.18.3"
+version = "0.19.0"
 requires-python = ">=3.12,<3.13"
-dependencies = ["amphora-contracts-campaign-launch==0.1.0", "amphora-contracts-commands==0.2.0", "amphora-contracts-core==0.1.0", "amphora-contracts-runtime==0.1.0", "amphora-contracts-graph-runtime==0.13.0", "amphora-contracts-tools==0.1.0"]
+dependencies = ["amphora-contracts-campaign-successor-launch==0.1.0", "amphora-contracts-campaign-launch==0.1.0", "amphora-contracts-commands==0.2.0", "amphora-contracts-core==0.1.0", "amphora-contracts-runtime==0.1.0", "amphora-contracts-graph-runtime==0.13.0", "amphora-contracts-tools==0.1.0"]
 
 [build-system]
 requires = ["hatchling>=1.27,<2"]
@@ -12,9 +12,11 @@ build-backend = "hatchling.build"
 packages = ["src/amphora_deployment"]
 
 [tool.amphora]
-public-imports = ["amphora-contracts-campaign-launch", "amphora-contracts-commands", "amphora-contracts-core", "amphora-contracts-runtime", "amphora-contracts-graph-runtime", "amphora-contracts-tools"]
+public-imports = ["amphora-contracts-campaign-successor-launch", "amphora-contracts-campaign-launch", "amphora-contracts-commands", "amphora-contracts-core", "amphora-contracts-runtime", "amphora-contracts-graph-runtime", "amphora-contracts-tools"]
 
 [tool.uv.sources]
+amphora-contracts-campaign-successor-launch = { path = "../../contracts/campaign_successor_launch", editable = true }
+amphora-contracts-draft-successor = { path = "../../contracts/draft_successor", editable = true }
 amphora-contracts-tools = { path = "../../contracts/tools", editable = true }
 amphora-contracts-graph-runtime = { path = "../../contracts/graph_runtime", editable = true }
 amphora-contracts-campaign-launch = { path = "../../contracts/campaign_launch", editable = true }

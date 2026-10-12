@@ -105,3 +105,13 @@ Profiles admit only installed adapters and immutable
 image/resource pins. UI requests contain no host paths, commands or credentials.
 Tests live under deploy/local/tests/campaign_launch by contracts/domain/journal/
 transport/acceptance responsibility. Real browser/worker evidence is a separate gate.
+
+## Additive successor integration (UI-01.08 P4)
+
+Deployment0.19 reuses this lifecycle for the separate campaign_successor module.
+Journal keys include command family and one active slot still spans the installation.
+Legacy journal upgrade validates records and copies request/receipt blobs unchanged;
+rollback on invalid legacy metadata leaves the old shape. Fresh public records stay
+unchanged. Runtime routes come from exact bounded intent type. The successor module
+owns predecessor projection and approved HTTP read/query/intake. See its README for
+replacement and version rollback constraints. Serving-demo cutover remains P5.

@@ -32,6 +32,10 @@ class LaunchIntent:
         return LaunchProfileRef.model_validate_json(json.dumps(json.loads(self.request.canonical_bytes)['payload']['profile']))
 
     @property
+    def admission_route(self):
+        return '/v1/graph-runs/drafts'
+
+    @property
     def key(self) -> tuple[str, str, str, str]:
         identity = self.request.identity
         return identity.scope.tenant_id, identity.scope.project_id, identity.actor_id, identity.command_id

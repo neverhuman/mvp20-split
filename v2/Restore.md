@@ -1,125 +1,51 @@
 # Restore
 
-Refreshed 2026-10-12 02:29:00 America/Chicago. Read FIRST after compaction.
+Refreshed 2026-10-12 02:39:30 America/Chicago. Read FIRST after compaction.
 Continue until needed across commits/gates/compaction. No subagents/JARVIS.
 v1 read-only; preserve untracked ocular PDF/DOCX. No source/tests/module README
 edits while tests/installations run. Serving demo uses immutable source copies.
 
 ## Canonical position
 
-UI-01.08 approved; P3 complete, P4.1 managed successor admission/recovery ACTIVE.
-Child60%;P1/P2/P3=100%,P4/P5=0. P4 has4equal ordered units: Deployment successor,
-Studio curation submission, graph diff/successor UI, integrated scripted qualification.
-ParentUI01=72%/Build90%/Verification0;UI01.05=86.67%,I1=60%.
-No user decision pending. P5 ONE scope4calls/$1,max$0.25hold/call. Zero paid calls.
+UI-01.08 approved; P4.2 Studio curation submission/receipt recovery ACTIVE.
+Child65%;P1/P2/P3=100%,P4=25%,P5=0. P4.1=100%,P4.2/3/4=0.
+ParentUI01=73%/Build91.25%/Verification0;UI01.05=88.33%,I1=65%.
+Order UI01->UI02->POP01->ML01. LR01 paused25/Build33.33. No decision pending.
+P5 ONE synthetic scope4calls/$1,max$0.25original hold/call. ZERO paid calls/real keys.
 
-Latest:15dd13c6 pushed Studio0.28 state. Studio0.29 visual/navigation uncommitted,
-P3c complete385checks; browser curation-browser-20261012c/evidence.json,
-1440/390 inspected,16long requests/keyboard/negative states. Tests all FINISHED.
-Commit/push exact P3 files then P4.1. Serving demo unchanged.
+## Latest work
 
-## Latest commits and verified backend
+7d8509c2 pushed Studio0.29 P3 capability review complete385checks; browser
+curation-browser-20261012c/evidence.json,1440/390 inspected,16long requests,
+keyboard/negative states.15dd13c6 prior model commit. No serving UI change.
+Planning0.127 schema0027 and capability fulfillment complete; use module READMEs.
 
-31bc9d51 pushed Planning0.127 approved fulfillment API/managed worker.
-162ae3da pushed0.126 immutable fulfillment journal. Earlier ff4af1b1=0.125 evidence,
-e7bf5e79=0.124 original capability projections, deaa5c79=P2 independent closeout.
-P2: fresh0.123/public-only closure205 checks, curation-installation-20261012a.
-P3.2: source56pass182.75s; fresh0.127/public-only closure150pass458.67s,
-capability-installation-20261012a/evidence.json and owner/manifest.json.
-No skips/failures/paid calls/real keys/demo changes. All those test sessions FINISHED.
+P4.1 uncommitted (commit/push next): Deployment0.19/Gateway0.7, locks synced.
+SuccessorIntent/State/HTTP under campaign_successor; shared campaign_launch
+journal/coordinator/preflight/bindings. Schema upgrade adds family to SQLite PK,
+validates legacy data, preserves blobs, one global active slot. Fresh keys4tuple,
+successor keys5tuple(last family). Current journal cannot be opened by old binary.
+RuntimePeer routes from exact intent; no fresh fallback. Same launch authorization.
+Gateway exact launch_routes method/path/request/response bounds; original retained.
+120 source launch checks;90 Gateway+integration, then4actual HTTP integration.
+Fresh Deployment120pass:successor-installation-20261012a/evidence.json.
+Fresh Gateway87pass:successor-gateway-installation-20261012a/evidence.json.
+Production dependency guard passed. All test/install sessions FINISHED.
+No actual Runtime/containers/browser successor claim; P4.4/P5 owns integration.
+Helper verify_campaign_launch_installation.py --launch-only runs scoped fresh wheel
+checks; original full mode still supports container/receipt process probes.
 
-Planning source schema0027; serving immutable demo remains0.107/schema0021.
-0026 capability_fulfillments holds immutable authorized original command, exact gap
-snapshot and initial pending receipt.0027 capability_verifications holds terminal
-verified/rejected receipt and witness; unique first-verified request winner.
-Exact retry returns ORIGINAL pending receipt; capability GET prefers winner,
-otherwise latest intent's pending/rejected state. No overwrite or invented science.
-Witness retains exact report bytes/Registry snapshot/processed Artifact refs; supporting
-payloads stay Data-owned. Public Registry/Data processing outside SQL, known mismatch/
-denial rejects, named transient outage stays pending; unknown integrity errors propagate.
-Historical committed verification recovers before peers. Model has no fulfillment grant.
-POST /v1/capability-requests/{id}/fulfillments is authorized intake only.
-CurationPoller alternates fulfillment/campaign turns with idle fallback; same internal
-execute_curations principal cannot submit owner fulfillment. One bounded turn drains.
-Production CLI outage/replacement test makes4 public GETs and no model call.
+## Next task
 
-Original curation path remains intact: queued command -> exact original public context/
-reviewed declaration -> immutable envelope -> one original cost hold/issuance/capture ->
-original graph compiler/save/validation. Recovery precedes mutable config or new calls.
-Unknown provider issuance retains full original reservation; no retry/refund/fallback.
-Compiler lease is independent; Runtime commits survive curation lease replacement.
-Module READMEs own reconstruction details; no need broad old-history reads.
-
-## P3.3a completed foundation (pushed875efbf7)
-
-Studio0.27/Gateway0.6 source; dev and service locks synced. Planning stays0.127.
-Studio generated/campaign_curation roots consume unchanged published CurationView /
-CapabilityRequestView. contracts/campaign_curation.ts decodes standalone CSP-safe
-validators. transport/campaign_curation client/identity bind actor/scope/predecessor,
-original curation/provider linkage, deterministic gap refs, original gap and scoped
-fulfillment. GET only;1MiB success/4KiB errors; named missing distinct from outage;
-200null rejects, cancellation fences uncancellable peer results. Requested context,
-original proposal and current catalog remain different. No page model/UI changes yet.
-Gateway curation_routes.py enforces exact approved family paths/methods,256KiB requests,
-1MiB responses, closed error codes, no private diagnostics; legacy routes unchanged.
-
-Source84 Gateway/boundary checks21.97s;8 Studio contract/transport/import checks pass;
-all generated schemas check and TypeScript compilation pass. Initial tsc failure
-caught assumed DraftSelection.scope; actual DTO is scope-less inside scoped receipt,
-so corrected that consumer assumption. No public contract changes.
-Independent Gateway0.6 install FINISHED (exec38551):78pass2.19s, no skips/failures.
-Evidence .test-results/curation-gateway-installation-20261012a/evidence.json.
-All tests/installations finished. P3.3a committed/pushed875efbf7.
-2026-10-12 02:03:35 America/Chicago: P3.3a read-contract/transport/Gateway foundation complete.
-Studio0.27 consumes two unchanged published read roots with standalone validators;
-exact scoped curation/gap/fulfillment binding, named absence, bounds and cancellation.
-Gateway0.6 exact approved paths/methods and redacted errors; legacy behavior preserved.
-84 source Gateway/boundary checks21.97s;8 Studio transport/import checks plus schema
-regeneration and tsc pass. Fresh isolated Gateway wheel78pass2.19s, no peer imports.
-Evidence curation-gateway-installation-20261012a/evidence.json; source log curation-gateway-a.log.
-No visual/browser acceptance claim yet, no model calls or serving-demo change.
-P3.3=33.33%(a100,b/c0),P3=77.78%,child55.56%;parent71.11%/Build88.89%,UI01.05=85.19%.
-P3.3b page-model state/selection/denial fencing next.
-
-## Latest P3.3b state (verified, commit next)
-
-2026-10-12 02:13:56 America/Chicago: Studio0.28 P3.3b page-model state complete.
-One curation region and lazy detail lane; immutable domain projections, scoped
-selection, original/terminal replay, verified-winner preservation, visible refresh,
-hide/denial/disposal clearing, late/reentrant fencing and no duplicate detail read.
-22 model/transport/import checks pass605.7ms; tsc passes. Evidence curation-studio-model-a.log.
-No writes, model calls, catalog refresh, visual acceptance or serving-demo changes.
-P3.3=66.67%(a/b100,c0),P3=88.89%,child57.78%;parent71.56%/Build89.44%,UI01.05=85.93%.
-P3.3c visual integration and1440/390 keyboard/overflow/negative qualification next.
-
-No tests/installations running. New page_models/campaign_curation/{records,model}.ts
-and README/tests. Studio0.28 manifest/lock updated. Commit/push b then P3.3c.
-Records class uses semantic comparison only, not canonical SHA. Model holds two
-RequestLanes; clears protected state on denial/hide/dispose, remembers minimal
-selection/bookmark for fresh visible reload, no auto polling. Baselines reject
-rewritten original input/capture/terminal state and changed known fulfillment winner.
-All current model/transport tests pass22; log .test-results/curation-studio-model-a.log.
-
-## Browser continuation notes
-
-UI_Coding_Guidelines.md and Interaction_References.md already read this turn.
-Owning plan UI-01.08 now documents P3.3 user's question/action, layout and three units.
-One region owner plus lazy capability-detail lane. Selection from scoped navigation,
-not a new unapproved listing API; P4 submission will return the reference. Clear/fence
-late/reentrant responses, denial, context replacement, hidden and disposed regions.
-16 bounded gap rows; descriptive purpose, typed ports, applicability/criteria and
-pending/rejected/verified historical evidence. Preserve unknown versus empty.
-Do NOT equate capability.proposal_sha256 with provider.output_sha256: canonical
-proposal and raw provider capture differ. Python floats may hash differently from
-JSON.stringify; use owner-reported digest plus exact scoped original gap bindings.
-Legacy campaign_origin supports one Knowledge graph; do not relabel requested heads
-or refreshed catalog as exact consumed model context. No scientific promotion.
-
-P3.3c: screenshots1440/390, keyboard/overflow/denial/late responses, truthful read-only
-fixtures. P4: curation submission/diff and additive Deployment successor launch.
-P5 actual owner/browser/live provider: ONE declared synthetic scope,4calls/$1 total,
-max$.25 ORIGINAL hold/call. No retry/refund/fallback/second-scope evasion. Zero paid
-calls so far. Credentials through environment only; no real keys read this turn.
+Commit exact P4.1 files (exclude user artifacts), push. Then P4.2 Studio curation
+submission/receipt recovery. Existing GET-only CurationClient/Model supports reads.
+Planning POST /v1/campaign-curations and POST /receipts/query already implemented;
+public contract campaign_curation frozen. Need exact original intent/idempotency,
+authenticated scope/actor, predecessor terminal cut, draft refs and selected context,
+bounded direction/policy, durable ambiguous-reply reconciliation. No paid calls.
+P4.3 owns graph diff/validation/successor controls; P4.4 actual scripted integration.
+Preserve multi-Knowledge refs, requested vs consumed context; never choose first.
+Read owning contracts/module README before extending UI; no user opaque-ID copying.
 
 ## Commands and guardrails
 

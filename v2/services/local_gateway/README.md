@@ -121,3 +121,7 @@ regressions. Browser consumes published Planning contracts, never peer implement
 Gateway0.6 curation boundary qualified:84 source/boundary checks and78 fresh-wheel
 checks, including localhost HTTP/TLS and legacy transport. Independent evidence:
 curation-gateway-installation-20261012a/evidence.json. No live demo upgrade.
+
+Gateway0.7: launch_routes owns exact fresh/successor method/path pairs, bounded
+request/response bodies and read-only receipt routes. Successor requests use the
+existing private Deployment credential; no operator-control route is forwarded.

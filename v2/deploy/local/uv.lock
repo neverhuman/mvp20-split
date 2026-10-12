@@ -26,6 +26,31 @@ requires-dist = [
 ]
 
 [[package]]
+name = "amphora-contracts-campaign-successor-launch"
+version = "0.1.0"
+source = { editable = "../../contracts/campaign_successor_launch" }
+dependencies = [
+    { name = "amphora-contracts-campaign-launch" },
+    { name = "amphora-contracts-commands" },
+    { name = "amphora-contracts-core" },
+    { name = "amphora-contracts-draft-successor" },
+    { name = "amphora-contracts-graph-runtime" },
+    { name = "amphora-contracts-runtime" },
+    { name = "pydantic" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-campaign-launch", editable = "../../contracts/campaign_launch" },
+    { name = "amphora-contracts-commands", editable = "../../contracts/commands" },
+    { name = "amphora-contracts-core", editable = "../../contracts/core" },
+    { name = "amphora-contracts-draft-successor", editable = "../../contracts/draft_successor" },
+    { name = "amphora-contracts-graph-runtime", editable = "../../contracts/graph_runtime" },
+    { name = "amphora-contracts-runtime", editable = "../../contracts/runtime" },
+    { name = "pydantic", specifier = ">=2.12,<3" },
+]
+
+[[package]]
 name = "amphora-contracts-campaigns"
 version = "0.4.1"
 source = { editable = "../../contracts/campaigns" }
@@ -67,6 +92,21 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [{ name = "pydantic", specifier = ">=2.12,<3" }]
+
+[[package]]
+name = "amphora-contracts-draft-successor"
+version = "0.1.0"
+source = { editable = "../../contracts/draft_successor" }
+dependencies = [
+    { name = "amphora-contracts-commands" },
+    { name = "amphora-contracts-graph-runtime" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "amphora-contracts-commands", editable = "../../contracts/commands" },
+    { name = "amphora-contracts-graph-runtime", editable = "../../contracts/graph_runtime" },
+]
 
 [[package]]
 name = "amphora-contracts-graph-runtime"
@@ -129,10 +169,11 @@ requires-dist = [
 
 [[package]]
 name = "amphora-deployment"
-version = "0.18.3"
+version = "0.19.0"
 source = { editable = "." }
 dependencies = [
     { name = "amphora-contracts-campaign-launch" },
+    { name = "amphora-contracts-campaign-successor-launch" },
     { name = "amphora-contracts-commands" },
     { name = "amphora-contracts-core" },
     { name = "amphora-contracts-graph-runtime" },
@@ -143,6 +184,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "amphora-contracts-campaign-launch", editable = "../../contracts/campaign_launch" },
+    { name = "amphora-contracts-campaign-successor-launch", editable = "../../contracts/campaign_successor_launch" },
     { name = "amphora-contracts-commands", editable = "../../contracts/commands" },
     { name = "amphora-contracts-core", editable = "../../contracts/core" },
     { name = "amphora-contracts-graph-runtime", editable = "../../contracts/graph_runtime" },
