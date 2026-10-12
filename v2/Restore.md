@@ -1,9 +1,8 @@
 # Restore
 
-Refreshed: 2026-10-12 09:06:13 America/Chicago. Read FIRST after compaction.
+Refreshed: 2026-10-12 11:11:27 America/Chicago. Read FIRST after compaction.
 Continue until a real blocker. No agents/JARVIS; v1 read-only. Preserve untracked
-ocular PDF/DOCX. No source/test edits while checks run. All qualification processes
-finished and drained; serving demo remains unchanged.
+ocular PDF/DOCX. No source/test edits while checks run. Preparation82839 FINISHED PASS/drained; serving demo unchanged. No active verification sessions.
 
 ## Current gate and owner decision
 
@@ -13,9 +12,24 @@ Correction08a=83.33: offline/install100, live scenarios50. UI01 -> UI02 -> POP01
 -> ML01; LR01 paused25. Current gate P5.2 supported graph remains unmet.
 UI-01.08b Schema-constrained qualification.md is a concrete proposed correction:
 additive v3 strict provider schema, preserve v1/v2/public contracts, then ONE extra
-supported call/$0.25; exact scope ceiling7/$1.75. NOT APPROVED OR IMPLEMENTED.
-All six approved original slots/$1.50 are used. NO MORE PAID CALLS AUTHORIZED.
+supported call/$0.25; exact scope ceiling7/$1.75. APPROVED2026-10-12 11:04:00; implementation active.
+All six approved original slots/$1.50 are used. ONE additional supported call/$0.25 authorized AFTER offline/install/freeze gates.
 Four live calls report $0.242380500 actual cost; original holds never refunded.
+
+## Active v3 implementation
+
+Approved08b2026-10-12 11:04:00. Planning0.129.0 v3 strict schema/profile fit.v5;
+exact scope7/$1.75. Source96168FINISHED135PASS; final52877FINISHED51PASS.
+Installation5393FINISHEDPASS:curation-planning-installation-20261012d/owner.
+Boundary90349PASS. Isolated owners.json now uses d; original backed upowners-pre-v3,
+planning-pre-v3; policy list adds internal-curation-v3. Preparation82839 FINISHED PASS,
+logcuration-v3-preparation-a.log, outputcuration-live-v3-20261012a.
+Installed material_v3 reproduces all four originalv1/v2 envelopes and original
+acceptance outcomes. No keyread/providercall yet. ONE approved supported call after
+preparationfreeze/ledger; use run.py with new qualification, scenario supported.
+Correction66.67% (source100/install-freeze100/live0), parent unchanged90.
+Next commit/push verifiedsource, then run ONE approved supported original request.
+Source/probe additionsmaterial_v3.py/prepare_v3.py; legacyhelpers unchanged.
 
 ## Latest evidence
 

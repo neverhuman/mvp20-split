@@ -16,8 +16,8 @@ from ..curation_input.test_profile import curation_plan
 from ..openai_provider.test_adapter import response
 
 
-def source(**changes):
-    plan = curation_plan(maximum=262144)
+def source(version="1", **changes):
+    plan = curation_plan(maximum=262144, version=version)
     value = plan.request.document().model_dump(mode='json')
     limits = dict(max_attempts=1, max_output_tokens=8192, total_tokens=270336,
                   total_accounting_units=250000000, accounting_unit='usd_nanodollars')
@@ -26,8 +26,9 @@ def source(**changes):
     return replace(plan, request=request(value))
 
 
-def test_one_exact_send_with_narrowed_deadline_and_closed_scope():
-    selected = source()
+@pytest.mark.parametrize("version", ["1", "2", "3"])
+def test_one_exact_send_with_narrowed_deadline_and_closed_scope(version):
+    selected = source(version=version)
     packet = prepare(selected).packet
     calls, settings = [], []
     def factory(key, **configuration):
@@ -101,3 +102,19 @@ def test_additive_transport_limit_does_not_widen_existing_profiles():
     with pytest.raises(ValueError, match='openai_http_body'): legacy.send(b' ' * 65537)
     with pytest.raises(ValueError, match='openai_http_body'): curation.send(b' ' * 262145)
     assert not connections
+
+
+@pytest.mark.parametrize('status,content', [('incomplete', None), ('completed', [{'type': 'refusal', 'refusal': 'no'}])])
+def test_v3_refusal_and_incomplete_never_become_accepted_output(status, content):
+    selected = source(version='3')
+    calls = []
+    def send(raw):
+        calls.append(raw)
+        return response(status=status, content=content)
+    adapter = CurationOpenAI('test-only', scope=selected.request.document().reference.scope,
+        egress='approved_synthetic_engineering_only', transport_factory=lambda *_a, **_k: SimpleNamespace(send=send))
+    reply = adapter.reply(AttemptBinding(selected.request, 1), prepare(selected).packet.canonical,
+                          deadline_unix_ms=int(time.time() * 1000) + 10000)
+    with pytest.raises(TimeoutError, match='openai_output_incomplete'):
+        b''.join(reply.chunks)
+    assert len(calls) == 1 and reply.usage.certainty == 'reported'

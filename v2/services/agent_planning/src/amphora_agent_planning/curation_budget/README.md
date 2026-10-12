@@ -41,3 +41,5 @@ Tests: tests/curation_budget. Replacement gates: competing fourth-slot reservati
 exact replay, under/overreservation, unknown hold, primary/late overage before new
 issuance, no second physical ticket, legacy budget regressions. This is bounded
 local admission accounting, not a guarantee against remote billing anomalies.
+
+UI-01.08b approval2026-10-12 11:04:00 extends only the same exact scope to seven/$1.75 original holds: one additional supported call/$0.25 after offline qualification. Six older holds remain. Default scopes stay four/$1; no refund or reset.

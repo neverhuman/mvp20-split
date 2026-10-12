@@ -64,10 +64,15 @@ def verify(root, serving, qualification, scenario, key_file):
         assert hashlib.sha256((qualification / name).read_bytes()).hexdigest() == digest, 'Frozen live preparation changed'
     declaration = read(qualification / 'scope-declaration.json')
     allowance = read(qualification / 'live-allowance.json')
-    assert allowance['maximum_new_physical_calls'] == 2
-    assert declaration['maximum_total_slots'] == 4 or (
-        declaration['maximum_total_slots'] == 6 and declaration['maximum_original_units'] == 1500000000
-        and declaration['authorization'] == 'UI-01.08a')
+    if declaration['authorization'] == 'UI-01.08b':
+        assert scenario == 'supported' and allowance['maximum_new_physical_calls'] == 1
+        assert declaration['maximum_total_slots'] == 7 and declaration['maximum_original_units'] == 1750000000
+        assert allowance['maximum_new_original_units'] == 250000000
+    else:
+        assert allowance['maximum_new_physical_calls'] == 2
+        assert declaration['maximum_total_slots'] == 4 or (
+            declaration['maximum_total_slots'] == 6 and declaration['maximum_original_units'] == 1500000000
+            and declaration['authorization'] == 'UI-01.08a')
     original = read(serving / 'integrated-evidence.json')
     scope = original['scope']
     assert scope == declaration['scope'] == allowance['scope']

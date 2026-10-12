@@ -9,14 +9,14 @@ Structure adapted from the user-authorized read-only JARVIS MBT review on `2026-
 ## Program Tracker
 
 - Status: UI-01 primary active; LAN-01 accepted/archived. LR-01 remains conditional; completed plans remain closed.
-- Last refreshed: 2026-10-12 09:06:13 (America/Chicago).
+- Last refreshed: 2026-10-12 11:11:27 (America/Chicago).
 - Baseline: [Product Requirements](../Architecture/Requirements/Product_Requirements.md), [Master Architecture](../../Architecture.md).
 - Current priority: schedule UI-01 Knowledge/run/LLM integration and UI-02 formula/structure views for2026-10-12 through2026-10-16; preserve the live demo.
 - Primary active task: UI-01/N3/I1, implementing approved [UI-01.08](UI-01.08%20Campaign%20curation%20boundary%20decision.md), P1=100%, P2=100%, P3=100%,P4=100%,P5=50%, child90%. N2=100%; launch/provenance remain closed. UI-01.05 K1/R1=100%, I1=90%, child96.67%.
-- Next task: UI-01.08b provider-schema correction and one additional supported call pending owner approval; return P5.2, then P5.4. UI-02 -> POP-01 -> ML-01 remain ordered.
+- Next task: UI-01.08b provider-schema correction and one additional supported call approved2026-10-12 11:04:00; offline verification active; return P5.2, then P5.4. UI-02 -> POP-01 -> ML-01 remain ordered.
 - Implementation completion: LAN-01=100%; UI-01 active78%, Build97.5%, Verification0%; UI-02=0%, P1/P2/P3/P4=0%; LR-01 paused25%, Build33.33%, Acceptance0%.
-- Blockers/dependencies: Supported live graph fails schema nesting. All six slots/$1.50 original holds used; no further provider call authorized. Missing-capability P5.3 passed independently.
-- Latest checkpoint: Planning0.128.0 missing-capability original, retained request and actual owner/browser1440/390 pass. UI-01.08=90/P5=50; correction08a=83.33. Evidence UI-01.08-Live-v2.
+- Blockers/dependencies: Supported live graph fails schema nesting. All six slots/$1.50 original holds used; one additional $0.25 call approved after offline/install/freeze gates. Missing-capability P5.3 passed independently.
+- Latest checkpoint: 2026-10-12 11:11:27: Planning0.129.0 source135 plus final input/adapter51 checks pass; isolated installation, four original v1/v2 replays, dependency boundaries and actual-owner v3 preparation pass. Six original holds retained; one approved $0.25 slot remains. No key read or new call. Correction66.67%; parent90/P5=50 unchanged pending live supported successor.
 - Acceptance posture: N3/I1=90%, parent V1=0%; no full-engine acceptance or serving cutover. Four live calls reported $0.242380500; existing demo preserved.
 - Active exception: owner scheduled four targets for next week. Preserve earned phase credit; sequence the bounded cross-plan handoffs below. Pull LR-01/UI-R01 forward only when their faults block the scheduled integration, with exact return points.
 

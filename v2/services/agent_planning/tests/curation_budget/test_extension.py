@@ -13,13 +13,13 @@ from .test_journal import entry
 def test_extension_requires_exact_tenant_and_project():
     tenant, project = ceiling.REVIEWED_EXTENSION
     approved = ceiling.ceiling_for({'tenant': tenant, 'project': project})
-    assert (approved.maximum_calls, approved.maximum_units, approved.authorization) == (6, 1500000000, 'UI-01.08a')
+    assert (approved.maximum_calls, approved.maximum_units, approved.authorization) == (7, 1750000000, 'UI-01.08b')
     for key in ({'tenant': 'other', 'project': project}, {'tenant': tenant, 'project': 'other'}):
         default = ceiling.ceiling_for(key)
         assert (default.maximum_calls, default.maximum_units) == (4, 1000000000)
 
 
-def test_original_four_holds_survive_extension_and_sixth_slot_race(stored, monkeypatch):
+def test_original_four_holds_survive_extension_and_seventh_slot_race(stored, monkeypatch):
     ledger = BudgetLedger(stored.engine)
     originals = [entry(stored, 'original-' + str(i)) for i in range(4)]
     retained = [ledger.reserve(stored.principal, *pair) for pair in originals]
@@ -29,7 +29,9 @@ def test_original_four_holds_survive_extension_and_sixth_slot_race(stored, monke
     scope = stored.principal.scope
     monkeypatch.setattr(ceiling, 'REVIEWED_EXTENSION', (scope.tenant_id, scope.project_id))
     ledger.reserve(stored.principal, *fifth)
-    pairs = [entry(stored, 'sixth-' + str(i), version='2') for i in range(2)]
+    sixth = entry(stored, 'sixth', version='2')
+    ledger.reserve(stored.principal, *sixth)
+    pairs = [entry(stored, 'seventh-' + str(i), version='3') for i in range(2)]
     barrier = Barrier(2)
     def reserve(pair):
         barrier.wait(timeout=5)
@@ -44,8 +46,8 @@ def test_original_four_holds_survive_extension_and_sixth_slot_race(stored, monke
         assert BudgetLedger(stored.engine).reserve(stored.principal, *pair) == original
     with stored.engine.begin() as connection:
         check(connection, {'tenant': scope.tenant_id, 'project': scope.project_id})
-    # Dispatch sees the same six-slot policy, rather than the predecessor four-slot cap.
+    # Dispatch sees the same seven-slot policy, rather than the predecessor four-slot cap.
     assert DispatchJournal(stored.engine).issue(stored.principal, fifth[0], 30) is not None
     assert DispatchJournal(stored.engine).issue(stored.principal, fifth[0], 30) is None
     with pytest.raises(ValueError, match='curation_group_calls_exhausted'):
-        ledger.reserve(stored.principal, *entry(stored, 'seventh'))
+        ledger.reserve(stored.principal, *entry(stored, 'eighth', version='3'))
