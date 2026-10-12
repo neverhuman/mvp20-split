@@ -28,6 +28,8 @@ def check(condition, reason):
 
 
 class PublicationTransport:
+    media_types = frozenset({'application/json'})
+
     def __init__(self, endpoint, token, *, seconds=5):
         check(type(endpoint) is str and 1 <= len(endpoint) <= 512, "publication_endpoint")
         try:
@@ -49,7 +51,7 @@ class PublicationTransport:
         check(type(method) is str and method in ROUTES and type(path) is str and
               ROUTES[method].fullmatch(path) is not None, "publication_path")
         check(type(limit) is int and 0 <= limit <= 262144, "publication_response_limit")
-        check(media_type == "application/json", "publication_media_type")
+        check(media_type in self.media_types, "publication_media_type")
         check((method == "GET" and body is None) or
               (method != "GET" and type(body) is bytes and 0 < len(body) <= 1048576), "publication_request_limit")
         deadline = time.monotonic() + self.seconds

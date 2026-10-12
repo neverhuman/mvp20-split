@@ -46,3 +46,9 @@ This proves synthetic software ownership/recovery, not provider quality, machine
 PublishedHistory in origin.py owns the same-owner exact task/trace/observation/prior/finalized-interpretation loader shared by result and owner-handoff histories. Each wrapper restores its own selection and supplies its error-code prefix. This refactoring changes no trace/result bytes or source processing behavior; historical loads do not contact peers.
 
 Planning0.82: the pure upload transition machine uses identity.scope; existing trace/result identity getters return their unchanged original trace scope. Canonical identity, command bytes, hashes and transition rules are unchanged. Capture publication can use this machine without inventing an extraction trace.
+
+UI-01.08/P2.3c.1: PublicationTransport keeps application/json-only media by default;
+a closed DeclarationTransport subclass adds text/plain for reviewed configuration.
+Closed routes, wall-clock/byte bounds and strict JSON responses are unchanged.
+Pure upload transitions/driver are reused by curation_declaration without relabeling
+its payload as a trace or model capture. New journal/identity/event profile is separate.

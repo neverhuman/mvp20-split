@@ -1,63 +1,50 @@
 # Restore
 
-Refreshed2026-10-11 22:52:39 America/Chicago. Read FIRST after compaction.
-Continue until needed persists across commits/milestones. No subagents/JARVIS.
-v1 read-only; preserve user untracked ocular PDF/DOCX. No source/tests/module README
-edits while tests/installations run. Immutable serving processes are okay.
+Refreshed 2026-10-11 23:16:57 America/Chicago. Read FIRST after compaction.
+Continue until needed persists across milestones and commits. No subagents/JARVIS.
+v1 read-only. Preserve untracked ocular PDF/DOCX. No source/test/module README
+edits while tests/installations run. Serving demo uses immutable copies.
 
 ## Canonical position
 
-UI-01.08 approved, active P2.3c managed worker and original compiler integration.
-Child33.33%; P1=100%, P2=66.67%, P3/P4/P5=0%. P2.1/P2.2=100%,
-P2.3=66.67% (a100,b100,c0), P2.4=0%. b.1 fenced jobs complete, b.2=100%: public context and durable linkage complete.
-UI01 overall66.67%, Build83.33%, Verification0%; G1/N1/N2=100%,N3/I1=33.33%.
-UI01.05=77.78%;K1/R1=100%. UI01.06/07 closed100. Order UI01->UI02->POP01->ML01.
-LR01 paused25%/Build33.33%. Universal result index remains separately unapproved.
+UI-01.08 approved; active P2.3c.2 provider/compiler/job-state integration.
+Child33.89%; P1=100%, P2=69.44%, P3/P4/P5=0%. P2.1/P2.2=100%,
+P2.3=77.78% (a100,b100,c33.33), P2.4=0%. c.1 policy/publication100%;
+c.2 provider/compiler/job state0%; c.3 managed process/recovery0%.
+UI01 overall66.78%,Build83.47%,Verification0; UI01.05=77.96%,I1=33.89%.
+UI01.06/07 closed100. Order UI01->UI02->POP01->ML01; LR01 paused25/Build33.33.
+Universal result index remains separately unapproved.
 
-## Latest checkpoint and next work
+## Latest verified checkpoint
 
-P2.3a e20b4a26 pushed: fixed4-call/$1 qualification cap, maximum$0.25 reservation;
-unknown/unissued holds not refunded; exact-scope direct OpenAI adapter.
-P2.3b.1 765e00af pushed: Planning0.112/planning0023 adds curation_jobs fenced
-claim/reclaim/heartbeat, immutable progress/failure. GET current projection,
-receipt query original queued acknowledgment.46 job/intake/HTTP/boundary checks.
-1e4c9f66 pushed: Planning0.113 multi-graph context and required untrusted intent;
-78graph/replay and69intent/context checks passed. Compiler issue corrected below.
+189affbc pushed Planning0.117/planning0024 original context/durable linkage.
+Working Planning0.118/planning0025: reviewed policy/declaration publication100%.
+138 policy/declaration/legacy publication checks,10 final recovery/identity/CAS/
+loopback checks,20 HTTP/boundary checks passed. All tests FINISHED. No source
+rights grants, provider calls or live deployment changes. Sync locks then commit.
 
-Working Planning0.114: curation_knowledge reads original heads via public Knowledge
-profile/snapshot/change routes, at most8 heads,3calls/15seconds/head,30seconds
-collection deadline. Whole-head<=256entity/256assertion revisions or explicit gap;
-no latest-head repinning or silent first-N sampling. Required curation_knowledge
-summary cross-checks original intent and matching successful graph projections.
-67initial/83final tests pass. Fixed curation_context intent binding: provider
-engagement=curation-call-<original command SHA>, while decision_scope remains the
-reviewed compiler declaration SHA.0.113 incorrectly repurposed decision_scope;
-no curation was executed before correction.114regressions and1focused original
-intent/declaration/model-graph compiler test pass. No tests currently running.
-Locks/version0.114 synced; commit/push this checkpoint next; do not rerun all
-passed scopes solely because of metadata version. Zero paid calls throughout.
+curation_policy builds declaration from reviewed immutable limits plus original
+Runtime context. curation_declaration stores original policy/command/Runtime bytes,
+then publishes derived configuration via existing Data APIs. Fenced immutable
+history recovers lost begin/finalize; uncertain PUT creates bounded replacement
+upload, not repeated same PUT. Foreign Data client rejected before registration.
+DeclarationTransport alone permits text/plain; old transport unchanged.
 
-NEXT b.2: actual bounded Runtime original draft/predecessor context reads, complete
-Registry/Research/Data context assembly, durable request/preparation/job linkage.
-CurationIntent.from_template admits server roots with no hidden entries/omissions;
-selected human Artifacts become explicit optional entries. Later policy builder
-must bind a DecisionDeclaration to derived engagement and publish its required
-Artifact; decision_scope is its digest. Existing compiled policy remains unchanged.
-CurationKnowledgeReader and packet factories are implemented; no worker loop yet.
+CurationIntent engagement hashes original command; decision_scope remains reviewed
+declaration digest. Full prepared context includes original Runtime graph/run,
+Data processing, bounded Registry/Runtime schemas,1..8Knowledge heads/gaps and
+original Research selection. No private peer access or latest-head repinning.
 
-Known P2.3c integration gap: campaign_origin/knowledge.py currently requires1graph
-and public CampaignOriginV2 has one knowledge field. Resolve explicit multi-graph
-provenance before qualifying compiler; never silently drop extra graphs. Actual
-Runtime/capability/successor APIs have not been replaced or newly deployed.
+P2.3c.2 needs once-only original provider/observation/compiler integration; c.3
+managed worker/process. Use existing PlanningRunner.execute (one attempt), not
+new paid retry logic. Budget stops must include curation group reasons.
+No keys read and ZERO paid calls. P5 only: one declared synthetic scope,4calls/$1,
+max$.25 held per call; no fallback/retry/refund or second-scope budget evasion.
 
-## Verification/evidence
-
-.test-results/curation-jobs-a/b.log32/46pass.
-curation-multigraph-a.log78pass;curation-context-a.log69pass.
-curation-knowledge-a/b.log67/83pass;curation-context-policy-a.log114pass.
-curation-intent-compiler-a.log1pass: original intent plus reviewed declaration and
-unchanged model graph through AuthoringPlan (scripted provider, no paid I/O).
-Source migration0023 applied only to owned test fixture; serving demo0021 unchanged.
+Multi-graph provenance limitation: legacy OriginProjection READ requires1graph;
+compiler save itself uses OriginIndex pointers and is not blocked. Approved
+CurationView retains original heads/proposal/draft. Resolve truthful multi-graph
+read/UI before qualification; never silently take first graph or claim complete.
 
 ## Commands and guardrails
 
@@ -111,43 +98,3 @@ Isolated owners: v2/.test-results/origin-installation-20261011a/{planning,gatewa
 python is environment/Scripts/python.exe (NOT .venv). Deployment0.18.3 at
 launch-live-installation-20261009e. Other independent owners remain Runtime0.65,
 Data0.30/Registry0.1/Research0.40/Knowledge0.18. LAN --baseline is gateway.json.
-
-2ff34e0d pushed: Planning0.114 Knowledge reads/intent correction. Planning0.115 tested:
-curation_runtime exact saved graph/predecessor read + required replay-validated lane;
-closed metadata draft GET added. 96 Runtime/HTTP/replay/boundary tests pass; no tests running or live calls.
-0.115 locks synced; commit/push next; next complete context assembler then durable linkage.
-
-758c1580 pushed: Planning0.115 exact Runtime context qualified96checks. Working
-curation_preparation assembler composes original Runtime, Data processing reads,
-Registry max200 releases/2pages, Runtime schemas, Knowledge heads and Research
-questions/needs.41initial checks pass; mixed Knowledge/Research gap regression
-added, pending final run. No SQL/model calls; next durable preparation/job linkage.
-
-Latest: Planning0.116 complete public-owner assembly,41combined/4focused cases
-pass including mixed Knowledge/Research gap. All tests finished. Sync locks then
-commit/push. Next curation_preparation durable linker: register original request
-and CampaignPreparation via existing immutable journals, then fence and atomically
-link curation to exact request/preparation/envelope + awaiting_provider progress.
-Provider engagement derived from command SHA permits replacement recovery before
-new peer reads; no model issuance during linkage. Need migration0024 link table.
-All existing command/receipt/preparation bytes remain immutable. Read original
-journals on restart; no repeating provider call. No paid calls this turn.
-
-2d5ceab8 pushed Planning0.116/public assembly. Uncommitted durable linkage:
-curation_preparation/link.py FrozenInput + recover/freeze/attach; migration0024
-immutable curation_preparation_links; job prepared transition and API readiness.
-Recovery serializes linkage snapshot under job lock; no peer/model I/O inside SQL.
-Five SQL recovery/fencing/grants/race tests written; next run linkage and job/API
-regressions. No current tests/installations running before starting that run.
-
-LATEST P2.3b complete: Planning0.117/planning0024,55initial+67final SQL/recovery/
-legacy journal/boundary checks pass. FrozenInput/recover/freeze/attach now qualified.
-All tests done. Sync0.117 locks then commit/push. NEXT P2.3c independent managed
-curation worker plus original compiler handoff: freeze reviewed per-command policy/
-declaration via existing Data APIs, recover prepared input, once-only budget/issue/
-observation, exact compiler save/validate, and durable job progress. No paid calls
-until P5 synthetic qualification. Demo installation remains Planning0.107/0021.
-Important refinement: legacy single-graph OriginProjection runs during provenance
-READ, not save; OriginIndex stores pointers. Compiler save is not itself blocked
-by its one-graph DTO, but multi-graph legacy read needs an explicit truthful approach
-under approved curation/provenance UI before qualification. Do not silently drop.
