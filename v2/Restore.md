@@ -7,7 +7,7 @@ Do not edit source/tests/module READMEs during verification/installation.
 
 ## Current canonical task
 
-UI-01.07 approved provenance API: P1/P2/P3=100%, P4 active0%, child75%.
+UI-01.07 approved provenance API: P1/P2/P3=100%, P4 active25%, child81.25%.
 Parent UI01/N2.2 remains50%; N2=81.25%; UI01=56.25%, Build70.31%, Verification0%.
 UI01.05 K1/R1=100%, I1=0%, child66.67%; UI01.06 launch closed100%.
 Next after P4: parent N2.3/N2.4, then N3/I1; UI01 -> UI02 -> POP01 -> ML01.
@@ -15,7 +15,7 @@ LR01 paused25%/Build33.33%. UI01.01 remains separate/unapproved; bounded alterna
 
 ## Latest checkpoint
 
-P1 pushed49c28ac1; P2 ca056004; P3 API1a43c1ea. Studio0.24 checkpoint ready to commit.
+P1 pushed49c28ac1; P2 ca056004; P3 API1a43c1ea. Studio0.24 pushed9cea8028.
 Planning0.107/Gateway0.5/contractsPlanning0.13; private migration0021.
 69 API/Gateway plus29 actual-SQL API tests pass; prior38 index/compiler and43
 projection/Knowledge/schema tests pass. No live installation upgraded.
@@ -31,7 +31,29 @@ then public origin route/Studio/launch and scoped audit. Deterministic provider 
 no N3/live-model credit. Existing install_owner_peer helper can build isolated owners.
 verify_planning_dispatch.py is old (version pins0.20.2 etc), reuse patterns carefully.
 Do not fabricate origins for manually authored drafts. Production peer-private imports forbidden.
-No tests/installations running at checkpoint. No owner blocker.
+P4 isolated installation complete:206 Planning +58 Gateway tests PASS.
+Evidence origin-installed-tests-20261011b uses installed wheels origin-installation-20261011a.
+Trial A193passed/13failed missing supervision fixtures; corrected copy + targeted
+rerun passes, original evidence preserved. No tests/installations running now.
+P4=25% (installation done; actual scientific compiler, browser, audit remain), child81.25%.
+verify_campaign_origin_installation.py ready to commit with this checkpoint.
+No owner blocker. Live ports57013/57018/57021 had no listeners on inspection.
+Current live source v2/.test-results/launch-live-20261009g has SIX owners, no Planning.
+Need immutable successor configuration adding Planning0.107/read_campaign_origin,
+Gateway0.5/Studio0.24, enabling public Research declarations/reads if needed.
+Existing Knowledge context is under v2/.test-results/knowledge-context-b.
+Launch graph/pinned artifacts remain original synthetic four scientific nodes + finish.
+Use a deterministic provider through actual Planning preparation/compiler and Runtime
+save; do not add an origin to the manually saved prior draft.
+Planning model fixture profile currently deterministic/adversarial-fixture; label honestly,
+no live reasoning/N3 credit. Public Research POST /v1/questions and /v1/evidence-needs
+are available with declarations:true and separate grants (no owner-private fixture needed).
+Data roots/decision-v2 need actual publication + read/process source rights before hashing.
+CampaignGraphSelection + ResearchSelection must be added to original CampaignSlicePlan
+before packet/observation hashing, never after. Compiler refresh needs Research reader.
+Original demo installed owners Runtime0.65/Data0.30/Registry0.1/Research0.40/Knowledge0.18.
+New Planning install has all current contracts; independent public compatibility must pass.
+
 
 Live notes below are prior Oct9 state;24h helpers may have expired. Inspect before use.
 

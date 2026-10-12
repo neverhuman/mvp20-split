@@ -433,3 +433,9 @@ verify_worker_reliability.py owns LR-01's fixed three-trial no-model baseline.
 It invokes the existing managed campaign path with new scopes/configurations,
 preserves every failed history, and stops the series if drain is unverified.
 The trial ledger is diagnostic evidence, not a repair or reliability guarantee.
+
+UI-01.07: verify_campaign_origin_installation.py qualifies prebuilt isolated Planning
+and Gateway wheels using copied module tests and owned fixture PostgreSQL. It keeps
+credentials in environment, preserves failed evidence and can retry only the known
+missing-supervision-fixture group while retaining previously passed cases. It never
+establishes scientific peer or browser acceptance and does not touch the demo database.
