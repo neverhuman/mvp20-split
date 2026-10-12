@@ -1,0 +1,94 @@
+{
+  "capability_requests": [],
+  "proposal": null,
+  "provider": {
+    "attempt": {
+      "engagement": {
+        "engagement_id": "curation-call-2349703d65699f593c3f3d9611e726d4c0e0c82780883a833467e6f4c9440dcf",
+        "scope": {
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+          "tenant_id": "internal"
+        }
+      },
+      "ordinal": 1,
+      "request_sha256": "45c90ff30338f42d8b14d5b366377981ea601fffc28724f643735d523d6efbb1"
+    },
+    "envelope_sha256": "167a7126d11c43918c696dc53d8c4240816035512e9c4d9b66994233ddb9ab81",
+    "output_sha256": "bfd48b937e064091f442b7b97e3b3a97023f5cfb11cceaeb8a75fafe013b8d0d",
+    "reservation_units": 250000000,
+    "usage": {
+      "accounting_units": 80616750,
+      "certainty": "reported",
+      "input_tokens": 93077,
+      "output_tokens": 2402
+    }
+  },
+  "receipt": {
+    "created_at": "2026-10-12T10:55:10.954685Z",
+    "identity": {
+      "actor_id": "admin",
+      "command_family": "planning.curate_campaign",
+      "command_id": "ef313af572ce4e9b9acb2a8587abe7ad",
+      "schema_version": "1",
+      "scope": {
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+        "tenant_id": "internal"
+      }
+    },
+    "phase": "failed",
+    "reason_code": "model_output_invalid",
+    "reference": {
+      "curation_id": "curation-063f9188cffa7f1454623c252a9f35b8537c7e7a8d2052ffa6a4f06aa73075dc",
+      "scope": {
+        "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+        "tenant_id": "internal"
+      }
+    },
+    "request_sha256": "2349703d65699f593c3f3d9611e726d4c0e0c82780883a833467e6f4c9440dcf",
+    "revision": 3,
+    "updated_at": "2026-10-12T10:55:38.578879Z",
+    "wire_version": "1"
+  },
+  "specification": {
+    "context": {
+      "artifacts": [
+        {
+          "artifact_id": "98228b80754543f3bb7eb666dbbae661",
+          "media_type": "application/json",
+          "schema_ref": {
+            "schema_id": "search.specification",
+            "sha256": "e829b92d2145b0916847b06cb6e73c4a5aea17addea8bbdd1e9706dbd1cc79a7",
+            "version": "1"
+          },
+          "scope": {
+            "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+            "tenant_id": "internal"
+          },
+          "sha256": "d14234f2432410742138825bf475ab4e32f442315a6c75a3003e1d627b65d0b1",
+          "size_bytes": 1749
+        }
+      ],
+      "draft": {
+        "content_sha256": "9e3b725872892f3e7ff0db393e1341b9c8a359eb05eae48b5e3d24081ca6a7f9",
+        "draft_id": "curation-fixture-curation-owner-20261012a-original",
+        "revision": 1,
+        "scope": {
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336",
+          "tenant_id": "internal"
+        }
+      },
+      "knowledge": [],
+      "needs": [],
+      "predecessor": {
+        "plan_sha256": "a40d42aff4b53b0c28e8ca5e6b6736c6484a53fa2c43210a58170f78523a0373",
+        "revision": 9,
+        "run_id": "f44f4f297b4a4622b54d2dd8399048c6"
+      },
+      "questions": []
+    },
+    "direction": "Plan a synthetic research process that combines two molecular components, heats the combined mixture, then adds a third component. No actual laboratory operation or chemical protocol is requested. The installed numeric seed/evaluator tools cannot perform these molecular or mixture operations. Identify the missing typed capabilities, their applicability, expected evidence and acceptance criteria. Do not substitute a numeric search tool or invent an installed release. Return structured missing-capability requests when the inventory cannot express this process. Do not claim that a requested tool is fulfilled.",
+    "policy_id": "internal-curation-v1"
+  },
+  "validated_draft": null,
+  "wire_version": "1"
+}

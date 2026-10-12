@@ -1,0 +1,120 @@
+{
+  "status": "passed",
+  "scope": "actual failed live curation records",
+  "screenshots": [
+    "supported-failure-1440.png",
+    "supported-failure-390.png",
+    "missing-failure-1440.png",
+    "missing-failure-390.png"
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/planning/v1/campaign-curations/curation-73f62b45e4c0b5d964362cc60ac6382d4f7d4604b5a8a2338265ec9e1f8c875f"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes"
+    },
+    {
+      "method": "GET",
+      "path": "/api/deployment/v1/campaign-launches/6603d839d5a443cdad89d41eaaf80350"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes/59a880f5262d314753d755d22b0ab8c2f2d2cc86dbe8ce34f3cddca121aaebb0"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes/59a880f5262d314753d755d22b0ab8c2f2d2cc86dbe8ce34f3cddca121aaebb0"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes/76a131e1035f8e99c3e99f0003ff643928d4fc180da972ee0a95b4ee985544ea"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/definition-drafts/curation-fixture-curation-owner-20261012a-original"
+    },
+    {
+      "method": "GET",
+      "path": "/api/planning/v1/campaign-curations/curation-73f62b45e4c0b5d964362cc60ac6382d4f7d4604b5a8a2338265ec9e1f8c875f"
+    },
+    {
+      "method": "GET",
+      "path": "/api/planning/v1/campaign-curations/curation-73f62b45e4c0b5d964362cc60ac6382d4f7d4604b5a8a2338265ec9e1f8c875f"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes"
+    },
+    {
+      "method": "GET",
+      "path": "/api/deployment/v1/campaign-launches/6603d839d5a443cdad89d41eaaf80350"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes/59a880f5262d314753d755d22b0ab8c2f2d2cc86dbe8ce34f3cddca121aaebb0"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes/76a131e1035f8e99c3e99f0003ff643928d4fc180da972ee0a95b4ee985544ea"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes"
+    },
+    {
+      "method": "GET",
+      "path": "/api/planning/v1/campaign-curations/curation-063f9188cffa7f1454623c252a9f35b8537c7e7a8d2052ffa6a4f06aa73075dc"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes/59a880f5262d314753d755d22b0ab8c2f2d2cc86dbe8ce34f3cddca121aaebb0"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes/76a131e1035f8e99c3e99f0003ff643928d4fc180da972ee0a95b4ee985544ea"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/definition-drafts/curation-fixture-curation-owner-20261012a-original"
+    },
+    {
+      "method": "GET",
+      "path": "/api/planning/v1/campaign-curations/curation-063f9188cffa7f1454623c252a9f35b8537c7e7a8d2052ffa6a4f06aa73075dc"
+    },
+    {
+      "method": "GET",
+      "path": "/api/planning/v1/campaign-curations/curation-063f9188cffa7f1454623c252a9f35b8537c7e7a8d2052ffa6a4f06aa73075dc"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes"
+    },
+    {
+      "method": "GET",
+      "path": "/api/deployment/v1/campaign-launches/6603d839d5a443cdad89d41eaaf80350"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes/59a880f5262d314753d755d22b0ab8c2f2d2cc86dbe8ce34f3cddca121aaebb0"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/graph-observations/f44f4f297b4a4622b54d2dd8399048c6/nodes/76a131e1035f8e99c3e99f0003ff643928d4fc180da972ee0a95b4ee985544ea"
+    },
+    {
+      "method": "GET",
+      "path": "/api/runtime/v1/definition-drafts/curation-fixture-curation-owner-20261012a-original"
+    }
+  ]
+}

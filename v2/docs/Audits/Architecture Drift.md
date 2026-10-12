@@ -1,7 +1,7 @@
 # Architecture Drift
 
 - Status: BP-01 through BP-09 closed/audited; named successor findings remain.
-- Last refreshed: `2026-10-12 05:34:30` (America/Chicago).
+- Last refreshed: `2026-10-12 06:01:28` (America/Chicago).
 - Scope: unresolved v2 design/implementation alignment and scoped successor boundaries.
 - Active focus: selected-host integration and named scientific/UI successor limits.
 - Next gate: UI-01.08/P5 live qualification and cutover. P3/P4.3 complete; P5 live qualification and cutover remain. LR-01 paused; UI-R01 retains feedback-read follow-up.
@@ -10,6 +10,7 @@
 
 | Finding | Owner / trigger | Disposition |
 |---|---|---|
+| Live curation output reliability fails both bounded scenarios | Planning/UI-01.08/P5.2 | Two original OpenAI responses rejected unchanged: graph nesting/hash/duplicate-key errors and missing-capability extra candidate:null. No successor/fulfilled request. Actual failure replay/browser1440/390 and original accounting pass; reported live spend$0.157331250, four slots/$1 held including P4. [UI-01.08a](../Build%20Plans/UI-01.08a%20Live%20curation%20qualification%20correction.md) proposes additive readable input profile and scoped two-call/$0.50 extension. Original profile/output validation stay immutable; no cutover or live acceptance claim. |
 | Integrated campaign curation/successor flow not yet qualified or served | UI-01/N3/I1, [UI-01.08](../Build%20Plans/UI-01.08%20Campaign%20curation%20boundary%20decision.md) | P1/P2/P3/P4.1-P4.3 complete; Studio0.34 scripted production workspace passes. P4.4 actual owners exposed missing Deployment curation policy configuration (0.19.1 repair) and wrong compiler reader composition (Planning0.127.1 repair). Scoped regressions pass; isolated original seed complete and exact retained proposal saved. Repeated fixed-schema generation also impeded compilation; Planning0.127.2/Contract0.1.1 preserve schema bytes with frozen identity memoization (98 focused checks; cold reconstruction32.5s->6.6s). Actual compiler/successor/carry and two-process receipt/failure recovery now pass (P4.4a/b100%). P4.4c actual browser1440/390 recovery also passes; P4 complete. P5 live qualification and cutover are not yet claimed. |
 | Default graph is a disconnected inventory; authored layout ignores dependencies | [UI-01](../Build%20Plans/UI-01%20Research%20Workspace%20Overhaul.md), G0/G1 first | Source correction verified by UI-01/G1: ELK routes authored links; automatic root/fit, nested scopes, selection and viewport retention pass actual-owner browser review. Candidate assets only; frozen demo unchanged, V1 replacement qualification remains. N1 question-first navigation also verified. |
 | SME evaluation logic absent from executed numerical demo | UI-01/N2.S then N2.2 | Local design-review MVP now exposes criteria, actual solvency procedure, assumptions, evidence gaps and aggregation, with future-only concern export/import.306 tests and served SME browser pass. UI-01.03 now executes two standalone scientific tools with four verified result inspectors; [scoped audit](UI-01.03_Scientific_Execution.md). Runtime Planning generation and automatic feedback consumption remain unimplemented in this view. No complete-engine acceptance. |

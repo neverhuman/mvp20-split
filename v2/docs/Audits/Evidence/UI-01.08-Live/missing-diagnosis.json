@@ -1,0 +1,128 @@
+{
+  "read_only": true,
+  "original_output_sha256": "bfd48b937e064091f442b7b97e3b3a97023f5cfb11cceaeb8a75fafe013b8d0d",
+  "duplicate_keys": [],
+  "additional_schema_errors_after_lenient_diagnostic_decode": [
+    {
+      "path": [
+        "outcome",
+        "request_capabilities",
+        "candidate"
+      ],
+      "type": "extra_forbidden",
+      "message": "Extra inputs are not permitted"
+    }
+  ],
+  "envelope_bytes": 201306,
+  "schema_bytes": 37415,
+  "schema_definitions": 57,
+  "context_bytes": 149967,
+  "slices": [
+    {
+      "lane": "artifact",
+      "bytes": 1087
+    },
+    {
+      "lane": "artifact",
+      "bytes": 968
+    },
+    {
+      "lane": "artifact",
+      "bytes": 1112
+    },
+    {
+      "lane": "artifact",
+      "bytes": 1377
+    },
+    {
+      "lane": "artifact",
+      "bytes": 3606
+    },
+    {
+      "lane": "curation",
+      "bytes": 2248
+    },
+    {
+      "lane": "curation_runtime",
+      "bytes": 3152
+    },
+    {
+      "lane": "registry_scan",
+      "bytes": 397
+    },
+    {
+      "lane": "runtime",
+      "bytes": 5270
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 718
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 21674
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 20844
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 8359
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 20382
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 7026
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 7614
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 9107
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 1067
+    },
+    {
+      "lane": "curation_knowledge",
+      "bytes": 654
+    },
+    {
+      "lane": "research",
+      "bytes": 776
+    },
+    {
+      "lane": "artifact",
+      "bytes": 3314
+    },
+    {
+      "lane": "registry_inventory",
+      "bytes": 2929
+    },
+    {
+      "lane": "registry_inventory",
+      "bytes": 2953
+    },
+    {
+      "lane": "registry_inventory",
+      "bytes": 2958
+    },
+    {
+      "lane": "registry_inventory",
+      "bytes": 3632
+    },
+    {
+      "lane": "registry_inventory",
+      "bytes": 2927
+    }
+  ],
+  "accepted_output": false,
+  "provider_calls": 0
+}

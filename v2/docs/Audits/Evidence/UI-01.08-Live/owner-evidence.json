@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "timestamp_local": "2026-10-12 05:58:26",
+  "scope": {
+    "tenant_id": "internal",
+    "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+  },
+  "failure_records": [
+    {
+      "scenario": "supported",
+      "curation_id": "curation-73f62b45e4c0b5d964362cc60ac6382d4f7d4604b5a8a2338265ec9e1f8c875f",
+      "output_sha256": "51c9544c6d034380f5acdf88fc9afebf5d3fddc95df20d7ac0fd26e799872f7e"
+    },
+    {
+      "scenario": "missing",
+      "curation_id": "curation-063f9188cffa7f1454623c252a9f35b8537c7e7a8d2052ffa6a4f06aa73075dc",
+      "output_sha256": "bfd48b937e064091f442b7b97e3b3a97023f5cfb11cceaeb8a75fafe013b8d0d"
+    }
+  ],
+  "original_receipt_replay": "unchanged",
+  "provider_calls_this_probe": 0,
+  "qualification_live_calls": 2,
+  "reported_live_cost_units": 157331250,
+  "original_held_units_including_P4": 1000000000,
+  "scientific_validity": "not_established"
+}

@@ -1,0 +1,249 @@
+{
+  "profile": "planning.campaign-curation-draft.v1",
+  "authority": "proposal_only",
+  "scientific_authority": "not_established",
+  "decision_scope": "15f087778fb395aa778a8adfca845ce6100e88c66de2a5c34868bae92f3c1c2a",
+  "rationale": "The supplied reviewed inventory only supports bounded synthetic numeric search/evaluation and does not include any capability for molecular component handling, mixture combination, heating, ingredient addition, laboratory process planning, or chemistry-specific validation. Because the user intent explicitly asks for a synthetic research process that combines two molecular components, heats the combined mixture, then adds a third component, the correct action is to request missing capabilities rather than fabricate a graph with unsupported primitives. The requested campaign therefore focuses on capability acquisition requirements needed before any future campaign can be proposed.",
+  "outcome": {
+    "kind": "request_capabilities",
+    "gaps": [
+      {
+        "gap_key": "molecular-mixture-process-planning",
+        "purpose": "Enable construction of a future campaign graph that can represent a sequential molecular process: combine two specified components, apply heating to the combined mixture, then add a third component. This is needed because the current reviewed tools only support synthetic numeric search and cannot express the requested chemistry/process sequence.",
+        "inputs": [
+          {
+            "name": "component_a",
+            "representation": "molecular-component",
+            "schema_ref": null,
+            "description": "Typed identifier or structured record for the first molecular component.",
+            "unit": "1"
+          },
+          {
+            "name": "component_b",
+            "representation": "molecular-component",
+            "schema_ref": null,
+            "description": "Typed identifier or structured record for the second molecular component.",
+            "unit": "1"
+          },
+          {
+            "name": "component_c",
+            "representation": "molecular-component",
+            "schema_ref": null,
+            "description": "Typed identifier or structured record for the third molecular component added after heating.",
+            "unit": "1"
+          },
+          {
+            "name": "process_constraints",
+            "representation": "process-constraint-set",
+            "schema_ref": null,
+            "description": "Typed constraints describing allowed ordering, heating window, and mixture handling semantics.",
+            "unit": "1"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "process_plan",
+            "representation": "molecular-process-plan",
+            "schema_ref": null,
+            "description": "Structured plan that preserves the required order of combining, heating, and adding ingredients.",
+            "unit": "1"
+          }
+        ],
+        "applicability": [
+          "Any campaign that must explicitly model ordered molecular operations.",
+          "Any campaign that needs to preserve sequential material-handling dependencies.",
+          "Any campaign that should distinguish pre-heating and post-heating addition steps."
+        ],
+        "evidence_need": "A reviewed tool or schema that can represent molecular entities, ordered mixture operations, and a heating step as typed executable or plan primitives.",
+        "acceptance_criteria": [
+          "The capability can encode at least one explicit sequence: combine A and B, heat the combined mixture, then add C.",
+          "The capability preserves sequential dependencies without collapsing them into an unordered abstraction.",
+          "The capability exposes typed ports or equivalent bindings for the molecular inputs and process-plan output.",
+          "The capability documentation or schema demonstrates supported handling of process order and material combination semantics."
+        ],
+        "graph_gap": "No reviewed executable primitive exists for chemistry or laboratory process planning; the available runtime only supports numeric search/evaluation and cannot realize the requested molecular workflow."
+      },
+      {
+        "gap_key": "chemistry-validation-or-simulation",
+        "purpose": "Enable evaluation of candidate molecular process plans against chemistry-specific criteria instead of synthetic numeric objectives. This is needed because the only evaluator available is explicitly synthetic numeric and the context forbids inventing scientific validation.",
+        "inputs": [
+          {
+            "name": "candidate_plan",
+            "representation": "molecular-process-plan",
+            "schema_ref": null,
+            "description": "A proposed sequential process plan for review or scoring.",
+            "unit": "1"
+          },
+          {
+            "name": "evaluation_policy",
+            "representation": "chemistry-validation-policy",
+            "schema_ref": null,
+            "description": "Typed policy specifying what chemistry/process properties must be assessed.",
+            "unit": "1"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "evaluation_result",
+            "representation": "chemistry-evaluation-result",
+            "schema_ref": null,
+            "description": "Assessment of whether the candidate plan meets chemistry/process validation requirements.",
+            "unit": "1"
+          }
+        ],
+        "applicability": [
+          "Campaigns that compare alternative molecular process plans.",
+          "Campaigns that require validation beyond synthetic numeric fitness.",
+          "Campaigns that need evidence-bearing evaluation of process feasibility or constraints."
+        ],
+        "evidence_need": "A reviewed evaluator or simulator with chemistry-specific semantics, including ordered process checks and material-operation validation.",
+        "acceptance_criteria": [
+          "The evaluator accepts a molecular-process-plan-like input.",
+          "The evaluator returns a chemistry-specific result rather than a synthetic numeric score.",
+          "The evaluator can assess ordering and step-dependency constraints.",
+          "The evaluator is explicitly listed among reviewed releases with exact bindings."
+        ],
+        "graph_gap": "There is no supported evaluator in the supplied inventory for chemistry-specific or molecular-process validation."
+      },
+      {
+        "gap_key": "lab-operation-sequencing-primitive",
+        "purpose": "Provide an executable graph primitive for ordered material operations, because the requested future graph must preserve the exact sequencing of combining materials, heating, and adding ingredients.",
+        "inputs": [
+          {
+            "name": "ordered_operations",
+            "representation": "operation-sequence",
+            "schema_ref": null,
+            "description": "A typed sequence of operations such as combine, heat, and add ingredient.",
+            "unit": "1"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "sequenced_plan",
+            "representation": "ordered-process-graph",
+            "schema_ref": null,
+            "description": "A graph or plan preserving the exact operation order and dependencies.",
+            "unit": "1"
+          }
+        ],
+        "applicability": [
+          "Any campaign that must preserve procedural order as a first-class semantic constraint.",
+          "Any campaign that branches after a heating or mixing step based on downstream additions."
+        ],
+        "evidence_need": "A reviewed execution primitive that can represent ordered operations without losing sequence semantics.",
+        "acceptance_criteria": [
+          "The primitive can encode combine-before-heat and heat-before-add constraints.",
+          "The primitive supports branching or joining after sequential material operations if needed.",
+          "The primitive has exact reviewed release metadata and bindings."
+        ],
+        "graph_gap": "The current primitive set has no chemistry/lab sequencing construct; only generic numeric search nodes are available."
+      }
+    ],
+    "candidate": {
+      "kind": "future_campaign",
+      "title": "Request missing molecular process-planning capabilities for sequential chemistry workflows",
+      "definition": {
+        "schema_version": "4",
+        "profile": "deterministic-v3",
+        "campaign_id": "synthetic-curation-seed",
+        "revision": 1,
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+        },
+        "body": {
+          "nodes": [
+            {
+              "kind": "finish",
+              "node_id": "finish",
+              "outputs": [
+                {
+                  "port": "result",
+                  "source": {
+                    "kind": "string",
+                    "value": "Capability request only; no supported chemistry/process graph can be proposed from the supplied inventory."
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "expected_evidence": [
+        {
+          "question": {
+            "scope": {
+              "tenant_id": "internal",
+              "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+            },
+            "question_id": "molecular-process-capability-question",
+            "revision": 1
+          },
+          "needs": [
+            {
+              "scope": {
+                "tenant_id": "internal",
+                "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+              },
+              "need_id": "molecular-mixture-process-planning",
+              "revision": 1
+            }
+          ],
+          "assessments": [],
+          "producer": null,
+          "expected_evidence": "Reviewed tool/schema coverage for typed molecular inputs, ordered combine/heat/add operations, and chemistry-aware plan evaluation.",
+          "uncertainty": "The current evidence only supports synthetic numeric integration; chemistry-specific execution support is absent.",
+          "status_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    }
+  },
+  "unresolved": [
+    {
+      "question": {
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+        },
+        "question_id": "molecular-process-capability-question",
+        "revision": 1
+      },
+      "need": {
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+        },
+        "need_id": "molecular-mixture-process-planning",
+        "revision": 1
+      },
+      "posture": "missing",
+      "description": "No reviewed capability in the supplied inventory can represent or execute the requested sequential molecular workflow."
+    },
+    {
+      "question": null,
+      "need": {
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+        },
+        "need_id": "chemistry-validation-or-simulation",
+        "revision": 1
+      },
+      "posture": "missing",
+      "description": "The only available evaluator is synthetic numeric and cannot validate chemistry-specific process plans."
+    },
+    {
+      "question": null,
+      "need": {
+        "scope": {
+          "tenant_id": "internal",
+          "project_id": "owner-records-7e21ca85bd6044198b1585aa2c41d336"
+        },
+        "need_id": "lab-operation-sequencing-primitive",
+        "revision": 1
+      },
+      "posture": "missing",
+      "description": "There is no supported primitive for preserving ordered combine/heating/addition semantics in an executable graph."
+    }
+  ]
+}

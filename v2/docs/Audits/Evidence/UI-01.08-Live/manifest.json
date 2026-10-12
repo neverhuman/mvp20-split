@@ -1,0 +1,66 @@
+{
+  "supported-original-output.json": {
+    "sha256": "51c9544c6d034380f5acdf88fc9afebf5d3fddc95df20d7ac0fd26e799872f7e",
+    "size_bytes": 4546
+  },
+  "supported-original-observation.json": {
+    "sha256": "529cdbec3cd45068b9122d65a467c363319a4a4a1fcf75a8a54a6643fc87c4c9",
+    "size_bytes": 638
+  },
+  "supported-provider-accounting.json": {
+    "sha256": "b2a6ccba3691d357ad10de792c8e190d947a04deeea2d2bf73b40f21f141a230",
+    "size_bytes": 617
+  },
+  "supported-diagnosis.json": {
+    "sha256": "8e1fb27a402ebfb9bbf2d7c4d65fd46e40881e573705712415581b00635d4f60",
+    "size_bytes": 3733
+  },
+  "supported-current-view.json": {
+    "sha256": "ef43d4580cf7f9e00de7d9287cf1586fdf405d914ffb6f90eb15787c310bcdca",
+    "size_bytes": 3974
+  },
+  "missing-original-output.json": {
+    "sha256": "bfd48b937e064091f442b7b97e3b3a97023f5cfb11cceaeb8a75fafe013b8d0d",
+    "size_bytes": 11879
+  },
+  "missing-original-observation.json": {
+    "sha256": "49fb294a49c269befddf48547e6a2e06a8abe7d42f386fdd2a8ec58a554568b2",
+    "size_bytes": 644
+  },
+  "missing-provider-accounting.json": {
+    "sha256": "a8e6ebc5af618e3002481106cf6f04b8a51df87c8c9b11c916210b12e86a8344",
+    "size_bytes": 617
+  },
+  "missing-diagnosis.json": {
+    "sha256": "89ee5dc65e965907f396c1b968a908f42f924af334717c664af3ffde88c5cce5",
+    "size_bytes": 2367
+  },
+  "missing-current-view.json": {
+    "sha256": "0dfa828cf97e8c9a60dee83103fbf2550501b81ecefe7eba51b9e9e7d396417a",
+    "size_bytes": 3840
+  },
+  "owner-evidence.json": {
+    "sha256": "a571c2b9da71a86aa5f09b8b1e0bb021d31a8020c2c1aee6290a1b25ff9bcfac",
+    "size_bytes": 942
+  },
+  "browser-evidence.json": {
+    "sha256": "0a63b2c0cdc9b657327fdbd8c6f44b29a959f72b6af982f509c376b546dde0f1",
+    "size_bytes": 4471
+  },
+  "final-allowance.json": {
+    "sha256": "1b296d528a750ea908765658f686a59399544d04d255d341f5af99bd4cd92a9c",
+    "size_bytes": 1140
+  },
+  "preview-evidence.json": {
+    "sha256": "52914c86c72976ef4ebae366f79ac585b09c00d41b91806f3258cbf372c93afb",
+    "size_bytes": 1998
+  },
+  "preview-output-guide.txt": {
+    "sha256": "f93c3145c9e81930eaac0add8d8c9eb0208728cfceea87ab3a1f08b3804f0c7e",
+    "size_bytes": 1627
+  },
+  "original-scope-declaration.json": {
+    "sha256": "8ec9214155666c98989f9d155673a1a3278c45b347c9e666009475df0eb20b43",
+    "size_bytes": 556
+  }
+}

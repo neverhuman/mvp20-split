@@ -1,0 +1,194 @@
+{
+  "read_only": true,
+  "original_output_sha256": "51c9544c6d034380f5acdf88fc9afebf5d3fddc95df20d7ac0fd26e799872f7e",
+  "duplicate_keys": [
+    "scientific_authority"
+  ],
+  "additional_schema_errors_after_lenient_diagnostic_decode": [
+    {
+      "path": [
+        "outcome",
+        "propose_campaign",
+        "unresolved"
+      ],
+      "type": "extra_forbidden",
+      "message": "Extra inputs are not permitted"
+    },
+    {
+      "path": [
+        "outcome",
+        "propose_campaign",
+        "candidate",
+        "gaps"
+      ],
+      "type": "extra_forbidden",
+      "message": "Extra inputs are not permitted"
+    },
+    {
+      "path": [
+        "outcome",
+        "propose_campaign",
+        "candidate",
+        "definition",
+        "expected_evidence"
+      ],
+      "type": "extra_forbidden",
+      "message": "Extra inputs are not permitted"
+    },
+    {
+      "path": [
+        "outcome",
+        "propose_campaign",
+        "candidate",
+        "definition",
+        "body",
+        "outputs",
+        1,
+        "value_type",
+        "artifact",
+        "schema_ref",
+        "sha256"
+      ],
+      "type": "string_pattern_mismatch",
+      "message": "String should match pattern '^[0-9a-f]{64}$'"
+    },
+    {
+      "path": [
+        "outcome",
+        "propose_campaign",
+        "candidate",
+        "expected_evidence"
+      ],
+      "type": "missing",
+      "message": "Field required"
+    },
+    {
+      "path": [
+        "outcome",
+        "propose_campaign",
+        "gaps"
+      ],
+      "type": "missing",
+      "message": "Field required"
+    },
+    {
+      "path": [
+        "unresolved"
+      ],
+      "type": "missing",
+      "message": "Field required"
+    }
+  ],
+  "envelope_bytes": 201440,
+  "schema_bytes": 37415,
+  "schema_definitions": 57,
+  "context_bytes": 150101,
+  "slices": [
+    {
+      "lane": "artifact",
+      "bytes": 1087
+    },
+    {
+      "lane": "artifact",
+      "bytes": 968
+    },
+    {
+      "lane": "artifact",
+      "bytes": 1112
+    },
+    {
+      "lane": "artifact",
+      "bytes": 1377
+    },
+    {
+      "lane": "artifact",
+      "bytes": 3606
+    },
+    {
+      "lane": "curation",
+      "bytes": 2382
+    },
+    {
+      "lane": "curation_runtime",
+      "bytes": 3152
+    },
+    {
+      "lane": "registry_scan",
+      "bytes": 397
+    },
+    {
+      "lane": "runtime",
+      "bytes": 5270
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 718
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 21674
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 20844
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 8359
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 20382
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 7026
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 7614
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 9107
+    },
+    {
+      "lane": "runtime_schema",
+      "bytes": 1067
+    },
+    {
+      "lane": "curation_knowledge",
+      "bytes": 654
+    },
+    {
+      "lane": "research",
+      "bytes": 776
+    },
+    {
+      "lane": "artifact",
+      "bytes": 3314
+    },
+    {
+      "lane": "registry_inventory",
+      "bytes": 2929
+    },
+    {
+      "lane": "registry_inventory",
+      "bytes": 2953
+    },
+    {
+      "lane": "registry_inventory",
+      "bytes": 2958
+    },
+    {
+      "lane": "registry_inventory",
+      "bytes": 3632
+    },
+    {
+      "lane": "registry_inventory",
+      "bytes": 2927
+    }
+  ],
+  "accepted_output": false,
+  "provider_calls": 0
+}

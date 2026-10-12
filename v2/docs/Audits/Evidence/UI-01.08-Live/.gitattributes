@@ -1,0 +1,3 @@
+# These retained bytes are hashed evidence, not platform-normalized text.
+*.json -text whitespace=cr-at-eol
+preview-output-guide.txt -text whitespace=cr-at-eol
